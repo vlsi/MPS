@@ -17,24 +17,24 @@ import java.util.HashMap;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import jetbrains.mps.ide.platform.refactoring.MoveNodesDialog;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.project.Project;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class MoveNodesActionBase implements MoveNodesAction {
 
@@ -103,65 +103,62 @@ public class MoveNodesActionBase implements MoveNodesAction {
   public void execute(final MPSProject project, final List<SNode> nodesToMove) {
 
     final Wrappers._T<SModel> currentModel = new Wrappers._T<SModel>();
-    final Wrappers._T<SContainmentLink> role = new Wrappers._T<SContainmentLink>();
-    final Wrappers._T<List<SAbstractConcept>> movingNodeConcepts = new Wrappers._T<List<SAbstractConcept>>();
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         currentModel.value = SNodeOperations.getModel(ListSequence.fromList(nodesToMove).first());
-        role.value = ListSequence.fromList(nodesToMove).first().getContainmentLink();
-        movingNodeConcepts.value = ListSequence.fromList(nodesToMove).select(new ISelector<SNode, SAbstractConcept>() {
-          public SAbstractConcept select(SNode it) {
-            return ((SAbstractConcept) SNodeOperations.getConcept(it));
-          }
-        }).toListSequence();
       }
     });
-    final SContainmentLink finalRole = role.value;
     final NodeLocation newLocation = MoveNodesDialog.getSelectedObject(project.getProject(), currentModel.value, new MoveNodesDialog.ModelFilter() {
       public String getErrorMessage(NodeLocation selectedObject) {
         return "Choose model or node that can contain moving nodes";
       }
-      public boolean check(final NodeLocation selectedObject, SModel model) {
-        if (selectedObject == null) {
-          return false;
+      public boolean tryToSetRole(final NodeLocation.NodeLocationChild selectedObject) {
+        final Wrappers._T<SContainmentLink> role = new Wrappers._T<SContainmentLink>();
+        final Wrappers._T<Collection<SContainmentLink>> containmentLinks = new Wrappers._T<Collection<SContainmentLink>>();
+        project.getRepository().getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            containmentLinks.value = selectedObject.getNode().resolve(project.getRepository()).getConcept().getContainmentLinks();
+            role.value = ListSequence.fromList(nodesToMove).first().getContainmentLink();
+          }
+        });
+        if (role.value != null && CollectionSequence.fromCollection(containmentLinks.value).contains(role.value)) {
+          selectedObject.setRole(role.value);
+          return true;
         }
+        final Wrappers._T<Iterable<SContainmentLink>> applicableLinks = new Wrappers._T<Iterable<SContainmentLink>>();
+        project.getRepository().getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            applicableLinks.value = CollectionSequence.fromCollection(containmentLinks.value).where(new IWhereFilter<SContainmentLink>() {
+              public boolean accept(final SContainmentLink link) {
+                return ListSequence.fromList(nodesToMove).all(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode node) {
+                    return SNodeOperations.getConcept(node).isSubConceptOf(link.getTargetConcept());
+                  }
+                });
+              }
+            });
+          }
+        });
+        if (Sequence.fromIterable(applicableLinks.value).count() == 1) {
+          selectedObject.setRole(Sequence.fromIterable(applicableLinks.value).first());
+          return true;
+        }
+        return false;
+      }
+      @Override
+      public boolean check(final NodeLocation selectedObject, SModel model) {
         if (selectedObject instanceof NodeLocation.NodeLocationChild) {
-          final Wrappers._T<Collection<SContainmentLink>> containmentLinks = new Wrappers._T<Collection<SContainmentLink>>();
-          project.getRepository().getModelAccess().runReadAction(new Runnable() {
-            public void run() {
-              containmentLinks.value = ((NodeLocation.NodeLocationChild) selectedObject).getNode().resolve(project.getRepository()).getConcept().getContainmentLinks();
-            }
-          });
-          if (finalRole != null && CollectionSequence.fromCollection(containmentLinks.value).contains(finalRole)) {
-            ((NodeLocation.NodeLocationChild) selectedObject).setRole(finalRole);
-            return true;
-          }
-          Iterable<SContainmentLink> applicableLinks = CollectionSequence.fromCollection(containmentLinks.value).where(new IWhereFilter<SContainmentLink>() {
-            public boolean accept(final SContainmentLink link) {
-              return ListSequence.fromList(movingNodeConcepts.value).all(new IWhereFilter<SAbstractConcept>() {
-                public boolean accept(SAbstractConcept cncpt) {
-                  return cncpt.isSubConceptOf(link.getTargetConcept());
-                }
-              });
-            }
-          });
-          if (Sequence.fromIterable(applicableLinks).count() == 1) {
-            ((NodeLocation.NodeLocationChild) selectedObject).setRole(Sequence.fromIterable(applicableLinks).first());
-            return true;
-          }
-          return false;
+          return tryToSetRole((NodeLocation.NodeLocationChild) selectedObject);
         } else if (selectedObject instanceof NodeLocation.NodeLocationRoot) {
-          final Wrappers._boolean canInsert = new Wrappers._boolean();
-          project.getRepository().getModelAccess().runReadAction(new Runnable() {
-            public void run() {
-              canInsert.value = ListSequence.fromList(movingNodeConcepts.value).all(new IWhereFilter<SAbstractConcept>() {
-                public boolean accept(SAbstractConcept cncpt) {
-                  return SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.asNode(cncpt), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"));
+          return new ModelAccessHelper(project.getRepository()).runReadAction(new Computable<Boolean>() {
+            public Boolean compute() {
+              return ListSequence.fromList(nodesToMove).all(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return selectedObject.canInsert(project.getRepository(), it);
                 }
               });
             }
           });
-          return canInsert.value;
         } else {
           return false;
         }
