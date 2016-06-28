@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
@@ -18,26 +20,31 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import org.apache.log4j.Level;
+import java.io.InputStream;
+import jetbrains.mps.util.ReadUtil;
+import java.io.IOException;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.MacroHelper;
 import javax.swing.ImageIcon;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public final class FileIcon__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.FileIcon");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Void> generate_id7Mb2akaesv8 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("generate").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Mb2akaesv8").registry(REGISTRY).build();
+  public static final SMethod<Tuples._2<IFile, byte[]>> generate_id7Mb2akaesv8 = new SMethodBuilder<Tuples._2<IFile, byte[]>>(new SJavaCompoundTypeImpl((Class<Tuples._2<IFile, byte[]>>) ((Class) Object.class))).name("generate").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Mb2akaesv8").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(IFile.class, ""));
   public static final SMethod<Boolean> isValid_id7Mb2akaestJ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isValid").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Mb2akaestJ").registry(REGISTRY).build();
   public static final SMethod<String> getFilename_id7Mb2akaesuN = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getFilename").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Mb2akaesuN").registry(REGISTRY).build();
   public static final SMethod<String> getResourceId_id2p1v3tOadt0 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getResourceId").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2p1v3tOadt0").registry(REGISTRY).build();
@@ -47,18 +54,38 @@ public final class FileIcon__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static void generate_id7Mb2akaesv8(@NotNull SNode __thisNode__) {
-    // FIXME I could not find any uses of the method, is it still actual? 
+  /*package*/ static Tuples._2<IFile, byte[]> generate_id7Mb2akaesv8(@NotNull SNode __thisNode__, IFile outputRoot) {
     SModel model = SNodeOperations.getModel(__thisNode__);
-    String outputRoot = SModuleOperations.getOutputPathFor(model);
-    IFile outputRootFile = FileSystem.getInstance().getFileByPath(outputRoot);
-    IFile output = FileGenerationUtil.getDefaultOutputDir(model, outputRootFile);
+    IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
 
     // copy 
     String source = MacrosFactory.forModule((AbstractModule) model.getModule()).expandPath(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")));
+    if (source == null) {
+      return null;
+    }
     IFile sourceFile = FileSystem.getInstance().getFileByPath(source);
+    IFile toFile = outputDir.getDescendant(sourceFile.getName());
 
-    IFileUtils.copyFileContent(sourceFile, output.getDescendant(sourceFile.getName()));
+    Tuples._2<IFile, byte[]> res = MultiTuple.<IFile,byte[]>from(toFile, null);
+    if (!(sourceFile.exists())) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("file not found " + sourceFile.getPath());
+      }
+      return res;
+    }
+
+    InputStream is = null;
+    try {
+      is = toFile.openInputStream();
+      res = MultiTuple.<IFile,byte[]>from(toFile, ReadUtil.read(is));
+    } catch (IOException e) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("", e);
+      }
+    } finally {
+      FileUtil.closeFileSafe(is);
+    }
+    return res;
   }
   /*package*/ static boolean isValid_id7Mb2akaestJ(@NotNull SNode __thisNode__) {
     SModule module = SNodeOperations.getModel(__thisNode__).getModule();
@@ -109,8 +136,7 @@ public final class FileIcon__BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        generate_id7Mb2akaesv8(node);
-        return null;
+        return (T) ((Tuples._2<IFile, byte[]>) generate_id7Mb2akaesv8(node, (IFile) parameters[0]));
       case 1:
         return (T) ((Boolean) isValid_id7Mb2akaestJ(node));
       case 2:
@@ -145,4 +171,5 @@ public final class FileIcon__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
+  protected static Logger LOG = LogManager.getLogger(FileIcon__BehaviorDescriptor.class);
 }
