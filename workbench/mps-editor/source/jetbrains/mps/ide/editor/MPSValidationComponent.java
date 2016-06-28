@@ -20,6 +20,7 @@ import jetbrains.mps.ide.editor.checkers.ModelProblemsChecker;
 import jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsChecker;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
+import jetbrains.mps.nodeEditor.checking.DisposableEditorChecker;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
 import jetbrains.mps.nodeEditor.checking.LegacyEditorCheckerAdapter;
 import jetbrains.mps.project.MPSProject;
@@ -93,8 +94,8 @@ public class MPSValidationComponent implements ProjectComponent {
         while (!myCheckers.isEmpty()) {
           EditorChecker checker = myCheckers.pop();
           myHighlighter.removeChecker(checker);
-          if (checker instanceof LegacyEditorCheckerAdapter) {
-            ((LegacyEditorCheckerAdapter) checker).getChecker().dispose();
+          if (checker instanceof DisposableEditorChecker) {
+            ((DisposableEditorChecker) checker).dispose();
           }
         }
       }

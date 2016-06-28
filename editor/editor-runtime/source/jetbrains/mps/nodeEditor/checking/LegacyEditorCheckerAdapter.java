@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class LegacyEditorCheckerAdapter implements EditorChecker {
+public class LegacyEditorCheckerAdapter implements DisposableEditorChecker {
   private final BaseEditorChecker myChecker;
   private final List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
 
@@ -88,6 +88,11 @@ public class LegacyEditorCheckerAdapter implements EditorChecker {
   @Override
   public EditorMessageOwner getEditorMessageOwner() {
     return myChecker;
+  }
+
+  @Override
+  public void dispose() {
+    myChecker.dispose();
   }
 
   @Override
