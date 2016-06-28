@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelOperations;
 import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class ModuleUsagesFinder implements IFinder {
   private static final String USED_BY = "used by";
@@ -94,12 +95,27 @@ public class ModuleUsagesFinder implements IFinder {
       subTask.advance(1);
     }
     subTask = monitor.subTask(1, SubProgressKind.REPLACING);
-    subTask.start("Looking up uses in models", myModels2Visit.size());
     if (searchedModule != null) {
+      final DevKit searchedDevkit;
+      int steps = myModels2Visit.size();
+      if (searchedModule instanceof DevKit) {
+        searchedDevkit = (DevKit) searchedModule;
+        steps *= 2;
+      } else {
+        searchedDevkit = null;
+      }
+      subTask.start("Looking up uses in models", steps);
       ModuleUsagesFinder.ModuleUseInModel f = new ModuleUsagesFinder.ModuleUseInModel(searchedModule, searchResults);
       for (SModel model : myModels2Visit) {
         f.collect(model);
         subTask.advance(1);
+      }
+      if (searchedDevkit != null) {
+        ModuleUsagesFinder.DevKitUseInModel f2 = new ModuleUsagesFinder.DevKitUseInModel(searchedDevkit, searchResults);
+        for (SModel model : myModels2Visit) {
+          f2.collect(model);
+          subTask.advance(1);
+        }
       }
     }
     monitor.done();
@@ -257,4 +273,23 @@ public class ModuleUsagesFinder implements IFinder {
       }
     }
   }
+
+  private static class DevKitUseInModel {
+    private final SearchResults mySearchResults;
+    private final SModuleReference myDevKitToFind;
+
+    public DevKitUseInModel(DevKit toFind, SearchResults toPopulate) {
+      myDevKitToFind = toFind.getModuleReference();
+      mySearchResults = toPopulate;
+    }
+
+    public void collect(SModel model) {
+      if (model instanceof SModelInternal) {
+        if (((SModelInternal) model).importedDevkits().contains(myDevKitToFind)) {
+          mySearchResults.add(new SearchResult<SModel>(model, USED_BY));
+        }
+      }
+    }
+  }
+
 }

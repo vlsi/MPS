@@ -12,6 +12,7 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_solutionNew = ID + "solutionNew";
   public static final String LABEL_ID_contents = ID + "contents";
   public static final String LABEL_ID_commonModule = ID + "commonModule";
+  public static final String LABEL_ID_find_usages = ID + "find_usages";
   public SolutionActions_ActionGroup() {
     super("SolutionActions", ID);
     this.setIsInternal(false);
@@ -30,6 +31,13 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
     }
     {
       LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_commonModule);
+      ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+      manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+      SolutionActions_ActionGroup.this.addAction(action);
+    }
+    SolutionActions_ActionGroup.this.addSeparator();
+    {
+      LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_find_usages);
       ActionManagerEx manager = ActionManagerEx.getInstanceEx();
       manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
       SolutionActions_ActionGroup.this.addAction(action);

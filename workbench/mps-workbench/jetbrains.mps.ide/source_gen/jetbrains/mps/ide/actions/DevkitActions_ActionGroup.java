@@ -10,6 +10,7 @@ import com.intellij.openapi.extensions.PluginId;
 public class DevkitActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.DevkitActions_ActionGroup";
   public static final String LABEL_ID_analyze = ID + "analyze";
+  public static final String LABEL_ID_find_usages = ID + "find_usages";
   public static final String LABEL_ID_favorites = ID + "favorites";
   public DevkitActions_ActionGroup() {
     super("DevkitActions", ID);
@@ -27,6 +28,13 @@ public class DevkitActions_ActionGroup extends GeneratedActionGroup {
       DevkitActions_ActionGroup.this.addAction(action);
     }
     DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action");
+    DevkitActions_ActionGroup.this.addSeparator();
+    {
+      LabelledAnchor action = new LabelledAnchor(DevkitActions_ActionGroup.LABEL_ID_find_usages);
+      ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+      manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+      DevkitActions_ActionGroup.this.addAction(action);
+    }
     DevkitActions_ActionGroup.this.addSeparator();
     {
       LabelledAnchor action = new LabelledAnchor(DevkitActions_ActionGroup.LABEL_ID_favorites);

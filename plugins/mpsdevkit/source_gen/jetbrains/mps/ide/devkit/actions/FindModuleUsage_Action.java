@@ -7,23 +7,24 @@ import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.smodel.Language;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
-import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.ide.ui.finders.LanguageImportFinder;
 import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.ide.ui.finders.LanguageImportFinder;
+import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
 
-public class FindLanguageUsages_Action extends BaseAction {
+public class FindModuleUsage_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
-  public FindLanguageUsages_Action() {
+  public FindModuleUsage_Action() {
     super("Find Usages", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
@@ -31,14 +32,6 @@ public class FindLanguageUsages_Action extends BaseAction {
   @Override
   public boolean isDumbAware() {
     return true;
-  }
-  @Override
-  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return event.getData(MPSCommonDataKeys.MODULE) instanceof Language;
-  }
-  @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -63,8 +56,11 @@ public class FindLanguageUsages_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final SModule module = event.getData(MPSCommonDataKeys.MODULE);
     final SearchQuery query = new SearchQuery(module, GlobalScope.getInstance());
-    final IResultProvider provider = FindUtils.makeProvider(new LanguageImportFinder());
-    UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).forceNewTab(false).navigateIfSingle(false).notFoundMessage("Language has no usages");
+    final IResultProvider provider = FindModuleUsage_Action.this.providerForModule(module, event);
+    UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).forceNewTab(false).navigateIfSingle(false).notFoundMessage(String.format("No usages found for %s", module.getModuleName()));
     UsagesViewTool.showUsages(event.getData(CommonDataKeys.PROJECT), provider, query, opt);
+  }
+  /*package*/ IResultProvider providerForModule(SModule module, final AnActionEvent event) {
+    return FindUtils.makeProvider((module instanceof Language ? new LanguageImportFinder() : new ModuleUsagesFinder()));
   }
 }

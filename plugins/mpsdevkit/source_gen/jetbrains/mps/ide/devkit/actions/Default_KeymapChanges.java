@@ -12,7 +12,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     // simple 
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action", getShortcut(" DELETE"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.FindLanguageConceptsUsages_Action", getShortcut("alt F8"));
-    addSimpleShortcut("jetbrains.mps.ide.devkit.actions.FindLanguageUsages_Action", getShortcut("alt F7"));
+    addSimpleShortcut("jetbrains.mps.ide.devkit.actions.FindModuleUsage_Action", getShortcut("alt F7"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.GoToConceptDeclaration_Action", getShortcut("ctrl shift S"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.GoToEditorDeclaration_Action", getShortcut("alt shift E"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.GoToOverridingBehaviorMethod_Action", getShortcut("ctrl alt B"));

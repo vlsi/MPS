@@ -10,7 +10,7 @@ public class FindLanguageUsages_ActionGroup extends GeneratedActionGroup {
     super("FindLanguageUsages", ID);
     this.setIsInternal(false);
     this.setPopup(false);
-    FindLanguageUsages_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.FindLanguageUsages_Action");
+    FindLanguageUsages_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.FindModuleUsage_Action");
     FindLanguageUsages_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.FindLanguageConceptsUsages_Action");
   }
 }

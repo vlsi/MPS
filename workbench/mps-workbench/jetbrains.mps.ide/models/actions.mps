@@ -1136,6 +1136,10 @@
         <property role="TrG5h" value="commonModule" />
       </node>
       <node concept="2a7GMi" id="AEy2bFaiIW" role="ftvYc" />
+      <node concept="10WQ6h" id="6gJrPYfWcoC" role="ftvYc">
+        <property role="TrG5h" value="find_usages" />
+      </node>
+      <node concept="2a7GMi" id="6gJrPYfWcoK" role="ftvYc" />
       <node concept="tCFHf" id="6EBM_lhzyRi" role="ftvYc">
         <ref role="tCJdB" node="hGANgqU" resolve="ModuleProperties" />
       </node>
@@ -1186,6 +1190,10 @@
         <ref role="tCJdB" node="hZikFSU" resolve="CopyModuleName" />
       </node>
       <node concept="2a7GMi" id="2atlPoXHHNq" role="ftvYc" />
+      <node concept="10WQ6h" id="6gJrPYfWco5" role="ftvYc">
+        <property role="TrG5h" value="find_usages" />
+      </node>
+      <node concept="2a7GMi" id="6gJrPYfWcnE" role="ftvYc" />
       <node concept="10WQ6h" id="2tmN3ZB4Vst" role="ftvYc">
         <property role="TrG5h" value="favorites" />
       </node>

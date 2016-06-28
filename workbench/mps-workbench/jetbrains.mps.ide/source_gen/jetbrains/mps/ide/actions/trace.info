@@ -493,42 +493,53 @@
       <node id="1204991226689" at="12,0,13,0" concept="16" trace="LABEL_ID_solutionNew" />
       <node id="1204991226689" at="13,0,14,0" concept="16" trace="LABEL_ID_contents" />
       <node id="1204991226689" at="14,0,15,0" concept="16" trace="LABEL_ID_commonModule" />
-      <node id="1204991226689" at="15,40,16,33" concept="18" />
-      <node id="1204991226689" at="16,33,17,30" concept="6" />
-      <node id="1204991226689" at="17,30,18,25" concept="6" />
-      <node id="1204911787238" at="19,5,20,99" concept="12" />
-      <node id="1204911787238" at="20,99,21,64" concept="12" />
-      <node id="1204911787238" at="21,64,22,90" concept="6" />
-      <node id="1204911787238" at="22,90,23,57" concept="6" />
-      <node id="1366781238034254894" at="25,5,26,96" concept="12" />
-      <node id="1366781238034254894" at="26,96,27,64" concept="12" />
-      <node id="1366781238034254894" at="27,64,28,90" concept="6" />
-      <node id="1366781238034254894" at="28,90,29,57" concept="6" />
-      <node id="401659284115231184" at="31,5,32,100" concept="12" />
-      <node id="401659284115231184" at="32,100,33,64" concept="12" />
-      <node id="401659284115231184" at="33,64,34,90" concept="6" />
-      <node id="401659284115231184" at="34,90,35,57" concept="6" />
-      <node id="696518775937772476" at="36,5,37,52" concept="6" />
-      <node id="7685333756920344018" at="37,52,38,100" concept="6" />
-      <node id="1204911787238" at="18,25,24,5" concept="2" />
-      <node id="1366781238034254894" at="24,5,30,5" concept="2" />
-      <node id="401659284115231184" at="30,5,36,5" concept="2" />
-      <node id="1204991226689" at="15,0,40,0" concept="4" trace="SolutionActions_ActionGroup#()V" />
-      <scope id="1204911787238" at="19,5,23,57">
+      <node id="1204991226689" at="15,0,16,0" concept="16" trace="LABEL_ID_find_usages" />
+      <node id="1204991226689" at="16,40,17,33" concept="18" />
+      <node id="1204991226689" at="17,33,18,30" concept="6" />
+      <node id="1204991226689" at="18,30,19,25" concept="6" />
+      <node id="1204911787238" at="20,5,21,99" concept="12" />
+      <node id="1204911787238" at="21,99,22,64" concept="12" />
+      <node id="1204911787238" at="22,64,23,90" concept="6" />
+      <node id="1204911787238" at="23,90,24,57" concept="6" />
+      <node id="1366781238034254894" at="26,5,27,96" concept="12" />
+      <node id="1366781238034254894" at="27,96,28,64" concept="12" />
+      <node id="1366781238034254894" at="28,64,29,90" concept="6" />
+      <node id="1366781238034254894" at="29,90,30,57" concept="6" />
+      <node id="401659284115231184" at="32,5,33,100" concept="12" />
+      <node id="401659284115231184" at="33,100,34,64" concept="12" />
+      <node id="401659284115231184" at="34,64,35,90" concept="6" />
+      <node id="401659284115231184" at="35,90,36,57" concept="6" />
+      <node id="696518775937772476" at="37,5,38,52" concept="6" />
+      <node id="7219111183925691944" at="39,5,40,99" concept="12" />
+      <node id="7219111183925691944" at="40,99,41,64" concept="12" />
+      <node id="7219111183925691944" at="41,64,42,90" concept="6" />
+      <node id="7219111183925691944" at="42,90,43,57" concept="6" />
+      <node id="7219111183925691952" at="44,5,45,52" concept="6" />
+      <node id="7685333756920344018" at="45,52,46,100" concept="6" />
+      <node id="1204911787238" at="19,25,25,5" concept="2" />
+      <node id="1366781238034254894" at="25,5,31,5" concept="2" />
+      <node id="401659284115231184" at="31,5,37,5" concept="2" />
+      <node id="7219111183925691944" at="38,52,44,5" concept="2" />
+      <node id="1204991226689" at="16,0,48,0" concept="4" trace="SolutionActions_ActionGroup#()V" />
+      <scope id="1204911787238" at="20,5,24,57">
         <var name="action" id="1204911787238" />
         <var name="manager" id="1204911787238" />
       </scope>
-      <scope id="1366781238034254894" at="25,5,29,57">
+      <scope id="1366781238034254894" at="26,5,30,57">
         <var name="action" id="1366781238034254894" />
         <var name="manager" id="1366781238034254894" />
       </scope>
-      <scope id="401659284115231184" at="31,5,35,57">
+      <scope id="401659284115231184" at="32,5,36,57">
         <var name="action" id="401659284115231184" />
         <var name="manager" id="401659284115231184" />
       </scope>
-      <scope id="1204991226689" at="15,40,38,100" />
-      <scope id="1204991226689" at="15,0,40,0" />
-      <unit id="1204991226689" at="10,0,41,0" name="jetbrains.mps.ide.actions.SolutionActions_ActionGroup" />
+      <scope id="7219111183925691944" at="39,5,43,57">
+        <var name="action" id="7219111183925691944" />
+        <var name="manager" id="7219111183925691944" />
+      </scope>
+      <scope id="1204991226689" at="16,40,46,100" />
+      <scope id="1204991226689" at="16,0,48,0" />
+      <unit id="1204991226689" at="10,0,49,0" name="jetbrains.mps.ide.actions.SolutionActions_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/1204991227487">
@@ -558,41 +569,52 @@
     <file name="DevkitActions_ActionGroup.java">
       <node id="1204991228238" at="11,0,12,0" concept="16" trace="ID" />
       <node id="1204991228238" at="12,0,13,0" concept="16" trace="LABEL_ID_analyze" />
-      <node id="1204991228238" at="13,0,14,0" concept="16" trace="LABEL_ID_favorites" />
-      <node id="1204991228238" at="14,38,15,31" concept="18" />
-      <node id="1204991228238" at="15,31,16,30" concept="6" />
-      <node id="1204991228238" at="16,30,17,25" concept="6" />
-      <node id="1216128356501" at="17,25,18,97" concept="6" />
-      <node id="1204980427376" at="18,97,19,50" concept="6" />
-      <node id="1241020431963" at="19,50,20,100" concept="6" />
-      <node id="1216127748827" at="20,100,21,105" concept="6" />
-      <node id="1241021659836" at="21,105,22,95" concept="6" />
-      <node id="7336160197132356543" at="23,5,24,93" concept="12" />
-      <node id="7336160197132356543" at="24,93,25,64" concept="12" />
-      <node id="7336160197132356543" at="25,64,26,90" concept="6" />
-      <node id="7336160197132356543" at="26,90,27,55" concept="6" />
-      <node id="1236184333509" at="28,5,29,96" concept="6" />
-      <node id="2494245796547321050" at="29,96,30,50" concept="6" />
-      <node id="2834677590308140829" at="31,5,32,95" concept="12" />
-      <node id="2834677590308140829" at="32,95,33,64" concept="12" />
-      <node id="2834677590308140829" at="33,64,34,90" concept="6" />
-      <node id="2834677590308140829" at="34,90,35,55" concept="6" />
-      <node id="2834677590308140830" at="36,5,37,50" concept="6" />
-      <node id="2735003787920153416" at="37,50,38,98" concept="6" />
-      <node id="7336160197132356543" at="22,95,28,5" concept="2" />
-      <node id="2834677590308140829" at="30,50,36,5" concept="2" />
-      <node id="1204991228238" at="14,0,40,0" concept="4" trace="DevkitActions_ActionGroup#()V" />
-      <scope id="7336160197132356543" at="23,5,27,55">
+      <node id="1204991228238" at="13,0,14,0" concept="16" trace="LABEL_ID_find_usages" />
+      <node id="1204991228238" at="14,0,15,0" concept="16" trace="LABEL_ID_favorites" />
+      <node id="1204991228238" at="15,38,16,31" concept="18" />
+      <node id="1204991228238" at="16,31,17,30" concept="6" />
+      <node id="1204991228238" at="17,30,18,25" concept="6" />
+      <node id="1216128356501" at="18,25,19,97" concept="6" />
+      <node id="1204980427376" at="19,97,20,50" concept="6" />
+      <node id="1241020431963" at="20,50,21,100" concept="6" />
+      <node id="1216127748827" at="21,100,22,105" concept="6" />
+      <node id="1241021659836" at="22,105,23,95" concept="6" />
+      <node id="7336160197132356543" at="24,5,25,93" concept="12" />
+      <node id="7336160197132356543" at="25,93,26,64" concept="12" />
+      <node id="7336160197132356543" at="26,64,27,90" concept="6" />
+      <node id="7336160197132356543" at="27,90,28,55" concept="6" />
+      <node id="1236184333509" at="29,5,30,96" concept="6" />
+      <node id="2494245796547321050" at="30,96,31,50" concept="6" />
+      <node id="7219111183925691909" at="32,5,33,97" concept="12" />
+      <node id="7219111183925691909" at="33,97,34,64" concept="12" />
+      <node id="7219111183925691909" at="34,64,35,90" concept="6" />
+      <node id="7219111183925691909" at="35,90,36,55" concept="6" />
+      <node id="7219111183925691882" at="37,5,38,50" concept="6" />
+      <node id="2834677590308140829" at="39,5,40,95" concept="12" />
+      <node id="2834677590308140829" at="40,95,41,64" concept="12" />
+      <node id="2834677590308140829" at="41,64,42,90" concept="6" />
+      <node id="2834677590308140829" at="42,90,43,55" concept="6" />
+      <node id="2834677590308140830" at="44,5,45,50" concept="6" />
+      <node id="2735003787920153416" at="45,50,46,98" concept="6" />
+      <node id="7336160197132356543" at="23,95,29,5" concept="2" />
+      <node id="7219111183925691909" at="31,50,37,5" concept="2" />
+      <node id="2834677590308140829" at="38,50,44,5" concept="2" />
+      <node id="1204991228238" at="15,0,48,0" concept="4" trace="DevkitActions_ActionGroup#()V" />
+      <scope id="7336160197132356543" at="24,5,28,55">
         <var name="action" id="7336160197132356543" />
         <var name="manager" id="7336160197132356543" />
       </scope>
-      <scope id="2834677590308140829" at="31,5,35,55">
+      <scope id="7219111183925691909" at="32,5,36,55">
+        <var name="action" id="7219111183925691909" />
+        <var name="manager" id="7219111183925691909" />
+      </scope>
+      <scope id="2834677590308140829" at="39,5,43,55">
         <var name="action" id="2834677590308140829" />
         <var name="manager" id="2834677590308140829" />
       </scope>
-      <scope id="1204991228238" at="14,38,38,98" />
-      <scope id="1204991228238" at="14,0,40,0" />
-      <unit id="1204991228238" at="10,0,41,0" name="jetbrains.mps.ide.actions.DevkitActions_ActionGroup" />
+      <scope id="1204991228238" at="15,38,46,98" />
+      <scope id="1204991228238" at="15,0,48,0" />
+      <unit id="1204991228238" at="10,0,49,0" name="jetbrains.mps.ide.actions.DevkitActions_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/1204991229896">
