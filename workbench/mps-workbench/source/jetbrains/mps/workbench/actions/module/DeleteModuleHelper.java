@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.actions.module;
 
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSProject;
@@ -24,7 +25,6 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -33,6 +33,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public class DeleteModuleHelper {
   private static final Logger LOG = LogManager.getLogger(DeleteModuleHelper.class);
@@ -62,7 +63,7 @@ public class DeleteModuleHelper {
     }
 
     //see MPS-18743
-    MPSModuleRepository.getInstance().saveAll();
+    project.getRepository().saveAll();
 
     if (deleteFiles) {
       for (SModel model : module.getModels()) {
@@ -72,65 +73,83 @@ public class DeleteModuleHelper {
       if (module.getFacet(JavaModuleFacet.class) != null) {
         IFile classesGen = module.getFacet(JavaModuleFacet.class).getClassesGen();
         if (classesGen != null) {
-          deleteFile(classesGen.getPath());
+          deleteFile(classesGen.toPath().toString());
         }
       }
       if (module.getFacet(TestsFacet.class) != null) {
-        deleteFile(module.getFacet(TestsFacet.class).getTestsOutputPath().getPath());
+        final IFile testsOutputPath = module.getFacet(TestsFacet.class).getTestsOutputPath();
+        if (testsOutputPath != null) {
+          deleteFile(testsOutputPath.toPath().toString());
+        }
       }
 
       if (module instanceof AbstractModule) {
         AbstractModule curModule = (AbstractModule) module;
-        String outputPath = curModule.getOutputPath().getPath();
+        String outputPath = curModule.getOutputPath().toPath().toString();
         deleteFile(outputPath);
         deleteFile(FileGenerationUtil.getCachesPath(outputPath));
 
-        if(curModule.getDescriptorFile() != null)
+        if (curModule.getDescriptorFile() != null) {
           curModule.getDescriptorFile().delete();
-
-        if (curModule.getModuleSourceDir() != null && curModule.getModuleSourceDir().getChildren().isEmpty()) {
-          deleteFile(curModule.getModuleSourceDir().getPath());
         }
 
-        if(curModule.getDescriptorFile() != null) {
+        if (curModule.getModuleSourceDir() != null && curModule.getModuleSourceDir().getChildren().isEmpty()) {
+          deleteFile(curModule.getModuleSourceDir().toPath().toString());
+        }
+
+        if (curModule.getDescriptorFile() != null) {
           IFile moduleFolder = curModule.getDescriptorFile().getParent();
-          if (deleteDirIfEmpty(moduleFolder))
+          if (moduleFolder !=null && deleteDirIfEmpty(moduleFolder)) {
             moduleFolder.delete();
+          }
         }
       }
     }
 
     //remove from project
     if (project.isProjectModule(module)) {
+      final SRepository repository = project.getRepository();
+      if (repository instanceof SRepositoryExt) {
+        ((SRepositoryExt) repository).unregisterModule(module, project);
+      }
       project.removeModule(module);
-      ((StandaloneMPSProject) project).update();
-      MPSModuleRepository.getInstance().unregisterModule(module, project);
       project.save();
+
+      ((StandaloneMPSProject) project).update();
     }
 
-    if (deleteFiles) ModuleRepositoryFacade.getInstance().removeModuleForced(module);
+    if (deleteFiles) {
+      new ModuleRepositoryFacade(project.getRepository()).removeModuleForced(module);
+    }
   }
 
   private static void deleteFile(String path) {
-    IFile file = FileSystem.getInstance().getFileByPath(path);
-    if (!file.exists()) return;
+    IFile file = FileSystem.getInstance().getFile(path);
+    if (!file.exists()) {
+      return;
+    }
     file.delete();
   }
 
-  private static boolean deleteDirIfEmpty(IFile   file) {
-    if (!file.exists())
+  private static boolean deleteDirIfEmpty(IFile file) {
+    if (!file.exists()) {
       return true;
+    }
 
-    if (!file.isDirectory())
+    if (!file.isDirectory()) {
       return false;
+    }
 
-    if (file.isDirectory() && file.getChildren().isEmpty())
+    if (file.isDirectory() && file.getChildren().isEmpty()) {
       return true;
+    }
 
     boolean checkChild = true;
-    for (IFile child : file.getChildren())
-      if (!deleteDirIfEmpty(child))
+    for (IFile child : file.getChildren()) {
+      if (!deleteDirIfEmpty(child)) {
         return false;
+      }
+    }
 
     return true;
   }

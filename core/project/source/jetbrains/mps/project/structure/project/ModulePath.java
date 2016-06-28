@@ -30,8 +30,10 @@ import java.io.IOException;
 public final class ModulePath {
   private final Logger LOG = LogManager.getLogger(ModulePath.class);
 
-  @NotNull private String myPath; // always canonical path to the module descriptor file
-  @Nullable private String myVirtualFolder; // virtual folder, optional
+  @NotNull
+  private String myPath; // always canonical path to the module descriptor file
+  @Nullable
+  private String myVirtualFolder; // virtual folder, optional
 
   public ModulePath(@NotNull String path) {
     try {
@@ -62,14 +64,21 @@ public final class ModulePath {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
 
-    ModulePath modulePath = (ModulePath) o;
+    if (obj == null || getClass() != obj.getClass()) {
+      return false;
+    }
 
-    if (myVirtualFolder != null ? !myVirtualFolder.equals(modulePath.myVirtualFolder) : modulePath.myVirtualFolder != null) return false;
-    return myPath.equals(modulePath.myPath);
+    ModulePath modulePath = (ModulePath) obj;
+
+    return myPath.equals(modulePath.myPath)
+        && (myVirtualFolder == null
+        ? modulePath.myVirtualFolder == null
+        : myVirtualFolder.equals(modulePath.myVirtualFolder));
   }
 
   @Override

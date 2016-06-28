@@ -44,7 +44,7 @@ public abstract class ProjectBase extends Project {
   // AP fixme must be final, however standalone mps project exposes it (a client can publicly reset the project descriptor)
   protected ProjectDescriptor myProjectDescriptor;
   // contract : each project module must have a corresponding ModulePath in this map
-  private final Map<SModule, ModulePath> myModuleToPathMap = new LinkedHashMap<SModule, ModulePath>();
+  private final Map<SModule, ModulePath> myModuleToPathMap = new LinkedHashMap<>();
   private final ModuleLoader myModuleLoader;
 
   protected ProjectBase(@NotNull ProjectDescriptor projectDescriptor) {
@@ -67,7 +67,7 @@ public abstract class ProjectBase extends Project {
   public final void addModule(@NotNull SModule module) {
     IFile descriptorFile = getDescriptorFileChecked(module);
     if (descriptorFile != null) {
-      ModulePath path = new ModulePath(descriptorFile.getPath());
+      ModulePath path = new ModulePath(descriptorFile.toPath().toString());
       myModuleToPathMap.put(module, path);
       myProjectDescriptor.addModulePath(path);
     }
@@ -80,8 +80,8 @@ public abstract class ProjectBase extends Project {
     }
     IFile descriptorFile = getDescriptorFileChecked(module);
     if (descriptorFile != null) {
-      myModuleToPathMap.remove(module);
-      myProjectDescriptor.removeModulePath(new ModulePath(descriptorFile.getPath()));
+      final ModulePath modulePath = myModuleToPathMap.remove(module);
+      myProjectDescriptor.removeModulePath(modulePath);
     }
   }
 
@@ -97,7 +97,7 @@ public abstract class ProjectBase extends Project {
 
   @NotNull
   public final List<SModule> getProjectModules() {
-    return new ArrayList<SModule>(myModuleToPathMap.keySet());
+    return new ArrayList<>(myModuleToPathMap.keySet());
   }
 
   /**
@@ -166,7 +166,6 @@ public abstract class ProjectBase extends Project {
   protected final void loadDescriptor(@NotNull ProjectDataSource dataSource) {
     checkNotDisposed();
     myProjectDescriptor = dataSource.loadDescriptor();
-
   }
 
   public final void addListener(@NotNull ProjectModuleLoadingListener listener) {

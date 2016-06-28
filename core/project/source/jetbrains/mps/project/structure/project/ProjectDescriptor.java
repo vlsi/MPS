@@ -20,25 +20,17 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * Represents a persisted project state
  * TODO make immutable
  */
 public final class ProjectDescriptor {
-  private static final Comparator<ModulePath> MODULE_BY_PATH_COMPARATOR = new Comparator<ModulePath>() {
-    @Override
-    public int compare(@NotNull ModulePath p1, @NotNull ModulePath p2) {
-      return p1.getPath().equals(p2.getPath()) ? 0 : -1;
-    }
-  };
-
   private final String myName;
-  private final Map<ModulePath, String> myPath2VFolderMap = new TreeMap<ModulePath, String>(MODULE_BY_PATH_COMPARATOR);
+  private final Map<ModulePath, String> myPath2VFolderMap = new HashMap<>();
 
   public ProjectDescriptor(@Nullable String name) {
     myName = name;
@@ -50,7 +42,7 @@ public final class ProjectDescriptor {
   }
 
   public List<ModulePath> getModulePaths() {
-    return new ArrayList<ModulePath>(myPath2VFolderMap.keySet());
+    return new ArrayList<>(myPath2VFolderMap.keySet());
   }
 
   public boolean contains(@NotNull ModulePath path) {
