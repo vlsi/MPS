@@ -16,13 +16,25 @@
 package jetbrains.mps.workbench.choose.models;
 
 import com.intellij.navigation.NavigationItem;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
-public abstract class BaseModelModel extends BaseMPSChooseModel<SModelReference> {
-  public BaseModelModel(jetbrains.mps.project.Project mpsProject) {
+import java.util.ArrayList;
+
+public class BaseModelModel extends BaseMPSChooseModel<SModelReference> {
+  public BaseModelModel(Project mpsProject) {
     super(mpsProject, "model");
+  }
+
+  public BaseModelModel(Project mpsProject, @NotNull SearchScope localScope, @Nullable  SearchScope globalScope) {
+    this(mpsProject);
+    setScope(localScope, globalScope);
   }
 
   @Override
@@ -45,6 +57,15 @@ public abstract class BaseModelModel extends BaseMPSChooseModel<SModelReference>
   @Override
   public NavigationItem doGetNavigationItem(SModelReference object) {
     return new BaseModelItem(object);
+  }
+
+  @Override
+  public SModelReference[] find(SearchScope scope) {
+    ArrayList<SModelReference> res = new ArrayList<>();
+    for (SModel m : scope.getModels()) {
+      res.add(m.getReference());
+    }
+    return res.toArray(new SModelReference[res.size()]);
   }
 
   /**

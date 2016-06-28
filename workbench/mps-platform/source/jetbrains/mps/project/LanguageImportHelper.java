@@ -19,8 +19,10 @@ import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
 import com.intellij.openapi.actionSystem.ShortcutSet;
 import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.scope.ConditionalScope;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccessHelper;
@@ -32,7 +34,6 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import org.jetbrains.annotations.NotNull;
@@ -42,8 +43,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.util.Condition;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -239,17 +240,11 @@ public final class LanguageImportHelper {
 
 
   private void chooseLanguage(final jetbrains.mps.util.Callback<SLanguage> addLanguageAction) {
-    final BaseModuleModel languagesData = new BaseModuleModel(myProject, "language") {
-      @Override
-      public SModuleReference[] find(SearchScope scope) {
-        ArrayList<SModuleReference> res = new ArrayList<SModuleReference>();
-        for (SModule m : scope.getModules()) {
-          if (!(m instanceof Language)) continue;
-          res.add(m.getModuleReference());
-        }
-        return res.toArray(new SModuleReference[res.size()]);
-      }
-    };
+    Condition<SModule> onlyLanguages = new ModuleInstanceCondition(Language.class);
+    SearchScope projectScope = new ConditionalScope(myProject.getScope(), onlyLanguages, null);
+    SearchScope globalScope = new ConditionalScope(new FilteredGlobalScope(), onlyLanguages, null);
+
+    final BaseModuleModel languagesData = new BaseModuleModel(myProject, "language", projectScope, globalScope);
     languagesData.setPromptText("Import language:");
 
     // we used to allow multiple selection, but didn't handle it in any special way

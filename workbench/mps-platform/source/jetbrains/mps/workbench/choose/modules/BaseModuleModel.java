@@ -16,20 +16,30 @@
 package jetbrains.mps.workbench.choose.modules;
 
 import com.intellij.navigation.NavigationItem;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
-public abstract class BaseModuleModel extends BaseMPSChooseModel<SModuleReference> {
-  public BaseModuleModel(@NotNull jetbrains.mps.project.Project mpsProject) {
+import java.util.ArrayList;
+
+public class BaseModuleModel extends BaseMPSChooseModel<SModuleReference> {
+  public BaseModuleModel(@NotNull Project mpsProject) {
     this(mpsProject, "module");
   }
 
-  public BaseModuleModel(@NotNull jetbrains.mps.project.Project mpsProject, String entityName) {
+  public BaseModuleModel(@NotNull Project mpsProject, String entityName) {
     super(mpsProject, entityName);
+  }
+
+  public BaseModuleModel(@NotNull Project mpsProject, String entityName, @NotNull SearchScope localScope, @Nullable SearchScope globalScope) {
+    super(mpsProject, entityName);
+    setScope(localScope, globalScope);
   }
 
   @Override
@@ -71,5 +81,15 @@ public abstract class BaseModuleModel extends BaseMPSChooseModel<SModuleReferenc
       return ((BaseModuleItem) item).getModuleReference();
     }
     return null;
+  }
+
+  @Override
+  public SModuleReference[] find(SearchScope scope) {
+    ArrayList<SModuleReference> res = new ArrayList<SModuleReference>();
+    for (SModule m : scope.getModules()) {
+      res.add(m.getModuleReference());
+    }
+    return res.toArray(new SModuleReference[res.size()]);
+
   }
 }

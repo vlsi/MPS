@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,4 +21,18 @@ public interface Condition<T> {
   Condition TRUE_CONDITION = object -> true;
 
   Condition FALSE_CONDITION = object -> false;
+
+  /**
+   * Typed/checked alternative to {@link #TRUE_CONDITION}
+   */
+  static <T> Condition<T> always() {
+    return TRUE_CONDITION;
+  }
+
+  /**
+   * Typed/checked alternative to {@link #FALSE_CONDITION}
+   */
+  static <T> Condition<T> never() {
+    return FALSE_CONDITION;
+  }
 }

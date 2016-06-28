@@ -6,7 +6,6 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -17,7 +16,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.ModelOrNodeChooser" file="ModelOrNodeChooser.java">
@@ -210,7 +208,6 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -221,7 +218,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringDialog" />
   </dependency>
 </dependenciesRoot>

@@ -9,7 +9,6 @@ import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
-import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
@@ -37,10 +36,6 @@ public class ChooseModuleDialog extends RefactoringDialog {
     setVerticalStretch(2);
 
     final BaseModuleModel goToModuleModel = new BaseModuleModel(myMPSProject) {
-      @Override
-      public SModuleReference[] find(SearchScope scope) {
-        throw new UnsupportedOperationException("must not be used");
-      }
       @Override
       public SModuleReference[] find(boolean checkBoxState) {
         return ListSequence.fromList(myModules).toGenericArray(SModuleReference.class);

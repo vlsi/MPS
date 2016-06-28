@@ -9,7 +9,6 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
-import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
@@ -37,10 +36,6 @@ public class SModelReferenceDialog extends RefactoringDialog {
     setVerticalStretch(2);
 
     final BaseModelModel goToModelModel = new BaseModelModel(myMPSProject) {
-      @Override
-      public SModelReference[] find(SearchScope scope) {
-        throw new UnsupportedOperationException("must not be used");
-      }
       @Override
       public SModelReference[] find(boolean checkBoxState) {
         return ListSequence.fromList(myModels).toGenericArray(SModelReference.class);

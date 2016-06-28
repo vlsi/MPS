@@ -16,12 +16,6 @@
 
 package jetbrains.mps.idea.core.navigation;
 
-import com.intellij.facet.FacetManager;
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.ModuleManager;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.idea.core.facet.MPSFacet;
-import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.psi.MPS2PsiMapperUtil;
 import jetbrains.mps.smodel.BaseScope;
 import jetbrains.mps.util.ConditionalIterable;
@@ -31,11 +25,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.util.Condition;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by danilla on 26/05/16.

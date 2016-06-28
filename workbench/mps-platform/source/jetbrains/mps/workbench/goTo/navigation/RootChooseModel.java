@@ -16,15 +16,13 @@
 package jetbrains.mps.workbench.goTo.navigation;
 
 import com.intellij.navigation.NavigationItem;
-import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.FilteredScope;
+import jetbrains.mps.scope.ConditionalScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.NotCondition;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.TargetKind;
@@ -36,12 +34,7 @@ public class RootChooseModel extends BaseMPSChooseModel<NavigationTarget> {
   public RootChooseModel(Project project) {
     super(project, "node");
     setCheckBoxName("Include stubs and &non-&&project models");
-  }
-
-  @Override
-  public NavigationTarget[] find(boolean checkboxState) {
-    if (checkboxState) return find(GlobalScope.getInstance());
-    return find(new FilterStubsScope(new ModulesScope(getProject().getModulesWithGenerators())));
+    setScope(new ConditionalScope(getProject().getScope(), null, NotCondition.negate(SModelStereotype::isStubModel)), GlobalScope.getInstance());
   }
 
   @Override
@@ -82,21 +75,5 @@ public class RootChooseModel extends BaseMPSChooseModel<NavigationTarget> {
     @Override
   public boolean willOpenEditor() {
     return true;
-  }
-
-  private static class FilterStubsScope extends FilteredScope {
-    public FilterStubsScope(SearchScope scope) {
-      super(scope);
-    }
-
-    @Override
-    protected boolean acceptModule(SModule module) {
-      return true;
-    }
-
-    @Override
-    protected boolean acceptModel(SModel model) {
-      return !SModelStereotype.isStubModel(model);
-    }
   }
 }

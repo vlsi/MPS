@@ -53,10 +53,6 @@
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="mz8t" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.xmlb(MPS.IDEA/)" />
-    <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
-    <import index="cmfw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.event(MPS.OpenAPI/)" />
-    <import index="j9co" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.event(MPS.Core/)" />
-    <import index="v23q" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi(MPS.IDEA/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
@@ -3713,39 +3709,6 @@
                   <node concept="37vLTw" id="5uaEgp6oTCt" role="37wK5m">
                     <ref role="3cqZAo" node="2v0NNHY9J1U" resolve="myMPSProject" />
                   </node>
-                  <node concept="3clFb_" id="2v0NNHY9J1H" role="jymVt">
-                    <property role="IEkAT" value="false" />
-                    <property role="1EzhhJ" value="false" />
-                    <property role="TrG5h" value="find" />
-                    <property role="DiZV1" value="false" />
-                    <node concept="3Tm1VV" id="2v0NNHY9J1I" role="1B3o_S" />
-                    <node concept="10Q1$e" id="2v0NNHY9J1J" role="3clF45">
-                      <node concept="3uibUv" id="2v0NNHY9J2R" role="10Q1$1">
-                        <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
-                      </node>
-                    </node>
-                    <node concept="37vLTG" id="2v0NNHY9J1L" role="3clF46">
-                      <property role="TrG5h" value="scope" />
-                      <node concept="3uibUv" id="2uw3l2fB88X" role="1tU5fm">
-                        <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
-                      </node>
-                    </node>
-                    <node concept="3clFbS" id="2v0NNHY9J1N" role="3clF47">
-                      <node concept="YS8fn" id="2v0NNHY9J2L" role="3cqZAp">
-                        <node concept="2ShNRf" id="2v0NNHY9J2N" role="YScLw">
-                          <node concept="1pGfFk" id="2v0NNHY9J2P" role="2ShVmc">
-                            <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;(java.lang.String)" resolve="UnsupportedOperationException" />
-                            <node concept="Xl_RD" id="2v0NNHY9J2Q" role="37wK5m">
-                              <property role="Xl_RC" value="must not be used" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2AHcQZ" id="3tYsUK_SacL" role="2AJF6D">
-                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                    </node>
-                  </node>
                   <node concept="3clFb_" id="2v0NNHY9J2S" role="jymVt">
                     <property role="TrG5h" value="find" />
                     <node concept="3Tm1VV" id="2v0NNHY9J2U" role="1B3o_S" />
@@ -5400,39 +5363,6 @@
                   <node concept="3Tm1VV" id="6YK8y67p_RX" role="1B3o_S" />
                   <node concept="37vLTw" id="fweninZcOc" role="37wK5m">
                     <ref role="3cqZAo" node="6YK8y67pnoP" resolve="myMPSProject" />
-                  </node>
-                  <node concept="3clFb_" id="6YK8y67p_S1" role="jymVt">
-                    <property role="IEkAT" value="false" />
-                    <property role="1EzhhJ" value="false" />
-                    <property role="TrG5h" value="find" />
-                    <property role="DiZV1" value="false" />
-                    <node concept="3Tm1VV" id="6YK8y67p_S2" role="1B3o_S" />
-                    <node concept="10Q1$e" id="6YK8y67p_S3" role="3clF45">
-                      <node concept="3uibUv" id="6YK8y67px3I" role="10Q1$1">
-                        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
-                      </node>
-                    </node>
-                    <node concept="37vLTG" id="6YK8y67p_S4" role="3clF46">
-                      <property role="TrG5h" value="scope" />
-                      <node concept="3uibUv" id="6YK8y67p_S5" role="1tU5fm">
-                        <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
-                      </node>
-                    </node>
-                    <node concept="3clFbS" id="6YK8y67p_S6" role="3clF47">
-                      <node concept="YS8fn" id="6YK8y67p_S7" role="3cqZAp">
-                        <node concept="2ShNRf" id="6YK8y67p_S8" role="YScLw">
-                          <node concept="1pGfFk" id="6YK8y67p_S9" role="2ShVmc">
-                            <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;(java.lang.String)" resolve="UnsupportedOperationException" />
-                            <node concept="Xl_RD" id="6YK8y67p_Sa" role="37wK5m">
-                              <property role="Xl_RC" value="must not be used" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2AHcQZ" id="6YK8y67p_Sb" role="2AJF6D">
-                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                    </node>
                   </node>
                   <node concept="3clFb_" id="6YK8y67p_Sv" role="jymVt">
                     <property role="TrG5h" value="find" />

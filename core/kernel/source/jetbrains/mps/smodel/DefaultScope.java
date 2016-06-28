@@ -22,6 +22,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -43,6 +44,7 @@ public abstract class DefaultScope extends BaseScope {
   private Set<Language> myUsedLanguages;
   private Set<DevKit> myUsedDevkits;
 
+  @NotNull
   @Override
   public Iterable<SModule> getModules() {
     Set<SModule> result = new HashSet<SModule>();
@@ -55,6 +57,7 @@ public abstract class DefaultScope extends BaseScope {
     return result;
   }
 
+  @NotNull
   @Override
   public Iterable<SModel> getModels() {
     List<SModel> result = new ArrayList<SModel>();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,10 +21,9 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.FilteredGlobalScope;
-import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
@@ -52,6 +51,9 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   private final Map<String, List<NavigationItem>> myProjectNamesCache = new HashMap<String, List<NavigationItem>>();
   private final Map<String, List<NavigationItem>> myGlobalNamesCache = new HashMap<String, List<NavigationItem>>();
+
+  private SearchScope myLocalScope;
+  private SearchScope myGlobalScope;
 
   private String myCheckboxName, myPromptText, myNotInProjectMessage, myNotFoundMessage;
 
@@ -179,8 +181,32 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   }
 
   public T[] find(boolean checkboxState) {
-    if (checkboxState) return find(new FilteredGlobalScope());
-    return find(new ModulesScope(getProject().getModulesWithGenerators()));
+    return find(checkboxState ? getGlobalScope() : getLocalScope());
+  }
+
+  @NotNull
+  protected SearchScope getGlobalScope() {
+    return new FilteredGlobalScope();
+  }
+
+  @NotNull
+  protected SearchScope getLocalScope() {
+    return getProject().getScope();
+  }
+
+  /**
+   * The method is protected as I'm not yet sure whether these should be cons arguments or we shall make model 'configurable' and allow
+   * clients fill e.g. scopes not at construction time. Weight benefit of final construction vs long list of arguments (along with annotations)
+   *
+   * @param localScope default set of elements, available without extras/global staff made available with {@linkplain #getCheckBoxName() checkbox}
+   * @param globalScope extended set of elements, available on explicit request from user. {@code null} indicates same scope as local shall be used.
+   *                    This is done to facilitate in-place local scope creation (new) without a need to extract a local variable.
+   *                    Though unlikely needed, explicit {@linkplain jetbrains.mps.scope.EmptySearchScope empty scope} shall get passed if it's true
+   *                    desire to get nothing at global scope.
+   */
+  protected final void setScope(@NotNull SearchScope localScope, @Nullable SearchScope globalScope) {
+    myLocalScope = localScope;
+    myGlobalScope = globalScope == null ? localScope : globalScope;
   }
 
   /**

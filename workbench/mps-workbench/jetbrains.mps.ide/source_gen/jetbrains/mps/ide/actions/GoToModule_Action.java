@@ -10,18 +10,20 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SearchScope;
-import java.util.List;
-import java.util.ArrayList;
+import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.ModuleInstanceCondition;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.DevKit;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.scope.ConditionalScope;
+import jetbrains.mps.FilteredGlobalScope;
+import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import com.intellij.openapi.application.ModalityState;
 
@@ -55,27 +57,18 @@ public class GoToModule_Action extends BaseAction {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.module");
     // PsiDocumentManager.getInstance(project).commitAllDocuments(); 
     final MPSProject mpsProject = ((MPSProject) MapSequence.fromMap(_params).get("project"));
-    final BaseModuleModel goToModuleModel = new BaseModuleModel(mpsProject) {
-      @Override
-      public SModuleReference[] find(SearchScope scope) {
-        List<SModuleReference> modules = new ArrayList<SModuleReference>();
-        for (SModule module : scope.getModules()) {
-          if (!((module instanceof Solution || module instanceof Language || module instanceof DevKit))) {
-            continue;
-          }
-          modules.add(module.getModuleReference());
-        }
-        return modules.toArray(new SModuleReference[modules.size()]);
-      }
-    };
+    Condition<SModule> knownModules = new ModuleInstanceCondition(Solution.class, Language.class, DevKit.class);
+    SearchScope localScope = new ConditionalScope(mpsProject.getScope(), knownModules, null);
+    SearchScope globalScope = new ConditionalScope(new FilteredGlobalScope(), knownModules, null);
+
+    final BaseModuleModel goToModuleModel = new BaseModuleModel(mpsProject, "module", localScope, globalScope);
     ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(mpsProject.getProject(), goToModuleModel, GoToModule_Action.this);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
-      private SModuleReference myModuleRef;
       public void elementChosen(Object p0) {
-        myModuleRef = goToModuleModel.getModelObject(p0);
-        if (myModuleRef != null) {
-          new ProjectPaneNavigator(mpsProject).shallFocus(true).select(myModuleRef);
+        SModuleReference moduleRef = goToModuleModel.getModelObject(p0);
+        if (moduleRef != null) {
+          new ProjectPaneNavigator(mpsProject).shallFocus(true).select(moduleRef);
         }
       }
     }, ModalityState.current(), true);

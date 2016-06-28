@@ -25,23 +25,21 @@ import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiManager;
+import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.scope.ConditionalScope;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.FileSystemModelHelper;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.util.Condition;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 public class GoToModelPlatformAction extends BaseAction implements DumbAware {
@@ -53,41 +51,30 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.model");
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
-    final BaseModelModel goToModelModel = new BaseModelModel(project) {
+    Condition<SModel> cond = new Condition<SModel>() {
       @Override
-      public SModelReference[] find(SearchScope scope) {
-        Condition<SModel> cond = new Condition<SModel>() {
-          @Override
-          public boolean met(SModel modelDescriptor) {
-            boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor) || SModelStereotype.isStubModel(modelDescriptor);
-            boolean hasModule = modelDescriptor.getModule() != null;
-            return rightStereotype && hasModule;
-          }
-        };
-        ConditionalIterable<SModel> iter = new ConditionalIterable<SModel>(scope.getModels(), cond);
-        List<SModelReference> result = new ArrayList<SModelReference>();
-        for (SModel md : iter) {
-          result.add(md.getReference());
-        }
-        return result.toArray(new SModelReference[result.size()]);
+      public boolean met(SModel modelDescriptor) {
+        boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor) || SModelStereotype.isStubModel(modelDescriptor);
+        boolean hasModule = modelDescriptor.getModule() != null;
+        return rightStereotype && hasModule;
       }
     };
+    final BaseModelModel goToModelModel = new BaseModelModel(project, new ConditionalScope(project.getScope(), null, cond), new ConditionalScope(new FilteredGlobalScope(), null, cond));
     ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project.getProject(), goToModelModel, null);
     popup.setShowListForEmptyPattern(true);
     popup.setCheckBoxShortcut(getShortcutSet());
     popup.invoke(new Callback() {
-      private SModelReference myModelReference;
       @Override
       public void elementChosen(Object element) {
-        myModelReference = goToModelModel.getModelObject(element);
-        if (myModelReference == null) {
+        final SModelReference modelReference = goToModelModel.getModelObject(element);
+        if (modelReference == null) {
           return;
         }
 
         VirtualFile modelFile = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<VirtualFile>() {
           @Override
           public VirtualFile compute() {
-            final SModel model = myModelReference.resolve(project.getRepository());
+            final SModel model = modelReference.resolve(project.getRepository());
 
             if (model == null) {
               return null;

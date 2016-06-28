@@ -11,11 +11,14 @@ import com.intellij.openapi.ui.ValidationInfo;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.GridLayout;
-import jetbrains.mps.workbench.choose.models.BaseModelModel;
-import org.jetbrains.mps.openapi.module.SearchScope;
-import java.util.ArrayList;
+import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.AndCondition;
+import jetbrains.mps.util.NotCondition;
+import jetbrains.mps.workbench.choose.models.BaseModelModel;
+import jetbrains.mps.scope.ConditionalScope;
+import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;
@@ -95,21 +98,19 @@ import java.awt.event.ActionEvent;
     p.add(myStepModuleKind.getComponent());
     p.add(myStepGranularityKind.getComponent());
 
-    final BaseModelModel chooseModel = new BaseModelModel(myProject) {
-      public SModelReference[] find(SearchScope scope) {
-        ArrayList<SModelReference> rv = new ArrayList<SModelReference>();
-        for (SModel m : scope.getModels()) {
-          if (SModelStereotype.isStubModel(m)) {
-            continue;
-          }
-          if (SModelStereotype.isDescriptorModel(m)) {
-            continue;
-          }
-          rv.add(m.getReference());
-        }
-        return rv.toArray(new SModelReference[rv.size()]);
+    Condition<SModel> isStub = new Condition<SModel>() {
+      public boolean met(SModel m) {
+        return SModelStereotype.isStubModel(m);
       }
     };
+    Condition<SModel> isDescriptor = new Condition<SModel>() {
+      public boolean met(SModel m) {
+        return SModelStereotype.isDescriptorModel(m);
+      }
+    };
+    Condition<SModel> filter = new AndCondition<SModel>(NotCondition.negate(isStub), NotCondition.negate(isDescriptor));
+
+    final BaseModelModel chooseModel = new BaseModelModel(myProject, new ConditionalScope(myProject.getScope(), null, filter), new ConditionalScope(new FilteredGlobalScope(), null, filter));
     myChoosePanel = MpsPopupFactory.createPanelForPackage(myProject.getProject(), chooseModel, false);
     myChoosePanel.invoke(new ChooseByNamePopupComponent.Callback() {
       public void elementChosen(Object o) {

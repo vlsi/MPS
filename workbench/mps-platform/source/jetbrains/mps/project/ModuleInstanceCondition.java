@@ -13,26 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.ui.dialogs.properties.input;
+package jetbrains.mps.project;
 
-import jetbrains.mps.VisibleModuleRegistry;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.util.Condition;
 
 /**
- * Filters 'visible' modules through VisibleModuleRegistry.
- * Since VisibleModuleRegistry is in mps-platform, can't move this to kernel/smodel modules
+ * Check SModule instance for particular subclass (Generator, Solution, Language, DevKit).
+ * Useful to filter sequence of modules.
+ * Perhaps, shall live in project module, next to SModule/Language/DevKit stuff
  * @author Artem Tikhomirov
  */
-public class VisibleModuleCondition implements Condition<SModule> {
-  private final VisibleModuleRegistry myVisibleModuleRegistry;
+public class ModuleInstanceCondition implements Condition<SModule> {
+  private final Class<? extends SModule>[] myModuleClasses;
 
-  public VisibleModuleCondition() {
-    myVisibleModuleRegistry = VisibleModuleRegistry.getInstance();
+  public ModuleInstanceCondition(Class<? extends SModule>... moduleClasses) {
+    myModuleClasses = moduleClasses;
   }
 
   @Override
   public boolean met(SModule m) {
-    return myVisibleModuleRegistry.isVisible(m);
+    for (Class<? extends SModule> c : myModuleClasses) {
+      if (c.isInstance(m)) {
+        return true;
+      }
+    }
+    return false;
   }
 }

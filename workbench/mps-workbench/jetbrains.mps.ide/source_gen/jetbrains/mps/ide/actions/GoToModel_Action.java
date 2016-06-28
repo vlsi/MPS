@@ -10,18 +10,16 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import jetbrains.mps.workbench.choose.models.BaseModelModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.ConditionalIterable;
-import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.workbench.choose.models.BaseModelModel;
+import jetbrains.mps.scope.ConditionalScope;
+import jetbrains.mps.FilteredGlobalScope;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import com.intellij.openapi.application.ModalityState;
 
@@ -55,34 +53,20 @@ public class GoToModel_Action extends BaseAction {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.model");
     // PsiDocumentManager.getInstance(project).commitAllDocuments(); 
     final MPSProject mpsProject = ((MPSProject) MapSequence.fromMap(_params).get("project"));
-    final BaseModelModel goToModelModel = new BaseModelModel(mpsProject) {
-      @Override
-      public SModelReference[] find(SearchScope scope) {
-        Condition<SModel> cond = new Condition<SModel>() {
-          @Override
-          public boolean met(SModel model) {
-            boolean rightStereotype = SModelStereotype.isUserModel(model) || SModelStereotype.isStubModel(model);
-            boolean hasModule = model.getModule() != null;
-            return rightStereotype && hasModule;
-          }
-        };
-        ConditionalIterable<SModel> iter = new ConditionalIterable<SModel>(scope.getModels(), cond);
-        List<SModelReference> result = new ArrayList<SModelReference>();
-        for (SModel md : iter) {
-          result.add(md.getReference());
-        }
-        return result.toArray(new SModelReference[result.size()]);
+    Condition<SModel> filter = new Condition<SModel>() {
+      public boolean met(SModel m) {
+        return SModelStereotype.isUserModel(m) || SModelStereotype.isStubModel(m);
       }
     };
+    final BaseModelModel goToModelModel = new BaseModelModel(mpsProject, new ConditionalScope(mpsProject.getScope(), null, filter), new ConditionalScope(new FilteredGlobalScope(), null, filter));
     ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(mpsProject.getProject(), goToModelModel, GoToModel_Action.this);
     popup.setShowListForEmptyPattern(true);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
-      private SModelReference myModelRef;
       public void elementChosen(Object p0) {
-        myModelRef = goToModelModel.getModelObject(p0);
-        if (myModelRef != null) {
-          new ProjectPaneNavigator(mpsProject).shallFocus(true).select(myModelRef);
+        SModelReference modelRef = goToModelModel.getModelObject(p0);
+        if (modelRef != null) {
+          new ProjectPaneNavigator(mpsProject).shallFocus(true).select(modelRef);
         }
       }
     }, ModalityState.current(), false);

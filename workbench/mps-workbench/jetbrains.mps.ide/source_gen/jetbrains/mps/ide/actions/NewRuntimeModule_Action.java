@@ -18,13 +18,10 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import com.intellij.openapi.application.ModalityState;
 
@@ -89,17 +86,7 @@ public class NewRuntimeModule_Action extends BaseAction {
     final Language language = (Language) ((SModule) MapSequence.fromMap(_params).get("contextModule"));
     final MPSTree mpsTree = ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).getTree();
 
-    final BaseModuleModel baseSolutionModel = new BaseModuleModel(((MPSProject) MapSequence.fromMap(_params).get("project")), "runtime module") {
-      @Override
-      public SModuleReference[] find(SearchScope scope) {
-        Iterable<SModule> modules = scope.getModules();
-        return Sequence.fromIterable(modules).select(new ISelector<SModule, SModuleReference>() {
-          public SModuleReference select(SModule it) {
-            return it.getModuleReference();
-          }
-        }).toGenericArray(SModuleReference.class);
-      }
-    };
+    final BaseModuleModel baseSolutionModel = new BaseModuleModel(((MPSProject) MapSequence.fromMap(_params).get("project")), "runtime module");
     ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(((Project) MapSequence.fromMap(_params).get("ideaProject")), baseSolutionModel, NewRuntimeModule_Action.this);
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       @Override

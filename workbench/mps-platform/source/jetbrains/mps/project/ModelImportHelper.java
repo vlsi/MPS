@@ -19,10 +19,11 @@ import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.actionSystem.ShortcutSet;
 import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.scope.ConditionalScope;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Callback;
-import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.workbench.goTo.navigation.RootChooseModel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
@@ -30,13 +31,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 import org.jetbrains.mps.util.Condition;
 
 import java.awt.Frame;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Facility to interoperate with user to add a new model dependency to a model.
@@ -77,27 +75,17 @@ public class ModelImportHelper {
    * @param model model to add import to
    */
   public void addImport(@NotNull SModel model) {
-    final BaseModelModel goToModelModel = new BaseModelModel(myProject) {
+    // FIXME identical condition in GoToModel_Action and in GoToModelPlatformAction
+    Condition<SModel> cond = new Condition<SModel>() {
       @Override
-      public SModelReference[] find(SearchScope scope) {
-        // FIXME identical condition in GoToModel_Action and in GoToModelPlatformAction
-        Condition<SModel> cond = new Condition<SModel>() {
-          @Override
-          public boolean met(SModel modelDescriptor) {
-            boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
-                || SModelStereotype.isStubModel(modelDescriptor);
-            boolean hasModule = modelDescriptor.getModule() != null;
-            return rightStereotype && hasModule;
-          }
-        };
-        ConditionalIterable<SModel> iter = new ConditionalIterable<SModel>(scope.getModels(), cond);
-        List<SModelReference> filteredModelRefs = new ArrayList<SModelReference>();
-        for (SModel md : iter) {
-          filteredModelRefs.add(md.getReference());
-        }
-        return filteredModelRefs.toArray(new SModelReference[filteredModelRefs.size()]);
+      public boolean met(SModel modelDescriptor) {
+        boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
+            || SModelStereotype.isStubModel(modelDescriptor);
+        boolean hasModule = modelDescriptor.getModule() != null;
+        return rightStereotype && hasModule;
       }
     };
+    final BaseModelModel goToModelModel = new BaseModelModel(myProject, new ConditionalScope(myProject.getScope(), null, cond), new ConditionalScope(new FilteredGlobalScope(), null, cond));
     goToModelModel.setPromptText("Import model:");
     ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(myProject, goToModelModel, myInitialText);
     if (myShortcut != null) {
