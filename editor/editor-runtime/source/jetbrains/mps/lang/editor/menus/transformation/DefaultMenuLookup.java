@@ -87,7 +87,7 @@ public abstract class DefaultMenuLookup<T extends Menu> implements MenuLookup<T>
   protected abstract T createDefaultMenu();
 
   @NotNull
-  public SAbstractConcept getConcept() {
+  protected SAbstractConcept getConcept() {
     return myConcept;
   }
 

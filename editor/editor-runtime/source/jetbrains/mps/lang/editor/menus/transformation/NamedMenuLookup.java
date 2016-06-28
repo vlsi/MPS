@@ -76,12 +76,7 @@ public abstract class NamedMenuLookup<T extends Menu> implements MenuLookup<T> {
   }
 
   @NotNull
-  public LanguageRegistry getLanguageRegistry() {
-    return myLanguageRegistry;
-  }
-
-  @NotNull
-  public NamedTransformationMenuId getId() {
+  protected NamedTransformationMenuId getId() {
     return myId;
   }
 

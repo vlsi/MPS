@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.menus.substitute;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.nodeEditor.menus.CircularReferenceSafeMenuItemFactory;
 import jetbrains.mps.nodeEditor.menus.MenuContextUtil;
+import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
@@ -35,6 +36,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author simon
@@ -56,22 +58,26 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   }
 
 
+  @NotNull
   @Override
   public EditorContext getEditorContext() {
     return myEditorContext;
   }
 
-  @Override
-  public SContainmentLink getLink() {
-    return myContainmentLink;
-  }
-
+  @NotNull
   @Override
   public SNode getParentNode() {
     return myParentNode;
   }
 
   @Override
+  @Nullable
+  public SContainmentLink getLink() {
+    return myContainmentLink;
+  }
+
+  @Override
+  @Nullable
   public SNode getCurrentChild() {
     return myCurrentChild;
   }
@@ -90,5 +96,23 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
       SNode currentChild, EditorContext editorContext) {
     return new DefaultSubstituteMenuContext(new CircularReferenceSafeMenuItemFactory<>(MenuContextUtil.getUsedLanguages(parentNode)), containmentLink, parentNode, currentChild, editorContext);
   }
+  @Override
+  public int hashCode() {
+    return Objects.hash(getParentNode(), getEditorContext(), getCurrentChild(), getLink());
+  }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    DefaultSubstituteMenuContext that = (DefaultSubstituteMenuContext) o;
+
+    return getParentNode().equals(that.getParentNode()) && getEditorContext().equals(that.getEditorContext()) &&
+        Objects.equals(getCurrentChild(), that.getCurrentChild()) && Objects.equals(getLink(), that.getLink());
+  }
 }

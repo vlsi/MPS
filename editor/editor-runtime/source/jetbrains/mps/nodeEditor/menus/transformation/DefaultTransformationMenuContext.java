@@ -34,6 +34,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * A default implementation of {@link TransformationMenuContext}. Uses {@link CircularReferenceSafeMenuItemFactory} to protect against endless recursion.
@@ -60,10 +61,12 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
 
   @NotNull
   public static DefaultTransformationMenuContext createInitialContextForNode(EditorContext editorContext, SNode node, @NotNull String menuLocation) {
-    return new DefaultTransformationMenuContext(new CircularReferenceSafeMenuItemFactory<>(MenuContextUtil.getUsedLanguages(node)), menuLocation, editorContext, node);
+    return new DefaultTransformationMenuContext(new CircularReferenceSafeMenuItemFactory<>(MenuContextUtil.getUsedLanguages(node)), menuLocation, editorContext,
+        node);
   }
 
-  private DefaultTransformationMenuContext(@NotNull CircularReferenceSafeMenuItemFactory<TransformationMenuItem, TransformationMenuContext, TransformationMenu> menuItemFactory,
+  private DefaultTransformationMenuContext(
+      @NotNull CircularReferenceSafeMenuItemFactory<TransformationMenuItem, TransformationMenuContext, TransformationMenu> menuItemFactory,
       @NotNull String menuLocation,
       @NotNull EditorContext editorContext, @NotNull SNode node) {
     myMenuItemFactory = menuItemFactory;
@@ -109,5 +112,24 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
     }
 
     return myMenuItemFactory.createItems(this, menuLookup);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getNode(), getEditorContext());
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    DefaultTransformationMenuContext that = (DefaultTransformationMenuContext) o;
+
+    return getNode().equals(that.getNode()) && getEditorContext().equals(that.getEditorContext()) && getMenuLocation().equals(that.getMenuLocation());
   }
 }
