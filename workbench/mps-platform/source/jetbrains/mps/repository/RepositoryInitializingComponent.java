@@ -92,6 +92,9 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
     }, ModalityState.defaultModalityState());
   }
 
+  /**
+   * here idea is the same as in {@link ProjectRootListenerComponent}
+   */
   private void improveLoadingOnSources() {
     if (InternalFlag.isInternalMode()) {
       myFS.getFile(PathManager.getHomePath()).addListener((monitor, event) -> {});

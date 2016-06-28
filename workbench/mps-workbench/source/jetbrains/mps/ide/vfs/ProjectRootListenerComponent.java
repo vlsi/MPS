@@ -19,18 +19,32 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
+import jetbrains.mps.ide.platform.watching.WatchedRoots;
 import jetbrains.mps.vfs.FileListener;
 import jetbrains.mps.vfs.FileSystemEvent;
+import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
+import java.util.Collection;
 import java.util.Map;
 
 /**
  * Adds listener to the local file system, which boosts the project reading.
+ * our {@link WatchedRoots} works recursively, for every {@link WatchedRoots#addWatchRequest(String)} call
+ * it triggers the platfrom mechanism which addresses the native file watcher via external process. This procedure is very time-consuming,
+ * thus in order to optimize MPS opening project performance we call it once for the project root recursively, avoiding to call it for each
+ * {@link FileSystemListener#getFileToListen()} as well as {@link FileListener}.
+ *
+ * The other way might be to collect all the files we want to listen and trigger {@link com.intellij.openapi.vfs.LocalFileSystem#addRootsToWatch(Collection, boolean)}
+ * for multiple roots. Unfortunately right now it is not possible since the whole hierarchy (libraries, projects, modules, models, model roots) listens to
+ * FS events directly. Probably the easier way would be to have a SModule as a delegate of the file system events downwards (to model roots and models).
+ * Then we can collect all the module directories on the project opening and call {@code addRootsToWatch()} for them altogether.
+ * Now I see it as the way it should be done.
+ *
  * AP
  */
 public final class ProjectRootListenerComponent implements ProjectComponent {
