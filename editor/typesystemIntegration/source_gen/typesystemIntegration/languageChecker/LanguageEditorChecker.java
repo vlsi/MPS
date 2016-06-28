@@ -39,6 +39,7 @@ import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import org.apache.log4j.Level;
+import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.errors.QuickFix_Runtime;
@@ -199,7 +200,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), node, new ITypechecking.Computation<Set<EditorMessage>>() {
       @Override
       public Set<EditorMessage> compute(TypeCheckingContext typeCheckingContext) {
-        return doCreateMessages(node, list, wasCheckedOnce, editorContext, typeCheckingContext, cancellable);
+        return doCreateMessages(node, wasCheckedOnce, editorContext, typeCheckingContext, cancellable);
       }
     });
   }
@@ -207,62 +208,66 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   protected Set<EditorMessage> createMessages(final SNode node, final List<SModelEvent> list, final boolean wasCheckedOnce, final EditorContext editorContext) {
     throw new UnsupportedOperationException("old createMessages() API not supported");
   }
-  private Set<EditorMessage> doCreateMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext, TypeCheckingContext typeCheckingContext, Cancellable cancellable) {
+  private Set<EditorMessage> doCreateMessages(SNode node, boolean wasCheckedOnce, EditorContext editorContext, TypeCheckingContext typeCheckingContext, Cancellable cancellable) {
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
-    SModel model = editorContext.getModel();
     boolean inspector = editorComponent instanceof InspectorEditorComponent;
-
-    myScopeChecker.setEditorComponent(editorComponent);
 
     myMessagesChanged = false;
 
-    Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
     SNode editedNode = editorComponent.getEditedNode();
 
     if (editedNode == null) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("edited node is null");
       }
-      return result;
+      return Collections.emptySet();
     }
     if (node.getModel() == null || SNodeOperations.getModel(editedNode) == null) {
       // descriptor is null for a replaced model 
       // after model is replaced but before it is disposed (this can happen asyncronously) 
-      return result;
+      return Collections.emptySet();
     }
 
     LanguageErrorsComponent errorsComponent = getErrorsComponent(editorComponent);
     if (errorsComponent == null) {
-      return result;
+      return Collections.emptySet();
     }
 
     if (!(wasCheckedOnce)) {
       errorsComponent.clear();
     }
 
-    if (inspector) {
-      myMessagesChanged = errorsComponent.checkInspector();
-    } else {
-      boolean changed = false;
-      try {
-        if (typeCheckingContext != null) {
-          typeCheckingContext.setIsNonTypesystemComputation();
-        }
-        changed = errorsComponent.check(SNodeOperations.getContainingRoot(((SNode) node)), myRules, editorContext.getRepository(), cancellable);
-      } finally {
-        if (typeCheckingContext != null) {
-          typeCheckingContext.resetIsNonTypesystemComputation();
-        }
-      }
-      myMessagesChanged = changed;
-    }
+    myMessagesChanged = runChecks(inspector, errorsComponent, typeCheckingContext, node, editorContext, cancellable);
 
     if (!(myMessagesChanged)) {
-      // skipping quickfix processing if othing was changed 
-      return result;
+      // skipping further processing if nothing was changed 
+      return Collections.emptySet();
     }
 
-    boolean runQuickFixes = shouldRunQuickFixs(model, inspector);
+    return createMessages(editorContext, inspector, errorsComponent, editedNode);
+  }
+
+  private boolean runChecks(boolean inspector, LanguageErrorsComponent errorsComponent, TypeCheckingContext typeCheckingContext, SNode node, EditorContext editorContext, Cancellable cancellable) {
+    if (inspector) {
+      return errorsComponent.checkInspector();
+    }
+
+    try {
+      if (typeCheckingContext != null) {
+        typeCheckingContext.setIsNonTypesystemComputation();
+      }
+      myScopeChecker.setEditorComponent((EditorComponent) editorContext.getEditorComponent());
+      return errorsComponent.check(SNodeOperations.getContainingRoot(((SNode) node)), myRules, editorContext.getRepository(), cancellable);
+    } finally {
+      if (typeCheckingContext != null) {
+        typeCheckingContext.resetIsNonTypesystemComputation();
+      }
+    }
+  }
+
+  private Set<EditorMessage> createMessages(EditorContext editorContext, boolean inspector, LanguageErrorsComponent errorsComponent, SNode editedNode) {
+    Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
+    boolean runQuickFixes = shouldRunQuickFixs(editorContext.getModel(), inspector);
     final List<Tuples._2<QuickFix_Runtime, SNode>> quickFixesToExecute = ListSequence.fromList(new ArrayList<Tuples._2<QuickFix_Runtime, SNode>>());
     for (IErrorReporter errorReporter : errorsComponent.getErrors()) {
       // todo here should be processor-based architecture, like in other checkers 

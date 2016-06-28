@@ -64,6 +64,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
