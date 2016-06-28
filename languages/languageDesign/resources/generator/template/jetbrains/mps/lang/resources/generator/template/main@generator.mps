@@ -262,7 +262,7 @@
     <property role="TrG5h" value="main" />
     <node concept="3lhOvk" id="2_ZsO1DJhp8" role="3lj3bC">
       <ref role="3lhOvi" node="66H88lVoBT3" resolve="IconResourceBundle" />
-      <ref role="30HIoZ" to="1oap:7Mb2akaesqX" resolve="IconBundle" />
+      <ref role="30HIoZ" to="1oap:7Mb2akaesqX" resolve="OldIconBundle" />
     </node>
     <node concept="2VPoh5" id="5Rfx8MvemYH" role="2VS0gm">
       <ref role="2sBCQV" node="5Rfx8MveyCf" resolve="map_IconContainer" />
@@ -317,7 +317,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="2_ZsO1DKDWW" role="3acgRq">
-      <ref role="30HIoZ" to="1oap:7Mb2akaesr7" resolve="IconReference" />
+      <ref role="30HIoZ" to="1oap:7Mb2akaesr7" resolve="OldIconReference" />
       <node concept="gft3U" id="2_ZsO1DMAN_" role="1lVwrX">
         <node concept="2OqwBi" id="2_ZsO1DNdfX" role="gfFT$">
           <node concept="liA8E" id="2_ZsO1DNdg3" role="2OqNvi">
@@ -362,7 +362,7 @@
                     <node concept="3cpWsn" id="2_ZsO1DMANI" role="3cpWs9">
                       <property role="TrG5h" value="irb" />
                       <node concept="3Tqbb2" id="2_ZsO1DMANJ" role="1tU5fm">
-                        <ref role="ehGHo" to="1oap:7Mb2akaesqX" resolve="IconBundle" />
+                        <ref role="ehGHo" to="1oap:7Mb2akaesqX" resolve="OldIconBundle" />
                       </node>
                       <node concept="2OqwBi" id="2_ZsO1DMANK" role="33vP2m">
                         <node concept="2OqwBi" id="2_ZsO1DMANL" role="2Oq$k0">
@@ -374,7 +374,7 @@
                         <node concept="2Xjw5R" id="2_ZsO1DMANO" role="2OqNvi">
                           <node concept="1xMEDy" id="2_ZsO1DMANP" role="1xVPHs">
                             <node concept="chp4Y" id="2_ZsO1DMANQ" role="ri$Ld">
-                              <ref role="cht4Q" to="1oap:7Mb2akaesqX" resolve="IconBundle" />
+                              <ref role="cht4Q" to="1oap:7Mb2akaesqX" resolve="OldIconBundle" />
                             </node>
                           </node>
                         </node>
@@ -430,6 +430,7 @@
   </node>
   <node concept="13MO4I" id="5Rfx8Mve9xK">
     <property role="TrG5h" value="reduce_IconExpression" />
+    <property role="3GE5qa" value="icons.instantiation" />
     <ref role="3gUMe" to="1oap:7Mb2akaesr3" resolve="IconExpression" />
     <node concept="312cEu" id="5Rfx8MveyC8" role="13RCb5">
       <property role="TrG5h" value="TemplateClass" />
@@ -495,7 +496,7 @@
     <property role="3GE5qa" value="iconBundle" />
     <node concept="3Tm1VV" id="66H88lVoBT4" role="1B3o_S" />
     <node concept="n94m4" id="66H88lVoBT9" role="lGtFl">
-      <ref role="n9lRv" to="1oap:7Mb2akaesqX" resolve="IconBundle" />
+      <ref role="n9lRv" to="1oap:7Mb2akaesqX" resolve="OldIconBundle" />
     </node>
     <node concept="17Uvod" id="66H88lVoBTa" role="lGtFl">
       <property role="2qtEX9" value="name" />
@@ -954,6 +955,7 @@
   </node>
   <node concept="13MO4I" id="5bVxHVEuPSN">
     <property role="TrG5h" value="reduce_IconResourceExpression" />
+    <property role="3GE5qa" value="icons.instantiation" />
     <ref role="3gUMe" to="1oap:5bVxHVEuklu" resolve="IconResourceExpression" />
     <node concept="312cEu" id="5bVxHVEuPSO" role="13RCb5">
       <property role="TrG5h" value="TemplateClass" />

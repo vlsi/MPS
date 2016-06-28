@@ -10,9 +10,12 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.resources.behavior.BehaviorAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.resources.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.resources.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.resources.intentions.IntentionsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.resources.migration.MigrationDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.resources.plugin.FacetAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.resources.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.lang.resources.structure.StructureAspectDescriptor" />
@@ -23,6 +26,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.MakeAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />

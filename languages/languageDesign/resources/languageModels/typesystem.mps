@@ -72,6 +72,7 @@
   </registry>
   <node concept="1YbPZF" id="7Mb2akaesvL">
     <property role="TrG5h" value="typeof_IconExpression" />
+    <property role="3GE5qa" value="icons.instantiation" />
     <node concept="3clFbS" id="7Mb2akaesvM" role="18ibNy">
       <node concept="1Z5TYs" id="7Mb2akaesvN" role="3cqZAp">
         <node concept="mw_s8" id="7Mb2akaesvO" role="1ZfhKB">
@@ -97,7 +98,7 @@
   </node>
   <node concept="1YbPZF" id="7Mb2akaesvV">
     <property role="TrG5h" value="typeof_IconResourceDeclaration" />
-    <property role="3GE5qa" value="iconBundle" />
+    <property role="3GE5qa" value="deprecated" />
     <node concept="3clFbS" id="7Mb2akaesvW" role="18ibNy">
       <node concept="1ZobV4" id="7Mb2akaesvX" role="3cqZAp">
         <property role="3wDh2S" value="true" />
@@ -124,12 +125,12 @@
     </node>
     <node concept="1YaCAy" id="7Mb2akaesw6" role="1YuTPh">
       <property role="TrG5h" value="ird" />
-      <ref role="1YaFvo" to="1oap:7Mb2akaesr0" resolve="IconDeclaration" />
+      <ref role="1YaFvo" to="1oap:7Mb2akaesr0" resolve="OldIconDeclaration" />
     </node>
   </node>
   <node concept="1YbPZF" id="7Mb2akaesw7">
     <property role="TrG5h" value="typeof_IconResourceReference" />
-    <property role="3GE5qa" value="iconBundle" />
+    <property role="3GE5qa" value="deprecated" />
     <node concept="3clFbS" id="7Mb2akaesw8" role="18ibNy">
       <node concept="1Z5TYs" id="7Mb2akaesw9" role="3cqZAp">
         <node concept="mw_s8" id="7Mb2akaeswa" role="1ZfhKB">
@@ -150,11 +151,12 @@
     </node>
     <node concept="1YaCAy" id="7Mb2akaeswg" role="1YuTPh">
       <property role="TrG5h" value="irr" />
-      <ref role="1YaFvo" to="1oap:7Mb2akaesr7" resolve="IconReference" />
+      <ref role="1YaFvo" to="1oap:7Mb2akaesr7" resolve="OldIconReference" />
     </node>
   </node>
   <node concept="1YbPZF" id="5bVxHVEur_I">
     <property role="TrG5h" value="typeof_IconResourceExpression" />
+    <property role="3GE5qa" value="icons.instantiation" />
     <node concept="3clFbS" id="5bVxHVEur_J" role="18ibNy">
       <node concept="1Z5TYs" id="5bVxHVEur_K" role="3cqZAp">
         <node concept="mw_s8" id="5bVxHVEur_L" role="1ZfhKB">
