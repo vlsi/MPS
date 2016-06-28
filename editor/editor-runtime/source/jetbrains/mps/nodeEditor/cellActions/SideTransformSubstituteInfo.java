@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
+import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractSubstituteInfo;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -32,6 +33,7 @@ import java.util.stream.Collectors;
  * @author simon
  */
 public class SideTransformSubstituteInfo extends AbstractSubstituteInfo {
+  //todo remove these
   private final static String RIGHT_SIDE_TRANSFORM = "jetbrains.mps.nodeEditor.sidetransform.RIGHT_SIDE_TRANSFORM";
   private final static String LEFT_SIDE_TRANSFORM = "jetbrains.mps.nodeEditor.sidetransform.LEFT_SIDE_TRANSFORM";
   private final Side mySide;
@@ -69,8 +71,8 @@ public class SideTransformSubstituteInfo extends AbstractSubstituteInfo {
 
 
   public enum Side {
-    LEFT(LEFT_SIDE_TRANSFORM),
-    RIGHT(RIGHT_SIDE_TRANSFORM);
+    LEFT(MenuLocations.LEFT_SIDE_TRANSFORM),
+    RIGHT(MenuLocations.RIGHT_SIDE_TRANSFORM);
 
     public final String myMenuLocation;
 

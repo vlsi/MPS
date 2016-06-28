@@ -37,7 +37,7 @@ public class DefaultConceptMenu extends TransformationMenuBase {
   private final SAbstractConcept myConcept;
   @Override
   protected List<jetbrains.mps.lang.editor.menus.MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext context) {
-    if (context.getMenuLocation().equals(SChildSubstituteInfo.SUBSTITUTE)) {
+    if (context.getMenuLocation().equals(MenuLocations.SUBSTITUTE)) {
       return Collections.singletonList(new IncludeSubstituteMenuTransformationMenuPart());
     } else {
       return Collections.singletonList(new DefaultConceptMenusTransformationMenuPart() {

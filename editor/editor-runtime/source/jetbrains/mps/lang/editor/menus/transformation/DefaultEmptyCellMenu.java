@@ -40,7 +40,7 @@ public class DefaultEmptyCellMenu extends TransformationMenuBase{
 
   @Override
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext context) {
-    if (context.getMenuLocation().equals(SChildSubstituteInfo.SUBSTITUTE)) {
+    if (context.getMenuLocation().equals(MenuLocations.SUBSTITUTE)) {
       return Collections.singletonList(new IncludeSubstituteMenuTransformationMenuPart() {
         @Override
         protected SNode getParentNode(TransformationMenuContext context) {

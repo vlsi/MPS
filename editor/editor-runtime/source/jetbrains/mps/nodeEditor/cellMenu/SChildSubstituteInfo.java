@@ -34,6 +34,7 @@ import java.util.HashMap;
  * @author simon
  */
 public class SChildSubstituteInfo extends AbstractSubstituteInfo {
+  //todo remove
   public final static String SUBSTITUTE = "jetbrains.mps.nodeEditor.cellMenu.SUBSTITUTE";
   private SContainmentLink myLink;
   private SNode myParentNode;
