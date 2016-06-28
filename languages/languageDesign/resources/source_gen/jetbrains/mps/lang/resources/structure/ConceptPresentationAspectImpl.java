@@ -5,42 +5,50 @@ package jetbrains.mps.lang.resources.structure;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Map;
 import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private final ConceptPresentation props_Circle = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_FileIcon = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")).create();
   private final ConceptPresentation props_Icon = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IconBundle = new ConceptPresentationBuilder().icon("iconResourceBundle.png", ConceptPresentationAspectImpl.class).create();
-  private final ConceptPresentation props_IconDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IconExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IconReference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IconLayerDescription = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IconResourceExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Resource = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Image = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_OldIconBundle = new ConceptPresentationBuilder().deprecated().icon("iconResourceBundle.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_OldIconDeclaration = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_OldIconReference = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_Primitive = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Rect = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Resource = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, 0x7c8b08a50a39c6cbL, "path")).create();
+  private final ConceptPresentation props_Text = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TextIcon = new ConceptPresentationBuilder().create();
 
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     {
       SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0i.get(cncpt);
+      Integer preIndex = indices_lpa09p_a0q.get(cncpt);
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
           if (true) {
-            return props_Icon;
+            return props_Circle;
           }
           break;
         case 1:
           if (true) {
-            return props_IconBundle;
+            return props_FileIcon;
           }
           break;
         case 2:
           if (true) {
-            return props_IconDeclaration;
+            return props_Icon;
           }
           break;
         case 3:
@@ -50,7 +58,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           break;
         case 4:
           if (true) {
-            return props_IconReference;
+            return props_IconLayerDescription;
           }
           break;
         case 5:
@@ -60,7 +68,47 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           break;
         case 6:
           if (true) {
+            return props_Image;
+          }
+          break;
+        case 7:
+          if (true) {
+            return props_OldIconBundle;
+          }
+          break;
+        case 8:
+          if (true) {
+            return props_OldIconDeclaration;
+          }
+          break;
+        case 9:
+          if (true) {
+            return props_OldIconReference;
+          }
+          break;
+        case 10:
+          if (true) {
+            return props_Primitive;
+          }
+          break;
+        case 11:
+          if (true) {
+            return props_Rect;
+          }
+          break;
+        case 12:
+          if (true) {
             return props_Resource;
+          }
+          break;
+        case 13:
+          if (true) {
+            return props_Text;
+          }
+          break;
+        case 14:
+          if (true) {
+            return props_TextIcon;
           }
           break;
         default:
@@ -76,5 +124,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.Icon"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bdL, "jetbrains.mps.lang.resources.structure.IconBundle"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c0L, "jetbrains.mps.lang.resources.structure.IconDeclaration"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, "jetbrains.mps.lang.resources.structure.IconExpression"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c7L, "jetbrains.mps.lang.resources.structure.IconReference"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x52fb86deea79455eL, "jetbrains.mps.lang.resources.structure.IconResourceExpression"), MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, "jetbrains.mps.lang.resources.structure.Resource"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0q = buildConceptIndices(MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e60L, "jetbrains.mps.lang.resources.structure.Circle"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.FileIcon"), MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c3774289eeeL, "jetbrains.mps.lang.resources.structure.Icon"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, "jetbrains.mps.lang.resources.structure.IconExpression"), MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e65L, "jetbrains.mps.lang.resources.structure.IconLayerDescription"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x52fb86deea79455eL, "jetbrains.mps.lang.resources.structure.IconResourceExpression"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0xb8b96b5078f3367L, "jetbrains.mps.lang.resources.structure.Image"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bdL, "jetbrains.mps.lang.resources.structure.OldIconBundle"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c0L, "jetbrains.mps.lang.resources.structure.OldIconDeclaration"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c7L, "jetbrains.mps.lang.resources.structure.OldIconReference"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L, "jetbrains.mps.lang.resources.structure.Primitive"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e61L, "jetbrains.mps.lang.resources.structure.Rect"), MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, "jetbrains.mps.lang.resources.structure.Resource"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b9L, "jetbrains.mps.lang.resources.structure.Text"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L, "jetbrains.mps.lang.resources.structure.TextIcon"));
 }

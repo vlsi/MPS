@@ -16,28 +16,29 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class IconBundle__BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bdL, "jetbrains.mps.lang.resources.structure.IconBundle");
+public final class TextIcon__BehaviorDescriptor extends BaseBHDescriptor {
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L, "jetbrains.mps.lang.resources.structure.TextIcon");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> getJavaName_id7Mb2akaesvf = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getJavaName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Mb2akaesvf").registry(REGISTRY).build();
+  public static final SMethod<String> getResourceId_id2p1v3tOadt0 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getResourceId").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2p1v3tOadt0").registry(REGISTRY).build();
+  public static final SMethod<Void> generate_id7Mb2akaesv8 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("generate").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Mb2akaesv8").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getJavaName_id7Mb2akaesvf);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getResourceId_id2p1v3tOadt0, generate_id7Mb2akaesv8);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static String getJavaName_id7Mb2akaesvf(@NotNull SNode __thisNode__) {
-    return "IconResourceBundle_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+  /*package*/ static String getResourceId_id2p1v3tOadt0(@NotNull SNode __thisNode__) {
+    return "TextIcon_" + __thisNode__.getNodeId().toString();
+  }
+  /*package*/ static void generate_id7Mb2akaesv8(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ IconBundle__BehaviorDescriptor() {
+  /*package*/ TextIcon__BehaviorDescriptor() {
     super(REGISTRY);
   }
 
@@ -54,7 +55,10 @@ public final class IconBundle__BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((String) getJavaName_id7Mb2akaesvf(node));
+        return (T) ((String) getResourceId_id2p1v3tOadt0(node));
+      case 1:
+        generate_id7Mb2akaesv8(node);
+        return null;
       default:
         throw new BHMethodNotFoundException(this, method);
     }
