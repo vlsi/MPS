@@ -5,17 +5,19 @@ package jetbrains.mps.ide.java.platform.highlighters;
 import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.project.MPSProject;
 import java.util.Deque;
-import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
+import jetbrains.mps.nodeEditor.checking.EditorChecker;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import java.util.LinkedList;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.nodeEditor.Highlighter;
+import jetbrains.mps.nodeEditor.checking.LegacyEditorCheckerAdapter;
+import jetbrains.mps.nodeEditor.checking.DisposableEditorChecker;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class JavaHighlighters implements ProjectComponent {
   private MPSProject myProject;
-  private Deque<BaseEditorChecker> myCheckers = DequeSequence.fromDequeNew(new LinkedList<BaseEditorChecker>());
+  private Deque<EditorChecker> myCheckers = DequeSequence.fromDequeNew(new LinkedList<EditorChecker>());
   public JavaHighlighters(MPSProject project, MPSCoreComponents coreComponents) {
     myProject = project;
   }
@@ -28,19 +30,20 @@ public class JavaHighlighters implements ProjectComponent {
   @Override
   public void initComponent() {
     Highlighter highlighter = getHighlighter();
-    highlighter.addChecker(DequeSequence.fromDequeNew(myCheckers).pushElement(new OverrideMethodsChecker(myProject)));
+    highlighter.addChecker(DequeSequence.fromDequeNew(myCheckers).pushElement(new LegacyEditorCheckerAdapter(new OverrideMethodsChecker(myProject))));
     highlighter.addChecker(DequeSequence.fromDequeNew(myCheckers).pushElement(new ToDoHighlighter()));
-    highlighter.addChecker(DequeSequence.fromDequeNew(myCheckers).pushElement(new MethodDeclarationsFixer()));
+    highlighter.addChecker(DequeSequence.fromDequeNew(myCheckers).pushElement(new LegacyEditorCheckerAdapter(new MethodDeclarationsFixer())));
   }
   @Override
   public void disposeComponent() {
     Highlighter highlighter = getHighlighter();
     while (DequeSequence.fromDequeNew(myCheckers).isNotEmpty()) {
-      BaseEditorChecker checker = DequeSequence.fromDequeNew(myCheckers).popElement();
+      EditorChecker checker = DequeSequence.fromDequeNew(myCheckers).popElement();
       highlighter.removeChecker(checker);
-      checker.dispose();
+      if (checker instanceof DisposableEditorChecker) {
+        ((DisposableEditorChecker) checker).dispose();
+      }
     }
-
     myProject = null;
   }
   @NonNls
