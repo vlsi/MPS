@@ -75,6 +75,7 @@
     <import index="qtqj" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.lang.editor.menus.substitute(MPS.Editor/)" />
     <import index="v95p" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.lang.editor.menus(MPS.Editor/)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
+    <import index="pzjl" ref="r:888f884c-21a6-4c69-8542-f7b6794021a2(jetbrains.mps.editor.runtime.items)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -32458,9 +32459,9 @@
         <node concept="2ShNRf" id="39pdj2NGTGi" role="gfFT$">
           <node concept="Tc6Ow" id="39pdj2NGTGj" role="2ShVmc">
             <node concept="17QB3L" id="39pdj2NGTGk" role="HW$YZ" />
-            <node concept="10M0yZ" id="39pdj2NGUrw" role="HW$Y0">
-              <ref role="1PxDUh" to="6lvu:~SChildSubstituteInfo" resolve="SChildSubstituteInfo" />
-              <ref role="3cqZAo" to="6lvu:~SChildSubstituteInfo.SUBSTITUTE" resolve="SUBSTITUTE" />
+            <node concept="10M0yZ" id="3no4VMf8MMZ" role="HW$Y0">
+              <ref role="1PxDUh" to="9eyi:~MenuLocations" resolve="MenuLocations" />
+              <ref role="3cqZAo" to="9eyi:~MenuLocations.SUBSTITUTE" resolve="SUBSTITUTE" />
             </node>
           </node>
         </node>
@@ -33757,8 +33758,8 @@
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpc2:2wNq5j$KpC6" resolve="TransformationLocation_SideTransform" />
       <node concept="gft3U" id="6VgTvK0ospZ" role="1lVwrX">
-        <node concept="3uibUv" id="30NnNOohAP0" role="gfFT$">
-          <ref role="3uigEE" to="uddc:~CompletionActionItem" resolve="CompletionActionItem" />
+        <node concept="3uibUv" id="3WiHtPHdtCJ" role="gfFT$">
+          <ref role="3uigEE" to="pzjl:3no4VMf9D4J" resolve="SideTransformCompletionActionItem" />
         </node>
       </node>
     </node>
@@ -33766,8 +33767,8 @@
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpc2:6n_hLaFlw4s" resolve="TransformationLocation_Completion" />
       <node concept="gft3U" id="39pdj2NGUwd" role="1lVwrX">
-        <node concept="3uibUv" id="39pdj2NGUwe" role="gfFT$">
-          <ref role="3uigEE" to="uddc:~CompletionActionItem" resolve="CompletionActionItem" />
+        <node concept="3uibUv" id="3WiHtPHdtCN" role="gfFT$">
+          <ref role="3uigEE" to="pzjl:3no4VMf9D3M" resolve="SubstituteCompletionActionItem" />
         </node>
       </node>
     </node>
