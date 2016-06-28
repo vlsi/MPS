@@ -7,13 +7,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.platform.actions.core.MoveContext" file="MoveContext.java">
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.platform.actions.core.MoveContextImpl" file="MoveContextImpl.java">
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveContext" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.platform.actions.core.MoveModelRefactoringParticipant" file="MoveModelRefactoringParticipant.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />

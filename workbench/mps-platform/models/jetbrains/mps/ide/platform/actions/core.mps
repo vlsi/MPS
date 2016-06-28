@@ -2254,9 +2254,6 @@
                     <node concept="3clFb_" id="55uxGWy8qsj" role="jymVt">
                       <property role="1EzhhJ" value="false" />
                       <property role="TrG5h" value="check" />
-                      <node concept="2AHcQZ" id="7w15VOz8oVT" role="2AJF6D">
-                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                      </node>
                       <node concept="10P_77" id="55uxGWy8qsl" role="3clF45" />
                       <node concept="3Tm1VV" id="55uxGWy8qsk" role="1B3o_S" />
                       <node concept="37vLTG" id="55uxGWy8qsm" role="3clF46">
@@ -2380,6 +2377,9 @@
                             </node>
                           </node>
                         </node>
+                      </node>
+                      <node concept="2AHcQZ" id="7w15VOz8oVT" role="2AJF6D">
+                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                       </node>
                     </node>
                   </node>
@@ -4177,72 +4177,6 @@
     <node concept="3Tm1VV" id="1F5g4zQqVSS" role="1B3o_S" />
     <node concept="3uibUv" id="1F5g4zQqVTe" role="EKbjA">
       <ref role="3uigEE" node="1F5g4zQqSPt" resolve="MoveNodesAction" />
-    </node>
-  </node>
-  <node concept="3HP615" id="5ZhKIhenbtA">
-    <property role="TrG5h" value="MoveContext" />
-    <node concept="3clFb_" id="5ZhKIhenbAK" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="getSearchScope" />
-      <node concept="3clFbS" id="5ZhKIhenbAN" role="3clF47" />
-      <node concept="3Tm1VV" id="5ZhKIhenbAO" role="1B3o_S" />
-      <node concept="3uibUv" id="5ZhKIhenEUL" role="3clF45">
-        <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
-      </node>
-    </node>
-    <node concept="3Tm1VV" id="5ZhKIhenbtB" role="1B3o_S" />
-  </node>
-  <node concept="312cEu" id="6msDcinM_JI">
-    <property role="TrG5h" value="MoveContextImpl" />
-    <node concept="312cEg" id="6msDcinMA51" role="jymVt">
-      <property role="TrG5h" value="mySearchScope" />
-      <node concept="3Tm6S6" id="6msDcinMA52" role="1B3o_S" />
-      <node concept="3uibUv" id="6msDcinMAbi" role="1tU5fm">
-        <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
-      </node>
-    </node>
-    <node concept="3clFbW" id="6msDcinM_S8" role="jymVt">
-      <node concept="3cqZAl" id="6msDcinM_Sa" role="3clF45" />
-      <node concept="3Tm1VV" id="6msDcinM_Sb" role="1B3o_S" />
-      <node concept="3clFbS" id="6msDcinM_Sc" role="3clF47">
-        <node concept="3clFbF" id="6msDcinMAAy" role="3cqZAp">
-          <node concept="37vLTI" id="6msDcinMAGM" role="3clFbG">
-            <node concept="37vLTw" id="6msDcinMARD" role="37vLTx">
-              <ref role="3cqZAo" node="6msDcinM_Yk" resolve="searchScope" />
-            </node>
-            <node concept="37vLTw" id="6msDcinMAAx" role="37vLTJ">
-              <ref role="3cqZAo" node="6msDcinMA51" resolve="mySearchScope" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="6msDcinM_Yk" role="3clF46">
-        <property role="TrG5h" value="searchScope" />
-        <node concept="3uibUv" id="6msDcinM_Yj" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="6msDcinM_KK" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="getSearchScope" />
-      <node concept="3Tm1VV" id="6msDcinM_KM" role="1B3o_S" />
-      <node concept="3uibUv" id="6msDcinM_KN" role="3clF45">
-        <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
-      </node>
-      <node concept="3clFbS" id="6msDcinM_KO" role="3clF47">
-        <node concept="3clFbF" id="6msDcinMB58" role="3cqZAp">
-          <node concept="37vLTw" id="6msDcinMB57" role="3clFbG">
-            <ref role="3cqZAo" node="6msDcinMA51" resolve="mySearchScope" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3Tm1VV" id="6msDcinM_JJ" role="1B3o_S" />
-    <node concept="3uibUv" id="6msDcinM_K$" role="EKbjA">
-      <ref role="3uigEE" node="5ZhKIhenbtA" resolve="MoveContext" />
     </node>
   </node>
   <node concept="312cEu" id="6msDcinOaKu">
