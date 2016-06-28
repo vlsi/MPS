@@ -22,6 +22,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuConte
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -39,7 +40,12 @@ public class DefaultConceptMenu extends TransformationMenuBase {
     if (context.getMenuLocation().equals(SChildSubstituteInfo.SUBSTITUTE)) {
       return Collections.singletonList(new IncludeSubstituteMenuTransformationMenuPart());
     } else {
-      return Collections.singletonList(new ConceptMenusMenuPart(SModelUtil.getDirectSuperConcepts(myConcept)));
+      return Collections.singletonList(new DefaultConceptMenusTransformationMenuPart() {
+        @Override
+        protected Collection<SAbstractConcept> getConcepts(TransformationMenuContext context) {
+          return SModelUtil.getDirectSuperConcepts(myConcept);
+        }
+      });
     }
   }
 

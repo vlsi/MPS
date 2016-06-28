@@ -5886,7 +5886,15 @@
     <property role="EcuMT" value="5329678514806335510" />
     <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenuPart_Concepts" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <property role="34LRSv" value="concepts list" />
+    <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
+    <node concept="1TJgyj" id="2uBUyS1moKc" role="1TKVEi">
+      <property role="IQ2ns" value="2857509971901910028" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="concepts" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="2uBUyS1moaN" resolve="QueryFunction_SubstituteMenu_Concepts" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1Djcm3ms60c">
     <property role="EcuMT" value="1896914160037421068" />
@@ -5928,6 +5936,12 @@
     <property role="TrG5h" value="QueryFunctionParameter_TransformationMenu_CreatedNode" />
     <property role="34LRSv" value="createdNode" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="2uBUyS1moaN">
+    <property role="EcuMT" value="2857509971901907635" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
+    <property role="TrG5h" value="QueryFunction_SubstituteMenu_Concepts" />
+    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
   </node>
 </model>
 

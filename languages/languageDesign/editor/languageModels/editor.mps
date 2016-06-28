@@ -15056,5 +15056,24 @@
       <node concept="l2Vlx" id="6K28JrTTrQL" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="2uBUyS1moKI">
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <ref role="1XX52x" to="tpc2:4BQO_Wi42wm" resolve="SubstituteMenuPart_Concepts" />
+    <node concept="3EZMnI" id="2uBUyS1moKK" role="2wV5jI">
+      <node concept="PMmxH" id="2uBUyS1moKL" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F1sOY" id="2uBUyS1moKV" role="3EZMnx">
+        <ref role="1NtTu8" to="tpc2:2uBUyS1moKc" />
+        <node concept="pVoyu" id="2uBUyS1moKW" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="2uBUyS1moKX" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="2uBUyS1moKZ" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

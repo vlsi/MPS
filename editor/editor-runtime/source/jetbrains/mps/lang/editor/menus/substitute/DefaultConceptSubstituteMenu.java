@@ -25,6 +25,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -49,7 +50,12 @@ public class DefaultConceptSubstituteMenu extends SubstituteMenuBase {
         }
       });
     }
-    result.add(new ConceptMenusSubstituteMenuPart(ConceptDescendantsCache.getInstance().getDirectDescendants(myConcept)));
+    result.add(new DefaultConceptMenusSubstituteMenuPart() {
+      @Override
+      protected Collection<SAbstractConcept> getConcepts(SubstituteMenuContext context) {
+        return ConceptDescendantsCache.getInstance().getDirectDescendants(myConcept);
+      }
+    });
     return result;
   }
 

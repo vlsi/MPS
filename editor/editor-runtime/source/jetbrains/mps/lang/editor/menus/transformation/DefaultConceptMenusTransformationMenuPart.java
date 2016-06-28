@@ -22,20 +22,18 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-//todo to remove
-public class ConceptMenusMenuPart extends ConceptMenusPart<TransformationMenuItem, TransformationMenuContext> {
-  @Override
-  protected List<SAbstractConcept> getConcepts(TransformationMenuContext context) {
-    return new ArrayList<>();
-  }
+/**
+ * @author simon
+ */
+public abstract class DefaultConceptMenusTransformationMenuPart extends ConceptMenusPart<TransformationMenuItem, TransformationMenuContext> {
 
   @Override
   protected Collection<TransformationMenuItem> createItemsForConcept(TransformationMenuContext context, SAbstractConcept concept) {
     return context.createItems(
         new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
   }
+
 }

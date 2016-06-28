@@ -28,11 +28,7 @@ import java.util.List;
 /**
  * @author simon
  */
-public class ConceptMenusSubstituteMenuPart extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
-  public ConceptMenusSubstituteMenuPart(Collection<SAbstractConcept> concepts) {
-    super(concepts);
-  }
-
+public abstract class DefaultConceptMenusSubstituteMenuPart extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
   @Override
   protected List<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
     return context.createItems(

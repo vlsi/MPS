@@ -29,20 +29,17 @@ import java.util.List;
  * @author simon
  */
 public abstract class ConceptMenusPart<ItemT, ContextT> implements MenuPart<ItemT, ContextT> {
-  private final Collection<SAbstractConcept> myConcepts;
 
-  public ConceptMenusPart(Collection<SAbstractConcept> concepts) {
-    myConcepts = concepts;
-  }
   @NotNull
   @Override
   public List<ItemT> createItems(ContextT context) {
     List<ItemT> result = new ArrayList<>();
-    for (SAbstractConcept concept : myConcepts) {
+    for (SAbstractConcept concept : getConcepts(context)) {
       result.addAll(createItemsForConcept(context, concept));
     }
     return result;
   }
 
-  protected abstract List<ItemT> createItemsForConcept(ContextT contextT, SAbstractConcept concept);
+  protected abstract Collection<ItemT> createItemsForConcept(ContextT context, SAbstractConcept concept);
+  protected abstract Collection<SAbstractConcept> getConcepts(ContextT context);
 }
