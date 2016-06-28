@@ -12,7 +12,7 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu" />
       <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
         <property id="8974276187400029899" name="path" index="1QGGTI" />
       </concept>
@@ -128,7 +128,7 @@
       <property role="IQ2ns" value="6327362524875300597" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="icon" />
-      <ref role="20lvS9" to="1oap:7Mb2akaesqV" resolve="Icon" />
+      <ref role="20lvS9" to="1oap:2p1v3tOa9VI" resolve="Icon" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRI" role="rwd14">
       <property role="1QGGTI" value="${module}/icons/structure.png" />
