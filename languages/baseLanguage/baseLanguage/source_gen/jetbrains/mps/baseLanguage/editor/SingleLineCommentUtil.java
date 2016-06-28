@@ -28,10 +28,10 @@ public class SingleLineCommentUtil {
 
     int indexInParent = SNodeOperations.getIndexInParent(node);
     if ((rightPart != null && rightPart.length() > 0) || ListSequence.fromList(SLinkOperations.getChildren(firstComment, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, 0x57d533a7af16ff73L, "commentPart"))).count() > indexInParent + 1) {
-      SNode secondComment = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment")));
+      SNode secondComment = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment"));
       SNodeOperations.insertNextSiblingChild(firstComment, secondComment);
       if ((rightPart != null && rightPart.length() > 0)) {
-        SNode secondTextPart = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart")));
+        SNode secondTextPart = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart"));
         ListSequence.fromList(SLinkOperations.getChildren(secondComment, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, 0x57d533a7af16ff73L, "commentPart"))).addElement(secondTextPart);
 
         SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, 0x57d533a7af15ed3eL, "text"), leftPart);
@@ -50,7 +50,7 @@ public class SingleLineCommentUtil {
       editorContext.selectWRTFocusPolicy(ListSequence.fromList(SLinkOperations.getChildren(secondComment, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, 0x57d533a7af16ff73L, "commentPart"))).first());
       ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(0);
     } else {
-      SNode stmt = SNodeOperations.insertNextSiblingChild(firstComment, SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"))));
+      SNode stmt = SNodeOperations.insertNextSiblingChild(firstComment, SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement")));
       editorContext.selectWRTFocusPolicy(stmt);
 
     }

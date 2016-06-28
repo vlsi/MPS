@@ -57,7 +57,7 @@ public final class ActionGroupDeclaration__BehaviorDescriptor extends BaseBHDesc
     return SModelOperations.getModelName(SNodeOperations.getModel(__thisNode__)) + '.' + ActionGroupDeclaration__BehaviorDescriptor.getGeneratedName_idhEwJa82.invoke(__thisNode__);
   }
   /*package*/ static SNode createType_idhEwJimy(@NotNull SNode __thisNode__) {
-    SNode type = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119240f9168L, "jetbrains.mps.lang.plugin.structure.GroupType")));
+    SNode type = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119240f9168L, "jetbrains.mps.lang.plugin.structure.GroupType"));
     SLinkOperations.setTarget(type, MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119240f9168L, 0x119240f916aL, "actionGroup"), __thisNode__);
     return type;
   }

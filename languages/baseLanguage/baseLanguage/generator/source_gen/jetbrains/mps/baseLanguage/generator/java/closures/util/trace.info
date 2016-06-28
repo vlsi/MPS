@@ -35,20 +35,20 @@
       <node id="7376433222636454367" at="48,7,49,79" concept="10" />
       <node id="7376433222636453191" at="49,79,50,7" concept="10" />
       <node id="1196275097909" at="50,7,51,233" concept="8" />
-      <node id="1196275130422" at="52,33,53,221" concept="9" />
+      <node id="1196275130422" at="52,33,53,186" concept="9" />
       <node id="1196275252361" at="54,5,55,431" concept="8" />
       <node id="7376433222636454313" at="55,431,56,22" concept="10" />
       <node id="1196275352611" at="57,202,58,62" concept="8" />
-      <node id="1196275925819" at="58,62,59,238" concept="8" />
-      <node id="1196275978015" at="59,238,60,186" concept="3" />
+      <node id="1196275925819" at="58,62,59,203" concept="8" />
+      <node id="1196275978015" at="59,203,60,186" concept="3" />
       <node id="1196276013890" at="60,186,61,181" concept="3" />
       <node id="1196276092985" at="61,181,62,22" concept="9" />
       <node id="7376433222636453201" at="63,5,64,30" concept="10" />
-      <node id="1196276396237" at="65,428,66,234" concept="8" />
-      <node id="1196276456964" at="66,234,67,184" concept="3" />
+      <node id="1196276396237" at="65,428,66,199" concept="8" />
+      <node id="1196276456964" at="66,199,67,184" concept="3" />
       <node id="1196276479211" at="67,184,68,22" concept="9" />
       <node id="7376433222636454293" at="69,5,70,25" concept="10" />
-      <node id="1196276566545" at="70,25,71,219" concept="9" />
+      <node id="1196276566545" at="70,25,71,184" concept="9" />
       <node id="1219331740449" at="73,44,74,364" concept="9" />
       <node id="1196777970339" at="76,63,77,63" concept="8" />
       <node id="1196777970339" at="77,63,78,30" concept="8" />
@@ -80,7 +80,7 @@
       <node id="1170730182542" at="24,0,39,0" concept="12" trace="createClassType_forClosure_enclosingClass#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1196274932495" at="47,0,73,0" concept="12" trace="create_enclosingClassObject#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="4723230619342922314" at="22,24,22,24" />
-      <scope id="1196275120555" at="52,33,53,221" />
+      <scope id="1196275120555" at="52,33,53,186" />
       <scope id="1219331728664" at="73,44,74,364" />
       <scope id="4723230619342922312" at="22,0,24,0" />
       <scope id="1170730182556" at="26,33,28,43" />
@@ -126,7 +126,7 @@
         <var name="generator" id="1170730182593" />
         <var name="inputClosure" id="1170730182591" />
       </scope>
-      <scope id="1196274932498" at="47,76,71,219">
+      <scope id="1196274932498" at="47,76,71,184">
         <var name="enclosingClass" id="1196275097910" />
         <var name="enclosingMethodOrClosure" id="1196275252362" />
       </scope>

@@ -468,39 +468,39 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)/592868908271422399">
     <file name="typeof_IsIntentionApplicableExpression_InferenceRule.java">
-      <node id="592868908271422839" at="20,5,21,73" concept="6" />
-      <node id="592868908271422839" at="21,73,22,199" concept="6" />
-      <node id="592868908271422839" at="22,199,23,447" concept="2" />
-      <node id="592868908271422399" at="26,50,27,172" concept="7" />
-      <node id="592868908271422399" at="29,68,30,102" concept="7" />
-      <node id="592868908271422399" at="32,30,33,17" concept="7" />
-      <node id="592868908271422399" at="17,0,19,0" concept="1" trace="typeof_IsIntentionApplicableExpression_InferenceRule#()V" />
-      <node id="592868908271422399" at="26,0,29,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="592868908271422399" at="29,0,32,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="592868908271422399" at="32,0,35,0" concept="5" trace="overrides#()Z" />
-      <node id="592868908271422839" at="19,144,24,5" concept="0" />
-      <node id="592868908271422399" at="19,0,26,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <scope id="592868908271422399" at="17,65,17,65" />
-      <scope id="592868908271422399" at="26,50,27,172" />
-      <scope id="592868908271422399" at="29,68,30,102" />
-      <scope id="592868908271422399" at="32,30,33,17" />
-      <scope id="592868908271422399" at="17,0,19,0" />
-      <scope id="592868908271422839" at="20,5,23,447">
+      <node id="592868908271422839" at="19,5,20,73" concept="6" />
+      <node id="592868908271422839" at="20,73,21,199" concept="6" />
+      <node id="592868908271422839" at="21,199,22,412" concept="2" />
+      <node id="592868908271422399" at="25,50,26,172" concept="7" />
+      <node id="592868908271422399" at="28,68,29,102" concept="7" />
+      <node id="592868908271422399" at="31,30,32,17" concept="7" />
+      <node id="592868908271422399" at="16,0,18,0" concept="1" trace="typeof_IsIntentionApplicableExpression_InferenceRule#()V" />
+      <node id="592868908271422399" at="25,0,28,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="592868908271422399" at="28,0,31,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="592868908271422399" at="31,0,34,0" concept="5" trace="overrides#()Z" />
+      <node id="592868908271422839" at="18,144,23,5" concept="0" />
+      <node id="592868908271422399" at="18,0,25,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="592868908271422399" at="16,65,16,65" />
+      <scope id="592868908271422399" at="25,50,26,172" />
+      <scope id="592868908271422399" at="28,68,29,102" />
+      <scope id="592868908271422399" at="31,30,32,17" />
+      <scope id="592868908271422399" at="16,0,18,0" />
+      <scope id="592868908271422839" at="19,5,22,412">
         <var name="_info_12389875345" id="592868908271422839" />
         <var name="_nodeToCheck_1029348928467" id="592868908271422839" />
       </scope>
-      <scope id="592868908271422399" at="26,0,29,0" />
-      <scope id="592868908271422399" at="29,0,32,0">
+      <scope id="592868908271422399" at="25,0,28,0" />
+      <scope id="592868908271422399" at="28,0,31,0">
         <var name="argument" id="592868908271422399" />
       </scope>
-      <scope id="592868908271422399" at="32,0,35,0" />
-      <scope id="592868908271422400" at="19,144,24,5" />
-      <scope id="592868908271422399" at="19,0,26,0">
+      <scope id="592868908271422399" at="31,0,34,0" />
+      <scope id="592868908271422400" at="18,144,23,5" />
+      <scope id="592868908271422399" at="18,0,25,0">
         <var name="isIntentionApplicableExpression" id="592868908271422399" />
         <var name="status" id="592868908271422399" />
         <var name="typeCheckingContext" id="592868908271422399" />
       </scope>
-      <unit id="592868908271422399" at="16,0,36,0" name="jetbrains.mps.lang.test.typesystem.typeof_IsIntentionApplicableExpression_InferenceRule" />
+      <unit id="592868908271422399" at="15,0,35,0" name="jetbrains.mps.lang.test.typesystem.typeof_IsIntentionApplicableExpression_InferenceRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)/8933192351752325071">

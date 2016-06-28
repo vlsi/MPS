@@ -19,8 +19,8 @@
   </root>
   <root nodeRef="r:5bb264d9-7f7a-4139-93e6-30697488a61b(jetbrains.mps.baseLanguage.lightweightdsl.intentions)/1291729193367781439">
     <file name="ClassLikeInitHelper.java">
-      <node id="1291729193368111093" at="22,222,23,480" concept="2" />
-      <node id="1291729193368111103" at="23,480,24,422" concept="2" />
+      <node id="1291729193368111093" at="22,222,23,445" concept="2" />
+      <node id="1291729193368111103" at="23,445,24,422" concept="2" />
       <node id="1291729193368324750" at="27,35,28,107" concept="7" />
       <node id="1291729193368337060" at="29,34,30,17" concept="8" />
       <node id="1291729193368285880" at="31,9,32,215" concept="2" />

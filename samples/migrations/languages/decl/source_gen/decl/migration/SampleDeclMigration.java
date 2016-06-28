@@ -47,7 +47,7 @@ public class SampleDeclMigration extends MigrationScriptBase {
     }), MetaAdapterFactory.getConcept(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c1049316cdaL, "decl.structure.OldComponent"));
 
     // create the produced data to hold mapping between old and new ids of the instances 
-    final SNode res = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732f8bL, "decl.structure.DeclMigrationData_WholeModule")));
+    final SNode res = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732f8bL, "decl.structure.DeclMigrationData_WholeModule"));
 
     // for each old instance create a new one 
     Sequence.fromIterable(components).visitAll(new IVisitor<SNode>() {
@@ -57,7 +57,7 @@ public class SampleDeclMigration extends MigrationScriptBase {
         SModelOperations.addRootNode(SNodeOperations.getModel(oldNode), newNode);
 
         // store the id mapping 
-        SNode data = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L, "decl.structure.DeclMigrationData_Component")));
+        SNode data = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L, "decl.structure.DeclMigrationData_Component"));
         SPropertyOperations.set(data, MetaAdapterFactory.getProperty(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L, 0x1b931c975a732f6dL, "oldId"), oldNode.getNodeId().toString());
         SPropertyOperations.set(data, MetaAdapterFactory.getProperty(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L, 0x1b931c975a732f7bL, "newId"), newNode.getNodeId().toString());
         ListSequence.fromList(SLinkOperations.getChildren(res, MetaAdapterFactory.getContainmentLink(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732f8bL, 0x1b931c975a732f9aL, "entry"))).addElement(data);

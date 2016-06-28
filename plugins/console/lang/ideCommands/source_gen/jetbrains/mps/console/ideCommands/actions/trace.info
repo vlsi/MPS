@@ -11,9 +11,9 @@
       <unit at="13,0,30,0" name="jetbrains.mps.console.ideCommands.actions.ActionAspectDescriptorImpl" />
     </file>
     <file name="PasteWrappers.java">
-      <unit at="19,49,31,5" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers$1" />
-      <unit at="32,49,44,5" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers$2" />
-      <unit at="16,0,48,0" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers" />
+      <unit at="18,49,30,5" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers$1" />
+      <unit at="31,49,43,5" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers$2" />
+      <unit at="15,0,47,0" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers" />
     </file>
     <file name="QueriesGenerated.java">
       <unit at="34,34,44,7" name="jetbrains.mps.console.ideCommands.actions.QueriesGenerated$1" />
@@ -82,16 +82,16 @@
   </root>
   <root nodeRef="r:02073207-e767-4759-a6fd-2e43f805a438(jetbrains.mps.console.ideCommands.actions)/6961633949328001911">
     <file name="PasteWrappers.java">
-      <node id="6961633949329748703" at="26,55,27,256" concept="3" />
-      <node id="6961633949329748709" at="27,256,28,201" concept="0" />
-      <node id="6961633949329748715" at="28,201,29,22" concept="4" />
-      <node id="6961633949328078376" at="39,55,40,256" concept="3" />
-      <node id="6961633949328086842" at="40,256,41,201" concept="0" />
-      <node id="6961633949328133481" at="41,201,42,22" concept="4" />
-      <scope id="6961633949329748702" at="26,55,29,22">
+      <node id="6961633949329748703" at="25,55,26,221" concept="3" />
+      <node id="6961633949329748709" at="26,221,27,201" concept="0" />
+      <node id="6961633949329748715" at="27,201,28,22" concept="4" />
+      <node id="6961633949328078376" at="38,55,39,221" concept="3" />
+      <node id="6961633949328086842" at="39,221,40,201" concept="0" />
+      <node id="6961633949328133481" at="40,201,41,22" concept="4" />
+      <scope id="6961633949329748702" at="25,55,28,22">
         <var name="result" id="6961633949329748704" />
       </scope>
-      <scope id="6961633949328073115" at="39,55,42,22">
+      <scope id="6961633949328073115" at="38,55,41,22">
         <var name="result" id="6961633949328078379" />
       </scope>
     </file>

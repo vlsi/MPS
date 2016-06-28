@@ -172,8 +172,8 @@
       <node id="8014813979421810811" at="37,112,38,128" concept="9" />
       <node id="8417539822878729234" at="42,50,43,174" concept="9" />
       <node id="1206460269944" at="47,114,48,186" concept="9" />
-      <node id="7612440128092282153" at="53,107,54,244" concept="8" />
-      <node id="7612440128092282159" at="54,244,55,343" concept="3" />
+      <node id="7612440128092282153" at="53,107,54,209" concept="8" />
+      <node id="7612440128092282159" at="54,209,55,343" concept="3" />
       <node id="7612440128092282169" at="55,343,56,17" concept="9" />
       <node id="8417539822878729234" at="42,0,45,0" concept="7" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="8417539822878724200" at="40,120,45,7" concept="9" />

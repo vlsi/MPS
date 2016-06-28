@@ -35,7 +35,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   }
   @Override
   protected void modifyPartToExtract() {
-    SNode returnStatement = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement")));
+    SNode returnStatement = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement"));
     SLinkOperations.setTarget(returnStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression"), this.createReference(this.myOutputVariable));
     ListSequence.fromList(this.myStatements).addElement(returnStatement);
   }
@@ -50,7 +50,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     if ((this.myDeclarationStatement != null)) {
       SLinkOperations.setTarget(SLinkOperations.getTarget(this.myDeclarationStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, 0xf8cc67c7f1L, "localVariableDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), methodCall);
     } else {
-      SNode newStatement = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
+      SNode newStatement = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
       SLinkOperations.setTarget(newStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"), _quotation_createNode_n3576q_a0b0a2a5(methodCall, ((SNode) BHReflection.invoke(this.myOutputVariable, SMethodTrimmedId.create("createReference", null, "hEwJfME")))));
       SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), newStatement);
     }

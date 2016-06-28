@@ -418,15 +418,15 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/1202838220710">
     <file name="typeof_InternalThisExpression_InferenceRule.java">
       <node id="1202838300385" at="22,116,23,205" concept="7" />
-      <node id="1202839662334" at="23,205,24,227" concept="7" />
-      <node id="1202839676799" at="24,227,25,162" concept="3" />
+      <node id="1202839662334" at="23,205,24,192" concept="7" />
+      <node id="1202839676799" at="24,192,25,162" concept="3" />
       <node id="1202839800732" at="25,162,26,175" concept="3" />
       <node id="1202839824372" at="27,5,28,16" concept="7" />
       <node id="1202839824372" at="28,16,29,242" concept="7" />
       <node id="1202839824372" at="31,40,32,16" concept="1" />
       <node id="1202839824372" at="33,9,34,34" concept="3" />
-      <node id="1202839842219" at="35,9,36,241" concept="7" />
-      <node id="1202839850947" at="36,241,37,184" concept="3" />
+      <node id="1202839842219" at="35,9,36,206" concept="7" />
+      <node id="1202839850947" at="36,206,37,184" concept="3" />
       <node id="1202839879614" at="37,184,38,207" concept="3" />
       <node id="1202838278072" at="42,5,43,45" concept="7" />
       <node id="1202838278072" at="43,45,44,205" concept="7" />

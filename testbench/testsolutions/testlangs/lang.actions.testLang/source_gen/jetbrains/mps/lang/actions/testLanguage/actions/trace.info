@@ -55,8 +55,8 @@
       <node id="7221892235004440710" at="293,66,294,45" concept="2" />
       <node id="7221892235004440718" at="294,45,295,56" concept="2" />
       <node id="2534942168338961344" at="295,56,296,0" concept="10" />
-      <node id="9187447745749202119" at="296,0,297,259" concept="7" />
-      <node id="9187447745749205461" at="297,259,298,385" concept="2" />
+      <node id="9187447745749202119" at="296,0,297,224" concept="7" />
+      <node id="9187447745749205461" at="297,224,298,385" concept="2" />
       <node id="2534942168331621564" at="298,385,299,26" concept="8" />
       <node id="9187447745749808581" at="302,121,303,40" concept="9" />
       <node id="9187447745749552064" at="303,40,304,224" concept="8" />
@@ -106,9 +106,9 @@
       <node id="7221892235000559324" at="363,59,364,56" concept="2" />
       <node id="2534942168338362144" at="364,56,365,0" concept="10" />
       <node id="2534942168331669215" at="365,0,366,58" concept="8" />
-      <node id="5164819300891135969" at="376,94,377,261" concept="8" />
+      <node id="5164819300891135969" at="376,94,377,226" concept="8" />
       <node id="5164819300891107832" at="382,83,383,25" concept="8" />
-      <node id="2534942168331619226" at="399,94,400,251" concept="8" />
+      <node id="2534942168331619226" at="399,94,400,216" concept="8" />
       <node id="441141899512028422" at="403,121,404,58" concept="9" />
       <node id="441141899512028424" at="404,58,405,45" concept="7" />
       <node id="441141899512028430" at="405,45,406,64" concept="2" />
@@ -143,9 +143,9 @@
       <node id="2534942168331669216" at="846,0,853,0" concept="11" trace="_quotation_createNode_mw8afp_a8a0a0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2534942168331665497" at="853,0,860,0" concept="11" trace="_quotation_createNode_mw8afp_a0a0a1a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="441141899512114641" at="415,102,423,13" concept="5" />
-      <scope id="5164819300891102879" at="376,94,377,261" />
+      <scope id="5164819300891102879" at="376,94,377,226" />
       <scope id="5164819300891107295" at="382,83,383,25" />
-      <scope id="2534942168331335709" at="399,94,400,251" />
+      <scope id="2534942168331335709" at="399,94,400,216" />
       <scope id="441141899512123943" at="419,58,420,67" />
       <scope id="2534942168331582079" at="435,54,436,58" />
       <scope id="2534942168331233422" at="443,203,444,224" />
@@ -204,8 +204,8 @@
       <node id="2870536390415252180" at="636,45,637,56" concept="2" />
       <node id="2870536390415252196" at="637,56,638,53" concept="2" />
       <node id="2870536390415252204" at="638,53,639,0" concept="10" />
-      <node id="2870536390415252205" at="639,0,640,270" concept="7" />
-      <node id="2870536390415252211" at="640,270,641,201" concept="2" />
+      <node id="2870536390415252205" at="639,0,640,235" concept="7" />
+      <node id="2870536390415252211" at="640,235,641,201" concept="2" />
       <node id="2870536390415252217" at="641,201,642,31" concept="8" />
       <node id="2870536390415252402" at="659,210,660,237" concept="8" />
       <node id="2870536390415252400" at="659,0,662,0" concept="11" trace="nodeSubstituteActionsBuilder_Precondition_ActionTestAbstractChildWrapper_2870536390415252400#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
@@ -365,8 +365,8 @@
       <node id="3213804652593645531" at="103,0,104,237" concept="0" />
       <node id="3213804652591458544" at="104,237,105,97" concept="7" />
       <node id="3213804652593296895" at="108,59,109,63" concept="8" />
-      <node id="3213804652598503691" at="112,88,113,347" concept="2" />
-      <node id="3213804652593423423" at="113,347,114,44" concept="8" />
+      <node id="3213804652598503691" at="112,88,113,312" concept="2" />
+      <node id="3213804652593423423" at="113,312,114,44" concept="8" />
       <node id="3213804652591466548" at="116,11,117,22" concept="8" />
       <node id="3213804652593086998" at="122,206,123,216" concept="8" />
       <node id="3213804652589913916" at="122,0,125,0" concept="11" trace="nodeSubstituteActionsBuilder_Precondition_ActionTestChild1SubConcept_3213804652589913916#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
@@ -783,8 +783,8 @@
       <node id="8064223962397070168" at="464,0,465,49" concept="9" />
       <node id="8064223962397057030" at="465,49,466,182" concept="7" />
       <node id="8349639607715127066" at="466,182,467,0" concept="10" />
-      <node id="5164819300892755496" at="467,0,468,270" concept="7" />
-      <node id="5164819300894957577" at="468,270,469,201" concept="2" />
+      <node id="5164819300892755496" at="467,0,468,235" concept="7" />
+      <node id="5164819300894957577" at="468,235,469,201" concept="2" />
       <node id="5164819300892757008" at="469,201,470,31" concept="8" />
       <node id="8349639607716122812" at="472,60,473,58" concept="9" />
       <node id="8349639607716122814" at="473,58,474,62" concept="7" />

@@ -758,8 +758,8 @@
     <file name="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java">
       <node id="1239972432012" at="26,113,27,77" concept="7" />
       <node id="1239972674655" at="27,77,28,187" concept="7" />
-      <node id="1239973336433" at="30,38,31,226" concept="7" />
-      <node id="1239973452764" at="31,226,32,346" concept="3" />
+      <node id="1239973336433" at="30,38,31,191" concept="7" />
+      <node id="1239973452764" at="31,191,32,346" concept="3" />
       <node id="1239972928885" at="32,346,33,45" concept="3" />
       <node id="1239972928889" at="33,45,34,208" concept="3" />
       <node id="1239972928896" at="35,59,36,68" concept="7" />
@@ -1038,45 +1038,45 @@
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/3122175964860974805">
     <file name="NamedTuple_subtypeOf_implemented_interfaces_SubtypingRule.java">
-      <node id="3122175964860988409" at="22,120,23,45" concept="7" />
-      <node id="3985682400538583019" at="24,338,25,229" concept="7" />
-      <node id="3985682400538583026" at="25,229,26,316" concept="3" />
-      <node id="3122175964860988428" at="26,316,27,48" concept="3" />
-      <node id="3122175964860988446" at="28,5,29,15" concept="8" />
-      <node id="3122175964860974805" at="31,50,32,161" concept="8" />
-      <node id="3122175964860974805" at="34,68,35,102" concept="8" />
-      <node id="3122175964860974805" at="37,27,38,16" concept="8" />
-      <node id="3122175964860974805" at="20,0,22,0" concept="2" trace="NamedTuple_subtypeOf_implemented_interfaces_SubtypingRule#()V" />
-      <node id="3122175964860974805" at="31,0,34,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="3122175964860974805" at="34,0,37,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="3122175964860974805" at="37,0,40,0" concept="6" trace="isWeak#()Z" />
-      <node id="3122175964860988417" at="23,45,28,5" concept="4" />
-      <node id="3122175964860974805" at="22,0,31,0" concept="6" trace="getSubOrSuperTypes#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Ljava/util/List;" />
-      <scope id="3122175964860974805" at="20,70,20,70" />
-      <scope id="3122175964860974805" at="31,50,32,161" />
-      <scope id="3122175964860974805" at="34,68,35,102" />
-      <scope id="3122175964860974805" at="37,27,38,16" />
-      <scope id="3122175964860974805" at="20,0,22,0" />
-      <scope id="3122175964860988418" at="24,338,27,48">
+      <node id="3122175964860988409" at="21,120,22,45" concept="7" />
+      <node id="3985682400538583019" at="23,338,24,194" concept="7" />
+      <node id="3985682400538583026" at="24,194,25,316" concept="3" />
+      <node id="3122175964860988428" at="25,316,26,48" concept="3" />
+      <node id="3122175964860988446" at="27,5,28,15" concept="8" />
+      <node id="3122175964860974805" at="30,50,31,161" concept="8" />
+      <node id="3122175964860974805" at="33,68,34,102" concept="8" />
+      <node id="3122175964860974805" at="36,27,37,16" concept="8" />
+      <node id="3122175964860974805" at="19,0,21,0" concept="2" trace="NamedTuple_subtypeOf_implemented_interfaces_SubtypingRule#()V" />
+      <node id="3122175964860974805" at="30,0,33,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="3122175964860974805" at="33,0,36,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="3122175964860974805" at="36,0,39,0" concept="6" trace="isWeak#()Z" />
+      <node id="3122175964860988417" at="22,45,27,5" concept="4" />
+      <node id="3122175964860974805" at="21,0,30,0" concept="6" trace="getSubOrSuperTypes#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Ljava/util/List;" />
+      <scope id="3122175964860974805" at="19,70,19,70" />
+      <scope id="3122175964860974805" at="30,50,31,161" />
+      <scope id="3122175964860974805" at="33,68,34,102" />
+      <scope id="3122175964860974805" at="36,27,37,16" />
+      <scope id="3122175964860974805" at="19,0,21,0" />
+      <scope id="3122175964860988418" at="23,338,26,48">
         <var name="ct" id="3985682400538583020" />
       </scope>
-      <scope id="3122175964860974805" at="31,0,34,0" />
-      <scope id="3122175964860974805" at="34,0,37,0">
+      <scope id="3122175964860974805" at="30,0,33,0" />
+      <scope id="3122175964860974805" at="33,0,36,0">
         <var name="argument" id="3122175964860974805" />
       </scope>
-      <scope id="3122175964860974805" at="37,0,40,0" />
-      <scope id="3122175964860988417" at="23,45,28,5">
+      <scope id="3122175964860974805" at="36,0,39,0" />
+      <scope id="3122175964860988417" at="22,45,27,5">
         <var name="i" id="3122175964860988420" />
       </scope>
-      <scope id="3122175964860974806" at="22,120,29,15">
+      <scope id="3122175964860974806" at="21,120,28,15">
         <var name="ifs" id="3122175964860988410" />
       </scope>
-      <scope id="3122175964860974805" at="22,0,31,0">
+      <scope id="3122175964860974805" at="21,0,30,0">
         <var name="ntt" id="3122175964860974805" />
         <var name="status" id="3122175964860974805" />
         <var name="typeCheckingContext" id="3122175964860974805" />
       </scope>
-      <unit id="3122175964860974805" at="19,0,41,0" name="jetbrains.mps.baseLanguage.tuples.typesystem.NamedTuple_subtypeOf_implemented_interfaces_SubtypingRule" />
+      <unit id="3122175964860974805" at="18,0,40,0" name="jetbrains.mps.baseLanguage.tuples.typesystem.NamedTuple_subtypeOf_implemented_interfaces_SubtypingRule" />
     </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/5264858465808079239">

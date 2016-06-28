@@ -85,8 +85,8 @@
   <root nodeRef="r:3e28c675-44d4-4298-a295-5b43102c2566(jetbrains.mps.samples.SwingBuilder.generator.template.main@generator)/941086956890886344">
     <file name="QueriesGenerated.java">
       <node id="941086956891367128" at="117,119,118,192" concept="3" />
-      <node id="941086956891682076" at="132,96,133,242" concept="2" />
-      <node id="941086956891683468" at="133,242,134,351" concept="0" />
+      <node id="941086956891682076" at="132,96,133,207" concept="2" />
+      <node id="941086956891683468" at="133,207,134,351" concept="0" />
       <node id="941086956891670285" at="134,351,135,19" concept="3" />
       <scope id="941086956891367122" at="117,119,118,192" />
       <scope id="941086956891669562" at="132,96,135,19">

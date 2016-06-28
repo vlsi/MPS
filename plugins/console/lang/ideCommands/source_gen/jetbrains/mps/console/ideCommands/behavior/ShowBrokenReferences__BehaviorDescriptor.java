@@ -57,7 +57,7 @@ public final class ShowBrokenReferences__BehaviorDescriptor extends BaseBHDescri
       console.addText("node  id = " + ref.getTargetNodeId());
       SNode targetNode = ref.getSourceNode();
       console.addText("\n");
-      SNode clickableNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53ba81265L, "jetbrains.mps.console.base.structure.NodeReferenceString")));
+      SNode clickableNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53ba81265L, "jetbrains.mps.console.base.structure.NodeReferenceString"));
       SPropertyOperations.set(clickableNode, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e75e1c4L, "referencePresentation"), "Go to enclosing node");
       SLinkOperations.setTarget(clickableNode, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target"), targetNode);
       console.addNode(clickableNode);

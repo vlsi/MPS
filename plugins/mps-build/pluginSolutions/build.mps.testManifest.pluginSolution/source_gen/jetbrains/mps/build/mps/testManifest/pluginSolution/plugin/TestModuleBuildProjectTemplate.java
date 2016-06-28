@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.mps.testManifest.behavior.TestModuleManifest__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.apache.log4j.Logger;
@@ -62,7 +62,7 @@ public class TestModuleBuildProjectTemplate {
       List<Tuples._3<String, String, String>> triples = TestModuleManifest__BehaviorDescriptor.languagesToInclude_id2R6x4AnylYu.invoke(testManifest, project);
 
       for (Tuples._3<String, String, String> t : triples) {
-        SNode la = SModelOperations.createNewNode(target, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language")));
+        SNode la = SModelOperations.createNewNode(target, null, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"));
         SPropertyOperations.set(la, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), t._0());
         try {
           SNode path = PathConverter.createRelative(projectFile.getPath(), t._1(), target);
@@ -95,7 +95,7 @@ public class TestModuleBuildProjectTemplate {
     for (SNode testManifest : tmms) {
       List<Tuples._3<String, String, String>> triples = TestModuleManifest__BehaviorDescriptor.testModulesToInclude_id7vU6U5026IG.invoke(testManifest, project);
       for (Tuples._3<String, String, String> t : triples) {
-        SNode sol = SModelOperations.createNewNode(target, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution")));
+        SNode sol = SModelOperations.createNewNode(target, null, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution"));
         SPropertyOperations.set(sol, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), t._0());
         SPropertyOperations.set(sol, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid"), t._2());
 
@@ -120,7 +120,7 @@ public class TestModuleBuildProjectTemplate {
     List<SNode> result = new ArrayList<SNode>();
 
     for (SNode la : languageElements) {
-      SNode jars = SModelOperations.createNewNode(target, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars")));
+      SNode jars = SModelOperations.createNewNode(target, null, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars"));
       SLinkOperations.setTarget(jars, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x11918e0f209b83e9L, "module"), la);
       ListSequence.fromList(result).addElement(jars);
     }
@@ -132,7 +132,7 @@ public class TestModuleBuildProjectTemplate {
     List<SNode> result = new ArrayList<SNode>();
 
     for (SNode sol : testElements) {
-      SNode jars = SModelOperations.createNewNode(target, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars")));
+      SNode jars = SModelOperations.createNewNode(target, null, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars"));
       SLinkOperations.setTarget(jars, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x11918e0f209b83e9L, "module"), sol);
       ListSequence.fromList(result).addElement(jars);
     }
@@ -141,7 +141,7 @@ public class TestModuleBuildProjectTemplate {
   }
 
   private SNode createTestModuleGroup() {
-    return SModelOperations.createNewNode(target, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36bL, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModuleGroup")));
+    return SModelOperations.createNewNode(target, null, MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36bL, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModuleGroup"));
   }
 
   private SNode updateReferences(SNode root, SNode testGroup) {
