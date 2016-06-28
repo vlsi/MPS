@@ -57,7 +57,7 @@ public final class ModelReference__BehaviorDescriptor extends BaseBHDescriptor {
     if (modelRef.getModelId().isGloballyUnique()) {
       SNodeOperations.deleteNode(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x29edad474f5d54b1L, "module")));
     } else {
-      SNode moduleRef = SModelOperations.createNewNode(SNodeOperations.getModel(__thisNode__), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, "jetbrains.mps.lang.project.structure.ModuleReference")));
+      SNode moduleRef = SModelOperations.createNewNode(SNodeOperations.getModel(__thisNode__), null, MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, "jetbrains.mps.lang.project.structure.ModuleReference"));
       ModuleReference__BehaviorDescriptor.populateFrom_id2BHFktfnlSL.invoke(moduleRef, modelRef.getModuleReference());
       SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x29edad474f5d54b1L, "module"), moduleRef);
     }

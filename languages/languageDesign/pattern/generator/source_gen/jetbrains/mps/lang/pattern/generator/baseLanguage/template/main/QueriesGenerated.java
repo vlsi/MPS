@@ -412,7 +412,7 @@ public class QueriesGenerated {
     return SNodeOperations.getParent(_context.getNode());
   }
   public static SNode sourceNodeQuery_9046399079000873736(final SourceSubstituteMacroNodeContext _context) {
-    SNode pid = SModelOperations.createNewNode(_context.getInputModel(), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefc235cL, "jetbrains.mps.lang.smodel.structure.PropertyId")));
+    SNode pid = SModelOperations.createNewNode(_context.getInputModel(), null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefc235cL, "jetbrains.mps.lang.smodel.structure.PropertyId"));
     PropertyId__BehaviorDescriptor.setProperty_id5ZE7FBYZ2jW.invoke(pid, PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(_context.getNode()));
     return pid;
   }
@@ -486,7 +486,7 @@ public class QueriesGenerated {
       if (AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), property)) != null) {
         continue;
       }
-      SNode propertyNode = SModelOperations.createNewNode(_context.getOutputModel(), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_PropertyDescriptor")));
+      SNode propertyNode = SModelOperations.createNewNode(_context.getOutputModel(), null, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_PropertyDescriptor"));
       SLinkOperations.setTarget(propertyNode, MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, 0x746e600f0bda9e9bL, "property"), (SNode) property.getDeclarationNode());
       SPropertyOperations.set(propertyNode, MetaAdapterFactory.getProperty(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, 0x7e881d31a4198f77L, "value"), _context.getNode().getProperty(property));
       SLinkOperations.setTarget(propertyNode, MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, 0x7e881d31a4198f6fL, "mainNode"), _context.getNode());
@@ -501,7 +501,7 @@ public class QueriesGenerated {
       }
     }, true).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        SNode propertyNode = SModelOperations.createNewNode(_context.getOutputModel(), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_PropertyDescriptor")));
+        SNode propertyNode = SModelOperations.createNewNode(_context.getOutputModel(), null, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_PropertyDescriptor"));
         SLinkOperations.setTarget(propertyNode, MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, 0x746e600f0bda9e9bL, "property"), SNodeOperations.cast(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it).getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")));
         SLinkOperations.setTarget(propertyNode, MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, 0x7e881d31a4198f6fL, "mainNode"), _context.getNode());
         return propertyNode;
@@ -514,7 +514,7 @@ public class QueriesGenerated {
       if (AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108d36d955aL, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration"), ref.getLink())) != null) {
         continue;
       }
-      SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ReferenceDescriptor")));
+      SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), null, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ReferenceDescriptor"));
       SNode referent = ((SNode) ref.getTargetNode());
       SLinkOperations.setTarget(referenceNode, MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, 0x79ac26fe422b8688L, "referenceLinkDeclaration"), (SNode) ref.getLink().getDeclarationNode());
       SPropertyOperations.set(referenceNode, MetaAdapterFactory.getProperty(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, 0x7e881d31a419916eL, "model"), referent.getModel().getReference().toString());
@@ -531,7 +531,7 @@ public class QueriesGenerated {
       }
     }, true).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        SNode linkNode = SModelOperations.createNewNode(_context.getOutputModel(), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ReferenceDescriptor")));
+        SNode linkNode = SModelOperations.createNewNode(_context.getOutputModel(), null, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ReferenceDescriptor"));
         SLinkOperations.setTarget(linkNode, MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, 0x7e881d31a4198b58L, "mainNode"), _context.getNode());
         SLinkOperations.setTarget(linkNode, MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, 0x79ac26fe422b8688L, "referenceLinkDeclaration"), SNodeOperations.cast(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(it).getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")));
         return linkNode;
@@ -557,7 +557,7 @@ public class QueriesGenerated {
       }
 
       SetSequence.fromSet(processedRoles).addElement(role);
-      SNode childRoleNode = SModelOperations.createNewNode(_context.getOutputModel(), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4196e17L, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ChildDescriptor")));
+      SNode childRoleNode = SModelOperations.createNewNode(_context.getOutputModel(), null, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4196e17L, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ChildDescriptor"));
       SLinkOperations.setTarget(childRoleNode, MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4196e17L, 0x7e881d31a41979c5L, "childLinkDeclaration"), (SNode) role.getDeclarationNode());
       SLinkOperations.setTarget(childRoleNode, MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4196e17L, 0x7e881d31a4197b70L, "mainNode"), _context.getNode());
       ListSequence.fromList(result).addElement(childRoleNode);

@@ -71,12 +71,12 @@ public class XmlTextValue_text extends KeyMapImpl {
 
       String currText = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, 0x5c842a42c54cfd20L, "text"));
       if (index < currText.length()) {
-        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue")));
+        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue"));
         SPropertyOperations.set(newText, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, 0x5c842a42c54cfd20L, "text"), currText.substring(index));
         SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, 0x5c842a42c54cfd20L, "text"), currText.substring(0, index));
         ListSequence.fromList(SLinkOperations.getChildren(attr, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, 0x5c842a42c54cfd1eL, "value"))).insertElement(currIndex + 1, newText);
       }
-      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd21L, "jetbrains.mps.core.xml.structure.XmlEntityRefValue")));
+      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd21L, "jetbrains.mps.core.xml.structure.XmlEntityRefValue"));
       SPropertyOperations.set(newRef, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd21L, 0x5c842a42c54d0258L, "entityName"), "quot");
       ListSequence.fromList(SLinkOperations.getChildren(attr, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, 0x5c842a42c54cfd1eL, "value"))).insertElement(currIndex + 1, newRef);
       editorContext.selectWRTFocusPolicy(newRef);
@@ -133,12 +133,12 @@ public class XmlTextValue_text extends KeyMapImpl {
 
       String currText = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, 0x5c842a42c54cfd20L, "text"));
       if (index < currText.length()) {
-        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue")));
+        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue"));
         SPropertyOperations.set(newText, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, 0x5c842a42c54cfd20L, "text"), currText.substring(index));
         SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, 0x5c842a42c54cfd20L, "text"), currText.substring(0, index));
         ListSequence.fromList(SLinkOperations.getChildren(attr, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, 0x5c842a42c54cfd1eL, "value"))).insertElement(currIndex + 1, newText);
       }
-      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd21L, "jetbrains.mps.core.xml.structure.XmlEntityRefValue")));
+      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd21L, "jetbrains.mps.core.xml.structure.XmlEntityRefValue"));
       ListSequence.fromList(SLinkOperations.getChildren(attr, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, 0x5c842a42c54cfd1eL, "value"))).insertElement(currIndex + 1, newRef);
       editorContext.selectWRTFocusPolicy(newRef);
     }

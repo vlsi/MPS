@@ -114,7 +114,7 @@ public class Transform_Editor extends DefaultNodeEditor {
       return this.customCreateChildNode_impl((SLanguage) parameterObject, node, currentChild, defaultConceptOfChild, model, operationContext, editorContext);
     }
     public SNode customCreateChildNode_impl(SLanguage parameterObject, SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNode lid = SModelOperations.createNewNode(model, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId")));
+      SNode lid = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId"));
       LanguageIdentity__BehaviorDescriptor.setLanguage_id34EJa6aIcyw.invoke(lid, parameterObject);
       return SNodeOperations.replaceWithAnother(currentChild, lid);
     }

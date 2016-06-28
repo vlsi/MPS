@@ -55,13 +55,13 @@ import jetbrains.mps.lang.smodel.behavior.LanguageIdentity__BehaviorDescriptor;
     }
 
     if (myUseGenerators) {
-      SNode gmp = SModelOperations.createNewNode(myTargetModel, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73246de9adecb80dL, "jetbrains.mps.lang.smodel.structure.GeneratorModulePointer")));
+      SNode gmp = SModelOperations.createNewNode(myTargetModel, null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73246de9adecb80dL, "jetbrains.mps.lang.smodel.structure.GeneratorModulePointer"));
       SLinkOperations.setNewChild(gmp, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73246de9adecb80dL, 0x73246de9adecb874L, "module"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5ef5a1e853388b3L, "jetbrains.mps.lang.smodel.structure.ModulePointer")));
       ModuleIdentity__BehaviorDescriptor.setModuleReference_idnJmxU5cSTj.invoke(SLinkOperations.getTarget(gmp, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73246de9adecb80dL, 0x73246de9adecb874L, "module")), generatorIdentity);
 
       SNode generatorStep;
       if (myDistinctSteps || mySharedGeneratorsStep == null) {
-        generatorStep = SModelOperations.createNewNode(myTargetModel, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x73246de9adeca171L, "jetbrains.mps.lang.generator.plan.structure.ApplyGenerators")));
+        generatorStep = SModelOperations.createNewNode(myTargetModel, null, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x73246de9adeca171L, "jetbrains.mps.lang.generator.plan.structure.ApplyGenerators"));
         ListSequence.fromList(SLinkOperations.getChildren(myTarget, MetaAdapterFactory.getContainmentLink(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fbL, 0x19443180a2071807L, "steps"))).addElement(generatorStep);
       } else {
         generatorStep = mySharedGeneratorsStep;
@@ -72,11 +72,11 @@ import jetbrains.mps.lang.smodel.behavior.LanguageIdentity__BehaviorDescriptor;
       ListSequence.fromList(SLinkOperations.getChildren(generatorStep, MetaAdapterFactory.getContainmentLink(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x73246de9adeca171L, 0x73246de9adf5a45cL, "generator"))).addElement(gmp);
     } else {
       SModuleReference languageModuleRef = as_mld0p3_a0a0a0a0c0r(generatorIdentity.resolve(myGeneratorLookupRepo), Generator.class).getSourceLanguage().getModuleReference();
-      SNode langId = SModelOperations.createNewNode(myTargetModel, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId")));
+      SNode langId = SModelOperations.createNewNode(myTargetModel, null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId"));
       LanguageIdentity__BehaviorDescriptor.setLanguage_id34EJa6aIcyw.invoke(langId, MetaAdapterFactory.getLanguage(languageModuleRef));
       SNode transform;
       if (myDistinctSteps || mySharedLanguagesStep == null) {
-        transform = SModelOperations.createNewNode(myTargetModel, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a2071802L, "jetbrains.mps.lang.generator.plan.structure.Transform")));
+        transform = SModelOperations.createNewNode(myTargetModel, null, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a2071802L, "jetbrains.mps.lang.generator.plan.structure.Transform"));
         ListSequence.fromList(SLinkOperations.getChildren(myTarget, MetaAdapterFactory.getContainmentLink(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fbL, 0x19443180a2071807L, "steps"))).addElement(transform);
       } else {
         transform = mySharedLanguagesStep;

@@ -64,12 +64,12 @@ public class BuildSimpleName_text extends KeyMapImpl {
 
       String currText = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, 0x440d7ea3b68c4d56L, "text"));
       if (index < currText.length() && index > 0) {
-        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, "jetbrains.mps.build.structure.BuildTextStringPart")));
+        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, "jetbrains.mps.build.structure.BuildTextStringPart"));
         SPropertyOperations.set(newText, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, 0x440d7ea3b68c4d56L, "text"), currText.substring(index));
         SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, 0x440d7ea3b68c4d56L, "text"), currText.substring(0, index));
         SNodeOperations.insertNextSiblingChild(node, newText);
       }
-      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, "jetbrains.mps.build.structure.BuildVarRefStringPart")));
+      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, "jetbrains.mps.build.structure.BuildVarRefStringPart"));
       if (index != 0) {
         SNodeOperations.insertNextSiblingChild(node, newRef);
       } else {

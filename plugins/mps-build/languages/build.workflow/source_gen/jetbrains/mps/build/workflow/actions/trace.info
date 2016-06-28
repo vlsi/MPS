@@ -20,17 +20,17 @@
   </root>
   <root nodeRef="r:522ab628-48fe-4448-9fec-0d5328e6484b(jetbrains.mps.build.workflow.actions)/2769948622284761906">
     <file name="QueriesGenerated.java">
-      <node id="3961775458390324808" at="129,94,130,480" concept="1" />
-      <node id="3961775458390324817" at="130,480,131,40" concept="5" />
+      <node id="3961775458390324808" at="129,94,130,445" concept="1" />
+      <node id="3961775458390324817" at="130,445,131,40" concept="5" />
       <node id="3961775458390293280" at="149,202,150,231" concept="5" />
-      <node id="2769948622284767771" at="155,94,156,479" concept="1" />
-      <node id="2769948622284767806" at="156,479,157,40" concept="5" />
+      <node id="2769948622284767771" at="155,94,156,444" concept="1" />
+      <node id="2769948622284767806" at="156,444,157,40" concept="5" />
       <node id="2769948622284767745" at="175,202,176,230" concept="5" />
-      <node id="2769948622284761915" at="181,94,182,483" concept="1" />
-      <node id="2769948622284761979" at="182,483,183,40" concept="5" />
+      <node id="2769948622284761915" at="181,94,182,448" concept="1" />
+      <node id="2769948622284761979" at="182,448,183,40" concept="5" />
       <node id="2769948622284761935" at="201,199,202,237" concept="5" />
-      <node id="7306485738221408325" at="207,94,208,493" concept="1" />
-      <node id="7306485738221408334" at="208,493,209,40" concept="5" />
+      <node id="7306485738221408325" at="207,94,208,458" concept="1" />
+      <node id="7306485738221408334" at="208,458,209,40" concept="5" />
       <node id="7306485738221408339" at="227,203,228,247" concept="5" />
       <node id="3961775458390293278" at="149,0,152,0" concept="6" trace="sideTransformHintSubstituteActionsBuilder_Precondition_BwfSubTask_3961775458390293278#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
       <node id="2769948622284767743" at="175,0,178,0" concept="6" trace="sideTransformHintSubstituteActionsBuilder_Precondition_BwfSubTask_2769948622284767743#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
@@ -65,8 +65,8 @@
   <root nodeRef="r:522ab628-48fe-4448-9fec-0d5328e6484b(jetbrains.mps.build.workflow.actions)/7926701909975917807">
     <file name="QueriesGenerated.java">
       <node id="7926701909975919337" at="41,45,42,128" concept="5" />
-      <node id="7926701909975919272" at="48,98,49,248" concept="4" />
-      <node id="7926701909975919297" at="49,248,50,180" concept="1" />
+      <node id="7926701909975919272" at="48,98,49,213" concept="4" />
+      <node id="7926701909975919297" at="49,213,50,180" concept="1" />
       <node id="7926701909975920304" at="50,180,51,196" concept="1" />
       <node id="7926701909975919287" at="51,196,52,27" concept="5" />
       <node id="7926701909975919384" at="54,61,55,43" concept="5" />
@@ -75,8 +75,8 @@
       <node id="7926701909975921570" at="72,5,73,195" concept="4" />
       <node id="7926701909975921570" at="73,195,74,62" concept="4" />
       <node id="7926701909975921570" at="75,133,76,196" concept="4" />
-      <node id="7926701909975921594" at="78,105,79,249" concept="4" />
-      <node id="7926701909975921600" at="79,249,80,225" concept="1" />
+      <node id="7926701909975921594" at="78,105,79,214" concept="4" />
+      <node id="7926701909975921600" at="79,214,80,225" concept="1" />
       <node id="7926701909975921606" at="80,225,81,22" concept="5" />
       <node id="7926701909975921570" at="83,60,84,25" concept="5" />
       <node id="7926701909975921570" at="87,103,88,75" concept="4" />
@@ -88,8 +88,8 @@
       <node id="7926701909975917808" at="100,5,101,201" concept="4" />
       <node id="7926701909975917808" at="101,201,102,62" concept="4" />
       <node id="7926701909975917808" at="103,133,104,196" concept="4" />
-      <node id="7926701909975917814" at="106,105,107,255" concept="4" />
-      <node id="7926701909975917832" at="107,255,108,190" concept="1" />
+      <node id="7926701909975917814" at="106,105,107,220" concept="4" />
+      <node id="7926701909975917832" at="107,220,108,190" concept="1" />
       <node id="7926701909975917830" at="108,190,109,22" concept="5" />
       <node id="7926701909975917808" at="111,60,112,25" concept="5" />
       <node id="7926701909975917808" at="115,103,116,75" concept="4" />

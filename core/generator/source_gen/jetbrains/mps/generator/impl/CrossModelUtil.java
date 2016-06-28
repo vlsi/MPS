@@ -6,10 +6,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.crossmodel.ExportLabelContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.generator.TransientModelsModule;
 import java.util.List;
@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public final class CrossModelUtil {
   public SNode newEntry(ExportLabelContext labelContext, SNode exportLabel, SModel exports, SModel outputModel) {
-    SNode rv = SModelOperations.createNewNode(exports, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, "jetbrains.mps.lang.generator.structure.ExportEntry")));
+    SNode rv = SModelOperations.createNewNode(exports, null, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, "jetbrains.mps.lang.generator.structure.ExportEntry"));
     SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9c8ecccL, "outputModel"), ((SNode) BHReflection.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9c8b6d3L, "jetbrains.mps.lang.generator.structure.ModelIdentity")), SMethodTrimmedId.create("create", MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9c8b6d3L, "jetbrains.mps.lang.generator.structure.ModelIdentity"), "7PoJpZpMbrI"), exports, outputModel)));
     SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b63027L, "inputNode"), ((SNode) BHReflection.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity")), SMethodTrimmedId.create("create", MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity"), "7PoJpZpIp9n"), exports, labelContext.getInput())));
     SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b63029L, "outputNode"), ((SNode) BHReflection.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity")), SMethodTrimmedId.create("create", MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity"), "7PoJpZpIp9n"), exports, labelContext.getOutput())));

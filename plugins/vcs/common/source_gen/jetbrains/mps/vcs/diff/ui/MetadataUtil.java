@@ -12,7 +12,6 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -22,6 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import java.util.Set;
@@ -50,7 +50,7 @@ public class MetadataUtil {
   private static void createModelRoot(SModel target, SModel origin) {
     SModelBase modelBase = (SModelBase) origin;
     SNodeId nodeId = PersistenceFacade.getInstance().createNodeId("~root");
-    SNode root = SModelOperations.createNewNode(target, nodeId, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, "jetbrains.mps.ide.vcs.modelmetadata.structure.Model")));
+    SNode root = SModelOperations.createNewNode(target, nodeId, MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, "jetbrains.mps.ide.vcs.modelmetadata.structure.Model"));
     SPropertyOperations.set(root, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x7439be589a4e11e6L, "longname"), SModelOperations.getModelName(origin));
     if (origin instanceof GeneratableSModel) {
       SPropertyOperations.set(root, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x7439be589a4e11f4L, "donotgenerate"), "" + (check_ca1g54_a0a0e0d(((GeneratableSModel) origin))));

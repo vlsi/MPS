@@ -10327,11 +10327,11 @@
       <node id="6666499814681587653" at="62,121,63,90" concept="7" />
       <node id="6666499814681589994" at="63,90,64,0" concept="10" />
       <node id="6666499814681590002" at="64,0,65,184" concept="7" />
-      <node id="6666499814681590035" at="66,51,67,275" concept="7" />
-      <node id="6666499814681590064" at="67,275,68,192" concept="3" />
+      <node id="6666499814681590035" at="66,51,67,240" concept="7" />
+      <node id="6666499814681590064" at="67,240,68,192" concept="3" />
       <node id="6666499814681590082" at="68,192,69,192" concept="3" />
       <node id="6420586245471528559" at="69,192,70,62" concept="3" />
-      <node id="6666499814681590110" at="71,7,72,274" concept="7" />
+      <node id="6666499814681590110" at="71,7,72,239" concept="7" />
       <node id="6420586245471528573" at="73,23,74,61" concept="3" />
       <node id="6420586245471595292" at="75,14,76,61" concept="3" />
       <node id="6666499814681590133" at="77,7,78,49" concept="3" />
@@ -10349,7 +10349,7 @@
       <node id="6420586245471528312" at="80,0,83,0" concept="6" trace="getKeyStroke#()Ljava/lang/String;" />
       <node id="3080189811177299342" at="83,0,86,0" concept="11" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
       <node id="6420586245471528312" at="49,0,53,0" concept="6" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="6420586245471595279" at="72,274,77,7" concept="5" />
+      <node id="6420586245471595279" at="72,239,77,7" concept="5" />
       <node id="6420586245471528312" at="19,0,25,0" concept="2" trace="BuildSimpleName_text#()V" />
       <node id="6666499814681590019" at="65,184,71,7" concept="5" />
       <node id="6420586245471528312" at="53,0,62,0" concept="6" trace="canExecute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Z" />

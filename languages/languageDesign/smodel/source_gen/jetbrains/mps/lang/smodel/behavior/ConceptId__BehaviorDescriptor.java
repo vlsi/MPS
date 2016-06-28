@@ -56,7 +56,7 @@ public final class ConceptId__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static void setConcept_id5ZE7FBYYR6j(@NotNull SNode __thisNode__, @NotNull SAbstractConcept concept) {
     SConceptId cid = MetaIdHelper.getConcept(concept);
-    SNode lang = SModelOperations.createNewNode(SNodeOperations.getModel(__thisNode__), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId")));
+    SNode lang = SModelOperations.createNewNode(SNodeOperations.getModel(__thisNode__), null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId"));
     LanguageIdentity__BehaviorDescriptor.setLanguage_id34EJa6aIcyw.invoke(lang, concept.getLanguage());
     SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, 0x5fea1eb9fefb6feaL, "languageIdentity"), lang);
     SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, 0x5fea1eb9fefb73d7L, "conceptName"), concept.getName());

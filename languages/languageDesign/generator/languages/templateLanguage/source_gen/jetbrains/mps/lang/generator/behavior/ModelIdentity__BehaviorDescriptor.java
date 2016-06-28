@@ -19,7 +19,6 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -38,7 +37,7 @@ public final class ModelIdentity__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static SNode create_id7PoJpZpMbrI(@NotNull SAbstractConcept __thisConcept__, SModel where, SModel toIdentify) {
-    SNode rv = SModelOperations.createNewNode(where, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9c8b8cbL, "jetbrains.mps.lang.generator.structure.TrivialModelId")));
+    SNode rv = SModelOperations.createNewNode(where, null, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9c8b8cbL, "jetbrains.mps.lang.generator.structure.TrivialModelId"));
     SPropertyOperations.set(rv, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9c8b8cbL, 0x7d58bd9fd9c8b8cfL, "modelName"), SModelOperations.getModelName(toIdentify));
     return rv;
   }

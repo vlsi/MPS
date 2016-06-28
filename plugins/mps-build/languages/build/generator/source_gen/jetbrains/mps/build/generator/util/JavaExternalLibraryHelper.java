@@ -108,7 +108,7 @@ public class JavaExternalLibraryHelper {
         genContext.showErrorMessage(pe, "no location for " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(pe) + " (unsupported layout element)");
         continue;
       }
-      SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x35951dfcf9e0ba02L, "jetbrains.mps.build.structure.GeneratorInternal_LibraryArtifacts")));
+      SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x35951dfcf9e0ba02L, "jetbrains.mps.build.structure.GeneratorInternal_LibraryArtifacts"));
       ListSequence.fromList(SLinkOperations.getChildren(propertyNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x35951dfcf9e0ba02L, 0x35951dfcf9e0bd1fL, "attrs"))).addElement(_quotation_createNode_g6ffke_a0a3a9a4(val));
       ListSequence.fromList(result).addElement(propertyNode);
     }
@@ -118,7 +118,7 @@ public class JavaExternalLibraryHelper {
         genContext.showErrorMessage(pe, "no content location for " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(pe) + " (unsupported layout element)");
         continue;
       }
-      SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x35951dfcf9e0ba02L, "jetbrains.mps.build.structure.GeneratorInternal_LibraryArtifacts")));
+      SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x35951dfcf9e0ba02L, "jetbrains.mps.build.structure.GeneratorInternal_LibraryArtifacts"));
       ListSequence.fromList(SLinkOperations.getChildren(propertyNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x35951dfcf9e0ba02L, 0x35951dfcf9e0bd1fL, "attrs"))).addElement(_quotation_createNode_g6ffke_a0a3a01a4(val));
       ListSequence.fromList(SLinkOperations.getChildren(propertyNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x35951dfcf9e0ba02L, 0x35951dfcf9e0bd1fL, "attrs"))).addElement(_quotation_createNode_g6ffke_a0a4a01a4());
       ListSequence.fromList(result).addElement(propertyNode);
