@@ -29,14 +29,13 @@ import java.util.Collections;
 import java.util.List;
 
 public interface EditorChecker {
-  Pair<Collection<EditorMessage>, Boolean> CANCELLED = new Pair<Collection<EditorMessage>, Boolean>(Collections.<EditorMessage>emptyList(), false);
 
   boolean isLaterThan(EditorChecker editorChecker);
 
   boolean isEssential();
 
   /**
-   * Invalidate internal state for editors affected by {@code events}.
+   * Invalidates internal state for editors affected by {@code events}.
    *
    * @param events events that occurred since the last call to this method (or since this instance was added to the highlighter)
    */
@@ -44,8 +43,17 @@ public interface EditorChecker {
 
   boolean needsUpdate(EditorComponent editorComponent);
 
+  /**
+   * Checks {@code editorComponent} for messages. Should watch {@code cancellable} for cancellation.
+   *
+   * @param editorComponent the component to check
+   * @param incremental if true, cached information may be used; if false, cached information should be forgotten and the editor component rechecked completely.
+   * @param applyQuickFixes if true, the checker may apply any quick fixes.
+   * @param cancellable an object to check periodically for cancellation requests (see {@link Cancellable#isCancelled()}.
+   * @return an {@link UpdateResult} indicating whether the update completed successfully and possibly containing check results.
+   */
   @NotNull
-  Pair<Collection<EditorMessage>, Boolean> update(EditorComponent editorComponent, boolean incremental, boolean applyQuickFixes, Cancellable cancellable);
+  UpdateResult update(EditorComponent editorComponent, boolean incremental, boolean applyQuickFixes, Cancellable cancellable);
 
   /**
    * Indicates that there will not be any more calls to {@link #needsUpdate} before another call to {@link #processEvents}.

@@ -18,15 +18,13 @@ package jetbrains.mps.nodeEditor.checking;
 import com.intellij.openapi.project.IndexNotReadyException;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.nodeEditor.highlighter.IHighlighter;
+import jetbrains.mps.nodeEditor.checking.UpdateResult.Completed;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Cancellable;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -64,14 +62,13 @@ public class LegacyEditorCheckerAdapter implements EditorChecker {
 
   @NotNull
   @Override
-  public Pair<Collection<EditorMessage>, Boolean> update(EditorComponent editorComponent, boolean incremental, boolean applyQuickFixes,
-      Cancellable cancellable) {
+  public UpdateResult update(EditorComponent editorComponent, boolean incremental, boolean applyQuickFixes, Cancellable cancellable) {
     try {
       Set<EditorMessage> messages = myChecker.createMessagesProtected(editorComponent.getEditedNode(), myEvents, incremental,
           editorComponent.getEditorContext(), cancellable, applyQuickFixes);
 
       boolean changed = myChecker.areMessagesChangedProtected();
-      return new Pair<Collection<EditorMessage>, Boolean>(messages, changed);
+      return new Completed(changed, messages);
     } catch (IndexNotReadyException e) {
       myChecker.clearProtected(editorComponent.getEditedNode(), editorComponent);
       throw e;

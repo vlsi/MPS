@@ -22,6 +22,8 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.PriorityComparator;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
+import jetbrains.mps.nodeEditor.checking.UpdateResult;
+import jetbrains.mps.nodeEditor.checking.UpdateResult.Completed;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodePointer;
@@ -167,9 +169,6 @@ public class HighlighterUpdateSession {
     return updateEditor(component, rootWasCheckedOnce, checkersToRecheckList, recreateInspectorMessages, applyQuickFixes);
   }
 
-  private static final Pair<Collection<EditorMessage>, Boolean> CHECK_ABORTED = new Pair<Collection<EditorMessage>, Boolean>(
-      Collections.<EditorMessage>emptySet(), false);
-
   private boolean updateEditor(final EditorComponent editor, final boolean wasCheckedOnce,
       List<EditorChecker> checkersToRecheck, boolean recreateInspectorMessages, final boolean applyQuickFixes) {
     if (editor == null || editor.getRootCell() == null) return false;
@@ -177,20 +176,22 @@ public class HighlighterUpdateSession {
     final NodeHighlightManager highlightManager = editor.getHighlightManager();
     boolean anyMessageChanged = false;
     for (final EditorChecker checker : checkersToRecheck) {
-      Pair<Collection<EditorMessage>, Boolean> checkResult = runLoPrioRead(new Computable<Pair<Collection<EditorMessage>, Boolean>>() {
+      UpdateResult checkResult = runLoPrioRead(new Computable<UpdateResult>() {
         @Override
-        public Pair<Collection<EditorMessage>, Boolean> compute() {
-          if (myHighlighter.isPausedOrStopping()) return CHECK_ABORTED;
+        public UpdateResult compute() {
+          if (myHighlighter.isPausedOrStopping()) return UpdateResult.CANCELLED;
 
           SNode node = editor.getEditedNode(); // XXX perhaps, shall use getEditedNodePointer and resolve it, rather than check isAccessible?
           if (node == null) {
-            return CHECK_ABORTED;
+            return UpdateResult.CANCELLED;
           }
           if (!SNodeUtil.isAccessible(node, editor.getEditorContext().getRepository())) {
             // asking runLoPrioRead() implementation to re-execute this task later:
             // editor was not updated in accordance with last modelReload event yet.
             return null;
           }
+
+          boolean recreateMessages = myHighlighter.getEditorTracker().isInspector(editor) && recreateInspectorMessages;
 
           try {
             return checker.update(editor, wasCheckedOnce, applyQuickFixes,
@@ -203,11 +204,14 @@ public class HighlighterUpdateSession {
       });
       if (myHighlighter.isStopping()) return false;
 
-      if (checkResult.o2 || (myHighlighter.getEditorTracker().isInspector(editor) && recreateInspectorMessages)) {
-        anyMessageChanged = true;
-        highlightManager.clearForOwner(checker.getEditorMessageOwner(), false);
-        for (EditorMessage message : checkResult.o1) {
-          highlightManager.mark(message);
+      if (checkResult instanceof Completed) {
+        Completed completed = (Completed) checkResult;
+        if (completed.myMessagesChanged || myHighlighter.getEditorTracker().isInspector(editor) && recreateInspectorMessages) {
+          anyMessageChanged = true;
+          highlightManager.clearForOwner(checker.getEditorMessageOwner(), false);
+          for (EditorMessage message : completed.myMessages) {
+            highlightManager.mark(message);
+          }
         }
       }
     }

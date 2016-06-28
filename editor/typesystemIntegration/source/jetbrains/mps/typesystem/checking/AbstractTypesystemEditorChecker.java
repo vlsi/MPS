@@ -27,6 +27,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
+import jetbrains.mps.nodeEditor.checking.UpdateResult;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
@@ -59,7 +60,7 @@ public abstract class AbstractTypesystemEditorChecker implements EditorChecker, 
   private boolean myHasEvents = false;
 
   @NotNull
-  protected abstract Pair<Collection<EditorMessage>, Boolean> doCreateMessages(TypeCheckingContext context, boolean wasCheckedOnce, EditorContext editorContext,
+  protected abstract UpdateResult doCreateMessages(TypeCheckingContext context, boolean wasCheckedOnce, EditorContext editorContext,
       SNode rootNode, Cancellable cancellable, boolean applyQuickFixes);
 
   @Override
@@ -93,16 +94,11 @@ public abstract class AbstractTypesystemEditorChecker implements EditorChecker, 
 
   @NotNull
   @Override
-  public Pair<Collection<EditorMessage>, Boolean> update(final EditorComponent editorComponent, final boolean incremental, final boolean applyQuickFixes,
+  public UpdateResult update(final EditorComponent editorComponent, final boolean incremental, final boolean applyQuickFixes,
       final Cancellable cancellable) {
     try {
       return TypeContextManager.getInstance().runTypeCheckingComputation(editorComponent.getTypecheckingContextOwner(), editorComponent.getEditedNode(),
-          new Computation<Pair<Collection<EditorMessage>, Boolean>>() {
-            @Override
-            public Pair<Collection<EditorMessage>, Boolean> compute(final TypeCheckingContext context) {
-              return doCreateMessages(context, incremental, editorComponent.getEditorContext(), editorComponent.getEditedNode(), cancellable, applyQuickFixes);
-            }
-          });
+          context -> doCreateMessages(context, incremental, editorComponent.getEditorContext(), editorComponent.getEditedNode(), cancellable, applyQuickFixes));
     } catch (IndexNotReadyException e) {
       if (editorComponent.getNodeForTypechecking() != null) {
         TypeContextManager.getInstance().acquireTypecheckingContext(editorComponent.getNodeForTypechecking(), editorComponent);
