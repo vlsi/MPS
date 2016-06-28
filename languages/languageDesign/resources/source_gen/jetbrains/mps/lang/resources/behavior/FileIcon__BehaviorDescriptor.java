@@ -116,6 +116,9 @@ public final class FileIcon__BehaviorDescriptor extends BaseBHDescriptor {
     return ((String) Icon__BehaviorDescriptor.getResourceId_id2p1v3tOadt0.invoke(__thisNode__));
   }
   /*package*/ static String getResourceId_id2p1v3tOadt0(@NotNull SNode __thisNode__) {
+    if (isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")))) {
+      return null;
+    }
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")).substring(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")).lastIndexOf("/") + 1);
   }
 
@@ -172,4 +175,7 @@ public final class FileIcon__BehaviorDescriptor extends BaseBHDescriptor {
     return CONCEPT;
   }
   protected static Logger LOG = LogManager.getLogger(FileIcon__BehaviorDescriptor.class);
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
+  }
 }

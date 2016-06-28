@@ -126,6 +126,7 @@
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -773,6 +774,22 @@
       <ref role="13i0hy" node="2p1v3tOadt0" resolve="getResourceId" />
       <node concept="3Tm1VV" id="2p1v3tOaeUv" role="1B3o_S" />
       <node concept="3clFbS" id="2p1v3tOaeU_" role="3clF47">
+        <node concept="3clFbJ" id="Ib_Fk7DsoR" role="3cqZAp">
+          <node concept="3clFbS" id="Ib_Fk7DsoT" role="3clFbx">
+            <node concept="3cpWs6" id="Ib_Fk7Dv13" role="3cqZAp">
+              <node concept="10Nm6u" id="Ib_Fk7Dvni" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="Ib_Fk7Du6l" role="3clFbw">
+            <node concept="2OqwBi" id="Ib_Fk7DtcI" role="2Oq$k0">
+              <node concept="13iPFW" id="Ib_Fk7DsIS" role="2Oq$k0" />
+              <node concept="3TrcHB" id="Ib_Fk7DtER" role="2OqNvi">
+                <ref role="3TsBF5" to="1oap:2p1v3tOafqN" resolve="file" />
+              </node>
+            </node>
+            <node concept="17RlXB" id="Ib_Fk7DuYv" role="2OqNvi" />
+          </node>
+        </node>
         <node concept="3clFbF" id="2p1v3tOaifE" role="3cqZAp">
           <node concept="2OqwBi" id="2p1v3tOaifG" role="3clFbG">
             <node concept="liA8E" id="2p1v3tOaifI" role="2OqNvi">
