@@ -6127,8 +6127,10 @@
         <node concept="3clFbF" id="6ysF3v1j_gW" role="3cqZAp">
           <node concept="1rXfSq" id="6ysF3v1j_gX" role="3clFbG">
             <ref role="37wK5l" node="6ysF3v1j_hW" resolve="registerShortcutSet" />
-            <node concept="3$FdUm" id="3AiLQyD3xlt" role="37wK5m">
-              <ref role="3$FpRE" to="oh9p:2ONldtgwNPF" resolve="ExecuteActionAttachedToCurrentNode" />
+            <node concept="2ShNRf" id="6ysF3v1j_gY" role="37wK5m">
+              <node concept="1pGfFk" id="6ysF3v1j_gZ" role="2ShVmc">
+                <ref role="37wK5l" node="6ysF3v1j_vB" resolve="BaseConsoleTab.ExecuteClosureAction" />
+              </node>
             </node>
             <node concept="2ShNRf" id="6ysF3v1j_h0" role="37wK5m">
               <node concept="1pGfFk" id="6ysF3v1j_h1" role="2ShVmc">
@@ -6163,6 +6165,111 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1cuLJ89y4Vv" role="jymVt" />
+    <node concept="312cEu" id="6ysF3v1j_vA" role="jymVt">
+      <property role="2bfB8j" value="true" />
+      <property role="1sVAO0" value="false" />
+      <property role="1EXbeo" value="false" />
+      <property role="TrG5h" value="ExecuteClosureAction" />
+      <node concept="3clFbW" id="6ysF3v1j_vB" role="jymVt">
+        <node concept="3cqZAl" id="6ysF3v1j_vC" role="3clF45" />
+        <node concept="3clFbS" id="6ysF3v1j_vD" role="3clF47">
+          <node concept="XkiVB" id="6ysF3v1j_vE" role="3cqZAp">
+            <ref role="37wK5l" to="7bx7:~BaseAction.&lt;init&gt;(java.lang.String)" resolve="BaseAction" />
+            <node concept="Xl_RD" id="6ysF3v1j_vF" role="37wK5m">
+              <property role="Xl_RC" value="Execute Closure" />
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="6ysF3v1j_vG" role="1B3o_S" />
+      </node>
+      <node concept="3clFb_" id="3ccBryyvu$J" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="isApplicable" />
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3Tm1VV" id="3ccBryyvu$K" role="1B3o_S" />
+        <node concept="10P_77" id="3ccBryyvu$M" role="3clF45" />
+        <node concept="37vLTG" id="3ccBryyvu$N" role="3clF46">
+          <property role="TrG5h" value="event" />
+          <node concept="3uibUv" id="3ccBryyvu$O" role="1tU5fm">
+            <ref role="3uigEE" to="qkt:~AnActionEvent" resolve="AnActionEvent" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="3ccBryyvu$P" role="3clF46">
+          <property role="TrG5h" value="_params" />
+          <node concept="3uibUv" id="3ccBryyvu$Q" role="1tU5fm">
+            <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
+            <node concept="3uibUv" id="3ccBryyvu$R" role="11_B2D">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="3uibUv" id="3ccBryyvu$S" role="11_B2D">
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="3ccBryyvu$T" role="3clF47">
+          <node concept="3clFbF" id="3ccBryyvvek" role="3cqZAp">
+            <node concept="2OqwBi" id="3ccBryyvvpX" role="3clFbG">
+              <node concept="3$FdUm" id="3ccBryyvvem" role="2Oq$k0">
+                <ref role="3$FpRE" to="oh9p:2ONldtgwNPF" resolve="ExecuteActionAttachedToCurrentNode" />
+              </node>
+              <node concept="liA8E" id="3ccBryyvvHD" role="2OqNvi">
+                <ref role="37wK5l" to="7bx7:~BaseAction.isApplicable(com.intellij.openapi.actionSystem.AnActionEvent,java.util.Map):boolean" resolve="isApplicable" />
+                <node concept="37vLTw" id="3ccBryyvwnH" role="37wK5m">
+                  <ref role="3cqZAo" node="3ccBryyvu$N" resolve="event" />
+                </node>
+                <node concept="37vLTw" id="3ccBryyvx9G" role="37wK5m">
+                  <ref role="3cqZAo" node="3ccBryyvu$P" resolve="_params" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tmbuc" id="4gO8GruOp4s" role="1B3o_S" />
+      <node concept="3uibUv" id="6ysF3v1j_vI" role="1zkMxy">
+        <ref role="3uigEE" to="7bx7:~BaseAction" resolve="BaseAction" />
+      </node>
+      <node concept="3clFb_" id="6ysF3v1j_vJ" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="doExecute" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tmbuc" id="6ysF3v1j_vK" role="1B3o_S" />
+        <node concept="3cqZAl" id="6ysF3v1j_vL" role="3clF45" />
+        <node concept="37vLTG" id="6ysF3v1j_vM" role="3clF46">
+          <property role="TrG5h" value="event" />
+          <node concept="3uibUv" id="6ysF3v1j_vN" role="1tU5fm">
+            <ref role="3uigEE" to="qkt:~AnActionEvent" resolve="AnActionEvent" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="6ysF3v1j_vO" role="3clF46">
+          <property role="TrG5h" value="map" />
+          <node concept="3uibUv" id="6ysF3v1j_vP" role="1tU5fm">
+            <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
+            <node concept="17QB3L" id="3ZgZ1njMHRn" role="11_B2D" />
+            <node concept="3uibUv" id="6ysF3v1j_vR" role="11_B2D">
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="6ysF3v1j_vS" role="3clF47">
+          <node concept="3clFbF" id="6ysF3v1j_vT" role="3cqZAp">
+            <node concept="2YIFZM" id="6ysF3v1j_vU" role="3clFbG">
+              <ref role="37wK5l" to="7bx7:~ActionUtils.updateAndPerformAction(com.intellij.openapi.actionSystem.AnAction,com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="updateAndPerformAction" />
+              <ref role="1Pybhc" to="7bx7:~ActionUtils" resolve="ActionUtils" />
+              <node concept="3$FdUm" id="6ysF3v1j_vV" role="37wK5m">
+                <ref role="3$FpRE" to="oh9p:2ONldtgwNPF" resolve="ExecuteActionAttachedToCurrentNode" />
+              </node>
+              <node concept="37vLTw" id="6ysF3v1j_vW" role="37wK5m">
+                <ref role="3cqZAo" node="6ysF3v1j_vM" resolve="event" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4gO8GruPTe7" role="jymVt" />
     <node concept="312cEu" id="6ysF3v1j_vY" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="1sVAO0" value="false" />
