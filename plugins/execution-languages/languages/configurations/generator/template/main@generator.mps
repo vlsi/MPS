@@ -7,7 +7,7 @@
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="1" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
@@ -806,7 +806,7 @@
     </node>
     <node concept="2rT7sh" id="6iagqa2tmPf" role="2rTMjI">
       <property role="TrG5h" value="IconResourceToIconField" />
-      <ref role="2rTdP9" to="1oap:7Mb2akaesqV" resolve="Icon" />
+      <ref role="2rTdP9" to="1oap:7Mb2akaesqV" resolve="FileIcon" />
       <ref role="2rZz_L" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
     </node>
     <node concept="2rT7sh" id="52CUgX5ZyzT" role="2rTMjI">
@@ -974,7 +974,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="6iagqa2tmNe" role="3acgRq">
-      <ref role="30HIoZ" to="1oap:7Mb2akaesqV" resolve="Icon" />
+      <ref role="30HIoZ" to="1oap:7Mb2akaesqV" resolve="FileIcon" />
       <ref role="2sgKRv" node="6iagqa2tmPf" resolve="IconResourceToIconField" />
       <node concept="30G5F_" id="6iagqa2tmNg" role="30HLyM">
         <node concept="3clFbS" id="6iagqa2tmNh" role="2VODD2">
@@ -4810,7 +4810,7 @@
   </node>
   <node concept="13MO4I" id="6iagqa2tmNE">
     <property role="TrG5h" value="reduce_IconResource" />
-    <ref role="3gUMe" to="1oap:7Mb2akaesqV" resolve="Icon" />
+    <ref role="3gUMe" to="1oap:7Mb2akaesqV" resolve="FileIcon" />
     <node concept="Wx3nA" id="6iagqa2tmNI" role="13RCb5">
       <property role="TrG5h" value="ICON" />
       <property role="3TUv4t" value="true" />
