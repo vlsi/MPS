@@ -5972,7 +5972,7 @@
     <property role="EcuMT" value="8998492695583129991" />
     <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteFeature_CanExecute" />
-    <property role="34LRSv" value="matching text" />
+    <property role="34LRSv" value="can execute" />
     <ref role="1TJDcQ" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
     <node concept="1TJgyj" id="7Nx4mSUbw68" role="1TKVEi">
       <property role="IQ2ns" value="8998492695583129992" />
