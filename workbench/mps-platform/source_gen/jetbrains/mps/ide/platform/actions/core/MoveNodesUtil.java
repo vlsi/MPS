@@ -20,9 +20,11 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
+import jetbrains.mps.refactoring.participant.RefactoringSession;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -118,7 +120,7 @@ public class MoveNodesUtil {
       }
     }).toListSequence());
 
-    Iterable<? extends RefactoringParticipant<?, ?, SNode, SNode>> participants = (Iterable<? extends RefactoringParticipant<?, ?, SNode, SNode>>) new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects();
+    Iterable<? extends RefactoringParticipant<?, ?, SNode, SNode>> participants = (Iterable<? extends RefactoringParticipant<?, ?, SNode, SNode>>) new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.refactoring.MoveNodeParticipantEP").getObjects();
     final Map<SNode, RefactoringParticipant.KeepOldNodes> removeOldRoots = MapSequence.fromMap(new HashMap<SNode, RefactoringParticipant.KeepOldNodes>());
     RefactoringProcessor.performRefactoringUserInteractive(project, refactoringName, participants, allNodes, new _FunctionTypes._return_P2_E0<Map<SNode, SNode>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, SNode, SNode, SNode>>, RefactoringSession>() {
       public Map<SNode, SNode> invoke(final Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, SNode, SNode, SNode>> participantStates, RefactoringSession refactoringSession) {

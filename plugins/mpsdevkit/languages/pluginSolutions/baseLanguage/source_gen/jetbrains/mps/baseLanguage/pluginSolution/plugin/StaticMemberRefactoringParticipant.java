@@ -4,8 +4,8 @@ package jetbrains.mps.baseLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipantBase;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
-import jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant;
+import jetbrains.mps.refactoring.participant.RefactoringParticipant;
+import jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;

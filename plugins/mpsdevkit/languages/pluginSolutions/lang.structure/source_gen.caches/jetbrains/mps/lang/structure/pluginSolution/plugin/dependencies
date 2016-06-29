@@ -102,12 +102,10 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.NodeReferenceUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
@@ -118,6 +116,8 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveReferenceLinkSpecialization" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecialization" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
@@ -141,8 +141,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipantBase" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringParticipantBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveAbstractConceptSpecialization" file="MoveAbstractConceptSpecialization.java">
     <classNode dependClassName="java.lang.IllegalStateException" />
@@ -189,7 +189,6 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.NodeLocation" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
@@ -200,9 +199,10 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConceptUtil" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -215,9 +215,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.RecursiveParticipant" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipantBase" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.RecursiveParticipant" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringParticipantBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConceptUtil" file="MoveConceptUtil.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -574,21 +574,21 @@
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecialization" file="StructureSpecialization.java">
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.LanguageStructureMigrationParticipant" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringDataCollector" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringDataCollector" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecializationBase" file="StructureSpecializationBase.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringDataCollector" />
     <classNode extendsClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecialization" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringDataCollector" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.Structure_ActionGroup" file="Structure_ActionGroup.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
@@ -602,11 +602,11 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Void" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipantBase" />
     <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipantBase.NodeData" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
@@ -617,9 +617,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.PersistentRefactoringParticipant" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipant" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.PersistentRefactoringParticipant" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.UpdateLocalInstancesParticipant" file="UpdateLocalInstancesParticipant.java">
     <classNode dependClassName="java.lang.Runnable" />
@@ -630,17 +630,17 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveAbstractConceptSpecialization" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveContainmentLinkSpecialization" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MovePropertySpecialization" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveReferenceLinkSpecialization" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecialization" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
@@ -651,8 +651,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipantBase" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringParticipantBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant" file="WriteSubconceptMigrationParticipant.java">
     <classNode dependClassName="java.lang.Object" />
@@ -665,7 +665,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -675,7 +674,6 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.IMigrationUnit__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipantBase" />
     <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipantBase.NamedNodeReference" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.NodeReferenceUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
@@ -685,6 +683,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.LanguageStructureMigrationParticipant" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -699,9 +699,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.PersistentRefactoringParticipant" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipantBase" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.PersistentRefactoringParticipant" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringParticipantBase" />
   </dependency>
 </dependenciesRoot>
 

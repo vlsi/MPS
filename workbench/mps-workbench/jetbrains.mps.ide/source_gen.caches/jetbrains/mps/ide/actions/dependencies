@@ -1896,11 +1896,12 @@
   <dependency className="jetbrains.mps.ide.actions.MoveModel_Action" file="MoveModel_Action.java">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveModelRefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveModelRefactoringParticipant" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.project.creation.NewModelDialog" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
@@ -1908,6 +1909,7 @@
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
@@ -1920,8 +1922,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageAspectSupport" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.MoveModelRefactoringParticipant" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringProcessor" />
     <classNode dependClassName="javax.swing.Icon" />
@@ -3383,6 +3386,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
@@ -3390,6 +3394,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />
@@ -3397,12 +3402,12 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
@@ -3411,6 +3416,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="java.util.Collections" />
@@ -3418,6 +3424,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SReferenceBase" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveModelRefactoringParticipant" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.MoveModelRefactoringParticipant" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringParticipantBase" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipantBase" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.View_ActionGroup" file="View_ActionGroup.java">

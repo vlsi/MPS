@@ -21,12 +21,12 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.refactoring.ChooseModuleDialog;
-import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
+import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
-import jetbrains.mps.ide.platform.actions.core.MoveModelRefactoringParticipant;
+import jetbrains.mps.refactoring.participant.MoveModelRefactoringParticipant;
 import jetbrains.mps.ide.platform.actions.core.RefactoringProcessor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
+import jetbrains.mps.refactoring.participant.RefactoringSession;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.project.AbstractModule;
@@ -112,7 +112,7 @@ public class MoveModel_Action extends BaseAction {
       return;
     }
 
-    Iterable<? extends RefactoringParticipant<?, ?, SModel, SModel>> participants = new ExtensionPoint<MoveModelRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveModelParticipantEP").getObjects();
+    Iterable<? extends RefactoringParticipant<?, ?, SModel, SModel>> participants = new ExtensionPoint<MoveModelRefactoringParticipant<?, ?>>("jetbrains.mps.refactoring.MoveModelParticipantEP").getObjects();
 
     RefactoringProcessor.performRefactoringUserInteractive(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), "Move Model", participants, ListSequence.fromListAndArray(new ArrayList<SModel>(), ((SModel) MapSequence.fromMap(_params).get("model"))), new _FunctionTypes._return_P2_E0<Map<SModel, SModel>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SModel, SModel, SModel, SModel>>, RefactoringSession>() {
       public Map<SModel, SModel> invoke(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SModel, SModel, SModel, SModel>> changes, RefactoringSession refactoringSession) {

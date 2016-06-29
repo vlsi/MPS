@@ -24,9 +24,9 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringPart;
-import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
+import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import java.util.List;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
+import jetbrains.mps.refactoring.participant.RefactoringSession;
 import jetbrains.mps.ide.platform.actions.core.RefactoringProcessor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -54,7 +54,7 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
-import jetbrains.mps.ide.platform.actions.core.RefactoringSessionImpl;
+import jetbrains.mps.refactoring.participant.RefactoringSessionImpl;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -234,7 +234,7 @@ public class MigrationComponent extends AbstractProjectComponent {
       }
       return null;
     }
-    Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> participants = Sequence.fromIterable(new ExtensionPoint<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>>("jetbrains.mps.ide.platform.PersistentRefactoringParticipantsEP").getObjects()).translate(new ITranslator2<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>() {
+    Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> participants = Sequence.fromIterable(new ExtensionPoint<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>>("jetbrains.mps.refactoring.PersistentRefactoringParticipantsEP").getObjects()).translate(new ITranslator2<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>() {
       public Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> translate(Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> it) {
         return it;
       }

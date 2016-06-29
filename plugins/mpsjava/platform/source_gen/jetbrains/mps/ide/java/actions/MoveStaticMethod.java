@@ -18,8 +18,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Map;
-import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
+import jetbrains.mps.refactoring.participant.RefactoringParticipant;
+import jetbrains.mps.refactoring.participant.RefactoringSession;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticMethodRefactoring;
 
 public class MoveStaticMethod implements MoveNodesAction {
