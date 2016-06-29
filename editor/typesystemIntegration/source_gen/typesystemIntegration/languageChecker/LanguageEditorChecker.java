@@ -28,7 +28,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
-import jetbrains.mps.nodeEditor.checking.LegacyEditorCheckerAdapter;
 import jetbrains.mps.nodeEditor.checking.UpdateResult;
 import jetbrains.mps.util.Cancellable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -181,11 +180,8 @@ public class LanguageEditorChecker extends BaseNewEditorChecker implements Dispo
     if (checker instanceof TypesEditorChecker) {
       return true;
     }
-    if (checker instanceof LegacyEditorCheckerAdapter) {
-      LegacyEditorCheckerAdapter legacyChecker = (LegacyEditorCheckerAdapter) checker;
-      if (legacyChecker.getChecker() instanceof AutoResolver) {
-        return true;
-      }
+    if (checker instanceof AutoResolver) {
+      return true;
     }
     return false;
   }
