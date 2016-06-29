@@ -3777,19 +3777,6 @@
         </node>
       </node>
     </node>
-    <node concept="3clFb_" id="1ajtCshIqBY" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="registerLast" />
-      <node concept="3cqZAl" id="1ajtCshIqBZ" role="3clF45" />
-      <node concept="3Tm1VV" id="1ajtCshIqC0" role="1B3o_S" />
-      <node concept="3clFbS" id="1ajtCshIqC1" role="3clF47" />
-      <node concept="37vLTG" id="1ajtCshIqC2" role="3clF46">
-        <property role="TrG5h" value="change" />
-        <node concept="3uibUv" id="1ajtCshIqC3" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
-        </node>
-      </node>
-    </node>
     <node concept="3Tm1VV" id="3KqYwoBJ0xg" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="4JdgAL_4yNB">
