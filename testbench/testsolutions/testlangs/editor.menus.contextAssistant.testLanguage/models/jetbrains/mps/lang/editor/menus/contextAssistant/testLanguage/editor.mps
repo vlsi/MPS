@@ -2,13 +2,13 @@
 <model ref="r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="b1c7d06f-525d-43b5-9b0a-2fc8f7f076ba" name="jetbrains.mps.editor.contextActionsTool.lang.menus" version="0" />
-    <use id="cffe907e-d3de-433f-89d6-57d9c449c0e2" name="jetbrains.mps.lang.editor.menus.extras" version="0" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="b1c7d06f-525d-43b5-9b0a-2fc8f7f076ba" name="jetbrains.mps.editor.contextActionsTool.lang.menus" version="-1" />
+    <use id="cffe907e-d3de-433f-89d6-57d9c449c0e2" name="jetbrains.mps.lang.editor.menus.extras" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -28,9 +28,8 @@
       <concept id="5979521222239143262" name="jetbrains.mps.lang.resources.structure.IconResourceExpression" flags="ng" index="2SwGe0">
         <child id="5979521222239172928" name="icon" index="2SwzYu" />
       </concept>
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
-      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
-        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu">
+        <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
     </language>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -826,7 +825,7 @@
               <node concept="3clFbF" id="6nBFUP6XBty" role="3cqZAp">
                 <node concept="2SwGe0" id="6nBFUP733e5" role="3clFbG">
                   <node concept="1QGGSu" id="6nBFUP733e7" role="2SwzYu">
-                    <property role="1QGGTI" value="${module}/icons/action.png" />
+                    <property role="1iqoE4" value="${module}/icons/action.png" />
                   </node>
                 </node>
               </node>
@@ -944,6 +943,7 @@
     <node concept="1Qtc8_" id="3EZUZhn6Io0" role="IW6Ez">
       <node concept="2jZ$wP" id="3EZUZhnb0R7" role="1Qtc8$" />
       <node concept="1GhOrh" id="3EZUZhn6Io9" role="1Qtc8A">
+        <node concept="10Oyi0" id="3EZUZhn6Io$" role="2ZBHrp" />
         <node concept="1GhMSn" id="3EZUZhn6Ioc" role="1GhOrs">
           <node concept="3clFbS" id="3EZUZhn6Ioe" role="2VODD2">
             <node concept="3clFbF" id="3EZUZhn9dDC" role="3cqZAp">
@@ -986,7 +986,6 @@
           <node concept="2jZ$Xq" id="3EZUZhnb0Rd" role="2jZA2a" />
           <node concept="2jZ$wS" id="3EZUZhnb0Re" role="2jZA2a" />
         </node>
-        <node concept="10Oyi0" id="3EZUZhn6Io$" role="2ZBHrp" />
       </node>
     </node>
   </node>
@@ -1005,7 +1004,7 @@
               <node concept="3clFbF" id="6nBFUP6XCgQ" role="3cqZAp">
                 <node concept="2SwGe0" id="6nBFUP733vr" role="3clFbG">
                   <node concept="1QGGSu" id="6nBFUP733vs" role="2SwzYu">
-                    <property role="1QGGTI" value="${module}/icons/refactoring.png" />
+                    <property role="1iqoE4" value="${module}/icons/refactoring.png" />
                   </node>
                 </node>
               </node>
@@ -1032,7 +1031,7 @@
               <node concept="3clFbF" id="6nBFUP6XCb7" role="3cqZAp">
                 <node concept="2SwGe0" id="6nBFUP733r2" role="3clFbG">
                   <node concept="1QGGSu" id="6nBFUP733r3" role="2SwzYu">
-                    <property role="1QGGTI" value="${module}/icons/action.png" />
+                    <property role="1iqoE4" value="${module}/icons/action.png" />
                   </node>
                 </node>
               </node>

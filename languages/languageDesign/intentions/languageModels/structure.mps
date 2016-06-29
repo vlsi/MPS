@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -14,9 +14,8 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
-      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
-        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
+        <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -68,7 +67,7 @@
     <property role="EcuMT" value="1192794744107" />
     <ref role="1TJDcQ" node="2c3oNEsfcpP" resolve="BaseIntentionDeclaration" />
     <node concept="1QGGSu" id="4Q8sAA5iJSm" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/intentionBulb.png" />
+      <property role="1iqoE4" value="${module}/icons/intentionBulb.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hmS6ZEB">
@@ -258,7 +257,7 @@
     <property role="EcuMT" value="2522969319638198293" />
     <ref role="1TJDcQ" node="2c3oNEsfcpP" resolve="BaseIntentionDeclaration" />
     <node concept="1QGGSu" id="4Q8sAA5iJSl" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/surroundWithIntention.png" />
+      <property role="1iqoE4" value="${module}/icons/surroundWithIntention.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="1$_U1xaW3xx">
@@ -305,7 +304,7 @@
       <ref role="20lvS9" node="5_2vHPPt4ol" resolve="ErrorIntentionPriority" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJSn" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/intentionBulb.png" />
+      <property role="1iqoE4" value="${module}/icons/intentionBulb.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="6q8H2OTpOHU">

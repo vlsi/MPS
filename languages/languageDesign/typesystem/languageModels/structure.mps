@@ -4,7 +4,7 @@
   <languages>
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -16,9 +16,8 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
-      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
-        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
+        <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -166,7 +165,7 @@
       <ref role="PrY4T" node="3SW4jvYrbtS" resolve="IRuleWithOneNode" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQc" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/rule.png" />
+      <property role="1iqoE4" value="${module}/icons/rule.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="h5YuPLN">
@@ -426,7 +425,7 @@
       <ref role="PrY4T" node="3SW4jvYrbtS" resolve="IRuleWithOneNode" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQd" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/subtyping.png" />
+      <property role="1iqoE4" value="${module}/icons/subtyping.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="h6Mj0No">
@@ -903,7 +902,7 @@
       <ref role="PrY4T" node="3SW4jvYrbtT" resolve="IRuleWithTwoNodes" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQa" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/comparison.png" />
+      <property role="1iqoE4" value="${module}/icons/comparison.png" />
     </node>
   </node>
   <node concept="AxPO7" id="hnFOH2D">
@@ -969,7 +968,7 @@
       <ref role="PrY4T" node="3SW4jvYrbtS" resolve="IRuleWithOneNode" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQ8" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/nontypesystem.png" />
+      <property role="1iqoE4" value="${module}/icons/nontypesystem.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hv5pCJM">
@@ -995,7 +994,7 @@
       <ref role="PrY4T" node="3SW4jvYrbtT" resolve="IRuleWithTwoNodes" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQ9" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/replacement.png" />
+      <property role="1iqoE4" value="${module}/icons/replacement.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hv622I5">
@@ -1254,7 +1253,7 @@
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQ7" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/quickFix.png" />
+      <property role="1iqoE4" value="${module}/icons/quickFix.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hGQ5ZVt">
@@ -1530,7 +1529,7 @@
       <ref role="20lvS9" node="hS7e__q" resolve="VariableConverterItem" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQ5" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/variableReplacement.png" />
+      <property role="1iqoE4" value="${module}/icons/variableReplacement.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hS7z$4e">
@@ -1716,7 +1715,7 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQ6" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/overloadedRules.png" />
+      <property role="1iqoE4" value="${module}/icons/overloadedRules.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="i1GQ0bS">
@@ -2199,7 +2198,7 @@
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQb" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/substitute.png" />
+      <property role="1iqoE4" value="${module}/icons/substitute.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="1y5tROjsd_V">

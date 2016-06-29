@@ -4,7 +4,7 @@
   <languages>
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -30,9 +30,8 @@
       <concept id="5979521222239143262" name="jetbrains.mps.lang.resources.structure.IconResourceExpression" flags="ng" index="2SwGe0">
         <child id="5979521222239172928" name="icon" index="2SwzYu" />
       </concept>
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
-      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
-        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
+        <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1633,7 +1632,7 @@
                 <node concept="3cpWs6" id="1fdcuoJ0cYR" role="3cqZAp">
                   <node concept="2SwGe0" id="14excHa38yu" role="3cqZAk">
                     <node concept="1QGGSu" id="1fdcuoJ0dCd" role="2SwzYu">
-                      <property role="1QGGTI" value="${module}/icons/abstractException.png" />
+                      <property role="1iqoE4" value="${module}/icons/abstractException.png" />
                     </node>
                   </node>
                 </node>
@@ -1648,7 +1647,7 @@
             <node concept="3cpWs6" id="1fdcuoJ0fbJ" role="3cqZAp">
               <node concept="2SwGe0" id="14excHa38Lz" role="3cqZAk">
                 <node concept="1QGGSu" id="1fdcuoJ0fbL" role="2SwzYu">
-                  <property role="1QGGTI" value="${module}/icons/exceptionClass.png" />
+                  <property role="1iqoE4" value="${module}/icons/exceptionClass.png" />
                 </node>
               </node>
             </node>
@@ -1668,7 +1667,7 @@
             <node concept="3cpWs6" id="1cLdD6E6WIH" role="3cqZAp">
               <node concept="2SwGe0" id="14excHa390C" role="3cqZAk">
                 <node concept="1QGGSu" id="1fdcuoJ0g86" role="2SwzYu">
-                  <property role="1QGGTI" value="${module}/icons/abstractClass.png" />
+                  <property role="1iqoE4" value="${module}/icons/abstractClass.png" />
                 </node>
               </node>
             </node>
@@ -3353,7 +3352,7 @@
           <node concept="3K4zz7" id="1fdcuoJ0Yrj" role="3clFbG">
             <node concept="2SwGe0" id="14excHa39o4" role="3K4E3e">
               <node concept="1QGGSu" id="1fdcuoJ0YFp" role="2SwzYu">
-                <property role="1QGGTI" value="${module}/icons/abstractMethod.png" />
+                <property role="1iqoE4" value="${module}/icons/abstractMethod.png" />
               </node>
             </node>
             <node concept="10Nm6u" id="1fdcuoJ0Yzq" role="3K4GZi" />

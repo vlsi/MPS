@@ -9,7 +9,7 @@
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
     <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="-1" />
@@ -105,11 +105,8 @@
       </concept>
     </language>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
         <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
-      </concept>
-      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconExpression" flags="nn" index="1QGGTA">
-        <child id="8974276187400029893" name="icon" index="1QGGTw" />
       </concept>
     </language>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -7003,13 +7000,9 @@
     <node concept="312cEg" id="hP8D6fqe8n" role="jymVt">
       <property role="TrG5h" value="myIcon" />
       <property role="3TUv4t" value="true" />
-      <node concept="1QGGTA" id="hP8D6fqe8q" role="33vP2m">
-        <node concept="1QGGSu" id="215BGXOrljF" role="1QGGTw">
-          <node concept="10M0yZ" id="215BGXOrs4j" role="3xaMm5">
-            <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
-            <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.TransientModels" resolve="TransientModels" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="215BGXOrs4j" role="33vP2m">
+        <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
+        <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.TransientModels" resolve="TransientModels" />
       </node>
       <node concept="3Tm6S6" id="hP8D6fqe8o" role="1B3o_S" />
       <node concept="3uibUv" id="hP8D6fqe8p" role="1tU5fm">
@@ -7019,13 +7012,9 @@
     <node concept="312cEg" id="7hIrQB9J1nT" role="jymVt">
       <property role="TrG5h" value="myIconDisable" />
       <property role="3TUv4t" value="true" />
-      <node concept="1QGGTA" id="7hIrQB9J1nU" role="33vP2m">
-        <node concept="1QGGSu" id="7hIrQB9J1nV" role="1QGGTw">
-          <node concept="10M0yZ" id="7hIrQB9J1nW" role="3xaMm5">
-            <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
-            <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.TransientModelsDisable" resolve="TransientModelsDisable" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="7hIrQB9J1nW" role="33vP2m">
+        <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
+        <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.TransientModelsDisable" resolve="TransientModelsDisable" />
       </node>
       <node concept="3Tm6S6" id="7hIrQB9J1nX" role="1B3o_S" />
       <node concept="3uibUv" id="7hIrQB9J1nY" role="1tU5fm">
@@ -9281,13 +9270,9 @@
                     <ref role="37wK5l" node="4hZPELmBD3l" resolve="getMaxPossibleText" />
                   </node>
                 </node>
-                <node concept="1QGGTA" id="6uT0Sim07EJ" role="37wK5m">
-                  <node concept="1QGGSu" id="6uT0Sim07EK" role="1QGGTw">
-                    <node concept="10M0yZ" id="6uT0Sim07EL" role="3xaMm5">
-                      <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
-                      <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.TransientModels" resolve="TransientModels" />
-                    </node>
-                  </node>
+                <node concept="10M0yZ" id="6uT0Sim07EL" role="37wK5m">
+                  <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
+                  <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.TransientModels" resolve="TransientModels" />
                 </node>
                 <node concept="10M0yZ" id="5HzZDakJctW" role="37wK5m">
                   <ref role="1PxDUh" to="dxuu:~SwingConstants" resolve="SwingConstants" />

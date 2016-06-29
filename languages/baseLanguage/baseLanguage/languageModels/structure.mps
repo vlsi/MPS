@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -11,9 +11,8 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
-      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
-        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
+        <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -221,7 +220,7 @@
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJS1" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/class.png" />
+      <property role="1iqoE4" value="${module}/icons/class.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="fz7vLUk">
@@ -241,7 +240,7 @@
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJS6" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/parameter.png" />
+      <property role="1iqoE4" value="${module}/icons/parameter.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="fz3vP1H">
@@ -343,7 +342,7 @@
       <ref role="PrY4T" to="tpck:19gBtYEvilR" resolve="ImplementationContainer" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRU" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/method.png" />
+      <property role="1iqoE4" value="${module}/icons/method.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="fzclF80">
@@ -495,7 +494,7 @@
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJS4" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/method.png" />
+      <property role="1iqoE4" value="${module}/icons/method.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="fzcmrck">
@@ -539,7 +538,7 @@
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRZ" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/variable.png" />
+      <property role="1iqoE4" value="${module}/icons/variable.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="fzcpWvK">
@@ -686,7 +685,7 @@
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJS5" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/field.png" />
+      <property role="1iqoE4" value="${module}/icons/field.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="f$XkiSu">
@@ -1124,7 +1123,7 @@
       <ref role="20lvS9" node="fKQsSyN" resolve="EnumConstantDeclaration" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRV" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/enum.png" />
+      <property role="1iqoE4" value="${module}/icons/enum.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="fKQsSyN">
@@ -1228,7 +1227,7 @@
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJS0" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/parameter.png" />
+      <property role="1iqoE4" value="${module}/icons/parameter.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="g7pOWCK">
@@ -1364,7 +1363,7 @@
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRY" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/interfaceType.png" />
+      <property role="1iqoE4" value="${module}/icons/interfaceType.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="g96euPO">
@@ -2062,7 +2061,7 @@
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRX" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/anonymousClass.png" />
+      <property role="1iqoE4" value="${module}/icons/anonymousClass.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="h3qTviz">
@@ -2318,7 +2317,7 @@
       <ref role="20lvS9" node="hiACnCB" resolve="AnnotationMethodDeclaration" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRT" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/annotationtype.png" />
+      <property role="1iqoE4" value="${module}/icons/annotationtype.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hiACnCB">
@@ -2761,7 +2760,7 @@
       <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJS2" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/classInitializer.png" />
+      <property role="1iqoE4" value="${module}/icons/classInitializer.png" />
     </node>
   </node>
   <node concept="PlHQZ" id="h$IvvRh">
@@ -2920,7 +2919,7 @@
       <ref role="20lvS9" node="fzclF80" resolve="StatementList" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJS3" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/classInitializer.png" />
+      <property role="1iqoE4" value="${module}/icons/classInitializer.png" />
     </node>
   </node>
   <node concept="PlHQZ" id="hMfh4pO">
@@ -3778,7 +3777,7 @@
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRW" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/field.png" />
+      <property role="1iqoE4" value="${module}/icons/field.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="fzclF84">

@@ -6,7 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
@@ -59,20 +59,14 @@
       </concept>
     </language>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029885" name="jetbrains.mps.lang.resources.structure.IconBundle" flags="ng" index="1QGGSo">
+      <concept id="8974276187400029885" name="jetbrains.mps.lang.resources.structure.OldIconBundle" flags="ng" index="1QGGSo">
         <child id="8974276187400029886" name="icons" index="1QGGSr" />
       </concept>
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu">
-        <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
-      </concept>
-      <concept id="8974276187400029895" name="jetbrains.mps.lang.resources.structure.IconReference" flags="nn" index="1QGGTy">
+      <concept id="8974276187400029895" name="jetbrains.mps.lang.resources.structure.OldIconReference" flags="nn" index="1QGGTy">
         <reference id="8974276187400029896" name="declaration" index="1QGGTH" />
       </concept>
-      <concept id="8974276187400029888" name="jetbrains.mps.lang.resources.structure.IconDeclaration" flags="ng" index="1QGGT_">
+      <concept id="8974276187400029888" name="jetbrains.mps.lang.resources.structure.OldIconDeclaration" flags="ng" index="1QGGT_">
         <child id="8974276187400029889" name="iconExpression" index="1QGGT$" />
-      </concept>
-      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconExpression" flags="nn" index="1QGGTA">
-        <child id="8974276187400029893" name="icon" index="1QGGTw" />
       </concept>
     </language>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -3645,46 +3639,30 @@
     <property role="TrG5h" value="OverrideImplements" />
     <node concept="1QGGT_" id="7k6J8c3tHsc" role="1QGGSr">
       <property role="TrG5h" value="IMPLEMENTED" />
-      <node concept="1QGGTA" id="7k6J8c3tHsf" role="1QGGT$">
-        <node concept="1QGGSu" id="2CgJjTGsK37" role="1QGGTw">
-          <node concept="10M0yZ" id="2CgJjTGsUdY" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Gutter" resolve="AllIcons.Gutter" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Gutter.ImplementedMethod" resolve="ImplementedMethod" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="2CgJjTGsUdY" role="1QGGT$">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Gutter" resolve="AllIcons.Gutter" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Gutter.ImplementedMethod" resolve="ImplementedMethod" />
       </node>
     </node>
     <node concept="1QGGT_" id="7k6J8c3tHsh" role="1QGGSr">
       <property role="TrG5h" value="IMPLEMENTING" />
-      <node concept="1QGGTA" id="7k6J8c3tHsj" role="1QGGT$">
-        <node concept="1QGGSu" id="2CgJjTGsUxR" role="1QGGTw">
-          <node concept="10M0yZ" id="2CgJjTGsUy4" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Gutter" resolve="AllIcons.Gutter" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Gutter.ImplementingMethod" resolve="ImplementingMethod" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="2CgJjTGsUy4" role="1QGGT$">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Gutter" resolve="AllIcons.Gutter" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Gutter.ImplementingMethod" resolve="ImplementingMethod" />
       </node>
     </node>
     <node concept="1QGGT_" id="7k6J8c3tHsn" role="1QGGSr">
       <property role="TrG5h" value="OVERRIDEN" />
-      <node concept="1QGGTA" id="7k6J8c3tHso" role="1QGGT$">
-        <node concept="1QGGSu" id="2CgJjTGsUG8" role="1QGGTw">
-          <node concept="10M0yZ" id="2CgJjTGsUGl" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Gutter" resolve="AllIcons.Gutter" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Gutter.OverridenMethod" resolve="OverridenMethod" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="2CgJjTGsUGl" role="1QGGT$">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Gutter" resolve="AllIcons.Gutter" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Gutter.OverridenMethod" resolve="OverridenMethod" />
       </node>
     </node>
     <node concept="1QGGT_" id="7k6J8c3tHsq" role="1QGGSr">
       <property role="TrG5h" value="OVERRIDING" />
-      <node concept="1QGGTA" id="7k6J8c3tHsr" role="1QGGT$">
-        <node concept="1QGGSu" id="2CgJjTGsURy" role="1QGGTw">
-          <node concept="10M0yZ" id="2CgJjTGsURJ" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Gutter" resolve="AllIcons.Gutter" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Gutter.OverridingMethod" resolve="OverridingMethod" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="2CgJjTGsURJ" role="1QGGT$">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Gutter" resolve="AllIcons.Gutter" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Gutter.OverridingMethod" resolve="OverridingMethod" />
       </node>
     </node>
   </node>

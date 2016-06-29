@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -16,9 +16,8 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu" />
-      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
-        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
+        <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -198,7 +197,7 @@
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJPP" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/actionGroupNew.png" />
+      <property role="1iqoE4" value="${module}/icons/actionGroupNew.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hwtCFDn">
@@ -634,7 +633,7 @@
       <ref role="PrY4T" to="tp4f:hyWqMFP" resolve="IClassifier" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJPM" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/preferences.png" />
+      <property role="1iqoE4" value="${module}/icons/preferences.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hB4jfOQ">
@@ -1048,7 +1047,7 @@
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJPO" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/keymapChangesDeclaration.png" />
+      <property role="1iqoE4" value="${module}/icons/keymapChangesDeclaration.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="1mJS7WEAV1Q">
@@ -1266,7 +1265,7 @@
       <ref role="PrY4T" to="4j10:4cWf37B8oWS" resolve="ICheckedNamePolicy" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJPN" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/tool.png" />
+      <property role="1iqoE4" value="${module}/icons/tool.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="57l5h3Lsyf5">
@@ -1529,7 +1528,7 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJPR" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/ideaPluginDeclaration.png" />
+      <property role="1iqoE4" value="${module}/icons/ideaPluginDeclaration.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="7Du95iZNqOk">
@@ -1674,7 +1673,7 @@
       <ref role="PrY4T" to="4j10:4cWf37B8oWS" resolve="ICheckedNamePolicy" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJPL" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/tabbedEditor.png" />
+      <property role="1iqoE4" value="${module}/icons/tabbedEditor.png" />
     </node>
   </node>
   <node concept="PlHQZ" id="3fOKOapZL7y">
@@ -1870,7 +1869,7 @@
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJPQ" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/actionNew.png" />
+      <property role="1iqoE4" value="${module}/icons/actionNew.png" />
     </node>
   </node>
   <node concept="AxPO7" id="2aGS$UDXOxR">

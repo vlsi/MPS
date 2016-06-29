@@ -36,9 +36,8 @@
       <concept id="5979521222239143262" name="jetbrains.mps.lang.resources.structure.IconResourceExpression" flags="ng" index="2SwGe0">
         <child id="5979521222239172928" name="icon" index="2SwzYu" />
       </concept>
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
-      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
-        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
+        <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
     </language>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -430,12 +429,12 @@
             </node>
             <node concept="2SwGe0" id="14excHa39PN" role="3K4E3e">
               <node concept="1QGGSu" id="1fdcuoJ10dx" role="2SwzYu">
-                <property role="1QGGTI" value="${module}/icons/rootableConcept.png" />
+                <property role="1iqoE4" value="${module}/icons/rootableConcept.png" />
               </node>
             </node>
             <node concept="2SwGe0" id="14excHa39Yb" role="3K4GZi">
               <node concept="1QGGSu" id="1fdcuoJ11xP" role="2SwzYu">
-                <property role="1QGGTI" value="${module}/icons/structure.png" />
+                <property role="1iqoE4" value="${module}/icons/structure.png" />
               </node>
             </node>
           </node>

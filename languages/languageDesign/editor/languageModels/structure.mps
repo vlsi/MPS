@@ -16,9 +16,8 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
-      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
-        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu">
+        <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -93,7 +92,7 @@
     <property role="EcuMT" value="1071666914219" />
     <ref role="1TJDcQ" node="fIwURLg" resolve="BaseEditorComponent" />
     <node concept="1QGGSu" id="4Q8sAA5iJQt" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/editor.png" />
+      <property role="1iqoE4" value="${module}/icons/editor.png" />
     </node>
     <node concept="PrWs8" id="hBfBzQU" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -489,7 +488,7 @@
     <property role="EcuMT" value="1078938745671" />
     <ref role="1TJDcQ" node="fIwURLg" resolve="BaseEditorComponent" />
     <node concept="1QGGSu" id="4Q8sAA5iJQp" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/editorComponent.png" />
+      <property role="1iqoE4" value="${module}/icons/editorComponent.png" />
     </node>
     <node concept="1TJgyj" id="66t_lsklggO" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -575,7 +574,7 @@
     <property role="34LRSv" value="Cell Keymap" />
     <property role="EcuMT" value="1081293058843" />
     <node concept="1QGGSu" id="4Q8sAA5iJQr" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/keyMap.png" />
+      <property role="1iqoE4" value="${module}/icons/keyMap.png" />
     </node>
     <node concept="PrWs8" id="AkEQ6o$KU_" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
@@ -1028,7 +1027,7 @@
     <property role="34LRSv" value="Cell Action Map" />
     <property role="EcuMT" value="1139535219966" />
     <node concept="1QGGSu" id="4Q8sAA5iJQs" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/actionMap.png" />
+      <property role="1iqoE4" value="${module}/icons/actionMap.png" />
     </node>
     <node concept="PrWs8" id="AkEQ6o_2fI" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
@@ -1973,7 +1972,7 @@
     <property role="EcuMT" value="1166040637528" />
     <ref role="1TJDcQ" node="gXXWOiD" resolve="AbstractComponent" />
     <node concept="1QGGSu" id="4Q8sAA5iJQn" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/menuComponent.png" />
+      <property role="1iqoE4" value="${module}/icons/menuComponent.png" />
     </node>
     <node concept="1TJgyj" id="gXXsTFp" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -2298,7 +2297,7 @@
     <property role="EcuMT" value="1186402211651" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1QGGSu" id="4Q8sAA5iJQq" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/editorStylesheet.png" />
+      <property role="1iqoE4" value="${module}/icons/editorStylesheet.png" />
     </node>
     <node concept="1TJgyj" id="hgV6056" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -3352,7 +3351,7 @@
     <property role="EcuMT" value="7667276221847612622" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1QGGSu" id="4Q8sAA5iJQo" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/parametersInformation.png" />
+      <property role="1iqoE4" value="${module}/icons/parametersInformation.png" />
     </node>
     <node concept="1TJgyj" id="3DkLjCDOMpB" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -5199,31 +5198,97 @@
     <property role="R4oN_" value="in-editor context assistant" />
     <ref role="1TJDcQ" node="7L5lpRJH$EA" resolve="TransformationLocation" />
   </node>
-  <node concept="1TIwiD" id="7mC_uHFK4WE">
-    <property role="TrG5h" value="QueryFunction_SubstituteMenu_Select" />
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
-    <property role="2_RsDV" value="none" />
-    <property role="R4oN_" value="do selection" />
-    <property role="EcuMT" value="8478191136882577194" />
-    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+  <node concept="PlHQZ" id="1quYWAD18Lj">
+    <property role="EcuMT" value="1630016958697344083" />
+    <property role="3GE5qa" value="Menu" />
+    <property role="TrG5h" value="IMenu_Concept" />
+    <node concept="1TJgyj" id="5HVj4Ph44AO" role="1TKVEi">
+      <property role="20kJfa" value="conceptDeclarationNew" />
+      <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="6591946374543067572" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
+    <node concept="PrWs8" id="1quYWAD18Lk" role="PrDN$">
+      <ref role="PrY4T" node="1quYWAD18x6" resolve="IMenu" />
+    </node>
+    <node concept="PrWs8" id="1quYWAD4LhT" role="PrDN$">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+    </node>
+    <node concept="PrWs8" id="1quYWAD4M96" role="PrDN$">
+      <ref role="PrY4T" to="tpce:2hxg_BDjKM4" resolve="IConceptAspect" />
+    </node>
   </node>
-  <node concept="1TIwiD" id="1J2KHYpAw1S">
-    <property role="EcuMT" value="3836670170662248448" />
+  <node concept="1TIwiD" id="yarZQNHfz6">
+    <property role="EcuMT" value="615427434521884870" />
     <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="SubstituteMenu" />
-    <property role="R5$K7" value="true" />
-    <property role="19KtqR" value="true" />
-    <node concept="PrWs8" id="1quYWADmNOE" role="PzmwI">
+    <property role="TrG5h" value="SubstituteMenuPart_Subconcepts" />
+    <property role="34LRSv" value="subconcepts menu" />
+    <property role="R4oN_" value="subconcepts menu" />
+    <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
+  </node>
+  <node concept="PlHQZ" id="1quYWAD18L7">
+    <property role="EcuMT" value="1630016958697344071" />
+    <property role="3GE5qa" value="Menu" />
+    <property role="TrG5h" value="IMenu_Default" />
+    <node concept="PrWs8" id="1quYWAD18Lx" role="PrDN$">
       <ref role="PrY4T" node="1quYWAD18Lj" resolve="IMenu_Concept" />
     </node>
-    <node concept="PrWs8" id="1quYWADmPGg" role="PzmwI">
-      <ref role="PrY4T" node="1J2KHYpABsB" resolve="ISubstituteMenu" />
+  </node>
+  <node concept="PlHQZ" id="1quYWAD18L6">
+    <property role="EcuMT" value="1630016958697344070" />
+    <property role="3GE5qa" value="Menu" />
+    <property role="TrG5h" value="IMenu_Named" />
+    <node concept="PrWs8" id="1quYWAD19HF" role="PrDN$">
+      <ref role="PrY4T" node="1quYWAD18Lj" resolve="IMenu_Concept" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1Djcm3ms9XU">
-    <property role="EcuMT" value="1896914160037437306" />
-    <property role="3GE5qa" value="Menu.Transformation" />
-    <property role="TrG5h" value="QueryFunctionParameter_TransformationMenu_CreatedNode" />
+  <node concept="PlHQZ" id="1quYWAD18x6">
+    <property role="EcuMT" value="1630016958697343046" />
+    <property role="3GE5qa" value="Menu" />
+    <property role="TrG5h" value="IMenu" />
+    <node concept="PrWs8" id="5PF8FggWUcE" role="PrDN$">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7mC_uHG0Nxt">
+    <property role="EcuMT" value="8478191136886962269" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteFeature_Icon" />
+    <property role="34LRSv" value="icon" />
+    <ref role="1TJDcQ" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
+    <node concept="1TJgyj" id="7mC_uHG0Nxu" role="1TKVEi">
+      <property role="IQ2ns" value="8478191136886962270" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="query" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7mC_uHG0PRU" resolve="QueryFunction_SubstituteMenu_Icon" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="h8uaGWA">
+    <property role="TrG5h" value="QueryFunction_SubstituteMenu_CanSubstitute" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
+    <property role="2_RsDV" value="none" />
+    <property role="R4oN_" value="return false if this action should be excluded from the substitute menu" />
+    <property role="EcuMT" value="1177327161126" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="PlHQZ" id="6VAVyI4xoxZ">
+    <property role="1pbfSe" value="210995542" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="IOutputConceptMenuPart" />
+    <property role="EcuMT" value="7991336459489871999" />
+    <node concept="1TJgyj" id="6VAVyI4xoy9" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="outputConcept" />
+      <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="7991336459489872009" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7mC_uHFK4Z4">
+    <property role="EcuMT" value="8478191136882577348" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
+    <property role="TrG5h" value="QueryFunctionParameter_SubstituteMenu_CreatedNodeToSelect" />
     <property role="34LRSv" value="createdNode" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
@@ -5239,25 +5304,36 @@
     <property role="EcuMT" value="1221634900557" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
-  <node concept="1TIwiD" id="6n_hLaFlw4s">
-    <property role="EcuMT" value="7342352913006985500" />
-    <property role="3GE5qa" value="Menu.Transformation.Locations" />
-    <property role="TrG5h" value="TransformationLocation_Completion" />
-    <property role="R4oN_" value="center of the cell" />
-    <property role="34LRSv" value="completion" />
-    <ref role="1TJDcQ" node="7L5lpRJH$EA" resolve="TransformationLocation" />
+  <node concept="1TIwiD" id="1quYWAD0TKW">
+    <property role="EcuMT" value="1630016958697282620" />
+    <property role="3GE5qa" value="Menu" />
+    <property role="TrG5h" value="QueryFunction_Menu" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="PlHQZ" id="hqh421K">
     <property role="TrG5h" value="ISubstituteMenu_String" />
     <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
     <property role="EcuMT" value="1196434661488" />
   </node>
-  <node concept="1TIwiD" id="h8ucgLt">
-    <property role="TrG5h" value="QueryFunction_SubstituteMenu_Substitute" />
+  <node concept="1TIwiD" id="1quYWAD0UN3">
+    <property role="EcuMT" value="1630016958697286851" />
+    <property role="3GE5qa" value="Menu" />
+    <property role="TrG5h" value="QueryFunctionParameter_parameterObject" />
+    <property role="34LRSv" value="parameterObject" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="7u5_96XhKbP">
+    <property role="EcuMT" value="8612453216082658037" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
+    <property role="TrG5h" value="QueryFunction_SubstituteMenu" />
+    <ref role="1TJDcQ" node="1quYWAD0TKW" resolve="QueryFunction_Menu" />
+  </node>
+  <node concept="1TIwiD" id="7mC_uHFK4WE">
+    <property role="TrG5h" value="QueryFunction_SubstituteMenu_Select" />
     <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
     <property role="2_RsDV" value="none" />
-    <property role="R4oN_" value="return node&lt;&gt; to substitute currentChild with" />
-    <property role="EcuMT" value="1177327570013" />
+    <property role="R4oN_" value="do selection" />
+    <property role="EcuMT" value="8478191136882577194" />
     <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
   </node>
   <node concept="1TIwiD" id="6n_hLaFlw4b">
@@ -5298,6 +5374,27 @@
       <ref role="PrY4T" node="7mC_uHFNIAt" resolve="IExtensibleSubstituteMenuPart" />
     </node>
   </node>
+  <node concept="1TIwiD" id="6n_hLaFlw4s">
+    <property role="EcuMT" value="7342352913006985500" />
+    <property role="3GE5qa" value="Menu.Transformation.Locations" />
+    <property role="TrG5h" value="TransformationLocation_Completion" />
+    <property role="R4oN_" value="center of the cell" />
+    <property role="34LRSv" value="completion" />
+    <ref role="1TJDcQ" node="7L5lpRJH$EA" resolve="TransformationLocation" />
+  </node>
+  <node concept="1TIwiD" id="1J2KHYpAw1S">
+    <property role="EcuMT" value="3836670170662248448" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteMenu" />
+    <property role="R5$K7" value="true" />
+    <property role="19KtqR" value="true" />
+    <node concept="PrWs8" id="1quYWADmNOE" role="PzmwI">
+      <ref role="PrY4T" node="1quYWAD18Lj" resolve="IMenu_Concept" />
+    </node>
+    <node concept="PrWs8" id="1quYWADmPGg" role="PzmwI">
+      <ref role="PrY4T" node="1J2KHYpABsB" resolve="ISubstituteMenu" />
+    </node>
+  </node>
   <node concept="1TIwiD" id="h6sCaJPi0t">
     <property role="EcuMT" value="308059530142752797" />
     <property role="3GE5qa" value="Menu.Substitute" />
@@ -5321,121 +5418,6 @@
       <ref role="PrY4T" node="1quYWAD02Of" resolve="IMenuPartParameterized" />
     </node>
   </node>
-  <node concept="PlHQZ" id="1quYWAD02Od">
-    <property role="EcuMT" value="1630016958697057549" />
-    <property role="3GE5qa" value="Menu" />
-    <property role="TrG5h" value="IParameterizableMenuPart" />
-  </node>
-  <node concept="PlHQZ" id="1quYWAD02Of">
-    <property role="EcuMT" value="1630016958697057551" />
-    <property role="3GE5qa" value="Menu" />
-    <property role="TrG5h" value="IMenuPartParameterized" />
-    <node concept="1TJgyj" id="1quYWAD02Og" role="1TKVEi">
-      <property role="IQ2ns" value="1630016958697057552" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="parameterTypeNew" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
-    </node>
-  </node>
-  <node concept="PlHQZ" id="1J2KHYpABsB">
-    <property role="EcuMT" value="2000375450116454183" />
-    <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="ISubstituteMenu" />
-    <node concept="1TJgyj" id="n0c53aH4X$" role="1TKVEi">
-      <property role="IQ2ns" value="414384289274416996" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="parts" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
-    </node>
-    <node concept="PrWs8" id="1quYWADmNv8" role="PrDN$">
-      <ref role="PrY4T" node="1quYWAD18x6" resolve="IMenu" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="7mC_uHFK4Z4">
-    <property role="EcuMT" value="8478191136882577348" />
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
-    <property role="TrG5h" value="QueryFunctionParameter_SubstituteMenu_CreatedNodeToSelect" />
-    <property role="34LRSv" value="createdNode" />
-    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-  </node>
-  <node concept="1TIwiD" id="7Nx4mSUbw67">
-    <property role="EcuMT" value="8998492695583129991" />
-    <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="SubstituteFeature_CanExecute" />
-    <property role="34LRSv" value="can execute" />
-    <ref role="1TJDcQ" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
-    <node concept="1TJgyj" id="7Nx4mSUbw68" role="1TKVEi">
-      <property role="IQ2ns" value="8998492695583129992" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="query" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpdg:h8uaGWA" resolve="QueryFunction_CanSubstitute" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="7Nx4mSUbr7x">
-    <property role="EcuMT" value="8998492695583109601" />
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
-    <property role="TrG5h" value="QueryFunction_SubstituteMenu_CanExecute" />
-    <property role="34LRSv" value="can execute" />
-    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
-  </node>
-  <node concept="1TIwiD" id="2uBUyS1moaN">
-    <property role="EcuMT" value="2857509971901907635" />
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
-    <property role="TrG5h" value="QueryFunction_SubstituteMenu_Concepts" />
-    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
-  </node>
-  <node concept="1TIwiD" id="6DRYsxO8ara">
-    <property role="EcuMT" value="7671875129586001610" />
-    <property role="3GE5qa" value="Menu.Transformation" />
-    <property role="TrG5h" value="TransformationMenuPart_IncludeSubstituteMenu" />
-    <property role="34LRSv" value="include substitute menu" />
-    <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
-    <node concept="1TJgyj" id="5i0CB70W8ni" role="1TKVEi">
-      <property role="IQ2ns" value="6089045305656903122" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="menuReference" />
-      <ref role="20lvS9" node="3rSzFHWLpTi" resolve="ISubstituteMenuReference" />
-    </node>
-    <node concept="1TJgyj" id="5i0CB70W8mR" role="1TKVEi">
-      <property role="IQ2ns" value="6089045305656903095" />
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="link" />
-      <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
-    </node>
-    <node concept="PrWs8" id="3rSzFHWOeFf" role="PzmwI">
-      <ref role="PrY4T" node="3rSzFHWOd_m" resolve="IIncludeSubstituteMenuPart" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="1Djcm3ms60c">
-    <property role="EcuMT" value="1896914160037421068" />
-    <property role="3GE5qa" value="Menu.Transformation" />
-    <property role="TrG5h" value="TransformationMenuPart_WrapSubstituteMenu" />
-    <property role="34LRSv" value="wrap substitute menu" />
-    <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
-    <node concept="1TJgyj" id="1Djcm3ms60d" role="1TKVEi">
-      <property role="IQ2ns" value="1896914160037421069" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="menuReference" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="3rSzFHWLpTi" resolve="ISubstituteMenuReference" />
-    </node>
-    <node concept="1TJgyj" id="1Djcm3ms6CX" role="1TKVEi">
-      <property role="IQ2ns" value="1896914160037423677" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="handler" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="1Djcm3ms6D0" resolve="QueryFunction_TransformationMenu_WrapperHandler" />
-    </node>
-    <node concept="PrWs8" id="1Djcm3ms60f" role="PzmwI">
-      <ref role="PrY4T" node="3rSzFHWOd_m" resolve="IIncludeSubstituteMenuPart" />
-    </node>
-    <node concept="PrWs8" id="1Djcm3ms9SV" role="PzmwI">
-      <ref role="PrY4T" node="6kJcyCQj9CC" resolve="IExtensibleTransformationMenuPart" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="Cy80HmHnAg">
     <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenuPart_IncludeMenu" />
@@ -5452,208 +5434,6 @@
     <node concept="PrWs8" id="3rSzFHWOf6z" role="PzmwI">
       <ref role="PrY4T" node="3rSzFHWOd_m" resolve="IIncludeSubstituteMenuPart" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="6DRYsxOb8Nq">
-    <property role="3GE5qa" value="Menu.Transformation" />
-    <property role="TrG5h" value="QueryFunction_TransformationMenu_Common" />
-    <property role="34LRSv" value="common" />
-    <property role="EcuMT" value="7671875129586781402" />
-    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
-  </node>
-  <node concept="1TIwiD" id="n0c53aH6QM">
-    <property role="EcuMT" value="414384289274424754" />
-    <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="SubstituteMenuPart_AddConcept" />
-    <property role="34LRSv" value="add concept" />
-    <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
-    <node concept="PrWs8" id="n0c53aHDXd" role="PzmwI">
-      <ref role="PrY4T" node="6VAVyI4xoxZ" resolve="IOutputConceptMenuPart" />
-    </node>
-  </node>
-  <node concept="PlHQZ" id="7mC_uHFNIAt">
-    <property role="EcuMT" value="8478191136883534237" />
-    <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="IExtensibleSubstituteMenuPart" />
-    <node concept="1TJgyj" id="7mC_uHFNIAu" role="1TKVEi">
-      <property role="IQ2ns" value="8478191136883534238" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="features" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="7mC_uHFNI_G">
-    <property role="EcuMT" value="8478191136883534188" />
-    <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="SubstituteFeature_ActionType" />
-    <property role="34LRSv" value="type" />
-    <ref role="1TJDcQ" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
-    <node concept="1TJgyj" id="7mC_uHFNI_H" role="1TKVEi">
-      <property role="IQ2ns" value="8478191136883534189" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="query" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpdg:hTNCABk" resolve="QueryFunction_ActionType" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="7mC_uHFNI_D">
-    <property role="EcuMT" value="8478191136883534185" />
-    <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="SubstituteFeature" />
-    <property role="R5$K7" value="true" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-  </node>
-  <node concept="1TIwiD" id="hqh3Z8b">
-    <property role="TrG5h" value="SubstituteMenu_SimpleString" />
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
-    <property role="EcuMT" value="1196434649611" />
-    <property role="34LRSv" value="simple" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="hqh4Kkn" role="1TKVEl">
-      <property role="TrG5h" value="text" />
-      <property role="IQ2nx" value="1196434851095" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="PrWs8" id="7u5_96XhUQw" role="PzmwI">
-      <ref role="PrY4T" node="hqh421K" resolve="ISubstituteMenu_String" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="7mC_uHFNI_Z">
-    <property role="EcuMT" value="8478191136883534207" />
-    <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="SubstituteFeature_Selection" />
-    <property role="34LRSv" value="selection" />
-    <ref role="1TJDcQ" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
-    <node concept="1TJgyj" id="7mC_uHFNIA0" role="1TKVEi">
-      <property role="IQ2ns" value="8478191136883534208" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="query" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="7mC_uHFK4WE" resolve="QueryFunction_SubstituteMenu_Select" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="7mC_uHG0Nxt">
-    <property role="EcuMT" value="8478191136886962269" />
-    <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="SubstituteFeature_Icon" />
-    <property role="34LRSv" value="icon" />
-    <ref role="1TJDcQ" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
-    <node concept="1TJgyj" id="7mC_uHG0Nxu" role="1TKVEi">
-      <property role="IQ2ns" value="8478191136886962270" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="query" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="7mC_uHG0PRU" resolve="QueryFunction_SubstituteMenu_Icon" />
-    </node>
-  </node>
-  <node concept="PlHQZ" id="3rSzFHWJPbd">
-    <property role="EcuMT" value="3961072808175293133" />
-    <property role="3GE5qa" value="Menu.Transformation" />
-    <property role="TrG5h" value="ITransformationMenuReference" />
-    <node concept="PrWs8" id="3rSzFHWJPbe" role="PrDN$">
-      <ref role="PrY4T" node="1quYWAD2$6N" resolve="IMenuReference" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="5N5pDMJPfSO">
-    <property role="EcuMT" value="6684862045052272180" />
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
-    <property role="TrG5h" value="QueryFunctionParameter_CreatedNode" />
-    <property role="34LRSv" value="createdNode" />
-    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-  </node>
-  <node concept="1TIwiD" id="1quYWAD0TKW">
-    <property role="EcuMT" value="1630016958697282620" />
-    <property role="3GE5qa" value="Menu" />
-    <property role="TrG5h" value="QueryFunction_Menu" />
-    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
-  </node>
-  <node concept="PlHQZ" id="6VAVyI4xoxZ">
-    <property role="1pbfSe" value="210995542" />
-    <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="IOutputConceptMenuPart" />
-    <property role="EcuMT" value="7991336459489871999" />
-    <node concept="1TJgyj" id="6VAVyI4xoy9" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="outputConcept" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="7991336459489872009" />
-      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="3fw9B$5YUrX">
-    <property role="EcuMT" value="3738029991950788349" />
-    <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="SubstituteMenu_Named" />
-    <property role="19KtqR" value="true" />
-    <property role="34LRSv" value="Substitute Menu (Named)" />
-    <ref role="1TJDcQ" node="1J2KHYpAw1S" resolve="SubstituteMenu" />
-    <node concept="PrWs8" id="1quYWAD3Ec7" role="PzmwI">
-      <ref role="PrY4T" node="1quYWAD18L6" resolve="IMenu_Named" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="7u5_96XhKbP">
-    <property role="EcuMT" value="8612453216082658037" />
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
-    <property role="TrG5h" value="QueryFunction_SubstituteMenu" />
-    <ref role="1TJDcQ" node="1quYWAD0TKW" resolve="QueryFunction_Menu" />
-  </node>
-  <node concept="1TIwiD" id="h8uaGWA">
-    <property role="TrG5h" value="QueryFunction_SubstituteMenu_CanSubstitute" />
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
-    <property role="2_RsDV" value="none" />
-    <property role="R4oN_" value="return false if this action should be excluded from the substitute menu" />
-    <property role="EcuMT" value="1177327161126" />
-    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
-  </node>
-  <node concept="1TIwiD" id="7Nx4mSUbw5N">
-    <property role="EcuMT" value="8998492695583129971" />
-    <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="SubstituteFeature_DescriptionText" />
-    <property role="34LRSv" value="description text" />
-    <ref role="1TJDcQ" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
-    <node concept="1TJgyj" id="7Nx4mSUbw5O" role="1TKVEi">
-      <property role="IQ2ns" value="8998492695583129972" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="query" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="hqh421K" resolve="ISubstituteMenu_String" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="2RDMjbOTsHj">
-    <property role="EcuMT" value="3308396621974588243" />
-    <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="SubstituteMenu_Contribution" />
-    <property role="19KtqR" value="true" />
-    <property role="R5$K7" value="false" />
-    <property role="34LRSv" value="Substitute Menu Contribution" />
-    <node concept="PrWs8" id="1quYWAD5m8A" role="PzmwI">
-      <ref role="PrY4T" node="1quYWAD2_Py" resolve="IMenu_Contribution" />
-    </node>
-    <node concept="PrWs8" id="2RDMjbOTsHk" role="PzmwI">
-      <ref role="PrY4T" node="1J2KHYpABsB" resolve="ISubstituteMenu" />
-    </node>
-    <node concept="1TJgyj" id="6ed47gdfnvk" role="1TKVEi">
-      <property role="IQ2ns" value="7173407872095451092" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="menuReference" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="3rSzFHWLpTi" resolve="ISubstituteMenuReference" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="hTNCABk">
-    <property role="TrG5h" value="QueryFunction_SubstituteMenu_ActionType" />
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
-    <property role="2_RsDV" value="none" />
-    <property role="R4oN_" value="return result type for this action, used for smart completion" />
-    <property role="EcuMT" value="1230300670420" />
-    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
-  </node>
-  <node concept="1TIwiD" id="1quYWAD0UN3">
-    <property role="EcuMT" value="1630016958697286851" />
-    <property role="3GE5qa" value="Menu" />
-    <property role="TrG5h" value="QueryFunctionParameter_parameterObject" />
-    <property role="34LRSv" value="parameterObject" />
-    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="5i0CB70OtWu">
     <property role="EcuMT" value="6089045305654894366" />
@@ -5686,69 +5466,88 @@
       <ref role="PrY4T" node="3rSzFHWLpTi" resolve="ISubstituteMenuReference" />
     </node>
   </node>
+  <node concept="PlHQZ" id="1quYWAD2_Py">
+    <property role="EcuMT" value="1630016958697725282" />
+    <property role="3GE5qa" value="Menu" />
+    <property role="TrG5h" value="IMenu_Contribution" />
+    <node concept="PrWs8" id="1quYWAD2DuJ" role="PrDN$">
+      <ref role="PrY4T" node="1quYWAD18x6" resolve="IMenu" />
+    </node>
+    <node concept="PrWs8" id="1quYWAD4Kq0" role="PrDN$">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1Djcm3ms60c">
+    <property role="EcuMT" value="1896914160037421068" />
+    <property role="3GE5qa" value="Menu.Transformation" />
+    <property role="TrG5h" value="TransformationMenuPart_WrapSubstituteMenu" />
+    <property role="34LRSv" value="wrap substitute menu" />
+    <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
+    <node concept="1TJgyj" id="1Djcm3ms60d" role="1TKVEi">
+      <property role="IQ2ns" value="1896914160037421069" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="menuReference" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="3rSzFHWLpTi" resolve="ISubstituteMenuReference" />
+    </node>
+    <node concept="1TJgyj" id="1Djcm3ms6CX" role="1TKVEi">
+      <property role="IQ2ns" value="1896914160037423677" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="handler" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1Djcm3ms6D0" resolve="QueryFunction_TransformationMenu_WrapperHandler" />
+    </node>
+    <node concept="PrWs8" id="1Djcm3ms60f" role="PzmwI">
+      <ref role="PrY4T" node="3rSzFHWOd_m" resolve="IIncludeSubstituteMenuPart" />
+    </node>
+    <node concept="PrWs8" id="1Djcm3ms9SV" role="PzmwI">
+      <ref role="PrY4T" node="6kJcyCQj9CC" resolve="IExtensibleTransformationMenuPart" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6DRYsxO8ara">
+    <property role="EcuMT" value="7671875129586001610" />
+    <property role="3GE5qa" value="Menu.Transformation" />
+    <property role="TrG5h" value="TransformationMenuPart_IncludeSubstituteMenu" />
+    <property role="34LRSv" value="include substitute menu" />
+    <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
+    <node concept="1TJgyj" id="5i0CB70W8ni" role="1TKVEi">
+      <property role="IQ2ns" value="6089045305656903122" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="menuReference" />
+      <ref role="20lvS9" node="3rSzFHWLpTi" resolve="ISubstituteMenuReference" />
+    </node>
+    <node concept="1TJgyj" id="5i0CB70W8mR" role="1TKVEi">
+      <property role="IQ2ns" value="6089045305656903095" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="link" />
+      <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+    </node>
+    <node concept="PrWs8" id="3rSzFHWOeFf" role="PzmwI">
+      <ref role="PrY4T" node="3rSzFHWOd_m" resolve="IIncludeSubstituteMenuPart" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="1quYWAD02Of">
+    <property role="EcuMT" value="1630016958697057551" />
+    <property role="3GE5qa" value="Menu" />
+    <property role="TrG5h" value="IMenuPartParameterized" />
+    <node concept="1TJgyj" id="1quYWAD02Og" role="1TKVEi">
+      <property role="IQ2ns" value="1630016958697057552" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameterTypeNew" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="1quYWAD02Od">
+    <property role="EcuMT" value="1630016958697057549" />
+    <property role="3GE5qa" value="Menu" />
+    <property role="TrG5h" value="IParameterizableMenuPart" />
+  </node>
   <node concept="1TIwiD" id="5N5pDMJOs01">
     <property role="EcuMT" value="6684862045052059649" />
     <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
     <property role="TrG5h" value="QueryFunction_SubstituteMenu_WrapperHandler" />
     <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
-  </node>
-  <node concept="1TIwiD" id="gNbvxuM">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="the parent node&lt;&gt; of the node&lt;&gt; to substitute" />
-    <property role="TrG5h" value="QueryFunctionParameter_SubstituteMenu_ParentNode" />
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
-    <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="parentNode" />
-    <property role="1pbfSe" value="880928578" />
-    <property role="EcuMT" value="1154465273778" />
-    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-  </node>
-  <node concept="1TIwiD" id="5i0CB70OkZK">
-    <property role="EcuMT" value="6089045305654857712" />
-    <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="SubstituteMenuReference" />
-    <property role="R5$K7" value="true" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="1quYWAD5iGb" role="PzmwI">
-      <ref role="PrY4T" node="1quYWAD2$6N" resolve="IMenuReference" />
-    </node>
-  </node>
-  <node concept="PlHQZ" id="1quYWAD18L7">
-    <property role="EcuMT" value="1630016958697344071" />
-    <property role="3GE5qa" value="Menu" />
-    <property role="TrG5h" value="IMenu_Default" />
-    <node concept="PrWs8" id="1quYWAD18Lx" role="PrDN$">
-      <ref role="PrY4T" node="1quYWAD18Lj" resolve="IMenu_Concept" />
-    </node>
-  </node>
-  <node concept="PlHQZ" id="1quYWAD18L6">
-    <property role="EcuMT" value="1630016958697344070" />
-    <property role="3GE5qa" value="Menu" />
-    <property role="TrG5h" value="IMenu_Named" />
-    <node concept="PrWs8" id="1quYWAD19HF" role="PrDN$">
-      <ref role="PrY4T" node="1quYWAD18Lj" resolve="IMenu_Concept" />
-    </node>
-  </node>
-  <node concept="PlHQZ" id="1quYWAD18Lj">
-    <property role="EcuMT" value="1630016958697344083" />
-    <property role="3GE5qa" value="Menu" />
-    <property role="TrG5h" value="IMenu_Concept" />
-    <node concept="1TJgyj" id="5HVj4Ph44AO" role="1TKVEi">
-      <property role="20kJfa" value="conceptDeclarationNew" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="6591946374543067572" />
-      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-    </node>
-    <node concept="PrWs8" id="1quYWAD18Lk" role="PrDN$">
-      <ref role="PrY4T" node="1quYWAD18x6" resolve="IMenu" />
-    </node>
-    <node concept="PrWs8" id="1quYWAD4LhT" role="PrDN$">
-      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
-    </node>
-    <node concept="PrWs8" id="1quYWAD4M96" role="PrDN$">
-      <ref role="PrY4T" to="tpce:2hxg_BDjKM4" resolve="IConceptAspect" />
-    </node>
   </node>
   <node concept="PlHQZ" id="1quYWAD2$71">
     <property role="EcuMT" value="1630016958697718209" />
@@ -5765,14 +5564,6 @@
       <ref role="PrY4T" node="1quYWAD2$6N" resolve="IMenuReference" />
     </node>
   </node>
-  <node concept="1TIwiD" id="7mC_uHG0PRU">
-    <property role="TrG5h" value="QueryFunction_SubstituteMenu_Icon" />
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
-    <property role="2_RsDV" value="none" />
-    <property role="R4oN_" value="icon" />
-    <property role="EcuMT" value="8478191136886971898" />
-    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
-  </node>
   <node concept="1TIwiD" id="4HcAOwD$HKO">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
@@ -5783,27 +5574,6 @@
     <property role="1pbfSe" value="1960802172" />
     <property role="EcuMT" value="5425882385312046132" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-  </node>
-  <node concept="PlHQZ" id="1quYWAD18x6">
-    <property role="EcuMT" value="1630016958697343046" />
-    <property role="3GE5qa" value="Menu" />
-    <property role="TrG5h" value="IMenu" />
-    <node concept="PrWs8" id="5PF8FggWUcE" role="PrDN$">
-      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
-    </node>
-  </node>
-  <node concept="PlHQZ" id="1quYWAD2$6Q">
-    <property role="EcuMT" value="1630016958697718198" />
-    <property role="3GE5qa" value="Menu" />
-    <property role="TrG5h" value="IMenuReference_Named" />
-    <node concept="PrWs8" id="1quYWAD2$6Z" role="PrDN$">
-      <ref role="PrY4T" node="1quYWAD2$6N" resolve="IMenuReference" />
-    </node>
-  </node>
-  <node concept="PlHQZ" id="1quYWAD2$6N">
-    <property role="EcuMT" value="1630016958697718195" />
-    <property role="3GE5qa" value="Menu" />
-    <property role="TrG5h" value="IMenuReference" />
   </node>
   <node concept="1TIwiD" id="4BQO_Wi42wm">
     <property role="EcuMT" value="5329678514806335510" />
@@ -5819,11 +5589,209 @@
       <ref role="20lvS9" node="2uBUyS1moaN" resolve="QueryFunction_SubstituteMenu_Concepts" />
     </node>
   </node>
+  <node concept="1TIwiD" id="7mC_uHG0PRU">
+    <property role="TrG5h" value="QueryFunction_SubstituteMenu_Icon" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
+    <property role="2_RsDV" value="none" />
+    <property role="R4oN_" value="icon" />
+    <property role="EcuMT" value="8478191136886971898" />
+    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+  </node>
+  <node concept="1TIwiD" id="gNbvxuM">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="the parent node&lt;&gt; of the node&lt;&gt; to substitute" />
+    <property role="TrG5h" value="QueryFunctionParameter_SubstituteMenu_ParentNode" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
+    <property role="2_RsDV" value="none" />
+    <property role="34LRSv" value="parentNode" />
+    <property role="1pbfSe" value="880928578" />
+    <property role="EcuMT" value="1154465273778" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="PlHQZ" id="3rSzFHWOd_m">
+    <property role="EcuMT" value="3961072808176441686" />
+    <property role="3GE5qa" value="Menu" />
+    <property role="TrG5h" value="IIncludeSubstituteMenuPart" />
+    <node concept="PrWs8" id="3rSzFHWOd_n" role="PrDN$">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5i0CB70OkZK">
+    <property role="EcuMT" value="6089045305654857712" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteMenuReference" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="1quYWAD5iGb" role="PzmwI">
+      <ref role="PrY4T" node="1quYWAD2$6N" resolve="IMenuReference" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="1quYWAD2$6Q">
+    <property role="EcuMT" value="1630016958697718198" />
+    <property role="3GE5qa" value="Menu" />
+    <property role="TrG5h" value="IMenuReference_Named" />
+    <node concept="PrWs8" id="1quYWAD2$6Z" role="PrDN$">
+      <ref role="PrY4T" node="1quYWAD2$6N" resolve="IMenuReference" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="1quYWAD2$6N">
+    <property role="EcuMT" value="1630016958697718195" />
+    <property role="3GE5qa" value="Menu" />
+    <property role="TrG5h" value="IMenuReference" />
+  </node>
+  <node concept="1TIwiD" id="7Nx4mSUbuTq">
+    <property role="EcuMT" value="8998492695583125082" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteFeature_MatchingText" />
+    <property role="34LRSv" value="matching text" />
+    <ref role="1TJDcQ" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
+    <node concept="1TJgyj" id="7Nx4mSUbvUs" role="1TKVEi">
+      <property role="IQ2ns" value="8998492695583129244" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="query" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="hqh421K" resolve="ISubstituteMenu_String" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="7mC_uHFNIAt">
+    <property role="EcuMT" value="8478191136883534237" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="IExtensibleSubstituteMenuPart" />
+    <node concept="1TJgyj" id="7mC_uHFNIAu" role="1TKVEi">
+      <property role="IQ2ns" value="8478191136883534238" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="features" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hqh3Z8b">
+    <property role="TrG5h" value="SubstituteMenu_SimpleString" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
+    <property role="EcuMT" value="1196434649611" />
+    <property role="34LRSv" value="simple" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="hqh4Kkn" role="1TKVEl">
+      <property role="TrG5h" value="text" />
+      <property role="IQ2nx" value="1196434851095" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="PrWs8" id="7u5_96XhUQw" role="PzmwI">
+      <ref role="PrY4T" node="hqh421K" resolve="ISubstituteMenu_String" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7Nx4mSUbw67">
+    <property role="EcuMT" value="8998492695583129991" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteFeature_CanExecute" />
+    <property role="34LRSv" value="can execute" />
+    <ref role="1TJDcQ" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
+    <node concept="1TJgyj" id="7Nx4mSUbw68" role="1TKVEi">
+      <property role="IQ2ns" value="8998492695583129992" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="query" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpdg:h8uaGWA" resolve="QueryFunction_CanSubstitute" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="3rSzFHWJPbd">
+    <property role="EcuMT" value="3961072808175293133" />
+    <property role="3GE5qa" value="Menu.Transformation" />
+    <property role="TrG5h" value="ITransformationMenuReference" />
+    <node concept="PrWs8" id="3rSzFHWJPbe" role="PrDN$">
+      <ref role="PrY4T" node="1quYWAD2$6N" resolve="IMenuReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1Djcm3ms9XU">
+    <property role="EcuMT" value="1896914160037437306" />
+    <property role="3GE5qa" value="Menu.Transformation" />
+    <property role="TrG5h" value="QueryFunctionParameter_TransformationMenu_CreatedNode" />
+    <property role="34LRSv" value="createdNode" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="7Nx4mSUbr7x">
+    <property role="EcuMT" value="8998492695583109601" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
+    <property role="TrG5h" value="QueryFunction_SubstituteMenu_CanExecute" />
+    <property role="34LRSv" value="can execute" />
+    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+  </node>
+  <node concept="1TIwiD" id="2uBUyS1moaN">
+    <property role="EcuMT" value="2857509971901907635" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
+    <property role="TrG5h" value="QueryFunction_SubstituteMenu_Concepts" />
+    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+  </node>
   <node concept="1TIwiD" id="7gIXFjgNa3h">
     <property role="EcuMT" value="8371900013785948369" />
     <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
     <property role="TrG5h" value="QueryFunction_SubstituteMenu_Parameter" />
     <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+  </node>
+  <node concept="1TIwiD" id="n0c53aH6QM">
+    <property role="EcuMT" value="414384289274424754" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteMenuPart_AddConcept" />
+    <property role="34LRSv" value="add concept" />
+    <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
+    <node concept="PrWs8" id="n0c53aHDXd" role="PzmwI">
+      <ref role="PrY4T" node="6VAVyI4xoxZ" resolve="IOutputConceptMenuPart" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3fw9B$5YUrX">
+    <property role="EcuMT" value="3738029991950788349" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteMenu_Named" />
+    <property role="19KtqR" value="true" />
+    <property role="34LRSv" value="Substitute Menu (Named)" />
+    <ref role="1TJDcQ" node="1J2KHYpAw1S" resolve="SubstituteMenu" />
+    <node concept="PrWs8" id="1quYWAD3Ec7" role="PzmwI">
+      <ref role="PrY4T" node="1quYWAD18L6" resolve="IMenu_Named" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7Nx4mSUbw5N">
+    <property role="EcuMT" value="8998492695583129971" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteFeature_DescriptionText" />
+    <property role="34LRSv" value="description text" />
+    <ref role="1TJDcQ" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
+    <node concept="1TJgyj" id="7Nx4mSUbw5O" role="1TKVEi">
+      <property role="IQ2ns" value="8998492695583129972" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="query" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="hqh421K" resolve="ISubstituteMenu_String" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="3rSzFHWLpTi">
+    <property role="EcuMT" value="3961072808175705682" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="ISubstituteMenuReference" />
+    <node concept="PrWs8" id="3rSzFHWLq8_" role="PrDN$">
+      <ref role="PrY4T" node="1quYWAD2$6N" resolve="IMenuReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7mC_uHFNI_G">
+    <property role="EcuMT" value="8478191136883534188" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteFeature_ActionType" />
+    <property role="34LRSv" value="type" />
+    <ref role="1TJDcQ" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
+    <node concept="1TJgyj" id="7mC_uHFNI_H" role="1TKVEi">
+      <property role="IQ2ns" value="8478191136883534189" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="query" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpdg:hTNCABk" resolve="QueryFunction_ActionType" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7mC_uHFNI_D">
+    <property role="EcuMT" value="8478191136883534185" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteFeature" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="h8uGdld">
     <property role="TrG5h" value="QueryFunction_SubstituteMenu_SubstituteString" />
@@ -5837,12 +5805,60 @@
       <ref role="PrY4T" node="hqh421K" resolve="ISubstituteMenu_String" />
     </node>
   </node>
-  <node concept="PlHQZ" id="3rSzFHWOd_m">
-    <property role="EcuMT" value="3961072808176441686" />
+  <node concept="1TIwiD" id="h8ub8Bh">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="QueryFunctionParameter_pattern" />
     <property role="3GE5qa" value="Menu" />
-    <property role="TrG5h" value="IIncludeSubstituteMenuPart" />
-    <node concept="PrWs8" id="3rSzFHWOd_n" role="PrDN$">
-      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+    <property role="2_RsDV" value="none" />
+    <property role="34LRSv" value="pattern" />
+    <property role="R4oN_" value="string entered by user inside competion pop-up, used to hide those actions which matching text was not matched with the pattern" />
+    <property role="EcuMT" value="1177327274449" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="7mC_uHFNI_Z">
+    <property role="EcuMT" value="8478191136883534207" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteFeature_Selection" />
+    <property role="34LRSv" value="selection" />
+    <ref role="1TJDcQ" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
+    <node concept="1TJgyj" id="7mC_uHFNIA0" role="1TKVEi">
+      <property role="IQ2ns" value="8478191136883534208" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="query" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7mC_uHFK4WE" resolve="QueryFunction_SubstituteMenu_Select" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1Djcm3ms6D0">
+    <property role="EcuMT" value="1896914160037423680" />
+    <property role="3GE5qa" value="Menu.Transformation" />
+    <property role="TrG5h" value="QueryFunction_TransformationMenu_WrapperHandler" />
+    <property role="34LRSv" value="wrapper" />
+    <ref role="1TJDcQ" node="6kJcyCQ_LoK" resolve="QueryFunction_TransformationMenu_Extensible" />
+  </node>
+  <node concept="1TIwiD" id="5N5pDMJOrUr">
+    <property role="EcuMT" value="6684862045052059291" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteMenuPart_Wrapper" />
+    <property role="34LRSv" value="wrapper" />
+    <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
+    <node concept="1TJgyj" id="5N5pDMJVmTc" role="1TKVEi">
+      <property role="IQ2ns" value="6684862045053873740" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="handler" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5N5pDMJOs01" resolve="QueryFunction_SubstituteMenu_WrapperHandler" />
+    </node>
+    <node concept="1TJgyj" id="5i0CB70PhmY" role="1TKVEi">
+      <property role="IQ2ns" value="6089045305655104958" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="reference" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="3rSzFHWLpTi" resolve="ISubstituteMenuReference" />
+    </node>
+    <node concept="PrWs8" id="3rSzFHWOfw7" role="PzmwI">
+      <ref role="PrY4T" node="3rSzFHWOd_m" resolve="IIncludeSubstituteMenuPart" />
     </node>
   </node>
   <node concept="1TIwiD" id="n0c53aH5hG">
@@ -5851,6 +5867,13 @@
     <property role="TrG5h" value="QueryFunction_SubstituteMenu_Condition" />
     <property role="34LRSv" value="condition" />
     <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+  </node>
+  <node concept="1TIwiD" id="6DRYsxOb8Nq">
+    <property role="3GE5qa" value="Menu.Transformation" />
+    <property role="TrG5h" value="QueryFunction_TransformationMenu_Common" />
+    <property role="34LRSv" value="common" />
+    <property role="EcuMT" value="7671875129586781402" />
+    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
   </node>
   <node concept="1TIwiD" id="n0c53aH5hE">
     <property role="EcuMT" value="414384289274418282" />
@@ -5880,77 +5903,64 @@
       <ref role="20lvS9" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
     </node>
   </node>
-  <node concept="1TIwiD" id="h8ub8Bh">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="QueryFunctionParameter_pattern" />
-    <property role="3GE5qa" value="Menu" />
+  <node concept="1TIwiD" id="hTNCABk">
+    <property role="TrG5h" value="QueryFunction_SubstituteMenu_ActionType" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
     <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="pattern" />
-    <property role="R4oN_" value="string entered by user inside competion pop-up, used to hide those actions which matching text was not matched with the pattern" />
-    <property role="EcuMT" value="1177327274449" />
-    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+    <property role="R4oN_" value="return result type for this action, used for smart completion" />
+    <property role="EcuMT" value="1230300670420" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
-  <node concept="PlHQZ" id="3rSzFHWLpTi">
-    <property role="EcuMT" value="3961072808175705682" />
+  <node concept="1TIwiD" id="2RDMjbOTsHj">
+    <property role="EcuMT" value="3308396621974588243" />
     <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="ISubstituteMenuReference" />
-    <node concept="PrWs8" id="3rSzFHWLq8_" role="PrDN$">
-      <ref role="PrY4T" node="1quYWAD2$6N" resolve="IMenuReference" />
+    <property role="TrG5h" value="SubstituteMenu_Contribution" />
+    <property role="19KtqR" value="true" />
+    <property role="R5$K7" value="false" />
+    <property role="34LRSv" value="Substitute Menu Contribution" />
+    <node concept="PrWs8" id="1quYWAD5m8A" role="PzmwI">
+      <ref role="PrY4T" node="1quYWAD2_Py" resolve="IMenu_Contribution" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="1Djcm3ms6D0">
-    <property role="EcuMT" value="1896914160037423680" />
-    <property role="3GE5qa" value="Menu.Transformation" />
-    <property role="TrG5h" value="QueryFunction_TransformationMenu_WrapperHandler" />
-    <property role="34LRSv" value="wrapper" />
-    <ref role="1TJDcQ" node="6kJcyCQ_LoK" resolve="QueryFunction_TransformationMenu_Extensible" />
-  </node>
-  <node concept="1TIwiD" id="7Nx4mSUbuTq">
-    <property role="EcuMT" value="8998492695583125082" />
-    <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="SubstituteFeature_MatchingText" />
-    <property role="34LRSv" value="matching text" />
-    <ref role="1TJDcQ" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
-    <node concept="1TJgyj" id="7Nx4mSUbvUs" role="1TKVEi">
-      <property role="IQ2ns" value="8998492695583129244" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="query" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="hqh421K" resolve="ISubstituteMenu_String" />
+    <node concept="PrWs8" id="2RDMjbOTsHk" role="PzmwI">
+      <ref role="PrY4T" node="1J2KHYpABsB" resolve="ISubstituteMenu" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="yarZQNHfz6">
-    <property role="EcuMT" value="615427434521884870" />
-    <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="SubstituteMenuPart_Subconcepts" />
-    <property role="34LRSv" value="subconcepts menu" />
-    <property role="R4oN_" value="subconcepts menu" />
-    <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
-  </node>
-  <node concept="1TIwiD" id="5N5pDMJOrUr">
-    <property role="EcuMT" value="6684862045052059291" />
-    <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="SubstituteMenuPart_Wrapper" />
-    <property role="34LRSv" value="wrapper" />
-    <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
-    <node concept="1TJgyj" id="5N5pDMJVmTc" role="1TKVEi">
-      <property role="IQ2ns" value="6684862045053873740" />
+    <node concept="1TJgyj" id="6ed47gdfnvk" role="1TKVEi">
+      <property role="IQ2ns" value="7173407872095451092" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="handler" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="5N5pDMJOs01" resolve="QueryFunction_SubstituteMenu_WrapperHandler" />
-    </node>
-    <node concept="1TJgyj" id="5i0CB70PhmY" role="1TKVEi">
-      <property role="IQ2ns" value="6089045305655104958" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="reference" />
+      <property role="20kJfa" value="menuReference" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="3rSzFHWLpTi" resolve="ISubstituteMenuReference" />
     </node>
-    <node concept="PrWs8" id="3rSzFHWOfw7" role="PzmwI">
-      <ref role="PrY4T" node="3rSzFHWOd_m" resolve="IIncludeSubstituteMenuPart" />
+  </node>
+  <node concept="1TIwiD" id="h8ucgLt">
+    <property role="TrG5h" value="QueryFunction_SubstituteMenu_Substitute" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
+    <property role="2_RsDV" value="none" />
+    <property role="R4oN_" value="return node&lt;&gt; to substitute currentChild with" />
+    <property role="EcuMT" value="1177327570013" />
+    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+  </node>
+  <node concept="PlHQZ" id="1J2KHYpABsB">
+    <property role="EcuMT" value="2000375450116454183" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="ISubstituteMenu" />
+    <node concept="1TJgyj" id="n0c53aH4X$" role="1TKVEi">
+      <property role="IQ2ns" value="414384289274416996" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parts" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
     </node>
+    <node concept="PrWs8" id="1quYWADmNv8" role="PrDN$">
+      <ref role="PrY4T" node="1quYWAD18x6" resolve="IMenu" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5N5pDMJPfSO">
+    <property role="EcuMT" value="6684862045052272180" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
+    <property role="TrG5h" value="QueryFunctionParameter_CreatedNode" />
+    <property role="34LRSv" value="createdNode" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="2RDMjbOTqI4">
     <property role="EcuMT" value="3308396621974580100" />
@@ -5961,17 +5971,6 @@
     <ref role="1TJDcQ" node="1J2KHYpAw1S" resolve="SubstituteMenu" />
     <node concept="PrWs8" id="1quYWAD3_QS" role="PzmwI">
       <ref role="PrY4T" node="1quYWAD18L7" resolve="IMenu_Default" />
-    </node>
-  </node>
-  <node concept="PlHQZ" id="1quYWAD2_Py">
-    <property role="EcuMT" value="1630016958697725282" />
-    <property role="3GE5qa" value="Menu" />
-    <property role="TrG5h" value="IMenu_Contribution" />
-    <node concept="PrWs8" id="1quYWAD2DuJ" role="PrDN$">
-      <ref role="PrY4T" node="1quYWAD18x6" resolve="IMenu" />
-    </node>
-    <node concept="PrWs8" id="1quYWAD4Kq0" role="PrDN$">
-      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
   </node>
 </model>

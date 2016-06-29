@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
@@ -60,20 +60,14 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029885" name="jetbrains.mps.lang.resources.structure.IconBundle" flags="ng" index="1QGGSo">
+      <concept id="8974276187400029885" name="jetbrains.mps.lang.resources.structure.OldIconBundle" flags="ng" index="1QGGSo">
         <child id="8974276187400029886" name="icons" index="1QGGSr" />
       </concept>
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu">
-        <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
-      </concept>
-      <concept id="8974276187400029895" name="jetbrains.mps.lang.resources.structure.IconReference" flags="nn" index="1QGGTy">
+      <concept id="8974276187400029895" name="jetbrains.mps.lang.resources.structure.OldIconReference" flags="nn" index="1QGGTy">
         <reference id="8974276187400029896" name="declaration" index="1QGGTH" />
       </concept>
-      <concept id="8974276187400029888" name="jetbrains.mps.lang.resources.structure.IconDeclaration" flags="ng" index="1QGGT_">
+      <concept id="8974276187400029888" name="jetbrains.mps.lang.resources.structure.OldIconDeclaration" flags="ng" index="1QGGT_">
         <child id="8974276187400029889" name="iconExpression" index="1QGGT$" />
-      </concept>
-      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconExpression" flags="nn" index="1QGGTA">
-        <child id="8974276187400029893" name="icon" index="1QGGTw" />
       </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -4461,24 +4455,16 @@
     <property role="3GE5qa" value="extractMethod" />
     <node concept="1QGGT_" id="3UdhnxHunEz" role="1QGGSr">
       <property role="TrG5h" value="CLASS" />
-      <node concept="1QGGTA" id="3UdhnxHunE$" role="1QGGT$">
-        <node concept="1QGGSu" id="7nBL02TLqX4" role="1QGGTw">
-          <node concept="10M0yZ" id="7nBL02TLqXx" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Nodes.Class" resolve="Class" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="7nBL02TLqXx" role="1QGGT$">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Nodes.Class" resolve="Class" />
       </node>
     </node>
     <node concept="1QGGT_" id="3UdhnxHunEA" role="1QGGSr">
       <property role="TrG5h" value="INTERFACE" />
-      <node concept="1QGGTA" id="3UdhnxHunEB" role="1QGGT$">
-        <node concept="1QGGSu" id="7UewnPOzPIB" role="1QGGTw">
-          <node concept="10M0yZ" id="7UewnPO$7Ve" role="3xaMm5">
-            <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
-            <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.Behavior" resolve="Behavior" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="7UewnPO$7Ve" role="1QGGT$">
+        <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
+        <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.Behavior" resolve="Behavior" />
       </node>
     </node>
   </node>

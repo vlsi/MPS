@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -12,9 +12,8 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
-      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
-        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
+        <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -146,7 +145,7 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQW" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/buildProject.png" />
+      <property role="1iqoE4" value="${module}/icons/buildProject.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="4RPz6WoY4Ck">
@@ -155,7 +154,7 @@
     <property role="EcuMT" value="5617550519002745364" />
     <ref role="1TJDcQ" node="6qcrfIJEWWc" resolve="BuildLayout_AbstractContainer" />
     <node concept="1QGGSu" id="4Q8sAA5iJQN" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/layout.png" />
+      <property role="1iqoE4" value="${module}/icons/layout.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="4RPz6WoY4Cv">
@@ -196,7 +195,7 @@
       <ref role="PrY4T" node="6eCuTcwOczV" resolve="BuildLayout_PureNode" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQP" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/layout.png" />
+      <property role="1iqoE4" value="${module}/icons/layout.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="6qcrfIJF4M5">
@@ -245,7 +244,7 @@
       <ref role="PrY4T" node="6eCuTcwOczV" resolve="BuildLayout_PureNode" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQZ" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/archive.png" />
+      <property role="1iqoE4" value="${module}/icons/archive.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="6qcrfIJF7Yq">
@@ -264,7 +263,7 @@
       <ref role="PrY4T" node="4RsV8qJDnFi" resolve="BuildSource_SingleFile" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQS" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/archive.png" />
+      <property role="1iqoE4" value="${module}/icons/archive.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="6qcrfIJFdK8">
@@ -307,7 +306,7 @@
       <ref role="PrY4T" node="2fQZjorRfOB" resolve="BuildSource_CompilablePart" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQJ" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/javaModule.png" />
+      <property role="1iqoE4" value="${module}/icons/javaModule.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="6qcrfIJFdKY">
@@ -352,7 +351,7 @@
       <ref role="20lvS9" node="6qcrfIJFdKY" resolve="BuildSourcePath" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQR" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/macro.png" />
+      <property role="1iqoE4" value="${module}/icons/macro.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="6qcrfIJFx8t">
@@ -368,7 +367,7 @@
       <ref role="20lvS9" node="6qcrfIJFt02" resolve="BuildFolderMacro" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQQ" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/path.png" />
+      <property role="1iqoE4" value="${module}/icons/path.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="2oUTXgL_kr6">
@@ -434,7 +433,7 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQX" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/library.png" />
+      <property role="1iqoE4" value="${module}/icons/library.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="5gfUUDxhecw">
@@ -488,7 +487,7 @@
       <ref role="PrY4T" node="6bGbH3Svq63" resolve="BuildLayout_PathElement" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQK" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/dependency.png" />
+      <property role="1iqoE4" value="${module}/icons/dependency.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="34DbxDwQvcK">
@@ -521,7 +520,7 @@
     <property role="EcuMT" value="5481553824944787378" />
     <ref role="1TJDcQ" node="6mpuAlRavrV" resolve="BuildRelativePath" />
     <node concept="1QGGSu" id="4Q8sAA5iJQM" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/path.png" />
+      <property role="1iqoE4" value="${module}/icons/path.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="7usrAn056vL">
@@ -591,7 +590,7 @@
       <ref role="20lvS9" node="2oW$psGOu6E" resolve="BuildVariableMacroInitValue" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQL" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/macro.png" />
+      <property role="1iqoE4" value="${module}/icons/macro.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="4zlO3QT9yYs">
@@ -797,7 +796,7 @@
       <ref role="20lvS9" node="4gdvEeQyRNZ" resolve="BuildStringPart" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQY" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/string.png" />
+      <property role="1iqoE4" value="${module}/icons/string.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="15RAxQWZPkq">
@@ -1116,7 +1115,7 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQV" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/externalLayout.png" />
+      <property role="1iqoE4" value="${module}/icons/externalLayout.png" />
     </node>
   </node>
   <node concept="PlHQZ" id="6eCuTcwOczV">
@@ -1167,7 +1166,7 @@
       <ref role="PrY4T" node="6bGbH3Svq63" resolve="BuildLayout_PathElement" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQU" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/dependency.png" />
+      <property role="1iqoE4" value="${module}/icons/dependency.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="4RsV8qJBXHj">
@@ -1326,7 +1325,7 @@
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQO" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/javaOptions.png" />
+      <property role="1iqoE4" value="${module}/icons/javaOptions.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="1s8OwvM5SHi">
@@ -1552,7 +1551,7 @@
       <ref role="PrY4T" node="6eCuTcwOczV" resolve="BuildLayout_PureNode" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQT" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/archive.png" />
+      <property role="1iqoE4" value="${module}/icons/archive.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="3D3G23Q8WAG">

@@ -2,7 +2,7 @@
 <model ref="r:e60874cf-5ffd-4123-9760-5f88ff8e0a5a(jetbrains.mps.debugger.api.ui.icons)">
   <persistence version="9" />
   <languages>
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -11,14 +11,6 @@
     <import index="l7us" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.icons(MPS.Platform/)" />
   </imports>
   <registry>
-    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu">
-        <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
-      </concept>
-      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconExpression" flags="nn" index="1QGGTA">
-        <child id="8974276187400029893" name="icon" index="1QGGTw" />
-      </concept>
-    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
@@ -74,13 +66,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3SnNvqCbxI8" role="1B3o_S" />
-      <node concept="1QGGTA" id="1ubXCPlTZxO" role="33vP2m">
-        <node concept="1QGGSu" id="3SQRqvYTbJj" role="1QGGTw">
-          <node concept="10M0yZ" id="3SQRqvYTc3A" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_set_breakpoint" resolve="Db_set_breakpoint" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="3SQRqvYTc3A" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_set_breakpoint" resolve="Db_set_breakpoint" />
       </node>
     </node>
     <node concept="Wx3nA" id="3SnNvqCbxIf" role="jymVt">
@@ -90,13 +78,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3SnNvqCbxIh" role="1B3o_S" />
-      <node concept="1QGGTA" id="1ubXCPlTZxR" role="33vP2m">
-        <node concept="1QGGSu" id="3SQRqvYTeKa" role="1QGGTw">
-          <node concept="10M0yZ" id="3SQRqvYTeKb" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_invalid_breakpoint" resolve="Db_invalid_breakpoint" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="3SQRqvYTeKb" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_invalid_breakpoint" resolve="Db_invalid_breakpoint" />
       </node>
     </node>
     <node concept="Wx3nA" id="3SnNvqCbxIo" role="jymVt">
@@ -106,13 +90,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3SnNvqCbxIq" role="1B3o_S" />
-      <node concept="1QGGTA" id="1ubXCPlTZxU" role="33vP2m">
-        <node concept="1QGGSu" id="3SQRqvYTfTH" role="1QGGTw">
-          <node concept="10M0yZ" id="3SQRqvYTfTI" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_disabled_breakpoint" resolve="Db_disabled_breakpoint" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="3SQRqvYTfTI" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_disabled_breakpoint" resolve="Db_disabled_breakpoint" />
       </node>
     </node>
     <node concept="Wx3nA" id="3SnNvqCbxIx" role="jymVt">
@@ -122,13 +102,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3SnNvqCbxIz" role="1B3o_S" />
-      <node concept="1QGGTA" id="1ubXCPlTZxX" role="33vP2m">
-        <node concept="1QGGSu" id="3SQRqvYTgYD" role="1QGGTw">
-          <node concept="10M0yZ" id="3SQRqvYTgYE" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_muted_breakpoint" resolve="Db_muted_breakpoint" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="3SQRqvYTgYE" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_muted_breakpoint" resolve="Db_muted_breakpoint" />
       </node>
     </node>
     <node concept="Wx3nA" id="3SnNvqCbxIE" role="jymVt">
@@ -138,13 +114,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3SnNvqCbxIG" role="1B3o_S" />
-      <node concept="1QGGTA" id="1ubXCPlTZy0" role="33vP2m">
-        <node concept="1QGGSu" id="3SQRqvYTi3i" role="1QGGTw">
-          <node concept="10M0yZ" id="3SQRqvYTiSh" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Actions" resolve="AllIcons.Actions" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Actions.ShowAsTree" resolve="ShowAsTree" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="3SQRqvYTiSh" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Actions" resolve="AllIcons.Actions" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Actions.ShowAsTree" resolve="ShowAsTree" />
       </node>
     </node>
     <node concept="Wx3nA" id="3SnNvqCbxIN" role="jymVt">
@@ -154,13 +126,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3SnNvqCbxIP" role="1B3o_S" />
-      <node concept="1QGGTA" id="1ubXCPlTZy3" role="33vP2m">
-        <node concept="1QGGSu" id="3SQRqvYTjsU" role="1QGGTw">
-          <node concept="10M0yZ" id="3SQRqvYTjsV" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Frame" resolve="Frame" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="3SQRqvYTjsV" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Frame" resolve="Frame" />
       </node>
     </node>
     <node concept="Wx3nA" id="3SnNvqCbxIW" role="jymVt">
@@ -170,13 +138,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3SnNvqCbxIY" role="1B3o_S" />
-      <node concept="1QGGTA" id="1ubXCPlTZy6" role="33vP2m">
-        <node concept="1QGGSu" id="3SQRqvYTkmT" role="1QGGTw">
-          <node concept="10M0yZ" id="3SQRqvYTkmU" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Value" resolve="Value" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="3SQRqvYTkmU" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Value" resolve="Value" />
       </node>
     </node>
     <node concept="Wx3nA" id="3SnNvqCbxJ5" role="jymVt">
@@ -186,13 +150,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3SnNvqCbxJ7" role="1B3o_S" />
-      <node concept="1QGGTA" id="1ubXCPlTZy9" role="33vP2m">
-        <node concept="1QGGSu" id="3SQRqvYTlk3" role="1QGGTw">
-          <node concept="10M0yZ" id="3SQRqvYTlk4" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Watches" resolve="Watches" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="3SQRqvYTlk4" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Watches" resolve="Watches" />
       </node>
     </node>
     <node concept="Wx3nA" id="1gqtULBz58E" role="jymVt">
@@ -202,13 +162,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="1gqtULBz58G" role="1B3o_S" />
-      <node concept="1QGGTA" id="1gqtULBz58H" role="33vP2m">
-        <node concept="1QGGSu" id="1_rASLzvMTy" role="1QGGTw">
-          <node concept="10M0yZ" id="1aRZRpeXMT7" role="3xaMm5">
-            <ref role="1PxDUh" to="l7us:~MPSIcons$Debug" resolve="MPSIcons.Debug" />
-            <ref role="3cqZAo" to="l7us:~MPSIcons$Debug.DeleteBreakpoint" resolve="DeleteBreakpoint" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="1aRZRpeXMT7" role="33vP2m">
+        <ref role="1PxDUh" to="l7us:~MPSIcons$Debug" resolve="MPSIcons.Debug" />
+        <ref role="3cqZAo" to="l7us:~MPSIcons$Debug.DeleteBreakpoint" resolve="DeleteBreakpoint" />
       </node>
     </node>
     <node concept="Wx3nA" id="3SQRqvYXt96" role="jymVt">
@@ -218,13 +174,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="3SQRqvYXt98" role="1B3o_S" />
-      <node concept="1QGGTA" id="3SQRqvYXt99" role="33vP2m">
-        <node concept="1QGGSu" id="1aRZRpeXMZf" role="1QGGTw">
-          <node concept="10M0yZ" id="1aRZRpeXMZg" role="3xaMm5">
-            <ref role="1PxDUh" to="l7us:~MPSIcons$Debug" resolve="MPSIcons.Debug" />
-            <ref role="3cqZAo" to="l7us:~MPSIcons$Debug.AddBreakPoint" resolve="AddBreakPoint" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="1aRZRpeXMZg" role="33vP2m">
+        <ref role="1PxDUh" to="l7us:~MPSIcons$Debug" resolve="MPSIcons.Debug" />
+        <ref role="3cqZAo" to="l7us:~MPSIcons$Debug.AddBreakPoint" resolve="AddBreakPoint" />
       </node>
     </node>
     <node concept="Wx3nA" id="1gqtULBz58J" role="jymVt">
@@ -234,13 +186,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="1gqtULBz58L" role="1B3o_S" />
-      <node concept="1QGGTA" id="1gqtULBz58M" role="33vP2m">
-        <node concept="1QGGSu" id="1aRZRpeXN0I" role="1QGGTw">
-          <node concept="10M0yZ" id="1aRZRpeXN0J" role="3xaMm5">
-            <ref role="1PxDUh" to="l7us:~MPSIcons$Debug" resolve="MPSIcons.Debug" />
-            <ref role="3cqZAo" to="l7us:~MPSIcons$Debug.GoToSource" resolve="GoToSource" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="1aRZRpeXN0J" role="33vP2m">
+        <ref role="1PxDUh" to="l7us:~MPSIcons$Debug" resolve="MPSIcons.Debug" />
+        <ref role="3cqZAo" to="l7us:~MPSIcons$Debug.GoToSource" resolve="GoToSource" />
       </node>
     </node>
     <node concept="Wx3nA" id="1gqtULBz58O" role="jymVt">
@@ -250,13 +198,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="1gqtULBz58Q" role="1B3o_S" />
-      <node concept="1QGGTA" id="1gqtULBz58R" role="33vP2m">
-        <node concept="1QGGSu" id="1aRZRpeXN2A" role="1QGGTw">
-          <node concept="10M0yZ" id="4TMD6bS7gQu" role="3xaMm5">
-            <ref role="1PxDUh" to="l7us:~MPSIcons$Actions" resolve="MPSIcons.Actions" />
-            <ref role="3cqZAo" to="l7us:~MPSIcons$Actions.GroupByModel" resolve="GroupByModel" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="4TMD6bS7gQu" role="33vP2m">
+        <ref role="1PxDUh" to="l7us:~MPSIcons$Actions" resolve="MPSIcons.Actions" />
+        <ref role="3cqZAo" to="l7us:~MPSIcons$Actions.GroupByModel" resolve="GroupByModel" />
       </node>
     </node>
     <node concept="Wx3nA" id="1gqtULBz58T" role="jymVt">
@@ -266,13 +210,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="1gqtULBz58V" role="1B3o_S" />
-      <node concept="1QGGTA" id="1gqtULBz58W" role="33vP2m">
-        <node concept="1QGGSu" id="1aRZRpeXN4k" role="1QGGTw">
-          <node concept="10M0yZ" id="4TMD6bS7gX1" role="3xaMm5">
-            <ref role="1PxDUh" to="l7us:~MPSIcons$Actions" resolve="MPSIcons.Actions" />
-            <ref role="3cqZAo" to="l7us:~MPSIcons$Actions.GroupByModule" resolve="GroupByModule" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="4TMD6bS7gX1" role="33vP2m">
+        <ref role="1PxDUh" to="l7us:~MPSIcons$Actions" resolve="MPSIcons.Actions" />
+        <ref role="3cqZAo" to="l7us:~MPSIcons$Actions.GroupByModule" resolve="GroupByModule" />
       </node>
     </node>
     <node concept="Wx3nA" id="1gqtULBz58Y" role="jymVt">
@@ -282,13 +222,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="1gqtULBz590" role="1B3o_S" />
-      <node concept="1QGGTA" id="1gqtULBz591" role="33vP2m">
-        <node concept="1QGGSu" id="1aRZRpeXN5M" role="1QGGTw">
-          <node concept="10M0yZ" id="4TMD6bS7gYj" role="3xaMm5">
-            <ref role="1PxDUh" to="l7us:~MPSIcons$Actions" resolve="MPSIcons.Actions" />
-            <ref role="3cqZAo" to="l7us:~MPSIcons$Actions.GroupByRoot" resolve="GroupByRoot" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="4TMD6bS7gYj" role="33vP2m">
+        <ref role="1PxDUh" to="l7us:~MPSIcons$Actions" resolve="MPSIcons.Actions" />
+        <ref role="3cqZAo" to="l7us:~MPSIcons$Actions.GroupByRoot" resolve="GroupByRoot" />
       </node>
     </node>
     <node concept="Wx3nA" id="1gqtULBz593" role="jymVt">
@@ -298,13 +234,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="1gqtULBz595" role="1B3o_S" />
-      <node concept="1QGGTA" id="1gqtULBz596" role="33vP2m">
-        <node concept="1QGGSu" id="3SQRqvYTzFM" role="1QGGTw">
-          <node concept="10M0yZ" id="3SQRqvYTzFN" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Actions" resolve="AllIcons.Actions" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Actions.ShowViewer" resolve="ShowViewer" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="3SQRqvYTzFN" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Actions" resolve="AllIcons.Actions" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Actions.ShowViewer" resolve="ShowViewer" />
       </node>
     </node>
     <node concept="Wx3nA" id="1gqtULBz598" role="jymVt">
@@ -314,13 +246,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="1gqtULBz59a" role="1B3o_S" />
-      <node concept="1QGGTA" id="1gqtULBz59b" role="33vP2m">
-        <node concept="1QGGSu" id="3SQRqvYTxBN" role="1QGGTw">
-          <node concept="10M0yZ" id="3SQRqvYTxBO" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Actions" resolve="AllIcons.Actions" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Actions.ShowAsTree" resolve="ShowAsTree" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="3SQRqvYTxBO" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Actions" resolve="AllIcons.Actions" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Actions.ShowAsTree" resolve="ShowAsTree" />
       </node>
     </node>
     <node concept="3clFbW" id="3SnNvqCbxJe" role="jymVt">

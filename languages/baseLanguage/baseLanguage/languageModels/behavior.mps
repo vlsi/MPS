@@ -70,9 +70,8 @@
       <concept id="5979521222239143262" name="jetbrains.mps.lang.resources.structure.IconResourceExpression" flags="ng" index="2SwGe0">
         <child id="5979521222239172928" name="icon" index="2SwzYu" />
       </concept>
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
-      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
-        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu">
+        <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
     </language>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -68658,7 +68657,7 @@
       </node>
       <node concept="2SwGe0" id="4h$e$JHbfGQ" role="33vP2m">
         <node concept="1QGGSu" id="4h$e$JHbfGS" role="2SwzYu">
-          <property role="1QGGTI" value="${module}/icons/finalMark.png" />
+          <property role="1iqoE4" value="${module}/icons/finalMark.png" />
         </node>
       </node>
     </node>
@@ -68673,7 +68672,7 @@
       </node>
       <node concept="2SwGe0" id="4h$e$JHbfHo" role="33vP2m">
         <node concept="1QGGSu" id="4h$e$JHbfHp" role="2SwzYu">
-          <property role="1QGGTI" value="${module}/icons/staticMark.png" />
+          <property role="1iqoE4" value="${module}/icons/staticMark.png" />
         </node>
       </node>
     </node>
@@ -68688,7 +68687,7 @@
       </node>
       <node concept="2SwGe0" id="4h$e$JHbfIa" role="33vP2m">
         <node concept="1QGGSu" id="4h$e$JHbfIb" role="2SwzYu">
-          <property role="1QGGTI" value="${module}/icons/runnableMark.png" />
+          <property role="1iqoE4" value="${module}/icons/runnableMark.png" />
         </node>
       </node>
     </node>
@@ -68704,7 +68703,7 @@
       </node>
       <node concept="2SwGe0" id="4h$e$JHbfMB" role="33vP2m">
         <node concept="1QGGSu" id="4h$e$JHbfMC" role="2SwzYu">
-          <property role="1QGGTI" value="${module}/icons/c_plocal.png" />
+          <property role="1iqoE4" value="${module}/icons/c_plocal.png" />
         </node>
       </node>
     </node>
@@ -68719,7 +68718,7 @@
       </node>
       <node concept="2SwGe0" id="4h$e$JHbfNj" role="33vP2m">
         <node concept="1QGGSu" id="4h$e$JHbfNk" role="2SwzYu">
-          <property role="1QGGTI" value="${module}/icons/c_public.png" />
+          <property role="1iqoE4" value="${module}/icons/c_public.png" />
         </node>
       </node>
     </node>
@@ -68734,7 +68733,7 @@
       </node>
       <node concept="2SwGe0" id="4h$e$JHbg8_" role="33vP2m">
         <node concept="1QGGSu" id="4h$e$JHbg8A" role="2SwzYu">
-          <property role="1QGGTI" value="${module}/icons/c_protected.png" />
+          <property role="1iqoE4" value="${module}/icons/c_protected.png" />
         </node>
       </node>
     </node>
@@ -68749,7 +68748,7 @@
       </node>
       <node concept="2SwGe0" id="4h$e$JHbg9j" role="33vP2m">
         <node concept="1QGGSu" id="4h$e$JHbg9k" role="2SwzYu">
-          <property role="1QGGTI" value="${module}/icons/c_private.png" />
+          <property role="1iqoE4" value="${module}/icons/c_private.png" />
         </node>
       </node>
     </node>

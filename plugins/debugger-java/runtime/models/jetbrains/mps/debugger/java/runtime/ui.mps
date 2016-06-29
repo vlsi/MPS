@@ -2,7 +2,7 @@
 <model ref="r:b54bdfd2-1093-4bb6-bc08-562a3cd72450(jetbrains.mps.debugger.java.runtime.ui)">
   <persistence version="9" />
   <languages>
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -10,14 +10,6 @@
     <import index="z2i8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.icons(MPS.IDEA/)" />
   </imports>
   <registry>
-    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu">
-        <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
-      </concept>
-      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconExpression" flags="nn" index="1QGGTA">
-        <child id="8974276187400029893" name="icon" index="1QGGTw" />
-      </concept>
-    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
@@ -68,13 +60,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="2KV5YDxDzE5" role="1B3o_S" />
-      <node concept="1QGGTA" id="2KV5YDxDzE6" role="33vP2m">
-        <node concept="1QGGSu" id="7tJbp6UEjkw" role="1QGGTw">
-          <node concept="10M0yZ" id="7tJbp6UEjzS" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_exception_breakpoint" resolve="Db_exception_breakpoint" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="7tJbp6UEjzS" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_exception_breakpoint" resolve="Db_exception_breakpoint" />
       </node>
     </node>
     <node concept="Wx3nA" id="2KV5YDxDzE8" role="jymVt">
@@ -84,13 +72,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="2KV5YDxDzEa" role="1B3o_S" />
-      <node concept="1QGGTA" id="2KV5YDxDzEb" role="33vP2m">
-        <node concept="1QGGSu" id="7tJbp6UEkRQ" role="1QGGTw">
-          <node concept="10M0yZ" id="7tJbp6UEkS4" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_disabled_exception_breakpoint" resolve="Db_disabled_exception_breakpoint" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="7tJbp6UEkS4" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_disabled_exception_breakpoint" resolve="Db_disabled_exception_breakpoint" />
       </node>
     </node>
     <node concept="Wx3nA" id="2KV5YDxDzEd" role="jymVt">
@@ -100,13 +84,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="2KV5YDxDzEf" role="1B3o_S" />
-      <node concept="1QGGTA" id="2KV5YDxDzEg" role="33vP2m">
-        <node concept="1QGGSu" id="7tJbp6UElMT" role="1QGGTw">
-          <node concept="10M0yZ" id="7tJbp6UElN7" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_method_breakpoint" resolve="Db_method_breakpoint" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="7tJbp6UElN7" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_method_breakpoint" resolve="Db_method_breakpoint" />
       </node>
     </node>
     <node concept="Wx3nA" id="2KV5YDxDzEi" role="jymVt">
@@ -116,13 +96,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="2KV5YDxDzEk" role="1B3o_S" />
-      <node concept="1QGGTA" id="2KV5YDxDzEl" role="33vP2m">
-        <node concept="1QGGSu" id="7tJbp6UEmLn" role="1QGGTw">
-          <node concept="10M0yZ" id="7tJbp6UEmL_" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_disabled_method_breakpoint" resolve="Db_disabled_method_breakpoint" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="7tJbp6UEmL_" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_disabled_method_breakpoint" resolve="Db_disabled_method_breakpoint" />
       </node>
     </node>
     <node concept="Wx3nA" id="7KLNRKWa1w9" role="jymVt">
@@ -132,13 +108,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="7KLNRKWa1wb" role="1B3o_S" />
-      <node concept="1QGGTA" id="7KLNRKWa1wc" role="33vP2m">
-        <node concept="1QGGSu" id="7tJbp6UEnL4" role="1QGGTw">
-          <node concept="10M0yZ" id="7tJbp6UEnLi" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_invalid_method_breakpoint" resolve="Db_invalid_method_breakpoint" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="7tJbp6UEnLi" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_invalid_method_breakpoint" resolve="Db_invalid_method_breakpoint" />
       </node>
     </node>
     <node concept="Wx3nA" id="7KLNRKWa1we" role="jymVt">
@@ -148,13 +120,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="7KLNRKWa1wg" role="1B3o_S" />
-      <node concept="1QGGTA" id="7KLNRKWa1wh" role="33vP2m">
-        <node concept="1QGGSu" id="7tJbp6UEopZ" role="1QGGTw">
-          <node concept="10M0yZ" id="7tJbp6UEoqd" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_muted_method_breakpoint" resolve="Db_muted_method_breakpoint" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="7tJbp6UEoqd" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_muted_method_breakpoint" resolve="Db_muted_method_breakpoint" />
       </node>
     </node>
     <node concept="Wx3nA" id="2KV5YDxDzEn" role="jymVt">
@@ -164,13 +132,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="2KV5YDxDzEp" role="1B3o_S" />
-      <node concept="1QGGTA" id="2KV5YDxDzEq" role="33vP2m">
-        <node concept="1QGGSu" id="7tJbp6UEpjH" role="1QGGTw">
-          <node concept="10M0yZ" id="7tJbp6UEpjV" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_field_breakpoint" resolve="Db_field_breakpoint" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="7tJbp6UEpjV" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_field_breakpoint" resolve="Db_field_breakpoint" />
       </node>
     </node>
     <node concept="Wx3nA" id="2KV5YDxDzEs" role="jymVt">
@@ -180,13 +144,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="2KV5YDxDzEu" role="1B3o_S" />
-      <node concept="1QGGTA" id="2KV5YDxDzEv" role="33vP2m">
-        <node concept="1QGGSu" id="7tJbp6UEqrs" role="1QGGTw">
-          <node concept="10M0yZ" id="7tJbp6UEqrE" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_disabled_field_breakpoint" resolve="Db_disabled_field_breakpoint" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="7tJbp6UEqrE" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_disabled_field_breakpoint" resolve="Db_disabled_field_breakpoint" />
       </node>
     </node>
     <node concept="Wx3nA" id="7KLNRKWa1wj" role="jymVt">
@@ -196,13 +156,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="7KLNRKWa1wl" role="1B3o_S" />
-      <node concept="1QGGTA" id="7KLNRKWa1wm" role="33vP2m">
-        <node concept="1QGGSu" id="7tJbp6UErng" role="1QGGTw">
-          <node concept="10M0yZ" id="7tJbp6UErnu" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_invalid_field_breakpoint" resolve="Db_invalid_field_breakpoint" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="7tJbp6UErnu" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_invalid_field_breakpoint" resolve="Db_invalid_field_breakpoint" />
       </node>
     </node>
     <node concept="Wx3nA" id="7KLNRKWa1wo" role="jymVt">
@@ -212,13 +168,9 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="7KLNRKWa1wq" role="1B3o_S" />
-      <node concept="1QGGTA" id="7KLNRKWa1wr" role="33vP2m">
-        <node concept="1QGGSu" id="7tJbp6UEskL" role="1QGGTw">
-          <node concept="10M0yZ" id="7tJbp6UEsl7" role="3xaMm5">
-            <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_muted_field_breakpoint" resolve="Db_muted_field_breakpoint" />
-          </node>
-        </node>
+      <node concept="10M0yZ" id="7tJbp6UEsl7" role="33vP2m">
+        <ref role="1PxDUh" to="z2i8:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+        <ref role="3cqZAo" to="z2i8:~AllIcons$Debugger.Db_muted_field_breakpoint" resolve="Db_muted_field_breakpoint" />
       </node>
     </node>
     <node concept="3clFbW" id="2KV5YDxDzEy" role="jymVt">

@@ -6,7 +6,7 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -23,9 +23,8 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu" />
-      <concept id="8974276187400029898" name="jetbrains.mps.lang.resources.structure.Resource" flags="ng" index="1QGGTJ">
-        <property id="8974276187400029899" name="path" index="1QGGTI" />
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
+        <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -104,7 +103,7 @@
       <ref role="20lvS9" node="gbFOIBE" resolve="NodeSubstituteActionsBuilder" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJR$" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/actions.png" />
+      <property role="1iqoE4" value="${module}/icons/actions.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="gbFOIBE">
@@ -235,7 +234,7 @@
       <ref role="20lvS9" node="gzUNGri" resolve="SideTransformHintSubstituteActionsBuilder" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRy" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/rightTransform.png" />
+      <property role="1iqoE4" value="${module}/icons/rightTransform.png" />
     </node>
   </node>
   <node concept="AxPO7" id="gAuI3o6">
@@ -321,7 +320,7 @@
       <ref role="20lvS9" node="gR7Wvgx" resolve="NodeFactory" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRx" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/nodeFactories.png" />
+      <property role="1iqoE4" value="${module}/icons/nodeFactories.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="gR7Wvgx">
@@ -1332,7 +1331,7 @@
       <ref role="20lvS9" node="hLhlz9g" resolve="PasteWrapper" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRz" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/pasteWrapper.png" />
+      <property role="1iqoE4" value="${module}/icons/pasteWrapper.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hLhlz9g">
@@ -1432,7 +1431,7 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJR_" role="rwd14">
-      <property role="1QGGTI" value="${module}/icons/smartActions.png" />
+      <property role="1iqoE4" value="${module}/icons/smartActions.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hYeMpW9">
