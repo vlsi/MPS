@@ -34268,7 +34268,7 @@
             <node concept="3Tm1VV" id="1pfqmFI7td5" role="1B3o_S" />
             <node concept="3clFbS" id="1pfqmFIjpQ7" role="3clF47">
               <node concept="XkiVB" id="1pfqmFIjr1W" role="3cqZAp">
-                <ref role="37wK5l" to="qtqj:~DefaultSubstituteMenuItem.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.module.SRepository)" resolve="DefaultSubstituteMenuItem" />
+                <ref role="37wK5l" to="qtqj:~DefaultSubstituteMenuItem.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)" resolve="DefaultSubstituteMenuItem" />
                 <node concept="35c_gC" id="1Djcm3ms0KK" role="37wK5m">
                   <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
                   <node concept="1ZhdrF" id="1Djcm3ms0Nb" role="lGtFl">
@@ -34302,19 +34302,6 @@
                   </node>
                   <node concept="liA8E" id="6sslvsb$M_d" role="2OqNvi">
                     <ref role="37wK5l" to="78sh:~SubstituteMenuContext.getCurrentChild():org.jetbrains.mps.openapi.model.SNode" resolve="getCurrentChild" />
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="59fc3qdBwsb" role="37wK5m">
-                  <node concept="2OqwBi" id="59fc3qdBvU3" role="2Oq$k0">
-                    <node concept="37vLTw" id="59fc3qdBvxN" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6sslvsb$G2f" resolve="context" />
-                    </node>
-                    <node concept="liA8E" id="59fc3qdBwd4" role="2OqNvi">
-                      <ref role="37wK5l" to="78sh:~SubstituteMenuContext.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="59fc3qdBwJ$" role="2OqNvi">
-                    <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                   </node>
                 </node>
               </node>
@@ -35733,7 +35720,7 @@
         <node concept="3Tm1VV" id="7mC_uHFO0_G" role="1B3o_S" />
         <node concept="3clFbS" id="7mC_uHFO0_I" role="3clF47">
           <node concept="XkiVB" id="7mC_uHFO0_K" role="3cqZAp">
-            <ref role="37wK5l" to="qtqj:~DefaultSubstituteMenuItem.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.module.SRepository)" resolve="DefaultSubstituteMenuItem" />
+            <ref role="37wK5l" to="qtqj:~DefaultSubstituteMenuItem.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)" resolve="DefaultSubstituteMenuItem" />
             <node concept="37vLTw" id="7mC_uHFO0_O" role="37wK5m">
               <ref role="3cqZAo" node="7mC_uHFO0_L" resolve="concept" />
             </node>
@@ -35742,9 +35729,6 @@
             </node>
             <node concept="37vLTw" id="7mC_uHFO0_W" role="37wK5m">
               <ref role="3cqZAo" node="7mC_uHFO0_T" resolve="currentChild" />
-            </node>
-            <node concept="37vLTw" id="59fc3qdByLW" role="37wK5m">
-              <ref role="3cqZAo" node="59fc3qdBytG" resolve="repository" />
             </node>
           </node>
         </node>
@@ -35764,12 +35748,6 @@
           <property role="TrG5h" value="currentChild" />
           <node concept="3uibUv" id="7mC_uHFO0_V" role="1tU5fm">
             <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-          </node>
-        </node>
-        <node concept="37vLTG" id="59fc3qdBytG" role="3clF46">
-          <property role="TrG5h" value="repository" />
-          <node concept="3uibUv" id="59fc3qdByyV" role="1tU5fm">
-            <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
           </node>
         </node>
       </node>
@@ -35895,7 +35873,7 @@
         <node concept="3Tm1VV" id="7mC_uHFZM3S" role="1B3o_S" />
         <node concept="3clFbS" id="7mC_uHFZM3T" role="3clF47">
           <node concept="XkiVB" id="7mC_uHFZM3U" role="3cqZAp">
-            <ref role="37wK5l" to="qtqj:~DefaultSubstituteMenuItem.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.module.SRepository)" resolve="DefaultSubstituteMenuItem" />
+            <ref role="37wK5l" to="qtqj:~DefaultSubstituteMenuItem.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)" resolve="DefaultSubstituteMenuItem" />
             <node concept="37vLTw" id="7mC_uHFZM3V" role="37wK5m">
               <ref role="3cqZAo" node="7mC_uHFZM3Y" resolve="concept" />
             </node>
@@ -35904,9 +35882,6 @@
             </node>
             <node concept="37vLTw" id="7mC_uHFZM3X" role="37wK5m">
               <ref role="3cqZAo" node="7mC_uHFZM42" resolve="currentChild" />
-            </node>
-            <node concept="37vLTw" id="59fc3qdBxAz" role="37wK5m">
-              <ref role="3cqZAo" node="59fc3qdBxj0" resolve="repository" />
             </node>
           </node>
         </node>
@@ -35926,12 +35901,6 @@
           <property role="TrG5h" value="currentChild" />
           <node concept="3uibUv" id="7mC_uHFZM43" role="1tU5fm">
             <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-          </node>
-        </node>
-        <node concept="37vLTG" id="59fc3qdBxj0" role="3clF46">
-          <property role="TrG5h" value="repository" />
-          <node concept="3uibUv" id="59fc3qdBxof" role="1tU5fm">
-            <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
           </node>
         </node>
       </node>
@@ -36021,7 +35990,7 @@
         <node concept="3Tm1VV" id="7mC_uHG0Rms" role="1B3o_S" />
         <node concept="3clFbS" id="7mC_uHG0Rmt" role="3clF47">
           <node concept="XkiVB" id="7mC_uHG0Rmu" role="3cqZAp">
-            <ref role="37wK5l" to="qtqj:~DefaultSubstituteMenuItem.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.module.SRepository)" resolve="DefaultSubstituteMenuItem" />
+            <ref role="37wK5l" to="qtqj:~DefaultSubstituteMenuItem.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)" resolve="DefaultSubstituteMenuItem" />
             <node concept="37vLTw" id="7mC_uHG0Rmv" role="37wK5m">
               <ref role="3cqZAo" node="7mC_uHG0Rmy" resolve="concept" />
             </node>
@@ -36030,9 +35999,6 @@
             </node>
             <node concept="37vLTw" id="7mC_uHG0Rmx" role="37wK5m">
               <ref role="3cqZAo" node="7mC_uHG0RmA" resolve="currentChild" />
-            </node>
-            <node concept="37vLTw" id="59fc3qdBz1V" role="37wK5m">
-              <ref role="3cqZAo" node="59fc3qdBxYT" resolve="repository" />
             </node>
           </node>
         </node>
@@ -36052,12 +36018,6 @@
           <property role="TrG5h" value="currentChild" />
           <node concept="3uibUv" id="7mC_uHG0RmB" role="1tU5fm">
             <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-          </node>
-        </node>
-        <node concept="37vLTG" id="59fc3qdBxYT" role="3clF46">
-          <property role="TrG5h" value="repository" />
-          <node concept="3uibUv" id="59fc3qdBy3V" role="1tU5fm">
-            <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
           </node>
         </node>
       </node>

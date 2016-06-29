@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.IconResource;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -48,26 +49,5 @@ public class MenuUtil {
   public static Collection<SLanguage> getUsedLanguages(SModel model) {
     LanguageRegistry lr = LanguageRegistry.getInstance(model.getRepository());
     return new SLanguageHierarchy(lr, SModelOperations.getAllLanguageImports(model)).getExtended();
-  }
-
-  //todo this is copied form IconManager
-  public static IconResource getIconResourceForConcept(SAbstractConcept concept) {
-    if (!(concept instanceof SConceptAdapter)) {
-      return null;
-    }
-    SAbstractConceptAdapter current = ((SAbstractConceptAdapter) concept);
-    while (current != null) {
-      IconResource ir = getIconForExactConcept(current);
-      if (ir != null) {
-        return ir;
-      }
-      current = (current instanceof SConceptAdapter) ? ((SConceptAdapter) ((SConceptAdapter) current).getSuperConcept()) : null;
-    }
-    return null;
-  }
-  private static IconResource getIconForExactConcept(SAbstractConcept concept) {
-    ConceptPresentation pres = ConceptRegistry.getInstance().getConceptProperties(concept);
-    if (pres == null) { return null; }
-    return pres.getIcon();
   }
 }

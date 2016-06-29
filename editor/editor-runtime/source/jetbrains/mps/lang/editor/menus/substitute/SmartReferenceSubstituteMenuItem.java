@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
+import jetbrains.mps.smodel.runtime.IconResourceUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -102,9 +103,9 @@ class SmartReferenceSubstituteMenuItem implements SubstituteMenuItem {
   public IconResource getIcon(String pattern) {
     SAbstractConcept concept = MetaAdapterByDeclaration.getConcept(myReferentNode);
     if (concept != null) {
-      return MenuUtil.getIconResourceForConcept(concept);
+      return IconResourceUtil.getIconResourceForConcept(concept);
     } else {
-      return MenuUtil.getIconResourceForConcept(myReferentNode.getConcept());
+      return IconResourceUtil.getIconResourceForConcept(myReferentNode.getConcept());
     }
   }
 

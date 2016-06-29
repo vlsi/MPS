@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class CompletionActionItemAsSubstituteAction implements SubstituteAction {
   private static final Logger LOG = Logger.getLogger(CompletionActionItemAsSubstituteAction.class);
-  public final CompletionActionItem myActionItem;
+  private final CompletionActionItem myActionItem;
   private final SNode mySourceNode;
 
   public CompletionActionItemAsSubstituteAction(CompletionActionItem actionItem, SNode sourceNode) {
