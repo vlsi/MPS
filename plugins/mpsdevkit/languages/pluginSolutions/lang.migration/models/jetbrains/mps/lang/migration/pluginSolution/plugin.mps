@@ -2637,11 +2637,11 @@
           <node concept="3cpWsn" id="4qkYgnA2ViD" role="3cpWs9">
             <property role="TrG5h" value="copyMap" />
             <node concept="3uibUv" id="4qkYgnA2ViE" role="1tU5fm">
-              <ref role="3uigEE" to="lfzw:5Y9QCNBZLBG" resolve="MoveNodesActionBase.CopyMapObject" />
+              <ref role="3uigEE" to="lfzw:5Y9QCNBZLBG" resolve="MoveNodesUtil.NodeCopyTracker" />
             </node>
-            <node concept="2YIFZM" id="4qkYgnA2ViF" role="33vP2m">
-              <ref role="37wK5l" to="lfzw:5Y9QCNBZQm$" resolve="getCopyMap" />
-              <ref role="1Pybhc" to="lfzw:5Y9QCNBZLBG" resolve="MoveNodesActionBase.CopyMapObject" />
+            <node concept="2YIFZM" id="42LwYUtsnGa" role="33vP2m">
+              <ref role="37wK5l" to="lfzw:5Y9QCNBZQm$" resolve="get" />
+              <ref role="1Pybhc" to="lfzw:5Y9QCNBZLBG" resolve="MoveNodesUtil.NodeCopyTracker" />
               <node concept="37vLTw" id="4qkYgnA2ViG" role="37wK5m">
                 <ref role="3cqZAo" node="4qkYgnA2Vi_" resolve="refactoringSession" />
               </node>
