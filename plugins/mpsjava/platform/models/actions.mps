@@ -7,7 +7,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="3ecd7c84-cde3-45de-886c-135ecc69b742" name="jetbrains.mps.lang.refactoring" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
@@ -83,6 +83,7 @@
     <import index="iwsx" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.fileEditor(MPS.IDEA/)" />
     <import index="lfzw" ref="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)" />
     <import index="6f4m" ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)" />
+    <import index="5nvm" ref="r:27bc780b-59b2-4d26-9db5-a38b63c35884(jetbrains.mps.refactoring.participant)" />
     <import index="lwvz" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.selection(MPS.Editor/)" implicit="true" />
     <import index="1i04" ref="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" implicit="true" />
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" implicit="true" />
@@ -11762,9 +11763,6 @@
         </node>
         <node concept="3clFbF" id="7ECFGRPAHAw" role="3cqZAp">
           <node concept="37vLTI" id="7ECFGRPAHAx" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuoZc" role="37vLTJ">
-              <ref role="3cqZAo" node="7ECFGRPAHDm" resolve="myInsertOverride" />
-            </node>
             <node concept="2ShNRf" id="7ECFGRPAHA$" role="37vLTx">
               <node concept="1pGfFk" id="7ECFGRPAHA_" role="2ShVmc">
                 <ref role="37wK5l" to="lzb2:~NonFocusableCheckBox.&lt;init&gt;(java.lang.String)" resolve="NonFocusableCheckBox" />
@@ -11773,13 +11771,13 @@
                 </node>
               </node>
             </node>
+            <node concept="37vLTw" id="2BHiRxeuoZc" role="37vLTJ">
+              <ref role="3cqZAo" node="7ECFGRPAHDm" resolve="myInsertOverride" />
+            </node>
           </node>
         </node>
         <node concept="3clFbF" id="7ECFGRPAHAD" role="3cqZAp">
           <node concept="37vLTI" id="7ECFGRPAHAE" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeumPK" role="37vLTJ">
-              <ref role="3cqZAo" to="j9ng:~GroupedNodesChooser.myOptionControls" resolve="myOptionControls" />
-            </node>
             <node concept="2ShNRf" id="7ECFGRPAHAH" role="37vLTx">
               <node concept="3g6Rrh" id="7ECFGRPAHAI" role="2ShVmc">
                 <node concept="37vLTw" id="2BHiRxeudIH" role="3g7hyw">
@@ -11795,6 +11793,9 @@
                   <ref role="3uigEE" to="dxuu:~JCheckBox" resolve="JCheckBox" />
                 </node>
               </node>
+            </node>
+            <node concept="37vLTw" id="2BHiRxeumPK" role="37vLTJ">
+              <ref role="3cqZAo" to="j9ng:~GroupedNodesChooser.myOptionControls" resolve="myOptionControls" />
             </node>
           </node>
         </node>
@@ -13169,6 +13170,9 @@
             </node>
           </node>
           <node concept="1Wc70l" id="6iOD$CI7XY6" role="3clFbw">
+            <node concept="37vLTw" id="2BHiRxeulzL" role="3uHU7B">
+              <ref role="3cqZAo" node="7ECFGRPAHLA" resolve="myInsertOverride" />
+            </node>
             <node concept="2OqwBi" id="6iOD$CI7Yv1" role="3uHU7w">
               <node concept="37vLTw" id="6iOD$CI7Yj2" role="2Oq$k0">
                 <ref role="3cqZAo" node="7ECFGRPAHHH" resolve="baseMethod" />
@@ -13178,9 +13182,6 @@
                   <ref role="cht4Q" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
                 </node>
               </node>
-            </node>
-            <node concept="37vLTw" id="2BHiRxeulzL" role="3uHU7B">
-              <ref role="3cqZAo" node="7ECFGRPAHLA" resolve="myInsertOverride" />
             </node>
           </node>
         </node>
@@ -23938,14 +23939,14 @@
                                     <node concept="3rvAFt" id="7tV5ZLw9$mP" role="1tU5fm">
                                       <node concept="3Tqbb2" id="7tV5ZLw9$mQ" role="3rvQeY" />
                                       <node concept="3uibUv" id="7tV5ZLw9$mR" role="3rvSg0">
-                                        <ref role="3uigEE" to="lfzw:7tV5ZLw0mML" resolve="RefactoringParticipant.KeepOldNodes" />
+                                        <ref role="3uigEE" to="5nvm:7tV5ZLw0mML" resolve="RefactoringParticipant.KeepOldNodes" />
                                       </node>
                                     </node>
                                   </node>
                                   <node concept="37vLTG" id="7Sw_42UC8n7" role="3clF46">
                                     <property role="TrG5h" value="refactoringSession" />
                                     <node concept="3uibUv" id="7Sw_42UC8n8" role="1tU5fm">
-                                      <ref role="3uigEE" to="6f4m:3KqYwoBJ0xf" resolve="RefactoringSession" />
+                                      <ref role="3uigEE" to="5nvm:3KqYwoBJ0xf" resolve="RefactoringSession" />
                                     </node>
                                   </node>
                                   <node concept="3clFbS" id="7Sw_42UC8n9" role="3clF47">
@@ -24127,8 +24128,8 @@
                                           </node>
                                           <node concept="3clFbC" id="7tV5ZLw74NH" role="3clFbw">
                                             <node concept="Rm8GO" id="7tV5ZLw74NI" role="3uHU7w">
-                                              <ref role="1Px2BO" to="lfzw:7tV5ZLw0mML" resolve="RefactoringParticipant.KeepOldNodes" />
-                                              <ref role="Rm8GQ" to="lfzw:7tV5ZLw0pQW" resolve="REMOVE" />
+                                              <ref role="1Px2BO" to="5nvm:7tV5ZLw0mML" resolve="RefactoringParticipant.KeepOldNodes" />
+                                              <ref role="Rm8GQ" to="5nvm:7tV5ZLw0pQW" resolve="REMOVE" />
                                             </node>
                                             <node concept="3EllGN" id="7tV5ZLw74NJ" role="3uHU7B">
                                               <node concept="2GrUjf" id="7tV5ZLw74O3" role="3ElVtu">

@@ -36,6 +36,7 @@
     <import index="tqvn" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.tempmodel(MPS.Core/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
+    <import index="5nvm" ref="r:27bc780b-59b2-4d26-9db5-a38b63c35884(jetbrains.mps.refactoring.participant)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2904,7 +2905,7 @@
       <node concept="37vLTG" id="2Lknp0zGmMd" role="3clF46">
         <property role="TrG5h" value="refactoringSession" />
         <node concept="3uibUv" id="2Lknp0zKZms" role="1tU5fm">
-          <ref role="3uigEE" node="3KqYwoBJ0xf" resolve="RefactoringSession" />
+          <ref role="3uigEE" to="5nvm:3KqYwoBJ0xf" resolve="RefactoringSession" />
         </node>
       </node>
       <node concept="3cqZAl" id="4uVwhQyPJD5" role="3clF45" />
@@ -2955,7 +2956,7 @@
       <node concept="37vLTG" id="2Lknp0zQxiZ" role="3clF46">
         <property role="TrG5h" value="refactoringSession" />
         <node concept="3uibUv" id="2Lknp0zQxjP" role="1tU5fm">
-          <ref role="3uigEE" node="3KqYwoBJ0xf" resolve="RefactoringSession" />
+          <ref role="3uigEE" to="5nvm:3KqYwoBJ0xf" resolve="RefactoringSession" />
         </node>
       </node>
       <node concept="3Tm1VV" id="4uVwhQyPtVE" role="1B3o_S" />
@@ -3726,58 +3727,6 @@
       <node concept="3Tm1VV" id="6gU0oA5QLbp" role="1B3o_S" />
     </node>
     <node concept="3Tm1VV" id="4JlWzK6VGnB" role="1B3o_S" />
-  </node>
-  <node concept="3HP615" id="3KqYwoBJ0xf">
-    <property role="2bfB8j" value="true" />
-    <property role="TrG5h" value="RefactoringSession" />
-    <node concept="2tJIrI" id="3KqYwoBJgGL" role="jymVt" />
-    <node concept="3clFb_" id="3KqYwoBJgIa" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="putObject" />
-      <node concept="3clFbS" id="3KqYwoBJgIb" role="3clF47" />
-      <node concept="3Tm1VV" id="3KqYwoBJgIc" role="1B3o_S" />
-      <node concept="3cqZAl" id="3KqYwoBJgRT" role="3clF45" />
-      <node concept="37vLTG" id="3KqYwoBJgIe" role="3clF46">
-        <property role="TrG5h" value="id" />
-        <node concept="17QB3L" id="3KqYwoBJgIf" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="3KqYwoBJgSz" role="3clF46">
-        <property role="TrG5h" value="object" />
-        <node concept="3uibUv" id="3KqYwoBJh2N" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="3KqYwoBJg7u" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="getObject" />
-      <node concept="3clFbS" id="3KqYwoBJg7x" role="3clF47" />
-      <node concept="3Tm1VV" id="3KqYwoBJg7y" role="1B3o_S" />
-      <node concept="3uibUv" id="3KqYwoBJg6f" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-      </node>
-      <node concept="37vLTG" id="3KqYwoBJglp" role="3clF46">
-        <property role="TrG5h" value="id" />
-        <node concept="17QB3L" id="3KqYwoBJglo" role="1tU5fm" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="3KqYwoBJfVx" role="jymVt" />
-    <node concept="3clFb_" id="3KqYwoBJ0Rs" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="registerChange" />
-      <node concept="3cqZAl" id="3KqYwoBJ0Ru" role="3clF45" />
-      <node concept="3Tm1VV" id="3KqYwoBJ0Rv" role="1B3o_S" />
-      <node concept="3clFbS" id="3KqYwoBJ0Rw" role="3clF47" />
-      <node concept="37vLTG" id="3KqYwoBJ1Ti" role="3clF46">
-        <property role="TrG5h" value="change" />
-        <node concept="3uibUv" id="3KqYwoBJ1Th" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
-        </node>
-      </node>
-    </node>
-    <node concept="3Tm1VV" id="3KqYwoBJ0xg" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="4JdgAL_4yNB">
     <property role="TrG5h" value="DeprecatedConceptMemberNotMigratedProblem" />
