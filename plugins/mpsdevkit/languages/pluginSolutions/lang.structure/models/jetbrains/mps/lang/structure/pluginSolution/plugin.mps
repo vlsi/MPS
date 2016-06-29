@@ -199,6 +199,7 @@
       </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
+        <child id="2820489544402271667" name="typeParameter" index="HU9BZ" />
       </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
@@ -6497,6 +6498,13 @@
                                                                   </node>
                                                                   <node concept="37vLTw" id="361hHoA2jBx" role="37wK5m">
                                                                     <ref role="3cqZAo" node="361hHoA2jAe" resolve="refactoringSession" />
+                                                                  </node>
+                                                                  <node concept="2ShNRf" id="XAmMek9hbq" role="37wK5m">
+                                                                    <node concept="HV5vD" id="XAmMek9hLQ" role="2ShVmc">
+                                                                      <ref role="HV5vE" to="lfzw:XAmMejEI3D" resolve="RefactoringParticipant.CollectingParticipantStateFactory" />
+                                                                      <node concept="3Tqbb2" id="42LwYUtsPJO" role="HU9BZ" />
+                                                                      <node concept="3Tqbb2" id="42LwYUtsQzI" role="HU9BZ" />
+                                                                    </node>
                                                                   </node>
                                                                 </node>
                                                               </node>
