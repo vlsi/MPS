@@ -11174,6 +11174,24 @@
             <ref role="3bR37D" node="3MI1gu0QouH" resolve="jetbrains.mps.editor.runtime" />
           </node>
         </node>
+        <node concept="1SiIV0" id="4OyTe8uhpZb" role="3bR37C">
+          <node concept="3bR9La" id="4OyTe8uhpZc" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="4OyTe8uhpZd" role="3bR37C">
+          <node concept="3bR9La" id="4OyTe8uhpZe" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="mXGwHwhVPj" resolve="JDK" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="4OyTe8uhpZf" role="3bR37C">
+          <node concept="3bR9La" id="4OyTe8uhpZg" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="5cCcm$KATVz" resolve="jetbrains.mps.lang.migration.runtime" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="7Kfy9QB6L8Y" role="2G$12L">
         <property role="BnDLt" value="true" />
