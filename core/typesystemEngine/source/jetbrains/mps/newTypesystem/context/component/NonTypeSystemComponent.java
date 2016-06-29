@@ -135,16 +135,17 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
       doInvalidate(myNodesToDependentNodesWithNTRules.get(node), invalidatedNodesAndRules);
     }
     //properties
-    while (!myCurrentPropertiesToInvalidate.isEmpty()) {
-      Pair<SNode, String> pair = myCurrentPropertiesToInvalidate.remove();
-      doInvalidate(myPropertiesToDependentNodesWithNTRules.get(pair), invalidatedNodesAndRules);
+
+    Pair<SNode, String> nextPair;
+    while ((nextPair = myCurrentPropertiesToInvalidate.poll()) != null) {
+      doInvalidate(myPropertiesToDependentNodesWithNTRules.get(nextPair), invalidatedNodesAndRules);
     }
 
     //typed terms
-    while(!myCurrentTypedTermsToInvalidate.isEmpty()) {
-      SNode node = myCurrentTypedTermsToInvalidate.remove();
-      doInvalidate(myTypedTermsToDependentNodesWithNTRules.get(node), invalidatedNodesAndRules);
-      doInvalidate(myNodesToDependentNodesWithNTRules.get(node), invalidatedNodesAndRules);
+    SNode nextNode;
+    while((nextNode = myCurrentTypedTermsToInvalidate.poll()) != null) {
+      doInvalidate(myTypedTermsToDependentNodesWithNTRules.get(nextNode), invalidatedNodesAndRules);
+      doInvalidate(myNodesToDependentNodesWithNTRules.get(nextNode), invalidatedNodesAndRules);
     }
 
     //cache-dependent
