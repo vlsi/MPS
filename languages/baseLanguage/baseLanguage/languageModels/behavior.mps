@@ -34403,16 +34403,15 @@
             <node concept="3cpWs8" id="hEwJbVj" role="3cqZAp">
               <node concept="3cpWsn" id="hEwJbVk" role="3cpWs9">
                 <property role="TrG5h" value="ancestor" />
-                <node concept="3Tqbb2" id="hEwJbVl" role="1tU5fm" />
+                <node concept="3Tqbb2" id="hEwJbVl" role="1tU5fm">
+                  <ref role="ehGHo" to="tpee:i2fhoOR" resolve="IMethodLike" />
+                </node>
                 <node concept="2OqwBi" id="hEwJbVm" role="33vP2m">
                   <node concept="13iPFW" id="hEwJbVn" role="2Oq$k0" />
                   <node concept="2Xjw5R" id="hEwJbVo" role="2OqNvi">
-                    <node concept="3gmYPX" id="hEwJbVp" role="1xVPHs">
-                      <node concept="3gn64h" id="hEwJbVq" role="3gmYPZ">
-                        <ref role="3gnhBz" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
-                      </node>
-                      <node concept="3gn64h" id="hEwJbVr" role="3gmYPZ">
-                        <ref role="3gnhBz" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+                    <node concept="1xMEDy" id="42LwYUtmS9s" role="1xVPHs">
+                      <node concept="chp4Y" id="42LwYUtmSrt" role="ri$Ld">
+                        <ref role="cht4Q" to="tpee:i2fhoOR" resolve="IMethodLike" />
                       </node>
                     </node>
                   </node>
@@ -34460,14 +34459,11 @@
                       <property role="TrG5h" value="expectedReturnType" />
                       <node concept="3Tqbb2" id="hQYuLC6" role="1tU5fm" />
                       <node concept="2OqwBi" id="hQYuLC7" role="33vP2m">
-                        <node concept="1PxgMI" id="hQYuLC8" role="2Oq$k0">
-                          <ref role="1m5ApE" to="tpee:gyVMwX8" resolve="ConceptFunction" />
-                          <node concept="37vLTw" id="3GM_nagTxRq" role="1m5AlR">
-                            <ref role="3cqZAo" node="hEwJbVk" resolve="ancestor" />
-                          </node>
+                        <node concept="2qgKlT" id="42LwYUtpYrk" role="2OqNvi">
+                          <ref role="37wK5l" node="i2fhBNC" resolve="getExpectedRetType" />
                         </node>
-                        <node concept="2qgKlT" id="hQYuLCa" role="2OqNvi">
-                          <ref role="37wK5l" node="hEwIGRD" resolve="getExpectedReturnType" />
+                        <node concept="37vLTw" id="42LwYUtpY2y" role="2Oq$k0">
+                          <ref role="3cqZAo" node="hEwJbVk" resolve="ancestor" />
                         </node>
                       </node>
                     </node>
