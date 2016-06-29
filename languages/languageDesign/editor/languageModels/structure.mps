@@ -5944,5 +5944,54 @@
     <property role="TrG5h" value="QueryFunction_SubstituteMenu_Concepts" />
     <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
   </node>
+  <node concept="1TIwiD" id="7Nx4mSUbr7x">
+    <property role="EcuMT" value="8998492695583109601" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
+    <property role="TrG5h" value="QueryFunction_SubstituteMenu_CanExecute" />
+    <property role="34LRSv" value="can execute" />
+    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+  </node>
+  <node concept="1TIwiD" id="7Nx4mSUbuTq">
+    <property role="EcuMT" value="8998492695583125082" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteFeature_MatchingText" />
+    <property role="34LRSv" value="matching text" />
+    <ref role="1TJDcQ" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
+    <node concept="1TJgyj" id="7Nx4mSUbvUs" role="1TKVEi">
+      <property role="IQ2ns" value="8998492695583129244" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="query" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="hqh421K" resolve="ISubstituteMenu_String" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7Nx4mSUbw5N">
+    <property role="EcuMT" value="8998492695583129971" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteFeature_DescriptionText" />
+    <property role="34LRSv" value="description text" />
+    <ref role="1TJDcQ" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
+    <node concept="1TJgyj" id="7Nx4mSUbw5O" role="1TKVEi">
+      <property role="IQ2ns" value="8998492695583129972" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="query" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="hqh421K" resolve="ISubstituteMenu_String" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7Nx4mSUbw67">
+    <property role="EcuMT" value="8998492695583129991" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteFeature_CanExecute" />
+    <property role="34LRSv" value="matching text" />
+    <ref role="1TJDcQ" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
+    <node concept="1TJgyj" id="7Nx4mSUbw68" role="1TKVEi">
+      <property role="IQ2ns" value="8998492695583129992" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="query" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpdg:h8uaGWA" resolve="QueryFunction_CanSubstitute" />
+    </node>
+  </node>
 </model>
 

@@ -14816,6 +14816,7 @@
         <property role="3F0ifm" value="output concept:" />
       </node>
       <node concept="1iCGBv" id="7mC_uHFK8zj" role="3EZMnx">
+        <property role="1$x2rV" value="default" />
         <ref role="1NtTu8" to="tpc2:7mC_uHFK8vN" />
         <node concept="1sVBvm" id="7mC_uHFK8zl" role="1sWHZn">
           <node concept="3F0A7n" id="7mC_uHFK8zJ" role="2wV5jI">
@@ -15073,6 +15074,48 @@
         </node>
       </node>
       <node concept="l2Vlx" id="2uBUyS1moKZ" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7Nx4mSUbw5D">
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <ref role="1XX52x" to="tpc2:7Nx4mSUbuTq" resolve="SubstituteFeature_MatchingText" />
+    <node concept="3EZMnI" id="7Nx4mSUbw5F" role="2wV5jI">
+      <node concept="l2Vlx" id="7Nx4mSUbw5G" role="2iSdaV" />
+      <node concept="PMmxH" id="7Nx4mSUbw5H" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F1sOY" id="7Nx4mSUbw5I" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;none&gt;" />
+        <ref role="1NtTu8" to="tpc2:7Nx4mSUbvUs" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="7Nx4mSUbw5X">
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <ref role="1XX52x" to="tpc2:7Nx4mSUbw5N" resolve="SubstituteFeature_DescriptionText" />
+    <node concept="3EZMnI" id="7Nx4mSUbw5Z" role="2wV5jI">
+      <node concept="l2Vlx" id="7Nx4mSUbw60" role="2iSdaV" />
+      <node concept="PMmxH" id="7Nx4mSUbw61" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F1sOY" id="7Nx4mSUbw62" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;none&gt;" />
+        <ref role="1NtTu8" to="tpc2:7Nx4mSUbw5O" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="7Nx4mSUbw6h">
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <ref role="1XX52x" to="tpc2:7Nx4mSUbw67" resolve="SubstituteFeature_CanExecute" />
+    <node concept="3EZMnI" id="7Nx4mSUbw6j" role="2wV5jI">
+      <node concept="l2Vlx" id="7Nx4mSUbw6k" role="2iSdaV" />
+      <node concept="PMmxH" id="7Nx4mSUbw6l" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F1sOY" id="7Nx4mSUbw6m" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;none&gt;" />
+        <ref role="1NtTu8" to="tpc2:7mC_uHG0Nxu" />
+      </node>
     </node>
   </node>
 </model>

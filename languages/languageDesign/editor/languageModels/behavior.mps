@@ -20715,5 +20715,28 @@
       </node>
     </node>
   </node>
+  <node concept="13h7C7" id="7Nx4mSUbr7y">
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
+    <ref role="13h7C2" to="tpc2:7Nx4mSUbr7x" resolve="QueryFunction_SubstituteMenu_CanExecute" />
+    <node concept="13hLZK" id="7Nx4mSUbr7z" role="13h7CW">
+      <node concept="3clFbS" id="7Nx4mSUbr7$" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="7Nx4mSUbr7H" role="13h7CS">
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getExpectedReturnType" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:hEwIGRD" resolve="getExpectedReturnType" />
+      <node concept="3Tm1VV" id="7Nx4mSUbr7L" role="1B3o_S" />
+      <node concept="3clFbS" id="7Nx4mSUbr7N" role="3clF47">
+        <node concept="3clFbF" id="7Nx4mSUbrfx" role="3cqZAp">
+          <node concept="2c44tf" id="7Nx4mSUbrfn" role="3clFbG">
+            <node concept="10P_77" id="7Nx4mSUbrfY" role="2c44tc" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="7Nx4mSUbr7O" role="3clF45" />
+    </node>
+  </node>
 </model>
 
