@@ -11,32 +11,29 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:ae9ec0c8-644a-4abb-bd37-ca2f4eb2d3d9(jetbrains.mps.ide.editor.suppresserrors)/7348309840067517697">
     <file name="SuppressErrorsChecker.java">
-      <node id="7348309840067517718" at="25,117,26,90" concept="5" />
-      <node id="7348309840067517725" at="26,90,27,22" concept="5" />
-      <node id="7348309840067517734" at="29,252,30,106" concept="1" />
-      <node id="7348309840067517754" at="32,5,33,20" concept="6" />
-      <node id="7348309840067517699" at="22,0,24,0" concept="0" trace="SuppressErrorsChecker#()V" />
-      <node id="7348309840067517732" at="28,277,31,7" concept="3" />
-      <node id="7348309840067517729" at="27,22,32,5" concept="2" />
-      <node id="7348309840067517704" at="24,0,35,0" concept="4" trace="createMessages#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;ZLjetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Set;" />
-      <scope id="7348309840067517702" at="22,34,22,34" />
-      <scope id="7348309840067517733" at="29,252,30,106" />
-      <scope id="7348309840067517699" at="22,0,24,0" />
-      <scope id="7348309840067517731" at="28,277,31,7" />
-      <scope id="7348309840067517729" at="27,22,32,5">
-        <var name="n" id="7348309840067517730" />
+      <node id="3275492288799387349" at="26,134,27,90" concept="5" />
+      <node id="3275492288799387356" at="27,90,28,49" concept="5" />
+      <node id="3275492288799387365" at="30,252,31,106" concept="1" />
+      <node id="3275492288799387385" at="33,5,34,54" concept="6" />
+      <node id="3275492288799387363" at="29,277,32,7" concept="3" />
+      <node id="3275492288799387360" at="28,49,33,5" concept="2" />
+      <node id="3275492288799385277" at="24,0,36,0" concept="4" trace="update#(Ljetbrains/mps/nodeEditor/EditorComponent;ZZLjetbrains/mps/util/Cancellable;)Ljetbrains/mps/nodeEditor/checking/UpdateResult;" />
+      <scope id="3275492288799387364" at="30,252,31,106" />
+      <scope id="3275492288799387362" at="29,277,32,7" />
+      <scope id="3275492288799387360" at="28,49,33,5">
+        <var name="n" id="3275492288799387361" />
       </scope>
-      <scope id="7348309840067517717" at="25,117,33,20">
-        <var name="messages" id="7348309840067517719" />
-        <var name="node" id="7348309840067517726" />
+      <scope id="3275492288799385291" at="26,134,34,54">
+        <var name="messages" id="3275492288799387350" />
+        <var name="node" id="3275492288799387357" />
       </scope>
-      <scope id="7348309840067517704" at="24,0,35,0">
-        <var name="b" id="7348309840067517713" />
-        <var name="context" id="7348309840067517715" />
-        <var name="list" id="7348309840067517710" />
-        <var name="root" id="7348309840067517708" />
+      <scope id="3275492288799385277" at="24,0,36,0">
+        <var name="applyQuickFixes" id="3275492288799385286" />
+        <var name="cancellable" id="3275492288799385288" />
+        <var name="editorComponent" id="3275492288799385282" />
+        <var name="incremental" id="3275492288799385284" />
       </scope>
-      <unit id="7348309840067517697" at="21,0,36,0" name="jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsChecker" />
+      <unit id="7348309840067517697" at="22,0,37,0" name="jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsChecker" />
     </file>
   </root>
   <root nodeRef="r:ae9ec0c8-644a-4abb-bd37-ca2f4eb2d3d9(jetbrains.mps.ide.editor.suppresserrors)/7348309840067517756">
