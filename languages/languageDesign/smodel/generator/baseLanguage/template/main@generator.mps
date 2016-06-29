@@ -5313,20 +5313,16 @@
           </node>
         </node>
       </node>
-      <node concept="2YIFZM" id="4Dv5UFPeLMJ" role="37wK5m">
-        <ref role="37wK5l" to="i8bi:Det6sRbgD5" resolve="asInstanceConcept" />
-        <ref role="1Pybhc" to="i8bi:5IkW5anFcyt" resolve="SNodeOperations" />
-        <node concept="10Nm6u" id="7U2DyFDotff" role="37wK5m">
-          <node concept="xERo3" id="7U2DyFDotqa" role="lGtFl">
-            <ref role="xH3mL" node="5DcBNiM8Rtt" resolve="reduce_ConceptDeclaration2SAbstractConcept" />
-            <node concept="3NFfHV" id="7U2DyFDotvt" role="xEYEz">
-              <node concept="3clFbS" id="7U2DyFDotvu" role="2VODD2">
-                <node concept="3clFbF" id="7U2DyFDotzE" role="3cqZAp">
-                  <node concept="2OqwBi" id="7U2DyFDotAs" role="3clFbG">
-                    <node concept="30H73N" id="7U2DyFDotzD" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="7U2DyFDotTg" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tp25:gCI8USK" />
-                    </node>
+      <node concept="10Nm6u" id="7U2DyFDotff" role="37wK5m">
+        <node concept="xERo3" id="7U2DyFDotqa" role="lGtFl">
+          <ref role="xH3mL" node="4qCJBsamGYR" resolve="reduce_ConceptDeclaration2SConcept" />
+          <node concept="3NFfHV" id="7U2DyFDotvt" role="xEYEz">
+            <node concept="3clFbS" id="7U2DyFDotvu" role="2VODD2">
+              <node concept="3clFbF" id="7U2DyFDotzE" role="3cqZAp">
+                <node concept="2OqwBi" id="7U2DyFDotAs" role="3clFbG">
+                  <node concept="30H73N" id="7U2DyFDotzD" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="7U2DyFDotTg" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tp25:gCI8USK" />
                   </node>
                 </node>
               </node>

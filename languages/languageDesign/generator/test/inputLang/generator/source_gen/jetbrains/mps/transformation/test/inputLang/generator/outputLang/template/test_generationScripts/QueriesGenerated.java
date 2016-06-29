@@ -54,7 +54,7 @@ public class QueriesGenerated {
     }
     _context.putStepObject("run post-processing", new Object());
     System.out.println("!!!test pre-mapping. model=" + jetbrains.mps.util.SNodeOperations.getModelLongName(_context.getModel()));
-    SNode inputRoot = SModelOperations.createNewRootNode(_context.getModel(), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot")));
+    SNode inputRoot = SModelOperations.createNewRootNode(_context.getModel(), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"));
     SPropertyOperations.set(inputRoot, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "Input Root created by pre-process script");
     SPropertyOperations.set(inputRoot, MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x117eb48fdf5L, "useInTest"), "test1");
   }
@@ -65,7 +65,7 @@ public class QueriesGenerated {
       return;
     }
     System.out.println("!!!test post-mapping. model=" + jetbrains.mps.util.SNodeOperations.getModelLongName(_context.getModel()));
-    SNode outputRoot = SModelOperations.createNewRootNode(_context.getModel(), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot")));
+    SNode outputRoot = SModelOperations.createNewRootNode(_context.getModel(), MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot"));
     SPropertyOperations.set(outputRoot, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "created by post-processing script");
   }
   public static TemplateModel getDescriptor(TemplateModule module) {

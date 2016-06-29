@@ -19,7 +19,6 @@ import java.util.HashMap;
 import java.io.IOException;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -47,7 +46,7 @@ public class MigrationDataUtil {
       throw new RuntimeException();
     }
     for (Tuples._2<MigrationScriptReference, SNode> p : Sequence.fromIterable(data)) {
-      SNode stepData = SModelOperations.createNewRootNode(model, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x66eed171c5f82709L, "jetbrains.mps.lang.migration.util.structure.StepData")));
+      SNode stepData = SModelOperations.createNewRootNode(model, MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x66eed171c5f82709L, "jetbrains.mps.lang.migration.util.structure.StepData"));
       SPropertyOperations.set(stepData, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x66eed171c5f82709L, 0x1b62b551c10bc5f4L, "script"), p._0().serialize());
       SLinkOperations.setTarget(stepData, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x66eed171c5f82709L, 0x66eed171c5f90226L, "data"), p._1());
     }

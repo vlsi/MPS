@@ -99,7 +99,7 @@ public class ExtractComponent_Action extends BaseAction {
     ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         SModel model = SNodeOperations.getModel(ecm);
-        SNode component = SModelOperations.createNewRootNode(model, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration")));
+        SNode component = SModelOperations.createNewRootNode(model, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"));
         SPropertyOperations.set(component, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), componentName);
         SNode container = SNodeOperations.getNodeAncestor(ecm, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L, "jetbrains.mps.lang.editor.structure.BaseEditorComponent"), false, false);
         SLinkOperations.setTarget(component, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L, 0x10f7df451aeL, "conceptDeclaration"), ((SNode) BHReflection.invoke(container, SMethodTrimmedId.create("getConceptDeclaration", null, "67EYkym$wx3"))));
