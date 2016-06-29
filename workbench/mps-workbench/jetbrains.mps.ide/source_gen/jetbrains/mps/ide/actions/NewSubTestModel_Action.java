@@ -28,6 +28,7 @@ import org.apache.log4j.LogManager;
 
 public class NewSubTestModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.TestModel;
+
   public NewSubTestModel_Action() {
     super("Test Model", "", ICON);
     this.setIsAlwaysVisible(false);

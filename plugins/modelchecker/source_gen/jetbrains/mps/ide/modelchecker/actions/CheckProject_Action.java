@@ -15,6 +15,7 @@ import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 
 public class CheckProject_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.General.ModelChecker;
+
   public CheckProject_Action() {
     super("Check Project", "Check project for unresolved references and typesystem rules", ICON);
     this.setIsAlwaysVisible(false);

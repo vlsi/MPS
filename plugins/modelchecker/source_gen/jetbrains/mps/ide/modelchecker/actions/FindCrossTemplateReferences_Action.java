@@ -24,6 +24,7 @@ import jetbrains.mps.ide.modelchecker.platform.actions.GeneratorTemplatesChecker
 
 public class FindCrossTemplateReferences_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public FindCrossTemplateReferences_Action() {
     super("Find Cross-template References", "", ICON);
     this.setIsAlwaysVisible(false);

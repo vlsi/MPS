@@ -23,6 +23,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 
 public class NewAccessoryModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Models.AccessoryModel;
+
   public NewAccessoryModel_Action() {
     super("New Accessory Model", "", ICON);
     this.setIsAlwaysVisible(false);

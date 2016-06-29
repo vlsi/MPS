@@ -15,6 +15,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class Delete_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public Delete_Action() {
     super("Delete", "", ICON);
     this.setIsAlwaysVisible(false);

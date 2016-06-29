@@ -18,6 +18,7 @@ import jetbrains.mps.project.StandaloneMPSProject;
 
 public class AddModuleToProject_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public AddModuleToProject_Action() {
     super("Add to Project", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -88,8 +88,8 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyTree" />
-    <classNode dependClassName="jetbrains.mps.ide.hierarchy.IconContainer" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.TreeHighlighterExtension" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -179,10 +179,6 @@
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.ConceptHierarchyTree" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.TreeHighlighterExtension" />
     <classNode extendsClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.hierarchy.IconContainer" file="IconContainer.java">
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
   </dependency>
   <dependency className="jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent" file="LanguageHierarchiesComponent.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />

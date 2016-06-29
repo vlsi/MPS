@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 public class MakeProject_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Compile;
+
   public MakeProject_Action() {
     super("Make _Project", "", ICON);
     this.setIsAlwaysVisible(true);

@@ -22,6 +22,7 @@ import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class ShowCellInExplorer_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Actions.ShowCellInExplorer;
+
   public ShowCellInExplorer_Action() {
     super("Show Cell in Explorer", "", ICON);
     this.setIsAlwaysVisible(false);

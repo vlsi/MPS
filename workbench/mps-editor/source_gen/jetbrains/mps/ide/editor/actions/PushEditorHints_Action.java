@@ -23,6 +23,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 
 public class PushEditorHints_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public PushEditorHints_Action() {
     super("Push Editor Hints", "", ICON);
     this.setIsAlwaysVisible(false);

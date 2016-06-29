@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 public class RebuildProject_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RebuildProject_Action() {
     super("_Rebuild Project", "", ICON);
     this.setIsAlwaysVisible(false);

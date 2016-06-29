@@ -29,6 +29,7 @@ import com.intellij.openapi.application.ModalityState;
 
 public class GoToModule_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GoToModule_Action() {
     super("Go to Module", "", ICON);
     this.setIsAlwaysVisible(false);

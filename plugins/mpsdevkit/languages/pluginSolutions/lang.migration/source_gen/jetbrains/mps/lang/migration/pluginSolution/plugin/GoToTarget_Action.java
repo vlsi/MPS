@@ -18,6 +18,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class GoToTarget_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GoToTarget_Action() {
     super("Target Node", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_DefaultGenerationParameterId = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DefaultGeneratorParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_DefaultGeneratorParameterContainer = new ConceptPresentationBuilder().icon("parameters.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_DefaultGeneratorParameterContainer = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0c).create();
 
   @Override
   @Nullable

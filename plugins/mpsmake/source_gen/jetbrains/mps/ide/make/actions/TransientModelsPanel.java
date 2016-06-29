@@ -4,6 +4,7 @@ package jetbrains.mps.ide.make.actions;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import jetbrains.mps.icons.MPSIcons;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import com.intellij.util.ui.UIUtil;
@@ -18,7 +19,7 @@ import java.awt.event.MouseEvent;
 
   public TransientModelsPanel(TransientModelsWidget widget) {
     myWidget = widget;
-    this.label = new JLabel(widget.getMaxPossibleText(), IconContainer.ICON_b0a0b0d, SwingConstants.RIGHT);
+    this.label = new JLabel(widget.getMaxPossibleText(), MPSIcons.Nodes.TransientModels, SwingConstants.RIGHT);
     this.label.setIconTextGap(0);
     Font labelFont = UIUtil.getLabelFont();
     boolean framedStyle = SystemInfo.isMac || !(SystemProperties.getBooleanProperty("idea.ui.mem.use", false));

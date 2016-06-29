@@ -24,6 +24,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class RunMigrationScripts_Action extends BaseAction {
   private static final Icon ICON = null;
+
   private ScriptsMenuBuilder menuBuilder;
   public RunMigrationScripts_Action(ScriptsMenuBuilder menuBuilder_par) {
     super("All Scripts...", "", ICON);

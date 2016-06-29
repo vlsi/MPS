@@ -35,6 +35,7 @@ import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 
 public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public FindRootableConceptsWithoutIcons_Action() {
     super("Find Rootable Concepts without Icons", "", ICON);
     this.setIsAlwaysVisible(false);

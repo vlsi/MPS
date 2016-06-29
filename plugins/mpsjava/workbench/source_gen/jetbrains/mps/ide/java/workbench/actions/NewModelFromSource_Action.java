@@ -50,6 +50,7 @@ import jetbrains.mps.ide.ui.tree.module.StereotypeProvider;
 
 public class NewModelFromSource_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public NewModelFromSource_Action() {
     super("Models from Java Sources", "", ICON);
     this.setIsAlwaysVisible(false);

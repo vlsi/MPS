@@ -22,6 +22,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class AddExecutor_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public AddExecutor_Action() {
     super("Add Executor", "", ICON);
     this.setIsAlwaysVisible(false);

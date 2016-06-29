@@ -14,6 +14,7 @@ import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
 
 public class RollbackChanges_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.Reset;
+
   public RollbackChanges_Action() {
     super("Rollback", "", ICON);
     this.setIsAlwaysVisible(true);

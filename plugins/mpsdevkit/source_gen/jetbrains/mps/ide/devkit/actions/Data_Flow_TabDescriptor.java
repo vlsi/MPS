@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 
 public class Data_Flow_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.DataFlow;
+
   public Data_Flow_TabDescriptor() {
   }
   public String getTitle() {

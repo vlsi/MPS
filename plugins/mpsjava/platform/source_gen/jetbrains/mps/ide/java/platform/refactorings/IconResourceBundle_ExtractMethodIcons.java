@@ -6,13 +6,15 @@ import jetbrains.mps.resourceBundles.IconResourceBundle;
 import java.util.Map;
 import javax.swing.Icon;
 import java.util.HashMap;
+import com.intellij.icons.AllIcons;
+import jetbrains.mps.icons.MPSIcons;
 
 public class IconResourceBundle_ExtractMethodIcons implements IconResourceBundle {
   private static IconResourceBundle_ExtractMethodIcons INSTANCE = new IconResourceBundle_ExtractMethodIcons();
   private Map<String, Icon> icons = new HashMap<String, Icon>() {
     {
-      put("CLASS", IconContainer.ICON_a0);
-      put("INTERFACE", IconContainer.ICON_a1);
+      put("CLASS", AllIcons.Nodes.Class);
+      put("INTERFACE", MPSIcons.Nodes.Behavior);
     }
   };
   public IconResourceBundle_ExtractMethodIcons() {

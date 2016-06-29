@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class GenerateMainMethod_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GenerateMainMethod_Action() {
     super("main(Strins[] args)", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -16,6 +16,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class ShowDefaultHelp_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowDefaultHelp_Action() {
     super("Show Default Help", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -19,7 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ExecuteFinderExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExecuteFindersGetSearchResults = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FindBlock = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_FinderDeclaration = new ConceptPresentationBuilder().icon("usagesFinder.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_FinderDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0h).create();
   private final ConceptPresentation props_FinderReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IsApplicableBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IsUsedByDefault = new ConceptPresentationBuilder().create();

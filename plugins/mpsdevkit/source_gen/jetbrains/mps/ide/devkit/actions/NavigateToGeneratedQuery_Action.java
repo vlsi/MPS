@@ -16,6 +16,7 @@ import jetbrains.mps.ide.generator.GeneratedQueriesOpener;
 
 public class NavigateToGeneratedQuery_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public NavigateToGeneratedQuery_Action() {
     super("Generated Query", "Navigate to generated query method", ICON);
     this.setIsAlwaysVisible(false);

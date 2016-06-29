@@ -14,6 +14,7 @@ import jetbrains.mps.openapi.editor.assist.ContextAssistant;
 
 public class JumpToContextAssistant_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public JumpToContextAssistant_Action() {
     super("Jump to Context Assistant", "", ICON);
     this.setIsAlwaysVisible(false);

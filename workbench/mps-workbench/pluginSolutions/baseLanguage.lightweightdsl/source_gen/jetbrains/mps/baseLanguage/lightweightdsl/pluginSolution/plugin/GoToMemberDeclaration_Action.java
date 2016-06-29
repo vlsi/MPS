@@ -17,6 +17,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class GoToMemberDeclaration_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GoToMemberDeclaration_Action() {
     super("Go To Declaration", "", ICON);
     this.setIsAlwaysVisible(false);

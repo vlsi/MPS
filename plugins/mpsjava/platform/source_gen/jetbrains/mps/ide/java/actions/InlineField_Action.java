@@ -33,6 +33,7 @@ import com.intellij.openapi.ui.Messages;
 
 public class InlineField_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public InlineField_Action() {
     super("Inline Field", "", ICON);
     this.setIsAlwaysVisible(false);

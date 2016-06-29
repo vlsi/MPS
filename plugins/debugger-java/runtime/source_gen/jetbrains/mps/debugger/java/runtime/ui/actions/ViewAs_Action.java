@@ -20,6 +20,7 @@ import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 
 public class ViewAs_Action extends BaseAction {
   private static final Icon ICON = null;
+
   private ValueWrapperFactory factory;
   public ViewAs_Action(ValueWrapperFactory factory_par) {
     super("View With Factory", "", ICON);

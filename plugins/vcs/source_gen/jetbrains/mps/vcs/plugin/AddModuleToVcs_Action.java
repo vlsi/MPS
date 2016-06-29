@@ -21,6 +21,7 @@ import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
 
 public class AddModuleToVcs_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Actions.AddToVCS;
+
   public AddModuleToVcs_Action() {
     super("Add Module to VCS", "", ICON);
     this.setIsAlwaysVisible(false);

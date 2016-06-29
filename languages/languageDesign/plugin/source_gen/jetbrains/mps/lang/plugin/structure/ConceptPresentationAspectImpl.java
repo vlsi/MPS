@@ -17,8 +17,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ActionConstructorParameterReferenceOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionDataParameterDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionDataParameterReferenceOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ActionDeclaration = new ConceptPresentationBuilder().helpUrl("http://confluence.jetbrains.com/display/MPSD33/Plugin#Plugin-actionsandactiongroups").icon("actionNew.png", ConceptPresentationAspectImpl.class).create();
-  private final ConceptPresentation props_ActionGroupDeclaration = new ConceptPresentationBuilder().icon("actionGroupNew.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_ActionDeclaration = new ConceptPresentationBuilder().helpUrl("http://confluence.jetbrains.com/display/MPSD33/Plugin#Plugin-actionsandactiongroups").icon(IconContainer.RESOURCE_a0a0f).create();
+  private final ConceptPresentation props_ActionGroupDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0g).create();
   private final ConceptPresentation props_ActionGroupMember = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionGroupRef = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionInstance = new ConceptPresentationBuilder().create();
@@ -36,7 +36,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AddTabOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BaseNodeBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BaseProjectOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BaseToolDeclaration = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cedcL, "caption"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cf2dL, "number"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x22ace24ea9f7487cL, "position"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cf6eL, "icon")).icon("tool.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_BaseToolDeclaration = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cedcL, "caption"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cf2dL, "number"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x22ace24ea9f7487cL, "position"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cf6eL, "icon")).icon(IconContainer.RESOURCE_a0a0y).create();
   private final ConceptPresentation props_BuildGroupBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ButtonCreator = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CloseTabOperation = new ConceptPresentationBuilder().create();
@@ -60,7 +60,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_DisposeBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DoUpdateBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EditableModel = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EditorTab = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x33f4c34299ff0d37L, "shortcutChar"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x71dc7d539b7857cfL, "commandOnCreate"), MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x33f4c34299ff0d30L, "baseNodeConcept")).icon("tabbedEditor.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_EditorTab = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x33f4c34299ff0d37L, "shortcutChar"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x71dc7d539b7857cfL, "commandOnCreate"), MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x33f4c34299ff0d30L, "baseNodeConcept")).icon(IconContainer.RESOURCE_a0a0wb).create();
   private final ConceptPresentation props_EditorTabReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ElementListContents = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EnumerateChildrenFunction = new ConceptPresentationBuilder().create();
@@ -77,7 +77,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_GroupType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IdeaActionsDescriptor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IdeaConfigurationXml = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IdeaInitializerDescriptor = new ConceptPresentationBuilder().icon("ideaPluginDeclaration.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_IdeaInitializerDescriptor = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0nc).create();
   private final ConceptPresentation props_IdeaPluginDependency = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InitBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InterfaceExtentionPoint = new ConceptPresentationBuilder().create();
@@ -86,7 +86,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IsApplicableTabBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_KeyMapKeystroke = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_KeyStrokeType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_KeymapChangesDeclaration = new ConceptPresentationBuilder().icon("keymapChangesDeclaration.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_KeymapChangesDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0wc).create();
   private final ConceptPresentation props_KeymapRef = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ListenBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MPSPluginDependency = new ConceptPresentationBuilder().create();
@@ -111,7 +111,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_PreferencePageCommitBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PreferencePageIsModifiedBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PreferencePageResetBlock = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PreferencesComponentDeclaration = new ConceptPresentationBuilder().icon("preferences.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_PreferencesComponentDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0vd).create();
   private final ConceptPresentation props_PreferencesComponentType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RequiredCondition = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Separator = new ConceptPresentationBuilder().create();

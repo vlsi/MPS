@@ -17,6 +17,7 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 
 public class ToggleBreakpoint_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ToggleBreakpoint_Action() {
     super("Toggle Breakpoint", "", ICON);
     this.setIsAlwaysVisible(false);

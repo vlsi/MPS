@@ -17,6 +17,7 @@ import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class GoToTypeErrorRule_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GoToTypeErrorRule_Action() {
     super("Go to Rule Which Caused Error", "", ICON);
     this.setIsAlwaysVisible(false);

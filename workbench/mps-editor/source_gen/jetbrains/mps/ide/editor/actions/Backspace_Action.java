@@ -15,6 +15,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class Backspace_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public Backspace_Action() {
     super("Backspace", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -14,6 +14,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class DeleteToWordEnd_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public DeleteToWordEnd_Action() {
     super("Delete to Word End", "", ICON);
     this.setIsAlwaysVisible(false);

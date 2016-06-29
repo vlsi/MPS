@@ -14,6 +14,7 @@ import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 
 public class CopyStackTraceToClipboard_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CopyStackTraceToClipboard_Action() {
     super("Copy Stacktrace to Clipboard", "", ICON);
     this.setIsAlwaysVisible(true);

@@ -39,7 +39,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_BuildMps_Generator = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BuildMps_GeneratorOptions = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BuildMps_Group = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BuildMps_IdeaPlugin = new ConceptPresentationBuilder().icon("plugin.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_BuildMps_IdeaPlugin = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0bb).create();
   private final ConceptPresentation props_BuildMps_IdeaPluginContent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BuildMps_IdeaPluginDependency = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BuildMps_IdeaPluginGroup = new ConceptPresentationBuilder().create();

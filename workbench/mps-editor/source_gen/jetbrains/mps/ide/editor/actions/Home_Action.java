@@ -14,6 +14,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class Home_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public Home_Action() {
     super("Move Caret to Line Start", "", ICON);
     this.setIsAlwaysVisible(false);

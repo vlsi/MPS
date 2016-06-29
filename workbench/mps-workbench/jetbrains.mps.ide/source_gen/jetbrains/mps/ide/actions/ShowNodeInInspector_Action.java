@@ -15,6 +15,7 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 
 public class ShowNodeInInspector_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowNodeInInspector_Action() {
     super("Inspect Node", "", ICON);
     this.setIsAlwaysVisible(false);

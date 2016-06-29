@@ -14,6 +14,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class SelectDown_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public SelectDown_Action() {
     super("Shrink Selection", "", ICON);
     this.setIsAlwaysVisible(false);

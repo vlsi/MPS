@@ -20,6 +20,7 @@ import javax.swing.JOptionPane;
 
 public class ShowExpectedType_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowExpectedType_Action() {
     super("Show Expected Type", "Show type expected in this context", ICON);
     this.setIsAlwaysVisible(false);

@@ -15,6 +15,7 @@ import jetbrains.mps.ide.java.util.StubResolver;
 
 public class ResolveStubReferencesToMPS_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ResolveStubReferencesToMPS_Action() {
     super("Resolve Stub References to MPS Code", "", ICON);
     this.setIsAlwaysVisible(false);

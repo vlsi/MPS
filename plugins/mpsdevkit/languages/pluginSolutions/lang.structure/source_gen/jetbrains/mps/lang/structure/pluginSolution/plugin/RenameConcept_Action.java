@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class RenameConcept_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RenameConcept_Action() {
     super("Rename Concept", "", ICON);
     this.setIsAlwaysVisible(false);

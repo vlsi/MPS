@@ -24,6 +24,7 @@ import jetbrains.mps.util.SNodeOperations;
 
 public class BuildAllRefactorings_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public BuildAllRefactorings_Action() {
     super("Rebuild All Refactorings", "", ICON);
     this.setIsAlwaysVisible(false);

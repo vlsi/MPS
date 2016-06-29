@@ -22,6 +22,7 @@ import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
 
 public class CopyValueAction_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CopyValueAction_Action() {
     super("Copy Value", "", ICON);
     this.setIsAlwaysVisible(false);

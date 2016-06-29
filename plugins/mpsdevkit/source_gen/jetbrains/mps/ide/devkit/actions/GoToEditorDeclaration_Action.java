@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.Language;
 
 public class GoToEditorDeclaration_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Editor;
+
   public GoToEditorDeclaration_Action() {
     super("Editor Declaration", "", ICON);
     this.setIsAlwaysVisible(false);

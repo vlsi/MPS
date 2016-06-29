@@ -41,6 +41,7 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 
 public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CalcClassifiersInRootsStatistic_Action() {
     super("Calc classifiers in roots statistic", "", ICON);
     this.setIsAlwaysVisible(false);

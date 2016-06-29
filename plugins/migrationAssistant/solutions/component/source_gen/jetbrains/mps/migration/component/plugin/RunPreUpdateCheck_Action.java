@@ -39,6 +39,7 @@ import jetbrains.mps.ide.migration.check.MigrationOutputUtil;
 
 public class RunPreUpdateCheck_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RunPreUpdateCheck_Action() {
     super("Run Pre-Update Check", "", ICON);
     this.setIsAlwaysVisible(false);

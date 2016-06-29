@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class PrintNodeID_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public PrintNodeID_Action() {
     super("Print Node ID To System.out", "", ICON);
     this.setIsAlwaysVisible(true);

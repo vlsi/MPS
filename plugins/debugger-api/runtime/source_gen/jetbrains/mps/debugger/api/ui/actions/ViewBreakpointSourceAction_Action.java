@@ -18,6 +18,7 @@ import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class ViewBreakpointSourceAction_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.ShowViewer;
+
   public ViewBreakpointSourceAction_Action() {
     super("View Source", "View Source", ICON);
     this.setIsAlwaysVisible(true);

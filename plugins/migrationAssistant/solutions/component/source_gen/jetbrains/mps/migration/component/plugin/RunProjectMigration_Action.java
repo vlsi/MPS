@@ -19,6 +19,7 @@ import com.intellij.util.WaitForProgressToShow;
 
 public class RunProjectMigration_Action extends BaseAction {
   private static final Icon ICON = null;
+
   private ProjectMigration script;
   public RunProjectMigration_Action(ProjectMigration script_par) {
     super("Run", "", ICON);

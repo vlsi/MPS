@@ -35,6 +35,7 @@ import java.awt.GridBagConstraints;
 
 public class ShowParameters_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowParameters_Action() {
     super("Show Parameters", "", ICON);
     this.setIsAlwaysVisible(false);

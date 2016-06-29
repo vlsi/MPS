@@ -33,6 +33,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class GenerateConstructor_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GenerateConstructor_Action() {
     super("Constructor", "", ICON);
     this.setIsAlwaysVisible(false);

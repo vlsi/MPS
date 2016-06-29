@@ -28,6 +28,7 @@ import org.apache.log4j.LogManager;
 
 public class CalcSNodeStatistic_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CalcSNodeStatistic_Action() {
     super("Calc properties/refs/children statistic for SNodes", "", ICON);
     this.setIsAlwaysVisible(false);

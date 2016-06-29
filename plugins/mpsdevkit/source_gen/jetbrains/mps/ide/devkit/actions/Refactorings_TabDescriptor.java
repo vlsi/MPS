@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 
 public class Refactorings_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.Refactoring;
+
   public Refactorings_TabDescriptor() {
   }
   public String getTitle() {

@@ -23,6 +23,7 @@ import com.intellij.openapi.ui.Messages;
 
 public class ShowNodeMessages_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowNodeMessages_Action() {
     super("Show Node Messages", "", ICON);
     this.setIsAlwaysVisible(false);

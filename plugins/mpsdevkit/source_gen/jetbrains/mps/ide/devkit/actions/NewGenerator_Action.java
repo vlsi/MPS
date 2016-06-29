@@ -19,6 +19,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class NewGenerator_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Generator;
+
   public NewGenerator_Action() {
     super("Generator", "", ICON);
     this.setIsAlwaysVisible(false);

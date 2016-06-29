@@ -19,6 +19,7 @@ import jetbrains.mps.ide.platform.actions.DependenciesUtil;
 
 public class ShowDependenciesInViewer_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowDependenciesInViewer_Action() {
     super("Show Usages", "Show Usages in Dependecies Viewer", ICON);
     this.setIsAlwaysVisible(false);

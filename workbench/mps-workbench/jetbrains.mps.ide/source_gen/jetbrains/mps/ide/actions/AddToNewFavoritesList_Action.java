@@ -23,6 +23,7 @@ import jetbrains.mps.ide.projectPane.favorites.TreeNodeValueExtractor;
 
 public class AddToNewFavoritesList_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.AddFavoritesList;
+
   public AddToNewFavoritesList_Action() {
     super("Add to New Favorites List", "", ICON);
     this.setIsAlwaysVisible(false);

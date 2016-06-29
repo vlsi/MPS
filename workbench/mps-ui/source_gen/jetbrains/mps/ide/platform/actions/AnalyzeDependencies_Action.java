@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 
 public class AnalyzeDependencies_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Toolwindows.ToolWindowInspection;
+
   public AnalyzeDependencies_Action() {
     super("Analyze Model Dependencies", "", ICON);
     this.setIsAlwaysVisible(false);

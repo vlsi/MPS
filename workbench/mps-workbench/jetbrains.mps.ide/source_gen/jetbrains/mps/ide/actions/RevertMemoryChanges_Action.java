@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class RevertMemoryChanges_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RevertMemoryChanges_Action() {
     super("Revert Memory Changes", "", ICON);
     this.setIsAlwaysVisible(false);

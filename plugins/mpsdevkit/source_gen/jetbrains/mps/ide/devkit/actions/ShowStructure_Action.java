@@ -18,6 +18,7 @@ import com.intellij.ide.util.FileStructurePopup;
 
 public class ShowStructure_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowStructure_Action() {
     super("Show Structure", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -32,6 +32,7 @@ import javax.swing.JOptionPane;
 
 public class IntroduceField_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public IntroduceField_Action() {
     super("Introduce Field...", "", ICON);
     this.setIsAlwaysVisible(false);

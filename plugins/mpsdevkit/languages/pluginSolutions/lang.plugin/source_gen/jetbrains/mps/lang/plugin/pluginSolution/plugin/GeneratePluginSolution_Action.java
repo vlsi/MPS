@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class GeneratePluginSolution_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Nodes.Plugin;
+
   public GeneratePluginSolution_Action() {
     super("Plugin Solution", "", ICON);
     this.setIsAlwaysVisible(false);

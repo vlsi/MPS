@@ -24,6 +24,7 @@ import jetbrains.mps.generator.GenerationFacade;
 
 public class BuildAllTextGens_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public BuildAllTextGens_Action() {
     super("Rebuild All TextGen models", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 
 public class ShowDoc_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowDoc_Action() {
     super("Show Documentation", "", ICON);
     this.setIsAlwaysVisible(false);

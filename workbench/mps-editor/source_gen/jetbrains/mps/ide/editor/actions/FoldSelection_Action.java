@@ -16,6 +16,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class FoldSelection_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public FoldSelection_Action() {
     super("Fold Selection", "", ICON);
     this.setIsAlwaysVisible(false);

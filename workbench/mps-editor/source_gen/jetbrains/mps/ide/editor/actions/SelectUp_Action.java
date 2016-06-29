@@ -14,6 +14,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class SelectUp_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public SelectUp_Action() {
     super("Expand Selection", "", ICON);
     this.setIsAlwaysVisible(false);

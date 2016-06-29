@@ -19,7 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_BeforePosition = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BooleanInstructionOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BuilderBlock = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_DataFlowBuilderDeclaration = new ConceptPresentationBuilder().icon("goRound.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_DataFlowBuilderDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0h).create();
   private final ConceptPresentation props_EmitCodeForStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EmitIfJumpStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EmitJumpStatement = new ConceptPresentationBuilder().create();

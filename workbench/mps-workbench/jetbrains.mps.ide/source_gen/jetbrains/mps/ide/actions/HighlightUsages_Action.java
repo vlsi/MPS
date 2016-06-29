@@ -31,6 +31,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class HighlightUsages_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public HighlightUsages_Action() {
     super("Highlight Usages", "", ICON);
     this.setIsAlwaysVisible(true);

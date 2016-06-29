@@ -15,6 +15,7 @@ import jetbrains.mps.ide.bookmark.BookmarkManager;
 
 public class SetBookmarkNoNumber_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public SetBookmarkNoNumber_Action() {
     super("Set Bookmark", "", ICON);
     this.setIsAlwaysVisible(false);

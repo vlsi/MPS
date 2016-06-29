@@ -11,6 +11,7 @@ import java.util.Map;
 
 public class GoToNamedNode_Action extends BaseAction {
   private static final Icon ICON = null;
+
   private AnAction action;
   public GoToNamedNode_Action(AnAction action_par) {
     super("Go to Symbol", "", ICON);

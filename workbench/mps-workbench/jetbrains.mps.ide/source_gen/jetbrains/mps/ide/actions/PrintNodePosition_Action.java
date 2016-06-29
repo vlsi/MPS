@@ -15,6 +15,7 @@ import jetbrains.mps.textgen.trace.TraceInfo;
 
 public class PrintNodePosition_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public PrintNodePosition_Action() {
     super("Print Node Line", "", ICON);
     this.setIsAlwaysVisible(false);

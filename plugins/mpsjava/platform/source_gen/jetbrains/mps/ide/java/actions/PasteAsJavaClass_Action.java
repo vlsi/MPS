@@ -18,6 +18,7 @@ import jetbrains.mps.project.MPSProject;
 
 public class PasteAsJavaClass_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public PasteAsJavaClass_Action() {
     super("Paste as Java Class", "", ICON);
     this.setIsAlwaysVisible(false);

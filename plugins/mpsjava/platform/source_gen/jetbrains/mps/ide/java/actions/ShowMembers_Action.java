@@ -27,6 +27,7 @@ import com.intellij.ide.util.FileStructurePopup;
 
 public class ShowMembers_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowMembers_Action() {
     super("Show Members", "", ICON);
     this.setIsAlwaysVisible(false);

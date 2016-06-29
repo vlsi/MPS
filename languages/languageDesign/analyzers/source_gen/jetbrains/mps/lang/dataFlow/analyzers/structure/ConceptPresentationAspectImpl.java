@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AnalysisDirection = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Analyzer = new ConceptPresentationBuilder().icon("DataFlowAnalyser.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_Analyzer = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0b).create();
   private final ConceptPresentation props_AnalyzerConstructorParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AnalyzerConstructorParameterReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AnalyzerFunFunction = new ConceptPresentationBuilder().create();
@@ -45,7 +45,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IsOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PatternCondition = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ProgramParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Rule = new ConceptPresentationBuilder().icon("DataFlowRule.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_Rule = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0hb).create();
   private final ConceptPresentation props_RuleReference = new ConceptPresentationBuilder().create();
 
   @Override

@@ -32,6 +32,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class GenerateGetters_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GenerateGetters_Action() {
     super("Getter", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 
 public class ShowRegularEditor_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowRegularEditor_Action() {
     super("Show Regular Editor", "", ICON);
     this.setIsAlwaysVisible(false);

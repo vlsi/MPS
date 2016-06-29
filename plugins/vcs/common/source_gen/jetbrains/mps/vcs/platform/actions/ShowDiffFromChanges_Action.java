@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 
 public class ShowDiffFromChanges_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Diff;
+
   public ShowDiffFromChanges_Action() {
     super("Show Difference", "", ICON);
     this.setIsAlwaysVisible(true);

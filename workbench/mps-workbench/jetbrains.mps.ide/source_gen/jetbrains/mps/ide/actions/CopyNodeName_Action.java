@@ -14,6 +14,7 @@ import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 
 public class CopyNodeName_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CopyNodeName_Action() {
     super("Copy Node FQName", "", ICON);
     this.setIsAlwaysVisible(false);

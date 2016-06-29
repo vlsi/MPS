@@ -33,6 +33,7 @@ import jetbrains.mps.generator.GenerationFacade;
 
 public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
   private static final Icon ICON = null;
+
   private boolean rebuild;
   public MakeOrRebuildModelsFromChangeList_Action(boolean rebuild_par) {
     super("Make Models", "", ICON);

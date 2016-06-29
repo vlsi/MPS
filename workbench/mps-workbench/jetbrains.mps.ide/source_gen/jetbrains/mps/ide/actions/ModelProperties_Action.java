@@ -23,6 +23,7 @@ import com.intellij.openapi.application.ModalityState;
 
 public class ModelProperties_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.Settings;
+
   public ModelProperties_Action() {
     super("Model Properties", "", ICON);
     this.setIsAlwaysVisible(false);

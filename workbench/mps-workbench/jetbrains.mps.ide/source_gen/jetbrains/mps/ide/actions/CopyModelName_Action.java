@@ -14,6 +14,7 @@ import jetbrains.mps.util.SNodeOperations;
 
 public class CopyModelName_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CopyModelName_Action() {
     super("Copy Model Name", "", ICON);
     this.setIsAlwaysVisible(false);

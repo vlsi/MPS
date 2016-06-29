@@ -16,6 +16,7 @@ import jetbrains.mps.ide.refactoring.RenameModelDialog;
 
 public class RenameModel_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RenameModel_Action() {
     super("Rename Model", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -13,6 +13,7 @@ import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 
 public class CopyModuleName_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CopyModuleName_Action() {
     super("Copy Module Name", "", ICON);
     this.setIsAlwaysVisible(false);

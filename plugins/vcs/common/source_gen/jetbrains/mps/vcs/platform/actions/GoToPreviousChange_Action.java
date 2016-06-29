@@ -14,6 +14,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 
 public class GoToPreviousChange_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.PreviousOccurence;
+
   public GoToPreviousChange_Action() {
     super("Previous Change", "Go to previous change", ICON);
     this.setIsAlwaysVisible(true);

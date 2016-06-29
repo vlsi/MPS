@@ -17,6 +17,7 @@ import jetbrains.mps.vcs.diff.ui.StructDifferenceDialog;
 
 public class ShowNodeDifference_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowNodeDifference_Action() {
     super("Compare Two Nodes", "Structure difference (node IDs ignored) between two nodes", ICON);
     this.setIsAlwaysVisible(false);

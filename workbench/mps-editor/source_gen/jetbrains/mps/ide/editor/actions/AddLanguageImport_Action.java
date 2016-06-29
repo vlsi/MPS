@@ -19,6 +19,7 @@ import jetbrains.mps.project.LanguageImportHelper;
 
 public class AddLanguageImport_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Language;
+
   public AddLanguageImport_Action() {
     super("Add Language Import", "", ICON);
     this.setIsAlwaysVisible(false);

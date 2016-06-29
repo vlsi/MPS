@@ -14,6 +14,7 @@ import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class GoToSource_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GoToSource_Action() {
     super("Go To Source", "", ICON);
     this.setIsAlwaysVisible(false);

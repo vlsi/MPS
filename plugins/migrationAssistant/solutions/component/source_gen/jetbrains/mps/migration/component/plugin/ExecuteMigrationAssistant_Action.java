@@ -21,6 +21,7 @@ import jetbrains.mps.ide.migration.MigrationDialogUtil;
 
 public class ExecuteMigrationAssistant_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ExecuteMigrationAssistant_Action() {
     super("Run Migration Assistant", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -22,6 +22,7 @@ import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
 
 public class GoToOverridingClassMethod_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GoToOverridingClassMethod_Action() {
     super("Go to Overriding Methods", "", ICON);
     this.setIsAlwaysVisible(false);

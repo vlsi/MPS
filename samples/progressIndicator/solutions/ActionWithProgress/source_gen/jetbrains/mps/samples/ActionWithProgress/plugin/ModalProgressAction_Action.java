@@ -24,6 +24,7 @@ import java.util.concurrent.BrokenBarrierException;
 
 public class ModalProgressAction_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ModalProgressAction_Action() {
     super("ModalProgressAction", "", ICON);
     this.setIsAlwaysVisible(false);

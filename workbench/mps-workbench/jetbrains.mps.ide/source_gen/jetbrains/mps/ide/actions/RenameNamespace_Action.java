@@ -22,6 +22,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class RenameNamespace_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RenameNamespace_Action() {
     super("Rename", "", ICON);
     this.setIsAlwaysVisible(false);

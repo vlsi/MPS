@@ -33,6 +33,7 @@ import java.io.IOException;
 
 public class MigrateSourcesToMPS_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public MigrateSourcesToMPS_Action() {
     super("Migrate Sources to MPS", "", ICON);
     this.setIsAlwaysVisible(false);

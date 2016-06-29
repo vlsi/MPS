@@ -14,6 +14,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 
 public class CopyOldNodes_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Copy;
+
   public CopyOldNodes_Action() {
     super("Copy Old Code", "", ICON);
     this.setIsAlwaysVisible(true);

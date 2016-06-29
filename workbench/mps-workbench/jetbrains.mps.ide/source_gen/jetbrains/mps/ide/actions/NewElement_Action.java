@@ -24,6 +24,7 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 
 public class NewElement_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public NewElement_Action() {
     super("New...", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 
 public class ShowMetaLevel_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowMetaLevel_Action() {
     super("Show Quotation Metalevel", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class RenamePackage_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RenamePackage_Action() {
     super("Rename", "", ICON);
     this.setIsAlwaysVisible(false);

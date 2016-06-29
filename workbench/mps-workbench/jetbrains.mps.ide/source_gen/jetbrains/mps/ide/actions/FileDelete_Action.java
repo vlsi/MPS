@@ -16,6 +16,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 
 public class FileDelete_Action extends BaseAction {
   private static final Icon ICON = null;
+
   private AnAction action;
   public FileDelete_Action(AnAction action_par) {
     super("Delete", "", ICON);

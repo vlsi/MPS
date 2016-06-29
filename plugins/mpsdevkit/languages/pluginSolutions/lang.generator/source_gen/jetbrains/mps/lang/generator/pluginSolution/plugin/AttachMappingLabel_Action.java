@@ -35,6 +35,7 @@ import javax.swing.SwingUtilities;
 
 public class AttachMappingLabel_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public AttachMappingLabel_Action() {
     super("Attach Mapping Label", "", ICON);
     this.setIsAlwaysVisible(false);

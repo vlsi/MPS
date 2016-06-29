@@ -15,6 +15,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class CollapseRecursively_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CollapseRecursively_Action() {
     super("Collapse Recursively", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -19,6 +19,7 @@ import java.util.List;
 
 public class RenameFavoritesList_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Menu_replace;
+
   public RenameFavoritesList_Action() {
     super("Rename Favorites List", "", ICON);
     this.setIsAlwaysVisible(false);

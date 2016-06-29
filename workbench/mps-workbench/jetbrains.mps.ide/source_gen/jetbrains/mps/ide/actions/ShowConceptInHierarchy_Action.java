@@ -24,6 +24,7 @@ import jetbrains.mps.ide.editor.tabs.TabbedEditor;
 
 public class ShowConceptInHierarchy_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Toolwindows.ToolWindowHierarchy;
+
   public ShowConceptInHierarchy_Action() {
     super("Show Concept in Hierarchy", "", ICON);
     this.setIsAlwaysVisible(false);

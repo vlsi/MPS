@@ -22,6 +22,7 @@ import com.intellij.openapi.ui.Messages;
 
 public class ResolveNonconflictingChanges_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ResolveNonconflictingChanges_Action() {
     super("Resolve non-conflicting changes in MPS models", "", ICON);
     this.setIsAlwaysVisible(false);

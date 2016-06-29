@@ -56,7 +56,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
       }
       @Nullable
       public IconResource getIconResource() {
-        return ICON;
+        return IconContainer.RESOURCE_a0a4a0a0a1;
       }
       @Nullable
       public String getHelpUrl() {
@@ -84,7 +84,6 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
         SModuleOperations.createModelWithAdjustments(l.getModuleName() + '.' + getPresentableAspectName(), modelRoot);
       }
 
-      private final IconResource ICON = new IconResource("refactoringsModel.png", getClass());
 
     };
   }

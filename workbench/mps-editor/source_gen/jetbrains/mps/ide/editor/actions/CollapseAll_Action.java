@@ -16,6 +16,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class CollapseAll_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CollapseAll_Action() {
     super("Collapse All", "", ICON);
     this.setIsAlwaysVisible(false);

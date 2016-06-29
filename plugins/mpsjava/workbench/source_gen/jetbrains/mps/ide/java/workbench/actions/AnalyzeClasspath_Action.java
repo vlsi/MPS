@@ -15,6 +15,7 @@ import jetbrains.mps.ide.classpath.ClassPathViewerTool;
 
 public class AnalyzeClasspath_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public AnalyzeClasspath_Action() {
     super("Analyze Classpath", "", ICON);
     this.setIsAlwaysVisible(true);

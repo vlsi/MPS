@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class PasteNode_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Menu_paste;
+
   public PasteNode_Action() {
     super("Paste", "", ICON);
     this.setIsAlwaysVisible(true);

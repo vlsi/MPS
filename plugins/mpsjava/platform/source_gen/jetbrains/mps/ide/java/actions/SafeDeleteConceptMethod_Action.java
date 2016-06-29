@@ -22,6 +22,7 @@ import java.util.Arrays;
 
 public class SafeDeleteConceptMethod_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public SafeDeleteConceptMethod_Action() {
     super("Safe Delete Method", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -21,6 +21,7 @@ import jetbrains.mps.project.MPSProject;
 
 public class OverrideMethodsAsIntention_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public OverrideMethodsAsIntention_Action() {
     super("Override Methods", "", ICON);
     this.setIsAlwaysVisible(false);

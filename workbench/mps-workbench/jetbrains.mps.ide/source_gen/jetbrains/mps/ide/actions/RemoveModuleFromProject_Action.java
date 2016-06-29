@@ -24,6 +24,7 @@ import jetbrains.mps.project.StandaloneMPSProject;
 
 public class RemoveModuleFromProject_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RemoveModuleFromProject_Action() {
     super("Remove from Project...", "", ICON);
     this.setIsAlwaysVisible(false);

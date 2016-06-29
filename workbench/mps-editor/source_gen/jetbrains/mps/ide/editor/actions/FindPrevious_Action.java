@@ -13,6 +13,7 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 
 public class FindPrevious_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public FindPrevious_Action() {
     super("Find Previous", "Repeat the last Find operation in reverse direction", ICON);
     this.setIsAlwaysVisible(true);

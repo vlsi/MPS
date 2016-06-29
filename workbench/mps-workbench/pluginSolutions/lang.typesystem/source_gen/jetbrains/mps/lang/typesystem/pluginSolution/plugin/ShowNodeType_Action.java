@@ -31,6 +31,7 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 
 public class ShowNodeType_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Type;
+
   public ShowNodeType_Action() {
     super("Show Type", "Show node's HELGINS type", ICON);
     this.setIsAlwaysVisible(false);

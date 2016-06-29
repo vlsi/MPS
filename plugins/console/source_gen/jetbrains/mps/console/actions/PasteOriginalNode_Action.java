@@ -23,6 +23,7 @@ import com.intellij.openapi.actionSystem.IdeActions;
 
 public class PasteOriginalNode_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public PasteOriginalNode_Action() {
     super("Paste Original Node", "", ICON);
     this.setIsAlwaysVisible(false);

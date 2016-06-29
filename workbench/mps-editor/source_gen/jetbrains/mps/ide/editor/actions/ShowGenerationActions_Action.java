@@ -23,6 +23,7 @@ import java.awt.Point;
 
 public class ShowGenerationActions_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowGenerationActions_Action() {
     super("Insert...", "", ICON);
     this.setIsAlwaysVisible(true);

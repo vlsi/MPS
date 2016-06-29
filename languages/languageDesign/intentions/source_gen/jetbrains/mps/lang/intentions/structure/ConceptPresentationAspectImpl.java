@@ -21,8 +21,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ErrorIntentionPriority = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExecuteBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ForConceptMethodParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Intention = new ConceptPresentationBuilder().icon("intentionBulb.png", ConceptPresentationAspectImpl.class).create();
-  private final ConceptPresentation props_IntentionDeclaration = new ConceptPresentationBuilder().icon("intentionBulb.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_Intention = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0j).create();
+  private final ConceptPresentation props_IntentionDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0k).create();
   private final ConceptPresentation props_IntentionParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IntentionPriority = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IsApplicableBlock = new ConceptPresentationBuilder().create();
@@ -31,7 +31,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ParameterizedExecuteBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ParameterizedIntentionDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryBlock = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SurroundWithIntentionDeclaration = new ConceptPresentationBuilder().icon("surroundWithIntention.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_SurroundWithIntentionDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0t).create();
 
   @Override
   @Nullable

@@ -23,6 +23,7 @@ import jetbrains.mps.ide.java.newparser.FeatureKind;
 
 public class PasteAsJavaStatements_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public PasteAsJavaStatements_Action() {
     super("Paste as Java Statements", "", ICON);
     this.setIsAlwaysVisible(false);

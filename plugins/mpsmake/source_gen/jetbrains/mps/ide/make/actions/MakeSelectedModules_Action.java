@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 public class MakeSelectedModules_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public MakeSelectedModules_Action() {
     super("Make Module", "", ICON);
     this.setIsAlwaysVisible(false);

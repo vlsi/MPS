@@ -14,6 +14,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class ShowHelpForNode_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowHelpForNode_Action() {
     super("Show Help for Node", "", ICON);
     this.setIsAlwaysVisible(false);

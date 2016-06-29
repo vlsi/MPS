@@ -14,6 +14,7 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 
 public class GoToBookmark_Action extends BaseAction {
   private static final Icon ICON = null;
+
   private int num;
   public GoToBookmark_Action(int num_par) {
     super("Go to Bookmark", "", ICON);

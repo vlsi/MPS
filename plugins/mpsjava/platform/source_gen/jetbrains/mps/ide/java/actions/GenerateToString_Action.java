@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.SReference;
 
 public class GenerateToString_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GenerateToString_Action() {
     super("toString()", "", ICON);
     this.setIsAlwaysVisible(false);

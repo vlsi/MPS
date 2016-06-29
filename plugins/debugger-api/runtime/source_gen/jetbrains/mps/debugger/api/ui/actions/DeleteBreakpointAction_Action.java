@@ -19,6 +19,7 @@ import jetbrains.mps.debug.api.BreakpointManagerComponent;
 
 public class DeleteBreakpointAction_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Debug.DeleteBreakpoint;
+
   public DeleteBreakpointAction_Action() {
     super("Delete", "Delete Breakpoint", ICON);
     this.setIsAlwaysVisible(true);

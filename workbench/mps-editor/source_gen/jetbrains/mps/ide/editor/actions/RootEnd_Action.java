@@ -14,6 +14,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class RootEnd_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RootEnd_Action() {
     super("Move Caret to Text End", "", ICON);
     this.setIsAlwaysVisible(false);

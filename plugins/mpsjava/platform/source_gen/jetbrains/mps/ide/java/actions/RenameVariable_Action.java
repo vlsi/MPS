@@ -27,6 +27,7 @@ import jetbrains.mps.ide.platform.refactoring.RenameDialog;
 
 public class RenameVariable_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RenameVariable_Action() {
     super("Rename Variable", "", ICON);
     this.setIsAlwaysVisible(false);

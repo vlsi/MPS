@@ -30,6 +30,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class IntroduceVariable_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public IntroduceVariable_Action() {
     super("Introduce Variable...", "", ICON);
     this.setIsAlwaysVisible(false);

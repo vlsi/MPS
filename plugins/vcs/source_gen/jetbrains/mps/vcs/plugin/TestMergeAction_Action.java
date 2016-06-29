@@ -36,6 +36,7 @@ import org.apache.log4j.LogManager;
 
 public class TestMergeAction_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public TestMergeAction_Action() {
     super("Merge test data from ZIP", "", ICON);
     this.setIsAlwaysVisible(false);

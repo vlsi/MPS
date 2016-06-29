@@ -58,13 +58,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_NF_Node_InsertNewNextSiblingOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NF_Node_InsertNewPrevSiblingOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NF_Node_ReplaceWithNewOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeFactories = new ConceptPresentationBuilder().icon("nodeFactories.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_NodeFactories = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ub).create();
   private final ConceptPresentation props_NodeFactory = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeSetupFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeSetupFunction_EnclosingNode = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeSetupFunction_NewNode = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeSetupFunction_SampleNode = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeSubstituteActions = new ConceptPresentationBuilder().icon("actions.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_NodeSubstituteActions = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ac).create();
   private final ConceptPresentation props_NodeSubstituteActionsBuilder = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeSubstituteMenuBuilderPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeSubstitutePreconditionFunction = new ConceptPresentationBuilder().create();
@@ -73,7 +73,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_PastePostProcessFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PastePostProcessor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PasteWrapper = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PasteWrappers = new ConceptPresentationBuilder().icon("pasteWrapper.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_PasteWrappers = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0jc).create();
   private final ConceptPresentation props_QueryFunction_ActionType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryFunction_CanSubstitute = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryFunction_GenericSubstituteMenuPart = new ConceptPresentationBuilder().create();
@@ -107,7 +107,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_RemovePart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RemoveSTByConditionPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SNodeCreatorAndInitializer = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SideTransformHintSubstituteActions = new ConceptPresentationBuilder().icon("rightTransform.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_SideTransformHintSubstituteActions = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0rd).create();
   private final ConceptPresentation props_SideTransformHintSubstituteActionsBuilder = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SideTransformHintSubstitutePreconditionFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SideTransformMenuBuilderPart = new ConceptPresentationBuilder().create();
@@ -119,7 +119,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SimpleSideTransformMenuPart = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_SmartActionParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SmartActionParameterReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SmartEditorActions = new ConceptPresentationBuilder().icon("smartActions.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_SmartEditorActions = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0de).create();
   private final ConceptPresentation props_SubstituteMenuPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteNodeBuilderVariableDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteNodeBuilderVariableReference = new ConceptPresentationBuilder().create();

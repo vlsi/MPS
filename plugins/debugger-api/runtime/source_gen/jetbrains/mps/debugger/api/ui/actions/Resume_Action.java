@@ -13,6 +13,7 @@ import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 
 public class Resume_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Debugger.ThreadStates.Running;
+
   public Resume_Action() {
     super("Resume", "Resume Execution", ICON);
     this.setIsAlwaysVisible(true);

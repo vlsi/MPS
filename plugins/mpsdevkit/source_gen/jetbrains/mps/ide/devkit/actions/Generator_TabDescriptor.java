@@ -47,6 +47,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Generator_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.Reduction;
+
   public Generator_TabDescriptor() {
   }
   public String getTitle() {

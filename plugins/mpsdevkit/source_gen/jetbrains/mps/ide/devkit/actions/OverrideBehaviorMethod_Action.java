@@ -19,6 +19,7 @@ import jetbrains.mps.ide.actions.OverrideConceptMethodsAction;
 
 public class OverrideBehaviorMethod_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public OverrideBehaviorMethod_Action() {
     super("Override Behavior Method...", "", ICON);
     this.setIsAlwaysVisible(false);

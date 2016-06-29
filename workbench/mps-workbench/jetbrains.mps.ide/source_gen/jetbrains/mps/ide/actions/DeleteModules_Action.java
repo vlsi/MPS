@@ -25,6 +25,7 @@ import jetbrains.mps.workbench.actions.module.DeleteModuleHelper;
 
 public class DeleteModules_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public DeleteModules_Action() {
     super("Delete Module...", "", ICON);
     this.setIsAlwaysVisible(true);

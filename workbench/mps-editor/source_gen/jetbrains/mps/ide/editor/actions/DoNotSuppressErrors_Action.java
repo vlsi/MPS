@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class DoNotSuppressErrors_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public DoNotSuppressErrors_Action() {
     super("Do not Supress Errors", "", ICON);
     this.setIsAlwaysVisible(false);

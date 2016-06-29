@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
 
 public class SetModuleFolder_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public SetModuleFolder_Action() {
     super("Set Folder", "", ICON);
     this.setIsAlwaysVisible(true);

@@ -15,6 +15,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 
 public class ShowHelpForRoot_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowHelpForRoot_Action() {
     super("Show Help for Root", "", ICON);
     this.setIsAlwaysVisible(false);

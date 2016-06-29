@@ -16,6 +16,7 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 
 public class GoToNextChange_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.NextOccurence;
+
   public GoToNextChange_Action() {
     super("Next Change", "Go to next change", ICON);
     this.setIsAlwaysVisible(true);

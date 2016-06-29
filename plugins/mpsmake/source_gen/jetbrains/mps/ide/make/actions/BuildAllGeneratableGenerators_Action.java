@@ -22,6 +22,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class BuildAllGeneratableGenerators_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public BuildAllGeneratableGenerators_Action() {
     super("Rebuild All 'Generatable' Generators", "Rebuild generators that generate templates", ICON);
     this.setIsAlwaysVisible(false);

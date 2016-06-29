@@ -24,6 +24,7 @@ import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
 
 public class FindModuleUsage_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
+
   public FindModuleUsage_Action() {
     super("Find Usages", "", ICON);
     this.setIsAlwaysVisible(false);

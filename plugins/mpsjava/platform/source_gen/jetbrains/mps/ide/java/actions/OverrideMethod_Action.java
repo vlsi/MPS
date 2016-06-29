@@ -24,6 +24,7 @@ import jetbrains.mps.util.Computable;
 
 public class OverrideMethod_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public OverrideMethod_Action() {
     super("Override Method...", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -22,6 +22,7 @@ import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 
 public class DeleteModels_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public DeleteModels_Action() {
     super("Delete Models", "", ICON);
     this.setIsAlwaysVisible(false);

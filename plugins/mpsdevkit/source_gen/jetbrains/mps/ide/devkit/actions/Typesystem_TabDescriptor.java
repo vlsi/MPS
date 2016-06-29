@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 
 public class Typesystem_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.Type;
+
   public Typesystem_TabDescriptor() {
   }
   public String getTitle() {

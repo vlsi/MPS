@@ -17,6 +17,7 @@ import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 
 public class DeleteFavoritesList_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public DeleteFavoritesList_Action() {
     super("Delete Favorites List", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class EvaluateExpression_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Debugger.EvaluateExpression;
+
   public EvaluateExpression_Action() {
     super("Evaluate Expression", "", ICON);
     this.setIsAlwaysVisible(true);

@@ -15,6 +15,7 @@ import jetbrains.mps.lang.dataFlow.MPSProgramBuilder;
 
 public class PrintDFAResult_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public PrintDFAResult_Action() {
     super("Print DFA", "", ICON);
     this.setIsAlwaysVisible(false);

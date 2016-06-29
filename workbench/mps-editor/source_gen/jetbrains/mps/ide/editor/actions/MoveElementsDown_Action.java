@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 public class MoveElementsDown_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public MoveElementsDown_Action() {
     super("Move Elements Down", "", ICON);
     this.setIsAlwaysVisible(false);

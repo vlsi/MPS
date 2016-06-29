@@ -15,6 +15,7 @@ import jetbrains.mps.ide.bookmark.BookmarksDialog;
 
 public class ShowBookmarksDialog_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowBookmarksDialog_Action() {
     super("Show Bookmarks Dialog", "", ICON);
     this.setIsAlwaysVisible(false);

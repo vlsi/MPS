@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 
 public class Intentions_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = AllIcons.Actions.IntentionBulb;
+
   public Intentions_TabDescriptor() {
   }
   public String getTitle() {

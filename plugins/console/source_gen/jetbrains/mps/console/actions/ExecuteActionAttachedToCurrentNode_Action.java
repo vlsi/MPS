@@ -17,6 +17,7 @@ import jetbrains.mps.project.MPSProject;
 
 public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ExecuteActionAttachedToCurrentNode_Action() {
     super("Execute Attached Action", "", ICON);
     this.setIsAlwaysVisible(false);

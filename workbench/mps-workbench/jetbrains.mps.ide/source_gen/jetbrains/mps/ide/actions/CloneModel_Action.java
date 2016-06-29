@@ -18,6 +18,7 @@ import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 
 public class CloneModel_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CloneModel_Action() {
     super("Clone Model", "", ICON);
     this.setIsAlwaysVisible(true);

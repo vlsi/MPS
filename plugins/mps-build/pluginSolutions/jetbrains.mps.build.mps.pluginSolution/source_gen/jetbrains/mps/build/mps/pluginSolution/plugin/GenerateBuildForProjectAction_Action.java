@@ -16,6 +16,7 @@ import com.intellij.openapi.application.ModalityState;
 
 public class GenerateBuildForProjectAction_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Ant.Build;
+
   public GenerateBuildForProjectAction_Action() {
     super("Build Solution", "", ICON);
     this.setIsAlwaysVisible(false);

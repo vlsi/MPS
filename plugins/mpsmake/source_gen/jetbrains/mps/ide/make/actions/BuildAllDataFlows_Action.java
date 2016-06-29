@@ -24,6 +24,7 @@ import jetbrains.mps.util.SNodeOperations;
 
 public class BuildAllDataFlows_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public BuildAllDataFlows_Action() {
     super("Rebuild All DataFlows", "", ICON);
     this.setIsAlwaysVisible(false);

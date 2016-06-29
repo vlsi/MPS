@@ -24,6 +24,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 
 public class GoToUsageInMappingConfig_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GoToUsageInMappingConfig_Action() {
     super("Go to Mapping Config", "", ICON);
     this.setIsAlwaysVisible(false);

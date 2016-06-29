@@ -27,6 +27,7 @@ import com.intellij.diff.DiffManager;
 
 public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowDifferencesWithModelOnDisk_Action() {
     super("Show Differences with Model on Disk", "", ICON);
     this.setIsAlwaysVisible(false);

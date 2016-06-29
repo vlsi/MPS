@@ -34,6 +34,7 @@ import org.apache.log4j.LogManager;
 
 public class ImportAllModulesFromFolder_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Actions.ImportModulesFromFolder;
+
   public ImportAllModulesFromFolder_Action() {
     super("Import All Modules from Folder", "", ICON);
     this.setIsAlwaysVisible(false);

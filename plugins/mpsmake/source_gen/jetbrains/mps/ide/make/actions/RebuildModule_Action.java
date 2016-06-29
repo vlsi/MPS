@@ -18,6 +18,7 @@ import com.intellij.openapi.progress.ProgressManager;
 
 public class RebuildModule_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RebuildModule_Action() {
     super("Recompile Java Files", "", ICON);
     this.setIsAlwaysVisible(false);

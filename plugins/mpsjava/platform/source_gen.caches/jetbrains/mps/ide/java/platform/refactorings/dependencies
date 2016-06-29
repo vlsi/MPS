@@ -127,18 +127,14 @@
     <classNode dependClassName="org.jetbrains.mps.util.InstanceOfCondition" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringDialog" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.platform.refactorings.IconContainer" file="IconContainer.java">
-    <classNode dependClassName="com.intellij.icons.AllIcons" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.refactorings.IconResourceBundle_ExtractMethodIcons" file="IconResourceBundle_ExtractMethodIcons.java">
+    <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.ide.java.platform.refactorings.IconContainer" />
+    <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
     <classNode extendsClassName="jetbrains.mps.resourceBundles.IconResourceBundle" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialog" file="InlineMethodDialog.java">

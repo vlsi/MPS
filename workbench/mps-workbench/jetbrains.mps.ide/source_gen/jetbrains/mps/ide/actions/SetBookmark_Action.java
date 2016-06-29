@@ -15,6 +15,7 @@ import jetbrains.mps.ide.bookmark.BookmarkManager;
 
 public class SetBookmark_Action extends BaseAction {
   private static final Icon ICON = null;
+
   private int num;
   public SetBookmark_Action(int num_par) {
     super("Set Bookmark", "", ICON);

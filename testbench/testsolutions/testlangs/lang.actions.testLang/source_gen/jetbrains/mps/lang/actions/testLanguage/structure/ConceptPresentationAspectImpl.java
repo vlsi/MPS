@@ -14,10 +14,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ActionTestAbstractChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionTestAbstractChildWrapper = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ActionTestChild1 = new ConceptPresentationBuilder().icon("child1.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_ActionTestChild1 = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0c).create();
   private final ConceptPresentation props_ActionTestChild1Child = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ActionTestChild1SubConcept = new ConceptPresentationBuilder().icon("child1subConcept.png", ConceptPresentationAspectImpl.class).create();
-  private final ConceptPresentation props_ActionTestChild2 = new ConceptPresentationBuilder().icon("child2.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_ActionTestChild1SubConcept = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0e).create();
+  private final ConceptPresentation props_ActionTestChild2 = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0f).create();
   private final ConceptPresentation props_ActionTestChildToWrap1 = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionTestChildToWrap2 = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionTestChildWrapper = new ConceptPresentationBuilder().create();

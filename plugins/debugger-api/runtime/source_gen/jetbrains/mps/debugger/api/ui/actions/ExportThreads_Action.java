@@ -23,6 +23,7 @@ import com.intellij.openapi.application.ModalityState;
 
 public class ExportThreads_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Export;
+
   public ExportThreads_Action() {
     super("Export Threads", "", ICON);
     this.setIsAlwaysVisible(false);

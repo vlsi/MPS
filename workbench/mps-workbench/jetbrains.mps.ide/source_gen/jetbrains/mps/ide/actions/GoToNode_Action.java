@@ -15,6 +15,7 @@ import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class GoToNode_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Node;
+
   public GoToNode_Action() {
     super("Go to Source Node", "go to source node", ICON);
     this.setIsAlwaysVisible(true);

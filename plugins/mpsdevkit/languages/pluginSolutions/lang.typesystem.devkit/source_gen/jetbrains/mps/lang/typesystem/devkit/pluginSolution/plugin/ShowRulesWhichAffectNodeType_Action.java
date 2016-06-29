@@ -25,6 +25,7 @@ import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class ShowRulesWhichAffectNodeType_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowRulesWhichAffectNodeType_Action() {
     super("Show Rules Which Affect Node's Type", "", ICON);
     this.setIsAlwaysVisible(true);

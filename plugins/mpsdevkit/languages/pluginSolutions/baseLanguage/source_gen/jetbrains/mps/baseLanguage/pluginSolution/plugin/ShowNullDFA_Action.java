@@ -22,6 +22,7 @@ import jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog;
 
 public class ShowNullDFA_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowNullDFA_Action() {
     super("Show Nullable DFA", "", ICON);
     this.setIsAlwaysVisible(false);

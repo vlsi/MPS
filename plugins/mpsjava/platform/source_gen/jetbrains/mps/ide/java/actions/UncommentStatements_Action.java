@@ -22,6 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class UncommentStatements_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public UncommentStatements_Action() {
     super("Uncomment Statements", "", ICON);
     this.setIsAlwaysVisible(false);

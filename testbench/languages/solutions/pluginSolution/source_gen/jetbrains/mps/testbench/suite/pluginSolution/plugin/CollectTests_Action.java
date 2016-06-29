@@ -48,6 +48,7 @@ import com.intellij.openapi.wm.WindowManager;
 
 public class CollectTests_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CollectTests_Action() {
     super("Collect Tests", "", ICON);
     this.setIsAlwaysVisible(false);

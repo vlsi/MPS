@@ -14,6 +14,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class MoveUp_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public MoveUp_Action() {
     super("Up", "", ICON);
     this.setIsAlwaysVisible(false);

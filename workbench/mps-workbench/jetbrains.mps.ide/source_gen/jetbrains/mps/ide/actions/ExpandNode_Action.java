@@ -16,6 +16,7 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 
 public class ExpandNode_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ExpandNode_Action() {
     super("Expand All", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -19,7 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AttributedNodePart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BufferParameter = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_CollectionAppendPart = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptTextGenDeclaration = new ConceptPresentationBuilder().icon("textGen.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_ConceptTextGenDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0h).create();
   private final ConceptPresentation props_ConstantStringAppendPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ContextParameter = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_DecreaseDepthOperation = new ConceptPresentationBuilder().create();
@@ -33,7 +33,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IncreaseDepthOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IndentBufferOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IndentPart = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LanguageTextGenDeclaration = new ConceptPresentationBuilder().icon("textGenComponent.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_LanguageTextGenDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0v).create();
   private final ConceptPresentation props_LayoutPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NewLineAppendPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeAppendPart = new ConceptPresentationBuilder().create();

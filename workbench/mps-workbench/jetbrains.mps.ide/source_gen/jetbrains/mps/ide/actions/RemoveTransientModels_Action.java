@@ -13,6 +13,7 @@ import jetbrains.mps.generator.TransientModelsProvider;
 
 public class RemoveTransientModels_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RemoveTransientModels_Action() {
     super("Remove Transient Models", "", ICON);
     this.setIsAlwaysVisible(true);

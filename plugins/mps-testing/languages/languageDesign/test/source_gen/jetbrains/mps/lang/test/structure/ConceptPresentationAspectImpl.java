@@ -28,7 +28,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_EditorComponentExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EditorExpression = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_EditorOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EditorTestCase = new ConceptPresentationBuilder().icon("nodesTest.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_EditorTestCase = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0q).create();
   private final ConceptPresentation props_ExpressionContainer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IChecksRules = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_INodeAnnotation = new ConceptPresentationBuilder().create();
@@ -64,7 +64,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_NodeUnknownWarningCheckOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeUnreachable = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_NodeWarningCheckOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodesTestCase = new ConceptPresentationBuilder().icon("nodesTest.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_NodesTestCase = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ac).create();
   private final ConceptPresentation props_NodesTestMethod = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PressKeyStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PressMouseStatement = new ConceptPresentationBuilder().create();

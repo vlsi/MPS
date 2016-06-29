@@ -14,6 +14,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class ShowHelpForAspect_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowHelpForAspect_Action() {
     super("Show Help for Aspect", "", ICON);
     this.setIsAlwaysVisible(false);

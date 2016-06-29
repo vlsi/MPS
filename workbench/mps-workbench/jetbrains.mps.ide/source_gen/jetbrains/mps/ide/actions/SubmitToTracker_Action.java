@@ -26,6 +26,7 @@ import org.apache.log4j.LogManager;
 
 public class SubmitToTracker_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public SubmitToTracker_Action() {
     super("Submit to Issue Tracker", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -26,6 +26,7 @@ import org.apache.log4j.LogManager;
 
 public class ForcedSaveAll_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ForcedSaveAll_Action() {
     super("Re-save all models from project", "Re-save all models even if model was not changed", ICON);
     this.setIsAlwaysVisible(false);

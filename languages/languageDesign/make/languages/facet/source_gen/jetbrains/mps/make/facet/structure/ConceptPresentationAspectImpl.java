@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ExtendsFacetReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_FacetDeclaration = new ConceptPresentationBuilder().icon("facetDeclaration.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_FacetDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0b).create();
   private final ConceptPresentation props_FacetJavaClassExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FacetReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FacetReferenceExpression = new ConceptPresentationBuilder().create();

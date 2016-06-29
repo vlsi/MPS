@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.SReference;
 
 public class CreateReferenceConcept_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CreateReferenceConcept_Action() {
     super("Create Reference Concept", "Adds a new concept with single reference to the current", ICON);
     this.setIsAlwaysVisible(false);

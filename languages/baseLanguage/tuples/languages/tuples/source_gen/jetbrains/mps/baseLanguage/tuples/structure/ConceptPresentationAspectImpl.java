@@ -18,7 +18,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_NamedTupleComponentAccessOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NamedTupleComponentDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NamedTupleComponentReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NamedTupleDeclaration = new ConceptPresentationBuilder().icon("namedTuple.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_NamedTupleDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0g).create();
   private final ConceptPresentation props_NamedTupleLiteral = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NamedTupleType = new ConceptPresentationBuilder().create();
 

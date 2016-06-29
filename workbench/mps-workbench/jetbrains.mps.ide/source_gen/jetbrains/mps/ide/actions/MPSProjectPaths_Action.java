@@ -14,6 +14,7 @@ import jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropert
 
 public class MPSProjectPaths_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public MPSProjectPaths_Action() {
     super("Project Paths", "", ICON);
     this.setIsAlwaysVisible(false);

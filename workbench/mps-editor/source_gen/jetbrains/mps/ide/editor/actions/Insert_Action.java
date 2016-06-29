@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 
 public class Insert_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public Insert_Action() {
     super("Insert New Element", "", ICON);
     this.setIsAlwaysVisible(false);

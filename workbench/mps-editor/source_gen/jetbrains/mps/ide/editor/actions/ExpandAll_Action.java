@@ -16,6 +16,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class ExpandAll_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ExpandAll_Action() {
     super("Expand All", "", ICON);
     this.setIsAlwaysVisible(false);

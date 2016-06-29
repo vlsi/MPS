@@ -24,6 +24,7 @@ import jetbrains.mps.util.SNodeOperations;
 
 public class BuildAllLanguageDescriptors_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public BuildAllLanguageDescriptors_Action() {
     super("Rebuild All Language Descriptors", "", ICON);
     this.setIsAlwaysVisible(false);

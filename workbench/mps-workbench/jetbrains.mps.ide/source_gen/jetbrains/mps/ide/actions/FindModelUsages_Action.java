@@ -23,6 +23,7 @@ import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class FindModelUsages_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
+
   public FindModelUsages_Action() {
     super("Find Usages", "", ICON);
     this.setIsAlwaysVisible(false);

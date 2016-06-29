@@ -13,6 +13,7 @@ import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 
 public class StepInto_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.TraceInto;
+
   public StepInto_Action() {
     super("Step Into", "", ICON);
     this.setIsAlwaysVisible(true);

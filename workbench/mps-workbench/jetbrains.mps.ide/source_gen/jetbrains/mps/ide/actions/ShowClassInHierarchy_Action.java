@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ShowClassInHierarchy_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowClassInHierarchy_Action() {
     super("Show Class in Hierarchy", "", ICON);
     this.setIsAlwaysVisible(false);

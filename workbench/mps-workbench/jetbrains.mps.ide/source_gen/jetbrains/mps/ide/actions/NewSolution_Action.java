@@ -19,6 +19,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class NewSolution_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Solution;
+
   public NewSolution_Action() {
     super("Solution", "", ICON);
     this.setIsAlwaysVisible(false);

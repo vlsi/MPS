@@ -22,6 +22,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class AddProducer_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public AddProducer_Action() {
     super("Add Producer", "", ICON);
     this.setIsAlwaysVisible(false);

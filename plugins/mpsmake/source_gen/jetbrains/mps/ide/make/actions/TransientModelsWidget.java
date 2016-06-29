@@ -9,6 +9,7 @@ import java.beans.PropertyChangeListener;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.wm.StatusBar;
 import javax.swing.Icon;
+import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import java.awt.KeyboardFocusManager;
 import jetbrains.mps.generator.GenerationSettingsProvider;
@@ -26,8 +27,8 @@ import java.beans.PropertyChangeEvent;
   public static final String WIDGET_ID = "TransientModelsWidget";
   @NotNull
   private final StatusBar myStatusBar;
-  private final Icon myIcon = IconContainer.ICON_a2;
-  private final Icon myIconDisable = IconContainer.ICON_a3;
+  private final Icon myIcon = MPSIcons.Nodes.TransientModels;
+  private final Icon myIconDisable = MPSIcons.Nodes.TransientModelsDisable;
   private final IModifiableGenerationSettings myGenerationSettins;
   private TransientModelsPanel myComponent;
   private KeyboardFocusManager myFocusManager;

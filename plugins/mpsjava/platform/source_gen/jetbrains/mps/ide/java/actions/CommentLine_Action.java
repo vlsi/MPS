@@ -21,6 +21,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 
 public class CommentLine_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CommentLine_Action() {
     super("Comment Line", "", ICON);
     this.setIsAlwaysVisible(true);

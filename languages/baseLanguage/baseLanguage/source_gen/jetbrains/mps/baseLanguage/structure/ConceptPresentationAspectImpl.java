@@ -21,12 +21,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AdditionalForLoopVariable = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AndAssignmentExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AndExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Annotation = new ConceptPresentationBuilder().icon("annotationtype.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_Annotation = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0j).create();
   private final ConceptPresentation props_AnnotationInstance = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AnnotationInstanceExpression = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_AnnotationInstanceValue = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AnnotationMethodDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AnonymousClass = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, 0x1107e0fd2a0L, "classifier")).icon("anonymousClass.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_AnonymousClass = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, 0x1107e0fd2a0L, "classifier")).icon(IconContainer.RESOURCE_a0a0o).create();
   private final ConceptPresentation props_AnonymousClassCreator = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ArrayAccessExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ArrayClassExpression = new ConceptPresentationBuilder().create();
@@ -42,7 +42,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_BLBottomType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BaseAssignmentExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BaseMethodCall = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BaseMethodDeclaration = new ConceptPresentationBuilder().icon("method.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_BaseMethodDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0eb).create();
   private final ConceptPresentation props_BaseStringOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BaseVariableDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BaseVariableReference = new ConceptPresentationBuilder().create();
@@ -62,7 +62,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_CatchClause = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CharConstant = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CharType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ClassConcept = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x11c6af4b284L, "isFinal"), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x451f9e9f920b7f7dL, "isStatic")).icon("class.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_ClassConcept = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x11c6af4b284L, "isFinal"), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x451f9e9f920b7f7dL, "isStatic")).icon(IconContainer.RESOURCE_a0a0yb).create();
   private final ConceptPresentation props_ClassCreator = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Classifier = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName"), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11ce63f4b3bL, "isDeprecated"), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x73c6d8a8c021f99L, "nonStatic")).create();
   private final ConceptPresentation props_ClassifierClassExpression = new ConceptPresentationBuilder().create();
@@ -76,7 +76,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_CommentedStatement = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_CommentedStatementsBlock = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_ConceptFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptFunctionParameter = new ConceptPresentationBuilder().icon("parameter.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_ConceptFunctionParameter = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0mc).create();
   private final ConceptPresentation props_ConstructorDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConstructorInvocationStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ContextClassifierKind = new ConceptPresentationBuilder().create();
@@ -94,7 +94,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_DotExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DoubleType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ElsifClause = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EnumClass = new ConceptPresentationBuilder().icon("enum.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_EnumClass = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ed).create();
   private final ConceptPresentation props_EnumConstantDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EnumConstantReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EnumValueOfExpression = new ConceptPresentationBuilder().create();
@@ -103,7 +103,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_EscapeOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Expression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExpressionStatement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_FieldDeclaration = new ConceptPresentationBuilder().icon("field.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_FieldDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0nd).create();
   private final ConceptPresentation props_FieldReferenceOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FloatType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FloatingPointConstant = new ConceptPresentationBuilder().create();
@@ -160,14 +160,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IncompleteLeftParen = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IncompleteMemberDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IncompleteRightParen = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InstanceInitializer = new ConceptPresentationBuilder().icon("classInitializer.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_InstanceInitializer = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0sf).create();
   private final ConceptPresentation props_InstanceMethodCallOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InstanceMethodDeclaration = new ConceptPresentationBuilder().icon("method.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_InstanceMethodDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0uf).create();
   private final ConceptPresentation props_InstanceOfExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IntegerConstant = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IntegerLiteral = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IntegerType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Interface = new ConceptPresentationBuilder().icon("interfaceType.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_Interface = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0zf).create();
   private final ConceptPresentation props_IsEmptyOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IsNotEmptyOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_JavaImport = new ConceptPresentationBuilder().create();
@@ -182,7 +182,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_LocalStaticFieldReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LocalStaticMethodCall = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_LocalToMethodKind = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LocalVariableDeclaration = new ConceptPresentationBuilder().icon("variable.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_LocalVariableDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0og).create();
   private final ConceptPresentation props_LocalVariableDeclarationStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LocalVariableReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LongLiteral = new ConceptPresentationBuilder().create();
@@ -207,7 +207,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_OperationAssignmentExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OrAssignmentExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OrExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ParameterDeclaration = new ConceptPresentationBuilder().icon("parameter.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_ParameterDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0nh).create();
   private final ConceptPresentation props_ParameterReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ParenthesizedExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PlaceholderMember = new ConceptPresentationBuilder().create();
@@ -241,9 +241,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_Statement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StatementCommentPart = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_StatementList = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StaticFieldDeclaration = new ConceptPresentationBuilder().icon("field.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_StaticFieldDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0vi).create();
   private final ConceptPresentation props_StaticFieldReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StaticInitializer = new ConceptPresentationBuilder().icon("classInitializer.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_StaticInitializer = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0xi).create();
   private final ConceptPresentation props_StaticKind = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StaticMethodCall = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StaticMethodDeclaration = new ConceptPresentationBuilder().create();

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 public class MoveNodes_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public MoveNodes_Action() {
     super("Move Nodes", "", ICON);
     this.setIsAlwaysVisible(false);

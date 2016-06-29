@@ -4,6 +4,9 @@
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="14,0,45,0" name="testPackagedLanguage.structure.ConceptPresentationAspectImpl" />
     </file>
+    <file name="IconContainer.java">
+      <unit at="7,0,10,0" name="testPackagedLanguage.structure.IconContainer" />
+    </file>
     <file name="StructureAspectDescriptor.java">
       <unit at="17,0,45,0" name="testPackagedLanguage.structure.StructureAspectDescriptor" />
     </file>

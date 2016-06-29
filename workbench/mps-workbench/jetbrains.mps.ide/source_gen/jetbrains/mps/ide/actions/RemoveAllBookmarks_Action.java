@@ -14,6 +14,7 @@ import jetbrains.mps.ide.bookmark.BookmarkManager;
 
 public class RemoveAllBookmarks_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RemoveAllBookmarks_Action() {
     super("Remove All Bookmarks", "", ICON);
     this.setIsAlwaysVisible(false);

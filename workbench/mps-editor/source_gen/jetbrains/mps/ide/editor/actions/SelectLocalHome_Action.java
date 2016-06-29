@@ -17,6 +17,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class SelectLocalHome_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public SelectLocalHome_Action() {
     super("Move Caret to Previous Word with Selection", "", ICON);
     this.setIsAlwaysVisible(false);

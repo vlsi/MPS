@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class RenameProperty_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RenameProperty_Action() {
     super("Rename Property", "", ICON);
     this.setIsAlwaysVisible(false);

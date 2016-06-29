@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class GoToRule_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Rule;
+
   public GoToRule_Action() {
     super("Go to Rule", "go to rule action", ICON);
     this.setIsAlwaysVisible(true);

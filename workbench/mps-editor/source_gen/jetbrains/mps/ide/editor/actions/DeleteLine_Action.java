@@ -32,6 +32,7 @@ import jetbrains.mps.openapi.editor.cells.CellConditions;
 
 public class DeleteLine_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public DeleteLine_Action() {
     super("Delete Line", "", ICON);
     this.setIsAlwaysVisible(false);

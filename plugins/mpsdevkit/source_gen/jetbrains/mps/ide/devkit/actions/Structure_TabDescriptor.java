@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 public class Structure_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.Structure;
+
   public Structure_TabDescriptor() {
   }
   public String getTitle() {

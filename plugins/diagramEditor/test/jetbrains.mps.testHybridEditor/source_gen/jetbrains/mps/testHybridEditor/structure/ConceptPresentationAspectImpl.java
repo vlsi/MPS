@@ -15,12 +15,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_Block = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BlockExt = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BlockInstance = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Connector = new ConceptPresentationBuilder().icon("connector.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_Connector = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0d).create();
   private final ConceptPresentation props_ConnectorEndInstance = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConnectorInstance = new ConceptPresentationBuilder().icon("connector.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_ConnectorInstance = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0f).create();
   private final ConceptPresentation props_Diagram = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InputPort = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MetaBlock = new ConceptPresentationBuilder().icon("block.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_MetaBlock = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0i).create();
   private final ConceptPresentation props_MetaPort = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OutputPort = new ConceptPresentationBuilder().create();
 

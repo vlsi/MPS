@@ -21,6 +21,7 @@ import java.util.Arrays;
 
 public class MakeFieldFinal_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public MakeFieldFinal_Action() {
     super("Make Field Final", "", ICON);
     this.setIsAlwaysVisible(false);

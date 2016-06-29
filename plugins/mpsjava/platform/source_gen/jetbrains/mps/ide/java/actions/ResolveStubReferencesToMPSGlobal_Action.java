@@ -15,6 +15,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class ResolveStubReferencesToMPSGlobal_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ResolveStubReferencesToMPSGlobal_Action() {
     super("Resolve Stub References to MPS Code in the Whole Project", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -17,6 +17,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class CloneRoot_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CloneRoot_Action() {
     super("Clone Root", "", ICON);
     this.setIsAlwaysVisible(true);

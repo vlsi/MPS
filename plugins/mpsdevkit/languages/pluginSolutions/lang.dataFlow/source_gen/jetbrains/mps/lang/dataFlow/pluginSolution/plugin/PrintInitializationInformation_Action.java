@@ -18,6 +18,7 @@ import jetbrains.mps.lang.dataFlow.framework.analyzers.InitializedVariablesAnaly
 
 public class PrintInitializationInformation_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public PrintInitializationInformation_Action() {
     super("Print DFA Initialization Information", "", ICON);
     this.setIsAlwaysVisible(false);

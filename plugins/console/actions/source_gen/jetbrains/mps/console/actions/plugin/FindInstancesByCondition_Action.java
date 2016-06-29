@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class FindInstancesByCondition_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public FindInstancesByCondition_Action() {
     super("Find Instances by Condition", "", ICON);
     this.setIsAlwaysVisible(false);

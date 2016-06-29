@@ -18,6 +18,7 @@ import com.intellij.openapi.application.ModalityState;
 
 public class GoToRootNode_Action extends BaseAction {
   private static final Icon ICON = null;
+
   private String savedText;
   public GoToRootNode_Action(String savedText_par) {
     super("Go to Root Node", "", ICON);

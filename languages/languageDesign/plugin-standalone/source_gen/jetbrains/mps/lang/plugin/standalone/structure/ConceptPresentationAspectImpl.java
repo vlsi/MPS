@@ -12,13 +12,13 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_ApplicationPluginDeclaration = new ConceptPresentationBuilder().icon("applicationPlugin.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_ApplicationPluginDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0a).create();
   private final ConceptPresentation props_ApplicationPluginDisposeBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ApplicationPluginInitBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ApplicationPluginType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GetPreferencesComponentInProjectOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GetToolInProjectOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ProjectPluginDeclaration = new ConceptPresentationBuilder().icon("projectPlugin.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_ProjectPluginDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0g).create();
   private final ConceptPresentation props_ProjectPluginDisposeBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ProjectPluginInitBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ProjectPluginType = new ConceptPresentationBuilder().create();

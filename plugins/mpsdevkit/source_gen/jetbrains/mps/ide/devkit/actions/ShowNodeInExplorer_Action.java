@@ -15,6 +15,7 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class ShowNodeInExplorer_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowNodeInExplorer_Action() {
     super("Show Node in Explorer", "", ICON);
     this.setIsAlwaysVisible(true);

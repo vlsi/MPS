@@ -32,6 +32,7 @@ import java.util.Arrays;
 
 public class ChangeMethodSignature_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ChangeMethodSignature_Action() {
     super("Change Method Signature", "", ICON);
     this.setIsAlwaysVisible(false);

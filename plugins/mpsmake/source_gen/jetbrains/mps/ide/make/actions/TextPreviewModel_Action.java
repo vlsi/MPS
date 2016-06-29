@@ -48,6 +48,7 @@ import jetbrains.mps.messages.MessageKind;
 
 public class TextPreviewModel_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public TextPreviewModel_Action() {
     super("Preview Generated Text", "", ICON);
     this.setIsAlwaysVisible(false);

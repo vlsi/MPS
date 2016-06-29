@@ -19,11 +19,6 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
-  <root>
-    <file name="IconContainer.java">
-      <unit at="8,0,14,0" name="jetbrains.mps.ide.java.platform.highlighters.IconContainer" />
-    </file>
-  </root>
   <root nodeRef="r:fa4569a3-1bd4-4159-97bc-db03b3aeff88(jetbrains.mps.ide.java.platform.highlighters)/2235828751986250607">
     <file name="MethodDeclarationsFixer.java">
       <node id="2235828751986250610" at="51,0,52,0" concept="14" trace="DISABLED" />
@@ -978,32 +973,32 @@
   </root>
   <root nodeRef="r:fa4569a3-1bd4-4159-97bc-db03b3aeff88(jetbrains.mps.ide.java.platform.highlighters)/8432634623182690059">
     <file name="IconResourceBundle_OverrideImplements.java">
-      <node id="8432634623182690059" at="11,0,12,0" concept="14" trace="INSTANCE" />
-      <node id="8432634623182690059" at="13,5,14,48" concept="4" />
-      <node id="8432634623182690059" at="14,48,15,49" concept="4" />
-      <node id="8432634623182690059" at="15,49,16,46" concept="4" />
-      <node id="8432634623182690059" at="16,46,17,47" concept="4" />
-      <node id="8432634623182690059" at="22,37,23,26" concept="11" />
-      <node id="8432634623182690059" at="25,39,26,26" concept="11" />
-      <node id="8432634623182690059" at="28,69,29,58" concept="11" />
-      <node id="8432634623182690059" at="20,0,22,0" concept="2" trace="IconResourceBundle_OverrideImplements#()V" />
-      <node id="8432634623182690059" at="22,0,25,0" concept="9" trace="getKeys#()Ljava/lang/Iterable;" />
-      <node id="8432634623182690059" at="25,0,28,0" concept="9" trace="getResource#(Ljava/lang/String;)Ljavax/swing/Icon;" />
-      <node id="8432634623182690059" at="28,0,31,0" concept="15" trace="getInstance#()Ljetbrains/mps/ide/java/platform/highlighters/IconResourceBundle_OverrideImplements;" />
-      <node id="8432634623182690059" at="12,0,20,0" concept="5" trace="icons" />
-      <scope id="8432634623182690059" at="20,50,20,50" />
-      <scope id="8432634623182690059" at="22,37,23,26" />
-      <scope id="8432634623182690059" at="25,39,26,26" />
-      <scope id="8432634623182690059" at="28,69,29,58" />
-      <scope id="8432634623182690059" at="20,0,22,0" />
-      <scope id="8432634623182690059" at="22,0,25,0" />
-      <scope id="8432634623182690059" at="25,0,28,0">
+      <node id="8432634623182690059" at="12,0,13,0" concept="14" trace="INSTANCE" />
+      <node id="8432634623182690059" at="14,5,15,60" concept="4" />
+      <node id="8432634623182690059" at="15,60,16,62" concept="4" />
+      <node id="8432634623182690059" at="16,62,17,56" concept="4" />
+      <node id="8432634623182690059" at="17,56,18,58" concept="4" />
+      <node id="8432634623182690059" at="23,37,24,26" concept="11" />
+      <node id="8432634623182690059" at="26,39,27,26" concept="11" />
+      <node id="8432634623182690059" at="29,69,30,58" concept="11" />
+      <node id="8432634623182690059" at="21,0,23,0" concept="2" trace="IconResourceBundle_OverrideImplements#()V" />
+      <node id="8432634623182690059" at="23,0,26,0" concept="9" trace="getKeys#()Ljava/lang/Iterable;" />
+      <node id="8432634623182690059" at="26,0,29,0" concept="9" trace="getResource#(Ljava/lang/String;)Ljavax/swing/Icon;" />
+      <node id="8432634623182690059" at="29,0,32,0" concept="15" trace="getInstance#()Ljetbrains/mps/ide/java/platform/highlighters/IconResourceBundle_OverrideImplements;" />
+      <node id="8432634623182690059" at="13,0,21,0" concept="5" trace="icons" />
+      <scope id="8432634623182690059" at="21,50,21,50" />
+      <scope id="8432634623182690059" at="23,37,24,26" />
+      <scope id="8432634623182690059" at="26,39,27,26" />
+      <scope id="8432634623182690059" at="29,69,30,58" />
+      <scope id="8432634623182690059" at="21,0,23,0" />
+      <scope id="8432634623182690059" at="23,0,26,0" />
+      <scope id="8432634623182690059" at="26,0,29,0">
         <var name="key" id="8432634623182690059" />
       </scope>
-      <scope id="8432634623182690059" at="28,0,31,0" />
-      <scope id="8432634623182690059" at="13,5,17,47" />
-      <unit id="8432634623182690059" at="12,40,19,3" name="jetbrains.mps.ide.java.platform.highlighters.IconResourceBundle_OverrideImplements$1" />
-      <unit id="8432634623182690059" at="10,0,32,0" name="jetbrains.mps.ide.java.platform.highlighters.IconResourceBundle_OverrideImplements" />
+      <scope id="8432634623182690059" at="29,0,32,0" />
+      <scope id="8432634623182690059" at="14,5,18,58" />
+      <unit id="8432634623182690059" at="13,40,20,3" name="jetbrains.mps.ide.java.platform.highlighters.IconResourceBundle_OverrideImplements$1" />
+      <unit id="8432634623182690059" at="11,0,33,0" name="jetbrains.mps.ide.java.platform.highlighters.IconResourceBundle_OverrideImplements" />
     </file>
   </root>
   <root nodeRef="r:fa4569a3-1bd4-4159-97bc-db03b3aeff88(jetbrains.mps.ide.java.platform.highlighters)/8432634623182781100">

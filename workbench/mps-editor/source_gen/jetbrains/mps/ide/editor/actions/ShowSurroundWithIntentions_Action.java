@@ -37,6 +37,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public class ShowSurroundWithIntentions_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowSurroundWithIntentions_Action() {
     super("Surround with...", "", ICON);
     this.setIsAlwaysVisible(true);

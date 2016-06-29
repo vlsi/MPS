@@ -32,6 +32,7 @@ import jetbrains.mps.ide.depanalyzer.DepLink;
 
 public class SafeDeleteModuleDependency_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public SafeDeleteModuleDependency_Action() {
     super("Safe Delete Dependency", "Safe delete module dependency", ICON);
     this.setIsAlwaysVisible(false);
@@ -43,11 +44,11 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    SModule from = check_iuftgz_a0a0d(as_iuftgz_a0a0a0d(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
+    SModule from = check_iuftgz_a0a0e(as_iuftgz_a0a0a0e(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
     if (!(from instanceof AbstractModule)) {
       return false;
     }
-    return !(from.isReadOnly()) && check_iuftgz_a0a0c0d(as_iuftgz_a0a0a0c0d(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class)).linktype == DependencyUtil.LinkType.Depends;
+    return !(from.isReadOnly()) && check_iuftgz_a0a0c0e(as_iuftgz_a0a0a0c0e(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class)).linktype == DependencyUtil.LinkType.Depends;
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -102,10 +103,10 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     SafeDeleteModuleDependency_Action.this.removeDependency(_params);
   }
   /*package*/ AbstractModule getModuleFrom(final Map<String, Object> _params) {
-    return (AbstractModule) check_iuftgz_a0a0h(as_iuftgz_a0a0a0h(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
+    return (AbstractModule) check_iuftgz_a0a0i(as_iuftgz_a0a0a0i(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
   }
   /*package*/ SModule getModuleTo(final Map<String, Object> _params) {
-    return check_iuftgz_a0a8(as_iuftgz_a0a0a8(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class));
+    return check_iuftgz_a0a9(as_iuftgz_a0a0a9(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class));
   }
   private void removeDependency(final Map<String, Object> _params) {
     ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().executeCommand(new Runnable() {
@@ -125,40 +126,40 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     });
     ((Project) MapSequence.fromMap(_params).get("ideaProject")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).resetAll();
   }
-  private static SModule check_iuftgz_a0a0d(DependencyTreeNode checkedDotOperand) {
+  private static SModule check_iuftgz_a0a0e(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static DepLink check_iuftgz_a0a0c0d(DependencyTreeNode checkedDotOperand) {
+  private static DepLink check_iuftgz_a0a0c0e(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLink();
     }
     return null;
   }
-  private static SModule check_iuftgz_a0a0h(DependencyTreeNode checkedDotOperand) {
+  private static SModule check_iuftgz_a0a0i(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static SModule check_iuftgz_a0a8(DependencyTreeNode checkedDotOperand) {
+  private static SModule check_iuftgz_a0a9(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static <T> T as_iuftgz_a0a0a0d(Object o, Class<T> type) {
+  private static <T> T as_iuftgz_a0a0a0e(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_iuftgz_a0a0a0c0d(Object o, Class<T> type) {
+  private static <T> T as_iuftgz_a0a0a0c0e(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_iuftgz_a0a0a0h(Object o, Class<T> type) {
+  private static <T> T as_iuftgz_a0a0a0i(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_iuftgz_a0a0a8(Object o, Class<T> type) {
+  private static <T> T as_iuftgz_a0a0a9(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

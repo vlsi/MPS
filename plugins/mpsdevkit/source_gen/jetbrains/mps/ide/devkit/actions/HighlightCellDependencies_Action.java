@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class HighlightCellDependencies_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public HighlightCellDependencies_Action() {
     super("Highlighted Cell's Dependent Nodes", "", ICON);
     this.setIsAlwaysVisible(false);

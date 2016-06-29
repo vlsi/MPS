@@ -15,6 +15,7 @@ import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
   private static final Icon ICON = null;
+
   private SNodeReference errorId;
   private boolean immediate;
   public GoToTypeErrorRule_InGroup_Action(SNodeReference errorId_par, boolean immediate_par) {

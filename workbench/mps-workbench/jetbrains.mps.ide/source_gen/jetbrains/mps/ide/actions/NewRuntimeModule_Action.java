@@ -27,6 +27,7 @@ import com.intellij.openapi.application.ModalityState;
 
 public class NewRuntimeModule_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public NewRuntimeModule_Action() {
     super("New Runtime Module", "", ICON);
     this.setIsAlwaysVisible(false);

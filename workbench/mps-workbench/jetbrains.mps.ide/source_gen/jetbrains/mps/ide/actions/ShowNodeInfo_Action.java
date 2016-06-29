@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.NodeInformationDialog;
 
 public class ShowNodeInfo_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowNodeInfo_Action() {
     super("Show Node Info", "", ICON);
     this.setIsAlwaysVisible(false);

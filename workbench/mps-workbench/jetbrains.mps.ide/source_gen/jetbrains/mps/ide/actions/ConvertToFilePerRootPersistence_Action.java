@@ -37,6 +37,7 @@ import org.apache.log4j.LogManager;
 
 public class ConvertToFilePerRootPersistence_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ConvertToFilePerRootPersistence_Action() {
     super("Convert to File-Per-Root Format", "", ICON);
     this.setIsAlwaysVisible(false);

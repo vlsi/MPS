@@ -33,6 +33,7 @@ import jetbrains.mps.smodel.SReference;
 
 public class GenerateEqualsAndHashCode_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GenerateEqualsAndHashCode_Action() {
     super("equals() and hashCode", "", ICON);
     this.setIsAlwaysVisible(false);

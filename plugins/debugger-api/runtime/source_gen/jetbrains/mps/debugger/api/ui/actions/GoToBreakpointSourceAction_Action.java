@@ -19,6 +19,7 @@ import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class GoToBreakpointSourceAction_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Debug.GoToSource;
+
   public GoToBreakpointSourceAction_Action() {
     super("Go To", "Go To Source", ICON);
     this.setIsAlwaysVisible(true);

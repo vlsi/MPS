@@ -18,6 +18,7 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class ShowTypeSystemTrace_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowTypeSystemTrace_Action() {
     super("Show Typesystem Trace", "Show typesystem trace", ICON);
     this.setIsAlwaysVisible(false);

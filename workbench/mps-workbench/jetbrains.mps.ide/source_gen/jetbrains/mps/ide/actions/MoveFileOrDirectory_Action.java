@@ -26,6 +26,7 @@ import java.io.File;
 
 public class MoveFileOrDirectory_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public MoveFileOrDirectory_Action() {
     super("Move...", "", ICON);
     this.setIsAlwaysVisible(false);

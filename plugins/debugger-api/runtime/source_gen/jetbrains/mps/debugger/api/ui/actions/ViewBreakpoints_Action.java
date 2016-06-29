@@ -17,6 +17,7 @@ import com.intellij.openapi.application.ModalityState;
 
 public class ViewBreakpoints_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Debugger.ViewBreakpoints;
+
   public ViewBreakpoints_Action() {
     super("View Breakpoints", "", ICON);
     this.setIsAlwaysVisible(false);

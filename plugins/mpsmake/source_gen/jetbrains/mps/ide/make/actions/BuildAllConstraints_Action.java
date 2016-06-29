@@ -24,6 +24,7 @@ import jetbrains.mps.util.SNodeOperations;
 
 public class BuildAllConstraints_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public BuildAllConstraints_Action() {
     super("Rebuild All Constraints", "", ICON);
     this.setIsAlwaysVisible(false);

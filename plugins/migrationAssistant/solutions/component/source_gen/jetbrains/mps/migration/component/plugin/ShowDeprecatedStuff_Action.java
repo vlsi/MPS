@@ -22,6 +22,7 @@ import com.intellij.openapi.application.ModalityState;
 
 public class ShowDeprecatedStuff_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowDeprecatedStuff_Action() {
     super("Show Deprecated Stuff in Project", "", ICON);
     this.setIsAlwaysVisible(false);

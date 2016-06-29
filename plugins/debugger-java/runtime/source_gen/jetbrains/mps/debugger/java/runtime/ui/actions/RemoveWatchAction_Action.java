@@ -16,6 +16,7 @@ import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
 
 public class RemoveWatchAction_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.Remove;
+
   public RemoveWatchAction_Action() {
     super("Remove Watch", "", ICON);
     this.setIsAlwaysVisible(true);

@@ -25,7 +25,7 @@
       <unit at="15,0,40,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.BeforeTasksInitializer_CustomProjectPlugin" />
     </file>
     <file name="IconContainer.java">
-      <unit at="8,0,11,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.IconContainer" />
+      <unit at="7,0,10,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.IconContainer" />
     </file>
     <file name="RunConfigurationsInitializer_CustomApplicationPlugin.java">
       <unit at="49,108,60,5" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RunConfigurationsInitializer_CustomApplicationPlugin$1" />
@@ -730,8 +730,8 @@
       <node id="7229872968947709255" at="110,67,111,76" concept="4" />
       <node id="7229872968947784207" at="111,76,112,72" concept="4" />
       <node id="2545331098615402569" at="112,72,113,0" concept="12" />
-      <node id="7229872968947693407" at="113,0,114,160" concept="9" />
-      <node id="7229872968947693534" at="114,160,115,0" concept="12" />
+      <node id="7229872968947693407" at="113,0,114,162" concept="9" />
+      <node id="7229872968947693534" at="114,162,115,0" concept="12" />
       <node id="8031864729214425070" at="115,0,116,67" concept="4" />
       <node id="8031864729214388746" at="116,67,117,31" concept="4" />
       <node id="8031864729214134987" at="117,31,118,93" concept="4" />

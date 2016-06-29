@@ -13,6 +13,7 @@ import com.intellij.openapi.project.Project;
 
 public class ShowModelChecker_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowModelChecker_Action() {
     super("Model Checker...", "", ICON);
     this.setIsAlwaysVisible(true);

@@ -29,6 +29,7 @@ import com.intellij.openapi.application.ModalityState;
 
 public class OptimizeModelImports_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public OptimizeModelImports_Action() {
     super("Optimize Imports", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -29,6 +29,7 @@ import jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog;
 
 public class ExtractMethod_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ExtractMethod_Action() {
     super("Extract Method", "", ICON);
     this.setIsAlwaysVisible(false);

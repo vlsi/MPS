@@ -17,6 +17,7 @@ import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 
 public class FixModuleImportsInProject_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public FixModuleImportsInProject_Action() {
     super("Fix Module Imports", "", ICON);
     this.setIsAlwaysVisible(true);

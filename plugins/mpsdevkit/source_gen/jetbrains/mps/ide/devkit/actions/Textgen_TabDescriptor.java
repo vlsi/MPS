@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 
 public class Textgen_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.TextGen;
+
   public Textgen_TabDescriptor() {
   }
   public String getTitle() {

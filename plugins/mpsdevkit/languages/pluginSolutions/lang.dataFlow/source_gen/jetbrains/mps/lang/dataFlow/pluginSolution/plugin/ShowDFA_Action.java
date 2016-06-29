@@ -21,6 +21,7 @@ import jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog;
 
 public class ShowDFA_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowDFA_Action() {
     super("Show Data Flow Graph", "", ICON);
     this.setIsAlwaysVisible(false);

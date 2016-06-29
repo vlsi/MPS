@@ -14,6 +14,7 @@ import jetbrains.mps.generator.IModifiableGenerationSettings;
 
 public class CheckModelsBeforeGeneration_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CheckModelsBeforeGeneration_Action() {
     super("Check Models Before Generation", "Check models for errors before generation", ICON);
     this.setIsAlwaysVisible(true);

@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 
 public class ShowReflectiveEditor_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowReflectiveEditor_Action() {
     super("Show Reflective Editor", "", ICON);
     this.setIsAlwaysVisible(false);

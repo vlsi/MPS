@@ -34,7 +34,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_NodeSource = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ProjectSource = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Project_Parameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_RunConfiguration = new ConceptPresentationBuilder().icon("runConfigurationDeclaration.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_RunConfiguration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0w).create();
   private final ConceptPresentation props_RunConfigurationCreator = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RunConfigurationExecutor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RunConfigurationKind = new ConceptPresentationBuilder().create();

@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
 
 public class ShowGenerationTraceback_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowGenerationTraceback_Action() {
     super("Show Generation Traceback", "", ICON);
     this.setIsAlwaysVisible(false);

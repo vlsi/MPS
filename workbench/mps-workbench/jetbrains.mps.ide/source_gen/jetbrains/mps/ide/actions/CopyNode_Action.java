@@ -18,6 +18,7 @@ import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 
 public class CopyNode_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Copy;
+
   public CopyNode_Action() {
     super("Copy", "", ICON);
     this.setIsAlwaysVisible(false);

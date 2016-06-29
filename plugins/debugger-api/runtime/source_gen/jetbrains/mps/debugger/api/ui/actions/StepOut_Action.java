@@ -13,6 +13,7 @@ import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 
 public class StepOut_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.StepOut;
+
   public StepOut_Action() {
     super("Step Out", "", ICON);
     this.setIsAlwaysVisible(true);

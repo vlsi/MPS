@@ -14,6 +14,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class SelectNext_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public SelectNext_Action() {
     super("Select Next", "", ICON);
     this.setIsAlwaysVisible(false);

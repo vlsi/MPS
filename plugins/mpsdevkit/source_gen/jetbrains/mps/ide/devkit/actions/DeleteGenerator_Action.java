@@ -22,6 +22,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 
 public class DeleteGenerator_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public DeleteGenerator_Action() {
     super("Delete Generator...", "", ICON);
     this.setIsAlwaysVisible(false);

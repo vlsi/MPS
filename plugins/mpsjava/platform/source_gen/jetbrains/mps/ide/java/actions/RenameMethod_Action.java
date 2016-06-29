@@ -27,6 +27,7 @@ import java.util.Arrays;
 
 public class RenameMethod_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RenameMethod_Action() {
     super("Rename Method", "", ICON);
     this.setIsAlwaysVisible(false);

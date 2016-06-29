@@ -36,6 +36,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class ExecuteRerunnableMigrations_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ExecuteRerunnableMigrations_Action() {
     super("Execute Re-Runnable Migrations", "", ICON);
     this.setIsAlwaysVisible(false);

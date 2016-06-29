@@ -36,6 +36,7 @@ import java.util.Comparator;
 
 public class FindReferencesToNonReferenceable_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public FindReferencesToNonReferenceable_Action() {
     super("Find References to non-referenceable concepts", "", ICON);
     this.setIsAlwaysVisible(false);

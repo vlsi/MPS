@@ -34,6 +34,7 @@ import org.apache.log4j.LogManager;
 
 public class ConvertToBinaryPersistence_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ConvertToBinaryPersistence_Action() {
     super("Convert to binary format", "", ICON);
     this.setIsAlwaysVisible(false);

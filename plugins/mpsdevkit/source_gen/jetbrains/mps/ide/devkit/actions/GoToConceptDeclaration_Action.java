@@ -18,6 +18,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class GoToConceptDeclaration_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Structure;
+
   public GoToConceptDeclaration_Action() {
     super("Concept Declaration", "", ICON);
     this.setIsAlwaysVisible(true);

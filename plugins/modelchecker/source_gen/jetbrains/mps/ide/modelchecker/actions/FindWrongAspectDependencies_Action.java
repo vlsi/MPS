@@ -25,6 +25,7 @@ import jetbrains.mps.project.structure.modules.SolutionKind;
 
 public class FindWrongAspectDependencies_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public FindWrongAspectDependencies_Action() {
     super("Find Wrong Aspect Dependencies", "Finds wrong references between core, editor and workbench", ICON);
     this.setIsAlwaysVisible(false);

@@ -26,6 +26,7 @@ import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class FindLanguageConceptsUsages_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
+
   public FindLanguageConceptsUsages_Action() {
     super("Find Concepts Usages", "", ICON);
     this.setIsAlwaysVisible(false);

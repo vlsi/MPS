@@ -23,6 +23,7 @@ import com.intellij.openapi.application.ModalityState;
 
 public class ModuleProperties_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.Settings;
+
   public ModuleProperties_Action() {
     super("Module Properties", "", ICON);
     this.setIsAlwaysVisible(false);

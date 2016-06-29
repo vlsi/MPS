@@ -30,6 +30,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ExtractComponent_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ExtractComponent_Action() {
     super("Extract Component", "", ICON);
     this.setIsAlwaysVisible(false);

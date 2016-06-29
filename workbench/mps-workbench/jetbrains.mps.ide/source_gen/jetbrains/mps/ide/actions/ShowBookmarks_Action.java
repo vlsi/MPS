@@ -14,6 +14,7 @@ import jetbrains.mps.ide.bookmark.BookmarksTool;
 
 public class ShowBookmarks_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowBookmarks_Action() {
     super("Bookmarks...", "", ICON);
     this.setIsAlwaysVisible(false);

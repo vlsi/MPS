@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class Find_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public Find_Action() {
     super("Find...", "Find a string in active editor", ICON);
     this.setIsAlwaysVisible(true);

@@ -19,6 +19,7 @@ import jetbrains.mps.lang.dataFlow.framework.analyzers.ReachingDefinitionsAnalyz
 
 public class PrintReachingDefinintionsInformation_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public PrintReachingDefinintionsInformation_Action() {
     super("Print DFA Reaching Definitions Information", "", ICON);
     this.setIsAlwaysVisible(false);

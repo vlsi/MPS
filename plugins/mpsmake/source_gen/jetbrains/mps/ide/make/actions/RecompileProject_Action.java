@@ -20,6 +20,7 @@ import com.intellij.openapi.progress.ProgressManager;
 
 public class RecompileProject_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RecompileProject_Action() {
     super("Recompile Java Files", "", ICON);
     this.setIsAlwaysVisible(true);

@@ -27,6 +27,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class NewCreateRootRule_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public NewCreateRootRule_Action() {
     super("Create Conditional Root Rule", "Creates new 'conditional root rule' for a root template (unless such rule already exists)", ICON);
     this.setIsAlwaysVisible(false);

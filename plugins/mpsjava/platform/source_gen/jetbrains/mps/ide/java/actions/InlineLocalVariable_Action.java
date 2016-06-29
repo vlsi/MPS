@@ -33,6 +33,7 @@ import com.intellij.openapi.ui.Messages;
 
 public class InlineLocalVariable_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public InlineLocalVariable_Action() {
     super("Inline Local Variable", "", ICON);
     this.setIsAlwaysVisible(false);

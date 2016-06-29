@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 
 public class InsertBefore_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public InsertBefore_Action() {
     super("Insert New Element before Current", "", ICON);
     this.setIsAlwaysVisible(false);

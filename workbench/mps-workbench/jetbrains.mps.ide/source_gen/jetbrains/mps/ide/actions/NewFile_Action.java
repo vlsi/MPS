@@ -23,6 +23,7 @@ import jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane;
 
 public class NewFile_Action extends BaseAction {
   private static final Icon ICON = AllIcons.FileTypes.Any_type;
+
   public NewFile_Action() {
     super("File", "", ICON);
     this.setIsAlwaysVisible(false);

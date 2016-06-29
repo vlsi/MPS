@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class DeleteReferenceAction_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public DeleteReferenceAction_Action() {
     super("Delete", "", ICON);
     this.setIsAlwaysVisible(false);

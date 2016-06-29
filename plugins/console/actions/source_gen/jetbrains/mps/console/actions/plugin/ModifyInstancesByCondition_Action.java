@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ModifyInstancesByCondition_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ModifyInstancesByCondition_Action() {
     super("Modify Instances by Condition", "", ICON);
     this.setIsAlwaysVisible(false);

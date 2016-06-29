@@ -13,6 +13,7 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 
 public class FindNext_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public FindNext_Action() {
     super("Find Next", "Repeat the last Find operation", ICON);
     this.setIsAlwaysVisible(true);

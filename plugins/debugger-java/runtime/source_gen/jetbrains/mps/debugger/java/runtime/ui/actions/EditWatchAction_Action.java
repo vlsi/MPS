@@ -16,6 +16,7 @@ import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 
 public class EditWatchAction_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public EditWatchAction_Action() {
     super("Edit Watch", "", ICON);
     this.setIsAlwaysVisible(true);

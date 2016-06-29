@@ -34,6 +34,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class FindMetaCreationCode_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public FindMetaCreationCode_Action() {
     super("Find Code that Creates Language Structures", "", ICON);
     this.setIsAlwaysVisible(false);

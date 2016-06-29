@@ -23,6 +23,7 @@ import jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane;
 
 public class NewDirectory_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public NewDirectory_Action() {
     super("Directory", "", ICON);
     this.setIsAlwaysVisible(false);

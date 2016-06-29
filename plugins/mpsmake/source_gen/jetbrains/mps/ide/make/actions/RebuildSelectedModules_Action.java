@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 public class RebuildSelectedModules_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RebuildSelectedModules_Action() {
     super("Rebuild Module", "", ICON);
     this.setIsAlwaysVisible(false);

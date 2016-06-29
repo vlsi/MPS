@@ -14,6 +14,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class End_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public End_Action() {
     super("Move Caret to Line End", "", ICON);
     this.setIsAlwaysVisible(false);

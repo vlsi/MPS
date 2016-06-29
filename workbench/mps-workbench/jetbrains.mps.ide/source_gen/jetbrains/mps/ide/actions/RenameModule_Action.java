@@ -14,6 +14,7 @@ import jetbrains.mps.ide.refactoring.RenameModuleDialog;
 
 public class RenameModule_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RenameModule_Action() {
     super("Rename Module", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 public class CutNode_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Menu_cut;
+
   public CutNode_Action() {
     super("Cut", "", ICON);
     this.setIsAlwaysVisible(false);
@@ -36,7 +37,7 @@ public class CutNode_Action extends BaseAction {
       if (SNodeOperations.getParent(node) != SNodeOperations.getParent(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first())) {
         return false;
       }
-      if (check_vaf00o_a1a0a3(SNodeOperations.getModel(node))) {
+      if (check_vaf00o_a1a0a4(SNodeOperations.getModel(node))) {
         return false;
       }
     }
@@ -89,7 +90,7 @@ public class CutNode_Action extends BaseAction {
   private ProjectPane getProjectPane(final Map<String, Object> _params) {
     return ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project")));
   }
-  private static boolean check_vaf00o_a1a0a3(SModel checkedDotOperand) {
+  private static boolean check_vaf00o_a1a0a4(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isReadOnly();
     }

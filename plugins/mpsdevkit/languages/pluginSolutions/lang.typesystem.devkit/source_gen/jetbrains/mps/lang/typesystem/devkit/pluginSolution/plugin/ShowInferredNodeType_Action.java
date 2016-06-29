@@ -20,6 +20,7 @@ import javax.swing.JOptionPane;
 
 public class ShowInferredNodeType_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowInferredNodeType_Action() {
     super("Show Inferred Type", "Show type inferred using check only inequations, too", ICON);
     this.setIsAlwaysVisible(false);

@@ -23,6 +23,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class NewAspectModelByDescriptor_Action extends BaseAction {
   private static final Icon ICON = null;
+
   private String aspectId;
   public NewAspectModelByDescriptor_Action(String aspectId_par) {
     super("Aspect Model", "", ICON);

@@ -22,6 +22,7 @@ import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 
 public class CheckNamespace_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.General.ModelChecker;
+
   public CheckNamespace_Action() {
     super("Check Selected Modules", "Check modules for errors", ICON);
     this.setIsAlwaysVisible(false);

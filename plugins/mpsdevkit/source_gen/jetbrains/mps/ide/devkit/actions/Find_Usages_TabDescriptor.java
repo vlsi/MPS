@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 
 public class Find_Usages_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.UsagesFinder;
+
   public Find_Usages_TabDescriptor() {
   }
   public String getTitle() {

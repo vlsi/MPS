@@ -19,6 +19,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class NewDevKit_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.DevKit;
+
   public NewDevKit_Action() {
     super("DevKit", "", ICON);
     this.setIsAlwaysVisible(false);

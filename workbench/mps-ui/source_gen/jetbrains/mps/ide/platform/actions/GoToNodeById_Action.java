@@ -22,6 +22,7 @@ import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class GoToNodeById_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GoToNodeById_Action() {
     super("Go to Node by ID", "", ICON);
     this.setIsAlwaysVisible(false);

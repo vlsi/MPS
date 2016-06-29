@@ -24,6 +24,7 @@ import jetbrains.mps.util.Computable;
 
 public class ImplementMethod_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ImplementMethod_Action() {
     super("Implement Method...", "", ICON);
     this.setIsAlwaysVisible(false);

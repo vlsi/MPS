@@ -14,6 +14,7 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class ShowTodoViewer_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowTodoViewer_Action() {
     super("Todo...", "", ICON);
     this.setIsAlwaysVisible(true);

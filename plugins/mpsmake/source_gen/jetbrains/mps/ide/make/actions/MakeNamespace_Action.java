@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class MakeNamespace_Action extends BaseAction {
   private static final Icon ICON = null;
+
   private boolean cleanMake;
   public MakeNamespace_Action(boolean cleanMake_par) {
     super("Make", "", ICON);

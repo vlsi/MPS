@@ -20,6 +20,7 @@ import jetbrains.mps.ide.projectPane.favorites.TreeNodeValueExtractor;
 
 public class AddToFavorites_Action extends BaseAction {
   private static final Icon ICON = null;
+
   private String name;
   public AddToFavorites_Action(String name_par) {
     super("Add to Favorites", "", ICON);

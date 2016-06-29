@@ -45,6 +45,7 @@ import org.apache.log4j.LogManager;
 
 public class RefreshTestProject_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RefreshTestProject_Action() {
     super("Refresh Test Project", "", ICON);
     this.setIsAlwaysVisible(false);
@@ -156,7 +157,7 @@ public class RefreshTestProject_Action extends BaseAction {
 
             SNode existing = ListSequence.fromList(SModelOperations.roots(target.value, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"))).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return eq_tlmhfo_a0a0a0a0a0a5a0a0a0a1a0a0a0j0h(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(bproj, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+                return eq_tlmhfo_a0a0a0a0a0a5a0a0a0a1a0a0a0j0i(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(bproj, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
               }
             });
             if ((existing != null)) {
@@ -196,7 +197,7 @@ public class RefreshTestProject_Action extends BaseAction {
     }
   }
   protected static Logger LOG = LogManager.getLogger(RefreshTestProject_Action.class);
-  private static boolean eq_tlmhfo_a0a0a0a0a0a5a0a0a0a1a0a0a0j0h(Object a, Object b) {
+  private static boolean eq_tlmhfo_a0a0a0a0a0a5a0a0a0a1a0a0a0j0i(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

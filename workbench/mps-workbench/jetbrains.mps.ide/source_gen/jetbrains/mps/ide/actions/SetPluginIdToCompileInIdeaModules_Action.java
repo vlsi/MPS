@@ -20,6 +20,7 @@ import jetbrains.mps.vfs.IFile;
 
 public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public SetPluginIdToCompileInIdeaModules_Action() {
     super("Set pluginId to compile in IDEA modules", "Update module facet to reflect actual plugin id of classloader the module has been loaded with.", ICON);
     this.setIsAlwaysVisible(false);
@@ -63,7 +64,7 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
     }
   }
   /*package*/ String getPluginIdForModule(SModule module, final AnActionEvent event) {
-    String path = check_z7ebk9_a0a0f(((AbstractModule) module).getModuleSourceDir());
+    String path = check_z7ebk9_a0a0g(((AbstractModule) module).getModuleSourceDir());
     if (path == null) {
       System.out.println("null path for " + module.getModuleName());
       return null;
@@ -92,7 +93,7 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
     moduleDescriptor.updateFacetDescriptor(facet);
     ((AbstractModule) module).save();
   }
-  private static String check_z7ebk9_a0a0f(IFile checkedDotOperand) {
+  private static String check_z7ebk9_a0a0g(IFile checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getPath();
     }

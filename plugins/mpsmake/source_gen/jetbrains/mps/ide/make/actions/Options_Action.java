@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class Options_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public Options_Action() {
     super("Options", "", ICON);
     this.setIsAlwaysVisible(true);

@@ -16,6 +16,7 @@ import jetbrains.mps.project.ModelImportHelper;
 
 public class AddModelImport_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public AddModelImport_Action() {
     super("Add Model Import", "", ICON);
     this.setIsAlwaysVisible(false);

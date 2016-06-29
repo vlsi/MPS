@@ -30,6 +30,7 @@ import javax.swing.JOptionPane;
 
 public class IntroduceConstant_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public IntroduceConstant_Action() {
     super("Introduce Constant...", "", ICON);
     this.setIsAlwaysVisible(false);

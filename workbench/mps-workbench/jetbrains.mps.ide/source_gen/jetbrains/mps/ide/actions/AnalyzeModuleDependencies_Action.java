@@ -16,6 +16,7 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class AnalyzeModuleDependencies_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Toolwindows.ToolWindowModuleDependencies;
+
   public AnalyzeModuleDependencies_Action() {
     super("Analyze Module Dependencies", "", ICON);
     this.setIsAlwaysVisible(false);

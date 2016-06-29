@@ -23,6 +23,7 @@ import java.awt.event.InputEvent;
 
 public class ShowGenerationPlan_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowGenerationPlan_Action() {
     super("Show Generation Plan", "", ICON);
     this.setIsAlwaysVisible(false);

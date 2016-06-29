@@ -20,7 +20,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AssertSame = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AssertThrows = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AssertTrue = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BTestCase = new ConceptPresentationBuilder().icon("testClass.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_BTestCase = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0i).create();
   private final ConceptPresentation props_BeforeTest = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BinaryAssert = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Fail = new ConceptPresentationBuilder().create();

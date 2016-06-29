@@ -46,6 +46,7 @@ import org.apache.log4j.LogManager;
 
 public class ReRunMergeFromBackup_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ReRunMergeFromBackup_Action() {
     super("Rerun Merge from Backup", "", ICON);
     this.setIsAlwaysVisible(false);

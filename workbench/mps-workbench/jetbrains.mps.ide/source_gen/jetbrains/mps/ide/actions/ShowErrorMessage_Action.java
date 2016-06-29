@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class ShowErrorMessage_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowErrorMessage_Action() {
     super("Show Error Message", "", ICON);
     this.setIsAlwaysVisible(false);

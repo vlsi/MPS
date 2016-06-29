@@ -30,6 +30,7 @@ import jetbrains.mps.vcs.platform.actions.VcsActionsUtil;
 
 public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Diff;
+
   public ShowDiffererenceWithCurrentRevision_Action() {
     super("Compare with the Same Repository Version", "", ICON);
     this.setIsAlwaysVisible(false);

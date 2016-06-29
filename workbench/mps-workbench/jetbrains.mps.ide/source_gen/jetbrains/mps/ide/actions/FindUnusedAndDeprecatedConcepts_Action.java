@@ -52,6 +52,7 @@ import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public FindUnusedAndDeprecatedConcepts_Action() {
     super("Find unused and deprecated concepts", "", ICON);
     this.setIsAlwaysVisible(false);

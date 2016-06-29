@@ -13,6 +13,9 @@
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="14,0,681,0" name="jetbrains.mps.lang.generator.structure.ConceptPresentationAspectImpl" />
     </file>
+    <file name="IconContainer.java">
+      <unit at="7,0,13,0" name="jetbrains.mps.lang.generator.structure.IconContainer" />
+    </file>
     <file name="StructureAspectDescriptor.java">
       <unit at="18,0,470,0" name="jetbrains.mps.lang.generator.structure.StructureAspectDescriptor" />
     </file>

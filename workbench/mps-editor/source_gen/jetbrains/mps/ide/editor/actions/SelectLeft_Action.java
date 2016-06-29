@@ -15,6 +15,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class SelectLeft_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public SelectLeft_Action() {
     super("Left with Selection", "", ICON);
     this.setIsAlwaysVisible(false);

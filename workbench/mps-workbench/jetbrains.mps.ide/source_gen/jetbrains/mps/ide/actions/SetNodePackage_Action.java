@@ -34,6 +34,7 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class SetNodePackage_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public SetNodePackage_Action() {
     super("Set Virtual Package...", "", ICON);
     this.setIsAlwaysVisible(false);

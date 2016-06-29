@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 public class MoveElementsUp_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public MoveElementsUp_Action() {
     super("Move Elements Up", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 public class RebuildSelectedModels_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RebuildSelectedModels_Action() {
     super("Rebuild Model", "", ICON);
     this.setIsAlwaysVisible(false);

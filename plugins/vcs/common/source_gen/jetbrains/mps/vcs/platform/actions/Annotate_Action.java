@@ -15,6 +15,7 @@ import jetbrains.mps.project.MPSProject;
 
 public class Annotate_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public Annotate_Action() {
     super("Annotate", "", ICON);
     this.setIsAlwaysVisible(true);

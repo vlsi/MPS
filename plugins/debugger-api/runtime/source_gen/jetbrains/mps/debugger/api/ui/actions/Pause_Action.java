@@ -13,6 +13,7 @@ import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 
 public class Pause_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Pause;
+
   public Pause_Action() {
     super("Pause", "Pause Execution", ICON);
     this.setIsAlwaysVisible(true);

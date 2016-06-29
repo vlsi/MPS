@@ -34,6 +34,7 @@ import java.awt.Point;
 
 public class ShowImplementations_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowImplementations_Action() {
     super("Show Implementation", "", ICON);
     this.setIsAlwaysVisible(false);

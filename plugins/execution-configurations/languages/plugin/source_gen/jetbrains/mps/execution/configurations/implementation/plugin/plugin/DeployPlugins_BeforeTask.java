@@ -111,7 +111,7 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
           consolePanel.add(actionToolbar.getComponent(), BorderLayout.WEST);
           consolePanel.add(console.getComponent(), BorderLayout.CENTER);
 
-          RunContentDescriptor descriptor = new RunContentDescriptor(console, process.value, consolePanel, "Deploy plugins", IconContainer.ICON_e0a0j0a0a71a4e);
+          RunContentDescriptor descriptor = new RunContentDescriptor(console, process.value, consolePanel, "Deploy plugins", IconContainer.ICON_e0a0j0a0a0a0r0e4);
 
           group.add(ActionManager.getInstance().getAction("Stop"));
           group.addSeparator();

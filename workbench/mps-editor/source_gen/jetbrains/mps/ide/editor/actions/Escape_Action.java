@@ -17,6 +17,7 @@ import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class Escape_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public Escape_Action() {
     super("Escape", "", ICON);
     this.setIsAlwaysVisible(false);

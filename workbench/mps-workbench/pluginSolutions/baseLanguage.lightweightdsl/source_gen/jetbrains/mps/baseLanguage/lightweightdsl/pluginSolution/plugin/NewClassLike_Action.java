@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class NewClassLike_Action extends BaseAction {
   private static final Icon ICON = null;
+
   private SNode descr;
   public NewClassLike_Action(SNode descr_par) {
     super("New <something>", "", ICON);

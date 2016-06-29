@@ -31,6 +31,7 @@ import com.intellij.openapi.ui.Messages;
 
 public class ReportModelMergeProblem_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ReportModelMergeProblem_Action() {
     super("Report Model Merge Problem...", "", ICON);
     this.setIsAlwaysVisible(false);

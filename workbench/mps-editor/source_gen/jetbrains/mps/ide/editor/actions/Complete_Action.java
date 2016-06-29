@@ -16,6 +16,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class Complete_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public Complete_Action() {
     super("Complete", "", ICON);
     this.setIsAlwaysVisible(false);

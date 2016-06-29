@@ -24,6 +24,7 @@ import jetbrains.mps.util.SNodeOperations;
 
 public class BuildAllScripts_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public BuildAllScripts_Action() {
     super("Rebuild All Migration Scripts", "", ICON);
     this.setIsAlwaysVisible(false);

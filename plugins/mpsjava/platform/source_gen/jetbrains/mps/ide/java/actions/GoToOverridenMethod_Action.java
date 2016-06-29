@@ -42,6 +42,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class GoToOverridenMethod_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GoToOverridenMethod_Action() {
     super("Go to Overriden Method", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -28,6 +28,7 @@ import jetbrains.mps.lang.test.behavior.NodesTestCase__BehaviorDescriptor;
 
 public class RunTestInMPS_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RunTestInMPS_Action() {
     super("Run Test in MPS Process", "", ICON);
     this.setIsAlwaysVisible(false);

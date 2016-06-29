@@ -24,6 +24,7 @@ import jetbrains.mps.util.SNodeOperations;
 
 public class BuildAllBehaviors_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public BuildAllBehaviors_Action() {
     super("Rebuild All Behaviors", "", ICON);
     this.setIsAlwaysVisible(false);

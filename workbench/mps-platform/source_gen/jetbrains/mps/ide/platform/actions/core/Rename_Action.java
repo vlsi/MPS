@@ -28,6 +28,7 @@ import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
 
 public class Rename_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public Rename_Action() {
     super("Rename", "", ICON);
     this.setIsAlwaysVisible(false);

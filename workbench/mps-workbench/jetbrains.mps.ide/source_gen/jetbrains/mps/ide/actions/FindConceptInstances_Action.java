@@ -27,6 +27,7 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 
 public class FindConceptInstances_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
+
   public FindConceptInstances_Action() {
     super("Find Concept Instances", "", ICON);
     this.setIsAlwaysVisible(false);

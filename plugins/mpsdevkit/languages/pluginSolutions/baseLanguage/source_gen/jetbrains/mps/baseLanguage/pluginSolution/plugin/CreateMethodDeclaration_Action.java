@@ -30,6 +30,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class CreateMethodDeclaration_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CreateMethodDeclaration_Action() {
     super("Create Method Declaration", "", ICON);
     this.setIsAlwaysVisible(false);

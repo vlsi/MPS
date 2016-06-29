@@ -13,6 +13,7 @@ import com.intellij.openapi.project.Project;
 
 public class InstalVcsAddons_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public InstalVcsAddons_Action() {
     super("Install MPS VCS Add-ons...", "Install custom merge driver for Git and custom diff3 for Subversion", ICON);
     this.setIsAlwaysVisible(true);

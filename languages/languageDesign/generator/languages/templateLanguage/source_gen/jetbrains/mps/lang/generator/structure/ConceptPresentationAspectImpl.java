@@ -61,10 +61,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_MapSrcMacro_MapperFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MapSrcMacro_PostMapperFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MapSrcNodeMacro = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MappingConfiguration = new ConceptPresentationBuilder().icon("mappingConf.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_MappingConfiguration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0xb).create();
   private final ConceptPresentation props_MappingConfiguration_Condition = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MappingLabelDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MappingScript = new ConceptPresentationBuilder().icon("generatorScript.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_MappingScript = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ac).create();
   private final ConceptPresentation props_MappingScriptReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MappingScript_CodeBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MarshalFunction = new ConceptPresentationBuilder().create();
@@ -93,7 +93,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TemplateArgumentQueryExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TemplateArgumentVariableRefExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TemplateCallMacro = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TemplateDeclaration = new ConceptPresentationBuilder().icon("templateFragment.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_TemplateDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0dd).create();
   private final ConceptPresentation props_TemplateDeclarationReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TemplateFragment = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, 0x1179c366b2fL, "labelDeclaration")).create();
   private final ConceptPresentation props_TemplateFragment_ContextNodeQuery = new ConceptPresentationBuilder().deprecated().create();
@@ -105,7 +105,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TemplateFunctionParameter_templateReferent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TemplateParameterDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TemplateQueryBase = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TemplateSwitch = new ConceptPresentationBuilder().icon("switch.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_TemplateSwitch = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0pd).create();
   private final ConceptPresentation props_TemplateSwitchMacro = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TemplateSwitchReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TraceMacro = new ConceptPresentationBuilder().create();

@@ -18,6 +18,7 @@ import com.intellij.ide.CopyPasteManagerEx;
 
 public class AnalyzeStacktrace_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public AnalyzeStacktrace_Action() {
     super("Analyze Stacktrace...", "Open console with the navigation stacktrace", ICON);
     this.setIsAlwaysVisible(false);

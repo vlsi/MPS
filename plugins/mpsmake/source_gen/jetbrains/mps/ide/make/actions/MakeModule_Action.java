@@ -18,6 +18,7 @@ import com.intellij.openapi.progress.ProgressManager;
 
 public class MakeModule_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public MakeModule_Action() {
     super("Compile Java Files", "", ICON);
     this.setIsAlwaysVisible(false);

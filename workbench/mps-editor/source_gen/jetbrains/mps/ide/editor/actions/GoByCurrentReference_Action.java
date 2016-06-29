@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class GoByCurrentReference_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GoByCurrentReference_Action() {
     super("Declaration", "", ICON);
     this.setIsAlwaysVisible(false);

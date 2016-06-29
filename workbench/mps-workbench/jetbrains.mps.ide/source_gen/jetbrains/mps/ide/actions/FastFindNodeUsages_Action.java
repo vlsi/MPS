@@ -19,6 +19,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 public class FastFindNodeUsages_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
+
   public FastFindNodeUsages_Action() {
     super("Find Usages", "", ICON);
     this.setIsAlwaysVisible(true);

@@ -12,6 +12,7 @@ import com.intellij.featureStatistics.FeatureUsageTracker;
 
 public class GoToAction_Action extends BaseAction {
   private static final Icon ICON = null;
+
   private AnAction action;
   public GoToAction_Action(AnAction action_par) {
     super("Go to Action", "", ICON);

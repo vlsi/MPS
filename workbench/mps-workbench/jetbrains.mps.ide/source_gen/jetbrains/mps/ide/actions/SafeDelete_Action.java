@@ -16,6 +16,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class SafeDelete_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public SafeDelete_Action() {
     super("Safe Delete", "", ICON);
     this.setIsAlwaysVisible(false);

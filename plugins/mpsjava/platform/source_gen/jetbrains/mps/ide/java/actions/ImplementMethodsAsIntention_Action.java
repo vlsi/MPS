@@ -24,6 +24,7 @@ import jetbrains.mps.util.Computable;
 
 public class ImplementMethodsAsIntention_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ImplementMethodsAsIntention_Action() {
     super("Implement Methods", "", ICON);
     this.setIsAlwaysVisible(false);

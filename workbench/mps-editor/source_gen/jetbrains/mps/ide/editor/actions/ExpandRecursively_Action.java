@@ -15,6 +15,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class ExpandRecursively_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ExpandRecursively_Action() {
     super("Expand Recursively", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -38,6 +38,7 @@ import java.io.IOException;
 
 public class GetModelContentsFromSource_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GetModelContentsFromSource_Action() {
     super("Get Model Contents from Source", "", ICON);
     this.setIsAlwaysVisible(false);

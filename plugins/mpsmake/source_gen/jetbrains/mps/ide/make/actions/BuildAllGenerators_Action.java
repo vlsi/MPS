@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.Generator;
 
 public class BuildAllGenerators_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public BuildAllGenerators_Action() {
     super("Rebuild All Generators", "", ICON);
     this.setIsAlwaysVisible(false);

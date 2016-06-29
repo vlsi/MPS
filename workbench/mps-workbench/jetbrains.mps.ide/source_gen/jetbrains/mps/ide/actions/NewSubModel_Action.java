@@ -23,6 +23,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class NewSubModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Model;
+
   public NewSubModel_Action() {
     super("Model", "", ICON);
     this.setIsAlwaysVisible(false);

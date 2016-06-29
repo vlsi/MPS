@@ -44,6 +44,7 @@ import jetbrains.mps.ide.editor.util.renderer.DefaultNodeRenderer;
 
 public class GoToInheritedClassifier_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GoToInheritedClassifier_Action() {
     super("Go to Inherited Classifiers", "", ICON);
     this.setIsAlwaysVisible(false);

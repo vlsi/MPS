@@ -24,6 +24,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 
 public class CopyThisDown_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CopyThisDown_Action() {
     super("Duplicate Node", "", ICON);
     this.setIsAlwaysVisible(false);

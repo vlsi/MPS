@@ -20,6 +20,7 @@ import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 
 public class RemoveFromFavorites_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RemoveFromFavorites_Action() {
     super("Remove from Favorites", "", ICON);
     this.setIsAlwaysVisible(false);

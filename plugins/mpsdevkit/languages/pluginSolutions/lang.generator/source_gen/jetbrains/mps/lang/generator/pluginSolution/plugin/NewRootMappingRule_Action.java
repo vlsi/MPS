@@ -27,6 +27,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class NewRootMappingRule_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public NewRootMappingRule_Action() {
     super("Create Root Mapping Rule", "Creates new 'root mapping rule' for a root template (unless such rule already exists)", ICON);
     this.setIsAlwaysVisible(false);

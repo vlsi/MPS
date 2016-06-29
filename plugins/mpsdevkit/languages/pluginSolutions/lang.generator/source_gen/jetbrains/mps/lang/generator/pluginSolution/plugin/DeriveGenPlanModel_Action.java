@@ -22,6 +22,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class DeriveGenPlanModel_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public DeriveGenPlanModel_Action() {
     super("Derive Generation Plan", "", ICON);
     this.setIsAlwaysVisible(false);

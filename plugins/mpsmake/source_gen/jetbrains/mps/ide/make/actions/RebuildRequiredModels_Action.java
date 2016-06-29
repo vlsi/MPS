@@ -22,6 +22,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class RebuildRequiredModels_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RebuildRequiredModels_Action() {
     super("Rebuild Required Models", "", ICON);
     this.setIsAlwaysVisible(false);

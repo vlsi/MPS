@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class RenameLink_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public RenameLink_Action() {
     super("Rename Link", "", ICON);
     this.setIsAlwaysVisible(false);

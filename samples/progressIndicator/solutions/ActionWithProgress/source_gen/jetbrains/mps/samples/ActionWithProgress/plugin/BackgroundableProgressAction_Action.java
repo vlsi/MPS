@@ -21,6 +21,7 @@ import com.intellij.openapi.progress.ProgressManager;
 
 public class BackgroundableProgressAction_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public BackgroundableProgressAction_Action() {
     super("BackgroundableProgressAction", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -15,6 +15,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class DeletePropertyAction_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public DeletePropertyAction_Action() {
     super("Delete", "", ICON);
     this.setIsAlwaysVisible(false);

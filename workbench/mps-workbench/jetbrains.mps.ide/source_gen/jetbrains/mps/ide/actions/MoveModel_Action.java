@@ -36,6 +36,7 @@ import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 
 public class MoveModel_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public MoveModel_Action() {
     super("Move Model", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -18,6 +18,7 @@ import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class ShowOriginNode_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowOriginNode_Action() {
     super("Reveal Origin Node", "Navigate to node in original model selected transient node originates from", ICON);
     this.setIsAlwaysVisible(false);

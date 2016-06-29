@@ -33,6 +33,7 @@ import jetbrains.mps.util.Computable;
 
 public class NewModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Model;
+
   public NewModel_Action() {
     super("Model", "", ICON);
     this.setIsAlwaysVisible(false);

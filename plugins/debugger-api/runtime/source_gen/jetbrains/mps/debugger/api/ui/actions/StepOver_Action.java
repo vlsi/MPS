@@ -13,6 +13,7 @@ import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 
 public class StepOver_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.TraceOver;
+
   public StepOver_Action() {
     super("Step Over", "", ICON);
     this.setIsAlwaysVisible(true);

@@ -20,6 +20,7 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 
 public class ReloadAll_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Refresh;
+
   public ReloadAll_Action() {
     super("Reload All Classes", "Reload all MPS classes", ICON);
     this.setIsAlwaysVisible(false);

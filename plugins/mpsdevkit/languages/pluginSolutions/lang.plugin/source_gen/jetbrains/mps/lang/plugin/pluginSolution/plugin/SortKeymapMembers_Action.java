@@ -23,6 +23,7 @@ import java.util.Arrays;
 
 public class SortKeymapMembers_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public SortKeymapMembers_Action() {
     super("Sort Keymap Members", "", ICON);
     this.setIsAlwaysVisible(false);

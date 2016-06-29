@@ -19,6 +19,7 @@ import java.util.Arrays;
 
 public class MakeFieldStatic_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public MakeFieldStatic_Action() {
     super("Make Field Static", "", ICON);
     this.setIsAlwaysVisible(false);

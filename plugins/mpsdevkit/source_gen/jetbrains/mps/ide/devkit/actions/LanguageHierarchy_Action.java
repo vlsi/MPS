@@ -20,6 +20,7 @@ import jetbrains.mps.workbench.editors.MPSLanguageEditor;
 
 public class LanguageHierarchy_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public LanguageHierarchy_Action() {
     super("Language Diagram", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -13,6 +13,7 @@ import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class EditGivenNode_Action extends BaseAction {
   private static final Icon ICON = null;
+
   private SNodeReference targetNode;
   private String text;
   public EditGivenNode_Action(SNodeReference targetNode_par, String text_par) {

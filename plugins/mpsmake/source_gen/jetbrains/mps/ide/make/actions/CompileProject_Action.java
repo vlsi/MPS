@@ -20,6 +20,7 @@ import com.intellij.openapi.progress.ProgressManager;
 
 public class CompileProject_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CompileProject_Action() {
     super("Compile Java Files", "", ICON);
     this.setIsAlwaysVisible(false);

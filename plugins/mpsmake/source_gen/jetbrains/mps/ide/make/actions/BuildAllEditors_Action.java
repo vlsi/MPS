@@ -24,6 +24,7 @@ import jetbrains.mps.util.SNodeOperations;
 
 public class BuildAllEditors_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public BuildAllEditors_Action() {
     super("Rebuild All Editors", "", ICON);
     this.setIsAlwaysVisible(false);

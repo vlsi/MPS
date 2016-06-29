@@ -31,6 +31,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 
 public class AddAccessoryModel_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public AddAccessoryModel_Action() {
     super("Add Accessory Model", "", ICON);
     this.setIsAlwaysVisible(false);

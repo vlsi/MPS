@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 public class MakeSelection_Action extends BaseAction {
   private static final Icon ICON = null;
+
   private boolean cleanMake;
   public MakeSelection_Action(boolean cleanMake_par) {
     super("Make", "", ICON);

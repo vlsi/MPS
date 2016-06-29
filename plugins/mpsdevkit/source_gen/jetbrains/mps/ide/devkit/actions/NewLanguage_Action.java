@@ -17,6 +17,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class NewLanguage_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Language;
+
   public NewLanguage_Action() {
     super("Language", "", ICON);
     this.setIsAlwaysVisible(false);

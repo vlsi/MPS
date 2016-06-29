@@ -28,6 +28,7 @@ import java.io.File;
 
 public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GoByCurrentReferenceToIDEA_Action() {
     super("Open Declaration in IDEA", "", ICON);
     this.setIsAlwaysVisible(false);
@@ -48,7 +49,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     }
     String targetSter = SModelStereotype.getStereotype(SNodeOperations.getModel(targetNode));
     String stubSter = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-    return eq_xgilk9_a0f0d(stubSter, targetSter);
+    return eq_xgilk9_a0f0e(stubSter, targetSter);
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -79,7 +80,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.definition");
     final SNode targetNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
-    final String projectPath = check_xgilk9_a0c0g(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectFile());
+    final String projectPath = check_xgilk9_a0c0h(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectFile());
     new Thread() {
       @Override
       public void run() {
@@ -143,13 +144,13 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     assert classifier != null;
     return ref.getName().getLongName() + '.' + SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  private static String check_xgilk9_a0c0g(File checkedDotOperand) {
+  private static String check_xgilk9_a0c0h(File checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getAbsolutePath();
     }
     return null;
   }
-  private static boolean eq_xgilk9_a0f0d(Object a, Object b) {
+  private static boolean eq_xgilk9_a0f0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -26,6 +26,7 @@ import jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialog;
 
 public class InlineMethod_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public InlineMethod_Action() {
     super("Inline Method", "", ICON);
     this.setIsAlwaysVisible(false);

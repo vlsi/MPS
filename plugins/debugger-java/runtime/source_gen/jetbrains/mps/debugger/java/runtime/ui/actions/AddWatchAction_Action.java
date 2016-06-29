@@ -14,6 +14,7 @@ import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
 
 public class AddWatchAction_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.Add;
+
   public AddWatchAction_Action() {
     super("New Watch...", "New Watch...", ICON);
     this.setIsAlwaysVisible(true);

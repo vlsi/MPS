@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 public class CheckModule_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.General.ModelChecker;
+
   public CheckModule_Action() {
     super("Check [Module]", "Check [module] for structure and typesystem rules", ICON);
     this.setIsAlwaysVisible(false);

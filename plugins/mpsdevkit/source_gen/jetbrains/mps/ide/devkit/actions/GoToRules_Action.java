@@ -28,6 +28,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class GoToRules_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GoToRules_Action() {
     super("Go to Typesystem Rules", "", ICON);
     this.setIsAlwaysVisible(false);

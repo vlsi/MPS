@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 public class MakeSelectedModels_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public MakeSelectedModels_Action() {
     super("Make Model", "", ICON);
     this.setIsAlwaysVisible(false);

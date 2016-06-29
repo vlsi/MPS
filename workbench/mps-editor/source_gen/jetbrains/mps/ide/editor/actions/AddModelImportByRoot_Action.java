@@ -33,6 +33,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 
 public class AddModelImportByRoot_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public AddModelImportByRoot_Action() {
     super("Add Model Import by Root", "", ICON);
     this.setIsAlwaysVisible(false);

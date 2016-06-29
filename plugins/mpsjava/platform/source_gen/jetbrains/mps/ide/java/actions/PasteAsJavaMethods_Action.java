@@ -23,6 +23,7 @@ import jetbrains.mps.ide.java.newparser.FeatureKind;
 
 public class PasteAsJavaMethods_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public PasteAsJavaMethods_Action() {
     super("Paste as Java Class Content", "", ICON);
     this.setIsAlwaysVisible(false);

@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.ModelAccess;
 
 public class CorrectLanguageVersion_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CorrectLanguageVersion_Action() {
     super("Correct Language Version", "", ICON);
     this.setIsAlwaysVisible(false);

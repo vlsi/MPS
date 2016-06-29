@@ -14,6 +14,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class MoveLeft_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public MoveLeft_Action() {
     super("Left", "", ICON);
     this.setIsAlwaysVisible(false);

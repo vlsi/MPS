@@ -25,6 +25,7 @@ import com.intellij.openapi.application.ModalityState;
 
 public class GoToModel_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public GoToModel_Action() {
     super("Go to Model", "", ICON);
     this.setIsAlwaysVisible(false);

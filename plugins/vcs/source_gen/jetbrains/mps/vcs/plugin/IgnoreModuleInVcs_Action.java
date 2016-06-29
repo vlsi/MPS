@@ -20,6 +20,7 @@ import com.intellij.openapi.vcs.changes.ui.IgnoreUnversionedDialog;
 
 public class IgnoreModuleInVcs_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public IgnoreModuleInVcs_Action() {
     super("Ignore Module...", "", ICON);
     this.setIsAlwaysVisible(false);

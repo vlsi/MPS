@@ -19,6 +19,7 @@ import jetbrains.mps.ide.platform.actions.DependenciesUtil;
 
 public class ShowInDependenciesViewer_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public ShowInDependenciesViewer_Action() {
     super("Show Usages", "show usages in dependencies viewer", ICON);
     this.setIsAlwaysVisible(false);
@@ -73,19 +74,19 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
     ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
       public void run() {
         DependencyTreeNode treeNode = (DependencyTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
-        SModule from = check_nkoo1o_a0b0a0a0a0a0g(as_nkoo1o_a0a0b0a0a0a0a0g(treeNode.getParent(), DependencyTreeNode.class));
+        SModule from = check_nkoo1o_a0b0a0a0a0a0h(as_nkoo1o_a0a0b0a0a0a0a0h(treeNode.getParent(), DependencyTreeNode.class));
         SModule to = treeNode.getModule();
         DependenciesUtil.analyzeDependencies(from, to, ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), treeNode.getLink().linktype == DependencyUtil.LinkType.UsesLanguage, true);
       }
     });
   }
-  private static SModule check_nkoo1o_a0b0a0a0a0a0g(DependencyTreeNode checkedDotOperand) {
+  private static SModule check_nkoo1o_a0b0a0a0a0a0h(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static <T> T as_nkoo1o_a0a0b0a0a0a0a0g(Object o, Class<T> type) {
+  private static <T> T as_nkoo1o_a0a0b0a0a0a0a0h(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

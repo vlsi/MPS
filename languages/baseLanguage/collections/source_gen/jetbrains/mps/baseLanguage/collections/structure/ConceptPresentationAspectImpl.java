@@ -59,7 +59,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_FoldLeftOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FoldRightOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ForEachStatement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ForEachVariable = new ConceptPresentationBuilder().icon("variable.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_ForEachVariable = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0vb).create();
   private final ConceptPresentation props_ForEachVariableReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GetCurrentOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GetElementOperation = new ConceptPresentationBuilder().create();

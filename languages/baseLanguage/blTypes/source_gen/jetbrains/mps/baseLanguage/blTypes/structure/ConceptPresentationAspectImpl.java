@@ -12,7 +12,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_PrimitiveTypeDescriptor = new ConceptPresentationBuilder().icon("primitive.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_PrimitiveTypeDescriptor = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0a).create();
   private final ConceptPresentation props_PrimitiveTypeRef = new ConceptPresentationBuilder().create();
 
   @Override

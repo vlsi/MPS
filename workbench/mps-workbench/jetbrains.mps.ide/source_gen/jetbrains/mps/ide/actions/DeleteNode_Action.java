@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class DeleteNode_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public DeleteNode_Action() {
     super("Delete", "", ICON);
     this.setIsAlwaysVisible(false);
@@ -121,11 +122,11 @@ public class DeleteNode_Action extends BaseAction {
     });
     return Sequence.fromIterable(nodeFromPacks).union(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(check_tbcoj8_a0a0a0a2a7(it.getModel()));
+        return !(check_tbcoj8_a0a0a0a2a8(it.getModel()));
       }
     });
   }
-  private static boolean check_tbcoj8_a0a0a0a2a7(SModel checkedDotOperand) {
+  private static boolean check_tbcoj8_a0a0a0a2a8(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isReadOnly();
     }

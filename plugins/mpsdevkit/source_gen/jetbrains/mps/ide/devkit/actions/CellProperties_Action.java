@@ -16,6 +16,7 @@ import jetbrains.mps.ide.devkit.cellExplorer.CellPropertiesWindow;
 
 public class CellProperties_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CellProperties_Action() {
     super("Cell Properties", "", ICON);
     this.setIsAlwaysVisible(true);

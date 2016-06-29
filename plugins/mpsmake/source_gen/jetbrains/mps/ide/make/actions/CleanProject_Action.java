@@ -24,6 +24,7 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 
 public class CleanProject_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public CleanProject_Action() {
     super("Clean Compiled Java Files", "", ICON);
     this.setIsAlwaysVisible(true);

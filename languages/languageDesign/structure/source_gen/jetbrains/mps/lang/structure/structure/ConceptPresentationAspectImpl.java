@@ -17,19 +17,19 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AttributeInfo = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AttributeInfo_AttributedConcept = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AttributeInfo_IsMultiple = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptDeclaration = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x10e328118ddL, "iconPath"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x4b014033eedc8a48L, "staticScope"), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")).icon("structure.png", ConceptPresentationAspectImpl.class).create();
-  private final ConceptPresentation props_ConstrainedDataTypeDeclaration = new ConceptPresentationBuilder().icon("constrainedTD.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_ConceptDeclaration = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x10e328118ddL, "iconPath"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x4b014033eedc8a48L, "staticScope"), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")).icon(IconContainer.RESOURCE_a0a0f).create();
+  private final ConceptPresentation props_ConstrainedDataTypeDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0g).create();
   private final ConceptPresentation props_DataTypeDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DeprecatedNodeAnnotation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EnumerationDataTypeDeclaration = new ConceptPresentationBuilder().icon("enum.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_EnumerationDataTypeDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0j).create();
   private final ConceptPresentation props_EnumerationMemberDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IConceptAspect = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IStructureDeprecatable = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InterfaceConceptDeclaration = new ConceptPresentationBuilder().icon("interfaceStructure.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_InterfaceConceptDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0n).create();
   private final ConceptPresentation props_InterfaceConceptReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LinkDeclaration = new ConceptPresentationBuilder().icon("link.png", ConceptPresentationAspectImpl.class).create();
-  private final ConceptPresentation props_PrimitiveDataTypeDeclaration = new ConceptPresentationBuilder().icon("primitiveTD.png", ConceptPresentationAspectImpl.class).create();
-  private final ConceptPresentation props_PropertyDeclaration = new ConceptPresentationBuilder().icon("property.png", ConceptPresentationAspectImpl.class).create();
+  private final ConceptPresentation props_LinkDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0p).create();
+  private final ConceptPresentation props_PrimitiveDataTypeDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0q).create();
+  private final ConceptPresentation props_PropertyDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0r).create();
   private final ConceptPresentation props_ReferenceLinkDeclartionScopeKind = new ConceptPresentationBuilder().create();
 
   @Override

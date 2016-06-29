@@ -24,6 +24,7 @@ import jetbrains.mps.util.SNodeOperations;
 
 public class BuildAllIntentions_Action extends BaseAction {
   private static final Icon ICON = null;
+
   public BuildAllIntentions_Action() {
     super("Rebuild All Intentions", "", ICON);
     this.setIsAlwaysVisible(false);
