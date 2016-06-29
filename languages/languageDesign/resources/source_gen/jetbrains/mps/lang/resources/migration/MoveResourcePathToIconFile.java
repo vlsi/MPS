@@ -13,6 +13,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.migration.runtime.base.Problem;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.migration.runtime.base.NotMigratedNode;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 
 public class MoveResourcePathToIconFile extends MigrationScriptBase {
@@ -43,6 +46,30 @@ public class MoveResourcePathToIconFile extends MigrationScriptBase {
       });
     }
     return null;
+  }
+  @Override
+  public Iterable<Problem> check(SModule m) {
+    {
+      final SearchScope scope = CommandUtil.createScope(m);
+      QueryExecutionContext context = new QueryExecutionContext() {
+        public SearchScope getDefaultSearchScope() {
+          return scope;
+        }
+      };
+      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.FileIcon"))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return isNotEmptyString(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, 0x7c8b08a50a39c6cbL, "path")));
+        }
+      }).select(new ISelector<SNode, NotMigratedNode>() {
+        public NotMigratedNode select(SNode it) {
+          return new NotMigratedNode(it) {
+            public String getMessage() {
+              return "Path property is not empty";
+            }
+          };
+        }
+      });
+    }
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x982eb8df2c964bd7L, 0x996311712ea622e5L, "jetbrains.mps.lang.resources"), 0);
