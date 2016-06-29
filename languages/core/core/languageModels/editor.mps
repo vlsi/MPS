@@ -105,11 +105,15 @@
       <concept id="3383245079137382180" name="jetbrains.mps.lang.editor.structure.StyleClass" flags="ig" index="14StLt">
         <child id="3383245079137422296" name="dominates" index="14Sbyx" />
       </concept>
+      <concept id="8998492695583125082" name="jetbrains.mps.lang.editor.structure.SubstituteFeature_MatchingText" flags="ng" index="16NfWO">
+        <child id="8998492695583129244" name="query" index="16NeZM" />
+      </concept>
+      <concept id="8998492695583129971" name="jetbrains.mps.lang.editor.structure.SubstituteFeature_DescriptionText" flags="ng" index="16NL0t">
+        <child id="8998492695583129972" name="query" index="16NL0q" />
+      </concept>
       <concept id="1154465273778" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_ParentNode" flags="nn" index="3bvxqY" />
       <concept id="7342352913006985483" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Action" flags="ng" index="3eGOop">
         <child id="8612453216082699922" name="substituteHandler" index="3aKz83" />
-        <child id="8612453216082701760" name="matchingText" index="3aKz_h" />
-        <child id="8612453216082701764" name="descriptionText" index="3aKz_l" />
       </concept>
       <concept id="414384289274418283" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Group" flags="ng" index="3ft6gV">
         <child id="414384289274424750" name="condition" index="3ft5RY" />
@@ -911,57 +915,61 @@
               </node>
             </node>
           </node>
-          <node concept="uGdhv" id="6D0QE9BxHq4" role="3aKz_h">
-            <node concept="3clFbS" id="6D0QE9BxHq6" role="2VODD2">
-              <node concept="3clFbF" id="2jnOeKLamaK" role="3cqZAp">
-                <node concept="2OqwBi" id="2jnOeKLampa" role="3clFbG">
-                  <node concept="2ZBlsa" id="2jnOeKLamaJ" role="2Oq$k0" />
-                  <node concept="liA8E" id="2jnOeKLamH8" role="2OqNvi">
-                    <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
+          <node concept="16NfWO" id="7Nx4mSUpKRY" role="upBLP">
+            <node concept="uGdhv" id="7Nx4mSUpLd$" role="16NeZM">
+              <node concept="3clFbS" id="7Nx4mSUpLdA" role="2VODD2">
+                <node concept="3clFbF" id="2jnOeKLamaK" role="3cqZAp">
+                  <node concept="2OqwBi" id="2jnOeKLampa" role="3clFbG">
+                    <node concept="2ZBlsa" id="2jnOeKLamaJ" role="2Oq$k0" />
+                    <node concept="liA8E" id="2jnOeKLamH8" role="2OqNvi">
+                      <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
+                    </node>
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="uGdhv" id="6D0QE9BxMgK" role="3aKz_l">
-            <node concept="3clFbS" id="6D0QE9BxMgM" role="2VODD2">
-              <node concept="3cpWs8" id="2jnOeKLan3d" role="3cqZAp">
-                <node concept="3cpWsn" id="2jnOeKLan3c" role="3cpWs9">
-                  <property role="3TUv4t" value="false" />
-                  <property role="TrG5h" value="fqName" />
-                  <node concept="3uibUv" id="2jnOeKLan3e" role="1tU5fm">
-                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                  </node>
-                  <node concept="2OqwBi" id="3FNV1f3zfbL" role="33vP2m">
-                    <node concept="2OqwBi" id="3FNV1f3zega" role="2Oq$k0">
-                      <node concept="2YIFZM" id="3FNV1f3zdZ5" role="2Oq$k0">
-                        <ref role="37wK5l" to="vndm:~ConceptRegistry.getInstance():jetbrains.mps.smodel.language.ConceptRegistry" resolve="getInstance" />
-                        <ref role="1Pybhc" to="vndm:~ConceptRegistry" resolve="ConceptRegistry" />
-                      </node>
-                      <node concept="liA8E" id="3FNV1f3zeGA" role="2OqNvi">
-                        <ref role="37wK5l" to="vndm:~ConceptRegistry.getConceptDescriptor(org.jetbrains.mps.openapi.language.SAbstractConcept):jetbrains.mps.smodel.runtime.ConceptDescriptor" resolve="getConceptDescriptor" />
-                        <node concept="2ZBlsa" id="3FNV1f3zeTX" role="37wK5m" />
-                      </node>
+          <node concept="16NL0t" id="7Nx4mSUpMnf" role="upBLP">
+            <node concept="uGdhv" id="7Nx4mSUpMGW" role="16NL0q">
+              <node concept="3clFbS" id="7Nx4mSUpMGY" role="2VODD2">
+                <node concept="3cpWs8" id="2jnOeKLan3d" role="3cqZAp">
+                  <node concept="3cpWsn" id="2jnOeKLan3c" role="3cpWs9">
+                    <property role="3TUv4t" value="false" />
+                    <property role="TrG5h" value="fqName" />
+                    <node concept="3uibUv" id="2jnOeKLan3e" role="1tU5fm">
+                      <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                     </node>
-                    <node concept="liA8E" id="3FNV1f3zfxB" role="2OqNvi">
-                      <ref role="37wK5l" to="ze1i:~ConceptDescriptor.getConceptFqName():java.lang.String" resolve="getConceptFqName" />
+                    <node concept="2OqwBi" id="3FNV1f3zfbL" role="33vP2m">
+                      <node concept="2OqwBi" id="3FNV1f3zega" role="2Oq$k0">
+                        <node concept="2YIFZM" id="3FNV1f3zdZ5" role="2Oq$k0">
+                          <ref role="1Pybhc" to="vndm:~ConceptRegistry" resolve="ConceptRegistry" />
+                          <ref role="37wK5l" to="vndm:~ConceptRegistry.getInstance():jetbrains.mps.smodel.language.ConceptRegistry" resolve="getInstance" />
+                        </node>
+                        <node concept="liA8E" id="3FNV1f3zeGA" role="2OqNvi">
+                          <ref role="37wK5l" to="vndm:~ConceptRegistry.getConceptDescriptor(org.jetbrains.mps.openapi.language.SAbstractConcept):jetbrains.mps.smodel.runtime.ConceptDescriptor" resolve="getConceptDescriptor" />
+                          <node concept="2ZBlsa" id="3FNV1f3zeTX" role="37wK5m" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="3FNV1f3zfxB" role="2OqNvi">
+                        <ref role="37wK5l" to="ze1i:~ConceptDescriptor.getConceptFqName():java.lang.String" resolve="getConceptFqName" />
+                      </node>
                     </node>
                   </node>
                 </node>
-              </node>
-              <node concept="3cpWs6" id="2jnOeKLan3h" role="3cqZAp">
-                <node concept="3cpWs3" id="2jnOeKLan3i" role="3cqZAk">
-                  <node concept="Xl_RD" id="2jnOeKLan3j" role="3uHU7B">
-                    <property role="Xl_RC" value="lang: " />
-                  </node>
-                  <node concept="2YIFZM" id="2jnOeKLaqez" role="3uHU7w">
-                    <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
-                    <ref role="37wK5l" to="18ew:~NameUtil.compactNamespace(java.lang.String):java.lang.String" resolve="compactNamespace" />
-                    <node concept="2YIFZM" id="2jnOeKLaqen" role="37wK5m">
+                <node concept="3cpWs6" id="2jnOeKLan3h" role="3cqZAp">
+                  <node concept="3cpWs3" id="2jnOeKLan3i" role="3cqZAk">
+                    <node concept="Xl_RD" id="2jnOeKLan3j" role="3uHU7B">
+                      <property role="Xl_RC" value="lang: " />
+                    </node>
+                    <node concept="2YIFZM" id="2jnOeKLaqez" role="3uHU7w">
+                      <ref role="37wK5l" to="18ew:~NameUtil.compactNamespace(java.lang.String):java.lang.String" resolve="compactNamespace" />
                       <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
-                      <ref role="37wK5l" to="18ew:~NameUtil.namespaceFromConceptFQName(java.lang.String):java.lang.String" resolve="namespaceFromConceptFQName" />
-                      <node concept="37vLTw" id="2jnOeKLan3m" role="37wK5m">
-                        <ref role="3cqZAo" node="2jnOeKLan3c" resolve="fqName" />
+                      <node concept="2YIFZM" id="2jnOeKLaqen" role="37wK5m">
+                        <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                        <ref role="37wK5l" to="18ew:~NameUtil.namespaceFromConceptFQName(java.lang.String):java.lang.String" resolve="namespaceFromConceptFQName" />
+                        <node concept="37vLTw" id="2jnOeKLan3m" role="37wK5m">
+                          <ref role="3cqZAo" node="2jnOeKLan3c" resolve="fqName" />
+                        </node>
                       </node>
                     </node>
                   </node>
