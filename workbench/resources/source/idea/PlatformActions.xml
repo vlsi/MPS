@@ -221,7 +221,9 @@
       <action id="Diff.ComparePartial.Left.Right" class="com.intellij.openapi.actionSystem.EmptyAction" icon="AllIcons.Diff.BranchDiff"/>
       <separator/>
 
+      <!-- MPS Patch to avoid collision with Duplicate Node action TODO: find way to avoid this!!!
       <action id="CompareDirs" class="com.intellij.diff.actions.CompareFilesAction" text="Compare Directories" use-shortcut-of="CompareTwoFiles"/>
+      -->
 
       <separator/>
       <add-to-group group-id="Vcs.KeymapGroup"/>
