@@ -25,11 +25,13 @@ import org.jetbrains.mps.openapi.util.Processor;
 import javax.imageio.ImageIO;
 import javax.imageio.stream.ImageOutputStream;
 import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 
 public class IconCreationUtil {
   protected static Logger LOG = LogManager.getLogger(IconCreationUtil.class);
@@ -40,6 +42,14 @@ public class IconCreationUtil {
   public static byte[] drawIcon(Consumer<DrawContext> drawer) {
     BufferedImage image = new BufferedImage(DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE, BufferedImage.TYPE_INT_ARGB);
     Graphics2D g = image.createGraphics();
+    RenderingHints rh = new RenderingHints(new HashMap());
+    rh.put(RenderingHints.KEY_ALPHA_INTERPOLATION,RenderingHints.VALUE_ALPHA_INTERPOLATION_QUALITY);
+    rh.put(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
+    rh.put(RenderingHints.KEY_COLOR_RENDERING,RenderingHints.VALUE_COLOR_RENDER_QUALITY);
+    rh.put(RenderingHints.KEY_FRACTIONALMETRICS,RenderingHints.VALUE_FRACTIONALMETRICS_ON);
+    rh.put(RenderingHints.KEY_RENDERING,RenderingHints.VALUE_RENDER_QUALITY);
+    rh.put(RenderingHints.KEY_TEXT_ANTIALIASING,RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+    g.setRenderingHints(rh);
     drawer.consume(new DrawContext(g, DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE));
     g.dispose();
     try {
