@@ -38,11 +38,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getModule;
 import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperationContext;
@@ -176,6 +179,25 @@ public class ModelConstraints {
     return new OkReferenceDescriptor(
         MetaAdapterByDeclaration.getInstanceConcept(smartConcept), SModelUtil.getGenuineLinkRole(smartReference), // sourceNodeConcept, genuineRole
         false, role, index, null, SModelUtil.getLinkDeclarationTarget(smartReference), enclosingNode, linkDeclaration, // parameters
+        null // reference
+    );
+  }
+
+  @NotNull
+  public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable SContainmentLink link, int index, @NotNull SConcept smartConcept, SRepository repository) {
+    SReferenceLink smartReference = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
+    if (smartReference == null) {
+      return new ErrorReferenceDescriptor("smartConcept has no characteristic reference: " + smartConcept.getName());
+    }
+    SNodeReference sourceNode = smartReference.getTargetConcept().getSourceNode();
+    if (sourceNode == null) {
+      return new ErrorReferenceDescriptor("smartConcept has no source node: " + smartConcept.getName());
+    }
+    SNode linkDeclaration = link == null ? null : link.getDeclarationNode();
+    String role = link == null ? null : link.getName();
+    return new OkReferenceDescriptor(
+        smartConcept, smartReference.getName(), // sourceNodeConcept, genuineRole
+        false, role, index, null, sourceNode.resolve(repository), enclosingNode, linkDeclaration, // parameters
         null // reference
     );
   }

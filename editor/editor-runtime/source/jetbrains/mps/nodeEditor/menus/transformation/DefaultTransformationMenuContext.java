@@ -17,7 +17,7 @@ package jetbrains.mps.nodeEditor.menus.transformation;
 
 import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
 import jetbrains.mps.nodeEditor.menus.CircularReferenceSafeMenuItemFactory;
-import jetbrains.mps.nodeEditor.menus.MenuContextUtil;
+import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
@@ -27,12 +27,8 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -61,7 +57,7 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
 
   @NotNull
   public static DefaultTransformationMenuContext createInitialContextForNode(EditorContext editorContext, SNode node, @NotNull String menuLocation) {
-    return new DefaultTransformationMenuContext(new CircularReferenceSafeMenuItemFactory<>(MenuContextUtil.getUsedLanguages(node)), menuLocation, editorContext,
+    return new DefaultTransformationMenuContext(new CircularReferenceSafeMenuItemFactory<>(MenuUtil.getUsedLanguages(node)), menuLocation, editorContext,
         node);
   }
 

@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -68,7 +69,7 @@ public class NodePresentationUtil {
     return m;
   }
 
-  public static String matchingText(SConcept concept, boolean referentPresentation) {
+  public static String matchingText(SAbstractConcept concept, boolean referentPresentation) {
     if (!referentPresentation && !concept.getConceptAlias().isEmpty()) {
       return concept.getConceptAlias();
     }

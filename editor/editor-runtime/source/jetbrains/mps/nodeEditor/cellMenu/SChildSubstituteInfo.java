@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
+import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.CopyUtil;
@@ -40,6 +41,7 @@ public class SChildSubstituteInfo extends AbstractSubstituteInfo {
   private SNode myParentNode;
   private SNode myCurrentChild;
 
+  //todo remove
   public SChildSubstituteInfo(EditorCell editorCell) {
     super(editorCell);
   }
@@ -53,7 +55,7 @@ public class SChildSubstituteInfo extends AbstractSubstituteInfo {
 
   @Override
   protected DefaultTransformationMenuContext createTransformationContext() {
-    return DefaultTransformationMenuContext.createInitialContextForCell(getEditorCell(), SUBSTITUTE);
+    return DefaultTransformationMenuContext.createInitialContextForCell(getEditorCell(), MenuLocations.SUBSTITUTE);
   }
 
   @Override

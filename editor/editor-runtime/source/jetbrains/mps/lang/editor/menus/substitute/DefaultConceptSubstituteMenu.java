@@ -16,16 +16,12 @@
 package jetbrains.mps.lang.editor.menus.substitute;
 
 import jetbrains.mps.lang.editor.menus.MenuPart;
-import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
-import jetbrains.mps.smodel.ConceptDescendantsCache;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -40,24 +36,6 @@ public class DefaultConceptSubstituteMenu extends SubstituteMenuBase {
 
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(SubstituteMenuContext context) {
-    List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<>();
-    if (!myConcept.isAbstract()) {
-      result.add(new SingleItemMenuPart<SubstituteMenuItem, SubstituteMenuContext>() {
-        @Nullable
-        @Override
-        protected SubstituteMenuItem createItem(SubstituteMenuContext context) {
-          return new DefaultSubstituteMenuItem(myConcept, context.getParentNode(), context.getCurrentChild());
-        }
-      });
-    }
-    result.add(new DefaultConceptMenusSubstituteMenuPart() {
-      @Override
-      protected Collection<SAbstractConcept> getConcepts(SubstituteMenuContext context) {
-        return ConceptDescendantsCache.getInstance().getDirectDescendants(myConcept);
-      }
-    });
-    return result;
+    return Collections.singletonList(new DefaultConceptSubstituteMenuPart(myConcept));
   }
-
-
 }

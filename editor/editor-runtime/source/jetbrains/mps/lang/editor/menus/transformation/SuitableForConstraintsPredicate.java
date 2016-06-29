@@ -17,6 +17,8 @@ package jetbrains.mps.lang.editor.menus.transformation;
 
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -28,26 +30,32 @@ import java.util.function.Predicate;
  * @author simon
  */
 public class SuitableForConstraintsPredicate implements Predicate<SubstituteMenuItem> {
+  @NotNull
   private final SNode myParentNode;
-  private final SContainmentLink myLink;
+
+  @NotNull
   private final SRepository myRepository;
 
-  public SuitableForConstraintsPredicate(SNode parentNode, SContainmentLink link, SRepository repository) {
+  @Nullable
+  private final SNode myLinkDeclarationNode;
+
+  public SuitableForConstraintsPredicate(@NotNull SNode parentNode, @NotNull SContainmentLink link, @NotNull SRepository repository) {
     myParentNode = parentNode;
-    myLink = link;
     myRepository = repository;
+    myLinkDeclarationNode = link.getDeclarationNode();
   }
 
   @Override
   public boolean test(SubstituteMenuItem item) {
-    SNode linkDeclarationNode = myLink.getDeclarationNode();
+    if (myLinkDeclarationNode == null) {
+      return true;
+    }
     SNodeReference sourceNode = item.getOutputConcept().getSourceNode();
-
-    if (linkDeclarationNode == null || sourceNode == null) {
-      return false;
+    if (sourceNode == null) {
+      return true;
     }
     SNode conceptNode = sourceNode.resolve(myRepository);
-    return conceptNode != null && ModelConstraints.canBeParent(myParentNode, conceptNode, linkDeclarationNode, null, null) &&
+    return conceptNode != null && ModelConstraints.canBeParent(myParentNode, conceptNode, myLinkDeclarationNode, null, null) &&
         ModelConstraints.canBeAncestor(myParentNode, null, conceptNode, null);
   }
 }

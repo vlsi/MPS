@@ -28,7 +28,17 @@ import java.util.List;
 /**
  * @author simon
  */
-public abstract class DefaultConceptMenusTransformationMenuPart extends ConceptMenusPart<TransformationMenuItem, TransformationMenuContext> {
+public class DefaultConceptMenusTransformationMenuPart extends ConceptMenusPart<TransformationMenuItem, TransformationMenuContext> {
+  private final Collection<SAbstractConcept> myConcepts;
+
+  public DefaultConceptMenusTransformationMenuPart(Collection<SAbstractConcept> concepts) {
+    myConcepts = concepts;
+  }
+
+  @Override
+  protected Collection<SAbstractConcept> getConcepts(TransformationMenuContext context) {
+    return myConcepts;
+  }
 
   @Override
   protected Collection<TransformationMenuItem> createItemsForConcept(TransformationMenuContext context, SAbstractConcept concept) {

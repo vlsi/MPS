@@ -26,10 +26,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 /**
  * @author simon
  */
-public abstract class SubstituteMenuItemAsCompletionActionItem extends ActionItemBase implements CompletionActionItem {
+abstract class SubstituteMenuItemAsCompletionActionItem extends ActionItemBase implements CompletionActionItem {
   private final SubstituteMenuItem mySubstituteItem;
 
-  public SubstituteMenuItemAsCompletionActionItem(SubstituteMenuItem substituteItem) {
+  SubstituteMenuItemAsCompletionActionItem(SubstituteMenuItem substituteItem) {
     mySubstituteItem = substituteItem;
   }
 
@@ -62,7 +62,7 @@ public abstract class SubstituteMenuItemAsCompletionActionItem extends ActionIte
     return mySubstituteItem.canExecute(pattern);
   }
 
-  protected SubstituteMenuItem getSubstituteItem() {
+  SubstituteMenuItem getSubstituteItem() {
     return mySubstituteItem;
   }
 

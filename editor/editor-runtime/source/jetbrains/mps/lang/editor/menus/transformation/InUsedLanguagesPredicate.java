@@ -15,14 +15,12 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
+import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
-import jetbrains.mps.smodel.constraints.ModelConstraints;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.Collection;
 import java.util.function.Predicate;
 
 /**
@@ -30,13 +28,15 @@ import java.util.function.Predicate;
  */
 class InUsedLanguagesPredicate implements Predicate<SubstituteMenuItem> {
   private final SModel myModel;
+  private final Collection<SLanguage> myUsedLanguages;
 
-  public InUsedLanguagesPredicate(SModel model) {
+  InUsedLanguagesPredicate(SModel model) {
     myModel = model;
+    myUsedLanguages = MenuUtil.getUsedLanguages(myModel);
   }
 
   @Override
   public boolean test(SubstituteMenuItem item) {
-    return myModel != null && myModel.getModule().getUsedLanguages().contains(item.getOutputConcept().getLanguage());
+    return myModel != null && myUsedLanguages.contains(item.getOutputConcept().getLanguage());
   }
 }

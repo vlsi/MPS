@@ -40,12 +40,7 @@ public class DefaultConceptMenu extends TransformationMenuBase {
     if (context.getMenuLocation().equals(MenuLocations.SUBSTITUTE)) {
       return Collections.singletonList(new IncludeSubstituteMenuTransformationMenuPart());
     } else {
-      return Collections.singletonList(new DefaultConceptMenusTransformationMenuPart() {
-        @Override
-        protected Collection<SAbstractConcept> getConcepts(TransformationMenuContext context) {
-          return SModelUtil.getDirectSuperConcepts(myConcept);
-        }
-      });
+      return Collections.singletonList(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(myConcept)));
     }
   }
 

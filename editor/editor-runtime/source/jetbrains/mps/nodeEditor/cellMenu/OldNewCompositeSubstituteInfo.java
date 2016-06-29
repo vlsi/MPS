@@ -69,7 +69,7 @@ public class OldNewCompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
     return myNewSubstituteInfo.getInequalitiesSystem(contextCell);
   }
 
-  public boolean isOldSubstituteInfoApplicable() {
+  private boolean isOldSubstituteInfoApplicable() {
     SNode linkDeclarationTarget = SModelUtil.getLinkDeclarationTarget(myOldSubstituteInfo.getLinkDeclaration());
     SModel model = linkDeclarationTarget.getModel();
     if (model == null) {

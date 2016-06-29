@@ -18,6 +18,7 @@ package jetbrains.mps.openapi.editor.menus.substitute;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -29,9 +30,16 @@ import java.util.List;
  * @author simon
  */
 public interface SubstituteMenuContext {
+  @NotNull
   EditorContext getEditorContext();
-  SContainmentLink getLink();
+
+  @NotNull
   SNode getParentNode();
+
+  @Nullable
+  SContainmentLink getLink();
+
+  @Nullable
   SNode getCurrentChild();
   /**
    * Creates applicable menu items from the menus returned by {@code menuLookup}. If menuLookup is null, creates the default menu lookup.

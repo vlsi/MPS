@@ -25,6 +25,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 /**
  * @author simon
  */
+
+
+//todo remove
 public class OldChildNodeSubstituteInfoHolder {
   private DefaultChildSubstituteInfo mySubstituteInfo;
 

@@ -40,7 +40,7 @@ public class ParameterizedMenuPart<ParamT, ItemT, ContextT> implements MenuPart<
   }
 
   @NotNull
-  protected List<? extends ParamT> getParameters(ContextT context) {
+  protected Iterable<? extends ParamT> getParameters(ContextT context) {
     return Collections.emptyList();
   }
 }

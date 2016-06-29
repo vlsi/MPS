@@ -17,8 +17,7 @@ package jetbrains.mps.nodeEditor.menus.substitute;
 
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.nodeEditor.menus.CircularReferenceSafeMenuItemFactory;
-import jetbrains.mps.nodeEditor.menus.MenuContextUtil;
-import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
+import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
@@ -27,14 +26,9 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -94,7 +88,7 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   @NotNull
   public static DefaultSubstituteMenuContext createInitialContextForNode(SContainmentLink containmentLink, SNode parentNode,
       SNode currentChild, EditorContext editorContext) {
-    return new DefaultSubstituteMenuContext(new CircularReferenceSafeMenuItemFactory<>(MenuContextUtil.getUsedLanguages(parentNode)), containmentLink, parentNode, currentChild, editorContext);
+    return new DefaultSubstituteMenuContext(new CircularReferenceSafeMenuItemFactory<>(MenuUtil.getUsedLanguages(parentNode)), containmentLink, parentNode, currentChild, editorContext);
   }
   @Override
   public int hashCode() {

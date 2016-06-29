@@ -15,13 +15,22 @@
  */
 package jetbrains.mps.lang.editor.menus.substitute;
 
+import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.smodel.runtime.ConceptPresentation;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.smodel.runtime.IconResource;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * @author simon
@@ -30,11 +39,13 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
   private final SNode myParentNode;
   private final SNode myCurrentChild;
   private SAbstractConcept myConcept;
+  private final SRepository myRepository;
 
-  public DefaultSubstituteMenuItem(SAbstractConcept concept, SNode parentNode, SNode currentChild) {
+  public DefaultSubstituteMenuItem(SAbstractConcept concept, SNode parentNode, SNode currentChild, SRepository repository) {
     myConcept = concept;
     myParentNode = parentNode;
     myCurrentChild = currentChild;
+    myRepository = repository;
   }
 
   @Override
@@ -49,11 +60,7 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
 
   @Override
   public String getMatchingText(String pattern) {
-    if (myConcept instanceof SConcept) {
-      return NodePresentationUtil.matchingText(((SConcept) myConcept), false);
-    }
-    //todo...
-    return "";
+    return NodePresentationUtil.matchingText(myConcept, false);
   }
 
   @Override
@@ -77,7 +84,7 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
 
   @Override
   public IconResource getIcon(String pattern) {
-    return null;
+    return MenuUtil.getIconResourceForConcept(myConcept);
   }
 
   @Override

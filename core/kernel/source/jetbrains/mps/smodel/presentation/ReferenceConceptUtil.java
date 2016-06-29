@@ -114,7 +114,7 @@ public class ReferenceConceptUtil {
     Iterable<SReferenceLink> links = concept.getReferenceLinks();
     if (expectedReferentRole != null) {
       for (SReferenceLink link : links) {
-        if (expectedReferentRole.equals(link.getRoleName())) {
+        if (expectedReferentRole.equals(link.getName())) {
           return link;
         }
       }
