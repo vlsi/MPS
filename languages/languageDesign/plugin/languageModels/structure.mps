@@ -712,9 +712,10 @@
       <ref role="PrY4T" to="4j10:4cWf37B8oWS" resolve="ICheckedNamePolicy" />
     </node>
     <node concept="1TJgyi" id="hByz$4F" role="1TKVEl">
-      <property role="TrG5h" value="icon" />
+      <property role="TrG5h" value="iconPath" />
       <property role="IQ2nx" value="1210686783787" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+      <node concept="asaX9" id="XPkXgFePpT" role="lGtFl" />
     </node>
     <node concept="1TJgyi" id="1msw07ZFuCh" role="1TKVEl">
       <property role="TrG5h" value="helpTopic" />
@@ -748,6 +749,12 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1210686956582" />
       <ref role="20lvS9" node="hBy$hoc" resolve="PreferencePageCommitBlock" />
+    </node>
+    <node concept="1TJgyj" id="XPkXgFePpN" role="1TKVEi">
+      <property role="IQ2ns" value="1113888653567546995" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="icon" />
+      <ref role="20lvS9" to="1oap:2p1v3tOa9VI" resolve="Icon" />
     </node>
   </node>
   <node concept="1TIwiD" id="hByzWbQ">

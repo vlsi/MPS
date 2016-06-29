@@ -107,7 +107,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_PinTabOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PluginDependency = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PopupCreator = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PreferencePage = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_PreferencePage = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e269a79fL, 0x119e28e412bL, "iconPath"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e269a79fL, 0x159c8001ffadea11L, "helpTopic")).create();
   private final ConceptPresentation props_PreferencePageCommitBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PreferencePageIsModifiedBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PreferencePageResetBlock = new ConceptPresentationBuilder().create();

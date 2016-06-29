@@ -173,7 +173,9 @@
       <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
         <child id="3542851458883491298" name="languageId" index="2V$M_3" />
       </concept>
-      <concept id="1138757581985" name="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" flags="nn" index="zfrQC" />
+      <concept id="1138757581985" name="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" flags="nn" index="zfrQC">
+        <reference id="1139880128956" name="concept" index="1A9B2P" />
+      </concept>
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
@@ -1140,10 +1142,12 @@
                                   <ref role="3Tt5mk" to="tpce:5vfjF5cjTVP" />
                                 </node>
                               </node>
-                              <node concept="zfrQC" id="4qBHWh_rFp3" role="2OqNvi" />
+                              <node concept="zfrQC" id="4qBHWh_rFp3" role="2OqNvi">
+                                <ref role="1A9B2P" to="1oap:7Mb2akaesqV" resolve="FileIcon" />
+                              </node>
                             </node>
-                            <node concept="3TrcHB" id="4qBHWh_rO24" role="2OqNvi">
-                              <ref role="3TsBF5" to="1oap:7Mb2akaesrb" resolve="path" />
+                            <node concept="3TrcHB" id="XPkXgFhaJi" role="2OqNvi">
+                              <ref role="3TsBF5" to="1oap:2p1v3tOafqN" resolve="file" />
                             </node>
                           </node>
                           <node concept="37vLTw" id="4qBHWh_ssBi" role="37vLTx">
