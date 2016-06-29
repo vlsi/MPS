@@ -54,12 +54,7 @@ public class OverrideImplementMethodInEnumConstantAction {
       }
     });
 
-    final OverrideImplementMethodsDialog dialog = new OverrideImplementMethodsDialog(methods, ProjectHelper.toIdeaProject(myProject)) {
-      @Override
-      protected boolean showInsertOverride() {
-        return myIsOverride;
-      }
-    };
+    final OverrideImplementMethodsDialog dialog = new OverrideImplementMethodsDialog(methods, ProjectHelper.toIdeaProject(myProject));
 
     dialog.setTitle((myIsOverride ? "Select Methods to Override" : "Select Methods to Implement"));
     dialog.show();

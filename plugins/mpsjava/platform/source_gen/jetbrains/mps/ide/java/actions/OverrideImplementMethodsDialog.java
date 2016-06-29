@@ -41,14 +41,9 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
     myAddReturn.setMnemonic('r');
     myRemoveAttributes = new NonFocusableCheckBox("Remove Attributes");
     myRemoveAttributes.setMnemonic('t');
-    myInsertOverride = (showInsertOverride() ? new NonFocusableCheckBox("Insert @Override") : null);
-    myOptionControls = (showInsertOverride() ? new JCheckBox[]{myAddReturn, myRemoveAttributes, myInsertOverride} : new JCheckBox[]{myAddReturn, myRemoveAttributes});
-    if (myInsertOverride != null) {
-      myInsertOverride.setMnemonic('O');
-    }
-  }
-  protected boolean showInsertOverride() {
-    return true;
+    myInsertOverride = new NonFocusableCheckBox("Insert @Override");
+    myOptionControls = new JCheckBox[]{myAddReturn, myRemoveAttributes, myInsertOverride};
+    myInsertOverride.setMnemonic('O');
   }
   @Override
   protected String getText(SNode node) {
@@ -61,12 +56,10 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
   protected void customizeOptionsPanel() {
     myAddReturn.setSelected((myOptions != null ? myOptions.addReturnsOnImplement : false));
     myRemoveAttributes.setSelected((myOptions != null ? myOptions.removeAttributes : true));
-    if (myInsertOverride != null) {
-      myInsertOverride.setSelected((myOptions != null ? myOptions.addOverrideAnnotation : true));
-    }
+    myInsertOverride.setSelected((myOptions != null ? myOptions.addOverrideAnnotation : true));
   }
   public boolean isInsertOverrideAnnotation() {
-    return (myInsertOverride != null ? myInsertOverride.isSelected() : false);
+    return myInsertOverride.isSelected();
   }
   public boolean isAddReturn() {
     return myAddReturn.isSelected();
@@ -77,9 +70,7 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
   @Override
   public void dispose() {
     if (myOptions != null) {
-      if (myInsertOverride != null) {
-        myOptions.addOverrideAnnotation = myInsertOverride.isSelected();
-      }
+      myOptions.addOverrideAnnotation = myInsertOverride.isSelected();
       myOptions.addReturnsOnImplement = myAddReturn.isSelected();
       myOptions.removeAttributes = myRemoveAttributes.isSelected();
     }
@@ -99,7 +90,7 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
           String aRole = SNodeOperations.getContainingLinkRole(a);
           String bRole = SNodeOperations.getContainingLinkRole(b);
 
-          if (neq_sivw9t_a0d0c0a0a0a0d0n(aRole, bRole)) {
+          if (neq_sivw9t_a0d0c0a0a0a0d0m(aRole, bRole)) {
             return aRole.compareTo(bRole);
           }
 
@@ -123,7 +114,7 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
       }
     }).toGenericArray(SNodeReference.class);
   }
-  private static boolean neq_sivw9t_a0d0c0a0a0a0d0n(Object a, Object b) {
+  private static boolean neq_sivw9t_a0d0c0a0a0a0d0m(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }
