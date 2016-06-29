@@ -143,7 +143,7 @@ public class ModuleClassLoader extends ClassLoader {
     return aClass;
   }
 
-  private Class<?> loadFromSelf(String fqName) throws ClassNotFoundException {
+  private synchronized Class<?> loadFromSelf(String fqName) throws ClassNotFoundException {
     Class<?> aClass = getClassFromCache(fqName);
     if (aClass != null) {
       return aClass;
