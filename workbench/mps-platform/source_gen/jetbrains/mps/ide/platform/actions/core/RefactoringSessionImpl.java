@@ -16,7 +16,6 @@ import org.apache.log4j.LogManager;
 public class RefactoringSessionImpl implements RefactoringSession {
 
   private List<Runnable> myChanges = ListSequence.fromList(new ArrayList<Runnable>());
-  private List<Runnable> myClosingChanges = ListSequence.fromList(new ArrayList<Runnable>());
 
   private Map<String, Object> myObjects = MapSequence.fromMap(new HashMap<String, Object>());
 
@@ -29,12 +28,9 @@ public class RefactoringSessionImpl implements RefactoringSession {
   public void registerChange(Runnable change) {
     ListSequence.fromList(myChanges).addElement(change);
   }
-  public void registerLast(Runnable change) {
-    ListSequence.fromList(myClosingChanges).addElement(change);
-  }
 
-  public void close() {
-    for (Runnable change : ListSequence.fromList(myChanges).concat(ListSequence.fromList(myClosingChanges))) {
+  public void performAllRegistered() {
+    for (Runnable change : ListSequence.fromList(myChanges)) {
       try {
         change.run();
       } catch (Throwable e) {

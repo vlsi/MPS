@@ -26,7 +26,7 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
   interface RefactoringDataCollector<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
     /**
      * 
-     * @return null if participant ignores the node
+     * @return null => participant ignores the node
      */
     @Nullable
     InitialDataObject beforeMove(InitialPoint nodeToMove);
@@ -118,11 +118,10 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
     }
   }
 
-  class ParticipantState<I, F, IP, FP, IS, FS> {
+  class ParticipantApplied<I, F, IP, FP, IS, FS> {
     private RefactoringParticipant<I, F, IP, FP> myParticipant;
     private List<I> myInitialStates;
     private List<List<RefactoringParticipant.Change<I, F>>> changes;
-    private RefactoringParticipant.ParticipantStateFactory<IP, FP, IS, FS> myFactory;
     public List<List<RefactoringParticipant.Change<I, F>>> getChanges() {
       return changes;
     }
@@ -132,11 +131,10 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
     public List<I> getInitialStates() {
       return myInitialStates;
     }
-    public static <I, F, IP, FP, IS, FS> RefactoringParticipant.ParticipantState<I, F, IP, FP, IS, FS> create(RefactoringParticipant.ParticipantStateFactory<IP, FP, IS, FS> factory, RefactoringParticipant<I, F, IP, FP> participant, List<IS> oldNodes) {
-      return new RefactoringParticipant.ParticipantState<I, F, IP, FP, IS, FS>(factory, participant, oldNodes);
+    public static <I, F, IP, FP, IS, FS> RefactoringParticipant.ParticipantApplied<I, F, IP, FP, IS, FS> create(RefactoringParticipant.ParticipantStateFactory<IP, FP, IS, FS> factory, RefactoringParticipant<I, F, IP, FP> participant, List<IS> oldNodes) {
+      return new RefactoringParticipant.ParticipantApplied<I, F, IP, FP, IS, FS>(factory, participant, oldNodes);
     }
-    public ParticipantState(final RefactoringParticipant.ParticipantStateFactory<IP, FP, IS, FS> factory, final RefactoringParticipant<I, F, IP, FP> participant, List<IS> oldNodes) {
-      myFactory = factory;
+    public ParticipantApplied(final RefactoringParticipant.ParticipantStateFactory<IP, FP, IS, FS> factory, final RefactoringParticipant<I, F, IP, FP> participant, List<IS> oldNodes) {
       this.myParticipant = participant;
       myInitialStates = ListSequence.fromList(oldNodes).select(new ISelector<IS, I>() {
         public I select(IS it) {
@@ -174,7 +172,7 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
         }
       });
     }
-    public void doRefactor(List<FS> newNodes, final SRepository repository, final RefactoringSession session) {
+    public void doRefactor(List<FS> newNodes, final SRepository repository, final RefactoringSession session, RefactoringParticipant.ParticipantStateFactory<IP, FP, IS, FS> factory) {
       {
         Iterator<List<RefactoringParticipant.Change<I, F>>> nodeChanges_it = ListSequence.fromList(this.changes).iterator();
         Iterator<FS> newNode_it = ListSequence.fromList(newNodes).iterator();
@@ -183,7 +181,7 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
         while (nodeChanges_it.hasNext() && newNode_it.hasNext()) {
           nodeChanges_var = nodeChanges_it.next();
           newNode_var = newNode_it.next();
-          final F finalState = myFactory.getFinal(myParticipant, newNode_var);
+          final F finalState = factory.getFinal(myParticipant, newNode_var);
           ListSequence.fromList(nodeChanges_var).visitAll(new IVisitor<RefactoringParticipant.Change<I, F>>() {
             public void visit(RefactoringParticipant.Change<I, F> it) {
               it.confirm(finalState, repository, session);

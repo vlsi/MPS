@@ -24,7 +24,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
-import jetbrains.mps.ide.platform.actions.core.MoveNodesActionBase;
+import jetbrains.mps.ide.platform.actions.core.MoveNodesUtil;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class UpdateLocalInstancesParticipant<I, F> extends RefactoringParticipantBase<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>, SNode, SNode> implements MoveNodeRefactoringParticipant<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>> {
@@ -102,7 +102,7 @@ public class UpdateLocalInstancesParticipant<I, F> extends RefactoringParticipan
             refactoringSession.registerChange(new Runnable() {
               public void run() {
                 SNode node = nodeRef.resolve(repository);
-                MoveNodesActionBase.CopyMapObject copyMap = MoveNodesActionBase.CopyMapObject.getCopyMap(refactoringSession);
+                MoveNodesUtil.NodeCopyTracker copyMap = MoveNodesUtil.NodeCopyTracker.get(refactoringSession);
                 if (node == null || MapSequence.fromMap(copyMap.getCopyMap()).containsKey(node)) {
                   myStructureSpecialization.doReplaceInstance(MapSequence.fromMap(copyMap.getCopyMap()).get(node), initialState._0(), finalState._0());
                 }

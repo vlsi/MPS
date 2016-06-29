@@ -188,7 +188,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesActionBase" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.NodeLocation" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
@@ -249,9 +249,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesAction" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.NodeLocation" />
     <classNode dependClassName="jetbrains.mps.ide.refactoring.SModelReferenceDialog" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -261,10 +260,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConceptUtil" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
@@ -272,7 +269,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesActionBase" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesAction" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveContainmentLinkSpecialization" file="MoveContainmentLinkSpecialization.java">
     <classNode dependClassName="java.lang.Object" />
@@ -314,7 +311,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesAction" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.NodeLocation" />
     <classNode dependClassName="jetbrains.mps.ide.refactoring.MoveUpDialog" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -328,7 +325,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesActionBase" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesAction" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.MovePropertySpecialization" file="MovePropertySpecialization.java">
     <classNode dependClassName="java.lang.Object" />
@@ -632,7 +629,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesActionBase" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />

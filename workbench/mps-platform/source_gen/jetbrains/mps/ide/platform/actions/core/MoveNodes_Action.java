@@ -33,7 +33,7 @@ public class MoveNodes_Action extends BaseAction {
     // if old refactoring is overrided we should execute other action instead 
     boolean oldRefactoringApplicable = RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.core.refactorings" + "." + "MoveNodes"), ((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")));
 
-    if (MoveNodesActionBase.areSiblings(((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository()) && oldRefactoringApplicable) {
+    if (MoveNodesUtil.areSiblings(((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository()) && oldRefactoringApplicable) {
       MoveNodesAction refactoring = MoveNodesActionHelper.getRefactoring(((MPSProject) MapSequence.fromMap(_params).get("project")), ((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")));
       event.getPresentation().setText(refactoring.getName());
       event.getPresentation().setEnabled(true);

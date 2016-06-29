@@ -39,7 +39,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
-import jetbrains.mps.ide.platform.actions.core.MoveNodesActionBase;
+import jetbrains.mps.ide.platform.actions.core.MoveNodesUtil;
 
 public abstract class UpdateReferencesParticipantBase<T> extends RefactoringParticipantBase<UpdateReferencesParticipantBase.NodeData<T>, UpdateReferencesParticipantBase.NodeData<T>, SNode, SNode> implements MoveNodeRefactoringParticipant<UpdateReferencesParticipantBase.NodeData<T>, UpdateReferencesParticipantBase.NodeData<T>>, RefactoringParticipant.PersistentRefactoringParticipant<UpdateReferencesParticipantBase.NodeData<T>, UpdateReferencesParticipantBase.NodeData<T>, SNode, SNode> {
 
@@ -221,7 +221,7 @@ public abstract class UpdateReferencesParticipantBase<T> extends RefactoringPart
     }).toListSequence();
   }
   protected boolean shouldUpdateReference(SRepository repository, final SNode containingNode, final SReferenceLink role, SNode movingNode, RefactoringSession refactoringSession) {
-    MoveNodesActionBase.CopyMapObject copyMap = MoveNodesActionBase.CopyMapObject.getCopyMap(refactoringSession);
+    MoveNodesUtil.NodeCopyTracker copyMap = MoveNodesUtil.NodeCopyTracker.get(refactoringSession);
     if (containingNode == null) {
       return false;
     }

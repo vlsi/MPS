@@ -156,7 +156,6 @@
       <node id="4331048896013601674" at="8,0,9,0" concept="7" trace="putObject#(Ljava/lang/String;Ljava/lang/Object;)V" />
       <node id="4331048896013599198" at="9,0,10,0" concept="7" trace="getObject#(Ljava/lang/String;)Ljava/lang/Object;" />
       <node id="4331048896013536732" at="11,0,12,0" concept="7" trace="registerChange#(Ljava/lang/Runnable;)V" />
-      <node id="1338543836749212158" at="12,0,13,0" concept="7" trace="registerLast#(Ljava/lang/Runnable;)V" />
       <scope id="4331048896013601674" at="8,0,9,0">
         <var name="id" id="4331048896013601678" />
         <var name="object" id="4331048896013602339" />
@@ -167,10 +166,7 @@
       <scope id="4331048896013536732" at="11,0,12,0">
         <var name="change" id="4331048896013540946" />
       </scope>
-      <scope id="1338543836749212158" at="12,0,13,0">
-        <var name="change" id="1338543836749212162" />
-      </scope>
-      <unit id="4331048896013535311" at="6,0,14,0" name="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
+      <unit id="4331048896013535311" at="6,0,13,0" name="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
     </file>
   </root>
   <root nodeRef="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)/5168866961623736013">
