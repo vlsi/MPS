@@ -143,8 +143,8 @@
       <node id="4034578608468854440" at="232,94,233,205" concept="1" />
       <node id="4034578608468854495" at="233,205,234,40" concept="5" />
       <node id="4034578608468854372" at="252,217,253,205" concept="5" />
-      <node id="4034578608469015654" at="258,94,259,405" concept="1" />
-      <node id="4034578608469015660" at="259,405,260,40" concept="5" />
+      <node id="4034578608469015654" at="258,94,259,370" concept="1" />
+      <node id="4034578608469015660" at="259,370,260,40" concept="5" />
       <node id="4034578608469015665" at="278,216,279,239" concept="5" />
       <node id="4034578608468849423" at="252,0,255,0" concept="6" trace="sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_IdeaPluginModule_4034578608468849423#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
       <node id="4034578608469015663" at="278,0,281,0" concept="6" trace="sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_IdeaPluginGroup_4034578608469015663#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />

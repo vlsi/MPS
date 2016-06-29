@@ -59,9 +59,9 @@
       <node id="1145577814145" at="25,75,26,359" concept="1" />
       <node id="1145577814152" at="26,359,27,186" concept="5" />
       <node id="1145577814158" at="27,186,28,241" concept="1" />
-      <node id="1145578426519" at="30,54,31,365" concept="5" />
-      <node id="1145578074915" at="31,365,32,371" concept="5" />
-      <node id="1145579167456" at="32,371,33,219" concept="5" />
+      <node id="1145578426519" at="30,54,31,330" concept="5" />
+      <node id="1145578074915" at="31,330,32,336" concept="5" />
+      <node id="1145579167456" at="32,336,33,219" concept="5" />
       <node id="1206556986910" at="35,54,36,340" concept="1" />
       <node id="1228342379959" at="36,340,37,222" concept="5" />
       <node id="1228342391907" at="37,222,38,44" concept="1" />
@@ -276,9 +276,9 @@
       <node id="1171504714290" at="21,196,22,59" concept="5" />
       <node id="1171504740787" at="22,59,23,51" concept="5" />
       <node id="2898190064848024570" at="23,51,24,202" concept="1" />
-      <node id="1145581354822" at="26,78,27,369" concept="1" />
-      <node id="1145581471717" at="27,369,28,347" concept="1" />
-      <node id="1145581538604" at="28,347,29,351" concept="1" />
+      <node id="1145581354822" at="26,78,27,334" concept="1" />
+      <node id="1145581471717" at="27,334,28,312" concept="1" />
+      <node id="1145581538604" at="28,312,29,316" concept="1" />
       <node id="1145583206278" at="30,197,31,245" concept="1" />
       <node id="1169145112435" at="33,197,34,245" concept="1" />
       <node id="1174262652641" at="36,197,37,245" concept="1" />
@@ -297,7 +297,7 @@
       <node id="1210625449021" at="58,29,59,121" concept="1" />
       <node id="1173117814221" at="61,51,62,589" concept="5" />
       <node id="1176946755123" at="62,589,63,588" concept="5" />
-      <node id="1145583145456" at="29,351,32,5" concept="2" />
+      <node id="1145583145456" at="29,316,32,5" concept="2" />
       <node id="1169145112427" at="32,5,35,5" concept="2" />
       <node id="1174262652634" at="35,5,38,5" concept="2" />
       <node id="1206054637452" at="38,5,41,5" concept="2" />
@@ -316,7 +316,7 @@
         <var name="children1" id="1173117814222" />
         <var name="children2" id="1176946755124" />
       </scope>
-      <scope id="1145583145456" at="29,351,32,5">
+      <scope id="1145583145456" at="29,316,32,5">
         <var name="statement" id="1145583145458" />
       </scope>
       <scope id="1169145112427" at="32,5,35,5">
@@ -626,12 +626,12 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1146260811624">
     <file name="NewNode.java">
       <node id="1166649349905" at="15,38,16,239" concept="5" />
-      <node id="1166649175865" at="16,239,17,356" concept="1" />
-      <node id="1166649357812" at="17,356,18,693" concept="1" />
+      <node id="1166649175865" at="16,239,17,321" concept="1" />
+      <node id="1166649357812" at="17,321,18,623" concept="1" />
       <node id="1166649120556" at="20,36,21,236" concept="5" />
-      <node id="1166649120564" at="21,236,22,367" concept="5" />
-      <node id="1166649120572" at="22,367,23,218" concept="5" />
-      <node id="1166649120578" at="23,218,24,520" concept="5" />
+      <node id="1166649120564" at="21,236,22,332" concept="5" />
+      <node id="1166649120572" at="22,332,23,218" concept="5" />
+      <node id="1166649120578" at="23,218,24,485" concept="5" />
       <node id="1180648478076" at="26,38,27,197" concept="5" />
       <node id="1181945517587" at="27,197,28,252" concept="5" />
       <node id="1181950351648" at="28,252,29,254" concept="5" />
@@ -639,10 +639,10 @@
       <node id="1146260830963" at="15,0,20,0" concept="4" trace="newNode1#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="1166649120551" at="20,0,26,0" concept="4" trace="newNode2#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1180648407741" at="26,0,32,0" concept="4" trace="newNode3#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1146260830967" at="15,38,18,693">
+      <scope id="1146260830967" at="15,38,18,623">
         <var name="newClass" id="1166649349906" />
       </scope>
-      <scope id="1166649120555" at="20,36,24,520">
+      <scope id="1166649120555" at="20,36,24,485">
         <var name="newCondition" id="1166649120565" />
         <var name="newCondition2" id="1166649120573" />
         <var name="newIfStatement" id="1166649120557" />

@@ -45,8 +45,8 @@
   </root>
   <root nodeRef="r:14d9938d-f7ef-4995-a5b9-c40ae14726a7(jetbrains.mps.make.facet.actions)/2191561637326275633">
     <file name="QueriesGenerated.java">
-      <node id="8170824575195153437" at="260,94,261,371" concept="4" />
-      <node id="8170824575195153453" at="261,371,262,40" concept="10" />
+      <node id="8170824575195153437" at="260,94,261,336" concept="4" />
+      <node id="8170824575195153453" at="261,336,262,40" concept="10" />
       <node id="2191561637326275637" at="283,211,284,208" concept="10" />
       <node id="2191561637326275635" at="283,0,286,0" concept="11" trace="sideTransformHintSubstituteActionsBuilder_Precondition_IPropertyExpression_2191561637326275635#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
       <scope id="2191561637326275636" at="283,211,284,208" />

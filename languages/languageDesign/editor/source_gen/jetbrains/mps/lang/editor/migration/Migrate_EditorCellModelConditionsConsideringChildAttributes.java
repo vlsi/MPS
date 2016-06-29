@@ -266,7 +266,7 @@ public class Migrate_EditorCellModelConditionsConsideringChildAttributes extends
   private void replaceNodeWithNotEmptyExpression(SNode nodeToReplace, SNode operand) {
     SNode newExpression = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
     SLinkOperations.setTarget(newExpression, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), operand);
-    SLinkOperations.setNewChild(newExpression, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x111ecf423b7L, "jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation")));
+    SLinkOperations.setNewChild(newExpression, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x111ecf423b7L, "jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation"));
     SNodeOperations.replaceWithAnother(nodeToReplace, newExpression);
 
   }

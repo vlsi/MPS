@@ -1386,8 +1386,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590326(jetbrains.mps.baseLanguage.collections.actions)/8656797459614853041">
     <file name="DefaultNodeFactory_.java">
       <node id="8656797459614518961" at="23,211,24,504" concept="2" />
-      <node id="8656797459614551222" at="24,504,25,377" concept="2" />
-      <node id="8656797459614619464" at="25,377,26,718" concept="2" />
+      <node id="8656797459614551222" at="24,504,25,342" concept="2" />
+      <node id="8656797459614619464" at="25,342,26,718" concept="2" />
       <node id="8656797459614518981" at="26,718,27,573" concept="2" />
       <node id="8656797459614518989" at="27,573,28,1000" concept="2" />
       <node id="8656797459614519018" at="30,43,31,518" concept="8" />

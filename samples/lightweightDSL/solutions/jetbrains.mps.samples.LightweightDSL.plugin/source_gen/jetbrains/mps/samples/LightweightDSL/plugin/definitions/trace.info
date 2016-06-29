@@ -30,8 +30,8 @@
   </root>
   <root nodeRef="r:5e58216d-cd0e-4073-b07e-f427da07ae93(jetbrains.mps.samples.LightweightDSL.plugin.definitions)/8724345312461265566">
     <file name="SwingBuilder_Queries.java">
-      <node id="8445921194412748958" at="17,53,18,391" concept="2" />
-      <node id="8445921194412717448" at="18,391,19,345" concept="0" />
+      <node id="8445921194412748958" at="17,53,18,356" concept="2" />
+      <node id="8445921194412717448" at="18,356,19,345" concept="0" />
       <node id="8445921194412759815" at="19,345,20,171" concept="0" />
       <node id="8445921194412793958" at="20,171,21,347" concept="0" />
       <node id="8445921194412909934" at="23,39,24,604" concept="3" />

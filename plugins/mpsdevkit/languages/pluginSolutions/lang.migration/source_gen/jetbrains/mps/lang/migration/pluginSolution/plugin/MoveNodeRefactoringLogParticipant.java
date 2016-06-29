@@ -192,7 +192,7 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
     }
     public void addOptions(Iterable<RefactoringParticipant.Option> selectedOptions) {
       if ((SLinkOperations.getTarget(myRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x31ee543051f2333cL, "options")) == null)) {
-        SLinkOperations.setNewChild(myRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x31ee543051f2333cL, "options"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x31ee543051f23340L, "jetbrains.mps.lang.migration.structure.RefactoringOptions")));
+        SLinkOperations.setNewChild(myRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x31ee543051f2333cL, "options"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x31ee543051f23340L, "jetbrains.mps.lang.migration.structure.RefactoringOptions"));
       }
       for (RefactoringParticipant.Option option : Sequence.fromIterable(selectedOptions)) {
         if (!(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(myRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x31ee543051f2333cL, "options")), MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x31ee543051f23340L, 0x31ee543051f23346L, "options"))).select(new ISelector<SNode, RefactoringParticipant.Option>() {
