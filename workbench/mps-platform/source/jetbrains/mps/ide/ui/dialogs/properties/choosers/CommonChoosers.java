@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.choosers;
 
+import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -24,6 +26,13 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.List;
 
+/**
+ * Complement class to {@link jetbrains.mps.workbench.goTo.ui.MpsPopupFactory}, with dialogs to support common tasks to pick a model/module/node.
+ * To decide whether you should use a dialog or a {@linkplain jetbrains.mps.workbench.goTo.ui.MpsPopupFactory#createPackagePopup(MPSProject, ChooseByNameModel, String) pop-up}
+ * to pick a value, consider context of the activity. If you're inside a dialog/wizard, do not use pop-ups to enter values. If there's more than one input value,
+ * prefer dialogs (although you can use components that behave similar to pop-ups, {@link jetbrains.mps.workbench.goTo.ui.MpsPopupFactory#createPanelForPackage(Project, ChooseByNameModel, boolean)} ).
+ * If you need an input for a modification action, pop-up might be not the best option either.
+ */
 public class CommonChoosers {
   public static List<SModelReference> showDialogModelCollectionChooser(Project project, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels) {
     ModelSetData data = new ModelSetData(ProjectHelper.fromIdeaProject(project), models, nonProjectModels);

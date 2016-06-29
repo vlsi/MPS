@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,15 @@ import jetbrains.mps.workbench.goTo.matcher.MPSNodeItemProvider;
 import jetbrains.mps.workbench.goTo.matcher.MPSPackageItemProvider;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * Complement class to {@link jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers} with IDEA popup component to pick a named element.
+ * This class gives access to 2 types of components to make a choice, namely 'pop-ups', to use as standalone UI element, and 'panel', to integrate
+ * into complex UI (like a dialog).
+ * <p/>
+ * Unlike dialogs from {@code CommonChoosers}, pop-ups are lightweight components intended primarily for navigation or 'fire and forget' actions.
+ * They are focus-sensitive and disintegrate the moment focus is lost. Do not use them to gather user input in complex scenarios. As a rule of thumb,
+ * pop-ups shall not be used from a dialog, or where an input cancellation has to be processed.
+ */
 public abstract class MpsPopupFactory {
   public static ChooseByNamePopup createNodePopupWithParentAction(Project p, ChooseByNameModel m, @Nullable BaseAction parentAction) {
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(p, m, nodeProvider());
