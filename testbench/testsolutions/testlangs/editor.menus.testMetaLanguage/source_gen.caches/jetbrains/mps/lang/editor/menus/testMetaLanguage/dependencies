@@ -9,6 +9,7 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior.BehaviorAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.testMetaLanguage.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testMetaLanguage.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.StructureAspectDescriptor" />
@@ -16,6 +17,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />

@@ -65,7 +65,6 @@
         <child id="8998492695587447539" name="addConcept" index="16zJet" />
         <child id="8998492695587525119" name="childrenToContributeMenu" index="16$02h" />
         <child id="8998492695587525205" name="childrenForEmptyCell" index="16$0cV" />
-        <child id="8998492695587477489" name="subconcepts" index="16$kqv" />
       </concept>
       <concept id="8998492695587451566" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChildSmartReference" flags="ng" index="16zIf0">
         <reference id="8998492695591019042" name="childToReference" index="16hRdc" />
@@ -267,46 +266,6 @@
       </node>
       <node concept="yd1bK" id="7Nx4mSUDoVZ" role="3cqZAp">
         <node concept="pLAjd" id="7Nx4mSUDoW0" role="yd6KS">
-          <property role="pLAjf" value="VK_ENTER" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="7Nx4mSUDpsv">
-    <property role="TrG5h" value="TestSubstitute_Subconcepts" />
-    <node concept="16zE7j" id="7Nx4mSUDpsw" role="LiRBU">
-      <node concept="LIFWc" id="7Nx4mSUDpsK" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_subconcepts" />
-      </node>
-    </node>
-    <node concept="16zE7j" id="7Nx4mSUDpsy" role="LiZbd">
-      <node concept="16zIf7" id="7Nx4mSUDpsM" role="16$kqv">
-        <node concept="LIFWc" id="7Nx4mSUDs77" role="lGtFl">
-          <property role="ZRATv" value="true" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="0" />
-          <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="property_name" />
-        </node>
-      </node>
-    </node>
-    <node concept="3clFbS" id="7Nx4mSUDps_" role="LjaKd">
-      <node concept="2HxZob" id="7Nx4mSUDpsA" role="3cqZAp">
-        <node concept="1iFQzN" id="7Nx4mSUDpsB" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
-        </node>
-      </node>
-      <node concept="yd1bK" id="7Nx4mSUDpsC" role="3cqZAp">
-        <node concept="pLAjd" id="7Nx4mSUDpsD" role="yd6KS">
-          <property role="pLAjf" value="VK_DOWN" />
-        </node>
-      </node>
-      <node concept="yd1bK" id="7Nx4mSUDpsP" role="3cqZAp">
-        <node concept="pLAjd" id="7Nx4mSUDpsQ" role="yd6KS">
           <property role="pLAjf" value="VK_ENTER" />
         </node>
       </node>

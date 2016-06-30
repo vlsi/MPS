@@ -7,6 +7,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -24,7 +25,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -39,16 +39,18 @@ public class SubstituteMenuReference_Default_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_h77kbg_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createComponent_h77kbg_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_h77kbg_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_h77kbg_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_h77kbg_c0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createComponent_h77kbg_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
+  private EditorCell createConstant_h77kbg_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default substitute menu");
+    editorCell.setCellId("Constant_h77kbg_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.NAVIGATABLE_NODE, 0, SubstituteMenuReference_Default_Editor._StyleParameter_QueryFunction_h77kbg_a0a0(editorContext, node));
     editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SubstituteMenuReference_Default_Editor.ReplaceWith_ISubstituteMenuReference_cellMenu_h77kbg_a0a0()}));
     return editorCell;
   }

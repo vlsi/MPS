@@ -7,6 +7,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
@@ -27,12 +28,14 @@ public class SubstituteMenuReference_Named_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_trrlmo_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createComponent_trrlmo_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_trrlmo_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_trrlmo_b0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createComponent_trrlmo_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
+  private EditorCell createConstant_trrlmo_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "named substitute menu");
+    editorCell.setCellId("Constant_trrlmo_a0");
+    editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SubstituteMenuReference_Named_Editor.ReplaceWith_ISubstituteMenuReference_cellMenu_trrlmo_a0a0()}));
     return editorCell;
   }

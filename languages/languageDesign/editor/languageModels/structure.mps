@@ -4703,12 +4703,6 @@
     <node concept="PrWs8" id="4Sf$XywKhEr" role="PzmwI">
       <ref role="PrY4T" node="4Sf$XywKhwM" resolve="ITransformationMenu" />
     </node>
-    <node concept="PrWs8" id="4Sf$XywKgZU" role="PzmwI">
-      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
-    </node>
-    <node concept="PrWs8" id="3DiRZzA1_mD" role="PzmwI">
-      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
-    </node>
     <node concept="1TJgyj" id="5OVd5tVoa2Z" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="menuReference" />
@@ -4784,7 +4778,7 @@
   <node concept="1TIwiD" id="5OVd5tVffWc">
     <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenuReference_Default" />
-    <property role="34LRSv" value="default menu for &lt;{concept}&gt;" />
+    <property role="34LRSv" value="default menu for &lt;{conceptNew}&gt;" />
     <property role="EcuMT" value="6718020819487620876" />
     <node concept="PrWs8" id="1quYWAD52bF" role="PzmwI">
       <ref role="PrY4T" node="1quYWAD2$71" resolve="IMenuReference_Default" />
@@ -4832,9 +4826,6 @@
     <property role="34LRSv" value="Transformation Menu (Named)" />
     <property role="EcuMT" value="5624877018226904808" />
     <ref role="1TJDcQ" node="4Sf$XywF3UU" resolve="TransformationMenu" />
-    <node concept="PrWs8" id="4Sf$XywHuAY" role="PzmwI">
-      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
-    </node>
     <node concept="PrWs8" id="1quYWAD3$WZ" role="PzmwI">
       <ref role="PrY4T" node="1quYWAD18L6" resolve="IMenu_Named" />
     </node>
@@ -5797,8 +5788,8 @@
     <property role="EcuMT" value="1630016958697343046" />
     <property role="3GE5qa" value="Menu" />
     <property role="TrG5h" value="IMenu" />
-    <node concept="PrWs8" id="1quYWAD18x7" role="PrDN$">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="5PF8FggWUcE" role="PrDN$">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
   </node>
   <node concept="PlHQZ" id="1quYWAD2$6Q">
