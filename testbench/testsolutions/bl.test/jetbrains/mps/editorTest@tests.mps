@@ -53309,7 +53309,22 @@
           <property role="od$2w" value="false" />
           <property role="DiZV1" value="false" />
           <property role="2aFKle" value="false" />
-          <node concept="3clFbS" id="4WLW2of_dI7" role="3clF47" />
+          <node concept="3clFbS" id="4WLW2of_dI7" role="3clF47">
+            <node concept="3clFbF" id="45KKxOnK6k" role="3cqZAp">
+              <node concept="2OqwBi" id="45KKxOnK6h" role="3clFbG">
+                <node concept="10M0yZ" id="45KKxOnK6i" role="2Oq$k0">
+                  <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                  <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+                </node>
+                <node concept="liA8E" id="45KKxOnK6j" role="2OqNvi">
+                  <ref role="37wK5l" to="guwi:~PrintStream.println(int):void" resolve="println" />
+                  <node concept="37vLTw" id="45KKxOnK8B" role="37wK5m">
+                    <ref role="3cqZAo" node="4WLW2of_dNk" resolve="v" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3Tm6S6" id="4WLW2of_dCT" role="1B3o_S" />
           <node concept="3cqZAl" id="4WLW2of_dHX" role="3clF45" />
           <node concept="37vLTG" id="4WLW2of_dNk" role="3clF46">
