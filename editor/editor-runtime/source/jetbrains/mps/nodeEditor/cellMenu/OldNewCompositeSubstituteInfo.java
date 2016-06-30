@@ -35,16 +35,6 @@ public class OldNewCompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
   private final AbstractSubstituteInfo myNewSubstituteInfo;
   private DefaultChildSubstituteInfo myOldSubstituteInfo;
 
-  private OldChildNodeSubstituteInfoHolder myOldSubstituteInfoHolder;
-
-  public OldNewCompositeSubstituteInfo(EditorContext editorContext,
-      AbstractSubstituteInfo newSubstituteInfo, OldChildNodeSubstituteInfoHolder oldSubstituteInfoHolder) {
-    super(editorContext);
-    myNewSubstituteInfo = newSubstituteInfo;
-    myOldSubstituteInfoHolder = oldSubstituteInfoHolder;
-    myOldSubstituteInfo = myOldSubstituteInfoHolder.getSubstituteInfo();
-  }
-
   public OldNewCompositeSubstituteInfo(EditorContext editorContext,
       AbstractSubstituteInfo newSubstituteInfo, DefaultChildSubstituteInfo oldSubstituteInfo) {
     super(editorContext);
