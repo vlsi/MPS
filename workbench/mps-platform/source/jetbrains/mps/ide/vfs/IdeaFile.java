@@ -190,7 +190,7 @@ public class IdeaFile implements IFileEx, CachingFile {
       return !myVirtualFile.isDirectory();
     } else {
       try {
-        VirtualFile directory = createDirs(truncateDirPath(myPath));
+        VirtualFile directory = createDirectories(truncateDirPath(myPath));
         String fileName = truncFileName(myPath);
         directory.findChild(fileName); // This is a workaround for IDEA-67279
         myVirtualFile = directory.createChildData(myFileSystem, fileName);
@@ -202,27 +202,29 @@ public class IdeaFile implements IFileEx, CachingFile {
     }
   }
 
-  //this was copied from Idea. The point of copying is changing the requestor not to get back-events during saving models
-  public VirtualFile createDirs(final String directoryPath) throws IOException {
+  //this was copied from Idea's VfsUtil. The point of copying is changing the requestor not to get back-events during saving models
+  private VirtualFile createDirectories(final String directoryPath) throws IOException {
     return new WriteAction<VirtualFile>() {
       @Override
-      protected void run(Result<VirtualFile> result) throws Throwable {
-        VirtualFile res = createDirsImpl(directoryPath);
+      protected void run(@NotNull Result<VirtualFile> result) throws Throwable {
+        VirtualFile res = createDirectoryIfMissing(directoryPath);
         result.setResult(res);
       }
     }.execute().throwException().getResultObject();
   }
 
-  //this was copied from Idea. The point of copying is changing the requestor not to get back-events during saving models
-  private VirtualFile createDirsImpl(String directoryPath) throws IOException {
+  //this was copied from Idea's VfsUtil. The point of copying is changing the requestor not to get back-events during saving models
+  private VirtualFile createDirectoryIfMissing(String directoryPath) throws IOException {
     String path = FileUtil.toSystemIndependentName(directoryPath);
     final VirtualFile file = LocalFileSystem.getInstance().refreshAndFindFileByPath(path);
     if (file == null) {
       int pos = path.lastIndexOf('/');
       if (pos < 0) return null;
-      VirtualFile parent = createDirsImpl(path.substring(0, pos));
+      VirtualFile parent = createDirectoryIfMissing(path.substring(0, pos));
       if (parent == null) return null;
       final String dirName = path.substring(pos + 1);
+      VirtualFile child = parent.findChild(dirName);
+      if (child != null && child.isDirectory()) return child;
       return parent.createChildDirectory(myFileSystem, dirName);
     }
     return file;
@@ -235,7 +237,7 @@ public class IdeaFile implements IFileEx, CachingFile {
       return myVirtualFile.isDirectory();
     } else {
       try {
-        myVirtualFile = createDirs(myPath);
+        myVirtualFile = createDirectories(myPath);
         return true;
       } catch (IOException e) {
         return false;

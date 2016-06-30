@@ -244,8 +244,10 @@
     <!--
     <projectService serviceInterface="com.intellij.psi.text.BlockSupport"
                     serviceImplementation="com.intellij.psi.impl.source.text.BlockSupportImpl"/>
+    -->
     <projectService serviceInterface="com.intellij.psi.SmartPointerManager"
                     serviceImplementation="com.intellij.psi.impl.smartPointers.SmartPointerManagerImpl"/>
+    <!--
     <projectService serviceInterface="com.intellij.psi.codeStyle.CodeStyleManager"
                     serviceImplementation="com.intellij.psi.impl.source.codeStyle.CodeStyleManagerImpl"/>
     <projectService serviceInterface="com.intellij.pom.PomModel"

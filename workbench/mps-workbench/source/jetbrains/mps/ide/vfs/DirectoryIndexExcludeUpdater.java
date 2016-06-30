@@ -60,7 +60,7 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
 
   private ApplicationListener myListener = new ApplicationAdapter() {
     @Override
-    public void writeActionFinished(Object action) {
+    public void writeActionFinished(@NotNull Object action) {
       synchronized (LOCK) {
         if (!myInvalidated) return;
         myInvalidated = false;
@@ -75,7 +75,7 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
     myMessageBus = myProject.getMessageBus();
 
     DirectoryIndexExcludePolicy[] allExcludePolicies = Extensions.getExtensions(DirectoryIndexExcludePolicy.EP_NAME, myProject);
-    List<DirectoryIndexExcludePolicy> excludePolicies = new ArrayList<DirectoryIndexExcludePolicy>();
+    List<DirectoryIndexExcludePolicy> excludePolicies = new ArrayList<>();
     for (DirectoryIndexExcludePolicy ep : allExcludePolicies) {
       if (ep instanceof BaseDirectoryIndexExcludePolicy) {
         excludePolicies.add(ep);
@@ -122,6 +122,8 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
           myInvalidated = true;
         }
       } else {
+        // MPS-24027: send null event with beforeRootsChange() to avoid exception in com.intellij.psi.impl.file.impl.PsiVFSListener.MyModuleRootListener
+        myMessageBus.syncPublisher(ProjectTopics.PROJECT_ROOTS).beforeRootsChange(null);
         myMessageBus.syncPublisher(ProjectTopics.PROJECT_ROOTS).rootsChanged(new ModuleRootEventImpl(myProject, false));
       }
     }
