@@ -58,7 +58,8 @@ public interface EditorChecker {
   UpdateResult update(EditorComponent editorComponent, boolean incremental, boolean applyQuickFixes, Cancellable cancellable);
 
   /**
-   * Indicates that there will not be any more calls to {@link #needsUpdate} before another call to {@link #processEvents}.
+   * Invoked after calling {@link #update} on all needed editor components. Checkers that maintain one global "dirty" flag can mark themselves clean in this
+   * method.
    */
   void doneUpdating();
 
