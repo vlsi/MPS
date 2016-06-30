@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,5 +23,5 @@ import java.util.List;
 
 public interface MenuPart {
   @NotNull
-  List<MenuItem> createItems(TransformationMenuContext context);
+  List<TransformationMenuItem> createItems(TransformationMenuContext context);
 }

@@ -18,7 +18,7 @@ package jetbrains.mps.openapi.editor.menus.transformation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public interface ActionItem extends MenuItem {
+public interface ActionItem extends TransformationMenuItem {
   /**
    * Returns the text to be shown for this item in UI elements such as menu items, buttons or labels.
    *

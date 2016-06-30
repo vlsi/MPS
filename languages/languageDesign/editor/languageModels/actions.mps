@@ -3956,10 +3956,10 @@
     </node>
   </node>
   <node concept="37WguZ" id="6VgTvK0rmAI">
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu" />
     <property role="TrG5h" value="IExtensibleMenuPart_factory" />
     <node concept="37WvkG" id="6VgTvK0rmAJ" role="37WGs$">
-      <ref role="37XkoT" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
+      <ref role="37XkoT" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleTransformationMenuPart" />
       <node concept="37Y9Zx" id="6VgTvK0rmAK" role="37ZfLb">
         <node concept="3clFbS" id="6VgTvK0rmAL" role="2VODD2">
           <node concept="3cpWs8" id="6VgTvK0rQLH" role="3cqZAp">
@@ -4050,7 +4050,7 @@
     </node>
   </node>
   <node concept="3FK_9_" id="5qocf8PuKoB">
-    <property role="3GE5qa" value="TransformationMenu.Locations" />
+    <property role="3GE5qa" value="Menu.Locations" />
     <property role="TrG5h" value="TransformationLocationActions" />
     <node concept="3FOIzC" id="5qocf8PuKoC" role="3FOPby">
       <ref role="3FOWKa" to="tpc2:7L5lpRJH$EA" resolve="TransformationLocation" />
@@ -4129,7 +4129,7 @@
     </node>
   </node>
   <node concept="312cEu" id="5qocf8PzXo6">
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu" />
     <property role="TrG5h" value="TransformationMenuActionsUtil" />
     <node concept="2YIFZL" id="5qocf8PzXrb" role="jymVt">
       <property role="TrG5h" value="getSubconceptsWithCurrentChildConceptsExcluded" />
@@ -4317,7 +4317,7 @@
     </node>
   </node>
   <node concept="3FK_9_" id="5qocf8P$c79">
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu" />
     <property role="TrG5h" value="TransformationFeatureActions" />
     <node concept="3FOIzC" id="5qocf8P$c7a" role="3FOPby">
       <ref role="3FOWKa" to="tpc2:7L5lpRJH$E_" resolve="TransformationFeature" />
@@ -4400,7 +4400,7 @@
                     </node>
                     <node concept="3bvxqY" id="5qocf8PByDT" role="37wK5m" />
                     <node concept="359W_D" id="5Vk84aSwWp" role="37wK5m">
-                      <ref role="359W_E" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
+                      <ref role="359W_E" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleTransformationMenuPart" />
                       <ref role="359W_F" to="tpc2:7L5lpRJINkn" />
                     </node>
                     <node concept="GyYSE" id="5qocf8PByDU" role="37wK5m" />
@@ -4500,7 +4500,7 @@
             <node concept="17R0WA" id="5Vk84aSw4N" role="3clFbG">
               <node concept="2OqwBi" id="5Vk84aSw4O" role="3uHU7w">
                 <node concept="359W_D" id="5Vk84aSw4P" role="2Oq$k0">
-                  <ref role="359W_E" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
+                  <ref role="359W_E" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleTransformationMenuPart" />
                   <ref role="359W_F" to="tpc2:7L5lpRJINkn" />
                 </node>
                 <node concept="liA8E" id="5Vk84aSw4Q" role="2OqNvi">

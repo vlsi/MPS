@@ -14,6 +14,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
@@ -61,7 +63,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
       return editorCell;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
-      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(myEditorContext, new SChildSubstituteInfo(editorCell, myOwnerNode, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2c00L, 0xbe3a0d5ba1a2c04L, "exception"), child), new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext)));
       if (editorCell.getRole() == null) {
         editorCell.setRole("exception");
       }
@@ -71,6 +73,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
       EditorCell editorCell = super.createEmptyCell();
       editorCell.setCellId("empty_exception");
       installCellInfo(null, editorCell);
+
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -97,7 +100,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
       return editorCell;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
-      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(myEditorContext, new SChildSubstituteInfo(editorCell, myOwnerNode, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2c00L, 0xbe3a0d5ba1a2c03L, "message"), child), new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext)));
       if (editorCell.getRole() == null) {
         editorCell.setRole("message");
       }
@@ -107,6 +110,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
       EditorCell editorCell = super.createEmptyCell();
       editorCell.setCellId("empty_message");
       installCellInfo(null, editorCell);
+
       return editorCell;
     }
     protected String getNoTargetText() {

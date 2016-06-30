@@ -14,6 +14,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class InlineTemplateWithContext_RuleConsequence_Editor extends DefaultNodeEditor {
@@ -52,7 +54,7 @@ public class InlineTemplateWithContext_RuleConsequence_Editor extends DefaultNod
       return editorCell;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
-      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(myEditorContext, new SChildSubstituteInfo(editorCell, myOwnerNode, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7b85dded0be53d6cL, 0x7b85dded0be53d6fL, "contentNode"), child), new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext)));
       if (editorCell.getRole() == null) {
         editorCell.setRole("contentNode");
       }
@@ -62,6 +64,7 @@ public class InlineTemplateWithContext_RuleConsequence_Editor extends DefaultNod
       EditorCell editorCell = super.createEmptyCell();
       editorCell.setCellId("empty_contentNode");
       installCellInfo(null, editorCell);
+
       return editorCell;
     }
     protected String getNoTargetText() {

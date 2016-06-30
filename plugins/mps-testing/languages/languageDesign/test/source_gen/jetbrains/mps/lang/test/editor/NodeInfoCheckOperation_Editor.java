@@ -85,6 +85,7 @@ public class NodeInfoCheckOperation_Editor extends DefaultNodeEditor {
       EditorCell editorCell = super.createEmptyCell();
       editorCell.setCellId("empty_statementRef");
       installCellInfo(null, editorCell);
+
       return editorCell;
     }
     protected String getNoTargetText() {

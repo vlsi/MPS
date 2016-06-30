@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor.assist;
 
 import jetbrains.mps.openapi.editor.selection.Selection;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -26,5 +26,5 @@ import java.util.List;
  */
 public interface SelectionMenuProvider {
   @NotNull
-  List<MenuItem> getMenuItems(@NotNull Selection selection);
+  List<TransformationMenuItem> getMenuItems(@NotNull Selection selection);
 }

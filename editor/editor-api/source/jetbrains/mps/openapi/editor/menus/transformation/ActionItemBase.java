@@ -41,7 +41,7 @@ public class ActionItemBase implements ActionItem {
   }
 
   @Override
-  public <ResultT> ResultT accept(MenuItemVisitor<ResultT> visitor) {
+  public <ResultT> ResultT accept(TransformationMenuItemVisitor<ResultT> visitor) {
     return visitor.visit(this);
   }
 }

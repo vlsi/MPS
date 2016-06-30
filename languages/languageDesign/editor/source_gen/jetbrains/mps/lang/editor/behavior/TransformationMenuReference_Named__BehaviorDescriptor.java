@@ -25,15 +25,15 @@ public final class TransformationMenuReference_Named__BehaviorDescriptor extends
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff09L, "jetbrains.mps.lang.editor.structure.TransformationMenuReference_Named");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SNode> getApplicableConcept_id5OVd5tVob9V = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getApplicableConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5OVd5tVob9V").registry(REGISTRY).build();
+  public static final SMethod<SNode> getNamedMenu_id1quYWAD2$7e = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getNamedMenu").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1quYWAD2$7e").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getApplicableConcept_id5OVd5tVob9V);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getNamedMenu_id1quYWAD2$7e);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static SNode getApplicableConcept_id5OVd5tVob9V(@NotNull SNode __thisNode__) {
-    return (SNode) ITransformationMenu__BehaviorDescriptor.getApplicableConcept_id5OVd5tVoadE.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff09L, 0x5d3b34577b3cff0aL, "menu")));
+  /*package*/ static SNode getNamedMenu_id1quYWAD2$7e(@NotNull SNode __thisNode__) {
+    return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff09L, 0x5d3b34577b3cff0aL, "menu"));
   }
 
   /*package*/ TransformationMenuReference_Named__BehaviorDescriptor() {
@@ -53,7 +53,7 @@ public final class TransformationMenuReference_Named__BehaviorDescriptor extends
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((SNode) getApplicableConcept_id5OVd5tVob9V(node));
+        return (T) ((SNode) getNamedMenu_id1quYWAD2$7e(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

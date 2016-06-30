@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
-import jetbrains.mps.lang.editor.behavior.ITransformationMenu__BehaviorDescriptor;
+import jetbrains.mps.lang.editor.behavior.IMenu__BehaviorDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class TransformationMenuPart_Refactoring_Constraints extends BaseConstraintsDescriptor {
@@ -81,7 +81,7 @@ public class TransformationMenuPart_Refactoring_Constraints extends BaseConstrai
   }
   private static SNode check_w30ll_a0a4a0a0a0a0a1a0a0a1a0b0a1a2(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return ITransformationMenu__BehaviorDescriptor.getApplicableConcept_id5OVd5tVoadE.invoke(checkedDotOperand);
+      return IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(checkedDotOperand);
     }
     return null;
   }

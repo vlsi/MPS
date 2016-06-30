@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,11 +23,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+//todo to remove
 public class ParameterizedMenuPart<ParamT> implements MenuPart {
   @NotNull
   @Override
-  public List<MenuItem> createItems(TransformationMenuContext context) {
-    List<MenuItem> result = new ArrayList<>();
+  public List<TransformationMenuItem> createItems(TransformationMenuContext context) {
+    List<TransformationMenuItem> result = new ArrayList<>();
 
     for (ParamT parameter : getParameters(context)) {
       result.addAll(createItems(parameter, context));
@@ -37,7 +38,7 @@ public class ParameterizedMenuPart<ParamT> implements MenuPart {
   }
 
   @NotNull
-  protected List<MenuItem> createItems(ParamT parameter, TransformationMenuContext context) {
+  protected List<TransformationMenuItem> createItems(ParamT parameter, TransformationMenuContext context) {
     return Collections.emptyList();
   }
 

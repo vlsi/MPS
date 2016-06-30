@@ -4,18 +4,19 @@ package jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor;
 
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
-import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
+import jetbrains.mps.lang.editor.menus.MenuPart;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
-import jetbrains.mps.lang.editor.menus.transformation.ConditionalMenuPart;
+import jetbrains.mps.lang.editor.menus.transformation.IncludeSubstituteMenuTransformationMenuPart;
+import jetbrains.mps.lang.editor.menus.ConditionalMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
-import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
+import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuPart;
@@ -23,28 +24,36 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.editor.menus.transformation.IncludeMenuMenuPart;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.lang.editor.menus.transformation.NamedMenuLookup;
+import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 
 public class Child_TransformationMenu extends TransformationMenuBase {
   @Override
-  protected List<MenuPart> getParts(TransformationMenuContext _context) {
-    List<MenuPart> result = new ArrayList<MenuPart>();
+  protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
+    List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.SUBSTITUTE).contains(_context.getMenuLocation())) {
+      result.add(new Child_TransformationMenu.TransformationMenuPart_IncludeSubstituteMenu_qk1e79_a0());
+    }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_a0());
-      result.add(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b0());
-      result.add(new Child_TransformationMenu.TransformationMenuPart_SubMenu_qk1e79_c0());
-      result.add(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_d0());
-      result.add(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_e0());
-      result.add(new Child_TransformationMenu.TransformationMenuPart_IncludeMenu_qk1e79_f0());
-      result.add(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_g0());
+      result.add(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_a1());
+      result.add(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b1());
+      result.add(new Child_TransformationMenu.TransformationMenuPart_SubMenu_qk1e79_c1());
+      result.add(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_d1());
+      result.add(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_e1());
+      result.add(new Child_TransformationMenu.TransformationMenuPart_IncludeMenu_qk1e79_f1());
+      result.add(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_g1());
     }
     return result;
   }
 
-  public static class TransformationMenuPart_Group_qk1e79_a0 extends ConditionalMenuPart {
+  public static class TransformationMenuPart_IncludeSubstituteMenu_qk1e79_a0 extends IncludeSubstituteMenuTransformationMenuPart {
+
+
+  }
+  public static class TransformationMenuPart_Group_qk1e79_a1 extends ConditionalMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       if ("error".equals(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
@@ -54,14 +63,14 @@ public class Child_TransformationMenu extends TransformationMenuBase {
     }
 
     @Override
-    protected List<MenuPart> getParts() {
-      return Arrays.<MenuPart>asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a0a());
+    protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a0b());
     }
   }
-  private static class TransformationMenuPart_Action_qk1e79_a0a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_qk1e79_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a0a.Item(context);
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
+      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a0b.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -83,10 +92,10 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  private static class TransformationMenuPart_Action_qk1e79_b0 extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_qk1e79_b1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b0.Item(context);
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
+      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b1.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -109,21 +118,21 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  public static class TransformationMenuPart_SubMenu_qk1e79_c0 extends SubMenuMenuPart {
+  public static class TransformationMenuPart_SubMenu_qk1e79_c1 extends SubMenuMenuPart {
     @Override
     protected String getText(TransformationMenuContext _context) {
       return "tree operations";
     }
 
     @Override
-    protected List<MenuPart> getParts() {
-      return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a2a(), new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b2a());
+    protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
+      return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a2b(), new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b2b());
     }
   }
-  private static class TransformationMenuPart_Action_qk1e79_a2a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_qk1e79_a2b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a2a.Item(context);
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
+      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a2b.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -146,10 +155,10 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  private static class TransformationMenuPart_Action_qk1e79_b2a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_qk1e79_b2b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b2a.Item(context);
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
+      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b2b.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -174,21 +183,21 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  public static class TransformationMenuPart_Group_qk1e79_d0 extends ConditionalMenuPart {
+  public static class TransformationMenuPart_Group_qk1e79_d1 extends ConditionalMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).contains("a");
     }
 
     @Override
-    protected List<MenuPart> getParts() {
-      return Arrays.<MenuPart>asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a3a(), new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b3a());
+    protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a3b(), new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b3b());
     }
   }
-  private static class TransformationMenuPart_Action_qk1e79_a3a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_qk1e79_a3b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a3a.Item(context);
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
+      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a3b.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -211,10 +220,10 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  private static class TransformationMenuPart_Action_qk1e79_b3a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_qk1e79_b3b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b3a.Item(context);
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
+      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b3b.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -236,21 +245,21 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  public static class TransformationMenuPart_Group_qk1e79_e0 extends ConditionalMenuPart {
+  public static class TransformationMenuPart_Group_qk1e79_e1 extends ConditionalMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).endsWith("a"));
     }
 
     @Override
-    protected List<MenuPart> getParts() {
-      return Arrays.<MenuPart>asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a4a());
+    protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a4b());
     }
   }
-  private static class TransformationMenuPart_Action_qk1e79_a4a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_qk1e79_a4b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a4a.Item(context);
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
+      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a4b.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -273,20 +282,20 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  public static class TransformationMenuPart_IncludeMenu_qk1e79_f0 extends IncludeMenuMenuPart {
+  public static class TransformationMenuPart_IncludeMenu_qk1e79_f1 extends IncludeMenuMenuPart {
     @Nullable
     @Override
-    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
+    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
-      return new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Child"), "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.NamedMenu");
+      return new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Child"), "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.NamedMenu");
     }
   }
-  private static class TransformationMenuPart_Action_qk1e79_g0 extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_qk1e79_g1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_g0.Item(context);
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
+      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_g1.Item(context);
     }
 
     private class Item extends ActionItemBase {

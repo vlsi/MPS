@@ -16,10 +16,13 @@
 package jetbrains.mps.lang.editor.menus.transformation;
 
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -33,8 +36,12 @@ public class DefaultConceptMenu extends TransformationMenuBase {
 
   private final SAbstractConcept myConcept;
   @Override
-  protected List<MenuPart> getParts(TransformationMenuContext context) {
-    return Collections.singletonList(new ConceptMenusMenuPart(SModelUtil.getDirectSuperConcepts(myConcept)));
+  protected List<jetbrains.mps.lang.editor.menus.MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext context) {
+    if (context.getMenuLocation().equals(MenuLocations.SUBSTITUTE)) {
+      return Collections.singletonList(new IncludeSubstituteMenuTransformationMenuPart());
+    } else {
+      return Collections.singletonList(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(myConcept)));
+    }
   }
 
 }

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -23,21 +23,22 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Collections;
 import java.util.List;
 
+//todo to remove
 /**
  * Convenience implementation of {@link MenuPart} for parts that create at most one menu item.
  */
 public class SingleItemMenuPart implements MenuPart {
   @NotNull
   @Override
-  public List<MenuItem> createItems(TransformationMenuContext context) {
-    MenuItem item = createItem(context);
+  public List<TransformationMenuItem> createItems(TransformationMenuContext context) {
+    TransformationMenuItem item = createItem(context);
     if (item == null) return Collections.emptyList();
 
     return Collections.singletonList(item);
   }
 
   @Nullable
-  protected MenuItem createItem(TransformationMenuContext context) {
+  protected TransformationMenuItem createItem(TransformationMenuContext context) {
     return null;
   }
 }

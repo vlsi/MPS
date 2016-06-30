@@ -19,7 +19,7 @@ import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.assist.ContextAssistant;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -44,13 +44,13 @@ public class ContextAssistantController implements ContextAssistant, ActionItemE
   }
 
   @Override
-  public void showMenu(@NotNull List<MenuItem> items) {
+  public void showMenu(@NotNull List<TransformationMenuItem> items) {
     myView.showMenu(convertToStep(items));
   }
 
   @NotNull
-  private MenuItemListStep convertToStep(List<MenuItem> items) {
-    List<MenuItem> itemsWithHelp;
+  private MenuItemListStep convertToStep(List<TransformationMenuItem> items) {
+    List<TransformationMenuItem> itemsWithHelp;
     if (myHelpAction != null && myHelpAction.canExecute("")) {
       itemsWithHelp = new ArrayList<>(items);
       itemsWithHelp.add(myHelpAction);

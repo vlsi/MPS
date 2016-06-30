@@ -8,8 +8,8 @@
   <imports>
     <import index="ue84" ref="r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)" implicit="true" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" implicit="true" />
-    <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
     <import index="tpd3" ref="r:00000000-0000-4000-0000-011c895902bb(jetbrains.mps.lang.sharedConcepts.editor)" implicit="true" />
+    <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpc5" ref="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)" implicit="true" />
   </imports>
@@ -92,8 +92,8 @@
       </node>
       <node concept="1iCGBv" id="30jUJZlxZvQ" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no concept&gt;" />
-        <ref role="1NtTu8" to="tpc2:1oFY2ohVpGC" />
         <ref role="1k5W1q" to="tpd3:hwSE21y" resolve="ReferenceOnConcept" />
+        <ref role="1NtTu8" to="tpc2:5HVj4Ph44AO" />
         <node concept="1sVBvm" id="30jUJZlxZvR" role="1sWHZn">
           <node concept="3F0A7n" id="30jUJZlxZvS" role="2wV5jI">
             <property role="1Intyy" value="true" />

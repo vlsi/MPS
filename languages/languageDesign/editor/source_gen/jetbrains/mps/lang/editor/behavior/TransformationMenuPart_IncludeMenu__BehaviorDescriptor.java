@@ -131,7 +131,7 @@ public final class TransformationMenuPart_IncludeMenu__BehaviorDescriptor extend
   private static final Map<SAbstractConcept, Integer> indices_dnthpu_a0a0k = buildConceptIndices();
   private static SNode check_pjfxcn_a0a1(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return TransformationMenuReference__BehaviorDescriptor.getApplicableConcept_id5OVd5tVob9V.invoke(checkedDotOperand);
+      return IMenuReference__BehaviorDescriptor.getApplicableConcept_id1quYWAD4TFX.invoke(checkedDotOperand);
     }
     return null;
   }

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.openapi.editor.menus.transformation;
 
+import jetbrains.mps.smodel.runtime.IconResource;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -45,7 +46,7 @@ public interface CompletionActionItem extends ActionItem {
   }
 
   @Nullable
-  default SNode getIconNode(String pattern) {
+  default IconResource getIcon(String pattern) {
     return null;
   }
 

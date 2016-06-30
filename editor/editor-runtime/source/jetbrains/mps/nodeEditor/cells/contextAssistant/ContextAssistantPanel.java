@@ -18,7 +18,7 @@ package jetbrains.mps.nodeEditor.cells.contextAssistant;
 import com.intellij.openapi.ui.popup.ListPopupStep;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.util.ui.JBUI;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Action;
@@ -42,7 +42,7 @@ public class ContextAssistantPanel implements ContextAssistantView {
   private final int myPreferredHeight;
   private final int myBaseline;
 
-  private ListPopupStep<MenuItem> myStep;
+  private ListPopupStep<TransformationMenuItem> myStep;
 
   public ContextAssistantPanel() {
     // Compute preferred height and baseline (for layout purposes)
@@ -101,7 +101,7 @@ public class ContextAssistantPanel implements ContextAssistantView {
   }
 
   @Override
-  public void showMenu(@NotNull ListPopupStep<MenuItem> items) {
+  public void showMenu(@NotNull ListPopupStep<TransformationMenuItem> items) {
     setStep(items);
     setVisible(true);
   }
@@ -122,7 +122,7 @@ public class ContextAssistantPanel implements ContextAssistantView {
     myComponent.setVisible(visible);
   }
 
-  private void setStep(ListPopupStep<MenuItem> step) {
+  private void setStep(ListPopupStep<TransformationMenuItem> step) {
     myStep = step;
     updateButtons();
   }
@@ -130,7 +130,7 @@ public class ContextAssistantPanel implements ContextAssistantView {
   private void updateButtons() {
     myComponent.removeAll();
 
-    for (MenuItem item : myStep.getValues()) {
+    for (TransformationMenuItem item : myStep.getValues()) {
       JButton button = createButton(item);
       myComponent.add(button);
     }
@@ -138,11 +138,11 @@ public class ContextAssistantPanel implements ContextAssistantView {
     myComponent.add(myOverflowButton, OverflowLayout.SHOW_ON_OVERFLOW);
   }
 
-  private JButton createButton(MenuItem item) {
+  private JButton createButton(TransformationMenuItem item) {
     return ButtonCustomizations.setupMenuButton(createBaseButton(item));
   }
 
-  private JButton createBaseButton(final MenuItem item) {
+  private JButton createBaseButton(final TransformationMenuItem item) {
     return item.accept(new TopLevelButtonCreatingVisitor(myStep));
   }
 }

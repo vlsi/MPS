@@ -4,33 +4,34 @@ package jetbrains.mps.samples.Kaja.editor;
 
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
-import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
+import jetbrains.mps.lang.editor.menus.MenuPart;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
-import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
+import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.editor.menus.transformation.ConditionalMenuPart;
+import jetbrains.mps.lang.editor.menus.ConditionalMenuPart;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuPart;
 import jetbrains.mps.lang.editor.menus.transformation.IncludeMenuMenuPart;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.lang.editor.menus.transformation.NamedMenuLookup;
+import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 
 public class EmptyLine_TransformationMenu extends TransformationMenuBase {
   @Override
-  protected List<MenuPart> getParts(TransformationMenuContext _context) {
-    List<MenuPart> result = new ArrayList<MenuPart>();
+  protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
+    List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
       result.add(new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_a0());
       result.add(new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_b0());
@@ -41,9 +42,9 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
     return result;
   }
 
-  private static class TransformationMenuPart_Action_supj5f_a0 extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_supj5f_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_a0.Item(context);
     }
 
@@ -67,9 +68,9 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  private static class TransformationMenuPart_Action_supj5f_b0 extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_supj5f_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_b0.Item(context);
     }
 
@@ -93,23 +94,23 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  public static class TransformationMenuPart_Group_supj5f_c0 extends ConditionalMenuPart {
+  public static class TransformationMenuPart_Group_supj5f_c0 extends ConditionalMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return eq_supj5f_a0a0a4(SNodeOperations.getParent(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785f06a3fL, "jetbrains.mps.samples.Kaja.structure.CommandList"), false, false)), SNodeOperations.getContainingRoot(_context.getNode()));
     }
 
     @Override
-    protected List<MenuPart> getParts() {
-      return Arrays.<MenuPart>asList(new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_a2a());
+    protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_a2a());
     }
     private static boolean eq_supj5f_a0a0a4(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }
-  private static class TransformationMenuPart_Action_supj5f_a2a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_supj5f_a2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_a2a.Item(context);
     }
 
@@ -141,13 +142,13 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
     }
 
     @Override
-    protected List<MenuPart> getParts() {
+    protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
       return Arrays.asList(new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_a3a(), new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_b3a(), new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_c3a());
     }
   }
-  private static class TransformationMenuPart_Action_supj5f_a3a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_supj5f_a3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_a3a.Item(context);
     }
 
@@ -173,9 +174,9 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  private static class TransformationMenuPart_Action_supj5f_b3a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_supj5f_b3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_b3a.Item(context);
     }
 
@@ -200,9 +201,9 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  private static class TransformationMenuPart_Action_supj5f_c3a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_supj5f_c3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new EmptyLine_TransformationMenu.TransformationMenuPart_Action_supj5f_c3a.Item(context);
     }
 
@@ -234,18 +235,18 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
     }
 
     @Override
-    protected List<MenuPart> getParts() {
+    protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
       return Arrays.asList(new EmptyLine_TransformationMenu.TransformationMenuPart_IncludeMenu_supj5f_a4a());
     }
   }
   public static class TransformationMenuPart_IncludeMenu_supj5f_a4a extends IncludeMenuMenuPart {
     @Nullable
     @Override
-    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
+    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
-      return new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ee0a16L, "jetbrains.mps.samples.Kaja.structure.EmptyLine"), "jetbrains.mps.samples.Kaja.editor.OtherCommands");
+      return new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ee0a16L, "jetbrains.mps.samples.Kaja.structure.EmptyLine"), "jetbrains.mps.samples.Kaja.editor.OtherCommands");
     }
   }
 }

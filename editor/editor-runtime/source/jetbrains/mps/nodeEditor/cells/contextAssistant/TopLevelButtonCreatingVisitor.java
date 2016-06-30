@@ -18,8 +18,8 @@ package jetbrains.mps.nodeEditor.cells.contextAssistant;
 import com.intellij.openapi.ui.popup.ListPopupStep;
 import com.intellij.openapi.ui.popup.PopupStep;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItemVisitor;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItemVisitor;
 import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 
 import javax.swing.AbstractAction;
@@ -29,10 +29,10 @@ import java.awt.event.ActionEvent;
 /**
  * A menu item visitor that creates a top-level button for the visited menu item.
  */
-class TopLevelButtonCreatingVisitor implements MenuItemVisitor<JButton> {
-  private final ListPopupStep<MenuItem> myStep;
+class TopLevelButtonCreatingVisitor implements TransformationMenuItemVisitor<JButton> {
+  private final ListPopupStep<TransformationMenuItem> myStep;
 
-  TopLevelButtonCreatingVisitor(ListPopupStep<MenuItem> step) {
+  TopLevelButtonCreatingVisitor(ListPopupStep<TransformationMenuItem> step) {
     myStep = step;
   }
 

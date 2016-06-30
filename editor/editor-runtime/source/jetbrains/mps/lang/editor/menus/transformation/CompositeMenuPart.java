@@ -15,13 +15,14 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
+//todo to remove
 public class CompositeMenuPart implements MenuPart {
   private final Iterable<MenuPart> myParts;
 
@@ -31,8 +32,8 @@ public class CompositeMenuPart implements MenuPart {
 
   @NotNull
   @Override
-  public List<MenuItem> createItems(TransformationMenuContext context) {
-    List<MenuItem> items = new ArrayList<MenuItem>();
+  public List<TransformationMenuItem> createItems(TransformationMenuContext context) {
+    List<TransformationMenuItem> items = new ArrayList<TransformationMenuItem>();
 
     for (MenuPart part : myParts) {
       items.addAll(part.createItems(context));

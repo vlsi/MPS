@@ -23,8 +23,8 @@ import jetbrains.mps.nodeEditor.cells.contextAssistant.WhatsThisActionItem;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.assist.ContextAssistant;
-import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.AbstractAction;

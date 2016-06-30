@@ -16,10 +16,7 @@ import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -29,32 +26,18 @@ public final class QueryFunction_TransformationMenu__BehaviorDescriptor extends 
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<List<SNode>> getParameters_idhEwIGRM = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getParameters").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIGRM").registry(REGISTRY).build();
-  public static final SMethod<Boolean> isParameterized_id3EZUZhmZmdP = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isParameterized").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3EZUZhmZmdP").registry(REGISTRY).build();
-  public static final SMethod<Boolean> usesParameterObjectFor_idhEwIGRw = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("usesParameterObjectFor").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIGRw").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getParameters_idhEwIGRM, isParameterized_id3EZUZhmZmdP, usesParameterObjectFor_idhEwIGRw);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getParameters_idhEwIGRM);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static List<SNode> getParameters_idhEwIGRM(@NotNull SNode __thisNode__) {
-    ConceptFunction__BehaviorDescriptor.getParameters_idhEwIGRM.invokeSpecial(__thisNode__);
-    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    if (((boolean) QueryFunction_TransformationMenu__BehaviorDescriptor.isParameterized_id3EZUZhmZmdP.invoke(__thisNode__))) {
-      ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf45718c704L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_parameterObject").getDeclarationNode());
-    }
-
+    List<SNode> result = QueryFunction_Menu__BehaviorDescriptor.getParameters_idhEwIGRM.invokeSpecial(__thisNode__);
     ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10e76200a6fL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext").getDeclarationNode());
     ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x162bf82611fb4032L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_node").getDeclarationNode());
 
     return result;
-  }
-  /*package*/ static boolean isParameterized_id3EZUZhmZmdP(@NotNull SNode __thisNode__) {
-    SNode parameterizable = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8ad24L, "jetbrains.mps.lang.editor.structure.IParameterizableMenuPart"), false, false);
-    return (parameterizable != null) && (boolean) IParameterizableMenuPart__BehaviorDescriptor.isParameterized_id3EZUZhneE$4.invoke(parameterizable);
-  }
-  /*package*/ static boolean usesParameterObjectFor_idhEwIGRw(@NotNull SNode __thisNode__, SNode parameter) {
-    return !(SNodeOperations.getConcept(parameter).equals(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121e2c89d1L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern")));
   }
 
   /*package*/ QueryFunction_TransformationMenu__BehaviorDescriptor() {
@@ -75,10 +58,6 @@ public final class QueryFunction_TransformationMenu__BehaviorDescriptor extends 
     switch (methodIndex) {
       case 0:
         return (T) ((List<SNode>) getParameters_idhEwIGRM(node));
-      case 1:
-        return (T) ((Boolean) isParameterized_id3EZUZhmZmdP(node));
-      case 2:
-        return (T) ((Boolean) usesParameterObjectFor_idhEwIGRw(node, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

@@ -13,7 +13,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.editor.menus.extras.runtime.IntentionMenuPartBase;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.intentions.IntentionExecutable;
@@ -42,7 +42,7 @@ public class InapplicableIntention_NotIncludedInMenu_Test extends BaseTransforma
           IntentionMenuPartBase part = new IntentionMenuPartBase(ActionLookupUtils.getIntentionId(repository, new SNodePointer("r:8d2a217a-f2d0-4d4a-b867-e2dd2ddb731c(jetbrains.mps.lang.editor.menus.extras.testLanguage.intentions)", "6820996345401618935"))) {
             @Nullable
             @Override
-            protected MenuItem createItem(@NotNull TransformationMenuContext context, @NotNull IntentionExecutable executable) {
+            protected TransformationMenuItem createItem(@NotNull TransformationMenuContext context, @NotNull IntentionExecutable executable) {
               return new ActionItemBase();
             }
           };

@@ -101,7 +101,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_QueryFunctionParameter_TransformationMenu_parameterObject_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_QueryFunctionParameter_parameterObject_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -165,7 +165,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_DefaultTransformationMenu_isInConceptLanguage_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_DefaultMenu_isInConceptLanguage_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
@@ -185,7 +185,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_ITransformationMenu_hasUniqueName_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_IMenu_hasUniqueName_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
@@ -193,7 +193,19 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_ReferenceToNonexistentDefaultMenu_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_IncludingNonMatchingSubstituteMenu_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_IncludingNonMatchingSubstituteMenuFromTransformationMenu_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_ReferenceToNonexistentDefaultSubstituteMenu_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_ReferenceToNonexistentDefaultTransformationMenu_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
@@ -206,6 +218,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_StyleSheetClass_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_SubstituteFeaturesAreNotDuplicated_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {

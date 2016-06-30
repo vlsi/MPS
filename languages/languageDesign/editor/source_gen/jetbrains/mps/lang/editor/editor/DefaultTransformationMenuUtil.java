@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.editor;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
@@ -11,7 +12,13 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class DefaultTransformationMenuUtil {
-  public static SNode findDefaultMenuForConcept(@NotNull SNode concept) {
-    return Sequence.fromIterable(SNodeOperations.ofConcept(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspectCollection_id1n18fON7w20.invoke(concept, LanguageAspect.EDITOR), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Default"))).first();
+  public static SNode findDefaultMenuForConcept(@NotNull SNode concept, SAbstractConcept menuConcept) {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspectCollection_id1n18fON7w20.invoke(concept, LanguageAspect.EDITOR), SNodeOperations.asSConcept(menuConcept))).first();
+  }
+  public static SNode findDefaultTransformationMenuForConcept(@NotNull SNode concept) {
+    return ((SNode) findDefaultMenuForConcept(concept, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Default")));
+  }
+  public static SNode findDefaultSubstituteMenuForConcept(@NotNull SNode concept) {
+    return ((SNode) findDefaultMenuForConcept(concept, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de9c932f4e5ab84L, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Default")));
   }
 }

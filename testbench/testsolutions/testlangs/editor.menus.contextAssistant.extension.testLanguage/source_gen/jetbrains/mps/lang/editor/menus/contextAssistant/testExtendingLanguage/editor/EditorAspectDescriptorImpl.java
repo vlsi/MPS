@@ -17,13 +17,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
-
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_xbvbvu_a0d.get(cncpt);
+      Integer preIndex = indices_xbvbvu_a0c.get(cncpt);
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
@@ -41,12 +40,12 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedTransformationMenuId menuId) {
     {
       SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      Integer preIndex = indices_xbvbvu_a0e.get(cncpt);
+      Integer preIndex = indices_xbvbvu_a0d.get(cncpt);
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
           if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a3a0a4, menuId.getFqName())) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a3a0a3, menuId.getFqName())) {
               case 0:
                 return Arrays.asList(new TransformationMenu[]{new Child_MoreNamedActions()});
               default:
@@ -68,7 +67,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     }
     return res;
   }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Child"));
   private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0d = buildConceptIndices(MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Child"));
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Child"));
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a4 = new String[]{"jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.NamedMenu"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a3 = new String[]{"jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.NamedMenu"};
 }

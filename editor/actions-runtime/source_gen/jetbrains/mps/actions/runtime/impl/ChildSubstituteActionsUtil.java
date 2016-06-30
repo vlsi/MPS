@@ -133,6 +133,14 @@ public class ChildSubstituteActionsUtil {
 
     return actions;
   }
+  public static boolean hasActionBuilders(Language language) {
+    SModel actionsModelDescr = LanguageAspect.ACTIONS.get(language);
+    if (actionsModelDescr == null) {
+      return false;
+    }
+    SModel sModel = actionsModelDescr;
+    return ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(sModel, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebc25367L, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"))).isNotEmpty();
+  }
   private static List<SNode> getAllActionsBuilders(List<Language> languages) {
     List<SNode> result = new ArrayList<SNode>();
     for (Language language : ListSequence.fromList(languages)) {

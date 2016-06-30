@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -23,10 +23,11 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collections;
 import java.util.List;
 
+//todo to remove
 public abstract class ConditionalMenuPart implements MenuPart {
   @NotNull
   @Override
-  public List<MenuItem> createItems(TransformationMenuContext context) {
+  public List<TransformationMenuItem> createItems(TransformationMenuContext context) {
     try {
       if (!isApplicable(context)) {
         return Collections.emptyList();

@@ -4,16 +4,16 @@ package jetbrains.mps.samples.KajaSceneConstruction.editor;
 
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
-import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
+import jetbrains.mps.lang.editor.menus.MenuPart;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuPart;
 import java.util.Arrays;
-import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
+import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -26,8 +26,8 @@ public class SceneBuildingCommands extends TransformationMenuBase {
     super(true);
   }
   @Override
-  protected List<MenuPart> getParts(TransformationMenuContext _context) {
-    List<MenuPart> result = new ArrayList<MenuPart>();
+  protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
+    List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
       result.add(new SceneBuildingCommands.TransformationMenuPart_SubMenu_572eic_a0());
     }
@@ -41,13 +41,13 @@ public class SceneBuildingCommands extends TransformationMenuBase {
     }
 
     @Override
-    protected List<MenuPart> getParts() {
+    protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
       return Arrays.asList(new SceneBuildingCommands.TransformationMenuPart_Action_572eic_a0a(), new SceneBuildingCommands.TransformationMenuPart_Action_572eic_b0a(), new SceneBuildingCommands.TransformationMenuPart_Action_572eic_c0a(), new SceneBuildingCommands.TransformationMenuPart_Action_572eic_d0a());
     }
   }
-  private static class TransformationMenuPart_Action_572eic_a0a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_572eic_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new SceneBuildingCommands.TransformationMenuPart_Action_572eic_a0a.Item(context);
     }
 
@@ -72,9 +72,9 @@ public class SceneBuildingCommands extends TransformationMenuBase {
 
     }
   }
-  private static class TransformationMenuPart_Action_572eic_b0a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_572eic_b0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new SceneBuildingCommands.TransformationMenuPart_Action_572eic_b0a.Item(context);
     }
 
@@ -100,9 +100,9 @@ public class SceneBuildingCommands extends TransformationMenuBase {
 
     }
   }
-  private static class TransformationMenuPart_Action_572eic_c0a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_572eic_c0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new SceneBuildingCommands.TransformationMenuPart_Action_572eic_c0a.Item(context);
     }
 
@@ -127,9 +127,9 @@ public class SceneBuildingCommands extends TransformationMenuBase {
 
     }
   }
-  private static class TransformationMenuPart_Action_572eic_d0a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_572eic_d0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new SceneBuildingCommands.TransformationMenuPart_Action_572eic_d0a.Item(context);
     }
 

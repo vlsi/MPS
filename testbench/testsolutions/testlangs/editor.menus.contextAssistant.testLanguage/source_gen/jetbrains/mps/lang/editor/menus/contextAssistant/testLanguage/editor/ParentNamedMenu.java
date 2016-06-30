@@ -4,15 +4,58 @@ package jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor;
 
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
-import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
+import jetbrains.mps.lang.editor.menus.MenuPart;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
+import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
+import jetbrains.mps.editor.runtime.items.SubstituteCompletionActionItem;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ParentNamedMenu extends TransformationMenuBase {
   @Override
-  protected List<MenuPart> getParts(TransformationMenuContext _context) {
-    List<MenuPart> result = new ArrayList<MenuPart>();
+  protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
+    List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.SUBSTITUTE).contains(_context.getMenuLocation())) {
+      result.add(new ParentNamedMenu.TransformationMenuPart_Action_bwf8lj_a0());
+    }
     return result;
   }
 
+  private static class TransformationMenuPart_Action_bwf8lj_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    @Nullable
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
+      return new ParentNamedMenu.TransformationMenuPart_Action_bwf8lj_a0.Item(context);
+    }
+
+    private class Item extends ActionItemBase implements SubstituteCompletionActionItem {
+      private final TransformationMenuContext _context;
+
+      private Item(TransformationMenuContext context) {
+        _context = context;
+      }
+
+      @Nullable
+      @Override
+      public String getLabelText(String pattern) {
+        return "set name to \"z\"";
+      }
+
+      @Override
+      public void execute(@NotNull String pattern) {
+        SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "z");
+      }
+
+      @Override
+      public String getShortDescriptionText(String pattern) {
+        return "completion item";
+      }
+    }
+  }
 }

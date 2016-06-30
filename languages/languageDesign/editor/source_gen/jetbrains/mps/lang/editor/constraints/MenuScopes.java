@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.constraints;
 
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -12,8 +13,8 @@ import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MenuScopes {
-  public static Scope getNamedMenus(SNode contextNode, String contextRole, int position) {
-    final Scope allNamedMenus = new ModelPlusImportedScope(SNodeOperations.getModel(contextNode), true, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named"));
+  public static Scope getNamedMenus(SNode contextNode, String contextRole, int position, SAbstractConcept concept) {
+    final Scope allNamedMenus = new ModelPlusImportedScope(SNodeOperations.getModel(contextNode), true, concept);
 
     // Uses the scope of allowed concepts (for default menus) to restrict the set of named menus to those 
     // that reference allowed concepts. 
@@ -25,7 +26,7 @@ public class MenuScopes {
     return new FilteringScope(allNamedMenus) {
       @Override
       public boolean isExcluded(SNode node) {
-        return !(allowedConcepts.contains(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL, 0x162bf82611ed9b28L, "conceptDeclaration"))));
+        return !(allowedConcepts.contains(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c46L, "jetbrains.mps.lang.editor.structure.IMenu_Named")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclarationNew"))));
       }
     };
   }

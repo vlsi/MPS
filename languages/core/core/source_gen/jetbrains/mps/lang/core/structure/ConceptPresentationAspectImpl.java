@@ -45,7 +45,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_PropertyAttribute = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName"), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId")).create();
   private final ConceptPresentation props_ScopeFacade = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ScopeProvider = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SideTransformInfo = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SideTransformInfo = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, 0xad0053c7aee2321L, "side"), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, 0xad0053c7af1b9bbL, "cellId"), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, 0xad0053c7af1bf58L, "anchorTag")).create();
   private final ConceptPresentation props_SuppressErrorsAnnotation = new ConceptPresentationBuilder().create();
 
   @Override

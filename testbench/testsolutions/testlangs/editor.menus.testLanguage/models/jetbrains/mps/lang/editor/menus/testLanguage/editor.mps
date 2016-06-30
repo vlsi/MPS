@@ -32,6 +32,9 @@
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
+      <concept id="1630016958697344083" name="jetbrains.mps.lang.editor.structure.IMenu_Concept" flags="ng" index="2ZABuq">
+        <reference id="6591946374543067572" name="conceptDeclarationNew" index="aqKnT" />
+      </concept>
       <concept id="5692353713941573329" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_ActionLabelText" flags="ig" index="1hCUdq" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
@@ -44,9 +47,6 @@
         <property id="1073389577007" name="text" index="3F0ifm" />
       </concept>
       <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
-      <concept id="5624877018226900666" name="jetbrains.mps.lang.editor.structure.TransformationMenu" flags="ng" index="3ICUPy">
-        <reference id="1597643335226202920" name="conceptDeclaration" index="7LAce" />
-      </concept>
       <concept id="5624877018226904808" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Named" flags="ng" index="3ICXOK" />
       <concept id="5624877018228267058" name="jetbrains.mps.lang.editor.structure.ITransformationMenu" flags="ng" index="3INCJE">
         <child id="1638911550608572412" name="sections" index="IW6Ez" />
@@ -139,7 +139,7 @@
   </node>
   <node concept="IW6AY" id="229s7wVDf1n">
     <property role="3GE5qa" value="" />
-    <ref role="7LAce" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
+    <ref role="aqKnT" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
     <node concept="1Qtc8_" id="5_kqtpABUIF" role="IW6Ez">
       <node concept="ZR7TO" id="5_kqtpABUK1" role="1Qtc8$" />
       <node concept="IWgqT" id="5_kqtpABUK8" role="1Qtc8A">
@@ -161,7 +161,7 @@
   <node concept="3ICXOK" id="5oiZ4v5c5_K">
     <property role="3GE5qa" value="" />
     <property role="TrG5h" value="NamedTestMenu" />
-    <ref role="7LAce" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
+    <ref role="aqKnT" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
     <node concept="1Qtc8_" id="5oiZ4v5c5_L" role="IW6Ez">
       <node concept="ZR7TO" id="5oiZ4v5c5_R" role="1Qtc8$" />
       <node concept="IWgqT" id="5oiZ4v5c5_U" role="1Qtc8A">
@@ -183,7 +183,7 @@
   <node concept="3ICXOK" id="5oiZ4v5mfRL">
     <property role="3GE5qa" value="" />
     <property role="TrG5h" value="WithNonExecutableAction" />
-    <ref role="7LAce" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
+    <ref role="aqKnT" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
     <node concept="1Qtc8_" id="5oiZ4v5mfRM" role="IW6Ez">
       <node concept="ZR7TO" id="5oiZ4v5mfRS" role="1Qtc8$" />
       <node concept="IWgqT" id="5oiZ4v5mfRV" role="1Qtc8A">
@@ -235,7 +235,7 @@
   <node concept="3ICXOK" id="5oiZ4v5qnDK">
     <property role="3GE5qa" value="" />
     <property role="TrG5h" value="WithExecutableAction" />
-    <ref role="7LAce" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
+    <ref role="aqKnT" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
     <node concept="1Qtc8_" id="5oiZ4v5qnDL" role="IW6Ez">
       <node concept="ZR7TO" id="5oiZ4v5qnDM" role="1Qtc8$" />
       <node concept="IWgqT" id="5oiZ4v5qnDN" role="1Qtc8A">
@@ -269,12 +269,12 @@
   <node concept="3ICXOK" id="33LYnHO_wMY">
     <property role="3GE5qa" value="" />
     <property role="TrG5h" value="ContributedToFromUnusedLanguage" />
-    <ref role="7LAce" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
+    <ref role="aqKnT" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
   </node>
   <node concept="3ICXOK" id="33LYnHOC7cL">
     <property role="3GE5qa" value="" />
     <property role="TrG5h" value="ContributedToFromUsedLanguage" />
-    <ref role="7LAce" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
+    <ref role="aqKnT" to="wtc3:229s7wVD3am" resolve="TransformationMenuTestConcept" />
   </node>
   <node concept="24kQdi" id="Vk$nhxzCx5">
     <property role="3GE5qa" value="Scopes" />
@@ -286,25 +286,25 @@
   <node concept="3ICXOK" id="3iBZoP55j1v">
     <property role="3GE5qa" value="Scopes" />
     <property role="TrG5h" value="NamedMenuForBase" />
-    <ref role="7LAce" to="wtc3:Vk$nhxzCwi" resolve="ScopesTestConceptBase" />
+    <ref role="aqKnT" to="wtc3:Vk$nhxzCwi" resolve="ScopesTestConceptBase" />
   </node>
   <node concept="IW6AY" id="2mcvySy0$_I">
     <property role="3GE5qa" value="Include" />
-    <ref role="7LAce" to="wtc3:2mcvySy0$_k" resolve="Derived" />
+    <ref role="aqKnT" to="wtc3:2mcvySy0$_k" resolve="Derived" />
   </node>
   <node concept="IW6AY" id="2mcvySy0$A8">
     <property role="3GE5qa" value="Include" />
-    <ref role="7LAce" to="wtc3:2mcvySy0$_j" resolve="Base" />
+    <ref role="aqKnT" to="wtc3:2mcvySy0$_j" resolve="Base" />
   </node>
   <node concept="3ICXOK" id="2mcvySy0$Ay">
     <property role="3GE5qa" value="Include" />
     <property role="TrG5h" value="Base_NamedTransformationMenu" />
-    <ref role="7LAce" to="wtc3:2mcvySy0$_j" resolve="Base" />
+    <ref role="aqKnT" to="wtc3:2mcvySy0$_j" resolve="Base" />
   </node>
   <node concept="3ICXOK" id="2mcvySy0$AW">
     <property role="3GE5qa" value="Include" />
     <property role="TrG5h" value="Derived_NamedTransformationMenu" />
-    <ref role="7LAce" to="wtc3:2mcvySy0$_k" resolve="Derived" />
+    <ref role="aqKnT" to="wtc3:2mcvySy0$_k" resolve="Derived" />
   </node>
   <node concept="24kQdi" id="4CpFf$TvO_$">
     <ref role="1XX52x" to="wtc3:4CpFf$TvO_8" resolve="NodeHolder" />

@@ -99,4 +99,37 @@ public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
    */
   @NotNull
   Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedTransformationMenuId menuId);
+
+
+  /**
+   * Returns a named substitute menu together with any additions to it declared in this language
+   * @param menuId identifier of the named menu
+   * @return a non-null but possibly empty collection
+   */
+  @NotNull
+  Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedTransformationMenuId menuId);
+
+  /**
+   * Returns the default substitute menu for a concept (if defined), together with any additions contributed by extending languages.
+   * @param concept the concept
+   * @return a non-null but possibly empty collection
+   */
+  @NotNull
+  Collection<SubstituteMenu> getDefaultSubstituteMenus(SAbstractConcept concept, @NotNull Collection<SLanguage> usedLanguages);
+
+  /**
+   * Returns the default substitute menu for a concept and/or any contributions to that menu that are declared in this language.
+   * @param concept the concept
+   * @return a non-null but possibly empty collection
+   */
+  @NotNull
+  Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept);
+
+  /**
+   * Returns a named substitute menu together with any additions to it contributed by extending languages.
+   * @param menuId identifier of the named menu
+   * @return a non-null but possibly empty collection
+   */
+  @NotNull
+  Collection<SubstituteMenu> getNamedSubstituteMenus(NamedTransformationMenuId menuId, @NotNull Collection<SLanguage> usedLanguages);
 }

@@ -22,22 +22,22 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class IParameterizableMenuPart__BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8ad24L, "jetbrains.mps.lang.editor.structure.IParameterizableMenuPart");
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9002d0dL, "jetbrains.mps.lang.editor.structure.IParameterizableMenuPart");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SNode> getParameterizer_id3EZUZhmYaOQ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParameterizer").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3EZUZhmYaOQ").registry(REGISTRY).build();
-  public static final SMethod<Boolean> isParameterized_id3EZUZhneE$4 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isParameterized").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3EZUZhneE$4").registry(REGISTRY).build();
+  public static final SMethod<SNode> getParameterizer_id1quYWAD0Tfp = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParameterizer").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1quYWAD0Tfp").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isParameterized_id1quYWAD0Tfz = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isParameterized").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1quYWAD0Tfz").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getParameterizer_id3EZUZhmYaOQ, isParameterized_id3EZUZhneE$4);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getParameterizer_id1quYWAD0Tfp, isParameterized_id1quYWAD0Tfz);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static SNode getParameterizer_id3EZUZhmYaOQ(@NotNull SNode __thisNode__) {
-    return SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8ad25L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Parameterized"), false, false);
+  /*package*/ static SNode getParameterizer_id1quYWAD0Tfp(@NotNull SNode __thisNode__) {
+    return SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9002d0fL, "jetbrains.mps.lang.editor.structure.IMenuPartParameterized"), false, false);
   }
-  /*package*/ static boolean isParameterized_id3EZUZhneE$4(@NotNull SNode __thisNode__) {
-    return (IParameterizableMenuPart__BehaviorDescriptor.getParameterizer_id3EZUZhmYaOQ.invoke(__thisNode__) != null);
+  /*package*/ static boolean isParameterized_id1quYWAD0Tfz(@NotNull SNode __thisNode__) {
+    return (IParameterizableMenuPart__BehaviorDescriptor.getParameterizer_id1quYWAD0Tfp.invoke(__thisNode__) != null);
   }
 
   /*package*/ IParameterizableMenuPart__BehaviorDescriptor() {
@@ -57,9 +57,9 @@ public final class IParameterizableMenuPart__BehaviorDescriptor extends BaseBHDe
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((SNode) getParameterizer_id3EZUZhmYaOQ(node));
+        return (T) ((SNode) getParameterizer_id1quYWAD0Tfp(node));
       case 1:
-        return (T) ((Boolean) isParameterized_id3EZUZhneE$4(node));
+        return (T) ((Boolean) isParameterized_id1quYWAD0Tfz(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

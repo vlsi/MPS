@@ -18,7 +18,7 @@ package jetbrains.mps.nodeEditor.cells.contextAssistant;
 import com.intellij.openapi.ui.popup.ListPopupStep;
 import com.intellij.openapi.ui.popup.PopupStep;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 import org.jmock.integration.junit4.JUnit4Mockery;
@@ -32,7 +32,7 @@ public class ActionExecutionTest {
     Mockery context = new JUnit4Mockery();
 
     @SuppressWarnings("unchecked")
-    ListPopupStep<MenuItem> step = context.mock(ListPopupStep.class);
+    ListPopupStep<TransformationMenuItem> step = context.mock(ListPopupStep.class);
     ActionItem actionItem = context.mock(ActionItem.class);
     Runnable actionRunnable = context.mock(Runnable.class);
 

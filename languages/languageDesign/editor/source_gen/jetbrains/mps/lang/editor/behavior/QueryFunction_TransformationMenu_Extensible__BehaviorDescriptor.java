@@ -37,9 +37,9 @@ public final class QueryFunction_TransformationMenu_Extensible__BehaviorDescript
 
   /*package*/ static List<SNode> getParameters_idhEwIGRM(@NotNull SNode __thisNode__) {
     List<SNode> result = QueryFunction_TransformationMenu__BehaviorDescriptor.getParameters_idhEwIGRM.invokeSpecial(__thisNode__);
-    SNode extensibleMenuPart = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, "jetbrains.mps.lang.editor.structure.IExtensibleMenuPart"), false, false);
+    SNode extensibleMenuPart = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, "jetbrains.mps.lang.editor.structure.IExtensibleTransformationMenuPart"), false, false);
     if ((extensibleMenuPart != null)) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(IExtensibleMenuPart__BehaviorDescriptor.getAdditionalFeatureParameters_id6kJcyCQ_bk0.invoke(extensibleMenuPart)).select(new ISelector<SConcept, SNode>() {
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(IExtensibleTransformationMenuPart__BehaviorDescriptor.getAdditionalFeatureParameters_id6kJcyCQ_bk0.invoke(extensibleMenuPart)).select(new ISelector<SConcept, SNode>() {
         public SNode select(SConcept it) {
           return (SNode) SNodeOperations.asNode(it);
         }

@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor.cells.contextAssistant;
 
 import com.intellij.openapi.ui.popup.ListPopupStep;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
 
 interface ContextAssistantView {
@@ -24,7 +24,7 @@ interface ContextAssistantView {
 
   void requestFocus();
 
-  void showMenu(@NotNull ListPopupStep<MenuItem> items);
+  void showMenu(@NotNull ListPopupStep<TransformationMenuItem> items);
 
   void hideMenu();
 }

@@ -15,23 +15,26 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.lang.editor.menus.*;
+import jetbrains.mps.lang.editor.menus.MenuPart;
+import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public abstract class SubMenuMenuPart extends SingleItemMenuPart {
+public abstract class SubMenuMenuPart extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
   @NotNull
   @Override
-  protected MenuItem createItem(TransformationMenuContext context) {
-    final List<MenuItem> items = new CompositeMenuPart(getParts()).createItems(context);
+  protected TransformationMenuItem createItem(TransformationMenuContext context) {
+    final List<TransformationMenuItem> items = new jetbrains.mps.lang.editor.menus.CompositeMenuPart<>(getParts()).createItems(context);
     String text = getText(context);
     return new SubMenu(text, items);
   }
 
   protected abstract String getText(TransformationMenuContext context);
 
-  protected abstract List<MenuPart> getParts();
+  protected abstract List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts();
 }

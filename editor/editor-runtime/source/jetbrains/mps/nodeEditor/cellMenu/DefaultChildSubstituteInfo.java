@@ -127,7 +127,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo imple
     return new DefaultChildNodeSetter(myLinkDeclaration);
   }
 
-  protected SNode getLinkDeclaration() {
+  public SNode getLinkDeclaration() {
     return myLinkDeclaration;
   }
 
@@ -135,5 +135,4 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo imple
     SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
     return SNodeUtil.getLinkDeclaration_IsReference(genuineLinkDeclaration);
   }
-
 }

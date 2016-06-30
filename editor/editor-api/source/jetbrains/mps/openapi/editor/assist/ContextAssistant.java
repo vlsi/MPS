@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.openapi.editor.assist;
 
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 public interface ContextAssistant {
-  void showMenu(@NotNull List<MenuItem> items);
+  void showMenu(@NotNull List<TransformationMenuItem> items);
   void hideMenu();
 
   void focusMenu();

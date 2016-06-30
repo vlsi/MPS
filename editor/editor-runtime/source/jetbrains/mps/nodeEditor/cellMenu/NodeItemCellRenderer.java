@@ -22,10 +22,13 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.SubstituteActionUtil;
 import jetbrains.mps.nodeEditor.cells.FontRegistry;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
+import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItemAsSubstituteAction;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.smodel.runtime.IconResource;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -235,7 +238,6 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     Icon icon = null;
     SNode iconNode = action.getIconNode(pattern);
     if (iconNode != null) {
-
       boolean isConcept = SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !(action.isReferentPresentation());
       if (isConcept) {
         icon = myConceptIconMap.get(iconNode);
@@ -254,9 +256,13 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
           myNodeIconMap.put(iconNode, icon);
         }
       }
-    } else {
+    } else if (action instanceof CompletionActionItemAsSubstituteAction){
+      icon = IconManager.getIconForResource(((CompletionActionItemAsSubstituteAction) action).getIcon(pattern));
+    }
+    if (icon == null) {
       icon = IdeIcons.DEFAULT_ICON;
     }
+
     return icon;
   }
 

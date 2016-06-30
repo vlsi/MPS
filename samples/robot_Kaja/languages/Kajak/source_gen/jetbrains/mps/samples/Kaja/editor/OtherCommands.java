@@ -4,27 +4,27 @@ package jetbrains.mps.samples.Kaja.editor;
 
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.List;
-import jetbrains.mps.lang.editor.menus.transformation.MenuPart;
+import jetbrains.mps.lang.editor.menus.MenuPart;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
-import jetbrains.mps.lang.editor.menus.transformation.SingleItemMenuPart;
+import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.editor.menus.transformation.ConditionalMenuPart;
+import jetbrains.mps.lang.editor.menus.ConditionalMenuPart;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class OtherCommands extends TransformationMenuBase {
   @Override
-  protected List<MenuPart> getParts(TransformationMenuContext _context) {
-    List<MenuPart> result = new ArrayList<MenuPart>();
+  protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
+    List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
       result.add(new OtherCommands.TransformationMenuPart_Action_uewb7w_a0());
       result.add(new OtherCommands.TransformationMenuPart_Action_uewb7w_b0());
@@ -33,9 +33,9 @@ public class OtherCommands extends TransformationMenuBase {
     return result;
   }
 
-  private static class TransformationMenuPart_Action_uewb7w_a0 extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_uewb7w_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new OtherCommands.TransformationMenuPart_Action_uewb7w_a0.Item(context);
     }
 
@@ -59,9 +59,9 @@ public class OtherCommands extends TransformationMenuBase {
 
     }
   }
-  private static class TransformationMenuPart_Action_uewb7w_b0 extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_uewb7w_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new OtherCommands.TransformationMenuPart_Action_uewb7w_b0.Item(context);
     }
 
@@ -85,23 +85,23 @@ public class OtherCommands extends TransformationMenuBase {
 
     }
   }
-  public static class TransformationMenuPart_Group_uewb7w_c0 extends ConditionalMenuPart {
+  public static class TransformationMenuPart_Group_uewb7w_c0 extends ConditionalMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return eq_uewb7w_a0a0a4(SNodeOperations.getParent(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785f06a3fL, "jetbrains.mps.samples.Kaja.structure.CommandList"), false, false)), SNodeOperations.getContainingRoot(_context.getNode()));
     }
 
     @Override
-    protected List<MenuPart> getParts() {
-      return Arrays.<MenuPart>asList(new OtherCommands.TransformationMenuPart_Action_uewb7w_a2a());
+    protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new OtherCommands.TransformationMenuPart_Action_uewb7w_a2a());
     }
     private static boolean eq_uewb7w_a0a0a4(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }
-  private static class TransformationMenuPart_Action_uewb7w_a2a extends SingleItemMenuPart {
+  private static class TransformationMenuPart_Action_uewb7w_a2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
-    protected MenuItem createItem(TransformationMenuContext context) {
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new OtherCommands.TransformationMenuPart_Action_uewb7w_a2a.Item(context);
     }
 

@@ -17,6 +17,9 @@ package jetbrains.mps.lang.editor.menus.transformation;
 
 public class MenuLocations {
   public static final String CONTEXT_ASSISTANT = "jetbrains.mps.lang.editor.CONTEXT_ASSISTANT";
+  public final static String RIGHT_SIDE_TRANSFORM = "jetbrains.lang.editor.RIGHT_SIDE_TRANSFORM";
+  public final static String LEFT_SIDE_TRANSFORM = "jetbrains.mps.lang.editor.LEFT_SIDE_TRANSFORM";
+  public final static String SUBSTITUTE = "jetbrains.mps.lang.editor.SUBSTITUTE";
 
   private MenuLocations() { }
 }

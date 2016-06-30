@@ -21,10 +21,10 @@ import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.assist.ContextAssistant;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.openapi.editor.update.UpdaterListener;
 import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
@@ -54,7 +54,7 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
   private ScheduleUpdateDelayedRunnable myScheduleUpdateDelayedRunnable;
 
   private ContextAssistant myActiveAssistant;
-  private List<MenuItem> myActiveMenuItems;
+  private List<TransformationMenuItem> myActiveMenuItems;
 
   public DefaultContextAssistantManager(EditorComponent component, SRepository repository) {
     this(component.getSelectionManager(), component.getUpdater(), new ParentOrSmallCellContextAssistantFinder(),
@@ -136,7 +136,7 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
     Selection selection = mySelectionManager.getSelection();
 
     ContextAssistant newAssistant = selection == null ? null : myAssistantFinder.findAssistant(selection);
-    List<MenuItem> newItems = newAssistant == null ? Collections.emptyList() : myMenuProvider.getMenuItems(selection);
+    List<TransformationMenuItem> newItems = newAssistant == null ? Collections.emptyList() : myMenuProvider.getMenuItems(selection);
 
     update(newAssistant, newItems);
   }
@@ -148,11 +148,11 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
   }
 
   @Override
-  public List<MenuItem> getActiveMenuItems() {
+  public List<TransformationMenuItem> getActiveMenuItems() {
     return myActiveMenuItems;
   }
 
-  private void update(@Nullable ContextAssistant newAssistant, @NotNull List<MenuItem> newItems) {
+  private void update(@Nullable ContextAssistant newAssistant, @NotNull List<TransformationMenuItem> newItems) {
     hideMenu();
 
     if (newAssistant == null || newItems.isEmpty()) {
@@ -171,7 +171,7 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
     myActiveMenuItems = null;
   }
 
-  private void showMenu(@NotNull ContextAssistant newAssistant, @NotNull List<MenuItem> newItems) {
+  private void showMenu(@NotNull ContextAssistant newAssistant, @NotNull List<TransformationMenuItem> newItems) {
     assert myActiveAssistant == null;
     myActiveAssistant = newAssistant;
     myActiveMenuItems = newItems;

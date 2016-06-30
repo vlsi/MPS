@@ -98,7 +98,6 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
-
   public Collection<ConceptEditorHint> getHints() {
     return myHints;
   }

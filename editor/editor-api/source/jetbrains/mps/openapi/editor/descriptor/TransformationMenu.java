@@ -15,14 +15,9 @@
  */
 package jetbrains.mps.openapi.editor.descriptor;
 
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 
-import java.util.List;
+public interface TransformationMenu extends Menu<TransformationMenuItem, TransformationMenuContext> {
 
-public interface TransformationMenu {
-  @NotNull
-  List<MenuItem> createMenuItems(TransformationMenuContext context);
-  boolean isContribution();
 }

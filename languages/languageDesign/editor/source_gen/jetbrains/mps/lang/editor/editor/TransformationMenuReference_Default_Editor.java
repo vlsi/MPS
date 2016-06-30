@@ -43,32 +43,32 @@ public class TransformationMenuReference_Default_Editor extends DefaultNodeEdito
     style.set(StyleAttributes.NAVIGATABLE_NODE, 0, TransformationMenuReference_Default_Editor._StyleParameter_QueryFunction_9zto5v_a0a0(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TransformationMenuReference_Default_Editor.ReplaceWith_TransformationMenuReference_cellMenu_9zto5v_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TransformationMenuReference_Default_Editor.ReplaceWith_ITransformationMenuReference_cellMenu_9zto5v_a0a0()}));
     return editorCell;
   }
   private static SNode _StyleParameter_QueryFunction_9zto5v_a0a0(EditorContext editorContext, SNode node) {
-    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff0cL, 0x5d3b34577b3cff0dL, "concept")) == null)) {
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "conceptNew")) == null)) {
       return null;
     }
-    return DefaultTransformationMenuUtil.findDefaultMenuForConcept(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff0cL, 0x5d3b34577b3cff0dL, "concept")));
+    return DefaultTransformationMenuUtil.findDefaultTransformationMenuForConcept(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "conceptNew")));
   }
-  public static class ReplaceWith_TransformationMenuReference_cellMenu_9zto5v_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_TransformationMenuReference_cellMenu_9zto5v_a0a0() {
+  public static class ReplaceWith_ITransformationMenuReference_cellMenu_9zto5v_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_ITransformationMenuReference_cellMenu_9zto5v_a0a0() {
     }
     public SAbstractConcept getReplacementConcept() {
-      return MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff08L, "jetbrains.mps.lang.editor.structure.TransformationMenuReference");
+      return MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x36f88ebb7cbf52cdL, "jetbrains.mps.lang.editor.structure.ITransformationMenuReference");
     }
   }
   private EditorCell createRefCell_9zto5v_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("concept");
-    provider.setNoTargetText("<no concept>");
+    provider.setRole("conceptNew");
+    provider.setNoTargetText("<no conceptNew>");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new TransformationMenuReference_Default_Editor._Inline_9zto5v_a1a());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("concept");
+      editorCell.setRole("conceptNew");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

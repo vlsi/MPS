@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor.assist;
 
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -50,7 +50,7 @@ public class CanExecuteFilterTest {
 
   @Test
   public void treatsExceptionFromCanExecuteAsReturningFalse() {
-    List<MenuItem> filteredItems = newFilter().apply(Collections.singletonList(new ActionItemBase() {
+    List<TransformationMenuItem> filteredItems = newFilter().apply(Collections.singletonList(new ActionItemBase() {
       @Override
       public boolean canExecute(@NotNull String pattern) {
         throw new RuntimeException("exception in canExecute() that should be caught and treated as returning false");
@@ -61,17 +61,17 @@ public class CanExecuteFilterTest {
 
   @Test
   public void zeroItems() throws Exception {
-    List<MenuItem> filteredItems = newFilter().apply(Collections.emptyList());
+    List<TransformationMenuItem> filteredItems = newFilter().apply(Collections.emptyList());
 
     assertEquals(Collections.emptyList(), filteredItems);
   }
 
   @Test
   public void oneExecutableItem() throws Exception {
-    MenuItem executableMenuItem = new TestActionItem(true);
+    TransformationMenuItem executableMenuItem = new TestActionItem(true);
     CanExecuteFilter filter = newFilter();
 
-    List<MenuItem> filteredItems = filter.apply(Collections.singletonList(executableMenuItem));
+    List<TransformationMenuItem> filteredItems = filter.apply(Collections.singletonList(executableMenuItem));
 
     assertEquals(Collections.singletonList(executableMenuItem), filteredItems);
   }
@@ -83,27 +83,27 @@ public class CanExecuteFilterTest {
 
   @Test
   public void oneNonExecutableItem() throws Exception {
-    MenuItem nonExecutableMenuItem = new TestActionItem(false);
+    TransformationMenuItem nonExecutableMenuItem = new TestActionItem(false);
     CanExecuteFilter filter = newFilter();
 
-    List<MenuItem> filteredItems = filter.apply(Collections.singletonList(nonExecutableMenuItem));
+    List<TransformationMenuItem> filteredItems = filter.apply(Collections.singletonList(nonExecutableMenuItem));
 
     assertEquals(Collections.emptyList(), filteredItems);
   }
 
   @Test
   public void submenuWithAllNonExecutableItems() throws Exception {
-    MenuItem subMenu = new SubMenu("submenu", Collections.singletonList(new TestActionItem(false)));
+    TransformationMenuItem subMenu = new SubMenu("submenu", Collections.singletonList(new TestActionItem(false)));
     CanExecuteFilter filter = newFilter();
 
-    List<MenuItem> filteredItems = filter.apply(Collections.singletonList(subMenu));
+    List<TransformationMenuItem> filteredItems = filter.apply(Collections.singletonList(subMenu));
 
     assertEquals(Collections.emptyList(), filteredItems);
   }
 
   @Test
   public void submenuWithSubmenuWithAllNonExecutableItems() {
-    List<MenuItem> filteredItems = newFilter().apply(Collections.singletonList(
+    List<TransformationMenuItem> filteredItems = newFilter().apply(Collections.singletonList(
         new SubMenu("top", Collections.singletonList(
             new SubMenu("nested", Collections.singletonList(new TestActionItem(false)))))));
 
@@ -117,7 +117,7 @@ public class CanExecuteFilterTest {
 
     CanExecuteFilter filter = newFilter();
 
-    List<MenuItem> filteredItems = filter.apply(Collections.singletonList(
+    List<TransformationMenuItem> filteredItems = filter.apply(Collections.singletonList(
         new SubMenu("submenu", Arrays.asList(executableItem, nonExecutableItem, executableItem, nonExecutableItem))));
 
     assertEquals(Collections.singletonList(new SubMenu("submenu", Arrays.asList(executableItem, executableItem))), filteredItems);

@@ -39,14 +39,14 @@ public class TransformationMenu_Test_Editor extends DefaultNodeEditor {
   }
   private EditorCell createRefCell_s38dn5_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("conceptDeclaration");
+    provider.setRole("conceptDeclarationNew");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new TransformationMenu_Test_Editor._Inline_s38dn5_a1a());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("conceptDeclaration");
+      editorCell.setRole("conceptDeclarationNew");
     }
     Style style = new StyleImpl();
     SharedStyles_StyleSheet.apply_ReferenceOnConcept(style, editorCell);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:56c9dfde-c44a-4221-a18c-06ba73a42ffb(jetbrains.mps.lang.editor.menus.extras.generator.template.main@generator)">
+<model ref="r:56c9dfde-c44a-4221-a18c-06ba73a42ffb(jetbrains.mps.lang.intentions.contextAssistant.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
@@ -256,10 +256,10 @@
         <node concept="2tJIrI" id="6kJcyCQ$JZy" role="jymVt" />
         <node concept="3clFb_" id="6kJcyCQ$JZz" role="jymVt">
           <property role="TrG5h" value="createItem" />
-          <node concept="3Tmbuc" id="6kJcyCQ$JZ$" role="1B3o_S" />
-          <node concept="3uibUv" id="6kJcyCQ$JZ_" role="3clF45">
-            <ref role="3uigEE" to="uddc:~MenuItem" resolve="MenuItem" />
+          <node concept="3uibUv" id="6ed47gd8d_X" role="3clF45">
+            <ref role="3uigEE" to="uddc:~TransformationMenuItem" resolve="TransformationMenuItem" />
           </node>
+          <node concept="3Tmbuc" id="6kJcyCQ$JZ$" role="1B3o_S" />
           <node concept="37vLTG" id="6kJcyCQ$JZA" role="3clF46">
             <property role="TrG5h" value="context" />
             <node concept="3uibUv" id="6kJcyCQ$JZB" role="1tU5fm">
@@ -482,10 +482,10 @@
         <node concept="2tJIrI" id="46W80XA3trp" role="jymVt" />
         <node concept="3clFb_" id="46W80XA3trq" role="jymVt">
           <property role="TrG5h" value="createItem" />
-          <node concept="3Tmbuc" id="46W80XA3trr" role="1B3o_S" />
-          <node concept="3uibUv" id="46W80XA3trs" role="3clF45">
-            <ref role="3uigEE" to="uddc:~MenuItem" resolve="MenuItem" />
+          <node concept="3uibUv" id="6ed47gd8ftk" role="3clF45">
+            <ref role="3uigEE" to="uddc:~TransformationMenuItem" resolve="TransformationMenuItem" />
           </node>
+          <node concept="3Tmbuc" id="46W80XA3trr" role="1B3o_S" />
           <node concept="37vLTG" id="46W80XA3trt" role="3clF46">
             <property role="TrG5h" value="context" />
             <node concept="3uibUv" id="46W80XA3tru" role="1tU5fm">
@@ -530,6 +530,9 @@
           <property role="1sVAO0" value="false" />
           <property role="1EXbeo" value="false" />
           <property role="TrG5h" value="Item" />
+          <node concept="3uibUv" id="5UD30_PS4Wm" role="1zkMxy">
+            <ref role="3uigEE" to="qwun:5UD30_PS2b9" resolve="RefactoringMenuItemBase" />
+          </node>
           <node concept="3clFbW" id="46W80XA3trN" role="jymVt">
             <node concept="3cqZAl" id="46W80XA3trO" role="3clF45" />
             <node concept="3Tm6S6" id="46W80XA3trP" role="1B3o_S" />
@@ -578,9 +581,6 @@
             </node>
           </node>
           <node concept="3Tm6S6" id="46W80XA3tsO" role="1B3o_S" />
-          <node concept="3uibUv" id="5UD30_PS4Wm" role="1zkMxy">
-            <ref role="3uigEE" to="qwun:5UD30_PS2b9" resolve="RefactoringMenuItemBase" />
-          </node>
           <node concept="3uibUv" id="6VgTvK0o_HR" role="EKbjA">
             <ref role="3uigEE" to="uddc:~ActionItem" resolve="ActionItem" />
             <node concept="1WS0z7" id="6VgTvK0o_HS" role="lGtFl">
@@ -710,10 +710,10 @@
         <node concept="2tJIrI" id="20Jj4S2CJrD" role="jymVt" />
         <node concept="3clFb_" id="20Jj4S2CJrE" role="jymVt">
           <property role="TrG5h" value="createItem" />
-          <node concept="3Tmbuc" id="20Jj4S2CJrF" role="1B3o_S" />
-          <node concept="3uibUv" id="20Jj4S2CJrG" role="3clF45">
-            <ref role="3uigEE" to="uddc:~MenuItem" resolve="MenuItem" />
+          <node concept="3uibUv" id="6ed47gd7Y_u" role="3clF45">
+            <ref role="3uigEE" to="uddc:~TransformationMenuItem" resolve="TransformationMenuItem" />
           </node>
+          <node concept="3Tmbuc" id="20Jj4S2CJrF" role="1B3o_S" />
           <node concept="37vLTG" id="20Jj4S2CJrH" role="3clF46">
             <property role="TrG5h" value="context" />
             <node concept="3uibUv" id="20Jj4S2CJrI" role="1tU5fm">

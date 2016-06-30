@@ -19,27 +19,27 @@ import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
 import com.intellij.ui.popup.ClosableByLeftArrow;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItemVisitor;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItemVisitor;
 import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.List;
 
-class MenuItemListStep extends BaseListPopupStep<MenuItem> implements ClosableByLeftArrow {
+class MenuItemListStep extends BaseListPopupStep<TransformationMenuItem> implements ClosableByLeftArrow {
   public static final MenuItemListStep EMPTY = new MenuItemListStep(null, Collections.emptyList());
   private final ActionItemExecutor myActionItemExecutor;
 
-  MenuItemListStep(ActionItemExecutor actionItemExecutor, List<MenuItem> items) {
+  MenuItemListStep(ActionItemExecutor actionItemExecutor, List<TransformationMenuItem> items) {
     super(null, items);
     myActionItemExecutor = actionItemExecutor;
   }
 
   @NotNull
   @Override
-  public String getTextFor(MenuItem value) {
-    return value.accept(new MenuItemVisitor<String>() {
+  public String getTextFor(TransformationMenuItem value) {
+    return value.accept(new TransformationMenuItemVisitor<String>() {
       @Override
       public String visit(ActionItem actionItem) {
         String labelText = actionItem.getLabelText("");
@@ -55,13 +55,13 @@ class MenuItemListStep extends BaseListPopupStep<MenuItem> implements ClosableBy
   }
 
   @Override
-  public boolean hasSubstep(MenuItem selectedValue) {
+  public boolean hasSubstep(TransformationMenuItem selectedValue) {
     return selectedValue instanceof SubMenu;
   }
 
   @Override
-  public PopupStep onChosen(MenuItem selectedValue, boolean finalChoice) {
-    return selectedValue.accept(new MenuItemVisitor<PopupStep>() {
+  public PopupStep onChosen(TransformationMenuItem selectedValue, boolean finalChoice) {
+    return selectedValue.accept(new TransformationMenuItemVisitor<PopupStep>() {
       @Override
       public PopupStep visit(ActionItem actionItem) {
         return doFinalStep(getRunnableFor(actionItem));

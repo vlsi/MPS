@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.nodeEditor.assist;
 
-import jetbrains.mps.lang.editor.menus.transformation.DefaultMenuLookup;
+import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -50,11 +50,11 @@ public class SelectionMenuProviderByCellAndConcept implements SelectionMenuProvi
 
   @NotNull
   @Override
-  public List<MenuItem> getMenuItems(@NotNull Selection selection) {
+  public List<TransformationMenuItem> getMenuItems(@NotNull Selection selection) {
     EditorCell selectedCell = ContextAssistantSelectionUtil.getSingleSelectedCell(selection);
     if (selectedCell == null) return Collections.emptyList();
 
-    final Pair<TransformationMenuLookup, EditorCell> menuLookupAndCell = getMenuLookupAndCell(selectedCell);
+    final Pair<MenuLookup<TransformationMenu>, EditorCell> menuLookupAndCell = getMenuLookupAndCell(selectedCell);
 
     if (menuLookupAndCell == null) return Collections.emptyList();
 
@@ -66,22 +66,22 @@ public class SelectionMenuProviderByCellAndConcept implements SelectionMenuProvi
     return myModelAccessHelper.runReadAction(() -> {
       DefaultTransformationMenuContext context = DefaultTransformationMenuContext.createInitialContextForCell(menuLookupAndCell.o2,
           myMenuLocation);
-      return context.getMenuItemFactory().createItems(menuLookupAndCell.o1);
+      return context.createItems(menuLookupAndCell.o1);
     });
   }
 
   @Nullable
-  private Pair<TransformationMenuLookup, EditorCell> getMenuLookupAndCell(EditorCell selectedCell) {
+  private Pair<MenuLookup<TransformationMenu>, EditorCell> getMenuLookupAndCell(EditorCell selectedCell) {
     EditorCell cell = selectedCell;
     while (cell != null) {
-      TransformationMenuLookup key = cell.getTransformationMenuLookup();
+      MenuLookup<TransformationMenu> key = cell.getTransformationMenuLookup();
       if (key != null) {
         return new Pair<>(key, cell);
       }
 
       if (cell.isBig()) {
         SConcept concept = cell.getSNode().getConcept();
-        DefaultMenuLookup menuLookup = new DefaultMenuLookup(LanguageRegistry.getInstance(cell.getContext().getRepository()), concept);
+        DefaultTransformationMenuLookup menuLookup = new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(cell.getContext().getRepository()), concept);
         Collection<TransformationMenu> defaultMenu = menuLookup.lookup(Collections.singleton(concept.getLanguage()));
         boolean hasDefaultMenu = !defaultMenu.isEmpty();
         if (hasDefaultMenu) {

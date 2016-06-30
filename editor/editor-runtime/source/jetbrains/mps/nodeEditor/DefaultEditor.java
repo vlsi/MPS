@@ -29,6 +29,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode.DeleteDirection;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteSReference;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellMenu.BooleanSPropertySubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
@@ -200,8 +201,8 @@ public class DefaultEditor extends AbstractDefaultEditor {
         setSemanticNodeToCells(cell, getSNode());
 
         //todo rewrite cell actions
-        cell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(getSNode(), referenceLink.getName()));
-        cell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(getSNode(), referenceLink.getName()));
+        cell.setAction(CellActionType.DELETE, new CellAction_DeleteSReference(getSNode(), referenceLink));
+        cell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSReference(getSNode(), referenceLink));
         cell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(getSNode(), referenceLink, getEditorContext()));
         if (cell.getCellId() == null) {
           cell.setCellId("reference_" + referenceLink.getName());

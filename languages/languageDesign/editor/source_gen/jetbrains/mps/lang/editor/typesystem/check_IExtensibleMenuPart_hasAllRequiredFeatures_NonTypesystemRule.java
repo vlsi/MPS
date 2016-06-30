@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.lang.editor.behavior.IExtensibleMenuPart__BehaviorDescriptor;
+import jetbrains.mps.lang.editor.behavior.IExtensibleTransformationMenuPart__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -24,7 +24,7 @@ public class check_IExtensibleMenuPart_hasAllRequiredFeatures_NonTypesystemRule 
   public check_IExtensibleMenuPart_hasAllRequiredFeatures_NonTypesystemRule() {
   }
   public void applyRule(final SNode part, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    Iterable<SConcept> missingFeatures = IExtensibleMenuPart__BehaviorDescriptor.getMissingFeatures_id6kJcyCQjeiA.invoke(part);
+    Iterable<SConcept> missingFeatures = IExtensibleTransformationMenuPart__BehaviorDescriptor.getMissingFeatures_id6kJcyCQjeiA.invoke(part);
 
     if (Sequence.fromIterable(missingFeatures).isNotEmpty()) {
       {
@@ -46,7 +46,7 @@ public class check_IExtensibleMenuPart_hasAllRequiredFeatures_NonTypesystemRule 
     }
   }
   public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, "jetbrains.mps.lang.editor.structure.IExtensibleMenuPart");
+    return MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, "jetbrains.mps.lang.editor.structure.IExtensibleTransformationMenuPart");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);

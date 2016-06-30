@@ -6,10 +6,10 @@ import jetbrains.mps.nodeEditor.assist.SelectionMenuProvider;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.selection.Selection;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItemVisitor;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItemVisitor;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
 import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import javax.swing.Icon;
@@ -29,19 +29,19 @@ public class ItemConverter {
   }
 
   protected List<ToolComponent.IItem> queryItems(@NotNull Selection selection) {
-    List<MenuItem> menuItems = myMenuProvider.getMenuItems(selection);
+    List<TransformationMenuItem> menuItems = myMenuProvider.getMenuItems(selection);
     return convertItems(menuItems);
   }
 
-  public static List<ToolComponent.IItem> convertItems(List<MenuItem> menuItems) {
+  public static List<ToolComponent.IItem> convertItems(List<TransformationMenuItem> menuItems) {
     List<ToolComponent.IItem> uiItems = ListSequence.fromList(new ArrayList<ToolComponent.IItem>());
     convertItems(menuItems, "", uiItems);
     return uiItems;
   }
 
-  private static void convertItems(List<MenuItem> inItems, final String folderName, final List<ToolComponent.IItem> outItems) {
-    for (MenuItem inItem : ListSequence.fromList(inItems)) {
-      inItem.accept(new MenuItemVisitor<Void>() {
+  private static void convertItems(List<TransformationMenuItem> inItems, final String folderName, final List<ToolComponent.IItem> outItems) {
+    for (TransformationMenuItem inItem : ListSequence.fromList(inItems)) {
+      inItem.accept(new TransformationMenuItemVisitor<Void>() {
         @Override
         public Void visit(ActionItem actionItem) {
           ListSequence.fromList(outItems).addElement(convertActionItem(actionItem, folderName));
