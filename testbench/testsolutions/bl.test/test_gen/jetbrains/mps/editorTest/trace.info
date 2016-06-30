@@ -6988,6 +6988,24 @@
       <unit id="5706606249111727921" at="14,0,50,0" name="jetbrains.mps.editorTest.BaseAssignmentToFinalVariable_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5706606249115952799">
+    <file name="UnaryNumberOperationUsesVariable_Test.java">
+      <node id="5706606249115952799" at="17,77,18,109" concept="3" />
+      <node id="5706606249115952799" at="18,109,19,139" concept="3" />
+      <node id="5706606249115952799" at="25,79,26,242" concept="7" />
+      <node id="5706606249115952799" at="26,242,27,123" concept="3" />
+      <node id="5706606249115952799" at="25,0,29,0" concept="6" trace="test_ErrorMessagesCheck5706606249115952859#()V" />
+      <node id="5706606249115952799" at="16,0,21,0" concept="6" trace="test_ErrorMessagesCheck5706606249115952859#()V" />
+      <scope id="5706606249115952799" at="17,77,19,139" />
+      <scope id="5706606249115952799" at="25,79,27,123">
+        <var name="operation" id="5706606249115952799" />
+      </scope>
+      <scope id="5706606249115952799" at="25,0,29,0" />
+      <scope id="5706606249115952799" at="16,0,21,0" />
+      <unit id="5706606249115952799" at="22,0,31,0" name="jetbrains.mps.editorTest.UnaryNumberOperationUsesVariable_Test$TestBody" />
+      <unit id="5706606249115952799" at="14,0,32,0" name="jetbrains.mps.editorTest.UnaryNumberOperationUsesVariable_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5732053020525090668">
     <file name="SideDeleteStaticInitializerAtEndWithBackSpace_Test.java">
       <node id="5732053020525090668" at="13,85,14,102" concept="3" />

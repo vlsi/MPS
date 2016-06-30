@@ -3487,6 +3487,9 @@
     <node concept="lpD6D" id="7NKeCbZDbpi" role="lpD6w">
       <ref role="lpD7u" to="ryl9:3fsGbyakZet" resolve="Del_OnInitializerAssignment" />
     </node>
+    <node concept="lpD6D" id="4WLW2of_eyt" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4WLW2of_aqv" resolve="UnaryNumberOperationUsesVariable" />
+    </node>
     <node concept="lpD6D" id="7NKeCbZDjQ2" role="lpD6w">
       <ref role="lpD7u" to="ryl9:7NKeCbZDjJG" resolve="WrapLocalVariableWithArrayType" />
     </node>

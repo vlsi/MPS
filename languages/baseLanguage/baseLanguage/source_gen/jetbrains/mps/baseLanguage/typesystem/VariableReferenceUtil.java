@@ -68,7 +68,7 @@ public class VariableReferenceUtil {
   }
   public static boolean isRead(Iterable<SNode> references) {
     for (SNode ref : references) {
-      if (!(CheckingUtil.isAssigned(ref))) {
+      if (CheckingUtil.isRead(ref)) {
         return true;
       }
     }

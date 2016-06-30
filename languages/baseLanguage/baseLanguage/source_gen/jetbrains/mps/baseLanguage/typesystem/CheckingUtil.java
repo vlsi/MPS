@@ -25,6 +25,12 @@ import org.jetbrains.mps.openapi.model.SModel;
 public class CheckingUtil {
   public CheckingUtil() {
   }
+  public static boolean isRead(SNode node) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a4c1f269L, "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation")) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6fea7de6103549b1L, "jetbrains.mps.baseLanguage.structure.UnaryMinus"))) && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a4c1f269L, "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a4c1f269L, 0x120a4c433a6L, "expression")) == node) {
+      return true;
+    }
+    return !(isAssigned(node));
+  }
 
   public static boolean isAssigned(SNode node) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a4c1f269L, "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation")) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6fea7de6103549b1L, "jetbrains.mps.baseLanguage.structure.UnaryMinus"))) && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a4c1f269L, "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a4c1f269L, 0x120a4c433a6L, "expression")) == node) {
@@ -46,10 +52,10 @@ public class CheckingUtil {
   }
 
   public static boolean isFinalVariableReferenceAssignedIllegally(SNode reference) {
-    return CheckingUtil.isAssigned(reference) && (!(isInConstructorOrInstanceInitializer(reference)) || (SLinkOperations.getTarget(SLinkOperations.getTarget(reference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) != null));
+    return CheckingUtil.isRead(reference) && (!(isInConstructorOrInstanceInitializer(reference)) || (SLinkOperations.getTarget(SLinkOperations.getTarget(reference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) != null));
   }
   public static boolean isFinalFieldReferenceAssignedIllegally(SNode operation) {
-    if (!(CheckingUtil.isAssigned(operation))) {
+    if (!(CheckingUtil.isRead(operation))) {
       return false;
     }
     SNode operand = SLinkOperations.getTarget(IOperation__BehaviorDescriptor.getDotExpression_idhO_4GYO.invoke(operation), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
@@ -66,7 +72,7 @@ public class CheckingUtil {
     return (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false) != null || SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), false, false) != null);
   }
   public static boolean isAssignedIllegaly(SNode node) {
-    return CheckingUtil.isAssigned(node) && (!(isInConstructorOrInstanceInitializer(node)) || refersToDeclarationWithInitializer(node));
+    return CheckingUtil.isRead(node) && (!(isInConstructorOrInstanceInitializer(node)) || refersToDeclarationWithInitializer(node));
   }
 
   private static boolean refersToDeclarationWithInitializer(SNode node) {
@@ -95,14 +101,14 @@ public class CheckingUtil {
 
   public static boolean isValidByteOrShortExpression(SNode expectedType, SNode expr) {
     if (SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, "jetbrains.mps.baseLanguage.structure.CharConstant"))) {
-      return SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) && (!(check_36hle6_a0a0a0a0a41(SPropertyOperations.getString(SNodeOperations.cast(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, "jetbrains.mps.baseLanguage.structure.CharConstant")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, 0x1177d44ddefL, "charConstant")))) || !(SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d5b617L, "jetbrains.mps.baseLanguage.structure.ByteType"))));
+      return SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) && (!(check_36hle6_a0a0a0a0a51(SPropertyOperations.getString(SNodeOperations.cast(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, "jetbrains.mps.baseLanguage.structure.CharConstant")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, 0x1177d44ddefL, "charConstant")))) || !(SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d5b617L, "jetbrains.mps.baseLanguage.structure.ByteType"))));
     }
 
     if (!(SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129778b846L, "jetbrains.mps.baseLanguage.structure.IntegerLiteral"))) || !((boolean) Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(expr))) {
       return false;
     }
     try {
-      Object compileTimeConstantValue = Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(expr, check_36hle6_a0a0a0d0o(expr.getModel()));
+      Object compileTimeConstantValue = Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(expr, check_36hle6_a0a0a0d0p(expr.getModel()));
       if (compileTimeConstantValue == null || !(compileTimeConstantValue instanceof Integer)) {
         return false;
       }
@@ -129,13 +135,13 @@ public class CheckingUtil {
     }
   }
   protected static Logger LOG = LogManager.getLogger(CheckingUtil.class);
-  private static boolean check_36hle6_a0a0a0a0a41(String checkedDotOperand) {
+  private static boolean check_36hle6_a0a0a0a0a51(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.startsWith("\\u");
     }
     return false;
   }
-  private static SModule check_36hle6_a0a0a0d0o(SModel checkedDotOperand) {
+  private static SModule check_36hle6_a0a0a0d0p(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
