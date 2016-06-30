@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:56c9dfde-c44a-4221-a18c-06ba73a42ffb(jetbrains.mps.lang.intentions.contextAssistant.generator.template.main@generator)">
+<model ref="r:56c9dfde-c44a-4221-a18c-06ba73a42ffb(jetbrains.mps.lang.editor.menus.extras.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
@@ -363,7 +363,7 @@
                   <node concept="3clFbF" id="6VgTvK0on6d" role="3cqZAp">
                     <node concept="2OqwBi" id="4sA1wzjmtLo" role="3clFbG">
                       <node concept="30H73N" id="4sA1wzjmtBc" role="2Oq$k0" />
-                      <node concept="2qgKlT" id="6VgTvK0q9QD" role="2OqNvi">
+                      <node concept="2qgKlT" id="41upsMQWe8w" role="2OqNvi">
                         <ref role="37wK5l" to="tpcb:6V0bp$oM1WF" resolve="getLocations" />
                       </node>
                     </node>
@@ -589,7 +589,7 @@
                   <node concept="3clFbF" id="6VgTvK0o_HV" role="3cqZAp">
                     <node concept="2OqwBi" id="6VgTvK0o_HW" role="3clFbG">
                       <node concept="30H73N" id="6VgTvK0o_HX" role="2Oq$k0" />
-                      <node concept="2qgKlT" id="6VgTvK0q8QL" role="2OqNvi">
+                      <node concept="2qgKlT" id="41upsMQWeZh" role="2OqNvi">
                         <ref role="37wK5l" to="tpcb:6V0bp$oM1WF" resolve="getLocations" />
                       </node>
                     </node>
@@ -817,7 +817,7 @@
                   <node concept="3clFbF" id="6VgTvK0oxEU" role="3cqZAp">
                     <node concept="2OqwBi" id="6VgTvK0oxEV" role="3clFbG">
                       <node concept="30H73N" id="6VgTvK0oxEW" role="2Oq$k0" />
-                      <node concept="2qgKlT" id="6VgTvK0q81f" role="2OqNvi">
+                      <node concept="2qgKlT" id="41upsMQWeuo" role="2OqNvi">
                         <ref role="37wK5l" to="tpcb:6V0bp$oM1WF" resolve="getLocations" />
                       </node>
                     </node>
