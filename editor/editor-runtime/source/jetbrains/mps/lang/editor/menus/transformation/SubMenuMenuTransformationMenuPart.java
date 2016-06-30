@@ -25,7 +25,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public abstract class SubMenuMenuPart extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+public abstract class SubMenuMenuTransformationMenuPart extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
   @NotNull
   @Override
   protected TransformationMenuItem createItem(TransformationMenuContext context) {

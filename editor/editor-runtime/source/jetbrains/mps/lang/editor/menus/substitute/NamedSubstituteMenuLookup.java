@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.editor.menus.transformation;
+package jetbrains.mps.lang.editor.menus.substitute;
 
+import jetbrains.mps.lang.editor.menus.NamedMenuLookup;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
-import jetbrains.mps.openapi.editor.descriptor.NamedTransformationMenuId;
+import jetbrains.mps.openapi.editor.descriptor.NamedMenuId;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
-import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -36,7 +36,7 @@ public class NamedSubstituteMenuLookup extends NamedMenuLookup<SubstituteMenu> {
   }
 
   public NamedSubstituteMenuLookup(@NotNull LanguageRegistry languageRegistry,
-      @NotNull NamedTransformationMenuId id) {
+      @NotNull NamedMenuId id) {
     super(languageRegistry, id);
   }
 

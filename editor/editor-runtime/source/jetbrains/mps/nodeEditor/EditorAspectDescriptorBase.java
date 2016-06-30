@@ -18,7 +18,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
-import jetbrains.mps.openapi.editor.descriptor.NamedTransformationMenuId;
+import jetbrains.mps.openapi.editor.descriptor.NamedMenuId;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -84,7 +84,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
 
   @NotNull
   @Override
-  public Collection<TransformationMenu> getNamedTransformationMenus(@NotNull NamedTransformationMenuId menuId, @NotNull Collection<SLanguage> usedLanguages) {
+  public Collection<TransformationMenu> getNamedTransformationMenus(@NotNull NamedMenuId menuId, @NotNull Collection<SLanguage> usedLanguages) {
     clearCachesIfStale();
     return myNamedTransformationMenusCache.getInLanguages(menuId, toNamespaces(usedLanguages));
   }
@@ -95,7 +95,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
 
   @NotNull
   @Override
-  public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedTransformationMenuId menuId) {
+  public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId) {
     return Collections.emptyList();
   }
 
@@ -132,13 +132,13 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
 
   @NotNull
   @Override
-  public Collection<SubstituteMenu> getNamedSubstituteMenus(NamedTransformationMenuId menuId, @NotNull Collection<SLanguage> usedLanguages) {
+  public Collection<SubstituteMenu> getNamedSubstituteMenus(NamedMenuId menuId, @NotNull Collection<SLanguage> usedLanguages) {
     return myNamedSubstituteMenusCache.get(menuId);
   }
 
   @NotNull
   @Override
-  public Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedTransformationMenuId menuId) {
+  public Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedMenuId menuId) {
     return Collections.emptyList();
   }
 
@@ -187,14 +187,14 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
     }
   }
 
-  private static class NamedTransformationMenusCache extends EditorAspectContributionsCache<NamedTransformationMenuId, TransformationMenu> {
+  private static class NamedTransformationMenusCache extends EditorAspectContributionsCache<NamedMenuId, TransformationMenu> {
     private NamedTransformationMenusCache(LanguageRuntime languageRuntime) {
       super(languageRuntime);
     }
 
     @NotNull
     @Override
-    protected Collection<TransformationMenu> getDeclaredContributions(EditorAspectDescriptor descriptor, NamedTransformationMenuId key) {
+    protected Collection<TransformationMenu> getDeclaredContributions(EditorAspectDescriptor descriptor, NamedMenuId key) {
       return descriptor.getDeclaredNamedTransformationMenus(key);
     }
   }
@@ -212,14 +212,14 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
     }
   }
 
-  private class NamedSubstituteMenusCache extends EditorAspectContributionsCache<NamedTransformationMenuId, SubstituteMenu> {
+  private class NamedSubstituteMenusCache extends EditorAspectContributionsCache<NamedMenuId, SubstituteMenu> {
     private NamedSubstituteMenusCache(@NotNull LanguageRuntime languageRuntime) {
       super(languageRuntime);
     }
 
     @NotNull
     @Override
-    protected Collection<SubstituteMenu> getDeclaredContributions(EditorAspectDescriptor descriptor, NamedTransformationMenuId key) {
+    protected Collection<SubstituteMenu> getDeclaredContributions(EditorAspectDescriptor descriptor, NamedMenuId key) {
       return descriptor.getDeclaredNamedSubstituteMenus(key);
     }
   }

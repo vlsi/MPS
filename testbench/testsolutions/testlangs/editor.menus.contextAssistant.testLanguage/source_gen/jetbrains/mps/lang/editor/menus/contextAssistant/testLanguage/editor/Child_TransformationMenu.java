@@ -19,11 +19,11 @@ import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuPart;
+import jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuTransformationMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.editor.menus.transformation.IncludeMenuMenuPart;
+import jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -118,7 +118,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  public static class TransformationMenuPart_SubMenu_qk1e79_c1 extends SubMenuMenuPart {
+  public static class TransformationMenuPart_SubMenu_qk1e79_c1 extends SubMenuMenuTransformationMenuPart {
     @Override
     protected String getText(TransformationMenuContext _context) {
       return "tree operations";
@@ -282,7 +282,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  public static class TransformationMenuPart_IncludeMenu_qk1e79_f1 extends IncludeMenuMenuPart {
+  public static class TransformationMenuPart_IncludeMenu_qk1e79_f1 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {

@@ -29,8 +29,8 @@ import java.util.List;
 /**
  * @author simon
  */
-public class DefaultConceptMenu extends TransformationMenuBase {
-  public DefaultConceptMenu(SAbstractConcept concept) {
+public class DefaultConceptTransformationMenu extends TransformationMenuBase {
+  public DefaultConceptTransformationMenu(SAbstractConcept concept) {
     myConcept = concept;
   }
 

@@ -20,8 +20,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.ConditionalMenuPart;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuPart;
-import jetbrains.mps.lang.editor.menus.transformation.IncludeMenuMenuPart;
+import jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuTransformationMenuPart;
+import jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -135,7 +135,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  public static class TransformationMenuPart_SubMenu_supj5f_d0 extends SubMenuMenuPart {
+  public static class TransformationMenuPart_SubMenu_supj5f_d0 extends SubMenuMenuTransformationMenuPart {
     @Override
     protected String getText(TransformationMenuContext _context) {
       return "Control flow";
@@ -228,7 +228,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  public static class TransformationMenuPart_SubMenu_supj5f_e0 extends SubMenuMenuPart {
+  public static class TransformationMenuPart_SubMenu_supj5f_e0 extends SubMenuMenuTransformationMenuPart {
     @Override
     protected String getText(TransformationMenuContext _context) {
       return "Other actions";
@@ -239,7 +239,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
       return Arrays.asList(new EmptyLine_TransformationMenu.TransformationMenuPart_IncludeMenu_supj5f_a4a());
     }
   }
-  public static class TransformationMenuPart_IncludeMenu_supj5f_a4a extends IncludeMenuMenuPart {
+  public static class TransformationMenuPart_IncludeMenu_supj5f_a4a extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {

@@ -15,8 +15,9 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
+import jetbrains.mps.lang.editor.menus.NamedMenuLookup;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
-import jetbrains.mps.openapi.editor.descriptor.NamedTransformationMenuId;
+import jetbrains.mps.openapi.editor.descriptor.NamedMenuId;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
@@ -35,7 +36,7 @@ public class NamedTransformationMenuLookup extends NamedMenuLookup<Transformatio
   }
 
   public NamedTransformationMenuLookup(@NotNull LanguageRegistry languageRegistry,
-      @NotNull NamedTransformationMenuId id) {
+      @NotNull NamedMenuId id) {
     super(languageRegistry, id);
   }
 

@@ -145,8 +145,8 @@
           <node concept="3cpWs8" id="5Xa7gk5bSuW" role="3cqZAp">
             <node concept="3cpWsn" id="5Xa7gk5bSuX" role="3cpWs9">
               <property role="TrG5h" value="item" />
-              <node concept="3uibUv" id="5Xa7gk5dlAt" role="1tU5fm">
-                <ref role="3uigEE" to="uddc:~MenuItem" resolve="MenuItem" />
+              <node concept="3uibUv" id="74xwV51jK4Q" role="1tU5fm">
+                <ref role="3uigEE" to="uddc:~TransformationMenuItem" resolve="TransformationMenuItem" />
               </node>
               <node concept="2ShNRf" id="5Xa7gk5bSDa" role="33vP2m">
                 <node concept="YeOm9" id="5Xa7gk5bXF8" role="2ShVmc">
@@ -232,8 +232,8 @@
           <node concept="3cpWs8" id="5Xa7gk5dumz" role="3cqZAp">
             <node concept="3cpWsn" id="5Xa7gk5dum$" role="3cpWs9">
               <property role="TrG5h" value="item" />
-              <node concept="3uibUv" id="5Xa7gk5dum_" role="1tU5fm">
-                <ref role="3uigEE" to="uddc:~MenuItem" resolve="MenuItem" />
+              <node concept="3uibUv" id="74xwV51jKgS" role="1tU5fm">
+                <ref role="3uigEE" to="uddc:~TransformationMenuItem" resolve="TransformationMenuItem" />
               </node>
               <node concept="2ShNRf" id="5Xa7gk5dumA" role="33vP2m">
                 <node concept="YeOm9" id="5Xa7gk5dumB" role="2ShVmc">

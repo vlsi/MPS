@@ -10,7 +10,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuConte
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
-import jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuPart;
+import jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuTransformationMenuPart;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
@@ -34,7 +34,7 @@ public class SceneBuildingCommands extends TransformationMenuBase {
     return result;
   }
 
-  public static class TransformationMenuPart_SubMenu_572eic_a0 extends SubMenuMenuPart {
+  public static class TransformationMenuPart_SubMenu_572eic_a0 extends SubMenuMenuTransformationMenuPart {
     @Override
     protected String getText(TransformationMenuContext _context) {
       return "Scene builder";

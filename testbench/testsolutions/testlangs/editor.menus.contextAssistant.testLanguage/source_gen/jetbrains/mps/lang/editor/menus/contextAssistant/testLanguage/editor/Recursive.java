@@ -10,7 +10,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuConte
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
-import jetbrains.mps.lang.editor.menus.transformation.IncludeMenuMenuPart;
+import jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
@@ -30,7 +30,7 @@ public class Recursive extends TransformationMenuBase {
     return result;
   }
 
-  public static class TransformationMenuPart_IncludeMenu_q7lcll_a0 extends IncludeMenuMenuPart {
+  public static class TransformationMenuPart_IncludeMenu_q7lcll_a0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {

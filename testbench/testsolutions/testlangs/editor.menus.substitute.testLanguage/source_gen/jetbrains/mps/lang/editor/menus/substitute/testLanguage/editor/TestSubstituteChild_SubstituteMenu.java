@@ -34,8 +34,8 @@ import java.util.Collection;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultConceptSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultConceptMenusSubstituteMenuPart;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
-import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuPart;
-import jetbrains.mps.lang.editor.menus.transformation.NamedSubstituteMenuLookup;
+import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart;
+import jetbrains.mps.lang.editor.menus.substitute.NamedSubstituteMenuLookup;
 
 public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
   @Override
@@ -274,7 +274,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
       return (a != null ? a.equals(b) : a == b);
     }
   }
-  public static class SubstituteMenuPart_IncludeMenu_ddv2zo_a7 extends IncludeSubstituteMenuPart {
+  public static class SubstituteMenuPart_IncludeMenu_ddv2zo_a7 extends IncludeSubstituteMenuSubstituteMenuPart {
     @Nullable
     @Override
     protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {

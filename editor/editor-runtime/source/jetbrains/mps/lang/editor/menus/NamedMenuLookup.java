@@ -13,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.editor.menus.transformation;
+package jetbrains.mps.lang.editor.menus;
 
 import jetbrains.mps.nodeEditor.LanguageRegistryHelper;
 import jetbrains.mps.openapi.editor.descriptor.Menu;
-import jetbrains.mps.openapi.editor.descriptor.NamedTransformationMenuId;
-import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.descriptor.NamedMenuId;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -33,13 +32,13 @@ public abstract class NamedMenuLookup<T extends Menu> implements MenuLookup<T> {
   @NotNull
   private final LanguageRegistry myLanguageRegistry;
   @NotNull
-  private final NamedTransformationMenuId myId;
+  private final NamedMenuId myId;
 
   public NamedMenuLookup(@NotNull LanguageRegistry languageRegistry, @NotNull SAbstractConcept concept, @NotNull String fqName) {
-    this(languageRegistry, new NamedTransformationMenuId(concept, fqName));
+    this(languageRegistry, new NamedMenuId(concept, fqName));
   }
 
-  public NamedMenuLookup(@NotNull LanguageRegistry languageRegistry, @NotNull NamedTransformationMenuId id) {
+  public NamedMenuLookup(@NotNull LanguageRegistry languageRegistry, @NotNull NamedMenuId id) {
     myLanguageRegistry = languageRegistry;
     myId = id;
   }
@@ -76,7 +75,7 @@ public abstract class NamedMenuLookup<T extends Menu> implements MenuLookup<T> {
   }
 
   @NotNull
-  protected NamedTransformationMenuId getId() {
+  protected NamedMenuId getId() {
     return myId;
   }
 

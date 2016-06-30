@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.openapi.editor.descriptor;
 
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -90,7 +89,7 @@ public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
    * @return a non-null but possibly empty collection
    */
   @NotNull
-  Collection<TransformationMenu> getNamedTransformationMenus(@NotNull NamedTransformationMenuId menuId, @NotNull Collection<SLanguage> usedLanguages);
+  Collection<TransformationMenu> getNamedTransformationMenus(@NotNull NamedMenuId menuId, @NotNull Collection<SLanguage> usedLanguages);
 
   /**
    * Returns a named transformation menu together with any additions to it declared in this language
@@ -98,7 +97,7 @@ public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
    * @return a non-null but possibly empty collection
    */
   @NotNull
-  Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedTransformationMenuId menuId);
+  Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId);
 
 
   /**
@@ -107,7 +106,7 @@ public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
    * @return a non-null but possibly empty collection
    */
   @NotNull
-  Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedTransformationMenuId menuId);
+  Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedMenuId menuId);
 
   /**
    * Returns the default substitute menu for a concept (if defined), together with any additions contributed by extending languages.
@@ -131,5 +130,5 @@ public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
    * @return a non-null but possibly empty collection
    */
   @NotNull
-  Collection<SubstituteMenu> getNamedSubstituteMenus(NamedTransformationMenuId menuId, @NotNull Collection<SLanguage> usedLanguages);
+  Collection<SubstituteMenu> getNamedSubstituteMenus(NamedMenuId menuId, @NotNull Collection<SLanguage> usedLanguages);
 }

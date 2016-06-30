@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.lang.editor.menus.transformation.NamedMenuLookup;
+import jetbrains.mps.lang.editor.menus.NamedMenuLookup;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;

@@ -21,13 +21,13 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 /**
  * Uniquely identifies a named transformation menu - contains concept and menu name
  */
-public class NamedTransformationMenuId {
+public class NamedMenuId {
   @NotNull
   private final SAbstractConcept myConcept;
   @NotNull
   private final String myFqName;
 
-  public NamedTransformationMenuId(@NotNull SAbstractConcept concept, @NotNull String fqName) {
+  public NamedMenuId(@NotNull SAbstractConcept concept, @NotNull String fqName) {
     myConcept = concept;
     myFqName = fqName;
   }
@@ -47,7 +47,7 @@ public class NamedTransformationMenuId {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
 
-    NamedTransformationMenuId that = (NamedTransformationMenuId) o;
+    NamedMenuId that = (NamedMenuId) o;
 
     return myConcept.equals(that.myConcept) && myFqName.equals(that.myFqName);
 

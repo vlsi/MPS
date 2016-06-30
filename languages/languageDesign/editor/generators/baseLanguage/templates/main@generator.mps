@@ -22841,8 +22841,8 @@
       </node>
       <node concept="37vLTG" id="4Sf$XywNMzS" role="3clF46">
         <property role="TrG5h" value="menuId" />
-        <node concept="3uibUv" id="5TTFgSOuteF" role="1tU5fm">
-          <ref role="3uigEE" to="iwf0:~NamedTransformationMenuId" resolve="NamedTransformationMenuId" />
+        <node concept="3uibUv" id="74xwV51oKGs" role="1tU5fm">
+          <ref role="3uigEE" to="iwf0:~NamedMenuId" resolve="NamedMenuId" />
         </node>
       </node>
       <node concept="2AHcQZ" id="4Sf$XywNMzU" role="2AJF6D">
@@ -23092,7 +23092,7 @@
                     <ref role="3cqZAo" node="4Sf$XywNMzS" resolve="menuId" />
                   </node>
                   <node concept="liA8E" id="4Sf$XywQz0X" role="2OqNvi">
-                    <ref role="37wK5l" to="iwf0:~NamedTransformationMenuId.getFqName():java.lang.String" resolve="getFqName" />
+                    <ref role="37wK5l" to="iwf0:~NamedMenuId.getFqName():java.lang.String" resolve="getFqName" />
                   </node>
                 </node>
               </node>
@@ -23257,7 +23257,7 @@
                 <ref role="3cqZAo" node="4Sf$XywNMzS" resolve="menuId" />
               </node>
               <node concept="liA8E" id="4Sf$XywQp4I" role="2OqNvi">
-                <ref role="37wK5l" to="iwf0:~NamedTransformationMenuId.getConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
+                <ref role="37wK5l" to="iwf0:~NamedMenuId.getConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
               </node>
             </node>
           </node>
@@ -23631,8 +23631,8 @@
       </node>
       <node concept="37vLTG" id="2RDMjbOSPPu" role="3clF46">
         <property role="TrG5h" value="menuId" />
-        <node concept="3uibUv" id="2RDMjbOSPPv" role="1tU5fm">
-          <ref role="3uigEE" to="iwf0:~NamedTransformationMenuId" resolve="NamedTransformationMenuId" />
+        <node concept="3uibUv" id="74xwV51oQE$" role="1tU5fm">
+          <ref role="3uigEE" to="iwf0:~NamedMenuId" resolve="NamedMenuId" />
         </node>
       </node>
       <node concept="2AHcQZ" id="2RDMjbOSPPw" role="2AJF6D">
@@ -23874,7 +23874,7 @@
                     <ref role="3cqZAo" node="2RDMjbOSPPu" resolve="menuId" />
                   </node>
                   <node concept="liA8E" id="2RDMjbOSPRd" role="2OqNvi">
-                    <ref role="37wK5l" to="iwf0:~NamedTransformationMenuId.getFqName():java.lang.String" resolve="getFqName" />
+                    <ref role="37wK5l" to="iwf0:~NamedMenuId.getFqName():java.lang.String" resolve="getFqName" />
                   </node>
                 </node>
               </node>
@@ -24039,7 +24039,7 @@
                 <ref role="3cqZAo" node="2RDMjbOSPPu" resolve="menuId" />
               </node>
               <node concept="liA8E" id="2RDMjbOSPSo" role="2OqNvi">
-                <ref role="37wK5l" to="iwf0:~NamedTransformationMenuId.getConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
+                <ref role="37wK5l" to="iwf0:~NamedMenuId.getConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
               </node>
             </node>
           </node>
@@ -33119,8 +33119,8 @@
           </node>
         </node>
         <node concept="3Tm1VV" id="4sA1wzjglzd" role="1B3o_S" />
-        <node concept="3uibUv" id="4sA1wzjgmaq" role="1zkMxy">
-          <ref role="3uigEE" to="9eyi:~IncludeMenuMenuPart" resolve="IncludeMenuMenuPart" />
+        <node concept="3uibUv" id="74xwV51qzzr" role="1zkMxy">
+          <ref role="3uigEE" to="9eyi:~IncludeTransformationMenuTransformationMenuPart" resolve="IncludeTransformationMenuTransformationMenuPart" />
         </node>
         <node concept="raruj" id="4sA1wzjglzf" role="lGtFl">
           <ref role="2sdACS" node="hG00Hig" resolve="generatedClass" />
@@ -33887,8 +33887,8 @@
           </node>
         </node>
         <node concept="3Tm1VV" id="4sA1wzjfu5x" role="1B3o_S" />
-        <node concept="3uibUv" id="4sA1wzjfu$0" role="1zkMxy">
-          <ref role="3uigEE" to="9eyi:~SubMenuMenuPart" resolve="SubMenuMenuPart" />
+        <node concept="3uibUv" id="44Sm9iBWUzf" role="1zkMxy">
+          <ref role="3uigEE" to="9eyi:~SubMenuMenuTransformationMenuPart" resolve="SubMenuMenuTransformationMenuPart" />
         </node>
         <node concept="raruj" id="4sA1wzjfvs_" role="lGtFl">
           <ref role="2sdACS" node="hG00Hig" resolve="generatedClass" />
@@ -34612,8 +34612,8 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="Cy80HmL0ND" role="1B3o_S" />
-      <node concept="3uibUv" id="Cy80HmL6qy" role="1zkMxy">
-        <ref role="3uigEE" to="qtqj:~IncludeSubstituteMenuPart" resolve="IncludeSubstituteMenuPart" />
+      <node concept="3uibUv" id="74xwV51rDZB" role="1zkMxy">
+        <ref role="3uigEE" to="qtqj:~IncludeSubstituteMenuSubstituteMenuPart" resolve="IncludeSubstituteMenuSubstituteMenuPart" />
       </node>
       <node concept="raruj" id="Cy80HmL0NF" role="lGtFl">
         <ref role="2sdACS" node="hG00Hig" resolve="generatedClass" />
@@ -36189,7 +36189,7 @@
             <node concept="3clFbF" id="5i0CB70OFMS" role="3cqZAp">
               <node concept="2ShNRf" id="5i0CB70OFMT" role="3clFbG">
                 <node concept="1pGfFk" id="5i0CB70OFMU" role="2ShVmc">
-                  <ref role="37wK5l" to="9eyi:~NamedSubstituteMenuLookup.&lt;init&gt;(jetbrains.mps.smodel.language.LanguageRegistry,org.jetbrains.mps.openapi.language.SAbstractConcept,java.lang.String)" resolve="NamedSubstituteMenuLookup" />
+                  <ref role="37wK5l" to="qtqj:~NamedSubstituteMenuLookup.&lt;init&gt;(jetbrains.mps.smodel.language.LanguageRegistry,org.jetbrains.mps.openapi.language.SAbstractConcept,java.lang.String)" resolve="NamedSubstituteMenuLookup" />
                   <node concept="2YIFZM" id="5i0CB70OFMV" role="37wK5m">
                     <ref role="37wK5l" to="vndm:~LanguageRegistry.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.language.LanguageRegistry" resolve="getInstance" />
                     <ref role="1Pybhc" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />

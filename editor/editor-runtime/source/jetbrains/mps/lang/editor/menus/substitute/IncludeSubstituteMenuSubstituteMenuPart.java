@@ -13,36 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.editor.menus.transformation;
+package jetbrains.mps.lang.editor.menus.substitute;
 
+import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 
-public abstract class IncludeMenuMenuPart implements TransformationMenuPart {
+/**
+ * @author simon
+ */
+public class IncludeSubstituteMenuSubstituteMenuPart implements SubstituteMenuPart {
+
   @NotNull
   @Override
-  public List<TransformationMenuItem> createItems(TransformationMenuContext context) {
-    SNode newNode = getNode(context);
-
-    TransformationMenuContext newContext = newNode == null ? context : context.withNode(newNode);
-
-    return newContext.createItems(getMenuLookup(context));
+  public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+    return context.createItems(getMenuLookup(context));
   }
 
+
   @Nullable
-  protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext context) {
+  protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext context) {
     return null;
   }
 
-  @Nullable
-  protected SNode getNode(TransformationMenuContext context) {
-    return context.getNode();
-  }
 }
