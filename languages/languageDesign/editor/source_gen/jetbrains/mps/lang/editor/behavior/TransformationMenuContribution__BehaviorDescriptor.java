@@ -26,19 +26,14 @@ public final class TransformationMenuContribution__BehaviorDescriptor extends Ba
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<SNode> getMenuReference_id1quYWAD2_PI = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getMenuReference").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1quYWAD2_PI").registry(REGISTRY).build();
-  public static final SMethod<SNode> getApplicableConcept_id1quYWAD18xk = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getApplicableConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1quYWAD18xk").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getMenuReference_id1quYWAD2_PI, getApplicableConcept_id1quYWAD18xk);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getMenuReference_id1quYWAD2_PI);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static SNode getMenuReference_id1quYWAD2_PI(@NotNull SNode __thisNode__) {
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c10ff0L, 0x5d3b34577b60a0bfL, "menuReference"));
-  }
-  /*package*/ static SNode getApplicableConcept_id1quYWAD18xk(@NotNull SNode __thisNode__) {
-    // todo to remove 
-    return ((SNode) IMenu_Contribution__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invokeSpecial(__thisNode__));
   }
 
   /*package*/ TransformationMenuContribution__BehaviorDescriptor() {
@@ -59,8 +54,6 @@ public final class TransformationMenuContribution__BehaviorDescriptor extends Ba
     switch (methodIndex) {
       case 0:
         return (T) ((SNode) getMenuReference_id1quYWAD2_PI(node));
-      case 1:
-        return (T) ((SNode) getApplicableConcept_id1quYWAD18xk(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

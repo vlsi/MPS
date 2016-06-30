@@ -210,7 +210,7 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a0(jetbrains.mps.lang.editor.generator.baseLanguage.template.util)/6718020819490797825">
-    <file name="TransformationMenuUtil.java">
+    <file name="MenuRoots.java">
       <node id="1630016958698029979" at="19,39,20,89" concept="10" />
       <node id="1630016958698033232" at="24,39,25,172" concept="10" />
       <node id="1630016958698049088" at="27,7,28,85" concept="10" />
@@ -276,9 +276,9 @@
         <var name="menuConcept" id="1630016958698031129" />
         <var name="referenceConcept" id="1630016958698035422" />
       </scope>
-      <unit id="1630016958698029977" at="18,244,22,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.TransformationMenuUtil$1" />
-      <unit id="1630016958698033224" at="23,265,27,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.TransformationMenuUtil$2" />
-      <unit id="6718020819490797825" at="16,0,49,0" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.TransformationMenuUtil" />
+      <unit id="1630016958698029977" at="18,244,22,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.MenuRoots$1" />
+      <unit id="1630016958698033224" at="23,265,27,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.MenuRoots$2" />
+      <unit id="6718020819490797825" at="16,0,49,0" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.MenuRoots" />
     </file>
   </root>
 </debug-info-v2>
