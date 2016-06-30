@@ -52,7 +52,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.BaseNewEditorChecker" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.BaseEditorChecker" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer.MethodCallsUpdateSession" file="MethodCallsUpdateSession.java">
     <classNode dependClassName="java.lang.Boolean" />

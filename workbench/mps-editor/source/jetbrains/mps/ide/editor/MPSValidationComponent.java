@@ -19,10 +19,8 @@ import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.ide.editor.checkers.ModelProblemsChecker;
 import jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsChecker;
 import jetbrains.mps.nodeEditor.Highlighter;
-import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.checking.DisposableEditorChecker;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
-import jetbrains.mps.nodeEditor.checking.LegacyEditorCheckerAdapter;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.typesystem.checking.NonTypesystemEditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
@@ -53,10 +51,6 @@ public class MPSValidationComponent implements ProjectComponent {
 
   private void addChecker(EditorChecker checker) {
     myHighlighter.addChecker(myCheckers.push(checker));
-  }
-
-  private void addChecker(BaseEditorChecker checker) {
-    myHighlighter.addChecker(myCheckers.push(new LegacyEditorCheckerAdapter(checker)));
   }
 
   @Override

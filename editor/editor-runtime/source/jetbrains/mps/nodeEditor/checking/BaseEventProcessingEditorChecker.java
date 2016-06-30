@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * A base class for checkers that need to update themselves when a certain model event occurs. Keeps a single internal flag indicating the need to update.
  */
-public abstract class BaseEventProcessingEditorChecker extends BaseNewEditorChecker {
+public abstract class BaseEventProcessingEditorChecker extends BaseEditorChecker {
   private boolean myNeedsUpdate = true;
 
   @Override

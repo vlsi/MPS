@@ -1103,8 +1103,8 @@
         </node>
       </node>
     </node>
-    <node concept="3uibUv" id="36YhQHIlcyr" role="1zkMxy">
-      <ref role="3uigEE" to="n70j:~BaseNewEditorChecker" resolve="BaseNewEditorChecker" />
+    <node concept="3uibUv" id="7accM45d10q" role="1zkMxy">
+      <ref role="3uigEE" to="n70j:~BaseEditorChecker" resolve="BaseEditorChecker" />
     </node>
     <node concept="3Tm1VV" id="1W7gAtGJHdL" role="1B3o_S" />
   </node>

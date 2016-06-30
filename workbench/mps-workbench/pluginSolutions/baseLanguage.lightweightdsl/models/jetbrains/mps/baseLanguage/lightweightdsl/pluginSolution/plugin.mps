@@ -52,8 +52,8 @@
     <import index="n70j" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.checking(MPS.Editor/)" />
     <import index="rlg8" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.highlighter(MPS.Editor/)" />
     <import index="iwsx" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.fileEditor(MPS.IDEA/)" />
-    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" implicit="true" />
@@ -1722,10 +1722,10 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="3Tm1VV" id="1aVHDCk4S7n" role="1B3o_S" />
     <node concept="3uibUv" id="4mTpUVYUo9O" role="1zkMxy">
       <ref role="3uigEE" to="n70j:~BaseEventProcessingEditorChecker" resolve="BaseEventProcessingEditorChecker" />
     </node>
-    <node concept="3Tm1VV" id="1aVHDCk4S7n" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="1aVHDCk5gd$">
     <property role="TrG5h" value="DSLComponentMessage" />
@@ -2047,7 +2047,7 @@
               </node>
             </node>
             <node concept="liA8E" id="__dkv7fAGV" role="2OqNvi">
-              <ref role="37wK5l" to="exr9:~Highlighter.addChecker(jetbrains.mps.nodeEditor.checking.BaseEditorChecker):void" resolve="addChecker" />
+              <ref role="37wK5l" to="exr9:~Highlighter.addChecker(jetbrains.mps.nodeEditor.checking.EditorChecker):void" resolve="addChecker" />
               <node concept="2OqwBi" id="3JREjbh0YqZ" role="37wK5m">
                 <node concept="2WthIp" id="3JREjbh0Yr2" role="2Oq$k0" />
                 <node concept="2BZ7hE" id="3JREjbh0Yr4" role="2OqNvi">
@@ -2084,7 +2084,7 @@
               </node>
             </node>
             <node concept="liA8E" id="3JREjbh0Zfh" role="2OqNvi">
-              <ref role="37wK5l" to="exr9:~Highlighter.removeChecker(jetbrains.mps.nodeEditor.checking.BaseEditorChecker):void" resolve="removeChecker" />
+              <ref role="37wK5l" to="exr9:~Highlighter.removeChecker(jetbrains.mps.nodeEditor.checking.EditorChecker):void" resolve="removeChecker" />
               <node concept="2OqwBi" id="3JREjbh0Zfi" role="37wK5m">
                 <node concept="2WthIp" id="3JREjbh0Zfj" role="2Oq$k0" />
                 <node concept="2BZ7hE" id="3JREjbh0Zfk" role="2OqNvi">

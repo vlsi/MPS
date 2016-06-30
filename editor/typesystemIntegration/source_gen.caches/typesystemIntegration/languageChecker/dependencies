@@ -124,7 +124,7 @@
     <classNode dependClassName="typesystemIntegration.languageChecker.InEditorStructureChecker" />
     <classNode dependClassName="typesystemIntegration.languageChecker.RefScopeCheckerInEditor" />
     <classNode dependClassName="typesystemIntegration.languageChecker.UsedLanguagesChecker" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.BaseNewEditorChecker" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.BaseEditorChecker" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.DisposableEditorChecker" />
   </dependency>
   <dependency className="typesystemIntegration.languageChecker.RefScopeCheckerInEditor" file="RefScopeCheckerInEditor.java">

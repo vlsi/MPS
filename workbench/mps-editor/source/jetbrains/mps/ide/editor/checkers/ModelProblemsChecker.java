@@ -18,16 +18,13 @@ package jetbrains.mps.ide.editor.checkers;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.nodeEditor.checking.BaseNewEditorChecker;
+import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.checking.DisposableEditorChecker;
-import jetbrains.mps.nodeEditor.checking.EditorChecker;
 import jetbrains.mps.nodeEditor.checking.UpdateResult;
 import jetbrains.mps.nodeEditor.checking.UpdateResult.Completed;
 import jetbrains.mps.openapi.editor.ColorConstants;
-import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
-import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Cancellable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -38,10 +35,9 @@ import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.awt.Color;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
-public class ModelProblemsChecker extends BaseNewEditorChecker implements DisposableEditorChecker {
+public class ModelProblemsChecker extends BaseEditorChecker implements DisposableEditorChecker {
 
   private boolean myChanged = true;
   private final SRepository myProjectRepo;

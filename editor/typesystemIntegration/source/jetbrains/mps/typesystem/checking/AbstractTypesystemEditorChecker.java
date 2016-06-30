@@ -26,14 +26,12 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
-import jetbrains.mps.nodeEditor.checking.BaseNewEditorChecker;
-import jetbrains.mps.nodeEditor.checking.EditorChecker;
+import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.checking.UpdateResult;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Cancellable;
@@ -55,7 +53,7 @@ import java.util.Set;
  * User: fyodor
  * Date: 4/30/13
  */
-public abstract class AbstractTypesystemEditorChecker extends BaseNewEditorChecker implements EditorMessageOwner {
+public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker implements EditorMessageOwner {
   public static boolean IMMEDIATE_QFIX_DISABLED = false;
   private WeakSet<QuickFix_Runtime> myOnceExecutedQuickFixes = new WeakSet<QuickFix_Runtime>();
   private boolean myHasEvents = false;

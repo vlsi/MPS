@@ -32,9 +32,7 @@ import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.module.ReloadableModuleBase;
-import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
-import jetbrains.mps.nodeEditor.checking.LegacyEditorCheckerAdapter;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.highlighter.HighlighterEditorList;
 import jetbrains.mps.nodeEditor.highlighter.HighlighterEditorTracker;
@@ -200,11 +198,6 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     }
   }
 
-  public void addChecker(BaseEditorChecker legacyChecker) {
-    if (legacyChecker == null) return;
-    addChecker(new LegacyEditorCheckerAdapter(legacyChecker));
-  }
-
   public void addChecker(@NotNull final EditorChecker checker) {
     if (RuntimeFlags.isTestMode()) return;
     addPendingAction(new Runnable() {
@@ -216,29 +209,11 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     });
   }
 
-  private LegacyEditorCheckerAdapter findCheckerByLegacyChecker(BaseEditorChecker legacyChecker) {
-    for (EditorChecker current : myCheckers) {
-      if (current instanceof LegacyEditorCheckerAdapter && ((LegacyEditorCheckerAdapter) current).getChecker() == legacyChecker) {
-        return ((LegacyEditorCheckerAdapter) current);
-      }
-    }
-
-    return null;
-  }
-
   /**
    * Removes a checker from the set of active checkers. Also removes its messages from any known open editors. May be called from any thread, the removal
    * happens asynchronously (so do not add back a checker that has just been removed).
-   * @param legacyChecker the checker to remove
+   * @param checker the checker to remove
    */
-  public void removeChecker(@NotNull final BaseEditorChecker legacyChecker) {
-    final EditorChecker checker = findCheckerByLegacyChecker(legacyChecker);
-
-    if (checker == null) return;
-
-    removeChecker(checker);
-  }
-
   public void removeChecker(@NotNull final EditorChecker checker) {
     if (RuntimeFlags.isTestMode()) return;
 

@@ -3053,8 +3053,8 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="6qi2OtU3ugr" role="1B3o_S" />
-    <node concept="3uibUv" id="5uC6IZduc9G" role="1zkMxy">
-      <ref role="3uigEE" to="n70j:~BaseNewEditorChecker" resolve="BaseNewEditorChecker" />
+    <node concept="3uibUv" id="7accM45cT7D" role="1zkMxy">
+      <ref role="3uigEE" to="n70j:~BaseEditorChecker" resolve="BaseEditorChecker" />
     </node>
     <node concept="3uibUv" id="5uC6IZdwjEE" role="EKbjA">
       <ref role="3uigEE" to="n70j:~DisposableEditorChecker" resolve="DisposableEditorChecker" />
@@ -4199,7 +4199,7 @@
       <node concept="3clFbS" id="36YhQHI6vIq" role="3clF47">
         <node concept="3clFbF" id="36YhQHI6vIu" role="3cqZAp">
           <node concept="3nyPlj" id="36YhQHI6vIt" role="3clFbG">
-            <ref role="37wK5l" to="n70j:~BaseNewEditorChecker.forceAutofix(jetbrains.mps.nodeEditor.EditorComponent):void" resolve="forceAutofix" />
+            <ref role="37wK5l" to="n70j:~BaseEditorChecker.forceAutofix(jetbrains.mps.nodeEditor.EditorComponent):void" resolve="forceAutofix" />
             <node concept="37vLTw" id="36YhQHI6vIs" role="37wK5m">
               <ref role="3cqZAo" node="36YhQHI6vIn" resolve="editorComponent" />
             </node>

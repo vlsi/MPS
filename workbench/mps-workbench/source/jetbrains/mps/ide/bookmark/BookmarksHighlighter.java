@@ -19,13 +19,10 @@ import jetbrains.mps.ide.bookmark.BookmarkManager.BookmarkListener;
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.nodeEditor.checking.BaseNewEditorChecker;
+import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.checking.DisposableEditorChecker;
-import jetbrains.mps.nodeEditor.checking.EditorChecker;
 import jetbrains.mps.nodeEditor.checking.UpdateResult;
 import jetbrains.mps.nodeEditor.checking.UpdateResult.Completed;
-import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
-import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -36,7 +33,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class BookmarksHighlighter extends BaseNewEditorChecker implements DisposableEditorChecker {
+public class BookmarksHighlighter extends BaseEditorChecker implements DisposableEditorChecker {
   private BookmarkManager myBookmarkManager;
   private boolean myChanged = true;
   private BookmarkListener myListener = new BookmarkListener() {
