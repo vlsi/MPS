@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuPart;
 import jetbrains.mps.lang.editor.menus.transformation.IncludeMenuMenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -241,7 +242,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
   public static class TransformationMenuPart_IncludeMenu_supj5f_a4a extends IncludeMenuMenuPart {
     @Nullable
     @Override
-    protected MenuLookup getMenuLookup(TransformationMenuContext _context) {
+    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
