@@ -81,7 +81,7 @@ public final class FileIcon__BehaviorDescriptor extends BaseBHDescriptor {
 
     InputStream is = null;
     try {
-      is = toFile.openInputStream();
+      is = sourceFile.openInputStream();
       res = MultiTuple.<IFile,byte[]>from(toFile, ReadUtil.read(is));
     } catch (IOException e) {
       if (LOG.isEnabledFor(Level.ERROR)) {

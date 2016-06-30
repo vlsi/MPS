@@ -517,11 +517,11 @@
             <node concept="3clFbF" id="Ib_Fk7BOJU" role="3cqZAp">
               <node concept="37vLTI" id="Ib_Fk7BOJW" role="3clFbG">
                 <node concept="2OqwBi" id="Ib_Fk7BLel" role="37vLTx">
-                  <node concept="37vLTw" id="Ib_Fk7BLem" role="2Oq$k0">
-                    <ref role="3cqZAo" node="Ib_Fk7_IpE" resolve="toFile" />
-                  </node>
                   <node concept="liA8E" id="Ib_Fk7BLen" role="2OqNvi">
                     <ref role="37wK5l" to="3ju5:~IFile.openInputStream():java.io.InputStream" resolve="openInputStream" />
+                  </node>
+                  <node concept="37vLTw" id="XPkXgFKEbc" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7Mb2akaestu" resolve="sourceFile" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="Ib_Fk7BOK0" role="37vLTJ">
