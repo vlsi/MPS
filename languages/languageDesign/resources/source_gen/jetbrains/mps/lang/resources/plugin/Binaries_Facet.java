@@ -32,12 +32,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.make.facets.Make_Facet.Target_make;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.resources.behavior.Resource__BehaviorDescriptor;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.internal.make.runtime.util.StaleFilesCollector;
 import jetbrains.mps.smodel.resources.DResource;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.make.script.IFeedback;
 import java.io.OutputStream;
@@ -104,8 +105,7 @@ public class Binaries_Facet extends IFacet.Stub {
                     for (final SModel model : Sequence.fromIterable(models)) {
                       ListSequence.fromList(SModelOperations.nodes(model, MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, "jetbrains.mps.lang.resources.structure.Resource"))).visitAll(new IVisitor<SNode>() {
                         public void visit(SNode it) {
-                          String outputRoot = SModuleOperations.getOutputPathFor(model);
-                          IFile outputRootFile = FileSystem.getInstance().getFileByPath(outputRoot);
+                          IFile outputRootFile = Target_make.vars(pa.global()).pathToFile().invoke(SModuleOperations.getOutputPathFor(model));
 
                           Tuples._2<IFile, byte[]> data = Resource__BehaviorDescriptor.generate_id7Mb2akaesv8.invoke(it, outputRootFile);
                           if (data == null) {

@@ -152,6 +152,10 @@
       <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1235746970280" name="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" flags="nn" index="2Sg_IR">
+        <child id="1235746996653" name="function" index="2SgG2M" />
+        <child id="1235747002942" name="parameter" index="2SgHGx" />
+      </concept>
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <property id="890797661671409019" name="forceMultiLine" index="3yWfEV" />
         <child id="1199569906740" name="parameter" index="1bW2Oz" />
@@ -159,6 +163,10 @@
       </concept>
     </language>
     <language id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet">
+      <concept id="3344436107830227889" name="jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression" flags="nn" index="2bn25q" />
+      <concept id="3344436107830227888" name="jetbrains.mps.make.facet.structure.ForeignParametersExpression" flags="nn" index="2bn25r">
+        <reference id="3344436107830227902" name="target" index="2bn25l" />
+      </concept>
       <concept id="6418371274763029565" name="jetbrains.mps.make.facet.structure.TargetDeclaration" flags="ng" index="15KeUm">
         <property id="184542595914096177" name="weight" index="1xVfUM" />
         <child id="2360002718792633290" name="job" index="ElM8M" />
@@ -436,36 +444,26 @@
                               <node concept="2es0OD" id="Ib_Fk7_pvS" role="2OqNvi">
                                 <node concept="1bVj0M" id="Ib_Fk7_pvU" role="23t8la">
                                   <node concept="3clFbS" id="Ib_Fk7_pvV" role="1bW5cS">
-                                    <node concept="3cpWs8" id="7Mb2akaessS" role="3cqZAp">
-                                      <node concept="3cpWsn" id="7Mb2akaessT" role="3cpWs9">
-                                        <property role="TrG5h" value="outputRoot" />
-                                        <node concept="2YIFZM" id="741MqB3umXb" role="33vP2m">
-                                          <ref role="1Pybhc" to="z1c3:~SModuleOperations" resolve="SModuleOperations" />
-                                          <ref role="37wK5l" to="z1c3:~SModuleOperations.getOutputPathFor(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="getOutputPathFor" />
-                                          <node concept="2GrUjf" id="Ib_Fk7AUmx" role="37wK5m">
-                                            <ref role="2Gs0qQ" node="5KGdJjE0hIX" resolve="model" />
-                                          </node>
-                                        </node>
-                                        <node concept="3uibUv" id="7Mb2akaessU" role="1tU5fm">
-                                          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                                        </node>
-                                      </node>
-                                    </node>
                                     <node concept="3cpWs8" id="7Mb2akaest1" role="3cqZAp">
                                       <node concept="3cpWsn" id="7Mb2akaest2" role="3cpWs9">
                                         <property role="TrG5h" value="outputRootFile" />
                                         <node concept="3uibUv" id="7Mb2akaest3" role="1tU5fm">
                                           <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
                                         </node>
-                                        <node concept="2OqwBi" id="7Mb2akaest4" role="33vP2m">
-                                          <node concept="2YIFZM" id="7Mb2akaest5" role="2Oq$k0">
-                                            <ref role="37wK5l" to="3ju5:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
-                                            <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
+                                        <node concept="2Sg_IR" id="36GkqAMyLlU" role="33vP2m">
+                                          <node concept="2YIFZM" id="741MqB3umXb" role="2SgHGx">
+                                            <ref role="37wK5l" to="z1c3:~SModuleOperations.getOutputPathFor(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="getOutputPathFor" />
+                                            <ref role="1Pybhc" to="z1c3:~SModuleOperations" resolve="SModuleOperations" />
+                                            <node concept="2GrUjf" id="Ib_Fk7AUmx" role="37wK5m">
+                                              <ref role="2Gs0qQ" node="5KGdJjE0hIX" resolve="model" />
+                                            </node>
                                           </node>
-                                          <node concept="liA8E" id="7Mb2akaest6" role="2OqNvi">
-                                            <ref role="37wK5l" to="3ju5:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
-                                            <node concept="37vLTw" id="3GM_nagTvk0" role="37wK5m">
-                                              <ref role="3cqZAo" node="7Mb2akaessT" resolve="outputRoot" />
+                                          <node concept="2bn25q" id="36GkqAMyLlV" role="2SgG2M">
+                                            <node concept="2bn25r" id="36GkqAMyLlW" role="2Oq$k0">
+                                              <ref role="2bn25l" to="fy8e:taepSZ9rBr" resolve="make" />
+                                            </node>
+                                            <node concept="2sxana" id="36GkqAMyLlX" role="2OqNvi">
+                                              <ref role="2sxfKC" to="fy8e:taepSZ9rBV" resolve="pathToFile" />
                                             </node>
                                           </node>
                                         </node>
