@@ -36,6 +36,7 @@ public class MenuLoadingUtils {
     });
     return items.value;
   }
+
   public static List<TransformationMenuItem> loadNamedMenu(EditorComponent editorComponent, SNodeReference menuNodeReference, String location) {
     return loadNamedMenu(editorComponent, MenuLoadingUtils.getMenuFqName(menuNodeReference, editorComponent), location);
   }
