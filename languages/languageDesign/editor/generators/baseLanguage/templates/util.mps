@@ -1080,6 +1080,9 @@
               <node concept="35c_gC" id="67q8fiOz7RT" role="3g7hyw">
                 <ref role="35c_gD" to="tpc2:4Sf$XywKhwM" resolve="ITransformationMenu" />
               </node>
+              <node concept="35c_gC" id="2g57UMsrD_f" role="3g7hyw">
+                <ref role="35c_gD" to="tpc2:1J2KHYpABsB" resolve="ISubstituteMenu" />
+              </node>
               <node concept="3bZ5Sz" id="qmfyRQI8nq" role="3g7fb8" />
             </node>
           </node>
