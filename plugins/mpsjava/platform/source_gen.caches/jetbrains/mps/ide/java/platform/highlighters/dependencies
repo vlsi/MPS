@@ -28,10 +28,11 @@
     <classNode extendsClassName="jetbrains.mps.resourceBundles.IconResourceBundle" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.JavaHighlighters" file="JavaHighlighters.java">
+    <classNode dependClassName="jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer.MethodCallsFixer" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.checking.EditorChecker" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.checking.LegacyEditorCheckerAdapter" />

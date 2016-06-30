@@ -11,6 +11,7 @@ import java.util.LinkedList;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.nodeEditor.checking.LegacyEditorCheckerAdapter;
+import jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer.MethodCallsFixer;
 import jetbrains.mps.nodeEditor.checking.DisposableEditorChecker;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -32,7 +33,7 @@ public class JavaHighlighters implements ProjectComponent {
     Highlighter highlighter = getHighlighter();
     highlighter.addChecker(DequeSequence.fromDequeNew(myCheckers).pushElement(new LegacyEditorCheckerAdapter(new OverrideMethodsChecker(myProject))));
     highlighter.addChecker(DequeSequence.fromDequeNew(myCheckers).pushElement(new ToDoHighlighter()));
-    highlighter.addChecker(DequeSequence.fromDequeNew(myCheckers).pushElement(new LegacyEditorCheckerAdapter(new MethodDeclarationsFixer())));
+    highlighter.addChecker(DequeSequence.fromDequeNew(myCheckers).pushElement(new MethodCallsFixer(myProject.getRepository())));
   }
   @Override
   public void disposeComponent() {
