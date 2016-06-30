@@ -103,6 +103,7 @@
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker" file="OverrideMethodsChecker.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.checking.UpdateResult" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.highlighters.OverridingMethodEditorMessage" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelRootEvent" />
@@ -116,6 +117,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.highlighters.SubclassedClassifierEditorMessage" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.highlighters.OverridenMethodEditorMessage" />
+    <classNode dependClassName="jetbrains.mps.util.Cancellable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
@@ -128,6 +130,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelReferenceEvent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierSuccessors" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="com.intellij.openapi.project.IndexNotReadyException" />
@@ -144,7 +147,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.BaseEventProcessingEditorChecker" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.OverridenMethodEditorMessage" file="OverridenMethodEditorMessage.java">
