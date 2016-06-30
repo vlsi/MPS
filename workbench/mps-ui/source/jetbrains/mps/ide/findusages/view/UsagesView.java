@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,10 +49,13 @@ import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.util.Computable;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -431,18 +434,24 @@ public class UsagesView implements IExternalizeable {
 
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
-      List<SModel> models = new ArrayList<SModel>();
-      for (SModel modelDescriptor : myView.getIncludedModels()) {
-        if (GenerationFacade.canGenerate(modelDescriptor)) {
-          models.add(modelDescriptor);
-        }
-      }
-
       final Project mpsProject = myView.myProject;
+      Iterable<IResource> makeRes = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<Iterable<IResource>>() {
+        @Override
+        public Iterable<IResource> compute() {
+          List<SModel> models = new ArrayList<SModel>();
+          for (SModel modelDescriptor : myView.getIncludedModels()) {
+            if (GenerationFacade.canGenerate(modelDescriptor)) {
+              models.add(modelDescriptor);
+            }
+          }
+          return new ModelsToResources(models).resources(false);
+        }
+      });
+
       if (myMakeSession.compareAndSet(null, new MakeSession(mpsProject, new DefaultMakeMessageHandler(mpsProject), false))) {
         try {
           if (IMakeService.INSTANCE.get().openNewSession(myMakeSession.get())) {
-            IMakeService.INSTANCE.get().make(myMakeSession.get(), new ModelsToResources(models).resources(false));
+            IMakeService.INSTANCE.get().make(myMakeSession.get(), makeRes);
           }
         } finally {
           myMakeSession.set(null);
