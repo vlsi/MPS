@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info-v2>
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695587434683">
+    <file name="TestSubstitute_SimpleAction_Test.java">
+      <node id="8998492695587434683" at="13,67,14,132" concept="0" />
+      <node id="8998492695587434683" at="14,132,15,133" concept="0" />
+      <node id="8998492695587434683" at="21,51,22,72" concept="0" />
+      <node id="8998492695590929593" at="22,72,23,26" concept="0" />
+      <node id="8998492695590929600" at="23,26,24,71" concept="0" />
+      <node id="8998492695587434683" at="12,0,17,0" concept="1" trace="test_TestSubstitute_SimpleAction#()V" />
+      <node id="8998492695587434683" at="20,0,26,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="8998492695587434683" at="13,67,15,133" />
+      <scope id="8998492695587434683" at="21,51,24,71" />
+      <scope id="8998492695587434683" at="12,0,17,0" />
+      <scope id="8998492695587434683" at="20,0,26,0" />
+      <unit id="8998492695587434683" at="18,0,27,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_SimpleAction_Test$TestBody" />
+      <unit id="8998492695587434683" at="10,0,28,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_SimpleAction_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695590938556">
+    <file name="TestSubstitute_Wrapper_Test.java">
+      <node id="8998492695590938556" at="15,62,16,132" concept="0" />
+      <node id="8998492695590938556" at="16,132,17,128" concept="0" />
+      <node id="8998492695590938556" at="23,51,24,72" concept="0" />
+      <node id="8998492695590938564" at="24,72,25,71" concept="0" />
+      <node id="8998492695590954083" at="25,71,26,82" concept="0" />
+      <node id="8998492695590938556" at="14,0,19,0" concept="1" trace="test_TestSubstitute_Wrapper#()V" />
+      <node id="8998492695590938556" at="22,0,28,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="8998492695590938556" at="15,62,17,128" />
+      <scope id="8998492695590938556" at="23,51,26,82" />
+      <scope id="8998492695590938556" at="14,0,19,0" />
+      <scope id="8998492695590938556" at="22,0,28,0" />
+      <unit id="8998492695590938556" at="20,0,29,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_Wrapper_Test$TestBody" />
+      <unit id="8998492695590938556" at="12,0,30,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_Wrapper_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695590961912">
+    <file name="TestSubstitute_Parameterized_Test.java">
+      <node id="8998492695590961912" at="15,68,16,132" concept="0" />
+      <node id="8998492695590961912" at="16,132,17,134" concept="0" />
+      <node id="8998492695590961912" at="23,51,24,72" concept="0" />
+      <node id="8998492695590961919" at="24,72,25,71" concept="0" />
+      <node id="8998492695590961921" at="25,71,26,22" concept="0" />
+      <node id="8998492695590961922" at="26,22,27,82" concept="0" />
+      <node id="8998492695590961912" at="14,0,19,0" concept="1" trace="test_TestSubstitute_Parameterized#()V" />
+      <node id="8998492695590961912" at="22,0,29,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="8998492695590961912" at="15,68,17,134" />
+      <scope id="8998492695590961912" at="23,51,27,82" />
+      <scope id="8998492695590961912" at="14,0,19,0" />
+      <scope id="8998492695590961912" at="22,0,29,0" />
+      <unit id="8998492695590961912" at="20,0,30,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_Parameterized_Test$TestBody" />
+      <unit id="8998492695590961912" at="12,0,31,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_Parameterized_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695590964909">
+    <file name="TestSubstitute_ConceptsMenu_Test.java">
+      <node id="8998492695590964909" at="15,67,16,132" concept="0" />
+      <node id="8998492695590964909" at="16,132,17,133" concept="0" />
+      <node id="8998492695590964909" at="23,51,24,72" concept="0" />
+      <node id="8998492695590964917" at="24,72,25,71" concept="0" />
+      <node id="8998492695590964919" at="25,71,26,81" concept="0" />
+      <node id="8998492695590964955" at="26,81,27,82" concept="0" />
+      <node id="8998492695590964909" at="14,0,19,0" concept="1" trace="test_TestSubstitute_ConceptsMenu#()V" />
+      <node id="8998492695590964909" at="22,0,29,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="8998492695590964909" at="15,67,17,133" />
+      <scope id="8998492695590964909" at="23,51,27,82" />
+      <scope id="8998492695590964909" at="14,0,19,0" />
+      <scope id="8998492695590964909" at="22,0,29,0" />
+      <unit id="8998492695590964909" at="20,0,30,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_ConceptsMenu_Test$TestBody" />
+      <unit id="8998492695590964909" at="12,0,31,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_ConceptsMenu_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695590964981">
+    <file name="TestSubstitute_AddConcept_Test.java">
+      <node id="8998492695590964981" at="15,65,16,132" concept="0" />
+      <node id="8998492695590964981" at="16,132,17,131" concept="0" />
+      <node id="8998492695590964981" at="23,51,24,72" concept="0" />
+      <node id="8998492695590964989" at="24,72,25,71" concept="0" />
+      <node id="8998492695590964991" at="25,71,26,82" concept="0" />
+      <node id="8998492695590964981" at="14,0,19,0" concept="1" trace="test_TestSubstitute_AddConcept#()V" />
+      <node id="8998492695590964981" at="22,0,28,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="8998492695590964981" at="15,65,17,131" />
+      <scope id="8998492695590964981" at="23,51,26,82" />
+      <scope id="8998492695590964981" at="14,0,19,0" />
+      <scope id="8998492695590964981" at="22,0,28,0" />
+      <unit id="8998492695590964981" at="20,0,29,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_AddConcept_Test$TestBody" />
+      <unit id="8998492695590964981" at="12,0,30,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_AddConcept_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695590967071">
+    <file name="TestSubstitute_Subconcepts_Test.java">
+      <node id="8998492695590967071" at="15,66,16,132" concept="0" />
+      <node id="8998492695590967071" at="16,132,17,132" concept="0" />
+      <node id="8998492695590967071" at="23,51,24,72" concept="0" />
+      <node id="8998492695590967078" at="24,72,25,71" concept="0" />
+      <node id="8998492695590967080" at="25,71,26,81" concept="0" />
+      <node id="8998492695590967093" at="26,81,27,82" concept="0" />
+      <node id="8998492695590967071" at="14,0,19,0" concept="1" trace="test_TestSubstitute_Subconcepts#()V" />
+      <node id="8998492695590967071" at="22,0,29,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="8998492695590967071" at="15,66,17,132" />
+      <scope id="8998492695590967071" at="23,51,27,82" />
+      <scope id="8998492695590967071" at="14,0,19,0" />
+      <scope id="8998492695590967071" at="22,0,29,0" />
+      <unit id="8998492695590967071" at="20,0,30,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_Subconcepts_Test$TestBody" />
+      <unit id="8998492695590967071" at="12,0,31,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_Subconcepts_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695590967116">
+    <file name="TestSubstitute_SmartReference_Test.java">
+      <node id="8998492695590967116" at="15,69,16,132" concept="0" />
+      <node id="8998492695590967116" at="16,132,17,135" concept="0" />
+      <node id="8998492695590967116" at="23,51,24,72" concept="0" />
+      <node id="8998492695590967124" at="24,72,25,71" concept="0" />
+      <node id="8998492695591022739" at="25,71,26,22" concept="0" />
+      <node id="8998492695591152951" at="26,22,27,82" concept="0" />
+      <node id="8998492695590967116" at="14,0,19,0" concept="1" trace="test_TestSubstitute_SmartReference#()V" />
+      <node id="8998492695590967116" at="22,0,29,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="8998492695590967116" at="15,69,17,135" />
+      <scope id="8998492695590967116" at="23,51,27,82" />
+      <scope id="8998492695590967116" at="14,0,19,0" />
+      <scope id="8998492695590967116" at="22,0,29,0" />
+      <unit id="8998492695590967116" at="20,0,30,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_SmartReference_Test$TestBody" />
+      <unit id="8998492695590967116" at="12,0,31,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_SmartReference_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695591032739">
+    <file name="TestSubstitute_EmptyCell_Test.java">
+      <node id="8998492695591032739" at="15,64,16,132" concept="0" />
+      <node id="8998492695591032739" at="16,132,17,130" concept="0" />
+      <node id="8998492695591032739" at="23,51,24,72" concept="0" />
+      <node id="8998492695591032747" at="24,72,25,71" concept="0" />
+      <node id="8998492695591032749" at="25,71,26,82" concept="0" />
+      <node id="8998492695591032739" at="14,0,19,0" concept="1" trace="test_TestSubstitute_EmptyCell#()V" />
+      <node id="8998492695591032739" at="22,0,28,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="8998492695591032739" at="15,64,17,130" />
+      <scope id="8998492695591032739" at="23,51,26,82" />
+      <scope id="8998492695591032739" at="14,0,19,0" />
+      <scope id="8998492695591032739" at="22,0,28,0" />
+      <unit id="8998492695591032739" at="20,0,29,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_EmptyCell_Test$TestBody" />
+      <unit id="8998492695591032739" at="12,0,30,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_EmptyCell_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695591060953">
+    <file name="TestSubstitute_Contribute_Test.java">
+      <node id="8998492695591060953" at="15,65,16,132" concept="0" />
+      <node id="8998492695591060953" at="16,132,17,131" concept="0" />
+      <node id="8998492695591060953" at="23,51,24,72" concept="0" />
+      <node id="8998492695591060961" at="24,72,25,71" concept="0" />
+      <node id="8998492695591060963" at="25,71,26,82" concept="0" />
+      <node id="8998492695591060953" at="14,0,19,0" concept="1" trace="test_TestSubstitute_Contribute#()V" />
+      <node id="8998492695591060953" at="22,0,28,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="8998492695591060953" at="15,65,17,131" />
+      <scope id="8998492695591060953" at="23,51,26,82" />
+      <scope id="8998492695591060953" at="14,0,19,0" />
+      <scope id="8998492695591060953" at="22,0,28,0" />
+      <unit id="8998492695591060953" at="20,0,29,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_Contribute_Test$TestBody" />
+      <unit id="8998492695591060953" at="12,0,30,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_Contribute_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695591067986">
+    <file name="TestSubstitute_NamedMenu_Test.java">
+      <node id="8998492695591067986" at="15,64,16,132" concept="0" />
+      <node id="8998492695591067986" at="16,132,17,130" concept="0" />
+      <node id="8998492695591067986" at="23,51,24,72" concept="0" />
+      <node id="8998492695591067994" at="24,72,25,71" concept="0" />
+      <node id="8998492695591080237" at="25,71,26,25" concept="0" />
+      <node id="8998492695591067996" at="26,25,27,82" concept="0" />
+      <node id="8998492695591067986" at="14,0,19,0" concept="1" trace="test_TestSubstitute_NamedMenu#()V" />
+      <node id="8998492695591067986" at="22,0,29,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="8998492695591067986" at="15,64,17,130" />
+      <scope id="8998492695591067986" at="23,51,27,82" />
+      <scope id="8998492695591067986" at="14,0,19,0" />
+      <scope id="8998492695591067986" at="22,0,29,0" />
+      <unit id="8998492695591067986" at="20,0,30,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_NamedMenu_Test$TestBody" />
+      <unit id="8998492695591067986" at="12,0,31,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_NamedMenu_Test" />
+    </file>
+  </root>
+</debug-info-v2>
+
