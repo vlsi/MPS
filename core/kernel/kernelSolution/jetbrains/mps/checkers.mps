@@ -2278,17 +2278,9 @@
       <node concept="3cqZAl" id="6qi2OtU3u1I" role="3clF45" />
       <node concept="3Tm1VV" id="6qi2OtU3u1J" role="1B3o_S" />
       <node concept="3clFbS" id="6qi2OtU3u1K" role="3clF47">
-        <node concept="3SKdUt" id="7MOQyvfUtYp" role="3cqZAp">
-          <node concept="3SKdUq" id="7MOQyvfUtYr" role="3SKWNk">
-            <property role="3SKdUp" value="XXX any idea why not clear()?" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="6qi2OtU3u1L" role="3cqZAp">
-          <node concept="2OqwBi" id="6qi2OtU3u1M" role="3clFbG">
-            <node concept="Xjq3P" id="6qi2OtU3u1N" role="2Oq$k0" />
-            <node concept="liA8E" id="6qi2OtU3u1O" role="2OqNvi">
-              <ref role="37wK5l" node="6qi2OtU3u1U" resolve="removeModelListeners" />
-            </node>
+        <node concept="3clFbF" id="botMAnU6qs" role="3cqZAp">
+          <node concept="1rXfSq" id="botMAnU6qr" role="3clFbG">
+            <ref role="37wK5l" node="6qi2OtU3ubu" resolve="clear" />
           </node>
         </node>
       </node>

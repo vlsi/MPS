@@ -81,8 +81,7 @@ public class LanguageErrorsComponent {
   }
 
   public void dispose() {
-    // XXX any idea why not clear()? 
-    this.removeModelListeners();
+    clear();
   }
 
   private void removeModelListeners() {
