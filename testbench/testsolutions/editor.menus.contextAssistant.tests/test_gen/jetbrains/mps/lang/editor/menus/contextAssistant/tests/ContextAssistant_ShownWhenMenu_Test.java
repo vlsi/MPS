@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import junit.framework.Assert;
 import java.util.List;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 
 @MPSLaunch
 public class ContextAssistant_ShownWhenMenu_Test extends BaseTransformationTest {
@@ -33,7 +33,7 @@ public class ContextAssistant_ShownWhenMenu_Test extends BaseTransformationTest 
 
           Assert.assertNotNull(contextAssistantManager.getActiveAssistant());
 
-          List<MenuItem> activeItems = contextAssistantManager.getActiveMenuItems();
+          List<TransformationMenuItem> activeItems = contextAssistantManager.getActiveMenuItems();
           Assert.assertNotNull(activeItems);
           Assert.assertTrue(activeItems.size() > 0);
         }

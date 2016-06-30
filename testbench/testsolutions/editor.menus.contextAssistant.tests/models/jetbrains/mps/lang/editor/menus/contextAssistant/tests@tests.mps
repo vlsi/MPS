@@ -222,8 +222,8 @@
                     <property role="TrG5h" value="activeItems" />
                     <node concept="3uibUv" id="5ngDOM8uWhv" role="1tU5fm">
                       <ref role="3uigEE" to="33ny:~List" resolve="List" />
-                      <node concept="3uibUv" id="4rD2$WPBOHZ" role="11_B2D">
-                        <ref role="3uigEE" to="uddc:~TransformationMenuItemFactory" resolve="TransformationMenuItemFactory" />
+                      <node concept="3uibUv" id="41upsMQQIPk" role="11_B2D">
+                        <ref role="3uigEE" to="uddc:~TransformationMenuItem" resolve="TransformationMenuItem" />
                       </node>
                     </node>
                     <node concept="2OqwBi" id="jKDdcutlDu" role="33vP2m">
