@@ -30,10 +30,10 @@ import java.util.List;
 import java.util.function.Consumer;
 
 /**
- * Listens to model events and records them into a list. Thread-safe. Also converts a "models replaced" event received through
- * {@link org.jetbrains.mps.openapi.model.SModelListener#modelReplaced(SModel)} into individual {@link SModelReplacedEvent} instances.
- *
- * NOTE: {@link jetbrains.mps.nodeEditor.Highlighter} needs modelReplaced event as well. Not to duplicate model listeners for each and every model,
+ * Listens to model events and records them into a list. Thread-safe. Also converts a "model replaced" event received through
+ * {@link org.jetbrains.mps.openapi.model.SModelListener#modelReplaced(SModel)} to {@link SModelReplacedEvent}.
+ * <p>
+ * NOTE: {@link jetbrains.mps.nodeEditor.Highlighter Highlighter} needs modelReplaced event as well. Not to duplicate model listeners for each and every model,
  * this collector dispatches this event to an interested party (i.e. {@code Highlighter}) via {@link #onModelReload(Consumer)}
  */
 public class HighlighterEventCollector {

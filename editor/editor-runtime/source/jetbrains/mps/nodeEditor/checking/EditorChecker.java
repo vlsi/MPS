@@ -35,7 +35,9 @@ public interface EditorChecker {
   boolean isEssential();
 
   /**
-   * Invalidates internal state for editors affected by {@code events}.
+   * Invalidates internal state for editors affected by {@code events}. Called outside a read/write action and implementors are discouraged from starting their
+   * own read/write action to do any model traversals because events are delivered asynchronously in batches and the current model state may not correspond to
+   * the events.
    *
    * @param events events that occurred since the last call to this method (or since this instance was added to the highlighter)
    */
