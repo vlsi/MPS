@@ -122,8 +122,8 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
           myInvalidated = true;
         }
       } else {
-        // MPS-24027: send null event with beforeRootsChange() to avoid exception in com.intellij.psi.impl.file.impl.PsiVFSListener.MyModuleRootListener
-        myMessageBus.syncPublisher(ProjectTopics.PROJECT_ROOTS).beforeRootsChange(null);
+        // MPS-24027: send event with beforeRootsChange() to avoid exception in com.intellij.psi.impl.file.impl.PsiVFSListener.MyModuleRootListener
+        myMessageBus.syncPublisher(ProjectTopics.PROJECT_ROOTS).beforeRootsChange(new ModuleRootEventImpl(myProject, false));
         myMessageBus.syncPublisher(ProjectTopics.PROJECT_ROOTS).rootsChanged(new ModuleRootEventImpl(myProject, false));
       }
     }
