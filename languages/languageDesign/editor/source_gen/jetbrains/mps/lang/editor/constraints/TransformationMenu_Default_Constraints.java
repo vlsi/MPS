@@ -13,22 +13,6 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
-import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.lang.structure.constraints.Scopes;
-import jetbrains.mps.smodel.SNodePointer;
 
 public class TransformationMenu_Default_Constraints extends BaseConstraintsDescriptor {
   public TransformationMenu_Default_Constraints() {
@@ -46,41 +30,9 @@ public class TransformationMenu_Default_Constraints extends BaseConstraintsDescr
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
-        return SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL, 0x162bf82611ed9b28L, "conceptDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_TransformationMenu";
+        return SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclarationNew")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_TransformationMenu";
       }
     });
     return properties;
   }
-  @Override
-  protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
-    Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
-    references.put(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL, 0x162bf82611ed9b28L, "conceptDeclaration"), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL, 0x162bf82611ed9b28L), this) {
-      @Override
-      public boolean hasOwnScopeProvider() {
-        return true;
-      }
-      @Nullable
-      @Override
-      public ReferenceScopeProvider getScopeProvider() {
-        return new BaseScopeProvider() {
-          @Override
-          public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_q5ep0w_a0a0a0a0a1a0b0a1a3;
-          }
-          @Override
-          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SConcept acd = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
-              if (!(SNodeOperations.getModel(_context.getContextNode()).getModule() instanceof Language)) {
-                return new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), true, acd);
-              }
-              return Scopes.forConceptsInSameLanguage(SNodeOperations.getModel(_context.getContextNode()), acd);
-            }
-          }
-        };
-      }
-    });
-    return references;
-  }
-  private static SNodePointer breakingNode_q5ep0w_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "7158114823470865967");
 }

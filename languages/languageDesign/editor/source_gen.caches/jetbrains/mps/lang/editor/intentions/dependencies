@@ -340,7 +340,7 @@
     <classNode dependClassName="jetbrains.mps.intentions.ParameterizedIntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ITransformationMenu__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IMenu__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

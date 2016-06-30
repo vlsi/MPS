@@ -22,7 +22,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.intentions.ParameterizedIntentionExecutable;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.editor.behavior.ITransformationMenu__BehaviorDescriptor;
+import jetbrains.mps.lang.editor.behavior.IMenu__BehaviorDescriptor;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public final class ConvertMenu_Intention extends IntentionDescriptorBase implements IntentionFactory {
@@ -75,7 +75,7 @@ public final class ConvertMenu_Intention extends IntentionDescriptorBase impleme
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode newNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(myParameter), null);
       if (SNodeOperations.isInstanceOf(newNode, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL, "jetbrains.mps.lang.editor.structure.TransformationMenu"))) {
-        SLinkOperations.setTarget(SNodeOperations.cast(newNode, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL, "jetbrains.mps.lang.editor.structure.TransformationMenu")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL, 0x162bf82611ed9b28L, "conceptDeclaration"), ITransformationMenu__BehaviorDescriptor.getApplicableConcept_id5OVd5tVoadE.invoke(node));
+        SLinkOperations.setTarget(SNodeOperations.cast(newNode, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL, "jetbrains.mps.lang.editor.structure.TransformationMenu")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL, 0x162bf82611ed9b28L, "conceptDeclaration"), IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(node));
       }
       ListSequence.fromList(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))));
       ListSequence.fromList(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, 0x16be955f384efffcL, "sections"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, 0x16be955f384efffcL, "sections"))));
