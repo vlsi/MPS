@@ -6946,6 +6946,48 @@
       <unit id="5681344316174495391" at="10,0,27,0" name="jetbrains.mps.editorTest.psvmLiveTemplate_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5706606249111727921">
+    <file name="BaseAssignmentToFinalVariable_Test.java">
+      <node id="5706606249111727921" at="17,92,18,109" concept="3" />
+      <node id="5706606249111727921" at="18,109,19,151" concept="3" />
+      <node id="5706606249111727921" at="22,92,23,109" concept="3" />
+      <node id="5706606249111727921" at="23,109,24,151" concept="3" />
+      <node id="5706606249111727921" at="27,77,28,109" concept="3" />
+      <node id="5706606249111727921" at="28,109,29,136" concept="3" />
+      <node id="5706606249111727921" at="35,94,36,242" concept="7" />
+      <node id="5706606249111727921" at="36,242,37,123" concept="3" />
+      <node id="5706606249111727921" at="39,94,40,242" concept="7" />
+      <node id="5706606249111727921" at="40,242,41,123" concept="3" />
+      <node id="5706606249111727921" at="43,79,44,242" concept="7" />
+      <node id="5706606249111727921" at="44,242,45,123" concept="3" />
+      <node id="5706606249111727921" at="35,0,39,0" concept="6" trace="test_NodeCannotAssignValueToFinalCheck5706606249111788699#()V" />
+      <node id="5706606249111727921" at="39,0,43,0" concept="6" trace="test_NodeCannotAssignValueToFinalCheck5706606249111798505#()V" />
+      <node id="5706606249111727921" at="43,0,47,0" concept="6" trace="test_ErrorMessagesCheck5706606249111739463#()V" />
+      <node id="5706606249111727921" at="16,0,21,0" concept="6" trace="test_NodeCannotAssignValueToFinalCheck5706606249111788699#()V" />
+      <node id="5706606249111727921" at="21,0,26,0" concept="6" trace="test_NodeCannotAssignValueToFinalCheck5706606249111798505#()V" />
+      <node id="5706606249111727921" at="26,0,31,0" concept="6" trace="test_ErrorMessagesCheck5706606249111739463#()V" />
+      <scope id="5706606249111727921" at="17,92,19,151" />
+      <scope id="5706606249111727921" at="22,92,24,151" />
+      <scope id="5706606249111727921" at="27,77,29,136" />
+      <scope id="5706606249111727921" at="35,94,37,123">
+        <var name="operation" id="5706606249111727921" />
+      </scope>
+      <scope id="5706606249111727921" at="39,94,41,123">
+        <var name="operation" id="5706606249111727921" />
+      </scope>
+      <scope id="5706606249111727921" at="43,79,45,123">
+        <var name="operation" id="5706606249111727921" />
+      </scope>
+      <scope id="5706606249111727921" at="35,0,39,0" />
+      <scope id="5706606249111727921" at="39,0,43,0" />
+      <scope id="5706606249111727921" at="43,0,47,0" />
+      <scope id="5706606249111727921" at="16,0,21,0" />
+      <scope id="5706606249111727921" at="21,0,26,0" />
+      <scope id="5706606249111727921" at="26,0,31,0" />
+      <unit id="5706606249111727921" at="32,0,49,0" name="jetbrains.mps.editorTest.BaseAssignmentToFinalVariable_Test$TestBody" />
+      <unit id="5706606249111727921" at="14,0,50,0" name="jetbrains.mps.editorTest.BaseAssignmentToFinalVariable_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5732053020525090668">
     <file name="SideDeleteStaticInitializerAtEndWithBackSpace_Test.java">
       <node id="5732053020525090668" at="13,85,14,102" concept="3" />
