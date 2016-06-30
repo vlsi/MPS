@@ -268,7 +268,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -42767,8 +42767,13 @@
             <node concept="3clFbF" id="7uwEITLLqOy" role="3cqZAp">
               <node concept="37vLTI" id="7uwEITLLqO$" role="3clFbG">
                 <node concept="2OqwBi" id="7uwEITLLqOC" role="37vLTx">
-                  <node concept="37vLTw" id="3GM_nagT$gM" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6hHyb3YSHd4" resolve="text" />
+                  <node concept="2OqwBi" id="5aJlj9qKLwy" role="2Oq$k0">
+                    <node concept="37vLTw" id="3GM_nagT$gM" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6hHyb3YSHd4" resolve="text" />
+                    </node>
+                    <node concept="liA8E" id="5aJlj9qKNII" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~String.trim():java.lang.String" resolve="trim" />
+                    </node>
                   </node>
                   <node concept="liA8E" id="7uwEITLLqOG" role="2OqNvi">
                     <ref role="37wK5l" to="wyt6:~String.toLowerCase():java.lang.String" resolve="toLowerCase" />
