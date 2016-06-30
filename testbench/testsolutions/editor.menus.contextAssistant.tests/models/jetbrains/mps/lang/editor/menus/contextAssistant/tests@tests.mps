@@ -522,7 +522,6 @@
     <node concept="1N2y5x" id="3W5xt4CLRAK" role="1N2y4b">
       <property role="TrG5h" value="test" />
     </node>
-    <node concept="3UxrLP" id="1H9M4VxNf8U" role="1N2y4b" />
   </node>
   <node concept="2XOHcx" id="4Sf$XywNGwD">
     <property role="2XOHcw" value="${mps_home}" />

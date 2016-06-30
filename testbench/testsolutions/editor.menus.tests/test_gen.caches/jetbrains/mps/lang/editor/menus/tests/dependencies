@@ -188,13 +188,13 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.DefaultMenuLookup" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.NamedMenuLookup" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.TransformationMenu" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.MenuLookup" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />

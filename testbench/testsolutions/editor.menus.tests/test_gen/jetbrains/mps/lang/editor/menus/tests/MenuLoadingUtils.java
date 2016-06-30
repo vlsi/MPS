@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.lang.editor.menus.NamedMenuLookup;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -45,7 +45,7 @@ public class MenuLoadingUtils {
     final SNode node = editorComponent.getEditedNode();
     SRepository repository = editorContext.getRepository();
 
-    final NamedMenuLookup<TransformationMenu> lookup = new NamedTransformationMenuLookup(LanguageRegistry.getInstance(repository), SNodeOperations.getConcept(node), menuFqName);
+    final MenuLookup<TransformationMenu> lookup = new NamedTransformationMenuLookup(LanguageRegistry.getInstance(repository), SNodeOperations.getConcept(node), menuFqName);
 
     final Wrappers._T<List<TransformationMenuItem>> items = new Wrappers._T<List<TransformationMenuItem>>();
 

@@ -13,7 +13,7 @@
     <classNode dependClassName="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolComponent" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.MenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.IconResource" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />

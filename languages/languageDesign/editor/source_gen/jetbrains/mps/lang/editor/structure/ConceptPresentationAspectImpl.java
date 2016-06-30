@@ -366,7 +366,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TransformationLocation_ContextAssistant = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationLocation_SideTransform = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationLocation_SideTransform_PlaceInCellHolder = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationMenu = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TransformationMenu = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL, 0x162bf82611ed9b28L, "conceptDeclaration")).create();
   private final ConceptPresentation props_TransformationMenuContribution = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuPart_Action = new ConceptPresentationBuilder().create();

@@ -4877,6 +4877,7 @@
       <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="1597643335226202920" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+      <node concept="asaX9" id="44Sm9iC4vpa" role="lGtFl" />
     </node>
     <node concept="PrWs8" id="4Sf$XywKhwV" role="PzmwI">
       <ref role="PrY4T" node="4Sf$XywKhwM" resolve="ITransformationMenu" />

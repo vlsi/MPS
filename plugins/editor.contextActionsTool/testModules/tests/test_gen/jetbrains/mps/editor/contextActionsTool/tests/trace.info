@@ -44,8 +44,8 @@
       </scope>
       <scope id="6866332489278474177" at="18,0,29,0" />
       <scope id="6866332489279202719" at="29,0,40,0" />
-      <unit id="6866332489278806731" at="19,24,24,5" name="jetbrains.mps.editor.contextActionsTool.tests.IconLoading_Test$1" />
-      <unit id="6866332489279202728" at="30,24,35,5" name="jetbrains.mps.editor.contextActionsTool.tests.IconLoading_Test$2" />
+      <unit id="6866332489278806731" at="19,38,24,5" name="jetbrains.mps.editor.contextActionsTool.tests.IconLoading_Test$1" />
+      <unit id="6866332489279202728" at="30,38,35,5" name="jetbrains.mps.editor.contextActionsTool.tests.IconLoading_Test$2" />
       <unit id="6866332489278779413" at="40,0,50,0" name="jetbrains.mps.editor.contextActionsTool.tests.IconLoading_Test$SidebarItemBase" />
       <unit id="6866332489278472802" at="17,0,51,0" name="jetbrains.mps.editor.contextActionsTool.tests.IconLoading_Test" />
     </file>

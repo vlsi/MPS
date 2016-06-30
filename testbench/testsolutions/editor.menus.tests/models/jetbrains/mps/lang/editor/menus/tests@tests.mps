@@ -166,7 +166,7 @@
       </concept>
       <concept id="3961072808175293133" name="jetbrains.mps.lang.editor.structure.ITransformationMenuReference" flags="ng" index="1ahXLQ" />
       <concept id="5692353713941573329" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_ActionLabelText" flags="ig" index="1hCUdq" />
-      <concept id="7291101478617127464" name="jetbrains.mps.lang.editor.structure.IExtensibleMenuPart" flags="ng" index="1joUw2">
+      <concept id="7291101478617127464" name="jetbrains.mps.lang.editor.structure.IExtensibleTransformationMenuPart" flags="ng" index="1joUw2">
         <child id="8954657570916349207" name="features" index="2jZA2a" />
       </concept>
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
@@ -178,9 +178,6 @@
       </concept>
       <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" stub="3610246225209162225" index="3F0ifn">
         <property id="1073389577007" name="text" index="3F0ifm" />
-      </concept>
-      <concept id="5624877018226900666" name="jetbrains.mps.lang.editor.structure.TransformationMenu" flags="ng" index="3ICUPy">
-        <reference id="1597643335226202920" name="conceptDeclaration" index="7LAce" />
       </concept>
       <concept id="5624877018226904808" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Named" flags="ng" index="3ICXOK" />
       <concept id="5624877018228267058" name="jetbrains.mps.lang.editor.structure.ITransformationMenu" flags="ng" index="3INCJE">
@@ -690,7 +687,7 @@
           <node concept="3cpWsn" id="5_kqtpAxtG1" role="3cpWs9">
             <property role="TrG5h" value="lookup" />
             <node concept="3uibUv" id="5_kqtpAxtLd" role="1tU5fm">
-              <ref role="3uigEE" to="9eyi:~NamedMenuLookup" resolve="NamedMenuLookup" />
+              <ref role="3uigEE" to="uddc:~MenuLookup" resolve="MenuLookup" />
               <node concept="3uibUv" id="3rSzFHX2C_v" role="11_B2D">
                 <ref role="3uigEE" to="iwf0:~TransformationMenu" resolve="TransformationMenu" />
               </node>
@@ -1935,7 +1932,7 @@
     <node concept="1NpImL" id="4CpFf$TvYmN" role="LiRBU">
       <node concept="3ICXOK" id="37GYs0qWJH9" role="1NpImK">
         <property role="TrG5h" value="somemenu" />
-        <ref role="7LAce" to="tpck:gw2VY9q" resolve="BaseConcept" />
+        <ref role="aqKnT" to="tpck:gw2VY9q" resolve="BaseConcept" />
         <node concept="1Qtc8_" id="37GYs0qX4Ia" role="IW6Ez">
           <node concept="ZR7TO" id="37GYs0qX4Io" role="1Qtc8$" />
           <node concept="IWgqT" id="37GYs0qX4Iz" role="1Qtc8A">
@@ -1964,7 +1961,7 @@
     </node>
     <node concept="1NpImL" id="4CpFf$TvYw8" role="LiZbd">
       <node concept="IW6AY" id="37GYs0qX5qR" role="1NpImK">
-        <ref role="7LAce" to="tpck:gw2VY9q" resolve="BaseConcept" />
+        <ref role="aqKnT" to="tpck:gw2VY9q" resolve="BaseConcept" />
         <node concept="1Qtc8_" id="37GYs0qXjZ2" role="IW6Ez">
           <node concept="ZR7TO" id="37GYs0qXjZ3" role="1Qtc8$" />
           <node concept="IWgqT" id="37GYs0qXjZ4" role="1Qtc8A">
@@ -1998,7 +1995,7 @@
     </node>
     <node concept="1NpImL" id="4CpFf$Tw92X" role="LiRBU">
       <node concept="IW6AY" id="4CpFf$Tw$To" role="1NpImK">
-        <ref role="7LAce" to="tpck:gw2VY9q" resolve="BaseConcept" />
+        <ref role="aqKnT" to="tpck:gw2VY9q" resolve="BaseConcept" />
         <node concept="1Qtc8_" id="4CpFf$Tw92Z" role="IW6Ez">
           <node concept="ZR7TO" id="4CpFf$Tw930" role="1Qtc8$" />
           <node concept="IWgqT" id="4CpFf$Tw931" role="1Qtc8A">
@@ -2027,7 +2024,7 @@
     </node>
     <node concept="1NpImL" id="4CpFf$Tw939" role="LiZbd">
       <node concept="3ICXOK" id="4CpFf$Tw_gy" role="1NpImK">
-        <ref role="7LAce" to="tpck:gw2VY9q" resolve="BaseConcept" />
+        <ref role="aqKnT" to="tpck:gw2VY9q" resolve="BaseConcept" />
         <node concept="1Qtc8_" id="4CpFf$Tw93b" role="IW6Ez">
           <node concept="ZR7TO" id="4CpFf$Tw93c" role="1Qtc8$" />
           <node concept="IWgqT" id="4CpFf$Tw93d" role="1Qtc8A">
