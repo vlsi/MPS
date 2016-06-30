@@ -20,7 +20,6 @@
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="rvbb" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.projectPane(MPS.Workbench/)" />
     <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
-    <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="sn11" ref="r:836426ab-a6f4-4fa3-9a9c-34c02ed6ab5d(jetbrains.mps.ide.icons)" />
@@ -2876,6 +2875,21 @@
                 <ref role="37wK5l" to="lui2:~FindUsagesFacade.getInstance():org.jetbrains.mps.openapi.module.FindUsagesFacade" resolve="getInstance" />
                 <ref role="1Pybhc" to="lui2:~FindUsagesFacade" resolve="FindUsagesFacade" />
               </node>
+            </node>
+          </node>
+          <node concept="3SKdUt" id="5aJlj9qKCmJ" role="3cqZAp">
+            <node concept="3SKdUq" id="5aJlj9qKCmL" role="3SKWNk">
+              <property role="3SKdUp" value="FIXME there's ClassifierSuccessor index we can use here, although shall not use them directly" />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="5aJlj9qKGU2" role="3cqZAp">
+            <node concept="3SKdUq" id="5aJlj9qKGU4" role="3SKWNk">
+              <property role="3SKdUp" value="but rather through FindUsagesFacade, with dedicated 'successor' query, so that there'd be single HierarchyViewTool, and finders plug through " />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="5aJlj9qNtdR" role="3cqZAp">
+            <node concept="3SKdUq" id="5aJlj9qNtdS" role="3SKWNk">
+              <property role="3SKdUp" value="FindUsages to get accessed in a generic way." />
             </node>
           </node>
           <node concept="3cpWs8" id="51NkKCgB3pp" role="3cqZAp">

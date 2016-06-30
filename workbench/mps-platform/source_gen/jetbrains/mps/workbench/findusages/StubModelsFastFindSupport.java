@@ -4,7 +4,8 @@ package jetbrains.mps.workbench.findusages;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -21,8 +22,11 @@ import jetbrains.mps.util.Mapper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Map;
-import jetbrains.mps.findUsages.FindUsagesUtil;
+import jetbrains.mps.findUsages.NodeUsageFinder;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.findUsages.FindUsagesUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.Nullable;
@@ -33,10 +37,10 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import gnu.trove.THashSet;
 import jetbrains.mps.vfs.IFile;
+import java.util.ArrayList;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.apache.log4j.Level;
-import com.intellij.openapi.vfs.VfsUtilCore;
-import com.intellij.openapi.vfs.VirtualFileVisitor;
+import java.util.Arrays;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
@@ -46,15 +50,19 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class StubModelsFastFindSupport implements ApplicationComponent, FindUsagesParticipant {
-  public StubModelsFastFindSupport() {
+  private final PersistenceRegistry myRegistry;
+
+  public StubModelsFastFindSupport(MPSCoreComponents mpsCore) {
+    myRegistry = mpsCore.getPlatform().findComponent(PersistenceRegistry.class);
   }
+
   @Override
   public void initComponent() {
-    PersistenceFacade.getInstance().addFindUsagesParticipant(this);
+    myRegistry.addFindUsagesParticipant(this);
   }
   @Override
   public void disposeComponent() {
-    PersistenceFacade.getInstance().removeFindUsagesParticipant(this);
+    myRegistry.removeFindUsagesParticipant(this);
   }
   @NotNull
   @Override
@@ -84,15 +92,15 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
     }
 
     for (Map.Entry<SModel, Collection<SNode>> e : candidates.entrySet()) {
-      FindUsagesUtil.collectUsages(e.getKey(), e.getValue(), consumer);
+      new NodeUsageFinder(e.getValue(), consumer).collectUsages(e.getKey());
     }
   }
   @Override
   public void findInstances(Collection<SModel> models, Set<SAbstractConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer) {
-    final String blName = "jetbrains.mps.baseLanguage";
+    final SLanguage bl = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage");
     concepts = SetSequence.fromSetWithValues(new HashSet<SAbstractConcept>(), SetSequence.fromSet(concepts).where(new IWhereFilter<SAbstractConcept>() {
       public boolean accept(SAbstractConcept it) {
-        return it.getLanguage().getQualifiedName().equals(blName);
+        return bl.equals(it.getLanguage());
       }
     }));
 
@@ -105,7 +113,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
   public void findModelUsages(Collection<SModel> scope, Set<SModelReference> modelReferences, Consumer<SModel> consumer, Consumer<SModel> processedConsumer) {
     modelReferences = SetSequence.fromSetWithValues(new HashSet<SModelReference>(), SetSequence.fromSet(modelReferences).where(new IWhereFilter<SModelReference>() {
       public boolean accept(SModelReference it) {
-        return SModelStereotype.JAVA_STUB.equals(SModelStereotype.getStereotype(it.getModelName()));
+        return SModelStereotype.JAVA_STUB.equals(it.getName().getStereotype());
       }
     }));
     MultiMap<SModel, SModelReference> candidates = findCandidates(scope, modelReferences, processedConsumer, new Mapper<SModelReference, String>() {
@@ -137,7 +145,6 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
     final ManyToManyMap<SModel, VirtualFile> scopeFiles = new ManyToManyMap<SModel, VirtualFile>();
 
     Set<FolderSetDataSource> sources = new THashSet<FolderSetDataSource>();
-    final Set<VirtualFile> dirs = new THashSet<VirtualFile>();
 
     for (final SModel sm : models) {
       if (!(sm instanceof JavaClassStubModelDescriptor)) {
@@ -151,6 +158,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
       }
 
       Collection<IFile> files = source.getAffectedFiles();
+      ArrayList<VirtualFile> vFiles = new ArrayList();
       for (IFile path : files) {
         final VirtualFile vf = VirtualFileUtils.getVirtualFile(path);
         if (vf == null) {
@@ -159,16 +167,19 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
           }
           continue;
         }
-        VfsUtilCore.visitChildrenRecursively(vf, new VirtualFileVisitor<Object>() {
-          @Override
-          public boolean visitFile(@NotNull VirtualFile file) {
-            if (file.isDirectory()) {
-              return dirs.add(file);
-            }
-            scopeFiles.addLink(sm, file);
-            return true;
-          }
-        });
+        if (vf.isDirectory()) {
+          vFiles.addAll(Arrays.asList(vf.getChildren()));
+        } else {
+          vFiles.add(vf);
+        }
+      }
+      for (VirtualFile vf : vFiles) {
+        // do not enter any directories but one at the top level.  Java package (corresponds to model) is just a list of files under single folder,  
+        // nested folders correspond to another package 
+        if (vf.isDirectory()) {
+          continue;
+        }
+        scopeFiles.addLink(sm, vf);
       }
     }
 
