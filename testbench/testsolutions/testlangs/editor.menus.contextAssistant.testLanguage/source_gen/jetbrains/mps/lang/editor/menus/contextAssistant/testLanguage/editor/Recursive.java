@@ -13,6 +13,7 @@ import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.lang.editor.menus.transformation.IncludeMenuMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
@@ -32,7 +33,7 @@ public class Recursive extends TransformationMenuBase {
   public static class TransformationMenuPart_IncludeMenu_q7lcll_a0 extends IncludeMenuMenuPart {
     @Nullable
     @Override
-    protected MenuLookup getMenuLookup(TransformationMenuContext _context) {
+    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 

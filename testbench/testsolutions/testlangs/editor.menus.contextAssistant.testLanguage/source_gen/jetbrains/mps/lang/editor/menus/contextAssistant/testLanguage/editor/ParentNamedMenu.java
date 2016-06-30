@@ -9,30 +9,21 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
+import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
-import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
+import jetbrains.mps.editor.runtime.items.SubstituteCompletionActionItem;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.editor.menus.transformation.IncludeSubstituteMenuMenuPart;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
-import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.lang.editor.menus.transformation.NamedSubstituteMenuLookup;
-import jetbrains.mps.smodel.language.LanguageRegistry;
 
 public class ParentNamedMenu extends TransformationMenuBase {
   @Override
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
-    if (ListSequence.fromListAndArray(new ArrayList<String>(), SChildSubstituteInfo.SUBSTITUTE).contains(_context.getMenuLocation())) {
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.SUBSTITUTE).contains(_context.getMenuLocation())) {
       result.add(new ParentNamedMenu.TransformationMenuPart_Action_bwf8lj_a0());
-      result.add(new ParentNamedMenu.TransformationMenuPart_IncludeSubstituteMenu_bwf8lj_b0());
     }
     return result;
   }
@@ -43,7 +34,7 @@ public class ParentNamedMenu extends TransformationMenuBase {
       return new ParentNamedMenu.TransformationMenuPart_Action_bwf8lj_a0.Item(context);
     }
 
-    private class Item extends ActionItemBase implements CompletionActionItem {
+    private class Item extends ActionItemBase implements SubstituteCompletionActionItem {
       private final TransformationMenuContext _context;
 
       private Item(TransformationMenuContext context) {
@@ -65,27 +56,6 @@ public class ParentNamedMenu extends TransformationMenuBase {
       public String getShortDescriptionText(String pattern) {
         return "completion item";
       }
-    }
-  }
-  public static class TransformationMenuPart_IncludeSubstituteMenu_bwf8lj_b0 extends IncludeSubstituteMenuMenuPart {
-
-    @Override
-    protected SNode getParentNode(TransformationMenuContext context) {
-      return context.getNode();
-    }
-    @Override
-    protected SNode getCurrentChild(TransformationMenuContext context) {
-      return null;
-    }
-    @Override
-    protected SContainmentLink getContainmentLink(TransformationMenuContext context) {
-      return MetaAdapterFactory.getContainmentLink(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL, 0x4d6a8b533e60aa58L, "children");
-    }
-
-    @Override
-    protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext context) {
-      SRepository repository = context.getEditorContext().getRepository();
-      return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(repository), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Child"), "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.substituteParameterized");
     }
   }
 }

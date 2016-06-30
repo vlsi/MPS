@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
-import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
+import jetbrains.mps.editor.runtime.items.SideTransformCompletionActionItem;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -44,7 +44,7 @@ public class NamedMenu extends TransformationMenuBase {
       return new NamedMenu.TransformationMenuPart_Action_qsw3kc_a0.Item(context);
     }
 
-    private class Item extends ActionItemBase implements CompletionActionItem {
+    private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
       private final TransformationMenuContext _context;
 
       private Item(TransformationMenuContext context) {
@@ -78,7 +78,7 @@ public class NamedMenu extends TransformationMenuBase {
       return new NamedMenu.TransformationMenuPart_Intention_qsw3kc_b0.Item(context, executable);
     }
 
-    private static class Item extends IntentionMenuPartBase.ItemBase implements CompletionActionItem {
+    private static class Item extends IntentionMenuPartBase.ItemBase implements SideTransformCompletionActionItem {
       private Item(TransformationMenuContext context, IntentionExecutable executable) {
         super(context, executable);
       }
@@ -95,7 +95,7 @@ public class NamedMenu extends TransformationMenuBase {
       return new NamedMenu.TransformationMenuPart_Action_qsw3kc_c0.Item(context);
     }
 
-    private class Item extends ActionItemBase implements CompletionActionItem {
+    private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
       private final TransformationMenuContext _context;
 
       private Item(TransformationMenuContext context) {

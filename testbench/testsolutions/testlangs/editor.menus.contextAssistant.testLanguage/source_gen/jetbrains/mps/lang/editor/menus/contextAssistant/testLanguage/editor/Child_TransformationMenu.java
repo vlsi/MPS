@@ -9,9 +9,8 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
-import jetbrains.mps.lang.editor.menus.transformation.IncludeSubstituteMenuMenuPart;
+import jetbrains.mps.lang.editor.menus.transformation.IncludeSubstituteMenuTransformationMenuPart;
 import jetbrains.mps.lang.editor.menus.ConditionalMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -26,6 +25,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.editor.menus.transformation.IncludeMenuMenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -34,7 +34,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
   @Override
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
-    if (ListSequence.fromListAndArray(new ArrayList<String>(), SChildSubstituteInfo.SUBSTITUTE).contains(_context.getMenuLocation())) {
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.SUBSTITUTE).contains(_context.getMenuLocation())) {
       result.add(new Child_TransformationMenu.TransformationMenuPart_IncludeSubstituteMenu_qk1e79_a0());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
@@ -49,7 +49,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
     return result;
   }
 
-  public static class TransformationMenuPart_IncludeSubstituteMenu_qk1e79_a0 extends IncludeSubstituteMenuMenuPart {
+  public static class TransformationMenuPart_IncludeSubstituteMenu_qk1e79_a0 extends IncludeSubstituteMenuTransformationMenuPart {
 
 
   }
@@ -285,7 +285,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
   public static class TransformationMenuPart_IncludeMenu_qk1e79_f1 extends IncludeMenuMenuPart {
     @Nullable
     @Override
-    protected MenuLookup getMenuLookup(TransformationMenuContext _context) {
+    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 

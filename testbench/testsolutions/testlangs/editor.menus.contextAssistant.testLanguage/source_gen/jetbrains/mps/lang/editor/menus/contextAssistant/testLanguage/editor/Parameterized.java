@@ -40,7 +40,7 @@ public class Parameterized extends TransformationMenuBase {
     }
     @NotNull
     @Override
-    protected List<? extends Object> getParameters(TransformationMenuContext _context) {
+    protected Iterable<? extends Object> getParameters(TransformationMenuContext _context) {
       return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4);
     }
   }
