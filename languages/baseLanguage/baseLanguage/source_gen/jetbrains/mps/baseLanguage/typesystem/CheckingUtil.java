@@ -52,10 +52,10 @@ public class CheckingUtil {
   }
 
   public static boolean isFinalVariableReferenceAssignedIllegally(SNode reference) {
-    return CheckingUtil.isRead(reference) && (!(isInConstructorOrInstanceInitializer(reference)) || (SLinkOperations.getTarget(SLinkOperations.getTarget(reference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) != null));
+    return CheckingUtil.isAssigned(reference) && (!(isInConstructorOrInstanceInitializer(reference)) || (SLinkOperations.getTarget(SLinkOperations.getTarget(reference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) != null));
   }
   public static boolean isFinalFieldReferenceAssignedIllegally(SNode operation) {
-    if (!(CheckingUtil.isRead(operation))) {
+    if (!(CheckingUtil.isAssigned(operation))) {
       return false;
     }
     SNode operand = SLinkOperations.getTarget(IOperation__BehaviorDescriptor.getDotExpression_idhO_4GYO.invoke(operation), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
@@ -72,7 +72,7 @@ public class CheckingUtil {
     return (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false) != null || SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), false, false) != null);
   }
   public static boolean isAssignedIllegaly(SNode node) {
-    return CheckingUtil.isRead(node) && (!(isInConstructorOrInstanceInitializer(node)) || refersToDeclarationWithInitializer(node));
+    return CheckingUtil.isAssigned(node) && (!(isInConstructorOrInstanceInitializer(node)) || refersToDeclarationWithInitializer(node));
   }
 
   private static boolean refersToDeclarationWithInitializer(SNode node) {
