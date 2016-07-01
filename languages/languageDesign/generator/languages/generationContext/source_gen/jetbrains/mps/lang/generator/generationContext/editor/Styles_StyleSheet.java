@@ -10,6 +10,9 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.lang.core.behavior.IDeprecatable__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Styles_StyleSheet {
   public static void apply_genContext_operation(Style style, EditorCell editorCell) {
@@ -18,6 +21,21 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.EDITABLE, 0, true);
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
+    if (Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a3a(editorContext, node)) {
+      {
+        Style styleToPut = new StyleImpl();
+        Styles_StyleSheet.apply_deprecated(styleToPut, editorCell);
+        style.putAll(styleToPut, 0);
+      }
+    }
+  }
+  public static void apply_deprecated(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
+    style.set(StyleAttributes.STRIKE_OUT, 0, true);
   }
 
+  private static boolean _StyleParameter_QueryFunction_kkd5s1_a3a(EditorContext editorContext, SNode node) {
+    return (boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SNodeOperations.getConceptDeclaration(node));
+  }
 }
