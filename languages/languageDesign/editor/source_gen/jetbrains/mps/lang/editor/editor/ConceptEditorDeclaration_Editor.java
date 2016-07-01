@@ -38,6 +38,7 @@ import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
 
 public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -50,6 +51,8 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_cth9w3_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_cth9w3_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_cth9w3_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_cth9w3_d0(editorContext, node));
+    editorCell.addEditorCell(this.createContextAssistant_cth9w3_e0(editorContext, node));
     return editorCell;
   }
   private EditorCell createCollection_cth9w3_a0(EditorContext editorContext, SNode node) {
@@ -363,5 +366,19 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     protected String getNoTargetText() {
       return "<choose cell model>";
     }
+  }
+  private EditorCell createConstant_cth9w3_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_cth9w3_d0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createContextAssistant_cth9w3_e0(final EditorContext editorContext, final SNode node) {
+    EditorCell editorCell = new EditorCell_ContextAssistantComponent(editorContext, node);
+    editorCell.setCellId("ContextAssistant_cth9w3_e0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    editorCell.getStyle().putAll(style);
+    return editorCell;
   }
 }
