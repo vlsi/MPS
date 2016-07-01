@@ -209,7 +209,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
         case 22:
           if (true) {
             // Concept: IfStatement 
-            intentions = new IntentionFactory[11];
+            intentions = new IntentionFactory[12];
             intentions[0] = new AddCastStatement_Intention();
             intentions[1] = new InvertIfCondition_Intention();
             intentions[2] = new AddElsifClause_Intention();
@@ -221,6 +221,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
             intentions[8] = new UnwrapIfThenBlock_Intention();
             intentions[9] = new SplitIf_Intention();
             intentions[10] = new ConvertIfConditionToTernaryOperator_Intention();
+            intentions[11] = new UnwrapUnnecessaryElse_Intention();
           }
           break;
         case 23:
@@ -382,7 +383,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[93];
+    IntentionFactory[] rv = new IntentionFactory[94];
     rv[0] = new AddCastStatement_Intention();
     rv[1] = new SplitStringIntoConcatenation_Intention();
     rv[2] = new SplitIntoDeclarationAndAssignment_Intention();
@@ -476,6 +477,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[90] = new ComputeExpressionValue_Intention();
     rv[91] = new JoinVariableDeclarationAndInitializer_Intention();
     rv[92] = new AutoSpacing_Intention();
+    rv[93] = new UnwrapUnnecessaryElse_Intention();
     return Arrays.asList(rv);
   }
   private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {

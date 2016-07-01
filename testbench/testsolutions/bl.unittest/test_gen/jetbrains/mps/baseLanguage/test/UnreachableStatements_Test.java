@@ -14,11 +14,6 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 @MPSLaunch
 public class UnreachableStatements_Test extends BaseTransformationTest {
   @Test
-  public void test_NodeTheElseBranchCanBeUnwrappedCheck4513394054598614945() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeTheElseBranchCanBeUnwrappedCheck4513394054598614945", true);
-  }
-  @Test
   public void test_NodeUnusedVariableWarningCheck6923385624929494062() throws Throwable {
     initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnusedVariableWarningCheck6923385624929494062", true);
@@ -117,10 +112,6 @@ public class UnreachableStatements_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
 
-    public void test_NodeTheElseBranchCanBeUnwrappedCheck4513394054598614945() throws Exception {
-      SNode operation = SNodeOperations.cast(getRealNodeById("4513394054598614945"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));
-      INodesTestMethod__BehaviorDescriptor.perform_id1kgh5YabdhC.invoke(operation, getRealNodeById("1215444211012"));
-    }
     public void test_NodeUnusedVariableWarningCheck6923385624929494062() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6923385624929494062"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));
       INodesTestMethod__BehaviorDescriptor.perform_id1kgh5YabdhC.invoke(operation, getRealNodeById("3951985765451236689"));

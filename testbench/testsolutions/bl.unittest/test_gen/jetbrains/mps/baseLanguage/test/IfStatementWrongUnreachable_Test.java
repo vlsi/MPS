@@ -19,11 +19,6 @@ public class IfStatementWrongUnreachable_Test extends BaseTransformationTest {
     runTest("jetbrains.mps.baseLanguage.test.IfStatementWrongUnreachable_Test$TestBody", "test_ErrorMessagesCheck1217864879944", true);
   }
   @Test
-  public void test_NodeTheElseBranchCanBeUnwrappedCheck4513394054602516393() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    runTest("jetbrains.mps.baseLanguage.test.IfStatementWrongUnreachable_Test$TestBody", "test_NodeTheElseBranchCanBeUnwrappedCheck4513394054602516393", true);
-  }
-  @Test
   public void test_NodeUnreachableNodeErrorCheck6923385624927388248() throws Throwable {
     initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.IfStatementWrongUnreachable_Test$TestBody", "test_NodeUnreachableNodeErrorCheck6923385624927388248", true);
@@ -40,10 +35,6 @@ public class IfStatementWrongUnreachable_Test extends BaseTransformationTest {
     public void test_ErrorMessagesCheck1217864879944() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("1217864879944"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));
       INodesTestMethod__BehaviorDescriptor.perform_id1kgh5YabdhC.invoke(operation, getRealNodeById("1217861284985"));
-    }
-    public void test_NodeTheElseBranchCanBeUnwrappedCheck4513394054602516393() throws Exception {
-      SNode operation = SNodeOperations.cast(getRealNodeById("4513394054602516393"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));
-      INodesTestMethod__BehaviorDescriptor.perform_id1kgh5YabdhC.invoke(operation, getRealNodeById("1217864474230"));
     }
     public void test_NodeUnreachableNodeErrorCheck6923385624927388248() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6923385624927388248"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));
