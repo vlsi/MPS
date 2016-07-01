@@ -11,5 +11,5 @@ public class IconContainer {
   protected static IconResource RESOURCE_a0a0ce = new IconResource("editor.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a0ef = new IconResource("editorComponent.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a0oh = new IconResource("parametersInformation.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0yl = new IconResource("editorStylesheet.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0xl = new IconResource("editorStylesheet.png", IconContainer.class);
 }

@@ -99,7 +99,7 @@ public final class QueryFunction_SubstituteMenu_Parameter__BehaviorDescriptor ex
   }
   private static SNode check_4hcplz_a0a0a0(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9002d0fL, 0x169efbc9a9002d10L, "parameterTypeNew"));
+      return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9002d0fL, 0x169efbc9a9002d10L, "parameterType"));
     }
     return null;
   }

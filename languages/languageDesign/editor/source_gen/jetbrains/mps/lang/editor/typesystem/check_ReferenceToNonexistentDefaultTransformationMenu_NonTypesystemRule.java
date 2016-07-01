@@ -21,7 +21,7 @@ public class check_ReferenceToNonexistentDefaultTransformationMenu_NonTypesystem
   public check_ReferenceToNonexistentDefaultTransformationMenu_NonTypesystemRule() {
   }
   public void applyRule(final SNode ref, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode concept = SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "conceptNew"));
+    SNode concept = SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "concept"));
     if ((concept == null)) {
       return;
     }
@@ -29,7 +29,7 @@ public class check_ReferenceToNonexistentDefaultTransformationMenu_NonTypesystem
     if ((DefaultTransformationMenuUtil.findDefaultTransformationMenuForConcept(concept) == null)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        errorTarget = new ReferenceMessageTarget("conceptNew");
+        errorTarget = new ReferenceMessageTarget("concept");
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportInfo(ref, "Default transformation menu for " + SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " is not defined. Implicit default menu will be used.", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "2823239769520680200", null, errorTarget);
       }
     }

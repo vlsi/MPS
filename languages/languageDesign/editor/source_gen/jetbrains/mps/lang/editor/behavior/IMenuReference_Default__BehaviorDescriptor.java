@@ -33,7 +33,7 @@ public final class IMenuReference_Default__BehaviorDescriptor extends BaseBHDesc
   }
 
   /*package*/ static SNode getApplicableConcept_id1quYWAD4TFX(@NotNull SNode __thisNode__) {
-    return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "conceptNew"));
+    return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "concept"));
   }
 
   /*package*/ IMenuReference_Default__BehaviorDescriptor() {

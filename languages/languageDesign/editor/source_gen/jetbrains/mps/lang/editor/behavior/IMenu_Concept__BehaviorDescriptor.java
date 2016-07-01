@@ -44,16 +44,16 @@ public final class IMenu_Concept__BehaviorDescriptor extends BaseBHDescriptor {
 
   /*package*/ static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
-      return new NamedElementsScope(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclarationNew")), ((boolean) true)));
+      return new NamedElementsScope(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration")), ((boolean) true)));
     }
 
     return ((Scope) ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child));
   }
   /*package*/ static SNode getBaseConcept_id2hxg_BDjKM8(@NotNull SNode __thisNode__) {
-    return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclarationNew"));
+    return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration"));
   }
   /*package*/ static void setBaseConcept_id5r_35Ihc58c(@NotNull SNode __thisNode__, SNode baseConcept) {
-    SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclarationNew"), baseConcept);
+    SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration"), baseConcept);
   }
   /*package*/ static SNode getApplicableConcept_id1quYWAD18xk(@NotNull SNode __thisNode__) {
     return ((SNode) IConceptAspect__BehaviorDescriptor.getBaseConcept_id2hxg_BDjKM8.invoke(__thisNode__));
