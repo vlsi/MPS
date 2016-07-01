@@ -31415,33 +31415,8 @@
                     <node concept="2GrUjf" id="61oOtBBBMVB" role="37wK5m">
                       <ref role="2Gs0qQ" node="1L8Msvln7bG" resolve="resultNode" />
                     </node>
-                    <node concept="3clFbC" id="4HB0al5$pqW" role="37wK5m">
-                      <node concept="2OqwBi" id="4HB0al5$pqX" role="3uHU7w">
-                        <node concept="2OqwBi" id="4HB0al5$pqY" role="2Oq$k0">
-                          <node concept="2OqwBi" id="4HB0al5$pqZ" role="2Oq$k0">
-                            <node concept="37vLTw" id="2BHiRxgma4q" role="2Oq$k0">
-                              <ref role="3cqZAo" node="4HB0al5$pnV" resolve="environment" />
-                            </node>
-                            <node concept="liA8E" id="4HB0al5$pr1" role="2OqNvi">
-                              <ref role="37wK5l" to="r99j:~TemplateExecutionEnvironment.getGenerator():jetbrains.mps.generator.impl.TemplateGenerator" resolve="getGenerator" />
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="4HB0al5$pr2" role="2OqNvi">
-                            <ref role="37wK5l" to="80j5:~AbstractTemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolve="getGeneratorSessionContext" />
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="4HB0al5$pr3" role="2OqNvi">
-                          <ref role="37wK5l" to="ap4t:~GenerationSessionContext.getOriginalInputModel():org.jetbrains.mps.openapi.model.SModel" resolve="getOriginalInputModel" />
-                        </node>
-                      </node>
-                      <node concept="2OqwBi" id="7k1DxKY3TBr" role="3uHU7B">
-                        <node concept="liA8E" id="7k1DxKY3TBx" role="2OqNvi">
-                          <ref role="37wK5l" to="mhbf:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
-                        </node>
-                        <node concept="37vLTw" id="3GM_nagTtmF" role="2Oq$k0">
-                          <ref role="3cqZAo" node="4HB0al5$poJ" resolve="inputNode" />
-                        </node>
-                      </node>
+                    <node concept="3clFbT" id="3TwGi_N2pGM" role="37wK5m">
+                      <property role="3clFbU" value="false" />
                     </node>
                   </node>
                 </node>

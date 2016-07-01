@@ -81,7 +81,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
             tlist6 = TemplateUtil.singletonList(tnode7);
             // put input node 
             for (SNode resultNode : CollectionSequence.fromCollection(tlist6)) {
-              TracingUtil.fillOriginalNode(copySrcInput6, resultNode, copySrcInput6.getModel() == environment.getGenerator().getGeneratorSessionContext().getOriginalInputModel());
+              TracingUtil.fillOriginalNode(copySrcInput6, resultNode, false);
             }
           } finally {
           }
