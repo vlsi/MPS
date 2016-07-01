@@ -20,6 +20,9 @@
         <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
+      <concept id="1082978499127" name="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" flags="ng" index="Az7Fb">
+        <property id="1083066089218" name="constraint" index="FLfZY" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
@@ -252,15 +255,19 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="2p1v3tObyyM" role="1TKVEl">
-      <property role="IQ2nx" value="2756621024541681842" />
-      <property role="TrG5h" value="fillColor" />
-      <ref role="AX2Wp" to="tpee:5PQ7FHx$OUH" resolve="_HexNumberValue" />
+    <node concept="1TJgyj" id="1BguvjG4kKh" role="1TKVEi">
+      <property role="IQ2ns" value="1860120738943552529" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="fillColor" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1BguvjG4kJu" resolve="Color" />
     </node>
-    <node concept="1TJgyi" id="2p1v3tObyyO" role="1TKVEl">
-      <property role="IQ2nx" value="2756621024541681844" />
-      <property role="TrG5h" value="borderColor" />
-      <ref role="AX2Wp" to="tpee:5PQ7FHx$OUH" resolve="_HexNumberValue" />
+    <node concept="1TJgyj" id="1BguvjG4kKj" role="1TKVEi">
+      <property role="IQ2ns" value="1860120738943552531" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="borderColor" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1BguvjG4kJu" resolve="Color" />
     </node>
     <node concept="PrWs8" id="2p1v3tObyyR" role="PzmwI">
       <ref role="PrY4T" node="2p1v3tObwT_" resolve="IconLayerDescription" />
@@ -271,13 +278,15 @@
     <property role="3GE5qa" value="icons.descriptors.text" />
     <property role="TrG5h" value="Text" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="1BguvjG4kKm" role="1TKVEi">
+      <property role="IQ2ns" value="1860120738943552534" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="color" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1BguvjG4kJu" resolve="Color" />
+    </node>
     <node concept="PrWs8" id="2p1v3tObyyU" role="PzmwI">
       <ref role="PrY4T" node="2p1v3tObwT_" resolve="IconLayerDescription" />
-    </node>
-    <node concept="1TJgyi" id="2p1v3tObyyW" role="1TKVEl">
-      <property role="IQ2nx" value="2756621024541681852" />
-      <property role="TrG5h" value="color" />
-      <ref role="AX2Wp" to="tpee:5PQ7FHx$OUH" resolve="_HexNumberValue" />
     </node>
     <node concept="1TJgyi" id="2p1v3tObyyY" role="1TKVEl">
       <property role="IQ2nx" value="2756621024541681854" />
@@ -298,6 +307,31 @@
     <node concept="PrWs8" id="Ib_Fk7zNdC" role="PzmwI">
       <ref role="PrY4T" node="2p1v3tObwT_" resolve="IconLayerDescription" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="1BguvjG4kJt">
+    <property role="EcuMT" value="1860120738943552477" />
+    <property role="3GE5qa" value="icons.descriptors.text" />
+    <property role="TrG5h" value="ColorLiteral" />
+    <property role="34LRSv" value="#" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="1BguvjG4kJx" role="1TKVEl">
+      <property role="IQ2nx" value="1860120738943552481" />
+      <property role="TrG5h" value="val" />
+      <ref role="AX2Wp" node="1BguvjG4kKg" resolve="ColorString" />
+    </node>
+    <node concept="PrWs8" id="1BguvjG4kJv" role="PzmwI">
+      <ref role="PrY4T" node="1BguvjG4kJu" resolve="Color" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="1BguvjG4kJu">
+    <property role="EcuMT" value="1860120738943552478" />
+    <property role="3GE5qa" value="icons.descriptors.text" />
+    <property role="TrG5h" value="Color" />
+  </node>
+  <node concept="Az7Fb" id="1BguvjG4kKg">
+    <property role="3GE5qa" value="icons.descriptors.text" />
+    <property role="TrG5h" value="ColorString" />
+    <property role="FLfZY" value="[0-9a-zA-Z]{6}" />
   </node>
 </model>
 

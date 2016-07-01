@@ -1305,17 +1305,15 @@
                       <node concept="2ShNRf" id="7AIFj4NnAE" role="37wK5m">
                         <node concept="1pGfFk" id="7AIFj4NnAF" role="2ShVmc">
                           <ref role="37wK5l" to="z60i:~Color.&lt;init&gt;(int)" resolve="Color" />
-                          <node concept="2YIFZM" id="7AIFj4NnAG" role="37wK5m">
-                            <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
-                            <ref role="37wK5l" to="wyt6:~Integer.parseInt(java.lang.String,int):int" resolve="parseInt" />
-                            <node concept="2OqwBi" id="7AIFj4NnAH" role="37wK5m">
+                          <node concept="2OqwBi" id="1BguvjG4He$" role="37wK5m">
+                            <node concept="2OqwBi" id="7AIFj4NnAH" role="2Oq$k0">
                               <node concept="13iPFW" id="7AIFj4NnAI" role="2Oq$k0" />
-                              <node concept="3TrcHB" id="7AIFj4NnAJ" role="2OqNvi">
-                                <ref role="3TsBF5" to="1oap:2p1v3tObyyO" resolve="borderColor" />
+                              <node concept="3TrEf2" id="1BguvjG4Dj7" role="2OqNvi">
+                                <ref role="3Tt5mk" to="1oap:1BguvjG4kKj" />
                               </node>
                             </node>
-                            <node concept="3cmrfG" id="2HmzsgDzoFk" role="37wK5m">
-                              <property role="3cmrfH" value="16" />
+                            <node concept="2qgKlT" id="1BguvjG4IkF" role="2OqNvi">
+                              <ref role="37wK5l" node="1BguvjG4ybo" resolve="getIntValue" />
                             </node>
                           </node>
                         </node>
@@ -1456,17 +1454,15 @@
                       <node concept="2ShNRf" id="7AIFj4NnBc" role="37wK5m">
                         <node concept="1pGfFk" id="7AIFj4NnBd" role="2ShVmc">
                           <ref role="37wK5l" to="z60i:~Color.&lt;init&gt;(int)" resolve="Color" />
-                          <node concept="2YIFZM" id="7AIFj4NnBe" role="37wK5m">
-                            <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
-                            <ref role="37wK5l" to="wyt6:~Integer.parseInt(java.lang.String,int):int" resolve="parseInt" />
-                            <node concept="2OqwBi" id="7AIFj4NnBf" role="37wK5m">
-                              <node concept="13iPFW" id="7AIFj4NnBg" role="2Oq$k0" />
-                              <node concept="3TrcHB" id="7AIFj4NnBh" role="2OqNvi">
-                                <ref role="3TsBF5" to="1oap:2p1v3tObyyM" resolve="fillColor" />
+                          <node concept="2OqwBi" id="1BguvjG4JeQ" role="37wK5m">
+                            <node concept="2OqwBi" id="1BguvjG4JeR" role="2Oq$k0">
+                              <node concept="13iPFW" id="1BguvjG4JeS" role="2Oq$k0" />
+                              <node concept="3TrEf2" id="1BguvjG4KfA" role="2OqNvi">
+                                <ref role="3Tt5mk" to="1oap:1BguvjG4kKh" />
                               </node>
                             </node>
-                            <node concept="3cmrfG" id="2HmzsgDzpDS" role="37wK5m">
-                              <property role="3cmrfH" value="16" />
+                            <node concept="2qgKlT" id="1BguvjG4JeU" role="2OqNvi">
+                              <ref role="37wK5l" node="1BguvjG4ybo" resolve="getIntValue" />
                             </node>
                           </node>
                         </node>
@@ -1587,17 +1583,15 @@
                       <node concept="2ShNRf" id="Ib_Fk7x5Iu" role="37wK5m">
                         <node concept="1pGfFk" id="Ib_Fk7x5Iv" role="2ShVmc">
                           <ref role="37wK5l" to="z60i:~Color.&lt;init&gt;(int)" resolve="Color" />
-                          <node concept="2YIFZM" id="Ib_Fk7x5Iw" role="37wK5m">
-                            <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
-                            <ref role="37wK5l" to="wyt6:~Integer.parseInt(java.lang.String,int):int" resolve="parseInt" />
-                            <node concept="2OqwBi" id="Ib_Fk7x5Ix" role="37wK5m">
+                          <node concept="2OqwBi" id="1BguvjG4Nj6" role="37wK5m">
+                            <node concept="2OqwBi" id="Ib_Fk7x5Ix" role="2Oq$k0">
                               <node concept="13iPFW" id="Ib_Fk7x5Iy" role="2Oq$k0" />
-                              <node concept="3TrcHB" id="Ib_Fk7x5Iz" role="2OqNvi">
-                                <ref role="3TsBF5" to="1oap:2p1v3tObyyO" resolve="borderColor" />
+                              <node concept="3TrEf2" id="1BguvjG4BwL" role="2OqNvi">
+                                <ref role="3Tt5mk" to="1oap:1BguvjG4kKj" />
                               </node>
                             </node>
-                            <node concept="3cmrfG" id="2HmzsgDzFQG" role="37wK5m">
-                              <property role="3cmrfH" value="16" />
+                            <node concept="2qgKlT" id="1BguvjG4NTS" role="2OqNvi">
+                              <ref role="37wK5l" node="1BguvjG4ybo" resolve="getIntValue" />
                             </node>
                           </node>
                         </node>
@@ -1673,17 +1667,15 @@
                       <node concept="2ShNRf" id="Ib_Fk7x5J0" role="37wK5m">
                         <node concept="1pGfFk" id="Ib_Fk7x5J1" role="2ShVmc">
                           <ref role="37wK5l" to="z60i:~Color.&lt;init&gt;(int)" resolve="Color" />
-                          <node concept="2YIFZM" id="Ib_Fk7x5J2" role="37wK5m">
-                            <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
-                            <ref role="37wK5l" to="wyt6:~Integer.parseInt(java.lang.String,int):int" resolve="parseInt" />
-                            <node concept="2OqwBi" id="Ib_Fk7x5J3" role="37wK5m">
-                              <node concept="13iPFW" id="Ib_Fk7x5J4" role="2Oq$k0" />
-                              <node concept="3TrcHB" id="Ib_Fk7x5J5" role="2OqNvi">
-                                <ref role="3TsBF5" to="1oap:2p1v3tObyyM" resolve="fillColor" />
+                          <node concept="2OqwBi" id="1BguvjG4L6H" role="37wK5m">
+                            <node concept="2OqwBi" id="1BguvjG4L6I" role="2Oq$k0">
+                              <node concept="13iPFW" id="1BguvjG4L6J" role="2Oq$k0" />
+                              <node concept="3TrEf2" id="1BguvjG4LFm" role="2OqNvi">
+                                <ref role="3Tt5mk" to="1oap:1BguvjG4kKh" />
                               </node>
                             </node>
-                            <node concept="3cmrfG" id="2HmzsgDzEKO" role="37wK5m">
-                              <property role="3cmrfH" value="16" />
+                            <node concept="2qgKlT" id="1BguvjG4L6L" role="2OqNvi">
+                              <ref role="37wK5l" node="1BguvjG4ybo" resolve="getIntValue" />
                             </node>
                           </node>
                         </node>
@@ -1804,17 +1796,15 @@
                       <node concept="2ShNRf" id="7AIFj4NmGe" role="37wK5m">
                         <node concept="1pGfFk" id="7AIFj4NmGf" role="2ShVmc">
                           <ref role="37wK5l" to="z60i:~Color.&lt;init&gt;(int)" resolve="Color" />
-                          <node concept="2YIFZM" id="7AIFj4NmGg" role="37wK5m">
-                            <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
-                            <ref role="37wK5l" to="wyt6:~Integer.parseInt(java.lang.String,int):int" resolve="parseInt" />
-                            <node concept="2OqwBi" id="7AIFj4NmGh" role="37wK5m">
+                          <node concept="2OqwBi" id="1BguvjG4xw1" role="37wK5m">
+                            <node concept="2OqwBi" id="7AIFj4NmGh" role="2Oq$k0">
                               <node concept="13iPFW" id="7AIFj4NmGi" role="2Oq$k0" />
-                              <node concept="3TrcHB" id="7AIFj4NmGj" role="2OqNvi">
-                                <ref role="3TsBF5" to="1oap:2p1v3tObyyW" resolve="color" />
+                              <node concept="3TrEf2" id="1BguvjG4mzH" role="2OqNvi">
+                                <ref role="3Tt5mk" to="1oap:1BguvjG4kKm" />
                               </node>
                             </node>
-                            <node concept="3cmrfG" id="2HmzsgDzvAa" role="37wK5m">
-                              <property role="3cmrfH" value="16" />
+                            <node concept="2qgKlT" id="1BguvjG4yU$" role="2OqNvi">
+                              <ref role="37wK5l" node="1BguvjG4ybo" resolve="getIntValue" />
                             </node>
                           </node>
                         </node>
@@ -2266,6 +2256,87 @@
     </node>
     <node concept="13hLZK" id="Ib_Fk7zRKF" role="13h7CW">
       <node concept="3clFbS" id="Ib_Fk7zRKG" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="1BguvjG4ybd">
+    <property role="3GE5qa" value="icons.descriptors.text" />
+    <ref role="13h7C2" to="1oap:1BguvjG4kJu" resolve="Color" />
+    <node concept="13hLZK" id="1BguvjG4ybe" role="13h7CW">
+      <node concept="3clFbS" id="1BguvjG4ybf" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="1BguvjG4ybo" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="getIntValue" />
+      <node concept="3Tm1VV" id="1BguvjG4ybp" role="1B3o_S" />
+      <node concept="10Oyi0" id="1BguvjG4ybC" role="3clF45" />
+      <node concept="3clFbS" id="1BguvjG4ybr" role="3clF47" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="1BguvjG4OhR">
+    <property role="3GE5qa" value="icons.descriptors.text" />
+    <ref role="13h7C2" to="1oap:1BguvjG4kJt" resolve="ColorLiteral" />
+    <node concept="13hLZK" id="1BguvjG4OhS" role="13h7CW">
+      <node concept="3clFbS" id="1BguvjG4OhT" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="1BguvjG4Oi4" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="getIntValue" />
+      <ref role="13i0hy" node="1BguvjG4ybo" resolve="getIntValue" />
+      <node concept="3Tm1VV" id="1BguvjG4Oi5" role="1B3o_S" />
+      <node concept="3clFbS" id="1BguvjG4Oi8" role="3clF47">
+        <node concept="SfApY" id="1BguvjG4Oim" role="3cqZAp">
+          <node concept="3clFbS" id="1BguvjG4Oin" role="SfCbr">
+            <node concept="3cpWs6" id="1BguvjG4OiK" role="3cqZAp">
+              <node concept="2YIFZM" id="1BguvjG4Omd" role="3cqZAk">
+                <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
+                <ref role="37wK5l" to="wyt6:~Integer.parseInt(java.lang.String,int):int" resolve="parseInt" />
+                <node concept="2OqwBi" id="1BguvjG4Ox5" role="37wK5m">
+                  <node concept="13iPFW" id="1BguvjG4OnQ" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="1BguvjG4ODW" role="2OqNvi">
+                    <ref role="3TsBF5" to="1oap:1BguvjG4kJx" resolve="val" />
+                  </node>
+                </node>
+                <node concept="3cmrfG" id="1BguvjG4OP5" role="37wK5m">
+                  <property role="3cmrfH" value="16" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="TDmWw" id="1BguvjG4Oio" role="TEbGg">
+            <node concept="3cpWsn" id="1BguvjG4Oip" role="TDEfY">
+              <property role="TrG5h" value="e" />
+              <node concept="3uibUv" id="1BguvjG4Q5D" role="1tU5fm">
+                <ref role="3uigEE" to="wyt6:~NumberFormatException" resolve="NumberFormatException" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="1BguvjG4Oir" role="TDEfX">
+              <node concept="34ab3g" id="1BguvjG4P6z" role="3cqZAp">
+                <property role="35gtTG" value="error" />
+                <property role="34fQS0" value="true" />
+                <node concept="3cpWs3" id="1BguvjG4Pqs" role="34bqiv">
+                  <node concept="2OqwBi" id="1BguvjG4P$S" role="3uHU7w">
+                    <node concept="13iPFW" id="1BguvjG4Pqz" role="2Oq$k0" />
+                    <node concept="3TrcHB" id="1BguvjG4PGw" role="2OqNvi">
+                      <ref role="3TsBF5" to="1oap:1BguvjG4kJx" resolve="val" />
+                    </node>
+                  </node>
+                  <node concept="Xl_RD" id="1BguvjG4P6_" role="3uHU7B">
+                    <property role="Xl_RC" value="Wrong color value: " />
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs6" id="1BguvjG4OST" role="3cqZAp">
+                <node concept="3cmrfG" id="1BguvjG4OYP" role="3cqZAk">
+                  <property role="3cmrfH" value="0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="10Oyi0" id="1BguvjG4Oi9" role="3clF45" />
     </node>
   </node>
 </model>
