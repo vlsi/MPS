@@ -39,9 +39,9 @@ public class NodeFileStatusProvider implements FileStatusProvider {
       public FileStatus compute() {
         SNode root = MPSEditorUtil.getCurrentEditedNode(myProject.getProject(), nodeFile);
         if (root == null) {
-          root = nodeFile.getNode().getContainingRoot();
+          root = check_8p3pkg_a0a0b0a0a0a0f0d(nodeFile.getNode());
         }
-        if (!(SNodeUtil.isAccessible(root, myProject.getRepository()))) {
+        if (root == null || !(SNodeUtil.isAccessible(root, myProject.getRepository()))) {
           return null;
         }
         return myMapping.getStatus(root);
@@ -54,5 +54,11 @@ public class NodeFileStatusProvider implements FileStatusProvider {
   @Override
   public ThreeState getNotChangedDirectoryParentingStatus(VirtualFile file) {
     return ThreeState.NO;
+  }
+  private static SNode check_8p3pkg_a0a0b0a0a0a0f0d(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getContainingRoot();
+    }
+    return null;
   }
 }
