@@ -24,6 +24,16 @@ public class IfStatementDataFlow_Test extends BaseTransformationTest {
     initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.IfStatementDataFlow_Test$TestBody", "test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928604755", true);
   }
+  @Test
+  public void test_NodeTheElseBranchCanBeUnwrappedCheck4513394054597478189() throws Throwable {
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.IfStatementDataFlow_Test$TestBody", "test_NodeTheElseBranchCanBeUnwrappedCheck4513394054597478189", true);
+  }
+  @Test
+  public void test_NodeTheElseBranchCanBeUnwrappedCheck4513394054597483829() throws Throwable {
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.IfStatementDataFlow_Test$TestBody", "test_NodeTheElseBranchCanBeUnwrappedCheck4513394054597483829", true);
+  }
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
@@ -35,6 +45,14 @@ public class IfStatementDataFlow_Test extends BaseTransformationTest {
     public void test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928604755() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6923385624928604755"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));
       INodesTestMethod__BehaviorDescriptor.perform_id1kgh5YabdhC.invoke(operation, getRealNodeById("3951985765451228488"));
+    }
+    public void test_NodeTheElseBranchCanBeUnwrappedCheck4513394054597478189() throws Exception {
+      SNode operation = SNodeOperations.cast(getRealNodeById("4513394054597478189"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));
+      INodesTestMethod__BehaviorDescriptor.perform_id1kgh5YabdhC.invoke(operation, getRealNodeById("4513394054597468682"));
+    }
+    public void test_NodeTheElseBranchCanBeUnwrappedCheck4513394054597483829() throws Exception {
+      SNode operation = SNodeOperations.cast(getRealNodeById("4513394054597483829"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));
+      INodesTestMethod__BehaviorDescriptor.perform_id1kgh5YabdhC.invoke(operation, getRealNodeById("4513394054597483820"));
     }
 
   }
