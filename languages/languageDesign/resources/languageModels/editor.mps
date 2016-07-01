@@ -494,10 +494,13 @@
           <property role="3F0ifm" value="describe" />
         </node>
         <node concept="3F0ifn" id="1brHjIQHBiK" role="3EZMnx">
-          <property role="3F0ifm" value="fileName=" />
+          <property role="3F0ifm" value="id=" />
         </node>
         <node concept="3F0A7n" id="1brHjIQHBiC" role="3EZMnx">
           <ref role="1NtTu8" to="1oap:1brHjIQHw0T" resolve="iconId" />
+          <node concept="11L4FC" id="1BguvjG3J7r" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
         </node>
       </node>
       <node concept="3F2HdR" id="2p1v3tObwXj" role="b$wch">
