@@ -43,6 +43,7 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelReplacedEvent;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
@@ -126,12 +127,6 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     }
     myClassLoaderManager.addClassesHandler(myClassesListener);
     myEventCollector.startListening(myGlobalSModelEventsManager, myMPSProject.getRepository());
-    myEventCollector.onModelReload(model -> {
-      if (model.getRepository() != null) {
-        final SModelReference mref = model.getReference();
-        addPendingAction(() -> myEditorTracker.markEditorsOfModelUnchecked(mref));
-      }
-    });
 
     myInspectorTool = myProject.getComponent(InspectorTool.class);
     myMessageBusConnection = myProject.getMessageBus().connect();
@@ -359,6 +354,13 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     assert Thread.currentThread() == myThread : "This method should be called on the highlighter thread";
 
     List<SModelEvent> events = myEventCollector.drainEvents();
+
+    for (SModelEvent event : events) {
+      if (event instanceof SModelReplacedEvent) {
+        final SModelReference mref = event.getModel().getReference();
+        myEditorTracker.markEditorsOfModelUnchecked(mref);
+      }
+    }
 
     for (EditorChecker checker : myCheckers) {
       checker.processEvents(events);

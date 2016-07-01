@@ -27,20 +27,15 @@ import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 
 /**
  * Listens to model events and records them into a list. Thread-safe. Also converts a "model replaced" event received through
  * {@link org.jetbrains.mps.openapi.model.SModelListener#modelReplaced(SModel)} to {@link SModelReplacedEvent}.
- * <p>
- * NOTE: {@link jetbrains.mps.nodeEditor.Highlighter Highlighter} needs modelReplaced event as well. Not to duplicate model listeners for each and every model,
- * this collector dispatches this event to an interested party (i.e. {@code Highlighter}) via {@link #onModelReload(Consumer)}
  */
 public class HighlighterEventCollector {
   private final Object myEventsLock = new Object();
 
   private final List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
-  private Consumer<SModel> myModelReloadEventConsumer;
 
   private final SModelCommandListener myAddCommandEventsListener = new SModelCommandListener() {
     @Override
@@ -68,9 +63,6 @@ public class HighlighterEventCollector {
     public void modelReplaced(SModel model) {
       synchronized (myEventsLock) {
         myLastEvents.add(new SModelReplacedEvent(model));
-      }
-      if (myModelReloadEventConsumer != null) {
-        myModelReloadEventConsumer.accept(model);
       }
     }
   };
@@ -101,9 +93,5 @@ public class HighlighterEventCollector {
   public void stopListening(GlobalSModelEventsManager globalSModelEventsManager, SRepository repository) {
     new RepoListenerRegistrar(repository, myModelReloadListener).detach();
     globalSModelEventsManager.removeGlobalCommandListener(myAddCommandEventsListener);
-  }
-
-  public void onModelReload(Consumer<SModel> consumer) {
-    myModelReloadEventConsumer = consumer;
   }
 }
