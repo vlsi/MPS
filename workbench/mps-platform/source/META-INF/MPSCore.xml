@@ -1,6 +1,6 @@
 <components>
   <actions>
-    <group id="MPS.MessagesView" popup="false"></group>
+    <group id="MPS.MessagesView" popup="false"/>
   </actions>
 
   <application-components>
@@ -58,9 +58,6 @@
 
     <component>
       <implementation-class>jetbrains.mps.ide.platform.actions.core.RefactoringActionsExtensionComponent</implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.ide.codeStyle.AppCodeStyleSettingsComponent</implementation-class>
     </component>
   </application-components>
 
