@@ -3434,18 +3434,20 @@
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235741309022">
     <file name="FloatingPointConstant_TextGen.java">
       <node id="1235741309022" at="13,54,14,55" concept="10" />
-      <node id="1235741361611" at="15,186,16,176" concept="4" />
-      <node id="1237463992607" at="17,5,18,184" concept="4" />
-      <node id="1235741335073" at="14,55,17,5" concept="8" />
-      <node id="1235741309022" at="12,0,20,0" concept="9" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
-      <scope id="1235741335075" at="15,186,16,176" />
-      <scope id="1235741309022" at="13,54,18,184">
+      <node id="4838794702505783580" at="15,186,16,24" concept="4" />
+      <node id="1237463992607" at="17,12,18,186" concept="4" />
+      <node id="4838794702505783774" at="17,10,19,5" concept="1" />
+      <node id="1235741335073" at="14,55,19,5" concept="8" />
+      <node id="1235741309022" at="12,0,21,0" concept="9" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <scope id="1235741335075" at="15,186,16,24" />
+      <scope id="4838794702505783775" at="17,12,18,186" />
+      <scope id="1235741309022" at="13,54,19,5">
         <var name="tgs" id="1235741309022" />
       </scope>
-      <scope id="1235741309022" at="12,0,20,0">
+      <scope id="1235741309022" at="12,0,21,0">
         <var name="ctx" id="1235741309022" />
       </scope>
-      <unit id="1235741309022" at="11,0,21,0" name="jetbrains.mps.baseLanguage.textGen.FloatingPointConstant_TextGen" />
+      <unit id="1235741309022" at="11,0,22,0" name="jetbrains.mps.baseLanguage.textGen.FloatingPointConstant_TextGen" />
     </file>
   </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235741389634">
@@ -4380,18 +4382,20 @@
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/764900287025024925">
     <file name="FloatingPointFloatConstant_TextGen.java">
       <node id="764900287025024925" at="13,54,14,55" concept="10" />
-      <node id="764900287025025945" at="15,196,16,186" concept="4" />
-      <node id="764900287025025952" at="17,5,18,194" concept="4" />
-      <node id="764900287025025938" at="14,55,17,5" concept="8" />
-      <node id="764900287025024925" at="12,0,20,0" concept="9" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
-      <scope id="764900287025025944" at="15,196,16,186" />
-      <scope id="764900287025024925" at="13,54,18,194">
+      <node id="4838794702505781771" at="15,196,16,24" concept="4" />
+      <node id="764900287025025952" at="17,12,18,196" concept="4" />
+      <node id="4838794702505774134" at="17,10,19,5" concept="1" />
+      <node id="764900287025025938" at="14,55,19,5" concept="8" />
+      <node id="764900287025024925" at="12,0,21,0" concept="9" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <scope id="764900287025025944" at="15,196,16,24" />
+      <scope id="4838794702505774135" at="17,12,18,196" />
+      <scope id="764900287025024925" at="13,54,19,5">
         <var name="tgs" id="764900287025024925" />
       </scope>
-      <scope id="764900287025024925" at="12,0,20,0">
+      <scope id="764900287025024925" at="12,0,21,0">
         <var name="ctx" id="764900287025024925" />
       </scope>
-      <unit id="764900287025024925" at="11,0,21,0" name="jetbrains.mps.baseLanguage.textGen.FloatingPointFloatConstant_TextGen" />
+      <unit id="764900287025024925" at="11,0,22,0" name="jetbrains.mps.baseLanguage.textGen.FloatingPointFloatConstant_TextGen" />
     </file>
   </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/7671513720556341061">

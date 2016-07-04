@@ -95,6 +95,10 @@ public class RegularTextUnit implements TextUnit, CompatibilityTextUnit {
     myLayoutBuilder.prepareBuffer(trueBuffer);
     myLegacyBuffer = TextGen.newUserObjectHolder(getStartNode());
 
+    // if we got that far (tried to generate(), at least), do not consider state == undefined.
+    // It's easy way to deal with uncaught exceptions from text generation and not to fail with assert state != Undefined in TextGen_Facet.
+    // Proper way is likely to try/catch/re-throw here.
+    myState = Status.Failed;
     doGenerate(myLegacyBuffer, trueBuffer);
 
     final BufferSnapshot textSnapshot = myLayoutBuilder.prepareSnapshot(trueBuffer);
