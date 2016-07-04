@@ -17,7 +17,7 @@ package jetbrains.mps.ide.devkit.cellExplorer;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.icons.MPSIcons.CellExplorer;
+import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.ide.tools.BaseTabbedProjectTool;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.apache.log4j.LogManager;
@@ -30,7 +30,7 @@ public class CellExplorerTool extends BaseTabbedProjectTool {
   public static final Logger LOG = LogManager.getLogger(CellExplorerTool.class);
 
   public CellExplorerTool(Project project) {
-    super(project, "Cell Explorer", -1, CellExplorer.CellExplorer, ToolWindowAnchor.BOTTOM, false);
+    super(project, "Cell Explorer", -1, MPSIcons.ToolWindows.CellExplorer, ToolWindowAnchor.BOTTOM, false);
   }
 
   @Override
