@@ -11,7 +11,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="13,0,45,0" name="jetbrains.mps.lang.resources.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,50,0" name="jetbrains.mps.lang.resources.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:91a4131e-4695-42c0-aafd-5099770207dd(jetbrains.mps.lang.resources.constraints)/2756621024541397651">
@@ -74,6 +74,44 @@
       <scope id="2756621024541397651" at="21,0,51,0" />
       <unit id="2756621024541397651" at="24,147,48,5" name="jetbrains.mps.lang.resources.constraints.FileIcon_Constraints$1" />
       <unit id="2756621024541397651" at="16,0,58,0" name="jetbrains.mps.lang.resources.constraints.FileIcon_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:91a4131e-4695-42c0-aafd-5099770207dd(jetbrains.mps.lang.resources.constraints)/5917655937629124434">
+    <file name="Text_Constraints.java">
+      <node id="5917655937629124434" at="17,29,18,151" concept="8" />
+      <node id="5917655937629124434" at="22,84,23,119" concept="4" />
+      <node id="5917655937629124434" at="26,40,27,20" concept="5" />
+      <node id="5917655937629124434" at="30,70,31,37" concept="4" />
+      <node id="5917655937629124895" at="31,37,32,144" concept="5" />
+      <node id="5917655937629124434" at="34,7,35,22" concept="5" />
+      <node id="5917655937629133910" at="37,55,38,43" concept="5" />
+      <node id="5917655937629124434" at="17,0,20,0" concept="0" trace="Text_Constraints#()V" />
+      <node id="5917655937629133910" at="37,0,40,0" concept="7" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
+      <node id="5917655937629124434" at="25,0,29,0" concept="3" trace="hasOwnValidator#()Z" />
+      <node id="5917655937629124434" at="29,0,34,0" concept="3" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+      <node id="5917655937629124434" at="23,119,34,7" concept="1" />
+      <node id="5917655937629124434" at="21,0,37,0" concept="3" trace="getSpecifiedProperties#()Ljava/util/Map;" />
+      <scope id="5917655937629124434" at="17,29,18,151" />
+      <scope id="5917655937629124434" at="26,40,27,20" />
+      <scope id="5917655937629133910" at="37,55,38,43" />
+      <scope id="5917655937629124434" at="30,70,32,144">
+        <var name="propertyName" id="5917655937629124434" />
+      </scope>
+      <scope id="5917655937629124434" at="17,0,20,0" />
+      <scope id="5917655937629133910" at="37,0,40,0">
+        <var name="str" id="5917655937629133910" />
+      </scope>
+      <scope id="5917655937629124434" at="25,0,29,0" />
+      <scope id="5917655937629124434" at="29,0,34,0">
+        <var name="node" id="5917655937629124434" />
+        <var name="propertyValue" id="5917655937629124434" />
+      </scope>
+      <scope id="5917655937629124434" at="22,84,35,22">
+        <var name="properties" id="5917655937629124434" />
+      </scope>
+      <scope id="5917655937629124434" at="21,0,37,0" />
+      <unit id="5917655937629124434" at="24,147,34,5" name="jetbrains.mps.lang.resources.constraints.Text_Constraints$1" />
+      <unit id="5917655937629124434" at="16,0,41,0" name="jetbrains.mps.lang.resources.constraints.Text_Constraints" />
     </file>
   </root>
 </debug-info>
