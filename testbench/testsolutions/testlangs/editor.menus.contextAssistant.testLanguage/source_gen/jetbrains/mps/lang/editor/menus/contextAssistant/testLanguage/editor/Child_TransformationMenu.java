@@ -272,7 +272,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
       @Nullable
       @Override
       public String getLabelText(String pattern) {
-        return "ensure name ends with 'a'";
+        return "ensure name ends with 'a' (" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "a)";
       }
 
       @Override

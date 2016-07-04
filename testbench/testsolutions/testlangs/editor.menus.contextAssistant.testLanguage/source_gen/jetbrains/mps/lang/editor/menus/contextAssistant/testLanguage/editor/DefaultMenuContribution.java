@@ -15,6 +15,8 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.SidebarActionItem;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.IconResource;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -76,7 +78,7 @@ public class DefaultMenuContribution extends TransformationMenuBase {
       @Nullable
       @Override
       public String getLabelText(String pattern) {
-        return "sidebar-only action";
+        return "sidebar-only action for " + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       }
 
       @Override

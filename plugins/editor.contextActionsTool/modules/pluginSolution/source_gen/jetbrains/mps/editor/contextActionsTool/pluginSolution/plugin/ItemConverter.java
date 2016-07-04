@@ -93,6 +93,7 @@ public class ItemConverter {
 
   private static class Item implements ToolComponent.IItem {
     private final ActionItem myActionItem;
+    private final String myLabel;
     private final String myFolderName;
     @Nullable
     private final Icon myIcon;
@@ -101,6 +102,7 @@ public class ItemConverter {
 
     private Item(ActionItem actionItem, String folderName, Icon icon, String tooltip) {
       myActionItem = actionItem;
+      myLabel = actionItem.getLabelText("");
       myFolderName = folderName;
       myIcon = icon;
       myTooltip = tooltip;
@@ -108,7 +110,7 @@ public class ItemConverter {
 
     @Override
     public String getLabel() {
-      return myActionItem.getLabelText("");
+      return myLabel;
     }
     @Override
     public Icon getIcon() {

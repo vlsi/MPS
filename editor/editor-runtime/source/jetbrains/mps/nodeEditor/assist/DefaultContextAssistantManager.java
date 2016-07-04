@@ -18,9 +18,9 @@ package jetbrains.mps.nodeEditor.assist;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.assist.ContextAssistant;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionListener;
@@ -49,6 +49,7 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
   private final Updater myUpdater;
   private final ContextAssistantFinder myAssistantFinder;
   private final SelectionMenuProvider myMenuProvider;
+  private final ModelAccess myModelAccess;
 
   private int myAssistantCount;
   private ScheduleUpdateDelayedRunnable myScheduleUpdateDelayedRunnable;
@@ -58,22 +59,23 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
 
   public DefaultContextAssistantManager(EditorComponent component, SRepository repository) {
     this(component.getSelectionManager(), component.getUpdater(), new ParentOrSmallCellContextAssistantFinder(),
-        defaultMenuProvider(repository.getModelAccess()));
+        defaultMenuProvider(), repository.getModelAccess());
   }
 
   @NotNull
-  private static SelectionMenuProvider defaultMenuProvider(ModelAccess modelAccess) {
+  private static SelectionMenuProvider defaultMenuProvider() {
     return new FilteringSelectionMenuProvider(
-        new SelectionMenuProviderByCellAndConcept(modelAccess, MenuLocations.CONTEXT_ASSISTANT),
-        new CanExecuteFilter(modelAccess));
+        new SelectionMenuProviderByCellAndConcept(MenuLocations.CONTEXT_ASSISTANT),
+        new CanExecuteFilter());
   }
 
   private DefaultContextAssistantManager(SelectionManager selectionManager, Updater updater, ContextAssistantFinder assistantFinder,
-      SelectionMenuProvider menuProvider) {
+      SelectionMenuProvider menuProvider, ModelAccess modelAccess) {
     mySelectionManager = selectionManager;
     myUpdater = updater;
     myAssistantFinder = assistantFinder;
     myMenuProvider = menuProvider;
+    myModelAccess = modelAccess;
   }
 
   private boolean isUpdating() {
@@ -133,12 +135,13 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
 
   @Override
   public void updateImmediately() {
-    Selection selection = mySelectionManager.getSelection();
+    myModelAccess.runReadAction(() -> {
+      Selection selection = mySelectionManager.getSelection();
+      ContextAssistant newAssistant = selection == null ? null : myAssistantFinder.findAssistant(selection);
 
-    ContextAssistant newAssistant = selection == null ? null : myAssistantFinder.findAssistant(selection);
-    List<TransformationMenuItem> newItems = newAssistant == null ? Collections.emptyList() : myMenuProvider.getMenuItems(selection);
-
-    update(newAssistant, newItems);
+      List<TransformationMenuItem> newItems = newAssistant == null ? Collections.emptyList() : myMenuProvider.getMenuItems(selection);
+      update(newAssistant, newItems);
+    });
   }
 
   @Nullable
