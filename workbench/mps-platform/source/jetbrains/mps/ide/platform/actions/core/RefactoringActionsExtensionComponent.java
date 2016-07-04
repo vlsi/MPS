@@ -22,18 +22,15 @@ import org.jetbrains.annotations.NotNull;
 public class RefactoringActionsExtensionComponent implements ApplicationComponent {
 
   private ExtensionDescriptor myDescriptor = new ExtensionDescriptor();
-  private jetbrains.mps.refactoring.participant.ExtensionDescriptor myDescriptor2 = new jetbrains.mps.refactoring.participant.ExtensionDescriptor();
 
   @Override
   public void initComponent() {
     ExtensionRegistry.getInstance().registerExtensionDescriptor(myDescriptor);
-    ExtensionRegistry.getInstance().registerExtensionDescriptor(myDescriptor2);
   }
 
   @Override
   public void disposeComponent() {
     ExtensionRegistry.getInstance().unregisterExtensionDescriptor(myDescriptor);
-    ExtensionRegistry.getInstance().unregisterExtensionDescriptor(myDescriptor2);
   }
 
   @NotNull

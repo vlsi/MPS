@@ -120,7 +120,7 @@ public class MoveNodesUtil {
       }
     }).toListSequence());
 
-    Iterable<? extends RefactoringParticipant<?, ?, SNode, SNode>> participants = (Iterable<? extends RefactoringParticipant<?, ?, SNode, SNode>>) new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.refactoring.MoveNodeParticipantEP").getObjects();
+    Iterable<? extends RefactoringParticipant<?, ?, SNode, SNode>> participants = (Iterable<? extends RefactoringParticipant<?, ?, SNode, SNode>>) new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP").getObjects();
     final Map<SNode, RefactoringParticipant.KeepOldNodes> removeOldRoots = MapSequence.fromMap(new HashMap<SNode, RefactoringParticipant.KeepOldNodes>());
     RefactoringProcessor.performRefactoringUserInteractive(project, refactoringName, participants, allNodes, new _FunctionTypes._return_P2_E0<Map<SNode, SNode>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, SNode, SNode, SNode>>, RefactoringSession>() {
       public Map<SNode, SNode> invoke(final Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, SNode, SNode, SNode>> participantStates, RefactoringSession refactoringSession) {

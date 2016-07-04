@@ -34,7 +34,7 @@ public class RenameReferencesParticipant extends RefactoringParticipantBase<SNod
 
   public static class RenameReferencesParticipant_extension extends Extension.Default<RenameNodeRefactoringParticipant<?, ?>> {
     public RenameReferencesParticipant_extension() {
-      super("jetbrains.mps.refactoring.RenameNodeParticipantEP");
+      super("jetbrains.mps.refactoring.participant.RenameNodeParticipantEP");
     }
     public RenameNodeRefactoringParticipant<?, ?> get() {
       return new RenameReferencesParticipant();

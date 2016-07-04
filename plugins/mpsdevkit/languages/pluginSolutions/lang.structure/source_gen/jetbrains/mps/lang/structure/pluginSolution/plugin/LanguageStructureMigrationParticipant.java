@@ -53,7 +53,7 @@ public class LanguageStructureMigrationParticipant<I, F> extends RefactoringPart
 
   public static class MoveConceptMigration_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public MoveConceptMigration_extension() {
-      super("jetbrains.mps.refactoring.MoveNodeParticipantEP");
+      super("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {
       return new LanguageStructureMigrationParticipant<SAbstractConcept, SAbstractConcept>(new MoveAbstractConceptSpecialization());
@@ -61,7 +61,7 @@ public class LanguageStructureMigrationParticipant<I, F> extends RefactoringPart
   }
   public static class MovePropertyMigration_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public MovePropertyMigration_extension() {
-      super("jetbrains.mps.refactoring.MoveNodeParticipantEP");
+      super("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {
       return new LanguageStructureMigrationParticipant<SProperty, SProperty>(new MovePropertySpecialization());
@@ -69,7 +69,7 @@ public class LanguageStructureMigrationParticipant<I, F> extends RefactoringPart
   }
   public static class MoveContainmentLinkMigration_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public MoveContainmentLinkMigration_extension() {
-      super("jetbrains.mps.refactoring.MoveNodeParticipantEP");
+      super("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {
       return new LanguageStructureMigrationParticipant<SContainmentLink, SContainmentLink>(new MoveContainmentLinkSpecialization());
@@ -77,7 +77,7 @@ public class LanguageStructureMigrationParticipant<I, F> extends RefactoringPart
   }
   public static class MoveReferenceLinkMigration_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public MoveReferenceLinkMigration_extension() {
-      super("jetbrains.mps.refactoring.MoveNodeParticipantEP");
+      super("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {
       return new LanguageStructureMigrationParticipant<SReferenceLink, SReferenceLink>(new MoveReferenceLinkSpecialization());

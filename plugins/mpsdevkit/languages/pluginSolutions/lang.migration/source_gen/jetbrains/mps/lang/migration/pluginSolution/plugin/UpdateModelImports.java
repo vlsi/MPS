@@ -30,7 +30,7 @@ public class UpdateModelImports extends RefactoringParticipantBase<SNodeReferenc
 
   public static class UpdateModelImports_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public UpdateModelImports_extension() {
-      super("jetbrains.mps.refactoring.MoveNodeParticipantEP");
+      super("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {
       return new UpdateModelImports();

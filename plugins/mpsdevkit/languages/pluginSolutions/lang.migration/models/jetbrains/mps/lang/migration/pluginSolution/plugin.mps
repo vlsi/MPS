@@ -45,6 +45,7 @@
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
     <import index="5nvm" ref="r:27bc780b-59b2-4d26-9db5-a38b63c35884(jetbrains.mps.refactoring.participant)" />
+    <import index="4ugc" ref="r:bd779a69-a10b-4882-b646-c1303f2dd4f7(jetbrains.mps.refactoring.participant.plugin)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -1034,7 +1035,7 @@
     <node concept="1lYeZD" id="zWFq_39Y3X" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="UpdateReferencesParticipant_extension" />
-      <ref role="1lYe$Y" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+      <ref role="1lYe$Y" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
       <node concept="3Tm1VV" id="zWFq_39Y3Y" role="1B3o_S" />
       <node concept="q3mfD" id="zWFq_39Y44" role="jymVt">
         <property role="TrG5h" value="get" />
@@ -2960,7 +2961,7 @@
     <node concept="1lYeZD" id="yGIPhwGlfh" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="MoveNodeRefactoringLogParticipant_extension" />
-      <ref role="1lYe$Y" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+      <ref role="1lYe$Y" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
       <node concept="3Tm1VV" id="yGIPhwGlfi" role="1B3o_S" />
       <node concept="q3mfD" id="yGIPhwGlfj" role="jymVt">
         <property role="TrG5h" value="get" />
@@ -2984,7 +2985,7 @@
     <node concept="2tJIrI" id="39r_V8zIWf7" role="jymVt" />
     <node concept="1lYeZD" id="39r_V8zIIpW" role="jymVt">
       <property role="TrG5h" value="MoveNodeParticipants" />
-      <ref role="1lYe$Y" to="5nvm:39r_V8zIHX1" resolve="PersistentRefactoringParticipantsEP" />
+      <ref role="1lYe$Y" to="4ugc:39r_V8zIHX1" resolve="PersistentRefactoringParticipantsEP" />
       <node concept="3Tm1VV" id="39r_V8zIIpX" role="1B3o_S" />
       <node concept="q3mfD" id="39r_V8zIIq2" role="jymVt">
         <property role="TrG5h" value="get" />
@@ -2996,7 +2997,7 @@
               <node concept="2OqwBi" id="39r_V8zIJVA" role="2Oq$k0">
                 <node concept="2OqwBi" id="39r_V8zIJ7G" role="2Oq$k0">
                   <node concept="2O5UvJ" id="39r_V8zIJ3B" role="2Oq$k0">
-                    <ref role="2O5UnU" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+                    <ref role="2O5UnU" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
                   </node>
                   <node concept="SfwO_" id="39r_V8zIJ9z" role="2OqNvi" />
                 </node>
@@ -4855,7 +4856,7 @@
                 <node concept="2OqwBi" id="3r9sVr9SwHH" role="2Oq$k0">
                   <node concept="2OqwBi" id="3r9sVr9SwHJ" role="2Oq$k0">
                     <node concept="2O5UvJ" id="3r9sVr9SwHK" role="2Oq$k0">
-                      <ref role="2O5UnU" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+                      <ref role="2O5UnU" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
                     </node>
                     <node concept="SfwO_" id="3r9sVr9SwHL" role="2OqNvi" />
                   </node>
@@ -5345,7 +5346,7 @@
     <node concept="1lYeZD" id="2aY$7DLNCXg" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="UpdateModelImports_extension" />
-      <ref role="1lYe$Y" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+      <ref role="1lYe$Y" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
       <node concept="3Tm1VV" id="2aY$7DLNCXh" role="1B3o_S" />
       <node concept="q3mfD" id="2aY$7DLNCXi" role="jymVt">
         <property role="TrG5h" value="get" />
@@ -6159,7 +6160,7 @@
     <node concept="1lYeZD" id="4B0FDdRJCrT" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="RenameReferencesParticipant_extension" />
-      <ref role="1lYe$Y" to="5nvm:76O06llMw9R" resolve="RenameNodeParticipantEP" />
+      <ref role="1lYe$Y" to="4ugc:76O06llMw9R" resolve="RenameNodeParticipantEP" />
       <node concept="3Tm1VV" id="4B0FDdRJCrU" role="1B3o_S" />
       <node concept="q3mfD" id="4B0FDdRJCrV" role="jymVt">
         <property role="TrG5h" value="get" />

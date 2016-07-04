@@ -188,8 +188,9 @@
     <import index="6f4m" ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)" />
     <import index="fyhk" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps(MPS.Platform/)" />
     <import index="z3o9" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.holders(MPS.Core/)" />
-    <import index="35tq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.scope(MPS.Core/)" />
     <import index="5nvm" ref="r:27bc780b-59b2-4d26-9db5-a38b63c35884(jetbrains.mps.refactoring.participant)" />
+    <import index="35tq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.scope(MPS.Core/)" />
+    <import index="4ugc" ref="r:bd779a69-a10b-4882-b646-c1303f2dd4f7(jetbrains.mps.refactoring.participant.plugin)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" implicit="true" />
   </imports>
@@ -41069,7 +41070,7 @@
             </node>
             <node concept="2OqwBi" id="56Biz00nqBx" role="33vP2m">
               <node concept="2O5UvJ" id="56Biz00npB6" role="2Oq$k0">
-                <ref role="2O5UnU" to="5nvm:2ziiPwwD3Q0" resolve="MoveModelParticipantEP" />
+                <ref role="2O5UnU" to="4ugc:2ziiPwwD3Q0" resolve="MoveModelParticipantEP" />
               </node>
               <node concept="SfwO_" id="56Biz00nr50" role="2OqNvi" />
             </node>
@@ -41449,7 +41450,7 @@
     <node concept="1lYeZD" id="56Biz00k8ke" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="UpdateDependentModelsRefactoringParticipant_extension" />
-      <ref role="1lYe$Y" to="5nvm:2ziiPwwD3Q0" resolve="MoveModelParticipantEP" />
+      <ref role="1lYe$Y" to="4ugc:2ziiPwwD3Q0" resolve="MoveModelParticipantEP" />
       <node concept="3Tm1VV" id="56Biz00k8kf" role="1B3o_S" />
       <node concept="q3mfD" id="56Biz00k8kl" role="jymVt">
         <property role="TrG5h" value="get" />

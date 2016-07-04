@@ -17,7 +17,7 @@ public class StaticFieldRefactoringParticipant extends StaticMemberRefactoringPa
 
   public static class StaticFieldRefactoringParticipant_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public StaticFieldRefactoringParticipant_extension() {
-      super("jetbrains.mps.refactoring.MoveNodeParticipantEP");
+      super("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {
       return new StaticFieldRefactoringParticipant();

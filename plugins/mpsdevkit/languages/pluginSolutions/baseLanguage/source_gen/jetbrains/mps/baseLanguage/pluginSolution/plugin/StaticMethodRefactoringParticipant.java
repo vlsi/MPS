@@ -19,7 +19,7 @@ public class StaticMethodRefactoringParticipant extends StaticMemberRefactoringP
 
   public static class StaticMethodRefactoringParticipant_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public StaticMethodRefactoringParticipant_extension() {
-      super("jetbrains.mps.refactoring.MoveNodeParticipantEP");
+      super("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {
       return new StaticMethodRefactoringParticipant();

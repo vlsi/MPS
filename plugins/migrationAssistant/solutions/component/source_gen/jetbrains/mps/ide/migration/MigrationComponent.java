@@ -234,7 +234,7 @@ public class MigrationComponent extends AbstractProjectComponent {
       }
       return null;
     }
-    Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> participants = Sequence.fromIterable(new ExtensionPoint<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>>("jetbrains.mps.refactoring.PersistentRefactoringParticipantsEP").getObjects()).translate(new ITranslator2<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>() {
+    Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> participants = Sequence.fromIterable(new ExtensionPoint<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>>("jetbrains.mps.refactoring.participant.PersistentRefactoringParticipantsEP").getObjects()).translate(new ITranslator2<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>() {
       public Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> translate(Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> it) {
         return it;
       }

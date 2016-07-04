@@ -54,7 +54,7 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
 
   public static class MoveNodeRefactoringLogParticipant_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public MoveNodeRefactoringLogParticipant_extension() {
-      super("jetbrains.mps.refactoring.MoveNodeParticipantEP");
+      super("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {
       return new MoveNodeRefactoringLogParticipant();
@@ -63,10 +63,10 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
 
   public static class MoveNodeParticipants extends Extension.Default<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>> {
     public MoveNodeParticipants() {
-      super("jetbrains.mps.refactoring.PersistentRefactoringParticipantsEP");
+      super("jetbrains.mps.refactoring.participant.PersistentRefactoringParticipantsEP");
     }
     public Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> get() {
-      return Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.refactoring.MoveNodeParticipantEP").getObjects()).ofType(RefactoringParticipant.PersistentRefactoringParticipant.class).select(new ISelector<RefactoringParticipant.PersistentRefactoringParticipant, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>() {
+      return Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP").getObjects()).ofType(RefactoringParticipant.PersistentRefactoringParticipant.class).select(new ISelector<RefactoringParticipant.PersistentRefactoringParticipant, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>() {
         public RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?> select(RefactoringParticipant.PersistentRefactoringParticipant it) {
           return (RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>) it;
         }
@@ -269,7 +269,7 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
   public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(SNodeReference initialState, SRepository repository, final List<RefactoringParticipant.Option> selectedOptions, final SearchScope searchScope) {
     final SNode sourceNode = initialState.resolve(repository);
     final SModule sourceModule = SNodeOperations.getModel(sourceNode).getModule();
-    final List<MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>> participantStates = Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.refactoring.MoveNodeParticipantEP").getObjects()).select(new ISelector<MoveNodeRefactoringParticipant<?, ?>, MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>>() {
+    final List<MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>> participantStates = Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP").getObjects()).select(new ISelector<MoveNodeRefactoringParticipant<?, ?>, MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>>() {
       public MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?> select(MoveNodeRefactoringParticipant<?, ?> participant) {
         return MoveNodeRefactoringLogParticipant.SerializingParticipantState.create(participant);
       }

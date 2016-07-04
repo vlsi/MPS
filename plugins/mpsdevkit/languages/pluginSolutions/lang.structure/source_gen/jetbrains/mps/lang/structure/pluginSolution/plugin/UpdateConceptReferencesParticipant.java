@@ -21,7 +21,7 @@ public class UpdateConceptReferencesParticipant extends UpdateReferencesParticip
 
   public static class UpdateConceptReferencesParticipant_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public UpdateConceptReferencesParticipant_extension() {
-      super("jetbrains.mps.refactoring.MoveNodeParticipantEP");
+      super("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {
       return new UpdateConceptReferencesParticipant();

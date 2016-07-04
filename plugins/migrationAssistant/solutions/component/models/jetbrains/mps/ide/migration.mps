@@ -63,6 +63,7 @@
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="5nvm" ref="r:27bc780b-59b2-4d26-9db5-a38b63c35884(jetbrains.mps.refactoring.participant)" />
+    <import index="4ugc" ref="r:bd779a69-a10b-4882-b646-c1303f2dd4f7(jetbrains.mps.refactoring.participant.plugin)" />
     <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -6838,7 +6839,7 @@
             <node concept="2OqwBi" id="XAmMejwMP5" role="33vP2m">
               <node concept="2OqwBi" id="XAmMejwMP6" role="2Oq$k0">
                 <node concept="2O5UvJ" id="XAmMejwMP7" role="2Oq$k0">
-                  <ref role="2O5UnU" to="5nvm:39r_V8zIHX1" resolve="PersistentRefactoringParticipantsEP" />
+                  <ref role="2O5UnU" to="4ugc:39r_V8zIHX1" resolve="PersistentRefactoringParticipantsEP" />
                 </node>
                 <node concept="SfwO_" id="XAmMejwMP8" role="2OqNvi" />
               </node>

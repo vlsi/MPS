@@ -42,7 +42,7 @@ public class UpdateDependentModelsRefactoringParticipant extends RefactoringPart
 
   public static class UpdateDependentModelsRefactoringParticipant_extension extends Extension.Default<MoveModelRefactoringParticipant<?, ?>> {
     public UpdateDependentModelsRefactoringParticipant_extension() {
-      super("jetbrains.mps.refactoring.MoveModelParticipantEP");
+      super("jetbrains.mps.refactoring.participant.MoveModelParticipantEP");
     }
     public MoveModelRefactoringParticipant<?, ?> get() {
       return new UpdateDependentModelsRefactoringParticipant();

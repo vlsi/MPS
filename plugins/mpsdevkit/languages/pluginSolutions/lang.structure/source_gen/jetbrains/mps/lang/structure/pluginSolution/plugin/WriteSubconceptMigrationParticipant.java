@@ -71,7 +71,7 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
 
   public static class WriteSubconceptMigrationParticipant_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public WriteSubconceptMigrationParticipant_extension() {
-      super("jetbrains.mps.refactoring.MoveNodeParticipantEP");
+      super("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {
       return new WriteSubconceptMigrationParticipant();

@@ -112,7 +112,7 @@ public class MoveModel_Action extends BaseAction {
       return;
     }
 
-    Iterable<? extends RefactoringParticipant<?, ?, SModel, SModel>> participants = new ExtensionPoint<MoveModelRefactoringParticipant<?, ?>>("jetbrains.mps.refactoring.MoveModelParticipantEP").getObjects();
+    Iterable<? extends RefactoringParticipant<?, ?, SModel, SModel>> participants = new ExtensionPoint<MoveModelRefactoringParticipant<?, ?>>("jetbrains.mps.refactoring.participant.MoveModelParticipantEP").getObjects();
 
     RefactoringProcessor.performRefactoringUserInteractive(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), "Move Model", participants, ListSequence.fromListAndArray(new ArrayList<SModel>(), ((SModel) MapSequence.fromMap(_params).get("model"))), new _FunctionTypes._return_P2_E0<Map<SModel, SModel>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SModel, SModel, SModel, SModel>>, RefactoringSession>() {
       public Map<SModel, SModel> invoke(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SModel, SModel, SModel, SModel>> changes, RefactoringSession refactoringSession) {

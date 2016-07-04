@@ -45,7 +45,7 @@ public abstract class UpdateReferencesParticipantBase<T> extends RefactoringPart
 
   public static class UpdateReferencesParticipant_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public UpdateReferencesParticipant_extension() {
-      super("jetbrains.mps.refactoring.MoveNodeParticipantEP");
+      super("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {
       return new UpdateReferencesParticipantBase.UpdateReferencesParticipant();

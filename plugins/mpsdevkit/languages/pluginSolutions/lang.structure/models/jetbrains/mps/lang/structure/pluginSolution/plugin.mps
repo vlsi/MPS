@@ -66,6 +66,7 @@
     <import index="twe9" ref="r:28e6d713-c3c3-493e-8d97-e9a2c49f28ce(jetbrains.mps.lang.structure.util)" />
     <import index="9anm" ref="r:6f374023-1b4e-4a80-8bf6-2cc3148faa52(jetbrains.mps.lang.editor.plugin)" />
     <import index="5nvm" ref="r:27bc780b-59b2-4d26-9db5-a38b63c35884(jetbrains.mps.refactoring.participant)" />
+    <import index="4ugc" ref="r:bd779a69-a10b-4882-b646-c1303f2dd4f7(jetbrains.mps.refactoring.participant.plugin)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" implicit="true" />
   </imports>
@@ -5017,7 +5018,7 @@
     <node concept="1lYeZD" id="zWFq_39Y3X" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="MoveAspectsParticipant_extension" />
-      <ref role="1lYe$Y" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+      <ref role="1lYe$Y" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
       <node concept="3Tm1VV" id="zWFq_39Y3Y" role="1B3o_S" />
       <node concept="q3mfD" id="zWFq_39Y44" role="jymVt">
         <property role="TrG5h" value="get" />
@@ -5670,7 +5671,7 @@
                   <node concept="2OqwBi" id="2swFJmOjKMp" role="33vP2m">
                     <node concept="2OqwBi" id="2swFJmOjKMq" role="2Oq$k0">
                       <node concept="2O5UvJ" id="2swFJmOjKMr" role="2Oq$k0">
-                        <ref role="2O5UnU" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+                        <ref role="2O5UnU" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
                       </node>
                       <node concept="SfwO_" id="2swFJmOjKMs" role="2OqNvi" />
                     </node>
@@ -5848,7 +5849,7 @@
                                                     <node concept="2OqwBi" id="361hHoA2j_l" role="3clFbG">
                                                       <node concept="2OqwBi" id="361hHoA2j_m" role="2Oq$k0">
                                                         <node concept="2O5UvJ" id="361hHoA2j_n" role="2Oq$k0">
-                                                          <ref role="2O5UnU" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+                                                          <ref role="2O5UnU" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
                                                         </node>
                                                         <node concept="SfwO_" id="361hHoA2j_o" role="2OqNvi" />
                                                       </node>
@@ -5858,6 +5859,13 @@
                                                             <node concept="3cpWs8" id="PXLOXmtQtF" role="3cqZAp">
                                                               <node concept="3cpWsn" id="PXLOXmtQtG" role="3cpWs9">
                                                                 <property role="TrG5h" value="participantState" />
+                                                                <node concept="3uibUv" id="PXLOXmtQtu" role="1tU5fm">
+                                                                  <ref role="3uigEE" to="5nvm:112yVMI$YQ8" resolve="RecursiveParticipant.RecursiveParticipantApplied" />
+                                                                  <node concept="3qTvmN" id="PXLOXmtQt$" role="11_B2D" />
+                                                                  <node concept="3qTvmN" id="PXLOXmtQtz" role="11_B2D" />
+                                                                  <node concept="3Tqbb2" id="5z_gLGetwZ$" role="11_B2D" />
+                                                                  <node concept="3Tqbb2" id="5z_gLGet_sU" role="11_B2D" />
+                                                                </node>
                                                                 <node concept="2YIFZM" id="4ik5FEymNdI" role="33vP2m">
                                                                   <ref role="37wK5l" to="5nvm:112yVMIEMzh" resolve="create" />
                                                                   <ref role="1Pybhc" to="5nvm:112yVMI$YQ8" resolve="RecursiveParticipant.RecursiveParticipantApplied" />
@@ -5875,13 +5883,6 @@
                                                                   <node concept="37vLTw" id="PXLOXmtQtM" role="37wK5m">
                                                                     <ref role="3cqZAo" node="112yVMIAw5W" resolve="parents" />
                                                                   </node>
-                                                                </node>
-                                                                <node concept="3uibUv" id="PXLOXmtQtu" role="1tU5fm">
-                                                                  <ref role="3uigEE" to="5nvm:112yVMI$YQ8" resolve="RecursiveParticipant.RecursiveParticipantApplied" />
-                                                                  <node concept="3qTvmN" id="PXLOXmtQt$" role="11_B2D" />
-                                                                  <node concept="3qTvmN" id="PXLOXmtQtz" role="11_B2D" />
-                                                                  <node concept="3Tqbb2" id="5z_gLGetwZ$" role="11_B2D" />
-                                                                  <node concept="3Tqbb2" id="5z_gLGet_sU" role="11_B2D" />
                                                                 </node>
                                                               </node>
                                                             </node>
@@ -6397,8 +6398,8 @@
                                                     <node concept="1Wc70l" id="1hLOda59z0G" role="3clFbw">
                                                       <node concept="3clFbC" id="7tV5ZLw3lV8" role="3uHU7B">
                                                         <node concept="Rm8GO" id="7tV5ZLw3oXa" role="3uHU7w">
-                                                          <ref role="Rm8GQ" to="5nvm:7tV5ZLw0pQW" resolve="REMOVE" />
                                                           <ref role="1Px2BO" to="5nvm:7tV5ZLw0mML" resolve="RefactoringParticipant.KeepOldNodes" />
+                                                          <ref role="Rm8GQ" to="5nvm:7tV5ZLw0pQW" resolve="REMOVE" />
                                                         </node>
                                                         <node concept="1rXfSq" id="1hLOda59yTn" role="3uHU7B">
                                                           <ref role="37wK5l" node="2wqpb2$LZD2" resolve="needsToPreserveOldNode" />
@@ -6534,8 +6535,8 @@
                                                     <node concept="1Wc70l" id="7tV5ZLw3qJE" role="3clFbw">
                                                       <node concept="3clFbC" id="7tV5ZLw3qJF" role="3uHU7B">
                                                         <node concept="Rm8GO" id="7tV5ZLw3sF4" role="3uHU7w">
-                                                          <ref role="Rm8GQ" to="5nvm:7tV5ZLw0qe3" resolve="POSTPONE_REMOVE" />
                                                           <ref role="1Px2BO" to="5nvm:7tV5ZLw0mML" resolve="RefactoringParticipant.KeepOldNodes" />
+                                                          <ref role="Rm8GQ" to="5nvm:7tV5ZLw0qe3" resolve="POSTPONE_REMOVE" />
                                                         </node>
                                                         <node concept="1rXfSq" id="7tV5ZLw3qJH" role="3uHU7B">
                                                           <ref role="37wK5l" node="2wqpb2$LZD2" resolve="needsToPreserveOldNode" />
@@ -6705,7 +6706,7 @@
     <node concept="1lYeZD" id="4SG2RcUG_DO" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="MoveConceptMigration_extension" />
-      <ref role="1lYe$Y" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+      <ref role="1lYe$Y" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
       <node concept="3Tm1VV" id="4SG2RcUG_DP" role="1B3o_S" />
       <node concept="q3mfD" id="4SG2RcUG_DQ" role="jymVt">
         <property role="TrG5h" value="get" />
@@ -6740,7 +6741,7 @@
     <node concept="1lYeZD" id="39r_V8zEoJA" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="MovePropertyMigration_extension" />
-      <ref role="1lYe$Y" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+      <ref role="1lYe$Y" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
       <node concept="3Tm1VV" id="39r_V8zEoJB" role="1B3o_S" />
       <node concept="q3mfD" id="39r_V8zEoJC" role="jymVt">
         <property role="TrG5h" value="get" />
@@ -6775,7 +6776,7 @@
     <node concept="1lYeZD" id="39r_V8zEKjd" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="MoveContainmentLinkMigration_extension" />
-      <ref role="1lYe$Y" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+      <ref role="1lYe$Y" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
       <node concept="3Tm1VV" id="39r_V8zEKje" role="1B3o_S" />
       <node concept="q3mfD" id="39r_V8zEKjf" role="jymVt">
         <property role="TrG5h" value="get" />
@@ -6810,7 +6811,7 @@
     <node concept="1lYeZD" id="39r_V8zEVFS" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="MoveReferenceLinkMigration_extension" />
-      <ref role="1lYe$Y" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+      <ref role="1lYe$Y" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
       <node concept="3Tm1VV" id="39r_V8zEVFT" role="1B3o_S" />
       <node concept="q3mfD" id="39r_V8zEVFU" role="jymVt">
         <property role="TrG5h" value="get" />
@@ -7754,8 +7755,8 @@
                     <node concept="3clFbS" id="4SG2RcUCyhm" role="3clF47">
                       <node concept="3clFbF" id="7tV5ZLw55DY" role="3cqZAp">
                         <node concept="Rm8GO" id="7tV5ZLw56my" role="3clFbG">
-                          <ref role="Rm8GQ" to="5nvm:7tV5ZLw0q2f" resolve="KEEP" />
                           <ref role="1Px2BO" to="5nvm:7tV5ZLw0mML" resolve="RefactoringParticipant.KeepOldNodes" />
+                          <ref role="Rm8GQ" to="5nvm:7tV5ZLw0q2f" resolve="KEEP" />
                         </node>
                       </node>
                     </node>
@@ -8564,7 +8565,7 @@
     <node concept="1lYeZD" id="7b2SisHTspc" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="UpdateConceptInstances_extension" />
-      <ref role="1lYe$Y" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+      <ref role="1lYe$Y" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
       <node concept="3Tm1VV" id="7b2SisHTspd" role="1B3o_S" />
       <node concept="q3mfD" id="7b2SisHTspe" role="jymVt">
         <property role="TrG5h" value="get" />
@@ -8599,7 +8600,7 @@
     <node concept="1lYeZD" id="39r_V8zEoJN" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="UpdatePropertyInstances_extension" />
-      <ref role="1lYe$Y" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+      <ref role="1lYe$Y" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
       <node concept="3Tm1VV" id="39r_V8zEoJO" role="1B3o_S" />
       <node concept="q3mfD" id="39r_V8zEoJP" role="jymVt">
         <property role="TrG5h" value="get" />
@@ -8634,7 +8635,7 @@
     <node concept="1lYeZD" id="39r_V8zEKjq" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="UpdateContainmentLinkInstances_extension" />
-      <ref role="1lYe$Y" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+      <ref role="1lYe$Y" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
       <node concept="3Tm1VV" id="39r_V8zEKjr" role="1B3o_S" />
       <node concept="q3mfD" id="39r_V8zEKjs" role="jymVt">
         <property role="TrG5h" value="get" />
@@ -8669,7 +8670,7 @@
     <node concept="1lYeZD" id="39r_V8zEVG5" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="UpdateReferenceLinkInstances_extension" />
-      <ref role="1lYe$Y" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+      <ref role="1lYe$Y" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
       <node concept="3Tm1VV" id="39r_V8zEVG6" role="1B3o_S" />
       <node concept="q3mfD" id="39r_V8zEVG7" role="jymVt">
         <property role="TrG5h" value="get" />
@@ -11417,7 +11418,7 @@
     <node concept="1lYeZD" id="2pO6eqPJFnW" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="WriteSubconceptMigrationParticipant_extension" />
-      <ref role="1lYe$Y" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+      <ref role="1lYe$Y" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
       <node concept="3Tm1VV" id="2pO6eqPJFnX" role="1B3o_S" />
       <node concept="q3mfD" id="2pO6eqPJFnY" role="jymVt">
         <property role="TrG5h" value="get" />
@@ -12686,7 +12687,7 @@
     <node concept="1lYeZD" id="4qkYgnA58wi" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="UpdateConceptReferencesParticipant_extension" />
-      <ref role="1lYe$Y" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+      <ref role="1lYe$Y" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
       <node concept="3Tm1VV" id="4qkYgnA58wj" role="1B3o_S" />
       <node concept="q3mfD" id="4qkYgnA58wk" role="jymVt">
         <property role="TrG5h" value="get" />

@@ -36,7 +36,7 @@ public class UpdateLocalInstancesParticipant<I, F> extends RefactoringParticipan
 
   public static class UpdateConceptInstances_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public UpdateConceptInstances_extension() {
-      super("jetbrains.mps.refactoring.MoveNodeParticipantEP");
+      super("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {
       return new UpdateLocalInstancesParticipant<SAbstractConcept, SAbstractConcept>(new MoveAbstractConceptSpecialization());
@@ -44,7 +44,7 @@ public class UpdateLocalInstancesParticipant<I, F> extends RefactoringParticipan
   }
   public static class UpdatePropertyInstances_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public UpdatePropertyInstances_extension() {
-      super("jetbrains.mps.refactoring.MoveNodeParticipantEP");
+      super("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {
       return new UpdateLocalInstancesParticipant<SProperty, SProperty>(new MovePropertySpecialization());
@@ -52,7 +52,7 @@ public class UpdateLocalInstancesParticipant<I, F> extends RefactoringParticipan
   }
   public static class UpdateContainmentLinkInstances_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public UpdateContainmentLinkInstances_extension() {
-      super("jetbrains.mps.refactoring.MoveNodeParticipantEP");
+      super("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {
       return new UpdateLocalInstancesParticipant<SContainmentLink, SContainmentLink>(new MoveContainmentLinkSpecialization());
@@ -60,7 +60,7 @@ public class UpdateLocalInstancesParticipant<I, F> extends RefactoringParticipan
   }
   public static class UpdateReferenceLinkInstances_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public UpdateReferenceLinkInstances_extension() {
-      super("jetbrains.mps.refactoring.MoveNodeParticipantEP");
+      super("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {
       return new UpdateLocalInstancesParticipant<SReferenceLink, SReferenceLink>(new MoveReferenceLinkSpecialization());

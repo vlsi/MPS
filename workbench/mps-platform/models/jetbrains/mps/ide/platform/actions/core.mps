@@ -45,6 +45,7 @@
     <import index="6f4m" ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)" />
     <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
     <import index="5nvm" ref="r:27bc780b-59b2-4d26-9db5-a38b63c35884(jetbrains.mps.refactoring.participant)" />
+    <import index="4ugc" ref="r:bd779a69-a10b-4882-b646-c1303f2dd4f7(jetbrains.mps.refactoring.participant.plugin)" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" implicit="true" />
   </imports>
   <registry>
@@ -726,7 +727,7 @@
             </node>
             <node concept="2OqwBi" id="76O06llYVVL" role="33vP2m">
               <node concept="2O5UvJ" id="76O06llYVVM" role="2Oq$k0">
-                <ref role="2O5UnU" to="5nvm:76O06llMw9R" resolve="RenameNodeParticipantEP" />
+                <ref role="2O5UnU" to="4ugc:76O06llMw9R" resolve="RenameNodeParticipantEP" />
               </node>
               <node concept="SfwO_" id="76O06llYVVN" role="2OqNvi" />
             </node>
@@ -5782,7 +5783,7 @@
             <node concept="10QFUN" id="42LwYUtiRx7" role="33vP2m">
               <node concept="2OqwBi" id="5$FcEFMZqkC" role="10QFUP">
                 <node concept="2O5UvJ" id="5$FcEFMZqkD" role="2Oq$k0">
-                  <ref role="2O5UnU" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+                  <ref role="2O5UnU" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
                 </node>
                 <node concept="SfwO_" id="5$FcEFMZqkE" role="2OqNvi" />
               </node>

@@ -43,6 +43,7 @@
     <import index="fvye" ref="r:ecbd9874-078d-4efd-b8c2-31475fda8f48(jetbrains.mps.lang.migration.pluginSolution.plugin)" />
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" />
     <import index="5nvm" ref="r:27bc780b-59b2-4d26-9db5-a38b63c35884(jetbrains.mps.refactoring.participant)" />
+    <import index="4ugc" ref="r:bd779a69-a10b-4882-b646-c1303f2dd4f7(jetbrains.mps.refactoring.participant.plugin)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
@@ -1175,7 +1176,7 @@
     <node concept="1lYeZD" id="4qkYgnA58wi" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="StaticFieldRefactoringParticipant_extension" />
-      <ref role="1lYe$Y" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+      <ref role="1lYe$Y" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
       <node concept="3Tm1VV" id="4qkYgnA58wj" role="1B3o_S" />
       <node concept="q3mfD" id="4qkYgnA58wk" role="jymVt">
         <property role="TrG5h" value="get" />
@@ -2290,7 +2291,7 @@
     <node concept="1lYeZD" id="7Sw_42UDFX8" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="StaticMethodRefactoringParticipant_extension" />
-      <ref role="1lYe$Y" to="5nvm:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
+      <ref role="1lYe$Y" to="4ugc:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
       <node concept="3Tm1VV" id="7Sw_42UDFX9" role="1B3o_S" />
       <node concept="q3mfD" id="7Sw_42UDFXa" role="jymVt">
         <property role="TrG5h" value="get" />

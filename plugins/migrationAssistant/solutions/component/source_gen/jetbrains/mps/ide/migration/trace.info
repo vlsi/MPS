@@ -936,7 +936,7 @@
       <unit id="1109674566563440045" at="170,393,174,7" name="jetbrains.mps.ide.migration.MigrationComponent$3" />
       <unit id="1109674566563440045" at="174,20,178,7" name="jetbrains.mps.ide.migration.MigrationComponent$4" />
       <unit id="5239783599556083079" at="226,245,230,5" name="jetbrains.mps.ide.migration.MigrationComponent$4" />
-      <unit id="1109674566550236490" at="237,310,241,5" name="jetbrains.mps.ide.migration.MigrationComponent$5" />
+      <unit id="1109674566550236490" at="237,322,241,5" name="jetbrains.mps.ide.migration.MigrationComponent$5" />
       <unit id="1109674566550326024" at="242,254,246,5" name="jetbrains.mps.ide.migration.MigrationComponent$6" />
       <unit id="1109674566550326024" at="246,18,250,5" name="jetbrains.mps.ide.migration.MigrationComponent$7" />
       <unit id="1109674566550326032" at="250,18,254,5" name="jetbrains.mps.ide.migration.MigrationComponent$8" />
