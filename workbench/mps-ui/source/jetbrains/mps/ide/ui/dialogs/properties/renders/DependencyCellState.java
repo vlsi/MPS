@@ -15,13 +15,17 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.renders;
 
+import com.intellij.openapi.editor.colors.CodeInsightColors;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.ui.SimpleTextAttributes;
-import jetbrains.mps.openapi.editor.ColorConstants;
 import org.jetbrains.annotations.Nullable;
 
-import java.awt.Color;
-
 public enum DependencyCellState {
+  /*
+  If need to change order of enum constants, also change StateTableCellRenderer:
+  add comparator to myCellStates initialization as getDependencyCellState() depends on it.
+  If request on custom DependencyCellState will appear, allow to modify checking order in StateTableCellRenderer.getDependencyCellState().\*/
+
   NORMAL(SimpleTextAttributes.SIMPLE_CELL_ATTRIBUTES),
   NOT_AVAILABLE(SimpleTextAttributes.ERROR_ATTRIBUTES),
   NOT_IN_SCOPE(SimpleTextAttributes.ERROR_ATTRIBUTES, "out of scope"), //new SimpleTextAttributes(SimpleTextAttributes.STYLE_PLAIN, new Color(255,145,0))
@@ -33,8 +37,8 @@ public enum DependencyCellState {
    * Engaged generator entry that might need attention as the language is directly in use by the model
    */
   SUPERFLUOUS_ENGAGED(
-      new SimpleTextAttributes(NORMAL.getTextAttributes().getStyle() | SimpleTextAttributes.STYLE_WAVED, NORMAL.getTextAttributes().getFgColor(), new Color(
-          ColorConstants.WARNING)),
+      new SimpleTextAttributes(NORMAL.getTextAttributes().getStyle() | SimpleTextAttributes.STYLE_WAVED, NORMAL.getTextAttributes().getFgColor(),
+          EditorColorsManager.getInstance().getGlobalScheme().getAttributes(CodeInsightColors.WEAK_WARNING_ATTRIBUTES).getEffectColor()),
       "Language is used by the model directly, no need to engage it explicitly");
 
   private final SimpleTextAttributes myTextAttributes;

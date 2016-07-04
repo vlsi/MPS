@@ -48,6 +48,7 @@ import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.save.SaveRepositoryCommand;
+import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyCellState;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.LanguageTableCellRenderer;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
@@ -91,7 +92,7 @@ import java.util.List;
  */
 public abstract class MPSPropertiesConfigurable implements Configurable, Disposable {
   private TabbedPaneWrapper myTabbedPaneWrapper = new TabbedPaneWrapper(this);
-  private List<Tab> myTabs = new ArrayList<Tab>();
+  private List<Tab> myTabs = new ArrayList<>();
   protected final Project myProject;
   private DialogWrapper myParentForCallBack = null;
 
@@ -104,7 +105,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
   }
 
   protected final void forceCancelCloseDialog() {
-    if(myParentForCallBack == null) {
+    if (myParentForCallBack == null) {
       return;
     }
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
@@ -128,8 +129,9 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
    * Subclasses may choose whether to instantiate initial tabs on demand with {@link #createInitialTabs()}
    * or register them at once with this method. Supplied tabs would get a chance to build UI
    * at a proper moment some time later (with {@link Modifiable#init()} call.
-   *
+   * <p>
    * The method may be invoked few times before the UI is created, registered tabs sum up.
+   *
    * @param tabs initial set of tabs
    */
   protected void registerTabs(Tab... tabs) {
@@ -171,31 +173,46 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
   }
 
   public void addTab(Tab tab) {
-    if(tab == null || tab.getTabComponent() == null) return;
-    if(tab.getToolTip() == null && tab instanceof BaseTab) ((BaseTab)tab).setToolTip(tab.getTitle());
+    if (tab == null || tab.getTabComponent() == null) {
+      return;
+    }
+    if (tab.getToolTip() == null && tab instanceof BaseTab) {
+      ((BaseTab) tab).setToolTip(tab.getTitle());
+    }
 
-    if(!myTabs.contains(tab)) myTabs.add(tab);
-    if(myTabbedPaneWrapper.indexOfComponent(tab.getTabComponent()) < 0)
+    if (!myTabs.contains(tab)) {
+      myTabs.add(tab);
+    }
+    if (myTabbedPaneWrapper.indexOfComponent(tab.getTabComponent()) < 0) {
       myTabbedPaneWrapper.addTab(tab.getTitle(), tab.getIcon(), tab.getTabComponent(), tab.getToolTip());
+    }
   }
 
   public void insertTab(Tab tab, int index) {
-    if(tab == null || tab.getTabComponent() == null) return;
-    if(tab.getToolTip() == null && tab instanceof BaseTab) ((BaseTab)tab).setToolTip(tab.getTitle());
+    if (tab == null || tab.getTabComponent() == null) {
+      return;
+    }
+    if (tab.getToolTip() == null && tab instanceof BaseTab) {
+      ((BaseTab) tab).setToolTip(tab.getTitle());
+    }
 
-    if(!myTabs.contains(tab)) myTabs.add(tab);
-    if(myTabbedPaneWrapper.indexOfComponent(tab.getTabComponent()) < 0)
+    if (!myTabs.contains(tab)) {
+      myTabs.add(tab);
+    }
+    if (myTabbedPaneWrapper.indexOfComponent(tab.getTabComponent()) < 0) {
       myTabbedPaneWrapper.insertTab(tab.getTitle(), tab.getIcon(), tab.getTabComponent(), tab.getToolTip(), index);
+    }
   }
 
   private void removeTab(int index) {
-    if(index < 0)
+    if (index < 0) {
       return;
+    }
     myTabbedPaneWrapper.removeTabAt(index);
   }
 
   protected void removeTab(Tab tab) {
-    if(tab == null) {
+    if (tab == null) {
       return;
     }
     removeTab(myTabbedPaneWrapper.indexOfComponent(tab.getTabComponent()));
@@ -210,8 +227,8 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     return myTabbedPaneWrapper.indexOfComponent(tab.getTabComponent()) >= 0;
   }
 
-  public final void addChangeListener(final ChangeListener listener){
-    if(myTabbedPaneWrapper != null) {
+  public final void addChangeListener(final ChangeListener listener) {
+    if (myTabbedPaneWrapper != null) {
       myTabbedPaneWrapper.addChangeListener(listener);
     }
   }
@@ -234,10 +251,11 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
   @Override
   public boolean isModified() {
-    for (Tab tab : myTabs)
+    for (Tab tab : myTabs) {
       if (tab.isModified()) {
         return true;
       }
+    }
 
     return false;
   }
@@ -255,7 +273,8 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
    * If apply method in each tab separately take a lot of time,
    * override this method to perform real save after all applies
    */
-  protected void save() {}
+  protected void save() {
+  }
 
   /**
    * All modules visible in the current project
@@ -288,8 +307,11 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     }
 
     protected abstract String getConfigItemName();
+
     protected abstract String getConfigItemPath();
+
     protected abstract JComponent getBottomComponent();
+
     protected JComponent getTopComponent() {
       return null;
     }
@@ -303,24 +325,37 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       sourcesTab.setLayout(new GridLayoutManager(topComponent != null ? 4 : 3, 2, INSETS, -1, -1));
 
       JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.common.namelabel"));
-      sourcesTab.add(label, new GridConstraints(rowCount++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+      sourcesTab.add(label,
+          new GridConstraints(rowCount++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+              GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       myTextFieldName = new JTextField();
       myTextFieldName.setText(getConfigItemName());
-      sourcesTab.add(myTextFieldName, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+      sourcesTab.add(myTextFieldName,
+          new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW,
+              GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
 
       label = new JBLabel(PropertiesBundle.message("mps.properties.common.filepathlabel"));
-      sourcesTab.add(label, new GridConstraints(rowCount, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+      sourcesTab.add(label,
+          new GridConstraints(rowCount, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+              GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       JTextField textField = new JTextField();
       textField.setEditable(false);
       textField.setText(getConfigItemPath());
-      sourcesTab.add(textField, new GridConstraints(rowCount++, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+      sourcesTab.add(textField,
+          new GridConstraints(rowCount++, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW,
+              GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
 
-      if(topComponent != null)
-        sourcesTab.add(topComponent, new GridConstraints(rowCount++, 0, 1, 2, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+      if (topComponent != null) {
+        sourcesTab.add(topComponent,
+            new GridConstraints(rowCount++, 0, 1, 2, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW,
+                GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+      }
 
-      sourcesTab.add(getBottomComponent(), new GridConstraints(rowCount, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+      sourcesTab.add(getBottomComponent(), new GridConstraints(rowCount, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
+          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
       setTabComponent(sourcesTab);
     }
 
@@ -339,6 +374,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     }
 
     protected abstract DependTableModel getDependTableModel();
+
     /*CellEditor for scope cell */
     protected abstract TableCellEditor getTableCellEditor();
 
@@ -360,24 +396,24 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       tableDepend.setDefaultRenderer(DependenciesTableItem.class, getTableCellRender());
       tableDepend.setDefaultRenderer(Boolean.class, new BooleanTableCellRenderer());
 
-      tableDepend.setDefaultRenderer(SDependencyScope.class, new ComboBoxTableRenderer<SDependencyScope>(SDependencyScope.values()));
+      tableDepend.setDefaultRenderer(SDependencyScope.class, new ComboBoxTableRenderer<>(SDependencyScope.values()));
       tableDepend.setDefaultEditor(SDependencyScope.class, getTableCellEditor());
 
 
-      TableColumn column = null;
-      if(myDependTableModel.getExportColumnIndex() >= 0) {
+      TableColumn column;
+      if (myDependTableModel.getExportColumnIndex() >= 0) {
         column = tableDepend.getTableHeader().getColumnModel().getColumn(myDependTableModel.getExportColumnIndex());
         column.setMinWidth(20);
         column.setPreferredWidth(50);
         column.setMaxWidth(50);
       }
-      if(myDependTableModel.getRoleColumnIndex() >= 0) {
+      if (myDependTableModel.getRoleColumnIndex() >= 0) {
         column = tableDepend.getTableHeader().getColumnModel().getColumn(myDependTableModel.getRoleColumnIndex());
         column.setMinWidth(80);
         column.setPreferredWidth(130);
         column.setMaxWidth(200);
       }
-      if(myDependTableModel.getItemColumnIndex() >= 0) {
+      if (myDependTableModel.getItemColumnIndex() >= 0) {
         column = tableDepend.getTableHeader().getColumnModel().getColumn(myDependTableModel.getItemColumnIndex());
         column.setPreferredWidth(250);
       }
@@ -391,7 +427,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
         }
       });
       FindActionButton findActionButton = getFindAnAction(tableDepend);
-      if(findActionButton != null) {
+      if (findActionButton != null) {
         decorator.addExtraAction(findActionButton);
       }
 
@@ -399,7 +435,9 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
       JPanel table = decorator.createPanel();
       table.setBorder(IdeBorderFactory.createBorder());
-      dependenciesTab.add(table, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+      dependenciesTab.add(table, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
+          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       setTabComponent(dependenciesTab);
 
@@ -437,7 +475,8 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     protected JBTable myUsedLangsTable;
 
     public UsedLanguagesTab() {
-      super(PropertiesBundle.message("mps.properties.usedlanguages.title"), IdeIcons.LANGUAGE_ICON, PropertiesBundle.message("mps.properties.usedlanguages.tip"));
+      super(PropertiesBundle.message("mps.properties.usedlanguages.title"), IdeIcons.LANGUAGE_ICON,
+          PropertiesBundle.message("mps.properties.usedlanguages.tip"));
     }
 
     protected abstract UsedLangsTableModel getUsedLangsTableModel();
@@ -458,7 +497,12 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       usedLangsTable.setModel(myUsedLangsTableModel);
       myUsedLangsTable = usedLangsTable;
 
-      usedLangsTable.setDefaultRenderer(UsedLangsTableModel.Import.class, getTableCellRender());
+      final TableCellRenderer tableCellRender = getTableCellRender();
+      if (tableCellRender instanceof LanguageTableCellRenderer) {
+        ((LanguageTableCellRenderer) tableCellRender).addCellState(anImport -> (anImport.myLanguage == null && anImport.myDevKit == null)
+            || (anImport.myLanguage != null && !anImport.myLanguage.isValid()), DependencyCellState.NOT_AVAILABLE);
+      }
+      usedLangsTable.setDefaultRenderer(UsedLangsTableModel.Import.class, tableCellRender);
 
       ToolbarDecorator decorator = createToolbar(usedLangsTable);
 
@@ -466,7 +510,9 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
       JPanel table = decorator.createPanel();
       table.setBorder(IdeBorderFactory.createBorder());
-      usedLangsTab.add(table, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+      usedLangsTab.add(table, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
+          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       setTabComponent(usedLangsTab);
 
@@ -488,7 +534,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     }
 
     protected final List<SLanguage> getSelectedLanguages() {
-      final List<SLanguage> languages = new LinkedList<SLanguage>();
+      final List<SLanguage> languages = new LinkedList<>();
       myProject.getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
@@ -535,10 +581,10 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
   /**
    * Search in a single column of a table.
-   *
+   * <p>
    * To extract text, recognizes SModelReference, SModuleReference as column values, otherwise resort to Object.toString(). Please
    * refactor instead sub-classing if different behavior is desired.
-   *
+   * <p>
    * Might use com.intellij.ui.TableSpeedSearch instead, if there would be any explanation about what to override there.
    */
   protected static class TableColumnSearch extends SpeedSearchBase<JBTable> {
@@ -573,7 +619,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     @Override
     public String getElementText(Object element) {
       if (element instanceof SModuleReference) {
-        return ((SModuleReference)element).getModuleName();
+        return ((SModuleReference) element).getModuleName();
       }
       if (element instanceof SModelReference) {
         return ((SModelReference) element).getModelName();
@@ -625,5 +671,5 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     }
   }
 
-  public static final JBInsets INSETS = new JBInsets(10,10,10,10);
+  public static final JBInsets INSETS = new JBInsets(10, 10, 10, 10);
 }
