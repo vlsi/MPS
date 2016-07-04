@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.devkit.cellExplorer;
 
-import com.intellij.icons.AllIcons;
 import com.intellij.icons.AllIcons.Actions;
 import com.intellij.ide.actions.CloseTabToolbarAction;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -23,11 +22,11 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.ui.SimpleToolWindowPanel;
 import com.intellij.ui.OnePixelSplitter;
 import com.intellij.ui.ScrollPaneFactory;
-import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import jetbrains.mps.ide.devkit.cellExplorer.cellsTree.CellsTree;
 import jetbrains.mps.ide.devkit.cellExplorer.detailTree.CellDetailTree;
 import jetbrains.mps.ide.icons.IconManager;
@@ -144,9 +143,9 @@ public class CellExplorerTab implements IComponentDisposer<JComponent> {
   private JComponent createToolbar(JComponent targetComponent) {
     DefaultActionGroup group = ActionUtils.groupFromActions(
         new CloseAction(),
-        PinToolwindowTabAction.getPinAction(),
+        ActionManager.getInstance().getAction(IdeActions.ACTION_PIN_ACTIVE_TAB),
         new SelectInEditorAction());
-    ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
+    ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.TOOLBAR, group, false);
     actionToolbar.setTargetComponent(targetComponent);
     return actionToolbar.getComponent();
   }
