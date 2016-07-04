@@ -7,51 +7,33 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class replace_sequence_type {
   public static class NodeFactory_7246115176735615123 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
       SNodeFactoryOperations.setNewChild(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, 0x10c260ee40eL, "elementType"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type")));
-      if (ListSequence.fromList(SNodeOperations.getChildren(sampleNode)).count() == 1) {
-        SNode maybeElementType = ListSequence.fromList(SNodeOperations.getChildren(sampleNode)).first();
-        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, 0x10c260ee40eL, "elementType"), SNodeOperations.detachNode(maybeElementType));
-      }
+      CollectionTypeCreationUtil.extractSequenceElementType(newNode, sampleNode);
     }
   }
   public static class NodeFactory_7886927014685056895 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
       SNodeFactoryOperations.setNewChild(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x4eec26fcbaf8c39bL, 0x4eec26fcbaf8c39cL, "elementType"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type")));
-      if (ListSequence.fromList(SNodeOperations.getChildren(sampleNode)).count() == 1) {
-        SNode maybeElementType = ListSequence.fromList(SNodeOperations.getChildren(sampleNode)).first();
-        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x4eec26fcbaf8c39bL, 0x4eec26fcbaf8c39cL, "elementType"), SNodeOperations.detachNode(maybeElementType));
-      }
+      CollectionTypeCreationUtil.extractCollectionElementType(newNode, sampleNode);
     }
   }
   public static class NodeFactory_7246115176735618985 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-      if (ListSequence.fromList(SNodeOperations.getChildren(sampleNode)).count() == 1) {
-        SNode maybeElementType = ListSequence.fromList(SNodeOperations.getChildren(sampleNode)).first();
-        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, 0x10c25fe95c5L, "elementType"), SNodeOperations.detachNode(maybeElementType));
-      }
+      CollectionTypeCreationUtil.extractListElementType(newNode, sampleNode);
     }
   }
   public static class NodeFactory_7246115176735619032 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-      if (ListSequence.fromList(SNodeOperations.getChildren(sampleNode)).count() == 1) {
-        SNode maybeElementType = ListSequence.fromList(SNodeOperations.getChildren(sampleNode)).first();
-        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d91cbbcd0L, 0x11d91cc51e3L, "elementType"), SNodeOperations.detachNode(maybeElementType));
-      }
+      CollectionTypeCreationUtil.extractSetElementType(newNode, sampleNode);
     }
   }
   public static class NodeFactory_7246115176735619079 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-      if (ListSequence.fromList(SNodeOperations.getChildren(sampleNode)).count() == 1) {
-        SNode maybeElementType = ListSequence.fromList(SNodeOperations.getChildren(sampleNode)).first();
-        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d91cbbcd0L, 0x11d91cc51e3L, "elementType"), SNodeOperations.detachNode(maybeElementType));
-      }
+      CollectionTypeCreationUtil.extractSetElementType(newNode, sampleNode);
     }
   }
 }
