@@ -11,13 +11,13 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 
 public class ParameterizedByPrimitiveType extends TransformationMenuBase {
@@ -37,7 +37,7 @@ public class ParameterizedByPrimitiveType extends TransformationMenuBase {
     protected List<TransformationMenuItem> createItems(Integer parameter, TransformationMenuContext context) {
       return new ParameterizedByPrimitiveType.TransformationMenuPart_Action_ud82js_a0a(parameter).createItems(context);
     }
-    @NotNull
+    @Nullable
     @Override
     protected Iterable<? extends Integer> getParameters(TransformationMenuContext _context) {
       int i = 10;

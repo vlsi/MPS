@@ -12,8 +12,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.MenuLocations;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.SidebarActionItem;
 import jetbrains.mps.smodel.runtime.IconResource;
@@ -38,7 +38,7 @@ public class Parameterized extends TransformationMenuBase {
     protected List<TransformationMenuItem> createItems(Integer parameter, TransformationMenuContext context) {
       return new Parameterized.TransformationMenuPart_Action_3h2zbg_a0a(parameter).createItems(context);
     }
-    @NotNull
+    @Nullable
     @Override
     protected Iterable<? extends Integer> getParameters(TransformationMenuContext _context) {
       return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4);

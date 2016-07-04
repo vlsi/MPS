@@ -114,7 +114,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
     protected List<SubstituteMenuItem> createItems(String parameter, SubstituteMenuContext context) {
       return new TestSubstituteChild_SubstituteMenu.SubstituteMenuPart_Parameterized_ddv2zo_a1.SubstituteMenuPart_Action_ddv2zo_a0b(parameter).createItems(context);
     }
-    @NotNull
+    @Nullable
     @Override
     protected Iterable<? extends String> getParameters(SubstituteMenuContext _context) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "a", "b");

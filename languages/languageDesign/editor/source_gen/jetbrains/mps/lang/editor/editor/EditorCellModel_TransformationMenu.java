@@ -232,7 +232,7 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
     protected List<TransformationMenuItem> createItems(SNode parameter, TransformationMenuContext context) {
       return new EditorCellModel_TransformationMenu.TransformationMenuPart_Action_puymhi_a4a(parameter).createItems(context);
     }
-    @NotNull
+    @Nullable
     @Override
     protected Iterable<? extends SNode> getParameters(TransformationMenuContext _context) {
       EditorAssistantUtilities assistantUtils = new EditorAssistantUtilities(_context.getNode());

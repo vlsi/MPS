@@ -10,9 +10,9 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -30,7 +30,7 @@ public class ParameterizedByPrimitiveType extends SubstituteMenuBase {
     protected List<SubstituteMenuItem> createItems(Integer parameter, SubstituteMenuContext context) {
       return new ParameterizedByPrimitiveType.SubstituteMenuPart_Parameterized_ud82js_a.SubstituteMenuPart_Action_ud82js_a0(parameter).createItems(context);
     }
-    @NotNull
+    @Nullable
     @Override
     protected Iterable<? extends Integer> getParameters(SubstituteMenuContext _context) {
       return Arrays.asList(1, 2, 3);

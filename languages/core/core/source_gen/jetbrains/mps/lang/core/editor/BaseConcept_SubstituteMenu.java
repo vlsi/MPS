@@ -14,13 +14,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
@@ -49,20 +49,20 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
       return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new BaseConcept_SubstituteMenu.SubstituteMenuPart_Parameterized_s3h0kg_a0());
     }
   }
-  private static class SubstituteMenuPart_Parameterized_s3h0kg_a0 extends ParameterizedMenuPart<Object, SubstituteMenuItem, SubstituteMenuContext> {
+  private static class SubstituteMenuPart_Parameterized_s3h0kg_a0 extends ParameterizedMenuPart<SAbstractConcept, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
-    protected List<SubstituteMenuItem> createItems(Object parameter, SubstituteMenuContext context) {
+    protected List<SubstituteMenuItem> createItems(SAbstractConcept parameter, SubstituteMenuContext context) {
       return new BaseConcept_SubstituteMenu.SubstituteMenuPart_Parameterized_s3h0kg_a0.SubstituteMenuPart_Action_s3h0kg_a0a(parameter).createItems(context);
     }
-    @NotNull
+    @Nullable
     @Override
-    protected Iterable<? extends Object> getParameters(SubstituteMenuContext _context) {
+    protected Iterable<? extends SAbstractConcept> getParameters(SubstituteMenuContext _context) {
       return ((Iterable<SConcept>) SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SNodeOperations.getModel(_context.getParentNode())));
     }
     private static class SubstituteMenuPart_Action_s3h0kg_a0a extends SingleItemSubstituteMenuPart {
-      private final Object myParameterObject;
-      public SubstituteMenuPart_Action_s3h0kg_a0a(Object parameterObject) {
+      private final SAbstractConcept myParameterObject;
+      public SubstituteMenuPart_Action_s3h0kg_a0a(SAbstractConcept parameterObject) {
         myParameterObject = parameterObject;
       }
 
@@ -85,15 +85,15 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
 
         @Override
         public SNode createNode(String pattern) {
-          return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(((SAbstractConcept) myParameterObject)));
+          return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(myParameterObject));
         }
         @Override
         public String getMatchingText(String pattern) {
-          return ((SAbstractConcept) myParameterObject).getName();
+          return myParameterObject.getName();
         }
         @Override
         public String getDescriptionText(String pattern) {
-          String fqName = ConceptRegistry.getInstance().getConceptDescriptor(((SAbstractConcept) myParameterObject)).getConceptFqName();
+          String fqName = ConceptRegistry.getInstance().getConceptDescriptor(myParameterObject).getConceptFqName();
           return "lang: " + NameUtil.compactNamespace(NameUtil.namespaceFromConceptFQName(fqName));
         }
         @Override
