@@ -169,7 +169,6 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
-      <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
@@ -211,11 +210,6 @@
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
-    </language>
-    <language id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension">
-      <concept id="3729007189729192406" name="jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration" flags="ng" index="vrV6u">
-        <child id="8029776554053057803" name="objectType" index="luc8K" />
-      </concept>
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1235746970280" name="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" flags="nn" index="2Sg_IR">
@@ -359,14 +353,6 @@
       </node>
       <node concept="3Tqbb2" id="76O06llMwdf" role="11_B2D" />
       <node concept="17QB3L" id="76O06llMx4r" role="11_B2D" />
-    </node>
-  </node>
-  <node concept="vrV6u" id="76O06llMw9R">
-    <property role="TrG5h" value="RenameNodeParticipantEP" />
-    <node concept="3uibUv" id="76O06llMw9S" role="luc8K">
-      <ref role="3uigEE" node="76O06llMwcZ" resolve="RenameNodeRefactoringParticipant" />
-      <node concept="3qTvmN" id="76O06llMw9T" role="11_B2D" />
-      <node concept="3qTvmN" id="76O06llMw9U" role="11_B2D" />
     </node>
   </node>
   <node concept="3HP615" id="3KqYwoBIxpF">
@@ -3267,18 +3253,6 @@
       </node>
     </node>
   </node>
-  <node concept="vrV6u" id="39r_V8zIHX1">
-    <property role="TrG5h" value="PersistentRefactoringParticipantsEP" />
-    <node concept="A3Dl8" id="39r_V8zII6G" role="luc8K">
-      <node concept="3uibUv" id="39r_V8zII9U" role="A3Ik2">
-        <ref role="3uigEE" node="5DMHUkptmAc" resolve="RefactoringParticipant.PersistentRefactoringParticipant" />
-        <node concept="3qTvmN" id="39r_V8zIIjs" role="11_B2D" />
-        <node concept="3qTvmN" id="39r_V8zIIpM" role="11_B2D" />
-        <node concept="3qTvmN" id="5z_gLGes8LR" role="11_B2D" />
-        <node concept="3qTvmN" id="5z_gLGes8Sq" role="11_B2D" />
-      </node>
-    </node>
-  </node>
   <node concept="3HP615" id="3KqYwoBJhhy">
     <property role="TrG5h" value="MoveNodeRefactoringParticipant" />
     <node concept="3HP615" id="3KqYwoBIIOx" role="jymVt">
@@ -3421,14 +3395,6 @@
       <node concept="3Tqbb2" id="5z_gLGeqSU3" role="11_B2D" />
     </node>
   </node>
-  <node concept="vrV6u" id="3KqYwoBJieG">
-    <property role="TrG5h" value="MoveNodeParticipantEP" />
-    <node concept="3uibUv" id="3KqYwoBJihY" role="luc8K">
-      <ref role="3uigEE" node="3KqYwoBJhhy" resolve="MoveNodeRefactoringParticipant" />
-      <node concept="3qTvmN" id="FLkVtyGx09" role="11_B2D" />
-      <node concept="3qTvmN" id="FLkVtyKuWn" role="11_B2D" />
-    </node>
-  </node>
   <node concept="3HP615" id="2ziiPwwD3nW">
     <property role="TrG5h" value="MoveModelRefactoringParticipant" />
     <node concept="3Tm1VV" id="2ziiPwwD3nX" role="1B3o_S" />
@@ -3448,14 +3414,6 @@
       </node>
       <node concept="H_c77" id="2ziiPwwD3Kt" role="11_B2D" />
       <node concept="H_c77" id="2ziiPwwD3PK" role="11_B2D" />
-    </node>
-  </node>
-  <node concept="vrV6u" id="2ziiPwwD3Q0">
-    <property role="TrG5h" value="MoveModelParticipantEP" />
-    <node concept="3uibUv" id="2ziiPwwD3Q1" role="luc8K">
-      <ref role="3uigEE" node="2ziiPwwD3nW" resolve="MoveModelRefactoringParticipant" />
-      <node concept="3qTvmN" id="2ziiPwwD3Q2" role="11_B2D" />
-      <node concept="3qTvmN" id="2ziiPwwD3Q3" role="11_B2D" />
     </node>
   </node>
   <node concept="3HP615" id="3KqYwoBJ0xf">

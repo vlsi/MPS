@@ -133,6 +133,7 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/project/solutions/jetbrains.mps.lang.project.sandbox/jetbrains.mps.lang.project.sandbox.msd" folder="core.languages" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/quotation/jetbrains.mps.lang.quotation.mpl" folder="core.languages" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/refactoring/jetbrains.mps.lang.refactoring.mpl" folder="core.aspects.refactoring" />
+      <modulePath path="$PROJECT_DIR$/languages/languageDesign/refactoring/participant/jetbrains.mps.refactoring.participant.mpl" folder="core.aspects.refactoring" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/resources/jetbrains.mps.lang.resources.mpl" folder="core.languages" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/scopes/jetbrains.mps.lang.scopes.mpl" folder="core.aspects.constraints" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/scopes/runtime/jetbrains.mps.lang.scopes.runtime.msd" folder="core.aspects.constraints" />
