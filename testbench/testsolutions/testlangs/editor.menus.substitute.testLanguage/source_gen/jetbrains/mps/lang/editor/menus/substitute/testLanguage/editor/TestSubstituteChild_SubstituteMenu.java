@@ -108,20 +108,20 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
       return (a != null ? a.equals(b) : a == b);
     }
   }
-  private static class SubstituteMenuPart_Parameterized_ddv2zo_a1 extends ParameterizedMenuPart<Object, SubstituteMenuItem, SubstituteMenuContext> {
+  private static class SubstituteMenuPart_Parameterized_ddv2zo_a1 extends ParameterizedMenuPart<String, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
-    protected List<SubstituteMenuItem> createItems(Object parameter, SubstituteMenuContext context) {
+    protected List<SubstituteMenuItem> createItems(String parameter, SubstituteMenuContext context) {
       return new TestSubstituteChild_SubstituteMenu.SubstituteMenuPart_Parameterized_ddv2zo_a1.SubstituteMenuPart_Action_ddv2zo_a0b(parameter).createItems(context);
     }
     @NotNull
     @Override
-    protected Iterable<? extends Object> getParameters(SubstituteMenuContext _context) {
+    protected Iterable<? extends String> getParameters(SubstituteMenuContext _context) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "a", "b");
     }
     private static class SubstituteMenuPart_Action_ddv2zo_a0b extends SingleItemSubstituteMenuPart {
-      private final Object myParameterObject;
-      public SubstituteMenuPart_Action_ddv2zo_a0b(Object parameterObject) {
+      private final String myParameterObject;
+      public SubstituteMenuPart_Action_ddv2zo_a0b(String parameterObject) {
         myParameterObject = parameterObject;
       }
 
@@ -145,12 +145,12 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
         @Override
         public SNode createNode(String pattern) {
           SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"));
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), ((String) myParameterObject));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), myParameterObject);
           return node;
         }
         @Override
         public String getMatchingText(String pattern) {
-          return ((String) myParameterObject);
+          return myParameterObject;
         }
       }
     }
