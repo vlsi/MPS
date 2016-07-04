@@ -22,7 +22,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Convenience implementation of {@link jetbrains.mps.lang.editor.menus.transformation.MenuPart} for parts that create at most one menu item.
+ * Convenience implementation of {@link MenuPart} for parts that create at most one menu item.
  */
 public class SingleItemMenuPart<ItemT, ContextT> implements MenuPart<ItemT, ContextT> {
   @NotNull
