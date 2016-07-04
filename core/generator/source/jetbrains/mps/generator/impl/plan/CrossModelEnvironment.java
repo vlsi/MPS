@@ -77,7 +77,7 @@ public class CrossModelEnvironment {
       return new ModelCheckpoints(states.toArray(new CheckpointState[states.size()]));
     }
     SModel[] cpModels = getCheckpointModelsFor(model);
-    return new ModelCheckpoints(cpModels);
+    return new ModelCheckpoints(myModule.getRepository(), cpModels);
   }
 
   private SModel[] getCheckpointModelsFor(SModelReference model) {
@@ -91,6 +91,9 @@ public class CrossModelEnvironment {
     return rv.toArray(new SModel[rv.size()]);
   }
 
+  /**
+   * Alternative to {@link ModelCheckpoints#find(Checkpoint)}
+   */
   @Nullable
   public CheckpointState getCheckpoint(@NotNull SModelReference originalModel, @NotNull Checkpoint checkpoint) {
     List<CheckpointState> checkpoints = myCheckpoints.get(originalModel);

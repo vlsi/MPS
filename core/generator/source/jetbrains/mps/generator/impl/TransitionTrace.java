@@ -28,6 +28,8 @@ import org.jetbrains.mps.openapi.util.TreeIterator;
  * Keeps traces for each node in the model during transformation phase, and once the phase is over, this trace is used to populate
  * label mappings information that will persist. Once mappings are ready, the trace is of no use and can be disposed (unless we decide
  * to use it as a replacement for {@link jetbrains.mps.textgen.trace.TracingUtil} and navigation from transient models back to original one.
+ * NOTE: perhaps, there should be single object that records the sequence of TransitionTrace of each CP-CP phase.
+ *       E.g. {@code ModelTraces} similar to ModelCheckpoints->CheckpointState relation.
  * FIXME inputNode may not necessarily come from the input model, it might be arbitrary non-transient (or even perhaps checkpoint?!) model,
  *       thus saving nodeId is not sufficient. OTOH, don't want to save SNodeReference as it's superficial in most regular cases
  * @author Artem Tikhomirov

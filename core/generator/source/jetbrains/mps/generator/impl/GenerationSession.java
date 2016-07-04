@@ -249,7 +249,6 @@ class GenerationSession {
             Checkpoint checkpointStep = (Checkpoint) planStep;
             SModel checkpointModel = mySessionContext.getCrossModelEnvironment().createBlankCheckpointModel(myOriginalInputModel.getReference(), checkpointStep);
             CheckpointStateBuilder cpBuilder = new CheckpointStateBuilder(currInputModel, checkpointModel, transitionTrace);
-            final CheckpointState cpState = cpBuilder.create(checkpointStep);
             // FIXME shall populate state with last generator's MappingLabels. Couldn't use last generator directly as it might be
             // the one from post-processing scripts. What if I add ML in post-processing script?
             //
@@ -258,11 +257,11 @@ class GenerationSession {
               GeneratorMappings stepLabels = myStepArguments.mappingLabels;
               stepLabels.export(cpBuilder);
 
+              new ModelImports(checkpointModel).addModelImport(myOriginalInputModel.getReference());
               SNode debugMappings = new DebugMappingsBuilder(mySessionContext.getRepository(), Collections.singletonMap(currInputModel, checkpointModel)).build(checkpointModel, stepLabels);
               checkpointModel.addRootNode(debugMappings);
-              new ModelImports(checkpointModel).addModelImport(myOriginalInputModel.getReference());
             }
-            mySessionContext.getCrossModelEnvironment().publishCheckpoint(myOriginalInputModel.getReference(), cpState);
+            mySessionContext.getCrossModelEnvironment().publishCheckpoint(myOriginalInputModel.getReference(), cpBuilder.create(checkpointStep));
             transitionTrace = new TransitionTrace(checkpointStep);
             transitionTrace.reset(currInputModel);
             myStepArguments = null;

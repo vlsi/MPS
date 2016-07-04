@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,21 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
+import jetbrains.mps.generator.impl.DebugMappingsBuilder;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * All checkpoint models known for (associated with) the given original model for a given generation plan.
+ * FIXME likely, we shall keep track of the plan here. Given checkpoints are matched by name, we need a plan to identify the right one.
  * @author Artem Tikhomirov
  * @since 3.3
  */
@@ -37,7 +41,7 @@ public class ModelCheckpoints {
     myStates = Arrays.asList(states);
   }
 
-  /*package*/ ModelCheckpoints(SModel[] models) {
+  /*package*/ ModelCheckpoints(SRepository repository, SModel[] models) {
     CheckpointState[] states = new CheckpointState[models.length];
     for (int i = 0; i < models.length; i++) {
       String stereotype = SModelStereotype.getStereotype(models[i]);
@@ -45,6 +49,10 @@ public class ModelCheckpoints {
       Checkpoint cp = new Checkpoint(stereotype.substring(3));
       MappingsMemento memento = new MappingsMemento();
       // FIXME read and fill memento with MappingLabels
+      //       now, just restore it from debug root we've got there. Later (once true persistence is done), shall consider
+      //       option to keep mappings inside a model (not to bother with persistence) or to follow MappingsMemento approach with
+      //       custom serialization code (and to solve the issue of associated model streams serialized/managed (i.e. deleted) along with a cp model)
+      new DebugMappingsBuilder(repository, Collections.emptyMap()).restore(DebugMappingsBuilder.findDebugNode(models[i]), memento);
       states[i] = new CheckpointState(memento, models[i], cp);
     }
     myStates = Arrays.asList(states);
