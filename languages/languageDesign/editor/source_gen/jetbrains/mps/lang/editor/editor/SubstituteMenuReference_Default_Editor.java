@@ -55,7 +55,7 @@ public class SubstituteMenuReference_Default_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static SNode _StyleParameter_QueryFunction_h77kbg_a0a0(EditorContext editorContext, SNode node) {
-    final SNode concept = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "conceptNew"));
+    final SNode concept = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "concept"));
     if ((concept == null)) {
       return null;
     }
@@ -67,7 +67,7 @@ public class SubstituteMenuReference_Default_Editor extends DefaultNodeEditor {
 
     return ListSequence.fromList(SModelOperations.roots(editorModel, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de9c932f4e5ab84L, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Default"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclarationNew")) == concept;
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration")) == concept;
       }
     });
   }
@@ -86,14 +86,14 @@ public class SubstituteMenuReference_Default_Editor extends DefaultNodeEditor {
   }
   private EditorCell createRefCell_h77kbg_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("conceptNew");
-    provider.setNoTargetText("<no conceptNew>");
+    provider.setRole("concept");
+    provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new SubstituteMenuReference_Default_Editor._Inline_h77kbg_a2a());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("conceptNew");
+      editorCell.setRole("concept");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

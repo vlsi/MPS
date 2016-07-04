@@ -932,7 +932,7 @@
       </scope>
       <scope id="1630016958697344100" at="32,0,63,0" />
       <unit id="1630016958697344100" at="43,19,58,9" name="jetbrains.mps.lang.editor.constraints.IMenu_Default_Constraints$2" />
-      <unit id="1630016958697344100" at="35,169,60,5" name="jetbrains.mps.lang.editor.constraints.IMenu_Default_Constraints$1" />
+      <unit id="1630016958697344100" at="35,166,60,5" name="jetbrains.mps.lang.editor.constraints.IMenu_Default_Constraints$1" />
       <unit id="1630016958697344100" at="27,0,65,0" name="jetbrains.mps.lang.editor.constraints.IMenu_Default_Constraints" />
     </file>
   </root>
@@ -979,7 +979,7 @@
       </scope>
       <scope id="1630016958697347701" at="32,0,63,0" />
       <unit id="1630016958697347701" at="43,19,58,9" name="jetbrains.mps.lang.editor.constraints.IMenu_Named_Constraints$2" />
-      <unit id="1630016958697347701" at="35,169,60,5" name="jetbrains.mps.lang.editor.constraints.IMenu_Named_Constraints$1" />
+      <unit id="1630016958697347701" at="35,166,60,5" name="jetbrains.mps.lang.editor.constraints.IMenu_Named_Constraints$1" />
       <unit id="1630016958697347701" at="27,0,65,0" name="jetbrains.mps.lang.editor.constraints.IMenu_Named_Constraints" />
     </file>
   </root>
@@ -1060,7 +1060,7 @@
       </scope>
       <scope id="1630016958698374830" at="29,0,57,0" />
       <unit id="1630016958698374830" at="40,19,52,9" name="jetbrains.mps.lang.editor.constraints.IMenuReference_Default_Constraints$2" />
-      <unit id="1630016958698374830" at="32,158,54,5" name="jetbrains.mps.lang.editor.constraints.IMenuReference_Default_Constraints$1" />
+      <unit id="1630016958698374830" at="32,155,54,5" name="jetbrains.mps.lang.editor.constraints.IMenuReference_Default_Constraints$1" />
       <unit id="1630016958698374830" at="24,0,59,0" name="jetbrains.mps.lang.editor.constraints.IMenuReference_Default_Constraints" />
     </file>
   </root>
@@ -1221,7 +1221,7 @@
       <node id="1638911550608572439" at="23,84,24,119" concept="6" />
       <node id="1638911550608572439" at="27,37,28,20" concept="7" />
       <node id="1638911550608572439" at="31,42,32,37" concept="6" />
-      <node id="3464370922898043202" at="32,37,33,362" concept="7" />
+      <node id="3464370922898043202" at="32,37,33,359" concept="7" />
       <node id="1638911550608572439" at="35,7,36,22" concept="7" />
       <node id="1638911550608572439" at="18,0,21,0" concept="1" trace="TransformationMenu_Default_Constraints#()V" />
       <node id="1638911550608572439" at="26,0,30,0" concept="5" trace="hasOwnGetter#()Z" />
@@ -1230,7 +1230,7 @@
       <node id="1638911550608572439" at="22,0,38,0" concept="5" trace="getSpecifiedProperties#()Ljava/util/Map;" />
       <scope id="1638911550608572439" at="18,51,19,170" />
       <scope id="1638911550608572439" at="27,37,28,20" />
-      <scope id="1638911550608572439" at="31,42,33,362">
+      <scope id="1638911550608572439" at="31,42,33,359">
         <var name="propertyName" id="1638911550608572439" />
       </scope>
       <scope id="1638911550608572439" at="18,0,21,0" />
@@ -1324,13 +1324,13 @@
       <node id="3431328178503223982" at="20,40,21,264" concept="6" />
       <node id="3431328178503223992" at="22,34,23,30" concept="7" />
       <node id="3431328178503223998" at="24,5,25,0" concept="9" />
-      <node id="3431328178503224010" at="28,45,29,398" concept="7" />
+      <node id="3431328178503224010" at="28,45,29,395" concept="7" />
       <node id="3431328178503223990" at="21,264,24,5" concept="4" />
       <node id="3431328178503224004" at="27,0,31,0" concept="5" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="3431328178503223999" at="25,0,31,6" concept="7" />
       <node id="3431328178503223940" at="16,0,33,0" concept="11" trace="getNamedMenus#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;ILorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/scope/Scope;" />
       <scope id="3431328178503223991" at="22,34,23,30" />
-      <scope id="3431328178503224009" at="28,45,29,398" />
+      <scope id="3431328178503224009" at="28,45,29,395" />
       <scope id="3431328178503224004" at="27,0,31,0">
         <var name="node" id="3431328178503224007" />
       </scope>
@@ -1909,7 +1909,7 @@
       <node id="7671875129588410968" at="23,84,24,119" concept="6" />
       <node id="7671875129588410968" at="27,37,28,20" concept="7" />
       <node id="7671875129588410968" at="31,42,32,37" concept="6" />
-      <node id="7671875129588410972" at="32,37,33,358" concept="7" />
+      <node id="7671875129588410972" at="32,37,33,355" concept="7" />
       <node id="7671875129588410968" at="35,7,36,22" concept="7" />
       <node id="7671875129588410968" at="18,0,21,0" concept="1" trace="SubstituteMenu_Default_Constraints#()V" />
       <node id="7671875129588410968" at="26,0,30,0" concept="5" trace="hasOwnGetter#()Z" />
@@ -1918,7 +1918,7 @@
       <node id="7671875129588410968" at="22,0,38,0" concept="5" trace="getSpecifiedProperties#()Ljava/util/Map;" />
       <scope id="7671875129588410968" at="18,47,19,166" />
       <scope id="7671875129588410968" at="27,37,28,20" />
-      <scope id="7671875129588410968" at="31,42,33,358">
+      <scope id="7671875129588410968" at="31,42,33,355">
         <var name="propertyName" id="7671875129588410968" />
       </scope>
       <scope id="7671875129588410968" at="18,0,21,0" />

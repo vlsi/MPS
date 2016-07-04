@@ -73,14 +73,14 @@ public class SubstituteMenu_Named_Editor extends DefaultNodeEditor {
   }
   private EditorCell createRefCell_wgg1gc_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("conceptDeclarationNew");
-    provider.setNoTargetText("<no conceptDeclarationNew>");
+    provider.setRole("conceptDeclaration");
+    provider.setNoTargetText("<no conceptDeclaration>");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new SubstituteMenu_Named_Editor._Inline_wgg1gc_a3a());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("conceptDeclarationNew");
+      editorCell.setRole("conceptDeclaration");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
