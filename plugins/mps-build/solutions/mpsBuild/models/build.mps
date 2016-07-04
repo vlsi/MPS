@@ -18431,6 +18431,9 @@
             </node>
           </node>
           <node concept="2HvfSZ" id="35zoHQHRZ44" role="39821P">
+            <node concept="3LWZYq" id="5b4JZ0Ul2Ss" role="2HvfZ1">
+              <property role="3LWZYl" value="**/*.history" />
+            </node>
             <node concept="55IIr" id="1CY6j2K5DAw" role="2HvfZ0">
               <node concept="2Ry0Ak" id="1CY6j2K5DAx" role="iGT6I">
                 <property role="2Ry0Am" value="samples" />

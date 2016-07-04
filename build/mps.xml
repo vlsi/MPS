@@ -164,7 +164,9 @@
       <fileset dir="${artifacts.mpsContextActionsTool}" />
     </copy>
     <zip destfile="${build.layout}/samples.zip">
-      <zipfileset dir="${basedir}/samples" prefix="MPSSamples" />
+      <zipfileset dir="${basedir}/samples" prefix="MPSSamples">
+        <exclude name="**/*.history" />
+      </zipfileset>
     </zip>
     <echo file="${build.layout}/build.number">build.number=${build.number}${line.separator}date=${date}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${mpsBootstrapCore.version}${line.separator}idea.platform.build.number=${idea.platform.build.number}</echo>
     <copy todir="${build.layout}">
