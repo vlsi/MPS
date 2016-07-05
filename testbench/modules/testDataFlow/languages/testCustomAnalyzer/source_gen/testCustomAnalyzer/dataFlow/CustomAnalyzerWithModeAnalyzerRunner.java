@@ -16,29 +16,27 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Map;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
 
-public class CounterAnalyzerWithConstructorAnalyzerRunner extends CustomAnalyzerRunner<Integer> {
+public class CustomAnalyzerWithModeAnalyzerRunner extends CustomAnalyzerRunner<Integer> {
   private SNode myNode;
-  public CounterAnalyzerWithConstructorAnalyzerRunner(SNode node, int initialCounter) {
-    this(node, new MPSProgramFactory(Collections.<String>emptyList()), initialCounter);
+  public CustomAnalyzerWithModeAnalyzerRunner(SNode node) {
+    this(node, new MPSProgramFactory(Collections.<String>emptyList()));
   }
-  public CounterAnalyzerWithConstructorAnalyzerRunner(SNode node, ProgramFactory<NamedAnalyzerId> factory, int initialCounter) {
+  public CustomAnalyzerWithModeAnalyzerRunner(SNode node, ProgramFactory<NamedAnalyzerId> factory) {
     super(null, null);
     myNode = node;
-    myAnalyzer = new CounterAnalyzerWithConstructorAnalyzerRunner.CounterAnalyzerWithConstructorAnalyzer(initialCounter);
+    myAnalyzer = new CustomAnalyzerWithModeAnalyzerRunner.CustomAnalyzerWithModeAnalyzer();
     myProgram = factory.createProgram(myNode);
-    factory.prepareProgram(myProgram, myNode, new NamedAnalyzerId("testCustomAnalyzer.dataFlow.CounterAnalyzerWithConstructor"));
+    factory.prepareProgram(myProgram, myNode, new NamedAnalyzerId("testCustomAnalyzer.dataFlow.CustomAnalyzerWithMode"));
   }
 
-  public static class CounterAnalyzerWithConstructorAnalyzer extends DataFlowAnalyzerBase<Integer> {
-    private int initialCounter;
-    public CounterAnalyzerWithConstructorAnalyzer(int initialCounter) {
-      this.initialCounter = initialCounter;
+  public static class CustomAnalyzerWithModeAnalyzer extends DataFlowAnalyzerBase<Integer> {
+    public CustomAnalyzerWithModeAnalyzer() {
     }
     public Integer initial(Program program) {
-      return this.initialCounter;
+      return 0;
     }
     public Integer merge(Program program, List<Integer> input) {
-      int maxCounter = this.initialCounter;
+      int maxCounter = 0;
       for (Integer counter : input) {
         if (counter > maxCounter) {
           maxCounter = counter;
@@ -59,7 +57,7 @@ public class CounterAnalyzerWithConstructorAnalyzerRunner extends CustomAnalyzer
      */
     @Deprecated
     public static String getId() {
-      return "testCustomAnalyzer.dataFlow.CounterAnalyzerWithConstructor";
+      return "testCustomAnalyzer.dataFlow.CustomAnalyzerWithMode";
     }
   }
 }

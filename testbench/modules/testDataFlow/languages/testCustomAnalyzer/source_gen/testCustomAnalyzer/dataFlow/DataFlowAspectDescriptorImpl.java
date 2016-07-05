@@ -21,6 +21,8 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
     switch (Arrays.binarySearch(stringSwitchCases_vhxjlb_a0a0a, analyzerId)) {
       case 0:
         return Collections.<DataFlowConstructor>singletonList(new ChildRule());
+      case 1:
+        return Collections.<DataFlowConstructor>singletonList(new ChildIntraModeRule());
       default:
     }
     return Collections.<DataFlowConstructor>emptyList();
@@ -35,6 +37,11 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new Child_IntraProcedural_BuilderMode_DataFlow());
+          }
+          break;
+        case 1:
           if (true) {
             return Collections.<IDataFlowBuilder>singletonList(new Root_DataFlow());
           }
@@ -53,6 +60,6 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_vhxjlb_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, "testCustomAnalyzer.structure.Root"));
-  private static String[] stringSwitchCases_vhxjlb_a0a0a = new String[]{"testCustomAnalyzer.dataFlow.CounterAnalyzerWithConstructor"};
+  private static final Map<SAbstractConcept, Integer> indices_vhxjlb_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed5L, "testCustomAnalyzer.structure.Child"), MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, "testCustomAnalyzer.structure.Root"));
+  private static String[] stringSwitchCases_vhxjlb_a0a0a = new String[]{"testCustomAnalyzer.dataFlow.CounterAnalyzerWithConstructor", "testCustomAnalyzer.dataFlow.CustomAnalyzerWithMode"};
 }
