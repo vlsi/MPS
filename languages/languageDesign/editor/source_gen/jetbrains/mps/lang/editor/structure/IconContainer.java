@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.IconResource;
 public class IconContainer {
   protected static IconResource RESOURCE_a0a0p = new IconResource("actionMap.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a0v = new IconResource("keyMap.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0lb = new IconResource("menuComponent.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0ce = new IconResource("editor.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0ef = new IconResource("editorComponent.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0oh = new IconResource("parametersInformation.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0mb = new IconResource("menuComponent.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0de = new IconResource("editor.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0ff = new IconResource("editorComponent.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0ph = new IconResource("parametersInformation.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a0yl = new IconResource("editorStylesheet.png", IconContainer.class);
 }

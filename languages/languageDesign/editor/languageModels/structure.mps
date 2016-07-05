@@ -16,7 +16,7 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
         <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
     </language>
@@ -2921,6 +2921,17 @@
       <ref role="AX2Wp" node="hGLCffS" resolve="_NextLine_Enum" />
     </node>
   </node>
+  <node concept="1TIwiD" id="hH7jTdE">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="CellLayout_Indent_Old" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="CellLayout" />
+    <property role="34LRSv" value="indent_old" />
+    <property role="EcuMT" value="1216672142186" />
+    <ref role="1TJDcQ" node="g6iR17a" resolve="CellLayout" />
+    <node concept="asaX9" id="6T2BklgjkBD" role="lGtFl" />
+  </node>
   <node concept="1TIwiD" id="hJvyZqV">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
@@ -4744,17 +4755,6 @@
       <ref role="PrY4T" node="1quYWAD18L7" resolve="IMenu_Default" />
     </node>
   </node>
-  <node concept="1TIwiD" id="5OVd5tVffW8">
-    <property role="3GE5qa" value="Menu.Transformation" />
-    <property role="TrG5h" value="TransformationMenuReference" />
-    <property role="R5$K7" value="true" />
-    <property role="R5$K2" value="false" />
-    <property role="EcuMT" value="6718020819487620872" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="1quYWAD4Twl" role="PzmwI">
-      <ref role="PrY4T" node="1quYWAD2$6N" resolve="IMenuReference" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="5OVd5tVffW9">
     <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenuReference_Named" />
@@ -4777,21 +4777,13 @@
   <node concept="1TIwiD" id="5OVd5tVffWc">
     <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenuReference_Default" />
-    <property role="34LRSv" value="default menu for &lt;{conceptNew}&gt;" />
+    <property role="34LRSv" value="default menu for &lt;{concept}&gt;" />
     <property role="EcuMT" value="6718020819487620876" />
     <node concept="PrWs8" id="1quYWAD52bF" role="PzmwI">
       <ref role="PrY4T" node="1quYWAD2$71" resolve="IMenuReference_Default" />
     </node>
     <node concept="PrWs8" id="3rSzFHWJPqy" role="PzmwI">
       <ref role="PrY4T" node="3rSzFHWJPbd" resolve="ITransformationMenuReference" />
-    </node>
-    <node concept="1TJgyj" id="5OVd5tVffWd" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="concept" />
-      <property role="20lbJX" value="0..1" />
-      <property role="IQ2ns" value="6718020819487620877" />
-      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-      <node concept="asaX9" id="PjG4KWT8$y" role="lGtFl" />
     </node>
   </node>
   <node concept="1TIwiD" id="FyOJSsBmJy">
@@ -4861,13 +4853,6 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="1quYWAD4B6X" role="PzmwI">
       <ref role="PrY4T" node="1quYWAD18Lj" resolve="IMenu_Concept" />
-    </node>
-    <node concept="1TJgyj" id="1oFY2ohVpGC" role="1TKVEi">
-      <property role="20kJfa" value="conceptDeclaration" />
-      <property role="20lbJX" value="0..1" />
-      <property role="IQ2ns" value="1597643335226202920" />
-      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-      <node concept="asaX9" id="44Sm9iC4vpa" role="lGtFl" />
     </node>
     <node concept="PrWs8" id="4Sf$XywKhwV" role="PzmwI">
       <ref role="PrY4T" node="4Sf$XywKhwM" resolve="ITransformationMenu" />
@@ -5022,13 +5007,6 @@
     <node concept="PrWs8" id="1quYWAD10ul" role="PzmwI">
       <ref role="PrY4T" node="1quYWAD02Of" resolve="IMenuPartParameterized" />
     </node>
-    <node concept="1TJgyj" id="3EZUZhmYcxv" role="1TKVEi">
-      <property role="IQ2ns" value="4233361609415247967" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="parameterType" />
-      <property role="20lbJX" value="0..1" />
-      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
-    </node>
     <node concept="1TJgyj" id="3EZUZhmYaOC" role="1TKVEi">
       <property role="IQ2ns" value="4233361609415241000" />
       <property role="20lmBu" value="aggregation" />
@@ -5142,13 +5120,6 @@
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="1TIwiD" id="3EZUZhn6cs4">
-    <property role="EcuMT" value="4233361609417344772" />
-    <property role="3GE5qa" value="TransformationMenu.Parameterized" />
-    <property role="TrG5h" value="QueryFunctionParameter_TransformationMenu_parameterObject" />
-    <property role="34LRSv" value="parameterObject" />
-    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-  </node>
   <node concept="PlHQZ" id="6kJcyCQj9CC">
     <property role="EcuMT" value="7291101478617127464" />
     <property role="3GE5qa" value="Menu.Transformation" />
@@ -5203,7 +5174,7 @@
     <property role="3GE5qa" value="Menu" />
     <property role="TrG5h" value="IMenu_Concept" />
     <node concept="1TJgyj" id="5HVj4Ph44AO" role="1TKVEi">
-      <property role="20kJfa" value="conceptDeclarationNew" />
+      <property role="20kJfa" value="conceptDeclaration" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="6591946374543067572" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
@@ -5533,7 +5504,7 @@
     <node concept="1TJgyj" id="1quYWAD02Og" role="1TKVEi">
       <property role="IQ2ns" value="1630016958697057552" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="parameterTypeNew" />
+      <property role="20kJfa" value="parameterType" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
     </node>
@@ -5555,7 +5526,7 @@
     <property role="TrG5h" value="IMenuReference_Default" />
     <node concept="1TJgyj" id="1quYWAD543u" role="1TKVEi">
       <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="conceptNew" />
+      <property role="20kJfa" value="concept" />
       <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="1630016958698373342" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />

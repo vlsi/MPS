@@ -47,10 +47,10 @@ public class TransformationMenuReference_Default_Editor extends DefaultNodeEdito
     return editorCell;
   }
   private static SNode _StyleParameter_QueryFunction_9zto5v_a0a0(EditorContext editorContext, SNode node) {
-    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "conceptNew")) == null)) {
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "concept")) == null)) {
       return null;
     }
-    return DefaultTransformationMenuUtil.findDefaultTransformationMenuForConcept(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "conceptNew")));
+    return DefaultTransformationMenuUtil.findDefaultTransformationMenuForConcept(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "concept")));
   }
   public static class ReplaceWith_ITransformationMenuReference_cellMenu_9zto5v_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_ITransformationMenuReference_cellMenu_9zto5v_a0a0() {
@@ -61,14 +61,14 @@ public class TransformationMenuReference_Default_Editor extends DefaultNodeEdito
   }
   private EditorCell createRefCell_9zto5v_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("conceptNew");
-    provider.setNoTargetText("<no conceptNew>");
+    provider.setRole("concept");
+    provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new TransformationMenuReference_Default_Editor._Inline_9zto5v_a1a());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("conceptNew");
+      editorCell.setRole("concept");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

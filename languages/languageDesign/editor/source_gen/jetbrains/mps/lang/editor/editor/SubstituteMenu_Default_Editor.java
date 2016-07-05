@@ -50,14 +50,14 @@ public class SubstituteMenu_Default_Editor extends DefaultNodeEditor {
   }
   private EditorCell createRefCell_5czziw_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("conceptDeclarationNew");
-    provider.setNoTargetText("<no conceptDeclarationNew>");
+    provider.setRole("conceptDeclaration");
+    provider.setNoTargetText("<no conceptDeclaration>");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new SubstituteMenu_Default_Editor._Inline_5czziw_a1a());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("conceptDeclarationNew");
+      editorCell.setRole("conceptDeclaration");
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);

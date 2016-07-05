@@ -26,7 +26,7 @@ public class MenuScopes {
     return new FilteringScope(allNamedMenus) {
       @Override
       public boolean isExcluded(SNode node) {
-        return !(allowedConcepts.contains(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c46L, "jetbrains.mps.lang.editor.structure.IMenu_Named")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclarationNew"))));
+        return !(allowedConcepts.contains(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c46L, "jetbrains.mps.lang.editor.structure.IMenu_Named")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration"))));
       }
     };
   }
