@@ -359,8 +359,8 @@
               <ref role="3TsBF5" to="9cnx:7ez5JvPicsX" resolve="maxChildCount" />
             </node>
           </node>
-          <node concept="3cmrfG" id="2$3McZ0WK7Y" role="3uHU7w">
-            <property role="3cmrfH" value="5" />
+          <node concept="3cmrfG" id="4x2kRKrRixa" role="3uHU7w">
+            <property role="3cmrfH" value="10" />
           </node>
         </node>
         <node concept="9aQIb" id="2$3McZ0WKIq" role="9aQIa">

@@ -27,7 +27,7 @@ public class check_ParentCounter_NonTypesystemRule extends AbstractNonTypesystem
   }
   public void applyRule(final SNode root, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     CustomAnalyzerRunner<Integer> runner;
-    if (SPropertyOperations.getInteger(root, MetaAdapterFactory.getProperty(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, 0x73a316f7f548c73dL, "maxChildCount")) < 5) {
+    if (SPropertyOperations.getInteger(root, MetaAdapterFactory.getProperty(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, 0x73a316f7f548c73dL, "maxChildCount")) < 10) {
       runner = new CustomAnalyzerWithModeAnalyzerRunner(root);
     } else {
       runner = new CustomAnalyzerWithModeAnalyzerRunner(root, new MPSProgramFactory(Collections.<String>singletonList("jetbrains.mps.dataFlow.IntraProcedural")));
