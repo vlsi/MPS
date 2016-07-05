@@ -156,9 +156,14 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   }
 
   public void setFolderFor(@NotNull SModule module, String newFolder) {
+    // TODO: remove duplication of ModulePath in ProjectBase.myModuleToPathMap to avoid handling both lists
     ModulePath modulePath = getPath(module);
     if (modulePath != null) {
+      if(myProjectDescriptor.contains(modulePath)) {
+        myProjectDescriptor.removeModulePath(modulePath);
+      }
       modulePath.setVirtualFolder(newFolder);
+      myProjectDescriptor.addModulePath(modulePath);
     } else {
       LOG.warn("Could not set virtual folder for the module " + module + ", module could not be found");
     }
