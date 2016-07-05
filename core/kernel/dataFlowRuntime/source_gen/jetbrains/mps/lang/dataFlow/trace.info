@@ -20,37 +20,33 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root nodeRef="2af156ab-65c1-4a62-bd0d-ea734f71eab6/r:a1d8bbbf-d4f0-431f-8dcd-a6badc777315(jetbrains.mps.dataFlow.runtime/jetbrains.mps.lang.dataFlow)/3364696741417541264">
     <file name="MPSProgramFactory.java">
-      <node id="3364696741417541469" at="15,0,16,0" concept="4" trace="myModes" />
-      <node id="3364696741417541508" at="16,54,17,20" concept="3" />
-      <node id="3364696741417671762" at="22,51,23,23" concept="9" />
-      <node id="3364696741417438147" at="28,87,29,77" concept="3" />
-      <node id="3364696741417674870" at="32,43,33,19" concept="9" />
-      <node id="3364696741417541490" at="16,0,19,0" concept="2" trace="MPSProgramFactory#(Ljava/util/Collection;)V" />
-      <node id="3364696741417592334" at="22,0,25,0" concept="7" trace="getBuilderModes#()Ljava/util/Collection;" />
-      <node id="3364696741417674865" at="32,0,35,0" concept="7" trace="getModes#()Ljava/util/Collection;" />
-      <node id="3364696741417543905" at="27,0,31,0" concept="7" trace="prepareProgram#(Ljetbrains/mps/lang/dataFlow/framework/Program;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/dataFlow/framework/NamedAnalyzerId;)V" />
-      <node id="3364696741417507211" at="20,44,25,26" concept="9" />
-      <node id="3364696741417543896" at="19,0,27,0" concept="7" trace="createProgram#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/dataFlow/framework/Program;" />
-      <scope id="3364696741417541494" at="16,54,17,20" />
-      <scope id="3364696741417592339" at="22,51,23,23" />
-      <scope id="3364696741417543914" at="28,87,29,77" />
-      <scope id="3364696741417674869" at="32,43,33,19" />
-      <scope id="3364696741417541490" at="16,0,19,0">
+      <node id="3364696741417541469" at="17,0,18,0" concept="4" trace="myModes" />
+      <node id="5034669639904522441" at="18,0,19,0" concept="4" trace="myContext" />
+      <node id="5034669639904521581" at="19,54,20,58" concept="3" />
+      <node id="3364696741417507211" at="23,44,24,95" concept="9" />
+      <node id="3364696741417438147" at="27,87,28,115" concept="3" />
+      <node id="3364696741417674870" at="31,43,32,19" concept="9" />
+      <node id="3364696741417541490" at="19,0,22,0" concept="2" trace="MPSProgramFactory#(Ljava/util/Collection;)V" />
+      <node id="3364696741417674865" at="31,0,34,0" concept="7" trace="getModes#()Ljava/util/Collection;" />
+      <node id="3364696741417543896" at="22,0,26,0" concept="7" trace="createProgram#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/dataFlow/framework/Program;" />
+      <node id="3364696741417543905" at="26,0,30,0" concept="7" trace="prepareProgram#(Ljetbrains/mps/lang/dataFlow/framework/Program;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/dataFlow/framework/NamedAnalyzerId;)V" />
+      <scope id="3364696741417541494" at="19,54,20,58" />
+      <scope id="3364696741417543903" at="23,44,24,95" />
+      <scope id="3364696741417543914" at="27,87,28,115" />
+      <scope id="3364696741417674869" at="31,43,32,19" />
+      <scope id="3364696741417541490" at="19,0,22,0">
         <var name="modes" id="3364696741417541507" />
       </scope>
-      <scope id="3364696741417592334" at="22,0,25,0" />
-      <scope id="3364696741417674865" at="32,0,35,0" />
-      <scope id="3364696741417543905" at="27,0,31,0">
+      <scope id="3364696741417674865" at="31,0,34,0" />
+      <scope id="3364696741417543896" at="22,0,26,0">
+        <var name="node" id="3364696741417622013" />
+      </scope>
+      <scope id="3364696741417543905" at="26,0,30,0">
         <var name="analyzerId" id="3364696741418408100" />
         <var name="node" id="3364696741418391711" />
         <var name="program" id="3364696741417543911" />
       </scope>
-      <scope id="3364696741417543903" at="20,44,25,26" />
-      <scope id="3364696741417543896" at="19,0,27,0">
-        <var name="node" id="3364696741417622013" />
-      </scope>
-      <unit id="3364696741417592332" at="21,69,25,5" name="jetbrains.mps.lang.dataFlow.MPSProgramFactory$1" />
-      <unit id="3364696741417541264" at="14,0,36,0" name="jetbrains.mps.lang.dataFlow.MPSProgramFactory" />
+      <unit id="3364696741417541264" at="16,0,35,0" name="jetbrains.mps.lang.dataFlow.MPSProgramFactory" />
     </file>
   </root>
   <root nodeRef="2af156ab-65c1-4a62-bd0d-ea734f71eab6/r:a1d8bbbf-d4f0-431f-8dcd-a6badc777315(jetbrains.mps.dataFlow.runtime/jetbrains.mps.lang.dataFlow)/3364696741417651614">

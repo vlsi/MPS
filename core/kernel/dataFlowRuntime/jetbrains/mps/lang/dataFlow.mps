@@ -2960,18 +2960,33 @@
         <node concept="17QB3L" id="2ULNtK17lvS" role="11_B2D" />
       </node>
     </node>
+    <node concept="312cEg" id="4nuJlNnWZ39" role="jymVt">
+      <property role="TrG5h" value="myContext" />
+      <node concept="3Tm6S6" id="4nuJlNnWZ37" role="1B3o_S" />
+      <node concept="3uibUv" id="4nuJlNnWZ38" role="1tU5fm">
+        <ref role="3uigEE" to="1fjm:~ProgramBuilderContext" resolve="ProgramBuilderContext" />
+      </node>
+    </node>
     <node concept="3Tm1VV" id="2ULNtK16PUh" role="1B3o_S" />
     <node concept="3clFbW" id="2ULNtK16PXM" role="jymVt">
       <node concept="3cqZAl" id="2ULNtK16PXN" role="3clF45" />
       <node concept="3Tm1VV" id="2ULNtK16PXO" role="1B3o_S" />
       <node concept="3clFbS" id="2ULNtK16PXQ" role="3clF47">
-        <node concept="3clFbF" id="2ULNtK16PY4" role="3cqZAp">
-          <node concept="37vLTI" id="2ULNtK16PY6" role="3clFbG">
-            <node concept="37vLTw" id="2ULNtK16PYa" role="37vLTJ">
-              <ref role="3cqZAo" node="2ULNtK16PXt" resolve="myModes" />
+        <node concept="3clFbF" id="4nuJlNnWYPH" role="3cqZAp">
+          <node concept="37vLTI" id="4nuJlNnWYPJ" role="3clFbG">
+            <node concept="2ShNRf" id="4nuJlNnWYww" role="37vLTx">
+              <node concept="1pGfFk" id="4nuJlNnX6Mq" role="2ShVmc">
+                <ref role="37wK5l" to="1fjm:~ProgramBuilderContextImpl.&lt;init&gt;(java.util.Collection)" resolve="ProgramBuilderContextImpl" />
+                <node concept="37vLTw" id="4nuJlNnX6Up" role="37wK5m">
+                  <ref role="3cqZAo" node="2ULNtK16PY3" resolve="modes" />
+                </node>
+              </node>
             </node>
-            <node concept="37vLTw" id="2ULNtK16PYb" role="37vLTx">
-              <ref role="3cqZAo" node="2ULNtK16PY3" resolve="modes" />
+            <node concept="2OqwBi" id="4nuJlNnWZ3m" role="37vLTJ">
+              <node concept="Xjq3P" id="4nuJlNnWZ3n" role="2Oq$k0" />
+              <node concept="2OwXpG" id="4nuJlNnWZ3o" role="2OqNvi">
+                <ref role="2Oxat5" node="4nuJlNnWZ39" resolve="myContext" />
+              </node>
             </node>
           </node>
         </node>
@@ -3015,35 +3030,8 @@
                     <ref role="37wK5l" to="dau9:~InstructionBuilder.&lt;init&gt;()" resolve="InstructionBuilder" />
                   </node>
                 </node>
-                <node concept="2ShNRf" id="2ULNtK171Ss" role="37wK5m">
-                  <node concept="YeOm9" id="2ULNtK172o9" role="2ShVmc">
-                    <node concept="1Y3b0j" id="2ULNtK172oc" role="YeSDq">
-                      <property role="2bfB8j" value="true" />
-                      <ref role="1Y3XeK" to="1fjm:~ProgramBuilderContext" resolve="ProgramBuilderContext" />
-                      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                      <node concept="3Tm1VV" id="2ULNtK172od" role="1B3o_S" />
-                      <node concept="3clFb_" id="2ULNtK172oe" role="jymVt">
-                        <property role="1EzhhJ" value="false" />
-                        <property role="TrG5h" value="getBuilderModes" />
-                        <property role="DiZV1" value="false" />
-                        <property role="od$2w" value="false" />
-                        <node concept="3Tm1VV" id="2ULNtK172of" role="1B3o_S" />
-                        <node concept="3uibUv" id="2ULNtK172oh" role="3clF45">
-                          <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
-                          <node concept="3uibUv" id="2ULNtK172oi" role="11_B2D">
-                            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                          </node>
-                        </node>
-                        <node concept="3clFbS" id="2ULNtK172oj" role="3clF47">
-                          <node concept="3clFbF" id="2ULNtK17lLi" role="3cqZAp">
-                            <node concept="37vLTw" id="2ULNtK17lLh" role="3clFbG">
-                              <ref role="3cqZAo" node="2ULNtK16PXt" resolve="myModes" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
+                <node concept="37vLTw" id="4nuJlNnWZF1" role="37wK5m">
+                  <ref role="3cqZAo" node="4nuJlNnWZ39" resolve="myContext" />
                 </node>
               </node>
             </node>
@@ -3088,7 +3076,7 @@
           <node concept="2OqwBi" id="2ULNtK16sJ4" role="3clFbG">
             <node concept="2ShNRf" id="2ULNtK16sJ5" role="2Oq$k0">
               <node concept="1pGfFk" id="2ULNtK16sJ6" role="2ShVmc">
-                <ref role="37wK5l" to="1fjm:~AnalyzerRules.&lt;init&gt;(java.lang.String,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.lang.dataFlow.framework.Program)" resolve="AnalyzerRules" />
+                <ref role="37wK5l" to="1fjm:~AnalyzerRules.&lt;init&gt;(java.lang.String,java.util.Collection,jetbrains.mps.lang.dataFlow.framework.Program,jetbrains.mps.lang.dataFlow.framework.ProgramBuilderContext)" resolve="AnalyzerRules" />
                 <node concept="2OqwBi" id="2ULNtK1aa7t" role="37wK5m">
                   <node concept="37vLTw" id="2ULNtK1aa1U" role="2Oq$k0">
                     <ref role="3cqZAo" node="2ULNtK1a9y$" resolve="analyzerId" />
@@ -3097,11 +3085,18 @@
                     <ref role="37wK5l" to="1fjm:~NamedAnalyzerId.getAnalyzerFqName():java.lang.String" resolve="getAnalyzerFqName" />
                   </node>
                 </node>
-                <node concept="37vLTw" id="2ULNtK1a8kk" role="37wK5m">
-                  <ref role="3cqZAo" node="2ULNtK1a5yv" resolve="node" />
+                <node concept="2YIFZM" id="4nuJlNnX0r8" role="37wK5m">
+                  <ref role="37wK5l" to="33ny:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
+                  <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+                  <node concept="37vLTw" id="4nuJlNnX0wj" role="37wK5m">
+                    <ref role="3cqZAo" node="2ULNtK1a5yv" resolve="node" />
+                  </node>
                 </node>
                 <node concept="37vLTw" id="2ULNtK174g1" role="37wK5m">
                   <ref role="3cqZAo" node="2ULNtK16QzB" resolve="program" />
+                </node>
+                <node concept="37vLTw" id="4nuJlNnWZYL" role="37wK5m">
+                  <ref role="3cqZAo" node="4nuJlNnWZ39" resolve="myContext" />
                 </node>
               </node>
             </node>

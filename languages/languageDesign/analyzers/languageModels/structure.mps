@@ -278,6 +278,13 @@
       <property role="IQ2ns" value="3325264799421290838" />
       <ref role="20lvS9" node="2S_HFuhBtro" resolve="ApplicableCondition" />
     </node>
+    <node concept="1TJgyj" id="6UdHCtZO4VV" role="1TKVEi">
+      <property role="IQ2ns" value="7966224008969473787" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="modes" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" to="tp41:6UdHCtZMvVk" resolve="IBuilderMode" />
+    </node>
     <node concept="PrWs8" id="2S_HFuhBowU" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>

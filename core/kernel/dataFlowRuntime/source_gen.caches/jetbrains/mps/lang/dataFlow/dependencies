@@ -104,11 +104,13 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.MPSProgramBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.AnalyzerRules" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.NamedAnalyzerId" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.ProgramBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.ProgramBuilderContextImpl" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.InstructionBuilder" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.ProgramFactory" />
