@@ -54,7 +54,14 @@ class CheckpointStateBuilder {
     if (origin == null) {
       return;
     }
+    /*
+    FIXME it's possible for outputNode to belong to another model than the transient one supplied at construction:
+          e.g. when there's post-processing step right before the CP. In this case, most labels would point to a model
+          that was input for the post-processing step (most, but not all as it's possible to register MLs through genContext.register from scripts)
+          Hence this assertion prevented us from employing GPs in some scenarios. However, I don't feel it's completely useless, perhaps,
+          we shall fix it another way round, with MLs updated to point to right transient model.
     assert myOutputModel.equals(outputNode.getModel().getReference());
+    */
     // FIXME here we assume checkpoint model is cloned with nodeId of outputNode kept.
     myMemento.addOutputNodeByInputNodeAndMappingName(origin, mappingLabel, outputNode);
   }
@@ -64,9 +71,12 @@ class CheckpointStateBuilder {
     if (origin == null) {
       return;
     }
+    /*
+    FIXME see record() above
     for (SNode o : outputNodes) {
       assert myOutputModel.equals(o.getModel().getReference());
     }
+    */
     // FIXME here we assume checkpoint model is cloned with nodeId of outputNode kept.
     myMemento.addOutputNodeByInputNodeAndMappingName(origin, mappingLabel, outputNodes);
   }
