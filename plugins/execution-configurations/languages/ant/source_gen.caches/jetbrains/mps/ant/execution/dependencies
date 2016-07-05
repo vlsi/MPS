@@ -43,6 +43,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ClasspathReader" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.Java_Command" />
     <classNode dependClassName="jetbrains.mps.execution.api.commands.CommandPart" />
     <classNode dependClassName="jetbrains.mps.execution.api.commands.KeyValueCommandPart" />
