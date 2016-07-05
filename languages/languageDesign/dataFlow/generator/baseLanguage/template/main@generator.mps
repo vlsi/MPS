@@ -11,6 +11,7 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
+    <use id="96ee7a94-411d-4cf8-9b94-96cad7e52411" name="jetbrains.mps.baseLanguage.jdk7" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -2870,15 +2871,7 @@
                                           <node concept="1iwH7S" id="4dNj9j_7bu3" role="2Oq$k0" />
                                           <node concept="1iwH70" id="4dNj9j_7bu4" role="2OqNvi">
                                             <ref role="1iwH77" node="4dNj9j_6GP7" resolve="dataFlowBuilderClass" />
-                                            <node concept="2OqwBi" id="4dNj9j_7bu5" role="1iwH7V">
-                                              <node concept="2OqwBi" id="4dNj9j_7bu6" role="2Oq$k0">
-                                                <node concept="1iwH7S" id="4dNj9j_7bu7" role="2Oq$k0" />
-                                                <node concept="1bhEwm" id="4dNj9j_7bu8" role="2OqNvi">
-                                                  <ref role="1bhEwk" node="4dNj9j_6zP$" resolve="dataFlowBuilders" />
-                                                </node>
-                                              </node>
-                                              <node concept="1uHKPH" id="4dNj9j_7bu9" role="2OqNvi" />
-                                            </node>
+                                            <node concept="30H73N" id="2$3McZ0VE44" role="1iwH7V" />
                                           </node>
                                         </node>
                                       </node>
@@ -2886,16 +2879,16 @@
                                   </node>
                                 </node>
                               </node>
-                            </node>
-                          </node>
-                          <node concept="1WS0z7" id="4dNj9j_7guw" role="lGtFl">
-                            <node concept="3JmXsc" id="4dNj9j_7guy" role="3Jn$fo">
-                              <node concept="3clFbS" id="4dNj9j_7gu$" role="2VODD2">
-                                <node concept="3clFbF" id="4dNj9j_7gxK" role="3cqZAp">
-                                  <node concept="2OqwBi" id="4dNj9j_7gzi" role="3clFbG">
-                                    <node concept="1iwH7S" id="4dNj9j_7gxJ" role="2Oq$k0" />
-                                    <node concept="1bhEwm" id="4dNj9j_7g$$" role="2OqNvi">
-                                      <ref role="1bhEwk" node="4dNj9j_6zP$" resolve="dataFlowBuilders" />
+                              <node concept="1WS0z7" id="2$3McZ0Vh20" role="lGtFl">
+                                <node concept="3JmXsc" id="2$3McZ0Vh22" role="3Jn$fo">
+                                  <node concept="3clFbS" id="2$3McZ0Vh24" role="2VODD2">
+                                    <node concept="3clFbF" id="2$3McZ0Vhwl" role="3cqZAp">
+                                      <node concept="2OqwBi" id="2$3McZ0VhGe" role="3clFbG">
+                                        <node concept="1iwH7S" id="2$3McZ0Vhwk" role="2Oq$k0" />
+                                        <node concept="1bhEwm" id="2$3McZ0VhYc" role="2OqNvi">
+                                          <ref role="1bhEwk" node="4dNj9j_6zP$" resolve="dataFlowBuilders" />
+                                        </node>
+                                      </node>
                                     </node>
                                   </node>
                                 </node>
@@ -3254,7 +3247,7 @@
     <property role="TrG5h" value="template_BuilderModeString" />
     <node concept="3aamgX" id="CNwfGHrlgl" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="tp41:6UdHCtZMvVl" resolve="IntraMode" />
+      <ref role="30HIoZ" to="tp41:6UdHCtZMvVl" resolve="IntraProcedural_BuilderMode" />
       <node concept="gft3U" id="CNwfGHrni8" role="1lVwrX">
         <node concept="10M0yZ" id="CNwfGHrniq" role="gfFT$">
           <ref role="1PxDUh" to="aplb:2ULNtK17gQu" resolve="DataFlowBuilderModes" />

@@ -132,10 +132,10 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4c4b92003e49a704L, 0x4c4b92003e49a705L, "baseVariableDeclaration")), "constructorParamField");
   }
   public static Object referenceMacro_GetReferent_5034669639900862567(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "constructorParam");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "constructorParamFirst");
   }
   public static Object referenceMacro_GetReferent_4214393001397149956(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "constructorParam");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "constructorParamSecond");
   }
   public static Object referenceMacro_GetReferent_8656002014371081884(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "param");

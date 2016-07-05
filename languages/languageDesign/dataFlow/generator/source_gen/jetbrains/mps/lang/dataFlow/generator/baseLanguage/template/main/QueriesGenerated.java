@@ -91,7 +91,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:dataFlowBuilders"))).first(), "dataFlowBuilderClass");
   }
   public static Object referenceMacro_GetReferent_4860312625245632383(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:dataFlowBuilders"))).first(), "dataFlowBuilderClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "dataFlowBuilderClass");
   }
   public static Object referenceMacro_GetReferent_4860312625245430330(final ReferenceMacroContext _context) {
     return _context.getNode();
@@ -213,7 +213,7 @@ public class QueriesGenerated {
       }
     }, true);
   }
-  public static Iterable<SNode> sourceNodesQuery_4860312625245652898(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2955426575105724546(final SourceSubstituteMacroNodesContext _context) {
     return ((Iterable<SNode>) _context.getVariable("var:dataFlowBuilders"));
   }
   public static Iterable<SNode> sourceNodesQuery_4860312625245371214(final SourceSubstituteMacroNodesContext _context) {
