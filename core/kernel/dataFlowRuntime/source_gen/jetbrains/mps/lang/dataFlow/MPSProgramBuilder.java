@@ -10,9 +10,7 @@ import jetbrains.mps.lang.dataFlow.framework.ProgramBuilderContext;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.stream.Stream;
 import jetbrains.mps.lang.dataFlow.framework.IDataFlowBuilder;
-import java.util.function.Consumer;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.EndTryInstruction;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -20,6 +18,7 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptorBase;
 import java.util.Collection;
+import java.util.Optional;
 import java.util.function.Predicate;
 
 public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
@@ -71,21 +70,20 @@ public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
     if (node == null) {
       return;
     }
-    final SNode snode = node;
+    SNode snode = node;
     for (SAbstractConcept concept : SConceptOperations.getAllSuperConcepts(SNodeOperations.getConcept(snode), true)) {
-      Stream<IDataFlowBuilder> dataFlowBuilders = getDataFlowBuilders(concept);
-
-      // todo to remove after 3.4 
-      if (dataFlowBuilders == null && this.myDataFlowManager != null) {
-        DataFlowBuilder oldBuilder = this.myDataFlowManager.getBuilderFor(concept.getQualifiedName());
-        check_ju8hcj_a1a3a2a31(oldBuilder, snode, this);
-      } else if (dataFlowBuilders != null) {
-        dataFlowBuilders.forEach(new Consumer<IDataFlowBuilder>() {
-          public void accept(IDataFlowBuilder builder) {
-            builder.build(createContext(snode));
-          }
-        });
+      IDataFlowBuilder dataFlowBuilder = getDataFlowBuilder(concept);
+      if (dataFlowBuilder != null) {
+        dataFlowBuilder.build(createContext(snode));
         break;
+      }
+      // todo to remove after 3.4 
+      if (myDataFlowManager != null) {
+        DataFlowBuilder oldBuilder = this.myDataFlowManager.getBuilderFor(concept.getQualifiedName());
+        if (oldBuilder != null) {
+          oldBuilder.build(createContext(snode));
+          break;
+        }
       }
     }
   }
@@ -106,14 +104,14 @@ public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
     }
   }
 
-  private Stream<IDataFlowBuilder> getDataFlowBuilders(SAbstractConcept concept) {
+  private IDataFlowBuilder getDataFlowBuilder(SAbstractConcept concept) {
     LanguageRegistry instance = (myRepository != null ? LanguageRegistry.getInstance(myRepository) : LanguageRegistry.getInstance());
     LanguageRuntime language = instance.getLanguage(concept.getLanguage());
     if (language != null) {
       DataFlowAspectDescriptor aspect = language.getAspect(DataFlowAspectDescriptor.class);
       if (aspect instanceof DataFlowAspectDescriptorBase) {
         Collection<IDataFlowBuilder> dataFlowBuilders = ((DataFlowAspectDescriptorBase) aspect).getDataFlowBuilders(concept);
-        return dataFlowBuilders.stream().filter(new Predicate<IDataFlowBuilder>() {
+        Optional<IDataFlowBuilder> first = dataFlowBuilders.stream().filter(new Predicate<IDataFlowBuilder>() {
           public boolean test(IDataFlowBuilder builder) {
             return builder.getModes().isEmpty() || builder.getModes().stream().anyMatch(new Predicate<String>() {
               public boolean test(String mode) {
@@ -121,15 +119,10 @@ public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
               }
             });
           }
-        });
+        }).findFirst();
+        return (first.isPresent() ? first.get() : null);
       }
     }
     return null;
-  }
-  private static void check_ju8hcj_a1a3a2a31(DataFlowBuilder checkedDotOperand, SNode snode, MPSProgramBuilder checkedDotThisExpression) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.build(checkedDotThisExpression.createContext(snode));
-    }
-
   }
 }

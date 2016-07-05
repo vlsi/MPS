@@ -77,9 +77,8 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.function.Consumer" />
+    <classNode dependClassName="java.util.Optional" />
     <classNode dependClassName="java.util.function.Predicate" />
-    <classNode dependClassName="java.util.stream.Stream" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
