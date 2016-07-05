@@ -366,6 +366,7 @@
   <dependency className="jetbrains.mps.lang.resources.behavior.Text__BehaviorDescriptor" file="Text__BehaviorDescriptor.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Font" />
+    <classNode dependClassName="java.awt.font.TextLayout" />
     <classNode dependClassName="java.awt.geom.Rectangle2D" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

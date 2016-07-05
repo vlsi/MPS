@@ -20,8 +20,16 @@
         <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
+      <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
+        <reference id="1083171729157" name="memberDataType" index="M4eZT" />
+        <child id="1083172003582" name="member" index="M5hS2" />
+      </concept>
       <concept id="1082978499127" name="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" flags="ng" index="Az7Fb">
         <property id="1083066089218" name="constraint" index="FLfZY" />
+      </concept>
+      <concept id="1083171877298" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ig" index="M4N5e">
+        <property id="1083923523172" name="externalValue" index="1uS6qo" />
+        <property id="1083923523171" name="internalValue" index="1uS6qv" />
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
@@ -229,7 +237,7 @@
     <node concept="1TJgyi" id="2p1v3tObyz1" role="1TKVEl">
       <property role="IQ2nx" value="2756621024541681857" />
       <property role="TrG5h" value="r" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+      <ref role="AX2Wp" node="1ng4Vf3UMua" resolve="Size" />
     </node>
   </node>
   <node concept="1TIwiD" id="2p1v3tObwTx">
@@ -239,8 +247,8 @@
     <ref role="1TJDcQ" node="2p1v3tObyyL" resolve="Primitive" />
     <node concept="1TJgyi" id="2p1v3tObwTy" role="1TKVEl">
       <property role="IQ2nx" value="2756621024541675106" />
-      <property role="TrG5h" value="size" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+      <property role="TrG5h" value="r" />
+      <ref role="AX2Wp" node="1ng4Vf3UMua" resolve="Size" />
     </node>
   </node>
   <node concept="PlHQZ" id="2p1v3tObwT_">
@@ -266,7 +274,7 @@
       <property role="IQ2ns" value="1860120738943552531" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="borderColor" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="1BguvjG4kJu" resolve="Color" />
     </node>
     <node concept="PrWs8" id="2p1v3tObyyR" role="PzmwI">
@@ -332,6 +340,23 @@
     <property role="3GE5qa" value="icons.descriptors.text" />
     <property role="TrG5h" value="ColorString" />
     <property role="FLfZY" value="[0-9a-zA-Z]{6}" />
+  </node>
+  <node concept="AxPO7" id="1ng4Vf3UMua">
+    <property role="3GE5qa" value="icons.descriptors.text" />
+    <property role="TrG5h" value="Size" />
+    <ref role="M4eZT" to="tpck:fKAQMTA" resolve="integer" />
+    <node concept="M4N5e" id="1ng4Vf3UMub" role="M5hS2">
+      <property role="1uS6qo" value="big" />
+      <property role="1uS6qv" value="8" />
+    </node>
+    <node concept="M4N5e" id="1ng4Vf3UMuc" role="M5hS2">
+      <property role="1uS6qv" value="6" />
+      <property role="1uS6qo" value="med" />
+    </node>
+    <node concept="M4N5e" id="1ng4Vf3UMuf" role="M5hS2">
+      <property role="1uS6qv" value="4" />
+      <property role="1uS6qo" value="small" />
+    </node>
   </node>
 </model>
 
