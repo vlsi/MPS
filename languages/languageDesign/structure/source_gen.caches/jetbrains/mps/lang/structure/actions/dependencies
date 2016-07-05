@@ -78,5 +78,33 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.structure.actions.StructureIds_PastePostProcessor_0" file="StructureIds_PastePostProcessor_0.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.util.ConceptIdSetter" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.datatransfer.PastePostProcessor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.structure.actions.StructureIds_PastePostProcessor_1" file="StructureIds_PastePostProcessor_1.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.util.ConceptIdSetter" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.datatransfer.PastePostProcessor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.structure.actions.StructureIds_PastePostProcessor_2" file="StructureIds_PastePostProcessor_2.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.util.ConceptIdSetter" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.datatransfer.PastePostProcessor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.structure.actions.StructureIds_PastePostProcessor_3" file="StructureIds_PastePostProcessor_3.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.util.ConceptIdSetter" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.datatransfer.PastePostProcessor" />
+  </dependency>
 </dependenciesRoot>
 
