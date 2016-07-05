@@ -782,7 +782,10 @@
         <node concept="3clFbJ" id="57eXx5f9Cdt" role="3cqZAp">
           <node concept="3clFbS" id="57eXx5f9Cdu" role="3clFbx">
             <node concept="3cpWs6" id="57eXx5f9Cdv" role="3cqZAp">
-              <node concept="10Nm6u" id="57eXx5f9Cdw" role="3cqZAk" />
+              <node concept="10M0yZ" id="6Aso_l_7TbE" role="3cqZAk">
+                <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
+                <ref role="3cqZAo" to="xnls:~IdeIcons.DEFAULT_CONCEPT_ICON" resolve="DEFAULT_CONCEPT_ICON" />
+              </node>
             </node>
           </node>
           <node concept="3clFbC" id="57eXx5f9Cdx" role="3clFbw">
@@ -792,13 +795,39 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="57eXx5f9Cd$" role="3cqZAp" />
-        <node concept="3cpWs6" id="57eXx5f9Cd_" role="3cqZAp">
-          <node concept="1rXfSq" id="57eXx5f9CdA" role="3cqZAk">
-            <ref role="37wK5l" node="Z6TQiSQgL4" resolve="getIconForResource" />
-            <node concept="37vLTw" id="57eXx5f9CdB" role="37wK5m">
-              <ref role="3cqZAo" node="57eXx5f9Cdo" resolve="actual" />
+        <node concept="3cpWs8" id="6Aso_l_7Xq_" role="3cqZAp">
+          <node concept="3cpWsn" id="6Aso_l_7XqA" role="3cpWs9">
+            <property role="TrG5h" value="icon" />
+            <node concept="3uibUv" id="6Aso_l_7Xqs" role="1tU5fm">
+              <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
             </node>
+            <node concept="1rXfSq" id="6Aso_l_7XqB" role="33vP2m">
+              <ref role="37wK5l" node="Z6TQiSQgL4" resolve="getIconForResource" />
+              <node concept="37vLTw" id="6Aso_l_7XqC" role="37wK5m">
+                <ref role="3cqZAo" node="57eXx5f9Cdo" resolve="actual" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="6Aso_l_7WOA" role="3cqZAp">
+          <node concept="3clFbS" id="6Aso_l_7WOB" role="3clFbx">
+            <node concept="3cpWs6" id="6Aso_l_7WOC" role="3cqZAp">
+              <node concept="10M0yZ" id="6Aso_l_7WOD" role="3cqZAk">
+                <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
+                <ref role="3cqZAo" to="xnls:~IdeIcons.DEFAULT_CONCEPT_ICON" resolve="DEFAULT_CONCEPT_ICON" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="6Aso_l_7WOE" role="3clFbw">
+            <node concept="10Nm6u" id="6Aso_l_7WOF" role="3uHU7w" />
+            <node concept="37vLTw" id="6Aso_l_7XOy" role="3uHU7B">
+              <ref role="3cqZAo" node="6Aso_l_7XqA" resolve="icon" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="57eXx5f9Cd_" role="3cqZAp">
+          <node concept="37vLTw" id="6Aso_l_7XTq" role="3cqZAk">
+            <ref role="3cqZAo" node="6Aso_l_7XqA" resolve="icon" />
           </node>
         </node>
       </node>
