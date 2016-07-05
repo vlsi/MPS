@@ -8,9 +8,11 @@
     <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.editor.EditorAspectDescriptorImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.intentions.IntentionsDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.typesystem.TypesystemDescriptor" />

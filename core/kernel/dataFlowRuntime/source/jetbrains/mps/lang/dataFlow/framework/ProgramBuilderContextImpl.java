@@ -15,14 +15,22 @@
  */
 package jetbrains.mps.lang.dataFlow.framework;
 
-import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 
 /**
  * @author simon
  */
-public interface IDataFlowBuilder {
-  void build(DataFlowBuilderContext _context);
-  Collection<String> getModes();
+public class ProgramBuilderContextImpl implements ProgramBuilderContext{
+  private Collection<String> myBuilderModes;
+
+  public ProgramBuilderContextImpl(@NotNull Collection<String> builderModes) {
+    myBuilderModes = builderModes;
+  }
+
+  @Override
+  public Collection<String> getBuilderModes() {
+    return myBuilderModes;
+  }
 }

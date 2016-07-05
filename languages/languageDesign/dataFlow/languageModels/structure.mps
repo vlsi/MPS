@@ -27,6 +27,7 @@
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
@@ -68,6 +69,13 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1206442812839" />
       <ref role="20lvS9" node="hz__wXh" resolve="BuilderBlock" />
+    </node>
+    <node concept="1TJgyj" id="6UdHCtZO4VV" role="1TKVEi">
+      <property role="IQ2ns" value="7966224008969473787" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="modes" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="6UdHCtZMvVk" resolve="IBuilderMode" />
     </node>
     <node concept="1TJgyj" id="hz_znqw" role="1TKVEi">
       <property role="20kJfa" value="conceptDeclaration" />
@@ -470,6 +478,21 @@
     <property role="34LRSv" value="isJump" />
     <property role="EcuMT" value="8754905177066994421" />
     <ref role="1TJDcQ" node="6e$$c8H2kPz" resolve="BooleanInstructionOperation" />
+  </node>
+  <node concept="PlHQZ" id="6UdHCtZMvVk">
+    <property role="EcuMT" value="7966224008969060052" />
+    <property role="TrG5h" value="IBuilderMode" />
+    <property role="3GE5qa" value="Modes" />
+  </node>
+  <node concept="1TIwiD" id="6UdHCtZMvVl">
+    <property role="EcuMT" value="7966224008969060053" />
+    <property role="3GE5qa" value="Modes" />
+    <property role="TrG5h" value="IntraProcedural_BuilderMode" />
+    <property role="34LRSv" value="intra-procedural" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="3nqUySdhDTf" role="PzmwI">
+      <ref role="PrY4T" node="6UdHCtZMvVk" resolve="IBuilderMode" />
+    </node>
   </node>
 </model>
 

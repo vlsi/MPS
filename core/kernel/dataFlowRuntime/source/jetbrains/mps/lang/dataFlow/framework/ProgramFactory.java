@@ -15,14 +15,12 @@
  */
 package jetbrains.mps.lang.dataFlow.framework;
 
-import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
-
-import java.util.Collection;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * @author simon
  */
-public interface IDataFlowBuilder {
-  void build(DataFlowBuilderContext _context);
-  Collection<String> getModes();
+public interface ProgramFactory<AnalyzerIdT extends AnalyzerId> {
+  Program createProgram(SNode node);
+  void prepareProgram(Program program, SNode node, AnalyzerIdT analyzerIdT);
 }

@@ -15,14 +15,8 @@
  */
 package jetbrains.mps.lang.dataFlow.framework;
 
-import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
-
-import java.util.Collection;
-
 /**
  * @author simon
  */
-public interface IDataFlowBuilder {
-  void build(DataFlowBuilderContext _context);
-  Collection<String> getModes();
+public interface AnalyzerId {
 }

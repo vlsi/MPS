@@ -32,6 +32,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_EmitTryFinallyStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EmitWriteStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GetCodeForExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IBuilderMode = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InsertAfter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InsertBefore = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InsertPosition = new ConceptPresentationBuilder().create();
@@ -40,6 +41,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_InstructionIsNop = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InstructionIsRet = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InstructionType = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IntraProcedural_BuilderMode = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LabelPosition = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Position = new ConceptPresentationBuilder().create();
@@ -50,7 +52,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     {
       SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0hb.get(cncpt);
+      Integer preIndex = indices_lpa09p_a0jb.get(cncpt);
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
@@ -155,60 +157,70 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           break;
         case 20:
           if (true) {
-            return props_InsertAfter;
+            return props_IBuilderMode;
           }
           break;
         case 21:
           if (true) {
-            return props_InsertBefore;
+            return props_InsertAfter;
           }
           break;
         case 22:
           if (true) {
-            return props_InsertPosition;
+            return props_InsertBefore;
           }
           break;
         case 23:
           if (true) {
-            return props_InstructionGetSourceOperation;
+            return props_InsertPosition;
           }
           break;
         case 24:
           if (true) {
-            return props_InstructionIsJump;
+            return props_InstructionGetSourceOperation;
           }
           break;
         case 25:
           if (true) {
-            return props_InstructionIsNop;
+            return props_InstructionIsJump;
           }
           break;
         case 26:
           if (true) {
-            return props_InstructionIsRet;
+            return props_InstructionIsNop;
           }
           break;
         case 27:
           if (true) {
-            return props_InstructionType;
+            return props_InstructionIsRet;
           }
           break;
         case 28:
           if (true) {
-            return props_LabelPosition;
+            return props_InstructionType;
           }
           break;
         case 29:
           if (true) {
-            return props_NodeParameter;
+            return props_IntraProcedural_BuilderMode;
           }
           break;
         case 30:
           if (true) {
-            return props_Position;
+            return props_LabelPosition;
           }
           break;
         case 31:
+          if (true) {
+            return props_NodeParameter;
+          }
+          break;
+        case 32:
+          if (true) {
+            return props_Position;
+          }
+          break;
+        case 33:
           if (true) {
             return props_RelativePosition;
           }
@@ -226,5 +238,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0hb = buildConceptIndices(MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5bb091aL, "jetbrains.mps.lang.dataFlow.structure.AfterPosition"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5bc8a99L, "jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5b40208L, "jetbrains.mps.lang.dataFlow.structure.BaseEmitVariableStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x194dbbd57c9dbb65L, "jetbrains.mps.lang.dataFlow.structure.BaseInstructionOperation"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5bad3a1L, "jetbrains.mps.lang.dataFlow.structure.BeforePosition"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x63a490c22d094d63L, "jetbrains.mps.lang.dataFlow.structure.BooleanInstructionOperation"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5960f51L, "jetbrains.mps.lang.dataFlow.structure.BuilderBlock"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e643e7efL, "jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5be47c5L, "jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5be8165L, "jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x1190a87adadL, "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118eb0b6674L, "jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a554f4L, "jetbrains.mps.lang.dataFlow.structure.EmitNopStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a7d02aL, "jetbrains.mps.lang.dataFlow.structure.EmitReadStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e6ca4377L, "jetbrains.mps.lang.dataFlow.structure.EmitRetStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a42658L, "jetbrains.mps.lang.dataFlow.structure.EmitStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x119043714f5L, "jetbrains.mps.lang.dataFlow.structure.EmitTryFinallyStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5afd8deL, "jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x2912c3e08c4f3324L, "jetbrains.mps.lang.dataFlow.structure.GetCodeForExpression"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x75c73261efe5e662L, "jetbrains.mps.lang.dataFlow.structure.InsertAfter"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x75c73261efe5e664L, "jetbrains.mps.lang.dataFlow.structure.InsertBefore"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x75c73261efe5e666L, "jetbrains.mps.lang.dataFlow.structure.InsertPosition"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x194dbbd57c9dbb64L, "jetbrains.mps.lang.dataFlow.structure.InstructionGetSourceOperation"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x797fabdf814e7af5L, "jetbrains.mps.lang.dataFlow.structure.InstructionIsJump"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x63a490c22d094d5cL, "jetbrains.mps.lang.dataFlow.structure.InstructionIsNop"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x63a490c22d094d5dL, "jetbrains.mps.lang.dataFlow.structure.InstructionIsRet"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x44f5e79f9e613080L, "jetbrains.mps.lang.dataFlow.structure.InstructionType"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x1190a8b1526L, "jetbrains.mps.lang.dataFlow.structure.LabelPosition"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e597667fL, "jetbrains.mps.lang.dataFlow.structure.NodeParameter"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5b7dfc0L, "jetbrains.mps.lang.dataFlow.structure.Position"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5b86667L, "jetbrains.mps.lang.dataFlow.structure.RelativePosition"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0jb = buildConceptIndices(MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5bb091aL, "jetbrains.mps.lang.dataFlow.structure.AfterPosition"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5bc8a99L, "jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5b40208L, "jetbrains.mps.lang.dataFlow.structure.BaseEmitVariableStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x194dbbd57c9dbb65L, "jetbrains.mps.lang.dataFlow.structure.BaseInstructionOperation"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5bad3a1L, "jetbrains.mps.lang.dataFlow.structure.BeforePosition"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x63a490c22d094d63L, "jetbrains.mps.lang.dataFlow.structure.BooleanInstructionOperation"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5960f51L, "jetbrains.mps.lang.dataFlow.structure.BuilderBlock"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e643e7efL, "jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5be47c5L, "jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5be8165L, "jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x1190a87adadL, "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118eb0b6674L, "jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a554f4L, "jetbrains.mps.lang.dataFlow.structure.EmitNopStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a7d02aL, "jetbrains.mps.lang.dataFlow.structure.EmitReadStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e6ca4377L, "jetbrains.mps.lang.dataFlow.structure.EmitRetStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a42658L, "jetbrains.mps.lang.dataFlow.structure.EmitStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x119043714f5L, "jetbrains.mps.lang.dataFlow.structure.EmitTryFinallyStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5afd8deL, "jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x2912c3e08c4f3324L, "jetbrains.mps.lang.dataFlow.structure.GetCodeForExpression"), MetaAdapterFactory.getInterfaceConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x6e8db6877fc9fed4L, "jetbrains.mps.lang.dataFlow.structure.IBuilderMode"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x75c73261efe5e662L, "jetbrains.mps.lang.dataFlow.structure.InsertAfter"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x75c73261efe5e664L, "jetbrains.mps.lang.dataFlow.structure.InsertBefore"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x75c73261efe5e666L, "jetbrains.mps.lang.dataFlow.structure.InsertPosition"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x194dbbd57c9dbb64L, "jetbrains.mps.lang.dataFlow.structure.InstructionGetSourceOperation"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x797fabdf814e7af5L, "jetbrains.mps.lang.dataFlow.structure.InstructionIsJump"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x63a490c22d094d5cL, "jetbrains.mps.lang.dataFlow.structure.InstructionIsNop"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x63a490c22d094d5dL, "jetbrains.mps.lang.dataFlow.structure.InstructionIsRet"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x44f5e79f9e613080L, "jetbrains.mps.lang.dataFlow.structure.InstructionType"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x6e8db6877fc9fed5L, "jetbrains.mps.lang.dataFlow.structure.IntraProcedural_BuilderMode"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x1190a8b1526L, "jetbrains.mps.lang.dataFlow.structure.LabelPosition"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e597667fL, "jetbrains.mps.lang.dataFlow.structure.NodeParameter"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5b7dfc0L, "jetbrains.mps.lang.dataFlow.structure.Position"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5b86667L, "jetbrains.mps.lang.dataFlow.structure.RelativePosition"));
 }

@@ -10,7 +10,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="IntentionsDescriptor.java">
-      <unit at="16,0,69,0" name="jetbrains.mps.lang.dataFlow.intentions.IntentionsDescriptor" />
+      <unit at="16,0,77,0" name="jetbrains.mps.lang.dataFlow.intentions.IntentionsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959037b(jetbrains.mps.lang.dataFlow.intentions)/1206534526647">
@@ -151,6 +151,73 @@
       </scope>
       <unit id="1206534589230" at="51,0,70,0" name="jetbrains.mps.lang.dataFlow.intentions.AddMayBeUnreachable_Intention$IntentionImplementation" />
       <unit id="1206534589230" at="22,0,71,0" name="jetbrains.mps.lang.dataFlow.intentions.AddMayBeUnreachable_Intention" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959037b(jetbrains.mps.lang.dataFlow.intentions)/3880671512445174886">
+    <file name="AddModeToDataFlowBuilder_Intention.java">
+      <node id="3880671512445174886" at="22,0,23,0" concept="2" trace="myCachedExecutable" />
+      <node id="3880671512445174886" at="23,47,24,319" concept="7" />
+      <node id="3880671512445174886" at="27,35,28,38" concept="6" />
+      <node id="3880671512445174886" at="32,53,33,19" concept="6" />
+      <node id="3880671512445174886" at="34,5,35,16" concept="6" />
+      <node id="3880671512445179301" at="37,91,38,205" concept="6" />
+      <node id="3880671512445174886" at="41,35,42,17" concept="6" />
+      <node id="3880671512445174886" at="45,37,46,140" concept="1" />
+      <node id="3880671512445174886" at="47,5,48,30" concept="6" />
+      <node id="3880671512445175646" at="54,87,55,24" concept="6" />
+      <node id="3880671512445197251" at="58,78,59,359" concept="1" />
+      <node id="3880671512445174886" at="62,48,63,53" concept="6" />
+      <node id="3880671512445174886" at="51,0,53,0" concept="0" trace="IntentionImplementation#()V" />
+      <node id="3880671512445174886" at="23,0,26,0" concept="0" trace="AddModeToDataFlowBuilder_Intention#()V" />
+      <node id="3880671512445174886" at="31,84,34,5" concept="3" />
+      <node id="3880671512445174886" at="37,0,40,0" concept="4" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="3880671512445174886" at="44,99,47,5" concept="3" />
+      <node id="3880671512445174886" at="26,0,30,0" concept="4" trace="getPresentation#()Ljava/lang/String;" />
+      <node id="3880671512445174886" at="40,0,44,0" concept="4" trace="isSurroundWith#()Z" />
+      <node id="3880671512445174886" at="53,0,57,0" concept="4" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+      <node id="3880671512445174886" at="57,0,61,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="3880671512445174886" at="61,0,65,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="3880671512445174886" at="44,0,50,0" concept="4" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+      <node id="3880671512445174886" at="30,0,37,0" concept="4" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <scope id="3880671512445174886" at="51,38,51,38" />
+      <scope id="3880671512445174886" at="23,47,24,319" />
+      <scope id="3880671512445174886" at="27,35,28,38" />
+      <scope id="3880671512445174886" at="32,53,33,19" />
+      <scope id="3880671512445178852" at="37,91,38,205" />
+      <scope id="3880671512445174886" at="41,35,42,17" />
+      <scope id="3880671512445174886" at="45,37,46,140" />
+      <scope id="3880671512445174888" at="54,87,55,24" />
+      <scope id="3880671512445174890" at="58,78,59,359" />
+      <scope id="3880671512445174886" at="62,48,63,53" />
+      <scope id="3880671512445174886" at="51,0,53,0" />
+      <scope id="3880671512445174886" at="23,0,26,0" />
+      <scope id="3880671512445174886" at="37,0,40,0">
+        <var name="editorContext" id="3880671512445174886" />
+        <var name="node" id="3880671512445174886" />
+      </scope>
+      <scope id="3880671512445174886" at="26,0,30,0" />
+      <scope id="3880671512445174886" at="31,84,35,16" />
+      <scope id="3880671512445174886" at="40,0,44,0" />
+      <scope id="3880671512445174886" at="44,99,48,30" />
+      <scope id="3880671512445174886" at="53,0,57,0">
+        <var name="editorContext" id="3880671512445174886" />
+        <var name="node" id="3880671512445174886" />
+      </scope>
+      <scope id="3880671512445174886" at="57,0,61,0">
+        <var name="editorContext" id="3880671512445174886" />
+        <var name="node" id="3880671512445174886" />
+      </scope>
+      <scope id="3880671512445174886" at="61,0,65,0" />
+      <scope id="3880671512445174886" at="44,0,50,0">
+        <var name="context" id="3880671512445174886" />
+        <var name="node" id="3880671512445174886" />
+      </scope>
+      <scope id="3880671512445174886" at="30,0,37,0">
+        <var name="editorContext" id="3880671512445174886" />
+        <var name="node" id="3880671512445174886" />
+      </scope>
+      <unit id="3880671512445174886" at="50,0,66,0" name="jetbrains.mps.lang.dataFlow.intentions.AddModeToDataFlowBuilder_Intention$IntentionImplementation" />
+      <unit id="3880671512445174886" at="21,0,67,0" name="jetbrains.mps.lang.dataFlow.intentions.AddModeToDataFlowBuilder_Intention" />
     </file>
   </root>
 </debug-info>
