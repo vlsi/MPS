@@ -67,6 +67,7 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
   //-----------------------
 
   private static final Logger LOG = LogManager.getLogger(RealClassPathItem.class);
+
   private boolean myValid = true;
   private boolean myErrorShown = false;
 
@@ -74,10 +75,10 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
     myValid = false;
   }
 
-  protected void checkValidity() {
-//    if (myValid) return;
-//    if (myErrorShown) return;
-//    myErrorShown = true;
-//    LOG.error("Using outdated classpath: " + this, new Throwable());
+  void checkValidity() {
+    if (!myValid || !myErrorShown) {
+      LOG.error("Using outdated classpath: " + this);
+      myErrorShown = true;
+    }
   }
 }

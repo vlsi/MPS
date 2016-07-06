@@ -81,6 +81,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/smodel/smodel.iml" filepath="$PROJECT_DIR$/core/smodel/smodel.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/squery-runtime/smodelquery-runtime.iml" filepath="$PROJECT_DIR$/core/squery-runtime/smodelquery-runtime.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/startup/startup.iml" filepath="$PROJECT_DIR$/startup/startup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/startup/startup-util/startup-util.iml" filepath="$PROJECT_DIR$/startup/startup-util/startup-util.iml" />
       <module fileurl="file://$PROJECT_DIR$/testbench/testbench.iml" filepath="$PROJECT_DIR$/testbench/testbench.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/textgen/textgen.iml" filepath="$PROJECT_DIR$/core/textgen/textgen.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/tools/tools/tools.iml" filepath="$PROJECT_DIR$/tools/tools/tools.iml" />
@@ -88,7 +89,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/typesystemEngine/typesystemEngine.iml" filepath="$PROJECT_DIR$/core/typesystemEngine/typesystemEngine.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/editor/typesystemIntegration/typesystemIntegration.iml" filepath="$PROJECT_DIR$/editor/typesystemIntegration/typesystemIntegration.iml" group="editor" />
       <module fileurl="file://$PROJECT_DIR$/workbench/typesystemUi/typesystemUi.iml" filepath="$PROJECT_DIR$/workbench/typesystemUi/typesystemUi.iml" group="workbench" />
-      <module fileurl="file://$PROJECT_DIR$/util-core/util-core.iml" filepath="$PROJECT_DIR$/util-core/util-core.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/core/util/util-core.iml" filepath="$PROJECT_DIR$/core/util/util-core.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/plugins/vcs/vcs.iml" filepath="$PROJECT_DIR$/plugins/vcs/vcs.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/plugins/vcs-core/vcs-core.iml" filepath="$PROJECT_DIR$/plugins/vcs-core/vcs-core.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/core/vfs/vfs.iml" filepath="$PROJECT_DIR$/core/vfs/vfs.iml" group="core" />

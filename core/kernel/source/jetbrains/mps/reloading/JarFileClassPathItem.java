@@ -23,6 +23,7 @@ import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.impl.IoFileSystem;
+import jetbrains.mps.vfs.openapi.FileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -54,16 +55,16 @@ public class JarFileClassPathItem extends RealClassPathItem {
   private String myPrefix;
   private File myFile;
 
-  private MyCache myCache = new MyCache();
-  private String myPath;
+  private final MyCache myCache = new MyCache();
+  private final String myPath;
 
-  protected JarFileClassPathItem(String path) {
+  JarFileClassPathItem(FileSystem fileSystem, String path) {
     myPath = path;
     if (path.endsWith("!/")) {
       path = path.substring(0, path.length() - 2);
     }
     try {
-      myFile = transformFile(new IoFileSystem().getFile(path));
+      myFile = transformFile(fileSystem.getFile(path));
       myPrefix = "jar:" + myFile.toURI().toURL() + "!/";
     } catch (IOException e) {
       LOG.error("invalid class path: " + path, e);
@@ -286,7 +287,6 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
   }
 
-  // FIXME rewrite without IFile, write class path item tests about jars in jars
   private static File transformFile(IFile f) throws IOException {
     if (!f.isInArchive()) {
       return new File(f.getPath());

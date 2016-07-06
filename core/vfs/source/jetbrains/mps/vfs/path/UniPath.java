@@ -69,17 +69,18 @@ public class UniPath extends AbstractPath {
   }
 
   /**
-   * the path is pathToArchive + ARCHIVE_SEPARATOR + pathsInArchive[0] + ARCHIVE_SEPARATOR + pathsInArchive[1] + ...
+   * the path is pathToFile + ARCHIVE_SEPARATOR + pathsInArchive[0] + ARCHIVE_SEPARATOR + pathsInArchive[1] + ...
+   * if it is archive or just pathToFile in the case it is not
    */
-  public static UniPath fromArchivePaths(CommonPath pathToArchive, @Nullable CommonPath... pathsInArchive) {
-    return new UniPath(pathToArchive, pathsInArchive);
+  public static UniPath fromParts(CommonPath pathToFile, @Nullable CommonPath... pathsInArchive) {
+    return new UniPath(pathToFile, pathsInArchive);
   }
 
-  private static UniPath fromArchivePaths(CommonPath pathToArchive, @Nullable List<CommonPath> pathsInArchive) {
+  private static UniPath fromParts(CommonPath pathToFile, @Nullable List<CommonPath> pathsInArchive) {
     if (pathsInArchive == null) {
-      return new UniPath(pathToArchive, null);
+      return new UniPath(pathToFile, null);
     }
-    return UniPath.fromArchivePaths(pathToArchive, pathsInArchive.toArray(new CommonPath[pathsInArchive.size()]));
+    return UniPath.fromParts(pathToFile, pathsInArchive.toArray(new CommonPath[pathsInArchive.size()]));
   }
 
   public boolean isJar() {
@@ -141,14 +142,19 @@ public class UniPath extends AbstractPath {
 
   @NotNull
   @Override
-  public Path toNormal() {
-    return null;
+  public UniPath toNormal() {
+    return UniPath.fromParts(myPath.toNormal(),
+        myArchivePaths.stream().map(CommonPath::toNormal).collect(Collectors.toList()));
   }
 
   @NotNull
   @Override
-  public Path toCanonical() throws IOException {
-    return null;
+  public UniPath toCanonical() throws IOException {
+    List<CommonPath> newArchivePaths = new ArrayList<>();
+    for (CommonPath path : myArchivePaths) {
+      newArchivePaths.add(path.toCanonical());
+    }
+    return UniPath.fromParts(myPath.toCanonical(), newArchivePaths);
   }
 
   @NotNull
@@ -169,7 +175,7 @@ public class UniPath extends AbstractPath {
     }
     List<CommonPath> newArchivePaths = new ArrayList<>(myArchivePaths.size());
     newArchivePaths.addAll(myArchivePaths.stream().map(converter).collect(Collectors.toList()));
-    return UniPath.fromArchivePaths(converter.apply(myPath), newArchivePaths);
+    return UniPath.fromParts(converter.apply(myPath), newArchivePaths);
 
   }
 
@@ -194,27 +200,15 @@ public class UniPath extends AbstractPath {
     List<CommonPath> newArchivePaths = myArchivePaths.subList(0, lastIndex);
     if (lastParent != null) {
       newArchivePaths.add(lastParent);
-      return UniPath.fromArchivePaths(myPath, newArchivePaths);
+      return UniPath.fromParts(myPath, newArchivePaths);
     } else {
-      return UniPath.fromArchivePaths(myPath, newArchivePaths);
+      return UniPath.fromParts(myPath, newArchivePaths);
     }
-  }
-
-  @Override
-  public int getNameCount() {
-    int res = myPath.getNameCount();
-    for (Path path : myArchivePaths) {
-      res += path.getNameCount();
-    }
-    return res;
   }
 
   @NotNull
   @Override
-  public String getName(int index) {
-    if (index < 0 || index >= getNameCount()) {
-      throw new IllegalArgumentException("Index is out of bounds: " + index);
-    }
+  public List<String> getNames() {
     if (index < myPath.getNameCount()) {
       return myPath.getName(index);
     }
@@ -241,7 +235,7 @@ public class UniPath extends AbstractPath {
   @NotNull
   @Override
   public UniPath copy() {
-    return UniPath.fromArchivePaths(myPath, myArchivePaths);
+    return UniPath.fromParts(myPath, myArchivePaths);
   }
 
 //  public Path toRealPath(LinkOption... options) throws IOException {

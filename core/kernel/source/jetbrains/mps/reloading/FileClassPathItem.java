@@ -40,12 +40,12 @@ import java.util.Set;
 /**
  * @author Kostik
  */
-public class FileClassPathItem extends RealClassPathItem {
-  private String myClassPath;
-  private Map<String, Set<String>> mySubpackagesCache = new THashMap<String, Set<String>>();
-  private Map<String, Set<String>> myAvailableClassesCache = new THashMap<String, Set<String>>();
+class FileClassPathItem extends RealClassPathItem {
+  private final String myClassPath;
+  private final Map<String, Set<String>> mySubpackagesCache = new THashMap<String, Set<String>>();
+  private final Map<String, Set<String>> myAvailableClassesCache = new THashMap<String, Set<String>>();
 
-  protected FileClassPathItem(String classPath) {
+  FileClassPathItem(String classPath) {
     myClassPath = classPath;
   }
 

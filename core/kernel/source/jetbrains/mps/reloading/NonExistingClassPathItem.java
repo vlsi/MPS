@@ -23,10 +23,10 @@ import java.util.List;
 /**
  * @author Kostik
  */
-public class NonExistingClassPathItem extends RealClassPathItem {
+class NonExistingClassPathItem extends RealClassPathItem {
   private String myClassPath;
 
-  protected NonExistingClassPathItem(String classPath) {
+  NonExistingClassPathItem(String classPath) {
     myClassPath = classPath;
   }
 

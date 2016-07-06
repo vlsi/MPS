@@ -20,7 +20,7 @@ import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.make.CompilationErrorsHandler.ClassesErrorsTracker;
 import jetbrains.mps.make.ModuleAnalyzer.ModuleAnalyzerResult;
 import jetbrains.mps.project.facets.JavaModuleOperations;
-import jetbrains.mps.reloading.ClassPathFactory;
+import jetbrains.mps.reloading.ClassPathCachingFacility;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
@@ -140,7 +140,7 @@ class InternalJavaCompiler {
 
   // FIXME!!!
   private void invalidateCompiledClasses(Set<SModule> changedModules) {
-    ClassPathFactory cpFactory = ClassPathFactory.getInstance();
+    ClassPathCachingFacility cpFactory = ClassPathCachingFacility.getInstance();
     myTracer.push(UPDATING_CLASSPATH_MSG);
     for (SModule module : changedModules) {
       IFile classesGen = getJavaFacet(module).getClassesGen();

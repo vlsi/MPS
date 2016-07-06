@@ -16,6 +16,7 @@
 package jetbrains.mps.vfs.path;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Common base class
@@ -87,4 +88,12 @@ abstract class AbstractPath implements Path {
     return true;
   }
 
+  @Override
+  @Nullable
+  public final String getFileName() {
+    if (getNameCount() == 0) {
+      return null;
+    }
+    return getName(getNameCount() - 1);
+  }
 }
