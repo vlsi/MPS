@@ -29,9 +29,11 @@ import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -199,6 +201,21 @@ public abstract class MetaAdapterFactory {
     } else {
       return getConcept(descriptor.getId(), descriptor.getConceptFqName());
     }
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.4)
+  /**
+   * For internal use only.
+   * This method is used in deprecated methods that accept SConceptId parameter, but were replaced with methods
+   * that accept SAbstractConcept.
+   * See MPS-24098. It was caused by such a deprecated method doing MAF.getConcept() with an id of interface concept.
+   * In this case, ConstraintsRegistry was filled with a SConcept, which was a "fake instance" of interface concept and was
+   * "implementing" this interface, but when getting constraints for this interface, this "SConcept" constraints were obtained,
+   * which caused a stack overflow at last.
+   */
+  public static SAbstractConcept getConceptById(SConceptId id){
+    return MetaAdapterFactory.getAbstractConcept(ConceptRegistry.getInstance().getConceptDescriptor(id));
   }
 
   @Immutable

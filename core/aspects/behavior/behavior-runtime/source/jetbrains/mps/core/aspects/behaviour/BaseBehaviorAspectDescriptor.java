@@ -31,15 +31,13 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
  * Appeared only in 3.3, previously generated behavior aspect descriptors do not extend this class
  */
 public abstract class BaseBehaviorAspectDescriptor implements BehaviorAspectDescriptor {
-  private final static String DEFAULT_CONCEPT_NAME = "<random concept name from BaseBehaviorAspectDescriptor; method should not have been used>";
-
   /**
    * @deprecated use {@link #getDescriptor(SAbstractConcept)} instead
    */
   @Nullable
   @ToRemove(version = 3.4)
   public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    return getDescriptor(MetaAdapterFactory.getConcept(conceptId, DEFAULT_CONCEPT_NAME));
+    return getDescriptor(MetaAdapterFactory.getConceptById(conceptId));
   }
 
   /**

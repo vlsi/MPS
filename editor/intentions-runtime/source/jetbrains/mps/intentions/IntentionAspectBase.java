@@ -41,7 +41,7 @@ public abstract class IntentionAspectBase implements IntentionAspectDescriptor {
   @Override
   @ToRemove(version = 3.4)
   public Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId) {
-    return getIntentions(MetaAdapterFactory.getConcept(conceptId, "<random concept name from IntentionAspectBase; method should not have been used>"));
+    return getIntentions(MetaAdapterFactory.getConceptById(conceptId));
   }
 
   @Nullable

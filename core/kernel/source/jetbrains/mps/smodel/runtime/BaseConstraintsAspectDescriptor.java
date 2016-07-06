@@ -27,7 +27,7 @@ public abstract class BaseConstraintsAspectDescriptor implements ConstraintsAspe
   @Override
   @ToRemove(version = 3.4)
   public ConstraintsDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    return getConstraints(MetaAdapterFactory.getConcept(conceptId, "<random concept name from IntentionAspectBase; method should not have been used>"));
+    return getConstraints(MetaAdapterFactory.getConceptById(conceptId));
   }
 
   @Nullable
