@@ -19,11 +19,15 @@ import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.workbench.choose.ChooseByNameData;
+import jetbrains.mps.workbench.choose.LanguagesPresentation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -70,6 +74,19 @@ public class CommonChoosers {
     ModuleSetData data = new ModuleSetData(mpsProject, modules, null);
     ChooserDialog<SModuleReference> dialog = new ChooserDialog<SModuleReference>(ProjectHelper.toIdeaProject(mpsProject), data, false, true);
     dialog.setTitle(title == null ? "Choose module" : title);
+    dialog.show();
+    return dialog.getResult();
+  }
+
+  /**
+   * Ask user to pick few languages from supplied collection.
+   * @return empty list if dialog was canceled or no language was selected.
+   */
+  public static List<SLanguage> showLanguageSetChooser(jetbrains.mps.project.Project mpsProject, String title, Collection<SLanguage> languages) {
+    ChooseByNameData<SLanguage> data = new ChooseByNameData<>(new LanguagesPresentation());
+    data.derivePrompts("language").setCheckBoxName(null).setScope(languages, null);
+    ChooserDialog<SLanguage> dialog = new ChooserDialog<SLanguage>(ProjectHelper.toIdeaProject(mpsProject), data, false, true);
+    dialog.setTitle(title == null ? "Choose languages" : title);
     dialog.show();
     return dialog.getResult();
   }

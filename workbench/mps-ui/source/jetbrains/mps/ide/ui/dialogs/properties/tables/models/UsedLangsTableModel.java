@@ -68,13 +68,17 @@ public class UsedLangsTableModel extends AbstractTableModel implements ItemRemov
     });
     if (m instanceof Language) {
       final SLanguage lang = MetaAdapterFactory.getLanguage(item);
-      if (!myLanguageItems.contains(lang)) {
-        myLanguageItems.add(lang);
-      }
+      addItem(lang);
     } else if (m instanceof DevKit) {
       if (!myDevKitItems.contains(item)) {
         myDevKitItems.add(item);
       }
+    }
+  }
+
+  public void addItem(SLanguage lang) {
+    if (!myLanguageItems.contains(lang)) {
+      myLanguageItems.add(lang);
     }
   }
 

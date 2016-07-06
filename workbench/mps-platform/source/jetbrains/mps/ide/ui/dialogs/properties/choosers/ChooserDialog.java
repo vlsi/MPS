@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.choosers;
 
+import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.MultiElementsCallback;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
@@ -33,13 +34,13 @@ import java.util.List;
 final class ChooserDialog<T> extends DialogWrapper {
 
   protected final ChooseByNamePanel myChooser;
-  protected final BaseMPSChooseModel<T> myData;
+  protected final ChooseByNameModel myData;
   protected boolean myIsCancelled = true;
   protected boolean myOkDone = false;
   protected final Project myProject;
   private List<Object> mySelectedElements;
 
-  ChooserDialog(Project project, @NotNull BaseMPSChooseModel<T> data, boolean hasExtraScope, boolean multiSelection) {
+  ChooserDialog(Project project, @NotNull ChooseByNameModel data, boolean hasExtraScope, boolean multiSelection) {
     super(project);
     myProject = project;
     myData = data;
@@ -87,7 +88,12 @@ final class ChooserDialog<T> extends DialogWrapper {
     }
     List<T> result = new ArrayList<T>();
     for (Object item : mySelectedElements) {
-      T v = myData.getModelObject(item);
+      T v;
+      if (myData instanceof BaseMPSChooseModel) {
+        v = ((BaseMPSChooseModel<T>) myData).getModelObject(item);
+      } else {
+        v = (T) item;
+      }
       if (v != null) {
         result.add(v);
       }

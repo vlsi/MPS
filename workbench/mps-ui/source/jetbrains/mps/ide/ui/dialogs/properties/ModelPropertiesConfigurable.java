@@ -44,8 +44,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser;
 import jetbrains.mps.ide.ui.dialogs.properties.input.ModuleCollector;
-import jetbrains.mps.project.ModuleInstanceCondition;
-import jetbrains.mps.project.VisibleModuleCondition;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyCellState;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.LanguageTableCellRenderer;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModelTableCellRender;
@@ -55,13 +53,16 @@ import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.ModuleInstanceCondition;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.project.VisibleModuleCondition;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModelDependencyScanner;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
@@ -525,13 +526,11 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          Iterable<SModule> modules = new ConditionalIterable<SModule>(getProjectModules(), new ModuleInstanceCondition(Language.class));
-          modules = new ConditionalIterable<SModule>(modules, new VisibleModuleCondition());
-          ComputeRunnable<List<SModuleReference>> c = new ComputeRunnable<List<SModuleReference>>(new ModuleCollector(modules));
-          myProject.getModelAccess().runReadAction(c);
-          List<SModuleReference> list = CommonChoosers.showModuleSetChooser(myProject, PropertiesBundle.message("model.into.engaged.add.title"), c.getResult());
-          for (SModuleReference reference : list) {
-            myEngagedLanguagesModel.addItem(reference);
+          Collection<SLanguage> languages =
+              new ModelAccessHelper(myProject.getRepository()).runReadAction(() -> LanguageRegistry.getInstance(myProject.getRepository()).getAllLanguages());
+          List<SLanguage> list = CommonChoosers.showLanguageSetChooser(myProject, PropertiesBundle.message("model.into.engaged.add.title"), languages);
+          for (SLanguage l : list) {
+            myEngagedLanguagesModel.addItem(l);
           }
           myEngagedLanguagesModel.fireTableDataChanged();
         }
