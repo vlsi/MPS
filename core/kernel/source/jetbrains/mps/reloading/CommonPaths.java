@@ -207,6 +207,7 @@ public final class CommonPaths {
     addIfExists(result, "/lib/mps-logging.jar");
     addIfExists(result, "/lib/mps-messaging.jar");
     addIfExists(result, "/lib/mps-core.jar");
+    addIfExists(result, "/lib/mps-boot-util.jar");
     addIfExists(result, "/lib/mps-closures.jar");
     addIfExists(result, "/lib/mps-collections.jar");
     addIfExists(result, "/lib/mps-tuples.jar");
