@@ -38,49 +38,52 @@ import java.util.stream.Collectors;
  *
  * To work with archives consider using {@link UniPath}.
  *
- * TODO create a pool of common paths (might be useful) ? or string interning?
+ * TODO create smth like FileSystem with WinFileSystem and UnixFileSystem, refactor this class
  *
  * Created by apyshkin on 6/17/16.
  */
 @Immutable
-public class CommonPath extends AbstractPath {
+public final class CommonPath extends AbstractPath {
   private static final Logger LOG = LogManager.getLogger(CommonPath.class);
 
   private final static String PARENT_DIR_STR = "..";
   private final static String CUR_DIR_STR = ".";
-  private final static String DEFAULT_UNIX_ROOT = "/";
+  private final static String DEFAULT_UNIX_ROOT = "";
   private final static String WIN_ROOT_SEP = ":\\";
+  private final static String UNIX_ROOT_SEP = UNIX_SEPARATOR;
 
-  private final String myPath; // always stored in a canonical way; see #toCanonical; stored with root!
-  private final String myRoot; // can be drive letter on windows (X:\\) or '/' on unix
+  private final String myPath; // equals to {@link #joinParts} contains root
+
+  private final String myRoot; // can be drive letter on windows (X) or DEFAULT_UNIX_ROOT on UNIX only!
   private final List<String> myParts; // the min length is zero
   private final boolean myRelativeFlag; // true <=> myRoot != null
   private final String mySeparator;
   private final char mySeparatorChar;
+  private final String myRootSeparator;
 
   private CommonPath(@NotNull String path) {
     boolean isWin = path.contains(WIN_SEPARATOR);
     mySeparatorChar = isWin ? WIN_SEPARATOR_CHAR : UNIX_SEPARATOR_CHAR;
     mySeparator = String.valueOf(mySeparatorChar);
-    myPath = path = toCanonical(path);
-    // parsing root
-    myRoot = parseRoot(path, isWin);
+    myRoot = parseRoot(path);
     myRelativeFlag = (myRoot == null);
+    myRootSeparator = calcRootSeparator();
+    path = trimRootAndSeparators(path);
 
-    // parts parsing
     myParts = parseRelativeParts(path);
+    myPath = joinParts();
   }
 
   @Nullable
-  private String parseRoot(@NotNull String path, boolean isWin) {
+  private String parseRoot(@NotNull String path) {
     boolean relativeFlag;
     String root;
-    if (isWin) {
-      relativeFlag = path.length() > 0 && path.charAt(0) != mySeparatorChar;
-      root = relativeFlag ? null : DEFAULT_UNIX_ROOT;
-    } else {
-      relativeFlag = path.length() > 0 && !path.contains(WIN_ROOT_SEP);
+    if (isWindows()) {
+      relativeFlag = path.isEmpty() || !path.contains(WIN_ROOT_SEP);
       root = relativeFlag ? null : path.substring(0, path.indexOf(WIN_ROOT_SEP));
+    } else {
+      relativeFlag = path.isEmpty() || path.charAt(0) != UNIX_SEPARATOR_CHAR;
+      root = relativeFlag ? null : DEFAULT_UNIX_ROOT;
     }
     return root;
   }
@@ -101,22 +104,45 @@ public class CommonPath extends AbstractPath {
   /**
    * @param parts each of them must not be null.
    */
-  private CommonPath(char separator, @Nullable String root, @NotNull String... parts) {
-    if (parts.length == 0 || parts[0] == null) {
-      parts = new String[]{CUR_DIR_STR};
+  private CommonPath(char separator, @Nullable String root, String... parts) {
+    if (parts == null || parts.length == 0 || parts[0] == null) {
+      parts = new String[0];
     }
     mySeparatorChar = separator;
     mySeparator = String.valueOf(mySeparatorChar);
     myRelativeFlag = root == null;
+    myRootSeparator = calcRootSeparator();
+    if (!myRelativeFlag && !isWindows() && !root.equals(DEFAULT_UNIX_ROOT)) {
+      throw new InvalidPathException(root, "In UNIX root must be always equal to `" + DEFAULT_UNIX_ROOT + "'.");
+    }
     myRoot = root;
     myParts = Arrays.asList(parts).stream().map(path -> path + "").collect(Collectors.toList());
+    myPath = joinParts();
+  }
+
+  private String calcRootSeparator() {
+    if (myRelativeFlag) {
+      return null;
+    }
+    return isWindows() ? WIN_ROOT_SEP : UNIX_ROOT_SEP;
+  }
+
+  private String joinParts() {
     StringJoiner joiner = new StringJoiner(mySeparator);
     myParts.forEach(joiner::add);
-    myPath = joiner.toString();
+    String partsString = joiner.toString();
+    if (isRelative()) {
+      return partsString;
+    }
+    return myRoot + myRootSeparator + partsString;
   }
 
   private CommonPath(char separator, @Nullable String root, @NotNull List<String> parts) {
     this(separator, root, parts.toArray(new String[parts.size()]));
+  }
+
+  public final boolean isWindows() {
+    return mySeparatorChar != UNIX_SEPARATOR_CHAR;
   }
 
   char getSeparatorChar() {
@@ -126,18 +152,17 @@ public class CommonPath extends AbstractPath {
   /**
    * remove all doubling separators specifically in the start and the end of the path
    */
-  private String toCanonical(@NotNull String path) {
+  private String trimRootAndSeparators(@NotNull String path) {
+    if (!isRelative()) {
+      path = path.substring(myRoot.length() + myRootSeparator.length());
+    }
     int lastNonSepSymb = path.length() - 1;
     while (lastNonSepSymb >= 0 && path.charAt(lastNonSepSymb) == mySeparatorChar) {
       --lastNonSepSymb;
     }
-    int firstNonSepSymb = 0;
-    while (firstNonSepSymb <= lastNonSepSymb && path.charAt(firstNonSepSymb) == mySeparatorChar) {
-      ++firstNonSepSymb;
-    }
     int index = 0;
     char[] result = new char[path.length()];
-    for (int i = firstNonSepSymb; i <= lastNonSepSymb; ++i) {
+    for (int i = 0; i <= lastNonSepSymb; ++i) {
       if (index > 0 && result[index - 1] == mySeparatorChar && mySeparatorChar == path.charAt(i)) {
         continue;
       }
@@ -147,7 +172,7 @@ public class CommonPath extends AbstractPath {
   }
 
   private static void validate(@NotNull String path) {
-    if (path.contains(Path.UNIX_SEPARATOR) || path.contains(Path.WIN_SEPARATOR)) {
+    if (path.contains(Path.UNIX_SEPARATOR) && path.contains(Path.WIN_SEPARATOR)) {
       LOG.warn("Path " + path + " contains both unix and windows separators.");
     }
     if (path.contains(Path.ARCHIVE_SEPARATOR)) {
@@ -169,15 +194,34 @@ public class CommonPath extends AbstractPath {
    * @param root might be drive letter on windows or {@link #DEFAULT_UNIX_ROOT} on UNIX. NB: in the case of null the path will be relative!
    * @param parts each of the parts must not be null
    */
-  public static CommonPath fromParts(char separator, @Nullable String root, @NotNull String... parts) {
+  public static CommonPath fromParts(char separator, @Nullable String root, @Nullable String... parts) {
+    root = validateRoot(root, separator);
     validateParts(parts);
     return new CommonPath(separator, root, parts);
   }
 
+  private static String validateRoot(String root, char separator) {
+    if (separator == WIN_SEPARATOR_CHAR) {
+      if (root != null && root.contains(String.valueOf(separator))) {
+        throw new InvalidPathException(root, "The root is not allowed to contain separator " + separator);
+      }
+    } else if (separator == UNIX_SEPARATOR_CHAR) {
+      if (root != null && (!root.equals(DEFAULT_UNIX_ROOT) && !root.equals(UNIX_ROOT_SEP))) {
+        throw new InvalidPathException(root, "The UNIX root is allowed to be `" + DEFAULT_UNIX_ROOT + "' or `" + UNIX_ROOT_SEP + "'.");
+      }
+      if (root != null && root.equals(UNIX_ROOT_SEP)) { // hack to improve user experience
+        root = DEFAULT_UNIX_ROOT;
+      }
+    }
+    return root;
+  }
+
   private static void validateParts(String[] parts) {
-    for (String part : parts) {
-      if (part == null) {
-        throw new InvalidPathException(Arrays.toString(parts), "The null parts are not allowed");
+    if (parts != null) {
+      for (String part : parts) {
+        if (part == null) {
+          throw new InvalidPathException(Arrays.toString(parts), "The null parts are not allowed");
+        }
       }
     }
   }
@@ -207,14 +251,16 @@ public class CommonPath extends AbstractPath {
     }
   }
 
-  private boolean isRootFolder() {
-    return myParts.isEmpty() && !isRelative();
+  @Nullable
+  @Override
+  public Path getRoot() {
+    return CommonPath.fromParts(mySeparatorChar, myRoot);
   }
 
   @Override
   @Nullable
   public CommonPath getParent() {
-    if (toNormal().isRootFolder()) {
+    if (myParts.isEmpty()) {
       return null;
     }
     List<String> parentParts = myParts.subList(0, myParts.size() - 1);
@@ -227,7 +273,11 @@ public class CommonPath extends AbstractPath {
     if (mySeparatorChar == UNIX_SEPARATOR_CHAR) {
       return copy();
     }
-    return new CommonPath(UNIX_SEPARATOR_CHAR, myRoot, myParts);
+    if (!isRelative()) {
+      throw new InvalidPathException(myPath, "Cannot convert absolute windows path to unix path");
+    }
+    assert myRoot == null;
+    return new CommonPath(UNIX_SEPARATOR_CHAR, null, myParts);
   }
 
   @Override
@@ -236,7 +286,11 @@ public class CommonPath extends AbstractPath {
     if (mySeparatorChar == SYSTEM_SEPARATOR_CHAR) {
       return copy();
     }
-    return new CommonPath(SYSTEM_SEPARATOR_CHAR, myRoot, myParts);
+    if (!isRelative()) {
+      throw new InvalidPathException(myPath, "Cannot convert absolute windows path to unix path and vice versa");
+    }
+    assert myRoot == null;
+    return new CommonPath(SYSTEM_SEPARATOR_CHAR, null, myParts);
   }
 
   @Override
@@ -263,14 +317,14 @@ public class CommonPath extends AbstractPath {
 
   @NotNull
   @Override
-  public CommonPath toNormal() {
+  public final CommonPath toNormal() {
     List<String> newParts = new ArrayList<>();
     for (String part : myParts) {
       if (part.equals(PARENT_DIR_STR)) {
-        if (!newParts.isEmpty()) {
+        if (!newParts.isEmpty() && !newParts.get(newParts.size() - 1).equals(PARENT_DIR_STR)) {
           newParts.remove(newParts.size() - 1);
+          continue;
         }
-        continue;
       } else if (part.equals(CUR_DIR_STR)) {
         continue;
       }
@@ -288,11 +342,7 @@ public class CommonPath extends AbstractPath {
   @NotNull
   @Override
   public Path resolve(@NotNull Path other) {
-    if (!other.isRelative()) {
-      return other;
-    }
-
-    return ;
+    return null;
   }
 
   @NotNull
@@ -308,9 +358,6 @@ public class CommonPath extends AbstractPath {
 
   @Override
   public String toString() {
-    if (!myRelativeFlag) {
-      return mySeparatorChar + myPath;
-    }
     return myPath;
   }
 

@@ -75,6 +75,10 @@ public interface Path extends Comparable<Path>, /*AP: do I want this?*/ Watchabl
 
   /**
    * @return null iff it is a root folder, the parent Path instance otherwise
+   * note that this method will not eliminate special path parts like '..' and '.'
+   * please
+   * @see #toNormal()
+   * @see #toCanonical()
    */
   @Nullable Path getParent();
 
@@ -101,12 +105,12 @@ public interface Path extends Comparable<Path>, /*AP: do I want this?*/ Watchabl
   @Nullable Path getRoot();
 
   /**
-   * Separator becomes {@link #UNIX_SEPARATOR_CHAR}, drive letter is also replaced
+   * Separator becomes {@link #UNIX_SEPARATOR_CHAR}, replacing drive letter is up to implementation
    */
   @NotNull Path toIndependentPath();
 
   /**
-   * Separator becomes {@link #SYSTEM_SEPARATOR_CHAR}, drive letter is also replaced
+   * Separator becomes {@link #SYSTEM_SEPARATOR_CHAR}, replacing drive letter is up to implementation
    */
   @NotNull Path toSystemPath();
 
