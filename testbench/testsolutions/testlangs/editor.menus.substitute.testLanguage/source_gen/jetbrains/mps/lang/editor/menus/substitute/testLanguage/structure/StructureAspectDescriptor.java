@@ -15,7 +15,8 @@ import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(9);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(10);
+  /*package*/ final ConceptDescriptor myConceptTestConceptForMenuParameterizedByPrimitiveType = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestConceptForMenuParameterizedByPrimitiveType", MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x75a761fb50351afbL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).sourceNode(new SNodePointer("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)", "8477852555558591227")).create();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteChild = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild", MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).sourceNode(new SNodePointer("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)", "8998492695587434686")).create();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteConceptChildToReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteConceptChildToReference", MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2b0L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).sourceNode(new SNodePointer("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)", "8998492695587451568")).create();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteConceptToWrap = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteConceptToWrap", MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aaL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).sourceNode(new SNodePointer("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)", "8998492695587451562")).create();
@@ -27,20 +28,21 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTestSubstituteSubConceptToWrap = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubConceptToWrap", MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2abL)).super_("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteConceptToWrap").version(1).super_(MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aaL)).parents("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteConceptToWrap").parentIds(MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aaL)).sourceNode(new SNodePointer("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)", "8998492695587451563")).create();
 
   public StructureAspectDescriptor() {
-    myIndexMap.put(myConceptTestSubstituteChild.getId(), 0);
-    myIndexMap.put(myConceptTestSubstituteConceptChildToReference.getId(), 1);
-    myIndexMap.put(myConceptTestSubstituteConceptToWrap.getId(), 2);
-    myIndexMap.put(myConceptTestSubstituteParent.getId(), 3);
-    myIndexMap.put(myConceptTestSubstituteParentToReference.getId(), 4);
-    myIndexMap.put(myConceptTestSubstituteSubChild1.getId(), 5);
-    myIndexMap.put(myConceptTestSubstituteSubChild2.getId(), 6);
-    myIndexMap.put(myConceptTestSubstituteSubChildSmartReference.getId(), 7);
-    myIndexMap.put(myConceptTestSubstituteSubConceptToWrap.getId(), 8);
+    myIndexMap.put(myConceptTestConceptForMenuParameterizedByPrimitiveType.getId(), 0);
+    myIndexMap.put(myConceptTestSubstituteChild.getId(), 1);
+    myIndexMap.put(myConceptTestSubstituteConceptChildToReference.getId(), 2);
+    myIndexMap.put(myConceptTestSubstituteConceptToWrap.getId(), 3);
+    myIndexMap.put(myConceptTestSubstituteParent.getId(), 4);
+    myIndexMap.put(myConceptTestSubstituteParentToReference.getId(), 5);
+    myIndexMap.put(myConceptTestSubstituteSubChild1.getId(), 6);
+    myIndexMap.put(myConceptTestSubstituteSubChild2.getId(), 7);
+    myIndexMap.put(myConceptTestSubstituteSubChildSmartReference.getId(), 8);
+    myIndexMap.put(myConceptTestSubstituteSubConceptToWrap.getId(), 9);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptTestSubstituteChild, myConceptTestSubstituteConceptChildToReference, myConceptTestSubstituteConceptToWrap, myConceptTestSubstituteParent, myConceptTestSubstituteParentToReference, myConceptTestSubstituteSubChild1, myConceptTestSubstituteSubChild2, myConceptTestSubstituteSubChildSmartReference, myConceptTestSubstituteSubConceptToWrap);
+    return Arrays.asList(myConceptTestConceptForMenuParameterizedByPrimitiveType, myConceptTestSubstituteChild, myConceptTestSubstituteConceptChildToReference, myConceptTestSubstituteConceptToWrap, myConceptTestSubstituteParent, myConceptTestSubstituteParentToReference, myConceptTestSubstituteSubChild1, myConceptTestSubstituteSubChild2, myConceptTestSubstituteSubChildSmartReference, myConceptTestSubstituteSubConceptToWrap);
   }
 
   @Override
@@ -52,22 +54,24 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
     switch (((int) index)) {
       case 0:
-        return myConceptTestSubstituteChild;
+        return myConceptTestConceptForMenuParameterizedByPrimitiveType;
       case 1:
-        return myConceptTestSubstituteConceptChildToReference;
+        return myConceptTestSubstituteChild;
       case 2:
-        return myConceptTestSubstituteConceptToWrap;
+        return myConceptTestSubstituteConceptChildToReference;
       case 3:
-        return myConceptTestSubstituteParent;
+        return myConceptTestSubstituteConceptToWrap;
       case 4:
-        return myConceptTestSubstituteParentToReference;
+        return myConceptTestSubstituteParent;
       case 5:
-        return myConceptTestSubstituteSubChild1;
+        return myConceptTestSubstituteParentToReference;
       case 6:
-        return myConceptTestSubstituteSubChild2;
+        return myConceptTestSubstituteSubChild1;
       case 7:
-        return myConceptTestSubstituteSubChildSmartReference;
+        return myConceptTestSubstituteSubChild2;
       case 8:
+        return myConceptTestSubstituteSubChildSmartReference;
+      case 9:
         return myConceptTestSubstituteSubConceptToWrap;
       default:
         throw new IllegalStateException();

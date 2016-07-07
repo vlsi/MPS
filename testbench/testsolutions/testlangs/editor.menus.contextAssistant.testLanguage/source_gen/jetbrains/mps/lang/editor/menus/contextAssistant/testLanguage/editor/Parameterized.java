@@ -12,8 +12,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.MenuLocations;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.SidebarActionItem;
 import jetbrains.mps.smodel.runtime.IconResource;
@@ -31,22 +31,22 @@ public class Parameterized extends TransformationMenuBase {
     return result;
   }
 
-  private static class TransformationMenuPart_Parameterized_3h2zbg_a0 extends ParameterizedMenuPart<Object, TransformationMenuItem, TransformationMenuContext> {
+  private static class TransformationMenuPart_Parameterized_3h2zbg_a0 extends ParameterizedMenuPart<Integer, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
-    protected List<TransformationMenuItem> createItems(Object parameter, TransformationMenuContext context) {
+    protected List<TransformationMenuItem> createItems(Integer parameter, TransformationMenuContext context) {
       return new Parameterized.TransformationMenuPart_Action_3h2zbg_a0a(parameter).createItems(context);
     }
-    @NotNull
+    @Nullable
     @Override
-    protected Iterable<? extends Object> getParameters(TransformationMenuContext _context) {
+    protected Iterable<? extends Integer> getParameters(TransformationMenuContext _context) {
       return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4);
     }
   }
   private static class TransformationMenuPart_Action_3h2zbg_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    private final Object myParameterObject;
-    public TransformationMenuPart_Action_3h2zbg_a0a(Object parameterObject) {
+    private final int myParameterObject;
+    public TransformationMenuPart_Action_3h2zbg_a0a(int parameterObject) {
       myParameterObject = parameterObject;
     }
     @Nullable
@@ -64,7 +64,7 @@ public class Parameterized extends TransformationMenuBase {
       @Nullable
       @Override
       public String getLabelText(String pattern) {
-        return "parameterized action " + ((int) myParameterObject);
+        return "parameterized action " + myParameterObject;
       }
 
       @Override

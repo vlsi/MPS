@@ -16,7 +16,6 @@
 package jetbrains.mps.lang.editor.menus.transformation;
 
 import jetbrains.mps.lang.editor.menus.MenuPart;
-import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
@@ -30,7 +29,7 @@ import java.util.List;
 /**
  * @author simon
  */
-public class DefaultEmptyCellMenu extends TransformationMenuBase{
+public class DefaultEmptyCellMenu extends TransformationMenuBase {
 
   private final SContainmentLink myLink;
 

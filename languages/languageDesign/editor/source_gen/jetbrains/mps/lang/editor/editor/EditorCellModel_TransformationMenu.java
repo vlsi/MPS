@@ -26,8 +26,6 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__Behavio
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import java.util.Collections;
-import jetbrains.mps.util.Reference;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -227,16 +225,16 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
       }
     }
   }
-  private static class TransformationMenuPart_Parameterized_puymhi_e0 extends ParameterizedMenuPart<Object, TransformationMenuItem, TransformationMenuContext> {
+  private static class TransformationMenuPart_Parameterized_puymhi_e0 extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
-    protected List<TransformationMenuItem> createItems(Object parameter, TransformationMenuContext context) {
+    protected List<TransformationMenuItem> createItems(SNode parameter, TransformationMenuContext context) {
       return new EditorCellModel_TransformationMenu.TransformationMenuPart_Action_puymhi_a4a(parameter).createItems(context);
     }
-    @NotNull
+    @Nullable
     @Override
-    protected Iterable<? extends Object> getParameters(TransformationMenuContext _context) {
+    protected Iterable<? extends SNode> getParameters(TransformationMenuContext _context) {
       EditorAssistantUtilities assistantUtils = new EditorAssistantUtilities(_context.getNode());
       if (!(assistantUtils.isAbstratCell()) || assistantUtils.getEditorDeclaration() == null || SLinkOperations.getTarget(assistantUtils.getEditorDeclaration(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L, 0x10f7df451aeL, "conceptDeclaration")) == null) {
         return Collections.<SNode>emptyList();
@@ -277,8 +275,8 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
     }
   }
   private static class TransformationMenuPart_Action_puymhi_a4a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    private final Object myParameterObject;
-    public TransformationMenuPart_Action_puymhi_a4a(Object parameterObject) {
+    private final SNode myParameterObject;
+    public TransformationMenuPart_Action_puymhi_a4a(SNode parameterObject) {
       myParameterObject = parameterObject;
     }
     @Nullable
@@ -296,28 +294,22 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
       @Nullable
       @Override
       public String getLabelText(String pattern) {
-        final Reference<String> role = new Reference<String>();
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            role.set(SPropertyOperations.getString(((SNode) myParameterObject), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")));
-          }
-        });
-        return role.get() + " Link";
+        return SPropertyOperations.getString(myParameterObject, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")) + " Link";
       }
 
       @Override
       public void execute(@NotNull String pattern) {
-        if (SPropertyOperations.hasValue(((SNode) myParameterObject), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
-          if ((boolean) LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(((SNode) myParameterObject))) {
+        if (SPropertyOperations.hasValue(myParameterObject, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
+          if ((boolean) LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(myParameterObject)) {
             SNode refNode = SNodeFactoryOperations.replaceWithNewChild(_context.getNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb05cdc7L, "jetbrains.mps.lang.editor.structure.CellModel_RefNode")));
-            SLinkOperations.setTarget(refNode, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration"), ((SNode) myParameterObject));
+            SLinkOperations.setTarget(refNode, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration"), myParameterObject);
           } else {
             SNode refNodeList = SNodeFactoryOperations.replaceWithNewChild(_context.getNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList")));
-            SLinkOperations.setTarget(refNodeList, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration"), ((SNode) myParameterObject));
+            SLinkOperations.setTarget(refNodeList, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration"), myParameterObject);
           }
         } else {
           SNode refCell = SNodeFactoryOperations.replaceWithNewChild(_context.getNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd52a2c922L, "jetbrains.mps.lang.editor.structure.CellModel_RefCell")));
-          SLinkOperations.setTarget(refCell, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration"), ((SNode) myParameterObject));
+          SLinkOperations.setTarget(refCell, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration"), myParameterObject);
           SLinkOperations.setTarget(SLinkOperations.getTarget(refCell, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd52a2c922L, 0xfd5cf2df2aL, "editorComponent")), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L, 0xfba0ec5415L, "cellModel"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x8ace515f0191e6eL, "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation")));
         }
 

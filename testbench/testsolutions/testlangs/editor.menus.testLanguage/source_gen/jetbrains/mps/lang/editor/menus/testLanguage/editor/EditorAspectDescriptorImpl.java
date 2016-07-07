@@ -118,8 +118,10 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
               case 2:
                 return Arrays.asList(new TransformationMenu[]{new NamedTestMenu()});
               case 3:
-                return Arrays.asList(new TransformationMenu[]{new WithExecutableAction()});
+                return Arrays.asList(new TransformationMenu[]{new ParameterizedByPrimitiveType()});
               case 4:
+                return Arrays.asList(new TransformationMenu[]{new WithExecutableAction()});
+              case 5:
                 return Arrays.asList(new TransformationMenu[]{new WithNonExecutableAction()});
               default:
             }
@@ -146,5 +148,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a4 = new String[]{"jetbrains.mps.lang.editor.menus.testLanguage.editor.Base_NamedTransformationMenu"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0b3a0a4 = new String[]{"jetbrains.mps.lang.editor.menus.testLanguage.editor.Derived_NamedTransformationMenu"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0c3a0a4 = new String[]{"jetbrains.mps.lang.editor.menus.testLanguage.editor.NamedMenuForBase"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0d3a0a4 = new String[]{"jetbrains.mps.lang.editor.menus.testLanguage.editor.ContributedToFromUnusedLanguage", "jetbrains.mps.lang.editor.menus.testLanguage.editor.ContributedToFromUsedLanguage", "jetbrains.mps.lang.editor.menus.testLanguage.editor.NamedTestMenu", "jetbrains.mps.lang.editor.menus.testLanguage.editor.WithExecutableAction", "jetbrains.mps.lang.editor.menus.testLanguage.editor.WithNonExecutableAction"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0d3a0a4 = new String[]{"jetbrains.mps.lang.editor.menus.testLanguage.editor.ContributedToFromUnusedLanguage", "jetbrains.mps.lang.editor.menus.testLanguage.editor.ContributedToFromUsedLanguage", "jetbrains.mps.lang.editor.menus.testLanguage.editor.NamedTestMenu", "jetbrains.mps.lang.editor.menus.testLanguage.editor.ParameterizedByPrimitiveType", "jetbrains.mps.lang.editor.menus.testLanguage.editor.WithExecutableAction", "jetbrains.mps.lang.editor.menus.testLanguage.editor.WithNonExecutableAction"};
 }

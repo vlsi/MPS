@@ -49,7 +49,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.core.editor.BaseConcept_SubstituteMenu" file="BaseConcept_SubstituteMenu.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />

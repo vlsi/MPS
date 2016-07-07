@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.editor.menus;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,9 +26,14 @@ public class ParameterizedMenuPart<ParamT, ItemT, ContextT> implements MenuPart<
   @NotNull
   @Override
   public List<ItemT> createItems(ContextT context) {
+    Iterable<? extends ParamT> parameters = getParameters(context);
+    if (parameters == null) {
+      return Collections.emptyList();
+    }
+
     List<ItemT> result = new ArrayList<>();
 
-    for (ParamT parameter : getParameters(context)) {
+    for (ParamT parameter : parameters) {
       result.addAll(createItems(parameter, context));
     }
 
@@ -39,7 +45,7 @@ public class ParameterizedMenuPart<ParamT, ItemT, ContextT> implements MenuPart<
     return Collections.emptyList();
   }
 
-  @NotNull
+  @Nullable
   protected Iterable<? extends ParamT> getParameters(ContextT context) {
     return Collections.emptyList();
   }

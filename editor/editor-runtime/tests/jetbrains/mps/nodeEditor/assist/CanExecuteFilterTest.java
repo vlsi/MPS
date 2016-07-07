@@ -16,10 +16,9 @@
 package jetbrains.mps.nodeEditor.assist;
 
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -27,27 +26,8 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 
 public class CanExecuteFilterTest {
-  @Test
-  public void callsCanExecuteInModelRead() {
-    boolean[] canExecuteWasCalledOutsideRead = { false };
-    ModelAccess modelAccess = new SimpleModelAccess();
-
-    new CanExecuteFilter(modelAccess).apply(Collections.singletonList(new ActionItemBase() {
-      @Override
-      public boolean canExecute(@NotNull String pattern) {
-        if (!modelAccess.canRead()) {
-          canExecuteWasCalledOutsideRead[0] = true;
-        }
-        return true;
-      }
-    }));
-
-    assertFalse("canExecute should only be called in a read action", canExecuteWasCalledOutsideRead[0]);
-  }
-
   @Test
   public void treatsExceptionFromCanExecuteAsReturningFalse() {
     List<TransformationMenuItem> filteredItems = newFilter().apply(Collections.singletonList(new ActionItemBase() {
@@ -78,7 +58,7 @@ public class CanExecuteFilterTest {
 
   @NotNull
   private CanExecuteFilter newFilter() {
-    return new CanExecuteFilter(new SimpleModelAccess());
+    return new CanExecuteFilter();
   }
 
   @Test

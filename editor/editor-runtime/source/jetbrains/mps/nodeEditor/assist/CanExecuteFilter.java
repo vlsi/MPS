@@ -16,9 +16,9 @@
 package jetbrains.mps.nodeEditor.assist;
 
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
+import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItemVisitor;
-import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 
@@ -34,11 +34,9 @@ import java.util.function.Function;
  * Uses the provided {@link ModelAccess} instance to call {@link ActionItem#canExecute(String)} in a read action.
  */
 class CanExecuteFilter implements Function<List<TransformationMenuItem>, List<TransformationMenuItem>> {
-  private final ModelAccess myModelAccess;
   private final TransformationMenuItemVisitor<TransformationMenuItem> myExecutableItemConverter;
 
-  CanExecuteFilter(ModelAccess modelAccess) {
-    myModelAccess = modelAccess;
+  CanExecuteFilter() {
     myExecutableItemConverter = new TransformationMenuItemVisitor<TransformationMenuItem>() {
       @Override
       public TransformationMenuItem visit(ActionItem actionItem) {
@@ -50,15 +48,7 @@ class CanExecuteFilter implements Function<List<TransformationMenuItem>, List<Tr
       }
 
       private boolean canExecuteActionItem(ActionItem actionItem) {
-        boolean[] canExecuteRef = { false };
-
-        try {
-          myModelAccess.runReadAction(() -> canExecuteRef[0] = actionItem.canExecute(""));
-        } catch (RuntimeException e) {
-          canExecuteRef[0] = false;
-        }
-
-        return canExecuteRef[0];
+        return actionItem.canExecute("");
       }
 
       @Override

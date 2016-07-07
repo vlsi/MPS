@@ -2921,17 +2921,6 @@
       <ref role="AX2Wp" node="hGLCffS" resolve="_NextLine_Enum" />
     </node>
   </node>
-  <node concept="1TIwiD" id="hH7jTdE">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="CellLayout_Indent_Old" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="CellLayout" />
-    <property role="34LRSv" value="indent_old" />
-    <property role="EcuMT" value="1216672142186" />
-    <ref role="1TJDcQ" node="g6iR17a" resolve="CellLayout" />
-    <node concept="asaX9" id="6T2BklgjkBD" role="lGtFl" />
-  </node>
   <node concept="1TIwiD" id="hJvyZqV">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
@@ -3845,6 +3834,9 @@
     <property role="3GE5qa" value="Stylesheet" />
     <property role="EcuMT" value="4151393920374910722" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1QGGSu" id="7mBovHg6Ada" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/styleKeyPack.png" />
+    </node>
     <node concept="1TJgyj" id="3AsHGqaEOhK" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="styleKey" />
@@ -3918,6 +3910,9 @@
     <property role="TrG5h" value="ConceptEditorContextHints" />
     <property role="EcuMT" value="5944657839000868711" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1QGGSu" id="4DKJNVBqp0k" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/editorContextHints.png" />
+    </node>
     <node concept="1TJgyj" id="59ZEGVOSRBV" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="hints" />
@@ -4707,6 +4702,9 @@
     <property role="19KtqR" value="true" />
     <property role="EcuMT" value="5624877018228264944" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1QGGSu" id="4DKJNVBqp0o" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/transformationMenuContribution.png" />
+    </node>
     <node concept="PrWs8" id="1quYWAD4KpO" role="PzmwI">
       <ref role="PrY4T" node="1quYWAD2_Py" resolve="IMenu_Contribution" />
     </node>
@@ -4751,6 +4749,9 @@
     <property role="34LRSv" value="Transformation Menu (Default)" />
     <property role="EcuMT" value="1638911550608571617" />
     <ref role="1TJDcQ" node="4Sf$XywF3UU" resolve="TransformationMenu" />
+    <node concept="1QGGSu" id="4DKJNVBqDI0" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/transformationMenu.png" />
+    </node>
     <node concept="PrWs8" id="1quYWAD3bV_" role="PzmwI">
       <ref role="PrY4T" node="1quYWAD18L7" resolve="IMenu_Default" />
     </node>
@@ -4817,6 +4818,9 @@
     <property role="34LRSv" value="Transformation Menu (Named)" />
     <property role="EcuMT" value="5624877018226904808" />
     <ref role="1TJDcQ" node="4Sf$XywF3UU" resolve="TransformationMenu" />
+    <node concept="1QGGSu" id="4DKJNVBqDQu" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/transformationMenu.png" />
+    </node>
     <node concept="PrWs8" id="1quYWAD3$WZ" role="PzmwI">
       <ref role="PrY4T" node="1quYWAD18L6" resolve="IMenu_Named" />
     </node>
@@ -4851,6 +4855,9 @@
     <property role="19KtqR" value="true" />
     <property role="EcuMT" value="5624877018226900666" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1QGGSu" id="4DKJNVBqp0m" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/transformationMenu.png" />
+    </node>
     <node concept="PrWs8" id="1quYWAD4B6X" role="PzmwI">
       <ref role="PrY4T" node="1quYWAD18Lj" resolve="IMenu_Concept" />
     </node>
@@ -5359,6 +5366,9 @@
     <property role="TrG5h" value="SubstituteMenu" />
     <property role="R5$K7" value="true" />
     <property role="19KtqR" value="true" />
+    <node concept="1QGGSu" id="4DKJNVBqp0q" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/substituteMenu.png" />
+    </node>
     <node concept="PrWs8" id="1quYWADmNOE" role="PzmwI">
       <ref role="PrY4T" node="1quYWAD18Lj" resolve="IMenu_Concept" />
     </node>
@@ -5717,6 +5727,9 @@
     <property role="19KtqR" value="true" />
     <property role="34LRSv" value="Substitute Menu (Named)" />
     <ref role="1TJDcQ" node="1J2KHYpAw1S" resolve="SubstituteMenu" />
+    <node concept="1QGGSu" id="4DKJNVBqDQ$" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/substituteMenu.png" />
+    </node>
     <node concept="PrWs8" id="1quYWAD3Ec7" role="PzmwI">
       <ref role="PrY4T" node="1quYWAD18L6" resolve="IMenu_Named" />
     </node>
@@ -5889,6 +5902,9 @@
     <property role="19KtqR" value="true" />
     <property role="R5$K7" value="false" />
     <property role="34LRSv" value="Substitute Menu Contribution" />
+    <node concept="1QGGSu" id="4DKJNVBqp0s" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/substituteMenuContribution.png" />
+    </node>
     <node concept="PrWs8" id="1quYWAD5m8A" role="PzmwI">
       <ref role="PrY4T" node="1quYWAD2_Py" resolve="IMenu_Contribution" />
     </node>
@@ -5940,9 +5956,23 @@
     <property role="19KtqR" value="true" />
     <property role="34LRSv" value="Substitute Menu (Default)" />
     <ref role="1TJDcQ" node="1J2KHYpAw1S" resolve="SubstituteMenu" />
+    <node concept="1QGGSu" id="4DKJNVBqDQw" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/substituteMenu.png" />
+    </node>
     <node concept="PrWs8" id="1quYWAD3_QS" role="PzmwI">
       <ref role="PrY4T" node="1quYWAD18L7" resolve="IMenu_Default" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="hH7jTdE">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="CellLayout_Indent_Old" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="CellLayout" />
+    <property role="34LRSv" value="indent_old" />
+    <property role="EcuMT" value="1216672142186" />
+    <ref role="1TJDcQ" node="g6iR17a" resolve="CellLayout" />
+    <node concept="asaX9" id="6T2BklgjkBD" role="lGtFl" />
   </node>
 </model>
 
