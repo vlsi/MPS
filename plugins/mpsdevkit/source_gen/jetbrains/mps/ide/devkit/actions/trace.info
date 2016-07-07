@@ -1672,13 +1672,14 @@
       <node id="2565896126719599922" at="207,478,208,362" concept="10" />
       <node id="2565896126719599930" at="208,362,209,187" concept="5" />
       <node id="2565896126719599937" at="209,187,210,364" concept="5" />
-      <node id="2565896126719599947" at="211,16,212,283" concept="10" />
-      <node id="2565896126719599953" at="212,283,213,192" concept="5" />
-      <node id="2565896126719599960" at="213,192,214,269" concept="5" />
-      <node id="2565896126719599968" at="214,269,215,484" concept="5" />
-      <node id="2565896126719599978" at="215,484,216,110" concept="5" />
-      <node id="2565896126719599983" at="216,110,217,263" concept="5" />
-      <node id="2565896126719599988" at="220,7,221,24" concept="11" />
+      <node id="5708190207122525538" at="211,16,212,119" concept="5" />
+      <node id="2565896126719599947" at="212,119,213,283" concept="10" />
+      <node id="2565896126719599953" at="213,283,214,192" concept="5" />
+      <node id="2565896126719599960" at="214,192,215,269" concept="5" />
+      <node id="2565896126719599968" at="215,269,216,484" concept="5" />
+      <node id="2565896126719599978" at="216,484,217,110" concept="5" />
+      <node id="2565896126719599983" at="217,110,218,263" concept="5" />
+      <node id="2565896126719599988" at="221,7,222,24" concept="11" />
       <node id="2565896126719599486" at="53,0,55,0" concept="3" trace="Generator_TabDescriptor#()V" />
       <node id="2565896126719599486" at="64,0,66,0" concept="9" trace="startListening#()V" />
       <node id="2565896126719599850" at="197,10,199,5" concept="1" />
@@ -1707,7 +1708,7 @@
       <node id="2565896126719599784" at="175,30,181,11" concept="7" />
       <node id="6352952732714028181" at="162,0,169,0" concept="9" trace="run#()V" />
       <node id="2565896126719599849" at="192,64,199,5" concept="8" />
-      <node id="2565896126719599945" at="211,14,218,9" concept="1" />
+      <node id="2565896126719599945" at="211,14,219,9" concept="1" />
       <node id="6352952732714007410" at="160,56,169,7" concept="5" />
       <node id="2565896126719599633" at="99,103,110,11" concept="7" />
       <node id="2565896126719599604" at="98,31,111,9" concept="7" />
@@ -1715,16 +1716,16 @@
       <node id="2565896126719599602" at="97,7,112,7" concept="8" />
       <node id="6352952732713960997" at="142,12,157,9" concept="5" />
       <node id="6352952732714085367" at="174,0,189,0" concept="9" trace="run#()V" />
-      <node id="2565896126719599893" at="203,63,218,9" concept="8" />
       <node id="6362460243896751289" at="142,10,158,5" concept="1" />
+      <node id="2565896126719599893" at="203,63,219,9" concept="8" />
       <node id="6352952732714073850" at="172,85,189,9" concept="5" />
-      <node id="6352952732714157768" at="202,0,220,0" concept="9" trace="run#()V" />
+      <node id="6352952732714157768" at="202,0,221,0" concept="9" trace="run#()V" />
       <node id="2565896126719599773" at="170,0,190,5" concept="8" />
-      <node id="6352952732714127076" at="200,63,220,7" concept="5" />
+      <node id="6352952732714127076" at="200,63,221,7" concept="5" />
       <node id="2565896126719599576" at="89,220,113,5" concept="8" />
       <node id="2565896126719599710" at="133,128,158,5" concept="8" />
       <node id="2565896126719599486" at="84,0,116,0" concept="9" trace="getAspectConcepts#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="2565896126719599486" at="119,0,223,0" concept="9" trace="createAspect#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SConcept;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2565896126719599486" at="119,0,224,0" concept="9" trace="createAspect#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SConcept;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="2565896126719599486" at="53,36,53,36" />
       <scope id="2565896126719599500" at="64,32,64,32" />
       <scope id="2565896126719599486" at="55,28,56,23" />
@@ -1795,14 +1796,14 @@
       <scope id="2565896126719599784" at="175,30,181,11">
         <var name="generator" id="2565896126719599786" />
       </scope>
-      <scope id="2565896126719599946" at="211,16,217,263">
-        <var name="rootTemplateNode" id="2565896126719599948" />
-      </scope>
       <scope id="2565896126719599711" at="134,51,141,66">
         <var name="createdGenerator" id="2565896126719599724" />
         <var name="dialog" id="2565896126719599713" />
       </scope>
       <scope id="6352952732714028181" at="162,0,169,0" />
+      <scope id="2565896126719599946" at="211,16,218,263">
+        <var name="rootTemplateNode" id="2565896126719599948" />
+      </scope>
       <scope id="2565896126719599634" at="100,71,109,13" />
       <scope id="2565896126719599611" at="99,103,110,11" />
       <scope id="2565896126719599633" at="99,103,110,11">
@@ -1823,11 +1824,11 @@
       </scope>
       <scope id="6362460243896751290" at="142,12,157,9" />
       <scope id="6352952732714085367" at="174,0,189,0" />
-      <scope id="6352952732714157769" at="202,25,218,9">
+      <scope id="6352952732714157769" at="202,25,219,9">
         <var name="model" id="2565896126719599888" />
       </scope>
       <scope id="2565896126719599774" at="171,52,189,9" />
-      <scope id="6352952732714157768" at="202,0,220,0" />
+      <scope id="6352952732714157768" at="202,0,221,0" />
       <scope id="2565896126719599577" at="90,34,112,7">
         <var name="isNeedRootTemplate" id="2565896126719599579" />
       </scope>
@@ -1839,7 +1840,7 @@
       <scope id="2565896126719599486" at="84,0,116,0">
         <var name="node" id="2565896126719599486" />
       </scope>
-      <scope id="7459370737648527527" at="119,71,221,24">
+      <scope id="7459370737648527527" at="119,71,222,24">
         <var name="frame" id="2565896126719599677" />
         <var name="genList" id="2565896126719599704" />
         <var name="ideaProject" id="2565896126719599668" />
@@ -1850,7 +1851,7 @@
         <var name="project" id="6352952732713756916" />
         <var name="result" id="2565896126719599882" />
       </scope>
-      <scope id="2565896126719599486" at="119,0,223,0">
+      <scope id="2565896126719599486" at="119,0,224,0">
         <var name="concept" id="2565896126719599486" />
         <var name="node" id="2565896126719599486" />
       </scope>
@@ -1858,8 +1859,8 @@
       <unit id="6352952732714028181" at="161,34,169,5" name="jetbrains.mps.ide.devkit.actions.Generator_TabDescriptor$3" />
       <unit id="6352952732713967728" at="143,37,157,7" name="jetbrains.mps.ide.devkit.actions.Generator_TabDescriptor$2" />
       <unit id="6352952732714085367" at="173,37,189,7" name="jetbrains.mps.ide.devkit.actions.Generator_TabDescriptor$4" />
-      <unit id="6352952732714157768" at="201,35,220,5" name="jetbrains.mps.ide.devkit.actions.Generator_TabDescriptor$5" />
-      <unit id="2565896126719599486" at="50,0,224,0" name="jetbrains.mps.ide.devkit.actions.Generator_TabDescriptor" />
+      <unit id="6352952732714157768" at="201,35,221,5" name="jetbrains.mps.ide.devkit.actions.Generator_TabDescriptor$5" />
+      <unit id="2565896126719599486" at="50,0,225,0" name="jetbrains.mps.ide.devkit.actions.Generator_TabDescriptor" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2565896126719631163">
