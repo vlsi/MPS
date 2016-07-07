@@ -610,7 +610,7 @@
       </node>
     </node>
     <node concept="398b33" id="1s0vtrwUPV$" role="3989C9">
-      <property role="TrG5h" value="logging" />
+      <property role="TrG5h" value="mps-logging" />
       <node concept="2sjeV3" id="1s0vtrwZkwM" role="nCB5Z">
         <property role="2a2d0E" value="true" />
         <ref role="2sjeV2" node="6NgXkpBqq5l" resolve="log4j-lib" />
@@ -677,7 +677,32 @@
         <ref role="nCB5Y" node="1s0vtrwURQP" resolve="mps-annotations" />
       </node>
       <node concept="nCB5N" id="1s0vtrwV3hC" role="nCB5Z">
-        <ref role="nCB5Y" node="1s0vtrwUPV$" resolve="logging" />
+        <ref role="nCB5Y" node="1s0vtrwUPV$" resolve="mps-logging" />
+      </node>
+    </node>
+    <node concept="398b33" id="5d$B_bnZPNh" role="3989C9">
+      <property role="TrG5h" value="mps-boot-util" />
+      <node concept="2GAZfH" id="5d$B_bnZUkM" role="398b2p">
+        <node concept="TIC1d" id="5d$B_bnZUkK" role="2GAZfG">
+          <node concept="398BVA" id="5d$B_bnZUPm" role="TIC6M">
+            <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
+            <node concept="2Ry0Ak" id="5d$B_bnZVlW" role="iGT6I">
+              <property role="2Ry0Am" value="startup" />
+              <node concept="2Ry0Ak" id="5d$B_bnZVm1" role="2Ry0An">
+                <property role="2Ry0Am" value="startup-util" />
+                <node concept="2Ry0Ak" id="5d$B_bnZVm6" role="2Ry0An">
+                  <property role="2Ry0Am" value="source" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="nCB5N" id="5d$B_bnZVm8" role="nCB5Z">
+        <ref role="nCB5Y" node="1s0vtrwURQP" resolve="mps-annotations" />
+      </node>
+      <node concept="nCB5N" id="5d$B_bnZWRH" role="nCB5Z">
+        <ref role="nCB5Y" node="1s0vtrwUPV$" resolve="mps-logging" />
       </node>
     </node>
     <node concept="398b33" id="6S1jmf0xDGC" role="3989C9">
@@ -785,7 +810,7 @@
         </node>
       </node>
       <node concept="nCB5N" id="7FonrDkm$8u" role="nCB5Z">
-        <ref role="nCB5Y" node="1s0vtrwUPV$" resolve="logging" />
+        <ref role="nCB5Y" node="1s0vtrwUPV$" resolve="mps-logging" />
       </node>
       <node concept="2sjeV3" id="1H905DlDRAR" role="nCB5Z">
         <property role="2a2d0E" value="true" />
@@ -1045,6 +1070,10 @@
         <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="1s0vtrwUXkd" resolve="mps-messaging" />
       </node>
+      <node concept="nCB5N" id="7G$QnBJF_O6" role="nCB5Z">
+        <property role="1Sh$E4" value="true" />
+        <ref role="nCB5Y" node="5d$B_bnZPNh" resolve="mps-boot-util" />
+      </node>
     </node>
     <node concept="398b33" id="7FonrDkmRHZ" role="3989C9">
       <property role="TrG5h" value="vfs" />
@@ -1070,7 +1099,7 @@
         <ref role="nCB5Y" node="1H905DlDRAI" resolve="mps-openapi" />
       </node>
       <node concept="nCB5N" id="7FonrDkn1dM" role="nCB5Z">
-        <ref role="nCB5Y" node="1s0vtrwUPV$" resolve="logging" />
+        <ref role="nCB5Y" node="1s0vtrwUPV$" resolve="mps-logging" />
       </node>
       <node concept="nCB5N" id="3vjn6$4v68Q" role="nCB5Z">
         <ref role="nCB5Y" node="3vjn6$4rsZc" resolve="util-core" />
@@ -1383,7 +1412,7 @@
       </node>
       <node concept="nCB5N" id="1s0vtrwV4Mp" role="nCB5Z">
         <property role="1Sh$E4" value="true" />
-        <ref role="nCB5Y" node="1s0vtrwUPV$" resolve="logging" />
+        <ref role="nCB5Y" node="1s0vtrwUPV$" resolve="mps-logging" />
       </node>
       <node concept="nCB5N" id="1s0vtrwV6ja" role="nCB5Z">
         <property role="1Sh$E4" value="true" />
@@ -2270,7 +2299,7 @@
         </node>
         <node concept="3981dx" id="1s0vtrwVGmO" role="39821P">
           <node concept="Saw0i" id="1s0vtrwVHqk" role="39821P">
-            <ref role="Saw0g" node="1s0vtrwUPV$" resolve="logging" />
+            <ref role="Saw0g" node="1s0vtrwUPV$" resolve="mps-logging" />
           </node>
           <node concept="3_J27D" id="1s0vtrwVGmQ" role="Nbhlr">
             <node concept="3Mxwew" id="1s0vtrwVGU2" role="3MwsjC">
@@ -2336,6 +2365,16 @@
             <node concept="3Mxwew" id="IFRVVI696D" role="3MwsjC">
               <property role="3MwjfP" value="mps-collections.jar" />
             </node>
+          </node>
+        </node>
+        <node concept="3981dx" id="5d$B_bnZYWU" role="39821P">
+          <node concept="3_J27D" id="5d$B_bnZYWW" role="Nbhlr">
+            <node concept="3Mxwew" id="5d$B_bnZZwB" role="3MwsjC">
+              <property role="3MwjfP" value="mps-boot-util.jar" />
+            </node>
+          </node>
+          <node concept="Saw0i" id="5d$B_bnZZwD" role="39821P">
+            <ref role="Saw0g" node="5d$B_bnZPNh" resolve="mps-boot-util" />
           </node>
         </node>
         <node concept="3981dx" id="1H905DlDUSL" role="39821P">
@@ -14094,6 +14133,11 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="2GhqfE" id="5d$B_bo00PZ" role="nCB5Z">
+        <node concept="3yrxFa" id="5d$B_bo00S6" role="3yrxIG">
+          <ref role="3yrxFb" node="5d$B_bnZYWU" resolve="mps-boot-util.jar" />
         </node>
       </node>
     </node>

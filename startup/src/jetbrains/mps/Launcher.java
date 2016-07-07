@@ -99,7 +99,7 @@ public class Launcher {
 
   private static void addMPSBootstrapClassFolders(List<String> classPath, File selfRoot) throws MalformedURLException {
     String homePath = PathManager.getHomePath();
-    ClassPathReader classPathReader = new ClassPathReader(PathManager.getHomePath(), Arrays.asList(ClassType.values()));
+    ClassPathReader classPathReader = new ClassPathReader(PathManager.getHomePath());
     classPathReader.read().stream().forEach(path -> {
       File dir = new File(homePath, path);
       if (dir.isDirectory()) {

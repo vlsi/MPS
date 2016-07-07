@@ -10922,6 +10922,27 @@
                 </node>
               </node>
             </node>
+            <node concept="2Vbh7Z" id="5d$B_bo07iH" role="2VaTZU">
+              <node concept="2pNNFK" id="5d$B_bo07iI" role="2Vbh7K">
+                <property role="2pNNFO" value="jar" />
+                <node concept="2pNNFK" id="5d$B_bo07iJ" role="3o6s8t">
+                  <property role="qg3DV" value="true" />
+                  <property role="2pNNFO" value="fileset" />
+                  <node concept="2pNUuL" id="5d$B_bo07iK" role="2pNNFR">
+                    <property role="2pNUuO" value="dir" />
+                    <node concept="2pMdtt" id="5d$B_bo07iL" role="2pMdts">
+                      <property role="2pMdty" value="${build.tmp}/java/out/mps-boot-util" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pNUuL" id="5d$B_bo07iM" role="2pNNFR">
+                  <property role="2pNUuO" value="destfile" />
+                  <node concept="2pMdtt" id="5d$B_bo07iN" role="2pMdts">
+                    <property role="2pMdty" value="${build.tmp}/antTasks/mps-boot-util.jar" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="2Vbh7Z" id="5mxyaMfDLXv" role="2VaTZU">
               <node concept="2pNNFK" id="5mxyaMfDLXw" role="2Vbh7K">
                 <property role="2pNNFO" value="jar" />
@@ -10994,7 +11015,7 @@
                   <node concept="2pNUuL" id="1s0vtrxeeJv" role="2pNNFR">
                     <property role="2pNUuO" value="dir" />
                     <node concept="2pMdtt" id="1s0vtrxeeJw" role="2pMdts">
-                      <property role="2pMdty" value="${build.tmp}/java/out/logging" />
+                      <property role="2pMdty" value="${build.tmp}/java/out/mps-logging" />
                     </node>
                   </node>
                 </node>

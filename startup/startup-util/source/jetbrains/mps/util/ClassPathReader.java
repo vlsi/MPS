@@ -38,8 +38,17 @@ public final class ClassPathReader {
   private final List<String> myTypes;
 
   public ClassPathReader(@NotNull String homePath, @NotNull List<ClassType> types) {
+    myAdditionalCPFile = calcFileLocation(homePath);
     myTypes = types.stream().map(ClassType::getTypeString).collect(Collectors.toList());
-    myAdditionalCPFile = new File(new File(homePath, "build"), "idea.additional.classpath.txt");
+  }
+
+  public ClassPathReader(@NotNull String homePath) {
+    myAdditionalCPFile = calcFileLocation(homePath);
+    myTypes = null;
+  }
+
+  private File calcFileLocation(@NotNull String homePath) {
+    return new File(new File(homePath, "build"), "idea.additional.classpath.txt");
   }
 
   @NotNull
@@ -51,7 +60,7 @@ public final class ClassPathReader {
         while (sc.hasNextLine()) {
           String line = sc.nextLine().trim();
           if (line.startsWith(":")) {
-            skipMode = !myTypes.contains(line.substring(1));
+            skipMode = myTypes != null && !myTypes.contains(line.substring(1));
             continue;
           }
 

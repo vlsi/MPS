@@ -1091,11 +1091,11 @@
               </node>
             </node>
             <node concept="2YIFZM" id="56m6nR3VFZo" role="33vP2m">
-              <ref role="37wK5l" to="zkib:~CommonPaths.getMPSPaths(jetbrains.mps.ClasspathReader$ClassType):java.util.List" resolve="getMPSPaths" />
               <ref role="1Pybhc" to="zkib:~CommonPaths" resolve="CommonPaths" />
-              <node concept="Rm8GO" id="56m6nR3VFZp" role="37wK5m">
-                <ref role="Rm8GQ" to="fyhk:~ClasspathReader$ClassType.JDK_TOOLS" resolve="JDK_TOOLS" />
-                <ref role="1Px2BO" to="fyhk:~ClasspathReader$ClassType" resolve="ClasspathReader.ClassType" />
+              <ref role="37wK5l" to="zkib:~CommonPaths.getMPSPaths(jetbrains.mps.util.ClassType):java.util.List" resolve="getMPSPaths" />
+              <node concept="Rm8GO" id="5d$B_bnZsSH" role="37wK5m">
+                <ref role="Rm8GQ" to="18ew:~ClassType.JDK_TOOLS" resolve="JDK_TOOLS" />
+                <ref role="1Px2BO" to="18ew:~ClassType" resolve="ClassType" />
               </node>
             </node>
           </node>

@@ -180,7 +180,6 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public String toString() {
-    checkValidity();
     StringBuilder result = new StringBuilder("classpath {\n");
 
     for (IClassPathItem child : myChildren) {

@@ -206,7 +206,7 @@
       <node id="352677614185351840" at="95,49,96,53" concept="6" />
       <node id="352677614185351848" at="97,79,98,61" concept="1" />
       <node id="8696860480643499412" at="100,5,101,0" concept="8" />
-      <node id="5878914391527571414" at="101,0,102,89" concept="6" />
+      <node id="5878914391527571414" at="101,0,102,73" concept="6" />
       <node id="5878914391527612267" at="104,37,105,28" concept="7" />
       <node id="8696860480643499413" at="107,8,108,0" concept="8" />
       <node id="352677614185351857" at="108,0,109,21" concept="7" />
@@ -236,7 +236,7 @@
       <node id="8927840084194829214" at="122,0,125,0" concept="5" trace="accept#(Ljava/lang/String;)Z" />
       <node id="8927840084194829228" at="126,0,129,0" concept="5" trace="select#(Ljava/lang/String;)Ljetbrains/mps/execution/api/commands/CommandPart;" />
       <node id="352677614185351672" at="71,0,76,0" concept="5" trace="createProcess#(Lorg/jetbrains/mps/openapi/model/SNode;)Lcom/intellij/execution/process/ProcessHandler;" />
-      <node id="8696860480643499415" at="102,89,107,8" concept="1" />
+      <node id="8696860480643499415" at="102,73,107,8" concept="1" />
       <node id="352677614185351672" at="40,0,46,0" concept="5" trace="setTarget_NodeINamedConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/ant/execution/Ant_Command;" />
       <node id="352677614185351672" at="46,0,52,0" concept="5" trace="setAntLocation_String#(Ljava/lang/String;)Ljetbrains/mps/ant/execution/Ant_Command;" />
       <node id="352677614185351672" at="52,0,58,0" concept="5" trace="setOptions_String#(Ljava/lang/String;)Ljetbrains/mps/ant/execution/Ant_Command;" />

@@ -24,6 +24,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+// TODO Remove from core, used in bl only. AP
 public final class ReflectionUtil {
   private ReflectionUtil() {
   }

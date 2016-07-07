@@ -112,7 +112,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @Deprecated
   protected AbstractModule() {
     this(getFSSingleton());
-    LOG.warn("Creating module with empty arguments");
   }
 
   protected AbstractModule(@NotNull FileSystem fileSystem) {

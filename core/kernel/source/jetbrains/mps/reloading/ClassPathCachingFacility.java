@@ -16,7 +16,9 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.impl.IoFile;
 import jetbrains.mps.vfs.impl.IoFileSystem;
+import jetbrains.mps.vfs.path.CommonPath;
 import jetbrains.mps.vfs.path.UniPath;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -57,19 +59,22 @@ public final class ClassPathCachingFacility {
     synchronized (LOCK) {
       if (!myCache.containsKey(path)) {
         IFile file = ourFileSystem.getFile(path);
+        assert file instanceof IoFile;
         UniPath uniPath = file.toPath().toNormal();
         boolean isDirectory = file.isDirectory();
         RealClassPathItem item;
         if (!file.exists()) {
           String moduleString = requestor == null ? "" : " in " + requestor;
-          LOG.warn(String.format("Can't load class path item %s%s.%s", uniPath, moduleString, isDirectory ? " Execute make in IDEA." : ""));
+          LOG.debug(String.format("Can't load class path item %s%s.%s", uniPath, moduleString, isDirectory ? " Execute make in IDEA." : ""));
           item = new NonExistingClassPathItem(uniPath.toString());
-        } else if (file.isInArchive()) {
+        } else if (file.isArchive()) {
           item = new JarFileClassPathItem(ourFileSystem, uniPath.toString());
         } else if (file.isDirectory()) {
           item = new FileClassPathItem(path);
+        } else if (file.isInArchive()) {
+          throw new IllegalArgumentException("Path variable `" + uniPath + "' points to the location inside the jar which is not supported");
         } else {
-          throw new IllegalArgumentException("Path variable " + uniPath + " does not point to a directory or to a jar/zip location");
+          throw new IllegalArgumentException("Path variable " + uniPath + "' does not point to a directory or to a jar/zip location");
         }
 
         myCache.put(path, item);

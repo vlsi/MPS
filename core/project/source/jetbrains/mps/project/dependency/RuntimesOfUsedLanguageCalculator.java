@@ -125,7 +125,9 @@ class RuntimesOfUsedLanguageCalculator {
       for (SLanguage usedLang : myModule.getUsedLanguages()) {
         if (usedLang.getSourceModule() == null) {
           if (!myChecked) {
-            LOG.warn(String.format("The source module of the used language cannot be found: %s", usedLang));
+            if (!(myModule instanceof TempModule)) {
+              LOG.warn(String.format("The source module of the used language `%s' cannot be found for %s", usedLang, myModule));
+            }
             continue;
           } else {
             throw new AbsentDependencyException(usedLang);
