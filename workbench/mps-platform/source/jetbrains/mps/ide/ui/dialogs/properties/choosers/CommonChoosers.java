@@ -21,6 +21,8 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.choose.ChooseByNameData;
 import jetbrains.mps.workbench.choose.LanguagesPresentation;
+import jetbrains.mps.workbench.choose.ModelsPresentation;
+import jetbrains.mps.workbench.choose.ModulesPresentation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -39,7 +41,8 @@ import java.util.List;
  */
 public class CommonChoosers {
   public static List<SModelReference> showDialogModelCollectionChooser(Project project, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels) {
-    ModelSetData data = new ModelSetData(ProjectHelper.fromIdeaProject(project), models, nonProjectModels);
+    ChooseByNameData<SModelReference> data = new ChooseByNameData<>(new ModelsPresentation(ProjectHelper.getProjectRepository(project)));
+    data.derivePrompts("model").setCheckBoxName(null).setScope(models, nonProjectModels);
     final boolean extraScope = nonProjectModels != null && !nonProjectModels.isEmpty();
     ChooserDialog<SModelReference> dialog = new ChooserDialog<SModelReference>(project, data, extraScope, true);
     dialog.setTitle("Choose model");
@@ -48,8 +51,9 @@ public class CommonChoosers {
   }
 
   @Nullable
-  public static SModelReference showModelChooser(@NotNull jetbrains.mps.project.Project mpsProject, @Nullable String title, List<SModelReference> models) {
-    ModelSetData data = new ModelSetData(mpsProject, models, null);
+  public static SModelReference showModelChooser(@NotNull jetbrains.mps.project.Project mpsProject, @Nullable String title, @NotNull List<SModelReference> models) {
+    ChooseByNameData<SModelReference> data = new ChooseByNameData<>(new ModelsPresentation(mpsProject.getRepository()));
+    data.derivePrompts("model").setCheckBoxName(null).setScope(models, null);
     // XXX perhaps, as an alternative, shall take project parameter only and build a set of models myself?
     ChooserDialog<SModelReference> dialog = new ChooserDialog<SModelReference>(ProjectHelper.toIdeaProject(mpsProject), data, false, false);
     dialog.setTitle(title == null ? "Choose model" : title);
@@ -59,8 +63,9 @@ public class CommonChoosers {
   }
 
   @Nullable
-  public static SModuleReference showModuleChooser(@NotNull jetbrains.mps.project.Project mpsProject, @Nullable String title, List<SModuleReference> modules) {
-    ModuleSetData data = new ModuleSetData(mpsProject, modules, null);
+  public static SModuleReference showModuleChooser(@NotNull jetbrains.mps.project.Project mpsProject, @Nullable String title, @NotNull List<SModuleReference> modules) {
+    ChooseByNameData<SModuleReference> data = new ChooseByNameData<>(new ModulesPresentation(mpsProject.getRepository()));
+    data.derivePrompts("module").setCheckBoxName(null).setScope(modules, null);
     ChooserDialog<SModuleReference> dialog = new ChooserDialog<SModuleReference>(ProjectHelper.toIdeaProject(mpsProject), data, false, false);
     dialog.setTitle(title == null ? "Choose module" : title);
     dialog.show();
@@ -70,8 +75,9 @@ public class CommonChoosers {
 
   // XXX perhaps, shall use MPSProject, as this activity bound to UI action anyway
   @NotNull
-  public static List<SModuleReference> showModuleSetChooser(jetbrains.mps.project.Project mpsProject, String title, List<SModuleReference> modules) {
-    ModuleSetData data = new ModuleSetData(mpsProject, modules, null);
+  public static List<SModuleReference> showModuleSetChooser(@NotNull jetbrains.mps.project.Project mpsProject, @Nullable String title, @NotNull List<SModuleReference> modules) {
+    ChooseByNameData<SModuleReference> data = new ChooseByNameData<>(new ModulesPresentation(mpsProject.getRepository()));
+    data.derivePrompts("module").setCheckBoxName(null).setScope(modules, null);
     ChooserDialog<SModuleReference> dialog = new ChooserDialog<SModuleReference>(ProjectHelper.toIdeaProject(mpsProject), data, false, true);
     dialog.setTitle(title == null ? "Choose module" : title);
     dialog.show();
@@ -82,7 +88,7 @@ public class CommonChoosers {
    * Ask user to pick few languages from supplied collection.
    * @return empty list if dialog was canceled or no language was selected.
    */
-  public static List<SLanguage> showLanguageSetChooser(jetbrains.mps.project.Project mpsProject, String title, Collection<SLanguage> languages) {
+  public static List<SLanguage> showLanguageSetChooser(@NotNull jetbrains.mps.project.Project mpsProject, @Nullable String title, @NotNull Collection<SLanguage> languages) {
     ChooseByNameData<SLanguage> data = new ChooseByNameData<>(new LanguagesPresentation());
     data.derivePrompts("language").setCheckBoxName(null).setScope(languages, null);
     ChooserDialog<SLanguage> dialog = new ChooserDialog<SLanguage>(ProjectHelper.toIdeaProject(mpsProject), data, false, true);

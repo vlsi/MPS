@@ -40,13 +40,17 @@ import java.util.Set;
  * {@link com.intellij.navigation.ItemPresentation} and correspondence of their methods to
  * methods of {@link ChooseByNameModel}, like {@link NavigationItem#getName() vs {@link ChooseByNameModel#getElementName(Object)}
  * vs {@link ItemPresentation#getPresentableText()}. Besides, dumb mode control has nothing to do with choose model, and left to callers for management.
+ * <p/>
+ * Generally, there's no need to sub-class this class, composition should be enough, hence final. Nevertheless, the class is not inherently 'final', and
+ * in case there's legitimate scenario that requires subclassing, 'final' can be removed. 'Legitimate', among other, means documented justification with
+ * specific scenarios.
  *
  * @param <T> elements of the list to choose from. No restriction (e.g. like need for {@link Object#hashCode()} is imposed on elements.
  *
  * @author Artem Tikhomirov
  * @since 3.4
  */
-public class ChooseByNameData<T> implements ChooseByNameModel {
+public final class ChooseByNameData<T> implements ChooseByNameModel {
 
   private final ElementPresentation<T> myPresentation;
   private String myCheckboxName;

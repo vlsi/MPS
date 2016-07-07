@@ -19,6 +19,7 @@ import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -28,6 +29,11 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 
 import java.util.ArrayList;
 
+/**
+ * @deprecated see {@link BaseMPSChooseModel}
+ */
+@Deprecated
+@ToRemove(version = 3.4)
 public class BaseModuleModel extends BaseMPSChooseModel<SModuleReference> {
   public BaseModuleModel(@NotNull Project mpsProject) {
     this(mpsProject, "module");
