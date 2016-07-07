@@ -7642,7 +7642,7 @@
       <node id="9126454250600077387" at="48,235,49,0" concept="13" />
       <node id="3464535278051984809" at="52,98,53,312" concept="11" />
       <node id="9163025738079118227" at="56,30,57,13" concept="11" />
-      <node id="9088427053769184157" at="60,25,61,523" concept="5" />
+      <node id="9088427053769184157" at="60,25,61,530" concept="5" />
       <node id="9088427053767147790" at="67,55,68,148" concept="16" />
       <node id="3366214456101180517" at="71,70,72,47" concept="10" />
       <node id="8238758872512708711" at="73,30,74,42" concept="5" />
@@ -7668,7 +7668,7 @@
       <scope id="9126454250600059146" at="41,25,42,286" />
       <scope id="3464535278051984808" at="52,98,53,312" />
       <scope id="9163025738079118226" at="56,30,57,13" />
-      <scope id="512885590562293803" at="60,25,61,523" />
+      <scope id="512885590562293803" at="60,25,61,530" />
       <scope id="9088427053767133083" at="67,55,68,148" />
       <scope id="3366214456101173373" at="73,30,74,42" />
       <scope id="9126454250599950216" at="27,0,30,0" />
@@ -7727,9 +7727,9 @@
       <node id="3464535278051991446" at="53,96,54,313" concept="11" />
       <node id="9126454250600111947" at="57,30,58,13" concept="11" />
       <node id="9088427053763560888" at="64,65,65,85" concept="11" />
-      <node id="9088427053763560906" at="68,164,69,121" concept="10" />
-      <node id="9088427053763560911" at="69,121,70,43" concept="5" />
-      <node id="8656797459613152551" at="70,43,71,101" concept="10" />
+      <node id="9088427053763560906" at="68,164,69,106" concept="10" />
+      <node id="9088427053763560911" at="69,106,70,51" concept="5" />
+      <node id="8656797459613152551" at="70,51,71,101" concept="10" />
       <node id="8656797459615208620" at="72,75,73,265" concept="5" />
       <node id="8656797459615219836" at="75,75,76,85" concept="10" />
       <node id="8656797459615219846" at="77,213,78,50" concept="17" />
@@ -7752,7 +7752,7 @@
       <node id="3464535278051991423" at="50,0,56,7" concept="10" />
       <node id="9126454250600099602" at="39,0,48,0" concept="9" trace="isApplicable#(Ljetbrains/mps/project/MPSProject;Ljava/util/List;)Z" />
       <node id="8656797459615219833" at="74,13,87,13" concept="7" />
-      <node id="9088427053763560894" at="67,0,89,0" concept="9" trace="process#(Ljava/util/List;Ljava/util/Map;Ljetbrains/mps/lang/migration/runtime/base/RefactoringSession;)V" />
+      <node id="9088427053763560894" at="67,0,89,0" concept="9" trace="process#(Ljava/util/List;Ljava/util/Map;Ljetbrains/mps/refactoring/participant/RefactoringSession;)V" />
       <node id="9088427053769163634" at="61,25,89,86" concept="5" />
       <node id="512885590562305989" at="61,0,91,0" concept="9" trace="run#()V" />
       <node id="512885590562305987" at="59,5,91,7" concept="5" />
@@ -7818,7 +7818,7 @@
       <unit id="9126454250600099614" at="41,63,45,5" name="jetbrains.mps.ide.java.actions.MoveStaticMethod$1" />
       <unit id="3464535278051991433" at="51,97,56,5" name="jetbrains.mps.ide.java.actions.MoveStaticMethod$2" />
       <unit id="9126454250600099586" at="27,0,35,0" name="jetbrains.mps.ide.java.actions.MoveStaticMethod$MoveStaticMethod_extension" />
-      <unit id="9088427053763560875" at="62,171,89,9" name="jetbrains.mps.ide.java.actions.MoveStaticMethod$4" />
+      <unit id="9088427053763560875" at="62,184,89,9" name="jetbrains.mps.ide.java.actions.MoveStaticMethod$4" />
       <unit id="512885590562305989" at="60,64,91,5" name="jetbrains.mps.ide.java.actions.MoveStaticMethod$3" />
       <unit id="9126454250600098577" at="25,0,95,0" name="jetbrains.mps.ide.java.actions.MoveStaticMethod" />
     </file>

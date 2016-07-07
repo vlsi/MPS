@@ -9,7 +9,7 @@ import jetbrains.mps.lang.migration.runtime.base.RefactoringPart;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
+import jetbrains.mps.refactoring.participant.RefactoringSession;
 
 public class RefactoringStepImpl implements RefactoringLog {
   private String myCaption;

@@ -82,6 +82,7 @@
       <concept id="1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" flags="nn" index="2oxUTD">
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
+      <concept id="1139184414036" name="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" flags="nn" index="WFELt" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -98,6 +99,9 @@
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
+      <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
+        <reference id="1138056546658" name="link" index="3TtcxE" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -106,6 +110,9 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+    </language>
+    <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
     </language>
   </registry>
   <node concept="2S6QgY" id="hzF3XqR">
@@ -242,6 +249,49 @@
                 <node concept="2Sf5sV" id="hzF5dcJ" role="2Oq$k0" />
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="2S6QgY" id="3nqUySdhshA">
+    <property role="TrG5h" value="AddModeToDataFlowBuilder" />
+    <ref role="2ZfgGC" to="tp41:hz_zdoP" resolve="DataFlowBuilderDeclaration" />
+    <node concept="2S6ZIM" id="3nqUySdhshB" role="2ZfVej">
+      <node concept="3clFbS" id="3nqUySdhshC" role="2VODD2">
+        <node concept="3clFbF" id="3nqUySdhstu" role="3cqZAp">
+          <node concept="Xl_RD" id="3nqUySdhstt" role="3clFbG">
+            <property role="Xl_RC" value="Add Mode" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2Sbjvc" id="3nqUySdhshD" role="2ZfgGD">
+      <node concept="3clFbS" id="3nqUySdhshE" role="2VODD2">
+        <node concept="3clFbF" id="3nqUySdhxJ3" role="3cqZAp">
+          <node concept="2OqwBi" id="3nqUySdh_Lc" role="3clFbG">
+            <node concept="2OqwBi" id="3nqUySdh$ww" role="2Oq$k0">
+              <node concept="2Sf5sV" id="3nqUySdhxJ2" role="2Oq$k0" />
+              <node concept="3Tsc0h" id="3nqUySdh$Go" role="2OqNvi">
+                <ref role="3TtcxE" to="tp41:6UdHCtZO4VV" />
+              </node>
+            </node>
+            <node concept="WFELt" id="4nuJlNnV$P4" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2SaL7w" id="3nqUySdhtfz" role="2ZfVeh">
+      <node concept="3clFbS" id="3nqUySdhtf$" role="2VODD2">
+        <node concept="3clFbF" id="3nqUySdhtm_" role="3cqZAp">
+          <node concept="2OqwBi" id="3nqUySdhv9b" role="3clFbG">
+            <node concept="2OqwBi" id="3nqUySdhtza" role="2Oq$k0">
+              <node concept="2Sf5sV" id="3nqUySdhtm$" role="2Oq$k0" />
+              <node concept="3Tsc0h" id="3nqUySdhtPU" role="2OqNvi">
+                <ref role="3TtcxE" to="tp41:6UdHCtZO4VV" />
+              </node>
+            </node>
+            <node concept="1v1jN8" id="3DWy1GwaCER" role="2OqNvi" />
           </node>
         </node>
       </node>

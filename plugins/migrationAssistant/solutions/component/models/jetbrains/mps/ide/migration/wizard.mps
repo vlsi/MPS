@@ -995,6 +995,16 @@
       </node>
       <node concept="3Tm6S6" id="5SsFeroaaw4" role="1B3o_S" />
     </node>
+    <node concept="312cEg" id="1V18N7tjgVt" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myModalityState" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="1V18N7tjc_o" role="1B3o_S" />
+      <node concept="3uibUv" id="1V18N7tjgNy" role="1tU5fm">
+        <ref role="3uigEE" to="bd8o:~ModalityState" resolve="ModalityState" />
+      </node>
+    </node>
     <node concept="312cEg" id="7rK8qWGEHl$" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -1517,6 +1527,20 @@
               <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
               <node concept="1bVj0M" id="7rK8qWGEtKY" role="37wK5m">
                 <node concept="3clFbS" id="7rK8qWGEtKZ" role="1bW5cS">
+                  <node concept="3clFbF" id="1V18N7tjo3E" role="3cqZAp">
+                    <node concept="37vLTI" id="1V18N7tjpft" role="3clFbG">
+                      <node concept="2YIFZM" id="1V18N7tjqhZ" role="37vLTx">
+                        <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
+                        <ref role="37wK5l" to="bd8o:~ModalityState.stateForComponent(java.awt.Component):com.intellij.openapi.application.ModalityState" resolve="stateForComponent" />
+                        <node concept="37vLTw" id="1qfiCjGYRNr" role="37wK5m">
+                          <ref role="3cqZAo" node="5SsFeroaaw1" resolve="myList" />
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="1V18N7tjo3C" role="37vLTJ">
+                        <ref role="3cqZAo" node="1V18N7tjgVt" resolve="myModalityState" />
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3clFbF" id="7rK8qWGEx3Y" role="3cqZAp">
                     <node concept="2OqwBi" id="7rK8qWGEx8V" role="3clFbG">
                       <node concept="2YIFZM" id="7rK8qWGEx40" role="2Oq$k0">
@@ -2527,56 +2551,64 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="513ZrA4x4zF" role="3cqZAp">
-          <node concept="2YIFZM" id="513ZrA4x4zG" role="3clFbG">
-            <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
-            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):java.lang.Exception" resolve="runInUIThreadAndWait" />
-            <node concept="1bVj0M" id="513ZrA4x4zH" role="37wK5m">
-              <node concept="3clFbS" id="513ZrA4x4zI" role="1bW5cS">
-                <node concept="3clFbF" id="513ZrA4x4zJ" role="3cqZAp">
-                  <node concept="2OqwBi" id="513ZrA4x4zK" role="3clFbG">
-                    <node concept="37vLTw" id="513ZrA4x4zL" role="2Oq$k0">
-                      <ref role="3cqZAo" node="513ZrA4x4z$" resolve="model" />
-                    </node>
-                    <node concept="liA8E" id="513ZrA4x4zM" role="2OqNvi">
-                      <ref role="37wK5l" to="dxuu:~DefaultListModel.addElement(java.lang.Object):void" resolve="addElement" />
-                      <node concept="37vLTw" id="513ZrA4x4$4" role="37wK5m">
-                        <ref role="3cqZAo" node="513ZrA4x4$2" resolve="step" />
+        <node concept="3clFbF" id="1V18N7tiKDE" role="3cqZAp">
+          <node concept="2OqwBi" id="1V18N7tiL3n" role="3clFbG">
+            <node concept="2YIFZM" id="1V18N7tiKP0" role="2Oq$k0">
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+            </node>
+            <node concept="liA8E" id="1V18N7tiLje" role="2OqNvi">
+              <ref role="37wK5l" to="bd8o:~Application.invokeAndWait(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeAndWait" />
+              <node concept="1bVj0M" id="513ZrA4x4zH" role="37wK5m">
+                <node concept="3clFbS" id="513ZrA4x4zI" role="1bW5cS">
+                  <node concept="3clFbF" id="513ZrA4x4zJ" role="3cqZAp">
+                    <node concept="2OqwBi" id="513ZrA4x4zK" role="3clFbG">
+                      <node concept="37vLTw" id="513ZrA4x4zL" role="2Oq$k0">
+                        <ref role="3cqZAo" node="513ZrA4x4z$" resolve="model" />
+                      </node>
+                      <node concept="liA8E" id="513ZrA4x4zM" role="2OqNvi">
+                        <ref role="37wK5l" to="dxuu:~DefaultListModel.addElement(java.lang.Object):void" resolve="addElement" />
+                        <node concept="37vLTw" id="513ZrA4x4$4" role="37wK5m">
+                          <ref role="3cqZAo" node="513ZrA4x4$2" resolve="step" />
+                        </node>
                       </node>
                     </node>
                   </node>
-                </node>
-                <node concept="3clFbF" id="513ZrA4x4zO" role="3cqZAp">
-                  <node concept="2OqwBi" id="513ZrA4x4zP" role="3clFbG">
-                    <node concept="37vLTw" id="513ZrA4x4zQ" role="2Oq$k0">
-                      <ref role="3cqZAo" node="5SsFeroaaw1" resolve="myList" />
-                    </node>
-                    <node concept="liA8E" id="513ZrA4x4zR" role="2OqNvi">
-                      <ref role="37wK5l" to="dxuu:~JList.ensureIndexIsVisible(int):void" resolve="ensureIndexIsVisible" />
-                      <node concept="2OqwBi" id="513ZrA4x4zS" role="37wK5m">
-                        <node concept="37vLTw" id="513ZrA4x4zT" role="2Oq$k0">
-                          <ref role="3cqZAo" node="513ZrA4x4z$" resolve="model" />
-                        </node>
-                        <node concept="liA8E" id="513ZrA4x4zU" role="2OqNvi">
-                          <ref role="37wK5l" to="dxuu:~DefaultListModel.lastIndexOf(java.lang.Object):int" resolve="lastIndexOf" />
-                          <node concept="37vLTw" id="513ZrA4x4$5" role="37wK5m">
-                            <ref role="3cqZAo" node="513ZrA4x4$2" resolve="step" />
+                  <node concept="3clFbF" id="513ZrA4x4zO" role="3cqZAp">
+                    <node concept="2OqwBi" id="513ZrA4x4zP" role="3clFbG">
+                      <node concept="37vLTw" id="513ZrA4x4zQ" role="2Oq$k0">
+                        <ref role="3cqZAo" node="5SsFeroaaw1" resolve="myList" />
+                      </node>
+                      <node concept="liA8E" id="513ZrA4x4zR" role="2OqNvi">
+                        <ref role="37wK5l" to="dxuu:~JList.ensureIndexIsVisible(int):void" resolve="ensureIndexIsVisible" />
+                        <node concept="2OqwBi" id="513ZrA4x4zS" role="37wK5m">
+                          <node concept="37vLTw" id="513ZrA4x4zT" role="2Oq$k0">
+                            <ref role="3cqZAo" node="513ZrA4x4z$" resolve="model" />
+                          </node>
+                          <node concept="liA8E" id="513ZrA4x4zU" role="2OqNvi">
+                            <ref role="37wK5l" to="dxuu:~DefaultListModel.lastIndexOf(java.lang.Object):int" resolve="lastIndexOf" />
+                            <node concept="37vLTw" id="513ZrA4x4$5" role="37wK5m">
+                              <ref role="3cqZAo" node="513ZrA4x4$2" resolve="step" />
+                            </node>
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
-                </node>
-                <node concept="3clFbF" id="513ZrA4x4zW" role="3cqZAp">
-                  <node concept="2OqwBi" id="513ZrA4x4zX" role="3clFbG">
-                    <node concept="37vLTw" id="513ZrA4x4zY" role="2Oq$k0">
-                      <ref role="3cqZAo" node="5SsFeroaaw1" resolve="myList" />
-                    </node>
-                    <node concept="liA8E" id="513ZrA4x4zZ" role="2OqNvi">
-                      <ref role="37wK5l" to="z60i:~Component.repaint():void" resolve="repaint" />
+                  <node concept="3clFbF" id="513ZrA4x4zW" role="3cqZAp">
+                    <node concept="2OqwBi" id="513ZrA4x4zX" role="3clFbG">
+                      <node concept="37vLTw" id="513ZrA4x4zY" role="2Oq$k0">
+                        <ref role="3cqZAo" node="5SsFeroaaw1" resolve="myList" />
+                      </node>
+                      <node concept="liA8E" id="513ZrA4x4zZ" role="2OqNvi">
+                        <ref role="37wK5l" to="z60i:~Component.repaint():void" resolve="repaint" />
+                      </node>
                     </node>
                   </node>
                 </node>
+              </node>
+              <node concept="37vLTw" id="1V18N7tjqMZ" role="37wK5m">
+                <ref role="3cqZAo" node="1V18N7tjgVt" resolve="myModalityState" />
               </node>
             </node>
           </node>
@@ -2646,35 +2678,43 @@
             <node concept="10P_77" id="2htE_P_NuB9" role="1tU5fm" />
           </node>
         </node>
-        <node concept="3clFbF" id="5SsFeroaay_" role="3cqZAp">
-          <node concept="2YIFZM" id="5SsFeroblQW" role="3clFbG">
-            <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
-            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):java.lang.Exception" resolve="runInUIThreadAndWait" />
-            <node concept="1bVj0M" id="513ZrA4wEkb" role="37wK5m">
-              <property role="3yWfEV" value="true" />
-              <node concept="3clFbS" id="513ZrA4wEkl" role="1bW5cS">
-                <node concept="3clFbF" id="2htE_P_NuHV" role="3cqZAp">
-                  <node concept="37vLTI" id="2htE_P_NuHX" role="3clFbG">
-                    <node concept="2OqwBi" id="2htE_P_NuBh" role="37vLTx">
-                      <node concept="1eOMI4" id="2htE_P_NuBi" role="2Oq$k0">
-                        <node concept="10QFUN" id="2htE_P_NuBj" role="1eOMHV">
-                          <node concept="37vLTw" id="2htE_P_NuBk" role="10QFUP">
-                            <ref role="3cqZAo" node="25gV4Lszlrg" resolve="result" />
-                          </node>
-                          <node concept="3uibUv" id="2htE_P_NuBl" role="10QFUM">
-                            <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.MigrationStep" />
+        <node concept="3clFbF" id="1V18N7tiS9X" role="3cqZAp">
+          <node concept="2OqwBi" id="1V18N7tiWam" role="3clFbG">
+            <node concept="2YIFZM" id="1V18N7tiVRm" role="2Oq$k0">
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+            </node>
+            <node concept="liA8E" id="1V18N7tiWnw" role="2OqNvi">
+              <ref role="37wK5l" to="bd8o:~Application.invokeAndWait(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeAndWait" />
+              <node concept="1bVj0M" id="513ZrA4wEkb" role="37wK5m">
+                <property role="3yWfEV" value="true" />
+                <node concept="3clFbS" id="513ZrA4wEkl" role="1bW5cS">
+                  <node concept="3clFbF" id="2htE_P_NuHV" role="3cqZAp">
+                    <node concept="37vLTI" id="2htE_P_NuHX" role="3clFbG">
+                      <node concept="2OqwBi" id="2htE_P_NuBh" role="37vLTx">
+                        <node concept="1eOMI4" id="2htE_P_NuBi" role="2Oq$k0">
+                          <node concept="10QFUN" id="2htE_P_NuBj" role="1eOMHV">
+                            <node concept="37vLTw" id="2htE_P_NuBk" role="10QFUP">
+                              <ref role="3cqZAo" node="25gV4Lszlrg" resolve="result" />
+                            </node>
+                            <node concept="3uibUv" id="2htE_P_NuBl" role="10QFUM">
+                              <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.MigrationStep" />
+                            </node>
                           </node>
                         </node>
+                        <node concept="liA8E" id="2htE_P_NuBm" role="2OqNvi">
+                          <ref role="37wK5l" to="bim2:5SsFeroaabz" resolve="execute" />
+                        </node>
                       </node>
-                      <node concept="liA8E" id="2htE_P_NuBm" role="2OqNvi">
-                        <ref role="37wK5l" to="bim2:5SsFeroaabz" resolve="execute" />
+                      <node concept="37vLTw" id="2htE_P_NuI1" role="37vLTJ">
+                        <ref role="3cqZAo" node="2htE_P_NuBg" resolve="noException" />
                       </node>
-                    </node>
-                    <node concept="37vLTw" id="2htE_P_NuI1" role="37vLTJ">
-                      <ref role="3cqZAo" node="2htE_P_NuBg" resolve="noException" />
                     </node>
                   </node>
                 </node>
+              </node>
+              <node concept="37vLTw" id="1V18N7tjrgV" role="37wK5m">
+                <ref role="3cqZAo" node="1V18N7tjgVt" resolve="myModalityState" />
               </node>
             </node>
           </node>

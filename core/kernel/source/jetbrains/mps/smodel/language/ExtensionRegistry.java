@@ -117,7 +117,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
         myExtensionDescriptors.put(namespace, desc);
         registerExtensionDescriptor(desc);
       } else {
-        myModuleToNamespace.remove(namespace);
+        myModuleToNamespace.remove(module);
       }
     }
   }

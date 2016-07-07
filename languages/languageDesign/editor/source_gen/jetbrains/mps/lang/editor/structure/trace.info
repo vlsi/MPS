@@ -15,7 +15,7 @@
       <unit at="14,0,2277,0" name="jetbrains.mps.lang.editor.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="IconContainer.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.structure.IconContainer" />
+      <unit at="7,0,26,0" name="jetbrains.mps.lang.editor.structure.IconContainer" />
     </file>
     <file name="StructureAspectDescriptor.java">
       <unit at="18,0,1534,0" name="jetbrains.mps.lang.editor.structure.StructureAspectDescriptor" />

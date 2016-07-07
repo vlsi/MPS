@@ -45,26 +45,26 @@ public final class RefactoringLogApplied implements ScriptApplied {
       if (script == null) {
         return "<missing refactoring log>: module:" + moduleNameShrinked + ", version:" + myRefactoringLogReference.getFromVersion();
       }
-      return script.getScript().getCaption() + "  [" + moduleNameShrinked + "]";
+      return script.getRefactoringLog().getCaption() + "  [" + moduleNameShrinked + "]";
     }
   }
 
-  private RefactoringLog myScript;
+  private RefactoringLog myRefactoringLog;
   private SModule myModule;
-  public RefactoringLogApplied(RefactoringLog script, SModule module) {
-    myScript = script;
+  public RefactoringLogApplied(RefactoringLog refactoringLog, SModule module) {
+    myRefactoringLog = refactoringLog;
     myModule = module;
   }
-  public RefactoringLog getScript() {
-    return myScript;
+  public RefactoringLog getRefactoringLog() {
+    return myRefactoringLog;
   }
   public SModule getModule() {
     return myModule;
   }
   public Iterable<ScriptApplied.ScriptAppliedReference> getDependencies() {
     List<ScriptApplied.ScriptAppliedReference> result = ListSequence.fromList(new ArrayList<ScriptApplied.ScriptAppliedReference>());
-    ListSequence.fromList(result).addElement(new RefactoringLogApplied.RefactoringLogAppliedReference(new RefactoringLogReference(myScript.getDescriptor().getModule(), myScript.getDescriptor().getFromVersion() - 1), myModule));
-    for (RefactoringLogReference script : Sequence.fromIterable(myScript.getExecuteAfter())) {
+    ListSequence.fromList(result).addElement(new RefactoringLogApplied.RefactoringLogAppliedReference(new RefactoringLogReference(myRefactoringLog.getDescriptor().getModule(), myRefactoringLog.getDescriptor().getFromVersion() - 1), myModule));
+    for (RefactoringLogReference script : Sequence.fromIterable(myRefactoringLog.getExecuteAfter())) {
       ListSequence.fromList(result).addElement(new RefactoringLogApplied.RefactoringLogAppliedReference(script, myModule));
     }
     return result;
@@ -73,6 +73,6 @@ public final class RefactoringLogApplied implements ScriptApplied {
     return migrationComponent.executeRefactoringLog(this);
   }
   public String getDescription() {
-    return new RefactoringLogApplied.RefactoringLogAppliedReference(myScript.getDescriptor(), myModule).getKindDescription(this) + ": " + myModule.getModuleName();
+    return new RefactoringLogApplied.RefactoringLogAppliedReference(myRefactoringLog.getDescriptor(), myModule).getKindDescription(this) + ": " + myModule.getModuleName();
   }
 }

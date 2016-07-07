@@ -17,7 +17,6 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.module.SRepositoryExt;
-import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
@@ -50,6 +49,13 @@ public class TransientModelsProvider {
     myTransientSwapOwner = swapOwner;
   }
 
+  /**
+   * @return repository where transient modules reside
+   */
+  public SRepository getRepository() {
+    return myRepository;
+  }
+
   protected void clearAll(final boolean dropCheckpoint) {
     myRepository.getModelAccess().runWriteAction(new Runnable() {
       @Override
@@ -62,7 +68,6 @@ public class TransientModelsProvider {
         if (dropCheckpoint && myCheckpointsModule != null) {
           myRepository.unregisterModule(myCheckpointsModule, myOwner);
           myCheckpointsModule = null;
-          myEnvTemp = null;
         }
       }
     });
@@ -109,20 +114,6 @@ public class TransientModelsProvider {
   public TransientModelsModule getCheckpointsModule() {
     return myCheckpointsModule;
   }
-
-  /**
-   * FIXME: temp prototype. We shall not keep CME instance along with TMP, this is just to facilitate
-   * move forward. Now we need original CheckpointState instance as it keeps mapping labels, and we do
-   * not serialize/restore these yet (it's easy to restore CheckpointState based on transient SModel, but
-   * impossible to resurrect labels yet).
-   */
-  public CrossModelEnvironment getCrossModelEnvironment() {
-    if (myEnvTemp == null) {
-      myEnvTemp = new CrossModelEnvironment(this);
-    }
-    return myEnvTemp;
-  }
-  private CrossModelEnvironment myEnvTemp;
 
   public void initCheckpointModule() {
     if (myCheckpointsModule == null) {

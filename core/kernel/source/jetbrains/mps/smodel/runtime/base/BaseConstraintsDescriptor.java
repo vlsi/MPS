@@ -22,8 +22,10 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
@@ -74,7 +76,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   @Deprecated
   @ToRemove(version = 3.4)
   public BaseConstraintsDescriptor(SConceptId conceptId) {
-    this.myConcept = MetaAdapterFactory.getConcept(conceptId, "<BaseConstraintsDescriptor: this name must not be used>");
+    myConcept = MetaAdapterFactory.getAbstractConcept(ConceptRegistry.getInstance().getConceptDescriptor(conceptId));
     calcInheritance();
   }
 
@@ -410,8 +412,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     //this is for 3.3-compatibility, should be replaced with getConcept() after 3.4
 
     SConceptId defaultConcreteConceptId = getDefaultConcreteConceptId();
-    SConcept result =
-        MetaAdapterFactory.getConcept(defaultConcreteConceptId, "<BaseConstraintsDescriptor: this name must not be used (default concrete concept)>");
+    SAbstractConcept result = MetaAdapterFactory.getConceptById(defaultConcreteConceptId);
     if (result.equals(myConcept)) {
       return myConcept;
     } else {

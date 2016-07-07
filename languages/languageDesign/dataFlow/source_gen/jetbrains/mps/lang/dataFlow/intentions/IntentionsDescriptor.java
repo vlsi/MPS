@@ -34,6 +34,13 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
       switch (switchIndex) {
         case 0:
           if (true) {
+            // Concept: DataFlowBuilderDeclaration 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddModeToDataFlowBuilder_Intention();
+          }
+          break;
+        case 1:
+          if (true) {
             // Concept: EmitStatement 
             intentions = new IntentionFactory[2];
             intentions[0] = new RemoveMayBeUnreachable_Intention();
@@ -51,9 +58,10 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[2];
+    IntentionFactory[] rv = new IntentionFactory[3];
     rv[0] = new RemoveMayBeUnreachable_Intention();
     rv[1] = new AddMayBeUnreachable_Intention();
+    rv[2] = new AddModeToDataFlowBuilder_Intention();
     return Arrays.asList(rv);
   }
   private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
@@ -64,5 +72,5 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a42658L, "jetbrains.mps.lang.dataFlow.structure.EmitStatement"));
+  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a42658L, "jetbrains.mps.lang.dataFlow.structure.EmitStatement"));
 }

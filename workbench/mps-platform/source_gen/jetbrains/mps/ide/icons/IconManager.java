@@ -114,10 +114,13 @@ public final class IconManager {
 
     IconResource actual = MapSequence.fromMap(ourConceptToIcon).get(concept);
     if (actual == null) {
-      return null;
+      return IdeIcons.DEFAULT_CONCEPT_ICON;
     }
-
-    return getIconForResource(actual);
+    Icon icon = getIconForResource(actual);
+    if (icon == null) {
+      return IdeIcons.DEFAULT_CONCEPT_ICON;
+    }
+    return icon;
   }
 
   public static Icon getIconFor(String namespace) {

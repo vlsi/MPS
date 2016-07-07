@@ -60,6 +60,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
@@ -616,10 +617,13 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     //if module name is a prefix of it's model's name - rename the model, too
     for (SModel m : getModels()) {
       if (m.isReadOnly()) continue;
-      if (!m.getModelName().startsWith(oldName + ".")) continue;
+      if (!m.getName().getNamespace().startsWith(oldName)) continue;
       if (!(m instanceof EditableSModel)) continue;
 
-      ((EditableSModel) m).rename(newName + m.getModelName().substring(oldName.length()), moveModels);
+      SModelName newModelName = new SModelName(
+          newName + m.getName().getNamespace().substring(oldName.length()),
+          m.getName().getSimpleName(), m.getName().getStereotype());
+      ((EditableSModel) m).rename(newModelName.getValue(), moveModels);
     }
   }
 

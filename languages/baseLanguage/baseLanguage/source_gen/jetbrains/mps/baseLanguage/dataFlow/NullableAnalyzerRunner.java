@@ -5,13 +5,16 @@ package jetbrains.mps.baseLanguage.dataFlow;
 import jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.dataFlow.framework.AnalyzerRules;
+import jetbrains.mps.lang.dataFlow.MPSProgramFactory;
+import java.util.Collections;
+import jetbrains.mps.lang.dataFlow.framework.ProgramFactory;
+import jetbrains.mps.lang.dataFlow.framework.NamedAnalyzerId;
+import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzerBase;
 import jetbrains.mps.lang.dataFlow.framework.Program;
-import jetbrains.mps.lang.dataFlow.MPSProgramBuilder;
-import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer;
 import java.util.HashMap;
 import java.util.List;
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.analyzers.runtime.framework.GeneratedInstruction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -23,19 +26,17 @@ import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
 public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, NullableState>> {
   private SNode myNode;
   public NullableAnalyzerRunner(SNode node) {
+    this(node, new MPSProgramFactory(Collections.<String>emptyList()));
+  }
+  public NullableAnalyzerRunner(SNode node, ProgramFactory<NamedAnalyzerId> factory) {
     super(null, null);
     myNode = node;
     myAnalyzer = new NullableAnalyzerRunner.NullableAnalyzer();
-    myProgram = createProgram();
-    prepareProgram();
+    myProgram = factory.createProgram(myNode);
+    factory.prepareProgram(myProgram, myNode, new NamedAnalyzerId("jetbrains.mps.baseLanguage.dataFlow.Nullable"));
   }
-  private void prepareProgram() {
-    new AnalyzerRules("jetbrains.mps.baseLanguage.dataFlow.Nullable", myNode, myProgram).apply();
-  }
-  private Program createProgram() {
-    return new MPSProgramBuilder().buildProgram(myNode);
-  }
-  public static class NullableAnalyzer implements DataFlowAnalyzer<Map<SNode, NullableState>> {
+
+  public static class NullableAnalyzer extends DataFlowAnalyzerBase<Map<SNode, NullableState>> {
     public NullableAnalyzer() {
     }
     public Map<SNode, NullableState> initial(Program program) {
@@ -57,7 +58,7 @@ public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, Null
       }
       return result;
     }
-    public Map<SNode, NullableState> fun(Map<SNode, NullableState> input, ProgramState state) {
+    public Map<SNode, NullableState> fun(Map<SNode, NullableState> input, ProgramState state, @Nullable Map<ProgramState, Map<SNode, NullableState>> stateValues) {
       Map<SNode, NullableState> result = input;
       Instruction instruction = state.getInstruction();
       NullableState nullableState = NullableState.UNKNOWN;
@@ -96,6 +97,7 @@ public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, Null
     public AnalysisDirection getDirection() {
       return AnalysisDirection.FORWARD;
     }
+
     /**
      * 
      * @deprecated 

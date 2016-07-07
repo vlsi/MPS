@@ -18,11 +18,17 @@ package jetbrains.mps.workbench.choose.nodes;
 import com.intellij.ide.util.gotoByName.ChooseByNameBase;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+/**
+ * @deprecated see {@link BaseMPSChooseModel}
+ */
+@Deprecated
+@ToRemove(version = 3.4)
 public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodeReference> {
   public BaseNodePointerModel(Project project) {
     this(project, "node");

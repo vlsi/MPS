@@ -20,11 +20,14 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.JOptionPane;
 import jetbrains.mps.ide.platform.refactoring.RenameDialog;
+import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.refactoring.participant.RenameNodeRefactoringParticipant;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
+import jetbrains.mps.refactoring.participant.RefactoringSession;
+import java.util.HashMap;
 
 public class Rename_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -102,15 +105,12 @@ public class Rename_Action extends BaseAction {
       return;
     }
 
-    Iterable<? extends RefactoringParticipant<?, ?, SNode, String>> participants = new ExtensionPoint<RenameNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.RenameNodeParticipantEP").getObjects();
-    RefactoringProcessor.performRefactoring(((MPSProject) MapSequence.fromMap(_params).get("project")), "Rename node", participants, ListSequence.fromListAndArray(new ArrayList<SNode>(), ((SNode) MapSequence.fromMap(_params).get("target"))), new _FunctionTypes._return_P2_E0<_FunctionTypes._return_P1_E0<? extends String, ? super SNode>, Iterable<RefactoringParticipant.ParticipantState<?, ?, SNode, String, SNode, String>>, RefactoringSession>() {
-      public _FunctionTypes._return_P1_E0<? extends String, ? super SNode> invoke(Iterable<RefactoringParticipant.ParticipantState<?, ?, SNode, String, SNode, String>> changes, RefactoringSession refactoringSession) {
+    Iterable<? extends RefactoringParticipant<?, ?, SNode, String>> participants = new ExtensionPoint<RenameNodeRefactoringParticipant<?, ?>>("jetbrains.mps.refactoring.participant.RenameNodeParticipantEP").getObjects();
+    RefactoringProcessor.performRefactoringUserInteractive(((MPSProject) MapSequence.fromMap(_params).get("project")), "Rename node", participants, ListSequence.fromListAndArray(new ArrayList<SNode>(), ((SNode) MapSequence.fromMap(_params).get("target"))), new _FunctionTypes._return_P2_E0<Map<SNode, String>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, String, SNode, String>>, RefactoringSession>() {
+      public Map<SNode, String> invoke(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, String, SNode, String>> changes, RefactoringSession refactoringSession) {
         SPropertyOperations.set(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newName);
-        return new _FunctionTypes._return_P1_E0<String, SNode>() {
-          public String invoke(SNode nodeToRename) {
-            return newName;
-          }
-        };
+        Map<SNode, String> m = MapSequence.<SNode, String>fromMapAndKeysArray(new HashMap<SNode, String>(), ((SNode) MapSequence.fromMap(_params).get("target"))).withValues(newName);
+        return m;
       }
     });
   }

@@ -46,7 +46,7 @@ public abstract class TextGenAspectBase implements TextGenAspectDescriptor {
   @Nullable
   @Override
   public TextGenDescriptor getDescriptor(@NotNull SConceptId concept) {
-    return getDescriptor(MetaAdapterFactory.getConcept(concept, "<random concept name from IntentionAspectBase; method should not have been used>"));
+    return getDescriptor(MetaAdapterFactory.getConceptById(concept));
   }
 
   @Nullable

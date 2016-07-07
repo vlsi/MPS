@@ -6,6 +6,7 @@ import jetbrains.mps.lang.dataFlow.framework.StructuralProgramBuilder;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.dataFlow.framework.instructions.InstructionBuilder;
+import jetbrains.mps.lang.dataFlow.framework.ProgramBuilderContext;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -17,6 +18,8 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptorBase;
 import java.util.Collection;
+import java.util.Optional;
+import java.util.function.Predicate;
 
 public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
   private DataFlowManager myDataFlowManager;
@@ -43,6 +46,12 @@ public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
     // todo remove after 3.4 
     this.myDataFlowManager = DataFlowManager.getInstance();
   }
+  public MPSProgramBuilder(SRepository repository, InstructionBuilder builder, ProgramBuilderContext context) {
+    super(builder, context);
+    this.myRepository = repository;
+    // todo remove after 3.4 
+    this.myDataFlowManager = DataFlowManager.getInstance();
+  }
 
   /**
    * 
@@ -64,14 +73,17 @@ public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
     SNode snode = node;
     for (SAbstractConcept concept : SConceptOperations.getAllSuperConcepts(SNodeOperations.getConcept(snode), true)) {
       IDataFlowBuilder dataFlowBuilder = getDataFlowBuilder(concept);
-
-      // todo to remove after 3.4 
-      if (dataFlowBuilder == null && this.myDataFlowManager != null) {
-        dataFlowBuilder = this.myDataFlowManager.getBuilderFor(concept.getQualifiedName());
-      }
       if (dataFlowBuilder != null) {
         dataFlowBuilder.build(createContext(snode));
         break;
+      }
+      // todo to remove after 3.4 
+      if (myDataFlowManager != null) {
+        DataFlowBuilder oldBuilder = this.myDataFlowManager.getBuilderFor(concept.getQualifiedName());
+        if (oldBuilder != null) {
+          oldBuilder.build(createContext(snode));
+          break;
+        }
       }
     }
   }
@@ -99,9 +111,16 @@ public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
       DataFlowAspectDescriptor aspect = language.getAspect(DataFlowAspectDescriptor.class);
       if (aspect instanceof DataFlowAspectDescriptorBase) {
         Collection<IDataFlowBuilder> dataFlowBuilders = ((DataFlowAspectDescriptorBase) aspect).getDataFlowBuilders(concept);
-        if (!(dataFlowBuilders.isEmpty())) {
-          return dataFlowBuilders.iterator().next();
-        }
+        Optional<IDataFlowBuilder> first = dataFlowBuilders.stream().filter(new Predicate<IDataFlowBuilder>() {
+          public boolean test(IDataFlowBuilder builder) {
+            return builder.getModes().isEmpty() || builder.getModes().stream().anyMatch(new Predicate<String>() {
+              public boolean test(String mode) {
+                return getBuilderContext().getBuilderModes().contains(mode);
+              }
+            });
+          }
+        }).findFirst();
+        return (first.isPresent() ? first.get() : null);
       }
     }
     return null;

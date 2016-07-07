@@ -28,11 +28,17 @@ public abstract class StructuralProgramBuilder<N> {
   protected final Map<N, Map<String, Integer>> myLabels;
   protected final InstructionBuilder instructionBuilder;
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(StructuralProgramBuilder.class));
+  private final ProgramBuilderContext myBuilderContext;
 
-  public StructuralProgramBuilder(InstructionBuilder instructionBuilder) {
+  public StructuralProgramBuilder(InstructionBuilder instructionBuilder, ProgramBuilderContext context) {
     this.myLabels = new HashMap<N, Map<String, Integer>>();
     this.myInvokeLater = new ArrayList<Runnable>();
     this.instructionBuilder = instructionBuilder;
+    myBuilderContext = context;
+  }
+
+  public StructuralProgramBuilder(InstructionBuilder instructionBuilder) {
+    this(instructionBuilder, new ProgramBuilderContextImpl(Collections.emptyList()));
   }
 
   public StructuralProgramBuilder() {
@@ -303,5 +309,9 @@ public abstract class StructuralProgramBuilder<N> {
 
   public List<Instruction> getInstructionsFor(Object o) {
     return getProgram().getInstructionsFor(o);
+  }
+
+  protected ProgramBuilderContext getBuilderContext() {
+    return myBuilderContext;
   }
 }

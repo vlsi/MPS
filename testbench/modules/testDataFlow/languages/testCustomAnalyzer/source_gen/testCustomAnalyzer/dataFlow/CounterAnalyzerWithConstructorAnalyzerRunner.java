@@ -4,30 +4,32 @@ package testCustomAnalyzer.dataFlow;
 
 import jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.dataFlow.framework.AnalyzerRules;
+import jetbrains.mps.lang.dataFlow.MPSProgramFactory;
+import java.util.Collections;
+import jetbrains.mps.lang.dataFlow.framework.ProgramFactory;
+import jetbrains.mps.lang.dataFlow.framework.NamedAnalyzerId;
+import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzerBase;
 import jetbrains.mps.lang.dataFlow.framework.Program;
-import jetbrains.mps.lang.dataFlow.MPSProgramBuilder;
-import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer;
 import java.util.List;
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
+import org.jetbrains.annotations.Nullable;
+import java.util.Map;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
 
 public class CounterAnalyzerWithConstructorAnalyzerRunner extends CustomAnalyzerRunner<Integer> {
   private SNode myNode;
   public CounterAnalyzerWithConstructorAnalyzerRunner(SNode node, int initialCounter) {
+    this(node, new MPSProgramFactory(Collections.<String>emptyList()), initialCounter);
+  }
+  public CounterAnalyzerWithConstructorAnalyzerRunner(SNode node, ProgramFactory<NamedAnalyzerId> factory, int initialCounter) {
     super(null, null);
     myNode = node;
     myAnalyzer = new CounterAnalyzerWithConstructorAnalyzerRunner.CounterAnalyzerWithConstructorAnalyzer(initialCounter);
-    myProgram = createProgram();
-    prepareProgram();
+    myProgram = factory.createProgram(myNode);
+    factory.prepareProgram(myProgram, myNode, new NamedAnalyzerId("testCustomAnalyzer.dataFlow.CounterAnalyzerWithConstructor"));
   }
-  private void prepareProgram() {
-    new AnalyzerRules("testCustomAnalyzer.dataFlow.CounterAnalyzerWithConstructor", myNode, myProgram).apply();
-  }
-  private Program createProgram() {
-    return new MPSProgramBuilder().buildProgram(myNode);
-  }
-  public static class CounterAnalyzerWithConstructorAnalyzer implements DataFlowAnalyzer<Integer> {
+
+  public static class CounterAnalyzerWithConstructorAnalyzer extends DataFlowAnalyzerBase<Integer> {
     private int initialCounter;
     public CounterAnalyzerWithConstructorAnalyzer(int initialCounter) {
       this.initialCounter = initialCounter;
@@ -44,12 +46,13 @@ public class CounterAnalyzerWithConstructorAnalyzerRunner extends CustomAnalyzer
       }
       return maxCounter;
     }
-    public Integer fun(Integer input, ProgramState state) {
+    public Integer fun(Integer input, ProgramState state, @Nullable Map<ProgramState, Integer> stateValues) {
       return input + 1;
     }
     public AnalysisDirection getDirection() {
       return AnalysisDirection.FORWARD;
     }
+
     /**
      * 
      * @deprecated 

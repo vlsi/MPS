@@ -24,9 +24,9 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringPart;
-import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
+import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import java.util.List;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringSession;
+import jetbrains.mps.refactoring.participant.RefactoringSession;
 import jetbrains.mps.ide.platform.actions.core.RefactoringProcessor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -34,9 +34,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -54,7 +54,7 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
-import jetbrains.mps.ide.platform.actions.core.RefactoringSessionImpl;
+import jetbrains.mps.refactoring.participant.RefactoringSessionImpl;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -157,17 +157,13 @@ public class MigrationComponent extends AbstractProjectComponent {
         }
       }).toListSequence()));
 
-      _FunctionTypes._return_P2_E0<? extends _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode>, ? super Iterable<RefactoringParticipant.ParticipantState<?, ?, IP, FP, SNode, SNode>>, ? super RefactoringSession> doRefactorFunction = new _FunctionTypes._return_P2_E0<_FunctionTypes._return_P1_E0<? extends SNode, ? super SNode>, Iterable<RefactoringParticipant.ParticipantState<?, ?, IP, FP, SNode, SNode>>, RefactoringSession>() {
-        public _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> invoke(Iterable<RefactoringParticipant.ParticipantState<?, ?, IP, FP, SNode, SNode>> changes, RefactoringSession refactoringSession) {
-          return new _FunctionTypes._return_P1_E0<SNode, SNode>() {
-            public SNode invoke(final SNode serializedInitial) {
-              return SLinkOperations.getTarget(ListSequence.fromList(myParts).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3acL, "initialState")) == serializedInitial;
-                }
-              }).first(), MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3aeL, "finalState"));
-            }
-          };
+      final Map<SNode, SNode> initialToFinal = MapSequence.fromMap(new HashMap<SNode, SNode>());
+      for (SNode part : ListSequence.fromList(myParts)) {
+        MapSequence.fromMap(initialToFinal).put(SLinkOperations.getTarget(part, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3acL, "initialState")), SLinkOperations.getTarget(part, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3aeL, "finalState")));
+      }
+      _FunctionTypes._return_P1_E0<? extends Map<SNode, SNode>, ? super Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, SNode, SNode>>> doRefactorFunction = new _FunctionTypes._return_P1_E0<Map<SNode, SNode>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, SNode, SNode>>>() {
+        public Map<SNode, SNode> invoke(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, SNode, SNode>> changes) {
+          return initialToFinal;
         }
       };
 
@@ -179,7 +175,7 @@ public class MigrationComponent extends AbstractProjectComponent {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3acL, "initialState"));
         }
-      }).toListSequence(), doRefactorFunction);
+      }).toListSequence(), doRefactorFunction, null);
     }
   }
 
@@ -218,7 +214,7 @@ public class MigrationComponent extends AbstractProjectComponent {
     public List<RefactoringParticipant.Option> selectParticipants(List<RefactoringParticipant.Option> availableOptions) {
       return (mySelectedOptions == null ? availableOptions : mySelectedOptions);
     }
-    public void runRefactoring(final Runnable task, String refactoringName, SearchResults searchResults, SearchTask searchTask, RefactoringSession refactoringSession) {
+    public void showRefactoringView(final Runnable task, String refactoringName, SearchResults searchResults, SearchTask searchTask, RefactoringSession refactoringSession) {
       MigrationComponent.RefactoringSessionTaskQueue.getInstance(refactoringSession).putTask(task);
     }
   }
@@ -238,7 +234,7 @@ public class MigrationComponent extends AbstractProjectComponent {
       }
       return null;
     }
-    Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> participants = Sequence.fromIterable(new ExtensionPoint<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>>("jetbrains.mps.ide.platform.PersistentRefactoringParticipantsEP").getObjects()).translate(new ITranslator2<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>() {
+    Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> participants = Sequence.fromIterable(new ExtensionPoint<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>>("jetbrains.mps.refactoring.participant.PersistentRefactoringParticipantsEP").getObjects()).translate(new ITranslator2<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>() {
       public Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> translate(Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> it) {
         return it;
       }
@@ -311,18 +307,18 @@ public class MigrationComponent extends AbstractProjectComponent {
     return true;
   }
 
-  public boolean executeRefactoringLog(RefactoringLogApplied sa) {
-    RefactoringLog script = sa.getScript();
-    AbstractModule module = ((AbstractModule) sa.getModule());
-    SModule fromModule = script.getDescriptor().getModule();
+  public boolean executeRefactoringLog(RefactoringLogApplied logApplied) {
+    RefactoringLog rLog = logApplied.getRefactoringLog();
+    AbstractModule module = ((AbstractModule) logApplied.getModule());
+    SModule fromModule = rLog.getDescriptor().getModule();
     int importedVersion = MigrationModuleUtil.getDepVersion(module, fromModule.getModuleReference());
     importedVersion = Math.max(importedVersion, 0);
-    assert importedVersion == script.getDescriptor().getFromVersion();
+    assert importedVersion == rLog.getDescriptor().getFromVersion();
     try {
       RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
-      script.execute(module, refactoringSession);
+      rLog.execute(module, refactoringSession);
       MigrationComponent.RefactoringSessionTaskQueue.getInstance(refactoringSession).runAll();
-      refactoringSession.close();
+      refactoringSession.performAllRegistered();
     } catch (Throwable e) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Could not execute script", e);
@@ -330,7 +326,7 @@ public class MigrationComponent extends AbstractProjectComponent {
       return false;
     }
 
-    int toVersion = script.getDescriptor().getFromVersion() + 1;
+    int toVersion = rLog.getDescriptor().getFromVersion() + 1;
     MigrationModuleUtil.setDepVersion(module, fromModule.getModuleReference(), toVersion);
 
     // todo: versions in models 

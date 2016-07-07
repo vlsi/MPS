@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.lang.editor.menus.*;
+import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 
 /**
  * @author simon
  */
-public interface TransformationMenuPart extends jetbrains.mps.lang.editor.menus.MenuPart<TransformationMenuItem, TransformationMenuContext> {
+public interface TransformationMenuPart extends MenuPart<TransformationMenuItem, TransformationMenuContext> {
 }

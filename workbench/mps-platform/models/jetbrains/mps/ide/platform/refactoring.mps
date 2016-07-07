@@ -5601,9 +5601,6 @@
       <property role="TrG5h" value="dispose" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
-      <node concept="2AHcQZ" id="7DGCeT2IdkB" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
       <node concept="3clFbS" id="7DGCeT2IdkC" role="3clF47">
         <node concept="3clFbF" id="7DGCeT2IAeT" role="3cqZAp">
           <node concept="2OqwBi" id="7DGCeT2IAP_" role="3clFbG">
@@ -5658,27 +5655,13 @@
         </node>
       </node>
       <node concept="3clFbS" id="7DGCeT2ICJ0" role="3clF47">
-        <node concept="3clFbJ" id="7DGCeT2IF$4" role="3cqZAp">
-          <node concept="3fqX7Q" id="7DGCeT2IH58" role="3clFbw">
-            <node concept="2OqwBi" id="7DGCeT2IH5a" role="3fr31v">
-              <node concept="37vLTw" id="7DGCeT2IH5b" role="2Oq$k0">
-                <ref role="3cqZAo" node="7DGCeT2ICIW" resolve="events" />
-              </node>
-              <node concept="liA8E" id="7DGCeT2IH5c" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~Collection.isEmpty():boolean" resolve="isEmpty" />
-              </node>
+        <node concept="3clFbF" id="7DGCeT2IJJD" role="3cqZAp">
+          <node concept="37vLTI" id="7DGCeT2IKiV" role="3clFbG">
+            <node concept="3clFbT" id="7DGCeT2IKL7" role="37vLTx">
+              <property role="3clFbU" value="true" />
             </node>
-          </node>
-          <node concept="3clFbS" id="7DGCeT2IF$6" role="3clFbx">
-            <node concept="3clFbF" id="7DGCeT2IJJD" role="3cqZAp">
-              <node concept="37vLTI" id="7DGCeT2IKiV" role="3clFbG">
-                <node concept="3clFbT" id="7DGCeT2IKL7" role="37vLTx">
-                  <property role="3clFbU" value="true" />
-                </node>
-                <node concept="37vLTw" id="7DGCeT2IJJC" role="37vLTJ">
-                  <ref role="3cqZAo" node="7DGCeT2II7K" resolve="changed" />
-                </node>
-              </node>
+            <node concept="37vLTw" id="7DGCeT2IJJC" role="37vLTJ">
+              <ref role="3cqZAo" node="7DGCeT2II7K" resolve="changed" />
             </node>
           </node>
         </node>
@@ -5716,9 +5699,6 @@
     <node concept="3Tm1VV" id="7DGCeT2Ia$c" role="1B3o_S" />
     <node concept="3uibUv" id="7DGCeT2Iwgi" role="EKbjA">
       <ref role="3uigEE" to="g3l6:~SNodeBatchChangeListener" resolve="SNodeBatchChangeListener" />
-    </node>
-    <node concept="3uibUv" id="7DGCeT2Izh_" role="EKbjA">
-      <ref role="3uigEE" to="v23q:~Disposable" resolve="Disposable" />
     </node>
   </node>
 </model>

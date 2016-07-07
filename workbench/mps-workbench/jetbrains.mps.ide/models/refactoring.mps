@@ -54,6 +54,7 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="mz8t" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.xmlb(MPS.IDEA/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" implicit="true" />
+    <import index="eurq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.path(MPS.Core/)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
@@ -2561,9 +2562,7 @@
                   <node concept="3cpWs8" id="2lmn7faeBC5" role="3cqZAp">
                     <node concept="3cpWsn" id="2lmn7faeBC6" role="3cpWs9">
                       <property role="TrG5h" value="folder" />
-                      <node concept="3uibUv" id="2lmn7faeBC0" role="1tU5fm">
-                        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                      </node>
+                      <node concept="17QB3L" id="6j8UItvFvYr" role="1tU5fm" />
                       <node concept="2OqwBi" id="2lmn7faeBC7" role="33vP2m">
                         <node concept="37vLTw" id="2lmn7faeBC8" role="2Oq$k0">
                           <ref role="3cqZAo" node="2lmn7faewg7" resolve="smp" />
@@ -2582,17 +2581,22 @@
                       <property role="TrG5h" value="oldName" />
                       <property role="3TUv4t" value="false" />
                       <node concept="17QB3L" id="JvV_SxA0kg" role="1tU5fm" />
-                      <node concept="2OqwBi" id="5_k7uOd1lD4" role="33vP2m">
-                        <node concept="2OqwBi" id="JvV_SxA05n" role="2Oq$k0">
-                          <node concept="37vLTw" id="JvV_SxA05o" role="2Oq$k0">
-                            <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
+                      <node concept="2OqwBi" id="6j8UItvFFG0" role="33vP2m">
+                        <node concept="2OqwBi" id="5_k7uOd1lD4" role="2Oq$k0">
+                          <node concept="2OqwBi" id="JvV_SxA05n" role="2Oq$k0">
+                            <node concept="37vLTw" id="JvV_SxA05o" role="2Oq$k0">
+                              <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
+                            </node>
+                            <node concept="liA8E" id="JvV_SxA05p" role="2OqNvi">
+                              <ref role="37wK5l" to="z1c3:~AbstractModule.getDescriptorFile():jetbrains.mps.vfs.IFile" resolve="getDescriptorFile" />
+                            </node>
                           </node>
-                          <node concept="liA8E" id="JvV_SxA05p" role="2OqNvi">
-                            <ref role="37wK5l" to="z1c3:~AbstractModule.getDescriptorFile():jetbrains.mps.vfs.IFile" resolve="getDescriptorFile" />
+                          <node concept="liA8E" id="5_k7uOd1lNL" role="2OqNvi">
+                            <ref role="37wK5l" to="3ju5:~IFile.toPath():jetbrains.mps.vfs.path.UniPath" resolve="toPath" />
                           </node>
                         </node>
-                        <node concept="liA8E" id="5_k7uOd1lNL" role="2OqNvi">
-                          <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
+                        <node concept="liA8E" id="6j8UItvFGYS" role="2OqNvi">
+                          <ref role="37wK5l" to="eurq:~UniPath.toString():java.lang.String" resolve="toString" />
                         </node>
                       </node>
                     </node>
@@ -2641,9 +2645,7 @@
                   <node concept="3cpWs8" id="2jhQWX29YTK" role="3cqZAp">
                     <node concept="3cpWsn" id="15VbAzMGEYk" role="3cpWs9">
                       <property role="TrG5h" value="virtualFolder" />
-                      <node concept="3uibUv" id="15VbAzMGEYl" role="1tU5fm">
-                        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                      </node>
+                      <node concept="17QB3L" id="6j8UItvFvCV" role="1tU5fm" />
                       <node concept="2OqwBi" id="15VbAzMGFyb" role="33vP2m">
                         <node concept="37vLTw" id="15VbAzMGFqO" role="2Oq$k0">
                           <ref role="3cqZAo" node="5_k7uOd1lVe" resolve="projectDescriptor" />
@@ -2652,9 +2654,12 @@
                           <ref role="37wK5l" to="y8s3:~ProjectDescriptor.removeModulePath(jetbrains.mps.project.structure.project.ModulePath):java.lang.String" resolve="removeModulePath" />
                           <node concept="2ShNRf" id="15VbAzMGFU7" role="37wK5m">
                             <node concept="1pGfFk" id="15VbAzMGPE7" role="2ShVmc">
-                              <ref role="37wK5l" to="y8s3:~ModulePath.&lt;init&gt;(java.lang.String)" resolve="ModulePath" />
+                              <ref role="37wK5l" to="y8s3:~ModulePath.&lt;init&gt;(java.lang.String,java.lang.String)" resolve="ModulePath" />
                               <node concept="37vLTw" id="2jhQWX29YUc" role="37wK5m">
                                 <ref role="3cqZAo" node="JvV_SxA05m" resolve="oldName" />
+                              </node>
+                              <node concept="37vLTw" id="6j8UItvFz2N" role="37wK5m">
+                                <ref role="3cqZAo" node="2lmn7faeBC6" resolve="folder" />
                               </node>
                             </node>
                           </node>
@@ -2671,17 +2676,22 @@
                       <node concept="2ShNRf" id="15VbAzMGQwh" role="33vP2m">
                         <node concept="1pGfFk" id="15VbAzMGRqh" role="2ShVmc">
                           <ref role="37wK5l" to="y8s3:~ModulePath.&lt;init&gt;(java.lang.String,java.lang.String)" resolve="ModulePath" />
-                          <node concept="2OqwBi" id="15VbAzMGS4Q" role="37wK5m">
-                            <node concept="2OqwBi" id="15VbAzMGREG" role="2Oq$k0">
-                              <node concept="37vLTw" id="15VbAzMGRy3" role="2Oq$k0">
-                                <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
+                          <node concept="2OqwBi" id="6j8UItvF_DF" role="37wK5m">
+                            <node concept="2OqwBi" id="15VbAzMGS4Q" role="2Oq$k0">
+                              <node concept="2OqwBi" id="15VbAzMGREG" role="2Oq$k0">
+                                <node concept="37vLTw" id="15VbAzMGRy3" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
+                                </node>
+                                <node concept="liA8E" id="15VbAzMGRVD" role="2OqNvi">
+                                  <ref role="37wK5l" to="z1c3:~AbstractModule.getDescriptorFile():jetbrains.mps.vfs.IFile" resolve="getDescriptorFile" />
+                                </node>
                               </node>
-                              <node concept="liA8E" id="15VbAzMGRVD" role="2OqNvi">
-                                <ref role="37wK5l" to="z1c3:~AbstractModule.getDescriptorFile():jetbrains.mps.vfs.IFile" resolve="getDescriptorFile" />
+                              <node concept="liA8E" id="15VbAzMGSdY" role="2OqNvi">
+                                <ref role="37wK5l" to="3ju5:~IFile.toPath():jetbrains.mps.vfs.path.UniPath" resolve="toPath" />
                               </node>
                             </node>
-                            <node concept="liA8E" id="15VbAzMGSdY" role="2OqNvi">
-                              <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
+                            <node concept="liA8E" id="6j8UItvFAWl" role="2OqNvi">
+                              <ref role="37wK5l" to="eurq:~UniPath.toString():java.lang.String" resolve="toString" />
                             </node>
                           </node>
                           <node concept="37vLTw" id="2jhQWX29YTW" role="37wK5m">

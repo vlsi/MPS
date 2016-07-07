@@ -91,10 +91,13 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:dataFlowBuilders"))).first(), "dataFlowBuilderClass");
   }
   public static Object referenceMacro_GetReferent_4860312625245632383(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:dataFlowBuilders"))).first(), "dataFlowBuilderClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "dataFlowBuilderClass");
   }
   public static Object referenceMacro_GetReferent_4860312625245430330(final ReferenceMacroContext _context) {
     return _context.getNode();
+  }
+  public static boolean ifMacro_Condition_735072980478764555(final IfMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x6e8db6877fd04efbL, "modes"))).isNotEmpty();
   }
   public static boolean ifMacro_Condition_2979128091426922176(final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a42658L, 0x1160a375bea5106L, "position")) != null;
@@ -189,6 +192,9 @@ public class QueriesGenerated {
   public static Object templateArgumentQuery_2299680136821071935(final TemplateArgumentContext _context) {
     return SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.dataFlow.framework(MPS.Core/)", "~DataFlowAspectDescriptor");
   }
+  public static Iterable<SNode> sourceNodesQuery_735072980478792132(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x6e8db6877fd04efbL, "modes"));
+  }
   public static Iterable<SNode> sourceNodesQuery_6676818848694486262(final SourceSubstituteMacroNodesContext _context) {
     return ((Iterable<SNode>) _context.getVariable("var:rules"));
   }
@@ -207,7 +213,7 @@ public class QueriesGenerated {
       }
     }, true);
   }
-  public static Iterable<SNode> sourceNodesQuery_4860312625245652898(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2955426575105724546(final SourceSubstituteMacroNodesContext _context) {
     return ((Iterable<SNode>) _context.getVariable("var:dataFlowBuilders"));
   }
   public static Iterable<SNode> sourceNodesQuery_4860312625245371214(final SourceSubstituteMacroNodesContext _context) {

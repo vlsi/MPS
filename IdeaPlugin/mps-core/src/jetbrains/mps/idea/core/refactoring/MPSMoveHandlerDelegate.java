@@ -7,7 +7,7 @@ import com.intellij.refactoring.move.MoveCallback;
 import com.intellij.refactoring.move.MoveHandlerDelegate;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.platform.actions.core.MoveNodesAction;
-import jetbrains.mps.ide.platform.actions.core.MoveNodesActionBase;
+import jetbrains.mps.ide.platform.actions.core.MoveNodesUtil;
 import jetbrains.mps.ide.platform.actions.core.MoveNodesActionHelper;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRealNode;
 import jetbrains.mps.project.MPSProject;
@@ -54,7 +54,7 @@ public class MPSMoveHandlerDelegate extends MoveHandlerDelegate {
       for (PsiElement element : elements) {
         nodes.add(((MPSPsiRealNode) element).getSNodeReference().resolve(mpsProject.getRepository()));
       }
-      if (MoveNodesActionBase.areSiblings(nodes, mpsProject.getRepository())) {
+      if (MoveNodesUtil.areSiblings(nodes, mpsProject.getRepository())) {
         MoveNodesAction moveNodesAction = MoveNodesActionHelper.getRefactoring(mpsProject, nodes);
         moveNodesAction.execute(mpsProject, nodes);
       }

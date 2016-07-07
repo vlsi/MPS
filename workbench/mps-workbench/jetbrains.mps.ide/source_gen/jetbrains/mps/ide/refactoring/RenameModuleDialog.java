@@ -42,15 +42,15 @@ public class RenameModuleDialog extends RenameDialog {
         if (myProject instanceof StandaloneMPSProject) {
           StandaloneMPSProject smp = (StandaloneMPSProject) myProject;
           String folder = smp.getFolderFor(myModule);
-          String oldName = myModule.getDescriptorFile().getPath();
+          String oldName = myModule.getDescriptorFile().toPath().toString();
 
           Renamer.renameModule(myModule, fqName);
 
           // TODO: add moduleRenamed to SRepositoryListener? 
           // update module path in project descriptor 
           final ProjectDescriptor projectDescriptor = smp.getProjectDescriptor();
-          String virtualFolder = projectDescriptor.removeModulePath(new ModulePath(oldName));
-          ModulePath modulePath = new ModulePath(myModule.getDescriptorFile().getPath(), virtualFolder);
+          String virtualFolder = projectDescriptor.removeModulePath(new ModulePath(oldName, folder));
+          ModulePath modulePath = new ModulePath(myModule.getDescriptorFile().toPath().toString(), virtualFolder);
           projectDescriptor.addModulePath(modulePath);
         } else {
           Renamer.renameModule(myModule, fqName);

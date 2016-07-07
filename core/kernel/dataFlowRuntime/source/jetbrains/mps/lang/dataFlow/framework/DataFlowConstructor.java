@@ -17,10 +17,13 @@ package jetbrains.mps.lang.dataFlow.framework;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-/**
- * Created by simon on 26/03/15.
- */
+import java.util.Collection;
+import java.util.Collections;
+
 public interface DataFlowConstructor {
   boolean isApplicable(SNode node);
-  abstract void performActions(Program program, SNode node);
+  void performActions(Program program, SNode node);
+  default Collection<String> getModes(){
+    return Collections.emptyList();
+  }
 }

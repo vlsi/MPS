@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.dataFlow.framework;
 
+import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelOperations;
@@ -28,11 +29,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Stream;
 
 /**
  * @author simon
@@ -44,19 +47,18 @@ public class AnalyzerRules {
   private String myAnalyzerId;
   private final List<SNode> myNodesToApply;
   private final Program myProgram;
+  private ProgramBuilderContext myContext;
 
   public AnalyzerRules(String analyzerId, SNode nodeToApply, Program program) {
-    myNodesToApply = new ArrayList<SNode>();
-    myNodesToApply.add(nodeToApply);
-    myProgram = program;
-    myAnalyzerId = analyzerId;
+    this(analyzerId, Collections.singletonList(nodeToApply), program, new ProgramBuilderContextImpl(Collections.emptyList()));
   }
 
-  public AnalyzerRules(String analyzerId, Collection<SNode> nodesToApply, Program program) {
+  public AnalyzerRules(String analyzerId, Collection<SNode> nodesToApply, Program program, ProgramBuilderContext context) {
     myNodesToApply = new ArrayList<SNode>();
     myNodesToApply.addAll(nodesToApply);
     myProgram = program;
     myAnalyzerId = analyzerId;
+    myContext = context;
   }
   public void apply() {
     if (myNodesToApply.isEmpty()) {
@@ -87,18 +89,13 @@ public class AnalyzerRules {
       descendants.addAll(SNodeOperations.getNodeDescendants(myNodeToApply, null, false, new SAbstractConcept[]{}));
     }
     for (SNode descendant : descendants) {
-      for (DataFlowConstructor rule : getRules(descendant)) {
-        rule.performActions(myProgram, descendant);
-      }
+      getRules(descendant).forEach(rule -> rule.performActions(myProgram, descendant));
     }
   }
-  private Set<DataFlowConstructor> getRules(SNode node) {
-    Set<DataFlowConstructor> result = new HashSet<DataFlowConstructor>();
-    for (DataFlowConstructor rule : myRules) {
-      if (rule.isApplicable(node)) {
-        result.add(rule);
-      }
-    }
-    return result;
+  private Stream<DataFlowConstructor> getRules(SNode node) {
+    return myRules.stream().filter(rule -> {
+      Collection<String> modes = rule.getModes();
+      return (modes.isEmpty() || modes.stream().anyMatch(mode -> myContext.getBuilderModes().contains(mode))) && rule.isApplicable(node);
+    });
   }
 }

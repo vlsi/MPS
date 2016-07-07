@@ -937,39 +937,37 @@
   </root>
   <root nodeRef="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)/8821602715294017803">
     <file name="UsagesModelTracker.java">
-      <node id="8821602715294092460" at="15,0,16,0" concept="3" trace="myChangeTracker" />
-      <node id="8821602715294163440" at="16,0,17,0" concept="3" trace="changed" />
-      <node id="1693697818228541170" at="17,0,18,0" concept="3" trace="myRepository" />
-      <node id="1693697818228545729" at="18,53,19,30" concept="2" />
-      <node id="8821602715294108146" at="19,30,20,38" concept="2" />
-      <node id="1693697818228477412" at="20,38,21,68" concept="2" />
-      <node id="8821602715294131129" at="24,25,25,41" concept="2" />
-      <node id="1693697818228536181" at="25,41,26,70" concept="2" />
-      <node id="8821602715294170089" at="29,30,30,21" concept="2" />
-      <node id="5271515234663655449" at="33,26,34,27" concept="7" />
-      <node id="8821602715294188495" at="36,30,37,19" concept="7" />
-      <node id="8821602715294152964" at="28,83,31,5" concept="4" />
-      <node id="5271515234663655445" at="33,0,36,0" concept="5" trace="reset#()Z" />
-      <node id="8821602715294175800" at="36,0,39,0" concept="5" trace="isChanged#()Z" />
-      <node id="8821602715294028975" at="18,0,23,0" concept="1" trace="UsagesModelTracker#(Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
-      <node id="8821602715294029094" at="23,0,28,0" concept="5" trace="dispose#()V" />
-      <node id="8821602715294141368" at="28,0,33,0" concept="5" trace="processEvents#(Ljava/util/Collection;)V" />
-      <scope id="8821602715294152966" at="29,30,30,21" />
-      <scope id="5271515234663655448" at="33,26,34,27" />
-      <scope id="8821602715294175804" at="36,30,37,19" />
-      <scope id="8821602715294029096" at="24,25,26,70" />
-      <scope id="8821602715294028980" at="18,53,21,68" />
-      <scope id="8821602715294141376" at="28,83,31,5" />
-      <scope id="5271515234663655445" at="33,0,36,0" />
-      <scope id="8821602715294175800" at="36,0,39,0" />
-      <scope id="8821602715294028975" at="18,0,23,0">
-        <var name="repository" id="1693697818228527541" />
-      </scope>
-      <scope id="8821602715294029094" at="23,0,28,0" />
-      <scope id="8821602715294141368" at="28,0,33,0">
+      <node id="8821602715294092460" at="14,0,15,0" concept="3" trace="myChangeTracker" />
+      <node id="8821602715294163440" at="15,0,16,0" concept="3" trace="changed" />
+      <node id="1693697818228541170" at="16,0,17,0" concept="3" trace="myRepository" />
+      <node id="1693697818228545729" at="17,53,18,30" concept="2" />
+      <node id="8821602715294108146" at="18,30,19,38" concept="2" />
+      <node id="1693697818228477412" at="19,38,20,68" concept="2" />
+      <node id="8821602715294131129" at="22,25,23,41" concept="2" />
+      <node id="1693697818228536181" at="23,41,24,70" concept="2" />
+      <node id="8821602715294170089" at="26,83,27,19" concept="2" />
+      <node id="5271515234663655449" at="29,26,30,27" concept="7" />
+      <node id="8821602715294188495" at="32,30,33,19" concept="7" />
+      <node id="8821602715294141368" at="26,0,29,0" concept="5" trace="processEvents#(Ljava/util/Collection;)V" />
+      <node id="5271515234663655445" at="29,0,32,0" concept="5" trace="reset#()Z" />
+      <node id="8821602715294175800" at="32,0,35,0" concept="5" trace="isChanged#()Z" />
+      <node id="8821602715294029094" at="22,0,26,0" concept="5" trace="dispose#()V" />
+      <node id="8821602715294028975" at="17,0,22,0" concept="1" trace="UsagesModelTracker#(Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
+      <scope id="8821602715294141376" at="26,83,27,19" />
+      <scope id="5271515234663655448" at="29,26,30,27" />
+      <scope id="8821602715294175804" at="32,30,33,19" />
+      <scope id="8821602715294029096" at="22,25,24,70" />
+      <scope id="8821602715294028980" at="17,53,20,68" />
+      <scope id="8821602715294141368" at="26,0,29,0">
         <var name="events" id="8821602715294141372" />
       </scope>
-      <unit id="8821602715294017803" at="14,0,40,0" name="jetbrains.mps.ide.platform.refactoring.UsagesModelTracker" />
+      <scope id="5271515234663655445" at="29,0,32,0" />
+      <scope id="8821602715294175800" at="32,0,35,0" />
+      <scope id="8821602715294029094" at="22,0,26,0" />
+      <scope id="8821602715294028975" at="17,0,22,0">
+        <var name="repository" id="1693697818228527541" />
+      </scope>
+      <unit id="8821602715294017803" at="13,0,36,0" name="jetbrains.mps.ide.platform.refactoring.UsagesModelTracker" />
     </file>
   </root>
 </debug-info>

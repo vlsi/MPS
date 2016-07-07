@@ -45,5 +45,6 @@
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="module" module-name="make-facets" />
     <orderEntry type="module" module-name="scripts-runtime" />
+    <orderEntry type="module" module-name="refactoring" />
   </component>
 </module>

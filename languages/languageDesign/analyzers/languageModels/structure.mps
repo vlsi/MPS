@@ -3,8 +3,8 @@
   <persistence version="9" />
   <languages>
     <use id="97a52717-898f-4598-8150-573d9fd03868" name="jetbrains.mps.lang.dataFlow.analyzers" version="0" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -12,6 +12,7 @@
     <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tp41" ref="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -20,22 +21,12 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
-        <property id="6054523464626875854" name="value" index="tnX3d" />
-      </concept>
-      <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
-        <reference id="6054523464627965081" name="concept" index="trN6q" />
-      </concept>
-      <concept id="2992811758677295509" name="jetbrains.mps.lang.structure.structure.AttributeInfo" flags="ng" index="M6xJ_">
-        <property id="7588428831955550663" name="role" index="Hh88m" />
-        <child id="7588428831947959310" name="attributed" index="EQaZv" />
-        <child id="7588428831955550186" name="multiple" index="HhnKV" />
-      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="intConceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
@@ -60,7 +51,6 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -73,6 +63,9 @@
     <property role="3GE5qa" value="Analyzer" />
     <property role="EcuMT" value="6618572076229093257" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1QGGSu" id="4Q8sAA5iJQA" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/DataFlowAnalyser.png" />
+    </node>
     <node concept="1TJgyj" id="47tk9ge7tjt" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="initialFunction" />
@@ -125,8 +118,12 @@
       <property role="IQ2ns" value="3993089038373544707" />
       <ref role="20lvS9" node="3tEjlbSL22K" resolve="AnalyzerConstructorParameter" />
     </node>
-    <node concept="1QGGSu" id="4Q8sAA5iJQA" role="rwd14">
-      <property role="1iqoE4" value="${module}/icons/DataFlowAnalyser.png" />
+    <node concept="1TJgyj" id="7fxZEB1sZw4" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="usedContainers" />
+      <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="8350235189170141188" />
+      <ref role="20lvS9" node="7fxZEB1sSuo" resolve="CustomInstructionsContainerReference" />
     </node>
   </node>
   <node concept="1TIwiD" id="5JpT3MjX6ua">
@@ -257,6 +254,9 @@
     <property role="3GE5qa" value="Rules" />
     <property role="EcuMT" value="430844094082168520" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1QGGSu" id="4Q8sAA5iJQ_" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/DataFlowRule.png" />
+    </node>
     <node concept="1TJgyj" id="3_iNRJnrAh0" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="analyzer" />
@@ -278,11 +278,15 @@
       <property role="IQ2ns" value="3325264799421290838" />
       <ref role="20lvS9" node="2S_HFuhBtro" resolve="ApplicableCondition" />
     </node>
+    <node concept="1TJgyj" id="6UdHCtZO4VV" role="1TKVEi">
+      <property role="IQ2ns" value="7966224008969473787" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="modes" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" to="tp41:6UdHCtZMvVk" resolve="IBuilderMode" />
+    </node>
     <node concept="PrWs8" id="2S_HFuhBowU" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-    <node concept="1QGGSu" id="4Q8sAA5iJQ_" role="rwd14">
-      <property role="1iqoE4" value="${module}/icons/DataFlowRule.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="nUEAIXm3Ew">
@@ -433,6 +437,12 @@
       <property role="IQ2ns" value="3993089038374473158" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
+    <node concept="1TJgyj" id="2ULNtK19BPU" role="1TKVEi">
+      <property role="IQ2ns" value="3364696741418270074" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="mode" />
+      <ref role="20lvS9" to="tp41:6UdHCtZMvVk" resolve="IBuilderMode" />
+    </node>
     <node concept="1TJgyj" id="5hLfAui9Cn" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="analyzer" />
@@ -497,6 +507,11 @@
       <ref role="20lvS9" node="4ipeeu8UrBu" resolve="ConceptCondition" />
     </node>
   </node>
+  <node concept="1TIwiD" id="7jE3VEJNDMv">
+    <property role="TrG5h" value="InsertBeforePosition" />
+    <property role="EcuMT" value="8424563347437821087" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
   <node concept="1TIwiD" id="7jE3VEJNFWz">
     <property role="TrG5h" value="InsertPosition" />
     <property role="EcuMT" value="8424563347437829923" />
@@ -557,26 +572,16 @@
       <ref role="20ksaX" to="tpee:4Lb$w0Yiqs5" />
     </node>
   </node>
-  <node concept="1TIwiD" id="5hM31D8wMnE">
-    <property role="3GE5qa" value="Analyzer" />
-    <property role="TrG5h" value="AnalyzerTypeAnnotation" />
-    <property role="R5$K7" value="true" />
-    <property role="EcuMT" value="6084939353556198890" />
-    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
-    <node concept="M6xJ_" id="5hM31D8wNuE" role="lGtFl">
-      <property role="Hh88m" value="type" />
-      <node concept="tn0Fv" id="5hM31D8wNuG" role="HhnKV">
-        <property role="tnX3d" value="true" />
-      </node>
-      <node concept="trNpa" id="5hM31D8wNuI" role="EQaZv">
-        <ref role="trN6q" node="5JpT3MjX6u9" resolve="Analyzer" />
-      </node>
-    </node>
-  </node>
-  <node concept="1TIwiD" id="7jE3VEJNDMv">
-    <property role="TrG5h" value="InsertBeforePosition" />
-    <property role="EcuMT" value="8424563347437821087" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  <node concept="1TIwiD" id="7UkgJtnqqHe">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="AnalyzerFunParameterStateValues" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="Analyzer.AnalyzerFunctions" />
+    <property role="34LRSv" value="stateValues" />
+    <property role="1pbfSe" value="704778683" />
+    <property role="EcuMT" value="9120988775422995278" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="3eVfSJeeWos">
     <property role="EcuMT" value="3727642986272245276" />
@@ -584,6 +589,38 @@
     <property role="TrG5h" value="ProgramParameter" />
     <property role="34LRSv" value="program" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+  </node>
+  <node concept="1TIwiD" id="7fxZEB1sFyL">
+    <property role="1pbfSe" value="894744410" />
+    <property role="3GE5qa" value="Instructions" />
+    <property role="TrG5h" value="CustomInstructionsContainer" />
+    <property role="19KtqR" value="true" />
+    <property role="EcuMT" value="8350235189170059441" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7fxZEB1sH3D" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="instruction" />
+      <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="8350235189170065641" />
+      <ref role="20lvS9" node="5JpT3MjX6ua" resolve="Instruction" />
+    </node>
+    <node concept="PrWs8" id="7fxZEB1sH3F" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7fxZEB1sSuo">
+    <property role="1pbfSe" value="894797377" />
+    <property role="3GE5qa" value="Instructions" />
+    <property role="TrG5h" value="CustomInstructionsContainerReference" />
+    <property role="EcuMT" value="8350235189170112408" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7fxZEB1sSup" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="containter" />
+      <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="8350235189170112409" />
+      <ref role="20lvS9" node="7fxZEB1sFyL" resolve="CustomInstructionsContainer" />
+    </node>
   </node>
 </model>
 
