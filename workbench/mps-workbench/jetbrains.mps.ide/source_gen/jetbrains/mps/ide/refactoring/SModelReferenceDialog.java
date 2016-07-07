@@ -8,8 +8,8 @@ import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.workbench.choose.models.BaseModelModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.workbench.choose.ChooseByNameData;
+import jetbrains.mps.workbench.choose.ModelsPresentation;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;
@@ -35,17 +35,13 @@ public class SModelReferenceDialog extends RefactoringDialog {
     setHorizontalStretch(2.5f);
     setVerticalStretch(2);
 
-    final BaseModelModel goToModelModel = new BaseModelModel(myMPSProject) {
-      @Override
-      public SModelReference[] find(boolean checkBoxState) {
-        return ListSequence.fromList(myModels).toGenericArray(SModelReference.class);
-      }
-    };
-    myChooser = MpsPopupFactory.createPanelForPackage(getProject(), goToModelModel, false);
+    ChooseByNameData<SModelReference> gotoData = new ChooseByNameData<SModelReference>(new ModelsPresentation(myMPSProject.getRepository()));
+    gotoData.derivePrompts("model").setCheckBoxName(null).setScope(myModels, null);
+    myChooser = MpsPopupFactory.createPanelForPackage(getProject(), gotoData, false);
     myChooser.invoke(new ChooseByNamePopupComponent.Callback() {
       @Override
       public void elementChosen(Object p0) {
-        selectedModel = goToModelModel.getModelObject(p0);
+        selectedModel = (SModelReference) p0;
         doRefactoringAction();
       }
     }, ModalityState.stateForComponent(getWindow()), false);
