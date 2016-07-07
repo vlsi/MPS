@@ -33,13 +33,11 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
 
   public void add(IClassPathItem item) {
     assert item != null;
-    checkValidity();
     myChildren.add(item);
   }
 
   @Override
   public boolean hasClass(String name) {
-    checkValidity();
     for (IClassPathItem item : myChildren) {
       if (item.hasClass(name)) {
         return true;
@@ -50,7 +48,6 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
 
   @Override
   public boolean hasPackage(@NotNull String name) {
-    checkValidity();
     for (IClassPathItem item : myChildren) {
       if (item.hasPackage(name)) {
         return true;
@@ -62,7 +59,6 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   @Nullable
   @Override
   public ClassBytes getClassBytes(String name) {
-    checkValidity();
     for (IClassPathItem item : myChildren) {
       ClassBytes result = item.getClassBytes(name);
       if (result != null) return result;
@@ -72,7 +68,6 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
 
   @Override
   public URL getResource(String name) {
-    checkValidity();
     for (IClassPathItem item : myChildren) {
       URL resource = item.getResource(name);
       if (resource != null) {
@@ -84,8 +79,6 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
 
   @Override
   public Enumeration<URL> getResources(String name) {
-    checkValidity();
-
     List<URL> result = new ArrayList<URL>();
     for (IClassPathItem item : myChildren) {
       Enumeration<URL> resources = item.getResources(name);
@@ -98,7 +91,6 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
 
   @Override
   public Iterable<String> getAvailableClasses(String namespace) {
-    checkValidity();
     FlattenIterable<String> result = new FlattenIterable<String>();
     for (IClassPathItem item : myChildren) {
       //todo rewrite using mapping iterable
@@ -109,7 +101,6 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
 
   @Override
   public Iterable<String> getSubpackages(String namespace) {
-    checkValidity();
     FlattenIterable<String> result = new FlattenIterable<String>();
     for (IClassPathItem item : myChildren) {
       //todo rewrite using mapping iterable
@@ -119,13 +110,11 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public List<IClassPathItem> getChildren() {
-    checkValidity();
     return new ArrayList<IClassPathItem>(myChildren);
   }
 
   @Override
   public List<RealClassPathItem> flatten() {
-    checkValidity();
     List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
 
     for (IClassPathItem child : myChildren) {
@@ -137,7 +126,6 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
 
   @Override
   public CompositeClassPathItem optimize() {
-    checkValidity();
     List<RealClassPathItem> flattenedItems = flatten();
     Iterator<RealClassPathItem> it = flattenedItems.iterator();
 
@@ -175,7 +163,6 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
 
   @Override
   public void accept(IClassPathItemVisitor visitor) {
-    checkValidity();
     visitor.visit(this);
   }
 

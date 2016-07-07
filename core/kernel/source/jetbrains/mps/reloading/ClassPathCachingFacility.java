@@ -15,18 +15,13 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.impl.IoFile;
-import jetbrains.mps.vfs.impl.IoFileSystem;
-import jetbrains.mps.vfs.path.CommonPath;
-import jetbrains.mps.vfs.path.UniPath;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.IOException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Serves as a utility to cache paths which are addressed by several ways
@@ -35,16 +30,20 @@ import java.util.*;
  * Either will be made as a separate component OR
  * (more likely) to transfer somewhere into the class loading package.
  *
+ * The main clients of this class are make and class loading.
+ * Not clear what's the speedup of this 'caching' so it is risky to drop it right now.
+ *
+ * @deprecated however I will drop it in the next release (3.4)
+ *
  * AP
  */
+@ToRemove(version = 3.4)
+@Deprecated
 public final class ClassPathCachingFacility {
-  private static Logger LOG = LogManager.getLogger(ClassPathCachingFacility.class);
-
   private static final ClassPathCachingFacility ourInstance = new ClassPathCachingFacility();
   private static final Object LOCK = new Object();
 
-  private static jetbrains.mps.vfs.openapi.FileSystem ourFileSystem = new IoFileSystem();
-  private final Map<String, RealClassPathItem> myCache = new HashMap<String, RealClassPathItem>();
+  private final Map<String, RealClassPathItem> myPath2ClassPath = new HashMap<>();
 
   private ClassPathCachingFacility() {
   }
@@ -53,58 +52,32 @@ public final class ClassPathCachingFacility {
     return ourInstance;
   }
 
-  // FIXME rewrite without IFile, write class path item tests about jars in jars
+  /**
+   * @deprecated use {@link RealClassPathItem#create(String, String)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   @NotNull
-  public RealClassPathItem createFromPath(String path, @Nullable String requestor) {
+  public RealClassPathItem createFromPath(String path, @Nullable String caller) {
     synchronized (LOCK) {
-      if (!myCache.containsKey(path)) {
-        IFile file = ourFileSystem.getFile(path);
-        assert file instanceof IoFile;
-        UniPath uniPath = file.toPath().toNormal();
-        boolean isDirectory = file.isDirectory();
-        RealClassPathItem item;
-        if (!file.exists()) {
-          String moduleString = requestor == null ? "" : " in " + requestor;
-          LOG.debug(String.format("Can't load class path item %s%s.%s", uniPath, moduleString, isDirectory ? " Execute make in IDEA." : ""));
-          item = new NonExistingClassPathItem(uniPath.toString());
-        } else if (file.isArchive()) {
-          item = new JarFileClassPathItem(ourFileSystem, uniPath.toString());
-        } else if (file.isDirectory()) {
-          item = new FileClassPathItem(path);
-        } else if (file.isInArchive()) {
-          throw new IllegalArgumentException("Path variable `" + uniPath + "' points to the location inside the jar which is not supported");
-        } else {
-          throw new IllegalArgumentException("Path variable " + uniPath + "' does not point to a directory or to a jar/zip location");
-        }
-
-        myCache.put(path, item);
+      if (!myPath2ClassPath.containsKey(path)) {
+        RealClassPathItem item = RealClassPathItem.create(path, caller);
+        myPath2ClassPath.put(path, item);
         return item;
       }
-      return myCache.get(path);
+      return myPath2ClassPath.get(path);
     }
   }
 
-  // FIXME AP what happens with the inner state of this class. When is this method supposed to call?
-
   /**
    * It is called only after MPS make.
-   * clears up the cache for the given paths
+   * clears up the cache here for the given paths
    *
-   * FIXME must be replaced with the classloading (reloading, whatever) listening to the make operations
+   * Will be dropped soon.
    */
   public void invalidate(Set<String> paths) {
-    List<AbstractClassPathItem> invalidated = new ArrayList<AbstractClassPathItem>();
-
     synchronized (LOCK) {
-      for (String path : paths) {
-        if (myCache.containsKey(path)) {
-          invalidated.add(myCache.remove(path));
-        }
-      }
-    }
-
-    for (AbstractClassPathItem p : invalidated) {
-      p.invalidate();
+      paths.forEach(myPath2ClassPath::remove);
     }
   }
 }

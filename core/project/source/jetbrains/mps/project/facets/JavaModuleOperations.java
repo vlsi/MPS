@@ -72,14 +72,14 @@ public class JavaModuleOperations {
 
   /**
    * @param classPath a sequence of paths to classes
-   * @param requestor debug info describing the caller of this method
+   * @param caller debug info describing the caller of this method
    * @return constructed CompositeClassPathItem
    */
-  public static CompositeClassPathItem createClassPathItem(Iterable<String> classPath, String requestor) {
+  public static CompositeClassPathItem createClassPathItem(Iterable<String> classPath, String caller) {
     CompositeClassPathItem classPathItem = new CompositeClassPathItem();
 
     for (String path : classPath) {
-      IClassPathItem pathItem = ClassPathCachingFacility.getInstance().createFromPath(path, requestor);
+      IClassPathItem pathItem = ClassPathCachingFacility.getInstance().createFromPath(path, caller);
       classPathItem.add(pathItem);
     }
 
