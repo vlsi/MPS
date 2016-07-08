@@ -32,6 +32,8 @@ import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.editor.runtime.cells.CellIdManager;
 
 public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
   @Override
@@ -44,6 +46,7 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
       result.add(new EditorCellModel_TransformationMenu.TransformationMenuPart_Action_puymhi_d0());
       result.add(new EditorCellModel_TransformationMenu.TransformationMenuPart_Parameterized_puymhi_e0());
       result.add(new EditorCellModel_TransformationMenu.TransformationMenuPart_Action_puymhi_f0());
+      result.add(new EditorCellModel_TransformationMenu.TransformationMenuPart_Action_puymhi_g0());
     }
     return result;
   }
@@ -201,7 +204,7 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
       @Nullable
       @Override
       public String getLabelText(String pattern) {
-        return "Alias";
+        return "Concept Alias";
       }
 
       @Override
@@ -226,11 +229,6 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
 
         return null == assistantUtils.getFirstCellValue(new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
           public Boolean invoke(SNode cell) {
-            SNode propertyCell = SNodeOperations.as(cell, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb02612eL, "jetbrains.mps.lang.editor.structure.CellModel_Property"));
-            if (propertyCell != null && SLinkOperations.getTarget(propertyCell, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration")) == MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34fa226eL, "alias").getDeclarationNode()) {
-              return Boolean.FALSE;
-            }
-
             return (SLinkOperations.getTarget(SNodeOperations.as(cell, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, "jetbrains.mps.lang.editor.structure.CellModel_Component")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, 0xfb35c96897L, "editorComponent")) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)", "2900100530630621651") ? Boolean.FALSE : null);
           }
         });
@@ -394,7 +392,7 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
 
         Iterable<SNode> allConceptProperties = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(SLinkOperations.getTarget(assistantUtils.getEditorDeclaration(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L, 0x10f7df451aeL, "conceptDeclaration")))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return it != MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L, "shortDescription").getDeclarationNode() && it != MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage").getDeclarationNode();
+            return it != MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34fa226eL, "alias").getDeclarationNode() && it != MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L, "shortDescription").getDeclarationNode() && it != MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage").getDeclarationNode();
           }
         });
 
@@ -403,10 +401,6 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
             SNode propertyCell = SNodeOperations.as(cell, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb02612eL, "jetbrains.mps.lang.editor.structure.CellModel_Property"));
             if (propertyCell != null) {
               return SLinkOperations.getTarget(propertyCell, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration"));
-            }
-            SNode componentCell = SNodeOperations.as(cell, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, "jetbrains.mps.lang.editor.structure.CellModel_Component"));
-            if (componentCell != null && SLinkOperations.getTarget(componentCell, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, 0xfb35c96897L, "editorComponent")) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)", "2900100530630621651")) {
-              return (SNode) MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34fa226eL, "alias").getDeclarationNode();
             }
             return (SNode) null;
           }
@@ -446,6 +440,49 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), null, null, false);
       return quotedNode_1;
+    }
+  }
+  private static class TransformationMenuPart_Action_puymhi_g0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    @Nullable
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
+      return new EditorCellModel_TransformationMenu.TransformationMenuPart_Action_puymhi_g0.Item(context);
+    }
+
+    private class Item extends ActionItemBase {
+      private final TransformationMenuContext _context;
+
+      private Item(TransformationMenuContext context) {
+        _context = context;
+      }
+
+      @Nullable
+      @Override
+      public String getLabelText(String pattern) {
+        return "Set Concept Alias";
+      }
+
+      @Override
+      public void execute(@NotNull String pattern) {
+        EditorAssistantUtilities assistantUtils = new EditorAssistantUtilities(_context.getNode());
+        SNode concept = SLinkOperations.getTarget(assistantUtils.getEditorDeclaration(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L, 0x10f7df451aeL, "conceptDeclaration"));
+        _context.getEditorContext().getEditorPanelManager().openEditor(concept);
+        SPropertyOperations.set(concept, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"), "<" + SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_Alias>");
+        SelectionUtil.selectLabelCellWithSelection(_context.getEditorContext(), concept, "*" + CellIdManager.createPropertyId("conceptAlias"), 0, -1);
+      }
+
+      @Override
+      public boolean canExecute(@NotNull String pattern) {
+        EditorAssistantUtilities assistantUtils = new EditorAssistantUtilities(_context.getNode());
+        if (assistantUtils.getEditorDeclaration() == null || SLinkOperations.getTarget(assistantUtils.getEditorDeclaration(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L, 0x10f7df451aeL, "conceptDeclaration")) == null) {
+          return false;
+        }
+
+        if (SPropertyOperations.getString(SLinkOperations.getTarget(assistantUtils.getEditorDeclaration(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L, 0x10f7df451aeL, "conceptDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) != null) {
+          return false;
+        }
+
+        return SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, "jetbrains.mps.lang.editor.structure.CellModel_Component")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, 0xfb35c96897L, "editorComponent")) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)", "2900100530630621651") && _context.getEditorContext().getEditorPanelManager() != null;
+      }
     }
   }
 }
