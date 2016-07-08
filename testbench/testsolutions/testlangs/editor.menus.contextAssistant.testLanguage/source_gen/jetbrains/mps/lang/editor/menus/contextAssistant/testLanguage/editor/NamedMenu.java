@@ -38,7 +38,7 @@ public class NamedMenu extends TransformationMenuBase {
     return result;
   }
 
-  private static class TransformationMenuPart_Action_qsw3kc_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TransformationMenuPart_Action_qsw3kc_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new NamedMenu.TransformationMenuPart_Action_qsw3kc_a0.Item(context);
@@ -68,7 +68,7 @@ public class NamedMenu extends TransformationMenuBase {
       }
     }
   }
-  public static class TransformationMenuPart_Intention_qsw3kc_b0 extends IntentionMenuPartBase {
+  public class TransformationMenuPart_Intention_qsw3kc_b0 extends IntentionMenuPartBase {
     public TransformationMenuPart_Intention_qsw3kc_b0() {
       super("jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.intentions.AddLetterToName_Intention");
     }
@@ -78,7 +78,7 @@ public class NamedMenu extends TransformationMenuBase {
       return new NamedMenu.TransformationMenuPart_Intention_qsw3kc_b0.Item(context, executable);
     }
 
-    private static class Item extends IntentionMenuPartBase.ItemBase implements SideTransformCompletionActionItem {
+    private class Item extends IntentionMenuPartBase.ItemBase implements SideTransformCompletionActionItem {
       private Item(TransformationMenuContext context, IntentionExecutable executable) {
         super(context, executable);
       }
@@ -89,7 +89,7 @@ public class NamedMenu extends TransformationMenuBase {
       }
     }
   }
-  private static class TransformationMenuPart_Action_qsw3kc_c0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TransformationMenuPart_Action_qsw3kc_c0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new NamedMenu.TransformationMenuPart_Action_qsw3kc_c0.Item(context);

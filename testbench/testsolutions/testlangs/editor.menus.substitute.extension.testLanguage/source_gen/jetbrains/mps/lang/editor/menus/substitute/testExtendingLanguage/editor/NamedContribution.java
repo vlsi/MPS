@@ -26,7 +26,7 @@ public class NamedContribution extends SubstituteMenuBase {
     result.add(new NamedContribution.SubstituteMenuPart_Action_xkcc84_a());
     return result;
   }
-  private static class SubstituteMenuPart_Action_xkcc84_a extends SingleItemSubstituteMenuPart {
+  private class SubstituteMenuPart_Action_xkcc84_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override

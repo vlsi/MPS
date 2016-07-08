@@ -27,7 +27,7 @@ public class UsedContribution extends TransformationMenuBase {
     return result;
   }
 
-  private static class TransformationMenuPart_Action_vz5f0m_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TransformationMenuPart_Action_vz5f0m_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new UsedContribution.TransformationMenuPart_Action_vz5f0m_a0.Item(context);
