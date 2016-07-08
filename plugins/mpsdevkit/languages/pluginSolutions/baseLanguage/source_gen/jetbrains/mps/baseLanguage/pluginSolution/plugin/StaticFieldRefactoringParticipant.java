@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipantBase;
+import jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 

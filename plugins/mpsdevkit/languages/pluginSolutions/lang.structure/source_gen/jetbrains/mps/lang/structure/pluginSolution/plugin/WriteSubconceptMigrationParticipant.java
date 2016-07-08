@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.refactoring.participant.RefactoringParticipantBase;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipantBase.NamedNodeReference;
+import jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase.NamedNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant;
 import jetbrains.mps.refactoring.participant.RefactoringParticipant;
@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.structure.Extension;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipantBase;
+import jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
