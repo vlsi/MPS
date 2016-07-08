@@ -141,6 +141,8 @@ public class UseLanguageInPackageTest extends DataMPSFixtureTestCase {
   protected final Interaction chooseOnlyBaseLanguageInteraction = new Interaction() {
     @Override
     public void chooseLanguage(ChooseByNameData<SLanguage> data, Callback callback) {
+      String[] names = data.getNames(true);
+      assertTrue(Arrays.asList(names).contains("jetbrains.mps.baseLanguage"));
       Object[] navigationItems = data.getElementsByName("jetbrains.mps.baseLanguage", true, null);
       assertTrue(navigationItems.length > 0);
       callback.elementChosen(navigationItems[0]);

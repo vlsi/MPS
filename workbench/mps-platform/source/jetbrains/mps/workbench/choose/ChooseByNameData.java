@@ -144,6 +144,7 @@ public final class ChooseByNameData<T> implements ChooseByNameModel {
   @NotNull
   @Override
   public Object[] getElementsByName(String name, boolean checkBoxState, String pattern) {
+    // not that I insist not to invoke getNames() when myNamesElementMap is empty, just curious if there's real scenario (not in test) when getElementByName comes first
     assert myNameElementMap != null : "How come getElementsByName() is invoked before getNames()? Where from the name comes then?";
     Collection<T> rv = myNameElementMap.get(name);
     return rv.toArray();
