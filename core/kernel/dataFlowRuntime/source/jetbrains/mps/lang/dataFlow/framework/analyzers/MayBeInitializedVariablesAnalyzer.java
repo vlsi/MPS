@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.dataFlow.framework.analyzers;
 
+import jetbrains.mps.lang.dataFlow.framework.instructions.JumpInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.lang.dataFlow.framework.*;
@@ -64,6 +65,26 @@ public class MayBeInitializedVariablesAnalyzer implements DataFlowAnalyzer<VarSe
     if (instruction instanceof WriteInstruction && !myExclusions.contains(instruction)) {
       WriteInstruction write = (WriteInstruction) instruction;
       result.add(write.getVariableIndex());
+    }
+
+    if (instruction instanceof JumpInstruction) {
+      JumpInstruction jump = (JumpInstruction) instruction;
+
+      final int to = jump.getJumpTo();
+      final int current = s.getIndex();
+      if(to<current) {
+        final Program program = jump.getProgram();
+        for (Object var : program.getVariables()) {
+          final List<Instruction> instructions = program.getInstructionsFor(var);
+          if (!instructions.isEmpty()) {
+            if (to < instructions.get(0).getIndex()) {
+              result.remove(var);
+            } else {
+              result.add(var);
+            }
+          }
+        }
+      }
     }
 
     return result;
