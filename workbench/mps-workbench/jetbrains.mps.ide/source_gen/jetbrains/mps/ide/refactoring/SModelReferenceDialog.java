@@ -41,11 +41,16 @@ public class SModelReferenceDialog extends RefactoringDialog {
     myChooser.invoke(new ChooseByNamePopupComponent.Callback() {
       @Override
       public void elementChosen(Object p0) {
-        selectedModel = (SModelReference) p0;
         doRefactoringAction();
       }
     }, ModalityState.stateForComponent(getWindow()), false);
     super.init();
+  }
+
+  @Override
+  protected void doRefactoringAction() {
+    selectedModel = (SModelReference) myChooser.getChosenElement();
+    super.doRefactoringAction();
   }
   @Override
   public JComponent getPreferredFocusedComponent() {
