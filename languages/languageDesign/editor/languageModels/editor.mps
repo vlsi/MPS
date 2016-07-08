@@ -154,11 +154,11 @@
       </concept>
       <concept id="1164996492011" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary" flags="ng" index="ZcVJ$" />
       <concept id="1630016958697344083" name="jetbrains.mps.lang.editor.structure.IMenu_Concept" flags="ng" index="2ZABuq">
-        <reference id="6591946374543067572" name="conceptDeclarationNew" index="aqKnT" />
+        <reference id="6591946374543067572" name="conceptDeclaration" index="aqKnT" />
       </concept>
       <concept id="1630016958697286851" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_parameterObject" flags="ng" index="2ZBlsa" />
       <concept id="1630016958697057551" name="jetbrains.mps.lang.editor.structure.IMenuPartParameterized" flags="ng" index="2ZBHr6">
-        <child id="1630016958697057552" name="parameterTypeNew" index="2ZBHrp" />
+        <child id="1630016958697057552" name="parameterType" index="2ZBHrp" />
       </concept>
       <concept id="1214406454886" name="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" flags="ln" index="30gYXW" />
       <concept id="1214406466686" name="jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem" flags="ln" index="30h1P$" />
@@ -17268,7 +17268,6 @@
                       <node concept="PMmxH" id="2wdLO7KhY3M" role="3EZMnx">
                         <property role="1cu_pB" value="0" />
                         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-                        <ref role="1k5W1q" to="tpen:hF$iUjy" resolve="Operator" />
                         <node concept="OXEIz" id="2wdLO7KhY3N" role="P5bDN">
                           <node concept="UkePV" id="6dj4njOGZ54" role="OY2wv">
                             <ref role="Ul1FP" to="tpck:gw2VY9q" resolve="BaseConcept" />
