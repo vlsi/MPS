@@ -4867,21 +4867,13 @@
                     </node>
                   </node>
                 </node>
-                <node concept="22lmx$" id="5yG5hjeBwyP" role="3uHU7B">
-                  <node concept="3clFbC" id="5yG5hjeByF1" role="3uHU7B">
-                    <node concept="10Nm6u" id="5yG5hjeBz8q" role="3uHU7w" />
-                    <node concept="2OqwBi" id="5yG5hjeBxya" role="3uHU7B">
-                      <node concept="1Q80Hx" id="5yG5hjeBwZH" role="2Oq$k0" />
-                      <node concept="liA8E" id="5yG5hjeBy80" role="2OqNvi">
-                        <ref role="37wK5l" to="cj4x:~EditorContext.getEditorPanelManager():jetbrains.mps.openapi.editor.EditorPanelManager" resolve="getEditorPanelManager" />
-                      </node>
+                <node concept="3clFbC" id="5yG5hjeByF1" role="3uHU7B">
+                  <node concept="10Nm6u" id="5yG5hjeBz8q" role="3uHU7w" />
+                  <node concept="2OqwBi" id="5yG5hjeBxya" role="3uHU7B">
+                    <node concept="1Q80Hx" id="5yG5hjeBwZH" role="2Oq$k0" />
+                    <node concept="liA8E" id="5yG5hjeBy80" role="2OqNvi">
+                      <ref role="37wK5l" to="cj4x:~EditorContext.getEditorPanelManager():jetbrains.mps.openapi.editor.EditorPanelManager" resolve="getEditorPanelManager" />
                     </node>
-                  </node>
-                  <node concept="2OqwBi" id="2wdLO7KeV7x" role="3uHU7w">
-                    <node concept="3TrcHB" id="2wdLO7KeV7y" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpce:40UcGlRb7V2" resolve="abstract" />
-                    </node>
-                    <node concept="7Obwk" id="1ZDuSTZqaUY" role="2Oq$k0" />
                   </node>
                 </node>
               </node>
