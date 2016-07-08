@@ -41,7 +41,7 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
     return result;
   }
 
-  private class TransformationMenuPart_Action_dubn3u_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private static class TransformationMenuPart_Action_dubn3u_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Action_dubn3u_a0.Item(context);
@@ -93,7 +93,7 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
       }
     }
   }
-  private class TransformationMenuPart_Action_dubn3u_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private static class TransformationMenuPart_Action_dubn3u_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Action_dubn3u_b0.Item(context);

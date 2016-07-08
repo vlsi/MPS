@@ -5,7 +5,7 @@
       <unit at="14,0,57,0" name="jetbrains.mps.generator.test.xmodel.lang1.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="17,0,53,0" name="jetbrains.mps.generator.test.xmodel.lang1.structure.StructureAspectDescriptor" />
+      <unit at="17,0,63,0" name="jetbrains.mps.generator.test.xmodel.lang1.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

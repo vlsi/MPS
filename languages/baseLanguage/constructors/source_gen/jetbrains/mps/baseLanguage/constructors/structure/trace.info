@@ -5,7 +5,7 @@
       <unit at="14,0,99,0" name="jetbrains.mps.baseLanguage.constructors.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="18,0,82,0" name="jetbrains.mps.baseLanguage.constructors.structure.StructureAspectDescriptor" />
+      <unit at="18,0,113,0" name="jetbrains.mps.baseLanguage.constructors.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

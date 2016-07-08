@@ -7,18 +7,18 @@ import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(3);
-  /*package*/ final ConceptDescriptor myConceptField = new ConceptDescriptorBuilder("jetbrains.mps.samples.readerConfigLanguage.structure.Field", MetaIdFactory.conceptId(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6ab7909L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x103f6ac7723L, "start"), new ConceptDescriptorBuilder.Prop(0x103f6ac8b77L, "end")).properties("start", "end").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)", "1116534962441")).create();
-  /*package*/ final ConceptDescriptor myConceptMapping = new ConceptDescriptorBuilder("jetbrains.mps.samples.readerConfigLanguage.structure.Mapping", MetaIdFactory.conceptId(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6aabc30L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x103f6abdf46L, "code"), new ConceptDescriptorBuilder.Prop(0x103f6ac00e8L, "targetClass")).properties("code", "targetClass").childDescriptors(new ConceptDescriptorBuilder.Link(0x103f6b56dcdL, "field", MetaIdFactory.conceptId(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6ab7909L), true, true, false)).children(new String[]{"field"}, new boolean[]{true}).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)", "1116534914096")).create();
-  /*package*/ final ConceptDescriptor myConceptReaderConfiguration = new ConceptDescriptorBuilder("jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration", MetaIdFactory.conceptId(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6aa11b7L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x103f6af233bL, "mapping", MetaIdFactory.conceptId(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6aabc30L), true, true, false)).children(new String[]{"mapping"}, new boolean[]{true}).rootable().sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)", "1116534870455")).create();
+  /*package*/ final ConceptDescriptor myConceptField = createDescriptorForField();
+  /*package*/ final ConceptDescriptor myConceptMapping = createDescriptorForMapping();
+  /*package*/ final ConceptDescriptor myConceptReaderConfiguration = createDescriptorForReaderConfiguration();
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptField.getId(), 0);
@@ -48,5 +48,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         throw new IllegalStateException();
     }
+  }
+
+  private static ConceptDescriptor createDescriptorForField() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.samples.readerConfigLanguage.structure.Field", MetaIdFactory.conceptId(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6ab7909L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x103f6ac7723L, "start"), new ConceptDescriptorBuilder.Prop(0x103f6ac8b77L, "end")).properties("start", "end").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)", "1116534962441")).create();
+  }
+  private static ConceptDescriptor createDescriptorForMapping() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.samples.readerConfigLanguage.structure.Mapping", MetaIdFactory.conceptId(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6aabc30L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x103f6abdf46L, "code"), new ConceptDescriptorBuilder.Prop(0x103f6ac00e8L, "targetClass")).properties("code", "targetClass").childDescriptors(new ConceptDescriptorBuilder.Link(0x103f6b56dcdL, "field", MetaIdFactory.conceptId(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6ab7909L), true, true, false)).children(new String[]{"field"}, new boolean[]{true}).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)", "1116534914096")).create();
+  }
+  private static ConceptDescriptor createDescriptorForReaderConfiguration() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration", MetaIdFactory.conceptId(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6aa11b7L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x103f6af233bL, "mapping", MetaIdFactory.conceptId(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6aabc30L), true, true, false)).children(new String[]{"mapping"}, new boolean[]{true}).rootable().sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)", "1116534870455")).create();
   }
 }

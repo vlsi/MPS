@@ -7,17 +7,17 @@ import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(2);
-  /*package*/ final ConceptDescriptor myConceptCar = new ConceptDescriptorBuilder("jetbrains.mps.samples.highlevel.sampleLanguage.structure.Car", MetaIdFactory.conceptId(0x99aa3e0fa1624dc1L, 0xbcff2def4d654205L, 0x346ead2c08d7a618L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x346ead2c08d7a61dL, "model"), new ConceptDescriptorBuilder.Prop(0x346ead2c08d7a61fL, "year")).properties("model", "year").rootable().sourceNode(new SNodePointer("r:4d03b397-cc28-4073-ab6e-06a2ea51daa1(jetbrains.mps.samples.highlevel.sampleLanguage.structure)", "3778147542048941592")).create();
-  /*package*/ final ConceptDescriptor myConceptPerson = new ConceptDescriptorBuilder("jetbrains.mps.samples.highlevel.sampleLanguage.structure.Person", MetaIdFactory.conceptId(0x99aa3e0fa1624dc1L, 0xbcff2def4d654205L, 0x346ead2c08d7a611L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x346ead2c08d7a613L, "name"), new ConceptDescriptorBuilder.Prop(0x346ead2c08d7a615L, "age")).properties("name", "age").rootable().sourceNode(new SNodePointer("r:4d03b397-cc28-4073-ab6e-06a2ea51daa1(jetbrains.mps.samples.highlevel.sampleLanguage.structure)", "3778147542048941585")).create();
+  /*package*/ final ConceptDescriptor myConceptCar = createDescriptorForCar();
+  /*package*/ final ConceptDescriptor myConceptPerson = createDescriptorForPerson();
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptCar.getId(), 0);
@@ -44,5 +44,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         throw new IllegalStateException();
     }
+  }
+
+  private static ConceptDescriptor createDescriptorForCar() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.samples.highlevel.sampleLanguage.structure.Car", MetaIdFactory.conceptId(0x99aa3e0fa1624dc1L, 0xbcff2def4d654205L, 0x346ead2c08d7a618L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x346ead2c08d7a61dL, "model"), new ConceptDescriptorBuilder.Prop(0x346ead2c08d7a61fL, "year")).properties("model", "year").rootable().sourceNode(new SNodePointer("r:4d03b397-cc28-4073-ab6e-06a2ea51daa1(jetbrains.mps.samples.highlevel.sampleLanguage.structure)", "3778147542048941592")).create();
+  }
+  private static ConceptDescriptor createDescriptorForPerson() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.samples.highlevel.sampleLanguage.structure.Person", MetaIdFactory.conceptId(0x99aa3e0fa1624dc1L, 0xbcff2def4d654205L, 0x346ead2c08d7a611L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x346ead2c08d7a613L, "name"), new ConceptDescriptorBuilder.Prop(0x346ead2c08d7a615L, "age")).properties("name", "age").rootable().sourceNode(new SNodePointer("r:4d03b397-cc28-4073-ab6e-06a2ea51daa1(jetbrains.mps.samples.highlevel.sampleLanguage.structure)", "3778147542048941585")).create();
   }
 }
