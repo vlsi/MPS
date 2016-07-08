@@ -35,7 +35,7 @@ public class ParameterizedByPrimitiveType extends SubstituteMenuBase {
     protected Iterable<? extends Integer> getParameters(SubstituteMenuContext _context) {
       return Arrays.asList(1, 2, 3);
     }
-    private static class SubstituteMenuPart_Action_ud82js_a0 extends SingleItemSubstituteMenuPart {
+    private class SubstituteMenuPart_Action_ud82js_a0 extends SingleItemSubstituteMenuPart {
       private final int myParameterObject;
       public SubstituteMenuPart_Action_ud82js_a0(int parameterObject) {
         myParameterObject = parameterObject;

@@ -30,7 +30,7 @@ public class Recursive extends TransformationMenuBase {
     return result;
   }
 
-  public static class TransformationMenuPart_IncludeMenu_q7lcll_a0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TransformationMenuPart_IncludeMenu_q7lcll_a0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {

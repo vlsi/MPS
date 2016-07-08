@@ -28,7 +28,7 @@ public class ParentNamedMenu extends TransformationMenuBase {
     return result;
   }
 
-  private static class TransformationMenuPart_Action_bwf8lj_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TransformationMenuPart_Action_bwf8lj_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new ParentNamedMenu.TransformationMenuPart_Action_bwf8lj_a0.Item(context);

@@ -24,7 +24,7 @@ public class WithNonExecutableAction extends TransformationMenuBase {
     return result;
   }
 
-  private static class TransformationMenuPart_Action_guv3c3_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TransformationMenuPart_Action_guv3c3_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new WithNonExecutableAction.TransformationMenuPart_Action_guv3c3_a0.Item(context);

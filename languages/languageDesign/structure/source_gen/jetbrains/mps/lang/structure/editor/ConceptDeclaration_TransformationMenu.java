@@ -10,7 +10,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuConte
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
-import jetbrains.mps.lang.editor.menus.ConditionalMenuPart;
+import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
@@ -42,7 +42,7 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
     return result;
   }
 
-  public static class TransformationMenuPart_Group_dubn3u_a0 extends ConditionalMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TransformationMenuPart_Group_dubn3u_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       // suppressing assistant for incomplete concept / BaseConcept 
@@ -51,245 +51,245 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Group_dubn3u_a0a(), new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Action_dubn3u_b0a(), new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Action_dubn3u_c0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Group_dubn3u_a0.TransformationMenuPart_Group_dubn3u_a0a(), new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Group_dubn3u_a0.TransformationMenuPart_Action_dubn3u_b0a(), new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Group_dubn3u_a0.TransformationMenuPart_Action_dubn3u_c0a());
     }
-  }
-  public static class TransformationMenuPart_Group_dubn3u_a0a extends ConditionalMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    @Override
-    protected boolean isApplicable(TransformationMenuContext _context) {
-      return _context.getEditorContext().getEditorPanelManager() != null;
-    }
-
-    @Override
-    protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Action_dubn3u_a0a0(), new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Action_dubn3u_b0a0());
-    }
-  }
-  private static class TransformationMenuPart_Action_dubn3u_a0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    @Nullable
-    protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Action_dubn3u_a0a0.Item(context);
-    }
-
-    private class Item extends ActionItemBase {
-      private final TransformationMenuContext _context;
-
-      private Item(TransformationMenuContext context) {
-        _context = context;
-      }
-
-      @Nullable
+    public class TransformationMenuPart_Group_dubn3u_a0a extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Override
-      public String getLabelText(String pattern) {
-        return "Create Editor";
+      protected boolean isApplicable(TransformationMenuContext _context) {
+        return _context.getEditorContext().getEditorPanelManager() != null;
       }
 
       @Override
-      public void execute(@NotNull String pattern) {
-        SNode editor = ConceptAspectsHelper.attachNewConceptAspect(LanguageAspect.EDITOR, _context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")), null));
-        _context.getEditorContext().getEditorPanelManager().openEditor(editor);
+      protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
+        return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Group_dubn3u_a0.TransformationMenuPart_Group_dubn3u_a0a.TransformationMenuPart_Action_dubn3u_a0a0(), new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Group_dubn3u_a0.TransformationMenuPart_Group_dubn3u_a0a.TransformationMenuPart_Action_dubn3u_b0a0());
       }
-
-      @Override
-      public boolean canExecute(@NotNull String pattern) {
-        if (ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspectCollection_id1n18fON7w20.invoke(_context.getNode(), LanguageAspect.EDITOR)).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode a) {
-            return SNodeOperations.isInstanceOf(a, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
-          }
-        })) {
-          // there is an editor defined 
-          return false;
+      private class TransformationMenuPart_Action_dubn3u_a0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+        @Nullable
+        protected TransformationMenuItem createItem(TransformationMenuContext context) {
+          return new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Group_dubn3u_a0.TransformationMenuPart_Group_dubn3u_a0a.TransformationMenuPart_Action_dubn3u_a0a0.Item(context);
         }
 
-        if (ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).isEmpty() && ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).isEmpty()) {
-          // concept has no own features -> looking for an editor defined for structurally-equal super-concept 
-          if (ListSequence.fromList(new ConceptDeclarationAssistantUtil(_context.getNode()).getStructurallyEqualSuperConcepts()).any(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspectCollection_id1n18fON7w20.invoke(it, LanguageAspect.EDITOR)).any(new IWhereFilter<SNode>() {
-                public boolean accept(SNode a) {
-                  return SNodeOperations.isInstanceOf(a, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
+        private class Item extends ActionItemBase {
+          private final TransformationMenuContext _context;
+
+          private Item(TransformationMenuContext context) {
+            _context = context;
+          }
+
+          @Nullable
+          @Override
+          public String getLabelText(String pattern) {
+            return "Create Editor";
+          }
+
+          @Override
+          public void execute(@NotNull String pattern) {
+            SNode editor = ConceptAspectsHelper.attachNewConceptAspect(LanguageAspect.EDITOR, _context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")), null));
+            _context.getEditorContext().getEditorPanelManager().openEditor(editor);
+          }
+
+          @Override
+          public boolean canExecute(@NotNull String pattern) {
+            if (ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspectCollection_id1n18fON7w20.invoke(_context.getNode(), LanguageAspect.EDITOR)).any(new IWhereFilter<SNode>() {
+              public boolean accept(SNode a) {
+                return SNodeOperations.isInstanceOf(a, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
+              }
+            })) {
+              // there is an editor defined 
+              return false;
+            }
+
+            if (ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).isEmpty() && ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).isEmpty()) {
+              // concept has no own features -> looking for an editor defined for structurally-equal super-concept 
+              if (ListSequence.fromList(new ConceptDeclarationAssistantUtil(_context.getNode()).getStructurallyEqualSuperConcepts()).any(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspectCollection_id1n18fON7w20.invoke(it, LanguageAspect.EDITOR)).any(new IWhereFilter<SNode>() {
+                    public boolean accept(SNode a) {
+                      return SNodeOperations.isInstanceOf(a, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
+                    }
+                  });
                 }
-              });
+              })) {
+                return false;
+              }
             }
-          })) {
-            return false;
-          }
-        }
 
-        if (SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"))) {
-          // Suppressing assistant for abstract concepts if any sub-concept has an editor defined 
-          if (ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(_context.getNode()), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(it, ((boolean) false))).contains(_context.getNode());
-            }
-          }).any(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspectCollection_id1n18fON7w20.invoke(it, LanguageAspect.EDITOR)).any(new IWhereFilter<SNode>() {
-                public boolean accept(SNode a) {
-                  return SNodeOperations.isInstanceOf(a, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
+            if (SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"))) {
+              // Suppressing assistant for abstract concepts if any sub-concept has an editor defined 
+              if (ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(_context.getNode()), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(it, ((boolean) false))).contains(_context.getNode());
                 }
-              });
+              }).any(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspectCollection_id1n18fON7w20.invoke(it, LanguageAspect.EDITOR)).any(new IWhereFilter<SNode>() {
+                    public boolean accept(SNode a) {
+                      return SNodeOperations.isInstanceOf(a, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
+                    }
+                  });
+                }
+              })) {
+                return false;
+              }
             }
-          })) {
-            return false;
+
+            return true;
           }
         }
-
-        return true;
       }
-    }
-  }
-  private static class TransformationMenuPart_Action_dubn3u_b0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    @Nullable
-    protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Action_dubn3u_b0a0.Item(context);
-    }
-
-    private class Item extends ActionItemBase {
-      private final TransformationMenuContext _context;
-
-      private Item(TransformationMenuContext context) {
-        _context = context;
-      }
-
-      @Nullable
-      @Override
-      public String getLabelText(String pattern) {
-        return "Create Editor for " + SPropertyOperations.getString(ListSequence.fromList(new ConceptDeclarationAssistantUtil(_context.getNode()).getStructurallyEqualSuperConcepts()).last(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-      }
-
-      @Override
-      public void execute(@NotNull String pattern) {
-        SNode concept = ListSequence.fromList(new ConceptDeclarationAssistantUtil(_context.getNode()).getStructurallyEqualSuperConcepts()).last();
-        SNode editor = ConceptAspectsHelper.attachNewConceptAspect(LanguageAspect.EDITOR, concept, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")), null));
-        _context.getEditorContext().getEditorPanelManager().openEditor(editor);
-      }
-
-      @Override
-      public boolean canExecute(@NotNull String pattern) {
-        if (ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).isNotEmpty() || ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).isNotEmpty()) {
-          return false;
+      private class TransformationMenuPart_Action_dubn3u_b0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+        @Nullable
+        protected TransformationMenuItem createItem(TransformationMenuContext context) {
+          return new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Group_dubn3u_a0.TransformationMenuPart_Group_dubn3u_a0a.TransformationMenuPart_Action_dubn3u_b0a0.Item(context);
         }
-        if (ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspectCollection_id1n18fON7w20.invoke(_context.getNode(), LanguageAspect.EDITOR)).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode a) {
-            return SNodeOperations.isInstanceOf(a, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
+
+        private class Item extends ActionItemBase {
+          private final TransformationMenuContext _context;
+
+          private Item(TransformationMenuContext context) {
+            _context = context;
           }
-        })) {
-          // there is an editor for this concept - not necessary to suggest new editor creation for super-concepts 
-          return false;
-        }
 
-        List<SNode> superConcepts = new ConceptDeclarationAssistantUtil(_context.getNode()).getStructurallyEqualSuperConcepts();
-        return ListSequence.fromList(superConcepts).isNotEmpty() && ListSequence.fromList(superConcepts).all(new IWhereFilter<SNode>() {
-          public boolean accept(SNode superCocept) {
-            List<SNode> aspects = AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspectCollection_id1n18fON7w20.invoke(superCocept, LanguageAspect.EDITOR);
-            return ListSequence.fromList(aspects).all(new IWhereFilter<SNode>() {
-              public boolean accept(SNode aspect) {
-                return !(SNodeOperations.isInstanceOf(aspect, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")));
+          @Nullable
+          @Override
+          public String getLabelText(String pattern) {
+            return "Create Editor for " + SPropertyOperations.getString(ListSequence.fromList(new ConceptDeclarationAssistantUtil(_context.getNode()).getStructurallyEqualSuperConcepts()).last(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+          }
+
+          @Override
+          public void execute(@NotNull String pattern) {
+            SNode concept = ListSequence.fromList(new ConceptDeclarationAssistantUtil(_context.getNode()).getStructurallyEqualSuperConcepts()).last();
+            SNode editor = ConceptAspectsHelper.attachNewConceptAspect(LanguageAspect.EDITOR, concept, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")), null));
+            _context.getEditorContext().getEditorPanelManager().openEditor(editor);
+          }
+
+          @Override
+          public boolean canExecute(@NotNull String pattern) {
+            if (ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).isNotEmpty() || ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).isNotEmpty()) {
+              return false;
+            }
+            if (ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspectCollection_id1n18fON7w20.invoke(_context.getNode(), LanguageAspect.EDITOR)).any(new IWhereFilter<SNode>() {
+              public boolean accept(SNode a) {
+                return SNodeOperations.isInstanceOf(a, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
+              }
+            })) {
+              // there is an editor for this concept - not necessary to suggest new editor creation for super-concepts 
+              return false;
+            }
+
+            List<SNode> superConcepts = new ConceptDeclarationAssistantUtil(_context.getNode()).getStructurallyEqualSuperConcepts();
+            return ListSequence.fromList(superConcepts).isNotEmpty() && ListSequence.fromList(superConcepts).all(new IWhereFilter<SNode>() {
+              public boolean accept(SNode superCocept) {
+                List<SNode> aspects = AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspectCollection_id1n18fON7w20.invoke(superCocept, LanguageAspect.EDITOR);
+                return ListSequence.fromList(aspects).all(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode aspect) {
+                    return !(SNodeOperations.isInstanceOf(aspect, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")));
+                  }
+                });
               }
             });
           }
-        });
+        }
       }
     }
-  }
-  private static class TransformationMenuPart_Action_dubn3u_b0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    @Nullable
-    protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Action_dubn3u_b0a.Item(context);
-    }
-
-    private class Item extends ActionItemBase {
-      private final TransformationMenuContext _context;
-
-      private Item(TransformationMenuContext context) {
-        _context = context;
-      }
-
+    private class TransformationMenuPart_Action_dubn3u_b0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
-      @Override
-      public String getLabelText(String pattern) {
-        return "Make rootable";
+      protected TransformationMenuItem createItem(TransformationMenuContext context) {
+        return new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Group_dubn3u_a0.TransformationMenuPart_Action_dubn3u_b0a.Item(context);
       }
 
-      @Override
-      public void execute(@NotNull String pattern) {
-        SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"), "" + (true));
-      }
+      private class Item extends ActionItemBase {
+        private final TransformationMenuContext _context;
 
-      @Override
-      public boolean canExecute(@NotNull String pattern) {
-        // Suggesting to make the concept rootable if: 
-        // 1. Concept has no super-concepts 
-        // 2. There is no other ceoncepts in this model with the containment link to this concept 
-        if (SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable")) || SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"))) {
-          return false;
+        private Item(TransformationMenuContext context) {
+          _context = context;
         }
-        return ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(_context.getNode()), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).translate(new ITranslator2<SNode, SNode>() {
-          public Iterable<SNode> translate(SNode it) {
-            return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"));
+
+        @Nullable
+        @Override
+        public String getLabelText(String pattern) {
+          return "Make rootable";
+        }
+
+        @Override
+        public void execute(@NotNull String pattern) {
+          SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"), "" + (true));
+        }
+
+        @Override
+        public boolean canExecute(@NotNull String pattern) {
+          // Suggesting to make the concept rootable if: 
+          // 1. Concept has no super-concepts 
+          // 2. There is no other ceoncepts in this model with the containment link to this concept 
+          if (SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable")) || SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"))) {
+            return false;
           }
-        }).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")) != null && SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference");
-          }
-        }).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return (boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(_context.getNode(), SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")));
-          }
-        }).isEmpty();
+          return ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(_context.getNode()), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).translate(new ITranslator2<SNode, SNode>() {
+            public Iterable<SNode> translate(SNode it) {
+              return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"));
+            }
+          }).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")) != null && SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference");
+            }
+          }).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return (boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(_context.getNode(), SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")));
+            }
+          }).isEmpty();
+        }
       }
     }
-  }
-  private static class TransformationMenuPart_Action_dubn3u_c0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    @Nullable
-    protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Action_dubn3u_c0a.Item(context);
-    }
-
-    private class Item extends ActionItemBase {
-      private final TransformationMenuContext _context;
-
-      private Item(TransformationMenuContext context) {
-        _context = context;
-      }
-
+    private class TransformationMenuPart_Action_dubn3u_c0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
-      @Override
-      public String getLabelText(String pattern) {
-        return "Set Alias";
+      protected TransformationMenuItem createItem(TransformationMenuContext context) {
+        return new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Group_dubn3u_a0.TransformationMenuPart_Action_dubn3u_c0a.Item(context);
       }
 
-      @Override
-      public void execute(@NotNull String pattern) {
-        SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"), "<" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_Alias>");
-        SelectionUtil.selectLabelCellWithSelection(_context.getEditorContext(), _context.getNode(), "*" + CellIdManager.createPropertyId("conceptAlias"), 0, -1);
-      }
+      private class Item extends ActionItemBase {
+        private final TransformationMenuContext _context;
 
-      @Override
-      public boolean canExecute(@NotNull String pattern) {
-        if (SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) != null || SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"))) {
-          return false;
-        }
-        Iterable<SNode> links = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(_context.getNode())).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return it != SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
-          }
-        });
-        if (Sequence.fromIterable(links).count() == 1 && SPropertyOperations.hasValue(Sequence.fromIterable(links).first(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference")) {
-          // skipping smart references 
-          return false;
+        private Item(TransformationMenuContext context) {
+          _context = context;
         }
 
-        return Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(_context.getNode(), ((boolean) false))).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) != null;
+        @Nullable
+        @Override
+        public String getLabelText(String pattern) {
+          return "Set Alias";
+        }
+
+        @Override
+        public void execute(@NotNull String pattern) {
+          SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"), "<" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_Alias>");
+          SelectionUtil.selectLabelCellWithSelection(_context.getEditorContext(), _context.getNode(), "*" + CellIdManager.createPropertyId("conceptAlias"), 0, -1);
+        }
+
+        @Override
+        public boolean canExecute(@NotNull String pattern) {
+          if (SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) != null || SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"))) {
+            return false;
           }
-        }) || !(Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(_context.getNode(), ((boolean) false))).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return it == MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept").getDeclarationNode();
+          Iterable<SNode> links = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(_context.getNode())).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return it != SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
+            }
+          });
+          if (Sequence.fromIterable(links).count() == 1 && SPropertyOperations.hasValue(Sequence.fromIterable(links).first(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference")) {
+            // skipping smart references 
+            return false;
           }
-        }));
+
+          return Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(_context.getNode(), ((boolean) false))).any(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) != null;
+            }
+          }) || !(Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(_context.getNode(), ((boolean) false))).any(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return it == MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept").getDeclarationNode();
+            }
+          }));
+        }
       }
     }
   }
