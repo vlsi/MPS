@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
+import jetbrains.mps.refactoring.participant.NodeCopyTracker;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticMethodRefactoring;
 
 public class MoveStaticMethod implements MoveNodesAction {
@@ -66,7 +67,7 @@ public class MoveStaticMethod implements MoveNodesAction {
           }
           @Override
           public void process(List<SNode> nodesRootsToMove, Map<SNode, RefactoringParticipant.KeepOldNodes> ifKeepOldNodes, RefactoringSession refactoringSession) {
-            MoveNodesUtil.NodeCopyTracker copyMap = MoveNodesUtil.NodeCopyTracker.get(refactoringSession);
+            NodeCopyTracker copyMap = NodeCopyTracker.get(refactoringSession);
             copyMap.copyAndTrack(nodesRootsToMove);
             Map<SNode, SNode> oldMembersToClasses = MapSequence.fromMap(new HashMap<SNode, SNode>());
             for (SNode oldNode : ListSequence.fromList(nodesRootsToMove)) {

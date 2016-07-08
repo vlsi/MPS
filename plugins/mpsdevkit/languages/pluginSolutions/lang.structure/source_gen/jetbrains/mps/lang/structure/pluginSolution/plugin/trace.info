@@ -67,11 +67,11 @@
       <node id="3567210265429227929" at="176,251,177,109" concept="9" />
       <node id="3567210265429227941" at="177,109,178,173" concept="9" />
       <node id="3567210265429227950" at="178,173,179,0" concept="12" />
-      <node id="3567210265429227960" at="179,0,180,169" concept="9" />
+      <node id="3567210265429227960" at="179,0,180,155" concept="9" />
       <node id="6286765307940508656" at="181,146,182,55" concept="4" />
       <node id="1473188155722433377" at="183,19,184,0" concept="12" />
-      <node id="7239694608122428200" at="184,0,185,119" concept="9" />
-      <node id="3567210265429227979" at="185,119,186,92" concept="4" />
+      <node id="7239694608122428200" at="184,0,185,105" concept="9" />
+      <node id="3567210265429227979" at="185,105,186,92" concept="4" />
       <node id="3567210265429227993" at="188,131,189,251" concept="4" />
       <node id="8609501485359537586" at="191,21,192,0" concept="12" />
       <node id="8609501485359541222" at="193,155,194,55" concept="4" />
@@ -93,7 +93,7 @@
       <node id="5983465960088695532" at="157,0,160,0" concept="8" trace="getSearchResults#()Ljetbrains/mps/ide/findusages/model/SearchResults;" />
       <node id="8071787975460010180" at="164,0,167,0" concept="8" trace="select#(Ljetbrains/mps/refactoring/participant/RefactoringParticipant/Change;)Ljetbrains/mps/refactoring/participant/RefactoringParticipant/Change;" />
       <node id="8609501485359760534" at="170,0,173,0" concept="8" trace="select#(Ljetbrains/mps/refactoring/participant/RefactoringParticipant/Change;)Ljetbrains/mps/refactoring/participant/RefactoringParticipant/KeepOldNodes;" />
-      <node id="6286765307940508654" at="180,169,183,19" concept="7" />
+      <node id="6286765307940508654" at="180,155,183,19" concept="7" />
       <node id="3567210265429227991" at="188,0,191,0" concept="8" trace="visit#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)V" />
       <node id="8609501485359541220" at="192,0,195,19" concept="7" />
       <node id="1171652495568700444" at="78,0,82,0" concept="8" trace="getChanges#(Lorg/jetbrains/mps/openapi/model/SNodeReference;Lorg/jetbrains/mps/openapi/module/SRepository;Ljava/util/List;Lorg/jetbrains/mps/openapi/module/SearchScope;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
@@ -2817,7 +2817,7 @@
       <node id="7544716099134152907" at="95,126,96,56" concept="10" />
       <node id="7544716099134152914" at="98,51,99,33" concept="10" />
       <node id="7544716099134152938" at="103,33,104,57" concept="9" />
-      <node id="7544716099134152945" at="104,57,105,110" concept="9" />
+      <node id="7544716099134152945" at="104,57,105,82" concept="9" />
       <node id="3628660716135055203" at="106,98,107,151" concept="4" />
       <node id="3628660716135081027" at="108,17,109,102" concept="4" />
       <node id="7544716099134152976" at="113,10,114,22" concept="10" />
@@ -2835,7 +2835,7 @@
       <node id="7544716099134152827" at="83,268,86,5" concept="7" />
       <node id="7544716099134152901" at="95,0,98,0" concept="8" trace="getParticipant#()Ljetbrains/mps/refactoring/participant/MoveNodeRefactoringParticipant;" />
       <node id="7544716099134152910" at="98,0,101,0" concept="8" trace="getSearchResults#()Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-      <node id="7544716099134152950" at="105,110,108,17" concept="7" />
+      <node id="7544716099134152950" at="105,82,108,17" concept="7" />
       <node id="972152238150767985" at="74,133,79,5" concept="7" />
       <node id="972152238150767974" at="74,0,81,0" concept="8" trace="getAvailableOptions#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/List;" />
       <node id="7544716099134152936" at="103,0,111,0" concept="8" trace="run#()V" />

@@ -23954,11 +23954,11 @@
                                       <node concept="3cpWsn" id="7Sw_42UC8nb" role="3cpWs9">
                                         <property role="TrG5h" value="copyMap" />
                                         <node concept="3uibUv" id="7Sw_42UC8nc" role="1tU5fm">
-                                          <ref role="3uigEE" to="lfzw:5Y9QCNBZLBG" resolve="MoveNodesUtil.NodeCopyTracker" />
+                                          <ref role="3uigEE" to="5nvm:5Y9QCNBZLBG" resolve="NodeCopyTracker" />
                                         </node>
-                                        <node concept="2YIFZM" id="42LwYUtsnGd" role="33vP2m">
-                                          <ref role="37wK5l" to="lfzw:5Y9QCNBZQm$" resolve="get" />
-                                          <ref role="1Pybhc" to="lfzw:5Y9QCNBZLBG" resolve="MoveNodesUtil.NodeCopyTracker" />
+                                        <node concept="2YIFZM" id="5z6kDU70d5L" role="33vP2m">
+                                          <ref role="37wK5l" to="5nvm:5Y9QCNBZQm$" resolve="get" />
+                                          <ref role="1Pybhc" to="5nvm:5Y9QCNBZLBG" resolve="NodeCopyTracker" />
                                           <node concept="37vLTw" id="7Sw_42UC8ne" role="37wK5m">
                                             <ref role="3cqZAo" node="7Sw_42UC8n7" resolve="refactoringSession" />
                                           </node>
@@ -23971,7 +23971,7 @@
                                           <ref role="3cqZAo" node="7Sw_42UC8nb" resolve="copyMap" />
                                         </node>
                                         <node concept="liA8E" id="7Sw_42UC8ni" role="2OqNvi">
-                                          <ref role="37wK5l" to="lfzw:5sZ4VOA2LeY" resolve="copyAndTrack" />
+                                          <ref role="37wK5l" to="5nvm:5sZ4VOA2LeY" resolve="copyAndTrack" />
                                           <node concept="37vLTw" id="7Sw_42UC8nj" role="37wK5m">
                                             <ref role="3cqZAo" node="7Sw_42UC8n1" resolve="nodesRootsToMove" />
                                           </node>
@@ -24046,7 +24046,7 @@
                                                   <ref role="3cqZAo" node="7Sw_42UC8nb" resolve="copyMap" />
                                                 </node>
                                                 <node concept="liA8E" id="7wz7QM0RC23" role="2OqNvi">
-                                                  <ref role="37wK5l" to="lfzw:44mXFSxhV$4" resolve="getCopyMap" />
+                                                  <ref role="37wK5l" to="5nvm:44mXFSxhV$4" resolve="getCopyMap" />
                                                 </node>
                                               </node>
                                             </node>

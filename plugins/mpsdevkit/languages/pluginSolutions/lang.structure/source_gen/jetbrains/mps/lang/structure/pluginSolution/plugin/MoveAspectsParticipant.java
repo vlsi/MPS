@@ -38,7 +38,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
-import jetbrains.mps.ide.platform.actions.core.MoveNodesUtil;
+import jetbrains.mps.refactoring.participant.NodeCopyTracker;
 
 public class MoveAspectsParticipant extends RefactoringParticipantBase<SNodeReference, SNodeReference, SNode, SNode> implements MoveNodeRefactoringParticipant<SNodeReference, SNodeReference>, RecursiveParticipant<SNodeReference, SNodeReference, SNode, SNode> {
 
@@ -177,12 +177,12 @@ public class MoveAspectsParticipant extends RefactoringParticipantBase<SNodeRefe
                   Language targetLanguage = ((Language) SNodeOperations.getModel(targetConcept).getModule());
                   NodeLocation.NodeLocationRootWithAspectModelCreation newLocation = new NodeLocation.NodeLocationRootWithAspectModelCreation(targetLanguage, mapping.key());
 
-                  List<SNode> copied = MoveNodesUtil.NodeCopyTracker.get(refactoringSession).copyAndTrack(ListSequence.fromListAndArray(new ArrayList<SNode>(), aspect));
+                  List<SNode> copied = NodeCopyTracker.get(refactoringSession).copyAndTrack(ListSequence.fromListAndArray(new ArrayList<SNode>(), aspect));
                   if (needsToPreserveOldNode() == RefactoringParticipant.KeepOldNodes.REMOVE && SNodeOperations.getModel(sourceConcept) == null) {
                     SNodeOperations.detachNode(aspect);
                   }
 
-                  final Map<SNode, SNode> copyMap = MoveNodesUtil.NodeCopyTracker.get(refactoringSession).getCopyMap();
+                  final Map<SNode, SNode> copyMap = NodeCopyTracker.get(refactoringSession).getCopyMap();
                   newLocation.insertNode(repository, ListSequence.fromList(copied).first());
                   ListSequence.fromList(childparticipantStates).visitAll(new IVisitor<Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantApplied<?, ?, SNode, SNode>>>() {
                     public void visit(Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantApplied<?, ?, SNode, SNode>> pis) {
