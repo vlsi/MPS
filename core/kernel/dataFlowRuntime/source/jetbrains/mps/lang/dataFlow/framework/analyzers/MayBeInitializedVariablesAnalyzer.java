@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.dataFlow.framework.analyzers;
 
+import jetbrains.mps.lang.dataFlow.framework.instructions.IfJumpInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.JumpInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
@@ -67,19 +68,22 @@ public class MayBeInitializedVariablesAnalyzer implements DataFlowAnalyzer<VarSe
       result.add(write.getVariableIndex());
     }
 
-    if (instruction instanceof JumpInstruction) {
-      JumpInstruction jump = (JumpInstruction) instruction;
-
-      final int to = jump.getJumpTo();
-      final int current = s.getIndex();
-      if(to<current) {
-        final Program program = jump.getProgram();
+    if (instruction instanceof JumpInstruction || instruction instanceof IfJumpInstruction) {
+      final int to;
+      if (instruction instanceof JumpInstruction) {
+        to = ((JumpInstruction) instruction).getJumpTo();
+      } else {
+        to = ((IfJumpInstruction) instruction).getJumpTo();
+      }
+      final int current = s.getInstruction().getIndex();
+      if (to < current) {  //jumping backwards
+        final Program program = instruction.getProgram();
         for (Object var : program.getVariables()) {
           final List<Instruction> instructions = program.getInstructionsFor(var);
           if (!instructions.isEmpty()) {
-            if (to < instructions.get(0).getIndex()) {
+            if (to < instructions.get(0).getIndex()) {  //declaration is inside the loop
               result.remove(var);
-            } else {
+            } else {  //declaration is before the loop
               result.add(var);
             }
           }
