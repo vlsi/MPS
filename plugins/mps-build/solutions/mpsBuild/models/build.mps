@@ -27243,6 +27243,9 @@
     <node concept="26EafG" id="BJYGrH08Xz" role="26Ea7d">
       <property role="26EafJ" value="lib/mps-boot.jar" />
     </node>
+    <node concept="26EafG" id="4KL8ISnt6x5" role="26Ea7d">
+      <property role="26EafJ" value="lib/mps-boot-util.jar" />
+    </node>
     <node concept="26EafG" id="BJYGrH08X$" role="26Ea7d">
       <property role="26EafJ" value="lib/boot.jar" />
     </node>

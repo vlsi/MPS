@@ -39,6 +39,7 @@ set JVM_ARGS=%ACC%
 
 set CLASSPATH=%PROJECT_HOME%lib\branding.jar
 set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\mps-boot.jar
+set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\mps-boot-util.jar
 set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\boot.jar
 set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\bootstrap.jar
 set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\util.jar
