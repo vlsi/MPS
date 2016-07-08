@@ -19,7 +19,6 @@ import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
 import com.intellij.openapi.actionSystem.ShortcutSet;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.scope.ConditionalScope;
@@ -34,7 +33,9 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
+import jetbrains.mps.util.Reference;
+import jetbrains.mps.workbench.choose.ChooseByNameData;
+import jetbrains.mps.workbench.choose.LanguagesPresentation;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -42,9 +43,9 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SearchScope;
-import org.jetbrains.mps.util.Condition;
+import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -240,21 +241,34 @@ public final class LanguageImportHelper {
 
 
   private void chooseLanguage(final jetbrains.mps.util.Callback<SLanguage> addLanguageAction) {
-    Condition<SModule> onlyLanguages = new ModuleInstanceCondition(Language.class);
-    SearchScope projectScope = new ConditionalScope(myProject.getScope(), onlyLanguages, null);
-    SearchScope globalScope = new ConditionalScope(new FilteredGlobalScope(), onlyLanguages, null);
+    final SRepository repo = myProject.getRepository();
+    final Reference<Collection<SLanguage>> projectScope = new Reference<>();
+    final Reference<Collection<SLanguage>> globalScope = new Reference<>();
 
-    final BaseModuleModel languagesData = new BaseModuleModel(myProject, "language", projectScope, globalScope);
-    languagesData.setPromptText("Import language:");
+    repo.getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        ArrayList<SLanguage> projectLanguages = new ArrayList<SLanguage>(20);
+        for (SModule m : new ConditionalScope(myProject.getScope(), new ModuleInstanceCondition(Language.class), null).getModules()) {
+          assert m instanceof Language;
+          projectLanguages.add(MetaAdapterFactory.getLanguage(m.getModuleReference()));
+        }
+        projectScope.set(projectLanguages);
+        globalScope.set(LanguageRegistry.getInstance(repo).getAllLanguages());
+      }
+    });
+
+    ChooseByNameData<SLanguage> gotoData = new ChooseByNameData<>(new LanguagesPresentation());
+    gotoData.setScope(projectScope.get(), globalScope.get());
+    gotoData.derivePrompts("language").setPrompts("Import language:", gotoData.getNotFoundMessage(), gotoData.getNotInMessage());
 
     // we used to allow multiple selection, but didn't handle it in any special way
     // (each selected language would trigger own extra dialog to import extended, which is odd)
-    myInteraction.chooseLanguage(languagesData, new Callback() {
+    myInteraction.chooseLanguage(gotoData, new Callback() {
       @Override
       public void elementChosen(Object element) {
-        SModuleReference moduleRef = languagesData.getModelObject(element);
-        if (moduleRef != null) {
-          addLanguageAction.call(MetaAdapterFactory.getLanguage(moduleRef));
+        if (element instanceof SLanguage) {
+          addLanguageAction.call((SLanguage) element);
         }
         if (myOnCloseActivity != null) {
           // FIXME clients expect this code to run regardless of selection (i.e. when user canceled a dialog).
@@ -275,13 +289,13 @@ public final class LanguageImportHelper {
    * This class is used to make LanguageImportHelper testable in headless mode.
    */
   public interface Interaction {
-    void chooseLanguage(BaseModuleModel model, Callback addLanguageAction);
+    void chooseLanguage(ChooseByNameData<SLanguage> model, Callback addLanguageAction);
     Set<SLanguage> chooseAdditionalLanguages(Set<SLanguage> candidates);
   }
 
   private class UiInteraction implements Interaction {
     @Override
-    public void chooseLanguage(BaseModuleModel model, Callback addLanguageAction) {
+    public void chooseLanguage(ChooseByNameData<SLanguage> model, Callback addLanguageAction) {
       final ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(myProject.getProject(), model, null);
       if (myShortcut != null) {
         popup.setCheckBoxShortcut(myShortcut);

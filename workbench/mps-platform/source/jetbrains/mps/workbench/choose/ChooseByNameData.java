@@ -45,6 +45,10 @@ import java.util.Set;
  * in case there's legitimate scenario that requires subclassing, 'final' can be removed. 'Legitimate', among other, means documented justification with
  * specific scenarios.
  *
+ * XXX perhaps, it's worth adding own callback, parameterized, to avoid casts to <T> in Callback.elementChosen(). Alternative is to ressurect getModelObject
+ *     like in BaseMPSChooseModel (where it was needed because user objects were wrapped with NavigationItem) which would cast to <T>. I don't like unchecked
+ *     casts, though, that's why I don't fall into this alternative right away.
+ *
  * @param <T> elements of the list to choose from. No restriction (e.g. like need for {@link Object#hashCode()} is imposed on elements.
  *
  * @author Artem Tikhomirov

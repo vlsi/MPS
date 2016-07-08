@@ -24,13 +24,16 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.scope.ConditionalScope;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Callback;
-import jetbrains.mps.workbench.choose.models.BaseModelModel;
+import jetbrains.mps.workbench.choose.ChooseByNameData;
+import jetbrains.mps.workbench.choose.ModelScopeIterable;
+import jetbrains.mps.workbench.choose.ModelsPresentation;
 import jetbrains.mps.workbench.goTo.navigation.RootChooseModel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 import org.jetbrains.mps.util.Condition;
 
@@ -85,9 +88,14 @@ public class ModelImportHelper {
         return rightStereotype && hasModule;
       }
     };
-    final BaseModelModel goToModelModel = new BaseModelModel(myProject, new ConditionalScope(myProject.getScope(), null, cond), new ConditionalScope(new FilteredGlobalScope(), null, cond));
-    goToModelModel.setPromptText("Import model:");
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(myProject, goToModelModel, myInitialText);
+    ConditionalScope localScope = new ConditionalScope(myProject.getScope(), null, cond);
+    ConditionalScope globalScope = new ConditionalScope(new FilteredGlobalScope(), null, cond);
+    SRepository repo = myProject.getRepository();
+    ChooseByNameData<SModelReference> gotoData = new ChooseByNameData<>(new ModelsPresentation(repo));
+    gotoData.derivePrompts("model").setPrompts("Import model:", gotoData.getNotFoundMessage(), gotoData.getNotInMessage());
+    gotoData.setScope(new ModelScopeIterable(localScope, repo), new ModelScopeIterable(globalScope, repo));
+
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(myProject, gotoData, myInitialText);
     if (myShortcut != null) {
       popup.setCheckBoxShortcut(myShortcut);
     }
@@ -95,7 +103,9 @@ public class ModelImportHelper {
     popup.invoke(new AddImportCallback(myProject, model) {
       @Override
       public void elementChosen(Object element) {
-        doImport(goToModelModel.getModelObject(element));
+        if (element instanceof SModelReference) {
+          doImport((SModelReference) element);
+        }
       }
     }, ModalityState.current(), false);
 
