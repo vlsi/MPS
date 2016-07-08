@@ -61,7 +61,8 @@ public final class ChooseByNameData<T> implements ChooseByNameModel {
   private String myNotInScopeMessage;
   private String myNotFoundMessage;
   private String myPromptText;
-  private MultiMap<String, T> myNameElementMap;
+  private MultiMap<String, T> myLocalNameElementMap;
+  private MultiMap<String, T> myGlobalNameElementMap;
   private boolean myInitialCheckboxState = false;
   private boolean myOpensEditor = false;
   private Iterable<T> myLocalScope;
@@ -122,31 +123,43 @@ public final class ChooseByNameData<T> implements ChooseByNameModel {
   @NotNull
   @Override
   public String[] getNames(boolean checkBoxState) {
-    if (myNameElementMap == null) {
+    MultiMap<String, T> elementMap = checkBoxState ? myGlobalNameElementMap : myLocalNameElementMap;
+
+    if (elementMap == null) {
       // ChooseByNameBase caches names, but we need to keep the map to ensure subsequent getElementsByName return elements with names we use in getNames().
       // FIXME use of multimap is merely a quick way to support elements with identical names. It's quite ineffective (memory-wise) structure.
-      MultiMap<String, T> elements = new MultiMap<String, T>() {
-        @Override
-        protected Collection<T> createCollection() {
-          // I don't expect a lot of duplicating names
-          return new ArrayList<T>(4);
-        }
-      };
-      myPresentation.names(getElements(checkBoxState), (t, s) -> elements.putValue(s, t));
-      myNameElementMap = elements;
+      elementMap = buildMap(getElements(checkBoxState));
+      if (checkBoxState) {
+        myGlobalNameElementMap = elementMap;
+      } else {
+        myLocalNameElementMap = elementMap;
+      }
     }
     // XXX no idea whether getNames() is expected to return unique values only. Provided getElementByName() takes single name and expects multiple values,
     // likely, unique names are expected here. It's ok with MultiMap, however needs attention if we switch to another container.
-    Set<String> keys = myNameElementMap.keySet();
+    Set<String> keys = elementMap.keySet();
     return keys.toArray(new String[keys.size()]);
+  }
+
+  private MultiMap<String, T> buildMap(Iterable<T> elements) {
+    MultiMap<String, T> rv = new MultiMap<String, T>() {
+      @Override
+      protected Collection<T> createCollection() {
+        // I don't expect a lot of duplicating names
+        return new ArrayList<T>(4);
+      }
+    };
+    myPresentation.names(elements, (t, s) -> rv.putValue(s, t));
+    return rv;
   }
 
   @NotNull
   @Override
   public Object[] getElementsByName(String name, boolean checkBoxState, String pattern) {
+    MultiMap<String, T> elementMap = checkBoxState ? myGlobalNameElementMap : myLocalNameElementMap;
     // not that I insist not to invoke getNames() when myNamesElementMap is empty, just curious if there's real scenario (not in test) when getElementByName comes first
-    assert myNameElementMap != null : "How come getElementsByName() is invoked before getNames()? Where from the name comes then?";
-    Collection<T> rv = myNameElementMap.get(name);
+    assert elementMap != null : "How come getElementsByName() is invoked before getNames()? Where from the name comes then?";
+    Collection<T> rv = elementMap.get(name);
     return rv.toArray();
   }
 
