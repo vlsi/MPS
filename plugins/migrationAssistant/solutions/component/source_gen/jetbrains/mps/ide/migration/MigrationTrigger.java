@@ -8,9 +8,10 @@ import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorContainer;
-import jetbrains.mps.project.Project;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
+import com.intellij.openapi.project.Project;
 import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.startup.StartupManager;
@@ -62,7 +63,7 @@ import org.jetbrains.annotations.Nullable;
 , reloadable = true)
 public class MigrationTrigger extends AbstractProjectComponent implements PersistentStateComponent<MigrationTrigger.MyState>, IStartupMigrationExecutor, MigrationErrorContainer {
 
-  private Project myMpsProject;
+  private MPSProject myMpsProject;
   private final MigrationManager myMigrationManager;
   private MigrationTrigger.MyState myState = new MigrationTrigger.MyState();
 
@@ -77,7 +78,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
   private MigrationErrorDescriptor myErrors = null;
 
-  public MigrationTrigger(com.intellij.openapi.project.Project ideaProject, Project p, MigrationManager migrationManager, ProjectMigrationProperties props) {
+  public MigrationTrigger(Project ideaProject, MPSProject p, MigrationManager migrationManager, ProjectMigrationProperties props) {
     super(ideaProject);
     myMpsProject = p;
     myMigrationManager = migrationManager;
@@ -185,7 +186,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
   private void saveAndSetTipsState() {
     if (myState.tips == null) {
-      myState.tips = GeneralSettings.getInstance().showTipsOnStartup();
+      myState.tips = GeneralSettings.getInstance().isShowTipsOnStartup();
     }
     GeneralSettings.getInstance().setShowTipsOnStartup(false);
   }
@@ -288,7 +289,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       return;
     }
 
-    final com.intellij.openapi.project.Project ideaProject = myProject;
+    final Project ideaProject = myProject;
     final Iterable<SModule> allModules = MigrationsUtil.getMigrateableModulesFromProject(myMpsProject);
     saveAndSetTipsState();
 
@@ -303,7 +304,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                 updateUsedLanguagesVersions(allModules);
               }
             });
-            boolean migrate = MigrationDialogUtil.showMigrationConfirmation(myProject, allModules, myMigrationManager);
+            boolean migrate = MigrationDialogUtil.showMigrationConfirmation(myMpsProject, allModules, myMigrationManager);
             restoreTipsState();
 
             // set flag to execute migration after startup 
