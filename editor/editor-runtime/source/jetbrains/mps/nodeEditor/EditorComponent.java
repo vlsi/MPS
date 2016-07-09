@@ -2920,7 +2920,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public interface EditorDisposeListener {
-    void editorWillBeDisposed(EditorComponent component);
+    void editorWillBeDisposed(@NotNull EditorComponent component);
   }
 
   public void repaint(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
