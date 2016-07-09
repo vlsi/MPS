@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Set;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.SModelAdapter;
@@ -47,10 +48,9 @@ import com.intellij.openapi.application.ApplicationManager;
 
   private EditorComponent.EditorDisposeListener myDisposeListener = new EditorComponent.EditorDisposeListener() {
     @Override
-    public void editorWillBeDisposed(EditorComponent editorComponent) {
-      editorComponent.removeDisposeListener(myDisposeListener);
+    public void editorWillBeDisposed(@NotNull EditorComponent editorComponent) {
       synchronized (myMapsLock) {
-        MapSequence.fromMap(myEditorComponentToErrorMap).removeKey(editorComponent).dispose();
+        removeByEditorComponent(editorComponent);
 
         for (SModel model : MapSequence.fromMap(myModelToEditorComponentsMap).keySet()) {
           Set<EditorComponent> editorComponents = MapSequence.fromMap(myModelToEditorComponentsMap).get(model);
@@ -70,11 +70,7 @@ import com.intellij.openapi.application.ApplicationManager;
     @Override
     public void beforeModelDisposed(SModel model) {
       synchronized (myMapsLock) {
-        for (EditorComponent editorComponent : MapSequence.fromMap(myModelToEditorComponentsMap).get(model)) {
-          MapSequence.fromMap(myEditorComponentToErrorMap).removeKey(editorComponent).dispose();
-          editorComponent.removeDisposeListener(myDisposeListener);
-        }
-        MapSequence.fromMap(myModelToEditorComponentsMap).removeKey(model);
+        removeByModel(model);
       }
     }
   };
@@ -88,18 +84,29 @@ import com.intellij.openapi.application.ApplicationManager;
     @Override
     protected void stopListening(SModel model) {
       synchronized (myMapsLock) {
-        if (!(MapSequence.fromMap(myModelToEditorComponentsMap).containsKey(model))) {
-          return;
-        }
-        for (EditorComponent editorComponent : MapSequence.fromMap(myModelToEditorComponentsMap).get(model)) {
-          MapSequence.fromMap(myEditorComponentToErrorMap).removeKey(editorComponent).dispose();
-          editorComponent.removeDisposeListener(myDisposeListener);
-        }
-        MapSequence.fromMap(myModelToEditorComponentsMap).removeKey(model);
+        removeByModel(model);
       }
       removeModelListener(model);
     }
   };
+
+  private void removeByModel(SModel model) {
+    Set<EditorComponent> editorComponents = MapSequence.fromMap(myModelToEditorComponentsMap).removeKey(model);
+    if (editorComponents != null) {
+      for (EditorComponent editorComponent : editorComponents) {
+        removeByEditorComponent(editorComponent);
+      }
+    }
+  }
+
+  private void removeByEditorComponent(@NotNull EditorComponent editorComponent) {
+    LanguageErrorsComponent component = MapSequence.fromMap(myEditorComponentToErrorMap).removeKey(editorComponent);
+    if (component != null) {
+      component.dispose();
+    }
+    editorComponent.removeDisposeListener(myDisposeListener);
+  }
+
   private void removeModelListener(SModel model) {
     ((SModelInternal) model).removeModelListener(myModelListener);
   }
