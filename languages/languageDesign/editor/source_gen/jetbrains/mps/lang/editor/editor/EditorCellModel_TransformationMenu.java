@@ -564,7 +564,7 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
           return false;
         }
 
-        return SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, "jetbrains.mps.lang.editor.structure.CellModel_Component")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, 0xfb35c96897L, "editorComponent")) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)", "2900100530630621651") && _context.getEditorContext().getEditorPanelManager() != null;
+        return SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, "jetbrains.mps.lang.editor.structure.CellModel_Component")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, 0xfb35c96897L, "editorComponent")) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)", "2900100530630621651") && !(SPropertyOperations.getBoolean(AbstractComponent__BehaviorDescriptor.getConceptDeclaration_id67EYkym$wx3.invoke(assistantUtils.getEditorDeclaration()), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"))) && _context.getEditorContext().getEditorPanelManager() != null;
       }
     }
   }
