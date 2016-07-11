@@ -41,6 +41,7 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
       result.add(new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Action_dubn3u_a0());
       result.add(new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Action_dubn3u_b0());
       result.add(new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Action_dubn3u_c0());
+      result.add(new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Action_dubn3u_d0());
     }
     return result;
   }
@@ -72,12 +73,11 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
 
       @Override
       public boolean canExecute(@NotNull String pattern) {
-        if (_context.getEditorContext().getEditorPanelManager() == null || SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) == null) {
+        if (_context.getEditorContext().getEditorPanelManager() == null || SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) == null || _context.getNode() == MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept").getDeclarationNode()) {
           return false;
         }
 
-        Queue<SNode> toCheck = QueueSequence.fromQueue(new LinkedList<SNode>());
-        QueueSequence.fromQueue(toCheck).addLastElement(_context.getNode());
+        Queue<SNode> toCheck = QueueSequence.fromQueueAndArray(new LinkedList<SNode>(), _context.getNode());
         while (QueueSequence.fromQueue(toCheck).isNotEmpty()) {
           SNode acd = QueueSequence.fromQueue(toCheck).removeFirstElement();
           if (acd == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")) {
@@ -101,6 +101,62 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Action_dubn3u_b0.Item(context);
+    }
+
+    private class Item extends ActionItemBase {
+      private final TransformationMenuContext _context;
+
+      private Item(TransformationMenuContext context) {
+        _context = context;
+      }
+
+      @Nullable
+      @Override
+      public String getLabelText(String pattern) {
+        return "Create Editor for " + SPropertyOperations.getString(new ConceptDeclarationAssistantUtil(_context.getNode()).getNotEmptySuperConcept(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+      }
+
+      @Override
+      public void execute(@NotNull String pattern) {
+        SNode concept = new ConceptDeclarationAssistantUtil(_context.getNode()).getNotEmptySuperConcept();
+        SNode editor = ConceptAspectsHelper.attachNewConceptAspect(LanguageAspect.EDITOR, concept, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")), null));
+        _context.getEditorContext().getEditorPanelManager().openEditor(editor);
+      }
+
+      @Override
+      public boolean canExecute(@NotNull String pattern) {
+        if (_context.getEditorContext().getEditorPanelManager() == null || SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) == null || _context.getNode() == MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept").getDeclarationNode()) {
+          return false;
+        }
+        if (!(ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).isEmpty()) || !(ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).isEmpty())) {
+          return false;
+        }
+
+        Queue<SNode> toCheck = QueueSequence.fromQueueAndArray(new LinkedList<SNode>(), _context.getNode());
+        while (QueueSequence.fromQueue(toCheck).isNotEmpty()) {
+          SNode acd = QueueSequence.fromQueue(toCheck).removeFirstElement();
+          if (acd == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")) {
+            continue;
+          }
+          List<SNode> aspects = AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspectCollection_id1n18fON7w20.invoke(acd, LanguageAspect.EDITOR);
+          if (ListSequence.fromList(aspects).any(new IWhereFilter<SNode>() {
+            public boolean accept(SNode a) {
+              return SNodeOperations.isInstanceOf(a, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
+            }
+          })) {
+            return false;
+          }
+          QueueSequence.fromQueue(toCheck).addSequence(ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getImmediateSuperconcepts_idhMuxyK2.invoke(acd)));
+        }
+
+        return new ConceptDeclarationAssistantUtil(_context.getNode()).getNotEmptySuperConcept() != null;
+      }
+    }
+  }
+  private static class TransformationMenuPart_Action_dubn3u_c0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    @Nullable
+    protected TransformationMenuItem createItem(TransformationMenuContext context) {
+      return new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Action_dubn3u_c0.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -145,10 +201,10 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
       }
     }
   }
-  private static class TransformationMenuPart_Action_dubn3u_c0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private static class TransformationMenuPart_Action_dubn3u_d0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Action_dubn3u_c0.Item(context);
+      return new ConceptDeclaration_TransformationMenu.TransformationMenuPart_Action_dubn3u_d0.Item(context);
     }
 
     private class Item extends ActionItemBase {
