@@ -10,6 +10,8 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
@@ -17,8 +19,12 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.scope.ModelsScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class OfAspectOperation_Constraints extends BaseConstraintsDescriptor {
@@ -29,7 +35,19 @@ public class OfAspectOperation_Constraints extends BaseConstraintsDescriptor {
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
-    references.put(MetaAdapterFactory.getReferenceLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L, 0x5252d9021b8c25b0L, "requestedAspect"), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L, 0x5252d9021b8c25b0L), this) {
+    references.put(MetaAdapterFactory.getReferenceLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L, 0x7cd422dbfa7b06f8L, "requestedAspect"), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L, 0x7cd422dbfa7b06f8L), this) {
+      @Override
+      public boolean hasOwnOnReferenceSetHandler() {
+        return true;
+      }
+      @Override
+      public boolean validate(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode) {
+        return true;
+      }
+      @Override
+      public void onReferenceSet(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode) {
+        SLinkOperations.setTarget(referenceNode, MetaAdapterFactory.getReferenceLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L, 0x5252d9021b8c25b0L, "requestedAspect_old"), null);
+      }
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -40,16 +58,23 @@ public class OfAspectOperation_Constraints extends BaseConstraintsDescriptor {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_srl38n_a0a0a0a0a1a0b0a1a2;
+            return breakingNode_srl38n_a0a0a0a0a4a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new NamedElementsScope(SNodeOperations.ofConcept(SNodeOperations.getChildren(SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)", "~LanguageAspect")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")));
+            {
+              Iterable<SModule> modules = _context.getModel().getModule().getRepository().getModules();
+              return new ModelsScope(Sequence.fromIterable(modules).select(new ISelector<SModule, SModel>() {
+                public SModel select(SModule it) {
+                  return SModuleOperations.getAspect(it, "plugin");
+                }
+              }), true, MetaAdapterFactory.getReferenceLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L, 0x7cd422dbfa7b06f8L, "requestedAspect").getTargetConcept());
+            }
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_srl38n_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "5932042262275698794");
+  private static SNodePointer breakingNode_srl38n_a0a0a0a0a4a0b0a1a2 = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "8994852683961285085");
 }

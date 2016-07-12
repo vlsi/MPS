@@ -863,6 +863,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.NodeCopyTracker" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

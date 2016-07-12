@@ -31433,7 +31433,7 @@
     </node>
   </node>
   <node concept="jVnub" id="5OVd5tVfkL1">
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="switch_TransformationMenuReference" />
     <node concept="3aamgX" id="5OVd5tVfkL2" role="3aUrZf">
       <property role="36QftV" value="true" />
@@ -31589,7 +31589,7 @@
     </node>
   </node>
   <node concept="jVnub" id="20qY$3H6Q0h">
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="switch_TransformationMenuPart_create" />
     <node concept="1Koe21" id="4sA1wziPdPu" role="jxRDz">
       <node concept="312cEu" id="4sA1wziPdPy" role="1Koe22">
@@ -31677,7 +31677,7 @@
   </node>
   <node concept="312cEu" id="1qY_lWStNKL">
     <property role="TrG5h" value="class_TransformationMenu" />
-    <property role="3GE5qa" value="TransformationMenu.Transformation" />
+    <property role="3GE5qa" value="Menu.Transformation" />
     <node concept="3clFbW" id="7P0KIHpmfGw" role="jymVt">
       <node concept="3cqZAl" id="7P0KIHpmfGy" role="3clF45" />
       <node concept="3Tm1VV" id="7P0KIHpmfGz" role="1B3o_S" />
@@ -31833,8 +31833,8 @@
     </node>
   </node>
   <node concept="bUwia" id="1qY_lWStOiY">
-    <property role="3GE5qa" value="TransformationMenu" />
-    <property role="TrG5h" value="MAPPING_TransformationMenu" />
+    <property role="3GE5qa" value="Menu" />
+    <property role="TrG5h" value="MAPPING_Menus" />
     <node concept="3aamgX" id="axxf7pa$75" role="3acgRq">
       <ref role="30HIoZ" to="tpc2:h8ub8Bh" resolve="QueryFunctionParameter_pattern" />
       <node concept="j$656" id="axxf7pa$7p" role="1lVwrX">
@@ -32234,7 +32234,7 @@
     </node>
   </node>
   <node concept="jVnub" id="3EZUZhmVbaP">
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Transformation.Location" />
     <property role="TrG5h" value="switch_TransformationFeature_declare" />
     <node concept="3aamgX" id="1A4kJjm63ab" role="3aUrZf">
       <property role="36QftV" value="true" />
@@ -32259,7 +32259,7 @@
     </node>
   </node>
   <node concept="13MO4I" id="6V0bp$oIv3V">
-    <property role="3GE5qa" value="TransformationMenu.Transformation.Locations" />
+    <property role="3GE5qa" value="Menu.Transformation.Location" />
     <property role="TrG5h" value="TransformationMenuSection_create" />
     <ref role="3gUMe" to="tpc2:6V0bp$oHeYW" resolve="TransformationMenuSection" />
     <node concept="312cEu" id="6V0bp$oIves" role="13RCb5">
@@ -32396,7 +32396,7 @@
     </node>
   </node>
   <node concept="jVnub" id="3EZUZhmTWq7">
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Transformation.Location" />
     <property role="TrG5h" value="switch_TransformationLocation_asStringArray" />
     <node concept="3aamgX" id="Z45Y15hY9a" role="3aUrZf">
       <ref role="30HIoZ" to="tpc2:7L5lpRJOAJb" resolve="TransformationLocation_ContextAssistant" />
@@ -32456,7 +32456,7 @@
     </node>
   </node>
   <node concept="13MO4I" id="3EZUZhn2cPZ">
-    <property role="3GE5qa" value="TransformationMenu.Transformation.Parameterized" />
+    <property role="3GE5qa" value="Menu.Transformation.Parameterized" />
     <property role="TrG5h" value="TransformationMenuPart_Parameterized_declare" />
     <ref role="3gUMe" to="tpc2:3EZUZhmYaO_" resolve="TransformationMenuPart_Parameterized" />
     <node concept="312cEu" id="3EZUZhn2cRZ" role="13RCb5">
@@ -32776,7 +32776,7 @@
     </node>
   </node>
   <node concept="13MO4I" id="6V0bp$oIETG">
-    <property role="3GE5qa" value="TransformationMenu.Transformation.Locations" />
+    <property role="3GE5qa" value="Menu.Transformation.Location" />
     <property role="TrG5h" value="TransformationMenuSection_declare" />
     <ref role="3gUMe" to="tpc2:6V0bp$oHeYW" resolve="TransformationMenuSection" />
     <node concept="312cEu" id="6V0bp$oIETI" role="13RCb5">
@@ -32806,7 +32806,7 @@
     </node>
   </node>
   <node concept="13MO4I" id="4sA1wziTsTE">
-    <property role="3GE5qa" value="TransformationMenu.Transformation" />
+    <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenuPart_Group_declare" />
     <ref role="3gUMe" to="tpc2:6srdxdH8$17" resolve="TransformationMenuPart_Group" />
     <node concept="312cEu" id="4sA1wziTthF" role="13RCb5">
@@ -32983,7 +32983,7 @@
   </node>
   <node concept="13MO4I" id="4sA1wzjgl3u">
     <property role="TrG5h" value="TransformationMenuPart_IncludeMenu_declare" />
-    <property role="3GE5qa" value="TransformationMenu.Transformation" />
+    <property role="3GE5qa" value="Menu.Transformation" />
     <ref role="3gUMe" to="tpc2:FyOJSsBmJy" resolve="TransformationMenuPart_IncludeMenu" />
     <node concept="312cEu" id="4sA1wzjglyA" role="13RCb5">
       <property role="2bfB8j" value="true" />
@@ -33191,7 +33191,7 @@
     </node>
   </node>
   <node concept="jVnub" id="291CjQFbWfJ">
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="switch_TransformationMenuPart_declare" />
     <node concept="3aamgX" id="4sA1wziQ5Kt" role="3aUrZf">
       <ref role="30HIoZ" to="tpc2:1qY_lWSjTfA" resolve="TransformationMenuPart_Action" />
@@ -33241,7 +33241,7 @@
   </node>
   <node concept="13MO4I" id="1A4kJjm63ay">
     <property role="TrG5h" value="reduce_TransformationFeature_DescriptionText" />
-    <property role="3GE5qa" value="TransformationMenu.Transformation.SideTransform" />
+    <property role="3GE5qa" value="Menu.Transformation.SideTransform" />
     <ref role="3gUMe" to="tpc2:1A4kJjlVDm7" resolve="TransformationFeature_DescriptionText" />
     <node concept="312cEu" id="1A4kJjm683o" role="13RCb5">
       <property role="2bfB8j" value="true" />
@@ -33324,7 +33324,7 @@
   </node>
   <node concept="13MO4I" id="1A4kJjm63aB">
     <property role="TrG5h" value="reduce_TransformationFeature_IconNode" />
-    <property role="3GE5qa" value="TransformationMenu.Transformation.SideTransform" />
+    <property role="3GE5qa" value="Menu.Transformation.SideTransform" />
     <ref role="3gUMe" to="tpc2:1A4kJjlVAph" resolve="TransformationFeature_IconNode" />
     <node concept="312cEu" id="1A4kJjm6fKs" role="13RCb5">
       <property role="2bfB8j" value="true" />
@@ -33403,7 +33403,7 @@
     </node>
   </node>
   <node concept="13MO4I" id="4sA1wziPZCJ">
-    <property role="3GE5qa" value="TransformationMenu.Transformation" />
+    <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenuPart_Action_declare" />
     <ref role="3gUMe" to="tpc2:1qY_lWSjTfA" resolve="TransformationMenuPart_Action" />
     <node concept="312cEu" id="4sA1wziPZCL" role="13RCb5">
@@ -33843,7 +33843,7 @@
     </node>
   </node>
   <node concept="jVnub" id="6VgTvK0odUq">
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Transformation.Location" />
     <property role="TrG5h" value="switch_TransformationLocation_actionItemInterfaces" />
     <node concept="b5Tf3" id="5_kqtpAy53e" role="jxRDz" />
     <node concept="3aamgX" id="30NnNOohxj0" role="3aUrZf">
@@ -33866,7 +33866,7 @@
     </node>
   </node>
   <node concept="13MO4I" id="4sA1wziUiKH">
-    <property role="3GE5qa" value="TransformationMenu.Transformation" />
+    <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenuPart_SubMenu_declare" />
     <ref role="3gUMe" to="tpc2:3xbeilB7DBJ" resolve="TransformationMenuPart_SubMenu" />
     <node concept="312cEu" id="4sA1wziUiKI" role="13RCb5">
@@ -34028,7 +34028,7 @@
   </node>
   <node concept="13MO4I" id="1A4kJjm63at">
     <property role="TrG5h" value="reduce_TransformationFeature_ActionType" />
-    <property role="3GE5qa" value="TransformationMenu.Transformation.SideTransform" />
+    <property role="3GE5qa" value="Menu.Transformation.SideTransform" />
     <ref role="3gUMe" to="tpc2:1A4kJjlVEvM" resolve="TransformationFeature_ActionType" />
     <node concept="312cEu" id="4sA1wzjmG0T" role="13RCb5">
       <property role="2bfB8j" value="true" />
@@ -34110,7 +34110,7 @@
     </node>
   </node>
   <node concept="1pmfR0" id="4YKBkH7jT7u">
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu" />
     <property role="1v3f2W" value="pre_processing" />
     <property role="1v3jST" value="true" />
     <property role="TrG5h" value="DropPlaceholders" />
@@ -34241,7 +34241,7 @@
   </node>
   <node concept="13MO4I" id="7Nx4mSUbyAw">
     <property role="TrG5h" value="reduce_SubstituteFeature_DescriptionText" />
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <ref role="3gUMe" to="tpc2:7Nx4mSUbw5N" resolve="SubstituteFeature_DescriptionText" />
     <node concept="312cEu" id="7Nx4mSUb$7k" role="13RCb5">
       <property role="2bfB8j" value="true" />
@@ -34350,7 +34350,7 @@
   </node>
   <node concept="13MO4I" id="7Nx4mSUbyA_">
     <property role="TrG5h" value="reduce_SubstituteFeature_CanExecute" />
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <ref role="3gUMe" to="tpc2:7Nx4mSUbw67" resolve="SubstituteFeature_CanExecute" />
     <node concept="312cEu" id="7Nx4mSUb$vP" role="13RCb5">
       <property role="2bfB8j" value="true" />
@@ -34469,7 +34469,7 @@
   </node>
   <node concept="13MO4I" id="2uBUyS1qk3T">
     <property role="TrG5h" value="SubstituteMenuPart_Concepts_declare" />
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <ref role="3gUMe" to="tpc2:4BQO_Wi42wm" resolve="SubstituteMenuPart_Concepts" />
     <node concept="312cEu" id="2uBUyS1qkAY" role="13RCb5">
       <property role="2bfB8j" value="false" />
@@ -34608,7 +34608,7 @@
   </node>
   <node concept="13MO4I" id="Cy80HmL0z8">
     <property role="TrG5h" value="SubstituteMenuPart_IncludeMenu_declare" />
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <ref role="3gUMe" to="tpc2:Cy80HmHnAg" resolve="SubstituteMenuPart_IncludeMenu" />
     <node concept="312cEu" id="Cy80HmL0M_" role="13RCb5">
       <property role="2bfB8j" value="false" />
@@ -34731,7 +34731,7 @@
   </node>
   <node concept="13MO4I" id="5N5pDMJWde2">
     <property role="TrG5h" value="SubstituteMenuPart_Wrapper_declare" />
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <ref role="3gUMe" to="tpc2:5N5pDMJOrUr" resolve="SubstituteMenuPart_Wrapper" />
     <node concept="312cEu" id="5N5pDMJWdgz" role="13RCb5">
       <property role="2bfB8j" value="true" />
@@ -34971,7 +34971,7 @@
   </node>
   <node concept="13MO4I" id="7Nx4mSUbyAr">
     <property role="TrG5h" value="reduce_SubstituteFeature_MatchingText" />
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <ref role="3gUMe" to="tpc2:7Nx4mSUbuTq" resolve="SubstituteFeature_MatchingText" />
     <node concept="312cEu" id="7Nx4mSUbyXG" role="13RCb5">
       <property role="2bfB8j" value="true" />
@@ -35079,7 +35079,7 @@
     </node>
   </node>
   <node concept="jVnub" id="185ENkfZay4">
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="switch_SubstituteMenuPart_create" />
     <node concept="3aamgX" id="59fc3qdBzGO" role="3aUrZf">
       <property role="36QftV" value="true" />
@@ -35203,7 +35203,7 @@
   </node>
   <node concept="13MO4I" id="7mC_uHFZM3E">
     <property role="TrG5h" value="reduce_SubstituteFeature_ActionType" />
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <ref role="3gUMe" to="tpc2:7mC_uHFNI_G" resolve="SubstituteFeature_ActionType" />
     <node concept="312cEu" id="7mC_uHFZM3P" role="13RCb5">
       <property role="2bfB8j" value="true" />
@@ -35320,7 +35320,7 @@
   </node>
   <node concept="312cEu" id="4PhMv8pBt_p">
     <property role="TrG5h" value="class_SubstituteMenu" />
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <node concept="3uibUv" id="4PhMv8pB$O3" role="1zkMxy">
       <ref role="3uigEE" to="ew59:~SubstituteMenuBase" resolve="SubstituteMenuBase" />
     </node>
@@ -35489,7 +35489,7 @@
   </node>
   <node concept="13MO4I" id="6DRYsxOffVW">
     <property role="TrG5h" value="TransformationMenuPart_IncludeSubstituteMenu" />
-    <property role="3GE5qa" value="TransformationMenu.Transformation" />
+    <property role="3GE5qa" value="Menu.Transformation.IncludeSubstitute" />
     <ref role="3gUMe" to="tpc2:6DRYsxO8ara" resolve="TransformationMenuPart_IncludeSubstituteMenu" />
     <node concept="312cEu" id="5i0CB70WaVT" role="13RCb5">
       <property role="2bfB8j" value="true" />
@@ -35794,7 +35794,7 @@
   </node>
   <node concept="13MO4I" id="3rSzFHWT60x">
     <property role="TrG5h" value="SubstituteMenuPart_Group_declare" />
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <ref role="3gUMe" to="tpc2:n0c53aH5hF" resolve="SubstituteMenuPart_Group" />
     <node concept="312cEu" id="3rSzFHWT60D" role="13RCb5">
       <property role="2bfB8j" value="true" />
@@ -35969,7 +35969,7 @@
     </node>
   </node>
   <node concept="jVnub" id="1quYWACY9sA">
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="switch_SubstituteMenuPart_declare" />
     <node concept="3aamgX" id="1quYWACYc_3" role="3aUrZf">
       <ref role="30HIoZ" to="tpc2:h6sCaJPi0t" resolve="SubstituteMenuPart_Parameterized" />
@@ -36013,7 +36013,7 @@
   </node>
   <node concept="13MO4I" id="6K28JrTTtya">
     <property role="TrG5h" value="TransformationMenuPart_WrapSubstituteMenu_declare" />
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Transformation.IncludeSubstitute" />
     <ref role="3gUMe" to="tpc2:1Djcm3ms60c" resolve="TransformationMenuPart_WrapSubstituteMenu" />
     <node concept="312cEu" id="6K28JrTTtGn" role="13RCb5">
       <property role="2bfB8j" value="false" />
@@ -36194,7 +36194,7 @@
     </node>
   </node>
   <node concept="jVnub" id="5i0CB70OFMp">
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="switch_SubstituteMenuReference" />
     <node concept="3aamgX" id="5i0CB70OFMq" role="3aUrZf">
       <property role="36QftV" value="true" />
@@ -36346,7 +36346,7 @@
   </node>
   <node concept="13MO4I" id="1pfqmFIjbQ_">
     <property role="TrG5h" value="SubstituteMenuPart_Action_declare" />
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <ref role="3gUMe" to="tpc2:6n_hLaFlw4b" resolve="SubstituteMenuPart_Action" />
     <node concept="312cEu" id="1pfqmFIjgFq" role="13RCb5">
       <property role="2bfB8j" value="true" />
@@ -36706,7 +36706,7 @@
   </node>
   <node concept="13MO4I" id="7mC_uHFNO91">
     <property role="TrG5h" value="reduce_SubstituteFeature_Selection" />
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <ref role="3gUMe" to="tpc2:7mC_uHFNI_Z" resolve="SubstituteFeature_Selection" />
     <node concept="312cEu" id="7mC_uHFNRUi" role="13RCb5">
       <property role="2bfB8j" value="true" />
@@ -36859,7 +36859,7 @@
   </node>
   <node concept="13MO4I" id="7mC_uHG0Rme">
     <property role="TrG5h" value="reduce_SubstituteFeature_Icon" />
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <ref role="3gUMe" to="tpc2:7mC_uHG0Nxt" resolve="SubstituteFeature_Icon" />
     <node concept="312cEu" id="7mC_uHG0Rmp" role="13RCb5">
       <property role="2bfB8j" value="true" />
@@ -36978,7 +36978,7 @@
   </node>
   <node concept="13MO4I" id="7gIXFjgNduU">
     <property role="TrG5h" value="SubstituteMenuPart_Parameterized_declare" />
-    <property role="3GE5qa" value="TransformationMenu" />
+    <property role="3GE5qa" value="Menu.Substitute" />
     <ref role="3gUMe" to="tpc2:h6sCaJPi0t" resolve="SubstituteMenuPart_Parameterized" />
     <node concept="312cEu" id="7gIXFjgNecw" role="13RCb5">
       <property role="2bfB8j" value="false" />

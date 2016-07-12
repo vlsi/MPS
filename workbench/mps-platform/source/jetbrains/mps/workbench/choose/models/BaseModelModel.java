@@ -29,7 +29,8 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.ArrayList;
 
 /**
- * @deprecated see {@link BaseMPSChooseModel}
+ * THERE ARE NO MORE USES IN MPS, PLEASE DO NOT ADD NEW!
+ * @deprecated see {@link BaseMPSChooseModel} and {@link jetbrains.mps.workbench.choose.ChooseByNameData}
  */
 @Deprecated
 @ToRemove(version = 3.4)

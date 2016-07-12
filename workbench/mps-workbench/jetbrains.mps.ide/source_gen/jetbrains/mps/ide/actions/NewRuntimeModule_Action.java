@@ -14,15 +14,20 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.project.MPSProject;
-import org.jetbrains.mps.openapi.module.ModelAccess;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
+import jetbrains.mps.project.ModuleInstanceCondition;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.workbench.choose.ModuleScopeIterable;
+import jetbrains.mps.scope.ConditionalScope;
+import jetbrains.mps.FilteredGlobalScope;
+import jetbrains.mps.workbench.choose.ChooseByNameData;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.workbench.choose.ModulesPresentation;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import com.intellij.openapi.application.ModalityState;
 
 public class NewRuntimeModule_Action extends BaseAction {
@@ -82,23 +87,28 @@ public class NewRuntimeModule_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+    final SRepository repo = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
 
     final Language language = (Language) ((SModule) MapSequence.fromMap(_params).get("contextModule"));
     final MPSTree mpsTree = ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).getTree();
 
-    final BaseModuleModel baseSolutionModel = new BaseModuleModel(((MPSProject) MapSequence.fromMap(_params).get("project")), "runtime module");
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(((Project) MapSequence.fromMap(_params).get("ideaProject")), baseSolutionModel, NewRuntimeModule_Action.this);
+    ModuleInstanceCondition solutionOnly = new ModuleInstanceCondition(Solution.class);
+    ModuleScopeIterable localScope = new ModuleScopeIterable(new ConditionalScope(((MPSProject) MapSequence.fromMap(_params).get("project")).getScope(), solutionOnly, null), repo);
+    ModuleScopeIterable globalScope = new ModuleScopeIterable(new ConditionalScope(new FilteredGlobalScope(), solutionOnly, null), repo);
+
+    ChooseByNameData<SModuleReference> gotoData = new ChooseByNameData<SModuleReference>(new ModulesPresentation(repo));
+    gotoData.derivePrompts("runtime module").setScope(localScope, globalScope);
+
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(((Project) MapSequence.fromMap(_params).get("ideaProject")), gotoData, NewRuntimeModule_Action.this);
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       @Override
-      public void elementChosen(Object p0) {
-        SModuleReference module = baseSolutionModel.getModelObject(p0);
-        if (module == null) {
+      public void elementChosen(final Object p0) {
+        if (!(p0 instanceof SModuleReference)) {
           return;
         }
-        language.getModuleDescriptor().getRuntimeModules().add((ModuleReference) module);
-        modelAccess.runWriteInEDT(new Runnable() {
+        repo.getModelAccess().runWriteInEDT(new Runnable() {
           public void run() {
+            language.getModuleDescriptor().getRuntimeModules().add((SModuleReference) p0);
             language.save();
             mpsTree.rebuildLater();
           }

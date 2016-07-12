@@ -37,6 +37,7 @@ import com.intellij.util.containers.BidirectionalMap;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DynamicReference;
@@ -45,14 +46,12 @@ import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -89,6 +88,17 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   public MPSPsiModel(SModelReference reference, PsiManager manager) {
     super(manager);
     this.myModelReference = reference;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    /* TODO: remove after fix in platform:
+    This override fixes check for equality of SmartPointerElementInfo and MPSPsiModel
+    in SmartPsiElementPointerImpl.createElementInfo() */
+    if (obj instanceof PsiDirectory && !(obj instanceof MPSPsiNodeBase)) {
+      return this.getVirtualFile().equals(((PsiDirectory) obj).getVirtualFile());
+    }
+    return super.equals(obj);
   }
 
   @Override

@@ -7,16 +7,16 @@ import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(1);
-  /*package*/ final ConceptDescriptor myConceptExportAsImage = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.imageGen.testLanguage.structure.ExportAsImage", MetaIdFactory.conceptId(0x9bcd3d4bc7894f70L, 0x85e4038ea20762b9L, 0x21e6800a818d97ecL)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).sourceNode(new SNodePointer("r:6b2f78f4-2a26-4d24-a407-0f91df0625ef(jetbrains.mps.lang.editor.imageGen.testLanguage.structure)", "2442780630506641388")).create();
+  /*package*/ final ConceptDescriptor myConceptExportAsImage = createDescriptorForExportAsImage();
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptExportAsImage.getId(), 0);
@@ -40,5 +40,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         throw new IllegalStateException();
     }
+  }
+
+  private static ConceptDescriptor createDescriptorForExportAsImage() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.imageGen.testLanguage.structure.ExportAsImage", MetaIdFactory.conceptId(0x9bcd3d4bc7894f70L, 0x85e4038ea20762b9L, 0x21e6800a818d97ecL)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).sourceNode(new SNodePointer("r:6b2f78f4-2a26-4d24-a407-0f91df0625ef(jetbrains.mps.lang.editor.imageGen.testLanguage.structure)", "2442780630506641388")).create();
   }
 }

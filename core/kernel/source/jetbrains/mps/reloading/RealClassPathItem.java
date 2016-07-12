@@ -57,7 +57,7 @@ public abstract class RealClassPathItem extends AbstractClassPathItem {
     } else if (file.isArchive()) {
       return new JarFileClassPathItem(FS, uniPath.toString());
     } else if (file.isDirectory()) {
-      return new FileClassPathItem(path);
+      return new FileClassPathItem(uniPath.toString());
     } else if (file.isInArchive()) {
       throw new IllegalArgumentException("Path variable `" + uniPath + "' points to the location inside the jar which is not supported");
     } else {

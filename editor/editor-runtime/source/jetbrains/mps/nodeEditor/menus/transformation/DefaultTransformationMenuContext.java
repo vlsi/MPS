@@ -100,9 +100,9 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
   }
 
 
+  @NotNull
   @Override
-  public List<TransformationMenuItem> createItems(
-      @Nullable MenuLookup<TransformationMenu> menuLookup) {
+  public List<TransformationMenuItem> createItems(@Nullable MenuLookup<TransformationMenu> menuLookup) {
     if (menuLookup == null) {
       menuLookup = new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(myEditorContext.getRepository()), myNode.getConcept());
     }

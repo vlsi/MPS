@@ -159,7 +159,7 @@ public class CellExplorerTab implements IComponentDisposer<JComponent> {
 
   private class CloseTabOnEditorDisposeListener implements EditorDisposeListener {
     @Override
-    public void editorWillBeDisposed(jetbrains.mps.nodeEditor.EditorComponent component) {
+    public void editorWillBeDisposed(@NotNull jetbrains.mps.nodeEditor.EditorComponent component) {
       closeTab();
     }
   }

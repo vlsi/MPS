@@ -7,18 +7,18 @@ import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(3);
-  /*package*/ final ConceptDescriptor myConceptUsesPlatformCheckbox = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.formsTests.structure.UsesPlatformCheckbox", MetaIdFactory.conceptId(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x61552ecc953bf2a9L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x61552ecc953bf2aaL, "property")).properties("property").rootable().sourceNode(new SNodePointer("r:c520bb92-9267-4de8-9256-ed6ee26701fa(jetbrains.mps.lang.editor.formsTests.structure)", "7013563450911355561")).create();
-  /*package*/ final ConceptDescriptor myConceptUsesTextCheckbox = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.formsTests.structure.UsesTextCheckbox", MetaIdFactory.conceptId(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x4a35f271d9f26e94L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x4a35f271d9f26e95L, "property")).properties("property").rootable().sourceNode(new SNodePointer("r:c520bb92-9267-4de8-9256-ed6ee26701fa(jetbrains.mps.lang.editor.formsTests.structure)", "5347446703374102164")).create();
-  /*package*/ final ConceptDescriptor myConceptVariousCheckboxes = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.formsTests.structure.VariousCheckboxes", MetaIdFactory.conceptId(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x455f8dda63d636eL, "booleanProperty1"), new ConceptDescriptorBuilder.Prop(0x3bf28179462bcb27L, "booleanProperty2")).properties("booleanProperty1", "booleanProperty2").rootable().sourceNode(new SNodePointer("r:c520bb92-9267-4de8-9256-ed6ee26701fa(jetbrains.mps.lang.editor.formsTests.structure)", "312429380032619373")).create();
+  /*package*/ final ConceptDescriptor myConceptUsesPlatformCheckbox = createDescriptorForUsesPlatformCheckbox();
+  /*package*/ final ConceptDescriptor myConceptUsesTextCheckbox = createDescriptorForUsesTextCheckbox();
+  /*package*/ final ConceptDescriptor myConceptVariousCheckboxes = createDescriptorForVariousCheckboxes();
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptUsesPlatformCheckbox.getId(), 0);
@@ -48,5 +48,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         throw new IllegalStateException();
     }
+  }
+
+  private static ConceptDescriptor createDescriptorForUsesPlatformCheckbox() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.formsTests.structure.UsesPlatformCheckbox", MetaIdFactory.conceptId(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x61552ecc953bf2a9L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x61552ecc953bf2aaL, "property")).properties("property").rootable().sourceNode(new SNodePointer("r:c520bb92-9267-4de8-9256-ed6ee26701fa(jetbrains.mps.lang.editor.formsTests.structure)", "7013563450911355561")).create();
+  }
+  private static ConceptDescriptor createDescriptorForUsesTextCheckbox() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.formsTests.structure.UsesTextCheckbox", MetaIdFactory.conceptId(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x4a35f271d9f26e94L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x4a35f271d9f26e95L, "property")).properties("property").rootable().sourceNode(new SNodePointer("r:c520bb92-9267-4de8-9256-ed6ee26701fa(jetbrains.mps.lang.editor.formsTests.structure)", "5347446703374102164")).create();
+  }
+  private static ConceptDescriptor createDescriptorForVariousCheckboxes() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.formsTests.structure.VariousCheckboxes", MetaIdFactory.conceptId(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x455f8dda63d636eL, "booleanProperty1"), new ConceptDescriptorBuilder.Prop(0x3bf28179462bcb27L, "booleanProperty2")).properties("booleanProperty1", "booleanProperty2").rootable().sourceNode(new SNodePointer("r:c520bb92-9267-4de8-9256-ed6ee26701fa(jetbrains.mps.lang.editor.formsTests.structure)", "312429380032619373")).create();
   }
 }

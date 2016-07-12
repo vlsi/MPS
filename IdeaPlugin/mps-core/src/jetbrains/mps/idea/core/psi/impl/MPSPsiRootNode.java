@@ -239,7 +239,8 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
 
   @Override
   public boolean isPhysical() {
-    return true;
+    // Honestly check that file is physical - per root RootNode will return true
+    return this.getVirtualFile() != null && !this.getVirtualFile().equals(myModel.getSourceVirtualFile());
   }
 
   @Override

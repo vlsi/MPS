@@ -46,5 +46,6 @@ public interface TransformationMenuContext {
    * @param menuLookup a menu reference, may be null
    * @return menu items for the node, not null but possibly empty
    */
+  @NotNull
   List<TransformationMenuItem> createItems(@Nullable MenuLookup<TransformationMenu> menuLookup);
 }

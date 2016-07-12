@@ -2418,7 +2418,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="4seKY4Sw0pX">
-    <property role="3GE5qa" value="Menu.Transformation" />
+    <property role="3GE5qa" value="Menu.Transformation.IncludeSubstitute" />
     <ref role="1M2myG" to="tpc2:6DRYsxO8ara" resolve="TransformationMenuPart_IncludeSubstituteMenu" />
     <node concept="1N5Pfh" id="4seKY4Sw0q2" role="1Mr941">
       <ref role="1N5Vy1" to="tpc2:5i0CB70W8mR" />

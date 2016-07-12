@@ -7,20 +7,20 @@ import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import java.util.Collection;
+import java.util.Arrays;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.SNodePointer;
-import java.util.Collection;
-import java.util.Arrays;
-import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(4);
-  /*package*/ final ConceptDescriptor myConceptPrivateFieldReferenceOperation = new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation", MetaIdFactory.conceptId(0x802088974572437dL, 0xb50e8f050cba9566L, 0x5eb820f649bb5379L)).super_("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL)).parents("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)", "6825241477451043705")).create();
-  /*package*/ final ConceptDescriptor myConceptPrivateInstanceMethodCallOperation = new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateInstanceMethodCallOperation", MetaIdFactory.conceptId(0x802088974572437dL, 0xb50e8f050cba9566L, 0x5eb820f649bb7006L)).super_("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L)).parents("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)", "6825241477451051014")).create();
-  /*package*/ final ConceptDescriptor myConceptPrivateStaticFieldReference = new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference", MetaIdFactory.conceptId(0x802088974572437dL, 0xb50e8f050cba9566L, 0x3900f3d0fb5b36c9L)).super_("jetbrains.mps.baseLanguage.structure.StaticFieldReference").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L)).parents("jetbrains.mps.baseLanguage.structure.StaticFieldReference").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)", "4107550939057698505")).create();
-  /*package*/ final ConceptDescriptor myConceptPrivateStaticMethodCall = new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall", MetaIdFactory.conceptId(0x802088974572437dL, 0xb50e8f050cba9566L, 0x2ed6380fd7a2facbL)).super_("jetbrains.mps.baseLanguage.structure.StaticMethodCall").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L)).parents("jetbrains.mps.baseLanguage.structure.StaticMethodCall").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)", "3374946611454212811")).create();
+  /*package*/ final ConceptDescriptor myConceptPrivateFieldReferenceOperation = createDescriptorForPrivateFieldReferenceOperation();
+  /*package*/ final ConceptDescriptor myConceptPrivateInstanceMethodCallOperation = createDescriptorForPrivateInstanceMethodCallOperation();
+  /*package*/ final ConceptDescriptor myConceptPrivateStaticFieldReference = createDescriptorForPrivateStaticFieldReference();
+  /*package*/ final ConceptDescriptor myConceptPrivateStaticMethodCall = createDescriptorForPrivateStaticMethodCall();
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptPrivateFieldReferenceOperation.getId(), 0);
@@ -53,5 +53,18 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         throw new IllegalStateException();
     }
+  }
+
+  private static ConceptDescriptor createDescriptorForPrivateFieldReferenceOperation() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation", MetaIdFactory.conceptId(0x802088974572437dL, 0xb50e8f050cba9566L, 0x5eb820f649bb5379L)).super_("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL)).parents("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)", "6825241477451043705")).create();
+  }
+  private static ConceptDescriptor createDescriptorForPrivateInstanceMethodCallOperation() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateInstanceMethodCallOperation", MetaIdFactory.conceptId(0x802088974572437dL, 0xb50e8f050cba9566L, 0x5eb820f649bb7006L)).super_("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L)).parents("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)", "6825241477451051014")).create();
+  }
+  private static ConceptDescriptor createDescriptorForPrivateStaticFieldReference() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference", MetaIdFactory.conceptId(0x802088974572437dL, 0xb50e8f050cba9566L, 0x3900f3d0fb5b36c9L)).super_("jetbrains.mps.baseLanguage.structure.StaticFieldReference").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L)).parents("jetbrains.mps.baseLanguage.structure.StaticFieldReference").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)", "4107550939057698505")).create();
+  }
+  private static ConceptDescriptor createDescriptorForPrivateStaticMethodCall() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall", MetaIdFactory.conceptId(0x802088974572437dL, 0xb50e8f050cba9566L, 0x2ed6380fd7a2facbL)).super_("jetbrains.mps.baseLanguage.structure.StaticMethodCall").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L)).parents("jetbrains.mps.baseLanguage.structure.StaticMethodCall").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)", "3374946611454212811")).create();
   }
 }

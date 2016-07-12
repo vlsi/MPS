@@ -17,7 +17,7 @@
       <unit at="7,0,10,0" name="jetbrains.mps.lang.core.structure.IconContainer" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="17,0,181,0" name="jetbrains.mps.lang.core.structure.StructureAspectDescriptor" />
+      <unit at="17,0,287,0" name="jetbrains.mps.lang.core.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/779128492853700076">

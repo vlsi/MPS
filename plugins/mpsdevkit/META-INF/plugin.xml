@@ -102,7 +102,7 @@
               class="jetbrains.mps.ide.devkit.help.ShowTrackerAction"
               text="Issue Tracker"/>
       <separator/>
-      <add-to-group group-id="HelpMenu" relative-to-action="ProductivityGude" anchor="after"/>
+      <add-to-group group-id="HelpMenu" relative-to-action="ProductivityGuide" anchor="after"/>
     </group>
   </actions>
 

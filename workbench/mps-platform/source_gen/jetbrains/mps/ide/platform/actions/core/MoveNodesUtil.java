@@ -27,12 +27,11 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.refactoring.participant.NodeCopyTracker;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Collections;
-import jetbrains.mps.smodel.CopyUtil;
 
 public class MoveNodesUtil {
 
@@ -147,7 +146,7 @@ public class MoveNodesUtil {
 
           processor.process(moveRoots, removeOldRoots, refactoringSession);
         }
-        return MoveNodesUtil.NodeCopyTracker.get(refactoringSession).getCopyMap();
+        return NodeCopyTracker.get(refactoringSession).getCopyMap();
       }
     }, new _FunctionTypes._void_P1_E0<RefactoringSession>() {
       public void invoke(RefactoringSession refactoringSession) {
@@ -194,7 +193,7 @@ public class MoveNodesUtil {
       return SNodeOperations.getNodeDescendants(nodeToMove, null, true, new SAbstractConcept[]{});
     }
     public void process(List<SNode> nodeRoots, Map<SNode, RefactoringParticipant.KeepOldNodes> ifKeepOldNodes, RefactoringSession refactoringSession) {
-      MoveNodesUtil.NodeCopyTracker copyMap = MoveNodesUtil.NodeCopyTracker.get(refactoringSession);
+      NodeCopyTracker copyMap = NodeCopyTracker.get(refactoringSession);
       copyMap.copyAndTrack(nodeRoots);
       for (SNode oldNode : ListSequence.fromList(nodeRoots)) {
         if (MapSequence.fromMap(ifKeepOldNodes).get(oldNode) == RefactoringParticipant.KeepOldNodes.REMOVE) {
@@ -229,7 +228,7 @@ public class MoveNodesUtil {
       if (ListSequence.fromList(nodesToMove).count() != 1) {
         throw new IllegalArgumentException();
       }
-      MoveNodesUtil.NodeCopyTracker copyMap = MoveNodesUtil.NodeCopyTracker.get(refactoringSession);
+      NodeCopyTracker copyMap = NodeCopyTracker.get(refactoringSession);
       MapSequence.fromMap(copyMap.getCopyMap()).put(ListSequence.fromList(nodesToMove).first(), myTarget.resolve(myProject.getRepository()));
       for (SNode oldNode : SetSequence.fromSet(MapSequence.fromMap(ifKeepOldNodes).keySet())) {
         if (MapSequence.fromMap(ifKeepOldNodes).get(oldNode) == RefactoringParticipant.KeepOldNodes.REMOVE) {
@@ -240,30 +239,6 @@ public class MoveNodesUtil {
   }
 
 
-  public static class NodeCopyTracker {
-    private static final String id = "refactoringSession.nodeCopyTracker";
-    private Map<SNode, SNode> copyMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    public static MoveNodesUtil.NodeCopyTracker get(RefactoringSession session) {
-      MoveNodesUtil.NodeCopyTracker result = (MoveNodesUtil.NodeCopyTracker) session.getObject(id);
-      if (result == null) {
-        result = new MoveNodesUtil.NodeCopyTracker();
-        session.putObject(id, result);
-      }
-      return result;
-    }
-    public Map<SNode, SNode> getCopyMap() {
-      return Collections.unmodifiableMap(copyMap);
-    }
-    public List<SNode> copyAndTrack(List<SNode> oldNodes) {
-      Map<SNode, SNode> localCopyMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
-      List<SNode> result = CopyUtil.copyAndPreserveId(oldNodes, localCopyMap);
-      MapSequence.fromMap(copyMap).putAll(localCopyMap);
-      for (IMapping<SNode, SNode> mapping : MapSequence.fromMap(copyMap)) {
-        CopyUtil.addReferences(mapping.key(), copyMap, false);
-      }
-      return result;
-    }
-  }
   private static boolean eq_nlglo1_a0a0a0a0a0a0a4a0a0a0a2a2(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

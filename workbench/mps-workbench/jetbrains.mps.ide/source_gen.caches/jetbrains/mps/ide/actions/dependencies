@@ -1289,11 +1289,14 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.scope.ConditionalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
-    <classNode dependClassName="jetbrains.mps.workbench.choose.models.BaseModelModel" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ChooseByNameData" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ModelScopeIterable" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ModelsPresentation" />
     <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.MpsPopupFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -1318,11 +1321,14 @@
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.scope.ConditionalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.workbench.choose.modules.BaseModuleModel" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ChooseByNameData" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ModuleScopeIterable" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ModulesPresentation" />
     <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.MpsPopupFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -2105,19 +2111,24 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.tree.TreeNode" />
+    <classNode dependClassName="jetbrains.mps.FilteredGlobalScope" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTree" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.project.ModuleInstanceCondition" />
+    <classNode dependClassName="jetbrains.mps.project.Solution" />
+    <classNode dependClassName="jetbrains.mps.scope.ConditionalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.workbench.choose.modules.BaseModuleModel" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ChooseByNameData" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ModuleScopeIterable" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ModulesPresentation" />
     <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.MpsPopupFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.NewSolution_Action" file="NewSolution_Action.java">

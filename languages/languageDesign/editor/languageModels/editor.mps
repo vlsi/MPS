@@ -14064,13 +14064,6 @@
       </node>
     </node>
   </node>
-  <node concept="24kQdi" id="6S33y3MyRy$">
-    <property role="3GE5qa" value="Menu.Transformation" />
-    <ref role="1XX52x" to="tpc2:6S33y3MyG9t" resolve="ContextExpression_TransformationMenu" />
-    <node concept="3F1sOY" id="6S33y3MyRyA" role="2wV5jI">
-      <ref role="1NtTu8" to="tpc2:6S33y3MyG9u" />
-    </node>
-  </node>
   <node concept="24kQdi" id="7L5lpRJLZbO">
     <property role="3GE5qa" value="Menu.Transformation.Locations" />
     <ref role="1XX52x" to="tpc2:7L5lpRJH$EA" resolve="TransformationLocation" />
@@ -14537,7 +14530,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="6K28JrTTrPN">
-    <property role="3GE5qa" value="Menu.Transformation" />
+    <property role="3GE5qa" value="Menu.Transformation.IncludeSubstitute" />
     <ref role="1XX52x" to="tpc2:1Djcm3ms60c" resolve="TransformationMenuPart_WrapSubstituteMenu" />
     <node concept="3EZMnI" id="6K28JrTTrQy" role="2wV5jI">
       <node concept="PMmxH" id="6K28JrTTrQz" role="3EZMnx">
@@ -14964,7 +14957,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="6DRYsxO8ar_">
-    <property role="3GE5qa" value="Menu.Transformation" />
+    <property role="3GE5qa" value="Menu.Transformation.IncludeSubstitute" />
     <ref role="1XX52x" to="tpc2:6DRYsxO8ara" resolve="TransformationMenuPart_IncludeSubstituteMenu" />
     <node concept="3EZMnI" id="6DRYsxO8arB" role="2wV5jI">
       <node concept="3F0ifn" id="1quYWACV$5p" role="3EZMnx">
@@ -16701,9 +16694,6 @@
                     <node concept="3cpWs8" id="lcjj1ZWdP8" role="3cqZAp">
                       <node concept="3cpWsn" id="lcjj1ZWdPb" role="3cpWs9">
                         <property role="TrG5h" value="refCell" />
-                        <node concept="3Tqbb2" id="lcjj1ZWdP7" role="1tU5fm">
-                          <ref role="ehGHo" to="tpc2:fPiCG$y" resolve="CellModel_RefCell" />
-                        </node>
                         <node concept="2c44tf" id="4aTAL7cLpoG" role="33vP2m">
                           <node concept="1iCGBv" id="4aTAL7cLpoH" role="2c44tc">
                             <node concept="ljvvj" id="4aTAL7cUV0T" role="3F10Kt">
@@ -16718,6 +16708,9 @@
                               <node concept="2ZBlsa" id="4aTAL7cLpIn" role="2c44t1" />
                             </node>
                           </node>
+                        </node>
+                        <node concept="3Tqbb2" id="lcjj1ZWdP7" role="1tU5fm">
+                          <ref role="ehGHo" to="tpc2:fPiCG$y" resolve="CellModel_RefCell" />
                         </node>
                       </node>
                     </node>
@@ -17655,8 +17648,8 @@
                         <node concept="3clFbF" id="6dj4njOGMLJ" role="3cqZAp">
                           <node concept="3y3z36" id="6dj4njOGMLK" role="3clFbG">
                             <node concept="28GBK8" id="6dj4njOGMLL" role="3uHU7w">
-                              <ref role="28H3Ia" to="tpck:4uZwTti3__2" />
                               <ref role="28GBKb" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                              <ref role="28H3Ia" to="tpck:4uZwTti3__2" />
                             </node>
                             <node concept="37vLTw" id="6dj4njOGMLM" role="3uHU7B">
                               <ref role="3cqZAo" node="6dj4njOGMLN" resolve="it" />

@@ -21,8 +21,8 @@ import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -76,6 +76,7 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
     return myCurrentChild;
   }
 
+  @NotNull
   @Override
   public List<SubstituteMenuItem> createItems(@Nullable MenuLookup<SubstituteMenu> menuLookup) {
     if (menuLookup == null) {

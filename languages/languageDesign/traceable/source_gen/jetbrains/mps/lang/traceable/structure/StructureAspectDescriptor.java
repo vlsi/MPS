@@ -7,18 +7,18 @@ import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(3);
-  /*package*/ final ConceptDescriptor myConceptScopeConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.ScopeConcept", MetaIdFactory.conceptId(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a2L)).version(1).interface_().sourceNode(new SNodePointer("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369890")).create();
-  /*package*/ final ConceptDescriptor myConceptTraceableConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.TraceableConcept", MetaIdFactory.conceptId(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L)).version(1).interface_().sourceNode(new SNodePointer("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369891")).create();
-  /*package*/ final ConceptDescriptor myConceptUnitConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.UnitConcept", MetaIdFactory.conceptId(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L)).version(1).interface_().sourceNode(new SNodePointer("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369892")).create();
+  /*package*/ final ConceptDescriptor myConceptScopeConcept = createDescriptorForScopeConcept();
+  /*package*/ final ConceptDescriptor myConceptTraceableConcept = createDescriptorForTraceableConcept();
+  /*package*/ final ConceptDescriptor myConceptUnitConcept = createDescriptorForUnitConcept();
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptScopeConcept.getId(), 0);
@@ -48,5 +48,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         throw new IllegalStateException();
     }
+  }
+
+  private static ConceptDescriptor createDescriptorForScopeConcept() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.ScopeConcept", MetaIdFactory.conceptId(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a2L)).version(1).interface_().sourceNode(new SNodePointer("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369890")).create();
+  }
+  private static ConceptDescriptor createDescriptorForTraceableConcept() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.TraceableConcept", MetaIdFactory.conceptId(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L)).version(1).interface_().sourceNode(new SNodePointer("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369891")).create();
+  }
+  private static ConceptDescriptor createDescriptorForUnitConcept() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.UnitConcept", MetaIdFactory.conceptId(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L)).version(1).interface_().sourceNode(new SNodePointer("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369892")).create();
   }
 }
