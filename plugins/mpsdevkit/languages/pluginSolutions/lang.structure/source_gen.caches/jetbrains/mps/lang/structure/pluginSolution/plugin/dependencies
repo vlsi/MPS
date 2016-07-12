@@ -229,6 +229,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConceptUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin._Adapters" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
@@ -593,6 +594,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipantBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin._Adapters" file="_Adapters.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
   </dependency>
 </dependenciesRoot>
 
