@@ -15,6 +15,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.apache.log4j.Level;
@@ -52,7 +53,6 @@ import com.intellij.util.ImageLoader;
 import com.intellij.util.ui.JBImageIcon;
 import java.io.InputStream;
 import java.io.IOException;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -127,6 +127,8 @@ public final class IconManager {
     return icon;
   }
 
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static Icon getIconFor(String namespace) {
     String className = namespace + ".icons.Icons";
     try {
