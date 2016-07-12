@@ -23,8 +23,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
@@ -66,9 +64,7 @@ public class LanguageMigrations_ActionGroup extends GeneratedActionGroup {
 
     for (SLanguage language : languages) {
       String name = language.getQualifiedName();
-      Icon icon = IconManager.getIconForNamespace(name);
       DefaultActionGroup langRootsGroup = new DefaultActionGroup(NameUtil.compactNamespace(name), true);
-      langRootsGroup.getTemplatePresentation().setIcon(icon);
 
       for (int ver = 0; ver < language.getLanguageVersion(); ver++) {
         MigrationScript script = migrationComponent.fetchMigrationScript(new MigrationScriptReference(language, ver), true);

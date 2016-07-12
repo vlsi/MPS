@@ -2503,22 +2503,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3cpWs8" id="oze2ctc56s" role="3cqZAp">
-                <node concept="3cpWsn" id="oze2ctc56r" role="3cpWs9">
-                  <property role="3TUv4t" value="false" />
-                  <property role="TrG5h" value="icon" />
-                  <node concept="3uibUv" id="oze2ctc8bV" role="1tU5fm">
-                    <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
-                  </node>
-                  <node concept="2YIFZM" id="oze2ctc571" role="33vP2m">
-                    <ref role="1Pybhc" to="xnls:~IconManager" resolve="IconManager" />
-                    <ref role="37wK5l" to="xnls:~IconManager.getIconForNamespace(java.lang.String):javax.swing.Icon" resolve="getIconForNamespace" />
-                    <node concept="37vLTw" id="oze2ctc56v" role="37wK5m">
-                      <ref role="3cqZAo" node="oze2ctc56n" resolve="name" />
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3cpWs8" id="oze2ctc56x" role="3cqZAp">
                 <node concept="3cpWsn" id="oze2ctc56w" role="3cpWs9">
                   <property role="3TUv4t" value="false" />
@@ -2539,24 +2523,6 @@
                       <node concept="3clFbT" id="oze2ctc56A" role="37wK5m">
                         <property role="3clFbU" value="true" />
                       </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="oze2ctc56B" role="3cqZAp">
-                <node concept="2OqwBi" id="oze2ctc56C" role="3clFbG">
-                  <node concept="2OqwBi" id="oze2ctc57q" role="2Oq$k0">
-                    <node concept="37vLTw" id="oze2ctc57p" role="2Oq$k0">
-                      <ref role="3cqZAo" node="oze2ctc56w" resolve="langRootsGroup" />
-                    </node>
-                    <node concept="liA8E" id="oze2ctc57r" role="2OqNvi">
-                      <ref role="37wK5l" to="qkt:~AnAction.getTemplatePresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getTemplatePresentation" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="oze2ctc56E" role="2OqNvi">
-                    <ref role="37wK5l" to="qkt:~Presentation.setIcon(javax.swing.Icon):void" resolve="setIcon" />
-                    <node concept="37vLTw" id="oze2ctc56F" role="37wK5m">
-                      <ref role="3cqZAo" node="oze2ctc56r" resolve="icon" />
                     </node>
                   </node>
                 </node>
