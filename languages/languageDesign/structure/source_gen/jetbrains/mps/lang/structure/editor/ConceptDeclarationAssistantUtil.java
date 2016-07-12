@@ -32,7 +32,9 @@ public class ConceptDeclarationAssistantUtil {
       if (!(ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(acd)).containsSequence(ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(myCocnept)))) || !(ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(acd)).containsSequence(ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(myCocnept))))) {
         continue;
       }
-      ListSequence.fromList(result).addElement(acd);
+      if (myCocnept != acd) {
+        ListSequence.fromList(result).addElement(acd);
+      }
       // continue concept hierarchy traversal only if acd contains all properties/link of the current concept 
       QueueSequence.fromQueue(toCheck).addSequence(ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getImmediateSuperconcepts_idhMuxyK2.invoke(acd)));
     }
