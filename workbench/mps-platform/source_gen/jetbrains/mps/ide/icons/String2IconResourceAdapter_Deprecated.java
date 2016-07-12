@@ -24,10 +24,6 @@ public class String2IconResourceAdapter_Deprecated extends IconResource {
     myIcon = icon;
   }
   @Override
-  public boolean isValid() {
-    return true;
-  }
-  @Override
   public boolean isAlreadyReloaded() {
     return false;
   }

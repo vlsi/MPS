@@ -15,6 +15,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.apache.log4j.Level;
@@ -47,8 +48,11 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import org.jetbrains.annotations.Nullable;
+import java.awt.Image;
+import com.intellij.util.ImageLoader;
+import com.intellij.util.ui.JBImageIcon;
 import java.io.InputStream;
-import jetbrains.mps.util.annotation.ToRemove;
+import java.io.IOException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -123,6 +127,8 @@ public final class IconManager {
     return icon;
   }
 
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static Icon getIconFor(String namespace) {
     String className = namespace + ".icons.Icons";
     try {
@@ -287,14 +293,30 @@ public final class IconManager {
     if (MapSequence.fromMap(ourResToIcon).containsKey(ir)) {
       return MapSequence.fromMap(ourResToIcon).get(ir);
     }
-    if (!(ir.isValid())) {
-      return null;
+
+    Icon icon;
+    if (ir.getResourceId() != null) {
+      Image image = ImageLoader.loadFromResource(ir.getResourceId(), ir.getProvider());
+      if (image == null) {
+        return null;
+      }
+      icon = new JBImageIcon(image);
+    } else {
+      // compatibility code till 3.4 
+      InputStream resource = ir.getResource();
+      if (resource == null) {
+        return null;
+      }
+      icon = (resource == null ? null : IconLoadHelper.loadIcon(resource));
+      try {
+        resource.close();
+      } catch (IOException e) {
+        if (LOG.isEnabledFor(Level.WARN)) {
+          LOG.warn("", e);
+        }
+      }
     }
-    InputStream r = ir.getResource();
-    if (r == null) {
-      return null;
-    }
-    Icon icon = IconLoadHelper.loadIcon(r);
+
     MapSequence.fromMap(ourResToIcon).put(ir, icon);
     return icon;
   }
@@ -330,6 +352,5 @@ public final class IconManager {
     }
     return IdeIcons.DEFAULT_ICON;
   }
-
   protected static Logger LOG = LogManager.getLogger(IconManager.class);
 }
