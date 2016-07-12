@@ -62,7 +62,7 @@ public class CrossModelEnvironment {
    *       two plans for the same model, and checkpoints are available only for one of them.
    * @return if there are any recorded checkpoints for the given model
    */
-  public boolean hasState(@NotNull SModelReference model) {
+  public boolean hasState(@NotNull SModelReference model, PlanIdentity planIdentity) {
     if (myCheckpoints.containsKey(model)) {
       return true;
     }
@@ -79,10 +79,10 @@ public class CrossModelEnvironment {
    * @return recorded checkpoints for the model
    */
   @Nullable
-  public ModelCheckpoints getState(@NotNull SModelReference model) {
+  public ModelCheckpoints getState(@NotNull SModelReference model, @NotNull PlanIdentity planIdentity) {
     List<CheckpointState> states = myCheckpoints.get(model);
     if (states != null) {
-      return new ModelCheckpoints(states.toArray(new CheckpointState[states.size()]));
+      return new ModelCheckpoints(planIdentity, states.toArray(new CheckpointState[states.size()]));
     }
     // XXX Not sure whether read shall be local to this class or external on constructor/initialization method (see comment in #hasState() above)
     //     It seems to be an implementation detail that we traverse model and use its nodes to persist mapping label information (that's what we need RA for).
@@ -90,7 +90,7 @@ public class CrossModelEnvironment {
       @Override
       public ModelCheckpoints compute() {
         SModel[] cpModels = getCheckpointModelsFor(model);
-        return new ModelCheckpoints(myTransientModelProvider.getRepository(), cpModels);
+        return new ModelCheckpoints(myTransientModelProvider.getRepository(), planIdentity, cpModels);
       }
     });
   }

@@ -42,6 +42,7 @@ import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.plan.MapCfgComparator;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
+import jetbrains.mps.generator.impl.plan.PlanIdentity;
 import jetbrains.mps.generator.impl.plan.PlanSignature;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
@@ -261,7 +262,7 @@ class GenerationSession {
               SNode debugMappings = new DebugMappingsBuilder(mySessionContext.getRepository(), Collections.singletonMap(currInputModel, checkpointModel)).build(checkpointModel, stepLabels);
               checkpointModel.addRootNode(debugMappings);
             }
-            mySessionContext.getCrossModelEnvironment().publishCheckpoint(myOriginalInputModel.getReference(), cpBuilder.create(checkpointStep));
+            mySessionContext.getCrossModelEnvironment().publishCheckpoint(myOriginalInputModel.getReference(), cpBuilder.create(new PlanIdentity(myGenerationPlan), checkpointStep));
             transitionTrace = new TransitionTrace(checkpointStep);
             transitionTrace.reset(currInputModel);
             myStepArguments = null;

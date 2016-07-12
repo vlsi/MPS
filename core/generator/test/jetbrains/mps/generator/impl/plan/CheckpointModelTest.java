@@ -97,6 +97,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
         return new RigidGenerationPlan(step1, cp1, step2);
       }
     });
+    final PlanIdentity planIdentity = new PlanIdentity(plan);
     GenerationOptions opt = GenerationOptions.getDefaults().customPlan(m, plan).create();
     final TransientModelsProvider tmProvider = mpsProject.getComponent(TransientModelsProvider.class);
     GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider);
@@ -104,7 +105,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
     myErrors.checkThat("Generation succeeds", genStatus.isOk(), CoreMatchers.equalTo(true));
     CrossModelEnvironment cme = new CrossModelEnvironment(tmProvider);
     // XXX shall it be CME to give access to module with checkpoint models? Is there better way to find out cpModel?
-    myErrors.checkThat("CrossModelEnvironment.hasState", cme.hasState(mr), CoreMatchers.equalTo(true));
+    myErrors.checkThat("CrossModelEnvironment.hasState", cme.hasState(mr, planIdentity), CoreMatchers.equalTo(true));
 
     SModule checkpointModule = tmProvider.getCheckpointsModule();
     final SModelName cpModelName = CrossModelEnvironment.createCheckpointModelName(m.getReference(), cp1);
@@ -116,7 +117,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
       }
     }
     myErrors.checkThat("Checkpoint model", cpModel, CoreMatchers.notNullValue());
-    ModelCheckpoints modelCheckpoints = cme.getState(mr);
+    ModelCheckpoints modelCheckpoints = cme.getState(mr, planIdentity);
     CheckpointState cpState = modelCheckpoints.find(cp1);
     myErrors.checkThat("CheckpointState present", cpState, CoreMatchers.notNullValue());
     if (cpState != null) {
@@ -145,18 +146,19 @@ public class CheckpointModelTest extends PlatformMpsTest {
         return new RigidGenerationPlan(step1, cp1, step2, cp2, step3);
       }
     });
+    final PlanIdentity planIdentity = new PlanIdentity(plan);
     GenerationOptions opt = GenerationOptions.getDefaults().customPlan(m, plan).create();
     final TransientModelsProvider tmProvider = mpsProject.getComponent(TransientModelsProvider.class);
     GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider);
     GenerationStatus genStatus = genFacade.process(new EmptyProgressMonitor(), m);
     myErrors.checkThat("Generation succeeds", genStatus.isOk(), CoreMatchers.equalTo(true));
     CrossModelEnvironment cme = new CrossModelEnvironment(tmProvider);
-    boolean crossModelCheckpointsPresent = cme.hasState(mr);
+    boolean crossModelCheckpointsPresent = cme.hasState(mr, planIdentity);
     myErrors.checkThat("CrossModelEnvironment.hasState", crossModelCheckpointsPresent, CoreMatchers.equalTo(true));
     if (!crossModelCheckpointsPresent) {
       return;
     }
-    ModelCheckpoints modelCheckpoints = cme.getState(mr);
+    ModelCheckpoints modelCheckpoints = cme.getState(mr, planIdentity);
     final CheckpointState cp1State = modelCheckpoints.find(cp1);
     final CheckpointState cp2State = modelCheckpoints.find(cp2);
     myErrors.checkThat("state for the first checkpoint present", cp1State, CoreMatchers.notNullValue());

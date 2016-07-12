@@ -17,7 +17,9 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
+import jetbrains.mps.generator.impl.plan.CheckpointIdentity;
 import jetbrains.mps.generator.impl.plan.CheckpointState;
+import jetbrains.mps.generator.impl.plan.PlanIdentity;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -91,11 +93,11 @@ class CheckpointStateBuilder {
     return myTransitionTrace.getOrigin(inputNode);
   }
 
-  /*package*/ CheckpointState create(Checkpoint step) {
+  /*package*/ CheckpointState create(PlanIdentity plan, Checkpoint step) {
     new CloneUtil(myTransientModel, myCheckpointModel).cloneModel();
     // ReferenceResolvers could have added references to nodes in other checkpoint models, we need to propagate these
     // dependencies into imports to ensure subsequent module.forget() could find and clear all dependant models as well
     SModelOperations.validateLanguagesAndImports(myCheckpointModel, false, true);
-    return new CheckpointState(myMemento, myCheckpointModel, step);
+    return new CheckpointState(myMemento, myCheckpointModel, new CheckpointIdentity(plan, step));
   }
 }

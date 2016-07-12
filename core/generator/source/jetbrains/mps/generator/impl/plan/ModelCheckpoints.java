@@ -36,18 +36,23 @@ import java.util.List;
  */
 public class ModelCheckpoints {
   private final List<CheckpointState> myStates;
+  private final PlanIdentity myPlan;
 
-  /*package*/ ModelCheckpoints(CheckpointState[] states) {
+  /*package*/ ModelCheckpoints(PlanIdentity plan, CheckpointState[] states) {
+    // XXX I don't quite like plan argument here, as it's implicitly assumed
+    // states.getCheckpoint().getPlan matches plan.
+    myPlan = plan;
     myStates = Arrays.asList(states);
   }
 
   // FIXME I don't really use a repository down in DebugMappingBuilder.restore()!
-  /*package*/ ModelCheckpoints(SRepository repository, SModel[] models) {
+  /*package*/ ModelCheckpoints(SRepository repository, PlanIdentity plan, SModel[] models) {
+    myPlan = plan;
     CheckpointState[] states = new CheckpointState[models.length];
     for (int i = 0; i < models.length; i++) {
       String stereotype = SModelStereotype.getStereotype(models[i]);
       assert stereotype.startsWith("cp-");
-      Checkpoint cp = new Checkpoint(stereotype.substring(3));
+      CheckpointIdentity cp = new CheckpointIdentity(plan, stereotype.substring(3));
       MappingsMemento memento = new MappingsMemento();
       // FIXME read and fill memento with MappingLabels
       //       now, just restore it from debug root we've got there. Later (once true persistence is done), shall consider
@@ -68,8 +73,9 @@ public class ModelCheckpoints {
    */
   @Nullable
   public CheckpointState find(@NotNull Checkpoint targetPoint) {
+    CheckpointIdentity tp = new CheckpointIdentity(myPlan, targetPoint);
     for (CheckpointState cps : myStates) {
-      if (cps.getCheckpoint().equals(targetPoint)) {
+      if (cps.getCheckpoint().equals(tp)) {
         return cps;
       }
     }

@@ -548,10 +548,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       return null;
     }
     CrossModelEnvironment env = getGeneratorSessionContext().getCrossModelEnvironment();
-    if (!env.hasState(inputNodeModel.getReference())) {
+    if (!env.hasState(inputNodeModel.getReference(), myPlanStep.getPlanIdentity())) {
       return null;
     }
-    ModelCheckpoints modelHistory = env.getState(inputNodeModel.getReference());
+    ModelCheckpoints modelHistory = env.getState(inputNodeModel.getReference(), myPlanStep.getPlanIdentity());
     // last and next are not necessarily in immediately adjacent generation steps, i.e. cpLast, transfStep1, transfStep2, activeTransformStep, transfStep3, cpNext
     Checkpoint lastPoint = myPlanStep.getLastCheckpoint();
     Checkpoint targetPoint = myPlanStep.getNextCheckpoint();
