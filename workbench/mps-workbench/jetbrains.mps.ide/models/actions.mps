@@ -5067,14 +5067,6 @@
     <node concept="2OiAzN" id="i2Onva$" role="ftER_">
       <node concept="2OiTZ2" id="i2Onva_" role="2Oj6PV">
         <node concept="3clFbS" id="hQhelRY" role="2VODD2">
-          <node concept="3clFbF" id="hQhelRZ" role="3cqZAp">
-            <node concept="2OqwBi" id="hQhelS0" role="3clFbG">
-              <node concept="2WthIp" id="hQhelS1" role="2Oq$k0" />
-              <node concept="liA8E" id="hQhelS2" role="2OqNvi">
-                <ref role="37wK5l" to="qkt:~DefaultActionGroup.removeAll():void" resolve="removeAll" />
-              </node>
-            </node>
-          </node>
           <node concept="3cpWs8" id="31K7yqUYgON" role="3cqZAp">
             <node concept="3cpWsn" id="31K7yqUYgOO" role="3cpWs9">
               <property role="TrG5h" value="selectedNodes" />
@@ -14174,25 +14166,10 @@
             </node>
           </node>
           <node concept="3clFbH" id="1E2sZkYLlUI" role="3cqZAp" />
-          <node concept="3clFbJ" id="1E2sZkYLlUL" role="3cqZAp">
-            <node concept="3clFbS" id="1E2sZkYLlUM" role="3clFbx">
-              <node concept="fuyK3" id="2tI2dcwuCRq" role="3cqZAp">
-                <node concept="2ShNRf" id="2tI2dcwuCRs" role="fuByb">
-                  <node concept="1pGfFk" id="2tI2dcwuQgV" role="2ShVmc">
-                    <ref role="37wK5l" to="rvbb:~CreateRootNodeGroup.&lt;init&gt;()" resolve="CreateRootNodeGroup" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbC" id="1E2sZkYLlV_" role="3clFbw">
-              <node concept="3cmrfG" id="1E2sZkYLlVC" role="3uHU7w">
-                <property role="3cmrfH" value="0" />
-              </node>
-              <node concept="2OqwBi" id="1E2sZkYLlVa" role="3uHU7B">
-                <node concept="2WthIp" id="1E2sZkYLlUP" role="2Oq$k0" />
-                <node concept="liA8E" id="1E2sZkYLlVg" role="2OqNvi">
-                  <ref role="37wK5l" to="qkt:~DefaultActionGroup.getChildrenCount():int" resolve="getChildrenCount" />
-                </node>
+          <node concept="fuyK3" id="2tI2dcwuCRq" role="3cqZAp">
+            <node concept="2ShNRf" id="2tI2dcwuCRs" role="fuByb">
+              <node concept="1pGfFk" id="2tI2dcwuQgV" role="2ShVmc">
+                <ref role="37wK5l" to="rvbb:~CreateRootNodeGroup.&lt;init&gt;()" resolve="CreateRootNodeGroup" />
               </node>
             </node>
           </node>
@@ -15285,15 +15262,6 @@
     <node concept="2OiAzN" id="PAGjewTk8q" role="ftER_">
       <node concept="2OiTZ2" id="PAGjewTk8r" role="2Oj6PV">
         <node concept="3clFbS" id="PAGjewTk8s" role="2VODD2">
-          <node concept="3clFbF" id="PAGjewTqSZ" role="3cqZAp">
-            <node concept="2OqwBi" id="PAGjewTqTK" role="3clFbG">
-              <node concept="2WthIp" id="1g$rimez0M7" role="2Oq$k0" />
-              <node concept="liA8E" id="PAGjewTrpl" role="2OqNvi">
-                <ref role="37wK5l" to="qkt:~DefaultActionGroup.removeAll():void" resolve="removeAll" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbH" id="1JAxb5h3MZm" role="3cqZAp" />
           <node concept="3cpWs8" id="589x9V3B8qP" role="3cqZAp">
             <node concept="3cpWsn" id="589x9V3B8qQ" role="3cpWs9">
               <property role="TrG5h" value="mpsProject" />
@@ -20286,14 +20254,6 @@
     <node concept="2OiAzN" id="2tmN3ZB3EBV" role="ftER_">
       <node concept="2OiTZ2" id="2tmN3ZB3EBW" role="2Oj6PV">
         <node concept="3clFbS" id="2tmN3ZB3EBX" role="2VODD2">
-          <node concept="3clFbF" id="1KzxoBNJMh5" role="3cqZAp">
-            <node concept="2OqwBi" id="1KzxoBNJMh7" role="3clFbG">
-              <node concept="2WthIp" id="1KzxoBNJMh6" role="2Oq$k0" />
-              <node concept="liA8E" id="1KzxoBNJMPf" role="2OqNvi">
-                <ref role="37wK5l" to="qkt:~DefaultActionGroup.removeAll():void" resolve="removeAll" />
-              </node>
-            </node>
-          </node>
           <node concept="3cpWs8" id="2tmN3ZB3EC6" role="3cqZAp">
             <node concept="3cpWsn" id="2tmN3ZB3EC7" role="3cpWs9">
               <property role="TrG5h" value="project" />

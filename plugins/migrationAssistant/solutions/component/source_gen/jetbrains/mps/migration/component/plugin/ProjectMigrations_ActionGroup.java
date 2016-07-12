@@ -26,7 +26,7 @@ public class ProjectMigrations_ActionGroup extends GeneratedActionGroup {
     this.setPopup(true);
   }
   public void doUpdate(AnActionEvent event) {
-    ProjectMigrations_ActionGroup.this.removeAll();
+    removeAll();
     for (ProjectMigration pm : ListSequence.fromList(ProjectMigrationsRegistry.getInstance().getMigrations())) {
       ProjectMigrations_ActionGroup.this.addParameterizedAction(new RunProjectMigration_Action(pm), PluginId.getId("jetbrains.mps.migration.component"), pm);
     }

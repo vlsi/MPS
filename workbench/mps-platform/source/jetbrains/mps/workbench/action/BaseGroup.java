@@ -101,6 +101,8 @@ public class BaseGroup extends DefaultActionGroup implements DumbAware {
         @Override
         public void run() {
           try {
+            e.getPresentation().setEnabled(true);
+            e.getPresentation().setVisible(true);
             doUpdate(e);
           } catch (Throwable ex) {
             Logger.getLogger(BaseGroup.this.getClass()).error("Action group update failed", ex);
@@ -116,8 +118,7 @@ public class BaseGroup extends DefaultActionGroup implements DumbAware {
   }
 
   protected void doUpdate(AnActionEvent e) {
-    e.getPresentation().setEnabled(true);
-    e.getPresentation().setVisible(true);
+
   }
 
   public static void addPlaceToActionList(List<? extends AnAction> actions, ActionPlace place, @Nullable Condition<BaseAction> condition) {

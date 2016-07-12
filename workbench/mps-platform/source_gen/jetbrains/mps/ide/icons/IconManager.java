@@ -5,26 +5,21 @@ package jetbrains.mps.ide.icons;
 import javax.swing.Icon;
 import java.awt.Component;
 import java.awt.Graphics;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Map;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.apache.log4j.Level;
-import java.lang.reflect.Method;
-import jetbrains.mps.module.ModuleClassLoaderIsNullException;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.Solution;
@@ -53,6 +48,11 @@ import com.intellij.util.ImageLoader;
 import com.intellij.util.ui.JBImageIcon;
 import java.io.InputStream;
 import java.io.IOException;
+import org.apache.log4j.Level;
+import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import java.lang.reflect.Method;
+import jetbrains.mps.module.ModuleClassLoaderIsNullException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -77,28 +77,6 @@ public final class IconManager {
   private IconManager() {
   }
 
-  public static Icon getIconFor(@NotNull final SNode node) {
-    if (!(SNodeOperations.getConcept(node).isValid())) {
-      return IdeIcons.UNKNOWN_ICON;
-    }
-
-    Icon mainIcon = null;
-    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-      mainIcon = IconManager.getIconFromConstraints(node);
-    }
-    if (mainIcon == null) {
-      mainIcon = getIcon(SNodeOperations.getConcept(node));
-    }
-    if (mainIcon == null) {
-      if ((SNodeOperations.getParent(node) == null)) {
-        return IdeIcons.DEFAULT_ROOT_ICON;
-      } else {
-        return IdeIcons.DEFAULT_NODE_ICON;
-      }
-    }
-
-    return addIconFeatures(mainIcon, node);
-  }
 
   /**
    * This field should be used in getIcon(concept) method only
@@ -127,41 +105,27 @@ public final class IconManager {
     return icon;
   }
 
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public static Icon getIconFor(String namespace) {
-    String className = namespace + ".icons.Icons";
-    try {
-      Language language = ModuleRepositoryFacade.getInstance().getModule(namespace, Language.class);
-      if (language == null) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("Can't find a language " + namespace);
-        }
+  public static Icon getIconFor(@NotNull final SNode node) {
+    if (!(SNodeOperations.getConcept(node).isValid())) {
+      return IdeIcons.UNKNOWN_ICON;
+    }
+
+    Icon mainIcon = null;
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+      mainIcon = IconManager.getIconFromConstraints(node);
+    }
+    if (mainIcon == null) {
+      mainIcon = getIcon(SNodeOperations.getConcept(node));
+    }
+    if (mainIcon == null) {
+      if ((SNodeOperations.getParent(node) == null)) {
+        return IdeIcons.DEFAULT_ROOT_ICON;
       } else {
-        try {
-          Class<?> iconClass = language.getOwnClass(className);
-          Method method;
-          try {
-            method = iconClass.getMethod("getLanguageIcon");
-          } catch (NoSuchMethodException e) {
-            return EMPTY_ICON;
-          }
-          Icon icon = (Icon) method.invoke(null);
-          if (icon != null) {
-            return icon;
-          }
-        } catch (ModuleClassLoaderIsNullException e) {
-          return EMPTY_ICON;
-        } catch (ClassNotFoundException e) {
-          return EMPTY_ICON;
-        }
-      }
-    } catch (Exception e) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("", e);
+        return IdeIcons.DEFAULT_NODE_ICON;
       }
     }
-    return EMPTY_ICON;
+
+    return addIconFeatures(mainIcon, node);
   }
 
   public static Icon getIconFor(SModel model) {
@@ -324,6 +288,43 @@ public final class IconManager {
   @Deprecated
   public static Icon getIcon(SAbstractConcept concept) {
     return getIconFor(concept);
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.4)
+  public static Icon getIconFor(String namespace) {
+    String className = namespace + ".icons.Icons";
+    try {
+      Language language = ModuleRepositoryFacade.getInstance().getModule(namespace, Language.class);
+      if (language == null) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error("Can't find a language " + namespace);
+        }
+      } else {
+        try {
+          Class<?> iconClass = language.getOwnClass(className);
+          Method method;
+          try {
+            method = iconClass.getMethod("getLanguageIcon");
+          } catch (NoSuchMethodException e) {
+            return EMPTY_ICON;
+          }
+          Icon icon = (Icon) method.invoke(null);
+          if (icon != null) {
+            return icon;
+          }
+        } catch (ModuleClassLoaderIsNullException e) {
+          return EMPTY_ICON;
+        } catch (ClassNotFoundException e) {
+          return EMPTY_ICON;
+        }
+      }
+    } catch (Exception e) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("", e);
+      }
+    }
+    return EMPTY_ICON;
   }
 
   @Deprecated

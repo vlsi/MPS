@@ -2236,14 +2236,6 @@
     <node concept="2OiAzN" id="7R6nBIbwjvh" role="ftER_">
       <node concept="2OiTZ2" id="7R6nBIbwjvj" role="2Oj6PV">
         <node concept="3clFbS" id="7R6nBIbwjvl" role="2VODD2">
-          <node concept="3clFbF" id="1c9YUZQXgyq" role="3cqZAp">
-            <node concept="2OqwBi" id="1c9YUZQXgWc" role="3clFbG">
-              <node concept="2WthIp" id="1c9YUZQXgyo" role="2Oq$k0" />
-              <node concept="liA8E" id="1c9YUZQXhsL" role="2OqNvi">
-                <ref role="37wK5l" to="qkt:~DefaultActionGroup.removeAll():void" resolve="removeAll" />
-              </node>
-            </node>
-          </node>
           <node concept="2Gpval" id="5$zfhXzr2Xd" role="3cqZAp">
             <node concept="2GrKxI" id="5$zfhXzr2Xf" role="2Gsz3X">
               <property role="TrG5h" value="pm" />
@@ -2284,14 +2276,6 @@
     <node concept="2OiAzN" id="7R6nBIbwknQ" role="ftER_">
       <node concept="2OiTZ2" id="7R6nBIbwknR" role="2Oj6PV">
         <node concept="3clFbS" id="7R6nBIbwknS" role="2VODD2">
-          <node concept="3clFbF" id="7R6nBIbwknT" role="3cqZAp">
-            <node concept="2OqwBi" id="7R6nBIbwknU" role="3clFbG">
-              <node concept="2WthIp" id="7R6nBIbwknV" role="2Oq$k0" />
-              <node concept="liA8E" id="7R6nBIbwknW" role="2OqNvi">
-                <ref role="37wK5l" to="qkt:~DefaultActionGroup.removeAll():void" resolve="removeAll" />
-              </node>
-            </node>
-          </node>
           <node concept="3cpWs8" id="5$zfhXzrXR3" role="3cqZAp">
             <node concept="3cpWsn" id="5$zfhXzrXR4" role="3cpWs9">
               <property role="TrG5h" value="project" />

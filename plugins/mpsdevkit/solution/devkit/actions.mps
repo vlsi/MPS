@@ -3054,15 +3054,6 @@
             </node>
           </node>
           <node concept="3clFbH" id="7IH442cRr1M" role="3cqZAp" />
-          <node concept="3clFbF" id="7IH442cRq1s" role="3cqZAp">
-            <node concept="2OqwBi" id="7IH442cRqd8" role="3clFbG">
-              <node concept="2WthIp" id="7IH442cRq1r" role="2Oq$k0" />
-              <node concept="liA8E" id="7IH442cRqBr" role="2OqNvi">
-                <ref role="37wK5l" to="qkt:~DefaultActionGroup.removeAll():void" resolve="removeAll" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbH" id="7IH442cRqG5" role="3cqZAp" />
           <node concept="1DcWWT" id="7IH442cReHn" role="3cqZAp">
             <node concept="2YIFZM" id="6lMTJPe4ja3" role="1DdaDG">
               <ref role="37wK5l" to="vndm:~LanguageAspectSupport.collectAspects():java.lang.Iterable" resolve="collectAspects" />
