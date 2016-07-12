@@ -8,7 +8,6 @@
     <classNode dependClassName="com.intellij.openapi.project.ex.ProjectManagerEx" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManager" />
-    <classNode dependClassName="com.intellij.util.ui.UIUtil" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileOutputStream" />
     <classNode dependClassName="java.io.IOException" />
@@ -16,13 +15,10 @@
     <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.IllegalStateException" />
-    <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.core.platform.Platform" />
     <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />

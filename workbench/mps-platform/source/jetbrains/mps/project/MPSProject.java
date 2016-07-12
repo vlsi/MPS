@@ -19,15 +19,9 @@ import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ProjectComponent;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import jetbrains.mps.vfs.FileListener;
-import jetbrains.mps.vfs.FileSystemEvent;
-import jetbrains.mps.vfs.FileSystemExtPoint;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.File;
 import java.util.ArrayList;

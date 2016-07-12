@@ -17,7 +17,12 @@ package jetbrains.mps.plugins;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
@@ -25,6 +30,8 @@ import jetbrains.mps.ide.actions.Ide_PluginInitializer;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.Language;
@@ -37,6 +44,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -88,7 +96,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
   @Nullable
   private static PluginContributor createPluginContributor(@NotNull ReloadableModule module) {
     if (module.willLoad()) {
-      LOG.debug("Creating plugin contributor from " + module);
+      LOG.trace("Creating plugin contributor from " + module);
       return new ModulePluginContributor(module);
     }
     return null;
@@ -106,6 +114,10 @@ public class PluginLoaderRegistry implements ApplicationComponent {
    * Loads the given plugin contributors one by one. Asynchronously via the platform edt queue.
    */
   public void loadContributors(List<PluginContributor> contributors) {
+    if (contributors.isEmpty()) {
+      return;
+    }
+    LOG.debug("Loading contributors " + ModalityState.defaultModalityState());
     myModelAccess.checkWriteAccess();
     if (contributors.isEmpty()) return;
     final List<PluginContributor> contributorsToLoad = new ArrayList<PluginContributor>(contributors);
@@ -117,21 +129,24 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     }
     synchronized (myPluginLoadersLock) {
       final List<PluginLoader> pluginLoaders = new ArrayList<PluginLoader>(myPluginLoaders);
-      Runnable loadingTask = new Runnable() {
+      Task loadingTask = new Task.Modal(null, "Loading MPS plugin contributors", false) {
         @Override
-        public void run() {
+        public void run(@NotNull ProgressIndicator indicator) {
           final long beginTime = System.nanoTime();
           LOG.info(String.format("Loading plugins from %d contributors", contributorsToLoad.size()));
+          ProgressMonitorAdapter monitor = new ProgressMonitorAdapter(indicator);
           try {
+            monitor.start("Loading contributors", pluginLoaders.size());
             for (final PluginLoader listener : pluginLoaders) {
-              listener.loadPlugins(contributorsToLoad);
+              listener.loadPlugins(contributorsToLoad, monitor.subTask(1));
             }
           } finally {
+            monitor.done();
             LOG.info(String.format("Loading of %d plugins took %.3f s", contributorsToLoad.size(), (System.nanoTime() - beginTime) / 1e9));
           }
         }
       };
-      ApplicationManager.getApplication().invokeLater(loadingTask, ModalityState.any());
+      runOrPostpone(loadingTask);
       myContributorsToBeLoaded.addAll(contributors);
     }
   }
@@ -140,6 +155,10 @@ public class PluginLoaderRegistry implements ApplicationComponent {
    * Unloads the given plugin contributors one by one. Asynchronously via the platform edt queue.
    */
   public void unloadContributors(final List<PluginContributor> contributors) {
+    if (contributors.isEmpty()) {
+      return;
+    }
+    LOG.debug("Unloading contributors " + ModalityState.defaultModalityState());
     myModelAccess.checkWriteAccess();
     if (contributors.isEmpty()) return;
     final List<PluginContributor> contributorsToUnload = new ArrayList<PluginContributor>(contributors);
@@ -151,22 +170,36 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     }
     synchronized (myPluginLoadersLock) {
       final List<PluginLoader> pluginLoaders = new ArrayList<PluginLoader>(myPluginLoaders);
-      Runnable unloadingTask = new Runnable() {
+      Task unloadingTask =  new Task.Modal(null, "Unloading MPS plugins", false) {
         @Override
-        public void run() {
+        public void run(@NotNull ProgressIndicator indicator) {
+          ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
+          monitor.start("Unloading mps plugins", pluginLoaders.size());
           long beginTime = System.nanoTime();
           LOG.info(String.format("Unloading plugins from %d contributors", contributorsToUnload.size()));
           try {
             for (final PluginLoader listener : pluginLoaders) {
-              listener.unloadPlugins(contributorsToUnload);
+              listener.unloadPlugins(contributorsToUnload, monitor.subTask(1));
             }
           } finally {
+            monitor.done();
             LOG.info(String.format("Unloading of %d plugins took %.3f s", contributorsToUnload.size(), (System.nanoTime() - beginTime) / 1e9));
           }
         }
       };
-      ApplicationManager.getApplication().invokeLater(unloadingTask, ModalityState.any());
+      runOrPostpone(unloadingTask);
       myContributorsToBeLoaded.removeAll(contributors);
+    }
+  }
+
+  private void runOrPostpone(Task unloadingTask) {
+    if (!ApplicationManagerEx.getApplicationEx().isLoaded()) {
+      assert ThreadUtils.isInEDT();
+      unloadingTask.run(new EmptyProgressIndicator());
+    } else {
+      ApplicationManager.getApplication().invokeLater(() -> {
+        ProgressManager.getInstance().run(unloadingTask);
+      }, ModalityState.defaultModalityState());
     }
   }
 
@@ -175,23 +208,29 @@ public class PluginLoaderRegistry implements ApplicationComponent {
    * Before the registration we load all contributors which have been loaded up to that moment
    */
   private void registerLoader(final PluginLoader loader) {
+    LOG.debug("Registering loader " + ModalityState.defaultModalityState());
     synchronized (myPluginLoadersLock) {
       myPluginLoaders.add(loader);
     }
     final List<PluginContributor> contributorsToLoad = new ArrayList<PluginContributor>(myContributorsToBeLoaded);
-    Runnable loadingTask = new Runnable() {
+    Task loadingTask = new Task.Modal(null, "Loading MPS plugins", false) {
       @Override
-      public void run() {
+      public void run(@NotNull ProgressIndicator indicator) {
         final long beginTime = System.nanoTime();
         LOG.info(String.format("Loading plugins from %d contributors", contributorsToLoad.size()));
         try {
-          loader.loadPlugins(contributorsToLoad);
+          ProgressMonitorAdapter monitor = new ProgressMonitorAdapter(indicator);
+          loader.loadPlugins(contributorsToLoad, monitor);
         } finally {
           LOG.info(String.format("Loading of %d plugins took %.3f s", contributorsToLoad.size(), (System.nanoTime() - beginTime) / 1e9));
         }
       }
     };
-    ApplicationManager.getApplication().invokeLater(loadingTask, ModalityState.any());
+    if (!contributorsToLoad.isEmpty()) {
+      ApplicationManager.getApplication().invokeLater(() -> {
+        ProgressManager.getInstance().run(loadingTask);
+      }, ModalityState.defaultModalityState());
+    }
   }
 
   /**
@@ -203,27 +242,24 @@ public class PluginLoaderRegistry implements ApplicationComponent {
       myPluginLoaders.remove(loader);
     }
     final List<PluginContributor> contributorsToUnload = new ArrayList<PluginContributor>(myContributorsToBeLoaded);
-    Runnable unloadingTask = new Runnable() {
+    Task unloadingTask = new Task.Modal(null, "Unloading MPS plugin contributors", false) {
       @Override
-      public void run() {
+      public void run(@NotNull ProgressIndicator indicator) {
         final long beginTime = System.nanoTime();
         LOG.info(String.format("Unloading plugins from %d contributors", contributorsToUnload.size()));
         try {
-          loader.unloadPlugins(contributorsToUnload);
+          loader.unloadPlugins(contributorsToUnload, new ProgressMonitorAdapter(indicator));
         } finally {
           LOG.info(String.format("Unloading of %d plugins took %.3f s", contributorsToUnload.size(), (System.nanoTime() - beginTime) / 1e9));
         }
       }
     };
-    if (ThreadUtils.isInEDT()) {
-      unloadingTask.run();
-    } else {
-      LOG.error("NOT in EDT, the plugins will not be disposed!");
-    }
+    ApplicationManager.getApplication().invokeAndWait(() -> ProgressManager.getInstance().run(unloadingTask), ModalityState.defaultModalityState());
+//      LOG.error("NOT in EDT, the plugins will not be disposed!");
   }
 
   private List<PluginContributor> calcContributorsToUnload(Set<ReloadableModule> toUnload) {
-    List<PluginContributor> toUnloadContributors = new ArrayList<PluginContributor>();
+    List<PluginContributor> toUnloadContributors = new ArrayList<>();
     for (PluginContributor contributor : myContributorsToBeLoaded) {
       if (contributor instanceof ModulePluginContributor) {
         if (toUnload.contains(((ModulePluginContributor) contributor).getModule())) {
@@ -247,12 +283,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     assert myPluginLoaders.isEmpty();
     myClassLoaderManager.addClassesHandler(myClassesListener);
     assert myContributorsToBeLoaded.isEmpty();
-    myModelAccess.runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        loadFactories();
-      }
-    });
+//    myModelAccess.runWriteAction(this::loadFactories);
   }
 
   /**
@@ -268,7 +299,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
   private void loadFactories() {
     myModelAccess.checkWriteAccess();
     final List<PluginContributor> pluginFactoriesRegistryContributors = getPluginFactoriesRegistryContributors();
-    final List<PluginContributor> toLoad = new ArrayList<PluginContributor>();
+    final List<PluginContributor> toLoad = new ArrayList<>();
     for (PluginContributor contributor : pluginFactoriesRegistryContributors) {
       if (!myContributorsToBeLoaded.contains(contributor)) {
         toLoad.add(contributor);
@@ -278,7 +309,8 @@ public class PluginLoaderRegistry implements ApplicationComponent {
   }
 
   private static List<PluginContributor> getPluginFactoriesRegistryContributors() {
-    List<PluginContributor> pluginContributors = new ArrayList<PluginContributor>();
+    List<PluginContributor> pluginContributors;
+    pluginContributors = new ArrayList<PluginContributor>();
 
     Collection<AbstractPluginFactory> pluginFactories = PluginFactoriesRegistry.flush();
     for (AbstractPluginFactory factory : pluginFactories) {

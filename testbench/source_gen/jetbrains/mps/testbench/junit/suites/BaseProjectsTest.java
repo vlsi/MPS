@@ -11,20 +11,14 @@ import java.util.List;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
-import java.util.ArrayList;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.LocalFileSystem;
+import java.util.ArrayList;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.util.Processor;
 import org.junit.Before;
 import java.io.File;
 import org.junit.After;
-import jetbrains.mps.project.MPSProject;
-import com.intellij.ide.startup.impl.StartupManagerImpl;
-import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.ide.impl.ProjectUtil;
-import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -34,7 +28,6 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import com.intellij.util.ui.UIUtil;
 
 @RunWith(value = TeamCityParameterizedRunner.class)
 public class BaseProjectsTest {
@@ -57,8 +50,6 @@ public class BaseProjectsTest {
     defaultConfig.addPlugin(MIGRATION_PLUGIN, MIGRATION_PLUGIN_ID);
 
     ourEnv = IdeaEnvironment.getOrCreate(defaultConfig);
-    ArrayList<Object[]> res = new ArrayList<Object[]>();
-
     String projectsDir = System.getProperty("projects_dir");
     VirtualFile projectsRoot = LocalFileSystem.getInstance().findFileByPath(projectsDir);
 
@@ -69,7 +60,7 @@ public class BaseProjectsTest {
           return true;
         }
         // is a project dir? 
-        if (!(file.getName().equals(".mps"))) {
+        if (!(file.getName().equals(com.intellij.openapi.project.Project.DIRECTORY_STORE_FOLDER))) {
           return true;
         }
         projects.add(new String[]{file.getParent().getPath()});
@@ -91,14 +82,7 @@ public class BaseProjectsTest {
   @After
   public void closeProject() {
     waitForInvocations();
-    final com.intellij.openapi.project.Project project = ((MPSProject) myProject).getProject();
-    final StartupManagerImpl instance = (StartupManagerImpl) StartupManager.getInstance(project);
-    instance.prepareForNextTest();
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {
-        ProjectUtil.closeAndDispose(project);
-      }
-    }, ModalityState.NON_MODAL);
+    myProject.dispose();
     waitForInvocations();
   }
 
@@ -120,11 +104,7 @@ public class BaseProjectsTest {
   }
 
   private static void waitForInvocations() {
-    UIUtil.invokeAndWaitIfNeeded(new Runnable() {
-      public void run() {
-        UIUtil.dispatchAllInvocationEvents();
-      }
-    });
+    ourEnv.flushAllEvents();
   }
 
   public Project getContextProject() {
