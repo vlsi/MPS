@@ -6718,11 +6718,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="3fRaUy_Xz1U" role="3cqZAp">
-          <node concept="1rXfSq" id="3fRaUy_Xz1T" role="3clFbG">
-            <ref role="37wK5l" node="3fRaUy_Y6uN" resolve="waitForInvocations" />
-          </node>
-        </node>
       </node>
       <node concept="2AHcQZ" id="2SnxzQPEmEh" role="2AJF6D">
         <ref role="2AI5Lk" to="rjhg:~Before" resolve="Before" />
@@ -6734,11 +6729,6 @@
       <node concept="3cqZAl" id="2SnxzQPEoiF" role="3clF45" />
       <node concept="3Tm1VV" id="2SnxzQPEoiG" role="1B3o_S" />
       <node concept="3clFbS" id="2SnxzQPEoiH" role="3clF47">
-        <node concept="3clFbF" id="3fRaUy_Xz1W" role="3cqZAp">
-          <node concept="1rXfSq" id="3fRaUy_Xz1V" role="3clFbG">
-            <ref role="37wK5l" node="3fRaUy_Y6uN" resolve="waitForInvocations" />
-          </node>
-        </node>
         <node concept="3clFbF" id="2mki3EcintI" role="3cqZAp">
           <node concept="2OqwBi" id="2mki3EcinAz" role="3clFbG">
             <node concept="37vLTw" id="2mki3EcintG" role="2Oq$k0">
@@ -6747,11 +6737,6 @@
             <node concept="liA8E" id="2mki3EcinPw" role="2OqNvi">
               <ref role="37wK5l" to="z1c3:~Project.dispose():void" resolve="dispose" />
             </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3fRaUy_Xz1S" role="3cqZAp">
-          <node concept="1rXfSq" id="3fRaUy_Xz1R" role="3clFbG">
-            <ref role="37wK5l" node="3fRaUy_Y6uN" resolve="waitForInvocations" />
           </node>
         </node>
       </node>
@@ -6899,26 +6884,6 @@
       <node concept="3Tmbuc" id="5_2lT8zDioj" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="5_2lT8zDiaQ" role="jymVt" />
-    <node concept="2YIFZL" id="3fRaUy_Y6uN" role="jymVt">
-      <property role="TrG5h" value="waitForInvocations" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3clFbS" id="3fRaUy_Xz1C" role="3clF47">
-        <node concept="3clFbF" id="5lgc1fDHJFI" role="3cqZAp">
-          <node concept="2OqwBi" id="5lgc1fDHJKQ" role="3clFbG">
-            <node concept="37vLTw" id="5lgc1fDHJFH" role="2Oq$k0">
-              <ref role="3cqZAo" node="2SnxzQPEmTF" resolve="ourEnv" />
-            </node>
-            <node concept="liA8E" id="5lgc1fDHK3B" role="2OqNvi">
-              <ref role="37wK5l" to="79ha:3eUNqOk4fPx" resolve="flushAllEvents" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3cqZAl" id="3fRaUy_Xz1P" role="3clF45" />
-      <node concept="3Tm6S6" id="3fRaUy_Xz1O" role="1B3o_S" />
-    </node>
-    <node concept="2tJIrI" id="2SnxzQPEfsy" role="jymVt" />
     <node concept="3clFb_" id="2SnxzQPEfIr" role="jymVt">
       <property role="TrG5h" value="getContextProject" />
       <property role="DiZV1" value="false" />

@@ -76,14 +76,11 @@ public class BaseProjectsTest {
   public void openProject() {
     myProject = ourEnv.openProject(new File(myProjectDir));
     make(myProject);
-    waitForInvocations();
   }
 
   @After
   public void closeProject() {
-    waitForInvocations();
     myProject.dispose();
-    waitForInvocations();
   }
 
   protected static void make(Project p) {
@@ -101,10 +98,6 @@ public class BaseProjectsTest {
         }
       });
     }
-  }
-
-  private static void waitForInvocations() {
-    ourEnv.flushAllEvents();
   }
 
   public Project getContextProject() {

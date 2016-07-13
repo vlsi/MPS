@@ -3520,21 +3520,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3SKdUt" id="3kH8Tdv8uRs" role="3cqZAp">
-                <node concept="3SKdUq" id="3kH8Tdv8uRr" role="3SKWNk">
-                  <property role="3SKdUp" value="We need to wait for all post startup activities to be finished." />
-                </node>
-              </node>
-              <node concept="3SKdUt" id="3kH8Tdv8uRu" role="3cqZAp">
-                <node concept="3SKdUq" id="3kH8Tdv8uRt" role="3SKWNk">
-                  <property role="3SKdUp" value="As they run in App#invokeLater with ModalityState.NON_MODAL," />
-                </node>
-              </node>
-              <node concept="3SKdUt" id="3kH8Tdv8uRw" role="3cqZAp">
-                <node concept="3SKdUq" id="3kH8Tdv8uRv" role="3SKWNk">
-                  <property role="3SKdUp" value="it is not guaranteed to be executed before test itself." />
-                </node>
-              </node>
               <node concept="3clFbF" id="3oBsYseZD0" role="3cqZAp">
                 <node concept="1rXfSq" id="3oBsYseZCY" role="3clFbG">
                   <ref role="37wK5l" node="3eUNqOk4fPx" resolve="flushAllEvents" />

@@ -9,8 +9,8 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.project.Project;
 import java.io.File;
-import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.openapi.util.Disposer;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.util.FileUtil;
 import java.io.InputStream;
 import java.io.FileOutputStream;
@@ -18,8 +18,10 @@ import jetbrains.mps.util.ReadUtil;
 import java.io.IOException;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.vfs.VirtualFileManager;
-import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.project.MPSProject;
+import java.util.concurrent.Semaphore;
+import com.intellij.openapi.startup.StartupManager;
+import com.intellij.ide.startup.StartupManagerEx;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.core.platform.Platform;
 import org.jetbrains.annotations.Nullable;
@@ -112,7 +114,7 @@ public class IdeaEnvironment extends EnvironmentBase {
 
   @Override
   public void doDispose() {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       @Override
       public void run() {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
@@ -121,7 +123,7 @@ public class IdeaEnvironment extends EnvironmentBase {
           }
         });
       }
-    });
+    }, ModalityState.NON_MODAL);
   }
 
   private File createDummyProjectFile() {
@@ -170,10 +172,28 @@ public class IdeaEnvironment extends EnvironmentBase {
       }
     }, ModalityState.NON_MODAL);
     if (exc[0] != null) {
-      // this actually happens 
       throw new RuntimeException("ProjectManager could not load project from " + projectFile.getAbsolutePath(), exc[0]);
     }
+    waitForPostStartupActivities(project);
+
     return project[0].getComponent(MPSProject.class);
+  }
+
+  private void waitForPostStartupActivities(final com.intellij.openapi.project.Project[] project) {
+    final Semaphore sem = new Semaphore(0);
+    if (project[0] != null) {
+      StartupManager.getInstance(project[0]).registerPostStartupActivity(new Runnable() {
+        public void run() {
+          sem.release();
+        }
+      });
+    }
+    try {
+      sem.acquire();
+    } catch (InterruptedException e) {
+      throw new RuntimeException("Caught exception while waiting for the post startup activities", e);
+    }
+    assert StartupManagerEx.getInstanceEx(project[0]).postStartupActivityPassed();
   }
 
   @Override
@@ -183,10 +203,6 @@ public class IdeaEnvironment extends EnvironmentBase {
       public void run() {
       }
     }, ModalityState.NON_MODAL);
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-      }
-    });
     ModelAccess.instance().flushEventQueue();
   }
 

@@ -87,7 +87,7 @@ public abstract class ProjectTestBase extends BaseMpsTest {
     mpsProject.dispose();
   }
 
-  //@Test //turn off test
+  @Test //turn off test
   public void reopenMPSProject2() {
     // TODO: why need to create empty project if any way existing project going to be opened?
 

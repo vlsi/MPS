@@ -164,9 +164,6 @@ public abstract class EnvironmentBase implements Environment {
         LOG.info("Opening a new project");
       }
       Project project = doOpenProject(projectFile);
-      // We need to wait for all post startup activities to be finished. 
-      // As they run in App#invokeLater with ModalityState.NON_MODAL, 
-      // it is not guaranteed to be executed before test itself. 
       flushAllEvents();
       return project;
     }
