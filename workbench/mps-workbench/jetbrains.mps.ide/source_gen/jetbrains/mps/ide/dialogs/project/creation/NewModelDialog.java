@@ -372,6 +372,7 @@ public class NewModelDialog extends DialogWrapper {
       if (LanguageAspectSupport.isLanguageModelNameForbidden(modelName)) {
         String shortName = modelName.substring(modelName.lastIndexOf(".") + 1);
         setErrorText("This name isn't allowed because '" + shortName + "' is language aspect name");
+        return false;
       }
     }
 
