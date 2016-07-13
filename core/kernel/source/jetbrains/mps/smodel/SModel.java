@@ -661,7 +661,7 @@ public class SModel implements SModelData, UpdateModeSupport {
         return;
       }
       if (existingVersion != -1) {
-        throw new IllegalStateException("Can't add language import with different version. Old version: " + existingVersion + "; new version: " + version + "; model: " + getModelDescriptor() + "; language: " + language);
+        throw new IllegalStateException("Can't add language import with different version. Old version: " + existingVersion + "; new version: " + version + "; model: " + getModelDescriptor().getModelName() + "; language: " + language.getQualifiedName());
       }
     }
 
