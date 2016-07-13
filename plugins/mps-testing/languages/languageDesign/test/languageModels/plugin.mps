@@ -18,7 +18,6 @@
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
       <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
         <property id="2756621024541341363" name="file" index="1iqoE4" />
-        <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
       </concept>
       <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconExpression" flags="nn" index="1QGGTA">
         <child id="8974276187400029893" name="icon" index="1QGGTw" />
@@ -39,16 +38,10 @@
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
-      </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
-      </concept>
-      <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
-        <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
@@ -104,10 +97,7 @@
       <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD33/Language+tests+language#Languagetestslanguage-introduction" />
     </node>
     <node concept="1QGGSu" id="P5ZkC6x0ka" role="3vqPLo">
-      <node concept="10M0yZ" id="3L7HwaT3_LB" role="3xaMm5">
-        <ref role="1PxDUh" node="3L7HwaT3r1n" resolve="Icons" />
-        <ref role="3cqZAo" node="3L7HwaT3r1N" resolve="TestModel" />
-      </node>
+      <property role="1iqoE4" value="${module}/icons/model.png" />
     </node>
     <node concept="2V$Bhx" id="6xa2Sak8bGV" role="QG$2i">
       <property role="2V$B1T" value="8585453e-6bfb-4d80-98de-b16074f1d86c" />
