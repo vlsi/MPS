@@ -138,6 +138,7 @@
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
@@ -4084,8 +4085,8 @@
                                 <node concept="1bVj0M" id="u0TBa4e6mV" role="23t8la">
                                   <node concept="3clFbS" id="u0TBa4e6mW" role="1bW5cS">
                                     <node concept="3clFbF" id="u0TBa4e6mX" role="3cqZAp">
-                                      <node concept="2OqwBi" id="u0TBa4e6mY" role="3clFbG">
-                                        <node concept="2OqwBi" id="u0TBa4e6mZ" role="2Oq$k0">
+                                      <node concept="17R0WA" id="7DvEExA0XMU" role="3clFbG">
+                                        <node concept="2OqwBi" id="u0TBa4e6mZ" role="3uHU7B">
                                           <node concept="37vLTw" id="u0TBa4e6n0" role="2Oq$k0">
                                             <ref role="3cqZAo" node="u0TBa4e6n6" resolve="it" />
                                           </node>
@@ -4093,13 +4094,10 @@
                                             <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                                           </node>
                                         </node>
-                                        <node concept="liA8E" id="u0TBa4e6n2" role="2OqNvi">
-                                          <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                                          <node concept="2OqwBi" id="u0TBa4e6n3" role="37wK5m">
-                                            <node concept="30H73N" id="u0TBa4e6n4" role="2Oq$k0" />
-                                            <node concept="3TrcHB" id="u0TBa4e6n5" role="2OqNvi">
-                                              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                                            </node>
+                                        <node concept="2OqwBi" id="u0TBa4e6n3" role="3uHU7w">
+                                          <node concept="30H73N" id="u0TBa4e6n4" role="2Oq$k0" />
+                                          <node concept="3TrcHB" id="u0TBa4e6n5" role="2OqNvi">
+                                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                                           </node>
                                         </node>
                                       </node>
