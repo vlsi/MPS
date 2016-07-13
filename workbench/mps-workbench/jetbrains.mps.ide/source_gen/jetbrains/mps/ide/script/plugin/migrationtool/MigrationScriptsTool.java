@@ -21,7 +21,9 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import javax.swing.JOptionPane;
 import com.intellij.ui.content.Content;
@@ -57,11 +59,16 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
             final MigrationScriptFinder finder = new MigrationScriptFinder(scripts);
             final IResultProvider provider = FindUtils.makeProvider(finder);
             final SearchQuery query = new SearchQuery(scope);
-            final SearchResults results = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), query, provider);
+            final Wrappers._T<SearchResults> results = new Wrappers._T<SearchResults>();
+            ProjectHelper.fromIdeaProject(getProject()).getRepository().getModelAccess().runReadAction(new Runnable() {
+              public void run() {
+                results.value = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), query, provider);
+              }
+            });
             SwingUtilities.invokeLater(new Runnable() {
               @Override
               public void run() {
-                if (results.getSearchResults().isEmpty()) {
+                if (results.value.getSearchResults().isEmpty()) {
                   JOptionPane.showMessageDialog(getContentManager().getComponent(), "No applicable nodes found", "Migration Scripts", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                   int count = myViews.size();
