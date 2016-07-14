@@ -16201,6 +16201,23 @@
                 <property role="3LWZYw" value="jetbrains/mps/ide/editor/actions/MPSEditorActions.xml" />
               </node>
             </node>
+            <node concept="2HvfSZ" id="1JH2jV0Vj0s" role="39821P">
+              <node concept="3LWZYq" id="1JH2jV0Vj5T" role="2HvfZ1">
+                <property role="3LWZYl" value="/tips" />
+              </node>
+              <node concept="398BVA" id="1JH2jV0Vj1s" role="2HvfZ0">
+                <ref role="398BVh" node="4tNwrSpaf08" resolve="mps_home" />
+                <node concept="2Ry0Ak" id="1JH2jV0Vj1y" role="iGT6I">
+                  <property role="2Ry0Am" value="workbench" />
+                  <node concept="2Ry0Ak" id="1JH2jV0Vj1D" role="2Ry0An">
+                    <property role="2Ry0Am" value="resources_en" />
+                    <node concept="2Ry0Ak" id="1JH2jV0Vj1I" role="2Ry0An">
+                      <property role="2Ry0Am" value="source" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3_J27D" id="4tNwrSpaf0o" role="Nbhlr">
               <node concept="3Mxwew" id="4tNwrSpaf0p" role="3MwsjC">
                 <property role="3MwjfP" value="mps-plugin.jar" />
