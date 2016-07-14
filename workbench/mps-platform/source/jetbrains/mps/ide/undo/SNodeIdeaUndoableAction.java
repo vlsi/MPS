@@ -47,20 +47,18 @@ class SNodeIdeaUndoableAction implements UndoableAction {
       myIsGlobal |= a.isGlobal();
     }
 
-    if (!myIsGlobal) {
-      for (SNode virtualFileNode : undoContext.getVirtualFileNodes(wrapped)) {
-        if (virtualFileNode.getModel() == null) {
-          continue;
-        }
-        MPSNodeVirtualFile file = NodeVirtualFileSystem.getInstance().getFileFor(project.getRepository(), virtualFileNode);
-        assert file.hasValidMPSNode() :
-            "Invalid file was returned by VFS node is not available: " + virtualFileNode + ", deleted = " + (virtualFileNode.getModel() == null);
-
-        if (MPSUndoUtil.getDoc(file) == null) {
-          continue;
-        }
-        affected.add(MPSUndoUtil.getRefForDoc(MPSUndoUtil.getDoc(file)));
+    for (SNode virtualFileNode : undoContext.getVirtualFileNodes(wrapped)) {
+      if (virtualFileNode.getModel() == null) {
+        continue;
       }
+      MPSNodeVirtualFile file = NodeVirtualFileSystem.getInstance().getFileFor(project.getRepository(), virtualFileNode);
+      assert file.hasValidMPSNode() :
+          "Invalid file was returned by VFS node is not available: " + virtualFileNode + ", deleted = " + (virtualFileNode.getModel() == null);
+
+      if (MPSUndoUtil.getDoc(file) == null) {
+        continue;
+      }
+      affected.add(MPSUndoUtil.getRefForDoc(MPSUndoUtil.getDoc(file)));
     }
 
     myAffectedDocuments = affected.toArray(new DocumentReference[affected.size()]);
