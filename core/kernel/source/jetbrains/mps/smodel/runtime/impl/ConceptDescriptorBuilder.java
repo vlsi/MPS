@@ -59,7 +59,6 @@ public class ConceptDescriptorBuilder {
   private List<PropertyDescriptor> ownProperties = new ArrayList<PropertyDescriptor>();
   private List<ReferenceDescriptor> ownReferences = new ArrayList<ReferenceDescriptor>();
   private List<LinkDescriptor> ownLinks = new ArrayList<LinkDescriptor>();
-  private Icon myIcon;
   private int version = 0; //version 1 means canBeRoot is set
 
   //remove after migration
@@ -104,7 +103,7 @@ public class ConceptDescriptorBuilder {
 
   public ConceptDescriptorBuilder propertyDescriptors(Prop... d) {
     for (Prop p : d) {
-      ownProperties.add(new BasePropertyDescriptor(new SPropertyId(id, p.myId), p.myName));
+      ownProperties.add(new BasePropertyDescriptor(new SPropertyId(id, p.myId), p.myName, p.mySrcNode));
     }
     return this;
   }
@@ -116,7 +115,7 @@ public class ConceptDescriptorBuilder {
 
   public ConceptDescriptorBuilder referenceDescriptors(Ref... d) {
     for (Ref r : d) {
-      ownReferences.add(new BaseReferenceDescriptor(new SReferenceLinkId(id, r.myId), r.myName, r.myTargetConcept, r.myIsOptional));
+      ownReferences.add(new BaseReferenceDescriptor(new SReferenceLinkId(id, r.myId), r.myName, r.myTargetConcept, r.myIsOptional, r.mySrcNode));
     }
     return this;
   }
@@ -128,7 +127,8 @@ public class ConceptDescriptorBuilder {
 
   public ConceptDescriptorBuilder childDescriptors(Link... d) {
     for (Link l : d) {
-      ownLinks.add(new BaseLinkDescriptor(new SContainmentLinkId(id, l.myId), l.myName, l.myTargetConcept, l.myIsOptional, l.myIsMultiple, l.myIsUnordered));
+      ownLinks.add(new BaseLinkDescriptor(new SContainmentLinkId(id, l.myId), l.myName, l.myTargetConcept, l.myIsOptional, l.myIsMultiple, l.myIsUnordered,
+          l.mySrcNode));
     }
     return this;
   }
@@ -166,11 +166,6 @@ public class ConceptDescriptorBuilder {
 
   public ConceptDescriptorBuilder helpURL(String value) {
     helpUrl = value;
-    return this;
-  }
-
-  public ConceptDescriptorBuilder icon(Icon value) {
-    myIcon = value;
     return this;
   }
 
@@ -214,24 +209,36 @@ public class ConceptDescriptorBuilder {
     final boolean myIsOptional;
     final boolean myIsMultiple;
     final boolean myIsUnordered;
+    final SNodeReference mySrcNode;
 
     public Link(long id, String name, SConceptId targetConcept, boolean isOptional, boolean isMultiple, boolean isUnordered) {
+      this(id, name, targetConcept, isOptional, isMultiple, isUnordered, null);
+    }
+
+    public Link(long id, String name, SConceptId targetConcept, boolean isOptional, boolean isMultiple, boolean isUnordered, SNodeReference srcNode) {
       myId = id;
       myName = name;
       myTargetConcept = targetConcept;
       myIsOptional = isOptional;
       myIsMultiple = isMultiple;
       myIsUnordered = isUnordered;
+      mySrcNode = srcNode;
     }
   }
 
   public static class Prop {
     final long myId;
     final String myName;
+    final SNodeReference mySrcNode;
 
     public Prop(long id, String name) {
+      this(id, name, null);
+    }
+
+    public Prop(long id, String name, SNodeReference srcNode) {
       myId = id;
       myName = name;
+      mySrcNode = srcNode;
     }
   }
 
@@ -240,12 +247,18 @@ public class ConceptDescriptorBuilder {
     final String myName;
     final SConceptId myTargetConcept;
     final boolean myIsOptional;
+    final SNodeReference mySrcNode;
 
     public Ref(long id, String name, SConceptId targetConcept, boolean isOptional) {
+      this(id, name, targetConcept, isOptional, null);
+    }
+
+    public Ref(long id, String name, SConceptId targetConcept, boolean isOptional, SNodeReference srcNode) {
       myId = id;
       myName = name;
       myTargetConcept = targetConcept;
       myIsOptional = isOptional;
+      mySrcNode = srcNode;
     }
   }
 }
