@@ -18,14 +18,19 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.impl.DebugMappingsBuilder;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -38,11 +43,12 @@ public class ModelCheckpoints {
   private final List<CheckpointState> myStates;
   private final PlanIdentity myPlan;
 
-  /*package*/ ModelCheckpoints(PlanIdentity plan, CheckpointState[] states) {
-    // XXX I don't quite like plan argument here, as it's implicitly assumed
-    // states.getCheckpoint().getPlan matches plan.
-    myPlan = plan;
-    myStates = Arrays.asList(states);
+  /**
+   * @param state not null
+   */
+  /*package*/ ModelCheckpoints(CheckpointState state) {
+    myPlan = state.getCheckpoint().getPlan();
+    myStates = Collections.singletonList(state);
   }
 
   // FIXME I don't really use a repository down in DebugMappingBuilder.restore()!
@@ -80,5 +86,31 @@ public class ModelCheckpoints {
       }
     }
     return null;
+  }
+
+  /**
+   * @param state not null
+   * @return collection of stale checkpoint states that has been discarded, may be empty.
+   */
+  /*package*/ Collection<CheckpointState> updateAndDiscardOutdated(CheckpointState state) {
+    for (int i = 0; i < myStates.size(); i++) {
+      CheckpointState cps = myStates.get(i);
+      if (!cps.getCheckpoint().equals(state.getCheckpoint())) {
+        continue;
+      }
+      myStates.set(i, state);
+      return Collections.singleton(cps);
+    }
+    return Collections.emptyList();
+  }
+
+  /*package*/ void discardOutdated(Collection<SModelReference> outdatedModels, Collection<CheckpointState> discarded) {
+    for (Iterator<CheckpointState> it = myStates.iterator(); it.hasNext(); ) {
+      CheckpointState next = it.next();
+      if (CollectionUtil.intersects(new ModelImports(next.getCheckpointModel()).getImportedModels(), outdatedModels)) {
+        discarded.add(next);
+        it.remove();
+      }
+    }
   }
 }
