@@ -20,7 +20,6 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.util.WaitForProgressToShow;
-import com.intellij.util.containers.HashMap;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -29,8 +28,12 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * A parent class for ProjectPluginManager and ApplicationPluginManager.
@@ -45,12 +48,12 @@ import java.util.Map;
 public abstract class BasePluginManager<T> implements PluginLoader {
   private static final Logger LOG = LogManager.getLogger(BasePluginManager.class);
 
-  protected final Object myPluginsLock = new Object();
+  protected final Object myPluginsLock = new Object(); //guarding my fields
   protected final SRepository myRepository;
   private final PluginLoaderRegistry myPluginLoaderRegistry;
 
-  private List<T> mySortedPlugins = new ArrayList<T>();
-  private final Map<PluginContributor, T> myContributorToPlugin = new HashMap<>();
+  private List<T> mySortedPlugins = new ArrayList<T>(); // does not contain nulls
+  private final Map<PluginContributor, T> myContributorToPlugin = new LinkedHashMap<>(); // NOTE ALLOWED NULL VALUES
 
   public BasePluginManager(@NotNull SRepository repository, PluginLoaderRegistry pluginLoaderRegistry) {
     myRepository = repository;
@@ -75,78 +78,87 @@ public abstract class BasePluginManager<T> implements PluginLoader {
 
   @Override
   public void loadPlugins(final List<PluginContributor> contributors, @NotNull ProgressMonitor monitor) {
-    synchronized (myPluginsLock) {
-      try {
-        int size = contributors.size();
-        monitor.start("Loading " + size + " MPS plugins", 1);
-        showProgress();
-        LOG.debug("Loading plugins from " + size + " contributors [" + toString() + "]");
-        final List<T> plugins = createPlugins(contributors);
-        afterPluginsCreated(plugins);
-      } finally {
-        monitor.done();
+    try {
+      int size = contributors.size();
+      LOG.debug("Loading plugins from " + size + " contributors [" + toString() + "]");
+      monitor.start("Loading " + size + " MPS plugins", 1);
+      showProgress();
+      final Map<PluginContributor, T> plugins = createPlugins(contributors);
+      synchronized (myPluginsLock) {
+        plugins.entrySet().forEach(entry -> {
+          PluginContributor contributor = entry.getKey();
+          @Nullable T plugin = entry.getValue();
+          if (myContributorToPlugin.containsKey(contributor)) { // not in one step because nulls are allowed
+            LOG.error("", new IllegalArgumentException(this + ": contributor " + contributor + " is already registered"));
+          }
+          myContributorToPlugin.put(contributor, plugin);
+        });
+        List<T> notNullPlugins = plugins.values().stream().filter(Objects::nonNull).collect(Collectors.toList());
+        mySortedPlugins.addAll(notNullPlugins);
+        afterPluginsCreated(new ArrayList<>(notNullPlugins));
       }
+    } finally {
+      monitor.done();
     }
   }
 
   @Override
   public void unloadPlugins(final List<PluginContributor> contributors, @NotNull ProgressMonitor monitor) {
+    int size = contributors.size();
+    LOG.debug("Unloading MPS plugins from " + size + " contributors [" + toString() + "]");
+    final List<T> plugins;
     synchronized (myPluginsLock) {
-      try {
-        int size = contributors.size();
-        monitor.start("Unloading " + size + " MPS plugins", 1);
-        showProgress();
-        LOG.debug("Unloading MPS plugins from " + size + " contributors [" + toString() + "]");
-        final List<T> plugins = new ArrayList<T>();
+      plugins = calcPluginsToUnload(contributors);
+      mySortedPlugins.removeAll(plugins);
+    }
 
-        for (PluginContributor contributor : contributors) {
-          if (!myContributorToPlugin.containsKey(contributor)) {
-            LOG.error("", new IllegalStateException("Contributor " + contributor + " was not registered"));
-            continue;
-          }
-          T plugin = myContributorToPlugin.remove(contributor);
+    try {
+      monitor.start("Unloading " + size + " MPS plugins", 1);
+      showProgress();
+      beforePluginsDisposed(plugins);
+      disposePlugins(plugins);
+    } finally {
+      monitor.done();
+    }
+  }
 
-          if (plugin != null) {
-            plugins.add(plugin);
-          }
+  @NotNull
+  private List<T> calcPluginsToUnload(List<PluginContributor> contributors) {
+    final List<T> plugins = new ArrayList<>();
+
+    for (PluginContributor contributor : contributors) {
+      if (!myContributorToPlugin.containsKey(contributor)) { // not in one step because nulls are allowed
+        LOG.error("", new IllegalArgumentException(this + ": contributor " + contributor + " was not registered"));
+      } else {
+        @Nullable T plugin = myContributorToPlugin.remove(contributor);
+        LOG.trace(this + ": unloading plugin " + plugin + " from the contributor " + contributor);
+
+        if (plugin != null) {
+          plugins.add(plugin);
         }
-
-        mySortedPlugins.removeAll(plugins);
-        beforePluginsDisposed(plugins);
-        disposePlugins(plugins, monitor);
-      } finally {
-        monitor.done();
       }
     }
+    return plugins;
   }
 
   private void showProgress() {
     ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
     if (!ApplicationManager.getApplication().isHeadlessEnvironment() && progressIndicator != null) {
       progressIndicator.setIndeterminate(true);
-      WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(() -> {});
+      WaitForProgressToShow.execute(progressIndicator);
     }
   }
 
-  private List<T> createPlugins(List<PluginContributor> contributors) {
-    List<T> plugins = new ArrayList<T>();
+  private Map<PluginContributor, T> createPlugins(List<PluginContributor> contributors) {
+    Map<PluginContributor, T> plugins = new LinkedHashMap<>();
 
     ApplicationManager.getApplication().invokeAndWait(() -> {
       for (PluginContributor contributor : contributors) {
         T plugin = createPluginChecked(contributor);
-        if (plugin != null) {
-          plugins.add(plugin);
-        }
-
-        if (myContributorToPlugin.containsKey(contributor)) {
-          LOG.error("", new IllegalStateException("Contributor " + contributor + " is already registered"));
-        } else {
-          myContributorToPlugin.put(contributor, plugin);
-        }
+        LOG.trace(this + ": creating plugin " + plugin + " from the contributor " + contributor);
+        plugins.put(contributor, plugin);
       }
     }, getModalityState());
-
-    mySortedPlugins.addAll(plugins);
     return plugins;
   }
 
@@ -154,12 +166,12 @@ public abstract class BasePluginManager<T> implements PluginLoader {
   private T createPluginChecked(PluginContributor contributor) {
     T plugin = null;
     try {
-      LOG.debug("Creating plugin from the contributor " + contributor);
+      LOG.trace(this + ": creating plugin from the contributor " + contributor);
       plugin = createPlugin(contributor);
     } catch (LinkageError le) {
-      LOG.error("Contributor " + contributor + " threw a linkage error during plugin creation ", le);
+      LOG.error(this + ": contributor " + contributor + " threw a linkage error during plugin creation ", le);
     } catch (Throwable t) {
-      LOG.error("Contributor " + contributor + " threw an exception during plugin creation " + t.getMessage(), t);
+      LOG.error(this + ": contributor " + contributor + " threw an exception during plugin creation " + t.getMessage(), t);
     }
     return plugin;
   }
@@ -169,16 +181,15 @@ public abstract class BasePluginManager<T> implements PluginLoader {
     return ModalityState.defaultModalityState();
   }
 
-  private void disposePlugins(final List<T> plugins, ProgressMonitor monitor) {
+  private void disposePlugins(final List<T> plugins) {
     ApplicationManager.getApplication().invokeAndWait(() -> {
       for (T plugin : plugins) {
-        monitor.step(plugin.toString());
         try {
           disposePlugin(plugin);
         } catch (LinkageError le) {
-          LOG.error("Plugin " + plugin + " threw a linkage error during disposing", le);
+          LOG.error(this + ": plugin " + plugin + " threw a linkage error during disposing", le);
         } catch (Throwable t) {
-          LOG.error("Plugin " + plugin + " threw an exception during disposing " + t.getMessage(), t);
+          LOG.error(this + ": plugin " + plugin + " threw an exception during disposing " + t.getMessage(), t);
         }
       }
     }, getModalityState());

@@ -24,7 +24,7 @@ import java.util.List;
  * Note: plugins must come in the right order
  */
 public interface PluginLoader {
-  void loadPlugins(final List<PluginContributor> contributors, ProgressMonitor monitor);
+  void loadPlugins(final List<PluginContributor> contributors, @NotNull ProgressMonitor monitor);
 
   void unloadPlugins(List<PluginContributor> contributors, @NotNull ProgressMonitor monitor);
 }
