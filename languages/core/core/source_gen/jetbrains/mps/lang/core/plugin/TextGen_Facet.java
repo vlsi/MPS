@@ -57,6 +57,7 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.text.impl.DebugInfoBuilder;
 import jetbrains.mps.generator.ModelExports;
+import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.util.IStatus;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -298,6 +299,7 @@ public class TextGen_Facet extends IFacet.Stub {
                         cgl.register(javaSourcesLoc, TraceInfoCache.getInstance().newCacheGenerator(new DebugInfoBuilder(mpsProject.getRepository()).build(tgr)));
                       }
                       cgl.register(javaSourcesLoc, new ModelExports.CacheGen());
+                      cgl.register(javaSourcesLoc, new CrossModelEnvironment.CacheGen());
                       IStatus status = cgl.serialize(inputResource.status());
                       if (status.isError()) {
                         monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(status.getMessage())));

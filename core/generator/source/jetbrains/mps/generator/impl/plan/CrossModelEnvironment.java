@@ -15,9 +15,12 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
+import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientModelsProvider;
+import jetbrains.mps.generator.cache.CacheGenerator;
+import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.impl.ModelStreamManager;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
@@ -167,6 +170,27 @@ public class CrossModelEnvironment {
         mcp.discardOutdated(forgottenCheckpoints, discarded);
       }
       // FIXME discarded - as queue and repeat until queue is empty
+    }
+  }
+
+  public static class CacheGen implements CacheGenerator {
+    @Override
+    public void generateCache(GenerationStatus status, StreamHandler handler) {
+      CrossModelEnvironment cme = status.getCrossModelEnvironment();
+      if (cme == null) {
+        return;
+      }
+      ModelCheckpoints mcp = cme.myTransientCheckpoints.get(status.getOriginalInputModel().getReference());
+      if (mcp == null) {
+        // may happen if the model has been generated without a custom plan
+        // FIXME we shall look into generation tasks rather than original input model, and there could be tasks
+        //       that do not produce ModelCheckpoints (i.e. are generated without a custom plan)
+        return;
+      }
+      CheckpointVault cpVault = cme.getPersistedCheckpoints(status.getOriginalInputModel());
+      assert cpVault != null;
+      cpVault.updateCheckpointsOf(mcp);
+      cpVault.saveChanged(handler);
     }
   }
 }

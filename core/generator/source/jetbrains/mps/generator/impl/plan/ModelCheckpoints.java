@@ -31,6 +31,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 /**
  * All checkpoint models known for (associated with) the given original model for a given generation plan.
@@ -67,6 +69,10 @@ public class ModelCheckpoints {
     myStates = Arrays.asList(states);
   }
 
+  /*package*/ PlanIdentity getPlan() {
+    return myPlan;
+  }
+
   /**
    * Retrieve state that corresponds to transition between specified checkpoints.
    * Starting checkpoint is optional, original input model is assumed to be 'checkpoint' in this case.
@@ -76,13 +82,21 @@ public class ModelCheckpoints {
    */
   @Nullable
   public CheckpointState find(@NotNull Checkpoint targetPoint) {
-    CheckpointIdentity tp = new CheckpointIdentity(myPlan, targetPoint);
+    return find(new CheckpointIdentity(myPlan, targetPoint));
+  }
+
+  @Nullable
+  public CheckpointState find(@NotNull CheckpointIdentity tp) {
     for (CheckpointState cps : myStates) {
       if (cps.getCheckpoint().equals(tp)) {
         return cps;
       }
     }
     return null;
+  }
+
+  /*package*/ List<CheckpointIdentity> getKnownCheckpoints() {
+    return StreamSupport.stream(myStates.spliterator(), false).map(CheckpointState::getCheckpoint).collect(Collectors.toList());
   }
 
   /**

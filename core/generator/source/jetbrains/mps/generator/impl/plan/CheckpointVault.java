@@ -15,7 +15,10 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
+import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.impl.ModelStreamManager;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.Logger;
@@ -33,6 +36,7 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.StreamSupport;
 
 /**
  * Container for checkpoint models, access to deployed/available models.
@@ -87,7 +91,8 @@ public class CheckpointVault {
     return null;
   }
 
-  public void updateCheckpointsOf(@NotNull PlanIdentity plan, @NotNull ModelCheckpoints mcp) {
+  public void updateCheckpointsOf(@NotNull ModelCheckpoints mcp) {
+    PlanIdentity plan = mcp.getPlan();
     Entry existing = null;
     for (Entry entry : myKnownCheckpoints) {
       if (plan.equals(entry.myPlan)) {
@@ -95,9 +100,17 @@ public class CheckpointVault {
         break;
       }
     }
+    List<Pair<CheckpointIdentity, String>> files = new ArrayList<>();
+    mcp.getKnownCheckpoints().forEach(cpId -> files.add(new Pair<>(cpId, null)));
     if (existing == null) {
       myKnownCheckpoints.add(existing = new Entry(plan, Collections.emptyMap()));
+      existing.myFiles.addAll(files);
+    } else {
+      // FIXME respect if filename of CP is known, add blank names for missing CPs only
+      existing.myFiles.clear();
+      existing.myFiles.addAll(files);
     }
+    existing.myIsChanged = true;
     existing.myCheckpoints = mcp;
   }
 
@@ -136,14 +149,15 @@ public class CheckpointVault {
       for (Pair<CheckpointIdentity, String> cpEntry : entry.myFiles){
         Element cpElement = new Element("checkpoint");
         cpElement.setAttribute("id", cpEntry.o1.getPersistenceValue());
-        // FIXME respect if filename of CP is known
         // FIXME ensure names are unique
-        StringBuilder fname = new StringBuilder();
-        fname.append(entry.myPlan.getPersistenceValue());
-        fname.append('-');
-        fname.append(cpEntry.o1.getPersistenceValue());
-        fname.append(".mps");
-        cpElement.setAttribute("file", fname.toString());
+        String filename;
+        if (cpEntry.o2 != null) {
+          filename = cpEntry.o2;
+        } else {
+          filename = getFilename(cpEntry.o1);
+          cpEntry.o2 = filename;
+        }
+        cpElement.setAttribute("file", filename);
         planElement.addContent(cpElement);
       }
       root.addContent(planElement);
@@ -151,14 +165,47 @@ public class CheckpointVault {
     return root;
   }
 
+  private String getFilename(CheckpointIdentity cpId) {
+    StringBuilder fname = new StringBuilder();
+    fname.append(cpId.getPlan().getPersistenceValue());
+    fname.append('-');
+    fname.append(cpId.getPersistenceValue());
+    fname.append(".mps");
+    return fname.toString();
+  }
+
   private void loadModels(Entry entry) {
     // FIXME entry.myFiles -> entry.myCheckpoints
   }
 
+  // FIXME use of StreamHandler;
+  // XXX is it possible to get more than 1 Entry changed?
+  /*package*/ void saveChanged(StreamHandler handler) {
+    if (StreamSupport.stream(myKnownCheckpoints.spliterator(), false).noneMatch(e -> e.myIsChanged)) {
+      return;
+    }
+    Element cpRegistry = buildCheckpointRegistry();
+    // FIXME it's bad to use different sets of API (StreamProvider vs StreamHandler) to read/write CPs.
+    handler.saveStream("checkpoints", cpRegistry);
+    for (Entry entry : myKnownCheckpoints) {
+      if (!entry.myIsChanged) {
+        continue;
+      }
+      // buildCheckpointRegistry() above ensures we've got all file names;
+      for (Pair<CheckpointIdentity, String> p : entry.myFiles) {
+        CheckpointState cpState = entry.myCheckpoints.find(p.o1);
+        assert cpState != null;
+        Document d = ModelPersistence.saveModel(((SModelBase) cpState.getCheckpointModel()).getSModel());
+        handler.saveStream(p.o2, d.getRootElement());
+      }
+    }
+  }
+
   private static class Entry {
     public final PlanIdentity myPlan;
-    public final List<Pair<CheckpointIdentity, String>> myFiles;
+    public final List<Pair<CheckpointIdentity, String>> myFiles; // modifiable collection
     public ModelCheckpoints myCheckpoints;
+    public boolean myIsChanged = false; // true indicates checkpoint models were updated and need save
 
     // I don't like neither Map nor List<Pair>, likely need another, custom structure
     public Entry(PlanIdentity plan, Map<CheckpointIdentity, String> files) {

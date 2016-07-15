@@ -282,6 +282,8 @@ class GenerationSession {
             myDependenciesBuilder.getResult(myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
             myLogger.getWarningCount() > 0, false);
         generationStatus.setModelExports(mySessionContext.getExports().getExports());
+        // FIXME uncomment once CME persistence is full-fledged
+        // generationStatus.setCrossModelEnvironment(mySessionContext.getCrossModelEnvironment());
         success = generationStatus.isOk();
         return generationStatus;
       } catch (GenerationCanceledException gce) {
