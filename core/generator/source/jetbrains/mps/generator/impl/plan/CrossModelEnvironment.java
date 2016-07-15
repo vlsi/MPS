@@ -79,7 +79,7 @@ public class CrossModelEnvironment {
       @Override
       public ModelCheckpoints compute() {
         SModel[] cpModels = getCheckpointModelsFor(model);
-        ModelCheckpoints mcp = new ModelCheckpoints(myTransientModelProvider.getRepository(), planIdentity, cpModels);
+        ModelCheckpoints mcp = new ModelCheckpoints(planIdentity, cpModels);
         myTransientCheckpoints.put(model.getReference(), mcp);
         return mcp;
       }

@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
-import jetbrains.mps.generator.impl.DebugMappingsBuilder;
+import jetbrains.mps.generator.impl.MappingLabelExtractor;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -25,7 +25,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -51,20 +50,18 @@ public class ModelCheckpoints {
     myStates = Collections.singletonList(state);
   }
 
-  // FIXME I don't really use a repository down in DebugMappingBuilder.restore()!
-  /*package*/ ModelCheckpoints(SRepository repository, PlanIdentity plan, SModel[] models) {
+  /*package*/ ModelCheckpoints(PlanIdentity plan, SModel[] models) {
     myPlan = plan;
     CheckpointState[] states = new CheckpointState[models.length];
     for (int i = 0; i < models.length; i++) {
       String stereotype = SModelStereotype.getStereotype(models[i]);
       assert stereotype.startsWith("cp-");
       CheckpointIdentity cp = new CheckpointIdentity(plan, stereotype.substring(3));
-      MappingsMemento memento = new MappingsMemento();
       // FIXME read and fill memento with MappingLabels
       //       now, just restore it from debug root we've got there. Later (once true persistence is done), shall consider
       //       option to keep mappings inside a model (not to bother with persistence) or to follow MappingsMemento approach with
       //       custom serialization code (and to solve the issue of associated model streams serialized/managed (i.e. deleted) along with a cp model)
-      new DebugMappingsBuilder(repository, Collections.emptyMap()).restore(DebugMappingsBuilder.findDebugNode(models[i]), memento);
+      MappingsMemento memento = new MappingLabelExtractor().restore(MappingLabelExtractor.findDebugNode(models[i]));
       states[i] = new CheckpointState(memento, models[i], cp);
     }
     myStates = Arrays.asList(states);
