@@ -159,10 +159,10 @@
         <child id="5692353713941573325" name="textFunction" index="1hCUd6" />
       </concept>
       <concept id="1630016958697718209" name="jetbrains.mps.lang.editor.structure.IMenuReference_Default" flags="ng" index="2Z_bC8">
-        <reference id="1630016958698373342" name="conceptNew" index="2ZyFGn" />
+        <reference id="1630016958698373342" name="concept" index="2ZyFGn" />
       </concept>
       <concept id="1630016958697344083" name="jetbrains.mps.lang.editor.structure.IMenu_Concept" flags="ng" index="2ZABuq">
-        <reference id="6591946374543067572" name="conceptDeclarationNew" index="aqKnT" />
+        <reference id="6591946374543067572" name="conceptDeclaration" index="aqKnT" />
       </concept>
       <concept id="3961072808175293133" name="jetbrains.mps.lang.editor.structure.ITransformationMenuReference" flags="ng" index="1ahXLQ" />
       <concept id="5692353713941573329" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_ActionLabelText" flags="ig" index="1hCUdq" />
@@ -2042,6 +2042,80 @@
             <node concept="IWg2L" id="4CpFf$Tw93i" role="IWgqQ">
               <node concept="3clFbS" id="4CpFf$Tw93j" role="2VODD2" />
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="20vEJZ2BX9H">
+    <property role="3GE5qa" value="RunTime" />
+    <property role="TrG5h" value="NestedVariables_AreGeneratedCorrectly" />
+    <node concept="rbkbI" id="20vEJZ2BZFy" role="LiRBU">
+      <node concept="LIFWc" id="6CXbUwx775x" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="20vEJZ2C19a" role="LjaKd">
+      <node concept="3cpWs8" id="20vEJZ2C19k" role="3cqZAp">
+        <node concept="3cpWsn" id="20vEJZ2C19l" role="3cpWs9">
+          <property role="TrG5h" value="items" />
+          <node concept="_YKpA" id="20vEJZ2C19m" role="1tU5fm">
+            <node concept="3uibUv" id="20vEJZ2C19n" role="_ZDj9">
+              <ref role="3uigEE" to="uddc:~TransformationMenuItem" resolve="TransformationMenuItem" />
+            </node>
+          </node>
+          <node concept="2YIFZM" id="20vEJZ2C19o" role="33vP2m">
+            <ref role="1Pybhc" node="229s7wVDmym" resolve="MenuLoadingUtils" />
+            <ref role="37wK5l" node="5oiZ4v5db60" resolve="loadNamedMenu" />
+            <node concept="369mXd" id="20vEJZ2C19p" role="37wK5m" />
+            <node concept="1N_AGu" id="20vEJZ2C19q" role="37wK5m">
+              <ref role="1N_AGt" to="j2fg:4yPLZV9qC8H" resolve="WithNestedVariables" />
+            </node>
+            <node concept="Xl_RD" id="20vEJZ2C19r" role="37wK5m">
+              <property role="Xl_RC" value="test location" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="20vEJZ2C19s" role="3cqZAp" />
+      <node concept="3cpWs8" id="20vEJZ2C19t" role="3cqZAp">
+        <node concept="3cpWsn" id="20vEJZ2C19u" role="3cpWs9">
+          <property role="TrG5h" value="item" />
+          <node concept="3uibUv" id="20vEJZ2C19v" role="1tU5fm">
+            <ref role="3uigEE" to="uddc:~ActionItem" resolve="ActionItem" />
+          </node>
+          <node concept="10QFUN" id="20vEJZ2C19w" role="33vP2m">
+            <node concept="3uibUv" id="20vEJZ2C19x" role="10QFUM">
+              <ref role="3uigEE" to="uddc:~ActionItem" resolve="ActionItem" />
+            </node>
+            <node concept="2OqwBi" id="20vEJZ2C19y" role="10QFUP">
+              <node concept="37vLTw" id="20vEJZ2C19z" role="2Oq$k0">
+                <ref role="3cqZAo" node="20vEJZ2C19l" resolve="items" />
+              </node>
+              <node concept="34jXtK" id="20vEJZ2C19$" role="2OqNvi">
+                <node concept="3cmrfG" id="20vEJZ2C19_" role="25WWJ7">
+                  <property role="3cmrfH" value="0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vlDli" id="20vEJZ2C3p$" role="3cqZAp">
+        <node concept="Xl_RD" id="20vEJZ2C3xj" role="3tpDZB">
+          <property role="Xl_RC" value="v = 10, t = 11" />
+        </node>
+        <node concept="2OqwBi" id="20vEJZ2C3Dt" role="3tpDZA">
+          <node concept="37vLTw" id="20vEJZ2C3Du" role="2Oq$k0">
+            <ref role="3cqZAo" node="20vEJZ2C19u" resolve="item" />
+          </node>
+          <node concept="liA8E" id="20vEJZ2C3Dv" role="2OqNvi">
+            <ref role="37wK5l" to="uddc:~ActionItem.getLabelText(java.lang.String):java.lang.String" resolve="getLabelText" />
+            <node concept="Xl_RD" id="20vEJZ2C3Dw" role="37wK5m" />
           </node>
         </node>
       </node>

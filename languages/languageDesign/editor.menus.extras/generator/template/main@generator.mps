@@ -220,6 +220,7 @@
       <property role="TrG5h" value="ContextClass" />
       <node concept="312cEu" id="6kJcyCQ$JZg" role="jymVt">
         <property role="TrG5h" value="IntentionMenuPart" />
+        <property role="2bfB8j" value="true" />
         <node concept="3clFbW" id="6kJcyCQ$JZh" role="jymVt">
           <node concept="3cqZAl" id="6kJcyCQ$JZi" role="3clF45" />
           <node concept="3Tm1VV" id="6kJcyCQ$JZj" role="1B3o_S" />
@@ -300,7 +301,7 @@
         </node>
         <node concept="2tJIrI" id="6kJcyCQ$JZL" role="jymVt" />
         <node concept="312cEu" id="6kJcyCQ$JZM" role="jymVt">
-          <property role="2bfB8j" value="false" />
+          <property role="2bfB8j" value="true" />
           <property role="1sVAO0" value="false" />
           <property role="1EXbeo" value="false" />
           <property role="TrG5h" value="Item" />
@@ -446,6 +447,7 @@
       <property role="TrG5h" value="ContextClass" />
       <node concept="312cEu" id="46W80XA3tr9" role="jymVt">
         <property role="TrG5h" value="RefactoringMenuPart" />
+        <property role="2bfB8j" value="true" />
         <node concept="3clFbW" id="46W80XA3tra" role="jymVt">
           <node concept="3cqZAl" id="46W80XA3trb" role="3clF45" />
           <node concept="3Tm1VV" id="46W80XA3trc" role="1B3o_S" />
@@ -526,7 +528,7 @@
         </node>
         <node concept="2tJIrI" id="46W80XA3trE" role="jymVt" />
         <node concept="312cEu" id="46W80XA3trF" role="jymVt">
-          <property role="2bfB8j" value="false" />
+          <property role="2bfB8j" value="true" />
           <property role="1sVAO0" value="false" />
           <property role="1EXbeo" value="false" />
           <property role="TrG5h" value="Item" />
@@ -647,6 +649,7 @@
       <property role="TrG5h" value="ContextClass" />
       <node concept="312cEu" id="20Jj4S2CJrp" role="jymVt">
         <property role="TrG5h" value="PluginActionMenuPart" />
+        <property role="2bfB8j" value="true" />
         <node concept="3clFbW" id="20Jj4S2CJrq" role="jymVt">
           <node concept="3cqZAl" id="20Jj4S2CJrr" role="3clF45" />
           <node concept="3Tm1VV" id="20Jj4S2CJrs" role="1B3o_S" />
@@ -754,7 +757,7 @@
         </node>
         <node concept="2tJIrI" id="20Jj4S2CJrU" role="jymVt" />
         <node concept="312cEu" id="20Jj4S2CJrV" role="jymVt">
-          <property role="2bfB8j" value="false" />
+          <property role="2bfB8j" value="true" />
           <property role="1sVAO0" value="false" />
           <property role="1EXbeo" value="false" />
           <property role="TrG5h" value="Item" />

@@ -13863,6 +13863,34 @@
       <node concept="PMmxH" id="VN4DhfD39B" role="3EZMnx">
         <ref role="PMmxG" node="VN4DhfD2Vg" resolve="TransformationMenuPartAlias" />
       </node>
+      <node concept="3F0ifn" id="6CXbUwx7i5e" role="3EZMnx">
+        <property role="3F0ifm" value="variables" />
+        <node concept="pVoyu" id="6CXbUwx7i5C" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="6CXbUwx7i5D" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="6CXbUwx7i68" role="3EZMnx">
+        <node concept="3F2HdR" id="6CXbUwx7i6H" role="3EZMnx">
+          <ref role="1NtTu8" to="tpc2:6CXbUwx7i1d" />
+          <node concept="pVoyu" id="6CXbUwx7i6P" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="pj6Ft" id="6CXbUwx7i6Q" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="lj46D" id="6CXbUwx7i6R" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="l2Vlx" id="6CXbUwx7i6J" role="2czzBx" />
+        </node>
+        <node concept="l2Vlx" id="6CXbUwx7i6d" role="2iSdaV" />
+        <node concept="lj46D" id="6CXbUwx7i8z" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
       <node concept="3F0ifn" id="7_cYeEufyYU" role="3EZMnx">
         <property role="3F0ifm" value="condition" />
         <node concept="pVoyu" id="7_cYeEui1Id" role="3F10Kt">
@@ -14977,6 +15005,34 @@
     <node concept="3EZMnI" id="6ed47gdcsX2" role="2wV5jI">
       <node concept="PMmxH" id="6ed47gdcsX3" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F0ifn" id="u0TBa493ma" role="3EZMnx">
+        <property role="3F0ifm" value="variables" />
+        <node concept="pVoyu" id="u0TBa493mb" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="u0TBa493mc" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="u0TBa493md" role="3EZMnx">
+        <node concept="3F2HdR" id="u0TBa493me" role="3EZMnx">
+          <ref role="1NtTu8" to="tpc2:u0TBa493ex" />
+          <node concept="pVoyu" id="u0TBa493mf" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="pj6Ft" id="u0TBa493mg" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="lj46D" id="u0TBa493mh" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="l2Vlx" id="u0TBa493mi" role="2czzBx" />
+        </node>
+        <node concept="l2Vlx" id="u0TBa493mj" role="2iSdaV" />
+        <node concept="lj46D" id="u0TBa493mk" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
       </node>
       <node concept="3F0ifn" id="6ed47gdcsX4" role="3EZMnx">
         <property role="3F0ifm" value="condition" />
@@ -18289,6 +18345,46 @@
     </node>
     <node concept="2tJIrI" id="lcjj1ZQrcw" role="jymVt" />
     <node concept="3Tm1VV" id="lcjj1ZKQsM" role="1B3o_S" />
+  </node>
+  <node concept="24kQdi" id="4yPLZV9glx9">
+    <property role="3GE5qa" value="Menu.Transformation.Variables" />
+    <ref role="1XX52x" to="tpc2:h9At2QK" resolve="TransformationMenuVariableDeclaration" />
+    <node concept="3EZMnI" id="havXDHI" role="2wV5jI">
+      <property role="3EZMnw" value="false" />
+      <node concept="3F1sOY" id="havXDHJ" role="3EZMnx">
+        <ref role="1NtTu8" to="tpee:4VkOLwjf83e" />
+      </node>
+      <node concept="PMmxH" id="4yPLZV9gE0K" role="3EZMnx">
+        <ref role="PMmxG" to="tpen:hcE9nLY" resolve="VariableDeclaration_NameCellComponent" />
+      </node>
+      <node concept="3F0ifn" id="havXDHL" role="3EZMnx">
+        <property role="3F0ifm" value="=" />
+      </node>
+      <node concept="3F1sOY" id="4yPLZV9gE0T" role="3EZMnx">
+        <ref role="1NtTu8" to="tpc2:u0TBa40ZKR" />
+      </node>
+      <node concept="l2Vlx" id="4yPLZV9gE0D" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="u0TBa40XVY">
+    <property role="3GE5qa" value="Menu.Substitute.Variables" />
+    <ref role="1XX52x" to="tpc2:u0TBa40TxV" resolve="SubstituteMenuVariableDeclaration" />
+    <node concept="3EZMnI" id="u0TBa40XVZ" role="2wV5jI">
+      <property role="3EZMnw" value="false" />
+      <node concept="3F1sOY" id="u0TBa40XW0" role="3EZMnx">
+        <ref role="1NtTu8" to="tpee:4VkOLwjf83e" />
+      </node>
+      <node concept="PMmxH" id="u0TBa40XW1" role="3EZMnx">
+        <ref role="PMmxG" to="tpen:hcE9nLY" resolve="VariableDeclaration_NameCellComponent" />
+      </node>
+      <node concept="3F0ifn" id="u0TBa40XW2" role="3EZMnx">
+        <property role="3F0ifm" value="=" />
+      </node>
+      <node concept="3F1sOY" id="u0TBa40XW3" role="3EZMnx">
+        <ref role="1NtTu8" to="tpee:fz3vP1I" />
+      </node>
+      <node concept="l2Vlx" id="u0TBa40XW4" role="2iSdaV" />
+    </node>
   </node>
 </model>
 

@@ -8,7 +8,7 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
-import jetbrains.mps.lang.editor.menus.ConditionalMenuPart;
+import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -38,7 +38,7 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
     result.add(new BaseConcept_SubstituteMenu.SubstituteMenuPart_Group_s3h0kg_b());
     return result;
   }
-  public static class SubstituteMenuPart_Group_s3h0kg_a extends ConditionalMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SubstituteMenuPart_Group_s3h0kg_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return (_context.getCurrentChild() == null) || SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(_context.getCurrentChild())), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
@@ -60,7 +60,7 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
     protected Iterable<? extends SAbstractConcept> getParameters(SubstituteMenuContext _context) {
       return ((Iterable<SConcept>) SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SNodeOperations.getModel(_context.getParentNode())));
     }
-    private static class SubstituteMenuPart_Action_s3h0kg_a0a extends SingleItemSubstituteMenuPart {
+    private class SubstituteMenuPart_Action_s3h0kg_a0a extends SingleItemSubstituteMenuPart {
       private final SAbstractConcept myParameterObject;
       public SubstituteMenuPart_Action_s3h0kg_a0a(SAbstractConcept parameterObject) {
         myParameterObject = parameterObject;
@@ -104,7 +104,7 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
     }
 
   }
-  public static class SubstituteMenuPart_Group_s3h0kg_b extends ConditionalMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SubstituteMenuPart_Group_s3h0kg_b extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return (_context.getCurrentChild() != null) && !(SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(_context.getCurrentChild())), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")));

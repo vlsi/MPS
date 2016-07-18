@@ -8,7 +8,7 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
-import jetbrains.mps.lang.editor.menus.ConditionalMenuPart;
+import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
@@ -51,7 +51,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
     result.add(new TestSubstituteChild_SubstituteMenu.SubstituteMenuPart_Group_ddv2zo_h());
     return result;
   }
-  public static class SubstituteMenuPart_Group_ddv2zo_a extends ConditionalMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SubstituteMenuPart_Group_ddv2zo_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return eq_ddv2zo_a0a0a1(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a6fb0bfL, "simpleAction"));
@@ -61,11 +61,8 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
       return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new TestSubstituteChild_SubstituteMenu.SubstituteMenuPart_Action_ddv2zo_a0());
     }
-    private static boolean eq_ddv2zo_a0a0a1(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
-    }
   }
-  private static class SubstituteMenuPart_Action_ddv2zo_a0 extends SingleItemSubstituteMenuPart {
+  private class SubstituteMenuPart_Action_ddv2zo_a0 extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
@@ -94,7 +91,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
-  public static class SubstituteMenuPart_Group_ddv2zo_b extends ConditionalMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SubstituteMenuPart_Group_ddv2zo_b extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return eq_ddv2zo_a0a0a3(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a6fb0c1L, "parameterizedQuery"));
@@ -103,9 +100,6 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
       return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new TestSubstituteChild_SubstituteMenu.SubstituteMenuPart_Parameterized_ddv2zo_a1());
-    }
-    private static boolean eq_ddv2zo_a0a0a3(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
     }
   }
   private static class SubstituteMenuPart_Parameterized_ddv2zo_a1 extends ParameterizedMenuPart<String, SubstituteMenuItem, SubstituteMenuContext> {
@@ -119,7 +113,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
     protected Iterable<? extends String> getParameters(SubstituteMenuContext _context) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "a", "b");
     }
-    private static class SubstituteMenuPart_Action_ddv2zo_a0b extends SingleItemSubstituteMenuPart {
+    private class SubstituteMenuPart_Action_ddv2zo_a0b extends SingleItemSubstituteMenuPart {
       private final String myParameterObject;
       public SubstituteMenuPart_Action_ddv2zo_a0b(String parameterObject) {
         myParameterObject = parameterObject;
@@ -156,7 +150,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
     }
 
   }
-  public static class SubstituteMenuPart_Group_ddv2zo_c extends ConditionalMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SubstituteMenuPart_Group_ddv2zo_c extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return eq_ddv2zo_a0a0a5(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a6fe2eaL, "wrapper"));
@@ -166,11 +160,8 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
       return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new TestSubstituteChild_SubstituteMenu.SubstituteMenuPart_Wrapper_ddv2zo_a2());
     }
-    private static boolean eq_ddv2zo_a0a0a5(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
-    }
   }
-  private static class SubstituteMenuPart_Wrapper_ddv2zo_a2 extends WrapperSubstituteMenuPart {
+  private class SubstituteMenuPart_Wrapper_ddv2zo_a2 extends WrapperSubstituteMenuPart {
     protected SubstituteMenuItem wrapItem(SubstituteMenuItem item) {
       return new SubstituteMenuItemWrapper(item) {
 
@@ -193,7 +184,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
       return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aaL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteConceptToWrap"));
     }
   }
-  public static class SubstituteMenuPart_Group_ddv2zo_d extends ConditionalMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SubstituteMenuPart_Group_ddv2zo_d extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return eq_ddv2zo_a0a0a7(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a6fe2eeL, "conceptsMenu"));
@@ -202,9 +193,6 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
       return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new TestSubstituteChild_SubstituteMenu.SubstituteMenuPart_Concepts_ddv2zo_a3());
-    }
-    private static boolean eq_ddv2zo_a0a0a7(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
     }
   }
   public static class SubstituteMenuPart_Concepts_ddv2zo_a3 extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
@@ -218,7 +206,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
       return new DefaultConceptSubstituteMenuPart(concept).createItems(context);
     }
   }
-  public static class SubstituteMenuPart_Group_ddv2zo_e extends ConditionalMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SubstituteMenuPart_Group_ddv2zo_e extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return eq_ddv2zo_a0a0a9(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a6fe2f3L, "addConcept"));
@@ -228,11 +216,8 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
       return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new DefaultConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a9L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild2")));
     }
-    private static boolean eq_ddv2zo_a0a0a9(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
-    }
   }
-  public static class SubstituteMenuPart_Group_ddv2zo_f extends ConditionalMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SubstituteMenuPart_Group_ddv2zo_f extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return eq_ddv2zo_a0a0a01(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a7057f1L, "subconcepts"));
@@ -242,11 +227,8 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
       return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new DefaultConceptMenusSubstituteMenuPart(ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"))));
     }
-    private static boolean eq_ddv2zo_a0a0a01(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
-    }
   }
-  public static class SubstituteMenuPart_Group_ddv2zo_g extends ConditionalMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SubstituteMenuPart_Group_ddv2zo_g extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return eq_ddv2zo_a0a0a11(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3aa5cde3L, "smartReference"));
@@ -256,11 +238,8 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
       return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new DefaultConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aeL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChildSmartReference")));
     }
-    private static boolean eq_ddv2zo_a0a0a11(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
-    }
   }
-  public static class SubstituteMenuPart_Group_ddv2zo_h extends ConditionalMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SubstituteMenuPart_Group_ddv2zo_h extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return eq_ddv2zo_a0a0a21(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a7111ffL, "childrenToContributeMenu"));
@@ -270,9 +249,6 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
       return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new TestSubstituteChild_SubstituteMenu.SubstituteMenuPart_IncludeMenu_ddv2zo_a7());
     }
-    private static boolean eq_ddv2zo_a0a0a21(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
-    }
   }
   public static class SubstituteMenuPart_IncludeMenu_ddv2zo_a7 extends IncludeSubstituteMenuSubstituteMenuPart {
     @Nullable
@@ -281,5 +257,29 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"), "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedSubstituteMenuForContribution");
     }
+  }
+  private static boolean eq_ddv2zo_a0a0a1(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_ddv2zo_a0a0a3(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_ddv2zo_a0a0a5(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_ddv2zo_a0a0a7(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_ddv2zo_a0a0a9(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_ddv2zo_a0a0a01(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_ddv2zo_a0a0a11(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_ddv2zo_a0a0a21(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }
