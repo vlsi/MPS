@@ -16,7 +16,7 @@ import jetbrains.mps.workbench.dialogs.DeleteDialog;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.ide.devkit.util.DeleteGeneratorHelper;
 import jetbrains.mps.util.IStatus;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.project.ProjectHelper;
 
@@ -84,7 +84,7 @@ public class DeleteGenerator_Action extends BaseAction {
           ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().saveAll();
           butcher.delete(generator);
         } else {
-          SwingUtilities.invokeLater(new Runnable() {
+          ApplicationManager.getApplication().invokeLater(new Runnable() {
             public void run() {
               Messages.showErrorDialog(ProjectHelper.toIdeaProject(((MPSProject) MapSequence.fromMap(_params).get("project"))), s.getMessage(), "Deleting Generator");
             }

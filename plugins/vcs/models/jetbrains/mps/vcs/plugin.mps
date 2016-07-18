@@ -67,6 +67,7 @@
     <import index="phib" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.diff.requests(MPS.IDEA/)" />
     <import index="2o8p" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.diff.contents(MPS.IDEA/)" />
     <import index="qyr2" ref="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="7bx7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.action(MPS.Platform/)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
@@ -3315,298 +3316,303 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4odLqy5T550" role="3cqZAp">
-          <node concept="2YIFZM" id="4odLqy5T5XW" role="3clFbG">
-            <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
-            <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-            <node concept="1bVj0M" id="4odLqy5T5XX" role="37wK5m">
-              <node concept="3clFbS" id="4odLqy5T5XY" role="1bW5cS">
-                <node concept="3cpWs8" id="4odLqy5T5XZ" role="3cqZAp">
-                  <node concept="3cpWsn" id="4odLqy5T5Y0" role="3cpWs9">
-                    <property role="TrG5h" value="vFile" />
-                    <property role="3TUv4t" value="false" />
-                    <node concept="3uibUv" id="4odLqy5T5Y1" role="1tU5fm">
-                      <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
-                    </node>
-                    <node concept="2YIFZM" id="4odLqy5T5Y2" role="33vP2m">
-                      <ref role="1Pybhc" to="3fkn:~FileChooser" resolve="FileChooser" />
-                      <ref role="37wK5l" to="3fkn:~FileChooser.chooseFile(com.intellij.openapi.fileChooser.FileChooserDescriptor,com.intellij.openapi.project.Project,com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vfs.VirtualFile" resolve="chooseFile" />
-                      <node concept="37vLTw" id="3CU1SI2geLt" role="37wK5m">
-                        <ref role="3cqZAo" node="4odLqy5T4Q0" resolve="descriptor" />
+        <node concept="3clFbF" id="WEmn41A9bH" role="3cqZAp">
+          <node concept="2OqwBi" id="WEmn41A9IP" role="3clFbG">
+            <node concept="2YIFZM" id="WEmn41A9ti" role="2Oq$k0">
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+            </node>
+            <node concept="liA8E" id="WEmn41Aaal" role="2OqNvi">
+              <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+              <node concept="1bVj0M" id="4odLqy5T5XX" role="37wK5m">
+                <node concept="3clFbS" id="4odLqy5T5XY" role="1bW5cS">
+                  <node concept="3cpWs8" id="4odLqy5T5XZ" role="3cqZAp">
+                    <node concept="3cpWsn" id="4odLqy5T5Y0" role="3cpWs9">
+                      <property role="TrG5h" value="vFile" />
+                      <property role="3TUv4t" value="false" />
+                      <node concept="3uibUv" id="4odLqy5T5Y1" role="1tU5fm">
+                        <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
                       </node>
-                      <node concept="2OqwBi" id="4odLqy5T7H_" role="37wK5m">
-                        <node concept="2WthIp" id="4odLqy5T7HA" role="2Oq$k0" />
-                        <node concept="1DTwFV" id="4odLqy5T7HB" role="2OqNvi">
-                          <ref role="2WH_rO" node="4odLqy5SXtm" resolve="project" />
+                      <node concept="2YIFZM" id="4odLqy5T5Y2" role="33vP2m">
+                        <ref role="1Pybhc" to="3fkn:~FileChooser" resolve="FileChooser" />
+                        <ref role="37wK5l" to="3fkn:~FileChooser.chooseFile(com.intellij.openapi.fileChooser.FileChooserDescriptor,com.intellij.openapi.project.Project,com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vfs.VirtualFile" resolve="chooseFile" />
+                        <node concept="37vLTw" id="3CU1SI2geLt" role="37wK5m">
+                          <ref role="3cqZAo" node="4odLqy5T4Q0" resolve="descriptor" />
                         </node>
+                        <node concept="2OqwBi" id="4odLqy5T7H_" role="37wK5m">
+                          <node concept="2WthIp" id="4odLqy5T7HA" role="2Oq$k0" />
+                          <node concept="1DTwFV" id="4odLqy5T7HB" role="2OqNvi">
+                            <ref role="2WH_rO" node="4odLqy5SXtm" resolve="project" />
+                          </node>
+                        </node>
+                        <node concept="10Nm6u" id="3CU1SI2gfEx" role="37wK5m" />
                       </node>
-                      <node concept="10Nm6u" id="3CU1SI2gfEx" role="37wK5m" />
                     </node>
                   </node>
-                </node>
-                <node concept="3clFbH" id="4odLqy5T7I_" role="3cqZAp" />
-                <node concept="3cpWs8" id="4odLqy5TTvi" role="3cqZAp">
-                  <node concept="3cpWsn" id="4odLqy5TTvj" role="3cpWs9">
-                    <property role="TrG5h" value="resFilePath" />
-                    <property role="3TUv4t" value="true" />
-                    <node concept="17QB3L" id="4odLqy5TTvk" role="1tU5fm" />
-                  </node>
-                </node>
-                <node concept="3cpWs8" id="4odLqy5TTvd" role="3cqZAp">
-                  <node concept="3cpWsn" id="4odLqy5TTve" role="3cpWs9">
-                    <property role="TrG5h" value="zipped" />
-                    <node concept="10Q1$e" id="4odLqy5TTvf" role="1tU5fm">
-                      <node concept="17QB3L" id="3SHxTHDeBgb" role="10Q1$1" />
+                  <node concept="3clFbH" id="4odLqy5T7I_" role="3cqZAp" />
+                  <node concept="3cpWs8" id="4odLqy5TTvi" role="3cqZAp">
+                    <node concept="3cpWsn" id="4odLqy5TTvj" role="3cpWs9">
+                      <property role="TrG5h" value="resFilePath" />
+                      <property role="3TUv4t" value="true" />
+                      <node concept="17QB3L" id="4odLqy5TTvk" role="1tU5fm" />
                     </node>
                   </node>
-                </node>
-                <node concept="SfApY" id="4odLqy5TTvm" role="3cqZAp">
-                  <node concept="3clFbS" id="4odLqy5TTvn" role="SfCbr">
-                    <node concept="3clFbF" id="4odLqy5TTvP" role="3cqZAp">
-                      <node concept="37vLTI" id="4odLqy5TTw9" role="3clFbG">
-                        <node concept="37vLTw" id="3GM_nagTuZb" role="37vLTJ">
-                          <ref role="3cqZAo" node="4odLqy5TTve" resolve="zipped" />
-                        </node>
-                        <node concept="2YIFZM" id="3SHxTHDewiT" role="37vLTx">
-                          <ref role="37wK5l" to="4rb9:nQhvklQAxN" resolve="loadZippedModelsAsText" />
-                          <ref role="1Pybhc" to="4rb9:60S3DtlQamH" resolve="MergeBackupUtil" />
-                          <node concept="2ShNRf" id="3SHxTHDewiU" role="37wK5m">
-                            <node concept="1pGfFk" id="3SHxTHDewiV" role="2ShVmc">
-                              <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                              <node concept="2OqwBi" id="3SHxTHDewiW" role="37wK5m">
-                                <node concept="37vLTw" id="3SHxTHDewiX" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="4odLqy5T5Y0" resolve="vFile" />
+                  <node concept="3cpWs8" id="4odLqy5TTvd" role="3cqZAp">
+                    <node concept="3cpWsn" id="4odLqy5TTve" role="3cpWs9">
+                      <property role="TrG5h" value="zipped" />
+                      <node concept="10Q1$e" id="4odLqy5TTvf" role="1tU5fm">
+                        <node concept="17QB3L" id="3SHxTHDeBgb" role="10Q1$1" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="SfApY" id="4odLqy5TTvm" role="3cqZAp">
+                    <node concept="3clFbS" id="4odLqy5TTvn" role="SfCbr">
+                      <node concept="3clFbF" id="4odLqy5TTvP" role="3cqZAp">
+                        <node concept="37vLTI" id="4odLqy5TTw9" role="3clFbG">
+                          <node concept="37vLTw" id="3GM_nagTuZb" role="37vLTJ">
+                            <ref role="3cqZAo" node="4odLqy5TTve" resolve="zipped" />
+                          </node>
+                          <node concept="2YIFZM" id="3SHxTHDewiT" role="37vLTx">
+                            <ref role="37wK5l" to="4rb9:nQhvklQAxN" resolve="loadZippedModelsAsText" />
+                            <ref role="1Pybhc" to="4rb9:60S3DtlQamH" resolve="MergeBackupUtil" />
+                            <node concept="2ShNRf" id="3SHxTHDewiU" role="37wK5m">
+                              <node concept="1pGfFk" id="3SHxTHDewiV" role="2ShVmc">
+                                <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                                <node concept="2OqwBi" id="3SHxTHDewiW" role="37wK5m">
+                                  <node concept="37vLTw" id="3SHxTHDewiX" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="4odLqy5T5Y0" resolve="vFile" />
+                                  </node>
+                                  <node concept="liA8E" id="3SHxTHDewiY" role="2OqNvi">
+                                    <ref role="37wK5l" to="jlff:~VirtualFile.getCanonicalPath():java.lang.String" resolve="getCanonicalPath" />
+                                  </node>
                                 </node>
-                                <node concept="liA8E" id="3SHxTHDewiY" role="2OqNvi">
-                                  <ref role="37wK5l" to="jlff:~VirtualFile.getCanonicalPath():java.lang.String" resolve="getCanonicalPath" />
+                              </node>
+                            </node>
+                            <node concept="2ShNRf" id="3SHxTHDewiZ" role="37wK5m">
+                              <node concept="3g6Rrh" id="3SHxTHDewj0" role="2ShVmc">
+                                <node concept="3uibUv" id="3SHxTHDewj1" role="3g7fb8">
+                                  <ref role="3uigEE" to="ur19:341WClvYLId" resolve="MergeVersion" />
+                                </node>
+                                <node concept="Rm8GO" id="3SHxTHDewj2" role="3g7hyw">
+                                  <ref role="Rm8GQ" to="ur19:341WClvYLIk" resolve="BASE" />
+                                  <ref role="1Px2BO" to="ur19:341WClvYLId" resolve="MergeVersion" />
+                                </node>
+                                <node concept="Rm8GO" id="3SHxTHDewj3" role="3g7hyw">
+                                  <ref role="Rm8GQ" to="ur19:341WClvYLIg" resolve="MINE" />
+                                  <ref role="1Px2BO" to="ur19:341WClvYLId" resolve="MergeVersion" />
+                                </node>
+                                <node concept="Rm8GO" id="3SHxTHDewj4" role="3g7hyw">
+                                  <ref role="Rm8GQ" to="ur19:341WClvYLIi" resolve="REPOSITORY" />
+                                  <ref role="1Px2BO" to="ur19:341WClvYLId" resolve="MergeVersion" />
                                 </node>
                               </node>
                             </node>
                           </node>
-                          <node concept="2ShNRf" id="3SHxTHDewiZ" role="37wK5m">
-                            <node concept="3g6Rrh" id="3SHxTHDewj0" role="2ShVmc">
-                              <node concept="3uibUv" id="3SHxTHDewj1" role="3g7fb8">
-                                <ref role="3uigEE" to="ur19:341WClvYLId" resolve="MergeVersion" />
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="4odLqy5TTvt" role="3cqZAp">
+                        <node concept="37vLTI" id="4odLqy5TTvL" role="3clFbG">
+                          <node concept="37vLTw" id="4gQ5MKiF_qz" role="37vLTJ">
+                            <ref role="3cqZAo" node="4odLqy5TTvj" resolve="resFilePath" />
+                          </node>
+                          <node concept="2OqwBi" id="4odLqy5TTwc" role="37vLTx">
+                            <node concept="2YIFZM" id="4odLqy5TTwd" role="2Oq$k0">
+                              <ref role="1Pybhc" to="guwi:~File" resolve="File" />
+                              <ref role="37wK5l" to="guwi:~File.createTempFile(java.lang.String,java.lang.String):java.io.File" resolve="createTempFile" />
+                              <node concept="Xl_RD" id="4odLqy5TTwe" role="37wK5m">
+                                <property role="Xl_RC" value="mpstmp" />
                               </node>
-                              <node concept="Rm8GO" id="3SHxTHDewj2" role="3g7hyw">
-                                <ref role="Rm8GQ" to="ur19:341WClvYLIk" resolve="BASE" />
-                                <ref role="1Px2BO" to="ur19:341WClvYLId" resolve="MergeVersion" />
+                              <node concept="10M0yZ" id="3OgfWJy14aa" role="37wK5m">
+                                <ref role="1PxDUh" to="z1c3:~MPSExtentions" resolve="MPSExtentions" />
+                                <ref role="3cqZAo" to="z1c3:~MPSExtentions.DOT_MODEL" resolve="DOT_MODEL" />
                               </node>
-                              <node concept="Rm8GO" id="3SHxTHDewj3" role="3g7hyw">
-                                <ref role="Rm8GQ" to="ur19:341WClvYLIg" resolve="MINE" />
-                                <ref role="1Px2BO" to="ur19:341WClvYLId" resolve="MergeVersion" />
-                              </node>
-                              <node concept="Rm8GO" id="3SHxTHDewj4" role="3g7hyw">
-                                <ref role="Rm8GQ" to="ur19:341WClvYLIi" resolve="REPOSITORY" />
-                                <ref role="1Px2BO" to="ur19:341WClvYLId" resolve="MergeVersion" />
-                              </node>
+                            </node>
+                            <node concept="liA8E" id="4odLqy5TTwg" role="2OqNvi">
+                              <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
                             </node>
                           </node>
                         </node>
                       </node>
                     </node>
-                    <node concept="3clFbF" id="4odLqy5TTvt" role="3cqZAp">
-                      <node concept="37vLTI" id="4odLqy5TTvL" role="3clFbG">
-                        <node concept="37vLTw" id="4gQ5MKiF_qz" role="37vLTJ">
+                    <node concept="TDmWw" id="4odLqy5TTvp" role="TEbGg">
+                      <node concept="3cpWsn" id="4odLqy5TTvq" role="TDEfY">
+                        <property role="TrG5h" value="e" />
+                        <node concept="3uibUv" id="4odLqy5TVDr" role="1tU5fm">
+                          <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+                        </node>
+                      </node>
+                      <node concept="3clFbS" id="4odLqy5TTvs" role="TDEfX">
+                        <node concept="3clFbF" id="4odLqy5TTwN" role="3cqZAp">
+                          <node concept="2OqwBi" id="4odLqy5TTx7" role="3clFbG">
+                            <node concept="37vLTw" id="3GM_nagTvm8" role="2Oq$k0">
+                              <ref role="3cqZAo" node="4odLqy5TTvq" resolve="e" />
+                            </node>
+                            <node concept="liA8E" id="4odLqy5TTxd" role="2OqNvi">
+                              <ref role="37wK5l" to="wyt6:~Throwable.printStackTrace():void" resolve="printStackTrace" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3cpWs6" id="4odLqy5TU$b" role="3cqZAp" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="4odLqy5TTuj" role="3cqZAp" />
+                  <node concept="3cpWs8" id="4gQ5MKiFaXY" role="3cqZAp">
+                    <node concept="3cpWsn" id="4gQ5MKiFaXZ" role="3cpWs9">
+                      <property role="TrG5h" value="resFile" />
+                      <node concept="3uibUv" id="4gQ5MKiFaY0" role="1tU5fm">
+                        <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
+                      </node>
+                      <node concept="2YIFZM" id="4gQ5MKiFeM$" role="33vP2m">
+                        <ref role="37wK5l" to="4hrd:~VirtualFileUtils.getVirtualFile(java.lang.String):com.intellij.openapi.vfs.VirtualFile" resolve="getVirtualFile" />
+                        <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
+                        <node concept="37vLTw" id="4gQ5MKiFf34" role="37wK5m">
                           <ref role="3cqZAo" node="4odLqy5TTvj" resolve="resFilePath" />
                         </node>
-                        <node concept="2OqwBi" id="4odLqy5TTwc" role="37vLTx">
-                          <node concept="2YIFZM" id="4odLqy5TTwd" role="2Oq$k0">
-                            <ref role="1Pybhc" to="guwi:~File" resolve="File" />
-                            <ref role="37wK5l" to="guwi:~File.createTempFile(java.lang.String,java.lang.String):java.io.File" resolve="createTempFile" />
-                            <node concept="Xl_RD" id="4odLqy5TTwe" role="37wK5m">
-                              <property role="Xl_RC" value="mpstmp" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWs8" id="4gQ5MKiDX3z" role="3cqZAp">
+                    <node concept="3cpWsn" id="4gQ5MKiDX3A" role="3cpWs9">
+                      <property role="TrG5h" value="contents" />
+                      <node concept="_YKpA" id="4gQ5MKiDX3v" role="1tU5fm">
+                        <node concept="17QB3L" id="4gQ5MKiEVmt" role="_ZDj9" />
+                      </node>
+                      <node concept="2ShNRf" id="3SHxTHDeVwQ" role="33vP2m">
+                        <node concept="Tc6Ow" id="3SHxTHDeVwM" role="2ShVmc">
+                          <node concept="17QB3L" id="3SHxTHDeVwN" role="HW$YZ" />
+                          <node concept="37vLTw" id="3SHxTHDeWNq" role="I$8f6">
+                            <ref role="3cqZAo" node="4odLqy5TTve" resolve="zipped" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWs8" id="4gQ5MKiEmrZ" role="3cqZAp">
+                    <node concept="3cpWsn" id="4gQ5MKiEms2" role="3cpWs9">
+                      <property role="TrG5h" value="titles" />
+                      <node concept="_YKpA" id="4gQ5MKiEmrV" role="1tU5fm">
+                        <node concept="17QB3L" id="4gQ5MKiEnui" role="_ZDj9" />
+                      </node>
+                      <node concept="2ShNRf" id="4gQ5MKiEqgu" role="33vP2m">
+                        <node concept="Tc6Ow" id="4gQ5MKiEqgq" role="2ShVmc">
+                          <node concept="17QB3L" id="4gQ5MKiEqgr" role="HW$YZ" />
+                          <node concept="Xl_RD" id="4gQ5MKiEw43" role="HW$Y0">
+                            <property role="Xl_RC" value="Local Version" />
+                          </node>
+                          <node concept="Xl_RD" id="4gQ5MKiExVk" role="HW$Y0">
+                            <property role="Xl_RC" value="Merge Result" />
+                          </node>
+                          <node concept="Xl_RD" id="4gQ5MKiEzML" role="HW$Y0">
+                            <property role="Xl_RC" value="Remote Version" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="SfApY" id="4gQ5MKiFOJx" role="3cqZAp">
+                    <node concept="3clFbS" id="4gQ5MKiFOJz" role="SfCbr">
+                      <node concept="3cpWs8" id="4gQ5MKiEXXn" role="3cqZAp">
+                        <node concept="3cpWsn" id="4gQ5MKiEXXo" role="3cpWs9">
+                          <property role="3TUv4t" value="false" />
+                          <property role="TrG5h" value="request" />
+                          <node concept="3uibUv" id="4gQ5MKiEXXp" role="1tU5fm">
+                            <ref role="3uigEE" to="o8e1:~MergeRequest" resolve="MergeRequest" />
+                          </node>
+                          <node concept="2OqwBi" id="4gQ5MKiEXXq" role="33vP2m">
+                            <node concept="2YIFZM" id="4gQ5MKiEXXr" role="2Oq$k0">
+                              <ref role="1Pybhc" to="yt4f:~DiffRequestFactory" resolve="DiffRequestFactory" />
+                              <ref role="37wK5l" to="yt4f:~DiffRequestFactory.getInstance():com.intellij.diff.DiffRequestFactory" resolve="getInstance" />
                             </node>
-                            <node concept="10M0yZ" id="3OgfWJy14aa" role="37wK5m">
-                              <ref role="1PxDUh" to="z1c3:~MPSExtentions" resolve="MPSExtentions" />
-                              <ref role="3cqZAo" to="z1c3:~MPSExtentions.DOT_MODEL" resolve="DOT_MODEL" />
+                            <node concept="liA8E" id="4gQ5MKiEXXs" role="2OqNvi">
+                              <ref role="37wK5l" to="yt4f:~DiffRequestFactory.createMergeRequest(com.intellij.openapi.project.Project,com.intellij.openapi.fileTypes.FileType,com.intellij.openapi.editor.Document,java.util.List,java.lang.String,java.util.List,com.intellij.util.Consumer):com.intellij.diff.merge.MergeRequest" resolve="createMergeRequest" />
+                              <node concept="2OqwBi" id="4gQ5MKiEXXt" role="37wK5m">
+                                <node concept="2WthIp" id="4gQ5MKiEXXu" role="2Oq$k0" />
+                                <node concept="1DTwFV" id="4gQ5MKiEXXv" role="2OqNvi">
+                                  <ref role="2WH_rO" node="4odLqy5SXtm" resolve="project" />
+                                </node>
+                              </node>
+                              <node concept="10M0yZ" id="4gQ5MKiF1uL" role="37wK5m">
+                                <ref role="1PxDUh" to="tcg7:~MPSFileTypeFactory" resolve="MPSFileTypeFactory" />
+                                <ref role="3cqZAo" to="tcg7:~MPSFileTypeFactory.MPS_FILE_TYPE" resolve="MPS_FILE_TYPE" />
+                              </node>
+                              <node concept="2OqwBi" id="4gQ5MKiEXXz" role="37wK5m">
+                                <node concept="2YIFZM" id="4gQ5MKiEXX$" role="2Oq$k0">
+                                  <ref role="37wK5l" to="iwsx:~FileDocumentManager.getInstance():com.intellij.openapi.fileEditor.FileDocumentManager" resolve="getInstance" />
+                                  <ref role="1Pybhc" to="iwsx:~FileDocumentManager" resolve="FileDocumentManager" />
+                                </node>
+                                <node concept="liA8E" id="4gQ5MKiEXX_" role="2OqNvi">
+                                  <ref role="37wK5l" to="iwsx:~FileDocumentManager.getDocument(com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.editor.Document" resolve="getDocument" />
+                                  <node concept="37vLTw" id="4gQ5MKiFh9y" role="37wK5m">
+                                    <ref role="3cqZAo" node="4gQ5MKiFaXZ" resolve="resFile" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="37vLTw" id="4gQ5MKiF3tA" role="37wK5m">
+                                <ref role="3cqZAo" node="4gQ5MKiDX3A" resolve="contents" />
+                              </node>
+                              <node concept="3cpWs3" id="3OgfWJy37NY" role="37wK5m">
+                                <node concept="37vLTw" id="3OgfWJy38cd" role="3uHU7w">
+                                  <ref role="3cqZAo" node="4odLqy5TTvj" resolve="resFilePath" />
+                                </node>
+                                <node concept="3cpWs3" id="3OgfWJy33$Q" role="3uHU7B">
+                                  <node concept="3cpWs3" id="3OgfWJy32Fs" role="3uHU7B">
+                                    <node concept="Xl_RD" id="3OgfWJy2YGn" role="3uHU7B">
+                                      <property role="Xl_RC" value="Merge files from " />
+                                    </node>
+                                    <node concept="37vLTw" id="3OgfWJy32Zb" role="3uHU7w">
+                                      <ref role="3cqZAo" node="4odLqy5T5Y0" resolve="vFile" />
+                                    </node>
+                                  </node>
+                                  <node concept="Xl_RD" id="3OgfWJy33_6" role="3uHU7w">
+                                    <property role="Xl_RC" value=" and save result to " />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="37vLTw" id="4gQ5MKiEXXD" role="37wK5m">
+                                <ref role="3cqZAo" node="4gQ5MKiEms2" resolve="titles" />
+                              </node>
+                              <node concept="10Nm6u" id="4gQ5MKiEXXE" role="37wK5m" />
                             </node>
                           </node>
-                          <node concept="liA8E" id="4odLqy5TTwg" role="2OqNvi">
-                            <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="4gQ5MKiF6Vx" role="3cqZAp">
+                        <node concept="2OqwBi" id="4gQ5MKiF6Vy" role="3clFbG">
+                          <node concept="2YIFZM" id="4gQ5MKiF6Vz" role="2Oq$k0">
+                            <ref role="37wK5l" to="yt4f:~DiffManager.getInstance():com.intellij.diff.DiffManager" resolve="getInstance" />
+                            <ref role="1Pybhc" to="yt4f:~DiffManager" resolve="DiffManager" />
                           </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="TDmWw" id="4odLqy5TTvp" role="TEbGg">
-                    <node concept="3cpWsn" id="4odLqy5TTvq" role="TDEfY">
-                      <property role="TrG5h" value="e" />
-                      <node concept="3uibUv" id="4odLqy5TVDr" role="1tU5fm">
-                        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
-                      </node>
-                    </node>
-                    <node concept="3clFbS" id="4odLqy5TTvs" role="TDEfX">
-                      <node concept="3clFbF" id="4odLqy5TTwN" role="3cqZAp">
-                        <node concept="2OqwBi" id="4odLqy5TTx7" role="3clFbG">
-                          <node concept="37vLTw" id="3GM_nagTvm8" role="2Oq$k0">
-                            <ref role="3cqZAo" node="4odLqy5TTvq" resolve="e" />
-                          </node>
-                          <node concept="liA8E" id="4odLqy5TTxd" role="2OqNvi">
-                            <ref role="37wK5l" to="wyt6:~Throwable.printStackTrace():void" resolve="printStackTrace" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3cpWs6" id="4odLqy5TU$b" role="3cqZAp" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbH" id="4odLqy5TTuj" role="3cqZAp" />
-                <node concept="3cpWs8" id="4gQ5MKiFaXY" role="3cqZAp">
-                  <node concept="3cpWsn" id="4gQ5MKiFaXZ" role="3cpWs9">
-                    <property role="TrG5h" value="resFile" />
-                    <node concept="3uibUv" id="4gQ5MKiFaY0" role="1tU5fm">
-                      <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
-                    </node>
-                    <node concept="2YIFZM" id="4gQ5MKiFeM$" role="33vP2m">
-                      <ref role="37wK5l" to="4hrd:~VirtualFileUtils.getVirtualFile(java.lang.String):com.intellij.openapi.vfs.VirtualFile" resolve="getVirtualFile" />
-                      <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
-                      <node concept="37vLTw" id="4gQ5MKiFf34" role="37wK5m">
-                        <ref role="3cqZAo" node="4odLqy5TTvj" resolve="resFilePath" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3cpWs8" id="4gQ5MKiDX3z" role="3cqZAp">
-                  <node concept="3cpWsn" id="4gQ5MKiDX3A" role="3cpWs9">
-                    <property role="TrG5h" value="contents" />
-                    <node concept="_YKpA" id="4gQ5MKiDX3v" role="1tU5fm">
-                      <node concept="17QB3L" id="4gQ5MKiEVmt" role="_ZDj9" />
-                    </node>
-                    <node concept="2ShNRf" id="3SHxTHDeVwQ" role="33vP2m">
-                      <node concept="Tc6Ow" id="3SHxTHDeVwM" role="2ShVmc">
-                        <node concept="17QB3L" id="3SHxTHDeVwN" role="HW$YZ" />
-                        <node concept="37vLTw" id="3SHxTHDeWNq" role="I$8f6">
-                          <ref role="3cqZAo" node="4odLqy5TTve" resolve="zipped" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3cpWs8" id="4gQ5MKiEmrZ" role="3cqZAp">
-                  <node concept="3cpWsn" id="4gQ5MKiEms2" role="3cpWs9">
-                    <property role="TrG5h" value="titles" />
-                    <node concept="_YKpA" id="4gQ5MKiEmrV" role="1tU5fm">
-                      <node concept="17QB3L" id="4gQ5MKiEnui" role="_ZDj9" />
-                    </node>
-                    <node concept="2ShNRf" id="4gQ5MKiEqgu" role="33vP2m">
-                      <node concept="Tc6Ow" id="4gQ5MKiEqgq" role="2ShVmc">
-                        <node concept="17QB3L" id="4gQ5MKiEqgr" role="HW$YZ" />
-                        <node concept="Xl_RD" id="4gQ5MKiEw43" role="HW$Y0">
-                          <property role="Xl_RC" value="Local Version" />
-                        </node>
-                        <node concept="Xl_RD" id="4gQ5MKiExVk" role="HW$Y0">
-                          <property role="Xl_RC" value="Merge Result" />
-                        </node>
-                        <node concept="Xl_RD" id="4gQ5MKiEzML" role="HW$Y0">
-                          <property role="Xl_RC" value="Remote Version" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="SfApY" id="4gQ5MKiFOJx" role="3cqZAp">
-                  <node concept="3clFbS" id="4gQ5MKiFOJz" role="SfCbr">
-                    <node concept="3cpWs8" id="4gQ5MKiEXXn" role="3cqZAp">
-                      <node concept="3cpWsn" id="4gQ5MKiEXXo" role="3cpWs9">
-                        <property role="3TUv4t" value="false" />
-                        <property role="TrG5h" value="request" />
-                        <node concept="3uibUv" id="4gQ5MKiEXXp" role="1tU5fm">
-                          <ref role="3uigEE" to="o8e1:~MergeRequest" resolve="MergeRequest" />
-                        </node>
-                        <node concept="2OqwBi" id="4gQ5MKiEXXq" role="33vP2m">
-                          <node concept="2YIFZM" id="4gQ5MKiEXXr" role="2Oq$k0">
-                            <ref role="1Pybhc" to="yt4f:~DiffRequestFactory" resolve="DiffRequestFactory" />
-                            <ref role="37wK5l" to="yt4f:~DiffRequestFactory.getInstance():com.intellij.diff.DiffRequestFactory" resolve="getInstance" />
-                          </node>
-                          <node concept="liA8E" id="4gQ5MKiEXXs" role="2OqNvi">
-                            <ref role="37wK5l" to="yt4f:~DiffRequestFactory.createMergeRequest(com.intellij.openapi.project.Project,com.intellij.openapi.fileTypes.FileType,com.intellij.openapi.editor.Document,java.util.List,java.lang.String,java.util.List,com.intellij.util.Consumer):com.intellij.diff.merge.MergeRequest" resolve="createMergeRequest" />
-                            <node concept="2OqwBi" id="4gQ5MKiEXXt" role="37wK5m">
-                              <node concept="2WthIp" id="4gQ5MKiEXXu" role="2Oq$k0" />
-                              <node concept="1DTwFV" id="4gQ5MKiEXXv" role="2OqNvi">
+                          <node concept="liA8E" id="4gQ5MKiF6V$" role="2OqNvi">
+                            <ref role="37wK5l" to="yt4f:~DiffManager.showMerge(com.intellij.openapi.project.Project,com.intellij.diff.merge.MergeRequest):void" resolve="showMerge" />
+                            <node concept="2OqwBi" id="4gQ5MKiF6V_" role="37wK5m">
+                              <node concept="2WthIp" id="4gQ5MKiF6VA" role="2Oq$k0" />
+                              <node concept="1DTwFV" id="4gQ5MKiF6VB" role="2OqNvi">
                                 <ref role="2WH_rO" node="4odLqy5SXtm" resolve="project" />
                               </node>
                             </node>
-                            <node concept="10M0yZ" id="4gQ5MKiF1uL" role="37wK5m">
-                              <ref role="1PxDUh" to="tcg7:~MPSFileTypeFactory" resolve="MPSFileTypeFactory" />
-                              <ref role="3cqZAo" to="tcg7:~MPSFileTypeFactory.MPS_FILE_TYPE" resolve="MPS_FILE_TYPE" />
+                            <node concept="37vLTw" id="4gQ5MKiF6VC" role="37wK5m">
+                              <ref role="3cqZAo" node="4gQ5MKiEXXo" resolve="request" />
                             </node>
-                            <node concept="2OqwBi" id="4gQ5MKiEXXz" role="37wK5m">
-                              <node concept="2YIFZM" id="4gQ5MKiEXX$" role="2Oq$k0">
-                                <ref role="37wK5l" to="iwsx:~FileDocumentManager.getInstance():com.intellij.openapi.fileEditor.FileDocumentManager" resolve="getInstance" />
-                                <ref role="1Pybhc" to="iwsx:~FileDocumentManager" resolve="FileDocumentManager" />
-                              </node>
-                              <node concept="liA8E" id="4gQ5MKiEXX_" role="2OqNvi">
-                                <ref role="37wK5l" to="iwsx:~FileDocumentManager.getDocument(com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.editor.Document" resolve="getDocument" />
-                                <node concept="37vLTw" id="4gQ5MKiFh9y" role="37wK5m">
-                                  <ref role="3cqZAo" node="4gQ5MKiFaXZ" resolve="resFile" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="37vLTw" id="4gQ5MKiF3tA" role="37wK5m">
-                              <ref role="3cqZAo" node="4gQ5MKiDX3A" resolve="contents" />
-                            </node>
-                            <node concept="3cpWs3" id="3OgfWJy37NY" role="37wK5m">
-                              <node concept="37vLTw" id="3OgfWJy38cd" role="3uHU7w">
-                                <ref role="3cqZAo" node="4odLqy5TTvj" resolve="resFilePath" />
-                              </node>
-                              <node concept="3cpWs3" id="3OgfWJy33$Q" role="3uHU7B">
-                                <node concept="3cpWs3" id="3OgfWJy32Fs" role="3uHU7B">
-                                  <node concept="Xl_RD" id="3OgfWJy2YGn" role="3uHU7B">
-                                    <property role="Xl_RC" value="Merge files from " />
-                                  </node>
-                                  <node concept="37vLTw" id="3OgfWJy32Zb" role="3uHU7w">
-                                    <ref role="3cqZAo" node="4odLqy5T5Y0" resolve="vFile" />
-                                  </node>
-                                </node>
-                                <node concept="Xl_RD" id="3OgfWJy33_6" role="3uHU7w">
-                                  <property role="Xl_RC" value=" and save result to " />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="37vLTw" id="4gQ5MKiEXXD" role="37wK5m">
-                              <ref role="3cqZAo" node="4gQ5MKiEms2" resolve="titles" />
-                            </node>
-                            <node concept="10Nm6u" id="4gQ5MKiEXXE" role="37wK5m" />
                           </node>
                         </node>
                       </node>
                     </node>
-                    <node concept="3clFbF" id="4gQ5MKiF6Vx" role="3cqZAp">
-                      <node concept="2OqwBi" id="4gQ5MKiF6Vy" role="3clFbG">
-                        <node concept="2YIFZM" id="4gQ5MKiF6Vz" role="2Oq$k0">
-                          <ref role="37wK5l" to="yt4f:~DiffManager.getInstance():com.intellij.diff.DiffManager" resolve="getInstance" />
-                          <ref role="1Pybhc" to="yt4f:~DiffManager" resolve="DiffManager" />
-                        </node>
-                        <node concept="liA8E" id="4gQ5MKiF6V$" role="2OqNvi">
-                          <ref role="37wK5l" to="yt4f:~DiffManager.showMerge(com.intellij.openapi.project.Project,com.intellij.diff.merge.MergeRequest):void" resolve="showMerge" />
-                          <node concept="2OqwBi" id="4gQ5MKiF6V_" role="37wK5m">
-                            <node concept="2WthIp" id="4gQ5MKiF6VA" role="2Oq$k0" />
-                            <node concept="1DTwFV" id="4gQ5MKiF6VB" role="2OqNvi">
-                              <ref role="2WH_rO" node="4odLqy5SXtm" resolve="project" />
-                            </node>
-                          </node>
-                          <node concept="37vLTw" id="4gQ5MKiF6VC" role="37wK5m">
-                            <ref role="3cqZAo" node="4gQ5MKiEXXo" resolve="request" />
-                          </node>
+                    <node concept="TDmWw" id="4gQ5MKiFOJ$" role="TEbGg">
+                      <node concept="3cpWsn" id="4gQ5MKiFOJA" role="TDEfY">
+                        <property role="TrG5h" value="e" />
+                        <node concept="3uibUv" id="4gQ5MKiFRq_" role="1tU5fm">
+                          <ref role="3uigEE" to="yt4f:~InvalidDiffRequestException" resolve="InvalidDiffRequestException" />
                         </node>
                       </node>
-                    </node>
-                  </node>
-                  <node concept="TDmWw" id="4gQ5MKiFOJ$" role="TEbGg">
-                    <node concept="3cpWsn" id="4gQ5MKiFOJA" role="TDEfY">
-                      <property role="TrG5h" value="e" />
-                      <node concept="3uibUv" id="4gQ5MKiFRq_" role="1tU5fm">
-                        <ref role="3uigEE" to="yt4f:~InvalidDiffRequestException" resolve="InvalidDiffRequestException" />
-                      </node>
-                    </node>
-                    <node concept="3clFbS" id="4gQ5MKiFOJE" role="TDEfX">
-                      <node concept="34ab3g" id="4gQ5MKiFSrd" role="3cqZAp">
-                        <property role="35gtTG" value="error" />
-                        <property role="34fQS0" value="true" />
-                        <node concept="Xl_RD" id="4gQ5MKiFSrf" role="34bqiv" />
-                        <node concept="37vLTw" id="4gQ5MKiFSrh" role="34bMjA">
-                          <ref role="3cqZAo" node="4gQ5MKiFOJA" resolve="e" />
+                      <node concept="3clFbS" id="4gQ5MKiFOJE" role="TDEfX">
+                        <node concept="34ab3g" id="4gQ5MKiFSrd" role="3cqZAp">
+                          <property role="35gtTG" value="error" />
+                          <property role="34fQS0" value="true" />
+                          <node concept="Xl_RD" id="4gQ5MKiFSrf" role="34bqiv" />
+                          <node concept="37vLTw" id="4gQ5MKiFSrh" role="34bMjA">
+                            <ref role="3cqZAo" node="4gQ5MKiFOJA" resolve="e" />
+                          </node>
                         </node>
                       </node>
                     </node>

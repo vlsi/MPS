@@ -28,7 +28,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
@@ -92,7 +92,7 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
           return;
         }
 
-        SwingUtilities.invokeLater(new Runnable() {
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
             RefactoringAccessEx.getInstance().showRefactoringView(((Project) MapSequence.fromMap(_params).get("ideaProject")), new RefactoringViewAction() {
               @Override

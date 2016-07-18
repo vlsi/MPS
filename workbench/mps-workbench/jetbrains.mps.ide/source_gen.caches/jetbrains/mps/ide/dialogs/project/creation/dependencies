@@ -50,6 +50,8 @@
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dialogs.project.creation.NewModelDialog" file="NewModelDialog.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="com.intellij.openapi.options.ex.SingleConfigurableEditor" />
     <classNode dependClassName="com.intellij.ui.ColoredListCellRenderer" />
     <classNode dependClassName="com.intellij.uiDesigner.core.GridConstraints" />
@@ -81,7 +83,6 @@
     <classNode dependClassName="javax.swing.JList" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.JTextField" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileBasedModelRoot" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable" />

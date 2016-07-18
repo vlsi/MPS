@@ -21,7 +21,7 @@
       <node id="3995997045458515799" at="39,53,40,21" concept="5" />
       <node id="3995997045458515693" at="18,0,20,0" concept="0" trace="RuleTypeRenderer#()V" />
       <node id="6464687090063239371" at="26,0,30,0" concept="3" trace="run#()V" />
-      <node id="6464687090063120754" at="24,47,30,9" concept="1" />
+      <node id="1092784201483719405" at="24,47,30,9" concept="1" />
       <node id="6464687090063239734" at="23,122,31,5" concept="2" />
       <node id="3995997045458515742" at="34,0,42,0" concept="6" trace="createCenterAlignmentInCell#(Ljavax/swing/JComponent;)Ljavax/swing/JComponent;" />
       <node id="3995997045458515696" at="20,0,34,0" concept="3" trace="getTableCellRendererComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;" />
@@ -49,7 +49,7 @@
         <var name="table" id="3995997045458515699" />
         <var name="value" id="3995997045458515701" />
       </scope>
-      <unit id="6464687090063239369" at="25,37,30,7" name="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer$1" />
+      <unit id="6464687090063239369" at="25,58,30,7" name="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer$1" />
       <unit id="3995997045458515690" at="17,0,43,0" name="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer" />
     </file>
   </root>

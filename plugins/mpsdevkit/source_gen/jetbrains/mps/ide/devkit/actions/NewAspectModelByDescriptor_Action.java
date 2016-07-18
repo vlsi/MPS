@@ -19,7 +19,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class NewAspectModelByDescriptor_Action extends BaseAction {
@@ -80,7 +80,7 @@ public class NewAspectModelByDescriptor_Action extends BaseAction {
     // we need it since tree is updated later 
     final Collection<SModel> aspectModels = ad.getAspectModels(((SModule) MapSequence.fromMap(_params).get("module")));
     if (aspectModels.size() == 1) {
-      SwingUtilities.invokeLater(new Runnable() {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(aspectModels.iterator().next(), false);
         }

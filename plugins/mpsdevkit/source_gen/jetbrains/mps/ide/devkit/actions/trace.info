@@ -602,7 +602,7 @@
       <node id="1683977858888862718" at="35,0,39,0" concept="9" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <node id="1683977858888862718" at="39,0,43,0" concept="9" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="1683977858888862718" at="26,0,31,0" concept="3" trace="DeleteGenerator_Action#()V" />
-      <node id="574677402265847103" at="86,16,91,13" concept="5" />
+      <node id="1092784201483719405" at="86,16,91,13" concept="5" />
       <node id="711809809630689111" at="86,14,92,9" concept="1" />
       <node id="1683977858888862718" at="47,5,54,5" concept="1" />
       <node id="1683977858888862718" at="54,5,61,5" concept="1" />
@@ -660,7 +660,7 @@
         <var name="_params" id="1683977858888862718" />
         <var name="event" id="1683977858888862718" />
       </scope>
-      <unit id="711809809630454443" at="87,41,91,11" name="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action$2" />
+      <unit id="711809809630454443" at="87,62,91,11" name="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action$2" />
       <unit id="944342063932931113" at="78,40,94,5" name="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action$1" />
       <unit id="1683977858888862718" at="23,0,97,0" name="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action" />
     </file>
@@ -4230,7 +4230,7 @@
       <node id="8911797107063339974" at="99,0,102,0" concept="15" trace="aspectId_State#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="8911797107063339974" at="35,0,39,0" concept="9" trace="isDumbAware#()Z" />
       <node id="8911797107063502327" at="41,124,45,5" concept="8" />
-      <node id="8911797107063339997" at="82,35,87,9" concept="5" />
+      <node id="1092784201483729576" at="82,35,87,9" concept="5" />
       <node id="8911797107063339974" at="29,0,35,0" concept="3" trace="NewAspectModelByDescriptor_Action#(Ljava/lang/String;)V" />
       <node id="8911797107063339974" at="58,5,65,5" concept="1" />
       <node id="8911797107063339974" at="65,5,72,5" concept="1" />
@@ -4287,7 +4287,7 @@
         <var name="_params" id="8911797107063339974" />
         <var name="event" id="8911797107063339974" />
       </scope>
-      <unit id="8911797107063526789" at="83,37,87,7" name="jetbrains.mps.ide.devkit.actions.NewAspectModelByDescriptor_Action$1" />
+      <unit id="8911797107063526789" at="83,58,87,7" name="jetbrains.mps.ide.devkit.actions.NewAspectModelByDescriptor_Action$1" />
       <unit id="8911797107063339974" at="25,0,103,0" name="jetbrains.mps.ide.devkit.actions.NewAspectModelByDescriptor_Action" />
     </file>
   </root>

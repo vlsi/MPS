@@ -18,7 +18,7 @@ import jetbrains.mps.ide.navigation.NodeNavigatable;
 import com.intellij.usageView.UsageViewBundle;
 import com.intellij.ui.ScrollPaneFactory;
 import java.awt.BorderLayout;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -94,7 +94,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
   protected void createControlPanel() {
     final JPanel panel = new JPanel(new BorderLayout());
     myComponent.add(panel, BorderLayout.NORTH);
-    SwingUtilities.invokeLater(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
       public void run() {
         JComponent buttonsPanel = ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, createButtonsGroup(), true).getComponent();

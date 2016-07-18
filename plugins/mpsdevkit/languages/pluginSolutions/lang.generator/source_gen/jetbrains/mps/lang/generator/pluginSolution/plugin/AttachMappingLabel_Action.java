@@ -31,7 +31,7 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 
 public class AttachMappingLabel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -186,7 +186,7 @@ __switch__:
         };
       }
     }).toListSequence();
-    SwingUtilities.invokeLater(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, event.getData(MPSEditorDataKeys.EDITOR_CONTEXT), event.getData(MPSCommonDataKeys.MPS_PROJECT));
         dialog.show();

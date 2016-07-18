@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettings;
 import jetbrains.mps.smodel.language.LanguageRegistry;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -68,7 +68,7 @@ public class PushEditorHints_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final ConceptEditorHintSettings settings = new ConceptEditorHintSettings(LanguageRegistry.getInstance().getAvailableLanguages());
-    SwingUtilities.invokeLater(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         String[] initialEditorHints = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getUpdater().getInitialEditorHints();
         settings.updateSettings((initialEditorHints == null ? Collections.<String>emptySet() : SetSequence.fromSetAndArray(new HashSet<String>(), initialEditorHints)));

@@ -22,6 +22,7 @@
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -285,44 +286,49 @@
             </node>
           </node>
           <node concept="3clFbS" id="5ARbEwNhuCT" role="3clFbx">
-            <node concept="3clFbF" id="5ARbEwNh1_M" role="3cqZAp">
-              <node concept="2YIFZM" id="5ARbEwNh3cj" role="3clFbG">
-                <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-                <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
-                <node concept="2ShNRf" id="5ARbEwNh3cw" role="37wK5m">
-                  <node concept="YeOm9" id="5ARbEwNhuz6" role="2ShVmc">
-                    <node concept="1Y3b0j" id="5ARbEwNhuz9" role="YeSDq">
-                      <property role="2bfB8j" value="true" />
-                      <ref role="1Y3XeK" to="wyt6:~Runnable" resolve="Runnable" />
-                      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                      <node concept="3Tm1VV" id="5ARbEwNhuza" role="1B3o_S" />
-                      <node concept="3clFb_" id="5ARbEwNhuzb" role="jymVt">
-                        <property role="1EzhhJ" value="false" />
-                        <property role="TrG5h" value="run" />
-                        <property role="DiZV1" value="false" />
-                        <property role="IEkAT" value="false" />
-                        <node concept="3Tm1VV" id="5ARbEwNhuzc" role="1B3o_S" />
-                        <node concept="3cqZAl" id="5ARbEwNhuze" role="3clF45" />
-                        <node concept="3clFbS" id="5ARbEwNhuzf" role="3clF47">
-                          <node concept="3clFbF" id="5ARbEwNjgKz" role="3cqZAp">
-                            <node concept="2OqwBi" id="5ARbEwNjhml" role="3clFbG">
-                              <node concept="liA8E" id="5ARbEwNjmSI" role="2OqNvi">
-                                <ref role="37wK5l" to="dxuu:~JTable.editCellAt(int,int):boolean" resolve="editCellAt" />
-                                <node concept="37vLTw" id="5ARbEwNjmT4" role="37wK5m">
-                                  <ref role="3cqZAo" node="3tOCygy4brV" resolve="row" />
+            <node concept="3clFbF" id="WEmn41A9bH" role="3cqZAp">
+              <node concept="2OqwBi" id="WEmn41A9IP" role="3clFbG">
+                <node concept="2YIFZM" id="WEmn41A9ti" role="2Oq$k0">
+                  <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+                  <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+                </node>
+                <node concept="liA8E" id="WEmn41Aaal" role="2OqNvi">
+                  <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+                  <node concept="2ShNRf" id="5ARbEwNh3cw" role="37wK5m">
+                    <node concept="YeOm9" id="5ARbEwNhuz6" role="2ShVmc">
+                      <node concept="1Y3b0j" id="5ARbEwNhuz9" role="YeSDq">
+                        <property role="2bfB8j" value="true" />
+                        <ref role="1Y3XeK" to="wyt6:~Runnable" resolve="Runnable" />
+                        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                        <node concept="3Tm1VV" id="5ARbEwNhuza" role="1B3o_S" />
+                        <node concept="3clFb_" id="5ARbEwNhuzb" role="jymVt">
+                          <property role="1EzhhJ" value="false" />
+                          <property role="TrG5h" value="run" />
+                          <property role="DiZV1" value="false" />
+                          <property role="IEkAT" value="false" />
+                          <node concept="3Tm1VV" id="5ARbEwNhuzc" role="1B3o_S" />
+                          <node concept="3cqZAl" id="5ARbEwNhuze" role="3clF45" />
+                          <node concept="3clFbS" id="5ARbEwNhuzf" role="3clF47">
+                            <node concept="3clFbF" id="5ARbEwNjgKz" role="3cqZAp">
+                              <node concept="2OqwBi" id="5ARbEwNjhml" role="3clFbG">
+                                <node concept="liA8E" id="5ARbEwNjmSI" role="2OqNvi">
+                                  <ref role="37wK5l" to="dxuu:~JTable.editCellAt(int,int):boolean" resolve="editCellAt" />
+                                  <node concept="37vLTw" id="5ARbEwNjmT4" role="37wK5m">
+                                    <ref role="3cqZAo" node="3tOCygy4brV" resolve="row" />
+                                  </node>
+                                  <node concept="37vLTw" id="5ARbEwNjoVp" role="37wK5m">
+                                    <ref role="3cqZAo" node="3tOCygy4brX" resolve="column" />
+                                  </node>
                                 </node>
-                                <node concept="37vLTw" id="5ARbEwNjoVp" role="37wK5m">
-                                  <ref role="3cqZAo" node="3tOCygy4brX" resolve="column" />
+                                <node concept="37vLTw" id="5ARbEwNjgKy" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="3tOCygy4brN" resolve="table" />
                                 </node>
-                              </node>
-                              <node concept="37vLTw" id="5ARbEwNjgKy" role="2Oq$k0">
-                                <ref role="3cqZAo" node="3tOCygy4brN" resolve="table" />
                               </node>
                             </node>
                           </node>
-                        </node>
-                        <node concept="2AHcQZ" id="5ARbEwNhuBY" role="2AJF6D">
-                          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                          <node concept="2AHcQZ" id="5ARbEwNhuBY" role="2AJF6D">
+                            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                          </node>
                         </node>
                       </node>
                     </node>

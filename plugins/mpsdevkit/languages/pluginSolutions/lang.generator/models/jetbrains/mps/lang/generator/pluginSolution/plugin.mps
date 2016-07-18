@@ -652,50 +652,55 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="hR1MyPz" role="3cqZAp">
-          <node concept="2YIFZM" id="hR1MyP$" role="3clFbG">
-            <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-            <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
-            <node concept="1bVj0M" id="hR1MyP_" role="37wK5m">
-              <node concept="3clFbS" id="hR1MyPA" role="1bW5cS">
-                <node concept="3cpWs8" id="hR1MyPB" role="3cqZAp">
-                  <node concept="3cpWsn" id="hR1MyPC" role="3cpWs9">
-                    <property role="TrG5h" value="dialog" />
-                    <node concept="3uibUv" id="hR1MyPD" role="1tU5fm">
-                      <ref role="3uigEE" node="nMe5u0DxdI" resolve="AttachMappingLabelDialog" />
-                    </node>
-                    <node concept="2ShNRf" id="hR1MyPE" role="33vP2m">
-                      <node concept="1pGfFk" id="hR1MyPF" role="2ShVmc">
-                        <ref role="37wK5l" node="nMe5u0Dxh9" resolve="AttachMappingLabelDialog" />
-                        <node concept="37vLTw" id="3GM_nagTsBb" role="37wK5m">
-                          <ref role="3cqZAo" node="nMe5u0Dxmv" resolve="node" />
-                        </node>
-                        <node concept="37vLTw" id="3GM_nagTtxm" role="37wK5m">
-                          <ref role="3cqZAo" node="hR1MyPf" resolve="existingLabels" />
-                        </node>
-                        <node concept="2OqwBi" id="nMe5u0Dxmq" role="37wK5m">
-                          <node concept="2WthIp" id="nMe5u0Dxmr" role="2Oq$k0" />
-                          <node concept="1DTwFV" id="nMe5u0Dxms" role="2OqNvi">
-                            <ref role="2WH_rO" node="nMe5u0Dxmj" resolve="editorContext" />
+        <node concept="3clFbF" id="WEmn41A9bH" role="3cqZAp">
+          <node concept="2OqwBi" id="WEmn41A9IP" role="3clFbG">
+            <node concept="2YIFZM" id="WEmn41A9ti" role="2Oq$k0">
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+            </node>
+            <node concept="liA8E" id="WEmn41Aaal" role="2OqNvi">
+              <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+              <node concept="1bVj0M" id="hR1MyP_" role="37wK5m">
+                <node concept="3clFbS" id="hR1MyPA" role="1bW5cS">
+                  <node concept="3cpWs8" id="hR1MyPB" role="3cqZAp">
+                    <node concept="3cpWsn" id="hR1MyPC" role="3cpWs9">
+                      <property role="TrG5h" value="dialog" />
+                      <node concept="3uibUv" id="hR1MyPD" role="1tU5fm">
+                        <ref role="3uigEE" node="nMe5u0DxdI" resolve="AttachMappingLabelDialog" />
+                      </node>
+                      <node concept="2ShNRf" id="hR1MyPE" role="33vP2m">
+                        <node concept="1pGfFk" id="hR1MyPF" role="2ShVmc">
+                          <ref role="37wK5l" node="nMe5u0Dxh9" resolve="AttachMappingLabelDialog" />
+                          <node concept="37vLTw" id="3GM_nagTsBb" role="37wK5m">
+                            <ref role="3cqZAo" node="nMe5u0Dxmv" resolve="node" />
                           </node>
-                        </node>
-                        <node concept="2OqwBi" id="5moclSvnR3y" role="37wK5m">
-                          <node concept="2WthIp" id="5moclSvnR3_" role="2Oq$k0" />
-                          <node concept="1DTwFV" id="5moclSvnR3B" role="2OqNvi">
-                            <ref role="2WH_rO" node="5moclSvnQAE" resolve="mpsProject" />
+                          <node concept="37vLTw" id="3GM_nagTtxm" role="37wK5m">
+                            <ref role="3cqZAo" node="hR1MyPf" resolve="existingLabels" />
+                          </node>
+                          <node concept="2OqwBi" id="nMe5u0Dxmq" role="37wK5m">
+                            <node concept="2WthIp" id="nMe5u0Dxmr" role="2Oq$k0" />
+                            <node concept="1DTwFV" id="nMe5u0Dxms" role="2OqNvi">
+                              <ref role="2WH_rO" node="nMe5u0Dxmj" resolve="editorContext" />
+                            </node>
+                          </node>
+                          <node concept="2OqwBi" id="5moclSvnR3y" role="37wK5m">
+                            <node concept="2WthIp" id="5moclSvnR3_" role="2Oq$k0" />
+                            <node concept="1DTwFV" id="5moclSvnR3B" role="2OqNvi">
+                              <ref role="2WH_rO" node="5moclSvnQAE" resolve="mpsProject" />
+                            </node>
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
-                </node>
-                <node concept="3clFbF" id="hR1MyPN" role="3cqZAp">
-                  <node concept="2OqwBi" id="hR1MyPO" role="3clFbG">
-                    <node concept="37vLTw" id="3GM_nagTtaZ" role="2Oq$k0">
-                      <ref role="3cqZAo" node="hR1MyPC" resolve="dialog" />
-                    </node>
-                    <node concept="liA8E" id="hR1MyPQ" role="2OqNvi">
-                      <ref role="37wK5l" to="jkm4:~DialogWrapper.show():void" resolve="show" />
+                  <node concept="3clFbF" id="hR1MyPN" role="3cqZAp">
+                    <node concept="2OqwBi" id="hR1MyPO" role="3clFbG">
+                      <node concept="37vLTw" id="3GM_nagTtaZ" role="2Oq$k0">
+                        <ref role="3cqZAo" node="hR1MyPC" resolve="dialog" />
+                      </node>
+                      <node concept="liA8E" id="hR1MyPQ" role="2OqNvi">
+                        <ref role="37wK5l" to="jkm4:~DialogWrapper.show():void" resolve="show" />
+                      </node>
                     </node>
                   </node>
                 </node>

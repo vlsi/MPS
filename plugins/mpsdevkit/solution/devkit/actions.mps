@@ -126,6 +126,7 @@
     <import index="xg48" ref="r:7be9d1d9-acb4-4fe3-8096-96178feee8f5(jetbrains.mps.lang.findUsages.plugin)" />
     <import index="6sb4" ref="r:c11a4a93-6ff1-406e-b7f8-f5bafc5a1697(jetbrains.mps.lang.refactoring.plugin)" />
     <import index="beg" ref="r:09811e4e-aa47-4ea2-ad3d-57b7b9ffc7e3(jetbrains.mps.lang.constraints.plugin)" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -3361,38 +3362,43 @@
                     </node>
                     <node concept="9aQIb" id="BwQO0yFftn" role="9aQIa">
                       <node concept="3clFbS" id="BwQO0yFfto" role="9aQI4">
-                        <node concept="3clFbF" id="vTEwPQw0kZ" role="3cqZAp">
-                          <node concept="2YIFZM" id="vTEwPQw0y8" role="3clFbG">
-                            <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
-                            <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-                            <node concept="1bVj0M" id="BwQO0yEmaF" role="37wK5m">
-                              <node concept="3clFbS" id="BwQO0yEmaO" role="1bW5cS">
-                                <node concept="3clFbF" id="vTEwPQw4dX" role="3cqZAp">
-                                  <node concept="2YIFZM" id="vTEwPQw8GJ" role="3clFbG">
-                                    <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
-                                    <ref role="37wK5l" to="jkm4:~Messages.showErrorDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String):void" resolve="showErrorDialog" />
-                                    <node concept="2YIFZM" id="vTEwPQwdBT" role="37wK5m">
-                                      <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                                      <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                                      <node concept="2OqwBi" id="vTEwPQwa1P" role="37wK5m">
-                                        <node concept="2WthIp" id="vTEwPQwa1S" role="2Oq$k0">
-                                          <ref role="32nkFo" node="1tuGf38GoJY" resolve="DeleteGenerator" />
+                        <node concept="3clFbF" id="WEmn41A9bH" role="3cqZAp">
+                          <node concept="2OqwBi" id="WEmn41A9IP" role="3clFbG">
+                            <node concept="2YIFZM" id="WEmn41A9ti" role="2Oq$k0">
+                              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+                              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+                            </node>
+                            <node concept="liA8E" id="WEmn41Aaal" role="2OqNvi">
+                              <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+                              <node concept="1bVj0M" id="BwQO0yEmaF" role="37wK5m">
+                                <node concept="3clFbS" id="BwQO0yEmaO" role="1bW5cS">
+                                  <node concept="3clFbF" id="vTEwPQw4dX" role="3cqZAp">
+                                    <node concept="2YIFZM" id="vTEwPQw8GJ" role="3clFbG">
+                                      <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+                                      <ref role="37wK5l" to="jkm4:~Messages.showErrorDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String):void" resolve="showErrorDialog" />
+                                      <node concept="2YIFZM" id="vTEwPQwdBT" role="37wK5m">
+                                        <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                                        <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                                        <node concept="2OqwBi" id="vTEwPQwa1P" role="37wK5m">
+                                          <node concept="2WthIp" id="vTEwPQwa1S" role="2Oq$k0">
+                                            <ref role="32nkFo" node="1tuGf38GoJY" resolve="DeleteGenerator" />
+                                          </node>
+                                          <node concept="1DTwFV" id="vTEwPQwa1U" role="2OqNvi">
+                                            <ref role="2WH_rO" node="1tuGf38GoLi" resolve="project" />
+                                          </node>
                                         </node>
-                                        <node concept="1DTwFV" id="vTEwPQwa1U" role="2OqNvi">
-                                          <ref role="2WH_rO" node="1tuGf38GoLi" resolve="project" />
+                                      </node>
+                                      <node concept="2OqwBi" id="vTEwPQwfjo" role="37wK5m">
+                                        <node concept="37vLTw" id="vTEwPQwfgw" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="vTEwPQvWfq" resolve="s" />
+                                        </node>
+                                        <node concept="liA8E" id="vTEwPQwfEn" role="2OqNvi">
+                                          <ref role="37wK5l" to="18ew:~IStatus.getMessage():java.lang.String" resolve="getMessage" />
                                         </node>
                                       </node>
-                                    </node>
-                                    <node concept="2OqwBi" id="vTEwPQwfjo" role="37wK5m">
-                                      <node concept="37vLTw" id="vTEwPQwfgw" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="vTEwPQvWfq" resolve="s" />
+                                      <node concept="Xl_RD" id="vTEwPQwhac" role="37wK5m">
+                                        <property role="Xl_RC" value="Deleting Generator" />
                                       </node>
-                                      <node concept="liA8E" id="vTEwPQwfEn" role="2OqNvi">
-                                        <ref role="37wK5l" to="18ew:~IStatus.getMessage():java.lang.String" resolve="getMessage" />
-                                      </node>
-                                    </node>
-                                    <node concept="Xl_RD" id="vTEwPQwhac" role="37wK5m">
-                                      <property role="Xl_RC" value="Deleting Generator" />
                                     </node>
                                   </node>
                                 </node>
@@ -14275,43 +14281,48 @@
         </node>
         <node concept="3clFbJ" id="7IH442cS22Y" role="3cqZAp">
           <node concept="3clFbS" id="7IH442cS230" role="3clFbx">
-            <node concept="3clFbF" id="7IH442cRjJt" role="3cqZAp">
-              <node concept="2YIFZM" id="7IH442cRjJu" role="3clFbG">
-                <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
-                <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-                <node concept="1bVj0M" id="7IH442cS1m5" role="37wK5m">
-                  <node concept="3clFbS" id="7IH442cS1mf" role="1bW5cS">
-                    <node concept="3clFbF" id="7IH442cRjJB" role="3cqZAp">
-                      <node concept="2OqwBi" id="7IH442cRjJC" role="3clFbG">
-                        <node concept="2YIFZM" id="7IH442cRjJD" role="2Oq$k0">
-                          <ref role="1Pybhc" to="rvbb:~ProjectPane" resolve="ProjectPane" />
-                          <ref role="37wK5l" to="rvbb:~ProjectPane.getInstance(com.intellij.openapi.project.Project):jetbrains.mps.ide.projectPane.ProjectPane" resolve="getInstance" />
-                          <node concept="2OqwBi" id="7IH442cRjJE" role="37wK5m">
-                            <node concept="1DTwFV" id="7IH442cRjJF" role="2OqNvi">
-                              <ref role="2WH_rO" node="7IH442cRjJ9" resolve="ideaProject" />
-                            </node>
-                            <node concept="2WthIp" id="7IH442cRjJG" role="2Oq$k0">
-                              <ref role="32nkFo" node="7IH442cRjJ6" resolve="NewAspectModelByDescriptor" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="7IH442cRjJH" role="2OqNvi">
-                          <ref role="37wK5l" to="rvbb:~ProjectPane.selectModel(org.jetbrains.mps.openapi.model.SModel,boolean):void" resolve="selectModel" />
-                          <node concept="2OqwBi" id="7IH442cS6pT" role="37wK5m">
-                            <node concept="2OqwBi" id="7IH442cS4i9" role="2Oq$k0">
-                              <node concept="37vLTw" id="7IH442cS47S" role="2Oq$k0">
-                                <ref role="3cqZAo" node="7IH442cS1K1" resolve="aspectModels" />
+            <node concept="3clFbF" id="WEmn41AbEC" role="3cqZAp">
+              <node concept="2OqwBi" id="WEmn41AbED" role="3clFbG">
+                <node concept="2YIFZM" id="WEmn41AbEE" role="2Oq$k0">
+                  <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+                  <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+                </node>
+                <node concept="liA8E" id="WEmn41AbEF" role="2OqNvi">
+                  <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+                  <node concept="1bVj0M" id="7IH442cS1m5" role="37wK5m">
+                    <node concept="3clFbS" id="7IH442cS1mf" role="1bW5cS">
+                      <node concept="3clFbF" id="7IH442cRjJB" role="3cqZAp">
+                        <node concept="2OqwBi" id="7IH442cRjJC" role="3clFbG">
+                          <node concept="2YIFZM" id="7IH442cRjJD" role="2Oq$k0">
+                            <ref role="1Pybhc" to="rvbb:~ProjectPane" resolve="ProjectPane" />
+                            <ref role="37wK5l" to="rvbb:~ProjectPane.getInstance(com.intellij.openapi.project.Project):jetbrains.mps.ide.projectPane.ProjectPane" resolve="getInstance" />
+                            <node concept="2OqwBi" id="7IH442cRjJE" role="37wK5m">
+                              <node concept="1DTwFV" id="7IH442cRjJF" role="2OqNvi">
+                                <ref role="2WH_rO" node="7IH442cRjJ9" resolve="ideaProject" />
                               </node>
-                              <node concept="liA8E" id="7IH442cS6mF" role="2OqNvi">
-                                <ref role="37wK5l" to="33ny:~Collection.iterator():java.util.Iterator" resolve="iterator" />
+                              <node concept="2WthIp" id="7IH442cRjJG" role="2Oq$k0">
+                                <ref role="32nkFo" node="7IH442cRjJ6" resolve="NewAspectModelByDescriptor" />
                               </node>
                             </node>
-                            <node concept="liA8E" id="7IH442cS6BY" role="2OqNvi">
-                              <ref role="37wK5l" to="33ny:~Iterator.next():java.lang.Object" resolve="next" />
-                            </node>
                           </node>
-                          <node concept="3clFbT" id="7IH442cRjJJ" role="37wK5m">
-                            <property role="3clFbU" value="false" />
+                          <node concept="liA8E" id="7IH442cRjJH" role="2OqNvi">
+                            <ref role="37wK5l" to="rvbb:~ProjectPane.selectModel(org.jetbrains.mps.openapi.model.SModel,boolean):void" resolve="selectModel" />
+                            <node concept="2OqwBi" id="7IH442cS6pT" role="37wK5m">
+                              <node concept="2OqwBi" id="7IH442cS4i9" role="2Oq$k0">
+                                <node concept="37vLTw" id="7IH442cS47S" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="7IH442cS1K1" resolve="aspectModels" />
+                                </node>
+                                <node concept="liA8E" id="7IH442cS6mF" role="2OqNvi">
+                                  <ref role="37wK5l" to="33ny:~Collection.iterator():java.util.Iterator" resolve="iterator" />
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="7IH442cS6BY" role="2OqNvi">
+                                <ref role="37wK5l" to="33ny:~Iterator.next():java.lang.Object" resolve="next" />
+                              </node>
+                            </node>
+                            <node concept="3clFbT" id="7IH442cRjJJ" role="37wK5m">
+                              <property role="3clFbU" value="false" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -14520,9 +14531,7 @@
     <node concept="2JriF1" id="7IH442cRjKK" role="2JrayB">
       <property role="TrG5h" value="aspectId" />
       <node concept="3Tm6S6" id="7IH442cRjKL" role="1B3o_S" />
-      <node concept="3uibUv" id="7IH442cRR2D" role="1tU5fm">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
+      <node concept="17QB3L" id="WEmn41A_ke" role="1tU5fm" />
       <node concept="2K2imR" id="7IH442cRjKN" role="2K2Cet">
         <node concept="3clFbS" id="7IH442cRjKO" role="2VODD2">
           <node concept="3clFbF" id="7IH442cRSCH" role="3cqZAp">
