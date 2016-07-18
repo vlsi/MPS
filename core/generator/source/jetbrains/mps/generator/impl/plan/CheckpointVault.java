@@ -17,7 +17,10 @@ package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
+import jetbrains.mps.generator.impl.MappingLabelExtractor;
 import jetbrains.mps.generator.impl.ModelStreamManager;
+import jetbrains.mps.generator.impl.SingleStreamSource;
+import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.Pair;
@@ -27,6 +30,9 @@ import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -141,7 +147,7 @@ public class CheckpointVault {
     }
   }
 
-  /*package*/ Element buildCheckpointRegistry() {
+  private Element buildCheckpointRegistry() {
     Element root = new Element("checkpoints");
     for (Entry entry : myKnownCheckpoints) {
       Element planElement = new Element("plan");
@@ -175,7 +181,24 @@ public class CheckpointVault {
   }
 
   private void loadModels(Entry entry) {
-    // FIXME entry.myFiles -> entry.myCheckpoints
+    final ModelFactory modelFactory = PersistenceFacade.getInstance().getDefaultModelFactory();
+    try {
+      ArrayList<CheckpointState> states = new ArrayList<>();
+      for (Pair<CheckpointIdentity, String> p : entry.myFiles) {
+        final SingleStreamSource source = new SingleStreamSource(myStreams.getOutputLocation(), p.o2);
+        SModel cpModel = modelFactory.load(source, Collections.emptyMap());
+        MappingsMemento memento = new MappingLabelExtractor().restore(MappingLabelExtractor.findDebugNode(cpModel));
+        states.add(new CheckpointState(memento, cpModel, p.o1));
+      }
+      entry.myCheckpoints = new ModelCheckpoints(entry.myPlan, states);
+    } catch (IOException ex) {
+      // FIXME fail quietly for now, think over better error handling (
+      //       - fail fast with exception?
+      //       - pre-check all required CPs are present at Make
+      //       - load all CP at the generation start?
+      Logger.getLogger(CheckpointVault.class).error("Failed to load checkpoint model for " + entry.myPlan, ex);
+      // XXX entry.myCheckpoints == null indicated we would attempt to load next time. Perhaps, shall record failure to load once.
+    }
   }
 
   // FIXME use of StreamHandler;

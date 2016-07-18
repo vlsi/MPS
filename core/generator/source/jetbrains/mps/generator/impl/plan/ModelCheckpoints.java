@@ -26,6 +26,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -51,6 +52,17 @@ public class ModelCheckpoints {
     myPlan = state.getCheckpoint().getPlan();
     myStates = Collections.singletonList(state);
   }
+
+  /**
+   * @param plan not null
+   * @param states not null
+   */
+  /*package*/ ModelCheckpoints(PlanIdentity plan, Collection<CheckpointState> states) {
+    myPlan = plan;
+    assert StreamSupport.stream(states.spliterator(), false).allMatch(s -> s.getCheckpoint().getPlan().equals(plan));
+    myStates = new ArrayList<>(states); // copy
+  }
+
 
   /*package*/ ModelCheckpoints(PlanIdentity plan, SModel[] models) {
     myPlan = plan;
