@@ -5521,10 +5521,10 @@
   <node concept="1TIwiD" id="4HcAOwD$HKO">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="QueryFunctionParameter_SubstituteMenu_CurrentChild" />
+    <property role="TrG5h" value="QueryFunctionParameter_SubstituteMenu_CurrentTargetNode" />
     <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
     <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="currentChild" />
+    <property role="34LRSv" value="currentTargetNode" />
     <property role="1pbfSe" value="1960802172" />
     <property role="EcuMT" value="5425882385312046132" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
