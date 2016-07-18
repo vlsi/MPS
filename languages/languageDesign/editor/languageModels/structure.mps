@@ -4804,7 +4804,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="menuReference" />
       <property role="IQ2ns" value="6718020819487784677" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="3rSzFHWJPbd" resolve="ITransformationMenuReference" />
     </node>
     <node concept="PrWs8" id="2mcvySy2piN" role="PzmwI">
