@@ -31,8 +31,8 @@ import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -143,9 +143,15 @@ public class CrossModelEnvironment {
       // XXX what if there's one in persistent? Shall we copy it into transient and update with the code below?
       myTransientCheckpoints.put(originalModel, new ModelCheckpoints(cpState));
     } else {
-      Collection<CheckpointState> discarded = checkpoints.updateAndDiscardOutdated(cpState);
+      CheckpointState replaced = checkpoints.updateAndDiscardOutdated(cpState);
+      if (replaced == null) {
+        return;
+      }
       HashSet<SModelReference> forgottenCheckpoints = new HashSet<SModelReference>();
-      for (CheckpointState next : discarded) {
+      ArrayDeque<CheckpointState> discarded = new ArrayDeque<>();
+      discarded.add(replaced);
+      do {
+        CheckpointState next = discarded.removeFirst();
         // XXX once checkpoint model is removed, any other checkpoint model referencing it is broken, i.e.
         // m1@cp1 and m2@cp1, latter referencing the former, and we rebuild m1. Once we get here, we'd schedule m1@cp1 for removal
         // and at the end of the day we've got m1'@cp1 and m2@cp1 with references pointing to no-longer-existing m1@cp1.
@@ -159,17 +165,16 @@ public class CrossModelEnvironment {
         SModelReference cpReference = next.getCheckpointModel().getReference();
         forgottenCheckpoints.add(cpReference);
         myModule.forgetModel(cpReference, true);
-      }
-      // drop any other checkpoints that may reference the one removed. We've scheduled for removal their respective
-      // transient models already (above with forgetModel(..., true)), now it's time to forget CheckpointState.
-      // Perhaps, shall forget models here explicitly, rather than do the same in TransientModelsModule.forgetModel(..., true)
-      for (ModelCheckpoints mcp : myTransientCheckpoints.values()) {
-        // intentionally  don't skip mcp == checkpoints - we need to drop any further checkpoint models not only for
-        // external dependencies, but for subsequent cp models of the same original one, provided they reference the one we've dropped.
-        // Note that the cycle above drops only relevant cp model (compares checkpoint name).
-        mcp.discardOutdated(forgottenCheckpoints, discarded);
-      }
-      // FIXME discarded - as queue and repeat until queue is empty
+        // drop any other checkpoints that may reference the one removed. We've scheduled for removal their respective
+        // transient models already (above with forgetModel(..., true)), now it's time to forget CheckpointState.
+        // Perhaps, shall forget models here explicitly, rather than do the same in TransientModelsModule.forgetModel(..., true)
+        for (ModelCheckpoints mcp : myTransientCheckpoints.values()) {
+          // intentionally  don't skip mcp == checkpoints - we need to drop any further checkpoint models not only for
+          // external dependencies, but for subsequent cp models of the same original one, provided they reference the one we've dropped.
+          // Note that the cycle above drops only relevant cp model (compares checkpoint name).
+          mcp.discardOutdated(forgottenCheckpoints, discarded);
+        }
+      } while (!discarded.isEmpty());
     }
   }
 

@@ -100,21 +100,27 @@ public class ModelCheckpoints {
   }
 
   /**
+   * we've got new state for some checkpoint
    * @param state not null
-   * @return collection of stale checkpoint states that has been discarded, may be empty.
+   * @return stale checkpoint (the one that has been discarded), if any.
    */
-  /*package*/ Collection<CheckpointState> updateAndDiscardOutdated(CheckpointState state) {
+  /*package*/ CheckpointState updateAndDiscardOutdated(CheckpointState state) {
     for (int i = 0; i < myStates.size(); i++) {
       CheckpointState cps = myStates.get(i);
       if (!cps.getCheckpoint().equals(state.getCheckpoint())) {
         continue;
       }
       myStates.set(i, state);
-      return Collections.singleton(cps);
+      return cps;
     }
-    return Collections.emptyList();
+    return null;
   }
 
+  /**
+   * Once there's a discarded checkpoint state, we need to update (discard) states that used to reference it.
+   * @param outdatedModels models that are no longer valid
+   * @param discarded collection with stale states to update
+   */
   /*package*/ void discardOutdated(Collection<SModelReference> outdatedModels, Collection<CheckpointState> discarded) {
     for (Iterator<CheckpointState> it = myStates.iterator(); it.hasNext(); ) {
       CheckpointState next = it.next();
