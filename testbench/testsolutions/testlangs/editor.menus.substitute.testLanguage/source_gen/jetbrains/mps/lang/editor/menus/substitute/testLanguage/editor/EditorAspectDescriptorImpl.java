@@ -132,7 +132,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
           if (true) {
             switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b3a0a5, menuId.getFqName())) {
               case 0:
-                return Arrays.asList(new SubstituteMenu[]{new NamedSubstituteMenu()});
+                return Arrays.asList(new SubstituteMenu[]{new NamedSubstituteMenu(), new SubstituteMenu_Group_CanExecute()});
               case 1:
                 return Arrays.asList(new SubstituteMenu[]{new NamedSubstituteMenuForContribution()});
               case 2:

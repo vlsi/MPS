@@ -24,13 +24,16 @@ public final class IMenuReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41b3L, "jetbrains.mps.lang.editor.structure.IMenuReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SNode> getApplicableConcept_id1quYWAD4TFX = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getApplicableConcept").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1quYWAD4TFX").registry(REGISTRY).build();
+  public static final SMethod<SNode> getApplicableConcept_id1quYWAD4TFX = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getApplicableConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1quYWAD4TFX").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getApplicableConcept_id1quYWAD4TFX);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
+  /*package*/ static SNode getApplicableConcept_id1quYWAD4TFX(@NotNull SNode __thisNode__) {
+    return null;
+  }
 
   /*package*/ IMenuReference__BehaviorDescriptor() {
     super(REGISTRY);
@@ -48,6 +51,8 @@ public final class IMenuReference__BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
+      case 0:
+        return (T) ((SNode) getApplicableConcept_id1quYWAD4TFX(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

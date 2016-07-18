@@ -80,11 +80,6 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
       }
 
       @Override
-      public boolean canExecute(String pattern) {
-        return super.canExecute(pattern);
-      }
-
-      @Override
       public SNode createNode(String pattern) {
         return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"));
       }
@@ -135,11 +130,6 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
         public Item(SubstituteMenuContext context) {
           super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"), context.getParentNode(), context.getCurrentChild());
           _context = context;
-        }
-
-        @Override
-        public boolean canExecute(String pattern) {
-          return super.canExecute(pattern);
         }
 
         @Override

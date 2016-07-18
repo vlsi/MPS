@@ -36576,34 +36576,6 @@
             </node>
           </node>
           <node concept="2tJIrI" id="1pfqmFIjpky" role="jymVt" />
-          <node concept="3clFb_" id="7Nx4mSUbpX6" role="jymVt">
-            <property role="1EzhhJ" value="false" />
-            <property role="TrG5h" value="canExecute" />
-            <property role="DiZV1" value="false" />
-            <property role="od$2w" value="false" />
-            <node concept="3Tm1VV" id="7Nx4mSUbpX7" role="1B3o_S" />
-            <node concept="10P_77" id="7Nx4mSUbpX9" role="3clF45" />
-            <node concept="37vLTG" id="7Nx4mSUbpXa" role="3clF46">
-              <property role="TrG5h" value="pattern" />
-              <node concept="3uibUv" id="7Nx4mSUbpXb" role="1tU5fm">
-                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-              </node>
-            </node>
-            <node concept="3clFbS" id="7Nx4mSUbpXc" role="3clF47">
-              <node concept="3clFbF" id="7Nx4mSUbpXg" role="3cqZAp">
-                <node concept="3nyPlj" id="7Nx4mSUbpXf" role="3clFbG">
-                  <ref role="37wK5l" to="qtqj:~DefaultSubstituteMenuItem.canExecute(java.lang.String):boolean" resolve="canExecute" />
-                  <node concept="37vLTw" id="7Nx4mSUbpXe" role="37wK5m">
-                    <ref role="3cqZAo" node="7Nx4mSUbpXa" resolve="pattern" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="2AHcQZ" id="7Nx4mSUbpXd" role="2AJF6D">
-              <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-            </node>
-          </node>
-          <node concept="2tJIrI" id="1pfqmFIjtjb" role="jymVt" />
           <node concept="3clFb_" id="1pfqmFIjz6y" role="jymVt">
             <property role="1EzhhJ" value="false" />
             <property role="TrG5h" value="createNode" />

@@ -5646,7 +5646,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="query" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpdg:h8uaGWA" resolve="QueryFunction_CanSubstitute" />
+      <ref role="20lvS9" node="7Nx4mSUbr7x" resolve="QueryFunction_SubstituteMenu_CanExecute" />
     </node>
   </node>
   <node concept="PlHQZ" id="3rSzFHWJPbd">
