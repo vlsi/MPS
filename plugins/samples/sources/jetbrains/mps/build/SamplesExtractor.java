@@ -35,7 +35,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.SwingUtilities;
 import java.io.File;
 import java.io.IOException;
 
@@ -144,16 +143,13 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
       final File samplesDir = new File(getSamplesPathInUserHome());
 
       if (samplesDir.exists()) {
-        SwingUtilities.invokeLater(new Runnable() {
-          @Override
-          public void run() {
-            int answer = Messages.showYesNoDialog(
-                "Do you want to replace directory\n" + samplesDir + "\n with version " + myApplicationInfo.getBuild().asString() +
-                    " (old directory contents will be deleted)?", "Replace MPS Samples?", Messages.getQuestionIcon());
-            if (answer == 0) {
-              FileUtil.delete(samplesDir);
-              actuallyExtractSamples(samplesZipFile);
-            }
+        ApplicationManager.getApplication().invokeLater(() -> {
+          int answer = Messages.showYesNoDialog(
+              "Do you want to replace directory\n" + samplesDir + "\n with version " + myApplicationInfo.getBuild().asString() +
+                  " (old directory contents will be deleted)?", "Replace MPS Samples?", Messages.getQuestionIcon());
+          if (answer == 0) {
+            FileUtil.delete(samplesDir);
+            actuallyExtractSamples(samplesZipFile);
           }
         });
       } else {

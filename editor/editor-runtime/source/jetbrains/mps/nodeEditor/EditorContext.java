@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.wm.IdeFocusManager;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.assist.DisabledContextAssistantManager;
 import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
@@ -46,7 +47,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
-import javax.swing.SwingUtilities;
 import java.util.List;
 
 /**
@@ -99,11 +99,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     }
 
     SModel model = node.getModel();
-    if (!(model instanceof EditableSModel)) {
-      return false;
-    }
-
-    return !model.isReadOnly();
+    return model instanceof EditableSModel && !model.isReadOnly();
   }
 
   @Override
@@ -235,7 +231,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   @Override
   public void openInspector() {
-    SwingUtilities.invokeLater(() -> IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(() -> {
+    ThreadUtils.runInUIThreadNoWait(() -> IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(() -> {
       final InspectorTool inspector = getOperationContext().getComponent(InspectorTool.class);
       if (inspector != null) {
         inspector.openTool(true);

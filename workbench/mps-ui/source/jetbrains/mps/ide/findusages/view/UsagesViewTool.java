@@ -18,10 +18,12 @@ package jetbrains.mps.ide.findusages.view;
 import com.intellij.icons.AllIcons.Actions;
 import com.intellij.icons.AllIcons.General;
 import com.intellij.icons.AllIcons.Toolwindows;
+import com.intellij.ide.actions.PinActiveTabAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -35,7 +37,6 @@ import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.content.Content;
-import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -62,7 +63,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
-import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,7 +82,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   private static final String DEFAULT_VIEW_OPTIONS = "default_view_options";
   private static final String TOOL_WINDOW_ID = "Usages";
 
-  private List<UsageViewData> myUsageViewsData = new ArrayList<UsageViewData>();
+  private List<UsageViewData> myUsageViewsData = new ArrayList<>();
   private jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions myDefaultViewOptions =
       new jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions();
   private final DataTreeChangesNotifier myChangeTracker = new DataTreeChangesNotifier();
@@ -229,13 +229,10 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
         }
         register(usageViewData);
 
-        SwingUtilities.invokeLater(new Runnable() {
-          @Override
-          public void run() {
-            final String caption = usageViewData.myUsagesView.getCaption();
-            final Icon icon = usageViewData.myUsagesView.getIcon();
-            addContent(usageViewData.myUsagesView.getComponent(), caption, icon, true);
-          }
+        ApplicationManager.getApplication().invokeLater(() -> {
+          final String caption = usageViewData.myUsagesView.getCaption();
+          final Icon icon = usageViewData.myUsagesView.getIcon();
+          addContent(usageViewData.myUsagesView.getComponent(), caption, icon, true);
         });
       }
     }
@@ -243,12 +240,9 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     Element defaultViewOptionsXML = element.getChild(DEFAULT_VIEW_OPTIONS);
     myDefaultViewOptions.read(defaultViewOptionsXML, project);
 
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        if (getContentManager().getContentCount() == 0) {
-          makeUnavailableLater();
-        }
+    ApplicationManager.getApplication().invokeLater(() -> {
+      if (getContentManager().getContentCount() == 0) {
+        makeUnavailableLater();
       }
     });
   }
@@ -282,12 +276,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   public Element getState() {
     final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
     final Element state = new Element("state");
-    mpsProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        write(state, mpsProject);
-      }
-    });
+    mpsProject.getModelAccess().runReadAction(() -> write(state, mpsProject));
     return state;
   }
 
@@ -295,26 +284,18 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   public void loadState(final Element state) {
     //startup manager is needed cause the contract is that you can't use read and write locks
     //on component load - it can cause a deadlock (MPS-2811) 
-    StartupManager.getInstance(getProject()).runWhenProjectIsInitialized(new Runnable() {
-      @Override
-      public void run() {
-        if (getProject().isDisposed()) {
-          return;
-        }
-        final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
-        mpsProject.getModelAccess().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            read(state, mpsProject);
-          }
-        });
+    StartupManager.getInstance(getProject()).runWhenProjectIsInitialized(() -> {
+      if (getProject().isDisposed()) {
+        return;
       }
+      final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
+      mpsProject.getModelAccess().runReadAction(() -> read(state, mpsProject));
     });
   }
 
   private UsagesView createUsageView(@Nullable SearchTaskImpl searchTask) {
     final UsagesView view = new UsagesView(ProjectHelper.toMPSProject(getProject()), myDefaultViewOptions, myChangeTracker);
-    ArrayList<AnAction> actions = new ArrayList<AnAction>();
+    ArrayList<AnAction> actions = new ArrayList<>();
     if (searchTask != null) {
       final RerunAction rerunAction = new RerunAction(view, "Run again");
       rerunAction.setRunOptions(searchTask);
@@ -334,7 +315,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
         }
       }
     });
-    actions.add(new PinToolwindowTabAction());
+    actions.add(new PinActiveTabAction.TW());
     if (ActionManager.getInstance().getAction(MPSActions.FIND_USAGES_WITH_DIALOG_ACTION) != null && searchTask != null) {
       actions.add(new FindUsagesWithDialogAction(searchTask));
     }
