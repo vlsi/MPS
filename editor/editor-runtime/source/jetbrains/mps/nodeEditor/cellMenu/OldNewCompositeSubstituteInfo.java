@@ -45,7 +45,7 @@ public class OldNewCompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
   @Override
   protected List<SubstituteAction> createActions() {
     if (isOldSubstituteInfoApplicable()) {
-      return myOldSubstituteInfo.createActions();
+        return myOldSubstituteInfo.createActions();
     }
 
     return myNewSubstituteInfo.createActions();
