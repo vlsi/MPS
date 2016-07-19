@@ -100,11 +100,13 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     fillText(oldMatchingText, SLinkOperations.getTarget(action, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f93e6L, 0x4eff4d8b1f5ceecdL, "textFunction")), oldVariableToNew);
     if ((oldDescriptionText != null)) {
       SNode descriptionText = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x198452f4d5ee9587L, "jetbrains.mps.lang.editor.structure.TransformationFeature_DescriptionText"));
+      SLinkOperations.setTarget(descriptionText, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x198452f4d5ee9587L, 0x198452f4d5ee9588L, "query"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x198452f4d5eea7e1L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_DescriptionText")));
       fillText(oldDescriptionText, SLinkOperations.getTarget(descriptionText, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x198452f4d5ee9587L, 0x198452f4d5ee9588L, "query")), oldVariableToNew);
       ListSequence.fromList(SLinkOperations.getChildren(action, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, 0x7c45559defbb3517L, "features"))).addElement(descriptionText);
     }
     if ((oldActionType != null)) {
       SNode typeFeature = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x198452f4d5eea7f2L, "jetbrains.mps.lang.editor.structure.TransformationFeature_ActionType"));
+      SLinkOperations.setTarget(typeFeature, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x198452f4d5eea7f2L, 0x198452f4d5eea7f3L, "query"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defbb1acaL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Node")));
       SLinkOperations.setTarget(SLinkOperations.getTarget(typeFeature, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x198452f4d5eea7f2L, 0x198452f4d5eea7f3L, "query")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"), createNewStatementList(SLinkOperations.getTarget(oldActionType, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")), oldVariableToNew));
       ListSequence.fromList(SLinkOperations.getChildren(action, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, 0x7c45559defbb3517L, "features"))).addElement(typeFeature);
     }
@@ -138,7 +140,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     SNode dot = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
     SLinkOperations.setTarget(dot, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), returnExpression);
     SNode selectInEditor = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, "jetbrains.mps.lang.editor.structure.SelectInEditorOperation"));
-    SLinkOperations.setTarget(selectInEditor, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x1b0a9b8c0e947adeL, "editorContext"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x335fe1d0b7494cfcL, "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_EditorContext")));
+    SLinkOperations.setTarget(selectInEditor, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x1b0a9b8c0e947adeL, "editorContext"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10e76200a6fL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext")));
     SLinkOperations.setTarget(dot, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), selectInEditor);
     SLinkOperations.setTarget(expressionStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"), dot);
     return dot;
@@ -194,7 +196,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     });
     ListSequence.fromList(SNodeOperations.getNodeDescendants(result, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121ecda6bbL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject"), false, new SAbstractConcept[]{})).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        SNodeOperations.replaceWithAnother(it, SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x950e7629b27d763L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject")));
+        SNodeOperations.replaceWithAnother(it, SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a903acc3L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_parameterObject")));
       }
     });
     List<SNode> variableReferences = SNodeOperations.getNodeDescendants(result, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1182d21ed8dL, "jetbrains.mps.lang.actions.structure.SideTransformVariableReference"), false, new SAbstractConcept[]{});
