@@ -86,7 +86,7 @@
   
   <target name="java.compile.module-B" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/module-B" />
-    <javac destdir="${build.tmp}/java/out/module-B" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/module-B" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/moduleB/src" />
       <classpath>

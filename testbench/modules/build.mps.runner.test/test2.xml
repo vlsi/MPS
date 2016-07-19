@@ -183,7 +183,7 @@
   <target name="java.compile.jetbrains.mps.build.mps.runner.test.test1">
     <mkdir dir="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen" />
@@ -195,7 +195,7 @@
   <target name="java.compile.jetbrains.mps.build.mps.runner.test.test2" depends="java.compile.jetbrains.mps.build.mps.runner.test.test1">
     <mkdir dir="${basedir}/jetbrains.mps.build.mps.runner.test.test2/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test2" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test2" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test2" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/jetbrains.mps.build.mps.runner.test.test2/source_gen" />

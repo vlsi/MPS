@@ -51,7 +51,7 @@
   <target name="java.compile.AAA" depends="fetchDependencies">
     <mkdir dir="${basedir}/buildD/src" />
     <mkdir dir="${build.tmp}/java/out/AAA" />
-    <javac destdir="${build.tmp}/java/out/AAA" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/AAA" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/buildD/src" />
