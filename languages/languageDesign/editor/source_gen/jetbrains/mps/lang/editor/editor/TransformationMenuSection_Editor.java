@@ -8,11 +8,10 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
@@ -23,6 +22,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class TransformationMenuSection_Editor extends DefaultNodeEditor {
@@ -34,29 +35,38 @@ public class TransformationMenuSection_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_ymfzuf_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ymfzuf_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_ymfzuf_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ymfzuf_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_ymfzuf_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ymfzuf_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_ymfzuf_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ymfzuf_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ymfzuf_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_ymfzuf_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ymfzuf_g0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_ymfzuf_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "locations");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "section");
     editorCell.setCellId("Constant_ymfzuf_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_ymfzuf_b0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new TransformationMenuSection_Editor.locationsListHandler_ymfzuf_b0(node, "locations", editorContext);
+  private EditorCell createConstant_ymfzuf_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    editorCell.setCellId("Constant_ymfzuf_b0");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.apply_LeftParenAfterName(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNodeList_ymfzuf_c0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new TransformationMenuSection_Editor.locationsListHandler_ymfzuf_c0(node, "locations", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_locations");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
-    editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class locationsListHandler_ymfzuf_b0 extends RefNodeListHandler {
-    public locationsListHandler_ymfzuf_b0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class locationsListHandler_ymfzuf_c0 extends RefNodeListHandler {
+    public locationsListHandler_ymfzuf_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
     public SNode createNodeToInsert(EditorContext editorContext) {
@@ -99,28 +109,39 @@ public class TransformationMenuSection_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-  private EditorCell createConstant_ymfzuf_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parts");
-    editorCell.setCellId("Constant_ymfzuf_c0");
+  private EditorCell createConstant_ymfzuf_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    editorCell.setCellId("Constant_ymfzuf_d0");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.apply_RightParen(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_ymfzuf_d0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new TransformationMenuSection_Editor.partsListHandler_ymfzuf_d0(node, "parts", editorContext);
+  private EditorCell createConstant_ymfzuf_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    editorCell.setCellId("Constant_ymfzuf_e0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNodeList_ymfzuf_f0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new TransformationMenuSection_Editor.partsListHandler_ymfzuf_f0(node, "parts", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parts");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setFoldable(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class partsListHandler_ymfzuf_d0 extends RefNodeListHandler {
-    public partsListHandler_ymfzuf_d0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class partsListHandler_ymfzuf_f0 extends RefNodeListHandler {
+    public partsListHandler_ymfzuf_f0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
     public SNode createNodeToInsert(EditorContext editorContext) {
@@ -152,5 +173,29 @@ public class TransformationMenuSection_Editor extends DefaultNodeEditor {
         elementCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(myEditorContext, new SChildSubstituteInfo(elementCell, myOwnerNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbfL, "parts"), elementNode), new DefaultChildSubstituteInfo(myOwnerNode, elementNode, super.getLinkDeclaration(), myEditorContext)));
       }
     }
+    @Override
+    public EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), "----------");
+      editorCell.setSelectable(false);
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      SNode node = getOwner();
+      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      editorCell.getStyle().putAll(style);
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(prevNode, CellAction_DeleteNode.DeleteDirection.FORWARD));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(prevNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
+      return editorCell;
+    }
+  }
+  private EditorCell createConstant_ymfzuf_g0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    editorCell.setCellId("Constant_ymfzuf_g0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 }
