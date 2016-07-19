@@ -6,7 +6,7 @@
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <use id="86ef8290-12bb-4ca7-947f-093788f263a9" name="jetbrains.mps.lang.project" version="-1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
@@ -18451,6 +18451,12 @@
     <node concept="3aamgX" id="gZazF$E" role="3acgRq">
       <ref role="30HIoZ" to="tpc2:gTQ80DJ" resolve="ConceptFunctionParameter_editorContext" />
       <node concept="j$656" id="h1mMm8N" role="1lVwrX">
+        <ref role="v9R2y" to="tpe8:gCCYkhx" resolve="reduce_ConceptFunctionParameter_default" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="5W1UxLaqhKO" role="3acgRq">
+      <ref role="30HIoZ" to="tpc2:6$Nf2sMl38E" resolve="ConceptFunctionParameter_model" />
+      <node concept="j$656" id="5W1UxLaqhKP" role="1lVwrX">
         <ref role="v9R2y" to="tpe8:gCCYkhx" resolve="reduce_ConceptFunctionParameter_default" />
       </node>
     </node>
