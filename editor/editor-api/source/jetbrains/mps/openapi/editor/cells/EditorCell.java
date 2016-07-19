@@ -241,6 +241,11 @@ public interface EditorCell {
 
   void setTransformationMenuLookup(@Nullable MenuLookup<TransformationMenu> transformationMenuLookup);
 
+  /**
+   * Renders the cell and its descendants as text.
+   *
+   * @return a {@link TextBuilder} with the cell contents.
+   */
   TextBuilder renderText();
 
   void setBig(boolean big);
