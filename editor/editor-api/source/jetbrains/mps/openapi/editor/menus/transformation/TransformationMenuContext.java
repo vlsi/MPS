@@ -19,6 +19,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -29,6 +30,8 @@ public interface TransformationMenuContext {
 
   @NotNull
   SNode getNode();
+
+  SModel getModel();
 
   @NotNull
   EditorContext getEditorContext();

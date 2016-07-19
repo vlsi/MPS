@@ -21,6 +21,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -40,6 +41,8 @@ public interface SubstituteMenuContext {
 
   @Nullable
   SNode getCurrentChild();
+
+  SModel getModel();
   /**
    * Creates applicable menu items from the menus returned by {@code menuLookup}. If menuLookup is null, creates the default menu lookup.
    *

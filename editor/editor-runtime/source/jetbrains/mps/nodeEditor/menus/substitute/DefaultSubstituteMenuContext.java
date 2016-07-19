@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -62,6 +63,11 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   @Override
   public SNode getParentNode() {
     return myParentNode;
+  }
+
+  @Override
+  public SModel getModel() {
+    return myParentNode.getModel();
   }
 
   @Override

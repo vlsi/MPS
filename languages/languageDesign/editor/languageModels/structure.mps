@@ -4814,7 +4814,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="menuReference" />
       <property role="IQ2ns" value="6718020819487784677" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="3rSzFHWJPbd" resolve="ITransformationMenuReference" />
     </node>
     <node concept="PrWs8" id="2mcvySy2piN" role="PzmwI">
@@ -6036,6 +6036,19 @@
     <property role="TrG5h" value="QueryFunction_TransformationMenuVariable_Initializer" />
     <property role="R4oN_" value="return initial value of the variable" />
     <ref role="1TJDcQ" node="6kJcyCQ_LoK" resolve="QueryFunction_TransformationMenu_Extensible" />
+  </node>
+  <node concept="1TIwiD" id="6$Nf2sMl38E">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="ConceptFunctionParameter_model" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="QueryFunction.Parameters" />
+    <property role="34LRSv" value="model" />
+    <property role="EcuMT" value="7580468736840446506" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+    <node concept="PrWs8" id="6$Nf2sMl38F" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
   </node>
 </model>
 

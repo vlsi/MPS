@@ -27,6 +27,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -81,6 +82,11 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
   @Override
   public SNode getNode() {
     return myNode;
+  }
+
+  @Override
+  public SModel getModel() {
+    return myNode.getModel();
   }
 
   @NotNull
