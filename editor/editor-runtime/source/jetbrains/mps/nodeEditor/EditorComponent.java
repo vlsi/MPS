@@ -368,6 +368,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @NotNull
   private final EditorHighlighter myHighlighter = new EditorHighlighter(this);
 
+  @NotNull
+  private final EditorComponentFocusTracker myFocusTracker = new EditorComponentFocusTracker(this);
+
   public EditorComponent(@NotNull SRepository repository) {
     this(repository, EditorConfigurationBuilder.buildDefault());
   }
@@ -1132,7 +1135,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         myNode = node;
         if (myNode != null) {
           myNodePointer = new jetbrains.mps.smodel.SNodePointer(myNode);
-          myVirtualFile = !myNoVirtualFile ? NodeVirtualFileSystem.getInstance().getFileFor(getRepository(), node) : null;
+          myVirtualFile = !myNoVirtualFile ? NodeVirtualFileSystem.getInstance().getFileFor(getRepository(), node.getContainingRoot()) : null;
           SModel model = node.getModel();
           assert model != null : "Can't edit a node that is not registered in a model";
           setEditorContext(model, myRepository);
@@ -1499,6 +1502,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (CaretBlinker.getInstance() != null) {
       CaretBlinker.getInstance().unregisterEditor(this);
     }
+    myFocusTracker.dispose();
   }
 
   protected void detachListeners() {
@@ -2960,6 +2964,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @NotNull
   public EditorHighlighter getHighlighter() {
     return myHighlighter;
+  }
+
+  @NotNull
+  public EditorComponentFocusTracker getFocusTracker() {
+    return myFocusTracker;
   }
 
   private class ReferenceUnderliner {
