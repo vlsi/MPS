@@ -53,6 +53,7 @@ public abstract class GeneratedActionGroup extends BaseGroup {
     }
 
     addActionSafe(action);
+    // FIXME: creates an initialization cycle for {@code ApplicationPluginManager}
     IActionsRegistry actionsRegistry = ApplicationManager.getApplication().getComponent(IRegistryManager.class).getActionsRegistry(id);
     actionsRegistry.addParameterizedAction(action, params);
   }

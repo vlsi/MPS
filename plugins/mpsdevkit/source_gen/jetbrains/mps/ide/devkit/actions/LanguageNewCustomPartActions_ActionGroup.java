@@ -25,10 +25,9 @@ public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGro
     this.setPopup(false);
   }
   public void doUpdate(AnActionEvent event) {
+    removeAll();
     // do not change this to "build" as LanguageAspectDescriptor set can be changed 
     // the descriptor class should not be held in actions 
-
-    LanguageNewCustomPartActions_ActionGroup.this.removeAll();
 
     for (LanguageAspectDescriptor ad : LanguageAspectSupport.collectAspects()) {
       LanguageNewCustomPartActions_ActionGroup.this.addParameterizedAction(new NewAspectModelByDescriptor_Action(NewAspectModelActionHelper.getAspectId(ad)), PluginId.getId("jetbrains.mps.ide.mpsdevkit"), NewAspectModelActionHelper.getAspectId(ad));

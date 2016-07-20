@@ -37,7 +37,7 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.make.dependencies.MakeSequence;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.wm.IdeFrame;
@@ -242,9 +242,10 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     };
 
     try {
+
       getSession().doExecute(new Runnable() {
         public void run() {
-          SwingUtilities.invokeLater(new Runnable() {
+          ApplicationManager.getApplication().invokeLater(new Runnable() {
             public void run() {
               IdeEventQueue.getInstance().flushQueue();
               if (currentProcess.compareAndSet(null, task)) {

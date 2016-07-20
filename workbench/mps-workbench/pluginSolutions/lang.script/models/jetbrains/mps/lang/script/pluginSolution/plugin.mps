@@ -295,14 +295,6 @@
     <node concept="2OiAzN" id="4KDfkUwM92Q" role="ftER_">
       <node concept="2OiTZ2" id="4KDfkUwM92R" role="2Oj6PV">
         <node concept="3clFbS" id="4KDfkUwM92S" role="2VODD2">
-          <node concept="3clFbF" id="4KDfkUwM92T" role="3cqZAp">
-            <node concept="2OqwBi" id="4KDfkUwM92U" role="3clFbG">
-              <node concept="2WthIp" id="4KDfkUwM92V" role="2Oq$k0" />
-              <node concept="liA8E" id="4KDfkUwM92W" role="2OqNvi">
-                <ref role="37wK5l" to="qkt:~DefaultActionGroup.removeAll():void" resolve="removeAll" />
-              </node>
-            </node>
-          </node>
           <node concept="3cpWs8" id="1E2sZkYLga0" role="3cqZAp">
             <node concept="3cpWsn" id="1E2sZkYLga1" role="3cpWs9">
               <property role="TrG5h" value="models" />
@@ -797,14 +789,6 @@
     <node concept="2OiAzN" id="4KDfkUwM96w" role="ftER_">
       <node concept="2OiTZ2" id="4KDfkUwM96x" role="2Oj6PV">
         <node concept="3clFbS" id="4KDfkUwM96y" role="2VODD2">
-          <node concept="3clFbF" id="4KDfkUwM96z" role="3cqZAp">
-            <node concept="2OqwBi" id="4KDfkUwM96$" role="3clFbG">
-              <node concept="2WthIp" id="4KDfkUwM96_" role="2Oq$k0" />
-              <node concept="liA8E" id="4KDfkUwM96A" role="2OqNvi">
-                <ref role="37wK5l" to="qkt:~DefaultActionGroup.removeAll():void" resolve="removeAll" />
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="4KDfkUwM96B" role="3cqZAp">
             <node concept="2OqwBi" id="4KDfkUwM96C" role="3clFbG">
               <node concept="2OqwBi" id="4KDfkUwM96D" role="2Oq$k0">

@@ -11,6 +11,7 @@
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
   </languages>
   <imports>
     <import index="tp3j" ref="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" />
@@ -999,10 +1000,21 @@
                         <node concept="3zFVjK" id="1CTTqHRbuT0" role="3zH0cK">
                           <node concept="3clFbS" id="1CTTqHRbuT1" role="2VODD2">
                             <node concept="3clFbF" id="1CTTqHRbuT2" role="3cqZAp">
-                              <node concept="2OqwBi" id="1CTTqHRbuT3" role="3clFbG">
-                                <node concept="1iwH7S" id="1CTTqHRbuT4" role="2Oq$k0" />
-                                <node concept="1qCSth" id="1CTTqHRb$Im" role="2OqNvi">
-                                  <property role="1qCSqd" value="i" />
+                              <node concept="3cpWs3" id="4hOvsL6bVqh" role="3clFbG">
+                                <node concept="2OqwBi" id="4hOvsL6bYF8" role="3uHU7w">
+                                  <node concept="2OqwBi" id="4hOvsL6bXuY" role="2Oq$k0">
+                                    <node concept="1iwH7S" id="4hOvsL6bWC_" role="2Oq$k0" />
+                                    <node concept="1bhEwm" id="4hOvsL6bY3T" role="2OqNvi">
+                                      <ref role="1bhEwk" node="1CTTqHRaOpA" resolve="i1" />
+                                    </node>
+                                  </node>
+                                  <node concept="34oBXx" id="4hOvsL6bZR_" role="2OqNvi" />
+                                </node>
+                                <node concept="2OqwBi" id="1CTTqHRbuT3" role="3uHU7B">
+                                  <node concept="1iwH7S" id="1CTTqHRbuT4" role="2Oq$k0" />
+                                  <node concept="1qCSth" id="1CTTqHRb$Im" role="2OqNvi">
+                                    <property role="1qCSqd" value="i" />
+                                  </node>
                                 </node>
                               </node>
                             </node>

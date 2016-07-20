@@ -28,9 +28,7 @@ public class NamedTransformationMenu extends TransformationMenuBase {
     return result;
   }
 
-  public static class TransformationMenuPart_IncludeSubstituteMenu_vqydc_a0 extends IncludeSubstituteMenuTransformationMenuPart {
-
-
+  public class TransformationMenuPart_IncludeSubstituteMenu_vqydc_a0 extends IncludeSubstituteMenuTransformationMenuPart {
     @Override
     protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext context) {
       final EditorContext editorContext = context.getEditorContext();

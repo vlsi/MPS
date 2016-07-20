@@ -1280,28 +1280,6 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="4vCqlNf_C$r" role="3cqZAp">
-            <node concept="2OqwBi" id="4vCqlNf_C$s" role="3clFbG">
-              <node concept="2WthIp" id="4vCqlNf_C$t" role="2Oq$k0" />
-              <node concept="liA8E" id="4vCqlNf_C$u" role="2OqNvi">
-                <ref role="37wK5l" to="7bx7:~BaseGroup.enable(com.intellij.openapi.actionSystem.Presentation):void" resolve="enable" />
-                <node concept="2OqwBi" id="4vCqlNf_C$v" role="37wK5m">
-                  <node concept="tl45R" id="4vCqlNf_C$w" role="2Oq$k0" />
-                  <node concept="liA8E" id="4vCqlNf_C$x" role="2OqNvi">
-                    <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="4vCqlNf_C$y" role="3cqZAp">
-            <node concept="2OqwBi" id="4vCqlNf_C$z" role="3clFbG">
-              <node concept="2WthIp" id="4vCqlNf_C$$" role="2Oq$k0" />
-              <node concept="liA8E" id="4vCqlNf_C$_" role="2OqNvi">
-                <ref role="37wK5l" to="qkt:~DefaultActionGroup.removeAll():void" resolve="removeAll" />
-              </node>
-            </node>
-          </node>
           <node concept="1DcWWT" id="4vCqlNf_C$P" role="3cqZAp">
             <node concept="3clFbS" id="4vCqlNf_C$Q" role="2LFqv$">
               <node concept="2JFkCU" id="4vCqlNf_C$R" role="3cqZAp">

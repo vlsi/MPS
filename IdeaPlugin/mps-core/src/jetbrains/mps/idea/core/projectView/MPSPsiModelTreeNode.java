@@ -20,6 +20,8 @@ import com.intellij.ide.projectView.PresentationData;
 import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.projectView.impl.nodes.BasePsiNode;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import com.intellij.openapi.project.Project;
@@ -35,7 +37,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
-import javax.swing.SwingUtilities;
 import java.awt.Color;
 import java.util.Collection;
 
@@ -95,12 +96,7 @@ public class MPSPsiModelTreeNode extends BasePsiNode<MPSPsiModel> implements Nav
     final SingleConfigurableEditor dialog = new SingleConfigurableEditor(myProject, configurable);
     configurable.setParentForCallBack(dialog);
 
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        dialog.show();
-      }
-    });
+    ApplicationManager.getApplication().invokeLater(dialog::show, ModalityState.current());
   }
 
   @Override

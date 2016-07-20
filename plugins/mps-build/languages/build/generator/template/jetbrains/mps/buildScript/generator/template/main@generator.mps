@@ -255,6 +255,7 @@
         <reference id="4755209551904389317" name="target" index="3GcXOx" />
       </concept>
       <concept id="4755209551904389307" name="jetbrains.mps.build.workflow.structure.BwfJavaModule" flags="ng" index="3GcXPv">
+        <property id="927724900262033861" name="generateDebugInfo" index="2_Ic$$" />
         <property id="6998860900671418236" name="javaLevelSource" index="TKLQk" />
         <property id="6998860900671530572" name="javaLevelTarget" index="TLli$" />
         <property id="4416461515995149317" name="fork" index="1cm9xs" />
@@ -6784,6 +6785,7 @@
           <property role="TKLQk" value="1.7" />
           <property role="TLli$" value="1.7" />
           <property role="1cm9xs" value="true" />
+          <property role="2_Ic$$" value="true" />
           <node concept="2Vbh7Z" id="CHffhsRIKo" role="1mSsI2">
             <node concept="2pNNFK" id="CHffhsRIKp" role="2Vbh7K">
               <property role="qg3DV" value="true" />
@@ -8294,7 +8296,7 @@
                       </node>
                     </node>
                     <node concept="3clFbT" id="1s8OwvM8ebc" role="3K4GZi">
-                      <property role="3clFbU" value="false" />
+                      <property role="3clFbU" value="true" />
                     </node>
                     <node concept="3y3z36" id="1s8OwvM8eas" role="3K4Cdx">
                       <node concept="10Nm6u" id="1s8OwvM8eav" role="3uHU7w" />

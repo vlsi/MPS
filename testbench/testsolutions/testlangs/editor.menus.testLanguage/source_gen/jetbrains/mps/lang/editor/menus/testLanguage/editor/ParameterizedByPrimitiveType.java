@@ -30,13 +30,14 @@ public class ParameterizedByPrimitiveType extends TransformationMenuBase {
     return result;
   }
 
-  private static class TransformationMenuPart_Parameterized_ud82js_a0 extends ParameterizedMenuPart<Integer, TransformationMenuItem, TransformationMenuContext> {
+  private class TransformationMenuPart_Parameterized_ud82js_a0 extends ParameterizedMenuPart<Integer, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
     protected List<TransformationMenuItem> createItems(Integer parameter, TransformationMenuContext context) {
-      return new ParameterizedByPrimitiveType.TransformationMenuPart_Action_ud82js_a0a(parameter).createItems(context);
+      return new ParameterizedByPrimitiveType.TransformationMenuPart_Parameterized_ud82js_a0.TransformationMenuPart_Action_ud82js_a0a(parameter).createItems(context);
     }
+
     @Nullable
     @Override
     protected Iterable<? extends Integer> getParameters(TransformationMenuContext _context) {
@@ -86,44 +87,45 @@ __switch__:
         });
       }
     }
-  }
-  private static class TransformationMenuPart_Action_ud82js_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    private final int myParameterObject;
-    public TransformationMenuPart_Action_ud82js_a0a(int parameterObject) {
-      myParameterObject = parameterObject;
-    }
-    @Nullable
-    protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new ParameterizedByPrimitiveType.TransformationMenuPart_Action_ud82js_a0a.Item(context);
-    }
 
-    private class Item extends ActionItemBase {
-      private final TransformationMenuContext _context;
-
-      private Item(TransformationMenuContext context) {
-        _context = context;
+    private class TransformationMenuPart_Action_ud82js_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private final int myParameterObject;
+      public TransformationMenuPart_Action_ud82js_a0a(int parameterObject) {
+        myParameterObject = parameterObject;
       }
-
       @Nullable
-      @Override
-      public String getLabelText(String pattern) {
-        // Check that we can use parameterObject of a primitive type without errors 
-        int param = myParameterObject;
-        if (myParameterObject > 3) {
-          param++;
-        }
-        return "Action #" + param;
+      protected TransformationMenuItem createItem(TransformationMenuContext context) {
+        return new ParameterizedByPrimitiveType.TransformationMenuPart_Parameterized_ud82js_a0.TransformationMenuPart_Action_ud82js_a0a.Item(context);
       }
 
-      @Override
-      public void execute(@NotNull String pattern) {
-        // Check that we can use parameterObject of a primitive type without errors 
-        int param = myParameterObject;
-        if (myParameterObject < 3) {
-          param++;
-        }
-      }
+      private class Item extends ActionItemBase {
+        private final TransformationMenuContext _context;
 
+        private Item(TransformationMenuContext context) {
+          _context = context;
+        }
+
+        @Nullable
+        @Override
+        public String getLabelText(String pattern) {
+          // Check that we can use parameterObject of a primitive type without errors 
+          int param = myParameterObject;
+          if (myParameterObject > 3) {
+            param++;
+          }
+          return "Action #" + param;
+        }
+
+        @Override
+        public void execute(@NotNull String pattern) {
+          // Check that we can use parameterObject of a primitive type without errors 
+          int param = myParameterObject;
+          if (myParameterObject < 3) {
+            param++;
+          }
+        }
+
+      }
     }
   }
 }

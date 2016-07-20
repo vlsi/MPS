@@ -29,7 +29,7 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
   }
   public void doUpdate(AnActionEvent event) {
-    NamespaceInternalActions_ActionGroup.this.removeAll();
+    removeAll();
     List<TreeNode> selectedNodes = event.getData(MPSCommonDataKeys.TREE_NODES);
     if (selectedNodes == null) {
       return;

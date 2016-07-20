@@ -37,7 +37,7 @@ public class DefaultMenuContribution extends TransformationMenuBase {
     return result;
   }
 
-  private static class TransformationMenuPart_Action_qwzmaw_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TransformationMenuPart_Action_qwzmaw_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new DefaultMenuContribution.TransformationMenuPart_Action_qwzmaw_a0.Item(context);
@@ -62,7 +62,7 @@ public class DefaultMenuContribution extends TransformationMenuBase {
 
     }
   }
-  private static class TransformationMenuPart_Action_qwzmaw_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TransformationMenuPart_Action_qwzmaw_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new DefaultMenuContribution.TransformationMenuPart_Action_qwzmaw_a1.Item(context);

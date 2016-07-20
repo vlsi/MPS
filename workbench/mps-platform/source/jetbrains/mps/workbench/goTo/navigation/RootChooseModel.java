@@ -39,7 +39,7 @@ public class RootChooseModel extends BaseMPSChooseModel<NavigationTarget> {
 
   public RootChooseModel(Project project) {
     super(project, "node");
-    setCheckBoxName("Include stubs and &non-&&project models");
+    setCheckBoxName("Include &non-&&project models");
     setScope(new ConditionalScope(getProject().getScope(), null, NotCondition.negate(SModelStereotype::isStubModel)), GlobalScope.getInstance());
   }
 

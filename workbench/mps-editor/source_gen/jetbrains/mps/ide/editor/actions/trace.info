@@ -1151,7 +1151,7 @@
       <node id="3767536026885379902" at="27,0,32,0" concept="3" trace="PushEditorHints_Action#()V" />
       <node id="3767536026885379902" at="48,5,55,5" concept="1" />
       <node id="1653504613654028426" at="72,0,79,0" concept="8" trace="run#()V" />
-      <node id="1653504613653909450" at="70,133,79,7" concept="4" />
+      <node id="1092784201483590146" at="70,133,79,7" concept="4" />
       <node id="3767536026885379902" at="55,5,65,5" concept="1" />
       <node id="3767536026885379902" at="68,0,81,0" concept="8" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="3767536026885379902" at="44,0,68,0" concept="8" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
@@ -1197,7 +1197,7 @@
         <var name="_params" id="3767536026885379902" />
         <var name="event" id="3767536026885379902" />
       </scope>
-      <unit id="1653504613654028426" at="71,35,79,5" name="jetbrains.mps.ide.editor.actions.PushEditorHints_Action$1" />
+      <unit id="1653504613654028426" at="71,56,79,5" name="jetbrains.mps.ide.editor.actions.PushEditorHints_Action$1" />
       <unit id="3767536026885379902" at="24,0,82,0" name="jetbrains.mps.ide.editor.actions.PushEditorHints_Action" />
     </file>
   </root>

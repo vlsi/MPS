@@ -28,7 +28,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.FocusTraversalPolicy;
 import javax.swing.JComponent;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import java.awt.Component;
 import java.awt.Container;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -120,7 +120,8 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem.Ref
     myUsagesView.dispose();
   }
   public void requestFocus() {
-    SwingUtilities.invokeLater(new Runnable() {
+    // TODO: why does it invokes later? 
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
       public void run() {
         myDoRefactorButton.requestFocus();

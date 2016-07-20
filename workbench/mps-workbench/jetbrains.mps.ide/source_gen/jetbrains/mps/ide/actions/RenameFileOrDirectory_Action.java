@@ -14,7 +14,7 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.dialogs.RenameFileDialog;
 import com.intellij.ide.projectView.ProjectView;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
 
@@ -76,7 +76,7 @@ public class RenameFileOrDirectory_Action extends BaseAction {
           }
           ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).rename(null, result);
           ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).refresh();
-          SwingUtilities.invokeLater(new Runnable() {
+          ApplicationManager.getApplication().invokeLater(new Runnable() {
             public void run() {
               ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).getCurrentProjectViewPane().select(null, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")), true);
             }

@@ -21,20 +21,23 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class ConditionalMenuPart<ItemT, ContextT> implements MenuPart<ItemT, ContextT> {
+public abstract class GroupMenuPart<ItemT, ContextT> implements MenuPart<ItemT, ContextT> {
   @NotNull
   @Override
   public List<ItemT> createItems(ContextT context) {
     try {
+      initialize(context);
       if (!isApplicable(context)) {
         return Collections.emptyList();
       }
+      return new CompositeMenuPart<>(getParts()).createItems(context);
     } catch (RuntimeException e) {
-      Logger.getLogger(getClass()).warn("Exception when evaluating applicability", e);
+      Logger.getLogger(getClass()).warn("Exception creating items of group " + this, e);
       return Collections.emptyList();
     }
+  }
 
-    return new CompositeMenuPart<>(getParts()).createItems(context);
+  protected void initialize(ContextT context) {
   }
 
   protected boolean isApplicable(ContextT context) {

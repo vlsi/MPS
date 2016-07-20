@@ -53,6 +53,7 @@
     <import index="l46t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.compiler(MPS.Core/)" />
     <import index="ao3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.text(MPS.Core/)" />
     <import index="f0ym" ref="r:b828a96a-5bfa-4f8d-b09f-82ef58c36196(jetbrains.mps.internal.make.cfg)" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -4987,6 +4988,7 @@
         <node concept="3clFbH" id="41innpAoSw0" role="3cqZAp" />
         <node concept="SfApY" id="41innpAoSw7" role="3cqZAp">
           <node concept="3clFbS" id="41innpAoSw8" role="SfCbr">
+            <node concept="3clFbH" id="WEmn41_6rB" role="3cqZAp" />
             <node concept="3clFbF" id="41innpAoSw9" role="3cqZAp">
               <node concept="2OqwBi" id="41innpAoSwa" role="3clFbG">
                 <node concept="1rXfSq" id="41innpArnJ7" role="2Oq$k0">
@@ -4996,75 +4998,80 @@
                   <ref role="37wK5l" to="hfuk:7yGn3z4N62_" resolve="doExecute" />
                   <node concept="1bVj0M" id="41innpAoSwd" role="37wK5m">
                     <node concept="3clFbS" id="41innpAoSwe" role="1bW5cS">
-                      <node concept="3clFbF" id="41innpAoSwf" role="3cqZAp">
-                        <node concept="2YIFZM" id="41innpAoSwg" role="3clFbG">
-                          <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-                          <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
-                          <node concept="1bVj0M" id="41innpAoSwh" role="37wK5m">
-                            <node concept="3clFbS" id="41innpAoSwi" role="1bW5cS">
-                              <node concept="3clFbF" id="41innpAoSwj" role="3cqZAp">
-                                <node concept="2OqwBi" id="41innpAoSwk" role="3clFbG">
-                                  <node concept="2YIFZM" id="41innpAoSwl" role="2Oq$k0">
-                                    <ref role="1Pybhc" to="ddhc:~IdeEventQueue" resolve="IdeEventQueue" />
-                                    <ref role="37wK5l" to="ddhc:~IdeEventQueue.getInstance():com.intellij.ide.IdeEventQueue" resolve="getInstance" />
-                                  </node>
-                                  <node concept="liA8E" id="41innpAoSwm" role="2OqNvi">
-                                    <ref role="37wK5l" to="ddhc:~IdeEventQueue.flushQueue():void" resolve="flushQueue" />
+                      <node concept="3clFbF" id="WEmn41y5F2" role="3cqZAp">
+                        <node concept="2OqwBi" id="WEmn41y6GT" role="3clFbG">
+                          <node concept="2YIFZM" id="WEmn41y64y" role="2Oq$k0">
+                            <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+                            <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+                          </node>
+                          <node concept="liA8E" id="WEmn41y7xd" role="2OqNvi">
+                            <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+                            <node concept="1bVj0M" id="41innpAoSwh" role="37wK5m">
+                              <node concept="3clFbS" id="41innpAoSwi" role="1bW5cS">
+                                <node concept="3clFbF" id="41innpAoSwj" role="3cqZAp">
+                                  <node concept="2OqwBi" id="41innpAoSwk" role="3clFbG">
+                                    <node concept="2YIFZM" id="41innpAoSwl" role="2Oq$k0">
+                                      <ref role="1Pybhc" to="ddhc:~IdeEventQueue" resolve="IdeEventQueue" />
+                                      <ref role="37wK5l" to="ddhc:~IdeEventQueue.getInstance():com.intellij.ide.IdeEventQueue" resolve="getInstance" />
+                                    </node>
+                                    <node concept="liA8E" id="41innpAoSwm" role="2OqNvi">
+                                      <ref role="37wK5l" to="ddhc:~IdeEventQueue.flushQueue():void" resolve="flushQueue" />
+                                    </node>
                                   </node>
                                 </node>
-                              </node>
-                              <node concept="3clFbJ" id="41innpAoSwn" role="3cqZAp">
-                                <node concept="3clFbS" id="41innpAoSwo" role="3clFbx">
-                                  <node concept="3clFbF" id="41innpAoSwp" role="3cqZAp">
-                                    <node concept="2OqwBi" id="41innpAoSwq" role="3clFbG">
-                                      <node concept="2YIFZM" id="41innpAoSwr" role="2Oq$k0">
-                                        <ref role="37wK5l" to="xygl:~ProgressManager.getInstance():com.intellij.openapi.progress.ProgressManager" resolve="getInstance" />
-                                        <ref role="1Pybhc" to="xygl:~ProgressManager" resolve="ProgressManager" />
-                                      </node>
-                                      <node concept="liA8E" id="41innpAoSws" role="2OqNvi">
-                                        <ref role="37wK5l" to="xygl:~ProgressManager.run(com.intellij.openapi.progress.Task):void" resolve="run" />
-                                        <node concept="37vLTw" id="41innpAoSwt" role="37wK5m">
-                                          <ref role="3cqZAo" node="41innpAoSuj" resolve="task" />
+                                <node concept="3clFbJ" id="41innpAoSwn" role="3cqZAp">
+                                  <node concept="3clFbS" id="41innpAoSwo" role="3clFbx">
+                                    <node concept="3clFbF" id="41innpAoSwp" role="3cqZAp">
+                                      <node concept="2OqwBi" id="41innpAoSwq" role="3clFbG">
+                                        <node concept="2YIFZM" id="41innpAoSwr" role="2Oq$k0">
+                                          <ref role="37wK5l" to="xygl:~ProgressManager.getInstance():com.intellij.openapi.progress.ProgressManager" resolve="getInstance" />
+                                          <ref role="1Pybhc" to="xygl:~ProgressManager" resolve="ProgressManager" />
+                                        </node>
+                                        <node concept="liA8E" id="41innpAoSws" role="2OqNvi">
+                                          <ref role="37wK5l" to="xygl:~ProgressManager.run(com.intellij.openapi.progress.Task):void" resolve="run" />
+                                          <node concept="37vLTw" id="41innpAoSwt" role="37wK5m">
+                                            <ref role="3cqZAo" node="41innpAoSuj" resolve="task" />
+                                          </node>
                                         </node>
                                       </node>
                                     </node>
                                   </node>
-                                </node>
-                                <node concept="2OqwBi" id="41innpAoSwu" role="3clFbw">
-                                  <node concept="37vLTw" id="41innpAoSwv" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="9D0Ba05vmp" resolve="currentProcess" />
-                                  </node>
-                                  <node concept="liA8E" id="41innpAoSww" role="2OqNvi">
-                                    <ref role="37wK5l" to="i5cy:~AtomicReference.compareAndSet(java.lang.Object,java.lang.Object):boolean" resolve="compareAndSet" />
-                                    <node concept="10Nm6u" id="41innpAoSwx" role="37wK5m" />
-                                    <node concept="37vLTw" id="41innpAoSwy" role="37wK5m">
-                                      <ref role="3cqZAo" node="41innpAoSuj" resolve="task" />
+                                  <node concept="2OqwBi" id="41innpAoSwu" role="3clFbw">
+                                    <node concept="37vLTw" id="41innpAoSwv" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="9D0Ba05vmp" resolve="currentProcess" />
+                                    </node>
+                                    <node concept="liA8E" id="41innpAoSww" role="2OqNvi">
+                                      <ref role="37wK5l" to="i5cy:~AtomicReference.compareAndSet(java.lang.Object,java.lang.Object):boolean" resolve="compareAndSet" />
+                                      <node concept="10Nm6u" id="41innpAoSwx" role="37wK5m" />
+                                      <node concept="37vLTw" id="41innpAoSwy" role="37wK5m">
+                                        <ref role="3cqZAo" node="41innpAoSuj" resolve="task" />
+                                      </node>
                                     </node>
                                   </node>
-                                </node>
-                                <node concept="9aQIb" id="41innpAoSwz" role="9aQIa">
-                                  <node concept="3clFbS" id="41innpAoSw$" role="9aQI4">
-                                    <node concept="YS8fn" id="41innpAoSw_" role="3cqZAp">
-                                      <node concept="2ShNRf" id="41innpAoSwA" role="YScLw">
-                                        <node concept="1pGfFk" id="41innpAoSwB" role="2ShVmc">
-                                          <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
-                                          <node concept="Xl_RD" id="41innpAoSwC" role="37wK5m">
-                                            <property role="Xl_RC" value="unexpected: make process is already running" />
+                                  <node concept="9aQIb" id="41innpAoSwz" role="9aQIa">
+                                    <node concept="3clFbS" id="41innpAoSw$" role="9aQI4">
+                                      <node concept="YS8fn" id="41innpAoSw_" role="3cqZAp">
+                                        <node concept="2ShNRf" id="41innpAoSwA" role="YScLw">
+                                          <node concept="1pGfFk" id="41innpAoSwB" role="2ShVmc">
+                                            <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+                                            <node concept="Xl_RD" id="41innpAoSwC" role="37wK5m">
+                                              <property role="Xl_RC" value="unexpected: make process is already running" />
+                                            </node>
                                           </node>
                                         </node>
                                       </node>
                                     </node>
                                   </node>
                                 </node>
-                              </node>
-                              <node concept="3clFbF" id="41innpAoSwD" role="3cqZAp">
-                                <node concept="2OqwBi" id="41innpAoSwE" role="3clFbG">
-                                  <node concept="2YIFZM" id="41innpAoSwF" role="2Oq$k0">
-                                    <ref role="37wK5l" to="ddhc:~IdeEventQueue.getInstance():com.intellij.ide.IdeEventQueue" resolve="getInstance" />
-                                    <ref role="1Pybhc" to="ddhc:~IdeEventQueue" resolve="IdeEventQueue" />
-                                  </node>
-                                  <node concept="liA8E" id="41innpAoSwG" role="2OqNvi">
-                                    <ref role="37wK5l" to="ddhc:~IdeEventQueue.flushQueue():void" resolve="flushQueue" />
+                                <node concept="3clFbF" id="41innpAoSwD" role="3cqZAp">
+                                  <node concept="2OqwBi" id="41innpAoSwE" role="3clFbG">
+                                    <node concept="2YIFZM" id="41innpAoSwF" role="2Oq$k0">
+                                      <ref role="37wK5l" to="ddhc:~IdeEventQueue.getInstance():com.intellij.ide.IdeEventQueue" resolve="getInstance" />
+                                      <ref role="1Pybhc" to="ddhc:~IdeEventQueue" resolve="IdeEventQueue" />
+                                    </node>
+                                    <node concept="liA8E" id="41innpAoSwG" role="2OqNvi">
+                                      <ref role="37wK5l" to="ddhc:~IdeEventQueue.flushQueue():void" resolve="flushQueue" />
+                                    </node>
                                   </node>
                                 </node>
                               </node>

@@ -23,7 +23,7 @@ import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import javax.swing.JLabel;
 import com.intellij.openapi.progress.TaskInfo;
 import org.jetbrains.annotations.NonNls;
@@ -100,7 +100,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
   }
   @Override
   public void resultsChanged(IFinder finder) {
-    SwingUtilities.invokeLater(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
       public void run() {
         updateControls(true, new JLabel(""));
@@ -190,7 +190,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
     button.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        SwingUtilities.invokeLater(new Runnable() {
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
           @Override
           public void run() {
             updateControls(false, new JLabel("done"));

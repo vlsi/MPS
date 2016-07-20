@@ -1087,15 +1087,6 @@
     <node concept="2OiAzN" id="3E$bVnPdal$" role="ftER_">
       <node concept="2OiTZ2" id="3E$bVnPdal_" role="2Oj6PV">
         <node concept="3clFbS" id="3E$bVnPdalA" role="2VODD2">
-          <node concept="3clFbF" id="4KDfkUwM96z" role="3cqZAp">
-            <node concept="2OqwBi" id="4KDfkUwM96$" role="3clFbG">
-              <node concept="2WthIp" id="4KDfkUwM96_" role="2Oq$k0" />
-              <node concept="liA8E" id="4KDfkUwM96A" role="2OqNvi">
-                <ref role="37wK5l" to="qkt:~DefaultActionGroup.removeAll():void" resolve="removeAll" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbH" id="1MogWSl2hzv" role="3cqZAp" />
           <node concept="3cpWs8" id="3E$bVnPdc5A" role="3cqZAp">
             <node concept="3cpWsn" id="3E$bVnPdc5B" role="3cpWs9">
               <property role="TrG5h" value="value" />

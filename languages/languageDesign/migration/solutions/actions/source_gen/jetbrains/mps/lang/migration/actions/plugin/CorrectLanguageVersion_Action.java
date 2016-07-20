@@ -25,10 +25,9 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.ui.InputValidator;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class CorrectLanguageVersion_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -117,7 +116,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
       lang.setLanguageVersion(maxFrom + 1);
     } else {
       final int v = lang.getLanguageVersion();
-      SwingUtilities.invokeLater(new Runnable() {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           InputValidator validator = new InputValidator() {
             public boolean checkInput(String s) {
@@ -136,7 +135,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
             return;
           }
 
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          ((SModule) MapSequence.fromMap(_params).get("module")).getRepository().getModelAccess().executeCommand(new Runnable() {
             public void run() {
               lang.setLanguageVersion(Integer.parseInt(result));
             }

@@ -26,6 +26,7 @@ public class FavoritesPopupWrapper_ActionGroup extends GeneratedActionGroup {
     this.setPopup(true);
   }
   public void doUpdate(AnActionEvent event) {
+    removeAll();
     Project project = event.getData(MPSDataKeys.PROJECT);
     String text = ((FavoritesUtil.isActiveFavorites(project) ? "Send" : "Add")) + " to Favorites";
     event.getPresentation().setText(text);

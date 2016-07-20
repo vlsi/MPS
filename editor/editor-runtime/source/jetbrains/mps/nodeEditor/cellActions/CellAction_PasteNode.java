@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cellActions;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
@@ -50,7 +51,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 
-import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -133,7 +133,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
     final List<SNode> selectedNodes = selection.getSelectedNodes();
 
     //this is used in case node is in repo to pass it into invokeLater
-    final List<SNodeReference> selectedReferences = new ArrayList<SNodeReference>();
+    final List<SNodeReference> selectedReferences = new ArrayList<>();
     for (SNode node : selectedNodes) {
       selectedReferences.add(node.getReference());
     }
@@ -170,74 +170,70 @@ public class CellAction_PasteNode extends AbstractCellAction {
 
     final PasteNodeData pasteNodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(modelToPaste);
 
-    // FIXME why SwingUtlities? Is it necessary to execute in EDT thread? If yes, use ThreadUtils. If not, use any other thread than UI, e.g. app's pooled one.
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, modelToPaste, mpsProject);
-        context.getRepository().getModelAccess().executeCommandInEDT(new Runnable() {
-          @Override
-          public void run() {
-            if (addImportsRunnable != null) {
-              addImportsRunnable.run();
-            }
-
-            List<SNode> pasteNodes = pasteNodeData.getNodes();
-            List<SNode> currentSelectedNodes;
-            if (!inRepository) {
-              currentSelectedNodes = selectedNodes;
-            } else {
-              currentSelectedNodes = new ArrayList<SNode>();
-              for (SNodeReference ref : selectedReferences) {
-                currentSelectedNodes.add(ref.resolve(MPSModuleRepository.getInstance()));
-              }
-            }
-
-
-            NodePaster nodePaster = new NodePaster(pasteNodes);
-            boolean disposed = checkDisposedSelectedNodes(currentSelectedNodes, selectedReferences);
-            boolean canPasteWithRemove = !disposed && nodePaster.canPasteWithRemove(currentSelectedNodes);
-            if (selection instanceof SingularSelection &&
-                (selection instanceof EditorCellLabelSelection && !isCompletelySelected((EditorCellLabelSelection) selection) ||
-                    (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
-              EditorCell selectedCell = pasteTargetCellInfo.findCell(editorComponent);
-              assert selectedCell != null;
-
-
-              if (canPasteBefore(selectedCell, pasteNodes)) {
-                SNode selectedNode = inRepository ? selectedCellReference.resolve(MPSModuleRepository.getInstance()) : cellNodeSelected;
-                if (checkDisposed(selectedCellReference, cellNodeSelected)) {
-                  return;
-                }
-                new NodePaster(pasteNodes).pasteRelative(selectedNode, PastePlaceHint.BEFORE_ANCHOR);
-              } else {
-                new NodePaster(pasteNodes).paste(selectedCell);
-              }
-            } else if ((selection instanceof MultipleSelection || selection instanceof EditorCellSelection) && canPasteWithRemove) {
-              nodePaster.pasteWithRemove(currentSelectedNodes);
-            } else {
-              return;
-            }
-
-            Set<SReference> requireResolveReferences = new HashSet<SReference>();
-            for (SReference ref : pasteNodeData.getRequireResolveReferences()) {
-              //ref can be detached from modeltoPaste while using copy/paste handlers
-              if (ref.getSourceNode() == null || ref.getSourceNode().getModel() == null) {
-                continue;
-              }
-              requireResolveReferences.add(ref);
-            }
-
-            ResolverComponent.getInstance().resolveScopesOnly(requireResolveReferences, context.getRepository());
-
-            // set selection
-            editorComponent.getUpdater().flushModelEvents();
-            SNode lastNode = pasteNodes.get(pasteNodes.size() - 1);
-            editorComponent.getSelectionManager().setSelection(lastNode, SelectionManager.LAST_CELL, -1);
+    // FIXME Is it necessary to execute in EDT thread? If not, use any other thread than UI, e.g. app's pooled one.
+    ThreadUtils.runInUIThreadNoWait(() -> {
+      final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, modelToPaste, mpsProject);
+      context.getRepository().getModelAccess().executeCommandInEDT(new Runnable() {
+        @Override
+        public void run() {
+          if (addImportsRunnable != null) {
+            addImportsRunnable.run();
           }
-        });
 
-      }
+          List<SNode> pasteNodes = pasteNodeData.getNodes();
+          List<SNode> currentSelectedNodes;
+          if (!inRepository) {
+            currentSelectedNodes = selectedNodes;
+          } else {
+            currentSelectedNodes = new ArrayList<>();
+            for (SNodeReference ref : selectedReferences) {
+              currentSelectedNodes.add(ref.resolve(MPSModuleRepository.getInstance()));
+            }
+          }
+
+
+          NodePaster nodePaster = new NodePaster(pasteNodes);
+          boolean disposed = CellAction_PasteNode.this.checkDisposedSelectedNodes(currentSelectedNodes, selectedReferences);
+          boolean canPasteWithRemove = !disposed && nodePaster.canPasteWithRemove(currentSelectedNodes);
+          if (selection instanceof SingularSelection &&
+              (selection instanceof EditorCellLabelSelection && !CellAction_PasteNode.this.isCompletelySelected((EditorCellLabelSelection) selection) ||
+                  (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
+            EditorCell selectedCell = pasteTargetCellInfo.findCell(editorComponent);
+            assert selectedCell != null;
+
+
+            if (CellAction_PasteNode.this.canPasteBefore(selectedCell, pasteNodes)) {
+              SNode selectedNode = inRepository ? selectedCellReference.resolve(MPSModuleRepository.getInstance()) : cellNodeSelected;
+              if (CellAction_PasteNode.this.checkDisposed(selectedCellReference, cellNodeSelected)) {
+                return;
+              }
+              new NodePaster(pasteNodes).pasteRelative(selectedNode, PastePlaceHint.BEFORE_ANCHOR);
+            } else {
+              new NodePaster(pasteNodes).paste(selectedCell);
+            }
+          } else if ((selection instanceof MultipleSelection || selection instanceof EditorCellSelection) && canPasteWithRemove) {
+            nodePaster.pasteWithRemove(currentSelectedNodes);
+          } else {
+            return;
+          }
+
+          Set<SReference> requireResolveReferences = new HashSet<>();
+          for (SReference ref : pasteNodeData.getRequireResolveReferences()) {
+            //ref can be detached from modeltoPaste while using copy/paste handlers
+            if (ref.getSourceNode() == null || ref.getSourceNode().getModel() == null) {
+              continue;
+            }
+            requireResolveReferences.add(ref);
+          }
+
+          ResolverComponent.getInstance().resolveScopesOnly(requireResolveReferences, context.getRepository());
+
+          // set selection
+          editorComponent.getUpdater().flushModelEvents();
+          SNode lastNode = pasteNodes.get(pasteNodes.size() - 1);
+          editorComponent.getSelectionManager().setSelection(lastNode, SelectionManager.LAST_CELL, -1);
+        }
+      });
     });
   }
 

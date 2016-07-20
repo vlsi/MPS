@@ -30,8 +30,7 @@ public class NamedTransformationMenu_EmptyCell extends TransformationMenuBase {
     return result;
   }
 
-  public static class TransformationMenuPart_IncludeSubstituteMenu_asvxo8_a0 extends IncludeSubstituteMenuTransformationMenuPart {
-
+  public class TransformationMenuPart_IncludeSubstituteMenu_asvxo8_a0 extends IncludeSubstituteMenuTransformationMenuPart {
     @Override
     protected SNode getParentNode(TransformationMenuContext context) {
       return context.getNode();
@@ -44,7 +43,6 @@ public class NamedTransformationMenu_EmptyCell extends TransformationMenuBase {
     protected SContainmentLink getContainmentLink(TransformationMenuContext context) {
       return MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a711255L, "childrenForEmptyCell");
     }
-
     @Override
     protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext context) {
       final EditorContext editorContext = context.getEditorContext();

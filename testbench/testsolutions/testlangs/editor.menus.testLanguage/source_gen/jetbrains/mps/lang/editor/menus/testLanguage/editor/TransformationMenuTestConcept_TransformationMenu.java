@@ -24,7 +24,7 @@ public class TransformationMenuTestConcept_TransformationMenu extends Transforma
     return result;
   }
 
-  private static class TransformationMenuPart_Action_ihci5o_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TransformationMenuPart_Action_ihci5o_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new TransformationMenuTestConcept_TransformationMenu.TransformationMenuPart_Action_ihci5o_a0.Item(context);
