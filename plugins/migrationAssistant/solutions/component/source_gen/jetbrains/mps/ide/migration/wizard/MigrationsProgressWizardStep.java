@@ -4,6 +4,7 @@ package jetbrains.mps.ide.migration.wizard;
 
 import jetbrains.mps.ide.migration.MigrationManager;
 import com.intellij.ui.components.JBList;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import java.util.Set;
@@ -33,8 +34,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.migration.MigrationScriptApplied;
@@ -52,6 +51,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
   public static final String ID = "progress";
   private MigrationManager myManager;
   private JBList myList;
+  private ModalityState myModalityState;
   private Task myTask;
   private InlineProgressIndicator myProgress;
   private Set<String> myExecuted = new HashSet<String>();
@@ -105,6 +105,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     // this is needed to fully show the step before first migration is started 
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
+        myModalityState = ModalityState.stateForComponent(myList);
         ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
           public void run() {
             ProgressManager.getInstance().runProcess(new Runnable() {
@@ -245,13 +246,13 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
 
   private void addElementToMigrationList(final String step) {
     final DefaultListModel model = (DefaultListModel) myList.getModel();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         model.addElement(step);
         myList.ensureIndexIsVisible(model.lastIndexOf(step));
         myList.repaint();
       }
-    });
+    }, myModalityState);
   }
 
   private boolean executeSingleStep(final MigrationManager.MigrationStep result) {
@@ -263,11 +264,11 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     addElementToMigrationList(step);
 
     final Wrappers._boolean noException = new Wrappers._boolean();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         noException.value = ((MigrationManager.MigrationStep) result).execute();
       }
-    });
+    }, myModalityState);
 
     if (!(noException.value)) {
       myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.MigrationExceptionError());

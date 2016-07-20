@@ -23,6 +23,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ToggleAction;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.ui.Splitter;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.components.JBScrollPane;
@@ -40,7 +41,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -60,12 +60,9 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
     this.setLayout(new BorderLayout());
     myButtons = new JPanel(new BorderLayout());
     this.setMinimumSize(new Dimension(700, 700));
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
-    public void run() {
-        JComponent buttonsPanel = ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, createButtonsGroup(), true).getComponent();
-        myButtons.add(buttonsPanel, BorderLayout.WEST);
-      }
+    ApplicationManager.getApplication().invokeLater(() -> {
+      JComponent buttonsPanel = ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, createButtonsGroup(), true).getComponent();
+      myButtons.add(buttonsPanel, BorderLayout.WEST);
     });
     myTool = tool;
   }
@@ -214,12 +211,7 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
         new BaseAction("Refresh", "Refresh", Actions.Refresh) {
           @Override
         protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-            myProject.getModelAccess().runReadInEDT(new Runnable() {
-              @Override
-              public void run() {
-                refresh();
-              }
-            });
+            myProject.getModelAccess().runReadInEDT(() -> refresh());
           }
         },
         new BaseAction("Next error", "Navigate to next error in trace", AllIcons.General.Error) {

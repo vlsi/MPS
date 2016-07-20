@@ -102,8 +102,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
     GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider);
     GenerationStatus genStatus = genFacade.process(new EmptyProgressMonitor(), m);
     myErrors.checkThat("Generation succeeds", genStatus.isOk(), CoreMatchers.equalTo(true));
-    CrossModelEnvironment cme = tmProvider.getCrossModelEnvironment();
-//      CrossModelEnvironment cme = new CrossModelEnvironment(tmProvider); FIXME uncomment
+    CrossModelEnvironment cme = new CrossModelEnvironment(tmProvider);
     // XXX shall it be CME to give access to module with checkpoint models? Is there better way to find out cpModel?
     myErrors.checkThat("CrossModelEnvironment.hasState", cme.hasState(mr), CoreMatchers.equalTo(true));
 
@@ -120,7 +119,6 @@ public class CheckpointModelTest extends PlatformMpsTest {
     ModelCheckpoints modelCheckpoints = cme.getState(mr);
     CheckpointState cpState = modelCheckpoints.find(cp1);
     myErrors.checkThat("CheckpointState present", cpState, CoreMatchers.notNullValue());
-    myErrors.checkThat("Both ModelCheckpoints.find and direct getCheckpoint are identical", cme.getCheckpoint(mr, cp1), CoreMatchers.equalTo(cpState));
     if (cpState != null) {
       Collection<String> mappingLabels = cpState.getMappingLabels();
       myErrors.checkThat("GetterMethod label present", mappingLabels.contains("GetterMethod"), CoreMatchers.equalTo(true));
@@ -152,7 +150,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
     GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider);
     GenerationStatus genStatus = genFacade.process(new EmptyProgressMonitor(), m);
     myErrors.checkThat("Generation succeeds", genStatus.isOk(), CoreMatchers.equalTo(true));
-    CrossModelEnvironment cme = tmProvider.getCrossModelEnvironment();
+    CrossModelEnvironment cme = new CrossModelEnvironment(tmProvider);
     boolean crossModelCheckpointsPresent = cme.hasState(mr);
     myErrors.checkThat("CrossModelEnvironment.hasState", crossModelCheckpointsPresent, CoreMatchers.equalTo(true));
     if (!crossModelCheckpointsPresent) {

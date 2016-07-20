@@ -642,8 +642,21 @@
           <node concept="1hCUdq" id="54YCbHnfp$_" role="1hCUd6">
             <node concept="3clFbS" id="54YCbHnfp$A" role="2VODD2">
               <node concept="3clFbF" id="54YCbHnfpD1" role="3cqZAp">
-                <node concept="Xl_RD" id="54YCbHnfpD0" role="3clFbG">
-                  <property role="Xl_RC" value="ensure name ends with 'a'" />
+                <node concept="3cpWs3" id="6TqVKW2N1FW" role="3clFbG">
+                  <node concept="Xl_RD" id="6TqVKW2N1G2" role="3uHU7w">
+                    <property role="Xl_RC" value="a)" />
+                  </node>
+                  <node concept="3cpWs3" id="6TqVKW2MXOB" role="3uHU7B">
+                    <node concept="Xl_RD" id="54YCbHnfpD0" role="3uHU7B">
+                      <property role="Xl_RC" value="ensure name ends with 'a' (" />
+                    </node>
+                    <node concept="2OqwBi" id="6TqVKW2MYfl" role="3uHU7w">
+                      <node concept="7Obwk" id="6TqVKW2MY12" role="2Oq$k0" />
+                      <node concept="3TrcHB" id="6TqVKW2MYwN" role="2OqNvi">
+                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -803,8 +816,16 @@
         <node concept="1hCUdq" id="3EZUZhmTHgJ" role="1hCUd6">
           <node concept="3clFbS" id="3EZUZhmTHgL" role="2VODD2">
             <node concept="3clFbF" id="3EZUZhmTHpq" role="3cqZAp">
-              <node concept="Xl_RD" id="3EZUZhmTHpp" role="3clFbG">
-                <property role="Xl_RC" value="sidebar-only action" />
+              <node concept="3cpWs3" id="6TqVKW2N6Np" role="3clFbG">
+                <node concept="2OqwBi" id="6TqVKW2N7ai" role="3uHU7w">
+                  <node concept="7Obwk" id="6TqVKW2N6VZ" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="6TqVKW2N7rH" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="3EZUZhmTHpp" role="3uHU7B">
+                  <property role="Xl_RC" value="sidebar-only action for " />
+                </node>
               </node>
             </node>
           </node>

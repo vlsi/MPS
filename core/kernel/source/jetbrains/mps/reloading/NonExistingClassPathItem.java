@@ -23,16 +23,15 @@ import java.util.List;
 /**
  * @author Kostik
  */
-public class NonExistingClassPathItem extends RealClassPathItem {
+class NonExistingClassPathItem extends RealClassPathItem {
   private String myClassPath;
 
-  protected NonExistingClassPathItem(String classPath) {
+  NonExistingClassPathItem(String classPath) {
     myClassPath = classPath;
   }
 
   @Override
   public String getPath() {
-    checkValidity();
     return myClassPath;
   }
 
@@ -43,31 +42,26 @@ public class NonExistingClassPathItem extends RealClassPathItem {
 
   @Override
   public ClassBytes getClassBytes(String name) {
-    checkValidity();
     return null;
   }
 
   @Override
   public URL getResource(String name) {
-    checkValidity();
     return null;
   }
 
   @Override
   public Iterable<String> getAvailableClasses(String namespace) {
-    checkValidity();
     return Collections.emptyList();
   }
 
   @Override
   public Iterable<String> getSubpackages(String namespace) {
-    checkValidity();
     return Collections.emptyList();
   }
 
   @Override
   public List<RealClassPathItem> flatten() {
-    checkValidity();
     List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
     result.add(this);
     return result;
@@ -75,7 +69,6 @@ public class NonExistingClassPathItem extends RealClassPathItem {
 
   @Override
   public void accept(IClassPathItemVisitor visitor) {
-    checkValidity();
     //visitor.visit(this);
   }
 

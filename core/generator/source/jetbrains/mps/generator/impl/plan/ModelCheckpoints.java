@@ -41,6 +41,7 @@ public class ModelCheckpoints {
     myStates = Arrays.asList(states);
   }
 
+  // FIXME I don't really use a repository down in DebugMappingBuilder.restore()!
   /*package*/ ModelCheckpoints(SRepository repository, SModel[] models) {
     CheckpointState[] states = new CheckpointState[models.length];
     for (int i = 0; i < models.length; i++) {

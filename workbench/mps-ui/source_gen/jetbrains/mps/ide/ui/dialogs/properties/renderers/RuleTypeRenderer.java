@@ -7,7 +7,7 @@ import java.awt.Component;
 import javax.swing.JTable;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import javax.swing.JComponent;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -22,7 +22,7 @@ public class RuleTypeRenderer extends DefaultTableCellRenderer {
     String caption = (value instanceof RuleType ? ((RuleType) value).getPresentation() : "null");
     JComponent comp = (JComponent) super.getTableCellRendererComponent(table, caption, isSelected, hasFocus, row, column);
     if (hasFocus && table.isRowSelected(row)) {
-      SwingUtilities.invokeLater(new Runnable() {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
         @Override
         public void run() {
           table.editCellAt(row, column);

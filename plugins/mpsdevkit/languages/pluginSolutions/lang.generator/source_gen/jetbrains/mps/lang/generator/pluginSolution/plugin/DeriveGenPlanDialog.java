@@ -16,9 +16,12 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.AndCondition;
 import jetbrains.mps.util.NotCondition;
-import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.scope.ConditionalScope;
 import jetbrains.mps.FilteredGlobalScope;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.workbench.choose.ChooseByNameData;
+import jetbrains.mps.workbench.choose.ModelsPresentation;
+import jetbrains.mps.workbench.choose.ModelScopeIterable;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;
@@ -110,11 +113,17 @@ import java.awt.event.ActionEvent;
     };
     Condition<SModel> filter = new AndCondition<SModel>(NotCondition.negate(isStub), NotCondition.negate(isDescriptor));
 
-    final BaseModelModel chooseModel = new BaseModelModel(myProject, new ConditionalScope(myProject.getScope(), null, filter), new ConditionalScope(new FilteredGlobalScope(), null, filter));
-    myChoosePanel = MpsPopupFactory.createPanelForPackage(myProject.getProject(), chooseModel, false);
+    ConditionalScope localScope = new ConditionalScope(myProject.getScope(), null, filter);
+    ConditionalScope globalScope = new ConditionalScope(new FilteredGlobalScope(), null, filter);
+    SRepository repo = myProject.getRepository();
+    ChooseByNameData<SModelReference> gotoData = new ChooseByNameData<SModelReference>(new ModelsPresentation(repo));
+    gotoData.derivePrompts("model").setScope(new ModelScopeIterable(localScope, repo), new ModelScopeIterable(globalScope, repo));
+    myChoosePanel = MpsPopupFactory.createPanelForPackage(myProject.getProject(), gotoData, false);
     myChoosePanel.invoke(new ChooseByNamePopupComponent.Callback() {
       public void elementChosen(Object o) {
-        setSampleModel(chooseModel.getModelObject(o));
+        if (o instanceof SModelReference) {
+          setSampleModel(((SModelReference) o));
+        }
       }
     }, ModalityState.current(), false);
     Disposer.register(getDisposable(), myChoosePanel);

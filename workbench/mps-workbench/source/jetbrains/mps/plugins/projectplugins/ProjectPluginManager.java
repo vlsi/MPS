@@ -45,6 +45,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -80,12 +81,7 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
 
   @Override
   public void projectOpened() {
-    StartupManager.getInstance(myProject).registerStartupActivity(new Runnable() {
-      @Override
-      public void run() {
-        runStartupActivity();
-      }
-    });
+    StartupManager.getInstance(myProject).registerPreStartupActivity(this::runStartupActivity);
   }
 
   private void runStartupActivity() {
@@ -184,15 +180,15 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   }
 
   @Override
-  public final void unloadPlugins(List<PluginContributor> contributors) {
-    fireBeforePluginsUnloaded(contributors);
-    super.unloadPlugins(contributors);
+  public final void loadPlugins(List<PluginContributor> contributors, @NotNull ProgressMonitor monitor) {
+    super.loadPlugins(contributors, monitor);
+    fireAfterPluginsLoaded(contributors);
   }
 
   @Override
-  public final void loadPlugins(List<PluginContributor> contributors) {
-    super.loadPlugins(contributors);
-    fireAfterPluginsLoaded(contributors);
+  public final void unloadPlugins(List<PluginContributor> contributors, @NotNull ProgressMonitor monitor) {
+    fireBeforePluginsUnloaded(contributors);
+    super.unloadPlugins(contributors, monitor);
   }
 
   private void fireAfterPluginsLoaded(List<PluginContributor> contributors) {

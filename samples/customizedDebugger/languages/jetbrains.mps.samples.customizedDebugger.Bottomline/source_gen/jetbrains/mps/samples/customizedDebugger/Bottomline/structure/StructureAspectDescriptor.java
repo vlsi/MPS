@@ -7,17 +7,17 @@ import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(2);
-  /*package*/ final ConceptDescriptor myConceptMessageSequence = new ConceptDescriptorBuilder("jetbrains.mps.samples.customizedDebugger.Bottomline.structure.MessageSequence", MetaIdFactory.conceptId(0x3f028972a2904cf2L, 0xa87e9b8f7e56076bL, 0x7df3f12f124a5b0L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.util.structure.IMainClass", "jetbrains.mps.lang.traceable.structure.UnitConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L), MetaIdFactory.conceptId(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L), MetaIdFactory.conceptId(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x7df3f12f124a5e7L, "messages", MetaIdFactory.conceptId(0x3f028972a2904cf2L, 0xa87e9b8f7e56076bL, 0x7df3f12f124a5e4L), true, true, false)).children(new String[]{"messages"}, new boolean[]{true}).rootable().alias("message sequence", "").sourceNode(new SNodePointer("r:a4d9660d-2a29-4de5-9b2f-b601f2b0ff83(jetbrains.mps.samples.customizedDebugger.Bottomline.structure)", "567241428659643824")).create();
-  /*package*/ final ConceptDescriptor myConceptOutputMessage = new ConceptDescriptorBuilder("jetbrains.mps.samples.customizedDebugger.Bottomline.structure.OutputMessage", MetaIdFactory.conceptId(0x3f028972a2904cf2L, 0xa87e9b8f7e56076bL, 0x7df3f12f124a5e4L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.traceable.structure.TraceableConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x7df3f12f124a629L, "value")).properties("value").alias("output message", "").sourceNode(new SNodePointer("r:a4d9660d-2a29-4de5-9b2f-b601f2b0ff83(jetbrains.mps.samples.customizedDebugger.Bottomline.structure)", "567241428659643876")).create();
+  /*package*/ final ConceptDescriptor myConceptMessageSequence = createDescriptorForMessageSequence();
+  /*package*/ final ConceptDescriptor myConceptOutputMessage = createDescriptorForOutputMessage();
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptMessageSequence.getId(), 0);
@@ -44,5 +44,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         throw new IllegalStateException();
     }
+  }
+
+  private static ConceptDescriptor createDescriptorForMessageSequence() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.samples.customizedDebugger.Bottomline.structure.MessageSequence", MetaIdFactory.conceptId(0x3f028972a2904cf2L, 0xa87e9b8f7e56076bL, 0x7df3f12f124a5b0L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.util.structure.IMainClass", "jetbrains.mps.lang.traceable.structure.UnitConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L), MetaIdFactory.conceptId(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L), MetaIdFactory.conceptId(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x7df3f12f124a5e7L, "messages", MetaIdFactory.conceptId(0x3f028972a2904cf2L, 0xa87e9b8f7e56076bL, 0x7df3f12f124a5e4L), true, true, false)).children(new String[]{"messages"}, new boolean[]{true}).rootable().alias("message sequence", "").sourceNode(new SNodePointer("r:a4d9660d-2a29-4de5-9b2f-b601f2b0ff83(jetbrains.mps.samples.customizedDebugger.Bottomline.structure)", "567241428659643824")).create();
+  }
+  private static ConceptDescriptor createDescriptorForOutputMessage() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.samples.customizedDebugger.Bottomline.structure.OutputMessage", MetaIdFactory.conceptId(0x3f028972a2904cf2L, 0xa87e9b8f7e56076bL, 0x7df3f12f124a5e4L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.traceable.structure.TraceableConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x7df3f12f124a629L, "value")).properties("value").alias("output message", "").sourceNode(new SNodePointer("r:a4d9660d-2a29-4de5-9b2f-b601f2b0ff83(jetbrains.mps.samples.customizedDebugger.Bottomline.structure)", "567241428659643876")).create();
   }
 }

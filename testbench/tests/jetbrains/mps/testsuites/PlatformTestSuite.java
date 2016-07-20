@@ -32,6 +32,7 @@ import org.junit.runners.model.RunnerBuilder;
 @RunWith(PlatformTestSuite.class)
 @Suite.SuiteClasses({
     jetbrains.mps.environment.IdeaEnvironmentTest.class,
+    jetbrains.mps.classloading.DeploymentConcurrencyTest.class,
     jetbrains.mps.workbench.ProjectCreationTest.class,
     jetbrains.mps.ide.vcs.test.merge.DiskMemoryConflictsTest.class,
     jetbrains.mps.ide.vcs.test.merge.ChangesCalculationTest.class,

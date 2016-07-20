@@ -43,12 +43,7 @@ public final class PathManager {
   private static String ourHomePath;
   private static String ourIdeaPath;
 
-  public static final FilenameFilter JAR_FILE_FILTER = new FilenameFilter() {
-    @Override
-    public boolean accept(File dir, String name) {
-      return name.endsWith(DOT_JAR);
-    }
-  };
+  public static final FilenameFilter JAR_FILE_FILTER = (dir, name) -> name.endsWith(DOT_JAR);
 
   public static String getHomePath() {
     if (ourHomePath != null) {
@@ -60,7 +55,7 @@ public final class PathManager {
     File root = new File(rootPath);
     root = root.getAbsoluteFile();
 
-    if (rootPath.endsWith(".jar")) {
+    if (rootPath.endsWith(DOT_JAR)) {
       // {mps_home}/lib
       root = root.getParentFile();
       if (root != null) {

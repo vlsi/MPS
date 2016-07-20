@@ -22,6 +22,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.NotCondition;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
@@ -29,11 +30,16 @@ import org.jetbrains.mps.openapi.persistence.NavigationParticipant.TargetKind;
 
 import java.util.Collection;
 
+/**
+ * @deprecated see {@link BaseMPSChooseModel}
+ */
+@Deprecated
+@ToRemove(version = 3.4)
 public class RootChooseModel extends BaseMPSChooseModel<NavigationTarget> {
 
   public RootChooseModel(Project project) {
     super(project, "node");
-    setCheckBoxName("Include stubs and &non-&&project models");
+    setCheckBoxName("Include &non-&&project models");
     setScope(new ConditionalScope(getProject().getScope(), null, NotCondition.negate(SModelStereotype::isStubModel)), GlobalScope.getInstance());
   }
 

@@ -21,7 +21,9 @@ import org.jetbrains.mps.annotations.Immutable;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.StringTokenizer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -35,13 +37,22 @@ import java.util.stream.Collectors;
 @Immutable
 public class UniPath extends AbstractPath {
   @NotNull private final CommonPath myPath;// path to file (might be an archive as well)
-  @NotNull private final List<CommonPath> myArchivePaths = new ArrayList<>(); // always independent!!!
+  @NotNull private final List<CommonPath> myArchivePaths = new ArrayList<>(); // always independent and relative!!!
 
+  private static String[] splitArchive(String path) {
+    String[] paths = path.split(ARCHIVE_SEPARATOR);
+    if (path.endsWith(ARCHIVE_SEPARATOR)) {
+      String[] result = Arrays.copyOf(paths, paths.length + 1);
+      result[paths.length] = "";
+      return result;
+    }
+    return paths;
+  }
   /**
    * @param path might contain {@link #ARCHIVE_SEPARATOR} symbolS (!)
    */
   private UniPath(@NotNull String path) {
-    String[] archiveStrings = path.split("!/");
+    String[] archiveStrings = splitArchive(path);
     if (archiveStrings.length == 0) {
       myPath = CommonPath.fromString(path);
       return;
@@ -50,7 +61,7 @@ public class UniPath extends AbstractPath {
     myPath = CommonPath.fromString(archiveStrings[0]);
     int index = 0;
     while (++index < archiveStrings.length) {
-      CommonPath archivePart = CommonPath.fromString(UNIX_SEPARATOR + archiveStrings[index]);
+      CommonPath archivePart = CommonPath.fromString(trim(archiveStrings[index]));
       myArchivePaths.add(archivePart.toIndependentPath());
     }
   }
@@ -59,27 +70,66 @@ public class UniPath extends AbstractPath {
     myPath = path.copy();
     if (pathsInArchive != null) {
       for (CommonPath commonPath : pathsInArchive) {
+        assert commonPath.isRelative();
         myArchivePaths.add(commonPath.toIndependentPath());
       }
     }
   }
 
-  public static UniPath fromString(@NotNull String path) {
-    return new UniPath(path);
+  private static String trim(String path) {
+    for (int i = 0; i < path.length(); ++i) {
+      if (path.charAt(i) != UNIX_SEPARATOR_CHAR && path.charAt(i) != WIN_SEPARATOR_CHAR) {
+        return path.substring(i);
+      }
+    }
+    return path;
   }
 
   /**
-   * the path is pathToArchive + ARCHIVE_SEPARATOR + pathsInArchive[0] + ARCHIVE_SEPARATOR + pathsInArchive[1] + ...
+   * the path within the archive might be system-dependent -- it will be converted to the system-independent path automatically
    */
-  public static UniPath fromArchivePaths(CommonPath pathToArchive, @Nullable CommonPath... pathsInArchive) {
-    return new UniPath(pathToArchive, pathsInArchive);
+  public static UniPath fromString(@NotNull String path) {
+    validate(path);
+    return new UniPath(path);
   }
 
-  private static UniPath fromArchivePaths(CommonPath pathToArchive, @Nullable List<CommonPath> pathsInArchive) {
-    if (pathsInArchive == null) {
-      return new UniPath(pathToArchive, null);
+  private static void validate(String path) {
+    if (path.isEmpty()) {
+      return;
     }
-    return UniPath.fromArchivePaths(pathToArchive, pathsInArchive.toArray(new CommonPath[pathsInArchive.size()]));
+    if (path.startsWith(ARCHIVE_SEPARATOR)) {
+      path = path.substring(ARCHIVE_SEPARATOR.length());
+    }
+    for (String part : path.split(ARCHIVE_SEPARATOR)) {
+      if (part.isEmpty()) {
+        throw new IllegalArgumentException("Path `" + path + "' contains two archive separators one after another.");
+      }
+    }
+  }
+
+  /**
+   * the path is pathToFile + ARCHIVE_SEPARATOR + pathsInArchive[0] + ARCHIVE_SEPARATOR + pathsInArchive[1] + ...
+   * if it is archive or just pathToFile in the case it is not
+   * the paths within the archive might be system-dependent -- it will be converted to the system-independent path automatically
+   */
+  public static UniPath fromParts(CommonPath pathToFile, @Nullable CommonPath... pathsInArchive) {
+    validate(pathsInArchive);
+    return new UniPath(pathToFile, pathsInArchive);
+  }
+
+  private static void validate(CommonPath... pathsInArchive) {
+    for (CommonPath path : pathsInArchive) {
+      if (!path.isRelative()) {
+        throw new IllegalArgumentException("Given path within the archive must be relative `" + path);
+      }
+    }
+  }
+
+  private static UniPath fromParts(CommonPath pathToFile, @Nullable List<CommonPath> pathsInArchive) {
+    if (pathsInArchive == null) {
+      return new UniPath(pathToFile, null);
+    }
+    return UniPath.fromParts(pathToFile, pathsInArchive.toArray(new CommonPath[pathsInArchive.size()]));
   }
 
   public boolean isJar() {
@@ -141,14 +191,19 @@ public class UniPath extends AbstractPath {
 
   @NotNull
   @Override
-  public Path toNormal() {
-    return null;
+  public UniPath toNormal() {
+    return UniPath.fromParts(myPath.toNormal(),
+        myArchivePaths.stream().map(CommonPath::toNormal).collect(Collectors.toList()));
   }
 
   @NotNull
   @Override
-  public Path toCanonical() throws IOException {
-    return null;
+  public UniPath toCanonical() throws IOException {
+    List<CommonPath> newArchivePaths = new ArrayList<>();
+    for (CommonPath path : myArchivePaths) {
+      newArchivePaths.add(path.toCanonical());
+    }
+    return UniPath.fromParts(myPath.toCanonical(), newArchivePaths);
   }
 
   @NotNull
@@ -169,7 +224,7 @@ public class UniPath extends AbstractPath {
     }
     List<CommonPath> newArchivePaths = new ArrayList<>(myArchivePaths.size());
     newArchivePaths.addAll(myArchivePaths.stream().map(converter).collect(Collectors.toList()));
-    return UniPath.fromArchivePaths(converter.apply(myPath), newArchivePaths);
+    return UniPath.fromParts(converter.apply(myPath), newArchivePaths);
 
   }
 
@@ -194,46 +249,33 @@ public class UniPath extends AbstractPath {
     List<CommonPath> newArchivePaths = myArchivePaths.subList(0, lastIndex);
     if (lastParent != null) {
       newArchivePaths.add(lastParent);
-      return UniPath.fromArchivePaths(myPath, newArchivePaths);
+      return UniPath.fromParts(myPath, newArchivePaths);
     } else {
-      return UniPath.fromArchivePaths(myPath, newArchivePaths);
+      return UniPath.fromParts(myPath, newArchivePaths);
     }
-  }
-
-  @Override
-  public int getNameCount() {
-    int res = myPath.getNameCount();
-    for (Path path : myArchivePaths) {
-      res += path.getNameCount();
-    }
-    return res;
   }
 
   @NotNull
   @Override
-  public String getName(int index) {
-    if (index < 0 || index >= getNameCount()) {
-      throw new IllegalArgumentException("Index is out of bounds: " + index);
+  public List<String> getNames() {
+    List<String> result = myPath.getNames();
+    for (CommonPath path : myArchivePaths) {
+      result.addAll(path.getNames());
     }
-    if (index < myPath.getNameCount()) {
-      return myPath.getName(index);
-    }
-    index -= myPath.getNameCount();
-    for (int i = 0; i < myArchivePaths.size() && index >= 0; ++i) {
-      Path path = myArchivePaths.get(i);
-      if (index < path.getNameCount()) {
-        return path.getName(index);
-      }
-      index -= path.getNameCount();
-    }
-    throw new IllegalArgumentException("nothing is impossible");
+    return result;
+  }
+
+  @Nullable
+  @Override
+  public Path getRoot() {
+    return myPath.getRoot();
   }
 
   @Override
   public String toString() {
     String res = myPath.toString();
     for (Path path : myArchivePaths) {
-      res += path.toString();
+      res += ARCHIVE_SEPARATOR + path.toString();
     }
     return res;
   }
@@ -241,7 +283,7 @@ public class UniPath extends AbstractPath {
   @NotNull
   @Override
   public UniPath copy() {
-    return UniPath.fromArchivePaths(myPath, myArchivePaths);
+    return UniPath.fromParts(myPath, myArchivePaths);
   }
 
 //  public Path toRealPath(LinkOption... options) throws IOException {

@@ -20,7 +20,6 @@ import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -47,5 +46,6 @@ public interface SubstituteMenuContext {
    * @param menuLookup a menu reference, may be null
    * @return menu items for the node, not null but possibly empty
    */
+  @NotNull
   List<SubstituteMenuItem> createItems(@Nullable MenuLookup<SubstituteMenu> menuLookup);
 }

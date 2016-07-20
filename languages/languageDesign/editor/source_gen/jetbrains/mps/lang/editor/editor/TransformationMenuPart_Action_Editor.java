@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
-import jetbrains.mps.editor.runtime.EditorCell_Empty;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -51,7 +50,6 @@ public class TransformationMenuPart_Action_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_zg23bd_f0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_zg23bd_g0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_zg23bd_h0(editorContext, node));
-    editorCell.addEditorCell(this.createEmpty_zg23bd_i0(editorContext, node));
     return editorCell;
   }
   private EditorCell createComponent_zg23bd_a0(EditorContext editorContext, SNode node) {
@@ -256,17 +254,6 @@ public class TransformationMenuPart_Action_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<no additional features>");
       return editorCell;
     }
-  }
-  private EditorCell createEmpty_zg23bd_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.FORWARD));
-    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.BACKWARD));
-    editorCell.setCellId("Empty_zg23bd_i0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
-    editorCell.getStyle().putAll(style);
-    return editorCell;
   }
   private EditorCell createCollection_zg23bd_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);

@@ -645,6 +645,7 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.DeleteNodesHelper" file="DeleteNodesHelper.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
@@ -657,7 +658,6 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
@@ -936,6 +936,7 @@
   <dependency className="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action" file="FindRootableConceptsWithoutIcons_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
@@ -947,7 +948,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
@@ -1289,11 +1289,14 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.scope.ConditionalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
-    <classNode dependClassName="jetbrains.mps.workbench.choose.models.BaseModelModel" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ChooseByNameData" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ModelScopeIterable" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ModelsPresentation" />
     <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.MpsPopupFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -1318,11 +1321,14 @@
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.scope.ConditionalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.workbench.choose.modules.BaseModuleModel" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ChooseByNameData" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ModuleScopeIterable" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ModulesPresentation" />
     <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.MpsPopupFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -1863,6 +1869,7 @@
     <classNode dependClassName="com.intellij.ide.projectView.ProjectView" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
@@ -1876,7 +1883,6 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JOptionPane" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
@@ -1889,9 +1895,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.MoveModel_Action" file="MoveModel_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -1899,6 +1902,7 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
@@ -1908,15 +1912,15 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.project.creation.NewModelDialog" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveModelRefactoringParticipant" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringProcessor" />
     <classNode dependClassName="jetbrains.mps.ide.refactoring.ChooseModuleDialog" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.MoveModelRefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageAspectSupport" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
@@ -1999,7 +2003,6 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
@@ -2051,7 +2054,6 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -2107,19 +2109,24 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.tree.TreeNode" />
+    <classNode dependClassName="jetbrains.mps.FilteredGlobalScope" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTree" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.project.ModuleInstanceCondition" />
+    <classNode dependClassName="jetbrains.mps.project.Solution" />
+    <classNode dependClassName="jetbrains.mps.scope.ConditionalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.workbench.choose.modules.BaseModuleModel" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ChooseByNameData" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ModuleScopeIterable" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ModulesPresentation" />
     <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.MpsPopupFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.NewSolution_Action" file="NewSolution_Action.java">
@@ -2557,6 +2564,7 @@
     <classNode dependClassName="com.intellij.ide.projectView.ProjectView" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
@@ -2567,7 +2575,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
@@ -3122,6 +3129,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.ShowNodeInfo_Action" file="ShowNodeInfo_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="java.lang.Object" />
@@ -3380,8 +3388,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -3389,9 +3395,11 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
     <classNode dependClassName="jetbrains.mps.smodel.SReferenceBase" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
@@ -3406,8 +3414,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveModelRefactoringParticipant" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipantBase" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.MoveModelRefactoringParticipant" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringParticipantBase" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.View_ActionGroup" file="View_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />

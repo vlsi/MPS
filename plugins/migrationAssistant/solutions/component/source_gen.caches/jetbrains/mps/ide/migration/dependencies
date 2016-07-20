@@ -33,13 +33,13 @@
   <dependency className="jetbrains.mps.ide.migration.IStartupMigrationExecutor" file="IStartupMigrationExecutor.java" />
   <dependency className="jetbrains.mps.ide.migration.MigrationAssistantWizard" file="MigrationAssistantWizard.java">
     <classNode dependClassName="com.intellij.ide.wizard.AbstractWizardStepEx" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.InitialStep" />
@@ -52,7 +52,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.MigrationComponent" file="MigrationComponent.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.util.ui.UIUtil" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Math" />
@@ -73,9 +72,7 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationScriptApplied" />
     <classNode dependClassName="jetbrains.mps.ide.migration.RefactoringLogApplied" />
     <classNode dependClassName="jetbrains.mps.ide.migration.RefactoringStepImpl" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringProcessor" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringSessionImpl" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringUI" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
@@ -93,7 +90,6 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringLog" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringPart" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations" />
@@ -103,6 +99,9 @@
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSessionImpl" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -131,10 +130,14 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.ScriptApplied" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil" />
+    <classNode dependClassName="jetbrains.mps.migration.component.util.MigrationsUtil" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigration" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.MigrationMakeBlocker" file="MigrationMakeBlocker.java">
@@ -232,10 +235,10 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.util.concurrent.atomic.AtomicInteger" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.classloading.MPSClassesListenerAdapter" />
+    <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationAssistantWizard" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationDialogUtil" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
@@ -254,7 +257,7 @@
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigrationProperties" />
     <classNode dependClassName="jetbrains.mps.module.ReloadableModuleBase" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.RepoListenerRegistrar" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -296,7 +299,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringPart" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringSession" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringLog" />
   </dependency>

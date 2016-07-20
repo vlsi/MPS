@@ -26,6 +26,8 @@
     <import index="zkib" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.reloading(MPS.Core/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="fyhk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps(MPS.Core/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" implicit="true" />
   </imports>
   <registry>
@@ -94,6 +96,10 @@
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
+      </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
@@ -288,6 +294,7 @@
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
+      <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
       <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
@@ -1075,18 +1082,52 @@
           </node>
         </node>
         <node concept="3clFbH" id="7yLt8tTSSmk" role="3cqZAp" />
+        <node concept="3cpWs8" id="56m6nR3VFZm" role="3cqZAp">
+          <node concept="3cpWsn" id="56m6nR3VFZn" role="3cpWs9">
+            <property role="TrG5h" value="mpsPaths" />
+            <node concept="_YKpA" id="56m6nR3VGaZ" role="1tU5fm">
+              <node concept="3uibUv" id="56m6nR3VGRC" role="_ZDj9">
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="56m6nR3VFZo" role="33vP2m">
+              <ref role="1Pybhc" to="zkib:~CommonPaths" resolve="CommonPaths" />
+              <ref role="37wK5l" to="zkib:~CommonPaths.getMPSPaths(jetbrains.mps.util.ClassType):java.util.List" resolve="getMPSPaths" />
+              <node concept="Rm8GO" id="5d$B_bnZsSH" role="37wK5m">
+                <ref role="Rm8GQ" to="18ew:~ClassType.JDK_TOOLS" resolve="JDK_TOOLS" />
+                <ref role="1Px2BO" to="18ew:~ClassType" resolve="ClassType" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="7yLt8tTSSmn" role="3cqZAp">
-          <node concept="2OqwBi" id="7yLt8tTSSmr" role="3clFbG">
+          <node concept="2OqwBi" id="56m6nR3W54c" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagTxi3" role="2Oq$k0">
               <ref role="3cqZAo" node="j$XAJDK0Ek" resolve="classPath" />
             </node>
-            <node concept="TSZUe" id="7yLt8tTSSmx" role="2OqNvi">
-              <node concept="2ShNRf" id="7yLt8tTSSmA" role="25WWJ7">
-                <node concept="1pGfFk" id="7yLt8tTSSmC" role="2ShVmc">
-                  <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                  <node concept="2YIFZM" id="7yLt8tTSSm_" role="37wK5m">
-                    <ref role="37wK5l" to="zkib:~CommonPaths.getToolsJar():java.lang.String" resolve="getToolsJar" />
-                    <ref role="1Pybhc" to="zkib:~CommonPaths" resolve="CommonPaths" />
+            <node concept="X8dFx" id="56m6nR3W7RW" role="2OqNvi">
+              <node concept="2OqwBi" id="56m6nR3VJhr" role="25WWJ7">
+                <node concept="37vLTw" id="56m6nR3VIut" role="2Oq$k0">
+                  <ref role="3cqZAo" node="56m6nR3VFZn" resolve="mpsPaths" />
+                </node>
+                <node concept="3$u5V9" id="56m6nR3VPH9" role="2OqNvi">
+                  <node concept="1bVj0M" id="56m6nR3VPHb" role="23t8la">
+                    <node concept="3clFbS" id="56m6nR3VPHc" role="1bW5cS">
+                      <node concept="3clFbF" id="56m6nR3VPXF" role="3cqZAp">
+                        <node concept="2ShNRf" id="56m6nR3VPXD" role="3clFbG">
+                          <node concept="1pGfFk" id="56m6nR3W2Gn" role="2ShVmc">
+                            <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                            <node concept="37vLTw" id="56m6nR3W2QJ" role="37wK5m">
+                              <ref role="3cqZAo" node="56m6nR3VPHd" resolve="it" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="Rh6nW" id="56m6nR3VPHd" role="1bW2Oz">
+                      <property role="TrG5h" value="it" />
+                      <node concept="2jxLKc" id="56m6nR3VPHe" role="1tU5fm" />
+                    </node>
                   </node>
                 </node>
               </node>

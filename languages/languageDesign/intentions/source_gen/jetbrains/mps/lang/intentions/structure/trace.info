@@ -8,7 +8,7 @@
       <unit at="7,0,12,0" name="jetbrains.mps.lang.intentions.structure.IconContainer" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="18,0,122,0" name="jetbrains.mps.lang.intentions.structure.StructureAspectDescriptor" />
+      <unit at="18,0,183,0" name="jetbrains.mps.lang.intentions.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

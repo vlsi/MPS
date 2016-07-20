@@ -175,5 +175,10 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
+  <node concept="1TIwiD" id="7mBovHgdhFV">
+    <property role="EcuMT" value="8477852555558591227" />
+    <property role="TrG5h" value="TestConceptForMenuParameterizedByPrimitiveType" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
 </model>
 

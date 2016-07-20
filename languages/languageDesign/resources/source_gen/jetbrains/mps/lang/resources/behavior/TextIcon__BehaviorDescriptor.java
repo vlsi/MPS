@@ -12,9 +12,9 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vfs.IFile;
-import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -28,6 +28,7 @@ import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import javax.swing.ImageIcon;
+import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -38,7 +39,7 @@ public final class TextIcon__BehaviorDescriptor extends BaseBHDescriptor {
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<String> getResourceId_id2p1v3tOadt0 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getResourceId").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2p1v3tOadt0").registry(REGISTRY).build();
-  public static final SMethod<Tuples._2<IFile, byte[]>> generate_id7Mb2akaesv8 = new SMethodBuilder<Tuples._2<IFile, byte[]>>(new SJavaCompoundTypeImpl((Class<Tuples._2<IFile, byte[]>>) ((Class) Object.class))).name("generate").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Mb2akaesv8").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(IFile.class, ""));
+  public static final SMethod<List<Tuples._2<IFile, byte[]>>> generate_id7Mb2akaesv8 = new SMethodBuilder<List<Tuples._2<IFile, byte[]>>>(new SJavaCompoundTypeImpl((Class<List<Tuples._2<IFile, byte[]>>>) ((Class) Object.class))).name("generate").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Mb2akaesv8").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(IFile.class, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getResourceId_id2p1v3tOadt0, generate_id7Mb2akaesv8);
 
@@ -48,7 +49,7 @@ public final class TextIcon__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static String getResourceId_id2p1v3tOadt0(@NotNull SNode __thisNode__) {
     return "TextIcon_" + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L, 0x12dbb53bb6b60039L, "iconId")) + ".png";
   }
-  /*package*/ static Tuples._2<IFile, byte[]> generate_id7Mb2akaesv8(@NotNull final SNode __thisNode__, IFile outputRoot) {
+  /*package*/ static List<Tuples._2<IFile, byte[]>> generate_id7Mb2akaesv8(@NotNull final SNode __thisNode__, IFile outputRoot) {
     SModel model = SNodeOperations.getModel(__thisNode__);
     IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
 
@@ -68,7 +69,7 @@ public final class TextIcon__BehaviorDescriptor extends BaseBHDescriptor {
         res.paintIcon(null, dc.g, 0, 0);
       }
     });
-    return MultiTuple.<IFile,byte[]>from(outputDir.getDescendant(Icon__BehaviorDescriptor.getResourceId_id2p1v3tOadt0.invoke(__thisNode__)), iconData);
+    return ListSequence.fromListAndArray(new ArrayList<Tuples._2<IFile, byte[]>>(), MultiTuple.<IFile,byte[]>from(outputDir.getDescendant(Icon__BehaviorDescriptor.getResourceId_id2p1v3tOadt0.invoke(__thisNode__)), iconData));
   }
 
   /*package*/ TextIcon__BehaviorDescriptor() {
@@ -90,7 +91,7 @@ public final class TextIcon__BehaviorDescriptor extends BaseBHDescriptor {
       case 0:
         return (T) ((String) getResourceId_id2p1v3tOadt0(node));
       case 1:
-        return (T) ((Tuples._2<IFile, byte[]>) generate_id7Mb2akaesv8(node, (IFile) parameters[0]));
+        return (T) ((List<Tuples._2<IFile, byte[]>>) generate_id7Mb2akaesv8(node, (IFile) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

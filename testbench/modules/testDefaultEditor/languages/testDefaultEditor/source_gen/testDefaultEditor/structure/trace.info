@@ -5,7 +5,7 @@
       <unit at="14,0,111,0" name="testDefaultEditor.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="17,0,89,0" name="testDefaultEditor.structure.StructureAspectDescriptor" />
+      <unit at="17,0,126,0" name="testDefaultEditor.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

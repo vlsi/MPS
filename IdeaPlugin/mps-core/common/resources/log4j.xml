@@ -74,6 +74,12 @@
     <appender-ref ref="MPS-FILE"/>
   </category>
 
+  <category name="#org.jetbrains.jps" additivity="false">
+    <priority value="INFO"/>
+    <appender-ref ref="CONSOLE-INFO"/>
+    <appender-ref ref="MPS-FILE"/>
+  </category>
+
   <category name="#com.intellij" additivity="false">
     <priority value="INFO"/>
     <appender-ref ref="CONSOLE-INFO"/>

@@ -29,8 +29,7 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
     this.setPopup(true);
   }
   public void doUpdate(AnActionEvent event) {
-    GoByReference_ActionGroup.this.removeAll();
-
+    removeAll();
     final MPSProject mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
     SNode node = event.getData(MPSCommonDataKeys.NODE);
     if (node == null || mpsProject == null) {

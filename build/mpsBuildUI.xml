@@ -200,6 +200,7 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.editor.menus.extras.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
@@ -222,6 +223,7 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.refactoring.participant.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.make.reduced.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.tool.gentest.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/xml/jetbrains.mps.core.xml.jar" />
@@ -336,6 +338,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-logging.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-boot-util.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
@@ -389,6 +392,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-boot-util.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
@@ -445,6 +449,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-logging.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-boot-util.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />

@@ -23,6 +23,7 @@ import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.impl.IoFileSystem;
+import jetbrains.mps.vfs.openapi.FileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -54,16 +55,16 @@ public class JarFileClassPathItem extends RealClassPathItem {
   private String myPrefix;
   private File myFile;
 
-  private MyCache myCache = new MyCache();
-  private String myPath;
+  private final MyCache myCache = new MyCache();
+  private final String myPath;
 
-  protected JarFileClassPathItem(String path) {
+  JarFileClassPathItem(FileSystem fileSystem, String path) {
     myPath = path;
     if (path.endsWith("!/")) {
       path = path.substring(0, path.length() - 2);
     }
     try {
-      myFile = transformFile(new IoFileSystem().getFile(path));
+      myFile = transformFile(fileSystem.getFile(path));
       myPrefix = "jar:" + myFile.toURI().toURL() + "!/";
     } catch (IOException e) {
       LOG.error("invalid class path: " + path, e);
@@ -72,23 +73,19 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   @Override
   public String getPath() {
-    checkValidity();
     return myPath;
   }
 
   public String getAbsolutePath() {
-    checkValidity();
     return myFile.getAbsolutePath();
   }
 
   public File getFile() {
-    checkValidity();
     return myFile;
   }
 
   @Override
   public boolean hasClass(String qualifiedClassName) {
-    checkValidity();
     ensureInitialized();
     final int ix = qualifiedClassName.lastIndexOf('.');
     String packageName = ix == -1 ? "" : qualifiedClassName.substring(0, ix);
@@ -98,14 +95,12 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   @Override
   public boolean hasPackage(@NotNull String packageName) {
-    checkValidity();
     ensureInitialized();
     return myCache.hasPackage(packageName);
   }
 
   @Override
   public synchronized ClassBytes getClassBytes(String qualifiedClassName) {
-    checkValidity();
     ensureInitialized();
     InputStream inp = null;
     ZipFile zf = null;
@@ -155,7 +150,6 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   @Override
   public URL getResource(String name) {
-    checkValidity();
     ZipFile zf = null;
     try {
       zf = new ZipFile(myFile);
@@ -180,7 +174,6 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   @Override
   public synchronized Iterable<String> getAvailableClasses(String namespace) {
-    checkValidity();
     ensureInitialized();
     Collection<String> start = myCache.getClassesSetFor(namespace);
     Condition<String> cond = new Condition<String>() {
@@ -194,14 +187,12 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   @Override
   public synchronized Iterable<String> getSubpackages(String namespace) {
-    checkValidity();
     ensureInitialized();
     return myCache.getSubpackagesSetFor(namespace);
   }
 
   @Override
   public List<RealClassPathItem> flatten() {
-    checkValidity();
     List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
     result.add(this);
     return result;
@@ -209,7 +200,6 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   @Override
   public void accept(IClassPathItemVisitor visitor) {
-    checkValidity();
     visitor.visit(this);
   }
 
@@ -286,7 +276,6 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
   }
 
-  // FIXME rewrite without IFile, write class path item tests about jars in jars
   private static File transformFile(IFile f) throws IOException {
     if (!f.isInArchive()) {
       return new File(f.getPath());

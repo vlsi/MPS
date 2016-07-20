@@ -13,10 +13,14 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="3xdn" ref="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
+    <import index="hfbu" ref="r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.aspect.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
@@ -49,6 +53,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -393,10 +398,20 @@
     <ref role="1TJDcQ" to="tp2q:gKAMqbp" resolve="SequenceOperation" />
     <node concept="1TJgyj" id="59iQg8rz2mK" role="1TKVEi">
       <property role="20lmBu" value="reference" />
-      <property role="20lbJX" value="1" />
-      <property role="20kJfa" value="requestedAspect" />
+      <property role="20lbJX" value="0..1" />
+      <property role="20kJfa" value="requestedAspect_old" />
       <property role="IQ2ns" value="5932042262275696048" />
       <ref role="20lvS9" to="tpee:fKQsSyN" resolve="EnumConstantDeclaration" />
+      <node concept="asaX9" id="7Nk8HJUuNkF" role="lGtFl">
+        <property role="YLPcu" value="MPS 3.4" />
+      </node>
+    </node>
+    <node concept="1TJgyj" id="7Nk8HJUuKrS" role="1TKVEi">
+      <property role="IQ2ns" value="8994852683961272056" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="requestedAspect" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="hfbu:2Y$EcRKMr1Q" resolve="SimpleLanguageAspectDescriptor" />
     </node>
     <node concept="PrWs8" id="59iQg8ryZAl" role="PzmwI">
       <ref role="PrY4T" to="3xdn:59iQg8ryQK3" resolve="OperationHelpProvider" />

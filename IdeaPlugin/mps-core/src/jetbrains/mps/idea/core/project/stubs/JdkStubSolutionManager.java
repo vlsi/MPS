@@ -28,7 +28,7 @@ import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.messages.MessageBusConnection;
-import jetbrains.mps.ClasspathReader.ClassType;
+import jetbrains.mps.util.ClassType;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.project.ProjectHelper;

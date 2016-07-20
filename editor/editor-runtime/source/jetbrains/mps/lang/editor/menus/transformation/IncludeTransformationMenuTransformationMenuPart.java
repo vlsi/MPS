@@ -16,9 +16,9 @@
 package jetbrains.mps.lang.editor.menus.transformation;
 
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;

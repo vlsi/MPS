@@ -26,6 +26,11 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
             return new FileIcon_Constraints();
           }
           break;
+        case 1:
+          if (true) {
+            return new Text_Constraints();
+          }
+          break;
         default:
           // default 
       }
@@ -40,5 +45,5 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_2qnle6_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.FileIcon"));
+  private static final Map<SAbstractConcept, Integer> indices_2qnle6_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.FileIcon"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b9L, "jetbrains.mps.lang.resources.structure.Text"));
 }

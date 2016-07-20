@@ -74,7 +74,7 @@ public class TextIcon_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createConstant_u5g1fn_b0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "fileName=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "id=");
     editorCell.setCellId("Constant_u5g1fn_b0a0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -86,6 +86,9 @@ public class TextIcon_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_iconId");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

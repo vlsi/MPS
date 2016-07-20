@@ -43,7 +43,7 @@ import java.util.List;
 import java.util.Set;
 
 public class ButtonTabsComponent extends BaseTabsComponent {
-  private List<ButtonEditorTab> myRealTabs = new ArrayList<ButtonEditorTab>();
+  private List<ButtonEditorTab> myRealTabs = new ArrayList<>();
   private ActionToolbar myToolbar = null;
 
   public ButtonTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed,
@@ -123,7 +123,6 @@ public class ButtonTabsComponent extends BaseTabsComponent {
         myRealTabs.add(tab);
       }
     }
-    updateTabColors();
 
     DefaultActionGroup group = new DefaultActionGroup();
     for (ButtonEditorTab tab : myRealTabs) {
@@ -132,7 +131,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     if (myToolbar != null) {
       removeContent(myToolbar.getComponent());
     }
-    ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true);
+    ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.EDITOR_TOOLBAR, group, true);
     actionToolbar.setLayoutPolicy(ActionToolbar.WRAP_LAYOUT_POLICY);
     myToolbar = actionToolbar;
     setContent(myToolbar.getComponent());
@@ -186,8 +185,5 @@ public class ButtonTabsComponent extends BaseTabsComponent {
 
   @Override
   public void updateTabColors() {
-    for (ButtonEditorTab realTab : myRealTabs) {
-      realTab.updateIcon();
-    }
   }
 }

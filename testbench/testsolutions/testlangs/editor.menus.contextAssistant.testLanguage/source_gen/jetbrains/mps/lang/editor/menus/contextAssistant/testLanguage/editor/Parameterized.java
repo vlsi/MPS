@@ -12,8 +12,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.MenuLocations;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.SidebarActionItem;
 import jetbrains.mps.smodel.runtime.IconResource;
@@ -31,53 +31,55 @@ public class Parameterized extends TransformationMenuBase {
     return result;
   }
 
-  private static class TransformationMenuPart_Parameterized_3h2zbg_a0 extends ParameterizedMenuPart<Object, TransformationMenuItem, TransformationMenuContext> {
+  private class TransformationMenuPart_Parameterized_3h2zbg_a0 extends ParameterizedMenuPart<Integer, TransformationMenuItem, TransformationMenuContext> {
 
     @NotNull
     @Override
-    protected List<TransformationMenuItem> createItems(Object parameter, TransformationMenuContext context) {
-      return new Parameterized.TransformationMenuPart_Action_3h2zbg_a0a(parameter).createItems(context);
+    protected List<TransformationMenuItem> createItems(Integer parameter, TransformationMenuContext context) {
+      return new Parameterized.TransformationMenuPart_Parameterized_3h2zbg_a0.TransformationMenuPart_Action_3h2zbg_a0a(parameter).createItems(context);
     }
-    @NotNull
+
+    @Nullable
     @Override
-    protected Iterable<? extends Object> getParameters(TransformationMenuContext _context) {
+    protected Iterable<? extends Integer> getParameters(TransformationMenuContext _context) {
       return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4);
     }
-  }
-  private static class TransformationMenuPart_Action_3h2zbg_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    private final Object myParameterObject;
-    public TransformationMenuPart_Action_3h2zbg_a0a(Object parameterObject) {
-      myParameterObject = parameterObject;
-    }
-    @Nullable
-    protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Parameterized.TransformationMenuPart_Action_3h2zbg_a0a.Item(context);
-    }
 
-    private class Item extends ActionItemBase implements SidebarActionItem {
-      private final TransformationMenuContext _context;
-
-      private Item(TransformationMenuContext context) {
-        _context = context;
+    private class TransformationMenuPart_Action_3h2zbg_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private final int myParameterObject;
+      public TransformationMenuPart_Action_3h2zbg_a0a(int parameterObject) {
+        myParameterObject = parameterObject;
       }
-
       @Nullable
-      @Override
-      public String getLabelText(String pattern) {
-        return "parameterized action " + ((int) myParameterObject);
+      protected TransformationMenuItem createItem(TransformationMenuContext context) {
+        return new Parameterized.TransformationMenuPart_Parameterized_3h2zbg_a0.TransformationMenuPart_Action_3h2zbg_a0a.Item(context);
       }
 
-      @Override
-      public void execute(@NotNull String pattern) {
-      }
+      private class Item extends ActionItemBase implements SidebarActionItem {
+        private final TransformationMenuContext _context;
 
-      @Override
-      public IconResource getIcon() {
-        return null;
-      }
-      @Override
-      public String getTooltipText() {
-        return null;
+        private Item(TransformationMenuContext context) {
+          _context = context;
+        }
+
+        @Nullable
+        @Override
+        public String getLabelText(String pattern) {
+          return "parameterized action " + myParameterObject;
+        }
+
+        @Override
+        public void execute(@NotNull String pattern) {
+        }
+
+        @Override
+        public IconResource getIcon() {
+          return null;
+        }
+        @Override
+        public String getTooltipText() {
+          return null;
+        }
       }
     }
   }

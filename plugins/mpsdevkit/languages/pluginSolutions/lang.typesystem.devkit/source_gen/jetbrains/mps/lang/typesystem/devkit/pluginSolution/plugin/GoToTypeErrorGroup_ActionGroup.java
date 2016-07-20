@@ -30,6 +30,7 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
     this.setPopup(true);
   }
   public void doUpdate(AnActionEvent event) {
+    removeAll();
     SNode node = event.getData(MPSCommonDataKeys.NODE);
     if (node == null) {
       GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
@@ -45,8 +46,6 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
       GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
       return;
     }
-    GoToTypeErrorGroup_ActionGroup.this.enable(event.getPresentation());
-    GoToTypeErrorGroup_ActionGroup.this.removeAll();
     for (SNodeReference id : error.getAdditionalRulesIds()) {
       GoToTypeErrorGroup_ActionGroup.this.addParameterizedAction(new GoToTypeErrorRule_InGroup_Action(id, false), PluginId.getId("jetbrains.mps.lang.typesystem.devkit.pluginSolution"), id, false);
     }

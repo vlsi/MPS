@@ -247,7 +247,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -502,11 +502,6 @@
               </node>
             </node>
           </node>
-          <node concept="3SKdUt" id="3TEgbCBQSTH" role="3cqZAp">
-            <node concept="3SKdUq" id="3TEgbCBQSV1" role="3SKWNk">
-              <property role="3SKdUp" value="FIXME why DefaultSModelDescriptor?! SModelInternal would be enough" />
-            </node>
-          </node>
           <node concept="3cpWs8" id="2WSWNq1Q288" role="3cqZAp">
             <node concept="3cpWsn" id="2WSWNq1Q289" role="3cpWs9">
               <property role="TrG5h" value="langs" />
@@ -521,13 +516,13 @@
                     <node concept="37vLTw" id="2WSWNq1Q28d" role="10QFUP">
                       <ref role="3cqZAo" node="1E2sZkYLga1" resolve="model" />
                     </node>
-                    <node concept="3uibUv" id="2WSWNq1Q28e" role="10QFUM">
-                      <ref role="3uigEE" to="w1kc:~DefaultSModelDescriptor" resolve="DefaultSModelDescriptor" />
+                    <node concept="3uibUv" id="7DvEEx_WoZp" role="10QFUM">
+                      <ref role="3uigEE" to="w1kc:~SModelInternal" resolve="SModelInternal" />
                     </node>
                   </node>
                 </node>
                 <node concept="liA8E" id="2WSWNq1Q28f" role="2OqNvi">
-                  <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.importedLanguageIds():java.util.Collection" resolve="importedLanguageIds" />
+                  <ref role="37wK5l" to="w1kc:~SModelInternal.importedLanguageIds():java.util.Collection" resolve="importedLanguageIds" />
                 </node>
               </node>
             </node>
@@ -664,14 +659,6 @@
             </node>
           </node>
           <node concept="3clFbH" id="2WSWNq1QE8S" role="3cqZAp" />
-          <node concept="3clFbF" id="2WSWNq1Rh_8" role="3cqZAp">
-            <node concept="2OqwBi" id="2WSWNq1Ri4I" role="3clFbG">
-              <node concept="2WthIp" id="2WSWNq1Rh_6" role="2Oq$k0" />
-              <node concept="liA8E" id="2WSWNq1Rk3T" role="2OqNvi">
-                <ref role="37wK5l" to="qkt:~DefaultActionGroup.removeAll():void" resolve="removeAll" />
-              </node>
-            </node>
-          </node>
           <node concept="2Gpval" id="2WSWNq1QBqM" role="3cqZAp">
             <node concept="2GrKxI" id="2WSWNq1QBqR" role="2Gsz3X">
               <property role="TrG5h" value="descr" />

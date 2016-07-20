@@ -18,7 +18,9 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientModelsProvider;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -46,8 +48,10 @@ public class CrossModelEnvironment {
   // FIXME instead of HashMap, shall keep ModelCheckpoints here.
   private final HashMap<SModelReference, List<CheckpointState>> myCheckpoints = new HashMap<SModelReference, List<CheckpointState>>();
   private final TransientModelsModule myModule;
+  private final TransientModelsProvider myTransientModelProvider;
 
   public CrossModelEnvironment(TransientModelsProvider tmProvider) {
+    myTransientModelProvider = tmProvider;
     myModule = tmProvider.getCheckpointsModule();
     // FIXME in the future - populate from existing cp models
     // but for prototype, models visible within same make would suffice
@@ -62,6 +66,10 @@ public class CrossModelEnvironment {
     if (myCheckpoints.containsKey(model)) {
       return true;
     }
+    // XXX getCheckpointModelsFor iterates models of the module, hence would need a model read
+    //     OTOH, just a wrap with model read doesn't make sense here (models could get disposed right after the call),
+    //     so likely we shall populate myCheckpoints in constructor/dedicated method. Still, what about checkpoint model disposed *after*
+    //     I've collected all the relevant state for this class?
     return getCheckpointModelsFor(model).length > 0;
 
   }
@@ -76,8 +84,15 @@ public class CrossModelEnvironment {
     if (states != null) {
       return new ModelCheckpoints(states.toArray(new CheckpointState[states.size()]));
     }
-    SModel[] cpModels = getCheckpointModelsFor(model);
-    return new ModelCheckpoints(myModule.getRepository(), cpModels);
+    // XXX Not sure whether read shall be local to this class or external on constructor/initialization method (see comment in #hasState() above)
+    //     It seems to be an implementation detail that we traverse model and use its nodes to persist mapping label information (that's what we need RA for).
+    return new ModelAccessHelper(myTransientModelProvider.getRepository()).runReadAction(new Computable<ModelCheckpoints>() {
+      @Override
+      public ModelCheckpoints compute() {
+        SModel[] cpModels = getCheckpointModelsFor(model);
+        return new ModelCheckpoints(myTransientModelProvider.getRepository(), cpModels);
+      }
+    });
   }
 
   private SModel[] getCheckpointModelsFor(SModelReference model) {
@@ -89,23 +104,6 @@ public class CrossModelEnvironment {
       }
     }
     return rv.toArray(new SModel[rv.size()]);
-  }
-
-  /**
-   * Alternative to {@link ModelCheckpoints#find(Checkpoint)}
-   */
-  @Nullable
-  public CheckpointState getCheckpoint(@NotNull SModelReference originalModel, @NotNull Checkpoint checkpoint) {
-    List<CheckpointState> checkpoints = myCheckpoints.get(originalModel);
-    if (checkpoints == null) {
-      return null;
-    }
-    for (CheckpointState cp : checkpoints) {
-      if (cp.getCheckpoint().equals(checkpoint)) {
-        return cp;
-      }
-    }
-    return null;
   }
 
   /*package*/ static SModelName createCheckpointModelName(SModelReference originalModel, Checkpoint step) {

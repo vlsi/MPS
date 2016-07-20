@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class RefactoringActionsExtensionComponent implements ApplicationComponent {
 
-  ExtensionDescriptor myDescriptor = new ExtensionDescriptor();
+  private ExtensionDescriptor myDescriptor = new ExtensionDescriptor();
 
   @Override
   public void initComponent() {

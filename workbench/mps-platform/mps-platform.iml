@@ -37,5 +37,7 @@
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="migrations-runtime" />
     <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
+    <orderEntry type="module" module-name="refactoring" />
+    <orderEntry type="module" module-name="resources_en" />
   </component>
 </module>

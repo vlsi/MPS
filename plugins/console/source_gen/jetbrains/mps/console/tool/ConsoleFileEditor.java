@@ -74,13 +74,11 @@ public class ConsoleFileEditor implements DocumentsEditor {
   @NotNull
   public FileEditorState getState(@NotNull FileEditorStateLevel level) {
     final Wrappers._T<Object> memento = new Wrappers._T<Object>(null);
-    if (!(myDisposed)) {
-      myEditor.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          memento.value = myEditor.getEditorContext().createMemento();
-        }
-      });
-    }
+    myEditor.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        memento.value = myEditor.getEditorContext().createMemento();
+      }
+    });
     return new ConsoleFileEditor.MyFileEditorState(memento.value);
   }
   public void setState(@NotNull final FileEditorState state) {
@@ -97,7 +95,7 @@ public class ConsoleFileEditor implements DocumentsEditor {
     return false;
   }
   public boolean isValid() {
-    return false;
+    return !(myDisposed);
   }
   public void selectNotify() {
   }

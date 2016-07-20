@@ -49,7 +49,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.core.editor.BaseConcept_SubstituteMenu" file="BaseConcept_SubstituteMenu.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -58,7 +57,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.ConceptMenusPart" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.ConditionalMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.GroupMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.ParameterizedMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.DefaultConceptSubstituteMenuPart" />

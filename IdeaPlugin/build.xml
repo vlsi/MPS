@@ -295,6 +295,7 @@
           <include name="mps-tool.jar"/>
           <include name="mps-core.jar"/>
           <include name="mps-openapi.jar"/>
+          <include name="mps-boot-util.jar"/>
           <include name="mps-logging.jar"/>
           <include name="mps-messaging.jar"/>
           <include name="mps-collections.jar"/>

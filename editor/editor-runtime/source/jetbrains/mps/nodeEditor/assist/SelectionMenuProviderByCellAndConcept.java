@@ -19,16 +19,14 @@ import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuL
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.selection.Selection;
-import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -40,11 +38,9 @@ import java.util.List;
  * menu. In case when no cell or more than one cell is selected, returns an empty list of items.
  */
 public class SelectionMenuProviderByCellAndConcept implements SelectionMenuProvider {
-  private final ModelAccessHelper myModelAccessHelper;
   private String myMenuLocation;
 
-  public SelectionMenuProviderByCellAndConcept(ModelAccess modelAccess, String menuLocation) {
-    myModelAccessHelper = new ModelAccessHelper(modelAccess);
+  public SelectionMenuProviderByCellAndConcept(String menuLocation) {
     myMenuLocation = menuLocation;
   }
 
@@ -63,11 +59,9 @@ public class SelectionMenuProviderByCellAndConcept implements SelectionMenuProvi
       return Collections.emptyList();
     }
 
-    return myModelAccessHelper.runReadAction(() -> {
-      DefaultTransformationMenuContext context = DefaultTransformationMenuContext.createInitialContextForCell(menuLookupAndCell.o2,
-          myMenuLocation);
-      return context.createItems(menuLookupAndCell.o1);
-    });
+    DefaultTransformationMenuContext context = DefaultTransformationMenuContext.createInitialContextForCell(menuLookupAndCell.o2,
+        myMenuLocation);
+    return context.createItems(menuLookupAndCell.o1);
   }
 
   @Nullable

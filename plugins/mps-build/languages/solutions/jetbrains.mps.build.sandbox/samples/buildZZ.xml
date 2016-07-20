@@ -42,7 +42,7 @@
   <target name="java.compile.ZZ" depends="fetchDependencies">
     <mkdir dir="${basedir}/buildD/src" />
     <mkdir dir="${build.tmp}/java/out/ZZ" />
-    <javac destdir="${build.tmp}/java/out/ZZ" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/ZZ" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/buildD/src" />

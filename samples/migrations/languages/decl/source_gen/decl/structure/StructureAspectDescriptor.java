@@ -7,21 +7,21 @@ import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(6);
-  /*package*/ final ConceptDescriptor myConceptDeclMigrationData_Component = new ConceptDescriptorBuilder("decl.structure.DeclMigrationData_Component", MetaIdFactory.conceptId(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x1b931c975a732f6dL, "oldId"), new ConceptDescriptorBuilder.Prop(0x1b931c975a732f7bL, "newId")).properties("oldId", "newId").sourceNode(new SNodePointer("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)", "1986963296983656544")).create();
-  /*package*/ final ConceptDescriptor myConceptDeclMigrationData_WholeModule = new ConceptDescriptorBuilder("decl.structure.DeclMigrationData_WholeModule", MetaIdFactory.conceptId(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732f8bL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x1b931c975a732f9aL, "entry", MetaIdFactory.conceptId(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L), true, true, false)).children(new String[]{"entry"}, new boolean[]{true}).sourceNode(new SNodePointer("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)", "1986963296983658379")).create();
-  /*package*/ final ConceptDescriptor myConceptNewComponent = new ConceptDescriptorBuilder("decl.structure.NewComponent", MetaIdFactory.conceptId(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c1049329d71L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x6aff2c1049329d74L, "member", MetaIdFactory.conceptId(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c104932a602L), true, true, false)).children(new String[]{"member"}, new boolean[]{true}).rootable().alias("new component", "").sourceNode(new SNodePointer("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)", "7709929535540731249")).create();
-  /*package*/ final ConceptDescriptor myConceptNewComponentMember = new ConceptDescriptorBuilder("decl.structure.NewComponentMember", MetaIdFactory.conceptId(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c104932a602L)).version(1).interface_().sourceNode(new SNodePointer("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)", "7709929535540733442")).create();
-  /*package*/ final ConceptDescriptor myConceptOldComponent = new ConceptDescriptorBuilder("decl.structure.OldComponent", MetaIdFactory.conceptId(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c1049316cdaL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x6aff2c104931bb27L, "member", MetaIdFactory.conceptId(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c104931bb26L), true, true, false)).children(new String[]{"member"}, new boolean[]{true}).rootable().alias("old component", "").sourceNode(new SNodePointer("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)", "7709929535540653274")).create();
-  /*package*/ final ConceptDescriptor myConceptOldComponentMember = new ConceptDescriptorBuilder("decl.structure.OldComponentMember", MetaIdFactory.conceptId(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c104931bb26L)).version(1).interface_().sourceNode(new SNodePointer("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)", "7709929535540673318")).create();
+  /*package*/ final ConceptDescriptor myConceptDeclMigrationData_Component = createDescriptorForDeclMigrationData_Component();
+  /*package*/ final ConceptDescriptor myConceptDeclMigrationData_WholeModule = createDescriptorForDeclMigrationData_WholeModule();
+  /*package*/ final ConceptDescriptor myConceptNewComponent = createDescriptorForNewComponent();
+  /*package*/ final ConceptDescriptor myConceptNewComponentMember = createDescriptorForNewComponentMember();
+  /*package*/ final ConceptDescriptor myConceptOldComponent = createDescriptorForOldComponent();
+  /*package*/ final ConceptDescriptor myConceptOldComponentMember = createDescriptorForOldComponentMember();
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptDeclMigrationData_Component.getId(), 0);
@@ -60,5 +60,24 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         throw new IllegalStateException();
     }
+  }
+
+  private static ConceptDescriptor createDescriptorForDeclMigrationData_Component() {
+    return new ConceptDescriptorBuilder("decl.structure.DeclMigrationData_Component", MetaIdFactory.conceptId(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x1b931c975a732f6dL, "oldId"), new ConceptDescriptorBuilder.Prop(0x1b931c975a732f7bL, "newId")).properties("oldId", "newId").sourceNode(new SNodePointer("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)", "1986963296983656544")).create();
+  }
+  private static ConceptDescriptor createDescriptorForDeclMigrationData_WholeModule() {
+    return new ConceptDescriptorBuilder("decl.structure.DeclMigrationData_WholeModule", MetaIdFactory.conceptId(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732f8bL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x1b931c975a732f9aL, "entry", MetaIdFactory.conceptId(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L), true, true, false)).children(new String[]{"entry"}, new boolean[]{true}).sourceNode(new SNodePointer("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)", "1986963296983658379")).create();
+  }
+  private static ConceptDescriptor createDescriptorForNewComponent() {
+    return new ConceptDescriptorBuilder("decl.structure.NewComponent", MetaIdFactory.conceptId(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c1049329d71L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x6aff2c1049329d74L, "member", MetaIdFactory.conceptId(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c104932a602L), true, true, false)).children(new String[]{"member"}, new boolean[]{true}).rootable().alias("new component", "").sourceNode(new SNodePointer("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)", "7709929535540731249")).create();
+  }
+  private static ConceptDescriptor createDescriptorForNewComponentMember() {
+    return new ConceptDescriptorBuilder("decl.structure.NewComponentMember", MetaIdFactory.conceptId(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c104932a602L)).version(1).interface_().sourceNode(new SNodePointer("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)", "7709929535540733442")).create();
+  }
+  private static ConceptDescriptor createDescriptorForOldComponent() {
+    return new ConceptDescriptorBuilder("decl.structure.OldComponent", MetaIdFactory.conceptId(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c1049316cdaL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x6aff2c104931bb27L, "member", MetaIdFactory.conceptId(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c104931bb26L), true, true, false)).children(new String[]{"member"}, new boolean[]{true}).rootable().alias("old component", "").sourceNode(new SNodePointer("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)", "7709929535540653274")).create();
+  }
+  private static ConceptDescriptor createDescriptorForOldComponentMember() {
+    return new ConceptDescriptorBuilder("decl.structure.OldComponentMember", MetaIdFactory.conceptId(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c104931bb26L)).version(1).interface_().sourceNode(new SNodePointer("r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)", "7709929535540673318")).create();
   }
 }

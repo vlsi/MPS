@@ -2,7 +2,7 @@
 <model ref="r:8ffb9fde-829b-4ee3-ade6-f4eee43e66a8(jetbrains.mps.lang.typesystem.plugin)">
   <persistence version="9" />
   <languages>
-    <use id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect" version="0" />
+    <use id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect" version="1" />
     <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="1" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
@@ -22,16 +22,12 @@
         <property id="5177162104569058200" name="url" index="1sEMCp" />
       </concept>
       <concept id="3433054418424672374" name="jetbrains.mps.lang.aspect.structure.SimpleLanguageAspectDescriptor" flags="ng" index="3vrhyV">
+        <child id="6106419185511570295" name="mainLanguages" index="QG$2i" />
         <child id="5177162104569174921" name="httpHelpUrl" index="1sFm88" />
         <child id="3433054418425083029" name="icon" index="3vqPLo" />
-        <child id="3433054418424672404" name="mainLanguages" index="3vrhxp" />
       </concept>
-      <concept id="3433054418424678522" name="jetbrains.mps.lang.aspect.structure.LanguageReference" flags="ng" index="3vrm2R" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
-        <child id="3542851458883491298" name="languageId" index="2V$M_3" />
-      </concept>
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
@@ -45,17 +41,15 @@
   </registry>
   <node concept="3vrhyV" id="2LiUEk8oQ$g">
     <property role="TrG5h" value="typesystem" />
-    <node concept="3vrm2R" id="2LiUEk8oQ$h" role="3vrhxp">
-      <node concept="2V$Bhx" id="qmfyRQG_oP" role="2V$M_3">
-        <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
-        <property role="2V$B1Q" value="jetbrains.mps.lang.typesystem" />
-      </node>
-    </node>
     <node concept="1sEMCm" id="4lJsQ5yF8Ox" role="1sFm88">
       <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD33/Typesystem" />
     </node>
     <node concept="1QGGSu" id="P5ZkC6x0kH" role="3vqPLo">
       <property role="1iqoE4" value="${module}/icons/typesystemModel.png" />
+    </node>
+    <node concept="2V$Bhx" id="qmfyRQG_oP" role="QG$2i">
+      <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
+      <property role="2V$B1Q" value="jetbrains.mps.lang.typesystem" />
     </node>
   </node>
 </model>

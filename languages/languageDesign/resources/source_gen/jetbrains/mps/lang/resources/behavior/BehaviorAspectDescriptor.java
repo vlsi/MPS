@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myImage__BehaviorDescriptor = new Image__BehaviorDescriptor();
+  private final BHDescriptor myColorLiteral__BehaviorDescriptor = new ColorLiteral__BehaviorDescriptor();
+  private final BHDescriptor myColor__BehaviorDescriptor = new Color__BehaviorDescriptor();
   private final BHDescriptor myIcon__BehaviorDescriptor = new Icon__BehaviorDescriptor();
   private final BHDescriptor myTextIcon__BehaviorDescriptor = new TextIcon__BehaviorDescriptor();
   private final BHDescriptor myCircle__BehaviorDescriptor = new Circle__BehaviorDescriptor();
@@ -31,7 +33,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_846f5o_a0o.get(cncpt);
+      Integer preIndex = indices_846f5o_a0q.get(cncpt);
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
@@ -41,50 +43,60 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
           break;
         case 1:
           if (true) {
-            return myFileIcon__BehaviorDescriptor;
+            return myColor__BehaviorDescriptor;
           }
           break;
         case 2:
           if (true) {
-            return myIcon__BehaviorDescriptor;
+            return myColorLiteral__BehaviorDescriptor;
           }
           break;
         case 3:
           if (true) {
-            return myIconLayerDescription__BehaviorDescriptor;
+            return myFileIcon__BehaviorDescriptor;
           }
           break;
         case 4:
           if (true) {
-            return myImage__BehaviorDescriptor;
+            return myIcon__BehaviorDescriptor;
           }
           break;
         case 5:
           if (true) {
-            return myOldIconBundle__BehaviorDescriptor;
+            return myIconLayerDescription__BehaviorDescriptor;
           }
           break;
         case 6:
           if (true) {
-            return myOldIconReference__BehaviorDescriptor;
+            return myImage__BehaviorDescriptor;
           }
           break;
         case 7:
           if (true) {
-            return myRect__BehaviorDescriptor;
+            return myOldIconBundle__BehaviorDescriptor;
           }
           break;
         case 8:
           if (true) {
-            return myResource__BehaviorDescriptor;
+            return myOldIconReference__BehaviorDescriptor;
           }
           break;
         case 9:
           if (true) {
-            return myText__BehaviorDescriptor;
+            return myRect__BehaviorDescriptor;
           }
           break;
         case 10:
+          if (true) {
+            return myResource__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myText__BehaviorDescriptor;
+          }
+          break;
+        case 12:
           if (true) {
             return myTextIcon__BehaviorDescriptor;
           }
@@ -103,5 +115,5 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0o = buildConceptIndices(MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e60L, "jetbrains.mps.lang.resources.structure.Circle"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.FileIcon"), MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c3774289eeeL, "jetbrains.mps.lang.resources.structure.Icon"), MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e65L, "jetbrains.mps.lang.resources.structure.IconLayerDescription"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0xb8b96b5078f3367L, "jetbrains.mps.lang.resources.structure.Image"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bdL, "jetbrains.mps.lang.resources.structure.OldIconBundle"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c7L, "jetbrains.mps.lang.resources.structure.OldIconReference"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e61L, "jetbrains.mps.lang.resources.structure.Rect"), MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, "jetbrains.mps.lang.resources.structure.Resource"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b9L, "jetbrains.mps.lang.resources.structure.Text"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L, "jetbrains.mps.lang.resources.structure.TextIcon"));
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0q = buildConceptIndices(MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e60L, "jetbrains.mps.lang.resources.structure.Circle"), MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x19d079f4ec114bdeL, "jetbrains.mps.lang.resources.structure.Color"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x19d079f4ec114bddL, "jetbrains.mps.lang.resources.structure.ColorLiteral"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.FileIcon"), MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c3774289eeeL, "jetbrains.mps.lang.resources.structure.Icon"), MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e65L, "jetbrains.mps.lang.resources.structure.IconLayerDescription"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0xb8b96b5078f3367L, "jetbrains.mps.lang.resources.structure.Image"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bdL, "jetbrains.mps.lang.resources.structure.OldIconBundle"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c7L, "jetbrains.mps.lang.resources.structure.OldIconReference"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e61L, "jetbrains.mps.lang.resources.structure.Rect"), MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, "jetbrains.mps.lang.resources.structure.Resource"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b9L, "jetbrains.mps.lang.resources.structure.Text"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L, "jetbrains.mps.lang.resources.structure.TextIcon"));
 }

@@ -21,6 +21,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Alike to the {@link java.nio.file.Path}.
@@ -74,45 +75,42 @@ public interface Path extends Comparable<Path>, /*AP: do I want this?*/ Watchabl
 
   /**
    * @return null iff it is a root folder, the parent Path instance otherwise
+   * note that this method will not eliminate special path parts like '..' and '.'
+   * please
+   * @see #toNormal()
+   * @see #toCanonical()
    */
   @Nullable Path getParent();
 
   /**
-   * @return the total number of folders and files in this path
+   * simply a shortcut to the last element of the {@link #getNames()}
+   * if the list is empty then this method returns null
    *
-   * TODO do I need this??
-   */
-  int getNameCount();
-
-  /**
-   * simply a shortcut
    * @return the actual file name (the last in the whole path)
-   *
-   * TODO do I need this??
    */
-  default @NotNull String getFileName() {
-    return getName(getNameCount() - 1);
-  }
+  @Nullable String getFileName();
 
   /**
-   * @return the index-th name of folder/file
-   * @throws  IllegalArgumentException
-   *          if {@code index} is negative, {@code index} is greater than or
-   *          equal to the number of elements, or this path has zero name
-   *          elements
-   *
-   * TODO do I need this??
+   * @return an immutable list of names of folder/file(s)
    */
-  @NotNull
-  String getName(int index);
+  @NotNull List<String> getNames();
 
   /**
-   * Separator will become {@link #UNIX_SEPARATOR_CHAR}
+   * Returns the root component of this path as a {@code Path} object,
+   * or {@code null} if this path does not have a root component.
+   *
+   * @return  a path representing the root component of this path,
+   *          or {@code null}
+   */
+  @Nullable Path getRoot();
+
+  /**
+   * Separator becomes {@link #UNIX_SEPARATOR_CHAR}, replacing drive letter is up to implementation
    */
   @NotNull Path toIndependentPath();
 
   /**
-   * Separator will become {@link #SYSTEM_SEPARATOR_CHAR}
+   * Separator becomes {@link #SYSTEM_SEPARATOR_CHAR}, replacing drive letter is up to implementation
    */
   @NotNull Path toSystemPath();
 
@@ -200,8 +198,13 @@ public interface Path extends Comparable<Path>, /*AP: do I want this?*/ Watchabl
   @NotNull Path toAbsolute();
 
   /**
+   * it tries to do the same that the <code>#toCanonical</code>
+   * without actual access to the file system.
+   * That means resolving all "." and ".." symbols.
+   * Note that in the case there are symlinks in the path string we might end
+   * with the quite different path.
+   *
    * @see #toCanonical()
-   * it tries to do the same without actual access to the file system
    */
   @NotNull Path toNormal();
 

@@ -4,6 +4,7 @@ core/openapi/classes
 core/aspects/behavior/behavior-runtime/classes
 core/aspects/behavior/behavior-api/classes
 :core
+startup/startup-util/classes
 core/analyzers/classes
 core/util/classes
 core/components/classes
@@ -22,6 +23,7 @@ core/mps-annotations/classes
 core/logging/classes
 core/findUsages-runtime/classes
 core/squery-runtime/classes
+core/refactoring/classes
 core/refactoring-runtime/classes
 core/typesystemEngine/classes
 core/generator/classes

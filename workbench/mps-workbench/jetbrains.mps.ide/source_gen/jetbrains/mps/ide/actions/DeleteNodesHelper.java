@@ -32,7 +32,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
@@ -168,7 +168,7 @@ public class DeleteNodesHelper {
         }
         final SearchResults sr = new SearchResults<SNode>(SetSequence.fromSetWithValues(new HashSet<SNode>(), myNodesToDelete), SetSequence.fromSet(results).toListSequence());
 
-        SwingUtilities.invokeLater(new Runnable() {
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
             RefactoringAccessEx.getInstance().showRefactoringView(ideaProject, new RefactoringViewAction() {
               @Override

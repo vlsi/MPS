@@ -16,11 +16,8 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.util.ConditionalIterable;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.util.Condition;
 
 import java.util.regex.Pattern;
 
@@ -35,12 +32,7 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
   //todo can make it faster
   @Override
   public Iterable<String> getRootClasses(String namespace) {
-    return new ConditionalIterable<String>(getAvailableClasses(namespace), new Condition<String>() {
-      @Override
-      public boolean met(String className) {
-        return !(className.contains("$"));
-      }
-    });
+    return new ConditionalIterable<String>(getAvailableClasses(namespace), className -> !(className.contains("$")));
   }
 
   public static boolean isAnonymous(String className) {
@@ -62,22 +54,5 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
   public byte[] getClass(String name) {
     ClassBytes classBytes = getClassBytes(name);
     return classBytes == null ? null : classBytes.getBytes();
-  }
-
-  //-----------------------
-
-  private static final Logger LOG = LogManager.getLogger(RealClassPathItem.class);
-  private boolean myValid = true;
-  private boolean myErrorShown = false;
-
-  public void invalidate() {
-    myValid = false;
-  }
-
-  protected void checkValidity() {
-//    if (myValid) return;
-//    if (myErrorShown) return;
-//    myErrorShown = true;
-//    LOG.error("Using outdated classpath: " + this, new Throwable());
   }
 }

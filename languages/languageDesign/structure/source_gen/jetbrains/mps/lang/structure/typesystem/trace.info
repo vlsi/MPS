@@ -532,49 +532,23 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)/1587916991969835891">
     <file name="GenerateConceptIds_QuickFix.java">
-      <node id="1587916991969835891" at="16,40,17,134" concept="16" />
-      <node id="1587916991969836249" at="19,44,20,26" concept="12" />
-      <node id="2932555422957882420" at="23,240,24,403" concept="6" />
-      <node id="241647608299582758" at="25,5,26,0" concept="14" />
-      <node id="241647608299595378" at="28,183,29,263" concept="6" />
-      <node id="241647608299611659" at="31,5,32,0" concept="14" />
-      <node id="241647608299609788" at="34,179,35,255" concept="6" />
-      <node id="241647608299579900" at="39,52,40,44" concept="12" />
-      <node id="1587916991969835891" at="16,0,19,0" concept="3" trace="GenerateConceptIds_QuickFix#()V" />
-      <node id="1587916991969835891" at="19,0,22,0" concept="10" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="241647608299568355" at="22,35,25,5" concept="9" />
-      <node id="241647608299595376" at="27,268,30,7" concept="9" />
-      <node id="241647608299609786" at="33,264,36,7" concept="9" />
-      <node id="241647608299579900" at="39,0,42,0" concept="15" trace="isEmptyString#(Ljava/lang/String;)Z" />
-      <node id="241647608299588393" at="26,0,31,5" concept="8" />
-      <node id="241647608299609780" at="32,0,37,5" concept="8" />
-      <node id="1587916991969835891" at="22,0,39,0" concept="10" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1587916991969835891" at="16,40,17,134" />
-      <scope id="1587916991969835923" at="19,44,20,26" />
-      <scope id="241647608299568357" at="23,240,24,403" />
-      <scope id="241647608299595377" at="28,183,29,263" />
-      <scope id="241647608299609787" at="34,179,35,255" />
-      <scope id="241647608299579900" at="39,52,40,44" />
-      <scope id="1587916991969835891" at="16,0,19,0" />
-      <scope id="1587916991969835891" at="19,0,22,0">
+      <node id="1587916991969835891" at="12,40,13,134" concept="16" />
+      <node id="1587916991969836249" at="15,44,16,26" concept="12" />
+      <node id="1135871461211204022" at="18,35,19,190" concept="6" />
+      <node id="1587916991969835891" at="12,0,15,0" concept="3" trace="GenerateConceptIds_QuickFix#()V" />
+      <node id="1587916991969835891" at="15,0,18,0" concept="10" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="1587916991969835891" at="18,0,21,0" concept="10" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1587916991969835891" at="12,40,13,134" />
+      <scope id="1587916991969835923" at="15,44,16,26" />
+      <scope id="1587916991969835893" at="18,35,19,190" />
+      <scope id="1587916991969835891" at="12,0,15,0" />
+      <scope id="1587916991969835891" at="15,0,18,0">
         <var name="node" id="1587916991969835891" />
       </scope>
-      <scope id="241647608299588399" at="27,268,30,7" />
-      <scope id="241647608299609785" at="33,264,36,7" />
-      <scope id="241647608299579900" at="39,0,42,0">
-        <var name="str" id="241647608299579900" />
-      </scope>
-      <scope id="241647608299588393" at="26,0,31,5">
-        <var name="p" id="241647608299588395" />
-      </scope>
-      <scope id="241647608299609780" at="32,0,37,5">
-        <var name="l" id="241647608299609781" />
-      </scope>
-      <scope id="1587916991969835893" at="22,35,37,5" />
-      <scope id="1587916991969835891" at="22,0,39,0">
+      <scope id="1587916991969835891" at="18,0,21,0">
         <var name="node" id="1587916991969835891" />
       </scope>
-      <unit id="1587916991969835891" at="15,0,43,0" name="jetbrains.mps.lang.structure.typesystem.GenerateConceptIds_QuickFix" />
+      <unit id="1587916991969835891" at="11,0,22,0" name="jetbrains.mps.lang.structure.typesystem.GenerateConceptIds_QuickFix" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)/2854075155749507956">

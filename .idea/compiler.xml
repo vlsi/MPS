@@ -154,6 +154,7 @@
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/quotation/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/quotation/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/refactoring/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/refactoring/participant/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/refactoring/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/resources/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/resources/source_gen" includeSubdirectories="true" />
@@ -638,6 +639,7 @@
       <directory url="file://$PROJECT_DIR$/testbench/modules/testConsMigrations/languages/jetbrains.mps.test.mainLang/sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testConsMigrations/languages/jetbrains.mps.test.mainLang/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testDataFlow/languages/testCustomAnalyzer/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testDataFlow/languages/testCustomDataFlow/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testDataFlow/languages/testExtendingAnalyzer/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testDataFlow/solutions/analyzers.test/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testDataFlow/solutions/analyzers.test/test_gen" includeSubdirectories="true" />

@@ -147,7 +147,7 @@
                 </node>
                 <node concept="2kEO4f" id="2zhk4bLsfeY" role="2OqNvi">
                   <node concept="Xl_RD" id="2tHJeLFfqB9" role="2k5Stb">
-                    <property role="Xl_RC" value="Concept id not set" />
+                    <property role="Xl_RC" value="Concept id not set (j.m.lang.structure-&gt;Set Ids migration not run?)" />
                   </node>
                   <node concept="37vLTw" id="5hUt6kO_CWG" role="2k6f33">
                     <ref role="3cqZAo" node="5hUt6kO_yHy" resolve="concept" />
@@ -316,7 +316,7 @@
                 </node>
                 <node concept="2kEO4f" id="5hUt6kO_Jin" role="2OqNvi">
                   <node concept="Xl_RD" id="5hUt6kO_Jio" role="2k5Stb">
-                    <property role="Xl_RC" value="Property id not set" />
+                    <property role="Xl_RC" value="Property id not set (j.m.lang.structure-&gt;Set Ids migration not run?)" />
                   </node>
                   <node concept="37vLTw" id="5hUt6kO_Jip" role="2k6f33">
                     <ref role="3cqZAo" node="5hUt6kO_Jjg" resolve="prop" />
@@ -485,7 +485,7 @@
                 </node>
                 <node concept="2kEO4f" id="5hUt6kO_JzT" role="2OqNvi">
                   <node concept="Xl_RD" id="5hUt6kO_JzU" role="2k5Stb">
-                    <property role="Xl_RC" value="Link id not set" />
+                    <property role="Xl_RC" value="Link id not set (j.m.lang.structure-&gt;Set Ids migration not run?)" />
                   </node>
                   <node concept="37vLTw" id="5hUt6kO_JzV" role="2k6f33">
                     <ref role="3cqZAo" node="5hUt6kO_J$M" resolve="link" />

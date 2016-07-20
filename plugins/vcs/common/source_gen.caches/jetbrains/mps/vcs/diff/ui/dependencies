@@ -130,6 +130,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ToggleAction" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.diff.ex.DiffStatusBar" />
     <classNode dependClassName="com.intellij.ui.JBSplitter" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
@@ -143,7 +144,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -235,6 +235,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ToggleAction" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.diff.ex.DiffStatusBar" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ui.JBSplitter" />
@@ -248,7 +249,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />

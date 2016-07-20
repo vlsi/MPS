@@ -101,7 +101,6 @@ public class MPSPackage extends MPSPsiNodeBase implements PsiPackage {
   }
 
   @Nullable
-  @Override
   public PsiQualifiedNamedElement getContainer() {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }

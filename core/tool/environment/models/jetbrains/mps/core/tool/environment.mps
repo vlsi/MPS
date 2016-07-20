@@ -3797,7 +3797,7 @@
                   <ref role="3cqZAo" node="2$4oShLbhaC" resolve="result" />
                 </node>
                 <node concept="liA8E" id="2$4oShLbIYB" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.Object):java.lang.StringBuilder" resolve="append" />
+                  <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
                   <node concept="2OqwBi" id="2$4oShLbJ4G" role="37wK5m">
                     <node concept="2GrUjf" id="2$4oShLbIZH" role="2Oq$k0">
                       <ref role="2Gs0qQ" node="2$4oShLbFPC" resolve="plugin" />

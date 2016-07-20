@@ -145,12 +145,7 @@ public abstract class ProjectBase extends Project {
   public void projectClosed() {
     checkNotDisposed();
     myProjectManager.projectClosed(this);
-    getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        new ModuleRepositoryFacade(ProjectBase.this).unregisterModules(ProjectBase.this);
-      }
-    });
+    getModelAccess().runWriteAction(() -> new ModuleRepositoryFacade(ProjectBase.this).unregisterModules(ProjectBase.this));
   }
 
   @NotNull

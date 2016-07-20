@@ -105,7 +105,7 @@ public class ConstraintsRegistry implements CoreAspectRegistry {
   public ConstraintsDescriptor getConstraintsDescriptor(@NotNull SConceptId conceptId) {
     String cname = "<ConstraintsRegistry: this name must not be used>";
 
-    ConstraintsDescriptor cd = getConstraintsDescriptor(MetaAdapterFactory.getConcept(conceptId, cname));
+    ConstraintsDescriptor cd = getConstraintsDescriptor(MetaAdapterFactory.getConceptById(conceptId));
     //todo !=BaseConstraintsDescriptor is better to be removed, now this is a hack to provide compatibility
     if (!(cd instanceof IllegalConstraintsDescriptor) && cd.getClass() != BaseConstraintsDescriptor.class) {
       return cd;

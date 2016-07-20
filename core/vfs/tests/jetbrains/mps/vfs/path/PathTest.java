@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.vfs.path;
 
-import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * Testing {@link Path} classes
@@ -27,15 +29,33 @@ public abstract class PathTest {
   public abstract Path create(@NotNull String path);
 
   @Test
-  public void nameTest1() {
-    Path path = create("//////");
-    Assert.assertEquals(1, path.getNameCount());
+  public void nameTestUni1() {
+    Path path = create("a////");
+    Assert.assertEquals(Collections.singletonList("a"), path.getNames());
   }
 
   @Test
-  public void nameTest2() {
+  public void nameTestUni2() {
     Path path = create("//////a/b/c/d/");
-    Assert.assertEquals(4, path.getNameCount());
+    Assert.assertEquals(Arrays.asList("", "a", "b", "c", "d"), path.getNames());
+  }
+
+  @Test
+  public void nameTestWin1() {
+    Path path = create("C:\\a\\b\\c");
+    Assert.assertEquals(Arrays.asList("C", "a", "b", "c"), path.getNames());
+  }
+
+  @Test
+  public void nameTestWin2() {
+    Path path = create("a\\b\\c");
+    Assert.assertEquals(Arrays.asList("a", "b", "c"), path.getNames());
+  }
+
+  @Test
+  public void nameTestWin3() {
+    Path path = create("a\\b\\c\\..\\.");
+    Assert.assertEquals(Arrays.asList("a", "b", "c", "..", "."), path.getNames());
   }
 
   @Test
@@ -100,10 +120,9 @@ public abstract class PathTest {
 
   @Test
   public void rootTest1() {
-    Path path = create("/");
-    Assert.assertEquals(create(""), path);
+    Path path = create("///");
+    Assert.assertEquals(create("/"), path);
   }
-
 
   @Test
   public void rootTest2() {
@@ -118,15 +137,39 @@ public abstract class PathTest {
   }
 
   @Test
-  public void separatorTest1() {
+  public void toIndependentPathUnix() {
+    Path path = create("a/b/c/");
+    Assert.assertEquals(create("a/b/c"), path.toIndependentPath());
+  }
+
+  @Test
+  public void emptyStringTest1() {
+    Path path = create("");
+    Assert.assertTrue(path.isRelative());
+  }
+
+  @Test
+  public void emptyStringTest2() {
+    Path path = create(".");
+    Assert.assertTrue(path.isRelative());
+  }
+
+  @Test
+  public void toIndependentPathWin() {
     Path path = create("a\\b\\c");
     Assert.assertEquals(create("a/b/c"), path.toIndependentPath());
   }
 
   @Test
-  public void separatorTest2() {
-    Path path = create("\\\\a\\b\\c");
-    Assert.assertEquals(create("/a/b/c"), path.toIndependentPath());
+  public void toIndependentPathAbsoluteUnix() {
+    Path path = create("/a/b/c");
+    Assert.assertEquals(create("///a/b///c"), path.toIndependentPath());
+  }
+
+  @Test(expected = InvalidPathException.class)
+  public void toIndependentPathAbsoluteWin() {
+    Path path = create("C:\\a\\b\\c");
+    path.toIndependentPath();
   }
 
   @Test
@@ -139,5 +182,86 @@ public abstract class PathTest {
   public void parentTest2() {
     Path path = create("/a/b/c");
     Assert.assertEquals(create("/a/b"), path.getParent());
+  }
+
+  @Test
+  public void getRootTestWin() {
+    Path path = create("C:\\System\\A");
+    Assert.assertEquals(create("C:\\"), path.getRoot());
+    Assert.assertEquals("C:\\", path.getRoot().toString());
+  }
+
+  @Test
+  public void getRootTestUnix() {
+    Path path = create("/C/System/A");
+    Assert.assertEquals(create("/"), path.getRoot());
+    Assert.assertEquals("/", path.getRoot().toString());
+  }
+
+  @Test
+  public void rootTestUnix1() {
+    Path path = create("///");
+    Assert.assertEquals(CommonPath.fromParts(Path.UNIX_SEPARATOR_CHAR, ""), path);
+  }
+
+  @Test
+  public void rootTestUnix2() {
+    Path path = create("///");
+    Assert.assertEquals(CommonPath.fromParts(Path.UNIX_SEPARATOR_CHAR, CommonPath.UNIX_SEPARATOR), path);
+  }
+
+  @Test
+  public void rootTestWin1() {
+    Path path = create("A:\\\\");
+    Assert.assertEquals(CommonPath.fromParts(Path.WIN_SEPARATOR_CHAR, "A"), path);
+  }
+
+  @Test
+  public void rootTestWin2() {
+    Path path = create("A:\\");
+    Assert.assertEquals(CommonPath.fromParts(Path.WIN_SEPARATOR_CHAR, "A"), path);
+  }
+
+  @Test
+  public void toNormalTestUni() {
+    Path path = create("./././a/../a");
+    Assert.assertEquals(create("a"), path.toNormal());
+  }
+
+  @Test
+  public void toNormalTestUni2() {
+    Path path = create("./././a/../.././././a////././");
+    Assert.assertEquals(create("../a"), path.toNormal());
+  }
+
+  @Test
+  public void toNormalTestWin() {
+    Path path = create(".\\.\\a\\..\\..\\..\\a\\\\\\");
+    Assert.assertEquals(create("..\\..\\a"), path.toNormal());
+  }
+
+  @Test
+  public void getParentTestUni1() {
+    Assert.assertEquals(create("/"), create("/a").getParent());
+  }
+
+  @Test
+  public void getParentTestUni2() {
+    Assert.assertEquals(null, create("").getParent());
+  }
+
+  @Test
+  public void getParentTestUni3() {
+    Assert.assertEquals(null, create("/").getParent());
+  }
+
+  @Test
+  public void getParentTestWin1() {
+    Assert.assertEquals(create("C:\\"), create("C:\\a").getParent());
+  }
+
+  @Test
+  public void getParentTestWin2() {
+    Assert.assertEquals(null, create("C:\\").getParent());
   }
 }

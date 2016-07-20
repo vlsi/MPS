@@ -7,22 +7,22 @@ import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(7);
-  /*package*/ final ConceptDescriptor myConceptC1 = new ConceptDescriptorBuilder("BHL4.structure.C1", MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495a9L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "BHL4.structure.I1", "BHL4.structure.I2").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495aaL), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495adL)).sourceNode(new SNodePointer("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)", "7688460527007471017")).create();
-  /*package*/ final ConceptDescriptor myConceptC2 = new ConceptDescriptorBuilder("BHL4.structure.C2", MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6c7dcb937b144615L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "BHL4.structure.I1", "BHL4.structure.I2").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495aaL), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495adL)).sourceNode(new SNodePointer("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)", "7817628362470606357")).create();
-  /*package*/ final ConceptDescriptor myConceptC3 = new ConceptDescriptorBuilder("BHL4.structure.C3", MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6c7dcb937b14482aL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "BHL4.structure.I", "BHL4.structure.I1", "BHL4.structure.I2").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495a3L), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495aaL), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495adL)).sourceNode(new SNodePointer("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)", "7817628362470606890")).create();
-  /*package*/ final ConceptDescriptor myConceptC4 = new ConceptDescriptorBuilder("BHL4.structure.C4", MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x3f852a67e912f9d9L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "BHL4.structure.I", "BHL4.structure.I2", "BHL4.structure.I1").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495a3L), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495adL), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495aaL)).sourceNode(new SNodePointer("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)", "4577111222072310233")).create();
-  /*package*/ final ConceptDescriptor myConceptI = new ConceptDescriptorBuilder("BHL4.structure.I", MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495a3L)).version(1).interface_().sourceNode(new SNodePointer("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)", "7688460527007471011")).create();
-  /*package*/ final ConceptDescriptor myConceptI1 = new ConceptDescriptorBuilder("BHL4.structure.I1", MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495aaL)).version(1).interface_().parents("BHL4.structure.I").parentIds(MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495a3L)).sourceNode(new SNodePointer("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)", "7688460527007471018")).create();
-  /*package*/ final ConceptDescriptor myConceptI2 = new ConceptDescriptorBuilder("BHL4.structure.I2", MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495adL)).version(1).interface_().parents("BHL4.structure.I").parentIds(MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495a3L)).sourceNode(new SNodePointer("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)", "7688460527007471021")).create();
+  /*package*/ final ConceptDescriptor myConceptC1 = createDescriptorForC1();
+  /*package*/ final ConceptDescriptor myConceptC2 = createDescriptorForC2();
+  /*package*/ final ConceptDescriptor myConceptC3 = createDescriptorForC3();
+  /*package*/ final ConceptDescriptor myConceptC4 = createDescriptorForC4();
+  /*package*/ final ConceptDescriptor myConceptI = createDescriptorForI();
+  /*package*/ final ConceptDescriptor myConceptI1 = createDescriptorForI1();
+  /*package*/ final ConceptDescriptor myConceptI2 = createDescriptorForI2();
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptC1.getId(), 0);
@@ -64,5 +64,27 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         throw new IllegalStateException();
     }
+  }
+
+  private static ConceptDescriptor createDescriptorForC1() {
+    return new ConceptDescriptorBuilder("BHL4.structure.C1", MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495a9L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "BHL4.structure.I1", "BHL4.structure.I2").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495aaL), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495adL)).sourceNode(new SNodePointer("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)", "7688460527007471017")).create();
+  }
+  private static ConceptDescriptor createDescriptorForC2() {
+    return new ConceptDescriptorBuilder("BHL4.structure.C2", MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6c7dcb937b144615L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "BHL4.structure.I1", "BHL4.structure.I2").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495aaL), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495adL)).sourceNode(new SNodePointer("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)", "7817628362470606357")).create();
+  }
+  private static ConceptDescriptor createDescriptorForC3() {
+    return new ConceptDescriptorBuilder("BHL4.structure.C3", MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6c7dcb937b14482aL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "BHL4.structure.I", "BHL4.structure.I1", "BHL4.structure.I2").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495a3L), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495aaL), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495adL)).sourceNode(new SNodePointer("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)", "7817628362470606890")).create();
+  }
+  private static ConceptDescriptor createDescriptorForC4() {
+    return new ConceptDescriptorBuilder("BHL4.structure.C4", MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x3f852a67e912f9d9L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "BHL4.structure.I", "BHL4.structure.I2", "BHL4.structure.I1").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495a3L), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495adL), MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495aaL)).sourceNode(new SNodePointer("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)", "4577111222072310233")).create();
+  }
+  private static ConceptDescriptor createDescriptorForI() {
+    return new ConceptDescriptorBuilder("BHL4.structure.I", MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495a3L)).version(1).interface_().sourceNode(new SNodePointer("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)", "7688460527007471011")).create();
+  }
+  private static ConceptDescriptor createDescriptorForI1() {
+    return new ConceptDescriptorBuilder("BHL4.structure.I1", MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495aaL)).version(1).interface_().parents("BHL4.structure.I").parentIds(MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495a3L)).sourceNode(new SNodePointer("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)", "7688460527007471018")).create();
+  }
+  private static ConceptDescriptor createDescriptorForI2() {
+    return new ConceptDescriptorBuilder("BHL4.structure.I2", MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495adL)).version(1).interface_().parents("BHL4.structure.I").parentIds(MetaIdFactory.conceptId(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495a3L)).sourceNode(new SNodePointer("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)", "7688460527007471021")).create();
   }
 }

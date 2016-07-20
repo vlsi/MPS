@@ -130,6 +130,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/quotation/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/quotation/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/refactoring/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/refactoring/participant/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/refactoring/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/resources/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/resources/source_gen" isTestSource="false" />
@@ -298,6 +299,7 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/quotation/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/refactoring/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/refactoring/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/refactoring/participant/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/resources/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/resources/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/scopes/classes_gen" />
@@ -1019,9 +1021,11 @@
     </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow/languages/testCustomAnalyzer/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow/languages/testCustomDataFlow/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow/languages/testExtendingAnalyzer/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow/solutions/analyzers.test/test_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow/languages/testCustomAnalyzer/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow/languages/testCustomDataFlow/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow/languages/testExtendingAnalyzer/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow/solutions/analyzers.test/classes_gen" />
     </content>
@@ -1240,6 +1244,7 @@
     <orderEntry type="module" module-name="mps-ant" />
     <orderEntry type="module" module-name="smodelquery-runtime" />
     <orderEntry type="module" module-name="execution-api" />
+    <orderEntry type="module" module-name="refactoring" />
   </component>
 </module>
 

@@ -4,6 +4,7 @@ package jetbrains.mps.lang.resources.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
@@ -22,6 +23,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       InferenceRule_Runtime inferenceRule = new typeof_IconResourceReference_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_TextIcon_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
     }
   }
 }

@@ -25,7 +25,7 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.reloading.ClassPathFactory;
+import jetbrains.mps.reloading.ClassPathCachingFacility;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -129,7 +129,7 @@ public final class ModuleMaker {
           assert facet != null && facet.getClassesGen() != null;
           File classesGenFile = new File(facet.getClassesGen().getPath());
           FileUtil.delete(classesGenFile);
-          ClassPathFactory.getInstance().invalidate(Collections.singleton(classesGenFile.getAbsolutePath()));
+          ClassPathCachingFacility.getInstance().invalidate(Collections.singleton(classesGenFile.getAbsolutePath()));
         }
         monitor.advance(1);
       }

@@ -17,17 +17,35 @@
 package jetbrains.mps.idea.core.ui;
 
 import com.intellij.ide.util.ChooseElementsDialog;
-import com.intellij.ui.*;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.ui.AnActionButton;
+import com.intellij.ui.AnActionButtonRunnable;
+import com.intellij.ui.ColoredTableCellRenderer;
+import com.intellij.ui.JBColor;
+import com.intellij.ui.SimpleTextAttributes;
+import com.intellij.ui.SpeedSearchBase;
+import com.intellij.ui.TableUtil;
+import com.intellij.ui.ToolbarDecorator;
 import com.intellij.ui.table.JBTable;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.smodel.ModelAccess;
 
-import javax.swing.*;
+import javax.swing.BorderFactory;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import javax.swing.table.TableCellRenderer;
 import java.awt.Dimension;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public abstract class MpsElementsTable<T> {
   private final Border NO_FOCUS_BORDER = BorderFactory.createEmptyBorder(1, 1, 1, 1);
@@ -36,7 +54,7 @@ public abstract class MpsElementsTable<T> {
   private JBTable myElementsTable;
 
   public JComponent createComponent() {
-    myElementsTableModel = new MpsElementsTableModel<T>(getComparator(), getRendererClass(), getColumnTitle());
+    myElementsTableModel = new MpsElementsTableModel<>(getComparator(), getRendererClass(), getColumnTitle());
 
     JBTable table = new JBTable(myElementsTableModel);
     table.setShowGrid(false);
@@ -44,7 +62,7 @@ public abstract class MpsElementsTable<T> {
     table.setShowHorizontalLines(false);
     table.setShowVerticalLines(false);
     table.setIntercellSpacing(new Dimension(0, 0));
-    table.setBorder(new LineBorder(UIUtil.getBorderColor()));
+    table.setBorder(new LineBorder(JBColor.border()));
     table.setDefaultRenderer(getRendererClass(), createDefaultRenderer());
     table.getSelectionModel().setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
     myElementsTable = table;
@@ -96,24 +114,21 @@ public abstract class MpsElementsTable<T> {
             allElements.removeAll(getElements());
             Collections.sort(allElements, getComparator());
 
-            SwingUtilities.invokeLater(new Runnable() {
-              @Override
-              public void run() {
-                ChooseElementsDialog<T> chooseElementsDialog = new ChooseElementsDialog<T>(myElementsTable, allElements, getChooserMessage()) {
-                  @Override
-                  protected String getItemText(T item) {
-                    return getText(item);
-                  }
+            ApplicationManager.getApplication().invokeLater(() -> {
+              ChooseElementsDialog<T> chooseElementsDialog = new ChooseElementsDialog<T>(myElementsTable, allElements, getChooserMessage()) {
+                @Override
+                protected String getItemText(T item) {
+                  return getText(item);
+                }
 
-                  @Override
-                  protected Icon getItemIcon(T item) {
-                    return getIcon(item);
-                  }
-                };
-                chooseElementsDialog.show();
-                Set<T> elementsToAdd = new HashSet<T>(chooseElementsDialog.getChosenElements());
-                doAddElements(elementsToAdd);
-              }
+                @Override
+                protected Icon getItemIcon(T item) {
+                  return getIcon(item);
+                }
+              };
+              chooseElementsDialog.show();
+              Set<T> elementsToAdd = new HashSet<>(chooseElementsDialog.getChosenElements());
+              doAddElements(elementsToAdd);
             });
           }
         });
@@ -194,7 +209,7 @@ public abstract class MpsElementsTable<T> {
   }
 
   public boolean isModified(List<T> elements) {
-    List<T> sortedLanguagesList = new ArrayList<T>(elements);
+    List<T> sortedLanguagesList = new ArrayList<>(elements);
     Collections.sort(sortedLanguagesList, getComparator());
     return !getElements().equals(sortedLanguagesList);
   }

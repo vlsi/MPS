@@ -14207,5 +14207,26 @@
       <node concept="3clFbS" id="V7XPpsJySF" role="2VODD2" />
     </node>
   </node>
+  <node concept="13h7C7" id="2Sj4tXtNrGO">
+    <property role="3GE5qa" value="Project.Java" />
+    <ref role="13h7C2" to="3ior:NvWe6DpNB2" resolve="BuildSource_JavaOptions" />
+    <node concept="13hLZK" id="2Sj4tXtNrGP" role="13h7CW">
+      <node concept="3clFbS" id="2Sj4tXtNrGQ" role="2VODD2">
+        <node concept="3clFbF" id="2Sj4tXtN$s7" role="3cqZAp">
+          <node concept="37vLTI" id="2Sj4tXtN_aE" role="3clFbG">
+            <node concept="3clFbT" id="2Sj4tXtN_b4" role="37vLTx">
+              <property role="3clFbU" value="true" />
+            </node>
+            <node concept="2OqwBi" id="2Sj4tXtN$y7" role="37vLTJ">
+              <node concept="13iPFW" id="2Sj4tXtN$s6" role="2Oq$k0" />
+              <node concept="3TrcHB" id="2Sj4tXtN$Ku" role="2OqNvi">
+                <ref role="3TsBF5" to="3ior:NvWe6DpNB5" resolve="generateDebugInfo" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

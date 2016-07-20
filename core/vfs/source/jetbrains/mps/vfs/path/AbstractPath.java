@@ -16,6 +16,7 @@
 package jetbrains.mps.vfs.path;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Common base class
@@ -39,10 +40,14 @@ abstract class AbstractPath implements Path {
   @Override
   public int hashCode() {
     int result = 0;
-    for (int i = 0; i < getNameCount(); ++i) {
-      result = 31 * result + getName(i).hashCode();
+    for (String name : getNames()) {
+      result = 31 * result + name.hashCode();
     }
     return result;
+  }
+
+  private static int getNameCount(Path path) {
+    return path.getNames().size();
   }
 
   @Override
@@ -54,11 +59,11 @@ abstract class AbstractPath implements Path {
       return false;
     }
 
-    if (getNameCount() < other.getNameCount()) {
+    if (getNameCount(this) < getNameCount(other)) {
       return false;
     }
-    for (int i = 0; i < other.getNameCount(); ++i) {
-      if (!getName(getNameCount() - 1 - i).equals(other.getName(other.getNameCount() - 1 - i))) {
+    for (int i = 0; i < getNameCount(other); ++i) {
+      if (!getNames().get(getNameCount(this) - 1 - i).equals(other.getNames().get(getNameCount(other) - 1 - i))) {
         return false;
       }
     }
@@ -75,11 +80,11 @@ abstract class AbstractPath implements Path {
       return false;
     }
 
-    if (getNameCount() < other.getNameCount()) {
+    if (getNameCount(this) < getNameCount(other)) {
       return false;
     }
-    for (int i = 0; i < other.getNameCount(); ++i) {
-      if (!getName(i).equals(other.getName(i))) {
+    for (int i = 0; i < getNameCount(other); ++i) {
+      if (!getNames().get(i).equals(other.getNames().get(i))) {
         return false;
       }
     }
@@ -87,4 +92,12 @@ abstract class AbstractPath implements Path {
     return true;
   }
 
+  @Override
+  @Nullable
+  public final String getFileName() {
+    if (getNames().isEmpty()) {
+      return null;
+    }
+    return getNames().get(getNameCount(this) - 1);
+  }
 }

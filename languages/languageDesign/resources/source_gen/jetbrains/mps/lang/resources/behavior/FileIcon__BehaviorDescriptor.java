@@ -8,13 +8,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -24,13 +24,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import org.apache.log4j.Level;
 import java.io.InputStream;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.util.ReadUtil;
 import java.io.IOException;
-import jetbrains.mps.util.FileUtil;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.MacroHelper;
 import javax.swing.ImageIcon;
@@ -44,17 +47,18 @@ public final class FileIcon__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.FileIcon");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Tuples._2<IFile, byte[]>> generate_id7Mb2akaesv8 = new SMethodBuilder<Tuples._2<IFile, byte[]>>(new SJavaCompoundTypeImpl((Class<Tuples._2<IFile, byte[]>>) ((Class) Object.class))).name("generate").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Mb2akaesv8").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(IFile.class, ""));
+  public static final SMethod<List<Tuples._2<IFile, byte[]>>> generate_id7Mb2akaesv8 = new SMethodBuilder<List<Tuples._2<IFile, byte[]>>>(new SJavaCompoundTypeImpl((Class<List<Tuples._2<IFile, byte[]>>>) ((Class) Object.class))).name("generate").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Mb2akaesv8").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(IFile.class, ""));
+  /*package*/ static final SMethod<Tuples._2<IFile, byte[]>> copyFile_id34SjXUxB1C6 = new SMethodBuilder<Tuples._2<IFile, byte[]>>(new SJavaCompoundTypeImpl((Class<Tuples._2<IFile, byte[]>>) ((Class) Object.class))).name("copyFile").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("34SjXUxB1C6").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""), SMethodBuilder.createJavaParameter(IFile.class, ""));
   public static final SMethod<Boolean> isValid_id7Mb2akaestJ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isValid").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Mb2akaestJ").registry(REGISTRY).build();
   public static final SMethod<String> getFilename_id7Mb2akaesuN = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getFilename").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Mb2akaesuN").registry(REGISTRY).build();
   public static final SMethod<String> getResourceId_id2p1v3tOadt0 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getResourceId").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2p1v3tOadt0").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(generate_id7Mb2akaesv8, isValid_id7Mb2akaestJ, getFilename_id7Mb2akaesuN, getResourceId_id2p1v3tOadt0);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(generate_id7Mb2akaesv8, copyFile_id34SjXUxB1C6, isValid_id7Mb2akaestJ, getFilename_id7Mb2akaesuN, getResourceId_id2p1v3tOadt0);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static Tuples._2<IFile, byte[]> generate_id7Mb2akaesv8(@NotNull SNode __thisNode__, IFile outputRoot) {
+  /*package*/ static List<Tuples._2<IFile, byte[]>> generate_id7Mb2akaesv8(@NotNull SNode __thisNode__, IFile outputRoot) {
     if (isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")))) {
       // todo compatibility code to be removed after 3.4 
       return null;
@@ -63,23 +67,36 @@ public final class FileIcon__BehaviorDescriptor extends BaseBHDescriptor {
     SModel model = SNodeOperations.getModel(__thisNode__);
     IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
 
-    // copy 
     String source = MacrosFactory.forModule((AbstractModule) model.getModule()).expandPath(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")));
+    final String name = FileUtil.getNameWithoutExtension(source);
+    final String ext = FileUtil.getExtension(source);
+
+    // copy 
+    List<Tuples._2<IFile, byte[]>> res = ListSequence.fromList(new ArrayList<Tuples._2<IFile, byte[]>>());
+    ListSequence.fromList(res).addElement(FileIcon__BehaviorDescriptor.copyFile_id34SjXUxB1C6.invoke(__thisNode__, source, outputDir));
+    // list of suffixes can be found in ImageLoader.ImgeDescList.create() 
+    ListSequence.fromList(res).addElement(FileIcon__BehaviorDescriptor.copyFile_id34SjXUxB1C6.invoke(__thisNode__, name + "@2x." + ext, outputDir));
+    ListSequence.fromList(res).addElement(FileIcon__BehaviorDescriptor.copyFile_id34SjXUxB1C6.invoke(__thisNode__, name + "@2x_dark." + ext, outputDir));
+    ListSequence.fromList(res).addElement(FileIcon__BehaviorDescriptor.copyFile_id34SjXUxB1C6.invoke(__thisNode__, name + "_dark." + ext, outputDir));
+    return ListSequence.fromList(res).where(new IWhereFilter<Tuples._2<IFile, byte[]>>() {
+      public boolean accept(Tuples._2<IFile, byte[]> it) {
+        return it != null;
+      }
+    }).toListSequence();
+  }
+  /*package*/ static Tuples._2<IFile, byte[]> copyFile_id34SjXUxB1C6(@NotNull SNode __thisNode__, String source, IFile outputDir) {
     if (source == null) {
       return null;
     }
     IFile sourceFile = FileSystem.getInstance().getFileByPath(source);
     IFile toFile = outputDir.getDescendant(sourceFile.getName());
 
-    Tuples._2<IFile, byte[]> res = MultiTuple.<IFile,byte[]>from(toFile, null);
     if (!(sourceFile.exists())) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("file not found " + sourceFile.getPath());
-      }
-      return res;
+      return null;
     }
 
     InputStream is = null;
+    Tuples._2<IFile, byte[]> res = null;
     try {
       is = sourceFile.openInputStream();
       res = MultiTuple.<IFile,byte[]>from(toFile, ReadUtil.read(is));
@@ -144,12 +161,14 @@ public final class FileIcon__BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((Tuples._2<IFile, byte[]>) generate_id7Mb2akaesv8(node, (IFile) parameters[0]));
+        return (T) ((List<Tuples._2<IFile, byte[]>>) generate_id7Mb2akaesv8(node, (IFile) parameters[0]));
       case 1:
-        return (T) ((Boolean) isValid_id7Mb2akaestJ(node));
+        return (T) ((Tuples._2<IFile, byte[]>) copyFile_id34SjXUxB1C6(node, (String) parameters[0], (IFile) parameters[1]));
       case 2:
-        return (T) ((String) getFilename_id7Mb2akaesuN(node));
+        return (T) ((Boolean) isValid_id7Mb2akaestJ(node));
       case 3:
+        return (T) ((String) getFilename_id7Mb2akaesuN(node));
+      case 4:
         return (T) ((String) getResourceId_id2p1v3tOadt0(node));
       default:
         throw new BHMethodNotFoundException(this, method);

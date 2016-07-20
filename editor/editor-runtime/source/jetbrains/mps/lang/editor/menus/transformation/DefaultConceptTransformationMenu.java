@@ -16,13 +16,11 @@
 package jetbrains.mps.lang.editor.menus.transformation;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 

@@ -151,6 +151,7 @@
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.forms.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.forms.runtime.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+      <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
@@ -173,6 +174,7 @@
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
+      <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.refactoring.participant.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/make/jetbrains.mps.make.facet.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/make/jetbrains.mps.make.script.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/lib/mps-behavior-api.jar" />
@@ -205,7 +207,7 @@
   <target name="java.compile.jetbrains.mps.samples.notesOrganizer" depends="fetchDependencies">
     <mkdir dir="${basedir}/languages/jetbrains.mps.samples.notesOrganizer/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.notesOrganizer" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.notesOrganizer" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.notesOrganizer" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/languages/jetbrains.mps.samples.notesOrganizer/source_gen" />
@@ -221,6 +223,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-logging.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-boot-util.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor.jar" />
@@ -250,7 +253,7 @@
   <target name="java.compile.jetbrains.mps.samples.notesOrganizer#8908453262579799816" depends="java.compile.jetbrains.mps.samples.notesOrganizer, fetchDependencies">
     <mkdir dir="${basedir}/languages/jetbrains.mps.samples.notesOrganizer/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.notesOrganizer#8908453262579799816" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.notesOrganizer#8908453262579799816" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.notesOrganizer#8908453262579799816" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/languages/jetbrains.mps.samples.notesOrganizer/generator/source_gen" />
@@ -266,6 +269,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-logging.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-boot-util.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor.jar" />

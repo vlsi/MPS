@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.ClasspathReader;
-import jetbrains.mps.ClasspathReader.ClassType;
-import jetbrains.mps.util.Callback;
+import jetbrains.mps.util.ClassPathReader;
+import jetbrains.mps.util.ClassType;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.SystemInfo;
 import jetbrains.mps.util.URLUtil;
+import jetbrains.mps.vfs.impl.IoFile;
+import jetbrains.mps.vfs.path.UniPath;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -28,75 +30,24 @@ import sun.misc.Launcher;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLDecoder;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class CommonPaths {
-  private static final String OS_NAME = System.getProperty("os.name").toLowerCase();
-  private static final String JAVA_VERSION = System.getProperty("java.version").toLowerCase();
-
-  public static final boolean isMac = OS_NAME.startsWith("mac");
-  public static final int jdkVersion;
-
+public final class CommonPaths {
   private static final Logger LOG = LogManager.getLogger(CommonPaths.class);
 
-  static {
-    if (JAVA_VERSION.matches("\\d\\.\\d+\\..*")) {
-      String version = JAVA_VERSION.substring(JAVA_VERSION.indexOf(".") + 1);
-      jdkVersion = Integer.parseInt(version.substring(0, version.indexOf(".")));
-    } else if (JAVA_VERSION.matches("\\d\\.\\d+")) {
-      jdkVersion = Integer.parseInt(JAVA_VERSION.substring(JAVA_VERSION.indexOf(".") + 1));
-    } else {
-      LOG.error("Unexpected java version format " + JAVA_VERSION + ".");
-      jdkVersion = 0;
-    }
-  }
+  private static final String REQUESTER_STRING = "Common paths";
+  private static final ClassPathCachingFacility ourClassPathCachingFacility = ClassPathCachingFacility.getInstance();
+
 
   //--------paths-----------
-
-  /**
-   * @deprecated Since MPS 3.3 use {@link #getMPSPaths(ClassType)}
-   */
-  @Deprecated
-  public static List<String> getMPSPaths(ClassType... types) {
-    final CompositeClassPathItem result = new CompositeClassPathItem();
-    ClasspathReader.addClasses(PathManager.getHomePath(), new Callback<String>() {
-      @Override
-      public void call(String param) {
-        addIfExists(result, File.separator + param);
-      }
-    }, types);
-    for (ClassType type : types) {
-      if (type == ClassType.ANNOTATIONS) {
-        addAnnotations(result);
-      } else if (type == ClassType.OPENAPI) {
-        addOpenAPIJars(result);
-      } else if (type == ClassType.CORE) {
-        addCoreJars(result);
-      } else if (type == ClassType.EDITOR) {
-        addEditorJars(result);
-      } else if (type == ClassType.IDEA_PLATFORM) {
-        addRepackedIdeaJars(result);
-      } else if (type == ClassType.IDEA) {
-        addIdeaJars(result);
-      } else if (type == ClassType.PLATFORM) {
-        addPlatformJars(result);
-      } else if (type == ClassType.WORKBENCH) {
-        addWorkbenchJars(result);
-      } else if (type == ClassType.TEST) {
-        addTestJars(result);
-      } else if (type == ClassType.JDK) {
-        return getJDKPath();
-      } else if (type == ClassType.JDK_TOOLS) {
-        return getJDK_ToolsPath();
-      }
-    }
-    return itemToPath(result);
-  }
 
   public static List<String> getMPSPaths(ClassType type) {
     if (type == ClassType.JDK) {
@@ -106,12 +57,9 @@ public class CommonPaths {
     }
 
     final CompositeClassPathItem result = new CompositeClassPathItem();
-    ClasspathReader.addClasses(PathManager.getHomePath(), new Callback<String>() {
-      @Override
-      public void call(String param) {
-        addIfExists(result, File.separator + param);
-      }
-    }, type);
+    for (String path : new ClassPathReader(PathManager.getHomePath(), Collections.singletonList(type)).read()) {
+      addIfExists(result, File.separator + path);
+    }
     if (type == ClassType.ANNOTATIONS) {
       addAnnotations(result);
     } else if (type == ClassType.OPENAPI) {
@@ -158,23 +106,11 @@ public class CommonPaths {
       if (urls == null) {
         return null;
       }
-      return URLDecoder.decode(urls.o1).replace('/', File.separatorChar);
-    } catch (ClassNotFoundException e) {
+      return URLDecoder.decode(urls.o1, Charset.defaultCharset().name()).replace('/', File.separatorChar);
+    } catch (ClassNotFoundException | UnsupportedEncodingException e) {
+      LOG.warn("", e);
       return null;
     }
-  }
-
-  /**
-   * @deprecated since MPS 3.3 use {@link CommonPaths#getMPSPaths(ClassType)} with {@link ClassType#JDK_TOOLS} as a parameter
-   */
-  @Deprecated
-  public static String getToolsJar() {
-    return PathManager.getHomePath() + File.separator + "lib" + File.separator + "tools.jar";
-  }
-
-  public static boolean isJDK_ToolsInSeparateJar() {
-    // on Mac & jdkVersion < 7 classes from tools jar are located inside classes.jar
-    return !(isMac && jdkVersion < 7);
   }
 
   public static String getBaseMPSPath() {
@@ -182,7 +118,7 @@ public class CommonPaths {
     if (new File(classesPath).exists()) {
       return classesPath;
     }
-    String mpsJarPath = PathManager.getHomePath() + File.separator + "lib" + File.separatorChar + "mps.jar";
+    String mpsJarPath = PathManager.getHomePath() + File.separator + "lib" + File.separatorChar + "mps-boot.jar";
     if (new File(mpsJarPath).exists()) {
       return mpsJarPath;
     }
@@ -194,7 +130,7 @@ public class CommonPaths {
   private static List<String> getJDKJars() {
     List<String> result = new ArrayList<String>();
 
-    if (isMac && jdkVersion < 7) {
+    if (SystemInfo.isMac && !SystemInfo.isJavaVersionAtLeast("1.7")) {
       // in apple jdk's (< jdk7) rt.jar classes contains in classes.jar
       result.add("classes.jar");
     } else {
@@ -235,11 +171,10 @@ public class CommonPaths {
         if (!file.exists()) continue;
 
         if (file.getName().equals(name)) {
-          return ClassPathFactory.getInstance().createFromPath(file.getCanonicalPath(), "Common paths");
+          String canonicalPath = file.getCanonicalPath();
+          return ourClassPathCachingFacility.createFromPath(canonicalPath, REQUESTER_STRING);
         }
-      } catch (URISyntaxException e) {
-        LOG.error(null, e);
-      } catch (Throwable e) {
+      } catch (URISyntaxException | IOException e) {
         LOG.error(null, e);
       }
     }
@@ -255,7 +190,7 @@ public class CommonPaths {
     addPlatformJars(result);
     addIdeaJars(result);
     addWorkbenchJars(result);
-    addClasses(result, PathManager.getHomePath());
+    addClasses(result);
     return result;
   }
 
@@ -272,6 +207,7 @@ public class CommonPaths {
     addIfExists(result, "/lib/mps-logging.jar");
     addIfExists(result, "/lib/mps-messaging.jar");
     addIfExists(result, "/lib/mps-core.jar");
+    addIfExists(result, "/lib/mps-boot-util.jar");
     addIfExists(result, "/lib/mps-closures.jar");
     addIfExists(result, "/lib/mps-collections.jar");
     addIfExists(result, "/lib/mps-tuples.jar");
@@ -322,30 +258,22 @@ public class CommonPaths {
     addIfExists(result, "/lib/junit-4.12.jar");
   }
 
-  public static void addClasses(final CompositeClassPathItem result, final String homePath) {
-    ClasspathReader.addClasses(homePath, new Callback<String>() {
-      @Override
-      public void call(String param) {
-        File dir = new File(homePath, param);
-        if (!dir.exists()) return;
-        try {
-          result.add(ClassPathFactory.getInstance().createFromPath(dir.getAbsolutePath(), "Common paths"));
-        } catch (IOException e) {
-          LOG.error(null, e);
-        }
+  private static void addClasses(final CompositeClassPathItem result) {
+    String homePath = PathManager.getHomePath();
+    ClassPathReader classPathReader = new ClassPathReader(PathManager.getHomePath(), Arrays.asList(ClassType.values()));
+    classPathReader.read().stream().forEach(param -> {
+      File dir = new File(homePath, param);
+      if (dir.exists()) {
+        result.add(ourClassPathCachingFacility.createFromPath(dir.getAbsolutePath(), REQUESTER_STRING));
       }
-    }, ClassType.values());
+    });
   }
 
   private static void addIfExists(CompositeClassPathItem item, String path) {
     for (String basePath : PathManager.getHomePaths()) {
-      String fullPath = basePath + path.replace('/', File.separatorChar);
-      if (!new File(fullPath).exists()) continue;
-      try {
-        item.add(ClassPathFactory.getInstance().createFromPath(fullPath, "Common paths"));
-        return;
-      } catch (Throwable e) {
-        LOG.error(null, e);
+      UniPath fullPath = UniPath.fromString(basePath + path).toSystemPath();
+      if (new IoFile(fullPath).exists()) {
+        item.add(ourClassPathCachingFacility.createFromPath(fullPath.toString(), REQUESTER_STRING));
       }
     }
   }

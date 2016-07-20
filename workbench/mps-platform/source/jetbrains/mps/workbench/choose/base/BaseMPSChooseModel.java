@@ -40,6 +40,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @deprecated Use {@link jetbrains.mps.workbench.choose.ChooseByNameData} instead.
+ *             Compose required structure with {@link jetbrains.mps.workbench.choose.ModelsPresentation},
+ *             {@link jetbrains.mps.workbench.choose.ModulesPresentation} or create custom
+ *             {@link jetbrains.mps.workbench.choose.ElementPresentation}.
+ */
+@Deprecated
+@ToRemove(version = 3.4)
 public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   protected static final Logger LOG = LogManager.getLogger(BaseMPSChooseModel.class);
   public static final String SEPARATOR = ".";
@@ -228,6 +236,10 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   /**
    * Translates representation element back to original model entry, reverts {@link #doGetNavigationItem(Object)}
+   * XXX note, this is needed due th the fact this model implementation exposes our internal structure to outer world, so clients
+   * need to care about {@code <T>} parameter of the model and that selection returns them not instance of {@code <T>}, but some other object
+   * (namely, NavigationItem)
+   *
    * @return <code>null</code> if can't translate back
    */
   public abstract T getModelObject(Object element);

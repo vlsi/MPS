@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.choose.models;
 
 import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -27,6 +28,12 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 
 import java.util.ArrayList;
 
+/**
+ * THERE ARE NO MORE USES IN MPS, PLEASE DO NOT ADD NEW!
+ * @deprecated see {@link BaseMPSChooseModel} and {@link jetbrains.mps.workbench.choose.ChooseByNameData}
+ */
+@Deprecated
+@ToRemove(version = 3.4)
 public class BaseModelModel extends BaseMPSChooseModel<SModelReference> {
   public BaseModelModel(Project mpsProject) {
     super(mpsProject, "model");

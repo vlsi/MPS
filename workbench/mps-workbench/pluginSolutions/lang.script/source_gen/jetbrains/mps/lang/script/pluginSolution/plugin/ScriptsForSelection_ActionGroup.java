@@ -32,7 +32,7 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
     this.setPopup(true);
   }
   public void doUpdate(AnActionEvent event) {
-    ScriptsForSelection_ActionGroup.this.removeAll();
+    removeAll();
     List<SModel> models = MPSCommonDataKeys.MODELS.getData(event.getDataContext());
     if (ListSequence.fromList(models).count() == 1 && !((ListSequence.fromList(models).first() instanceof EditableSModel && !(ListSequence.fromList(models).first().isReadOnly())))) {
       event.getPresentation().setVisible(false);

@@ -182,6 +182,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.menus.extras.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.intentions.jar" />
@@ -203,6 +204,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.refactoring.participant.jar" />
       <library file="${artifacts.mps}/languages/make/jetbrains.mps.make.reduced.jar" />
       <library file="${artifacts.mps}/languages/make/jetbrains.mps.tool.gentest.jar" />
       <library file="${artifacts.mps}/languages/xml/jetbrains.mps.core.xml.jar" />
@@ -344,6 +346,7 @@
         <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
@@ -393,6 +396,7 @@
         <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />

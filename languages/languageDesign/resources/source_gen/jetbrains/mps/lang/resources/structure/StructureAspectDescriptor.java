@@ -7,53 +7,57 @@ import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import java.util.Collection;
+import java.util.Arrays;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.runtime.StaticScope;
-import java.util.Collection;
-import java.util.Arrays;
-import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(15);
-  /*package*/ final ConceptDescriptor myConceptCircle = new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.Circle", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e60L)).super_("jetbrains.mps.lang.resources.structure.Primitive").version(1).super_(MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L)).parents("jetbrains.mps.lang.resources.structure.Primitive").parentIds(MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x26417c37742e28c1L, "r")).properties("r").sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "2756621024541675104")).create();
-  /*package*/ final ConceptDescriptor myConceptFileIcon = new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.FileIcon", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.resources.structure.Icon").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c3774289eeeL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x26417c377428f6b3L, "file")).properties("file").childDescriptors(new ConceptDescriptorBuilder.Link(0x60d1cf8c81faea09L, "iconExpression", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), true, false, false)).children(new String[]{"iconExpression"}, new boolean[]{false}).alias("file", "").sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "8974276187400029883")).create();
-  /*package*/ final ConceptDescriptor myConceptIcon = new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.Icon", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c3774289eeeL)).version(1).interface_().parents("jetbrains.mps.lang.resources.structure.Resource").parentIds(MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL)).sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "2756621024541318894")).create();
-  /*package*/ final ConceptDescriptor myConceptIconExpression = new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.IconExpression", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L)).super_("jetbrains.mps.baseLanguage.structure.Expression").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x7c8b08a50a39c6c5L, "icon", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c3774289eeeL), false, false, false)).children(new String[]{"icon"}, new boolean[]{false}).alias("icon", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "8974276187400029891")).create();
-  /*package*/ final ConceptDescriptor myConceptIconLayerDescription = new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.IconLayerDescription", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e65L)).version(1).interface_().sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "2756621024541675109")).create();
-  /*package*/ final ConceptDescriptor myConceptIconResourceExpression = new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.IconResourceExpression", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x52fb86deea79455eL)).super_("jetbrains.mps.baseLanguage.structure.Expression").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x52fb86deea79b940L, "icon", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c3774289eeeL), false, false, false)).children(new String[]{"icon"}, new boolean[]{false}).alias("iconResource", "").sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "5979521222239143262")).create();
-  /*package*/ final ConceptDescriptor myConceptImage = new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.Image", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0xb8b96b5078f3367L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.resources.structure.IconLayerDescription").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e65L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0xb8b96b5078f33bbL, "file")).properties("file").sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "831924260440060775")).create();
-  /*package*/ final ConceptDescriptor myConceptOldIconBundle = new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.OldIconBundle", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bdL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x7c8b08a50a39c6beL, "icons", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c0L), true, true, false)).children(new String[]{"icons"}, new boolean[]{true}).rootable().sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "8974276187400029885")).create();
-  /*package*/ final ConceptDescriptor myConceptOldIconDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.OldIconDeclaration", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c0L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x7c8b08a50a39c6c1L, "iconExpression", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"iconExpression"}, new boolean[]{false}).sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "8974276187400029888")).create();
-  /*package*/ final ConceptDescriptor myConceptOldIconReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.OldIconReference", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c7L)).super_("jetbrains.mps.baseLanguage.structure.Expression").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x7c8b08a50a39c6c8L, "declaration", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c0L), false)).references("declaration").alias("icon", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "8974276187400029895")).create();
-  /*package*/ final ConceptDescriptor myConceptPrimitive = new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.Primitive", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.resources.structure.IconLayerDescription").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e65L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x26417c37742e28b2L, "fillColor"), new ConceptDescriptorBuilder.Prop(0x26417c37742e28b4L, "borderColor")).properties("fillColor", "borderColor").abstract_().sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "2756621024541681841")).create();
-  /*package*/ final ConceptDescriptor myConceptRect = new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.Rect", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e61L)).super_("jetbrains.mps.lang.resources.structure.Primitive").version(1).super_(MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L)).parents("jetbrains.mps.lang.resources.structure.Primitive").parentIds(MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x26417c37742e0e62L, "size")).properties("size").sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "2756621024541675105")).create();
-  /*package*/ final ConceptDescriptor myConceptResource = new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.Resource", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL)).version(1).interface_().propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x7c8b08a50a39c6cbL, "path")).properties("path").sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "8974276187400029898")).create();
-  /*package*/ final ConceptDescriptor myConceptText = new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.Text", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b9L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.resources.structure.IconLayerDescription").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e65L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x26417c37742e28bcL, "color"), new ConceptDescriptorBuilder.Prop(0x26417c37742e28beL, "text")).properties("color", "text").sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "2756621024541681849")).create();
-  /*package*/ final ConceptDescriptor myConceptTextIcon = new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.TextIcon", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.resources.structure.Icon").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c3774289eeeL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x12dbb53bb6b60039L, "iconId")).properties("iconId").childDescriptors(new ConceptDescriptorBuilder.Link(0x26417c37742e0e66L, "layers", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e65L), false, true, false)).children(new String[]{"layers"}, new boolean[]{true}).alias("describe", "").sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "2756621024541674821")).create();
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(17);
+  /*package*/ final ConceptDescriptor myConceptCircle = createDescriptorForCircle();
+  /*package*/ final ConceptDescriptor myConceptColor = createDescriptorForColor();
+  /*package*/ final ConceptDescriptor myConceptColorLiteral = createDescriptorForColorLiteral();
+  /*package*/ final ConceptDescriptor myConceptFileIcon = createDescriptorForFileIcon();
+  /*package*/ final ConceptDescriptor myConceptIcon = createDescriptorForIcon();
+  /*package*/ final ConceptDescriptor myConceptIconExpression = createDescriptorForIconExpression();
+  /*package*/ final ConceptDescriptor myConceptIconLayerDescription = createDescriptorForIconLayerDescription();
+  /*package*/ final ConceptDescriptor myConceptIconResourceExpression = createDescriptorForIconResourceExpression();
+  /*package*/ final ConceptDescriptor myConceptImage = createDescriptorForImage();
+  /*package*/ final ConceptDescriptor myConceptOldIconBundle = createDescriptorForOldIconBundle();
+  /*package*/ final ConceptDescriptor myConceptOldIconDeclaration = createDescriptorForOldIconDeclaration();
+  /*package*/ final ConceptDescriptor myConceptOldIconReference = createDescriptorForOldIconReference();
+  /*package*/ final ConceptDescriptor myConceptPrimitive = createDescriptorForPrimitive();
+  /*package*/ final ConceptDescriptor myConceptRect = createDescriptorForRect();
+  /*package*/ final ConceptDescriptor myConceptResource = createDescriptorForResource();
+  /*package*/ final ConceptDescriptor myConceptText = createDescriptorForText();
+  /*package*/ final ConceptDescriptor myConceptTextIcon = createDescriptorForTextIcon();
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptCircle.getId(), 0);
-    myIndexMap.put(myConceptFileIcon.getId(), 1);
-    myIndexMap.put(myConceptIcon.getId(), 2);
-    myIndexMap.put(myConceptIconExpression.getId(), 3);
-    myIndexMap.put(myConceptIconLayerDescription.getId(), 4);
-    myIndexMap.put(myConceptIconResourceExpression.getId(), 5);
-    myIndexMap.put(myConceptImage.getId(), 6);
-    myIndexMap.put(myConceptOldIconBundle.getId(), 7);
-    myIndexMap.put(myConceptOldIconDeclaration.getId(), 8);
-    myIndexMap.put(myConceptOldIconReference.getId(), 9);
-    myIndexMap.put(myConceptPrimitive.getId(), 10);
-    myIndexMap.put(myConceptRect.getId(), 11);
-    myIndexMap.put(myConceptResource.getId(), 12);
-    myIndexMap.put(myConceptText.getId(), 13);
-    myIndexMap.put(myConceptTextIcon.getId(), 14);
+    myIndexMap.put(myConceptColor.getId(), 1);
+    myIndexMap.put(myConceptColorLiteral.getId(), 2);
+    myIndexMap.put(myConceptFileIcon.getId(), 3);
+    myIndexMap.put(myConceptIcon.getId(), 4);
+    myIndexMap.put(myConceptIconExpression.getId(), 5);
+    myIndexMap.put(myConceptIconLayerDescription.getId(), 6);
+    myIndexMap.put(myConceptIconResourceExpression.getId(), 7);
+    myIndexMap.put(myConceptImage.getId(), 8);
+    myIndexMap.put(myConceptOldIconBundle.getId(), 9);
+    myIndexMap.put(myConceptOldIconDeclaration.getId(), 10);
+    myIndexMap.put(myConceptOldIconReference.getId(), 11);
+    myIndexMap.put(myConceptPrimitive.getId(), 12);
+    myIndexMap.put(myConceptRect.getId(), 13);
+    myIndexMap.put(myConceptResource.getId(), 14);
+    myIndexMap.put(myConceptText.getId(), 15);
+    myIndexMap.put(myConceptTextIcon.getId(), 16);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCircle, myConceptFileIcon, myConceptIcon, myConceptIconExpression, myConceptIconLayerDescription, myConceptIconResourceExpression, myConceptImage, myConceptOldIconBundle, myConceptOldIconDeclaration, myConceptOldIconReference, myConceptPrimitive, myConceptRect, myConceptResource, myConceptText, myConceptTextIcon);
+    return Arrays.asList(myConceptCircle, myConceptColor, myConceptColorLiteral, myConceptFileIcon, myConceptIcon, myConceptIconExpression, myConceptIconLayerDescription, myConceptIconResourceExpression, myConceptImage, myConceptOldIconBundle, myConceptOldIconDeclaration, myConceptOldIconReference, myConceptPrimitive, myConceptRect, myConceptResource, myConceptText, myConceptTextIcon);
   }
 
   @Override
@@ -67,35 +71,91 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 0:
         return myConceptCircle;
       case 1:
-        return myConceptFileIcon;
+        return myConceptColor;
       case 2:
-        return myConceptIcon;
+        return myConceptColorLiteral;
       case 3:
-        return myConceptIconExpression;
+        return myConceptFileIcon;
       case 4:
-        return myConceptIconLayerDescription;
+        return myConceptIcon;
       case 5:
-        return myConceptIconResourceExpression;
+        return myConceptIconExpression;
       case 6:
-        return myConceptImage;
+        return myConceptIconLayerDescription;
       case 7:
-        return myConceptOldIconBundle;
+        return myConceptIconResourceExpression;
       case 8:
-        return myConceptOldIconDeclaration;
+        return myConceptImage;
       case 9:
-        return myConceptOldIconReference;
+        return myConceptOldIconBundle;
       case 10:
-        return myConceptPrimitive;
+        return myConceptOldIconDeclaration;
       case 11:
-        return myConceptRect;
+        return myConceptOldIconReference;
       case 12:
-        return myConceptResource;
+        return myConceptPrimitive;
       case 13:
-        return myConceptText;
+        return myConceptRect;
       case 14:
+        return myConceptResource;
+      case 15:
+        return myConceptText;
+      case 16:
         return myConceptTextIcon;
       default:
         throw new IllegalStateException();
     }
+  }
+
+  private static ConceptDescriptor createDescriptorForCircle() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.Circle", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e60L)).super_("jetbrains.mps.lang.resources.structure.Primitive").version(1).super_(MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L)).parents("jetbrains.mps.lang.resources.structure.Primitive").parentIds(MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x26417c37742e28c1L, "r")).properties("r").sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "2756621024541675104")).create();
+  }
+  private static ConceptDescriptor createDescriptorForColor() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.Color", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x19d079f4ec114bdeL)).version(1).interface_().sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "1860120738943552478")).create();
+  }
+  private static ConceptDescriptor createDescriptorForColorLiteral() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.ColorLiteral", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x19d079f4ec114bddL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.resources.structure.Color").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x19d079f4ec114bdeL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x19d079f4ec114be1L, "val")).properties("val").alias("#", "").sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "1860120738943552477")).create();
+  }
+  private static ConceptDescriptor createDescriptorForFileIcon() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.FileIcon", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.resources.structure.Icon").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c3774289eeeL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x26417c377428f6b3L, "file")).properties("file").childDescriptors(new ConceptDescriptorBuilder.Link(0x60d1cf8c81faea09L, "iconExpression", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), true, false, false)).children(new String[]{"iconExpression"}, new boolean[]{false}).alias("file", "").sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "8974276187400029883")).create();
+  }
+  private static ConceptDescriptor createDescriptorForIcon() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.Icon", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c3774289eeeL)).version(1).interface_().parents("jetbrains.mps.lang.resources.structure.Resource").parentIds(MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL)).sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "2756621024541318894")).create();
+  }
+  private static ConceptDescriptor createDescriptorForIconExpression() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.IconExpression", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L)).super_("jetbrains.mps.baseLanguage.structure.Expression").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x7c8b08a50a39c6c5L, "icon", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c3774289eeeL), false, false, false)).children(new String[]{"icon"}, new boolean[]{false}).alias("icon", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "8974276187400029891")).create();
+  }
+  private static ConceptDescriptor createDescriptorForIconLayerDescription() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.IconLayerDescription", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e65L)).version(1).interface_().sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "2756621024541675109")).create();
+  }
+  private static ConceptDescriptor createDescriptorForIconResourceExpression() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.IconResourceExpression", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x52fb86deea79455eL)).super_("jetbrains.mps.baseLanguage.structure.Expression").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x52fb86deea79b940L, "icon", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c3774289eeeL), false, false, false)).children(new String[]{"icon"}, new boolean[]{false}).alias("iconResource", "").sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "5979521222239143262")).create();
+  }
+  private static ConceptDescriptor createDescriptorForImage() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.Image", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0xb8b96b5078f3367L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.resources.structure.IconLayerDescription").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e65L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0xb8b96b5078f33bbL, "file")).properties("file").sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "831924260440060775")).create();
+  }
+  private static ConceptDescriptor createDescriptorForOldIconBundle() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.OldIconBundle", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bdL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x7c8b08a50a39c6beL, "icons", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c0L), true, true, false)).children(new String[]{"icons"}, new boolean[]{true}).rootable().sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "8974276187400029885")).create();
+  }
+  private static ConceptDescriptor createDescriptorForOldIconDeclaration() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.OldIconDeclaration", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c0L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x7c8b08a50a39c6c1L, "iconExpression", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"iconExpression"}, new boolean[]{false}).sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "8974276187400029888")).create();
+  }
+  private static ConceptDescriptor createDescriptorForOldIconReference() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.OldIconReference", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c7L)).super_("jetbrains.mps.baseLanguage.structure.Expression").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x7c8b08a50a39c6c8L, "declaration", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c0L), false)).references("declaration").alias("icon", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "8974276187400029895")).create();
+  }
+  private static ConceptDescriptor createDescriptorForPrimitive() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.Primitive", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.resources.structure.IconLayerDescription").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e65L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x19d079f4ec114c11L, "fillColor", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x19d079f4ec114bdeL), false, false, false), new ConceptDescriptorBuilder.Link(0x19d079f4ec114c13L, "borderColor", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x19d079f4ec114bdeL), true, false, false)).children(new String[]{"fillColor", "borderColor"}, new boolean[]{false, false}).abstract_().sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "2756621024541681841")).create();
+  }
+  private static ConceptDescriptor createDescriptorForRect() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.Rect", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e61L)).super_("jetbrains.mps.lang.resources.structure.Primitive").version(1).super_(MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L)).parents("jetbrains.mps.lang.resources.structure.Primitive").parentIds(MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x26417c37742e0e62L, "r")).properties("r").sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "2756621024541675105")).create();
+  }
+  private static ConceptDescriptor createDescriptorForResource() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.Resource", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL)).version(1).interface_().propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x7c8b08a50a39c6cbL, "path")).properties("path").sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "8974276187400029898")).create();
+  }
+  private static ConceptDescriptor createDescriptorForText() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.Text", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b9L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.resources.structure.IconLayerDescription").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e65L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x26417c37742e28beL, "text")).properties("text").childDescriptors(new ConceptDescriptorBuilder.Link(0x19d079f4ec114c16L, "color", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x19d079f4ec114bdeL), false, false, false)).children(new String[]{"color"}, new boolean[]{false}).sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "2756621024541681849")).create();
+  }
+  private static ConceptDescriptor createDescriptorForTextIcon() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.TextIcon", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.resources.structure.Icon").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c3774289eeeL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x12dbb53bb6b60039L, "iconId")).properties("iconId").childDescriptors(new ConceptDescriptorBuilder.Link(0x26417c37742e0e66L, "layers", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e65L), false, true, false)).children(new String[]{"layers"}, new boolean[]{true}).alias("describe", "").sourceNode(new SNodePointer("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)", "2756621024541674821")).create();
   }
 }

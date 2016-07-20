@@ -41,7 +41,7 @@
   <target name="java.compile.module-A-in-Y">
     <mkdir dir="${basedir}/buildA/src" />
     <mkdir dir="${build.tmp}/java/out/module-A-in-Y" />
-    <javac destdir="${build.tmp}/java/out/module-A-in-Y" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/module-A-in-Y" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/buildA/src" />

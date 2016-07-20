@@ -15,21 +15,21 @@
  */
 package jetbrains.mps.project.facets;
 
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.reloading.ClassPathFactory;
+import jetbrains.mps.reloading.ClassPathCachingFacility;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 
@@ -52,6 +52,7 @@ public class JavaModuleOperations {
     return result;
   }
 
+  @SafeVarargs
   public static <T extends SModule> Set<String> collectCompileClasspath(T... modules) {
     return collectCompileClasspath(new HashSet<SModule>(Arrays.asList(modules)), true);
   }
@@ -64,37 +65,28 @@ public class JavaModuleOperations {
     return result;
   }
 
+  @SafeVarargs
   public static <T extends SModule> Set<String> collectExecuteClasspath(T... modules) {
     return collectExecuteClasspath(new HashSet<SModule>(Arrays.asList(modules)));
   }
 
   /**
-   *
    * @param classPath a sequence of paths to classes
-   * @param requestor debug info describing the caller of this method
+   * @param caller debug info describing the caller of this method
    * @return constructed CompositeClassPathItem
    */
-  public static CompositeClassPathItem createClassPathItem(Iterable<String> classPath, String requestor) {
+  public static CompositeClassPathItem createClassPathItem(Iterable<String> classPath, String caller) {
     CompositeClassPathItem classPathItem = new CompositeClassPathItem();
 
     for (String path : classPath) {
-      try {
-        IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path, requestor);
-        classPathItem.add(pathItem);
-      } catch (IOException e) {
-        LOG.error(e.getMessage());
-      }
+      IClassPathItem pathItem = ClassPathCachingFacility.getInstance().createFromPath(path, caller);
+      classPathItem.add(pathItem);
     }
 
     return classPathItem;
   }
 
-  public static Iterable<SModule> getJavaModules(Iterable<? extends SModule> modules) {
-    return (Iterable<SModule>) Sequence.fromIterable(modules).where(new ISelector<SModule, Boolean>() {
-      @Override
-      public Boolean select(SModule module) {
-        return module.getFacet(JavaModuleFacet.class) != null;
-      }
-    });
+  private static Iterable<SModule> getJavaModules(Collection<? extends SModule> modules) {
+    return modules.stream().filter(module -> module.getFacet(JavaModuleFacet.class) != null).collect(Collectors.toList());
   }
 }

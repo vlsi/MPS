@@ -32,7 +32,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JPopupMenu;
 import javax.swing.KeyStroke;
@@ -47,10 +46,9 @@ class SelectTabAction extends ToggleAction {
   private final Project myProject;
   private final ButtonEditorTab myTab;
   private final NodeChangeCallback myCallback;
-  private Icon myIcon;
 
   public SelectTabAction(@NotNull Project mpsProject, ButtonEditorTab tab, NodeChangeCallback callback) {
-    super("", "", null);
+    super(tab.getDescriptor().getTitle(), "", tab.getDescriptor().getIcon());
     myProject = mpsProject;
     myTab = tab;
     myCallback = callback;
@@ -75,18 +73,12 @@ class SelectTabAction extends ToggleAction {
   }
 
   @Override
-  public void update(AnActionEvent e) {
-    super.update(e);
-    e.getPresentation().setIcon(myIcon);
-  }
-
-  @Override
   public void setSelected(AnActionEvent e, boolean state) {
     myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         List<SNodeReference> nodeRefs = myTab.getEditorNodes();
-        ArrayList<SNode> nodes = new ArrayList<SNode>();
+        ArrayList<SNode> nodes = new ArrayList<>();
         for (SNodeReference r : nodeRefs) {
           SNode n = r.resolve(myProject.getRepository());
           if (n != null) {
@@ -128,7 +120,7 @@ class SelectTabAction extends ToggleAction {
       return result;
     }
 
-    Set<SNode> added = new HashSet<SNode>();
+    Set<SNode> added = new HashSet<>();
     for (final SNode node : nodes) {
       SNode root = node.getContainingRoot();
       if (added.contains(root)) {
@@ -147,9 +139,5 @@ class SelectTabAction extends ToggleAction {
       return rootName.replaceAll("_", "__");
     }
     return "<no name>";
-  }
-
-  void updateIcon(Icon icon) {
-    myIcon = icon;
   }
 }

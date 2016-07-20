@@ -15,6 +15,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -38,12 +39,12 @@ public class ClassLikes_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
   }
   public void doUpdate(AnActionEvent event) {
+    removeAll();
     SModel model = MPSCommonDataKeys.MODEL.getData(event.getDataContext());
     if (!(model instanceof DefaultSModelDescriptor)) {
       return;
     }
-    // FIXME why DefaultSModelDescriptor?! SModelInternal would be enough 
-    Iterable<SLanguage> langs = ((DefaultSModelDescriptor) model).importedLanguageIds();
+    Iterable<SLanguage> langs = ((SModelInternal) model).importedLanguageIds();
     Iterable<SNode> descrs = Sequence.fromIterable(langs).select(new ISelector<SLanguage, SModule>() {
       public SModule select(SLanguage it) {
         return it.getSourceModule();
@@ -62,7 +63,6 @@ public class ClassLikes_ActionGroup extends GeneratedActionGroup {
       }
     });
 
-    ClassLikes_ActionGroup.this.removeAll();
     for (SNode descr : Sequence.fromIterable(descrs)) {
       ClassLikes_ActionGroup.this.addParameterizedAction(new NewClassLike_Action(descr), PluginId.getId("jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution"), descr);
     }

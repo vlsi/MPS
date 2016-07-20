@@ -16,6 +16,8 @@
 package jetbrains.mps.vfs.path;
 
 import org.jetbrains.annotations.NotNull;
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * Testing {@link CommonPath}
@@ -24,5 +26,30 @@ public class CommonPathTest extends PathTest {
   @Override
   public Path create(@NotNull String path) {
     return CommonPath.fromString(path);
+  }
+
+  @Test
+  public void constructionEqualityTest1() {
+    CommonPath a = CommonPath.fromParts(Path.UNIX_SEPARATOR_CHAR, null, "a");
+    Assert.assertEquals(a, CommonPath.fromString("a"));
+    Assert.assertTrue(a.isRelative());
+  }
+
+  @Test
+  public void constructionEqualityTest2() {
+    CommonPath a = CommonPath.fromParts(Path.WIN_SEPARATOR_CHAR, null, "a");
+    Assert.assertEquals(a, CommonPath.fromString("a"));
+    Assert.assertTrue(a.isRelative());
+  }
+
+  @Test
+  public void constructionEqualityTest3() {
+    Assert.assertEquals(CommonPath.fromParts(Path.UNIX_SEPARATOR_CHAR, null, "a"), CommonPath.fromString("\\a"));
+  }
+
+  @Test
+  public void getParentTestWin3() {
+    CommonPath emptyRelPath = CommonPath.fromParts(Path.WIN_SEPARATOR_CHAR, null);
+    Assert.assertEquals(null, emptyRelPath.getParent());
   }
 }

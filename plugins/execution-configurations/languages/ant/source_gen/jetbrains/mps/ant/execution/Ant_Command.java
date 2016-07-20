@@ -18,11 +18,12 @@ import jetbrains.mps.execution.api.commands.KeyValueCommandPart;
 import java.io.File;
 import com.intellij.openapi.application.PathManager;
 import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.util.ClassType;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.execution.api.commands.CommandPart;
 import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -98,7 +99,12 @@ public class Ant_Command {
       }
     }
 
-    ListSequence.fromList(classPath).addElement(new File(CommonPaths.getToolsJar()));
+    List<String> mpsPaths = CommonPaths.getMPSPaths(ClassType.JDK_TOOLS);
+    ListSequence.fromList(classPath).addSequence(ListSequence.fromList(mpsPaths).select(new ISelector<String, File>() {
+      public File select(String it) {
+        return new File(it);
+      }
+    }));
 
     return classPath;
   }

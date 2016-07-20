@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.plugins.applicationplugins;
 
-import com.intellij.ide.ui.customization.CustomActionsSchema;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.wm.ex.WindowManagerEx;
@@ -28,12 +28,10 @@ import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.actions.ModuleActions_ActionGroup;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
 
-import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -78,7 +76,7 @@ public class GroupAdjuster {
     actionList = Arrays.asList(editorActionsGroup.getChildren(null));
     BaseGroup.addPlaceToActionList(actionList, ActionPlace.EDITOR, null);
 
-    List<BaseGroup> mainMenuGroups = new ArrayList<BaseGroup>();
+    List<BaseGroup> mainMenuGroups = new ArrayList<>();
     DefaultActionGroup mainMenuGroup = ActionUtils.getDefaultGroup(IdeActions.GROUP_MAIN_MENU);
     ActionManagerEx manager = ActionManagerEx.getInstanceEx();
     for (String id : manager.getActionIds("")) {
@@ -99,12 +97,7 @@ public class GroupAdjuster {
 
   public static void refreshCustomizations() {
     if (!RuntimeFlags.isTestMode()) return;
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        setCustomizationSchemaForCurrentProjects();
-      }
-    });
+    ApplicationManager.getApplication().invokeLater(GroupAdjuster::setCustomizationSchemaForCurrentProjects);
   }
 
   private static void setCustomizationSchemaForCurrentProjects() {

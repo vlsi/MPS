@@ -24,7 +24,7 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.ConditionalMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.GroupMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.SingleItemMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.IncludeSubstituteMenuTransformationMenuPart" />
@@ -60,9 +60,11 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.SingleItemMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.IconContainer" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.IconResource" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
@@ -175,7 +177,6 @@
   <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.Parameterized" file="Parameterized.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />

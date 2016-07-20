@@ -40,12 +40,12 @@ import java.util.Set;
 /**
  * @author Kostik
  */
-public class FileClassPathItem extends RealClassPathItem {
-  private String myClassPath;
-  private Map<String, Set<String>> mySubpackagesCache = new THashMap<String, Set<String>>();
-  private Map<String, Set<String>> myAvailableClassesCache = new THashMap<String, Set<String>>();
+class FileClassPathItem extends RealClassPathItem {
+  private final String myClassPath;
+  private final Map<String, Set<String>> mySubpackagesCache = new THashMap<String, Set<String>>();
+  private final Map<String, Set<String>> myAvailableClassesCache = new THashMap<String, Set<String>>();
 
-  protected FileClassPathItem(String classPath) {
+  FileClassPathItem(String classPath) {
     myClassPath = classPath;
   }
 
@@ -56,13 +56,11 @@ public class FileClassPathItem extends RealClassPathItem {
 
   @Override
   public String getPath() {
-    checkValidity();
     return myClassPath;
   }
 
   @Override
   public boolean hasClass(String name) {
-    checkValidity();
     String namespace = NameUtil.namespaceFromLongName(name);
     String shortname = NameUtil.shortNameFromLongName(name);
 
@@ -76,7 +74,6 @@ public class FileClassPathItem extends RealClassPathItem {
 
   @Override
   public synchronized ClassBytes getClassBytes(String name) {
-    checkValidity();
     String namespace = NameUtil.namespaceFromLongName(name);
     String shortName = NameUtil.shortNameFromLongName(name);
 
@@ -110,7 +107,6 @@ public class FileClassPathItem extends RealClassPathItem {
 
   @Override
   public URL getResource(String name) {
-    checkValidity();
     try {
       File resourceFile = new File(myClassPath + File.separator + name.replace('/', File.separatorChar));
       if (!resourceFile.exists()) return null;
@@ -122,25 +118,18 @@ public class FileClassPathItem extends RealClassPathItem {
 
   @Override
   public synchronized Iterable<String> getAvailableClasses(String namespace) {
-    checkValidity();
     if (!myAvailableClassesCache.containsKey(namespace)) {
       buildCacheFor(namespace);
     }
 
     Set<String> start = myAvailableClassesCache.get(namespace);
     if (start == null) return new EmptyIterable<String>();
-    Condition<String> cond = new Condition<String>() {
-      @Override
-      public boolean met(String className) {
-        return !isAnonymous(className);
-      }
-    };
+    Condition<String> cond = className -> !isAnonymous(className);
     return new ConditionalIterable<String>(start, cond);
   }
 
   @Override
   public synchronized Iterable<String> getSubpackages(String namespace) {
-    checkValidity();
     if (!mySubpackagesCache.containsKey(namespace)) {
       buildCacheFor(namespace);
     }
@@ -184,7 +173,6 @@ public class FileClassPathItem extends RealClassPathItem {
 
   @Override
   public List<RealClassPathItem> flatten() {
-    checkValidity();
     List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
     result.add(this);
     return result;
@@ -192,12 +180,10 @@ public class FileClassPathItem extends RealClassPathItem {
 
   @Override
   public void accept(IClassPathItemVisitor visitor) {
-    checkValidity();
     visitor.visit(this);
   }
 
   private File getModelDir(String namespace) {
-    checkValidity();
     if (namespace == null) namespace = "";
     return new File(myClassPath + File.separatorChar + NameUtil.pathFromNamespace(namespace));
   }

@@ -5,11 +5,11 @@ package jetbrains.mps.console.ideCommands.structure;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Map;
 import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbsractMake = new ConceptPresentationBuilder().create();
@@ -29,7 +29,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ModelStatisticsTarget = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ModuleProperties = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OfAspectOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_OfAspectOperation = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getReferenceLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L, 0x5252d9021b8c25b0L, "requestedAspect_old"), MetaAdapterFactory.getReferenceLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L, 0x7cd422dbfa7b06f8L, "requestedAspect")).create();
   private final ConceptPresentation props_ProjectStatisticsTarget = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RebuildProjectCommand = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RemoveGenSources = new ConceptPresentationBuilder().create();

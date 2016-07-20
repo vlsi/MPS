@@ -8,7 +8,7 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.refactoring.framework.IRefactoring;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -46,8 +46,7 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
     }
   }
   private void doExecuteNoDialog(final RefactoringContext refactoringContext) {
-    // executeSimple needs EDT but no read, and ThreadUtils doesn't give us forced 'later' semantics, hence SwingUtilities.invokeLater() 
-    SwingUtilities.invokeLater(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         executeSimple(refactoringContext);
       }
@@ -62,7 +61,7 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
     }
   }
   private void findUsagesAndRun(final RefactoringContext refactoringContext) {
-    SwingUtilities.invokeLater(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
       public void run() {
         ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(refactoringContext.getSelectedProject()), "Finding usages...", false) {
@@ -97,7 +96,7 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
   }
   private void showConfirmDialogAndExecuteInUI(SearchResults result, final RefactoringContext refactoringContext) {
     if (result == null) {
-      SwingUtilities.invokeLater(new Runnable() {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
         @Override
         public void run() {
           int promptResult = JOptionPane.showConfirmDialog(MPSCommonDataKeys.FRAME.getData(DataManager.getInstance().getDataContext()), "An exception occurred during searching affected nodes. Do you want to continue anyway?", "Exception", JOptionPane.YES_NO_OPTION);

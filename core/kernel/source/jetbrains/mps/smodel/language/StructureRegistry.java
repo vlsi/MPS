@@ -87,6 +87,7 @@ public class StructureRegistry implements CoreAspectRegistry {
   public ConceptDescriptor getConceptDescriptor(@NotNull SConceptId id) {
     String cname = "<StructureRegistry: this name must not be used>";
 
+    //do not use MAF.getConceptById here not to get into infinite recursion
     ConceptDescriptor cd = getConceptDescriptor(MetaAdapterFactory.getConcept(id, cname));
     if (!(cd instanceof IllegalConceptDescriptor)) {
       return cd;

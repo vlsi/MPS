@@ -35,7 +35,11 @@ import java.util.List;
  */
 public class IoFile implements IFileEx {
   @NotNull private File myFile; // always absolute
-  private IoFileSystem myFileSystem;
+  private final static IoFileSystem ourFS = new IoFileSystem();
+
+  public IoFile(@NotNull String path) {
+    this(path, ourFS);
+  }
 
   IoFile(@NotNull String path, IoFileSystem fileSystem) {
     this(new File(path), fileSystem);
@@ -43,13 +47,16 @@ public class IoFile implements IFileEx {
 
   IoFile(@NotNull File file, IoFileSystem fileSystem) {
     myFile = file.getAbsoluteFile();
-    myFileSystem = fileSystem;
+  }
+
+  public IoFile(@NotNull UniPath path) {
+    this(path.toString());
   }
 
   @NotNull
   @Override
   public FileSystem getFileSystem() {
-    return myFileSystem;
+    return ourFS;
   }
 
   @NotNull
@@ -64,7 +71,7 @@ public class IoFile implements IFileEx {
     if (parentFile == null) {
       return null;
     }
-    return new IoFile(parentFile, myFileSystem);
+    return new IoFile(parentFile, ourFS);
   }
 
   @Override
@@ -168,7 +175,7 @@ public class IoFile implements IFileEx {
 
     List<IFile> result = new ArrayList<IFile>(files.length);
     for (File f : files) {
-      result.add(new IoFile(f, myFileSystem));
+      result.add(new IoFile(f, ourFS));
     }
     return result;
   }
@@ -176,7 +183,7 @@ public class IoFile implements IFileEx {
   @Override
   @NotNull
   public IFile getDescendant(@NotNull String suffix) {
-    return new IoFile(new File(myFile, suffix), myFileSystem);
+    return new IoFile(new File(myFile, suffix), ourFS);
   }
 
   @Override

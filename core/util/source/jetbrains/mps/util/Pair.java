@@ -15,11 +15,12 @@
  */
 package jetbrains.mps.util;
 
+import org.jetbrains.mps.annotations.Immutable;
+
 @SuppressWarnings({"InstanceVariableNamingConvention"})
-public class Pair<T1, T2> {
-  @SuppressWarnings({"ClassEscapesDefinedScope"})
+@Immutable
+public final class Pair<T1, T2> {
   public T1 o1;
-  @SuppressWarnings({"ClassEscapesDefinedScope"})
   public T2 o2;
 
   public Pair(T1 o1, T2 o2) {
