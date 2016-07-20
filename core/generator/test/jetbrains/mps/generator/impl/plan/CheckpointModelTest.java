@@ -108,7 +108,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
     // XXX shall it be CME to give access to module with checkpoint models? Is there better way to find out cpModel?
 
     SModule checkpointModule = tmProvider.getCheckpointsModule();
-    final SModelName cpModelName = CrossModelEnvironment.createCheckpointModelName(m.getReference(), cp1);
+    final SModelName cpModelName = CrossModelEnvironment.createCheckpointModelName(m.getReference(), new CheckpointIdentity(planIdentity, cp1));
     SModel cpModel = null;
     for (SModel trm : checkpointModule.getModels()) {
       if (cpModelName.equals(trm.getName())) {

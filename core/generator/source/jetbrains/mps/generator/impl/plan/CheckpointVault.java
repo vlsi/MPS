@@ -42,6 +42,7 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.BiFunction;
 import java.util.stream.StreamSupport;
 
 /**
@@ -83,7 +84,7 @@ public class CheckpointVault {
   }
 
   @Nullable
-  public ModelCheckpoints getCheckpointsFor(@NotNull PlanIdentity plan) {
+  /*package*/ ModelCheckpoints getCheckpointsFor(@NotNull PlanIdentity plan, @NotNull BiFunction<SModel, CheckpointIdentity,SModel> publisher) {
     for (Entry entry : myKnownCheckpoints) {
       if (!plan.equals(entry.myPlan)) {
         continue;
@@ -91,7 +92,7 @@ public class CheckpointVault {
       if (entry.myCheckpoints != null) {
         return entry.myCheckpoints;
       }
-      loadModels(entry);
+      loadModels(entry, publisher);
       return entry.myCheckpoints;
     }
     return null;
@@ -180,7 +181,7 @@ public class CheckpointVault {
     return fname.toString();
   }
 
-  private void loadModels(Entry entry) {
+  private void loadModels(Entry entry, BiFunction<SModel, CheckpointIdentity, SModel> publisher) {
     final ModelFactory modelFactory = PersistenceFacade.getInstance().getDefaultModelFactory();
     try {
       ArrayList<CheckpointState> states = new ArrayList<>();
@@ -188,7 +189,7 @@ public class CheckpointVault {
         final SingleStreamSource source = new SingleStreamSource(myStreams.getOutputLocation(), p.o2);
         SModel cpModel = modelFactory.load(source, Collections.emptyMap());
         MappingsMemento memento = new MappingLabelExtractor().restore(MappingLabelExtractor.findDebugNode(cpModel));
-        states.add(new CheckpointState(memento, cpModel, p.o1));
+        states.add(new CheckpointState(memento, publisher.apply(cpModel, p.o1), p.o1));
       }
       entry.myCheckpoints = new ModelCheckpoints(entry.myPlan, states);
     } catch (IOException ex) {

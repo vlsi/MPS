@@ -16,11 +16,11 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
+import jetbrains.mps.generator.impl.CloneUtil;
 import jetbrains.mps.generator.impl.ModelStreamManager;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
@@ -49,8 +49,12 @@ import java.util.HashSet;
  * @since 3.3
  */
 public class CrossModelEnvironment {
+  // these are checkpoints for actual plan, for different models that are cross-referenced from the one being transformed
   private final HashMap<SModelReference, ModelCheckpoints> myTransientCheckpoints = new HashMap<>();
+  // these are CPs for all plans of x-referenced models
   private final HashMap<SModelReference, CheckpointVault> myPersistedCheckpoints = new HashMap<>();
+  // thise are CPs for actual plan, loaded from persisted CPs and re-published as transient models
+  private final HashMap<SModelReference, ModelCheckpoints> myExposedPersisted = new HashMap<>();
   private final TransientModelsModule myModule;
   private final ModelStreamManager.Provider myStreamProvider;
   private final TransientModelsProvider myTransientModelProvider;
@@ -82,6 +86,9 @@ public class CrossModelEnvironment {
       @Override
       public ModelCheckpoints compute() {
         SModel[] cpModels = getCheckpointModelsFor(model);
+        if (cpModels.length == 0) {
+          return null;
+        }
         ModelCheckpoints mcp = new ModelCheckpoints(planIdentity, cpModels);
         myTransientCheckpoints.put(model.getReference(), mcp);
         return mcp;
@@ -91,7 +98,14 @@ public class CrossModelEnvironment {
       return mcp;
     }
     // FIXME once accessed, perhaps ModelCheckpoints instance shall be kept in myTransientCheckpoints?
-    return getPersistedCheckpoints(model).getCheckpointsFor(planIdentity);
+    return getPersistedCheckpoints(model).getCheckpointsFor(planIdentity, (m, cp) -> {
+      // XXX for now, expose whole ModelCheckpoints at once, although just specific CheckpointState
+      //     (accessed later though MC.find) would suffice
+      SModel exposed = createBlankCheckpointModel(model.getReference(), cp);
+      new CloneUtil(m, exposed).cloneModelWithImports();
+      myModule.addModelToKeep(exposed.getReference(), true);
+      return exposed;
+    });
   }
 
   /**
@@ -122,14 +136,14 @@ public class CrossModelEnvironment {
     return cpv;
   }
 
-  /*package*/ static SModelName createCheckpointModelName(SModelReference originalModel, Checkpoint step) {
+  /*package*/ static SModelName createCheckpointModelName(SModelReference originalModel, CheckpointIdentity step) {
     String longName = originalModel.getName().getLongName();
-    String stereotype = "cp-" + step.getName();
+    String stereotype = "cp-" + step.getPersistenceValue();
     return new SModelName(longName, stereotype);
   }
 
   // originalModel is just to construct name/reference of the checkpoint model
-  public SModel createBlankCheckpointModel(SModelReference originalModel, Checkpoint step) {
+  public SModel createBlankCheckpointModel(SModelReference originalModel, CheckpointIdentity step) {
     final SModelName transientModelName = createCheckpointModelName(originalModel, step);
     final SModelReference mr = PersistenceFacade.getInstance().createModelReference(myModule.getModuleReference(), jetbrains.mps.smodel.SModelId.generate(), transientModelName.getValue());
     SModel checkpointModel = myModule.createTransientModel(mr);

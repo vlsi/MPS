@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
+import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import org.jetbrains.annotations.NotNull;
 
@@ -41,6 +42,12 @@ public final class CheckpointIdentity {
     myPlan = plan;
     myName = cp.getName();
   }
+
+  public CheckpointIdentity(ModelGenerationPlan plan, Checkpoint cp) {
+    myPlan = new PlanIdentity(plan);
+    myName = cp.getName();
+  }
+
 
   @NotNull
   public String getPersistenceValue() {
