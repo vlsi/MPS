@@ -15,18 +15,24 @@ import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(2);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(5);
   /*package*/ final ConceptDescriptor myConceptChild = new ConceptDescriptorBuilder("testCustomAnalyzer.structure.Child", MetaIdFactory.conceptId(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed5L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).sourceNode(new SNodePointer("r:c1c38648-eb71-424b-8ade-f463a1eb273d(testCustomAnalyzer.structure)", "8332528989793324757")).create();
+  /*package*/ final ConceptDescriptor myConceptOtherChild = new ConceptDescriptorBuilder("testCustomAnalyzer.structure.OtherChild", MetaIdFactory.conceptId(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x623d57b40400d6bbL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x623d57b40400d6faL, "child", MetaIdFactory.conceptId(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x623d57b40400d6bcL), true, false, false)).children(new String[]{"child"}, new boolean[]{false}).sourceNode(new SNodePointer("r:c1c38648-eb71-424b-8ade-f463a1eb273d(testCustomAnalyzer.structure)", "7078910619969181371")).create();
+  /*package*/ final ConceptDescriptor myConceptOtherRoot = new ConceptDescriptorBuilder("testCustomAnalyzer.structure.OtherRoot", MetaIdFactory.conceptId(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x623d57b40400d6baL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x623d57b40400d6bdL, "child", MetaIdFactory.conceptId(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x623d57b40400d6bbL), true, true, false)).children(new String[]{"child"}, new boolean[]{true}).rootable().sourceNode(new SNodePointer("r:c1c38648-eb71-424b-8ade-f463a1eb273d(testCustomAnalyzer.structure)", "7078910619969181370")).create();
+  /*package*/ final ConceptDescriptor myConceptOtherSubChild = new ConceptDescriptorBuilder("testCustomAnalyzer.structure.OtherSubChild", MetaIdFactory.conceptId(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x623d57b40400d6bcL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).sourceNode(new SNodePointer("r:c1c38648-eb71-424b-8ade-f463a1eb273d(testCustomAnalyzer.structure)", "7078910619969181372")).create();
   /*package*/ final ConceptDescriptor myConceptRoot = new ConceptDescriptorBuilder("testCustomAnalyzer.structure.Root", MetaIdFactory.conceptId(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x73a316f7f548c73dL, "maxChildCount"), new ConceptDescriptorBuilder.Prop(0x73a316f7f548c742L, "initialCounter")).properties("maxChildCount", "initialCounter").childDescriptors(new ConceptDescriptorBuilder.Link(0x73a316f7f5468ed6L, "child", MetaIdFactory.conceptId(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed5L), true, true, false)).children(new String[]{"child"}, new boolean[]{true}).rootable().sourceNode(new SNodePointer("r:c1c38648-eb71-424b-8ade-f463a1eb273d(testCustomAnalyzer.structure)", "8332528989793324756")).create();
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptChild.getId(), 0);
-    myIndexMap.put(myConceptRoot.getId(), 1);
+    myIndexMap.put(myConceptOtherChild.getId(), 1);
+    myIndexMap.put(myConceptOtherRoot.getId(), 2);
+    myIndexMap.put(myConceptOtherSubChild.getId(), 3);
+    myIndexMap.put(myConceptRoot.getId(), 4);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptChild, myConceptRoot);
+    return Arrays.asList(myConceptChild, myConceptOtherChild, myConceptOtherRoot, myConceptOtherSubChild, myConceptRoot);
   }
 
   @Override
@@ -40,6 +46,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 0:
         return myConceptChild;
       case 1:
+        return myConceptOtherChild;
+      case 2:
+        return myConceptOtherRoot;
+      case 3:
+        return myConceptOtherSubChild;
+      case 4:
         return myConceptRoot;
       default:
         throw new IllegalStateException();

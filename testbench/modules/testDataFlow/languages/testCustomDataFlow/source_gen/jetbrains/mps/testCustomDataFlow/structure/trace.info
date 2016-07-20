@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <root>
+    <file name="ConceptPresentationAspectImpl.java">
+      <unit at="14,0,45,0" name="jetbrains.mps.testCustomDataFlow.structure.ConceptPresentationAspectImpl" />
+    </file>
+    <file name="StructureAspectDescriptor.java">
+      <unit at="17,0,45,0" name="jetbrains.mps.testCustomDataFlow.structure.StructureAspectDescriptor" />
+    </file>
+  </root>
+</debug-info>
+

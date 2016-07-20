@@ -13,6 +13,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_Child = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_OtherChild = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_OtherRoot = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_OtherSubChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Root = new ConceptPresentationBuilder().create();
 
   @Override
@@ -20,7 +23,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     {
       SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0d.get(cncpt);
+      Integer preIndex = indices_lpa09p_a0g.get(cncpt);
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
@@ -29,6 +32,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           }
           break;
         case 1:
+          if (true) {
+            return props_OtherChild;
+          }
+          break;
+        case 2:
+          if (true) {
+            return props_OtherRoot;
+          }
+          break;
+        case 3:
+          if (true) {
+            return props_OtherSubChild;
+          }
+          break;
+        case 4:
           if (true) {
             return props_Root;
           }
@@ -46,5 +64,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0d = buildConceptIndices(MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed5L, "testCustomAnalyzer.structure.Child"), MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, "testCustomAnalyzer.structure.Root"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0g = buildConceptIndices(MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed5L, "testCustomAnalyzer.structure.Child"), MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x623d57b40400d6bbL, "testCustomAnalyzer.structure.OtherChild"), MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x623d57b40400d6baL, "testCustomAnalyzer.structure.OtherRoot"), MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x623d57b40400d6bcL, "testCustomAnalyzer.structure.OtherSubChild"), MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, "testCustomAnalyzer.structure.Root"));
 }
