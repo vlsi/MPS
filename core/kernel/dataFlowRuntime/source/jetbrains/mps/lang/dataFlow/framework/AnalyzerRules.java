@@ -92,7 +92,7 @@ public class AnalyzerRules {
       getRules(descendant).forEach(rule -> rule.performActions(myProgram, descendant));
     }
   }
-  private Stream<DataFlowConstructor> getRules(SNode node) {
+    private Stream<DataFlowConstructor> getRules(SNode node) {
     return myRules.stream().filter(rule -> {
       Collection<IDataFlowModeId> modes = rule.getModes();
       return (modes.isEmpty() || modes.stream().anyMatch(mode -> myContext.getBuilderModes().contains(mode))) && rule.isApplicable(node);

@@ -102,6 +102,7 @@
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
       <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
+      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
@@ -681,16 +682,29 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2OqwBi" id="68XlVg3ZpgD" role="3clFbw">
-                  <node concept="2OqwBi" id="68XlVg3ZpgE" role="2Oq$k0">
-                    <node concept="1YBJjd" id="68XlVg3ZpgF" role="2Oq$k0">
-                      <ref role="1YBMHb" node="5qKdWqHXYYR" resolve="builder" />
+                <node concept="1Wc70l" id="3Nk3eRztOIP" role="3clFbw">
+                  <node concept="2OqwBi" id="3Nk3eRztQWm" role="3uHU7w">
+                    <node concept="2OqwBi" id="3Nk3eRztP7h" role="2Oq$k0">
+                      <node concept="2GrUjf" id="3Nk3eRztOY9" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="68XlVg3Zphw" resolve="root" />
+                      </node>
+                      <node concept="3Tsc0h" id="3Nk3eRztPxN" role="2OqNvi">
+                        <ref role="3TtcxE" to="tp41:6UdHCtZO4VV" />
+                      </node>
                     </node>
-                    <node concept="3Tsc0h" id="68XlVg3ZpgG" role="2OqNvi">
-                      <ref role="3TtcxE" to="tp41:6UdHCtZO4VV" />
-                    </node>
+                    <node concept="1v1jN8" id="3Nk3eRztTtC" role="2OqNvi" />
                   </node>
-                  <node concept="1v1jN8" id="68XlVg3ZpgH" role="2OqNvi" />
+                  <node concept="2OqwBi" id="68XlVg3ZpgD" role="3uHU7B">
+                    <node concept="2OqwBi" id="68XlVg3ZpgE" role="2Oq$k0">
+                      <node concept="1YBJjd" id="68XlVg3ZpgF" role="2Oq$k0">
+                        <ref role="1YBMHb" node="5qKdWqHXYYR" resolve="builder" />
+                      </node>
+                      <node concept="3Tsc0h" id="68XlVg3ZpgG" role="2OqNvi">
+                        <ref role="3TtcxE" to="tp41:6UdHCtZO4VV" />
+                      </node>
+                    </node>
+                    <node concept="1v1jN8" id="68XlVg3ZpgH" role="2OqNvi" />
+                  </node>
                 </node>
                 <node concept="9aQIb" id="68XlVg3ZpgI" role="9aQIa">
                   <node concept="3clFbS" id="68XlVg3ZpgJ" role="9aQI4">
@@ -851,7 +865,7 @@
                   <node concept="3cpWs3" id="5qKdWqIk37I" role="3uHU7B">
                     <node concept="3cpWs3" id="5qKdWqIh$US" role="3uHU7B">
                       <node concept="Xl_RD" id="5qKdWqI5xxv" role="3uHU7B">
-                        <property role="Xl_RC" value="Conflicting modes. Data flow builder with modes" />
+                        <property role="Xl_RC" value="Conflicting modes. Data flow builder" />
                       </node>
                       <node concept="1eOMI4" id="5qKdWqIhAui" role="3uHU7w">
                         <node concept="3K4zz7" id="5qKdWqIi6dZ" role="1eOMHV">
@@ -861,7 +875,7 @@
                             </node>
                             <node concept="3cpWs3" id="dZuDV0grLE" role="3uHU7B">
                               <node concept="Xl_RD" id="dZuDV0gtd9" role="3uHU7B">
-                                <property role="Xl_RC" value=" (" />
+                                <property role="Xl_RC" value="  with modes (" />
                               </node>
                               <node concept="2OqwBi" id="5qKdWqIjtLk" role="3uHU7w">
                                 <node concept="1MCZdW" id="5qKdWqIjCbU" role="2OqNvi">

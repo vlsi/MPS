@@ -48,7 +48,7 @@ public class check_DataFlowBuilderDeclaration_modeUniqueness_NonTypesystemRule e
         if (root == builder || SLinkOperations.getTarget(root, MetaAdapterFactory.getReferenceLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x118e58d76a0L, "conceptDeclaration")) != SLinkOperations.getTarget(builder, MetaAdapterFactory.getReferenceLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x118e58d76a0L, "conceptDeclaration"))) {
           continue;
         }
-        if (ListSequence.fromList(SLinkOperations.getChildren(builder, MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x6e8db6877fd04efbL, "modes"))).isEmpty()) {
+        if (ListSequence.fromList(SLinkOperations.getChildren(builder, MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x6e8db6877fd04efbL, "modes"))).isEmpty() && ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x6e8db6877fd04efbL, "modes"))).isEmpty()) {
           MapSequence.fromMap(duplicatingDeclarations).put(root, ListSequence.fromList(new ArrayList<SNode>()));
         } else {
           for (SNode myMode : ListSequence.fromList(SLinkOperations.getChildren(builder, MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x6e8db6877fd04efbL, "modes")))) {
@@ -71,7 +71,7 @@ public class check_DataFlowBuilderDeclaration_modeUniqueness_NonTypesystemRule e
       for (SNode duplicatingDecl : SetSequence.fromSet(MapSequence.fromMap(duplicatingDeclarations).keySet())) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(builder, "Conflicting modes. Data flow builder with modes" + ((ListSequence.fromList(MapSequence.fromMap(duplicatingDeclarations).get(duplicatingDecl)).isEmpty() ? "" : " (" + ListSequence.fromList(MapSequence.fromMap(duplicatingDeclarations).get(duplicatingDecl)).select(new ISelector<SNode, String>() {
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(builder, "Conflicting modes. Data flow builder" + ((ListSequence.fromList(MapSequence.fromMap(duplicatingDeclarations).get(duplicatingDecl)).isEmpty() ? "" : "  with modes (" + ListSequence.fromList(MapSequence.fromMap(duplicatingDeclarations).get(duplicatingDecl)).select(new ISelector<SNode, String>() {
             public String select(SNode it) {
               return SNodeOperations.getConcept(it).getName();
             }

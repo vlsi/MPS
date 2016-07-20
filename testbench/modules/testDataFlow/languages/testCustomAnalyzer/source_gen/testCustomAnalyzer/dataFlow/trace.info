@@ -147,6 +147,22 @@
       <unit id="2955426575106084979" at="16,0,33,0" name="testCustomAnalyzer.dataFlow.ChildIntraModeRule" />
     </file>
   </root>
+  <root nodeRef="r:11be8b48-b45e-48e5-98ad-b77dc1b202b1(testCustomAnalyzer.dataFlow)/4383142553201250304">
+    <file name="Child_IntraProceduralSpecific_BuilderMode_DataFlow.java">
+      <node id="4383142553201250307" at="13,60,14,125" concept="2" />
+      <node id="4383142553201250358" at="14,125,15,125" concept="2" />
+      <node id="4383142553201250304" at="18,49,19,151" concept="8" />
+      <node id="4383142553201250304" at="13,0,17,0" concept="6" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <node id="4383142553201250304" at="17,0,21,0" concept="6" trace="getModes#()Ljava/util/Collection;" />
+      <scope id="4383142553201250304" at="18,49,19,151" />
+      <scope id="4383142553201250306" at="13,60,15,125" />
+      <scope id="4383142553201250304" at="13,0,17,0">
+        <var name="_context" id="4383142553201250304" />
+      </scope>
+      <scope id="4383142553201250304" at="17,0,21,0" />
+      <unit id="4383142553201250304" at="12,0,22,0" name="testCustomAnalyzer.dataFlow.Child_IntraProceduralSpecific_BuilderMode_DataFlow" />
+    </file>
+  </root>
   <root nodeRef="r:11be8b48-b45e-48e5-98ad-b77dc1b202b1(testCustomAnalyzer.dataFlow)/6628579460233828323">
     <file name="CounterAnalyzerWithConstructorAnalyzerRunner.java">
       <node id="6628579460233828323" at="20,0,21,0" concept="3" trace="myNode" />

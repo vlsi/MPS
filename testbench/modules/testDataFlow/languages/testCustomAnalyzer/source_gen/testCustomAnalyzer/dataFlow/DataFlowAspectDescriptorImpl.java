@@ -38,7 +38,7 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       switch (switchIndex) {
         case 0:
           if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new Child_IntraProcedural_BuilderMode_DataFlow());
+            return Arrays.asList(new IDataFlowBuilder[]{new Child_IntraProceduralSpecific_BuilderMode_DataFlow(), new Child_IntraProcedural_BuilderMode_DataFlow()});
           }
           break;
         case 1:

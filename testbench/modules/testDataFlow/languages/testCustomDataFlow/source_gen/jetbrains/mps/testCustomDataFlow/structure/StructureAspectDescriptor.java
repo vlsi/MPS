@@ -7,16 +7,16 @@ import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(1);
-  /*package*/ final ConceptDescriptor myConceptIntraProceduralSpecific_BuilderMode = new ConceptDescriptorBuilder("jetbrains.mps.testCustomDataFlow.structure.IntraProceduralSpecific_BuilderMode", MetaIdFactory.conceptId(0xf1af2340221247ddL, 0xa65b2d6ee9427e3eL, 0x623d57b403fec45eL)).super_("jetbrains.mps.lang.dataFlow.structure.IntraProcedural_BuilderMode").version(1).super_(MetaIdFactory.conceptId(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x6e8db6877fc9fed5L)).parents("jetbrains.mps.lang.dataFlow.structure.IntraProcedural_BuilderMode").parentIds(MetaIdFactory.conceptId(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x6e8db6877fc9fed5L)).alias("intra-procedural-specific", "").sourceNode(new SNodePointer("r:1663047b-d6b3-4d14-9e65-e64dc6f64cac(jetbrains.mps.testCustomDataFlow.structure)", "7078910619969045598")).create();
+  /*package*/ final ConceptDescriptor myConceptIntraProceduralSpecific_BuilderMode = createDescriptorForIntraProceduralSpecific_BuilderMode();
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptIntraProceduralSpecific_BuilderMode.getId(), 0);
@@ -40,5 +40,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         throw new IllegalStateException();
     }
+  }
+
+  private static ConceptDescriptor createDescriptorForIntraProceduralSpecific_BuilderMode() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.testCustomDataFlow.structure.IntraProceduralSpecific_BuilderMode", MetaIdFactory.conceptId(0xf1af2340221247ddL, 0xa65b2d6ee9427e3eL, 0x623d57b403fec45eL)).super_("jetbrains.mps.lang.dataFlow.structure.IntraProcedural_BuilderMode").version(1).super_(MetaIdFactory.conceptId(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x6e8db6877fc9fed5L)).parents("jetbrains.mps.lang.dataFlow.structure.IntraProcedural_BuilderMode").parentIds(MetaIdFactory.conceptId(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x6e8db6877fc9fed5L)).alias("intra-procedural-specific", "").sourceNode(new SNodePointer("r:1663047b-d6b3-4d14-9e65-e64dc6f64cac(jetbrains.mps.testCustomDataFlow.structure)", "7078910619969045598")).create();
   }
 }
