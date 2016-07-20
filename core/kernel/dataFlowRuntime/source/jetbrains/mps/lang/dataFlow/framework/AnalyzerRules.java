@@ -94,7 +94,7 @@ public class AnalyzerRules {
   }
   private Stream<DataFlowConstructor> getRules(SNode node) {
     return myRules.stream().filter(rule -> {
-      Collection<String> modes = rule.getModes();
+      Collection<IDataFlowModeId> modes = rule.getModes();
       return (modes.isEmpty() || modes.stream().anyMatch(mode -> myContext.getBuilderModes().contains(mode))) && rule.isApplicable(node);
     });
   }

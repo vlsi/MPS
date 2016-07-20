@@ -6,6 +6,7 @@
     <use id="b124c25e-1e16-4432-ad5e-0ac0ecae98f5" name="testCustomAnalyzer" version="0" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
     <use id="3ac033a0-bffa-48e3-a843-a40cbdd89859" name="testExtendingAnalyzer" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="tp5g" ref="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
@@ -49,12 +50,12 @@
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
+      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
+        <property id="1070475926801" name="value" index="Xl_RC" />
+      </concept>
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
@@ -261,8 +262,8 @@
                 <node concept="liA8E" id="1eGlc3_mg5T" role="2OqNvi">
                   <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
                 </node>
-                <node concept="7CXmI" id="1eGlc3_mn6P" role="lGtFl">
-                  <node concept="29bkU" id="1eGlc3_mn6Q" role="7EUXB" />
+                <node concept="7CXmI" id="68XlVg3YYl$" role="lGtFl">
+                  <node concept="29bkU" id="68XlVg3YYl_" role="7EUXB" />
                 </node>
               </node>
             </node>
@@ -299,9 +300,13 @@
                     <node concept="2YIFZM" id="2$3McZ0VU3_" role="37wK5m">
                       <ref role="37wK5l" to="33ny:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
                       <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-                      <node concept="10M0yZ" id="2$3McZ0VU81" role="37wK5m">
-                        <ref role="1PxDUh" to="aplb:2ULNtK17gQu" resolve="DataFlowBuilderModes" />
-                        <ref role="3cqZAo" to="aplb:2ULNtK17gST" resolve="INTRA_PROCEDURAL" />
+                      <node concept="2ShNRf" id="53eBnx73Gz6" role="37wK5m">
+                        <node concept="1pGfFk" id="53eBnx73HG9" role="2ShVmc">
+                          <ref role="37wK5l" to="1fjm:~ConceptDataFlowModeId.&lt;init&gt;(java.lang.String)" resolve="ConceptDataFlowModeId" />
+                          <node concept="Xl_RD" id="53eBnx73I9A" role="37wK5m">
+                            <property role="Xl_RC" value="jetbrains.mps.lang.dataFlow.structure.IntraProcedural_BuilderMode" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -389,7 +394,9 @@
                     <node concept="2YIFZM" id="2$3McZ0W_ys" role="37wK5m">
                       <ref role="37wK5l" to="33ny:~Collections.emptyList():java.util.List" resolve="emptyList" />
                       <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-                      <node concept="17QB3L" id="2$3McZ0WAha" role="3PaCim" />
+                      <node concept="3uibUv" id="53eBnx73FTz" role="3PaCim">
+                        <ref role="3uigEE" to="1fjm:~IDataFlowModeId" resolve="IDataFlowModeId" />
+                      </node>
                     </node>
                   </node>
                 </node>

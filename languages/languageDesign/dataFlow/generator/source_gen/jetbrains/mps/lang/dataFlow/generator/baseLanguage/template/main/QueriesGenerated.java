@@ -81,6 +81,9 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_6676818848694468475(final PropertyMacroContext _context) {
     return (String) INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(_context.getNode());
   }
+  public static Object propertyMacro_GetPropertyValue_8324812022359558848(final PropertyMacroContext _context) {
+    return (String) INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(SNodeOperations.asNode(SNodeOperations.getConcept(_context.getNode())));
+  }
   public static Object referenceMacro_GetReferent_6673335989323240696(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:rules"))).first(), "ruleClass");
   }
@@ -192,7 +195,7 @@ public class QueriesGenerated {
   public static Object templateArgumentQuery_2299680136821071935(final TemplateArgumentContext _context) {
     return SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.dataFlow.framework(MPS.Core/)", "~DataFlowAspectDescriptor");
   }
-  public static Iterable<SNode> sourceNodesQuery_735072980478792132(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_8324812022359514372(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x6e8db6877fd04efbL, "modes"));
   }
   public static Iterable<SNode> sourceNodesQuery_6676818848694486262(final SourceSubstituteMacroNodesContext _context) {

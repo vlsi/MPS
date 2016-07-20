@@ -26,7 +26,7 @@ import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
 public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, NullableState>> {
   private SNode myNode;
   public NullableAnalyzerRunner(SNode node) {
-    this(node, new MPSProgramFactory(Collections.<String>emptyList()));
+    this(node, new MPSProgramFactory(Collections.emptyList()));
   }
   public NullableAnalyzerRunner(SNode node, ProgramFactory<NamedAnalyzerId> factory) {
     super(null, null);

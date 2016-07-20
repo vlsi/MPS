@@ -23,7 +23,7 @@ import java.util.Collections;
 public interface DataFlowConstructor {
   boolean isApplicable(SNode node);
   void performActions(Program program, SNode node);
-  default Collection<String> getModes(){
+  default Collection<IDataFlowModeId> getModes(){
     return Collections.emptyList();
   }
 }

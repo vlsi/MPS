@@ -11,9 +11,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -21,11 +18,11 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -43,33 +40,27 @@ public class check_DataFlowBuilderDeclaration_modeUniqueness_NonTypesystemRule e
     }
 
 
-    Set<SNode> modes = SetSequence.fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getChildren(builder, MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x6e8db6877fd04efbL, "modes")));
     Map<SNode, List<SNode>> duplicatingDeclarations = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     SModel dataFlowModel = SModuleOperations.getAspect(containingLanguage, "dataFlow");
     if (dataFlowModel != null) {
       List<SNode> roots = SModelOperations.roots(dataFlowModel, MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"));
-      {
-        Iterator<SNode> root_it = ListSequence.fromList(roots).iterator();
-        SNode root_var;
-        while (root_it.hasNext()) {
-          root_var = root_it.next();
-          if (root_var == builder || SLinkOperations.getTarget(root_var, MetaAdapterFactory.getReferenceLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x118e58d76a0L, "conceptDeclaration")) != SLinkOperations.getTarget(builder, MetaAdapterFactory.getReferenceLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x118e58d76a0L, "conceptDeclaration"))) {
-            continue;
-          }
-          if (ListSequence.fromList(SLinkOperations.getChildren(builder, MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x6e8db6877fd04efbL, "modes"))).isEmpty()) {
-            MapSequence.fromMap(duplicatingDeclarations).put(root_var, ListSequence.fromList(new ArrayList<SNode>()));
-          } else {
-            for (SNode myMode : ListSequence.fromList(SLinkOperations.getChildren(builder, MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x6e8db6877fd04efbL, "modes")))) {
-              if (ListSequence.fromList(SLinkOperations.getChildren(root_var, MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x6e8db6877fd04efbL, "modes"))).select(new ISelector<SNode, SConcept>() {
-                public SConcept select(SNode it) {
-                  return SNodeOperations.getConcept(it);
-                }
-              }).contains(SNodeOperations.getConcept(myMode))) {
-                if (MapSequence.fromMap(duplicatingDeclarations).get(root_var) == null) {
-                  MapSequence.fromMap(duplicatingDeclarations).put(root_var, ListSequence.fromList(new ArrayList<SNode>()));
-                }
-                ListSequence.fromList(MapSequence.fromMap(duplicatingDeclarations).get(root_var)).addElement(myMode);
+      for (SNode root : ListSequence.fromList(roots)) {
+        if (root == builder || SLinkOperations.getTarget(root, MetaAdapterFactory.getReferenceLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x118e58d76a0L, "conceptDeclaration")) != SLinkOperations.getTarget(builder, MetaAdapterFactory.getReferenceLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x118e58d76a0L, "conceptDeclaration"))) {
+          continue;
+        }
+        if (ListSequence.fromList(SLinkOperations.getChildren(builder, MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x6e8db6877fd04efbL, "modes"))).isEmpty()) {
+          MapSequence.fromMap(duplicatingDeclarations).put(root, ListSequence.fromList(new ArrayList<SNode>()));
+        } else {
+          for (SNode myMode : ListSequence.fromList(SLinkOperations.getChildren(builder, MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x6e8db6877fd04efbL, "modes")))) {
+            if (ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x6e8db6877fd04efbL, "modes"))).select(new ISelector<SNode, SConcept>() {
+              public SConcept select(SNode it) {
+                return SNodeOperations.getConcept(it);
               }
+            }).contains(SNodeOperations.getConcept(myMode))) {
+              if (MapSequence.fromMap(duplicatingDeclarations).get(root) == null) {
+                MapSequence.fromMap(duplicatingDeclarations).put(root, ListSequence.fromList(new ArrayList<SNode>()));
+              }
+              ListSequence.fromList(MapSequence.fromMap(duplicatingDeclarations).get(root)).addElement(myMode);
             }
           }
         }
@@ -80,15 +71,15 @@ public class check_DataFlowBuilderDeclaration_modeUniqueness_NonTypesystemRule e
       for (SNode duplicatingDecl : SetSequence.fromSet(MapSequence.fromMap(duplicatingDeclarations).keySet())) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(builder, "Duplicate of modes. Data flow builder" + ((ListSequence.fromList(MapSequence.fromMap(duplicatingDeclarations).get(duplicatingDecl)).isEmpty() ? "" : " (" + ListSequence.fromList(MapSequence.fromMap(duplicatingDeclarations).get(duplicatingDecl)).select(new ISelector<SNode, String>() {
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(builder, "Conflicting modes. Data flow builder with modes" + ((ListSequence.fromList(MapSequence.fromMap(duplicatingDeclarations).get(duplicatingDecl)).isEmpty() ? "" : " (" + ListSequence.fromList(MapSequence.fromMap(duplicatingDeclarations).get(duplicatingDecl)).select(new ISelector<SNode, String>() {
             public String select(SNode it) {
               return SNodeOperations.getConcept(it).getName();
             }
           }).reduceLeft(new ILeftCombinator<String, String>() {
             public String combine(String a, String b) {
-              return a + " & " + b;
+              return a + " , " + b;
             }
-          }) + ")")) + " was already defined in: " + INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(duplicatingDecl), "r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)", "6246554009626560906", null, errorTarget);
+          }) + ")")) + " was defined in: " + INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(duplicatingDecl), "r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)", "6246554009626560906", null, errorTarget);
         }
       }
     }

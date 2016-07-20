@@ -16,9 +16,9 @@
       <node id="1417601170173072184" at="34,77,35,242" concept="2" />
       <node id="1417601170173072184" at="35,242,36,123" concept="0" />
       <node id="1417601170173072184" at="30,0,34,0" concept="1" trace="test_ErrorMessagesCheck7974543756120908670#()V" />
-      <node id="1417601170173072184" at="34,0,38,0" concept="1" trace="test_NodeWarningCheck1417601170173161910#()V" />
+      <node id="1417601170173072184" at="34,0,38,0" concept="1" trace="test_NodeWarningCheck7078910619968857445#()V" />
       <node id="1417601170173072184" at="16,0,21,0" concept="1" trace="test_ErrorMessagesCheck7974543756120908670#()V" />
-      <node id="1417601170173072184" at="21,0,26,0" concept="1" trace="test_NodeWarningCheck1417601170173161910#()V" />
+      <node id="1417601170173072184" at="21,0,26,0" concept="1" trace="test_NodeWarningCheck7078910619968857445#()V" />
       <scope id="1417601170173072184" at="17,77,19,128" />
       <scope id="1417601170173072184" at="22,75,24,126" />
       <scope id="1417601170173072184" at="30,79,32,123">
@@ -37,45 +37,45 @@
   </root>
   <root nodeRef="r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)/2955426575105884966">
     <file name="TestProgramWithModeSpecified_Test.java">
-      <node id="2955426575105884966" at="24,81,25,105" concept="0" />
-      <node id="2955426575105884966" at="25,105,26,135" concept="0" />
-      <node id="2955426575105884966" at="29,78,30,105" concept="0" />
-      <node id="2955426575105884966" at="30,105,31,132" concept="0" />
-      <node id="2955426575105885002" at="36,83,37,41" concept="0" />
-      <node id="2955426575105885097" at="37,41,38,185" concept="2" />
-      <node id="2955426575105978243" at="38,185,39,234" concept="2" />
-      <node id="2955426575105981464" at="39,234,40,445" concept="0" />
-      <node id="2955426575105885032" at="42,80,43,41" concept="0" />
-      <node id="2955426575106005456" at="43,41,44,152" concept="2" />
-      <node id="2955426575106005468" at="44,152,45,234" concept="2" />
-      <node id="2955426575106005475" at="45,234,46,137" concept="0" />
-      <node id="2955426575106042550" at="50,67,51,48" concept="3" />
-      <node id="2955426575106042550" at="50,0,53,0" concept="4" trace="eq_3f7mjy_a0a0d0b3#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="2955426575105884966" at="23,0,28,0" concept="1" trace="test_testNonEmptyInstructionsWithModeSpecified#()V" />
-      <node id="2955426575105884966" at="28,0,33,0" concept="1" trace="test_testEmptyInstructionsWithModeSpecified#()V" />
-      <node id="2955426575105885002" at="36,0,42,0" concept="1" trace="test_testNonEmptyInstructionsWithModeSpecified#()V" />
-      <node id="2955426575105885032" at="42,0,48,0" concept="1" trace="test_testEmptyInstructionsWithModeSpecified#()V" />
-      <scope id="2955426575106042550" at="50,67,51,48" />
-      <scope id="2955426575105884966" at="24,81,26,135" />
-      <scope id="2955426575105884966" at="29,78,31,132" />
-      <scope id="2955426575106042550" at="50,0,53,0">
+      <node id="2955426575105884966" at="25,81,26,105" concept="0" />
+      <node id="2955426575105884966" at="26,105,27,135" concept="0" />
+      <node id="2955426575105884966" at="30,78,31,105" concept="0" />
+      <node id="2955426575105884966" at="31,105,32,132" concept="0" />
+      <node id="2955426575105885002" at="37,83,38,41" concept="0" />
+      <node id="2955426575105885097" at="38,41,39,242" concept="2" />
+      <node id="2955426575105978243" at="39,242,40,234" concept="2" />
+      <node id="2955426575105981464" at="40,234,41,445" concept="0" />
+      <node id="2955426575105885032" at="43,80,44,41" concept="0" />
+      <node id="2955426575106005456" at="44,41,45,161" concept="2" />
+      <node id="2955426575106005468" at="45,161,46,234" concept="2" />
+      <node id="2955426575106005475" at="46,234,47,137" concept="0" />
+      <node id="2955426575106042550" at="51,67,52,48" concept="3" />
+      <node id="2955426575106042550" at="51,0,54,0" concept="4" trace="eq_3f7mjy_a0a0d0b3#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="2955426575105884966" at="24,0,29,0" concept="1" trace="test_testNonEmptyInstructionsWithModeSpecified#()V" />
+      <node id="2955426575105884966" at="29,0,34,0" concept="1" trace="test_testEmptyInstructionsWithModeSpecified#()V" />
+      <node id="2955426575105885002" at="37,0,43,0" concept="1" trace="test_testNonEmptyInstructionsWithModeSpecified#()V" />
+      <node id="2955426575105885032" at="43,0,49,0" concept="1" trace="test_testEmptyInstructionsWithModeSpecified#()V" />
+      <scope id="2955426575106042550" at="51,67,52,48" />
+      <scope id="2955426575105884966" at="25,81,27,135" />
+      <scope id="2955426575105884966" at="30,78,32,132" />
+      <scope id="2955426575106042550" at="51,0,54,0">
         <var name="a" id="2955426575106042550" />
         <var name="b" id="2955426575106042550" />
       </scope>
-      <scope id="2955426575105885002" at="36,83,40,445">
+      <scope id="2955426575105885002" at="37,83,41,445">
         <var name="builder" id="2955426575105885098" />
         <var name="program" id="2955426575105978244" />
       </scope>
-      <scope id="2955426575105885032" at="42,80,46,137">
+      <scope id="2955426575105885032" at="43,80,47,137">
         <var name="builder" id="2955426575106005457" />
         <var name="program" id="2955426575106005469" />
       </scope>
-      <scope id="2955426575105884966" at="23,0,28,0" />
-      <scope id="2955426575105884966" at="28,0,33,0" />
-      <scope id="2955426575105885002" at="36,0,42,0" />
-      <scope id="2955426575105885032" at="42,0,48,0" />
-      <unit id="2955426575105884966" at="34,0,54,0" name="analyzers.test.tests.TestProgramWithModeSpecified_Test$TestBody" />
-      <unit id="2955426575105884966" at="21,0,55,0" name="analyzers.test.tests.TestProgramWithModeSpecified_Test" />
+      <scope id="2955426575105884966" at="24,0,29,0" />
+      <scope id="2955426575105884966" at="29,0,34,0" />
+      <scope id="2955426575105885002" at="37,0,43,0" />
+      <scope id="2955426575105885032" at="43,0,49,0" />
+      <unit id="2955426575105884966" at="35,0,55,0" name="analyzers.test.tests.TestProgramWithModeSpecified_Test$TestBody" />
+      <unit id="2955426575105884966" at="22,0,56,0" name="analyzers.test.tests.TestProgramWithModeSpecified_Test" />
     </file>
   </root>
   <root nodeRef="r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)/2955426575106132803">

@@ -4,8 +4,9 @@ package jetbrains.mps.lang.dataFlow;
 
 import jetbrains.mps.lang.dataFlow.framework.ProgramFactory;
 import jetbrains.mps.lang.dataFlow.framework.NamedAnalyzerId;
-import java.util.Collection;
 import jetbrains.mps.lang.dataFlow.framework.ProgramBuilderContext;
+import java.util.Collection;
+import jetbrains.mps.lang.dataFlow.framework.IDataFlowModeId;
 import jetbrains.mps.lang.dataFlow.framework.ProgramBuilderContextImpl;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -14,9 +15,8 @@ import jetbrains.mps.lang.dataFlow.framework.AnalyzerRules;
 import java.util.Collections;
 
 public class MPSProgramFactory implements ProgramFactory<NamedAnalyzerId> {
-  private Collection<String> myModes;
   private ProgramBuilderContext myContext;
-  public MPSProgramFactory(Collection<String> modes) {
+  public MPSProgramFactory(Collection<IDataFlowModeId> modes) {
     this.myContext = new ProgramBuilderContextImpl(modes);
   }
   @Override
@@ -26,9 +26,5 @@ public class MPSProgramFactory implements ProgramFactory<NamedAnalyzerId> {
   @Override
   public void prepareProgram(Program program, SNode node, NamedAnalyzerId analyzerId) {
     new AnalyzerRules(analyzerId.getAnalyzerFqName(), Collections.singletonList(node), program, myContext).apply();
-  }
-
-  protected Collection<String> getModes() {
-    return myModes;
   }
 }

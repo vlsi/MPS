@@ -20,23 +20,23 @@
   </root>
   <root nodeRef="r:11be8b48-b45e-48e5-98ad-b77dc1b202b1(testCustomAnalyzer.dataFlow)/2955426575105435842">
     <file name="Child_IntraProcedural_BuilderMode_DataFlow.java">
-      <node id="2955426575105812292" at="12,60,13,125" concept="2" />
-      <node id="2955426575105435842" at="16,40,17,64" concept="8" />
-      <node id="2955426575105435842" at="12,0,15,0" concept="6" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-      <node id="2955426575105435842" at="15,0,19,0" concept="6" trace="getModes#()Ljava/util/Collection;" />
-      <scope id="2955426575105435844" at="12,60,13,125" />
-      <scope id="2955426575105435842" at="16,40,17,64" />
-      <scope id="2955426575105435842" at="12,0,15,0">
+      <node id="2955426575105812292" at="13,60,14,125" concept="2" />
+      <node id="2955426575105435842" at="17,49,18,138" concept="8" />
+      <node id="2955426575105435842" at="13,0,16,0" concept="6" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <node id="2955426575105435842" at="16,0,20,0" concept="6" trace="getModes#()Ljava/util/Collection;" />
+      <scope id="2955426575105435844" at="13,60,14,125" />
+      <scope id="2955426575105435842" at="17,49,18,138" />
+      <scope id="2955426575105435842" at="13,0,16,0">
         <var name="_context" id="2955426575105435842" />
       </scope>
-      <scope id="2955426575105435842" at="15,0,19,0" />
-      <unit id="2955426575105435842" at="11,0,20,0" name="testCustomAnalyzer.dataFlow.Child_IntraProcedural_BuilderMode_DataFlow" />
+      <scope id="2955426575105435842" at="16,0,20,0" />
+      <unit id="2955426575105435842" at="12,0,21,0" name="testCustomAnalyzer.dataFlow.Child_IntraProcedural_BuilderMode_DataFlow" />
     </file>
   </root>
   <root nodeRef="r:11be8b48-b45e-48e5-98ad-b77dc1b202b1(testCustomAnalyzer.dataFlow)/2955426575105630521">
     <file name="CustomAnalyzerWithModeAnalyzerRunner.java">
       <node id="2955426575105630521" at="20,0,21,0" concept="3" trace="myNode" />
-      <node id="2955426575105630521" at="21,59,22,71" concept="12" />
+      <node id="2955426575105630521" at="21,59,22,63" concept="12" />
       <node id="2955426575105630521" at="24,100,25,22" concept="11" />
       <node id="2955426575105630521" at="25,22,26,18" concept="2" />
       <node id="2955426575105630521" at="26,18,27,91" concept="2" />
@@ -60,7 +60,7 @@
       <node id="2955426575105630521" at="24,0,31,0" concept="1" trace="CustomAnalyzerWithModeAnalyzerRunner#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/dataFlow/framework/ProgramFactory;)V" />
       <node id="2955426575105630521" at="38,0,47,0" concept="6" trace="merge#(Ljetbrains/mps/lang/dataFlow/framework/Program;Ljava/util/List;)Ljava/lang/Integer;" />
       <scope id="2955426575105630521" at="33,45,33,45" />
-      <scope id="2955426575105630521" at="21,59,22,71" />
+      <scope id="2955426575105630521" at="21,59,22,63" />
       <scope id="2955426575105630523" at="35,45,36,15" />
       <scope id="2955426575105688571" at="41,35,42,31" />
       <scope id="2955426575105630527" at="47,109,48,23" />
@@ -118,39 +118,39 @@
   </root>
   <root nodeRef="r:11be8b48-b45e-48e5-98ad-b77dc1b202b1(testCustomAnalyzer.dataFlow)/2955426575106084979">
     <file name="ChildIntraModeRule.java">
-      <node id="2955426575106084979" at="16,43,17,64" concept="7" />
-      <node id="2955426575106084979" at="17,64,18,64" concept="7" />
-      <node id="2955426575106084979" at="18,64,19,90" concept="8" />
-      <node id="2955426575106084979" at="21,50,22,142" concept="8" />
-      <node id="2955426575106085008" at="24,53,25,0" concept="9" />
-      <node id="2955426575106084979" at="28,40,29,64" concept="8" />
-      <node id="2955426575106084979" at="21,0,24,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="2955426575106084979" at="24,0,27,0" concept="6" trace="performActions#(Ljetbrains/mps/lang/dataFlow/framework/Program;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2955426575106084979" at="27,0,31,0" concept="6" trace="getModes#()Ljava/util/Collection;" />
-      <node id="2955426575106084979" at="16,0,21,0" concept="6" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="2955426575106084979" at="21,50,22,142" />
-      <scope id="2955426575106085006" at="24,53,25,0" />
-      <scope id="2955426575106084979" at="28,40,29,64" />
-      <scope id="2955426575106084979" at="16,43,19,90">
+      <node id="2955426575106084979" at="17,43,18,64" concept="7" />
+      <node id="2955426575106084979" at="18,64,19,64" concept="7" />
+      <node id="2955426575106084979" at="19,64,20,90" concept="8" />
+      <node id="2955426575106084979" at="22,50,23,142" concept="8" />
+      <node id="2955426575106085008" at="25,53,26,0" concept="9" />
+      <node id="2955426575106084979" at="29,49,30,138" concept="8" />
+      <node id="2955426575106084979" at="22,0,25,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="2955426575106084979" at="25,0,28,0" concept="6" trace="performActions#(Ljetbrains/mps/lang/dataFlow/framework/Program;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2955426575106084979" at="28,0,32,0" concept="6" trace="getModes#()Ljava/util/Collection;" />
+      <node id="2955426575106084979" at="17,0,22,0" concept="6" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="2955426575106084979" at="22,50,23,142" />
+      <scope id="2955426575106085006" at="25,53,26,0" />
+      <scope id="2955426575106084979" at="29,49,30,138" />
+      <scope id="2955426575106084979" at="17,43,20,90">
         <var name="applicableConcept" id="2955426575106084979" />
         <var name="concept" id="2955426575106084979" />
       </scope>
-      <scope id="2955426575106084979" at="21,0,24,0" />
-      <scope id="2955426575106084979" at="24,0,27,0">
+      <scope id="2955426575106084979" at="22,0,25,0" />
+      <scope id="2955426575106084979" at="25,0,28,0">
         <var name="node" id="2955426575106084979" />
         <var name="o" id="2955426575106084979" />
       </scope>
-      <scope id="2955426575106084979" at="27,0,31,0" />
-      <scope id="2955426575106084979" at="16,0,21,0">
+      <scope id="2955426575106084979" at="28,0,32,0" />
+      <scope id="2955426575106084979" at="17,0,22,0">
         <var name="node" id="2955426575106084979" />
       </scope>
-      <unit id="2955426575106084979" at="15,0,32,0" name="testCustomAnalyzer.dataFlow.ChildIntraModeRule" />
+      <unit id="2955426575106084979" at="16,0,33,0" name="testCustomAnalyzer.dataFlow.ChildIntraModeRule" />
     </file>
   </root>
   <root nodeRef="r:11be8b48-b45e-48e5-98ad-b77dc1b202b1(testCustomAnalyzer.dataFlow)/6628579460233828323">
     <file name="CounterAnalyzerWithConstructorAnalyzerRunner.java">
       <node id="6628579460233828323" at="20,0,21,0" concept="3" trace="myNode" />
-      <node id="6628579460233828323" at="21,87,22,87" concept="12" />
+      <node id="6628579460233828323" at="21,87,22,79" concept="12" />
       <node id="6628579460233828323" at="24,128,25,22" concept="11" />
       <node id="6628579460233828323" at="25,22,26,18" concept="2" />
       <node id="6628579460233828323" at="26,18,27,121" concept="2" />
@@ -175,7 +175,7 @@
       <node id="8332528989793418455" at="41,43,46,7" concept="4" />
       <node id="6628579460233828323" at="24,0,31,0" concept="1" trace="CounterAnalyzerWithConstructorAnalyzerRunner#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/dataFlow/framework/ProgramFactory;I)V" />
       <node id="6628579460233828323" at="40,0,49,0" concept="6" trace="merge#(Ljetbrains/mps/lang/dataFlow/framework/Program;Ljava/util/List;)Ljava/lang/Integer;" />
-      <scope id="6628579460233828323" at="21,87,22,87" />
+      <scope id="6628579460233828323" at="21,87,22,79" />
       <scope id="6628579460233828323" at="34,71,35,43" />
       <scope id="6628579460233828329" at="37,45,38,33" />
       <scope id="8332528989793401398" at="43,35,44,31" />

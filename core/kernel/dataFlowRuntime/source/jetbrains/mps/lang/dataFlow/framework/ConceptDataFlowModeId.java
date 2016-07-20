@@ -15,11 +15,33 @@
  */
 package jetbrains.mps.lang.dataFlow.framework;
 
-import java.util.Collection;
+import java.util.Objects;
 
 /**
  * @author simon
  */
-public interface ProgramBuilderContext {
-  Collection<IDataFlowModeId> getBuilderModes();
+public class ConceptDataFlowModeId implements IDataFlowModeId {
+  private final String myConceptId;
+
+  public ConceptDataFlowModeId(String conceptId) {
+    myConceptId = conceptId;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(myConceptId);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+
+    if (obj == null || obj.getClass() != getClass()) {
+      return false;
+    }
+
+    return Objects.equals(myConceptId, ((ConceptDataFlowModeId) obj).myConceptId);
+  }
 }

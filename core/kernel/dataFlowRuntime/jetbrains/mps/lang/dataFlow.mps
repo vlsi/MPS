@@ -83,10 +83,7 @@
         <child id="1164903359218" name="catchBody" index="TDEfX" />
         <child id="1164903359217" name="throwable" index="TDEfY" />
       </concept>
-      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
-        <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
-        <property id="6468716278899125786" name="isTransient" index="2dld4O" />
-      </concept>
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P">
         <reference id="1182955020723" name="classConcept" index="1HBi2w" />
       </concept>
@@ -186,6 +183,7 @@
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
+        <child id="4972241301747169160" name="typeArgument" index="3PaCim" />
       </concept>
       <concept id="1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" flags="nn" index="3nyPlj" />
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
@@ -1099,8 +1097,8 @@
                                       <node concept="1bVj0M" id="2$3McZ10TtE" role="37wK5m">
                                         <node concept="37vLTG" id="2$3McZ10TtF" role="1bW2Oz">
                                           <property role="TrG5h" value="mode" />
-                                          <node concept="3uibUv" id="2$3McZ10TtG" role="1tU5fm">
-                                            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                                          <node concept="3uibUv" id="dZuDV0gRsb" role="1tU5fm">
+                                            <ref role="3uigEE" to="1fjm:~IDataFlowModeId" resolve="IDataFlowModeId" />
                                           </node>
                                         </node>
                                         <node concept="3clFbS" id="2$3McZ10TtH" role="1bW5cS">
@@ -2275,8 +2273,8 @@
       <node concept="3Tm1VV" id="3nqUySdi9pP" role="1B3o_S" />
       <node concept="3uibUv" id="3nqUySdi9pR" role="3clF45">
         <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
-        <node concept="3uibUv" id="3nqUySdi9pS" role="11_B2D">
-          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        <node concept="3uibUv" id="53eBnx6YQ2u" role="11_B2D">
+          <ref role="3uigEE" to="1fjm:~IDataFlowModeId" resolve="IDataFlowModeId" />
         </node>
       </node>
       <node concept="3clFbS" id="3nqUySdi9pT" role="3clF47">
@@ -2284,6 +2282,9 @@
           <node concept="2YIFZM" id="3nqUySdi9yG" role="3clFbG">
             <ref role="37wK5l" to="33ny:~Collections.emptyList():java.util.List" resolve="emptyList" />
             <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+            <node concept="3uibUv" id="53eBnx6YQig" role="3PaCim">
+              <ref role="3uigEE" to="1fjm:~IDataFlowModeId" resolve="IDataFlowModeId" />
+            </node>
           </node>
         </node>
       </node>
@@ -2948,17 +2949,6 @@
   </node>
   <node concept="312cEu" id="2ULNtK16PUg">
     <property role="TrG5h" value="MPSProgramFactory" />
-    <node concept="312cEg" id="2ULNtK16PXt" role="jymVt">
-      <property role="34CwA1" value="false" />
-      <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myModes" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3Tm6S6" id="2ULNtK16PX4" role="1B3o_S" />
-      <node concept="3uibUv" id="2ULNtK17l7m" role="1tU5fm">
-        <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
-        <node concept="17QB3L" id="2ULNtK17lvS" role="11_B2D" />
-      </node>
-    </node>
     <node concept="312cEg" id="4nuJlNnWZ39" role="jymVt">
       <property role="TrG5h" value="myContext" />
       <node concept="3Tm6S6" id="4nuJlNnWZ37" role="1B3o_S" />
@@ -2967,34 +2957,36 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="2ULNtK16PUh" role="1B3o_S" />
-    <node concept="3clFbW" id="2ULNtK16PXM" role="jymVt">
-      <node concept="3cqZAl" id="2ULNtK16PXN" role="3clF45" />
-      <node concept="3Tm1VV" id="2ULNtK16PXO" role="1B3o_S" />
-      <node concept="3clFbS" id="2ULNtK16PXQ" role="3clF47">
-        <node concept="3clFbF" id="4nuJlNnWYPH" role="3cqZAp">
-          <node concept="37vLTI" id="4nuJlNnWYPJ" role="3clFbG">
-            <node concept="2ShNRf" id="4nuJlNnWYww" role="37vLTx">
-              <node concept="1pGfFk" id="4nuJlNnX6Mq" role="2ShVmc">
+    <node concept="3clFbW" id="7e7F6PQDk2Q" role="jymVt">
+      <node concept="3cqZAl" id="7e7F6PQDk2R" role="3clF45" />
+      <node concept="3Tm1VV" id="7e7F6PQDk2S" role="1B3o_S" />
+      <node concept="3clFbS" id="7e7F6PQDk2T" role="3clF47">
+        <node concept="3clFbF" id="7e7F6PQDk2U" role="3cqZAp">
+          <node concept="37vLTI" id="7e7F6PQDk2V" role="3clFbG">
+            <node concept="2ShNRf" id="7e7F6PQDk2W" role="37vLTx">
+              <node concept="1pGfFk" id="7e7F6PQDk2X" role="2ShVmc">
                 <ref role="37wK5l" to="1fjm:~ProgramBuilderContextImpl.&lt;init&gt;(java.util.Collection)" resolve="ProgramBuilderContextImpl" />
-                <node concept="37vLTw" id="4nuJlNnX6Up" role="37wK5m">
-                  <ref role="3cqZAo" node="2ULNtK16PY3" resolve="modes" />
+                <node concept="37vLTw" id="7e7F6PQDk2Y" role="37wK5m">
+                  <ref role="3cqZAo" node="7e7F6PQDk32" resolve="modes" />
                 </node>
               </node>
             </node>
-            <node concept="2OqwBi" id="4nuJlNnWZ3m" role="37vLTJ">
-              <node concept="Xjq3P" id="4nuJlNnWZ3n" role="2Oq$k0" />
-              <node concept="2OwXpG" id="4nuJlNnWZ3o" role="2OqNvi">
+            <node concept="2OqwBi" id="7e7F6PQDk2Z" role="37vLTJ">
+              <node concept="Xjq3P" id="7e7F6PQDk30" role="2Oq$k0" />
+              <node concept="2OwXpG" id="7e7F6PQDk31" role="2OqNvi">
                 <ref role="2Oxat5" node="4nuJlNnWZ39" resolve="myContext" />
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node concept="37vLTG" id="2ULNtK16PY3" role="3clF46">
+      <node concept="37vLTG" id="7e7F6PQDk32" role="3clF46">
         <property role="TrG5h" value="modes" />
-        <node concept="3uibUv" id="2ULNtK17kNv" role="1tU5fm">
+        <node concept="3uibUv" id="7e7F6PQDk33" role="1tU5fm">
           <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
-          <node concept="17QB3L" id="2ULNtK17lDj" role="11_B2D" />
+          <node concept="3uibUv" id="7e7F6PQDlVK" role="11_B2D">
+            <ref role="3uigEE" to="1fjm:~IDataFlowModeId" resolve="IDataFlowModeId" />
+          </node>
         </node>
       </node>
     </node>
@@ -3109,42 +3101,6 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="2tJIrI" id="2ULNtK17mgd" role="jymVt" />
-    <node concept="3clFb_" id="2ULNtK17mxL" role="jymVt">
-      <property role="TrG5h" value="getModes" />
-      <node concept="3uibUv" id="2ULNtK17mxM" role="3clF45">
-        <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
-        <node concept="17QB3L" id="2ULNtK17mxN" role="11_B2D" />
-      </node>
-      <node concept="3Tmbuc" id="2ULNtK17mOu" role="1B3o_S" />
-      <node concept="3clFbS" id="2ULNtK17mxP" role="3clF47">
-        <node concept="3clFbF" id="2ULNtK17mxQ" role="3cqZAp">
-          <node concept="37vLTw" id="2ULNtK17mxK" role="3clFbG">
-            <ref role="3cqZAo" node="2ULNtK16PXt" resolve="myModes" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="312cEu" id="2ULNtK17gQu">
-    <property role="TrG5h" value="DataFlowBuilderModes" />
-    <node concept="3clFbW" id="2ULNtK17k7k" role="jymVt">
-      <node concept="3cqZAl" id="2ULNtK17k7m" role="3clF45" />
-      <node concept="3Tm6S6" id="2ULNtK17k7I" role="1B3o_S" />
-      <node concept="3clFbS" id="2ULNtK17k7o" role="3clF47" />
-    </node>
-    <node concept="Wx3nA" id="2ULNtK17gST" role="jymVt">
-      <property role="2dlcS1" value="false" />
-      <property role="2dld4O" value="false" />
-      <property role="TrG5h" value="INTRA_PROCEDURAL" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="2ULNtK17gS0" role="1B3o_S" />
-      <node concept="17QB3L" id="2ULNtK17gSu" role="1tU5fm" />
-      <node concept="Xl_RD" id="2ULNtK17gTz" role="33vP2m">
-        <property role="Xl_RC" value="jetbrains.mps.dataFlow.IntraProcedural" />
-      </node>
-    </node>
-    <node concept="3Tm1VV" id="2ULNtK17gQv" role="1B3o_S" />
   </node>
 </model>
 

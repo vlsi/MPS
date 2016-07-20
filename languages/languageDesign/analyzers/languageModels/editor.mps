@@ -652,7 +652,7 @@
           <property role="VOm3f" value="false" />
         </node>
         <node concept="3F0ifn" id="2ULNtK19Cg2" role="3EZMnx">
-          <property role="3F0ifm" value="with mode:" />
+          <property role="3F0ifm" value="with mode" />
         </node>
         <node concept="3F1sOY" id="2ULNtK19Cgg" role="3EZMnx">
           <ref role="1NtTu8" to="bj1v:2ULNtK19BPU" />
@@ -680,9 +680,6 @@
           <property role="3F0ifm" value="parameters" />
           <node concept="Vb9p2" id="5JXsuoWrbru" role="3F10Kt">
             <property role="Vbekb" value="BOLD" />
-          </node>
-          <node concept="11L4FC" id="5JXsuoWrbpL" role="3F10Kt">
-            <property role="VOm3f" value="true" />
           </node>
         </node>
         <node concept="3F0ifn" id="dZuDV0ayJx" role="3EZMnx">

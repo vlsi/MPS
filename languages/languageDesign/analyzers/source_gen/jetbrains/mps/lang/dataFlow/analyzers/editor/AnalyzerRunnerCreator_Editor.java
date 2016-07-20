@@ -163,7 +163,7 @@ public class AnalyzerRunnerCreator_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, 0x2eb1cddc01267d7aL, "mode")) != null);
   }
   private EditorCell createConstant_u2jyfv_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with mode:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with mode");
     editorCell.setCellId("Constant_u2jyfv_a4a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -216,7 +216,6 @@ public class AnalyzerRunnerCreator_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_u2jyfv_a5a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
