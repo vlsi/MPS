@@ -58,7 +58,7 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
   private List<TransformationMenuItem> myActiveMenuItems;
 
   public DefaultContextAssistantManager(EditorComponent component, SRepository repository) {
-    this(component.getSelectionManager(), component.getUpdater(), new ParentOrSmallCellContextAssistantFinder(),
+    this(component.getSelectionManager(), component.getUpdater(), new AncestorOrSmallCellContextAssistantFinder(),
         defaultMenuProvider(), repository.getModelAccess());
   }
 

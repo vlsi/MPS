@@ -22,10 +22,10 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertSame;
 
-public class ParentOrSmallCellContextAssistantFinderTest extends BaseEditorTest {
+public class AncestorOrSmallCellContextAssistantFinderTest extends BaseEditorTest {
   @Test
   public void canFindAssistantInContextAssistantCell() {
-    ParentOrSmallCellContextAssistantFinder finder = new ParentOrSmallCellContextAssistantFinder();
+    AncestorOrSmallCellContextAssistantFinder finder = new AncestorOrSmallCellContextAssistantFinder();
     EditorCell_ContextAssistantComponent cell = new EditorCell_ContextAssistantComponent(getEditorContext(), null);
     assertSame(cell.getContextAssistant(), finder.findAssistant(new EditorCellSelection(cell)));
   }
