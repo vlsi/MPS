@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import jetbrains.mps.nodeEditor.braces.BracesFinder;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionListener;
@@ -27,8 +24,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.util.Condition;
 
 import java.awt.Color;
 import java.util.HashSet;
@@ -56,54 +51,14 @@ public class BracesHighlighter {
     myEditorComponent.getSelectionManager().addSelectionListener(mySelectionListener);
   }
 
-
   public void updateBracesSelection(EditorCell newSelection) {
-    if (newSelection == null) {
-      clearBracesSelection();
-      return;
-    }
-    EditorCell cellToSelect = null;
-
-    if (getMatchingLabelAndCell(newSelection) != null) {
-      cellToSelect = newSelection;
-    } else if (newSelection instanceof EditorCell_Label) {
-      EditorCell_Label editorCell = (EditorCell_Label) newSelection;
-      if (editorCell.getCaretPosition() == 0) {
-        jetbrains.mps.openapi.editor.cells.EditorCell cell = CellTraversalUtil.getPrevLeaf(editorCell);
-        if (cell instanceof EditorCell_Label) {
-          EditorCell_Label label = (EditorCell_Label) cell;
-          if (label.getWidth() == 0 && editorCell.getLeftInset() == 0) {
-            cellToSelect = label;
-          }
-        }
-      } else if (editorCell.getCaretPosition() == editorCell.getText().length()) {
-        jetbrains.mps.openapi.editor.cells.EditorCell cell = CellTraversalUtil.getNextLeaf(editorCell);
-        if (cell instanceof EditorCell_Label) {
-          EditorCell_Label label = (EditorCell_Label) cell;
-          if (label.getWidth() == 0 && editorCell.getRightInset() == 0) {
-            cellToSelect = label;
-          }
-        }
-      }
-    }
-
-    if (cellToSelect == null) {
+    Pair<EditorCell, EditorCell> cellsToHighlight = BracesFinder.findCellsToHighlight(newSelection);
+    if (cellsToHighlight == null) {
       clearBracesSelection();
       return;
     }
 
-    selectBraces(cellToSelect);
-  }
-
-  private Pair<EditorCell, String> getMatchingLabelAndCell(EditorCell editorCell) {
-    SNode node = editorCell.getSNode();
-    while (editorCell != null && editorCell.getSNode() == node) {
-      if (editorCell.getStyle().get(StyleAttributes.MATCHING_LABEL) != null) {
-        return new Pair(editorCell, editorCell.getStyle().get(StyleAttributes.MATCHING_LABEL));
-      }
-      editorCell = editorCell.getParent();
-    }
-    return null;
+    selectBraces(cellsToHighlight);
   }
 
   private void clearBracesSelection() {
@@ -123,13 +78,7 @@ public class BracesHighlighter {
     myHighlightedCells.clear();
   }
 
-  private void selectBraces(final EditorCell selectedCell) {
-    Pair<EditorCell, EditorCell> cellsToHighlight = getCellsToHighlight(selectedCell);
-    if (cellsToHighlight == null) {
-      clearBracesSelection();
-      return;
-    }
-
+  private void selectBraces(Pair<EditorCell, EditorCell> cellsToHighlight) {
     if (myHighlightedCells.size() == 2 && myHighlightedCells.contains(cellsToHighlight.o1) && myHighlightedCells.contains(cellsToHighlight.o2)) {
       // highlightedCells should not be changed
       // selectBraces() method can be called as a result of EditorCell_Label.makePositionValid()
@@ -145,28 +94,6 @@ public class BracesHighlighter {
     }
     highlightCell(cellsToHighlight.o1);
     highlightCell(cellsToHighlight.o2);
-  }
-
-  private Pair<EditorCell, EditorCell> getCellsToHighlight(final EditorCell selectedCell) {
-    final Pair<EditorCell, String> pair = getMatchingLabelAndCell(selectedCell);
-    if (pair == null) {
-      return null;
-    }
-
-    final EditorCell matchingCell = pair.o1;
-    EditorCell validCellForNode = ((EditorComponent) matchingCell.getEditorComponent()).getBigValidCellForNode(matchingCell.getSNode());
-    if (validCellForNode == null) {
-      return null;
-    }
-
-    // TODO: check if we need this complex logic here. Looks like we are looking for selectedCell.isChildCellOf(validCellForNode) here..
-    EditorCell editorCell = CellFinderUtil.findChildByCondition(validCellForNode, new Condition<EditorCell>() {
-      @Override
-      public boolean met(EditorCell cell) {
-        return cell != matchingCell && cell.getSNode() == matchingCell.getSNode() && pair.o2.equals(cell.getStyle().get(StyleAttributes.MATCHING_LABEL));
-      }
-    }, true);
-    return editorCell != null ? new Pair<EditorCell, EditorCell>(editorCell, matchingCell) : null;
   }
 
   private void highlightCell(EditorCell editorCell) {
