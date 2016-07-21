@@ -45,6 +45,7 @@ import com.intellij.openapi.wm.ex.StatusBarEx;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBScrollBar;
 import com.intellij.ui.components.JBScrollPane;
+import com.intellij.util.LocalTimeCounter;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.RuntimeFlags;
@@ -134,7 +135,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
-import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.NonReusableTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -386,7 +386,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected EditorComponent(@NotNull SRepository repository, @NotNull EditorConfiguration configuration) {
     myRepository = repository;
     myEditorConfiguration = configuration;
-    if(ApplicationManager.getApplication() != null && ApplicationManager.getApplication().getComponent(MPSCoreComponents.class) != null) {
+    if (ApplicationManager.getApplication() != null && ApplicationManager.getApplication().getComponent(MPSCoreComponents.class) != null) {
       myClassLoaderManager = ApplicationManager.getApplication().getComponent(MPSCoreComponents.class).getClassLoaderManager();
     } else {
       myClassLoaderManager = ClassLoaderManager.getInstance();
@@ -933,6 +933,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Nullable
   public MPSNodeVirtualFile getVirtualFile() {
     return myVirtualFile;
+  }
+
+  @Override
+  public void touch() {
+    if (getVirtualFile() != null) {
+      getVirtualFile().setModificationStamp(LocalTimeCounter.currentTime());
+    }
   }
 
   @Override
