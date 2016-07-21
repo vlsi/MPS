@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.braces;
 
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
@@ -90,12 +89,9 @@ public class BracesFinder {
     }
 
     final EditorCell matchingCell = matchingLabelAndCell.o1;
-    EditorCell validCellForNode = ((EditorComponent) matchingCell.getEditorComponent()).getBigValidCellForNode(matchingCell.getSNode());
-    if (validCellForNode == null) {
-      return null;
-    }
+    EditorCell bigCell = CellTraversalUtil.getContainingBigCell(selectedCell);
 
-    EditorCell editorCell = CellFinderUtil.findChildByCondition(validCellForNode, cell -> isMatchingLabelAndCell(matchingLabelAndCell, cell), true);
+    EditorCell editorCell = CellFinderUtil.findChildByCondition(bigCell, cell -> isMatchingLabelAndCell(matchingLabelAndCell, cell), true);
     return editorCell != null ? new Pair<>(editorCell, matchingCell) : null;
   }
 
