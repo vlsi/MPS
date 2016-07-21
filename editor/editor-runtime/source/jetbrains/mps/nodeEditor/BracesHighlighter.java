@@ -74,6 +74,7 @@ public class BracesHighlighter {
       }
 
       myEditorComponent.leftUnhighlightCell((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell);
+      myEditorComponent.repaint(editorCell);
     }
     myHighlightedCells.clear();
   }
@@ -106,6 +107,7 @@ public class BracesHighlighter {
       cellStyle.set(attribute, highestPriority + 1, getMatchedBraceAttributes().get(attribute));
     }
     myHighlightedCells.add(editorCell);
+    myEditorComponent.repaint(editorCell);
   }
 
   private static Style getMatchedBraceAttributes() {
