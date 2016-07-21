@@ -16,10 +16,8 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.braces.BracesFinder;
+import jetbrains.mps.nodeEditor.selection.SingularSelectionUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.selection.Selection;
-import jetbrains.mps.openapi.editor.selection.SelectionListener;
-import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
@@ -31,24 +29,20 @@ import java.util.Set;
 
 public class BracesHighlighter {
   // COLORS: Remove hardcoded colors
-  private static final Color BRACES_LEFT_HIGHTLIGHT_COLOR = new Color(107, 142, 178);
+  private static final Color BRACES_LEFT_HIGHLIGHT_COLOR = new Color(107, 142, 178);
   private static Style ourMatchedBraceAttributes;
 
-  private Set<EditorCell> myHighlightedCells = new HashSet<EditorCell>();
-  private EditorComponent myEditorComponent;
-  private SelectionListener mySelectionListener = new SelectionListener() {
-    @Override
-    public void selectionChanged(jetbrains.mps.openapi.editor.EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+  private final Set<EditorCell> myHighlightedCells = new HashSet<>();
+  private final EditorComponent myEditorComponent;
+
+  BracesHighlighter(EditorComponent editorComponent) {
+    myEditorComponent = editorComponent;
+    myEditorComponent.getSelectionManager().addSelectionListener((ec, oldSelection, newSelection) -> {
       if (oldSelection == newSelection) {
         return;
       }
-      updateBracesSelection(newSelection instanceof SingularSelection ? ((SingularSelection) newSelection).getEditorCell() : null);
-    }
-  };
-
-  public BracesHighlighter(EditorComponent editorComponent) {
-    this.myEditorComponent = editorComponent;
-    myEditorComponent.getSelectionManager().addSelectionListener(mySelectionListener);
+      updateBracesSelection(SingularSelectionUtil.getSingleSelectedCell(newSelection));
+    });
   }
 
   public void updateBracesSelection(EditorCell newSelection) {
@@ -83,7 +77,7 @@ public class BracesHighlighter {
     if (myHighlightedCells.size() == 2 && myHighlightedCells.contains(cellsToHighlight.o1) && myHighlightedCells.contains(cellsToHighlight.o2)) {
       // highlightedCells should not be changed
       // selectBraces() method can be called as a result of EditorCell_Label.makePositionValid()
-      // makePositionValid() it turn can be called even if actual caret position was not changed,
+      // makePositionValid() in turn can be called even if actual caret position was not changed,
       // so nothing to change in highlightedCells..
       return;
     }
@@ -91,7 +85,7 @@ public class BracesHighlighter {
     clearBracesSelection();
     if (cellsToHighlight.o1.getY() != cellsToHighlight.o2.getY()) {
       ((EditorComponent) cellsToHighlight.o2.getEditorComponent()).leftHighlightCells((jetbrains.mps.nodeEditor.cells.EditorCell) cellsToHighlight.o2,
-          (jetbrains.mps.nodeEditor.cells.EditorCell) cellsToHighlight.o1, BRACES_LEFT_HIGHTLIGHT_COLOR);
+          (jetbrains.mps.nodeEditor.cells.EditorCell) cellsToHighlight.o1, BRACES_LEFT_HIGHLIGHT_COLOR);
     }
     highlightCell(cellsToHighlight.o1);
     highlightCell(cellsToHighlight.o2);
@@ -101,7 +95,7 @@ public class BracesHighlighter {
     Style cellStyle = editorCell.getStyle();
     int highestPriority = 0;
     for (StyleAttribute attribute : getMatchedBraceAttributes().getSpecifiedAttributes()) {
-      highestPriority = Math.max(editorCell.getStyle().getHighestPriority(attribute), highestPriority);
+      highestPriority = Math.max(cellStyle.getHighestPriority(attribute), highestPriority);
     }
     for (StyleAttribute attribute : getMatchedBraceAttributes().getSpecifiedAttributes()) {
       cellStyle.set(attribute, highestPriority + 1, getMatchedBraceAttributes().get(attribute));
@@ -111,8 +105,9 @@ public class BracesHighlighter {
   }
 
   private static Style getMatchedBraceAttributes() {
-    if (ourMatchedBraceAttributes == null)
+    if (ourMatchedBraceAttributes == null) {
       ourMatchedBraceAttributes = StyleRegistry.getInstance().getStyle("MATCHED_BRACE_ATTRIBUTES");
+    }
     return ourMatchedBraceAttributes;
   }
 }
