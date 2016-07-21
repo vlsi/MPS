@@ -31,8 +31,10 @@ import java.util.List;
  * {@link EditorContextAssistants}.
  */
 public class DefaultContextAssistantManager implements ContextAssistantManager {
+  private final EditorComponent myEditorComponent;
   private final EditorContextAssistants myAssistants;
   private final EditorContextAssistantsController myController;
+  private final EditorSettings myEditorSettings;
 
   public static DefaultContextAssistantManager newInstance(EditorComponent component, SRepository repository) {
     SelectionMenuProvider executableContextAssistantItemsMenuProvider = new FilteringSelectionMenuProvider(
@@ -44,16 +46,19 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
         repository.getModelAccess());
     EditorContextAssistantsController controller = new EditorContextAssistantsController(
         assistants, component.getSelectionManager(), component.getUpdater());
-    return new DefaultContextAssistantManager(assistants, controller);
+    return new DefaultContextAssistantManager(component, assistants, controller, EditorSettings.getInstance());
   }
 
-  private DefaultContextAssistantManager(EditorContextAssistants assistants, EditorContextAssistantsController controller) {
+  private DefaultContextAssistantManager(EditorComponent editorComponent, EditorContextAssistants assistants, EditorContextAssistantsController controller,
+      EditorSettings editorSettings) {
+    myEditorComponent = editorComponent;
     myAssistants = assistants;
     myController = controller;
+    myEditorSettings = editorSettings;
   }
 
   private boolean shouldBeUpdating() {
-    return myAssistants.hasRegisteredAssistants() && EditorSettings.getInstance().isShowContextAssistant();
+    return myAssistants.hasRegisteredAssistants() && myEditorSettings.isShowContextAssistant() && !myEditorComponent.isReadOnly();
   }
 
   private void startStopUpdating() {
@@ -68,6 +73,7 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
       myController.startUpdating();
     } else {
       myController.stopUpdating();
+      myAssistants.hideMenu();
     }
   }
 
