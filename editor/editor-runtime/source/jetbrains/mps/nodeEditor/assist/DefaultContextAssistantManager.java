@@ -20,74 +20,44 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.assist.ContextAssistant;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
-import jetbrains.mps.openapi.editor.selection.Selection;
-import jetbrains.mps.openapi.editor.selection.SelectionListener;
-import jetbrains.mps.openapi.editor.selection.SelectionManager;
-import jetbrains.mps.openapi.editor.update.Updater;
-import jetbrains.mps.openapi.editor.update.UpdaterListener;
-import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SRepository;
 
-import java.util.Collections;
 import java.util.List;
 
 /**
- * Activates the appropriate context assistant when selection changes. Uses {@link ContextAssistantFinder} to determine which assistant to activate and
- * {@link SelectionMenuProvider} to build the menu to show.
+ * Serves as a facade for context assistant-related tasks. Internally delegates to {@link EditorContextAssistantsController} and
+ * {@link EditorContextAssistants}.
  */
 public class DefaultContextAssistantManager implements ContextAssistantManager {
-  private static final long UPDATE_DELAY = 1000L;
+  private final EditorContextAssistants myAssistants;
+  private final EditorContextAssistantsController myController;
 
-  private final ScheduleUpdateListener myScheduleUpdateListener = new ScheduleUpdateListener();
-
-  private final SelectionManager mySelectionManager;
-  private final Updater myUpdater;
-  private final ContextAssistantFinder myAssistantFinder;
-  private final SelectionMenuProvider myMenuProvider;
-  private final ModelAccess myModelAccess;
-
-  private int myAssistantCount;
-  private ScheduleUpdateDelayedRunnable myScheduleUpdateDelayedRunnable;
-
-  private ContextAssistant myActiveAssistant;
-  private List<TransformationMenuItem> myActiveMenuItems;
-
-  public DefaultContextAssistantManager(EditorComponent component, SRepository repository) {
-    this(component.getSelectionManager(), component.getUpdater(), new AncestorOrSmallCellContextAssistantFinder(),
-        defaultMenuProvider(), repository.getModelAccess());
-  }
-
-  @NotNull
-  private static SelectionMenuProvider defaultMenuProvider() {
-    return new FilteringSelectionMenuProvider(
+  public static DefaultContextAssistantManager newInstance(EditorComponent component, SRepository repository) {
+    SelectionMenuProvider executableContextAssistantItemsMenuProvider = new FilteringSelectionMenuProvider(
         new SelectionMenuProviderByCellAndConcept(MenuLocations.CONTEXT_ASSISTANT),
         new CanExecuteFilter());
+
+    EditorContextAssistants assistants = new EditorContextAssistants(
+        new AncestorOrSmallCellContextAssistantFinder(), executableContextAssistantItemsMenuProvider, component.getSelectionManager(),
+        repository.getModelAccess());
+    EditorContextAssistantsController controller = new EditorContextAssistantsController(
+        assistants, component.getSelectionManager(), component.getUpdater());
+    return new DefaultContextAssistantManager(assistants, controller);
   }
 
-  private DefaultContextAssistantManager(SelectionManager selectionManager, Updater updater, ContextAssistantFinder assistantFinder,
-      SelectionMenuProvider menuProvider, ModelAccess modelAccess) {
-    mySelectionManager = selectionManager;
-    myUpdater = updater;
-    myAssistantFinder = assistantFinder;
-    myMenuProvider = menuProvider;
-    myModelAccess = modelAccess;
-  }
-
-  private boolean isUpdating() {
-    return myScheduleUpdateDelayedRunnable != null;
+  private DefaultContextAssistantManager(EditorContextAssistants assistants, EditorContextAssistantsController controller) {
+    myAssistants = assistants;
+    myController = controller;
   }
 
   private boolean shouldBeUpdating() {
-    return myAssistantCount > 0 && EditorSettings.getInstance().isShowContextAssistant();
+    return myAssistants.hasRegisteredAssistants() && EditorSettings.getInstance().isShowContextAssistant();
   }
 
   private void startStopUpdating() {
-    boolean is = isUpdating();
+    boolean is = myController.isUpdating();
     boolean shouldBe = shouldBeUpdating();
 
     if (is == shouldBe) {
@@ -95,131 +65,42 @@ public class DefaultContextAssistantManager implements ContextAssistantManager {
     }
 
     if (shouldBe) {
-      startUpdating();
+      myController.startUpdating();
     } else {
-      stopUpdating();
+      myController.stopUpdating();
     }
-  }
-
-  private void startUpdating() {
-    myScheduleUpdateDelayedRunnable = new ScheduleUpdateDelayedRunnable();
-    mySelectionManager.addSelectionListener(myScheduleUpdateListener);
-    myUpdater.addListener(myScheduleUpdateListener);
-    scheduleUpdate();
-  }
-
-  private void stopUpdating() {
-    myScheduleUpdateDelayedRunnable.dispose();
-    myScheduleUpdateDelayedRunnable = null;
-    myUpdater.removeListener(myScheduleUpdateListener);
-    mySelectionManager.removeSelectionListener(myScheduleUpdateListener);
   }
 
   @Override
   public void register(ContextAssistant assistant) {
-    myAssistantCount++;
+    myAssistants.register(assistant);
     startStopUpdating();
   }
 
   @Override
   public void unregister(ContextAssistant assistant) {
-    assert myAssistantCount >= 1 : "too many assistants being unregistered";
-
-    myAssistantCount--;
-    if (assistant == myActiveAssistant) {
-      hideMenu();
-      myActiveAssistant = null;
-    }
+    myAssistants.unregister(assistant);
     startStopUpdating();
   }
 
   @Override
   public void updateImmediately() {
-    myModelAccess.runReadAction(() -> {
-      Selection selection = mySelectionManager.getSelection();
-      ContextAssistant newAssistant = selection == null ? null : myAssistantFinder.findAssistant(selection);
-
-      List<TransformationMenuItem> newItems = newAssistant == null ? Collections.emptyList() : myMenuProvider.getMenuItems(selection);
-      update(newAssistant, newItems);
-    });
+    myAssistants.update();
   }
 
   @Nullable
   @Override
   public ContextAssistant getActiveAssistant() {
-    return myActiveAssistant;
+    return myAssistants.getActiveAssistant();
   }
 
   @Override
   public List<TransformationMenuItem> getActiveMenuItems() {
-    return myActiveMenuItems;
+    return myAssistants.getActiveMenuItems();
   }
 
-  private void update(@Nullable ContextAssistant newAssistant, @NotNull List<TransformationMenuItem> newItems) {
-    hideMenu();
-
-    if (newAssistant == null || newItems.isEmpty()) {
-      return;
-    }
-
-    showMenu(newAssistant, newItems);
-  }
-
-  private void hideMenu() {
-    if (myActiveAssistant == null) {
-      return;
-    }
-    myActiveAssistant.hideMenu();
-    myActiveAssistant = null;
-    myActiveMenuItems = null;
-  }
-
-  private void showMenu(@NotNull ContextAssistant newAssistant, @NotNull List<TransformationMenuItem> newItems) {
-    assert myActiveAssistant == null;
-    myActiveAssistant = newAssistant;
-    myActiveMenuItems = newItems;
-    myActiveAssistant.showMenu(newItems);
-  }
-
+  @Override
   public void scheduleUpdate() {
-    if (myScheduleUpdateDelayedRunnable != null) {
-      myScheduleUpdateDelayedRunnable.scheduleRun(UPDATE_DELAY);
-    }
-  }
-
-  private class ScheduleUpdateListener extends UpdaterListenerAdapter implements SelectionListener, UpdaterListener {
-    @Override
-    public void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
-      EditorCell oldCell = ContextAssistantSelectionUtil.getSingleSelectedCell(oldSelection);
-      EditorCell newCell = ContextAssistantSelectionUtil.getSingleSelectedCell(newSelection);
-      // Skip uninteresting changes - either within a single cell or from multiple cells to multiple cells.
-      if (oldCell == newCell) {
-        return;
-      }
-
-      scheduleUpdate();
-    }
-
-    @Override
-    public void editorUpdated(EditorComponent editorComponent) {
-      scheduleUpdate();
-    }
-
-    @Override
-    public void cellSynchronizedWithModel(EditorCell cell) {
-      scheduleUpdate();
-    }
-  }
-
-  private class ScheduleUpdateDelayedRunnable extends DelayedRunnable {
-    @Override
-    protected void runImmediately() {
-      hideMenu();
-    }
-
-    @Override
-    protected void runEventually() {
-      updateImmediately();
-    }
+    myController.scheduleUpdate();
   }
 }

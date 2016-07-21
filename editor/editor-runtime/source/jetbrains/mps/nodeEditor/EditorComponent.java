@@ -2664,7 +2664,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   protected ContextAssistantManager createContextAssistantManager(SRepository repository) {
-    return new DefaultContextAssistantManager(this, repository);
+    return DefaultContextAssistantManager.newInstance(this, repository);
   }
 
   @Override
