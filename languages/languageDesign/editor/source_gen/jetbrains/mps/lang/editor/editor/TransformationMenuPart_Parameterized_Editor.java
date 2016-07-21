@@ -59,6 +59,7 @@ public class TransformationMenuPart_Parameterized_Editor extends DefaultNodeEdit
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameter type:");
     editorCell.setCellId("Constant_lo76ij_a1a");
     Style style = new StyleImpl();
+    Styles_StyleSheet.apply_EditorKeyWord(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
@@ -103,6 +104,7 @@ public class TransformationMenuPart_Parameterized_Editor extends DefaultNodeEdit
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameter values:");
     editorCell.setCellId("Constant_lo76ij_c1a");
     Style style = new StyleImpl();
+    Styles_StyleSheet.apply_EditorKeyWord(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);

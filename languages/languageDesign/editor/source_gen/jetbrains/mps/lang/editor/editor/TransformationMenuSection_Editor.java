@@ -46,6 +46,9 @@ public class TransformationMenuSection_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ymfzuf_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "section");
     editorCell.setCellId("Constant_ymfzuf_a0");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.apply_EditorKeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

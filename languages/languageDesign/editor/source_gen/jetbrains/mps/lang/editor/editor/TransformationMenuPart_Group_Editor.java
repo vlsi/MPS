@@ -52,6 +52,7 @@ public class TransformationMenuPart_Group_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "variables");
     editorCell.setCellId("Constant_x4c5fc_b0");
     Style style = new StyleImpl();
+    Styles_StyleSheet.apply_EditorKeyWord(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
@@ -114,6 +115,7 @@ public class TransformationMenuPart_Group_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition");
     editorCell.setCellId("Constant_x4c5fc_d0");
     Style style = new StyleImpl();
+    Styles_StyleSheet.apply_EditorKeyWord(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
@@ -163,6 +165,7 @@ public class TransformationMenuPart_Group_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "contents");
     editorCell.setCellId("Constant_x4c5fc_f0");
     Style style = new StyleImpl();
+    Styles_StyleSheet.apply_EditorKeyWord(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
