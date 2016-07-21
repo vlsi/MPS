@@ -86,7 +86,7 @@
     <jar destfile="${build.layout}/languages/jetbrains.mps.ide.vcs.modelmetadata.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" />
       <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.vcs.modelmetadata.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-languages-modelmetadata-languageModels">
@@ -96,6 +96,8 @@
       <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/vcs/languages/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-languages-modelmetadata-languageModels" prefix="module/languageModels" />
@@ -126,7 +128,7 @@
     <jar destfile="${build.layout}/languages/jetbrains.mps.vcs.mergehints.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints" />
       <fileset dir="${mps_home}/plugins/vcs/languages/mergehints" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/vcs/languages/mergehints/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/plugins/vcs/languages/mergehints/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.vcs.mergehints.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-languages-mergehints-languageModels">
@@ -136,6 +138,8 @@
       <fileset dir="${mps_home}/plugins/vcs/languages/mergehints/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/vcs/languages/mergehints/jetbrains.mps.vcs.mergehints.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-languages-mergehints-languageModels" prefix="module/languageModels" />

@@ -72,7 +72,7 @@
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.menus.testMetaLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.menus.testMetaLanguage" />
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.testMetaLanguage" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.testMetaLanguage/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.testMetaLanguage/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.menus.testMetaLanguage.jar" />
     </jar>
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.menus.testMetaLanguage-generator.jar" duplicate="preserve">
@@ -88,10 +88,14 @@
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.testMetaLanguage/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.testMetaLanguage/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/testsolutions/testlangs/editor.menus.testMetaLanguage/jetbrains.mps.lang.editor.menus.testMetaLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.menus.testMetaLanguage-generator-template" prefix="module/generator/template" />
@@ -123,7 +127,7 @@
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.menus.testLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.menus.testLanguage" />
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.testLanguage" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.testLanguage/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.testLanguage/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.menus.testLanguage.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.menus.testLanguage-models">
@@ -133,6 +137,8 @@
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.testLanguage/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/testsolutions/testlangs/editor.menus.testLanguage/jetbrains.mps.lang.editor.menus.testLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.menus.testLanguage-models" prefix="module/models" />
@@ -163,7 +169,7 @@
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.menus.testExtendingLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.menus.testExtendingLanguage" />
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.testExtendingLanguage" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.testExtendingLanguage/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.testExtendingLanguage/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.menus.testExtendingLanguage.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.menus.testExtendingLanguage-models">
@@ -173,6 +179,8 @@
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.testExtendingLanguage/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/testsolutions/testlangs/editor.menus.testExtendingLanguage/jetbrains.mps.lang.editor.menus.testExtendingLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.menus.testExtendingLanguage-models" prefix="module/models" />
@@ -203,7 +211,7 @@
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage" />
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.testUnusedExtendingLanguage" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.testUnusedExtendingLanguage/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.testUnusedExtendingLanguage/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.menus.testUnusedExtendingLanguage-models">
@@ -213,6 +221,8 @@
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.testUnusedExtendingLanguage/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/testsolutions/testlangs/editor.menus.testUnusedExtendingLanguage/jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.menus.testUnusedExtendingLanguage-models" prefix="module/models" />
@@ -246,7 +256,7 @@
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage" />
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.contextAssistant.testLanguage" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.contextAssistant.testLanguage/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.contextAssistant.testLanguage/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.menus.contextAssistant.testLanguage-models">
@@ -256,6 +266,8 @@
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.contextAssistant.testLanguage/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/testsolutions/testlangs/editor.menus.contextAssistant.testLanguage/jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.menus.contextAssistant.testLanguage-models" prefix="module/models" />
@@ -286,7 +298,7 @@
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage" />
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.contextAssistant.extension.testLanguage" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.contextAssistant.extension.testLanguage/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.contextAssistant.extension.testLanguage/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.menus.contextAssistant.extension.testLanguage-models">
@@ -296,6 +308,8 @@
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.contextAssistant.extension.testLanguage/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/testsolutions/testlangs/editor.menus.contextAssistant.extension.testLanguage/jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.menus.contextAssistant.extension.testLanguage-models" prefix="module/models" />
@@ -327,7 +341,7 @@
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.menus.extras.testLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.menus.extras.testLanguage" />
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.extras.testLanguage" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.extras.testLanguage/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.extras.testLanguage/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.menus.extras.testLanguage.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.menus.extras.testLanguage-models">
@@ -337,6 +351,8 @@
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.extras.testLanguage/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/testsolutions/testlangs/editor.menus.extras.testLanguage/jetbrains.mps.lang.editor.menus.extras.testLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.menus.extras.testLanguage-models" prefix="module/models" />
@@ -367,7 +383,7 @@
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.menus.substitute.testLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.menus.substitute.testLanguage" />
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.substitute.testLanguage" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.substitute.testLanguage/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.substitute.testLanguage/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.menus.substitute.testLanguage.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.menus.substitute.testLanguage-models">
@@ -377,6 +393,8 @@
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.substitute.testLanguage/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/testsolutions/testlangs/editor.menus.substitute.testLanguage/jetbrains.mps.lang.editor.menus.substitute.testLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.menus.substitute.testLanguage-models" prefix="module/models" />
@@ -407,7 +425,7 @@
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.menus.substitute.testExtendingLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.menus.substitute.testExtendingLanguage" />
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.substitute.extension.testLanguage" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.substitute.extension.testLanguage/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.substitute.extension.testLanguage/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.menus.substitute.testExtendingLanguage.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.menus.substitute.extension.testLanguage-models">
@@ -417,6 +435,8 @@
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.menus.substitute.extension.testLanguage/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/testsolutions/testlangs/editor.menus.substitute.extension.testLanguage/jetbrains.mps.lang.editor.menus.substitute.testExtendingLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.menus.substitute.extension.testLanguage-models" prefix="module/models" />

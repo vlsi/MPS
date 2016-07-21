@@ -70,7 +70,7 @@
     <jar destfile="${build.layout}/solutions/analyzers.test.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/analyzers.test" />
       <fileset dir="${basedir}/testbench/modules/testDataFlow/solutions/analyzers.test" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/modules/testDataFlow/solutions/analyzers.test/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/modules/testDataFlow/solutions/analyzers.test/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/analyzers.test.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDataFlow-solutions-analyzers.test-models">
@@ -80,6 +80,8 @@
       <fileset dir="${basedir}/testbench/modules/testDataFlow/solutions/analyzers.test/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testDataFlow/solutions/analyzers.test/analyzers.test.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDataFlow-solutions-analyzers.test-models" prefix="module/models" />
@@ -111,7 +113,7 @@
     <jar destfile="${build.layout}/languages/testCustomAnalyzer.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testCustomAnalyzer" />
       <fileset dir="${basedir}/testbench/modules/testDataFlow/languages/testCustomAnalyzer" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/modules/testDataFlow/languages/testCustomAnalyzer/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/modules/testDataFlow/languages/testCustomAnalyzer/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/testCustomAnalyzer.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDataFlow-languages-testCustomAnalyzer-models">
@@ -121,6 +123,8 @@
       <fileset dir="${basedir}/testbench/modules/testDataFlow/languages/testCustomAnalyzer/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testDataFlow/languages/testCustomAnalyzer/testCustomAnalyzer.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDataFlow-languages-testCustomAnalyzer-models" prefix="module/models" />
@@ -151,7 +155,7 @@
     <jar destfile="${build.layout}/languages/testExtendingAnalyzer.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testExtendingAnalyzer" />
       <fileset dir="${basedir}/testbench/modules/testDataFlow/languages/testExtendingAnalyzer" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/modules/testDataFlow/languages/testExtendingAnalyzer/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/modules/testDataFlow/languages/testExtendingAnalyzer/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/testExtendingAnalyzer.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDataFlow-languages-testExtendingAnalyzer-languageModels">
@@ -161,6 +165,8 @@
       <fileset dir="${basedir}/testbench/modules/testDataFlow/languages/testExtendingAnalyzer/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testDataFlow/languages/testExtendingAnalyzer/testExtendingAnalyzer.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDataFlow-languages-testExtendingAnalyzer-languageModels" prefix="module/languageModels" />
@@ -191,7 +197,7 @@
     <jar destfile="${build.layout}/languages/jetbrains.mps.testCustomDataFlow.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.testCustomDataFlow" />
       <fileset dir="${basedir}/testbench/modules/testDataFlow/languages/testCustomDataFlow" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/modules/testDataFlow/languages/testCustomDataFlow/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/modules/testDataFlow/languages/testCustomDataFlow/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.testCustomDataFlow.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDataFlow-languages-testCustomDataFlow-models">
@@ -201,6 +207,8 @@
       <fileset dir="${basedir}/testbench/modules/testDataFlow/languages/testCustomDataFlow/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testDataFlow/languages/testCustomDataFlow/jetbrains.mps.testCustomDataFlow.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDataFlow-languages-testCustomDataFlow-models" prefix="module/models" />
@@ -228,7 +236,7 @@
     <jar destfile="${build.layout}/analyzers.test.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/analyzers.test" />
       <fileset dir="${basedir}/testbench/modules/testDataFlow/solutions/analyzers.test" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/modules/testDataFlow/solutions/analyzers.test/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/modules/testDataFlow/solutions/analyzers.test/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/analyzers.test.jar1" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDataFlow-solutions-analyzers.test-models1">
@@ -238,6 +246,8 @@
       <fileset dir="${basedir}/testbench/modules/testDataFlow/solutions/analyzers.test/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testDataFlow/solutions/analyzers.test/analyzers.test.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDataFlow-solutions-analyzers.test-models1" prefix="module/models" />
