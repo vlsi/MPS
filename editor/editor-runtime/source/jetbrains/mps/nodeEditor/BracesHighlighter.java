@@ -15,13 +15,14 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.nodeEditor.braces.BracePair;
 import jetbrains.mps.nodeEditor.braces.BracesFinder;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.Nullable;
 
 import java.awt.Color;
 import java.util.HashSet;
@@ -33,6 +34,7 @@ public class BracesHighlighter {
   private static Style ourMatchedBraceAttributes;
 
   private final Set<EditorCell> myHighlightedCells = new HashSet<>();
+  private final Set<EditorCell> myLeftHighlightedCells = new HashSet<>();
   private final EditorComponent myEditorComponent;
 
   BracesHighlighter(EditorComponent editorComponent) {
@@ -45,8 +47,8 @@ public class BracesHighlighter {
     });
   }
 
-  public void updateBracesSelection(EditorCell newSelection) {
-    Pair<EditorCell, EditorCell> cellsToHighlight = BracesFinder.findCellsToHighlight(newSelection);
+  public void updateBracesSelection(@Nullable EditorCell newSelection) {
+    BracePair cellsToHighlight = newSelection == null ? null : BracesFinder.findBracesToHighlight(newSelection);
     if (cellsToHighlight == null) {
       clearBracesSelection();
       return;
@@ -67,14 +69,20 @@ public class BracesHighlighter {
         cellStyle.set(attribute, highestPriority, null);
       }
 
-      myEditorComponent.leftUnhighlightCell((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell);
       myEditorComponent.repaint(editorCell);
     }
     myHighlightedCells.clear();
+
+    for (EditorCell cell : myLeftHighlightedCells) {
+      myEditorComponent.leftUnhighlightCell((jetbrains.mps.nodeEditor.cells.EditorCell) cell);
+    }
+    myLeftHighlightedCells.clear();
   }
 
-  private void selectBraces(Pair<EditorCell, EditorCell> cellsToHighlight) {
-    if (myHighlightedCells.size() == 2 && myHighlightedCells.contains(cellsToHighlight.o1) && myHighlightedCells.contains(cellsToHighlight.o2)) {
+  private void selectBraces(BracePair bracePair) {
+    if (myHighlightedCells.size() == 2
+        && myHighlightedCells.contains(bracePair.myFirstCell)
+        && myHighlightedCells.contains(bracePair.mySecondCell)) {
       // highlightedCells should not be changed
       // selectBraces() method can be called as a result of EditorCell_Label.makePositionValid()
       // makePositionValid() in turn can be called even if actual caret position was not changed,
@@ -83,12 +91,22 @@ public class BracesHighlighter {
     }
 
     clearBracesSelection();
-    if (cellsToHighlight.o1.getY() != cellsToHighlight.o2.getY()) {
-      ((EditorComponent) cellsToHighlight.o2.getEditorComponent()).leftHighlightCells((jetbrains.mps.nodeEditor.cells.EditorCell) cellsToHighlight.o2,
-          (jetbrains.mps.nodeEditor.cells.EditorCell) cellsToHighlight.o1, BRACES_LEFT_HIGHLIGHT_COLOR);
+
+    if (bracePair.myHighlightInGutter) {
+      if (bracePair.myFirstCell.getY() != bracePair.mySecondCell.getY()) {
+        ((EditorComponent) bracePair.mySecondCell.getEditorComponent()).leftHighlightCells(
+            (jetbrains.mps.nodeEditor.cells.EditorCell) bracePair.mySecondCell,
+            (jetbrains.mps.nodeEditor.cells.EditorCell) bracePair.myFirstCell,
+            BRACES_LEFT_HIGHLIGHT_COLOR);
+        myLeftHighlightedCells.add(bracePair.myFirstCell);
+        myLeftHighlightedCells.add(bracePair.mySecondCell);
+      }
     }
-    highlightCell(cellsToHighlight.o1);
-    highlightCell(cellsToHighlight.o2);
+
+    if (bracePair.myHighlightInEditor) {
+      highlightCell(bracePair.myFirstCell);
+      highlightCell(bracePair.mySecondCell);
+    }
   }
 
   private void highlightCell(EditorCell editorCell) {

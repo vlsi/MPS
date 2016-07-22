@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class BracesFinder {
   @Nullable
-  public static Pair<EditorCell, EditorCell> findCellsToHighlight(@Nullable EditorCell newSelection) {
+  public static BracePair findBracesToHighlight(@Nullable EditorCell newSelection) {
     if (newSelection == null) {
       return null;
     }
@@ -37,7 +37,7 @@ public class BracesFinder {
       return null;
     }
 
-    return getCellsToHighlight(cellToSelect);
+    return findBracesByMatchingLabel(cellToSelect);
   }
 
   @Nullable
@@ -82,7 +82,8 @@ public class BracesFinder {
     return null;
   }
 
-  private static Pair<EditorCell, EditorCell> getCellsToHighlight(@NotNull final EditorCell selectedCell) {
+  @Nullable
+  private static BracePair findBracesByMatchingLabel(@NotNull EditorCell selectedCell) {
     final Pair<EditorCell, String> matchingLabelAndCell = getMatchingLabelAndCell(selectedCell);
     if (matchingLabelAndCell == null) {
       return null;
@@ -92,7 +93,7 @@ public class BracesFinder {
     EditorCell bigCell = CellTraversalUtil.getContainingBigCell(selectedCell);
 
     EditorCell editorCell = CellFinderUtil.findChildByCondition(bigCell, cell -> isMatchingLabelAndCell(matchingLabelAndCell, cell), true);
-    return editorCell != null ? new Pair<>(editorCell, matchingCell) : null;
+    return editorCell != null ? new BracePair(editorCell, matchingCell) : null;
   }
 
   private static boolean isMatchingLabelAndCell(Pair<EditorCell, String> matchingLabelAndCell, EditorCell cell) {

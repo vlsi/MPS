@@ -30,7 +30,7 @@ import static org.junit.Assert.assertEquals;
 
 public class BracesFinderTest extends BaseEditorTest {
   @Test
-  public void findCellsToHighlight_byFirstCell() {
+  public void findBracesToHighlight_byFirstCell() {
     SNode node = newNode();
 
     EditorCell firstCell = newConstantCell(node, "first cell");
@@ -41,11 +41,11 @@ public class BracesFinderTest extends BaseEditorTest {
 
     newCollectionCell(node, firstCell, lastCell);
 
-    assertEquals(new Pair<>(lastCell, firstCell), BracesFinder.findCellsToHighlight(firstCell));
+    assertEquals(new BracePair(lastCell, firstCell), BracesFinder.findBracesToHighlight(firstCell));
   }
 
   @Test
-  public void findCellsToHighlight_byLastCell() {
+  public void findBracesToHighlight_byLastCell() {
     SNode node = newNode();
 
     EditorCell firstCell = newConstantCell(node, "first cell");
@@ -56,7 +56,7 @@ public class BracesFinderTest extends BaseEditorTest {
 
     newCollectionCell(node, firstCell, lastCell);
 
-    assertEquals(new Pair<>(firstCell, lastCell), BracesFinder.findCellsToHighlight(lastCell));
+    assertEquals(new BracePair(firstCell, lastCell), BracesFinder.findBracesToHighlight(lastCell));
   }
 
   private EditorCell_Collection newCollectionCell(SNode node, EditorCell... cells) {
