@@ -15,91 +15,72 @@
  */
 package jetbrains.mps.nodeEditor.braces;
 
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 
 public class BracesFinder {
+  private static final Algorithm[] ALGORITHMS = new Algorithm[] { new MatchingLabelBracesFinder(), new CollectionBracesFinder() };
+
   @Nullable
-  public static BracePair findBracesToHighlight(@Nullable EditorCell newSelection) {
-    if (newSelection == null) {
+  public static BracePair findBracesToHighlight(@NotNull EditorCell anchor) {
+    BracePair bracePair = findUsingAlgorithms(anchor);
+    if (bracePair != null) return bracePair;
+
+    EditorCell alternativeAnchor = getAlternativeAnchor(anchor);
+    if (alternativeAnchor == null) {
       return null;
     }
 
-    EditorCell cellToSelect = getCellToSelect(newSelection);
-    if (cellToSelect == null) {
-      return null;
-    }
-
-    return findBracesByMatchingLabel(cellToSelect);
+    return findUsingAlgorithms(alternativeAnchor);
   }
 
   @Nullable
-  private static EditorCell getCellToSelect(EditorCell newSelection) {
-    if (getMatchingLabelAndCell(newSelection) != null) {
-      return newSelection;
-    }
-
-    EditorCell cellToSelect = null;
-
-    if (newSelection instanceof EditorCell_Label) {
-      EditorCell_Label editorCell = (EditorCell_Label) newSelection;
-      if (editorCell.getCaretPosition() == 0) {
-        EditorCell cell = CellTraversalUtil.getPrevLeaf(editorCell);
-        if (cell instanceof EditorCell_Label) {
-          EditorCell_Label label = (EditorCell_Label) cell;
-          if (label.getWidth() == 0 && editorCell.getLeftInset() == 0) {
-            cellToSelect = label;
-          }
-        }
-      } else if (editorCell.getCaretPosition() == editorCell.getText().length()) {
-        EditorCell cell = CellTraversalUtil.getNextLeaf(editorCell);
-        if (cell instanceof EditorCell_Label) {
-          EditorCell_Label label = (EditorCell_Label) cell;
-          if (label.getWidth() == 0 && editorCell.getRightInset() == 0) {
-            cellToSelect = label;
-          }
-        }
+  private static BracePair findUsingAlgorithms(@NotNull EditorCell cell) {
+    for (Algorithm algorithm : ALGORITHMS) {
+      BracePair bracePair = algorithm.find(cell);
+      if (bracePair != null) {
+        return bracePair;
       }
     }
-    return cellToSelect;
-  }
 
-  private static Pair<EditorCell, String> getMatchingLabelAndCell(EditorCell editorCell) {
-    SNode node = editorCell.getSNode();
-    while (editorCell != null && editorCell.getSNode() == node) {
-      if (editorCell.getStyle().get(StyleAttributes.MATCHING_LABEL) != null) {
-        return new Pair<>(editorCell, editorCell.getStyle().get(StyleAttributes.MATCHING_LABEL));
-      }
-      editorCell = editorCell.getParent();
-    }
     return null;
   }
 
   @Nullable
-  private static BracePair findBracesByMatchingLabel(@NotNull EditorCell selectedCell) {
-    final Pair<EditorCell, String> matchingLabelAndCell = getMatchingLabelAndCell(selectedCell);
-    if (matchingLabelAndCell == null) {
+  private static EditorCell getAlternativeAnchor(@NotNull EditorCell newSelection) {
+    if (!(newSelection instanceof EditorCell_Label)) {
       return null;
     }
 
-    final EditorCell matchingCell = matchingLabelAndCell.o1;
-    EditorCell bigCell = CellTraversalUtil.getContainingBigCell(selectedCell);
+    EditorCell_Label editorCell = (EditorCell_Label) newSelection;
+    if (editorCell.getCaretPosition() == 0) {
+      EditorCell cell = CellTraversalUtil.getPrevLeaf(editorCell);
+      if (cell instanceof EditorCell_Label) {
+        EditorCell_Label label = (EditorCell_Label) cell;
+        if (label.getWidth() == 0 && editorCell.getLeftInset() == 0) {
+          return label;
+        }
+      }
+    }
 
-    EditorCell editorCell = CellFinderUtil.findChildByCondition(bigCell, cell -> isMatchingLabelAndCell(matchingLabelAndCell, cell), true);
-    return editorCell != null ? new BracePair(editorCell, matchingCell) : null;
+    if (editorCell.getCaretPosition() == editorCell.getText().length()) {
+      EditorCell cell = CellTraversalUtil.getNextLeaf(editorCell);
+      if (cell instanceof EditorCell_Label) {
+        EditorCell_Label label = (EditorCell_Label) cell;
+        if (label.getWidth() == 0 && editorCell.getRightInset() == 0) {
+          return label;
+        }
+      }
+    }
+
+    return null;
   }
 
-  private static boolean isMatchingLabelAndCell(Pair<EditorCell, String> matchingLabelAndCell, EditorCell cell) {
-    EditorCell matchingCell = matchingLabelAndCell.o1;
-    return cell != matchingCell
-        && cell.getSNode() == matchingCell.getSNode()
-        && matchingLabelAndCell.o2.equals(cell.getStyle().get(StyleAttributes.MATCHING_LABEL));
+  interface Algorithm {
+    @Nullable
+    BracePair find(@NotNull EditorCell selectedCell);
   }
 }

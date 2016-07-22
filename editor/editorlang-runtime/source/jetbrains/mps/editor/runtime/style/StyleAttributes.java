@@ -195,6 +195,9 @@ public class StyleAttributes {
   public static final StyleAttribute<String> NAVIGATABLE_REFERENCE = new SimpleStyleAttribute<String>("navigatableReference", null, true);
 
   public static final StyleAttribute<CellAlign> HORIZONTAL_ALIGN = new SimpleStyleAttribute<CellAlign>("horizontal-align", CellAlign.LEFT, true);
+
+  public static final StyleAttribute<Boolean> HIGHLIGHT_IN_EDITOR = new SimpleStyleAttribute<>("highlight-in-editor", false, true);
+  public static final StyleAttribute<Boolean> HIGHLIGHT_IN_GUTTER = new SimpleStyleAttribute<>("highlight-in-gutter", false, true);
   public static final StyleAttribute<String> MATCHING_LABEL = new SimpleStyleAttribute<String>("matching-label", null, true);
 
   public static final StyleAttribute<Boolean> INDENT_LAYOUT_INDENT = new SimpleStyleAttribute<Boolean>("indent-layout-indented", false, true);

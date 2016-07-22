@@ -27,10 +27,12 @@ import org.jetbrains.annotations.NotNull;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
 
 public class BracesFinderTest extends BaseEditorTest {
   @Test
-  public void findBracesToHighlight_byFirstCell() {
+  public void findBracesToHighlight_byMatchingLabelAndFirstCell() {
     SNode node = newNode();
 
     EditorCell firstCell = newConstantCell(node, "first cell");
@@ -45,7 +47,7 @@ public class BracesFinderTest extends BaseEditorTest {
   }
 
   @Test
-  public void findBracesToHighlight_byLastCell() {
+  public void findBracesToHighlight_byMatchingLabelAndLastCell() {
     SNode node = newNode();
 
     EditorCell firstCell = newConstantCell(node, "first cell");
@@ -57,6 +59,48 @@ public class BracesFinderTest extends BaseEditorTest {
     newCollectionCell(node, firstCell, lastCell);
 
     assertEquals(new BracePair(firstCell, lastCell), BracesFinder.findBracesToHighlight(lastCell));
+  }
+
+  @Test
+  public void findBracesToHighlight_byCollectionAndFirstCell() {
+    SNode node = newNode();
+
+    EditorCell firstCell = newConstantCell(node, "first cell");
+    EditorCell lastCell = newConstantCell(node, "last cell");
+
+    EditorCell collection = newCollectionCell(node, firstCell, lastCell);
+    collection.getStyle().set(StyleAttributes.HIGHLIGHT_IN_GUTTER, true);
+
+    assertEquals(new BracePair(firstCell, lastCell, false, true), BracesFinder.findBracesToHighlight(firstCell));
+  }
+
+  @Test
+  public void findBracesToHighlight_byCollectionAndLastCell() {
+    SNode node = newNode();
+
+    EditorCell firstCell = newConstantCell(node, "first cell");
+    EditorCell lastCell = newConstantCell(node, "last cell");
+
+    EditorCell collection = newCollectionCell(node, firstCell, lastCell);
+    collection.getStyle().set(StyleAttributes.HIGHLIGHT_IN_GUTTER, true);
+
+    assertEquals(new BracePair(firstCell, lastCell, false, true), BracesFinder.findBracesToHighlight(lastCell));
+  }
+
+  @Test
+  public void findBracesToHighlight_byCollectionAndNestedLastCell() {
+    SNode node = newNode();
+
+    EditorCell firstCell = newConstantCell(node, "first cell");
+    EditorCell lastCell = newConstantCell(node, "last cell");
+
+    EditorCell collection = newCollectionCell(node, firstCell, newConstantCell(node, "irrelevant cell"), newCollectionCell(node, lastCell));
+    collection.getStyle().set(StyleAttributes.HIGHLIGHT_IN_GUTTER, true);
+
+    BracePair bracesToHighlight = BracesFinder.findBracesToHighlight(lastCell);
+    assertNotNull(bracesToHighlight);
+    assertSame(firstCell, bracesToHighlight.myFirstCell);
+    // The second cell may be the last leaf or the collection's (direct) last child - no idea yet which is better or when it matters.
   }
 
   private EditorCell_Collection newCollectionCell(SNode node, EditorCell... cells) {
