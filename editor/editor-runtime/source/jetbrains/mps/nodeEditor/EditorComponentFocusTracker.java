@@ -27,8 +27,8 @@ import java.awt.event.FocusListener;
  * delayed focus event dispatching in AWT/IDEA. This component used to
  * store "request focus" events in order to already use modified component
  * focus state in other places like:
- * - ({@link Memento}
- * - {@link com.intellij.openapi.command.impl.UndoRedo} restore(EditorAndState) method
+ * - {@link jetbrains.mps.ide.editor.BaseNodeEditor#loadState(jetbrains.mps.openapi.editor.EditorState)}
+ * - {@link com.intellij.openapi.command.impl.UndoRedo#restore(com.intellij.openapi.command.impl.EditorAndState)}
  * <p>
  * Created by shatalin on 20/07/16.
  */
@@ -67,13 +67,11 @@ public class EditorComponentFocusTracker {
     myEditorComponent.addFocusListener(myFocusListener = new FocusListener() {
       @Override
       public void focusGained(FocusEvent e) {
-        System.out.println("+ focus: " + myEditorComponent);
         myEffectiveFocusState = true;
       }
 
       @Override
       public void focusLost(FocusEvent e) {
-        System.out.println("- focus: " + myEditorComponent);
         myEffectiveFocusState = false;
       }
     });
