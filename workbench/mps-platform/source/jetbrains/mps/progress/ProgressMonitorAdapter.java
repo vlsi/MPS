@@ -17,15 +17,15 @@ package jetbrains.mps.progress;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Evgeny Gryaznov, 9/30/11
  */
 public class ProgressMonitorAdapter extends ProgressMonitorBase {
-
   private final ProgressIndicator myIndicator;
 
-  public ProgressMonitorAdapter(ProgressIndicator indicator) {
+  public ProgressMonitorAdapter(@NotNull ProgressIndicator indicator) {
     myIndicator = indicator;
   }
 
@@ -64,6 +64,14 @@ public class ProgressMonitorAdapter extends ProgressMonitorBase {
   @Override
   protected void doneInternal(String text) {
 
+  }
+
+  public void pushState() {
+    myIndicator.pushState();
+  }
+
+  public void popState() {
+    myIndicator.popState();
   }
 
   @Override
