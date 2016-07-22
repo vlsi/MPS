@@ -3623,8 +3623,9 @@
               <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
             </node>
             <node concept="liA8E" id="WEmn41Aaal" role="2OqNvi">
-              <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+              <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeLater" />
               <node concept="1bVj0M" id="5fy1Xi0jrst" role="37wK5m">
+                <property role="3yWfEV" value="true" />
                 <node concept="3clFbS" id="5fy1Xi0jrsu" role="1bW5cS">
                   <node concept="3clFbF" id="7rK8qWGEfsR" role="3cqZAp">
                     <node concept="2OqwBi" id="5SsFeroaauR" role="3clFbG">
@@ -3641,6 +3642,7 @@
                       <node concept="liA8E" id="5SsFeroaauW" role="2OqNvi">
                         <ref role="37wK5l" to="o8ag:5SsFeroaadE" resolve="autostart" />
                         <node concept="1bVj0M" id="7rK8qWGFjHC" role="37wK5m">
+                          <property role="3yWfEV" value="true" />
                           <node concept="3clFbS" id="7rK8qWGFjHD" role="1bW5cS">
                             <node concept="3clFbF" id="WEmn41E_xg" role="3cqZAp">
                               <node concept="2OqwBi" id="WEmn41E_xh" role="3clFbG">
@@ -3649,7 +3651,7 @@
                                   <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
                                 </node>
                                 <node concept="liA8E" id="WEmn41E_xj" role="2OqNvi">
-                                  <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+                                  <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeLater" />
                                   <node concept="1bVj0M" id="7rK8qWGFsB7" role="37wK5m">
                                     <node concept="3clFbS" id="7rK8qWGFsB8" role="1bW5cS">
                                       <node concept="3clFbF" id="7rK8qWGFsFC" role="3cqZAp">
@@ -3658,6 +3660,10 @@
                                         </node>
                                       </node>
                                     </node>
+                                  </node>
+                                  <node concept="2YIFZM" id="4rKakk1sR21" role="37wK5m">
+                                    <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
+                                    <ref role="37wK5l" to="bd8o:~ModalityState.current():com.intellij.openapi.application.ModalityState" resolve="current" />
                                   </node>
                                 </node>
                               </node>
@@ -3668,6 +3674,10 @@
                     </node>
                   </node>
                 </node>
+              </node>
+              <node concept="2YIFZM" id="4rKakk1sQNo" role="37wK5m">
+                <ref role="37wK5l" to="bd8o:~ModalityState.current():com.intellij.openapi.application.ModalityState" resolve="current" />
+                <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
               </node>
             </node>
           </node>
@@ -6291,7 +6301,7 @@
                             <ref role="3cqZAo" node="XAmMejyo1n" resolve="mySelectedOptionsSerialized" />
                           </node>
                           <node concept="3Tsc0h" id="XAmMekrf0w" role="2OqNvi">
-                            <ref role="3TtcxE" to="53vh:37Il31hWzd6" />
+                            <ref role="3TtcxE" to="53vh:37Il31hWzd6" resolve="options" />
                           </node>
                         </node>
                         <node concept="3$u5V9" id="XAmMekrf0x" role="2OqNvi">
@@ -6366,7 +6376,7 @@
                       <ref role="2Gs0qQ" node="42LwYUtlmc5" resolve="part" />
                     </node>
                     <node concept="3TrEf2" id="42LwYUtlFLb" role="2OqNvi">
-                      <ref role="3Tt5mk" to="53vh:39r_V8zIueI" />
+                      <ref role="3Tt5mk" to="53vh:39r_V8zIueI" resolve="finalState" />
                     </node>
                   </node>
                   <node concept="3EllGN" id="42LwYUtlzpM" role="37vLTJ">
@@ -6375,7 +6385,7 @@
                         <ref role="2Gs0qQ" node="42LwYUtlmc5" resolve="part" />
                       </node>
                       <node concept="3TrEf2" id="42LwYUtlBf6" role="2OqNvi">
-                        <ref role="3Tt5mk" to="53vh:39r_V8zIueG" />
+                        <ref role="3Tt5mk" to="53vh:39r_V8zIueG" resolve="initialState" />
                       </node>
                     </node>
                     <node concept="37vLTw" id="42LwYUtlvuv" role="3ElQJh">
@@ -6522,7 +6532,7 @@
                     <ref role="3cqZAo" node="XAmMejxEAd" resolve="myParts" />
                   </node>
                   <node concept="13MTOL" id="XAmMekjamK" role="2OqNvi">
-                    <ref role="13MTZf" to="53vh:39r_V8zIueG" />
+                    <ref role="13MTZf" to="53vh:39r_V8zIueG" resolve="initialState" />
                   </node>
                 </node>
                 <node concept="ANE8D" id="XAmMekjamL" role="2OqNvi" />
@@ -7122,11 +7132,11 @@
                       <ref role="3cqZAo" node="4yRsQKntjQ0" resolve="log" />
                     </node>
                     <node concept="3Tsc0h" id="XAmMejx8Gd" role="2OqNvi">
-                      <ref role="3TtcxE" to="53vh:1JTUOcBqQQg" />
+                      <ref role="3TtcxE" to="53vh:1JTUOcBqQQg" resolve="executeAfter" />
                     </node>
                   </node>
                   <node concept="13MTOL" id="XAmMejx8Ge" role="2OqNvi">
-                    <ref role="13MTZf" to="53vh:1JTUOcBqQQu" />
+                    <ref role="13MTZf" to="53vh:1JTUOcBqQQu" resolve="refactoring" />
                   </node>
                 </node>
                 <node concept="3$u5V9" id="XAmMejx8Gf" role="2OqNvi">
@@ -7185,7 +7195,7 @@
                                   <ref role="3cqZAo" node="4yRsQKntjQ0" resolve="log" />
                                 </node>
                                 <node concept="3Tsc0h" id="XAmMejyL5H" role="2OqNvi">
-                                  <ref role="3TtcxE" to="53vh:1JTUOcBqQQi" />
+                                  <ref role="3TtcxE" to="53vh:1JTUOcBqQQi" resolve="part" />
                                 </node>
                               </node>
                               <node concept="3zZkjj" id="XAmMejyL5I" role="2OqNvi">
@@ -7234,7 +7244,7 @@
                                     <ref role="3cqZAo" node="4yRsQKntjQ0" resolve="log" />
                                   </node>
                                   <node concept="3TrEf2" id="XAmMej$8NH" role="2OqNvi">
-                                    <ref role="3Tt5mk" to="53vh:37Il31hWzcW" />
+                                    <ref role="3Tt5mk" to="53vh:37Il31hWzcW" resolve="options" />
                                   </node>
                                 </node>
                                 <node concept="37vLTw" id="XAmMej$8NI" role="37wK5m">

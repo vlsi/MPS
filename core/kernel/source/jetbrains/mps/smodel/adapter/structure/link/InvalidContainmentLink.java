@@ -79,8 +79,9 @@ public final class InvalidContainmentLink extends SContainmentLinkAdapter {
     return null;
   }
 
+  @Nullable
   @Override
-  protected SNode findInConcept(SNode cnode) {
+  public SNode getDeclarationNode() {
     return null;
   }
 

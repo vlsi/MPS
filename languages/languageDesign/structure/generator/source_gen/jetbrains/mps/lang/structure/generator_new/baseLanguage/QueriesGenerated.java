@@ -228,6 +228,15 @@ public class QueriesGenerated {
     }
     return Sequence.fromIterable(conceptSource).first();
   }
+  public static Object referenceMacro_GetReferent_5679524506773236834(final ReferenceMacroContext _context) {
+    return ((SNode) _context.getVariable("var:prop"));
+  }
+  public static Object referenceMacro_GetReferent_3924233675613893706(final ReferenceMacroContext _context) {
+    return ((SNode) _context.getVariable("var:link"));
+  }
+  public static Object referenceMacro_GetReferent_3924233675613975931(final ReferenceMacroContext _context) {
+    return ((SNode) _context.getVariable("var:link"));
+  }
   public static Object referenceMacro_GetReferent_1444496069594597883(final ReferenceMacroContext _context) {
     return _context.getNode();
   }
@@ -313,6 +322,15 @@ public class QueriesGenerated {
   }
   public static boolean ifMacro_Condition_540685334803408276(final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"));
+  }
+  public static boolean ifMacro_Condition_3924233675613608977(final IfMacroContext _context) {
+    return (((SNode) _context.getVariable("var:prop")) != null);
+  }
+  public static boolean ifMacro_Condition_3924233675613893781(final IfMacroContext _context) {
+    return (((SNode) _context.getVariable("var:link")) != null);
+  }
+  public static boolean ifMacro_Condition_3924233675613976013(final IfMacroContext _context) {
+    return (((SNode) _context.getVariable("var:link")) != null);
   }
   public static boolean ifMacro_Condition_1444496069593705228(final IfMacroContext _context) {
     return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x2237c3bc85b3755cL, "helpURL")));
@@ -547,6 +565,69 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_540685334803408110(final TemplateQueryContext _context) {
     return (List<SNode>) AbstractConceptDeclaration__BehaviorDescriptor.getImmediateSuperconcepts_idhMuxyK2.invoke(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")));
   }
+  public static Object insertMacro_varValue_3924233675613613493(final TemplateQueryContext _context) {
+    SNode ancestor = SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false);
+    if ((ancestor == null)) {
+      return null;
+    }
+
+    // tmp hack to support concept duplication with shift-f5 in MPS 3.5 
+    // after 3.5, it's better [MM] to remove getDeclarationNode from concept features,  
+    // or, as alternative, we can support it by introducing source node field in concept features 
+    if (!(SNodeOperations.isInstanceOf(ancestor, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")))) {
+      return null;
+    }
+    if (SLinkOperations.getTarget(ancestor, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x45b8a887cfd27b2cL, "sourceNode")) != null && SLinkOperations.getTarget(ancestor, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x45b8a887cfd27b2cL, "sourceNode")) != ancestor) {
+      return null;
+    }
+    return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(ancestor, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_x583g4_a0a0a0a0a0i0re(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+      }
+    });
+  }
+  public static Object insertMacro_varValue_3924233675613893713(final TemplateQueryContext _context) {
+    SNode ancestor = SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false);
+    if ((ancestor == null)) {
+      return null;
+    }
+
+    // tmp hack to support concept duplication with shift-f5 in MPS 3.5 
+    // after 3.5, it's better [MM] to remove getDeclarationNode from concept features,  
+    // or, as alternative, we can support it by introducing source node field in concept features 
+    if (!(SNodeOperations.isInstanceOf(ancestor, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")))) {
+      return null;
+    }
+    if (SLinkOperations.getTarget(ancestor, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x45b8a887cfd27b2cL, "sourceNode")) != null && SLinkOperations.getTarget(ancestor, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x45b8a887cfd27b2cL, "sourceNode")) != ancestor) {
+      return null;
+    }
+    return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(ancestor, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference") && eq_x583g4_a0a0a0a0a0a8a221(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")));
+      }
+    });
+  }
+  public static Object insertMacro_varValue_3924233675613975938(final TemplateQueryContext _context) {
+    SNode ancestor = SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false);
+    if ((ancestor == null)) {
+      return null;
+    }
+
+    // tmp hack to support concept duplication with shift-f5 in MPS 3.5 
+    // after 3.5, it's better [MM] to remove getDeclarationNode from concept features,  
+    // or, as alternative, we can support it by introducing source node field in concept features 
+    if (!(SNodeOperations.isInstanceOf(ancestor, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")))) {
+      return null;
+    }
+    if (SLinkOperations.getTarget(ancestor, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x45b8a887cfd27b2cL, "sourceNode")) != null && SLinkOperations.getTarget(ancestor, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x45b8a887cfd27b2cL, "sourceNode")) != ancestor) {
+      return null;
+    }
+    return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(ancestor, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference") && eq_x583g4_a0a0a0a0a0a8a321(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")));
+      }
+    });
+  }
   public static Object insertMacro_varValue_1444496069593706122(final TemplateQueryContext _context) {
     return ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -562,5 +643,14 @@ public class QueriesGenerated {
   }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
+  }
+  private static boolean eq_x583g4_a0a0a0a0a0i0re(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_x583g4_a0a0a0a0a0a8a221(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_x583g4_a0a0a0a0a0a8a321(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

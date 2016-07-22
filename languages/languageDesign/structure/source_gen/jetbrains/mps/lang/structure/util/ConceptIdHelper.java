@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SNodeId;
 
 /**
  * Generates unique ids. Ids differ even from id of an optional parameter.
@@ -56,12 +56,27 @@ public class ConceptIdHelper {
     return result.value;
   }
 
+  @Nullable
+  public static String getNodeIdString(SNode n) {
+    jetbrains.mps.smodel.SNode sn = as_huw3go_a0a0a6(n, jetbrains.mps.smodel.SNode.class);
+    if (sn == null) {
+      return null;
+    }
+
+    SNodeId.Regular ni = as_huw3go_a0a3a6(sn.getNodeId(), SNodeId.Regular.class);
+    if (ni == null) {
+      return null;
+    }
+
+    return ni.getId() + "";
+  }
+
   private static long getDefaultIdFromNode(SNode c) {
     long result = randomLong();
     if (c != null) {
-      SNodeId nid = c.getNodeId();
-      if (nid instanceof jetbrains.mps.smodel.SNodeId.Regular) {
-        result = ((jetbrains.mps.smodel.SNodeId.Regular) nid).getId();
+      org.jetbrains.mps.openapi.model.SNodeId nid = c.getNodeId();
+      if (nid instanceof SNodeId.Regular) {
+        result = ((SNodeId.Regular) nid).getId();
       }
     }
     return result;
@@ -78,5 +93,11 @@ public class ConceptIdHelper {
   }
   private static boolean eq_huw3go_a0a0a0a0a0b0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
+  }
+  private static <T> T as_huw3go_a0a0a6(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
+  private static <T> T as_huw3go_a0a3a6(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -15,6 +15,7 @@ import java.awt.Dimension;
 import jetbrains.mps.ide.migration.wizard.MigrationWizardStep;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import com.intellij.openapi.application.ModalityState;
 
 public class MigrationAssistantWizard extends AbstractWizardEx {
   public MigrationAssistantWizard(Project project, MigrationManager manager, MigrationErrorContainer errorContainer) {
@@ -45,11 +46,11 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
               public void run() {
                 updateStep();
               }
-            });
+            }, ModalityState.current());
           }
         });
       }
-    });
+    }, ModalityState.current());
   }
 
   @Override

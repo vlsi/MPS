@@ -19,6 +19,7 @@ package jetbrains.mps.smodel.runtime;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public interface PropertyDescriptor {
   @Deprecated
@@ -28,4 +29,6 @@ public interface PropertyDescriptor {
   SProperty getProperty();
 
   String getName();
+
+  SNodeReference getSourceNode();
 }

@@ -73,8 +73,9 @@ public final class InvalidReferenceLink extends SReferenceLinkAdapter {
     return null;
   }
 
+  @Nullable
   @Override
-  protected SNode findInConcept(SNode cnode) {
+  public SNode getDeclarationNode() {
     return null;
   }
 
