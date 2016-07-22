@@ -10,13 +10,15 @@ import jetbrains.mps.lang.dataFlow.MPSProgramBuilder;
 import jetbrains.mps.lang.dataFlow.framework.instructions.InstructionBuilder;
 import jetbrains.mps.lang.dataFlow.framework.ProgramBuilderContextImpl;
 import java.util.Collections;
-import jetbrains.mps.lang.dataFlow.DataFlowBuilderModes;
+import jetbrains.mps.lang.dataFlow.framework.ConceptDataFlowModeId;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Arrays;
+import jetbrains.mps.lang.dataFlow.framework.IDataFlowModeId;
 
 @MPSLaunch
 public class TestProgramWithModeSpecified_Test extends BaseTransformationTest {
@@ -24,6 +26,11 @@ public class TestProgramWithModeSpecified_Test extends BaseTransformationTest {
   public void test_testNonEmptyInstructionsWithModeSpecified() throws Throwable {
     initTest("${mps_home}", "r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)", false);
     runTest("analyzers.test.tests.TestProgramWithModeSpecified_Test$TestBody", "test_testNonEmptyInstructionsWithModeSpecified", true);
+  }
+  @Test
+  public void test_testNonEmptyInstructionsWithMoreSpecificModeSpecified() throws Throwable {
+    initTest("${mps_home}", "r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)", false);
+    runTest("analyzers.test.tests.TestProgramWithModeSpecified_Test$TestBody", "test_testNonEmptyInstructionsWithMoreSpecificModeSpecified", true);
   }
   @Test
   public void test_testEmptyInstructionsWithModeSpecified() throws Throwable {
@@ -35,19 +42,25 @@ public class TestProgramWithModeSpecified_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_testNonEmptyInstructionsWithModeSpecified() throws Exception {
       addNodeById("2955426575105884967");
-      MPSProgramBuilder builder = new MPSProgramBuilder(null, new InstructionBuilder(), new ProgramBuilderContextImpl(Collections.singletonList(DataFlowBuilderModes.INTRA_PROCEDURAL)));
+      MPSProgramBuilder builder = new MPSProgramBuilder(null, new InstructionBuilder(), new ProgramBuilderContextImpl(Collections.singletonList(new ConceptDataFlowModeId("jetbrains.mps.lang.dataFlow.structure.IntraProcedural_BuilderMode"))));
       Program program = builder.buildProgram(SNodeOperations.cast(getNodeById("2955426575105884969"), MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, "testCustomAnalyzer.structure.Root")));
       Assert.assertTrue(program.getInstructions().size() == ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(getNodeById("2955426575105884969"), MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, "testCustomAnalyzer.structure.Root")), MetaAdapterFactory.getContainmentLink(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, 0x73a316f7f5468ed6L, "child"))).count() + 1);
     }
+    public void test_testNonEmptyInstructionsWithMoreSpecificModeSpecified() throws Exception {
+      addNodeById("2955426575105884967");
+      MPSProgramBuilder builder = new MPSProgramBuilder(null, new InstructionBuilder(), new ProgramBuilderContextImpl(Arrays.asList(new ConceptDataFlowModeId("jetbrains.mps.testCustomDataFlow.structure.IntraProceduralSpecific_BuilderMode"), new ConceptDataFlowModeId("jetbrains.mps.lang.dataFlow.structure.IntraProcedural_BuilderMode"))));
+      Program program = builder.buildProgram(SNodeOperations.cast(getNodeById("2955426575105884969"), MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, "testCustomAnalyzer.structure.Root")));
+      Assert.assertTrue(program.getInstructions().size() == ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(getNodeById("2955426575105884969"), MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, "testCustomAnalyzer.structure.Root")), MetaAdapterFactory.getContainmentLink(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, 0x73a316f7f5468ed6L, "child"))).count() * 2 + 1);
+    }
     public void test_testEmptyInstructionsWithModeSpecified() throws Exception {
       addNodeById("2955426575105884967");
-      MPSProgramBuilder builder = new MPSProgramBuilder(null, new InstructionBuilder(), new ProgramBuilderContextImpl(Collections.<String>emptyList()));
+      MPSProgramBuilder builder = new MPSProgramBuilder(null, new InstructionBuilder(), new ProgramBuilderContextImpl(Collections.<IDataFlowModeId>emptyList()));
       Program program = builder.buildProgram(SNodeOperations.cast(getNodeById("2955426575105884969"), MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, "testCustomAnalyzer.structure.Root")));
-      Assert.assertTrue(program.getInstructions().size() == 1 && eq_3f7mjy_a0a0d0b3(program.getEnd(), program.getInstructions().get(0)));
+      Assert.assertTrue(program.getInstructions().size() == 1 && eq_3f7mjy_a0a0d0c4(program.getEnd(), program.getInstructions().get(0)));
     }
 
 
-    private static boolean eq_3f7mjy_a0a0d0b3(Object a, Object b) {
+    private static boolean eq_3f7mjy_a0a0d0c4(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }

@@ -23,14 +23,14 @@ import java.util.Collection;
  * @author simon
  */
 public class ProgramBuilderContextImpl implements ProgramBuilderContext{
-  private Collection<String> myBuilderModes;
+  private Collection<IDataFlowModeId> myBuilderModes;
 
-  public ProgramBuilderContextImpl(@NotNull Collection<String> builderModes) {
+  public ProgramBuilderContextImpl(@NotNull Collection<IDataFlowModeId> builderModes) {
     myBuilderModes = builderModes;
   }
 
   @Override
-  public Collection<String> getBuilderModes() {
+  public Collection<IDataFlowModeId> getBuilderModes() {
     return myBuilderModes;
   }
 }

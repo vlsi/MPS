@@ -85,7 +85,7 @@
     <jar destfile="${build.layout}/mps-trove/languages/jetbrains.mps.baseLanguage.collections.trove.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections.trove" />
       <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.collections.trove.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-trove/languages/jetbrains.mps.baseLanguage.collections.trove-generator.jar" duplicate="preserve">
@@ -104,10 +104,14 @@
       <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/languages/baseLanguage/collections/languages/trove/jetbrains.mps.baseLanguage.collections.trove.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-collections-languages-trove-generator-template" prefix="module/generator/template" />
@@ -132,7 +136,7 @@
     <jar destfile="${build.layout}/mps-trove/languages/collections_trove.runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/collections_trove.runtime" />
       <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/collections_trove.runtime.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-collections-languages-trove-runtime-jetbrains">
@@ -142,6 +146,8 @@
       <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/collections_trove.runtime.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-collections-languages-trove-runtime-jetbrains" prefix="module/jetbrains" />

@@ -16,7 +16,6 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.dataFlow.analyzers.behavior.Analyzer__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
-import jetbrains.mps.lang.dataFlow.DataFlowBuilderModes;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
@@ -26,6 +25,9 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.behavior.Type__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 @Generated
 public class QueriesGenerated {
@@ -122,8 +124,8 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_3727642986273964949(final PropertyMacroContext _context) {
     return _context.getOriginalCopiedInputNode(_context.getNode()).getReference().toString();
   }
-  public static Object propertyMacro_GetPropertyValue_3364696741417660514(final PropertyMacroContext _context) {
-    return DataFlowBuilderModes.INTRA_PROCEDURAL;
+  public static Object propertyMacro_GetPropertyValue_8324812022359558848(final PropertyMacroContext _context) {
+    return (String) INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(_context.getNode());
   }
   public static Object referenceMacro_GetReferent_3727642986272351128(final ReferenceMacroContext _context) {
     return "o";
@@ -260,7 +262,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_3364696741418295372(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, 0x27b1f33dd958ca0L, "nodeToCheck"));
   }
-  public static SNode sourceNodeQuery_3364696741418522961(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4114958853125551768(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, 0x2eb1cddc01267d7aL, "mode"));
   }
   public static SNode sourceNodeQuery_7985661997283753112(final SourceSubstituteMacroNodeContext _context) {
@@ -322,7 +324,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_3993089038373748590(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, 0x376a4d52f8c2e303L, "constructorParameters"));
   }
-  public static Iterable<SNode> sourceNodesQuery_5034669639904441490(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_5822764508149343605(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, 0x6e8db6877fd04efbL, "modes"));
   }
   public static Iterable<SNode> sourceNodesQuery_8656002014371078217(final SourceSubstituteMacroNodesContext _context) {
@@ -352,7 +354,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_3364696741418295380(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, 0x376a4d52f8d10dc6L, "parameters"));
   }
-  public static Iterable<SNode> sourceNodesQuery_735072980478792132(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_5822764508149270422(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, 0x6e8db6877fd04efbL, "modes"));
   }
   public static Iterable<SNode> sourceNodesQuery_7962250936070467985(final SourceSubstituteMacroNodesContext _context) {
@@ -364,10 +366,27 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_5034669639901741787(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, 0x376a4d52f8d10dc6L, "parameters"));
   }
+  public static Iterable<SNode> sourceNodesQuery_4114958853125548282(final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SConceptOperations.getAllSuperConcepts(SNodeOperations.getConcept(_context.getNode()), true)).where(new IWhereFilter<SAbstractConcept>() {
+      public boolean accept(SAbstractConcept it) {
+        return neq_x583g4_a0a0a0a0a0a0a0de_0(it, MetaAdapterFactory.getInterfaceConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x6e8db6877fc9fed4L, "jetbrains.mps.lang.dataFlow.structure.IBuilderMode")) && neq_x583g4_a0a0a0a0a0a0a0de(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
+      }
+    }).select(new ISelector<SAbstractConcept, SNode>() {
+      public SNode select(SAbstractConcept it) {
+        return SNodeOperations.asNode(it);
+      }
+    });
+  }
   private static boolean neq_x583g4_a0a0a0h(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean eq_x583g4_a0a0a0i(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean neq_x583g4_a0a0a0a0a0a0a0de(Object a, Object b) {
+    return !(((a != null ? a.equals(b) : a == b)));
+  }
+  private static boolean neq_x583g4_a0a0a0a0a0a0a0de_0(Object a, Object b) {
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

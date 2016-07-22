@@ -4017,6 +4017,37 @@
           </node>
         </node>
       </node>
+      <node concept="1E1JtD" id="68XlVg41ke4" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="jetbrains.mps.testCustomDataFlow" />
+        <property role="3LESm3" value="f1af2340-2212-47dd-a65b-2d6ee9427e3e" />
+        <property role="2GAjPV" value="false" />
+        <node concept="55IIr" id="68XlVg41klO" role="3LF7KH">
+          <node concept="2Ry0Ak" id="68XlVg41klP" role="iGT6I">
+            <property role="2Ry0Am" value="testbench" />
+            <node concept="2Ry0Ak" id="68XlVg41klQ" role="2Ry0An">
+              <property role="2Ry0Am" value="modules" />
+              <node concept="2Ry0Ak" id="68XlVg41klR" role="2Ry0An">
+                <property role="2Ry0Am" value="testDataFlow" />
+                <node concept="2Ry0Ak" id="68XlVg41klS" role="2Ry0An">
+                  <property role="2Ry0Am" value="languages" />
+                  <node concept="2Ry0Ak" id="68XlVg41klT" role="2Ry0An">
+                    <property role="2Ry0Am" value="testCustomDataFlow" />
+                    <node concept="2Ry0Ak" id="68XlVg41kmG" role="2Ry0An">
+                      <property role="2Ry0Am" value="jetbrains.mps.testCustomDataFlow.mpl" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="68XlVg41kn3" role="3bR37C">
+          <node concept="1Busua" id="68XlVg41kn4" role="1SiIV1">
+            <ref role="1Busuk" to="ffeo:7Kfy9QB6L4B" resolve="jetbrains.mps.lang.dataFlow" />
+          </node>
+        </node>
+      </node>
       <node concept="1E1JtD" id="7S0pHCuhdp" role="2G$12L">
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="testCustomAnalyzer" />
@@ -4052,6 +4083,12 @@
           <node concept="3bR9La" id="2$3McZ0XFDA" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" to="ffeo:7Kfy9QB6L4B" resolve="jetbrains.mps.lang.dataFlow" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="68XlVg41knE" role="3bR37C">
+          <node concept="3bR9La" id="68XlVg41knF" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="68XlVg41ke4" resolve="jetbrains.mps.testCustomDataFlow" />
           </node>
         </node>
       </node>
@@ -4107,6 +4144,9 @@
         </node>
         <node concept="L2wRC" id="7S0pHCuhHj" role="39821P">
           <ref role="L2wRA" node="7S0pHCuhb7" resolve="testExtendingAnalyzer" />
+        </node>
+        <node concept="L2wRC" id="68XlVg41kol" role="39821P">
+          <ref role="L2wRA" node="68XlVg41ke4" resolve="jetbrains.mps.testCustomDataFlow" />
         </node>
       </node>
       <node concept="L2wRC" id="7S0pHCuh9a" role="39821P">

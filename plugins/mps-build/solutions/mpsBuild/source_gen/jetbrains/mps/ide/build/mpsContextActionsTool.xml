@@ -74,7 +74,7 @@
     <jar destfile="${build.layout}/editor.contextActionsTool/languages/mps-context-actions-tool/jetbrains.mps.editor.contextActionsTool.pluginSolution.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.editor.contextActionsTool.pluginSolution" />
       <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/pluginSolution" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/pluginSolution/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/pluginSolution/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.editor.contextActionsTool.pluginSolution.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-editor.contextActionsTool-modules-pluginSolution-models">
@@ -84,6 +84,8 @@
       <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/pluginSolution/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/editor.contextActionsTool/modules/pluginSolution/jetbrains.mps.editor.contextActionsTool.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-editor.contextActionsTool-modules-pluginSolution-models" prefix="module/models" />
@@ -114,7 +116,7 @@
     <jar destfile="${build.layout}/editor.contextActionsTool/languages/mps-context-actions-tool/jetbrains.mps.editor.contextActionsTool.lang.menus.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.editor.contextActionsTool.lang.menus" />
       <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.editor.contextActionsTool.lang.menus.jar" />
     </jar>
     <jar destfile="${build.layout}/editor.contextActionsTool/languages/mps-context-actions-tool/jetbrains.mps.editor.contextActionsTool.lang.menus-generator.jar" duplicate="preserve">
@@ -130,10 +132,14 @@
       <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/jetbrains.mps.editor.contextActionsTool.lang.menus.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-editor.contextActionsTool-modules-lang.menus-generator-template" prefix="module/generator/template" />
@@ -152,7 +158,7 @@
     <jar destfile="${build.layout}/editor.contextActionsTool/languages/mps-context-actions-tool/jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.editor.contextActionsTool.lang.menus.runtime" />
       <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/runtime" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/runtime/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/runtime/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-editor.contextActionsTool-modules-lang.menus-runtime-models">
@@ -162,6 +168,8 @@
       <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/runtime/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/runtime/jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-editor.contextActionsTool-modules-lang.menus-runtime-models" prefix="module/models" />
@@ -196,7 +204,7 @@
     <jar destfile="${build.layout}/editor.contextActionsTool/modules/jetbrains.mps.editor.contextActionsTool.pluginSolution.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.editor.contextActionsTool.pluginSolution" />
       <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/pluginSolution" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/pluginSolution/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/pluginSolution/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.editor.contextActionsTool.pluginSolution.jar1" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-editor.contextActionsTool-modules-pluginSolution-models1">
@@ -206,6 +214,8 @@
       <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/pluginSolution/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/editor.contextActionsTool/modules/pluginSolution/jetbrains.mps.editor.contextActionsTool.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-editor.contextActionsTool-modules-pluginSolution-models1" prefix="module/models" />
@@ -236,7 +246,7 @@
     <jar destfile="${build.layout}/editor.contextActionsTool/modules/jetbrains.mps.editor.contextActionsTool.lang.menus.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.editor.contextActionsTool.lang.menus" />
       <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.editor.contextActionsTool.lang.menus.jar1" />
     </jar>
     <jar destfile="${build.layout}/editor.contextActionsTool/modules/jetbrains.mps.editor.contextActionsTool.lang.menus-generator.jar" duplicate="preserve">
@@ -252,10 +262,14 @@
       <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/jetbrains.mps.editor.contextActionsTool.lang.menus.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-editor.contextActionsTool-modules-lang.menus-generator-template1" prefix="module/generator/template" />
@@ -274,7 +288,7 @@
     <jar destfile="${build.layout}/editor.contextActionsTool/modules/jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.editor.contextActionsTool.lang.menus.runtime" />
       <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/runtime" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/runtime/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/runtime/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.jar1" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-editor.contextActionsTool-modules-lang.menus-runtime-models1">
@@ -284,6 +298,8 @@
       <fileset dir="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/runtime/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/editor.contextActionsTool/modules/lang.menus/runtime/jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-editor.contextActionsTool-modules-lang.menus-runtime-models1" prefix="module/models" />

@@ -17,6 +17,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
+import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.make.java.ModelDependencies;
 import jetbrains.mps.textgen.trace.DebugInfo;
 import jetbrains.mps.util.Status;
@@ -133,6 +134,22 @@ public class GenerationStatus extends Status {
   public void setModelExports(ModelExports exports) {
     myExports = exports;
   }
+
+
+  /**
+   * PROVISIONAL CODE. DO NOT USE!
+   * See {@link #getModelExports()} for replacement ideas.
+   */
+  public void setCrossModelEnvironment(CrossModelEnvironment cme) {
+    myCrossModelEnvironment = cme;
+  }
+  public CrossModelEnvironment getCrossModelEnvironment() {
+    return myCrossModelEnvironment;
+  }
+  private CrossModelEnvironment myCrossModelEnvironment;
+
+
+
 
   public static class ERROR extends GenerationStatus {
     public ERROR(SModel inputModel) {

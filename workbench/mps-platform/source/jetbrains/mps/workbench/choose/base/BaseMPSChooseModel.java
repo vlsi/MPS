@@ -194,12 +194,12 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   @NotNull
   protected SearchScope getGlobalScope() {
-    return new FilteredGlobalScope();
+    return myGlobalScope != null ? myGlobalScope : new FilteredGlobalScope();
   }
 
   @NotNull
   protected SearchScope getLocalScope() {
-    return getProject().getScope();
+    return myLocalScope != null ? myLocalScope : getProject().getScope();
   }
 
   /**

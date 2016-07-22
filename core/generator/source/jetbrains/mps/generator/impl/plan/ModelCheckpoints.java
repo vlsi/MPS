@@ -16,17 +16,24 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
-import jetbrains.mps.generator.impl.DebugMappingsBuilder;
+import jetbrains.mps.generator.impl.MappingLabelExtractor;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 /**
  * All checkpoint models known for (associated with) the given original model for a given generation plan.
@@ -36,27 +43,46 @@ import java.util.List;
  */
 public class ModelCheckpoints {
   private final List<CheckpointState> myStates;
+  private final PlanIdentity myPlan;
 
-  /*package*/ ModelCheckpoints(CheckpointState[] states) {
-    myStates = Arrays.asList(states);
+  /**
+   * @param state not null
+   */
+  /*package*/ ModelCheckpoints(CheckpointState state) {
+    myPlan = state.getCheckpoint().getPlan();
+    myStates = Collections.singletonList(state);
   }
 
-  // FIXME I don't really use a repository down in DebugMappingBuilder.restore()!
-  /*package*/ ModelCheckpoints(SRepository repository, SModel[] models) {
+  /**
+   * @param plan not null
+   * @param states not null
+   */
+  /*package*/ ModelCheckpoints(PlanIdentity plan, Collection<CheckpointState> states) {
+    myPlan = plan;
+    assert StreamSupport.stream(states.spliterator(), false).allMatch(s -> s.getCheckpoint().getPlan().equals(plan));
+    myStates = new ArrayList<>(states); // copy
+  }
+
+
+  /*package*/ ModelCheckpoints(PlanIdentity plan, SModel[] models) {
+    myPlan = plan;
     CheckpointState[] states = new CheckpointState[models.length];
     for (int i = 0; i < models.length; i++) {
       String stereotype = SModelStereotype.getStereotype(models[i]);
       assert stereotype.startsWith("cp-");
-      Checkpoint cp = new Checkpoint(stereotype.substring(3));
-      MappingsMemento memento = new MappingsMemento();
+      CheckpointIdentity cp = new CheckpointIdentity(plan, stereotype.substring(3));
       // FIXME read and fill memento with MappingLabels
       //       now, just restore it from debug root we've got there. Later (once true persistence is done), shall consider
       //       option to keep mappings inside a model (not to bother with persistence) or to follow MappingsMemento approach with
       //       custom serialization code (and to solve the issue of associated model streams serialized/managed (i.e. deleted) along with a cp model)
-      new DebugMappingsBuilder(repository, Collections.emptyMap()).restore(DebugMappingsBuilder.findDebugNode(models[i]), memento);
+      MappingsMemento memento = new MappingLabelExtractor().restore(MappingLabelExtractor.findDebugNode(models[i]));
       states[i] = new CheckpointState(memento, models[i], cp);
     }
     myStates = Arrays.asList(states);
+  }
+
+  /*package*/ PlanIdentity getPlan() {
+    return myPlan;
   }
 
   /**
@@ -68,11 +94,52 @@ public class ModelCheckpoints {
    */
   @Nullable
   public CheckpointState find(@NotNull Checkpoint targetPoint) {
+    return find(new CheckpointIdentity(myPlan, targetPoint));
+  }
+
+  @Nullable
+  public CheckpointState find(@NotNull CheckpointIdentity tp) {
     for (CheckpointState cps : myStates) {
-      if (cps.getCheckpoint().equals(targetPoint)) {
+      if (cps.getCheckpoint().equals(tp)) {
         return cps;
       }
     }
     return null;
+  }
+
+  /*package*/ List<CheckpointIdentity> getKnownCheckpoints() {
+    return StreamSupport.stream(myStates.spliterator(), false).map(CheckpointState::getCheckpoint).collect(Collectors.toList());
+  }
+
+  /**
+   * we've got new state for some checkpoint
+   * @param state not null
+   * @return stale checkpoint (the one that has been discarded), if any.
+   */
+  /*package*/ CheckpointState updateAndDiscardOutdated(CheckpointState state) {
+    for (int i = 0; i < myStates.size(); i++) {
+      CheckpointState cps = myStates.get(i);
+      if (!cps.getCheckpoint().equals(state.getCheckpoint())) {
+        continue;
+      }
+      myStates.set(i, state);
+      return cps;
+    }
+    return null;
+  }
+
+  /**
+   * Once there's a discarded checkpoint state, we need to update (discard) states that used to reference it.
+   * @param outdatedModels models that are no longer valid
+   * @param discarded collection with stale states to update
+   */
+  /*package*/ void discardOutdated(Collection<SModelReference> outdatedModels, Collection<CheckpointState> discarded) {
+    for (Iterator<CheckpointState> it = myStates.iterator(); it.hasNext(); ) {
+      CheckpointState next = it.next();
+      if (CollectionUtil.intersects(new ModelImports(next.getCheckpointModel()).getImportedModels(), outdatedModels)) {
+        discarded.add(next);
+        it.remove();
+      }
+    }
   }
 }

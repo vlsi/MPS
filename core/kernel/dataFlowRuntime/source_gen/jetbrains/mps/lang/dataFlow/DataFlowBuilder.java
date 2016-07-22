@@ -5,6 +5,7 @@ package jetbrains.mps.lang.dataFlow;
 import jetbrains.mps.lang.dataFlow.framework.IDataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.Collection;
+import jetbrains.mps.lang.dataFlow.framework.IDataFlowModeId;
 import java.util.Collections;
 
 public abstract class DataFlowBuilder implements IDataFlowBuilder {
@@ -23,7 +24,7 @@ public abstract class DataFlowBuilder implements IDataFlowBuilder {
   }
 
   @Override
-  public Collection<String> getModes() {
-    return Collections.emptyList();
+  public Collection<IDataFlowModeId> getModes() {
+    return Collections.<IDataFlowModeId>emptyList();
   }
 }

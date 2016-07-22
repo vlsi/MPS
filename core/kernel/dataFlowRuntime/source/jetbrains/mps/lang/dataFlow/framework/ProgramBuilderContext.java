@@ -21,5 +21,5 @@ import java.util.Collection;
  * @author simon
  */
 public interface ProgramBuilderContext {
-  Collection<String> getBuilderModes();
+  Collection<IDataFlowModeId> getBuilderModes();
 }
