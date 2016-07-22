@@ -355,8 +355,10 @@ public abstract class BaseNodeEditor implements Editor {
     private boolean myInspectorFocused;
 
     public void refCopyFrom(BaseEditorState source) {
-      this.myMemento = source.myMemento;
-      this.myInspectorMemento = source.myInspectorMemento;
+      myMemento = source.myMemento;
+      myEditorFocused = source.myEditorFocused;
+      myInspectorMemento = source.myInspectorMemento;
+      myInspectorFocused = source.myInspectorFocused;
     }
 
     @Override
