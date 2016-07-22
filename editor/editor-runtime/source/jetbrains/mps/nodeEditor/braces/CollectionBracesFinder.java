@@ -22,6 +22,9 @@ import jetbrains.mps.openapi.editor.style.Style;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * Highlights the first and last content cells of a collection with {@link StyleAttributes#SHOW_BOUNDARIES_IN} style.
+ */
 class CollectionBracesFinder implements BracesFinder.Algorithm {
   @Nullable
   @Override
@@ -32,10 +35,7 @@ class CollectionBracesFinder implements BracesFinder.Algorithm {
       return null;
     }
 
-    return new BracePair(
-        collection.firstCell(), collection.lastCell(),
-        collection.getStyle().get(StyleAttributes.HIGHLIGHT_IN_EDITOR),
-        collection.getStyle().get(StyleAttributes.HIGHLIGHT_IN_GUTTER));
+    return new BracePair(collection.firstContentCell(), collection.lastContentCell(), collection.getStyle().get(StyleAttributes.SHOW_BOUNDARIES_IN));
   }
 
   @Nullable
@@ -60,7 +60,7 @@ class CollectionBracesFinder implements BracesFinder.Algorithm {
 
   private boolean isCollectionToHighlight(@NotNull EditorCell editorCell) {
     Style editorCellStyle = editorCell.getStyle();
-    return editorCellStyle.get(StyleAttributes.HIGHLIGHT_IN_EDITOR) || editorCellStyle.get(StyleAttributes.HIGHLIGHT_IN_GUTTER);
+    return editorCellStyle.get(StyleAttributes.SHOW_BOUNDARIES_IN) != null;
   }
 
   @Nullable

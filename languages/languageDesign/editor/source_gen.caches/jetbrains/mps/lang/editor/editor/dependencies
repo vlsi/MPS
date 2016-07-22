@@ -2030,6 +2030,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.ScriptKindClassItem_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.SelectInEditorOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.SelectPositionParameter_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editor.ShowBoundariesInStyleClassItem_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.SideTransformAnchorTagStyleClassItem_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.StubEditorCellModel_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.StyleAttributeDeclaration_Editor" />
@@ -2993,6 +2994,27 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editor.ShowBoundariesInStyleClassItem_Editor" file="ShowBoundariesInStyleClassItem_Editor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editor.Styles_StyleSheet" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.BasicCellContext" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.editor.SideTransformAnchorTagStyleClassItem_Editor" file="SideTransformAnchorTagStyleClassItem_Editor.java">
     <classNode dependClassName="java.lang.Class" />

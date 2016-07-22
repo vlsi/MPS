@@ -909,8 +909,8 @@
             <node concept="3XFhqQ" id="hGQ3v6l" role="3EZMnx" />
             <node concept="3F1sOY" id="gqRMgYh" role="3EZMnx">
               <property role="1$x2rV" value="&lt;choose cell model&gt;" />
-              <ref role="1NtTu8" to="tpc2:fIwV5gl" resolve="cellModel" />
               <ref role="34QXea" node="gtczF7b" resolve="EditorCellModel_KeyMap" />
+              <ref role="1NtTu8" to="tpc2:fIwV5gl" resolve="cellModel" />
             </node>
             <node concept="VPM3Z" id="hEU$Q0C" role="3F10Kt">
               <property role="VOm3f" value="false" />
@@ -955,8 +955,8 @@
             <node concept="3XFhqQ" id="hGQ3wyD" role="3EZMnx" />
             <node concept="3F1sOY" id="fGbFJ$X" role="3EZMnx">
               <property role="1$x2rV" value="&lt;choose cell model&gt;" />
-              <ref role="1NtTu8" to="tpc2:fG6VMW6" resolve="inspectedCellModel" />
               <ref role="34QXea" node="gtczF7b" resolve="EditorCellModel_KeyMap" />
+              <ref role="1NtTu8" to="tpc2:fG6VMW6" resolve="inspectedCellModel" />
             </node>
             <node concept="VPM3Z" id="hEU$PRX" role="3F10Kt">
               <property role="VOm3f" value="false" />
@@ -1557,8 +1557,8 @@
             <ref role="1k5W1q" node="hF4H1c8" resolve="property" />
           </node>
           <node concept="3F1sOY" id="5lsGCnQuGgv" role="3EZMnx">
-            <ref role="1NtTu8" to="tpc2:3Fwx_UqDAZ9" resolve="addHints" />
             <ref role="1ERwB7" node="5lsGCnQM$zL" resolve="CellModel_Collection_AddHint_Actions" />
+            <ref role="1NtTu8" to="tpc2:3Fwx_UqDAZ9" resolve="addHints" />
           </node>
           <node concept="2iRfu4" id="3Fwx_UqDKa3" role="2iSdaV" />
         </node>
@@ -1574,8 +1574,8 @@
             <ref role="1k5W1q" node="hF4H1c8" resolve="property" />
           </node>
           <node concept="3F1sOY" id="3Fwx_UqEOU6" role="3EZMnx">
-            <ref role="1NtTu8" to="tpc2:3Fwx_UqDB8p" resolve="removeHints" />
             <ref role="1ERwB7" node="5lsGCnSckUl" resolve="CellModel_Collection_RemoveHint_Actions" />
+            <ref role="1NtTu8" to="tpc2:3Fwx_UqDB8p" resolve="removeHints" />
           </node>
           <node concept="2iRfu4" id="3Fwx_UqEOU7" role="2iSdaV" />
         </node>
@@ -1606,8 +1606,8 @@
       </node>
       <node concept="1iCGBv" id="g_U$WEE" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no component&gt;" />
-        <ref role="1NtTu8" to="tpc2:fGPMmyn" resolve="editorComponent" />
         <ref role="1k5W1q" node="hX1xO3O" resolve="bordered" />
+        <ref role="1NtTu8" to="tpc2:fGPMmyn" resolve="editorComponent" />
         <node concept="1sVBvm" id="g_U$WED" role="1sWHZn">
           <node concept="3F0A7n" id="g_U$Y3k" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -1807,8 +1807,8 @@
             <property role="3EZMnw" value="false" />
             <node concept="3XFhqQ" id="xLfwuvtbnP" role="3EZMnx" />
             <node concept="3F1sOY" id="g_TZx2p" role="3EZMnx">
-              <ref role="1NtTu8" to="tpc2:fIwV5gl" resolve="cellModel" />
               <ref role="34QXea" node="gtczF7b" resolve="EditorCellModel_KeyMap" />
+              <ref role="1NtTu8" to="tpc2:fIwV5gl" resolve="cellModel" />
             </node>
             <node concept="15ARfc" id="hX6pW1f" role="3F10Kt">
               <property role="3$6WeP" value="0.0" />
@@ -2327,8 +2327,8 @@
       </node>
       <node concept="1iCGBv" id="g_U_RSN" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no property&gt;" />
-        <ref role="1NtTu8" to="tpc2:fBF1KQc" resolve="propertyDeclaration" />
         <ref role="1k5W1q" node="hX1xO3O" resolve="bordered" />
+        <ref role="1NtTu8" to="tpc2:fBF1KQc" resolve="propertyDeclaration" />
         <node concept="1sVBvm" id="g_U_RSM" role="1sWHZn">
           <node concept="3F0A7n" id="g_U_U1N" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -2646,8 +2646,8 @@
       </node>
       <node concept="1iCGBv" id="g_UCjzL" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no link&gt;" />
-        <ref role="1NtTu8" to="tpc2:fBF1sR8" resolve="linkDeclaration" />
         <ref role="1k5W1q" node="hX1xO3O" resolve="bordered" />
+        <ref role="1NtTu8" to="tpc2:fBF1sR8" resolve="linkDeclaration" />
         <node concept="1sVBvm" id="g_UCjzK" role="1sWHZn">
           <node concept="3F0A7n" id="g_UCoOH" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -2869,8 +2869,8 @@
             <ref role="1k5W1q" node="hF4H1c8" resolve="property" />
           </node>
           <node concept="3F1sOY" id="55my_QKPih8" role="3EZMnx">
-            <ref role="1NtTu8" to="tpc2:55my_QKP5Sf" resolve="addHints" />
             <ref role="1ERwB7" node="55my_QKP_mV" resolve="CellModel_RefNode_AddHint_Actions" />
+            <ref role="1NtTu8" to="tpc2:55my_QKP5Sf" resolve="addHints" />
           </node>
           <node concept="2iRfu4" id="55my_QKPih9" role="2iSdaV" />
         </node>
@@ -2886,8 +2886,8 @@
             <ref role="1k5W1q" node="hF4H1c8" resolve="property" />
           </node>
           <node concept="3F1sOY" id="55my_QKPihe" role="3EZMnx">
-            <ref role="1NtTu8" to="tpc2:55my_QKP5Sg" resolve="removeHints" />
             <ref role="1ERwB7" node="55my_QKPFFX" resolve="CellModel_RefNode_RemoveHint_Actions" />
+            <ref role="1NtTu8" to="tpc2:55my_QKP5Sg" resolve="removeHints" />
           </node>
           <node concept="2iRfu4" id="55my_QKPihf" role="2iSdaV" />
         </node>
@@ -3139,8 +3139,8 @@
       </node>
       <node concept="1iCGBv" id="g_UAAjh" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no link&gt;" />
-        <ref role="1NtTu8" to="tpc2:fPiD8ey" resolve="linkDeclaration" />
         <ref role="1k5W1q" node="hX1xO3O" resolve="bordered" />
+        <ref role="1NtTu8" to="tpc2:fPiD8ey" resolve="linkDeclaration" />
         <node concept="1sVBvm" id="g_UAAjg" role="1sWHZn">
           <node concept="3F0A7n" id="g_UAC0s" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -3210,8 +3210,8 @@
           </node>
           <node concept="1iCGBv" id="g_UBaUf" role="3EZMnx">
             <property role="1$x2rV" value="&lt;no link&gt;" />
-            <ref role="1NtTu8" to="tpc2:fPiD8ey" resolve="linkDeclaration" />
             <ref role="1k5W1q" to="tpd3:hwSDXQa" resolve="ReferenceDecorated" />
+            <ref role="1NtTu8" to="tpc2:fPiD8ey" resolve="linkDeclaration" />
             <node concept="1sVBvm" id="g_UBaUg" role="1sWHZn">
               <node concept="3F0A7n" id="g_UBaUh" role="2wV5jI">
                 <property role="1Intyy" value="true" />
@@ -3384,8 +3384,8 @@
         </node>
       </node>
       <node concept="3F1sOY" id="g_TZsOO" role="3EZMnx">
-        <ref role="1NtTu8" to="tpc2:fIwV5gl" resolve="cellModel" />
         <ref role="34QXea" node="gtczF7b" resolve="EditorCellModel_KeyMap" />
+        <ref role="1NtTu8" to="tpc2:fIwV5gl" resolve="cellModel" />
       </node>
       <node concept="2iRfu4" id="i2IxuOY" role="2iSdaV" />
     </node>
@@ -7027,8 +7027,8 @@
             <ref role="1k5W1q" node="hF4H1c8" resolve="property" />
           </node>
           <node concept="3F1sOY" id="6k6gsLy9nOE" role="3EZMnx">
-            <ref role="1NtTu8" to="tpc2:6k6gsLy95p6" resolve="addHints" />
             <ref role="1ERwB7" node="6k6gsLy9Jgf" resolve="CellModel_RefNodeList_AddHint_Actions" />
+            <ref role="1NtTu8" to="tpc2:6k6gsLy95p6" resolve="addHints" />
           </node>
           <node concept="2iRfu4" id="6k6gsLy9nOF" role="2iSdaV" />
         </node>
@@ -7044,8 +7044,8 @@
             <ref role="1k5W1q" node="hF4H1c8" resolve="property" />
           </node>
           <node concept="3F1sOY" id="6k6gsLy9nOK" role="3EZMnx">
-            <ref role="1NtTu8" to="tpc2:6k6gsLy95p7" resolve="removeHints" />
             <ref role="1ERwB7" node="6k6gsLy9tOQ" resolve="CellModel_RefNodeList_RemoveHint_Actions" />
+            <ref role="1NtTu8" to="tpc2:6k6gsLy95p7" resolve="removeHints" />
           </node>
           <node concept="2iRfu4" id="6k6gsLy9nOL" role="2iSdaV" />
         </node>
@@ -10550,8 +10550,8 @@
       </node>
       <node concept="1iCGBv" id="3daRSMLokWe" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no property&gt;" />
-        <ref role="1NtTu8" to="tpc2:3daRSMLnNZv" resolve="propertyDeclaration" />
         <ref role="1k5W1q" node="hX1xO3O" resolve="bordered" />
+        <ref role="1NtTu8" to="tpc2:3daRSMLnNZv" resolve="propertyDeclaration" />
         <node concept="1sVBvm" id="3daRSMLokWf" role="1sWHZn">
           <node concept="3F0A7n" id="3daRSMLokWg" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -11050,8 +11050,8 @@
       <node concept="2iRfu4" id="6GJhM1dCSHa" role="2iSdaV" />
       <node concept="3F1sOY" id="6GJhM1dCSHb" role="3EZMnx">
         <property role="1$x2rV" value="&lt;default&gt;" />
-        <ref role="1NtTu8" to="tpc2:6GJhM1dAsnP" resolve="foldedCellModel" />
         <ref role="1k5W1q" node="hX1xO3O" resolve="bordered" />
+        <ref role="1NtTu8" to="tpc2:6GJhM1dAsnP" resolve="foldedCellModel" />
       </node>
     </node>
   </node>
@@ -11067,8 +11067,8 @@
       </node>
       <node concept="3F1sOY" id="544mDfev1E5" role="3EZMnx">
         <property role="1$x2rV" value="&lt;default&gt;" />
-        <ref role="1NtTu8" to="tpc2:5fDszETGVtQ" resolve="foldedCellModel" />
         <ref role="1k5W1q" node="hX1xO3O" resolve="bordered" />
+        <ref role="1NtTu8" to="tpc2:5fDszETGVtQ" resolve="foldedCellModel" />
       </node>
       <node concept="2iRfu4" id="544mDfev1E6" role="2iSdaV" />
     </node>
@@ -12159,8 +12159,8 @@
         </node>
       </node>
       <node concept="1iCGBv" id="3Un2VKL7rv4" role="3EZMnx">
-        <ref role="1NtTu8" to="tpc2:3Un2VKL7rkv" resolve="propertyDeclaration" />
         <ref role="1ERwB7" node="1S2pyLdCTfX" resolve="AbstractCellSelector_Actions" />
+        <ref role="1NtTu8" to="tpc2:3Un2VKL7rkv" resolve="propertyDeclaration" />
         <node concept="1sVBvm" id="3Un2VKL7rv5" role="1sWHZn">
           <node concept="3F0A7n" id="3Un2VKLeSk0" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -12292,8 +12292,8 @@
         </node>
       </node>
       <node concept="3F1sOY" id="3Un2VKN5E7M" role="3EZMnx">
-        <ref role="1NtTu8" to="tpc2:3Un2VKMR8zw" resolve="propertyDeclaration" />
         <ref role="1ERwB7" node="3Un2VKKuWkG" resolve="PropertyExpressionDelete_Actions" />
+        <ref role="1NtTu8" to="tpc2:3Un2VKMR8zw" resolve="propertyDeclaration" />
       </node>
       <node concept="3F0ifn" id="3Un2VKKh3MW" role="3EZMnx">
         <property role="3F0ifm" value="}" />
@@ -12431,8 +12431,8 @@
         <node concept="Vb9p2" id="1S2pyLdi3Qt" role="3F10Kt" />
       </node>
       <node concept="3F1sOY" id="1GaASKe_WL7" role="3EZMnx">
-        <ref role="1NtTu8" to="tpc2:1GaASKe_7Fu" resolve="editorContext" />
         <ref role="1ERwB7" node="7CRKobUcgo3" resolve="SelectInEditorOperation_editorContextActions" />
+        <ref role="1NtTu8" to="tpc2:1GaASKe_7Fu" resolve="editorContext" />
         <node concept="34QqEe" id="1S2pyLcPnDN" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -12459,8 +12459,8 @@
           <node concept="Vb9p2" id="1S2pyLdi4WL" role="3F10Kt" />
         </node>
         <node concept="3F1sOY" id="1GaASKeInEr" role="3EZMnx">
-          <ref role="1NtTu8" to="tpc2:1GaASKeIgJu" resolve="cellSelector" />
           <ref role="1ERwB7" node="76F8Lg7DLiR" resolve="CellSelectorReference_Actions" />
+          <ref role="1NtTu8" to="tpc2:1GaASKeIgJu" resolve="cellSelector" />
         </node>
         <node concept="l2Vlx" id="1GaASKeIgTm" role="2iSdaV" />
         <node concept="pkWqt" id="1GaASKeIgTv" role="pqm2j">
@@ -12503,8 +12503,8 @@
             <node concept="Vb9p2" id="385mdrZMCKW" role="3F10Kt" />
           </node>
           <node concept="3F1sOY" id="385mds07gbG" role="3EZMnx">
-            <ref role="1NtTu8" to="tpc2:385mdrZMmPM" resolve="selectionStart" />
             <ref role="1ERwB7" node="2lZ9M0NUuPG" resolve="SelectInEditorOperation_selectionStartActions" />
+            <ref role="1NtTu8" to="tpc2:385mdrZMmPM" resolve="selectionStart" />
             <node concept="VPRnO" id="54ZpPwDgmSv" role="3F10Kt">
               <property role="VOm3f" value="false" />
             </node>
@@ -13121,8 +13121,8 @@
     <node concept="3EZMnI" id="3t4KfBESaUC" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="1iCGBv" id="3t4KfBESc9Q" role="3EZMnx">
-        <ref role="1NtTu8" to="tpc2:3t4KfBESbzj" resolve="attribute" />
         <ref role="1k5W1q" node="hoxUe05" resolve="item" />
+        <ref role="1NtTu8" to="tpc2:3t4KfBESbzj" resolve="attribute" />
         <node concept="1sVBvm" id="3t4KfBESc9R" role="1sWHZn">
           <node concept="3F0A7n" id="3t4KfBEScpD" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -16420,8 +16420,8 @@
                             </node>
                             <node concept="2OqwBi" id="lcjj1ZVauA" role="3uHU7w">
                               <node concept="359W_D" id="lcjj1ZVauB" role="2Oq$k0">
-                                <ref role="359W_F" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
                                 <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                                <ref role="359W_F" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
                               </node>
                               <node concept="liA8E" id="lcjj1ZVauC" role="2OqNvi">
                                 <ref role="37wK5l" to="c17a:~SContainmentLink.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
@@ -17778,8 +17778,8 @@
                         <node concept="3clFbF" id="78qF3ppQKV$" role="3cqZAp">
                           <node concept="3y3z36" id="78qF3ppQKV_" role="3clFbG">
                             <node concept="28GBK8" id="78qF3ppQKVA" role="3uHU7w">
-                              <ref role="28H3Ia" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
                               <ref role="28GBKb" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                              <ref role="28H3Ia" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
                             </node>
                             <node concept="37vLTw" id="78qF3ppQKVB" role="3uHU7B">
                               <ref role="3cqZAo" node="78qF3ppQKVC" resolve="it" />
@@ -18469,8 +18469,8 @@
                       <node concept="3y3z36" id="lcjj1ZMlFR" role="3clFbG">
                         <node concept="2OqwBi" id="lcjj1ZMlFS" role="3uHU7w">
                           <node concept="359W_D" id="lcjj1ZMlFT" role="2Oq$k0">
-                            <ref role="359W_F" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
                             <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                            <ref role="359W_F" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
                           </node>
                           <node concept="liA8E" id="lcjj1ZMlFU" role="2OqNvi">
                             <ref role="37wK5l" to="c17a:~SContainmentLink.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
@@ -20348,6 +20348,30 @@
     <node concept="PMmxH" id="GUt2WZG0$h" role="2wV5jI">
       <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       <ref role="1k5W1q" node="2NgG6tkHXk9" resolve="EditorKeyWord" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="4$nvT06Lj3n">
+    <property role="3GE5qa" value="Stylesheet" />
+    <ref role="1XX52x" to="tpc2:4$nvT06Lj2w" resolve="ShowBoundariesInStyleClassItem" />
+    <node concept="3EZMnI" id="4$nvT06Lj3p" role="2wV5jI">
+      <property role="3EZMnw" value="false" />
+      <node concept="PMmxH" id="4$nvT06Lj3q" role="3EZMnx">
+        <property role="1cu_pB" value="0" />
+        <ref role="1k5W1q" node="hoxUe05" resolve="item" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <node concept="OXEIz" id="4$nvT06Lj3r" role="P5bDN">
+          <node concept="UkePV" id="4$nvT06Lj3s" role="OY2wv">
+            <ref role="Ul1FP" to="tpc2:hgV6hR6" resolve="StyleClassItem" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="4$nvT06Lj3t" role="3EZMnx">
+        <property role="3F0ifm" value=":" />
+      </node>
+      <node concept="3F0A7n" id="4$nvT06Lm4t" role="3EZMnx">
+        <ref role="1NtTu8" to="tpc2:4$nvT06Lm40" resolve="value" />
+      </node>
+      <node concept="2iRfu4" id="4$nvT06Lj4u" role="2iSdaV" />
     </node>
   </node>
 </model>

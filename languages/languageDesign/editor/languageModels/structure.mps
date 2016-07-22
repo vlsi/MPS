@@ -26,6 +26,7 @@
       </concept>
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
         <property id="1212080844762" name="hasNoDefaultMember" index="PDuV0" />
+        <property id="1197591154882" name="memberIdentifierPolicy" index="3lZH7k" />
         <reference id="1083171729157" name="memberDataType" index="M4eZT" />
         <reference id="1083241965437" name="defaultMember" index="Qgau1" />
         <child id="1083172003582" name="member" index="M5hS2" />
@@ -3672,8 +3673,8 @@
       <property role="20kJfa" value="propertyDeclaration" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="3696012239575138271" />
-      <ref role="20lvS9" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
       <ref role="20ksaX" node="g_NtTq1" resolve="relationDeclaration" />
+      <ref role="20lvS9" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
     </node>
     <node concept="PrWs8" id="4SdtvCaA7QP" role="PzmwI">
       <ref role="PrY4T" to="tpck:64$4ecGX64Q" resolve="ImplementationWithStubPart" />
@@ -6036,6 +6037,31 @@
     <property role="TrG5h" value="QueryFunction_SubstituteMenuVariable_Initializer" />
     <property role="R4oN_" value="return initial value of the variable" />
     <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+  </node>
+  <node concept="1TIwiD" id="4$nvT06Lj2w">
+    <property role="EcuMT" value="5266818545798688928" />
+    <property role="3GE5qa" value="Stylesheet" />
+    <property role="TrG5h" value="ShowBoundariesInStyleClassItem" />
+    <property role="34LRSv" value="show-boundaries-in" />
+    <ref role="1TJDcQ" node="hgV6hR6" resolve="StyleClassItem" />
+    <node concept="1TJgyi" id="4$nvT06Lm40" role="1TKVEl">
+      <property role="IQ2nx" value="5266818545798701312" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" node="4$nvT06KjJq" resolve="ShowBoundariesAreaEnum" />
+    </node>
+  </node>
+  <node concept="AxPO7" id="4$nvT06KjJq">
+    <property role="TrG5h" value="ShowBoundariesAreaEnum" />
+    <property role="3lZH7k" value="derive_from_internal_value" />
+    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="M4N5e" id="4$nvT06KjJr" role="M5hS2">
+      <property role="1uS6qv" value="GUTTER" />
+      <property role="1uS6qo" value="gutter" />
+    </node>
+    <node concept="M4N5e" id="4$nvT06KjL8" role="M5hS2">
+      <property role="1uS6qv" value="GUTTER_AND_EDITOR" />
+      <property role="1uS6qo" value="gutter-and-editor" />
+    </node>
   </node>
 </model>
 

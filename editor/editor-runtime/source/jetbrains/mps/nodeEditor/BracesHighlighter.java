@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.editor.runtime.style.ShowBoundariesArea;
 import jetbrains.mps.nodeEditor.braces.BracePair;
 import jetbrains.mps.nodeEditor.braces.BracesFinder;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionUtil;
@@ -92,20 +93,26 @@ public class BracesHighlighter {
 
     clearBracesSelection();
 
-    if (bracePair.myHighlightInGutter) {
-      if (bracePair.myFirstCell.getY() != bracePair.mySecondCell.getY()) {
-        ((EditorComponent) bracePair.mySecondCell.getEditorComponent()).leftHighlightCells(
-            (jetbrains.mps.nodeEditor.cells.EditorCell) bracePair.mySecondCell,
-            (jetbrains.mps.nodeEditor.cells.EditorCell) bracePair.myFirstCell,
-            BRACES_LEFT_HIGHLIGHT_COLOR);
-        myLeftHighlightedCells.add(bracePair.myFirstCell);
-        myLeftHighlightedCells.add(bracePair.mySecondCell);
-      }
-    }
+    highlightInGutter(bracePair);
 
-    if (bracePair.myHighlightInEditor) {
-      highlightCell(bracePair.myFirstCell);
-      highlightCell(bracePair.mySecondCell);
+    if (bracePair.myArea == ShowBoundariesArea.GUTTER_AND_EDITOR) {
+      highlightInEditor(bracePair);
+    }
+  }
+
+  private void highlightInEditor(BracePair bracePair) {
+    highlightCell(bracePair.myFirstCell);
+    highlightCell(bracePair.mySecondCell);
+  }
+
+  private void highlightInGutter(BracePair bracePair) {
+    if (bracePair.myFirstCell.getY() != bracePair.mySecondCell.getY()) {
+      ((EditorComponent) bracePair.mySecondCell.getEditorComponent()).leftHighlightCells(
+          (jetbrains.mps.nodeEditor.cells.EditorCell) bracePair.mySecondCell,
+          (jetbrains.mps.nodeEditor.cells.EditorCell) bracePair.myFirstCell,
+          BRACES_LEFT_HIGHLIGHT_COLOR);
+      myLeftHighlightedCells.add(bracePair.myFirstCell);
+      myLeftHighlightedCells.add(bracePair.mySecondCell);
     }
   }
 

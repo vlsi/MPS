@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.braces;
 
+import jetbrains.mps.editor.runtime.style.ShowBoundariesArea;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.BaseEditorTest;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -22,7 +23,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.junit.Test;
 
@@ -69,9 +69,9 @@ public class BracesFinderTest extends BaseEditorTest {
     EditorCell lastCell = newConstantCell(node, "last cell");
 
     EditorCell collection = newCollectionCell(node, firstCell, lastCell);
-    collection.getStyle().set(StyleAttributes.HIGHLIGHT_IN_GUTTER, true);
+    collection.getStyle().set(StyleAttributes.SHOW_BOUNDARIES_IN, ShowBoundariesArea.GUTTER);
 
-    assertEquals(new BracePair(firstCell, lastCell, false, true), BracesFinder.findBracesToHighlight(firstCell));
+    assertEquals(new BracePair(firstCell, lastCell, ShowBoundariesArea.GUTTER), BracesFinder.findBracesToHighlight(firstCell));
   }
 
   @Test
@@ -82,9 +82,9 @@ public class BracesFinderTest extends BaseEditorTest {
     EditorCell lastCell = newConstantCell(node, "last cell");
 
     EditorCell collection = newCollectionCell(node, firstCell, lastCell);
-    collection.getStyle().set(StyleAttributes.HIGHLIGHT_IN_GUTTER, true);
+    collection.getStyle().set(StyleAttributes.SHOW_BOUNDARIES_IN, ShowBoundariesArea.GUTTER);
 
-    assertEquals(new BracePair(firstCell, lastCell, false, true), BracesFinder.findBracesToHighlight(lastCell));
+    assertEquals(new BracePair(firstCell, lastCell, ShowBoundariesArea.GUTTER), BracesFinder.findBracesToHighlight(lastCell));
   }
 
   @Test
@@ -95,7 +95,7 @@ public class BracesFinderTest extends BaseEditorTest {
     EditorCell lastCell = newConstantCell(node, "last cell");
 
     EditorCell collection = newCollectionCell(node, firstCell, newConstantCell(node, "irrelevant cell"), newCollectionCell(node, lastCell));
-    collection.getStyle().set(StyleAttributes.HIGHLIGHT_IN_GUTTER, true);
+    collection.getStyle().set(StyleAttributes.SHOW_BOUNDARIES_IN, ShowBoundariesArea.GUTTER);
 
     BracePair bracesToHighlight = BracesFinder.findBracesToHighlight(lastCell);
     assertNotNull(bracesToHighlight);

@@ -1136,6 +1136,9 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_5298401719292828587(final ReferenceMacroContext _context) {
     return SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5ea66701cd0a0c86L, 0x5ea66701cd0a0c8bL, "tableComponent"), "HORIZONTAL_COLLECTION");
   }
+  public static Object referenceMacro_GetReferent_5266818545798731549(final ReferenceMacroContext _context) {
+    return SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x49177f9006c530a0L, 0x49177f9006c56100L, "value"), "GUTTER");
+  }
   public static Object referenceMacro_GetReferent_1198505144041(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1096ade08ceL, "actionMap"));
   }
@@ -1181,7 +1184,7 @@ public class QueriesGenerated {
     final String methodName = AbstractStyledTextOperation__BehaviorDescriptor.getMethodToGenerate_id1653mnvAf1C.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(_context.getNode())));
     return Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(SNodeOperations.getNode("r:1e25de74-7cc0-4f15-8cec-3735c776efd2(jetbrains.mps.editor.runtime.style)", "6822392181927252916"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0b0dl(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), methodName);
+        return eq_x583g4_a0a0a0a0a0b0el(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), methodName);
       }
     });
   }
@@ -2970,7 +2973,7 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_3495720260243953966(final TemplateQueryContext _context) {
     return Sequence.fromIterable(MenuRoots.getDefaultTransformationMenusAndContributions(_context.getInputModel())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a318(IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(it), _context.getNode());
+        return eq_x583g4_a0a0a0a0a0a0a418(IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(it), _context.getNode());
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -2981,7 +2984,7 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_5624877018229882334(final TemplateQueryContext _context) {
     return Sequence.fromIterable(MenuRoots.getNamedTransformationMenusAndContributions(_context.getInputModel())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a418(IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(it), _context.getNode());
+        return eq_x583g4_a0a0a0a0a0a0a518(IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(it), _context.getNode());
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -2992,7 +2995,7 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_3308396621974429322(final TemplateQueryContext _context) {
     return Sequence.fromIterable(MenuRoots.getDefaultSubstituteMenusAndContributions(_context.getInputModel())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a518(IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(it), _context.getNode());
+        return eq_x583g4_a0a0a0a0a0a0a618(IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(it), _context.getNode());
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -3003,7 +3006,7 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_3308396621974429172(final TemplateQueryContext _context) {
     return Sequence.fromIterable(MenuRoots.getNamedSubstituteMenusAndContributions(_context.getInputModel())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a618(IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(it), _context.getNode());
+        return eq_x583g4_a0a0a0a0a0a0a718(IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(it), _context.getNode());
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -3252,10 +3255,7 @@ public class QueriesGenerated {
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier"), quotedNode_1, facade.createModelReference("1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)"), facade.createNodeId("~KeyMapAction")));
     return quotedNode_1;
   }
-  private static boolean eq_x583g4_a0a0a0a0a0b0dl(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_x583g4_a0a0a0a0a0a0a318(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0b0el(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_x583g4_a0a0a0a0a0a0a418(Object a, Object b) {
@@ -3265,6 +3265,9 @@ public class QueriesGenerated {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_x583g4_a0a0a0a0a0a0a618(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_x583g4_a0a0a0a0a0a0a718(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

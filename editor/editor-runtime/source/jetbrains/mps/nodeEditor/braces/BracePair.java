@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.braces;
 
+import jetbrains.mps.editor.runtime.style.ShowBoundariesArea;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,18 +24,17 @@ public class BracePair {
   public final EditorCell myFirstCell;
   @NotNull
   public final EditorCell mySecondCell;
-  public final boolean myHighlightInEditor;
-  public final boolean myHighlightInGutter;
+  @NotNull
+  public final ShowBoundariesArea myArea;
 
   public BracePair(@NotNull EditorCell firstCell, @NotNull EditorCell secondCell) {
-    this(firstCell, secondCell, true, true);
+    this(firstCell, secondCell, ShowBoundariesArea.GUTTER_AND_EDITOR);
   }
 
-  public BracePair(@NotNull EditorCell firstCell, @NotNull EditorCell secondCell, boolean highlightInEditor, boolean highlightInGutter) {
+  public BracePair(@NotNull EditorCell firstCell, @NotNull EditorCell secondCell, @NotNull ShowBoundariesArea area) {
     myFirstCell = firstCell;
     mySecondCell = secondCell;
-    myHighlightInEditor = highlightInEditor;
-    myHighlightInGutter = highlightInGutter;
+    myArea = area;
   }
 
   @Override
@@ -49,15 +49,14 @@ public class BracePair {
     BracePair bracePair = (BracePair) o;
 
     return myFirstCell.equals(bracePair.myFirstCell) && mySecondCell.equals(bracePair.mySecondCell) &&
-        myHighlightInEditor == bracePair.myHighlightInEditor && myHighlightInGutter == bracePair.myHighlightInGutter;
+        myArea.equals(bracePair.myArea);
   }
 
   @Override
   public int hashCode() {
     int result = myFirstCell.hashCode();
     result = 31 * result + mySecondCell.hashCode();
-    result = 31 * result + (myHighlightInEditor ? 1 : 0);
-    result = 31 * result + (myHighlightInGutter ? 1 : 0);
+    result = 31 * result + myArea.hashCode();
     return result;
   }
 
@@ -66,8 +65,7 @@ public class BracePair {
     return "BracePair{" +
         "myFirstCell=" + myFirstCell +
         ", mySecondCell=" + mySecondCell +
-        ", myHighlightInEditor=" + myHighlightInEditor +
-        ", myHighlightInGutter=" + myHighlightInGutter +
+        ", myArea=" + myArea +
         '}';
   }
 }
