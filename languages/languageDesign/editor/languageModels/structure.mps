@@ -313,7 +313,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1073389964684" />
       <ref role="20lvS9" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
-      <ref role="20ksaX" node="g_NtTq1" />
+      <ref role="20ksaX" node="g_NtTq1" resolve="relationDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="fBF1sR7">
@@ -350,7 +350,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1073389882824" />
       <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
-      <ref role="20ksaX" node="g_NtTq1" />
+      <ref role="20ksaX" node="g_NtTq1" resolve="relationDeclaration" />
     </node>
     <node concept="PrWs8" id="4SdtvCaA7QN" role="PzmwI">
       <ref role="PrY4T" to="tpck:64$4ecGX64Q" resolve="ImplementationWithStubPart" />
@@ -380,7 +380,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1073390211987" />
       <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
-      <ref role="20ksaX" node="g_NtTq1" />
+      <ref role="20ksaX" node="g_NtTq1" resolve="relationDeclaration" />
     </node>
     <node concept="1TJgyj" id="gXk68OO" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -709,7 +709,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1088013239202" />
       <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
-      <ref role="20ksaX" node="g_NtTq1" />
+      <ref role="20ksaX" node="g_NtTq1" resolve="relationDeclaration" />
     </node>
     <node concept="1TJgyj" id="fPsWHWE" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -2018,7 +2018,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1166041884271" />
       <ref role="20lvS9" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
-      <ref role="20ksaX" node="gXYg8S8" />
+      <ref role="20ksaX" node="gXYg8S8" resolve="relationDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="gXXxIQr">
@@ -2031,7 +2031,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1166042131869" />
       <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
-      <ref role="20ksaX" node="gXYg8S8" />
+      <ref role="20ksaX" node="gXYg8S8" resolve="relationDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="gXXWOiD">
@@ -3672,8 +3672,8 @@
       <property role="20kJfa" value="propertyDeclaration" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="3696012239575138271" />
-      <ref role="20ksaX" node="g_NtTq1" />
       <ref role="20lvS9" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
+      <ref role="20ksaX" node="g_NtTq1" resolve="relationDeclaration" />
     </node>
     <node concept="PrWs8" id="4SdtvCaA7QP" role="PzmwI">
       <ref role="PrY4T" to="tpck:64$4ecGX64Q" resolve="ImplementationWithStubPart" />
@@ -5957,6 +5957,39 @@
     <ref role="1TJDcQ" node="g6iR17a" resolve="CellLayout" />
     <node concept="asaX9" id="6T2BklgjkBD" role="lGtFl" />
   </node>
+  <node concept="1TIwiD" id="20vEJZ2AULf">
+    <property role="EcuMT" value="2314756748950088783" />
+    <property role="3GE5qa" value="Menu.Transformation.Variables" />
+    <property role="TrG5h" value="TransformationMenuVariableReference" />
+    <ref role="1TJDcQ" to="tpee:fz7vLUo" resolve="VariableReference" />
+    <node concept="1TJgyj" id="20vEJZ2AULg" role="1TKVEi">
+      <property role="IQ2ns" value="2314756748950088784" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="transformationMenuVariableDeclaration" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="h9At2QK" resolve="TransformationMenuVariableDeclaration" />
+      <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="h9At2QK">
+    <property role="TrG5h" value="TransformationMenuVariableDeclaration" />
+    <property role="EcuMT" value="1178539929008" />
+    <property role="3GE5qa" value="Menu.Transformation.Variables" />
+    <ref role="1TJDcQ" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
+    <node concept="1TJgyj" id="u0TBa40ZKR" role="1TKVEi">
+      <property role="IQ2ns" value="540685334799973431" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="initializerBlock" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="u0TBa40XW5" resolve="QueryFunction_TransformationMenuVariable_Initializer" />
+    </node>
+    <node concept="PrWs8" id="1653mnvB2$F" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+    <node concept="PrWs8" id="2HMNXpx7p$j" role="PzmwI">
+      <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
+    </node>
+  </node>
   <node concept="1TIwiD" id="u0TBa40TxV">
     <property role="TrG5h" value="SubstituteMenuVariableDeclaration" />
     <property role="EcuMT" value="540685334799947899" />
@@ -5987,47 +6020,7 @@
       <property role="20kJfa" value="substituteMenuVariableDeclaration" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="u0TBa40TxV" resolve="SubstituteMenuVariableDeclaration" />
-      <ref role="20ksaX" to="tpee:fzcqZ_w" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="h9At2QK">
-    <property role="TrG5h" value="TransformationMenuVariableDeclaration" />
-    <property role="EcuMT" value="1178539929008" />
-    <property role="3GE5qa" value="Menu.Transformation.Variables" />
-    <ref role="1TJDcQ" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
-    <node concept="1TJgyj" id="u0TBa40ZKR" role="1TKVEi">
-      <property role="IQ2ns" value="540685334799973431" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="initializerBlock" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="u0TBa40XW5" resolve="QueryFunction_TransformationMenuVariable_Initializer" />
-    </node>
-    <node concept="PrWs8" id="1653mnvB2$F" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-    <node concept="PrWs8" id="2HMNXpx7p$j" role="PzmwI">
-      <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="u0TBa493n6">
-    <property role="EcuMT" value="540685334802085318" />
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
-    <property role="TrG5h" value="QueryFunction_SubstituteMenuVariable_Initializer" />
-    <property role="R4oN_" value="return initial value of the variable" />
-    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
-  </node>
-  <node concept="1TIwiD" id="20vEJZ2AULf">
-    <property role="EcuMT" value="2314756748950088783" />
-    <property role="3GE5qa" value="Menu.Transformation.Variables" />
-    <property role="TrG5h" value="TransformationMenuVariableReference" />
-    <ref role="1TJDcQ" to="tpee:fz7vLUo" resolve="VariableReference" />
-    <node concept="1TJgyj" id="20vEJZ2AULg" role="1TKVEi">
-      <property role="IQ2ns" value="2314756748950088784" />
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="transformationMenuVariableDeclaration" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="h9At2QK" resolve="TransformationMenuVariableDeclaration" />
-      <ref role="20ksaX" to="tpee:fzcqZ_w" />
+      <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="u0TBa40XW5">
@@ -6036,6 +6029,13 @@
     <property role="TrG5h" value="QueryFunction_TransformationMenuVariable_Initializer" />
     <property role="R4oN_" value="return initial value of the variable" />
     <ref role="1TJDcQ" node="6kJcyCQ_LoK" resolve="QueryFunction_TransformationMenu_Extensible" />
+  </node>
+  <node concept="1TIwiD" id="u0TBa493n6">
+    <property role="EcuMT" value="540685334802085318" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
+    <property role="TrG5h" value="QueryFunction_SubstituteMenuVariable_Initializer" />
+    <property role="R4oN_" value="return initial value of the variable" />
+    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
   </node>
 </model>
 
