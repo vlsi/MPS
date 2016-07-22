@@ -104,6 +104,9 @@ public class CheckpointModelTest extends PlatformMpsTest {
     GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider);
     GenerationStatus genStatus = genFacade.process(new EmptyProgressMonitor(), m);
     myErrors.checkThat("Generation succeeds", genStatus.isOk(), CoreMatchers.equalTo(true));
+    // Now I can access CME from GenerationStatus, but keep new CME to verify the environment is capable
+    // to get populated from transient models. In fact, GenerationStatus shall give access to smth directed
+    // more towards serialization of changed CP models, rather than generic CME.
     CrossModelEnvironment cme = new CrossModelEnvironment(tmProvider, new ModelStreamProviderImpl());
     // XXX shall it be CME to give access to module with checkpoint models? Is there better way to find out cpModel?
 

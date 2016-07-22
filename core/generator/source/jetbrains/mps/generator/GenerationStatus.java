@@ -144,6 +144,7 @@ public class GenerationStatus extends Status {
     myCrossModelEnvironment = cme;
   }
   public CrossModelEnvironment getCrossModelEnvironment() {
+    // FIXME Likely, shall not expose complete CME but rather part of it devoted to CP models that needs to be saved.
     return myCrossModelEnvironment;
   }
   private CrossModelEnvironment myCrossModelEnvironment;

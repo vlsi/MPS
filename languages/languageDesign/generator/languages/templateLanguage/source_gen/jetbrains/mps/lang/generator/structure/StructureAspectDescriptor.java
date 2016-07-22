@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(107);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(108);
   /*package*/ final ConceptDescriptor myConceptAbandonInput_RuleConsequence = createDescriptorForAbandonInput_RuleConsequence();
   /*package*/ final ConceptDescriptor myConceptAbstractMacro = createDescriptorForAbstractMacro();
   /*package*/ final ConceptDescriptor myConceptBaseMappingRule = createDescriptorForBaseMappingRule();
@@ -38,6 +38,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptExportLabelParameter_keeper = createDescriptorForExportLabelParameter_keeper();
   /*package*/ final ConceptDescriptor myConceptExportLabelParameter_outputNode = createDescriptorForExportLabelParameter_outputNode();
   /*package*/ final ConceptDescriptor myConceptExportMacro = createDescriptorForExportMacro();
+  /*package*/ final ConceptDescriptor myConceptGeneratorDebug_InputNode = createDescriptorForGeneratorDebug_InputNode();
   /*package*/ final ConceptDescriptor myConceptGeneratorDebug_LabelEntry = createDescriptorForGeneratorDebug_LabelEntry();
   /*package*/ final ConceptDescriptor myConceptGeneratorDebug_Mappings = createDescriptorForGeneratorDebug_Mappings();
   /*package*/ final ConceptDescriptor myConceptGeneratorDebug_NodeMapEntry = createDescriptorForGeneratorDebug_NodeMapEntry();
@@ -147,97 +148,98 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     myIndexMap.put(myConceptExportLabelParameter_keeper.getId(), 18);
     myIndexMap.put(myConceptExportLabelParameter_outputNode.getId(), 19);
     myIndexMap.put(myConceptExportMacro.getId(), 20);
-    myIndexMap.put(myConceptGeneratorDebug_LabelEntry.getId(), 21);
-    myIndexMap.put(myConceptGeneratorDebug_Mappings.getId(), 22);
-    myIndexMap.put(myConceptGeneratorDebug_NodeMapEntry.getId(), 23);
-    myIndexMap.put(myConceptGeneratorDebug_NodeRef.getId(), 24);
-    myIndexMap.put(myConceptGeneratorInternal_AbstractReferenceDescriptor.getId(), 25);
-    myIndexMap.put(myConceptGeneratorInternal_InternalReferenceDescriptor.getId(), 26);
-    myIndexMap.put(myConceptGeneratorInternal_PropertyDescriptor.getId(), 27);
-    myIndexMap.put(myConceptGeneratorInternal_ReferenceDescriptor.getId(), 28);
-    myIndexMap.put(myConceptGeneratorMessage.getId(), 29);
-    myIndexMap.put(myConceptGeneratorParameterReference.getId(), 30);
-    myIndexMap.put(myConceptIGeneratorParameter.getId(), 31);
-    myIndexMap.put(myConceptIParameterizedTemplate.getId(), 32);
-    myIndexMap.put(myConceptITemplateCall.getId(), 33);
-    myIndexMap.put(myConceptIfMacro.getId(), 34);
-    myIndexMap.put(myConceptIfMacro_Condition.getId(), 35);
-    myIndexMap.put(myConceptIncludeMacro.getId(), 36);
-    myIndexMap.put(myConceptInlineSwitch_Case.getId(), 37);
-    myIndexMap.put(myConceptInlineSwitch_RuleConsequence.getId(), 38);
-    myIndexMap.put(myConceptInlineTemplateWithContext_RuleConsequence.getId(), 39);
-    myIndexMap.put(myConceptInlineTemplate_RuleConsequence.getId(), 40);
-    myIndexMap.put(myConceptInsertMacro.getId(), 41);
-    myIndexMap.put(myConceptInsertMacro_CreateNodeQuery.getId(), 42);
-    myIndexMap.put(myConceptLabelMacro.getId(), 43);
-    myIndexMap.put(myConceptLoopMacro.getId(), 44);
-    myIndexMap.put(myConceptMapSrcListMacro.getId(), 45);
-    myIndexMap.put(myConceptMapSrcMacro_MapperFunction.getId(), 46);
-    myIndexMap.put(myConceptMapSrcMacro_PostMapperFunction.getId(), 47);
-    myIndexMap.put(myConceptMapSrcNodeMacro.getId(), 48);
-    myIndexMap.put(myConceptMappingConfiguration.getId(), 49);
-    myIndexMap.put(myConceptMappingConfiguration_Condition.getId(), 50);
-    myIndexMap.put(myConceptMappingLabelDeclaration.getId(), 51);
-    myIndexMap.put(myConceptMappingScript.getId(), 52);
-    myIndexMap.put(myConceptMappingScriptReference.getId(), 53);
-    myIndexMap.put(myConceptMappingScript_CodeBlock.getId(), 54);
-    myIndexMap.put(myConceptMarshalFunction.getId(), 55);
-    myIndexMap.put(myConceptModelIdentity.getId(), 56);
-    myIndexMap.put(myConceptNodeIdentity.getId(), 57);
-    myIndexMap.put(myConceptNodeMacro.getId(), 58);
-    myIndexMap.put(myConceptPatternReduction_MappingRule.getId(), 59);
-    myIndexMap.put(myConceptPropertyMacro.getId(), 60);
-    myIndexMap.put(myConceptPropertyMacro_GetPropertyValue.getId(), 61);
-    myIndexMap.put(myConceptReductionRule.getId(), 62);
-    myIndexMap.put(myConceptReduction_MappingRule.getId(), 63);
-    myIndexMap.put(myConceptReferenceMacro.getId(), 64);
-    myIndexMap.put(myConceptReferenceMacro_GetReferent.getId(), 65);
-    myIndexMap.put(myConceptRootTemplateAnnotation.getId(), 66);
-    myIndexMap.put(myConceptRoot_MappingRule.getId(), 67);
-    myIndexMap.put(myConceptRuleConsequence.getId(), 68);
-    myIndexMap.put(myConceptSourceSubstituteMacro.getId(), 69);
-    myIndexMap.put(myConceptSourceSubstituteMacro_SourceNodeQuery.getId(), 70);
-    myIndexMap.put(myConceptSourceSubstituteMacro_SourceNodesQuery.getId(), 71);
-    myIndexMap.put(myConceptTemplateArgumentLinkPatternRefExpression.getId(), 72);
-    myIndexMap.put(myConceptTemplateArgumentParameterExpression.getId(), 73);
-    myIndexMap.put(myConceptTemplateArgumentPatternRef.getId(), 74);
-    myIndexMap.put(myConceptTemplateArgumentPatternVarRefExpression.getId(), 75);
-    myIndexMap.put(myConceptTemplateArgumentPropertyPatternRefExpression.getId(), 76);
-    myIndexMap.put(myConceptTemplateArgumentQuery.getId(), 77);
-    myIndexMap.put(myConceptTemplateArgumentQueryExpression.getId(), 78);
-    myIndexMap.put(myConceptTemplateArgumentVariableRefExpression.getId(), 79);
-    myIndexMap.put(myConceptTemplateCallMacro.getId(), 80);
-    myIndexMap.put(myConceptTemplateDeclaration.getId(), 81);
-    myIndexMap.put(myConceptTemplateDeclarationReference.getId(), 82);
-    myIndexMap.put(myConceptTemplateFragment.getId(), 83);
-    myIndexMap.put(myConceptTemplateFragment_ContextNodeQuery.getId(), 84);
-    myIndexMap.put(myConceptTemplateFunctionParameter_mainContextNode.getId(), 85);
-    myIndexMap.put(myConceptTemplateFunctionParameter_outputNode.getId(), 86);
-    myIndexMap.put(myConceptTemplateFunctionParameter_parentOutputNode.getId(), 87);
-    myIndexMap.put(myConceptTemplateFunctionParameter_sourceNode.getId(), 88);
-    myIndexMap.put(myConceptTemplateFunctionParameter_templatePropertyValue.getId(), 89);
-    myIndexMap.put(myConceptTemplateFunctionParameter_templateReferent.getId(), 90);
-    myIndexMap.put(myConceptTemplateParameterDeclaration.getId(), 91);
-    myIndexMap.put(myConceptTemplateQueryBase.getId(), 92);
-    myIndexMap.put(myConceptTemplateSwitch.getId(), 93);
-    myIndexMap.put(myConceptTemplateSwitchMacro.getId(), 94);
-    myIndexMap.put(myConceptTemplateSwitchReference.getId(), 95);
-    myIndexMap.put(myConceptTraceMacro.getId(), 96);
-    myIndexMap.put(myConceptTrivialModelId.getId(), 97);
-    myIndexMap.put(myConceptTrivialNodeId.getId(), 98);
-    myIndexMap.put(myConceptUnmarshalFunction.getId(), 99);
-    myIndexMap.put(myConceptVarMacro.getId(), 100);
-    myIndexMap.put(myConceptVarMacro_ValueQuery.getId(), 101);
-    myIndexMap.put(myConceptWeaveEach_RuleConsequence.getId(), 102);
-    myIndexMap.put(myConceptWeaveMacro.getId(), 103);
-    myIndexMap.put(myConceptWeavingAnchorQuery.getId(), 104);
-    myIndexMap.put(myConceptWeaving_MappingRule.getId(), 105);
-    myIndexMap.put(myConceptWeaving_MappingRule_ContextNodeQuery.getId(), 106);
+    myIndexMap.put(myConceptGeneratorDebug_InputNode.getId(), 21);
+    myIndexMap.put(myConceptGeneratorDebug_LabelEntry.getId(), 22);
+    myIndexMap.put(myConceptGeneratorDebug_Mappings.getId(), 23);
+    myIndexMap.put(myConceptGeneratorDebug_NodeMapEntry.getId(), 24);
+    myIndexMap.put(myConceptGeneratorDebug_NodeRef.getId(), 25);
+    myIndexMap.put(myConceptGeneratorInternal_AbstractReferenceDescriptor.getId(), 26);
+    myIndexMap.put(myConceptGeneratorInternal_InternalReferenceDescriptor.getId(), 27);
+    myIndexMap.put(myConceptGeneratorInternal_PropertyDescriptor.getId(), 28);
+    myIndexMap.put(myConceptGeneratorInternal_ReferenceDescriptor.getId(), 29);
+    myIndexMap.put(myConceptGeneratorMessage.getId(), 30);
+    myIndexMap.put(myConceptGeneratorParameterReference.getId(), 31);
+    myIndexMap.put(myConceptIGeneratorParameter.getId(), 32);
+    myIndexMap.put(myConceptIParameterizedTemplate.getId(), 33);
+    myIndexMap.put(myConceptITemplateCall.getId(), 34);
+    myIndexMap.put(myConceptIfMacro.getId(), 35);
+    myIndexMap.put(myConceptIfMacro_Condition.getId(), 36);
+    myIndexMap.put(myConceptIncludeMacro.getId(), 37);
+    myIndexMap.put(myConceptInlineSwitch_Case.getId(), 38);
+    myIndexMap.put(myConceptInlineSwitch_RuleConsequence.getId(), 39);
+    myIndexMap.put(myConceptInlineTemplateWithContext_RuleConsequence.getId(), 40);
+    myIndexMap.put(myConceptInlineTemplate_RuleConsequence.getId(), 41);
+    myIndexMap.put(myConceptInsertMacro.getId(), 42);
+    myIndexMap.put(myConceptInsertMacro_CreateNodeQuery.getId(), 43);
+    myIndexMap.put(myConceptLabelMacro.getId(), 44);
+    myIndexMap.put(myConceptLoopMacro.getId(), 45);
+    myIndexMap.put(myConceptMapSrcListMacro.getId(), 46);
+    myIndexMap.put(myConceptMapSrcMacro_MapperFunction.getId(), 47);
+    myIndexMap.put(myConceptMapSrcMacro_PostMapperFunction.getId(), 48);
+    myIndexMap.put(myConceptMapSrcNodeMacro.getId(), 49);
+    myIndexMap.put(myConceptMappingConfiguration.getId(), 50);
+    myIndexMap.put(myConceptMappingConfiguration_Condition.getId(), 51);
+    myIndexMap.put(myConceptMappingLabelDeclaration.getId(), 52);
+    myIndexMap.put(myConceptMappingScript.getId(), 53);
+    myIndexMap.put(myConceptMappingScriptReference.getId(), 54);
+    myIndexMap.put(myConceptMappingScript_CodeBlock.getId(), 55);
+    myIndexMap.put(myConceptMarshalFunction.getId(), 56);
+    myIndexMap.put(myConceptModelIdentity.getId(), 57);
+    myIndexMap.put(myConceptNodeIdentity.getId(), 58);
+    myIndexMap.put(myConceptNodeMacro.getId(), 59);
+    myIndexMap.put(myConceptPatternReduction_MappingRule.getId(), 60);
+    myIndexMap.put(myConceptPropertyMacro.getId(), 61);
+    myIndexMap.put(myConceptPropertyMacro_GetPropertyValue.getId(), 62);
+    myIndexMap.put(myConceptReductionRule.getId(), 63);
+    myIndexMap.put(myConceptReduction_MappingRule.getId(), 64);
+    myIndexMap.put(myConceptReferenceMacro.getId(), 65);
+    myIndexMap.put(myConceptReferenceMacro_GetReferent.getId(), 66);
+    myIndexMap.put(myConceptRootTemplateAnnotation.getId(), 67);
+    myIndexMap.put(myConceptRoot_MappingRule.getId(), 68);
+    myIndexMap.put(myConceptRuleConsequence.getId(), 69);
+    myIndexMap.put(myConceptSourceSubstituteMacro.getId(), 70);
+    myIndexMap.put(myConceptSourceSubstituteMacro_SourceNodeQuery.getId(), 71);
+    myIndexMap.put(myConceptSourceSubstituteMacro_SourceNodesQuery.getId(), 72);
+    myIndexMap.put(myConceptTemplateArgumentLinkPatternRefExpression.getId(), 73);
+    myIndexMap.put(myConceptTemplateArgumentParameterExpression.getId(), 74);
+    myIndexMap.put(myConceptTemplateArgumentPatternRef.getId(), 75);
+    myIndexMap.put(myConceptTemplateArgumentPatternVarRefExpression.getId(), 76);
+    myIndexMap.put(myConceptTemplateArgumentPropertyPatternRefExpression.getId(), 77);
+    myIndexMap.put(myConceptTemplateArgumentQuery.getId(), 78);
+    myIndexMap.put(myConceptTemplateArgumentQueryExpression.getId(), 79);
+    myIndexMap.put(myConceptTemplateArgumentVariableRefExpression.getId(), 80);
+    myIndexMap.put(myConceptTemplateCallMacro.getId(), 81);
+    myIndexMap.put(myConceptTemplateDeclaration.getId(), 82);
+    myIndexMap.put(myConceptTemplateDeclarationReference.getId(), 83);
+    myIndexMap.put(myConceptTemplateFragment.getId(), 84);
+    myIndexMap.put(myConceptTemplateFragment_ContextNodeQuery.getId(), 85);
+    myIndexMap.put(myConceptTemplateFunctionParameter_mainContextNode.getId(), 86);
+    myIndexMap.put(myConceptTemplateFunctionParameter_outputNode.getId(), 87);
+    myIndexMap.put(myConceptTemplateFunctionParameter_parentOutputNode.getId(), 88);
+    myIndexMap.put(myConceptTemplateFunctionParameter_sourceNode.getId(), 89);
+    myIndexMap.put(myConceptTemplateFunctionParameter_templatePropertyValue.getId(), 90);
+    myIndexMap.put(myConceptTemplateFunctionParameter_templateReferent.getId(), 91);
+    myIndexMap.put(myConceptTemplateParameterDeclaration.getId(), 92);
+    myIndexMap.put(myConceptTemplateQueryBase.getId(), 93);
+    myIndexMap.put(myConceptTemplateSwitch.getId(), 94);
+    myIndexMap.put(myConceptTemplateSwitchMacro.getId(), 95);
+    myIndexMap.put(myConceptTemplateSwitchReference.getId(), 96);
+    myIndexMap.put(myConceptTraceMacro.getId(), 97);
+    myIndexMap.put(myConceptTrivialModelId.getId(), 98);
+    myIndexMap.put(myConceptTrivialNodeId.getId(), 99);
+    myIndexMap.put(myConceptUnmarshalFunction.getId(), 100);
+    myIndexMap.put(myConceptVarMacro.getId(), 101);
+    myIndexMap.put(myConceptVarMacro_ValueQuery.getId(), 102);
+    myIndexMap.put(myConceptWeaveEach_RuleConsequence.getId(), 103);
+    myIndexMap.put(myConceptWeaveMacro.getId(), 104);
+    myIndexMap.put(myConceptWeavingAnchorQuery.getId(), 105);
+    myIndexMap.put(myConceptWeaving_MappingRule.getId(), 106);
+    myIndexMap.put(myConceptWeaving_MappingRule_ContextNodeQuery.getId(), 107);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbandonInput_RuleConsequence, myConceptAbstractMacro, myConceptBaseMappingRule, myConceptBaseMappingRule_Condition, myConceptContextVariableDeclaration, myConceptContextVariableProvider, myConceptCopySrcListMacro, myConceptCopySrcNodeMacro, myConceptCreateRootRule, myConceptCreateRootRule_Condition, myConceptDismissTopMappingRule, myConceptDropAttributeRule, myConceptDropAttributeRule_Condition, myConceptDropRootRule, myConceptDropRootRule_Condition, myConceptExportEntry, myConceptExportLabel, myConceptExportLabelParameter_inputNode, myConceptExportLabelParameter_keeper, myConceptExportLabelParameter_outputNode, myConceptExportMacro, myConceptGeneratorDebug_LabelEntry, myConceptGeneratorDebug_Mappings, myConceptGeneratorDebug_NodeMapEntry, myConceptGeneratorDebug_NodeRef, myConceptGeneratorInternal_AbstractReferenceDescriptor, myConceptGeneratorInternal_InternalReferenceDescriptor, myConceptGeneratorInternal_PropertyDescriptor, myConceptGeneratorInternal_ReferenceDescriptor, myConceptGeneratorMessage, myConceptGeneratorParameterReference, myConceptIGeneratorParameter, myConceptIParameterizedTemplate, myConceptITemplateCall, myConceptIfMacro, myConceptIfMacro_Condition, myConceptIncludeMacro, myConceptInlineSwitch_Case, myConceptInlineSwitch_RuleConsequence, myConceptInlineTemplateWithContext_RuleConsequence, myConceptInlineTemplate_RuleConsequence, myConceptInsertMacro, myConceptInsertMacro_CreateNodeQuery, myConceptLabelMacro, myConceptLoopMacro, myConceptMapSrcListMacro, myConceptMapSrcMacro_MapperFunction, myConceptMapSrcMacro_PostMapperFunction, myConceptMapSrcNodeMacro, myConceptMappingConfiguration, myConceptMappingConfiguration_Condition, myConceptMappingLabelDeclaration, myConceptMappingScript, myConceptMappingScriptReference, myConceptMappingScript_CodeBlock, myConceptMarshalFunction, myConceptModelIdentity, myConceptNodeIdentity, myConceptNodeMacro, myConceptPatternReduction_MappingRule, myConceptPropertyMacro, myConceptPropertyMacro_GetPropertyValue, myConceptReductionRule, myConceptReduction_MappingRule, myConceptReferenceMacro, myConceptReferenceMacro_GetReferent, myConceptRootTemplateAnnotation, myConceptRoot_MappingRule, myConceptRuleConsequence, myConceptSourceSubstituteMacro, myConceptSourceSubstituteMacro_SourceNodeQuery, myConceptSourceSubstituteMacro_SourceNodesQuery, myConceptTemplateArgumentLinkPatternRefExpression, myConceptTemplateArgumentParameterExpression, myConceptTemplateArgumentPatternRef, myConceptTemplateArgumentPatternVarRefExpression, myConceptTemplateArgumentPropertyPatternRefExpression, myConceptTemplateArgumentQuery, myConceptTemplateArgumentQueryExpression, myConceptTemplateArgumentVariableRefExpression, myConceptTemplateCallMacro, myConceptTemplateDeclaration, myConceptTemplateDeclarationReference, myConceptTemplateFragment, myConceptTemplateFragment_ContextNodeQuery, myConceptTemplateFunctionParameter_mainContextNode, myConceptTemplateFunctionParameter_outputNode, myConceptTemplateFunctionParameter_parentOutputNode, myConceptTemplateFunctionParameter_sourceNode, myConceptTemplateFunctionParameter_templatePropertyValue, myConceptTemplateFunctionParameter_templateReferent, myConceptTemplateParameterDeclaration, myConceptTemplateQueryBase, myConceptTemplateSwitch, myConceptTemplateSwitchMacro, myConceptTemplateSwitchReference, myConceptTraceMacro, myConceptTrivialModelId, myConceptTrivialNodeId, myConceptUnmarshalFunction, myConceptVarMacro, myConceptVarMacro_ValueQuery, myConceptWeaveEach_RuleConsequence, myConceptWeaveMacro, myConceptWeavingAnchorQuery, myConceptWeaving_MappingRule, myConceptWeaving_MappingRule_ContextNodeQuery);
+    return Arrays.asList(myConceptAbandonInput_RuleConsequence, myConceptAbstractMacro, myConceptBaseMappingRule, myConceptBaseMappingRule_Condition, myConceptContextVariableDeclaration, myConceptContextVariableProvider, myConceptCopySrcListMacro, myConceptCopySrcNodeMacro, myConceptCreateRootRule, myConceptCreateRootRule_Condition, myConceptDismissTopMappingRule, myConceptDropAttributeRule, myConceptDropAttributeRule_Condition, myConceptDropRootRule, myConceptDropRootRule_Condition, myConceptExportEntry, myConceptExportLabel, myConceptExportLabelParameter_inputNode, myConceptExportLabelParameter_keeper, myConceptExportLabelParameter_outputNode, myConceptExportMacro, myConceptGeneratorDebug_InputNode, myConceptGeneratorDebug_LabelEntry, myConceptGeneratorDebug_Mappings, myConceptGeneratorDebug_NodeMapEntry, myConceptGeneratorDebug_NodeRef, myConceptGeneratorInternal_AbstractReferenceDescriptor, myConceptGeneratorInternal_InternalReferenceDescriptor, myConceptGeneratorInternal_PropertyDescriptor, myConceptGeneratorInternal_ReferenceDescriptor, myConceptGeneratorMessage, myConceptGeneratorParameterReference, myConceptIGeneratorParameter, myConceptIParameterizedTemplate, myConceptITemplateCall, myConceptIfMacro, myConceptIfMacro_Condition, myConceptIncludeMacro, myConceptInlineSwitch_Case, myConceptInlineSwitch_RuleConsequence, myConceptInlineTemplateWithContext_RuleConsequence, myConceptInlineTemplate_RuleConsequence, myConceptInsertMacro, myConceptInsertMacro_CreateNodeQuery, myConceptLabelMacro, myConceptLoopMacro, myConceptMapSrcListMacro, myConceptMapSrcMacro_MapperFunction, myConceptMapSrcMacro_PostMapperFunction, myConceptMapSrcNodeMacro, myConceptMappingConfiguration, myConceptMappingConfiguration_Condition, myConceptMappingLabelDeclaration, myConceptMappingScript, myConceptMappingScriptReference, myConceptMappingScript_CodeBlock, myConceptMarshalFunction, myConceptModelIdentity, myConceptNodeIdentity, myConceptNodeMacro, myConceptPatternReduction_MappingRule, myConceptPropertyMacro, myConceptPropertyMacro_GetPropertyValue, myConceptReductionRule, myConceptReduction_MappingRule, myConceptReferenceMacro, myConceptReferenceMacro_GetReferent, myConceptRootTemplateAnnotation, myConceptRoot_MappingRule, myConceptRuleConsequence, myConceptSourceSubstituteMacro, myConceptSourceSubstituteMacro_SourceNodeQuery, myConceptSourceSubstituteMacro_SourceNodesQuery, myConceptTemplateArgumentLinkPatternRefExpression, myConceptTemplateArgumentParameterExpression, myConceptTemplateArgumentPatternRef, myConceptTemplateArgumentPatternVarRefExpression, myConceptTemplateArgumentPropertyPatternRefExpression, myConceptTemplateArgumentQuery, myConceptTemplateArgumentQueryExpression, myConceptTemplateArgumentVariableRefExpression, myConceptTemplateCallMacro, myConceptTemplateDeclaration, myConceptTemplateDeclarationReference, myConceptTemplateFragment, myConceptTemplateFragment_ContextNodeQuery, myConceptTemplateFunctionParameter_mainContextNode, myConceptTemplateFunctionParameter_outputNode, myConceptTemplateFunctionParameter_parentOutputNode, myConceptTemplateFunctionParameter_sourceNode, myConceptTemplateFunctionParameter_templatePropertyValue, myConceptTemplateFunctionParameter_templateReferent, myConceptTemplateParameterDeclaration, myConceptTemplateQueryBase, myConceptTemplateSwitch, myConceptTemplateSwitchMacro, myConceptTemplateSwitchReference, myConceptTraceMacro, myConceptTrivialModelId, myConceptTrivialNodeId, myConceptUnmarshalFunction, myConceptVarMacro, myConceptVarMacro_ValueQuery, myConceptWeaveEach_RuleConsequence, myConceptWeaveMacro, myConceptWeavingAnchorQuery, myConceptWeaving_MappingRule, myConceptWeaving_MappingRule_ContextNodeQuery);
   }
 
   @Override
@@ -291,176 +293,178 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 20:
         return myConceptExportMacro;
       case 21:
-        return myConceptGeneratorDebug_LabelEntry;
+        return myConceptGeneratorDebug_InputNode;
       case 22:
-        return myConceptGeneratorDebug_Mappings;
+        return myConceptGeneratorDebug_LabelEntry;
       case 23:
-        return myConceptGeneratorDebug_NodeMapEntry;
+        return myConceptGeneratorDebug_Mappings;
       case 24:
-        return myConceptGeneratorDebug_NodeRef;
+        return myConceptGeneratorDebug_NodeMapEntry;
       case 25:
-        return myConceptGeneratorInternal_AbstractReferenceDescriptor;
+        return myConceptGeneratorDebug_NodeRef;
       case 26:
-        return myConceptGeneratorInternal_InternalReferenceDescriptor;
+        return myConceptGeneratorInternal_AbstractReferenceDescriptor;
       case 27:
-        return myConceptGeneratorInternal_PropertyDescriptor;
+        return myConceptGeneratorInternal_InternalReferenceDescriptor;
       case 28:
-        return myConceptGeneratorInternal_ReferenceDescriptor;
+        return myConceptGeneratorInternal_PropertyDescriptor;
       case 29:
-        return myConceptGeneratorMessage;
+        return myConceptGeneratorInternal_ReferenceDescriptor;
       case 30:
-        return myConceptGeneratorParameterReference;
+        return myConceptGeneratorMessage;
       case 31:
-        return myConceptIGeneratorParameter;
+        return myConceptGeneratorParameterReference;
       case 32:
-        return myConceptIParameterizedTemplate;
+        return myConceptIGeneratorParameter;
       case 33:
-        return myConceptITemplateCall;
+        return myConceptIParameterizedTemplate;
       case 34:
-        return myConceptIfMacro;
+        return myConceptITemplateCall;
       case 35:
-        return myConceptIfMacro_Condition;
+        return myConceptIfMacro;
       case 36:
-        return myConceptIncludeMacro;
+        return myConceptIfMacro_Condition;
       case 37:
-        return myConceptInlineSwitch_Case;
+        return myConceptIncludeMacro;
       case 38:
-        return myConceptInlineSwitch_RuleConsequence;
+        return myConceptInlineSwitch_Case;
       case 39:
-        return myConceptInlineTemplateWithContext_RuleConsequence;
+        return myConceptInlineSwitch_RuleConsequence;
       case 40:
-        return myConceptInlineTemplate_RuleConsequence;
+        return myConceptInlineTemplateWithContext_RuleConsequence;
       case 41:
-        return myConceptInsertMacro;
+        return myConceptInlineTemplate_RuleConsequence;
       case 42:
-        return myConceptInsertMacro_CreateNodeQuery;
+        return myConceptInsertMacro;
       case 43:
-        return myConceptLabelMacro;
+        return myConceptInsertMacro_CreateNodeQuery;
       case 44:
-        return myConceptLoopMacro;
+        return myConceptLabelMacro;
       case 45:
-        return myConceptMapSrcListMacro;
+        return myConceptLoopMacro;
       case 46:
-        return myConceptMapSrcMacro_MapperFunction;
+        return myConceptMapSrcListMacro;
       case 47:
-        return myConceptMapSrcMacro_PostMapperFunction;
+        return myConceptMapSrcMacro_MapperFunction;
       case 48:
-        return myConceptMapSrcNodeMacro;
+        return myConceptMapSrcMacro_PostMapperFunction;
       case 49:
-        return myConceptMappingConfiguration;
+        return myConceptMapSrcNodeMacro;
       case 50:
-        return myConceptMappingConfiguration_Condition;
+        return myConceptMappingConfiguration;
       case 51:
-        return myConceptMappingLabelDeclaration;
+        return myConceptMappingConfiguration_Condition;
       case 52:
-        return myConceptMappingScript;
+        return myConceptMappingLabelDeclaration;
       case 53:
-        return myConceptMappingScriptReference;
+        return myConceptMappingScript;
       case 54:
-        return myConceptMappingScript_CodeBlock;
+        return myConceptMappingScriptReference;
       case 55:
-        return myConceptMarshalFunction;
+        return myConceptMappingScript_CodeBlock;
       case 56:
-        return myConceptModelIdentity;
+        return myConceptMarshalFunction;
       case 57:
-        return myConceptNodeIdentity;
+        return myConceptModelIdentity;
       case 58:
-        return myConceptNodeMacro;
+        return myConceptNodeIdentity;
       case 59:
-        return myConceptPatternReduction_MappingRule;
+        return myConceptNodeMacro;
       case 60:
-        return myConceptPropertyMacro;
+        return myConceptPatternReduction_MappingRule;
       case 61:
-        return myConceptPropertyMacro_GetPropertyValue;
+        return myConceptPropertyMacro;
       case 62:
-        return myConceptReductionRule;
+        return myConceptPropertyMacro_GetPropertyValue;
       case 63:
-        return myConceptReduction_MappingRule;
+        return myConceptReductionRule;
       case 64:
-        return myConceptReferenceMacro;
+        return myConceptReduction_MappingRule;
       case 65:
-        return myConceptReferenceMacro_GetReferent;
+        return myConceptReferenceMacro;
       case 66:
-        return myConceptRootTemplateAnnotation;
+        return myConceptReferenceMacro_GetReferent;
       case 67:
-        return myConceptRoot_MappingRule;
+        return myConceptRootTemplateAnnotation;
       case 68:
-        return myConceptRuleConsequence;
+        return myConceptRoot_MappingRule;
       case 69:
-        return myConceptSourceSubstituteMacro;
+        return myConceptRuleConsequence;
       case 70:
-        return myConceptSourceSubstituteMacro_SourceNodeQuery;
+        return myConceptSourceSubstituteMacro;
       case 71:
-        return myConceptSourceSubstituteMacro_SourceNodesQuery;
+        return myConceptSourceSubstituteMacro_SourceNodeQuery;
       case 72:
-        return myConceptTemplateArgumentLinkPatternRefExpression;
+        return myConceptSourceSubstituteMacro_SourceNodesQuery;
       case 73:
-        return myConceptTemplateArgumentParameterExpression;
+        return myConceptTemplateArgumentLinkPatternRefExpression;
       case 74:
-        return myConceptTemplateArgumentPatternRef;
+        return myConceptTemplateArgumentParameterExpression;
       case 75:
-        return myConceptTemplateArgumentPatternVarRefExpression;
+        return myConceptTemplateArgumentPatternRef;
       case 76:
-        return myConceptTemplateArgumentPropertyPatternRefExpression;
+        return myConceptTemplateArgumentPatternVarRefExpression;
       case 77:
-        return myConceptTemplateArgumentQuery;
+        return myConceptTemplateArgumentPropertyPatternRefExpression;
       case 78:
-        return myConceptTemplateArgumentQueryExpression;
+        return myConceptTemplateArgumentQuery;
       case 79:
-        return myConceptTemplateArgumentVariableRefExpression;
+        return myConceptTemplateArgumentQueryExpression;
       case 80:
-        return myConceptTemplateCallMacro;
+        return myConceptTemplateArgumentVariableRefExpression;
       case 81:
-        return myConceptTemplateDeclaration;
+        return myConceptTemplateCallMacro;
       case 82:
-        return myConceptTemplateDeclarationReference;
+        return myConceptTemplateDeclaration;
       case 83:
-        return myConceptTemplateFragment;
+        return myConceptTemplateDeclarationReference;
       case 84:
-        return myConceptTemplateFragment_ContextNodeQuery;
+        return myConceptTemplateFragment;
       case 85:
-        return myConceptTemplateFunctionParameter_mainContextNode;
+        return myConceptTemplateFragment_ContextNodeQuery;
       case 86:
-        return myConceptTemplateFunctionParameter_outputNode;
+        return myConceptTemplateFunctionParameter_mainContextNode;
       case 87:
-        return myConceptTemplateFunctionParameter_parentOutputNode;
+        return myConceptTemplateFunctionParameter_outputNode;
       case 88:
-        return myConceptTemplateFunctionParameter_sourceNode;
+        return myConceptTemplateFunctionParameter_parentOutputNode;
       case 89:
-        return myConceptTemplateFunctionParameter_templatePropertyValue;
+        return myConceptTemplateFunctionParameter_sourceNode;
       case 90:
-        return myConceptTemplateFunctionParameter_templateReferent;
+        return myConceptTemplateFunctionParameter_templatePropertyValue;
       case 91:
-        return myConceptTemplateParameterDeclaration;
+        return myConceptTemplateFunctionParameter_templateReferent;
       case 92:
-        return myConceptTemplateQueryBase;
+        return myConceptTemplateParameterDeclaration;
       case 93:
-        return myConceptTemplateSwitch;
+        return myConceptTemplateQueryBase;
       case 94:
-        return myConceptTemplateSwitchMacro;
+        return myConceptTemplateSwitch;
       case 95:
-        return myConceptTemplateSwitchReference;
+        return myConceptTemplateSwitchMacro;
       case 96:
-        return myConceptTraceMacro;
+        return myConceptTemplateSwitchReference;
       case 97:
-        return myConceptTrivialModelId;
+        return myConceptTraceMacro;
       case 98:
-        return myConceptTrivialNodeId;
+        return myConceptTrivialModelId;
       case 99:
-        return myConceptUnmarshalFunction;
+        return myConceptTrivialNodeId;
       case 100:
-        return myConceptVarMacro;
+        return myConceptUnmarshalFunction;
       case 101:
-        return myConceptVarMacro_ValueQuery;
+        return myConceptVarMacro;
       case 102:
-        return myConceptWeaveEach_RuleConsequence;
+        return myConceptVarMacro_ValueQuery;
       case 103:
-        return myConceptWeaveMacro;
+        return myConceptWeaveEach_RuleConsequence;
       case 104:
-        return myConceptWeavingAnchorQuery;
+        return myConceptWeaveMacro;
       case 105:
-        return myConceptWeaving_MappingRule;
+        return myConceptWeavingAnchorQuery;
       case 106:
+        return myConceptWeaving_MappingRule;
+      case 107:
         return myConceptWeaving_MappingRule_ContextNodeQuery;
       default:
         throw new IllegalStateException();
@@ -530,6 +534,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForExportMacro() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.ExportMacro", MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7bb9ef7499aab606L)).super_("jetbrains.mps.lang.generator.structure.NodeMacro").version(1).super_(MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L)).parents("jetbrains.mps.lang.generator.structure.NodeMacro").parentIds(MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x7bb9ef7499aab63aL, "label", MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x6db65d569f9bacaL), false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "8915420221429954106"))).references("label").alias("$EXPORT$", "expose output node to facilitate external references to generator outcome").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "8915420221429954054")).create();
   }
+  private static ConceptDescriptor createDescriptorForGeneratorDebug_InputNode() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.GeneratorDebug_InputNode", MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x509c00a99889f702L, "presentation", new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "5808518347809748738")), new ConceptDescriptorBuilder.Prop(0x509c00a9989481dbL, "modelName", new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "5808518347810439643"))).properties("presentation", "modelName").referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x509c00a99889f6ffL, "nodePtr", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), true, new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "5808518347809748735"))).references("nodePtr").childDescriptors(new ConceptDescriptorBuilder.Link(0x509c00a99889f0aeL, "node", MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L), true, false, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "5808518347809747118"))).children(new String[]{"node"}, new boolean[]{false}).alias("", "input nodes generally come from transient model, we can't keep direct reference to BaseConcept, hence this descriptor").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "5808518347809715508")).create();
+  }
   private static ConceptDescriptor createDescriptorForGeneratorDebug_LabelEntry() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.GeneratorDebug_LabelEntry", MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x35a02f6bfc9810e9L, "label", new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "3864140621129715945"))).properties("label").childDescriptors(new ConceptDescriptorBuilder.Link(0x35a02f6bfc9810ebL, "entries", MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L), true, true, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "3864140621129715947"))).children(new String[]{"entries"}, new boolean[]{true}).alias("", "Entry for MappingLabel").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "3864140621129713348")).create();
   }
@@ -537,7 +544,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.GeneratorDebug_Mappings", MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc97f1c1L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x35a02f6bfc9806c5L, "labels", MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L), true, true, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "3864140621129713349"))).children(new String[]{"labels"}, new boolean[]{true}).alias("", "Container for generator mappings produced during transformation step").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "3864140621129707969")).create();
   }
   private static ConceptDescriptor createDescriptorForGeneratorDebug_NodeMapEntry() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.GeneratorDebug_NodeMapEntry", MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x35a02f6bfc9806caL, "inputNode", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), true, new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "3864140621129713354")), new ConceptDescriptorBuilder.Ref(0x35a02f6bfc9806dbL, "inputOrigin", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), true, new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "3864140621129713371"))).references("inputNode", "inputOrigin").childDescriptors(new ConceptDescriptorBuilder.Link(0x35a02f6bfc9806d5L, "outputNode", MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806d2L), false, true, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "3864140621129713365"))).children(new String[]{"outputNode"}, new boolean[]{true}).alias("", "Records input node to output mapping, with origin of the input node (if any).").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "3864140621129713351")).create();
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.GeneratorDebug_NodeMapEntry", MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x35a02f6bfc9806dbL, "inputOrigin", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), true, new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "3864140621129713371"))).references("inputOrigin").childDescriptors(new ConceptDescriptorBuilder.Link(0x509c00a99889f77eL, "inputNode", MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L), true, false, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "5808518347809748862")), new ConceptDescriptorBuilder.Link(0x35a02f6bfc9806d5L, "outputNode", MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806d2L), false, true, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "3864140621129713365"))).children(new String[]{"inputNode", "outputNode"}, new boolean[]{false, true}).alias("", "Records input node to output mapping, with origin of the input node (if any).").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "3864140621129713351")).create();
   }
   private static ConceptDescriptor createDescriptorForGeneratorDebug_NodeRef() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.GeneratorDebug_NodeRef", MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806d2L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x35a02f6bfc9806d3L, "node", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "3864140621129713363"))).references("node").alias("", "Need multiple references to node<>, this is how they do it with MPS").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "3864140621129713362")).create();
