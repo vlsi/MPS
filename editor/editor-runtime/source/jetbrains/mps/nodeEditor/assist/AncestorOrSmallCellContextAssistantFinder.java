@@ -16,18 +16,18 @@
 package jetbrains.mps.nodeEditor.assist;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
+import jetbrains.mps.openapi.editor.assist.ContextAssistant;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.assist.ContextAssistant;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Looks for a context assistant placeholder by checking the single selected cell and its descendants which are not big cells (i.e. belong to the same node as
- * the cell).
+ * Looks for a context assistant placeholder cell in the subtree of the selected cell and its descendants which are not big cells (i.e. belong to the same node
+ * as the cell). If not successful, continues to the cell's ancestors and their subtrees.
  */
-class ParentOrSmallCellContextAssistantFinder implements ContextAssistantFinder {
+class AncestorOrSmallCellContextAssistantFinder implements ContextAssistantFinder {
   @Nullable
   @Override
   public ContextAssistant findAssistant(@NotNull Selection selection) {
@@ -36,7 +36,9 @@ class ParentOrSmallCellContextAssistantFinder implements ContextAssistantFinder 
     EditorCell last = null;
     while (cell != null) {
       ContextAssistant assistant = findAssistantInSubTree(cell, last);
-      if (assistant != null) return assistant;
+      if (assistant != null) {
+        return assistant;
+      }
 
       last = cell;
       cell = cell.getParent();
@@ -48,17 +50,28 @@ class ParentOrSmallCellContextAssistantFinder implements ContextAssistantFinder 
   /**
    * Looks for context assistant in the subtree of {@code root}, skipping big cells and {@code skipChild} (since it was checked earlier).
    */
+  @Nullable
   private ContextAssistant findAssistantInSubTree(@NotNull EditorCell root, @Nullable EditorCell skipChild) {
-    if (root instanceof EditorCell_ContextAssistantComponent) return ((EditorCell_ContextAssistantComponent) root).getContextAssistant();
+    if (root instanceof EditorCell_ContextAssistantComponent) {
+      return ((EditorCell_ContextAssistantComponent) root).getContextAssistant();
+    }
 
-    if (!(root instanceof EditorCell_Collection)) return null;
+    if (!(root instanceof EditorCell_Collection)) {
+      return null;
+    }
 
     for (EditorCell child : ((EditorCell_Collection) root)) {
-      if (child == skipChild) continue;
-      if (child.isBig()) continue;
+      if (child == skipChild) {
+        continue;
+      }
+      if (child.isBig()) {
+        continue;
+      }
 
       ContextAssistant assistant = findAssistantInSubTree(child, null);
-      if (assistant != null) return assistant;
+      if (assistant != null) {
+        return assistant;
+      }
     }
 
     return null;

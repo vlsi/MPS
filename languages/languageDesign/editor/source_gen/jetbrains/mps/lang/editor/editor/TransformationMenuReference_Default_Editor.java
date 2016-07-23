@@ -40,6 +40,7 @@ public class TransformationMenuReference_Default_Editor extends DefaultNodeEdito
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default menu for");
     editorCell.setCellId("Constant_9zto5v_a0");
     Style style = new StyleImpl();
+    Styles_StyleSheet.apply_EditorKeyWord(style, editorCell);
     style.set(StyleAttributes.NAVIGATABLE_NODE, 0, TransformationMenuReference_Default_Editor._StyleParameter_QueryFunction_9zto5v_a0a0(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

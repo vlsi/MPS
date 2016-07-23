@@ -14,6 +14,8 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel__BehaviorDescriptor;
+import jetbrains.mps.util.Pair;
+import java.awt.Color;
 
 public class Styles_StyleSheet {
   public static void apply_rootCellModelStyle(Style style, EditorCell editorCell) {
@@ -144,7 +146,7 @@ public class Styles_StyleSheet {
     }
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
-  public static void apply_KeyWord(Style style, EditorCell editorCell) {
+  public static void apply_EditorKeyWord(Style style, EditorCell editorCell) {
     SNode node = (editorCell == null ? null : editorCell.getSNode());
     EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
@@ -154,6 +156,7 @@ public class Styles_StyleSheet {
       }
       style.putAll(styleToPut, 0);
     }
+    style.set(StyleAttributes.TEXT_COLOR, 0, (!(StyleRegistry.getInstance().isDarkTheme()) ? Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a1q(editorContext, node).o1 : Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a1q(editorContext, node).o2));
   }
 
   private static boolean _StyleParameter_QueryFunction_kkd5s1_a0a(EditorContext editorContext, SNode node) {
@@ -185,5 +188,8 @@ public class Styles_StyleSheet {
   }
   private static boolean _StyleParameter_QueryFunction_kkd5s1_a3j(EditorContext editorContext, SNode node) {
     return true;
+  }
+  private static Pair<Color, Color> _StyleParameter_QueryFunction_kkd5s1_a1q(EditorContext editorContext, SNode node) {
+    return new Pair<Color, Color>(new Color(0x90, 0x60, 0), new Color(0xff, 0xc6, 0x6d));
   }
 }
