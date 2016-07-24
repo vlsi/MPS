@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.make;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.compiler.EclipseJavaCompiler;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
@@ -129,10 +130,22 @@ public final class ModuleMaker {
           assert facet != null && facet.getClassesGen() != null;
           File classesGenFile = new File(facet.getClassesGen().getPath());
           FileUtil.delete(classesGenFile);
-          ClassPathCachingFacility.getInstance().invalidate(Collections.singleton(classesGenFile.getAbsolutePath()));
         }
         monitor.advance(1);
       }
+    } finally {
+      monitor.done();
+    }
+  }
+
+  @NotNull
+  public MPSCompilationResult makeAndDeploy(final Collection<? extends SModule> modules, @NotNull final ProgressMonitor monitor,
+      @Nullable JavaCompilerOptions compilerOptions) {
+    monitor.start("Building modules", 4);
+    try {
+      MPSCompilationResult result = make(modules, monitor.subTask(3), compilerOptions);
+      ClassLoaderManager.getInstance().reloadModules(modules, monitor.subTask(1));
+      return result;
     } finally {
       monitor.done();
     }
@@ -143,28 +156,27 @@ public final class ModuleMaker {
     return make(modules, monitor, null);
   }
 
-  // TODO: get rid of push and pop tracer calls -- they are needed only for performance checks
   @NotNull
   public MPSCompilationResult make(final Collection<? extends SModule> modules, @NotNull final ProgressMonitor monitor, @Nullable final JavaCompilerOptions compilerOptions) {
-    CompositeTracer tracer = new CompositeTracer(myTracer, monitor, String.format(BUILDING_MODULES_MSG, modules.size()), 12); // FIXME: 12 is a gorgeous number
+    CompositeTracer tracer = new CompositeTracer(myTracer, monitor, String.format(BUILDING_MODULES_MSG, modules.size()), 6); // FIXME: 12 is a gorgeous number
     try {
       tracer.push(COLLECTING_DEPENDENCIES_MSG);
       Set<SModule> candidates = new LinkedHashSet<>(new GlobalModuleDependenciesManager(modules).getModules(Deptype.COMPILE));
-      tracer.pop();
+      tracer.pop(1);
 
       tracer.push(LOADING_DEPENDENCIES_MSG);
       Dependencies dependencies = new Dependencies(candidates); // fixme AP why do we need to look for some other deps??
-      tracer.pop();
+      tracer.pop(1);
 
       tracer.push(CALCULATING_DEPENDENCIES_TO_COMPILE_MSG);
       Set<SModule> toCompile = buildDirtyModulesClosure(new ModulesContainer(candidates, dependencies));
-      tracer.pop();
+      tracer.pop(1);
 
       tracer.push(BUILDING_MODULE_CYCLES_MSG);
       List<Set<SModule>> schedule = new StronglyConnectedModules<>(toCompile).getStronglyConnectedComponents();
-      tracer.pop();
+      tracer.pop(1);
 
-      return compileCycles(compilerOptions, schedule, tracer.subTracer(toCompile.size()), dependencies);
+      return compileCycles(compilerOptions, schedule, tracer.subTracer(2).subTracer(toCompile.size()), dependencies);
     } finally {
       tracer.done();
       final String report = tracer.getReport();

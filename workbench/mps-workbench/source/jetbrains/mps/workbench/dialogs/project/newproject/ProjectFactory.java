@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.dialogs.project.newproject;
 
+import com.intellij.execution.RunCanceledByUserException;
 import com.intellij.ide.startup.StartupManagerEx;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
@@ -59,7 +60,7 @@ public class ProjectFactory {
 
   public Project createProject() throws ProjectNotCreatedException {
     final String[] error = new String[]{null};
-    ProgressManager.getInstance().run(new Task.Modal(myCurrentProject, "Creating", false) {
+    ProgressManager.getInstance().run(new Task.Modal(myCurrentProject, "Creating Project", false) {
       @Override
       public void run(@NotNull() ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
@@ -77,7 +78,11 @@ public class ProjectFactory {
         ApplicationManager.getApplication().invokeAndWait(new Runnable() {
           @Override
           public void run() {
-            myCreatedProject = ProjectManagerEx.getInstanceEx().newProject(myOptions.getProjectName(), projectFilePath, true, false);
+            try {
+              myCreatedProject = ProjectManagerEx.getInstanceEx().newProject(myOptions.getProjectName(), projectFilePath, true, false);
+            } catch (Exception e) {
+              throw new RuntimeException(e);
+            }
           }
         }, indicator.getModalityState());
       }

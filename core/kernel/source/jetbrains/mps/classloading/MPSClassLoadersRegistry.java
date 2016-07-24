@@ -34,6 +34,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.Set;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
@@ -74,8 +75,8 @@ class MPSClassLoadersRegistry {
     return myMPSLoadableModules.get(mRef);
   }
 
-  public Collection<SModuleReference> doUnloadModules(Collection<? extends SModuleReference> toUnload) {
-    Collection<SModuleReference> unloaded = new LinkedHashSet<SModuleReference>();
+  public Set<SModuleReference> doUnloadModules(Collection<SModuleReference> toUnload) {
+    Set<SModuleReference> unloaded = new LinkedHashSet<SModuleReference>();
     Collection<ModuleClassLoader> toDispose = new LinkedHashSet<ModuleClassLoader>();
     for (SModuleReference mRef : toUnload) {
       if (!myMPSLoadableModules.containsKey(mRef)) {
@@ -107,8 +108,8 @@ class MPSClassLoadersRegistry {
     return unloaded;
   }
 
-  public Collection<ReloadableModule> onLazyLoaded(Collection<? extends ReloadableModule> toLoadLazy) {
-    Collection<ReloadableModule> lazyLoaded = new LinkedHashSet<ReloadableModule>();
+  public Set<ReloadableModule> onLazyLoaded(Collection<ReloadableModule> toLoadLazy) {
+    Set<ReloadableModule> lazyLoaded = new LinkedHashSet<ReloadableModule>();
     for (ReloadableModule module : toLoadLazy) {
       SModuleReference mRef = module.getModuleReference();
       ClassLoadingProgress classLoadingProgress = myMPSLoadableModules.get(mRef);

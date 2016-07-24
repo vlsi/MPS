@@ -106,7 +106,7 @@ public final class CompositeTracer {
   public CompositeTracer subTracer(int size) {
     ProgressMonitor monitor = null;
     if (myMonitor != null) {
-      monitor = myMonitor.subTask(size);
+      monitor = myMonitor.subTask(1);
     }
     return new CompositeTracer(myTracer, monitor, null, size);
   }

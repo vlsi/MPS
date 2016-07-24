@@ -20,12 +20,12 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.util.WaitForProgressToShow;
+import jetbrains.mps.ide.ThreadUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -77,33 +77,28 @@ public abstract class BasePluginManager<T> implements PluginLoader {
   }
 
   @Override
-  public void loadPlugins(final List<PluginContributor> contributors, @NotNull ProgressMonitor monitor) {
-    try {
-      int size = contributors.size();
-      LOG.debug("Loading plugins from " + size + " contributors [" + toString() + "]");
-      monitor.start("Loading " + size + " MPS plugins", 1);
-      showProgress();
-      final Map<PluginContributor, T> plugins = createPlugins(contributors);
-      synchronized (myPluginsLock) {
-        plugins.entrySet().forEach(entry -> {
-          PluginContributor contributor = entry.getKey();
-          @Nullable T plugin = entry.getValue();
-          if (myContributorToPlugin.containsKey(contributor)) { // not in one step because nulls are allowed
-            LOG.error("", new IllegalArgumentException(this + ": contributor " + contributor + " is already registered"));
-          }
-          myContributorToPlugin.put(contributor, plugin);
-        });
-        List<T> notNullPlugins = plugins.values().stream().filter(Objects::nonNull).collect(Collectors.toList());
-        mySortedPlugins.addAll(notNullPlugins);
-        afterPluginsCreated(new ArrayList<>(notNullPlugins));
-      }
-    } finally {
-      monitor.done();
+  public void loadPlugins(final List<PluginContributor> contributors) {
+    int size = contributors.size();
+    LOG.debug("Loading plugins from " + size + " contributors [" + toString() + "]");
+    showProgress();
+    final Map<PluginContributor, T> plugins = createPlugins(contributors);
+    synchronized (myPluginsLock) {
+      plugins.entrySet().forEach(entry -> {
+        PluginContributor contributor = entry.getKey();
+        @Nullable T plugin = entry.getValue();
+        if (myContributorToPlugin.containsKey(contributor)) { // not in one step because nulls are allowed
+          LOG.error("", new IllegalArgumentException(this + ": contributor " + contributor + " is already registered"));
+        }
+        myContributorToPlugin.put(contributor, plugin);
+      });
+      List<T> notNullPlugins = plugins.values().stream().filter(Objects::nonNull).collect(Collectors.toList());
+      mySortedPlugins.addAll(notNullPlugins);
+      afterPluginsCreated(new ArrayList<>(notNullPlugins));
     }
   }
 
   @Override
-  public void unloadPlugins(final List<PluginContributor> contributors, @NotNull ProgressMonitor monitor) {
+  public void unloadPlugins(final List<PluginContributor> contributors) {
     int size = contributors.size();
     LOG.debug("Unloading MPS plugins from " + size + " contributors [" + toString() + "]");
     final List<T> plugins;
@@ -112,14 +107,9 @@ public abstract class BasePluginManager<T> implements PluginLoader {
       mySortedPlugins.removeAll(plugins);
     }
 
-    try {
-      monitor.start("Unloading " + size + " MPS plugins", 1);
-      showProgress();
-      beforePluginsDisposed(plugins);
-      disposePlugins(plugins);
-    } finally {
-      monitor.done();
-    }
+    showProgress();
+    beforePluginsDisposed(plugins);
+    disposePlugins(plugins);
   }
 
   @NotNull
@@ -155,7 +145,6 @@ public abstract class BasePluginManager<T> implements PluginLoader {
     ApplicationManager.getApplication().invokeAndWait(() -> {
       for (PluginContributor contributor : contributors) {
         T plugin = createPluginChecked(contributor);
-        LOG.trace(this + ": creating plugin " + plugin + " from the contributor " + contributor);
         plugins.put(contributor, plugin);
       }
     }, getModalityState());
@@ -166,8 +155,8 @@ public abstract class BasePluginManager<T> implements PluginLoader {
   private T createPluginChecked(PluginContributor contributor) {
     T plugin = null;
     try {
-      LOG.trace(this + ": creating plugin from the contributor " + contributor);
       plugin = createPlugin(contributor);
+      LOG.trace(this + ": creating plugin " + plugin + " from the contributor " + contributor);
     } catch (LinkageError le) {
       LOG.error(this + ": contributor " + contributor + " threw a linkage error during plugin creation ", le);
     } catch (Throwable t) {

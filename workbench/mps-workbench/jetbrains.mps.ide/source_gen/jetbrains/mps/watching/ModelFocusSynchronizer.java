@@ -73,36 +73,41 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
         }
         //  the sole reason for invokeLater here is to run after all runReadInEDT. IOW, we implicitly 
         // synchronize file collection task with refresh task by using EDT thread. Just don't want to bother with 
-        // explicit synch (e.g. semaphore incremented before runReadInEDT, decremented in the end and RefreshQueue waiting for 
+        // explicit sync (e.g. semaphore incremented before runReadInEDT, decremented in the end and RefreshQueue waiting for 
         // semaphore == 0. 
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            RefreshSession session = RefreshQueue.getInstance().createSession(true, true, null);
-            for (IFile file : SetSequence.fromSet(files)) {
-              IFile fileToRefresh = file;
-              while (!(fileToRefresh.exists())) {
-                fileToRefresh = fileToRefresh.getParent();
+            if (!(SetSequence.fromSet(files).isEmpty())) {
+              RefreshSession session = RefreshQueue.getInstance().createSession(true, true, null);
+              for (IFile file : SetSequence.fromSet(files)) {
+                IFile fileToRefresh = file;
+                while (!(fileToRefresh.exists())) {
+                  fileToRefresh = fileToRefresh.getParent();
+                }
+                VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(fileToRefresh);
+                if (virtualFile != null) {
+                  session.addFile(virtualFile);
+                }
               }
-              VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(fileToRefresh);
-              if (virtualFile != null) {
-                session.addFile(virtualFile);
-              }
+              session.launch();
             }
-            session.launch();
           }
         });
       }
     });
   }
+
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return getClass().getName();
   }
+
   @Override
   public void initComponent() {
   }
+
   @Override
   public void disposeComponent() {
   }

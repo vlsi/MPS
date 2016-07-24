@@ -340,8 +340,8 @@ public class ClassLoaderManager implements CoreComponent {
       modulesPreLoad = filterModules(modulesPreLoad, myUnloadedCondition, myMPSLoadableCondition, myValidCondition);
       if (modulesPreLoad.isEmpty()) return Collections.emptySet();
 
-      Collection<ReloadableModule> modulesToNotify = myClassLoadersHolder.onLazyLoaded(modulesPreLoad);
-      myBroadCaster.onLoad(modulesToNotify);
+      Set<ReloadableModule> modulesToNotify = myClassLoadersHolder.onLazyLoaded(modulesPreLoad, monitor);
+      myBroadCaster.onLoad(modulesToNotify, monitor);
 
       return modulesToNotify;
     } finally {
@@ -357,28 +357,25 @@ public class ClassLoaderManager implements CoreComponent {
    */
   @NotNull
   private Collection<ReloadableModule> doLoadModules(final Iterable<? extends ReloadableModule> modules, final ProgressMonitor monitor) {
-    monitor.start("Loading modules...", 1);
+    monitor.start("Loading modules...", 2);
     try {
-      return new ModelAccessHelper(myRepository).runReadAction(new Computable<Collection<ReloadableModule>>() {
-        @Override
-        public Collection<ReloadableModule> compute() {
-          synchronized (myLoadingModulesLock) { // provides synchronization only in this block
-            Set<ReloadableModule> modulesToLoad = new LinkedHashSet<ReloadableModule>(filterModules(modules, myWatchableCondition, myValidCondition));
-            if (modulesToLoad.isEmpty()) return Collections.emptySet();
+      return new ModelAccessHelper(myRepository).runReadAction((Computable<Collection<ReloadableModule>>) () -> {
+        synchronized (myLoadingModulesLock) { // provides synchronization only in this block
+          Set<ReloadableModule> modulesToLoad = new LinkedHashSet<ReloadableModule>(filterModules(modules, myWatchableCondition, myValidCondition));
+          if (modulesToLoad.isEmpty()) return Collections.emptySet();
 
-            // transitive closure
-            modulesToLoad.addAll(myModulesWatcher.getResolvedDependencies(modulesToLoad));
-            modulesToLoad = filterModules(modulesToLoad, myMPSLoadableCondition, myNotLoadedCondition);
-            if (modulesToLoad.isEmpty()) return Collections.emptySet();
+          // transitive closure
+          modulesToLoad.addAll(myModulesWatcher.getResolvedDependencies(modulesToLoad));
+          modulesToLoad = filterModules(modulesToLoad, myMPSLoadableCondition, myNotLoadedCondition);
+          if (modulesToLoad.isEmpty()) return Collections.emptySet();
 
-            LOG.debug("Loading " + modulesToLoad.size() + " modules");
-            monitor.advance(1);
-            if (!filterModules(modulesToLoad, myUnloadedCondition).isEmpty()) {
-              LOG.warn("Some modules are not preloaded yet : cannot load them");
-            }
-            myClassLoadersHolder.doLoadModules(modulesToLoad, monitor);
-            return modulesToLoad;
+          LOG.debug("Loading " + modulesToLoad.size() + " modules");
+          monitor.advance(1);
+          if (!filterModules(modulesToLoad, myUnloadedCondition).isEmpty()) {
+            LOG.warn("Some modules are not preloaded yet : cannot load them");
           }
+          myClassLoadersHolder.doLoadModules(modulesToLoad, monitor.subTask(1));
+          return modulesToLoad;
         }
       });
     } finally {
@@ -409,9 +406,8 @@ public class ClassLoaderManager implements CoreComponent {
 
       LOG.debug("Unloading " + modulesToUnload.size() + " modules");
       monitor.step("Disposing old class loaders...");
-      Collection<ReloadableModule> unloadedModules = myBroadCaster.onUnload(modulesToUnload);
-      myClassLoadersHolder.doUnloadModules(modulesToUnload);
-      monitor.advance(1);
+      Collection<ReloadableModule> unloadedModules = myBroadCaster.onUnload(modulesToUnload, monitor);
+      myClassLoadersHolder.doUnloadModules(modulesToUnload, monitor.subTask(1));
 
       return unloadedModules;
     } finally {
@@ -429,19 +425,32 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   /**
-   * NOTE: It is recommended to use {@link jetbrains.mps.classloading.ModuleReloadListener}
-   * Although you can use the old listening mechanism {@link MPSClassesListener}
+   * @deprecated It is recommended to use {@link jetbrains.mps.classloading.DeployListener}
    */
+  @Deprecated
   public void addClassesHandler(MPSClassesListener handler) {
     myBroadCaster.addClassesHandler(handler);
   }
 
+  @Deprecated
   public void removeClassesHandler(MPSClassesListener handler) {
     myBroadCaster.removeClassesHandler(handler);
   }
 
+  /**
+   * @deprecated It is recommended to use {@link jetbrains.mps.classloading.DeployListener}
+   */
+  @Deprecated
   public void addReloadListener(ModuleReloadListener listener) {
     myBroadCaster.addReloadListener(listener);
+  }
+
+  public void addListener(@NotNull DeployListener listener) {
+    myBroadCaster.addListener(listener);
+  }
+
+  public void removeListener(@NotNull DeployListener listener) {
+    myBroadCaster.removeListener(listener);
   }
 
   public void removeReloadListener(ModuleReloadListener listener) {

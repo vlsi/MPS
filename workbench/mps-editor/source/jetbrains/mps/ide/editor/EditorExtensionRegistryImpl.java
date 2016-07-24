@@ -41,8 +41,6 @@ public class EditorExtensionRegistryImpl implements EditorExtensionRegistry, Pro
 
   @Override
   public void projectClosed() {
-    assert myExtensions.isEmpty();
-    assert myEditorExtensions.isEmpty();
   }
 
   @Override
@@ -51,6 +49,8 @@ public class EditorExtensionRegistryImpl implements EditorExtensionRegistry, Pro
 
   @Override
   public void disposeComponent() {
+    assert myExtensions.isEmpty();
+    assert myEditorExtensions.isEmpty();
   }
 
   @NotNull

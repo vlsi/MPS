@@ -22,9 +22,8 @@ import org.jetbrains.mps.openapi.util.SubProgressKind;
  * Evgeny Gryaznov, 10/3/11
  */
 public abstract class ProgressMonitorBase implements ProgressMonitor {
-
-  protected int myTotal = 0;
-  protected int myDone = 0;
+  private int myTotal = 0;
+  private int myDone = 0;
   private SubProgressMonitor myActiveChild;
   private int myAfterActiveChild;
   private String myName;
@@ -134,13 +133,12 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     return new SubProgressMonitor(this, work, kind);
   }
 
-  public static class SubProgressMonitor extends ProgressMonitorBase {
-
+  protected static class SubProgressMonitor extends ProgressMonitorBase {
     private final ProgressMonitorBase parent;
     private final int parentTotalWork;
     private final SubProgressKind kind;
 
-    protected SubProgressMonitor(ProgressMonitorBase parent, int work, SubProgressKind kind) {
+    public SubProgressMonitor(ProgressMonitorBase parent, int work, SubProgressKind kind) {
       this.parent = parent;
       this.parentTotalWork = work;
       this.kind = kind;

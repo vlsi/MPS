@@ -283,8 +283,9 @@ public class SModelRepository implements CoreComponent {
 
     for (EditableSModel emd : modelsToRefresh) {
       DataSource source = emd.getSource();
-      if (!(source instanceof DataSourceBase)) continue;
-      ((DataSourceBase) source).refresh();
+      if (source instanceof DataSourceBase) {
+        ((DataSourceBase) source).refresh();
+      }
     }
 
     synchronized (myModelsLock) {

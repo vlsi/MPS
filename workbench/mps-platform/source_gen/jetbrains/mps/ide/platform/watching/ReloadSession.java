@@ -68,7 +68,7 @@ public class ReloadSession {
     myReloaded = true;
 
     final Iterable<ReloadParticipant> participants = getParticipants();
-    monitor.start("Reloading ...", Sequence.fromIterable(participants).count());
+    monitor.start("Reloading Files", Sequence.fromIterable(participants).count());
     long beginTime = System.nanoTime();
     try {
       if (LOG.isDebugEnabled()) {
