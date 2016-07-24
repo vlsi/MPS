@@ -20,15 +20,26 @@ import org.apache.log4j.Priority;
 import org.jetbrains.annotations.NotNull;
 
 public enum MessageKind {
-  INFORMATION, WARNING, ERROR;
+  TRACE,
+  DEBUG,
+  INFORMATION,
+  WARNING,
+  ERROR,
+  FATAL;
 
   @NotNull
   public static MessageKind fromPriority(Priority level) {
-    if (level.equals(Level.FATAL) || level.equals(Level.ERROR)) {
+    if (level.equals(Level.FATAL)) {
+      return MessageKind.FATAL;
+    } else if (level.equals(Level.ERROR)) {
       return MessageKind.ERROR;
     } else if (level.equals(Level.WARN)) {
       return MessageKind.WARNING;
+    } else if (level.equals(Level.INFO)) {
+      return MessageKind.INFORMATION;
+    } else if (level.equals(Level.DEBUG)) {
+      return MessageKind.DEBUG;
     }
-    return MessageKind.INFORMATION;
+    return MessageKind.TRACE;
   }
 }

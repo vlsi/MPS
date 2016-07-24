@@ -245,6 +245,9 @@ public class PluginLoaderRegistry implements ApplicationComponent {
 
   private void update() {
     ThreadUtils.assertEDT();
+    if (ApplicationManager.getApplication().isDisposed()) {
+      return;
+    }
     myDirtyFlag.set(false);
     Delta<PluginLoader> loadersDelta;
     Delta<ReloadableModule> moduleDelta;

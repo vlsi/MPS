@@ -82,19 +82,19 @@ public final class StartupModuleMakerImpl extends StartupModuleMaker {
 
   private void doBuild(ProgressMonitor monitor) {
     LOG.info("Building modules on startup");
-    monitor.start("Building modules", 1);
     final Collection<SModule> modules = new ModelAccessHelper(myMPSProject.getRepository()).runReadAction(this::getModules);
-    try {
-      myMPSProject.getModelAccess().runWriteAction(() -> {
-        final ModuleMaker maker = new ModuleMaker();
-        myReloadManager.computeNoReload(() -> {
-          JavaCompilerOptions compilerOptions = JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(myMPSProject);
-          return maker.makeAndDeploy(modules, monitor.subTask(1), compilerOptions);
-        });
+    myMPSProject.getModelAccess().runWriteAction(() -> {
+      final ModuleMaker maker = new ModuleMaker();
+      myReloadManager.computeNoReload(() -> {
+        JavaCompilerOptions compilerOptions = JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(myMPSProject);
+        try {
+          return maker.makeAndDeploy(modules, monitor, compilerOptions);
+        } catch (Exception | AssertionError e) {
+          LOG.error("Exception while making project", e);
+          throw new RuntimeException(e);
+        }
       });
-    } finally {
-      monitor.done();
-    }
+    });
     LOG.info("Building on startup is finished");
   }
 

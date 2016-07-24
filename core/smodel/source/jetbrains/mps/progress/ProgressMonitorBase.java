@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.progress;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 
@@ -33,7 +34,7 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
   }
 
   @Override
-  public final void start(String taskName, int totalWork) {
+  public final void start(@NotNull String taskName, int totalWork) {
     if (myTotal > 0) {
       throw new IllegalStateException("start() is called twice");
     }
@@ -66,10 +67,10 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
   @Override
   public void advance(int work) {
     check();
+    if (work == 0) return;
     if (myTotal <= 0) {
       throw new IllegalStateException("call start() first");
     }
-    if (work == 0) return;
 
     myDone = Math.min(myTotal, Math.max(0, myDone + work));
     update();
