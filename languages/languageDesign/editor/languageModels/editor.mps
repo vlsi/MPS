@@ -198,6 +198,7 @@
         <child id="1165254159533" name="matchingTextFunction" index="1ezQQy" />
         <child id="1165254180581" name="descriptionTextFunction" index="1ezVZE" />
       </concept>
+      <concept id="5266818545798688928" name="jetbrains.mps.lang.editor.structure.ShowBoundariesInStyleClassItem" flags="lg" index="1fO$WK" />
       <concept id="1103016434866" name="jetbrains.mps.lang.editor.structure.CellModel_JComponent" flags="sg" stub="8104358048506731196" index="3gTLQM">
         <child id="1176475119347" name="componentProvider" index="3FoqZy" />
       </concept>
@@ -13570,6 +13571,7 @@
           </node>
         </node>
       </node>
+      <node concept="1fO$WK" id="4$nvT06OhbU" role="3F10Kt" />
     </node>
   </node>
   <node concept="24kQdi" id="1qY_lWSoNfB">
@@ -13712,6 +13714,7 @@
         </node>
       </node>
       <node concept="l2Vlx" id="4KcDARc7zMZ" role="2iSdaV" />
+      <node concept="1fO$WK" id="56oDUyQUxs1" role="3F10Kt" />
     </node>
   </node>
   <node concept="24kQdi" id="5OVd5tVffWC">
@@ -13953,6 +13956,7 @@
         </node>
       </node>
       <node concept="l2Vlx" id="6srdxdH8$2f" role="2iSdaV" />
+      <node concept="1fO$WK" id="56oDUyQUx7j" role="3F10Kt" />
     </node>
   </node>
   <node concept="24kQdi" id="FyOJSsBNKy">
@@ -14183,6 +14187,7 @@
         <ref role="1k5W1q" to="tpen:hFD5_7H" resolve="RightBrace" />
       </node>
       <node concept="l2Vlx" id="6V0bp$oHeZd" role="2iSdaV" />
+      <node concept="1fO$WK" id="56oDUyQVVsA" role="3F10Kt" />
     </node>
   </node>
   <node concept="24kQdi" id="3EZUZhmZu2T">
@@ -14302,6 +14307,7 @@
         </node>
       </node>
       <node concept="l2Vlx" id="3EZUZhmZu2Y" role="2iSdaV" />
+      <node concept="1fO$WK" id="56oDUyQUwPA" role="3F10Kt" />
     </node>
   </node>
   <node concept="24kQdi" id="6VgTvK0iUgY">
