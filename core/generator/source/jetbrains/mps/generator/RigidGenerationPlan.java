@@ -31,13 +31,16 @@ import java.util.List;
  * @since 3.3
  */
 public class RigidGenerationPlan implements ModelGenerationPlan {
+  private final String myName;
   private final Step[] mySteps;
 
-  public RigidGenerationPlan(@NotNull Step... steps) {
+  public RigidGenerationPlan(@NotNull String name, @NotNull Step... steps) {
+    myName = name;
     mySteps = steps;
   }
 
-  public RigidGenerationPlan(@NotNull Collection<Step> steps) {
+  public RigidGenerationPlan(@NotNull String name, @NotNull Collection<Step> steps) {
+    myName = name;
     mySteps = steps.toArray(new Step[steps.size()]);
   }
 
@@ -62,6 +65,11 @@ public class RigidGenerationPlan implements ModelGenerationPlan {
       }
     }
     return rv;
+  }
+
+  @NotNull
+  public String getName() {
+    return myName;
   }
 
   @Override
