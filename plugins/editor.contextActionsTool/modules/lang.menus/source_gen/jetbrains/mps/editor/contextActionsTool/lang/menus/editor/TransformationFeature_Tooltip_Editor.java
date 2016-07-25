@@ -27,7 +27,7 @@ public class TransformationFeature_Tooltip_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createComponent_dsjynh_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor.TransformationFeatureAlias");
     return editorCell;
   }
   private EditorCell createRefNode_dsjynh_b0(EditorContext editorContext, SNode node) {

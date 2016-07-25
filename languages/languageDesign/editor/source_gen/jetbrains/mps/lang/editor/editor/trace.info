@@ -39767,32 +39767,41 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)/809086829347211535">
     <file name="TransformationFeatureAlias.java">
-      <node id="809086829347211535" at="17,47,18,35" concept="8" />
-      <node id="809086829347211535" at="20,79,21,62" concept="8" />
-      <node id="809086829347211537" at="23,88,24,131" concept="7" />
-      <node id="809086829347211537" at="24,131,25,34" concept="7" />
-      <node id="809086829347211537" at="25,34,26,61" concept="2" />
-      <node id="809086829347211537" at="26,61,27,40" concept="2" />
-      <node id="809086829347211537" at="27,40,28,22" concept="8" />
-      <node id="809086829347211535" at="20,0,23,0" concept="6" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="809086829347211535" at="16,0,20,0" concept="6" trace="getContextHints#()Ljava/util/Collection;" />
-      <node id="809086829347211537" at="23,0,30,0" concept="6" trace="createComponent_d1knkx_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="809086829347211535" at="17,47,18,35" />
-      <scope id="809086829347211535" at="20,79,21,62" />
-      <scope id="809086829347211535" at="20,0,23,0">
+      <node id="809086829347211535" at="23,47,24,35" concept="8" />
+      <node id="809086829347211535" at="26,79,27,62" concept="8" />
+      <node id="809086829347211535" at="29,88,30,131" concept="7" />
+      <node id="809086829347211535" at="30,131,31,34" concept="7" />
+      <node id="809086829347211535" at="31,34,32,61" concept="2" />
+      <node id="809086829347211535" at="32,61,33,40" concept="2" />
+      <node id="809086829347211535" at="33,40,34,222" concept="2" />
+      <node id="809086829347211535" at="34,222,35,22" concept="8" />
+      <node id="5688053100062159909" at="40,53,41,167" concept="8" />
+      <node id="5688053100062159909" at="38,0,40,0" concept="1" trace="ReplaceWith_TransformationFeature_cellMenu_d1knkx_a0a#()V" />
+      <node id="809086829347211535" at="26,0,29,0" concept="6" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="5688053100062159909" at="40,0,43,0" concept="6" trace="getReplacementConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="809086829347211535" at="22,0,26,0" concept="6" trace="getContextHints#()Ljava/util/Collection;" />
+      <node id="809086829347211535" at="29,0,37,0" concept="6" trace="createComponent_d1knkx_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="5688053100062159909" at="38,68,38,68" />
+      <scope id="809086829347211535" at="23,47,24,35" />
+      <scope id="809086829347211535" at="26,79,27,62" />
+      <scope id="5688053100062159909" at="40,53,41,167" />
+      <scope id="5688053100062159909" at="38,0,40,0" />
+      <scope id="809086829347211535" at="26,0,29,0">
         <var name="editorContext" id="809086829347211535" />
         <var name="node" id="809086829347211535" />
       </scope>
-      <scope id="809086829347211535" at="16,0,20,0" />
-      <scope id="809086829347211537" at="23,88,28,22">
-        <var name="editorCell" id="809086829347211537" />
-        <var name="style" id="809086829347211537" />
+      <scope id="5688053100062159909" at="40,0,43,0" />
+      <scope id="809086829347211535" at="22,0,26,0" />
+      <scope id="809086829347211535" at="29,88,35,22">
+        <var name="editorCell" id="809086829347211535" />
+        <var name="style" id="809086829347211535" />
       </scope>
-      <scope id="809086829347211537" at="23,0,30,0">
-        <var name="editorContext" id="809086829347211537" />
-        <var name="node" id="809086829347211537" />
+      <scope id="809086829347211535" at="29,0,37,0">
+        <var name="editorContext" id="809086829347211535" />
+        <var name="node" id="809086829347211535" />
       </scope>
-      <unit id="809086829347211535" at="15,0,31,0" name="jetbrains.mps.lang.editor.editor.TransformationFeatureAlias" />
+      <unit id="5688053100062159909" at="37,0,44,0" name="jetbrains.mps.lang.editor.editor.TransformationFeatureAlias$ReplaceWith_TransformationFeature_cellMenu_d1knkx_a0a" />
+      <unit id="809086829347211535" at="21,0,45,0" name="jetbrains.mps.lang.editor.editor.TransformationFeatureAlias" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)/8190678916238087351">
