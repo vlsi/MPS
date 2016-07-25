@@ -268,8 +268,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void setChanged() {
     assertCanChange();
     if (isReadOnly()) {
-      LOG.error("Cannot change read-only module " + this);
-      return;
+      LOG.warn("Changing read-only module " + this);
     }
     myChanged = true;
   }
