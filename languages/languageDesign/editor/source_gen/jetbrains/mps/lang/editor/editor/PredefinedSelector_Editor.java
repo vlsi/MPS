@@ -22,7 +22,7 @@ public class PredefinedSelector_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_cellId");
     editorCell.setBig(true);
-    AbstractCellSelector_Actions.setCellActions(editorCell, node, editorContext);
+    ConcreteCellSelector_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

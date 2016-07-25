@@ -6050,5 +6050,25 @@
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
+  <node concept="1TIwiD" id="8PFTpqtF0Z">
+    <property role="EcuMT" value="159226422139203647" />
+    <property role="3GE5qa" value="SNode.select" />
+    <property role="TrG5h" value="OrCellSelector" />
+    <ref role="1TJDcQ" node="1GaASKeIesA" resolve="AbstractCellSelector" />
+    <node concept="1TJgyj" id="8PFTpqtF10" role="1TKVEi">
+      <property role="IQ2ns" value="159226422139203648" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="leftSelector" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1GaASKeIesA" resolve="AbstractCellSelector" />
+    </node>
+    <node concept="1TJgyj" id="8PFTpqtF12" role="1TKVEi">
+      <property role="IQ2ns" value="159226422139203650" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="rightSelector" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1GaASKeIesA" resolve="AbstractCellSelector" />
+    </node>
+  </node>
 </model>
 
