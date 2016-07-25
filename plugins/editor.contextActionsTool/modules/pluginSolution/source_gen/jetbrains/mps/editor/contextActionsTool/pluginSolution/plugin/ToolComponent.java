@@ -10,7 +10,6 @@ import java.awt.BorderLayout;
 import javax.swing.BoxLayout;
 import javax.swing.JScrollPane;
 import javax.swing.BorderFactory;
-import java.awt.Color;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -70,7 +69,6 @@ public class ToolComponent extends JComponent {
 
     myItemPanel.setOpaque(false);
     viewport.setOpaque(true);
-    viewport.setBackground(new Color(238, 238, 238));
   }
 
   @Override

@@ -18,6 +18,8 @@ package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class BaseLinkDescriptor implements LinkDescriptor {
   private final SContainmentLinkId myId;
@@ -26,14 +28,21 @@ public class BaseLinkDescriptor implements LinkDescriptor {
   private final boolean myIsOptional;
   private final boolean myIsMultiple;
   private final boolean myIsUnordered;
+  private final SNodeReference mySrcNode;
 
+  @Deprecated
   public BaseLinkDescriptor(SContainmentLinkId id, String name, SConceptId targetConcept, boolean isOptional, boolean isMultiple, boolean isUnordered) {
+    this(id, name, targetConcept, isOptional, isMultiple, isUnordered, null);
+  }
+
+  public BaseLinkDescriptor(SContainmentLinkId id, String name, SConceptId targetConcept, boolean isOptional, boolean isMultiple, boolean isUnordered, @Nullable SNodeReference srcNode) {
     myId = id;
     myName = name;
     myTargetConcept = targetConcept;
     myIsOptional = isOptional;
     myIsMultiple = isMultiple;
     myIsUnordered = isUnordered;
+    mySrcNode = srcNode;
   }
 
   public SContainmentLinkId getId() {
@@ -58,5 +67,10 @@ public class BaseLinkDescriptor implements LinkDescriptor {
 
   public boolean isUnordered() {
     return myIsUnordered;
+  }
+
+  @Override
+  public SNodeReference getSourceNode() {
+    return mySrcNode;
   }
 }

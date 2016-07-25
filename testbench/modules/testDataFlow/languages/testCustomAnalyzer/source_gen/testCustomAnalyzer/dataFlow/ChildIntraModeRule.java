@@ -9,8 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import java.util.Collection;
+import jetbrains.mps.lang.dataFlow.framework.IDataFlowModeId;
 import java.util.Arrays;
-import jetbrains.mps.lang.dataFlow.DataFlowBuilderModes;
+import jetbrains.mps.lang.dataFlow.framework.ConceptDataFlowModeId;
 
 public class ChildIntraModeRule implements DataFlowConstructor {
   public boolean isApplicable(SNode node) {
@@ -25,7 +26,7 @@ public class ChildIntraModeRule implements DataFlowConstructor {
 
   }
   @Override
-  public Collection<String> getModes() {
-    return Arrays.asList(DataFlowBuilderModes.INTRA_PROCEDURAL);
+  public Collection<IDataFlowModeId> getModes() {
+    return Arrays.<IDataFlowModeId>asList(new ConceptDataFlowModeId("jetbrains.mps.lang.dataFlow.structure.IntraProcedural_BuilderMode"));
   }
 }

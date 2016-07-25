@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.lang.editor.menus.transformation.IncludeSubstituteMenuTransformationMenuPart;
-import jetbrains.mps.lang.editor.menus.ConditionalMenuPart;
+import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
@@ -49,11 +49,9 @@ public class Child_TransformationMenu extends TransformationMenuBase {
     return result;
   }
 
-  public static class TransformationMenuPart_IncludeSubstituteMenu_qk1e79_a0 extends IncludeSubstituteMenuTransformationMenuPart {
-
-
+  public class TransformationMenuPart_IncludeSubstituteMenu_qk1e79_a0 extends IncludeSubstituteMenuTransformationMenuPart {
   }
-  public static class TransformationMenuPart_Group_qk1e79_a1 extends ConditionalMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TransformationMenuPart_Group_qk1e79_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       if ("error".equals(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
@@ -64,35 +62,35 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_a1.TransformationMenuPart_Action_qk1e79_a0b());
     }
-  }
-  private static class TransformationMenuPart_Action_qk1e79_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    @Nullable
-    protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a0b.Item(context);
-    }
-
-    private class Item extends ActionItemBase {
-      private final TransformationMenuContext _context;
-
-      private Item(TransformationMenuContext context) {
-        _context = context;
-      }
-
+    private class TransformationMenuPart_Action_qk1e79_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
-      @Override
-      public String getLabelText(String pattern) {
-        return "exception 1";
+      protected TransformationMenuItem createItem(TransformationMenuContext context) {
+        return new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_a1.TransformationMenuPart_Action_qk1e79_a0b.Item(context);
       }
 
-      @Override
-      public void execute(@NotNull String pattern) {
-      }
+      private class Item extends ActionItemBase {
+        private final TransformationMenuContext _context;
 
+        private Item(TransformationMenuContext context) {
+          _context = context;
+        }
+
+        @Nullable
+        @Override
+        public String getLabelText(String pattern) {
+          return "exception 1";
+        }
+
+        @Override
+        public void execute(@NotNull String pattern) {
+        }
+
+      }
     }
   }
-  private static class TransformationMenuPart_Action_qk1e79_b1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TransformationMenuPart_Action_qk1e79_b1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b1.Item(context);
@@ -118,7 +116,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  public static class TransformationMenuPart_SubMenu_qk1e79_c1 extends SubMenuMenuTransformationMenuPart {
+  public class TransformationMenuPart_SubMenu_qk1e79_c1 extends SubMenuMenuTransformationMenuPart {
     @Override
     protected String getText(TransformationMenuContext _context) {
       return "tree operations";
@@ -126,64 +124,64 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a2b(), new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b2b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Child_TransformationMenu.TransformationMenuPart_SubMenu_qk1e79_c1.TransformationMenuPart_Action_qk1e79_a2b(), new Child_TransformationMenu.TransformationMenuPart_SubMenu_qk1e79_c1.TransformationMenuPart_Action_qk1e79_b2b());
     }
-  }
-  private static class TransformationMenuPart_Action_qk1e79_a2b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    @Nullable
-    protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a2b.Item(context);
-    }
-
-    private class Item extends ActionItemBase {
-      private final TransformationMenuContext _context;
-
-      private Item(TransformationMenuContext context) {
-        _context = context;
-      }
-
+    private class TransformationMenuPart_Action_qk1e79_a2b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
-      @Override
-      public String getLabelText(String pattern) {
-        return "delete node";
+      protected TransformationMenuItem createItem(TransformationMenuContext context) {
+        return new Child_TransformationMenu.TransformationMenuPart_SubMenu_qk1e79_c1.TransformationMenuPart_Action_qk1e79_a2b.Item(context);
       }
 
-      @Override
-      public void execute(@NotNull String pattern) {
-        SNodeOperations.deleteNode(_context.getNode());
-      }
+      private class Item extends ActionItemBase {
+        private final TransformationMenuContext _context;
 
+        private Item(TransformationMenuContext context) {
+          _context = context;
+        }
+
+        @Nullable
+        @Override
+        public String getLabelText(String pattern) {
+          return "delete node";
+        }
+
+        @Override
+        public void execute(@NotNull String pattern) {
+          SNodeOperations.deleteNode(_context.getNode());
+        }
+
+      }
     }
-  }
-  private static class TransformationMenuPart_Action_qk1e79_b2b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    @Nullable
-    protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b2b.Item(context);
-    }
-
-    private class Item extends ActionItemBase {
-      private final TransformationMenuContext _context;
-
-      private Item(TransformationMenuContext context) {
-        _context = context;
-      }
-
+    private class TransformationMenuPart_Action_qk1e79_b2b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
-      @Override
-      public String getLabelText(String pattern) {
-        return "add sibling before";
+      protected TransformationMenuItem createItem(TransformationMenuContext context) {
+        return new Child_TransformationMenu.TransformationMenuPart_SubMenu_qk1e79_c1.TransformationMenuPart_Action_qk1e79_b2b.Item(context);
       }
 
-      @Override
-      public void execute(@NotNull String pattern) {
-        SNode newNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Child")), null);
-        SNodeOperations.insertPrevSiblingChild(_context.getNode(), newNode);
-        _context.getEditorContext().selectWRTFocusPolicy(newNode);
-      }
+      private class Item extends ActionItemBase {
+        private final TransformationMenuContext _context;
 
+        private Item(TransformationMenuContext context) {
+          _context = context;
+        }
+
+        @Nullable
+        @Override
+        public String getLabelText(String pattern) {
+          return "add sibling before";
+        }
+
+        @Override
+        public void execute(@NotNull String pattern) {
+          SNode newNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Child")), null);
+          SNodeOperations.insertPrevSiblingChild(_context.getNode(), newNode);
+          _context.getEditorContext().selectWRTFocusPolicy(newNode);
+        }
+
+      }
     }
   }
-  public static class TransformationMenuPart_Group_qk1e79_d1 extends ConditionalMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TransformationMenuPart_Group_qk1e79_d1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).contains("a");
@@ -191,61 +189,61 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a3b(), new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b3b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_d1.TransformationMenuPart_Action_qk1e79_a3b(), new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_d1.TransformationMenuPart_Action_qk1e79_b3b());
     }
-  }
-  private static class TransformationMenuPart_Action_qk1e79_a3b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    @Nullable
-    protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a3b.Item(context);
-    }
-
-    private class Item extends ActionItemBase {
-      private final TransformationMenuContext _context;
-
-      private Item(TransformationMenuContext context) {
-        _context = context;
-      }
-
+    private class TransformationMenuPart_Action_qk1e79_a3b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
-      @Override
-      public String getLabelText(String pattern) {
-        return "remove all 'a's";
+      protected TransformationMenuItem createItem(TransformationMenuContext context) {
+        return new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_d1.TransformationMenuPart_Action_qk1e79_a3b.Item(context);
       }
 
-      @Override
-      public void execute(@NotNull String pattern) {
-        SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).replaceAll("a", ""));
-      }
+      private class Item extends ActionItemBase {
+        private final TransformationMenuContext _context;
 
+        private Item(TransformationMenuContext context) {
+          _context = context;
+        }
+
+        @Nullable
+        @Override
+        public String getLabelText(String pattern) {
+          return "remove all 'a's";
+        }
+
+        @Override
+        public void execute(@NotNull String pattern) {
+          SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).replaceAll("a", ""));
+        }
+
+      }
     }
-  }
-  private static class TransformationMenuPart_Action_qk1e79_b3b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    @Nullable
-    protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_b3b.Item(context);
-    }
-
-    private class Item extends ActionItemBase {
-      private final TransformationMenuContext _context;
-
-      private Item(TransformationMenuContext context) {
-        _context = context;
-      }
-
+    private class TransformationMenuPart_Action_qk1e79_b3b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
-      @Override
-      public String getLabelText(String pattern) {
-        return "another ";
+      protected TransformationMenuItem createItem(TransformationMenuContext context) {
+        return new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_d1.TransformationMenuPart_Action_qk1e79_b3b.Item(context);
       }
 
-      @Override
-      public void execute(@NotNull String pattern) {
-      }
+      private class Item extends ActionItemBase {
+        private final TransformationMenuContext _context;
 
+        private Item(TransformationMenuContext context) {
+          _context = context;
+        }
+
+        @Nullable
+        @Override
+        public String getLabelText(String pattern) {
+          return "another ";
+        }
+
+        @Override
+        public void execute(@NotNull String pattern) {
+        }
+
+      }
     }
   }
-  public static class TransformationMenuPart_Group_qk1e79_e1 extends ConditionalMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TransformationMenuPart_Group_qk1e79_e1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).endsWith("a"));
@@ -253,36 +251,36 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a4b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_e1.TransformationMenuPart_Action_qk1e79_a4b());
     }
-  }
-  private static class TransformationMenuPart_Action_qk1e79_a4b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    @Nullable
-    protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_a4b.Item(context);
-    }
-
-    private class Item extends ActionItemBase {
-      private final TransformationMenuContext _context;
-
-      private Item(TransformationMenuContext context) {
-        _context = context;
-      }
-
+    private class TransformationMenuPart_Action_qk1e79_a4b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
-      @Override
-      public String getLabelText(String pattern) {
-        return "ensure name ends with 'a' (" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "a)";
+      protected TransformationMenuItem createItem(TransformationMenuContext context) {
+        return new Child_TransformationMenu.TransformationMenuPart_Group_qk1e79_e1.TransformationMenuPart_Action_qk1e79_a4b.Item(context);
       }
 
-      @Override
-      public void execute(@NotNull String pattern) {
-        SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "a");
-      }
+      private class Item extends ActionItemBase {
+        private final TransformationMenuContext _context;
 
+        private Item(TransformationMenuContext context) {
+          _context = context;
+        }
+
+        @Nullable
+        @Override
+        public String getLabelText(String pattern) {
+          return "ensure name ends with 'a' (" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "a)";
+        }
+
+        @Override
+        public void execute(@NotNull String pattern) {
+          SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "a");
+        }
+
+      }
     }
   }
-  public static class TransformationMenuPart_IncludeMenu_qk1e79_f1 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TransformationMenuPart_IncludeMenu_qk1e79_f1 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
     protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
@@ -292,7 +290,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
       return new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Child"), "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.NamedMenu");
     }
   }
-  private static class TransformationMenuPart_Action_qk1e79_g1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TransformationMenuPart_Action_qk1e79_g1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new Child_TransformationMenu.TransformationMenuPart_Action_qk1e79_g1.Item(context);

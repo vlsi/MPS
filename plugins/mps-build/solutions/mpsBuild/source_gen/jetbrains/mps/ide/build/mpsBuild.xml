@@ -77,7 +77,7 @@
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build" />
       <fileset dir="${mps_home}/plugins/mps-build/languages/build" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/plugins/mps-build/languages/build/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build-generator.jar" duplicate="preserve">
@@ -96,10 +96,14 @@
       <fileset dir="${mps_home}/plugins/mps-build/languages/build/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${mps_home}/plugins/mps-build/languages/build/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/mps-build/languages/build/jetbrains.mps.build.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-languages-build-generator-template" prefix="module/generator/template" />
@@ -132,7 +136,7 @@
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.workflow.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.workflow" />
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.workflow" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build.workflow/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/plugins/mps-build/languages/build.workflow/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.workflow.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.workflow-generator.jar" duplicate="preserve">
@@ -151,10 +155,14 @@
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.workflow/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.workflow/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/mps-build/languages/build.workflow/jetbrains.mps.build.workflow.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-languages-build.workflow-generator-template" prefix="module/generator/template" />
@@ -188,7 +196,7 @@
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.mps.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps" />
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.mps-generator.jar" duplicate="preserve">
@@ -207,10 +215,14 @@
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/mps-build/languages/build.mps/jetbrains.mps.build.mps.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-languages-build.mps-generator-template" prefix="module/generator/template" />
@@ -243,7 +255,7 @@
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.mps.tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps.tests" />
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.tests" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.tests/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.tests/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps.tests.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.mps.tests-generator.jar" duplicate="preserve">
@@ -262,10 +274,14 @@
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.tests/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.tests/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/mps-build/languages/build.mps.tests/jetbrains.mps.build.mps.tests.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-languages-build.mps.tests-generator-template" prefix="module/generator/template" />
@@ -298,7 +314,7 @@
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.mps.testManifest.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps.testManifest" />
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.testManifest" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.testManifest/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.testManifest/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps.testManifest.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.mps.testManifest-generator.jar" duplicate="preserve">
@@ -314,10 +330,14 @@
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.testManifest/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.testManifest/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/mps-build/languages/build.mps.testManifest/jetbrains.mps.build.mps.testManifest.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-languages-build.mps.testManifest-generator-template" prefix="module/generator/template" />
@@ -349,7 +369,7 @@
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.mps.runner.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner" />
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.runner" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.runner/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.runner/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps.runner.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.mps.runner-generator.jar" duplicate="preserve">
@@ -368,10 +388,14 @@
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.runner/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.runner/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/mps-build/languages/build.mps.runner/jetbrains.mps.build.mps.runner.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-languages-build.mps.runner-generator-template" prefix="module/generator/template" />
@@ -393,7 +417,7 @@
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.migration.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.migration" />
       <fileset dir="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.migration" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.migration/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.migration/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.migration.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-languages-solutions-jetbrains.mps.build.mps.migration-models">
@@ -403,6 +427,8 @@
       <fileset dir="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.migration/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.migration/jetbrains.mps.build.migration.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-languages-solutions-jetbrains.mps.build.mps.migration-models" prefix="module/models" />
@@ -433,7 +459,7 @@
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.startup.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.startup" />
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.startup" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build.startup/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/plugins/mps-build/languages/build.startup/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.startup.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.startup-generator.jar" duplicate="preserve">
@@ -449,10 +475,14 @@
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.startup/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.startup/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/mps-build/languages/build.startup/jetbrains.mps.build.startup.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-languages-build.startup-generator-template" prefix="module/generator/template" />
@@ -477,7 +507,7 @@
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.workflow.preset.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.workflow.preset" />
       <fileset dir="${mps_home}/plugins/mps-build/solutions/workflow.preset" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-build/solutions/workflow.preset/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${mps_home}/plugins/mps-build/solutions/workflow.preset/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.workflow.preset.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-solutions-workflow.preset-models">
@@ -487,6 +517,8 @@
       <fileset dir="${mps_home}/plugins/mps-build/solutions/workflow.preset/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/mps-build/solutions/workflow.preset/jetbrains.mps.build.workflow.preset.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-solutions-workflow.preset-models" prefix="module/models" />

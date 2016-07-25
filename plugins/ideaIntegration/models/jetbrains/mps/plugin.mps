@@ -4635,9 +4635,6 @@
                     <node concept="1rXfSq" id="4hiugqyziWX" role="3clFbw">
                       <ref role="37wK5l" node="7u1yMHJYqpe" resolve="canOperate" />
                     </node>
-                    <node concept="9aQIb" id="7u1yMHJYqnQ" role="9aQIa">
-                      <node concept="3clFbS" id="7u1yMHJYqnR" role="9aQI4" />
-                    </node>
                     <node concept="3clFbS" id="7u1yMHJYqnT" role="3clFbx">
                       <node concept="3clFbF" id="7u1yMHJYqnU" role="3cqZAp">
                         <node concept="1rXfSq" id="4hiugqyz5Ju" role="3clFbG">
@@ -4766,37 +4763,42 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="7u1yMHJYqoJ" role="3cqZAp">
-              <node concept="2YIFZM" id="7u1yMHJYqoK" role="3clFbG">
-                <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-                <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
-                <node concept="2ShNRf" id="7u1yMHJYqoL" role="37wK5m">
-                  <node concept="YeOm9" id="7u1yMHJYqoM" role="2ShVmc">
-                    <node concept="1Y3b0j" id="7u1yMHJYqoN" role="YeSDq">
-                      <property role="TrG5h" value="" />
-                      <ref role="1Y3XeK" to="wyt6:~Runnable" resolve="Runnable" />
-                      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                      <node concept="3clFb_" id="7u1yMHJYqoO" role="jymVt">
-                        <property role="TrG5h" value="run" />
-                        <node concept="3Tm1VV" id="7u1yMHJYqoP" role="1B3o_S" />
-                        <node concept="3cqZAl" id="7u1yMHJYqoQ" role="3clF45" />
-                        <node concept="3clFbS" id="7u1yMHJYqoR" role="3clF47">
-                          <node concept="3clFbF" id="7u1yMHJYqpR" role="3cqZAp">
-                            <node concept="2OqwBi" id="7u1yMHJYqpT" role="3clFbG">
-                              <node concept="37vLTw" id="2BHiRxeudCR" role="2Oq$k0">
-                                <ref role="3cqZAo" node="7u1yMHJYqpG" resolve="myStatusBar" />
-                              </node>
-                              <node concept="liA8E" id="7u1yMHJYqpX" role="2OqNvi">
-                                <ref role="37wK5l" to="jkny:~StatusBar.updateWidget(java.lang.String):void" resolve="updateWidget" />
-                                <node concept="1rXfSq" id="4hiugqyz8YP" role="37wK5m">
-                                  <ref role="37wK5l" node="7u1yMHJYasQ" resolve="ID" />
+            <node concept="3clFbF" id="WEmn41A9bH" role="3cqZAp">
+              <node concept="2OqwBi" id="WEmn41A9IP" role="3clFbG">
+                <node concept="2YIFZM" id="WEmn41A9ti" role="2Oq$k0">
+                  <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+                  <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+                </node>
+                <node concept="liA8E" id="WEmn41Aaal" role="2OqNvi">
+                  <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+                  <node concept="2ShNRf" id="7u1yMHJYqoL" role="37wK5m">
+                    <node concept="YeOm9" id="7u1yMHJYqoM" role="2ShVmc">
+                      <node concept="1Y3b0j" id="7u1yMHJYqoN" role="YeSDq">
+                        <property role="TrG5h" value="" />
+                        <ref role="1Y3XeK" to="wyt6:~Runnable" resolve="Runnable" />
+                        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                        <node concept="3clFb_" id="7u1yMHJYqoO" role="jymVt">
+                          <property role="TrG5h" value="run" />
+                          <node concept="3Tm1VV" id="7u1yMHJYqoP" role="1B3o_S" />
+                          <node concept="3cqZAl" id="7u1yMHJYqoQ" role="3clF45" />
+                          <node concept="3clFbS" id="7u1yMHJYqoR" role="3clF47">
+                            <node concept="3clFbF" id="7u1yMHJYqpR" role="3cqZAp">
+                              <node concept="2OqwBi" id="7u1yMHJYqpT" role="3clFbG">
+                                <node concept="37vLTw" id="2BHiRxeudCR" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="7u1yMHJYqpG" resolve="myStatusBar" />
+                                </node>
+                                <node concept="liA8E" id="7u1yMHJYqpX" role="2OqNvi">
+                                  <ref role="37wK5l" to="jkny:~StatusBar.updateWidget(java.lang.String):void" resolve="updateWidget" />
+                                  <node concept="1rXfSq" id="4hiugqyz8YP" role="37wK5m">
+                                    <ref role="37wK5l" node="7u1yMHJYasQ" resolve="ID" />
+                                  </node>
                                 </node>
                               </node>
                             </node>
                           </node>
-                        </node>
-                        <node concept="2AHcQZ" id="3tYsUK_Sfuu" role="2AJF6D">
-                          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                          <node concept="2AHcQZ" id="3tYsUK_Sfuu" role="2AJF6D">
+                            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                          </node>
                         </node>
                       </node>
                     </node>

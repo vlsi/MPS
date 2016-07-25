@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.adapter.structure.link;
 
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.structure.ConceptFeatureHelper;
@@ -30,6 +31,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public final class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
   public static final java.lang.String LINK_PREFIX = "l";
@@ -94,7 +96,17 @@ public final class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
   }
 
   @Override
-  protected SNode findInConcept(SNode cnode) {
+  public SNode getDeclarationNode() {
+    LinkDescriptor d = getLinkDescriptor();
+    if (d != null) {
+      SNodeReference sn = d.getSourceNode();
+      if(sn!=null) return sn.resolve(MPSModuleRepository.getInstance());
+    }
+
+    SNode cnode = getOwner().getDeclarationNode();
+    if (cnode == null) {
+      return null;
+    }
     SModel model = cnode.getModel();
     return model.getNode(new SNodeId.Regular(myRoleId.getIdValue()));
   }

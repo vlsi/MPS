@@ -282,7 +282,7 @@
       <node id="4664177994952686452" at="124,0,128,0" concept="7" trace="unregisterShortcuts#(Ljavax/swing/JComponent;)V" />
       <node id="4664177994952686678" at="162,68,166,5" concept="6" />
       <node id="4664177994952686806" at="183,7,187,5" concept="5" />
-      <node id="4664177994952686487" at="133,30,138,9" concept="3" />
+      <node id="1092784201484271967" at="133,30,138,9" concept="3" />
       <node id="4664177994952686794" at="178,38,183,7" concept="3" />
       <node id="4664177994952686827" at="187,5,192,7" concept="3" />
       <node id="4664177994952686974" at="224,23,229,7" concept="3" />
@@ -403,7 +403,7 @@
         <var name="statusBar" id="4664177994952686314" />
         <var name="titles" id="4664177994952686309" />
       </scope>
-      <unit id="4664177994952686489" at="134,37,138,7" name="jetbrains.mps.vcs.diff.ui.StructDifferencePane$3" />
+      <unit id="4664177994952686489" at="134,58,138,7" name="jetbrains.mps.vcs.diff.ui.StructDifferencePane$3" />
       <unit id="4664177994952686798" at="179,61,183,5" name="jetbrains.mps.vcs.diff.ui.StructDifferencePane$4" />
       <unit id="4664177994952686831" at="188,61,192,5" name="jetbrains.mps.vcs.diff.ui.StructDifferencePane$5" />
       <unit id="4664177994952686977" at="225,59,229,5" name="jetbrains.mps.vcs.diff.ui.StructDifferencePane$6" />
@@ -1476,7 +1476,7 @@
       <node id="8817948936268471824" at="180,68,184,5" concept="6" />
       <node id="8817948936280468306" at="202,7,206,5" concept="5" />
       <node id="8817948936280920759" at="238,0,242,0" concept="7" trace="rollbackChanges#(Ljava/lang/Iterable;)V" />
-      <node id="4481873561819694994" at="132,30,137,9" concept="3" />
+      <node id="1092784201483719405" at="132,30,137,9" concept="3" />
       <node id="4481873561811042930" at="154,28,159,7" concept="3" />
       <node id="8817948936280468294" at="197,38,202,7" concept="3" />
       <node id="8817948936280468327" at="206,5,211,7" concept="3" />
@@ -1620,7 +1620,7 @@
         <var name="isEditable" id="4481873561817291391" />
         <var name="rootName" id="4481873561817353580" />
       </scope>
-      <unit id="4481873561819694996" at="133,37,137,7" name="jetbrains.mps.vcs.diff.ui.RootDifferencePane$3" />
+      <unit id="4481873561819694996" at="133,58,137,7" name="jetbrains.mps.vcs.diff.ui.RootDifferencePane$3" />
       <unit id="4481873561811042933" at="155,61,159,5" name="jetbrains.mps.vcs.diff.ui.RootDifferencePane$4" />
       <unit id="8817948936280468298" at="198,61,202,5" name="jetbrains.mps.vcs.diff.ui.RootDifferencePane$5" />
       <unit id="8817948936280468331" at="207,61,211,5" name="jetbrains.mps.vcs.diff.ui.RootDifferencePane$6" />

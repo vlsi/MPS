@@ -81,11 +81,11 @@ public class NewGeneratorDialog extends DialogWrapper {
         TreeFileChooser chooser = new TreeFileChooser();
         chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
         if (oldPath != null && oldPath.length() != 0) {
-          chooser.setInitialFile(FileSystem.getInstance().getFileByPath(oldPath));
+          chooser.setInitialFile(FileSystem.getInstance().getFile(oldPath));
         }
         IFile result = chooser.showDialog();
         if (result != null) {
-          myTemplateModelsDir.setText(result.getPath());
+          myTemplateModelsDir.setText(result.toPath().toString());
         }
       }
     });
@@ -96,7 +96,7 @@ public class NewGeneratorDialog extends DialogWrapper {
   private void updateTemplateModelsDir() {
     IFile moduleDir = mySourceLanguage.getModuleSourceDir();
     assert moduleDir != null;
-    String path = moduleDir.getPath();
+    String path = moduleDir.toPath().toString();
     String modelsDir = path + File.separatorChar + "generator" + File.separatorChar + "template";
     myTemplateModelsDir.setText(modelsDir);
   }

@@ -24,6 +24,8 @@ import com.intellij.ide.projectView.impl.nodes.PsiFileNode;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleUtilCore;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
@@ -65,7 +67,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -84,9 +85,10 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     return null;
   }
 
+  @NotNull
   @Override
-  public Collection<AbstractTreeNode> modify(final AbstractTreeNode treeNode, final Collection<AbstractTreeNode> children, final ViewSettings settings) {
-    final Ref<Collection<AbstractTreeNode>> result = new Ref<Collection<AbstractTreeNode>>(children);
+  public Collection<AbstractTreeNode> modify(@NotNull final AbstractTreeNode treeNode, @NotNull final Collection<AbstractTreeNode> children, final ViewSettings settings) {
+    final Ref<Collection<AbstractTreeNode>> result = new Ref<>(children);
 
     SRepository repository = ProjectHelper.getProjectRepository(treeNode.getProject());
     // we're actually in EDT here, but we work with SModels, and various routines assert that we can read, thus read action
@@ -104,12 +106,12 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
           SModel sModel = SModelFileTracker.getInstance(repository).findModel(VirtualFileUtils.toIFile(((PsiDirectoryNode) treeNode).getVirtualFile()));
           if (sModel != null) {
             // adding root nodes (removing their corresponding files' nodes from the tree is further below)
-            List<MPSPsiElementTreeNode> rootsTreeNodes = new ArrayList<MPSPsiElementTreeNode>();
+            List<MPSPsiElementTreeNode> rootsTreeNodes = new ArrayList<>();
             for (SNode root : sModel.getRootNodes()) {
               rootsTreeNodes.add(new MPSPsiElementTreeNode(treeNode.getProject(), (MPSPsiRootNode) mpsPsiProvider.getPsi(root).getContainingFile(), settings));
             }
-            if (!rootsTreeNodes.isEmpty() && updatedChildren == null) {
-              updatedChildren = new ArrayList<AbstractTreeNode>(children);
+            if (!rootsTreeNodes.isEmpty()) {
+              updatedChildren = new ArrayList<>(children);
               updatedChildren.addAll(rootsTreeNodes);
             }
 
@@ -121,7 +123,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
           }
         } else if (treeNode instanceof MPSPsiModelTreeNode) {
           MPSPsiModel psiModel = ((MPSPsiModelTreeNode) treeNode).extractPsiFromValue();
-          updatedChildren = new ArrayList<AbstractTreeNode>();
+          updatedChildren = new ArrayList<>();
           for (PsiElement psiElement : psiModel.getChildren()) {
             updatedChildren.add(new MPSPsiElementTreeNode(treeNode.getProject(), (MPSPsiRootNode) psiElement, settings));
           }
@@ -137,7 +139,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
             // check if it's a single file model
             final SModel sModel = SModelFileTracker.getInstance(repository).findModel(VirtualFileUtils.toIFile(vFile));
             if (sModel != null) {
-              if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
+              if (updatedChildren == null) updatedChildren = new ArrayList<>(children);
               int idx = updatedChildren.indexOf(child);
               updatedChildren.remove(idx);
               updatedChildren.add(idx, new MPSPsiModelTreeNode(treeNode.getProject(), mpsPsiProvider.getPsi(sModel), settings));
@@ -146,7 +148,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
 
             if (currentDirectoryDataSource != null && currentDirectoryDataSource.isIncluded(VirtualFileUtils.toIFile(vFile))) {
               // it's a file that constitutes a FolderDataSource-backed model, remove it from the tree (root nodes are shown instead)
-              if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
+              if (updatedChildren == null) updatedChildren = new ArrayList<>(children);
               int idx = updatedChildren.indexOf(child);
               updatedChildren.remove(idx);
             }
@@ -156,7 +158,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
 
             final SModel perRootModel = SModelFileTracker.getInstance(repository).findModel(VirtualFileUtils.toIFile(((PsiDirectoryNode) child).getVirtualFile()));
             if (perRootModel != null) {
-              if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
+              if (updatedChildren == null) updatedChildren = new ArrayList<>(children);
 
               int idx = updatedChildren.indexOf(child);
               updatedChildren.remove(idx);
@@ -176,12 +178,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
                   MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(perRootModel, ProjectHelper.toMPSProject(myProject), true);
                   final SingleConfigurableEditor dialog = new SingleConfigurableEditor(myProject, configurable);
                   configurable.setParentForCallBack(dialog);
-                  SwingUtilities.invokeLater(new Runnable() {
-                    @Override
-                    public void run() {
-                      dialog.show();
-                    }
-                  });
+                  ApplicationManager.getApplication().invokeLater(dialog::show, ModalityState.current());
                 }
               });
             }
@@ -249,7 +246,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
   private <T> T getProvider(Collection<AbstractTreeNode> selected, ProviderFactory<T> createProvider) {
     if (selected.size() == 0) return null;
 
-    List<SNodeReference> selectedNodePointers = new ArrayList<SNodeReference>();
+    List<SNodeReference> selectedNodePointers = new ArrayList<>();
     Project project = null;
     EditableSModel modelDescriptor = null;
 
@@ -277,14 +274,11 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
     if (mpsProject == null || modelDescriptor == null) return null;
 
-    SModel sModel = modelDescriptor;
-    if (sModel == null) return null;
-
-    return createProvider.create(selectedNodePointers, modelDescriptor, sModel, mpsProject);
+    return createProvider.create(selectedNodePointers, modelDescriptor, modelDescriptor, mpsProject);
   }
 
   private DeleteProvider getDeleteModelProvider(Collection<AbstractTreeNode> selected) {
-    final List<MPSPsiModel> psiModels = new ArrayList<MPSPsiModel>();
+    final List<MPSPsiModel> psiModels = new ArrayList<>();
     for (AbstractTreeNode treeNode : selected) {
       if (!(treeNode instanceof MPSPsiModelTreeNode)) {
         return null;
@@ -308,14 +302,11 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
     if (mpsProject == null || modelDescriptor == null) return null;
 
-    SModel sModel = modelDescriptor;
-    if (sModel == null) return null;
-
-    return createProvider.create(modelDescriptor, sModel, mpsProject);
+    return createProvider.create(modelDescriptor, modelDescriptor, mpsProject);
   }
 
   private Set<IFile> getModelFiles(Collection<AbstractTreeNode> selected) {
-    Set<IFile> modelFiles = new HashSet<IFile>();
+    Set<IFile> modelFiles = new HashSet<>();
     for (AbstractTreeNode nextTreeNode : selected) {
       IFile nextModelFile = getModelFile(nextTreeNode);
       if (nextModelFile != null) {
@@ -332,14 +323,14 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
       if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE && virtualFile.getFileType() != MPSFileTypeFactory.MPS_HEADER_FILE_TYPE) {
         return null;
       }
-      return FileSystem.getInstance().getFileByPath(virtualFile.getPath());
+      return FileSystem.getInstance().getFile(virtualFile.getPath());
 
     } else if (treeNode instanceof PsiDirectoryNode) {
       VirtualFile virtualFile = ((PsiDirectoryNode) treeNode).getVirtualFile();
       if (virtualFile == null) {
         return null;
       }
-      IFile ifile = FileSystem.getInstance().getFileByPath(virtualFile.getPath());
+      IFile ifile = FileSystem.getInstance().getFile(virtualFile.getPath());
       SModel model = SModelFileTracker.getInstance(ProjectHelper.getProjectRepository(treeNode.getProject())).findModel(ifile);
       if (model != null) return ifile;
 
@@ -376,12 +367,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     final SNodeReference nodeRef = ((MPSPsiRealNode) psiNode).getSNodeReference();
     final SRepository repository = ProjectHelper.getProjectRepository(treeNode.getProject());
     // TODO remove read action from here once SModelFileTracker stops doing the same (creating read action if not already in one)
-    return new ModelComputeRunnable<SNode>(new Computable<SNode>() {
-      @Override
-      public SNode compute() {
-        return nodeRef.resolve(repository);
-      }
-    }).runRead(repository.getModelAccess());
+    return new ModelComputeRunnable<>(() -> nodeRef.resolve(repository)).runRead(repository.getModelAccess());
   }
 
   private Module getIdeaModule(AbstractTreeNode treeNode) {
@@ -431,33 +417,21 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     return (EditableSModel) sModel;
   }
 
-  private static interface ProviderFactory<T> {
+  private interface ProviderFactory<T> {
     T create(Collection<SNodeReference> selectedNodes, @NotNull EditableSModel modelDescriptor, SModel sModel, @NotNull jetbrains.mps.project.Project project);
   }
 
-  private static interface ModelProviderFactory<T> {
+  private interface ModelProviderFactory<T> {
     T create(@NotNull EditableSModel modelDescriptor, SModel sModel, @NotNull jetbrains.mps.project.Project project);
   }
 
-  private static ProviderFactory<SNodeCutCopyProvider> CUT_COPY_PROVIDER_FACTORY = new ProviderFactory<SNodeCutCopyProvider>() {
-    @Override
-    public SNodeCutCopyProvider create(Collection<SNodeReference> selectedNodes, @NotNull EditableSModel modelDescriptor, SModel sModel, @NotNull jetbrains.mps.project.Project project) {
-      return new SNodeCutCopyProvider(selectedNodes, modelDescriptor, project);
-    }
-  };
+  private static ProviderFactory<SNodeCutCopyProvider> CUT_COPY_PROVIDER_FACTORY =
+      (selectedNodes, modelDescriptor, sModel, project) -> new SNodeCutCopyProvider(selectedNodes, modelDescriptor, project);
 
-  private static ProviderFactory<SNodeDeleteProvider> DELETE_PROVIDER_FACTORY = new ProviderFactory<SNodeDeleteProvider>() {
-    @Override
-    public SNodeDeleteProvider create(Collection<SNodeReference> selectedNodes, @NotNull EditableSModel modelDescriptor, SModel sModel, @NotNull jetbrains.mps.project.Project project) {
-      return new SNodeDeleteProvider(selectedNodes, project);
-    }
-  };
+  private static ProviderFactory<SNodeDeleteProvider> DELETE_PROVIDER_FACTORY =
+      (selectedNodes, modelDescriptor, sModel, project) -> new SNodeDeleteProvider(selectedNodes, project);
 
-  private static ModelProviderFactory<SNodePasteProvider> PASTE_PROVIDER_FACTORY = new ModelProviderFactory<SNodePasteProvider>() {
-    @Override
-    public SNodePasteProvider create(@NotNull EditableSModel modelDescriptor, SModel sModel, @NotNull jetbrains.mps.project.Project project) {
-      return new SNodePasteProvider(sModel, project, modelDescriptor);
-    }
-  };
+  private static ModelProviderFactory<SNodePasteProvider> PASTE_PROVIDER_FACTORY =
+      (modelDescriptor, sModel, project) -> new SNodePasteProvider(sModel, project, modelDescriptor);
 
 }

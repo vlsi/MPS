@@ -26,6 +26,7 @@ import jetbrains.mps.generator.ModelGenerationPlan.Transform;
 import jetbrains.mps.generator.RigidGenerationPlan;
 import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.impl.GenPlanBuilder;
+import jetbrains.mps.generator.impl.ModelStreamProviderImpl;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
@@ -97,17 +98,17 @@ public class CheckpointModelTest extends PlatformMpsTest {
         return new RigidGenerationPlan(step1, cp1, step2);
       }
     });
+    final PlanIdentity planIdentity = new PlanIdentity(plan);
     GenerationOptions opt = GenerationOptions.getDefaults().customPlan(m, plan).create();
     final TransientModelsProvider tmProvider = mpsProject.getComponent(TransientModelsProvider.class);
     GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider);
     GenerationStatus genStatus = genFacade.process(new EmptyProgressMonitor(), m);
     myErrors.checkThat("Generation succeeds", genStatus.isOk(), CoreMatchers.equalTo(true));
-    CrossModelEnvironment cme = new CrossModelEnvironment(tmProvider);
+    CrossModelEnvironment cme = new CrossModelEnvironment(tmProvider, new ModelStreamProviderImpl());
     // XXX shall it be CME to give access to module with checkpoint models? Is there better way to find out cpModel?
-    myErrors.checkThat("CrossModelEnvironment.hasState", cme.hasState(mr), CoreMatchers.equalTo(true));
 
     SModule checkpointModule = tmProvider.getCheckpointsModule();
-    final SModelName cpModelName = CrossModelEnvironment.createCheckpointModelName(m.getReference(), cp1);
+    final SModelName cpModelName = CrossModelEnvironment.createCheckpointModelName(m.getReference(), new CheckpointIdentity(planIdentity, cp1));
     SModel cpModel = null;
     for (SModel trm : checkpointModule.getModels()) {
       if (cpModelName.equals(trm.getName())) {
@@ -116,7 +117,8 @@ public class CheckpointModelTest extends PlatformMpsTest {
       }
     }
     myErrors.checkThat("Checkpoint model", cpModel, CoreMatchers.notNullValue());
-    ModelCheckpoints modelCheckpoints = cme.getState(mr);
+    ModelCheckpoints modelCheckpoints = cme.getState(m, planIdentity);
+    myErrors.checkThat("CrossModelEnvironment: state present", modelCheckpoints, CoreMatchers.notNullValue());
     CheckpointState cpState = modelCheckpoints.find(cp1);
     myErrors.checkThat("CheckpointState present", cpState, CoreMatchers.notNullValue());
     if (cpState != null) {
@@ -145,18 +147,19 @@ public class CheckpointModelTest extends PlatformMpsTest {
         return new RigidGenerationPlan(step1, cp1, step2, cp2, step3);
       }
     });
+    final PlanIdentity planIdentity = new PlanIdentity(plan);
     GenerationOptions opt = GenerationOptions.getDefaults().customPlan(m, plan).create();
     final TransientModelsProvider tmProvider = mpsProject.getComponent(TransientModelsProvider.class);
     GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider);
     GenerationStatus genStatus = genFacade.process(new EmptyProgressMonitor(), m);
     myErrors.checkThat("Generation succeeds", genStatus.isOk(), CoreMatchers.equalTo(true));
-    CrossModelEnvironment cme = new CrossModelEnvironment(tmProvider);
-    boolean crossModelCheckpointsPresent = cme.hasState(mr);
-    myErrors.checkThat("CrossModelEnvironment.hasState", crossModelCheckpointsPresent, CoreMatchers.equalTo(true));
+    CrossModelEnvironment cme = new CrossModelEnvironment(tmProvider, new ModelStreamProviderImpl());
+    ModelCheckpoints modelCheckpoints = cme.getState(m, planIdentity);
+    boolean crossModelCheckpointsPresent = modelCheckpoints != null;
+    myErrors.checkThat("CrossModelEnvironment: state present", crossModelCheckpointsPresent, CoreMatchers.equalTo(true));
     if (!crossModelCheckpointsPresent) {
       return;
     }
-    ModelCheckpoints modelCheckpoints = cme.getState(mr);
     final CheckpointState cp1State = modelCheckpoints.find(cp1);
     final CheckpointState cp2State = modelCheckpoints.find(cp2);
     myErrors.checkThat("state for the first checkpoint present", cp1State, CoreMatchers.notNullValue());

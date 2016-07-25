@@ -97,6 +97,9 @@
       <fileset dir="${mps_home}/workbench/mps-editor/source_gen">
         <include name="jetbrains/mps/ide/editor/actions/MPSEditorActions.xml" />
       </fileset>
+      <fileset dir="${mps_home}/workbench/resources_en/source">
+        <exclude name="/tips" />
+      </fileset>
       <zipfileset file="${mps_home}/workbench/mps-platform/source/META-INF/MPSCore.xml" prefix="META-INF" />
       <zipfileset file="${mps_home}/workbench/mps-editor/source/META-INF/MPSEditor.xml" prefix="META-INF" />
       <zipfileset file="${mps_home}/IdeaPlugin/mps-core/META-INF/idea-support.xml" prefix="META-INF" />

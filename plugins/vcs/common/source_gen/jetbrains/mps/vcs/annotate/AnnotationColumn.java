@@ -36,7 +36,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.openapi.vcs.changes.ui.ChangesViewContentManager;
 import com.intellij.openapi.ui.MessageType;
@@ -114,7 +114,6 @@ import com.intellij.diff.DiffContentFactory;
 import com.intellij.diff.requests.DiffRequest;
 import com.intellij.diff.requests.SimpleDiffRequest;
 import jetbrains.mps.vcs.platform.integration.ModelDiffViewer;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.diff.DiffManager;
 import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.vcs.diff.ChangeSet;
@@ -160,7 +159,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
       mre.value = e;
     }
     if (myFileLineToContent == null) {
-      SwingUtilities.invokeLater(new Runnable() {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           String msg = "Couldn't show annotation";
           if (mre.value != null && mre.value.getCause() != null) {
@@ -568,7 +567,7 @@ __switch__:
     return a;
   }
   public void invalidateLayout() {
-    SwingUtilities.invokeLater(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         getLeftEditorHighlighter().relayout(false);
       }

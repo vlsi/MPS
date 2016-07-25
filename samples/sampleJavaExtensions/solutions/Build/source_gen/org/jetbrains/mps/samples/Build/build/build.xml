@@ -65,7 +65,7 @@
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.Constants.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/org.jetbrains.mps.samples.Constants" />
       <fileset dir="${project_home}/languages/Constants" includes="icons/**, resources/**" />
-      <fileset dir="${project_home}/languages/Constants/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${project_home}/languages/Constants/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/org.jetbrains.mps.samples.Constants.jar" />
     </jar>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.Constants-generator.jar" duplicate="preserve">
@@ -81,10 +81,14 @@
       <fileset dir="${project_home}/languages/Constants/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${project_home}/languages/Constants/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${project_home}/languages/Constants/org.jetbrains.mps.samples.Constants.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-Constants-generator-template" prefix="module/generator/template" />
@@ -116,7 +120,7 @@
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.IfAndUnless.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/org.jetbrains.mps.samples.IfAndUnless" />
       <fileset dir="${basedir}/languages/SampleExtensions" includes="icons/**, resources/**" />
-      <fileset dir="${project_home}/languages/SampleExtensions/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${project_home}/languages/SampleExtensions/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/org.jetbrains.mps.samples.IfAndUnless.jar" />
     </jar>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.IfAndUnless-generator.jar" duplicate="preserve">
@@ -132,10 +136,14 @@
       <fileset dir="${project_home}/languages/SampleExtensions/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${project_home}/languages/SampleExtensions/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/languages/SampleExtensions/org.jetbrains.mps.samples.IfAndUnless.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-SampleExtensions-generator-template" prefix="module/generator/template" />
@@ -156,7 +164,7 @@
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.MoneyRuntime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/org.jetbrains.mps.samples.MoneyRuntime" />
       <fileset dir="${basedir}/solutions/MoneyRuntime" includes="icons/**, resources/**" />
-      <fileset dir="${project_home}/solutions/MoneyRuntime/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${project_home}/solutions/MoneyRuntime/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/org.jetbrains.mps.samples.MoneyRuntime.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-MoneyRuntime-models">
@@ -166,6 +174,8 @@
       <fileset dir="${project_home}/solutions/MoneyRuntime/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/solutions/MoneyRuntime/org.jetbrains.mps.samples.MoneyRuntime.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-MoneyRuntime-models" prefix="module/models" />
@@ -185,7 +195,7 @@
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.ParallelForUtils.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/org.jetbrains.mps.samples.ParallelForUtils" />
       <fileset dir="${basedir}/solutions/ParallelForUtils" includes="icons/**, resources/**" />
-      <fileset dir="${project_home}/solutions/ParallelForUtils/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${project_home}/solutions/ParallelForUtils/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/org.jetbrains.mps.samples.ParallelForUtils.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-ParallelForUtils-models">
@@ -195,6 +205,8 @@
       <fileset dir="${project_home}/solutions/ParallelForUtils/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/solutions/ParallelForUtils/org.jetbrains.mps.samples.ParallelForUtils.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-ParallelForUtils-models" prefix="module/models" />
@@ -226,7 +238,7 @@
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.Money.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/org.jetbrains.mps.samples.Money" />
       <fileset dir="${basedir}/languages/Money" includes="icons/**, resources/**" />
-      <fileset dir="${project_home}/languages/Money/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${project_home}/languages/Money/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/org.jetbrains.mps.samples.Money.jar" />
     </jar>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.Money-generator.jar" duplicate="preserve">
@@ -242,10 +254,14 @@
       <fileset dir="${project_home}/languages/Money/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${project_home}/languages/Money/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/languages/Money/org.jetbrains.mps.samples.Money.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-Money-generator-template" prefix="module/generator/template" />
@@ -278,7 +294,7 @@
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.ParallelFor.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/org.jetbrains.mps.samples.ParallelFor" />
       <fileset dir="${basedir}/languages/ParallelFor" includes="icons/**, resources/**" />
-      <fileset dir="${project_home}/languages/ParallelFor/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${project_home}/languages/ParallelFor/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/org.jetbrains.mps.samples.ParallelFor.jar" />
     </jar>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.ParallelFor-generator.jar" duplicate="preserve">
@@ -294,10 +310,14 @@
       <fileset dir="${project_home}/languages/ParallelFor/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${project_home}/languages/ParallelFor/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/languages/ParallelFor/org.jetbrains.mps.samples.ParallelFor.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-ParallelFor-generator-template" prefix="module/generator/template" />

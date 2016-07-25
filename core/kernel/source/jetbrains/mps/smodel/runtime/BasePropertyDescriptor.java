@@ -18,15 +18,24 @@ package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class BasePropertyDescriptor implements PropertyDescriptor {
   private final SPropertyId myId;
   private final String myName;
+  private SNodeReference mySrcNode;
 
+  @Deprecated
   public BasePropertyDescriptor(SPropertyId id, String name) {
+    this(id,name,null);
+  }
+
+  public BasePropertyDescriptor(SPropertyId id, String name, @Nullable SNodeReference srcNode) {
     myId = id;
     myName = name;
+    mySrcNode = srcNode;
   }
 
   @Override
@@ -42,5 +51,10 @@ public class BasePropertyDescriptor implements PropertyDescriptor {
   @Override
   public String getName() {
     return myName;
+  }
+
+  @Override
+  public SNodeReference getSourceNode() {
+    return mySrcNode;
   }
 }

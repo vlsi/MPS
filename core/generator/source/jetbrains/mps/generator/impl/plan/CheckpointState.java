@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
-import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
@@ -42,9 +41,9 @@ public class CheckpointState {
   @NotNull
   private final MappingsMemento myState;
   private final SModel myCheckpointModel;
-  private final Checkpoint myCheckpoint;
+  private final CheckpointIdentity myCheckpoint;
 
-  public CheckpointState(@NotNull MappingsMemento memento, @NotNull SModel checkpointModel, @NotNull Checkpoint cp) {
+  public CheckpointState(@NotNull MappingsMemento memento, @NotNull SModel checkpointModel, @NotNull CheckpointIdentity cp) {
     myState = memento;
     myCheckpointModel = checkpointModel;
     myCheckpoint = cp;
@@ -54,7 +53,7 @@ public class CheckpointState {
     return myCheckpointModel;
   }
 
-  public Checkpoint getCheckpoint() {
+  public CheckpointIdentity getCheckpoint() {
     return myCheckpoint;
   }
 

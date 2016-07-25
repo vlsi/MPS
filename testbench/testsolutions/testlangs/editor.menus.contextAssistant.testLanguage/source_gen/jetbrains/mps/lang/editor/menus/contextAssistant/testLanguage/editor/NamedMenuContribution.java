@@ -28,7 +28,7 @@ public class NamedMenuContribution extends TransformationMenuBase {
     return result;
   }
 
-  private static class TransformationMenuPart_Action_xtomck_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TransformationMenuPart_Action_xtomck_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
       return new NamedMenuContribution.TransformationMenuPart_Action_xtomck_a0.Item(context);

@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -94,11 +94,11 @@
         <child id="1223387335081" name="query" index="3n$kyP" />
       </concept>
       <concept id="1630016958697344083" name="jetbrains.mps.lang.editor.structure.IMenu_Concept" flags="ng" index="2ZABuq">
-        <reference id="6591946374543067572" name="conceptDeclarationNew" index="aqKnT" />
+        <reference id="6591946374543067572" name="conceptDeclaration" index="aqKnT" />
       </concept>
       <concept id="1630016958697286851" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_parameterObject" flags="ng" index="2ZBlsa" />
       <concept id="1630016958697057551" name="jetbrains.mps.lang.editor.structure.IMenuPartParameterized" flags="ng" index="2ZBHr6">
-        <child id="1630016958697057552" name="parameterTypeNew" index="2ZBHrp" />
+        <child id="1630016958697057552" name="parameterType" index="2ZBHrp" />
       </concept>
       <concept id="1233758997495" name="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" flags="ln" index="11L4FC" />
       <concept id="1233759184865" name="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" flags="ln" index="11LMrY" />
@@ -287,6 +287,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="6870613620390542976" name="jetbrains.mps.lang.smodel.structure.ConceptAliasOperation" flags="ng" index="3n3YKJ" />
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
@@ -495,15 +496,13 @@
       <node concept="1HfYo3" id="2wZex4PafBm" role="1HlULh">
         <node concept="3TQlhw" id="2wZex4PafBn" role="1Hhtcw">
           <node concept="3clFbS" id="2wZex4PafBo" role="2VODD2">
-            <node concept="3clFbF" id="2wZex4PafBp" role="3cqZAp">
-              <node concept="2OqwBi" id="2wZex4PafCw" role="3clFbG">
-                <node concept="2OqwBi" id="2wZex4PafBJ" role="2Oq$k0">
-                  <node concept="pncrf" id="2wZex4PafBq" role="2Oq$k0" />
-                  <node concept="3NT_Vc" id="2wZex4PafBP" role="2OqNvi" />
+            <node concept="3clFbF" id="78qF3pqaZ9v" role="3cqZAp">
+              <node concept="2OqwBi" id="78qF3pqb02d" role="3clFbG">
+                <node concept="2OqwBi" id="78qF3pqaZiM" role="2Oq$k0">
+                  <node concept="pncrf" id="78qF3pqaZ9t" role="2Oq$k0" />
+                  <node concept="2yIwOk" id="78qF3pqaZAF" role="2OqNvi" />
                 </node>
-                <node concept="3TrcHB" id="2wZex4PafCD" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
-                </node>
+                <node concept="3n3YKJ" id="78qF3pqb0x$" role="2OqNvi" />
               </node>
             </node>
           </node>

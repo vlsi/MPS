@@ -18,8 +18,8 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptorBase;
 import java.util.Collection;
-import java.util.Optional;
-import java.util.function.Predicate;
+import jetbrains.mps.lang.dataFlow.framework.IDataFlowModeId;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
   private DataFlowManager myDataFlowManager;
@@ -111,16 +111,20 @@ public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
       DataFlowAspectDescriptor aspect = language.getAspect(DataFlowAspectDescriptor.class);
       if (aspect instanceof DataFlowAspectDescriptorBase) {
         Collection<IDataFlowBuilder> dataFlowBuilders = ((DataFlowAspectDescriptorBase) aspect).getDataFlowBuilders(concept);
-        Optional<IDataFlowBuilder> first = dataFlowBuilders.stream().filter(new Predicate<IDataFlowBuilder>() {
-          public boolean test(IDataFlowBuilder builder) {
-            return builder.getModes().isEmpty() || builder.getModes().stream().anyMatch(new Predicate<String>() {
-              public boolean test(String mode) {
-                return getBuilderContext().getBuilderModes().contains(mode);
-              }
-            });
+        Collection<IDataFlowModeId> contextModes = getBuilderContext().getBuilderModes();
+        for (IDataFlowModeId contextMode : CollectionSequence.fromCollection(contextModes)) {
+          for (IDataFlowBuilder builder : CollectionSequence.fromCollection(dataFlowBuilders)) {
+            if (builder.getModes().contains(contextMode)) {
+              return builder;
+            }
           }
-        }).findFirst();
-        return (first.isPresent() ? first.get() : null);
+        }
+        for (IDataFlowBuilder builder : CollectionSequence.fromCollection(dataFlowBuilders)) {
+          if (builder.getModes().isEmpty()) {
+            return builder;
+          }
+        }
+        return null;
       }
     }
     return null;

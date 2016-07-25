@@ -602,7 +602,7 @@
       <node id="1683977858888862718" at="35,0,39,0" concept="9" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <node id="1683977858888862718" at="39,0,43,0" concept="9" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="1683977858888862718" at="26,0,31,0" concept="3" trace="DeleteGenerator_Action#()V" />
-      <node id="574677402265847103" at="86,16,91,13" concept="5" />
+      <node id="1092784201483719405" at="86,16,91,13" concept="5" />
       <node id="711809809630689111" at="86,14,92,9" concept="1" />
       <node id="1683977858888862718" at="47,5,54,5" concept="1" />
       <node id="1683977858888862718" at="54,5,61,5" concept="1" />
@@ -660,7 +660,7 @@
         <var name="_params" id="1683977858888862718" />
         <var name="event" id="1683977858888862718" />
       </scope>
-      <unit id="711809809630454443" at="87,41,91,11" name="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action$2" />
+      <unit id="711809809630454443" at="87,62,91,11" name="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action$2" />
       <unit id="944342063932931113" at="78,40,94,5" name="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action$1" />
       <unit id="1683977858888862718" at="23,0,97,0" name="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action" />
     </file>
@@ -2067,21 +2067,17 @@
       <node id="2565896126719634093" at="43,40,44,53" concept="11" />
       <node id="2565896126719634098" at="46,43,47,204" concept="11" />
       <node id="2565896126719634090" at="50,25,51,16" concept="11" />
-      <node id="2565896126719634090" at="53,43,54,69" concept="10" />
-      <node id="2565896126719634090" at="54,69,55,28" concept="10" />
-      <node id="2565896126719634090" at="56,20,57,18" concept="11" />
-      <node id="2565896126719634090" at="58,5,59,46" concept="5" />
-      <node id="2565896126719634090" at="59,46,60,16" concept="11" />
-      <node id="2565896126719634090" at="62,29,63,16" concept="11" />
-      <node id="8147861864219908264" at="65,36,66,64" concept="10" />
-      <node id="8147861864219908275" at="67,42,68,18" concept="11" />
-      <node id="8147861864219908282" at="69,5,70,0" concept="13" />
-      <node id="8147861864219908283" at="70,0,71,73" concept="10" />
-      <node id="8147861864219908295" at="72,30,73,18" concept="11" />
-      <node id="8147861864219908300" at="74,5,75,0" concept="13" />
-      <node id="8147861864219908301" at="75,0,76,321" concept="11" />
-      <node id="2565896126719634138" at="78,65,79,225" concept="11" />
-      <node id="2565896126719634145" at="81,71,82,330" concept="11" />
+      <node id="5102088978816851297" at="53,43,54,47" concept="10" />
+      <node id="8147861864219908264" at="54,47,55,64" concept="10" />
+      <node id="8147861864219908275" at="56,42,57,19" concept="11" />
+      <node id="8147861864219908282" at="58,5,59,0" concept="13" />
+      <node id="8147861864219908283" at="59,0,60,73" concept="10" />
+      <node id="8147861864219908295" at="61,30,62,19" concept="11" />
+      <node id="5102088978816855914" at="63,5,64,348" concept="5" />
+      <node id="8147861864219908301" at="64,348,65,17" concept="11" />
+      <node id="2565896126719634090" at="67,29,68,17" concept="11" />
+      <node id="2565896126719634138" at="70,65,71,225" concept="11" />
+      <node id="2565896126719634145" at="73,71,74,330" concept="11" />
       <node id="2565896126719634090" at="30,0,32,0" concept="3" trace="Data_Flow_TabDescriptor#()V" />
       <node id="2565896126719634090" at="41,0,43,0" concept="9" trace="startListening#()V" />
       <node id="2565896126719634090" at="32,0,35,0" concept="9" trace="getTitle#()Ljava/lang/String;" />
@@ -2089,15 +2085,13 @@
       <node id="2565896126719634090" at="38,0,41,0" concept="9" trace="compareTo#(Ljetbrains/mps/plugins/relations/RelationDescriptor;)I" />
       <node id="2565896126719634090" at="43,0,46,0" concept="9" trace="getBaseNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2565896126719634090" at="46,0,49,0" concept="9" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="2565896126719634090" at="55,28,58,5" concept="8" />
-      <node id="2565896126719634090" at="62,0,65,0" concept="9" trace="isSingle#()Z" />
-      <node id="8147861864219908273" at="66,64,69,5" concept="8" />
-      <node id="8147861864219908293" at="71,73,74,5" concept="8" />
-      <node id="2565896126719634090" at="78,0,81,0" concept="9" trace="getAspectConcepts#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="2565896126719634090" at="81,0,84,0" concept="9" trace="createAspect#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SConcept;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8147861864219908273" at="55,64,58,5" concept="8" />
+      <node id="8147861864219908293" at="60,73,63,5" concept="8" />
+      <node id="2565896126719634090" at="67,0,70,0" concept="9" trace="isSingle#()Z" />
+      <node id="2565896126719634090" at="70,0,73,0" concept="9" trace="getAspectConcepts#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <node id="2565896126719634090" at="73,0,76,0" concept="9" trace="createAspect#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SConcept;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2565896126719634090" at="49,0,53,0" concept="9" trace="getIcon#()Ljavax/swing/Icon;" />
-      <node id="2565896126719634090" at="53,0,62,0" concept="9" trace="getNodes#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="2565896126719634090" at="65,0,78,0" concept="9" trace="getNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2565896126719634090" at="53,0,67,0" concept="9" trace="getNodes#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <scope id="2565896126719634090" at="30,36,30,36" />
       <scope id="2565896126719634104" at="41,32,41,32" />
       <scope id="2565896126719634090" at="32,28,33,23" />
@@ -2106,12 +2100,11 @@
       <scope id="2565896126719634090" at="43,40,44,53" />
       <scope id="2565896126719634090" at="46,43,47,204" />
       <scope id="2565896126719634090" at="50,25,51,16" />
-      <scope id="2565896126719634090" at="56,20,57,18" />
-      <scope id="2565896126719634090" at="62,29,63,16" />
-      <scope id="8147861864219908274" at="67,42,68,18" />
-      <scope id="8147861864219908294" at="72,30,73,18" />
-      <scope id="7459370737648177332" at="78,65,79,225" />
-      <scope id="7459370737648178952" at="81,71,82,330" />
+      <scope id="8147861864219908274" at="56,42,57,19" />
+      <scope id="8147861864219908294" at="61,30,62,19" />
+      <scope id="2565896126719634090" at="67,29,68,17" />
+      <scope id="7459370737648177332" at="70,65,71,225" />
+      <scope id="7459370737648178952" at="73,71,74,330" />
       <scope id="2565896126719634090" at="30,0,32,0" />
       <scope id="2565896126719634090" at="41,0,43,0" />
       <scope id="2565896126719634090" at="32,0,35,0" />
@@ -2125,30 +2118,24 @@
       <scope id="2565896126719634090" at="46,0,49,0">
         <var name="node" id="2565896126719634090" />
       </scope>
-      <scope id="2565896126719634090" at="62,0,65,0" />
-      <scope id="2565896126719634090" at="78,0,81,0">
+      <scope id="2565896126719634090" at="67,0,70,0" />
+      <scope id="2565896126719634090" at="70,0,73,0">
         <var name="node" id="2565896126719634090" />
       </scope>
-      <scope id="2565896126719634090" at="81,0,84,0">
+      <scope id="2565896126719634090" at="73,0,76,0">
         <var name="concept" id="2565896126719634090" />
         <var name="node" id="2565896126719634090" />
       </scope>
       <scope id="2565896126719634090" at="49,0,53,0" />
-      <scope id="2565896126719634090" at="53,43,60,16">
-        <var name="list" id="2565896126719634090" />
-        <var name="n" id="2565896126719634090" />
-      </scope>
-      <scope id="2565896126719634090" at="53,0,62,0">
-        <var name="node" id="2565896126719634090" />
-      </scope>
-      <scope id="2565896126719634090" at="65,36,76,321">
+      <scope id="5102088978816737403" at="53,43,65,17">
         <var name="aspectModel" id="8147861864219908284" />
         <var name="module" id="8147861864219908265" />
+        <var name="nodes" id="5102088978816851298" />
       </scope>
-      <scope id="2565896126719634090" at="65,0,78,0">
+      <scope id="2565896126719634090" at="53,0,67,0">
         <var name="node" id="2565896126719634090" />
       </scope>
-      <unit id="2565896126719634090" at="27,0,85,0" name="jetbrains.mps.ide.devkit.actions.Data_Flow_TabDescriptor" />
+      <unit id="2565896126719634090" at="27,0,77,0" name="jetbrains.mps.ide.devkit.actions.Data_Flow_TabDescriptor" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2565896126719635409">
@@ -4230,7 +4217,7 @@
       <node id="8911797107063339974" at="99,0,102,0" concept="15" trace="aspectId_State#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="8911797107063339974" at="35,0,39,0" concept="9" trace="isDumbAware#()Z" />
       <node id="8911797107063502327" at="41,124,45,5" concept="8" />
-      <node id="8911797107063339997" at="82,35,87,9" concept="5" />
+      <node id="1092784201483729576" at="82,35,87,9" concept="5" />
       <node id="8911797107063339974" at="29,0,35,0" concept="3" trace="NewAspectModelByDescriptor_Action#(Ljava/lang/String;)V" />
       <node id="8911797107063339974" at="58,5,65,5" concept="1" />
       <node id="8911797107063339974" at="65,5,72,5" concept="1" />
@@ -4287,7 +4274,7 @@
         <var name="_params" id="8911797107063339974" />
         <var name="event" id="8911797107063339974" />
       </scope>
-      <unit id="8911797107063526789" at="83,37,87,7" name="jetbrains.mps.ide.devkit.actions.NewAspectModelByDescriptor_Action$1" />
+      <unit id="8911797107063526789" at="83,58,87,7" name="jetbrains.mps.ide.devkit.actions.NewAspectModelByDescriptor_Action$1" />
       <unit id="8911797107063339974" at="25,0,103,0" name="jetbrains.mps.ide.devkit.actions.NewAspectModelByDescriptor_Action" />
     </file>
   </root>

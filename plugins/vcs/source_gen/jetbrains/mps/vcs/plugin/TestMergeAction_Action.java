@@ -14,7 +14,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileChooser.FileChooser;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.File;
@@ -78,7 +78,7 @@ public class TestMergeAction_Action extends BaseAction {
 
     descriptor.setTitle("select archive with merge files");
     descriptor.setDescription("Zip files (*.zip) ");
-    SwingUtilities.invokeLater(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         VirtualFile vFile = FileChooser.chooseFile(descriptor, ((Project) MapSequence.fromMap(_params).get("project")), null);
 

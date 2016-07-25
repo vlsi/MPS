@@ -19,19 +19,29 @@ package jetbrains.mps.smodel.runtime;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class BaseReferenceDescriptor implements ReferenceDescriptor {
   private final SReferenceLinkId myId;
   private final String myName;
   private final SConceptId myTargetConcept;
   private final boolean myIsOptional;
+  @Nullable
+  private final SNodeReference mySrcNode;
 
+  @Deprecated
   public BaseReferenceDescriptor(SReferenceLinkId id, String name, SConceptId targetConcept, boolean isOptional) {
+    this(id, name, targetConcept, isOptional, null);
+  }
+
+  public BaseReferenceDescriptor(SReferenceLinkId id, String name, SConceptId targetConcept, boolean isOptional, @Nullable SNodeReference srcNode) {
     myId = id;
     myName = name;
     myTargetConcept = targetConcept;
     myIsOptional = isOptional;
+    mySrcNode = srcNode;
   }
 
   @Override
@@ -53,5 +63,10 @@ public class BaseReferenceDescriptor implements ReferenceDescriptor {
 
   public boolean isOptional() {
     return myIsOptional;
+  }
+
+  @Override
+  public SNodeReference getSourceNode() {
+    return mySrcNode;
   }
 }

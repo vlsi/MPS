@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.core.projectView.edit;
 
 import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
@@ -28,7 +29,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
-import javax.swing.SwingUtilities;
 import java.util.List;
 import java.util.Set;
 
@@ -66,46 +66,40 @@ public class SNodePasteProvider implements com.intellij.ide.PasteProvider, Runna
   public void run() {
     // Should be executed inside read action
     PasteNodeData nodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(myModel);
-    SwingUtilities.invokeLater(getAddImportsRunnable(nodeData));
+    ApplicationManager.getApplication().invokeLater(getAddImportsRunnable(nodeData));
   }
 
   private Runnable getAddImportsRunnable(final PasteNodeData nodeData) {
     // Should be executed outside of read action in UI thread
-    return new Runnable() {
-      @Override
-      public void run() {
-        Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(nodeData, myModel, myProject);
-        myProject.getModelAccess().executeCommandInEDT(getPasteRunnable(nodeData, addImportsRunnable));
-      }
+    return () -> {
+      Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(nodeData, myModel, myProject);
+      myProject.getModelAccess().executeCommandInEDT(getPasteRunnable(nodeData, addImportsRunnable));
     };
   }
 
   private Runnable getPasteRunnable(final PasteNodeData nodeData, final Runnable addImportsRunnable) {
     // Should be executed inside read action
-    return new Runnable() {
-      @Override
-      public void run() {
-        if (jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel)) {
-          return;
-        }
-        List<SNode> nodesToPaste = nodeData.getNodes();
-        if (nodesToPaste == null || nodesToPaste.isEmpty()) {
-          return;
-        }
-        Set<SReference> referencesToResolve = nodeData.getRequireResolveReferences();
-
-        if (addImportsRunnable != null) {
-          addImportsRunnable.run();
-        }
-
-        NodePaster pasteProcessor = new NodePaster(nodesToPaste);
-        if (!(pasteProcessor.canPasteAsRoots())) {
-          return;
-        }
-        pasteProcessor.pasteAsRoots(myModel, "");
-        ResolverComponent.getInstance().resolveScopesOnly(referencesToResolve, myProject.getRepository());
-        myModelDescriptor.save();
+    return () -> {
+      if (myModel.getRepository() == null) {
+        return;
       }
+      List<SNode> nodesToPaste = nodeData.getNodes();
+      if (nodesToPaste == null || nodesToPaste.isEmpty()) {
+        return;
+      }
+      Set<SReference> referencesToResolve = nodeData.getRequireResolveReferences();
+
+      if (addImportsRunnable != null) {
+        addImportsRunnable.run();
+      }
+
+      NodePaster pasteProcessor = new NodePaster(nodesToPaste);
+      if (!(pasteProcessor.canPasteAsRoots())) {
+        return;
+      }
+      pasteProcessor.pasteAsRoots(myModel, "");
+      ResolverComponent.getInstance().resolveScopesOnly(referencesToResolve, myProject.getRepository());
+      myModelDescriptor.save();
     };
   }
 }

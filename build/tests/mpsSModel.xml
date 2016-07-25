@@ -135,7 +135,7 @@
     <jar destfile="${build.layout}/jetbrains.mps.testRead.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.testRead" />
       <fileset dir="${basedir}/testbench/modules/testRead" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/modules/testRead/resources" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/modules/testRead/resources" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.testRead.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testRead-models">
@@ -145,6 +145,8 @@
       <fileset dir="${basedir}/testbench/modules/testRead/resources">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testRead/jetbrains.mps.testRead.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testRead-models" prefix="module/models" />

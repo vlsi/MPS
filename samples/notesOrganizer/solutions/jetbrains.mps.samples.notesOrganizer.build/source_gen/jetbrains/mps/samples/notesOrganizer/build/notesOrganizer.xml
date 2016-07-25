@@ -67,7 +67,7 @@
     <jar destfile="${build.tmp}/default/notesOrganizer.zip/notesOrganizer/languages/notesOrganizer/jetbrains.mps.samples.notesOrganizer.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.samples.notesOrganizer" />
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.notesOrganizer" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/languages/jetbrains.mps.samples.notesOrganizer/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.samples.notesOrganizer/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.samples.notesOrganizer.jar" />
     </jar>
     <jar destfile="${build.tmp}/default/notesOrganizer.zip/notesOrganizer/languages/notesOrganizer/jetbrains.mps.samples.notesOrganizer-generator.jar" duplicate="preserve">
@@ -83,10 +83,14 @@
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.notesOrganizer/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.notesOrganizer/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/languages/jetbrains.mps.samples.notesOrganizer/jetbrains.mps.samples.notesOrganizer.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.samples.notesOrganizer-generator-template" prefix="module/generator/template" />
@@ -207,7 +211,7 @@
   <target name="java.compile.jetbrains.mps.samples.notesOrganizer" depends="fetchDependencies">
     <mkdir dir="${basedir}/languages/jetbrains.mps.samples.notesOrganizer/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.notesOrganizer" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.notesOrganizer" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.notesOrganizer" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/languages/jetbrains.mps.samples.notesOrganizer/source_gen" />
@@ -253,7 +257,7 @@
   <target name="java.compile.jetbrains.mps.samples.notesOrganizer#8908453262579799816" depends="java.compile.jetbrains.mps.samples.notesOrganizer, fetchDependencies">
     <mkdir dir="${basedir}/languages/jetbrains.mps.samples.notesOrganizer/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.notesOrganizer#8908453262579799816" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.notesOrganizer#8908453262579799816" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.notesOrganizer#8908453262579799816" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/languages/jetbrains.mps.samples.notesOrganizer/generator/source_gen" />

@@ -51,6 +51,7 @@
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="mcvo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure.language(MPS.Core/)" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -3647,21 +3648,26 @@
         </node>
         <node concept="3clFbJ" id="3SMO48Gu$ug" role="3cqZAp">
           <node concept="3clFbS" id="3SMO48Gu$uh" role="3clFbx">
-            <node concept="3clFbF" id="3SMO48Gu$ui" role="3cqZAp">
-              <node concept="2YIFZM" id="3SMO48Gu$uj" role="3clFbG">
-                <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
-                <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-                <node concept="1bVj0M" id="3SMO48Gu$uk" role="37wK5m">
-                  <node concept="3clFbS" id="3SMO48Gu$ul" role="1bW5cS">
-                    <node concept="3clFbF" id="3SMO48Gu$um" role="3cqZAp">
-                      <node concept="2OqwBi" id="3SMO48Gu$un" role="3clFbG">
-                        <node concept="37vLTw" id="3SMO48Gu$uo" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3SMO48FXNAc" resolve="myTraverser" />
-                        </node>
-                        <node concept="liA8E" id="3SMO48Gu$up" role="2OqNvi">
-                          <ref role="37wK5l" to="hdhb:42hl10VHbcE" resolve="goToBounds" />
-                          <node concept="37vLTw" id="2BHiRxgkX_C" role="37wK5m">
-                            <ref role="3cqZAo" node="3SMO48GuvFI" resolve="firstChange" />
+            <node concept="3clFbF" id="WEmn41A9bH" role="3cqZAp">
+              <node concept="2OqwBi" id="WEmn41A9IP" role="3clFbG">
+                <node concept="2YIFZM" id="WEmn41A9ti" role="2Oq$k0">
+                  <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+                  <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+                </node>
+                <node concept="liA8E" id="WEmn41Aaal" role="2OqNvi">
+                  <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+                  <node concept="1bVj0M" id="3SMO48Gu$uk" role="37wK5m">
+                    <node concept="3clFbS" id="3SMO48Gu$ul" role="1bW5cS">
+                      <node concept="3clFbF" id="3SMO48Gu$um" role="3cqZAp">
+                        <node concept="2OqwBi" id="3SMO48Gu$un" role="3clFbG">
+                          <node concept="37vLTw" id="3SMO48Gu$uo" role="2Oq$k0">
+                            <ref role="3cqZAo" node="3SMO48FXNAc" resolve="myTraverser" />
+                          </node>
+                          <node concept="liA8E" id="3SMO48Gu$up" role="2OqNvi">
+                            <ref role="37wK5l" to="hdhb:42hl10VHbcE" resolve="goToBounds" />
+                            <node concept="37vLTw" id="2BHiRxgkX_C" role="37wK5m">
+                              <ref role="3cqZAo" node="3SMO48GuvFI" resolve="firstChange" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -8217,21 +8223,26 @@
         </node>
         <node concept="3clFbJ" id="42UviMImjIl" role="3cqZAp">
           <node concept="3clFbS" id="42UviMImjIm" role="3clFbx">
-            <node concept="3clFbF" id="42UviMImjIn" role="3cqZAp">
-              <node concept="2YIFZM" id="42UviMImjIo" role="3clFbG">
-                <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
-                <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-                <node concept="1bVj0M" id="42UviMImjIp" role="37wK5m">
-                  <node concept="3clFbS" id="42UviMImjIq" role="1bW5cS">
-                    <node concept="3clFbF" id="42UviMImjIr" role="3cqZAp">
-                      <node concept="2OqwBi" id="42UviMImjIs" role="3clFbG">
-                        <node concept="37vLTw" id="42UviMImjIt" role="2Oq$k0">
-                          <ref role="3cqZAo" node="42UviMImjE5" resolve="myTraverser" />
-                        </node>
-                        <node concept="liA8E" id="42UviMImjIu" role="2OqNvi">
-                          <ref role="37wK5l" to="hdhb:42hl10VHbcE" resolve="goToBounds" />
-                          <node concept="37vLTw" id="42UviMImjIv" role="37wK5m">
-                            <ref role="3cqZAo" node="42UviMImjIf" resolve="firstChange" />
+            <node concept="3clFbF" id="WEmn41Cg5v" role="3cqZAp">
+              <node concept="2OqwBi" id="WEmn41Cg5w" role="3clFbG">
+                <node concept="2YIFZM" id="WEmn41Cg5x" role="2Oq$k0">
+                  <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+                  <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+                </node>
+                <node concept="liA8E" id="WEmn41Cg5y" role="2OqNvi">
+                  <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+                  <node concept="1bVj0M" id="42UviMImjIp" role="37wK5m">
+                    <node concept="3clFbS" id="42UviMImjIq" role="1bW5cS">
+                      <node concept="3clFbF" id="42UviMImjIr" role="3cqZAp">
+                        <node concept="2OqwBi" id="42UviMImjIs" role="3clFbG">
+                          <node concept="37vLTw" id="42UviMImjIt" role="2Oq$k0">
+                            <ref role="3cqZAo" node="42UviMImjE5" resolve="myTraverser" />
+                          </node>
+                          <node concept="liA8E" id="42UviMImjIu" role="2OqNvi">
+                            <ref role="37wK5l" to="hdhb:42hl10VHbcE" resolve="goToBounds" />
+                            <node concept="37vLTw" id="42UviMImjIv" role="37wK5m">
+                              <ref role="3cqZAo" node="42UviMImjIf" resolve="firstChange" />
+                            </node>
                           </node>
                         </node>
                       </node>

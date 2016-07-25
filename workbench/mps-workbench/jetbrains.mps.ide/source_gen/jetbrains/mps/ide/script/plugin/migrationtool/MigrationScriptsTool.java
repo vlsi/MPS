@@ -4,7 +4,6 @@ package jetbrains.mps.ide.script.plugin.migrationtool;
 
 import jetbrains.mps.ide.findusages.view.TabbedUsagesTool;
 import java.util.List;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
@@ -13,7 +12,7 @@ import java.util.Collection;
 import jetbrains.mps.lang.script.runtime.RefactoringScript;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.ThreadUtils;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
@@ -30,7 +29,6 @@ import com.intellij.ui.content.Content;
 import jetbrains.mps.ide.findusages.view.icons.IconManager;
 
 public class MigrationScriptsTool extends TabbedUsagesTool {
-  private List<SNodeReference> myScripts;
   private List<MigrationScriptsView> myViews = new ArrayList<MigrationScriptsView>();
   public MigrationScriptsTool(Project project) {
     super(project, "Migration", -1, null, ToolWindowAnchor.BOTTOM, true);
@@ -49,7 +47,7 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
   }
   public void startMigration(final Collection<RefactoringScript> scripts, final SearchScope scope) {
     ThreadUtils.assertEDT();
-    SwingUtilities.invokeLater(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
       public void run() {
         ProgressManager.getInstance().run(new Task.Modal(getProject(), "Searching", true) {
@@ -65,7 +63,7 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
                 results.value = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), query, provider);
               }
             });
-            SwingUtilities.invokeLater(new Runnable() {
+            ApplicationManager.getApplication().invokeLater(new Runnable() {
               @Override
               public void run() {
                 if (results.value.getSearchResults().isEmpty()) {

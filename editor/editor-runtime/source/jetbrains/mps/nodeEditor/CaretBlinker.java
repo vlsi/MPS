@@ -24,7 +24,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.optional.WithCaret;
 import jetbrains.mps.util.WeakSet;
 
-import javax.swing.SwingUtilities;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
@@ -43,7 +42,7 @@ public class CaretBlinker extends ApplicationAdapter {
 
   private final Object myRegistrationLock = new Object();
 
-  private WeakSet<EditorComponent> myEditors = new WeakSet<EditorComponent>();
+  private WeakSet<EditorComponent> myEditors = new WeakSet<>();
 
   // Hide constructor to avoid direct use. If there is no Application, getInstance() will return null.
   private CaretBlinker() {
@@ -101,18 +100,15 @@ public class CaretBlinker extends ApplicationAdapter {
               break;
             }
 
-            SwingUtilities.invokeLater(new Runnable() {
-              @Override
-              public void run() {
-                if (!editor.isDisposed() && editor.isActive()) {
-                  if (selectedCell instanceof WithCaret) {
-                    ((WithCaret) selectedCell).switchCaretVisible();
-                  } else {
-                    // TODO: remove this branch after MPS 3.4
-                    ((jetbrains.mps.nodeEditor.cells.EditorCell) selectedCell).switchCaretVisible();
-                  }
-                  editor.repaint(selectedCell.getX(), selectedCell.getY(), selectedCell.getWidth() + 1, selectedCell.getHeight() + 1);
+            ApplicationManager.getApplication().invokeLater(() -> {
+              if (!editor.isDisposed() && editor.isActive()) {
+                if (selectedCell instanceof WithCaret) {
+                  ((WithCaret) selectedCell).switchCaretVisible();
+                } else {
+                  // TODO: remove this branch after MPS 3.4
+                  ((jetbrains.mps.nodeEditor.cells.EditorCell) selectedCell).switchCaretVisible();
                 }
+                editor.repaint(selectedCell.getX(), selectedCell.getY(), selectedCell.getWidth() + 1, selectedCell.getHeight() + 1);
               }
             });
 

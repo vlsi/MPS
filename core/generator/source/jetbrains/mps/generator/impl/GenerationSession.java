@@ -36,6 +36,7 @@ import jetbrains.mps.generator.impl.TemplateGenerator.StepArguments;
 import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
+import jetbrains.mps.generator.impl.plan.CheckpointIdentity;
 import jetbrains.mps.generator.impl.plan.CheckpointState;
 import jetbrains.mps.generator.impl.plan.Conflict;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
@@ -247,10 +248,16 @@ class GenerationSession {
             currInputModel = currOutput;
           } else if (planStep instanceof Checkpoint) {
             Checkpoint checkpointStep = (Checkpoint) planStep;
-            SModel checkpointModel = mySessionContext.getCrossModelEnvironment().createBlankCheckpointModel(myOriginalInputModel.getReference(), checkpointStep);
+            CheckpointIdentity checkpointIdentity = new CheckpointIdentity(myGenerationPlan, checkpointStep);
+            SModel checkpointModel = mySessionContext.getCrossModelEnvironment().createBlankCheckpointModel(myOriginalInputModel.getReference(),
+                checkpointIdentity);
             CheckpointStateBuilder cpBuilder = new CheckpointStateBuilder(currInputModel, checkpointModel, transitionTrace);
             // FIXME shall populate state with last generator's MappingLabels. Couldn't use last generator directly as it might be
             // the one from post-processing scripts. What if I add ML in post-processing script?
+            //
+            // IMPORTANT need to create cpState (in fact cp model) first, as DebugMappingsBuilder need cloned nodes to substitute
+            // reference targets from transient model to that in CP model (see DMB.substitute)
+            CheckpointState cpState = cpBuilder.create(checkpointIdentity);
             //
             // FIXME could keep myStepArguments and access GeneratorMappings from there - myStepArguments is the same for pre/post and main part
             if (myStepArguments != null) {
@@ -261,7 +268,8 @@ class GenerationSession {
               SNode debugMappings = new DebugMappingsBuilder(mySessionContext.getRepository(), Collections.singletonMap(currInputModel, checkpointModel)).build(checkpointModel, stepLabels);
               checkpointModel.addRootNode(debugMappings);
             }
-            mySessionContext.getCrossModelEnvironment().publishCheckpoint(myOriginalInputModel.getReference(), cpBuilder.create(checkpointStep));
+            mySessionContext.getCrossModelEnvironment().publishCheckpoint(myOriginalInputModel.getReference(),
+                cpState);
             transitionTrace = new TransitionTrace(checkpointStep);
             transitionTrace.reset(currInputModel);
             myStepArguments = null;
@@ -281,6 +289,8 @@ class GenerationSession {
             myDependenciesBuilder.getResult(myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
             myLogger.getWarningCount() > 0, false);
         generationStatus.setModelExports(mySessionContext.getExports().getExports());
+        // FIXME uncomment once CME persistence is full-fledged
+        // generationStatus.setCrossModelEnvironment(mySessionContext.getCrossModelEnvironment());
         success = generationStatus.isOk();
         return generationStatus;
       } catch (GenerationCanceledException gce) {

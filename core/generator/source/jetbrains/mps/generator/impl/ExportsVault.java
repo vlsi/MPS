@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.generator.impl.ModelStreamManager.Provider;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
@@ -23,13 +22,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.Collections;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -90,38 +85,4 @@ public class ExportsVault {
     }
     return exportsModel;
   }
-
-  /**
-   * Adapts MultiStreamDataSource to StreamDataSource (picks one stream).
-   */
-  private static class SingleStreamSource extends DataSourceBase implements StreamDataSource {
-    private final MultiStreamDataSource myDataSource;
-    private final String myStreamName;
-
-    public SingleStreamSource(@NotNull MultiStreamDataSource streamDataSource, @NotNull String name) {
-      myDataSource = streamDataSource;
-      myStreamName = name;
-    }
-
-    @Override
-    public boolean isReadOnly() {
-      return false;
-    }
-
-    @NotNull
-    @Override
-    public String getLocation() {
-      return myStreamName;
-    }
-
-    @Override
-    public InputStream openInputStream() throws IOException {
-      return myDataSource.openInputStream(myStreamName);
-    }
-
-    @Override
-    public OutputStream openOutputStream() throws IOException {
-      return myDataSource.openOutputStream(myStreamName);
-    }
-  };
 }

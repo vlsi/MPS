@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -24,9 +23,9 @@ import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
 import jetbrains.mps.nodeEditor.selection.SelectionInfoImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellInfo;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
@@ -39,9 +38,9 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Stream;
 
 class Memento {
   private static final Comparator<Pair<EditorCell, Boolean>> COLLAPSED_STATES_COMPARATOR = new Comparator<Pair<EditorCell, Boolean>>() {
@@ -60,12 +59,15 @@ class Memento {
     }
   };
 
-  private List<SelectionInfo> mySelectionStack = new ArrayList<SelectionInfo>();
-  private List<CellInfo> myCollectionsWithEnabledBraces = new ArrayList<CellInfo>();
-  private List<Pair<CellInfo, Boolean>> myCollapseStates = new ArrayList<Pair<CellInfo, Boolean>>();
+  private static final Comparator<EditorCell> CELL_COMPARATOR =
+      (cell1, cell2) -> CellTraversalUtil.getCommonParent(cell1, cell2) == null ? 0 : CellTraversalUtil.compare(cell1, cell2);
 
-  private List<ErrorMarker> myErrors = new ArrayList<ErrorMarker>();
-  private List<TransactionalPropertyState> myTransactionalProperties = new ArrayList<TransactionalPropertyState>();
+  private List<SelectionInfo> mySelectionStack = new ArrayList<>();
+  private List<CellInfo> myCollectionsWithEnabledBraces = new ArrayList<>();
+  private List<Pair<CellInfo, Boolean>> myCollapseStates = new ArrayList<>();
+
+  private List<ErrorMarker> myErrors = new ArrayList<>();
+  private List<TransactionalPropertyState> myTransactionalProperties = new ArrayList<>();
   private Point myViewPosition;
   private String[] myEnabledHints = null;
   private SNodeReference myEditedNodeReference;
@@ -76,43 +78,30 @@ class Memento {
   Memento(EditorContext context, boolean saveEditedNode) {
     EditorComponent nodeEditor = (EditorComponent) context.getEditorComponent();
     SNode editedNode = nodeEditor.getEditedNode();
-    if (editedNode == null || SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance())) {
+    if (editedNode == null || SNodeUtil.isAccessible(editedNode, context.getRepository())) {
       if (saveEditedNode && editedNode != null) {
         myEditedNodeReference = editedNode.getReference();
       }
       mySelectionStack = nodeEditor.getSelectionManager().getSelectionInfoStack();
-      List<Pair<EditorCell, Boolean>> collapseStates = nodeEditor.getCollapseStates();
-      Collections.sort(collapseStates, COLLAPSED_STATES_COMPARATOR);
-      for (Pair<EditorCell, Boolean> collapseState : collapseStates) {
-        myCollapseStates.add(new Pair<CellInfo, Boolean>(collapseState.o1.getCellInfo(), collapseState.o2));
-      }
-      for (EditorCell bracesEnabledCell : nodeEditor.getBracesEnabledCells()) {
-        myCollectionsWithEnabledBraces.add(APICellAdapter.getCellInfo(bracesEnabledCell));
-      }
 
-      collectErrors(nodeEditor);
-      collectTransactionalProperties(nodeEditor);
+      nodeEditor.getCollapseStates().stream().sorted(COLLAPSED_STATES_COMPARATOR).map(
+          collapseState -> new Pair<>(collapseState.o1.getCellInfo(), collapseState.o2)).forEach(myCollapseStates::add);
+
+      nodeEditor.getBracesEnabledCells().stream().sorted(CELL_COMPARATOR).map(EditorCell::getCellInfo).forEach(myCollectionsWithEnabledBraces::add);
+
+      // collect errors
+      nodeEditor.getCellTracker().getErrorCells().stream().sorted(CELL_COMPARATOR).filter(
+          cell -> cell instanceof EditorCell_Label && ((EditorCell_Label) cell).isEditable()).map(cell -> new ErrorMarker((EditorCell_Label) cell)).forEach(
+          myErrors::add);
+
+      // collect transactionals
+      nodeEditor.getCellTracker().getTransactionalCells().stream().sorted(CELL_COMPARATOR).filter(
+          cell -> ((TransactionalPropertyAccessor) cell.getModelAccessor()).hasValueToCommit()).map(TransactionalPropertyState::new).forEach(
+          myTransactionalProperties::add);
     }
 
     myViewPosition = nodeEditor.getViewPosition();
     myEnabledHints = nodeEditor.getUpdater().getInitialEditorHints();
-  }
-
-  private void collectTransactionalProperties(EditorComponent editor) {
-    for (EditorCell_Property transactionalCell : editor.getCellTracker().getTransactionalCells()) {
-      TransactionalPropertyAccessor accessor = (TransactionalPropertyAccessor) transactionalCell.getModelAccessor();
-      if (accessor.hasValueToCommit()) {
-        myTransactionalProperties.add(new TransactionalPropertyState(transactionalCell));
-      }
-    }
-  }
-
-  private void collectErrors(EditorComponent editor) {
-    for (EditorCell cell : editor.getCellTracker().getErrorCells()) {
-      if (cell instanceof EditorCell_Label && ((EditorCell_Label) cell).isEditable()) {
-        myErrors.add(new ErrorMarker((EditorCell_Label) cell));
-      }
-    }
   }
 
   void restore(EditorComponent editor) {
@@ -310,29 +299,24 @@ class Memento {
 
     Element selectionStack = e.getChild(SELECTION_STACK);
     if (selectionStack != null) {
-      List children = selectionStack.getChildren(STACK_ELEMENT);
-      for (Object o : children) {
-        memento.mySelectionStack.add(new SelectionInfoImpl((Element) o));
-      }
+      selectionStack.getChildren(STACK_ELEMENT).stream().map(SelectionInfoImpl::new).forEach(memento.mySelectionStack::add);
     }
 
     Element errorMarkers = e.getChild(ERROR_MARKERS);
     if (errorMarkers != null) {
-      memento.myErrors.addAll(ErrorMarker.loadMarkers(errorMarkers));
+      ErrorMarker.loadMarkers(errorMarkers).forEach(memento.myErrors::add);
     }
 
     Element transactionalProperties = e.getChild(TRANSACTIONAL_PROPERTIES);
     if (transactionalProperties != null) {
-      memento.myTransactionalProperties.addAll(TransactionalPropertyState.load(transactionalProperties));
+      TransactionalPropertyState.load(transactionalProperties).forEach(memento.myTransactionalProperties::add);
     }
 
     Element collapsed = e.getChild(COLLAPSED);
     if (collapsed != null) {
-      List<Element> children = collapsed.getChildren(COLLAPSED_ELEMENT);
-      for (Element collapsedElement : children) {
-        memento.myCollapseStates.add(new Pair<CellInfo, Boolean>(DefaultCellInfo.loadFrom(collapsedElement.getChild(CELL_ID_ELEMENT)),
-            Boolean.valueOf(collapsedElement.getAttributeValue(COLLAPSED_VALUE))));
-      }
+      collapsed.getChildren(COLLAPSED_ELEMENT).stream().map(
+          el -> new Pair<CellInfo, Boolean>(DefaultCellInfo.loadFrom(el.getChild(CELL_ID_ELEMENT)),
+              Boolean.valueOf(el.getAttributeValue(COLLAPSED_VALUE)))).forEach(pair -> memento.myCollapseStates.add(pair));
     }
     try {
       int viewPositionX = Integer.valueOf(e.getAttributeValue(VIEW_POSITION_X));
@@ -343,7 +327,7 @@ class Memento {
 
     Element hintsElement = e.getChild(ENABLED_HINTS);
     if (hintsElement != null) {
-      List<String> enabledHints = new ArrayList<String>();
+      List<String> enabledHints = new ArrayList<>();
       List children = hintsElement.getChildren(ENABLED_HINTS_ELEMENT);
       for (Object o : children) {
         enabledHints.add(((Element) o).getAttributeValue(ENABLED_HINTS_ATTRIBUTE));
@@ -365,7 +349,7 @@ class Memento {
     private String myModelText = null;
     private boolean myPropertyCell = false;
 
-    public ErrorMarker(EditorCell_Label label) {
+    ErrorMarker(EditorCell_Label label) {
       myText = label.getText();
       myCellInfo = label.getCellInfo();
       if (label instanceof EditorCell_Property) {
@@ -433,12 +417,8 @@ class Memento {
       errorMarkers.addContent(errorElement);
     }
 
-    public static List<ErrorMarker> loadMarkers(Element errorMarkers) {
-      List<ErrorMarker> result = new ArrayList<ErrorMarker>();
-      for (Element errorElement : errorMarkers.getChildren(ERROR_MARKER)) {
-        result.add(new ErrorMarker(errorElement));
-      }
-      return result;
+    static Stream<ErrorMarker> loadMarkers(Element errorMarkers) {
+      return errorMarkers.getChildren(ERROR_MARKER).stream().map(ErrorMarker::new);
     }
 
     @Override
@@ -477,7 +457,7 @@ class Memento {
     private final String myUncommittedValue;
     private final CellInfo myCellInfo;
 
-    public TransactionalPropertyState(EditorCell_Property propertyCell) {
+    TransactionalPropertyState(EditorCell_Property propertyCell) {
       TransactionalPropertyAccessor accessor = (TransactionalPropertyAccessor) propertyCell.getModelAccessor();
       assert accessor.hasValueToCommit();
       myUncommittedValue = accessor.doGetValue();
@@ -511,12 +491,8 @@ class Memento {
       transactionalProperties.addContent(transactionalElement);
     }
 
-    public static List<TransactionalPropertyState> load(Element transactionalProperties) {
-      List<TransactionalPropertyState> result = new ArrayList<TransactionalPropertyState>();
-      for (Element transactionalPropertyElement : transactionalProperties.getChildren(TRANSACTIONAL_PROPERTY)) {
-        result.add(new TransactionalPropertyState(transactionalPropertyElement));
-      }
-      return result;
+    public static Stream<TransactionalPropertyState> load(Element transactionalProperties) {
+      return transactionalProperties.getChildren(TRANSACTIONAL_PROPERTY).stream().map(TransactionalPropertyState::new);
     }
 
     @Override

@@ -125,7 +125,7 @@
       <node id="5797068448049411124" at="161,6,167,6" concept="10" />
       <node id="5797068448049411142" at="167,6,173,6" concept="10" />
       <node id="1466595955268239423" at="54,0,61,0" concept="9" trace="disposeComponent#()V" />
-      <node id="6498712016455322600" at="96,47,103,7" concept="4" />
+      <node id="1092784201482656450" at="96,47,103,7" concept="4" />
       <node id="5797068448049410994" at="107,0,114,0" concept="9" trace="openNode#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
       <node id="5797068448049411017" at="114,53,121,6" concept="10" />
       <node id="5797068448049411030" at="121,6,128,6" concept="10" />
@@ -271,7 +271,7 @@
       <unit id="5797068448049411111" at="156,37,161,5" name="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$7" />
       <unit id="5797068448049411129" at="162,39,167,5" name="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$8" />
       <unit id="5797068448049411147" at="168,35,173,5" name="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$9" />
-      <unit id="6498712016455322604" at="97,35,103,5" name="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$2" />
+      <unit id="6498712016455322604" at="97,56,103,5" name="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$2" />
       <unit id="5797068448049411022" at="115,45,121,5" name="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$3" />
       <unit id="5797068448049411035" at="122,43,128,5" name="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$4" />
       <unit id="5797068448049411063" at="132,39,143,5" name="jetbrains.mps.ide.hierarchy.AbstractHierarchyView$5" />

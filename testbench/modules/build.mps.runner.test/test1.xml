@@ -40,7 +40,7 @@
     <jar destfile="${build.layout}/jetbrains.mps.build.mps.runner.test.test1.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" />
       <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test1" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps.runner.test.test1.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.mps.runner.test.test1-models">
@@ -50,6 +50,8 @@
       <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/jetbrains.mps.build.mps.runner.test.test1/jetbrains.mps.build.mps.runner.test.test1.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.mps.runner.test.test1-models" prefix="module/models" />
@@ -155,7 +157,7 @@
   <target name="java.compile.jetbrains.mps.build.mps.runner.test.test1">
     <mkdir dir="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen" />

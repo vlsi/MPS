@@ -8,18 +8,19 @@ import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorContainer;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.ide.MPSCoreComponents;
 import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorWizardStep;
@@ -31,7 +32,6 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.ide.GeneralSettings;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
@@ -62,6 +62,7 @@ import org.jetbrains.annotations.Nullable;
 @State(name = "MigrationTrigger", storages = @Storage(value = StoragePathMacros.WORKSPACE_FILE)
 , reloadable = true)
 public class MigrationTrigger extends AbstractProjectComponent implements PersistentStateComponent<MigrationTrigger.MyState>, IStartupMigrationExecutor, MigrationErrorContainer {
+  private final ClassLoaderManager myClassLoaderManager;
 
   private MPSProject myMpsProject;
   private final MigrationManager myMigrationManager;
@@ -83,6 +84,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     myMpsProject = p;
     myMigrationManager = migrationManager;
     myProperties = props;
+    myClassLoaderManager = ApplicationManager.getApplication().getComponent(MPSCoreComponents.class).getClassLoaderManager();
   }
 
   private final AtomicInteger myBlocked = new AtomicInteger(0);
@@ -119,7 +121,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
               ReloadManager.getInstance().flush();
             }
           });
-          SwingUtilities.invokeLater(new Runnable() {
+          ApplicationManager.getApplication().invokeLater(new Runnable() {
             public void run() {
               myState.migrationRequired = false;
 
@@ -144,7 +146,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                   }
                 });
               } else {
-                MigrationErrorWizardStep lastStep = as_feb5zp_a0a0a0k0a0a0a1a0a0a0a1a0d0y(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
+                MigrationErrorWizardStep lastStep = as_feb5zp_a0a0a0k0a0a0a0b0a0a0a0b0a3a52(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
                 if (lastStep == null) {
                   return;
                 }
@@ -202,7 +204,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   private void addListeners() {
     myListenersAdded = true;
     new RepoListenerRegistrar(myMpsProject.getRepository(), myRepoListener).attach();
-    ClassLoaderManager.getInstance().addClassesHandler(this.myClassesListener);
+    myClassLoaderManager.addClassesHandler(this.myClassesListener);
     myProperties.addListener(myPropertiesListener);
   }
 
@@ -211,7 +213,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       return true;
     }
     myProperties.removeListener(myPropertiesListener);
-    ClassLoaderManager.getInstance().removeClassesHandler(myClassesListener);
+    myClassLoaderManager.removeClassesHandler(myClassesListener);
     new RepoListenerRegistrar(myMpsProject.getRepository(), myRepoListener).detach();
     return false;
   }
@@ -403,7 +405,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     public boolean migrationRequired = false;
     public Boolean tips;
   }
-  private static <T> T as_feb5zp_a0a0a0k0a0a0a1a0a0a0a1a0d0y(Object o, Class<T> type) {
+  private static <T> T as_feb5zp_a0a0a0k0a0a0a0b0a0a0a0b0a3a52(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

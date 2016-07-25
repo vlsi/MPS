@@ -44,8 +44,6 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
   @Nullable
   public abstract LinkDescriptor getLinkDescriptor();
 
-  protected abstract SNode findInConcept(SNode cnode);
-
   @NotNull
   @Override
   public String getName() {
@@ -107,15 +105,6 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
     }
 
     return ld.isUnordered();
-  }
-
-  @Override
-  public SNode getDeclarationNode() {
-    SNode cnode = getOwner().getDeclarationNode();
-    if (cnode == null) {
-      return null;
-    }
-    return findInConcept(cnode);
   }
 
   @Override

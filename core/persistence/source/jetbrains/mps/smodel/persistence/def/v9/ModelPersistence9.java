@@ -32,7 +32,6 @@ import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.List;
 
@@ -92,7 +91,7 @@ public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
     if (header != null && header.getMetaInfoProvider() != null) {
       mmiProvider = header.getMetaInfoProvider();
     } else {
-      mmiProvider = new RegularMetaModelInfo(header.getModelReference());
+      mmiProvider = new RegularMetaModelInfo(header == null ? null : header.getModelReference());
     }
     return new ModelWriter9(mmiProvider);
   }

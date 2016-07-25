@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.choose;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
+import jetbrains.mps.ide.IdeBundle;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.util.containers.MultiMap;
@@ -146,7 +147,7 @@ public final class ChooseByNameData<T> implements ChooseByNameModel {
       @Override
       protected Collection<T> createCollection() {
         // I don't expect a lot of duplicating names
-        return new ArrayList<T>(4);
+        return new ArrayList<>(4);
       }
     };
     myPresentation.names(elements, (t, s) -> rv.putValue(s, t));
@@ -256,10 +257,10 @@ public final class ChooseByNameData<T> implements ChooseByNameModel {
    * @return {@code this} for convenience
    */
   public ChooseByNameData<T> derivePrompts(String elementName) {
-    myCheckboxName = String.format("Include &non-&&project %s", NameUtil.pluralize(elementName));
-    myPromptText = String.format("%s name:", NameUtil.capitalize(elementName));
-    myNotInScopeMessage = String.format("no %s found in the scope", NameUtil.pluralize(elementName));
-    myNotFoundMessage = "no matches found";
+    myCheckboxName = String.format(IdeBundle.message("checkbox.include.non.project.elements"), NameUtil.pluralize(elementName));
+    myPromptText = String.format(IdeBundle.message("lable.elemet.name"), NameUtil.capitalize(elementName));
+    myNotInScopeMessage = String.format(IdeBundle.message("lable.no.elemet.found.in.scope"), NameUtil.pluralize(elementName));
+    myNotFoundMessage = com.intellij.ide.IdeBundle.message("label.choosebyname.no.matches.found");
     return this;
   }
 

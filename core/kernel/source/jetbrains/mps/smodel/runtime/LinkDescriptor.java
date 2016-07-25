@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public interface LinkDescriptor {
   SContainmentLinkId getId();
@@ -31,4 +32,6 @@ public interface LinkDescriptor {
   boolean isMultiple();
 
   boolean isUnordered();
+
+  SNodeReference getSourceNode();
 }

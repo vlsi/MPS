@@ -23,7 +23,7 @@ public class NamedSubstituteMenu extends SubstituteMenuBase {
     result.add(new NamedSubstituteMenu.SubstituteMenuPart_Action_75hh6x_a());
     return result;
   }
-  private static class SubstituteMenuPart_Action_75hh6x_a extends SingleItemSubstituteMenuPart {
+  private class SubstituteMenuPart_Action_75hh6x_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override

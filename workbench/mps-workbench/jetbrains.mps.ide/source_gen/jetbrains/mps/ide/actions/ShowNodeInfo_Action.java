@@ -18,6 +18,7 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.nodeEditor.NodeInformationDialog;
+import com.intellij.openapi.application.ApplicationManager;
 
 public class ShowNodeInfo_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -81,7 +82,7 @@ public class ShowNodeInfo_Action extends BaseAction {
         return NodeInformationDialog.createNodeInfo(node);
       }
     });
-    SwingUtilities.invokeLater(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
       public void run() {
         new NodeInformationDialog(((EditorComponent) MapSequence.fromMap(_params).get("editor")), frame, point, text).setVisible(true);

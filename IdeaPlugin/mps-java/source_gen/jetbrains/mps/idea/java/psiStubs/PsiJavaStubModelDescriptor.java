@@ -200,7 +200,7 @@ public class PsiJavaStubModelDescriptor extends RegularModelDescriptor implement
 
 
   private SNode getImports(PsiImportStatementBase[] imports) {
-    SNode javaImports = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports")));
+    SNode javaImports = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports"));
 
     for (PsiImportStatementBase imp : imports) {
       PsiJavaCodeReferenceElement ref = imp.getImportReference();
@@ -208,7 +208,7 @@ public class PsiJavaStubModelDescriptor extends RegularModelDescriptor implement
         continue;
       }
 
-      SNode javaImport = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, "jetbrains.mps.baseLanguage.structure.JavaImport")));
+      SNode javaImport = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, "jetbrains.mps.baseLanguage.structure.JavaImport"));
       SPropertyOperations.set(javaImport, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, 0x64c0181e603bd0L, "onDemand"), "" + (imp.isOnDemand()));
       SPropertyOperations.set(javaImport, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, 0x4d5c30eb30af1572L, "static"), "" + (imp instanceof PsiImportStaticStatement));
       String qName = ref.getQualifiedName();

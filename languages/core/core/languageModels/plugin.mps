@@ -53,6 +53,7 @@
     <import index="53vh" ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" />
     <import index="5jto" ref="r:5dd063a0-3217-40ce-84a4-0ef961abad0b(jetbrains.mps.lang.migration.util)" />
     <import index="buve" ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" />
+    <import index="tft2" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl.plan(MPS.Core/)" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -1927,6 +1928,24 @@
                                           <node concept="2ShNRf" id="3QuLV9OzObx" role="37wK5m">
                                             <node concept="1pGfFk" id="3QuLV9OzOby" role="2ShVmc">
                                               <ref role="37wK5l" to="ap4t:~ModelExports$CacheGen.&lt;init&gt;()" resolve="ModelExports.CacheGen" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="3clFbF" id="4T4d_syQ4UR" role="3cqZAp">
+                                      <node concept="2OqwBi" id="4T4d_syQ5Vp" role="3clFbG">
+                                        <node concept="37vLTw" id="4T4d_syQ4UP" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="3QuLV9OzOaW" resolve="cgl" />
+                                        </node>
+                                        <node concept="liA8E" id="4T4d_syQ7l8" role="2OqNvi">
+                                          <ref role="37wK5l" to="av9:~CacheGenLayout.register(jetbrains.mps.generator.generationTypes.StreamHandler,jetbrains.mps.generator.cache.CacheGenerator):jetbrains.mps.generator.impl.cache.CacheGenLayout" resolve="register" />
+                                          <node concept="37vLTw" id="4T4d_syQ7xc" role="37wK5m">
+                                            <ref role="3cqZAo" node="3QuLV9OzOaD" resolve="javaSourcesLoc" />
+                                          </node>
+                                          <node concept="2ShNRf" id="4T4d_syQ7TE" role="37wK5m">
+                                            <node concept="1pGfFk" id="4T4d_syQd7K" role="2ShVmc">
+                                              <ref role="37wK5l" to="tft2:~CrossModelEnvironment$CacheGen.&lt;init&gt;()" resolve="CrossModelEnvironment.CacheGen" />
                                             </node>
                                           </node>
                                         </node>

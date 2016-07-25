@@ -48,7 +48,6 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -196,14 +195,17 @@ public class PluginLoaderRegistry implements ApplicationComponent {
   }
 
   private void runOrPostpone(Task task) {
-    if (!ApplicationManagerEx.getApplicationEx().isLoaded()) {
-      assert ThreadUtils.isInEDT();
+    if (!ApplicationManagerEx.getApplicationEx().isLoaded() && ThreadUtils.isInEDT()) {
       task.run(new EmptyProgressIndicator());
     } else {
-      ApplicationManager.getApplication().invokeLater(() -> {
-        ProgressManager.getInstance().run(task);
-      }, ModalityState.defaultModalityState());
+      invokeLater(task);
     }
+  }
+
+  private void invokeLater(Task task) {
+    ApplicationManager.getApplication().invokeLater(() -> {
+      ProgressManager.getInstance().run(task);
+    }, ModalityState.defaultModalityState());
   }
 
   /**
@@ -231,9 +233,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
           }
         }
       };
-      ApplicationManager.getApplication().invokeLater(() -> {
-        ProgressManager.getInstance().run(loadingTask);
-      }, ModalityState.defaultModalityState());
+      invokeLater(loadingTask);
     }
   }
 

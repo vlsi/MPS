@@ -73,7 +73,7 @@
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.actions.testLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.actions.testLanguage" />
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/lang.actions.testLang" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/testsolutions/testlangs/lang.actions.testLang/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/lang.actions.testLang/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.actions.testLanguage.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-lang.actions.testLang-languageModels">
@@ -83,6 +83,8 @@
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/lang.actions.testLang/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/testsolutions/testlangs/lang.actions.testLang/jetbrains.mps.lang.actions.testLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-lang.actions.testLang-languageModels" prefix="module/languageModels" />
@@ -114,7 +116,7 @@
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.tableTests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.tableTests" />
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.tableTests.testLang" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.tableTests.testLang/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.tableTests.testLang/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.tableTests.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.tableTests.testLang-languageModels">
@@ -124,6 +126,8 @@
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.tableTests.testLang/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/testsolutions/testlangs/editor.tableTests.testLang/jetbrains.mps.lang.editor.tableTests.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.tableTests.testLang-languageModels" prefix="module/languageModels" />
@@ -154,7 +158,7 @@
     <jar destfile="${build.layout}/languages/testDefaultEditor.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testDefaultEditor" />
       <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/testDefaultEditor.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDefaultEditor-languages-testDefaultEditor-languageModels">
@@ -164,6 +168,8 @@
       <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/testDefaultEditor.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDefaultEditor-languages-testDefaultEditor-languageModels" prefix="module/languageModels" />
@@ -194,7 +200,7 @@
     <jar destfile="${build.layout}/languages/testMoveElements.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testMoveElements" />
       <fileset dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/testMoveElements.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testMoveElements-languages-testMoveElements-languageModels">
@@ -204,6 +210,8 @@
       <fileset dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/testMoveElements.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testMoveElements-languages-testMoveElements-languageModels" prefix="module/languageModels" />
@@ -234,7 +242,7 @@
     <jar destfile="${build.layout}/languages/testSpaceCompletion.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testSpaceCompletion" />
       <fileset dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/testSpaceCompletion.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testSpaceCompletion-languages-testSpaceCompletion-languageModels">
@@ -244,6 +252,8 @@
       <fileset dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/testSpaceCompletion.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testSpaceCompletion-languages-testSpaceCompletion-languageModels" prefix="module/languageModels" />
@@ -274,7 +284,7 @@
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.multiple.testLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.testLanguage" />
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.mult.testLang" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.mult.testLang/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.mult.testLang/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.multiple.testLanguage.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.mult.testLang-languageModels">
@@ -284,6 +294,8 @@
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.mult.testLang/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/testsolutions/testlangs/editor.mult.testLang/jetbrains.mps.lang.editor.multiple.testLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.mult.testLang-languageModels" prefix="module/languageModels" />
@@ -314,7 +326,7 @@
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.multiple.extension.testLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.extension.testLanguage" />
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.mult.ext.testLang" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.mult.ext.testLang/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.mult.ext.testLang/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.multiple.extension.testLanguage.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.mult.ext.testLang-languageModels">
@@ -324,6 +336,8 @@
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.mult.ext.testLang/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/testsolutions/testlangs/editor.mult.ext.testLang/jetbrains.mps.lang.editor.multiple.extension.testLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.mult.ext.testLang-languageModels" prefix="module/languageModels" />
@@ -354,7 +368,7 @@
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.styleTests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.styleTests" />
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.style.testLang" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.style.testLang/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.style.testLang/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.styleTests.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.style.testLang-languageModels">
@@ -364,6 +378,8 @@
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/editor.style.testLang/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/testsolutions/testlangs/editor.style.testLang/jetbrains.mps.lang.editor.styleTests.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-editor.style.testLang-languageModels" prefix="module/languageModels" />
@@ -398,7 +414,7 @@
     <jar destfile="${build.layout}/tests/jetbrains.mps.baseLanguage.test.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.test" />
       <fileset dir="${basedir}/testbench/testsolutions/bl.test" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/testsolutions/bl.test/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/testsolutions/bl.test/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.test.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-bl.test-jetbrains">
@@ -408,6 +424,8 @@
       <fileset dir="${basedir}/testbench/testsolutions/bl.test/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/testsolutions/bl.test/jetbrains.mps.baseLanguage.test.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-bl.test-jetbrains" prefix="module/jetbrains" />
@@ -507,7 +525,7 @@
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.multiple.tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.tests" />
       <fileset dir="${basedir}/testbench/testsolutions/editor.multiple.test" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/testsolutions/editor.multiple.test/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/testsolutions/editor.multiple.test/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.multiple.tests.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-editor.multiple.test-models">
@@ -517,6 +535,8 @@
       <fileset dir="${basedir}/testbench/testsolutions/editor.multiple.test/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/testsolutions/editor.multiple.test/jetbrains.mps.lang.editor.multiple.tests.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-editor.multiple.test-models" prefix="module/models" />
@@ -549,7 +569,7 @@
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.tests" />
       <fileset dir="${basedir}/testbench/testsolutions/editor.test" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/testsolutions/editor.test/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/testsolutions/editor.test/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.tests.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-editor.test-selection">
@@ -559,6 +579,8 @@
       <fileset dir="${basedir}/testbench/testsolutions/editor.test/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/testsolutions/editor.test/jetbrains.mps.lang.editor.tests.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-editor.test-selection" prefix="module/selection" />

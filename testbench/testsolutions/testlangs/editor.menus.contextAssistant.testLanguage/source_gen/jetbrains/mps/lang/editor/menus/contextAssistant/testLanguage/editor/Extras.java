@@ -37,7 +37,7 @@ public class Extras extends TransformationMenuBase {
     return result;
   }
 
-  public static class TransformationMenuPart_Refactoring_ha3uwx_a0 extends RefactoringMenuPartBase {
+  public class TransformationMenuPart_Refactoring_ha3uwx_a0 extends RefactoringMenuPartBase {
     public TransformationMenuPart_Refactoring_ha3uwx_a0() {
       super("jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.refactorings.AppendOneToName");
     }
@@ -47,7 +47,7 @@ public class Extras extends TransformationMenuBase {
       return new Extras.TransformationMenuPart_Refactoring_ha3uwx_a0.Item(context, refactoring);
     }
 
-    private static class Item extends RefactoringMenuItemBase implements SidebarActionItem {
+    private class Item extends RefactoringMenuItemBase implements SidebarActionItem {
       private Item(TransformationMenuContext context, IRefactoring refactoring) {
         super(context, refactoring);
       }
@@ -62,7 +62,7 @@ public class Extras extends TransformationMenuBase {
       }
     }
   }
-  public static class TransformationMenuPart_PluginAction_ha3uwx_b0 extends PluginActionMenuPartBase {
+  public class TransformationMenuPart_PluginAction_ha3uwx_b0 extends PluginActionMenuPartBase {
     public TransformationMenuPart_PluginAction_ha3uwx_b0() {
       super("jetbrains.mps.ide.actions.ShowBookmarksDialog_Action");
     }
@@ -72,7 +72,7 @@ public class Extras extends TransformationMenuBase {
       return new Extras.TransformationMenuPart_PluginAction_ha3uwx_b0.Item(context, action);
     }
 
-    private static class Item extends PluginActionMenuItemBase implements SidebarActionItem {
+    private class Item extends PluginActionMenuItemBase implements SidebarActionItem {
       private Item(TransformationMenuContext context, AnAction action) {
         super(context, action);
       }
@@ -87,7 +87,7 @@ public class Extras extends TransformationMenuBase {
       }
     }
   }
-  public static class TransformationMenuPart_Intention_ha3uwx_c0 extends IntentionMenuPartBase {
+  public class TransformationMenuPart_Intention_ha3uwx_c0 extends IntentionMenuPartBase {
     public TransformationMenuPart_Intention_ha3uwx_c0() {
       super("jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.intentions.AddLetterToName_Intention");
     }
@@ -97,7 +97,7 @@ public class Extras extends TransformationMenuBase {
       return new Extras.TransformationMenuPart_Intention_ha3uwx_c0.Item(context, executable);
     }
 
-    private static class Item extends IntentionMenuPartBase.ItemBase implements SidebarActionItem {
+    private class Item extends IntentionMenuPartBase.ItemBase implements SidebarActionItem {
       private Item(TransformationMenuContext context, IntentionExecutable executable) {
         super(context, executable);
       }

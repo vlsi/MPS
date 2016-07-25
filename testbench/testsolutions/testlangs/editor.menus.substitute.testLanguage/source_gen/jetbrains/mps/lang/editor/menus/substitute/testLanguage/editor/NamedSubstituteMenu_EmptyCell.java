@@ -23,7 +23,7 @@ public class NamedSubstituteMenu_EmptyCell extends SubstituteMenuBase {
     result.add(new NamedSubstituteMenu_EmptyCell.SubstituteMenuPart_Action_gllbhd_a());
     return result;
   }
-  private static class SubstituteMenuPart_Action_gllbhd_a extends SingleItemSubstituteMenuPart {
+  private class SubstituteMenuPart_Action_gllbhd_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override

@@ -18,11 +18,14 @@ package jetbrains.mps.lang.dataFlow.framework;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 
 import java.util.Collection;
+import java.util.Collections;
 
 /**
  * @author simon
  */
 public interface IDataFlowBuilder {
   void build(DataFlowBuilderContext _context);
-  Collection<String> getModes();
+  default Collection<IDataFlowModeId> getModes(){
+    return Collections.emptyList();
+  }
 }

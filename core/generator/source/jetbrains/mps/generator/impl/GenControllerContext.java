@@ -44,7 +44,7 @@ public final class GenControllerContext {
     myTransientModelProvider = transientModelsProvider;
     myStreamProvider = streamProvider;
     myExportsVault = new ExportsVault(streamProvider);
-    myCrossModelEnvironment = new CrossModelEnvironment(transientModelsProvider);
+    myCrossModelEnvironment = new CrossModelEnvironment(transientModelsProvider, streamProvider);
 //    myCrossModelEnvironment = transientModelsProvider.getCrossModelEnvironment();
   }
 

@@ -4406,6 +4406,12 @@
     <node concept="lpD6D" id="1PSwCEWmZrN" role="lpD6w">
       <ref role="lpD7u" to="ma4t:1eGlc3_m1cS" resolve="ExtendingNullableAnalyzer" />
     </node>
+    <node concept="lpD6D" id="68XlVg3YZdc" role="lpD6w">
+      <ref role="lpD7u" to="ma4t:2$3McZ0WOH3" resolve="TestAnalyzerWithModeSpecified" />
+    </node>
+    <node concept="lpD6D" id="68XlVg3YZdl" role="lpD6w">
+      <ref role="lpD7u" to="ma4t:2$3McZ0VScA" resolve="TestProgramWithModeSpecified" />
+    </node>
   </node>
   <node concept="lpD6F" id="a692rlEAtV">
     <node concept="2R4zua" id="a692rlEAtX" role="2R4z3u">

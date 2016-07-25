@@ -92,6 +92,28 @@
       <unit id="2153278993333625967" at="14,0,32,0" name="jetbrains.mps.lang.editor.menus.tests.NonexistentDefaultMenu_Test" />
     </file>
   </root>
+  <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/2314756748950360685">
+    <file name="NestedVariables_AreGeneratedCorrectly_Test.java">
+      <node id="2314756748950360685" at="19,77,20,115" concept="1" />
+      <node id="2314756748950360685" at="20,115,21,126" concept="1" />
+      <node id="2314756748950360685" at="27,51,28,53" concept="1" />
+      <node id="2314756748950377044" at="28,53,29,249" concept="3" />
+      <node id="2314756748950377052" at="29,249,30,0" concept="6" />
+      <node id="2314756748950377053" at="30,0,31,80" concept="3" />
+      <node id="2314756748950386276" at="31,80,32,67" concept="1" />
+      <node id="2314756748950360685" at="18,0,23,0" concept="2" trace="test_NestedVariables_AreGeneratedCorrectly#()V" />
+      <node id="2314756748950360685" at="26,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2314756748950360685" at="19,77,21,126" />
+      <scope id="2314756748950360685" at="18,0,23,0" />
+      <scope id="2314756748950360685" at="27,51,32,67">
+        <var name="item" id="2314756748950377054" />
+        <var name="items" id="2314756748950377045" />
+      </scope>
+      <scope id="2314756748950360685" at="26,0,34,0" />
+      <unit id="2314756748950360685" at="24,0,35,0" name="jetbrains.mps.lang.editor.menus.tests.NestedVariables_AreGeneratedCorrectly_Test$TestBody" />
+      <unit id="2314756748950360685" at="16,0,36,0" name="jetbrains.mps.lang.editor.menus.tests.NestedVariables_AreGeneratedCorrectly_Test" />
+    </file>
+  </root>
   <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/2344528742722136214">
     <file name="MenuLoadingUtils.java">
       <node id="6436886136983367784" at="25,118,26,75" concept="3" />

@@ -17,7 +17,7 @@ import jetbrains.mps.workbench.dialogs.MoveFileDialog;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.ide.projectView.ProjectView;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane;
 import java.io.IOException;
 import javax.swing.JOptionPane;
@@ -91,7 +91,7 @@ public class MoveFileOrDirectory_Action extends BaseAction {
           VirtualFile virtualFile = LocalFileSystem.getInstance().findFileByPath(result);
           ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).move(null, virtualFile);
           ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).refresh();
-          SwingUtilities.invokeLater(new Runnable() {
+          ApplicationManager.getApplication().invokeLater(new Runnable() {
             public void run() {
               ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).getProjectViewPaneById(FileViewProjectPane.ID).select(null, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")), true);
             }
@@ -106,7 +106,7 @@ public class MoveFileOrDirectory_Action extends BaseAction {
       JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter valid name");
       return true;
     }
-    if (FileSystem.getInstance().getFileByPath(result + File.separator + ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getName()).exists()) {
+    if (FileSystem.getInstance().getFile(result + File.separator + ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getName()).exists()) {
       JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getName() + " already exists");
       return true;
     }

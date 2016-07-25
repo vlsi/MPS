@@ -19,9 +19,9 @@ import com.intellij.util.WaitForProgressToShow;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.application.ModalityState;
 
 public class OptimizeProjectImports_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -70,11 +70,15 @@ public class OptimizeProjectImports_Action extends BaseAction {
           });
           final SRepository repo = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
           final OptimizeImportsHelper helper = new OptimizeImportsHelper(repo);
-          repo.getModelAccess().runWriteAction(new Runnable() {
+          ApplicationManager.getApplication().invokeAndWait(new Runnable() {
             public void run() {
-              report.value += helper.optimizeProjectImports(((MPSProject) MapSequence.fromMap(_params).get("project")), monitor.subTask(1));
+              repo.getModelAccess().executeCommand(new Runnable() {
+                public void run() {
+                  report.value += helper.optimizeProjectImports(((MPSProject) MapSequence.fromMap(_params).get("project")), monitor.subTask(1));
+                }
+              });
             }
-          });
+          }, ModalityState.any());
           if (monitor.isCanceled()) {
             return;
           }
