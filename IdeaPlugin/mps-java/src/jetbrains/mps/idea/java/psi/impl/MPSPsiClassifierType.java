@@ -23,11 +23,10 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiSubstitutor;
 import com.intellij.psi.PsiType;
-import com.intellij.psi.PsiTypeParameter;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.ArrayUtil;
-import com.jgoodies.common.collect.ArrayListModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -43,11 +42,22 @@ public class MPSPsiClassifierType extends MPSPsiNode implements ComputesPsiType<
 
   MPSPsiClassifierType(SNodeId id, String concept, String containingRole, PsiManager manager) {
     super(id, concept, containingRole, manager);
+    addChildLast(new MPSPsiTypeParamList(manager));
   }
 
 //  public PsiClass getTargetClass() {
 //    return getReferenceTarget("classifier", PsiClass.class);
 //  }
+
+
+  @Nullable
+  @Override
+  protected MPSPsiNodeBase getParentFor(MPSPsiNode child) {
+    if (child instanceof MPSPsiTypeParameter) {
+      return getChildOfType(MPSPsiTypeParamList.class);
+    }
+    return super.getParentFor(child);
+  }
 
   @Override
   public PsiClassType getPsiType() {
@@ -78,13 +88,13 @@ public class MPSPsiClassifierType extends MPSPsiNode implements ComputesPsiType<
       @NotNull
       @Override
       public PsiType[] getParameters() {
-        MPSPsiNode[] typeParamNodes = MPSPsiClassifierType.this.getChildrenOfType("parameter", MPSPsiNode.class);
+        MPSPsiTypeParameter[] typeParamNodes = MPSPsiClassifierType.this.getChildOfType(MPSPsiTypeParamList.class).getChildren(MPSPsiTypeParameter.class);
         if (typeParamNodes == null || typeParamNodes.length == 0) {
           return PsiType.EMPTY_ARRAY;
         }
 
         List<PsiType> paramTypes = new ArrayList<PsiType>(typeParamNodes.length);
-        for (MPSPsiNode tn : typeParamNodes) {
+        for (MPSPsiTypeParameter tn : typeParamNodes) {
           if (!(tn instanceof ComputesPsiType)) continue;
           PsiType psiType = ((ComputesPsiType) tn).getPsiType();
           // should probably put all params, even those which failed to resolve

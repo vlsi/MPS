@@ -17,8 +17,10 @@
 package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.psi.PsiManager;
+import com.intellij.psi.PsiParameter;
 import com.intellij.psi.PsiTypeParameter;
 import com.intellij.psi.PsiTypeParameterList;
+import com.intellij.psi.impl.PsiImplUtil;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 
 /**
@@ -32,16 +34,17 @@ public class MPSPsiTypeParamList extends MPSPsiNodeBase implements PsiTypeParame
 
   @Override
   public String toString() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return "MPSPsiTypeParamList";
   }
 
   @Override
   public PsiTypeParameter[] getTypeParameters() {
-    return new PsiTypeParameter[0];  //To change body of implemented methods use File | Settings | File Templates.
+    PsiTypeParameter[] result = getChildrenOfType("parameter", MPSPsiTypeParameter.class);
+    return result == null ? PsiTypeParameter.EMPTY_ARRAY : result;
   }
 
   @Override
   public int getTypeParameterIndex(PsiTypeParameter typeParameter) {
-    return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    return PsiImplUtil.getTypeParameterIndex(typeParameter, this);
   }
 }
