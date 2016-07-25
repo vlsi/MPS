@@ -47,7 +47,7 @@ public class DefaultSubstituteMenuItemAsCompletionActionItem extends SubstituteM
     if (newChild != null) {
       SContainmentLink containmentLink = myContext.getLink();
       SNode parentNode = myContext.getParentNode();
-      SNode currentChild = myContext.getCurrentChild();
+      SNode currentChild = myContext.getCurrentTargetNode();
       if (!newChild.getConcept().isSubConceptOf(containmentLink.getTargetConcept())) {
         LOG.error("couldn't set instance of " + newChild.getConcept().getName() +
             " as child '" + containmentLink.getName() + "' to parent" + parentNode.getPresentation() + " Parent id: " + parentNode.getNodeId());
