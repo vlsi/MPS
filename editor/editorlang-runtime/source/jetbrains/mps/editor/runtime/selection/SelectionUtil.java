@@ -23,6 +23,9 @@ import org.jetbrains.mps.openapi.model.SNode;
  * Date: 6/10/13
  */
 public class SelectionUtil {
+
+  private static final String SEPARATOR = "#";
+
   public static void selectNode(EditorContext editorContext, SNode node) {
     editorContext.flushEvents();
     editorContext.getSelectionManager().setSelection(node);
@@ -30,16 +33,35 @@ public class SelectionUtil {
 
   public static void selectCell(EditorContext editorContext, SNode node, String cellId) {
     editorContext.flushEvents();
-    editorContext.getSelectionManager().setSelection(node, cellId);
+    for (String id : getCellIdsSplitted(cellId)) {
+      editorContext.getSelectionManager().setSelection(node, id);
+      if (editorContext.getSelectionManager().getSelection() != null) {
+        return;
+      }
+    }
   }
 
   public static void selectLabelCellAnSetCaret(EditorContext editorContext, SNode node, String cellId, int caretPosition) {
     editorContext.flushEvents();
-    editorContext.getSelectionManager().setSelection(node, cellId, caretPosition);
+    for (String id : getCellIdsSplitted(cellId)) {
+      editorContext.getSelectionManager().setSelection(node, id, caretPosition);
+      if (editorContext.getSelectionManager().getSelection() != null) {
+        return;
+      }
+    }
   }
 
   public static void selectLabelCellWithSelection(EditorContext editorContext, SNode node, String cellId, int startSelection, int endSelection) {
     editorContext.flushEvents();
-    editorContext.getSelectionManager().setSelection(node, cellId, startSelection, endSelection);
+    for (String id : getCellIdsSplitted(cellId)) {
+      editorContext.getSelectionManager().setSelection(node, id, startSelection, endSelection);
+      if (editorContext.getSelectionManager().getSelection() != null) {
+        return;
+      }
+    }
+  }
+
+  private static String[] getCellIdsSplitted(String cellId) {
+    return cellId.split(SEPARATOR);
   }
 }

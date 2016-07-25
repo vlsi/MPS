@@ -27,7 +27,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -66,15 +65,20 @@ public abstract class SingleRoleCellProvider {
   @NotNull
   private EditorCell createChildCell_internal(EditorContext editorContext, SNode child, boolean isRealChild) {
     EditorCell editorCell = editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(child);
-    //todo get rid of getDeclarationNode
-    if (isRealChild) {
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(myOwnerNode, myContainmentLink.getDeclarationNode(), child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(myOwnerNode, myContainmentLink.getDeclarationNode(), child));
-    } else {
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSimple(child, DeleteDirection.FORWARD));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSimple(child, DeleteDirection.BACKWARD));
-    }
+    setDeleteActions(child, isRealChild, editorCell, CellActionType.DELETE);
+    setDeleteActions(child, isRealChild, editorCell, CellActionType.BACKSPACE);
     return editorCell;
+  }
+
+  private void setDeleteActions(SNode child, boolean isRealChild, EditorCell editorCell, CellActionType actionType) {
+    //todo get rid of getDeclarationNode
+    if (editorCell.getAction(actionType) == null) {
+      if (isRealChild) {
+        editorCell.setAction(actionType, new CellAction_DeleteSmart(myOwnerNode, myContainmentLink.getDeclarationNode(), child));
+      } else {
+        editorCell.setAction(actionType, new CellAction_DeleteSimple(child, actionType.equals(CellActionType.BACKSPACE) ? DeleteDirection.BACKWARD: DeleteDirection.FORWARD));
+      }
+    }
   }
 
   public EditorCell createCell() {

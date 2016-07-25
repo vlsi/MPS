@@ -36,7 +36,7 @@ public class FocusPolicyUtil {
     return selectedCell;
   }
 
-  private static EditorCell findFocusedCell(EditorCell selectedCell) {
+  public static EditorCell findFocusedCell(EditorCell selectedCell) {
     EditorCell focusedCell = findCellWhichAttractsFocus(selectedCell, true, true);
     if (focusedCell == null) {
       focusedCell = selectedCell;
