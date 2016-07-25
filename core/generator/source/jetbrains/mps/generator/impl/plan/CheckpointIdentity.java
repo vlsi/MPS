@@ -24,6 +24,11 @@ import org.jetbrains.annotations.NotNull;
  * FIXME Once I've got a better idea what I can use to identify CP, this class likely shall become
  * an interface with hashCode/equals, persistence and presentation contract, like {@link PlanIdentity}.
  * Or a final class if there's only 1 way to identify CP.
+ *
+ * It seems there's no difference in Checkpoint vs CheckpointIdentity (both are presentation and persistence strings).
+ * However, I keep them separate for few reasons:
+ *   (a) there's PlanIdentity as I can't persist ModelGenerationPlan, so would be strange to identify CP with (PlanIdentity,Checkpoint)
+ *   (b) I might want to expose MGP from Checkpoint (parent/child hierarchy), which would not be possible for persistent cp identity
  * @author Artem Tikhomirov
  * @since 3.4
  */
@@ -51,7 +56,7 @@ public final class CheckpointIdentity {
 
   @NotNull
   public String getPersistenceValue() {
-    return myName;
+    return PlanIdentity.toPersistenceValue(myName);
   }
 
   public PlanIdentity getPlan() {

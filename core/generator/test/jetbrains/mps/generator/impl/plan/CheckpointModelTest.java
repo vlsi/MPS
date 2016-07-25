@@ -95,7 +95,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
       public ModelGenerationPlan compute() {
         final Transform step1 = new Transform(getCrossmodelPropertyGenerators());
         final Transform step2 = new Transform(getBaseLanguageGenerators());
-        return new RigidGenerationPlan(step1, cp1, step2);
+        return new RigidGenerationPlan("test Plan", step1, cp1, step2);
       }
     });
     final PlanIdentity planIdentity = new PlanIdentity(plan);
@@ -147,7 +147,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
         final Transform step1 = new Transform(getCrossmodelEntityGenerators());
         final Transform step2 = new Transform(getCrossmodelPropertyGenerators());
         final Transform step3 = new Transform(getBaseLanguageGenerators());
-        return new RigidGenerationPlan(step1, cp1, step2, cp2, step3);
+        return new RigidGenerationPlan(" test plan #2", step1, cp1, step2, cp2, step3);
       }
     });
     final PlanIdentity planIdentity = new PlanIdentity(plan);
@@ -211,7 +211,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
         final Transform step1 = new Transform(getGenerators(lang1));
         final Transform step2 = new Transform(getBaseLanguageGenerators());
         final Checkpoint cp1 = new Checkpoint("aaa");
-        return new RigidGenerationPlan(step1, cp1, step2);
+        return new RigidGenerationPlan("test.plan.3", step1, cp1, step2);
       }
     });
     SModel m1 = resolve(mr1);
@@ -251,6 +251,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
     myErrors.checkThat(s1.getTransformations().isEmpty(), CoreMatchers.equalTo(false));
     myErrors.checkThat(s3.getTransformations().isEmpty(), CoreMatchers.equalTo(false));
     myErrors.checkThat(s2.getName(), CoreMatchers.equalTo("first"));
+    myErrors.checkThat(new PlanIdentity(plan).getPersistenceValue(), CoreMatchers.equalTo("plan_a"));
   }
 
   // utility to obtain generators of j.m.g.test.crossmodel.property language
