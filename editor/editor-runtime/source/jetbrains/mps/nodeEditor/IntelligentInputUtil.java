@@ -19,6 +19,7 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.editor.runtime.commands.EditorComputable;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellActions.OldNewCompositeSideTransformSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
@@ -456,15 +457,7 @@ public class IntelligentInputUtil {
   }
 
   private static boolean hasSideActions(EditorCell cell, CellSide side, String prefix) {
-    final SideTransformHintSubstituteActionsHelper helper =
-        new SideTransformHintSubstituteActionsHelper(cell.getSNode(), side, cell.getStyle().get(StyleAttributes.RT_ANCHOR_TAG),
-            cell.getContext().getOperationContext());
-    SubstituteInfo info = new AbstractNodeSubstituteInfo(cell.getContext()) {
-      @Override
-      protected List<SubstituteAction> createActions() {
-        return helper.createActions();
-      }
-    };
+    SubstituteInfo info = OldNewCompositeSideTransformSubstituteInfo.createSubstituteInfo(side, cell, cell.getStyle().get(StyleAttributes.RT_ANCHOR_TAG));
     return !info.hasExactlyNActions(prefix, false, 0);
   }
 

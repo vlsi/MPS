@@ -139,6 +139,8 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
       if (eq_t05i67_a0b0a5a21(tag, "default_RTransform")) {
         mainMenu = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Default"));
         SLinkOperations.setTarget(SNodeOperations.cast(mainMenu, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Default")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration"), concept);
+        SNode leftRightSection = findOrCreateLeftRightSection(mainMenu);
+        SLinkOperations.addNewChild(leftRightSection, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbfL, "parts"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7541587144d24773L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Super"));
       } else {
         mainMenu = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named"));
         SPropertyOperations.set(mainMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), getMainMenuName(concept, tag));
@@ -166,37 +168,43 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 
   private SNode getAdditionalMenu(SNode concept, String tag, SNode actions, SModel editorAspect) {
+    String newName = getAdditionalMenuName(actions, concept, tag);
+    SNode menu = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named"));
+    SPropertyOperations.set(menu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newName);
+    SLinkOperations.setTarget(menu, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration"), concept);
+    editorAspect.addRootNode(menu);
+    return menu;
+  }
+  private String getAdditionalMenuName(SNode actions, SNode concept, String tag) {
     boolean isUniqueConcept = true;
     boolean isUniqueTag = true;
     for (SNode builder : ListSequence.fromList(SLinkOperations.getChildren(actions, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108fad1c116L, 0x108fad1c117L, "actionsBuilder")))) {
-      if (neq_t05i67_a0a0c0s(SLinkOperations.getTarget(builder, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x108facec6d6L, "applicableConcept")), concept)) {
+      if (neq_t05i67_a0a0c0t(SLinkOperations.getTarget(builder, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x108facec6d6L, "applicableConcept")), concept)) {
         isUniqueConcept = false;
       }
-      if (neq_t05i67_a0b0c0s(SPropertyOperations.getString_def(builder, MetaAdapterFactory.getProperty(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x1099eb798f9L, "transformTag"), "default_RTransform"), tag)) {
+      if (neq_t05i67_a0b0c0t(SPropertyOperations.getString_def(builder, MetaAdapterFactory.getProperty(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x1099eb798f9L, "transformTag"), "default_RTransform"), tag)) {
         isUniqueTag = false;
       }
       if (!(isUniqueConcept) && !(isUniqueTag)) {
         break;
       }
     }
-    SNode menu = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named"));
-    String name = substituteSpacesWithUnderscore(SPropertyOperations.getString(actions, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    String oldName = substituteSpacesWithUnderscore(SPropertyOperations.getString(actions, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    String newName;
     if (isUniqueConcept) {
       if (isUniqueTag) {
-        SPropertyOperations.set(menu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), name);
+        newName = oldName;
       } else {
-        SPropertyOperations.set(menu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), name + "_" + tag);
+        newName = oldName + "_" + tag;
       }
     } else {
       if (isUniqueTag) {
-        SPropertyOperations.set(menu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), name + "_" + SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        newName = oldName + "_" + SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       } else {
-        SPropertyOperations.set(menu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), name + "_" + SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_" + tag);
+        newName = oldName + "_" + SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_" + tag;
       }
     }
-    SLinkOperations.setTarget(menu, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration"), concept);
-    editorAspect.addRootNode(menu);
-    return menu;
+    return newName;
   }
   private String substituteSpacesWithUnderscore(String name) {
     return name.replace(' ', '_');
@@ -210,19 +218,40 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
     SModel editorAspect = ActionsMigrationHelper.getOrCreateEditorAspect(myLanguage);
 
-    SNode mainMenu = getMainMenu(concept, tag, isDefinedInLanguage(concept, myLanguage), editorAspect);
     Set<SNode> actionsRoots = myConceptAndTagToActions.get(new Pair<SNode, String>(concept, tag));
     int numberOfActionRoots = actionsRoots.size();
+    SNode mainMenu = getMainMenu(concept, tag, isDefinedInLanguage(concept, myLanguage), editorAspect);
     if (numberOfActionRoots > 1) {
       SNode additionalMenu = getAdditionalMenu(concept, tag, actions, editorAspect);
       migrateBuilders(additionalMenu, actionBuilders);
       includeAdditionalMenu(mainMenu, additionalMenu);
     } else {
       migrateBuilders(mainMenu, actionBuilders);
+      if (SNodeOperations.isInstanceOf(mainMenu, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c10ff0L, "jetbrains.mps.lang.editor.structure.TransformationMenuContribution"))) {
+        SPropertyOperations.set(mainMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), getAdditionalMenuName(actions, concept, tag) + "_Contribution");
+      }
     }
   }
   private void includeAdditionalMenu(SNode mainMenu, SNode additionalMenu) {
-    SNode section = ListSequence.fromList(SLinkOperations.getChildren(mainMenu, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, 0x16be955f384efffcL, "sections"))).where(new IWhereFilter<SNode>() {
+    SNode section = findOrCreateLeftRightSection(mainMenu);
+    SNode includePart = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6be2L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_IncludeMenu"));
+    SNode menuReference = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff09L, "jetbrains.mps.lang.editor.structure.TransformationMenuReference_Named"));
+    SLinkOperations.setTarget(menuReference, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff09L, 0x5d3b34577b3cff0aL, "menu"), additionalMenu);
+    SLinkOperations.setTarget(includePart, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6be2L, 0x5d3b34577b3f7ee5L, "menuReference"), menuReference);
+    ListSequence.fromList(SLinkOperations.getChildren(section, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbfL, "parts"))).addElement(includePart);
+  }
+  private SNode findOrCreateLeftRightSection(SNode mainMenu) {
+    SNode section = findLeftRightSection(mainMenu);
+    if (section == null) {
+      section = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, "jetbrains.mps.lang.editor.structure.TransformationMenuSection"));
+      ListSequence.fromList(SLinkOperations.getChildren(section, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbdL, "locations"))).addElement(_quotation_createNode_t05i67_a0a1a1a42());
+      ListSequence.fromList(SLinkOperations.getChildren(mainMenu, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, 0x16be955f384efffcL, "sections"))).addElement(section);
+    }
+    return section;
+  }
+
+  private SNode findLeftRightSection(SNode mainMenu) {
+    return ListSequence.fromList(SLinkOperations.getChildren(mainMenu, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, 0x16be955f384efffcL, "sections"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         Iterable<SNode> locations = SNodeOperations.ofConcept(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbdL, "locations")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x28336854e4c19a06L, "jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform"));
         for (SNode location : Sequence.fromIterable(locations)) {
@@ -242,17 +271,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
         return false;
       }
     }).first();
-
-    if (section == null) {
-      section = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, "jetbrains.mps.lang.editor.structure.TransformationMenuSection"));
-      ListSequence.fromList(SLinkOperations.getChildren(section, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbdL, "locations"))).addElement(_quotation_createNode_t05i67_a0a1a2a22());
-      ListSequence.fromList(SLinkOperations.getChildren(mainMenu, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, 0x16be955f384efffcL, "sections"))).addElement(section);
-    }
-    SNode includePart = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6be2L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_IncludeMenu"));
-    SNode menuReference = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff09L, "jetbrains.mps.lang.editor.structure.TransformationMenuReference_Named"));
-    SLinkOperations.setTarget(menuReference, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff09L, 0x5d3b34577b3cff0aL, "menu"), additionalMenu);
-    SLinkOperations.setTarget(includePart, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6be2L, 0x5d3b34577b3f7ee5L, "menuReference"), menuReference);
-    ListSequence.fromList(SLinkOperations.getChildren(section, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbfL, "parts"))).addElement(includePart);
   }
 
   private void migrateBuilders(SNode root, Iterable<SNode> builders) {
@@ -395,13 +413,13 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
   private static boolean eq_t05i67_a0a0a0a0a0a0b0n_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean neq_t05i67_a0a0c0s(Object a, Object b) {
+  private static boolean neq_t05i67_a0a0c0t(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean neq_t05i67_a0b0c0s(Object a, Object b) {
+  private static boolean neq_t05i67_a0b0c0t(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static SNode _quotation_createNode_t05i67_a0a1a2a22() {
+  private static SNode _quotation_createNode_t05i67_a0a1a1a42() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
