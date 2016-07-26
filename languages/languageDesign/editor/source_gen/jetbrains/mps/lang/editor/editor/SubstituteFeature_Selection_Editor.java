@@ -27,7 +27,7 @@ public class SubstituteFeature_Selection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createComponent_ugdvfl_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor.SubstituteFeatureAlias");
     return editorCell;
   }
   private EditorCell createRefNode_ugdvfl_b0(EditorContext editorContext, SNode node) {

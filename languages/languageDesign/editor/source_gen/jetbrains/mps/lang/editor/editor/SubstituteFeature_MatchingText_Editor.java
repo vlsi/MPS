@@ -27,7 +27,7 @@ public class SubstituteFeature_MatchingText_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createComponent_we4j7z_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor.SubstituteFeatureAlias");
     return editorCell;
   }
   private EditorCell createRefNode_we4j7z_b0(EditorContext editorContext, SNode node) {
