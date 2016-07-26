@@ -8722,13 +8722,18 @@
                         <node concept="3clFbS" id="36tV70ZqvAy" role="3clFbx">
                           <node concept="3N13vt" id="36tV70ZqvAN" role="3cqZAp" />
                         </node>
-                        <node concept="2YIFZM" id="52KGz6lS7WI" role="3clFbw">
-                          <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModelStereotype(java.lang.String):boolean" resolve="isStubModelStereotype" />
-                          <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                          <node concept="2YIFZM" id="791rit5f66h" role="37wK5m">
+                        <node concept="22lmx$" id="2hkh42Th2Vn" role="3clFbw">
+                          <node concept="2YIFZM" id="2hkh42Th3fJ" role="3uHU7w">
+                            <ref role="37wK5l" to="w1kc:~SModelStereotype.isDescriptorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isDescriptorModel" />
                             <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                            <ref role="37wK5l" to="w1kc:~SModelStereotype.getStereotype(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="getStereotype" />
-                            <node concept="2GrUjf" id="791rit5f66i" role="37wK5m">
+                            <node concept="2GrUjf" id="2hkh42Th3qn" role="37wK5m">
+                              <ref role="2Gs0qQ" node="36tV70Zqv_A" resolve="model" />
+                            </node>
+                          </node>
+                          <node concept="2YIFZM" id="2hkh42Th2pT" role="3uHU7B">
+                            <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isStubModel" />
+                            <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+                            <node concept="2GrUjf" id="2hkh42Th2$4" role="37wK5m">
                               <ref role="2Gs0qQ" node="36tV70Zqv_A" resolve="model" />
                             </node>
                           </node>
@@ -8770,6 +8775,116 @@
                   </node>
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="tkhdA" id="2hkh42TdkQy" role="tmbBb">
+      <node concept="3clFbS" id="2hkh42TdkQ_" role="2VODD2">
+        <node concept="3clFbF" id="2hkh42TeitU" role="3cqZAp">
+          <node concept="2OqwBi" id="2hkh42Tej1l" role="3clFbG">
+            <node concept="2OqwBi" id="2hkh42TeiAZ" role="2Oq$k0">
+              <node concept="tl45R" id="2hkh42TeitT" role="2Oq$k0" />
+              <node concept="liA8E" id="2hkh42TeiU_" role="2OqNvi">
+                <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
+              </node>
+            </node>
+            <node concept="liA8E" id="2hkh42Tejs_" role="2OqNvi">
+              <ref role="37wK5l" to="qkt:~Presentation.setText(java.lang.String):void" resolve="setText" />
+              <node concept="3K4zz7" id="2hkh42TekU4" role="37wK5m">
+                <node concept="Xl_RD" id="2hkh42TelbJ" role="3K4E3e">
+                  <property role="Xl_RC" value="Delete Model" />
+                </node>
+                <node concept="Xl_RD" id="2hkh42TelZ7" role="3K4GZi">
+                  <property role="Xl_RC" value="Delete Models" />
+                </node>
+                <node concept="3clFbC" id="2hkh42TehV4" role="3K4Cdx">
+                  <node concept="3cmrfG" id="2hkh42TeidQ" role="3uHU7w">
+                    <property role="3cmrfH" value="1" />
+                  </node>
+                  <node concept="2OqwBi" id="2hkh42TefBp" role="3uHU7B">
+                    <node concept="2OqwBi" id="2hkh42TeeM7" role="2Oq$k0">
+                      <node concept="2WthIp" id="2hkh42TeeMa" role="2Oq$k0" />
+                      <node concept="1DTwFV" id="2hkh42TeeMc" role="2OqNvi">
+                        <ref role="2WH_rO" node="36tV70Zqv$V" resolve="models" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="2hkh42TegEC" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2hkh42TesBJ" role="3cqZAp">
+          <node concept="3cpWsn" id="2hkh42TesBM" role="3cpWs9">
+            <property role="TrG5h" value="anyRegular" />
+            <node concept="10P_77" id="2hkh42TesBH" role="1tU5fm" />
+            <node concept="3clFbT" id="2hkh42TesU7" role="33vP2m" />
+          </node>
+        </node>
+        <node concept="2Gpval" id="2hkh42TerdZ" role="3cqZAp">
+          <node concept="2GrKxI" id="2hkh42Tere1" role="2Gsz3X">
+            <property role="TrG5h" value="m" />
+          </node>
+          <node concept="2OqwBi" id="2hkh42Tes2p" role="2GsD0m">
+            <node concept="2WthIp" id="2hkh42Tes2s" role="2Oq$k0" />
+            <node concept="1DTwFV" id="2hkh42Tes2u" role="2OqNvi">
+              <ref role="2WH_rO" node="36tV70Zqv$V" resolve="models" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="2hkh42Tere5" role="2LFqv$">
+            <node concept="3clFbJ" id="2hkh42TetAF" role="3cqZAp">
+              <node concept="1Wc70l" id="7KS1aHfjEMW" role="3clFbw">
+                <node concept="3fqX7Q" id="7KS1aHfjEu_" role="3uHU7B">
+                  <node concept="2YIFZM" id="7KS1aHfjEuB" role="3fr31v">
+                    <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isStubModel" />
+                    <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+                    <node concept="2GrUjf" id="7KS1aHfjEuC" role="37wK5m">
+                      <ref role="2Gs0qQ" node="2hkh42Tere1" resolve="m" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3fqX7Q" id="7KS1aHfjFdG" role="3uHU7w">
+                  <node concept="2YIFZM" id="7KS1aHfjFdI" role="3fr31v">
+                    <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+                    <ref role="37wK5l" to="w1kc:~SModelStereotype.isDescriptorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isDescriptorModel" />
+                    <node concept="2GrUjf" id="7KS1aHfjFdJ" role="37wK5m">
+                      <ref role="2Gs0qQ" node="2hkh42Tere1" resolve="m" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbS" id="2hkh42TetAH" role="3clFbx">
+                <node concept="3clFbF" id="2hkh42TetNj" role="3cqZAp">
+                  <node concept="37vLTI" id="2hkh42Teu1y" role="3clFbG">
+                    <node concept="3clFbT" id="2hkh42Teu5E" role="37vLTx">
+                      <property role="3clFbU" value="true" />
+                    </node>
+                    <node concept="37vLTw" id="2hkh42TetNi" role="37vLTJ">
+                      <ref role="3cqZAo" node="2hkh42TesBM" resolve="anyRegular" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3zACq4" id="2hkh42TeuaO" role="3cqZAp" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7KS1aHfjGGB" role="3cqZAp">
+          <node concept="1rXfSq" id="7KS1aHfjGG_" role="3clFbG">
+            <ref role="37wK5l" to="7bx7:~BaseAction.setEnabledState(com.intellij.openapi.actionSystem.Presentation,boolean):void" resolve="setEnabledState" />
+            <node concept="2OqwBi" id="7KS1aHfjHb8" role="37wK5m">
+              <node concept="tl45R" id="7KS1aHfjH23" role="2Oq$k0" />
+              <node concept="liA8E" id="7KS1aHfjHLN" role="2OqNvi">
+                <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="7KS1aHfjHNy" role="37wK5m">
+              <ref role="3cqZAo" node="2hkh42TesBM" resolve="anyRegular" />
             </node>
           </node>
         </node>

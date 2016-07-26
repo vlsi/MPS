@@ -4,20 +4,20 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.mps.openapi.module.SModule;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.project.MPSProject;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.refactoring.RefactoringSettings;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 
 public class DeleteModels_Action extends BaseAction {
@@ -31,6 +31,18 @@ public class DeleteModels_Action extends BaseAction {
   @Override
   public boolean isDumbAware() {
     return true;
+  }
+  @Override
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+    event.getPresentation().setText((((List<SModel>) MapSequence.fromMap(_params).get("models")).size() == 1 ? "Delete Model" : "Delete Models"));
+    boolean anyRegular = false;
+    for (SModel m : ListSequence.fromList(((List<SModel>) MapSequence.fromMap(_params).get("models")))) {
+      if (!(SModelStereotype.isStubModel(m)) && !(SModelStereotype.isDescriptorModel(m))) {
+        anyRegular = true;
+        break;
+      }
+    }
+    setEnabledState(event.getPresentation(), anyRegular);
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -77,7 +89,7 @@ public class DeleteModels_Action extends BaseAction {
         // see MPS-18743 
         MPSModuleRepository.getInstance().saveAll();
         for (SModel model : ListSequence.fromList(((List<SModel>) MapSequence.fromMap(_params).get("models")))) {
-          if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model))) {
+          if (SModelStereotype.isStubModel(model) || SModelStereotype.isDescriptorModel(model)) {
             continue;
           }
           DeleteModelHelper.deleteModel(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SModule) MapSequence.fromMap(_params).get("contextModule")), model, safeOption.selected, true);
