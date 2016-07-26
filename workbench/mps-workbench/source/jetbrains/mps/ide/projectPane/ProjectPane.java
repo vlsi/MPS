@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -170,11 +170,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   @Hack
   public static ProjectPane getInstance(Project project) {
     final ProjectView projectView = ProjectView.getInstance(project);
-
-    //to ensure panes are initialized
-    //filed http://jetbrains.net/tracker/issue/IDEA-24732
-    projectView.getSelectInTargets();
-
     return (ProjectPane) projectView.getProjectViewPaneById(ID);
   }
 

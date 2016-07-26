@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,14 +102,16 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     }
 
     for (Generator generator : getModule().getGenerators()) {
-      MPSTreeNode generatorNode = new GeneratorTreeNode(generator, myProject);
+      MPSTreeNode generatorNode = createFor(myProject, generator);
       add(generatorNode);
     }
 
     TextTreeNode languageRuntime = new RuntimeModulesTreeNode();
     for (SModuleReference mr : getModule().getRuntimeModulesReferences()) {
       SModule m = ModuleRepositoryFacade.getInstance().getModule(mr);
-      if (m == null || m == getModule()) continue;
+      if (m == null || m == getModule()) {
+        continue;
+      }
       languageRuntime.add(createFor(myProject, m));
     }
     add(languageRuntime);
