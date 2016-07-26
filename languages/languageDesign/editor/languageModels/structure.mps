@@ -4082,6 +4082,18 @@
       <property role="1uS6qo" value="LAST_EDITABLE" />
       <property role="1uS6qv" value="lastEditable" />
     </node>
+    <node concept="M4N5e" id="1MdDphCk0iX" role="M5hS2">
+      <property role="1uS6qo" value="FIRST_ERROR" />
+      <property role="1uS6qv" value="firstError" />
+    </node>
+    <node concept="M4N5e" id="1MdDphCk0j3" role="M5hS2">
+      <property role="1uS6qo" value="LAST_ERROR" />
+      <property role="1uS6qv" value="lastError" />
+    </node>
+    <node concept="M4N5e" id="1MdDphCk0ja" role="M5hS2">
+      <property role="1uS6qo" value="FOCUS_POLICY" />
+      <property role="1uS6qv" value="focusPolicy" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3Un2VKK2uez">
     <property role="3GE5qa" value="SNode.select" />
