@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.testbench.BaseMpsTest;
@@ -41,7 +40,7 @@ public class DeploymentConcurrencyTest extends BaseMpsTest {
   private final static Logger LOG = LogManager.getLogger(DeploymentConcurrencyTest.class);
 
   private final static int nThreads = 10;
-  private final static long timeOut = 5000;
+  private final static long timeOut = 10000;
   private Environment myEnvironment;
 
   private Environment createEnvironment() {
@@ -90,6 +89,6 @@ public class DeploymentConcurrencyTest extends BaseMpsTest {
       e.printStackTrace();
       Assert.fail();
     }
-    pool.shutdown();
+    pool.shutdownNow();
   }
 }
