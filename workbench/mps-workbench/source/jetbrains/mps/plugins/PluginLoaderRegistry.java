@@ -30,6 +30,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.Ide_PluginInitializer;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.progress.ProgressMonitorBase.SubProgressMonitor;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.Language;
@@ -53,7 +54,8 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toCollection;
 
 /**
  * Represents a single class loading listener to trigger the plugin reload in
@@ -69,7 +71,8 @@ public class PluginLoaderRegistry implements ApplicationComponent {
 
   private final ClassLoaderManager myClassLoaderManager;
   private final ModelAccess myModelAccess;
-  private DeployListener myClassesListener = new SchedulingUpdateListener();
+
+  private final DeployListener myClassesListener = new SchedulingUpdateListener();
   private final Set<PluginContributor> myCurrentContributors = new LinkedHashSet<>();
   private final Set<PluginLoader> myCurrentLoaders = new LinkedHashSet<>();
 
@@ -134,12 +137,10 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     if (pluginLoaders.isEmpty() || contributors.isEmpty()) {
       return;
     }
-    LOG.debug(String.format("Scheduling loading of %d contributors", contributors.size()));
     final long beginTime = System.nanoTime();
     try {
-      monitor.start("Loading contributors", pluginLoaders.size());
+      monitor.start("Loading", pluginLoaders.size());
       for (final PluginLoader loader : pluginLoaders) {
-        LOG.info(String.format("Loading plugins to loader %s from %d contributors", loader, contributors.size()));
         loader.loadPlugins(new ArrayList<>(contributors));
         monitor.advance(1);
       }
@@ -156,12 +157,10 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     if (pluginLoaders.isEmpty() || contributors.isEmpty()) {
       return;
     }
-    LOG.debug(String.format("Scheduling unloading of %d contributors", contributors.size()));
-    monitor.start("Unloading MPS plugins", pluginLoaders.size());
+    monitor.start("Unloading", pluginLoaders.size());
     long beginTime = System.nanoTime();
     try {
       for (final PluginLoader loader : pluginLoaders) {
-        LOG.info(String.format("Unloading plugins in %s from %d contributors", loader, contributors.size()));
         loader.unloadPlugins(new ArrayList<>(contributors));
         monitor.advance(1);
       }
@@ -171,11 +170,10 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     }
   }
 
-  private void runTask(Task task) {
-    ProgressIndicator indicator = ProgressManager.getGlobalProgressIndicator();
-    if (indicator != null) {
-      LOG.trace("running task with global indicator");
-      ProgressManager.getInstance().runProcess(() -> task.run(indicator), indicator);
+  private void runTask(Task task, @Nullable ProgressIndicator indicator) {
+    if (indicator != null && indicator.isRunning()) {
+      LOG.trace("running task with current indicator");
+      task.run(indicator);
     } else {
       LOG.trace("running task with new indicator");
       ProgressManager.getInstance().run(task);
@@ -219,16 +217,9 @@ public class PluginLoaderRegistry implements ApplicationComponent {
    */
   @ToRemove(version = 3.3)
   @Deprecated
-  private void loadFactories(Set<PluginContributor> currentContributors, Set<PluginLoader> loaders, ProgressMonitor monitor) {
-    LOG.debug("Loading factories");
+  private Set<PluginContributor> getFactoryContributors(Set<PluginContributor> currentContributors) {
     final List<PluginContributor> pluginFactoriesRegistryContributors = getPluginFactoriesRegistryContributors();
-    final Set<PluginContributor> toLoad = new LinkedHashSet<>();
-    for (PluginContributor contributor : pluginFactoriesRegistryContributors) {
-      if (!currentContributors.contains(contributor)) {
-        toLoad.add(contributor);
-      }
-    }
-    loadContributors(toLoad, loaders, monitor);
+    return pluginFactoriesRegistryContributors.stream().filter(contributor -> !currentContributors.contains(contributor)).collect(toCollection(LinkedHashSet::new));
   }
 
   private static List<PluginContributor> getPluginFactoriesRegistryContributors() {
@@ -243,12 +234,9 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     return pluginContributors;
   }
 
-  private void update() {
+  private void update(@NotNull ProgressMonitor monitor) {
     ThreadUtils.assertEDT();
-    if (ApplicationManager.getApplication().isDisposed()) {
-      return;
-    }
-    myDirtyFlag.set(false);
+    LOG.debug("Updating with " + monitor);
     Delta<PluginLoader> loadersDelta;
     Delta<ReloadableModule> moduleDelta;
     synchronized (myLoadersDeltaLock) {
@@ -259,15 +247,23 @@ public class PluginLoaderRegistry implements ApplicationComponent {
       moduleDelta = new Delta<>(myDelta);
       myDelta.clear();
     }
+    myDirtyFlag.set(false);
+
     if (loadersDelta.isEmpty() && moduleDelta.isEmpty()) {
       LOG.debug("Nothing to do in update");
       return;
     }
 
+    assert !myTaskInProgress.get();
+
     Set<PluginContributor> toUnloadContributors = calcContributorsToUnload(myCurrentContributors, getPluginModules(moduleDelta.toUnload));
-    Set<PluginContributor> toLoadContributors = new ModelAccessHelper(myModelAccess).runReadAction(() -> createPluginContributors(getPluginModules(moduleDelta.toLoad)));
+    Set<PluginContributor> toLoadContributors =
+        new ModelAccessHelper(myModelAccess).runReadAction(() -> createPluginContributors(getPluginModules(moduleDelta.toLoad)));
     Delta<PluginContributor> contributorDelta = new Delta<>(toLoadContributors, toUnloadContributors);
-    runTask(new UpdatingTask(null, loadersDelta, contributorDelta));
+
+    assert !myTaskInProgress.get();
+    UpdatingTask task = new UpdatingTask(null, loadersDelta, contributorDelta);
+    runTask(task, getIndicator(monitor));
   }
 
   /**
@@ -287,45 +283,107 @@ public class PluginLoaderRegistry implements ApplicationComponent {
 
     @Override
     public void run(@NotNull ProgressIndicator indicator) {
+      if (loadersDelta.isEmpty() && contributorsDelta.isEmpty()) {
+        LOG.debug("Nothing to do in update");
+        return;
+      }
+      assert indicator.isRunning();
+      LOG.info("Running Update Task : loaders " + loadersDelta + "; contributors : " + contributorsDelta + "; " + Thread.currentThread());
+      indicator.pushState();
       ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
-      monitor.start("Reloading MPS Plugins", 6);
+      monitor.start("Reloading MPS Plugins", 5);
       try {
-        // unload all unregistered loaders
-        unloadContributors(myCurrentContributors, loadersDelta.toUnload, monitor.subTask(1));
-        myCurrentLoaders.removeAll(loadersDelta.toUnload);
-
-        // unload all contributors to unload
-        unloadContributors(contributorsDelta.toUnload, myCurrentLoaders, monitor.subTask(1));
-        myCurrentContributors.removeAll(contributorsDelta.toUnload);
-
-        // load all registered loaders
-        loadFactories(myCurrentContributors, loadersDelta.toLoad, monitor.subTask(1)); // always running it to ensure the new registered factories are loaded
-        loadContributors(myCurrentContributors, loadersDelta.toLoad, monitor.subTask(1));
-        myCurrentLoaders.addAll(loadersDelta.toLoad);
-
-        // load all contributors to load
-        loadFactories(myCurrentContributors, myCurrentLoaders, monitor.subTask(1));
-        loadContributors(contributorsDelta.toLoad, myCurrentLoaders, monitor.subTask(1));
-        myCurrentContributors.addAll(contributorsDelta.toLoad);
+        myTaskInProgress.compareAndSet(false, true);
+        removeLoaders(monitor);
+        removeContributors(monitor);
+        addLoaders(monitor);
+        addFactories(monitor);
+        addContributors(monitor);
       } finally {
+        myTaskInProgress.compareAndSet(true, false);
         monitor.done();
+        indicator.popState();
+      }
+    }
+
+    private void addContributors(ProgressMonitor monitor) {
+      Set<PluginContributor> contributorsToAdd = new LinkedHashSet<>(contributorsDelta.toLoad);
+      contributorsToAdd.removeAll(myCurrentContributors);
+      LOG.debug("Loading " + contributorsToAdd.size() + " new contributors to " + myCurrentLoaders.size() + " current loaders");
+      loadContributors(contributorsToAdd, myCurrentLoaders, monitor.subTask(1));
+      myCurrentContributors.addAll(contributorsToAdd);
+    }
+
+    private void addFactories(ProgressMonitor monitor) {
+      Set<PluginContributor> factories = getFactoryContributors(myCurrentContributors);
+      factories.removeAll(myCurrentContributors);
+      LOG.debug("Loading " + factories.size() + " Factories");
+      loadContributors(factories, myCurrentLoaders, monitor.subTask(1));
+      myCurrentContributors.addAll(factories);
+    }
+
+    private void addLoaders(ProgressMonitor monitor) {
+      Set<PluginLoader> loadersToAdd = loadersDelta.toLoad;
+      loadersToAdd.removeAll(myCurrentLoaders);
+      LOG.debug("Loading " + myCurrentContributors.size() + " current contributors to new " + loadersToAdd.size() + " loaders");
+      loadContributors(myCurrentContributors, loadersToAdd, monitor.subTask(1));
+      myCurrentLoaders.addAll(loadersToAdd);
+    }
+
+    private void removeContributors(ProgressMonitor monitor) {
+      Set<PluginContributor> contributorsToRemove = contributorsDelta.toUnload;
+      contributorsToRemove.retainAll(myCurrentContributors); // just a precaution
+      LOG.debug("Unloading " + contributorsToRemove.size() + " contributors from " + myCurrentLoaders.size() + " current loaders");
+      unloadContributors(contributorsToRemove, myCurrentLoaders, monitor.subTask(1));
+      myCurrentContributors.removeAll(contributorsToRemove);
+    }
+
+    private void removeLoaders(ProgressMonitor monitor) {
+      Set<PluginLoader> loadersToRemove = loadersDelta.toUnload;
+      loadersToRemove.retainAll(myCurrentLoaders); // just a precaution
+      LOG.debug("Unloading " + myCurrentContributors.size() + " current contributors from " + loadersToRemove.size() + " loaders");
+      unloadContributors(myCurrentContributors, loadersToRemove, monitor.subTask(1));
+      myCurrentLoaders.removeAll(loadersToRemove);
+    }
+  }
+
+  /**
+   * NOTE:
+   * not unloading plugins on application dispose (since we are inside the dispose Application.isDisposed == true;
+   * it is not tolerated by ActionGroup#getChildren which is called in some of the plugins #dispose method.
+   */
+  private void scheduleUpdate(ProgressMonitor monitor) {
+    if (myDirtyFlag.compareAndSet(false, true)) {
+      Application application = ApplicationManager.getApplication();
+      ProgressIndicator indicator = getIndicator(monitor);
+      if (ThreadUtils.isInEDT() && !application.isDisposed()) {
+        update(monitor);
+      } else {
+        if (indicator != null) {
+          application.invokeLater(() -> update(monitor), indicator.getModalityState(), application.getDisposed()); // already have indicator
+        } else {
+          application.invokeLater(() -> update(monitor), ModalityState.NON_MODAL, application.getDisposed()); // will have a new one
+        }
       }
     }
   }
 
-  private void scheduleUpdate() {
-    if (myDirtyFlag.compareAndSet(false, true)) {
-      Application application = ApplicationManager.getApplication();
-      if (ThreadUtils.isInEDT()) {
-        update(); // this branch must work during project and application dispose, otherwise I am screwed
-      } else {
-        application.invokeLater(this::update, ModalityState.defaultModalityState(), application.getDisposed());
-      }
+  private static ProgressIndicator getIndicator(ProgressMonitor monitor) {
+    ProgressMonitor root = monitor;
+    while (root instanceof SubProgressMonitor) {
+      root = ((SubProgressMonitor) root).getParent();
     }
+    if (root instanceof ProgressMonitorAdapter) {
+      return ((ProgressMonitorAdapter) root).getIndicator(); // during rebuild/make
+    }
+    if (ProgressManager.getGlobalProgressIndicator() != null) {
+      return ProgressManager.getGlobalProgressIndicator(); // on start
+    }
+    return null;
   }
 
   private Set<ReloadableModule> getPluginModules(Collection<ReloadableModule> modules) {
-    return modules.stream().filter(this::isPluginModule).collect(Collectors.toCollection(LinkedHashSet::new));
+    return modules.stream().filter(this::isPluginModule).collect(toCollection(LinkedHashSet::new));
   }
 
   private boolean isPluginModule(SModule module) {
@@ -352,7 +410,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     public void onUnloaded(Set<ReloadableModule> unloadedModules, @NotNull ProgressMonitor monitor) {
       synchronized (myDeltaLock) {
         myDelta.unload(unloadedModules);
-        scheduleUpdate();
+        scheduleUpdate(monitor);
       }
     }
 
@@ -360,19 +418,20 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     public void onLoaded(Set<ReloadableModule> loadedModules, @NotNull ProgressMonitor monitor) {
       synchronized (myDeltaLock) {
         myDelta.load(loadedModules);
-        scheduleUpdate();
+        scheduleUpdate(monitor);
       }
     }
   }
 
+  private final AtomicBoolean myTaskInProgress = new AtomicBoolean(false);
   private final Object myDeltaLock = new Object();
   private final Object myLoadersDeltaLock = new Object();
   private final Delta<ReloadableModule> myDelta = new Delta<>();
   private final Delta<PluginLoader> myLoaderDelta = new Delta<>();
 
   private static class Delta<T> {
-    final Set<T> toUnload;
-    final Set<T> toLoad;
+    private final Set<T> toUnload;
+    private final Set<T> toLoad;
 
     public Delta() {
       toUnload = new LinkedHashSet<>();
@@ -384,26 +443,16 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     }
 
     public Delta(@NotNull Set<T> loaded, @NotNull Set<T> unloaded) {
-      if (doIntersect(loaded, unloaded)) {
-        throw new IllegalArgumentException("Sets intersect"); // contract
-      }
       toLoad = new LinkedHashSet<>(loaded);
       toUnload = new LinkedHashSet<>(unloaded);
     }
 
-    private static <T> boolean doIntersect(Set<T> loaded, Set<T> unloaded) {
-      Set<T> intersection = new HashSet<>(loaded);
-      intersection.retainAll(unloaded);
-      return !intersection.isEmpty();
-    }
-
-    public void clear() {
+    public final void clear() {
       toUnload.clear();
       toLoad.clear();
     }
 
     public void load(Set<T> ts) {
-      toUnload.removeAll(ts);
       toLoad.addAll(ts);
     }
 
@@ -423,7 +472,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
 
     @Override
     public String toString() {
-      return "Delta [" + toLoad.size() + " : " + toUnload.size() + "]";
+      return "Delta [load " + toLoad.size() + " : unload " + toUnload.size() + "]";
     }
   }
 }

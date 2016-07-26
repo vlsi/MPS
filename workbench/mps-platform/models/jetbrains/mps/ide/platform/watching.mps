@@ -1929,9 +1929,7 @@
             </node>
             <node concept="liA8E" id="3Fdn9B$XlaR" role="2OqNvi">
               <ref role="37wK5l" to="yyf4:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
-              <node concept="Xl_RD" id="3Fdn9B$XlaS" role="37wK5m">
-                <property role="Xl_RC" value="Reloading files... Please wait." />
-              </node>
+              <node concept="Xl_RD" id="3Fdn9B$XlaS" role="37wK5m" />
               <node concept="3cpWs3" id="4kWM61TOhV2" role="37wK5m">
                 <node concept="2OqwBi" id="3Fdn9B$XvNr" role="3uHU7B">
                   <node concept="34oBXx" id="3Fdn9B$XE48" role="2OqNvi" />

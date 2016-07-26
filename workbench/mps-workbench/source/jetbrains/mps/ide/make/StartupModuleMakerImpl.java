@@ -89,9 +89,11 @@ public final class StartupModuleMakerImpl extends StartupModuleMaker {
         JavaCompilerOptions compilerOptions = JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(myMPSProject);
         try {
           return maker.makeAndDeploy(modules, monitor, compilerOptions);
-        } catch (Exception | AssertionError e) {
+        } catch (VirtualMachineError e) {
+          throw e;
+        } catch (Throwable e) {
           LOG.error("Exception while making project", e);
-          throw new RuntimeException(e);
+          throw e;
         }
       });
     });

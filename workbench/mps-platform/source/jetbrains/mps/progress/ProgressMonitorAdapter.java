@@ -79,6 +79,10 @@ public class ProgressMonitorAdapter extends ProgressMonitorBase {
     return myIndicator.isCanceled();
   }
 
+  public ProgressIndicator getIndicator() {
+    return myIndicator;
+  }
+
   @Override
   public void cancel() {
     myIndicator.cancel();

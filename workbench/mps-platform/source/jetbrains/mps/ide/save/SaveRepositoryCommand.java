@@ -45,9 +45,11 @@ public class SaveRepositoryCommand implements Runnable {
   // FIXME need to decide about the contract, whether it respects make session and whether it waits for save to complete (perhaps, optionally?)
   public void execute() {
     if (ThreadUtils.isInEDT()) {
-      runSavingTask();
+//      runSavingTask();
+      myRepository.getModelAccess().runWriteAction(this);
     } else {
-      ApplicationManager.getApplication().invokeLater(this::runSavingTask, ModalityState.defaultModalityState());
+      myRepository.getModelAccess().runWriteInEDT(this);
+//      ApplicationManager.getApplication().invokeLater(this::runSavingTask, ModalityState.defaultModalityState());
     }
   }
 

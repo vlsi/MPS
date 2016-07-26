@@ -80,7 +80,6 @@ public abstract class BasePluginManager<T> implements PluginLoader {
   public void loadPlugins(final List<PluginContributor> contributors) {
     int size = contributors.size();
     LOG.debug("Loading plugins from " + size + " contributors [" + toString() + "]");
-    showProgress();
     final Map<PluginContributor, T> plugins = createPlugins(contributors);
     synchronized (myPluginsLock) {
       plugins.entrySet().forEach(entry -> {
@@ -107,7 +106,6 @@ public abstract class BasePluginManager<T> implements PluginLoader {
       mySortedPlugins.removeAll(plugins);
     }
 
-    showProgress();
     beforePluginsDisposed(plugins);
     disposePlugins(plugins);
   }
@@ -129,14 +127,6 @@ public abstract class BasePluginManager<T> implements PluginLoader {
       }
     }
     return plugins;
-  }
-
-  private void showProgress() {
-    ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
-    if (!ApplicationManager.getApplication().isHeadlessEnvironment() && progressIndicator != null) {
-      progressIndicator.setIndeterminate(true);
-      WaitForProgressToShow.execute(progressIndicator);
-    }
   }
 
   private Map<PluginContributor, T> createPlugins(List<PluginContributor> contributors) {
