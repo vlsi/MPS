@@ -123,23 +123,17 @@ class MPSClassLoadersRegistry {
     return lazyLoaded;
   }
 
-  public void doLoadModules(final Collection<? extends ReloadableModule> toLoad, ProgressMonitor monitor) {
-    try {
-      monitor.start("Loading modules...", toLoad.size());
-      final List<ModuleClassLoader> moduleClassLoaders = createModuleCLs(toLoad);
-      for (ModuleClassLoader classLoader : moduleClassLoaders) {
-        SModuleReference moduleReference = classLoader.getModule().getModuleReference();
-        ClassLoadingProgress progress = getClassLoadingProgress(moduleReference);
-        if (progress == ClassLoadingProgress.UNLOADED) {
-          throw new IllegalStateException("Module " + moduleReference + " is in UNLOADED state, i.e. the class loading clients know nothing about this module");
-        } else if (progress == ClassLoadingProgress.LAZY_LOADED) {
-          putClassLoader(moduleReference, classLoader);
-          onLoaded(moduleReference);
-        }
-        monitor.advance(1);
+  public void doLoadModules(final Collection<? extends ReloadableModule> toLoad) {
+    final List<ModuleClassLoader> moduleClassLoaders = createModuleCLs(toLoad);
+    for (ModuleClassLoader classLoader : moduleClassLoaders) {
+      SModuleReference moduleReference = classLoader.getModule().getModuleReference();
+      ClassLoadingProgress progress = getClassLoadingProgress(moduleReference);
+      if (progress == ClassLoadingProgress.UNLOADED) {
+        throw new IllegalStateException("Module " + moduleReference + " is in UNLOADED state, i.e. the class loading clients know nothing about this module");
+      } else if (progress == ClassLoadingProgress.LAZY_LOADED) {
+        putClassLoader(moduleReference, classLoader);
+        onLoaded(moduleReference);
       }
-    } finally {
-      monitor.done();
     }
   }
 

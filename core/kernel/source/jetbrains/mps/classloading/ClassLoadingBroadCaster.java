@@ -23,6 +23,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -82,19 +83,24 @@ public class ClassLoadingBroadCaster {
 
     myLoadedModules.removeAll(modulesToUnload);
 
-    for (MPSClassesListener listener : myClassesHandlers) {
-      try {
-        listener.onUnloaded(modulesToUnload, monitor);
-      } catch (Exception e) {
-        LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
+    try {
+      monitor.start("Broadcasting Events", myClassesHandlers.size() + myDeployListeners.size());
+      for (MPSClassesListener listener : myClassesHandlers) {
+        try {
+          listener.onUnloaded(modulesToUnload, monitor.subTask(1));
+        } catch (Exception e) {
+          LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
+        }
       }
-    }
-    for (DeployListener listener : myDeployListeners) {
-      try {
-        listener.onUnloaded(modulesToUnload, monitor);
-      } catch (Exception e) {
-        LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
+      for (DeployListener listener : myDeployListeners) {
+        try {
+          listener.onUnloaded(modulesToUnload, monitor.subTask(1));
+        } catch (Exception e) {
+          LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
+        }
       }
+    } finally {
+      monitor.done();
     }
 
     final Set<ReloadableModule> resultingUnload = new LinkedHashSet<ReloadableModule>();
@@ -112,19 +118,24 @@ public class ClassLoadingBroadCaster {
     }
     myLoadedModules.addAll(modulesToLoad);
 
-    for (MPSClassesListener listener : myClassesHandlers) {
-      try {
-        listener.onLoaded(toLoad, monitor);
-      } catch (Exception e) {
-        LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
+    try {
+      monitor.start("Broadcasting Events", myClassesHandlers.size() + myDeployListeners.size());
+      for (MPSClassesListener listener : myClassesHandlers) {
+        try {
+          listener.onLoaded(toLoad, monitor.subTask(1));
+        } catch (Exception e) {
+          LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
+        }
       }
-    }
-    for (DeployListener listener : myDeployListeners) {
-      try {
-        listener.onLoaded(toLoad, monitor);
-      } catch (Exception e) {
-        LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
+      for (DeployListener listener : myDeployListeners) {
+        try {
+          listener.onLoaded(toLoad, monitor.subTask(1));
+        } catch (Exception e) {
+          LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
+        }
       }
+    } finally {
+      monitor.done();
     }
   }
 

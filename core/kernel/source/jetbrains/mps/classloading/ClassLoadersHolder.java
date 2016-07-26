@@ -131,7 +131,7 @@ public class ClassLoadersHolder {
    * @param toUnload for these modules ModuleClassLoaders were disposed
    * @return modules which changed their ClassLoadingProgress from LAZY_LOADED or LOADED to UNLOADED.
    */
-  public Set<SModuleReference> doUnloadModules(Set<SModuleReference> toUnload, ProgressMonitor monitor) {
+  public Set<SModuleReference> doUnloadModules(Set<SModuleReference> toUnload) {
     return myCLRegistry.doUnloadModules(toUnload);
   }
 
@@ -141,15 +141,15 @@ public class ClassLoadersHolder {
    *                   No actual loading is performed for these modules.
    * @return modules which changed their ClassLoadingProgress from UNLOADED to LAZY_LOADED.
    */
-  public Set<ReloadableModule> onLazyLoaded(Set<ReloadableModule> toLoadLazy, ProgressMonitor monitor) {
+  public Set<ReloadableModule> onLazyLoaded(Set<ReloadableModule> toLoadLazy) {
     return myCLRegistry.onLazyLoaded(toLoadLazy);
   }
 
   /**
    * @param toLoad for these modules ModuleClassLoaders were actually created
    */
-  public void doLoadModules(Set<ReloadableModule> toLoad, ProgressMonitor monitor) {
-    myCLRegistry.doLoadModules(toLoad, monitor);
+  public void doLoadModules(Set<ReloadableModule> toLoad) {
+    myCLRegistry.doLoadModules(toLoad);
   }
 
   /**
