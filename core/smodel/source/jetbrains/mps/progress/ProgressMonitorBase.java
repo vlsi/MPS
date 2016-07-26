@@ -134,7 +134,7 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     return new SubProgressMonitor(this, work, kind);
   }
 
-  protected static class SubProgressMonitor extends ProgressMonitorBase implements ProgressWithNotifications {
+  protected static class SubProgressMonitor extends ProgressMonitorBase {
 
     private final ProgressMonitorBase parent;
     private final int parentTotalWork;
@@ -194,13 +194,6 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
         if (parentFraction < 0d) parentFraction = 0d;
         if (parentFraction > 1d) parentFraction = 1d;
         parent.update(parentFraction);
-      }
-    }
-
-    @Override
-    public void showNotification(String s) {
-      if (getParent() instanceof ProgressWithNotifications){
-        ((ProgressWithNotifications) getParent()).showNotification(s);
       }
     }
   }

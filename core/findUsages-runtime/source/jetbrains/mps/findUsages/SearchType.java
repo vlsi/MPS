@@ -15,27 +15,23 @@
  */
 package jetbrains.mps.findUsages;
 
-import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.progress.ProgressWithNotifications;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
 public abstract class SearchType<T, R> {
+  private static final Logger LOG = LogManager.getLogger(SearchType.class);
+
   public abstract Set<T> search(Set<R> elements, SearchScope scope, @NotNull ProgressMonitor monitor);
 
   protected void showNoFastFindTipIfNeeded(@NotNull ProgressMonitor monitor, Collection<SModel> noFastFindModels) {
-    if (!(monitor instanceof ProgressWithNotifications)) {
-      return;
-    }
-
     HashSet<SModel> notEmptyNoFastFindModels=new HashSet<>();
     for (SModel m:noFastFindModels){
       if (m.getRootNodes().iterator().hasNext()){
@@ -49,8 +45,7 @@ public abstract class SearchType<T, R> {
 
     int othersSize = notEmptyNoFastFindModels.size() - 1;
     String others = othersSize == 0 ? "" : " and " + othersSize + " others";
-    ((ProgressWithNotifications) monitor).showNotification(
-        "Fast usages search not supported for model " + notEmptyNoFastFindModels.iterator().next().getName() + others + ".\n" +
-            "Usages search may be slow.");
+    LOG.warn("Fast usages search not supported for model " + notEmptyNoFastFindModels.iterator().next().getName() + others + ". " +
+        "Usages search may be slow.");
   }
 }

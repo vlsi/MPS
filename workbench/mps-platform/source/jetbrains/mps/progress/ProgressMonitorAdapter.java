@@ -28,19 +28,11 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Evgeny Gryaznov, 9/30/11
  */
-public class ProgressMonitorAdapter extends ProgressMonitorBase implements ProgressWithNotifications {
+public class ProgressMonitorAdapter extends ProgressMonitorBase {
   private final ProgressIndicator myIndicator;
 
-  @Nullable
-  private final Project myProject;
-
   public ProgressMonitorAdapter(ProgressIndicator indicator) {
-    this(indicator, null);
-  }
-
-  public ProgressMonitorAdapter(ProgressIndicator indicator, @Nullable Project p) {
     myIndicator = indicator;
-    myProject = p;
   }
 
   @Override
@@ -88,19 +80,5 @@ public class ProgressMonitorAdapter extends ProgressMonitorBase implements Progr
   @Override
   public void cancel() {
     myIndicator.cancel();
-  }
-
-  @Override
-  public void showNotification(String s) {
-    if (myProject == null) {
-      return;
-    }
-    UIUtil.invokeLaterIfNeeded(() -> {
-      final IdeFrame ideFrame = WindowManager.getInstance().getIdeFrame(myProject);
-      if (ideFrame != null) {
-        StatusBarEx statusBar = (StatusBarEx) ideFrame.getStatusBar();
-        statusBar.notifyProgressByBalloon(MessageType.WARNING, s, null, null);
-      }
-    });
   }
 }

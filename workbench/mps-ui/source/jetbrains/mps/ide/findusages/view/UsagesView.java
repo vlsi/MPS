@@ -327,7 +327,7 @@ public class UsagesView implements IExternalizeable {
 
         @Override
         public void run(@NotNull final ProgressIndicator indicator) {
-          mySearchResults = mySearchTask.execute(myView.myProject.getModelAccess(), new ProgressMonitorAdapter(indicator, ProjectHelper.toIdeaProject(myView.getProject())));
+          mySearchResults = mySearchTask.execute(myView.myProject.getModelAccess(), new ProgressMonitorAdapter(indicator));
         }
 
         @Override
