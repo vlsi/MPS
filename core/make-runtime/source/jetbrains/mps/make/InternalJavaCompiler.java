@@ -249,7 +249,7 @@ class InternalJavaCompiler {
             errorsTracker = myErrorsHandler.handle(result);
           }
         }
-        myTracer.pop(1);
+        myTracer.advance(1);
         myTracer.push(WRITING_CLASSES_MSG);
         Set<SModule> changedModules = myWriter.write(results, errorsTracker);
         myTracer.pop(10);

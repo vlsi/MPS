@@ -138,6 +138,12 @@ public final class CompositeTracer {
     return subTracer(size, SubProgressKind.DEFAULT);
   }
 
+  public void advance(int i) {
+    if (myMonitor != null) {
+      myMonitor.advance(i);
+    }
+  }
+
   @NotNull
   public CompositeTracer subTracer(int size, SubProgressKind kind) {
     ProgressMonitor monitor = null;
