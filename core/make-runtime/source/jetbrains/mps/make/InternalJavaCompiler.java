@@ -187,6 +187,7 @@ class InternalJavaCompiler {
     tracer.start(CALCULATING_DEPS_MSG, 1);
     try {
       Set<String> classpath = JavaModuleOperations.collectCompileClasspath(modules, true);
+      tracer.info("ClassPath: " + classpath);
       return JavaModuleOperations.createClassPathItem(classpath, ModuleMaker.class.getName());
     } finally {
       tracer.done(1);

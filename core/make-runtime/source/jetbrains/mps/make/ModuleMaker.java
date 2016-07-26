@@ -71,12 +71,12 @@ public final class ModuleMaker {
   private final static String CYCLE_FORMAT_MSG = "Cycle #%d: [%s]";
   private final static String COLLECTING_DEPENDENCIES_MSG = "Collecting Dependent Candidates";
   private final static String LOADING_DEPENDENCIES_MSG = "Loading Dependencies";
-  private final static String CALCULATING_DEPENDENCIES_TO_COMPILE_MSG = "Calculating All Dependent Modules To Compile";
+  private final static String CALCULATING_DEPENDENCIES_TO_COMPILE_MSG = "Calculating Modules To Compile";
   private final static String BUILDING_MODULE_CYCLES_MSG = "Building Module Cycles";
   private final static String BUILDING_MODULES = "Building";
-  private final static String BUILDING_BACK_DEPS_MSG = "Building Back Dependencies";
-  private final static String BUILDING_DIRTY_CLOSURE = "Building Dirty Modules Closure";
-  private final static String CHECKING_DIRTY_MODULES_MSG = "Checking If %d Modules Are Dirty";
+  private final static String BUILDING_BACK_DEPS_MSG = "Building Closure";
+  private final static String BUILDING_DIRTY_CLOSURE = "Dirty Modules";
+  private final static String CHECKING_DIRTY_MODULES_MSG = "Checking";
 
   @NotNull private final CompositeTracer myTracer;
 
@@ -193,7 +193,8 @@ public final class ModuleMaker {
         }
         ++cycleNumber;
         CompositeTracer cycleTracer = tracer.subTracer(1);
-        cycleTracer.start(getCycleString(cycleNumber, modulesInCycle), 1);
+        tracer.info(String.format(CYCLE_FORMAT_MSG, cycleNumber, modulesInCycle));
+        cycleTracer.start(getCycleString(cycleNumber, modulesInCycle), 1, Priority.DEBUG);
         ModulesContainer modulesContainer = new ModulesContainer(modulesInCycle, dependencies);
         InternalJavaCompiler internalJavaCompiler = new InternalJavaCompiler(modulesContainer, compilerOptions);
         MPSCompilationResult cycleCompilationResult = internalJavaCompiler.compile(cycleTracer.subTracer(1, SubProgressKind.AS_COMMENT));
@@ -211,7 +212,10 @@ public final class ModuleMaker {
     Optional<SModule> first = modulesInCycle.stream().findFirst();
     String firstModule = "";
     if (first.isPresent()) {
-      firstModule = first.get().toString() + " and others";
+      firstModule = first.get().getModuleName();
+      if (modulesInCycle.size() > 1) {
+        firstModule += " and " + (modulesInCycle.size() - 1) + " others";
+      }
     }
     return String.format(CYCLE_FORMAT_MSG, cycleNumber, firstModule);
   }
@@ -235,7 +239,7 @@ public final class ModuleMaker {
   private Set<SModule> buildDirtyModulesClosure(ModulesContainer modulesContainer, CompositeTracer tracer) {
     tracer.start(BUILDING_DIRTY_CLOSURE, 3);
     Set<SModule> candidates = modulesContainer.getModules();
-    tracer.push(String.format(CHECKING_DIRTY_MODULES_MSG, candidates.size()), Priority.DEBUG, false);
+    tracer.push(CHECKING_DIRTY_MODULES_MSG, Priority.DEBUG, false);
     List<SModule> dirtyModules = new ArrayList<SModule>(candidates.size());
     for (SModule m : candidates) {
       if (modulesContainer.isDirty(m)) {

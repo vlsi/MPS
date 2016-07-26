@@ -58,10 +58,10 @@ public final class CompositeTracer {
     myMonitor = monitor;
   }
 
-  public void start(@NotNull String startMsg, int stepsCount) {
-    mySender.info(startMsg);
+  public void start(@NotNull String startMsg, int stepsCount, Priority level) {
     myCurrentStartMsg = startMsg;
     if (!startMsg.isEmpty()) {
+      msg(startMsg, level);
       myTracer.push(startMsg, true); // major by default
     }
     if (myMonitor != null) {
@@ -69,6 +69,9 @@ public final class CompositeTracer {
     }
   }
 
+  public void start(@NotNull String startMsg, int stepsCount) {
+    start(startMsg, stepsCount, DEFAULT_LEVEL);
+  }
 
   /**
    * composite action to print the msg to log, to the performance tracer and to the ui
