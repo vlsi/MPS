@@ -585,7 +585,7 @@
       <ref role="1ERwB7" node="5FzO4t9jA_b" resolve="BaseCommentAttribute_Actions" />
       <node concept="l2Vlx" id="43t9AOLcZPj" role="2iSdaV" />
       <node concept="3F1sOY" id="4NfTi62PfCN" role="3EZMnx">
-        <ref role="1NtTu8" to="tpck:2ETBKOyieyt" />
+        <ref role="1NtTu8" to="tpck:2ETBKOyieyt" resolve="commentedNode" />
         <ref role="1ERwB7" node="5FzO4t9jA_b" resolve="BaseCommentAttribute_Actions" />
         <node concept="2w$q5c" id="5FKjex9hEng" role="3xwHhi">
           <node concept="2aJ2om" id="5FKjex9hEnh" role="2w$qW5">
@@ -802,7 +802,7 @@
                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
                 <node concept="359W_D" id="2Jn37$FZmBN" role="37wK5m">
                   <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                  <ref role="359W_F" to="tpck:4uZwTti3__2" />
+                  <ref role="359W_F" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
                 </node>
               </node>
             </node>
@@ -862,7 +862,7 @@
                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
                 <node concept="359W_D" id="7B8ZS0iM6tI" role="37wK5m">
                   <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                  <ref role="359W_F" to="tpck:4uZwTti3__2" />
+                  <ref role="359W_F" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
                 </node>
               </node>
             </node>
