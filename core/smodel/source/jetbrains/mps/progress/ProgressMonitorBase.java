@@ -134,7 +134,7 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     return new SubProgressMonitor(this, work, kind);
   }
 
-  protected static class SubProgressMonitor extends ProgressMonitorBase {
+  public static class SubProgressMonitor extends ProgressMonitorBase {
     private final ProgressMonitorBase parent;
     private final int parentTotalWork;
     private final SubProgressKind kind;
@@ -171,7 +171,7 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     protected void startInternal(String text) {
     }
 
-    protected ProgressMonitorBase getParent () {
+    public ProgressMonitorBase getParent() {
       return parent;
     }
 

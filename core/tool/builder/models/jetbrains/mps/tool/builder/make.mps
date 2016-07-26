@@ -317,6 +317,7 @@
     <language id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access">
       <concept id="8974276187400348173" name="jetbrains.mps.lang.access.structure.CommandClosureLiteral" flags="nn" index="1QHqEC" />
       <concept id="8974276187400348170" name="jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement" flags="nn" index="1QHqEJ">
+        <child id="1423104411234567454" name="repo" index="ukAjM" />
         <child id="8974276187400348171" name="commandClosureLiteral" index="1QHqEI" />
       </concept>
       <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
@@ -6664,6 +6665,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="7n4ow9NsCyz" role="jymVt" />
     <node concept="3clFb_" id="1cjXdtLLeZt" role="jymVt">
       <property role="TrG5h" value="loadAndMake" />
       <node concept="37vLTG" id="72ouys9KdjW" role="3clF46">
@@ -6767,6 +6769,9 @@
                                   <property role="TrG5h" value="taskName" />
                                   <property role="3TUv4t" value="false" />
                                   <node concept="17QB3L" id="1cjXdtLLeZ6" role="1tU5fm" />
+                                  <node concept="2AHcQZ" id="7n4ow9NsB$n" role="2AJF6D">
+                                    <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+                                  </node>
                                 </node>
                                 <node concept="37vLTG" id="1cjXdtLLeZ7" role="3clF46">
                                   <property role="TrG5h" value="work" />
@@ -6876,6 +6881,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7n4ow9NsCy$" role="jymVt" />
     <node concept="3clFb_" id="KL8Aqll56k" role="jymVt">
       <property role="TrG5h" value="reportIfStartsWith" />
       <node concept="37vLTG" id="KL8Aqll56l" role="3clF46">
@@ -6957,6 +6963,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7n4ow9NsCy_" role="jymVt" />
     <node concept="3clFb_" id="KL8Aqll59X" role="jymVt">
       <property role="TrG5h" value="cleanUp" />
       <node concept="3cqZAl" id="KL8Aqll59Y" role="3clF45" />
@@ -7096,6 +7103,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7n4ow9NsCyA" role="jymVt" />
     <node concept="3clFb_" id="KL8Aqll5aU" role="jymVt">
       <property role="TrG5h" value="collectResources" />
       <node concept="37vLTG" id="KL8Aqll5aV" role="3clF46">
@@ -7289,6 +7297,14 @@
               </node>
             </node>
           </node>
+          <node concept="2OqwBi" id="7n4ow9NsCgx" role="ukAjM">
+            <node concept="37vLTw" id="7n4ow9NsC6k" role="2Oq$k0">
+              <ref role="3cqZAo" node="KL8Aqll5aV" resolve="project" />
+            </node>
+            <node concept="liA8E" id="7n4ow9NsCul" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+            </node>
+          </node>
         </node>
         <node concept="3clFbF" id="KL8Aqll5d$" role="3cqZAp">
           <node concept="2OqwBi" id="KL8Aqll5d_" role="3clFbG">
@@ -7331,6 +7347,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7n4ow9NsCyB" role="jymVt" />
     <node concept="3clFb_" id="KL8Aqll5eb" role="jymVt">
       <property role="TrG5h" value="tmpFile" />
       <node concept="3uibUv" id="KL8Aqll5ec" role="3clF45">
@@ -7595,6 +7612,7 @@
         <node concept="17QB3L" id="KL8Aqll5fN" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2tJIrI" id="7n4ow9NsCyC" role="jymVt" />
     <node concept="3clFb_" id="KL8Aqll5fO" role="jymVt">
       <property role="TrG5h" value="pathOfTmpFile" />
       <node concept="37vLTG" id="KL8Aqll5fP" role="3clF46">
@@ -7786,6 +7804,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7n4ow9NsCyD" role="jymVt" />
     <node concept="3clFb_" id="KL8Aqll5gZ" role="jymVt">
       <property role="TrG5h" value="getBuildServerMessageFormat" />
       <node concept="3Tm1VV" id="KL8Aqll5h0" role="1B3o_S" />
@@ -7820,6 +7839,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7n4ow9NsCyE" role="jymVt" />
     <node concept="3clFb_" id="KL8Aqll5he" role="jymVt">
       <property role="TrG5h" value="isRunningOnTeamCity" />
       <node concept="3Tm6S6" id="KL8Aqll5hf" role="1B3o_S" />
@@ -7843,6 +7863,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7n4ow9NsCyF" role="jymVt" />
     <node concept="3clFb_" id="KL8Aqll5i6" role="jymVt">
       <property role="TrG5h" value="isInvokeTestsSet" />
       <node concept="3Tm6S6" id="KL8Aqll5i7" role="1B3o_S" />
@@ -7873,6 +7894,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7n4ow9NsCyG" role="jymVt" />
     <node concept="3clFb_" id="KL8Aqll5ii" role="jymVt">
       <property role="TrG5h" value="isCompileSet" />
       <node concept="3Tm6S6" id="KL8Aqll5ij" role="1B3o_S" />
@@ -7898,6 +7920,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7n4ow9NsCyH" role="jymVt" />
     <node concept="3clFb_" id="KL8Aqll5is" role="jymVt">
       <property role="TrG5h" value="isShowDiff" />
       <node concept="3Tm6S6" id="KL8Aqll5it" role="1B3o_S" />
@@ -7923,6 +7946,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7n4ow9NsCyI" role="jymVt" />
     <node concept="3clFb_" id="KL8Aqll5iA" role="jymVt">
       <property role="TrG5h" value="showStatistic" />
       <node concept="3Tmbuc" id="KL8Aqll5iB" role="1B3o_S" />
@@ -7955,6 +7979,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="7n4ow9NsCyJ" role="jymVt" />
     <node concept="2YIFZL" id="KL8Aqll5iQ" role="jymVt">
       <property role="TrG5h" value="main" />
       <node concept="3Tm1VV" id="KL8Aqll5iR" role="1B3o_S" />
@@ -8276,6 +8301,9 @@
           <property role="TrG5h" value="msg" />
           <node concept="3uibUv" id="KL8Aqll5jp" role="1tU5fm">
             <ref role="3uigEE" to="et5u:~IMessage" resolve="IMessage" />
+          </node>
+          <node concept="2AHcQZ" id="7n4ow9NsH4y" role="2AJF6D">
+            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
           </node>
         </node>
         <node concept="3clFbS" id="KL8Aqll5jq" role="3clF47">
