@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.ShowBoundariesArea;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -40,6 +41,9 @@ public class TransformationMenuPart_Action_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_zg23bd_a");
     editorCell.setBig(true);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SHOW_BOUNDARIES_IN, 0, ShowBoundariesArea.GUTTER);
+    editorCell.getStyle().putAll(style);
     editorCell.setFoldable(true);
     editorCell.setFoldedCell(this.createCollection_zg23bd_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_zg23bd_a0(editorContext, node));
@@ -63,6 +67,7 @@ public class TransformationMenuPart_Action_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text");
     editorCell.setCellId("Constant_zg23bd_b0");
     Style style = new StyleImpl();
+    Styles_StyleSheet.apply_EditorKeyWord(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -111,6 +116,7 @@ public class TransformationMenuPart_Action_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can execute");
     editorCell.setCellId("Constant_zg23bd_d0");
     Style style = new StyleImpl();
+    Styles_StyleSheet.apply_EditorKeyWord(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
@@ -158,6 +164,7 @@ public class TransformationMenuPart_Action_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "execute");
     editorCell.setCellId("Constant_zg23bd_f0");
     Style style = new StyleImpl();
+    Styles_StyleSheet.apply_EditorKeyWord(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -266,7 +273,7 @@ public class TransformationMenuPart_Action_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createComponent_zg23bd_a0a(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor.TransformationMenuPartAlias");
     return editorCell;
   }
   private EditorCell createReadOnlyModelAccessor_zg23bd_b0a(final EditorContext editorContext, final SNode node) {

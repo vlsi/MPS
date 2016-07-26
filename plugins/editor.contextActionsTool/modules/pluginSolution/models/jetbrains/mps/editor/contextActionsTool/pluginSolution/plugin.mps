@@ -1187,30 +1187,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="6W_V$ebaWh4" role="3cqZAp">
-          <node concept="2OqwBi" id="6W_V$ebaWPg" role="3clFbG">
-            <node concept="37vLTw" id="6W_V$ebaWh2" role="2Oq$k0">
-              <ref role="3cqZAo" node="6iEw5xL2wii" resolve="viewport" />
-            </node>
-            <node concept="liA8E" id="6W_V$ebaYx1" role="2OqNvi">
-              <ref role="37wK5l" to="dxuu:~JComponent.setBackground(java.awt.Color):void" resolve="setBackground" />
-              <node concept="2ShNRf" id="6W_V$ebbDCW" role="37wK5m">
-                <node concept="1pGfFk" id="6W_V$ebbDCQ" role="2ShVmc">
-                  <ref role="37wK5l" to="z60i:~Color.&lt;init&gt;(int,int,int)" resolve="Color" />
-                  <node concept="3cmrfG" id="6W_V$ebbDE_" role="37wK5m">
-                    <property role="3cmrfH" value="238" />
-                  </node>
-                  <node concept="3cmrfG" id="6W_V$ebbE2f" role="37wK5m">
-                    <property role="3cmrfH" value="238" />
-                  </node>
-                  <node concept="3cmrfG" id="6W_V$ebbExc" role="37wK5m">
-                    <property role="3cmrfH" value="238" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="5lGdLibXOLL" role="jymVt" />

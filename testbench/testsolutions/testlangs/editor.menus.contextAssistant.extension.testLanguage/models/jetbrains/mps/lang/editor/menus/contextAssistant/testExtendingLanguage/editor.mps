@@ -22,7 +22,7 @@
         <child id="5692353713941573325" name="textFunction" index="1hCUd6" />
       </concept>
       <concept id="1630016958697718209" name="jetbrains.mps.lang.editor.structure.IMenuReference_Default" flags="ng" index="2Z_bC8">
-        <reference id="1630016958698373342" name="conceptNew" index="2ZyFGn" />
+        <reference id="1630016958698373342" name="concept" index="2ZyFGn" />
       </concept>
       <concept id="5692353713941573329" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_ActionLabelText" flags="ig" index="1hCUdq" />
       <concept id="5624877018228267058" name="jetbrains.mps.lang.editor.structure.ITransformationMenu" flags="ng" index="3INCJE">

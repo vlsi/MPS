@@ -27,7 +27,7 @@ public class SubstituteFeature_Icon_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createComponent_sxmf0o_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor.SubstituteFeatureAlias");
     return editorCell;
   }
   private EditorCell createRefNode_sxmf0o_b0(EditorContext editorContext, SNode node) {

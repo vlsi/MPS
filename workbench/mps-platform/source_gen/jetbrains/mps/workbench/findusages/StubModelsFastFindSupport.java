@@ -151,7 +151,6 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
         continue;
       }
 
-      processedConsumer.consume(sm);
       FolderSetDataSource source = ((JavaClassStubModelDescriptor) sm).getSource();
       if (!(sources.add(source))) {
         continue;
@@ -175,11 +174,16 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
       }
       for (VirtualFile vf : vFiles) {
         // do not enter any directories but one at the top level.  Java package (corresponds to model) is just a list of files under single folder,  
-        // nested folders correspond to another package 
+        // nested folder corresponds to another package 
         if (vf.isDirectory()) {
           continue;
         }
         scopeFiles.addLink(sm, vf);
+      }
+      if (!(vFiles.isEmpty())) {
+        // for stub models not backed by IDEA's VF, we shall not tell we've processed them. 
+        // Let another find participant (e.g. the slowest default that walks model) to look up usages. 
+        processedConsumer.consume(sm);
       }
     }
 

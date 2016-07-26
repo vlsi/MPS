@@ -46,13 +46,13 @@ public class NonAbstractConceptSubstituteMenuPart implements SubstituteMenuPart 
     if (smartReference != null) {
       return createSmartSubstituteMenuItems(context, smartReference);
     } else {
-      return Collections.singletonList(new DefaultSubstituteMenuItem(myConcept, context.getParentNode(), context.getCurrentChild()));
+      return Collections.singletonList(new DefaultSubstituteMenuItem(myConcept, context.getParentNode(), context.getCurrentTargetNode()));
     }
   }
 
   @NotNull
   private List<SubstituteMenuItem> createSmartSubstituteMenuItems(SubstituteMenuContext context, SReferenceLink smartReference) {
-    SNode currentChild = context.getCurrentChild();
+    SNode currentChild = context.getCurrentTargetNode();
 
     List<SubstituteMenuItem> result = new ArrayList<>();
     int index = 0;

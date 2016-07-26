@@ -27,7 +27,7 @@ public class TransformationFeature_DescriptionText_Editor extends DefaultNodeEdi
     return editorCell;
   }
   private EditorCell createComponent_828wfe_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor.TransformationFeatureAlias");
     return editorCell;
   }
   private EditorCell createRefNode_828wfe_b0(EditorContext editorContext, SNode node) {

@@ -176,7 +176,8 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
 
   @Override
   public long getModificationStamp() {
-    return getVirtualFile().getModificationStamp();
+    VirtualFile file = getVirtualFile();
+    return file != null ? file.getModificationStamp() : -1;
   }
 
   @NotNull
@@ -277,7 +278,12 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
     VirtualFile vFile = mySeparateFile != null ?
       mySeparateFile :
       myModel.getSourceVirtualFile();
-    return vFile.isValid() ? PsiManager.getInstance(getProject()).findFile(vFile) : null;
+    // TEMP FIX: Guarding vFile == null
+    // model.getSourceFile() gives us null in case model is in a jar file, because its
+    // source.getFile() returns not a virtual file, but a JarEntryFile
+    // Proper solution, i think: exclude them from indexing by MPSFQNameJavaClassIndex and the like
+    // Came here from MPSJavaClassFinder
+    return vFile != null && vFile.isValid() ? PsiManager.getInstance(getProject()).findFile(vFile) : null;
   }
 
   @Override

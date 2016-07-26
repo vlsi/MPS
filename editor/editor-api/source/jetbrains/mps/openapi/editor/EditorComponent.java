@@ -91,4 +91,9 @@ public interface EditorComponent {
   Updater getUpdater();
 
   CommandContext getCommandContext();
+
+  /**
+   * Update internal timestamp of the editor to indicate that some changes were applied to it.
+   */
+  void touch();
 }

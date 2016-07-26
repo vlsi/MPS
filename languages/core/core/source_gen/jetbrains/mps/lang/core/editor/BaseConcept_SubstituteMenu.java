@@ -41,7 +41,7 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
   public class SubstituteMenuPart_Group_s3h0kg_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return (_context.getCurrentChild() == null) || SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(_context.getCurrentChild())), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
+      return (_context.getCurrentTargetNode() == null) || SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(_context.getCurrentTargetNode())), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
     }
 
     @Override
@@ -74,13 +74,8 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
         public Item(SubstituteMenuContext context) {
-          super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), context.getParentNode(), context.getCurrentChild());
+          super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), context.getParentNode(), context.getCurrentTargetNode());
           _context = context;
-        }
-
-        @Override
-        public boolean canExecute(String pattern) {
-          return super.canExecute(pattern);
         }
 
         @Override
@@ -107,7 +102,7 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
   public class SubstituteMenuPart_Group_s3h0kg_b extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return (_context.getCurrentChild() != null) && !(SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(_context.getCurrentChild())), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")));
+      return (_context.getCurrentTargetNode() != null) && !(SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(_context.getCurrentTargetNode())), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")));
     }
 
     @Override
@@ -119,7 +114,7 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
 
     protected Collection getConcepts(SubstituteMenuContext _context) {
       List<SAbstractConcept> result = ListSequence.fromList(new ArrayList<SAbstractConcept>());
-      ListSequence.fromList(result).addElement(SNodeOperations.getConcept(_context.getCurrentChild()));
+      ListSequence.fromList(result).addElement(SNodeOperations.getConcept(_context.getCurrentTargetNode()));
       return result;
     }
 

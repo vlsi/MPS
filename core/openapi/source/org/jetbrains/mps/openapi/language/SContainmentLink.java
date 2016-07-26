@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -36,9 +37,10 @@ public interface SContainmentLink extends SAbstractLink {
    */
   boolean isUnordered();
 
-  /**
-   * Returns the declaration node in case sources for this concept are present in IDE
-   */
+  //left for compatibility with "interpreting" code
+  //use SContainmentLink in code instead
   @Nullable
+  @Deprecated
+  @ToRemove(version = 3.4)
   SNode getDeclarationNode();
 }

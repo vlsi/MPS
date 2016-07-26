@@ -225,6 +225,7 @@ public class CellTraversalUtil {
     return new CellTreeIterable(root, start, forward);
   }
 
+  @NotNull
   public static EditorCell getContainingBigCell(@NotNull EditorCell cell) {
     while (!cell.isBig() && cell.getParent() != null) {
       cell = cell.getParent();

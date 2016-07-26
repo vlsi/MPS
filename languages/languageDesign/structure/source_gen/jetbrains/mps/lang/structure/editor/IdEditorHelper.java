@@ -5,16 +5,16 @@ package jetbrains.mps.lang.structure.editor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.smodel.Generator;
 
 public class IdEditorHelper {
   public static boolean shownInEditor(SNode node) {
-    // IDs to be shown in inspector only in case it's a structure model of a language (and the node is concept's source) 
+    // IDs to be shown in editor in generator and transient models 
     SModule module = SNodeOperations.getModel(node).getModule();
-    if (!((module instanceof Language))) {
+    if (module instanceof TransientModelsModule || module instanceof Generator) {
       return true;
     }
-    return LanguageAspect.STRUCTURE.get(((Language) module)) != SNodeOperations.getModel(node);
+    return false;
   }
 }

@@ -72,28 +72,7 @@ public class CrossModelEnvironment {
    */
   @Nullable
   public ModelCheckpoints getState(@NotNull SModel model, @NotNull PlanIdentity planIdentity) {
-    ModelCheckpoints mcp = myTransientCheckpoints.get(model.getReference());
-    if (mcp != null) {
-      return mcp;
-    }
-    // XXX getCheckpointModelsFor iterates models of the module, hence needs a model read
-    //     OTOH, just a wrap with model read doesn't make sense here (models could get disposed right after the call),
-    //     so likely we shall populate myCheckpoints in constructor/dedicated method. Still, what about checkpoint model disposed *after*
-    //     I've collected all the relevant state for this class?
-    //     Not sure whether read shall be local to this class or external on constructor/initialization method
-    //     It seems to be an implementation detail that we traverse model and use its nodes to persist mapping label information (that's what we need RA for).
-    mcp = new ModelAccessHelper(myTransientModelProvider.getRepository()).runReadAction(new Computable<ModelCheckpoints>() {
-      @Override
-      public ModelCheckpoints compute() {
-        SModel[] cpModels = getCheckpointModelsFor(model);
-        if (cpModels.length == 0) {
-          return null;
-        }
-        ModelCheckpoints mcp = new ModelCheckpoints(planIdentity, cpModels);
-        myTransientCheckpoints.put(model.getReference(), mcp);
-        return mcp;
-      }
-    });
+    ModelCheckpoints mcp = getTransientCheckpoints(model.getReference(), planIdentity);
     if (mcp != null) {
       return mcp;
     }
@@ -108,18 +87,45 @@ public class CrossModelEnvironment {
     });
   }
 
-  /**
-   * look up checkpoint models in transient module
-   */
-  private SModel[] getCheckpointModelsFor(SModel model) {
-    String nameNoStereotype = model.getName().getLongName();
-    ArrayList<SModel> rv = new ArrayList<SModel>(4);
-    for (SModel m : myModule.getModels()) {
-      if (nameNoStereotype.equals(m.getName().getLongName())) {
-        rv.add(m);
+  @Nullable
+  private ModelCheckpoints getTransientCheckpoints(SModelReference originModel, PlanIdentity planIdentity) {
+    ModelCheckpoints mcp = myTransientCheckpoints.get(originModel);
+    if (mcp == null) {
+      mcp = loadFromTransientModule(originModel.getName(), planIdentity);
+      if (mcp != null) {
+        myTransientCheckpoints.put(originModel, mcp);
       }
     }
-    return rv.toArray(new SModel[rv.size()]);
+    return mcp;
+  }
+
+  /**
+   * look up checkpoint models in transient module
+   * CP models may be there if they were generated as part of the same make session or exposed there due to 'copy' of persisted model
+   * when a reference to persisted CP was resolved.
+   *
+   * both parameters are !null
+   */
+  private ModelCheckpoints loadFromTransientModule(SModelName originalModelName, PlanIdentity planIdentity) {
+    // XXX getCheckpointModelsFor iterates models of the module, hence needs a model read
+    //     OTOH, just a wrap with model read doesn't make sense here (models could get disposed right after the call),
+    //     so likely we shall populate myCheckpoints in constructor/dedicated method. Still, what about checkpoint model disposed *after*
+    //     I've collected all the relevant state for this class?
+    //     Not sure whether read shall be local to this class or external on constructor/initialization method
+    //     It seems to be an implementation detail that we traverse model and use its nodes to persist mapping label information (that's what we need RA for).
+    return new ModelAccessHelper(myTransientModelProvider.getRepository()).runReadAction(new Computable<ModelCheckpoints>() {
+      @Override
+      public ModelCheckpoints compute() {
+        String nameNoStereotype = originalModelName.getLongName();
+        ArrayList<SModel> cpModels = new ArrayList<SModel>(4);
+        for (SModel m : myModule.getModels()) {
+          if (nameNoStereotype.equals(m.getName().getLongName())) {
+            cpModels.add(m);
+          }
+        }
+        return cpModels.isEmpty() ? null : new ModelCheckpoints(planIdentity, cpModels.toArray(new SModel[cpModels.size()]));
+      }
+    });
   }
 
   /**
@@ -152,7 +158,7 @@ public class CrossModelEnvironment {
 
   public void publishCheckpoint(@NotNull SModelReference originalModel, @NotNull CheckpointState cpState) {
     myModule.addModelToKeep(cpState.getCheckpointModel().getReference(), true);
-    ModelCheckpoints checkpoints = myTransientCheckpoints.get(originalModel);
+    ModelCheckpoints checkpoints = getTransientCheckpoints(originalModel, cpState.getCheckpoint().getPlan());
     if (checkpoints == null) {
       // XXX what if there's one in persistent? Shall we copy it into transient and update with the code below?
       myTransientCheckpoints.put(originalModel, new ModelCheckpoints(cpState));

@@ -33,13 +33,8 @@ public class NamedSubstituteMenu_EmptyCell extends SubstituteMenuBase {
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       public Item(SubstituteMenuContext context) {
-        super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"), context.getParentNode(), context.getCurrentChild());
+        super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"), context.getParentNode(), context.getCurrentTargetNode());
         _context = context;
-      }
-
-      @Override
-      public boolean canExecute(String pattern) {
-        return super.canExecute(pattern);
       }
 
       @Override

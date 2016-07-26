@@ -20,7 +20,7 @@ public class SubstituteMenuPart_Subconcepts_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createComponent_dpd77e_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor.SubstituteMenuPartAlias");
     return editorCell;
   }
 }

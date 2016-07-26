@@ -1966,8 +1966,8 @@
       <node id="3229274890673749623" at="19,131,20,67" concept="7" />
       <node id="3229274890673749623" at="21,26,22,27" concept="2" />
       <node id="3229274890673749623" at="23,5,24,34" concept="7" />
-      <node id="3229274890673749623" at="24,34,25,55" concept="2" />
-      <node id="3229274890673749623" at="25,55,26,40" concept="2" />
+      <node id="3229274890673749623" at="24,34,25,66" concept="2" />
+      <node id="3229274890673749623" at="25,66,26,40" concept="2" />
       <node id="3229274890673749623" at="26,40,27,22" concept="8" />
       <node id="3229274890673749621" at="15,0,18,0" concept="6" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="3229274890673749623" at="20,67,23,5" concept="5" />

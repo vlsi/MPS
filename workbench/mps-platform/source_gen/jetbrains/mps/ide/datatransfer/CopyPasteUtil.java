@@ -143,7 +143,10 @@ public final class CopyPasteUtil {
         newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getLink(), newSourceNode, newTargetNode);
       } else {
         if (oldTargetNode != null) {
-          newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getLink(), newSourceNode, oldTargetNode.getModel().getReference(), oldTargetNode.getNodeId());
+          // model can be null in case it's generation process and the target node was removed due to in-place transformation 
+          //  see MPS-24188, this may be fixed when MPS-23902 is fixed 
+          SModel model = oldTargetNode.getModel();
+          newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getLink(), newSourceNode, (model == null ? null : model.getReference()), oldTargetNode.getNodeId());
         } else
         if (((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo() != null) {
           newReference = new StaticReference(sourceReference.getLink(), newSourceNode, null, null, ((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo());

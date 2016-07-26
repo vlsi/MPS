@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info-v2>
+<debug-info version="2">
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <root nodeRef="r:7ef5e488-ffbd-46d7-b31e-58c7f710bbdf(jetbrains.mps.idea.java)/5993361350499286549">
     <file name="Constants.java">
@@ -35,5 +35,5 @@
       <unit id="5993361350499286549" at="9,0,48,0" name="jetbrains.mps.idea.java.Constants" />
     </file>
   </root>
-</debug-info-v2>
+</debug-info>
 

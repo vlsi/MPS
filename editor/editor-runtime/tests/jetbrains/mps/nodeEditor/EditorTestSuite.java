@@ -15,7 +15,14 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.nodeEditor.assist.AncestorOrSmallCellContextAssistantFinderTest;
+import jetbrains.mps.nodeEditor.assist.CanExecuteFilterTest;
+import jetbrains.mps.nodeEditor.braces.BracesFinderTest;
+import jetbrains.mps.nodeEditor.cells.ComponentCellTest;
 import jetbrains.mps.nodeEditor.cells.ContainerTests;
+import jetbrains.mps.nodeEditor.cells.contextAssistant.ActionExecutionTest;
+import jetbrains.mps.nodeEditor.cells.contextAssistant.MenuItemListStepTest;
+import jetbrains.mps.nodeEditor.cells.contextAssistant.OverflowLayoutTest;
 import jetbrains.mps.openapi.editor.cells.traversal.CellTreeTraversalTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -25,6 +32,18 @@ import org.junit.runners.Suite;
  * Date: 28/04/16
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({CellTreeTraversalTest.class, ContainerTests.class})
+@Suite.SuiteClasses({
+    AncestorOrSmallCellContextAssistantFinderTest.class,
+    CanExecuteFilterTest.class,
+    BracesFinderTest.class,
+    ActionExecutionTest.class,
+    MenuItemListStepTest.class,
+    OverflowLayoutTest.class,
+    ComponentCellTest.class,
+    ContainerTests.class,
+    EditorSettingsTest.class,
+    GetContributionsInLanguagesTest.class,
+    CellTreeTraversalTest.class
+})
 public class EditorTestSuite {
 }

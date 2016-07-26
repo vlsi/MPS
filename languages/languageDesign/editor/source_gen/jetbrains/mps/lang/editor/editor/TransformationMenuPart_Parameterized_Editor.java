@@ -7,10 +7,11 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.ShowBoundariesArea;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -35,6 +36,9 @@ public class TransformationMenuPart_Parameterized_Editor extends DefaultNodeEdit
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_lo76ij_a");
     editorCell.setBig(true);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SHOW_BOUNDARIES_IN, 0, ShowBoundariesArea.GUTTER);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_lo76ij_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_lo76ij_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_lo76ij_c0(editorContext, node));
@@ -59,6 +63,7 @@ public class TransformationMenuPart_Parameterized_Editor extends DefaultNodeEdit
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameter type:");
     editorCell.setCellId("Constant_lo76ij_a1a");
     Style style = new StyleImpl();
+    Styles_StyleSheet.apply_EditorKeyWord(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
@@ -103,6 +108,7 @@ public class TransformationMenuPart_Parameterized_Editor extends DefaultNodeEdit
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameter values:");
     editorCell.setCellId("Constant_lo76ij_c1a");
     Style style = new StyleImpl();
+    Styles_StyleSheet.apply_EditorKeyWord(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);

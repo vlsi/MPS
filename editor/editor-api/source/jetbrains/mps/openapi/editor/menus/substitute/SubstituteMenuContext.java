@@ -39,7 +39,7 @@ public interface SubstituteMenuContext {
   SContainmentLink getLink();
 
   @Nullable
-  SNode getCurrentChild();
+  SNode getCurrentTargetNode();
   /**
    * Creates applicable menu items from the menus returned by {@code menuLookup}. If menuLookup is null, creates the default menu lookup.
    *

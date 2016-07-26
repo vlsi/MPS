@@ -113,7 +113,9 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
         final MPSFileNodeEditor editor = (MPSFileNodeEditor) fileEditor;
         if (getProjectView().isAutoscrollFromSource(ID)) {
           EditorComponent editorComponent = editor.getNodeEditor().getCurrentEditorComponent();
-          if (editorComponent == null) return;
+          if (editorComponent == null) {
+            return;
+          }
           final SNode sNode = editorComponent.getEditedNode();
           selectNodeWithoutExpansion(sNode.getReference());
         }
@@ -245,14 +247,18 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
 
   @Override
   public JComponent createComponent() {
-    if (isComponentCreated()) return myScrollPane;
+    if (isComponentCreated()) {
+      return myScrollPane;
+    }
 
     ProjectPaneTree tree = new ProjectPaneTree(this, myProject);
     Disposer.register(this, tree);
     tree.setShowStructureCondition(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        if (myProject.isDisposed()) return false;
+        if (myProject.isDisposed()) {
+          return false;
+        }
         return ProjectPane.getInstance(myProject).showNodeStructure();
       }
     });
@@ -307,15 +313,14 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     if (myTree != null) {
       myExpandedPathsRaw = ((MPSTree) myTree).getExpandedPathsRaw();
       mySelectedPathsRaw = ((MPSTree) myTree).getSelectedPathsRaw();
-    }
-    else {
+    } else {
       myExpandedPathsRaw = Collections.emptyList();
       mySelectedPathsRaw = Collections.emptyList();
     }
   }
 
   @Override
-  public void restoreExpandedPathsOverride () {
+  public void restoreExpandedPathsOverride() {
     // this gets called from the MPS's implementation of ProjectViewImpl
     // we must resort to this hack because the method in the superclass is declared private
 
@@ -347,7 +352,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   }
 
   private void writePaths(Element parentElement, List<List<String>> pathsRaw, String elementName) {
-    for (List<String> path: pathsRaw) {
+    for (List<String> path : pathsRaw) {
       Element pathElement = new Element(elementName);
       writePath(path, pathElement);
       parentElement.addContent(pathElement);
@@ -433,10 +438,14 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   }
 
   private void activatePane(@Nullable final Runnable postActivate, boolean autoFocusContents) {
+    // This method may be executed asynchronously, so checking for isDisposed first.
+    if (isDisposed()) {
+      return;
+    }
     ToolWindowManager windowManager = ToolWindowManager.getInstance(getProject());
     ToolWindow projectViewToolWindow = windowManager.getToolWindow(ToolWindowId.PROJECT_VIEW);
     //In unit test mode projectViewToolWindow == null
-    if(!ApplicationManager.getApplication().isUnitTestMode()) {
+    if (!ApplicationManager.getApplication().isUnitTestMode()) {
       projectViewToolWindow.activate(new Runnable() {
         @Override
         public void run() {

@@ -5177,19 +5177,6 @@
               </node>
             </node>
             <node concept="3clFbH" id="6f4clAe01Tf" role="3cqZAp" />
-            <node concept="3clFbF" id="6f4clAe0MuZ" role="3cqZAp">
-              <node concept="2OqwBi" id="6f4clAe0MLo" role="3clFbG">
-                <node concept="37vLTw" id="6f4clAe0MuY" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6f4clAe0z2b" resolve="processedConsumer" />
-                </node>
-                <node concept="liA8E" id="6f4clAe0Rg0" role="2OqNvi">
-                  <ref role="37wK5l" to="yyf4:~Consumer.consume(java.lang.Object):void" resolve="consume" />
-                  <node concept="37vLTw" id="6f4clAe0SFZ" role="37wK5m">
-                    <ref role="3cqZAo" node="2s2BsXxOy_T" resolve="sm" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3cpWs8" id="409DxfutSjX" role="3cqZAp">
               <node concept="3cpWsn" id="409DxfutSjY" role="3cpWs9">
                 <property role="TrG5h" value="source" />
@@ -5406,7 +5393,7 @@
                 </node>
                 <node concept="3SKdUt" id="4ItlpCE4y9q" role="3cqZAp">
                   <node concept="3SKdUq" id="4ItlpCE4y9r" role="3SKWNk">
-                    <property role="3SKdUp" value="nested folders correspond to another package" />
+                    <property role="3SKdUp" value="nested folder corresponds to another package" />
                   </node>
                 </node>
                 <node concept="3clFbJ" id="4ItlpCE4GTl" role="3cqZAp">
@@ -5447,6 +5434,43 @@
               </node>
               <node concept="37vLTw" id="4ItlpCE4$Bd" role="1DdaDG">
                 <ref role="3cqZAo" node="4ItlpCE499o" resolve="vFiles" />
+              </node>
+            </node>
+            <node concept="3clFbJ" id="6l2P17b3nZi" role="3cqZAp">
+              <node concept="3clFbS" id="6l2P17b3nZk" role="3clFbx">
+                <node concept="3SKdUt" id="6l2P17b3soy" role="3cqZAp">
+                  <node concept="3SKdUq" id="6l2P17b3so$" role="3SKWNk">
+                    <property role="3SKdUp" value="for stub models not backed by IDEA's VF, we shall not tell we've processed them." />
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="6l2P17b3sv1" role="3cqZAp">
+                  <node concept="3SKdUq" id="6l2P17b3sv3" role="3SKWNk">
+                    <property role="3SKdUp" value="Let another find participant (e.g. the slowest default that walks model) to look up usages." />
+                  </node>
+                </node>
+                <node concept="3clFbF" id="6f4clAe0MuZ" role="3cqZAp">
+                  <node concept="2OqwBi" id="6f4clAe0MLo" role="3clFbG">
+                    <node concept="37vLTw" id="6f4clAe0MuY" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6f4clAe0z2b" resolve="processedConsumer" />
+                    </node>
+                    <node concept="liA8E" id="6f4clAe0Rg0" role="2OqNvi">
+                      <ref role="37wK5l" to="yyf4:~Consumer.consume(java.lang.Object):void" resolve="consume" />
+                      <node concept="37vLTw" id="6f4clAe0SFZ" role="37wK5m">
+                        <ref role="3cqZAo" node="2s2BsXxOy_T" resolve="sm" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3fqX7Q" id="6l2P17b3saE" role="3clFbw">
+                <node concept="2OqwBi" id="6l2P17b3saG" role="3fr31v">
+                  <node concept="37vLTw" id="6l2P17b3saH" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4ItlpCE499o" resolve="vFiles" />
+                  </node>
+                  <node concept="liA8E" id="6l2P17b3saI" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~ArrayList.isEmpty():boolean" resolve="isEmpty" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.ModelGenerationPlan;
+import jetbrains.mps.generator.RigidGenerationPlan;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -25,6 +26,8 @@ import org.jetbrains.annotations.NotNull;
  * identity is needed.
  * Shall identify plan only. Though CheckpointIdentity shall know it's {@code PlanIdentity}, this class shall
  * not hold all {@klinkplain CheckpointIdentity checkpoint identities} that report it as their plan.
+ *
+ * FIXME likely plan identity shall respect modification timestamp for the plan, so that we don't use existing CP for an already modified plan
  *
  * @author Artem Tikhomirov
  * @since 3.4
@@ -37,7 +40,7 @@ public final class PlanIdentity {
   }
 
   public PlanIdentity(ModelGenerationPlan planInstance) {
-    myId = "FIXME"; // FIXME need to identify plans
+    myId = planInstance instanceof RigidGenerationPlan ? toPersistenceValue(((RigidGenerationPlan) planInstance).getName()) : "default";
   }
 
   @NotNull
@@ -53,5 +56,20 @@ public final class PlanIdentity {
   @Override
   public boolean equals(Object o) {
     return o instanceof PlanIdentity && ((PlanIdentity) o).myId.equals(myId);
+  }
+
+  /*package*/ static String toPersistenceValue(String name) {
+    final char[] rv = new char[name.length()];
+    boolean modified = false;
+    for (int i = 0; i < rv.length; i++) {
+      char c = name.charAt(i);
+      if (!Character.isLetterOrDigit(c)) {
+        modified = true;
+        rv[i] = '_';
+      } else {
+        rv[i] = c;
+      }
+    }
+    return modified ? new String(rv).toLowerCase() : name.toLowerCase();
   }
 }

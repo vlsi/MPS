@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -287,6 +287,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="6870613620390542976" name="jetbrains.mps.lang.smodel.structure.ConceptAliasOperation" flags="ng" index="3n3YKJ" />
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
@@ -495,15 +496,13 @@
       <node concept="1HfYo3" id="2wZex4PafBm" role="1HlULh">
         <node concept="3TQlhw" id="2wZex4PafBn" role="1Hhtcw">
           <node concept="3clFbS" id="2wZex4PafBo" role="2VODD2">
-            <node concept="3clFbF" id="2wZex4PafBp" role="3cqZAp">
-              <node concept="2OqwBi" id="2wZex4PafCw" role="3clFbG">
-                <node concept="2OqwBi" id="2wZex4PafBJ" role="2Oq$k0">
-                  <node concept="pncrf" id="2wZex4PafBq" role="2Oq$k0" />
-                  <node concept="3NT_Vc" id="2wZex4PafBP" role="2OqNvi" />
+            <node concept="3clFbF" id="78qF3pqaZ9v" role="3cqZAp">
+              <node concept="2OqwBi" id="78qF3pqb02d" role="3clFbG">
+                <node concept="2OqwBi" id="78qF3pqaZiM" role="2Oq$k0">
+                  <node concept="pncrf" id="78qF3pqaZ9t" role="2Oq$k0" />
+                  <node concept="2yIwOk" id="78qF3pqaZAF" role="2OqNvi" />
                 </node>
-                <node concept="3TrcHB" id="2wZex4PafCD" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
-                </node>
+                <node concept="3n3YKJ" id="78qF3pqb0x$" role="2OqNvi" />
               </node>
             </node>
           </node>
@@ -586,7 +585,7 @@
       <ref role="1ERwB7" node="5FzO4t9jA_b" resolve="BaseCommentAttribute_Actions" />
       <node concept="l2Vlx" id="43t9AOLcZPj" role="2iSdaV" />
       <node concept="3F1sOY" id="4NfTi62PfCN" role="3EZMnx">
-        <ref role="1NtTu8" to="tpck:2ETBKOyieyt" />
+        <ref role="1NtTu8" to="tpck:2ETBKOyieyt" resolve="commentedNode" />
         <ref role="1ERwB7" node="5FzO4t9jA_b" resolve="BaseCommentAttribute_Actions" />
         <node concept="2w$q5c" id="5FKjex9hEng" role="3xwHhi">
           <node concept="2aJ2om" id="5FKjex9hEnh" role="2w$qW5">
@@ -803,7 +802,7 @@
                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
                 <node concept="359W_D" id="2Jn37$FZmBN" role="37wK5m">
                   <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                  <ref role="359W_F" to="tpck:4uZwTti3__2" />
+                  <ref role="359W_F" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
                 </node>
               </node>
             </node>
@@ -863,7 +862,7 @@
                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
                 <node concept="359W_D" id="7B8ZS0iM6tI" role="37wK5m">
                   <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                  <ref role="359W_F" to="tpck:4uZwTti3__2" />
+                  <ref role="359W_F" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
                 </node>
               </node>
             </node>

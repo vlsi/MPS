@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.adapter.structure.property;
 
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
@@ -29,13 +30,16 @@ import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public final class SPropertyAdapterById extends SPropertyAdapter {
   public static final java.lang.String PROP_PREFIX = "p";
@@ -104,7 +108,17 @@ public final class SPropertyAdapterById extends SPropertyAdapter {
   }
 
   @Override
-  protected SNode findInConcept(SNode cnode) {
+  public SNode getDeclarationNode() {
+    PropertyDescriptor d = getPropertyDescriptor();
+    if (d != null) {
+      SNodeReference sn = d.getSourceNode();
+      if(sn!=null) return sn.resolve(MPSModuleRepository.getInstance());
+    }
+
+    SNode cnode = getOwner().getDeclarationNode();
+    if (cnode == null) {
+      return null;
+    }
     SModel model = cnode.getModel();
     return model.getNode(new SNodeId.Regular(myPropertyId.getIdValue()));
   }

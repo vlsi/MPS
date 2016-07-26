@@ -27,7 +27,7 @@ public class TransformationFeature_Icon_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createComponent_vgye8_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor.TransformationFeatureAlias");
     return editorCell;
   }
   private EditorCell createRefNode_vgye8_b0(EditorContext editorContext, SNode node) {
