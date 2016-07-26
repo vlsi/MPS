@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -51,7 +52,7 @@ public class LanguageAspectSupport {
     return false;
   }
 
-  public static Collection<SModel> getAspectModels(SModule language) {
+  public static Collection<SModel> getAspectModels(@NotNull SModule language) {
     assert language instanceof Language;
     //as soon as this class is API-like, it's not good to have Language parameter here as in API we work with SModule
 

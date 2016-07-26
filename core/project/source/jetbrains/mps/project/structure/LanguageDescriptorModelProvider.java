@@ -49,6 +49,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.io.ByteArrayOutputStream;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -68,7 +69,6 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
 
   private class RootChangeListener extends SNodeChangeListenerAdapter {
     private final Set<SModelReference> myListenedModels = new HashSet<SModelReference>();
-
 
     public void attach(SModule module) {
       for (SModel model : module.getModels()) {
@@ -194,7 +194,7 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
     }
   }
 
-  public LanguageModelDescriptor createModel(SModelReference ref, Language module) {
+  public LanguageModelDescriptor createModel(SModelReference ref, @NotNull Language module) {
     LanguageModelDescriptor result = new LanguageModelDescriptor(ref, module);
     result.updateGenerationLanguages();
 
@@ -221,14 +221,23 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
       myHash = null;
     }
 
-    public void updateGenerationLanguages() {
+    void updateGenerationLanguages() {
       addEngagedOnGenerationLanguage(BootstrapLanguages.getLanguageDescriptorLang());
-      for (SModel aspect : LanguageAspectSupport.getAspectModels(myModule)) {
+      boolean updated = false;
+      Collection<SModel> aspectModels = LanguageAspectSupport.getAspectModels(myModule);
+      for (SModel aspect : aspectModels) {
         for (SLanguage aspectLanguage : LanguageAspectSupport.getMainLanguages(aspect)) {
           addEngagedOnGenerationLanguage(aspectLanguage);
 
           //todo this line is a hack, fixing that the runtime solutions of languages engaged on generations are ignored at compilation
-          addLanguage(aspectLanguage);
+          getSModel().addLanguage(aspectLanguage);
+          updated = true;
+        }
+      }
+      if (updated) { // not calling validate lang versions too often
+        if (isRegistered()) {
+          assert myModule == getModule(); // lang descriptor can be only in this module
+          myModule.validateLanguageVersions();
         }
       }
     }
