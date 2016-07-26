@@ -48,6 +48,7 @@ public class SubstituteMenuReference_Default_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default substitute menu");
     editorCell.setCellId("Constant_h77kbg_a0");
     Style style = new StyleImpl();
+    Styles_StyleSheet.apply_EditorKeyWord(style, editorCell);
     style.set(StyleAttributes.NAVIGATABLE_NODE, 0, SubstituteMenuReference_Default_Editor._StyleParameter_QueryFunction_h77kbg_a0a0(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -81,6 +82,9 @@ public class SubstituteMenuReference_Default_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_h77kbg_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_h77kbg_b0");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.apply_EditorKeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

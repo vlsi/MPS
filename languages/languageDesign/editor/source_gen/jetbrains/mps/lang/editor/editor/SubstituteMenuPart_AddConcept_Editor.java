@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -22,14 +21,12 @@ public class SubstituteMenuPart_AddConcept_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_d4k5h5_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_d4k5h5_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_d4k5h5_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_d4k5h5_b0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createConstant_d4k5h5_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "add concept");
-    editorCell.setCellId("Constant_d4k5h5_a0");
-    editorCell.setDefaultText("");
+  private EditorCell createComponent_d4k5h5_a0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor.SubstituteMenuPartAlias");
     return editorCell;
   }
   private EditorCell createRefCell_d4k5h5_b0(EditorContext editorContext, SNode node) {

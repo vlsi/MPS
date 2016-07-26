@@ -27,7 +27,7 @@ public class SubstituteMenuPart_IncludeMenu_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createComponent_gc3frg_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor.SubstituteMenuPartAlias");
     return editorCell;
   }
   private EditorCell createRefNode_gc3frg_b0(EditorContext editorContext, SNode node) {
