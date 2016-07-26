@@ -16,17 +16,31 @@
 package jetbrains.mps.progress;
 
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.MessageType;
+import com.intellij.openapi.wm.IdeFrame;
+import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.wm.ex.StatusBarEx;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Evgeny Gryaznov, 9/30/11
  */
-public class ProgressMonitorAdapter extends ProgressMonitorBase {
-
+public class ProgressMonitorAdapter extends ProgressMonitorBase implements ProgressWithNotifications {
   private final ProgressIndicator myIndicator;
 
+  @Nullable
+  private final Project myProject;
+
   public ProgressMonitorAdapter(ProgressIndicator indicator) {
+    this(indicator, null);
+  }
+
+  public ProgressMonitorAdapter(ProgressIndicator indicator, @Nullable Project p) {
     myIndicator = indicator;
+    myProject = p;
   }
 
   @Override
@@ -74,5 +88,19 @@ public class ProgressMonitorAdapter extends ProgressMonitorBase {
   @Override
   public void cancel() {
     myIndicator.cancel();
+  }
+
+  @Override
+  public void showNotification(String s) {
+    if (myProject == null) {
+      return;
+    }
+    UIUtil.invokeLaterIfNeeded(() -> {
+      final IdeFrame ideFrame = WindowManager.getInstance().getIdeFrame(myProject);
+      if (ideFrame != null) {
+        StatusBarEx statusBar = (StatusBarEx) ideFrame.getStatusBar();
+        statusBar.notifyProgressByBalloon(MessageType.WARNING, s, null, null);
+      }
+    });
   }
 }
