@@ -125,7 +125,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     }
   };
   private Set<ComponentCreationListener> myComponentCreationListeners;
-  private static boolean ourShowGenStatus = true;
   private List<List<String>> myExpandedPathsRaw = Collections.emptyList();
   private List<List<String>> mySelectedPathsRaw = Collections.emptyList();
   private MessageBusConnection myConnection;
@@ -544,17 +543,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     if (myComponentCreationListeners.isEmpty()) {
       myComponentCreationListeners = null;
     }
-  }
-
-  //---gen status---
-
-  public static void setShowGenStatus(boolean showGenStatusInTree) {
-    ourShowGenStatus = showGenStatusInTree;
-  }
-
-  // FIXME - wtf? legacy? no PerformanceSettings any longer, shall remove?
-  public static boolean isShowGenStatus() {
-    return ourShowGenStatus;
   }
 
   public boolean isDescriptorModelInGeneratorVisible() {
