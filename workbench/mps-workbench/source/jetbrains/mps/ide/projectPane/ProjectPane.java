@@ -79,9 +79,7 @@ import javax.swing.JComponent;
 import java.awt.Component;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @State(
     name = "MPSProjectPane",
@@ -124,7 +122,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
       }
     }
   };
-  private Set<ComponentCreationListener> myComponentCreationListeners;
   private List<List<String>> myExpandedPathsRaw = Collections.emptyList();
   private List<List<String>> mySelectedPathsRaw = Collections.emptyList();
   private MessageBusConnection myConnection;
@@ -266,7 +263,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
       rebuild();
     }
     TreeHighlighterExtension.attachHighlighters(tree, myProject);
-    fireComponentCreated();
     return myScrollPane;
   }
 
@@ -518,33 +514,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     return createFindHelper().findNextTreeNode(node);
   }
 
-  private void fireComponentCreated() {
-    if (myComponentCreationListeners == null) {
-      return;
-    }
-    for (ComponentCreationListener l : myComponentCreationListeners.toArray(new ComponentCreationListener[myComponentCreationListeners.size()])) {
-      l.componentCreated(this);
-    }
-  }
-
-  // FIXME unused code, drop?
-  public void addComponentCreationListener(@NotNull ComponentCreationListener l) {
-    if (myComponentCreationListeners == null) {
-      myComponentCreationListeners = new HashSet();
-    }
-    myComponentCreationListeners.add(l);
-  }
-
-  public void removeComponentCreationListener(@NotNull ComponentCreationListener l) {
-    if (myComponentCreationListeners == null) {
-      return;
-    }
-    myComponentCreationListeners.remove(l);
-    if (myComponentCreationListeners.isEmpty()) {
-      myComponentCreationListeners = null;
-    }
-  }
-
   public boolean isDescriptorModelInGeneratorVisible() {
     return myShowDescriptorModelsAction.isSelected();
   }
@@ -566,10 +535,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     public Object getData(@NonNls String dataId) {
       return ProjectPane.this.getData(dataId);
     }
-  }
-
-  public interface ComponentCreationListener {
-    void componentCreated(ProjectPane projectPane);
   }
 
   private enum UpdateID {
