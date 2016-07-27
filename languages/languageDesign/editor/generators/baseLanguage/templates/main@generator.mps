@@ -34940,7 +34940,6 @@
           <ref role="3uigEE" to="78sh:~SubstituteMenuContext" resolve="SubstituteMenuContext" />
         </node>
       </node>
-      <node concept="2tJIrI" id="2uBUyS1qkBk" role="jymVt" />
       <node concept="3clFb_" id="2uBUyS1qm18" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="getConcepts" />
@@ -34981,7 +34980,6 @@
           </node>
         </node>
       </node>
-      <node concept="2tJIrI" id="3no4VMf75ho" role="jymVt" />
       <node concept="3clFb_" id="3no4VMf75CL" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="createItemsForConcept" />
@@ -35011,14 +35009,14 @@
             <node concept="2OqwBi" id="6h2HJsdZbj8" role="3clFbG">
               <node concept="2ShNRf" id="6h2HJsdYL33" role="2Oq$k0">
                 <node concept="1pGfFk" id="6h2HJsdZaQN" role="2ShVmc">
-                  <ref role="37wK5l" to="qtqj:~DefaultConceptSubstituteMenuPart.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept)" resolve="DefaultConceptSubstituteMenuPart" />
+                  <ref role="37wK5l" to="qtqj:~SimpleConceptSubstituteMenuPart.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept)" resolve="SimpleConceptSubstituteMenuPart" />
                   <node concept="37vLTw" id="6h2HJsdZb1I" role="37wK5m">
                     <ref role="3cqZAo" node="3no4VMf75CS" resolve="concept" />
                   </node>
                 </node>
               </node>
               <node concept="liA8E" id="6h2HJsdZbIV" role="2OqNvi">
-                <ref role="37wK5l" to="qtqj:~DefaultConceptSubstituteMenuPart.createItems(jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext):java.util.List" resolve="createItems" />
+                <ref role="37wK5l" to="qtqj:~SimpleConceptSubstituteMenuPart.createItems(jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext):java.util.List" resolve="createItems" />
                 <node concept="37vLTw" id="6h2HJsdZbY7" role="37wK5m">
                   <ref role="3cqZAo" node="3no4VMf75CQ" resolve="context" />
                 </node>
@@ -35542,7 +35540,7 @@
       <node concept="gft3U" id="59fc3qdB$d9" role="1lVwrX">
         <node concept="2ShNRf" id="59fc3qdB$da" role="gfFT$">
           <node concept="1pGfFk" id="59fc3qdB$db" role="2ShVmc">
-            <ref role="37wK5l" to="qtqj:~DefaultConceptSubstituteMenuPart.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept)" resolve="DefaultConceptSubstituteMenuPart" />
+            <ref role="37wK5l" to="qtqj:~SimpleConceptSubstituteMenuPart.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept)" resolve="SimpleConceptSubstituteMenuPart" />
             <node concept="35c_gC" id="59fc3qdB$HM" role="37wK5m">
               <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
               <node concept="1ZhdrF" id="59fc3qdB$LX" role="lGtFl">

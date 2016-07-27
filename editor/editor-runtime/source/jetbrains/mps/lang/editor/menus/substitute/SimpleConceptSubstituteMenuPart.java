@@ -17,10 +17,12 @@ package jetbrains.mps.lang.editor.menus.substitute;
 
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -32,11 +34,15 @@ import java.util.List;
 /**
  * @author simon
  */
-public class NonAbstractConceptSubstituteMenuPart implements SubstituteMenuPart {
+public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
   private SConcept myConcept;
 
-  public NonAbstractConceptSubstituteMenuPart(SConcept concept) {
-    myConcept = concept;
+  public SimpleConceptSubstituteMenuPart(SAbstractConcept concept) {
+    if (concept instanceof SConcept) {
+      myConcept = ((SConcept) concept);
+    } else {
+      myConcept = MetaAdapterByDeclaration.asInstanceConcept(concept);
+    }
   }
 
   @NotNull
