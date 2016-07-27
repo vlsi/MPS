@@ -126,6 +126,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     synchronized (myLoadersDeltaLock) {
       LOG.debug("Unregistering the " + loader);
       myLoaderDelta.unload(Collections.singleton(loader));
+      scheduleUpdate(); // fixme hack to schedule on project closing. appropriate classloading events will do in the next release
     }
   }
 
