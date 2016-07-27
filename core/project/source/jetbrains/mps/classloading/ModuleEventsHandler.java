@@ -117,6 +117,14 @@ class ModuleEventsHandler implements SRepositoryBatchListener {
     if (modulesToUpdate.size() > 0) updateModules(modulesToUpdate);
   }
 
+  public void pause() {
+    myDispatcher.pause();
+  }
+
+  public void proceed() {
+    myDispatcher.proceed();
+  }
+
   private class MyModuleEventVisitor implements SModuleEventVisitor {
     private final Set<ReloadableModuleBase> myModulesToUpdate = new LinkedHashSet<ReloadableModuleBase>();
     private final Set<ReloadableModuleBase> myModulesToLoad = new LinkedHashSet<ReloadableModuleBase>();

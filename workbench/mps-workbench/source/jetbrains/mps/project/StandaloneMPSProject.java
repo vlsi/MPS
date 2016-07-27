@@ -18,6 +18,7 @@ package jetbrains.mps.project;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.project.ModulePath;
@@ -105,20 +106,6 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     dispose();
   }
 
-
-  @Override
-  public void projectOpened() {
-    LOG.info("Project '" + getName() + "' is opened");
-    update();
-    super.projectOpened();
-  }
-
-  @Override
-  public void projectClosed() {
-    LOG.info("Project '" + getName() + "' is closing");
-    super.projectClosed();
-  }
-
   @NotNull
   public List<ModulePath> getAllModulePaths() {
     return Collections.unmodifiableList(myProjectDescriptor.getModulePaths());
@@ -140,7 +127,9 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
 
   // AP fixme : public update exposes the project internals too much (as it looks for me)
   public final void update() {
+    ProgressManager.getInstance().getProgressIndicator().setText2("Loading Project Modules");
     super.update();
+    ProgressManager.getInstance().getProgressIndicator().setText2("");
   }
 
   // AP: fixme these two methods are working with the UI virtual paths; I want them to be extracted somewhere else

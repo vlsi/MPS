@@ -247,7 +247,6 @@ public class PluginLoaderRegistry implements ApplicationComponent {
       moduleDelta = new Delta<>(myDelta);
       myDelta.clear();
     }
-    myDirtyFlag.set(false);
 
     if (loadersDelta.isEmpty() && moduleDelta.isEmpty()) {
       LOG.debug("Nothing to do in update");
@@ -264,6 +263,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     assert !myTaskInProgress.get();
     UpdatingTask task = new UpdatingTask(null, loadersDelta, contributorDelta);
     runTask(task, getIndicator(monitor));
+    myDirtyFlag.set(false);
   }
 
   /**
@@ -355,15 +355,10 @@ public class PluginLoaderRegistry implements ApplicationComponent {
   private void scheduleUpdate(ProgressMonitor monitor) {
     if (myDirtyFlag.compareAndSet(false, true)) {
       Application application = ApplicationManager.getApplication();
-      ProgressIndicator indicator = getIndicator(monitor);
       if (ThreadUtils.isInEDT() && !application.isDisposed()) {
         update(monitor);
       } else {
-        if (indicator != null) {
-          application.invokeLater(() -> update(monitor), indicator.getModalityState(), application.getDisposed()); // already have indicator
-        } else {
-          application.invokeLater(() -> update(monitor), ModalityState.NON_MODAL, application.getDisposed()); // will have a new one
-        }
+        application.invokeLater(() -> update(monitor), ModalityState.NON_MODAL, application.getDisposed());
       }
     }
   }
