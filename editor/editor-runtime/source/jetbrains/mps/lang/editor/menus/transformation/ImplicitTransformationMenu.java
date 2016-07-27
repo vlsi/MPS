@@ -25,10 +25,11 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @author simon
+ * A hard-coded menu that is used when the language designer has not defined the default transformation menu for a concept. This is basically the "default
+ * default" menu.
  */
-public class DefaultConceptTransformationMenu extends TransformationMenuBase {
-  public DefaultConceptTransformationMenu(SAbstractConcept concept) {
+public class ImplicitTransformationMenu extends TransformationMenuBase {
+  public ImplicitTransformationMenu(SAbstractConcept concept) {
     myConcept = concept;
   }
 

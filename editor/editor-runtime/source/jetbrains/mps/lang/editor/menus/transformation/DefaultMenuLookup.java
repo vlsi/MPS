@@ -70,7 +70,7 @@ public abstract class DefaultMenuLookup<T extends Menu> implements MenuLookup<T>
     Collection<T> conceptMenu = new ArrayList<>();
     conceptMenu.addAll(getForConcept(usedLanguages));
     if (conceptMenu.stream().allMatch(Menu::isContribution)) {
-      conceptMenu.add(createDefaultMenu());
+      conceptMenu.add(createImplicitMenu());
     }
     return conceptMenu;
   }
@@ -84,7 +84,7 @@ public abstract class DefaultMenuLookup<T extends Menu> implements MenuLookup<T>
     return getForAspectDescriptor(aspectDescriptor, usedLanguages);
   }
   @NotNull
-  protected abstract T createDefaultMenu();
+  protected abstract T createImplicitMenu();
 
   @NotNull
   protected SAbstractConcept getConcept() {

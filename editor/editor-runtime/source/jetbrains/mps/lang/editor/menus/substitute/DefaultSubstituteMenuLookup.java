@@ -36,8 +36,8 @@ public class DefaultSubstituteMenuLookup extends DefaultMenuLookup<SubstituteMen
 
   @NotNull
   @Override
-  protected SubstituteMenu createDefaultMenu() {
-    return new DefaultConceptSubstituteMenu(getConcept());
+  protected SubstituteMenu createImplicitMenu() {
+    return new ImplicitSubstituteMenu(getConcept());
   }
 
   @Override

@@ -25,12 +25,13 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @author simon
+ * A hard-coded menu that is used when the language designer has not defined the default substitute menu for a concept. This is basically the "default default"
+ * menu.
  */
-public class DefaultConceptSubstituteMenu extends SubstituteMenuBase {
+public class ImplicitSubstituteMenu extends SubstituteMenuBase {
   private final SAbstractConcept myConcept;
 
-  public DefaultConceptSubstituteMenu(SAbstractConcept concept) {
+  public ImplicitSubstituteMenu(SAbstractConcept concept) {
     myConcept = concept;
   }
 
