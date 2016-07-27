@@ -2626,6 +2626,7 @@
         <node concept="10P_77" id="1OS8OtPz6xW" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8mrS_" role="jymVt" />
     <node concept="3clFb_" id="7YINie3rlti" role="jymVt">
       <property role="TrG5h" value="init" />
       <property role="od$2w" value="true" />
@@ -2783,6 +2784,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8mrSA" role="jymVt" />
     <node concept="3clFb_" id="7YINie3rltm" role="jymVt">
       <property role="TrG5h" value="dispose" />
       <property role="od$2w" value="true" />
@@ -2969,6 +2971,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8mrSB" role="jymVt" />
     <node concept="3clFb_" id="42ljTcHmicm" role="jymVt">
       <property role="TrG5h" value="registerNode" />
       <node concept="37vLTG" id="42ljTcHmicr" role="3clF46">
@@ -3114,6 +3117,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8mrSC" role="jymVt" />
     <node concept="3clFb_" id="42ljTcHmtFV" role="jymVt">
       <property role="TrG5h" value="unregisterNode" />
       <node concept="37vLTG" id="42ljTcHmtFW" role="3clF46">
@@ -3248,6 +3252,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8mrSD" role="jymVt" />
     <node concept="3clFb_" id="42ljTcHmtGr" role="jymVt">
       <property role="TrG5h" value="unhighlightNode" />
       <node concept="3cqZAl" id="42ljTcHmtGs" role="3clF45" />
@@ -3292,6 +3297,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8mrSE" role="jymVt" />
     <node concept="3clFb_" id="42ljTcHmtGI" role="jymVt">
       <property role="TrG5h" value="rehighlightNode" />
       <node concept="37vLTG" id="42ljTcHmtGN" role="3clF46">
@@ -3652,6 +3658,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8mrSF" role="jymVt" />
     <node concept="3clFb_" id="4Ji_XZ8cN4c" role="jymVt">
       <property role="TrG5h" value="updatePresentation" />
       <node concept="3cqZAl" id="4Ji_XZ8cN4e" role="3clF45" />
@@ -3699,6 +3706,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8mrSG" role="jymVt" />
     <node concept="3clFb_" id="42ljTcHmz4F" role="jymVt">
       <property role="TrG5h" value="rehighlightFeature" />
       <node concept="37vLTG" id="42ljTcHmz4I" role="3clF46">
@@ -3807,6 +3815,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8mrSH" role="jymVt" />
     <node concept="3clFb_" id="7del55aioUB" role="jymVt">
       <property role="TrG5h" value="rehighlightFeatureAndDescendants" />
       <node concept="37vLTG" id="7del55aioUC" role="3clF46">
@@ -4139,6 +4148,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8mrSI" role="jymVt" />
     <node concept="3clFb_" id="1_HLebvi3xA" role="jymVt">
       <property role="TrG5h" value="rehighlightAllFeaturesNow" />
       <node concept="3Tm6S6" id="5c44EO9cxyj" role="1B3o_S" />
@@ -4283,6 +4293,7 @@
         <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8mrSJ" role="jymVt" />
     <node concept="3clFb_" id="42ljTcHmnwO" role="jymVt">
       <property role="TrG5h" value="getMessage" />
       <node concept="3uibUv" id="42ljTcHmnwP" role="3clF45">
@@ -4460,6 +4471,7 @@
         <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8mrSK" role="jymVt" />
     <node concept="3clFb_" id="2LHDMAS8k19" role="jymVt">
       <property role="TrG5h" value="getMessage" />
       <node concept="3uibUv" id="2LHDMAS8k1a" role="3clF45">
@@ -4520,6 +4532,7 @@
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8mrSL" role="jymVt" />
     <node concept="2YIFZL" id="2LHDMAS8k36" role="jymVt">
       <property role="TrG5h" value="getModelFileStatus" />
       <node concept="37vLTG" id="2LHDMAS8k3d" role="3clF46">
@@ -4642,17 +4655,58 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="2LHDMAS8k3n" role="3cqZAp">
-          <node concept="3cpWsn" id="2LHDMAS8k3o" role="3cpWs9">
+        <node concept="3clFbJ" id="15yHJj8kkoW" role="3cqZAp">
+          <node concept="3clFbS" id="15yHJj8kkoY" role="3clFbx">
+            <node concept="34ab3g" id="15yHJj8kulj" role="3cqZAp">
+              <property role="35gtTG" value="warn" />
+              <node concept="3cpWs3" id="15yHJj8kvsr" role="34bqiv">
+                <node concept="Xl_RD" id="15yHJj8kvvr" role="3uHU7w">
+                  <property role="Xl_RC" value=" must be a project file and managed by IDEA FS" />
+                </node>
+                <node concept="3cpWs3" id="15yHJj8kv8T" role="3uHU7B">
+                  <node concept="Xl_RD" id="15yHJj8kull" role="3uHU7B">
+                    <property role="Xl_RC" value="File " />
+                  </node>
+                  <node concept="37vLTw" id="15yHJj8kvbX" role="3uHU7w">
+                    <ref role="3cqZAo" node="5NMENJ_TH0b" resolve="file" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="15yHJj8kwm0" role="3cqZAp">
+              <node concept="10Nm6u" id="15yHJj8m_sL" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="15yHJj8kp78" role="3clFbw">
+            <node concept="2ZW3vV" id="15yHJj8ku0F" role="3fr31v">
+              <node concept="3uibUv" id="15yHJj8kuho" role="2ZW6by">
+                <ref role="3uigEE" to="4hrd:~IdeaFile" resolve="IdeaFile" />
+              </node>
+              <node concept="37vLTw" id="15yHJj8kpa9" role="2ZW6bz">
+                <ref role="3cqZAo" node="5NMENJ_TH0b" resolve="file" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2LgKyNJ9sdf" role="3cqZAp">
+          <node concept="3cpWsn" id="2LgKyNJ9sdg" role="3cpWs9">
             <property role="TrG5h" value="vf" />
-            <node concept="3uibUv" id="2LHDMAS8k3p" role="1tU5fm">
+            <node concept="3uibUv" id="2LgKyNJ9sdh" role="1tU5fm">
               <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
             </node>
-            <node concept="2YIFZM" id="2LHDMAS8k3q" role="33vP2m">
-              <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
-              <ref role="37wK5l" to="4hrd:~VirtualFileUtils.getVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolve="getVirtualFile" />
-              <node concept="37vLTw" id="5NMENJ_TXK8" role="37wK5m">
-                <ref role="3cqZAo" node="5NMENJ_TH0b" resolve="file" />
+            <node concept="2OqwBi" id="15yHJj8l86J" role="33vP2m">
+              <node concept="1eOMI4" id="15yHJj8l4ie" role="2Oq$k0">
+                <node concept="10QFUN" id="15yHJj8kQWV" role="1eOMHV">
+                  <node concept="3uibUv" id="15yHJj8kVvM" role="10QFUM">
+                    <ref role="3uigEE" to="4hrd:~IdeaFile" resolve="IdeaFile" />
+                  </node>
+                  <node concept="37vLTw" id="15yHJj8kGHw" role="10QFUP">
+                    <ref role="3cqZAo" node="5NMENJ_TH0b" resolve="file" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="15yHJj8ld7z" role="2OqNvi">
+                <ref role="37wK5l" to="4hrd:~IdeaFile.getVirtualFile():com.intellij.openapi.vfs.VirtualFile" resolve="getVirtualFile" />
               </node>
             </node>
           </node>
@@ -4663,7 +4717,7 @@
             <node concept="3clFbC" id="6vuHjJCseY9" role="3K4Cdx">
               <node concept="10Nm6u" id="6vuHjJCseYc" role="3uHU7w" />
               <node concept="37vLTw" id="3GM_nagTyUE" role="3uHU7B">
-                <ref role="3cqZAo" node="2LHDMAS8k3o" resolve="vf" />
+                <ref role="3cqZAo" node="2LgKyNJ9sdg" resolve="vf" />
               </node>
             </node>
             <node concept="2OqwBi" id="6vuHjJCseYi" role="3K4GZi">
@@ -4677,7 +4731,7 @@
               <node concept="liA8E" id="6vuHjJCseYl" role="2OqNvi">
                 <ref role="37wK5l" to="jlcu:~FileStatusManager.getStatus(com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vcs.FileStatus" resolve="getStatus" />
                 <node concept="37vLTw" id="3GM_nagTrwr" role="37wK5m">
-                  <ref role="3cqZAo" node="2LHDMAS8k3o" resolve="vf" />
+                  <ref role="3cqZAo" node="2LgKyNJ9sdg" resolve="vf" />
                 </node>
               </node>
             </node>
@@ -4688,6 +4742,7 @@
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8mIJk" role="jymVt" />
     <node concept="312cEu" id="7YINie3rlt$" role="jymVt">
       <property role="TrG5h" value="MyTreeNodeListener" />
       <property role="2bfB8j" value="true" />
