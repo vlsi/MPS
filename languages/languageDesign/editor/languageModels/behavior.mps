@@ -208,7 +208,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -20908,6 +20908,101 @@
     </node>
     <node concept="13hLZK" id="u0TBa493nz" role="13h7CW">
       <node concept="3clFbS" id="u0TBa493n$" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="5EbKzCm7lqw">
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <ref role="13h7C2" to="tpc2:n0c53aH5hF" resolve="SubstituteMenuPart_Group" />
+    <node concept="13i0hz" id="5EbKzCm7lL8" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="TrG5h" value="getScope" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
+      <node concept="3Tm1VV" id="5EbKzCm7lL9" role="1B3o_S" />
+      <node concept="3clFbS" id="5EbKzCm7lLa" role="3clF47">
+        <node concept="3clFbJ" id="5EbKzCm7lLb" role="3cqZAp">
+          <node concept="3clFbS" id="5EbKzCm7lLc" role="3clFbx">
+            <node concept="3SKdUt" id="5EbKzCm7lLd" role="3cqZAp">
+              <node concept="3SKdUq" id="5EbKzCm7lLe" role="3SKWNk">
+                <property role="3SKdUp" value="For simplicity this does not take into account the position of the child, so variables declared earlier may" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="5EbKzCm7lLf" role="3cqZAp">
+              <node concept="3SKdUq" id="5EbKzCm7lLg" role="3SKWNk">
+                <property role="3SKdUp" value="(incorrectly) reference variables declared later." />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="5EbKzCm7lLh" role="3cqZAp">
+              <node concept="2ShNRf" id="5EbKzCm7lLi" role="3cqZAk">
+                <node concept="1pGfFk" id="5EbKzCm7lLj" role="2ShVmc">
+                  <ref role="37wK5l" to="6xgk:6Kqn2fZxA8P" resolve="HidingByNameScope" />
+                  <node concept="35c_gC" id="5EbKzCm7lLk" role="37wK5m">
+                    <ref role="35c_gD" to="tpc2:u0TBa40TxV" resolve="SubstituteMenuVariableDeclaration" />
+                  </node>
+                  <node concept="2OqwBi" id="5EbKzCm7lLl" role="37wK5m">
+                    <node concept="37vLTw" id="5EbKzCm7lLm" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5EbKzCm7lLC" resolve="kind" />
+                    </node>
+                    <node concept="1rGIog" id="5EbKzCm7lLn" role="2OqNvi" />
+                  </node>
+                  <node concept="2ShNRf" id="5EbKzCm7lLo" role="37wK5m">
+                    <node concept="1pGfFk" id="5EbKzCm7lLp" role="2ShVmc">
+                      <ref role="37wK5l" to="6xgk:7lHSllLpTWM" resolve="NamedElementsScope" />
+                      <node concept="2OqwBi" id="5EbKzCm7lLq" role="37wK5m">
+                        <node concept="13iPFW" id="5EbKzCm7lLr" role="2Oq$k0" />
+                        <node concept="3Tsc0h" id="5EbKzCm7mC8" role="2OqNvi">
+                          <ref role="3TtcxE" to="tpc2:u0TBa493ex" resolve="variables" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="iy90A" id="5EbKzCm7lLt" role="37wK5m" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="5EbKzCm7lLu" role="3clFbw">
+            <node concept="37vLTw" id="5EbKzCm7lLv" role="2Oq$k0">
+              <ref role="3cqZAo" node="5EbKzCm7lLC" resolve="kind" />
+            </node>
+            <node concept="2Zo12i" id="5EbKzCm7lLw" role="2OqNvi">
+              <node concept="chp4Y" id="5EbKzCm7mbh" role="2Zo12j">
+                <ref role="cht4Q" to="tpc2:u0TBa40TxV" resolve="SubstituteMenuVariableDeclaration" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5EbKzCm7lLy" role="3cqZAp">
+          <node concept="2OqwBi" id="5EbKzCm7lLz" role="3cqZAk">
+            <node concept="13iAh5" id="5EbKzCm7lL$" role="2Oq$k0">
+              <ref role="3eA5LN" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+            </node>
+            <node concept="2qgKlT" id="5EbKzCm7lL_" role="2OqNvi">
+              <ref role="37wK5l" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
+              <node concept="37vLTw" id="5EbKzCm7lLA" role="37wK5m">
+                <ref role="3cqZAo" node="5EbKzCm7lLC" resolve="kind" />
+              </node>
+              <node concept="37vLTw" id="5EbKzCm7lLB" role="37wK5m">
+                <ref role="3cqZAo" node="5EbKzCm7lLE" resolve="child" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="5EbKzCm7lLC" role="3clF46">
+        <property role="TrG5h" value="kind" />
+        <node concept="3THzug" id="5EbKzCm7lLD" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="5EbKzCm7lLE" role="3clF46">
+        <property role="TrG5h" value="child" />
+        <node concept="3Tqbb2" id="5EbKzCm7lLF" role="1tU5fm" />
+      </node>
+      <node concept="3uibUv" id="5EbKzCm7lLG" role="3clF45">
+        <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
+      </node>
+    </node>
+    <node concept="13hLZK" id="5EbKzCm7lqx" role="13h7CW">
+      <node concept="3clFbS" id="5EbKzCm7lqy" role="2VODD2" />
     </node>
   </node>
 </model>
