@@ -5809,7 +5809,7 @@
     <property role="EcuMT" value="6684862045052059291" />
     <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenuPart_Wrapper" />
-    <property role="34LRSv" value="wrapper" />
+    <property role="34LRSv" value="wrap substitute menu" />
     <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
     <node concept="1TJgyj" id="5N5pDMJVmTc" role="1TKVEi">
       <property role="IQ2ns" value="6684862045053873740" />
