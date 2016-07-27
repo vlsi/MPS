@@ -31,9 +31,9 @@ public abstract class SearchType<T, R> {
 
   public abstract Set<T> search(Set<R> elements, SearchScope scope, @NotNull ProgressMonitor monitor);
 
-  protected void showNoFastFindTipIfNeeded(@NotNull ProgressMonitor monitor, Collection<SModel> noFastFindModels) {
-    HashSet<SModel> notEmptyNoFastFindModels=new HashSet<>();
-    for (SModel m:noFastFindModels){
+  void showNoFastFindTipIfNeeded(@NotNull ProgressMonitor monitor, Collection<SModel> noFastFindModels) {
+    Set<SModel> notEmptyNoFastFindModels = new HashSet<>();
+    for (SModel m : noFastFindModels){
       if (m.getRootNodes().iterator().hasNext()){
         notEmptyNoFastFindModels.add(m);
       }
@@ -45,7 +45,7 @@ public abstract class SearchType<T, R> {
 
     int othersSize = notEmptyNoFastFindModels.size() - 1;
     String others = othersSize == 0 ? "" : " and " + othersSize + " others";
-    LOG.warn("Fast usages search not supported for model " + notEmptyNoFastFindModels.iterator().next().getName() + others + ". " +
+    LOG.warn("Fast usages search is not supported for model " + notEmptyNoFastFindModels.iterator().next().getName() + others + ". " +
         "Usages search may be slow.");
   }
 }

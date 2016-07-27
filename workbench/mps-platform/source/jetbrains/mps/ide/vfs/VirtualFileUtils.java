@@ -20,25 +20,55 @@ import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.util.Processor;
+import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemExtPoint;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.impl.IoFileSystem;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 
-public class VirtualFileUtils {
+public final class VirtualFileUtils {
+  private static final Logger LOG = LogManager.getLogger(VirtualFileUtils.class);
+
+  private VirtualFileUtils() {
+  }
+
   @Nullable
   public static VirtualFile getVirtualFile(String path) {
     return getVirtualFile(FileSystem.getInstance().getFileByPath(path));
   }
 
+  @Deprecated
   @Nullable
   public static VirtualFile getVirtualFile(IFile file) {
     if (file instanceof IdeaFile) {
       return ((IdeaFile) file).getVirtualFile();
     } else {
+//      org.apache.log4j.LogManager.getLogger(VirtualFileUtils.class).error("VFILE IS NULL" + file, new Throwable());
       return null;
     }
+  }
+
+  @Hack
+  @Deprecated
+  @ToRemove(version = 3.4)
+  public static VirtualFile getOrCreateVirtualFile(IFile file) {
+    if (file.getFileSystem() instanceof IoFileSystem) {
+      file = FileSystemExtPoint.getFS().getFile(file.getPath());
+      if (file instanceof IdeaFile) {
+        return ((IdeaFile) file).getVirtualFile();
+      }
+    } else if (file instanceof IdeaFile) {
+      return ((IdeaFile) file).getVirtualFile();
+    } else {
+      LOG.warn("Unknown file " + file);
+    }
+    return null;
   }
 
   public static IFile toIFile(VirtualFile f) {

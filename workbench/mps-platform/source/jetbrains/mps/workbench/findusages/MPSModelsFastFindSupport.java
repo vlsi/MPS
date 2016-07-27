@@ -139,7 +139,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
           continue;
         }
 
-        VirtualFile vf = VirtualFileUtils.getVirtualFile(modelFile);
+        VirtualFile vf = VirtualFileUtils.getOrCreateVirtualFile(modelFile);
         if (vf == null) {
           LogManager.getLogger(MPSModelsFastFindSupport.class).warn(
               String.format("Model %s: virtual file not found for model file. Model file: %s", sm.getName(), modelFile.getPath()));
