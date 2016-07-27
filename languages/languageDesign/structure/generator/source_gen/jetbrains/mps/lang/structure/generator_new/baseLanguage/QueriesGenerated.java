@@ -238,7 +238,7 @@ public class QueriesGenerated {
     return ((SNode) _context.getVariable("var:link"));
   }
   public static Object referenceMacro_GetReferent_1444496069594597883(final ReferenceMacroContext _context) {
-    return _context.getNode();
+    return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }
   public static Object referenceMacro_GetReferent_1444496069594581168(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "conceptPropFieldDecl");
