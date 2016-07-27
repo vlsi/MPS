@@ -61,11 +61,7 @@ public class ClassesGenPolicy extends BaseDirectoryIndexExcludePolicy {
             continue;
           }
 
-          if (!(classesGen instanceof IdeaFile)) {
-            LogManager.getLogger(ClassesGenPolicy.class).warn("classes_gen dir " + classesGen + " is supposed to be in project and tracked by Idea FS");
-            continue;
-          }
-          VirtualFile classesGenVF = ((IdeaFile) classesGen).getVirtualFile();
+          VirtualFile classesGenVF = VirtualFileUtils.getProjectVirtualFile(classesGen);
           if (classesGenVF != null) {
             roots.add(classesGenVF);
           }
@@ -73,11 +69,7 @@ public class ClassesGenPolicy extends BaseDirectoryIndexExcludePolicy {
           if (((AbstractModule) module).getModuleSourceDir() != null) {
             IFile classesDir = ((AbstractModule) module).getModuleSourceDir().getDescendant(AbstractModule.CLASSES);
             if (classesDir.exists()) {
-              if (!(classesDir instanceof IdeaFile)) {
-                LogManager.getLogger(ClassesGenPolicy.class).warn("Classes dir File " + classesGen + " is supposed to be in project and tracked by Idea FS");
-                continue;
-              }
-              VirtualFile classesVF = ((IdeaFile) classesDir).getVirtualFile();
+              VirtualFile classesVF = VirtualFileUtils.getProjectVirtualFile(classesDir);
               if (classesVF != null) {
                 roots.add(classesVF);
               }
