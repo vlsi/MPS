@@ -14,7 +14,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="21,0,145,0" name="jetbrains.mps.lang.core.editor.EditorAspectDescriptorImpl" />
+      <unit at="22,0,165,0" name="jetbrains.mps.lang.core.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)/1960260476749651797">
@@ -1021,6 +1021,24 @@
         <var name="node" id="672802406138535747" />
       </scope>
       <unit id="672802406138530983" at="12,0,23,0" name="jetbrains.mps.lang.core.editor.SuppressErrorsAnnotation_Editor" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)/6886125077834069233">
+    <file name="BaseConcept_TransformationMenu.java">
+      <node id="6886125077834069233" at="17,124,18,156" concept="6" />
+      <node id="6886125077834069233" at="19,128,20,110" concept="2" />
+      <node id="6886125077834069233" at="21,5,22,18" concept="7" />
+      <node id="6886125077834069233" at="18,156,21,5" concept="4" />
+      <node id="6886125077834069233" at="16,0,24,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
+      <scope id="6886125077834069233" at="19,128,20,110" />
+      <scope id="6886125077834069233" at="17,124,22,18">
+        <var name="result" id="6886125077834069233" />
+      </scope>
+      <scope id="6886125077834069233" at="16,0,24,0">
+        <var name="_context" id="6886125077834069233" />
+      </scope>
+      <unit id="6886125077834069234" at="25,0,27,0" name="jetbrains.mps.lang.core.editor.BaseConcept_TransformationMenu$TransformationMenuPart_IncludeSubstituteMenu_m082ag_a0" />
+      <unit id="6886125077834069233" at="15,0,28,0" name="jetbrains.mps.lang.core.editor.BaseConcept_TransformationMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)/8383079901755562146">

@@ -33,9 +33,6 @@ import java.util.stream.Collectors;
  * @author simon
  */
 public class SideTransformSubstituteInfo extends AbstractSubstituteInfo {
-  //todo remove these
-  private final static String RIGHT_SIDE_TRANSFORM = "jetbrains.mps.nodeEditor.sidetransform.RIGHT_SIDE_TRANSFORM";
-  private final static String LEFT_SIDE_TRANSFORM = "jetbrains.mps.nodeEditor.sidetransform.LEFT_SIDE_TRANSFORM";
   private final Side mySide;
 
 

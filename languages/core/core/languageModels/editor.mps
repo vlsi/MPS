@@ -47,6 +47,7 @@
         <reference id="4820515453818318891" name="hint" index="2pYH_C" />
       </concept>
       <concept id="1177327570013" name="jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Substitute" flags="in" index="ucgPf" />
+      <concept id="7671875129586001610" name="jetbrains.mps.lang.editor.structure.TransformationMenuPart_IncludeSubstituteMenu" flags="ng" index="ulPW2" />
       <concept id="8478191136883534237" name="jetbrains.mps.lang.editor.structure.IExtensibleSubstituteMenuPart" flags="ng" index="upBLQ">
         <child id="8478191136883534238" name="features" index="upBLP" />
       </concept>
@@ -73,6 +74,7 @@
         <child id="8371900013785948365" name="parameterQuery" index="2$S_pT" />
       </concept>
       <concept id="6150987479542522273" name="jetbrains.mps.lang.editor.structure.QueryHintsSpecification" flags="ig" index="2Hnlc$" />
+      <concept id="1638911550608571617" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Default" flags="ng" index="IW6AY" />
       <concept id="4151393920374910634" name="jetbrains.mps.lang.editor.structure.StyleKey" flags="ng" index="2NdhxG" />
       <concept id="4151393920374910722" name="jetbrains.mps.lang.editor.structure.StyleKeyPack" flags="ng" index="2NdhB4">
         <child id="4151393920375014512" name="styleKey" index="2NdZaQ" />
@@ -112,6 +114,7 @@
         <child id="8998492695583129972" name="query" index="16NL0q" />
       </concept>
       <concept id="1154465273778" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_ParentNode" flags="nn" index="3bvxqY" />
+      <concept id="7342352913006985500" name="jetbrains.mps.lang.editor.structure.TransformationLocation_Completion" flags="ng" index="3eGOoe" />
       <concept id="7342352913006985483" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Action" flags="ng" index="3eGOop">
         <child id="8612453216082699922" name="substituteHandler" index="3aKz83" />
       </concept>
@@ -145,7 +148,7 @@
       <concept id="9122903797312246523" name="jetbrains.mps.lang.editor.structure.StyleReference" flags="ng" index="1wgc9g">
         <reference id="9122903797312247166" name="style" index="1wgcnl" />
       </concept>
-      <concept id="5425882385312046132" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_CurrentChild" flags="nn" index="1yR$tW" />
+      <concept id="5425882385312046132" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_CurrentTargetNode" flags="nn" index="1yR$tW" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
         <property id="1139852716018" name="noTargetText" index="1$x2rV" />
         <property id="1140114345053" name="allowEmptyText" index="1O74Pk" />
@@ -176,7 +179,14 @@
       <concept id="1225900081164" name="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" flags="sg" stub="3708815482283559694" index="1HlG4h">
         <child id="1225900141900" name="modelAccessor" index="1HlULh" />
       </concept>
+      <concept id="5624877018228267058" name="jetbrains.mps.lang.editor.structure.ITransformationMenu" flags="ng" index="3INCJE">
+        <child id="1638911550608572412" name="sections" index="IW6Ez" />
+      </concept>
       <concept id="1161622981231" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" flags="nn" index="1Q80Hx" />
+      <concept id="7980428675268276156" name="jetbrains.mps.lang.editor.structure.TransformationMenuSection" flags="ng" index="1Qtc8_">
+        <child id="7980428675268276157" name="locations" index="1Qtc8$" />
+        <child id="7980428675268276159" name="parts" index="1Qtc8A" />
+      </concept>
       <concept id="1176717841777" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" flags="in" index="3TQlhw" />
       <concept id="1950447826681509042" name="jetbrains.mps.lang.editor.structure.ApplyStyleClass" flags="lg" index="3Xmtl4">
         <child id="1950447826683828796" name="target" index="3XvnJa" />
@@ -585,7 +595,7 @@
       <ref role="1ERwB7" node="5FzO4t9jA_b" resolve="BaseCommentAttribute_Actions" />
       <node concept="l2Vlx" id="43t9AOLcZPj" role="2iSdaV" />
       <node concept="3F1sOY" id="4NfTi62PfCN" role="3EZMnx">
-        <ref role="1NtTu8" to="tpck:2ETBKOyieyt" />
+        <ref role="1NtTu8" to="tpck:2ETBKOyieyt" resolve="commentedNode" />
         <ref role="1ERwB7" node="5FzO4t9jA_b" resolve="BaseCommentAttribute_Actions" />
         <node concept="2w$q5c" id="5FKjex9hEng" role="3xwHhi">
           <node concept="2aJ2om" id="5FKjex9hEnh" role="2w$qW5">
@@ -802,7 +812,7 @@
                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
                 <node concept="359W_D" id="2Jn37$FZmBN" role="37wK5m">
                   <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                  <ref role="359W_F" to="tpck:4uZwTti3__2" />
+                  <ref role="359W_F" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
                 </node>
               </node>
             </node>
@@ -862,7 +872,7 @@
                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
                 <node concept="359W_D" id="7B8ZS0iM6tI" role="37wK5m">
                   <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                  <ref role="359W_F" to="tpck:4uZwTti3__2" />
+                  <ref role="359W_F" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
                 </node>
               </node>
             </node>
@@ -1084,6 +1094,13 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="IW6AY" id="5Ygr$oBdnjL">
+    <ref role="aqKnT" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1Qtc8_" id="5Ygr$oBdnjM" role="IW6Ez">
+      <node concept="3eGOoe" id="5Ygr$oBdnjS" role="1Qtc8$" />
+      <node concept="ulPW2" id="5Ygr$oBdnk8" role="1Qtc8A" />
     </node>
   </node>
 </model>

@@ -79,6 +79,19 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.core.editor.BaseConcept_TransformationMenu" file="BaseConcept_TransformationMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.IncludeSubstituteMenuTransformationMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.core.editor.BaseConcept_comment_Actions" file="BaseConcept_comment_Actions.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
@@ -146,6 +159,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.editor.Attribute_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.BaseCommentAttribute_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.BaseConcept_SubstituteMenu" />
+    <classNode dependClassName="jetbrains.mps.lang.core.editor.BaseConcept_TransformationMenu" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.BaseConcept_comment_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.ExportScopeModule_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.ExportScopeNamespace_Editor" />
@@ -161,6 +175,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.SubstituteMenu" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.TransformationMenu" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
