@@ -9,12 +9,10 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import java.awt.Frame;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -23,7 +21,9 @@ import jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsCompo
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class FindConceptInstances_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
@@ -40,7 +40,7 @@ public class FindConceptInstances_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).isApplicable() && SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+    return new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).isApplicable() && (FindConceptInstances_Action.this.getConceptDeclaration(_params) != null);
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -101,6 +101,32 @@ public class FindConceptInstances_Action extends BaseAction {
           }
         };
       }
-    }.invoke(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((SModel) MapSequence.fromMap(_params).get("model")));
+    }.invoke(((EditorCell) MapSequence.fromMap(_params).get("cell")), FindConceptInstances_Action.this.getConceptDeclaration(_params), ((Frame) MapSequence.fromMap(_params).get("frame")), ((SModel) MapSequence.fromMap(_params).get("model")));
+  }
+  private SNode getConceptDeclaration(final Map<String, Object> _params) {
+    SNode result = FindConceptInstances_Action.this.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")), _params);
+    if (result != null) {
+      return result;
+    }
+    if ((SNodeOperations.getParent(((SNode) MapSequence.fromMap(_params).get("node"))) == null)) {
+      return null;
+    }
+    return FindConceptInstances_Action.this.getConceptDeclaration(SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))), _params);
+  }
+  private SNode getConceptDeclaration(SNode node, final Map<String, Object> _params) {
+    {
+      final SNode acd = node;
+      if (SNodeOperations.isInstanceOf(acd, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+        return acd;
+      }
+    }
+    {
+      final SNode conceptAspect = node;
+      if (SNodeOperations.isInstanceOf(conceptAspect, MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect"))) {
+        return ((SNode) BHReflection.invoke(conceptAspect, SMethodTrimmedId.create("getBaseConcept", null, "2hxg_BDjKM8")));
+      }
+    }
+
+    return null;
   }
 }
