@@ -5555,6 +5555,7 @@
     <property role="EcuMT" value="5329678514806335510" />
     <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenuPart_Concepts" />
+    <property role="R4oN_" value="simple actions for concepts" />
     <property role="34LRSv" value="concepts list" />
     <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
     <node concept="1TJgyj" id="2uBUyS1moKc" role="1TKVEi">
@@ -5886,8 +5887,8 @@
     <property role="TrG5h" value="QueryFunction_SubstituteMenu_ActionType" />
     <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
     <property role="2_RsDV" value="none" />
-    <property role="R4oN_" value="return result type for this action, used for smart completion" />
     <property role="EcuMT" value="1230300670420" />
+    <property role="R4oN_" value="return result type for this action, used for smart completion" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="2RDMjbOTsHj">
@@ -6081,6 +6082,33 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="1GaASKeIesA" resolve="AbstractCellSelector" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="77L_peG_tVD">
+    <property role="EcuMT" value="8210508057161359081" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteMenuReference_DefaultWithFunction" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="77L_peG_tVE" role="1TKVEi">
+      <property role="IQ2ns" value="8210508057161359082" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="query" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="77L_peG_tVG" resolve="QueryFunction_SubstituteMenu_Concept" />
+    </node>
+    <node concept="PrWs8" id="77L_peGACJu" role="PzmwI">
+      <ref role="PrY4T" node="3rSzFHWLpTi" resolve="ISubstituteMenuReference" />
+    </node>
+    <node concept="PrWs8" id="77L_peGP$Zf" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="77L_peG_tVG">
+    <property role="TrG5h" value="QueryFunction_SubstituteMenu_Concept" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
+    <property role="2_RsDV" value="none" />
+    <property role="R4oN_" value="returns concept to include substitutemenu for" />
+    <property role="EcuMT" value="8210508057161359084" />
+    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
   </node>
 </model>
 

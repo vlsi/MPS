@@ -30,6 +30,10 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuPart;
 
 public class SubstituteMenuReference_Default_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -95,7 +99,7 @@ public class SubstituteMenuReference_Default_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("concept");
     }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new SubstituteMenuReference_Default_Editor.SubstituteMenuReference_Default_generic_cellMenu_h77kbg_a0c0(), new SubstituteMenuReference_Default_Editor.SubstituteMenuReference_Default_concept_cellMenu_h77kbg_b0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -130,6 +134,20 @@ public class SubstituteMenuReference_Default_Editor extends DefaultNodeEditor {
         return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
+    }
+  }
+  public static class SubstituteMenuReference_Default_generic_cellMenu_h77kbg_a0c0 extends AbstractCellMenuPart_Generic_Item {
+    public SubstituteMenuReference_Default_generic_cellMenu_h77kbg_a0c0() {
+    }
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      SNodeOperations.replaceWithAnother(node, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x71f19593ac95dee9L, "jetbrains.mps.lang.editor.structure.SubstituteMenuReference_DefaultWithFunction")), null));
+    }
+    public String getMatchingText() {
+      return "query";
+    }
+  }
+  public static class SubstituteMenuReference_Default_concept_cellMenu_h77kbg_b0c0 extends PrimaryReferentMenuCellMenuPart {
+    public SubstituteMenuReference_Default_concept_cellMenu_h77kbg_b0c0() {
     }
   }
 }

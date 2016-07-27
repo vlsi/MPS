@@ -2833,5 +2833,23 @@
       </node>
     </node>
   </node>
+  <node concept="1M2fIO" id="77L_peGACKh">
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <ref role="1M2myG" to="tpc2:77L_peG_tVD" resolve="SubstituteMenuReference_DefaultWithFunction" />
+    <node concept="nKS2y" id="77L_peGACKi" role="1MLUbF">
+      <node concept="3clFbS" id="77L_peGACKj" role="2VODD2">
+        <node concept="3clFbF" id="77L_peGACRs" role="3cqZAp">
+          <node concept="2OqwBi" id="77L_peGAD50" role="3clFbG">
+            <node concept="nLn13" id="77L_peGACRr" role="2Oq$k0" />
+            <node concept="1mIQ4w" id="77L_peGADlj" role="2OqNvi">
+              <node concept="chp4Y" id="77L_peGADxJ" role="cj9EA">
+                <ref role="cht4Q" to="tpc2:3rSzFHWOd_m" resolve="IIncludeSubstituteMenuPart" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

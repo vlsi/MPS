@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(378);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(380);
   /*package*/ final ConceptDescriptor myConceptAbstractCellSelector = createDescriptorForAbstractCellSelector();
   /*package*/ final ConceptDescriptor myConceptAbstractComponent = createDescriptorForAbstractComponent();
   /*package*/ final ConceptDescriptor myConceptAbstractPaddingStyleClassItem = createDescriptorForAbstractPaddingStyleClassItem();
@@ -263,6 +263,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptQueryFunction_SubstituteMenu_ActionType = createDescriptorForQueryFunction_SubstituteMenu_ActionType();
   /*package*/ final ConceptDescriptor myConceptQueryFunction_SubstituteMenu_CanExecute = createDescriptorForQueryFunction_SubstituteMenu_CanExecute();
   /*package*/ final ConceptDescriptor myConceptQueryFunction_SubstituteMenu_CanSubstitute = createDescriptorForQueryFunction_SubstituteMenu_CanSubstitute();
+  /*package*/ final ConceptDescriptor myConceptQueryFunction_SubstituteMenu_Concept = createDescriptorForQueryFunction_SubstituteMenu_Concept();
   /*package*/ final ConceptDescriptor myConceptQueryFunction_SubstituteMenu_Concepts = createDescriptorForQueryFunction_SubstituteMenu_Concepts();
   /*package*/ final ConceptDescriptor myConceptQueryFunction_SubstituteMenu_Condition = createDescriptorForQueryFunction_SubstituteMenu_Condition();
   /*package*/ final ConceptDescriptor myConceptQueryFunction_SubstituteMenu_Icon = createDescriptorForQueryFunction_SubstituteMenu_Icon();
@@ -351,6 +352,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptSubstituteMenuPart_Wrapper = createDescriptorForSubstituteMenuPart_Wrapper();
   /*package*/ final ConceptDescriptor myConceptSubstituteMenuReference = createDescriptorForSubstituteMenuReference();
   /*package*/ final ConceptDescriptor myConceptSubstituteMenuReference_Default = createDescriptorForSubstituteMenuReference_Default();
+  /*package*/ final ConceptDescriptor myConceptSubstituteMenuReference_DefaultWithFunction = createDescriptorForSubstituteMenuReference_DefaultWithFunction();
   /*package*/ final ConceptDescriptor myConceptSubstituteMenuReference_Named = createDescriptorForSubstituteMenuReference_Named();
   /*package*/ final ConceptDescriptor myConceptSubstituteMenuVariableDeclaration = createDescriptorForSubstituteMenuVariableDeclaration();
   /*package*/ final ConceptDescriptor myConceptSubstituteMenuVariableReference = createDescriptorForSubstituteMenuVariableReference();
@@ -643,143 +645,145 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     myIndexMap.put(myConceptQueryFunction_SubstituteMenu_ActionType.getId(), 243);
     myIndexMap.put(myConceptQueryFunction_SubstituteMenu_CanExecute.getId(), 244);
     myIndexMap.put(myConceptQueryFunction_SubstituteMenu_CanSubstitute.getId(), 245);
-    myIndexMap.put(myConceptQueryFunction_SubstituteMenu_Concepts.getId(), 246);
-    myIndexMap.put(myConceptQueryFunction_SubstituteMenu_Condition.getId(), 247);
-    myIndexMap.put(myConceptQueryFunction_SubstituteMenu_Icon.getId(), 248);
-    myIndexMap.put(myConceptQueryFunction_SubstituteMenu_Parameter.getId(), 249);
-    myIndexMap.put(myConceptQueryFunction_SubstituteMenu_Select.getId(), 250);
-    myIndexMap.put(myConceptQueryFunction_SubstituteMenu_Substitute.getId(), 251);
-    myIndexMap.put(myConceptQueryFunction_SubstituteMenu_SubstituteString.getId(), 252);
-    myIndexMap.put(myConceptQueryFunction_SubstituteMenu_WrapperHandler.getId(), 253);
-    myIndexMap.put(myConceptQueryFunction_TransformationMenu.getId(), 254);
-    myIndexMap.put(myConceptQueryFunction_TransformationMenuVariable_Initializer.getId(), 255);
-    myIndexMap.put(myConceptQueryFunction_TransformationMenu_ActionLabelText.getId(), 256);
-    myIndexMap.put(myConceptQueryFunction_TransformationMenu_Condition.getId(), 257);
-    myIndexMap.put(myConceptQueryFunction_TransformationMenu_DescriptionText.getId(), 258);
-    myIndexMap.put(myConceptQueryFunction_TransformationMenu_Execute.getId(), 259);
-    myIndexMap.put(myConceptQueryFunction_TransformationMenu_Extensible.getId(), 260);
-    myIndexMap.put(myConceptQueryFunction_TransformationMenu_Node.getId(), 261);
-    myIndexMap.put(myConceptQueryFunction_TransformationMenu_Parameter.getId(), 262);
-    myIndexMap.put(myConceptQueryFunction_TransformationMenu_TargetNode.getId(), 263);
-    myIndexMap.put(myConceptQueryFunction_TransformationMenu_Text.getId(), 264);
-    myIndexMap.put(myConceptQueryFunction_TransformationMenu_WrapperHandler.getId(), 265);
-    myIndexMap.put(myConceptQueryFunction_Underlined.getId(), 266);
-    myIndexMap.put(myConceptQueryHintsSpecification.getId(), 267);
-    myIndexMap.put(myConceptRGBColor.getId(), 268);
-    myIndexMap.put(myConceptReadOnlyModelAccessor.getId(), 269);
-    myIndexMap.put(myConceptReadOnlyStyleClassItem.getId(), 270);
-    myIndexMap.put(myConceptRightTransformAnchorTagWrapper.getId(), 271);
-    myIndexMap.put(myConceptScriptKindClassItem.getId(), 272);
-    myIndexMap.put(myConceptSelectInEditorOperation.getId(), 273);
-    myIndexMap.put(myConceptSelectParameter.getId(), 274);
-    myIndexMap.put(myConceptSelectPositionParameter.getId(), 275);
-    myIndexMap.put(myConceptSelectableStyleSheetItem.getId(), 276);
-    myIndexMap.put(myConceptSetBoldOperation.getId(), 277);
-    myIndexMap.put(myConceptSideTransformAnchorTagStyleClassItem.getId(), 278);
-    myIndexMap.put(myConceptStrikeOutStyleSheet.getId(), 279);
-    myIndexMap.put(myConceptStubCellModel_Alternation.getId(), 280);
-    myIndexMap.put(myConceptStubCellModel_Block.getId(), 281);
-    myIndexMap.put(myConceptStubCellModel_Collection.getId(), 282);
-    myIndexMap.put(myConceptStubCellModel_Component.getId(), 283);
-    myIndexMap.put(myConceptStubCellModel_Constant.getId(), 284);
-    myIndexMap.put(myConceptStubCellModel_ContextAssistant.getId(), 285);
-    myIndexMap.put(myConceptStubCellModel_Custom.getId(), 286);
-    myIndexMap.put(myConceptStubCellModel_Error.getId(), 287);
-    myIndexMap.put(myConceptStubCellModel_Image.getId(), 288);
-    myIndexMap.put(myConceptStubCellModel_JComponent.getId(), 289);
-    myIndexMap.put(myConceptStubCellModel_ModelAccess.getId(), 290);
-    myIndexMap.put(myConceptStubCellModel_NonEmptyProperty.getId(), 291);
-    myIndexMap.put(myConceptStubCellModel_Property.getId(), 292);
-    myIndexMap.put(myConceptStubCellModel_ReadOnlyModelAccessor.getId(), 293);
-    myIndexMap.put(myConceptStubCellModel_RefCell.getId(), 294);
-    myIndexMap.put(myConceptStubCellModel_RefNode.getId(), 295);
-    myIndexMap.put(myConceptStubCellModel_RefNodeList.getId(), 296);
-    myIndexMap.put(myConceptStubCellModel_ReferencePresentation.getId(), 297);
-    myIndexMap.put(myConceptStubCellModel_Table.getId(), 298);
-    myIndexMap.put(myConceptStubCellModel_TransactionalProperty.getId(), 299);
-    myIndexMap.put(myConceptStubCellModel_URL.getId(), 300);
-    myIndexMap.put(myConceptStubEditorCellModel.getId(), 301);
-    myIndexMap.put(myConceptStyleAttributeDeclaration.getId(), 302);
-    myIndexMap.put(myConceptStyleAttributeReferenceExpression.getId(), 303);
-    myIndexMap.put(myConceptStyleClass.getId(), 304);
-    myIndexMap.put(myConceptStyleClassItem.getId(), 305);
-    myIndexMap.put(myConceptStyleClassReference.getId(), 306);
-    myIndexMap.put(myConceptStyleClassReferenceList.getId(), 307);
-    myIndexMap.put(myConceptStyleKey.getId(), 308);
-    myIndexMap.put(myConceptStyleKeyPack.getId(), 309);
-    myIndexMap.put(myConceptStyleReference.getId(), 310);
-    myIndexMap.put(myConceptStyleSheet.getId(), 311);
-    myIndexMap.put(myConceptStyleSheetClass.getId(), 312);
-    myIndexMap.put(myConceptStyleSheetClassReference.getId(), 313);
-    myIndexMap.put(myConceptStyledTextType.getId(), 314);
-    myIndexMap.put(myConceptSubstituteFeature.getId(), 315);
-    myIndexMap.put(myConceptSubstituteFeature_ActionType.getId(), 316);
-    myIndexMap.put(myConceptSubstituteFeature_CanExecute.getId(), 317);
-    myIndexMap.put(myConceptSubstituteFeature_DescriptionText.getId(), 318);
-    myIndexMap.put(myConceptSubstituteFeature_Icon.getId(), 319);
-    myIndexMap.put(myConceptSubstituteFeature_MatchingText.getId(), 320);
-    myIndexMap.put(myConceptSubstituteFeature_Selection.getId(), 321);
-    myIndexMap.put(myConceptSubstituteMenu.getId(), 322);
-    myIndexMap.put(myConceptSubstituteMenuPart.getId(), 323);
-    myIndexMap.put(myConceptSubstituteMenuPart_Action.getId(), 324);
-    myIndexMap.put(myConceptSubstituteMenuPart_AddConcept.getId(), 325);
-    myIndexMap.put(myConceptSubstituteMenuPart_Concepts.getId(), 326);
-    myIndexMap.put(myConceptSubstituteMenuPart_Group.getId(), 327);
-    myIndexMap.put(myConceptSubstituteMenuPart_IncludeMenu.getId(), 328);
-    myIndexMap.put(myConceptSubstituteMenuPart_Parameterized.getId(), 329);
-    myIndexMap.put(myConceptSubstituteMenuPart_Subconcepts.getId(), 330);
-    myIndexMap.put(myConceptSubstituteMenuPart_Wrapper.getId(), 331);
-    myIndexMap.put(myConceptSubstituteMenuReference.getId(), 332);
-    myIndexMap.put(myConceptSubstituteMenuReference_Default.getId(), 333);
-    myIndexMap.put(myConceptSubstituteMenuReference_Named.getId(), 334);
-    myIndexMap.put(myConceptSubstituteMenuVariableDeclaration.getId(), 335);
-    myIndexMap.put(myConceptSubstituteMenuVariableReference.getId(), 336);
-    myIndexMap.put(myConceptSubstituteMenu_Contribution.getId(), 337);
-    myIndexMap.put(myConceptSubstituteMenu_Default.getId(), 338);
-    myIndexMap.put(myConceptSubstituteMenu_Named.getId(), 339);
-    myIndexMap.put(myConceptSubstituteMenu_SimpleString.getId(), 340);
-    myIndexMap.put(myConceptSynchronizeable.getId(), 341);
-    myIndexMap.put(myConceptTableComponentStyleClassItem.getId(), 342);
-    myIndexMap.put(myConceptTextBackgroundColorSelectedStyleClassItem.getId(), 343);
-    myIndexMap.put(myConceptTextBackgroundColorStyleClassItem.getId(), 344);
-    myIndexMap.put(myConceptTransactionPropertyHandler_newValue.getId(), 345);
-    myIndexMap.put(myConceptTransactionPropertyHandler_oldValue.getId(), 346);
-    myIndexMap.put(myConceptTransactionalPropertyHandler.getId(), 347);
-    myIndexMap.put(myConceptTransformationFeature.getId(), 348);
-    myIndexMap.put(myConceptTransformationFeature_ActionType.getId(), 349);
-    myIndexMap.put(myConceptTransformationFeature_DescriptionText.getId(), 350);
-    myIndexMap.put(myConceptTransformationFeature_IconNode.getId(), 351);
-    myIndexMap.put(myConceptTransformationLocation.getId(), 352);
-    myIndexMap.put(myConceptTransformationLocation_Completion.getId(), 353);
-    myIndexMap.put(myConceptTransformationLocation_ContextAssistant.getId(), 354);
-    myIndexMap.put(myConceptTransformationLocation_SideTransform.getId(), 355);
-    myIndexMap.put(myConceptTransformationLocation_SideTransform_PlaceInCellHolder.getId(), 356);
-    myIndexMap.put(myConceptTransformationMenu.getId(), 357);
-    myIndexMap.put(myConceptTransformationMenuContribution.getId(), 358);
-    myIndexMap.put(myConceptTransformationMenuPart.getId(), 359);
-    myIndexMap.put(myConceptTransformationMenuPart_Action.getId(), 360);
-    myIndexMap.put(myConceptTransformationMenuPart_Group.getId(), 361);
-    myIndexMap.put(myConceptTransformationMenuPart_IncludeMenu.getId(), 362);
-    myIndexMap.put(myConceptTransformationMenuPart_IncludeSubstituteMenu.getId(), 363);
-    myIndexMap.put(myConceptTransformationMenuPart_Parameterized.getId(), 364);
-    myIndexMap.put(myConceptTransformationMenuPart_Placeholder.getId(), 365);
-    myIndexMap.put(myConceptTransformationMenuPart_SubMenu.getId(), 366);
-    myIndexMap.put(myConceptTransformationMenuPart_Super.getId(), 367);
-    myIndexMap.put(myConceptTransformationMenuPart_WrapSubstituteMenu.getId(), 368);
-    myIndexMap.put(myConceptTransformationMenuReference_Default.getId(), 369);
-    myIndexMap.put(myConceptTransformationMenuReference_Named.getId(), 370);
-    myIndexMap.put(myConceptTransformationMenuSection.getId(), 371);
-    myIndexMap.put(myConceptTransformationMenuVariableDeclaration.getId(), 372);
-    myIndexMap.put(myConceptTransformationMenuVariableReference.getId(), 373);
-    myIndexMap.put(myConceptTransformationMenu_Default.getId(), 374);
-    myIndexMap.put(myConceptTransformationMenu_Named.getId(), 375);
-    myIndexMap.put(myConceptUnapplyStyle.getId(), 376);
-    myIndexMap.put(myConceptUnderlinedStyleClassItem.getId(), 377);
+    myIndexMap.put(myConceptQueryFunction_SubstituteMenu_Concept.getId(), 246);
+    myIndexMap.put(myConceptQueryFunction_SubstituteMenu_Concepts.getId(), 247);
+    myIndexMap.put(myConceptQueryFunction_SubstituteMenu_Condition.getId(), 248);
+    myIndexMap.put(myConceptQueryFunction_SubstituteMenu_Icon.getId(), 249);
+    myIndexMap.put(myConceptQueryFunction_SubstituteMenu_Parameter.getId(), 250);
+    myIndexMap.put(myConceptQueryFunction_SubstituteMenu_Select.getId(), 251);
+    myIndexMap.put(myConceptQueryFunction_SubstituteMenu_Substitute.getId(), 252);
+    myIndexMap.put(myConceptQueryFunction_SubstituteMenu_SubstituteString.getId(), 253);
+    myIndexMap.put(myConceptQueryFunction_SubstituteMenu_WrapperHandler.getId(), 254);
+    myIndexMap.put(myConceptQueryFunction_TransformationMenu.getId(), 255);
+    myIndexMap.put(myConceptQueryFunction_TransformationMenuVariable_Initializer.getId(), 256);
+    myIndexMap.put(myConceptQueryFunction_TransformationMenu_ActionLabelText.getId(), 257);
+    myIndexMap.put(myConceptQueryFunction_TransformationMenu_Condition.getId(), 258);
+    myIndexMap.put(myConceptQueryFunction_TransformationMenu_DescriptionText.getId(), 259);
+    myIndexMap.put(myConceptQueryFunction_TransformationMenu_Execute.getId(), 260);
+    myIndexMap.put(myConceptQueryFunction_TransformationMenu_Extensible.getId(), 261);
+    myIndexMap.put(myConceptQueryFunction_TransformationMenu_Node.getId(), 262);
+    myIndexMap.put(myConceptQueryFunction_TransformationMenu_Parameter.getId(), 263);
+    myIndexMap.put(myConceptQueryFunction_TransformationMenu_TargetNode.getId(), 264);
+    myIndexMap.put(myConceptQueryFunction_TransformationMenu_Text.getId(), 265);
+    myIndexMap.put(myConceptQueryFunction_TransformationMenu_WrapperHandler.getId(), 266);
+    myIndexMap.put(myConceptQueryFunction_Underlined.getId(), 267);
+    myIndexMap.put(myConceptQueryHintsSpecification.getId(), 268);
+    myIndexMap.put(myConceptRGBColor.getId(), 269);
+    myIndexMap.put(myConceptReadOnlyModelAccessor.getId(), 270);
+    myIndexMap.put(myConceptReadOnlyStyleClassItem.getId(), 271);
+    myIndexMap.put(myConceptRightTransformAnchorTagWrapper.getId(), 272);
+    myIndexMap.put(myConceptScriptKindClassItem.getId(), 273);
+    myIndexMap.put(myConceptSelectInEditorOperation.getId(), 274);
+    myIndexMap.put(myConceptSelectParameter.getId(), 275);
+    myIndexMap.put(myConceptSelectPositionParameter.getId(), 276);
+    myIndexMap.put(myConceptSelectableStyleSheetItem.getId(), 277);
+    myIndexMap.put(myConceptSetBoldOperation.getId(), 278);
+    myIndexMap.put(myConceptSideTransformAnchorTagStyleClassItem.getId(), 279);
+    myIndexMap.put(myConceptStrikeOutStyleSheet.getId(), 280);
+    myIndexMap.put(myConceptStubCellModel_Alternation.getId(), 281);
+    myIndexMap.put(myConceptStubCellModel_Block.getId(), 282);
+    myIndexMap.put(myConceptStubCellModel_Collection.getId(), 283);
+    myIndexMap.put(myConceptStubCellModel_Component.getId(), 284);
+    myIndexMap.put(myConceptStubCellModel_Constant.getId(), 285);
+    myIndexMap.put(myConceptStubCellModel_ContextAssistant.getId(), 286);
+    myIndexMap.put(myConceptStubCellModel_Custom.getId(), 287);
+    myIndexMap.put(myConceptStubCellModel_Error.getId(), 288);
+    myIndexMap.put(myConceptStubCellModel_Image.getId(), 289);
+    myIndexMap.put(myConceptStubCellModel_JComponent.getId(), 290);
+    myIndexMap.put(myConceptStubCellModel_ModelAccess.getId(), 291);
+    myIndexMap.put(myConceptStubCellModel_NonEmptyProperty.getId(), 292);
+    myIndexMap.put(myConceptStubCellModel_Property.getId(), 293);
+    myIndexMap.put(myConceptStubCellModel_ReadOnlyModelAccessor.getId(), 294);
+    myIndexMap.put(myConceptStubCellModel_RefCell.getId(), 295);
+    myIndexMap.put(myConceptStubCellModel_RefNode.getId(), 296);
+    myIndexMap.put(myConceptStubCellModel_RefNodeList.getId(), 297);
+    myIndexMap.put(myConceptStubCellModel_ReferencePresentation.getId(), 298);
+    myIndexMap.put(myConceptStubCellModel_Table.getId(), 299);
+    myIndexMap.put(myConceptStubCellModel_TransactionalProperty.getId(), 300);
+    myIndexMap.put(myConceptStubCellModel_URL.getId(), 301);
+    myIndexMap.put(myConceptStubEditorCellModel.getId(), 302);
+    myIndexMap.put(myConceptStyleAttributeDeclaration.getId(), 303);
+    myIndexMap.put(myConceptStyleAttributeReferenceExpression.getId(), 304);
+    myIndexMap.put(myConceptStyleClass.getId(), 305);
+    myIndexMap.put(myConceptStyleClassItem.getId(), 306);
+    myIndexMap.put(myConceptStyleClassReference.getId(), 307);
+    myIndexMap.put(myConceptStyleClassReferenceList.getId(), 308);
+    myIndexMap.put(myConceptStyleKey.getId(), 309);
+    myIndexMap.put(myConceptStyleKeyPack.getId(), 310);
+    myIndexMap.put(myConceptStyleReference.getId(), 311);
+    myIndexMap.put(myConceptStyleSheet.getId(), 312);
+    myIndexMap.put(myConceptStyleSheetClass.getId(), 313);
+    myIndexMap.put(myConceptStyleSheetClassReference.getId(), 314);
+    myIndexMap.put(myConceptStyledTextType.getId(), 315);
+    myIndexMap.put(myConceptSubstituteFeature.getId(), 316);
+    myIndexMap.put(myConceptSubstituteFeature_ActionType.getId(), 317);
+    myIndexMap.put(myConceptSubstituteFeature_CanExecute.getId(), 318);
+    myIndexMap.put(myConceptSubstituteFeature_DescriptionText.getId(), 319);
+    myIndexMap.put(myConceptSubstituteFeature_Icon.getId(), 320);
+    myIndexMap.put(myConceptSubstituteFeature_MatchingText.getId(), 321);
+    myIndexMap.put(myConceptSubstituteFeature_Selection.getId(), 322);
+    myIndexMap.put(myConceptSubstituteMenu.getId(), 323);
+    myIndexMap.put(myConceptSubstituteMenuPart.getId(), 324);
+    myIndexMap.put(myConceptSubstituteMenuPart_Action.getId(), 325);
+    myIndexMap.put(myConceptSubstituteMenuPart_AddConcept.getId(), 326);
+    myIndexMap.put(myConceptSubstituteMenuPart_Concepts.getId(), 327);
+    myIndexMap.put(myConceptSubstituteMenuPart_Group.getId(), 328);
+    myIndexMap.put(myConceptSubstituteMenuPart_IncludeMenu.getId(), 329);
+    myIndexMap.put(myConceptSubstituteMenuPart_Parameterized.getId(), 330);
+    myIndexMap.put(myConceptSubstituteMenuPart_Subconcepts.getId(), 331);
+    myIndexMap.put(myConceptSubstituteMenuPart_Wrapper.getId(), 332);
+    myIndexMap.put(myConceptSubstituteMenuReference.getId(), 333);
+    myIndexMap.put(myConceptSubstituteMenuReference_Default.getId(), 334);
+    myIndexMap.put(myConceptSubstituteMenuReference_DefaultWithFunction.getId(), 335);
+    myIndexMap.put(myConceptSubstituteMenuReference_Named.getId(), 336);
+    myIndexMap.put(myConceptSubstituteMenuVariableDeclaration.getId(), 337);
+    myIndexMap.put(myConceptSubstituteMenuVariableReference.getId(), 338);
+    myIndexMap.put(myConceptSubstituteMenu_Contribution.getId(), 339);
+    myIndexMap.put(myConceptSubstituteMenu_Default.getId(), 340);
+    myIndexMap.put(myConceptSubstituteMenu_Named.getId(), 341);
+    myIndexMap.put(myConceptSubstituteMenu_SimpleString.getId(), 342);
+    myIndexMap.put(myConceptSynchronizeable.getId(), 343);
+    myIndexMap.put(myConceptTableComponentStyleClassItem.getId(), 344);
+    myIndexMap.put(myConceptTextBackgroundColorSelectedStyleClassItem.getId(), 345);
+    myIndexMap.put(myConceptTextBackgroundColorStyleClassItem.getId(), 346);
+    myIndexMap.put(myConceptTransactionPropertyHandler_newValue.getId(), 347);
+    myIndexMap.put(myConceptTransactionPropertyHandler_oldValue.getId(), 348);
+    myIndexMap.put(myConceptTransactionalPropertyHandler.getId(), 349);
+    myIndexMap.put(myConceptTransformationFeature.getId(), 350);
+    myIndexMap.put(myConceptTransformationFeature_ActionType.getId(), 351);
+    myIndexMap.put(myConceptTransformationFeature_DescriptionText.getId(), 352);
+    myIndexMap.put(myConceptTransformationFeature_IconNode.getId(), 353);
+    myIndexMap.put(myConceptTransformationLocation.getId(), 354);
+    myIndexMap.put(myConceptTransformationLocation_Completion.getId(), 355);
+    myIndexMap.put(myConceptTransformationLocation_ContextAssistant.getId(), 356);
+    myIndexMap.put(myConceptTransformationLocation_SideTransform.getId(), 357);
+    myIndexMap.put(myConceptTransformationLocation_SideTransform_PlaceInCellHolder.getId(), 358);
+    myIndexMap.put(myConceptTransformationMenu.getId(), 359);
+    myIndexMap.put(myConceptTransformationMenuContribution.getId(), 360);
+    myIndexMap.put(myConceptTransformationMenuPart.getId(), 361);
+    myIndexMap.put(myConceptTransformationMenuPart_Action.getId(), 362);
+    myIndexMap.put(myConceptTransformationMenuPart_Group.getId(), 363);
+    myIndexMap.put(myConceptTransformationMenuPart_IncludeMenu.getId(), 364);
+    myIndexMap.put(myConceptTransformationMenuPart_IncludeSubstituteMenu.getId(), 365);
+    myIndexMap.put(myConceptTransformationMenuPart_Parameterized.getId(), 366);
+    myIndexMap.put(myConceptTransformationMenuPart_Placeholder.getId(), 367);
+    myIndexMap.put(myConceptTransformationMenuPart_SubMenu.getId(), 368);
+    myIndexMap.put(myConceptTransformationMenuPart_Super.getId(), 369);
+    myIndexMap.put(myConceptTransformationMenuPart_WrapSubstituteMenu.getId(), 370);
+    myIndexMap.put(myConceptTransformationMenuReference_Default.getId(), 371);
+    myIndexMap.put(myConceptTransformationMenuReference_Named.getId(), 372);
+    myIndexMap.put(myConceptTransformationMenuSection.getId(), 373);
+    myIndexMap.put(myConceptTransformationMenuVariableDeclaration.getId(), 374);
+    myIndexMap.put(myConceptTransformationMenuVariableReference.getId(), 375);
+    myIndexMap.put(myConceptTransformationMenu_Default.getId(), 376);
+    myIndexMap.put(myConceptTransformationMenu_Named.getId(), 377);
+    myIndexMap.put(myConceptUnapplyStyle.getId(), 378);
+    myIndexMap.put(myConceptUnderlinedStyleClassItem.getId(), 379);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractCellSelector, myConceptAbstractComponent, myConceptAbstractPaddingStyleClassItem, myConceptAbstractStyledTextOperation, myConceptAppendTextOperation, myConceptApplyStyleClass, myConceptApplyStyleClassCondition, myConceptAttributeStyleClassItem, myConceptAutoDeletableStyleClassItem, myConceptBackgroundColorStyleClassItem, myConceptBaseEditorComponent, myConceptBaseLineCell, myConceptBooleanStyleSheetItem, myConceptBracketColorStyleClassItem, myConceptCaretPositionParameter, myConceptCellActionMapDeclaration, myConceptCellActionMapItem, myConceptCellActionMap_CanExecuteFunction, myConceptCellActionMap_ExecuteFunction, myConceptCellActionMap_FunctionParm_selectedNode, myConceptCellIdReferenceSelector, myConceptCellKeyMapDeclaration, myConceptCellKeyMapItem, myConceptCellKeyMapKeystroke, myConceptCellKeyMap_AbstractFunction, myConceptCellKeyMap_ExecuteFunction, myConceptCellKeyMap_FunctionParm_selectedNode, myConceptCellKeyMap_FunctionParm_selectedNodes, myConceptCellKeyMap_IsApplicableFunction, myConceptCellLayout, myConceptCellLayout_Flow, myConceptCellLayout_Horizontal, myConceptCellLayout_Indent, myConceptCellLayout_Indent_Old, myConceptCellLayout_Superscript, myConceptCellLayout_Table, myConceptCellLayout_Vertical, myConceptCellLayout_VerticalGrid, myConceptCellMenuComponent, myConceptCellMenuComponentFeature, myConceptCellMenuComponentFeature_Link, myConceptCellMenuComponentFeature_Property, myConceptCellMenuDescriptor, myConceptCellMenuPart_Abstract, myConceptCellMenuPart_AbstractGroup, myConceptCellMenuPart_AbstractGroup_DescriptionText, myConceptCellMenuPart_AbstractGroup_MatchingText, myConceptCellMenuPart_AbstractGroup_Query, myConceptCellMenuPart_AbstractGroup_parameterObject, myConceptCellMenuPart_Abstract_editedNode, myConceptCellMenuPart_ApplySideTransforms, myConceptCellMenuPart_CellMenuComponent, myConceptCellMenuPart_Generic_Group, myConceptCellMenuPart_Generic_Group_Handler, myConceptCellMenuPart_Generic_Item, myConceptCellMenuPart_Generic_Item_Handler, myConceptCellMenuPart_PropertyPostfixHints, myConceptCellMenuPart_PropertyPostfixHints_GetPostfixes, myConceptCellMenuPart_PropertyValues, myConceptCellMenuPart_PropertyValues_GetValues, myConceptCellMenuPart_ReferentPrimary, myConceptCellMenuPart_ReplaceChildPrimary, myConceptCellMenuPart_ReplaceChild_CustomChildConcept, myConceptCellMenuPart_ReplaceChild_CustomChildConcept_Query, myConceptCellMenuPart_ReplaceChild_Group, myConceptCellMenuPart_ReplaceChild_Group_Create, myConceptCellMenuPart_ReplaceChild_Group_Query, myConceptCellMenuPart_ReplaceChild_Item, myConceptCellMenuPart_ReplaceChild_Item_Create, myConceptCellMenuPart_ReplaceChild_currentChild, myConceptCellMenuPart_ReplaceChild_defaultConceptOfChild, myConceptCellMenuPart_ReplaceNode_CustomNodeConcept, myConceptCellMenuPart_ReplaceNode_Group, myConceptCellMenuPart_ReplaceNode_Group_Create, myConceptCellModel_AbstractLabel, myConceptCellModel_Alternation, myConceptCellModel_AttributedLinkCell, myConceptCellModel_AttributedNodeCell, myConceptCellModel_AttributedPropertyCell, myConceptCellModel_Block, myConceptCellModel_BlockEnd, myConceptCellModel_BlockStart, myConceptCellModel_Collection, myConceptCellModel_Component, myConceptCellModel_Constant, myConceptCellModel_ContextAssistant, myConceptCellModel_Custom, myConceptCellModel_Empty, myConceptCellModel_Error, myConceptCellModel_Image, myConceptCellModel_Indent, myConceptCellModel_JComponent, myConceptCellModel_ListWithRole, myConceptCellModel_ModelAccess, myConceptCellModel_NextEditor, myConceptCellModel_NonEmptyProperty, myConceptCellModel_Property, myConceptCellModel_ReadOnlyModelAccessor, myConceptCellModel_RefCell, myConceptCellModel_RefNode, myConceptCellModel_RefNodeList, myConceptCellModel_ReferencePresentation, myConceptCellModel_TransactionalProperty, myConceptCellModel_URL, myConceptCellModel_WithRole, myConceptColorStyleClassItem, myConceptConceptEditorContextHints, myConceptConceptEditorDeclaration, myConceptConceptEditorHintDeclaration, myConceptConceptEditorHintDeclarationReference, myConceptConceptEditorHintDeclarationReferenceExpression, myConceptConceptFunctionParameter_StyledText, myConceptConceptFunctionParameter_childNode, myConceptConceptFunctionParameter_editorContext, myConceptConceptFunctionParameter_model, myConceptConceptFunctionParameter_nextNode, myConceptConceptFunctionParameter_node, myConceptConceptFunctionParameter_oldText, myConceptConceptFunctionParameter_parameterObject, myConceptConceptFunctionParameter_prevNode, myConceptConceptFunctionParameter_selectedNode, myConceptConceptFunctionParameter_text, myConceptContextHintsSpecification, myConceptContextVariable, myConceptContextVariable_EditorContext, myConceptContextVariable_Node, myConceptDefaultBaseLine, myConceptDefaultCaretPositionStyleClassItem, myConceptDominatesRecord, myConceptDrawBorderStyleClassItem, myConceptDrawBracketsStyleClassItem, myConceptEditableStyleClassItem, myConceptEditorCellId, myConceptEditorCellModel, myConceptEditorComponentDeclaration, myConceptEditorComponentDeclarationReference, myConceptExplicitHintsSpecification, myConceptFirstPositionAllowedStyleClassItem, myConceptFloatStyleClassItem, myConceptFontSizeStyleClassItem, myConceptFontStyleStyleClassItem, myConceptForegroundColorStyleClassItem, myConceptForegroundNullColorStyleClassItem, myConceptHorizontalAlign, myConceptHorizontalGapStyleClassItem, myConceptICellStyle, myConceptIContextProvider, myConceptIContextVariableProvider, myConceptIEditorContextProvider, myConceptIExtensibleSubstituteMenuPart, myConceptIExtensibleTransformationMenuPart, myConceptIIncludeSubstituteMenuPart, myConceptIMenu, myConceptIMenuPartParameterized, myConceptIMenuReference, myConceptIMenuReference_Default, myConceptIMenuReference_Named, myConceptIMenu_Concept, myConceptIMenu_Contribution, myConceptIMenu_Default, myConceptIMenu_Named, myConceptINodeProvider, myConceptIOutputConceptMenuPart, myConceptIParameterizableMenuPart, myConceptIQueryFunction_Color, myConceptIStyle, myConceptIStyleContainer, myConceptIStyleSheetItem, myConceptIStyleSheetMember, myConceptISubstituteMenu, myConceptISubstituteMenuReference, myConceptISubstituteMenu_String, myConceptITransformationMenu, myConceptITransformationMenuReference, myConceptIdSelector, myConceptImagePathProvider, myConceptIndentLayoutIndentAnchorStyleClassItem, myConceptIndentLayoutIndentStyleClassItem, myConceptIndentLayoutNewLineChildrenStyleClassItem, myConceptIndentLayoutNewLineStyleClassItem, myConceptIndentLayoutNoWrapClassItem, myConceptIndentLayoutOnNewLineStyleClassItem, myConceptIndentLayoutWrapAnchorStyleClassItem, myConceptInlineEditorComponent, myConceptInlineStyleDeclaration, myConceptLastPositionAllowedStyleClassItem, myConceptLayoutConstraintStyleClassItem, myConceptMatchingLabelStyleClassItem, myConceptMaxWidthStyleClassItem, myConceptModelAccessor, myConceptNavigatableNodeStyleClassItem, myConceptNavigatableReferenceStyleClassItem, myConceptOrCellSelector, myConceptPaddingBottomStyleClassItem, myConceptPaddingLeftStyleClassItem, myConceptPaddingRightStyleClassItem, myConceptPaddingTopStyleClassItem, myConceptParametersInformationQuery, myConceptParametersInformationStyleClassItem, myConceptPositionChildrenStyleClassItem, myConceptPositionStyleClassItem, myConceptPreDefinedStyleClassItem, myConceptPredefinedSelector, myConceptPropertyDeclarationCellSelector, myConceptPropertyExpressionCellSelector, myConceptPunctuationLeftStyleClassItem, myConceptPunctuationRightStyleClassItem, myConceptQueryFunctionParameter_CreatedNode, myConceptQueryFunctionParameter_SubstituteMenu_CreatedNodeToSelect, myConceptQueryFunctionParameter_SubstituteMenu_CurrentChild, myConceptQueryFunctionParameter_SubstituteMenu_Link, myConceptQueryFunctionParameter_SubstituteMenu_ParentNode, myConceptQueryFunctionParameter_TransformationMenu_CreatedNode, myConceptQueryFunctionParameter_TransformationMenu_node, myConceptQueryFunctionParameter_parameterObject, myConceptQueryFunctionParameter_pattern, myConceptQueryFunction_AttributeStyleParameter, myConceptQueryFunction_Boolean, myConceptQueryFunction_CellProvider, myConceptQueryFunction_Color, myConceptQueryFunction_ColorComposit, myConceptQueryFunction_FontStyle, myConceptQueryFunction_ImagePath, myConceptQueryFunction_Integer, myConceptQueryFunction_IsMethodCurrent, myConceptQueryFunction_JComponent, myConceptQueryFunction_Menu, myConceptQueryFunction_MethodPresentation, myConceptQueryFunction_ModelAccess_Getter, myConceptQueryFunction_ModelAccess_Setter, myConceptQueryFunction_ModelAccess_Validator, myConceptQueryFunction_ModuleAndPath, myConceptQueryFunction_NodeCondition, myConceptQueryFunction_NodeFactory, myConceptQueryFunction_NodeListFilter, myConceptQueryFunction_ParametersList, myConceptQueryFunction_SNode, myConceptQueryFunction_SeparatorText, myConceptQueryFunction_String, myConceptQueryFunction_Style, myConceptQueryFunction_StyleParameter, myConceptQueryFunction_SubstituteMenu, myConceptQueryFunction_SubstituteMenuVariable_Initializer, myConceptQueryFunction_SubstituteMenu_ActionType, myConceptQueryFunction_SubstituteMenu_CanExecute, myConceptQueryFunction_SubstituteMenu_CanSubstitute, myConceptQueryFunction_SubstituteMenu_Concepts, myConceptQueryFunction_SubstituteMenu_Condition, myConceptQueryFunction_SubstituteMenu_Icon, myConceptQueryFunction_SubstituteMenu_Parameter, myConceptQueryFunction_SubstituteMenu_Select, myConceptQueryFunction_SubstituteMenu_Substitute, myConceptQueryFunction_SubstituteMenu_SubstituteString, myConceptQueryFunction_SubstituteMenu_WrapperHandler, myConceptQueryFunction_TransformationMenu, myConceptQueryFunction_TransformationMenuVariable_Initializer, myConceptQueryFunction_TransformationMenu_ActionLabelText, myConceptQueryFunction_TransformationMenu_Condition, myConceptQueryFunction_TransformationMenu_DescriptionText, myConceptQueryFunction_TransformationMenu_Execute, myConceptQueryFunction_TransformationMenu_Extensible, myConceptQueryFunction_TransformationMenu_Node, myConceptQueryFunction_TransformationMenu_Parameter, myConceptQueryFunction_TransformationMenu_TargetNode, myConceptQueryFunction_TransformationMenu_Text, myConceptQueryFunction_TransformationMenu_WrapperHandler, myConceptQueryFunction_Underlined, myConceptQueryHintsSpecification, myConceptRGBColor, myConceptReadOnlyModelAccessor, myConceptReadOnlyStyleClassItem, myConceptRightTransformAnchorTagWrapper, myConceptScriptKindClassItem, myConceptSelectInEditorOperation, myConceptSelectParameter, myConceptSelectPositionParameter, myConceptSelectableStyleSheetItem, myConceptSetBoldOperation, myConceptSideTransformAnchorTagStyleClassItem, myConceptStrikeOutStyleSheet, myConceptStubCellModel_Alternation, myConceptStubCellModel_Block, myConceptStubCellModel_Collection, myConceptStubCellModel_Component, myConceptStubCellModel_Constant, myConceptStubCellModel_ContextAssistant, myConceptStubCellModel_Custom, myConceptStubCellModel_Error, myConceptStubCellModel_Image, myConceptStubCellModel_JComponent, myConceptStubCellModel_ModelAccess, myConceptStubCellModel_NonEmptyProperty, myConceptStubCellModel_Property, myConceptStubCellModel_ReadOnlyModelAccessor, myConceptStubCellModel_RefCell, myConceptStubCellModel_RefNode, myConceptStubCellModel_RefNodeList, myConceptStubCellModel_ReferencePresentation, myConceptStubCellModel_Table, myConceptStubCellModel_TransactionalProperty, myConceptStubCellModel_URL, myConceptStubEditorCellModel, myConceptStyleAttributeDeclaration, myConceptStyleAttributeReferenceExpression, myConceptStyleClass, myConceptStyleClassItem, myConceptStyleClassReference, myConceptStyleClassReferenceList, myConceptStyleKey, myConceptStyleKeyPack, myConceptStyleReference, myConceptStyleSheet, myConceptStyleSheetClass, myConceptStyleSheetClassReference, myConceptStyledTextType, myConceptSubstituteFeature, myConceptSubstituteFeature_ActionType, myConceptSubstituteFeature_CanExecute, myConceptSubstituteFeature_DescriptionText, myConceptSubstituteFeature_Icon, myConceptSubstituteFeature_MatchingText, myConceptSubstituteFeature_Selection, myConceptSubstituteMenu, myConceptSubstituteMenuPart, myConceptSubstituteMenuPart_Action, myConceptSubstituteMenuPart_AddConcept, myConceptSubstituteMenuPart_Concepts, myConceptSubstituteMenuPart_Group, myConceptSubstituteMenuPart_IncludeMenu, myConceptSubstituteMenuPart_Parameterized, myConceptSubstituteMenuPart_Subconcepts, myConceptSubstituteMenuPart_Wrapper, myConceptSubstituteMenuReference, myConceptSubstituteMenuReference_Default, myConceptSubstituteMenuReference_Named, myConceptSubstituteMenuVariableDeclaration, myConceptSubstituteMenuVariableReference, myConceptSubstituteMenu_Contribution, myConceptSubstituteMenu_Default, myConceptSubstituteMenu_Named, myConceptSubstituteMenu_SimpleString, myConceptSynchronizeable, myConceptTableComponentStyleClassItem, myConceptTextBackgroundColorSelectedStyleClassItem, myConceptTextBackgroundColorStyleClassItem, myConceptTransactionPropertyHandler_newValue, myConceptTransactionPropertyHandler_oldValue, myConceptTransactionalPropertyHandler, myConceptTransformationFeature, myConceptTransformationFeature_ActionType, myConceptTransformationFeature_DescriptionText, myConceptTransformationFeature_IconNode, myConceptTransformationLocation, myConceptTransformationLocation_Completion, myConceptTransformationLocation_ContextAssistant, myConceptTransformationLocation_SideTransform, myConceptTransformationLocation_SideTransform_PlaceInCellHolder, myConceptTransformationMenu, myConceptTransformationMenuContribution, myConceptTransformationMenuPart, myConceptTransformationMenuPart_Action, myConceptTransformationMenuPart_Group, myConceptTransformationMenuPart_IncludeMenu, myConceptTransformationMenuPart_IncludeSubstituteMenu, myConceptTransformationMenuPart_Parameterized, myConceptTransformationMenuPart_Placeholder, myConceptTransformationMenuPart_SubMenu, myConceptTransformationMenuPart_Super, myConceptTransformationMenuPart_WrapSubstituteMenu, myConceptTransformationMenuReference_Default, myConceptTransformationMenuReference_Named, myConceptTransformationMenuSection, myConceptTransformationMenuVariableDeclaration, myConceptTransformationMenuVariableReference, myConceptTransformationMenu_Default, myConceptTransformationMenu_Named, myConceptUnapplyStyle, myConceptUnderlinedStyleClassItem);
+    return Arrays.asList(myConceptAbstractCellSelector, myConceptAbstractComponent, myConceptAbstractPaddingStyleClassItem, myConceptAbstractStyledTextOperation, myConceptAppendTextOperation, myConceptApplyStyleClass, myConceptApplyStyleClassCondition, myConceptAttributeStyleClassItem, myConceptAutoDeletableStyleClassItem, myConceptBackgroundColorStyleClassItem, myConceptBaseEditorComponent, myConceptBaseLineCell, myConceptBooleanStyleSheetItem, myConceptBracketColorStyleClassItem, myConceptCaretPositionParameter, myConceptCellActionMapDeclaration, myConceptCellActionMapItem, myConceptCellActionMap_CanExecuteFunction, myConceptCellActionMap_ExecuteFunction, myConceptCellActionMap_FunctionParm_selectedNode, myConceptCellIdReferenceSelector, myConceptCellKeyMapDeclaration, myConceptCellKeyMapItem, myConceptCellKeyMapKeystroke, myConceptCellKeyMap_AbstractFunction, myConceptCellKeyMap_ExecuteFunction, myConceptCellKeyMap_FunctionParm_selectedNode, myConceptCellKeyMap_FunctionParm_selectedNodes, myConceptCellKeyMap_IsApplicableFunction, myConceptCellLayout, myConceptCellLayout_Flow, myConceptCellLayout_Horizontal, myConceptCellLayout_Indent, myConceptCellLayout_Indent_Old, myConceptCellLayout_Superscript, myConceptCellLayout_Table, myConceptCellLayout_Vertical, myConceptCellLayout_VerticalGrid, myConceptCellMenuComponent, myConceptCellMenuComponentFeature, myConceptCellMenuComponentFeature_Link, myConceptCellMenuComponentFeature_Property, myConceptCellMenuDescriptor, myConceptCellMenuPart_Abstract, myConceptCellMenuPart_AbstractGroup, myConceptCellMenuPart_AbstractGroup_DescriptionText, myConceptCellMenuPart_AbstractGroup_MatchingText, myConceptCellMenuPart_AbstractGroup_Query, myConceptCellMenuPart_AbstractGroup_parameterObject, myConceptCellMenuPart_Abstract_editedNode, myConceptCellMenuPart_ApplySideTransforms, myConceptCellMenuPart_CellMenuComponent, myConceptCellMenuPart_Generic_Group, myConceptCellMenuPart_Generic_Group_Handler, myConceptCellMenuPart_Generic_Item, myConceptCellMenuPart_Generic_Item_Handler, myConceptCellMenuPart_PropertyPostfixHints, myConceptCellMenuPart_PropertyPostfixHints_GetPostfixes, myConceptCellMenuPart_PropertyValues, myConceptCellMenuPart_PropertyValues_GetValues, myConceptCellMenuPart_ReferentPrimary, myConceptCellMenuPart_ReplaceChildPrimary, myConceptCellMenuPart_ReplaceChild_CustomChildConcept, myConceptCellMenuPart_ReplaceChild_CustomChildConcept_Query, myConceptCellMenuPart_ReplaceChild_Group, myConceptCellMenuPart_ReplaceChild_Group_Create, myConceptCellMenuPart_ReplaceChild_Group_Query, myConceptCellMenuPart_ReplaceChild_Item, myConceptCellMenuPart_ReplaceChild_Item_Create, myConceptCellMenuPart_ReplaceChild_currentChild, myConceptCellMenuPart_ReplaceChild_defaultConceptOfChild, myConceptCellMenuPart_ReplaceNode_CustomNodeConcept, myConceptCellMenuPart_ReplaceNode_Group, myConceptCellMenuPart_ReplaceNode_Group_Create, myConceptCellModel_AbstractLabel, myConceptCellModel_Alternation, myConceptCellModel_AttributedLinkCell, myConceptCellModel_AttributedNodeCell, myConceptCellModel_AttributedPropertyCell, myConceptCellModel_Block, myConceptCellModel_BlockEnd, myConceptCellModel_BlockStart, myConceptCellModel_Collection, myConceptCellModel_Component, myConceptCellModel_Constant, myConceptCellModel_ContextAssistant, myConceptCellModel_Custom, myConceptCellModel_Empty, myConceptCellModel_Error, myConceptCellModel_Image, myConceptCellModel_Indent, myConceptCellModel_JComponent, myConceptCellModel_ListWithRole, myConceptCellModel_ModelAccess, myConceptCellModel_NextEditor, myConceptCellModel_NonEmptyProperty, myConceptCellModel_Property, myConceptCellModel_ReadOnlyModelAccessor, myConceptCellModel_RefCell, myConceptCellModel_RefNode, myConceptCellModel_RefNodeList, myConceptCellModel_ReferencePresentation, myConceptCellModel_TransactionalProperty, myConceptCellModel_URL, myConceptCellModel_WithRole, myConceptColorStyleClassItem, myConceptConceptEditorContextHints, myConceptConceptEditorDeclaration, myConceptConceptEditorHintDeclaration, myConceptConceptEditorHintDeclarationReference, myConceptConceptEditorHintDeclarationReferenceExpression, myConceptConceptFunctionParameter_StyledText, myConceptConceptFunctionParameter_childNode, myConceptConceptFunctionParameter_editorContext, myConceptConceptFunctionParameter_model, myConceptConceptFunctionParameter_nextNode, myConceptConceptFunctionParameter_node, myConceptConceptFunctionParameter_oldText, myConceptConceptFunctionParameter_parameterObject, myConceptConceptFunctionParameter_prevNode, myConceptConceptFunctionParameter_selectedNode, myConceptConceptFunctionParameter_text, myConceptContextHintsSpecification, myConceptContextVariable, myConceptContextVariable_EditorContext, myConceptContextVariable_Node, myConceptDefaultBaseLine, myConceptDefaultCaretPositionStyleClassItem, myConceptDominatesRecord, myConceptDrawBorderStyleClassItem, myConceptDrawBracketsStyleClassItem, myConceptEditableStyleClassItem, myConceptEditorCellId, myConceptEditorCellModel, myConceptEditorComponentDeclaration, myConceptEditorComponentDeclarationReference, myConceptExplicitHintsSpecification, myConceptFirstPositionAllowedStyleClassItem, myConceptFloatStyleClassItem, myConceptFontSizeStyleClassItem, myConceptFontStyleStyleClassItem, myConceptForegroundColorStyleClassItem, myConceptForegroundNullColorStyleClassItem, myConceptHorizontalAlign, myConceptHorizontalGapStyleClassItem, myConceptICellStyle, myConceptIContextProvider, myConceptIContextVariableProvider, myConceptIEditorContextProvider, myConceptIExtensibleSubstituteMenuPart, myConceptIExtensibleTransformationMenuPart, myConceptIIncludeSubstituteMenuPart, myConceptIMenu, myConceptIMenuPartParameterized, myConceptIMenuReference, myConceptIMenuReference_Default, myConceptIMenuReference_Named, myConceptIMenu_Concept, myConceptIMenu_Contribution, myConceptIMenu_Default, myConceptIMenu_Named, myConceptINodeProvider, myConceptIOutputConceptMenuPart, myConceptIParameterizableMenuPart, myConceptIQueryFunction_Color, myConceptIStyle, myConceptIStyleContainer, myConceptIStyleSheetItem, myConceptIStyleSheetMember, myConceptISubstituteMenu, myConceptISubstituteMenuReference, myConceptISubstituteMenu_String, myConceptITransformationMenu, myConceptITransformationMenuReference, myConceptIdSelector, myConceptImagePathProvider, myConceptIndentLayoutIndentAnchorStyleClassItem, myConceptIndentLayoutIndentStyleClassItem, myConceptIndentLayoutNewLineChildrenStyleClassItem, myConceptIndentLayoutNewLineStyleClassItem, myConceptIndentLayoutNoWrapClassItem, myConceptIndentLayoutOnNewLineStyleClassItem, myConceptIndentLayoutWrapAnchorStyleClassItem, myConceptInlineEditorComponent, myConceptInlineStyleDeclaration, myConceptLastPositionAllowedStyleClassItem, myConceptLayoutConstraintStyleClassItem, myConceptMatchingLabelStyleClassItem, myConceptMaxWidthStyleClassItem, myConceptModelAccessor, myConceptNavigatableNodeStyleClassItem, myConceptNavigatableReferenceStyleClassItem, myConceptOrCellSelector, myConceptPaddingBottomStyleClassItem, myConceptPaddingLeftStyleClassItem, myConceptPaddingRightStyleClassItem, myConceptPaddingTopStyleClassItem, myConceptParametersInformationQuery, myConceptParametersInformationStyleClassItem, myConceptPositionChildrenStyleClassItem, myConceptPositionStyleClassItem, myConceptPreDefinedStyleClassItem, myConceptPredefinedSelector, myConceptPropertyDeclarationCellSelector, myConceptPropertyExpressionCellSelector, myConceptPunctuationLeftStyleClassItem, myConceptPunctuationRightStyleClassItem, myConceptQueryFunctionParameter_CreatedNode, myConceptQueryFunctionParameter_SubstituteMenu_CreatedNodeToSelect, myConceptQueryFunctionParameter_SubstituteMenu_CurrentChild, myConceptQueryFunctionParameter_SubstituteMenu_Link, myConceptQueryFunctionParameter_SubstituteMenu_ParentNode, myConceptQueryFunctionParameter_TransformationMenu_CreatedNode, myConceptQueryFunctionParameter_TransformationMenu_node, myConceptQueryFunctionParameter_parameterObject, myConceptQueryFunctionParameter_pattern, myConceptQueryFunction_AttributeStyleParameter, myConceptQueryFunction_Boolean, myConceptQueryFunction_CellProvider, myConceptQueryFunction_Color, myConceptQueryFunction_ColorComposit, myConceptQueryFunction_FontStyle, myConceptQueryFunction_ImagePath, myConceptQueryFunction_Integer, myConceptQueryFunction_IsMethodCurrent, myConceptQueryFunction_JComponent, myConceptQueryFunction_Menu, myConceptQueryFunction_MethodPresentation, myConceptQueryFunction_ModelAccess_Getter, myConceptQueryFunction_ModelAccess_Setter, myConceptQueryFunction_ModelAccess_Validator, myConceptQueryFunction_ModuleAndPath, myConceptQueryFunction_NodeCondition, myConceptQueryFunction_NodeFactory, myConceptQueryFunction_NodeListFilter, myConceptQueryFunction_ParametersList, myConceptQueryFunction_SNode, myConceptQueryFunction_SeparatorText, myConceptQueryFunction_String, myConceptQueryFunction_Style, myConceptQueryFunction_StyleParameter, myConceptQueryFunction_SubstituteMenu, myConceptQueryFunction_SubstituteMenuVariable_Initializer, myConceptQueryFunction_SubstituteMenu_ActionType, myConceptQueryFunction_SubstituteMenu_CanExecute, myConceptQueryFunction_SubstituteMenu_CanSubstitute, myConceptQueryFunction_SubstituteMenu_Concept, myConceptQueryFunction_SubstituteMenu_Concepts, myConceptQueryFunction_SubstituteMenu_Condition, myConceptQueryFunction_SubstituteMenu_Icon, myConceptQueryFunction_SubstituteMenu_Parameter, myConceptQueryFunction_SubstituteMenu_Select, myConceptQueryFunction_SubstituteMenu_Substitute, myConceptQueryFunction_SubstituteMenu_SubstituteString, myConceptQueryFunction_SubstituteMenu_WrapperHandler, myConceptQueryFunction_TransformationMenu, myConceptQueryFunction_TransformationMenuVariable_Initializer, myConceptQueryFunction_TransformationMenu_ActionLabelText, myConceptQueryFunction_TransformationMenu_Condition, myConceptQueryFunction_TransformationMenu_DescriptionText, myConceptQueryFunction_TransformationMenu_Execute, myConceptQueryFunction_TransformationMenu_Extensible, myConceptQueryFunction_TransformationMenu_Node, myConceptQueryFunction_TransformationMenu_Parameter, myConceptQueryFunction_TransformationMenu_TargetNode, myConceptQueryFunction_TransformationMenu_Text, myConceptQueryFunction_TransformationMenu_WrapperHandler, myConceptQueryFunction_Underlined, myConceptQueryHintsSpecification, myConceptRGBColor, myConceptReadOnlyModelAccessor, myConceptReadOnlyStyleClassItem, myConceptRightTransformAnchorTagWrapper, myConceptScriptKindClassItem, myConceptSelectInEditorOperation, myConceptSelectParameter, myConceptSelectPositionParameter, myConceptSelectableStyleSheetItem, myConceptSetBoldOperation, myConceptSideTransformAnchorTagStyleClassItem, myConceptStrikeOutStyleSheet, myConceptStubCellModel_Alternation, myConceptStubCellModel_Block, myConceptStubCellModel_Collection, myConceptStubCellModel_Component, myConceptStubCellModel_Constant, myConceptStubCellModel_ContextAssistant, myConceptStubCellModel_Custom, myConceptStubCellModel_Error, myConceptStubCellModel_Image, myConceptStubCellModel_JComponent, myConceptStubCellModel_ModelAccess, myConceptStubCellModel_NonEmptyProperty, myConceptStubCellModel_Property, myConceptStubCellModel_ReadOnlyModelAccessor, myConceptStubCellModel_RefCell, myConceptStubCellModel_RefNode, myConceptStubCellModel_RefNodeList, myConceptStubCellModel_ReferencePresentation, myConceptStubCellModel_Table, myConceptStubCellModel_TransactionalProperty, myConceptStubCellModel_URL, myConceptStubEditorCellModel, myConceptStyleAttributeDeclaration, myConceptStyleAttributeReferenceExpression, myConceptStyleClass, myConceptStyleClassItem, myConceptStyleClassReference, myConceptStyleClassReferenceList, myConceptStyleKey, myConceptStyleKeyPack, myConceptStyleReference, myConceptStyleSheet, myConceptStyleSheetClass, myConceptStyleSheetClassReference, myConceptStyledTextType, myConceptSubstituteFeature, myConceptSubstituteFeature_ActionType, myConceptSubstituteFeature_CanExecute, myConceptSubstituteFeature_DescriptionText, myConceptSubstituteFeature_Icon, myConceptSubstituteFeature_MatchingText, myConceptSubstituteFeature_Selection, myConceptSubstituteMenu, myConceptSubstituteMenuPart, myConceptSubstituteMenuPart_Action, myConceptSubstituteMenuPart_AddConcept, myConceptSubstituteMenuPart_Concepts, myConceptSubstituteMenuPart_Group, myConceptSubstituteMenuPart_IncludeMenu, myConceptSubstituteMenuPart_Parameterized, myConceptSubstituteMenuPart_Subconcepts, myConceptSubstituteMenuPart_Wrapper, myConceptSubstituteMenuReference, myConceptSubstituteMenuReference_Default, myConceptSubstituteMenuReference_DefaultWithFunction, myConceptSubstituteMenuReference_Named, myConceptSubstituteMenuVariableDeclaration, myConceptSubstituteMenuVariableReference, myConceptSubstituteMenu_Contribution, myConceptSubstituteMenu_Default, myConceptSubstituteMenu_Named, myConceptSubstituteMenu_SimpleString, myConceptSynchronizeable, myConceptTableComponentStyleClassItem, myConceptTextBackgroundColorSelectedStyleClassItem, myConceptTextBackgroundColorStyleClassItem, myConceptTransactionPropertyHandler_newValue, myConceptTransactionPropertyHandler_oldValue, myConceptTransactionalPropertyHandler, myConceptTransformationFeature, myConceptTransformationFeature_ActionType, myConceptTransformationFeature_DescriptionText, myConceptTransformationFeature_IconNode, myConceptTransformationLocation, myConceptTransformationLocation_Completion, myConceptTransformationLocation_ContextAssistant, myConceptTransformationLocation_SideTransform, myConceptTransformationLocation_SideTransform_PlaceInCellHolder, myConceptTransformationMenu, myConceptTransformationMenuContribution, myConceptTransformationMenuPart, myConceptTransformationMenuPart_Action, myConceptTransformationMenuPart_Group, myConceptTransformationMenuPart_IncludeMenu, myConceptTransformationMenuPart_IncludeSubstituteMenu, myConceptTransformationMenuPart_Parameterized, myConceptTransformationMenuPart_Placeholder, myConceptTransformationMenuPart_SubMenu, myConceptTransformationMenuPart_Super, myConceptTransformationMenuPart_WrapSubstituteMenu, myConceptTransformationMenuReference_Default, myConceptTransformationMenuReference_Named, myConceptTransformationMenuSection, myConceptTransformationMenuVariableDeclaration, myConceptTransformationMenuVariableReference, myConceptTransformationMenu_Default, myConceptTransformationMenu_Named, myConceptUnapplyStyle, myConceptUnderlinedStyleClassItem);
   }
 
   @Override
@@ -1283,268 +1287,272 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 245:
         return myConceptQueryFunction_SubstituteMenu_CanSubstitute;
       case 246:
-        return myConceptQueryFunction_SubstituteMenu_Concepts;
+        return myConceptQueryFunction_SubstituteMenu_Concept;
       case 247:
-        return myConceptQueryFunction_SubstituteMenu_Condition;
+        return myConceptQueryFunction_SubstituteMenu_Concepts;
       case 248:
-        return myConceptQueryFunction_SubstituteMenu_Icon;
+        return myConceptQueryFunction_SubstituteMenu_Condition;
       case 249:
-        return myConceptQueryFunction_SubstituteMenu_Parameter;
+        return myConceptQueryFunction_SubstituteMenu_Icon;
       case 250:
-        return myConceptQueryFunction_SubstituteMenu_Select;
+        return myConceptQueryFunction_SubstituteMenu_Parameter;
       case 251:
-        return myConceptQueryFunction_SubstituteMenu_Substitute;
+        return myConceptQueryFunction_SubstituteMenu_Select;
       case 252:
-        return myConceptQueryFunction_SubstituteMenu_SubstituteString;
+        return myConceptQueryFunction_SubstituteMenu_Substitute;
       case 253:
-        return myConceptQueryFunction_SubstituteMenu_WrapperHandler;
+        return myConceptQueryFunction_SubstituteMenu_SubstituteString;
       case 254:
-        return myConceptQueryFunction_TransformationMenu;
+        return myConceptQueryFunction_SubstituteMenu_WrapperHandler;
       case 255:
-        return myConceptQueryFunction_TransformationMenuVariable_Initializer;
+        return myConceptQueryFunction_TransformationMenu;
       case 256:
-        return myConceptQueryFunction_TransformationMenu_ActionLabelText;
+        return myConceptQueryFunction_TransformationMenuVariable_Initializer;
       case 257:
-        return myConceptQueryFunction_TransformationMenu_Condition;
+        return myConceptQueryFunction_TransformationMenu_ActionLabelText;
       case 258:
-        return myConceptQueryFunction_TransformationMenu_DescriptionText;
+        return myConceptQueryFunction_TransformationMenu_Condition;
       case 259:
-        return myConceptQueryFunction_TransformationMenu_Execute;
+        return myConceptQueryFunction_TransformationMenu_DescriptionText;
       case 260:
-        return myConceptQueryFunction_TransformationMenu_Extensible;
+        return myConceptQueryFunction_TransformationMenu_Execute;
       case 261:
-        return myConceptQueryFunction_TransformationMenu_Node;
+        return myConceptQueryFunction_TransformationMenu_Extensible;
       case 262:
-        return myConceptQueryFunction_TransformationMenu_Parameter;
+        return myConceptQueryFunction_TransformationMenu_Node;
       case 263:
-        return myConceptQueryFunction_TransformationMenu_TargetNode;
+        return myConceptQueryFunction_TransformationMenu_Parameter;
       case 264:
-        return myConceptQueryFunction_TransformationMenu_Text;
+        return myConceptQueryFunction_TransformationMenu_TargetNode;
       case 265:
-        return myConceptQueryFunction_TransformationMenu_WrapperHandler;
+        return myConceptQueryFunction_TransformationMenu_Text;
       case 266:
-        return myConceptQueryFunction_Underlined;
+        return myConceptQueryFunction_TransformationMenu_WrapperHandler;
       case 267:
-        return myConceptQueryHintsSpecification;
+        return myConceptQueryFunction_Underlined;
       case 268:
-        return myConceptRGBColor;
+        return myConceptQueryHintsSpecification;
       case 269:
-        return myConceptReadOnlyModelAccessor;
+        return myConceptRGBColor;
       case 270:
-        return myConceptReadOnlyStyleClassItem;
+        return myConceptReadOnlyModelAccessor;
       case 271:
-        return myConceptRightTransformAnchorTagWrapper;
+        return myConceptReadOnlyStyleClassItem;
       case 272:
-        return myConceptScriptKindClassItem;
+        return myConceptRightTransformAnchorTagWrapper;
       case 273:
-        return myConceptSelectInEditorOperation;
+        return myConceptScriptKindClassItem;
       case 274:
-        return myConceptSelectParameter;
+        return myConceptSelectInEditorOperation;
       case 275:
-        return myConceptSelectPositionParameter;
+        return myConceptSelectParameter;
       case 276:
-        return myConceptSelectableStyleSheetItem;
+        return myConceptSelectPositionParameter;
       case 277:
-        return myConceptSetBoldOperation;
+        return myConceptSelectableStyleSheetItem;
       case 278:
-        return myConceptSideTransformAnchorTagStyleClassItem;
+        return myConceptSetBoldOperation;
       case 279:
-        return myConceptStrikeOutStyleSheet;
+        return myConceptSideTransformAnchorTagStyleClassItem;
       case 280:
-        return myConceptStubCellModel_Alternation;
+        return myConceptStrikeOutStyleSheet;
       case 281:
-        return myConceptStubCellModel_Block;
+        return myConceptStubCellModel_Alternation;
       case 282:
-        return myConceptStubCellModel_Collection;
+        return myConceptStubCellModel_Block;
       case 283:
-        return myConceptStubCellModel_Component;
+        return myConceptStubCellModel_Collection;
       case 284:
-        return myConceptStubCellModel_Constant;
+        return myConceptStubCellModel_Component;
       case 285:
-        return myConceptStubCellModel_ContextAssistant;
+        return myConceptStubCellModel_Constant;
       case 286:
-        return myConceptStubCellModel_Custom;
+        return myConceptStubCellModel_ContextAssistant;
       case 287:
-        return myConceptStubCellModel_Error;
+        return myConceptStubCellModel_Custom;
       case 288:
-        return myConceptStubCellModel_Image;
+        return myConceptStubCellModel_Error;
       case 289:
-        return myConceptStubCellModel_JComponent;
+        return myConceptStubCellModel_Image;
       case 290:
-        return myConceptStubCellModel_ModelAccess;
+        return myConceptStubCellModel_JComponent;
       case 291:
-        return myConceptStubCellModel_NonEmptyProperty;
+        return myConceptStubCellModel_ModelAccess;
       case 292:
-        return myConceptStubCellModel_Property;
+        return myConceptStubCellModel_NonEmptyProperty;
       case 293:
-        return myConceptStubCellModel_ReadOnlyModelAccessor;
+        return myConceptStubCellModel_Property;
       case 294:
-        return myConceptStubCellModel_RefCell;
+        return myConceptStubCellModel_ReadOnlyModelAccessor;
       case 295:
-        return myConceptStubCellModel_RefNode;
+        return myConceptStubCellModel_RefCell;
       case 296:
-        return myConceptStubCellModel_RefNodeList;
+        return myConceptStubCellModel_RefNode;
       case 297:
-        return myConceptStubCellModel_ReferencePresentation;
+        return myConceptStubCellModel_RefNodeList;
       case 298:
-        return myConceptStubCellModel_Table;
+        return myConceptStubCellModel_ReferencePresentation;
       case 299:
-        return myConceptStubCellModel_TransactionalProperty;
+        return myConceptStubCellModel_Table;
       case 300:
-        return myConceptStubCellModel_URL;
+        return myConceptStubCellModel_TransactionalProperty;
       case 301:
-        return myConceptStubEditorCellModel;
+        return myConceptStubCellModel_URL;
       case 302:
-        return myConceptStyleAttributeDeclaration;
+        return myConceptStubEditorCellModel;
       case 303:
-        return myConceptStyleAttributeReferenceExpression;
+        return myConceptStyleAttributeDeclaration;
       case 304:
-        return myConceptStyleClass;
+        return myConceptStyleAttributeReferenceExpression;
       case 305:
-        return myConceptStyleClassItem;
+        return myConceptStyleClass;
       case 306:
-        return myConceptStyleClassReference;
+        return myConceptStyleClassItem;
       case 307:
-        return myConceptStyleClassReferenceList;
+        return myConceptStyleClassReference;
       case 308:
-        return myConceptStyleKey;
+        return myConceptStyleClassReferenceList;
       case 309:
-        return myConceptStyleKeyPack;
+        return myConceptStyleKey;
       case 310:
-        return myConceptStyleReference;
+        return myConceptStyleKeyPack;
       case 311:
-        return myConceptStyleSheet;
+        return myConceptStyleReference;
       case 312:
-        return myConceptStyleSheetClass;
+        return myConceptStyleSheet;
       case 313:
-        return myConceptStyleSheetClassReference;
+        return myConceptStyleSheetClass;
       case 314:
-        return myConceptStyledTextType;
+        return myConceptStyleSheetClassReference;
       case 315:
-        return myConceptSubstituteFeature;
+        return myConceptStyledTextType;
       case 316:
-        return myConceptSubstituteFeature_ActionType;
+        return myConceptSubstituteFeature;
       case 317:
-        return myConceptSubstituteFeature_CanExecute;
+        return myConceptSubstituteFeature_ActionType;
       case 318:
-        return myConceptSubstituteFeature_DescriptionText;
+        return myConceptSubstituteFeature_CanExecute;
       case 319:
-        return myConceptSubstituteFeature_Icon;
+        return myConceptSubstituteFeature_DescriptionText;
       case 320:
-        return myConceptSubstituteFeature_MatchingText;
+        return myConceptSubstituteFeature_Icon;
       case 321:
-        return myConceptSubstituteFeature_Selection;
+        return myConceptSubstituteFeature_MatchingText;
       case 322:
-        return myConceptSubstituteMenu;
+        return myConceptSubstituteFeature_Selection;
       case 323:
-        return myConceptSubstituteMenuPart;
+        return myConceptSubstituteMenu;
       case 324:
-        return myConceptSubstituteMenuPart_Action;
+        return myConceptSubstituteMenuPart;
       case 325:
-        return myConceptSubstituteMenuPart_AddConcept;
+        return myConceptSubstituteMenuPart_Action;
       case 326:
-        return myConceptSubstituteMenuPart_Concepts;
+        return myConceptSubstituteMenuPart_AddConcept;
       case 327:
-        return myConceptSubstituteMenuPart_Group;
+        return myConceptSubstituteMenuPart_Concepts;
       case 328:
-        return myConceptSubstituteMenuPart_IncludeMenu;
+        return myConceptSubstituteMenuPart_Group;
       case 329:
-        return myConceptSubstituteMenuPart_Parameterized;
+        return myConceptSubstituteMenuPart_IncludeMenu;
       case 330:
-        return myConceptSubstituteMenuPart_Subconcepts;
+        return myConceptSubstituteMenuPart_Parameterized;
       case 331:
-        return myConceptSubstituteMenuPart_Wrapper;
+        return myConceptSubstituteMenuPart_Subconcepts;
       case 332:
-        return myConceptSubstituteMenuReference;
+        return myConceptSubstituteMenuPart_Wrapper;
       case 333:
-        return myConceptSubstituteMenuReference_Default;
+        return myConceptSubstituteMenuReference;
       case 334:
-        return myConceptSubstituteMenuReference_Named;
+        return myConceptSubstituteMenuReference_Default;
       case 335:
-        return myConceptSubstituteMenuVariableDeclaration;
+        return myConceptSubstituteMenuReference_DefaultWithFunction;
       case 336:
-        return myConceptSubstituteMenuVariableReference;
+        return myConceptSubstituteMenuReference_Named;
       case 337:
-        return myConceptSubstituteMenu_Contribution;
+        return myConceptSubstituteMenuVariableDeclaration;
       case 338:
-        return myConceptSubstituteMenu_Default;
+        return myConceptSubstituteMenuVariableReference;
       case 339:
-        return myConceptSubstituteMenu_Named;
+        return myConceptSubstituteMenu_Contribution;
       case 340:
-        return myConceptSubstituteMenu_SimpleString;
+        return myConceptSubstituteMenu_Default;
       case 341:
-        return myConceptSynchronizeable;
+        return myConceptSubstituteMenu_Named;
       case 342:
-        return myConceptTableComponentStyleClassItem;
+        return myConceptSubstituteMenu_SimpleString;
       case 343:
-        return myConceptTextBackgroundColorSelectedStyleClassItem;
+        return myConceptSynchronizeable;
       case 344:
-        return myConceptTextBackgroundColorStyleClassItem;
+        return myConceptTableComponentStyleClassItem;
       case 345:
-        return myConceptTransactionPropertyHandler_newValue;
+        return myConceptTextBackgroundColorSelectedStyleClassItem;
       case 346:
-        return myConceptTransactionPropertyHandler_oldValue;
+        return myConceptTextBackgroundColorStyleClassItem;
       case 347:
-        return myConceptTransactionalPropertyHandler;
+        return myConceptTransactionPropertyHandler_newValue;
       case 348:
-        return myConceptTransformationFeature;
+        return myConceptTransactionPropertyHandler_oldValue;
       case 349:
-        return myConceptTransformationFeature_ActionType;
+        return myConceptTransactionalPropertyHandler;
       case 350:
-        return myConceptTransformationFeature_DescriptionText;
+        return myConceptTransformationFeature;
       case 351:
-        return myConceptTransformationFeature_IconNode;
+        return myConceptTransformationFeature_ActionType;
       case 352:
-        return myConceptTransformationLocation;
+        return myConceptTransformationFeature_DescriptionText;
       case 353:
-        return myConceptTransformationLocation_Completion;
+        return myConceptTransformationFeature_IconNode;
       case 354:
-        return myConceptTransformationLocation_ContextAssistant;
+        return myConceptTransformationLocation;
       case 355:
-        return myConceptTransformationLocation_SideTransform;
+        return myConceptTransformationLocation_Completion;
       case 356:
-        return myConceptTransformationLocation_SideTransform_PlaceInCellHolder;
+        return myConceptTransformationLocation_ContextAssistant;
       case 357:
-        return myConceptTransformationMenu;
+        return myConceptTransformationLocation_SideTransform;
       case 358:
-        return myConceptTransformationMenuContribution;
+        return myConceptTransformationLocation_SideTransform_PlaceInCellHolder;
       case 359:
-        return myConceptTransformationMenuPart;
+        return myConceptTransformationMenu;
       case 360:
-        return myConceptTransformationMenuPart_Action;
+        return myConceptTransformationMenuContribution;
       case 361:
-        return myConceptTransformationMenuPart_Group;
+        return myConceptTransformationMenuPart;
       case 362:
-        return myConceptTransformationMenuPart_IncludeMenu;
+        return myConceptTransformationMenuPart_Action;
       case 363:
-        return myConceptTransformationMenuPart_IncludeSubstituteMenu;
+        return myConceptTransformationMenuPart_Group;
       case 364:
-        return myConceptTransformationMenuPart_Parameterized;
+        return myConceptTransformationMenuPart_IncludeMenu;
       case 365:
-        return myConceptTransformationMenuPart_Placeholder;
+        return myConceptTransformationMenuPart_IncludeSubstituteMenu;
       case 366:
-        return myConceptTransformationMenuPart_SubMenu;
+        return myConceptTransformationMenuPart_Parameterized;
       case 367:
-        return myConceptTransformationMenuPart_Super;
+        return myConceptTransformationMenuPart_Placeholder;
       case 368:
-        return myConceptTransformationMenuPart_WrapSubstituteMenu;
+        return myConceptTransformationMenuPart_SubMenu;
       case 369:
-        return myConceptTransformationMenuReference_Default;
+        return myConceptTransformationMenuPart_Super;
       case 370:
-        return myConceptTransformationMenuReference_Named;
+        return myConceptTransformationMenuPart_WrapSubstituteMenu;
       case 371:
-        return myConceptTransformationMenuSection;
+        return myConceptTransformationMenuReference_Default;
       case 372:
-        return myConceptTransformationMenuVariableDeclaration;
+        return myConceptTransformationMenuReference_Named;
       case 373:
-        return myConceptTransformationMenuVariableReference;
+        return myConceptTransformationMenuSection;
       case 374:
-        return myConceptTransformationMenu_Default;
+        return myConceptTransformationMenuVariableDeclaration;
       case 375:
-        return myConceptTransformationMenu_Named;
+        return myConceptTransformationMenuVariableReference;
       case 376:
-        return myConceptUnapplyStyle;
+        return myConceptTransformationMenu_Default;
       case 377:
+        return myConceptTransformationMenu_Named;
+      case 378:
+        return myConceptUnapplyStyle;
+      case 379:
         return myConceptUnderlinedStyleClassItem;
       default:
         throw new IllegalStateException();
@@ -2289,6 +2297,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForQueryFunction_SubstituteMenu_CanSubstitute() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_CanSubstitute", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121e2acf26L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).alias("", "return false if this action should be excluded from the substitute menu").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1177327161126")).create();
   }
+  private static ConceptDescriptor createDescriptorForQueryFunction_SubstituteMenu_Concept() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Concept", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x71f19593ac95deecL)).super_("jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x77859491bd4702f5L)).parents("jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x77859491bd4702f5L)).alias("", "returns concept to include substitutemenu for").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "8210508057161359084")).create();
+  }
   private static ConceptDescriptor createDescriptorForQueryFunction_SubstituteMenu_Concepts() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Concepts", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x27a7ea2e015982b3L)).super_("jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x77859491bd4702f5L)).parents("jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x77859491bd4702f5L)).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "2857509971901907635")).create();
   }
@@ -2530,7 +2541,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L)).super_("jetbrains.mps.lang.editor.structure.SubstituteMenuPart").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546aL)).parents("jetbrains.mps.lang.editor.structure.SubstituteMenuPart", "jetbrains.mps.lang.editor.structure.IOutputConceptMenuPart").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546aL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee6ee2b8485887fL)).alias("add concept", "").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "414384289274424754")).create();
   }
   private static ConceptDescriptor createDescriptorForSubstituteMenuPart_Concepts() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Concepts", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x49f6d25f12102816L)).super_("jetbrains.mps.lang.editor.structure.SubstituteMenuPart").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546aL)).parents("jetbrains.mps.lang.editor.structure.SubstituteMenuPart").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x27a7ea2e01598c0cL, "concepts", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x27a7ea2e015982b3L), false, false, false)).children(new String[]{"concepts"}, new boolean[]{false}).alias("concepts list", "").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "5329678514806335510")).create();
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Concepts", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x49f6d25f12102816L)).super_("jetbrains.mps.lang.editor.structure.SubstituteMenuPart").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546aL)).parents("jetbrains.mps.lang.editor.structure.SubstituteMenuPart").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x27a7ea2e01598c0cL, "concepts", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x27a7ea2e015982b3L), false, false, false)).children(new String[]{"concepts"}, new boolean[]{false}).alias("concepts list", "simple actions for concepts").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "5329678514806335510")).create();
   }
   private static ConceptDescriptor createDescriptorForSubstituteMenuPart_Group() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Group", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL)).super_("jetbrains.mps.lang.editor.structure.SubstituteMenuPart").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546aL)).parents("jetbrains.mps.lang.editor.structure.SubstituteMenuPart").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x780e672842433a1L, "variables", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403987bL), true, true, false), new ConceptDescriptorBuilder.Link(0x5c03050cab46daeL, "condition", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546cL), true, false, false), new ConceptDescriptorBuilder.Link(0x5c03050cab46dafL, "parts", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546aL), true, true, false)).children(new String[]{"variables", "condition", "parts"}, new boolean[]{true, false, true}).alias("group", "").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "414384289274418283")).create();
@@ -2552,6 +2563,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForSubstituteMenuReference_Default() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.SubstituteMenuReference_Default", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5480a271c0d1df1eL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.IMenuReference_Default", "jetbrains.mps.lang.editor.structure.ISubstituteMenuReference").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x36f88ebb7cc59e52L)).alias("default substitute menu", "").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "6089045305654894366")).create();
+  }
+  private static ConceptDescriptor createDescriptorForSubstituteMenuReference_DefaultWithFunction() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.SubstituteMenuReference_DefaultWithFunction", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x71f19593ac95dee9L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.ISubstituteMenuReference", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x36f88ebb7cc59e52L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x71f19593ac95deeaL, "query", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x71f19593ac95deecL), false, false, false)).children(new String[]{"query"}, new boolean[]{false}).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "8210508057161359081")).create();
   }
   private static ConceptDescriptor createDescriptorForSubstituteMenuReference_Named() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.SubstituteMenuReference_Named", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5480a271c0d1df1fL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.IMenuReference_Named", "jetbrains.mps.lang.editor.structure.ISubstituteMenuReference").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41b6L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x36f88ebb7cc59e52L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x5480a271c0d2a27eL, "menu", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x33e0267905fba6fdL), false)).references("menu").alias("named substitute menu", "").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "6089045305654894367")).create();

@@ -25,10 +25,12 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.IconResourceUtil;
-import jetbrains.mps.lang.editor.menus.ConceptMenusPart;
-import java.util.Collection;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultConceptSubstituteMenuPart;
+import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 
 public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
   @Override
@@ -112,20 +114,18 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new BaseConcept_SubstituteMenu.SubstituteMenuPart_Concepts_s3h0kg_a1());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new BaseConcept_SubstituteMenu.SubstituteMenuPart_IncludeMenu_s3h0kg_a1());
     }
   }
-  public static class SubstituteMenuPart_Concepts_s3h0kg_a1 extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
-
-    protected Collection getConcepts(SubstituteMenuContext _context) {
-      List<SAbstractConcept> result = ListSequence.fromList(new ArrayList<SAbstractConcept>());
-      ListSequence.fromList(result).addElement(SNodeOperations.getConcept(_context.getCurrentChild()));
-      return result;
-    }
-
+  public static class SubstituteMenuPart_IncludeMenu_s3h0kg_a1 extends IncludeSubstituteMenuSubstituteMenuPart {
+    @Nullable
     @Override
-    protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
-      return new DefaultConceptSubstituteMenuPart(concept).createItems(context);
+    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+      final EditorContext editorContext = _context.getEditorContext();
+      return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), getConcept(_context));
+    }
+    private SAbstractConcept getConcept(SubstituteMenuContext _context) {
+      return _context.getCurrentChild().getConcept();
     }
   }
 }
