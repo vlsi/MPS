@@ -16,8 +16,10 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -54,8 +56,14 @@ public class SChildSubstituteInfo extends AbstractSubstituteInfo {
   }
 
   @Override
-  protected DefaultTransformationMenuContext createTransformationContext() {
-    return DefaultTransformationMenuContext.createInitialContextForCell(getEditorCell(), MenuLocations.SUBSTITUTE);
+  protected TransformationMenuContext createTransformationContext() {
+    TransformationMenuContext context =
+        DefaultTransformationMenuContext.createInitialContextForCell(getEditorCell(), MenuLocations.SUBSTITUTE);
+    Object oldNodeForSubstitution = context.getNode().getUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION);
+    if (oldNodeForSubstitution instanceof SNode) {
+      context = context.withNode(((SNode) oldNodeForSubstitution));
+    }
+    return context;
   }
 
   @Override

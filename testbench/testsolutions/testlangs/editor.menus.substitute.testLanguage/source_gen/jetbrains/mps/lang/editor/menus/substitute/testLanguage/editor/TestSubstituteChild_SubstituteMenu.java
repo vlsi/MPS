@@ -49,6 +49,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
     result.add(new TestSubstituteChild_SubstituteMenu.SubstituteMenuPart_Group_ddv2zo_f());
     result.add(new TestSubstituteChild_SubstituteMenu.SubstituteMenuPart_Group_ddv2zo_g());
     result.add(new TestSubstituteChild_SubstituteMenu.SubstituteMenuPart_Group_ddv2zo_h());
+    result.add(new TestSubstituteChild_SubstituteMenu.SubstituteMenuPart_Group_ddv2zo_i());
     return result;
   }
   public class SubstituteMenuPart_Group_ddv2zo_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
@@ -248,6 +249,17 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"), "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedSubstituteMenuForContribution");
     }
   }
+  public class SubstituteMenuPart_Group_ddv2zo_i extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+    @Override
+    protected boolean isApplicable(SubstituteMenuContext _context) {
+      return eq_ddv2zo_a0a0a41(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7f0007d60cfb6991L, "superChild"));
+    }
+
+    @Override
+    protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new DefaultConceptMenusSubstituteMenuPart(ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"))));
+    }
+  }
   private static boolean eq_ddv2zo_a0a0a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
@@ -270,6 +282,9 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_ddv2zo_a0a0a21(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_ddv2zo_a0a0a41(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

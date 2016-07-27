@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuCo
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -47,7 +48,7 @@ public class SideTransformSubstituteInfo extends AbstractSubstituteInfo {
   }
 
   @Override
-  protected DefaultTransformationMenuContext createTransformationContext() {
+  protected TransformationMenuContext createTransformationContext() {
     return DefaultTransformationMenuContext.createInitialContextForCell(getEditorCell(), mySide.myMenuLocation);
   }
 
