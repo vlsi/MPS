@@ -174,6 +174,12 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   @Hack
   public static ProjectPane getInstance(Project project) {
     final ProjectView projectView = ProjectView.getInstance(project);
+    if (ApplicationManager.getApplication().isUnitTestMode()) {
+      //to ensure panes are initialized
+      // despite http://jetbrains.net/tracker/issue/IDEA-24732 is fixed, ProjectViewImpl doesn't load extensions in unit test model
+      // Perhaps, shall fix ProjectCreationTest (not to rely on != null result), instead?
+      projectView.getSelectInTargets();
+    }
     return (ProjectPane) projectView.getProjectViewPaneById(ID);
   }
 
