@@ -5226,14 +5226,6 @@
       <ref role="20lvS9" node="7mC_uHG0PRU" resolve="QueryFunction_SubstituteMenu_Icon" />
     </node>
   </node>
-  <node concept="1TIwiD" id="h8uaGWA">
-    <property role="TrG5h" value="QueryFunction_SubstituteMenu_CanSubstitute" />
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
-    <property role="2_RsDV" value="none" />
-    <property role="R4oN_" value="return false if this action should be excluded from the substitute menu" />
-    <property role="EcuMT" value="1177327161126" />
-    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
-  </node>
   <node concept="PlHQZ" id="6VAVyI4xoxZ">
     <property role="1pbfSe" value="210995542" />
     <property role="3GE5qa" value="Menu.Substitute" />
@@ -5296,7 +5288,7 @@
     <property role="2_RsDV" value="none" />
     <property role="R4oN_" value="do selection" />
     <property role="EcuMT" value="8478191136882577194" />
-    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+    <ref role="1TJDcQ" node="5EbKzCm8o62" resolve="QueryFunction_SubstituteMenuPart" />
   </node>
   <node concept="1TIwiD" id="6n_hLaFlw4b">
     <property role="3GE5qa" value="Menu.Substitute" />
@@ -5512,7 +5504,7 @@
     <property role="EcuMT" value="6684862045052059649" />
     <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
     <property role="TrG5h" value="QueryFunction_SubstituteMenu_WrapperHandler" />
-    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+    <ref role="1TJDcQ" node="5EbKzCm8o62" resolve="QueryFunction_SubstituteMenuPart" />
   </node>
   <node concept="PlHQZ" id="1quYWAD2$71">
     <property role="EcuMT" value="1630016958697718209" />
@@ -5560,7 +5552,7 @@
     <property role="2_RsDV" value="none" />
     <property role="R4oN_" value="icon" />
     <property role="EcuMT" value="8478191136886971898" />
-    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+    <ref role="1TJDcQ" node="5EbKzCm8o62" resolve="QueryFunction_SubstituteMenuPart" />
   </node>
   <node concept="1TIwiD" id="gNbvxuM">
     <property role="R5$K7" value="false" />
@@ -5680,13 +5672,14 @@
     <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
     <property role="TrG5h" value="QueryFunction_SubstituteMenu_CanExecute" />
     <property role="34LRSv" value="can execute" />
-    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+    <property role="R4oN_" value="return false if this action should be excluded from the substitute menu" />
+    <ref role="1TJDcQ" node="5EbKzCm8o62" resolve="QueryFunction_SubstituteMenuPart" />
   </node>
   <node concept="1TIwiD" id="2uBUyS1moaN">
     <property role="EcuMT" value="2857509971901907635" />
     <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
     <property role="TrG5h" value="QueryFunction_SubstituteMenu_Concepts" />
-    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+    <ref role="1TJDcQ" node="5EbKzCm8o62" resolve="QueryFunction_SubstituteMenuPart" />
   </node>
   <node concept="1TIwiD" id="7gIXFjgNa3h">
     <property role="EcuMT" value="8371900013785948369" />
@@ -5768,7 +5761,7 @@
     <property role="R4oN_" value="return text string" />
     <property role="EcuMT" value="1177335944525" />
     <property role="34LRSv" value="query" />
-    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+    <ref role="1TJDcQ" node="5EbKzCm8o62" resolve="QueryFunction_SubstituteMenuPart" />
     <node concept="PrWs8" id="7u5_96XhJDS" role="PzmwI">
       <ref role="PrY4T" node="hqh421K" resolve="ISubstituteMenu_String" />
     </node>
@@ -5877,7 +5870,7 @@
     <property role="2_RsDV" value="none" />
     <property role="R4oN_" value="return result type for this action, used for smart completion" />
     <property role="EcuMT" value="1230300670420" />
-    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <ref role="1TJDcQ" node="5EbKzCm8o62" resolve="QueryFunction_SubstituteMenuPart" />
   </node>
   <node concept="1TIwiD" id="2RDMjbOTsHj">
     <property role="EcuMT" value="3308396621974588243" />
@@ -5909,7 +5902,7 @@
     <property role="2_RsDV" value="none" />
     <property role="R4oN_" value="return node&lt;&gt; to substitute currentChild with" />
     <property role="EcuMT" value="1177327570013" />
-    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+    <ref role="1TJDcQ" node="5EbKzCm8o62" resolve="QueryFunction_SubstituteMenuPart" />
   </node>
   <node concept="PlHQZ" id="1J2KHYpABsB">
     <property role="EcuMT" value="2000375450116454183" />
@@ -6062,6 +6055,12 @@
       <property role="TrG5h" value="value" />
       <ref role="AX2Wp" node="4$nvT06KjJq" resolve="ShowBoundariesAreaEnum" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="5EbKzCm8o62">
+    <property role="EcuMT" value="6524522039911481730" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
+    <property role="TrG5h" value="QueryFunction_SubstituteMenuPart" />
+    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
   </node>
 </model>
 
