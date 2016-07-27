@@ -24,9 +24,12 @@ import jetbrains.mps.workbench.FileSystemModelHelper;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.ide.vfs.IdeaFile;
+import org.apache.log4j.Level;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ModelFocusSynchronizer implements ApplicationComponent {
   public ModelFocusSynchronizer(FrameStateManager frameStateManager) {
@@ -34,6 +37,7 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
       @Override
       public void onFrameDeactivated() {
       }
+
       @Override
       public void onFrameActivated() {
         final Set<IFile> files = SetSequence.fromSet(new HashSet<IFile>());
@@ -73,37 +77,50 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
         }
         //  the sole reason for invokeLater here is to run after all runReadInEDT. IOW, we implicitly 
         // synchronize file collection task with refresh task by using EDT thread. Just don't want to bother with 
-        // explicit synch (e.g. semaphore incremented before runReadInEDT, decremented in the end and RefreshQueue waiting for 
+        // explicit sync (e.g. semaphore incremented before runReadInEDT, decremented in the end and RefreshQueue waiting for 
         // semaphore == 0. 
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            RefreshSession session = RefreshQueue.getInstance().createSession(true, true, null);
-            for (IFile file : SetSequence.fromSet(files)) {
-              IFile fileToRefresh = file;
-              while (!(fileToRefresh.exists())) {
-                fileToRefresh = fileToRefresh.getParent();
+            if (!(SetSequence.fromSet(files).isEmpty())) {
+              RefreshSession session = RefreshQueue.getInstance().createSession(true, true, null);
+              for (IFile file : SetSequence.fromSet(files)) {
+                IFile fileToRefresh = file;
+                while (!(fileToRefresh.exists())) {
+                  fileToRefresh = fileToRefresh.getParent();
+                }
+                if (!(fileToRefresh instanceof IdeaFile)) {
+                  if (LOG.isEnabledFor(Level.WARN)) {
+                    LOG.warn("File " + fileToRefresh + " must be a project file and managed by IDEA FS");
+                  }
+                  continue;
+                }
+                VirtualFile virtualFile = ((IdeaFile) fileToRefresh).getVirtualFile();
+
+                if (virtualFile != null) {
+                  session.addFile(virtualFile);
+                }
               }
-              VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(fileToRefresh);
-              if (virtualFile != null) {
-                session.addFile(virtualFile);
-              }
+              session.launch();
             }
-            session.launch();
           }
         });
       }
     });
   }
+
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return getClass().getName();
   }
+
   @Override
   public void initComponent() {
   }
+
   @Override
   public void disposeComponent() {
   }
+  protected static Logger LOG = LogManager.getLogger(ModelFocusSynchronizer.class);
 }

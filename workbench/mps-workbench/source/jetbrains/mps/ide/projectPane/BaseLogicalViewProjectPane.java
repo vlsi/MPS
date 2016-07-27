@@ -176,6 +176,9 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   }
 
   public boolean showNodeStructure() {
+    if (isDisposed()) {
+      return false;
+    }
     return getProjectView().isShowMembers(getId());
   }
 

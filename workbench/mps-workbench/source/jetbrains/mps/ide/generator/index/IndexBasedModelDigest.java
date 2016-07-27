@@ -23,6 +23,7 @@ import com.intellij.psi.search.EverythingGlobalScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
 import com.intellij.util.indexing.ID;
+import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.ModelDigestHelper;
 import jetbrains.mps.persistence.ModelDigestHelper.DigestProvider;
@@ -67,8 +68,13 @@ public class IndexBasedModelDigest implements ApplicationComponent {
     @Override
     public Map<String, String> getGenerationHashes(@NotNull IFile iFile) {
       try {
-        VirtualFile file = VirtualFileUtils.getVirtualFile(iFile);
-        if (file == null) return null;
+        if (!(iFile instanceof IdeaFile)) {
+          return null;
+        }
+        VirtualFile file = ((IdeaFile) iFile).getVirtualFile();
+        if (file == null) {
+          return null;
+        }
 
         final Map<String, String>[] valueArray = new Map[]{null};
         FileBasedIndex.getInstance().processValues(myName, FileBasedIndex.getFileId(file), file,

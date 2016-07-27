@@ -41,7 +41,7 @@ public class FileProcessor extends ReloadParticipant {
     if (MapSequence.fromMap(dataMap).isEmpty()) {
       return;
     }
-    monitor.start("Reloading files... Please wait.", MapSequence.fromMap(dataMap).count() + 1);
+    monitor.start("", MapSequence.fromMap(dataMap).count() + 1);
     long updateStartTime = System.currentTimeMillis();
     try {
       for (FileSystemListener listener : Sequence.fromIterable(sortedListeners())) {

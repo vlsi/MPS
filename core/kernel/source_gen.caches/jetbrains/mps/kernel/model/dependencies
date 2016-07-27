@@ -2,7 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.kernel.model.MissingDependenciesFixer" file="MissingDependenciesFixer.java">
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.module.ReloadableModule" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

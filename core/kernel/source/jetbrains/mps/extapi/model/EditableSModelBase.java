@@ -151,6 +151,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
       return false;
     }
 
+    // FIXME!!!!!!!!!!!!!
     // Paranoid check to avoid saving model during update (hack for MPS-6772)
     if (needsReloading()) return false;
     return true;

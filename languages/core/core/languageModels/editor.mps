@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -595,8 +595,8 @@
       <ref role="1ERwB7" node="5FzO4t9jA_b" resolve="BaseCommentAttribute_Actions" />
       <node concept="l2Vlx" id="43t9AOLcZPj" role="2iSdaV" />
       <node concept="3F1sOY" id="4NfTi62PfCN" role="3EZMnx">
-        <ref role="1NtTu8" to="tpck:2ETBKOyieyt" resolve="commentedNode" />
         <ref role="1ERwB7" node="5FzO4t9jA_b" resolve="BaseCommentAttribute_Actions" />
+        <ref role="1NtTu8" to="tpck:2ETBKOyieyt" resolve="commentedNode" />
         <node concept="2w$q5c" id="5FKjex9hEng" role="3xwHhi">
           <node concept="2aJ2om" id="5FKjex9hEnh" role="2w$qW5">
             <ref role="2$4xQ3" node="3Rc6kd0K$RQ" resolve="comment" />

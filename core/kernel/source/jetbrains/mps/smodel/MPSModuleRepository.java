@@ -304,17 +304,22 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   @Override
   public void saveAll() {
     getModelAccess().checkWriteAccess();
-
-    for (SModule module : getModules()) {
-      if (module instanceof EditableSModule) {
-        EditableSModule editableModule = (EditableSModule) module;
-        if (editableModule.isChanged()) {
-          editableModule.save();
+    long beginTime = System.nanoTime();
+    LOG.debug("Saving repository");
+    try {
+      for (SModule module : getModules()) {
+        if (module instanceof EditableSModule) {
+          EditableSModule editableModule = (EditableSModule) module;
+          if (editableModule.isChanged()) {
+            editableModule.save();
+          }
         }
       }
-    }
 
-    SModelRepository.getInstance().saveAll();
+      SModelRepository.getInstance().saveAll();
+    } finally {
+      LOG.info(String.format("Saving of the repository took %.3f s", (System.nanoTime() - beginTime) / 1e9));
+    }
   }
 
   public void moduleFqNameChanged(SModule module, String oldName) {

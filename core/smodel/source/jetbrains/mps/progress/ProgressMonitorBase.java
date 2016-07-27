@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.progress;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 
@@ -22,9 +23,8 @@ import org.jetbrains.mps.openapi.util.SubProgressKind;
  * Evgeny Gryaznov, 10/3/11
  */
 public abstract class ProgressMonitorBase implements ProgressMonitor {
-
-  protected int myTotal = 0;
-  protected int myDone = 0;
+  private int myTotal = 0;
+  private int myDone = 0;
   private SubProgressMonitor myActiveChild;
   private int myAfterActiveChild;
   private String myName;
@@ -34,7 +34,7 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
   }
 
   @Override
-  public final void start(String taskName, int totalWork) {
+  public final void start(@NotNull String taskName, int totalWork) {
     if (myTotal > 0) {
       throw new IllegalStateException("start() is called twice");
     }
@@ -67,10 +67,10 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
   @Override
   public void advance(int work) {
     check();
+    if (work == 0) return;
     if (myTotal <= 0) {
       throw new IllegalStateException("call start() first");
     }
-    if (work == 0) return;
 
     myDone = Math.min(myTotal, Math.max(0, myDone + work));
     update();
@@ -134,13 +134,12 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     return new SubProgressMonitor(this, work, kind);
   }
 
-  protected static class SubProgressMonitor extends ProgressMonitorBase {
-
+  public static class SubProgressMonitor extends ProgressMonitorBase {
     private final ProgressMonitorBase parent;
     private final int parentTotalWork;
     private final SubProgressKind kind;
 
-    protected SubProgressMonitor(ProgressMonitorBase parent, int work, SubProgressKind kind) {
+    public SubProgressMonitor(ProgressMonitorBase parent, int work, SubProgressKind kind) {
       this.parent = parent;
       this.parentTotalWork = work;
       this.kind = kind;
@@ -172,7 +171,7 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     protected void startInternal(String text) {
     }
 
-    protected ProgressMonitorBase getParent () {
+    public ProgressMonitorBase getParent() {
       return parent;
     }
 

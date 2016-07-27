@@ -62,6 +62,7 @@ public class BasicPropertiesContributor implements CellTreeContributor {
         .property("descent", cell.getDescent())
         .property("leftGap", cell.getLeftGap())
         .property("selectable", cell.isSelectable())
+        .property("referenceCell", cell.isReferenceCell())
         .property("contextAssistantMenu", cell.getTransformationMenuLookup());
   }
 

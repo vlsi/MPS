@@ -34,6 +34,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.Set;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
@@ -74,8 +75,8 @@ class MPSClassLoadersRegistry {
     return myMPSLoadableModules.get(mRef);
   }
 
-  public Collection<SModuleReference> doUnloadModules(Collection<? extends SModuleReference> toUnload) {
-    Collection<SModuleReference> unloaded = new LinkedHashSet<SModuleReference>();
+  public Set<SModuleReference> doUnloadModules(Collection<SModuleReference> toUnload) {
+    Set<SModuleReference> unloaded = new LinkedHashSet<SModuleReference>();
     Collection<ModuleClassLoader> toDispose = new LinkedHashSet<ModuleClassLoader>();
     for (SModuleReference mRef : toUnload) {
       if (!myMPSLoadableModules.containsKey(mRef)) {
@@ -107,8 +108,8 @@ class MPSClassLoadersRegistry {
     return unloaded;
   }
 
-  public Collection<ReloadableModule> onLazyLoaded(Collection<? extends ReloadableModule> toLoadLazy) {
-    Collection<ReloadableModule> lazyLoaded = new LinkedHashSet<ReloadableModule>();
+  public Set<ReloadableModule> onLazyLoaded(Collection<ReloadableModule> toLoadLazy) {
+    Set<ReloadableModule> lazyLoaded = new LinkedHashSet<ReloadableModule>();
     for (ReloadableModule module : toLoadLazy) {
       SModuleReference mRef = module.getModuleReference();
       ClassLoadingProgress classLoadingProgress = myMPSLoadableModules.get(mRef);
@@ -122,23 +123,17 @@ class MPSClassLoadersRegistry {
     return lazyLoaded;
   }
 
-  public void doLoadModules(final Collection<? extends ReloadableModule> toLoad, ProgressMonitor monitor) {
-    try {
-      monitor.start("Loading modules...", toLoad.size());
-      final List<ModuleClassLoader> moduleClassLoaders = createModuleCLs(toLoad);
-      for (ModuleClassLoader classLoader : moduleClassLoaders) {
-        SModuleReference moduleReference = classLoader.getModule().getModuleReference();
-        ClassLoadingProgress progress = getClassLoadingProgress(moduleReference);
-        if (progress == ClassLoadingProgress.UNLOADED) {
-          throw new IllegalStateException("Module " + moduleReference + " is in UNLOADED state, i.e. the class loading clients know nothing about this module");
-        } else if (progress == ClassLoadingProgress.LAZY_LOADED) {
-          putClassLoader(moduleReference, classLoader);
-          onLoaded(moduleReference);
-        }
-        monitor.advance(1);
+  public void doLoadModules(final Collection<? extends ReloadableModule> toLoad) {
+    final List<ModuleClassLoader> moduleClassLoaders = createModuleCLs(toLoad);
+    for (ModuleClassLoader classLoader : moduleClassLoaders) {
+      SModuleReference moduleReference = classLoader.getModule().getModuleReference();
+      ClassLoadingProgress progress = getClassLoadingProgress(moduleReference);
+      if (progress == ClassLoadingProgress.UNLOADED) {
+        throw new IllegalStateException("Module " + moduleReference + " is in UNLOADED state, i.e. the class loading clients know nothing about this module");
+      } else if (progress == ClassLoadingProgress.LAZY_LOADED) {
+        putClassLoader(moduleReference, classLoader);
+        onLoaded(moduleReference);
       }
-    } finally {
-      monitor.done();
     }
   }
 

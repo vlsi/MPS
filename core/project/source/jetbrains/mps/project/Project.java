@@ -172,7 +172,7 @@ public abstract class Project implements MPSModuleOwner, IProject {
     myDisposed = true;
   }
 
-  protected final void checkNotDisposed() {
+  final void checkNotDisposed() {
     if (isDisposed()) {
       throw new IllegalStateException("Cannot proceed with disposed project " + this);
     }

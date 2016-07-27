@@ -22,6 +22,7 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -44,6 +45,7 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
     NotFoundModulesListener listener = new NotFoundModulesListener(this);
     myListeners.add(listener);
     addListener(listener);
+    ClassLoaderManager.getInstance().runNonReloadableTransaction(this::update);
   }
 
   public void disposeComponent() {

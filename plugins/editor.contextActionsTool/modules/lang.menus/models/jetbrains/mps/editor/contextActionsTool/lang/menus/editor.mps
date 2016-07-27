@@ -9,6 +9,7 @@
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="s5fb" ref="r:f51d1da3-b7ae-4ffa-81c1-3bf3a665f2dd(jetbrains.mps.editor.contextActionsTool.lang.menus.structure)" implicit="true" />
+    <import index="tpc5" ref="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -45,11 +46,11 @@
     <node concept="3EZMnI" id="7L5lpRJNrgZ" role="2wV5jI">
       <node concept="l2Vlx" id="7L5lpRJNrh0" role="2iSdaV" />
       <node concept="PMmxH" id="7L5lpRJNrhc" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="PMmxG" to="tpc5:GUt2WZG0$f" resolve="TransformationFeatureAlias" />
       </node>
       <node concept="3F1sOY" id="7L5lpRJMQqR" role="3EZMnx">
         <property role="1$x2rV" value="&lt;none&gt;" />
-        <ref role="1NtTu8" to="s5fb:7L5lpRJILQz" />
+        <ref role="1NtTu8" to="s5fb:7L5lpRJILQz" resolve="query" />
       </node>
     </node>
   </node>
@@ -59,11 +60,11 @@
     <node concept="3EZMnI" id="7L5lpRJNrhf" role="2wV5jI">
       <node concept="l2Vlx" id="7L5lpRJNrhg" role="2iSdaV" />
       <node concept="PMmxH" id="7L5lpRJNrhu" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="PMmxG" to="tpc5:GUt2WZG0$f" resolve="TransformationFeatureAlias" />
       </node>
       <node concept="3F1sOY" id="7L5lpRJMQr5" role="3EZMnx">
         <property role="1$x2rV" value="&lt;none&gt;" />
-        <ref role="1NtTu8" to="s5fb:7L5lpRJILQA" />
+        <ref role="1NtTu8" to="s5fb:7L5lpRJILQA" resolve="query" />
       </node>
     </node>
   </node>

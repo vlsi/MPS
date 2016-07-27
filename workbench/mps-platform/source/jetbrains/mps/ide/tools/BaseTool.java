@@ -231,7 +231,7 @@ public abstract class BaseTool {
     //if we create a new project, tool windows are created for it automatically
     ToolWindow toolWindow = myWindowManager.getToolWindow(myId);
     if (toolWindow == null) {
-      toolWindow = myWindowManager.registerToolWindow(myId, myCanCloseContent, myAnchor, mySideTool);
+      toolWindow = myWindowManager.registerToolWindow(myId, myCanCloseContent, myAnchor, getProject(), true, mySideTool);
     }
     toolWindow.setIcon(myIcon);
 

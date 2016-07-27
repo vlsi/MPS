@@ -89,7 +89,10 @@
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="7a6f7ef7-3988-464b-8cc5-1182671c136e" name="jetbrains.mps.samples.languagePatterns.Basic">
-      <concept id="3548406301612378086" name="jetbrains.mps.samples.languagePatterns.Basic.structure.ListOfDrawCommands" flags="ng" index="noRXt" />
+      <concept id="3548406301612382763" name="jetbrains.mps.samples.languagePatterns.Basic.structure.EmptyLine" flags="ng" index="noQag" />
+      <concept id="3548406301612378086" name="jetbrains.mps.samples.languagePatterns.Basic.structure.ListOfDrawCommands" flags="ng" index="noRXt">
+        <child id="3548406301612380195" name="commands" index="noQyo" />
+      </concept>
       <concept id="9119725621034344481" name="jetbrains.mps.samples.languagePatterns.Basic.structure.Item" flags="ng" index="Oi2o3" />
       <concept id="9119725621034344531" name="jetbrains.mps.samples.languagePatterns.Basic.structure.ItemReference" flags="ng" index="Oi2pL">
         <reference id="9119725621034344532" name="item" index="Oi2pQ" />
@@ -364,6 +367,7 @@
   <node concept="noRXt" id="34YubGAolS0">
     <property role="TrG5h" value="My Painting" />
     <property role="3GE5qa" value="fluent-editing" />
+    <node concept="noQag" id="41utEALnmQw" role="noQyo" />
   </node>
   <node concept="1nA5DH" id="1CEujLdGPmJ">
     <property role="TrG5h" value="NewScreen" />

@@ -19,6 +19,7 @@ import com.intellij.openapi.util.Ref;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItemVisitor;
+import jetbrains.mps.testbench.junit.IgnoreLogEvents;
 import org.jetbrains.annotations.Nullable;
 import org.jmock.Expectations;
 import org.junit.Test;
@@ -67,6 +68,7 @@ public class MenuItemListStepTest {
   }
 
   @Test
+  @IgnoreLogEvents
   public void getTextFor_exceptionWithoutMessage_returnsErrorMessage() {
     ActionItem item = new ActionItemBase() {
       @Nullable
@@ -82,6 +84,7 @@ public class MenuItemListStepTest {
   }
 
   @Test
+  @IgnoreLogEvents
   public void getTextFor_exceptionWithMessage_showsDefaultMessage() {
     ActionItem item = new ActionItemBase() {
       @Nullable

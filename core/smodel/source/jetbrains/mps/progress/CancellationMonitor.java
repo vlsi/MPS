@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.progress;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 
@@ -32,7 +33,7 @@ public class CancellationMonitor implements ProgressMonitor {
   }
 
   @Override
-  public void start(String taskName, int totalWork) {
+  public void start(@NotNull String taskName, int totalWork) {
   }
 
   @Override

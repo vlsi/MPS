@@ -66,9 +66,9 @@ public class ClassFileWriter {
   private final Map<String, InputStream> myClassFile2Bytes = new LinkedHashMap<>();
 
   // fixme think about class path
-  public ClassFileWriter(@NotNull ModulesContainer modulesContainer, @NotNull MessageSender sender, IClassPathItem classPath) {
+  public ClassFileWriter(ModulesContainer modulesContainer, CompositeTracer tracer, IClassPathItem classPath) {
     myModulesContainer = modulesContainer;
-    mySender = sender;
+    mySender = tracer.getSender();
     myFinder = createInstrumentationClassFinder(classPath);
   }
 

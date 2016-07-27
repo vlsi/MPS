@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.assist;
+package jetbrains.mps.nodeEditor.selection;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.Selection;
@@ -21,12 +21,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-class ContextAssistantSelectionUtil {
+public class SingularSelectionUtil {
   /**
    * Returns the single selected cell if {@code selection} is non-null and only contains one cell, otherwise returns null.
    */
   @Nullable
-  static EditorCell getSingleSelectedCell(@Nullable Selection selection) {
+  public static EditorCell getSingleSelectedCell(@Nullable Selection selection) {
     if (selection == null) return null;
     List<EditorCell> selectedCells = selection.getSelectedCells();
     return selectedCells.size() == 1 ? selectedCells.get(0) : null;
