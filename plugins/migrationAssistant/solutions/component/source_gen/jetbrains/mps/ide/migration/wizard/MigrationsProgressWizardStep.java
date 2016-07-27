@@ -145,14 +145,14 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
 
       if (!(cleanNotification)) {
         cleanNotification = true;
-        addElementToMigrationList("Cleaning project... Please wait.");
+        addElementToMigrationList("Cleaning project...");
       }
 
       stepNum++;
       setFraction(progress, ProgressEstimation.cleanupMigrations(1.0 * stepNum / cleanupStepsCount));
     }
 
-    addElementToMigrationList("Checking migrations consistency... Please wait.");
+    addElementToMigrationList("Checking migrations consistency...");
     List<ScriptApplied.ScriptAppliedReference> missingMigrations = myManager.getMissingMigrations();
     setFraction(progress, ProgressEstimation.migrationsCheck(1.0));
     if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
@@ -161,7 +161,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       return;
     }
 
-    addElementToMigrationList("Checking models... Please wait.");
+    addElementToMigrationList("Checking models...");
     final jetbrains.mps.project.Project mpsProject = getMPSProject();
     mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
@@ -206,7 +206,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       return;
     }
 
-    addElementToMigrationList("Saving changed models... Please wait.");
+    addElementToMigrationList("Saving changed models...");
 
     mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
@@ -215,20 +215,28 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     });
     setFraction(progress, ProgressEstimation.saving(1.0));
 
+    final Wrappers._boolean haveBadCode = new Wrappers._boolean(false);
+    addElementToMigrationList("Checking models...");
     mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(mpsProject);
         final Wrappers._int moduleNum = new Wrappers._int(0);
 
-        addElementToMigrationList("Checking models... Please wait.");
-        boolean haveBadCode = MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
+        haveBadCode.value = MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
           public void invoke(Double fraction) {
             moduleNum.value++;
             setFraction(progress, ProgressEstimation.postCheck(fraction));
           }
         });
+      }
+    });
 
-        addElementToMigrationList("Finding not migrated code... Please wait.");
+    addElementToMigrationList("Finding not migrated code...");
+    mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(mpsProject);
+        final Wrappers._int moduleNum = new Wrappers._int(0);
+
         boolean haveNotMigrated = MigrationCheckUtil.haveNotMigrated(modules, getMPSProject().getComponent(MigrationComponent.class), new _FunctionTypes._void_P1_E0<Double>() {
           public void invoke(Double fraction) {
             moduleNum.value++;
@@ -236,13 +244,13 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
           }
         });
 
-        if (haveBadCode || haveNotMigrated) {
-          myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.PostCheckError(haveBadCode, haveNotMigrated));
+        if (haveBadCode.value || haveNotMigrated) {
+          myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.PostCheckError(haveBadCode.value, haveNotMigrated));
         }
       }
     });
     if (myErrorContainer.getErrorDescriptor() != null) {
-      addElementToMigrationList("Problems are detected in project after executing migrations. Press 'Next' to continue.");
+      addElementToMigrationList("Problems are detected after executing migrations. Press 'Next' to continue.");
       return;
     }
 
