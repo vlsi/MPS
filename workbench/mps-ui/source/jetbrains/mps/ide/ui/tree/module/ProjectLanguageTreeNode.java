@@ -56,7 +56,10 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
   @Override
   protected void doInit() {
-    populate();
+    ModuleNodeChildrenProvider childrenProvider = getAncestor(ModuleNodeChildrenProvider.class);
+    if (childrenProvider == null || !childrenProvider.populate(this, getModule())) {
+      populate();
+    }
     myInitialized = true;
   }
 
@@ -129,8 +132,11 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     add(allModels);
   }
 
-  public class AllModelsTreeNode extends TextTreeNode {
-    public AllModelsTreeNode() {
+  /**
+   * need a dedicated instance as long as ProjectTreeFindHelper uses instanceof to decide whether to descend a node or not.
+   */
+  public static class AllModelsTreeNode extends TextTreeNode {
+    /*package*/ AllModelsTreeNode() {
       super("all models");
     }
   }

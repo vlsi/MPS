@@ -18,7 +18,10 @@ package jetbrains.mps.ide.projectPane;
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -56,7 +59,6 @@ import jetbrains.mps.ide.ui.tree.TreeHighlighterExtension;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelReadRunnable;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.Hack;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -127,6 +129,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   private List<List<String>> myExpandedPathsRaw = Collections.emptyList();
   private List<List<String>> mySelectedPathsRaw = Collections.emptyList();
   private MessageBusConnection myConnection;
+  private final ShowDescriptorModelsAction myShowDescriptorModelsAction;
 
   public ProjectPane(final Project project, ProjectView projectView) {
     super(project, projectView);
@@ -142,6 +145,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
         rebuild();
       }
     });
+    myShowDescriptorModelsAction = new ShowDescriptorModelsAction(this);
   }
 
   @Override
@@ -248,15 +252,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
 
     ProjectPaneTree tree = new ProjectPaneTree(this, myProject);
     Disposer.register(this, tree);
-    tree.setShowStructureCondition(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        if (myProject.isDisposed()) {
-          return false;
-        }
-        return ProjectPane.getInstance(myProject).showNodeStructure();
-      }
-    });
+    tree.setShowStructureCondition(this::showNodeStructure);
     myTree = tree;
 
     myScrollPane = new MyScrollPane(getTree());
@@ -299,6 +295,12 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     // merely adds an update to the update queue, and thus it's safe to invoke it
     // without runReadInEDT or runInUIThreadNoWait as it used to be.
     rebuildTree();
+  }
+
+  @Override
+  public void addToolbarActions(DefaultActionGroup group) {
+    super.addToolbarActions(group);
+    group.add(myShowDescriptorModelsAction);
   }
 
   @Override
@@ -520,6 +522,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     }
   }
 
+  // FIXME unused code, drop?
   public void addComponentCreationListener(@NotNull ComponentCreationListener l) {
     if (myComponentCreationListeners == null) {
       myComponentCreationListeners = new HashSet();
@@ -543,8 +546,13 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     ourShowGenStatus = showGenStatusInTree;
   }
 
+  // FIXME - wtf? legacy? no PerformanceSettings any longer, shall remove?
   public static boolean isShowGenStatus() {
     return ourShowGenStatus;
+  }
+
+  public boolean isDescriptorModelInGeneratorVisible() {
+    return myShowDescriptorModelsAction.isSelected();
   }
 
   @NotNull
@@ -679,6 +687,31 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
       if (toSelect != null) {
         getTree().selectNode(toSelect);
       }
+    }
+  }
+
+  private static class ShowDescriptorModelsAction extends ToggleAction {
+    private final ProjectPane myProjectPane;
+    private boolean myState = false;
+
+    ShowDescriptorModelsAction(ProjectPane projectPane) {
+      super("Show @descriptor models in Generators");
+      myProjectPane = projectPane;
+    }
+
+    public boolean isSelected() {
+      return myState;
+    }
+
+    @Override
+    public boolean isSelected(AnActionEvent e) {
+      return isSelected();
+    }
+
+    @Override
+    public void setSelected(AnActionEvent e, boolean state) {
+      myState = state;
+      myProjectPane.rebuild();
     }
   }
 }

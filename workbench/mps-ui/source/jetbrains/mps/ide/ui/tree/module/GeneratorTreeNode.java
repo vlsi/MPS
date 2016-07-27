@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,7 +48,10 @@ public class GeneratorTreeNode extends ProjectModuleTreeNode implements Stereoty
 
   @Override
   protected void doInit() {
-    new SModelsSubtree(this).create(getModule());
+    ModuleNodeChildrenProvider childrenProvider = getAncestor(ModuleNodeChildrenProvider.class);
+    if (childrenProvider == null || !childrenProvider.populate(this, getModule())) {
+      new SModelsSubtree(this).create(getModule());
+    }
     myInitialized = true;
   }
 
