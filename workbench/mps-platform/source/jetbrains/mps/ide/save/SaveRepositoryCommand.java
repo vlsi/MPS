@@ -54,12 +54,14 @@ public class SaveRepositoryCommand implements Runnable {
   }
 
   public void runSavingTask() {
-    ProgressManager.getInstance().run(new Task.Modal(null, "Saving Project", false) {
-      @Override
-      public void run(@NotNull ProgressIndicator indicator) {
-        indicator.setIndeterminate(true);
-        WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(() -> myRepository.getModelAccess().runWriteAction(SaveRepositoryCommand.this), indicator.getModalityState());
-      }
-    });
+//    ProgressManager.getInstance().run(new Task.Modal(null, "Saving Project", false) {
+//      @Override
+//      public void run(@NotNull ProgressIndicator indicator) {
+//        indicator.setIndeterminate(true);
+//        WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(() -> {
+    myRepository.getModelAccess().runWriteAction(SaveRepositoryCommand.this);
+//              indicator.getModalityState()        });
+//      }
+//    });
   }
 }
