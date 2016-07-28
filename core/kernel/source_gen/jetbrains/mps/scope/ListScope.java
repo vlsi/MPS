@@ -17,6 +17,7 @@ public abstract class ListScope extends Scope {
   public ListScope(@NotNull Iterable<SNode> elements) {
     this.elements = elements;
   }
+
   @Override
   public SNode resolve(SNode contextNode, String refText) {
     SNode result = null;
@@ -32,6 +33,7 @@ public abstract class ListScope extends Scope {
     }
     return result;
   }
+
   @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = new ArrayList<SNode>();
@@ -46,6 +48,7 @@ public abstract class ListScope extends Scope {
     }
     return result;
   }
+
   @Override
   public String getReferenceText(SNode contextNode, SNode node) {
     if (node == null) {
@@ -65,7 +68,9 @@ public abstract class ListScope extends Scope {
     }
     return result;
   }
+
   public abstract String getName(SNode child);
+
   public static ListScope forNamedElements(Iterable<SNode> elements) {
     return new ListScope(elements) {
       @Override
