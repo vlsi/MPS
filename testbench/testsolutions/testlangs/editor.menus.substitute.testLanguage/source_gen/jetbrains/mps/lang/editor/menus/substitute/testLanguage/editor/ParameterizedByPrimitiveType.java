@@ -24,7 +24,7 @@ public class ParameterizedByPrimitiveType extends SubstituteMenuBase {
     result.add(new ParameterizedByPrimitiveType.SubstituteMenuPart_Parameterized_ud82js_a());
     return result;
   }
-  private static class SubstituteMenuPart_Parameterized_ud82js_a extends ParameterizedMenuPart<Integer, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SubstituteMenuPart_Parameterized_ud82js_a extends ParameterizedMenuPart<Integer, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(Integer parameter, SubstituteMenuContext context) {

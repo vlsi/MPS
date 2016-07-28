@@ -19265,7 +19265,7 @@
             <node concept="X8dFx" id="7mC_uHFKdYa" role="2OqNvi">
               <node concept="2OqwBi" id="7mC_uHFKdYb" role="25WWJ7">
                 <node concept="13iAh5" id="7mC_uHFKdYc" role="2Oq$k0">
-                  <ref role="3eA5LN" to="tpc2:7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+                  <ref role="3eA5LN" to="tpc2:5EbKzCm8o62" resolve="QueryFunction_SubstituteMenuPart" />
                 </node>
                 <node concept="2qgKlT" id="7mC_uHFKdYd" role="2OqNvi">
                   <ref role="37wK5l" to="tpek:hEwIGRM" resolve="getParameters" />
