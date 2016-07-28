@@ -72,7 +72,7 @@ public class ModuleLibrariesUtil {
       return false;
     }
     Solution solution = (Solution) module;
-    return Arrays.asList(library.getFiles(ModuleXmlRootDetector.MPS_MODULE_XML)).contains(VirtualFileUtils.getVirtualFile(solution.getDescriptorFile()));
+    return Arrays.asList(library.getFiles(ModuleXmlRootDetector.MPS_MODULE_XML)).contains(VirtualFileUtils.getOrCreateVirtualFile(solution.getDescriptorFile()));
   }
 
   private static boolean isSuitableModule(SModule module) {
@@ -123,7 +123,7 @@ public class ModuleLibrariesUtil {
     IFile descriptorFile = usedModule.getDescriptorFile();
     VirtualFile descriptorVirtualFile = null;
     if (descriptorFile != null) {
-      descriptorVirtualFile = VirtualFileUtils.getVirtualFile(descriptorFile);
+      descriptorVirtualFile = VirtualFileUtils.getOrCreateVirtualFile(descriptorFile);
     }
     return createAutoLibrary(usedModule.getModuleName(), stubFiles, descriptorVirtualFile, container);
   }
