@@ -99,22 +99,23 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
 
   @Override
   public void problemsDetected(SModel model, Iterable<SModel.Problem> problems) {
+    Iterable<SModel.Problem> pr = problems;
     SRepository repository = model.getRepository();
     final Project project = getProjectFromUI(repository);
 
-    if (Sequence.fromIterable(problems).any(new IWhereFilter<SModel.Problem>() {
+    if (Sequence.fromIterable(pr).any(new IWhereFilter<SModel.Problem>() {
       public boolean accept(SModel.Problem it) {
         return it.isError();
       }
     })) {
-      final boolean isSave = Sequence.fromIterable(problems).any(new IWhereFilter<SModel.Problem>() {
+      final boolean isSave = Sequence.fromIterable(pr).any(new IWhereFilter<SModel.Problem>() {
         public boolean accept(SModel.Problem it) {
           return it.isError() && it.getKind() == SModel.Problem.Kind.Save;
         }
       });
       final Map<String, SNodeReference> errMap = new HashMap<String, SNodeReference>();
       final Wrappers._int index = new Wrappers._int(0);
-      String problemText = IterableUtils.join(Sequence.fromIterable(problems).where(new IWhereFilter<SModel.Problem>() {
+      String problemText = IterableUtils.join(Sequence.fromIterable(pr).where(new IWhereFilter<SModel.Problem>() {
         public boolean accept(SModel.Problem it) {
           return it.isError();
         }
