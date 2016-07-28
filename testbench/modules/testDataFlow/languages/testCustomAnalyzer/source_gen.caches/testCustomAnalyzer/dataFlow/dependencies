@@ -52,6 +52,7 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.MPSProgramFactory" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.AnalysisDirection" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzerBase" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.IDataFlowModeId" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.NamedAnalyzerId" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.ProgramFactory" />
@@ -70,6 +71,7 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.MPSProgramFactory" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.AnalysisDirection" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzerBase" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.IDataFlowModeId" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.NamedAnalyzerId" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.ProgramFactory" />
