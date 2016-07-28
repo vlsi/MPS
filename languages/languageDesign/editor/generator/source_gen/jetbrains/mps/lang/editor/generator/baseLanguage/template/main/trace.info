@@ -2083,8 +2083,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)/4233361609414133383">
     <file name="QueriesGenerated.java">
-      <node id="3473224453637829185" at="2857,120,2858,197" concept="6" />
-      <scope id="3473224453637829179" at="2857,120,2858,197" />
+      <node id="2581560916304736719" at="2857,120,2858,197" concept="6" />
+      <scope id="2581560916304736713" at="2857,120,2858,197" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)/4233361609416297855">
