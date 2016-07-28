@@ -32438,9 +32438,9 @@
     </node>
     <node concept="3aamgX" id="1A4kJjm63al" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="tpc2:1A4kJjlVAph" resolve="TransformationFeature_IconNode" />
+      <ref role="30HIoZ" to="tpc2:1A4kJjlVAph" resolve="TransformationFeature_Icon" />
       <node concept="j$656" id="1A4kJjm63aD" role="1lVwrX">
-        <ref role="v9R2y" node="1A4kJjm63aB" resolve="reduce_TransformationFeature_IconNode" />
+        <ref role="v9R2y" node="1A4kJjm63aB" resolve="reduce_TransformationFeature_IconN" />
       </node>
     </node>
   </node>
@@ -33719,20 +33719,22 @@
     </node>
   </node>
   <node concept="13MO4I" id="1A4kJjm63aB">
-    <property role="TrG5h" value="reduce_TransformationFeature_IconNode" />
+    <property role="TrG5h" value="reduce_TransformationFeature_IconN" />
     <property role="3GE5qa" value="Menu.Transformation.SideTransform" />
-    <ref role="3gUMe" to="tpc2:1A4kJjlVAph" resolve="TransformationFeature_IconNode" />
+    <ref role="3gUMe" to="tpc2:1A4kJjlVAph" resolve="TransformationFeature_Icon" />
     <node concept="312cEu" id="1A4kJjm6fKs" role="13RCb5">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="ContextClass" />
       <property role="1sVAO0" value="true" />
       <node concept="3clFb_" id="1A4kJjm6fKt" role="jymVt">
         <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="getIconNode" />
+        <property role="TrG5h" value="getIcon" />
         <property role="DiZV1" value="false" />
         <property role="od$2w" value="false" />
         <node concept="3Tm1VV" id="1A4kJjm6fKu" role="1B3o_S" />
-        <node concept="3Tqbb2" id="1A4kJjm6fKv" role="3clF45" />
+        <node concept="3uibUv" id="1MWbOI3$qFv" role="3clF45">
+          <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
+        </node>
         <node concept="3clFbS" id="1A4kJjm6fKw" role="3clF47">
           <node concept="3clFbF" id="1A4kJjm6fKx" role="3cqZAp">
             <node concept="10Nm6u" id="1A4kJjm6fKy" role="3clFbG" />

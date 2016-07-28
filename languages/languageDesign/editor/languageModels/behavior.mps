@@ -18108,7 +18108,7 @@
                 <ref role="3bZ5Sy" to="tpc2:7L5lpRJH$E_" resolve="TransformationFeature" />
               </node>
               <node concept="35c_gC" id="7L5lpRJIN6Q" role="HW$Y0">
-                <ref role="35c_gD" to="tpc2:1A4kJjlVAph" resolve="TransformationFeature_IconNode" />
+                <ref role="35c_gD" to="tpc2:1A4kJjlVAph" resolve="TransformationFeature_Icon" />
               </node>
               <node concept="35c_gC" id="7L5lpRJINbI" role="HW$Y0">
                 <ref role="35c_gD" to="tpc2:1A4kJjlVEvM" resolve="TransformationFeature_ActionType" />
@@ -19426,7 +19426,7 @@
                 <ref role="3bZ5Sy" to="tpc2:7L5lpRJH$E_" resolve="TransformationFeature" />
               </node>
               <node concept="35c_gC" id="3rSzFHWN1H1" role="HW$Y0">
-                <ref role="35c_gD" to="tpc2:1A4kJjlVAph" resolve="TransformationFeature_IconNode" />
+                <ref role="35c_gD" to="tpc2:1A4kJjlVAph" resolve="TransformationFeature_Icon" />
               </node>
               <node concept="35c_gC" id="3rSzFHWN1H2" role="HW$Y0">
                 <ref role="35c_gD" to="tpc2:1A4kJjlVEvM" resolve="TransformationFeature_ActionType" />
@@ -20980,6 +20980,31 @@
           <ref role="3qa414" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="1MWbOI3$5CE">
+    <property role="3GE5qa" value="Menu.Transformation.SideTransform" />
+    <ref role="13h7C2" to="tpc2:1MWbOI3$5oV" resolve="QueryFunction_TransformationMenu_Icon" />
+    <node concept="13hLZK" id="1MWbOI3$5CF" role="13h7CW">
+      <node concept="3clFbS" id="1MWbOI3$5CG" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="1MWbOI3$5CP" role="13h7CS">
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getExpectedReturnType" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:hEwIGRD" resolve="getExpectedReturnType" />
+      <node concept="3Tm1VV" id="1MWbOI3$5CT" role="1B3o_S" />
+      <node concept="3clFbS" id="1MWbOI3$5CV" role="3clF47">
+        <node concept="3clFbF" id="1MWbOI3$kEN" role="3cqZAp">
+          <node concept="2c44tf" id="1MWbOI3$kEO" role="3clFbG">
+            <node concept="3uibUv" id="1MWbOI3$kEP" role="2c44tc">
+              <ref role="3uigEE" to="ze1i:~IconResource" resolve="IconResource" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="1MWbOI3$5CW" role="3clF45" />
     </node>
   </node>
 </model>

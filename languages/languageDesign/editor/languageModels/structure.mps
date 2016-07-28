@@ -5055,15 +5055,15 @@
   <node concept="1TIwiD" id="1A4kJjlVAph">
     <property role="EcuMT" value="1838685759388673617" />
     <property role="3GE5qa" value="Menu.Transformation.SideTransform" />
-    <property role="TrG5h" value="TransformationFeature_IconNode" />
-    <property role="34LRSv" value="icon node" />
+    <property role="TrG5h" value="TransformationFeature_Icon" />
+    <property role="34LRSv" value="icon" />
     <ref role="1TJDcQ" node="7L5lpRJH$E_" resolve="TransformationFeature" />
     <node concept="1TJgyj" id="1A4kJjlVDlT" role="1TKVEi">
       <property role="IQ2ns" value="1838685759388685689" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="query" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="7L5lpRJILFa" resolve="QueryFunction_TransformationMenu_Node" />
+      <ref role="20lvS9" node="1MWbOI3$5oV" resolve="QueryFunction_TransformationMenu_Icon" />
     </node>
   </node>
   <node concept="AxPO7" id="30NnNOohrQJ">
@@ -6066,6 +6066,14 @@
     <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
     <property role="TrG5h" value="QueryFunction_SubstituteMenuPart" />
     <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+  </node>
+  <node concept="1TIwiD" id="1MWbOI3$5oV">
+    <property role="3GE5qa" value="Menu.Transformation.SideTransform" />
+    <property role="TrG5h" value="QueryFunction_TransformationMenu_Icon" />
+    <property role="34LRSv" value="query" />
+    <property role="EcuMT" value="2070581930059912763" />
+    <property role="R4oN_" value="a block of code" />
+    <ref role="1TJDcQ" node="6kJcyCQ_LoK" resolve="QueryFunction_TransformationMenu_Extensible" />
   </node>
 </model>
 
