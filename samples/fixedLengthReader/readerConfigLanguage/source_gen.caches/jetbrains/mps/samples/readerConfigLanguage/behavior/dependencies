@@ -1,3 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot />
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.samples.readerConfigLanguage.behavior.Field_BehaviorDescriptor" file="Field_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.readerConfigLanguage.behavior.Mapping_BehaviorDescriptor" file="Mapping_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.readerConfigLanguage.behavior.ReaderConfiguration_BehaviorDescriptor" file="ReaderConfiguration_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+</dependenciesRoot>
 

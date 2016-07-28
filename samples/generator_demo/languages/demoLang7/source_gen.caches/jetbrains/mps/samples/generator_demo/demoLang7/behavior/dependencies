@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot />
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.samples.generator_demo.demoLang7.behavior.XMLDocument_BehaviorDescriptor" file="XMLDocument_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+</dependenciesRoot>
 

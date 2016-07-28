@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.baseLanguage.extensionMethods.behavior.BaseExtensionMethodContainer_BehaviorDescriptor" file="BaseExtensionMethodContainer_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.extensionMethods.behavior.BaseExtensionMethodContainer__BehaviorDescriptor" file="BaseExtensionMethodContainer__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -39,6 +42,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodCall_BehaviorDescriptor" file="ExtensionMethodCall_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodCall__BehaviorDescriptor" file="ExtensionMethodCall__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
@@ -60,6 +66,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodDeclaration_BehaviorDescriptor" file="ExtensionMethodDeclaration_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodDeclaration__BehaviorDescriptor" file="ExtensionMethodDeclaration__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -87,6 +96,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionStaticFieldDeclaration_BehaviorDescriptor" file="ExtensionStaticFieldDeclaration_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionStaticFieldDeclaration__BehaviorDescriptor" file="ExtensionStaticFieldDeclaration__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
@@ -109,6 +121,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionStaticFieldReference_BehaviorDescriptor" file="ExtensionStaticFieldReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionStaticFieldReference__BehaviorDescriptor" file="ExtensionStaticFieldReference__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
@@ -130,6 +145,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.extensionMethods.behavior.LocalExtendedMethodCall_BehaviorDescriptor" file="LocalExtendedMethodCall_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.extensionMethods.behavior.SimpleExtensionMethodsContainer_BehaviorDescriptor" file="SimpleExtensionMethodsContainer_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.extensionMethods.behavior.ThisExtensionExpression_BehaviorDescriptor" file="ThisExtensionExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.extensionMethods.behavior.TypeExtension_BehaviorDescriptor" file="TypeExtension_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
 </dependenciesRoot>
 
