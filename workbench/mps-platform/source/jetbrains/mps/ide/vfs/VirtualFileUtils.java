@@ -28,6 +28,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
@@ -43,21 +44,42 @@ public final class VirtualFileUtils {
     return getVirtualFile(FileSystem.getInstance().getFileByPath(path));
   }
 
+  /**
+   * @deprecated please use {@link #getProjectVirtualFile(IFile)} or [if absolutely needed] {@link #getOrCreateVirtualFile(IFile)}
+   */
   @Deprecated
   @Nullable
   public static VirtualFile getVirtualFile(IFile file) {
     if (file instanceof IdeaFile) {
       return ((IdeaFile) file).getVirtualFile();
     } else {
-//      org.apache.log4j.LogManager.getLogger(VirtualFileUtils.class).error("VFILE IS NULL" + file, new Throwable());
       return null;
     }
   }
 
+  @Nullable
+  public static VirtualFile getProjectVirtualFile(@NotNull IFile file) {
+    if (file instanceof IdeaFile) {
+      return ((IdeaFile) file).getVirtualFile();
+    } else {
+      if (FileSystemExtPoint.getFS() instanceof IdeaFileSystem) {
+        LOG.warn("File " + file + " is supposed to be in project and tracked by Idea FS");
+      }
+      return null;
+    }
+  }
+
+  /**
+   * It is hack due to the 3.4 release coming soon. We have to use idea vfs to comply with
+   * IDEA subsystems which require VirtualFile (e.g. idea indexing/find usages)
+   *
+   * AP: I hope that it will go away in the nearest future since we do not need vfs tracking these files' physical changes
+   * (we would rather make them read-only)
+   */
   @Hack
   @Deprecated
   @ToRemove(version = 3.4)
-  public static VirtualFile getOrCreateVirtualFile(IFile file) {
+  public static VirtualFile getOrCreateVirtualFile(@NotNull IFile file) {
     if (file.getFileSystem() instanceof IoFileSystem) {
       file = FileSystemExtPoint.getFS().getFile(file.getPath());
       if (file instanceof IdeaFile) {

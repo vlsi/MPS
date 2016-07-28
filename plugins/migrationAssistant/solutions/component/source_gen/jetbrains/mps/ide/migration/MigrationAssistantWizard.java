@@ -4,7 +4,7 @@ package jetbrains.mps.ide.migration;
 
 import com.intellij.ide.wizard.AbstractWizardEx;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.migration.wizard.MigrationErrorContainer;
+import jetbrains.mps.ide.migration.wizard.MigrationProblemsContainer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.ide.wizard.AbstractWizardStepEx;
@@ -18,7 +18,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ModalityState;
 
 public class MigrationAssistantWizard extends AbstractWizardEx {
-  public MigrationAssistantWizard(Project project, MigrationManager manager, MigrationErrorContainer errorContainer) {
+  public MigrationAssistantWizard(Project project, MigrationManager manager, MigrationProblemsContainer errorContainer) {
     super("Migration Assistant Wizard", project, ListSequence.fromListAndArray(new ArrayList<AbstractWizardStepEx>(), new InitialStep(project), new MigrationsProgressWizardStep(project, manager, errorContainer), new MigrationErrorWizardStep(project, errorContainer)));
 
     Dimension oldSize = super.getPreferredSize();

@@ -17,9 +17,9 @@ public class MigrationErrorWizardStep extends MigrationWizardStep {
   public static final String ID = "Problem";
   private JTextPane myInfoLabel;
 
-  private MigrationErrorContainer myErrorContainer;
+  private MigrationProblemsContainer myErrorContainer;
 
-  public MigrationErrorWizardStep(Project project, MigrationErrorContainer stateHolder) {
+  public MigrationErrorWizardStep(Project project, MigrationProblemsContainer stateHolder) {
     super(project, "Could not Apply All Migrations", ID);
     myErrorContainer = stateHolder;
   }

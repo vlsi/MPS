@@ -1211,7 +1211,7 @@
       <ref role="3uigEE" node="4D3Y1hNxTJF" resolve="IStartupMigrationExecutor" />
     </node>
     <node concept="3uibUv" id="2htE_P_P_hi" role="EKbjA">
-      <ref role="3uigEE" to="o8ag:2htE_P_Pzio" resolve="MigrationErrorContainer" />
+      <ref role="3uigEE" to="o8ag:2htE_P_Pzio" resolve="MigrationProblemsContainer" />
     </node>
     <node concept="2AHcQZ" id="5SsFeroaaka" role="2AJF6D">
       <ref role="2AI5Lk" to="1m72:~State" resolve="State" />
@@ -1871,11 +1871,6 @@
                                                               </node>
                                                               <node concept="1QHqEC" id="3n7MNzO_xDz" role="1QHqEI">
                                                                 <node concept="3clFbS" id="3n7MNzO_xD$" role="1bW5cS">
-                                                                  <node concept="3SKdUt" id="6mkTi9xIBgK" role="3cqZAp">
-                                                                    <node concept="3SKdUq" id="6mkTi9xIBgM" role="3SKWNk">
-                                                                      <property role="3SKdUp" value="FIXME is there real need to obtain model access? For project and problems???" />
-                                                                    </node>
-                                                                  </node>
                                                                   <node concept="3clFbF" id="5$zfhXzsYvc" role="3cqZAp">
                                                                     <node concept="2YIFZM" id="5$zfhXzsYTp" role="3clFbG">
                                                                       <ref role="37wK5l" to="t99v:5$zfhXzsSdf" resolve="showProblems" />
@@ -3434,7 +3429,7 @@
       <node concept="37vLTG" id="2htE_P_PkXv" role="3clF46">
         <property role="TrG5h" value="errorContainer" />
         <node concept="3uibUv" id="2htE_P_PBsE" role="1tU5fm">
-          <ref role="3uigEE" to="o8ag:2htE_P_Pzio" resolve="MigrationErrorContainer" />
+          <ref role="3uigEE" to="o8ag:2htE_P_Pzio" resolve="MigrationProblemsContainer" />
         </node>
       </node>
       <node concept="3clFbS" id="5SsFeroaaug" role="3clF47">
@@ -4051,7 +4046,7 @@
                                 <node concept="1Y3b0j" id="2htE_P_QZjE" role="YeSDq">
                                   <property role="2bfB8j" value="true" />
                                   <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                                  <ref role="1Y3XeK" to="o8ag:2htE_P_Pzio" resolve="MigrationErrorContainer" />
+                                  <ref role="1Y3XeK" to="o8ag:2htE_P_Pzio" resolve="MigrationProblemsContainer" />
                                   <node concept="3Tm1VV" id="2htE_P_QZjF" role="1B3o_S" />
                                   <node concept="3clFb_" id="2htE_P_QZjG" role="jymVt">
                                     <property role="TrG5h" value="getErrorDescriptor" />
@@ -4150,7 +4145,7 @@
       <node concept="3Tm6S6" id="6JtYk_H40O6" role="1B3o_S" />
       <node concept="10P55v" id="6JtYk_H40O7" role="1tU5fm" />
       <node concept="3b6qkQ" id="6JtYk_H40O8" role="33vP2m">
-        <property role="$nhwW" value="0.6" />
+        <property role="$nhwW" value="0.5" />
       </node>
     </node>
     <node concept="Wx3nA" id="6JtYk_H40St" role="jymVt">
@@ -4159,7 +4154,7 @@
       <node concept="3Tm6S6" id="6JtYk_H40Su" role="1B3o_S" />
       <node concept="10P55v" id="6JtYk_H40Sv" role="1tU5fm" />
       <node concept="3b6qkQ" id="6JtYk_H40Sw" role="33vP2m">
-        <property role="$nhwW" value="0.3" />
+        <property role="$nhwW" value="0.4" />
       </node>
     </node>
     <node concept="Wx3nA" id="6JtYk_H40YD" role="jymVt">
@@ -4219,7 +4214,7 @@
       <node concept="10P55v" id="6JtYk_H3Xnh" role="1tU5fm" />
       <node concept="17qRlL" id="6JtYk_H46H8" role="33vP2m">
         <node concept="3b6qkQ" id="6JtYk_H46Oe" role="3uHU7w">
-          <property role="$nhwW" value="0.45" />
+          <property role="$nhwW" value="0.2" />
         </node>
         <node concept="37vLTw" id="6JtYk_H46tu" role="3uHU7B">
           <ref role="3cqZAo" node="6JtYk_H40St" resolve="CHECKS_FRACTION" />
@@ -4233,9 +4228,23 @@
       <node concept="10P55v" id="6JtYk_H3ZLO" role="1tU5fm" />
       <node concept="17qRlL" id="6JtYk_H46YX" role="33vP2m">
         <node concept="3b6qkQ" id="6JtYk_H46YY" role="3uHU7w">
-          <property role="$nhwW" value="0.45" />
+          <property role="$nhwW" value="0.2" />
         </node>
         <node concept="37vLTw" id="6JtYk_H46Z1" role="3uHU7B">
+          <ref role="3cqZAo" node="6JtYk_H40St" resolve="CHECKS_FRACTION" />
+        </node>
+      </node>
+    </node>
+    <node concept="Wx3nA" id="5$2ALroOfU$" role="jymVt">
+      <property role="3TUv4t" value="true" />
+      <property role="TrG5h" value="NONMIGRATEDCHECK_FRACTION" />
+      <node concept="3Tm6S6" id="5$2ALroOfU_" role="1B3o_S" />
+      <node concept="10P55v" id="5$2ALroOfUA" role="1tU5fm" />
+      <node concept="17qRlL" id="5$2ALroOfUB" role="33vP2m">
+        <node concept="3b6qkQ" id="5$2ALroOfUC" role="3uHU7w">
+          <property role="$nhwW" value="0.5" />
+        </node>
+        <node concept="37vLTw" id="5$2ALroOfUD" role="3uHU7B">
           <ref role="3cqZAo" node="6JtYk_H40St" resolve="CHECKS_FRACTION" />
         </node>
       </node>
@@ -4245,16 +4254,21 @@
       <property role="TrG5h" value="MIGRATIONS_CHECK_FRACTION" />
       <node concept="3Tm6S6" id="6JtYk_H3V0x" role="1B3o_S" />
       <node concept="10P55v" id="6JtYk_H3V0y" role="1tU5fm" />
-      <node concept="3cpWsd" id="6JtYk_H45Zn" role="33vP2m">
-        <node concept="37vLTw" id="6JtYk_H464q" role="3uHU7w">
-          <ref role="3cqZAo" node="6JtYk_H3ZLQ" resolve="POSTCHECK_FRACTION" />
+      <node concept="3cpWsd" id="5$2ALroOi5z" role="33vP2m">
+        <node concept="37vLTw" id="5$2ALroOiph" role="3uHU7w">
+          <ref role="3cqZAo" node="5$2ALroOfU$" resolve="NONMIGRATEDCHECK_FRACTION" />
         </node>
-        <node concept="3cpWsd" id="6JtYk_H45FD" role="3uHU7B">
-          <node concept="37vLTw" id="6JtYk_H41Vz" role="3uHU7B">
-            <ref role="3cqZAo" node="6JtYk_H40St" resolve="CHECKS_FRACTION" />
+        <node concept="3cpWsd" id="6JtYk_H45Zn" role="3uHU7B">
+          <node concept="3cpWsd" id="6JtYk_H45FD" role="3uHU7B">
+            <node concept="37vLTw" id="6JtYk_H41Vz" role="3uHU7B">
+              <ref role="3cqZAo" node="6JtYk_H40St" resolve="CHECKS_FRACTION" />
+            </node>
+            <node concept="37vLTw" id="6JtYk_H45Ks" role="3uHU7w">
+              <ref role="3cqZAo" node="6JtYk_H3Xnj" resolve="PRECHECK_FRACTION" />
+            </node>
           </node>
-          <node concept="37vLTw" id="6JtYk_H45Ks" role="3uHU7w">
-            <ref role="3cqZAo" node="6JtYk_H3Xnj" resolve="PRECHECK_FRACTION" />
+          <node concept="37vLTw" id="6JtYk_H464q" role="3uHU7w">
+            <ref role="3cqZAo" node="6JtYk_H3ZLQ" resolve="POSTCHECK_FRACTION" />
           </node>
         </node>
       </node>
@@ -4550,6 +4564,39 @@
       <node concept="37vLTG" id="6JtYk_H3TPz" role="3clF46">
         <property role="TrG5h" value="doneFraction" />
         <node concept="10P55v" id="6JtYk_H3TP$" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5$2ALroOd30" role="jymVt" />
+    <node concept="2YIFZL" id="5$2ALroOcOL" role="jymVt">
+      <property role="TrG5h" value="nonMigratedCheck" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="5$2ALroOcOM" role="3clF47">
+        <node concept="3clFbF" id="5$2ALroOcON" role="3cqZAp">
+          <node concept="3cpWs3" id="5$2ALroOcOO" role="3clFbG">
+            <node concept="17qRlL" id="5$2ALroOcOP" role="3uHU7w">
+              <node concept="37vLTw" id="5$2ALroOcOQ" role="3uHU7w">
+                <ref role="3cqZAo" node="5$2ALroOcOW" resolve="doneFraction" />
+              </node>
+              <node concept="37vLTw" id="5$2ALroOiCf" role="3uHU7B">
+                <ref role="3cqZAo" node="5$2ALroOfU$" resolve="NONMIGRATEDCHECK_FRACTION" />
+              </node>
+            </node>
+            <node concept="1rXfSq" id="5$2ALroOcOS" role="3uHU7B">
+              <ref role="37wK5l" node="6JtYk_H3TPv" resolve="postCheck" />
+              <node concept="3b6qkQ" id="5$2ALroOcOT" role="37wK5m">
+                <property role="$nhwW" value="1.0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5$2ALroOcOU" role="1B3o_S" />
+      <node concept="10P55v" id="5$2ALroOcOV" role="3clF45" />
+      <node concept="37vLTG" id="5$2ALroOcOW" role="3clF46">
+        <property role="TrG5h" value="doneFraction" />
+        <node concept="10P55v" id="5$2ALroOcOX" role="1tU5fm" />
       </node>
     </node>
     <node concept="3Tm1VV" id="6JtYk_H3TjH" role="1B3o_S" />

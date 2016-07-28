@@ -7,7 +7,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
-import jetbrains.mps.ide.migration.wizard.MigrationErrorContainer;
+import jetbrains.mps.ide.migration.wizard.MigrationProblemsContainer;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.migration.global.ProjectMigrationProperties;
@@ -61,7 +61,7 @@ import org.jetbrains.annotations.Nullable;
  */
 @State(name = "MigrationTrigger", storages = @Storage(value = StoragePathMacros.WORKSPACE_FILE)
 , reloadable = true)
-public class MigrationTrigger extends AbstractProjectComponent implements PersistentStateComponent<MigrationTrigger.MyState>, IStartupMigrationExecutor, MigrationErrorContainer {
+public class MigrationTrigger extends AbstractProjectComponent implements PersistentStateComponent<MigrationTrigger.MyState>, IStartupMigrationExecutor, MigrationProblemsContainer {
   private final ClassLoaderManager myClassLoaderManager;
 
   private MPSProject myMpsProject;
@@ -157,7 +157,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                       public void run() {
                         myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
                           public void run() {
-                            // FIXME is there real need to obtain model access? For project and problems??? 
                             MigrationOutputUtil.showProblems(myProject, myErrors.getProblems());
                           }
                         });

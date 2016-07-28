@@ -35,10 +35,6 @@
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectOptionsRegistry" />
     <classNode extendsClassName="jetbrains.mps.ide.migration.wizard.MigrationWizardStep" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.migration.wizard.MigrationErrorContainer" file="MigrationErrorContainer.java">
-    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor" file="MigrationErrorDescriptor.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -59,8 +55,12 @@
     <classNode dependClassName="javax.swing.JTextPane" />
     <classNode dependClassName="javax.swing.event.HyperlinkEvent" />
     <classNode dependClassName="javax.swing.event.HyperlinkListener" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorContainer" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationProblemsContainer" />
     <classNode extendsClassName="jetbrains.mps.ide.migration.wizard.MigrationWizardStep" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.migration.wizard.MigrationProblemsContainer" file="MigrationProblemsContainer.java">
+    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.wizard.MigrationWizardStep" file="MigrationWizardStep.java">
     <classNode dependClassName="com.intellij.ide.wizard.CommitStepException" />
@@ -129,6 +129,7 @@
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationComponent" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationScriptApplied" />
     <classNode dependClassName="jetbrains.mps.ide.migration.ProgressEstimation" />
@@ -137,10 +138,11 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.check.MigrationCheckUtil" />
     <classNode dependClassName="jetbrains.mps.ide.migration.check.MissingMigrationProblem" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.InitialStep" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorContainer" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorWizardStep" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationProblemsContainer" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationsListRenderer" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
