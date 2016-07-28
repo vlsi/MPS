@@ -37,6 +37,9 @@ public abstract class ListScope extends Scope {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode n : elements) {
       String name = getName(n);
+      if (name == null) {
+        continue;
+      }
       if (prefix == null || name.startsWith(prefix)) {
         ListSequence.fromList(result).addElement(n);
       }
