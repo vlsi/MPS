@@ -15,8 +15,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ConceptBehavior = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0a).create();
   private final ConceptPresentation props_ConceptConstructorDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptMethodDeclaration = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d43480580L, "isVirtual"), MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d43480581L, "isPrivate"), MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d43480582L, "isAbstract"), MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic"), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d4348057fL, "overriddenMethod")).create();
-  private final ConceptPresentation props_InternalConceptDeclarationReference = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_InternalConceptDeclarationsHolder = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_InternalConceptDeclarationReference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_InternalConceptDeclarationsHolder = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LocalBehaviorMethodCall = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SuperNodeExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ThisNodeExpression = new ConceptPresentationBuilder().create();
