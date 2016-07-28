@@ -90,7 +90,6 @@
         <child id="8998492695587447539" name="addConcept" index="16zJet" />
         <child id="8998492695587525119" name="childrenToContributeMenu" index="16$02h" />
         <child id="8998492695587525205" name="childrenForEmptyCell" index="16$0cV" />
-        <child id="8998492695587477489" name="subconcepts" index="16$kqv" />
         <child id="9151323058739046801" name="superChild" index="1NYQT7" />
       </concept>
       <concept id="8998492695587451566" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChildSmartReference" flags="ng" index="16zIf0">
@@ -158,7 +157,6 @@
         <property role="p6zMs" value="0" />
         <property role="LIFWd" value="empty_wrapper" />
       </node>
-      <node concept="16zIf7" id="7W01XocYQ_h" role="16$kqv" />
     </node>
     <node concept="16zE7j" id="7Nx4mSUDiuZ" role="LiZbd">
       <node concept="16zIf6" id="7Nx4mSUDoc8" role="16zJe4">
