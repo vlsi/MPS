@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.assist;
 
 import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
+import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -77,7 +78,7 @@ public class SelectionMenuProviderByCellAndConcept implements SelectionMenuProvi
       if (cell.isBig()) {
         SConcept concept = cell.getSNode().getConcept();
         DefaultTransformationMenuLookup menuLookup = new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(cell.getContext().getRepository()), concept);
-        Collection<TransformationMenu> defaultMenu = menuLookup.lookup(Collections.singleton(concept.getLanguage()));
+        Collection<TransformationMenu> defaultMenu = menuLookup.lookup(MenuUtil.getUsedLanguages(cell.getSNode()));
         boolean hasDefaultMenu = !defaultMenu.isEmpty();
         if (hasDefaultMenu) {
           return new Pair<>(menuLookup, cell);
