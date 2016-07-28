@@ -60,10 +60,12 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
   public void initComponent() {
     myRegistry.addFindUsagesParticipant(this);
   }
+
   @Override
   public void disposeComponent() {
     myRegistry.removeFindUsagesParticipant(this);
   }
+
   @NotNull
   @Override
   public String getComponentName() {
@@ -95,6 +97,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
       new NodeUsageFinder(e.getValue(), consumer).collectUsages(e.getKey());
     }
   }
+
   @Override
   public void findInstances(Collection<SModel> models, Set<SAbstractConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer) {
     final SLanguage bl = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage");
@@ -109,6 +112,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
       FindUsagesUtil.collectInstances(e.getKey(), e.getValue(), consumer);
     }
   }
+
   @Override
   public void findModelUsages(Collection<SModel> scope, Set<SModelReference> modelReferences, Consumer<SModel> consumer, Consumer<SModel> processedConsumer) {
     modelReferences = SetSequence.fromSetWithValues(new HashSet<SModelReference>(), SetSequence.fromSet(modelReferences).where(new IWhereFilter<SModelReference>() {
@@ -127,9 +131,8 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
         consumer.consume(e.getKey());
       }
     }
-
-
   }
+
   private <T> MultiMap<SModel, T> findCandidates(Collection<SModel> models, Set<T> elems, Consumer<SModel> processedConsumer, @Nullable Mapper<T, String> id) {
     MultiMap<SModel, T> result = new SetBasedMultiMap<SModel, T>();
     if (elems.isEmpty()) {
@@ -159,7 +162,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
       Collection<IFile> files = source.getAffectedFiles();
       ArrayList<VirtualFile> vFiles = new ArrayList();
       for (IFile path : files) {
-        final VirtualFile vf = VirtualFileUtils.getVirtualFile(path);
+        final VirtualFile vf = VirtualFileUtils.getOrCreateVirtualFile(path);
         if (vf == null) {
           if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("File " + path + ", which belows to model source of model " + sm.getReference().toString() + ", was not found in VFS. Assuming no usages in this file.");

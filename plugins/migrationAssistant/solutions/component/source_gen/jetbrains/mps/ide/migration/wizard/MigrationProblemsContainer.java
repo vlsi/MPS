@@ -4,7 +4,7 @@ package jetbrains.mps.ide.migration.wizard;
 
 import org.jetbrains.annotations.Nullable;
 
-public interface MigrationErrorContainer {
+public interface MigrationProblemsContainer {
   /**
    * 
    * @return null means success

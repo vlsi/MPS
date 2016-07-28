@@ -4,17 +4,18 @@ package jetbrains.mps.ide.migration;
 
 
 public class ProgressEstimation {
-  private static final double MIGRATIONS_FRACTION = 0.6;
-  private static final double CHECKS_FRACTION = 0.3;
+  private static final double MIGRATIONS_FRACTION = 0.5;
+  private static final double CHECKS_FRACTION = 0.4;
   private static final double OTHER_FRACTION = 1.0 - MIGRATIONS_FRACTION - CHECKS_FRACTION;
 
 
   private static final double SAVING_FRACTION = OTHER_FRACTION * 0.9;
   private static final double START_FRACTION = OTHER_FRACTION - SAVING_FRACTION;
 
-  private static final double PRECHECK_FRACTION = CHECKS_FRACTION * 0.45;
-  private static final double POSTCHECK_FRACTION = CHECKS_FRACTION * 0.45;
-  private static final double MIGRATIONS_CHECK_FRACTION = CHECKS_FRACTION - PRECHECK_FRACTION - POSTCHECK_FRACTION;
+  private static final double PRECHECK_FRACTION = CHECKS_FRACTION * 0.2;
+  private static final double POSTCHECK_FRACTION = CHECKS_FRACTION * 0.2;
+  private static final double NONMIGRATEDCHECK_FRACTION = CHECKS_FRACTION * 0.5;
+  private static final double MIGRATIONS_CHECK_FRACTION = CHECKS_FRACTION - PRECHECK_FRACTION - POSTCHECK_FRACTION - NONMIGRATEDCHECK_FRACTION;
 
   private static final double PROJECT_MIGRATIONS_FRACTION = MIGRATIONS_FRACTION * 0.3;
   private static final double LANGUAGE_MIGRATIONS_FRACTION = MIGRATIONS_FRACTION * 0.6;
@@ -50,5 +51,9 @@ public class ProgressEstimation {
 
   public static double postCheck(double doneFraction) {
     return saving(1.0) + POSTCHECK_FRACTION * doneFraction;
+  }
+
+  public static double nonMigratedCheck(double doneFraction) {
+    return postCheck(1.0) + NONMIGRATEDCHECK_FRACTION * doneFraction;
   }
 }

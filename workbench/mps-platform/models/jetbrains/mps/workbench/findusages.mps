@@ -4176,6 +4176,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8n7if" role="jymVt" />
     <node concept="3clFb_" id="2s2BsXxOy$4" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="disposeComponent" />
@@ -4199,6 +4200,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8n9b7" role="jymVt" />
     <node concept="3clFb_" id="2s2BsXxOy$d" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getComponentName" />
@@ -4517,6 +4519,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8nb4C" role="jymVt" />
     <node concept="3clFb_" id="6f4clAdW61p" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -4708,6 +4711,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8nb4D" role="jymVt" />
     <node concept="3clFb_" id="1nBtCnDUQU3" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -4945,13 +4949,12 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="1nBtCnE0aEp" role="3cqZAp" />
-        <node concept="3clFbH" id="1nBtCnE0aEr" role="3cqZAp" />
       </node>
       <node concept="2AHcQZ" id="1nBtCnDUZRQ" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8nb4E" role="jymVt" />
     <node concept="3clFb_" id="2s2BsXxOy_0" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="findCandidates" />
@@ -5275,10 +5278,10 @@
                     <node concept="3uibUv" id="409DxfutSkt" role="1tU5fm">
                       <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
                     </node>
-                    <node concept="2YIFZM" id="409DxfutSku" role="33vP2m">
+                    <node concept="2YIFZM" id="15yHJj8ndys" role="33vP2m">
+                      <ref role="37wK5l" to="4hrd:~VirtualFileUtils.getOrCreateVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolve="getOrCreateVirtualFile" />
                       <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
-                      <ref role="37wK5l" to="4hrd:~VirtualFileUtils.getVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolve="getVirtualFile" />
-                      <node concept="37vLTw" id="3GM_nagTvy9" role="37wK5m">
+                      <node concept="37vLTw" id="15yHJj8ndyt" role="37wK5m">
                         <ref role="3cqZAo" node="409DxfutSko" resolve="path" />
                       </node>
                     </node>

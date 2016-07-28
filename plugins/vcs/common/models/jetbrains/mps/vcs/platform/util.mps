@@ -43,6 +43,7 @@
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
       </concept>
@@ -136,6 +137,7 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
+      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
@@ -385,6 +387,7 @@
       <node concept="3Tm1VV" id="60S3DtlPd_7" role="1B3o_S" />
       <node concept="3clFbS" id="60S3DtlPd_8" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="15yHJj8lLUu" role="jymVt" />
     <node concept="2YIFZL" id="60S3DtlPd_9" role="jymVt">
       <property role="TrG5h" value="isModelOrModuleConflicting" />
       <node concept="37vLTG" id="60S3DtlPd_a" role="3clF46">
@@ -446,6 +449,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8lLUv" role="jymVt" />
     <node concept="2YIFZL" id="60S3DtlPd_$" role="jymVt">
       <property role="TrG5h" value="getConflictingModelFiles" />
       <node concept="37vLTG" id="60S3DtlPd__" role="3clF46">
@@ -663,6 +667,7 @@
         <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8lLUw" role="jymVt" />
     <node concept="2YIFZL" id="60S3DtlPdAo" role="jymVt">
       <property role="TrG5h" value="getConflictingModuleFiles" />
       <node concept="37vLTG" id="60S3DtlPdAp" role="3clF46">
@@ -798,26 +803,71 @@
         <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8lLUx" role="jymVt" />
     <node concept="2YIFZL" id="2LgKyNISVqO" role="jymVt">
       <property role="TrG5h" value="isConflictedFile" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="2LgKyNISVqR" role="3clF47">
-        <node concept="3cpWs8" id="2LgKyNISXIh" role="3cqZAp">
-          <node concept="3cpWsn" id="2LgKyNISXIi" role="3cpWs9">
-            <property role="TrG5h" value="vf" />
-            <node concept="3uibUv" id="2LgKyNISXIj" role="1tU5fm">
-              <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
+        <node concept="3clFbJ" id="15yHJj8kkoW" role="3cqZAp">
+          <node concept="3clFbS" id="15yHJj8kkoY" role="3clFbx">
+            <node concept="34ab3g" id="15yHJj8kulj" role="3cqZAp">
+              <property role="35gtTG" value="warn" />
+              <node concept="3cpWs3" id="15yHJj8kvsr" role="34bqiv">
+                <node concept="Xl_RD" id="15yHJj8kvvr" role="3uHU7w">
+                  <property role="Xl_RC" value=" must be a project file and managed by IDEA FS" />
+                </node>
+                <node concept="3cpWs3" id="15yHJj8kv8T" role="3uHU7B">
+                  <node concept="Xl_RD" id="15yHJj8kull" role="3uHU7B">
+                    <property role="Xl_RC" value="File " />
+                  </node>
+                  <node concept="37vLTw" id="15yHJj8kvbX" role="3uHU7w">
+                    <ref role="3cqZAo" node="2LgKyNISW9l" resolve="file" />
+                  </node>
+                </node>
+              </node>
             </node>
-            <node concept="2YIFZM" id="2LgKyNISXJy" role="33vP2m">
-              <ref role="37wK5l" to="4hrd:~VirtualFileUtils.getVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolve="getVirtualFile" />
-              <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
-              <node concept="37vLTw" id="2LgKyNISXK2" role="37wK5m">
+            <node concept="3cpWs6" id="15yHJj8kwm0" role="3cqZAp">
+              <node concept="3clFbT" id="15yHJj8kwpl" role="3cqZAk">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="15yHJj8kp78" role="3clFbw">
+            <node concept="2ZW3vV" id="15yHJj8ku0F" role="3fr31v">
+              <node concept="3uibUv" id="15yHJj8kuho" role="2ZW6by">
+                <ref role="3uigEE" to="4hrd:~IdeaFile" resolve="IdeaFile" />
+              </node>
+              <node concept="37vLTw" id="15yHJj8kpa9" role="2ZW6bz">
                 <ref role="3cqZAo" node="2LgKyNISW9l" resolve="file" />
               </node>
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="2LgKyNJ9sdf" role="3cqZAp">
+          <node concept="3cpWsn" id="2LgKyNJ9sdg" role="3cpWs9">
+            <property role="TrG5h" value="vf" />
+            <node concept="3uibUv" id="2LgKyNJ9sdh" role="1tU5fm">
+              <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
+            </node>
+            <node concept="2OqwBi" id="15yHJj8l86J" role="33vP2m">
+              <node concept="1eOMI4" id="15yHJj8l4ie" role="2Oq$k0">
+                <node concept="10QFUN" id="15yHJj8kQWV" role="1eOMHV">
+                  <node concept="3uibUv" id="15yHJj8kVvM" role="10QFUM">
+                    <ref role="3uigEE" to="4hrd:~IdeaFile" resolve="IdeaFile" />
+                  </node>
+                  <node concept="37vLTw" id="15yHJj8kGHw" role="10QFUP">
+                    <ref role="3cqZAo" node="2LgKyNISW9l" resolve="file" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="15yHJj8ld7z" role="2OqNvi">
+                <ref role="37wK5l" to="4hrd:~IdeaFile.getVirtualFile():com.intellij.openapi.vfs.VirtualFile" resolve="getVirtualFile" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="15yHJj8lLZE" role="3cqZAp" />
         <node concept="3clFbJ" id="2LgKyNISXNn" role="3cqZAp">
           <node concept="3clFbS" id="2LgKyNISXNq" role="3clFbx">
             <node concept="3cpWs6" id="2LgKyNISY57" role="3cqZAp">
@@ -829,7 +879,7 @@
           <node concept="3clFbC" id="2LgKyNISY42" role="3clFbw">
             <node concept="10Nm6u" id="2LgKyNISY4_" role="3uHU7w" />
             <node concept="37vLTw" id="2LgKyNISXPc" role="3uHU7B">
-              <ref role="3cqZAo" node="2LgKyNISXIi" resolve="vf" />
+              <ref role="3cqZAo" node="2LgKyNJ9sdg" resolve="vf" />
             </node>
           </node>
         </node>
@@ -850,7 +900,7 @@
               <node concept="liA8E" id="2LgKyNIT14K" role="2OqNvi">
                 <ref role="37wK5l" to="jlcu:~FileStatusManager.getStatus(com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vcs.FileStatus" resolve="getStatus" />
                 <node concept="37vLTw" id="2LgKyNIT167" role="37wK5m">
-                  <ref role="3cqZAo" node="2LgKyNISXIi" resolve="vf" />
+                  <ref role="3cqZAo" node="2LgKyNJ9sdg" resolve="vf" />
                 </node>
               </node>
             </node>
@@ -897,6 +947,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="15yHJj8lLUy" role="jymVt" />
     <node concept="2YIFZL" id="2LgKyNIWW5J" role="jymVt">
       <property role="TrG5h" value="getConflictingFiles" />
       <property role="od$2w" value="false" />

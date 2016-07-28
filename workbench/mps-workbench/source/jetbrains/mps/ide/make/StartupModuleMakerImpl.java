@@ -28,6 +28,7 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectLibraryManager;
+import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
@@ -48,7 +49,7 @@ public final class StartupModuleMakerImpl extends StartupModuleMaker {
   private final ReloadManagerComponent myReloadManager;
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public StartupModuleMakerImpl(Project project, MPSProject mpsProject, ProjectLibraryManager plm, ReloadManagerComponent reloadManager,
+  public StartupModuleMakerImpl(Project project, StandaloneMPSProject mpsProject, ProjectLibraryManager plm, ReloadManagerComponent reloadManager,
       MPSCoreComponents components) {
     super(project);
     myMPSProject = mpsProject;
@@ -76,7 +77,14 @@ public final class StartupModuleMakerImpl extends StartupModuleMaker {
   private void executeUnderOldIndicator() {
     ProgressIndicator currentIndicator = ProgressManager.getInstance().getProgressIndicator();
     currentIndicator.pushState();
-    doBuild(new ProgressMonitorAdapter(currentIndicator));
+    try {
+      doBuild(new ProgressMonitorAdapter(currentIndicator));
+    } catch (VirtualMachineError e) {
+      throw e;
+    } catch (Throwable e) {
+      LOG.error("Exception while making project", e);
+      throw e;
+    }
     currentIndicator.popState();
   }
 
@@ -87,14 +95,7 @@ public final class StartupModuleMakerImpl extends StartupModuleMaker {
       final ModuleMaker maker = new ModuleMaker();
       myReloadManager.computeNoReload(() -> {
         JavaCompilerOptions compilerOptions = JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(myMPSProject);
-        try {
-          return maker.makeAndDeploy(modules, monitor, compilerOptions);
-        } catch (VirtualMachineError e) {
-          throw e;
-        } catch (Throwable e) {
-          LOG.error("Exception while making project", e);
-          throw e;
-        }
+        return maker.makeAndDeploy(modules, monitor, compilerOptions);
       });
     });
     LOG.info("Building on startup is finished");

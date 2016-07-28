@@ -17,6 +17,8 @@ package jetbrains.mps.classloading;
 
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.ReloadableModuleBase.SModuleDependenciesListener;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -38,6 +40,7 @@ import java.util.List;
  * not thread-safe
  */
 public class BatchEventsProcessor {
+  private static Logger LOG = LogManager.getLogger(BatchEventsProcessor.class);
   private volatile boolean myBatchStarted = false;
 
   private static final Object LOCK = new Object();
@@ -58,7 +61,9 @@ public class BatchEventsProcessor {
       myEvents.clear();
       throw new IllegalStateException("Batching has been already started; Clearing the queue...");
     }
-    if (!myEvents.isEmpty()) throw new IllegalStateException("Events have not been flushed");
+    if (!myEvents.isEmpty()) {
+      LOG.warn("Events have not been flushed");
+    }
     myBatchStarted = true;
   }
 
@@ -70,10 +75,9 @@ public class BatchEventsProcessor {
   public List<SRepositoryEvent> flush() {
     synchronized (LOCK) {
       if (!myBatchStarted) {
-        assert myEvents.isEmpty();
         return Collections.emptyList();
       }
-      List<SRepositoryEvent> result = new ArrayList<SRepositoryEvent>(myEvents);
+      List<SRepositoryEvent> result = new ArrayList<>(myEvents);
       myEvents.clear();
       return result;
     }

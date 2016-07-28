@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.AdditionalTextNodeUpdate;
 import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
@@ -53,8 +52,9 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
   }
 
   private boolean isTimeToRelax() {
-    if (!ProjectPane.isShowGenStatus()) return true;
-    if (IMakeService.INSTANCE.isSessionActive()) return true;
+    if (IMakeService.INSTANCE.isSessionActive()) {
+      return true;
+    }
 
     Application application = ApplicationManager.getApplication();
     return (application.isDisposed() || application.isDisposeInProgress() || myProject.isDisposed());

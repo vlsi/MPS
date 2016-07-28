@@ -53,6 +53,7 @@
         <child id="8371900013785948359" name="part" index="2$S_pN" />
         <child id="8371900013785948365" name="parameterQuery" index="2$S_pT" />
       </concept>
+      <concept id="1638911550608571617" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Default" flags="ng" index="IW6AY" />
       <concept id="3738029991950788349" name="jetbrains.mps.lang.editor.structure.SubstituteMenu_Named" flags="ng" index="Q6S24" />
       <concept id="615427434521884870" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Subconcepts" flags="ng" index="2VfDsV" />
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
@@ -293,7 +294,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="7Nx4mSUrYcg" role="3EZMnx">
-          <ref role="1NtTu8" to="wdez:7Nx4mSUrV2Z" />
+          <ref role="1NtTu8" to="wdez:7Nx4mSUrV2Z" resolve="simpleAction" />
           <node concept="l2Vlx" id="7Nx4mSUrYch" role="2czzBx" />
           <node concept="pj6Ft" id="7Nx4mSUrYci" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -318,7 +319,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="7Nx4mSUrYcr" role="3EZMnx">
-          <ref role="1NtTu8" to="wdez:7Nx4mSUrV31" />
+          <ref role="1NtTu8" to="wdez:7Nx4mSUrV31" resolve="parameterizedQuery" />
           <node concept="l2Vlx" id="7Nx4mSUrYcs" role="2czzBx" />
           <node concept="pj6Ft" id="7Nx4mSUrYct" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -343,7 +344,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="7Nx4mSUrYcA" role="3EZMnx">
-          <ref role="1NtTu8" to="wdez:7Nx4mSUrYbE" />
+          <ref role="1NtTu8" to="wdez:7Nx4mSUrYbE" resolve="wrapper" />
           <node concept="l2Vlx" id="7Nx4mSUrYcB" role="2czzBx" />
           <node concept="pj6Ft" id="7Nx4mSUrYcC" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -368,7 +369,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="7Nx4mSUrYcL" role="3EZMnx">
-          <ref role="1NtTu8" to="wdez:7Nx4mSUrYbI" />
+          <ref role="1NtTu8" to="wdez:7Nx4mSUrYbI" resolve="conceptsMenu" />
           <node concept="l2Vlx" id="7Nx4mSUrYcM" role="2czzBx" />
           <node concept="pj6Ft" id="7Nx4mSUrYcN" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -393,7 +394,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="7Nx4mSUrYcW" role="3EZMnx">
-          <ref role="1NtTu8" to="wdez:7Nx4mSUrYbN" />
+          <ref role="1NtTu8" to="wdez:7Nx4mSUrYbN" resolve="addConcept" />
           <node concept="l2Vlx" id="7Nx4mSUrYcX" role="2czzBx" />
           <node concept="pj6Ft" id="7Nx4mSUrYcY" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -412,7 +413,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="7Nx4mSUs5w2" role="3EZMnx">
-          <ref role="1NtTu8" to="wdez:7Nx4mSUs5vL" />
+          <ref role="1NtTu8" to="wdez:7Nx4mSUs5vL" resolve="subconcepts" />
           <node concept="l2Vlx" id="7Nx4mSUs5w3" role="2czzBx" />
           <node concept="lj46D" id="7Nx4mSUs5w4" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -431,7 +432,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="7Nx4mSUDsS9" role="3EZMnx">
-          <ref role="1NtTu8" to="wdez:7Nx4mSUDsRz" />
+          <ref role="1NtTu8" to="wdez:7Nx4mSUDsRz" resolve="smartReference" />
           <node concept="l2Vlx" id="7Nx4mSUDsSa" role="2czzBx" />
           <node concept="lj46D" id="7Nx4mSUDsSb" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -450,7 +451,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="7Nx4mSUsh9v" role="3EZMnx">
-          <ref role="1NtTu8" to="wdez:7Nx4mSUsh9l" />
+          <ref role="1NtTu8" to="wdez:7Nx4mSUsh9l" resolve="childrenForEmptyCell" />
           <node concept="l2Vlx" id="7Nx4mSUsh9w" role="2czzBx" />
           <node concept="lj46D" id="7Nx4mSUsh9x" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -475,7 +476,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="7Nx4mSUsh88" role="3EZMnx">
-          <ref role="1NtTu8" to="wdez:7Nx4mSUsh7Z" />
+          <ref role="1NtTu8" to="wdez:7Nx4mSUsh7Z" resolve="childrenToContributeMenu" />
           <node concept="l2Vlx" id="7Nx4mSUsh89" role="2czzBx" />
           <node concept="lj46D" id="7Nx4mSUsh8a" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -484,6 +485,25 @@
             <property role="VOm3f" value="true" />
           </node>
           <node concept="pj6Ft" id="7Nx4mSUDwyd" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="7W01XocYQAx" role="3EZMnx">
+          <property role="3F0ifm" value="super child" />
+          <node concept="ljvvj" id="7W01XocYQAy" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F2HdR" id="7W01XocYQAs" role="3EZMnx">
+          <ref role="1NtTu8" to="wdez:7W01XocYQAh" resolve="superChild" />
+          <node concept="l2Vlx" id="7W01XocYQAt" role="2czzBx" />
+          <node concept="lj46D" id="7W01XocYQAu" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="7W01XocYQAv" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="pj6Ft" id="7W01XocYQAw" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
         </node>
@@ -525,7 +545,7 @@
             <node concept="17R0WA" id="7Nx4mSUrYuU" role="3clFbG">
               <node concept="359W_D" id="7Nx4mSUrYDM" role="3uHU7w">
                 <ref role="359W_E" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
-                <ref role="359W_F" to="wdez:7Nx4mSUrV2Z" />
+                <ref role="359W_F" to="wdez:7Nx4mSUrV2Z" resolve="simpleAction" />
               </node>
               <node concept="1J7kdh" id="7Nx4mSUrYny" role="3uHU7B" />
             </node>
@@ -540,7 +560,7 @@
             <node concept="17R0WA" id="7Nx4mSUrZOR" role="3clFbG">
               <node concept="359W_D" id="7Nx4mSUrZOS" role="3uHU7w">
                 <ref role="359W_E" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
-                <ref role="359W_F" to="wdez:7Nx4mSUrV31" />
+                <ref role="359W_F" to="wdez:7Nx4mSUrV31" resolve="parameterizedQuery" />
               </node>
               <node concept="1J7kdh" id="7Nx4mSUrZOT" role="3uHU7B" />
             </node>
@@ -625,7 +645,7 @@
             <node concept="17R0WA" id="7Nx4mSUs50a" role="3clFbG">
               <node concept="359W_D" id="7Nx4mSUs50b" role="3uHU7w">
                 <ref role="359W_E" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
-                <ref role="359W_F" to="wdez:7Nx4mSUrYbE" />
+                <ref role="359W_F" to="wdez:7Nx4mSUrYbE" resolve="wrapper" />
               </node>
               <node concept="1J7kdh" id="7Nx4mSUs50c" role="3uHU7B" />
             </node>
@@ -657,7 +677,7 @@
                     <ref role="3cqZAo" node="7Nx4mSUs6t_" resolve="node" />
                   </node>
                   <node concept="3TrEf2" id="7Nx4mSUs7Z3" role="2OqNvi">
-                    <ref role="3Tt5mk" to="wdez:7Nx4mSUrZaG" />
+                    <ref role="3Tt5mk" to="wdez:7Nx4mSUrZaG" resolve="conceptToWrap" />
                   </node>
                 </node>
                 <node concept="2oxUTD" id="7Nx4mSUs8G8" role="2OqNvi">
@@ -684,7 +704,7 @@
             <node concept="17R0WA" id="7Nx4mSUs99L" role="3clFbG">
               <node concept="359W_D" id="7Nx4mSUs99M" role="3uHU7w">
                 <ref role="359W_E" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
-                <ref role="359W_F" to="wdez:7Nx4mSUrYbI" />
+                <ref role="359W_F" to="wdez:7Nx4mSUrYbI" resolve="conceptsMenu" />
               </node>
               <node concept="1J7kdh" id="7Nx4mSUs99N" role="3uHU7B" />
             </node>
@@ -718,7 +738,7 @@
             <node concept="17R0WA" id="7Nx4mSUsdlH" role="3clFbG">
               <node concept="359W_D" id="7Nx4mSUsdlI" role="3uHU7w">
                 <ref role="359W_E" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
-                <ref role="359W_F" to="wdez:7Nx4mSUrYbN" />
+                <ref role="359W_F" to="wdez:7Nx4mSUrYbN" resolve="addConcept" />
               </node>
               <node concept="1J7kdh" id="7Nx4mSUsdlJ" role="3uHU7B" />
             </node>
@@ -736,7 +756,7 @@
             <node concept="17R0WA" id="7Nx4mSUse8r" role="3clFbG">
               <node concept="359W_D" id="7Nx4mSUse8s" role="3uHU7w">
                 <ref role="359W_E" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
-                <ref role="359W_F" to="wdez:7Nx4mSUs5vL" />
+                <ref role="359W_F" to="wdez:7Nx4mSUs5vL" resolve="subconcepts" />
               </node>
               <node concept="1J7kdh" id="7Nx4mSUse8t" role="3uHU7B" />
             </node>
@@ -752,7 +772,7 @@
             <node concept="17R0WA" id="7Nx4mSUseJB" role="3clFbG">
               <node concept="359W_D" id="7Nx4mSUseJC" role="3uHU7w">
                 <ref role="359W_E" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
-                <ref role="359W_F" to="wdez:7Nx4mSUDsRz" />
+                <ref role="359W_F" to="wdez:7Nx4mSUDsRz" resolve="smartReference" />
               </node>
               <node concept="1J7kdh" id="7Nx4mSUseJD" role="3uHU7B" />
             </node>
@@ -770,7 +790,7 @@
             <node concept="17R0WA" id="7Nx4mSUsopj" role="3clFbG">
               <node concept="359W_D" id="7Nx4mSUsopk" role="3uHU7w">
                 <ref role="359W_E" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
-                <ref role="359W_F" to="wdez:7Nx4mSUsh7Z" />
+                <ref role="359W_F" to="wdez:7Nx4mSUsh7Z" resolve="childrenToContributeMenu" />
               </node>
               <node concept="1J7kdh" id="7Nx4mSUsopl" role="3uHU7B" />
             </node>
@@ -782,6 +802,22 @@
           <ref role="2kkw0f" node="7Nx4mSUsh77" resolve="NamedSubstituteMenuForContribution" />
         </node>
       </node>
+    </node>
+    <node concept="3ft6gV" id="7W01XocZ3k_" role="3ft7WO">
+      <node concept="3ft6gW" id="7W01XocZ3sj" role="3ft5RY">
+        <node concept="3clFbS" id="7W01XocZ3sk" role="2VODD2">
+          <node concept="3clFbF" id="7W01XocZ3zs" role="3cqZAp">
+            <node concept="17R0WA" id="7W01XocZ3zu" role="3clFbG">
+              <node concept="359W_D" id="7W01XocZ3zv" role="3uHU7w">
+                <ref role="359W_E" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
+                <ref role="359W_F" to="wdez:7W01XocYQAh" resolve="superChild" />
+              </node>
+              <node concept="1J7kdh" id="7W01XocZ3zw" role="3uHU7B" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2VfDsV" id="7W01XocZ9dP" role="3ft5RZ" />
     </node>
   </node>
   <node concept="24kQdi" id="7Nx4mSUs0gl">
@@ -960,7 +996,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="7Nx4mSUDpuH" role="3EZMnx">
-        <ref role="1NtTu8" to="wdez:7Nx4mSUrZaG" />
+        <ref role="1NtTu8" to="wdez:7Nx4mSUrZaG" resolve="conceptToWrap" />
       </node>
       <node concept="3F0ifn" id="7Nx4mSUDpuI" role="3EZMnx">
         <property role="3F0ifm" value=")" />
@@ -1014,7 +1050,7 @@
         <property role="3F0ifm" value="test substitute sub child smart reference" />
       </node>
       <node concept="1iCGBv" id="7Nx4mSUDB2$" role="3EZMnx">
-        <ref role="1NtTu8" to="wdez:7Nx4mSUDA8y" />
+        <ref role="1NtTu8" to="wdez:7Nx4mSUDA8y" resolve="childToReference" />
         <node concept="1sVBvm" id="7Nx4mSUDB2A" role="1sWHZn">
           <node concept="3F0A7n" id="7Nx4mSUDB2P" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -1051,7 +1087,7 @@
     <node concept="1Qtc8_" id="7Nx4mSUDFoK" role="IW6Ez">
       <node concept="3eGOoe" id="7Nx4mSUDFoQ" role="1Qtc8$" />
       <node concept="ulPW2" id="7Nx4mSUDFoT" role="1Qtc8A">
-        <ref role="2ks2v6" to="wdez:7Nx4mSUsh9l" />
+        <ref role="2ks2v6" to="wdez:7Nx4mSUsh9l" resolve="childrenForEmptyCell" />
         <node concept="2kknPI" id="7Nx4mSUDFoW" role="2ks2uz">
           <ref role="2kkw0f" node="7Nx4mSUshaN" resolve="NamedSubstituteMenu_EmptyCell" />
         </node>
@@ -1107,7 +1143,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="7Nx4mSUDWuV" role="3EZMnx">
-          <ref role="1NtTu8" to="wdez:7Nx4mSUDWtG" />
+          <ref role="1NtTu8" to="wdez:7Nx4mSUDWtG" resolve="children" />
           <node concept="l2Vlx" id="7Nx4mSUDWuW" role="2czzBx" />
           <node concept="pj6Ft" id="7Nx4mSUDWuX" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -1360,6 +1396,17 @@
     </node>
     <node concept="2kknPI" id="6XSqyVeDkbg" role="1IG6uw">
       <ref role="2kkw0f" node="7Nx4mSUsh7Y" resolve="NamedSubstituteMenu" />
+    </node>
+  </node>
+  <node concept="IW6AY" id="7W01XocZdvn">
+    <ref role="aqKnT" to="wdez:7Nx4mSUrV2Y" resolve="TestSubstituteChild" />
+    <node concept="1Qtc8_" id="7W01XocZdvo" role="IW6Ez">
+      <node concept="3eGOoe" id="7W01XocZdvu" role="1Qtc8$" />
+      <node concept="ulPW2" id="7W01XocZdvx" role="1Qtc8A">
+        <node concept="2kknPJ" id="7W01XocZdv$" role="2ks2uz">
+          <ref role="2ZyFGn" to="wdez:7Nx4mSUrV2Y" resolve="TestSubstituteChild" />
+        </node>
+      </node>
     </node>
   </node>
 </model>

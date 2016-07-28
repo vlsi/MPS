@@ -49,7 +49,6 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -127,6 +126,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     synchronized (myLoadersDeltaLock) {
       LOG.debug("Unregistering the " + loader);
       myLoaderDelta.unload(Collections.singleton(loader));
+      scheduleUpdate(); // fixme hack to schedule on project closing. appropriate classloading events will do in the next release
     }
   }
 
@@ -170,14 +170,9 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     }
   }
 
-  private void runTask(Task task, @Nullable ProgressIndicator indicator) {
-    if (indicator != null && indicator.isRunning()) {
-      LOG.trace("running task with current indicator");
-      task.run(indicator);
-    } else {
-      LOG.trace("running task with new indicator");
-      ProgressManager.getInstance().run(task);
-    }
+  private void runTask(Task task) {
+    LOG.trace("running task with new indicator");
+    ProgressManager.getInstance().run(task);
   }
 
   private Set<PluginContributor> calcContributorsToUnload(Set<PluginContributor> currentContributors, Set<ReloadableModule> toUnload) {
@@ -234,9 +229,9 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     return pluginContributors;
   }
 
-  private void update(@NotNull ProgressMonitor monitor) {
+  private void update() {
     ThreadUtils.assertEDT();
-    LOG.debug("Updating with " + monitor);
+    LOG.debug("Updating");
     Delta<PluginLoader> loadersDelta;
     Delta<ReloadableModule> moduleDelta;
     synchronized (myLoadersDeltaLock) {
@@ -263,7 +258,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
 
     assert !myTaskInProgress.get();
     UpdatingTask task = new UpdatingTask(null, loadersDelta, contributorDelta);
-    runTask(task, getIndicator(monitor));
+    runTask(task);
   }
 
   /**
@@ -352,18 +347,13 @@ public class PluginLoaderRegistry implements ApplicationComponent {
    * not unloading plugins on application dispose (since we are inside the dispose Application.isDisposed == true;
    * it is not tolerated by ActionGroup#getChildren which is called in some of the plugins #dispose method.
    */
-  private void scheduleUpdate(ProgressMonitor monitor) {
+  private void scheduleUpdate() {
     if (myDirtyFlag.compareAndSet(false, true)) {
       Application application = ApplicationManager.getApplication();
-      ProgressIndicator indicator = getIndicator(monitor);
       if (ThreadUtils.isInEDT() && !application.isDisposed()) {
-        update(monitor);
+        update();
       } else {
-        if (indicator != null) {
-          application.invokeLater(() -> update(monitor), indicator.getModalityState(), application.getDisposed()); // already have indicator
-        } else {
-          application.invokeLater(() -> update(monitor), ModalityState.NON_MODAL, application.getDisposed()); // will have a new one
-        }
+        application.invokeLater(this::update, ModalityState.NON_MODAL, application.getDisposed());
       }
     }
   }
@@ -410,7 +400,6 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     public void onUnloaded(Set<ReloadableModule> unloadedModules, @NotNull ProgressMonitor monitor) {
       synchronized (myDeltaLock) {
         myDelta.unload(unloadedModules);
-        scheduleUpdate(monitor);
       }
     }
 
@@ -418,7 +407,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     public void onLoaded(Set<ReloadableModule> loadedModules, @NotNull ProgressMonitor monitor) {
       synchronized (myDeltaLock) {
         myDelta.load(loadedModules);
-        scheduleUpdate(monitor);
+        scheduleUpdate();
       }
     }
   }

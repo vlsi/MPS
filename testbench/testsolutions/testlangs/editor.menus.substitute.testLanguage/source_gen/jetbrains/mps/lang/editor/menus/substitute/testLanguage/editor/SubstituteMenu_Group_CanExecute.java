@@ -67,32 +67,32 @@ public class SubstituteMenu_Group_CanExecute extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new SubstituteMenu_Group_CanExecute.SubstituteMenuPart_Action_ulw6p1_a1());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new SubstituteMenu_Group_CanExecute.SubstituteMenuPart_Group_ulw6p1_b.SubstituteMenuPart_Action_ulw6p1_a1());
     }
-  }
-  private class SubstituteMenuPart_Action_ulw6p1_a1 extends SingleItemSubstituteMenuPart {
+    private class SubstituteMenuPart_Action_ulw6p1_a1 extends SingleItemSubstituteMenuPart {
 
-    @Nullable
-    @Override
-    protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new SubstituteMenu_Group_CanExecute.SubstituteMenuPart_Action_ulw6p1_a1.Item(_context);
-    }
-    private class Item extends DefaultSubstituteMenuItem {
-      private final SubstituteMenuContext _context;
-      public Item(SubstituteMenuContext context) {
-        super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"), context.getParentNode(), context.getCurrentTargetNode());
-        _context = context;
+      @Nullable
+      @Override
+      protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
+        return new SubstituteMenu_Group_CanExecute.SubstituteMenuPart_Group_ulw6p1_b.SubstituteMenuPart_Action_ulw6p1_a1.Item(_context);
       }
+      private class Item extends DefaultSubstituteMenuItem {
+        private final SubstituteMenuContext _context;
+        public Item(SubstituteMenuContext context) {
+          super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"), context.getParentNode(), context.getCurrentTargetNode());
+          _context = context;
+        }
 
-      @Override
-      public SNode createNode(String pattern) {
-        SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"));
-        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "named_group");
-        return node;
-      }
-      @Override
-      public String getMatchingText(String pattern) {
-        return "group";
+        @Override
+        public SNode createNode(String pattern) {
+          SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "named_group");
+          return node;
+        }
+        @Override
+        public String getMatchingText(String pattern) {
+          return "group";
+        }
       }
     }
   }

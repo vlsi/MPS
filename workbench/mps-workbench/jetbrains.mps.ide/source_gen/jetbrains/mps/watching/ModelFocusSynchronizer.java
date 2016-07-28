@@ -24,9 +24,12 @@ import jetbrains.mps.workbench.FileSystemModelHelper;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.ide.vfs.IdeaFile;
+import org.apache.log4j.Level;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ModelFocusSynchronizer implements ApplicationComponent {
   public ModelFocusSynchronizer(FrameStateManager frameStateManager) {
@@ -34,6 +37,7 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
       @Override
       public void onFrameDeactivated() {
       }
+
       @Override
       public void onFrameActivated() {
         final Set<IFile> files = SetSequence.fromSet(new HashSet<IFile>());
@@ -84,7 +88,14 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
                 while (!(fileToRefresh.exists())) {
                   fileToRefresh = fileToRefresh.getParent();
                 }
-                VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(fileToRefresh);
+                if (!(fileToRefresh instanceof IdeaFile)) {
+                  if (LOG.isEnabledFor(Level.WARN)) {
+                    LOG.warn("File " + fileToRefresh + " must be a project file and managed by IDEA FS");
+                  }
+                  continue;
+                }
+                VirtualFile virtualFile = ((IdeaFile) fileToRefresh).getVirtualFile();
+
                 if (virtualFile != null) {
                   session.addFile(virtualFile);
                 }
@@ -111,4 +122,5 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
   @Override
   public void disposeComponent() {
   }
+  protected static Logger LOG = LogManager.getLogger(ModelFocusSynchronizer.class);
 }

@@ -34,7 +34,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.ide.migration.MigrationComponent;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.migration.MigrationScriptApplied;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
@@ -55,10 +57,10 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
   private Task myTask;
   private InlineProgressIndicator myProgress;
   private Set<String> myExecuted = new HashSet<String>();
-  private MigrationErrorContainer myErrorContainer;
+  private MigrationProblemsContainer myErrorContainer;
   private volatile boolean myIsComplete = false;
 
-  public MigrationsProgressWizardStep(Project project, MigrationManager manager, MigrationErrorContainer errorContainer) {
+  public MigrationsProgressWizardStep(Project project, MigrationManager manager, MigrationProblemsContainer errorContainer) {
     super(project, "Migration In Progress", ID);
     myManager = manager;
     myErrorContainer = errorContainer;
@@ -143,14 +145,14 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
 
       if (!(cleanNotification)) {
         cleanNotification = true;
-        addElementToMigrationList("Cleaning project... Please wait.");
+        addElementToMigrationList("Cleaning project...");
       }
 
       stepNum++;
       setFraction(progress, ProgressEstimation.cleanupMigrations(1.0 * stepNum / cleanupStepsCount));
     }
 
-    addElementToMigrationList("Checking migrations consistency... Please wait.");
+    addElementToMigrationList("Checking migrations consistency...");
     List<ScriptApplied.ScriptAppliedReference> missingMigrations = myManager.getMissingMigrations();
     setFraction(progress, ProgressEstimation.migrationsCheck(1.0));
     if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
@@ -159,7 +161,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       return;
     }
 
-    addElementToMigrationList("Checking models... Please wait.");
+    addElementToMigrationList("Checking models...");
     final jetbrains.mps.project.Project mpsProject = getMPSProject();
     mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
@@ -204,7 +206,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       return;
     }
 
-    addElementToMigrationList("Saving changed models... Please wait.");
+    addElementToMigrationList("Saving changed models...");
 
     mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
@@ -213,23 +215,42 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     });
     setFraction(progress, ProgressEstimation.saving(1.0));
 
-    addElementToMigrationList("Checking models... Please wait.");
+    final Wrappers._boolean haveBadCode = new Wrappers._boolean(false);
+    addElementToMigrationList("Checking models...");
     mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(mpsProject);
         final Wrappers._int moduleNum = new Wrappers._int(0);
-        if (MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
+
+        haveBadCode.value = MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
           public void invoke(Double fraction) {
             moduleNum.value++;
             setFraction(progress, ProgressEstimation.postCheck(fraction));
           }
-        })) {
-          myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.PostCheckError());
+        });
+      }
+    });
+
+    addElementToMigrationList("Finding not migrated code...");
+    mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(mpsProject);
+        final Wrappers._int moduleNum = new Wrappers._int(0);
+
+        boolean haveNotMigrated = MigrationCheckUtil.haveNotMigrated(modules, getMPSProject().getComponent(MigrationComponent.class), new _FunctionTypes._void_P1_E0<Double>() {
+          public void invoke(Double fraction) {
+            moduleNum.value++;
+            setFraction(progress, ProgressEstimation.nonMigratedCheck(fraction));
+          }
+        });
+
+        if (haveBadCode.value || haveNotMigrated) {
+          myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.PostCheckError(haveBadCode.value, haveNotMigrated));
         }
       }
     });
     if (myErrorContainer.getErrorDescriptor() != null) {
-      addElementToMigrationList("Errors are detected in project after executing migrations. Press 'Next' to continue.");
+      addElementToMigrationList("Problems are detected after executing migrations. Press 'Next' to continue.");
       return;
     }
 
@@ -317,14 +338,29 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
   }
 
   private class PostCheckError extends MigrationErrorDescriptor {
-    public PostCheckError() {
+    private boolean myError;
+    private boolean myHasManuals;
+
+    public PostCheckError(boolean error, boolean hasManuals) {
+      assert error || hasManuals;
+      myError = error;
+      myHasManuals = hasManuals;
     }
     public String getMessage() {
-      return "Migration Assistant was unable to migrate some nodes in this project.<br><br>" + "Problem nodes will be shown in Model Checker tool after the project is loaded.<br>" + "Please correct them manually.";
+      String res = "Migration Assistant was unable to migrate some nodes in this project.<br><br>";
+      if (myError) {
+        res += "Problems " + ((myHasManuals ? "and code for manual correction" : "")) + "will be shown in Model Checker tool when the project is loaded.";
+      } else {
+        res += "Some code can't be migrated automatically and should be changed manually.<br>" + "Places to be changed manually will be shown in Model Checker tool after the project is loaded.<br>";
+      }
+      if (myHasManuals) {
+        res += "You can re-run search for not migrated code at any time by choosing MainMenu->Migrations->Run Pre-Update Check";
+      }
+      return res;
     }
     public Iterable<Problem> getProblems() {
       Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(getMPSProject());
-      return MigrationCheckUtil.getProblems(modules, null, 100);
+      return CollectionSequence.fromCollection(MigrationCheckUtil.getNotMigrated(modules, getMPSProject().getComponent(MigrationComponent.class), null, 100)).union(CollectionSequence.fromCollection(MigrationCheckUtil.getProblems(modules, null, 100)));
     }
   }
   private class MigrationExceptionError extends MigrationErrorDescriptor {

@@ -351,6 +351,20 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   /**
+   * hack for 3.4
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
+  public synchronized void runNonReloadableTransaction(Runnable runnable) {
+    try {
+      myRepositoryListener.pause();
+      runnable.run();
+    } finally {
+      myRepositoryListener.proceed();
+    }
+  }
+
+  /**
    * Creates ModuleClassLoader for those modules which are MPS-loadable and valid
    *
    * @see #myMPSLoadableCondition

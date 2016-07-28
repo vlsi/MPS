@@ -36,6 +36,10 @@ public final class CheckpointIdentity {
   private final PlanIdentity myPlan;
   private final String myName;
 
+  // FIXME CheckpointIdentity with Checkpoint argument uses human-friendly name, while
+  //       uses of this cons resort to persistent value. Hence equals for same checkpoint identities failed
+  //       (comparing myName) and I need to compare persistence values instead (see equals(), implying PV(PV()) is idempotent).
+  //       Need to keep name distinct from persistence value and use both correctly.
   public CheckpointIdentity(PlanIdentity plan, String cpName) {
     myPlan = plan;
     myName = cpName;
@@ -72,7 +76,7 @@ public final class CheckpointIdentity {
   public boolean equals(Object o) {
     if (o instanceof CheckpointIdentity) {
       CheckpointIdentity other = (CheckpointIdentity) o;
-      return other.myPlan.equals(myPlan) && other.myName.equals(myName);
+      return other.myPlan.equals(myPlan) && other.getPersistenceValue().equals(getPersistenceValue());
     }
     return false;
   }
