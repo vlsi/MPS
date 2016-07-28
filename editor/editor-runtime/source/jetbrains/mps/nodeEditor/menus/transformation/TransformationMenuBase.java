@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.menus.transformation;
 
 import jetbrains.mps.lang.editor.menus.CompositeMenuPart;
 import jetbrains.mps.lang.editor.menus.MenuPart;
-import jetbrains.mps.lang.editor.menus.transformation.TransformationMenuPart;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
@@ -39,7 +38,7 @@ public abstract class TransformationMenuBase implements TransformationMenu {
 
   @NotNull
   @Override
-  public List<TransformationMenuItem> createMenuItems(TransformationMenuContext context) {
+  public List<TransformationMenuItem> createMenuItems(@NotNull TransformationMenuContext context) {
     return new CompositeMenuPart<>(getParts(context)).createItems(context);
   }
 

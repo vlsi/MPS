@@ -60,10 +60,6 @@ public abstract class DefaultMenuLookup<T extends Menu> implements MenuLookup<T>
     return "default menu for " + myConcept;
   }
 
-  public boolean exists(@NotNull Collection<SLanguage> usedLanguages) {
-    return !getForConcept(usedLanguages).isEmpty();
-  }
-
   @NotNull
   @Override
   public Collection<T> lookup(@NotNull Collection<SLanguage> usedLanguages) {
