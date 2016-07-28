@@ -49,6 +49,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.editor.BaseConcept_SubstituteMenu" file="BaseConcept_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -72,6 +73,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.IconResource" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.IconResourceUtil" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

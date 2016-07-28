@@ -9,6 +9,7 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -35,92 +36,106 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
     result.add(new BaseConcept_SubstituteMenu.SubstituteMenuPart_Group_s3h0kg_a());
-    result.add(new BaseConcept_SubstituteMenu.SubstituteMenuPart_Group_s3h0kg_b());
     return result;
   }
   public class SubstituteMenuPart_Group_s3h0kg_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+    private boolean isChildNullOrExactlyBaseConcept;
     @Override
-    protected boolean isApplicable(SubstituteMenuContext _context) {
-      return (_context.getCurrentTargetNode() == null) || SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(_context.getCurrentTargetNode())), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
+    protected void initialize(SubstituteMenuContext _context) {
+      super.initialize(_context);
+      isChildNullOrExactlyBaseConcept = new Computable<Boolean>() {
+        public Boolean compute() {
+          return (_context.getCurrentTargetNode() == null) || SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(_context.getCurrentTargetNode())), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
+        }
+      }.compute();
     }
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new BaseConcept_SubstituteMenu.SubstituteMenuPart_Parameterized_s3h0kg_a0());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new BaseConcept_SubstituteMenu.SubstituteMenuPart_Group_s3h0kg_a.SubstituteMenuPart_Group_s3h0kg_a0(), new BaseConcept_SubstituteMenu.SubstituteMenuPart_Group_s3h0kg_a.SubstituteMenuPart_Group_s3h0kg_b0());
     }
-  }
-  private static class SubstituteMenuPart_Parameterized_s3h0kg_a0 extends ParameterizedMenuPart<SAbstractConcept, SubstituteMenuItem, SubstituteMenuContext> {
-    @NotNull
-    @Override
-    protected List<SubstituteMenuItem> createItems(SAbstractConcept parameter, SubstituteMenuContext context) {
-      return new BaseConcept_SubstituteMenu.SubstituteMenuPart_Parameterized_s3h0kg_a0.SubstituteMenuPart_Action_s3h0kg_a0a(parameter).createItems(context);
-    }
-    @Nullable
-    @Override
-    protected Iterable<? extends SAbstractConcept> getParameters(SubstituteMenuContext _context) {
-      return ((Iterable<SConcept>) SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SNodeOperations.getModel(_context.getParentNode())));
-    }
-    private class SubstituteMenuPart_Action_s3h0kg_a0a extends SingleItemSubstituteMenuPart {
-      private final SAbstractConcept myParameterObject;
-      public SubstituteMenuPart_Action_s3h0kg_a0a(SAbstractConcept parameterObject) {
-        myParameterObject = parameterObject;
-      }
-
-      @Nullable
+    public class SubstituteMenuPart_Group_s3h0kg_a0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
       @Override
-      protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new BaseConcept_SubstituteMenu.SubstituteMenuPart_Parameterized_s3h0kg_a0.SubstituteMenuPart_Action_s3h0kg_a0a.Item(_context);
+      protected boolean isApplicable(SubstituteMenuContext _context) {
+        return isChildNullOrExactlyBaseConcept;
       }
-      private class Item extends DefaultSubstituteMenuItem {
-        private final SubstituteMenuContext _context;
-        public Item(SubstituteMenuContext context) {
-          super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), context.getParentNode(), context.getCurrentTargetNode());
-          _context = context;
+
+      @Override
+      protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new BaseConcept_SubstituteMenu.SubstituteMenuPart_Group_s3h0kg_a.SubstituteMenuPart_Group_s3h0kg_a0.SubstituteMenuPart_Parameterized_s3h0kg_a0a());
+      }
+      private class SubstituteMenuPart_Parameterized_s3h0kg_a0a extends ParameterizedMenuPart<SAbstractConcept, SubstituteMenuItem, SubstituteMenuContext> {
+        @NotNull
+        @Override
+        protected List<SubstituteMenuItem> createItems(SAbstractConcept parameter, SubstituteMenuContext context) {
+          return new BaseConcept_SubstituteMenu.SubstituteMenuPart_Group_s3h0kg_a.SubstituteMenuPart_Group_s3h0kg_a0.SubstituteMenuPart_Parameterized_s3h0kg_a0a.SubstituteMenuPart_Action_s3h0kg_a0a0(parameter).createItems(context);
+        }
+        @Nullable
+        @Override
+        protected Iterable<? extends SAbstractConcept> getParameters(SubstituteMenuContext _context) {
+          return ((Iterable<SConcept>) SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SNodeOperations.getModel(_context.getParentNode())));
+        }
+        private class SubstituteMenuPart_Action_s3h0kg_a0a0 extends SingleItemSubstituteMenuPart {
+          private final SAbstractConcept myParameterObject;
+          public SubstituteMenuPart_Action_s3h0kg_a0a0(SAbstractConcept parameterObject) {
+            myParameterObject = parameterObject;
+          }
+
+          @Nullable
+          @Override
+          protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
+            return new BaseConcept_SubstituteMenu.SubstituteMenuPart_Group_s3h0kg_a.SubstituteMenuPart_Group_s3h0kg_a0.SubstituteMenuPart_Parameterized_s3h0kg_a0a.SubstituteMenuPart_Action_s3h0kg_a0a0.Item(_context);
+          }
+          private class Item extends DefaultSubstituteMenuItem {
+            private final SubstituteMenuContext _context;
+            public Item(SubstituteMenuContext context) {
+              super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), context.getParentNode(), context.getCurrentTargetNode());
+              _context = context;
+            }
+
+            @Override
+            public SNode createNode(String pattern) {
+              return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(myParameterObject));
+            }
+            @Override
+            public String getMatchingText(String pattern) {
+              return myParameterObject.getName();
+            }
+            @Override
+            public String getDescriptionText(String pattern) {
+              String fqName = ConceptRegistry.getInstance().getConceptDescriptor(myParameterObject).getConceptFqName();
+              return "lang: " + NameUtil.compactNamespace(NameUtil.namespaceFromConceptFQName(fqName));
+            }
+            @Override
+            public IconResource getIcon(String pattern) {
+              return IconResourceUtil.getIconResourceForConcept(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+            }
+          }
         }
 
-        @Override
-        public SNode createNode(String pattern) {
-          return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(myParameterObject));
-        }
-        @Override
-        public String getMatchingText(String pattern) {
-          return myParameterObject.getName();
-        }
-        @Override
-        public String getDescriptionText(String pattern) {
-          String fqName = ConceptRegistry.getInstance().getConceptDescriptor(myParameterObject).getConceptFqName();
-          return "lang: " + NameUtil.compactNamespace(NameUtil.namespaceFromConceptFQName(fqName));
-        }
-        @Override
-        public IconResource getIcon(String pattern) {
-          return IconResourceUtil.getIconResourceForConcept(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
-        }
       }
     }
+    public class SubstituteMenuPart_Group_s3h0kg_b0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+      @Override
+      protected boolean isApplicable(SubstituteMenuContext _context) {
+        return !(isChildNullOrExactlyBaseConcept);
+      }
 
-  }
-  public class SubstituteMenuPart_Group_s3h0kg_b extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
-    @Override
-    protected boolean isApplicable(SubstituteMenuContext _context) {
-      return (_context.getCurrentTargetNode() != null) && !(SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(_context.getCurrentTargetNode())), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")));
-    }
-
-    @Override
-    protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new BaseConcept_SubstituteMenu.SubstituteMenuPart_Concepts_s3h0kg_a1());
-    }
-  }
-  public static class SubstituteMenuPart_Concepts_s3h0kg_a1 extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
-
-    protected Collection getConcepts(SubstituteMenuContext _context) {
-      List<SAbstractConcept> result = ListSequence.fromList(new ArrayList<SAbstractConcept>());
-      ListSequence.fromList(result).addElement(SNodeOperations.getConcept(_context.getCurrentTargetNode()));
-      return result;
-    }
-
-    @Override
-    protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
-      return new DefaultConceptSubstituteMenuPart(concept).createItems(context);
+      @Override
+      protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new BaseConcept_SubstituteMenu.SubstituteMenuPart_Group_s3h0kg_a.SubstituteMenuPart_Group_s3h0kg_b0.SubstituteMenuPart_Concepts_s3h0kg_a1a());
+      }
+      public class SubstituteMenuPart_Concepts_s3h0kg_a1a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+        protected Collection getConcepts(SubstituteMenuContext _context) {
+          List<SAbstractConcept> result = ListSequence.fromList(new ArrayList<SAbstractConcept>());
+          ListSequence.fromList(result).addElement(SNodeOperations.getConcept(_context.getCurrentTargetNode()));
+          return result;
+        }
+        @Override
+        protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
+          return new DefaultConceptSubstituteMenuPart(concept).createItems(context);
+        }
+      }
     }
   }
 }
