@@ -18,6 +18,7 @@ package jetbrains.mps.project;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
@@ -127,9 +128,20 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
 
   // AP fixme : public update exposes the project internals too much (as it looks for me)
   public final void update() {
-    ProgressManager.getInstance().getProgressIndicator().setText2("Loading Project Modules");
-    super.update();
-    ProgressManager.getInstance().getProgressIndicator().setText2("");
+    ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
+    long beginTime = System.nanoTime();
+    LOG.info("Updating " + this);
+    try {
+      if (progressIndicator != null) {
+        progressIndicator.setText2("Loading Project Modules");
+      }
+      super.update();
+      if (progressIndicator != null) {
+        progressIndicator.setText2("");
+      }
+    } finally {
+      LOG.info(String.format("Updating %s took %.3f s", this, (System.nanoTime() - beginTime) / 1e9));
+    }
   }
 
   // AP: fixme these two methods are working with the UI virtual paths; I want them to be extracted somewhere else
