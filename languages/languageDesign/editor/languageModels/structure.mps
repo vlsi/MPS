@@ -5302,18 +5302,6 @@
       <property role="20kJfa" value="outputConcept" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
-    <node concept="1TJgyj" id="7u5_96XhUR0" role="1TKVEi">
-      <property role="IQ2ns" value="8612453216082701760" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="matchingText" />
-      <ref role="20lvS9" node="hqh421K" resolve="ISubstituteMenu_String" />
-    </node>
-    <node concept="1TJgyj" id="7u5_96XhUR4" role="1TKVEi">
-      <property role="IQ2ns" value="8612453216082701764" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="descriptionText" />
-      <ref role="20lvS9" node="hqh421K" resolve="ISubstituteMenu_String" />
-    </node>
     <node concept="1TJgyj" id="7u5_96XhUqi" role="1TKVEi">
       <property role="IQ2ns" value="8612453216082699922" />
       <property role="20lmBu" value="aggregation" />
