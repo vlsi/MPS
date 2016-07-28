@@ -5530,6 +5530,7 @@
     <property role="34LRSv" value="currentTargetNode" />
     <property role="1pbfSe" value="1960802172" />
     <property role="EcuMT" value="5425882385312046132" />
+    <property role="R4oN_" value="node&lt;&gt; to substitute" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="4BQO_Wi42wm">
@@ -5927,6 +5928,7 @@
     <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
     <property role="TrG5h" value="QueryFunctionParameter_CreatedNode" />
     <property role="34LRSv" value="createdNode" />
+    <property role="R4oN_" value="node&lt;&gt; returned from create child node block" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="2RDMjbOTqI4">
