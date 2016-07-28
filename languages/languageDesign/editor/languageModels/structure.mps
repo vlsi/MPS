@@ -5863,6 +5863,9 @@
       <property role="IQ2ns" value="414384289274424751" />
       <ref role="20lvS9" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
     </node>
+    <node concept="PrWs8" id="5EbKzCmgSj7" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hTNCABk">
     <property role="TrG5h" value="QueryFunction_SubstituteMenu_ActionType" />
