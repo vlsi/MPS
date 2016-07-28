@@ -48,7 +48,7 @@ public class TreeFileChooser {
   /////////////////////////////
 
   @NotNull
-  private static IFile ourInitialSelectedFile = FileSystem.getInstance().getFileByPath(PathManager.getHomePath());
+  private static IFile ourInitialSelectedFile = FileSystem.getInstance().getFile(PathManager.getHomePath());
 
   private int myMode = MODE_FILES;
   private IFileFilter myFileFilter = ALL_FILES_FILTER;
@@ -132,7 +132,7 @@ public class TreeFileChooser {
 
     FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, null, owner);
 
-    VirtualFile selection = VirtualFileUtils.getVirtualFile(ourInitialSelectedFile);
+    VirtualFile selection = VirtualFileUtils.getOrCreateVirtualFile(ourInitialSelectedFile);
     for (VirtualFile file : dialog.choose(selection, null)) {
       res.add(FileSystem.getInstance().getFileByPath(file.getPath()));
     }
