@@ -16,9 +16,11 @@
 package jetbrains.mps.lang.editor.menus.transformation;
 
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 import java.util.Collections;
@@ -34,8 +36,14 @@ public class ImplicitTransformationMenu extends TransformationMenuBase {
   }
 
   private final SAbstractConcept myConcept;
+  @NotNull
   @Override
-  protected List<jetbrains.mps.lang.editor.menus.MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext context) {
+  protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext context) {
     return Collections.singletonList(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(myConcept)));
+  }
+
+  @Override
+  public boolean isApplicableToLocation(@NotNull String location) {
+    return true;
   }
 }

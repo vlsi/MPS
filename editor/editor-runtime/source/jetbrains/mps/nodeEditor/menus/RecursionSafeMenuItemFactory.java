@@ -19,27 +19,24 @@ import jetbrains.mps.openapi.editor.descriptor.Menu;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 /**
- * Creates a list of items given a context and a {@link MenuLookup}. Tracks used combinations of lookup and
- * context node: if the items for a given combination are requested twice, it emits a warning and returns an empty list of items.
+ * Wraps a {@link MenuItemFactory} and returns an empty list of items if {@link #createItems} is called with the same parameters several times.
  */
-public class CircularReferenceSafeMenuItemFactory<ItemT, ContextT, MenuT extends Menu<ItemT, ContextT>> {
-  private static final Logger LOG = Logger.getLogger(CircularReferenceSafeMenuItemFactory.class);
+public class RecursionSafeMenuItemFactory<ItemT, ContextT, MenuT extends Menu<ItemT, ContextT>> implements MenuItemFactory<ItemT, ContextT, MenuT> {
+  private static final Logger LOG = Logger.getLogger(DefaultMenuItemFactory.class);
   private final ArrayDeque<Key> myKeyStack = new ArrayDeque<>();
-  private final Collection<SLanguage> myUsedLanguages;
+  private final MenuItemFactory<ItemT, ContextT, MenuT> myFactory;
 
-  public CircularReferenceSafeMenuItemFactory(Collection<SLanguage> usedLanguages) {
-    myUsedLanguages = usedLanguages;
+  public RecursionSafeMenuItemFactory(MenuItemFactory<ItemT, ContextT, MenuT> factory) {
+    myFactory = factory;
   }
 
+  @Override
   @NotNull
   public List<ItemT> createItems(@NotNull ContextT context, @NotNull MenuLookup<? extends MenuT> menuLookup) {
     Key<ContextT> key = new Key<>(menuLookup, context);
@@ -53,17 +50,7 @@ public class CircularReferenceSafeMenuItemFactory<ItemT, ContextT, MenuT extends
     myKeyStack.addLast(key);
 
     try {
-      Collection<? extends MenuT> menus = menuLookup.lookup(myUsedLanguages);
-
-      if (menus.isEmpty()) {
-        return Collections.emptyList();
-      }
-
-      List<ItemT> result = new ArrayList<>();
-      for (MenuT menu : menus) {
-        result.addAll(menu.createMenuItems(context));
-      }
-      return result;
+      return myFactory.createItems(context, menuLookup);
     } finally {
       myKeyStack.removeLast();
     }
@@ -71,11 +58,11 @@ public class CircularReferenceSafeMenuItemFactory<ItemT, ContextT, MenuT extends
 
   private static class Key<ContextT> {
     @NotNull
-    private final MenuLookup myLookup;
+    private final MenuLookup<?> myLookup;
     @NotNull
     private final ContextT myContext;
 
-    public Key(@NotNull MenuLookup lookup, @NotNull ContextT context) {
+    public Key(@NotNull MenuLookup<?> lookup, @NotNull ContextT context) {
       myLookup = lookup;
       myContext = context;
     }
@@ -89,7 +76,7 @@ public class CircularReferenceSafeMenuItemFactory<ItemT, ContextT, MenuT extends
         return false;
       }
 
-      Key key = (Key) o;
+      Key<ContextT> key = (Key<ContextT>) o;
 
       return myLookup.equals(key.myLookup) && myContext.equals(key.myContext);
     }

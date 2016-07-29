@@ -28,4 +28,6 @@ import java.util.Collection;
 public interface MenuLookup<T extends Menu> {
   @NotNull
   Collection<T> lookup(@NotNull Collection<SLanguage> usedLanguages);
+
+  T createImplicitMenu();
 }

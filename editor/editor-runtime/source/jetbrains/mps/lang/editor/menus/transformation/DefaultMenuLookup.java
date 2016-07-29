@@ -80,8 +80,9 @@ public abstract class DefaultMenuLookup<T extends Menu> implements MenuLookup<T>
     }
     return getForAspectDescriptor(aspectDescriptor, usedLanguages);
   }
+
   @NotNull
-  protected abstract T createImplicitMenu();
+  public abstract T createImplicitMenu();
 
   @NotNull
   protected SAbstractConcept getConcept() {

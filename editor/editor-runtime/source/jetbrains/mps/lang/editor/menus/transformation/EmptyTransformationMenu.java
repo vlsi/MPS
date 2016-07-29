@@ -13,43 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.menus.transformation;
+package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.lang.editor.menus.CompositeMenuPart;
 import jetbrains.mps.lang.editor.menus.MenuPart;
+import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collections;
 import java.util.List;
 
-public abstract class TransformationMenuBase implements TransformationMenu {
-  private boolean myIsContribution;
-
-  public TransformationMenuBase() {
-  }
-
-  public TransformationMenuBase(boolean isContribution) {
-    myIsContribution = isContribution;
-  }
-
-  @NotNull
-  protected abstract List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext context);
+public class EmptyTransformationMenu extends TransformationMenuBase {
+  public static final TransformationMenu INSTANCE = new EmptyTransformationMenu();
 
   @NotNull
   @Override
-  public List<TransformationMenuItem> createMenuItems(@NotNull TransformationMenuContext context) {
-    return new CompositeMenuPart<>(getParts(context)).createItems(context);
-  }
-
-  @Override
-  public boolean isApplicableToLocation(@NotNull String location) {
-    return true;
-  }
-
-  @Override
-  public boolean isContribution() {
-    return myIsContribution;
+  protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext context) {
+    return Collections.emptyList();
   }
 }

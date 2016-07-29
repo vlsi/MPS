@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,11 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.descriptor;
+package jetbrains.mps.nodeEditor.menus;
 
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import jetbrains.mps.openapi.editor.descriptor.Menu;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import org.jetbrains.annotations.NotNull;
 
-public interface TransformationMenu extends Menu<TransformationMenuItem, TransformationMenuContext> {
-  boolean isApplicableToLocation(String location);
+import java.util.List;
+
+public interface MenuItemFactory<ItemT, ContextT, MenuT extends Menu<ItemT, ContextT>> {
+  @NotNull
+  List<ItemT> createItems(@NotNull ContextT context, @NotNull MenuLookup<? extends MenuT> menuLookup);
 }

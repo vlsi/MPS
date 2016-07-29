@@ -41,7 +41,7 @@ public class DefaultTransformationMenuLookup extends DefaultMenuLookup<Transform
 
   @NotNull
   @Override
-  protected ImplicitTransformationMenu createImplicitMenu() {
+  public ImplicitTransformationMenu createImplicitMenu() {
     return new ImplicitTransformationMenu(getConcept());
   }
 }
