@@ -117,7 +117,9 @@ public class NodeEditorComponent extends EditorComponent {
     DataContext dataContext = DataManager.getInstance().getDataContext(this);
     FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
     String[] inspectorInitialEditorHints = getEditorHintsForNode(toSelect);
-    getInspectorTool().inspect(toSelect, fileEditor, inspectorInitialEditorHints);
+    if(getInspectorTool() != null) {
+      getInspectorTool().inspect(toSelect, fileEditor, inspectorInitialEditorHints);
+    }
   }
 
   @Override
@@ -149,7 +151,7 @@ public class NodeEditorComponent extends EditorComponent {
   public void dispose() {
     notifyDisposal();
     InspectorTool inspectorTool = getInspectorTool();
-    if (inspectorTool != null) {
+    if (inspectorTool != null && inspectorTool.getInspector() != null) {
       if (inspectorTool.getInspector().getEditedNode() == this.getLastInspectedNode()) {
         inspectorTool.inspect(null, null, null);
       }
