@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot />
+<dependenciesRoot>
+  <dependency className="references.behavior.NewComponentRef_BehaviorDescriptor" file="NewComponentRef_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="references.behavior.OldComponentRef_BehaviorDescriptor" file="OldComponentRef_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+</dependenciesRoot>
 

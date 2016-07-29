@@ -171,19 +171,19 @@ class MPSClassLoadersRegistry {
   /**
    * Very quick action.
    * We do it in EDT asynchronously, because there are some class loading clients which eager to dispose asynchronously
+   * Double invokeAndLater because we need to allow EDT activities under progress [AP]
    */
   public void flushDisposeQueue() {
     if (myDisposeQueue.isEmpty()) return;
     final List<ModuleClassLoader> toDispose = new ArrayList<ModuleClassLoader>(myDisposeQueue);
-    myRepository.getModelAccess().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        LOG.debug("Disposing " + toDispose.size() + " class loaders");
-        for (ModuleClassLoader classLoader : toDispose) {
-          classLoader.dispose();
-        }
-      }
-    });
+    myRepository.getModelAccess().runWriteInEDT(() -> {
+          myRepository.getModelAccess().runWriteInEDT(() -> {
+            LOG.debug("Disposing " + toDispose.size() + " class loaders");
+            for (ModuleClassLoader classLoader : toDispose) {
+              classLoader.dispose();
+            }
+          });
+        });
     myDisposeQueue.clear();
   }
 

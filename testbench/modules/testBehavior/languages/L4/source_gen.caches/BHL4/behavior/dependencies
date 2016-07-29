@@ -15,6 +15,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
+  <dependency className="BHL4.behavior.C1_BehaviorDescriptor" file="C1_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
   <dependency className="BHL4.behavior.C1__BehaviorDescriptor" file="C1__BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.lang.Object" />
@@ -36,6 +39,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="BHL4.behavior.C2_BehaviorDescriptor" file="C2_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="BHL4.behavior.C3_BehaviorDescriptor" file="C3_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="BHL4.behavior.C4_BehaviorDescriptor" file="C4_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="BHL4.behavior.I1_BehaviorDescriptor" file="I1_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="BHL4.behavior.I1__BehaviorDescriptor" file="I1__BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
@@ -59,6 +74,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="BHL4.behavior.I2_BehaviorDescriptor" file="I2_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
   <dependency className="BHL4.behavior.I2__BehaviorDescriptor" file="I2__BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.lang.Object" />
@@ -80,6 +98,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="BHL4.behavior.I_BehaviorDescriptor" file="I_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="BHL4.behavior.I__BehaviorDescriptor" file="I__BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />

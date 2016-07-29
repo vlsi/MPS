@@ -12,6 +12,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.traceable.operations.behavior.NList_CopyWithTraceOperation_BehaviorDescriptor" file="NList_CopyWithTraceOperation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.traceable.operations.behavior.Node_CopyWithTraceOperation_BehaviorDescriptor" file="Node_CopyWithTraceOperation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.traceable.operations.behavior.Node_CopyWithTraceOperation__BehaviorDescriptor" file="Node_CopyWithTraceOperation__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
