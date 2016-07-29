@@ -26,6 +26,8 @@ import jetbrains.mps.lang.editor.menus.substitute.WrapperSubstituteMenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItemWrapper;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -258,6 +260,60 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
             SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a8L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild1"));
             SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a8L, 0x7ce1116e3a6ff2acL, "conceptToWrap"), createdNode);
             return node;
+          }
+          @Override
+          public String getMatchingText(String pattern) {
+            boolean tmpVar = _context.getParentNode() != null;
+            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
+            tmpVar = tmpVar && _context.getLink() != null;
+            tmpVar = tmpVar && _context.getEditorContext() != null;
+            tmpVar = tmpVar && pattern != null;
+            return pattern;
+          }
+          @Override
+          public String getDescriptionText(String pattern) {
+            boolean tmpVar = _context.getParentNode() != null;
+            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
+            tmpVar = tmpVar && _context.getLink() != null;
+            tmpVar = tmpVar && _context.getEditorContext() != null;
+            tmpVar = tmpVar && pattern != null;
+            return "wrap";
+          }
+          @Override
+          public boolean canExecute(String pattern) {
+            boolean tmpVar = _context.getParentNode() != null;
+            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
+            tmpVar = tmpVar && _context.getLink() != null;
+            tmpVar = tmpVar && _context.getEditorContext() != null;
+            tmpVar = tmpVar && pattern != null;
+            return true;
+          }
+          @Override
+          public IconResource getIcon(String pattern) {
+            boolean tmpVar = _context.getParentNode() != null;
+            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
+            tmpVar = tmpVar && _context.getLink() != null;
+            tmpVar = tmpVar && _context.getEditorContext() != null;
+            tmpVar = tmpVar && pattern != null;
+            return null;
+          }
+          @Override
+          public SNode getType(String pattern) {
+            boolean tmpVar = _context.getParentNode() != null;
+            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
+            tmpVar = tmpVar && _context.getLink() != null;
+            tmpVar = tmpVar && _context.getEditorContext() != null;
+            tmpVar = tmpVar && pattern != null;
+            return null;
+          }
+          @Override
+          public boolean select(SNode createdNode, String pattern) {
+            boolean tmpVar = _context.getParentNode() != null;
+            tmpVar = tmpVar && _context.getLink() != null;
+            tmpVar = tmpVar && _context.getEditorContext() != null;
+            tmpVar = tmpVar && pattern != null;
+            SelectionUtil.selectCell(_context.getEditorContext(), createdNode, SelectionManager.FIRST_CELL);
+            return true;
           }
         };
       }
