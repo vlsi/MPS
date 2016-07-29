@@ -27,26 +27,23 @@ import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import javax.swing.Icon;
 import javax.swing.JPopupMenu;
 import java.util.Iterator;
 import java.util.Set;
 
 public abstract class AddAspectAction extends AnAction implements DumbAware {
-  public static final Icon ADD_ICON = General.Add;
-
   private final Project myProject;
-  private SNodeReference myBaseNode;
-  private Set<RelationDescriptor> myPossibleTabs;
-  private NodeChangeCallback myCallback;
+  private final SNodeReference myBaseNode;
+  private final Set<RelationDescriptor> myPossibleTabs;
+  private final NodeChangeCallback myCallback;
 
   public AddAspectAction(Project mpsProject, SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, NodeChangeCallback callback) {
-    super("Add Aspect", "", ADD_ICON);
+    super("Add Aspect", "", General.Add);
     myProject = mpsProject;
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
@@ -60,12 +57,13 @@ public abstract class AddAspectAction extends AnAction implements DumbAware {
 
   @Override
   public void actionPerformed(final AnActionEvent e) {
-    final DumbService dumbService = DumbService.getInstance(ProjectHelper.toIdeaProject(myProject));
+    assert myProject instanceof MPSProject;
+    final DumbService dumbService = DumbService.getInstance(((MPSProject) myProject).getProject());
     if (dumbService.isDumb()) {
       dumbService.showDumbModeNotification("Please wait while index is being updated");
       return;
     }
-    ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, getCreateGroup());
+    ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.EDITOR_TOOLBAR, getCreateGroup());
     JPopupMenu popupComponent = popup.getComponent();
     popupComponent.show(e.getInputEvent().getComponent(), 0, 0);
   }
