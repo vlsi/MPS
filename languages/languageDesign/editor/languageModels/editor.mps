@@ -14379,7 +14379,7 @@
   </node>
   <node concept="24kQdi" id="1A4kJjlVDm1">
     <property role="3GE5qa" value="Menu.Transformation.SideTransform" />
-    <ref role="1XX52x" to="tpc2:1A4kJjlVAph" resolve="TransformationFeature_IconNode" />
+    <ref role="1XX52x" to="tpc2:1A4kJjlVAph" resolve="TransformationFeature_Icon" />
     <node concept="3EZMnI" id="7L5lpRJNrgZ" role="2wV5jI">
       <node concept="l2Vlx" id="7L5lpRJNrh0" role="2iSdaV" />
       <node concept="PMmxH" id="7L5lpRJNrhc" role="3EZMnx">
@@ -15573,6 +15573,25 @@
           </node>
         </node>
         <node concept="lj46D" id="5N5pDMJVmQy" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F2HdR" id="6HFUSydwlMH" role="3EZMnx">
+        <ref role="1NtTu8" to="tpc2:7mC_uHFNIAu" resolve="features" />
+        <node concept="l2Vlx" id="6HFUSydwlMI" role="2czzBx" />
+        <node concept="pVoyu" id="6HFUSydwlMJ" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="pj6Ft" id="6HFUSydwlMK" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F0ifn" id="6HFUSydwlML" role="2czzBI">
+          <property role="ilYzB" value="&lt;no additional features&gt;" />
+          <node concept="VPxyj" id="6HFUSydwlMM" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="lj46D" id="6HFUSydwm39" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>

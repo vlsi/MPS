@@ -5810,6 +5810,9 @@
     <node concept="PrWs8" id="3rSzFHWOfw7" role="PzmwI">
       <ref role="PrY4T" node="3rSzFHWOd_m" resolve="IIncludeSubstituteMenuPart" />
     </node>
+    <node concept="PrWs8" id="6HFUSydwlkd" role="PzmwI">
+      <ref role="PrY4T" node="7mC_uHFNIAt" resolve="IExtensibleSubstituteMenuPart" />
+    </node>
   </node>
   <node concept="1TIwiD" id="n0c53aH5hG">
     <property role="EcuMT" value="414384289274418284" />
