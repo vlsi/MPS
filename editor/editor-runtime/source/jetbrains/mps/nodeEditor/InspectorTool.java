@@ -21,6 +21,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.project.Project;
@@ -48,7 +49,6 @@ import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 import java.awt.BorderLayout;
@@ -74,12 +74,7 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
   @Override
   public void initComponent() {
     createTool();
-    StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
-      @Override
-      public void run() {
-        registerLater();
-      }
-    });
+    StartupManager.getInstance(getProject()).registerPostStartupActivity(this::registerLater);
   }
 
   @Override
@@ -102,29 +97,21 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
   }
 
   protected void createTool() {
-    StartupManager.getInstance(getProject()).registerStartupActivity(new Runnable() {
-      @Override
-      public void run() {
-        SwingUtilities.invokeLater(new Runnable() {
-          @Override
-          public void run() {
-            InspectorTool.this.myMessagePanel = new MyMessagePanel();
-            myComponent = new MyPanel();
-            jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(getProject());
-            myInspectorComponent = new InspectorEditorComponent(project.getRepository(),
-                new EditorConfigurationBuilder().editorPanelManager(new EditorPanelManagerImpl(project)).build());
-            EditorExtensionUtil.extendUsingProject(myInspectorComponent, project);
-            myComponent.add(myInspectorComponent.getExternalComponent(), BorderLayout.CENTER);
-            myMessagePanel.setNode(null);
-            myComponent.add(myMessagePanel, BorderLayout.NORTH);
-            AnAction moveDownAction = ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.MoveElementsDown_Action");
-            moveDownAction.registerCustomShortcutSet(moveDownAction.getShortcutSet(), myComponent);
-            AnAction moveUpAction = ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
-            moveUpAction.registerCustomShortcutSet(moveUpAction.getShortcutSet(), myComponent);
-          }
-        });
-      }
-    });
+    StartupManager.getInstance(getProject()).registerStartupActivity(() -> ApplicationManager.getApplication().invokeLater(() -> {
+      InspectorTool.this.myMessagePanel = new MyMessagePanel();
+      myComponent = new MyPanel();
+      jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(getProject());
+      myInspectorComponent = new InspectorEditorComponent(project.getRepository(),
+          new EditorConfigurationBuilder().editorPanelManager(new EditorPanelManagerImpl(project)).build());
+      EditorExtensionUtil.extendUsingProject(myInspectorComponent, project);
+      myComponent.add(myInspectorComponent.getExternalComponent(), BorderLayout.CENTER);
+      myMessagePanel.setNode(null);
+      myComponent.add(myMessagePanel, BorderLayout.NORTH);
+      AnAction moveDownAction = ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.MoveElementsDown_Action");
+      moveDownAction.registerCustomShortcutSet(moveDownAction.getShortcutSet(), myComponent);
+      AnAction moveUpAction = ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
+      moveUpAction.registerCustomShortcutSet(moveUpAction.getShortcutSet(), myComponent);
+    }));
   }
 
   @Override
@@ -203,16 +190,13 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
       add(myOpenConceptLabel, BorderLayout.EAST);
 
       myOpenConceptLabel.setOpaque(false);
-      myOpenConceptLabel.addHyperlinkListener(new HyperlinkListener() {
-        @Override
-        public void hyperlinkUpdate(HyperlinkEvent e) {
-          if (myNode == null) {
-            return;
-          }
-          SNodeReference conceptDecl = myNode.getConcept().getSourceNode();
-          if (conceptDecl != null) {
-            new EditorNavigator(ProjectHelper.fromIdeaProject(getProject())).shallFocus(true).shallSelect(false).open(conceptDecl);
-          }
+      myOpenConceptLabel.addHyperlinkListener(e -> {
+        if (myNode == null) {
+          return;
+        }
+        SNodeReference conceptDecl = myNode.getConcept().getSourceNode();
+        if (conceptDecl != null) {
+          new EditorNavigator(ProjectHelper.fromIdeaProject(getProject())).shallFocus(true).shallSelect(false).open(conceptDecl);
         }
       });
     }

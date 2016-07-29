@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,10 @@ package jetbrains.mps.ide.projectPane;
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -56,7 +59,6 @@ import jetbrains.mps.ide.ui.tree.TreeHighlighterExtension;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelReadRunnable;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.Hack;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -77,9 +79,7 @@ import javax.swing.JComponent;
 import java.awt.Component;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @State(
     name = "MPSProjectPane",
@@ -113,18 +113,19 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
         final MPSFileNodeEditor editor = (MPSFileNodeEditor) fileEditor;
         if (getProjectView().isAutoscrollFromSource(ID)) {
           EditorComponent editorComponent = editor.getNodeEditor().getCurrentEditorComponent();
-          if (editorComponent == null) return;
+          if (editorComponent == null) {
+            return;
+          }
           final SNode sNode = editorComponent.getEditedNode();
           selectNodeWithoutExpansion(sNode.getReference());
         }
       }
     }
   };
-  private Set<ComponentCreationListener> myComponentCreationListeners;
-  private static boolean ourShowGenStatus = true;
   private List<List<String>> myExpandedPathsRaw = Collections.emptyList();
   private List<List<String>> mySelectedPathsRaw = Collections.emptyList();
   private MessageBusConnection myConnection;
+  private final ShowDescriptorModelsAction myShowDescriptorModelsAction;
 
   public ProjectPane(final Project project, ProjectView projectView) {
     super(project, projectView);
@@ -140,6 +141,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
         rebuild();
       }
     });
+    myShowDescriptorModelsAction = new ShowDescriptorModelsAction(this);
   }
 
   @Override
@@ -168,11 +170,12 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   @Hack
   public static ProjectPane getInstance(Project project) {
     final ProjectView projectView = ProjectView.getInstance(project);
-
-    //to ensure panes are initialized
-    //filed http://jetbrains.net/tracker/issue/IDEA-24732
-    projectView.getSelectInTargets();
-
+    if (ApplicationManager.getApplication().isUnitTestMode()) {
+      //to ensure panes are initialized
+      // despite http://jetbrains.net/tracker/issue/IDEA-24732 is fixed, ProjectViewImpl doesn't load extensions in unit test model
+      // Perhaps, shall fix ProjectCreationTest (not to rely on != null result), instead?
+      projectView.getSelectInTargets();
+    }
     return (ProjectPane) projectView.getProjectViewPaneById(ID);
   }
 
@@ -245,17 +248,13 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
 
   @Override
   public JComponent createComponent() {
-    if (isComponentCreated()) return myScrollPane;
+    if (isComponentCreated()) {
+      return myScrollPane;
+    }
 
     ProjectPaneTree tree = new ProjectPaneTree(this, myProject);
     Disposer.register(this, tree);
-    tree.setShowStructureCondition(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        if (myProject.isDisposed()) return false;
-        return ProjectPane.getInstance(myProject).showNodeStructure();
-      }
-    });
+    tree.setShowStructureCondition(this::showNodeStructure);
     myTree = tree;
 
     myScrollPane = new MyScrollPane(getTree());
@@ -264,7 +263,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
       rebuild();
     }
     TreeHighlighterExtension.attachHighlighters(tree, myProject);
-    fireComponentCreated();
     return myScrollPane;
   }
 
@@ -301,21 +299,26 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   }
 
   @Override
+  public void addToolbarActions(DefaultActionGroup group) {
+    super.addToolbarActions(group);
+    group.add(myShowDescriptorModelsAction);
+  }
+
+  @Override
   protected void saveExpandedPaths() {
     // this gets called from the IDEA's implementation of ProjectViewImpl
     // thankfully, the method is declared protected
     if (myTree != null) {
       myExpandedPathsRaw = ((MPSTree) myTree).getExpandedPathsRaw();
       mySelectedPathsRaw = ((MPSTree) myTree).getSelectedPathsRaw();
-    }
-    else {
+    } else {
       myExpandedPathsRaw = Collections.emptyList();
       mySelectedPathsRaw = Collections.emptyList();
     }
   }
 
   @Override
-  public void restoreExpandedPathsOverride () {
+  public void restoreExpandedPathsOverride() {
     // this gets called from the MPS's implementation of ProjectViewImpl
     // we must resort to this hack because the method in the superclass is declared private
 
@@ -347,7 +350,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   }
 
   private void writePaths(Element parentElement, List<List<String>> pathsRaw, String elementName) {
-    for (List<String> path: pathsRaw) {
+    for (List<String> path : pathsRaw) {
       Element pathElement = new Element(elementName);
       writePath(path, pathElement);
       parentElement.addContent(pathElement);
@@ -433,10 +436,14 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   }
 
   private void activatePane(@Nullable final Runnable postActivate, boolean autoFocusContents) {
+    // This method may be executed asynchronously, so checking for isDisposed first.
+    if (isDisposed()) {
+      return;
+    }
     ToolWindowManager windowManager = ToolWindowManager.getInstance(getProject());
     ToolWindow projectViewToolWindow = windowManager.getToolWindow(ToolWindowId.PROJECT_VIEW);
     //In unit test mode projectViewToolWindow == null
-    if(!ApplicationManager.getApplication().isUnitTestMode()) {
+    if (!ApplicationManager.getApplication().isUnitTestMode()) {
       projectViewToolWindow.activate(new Runnable() {
         @Override
         public void run() {
@@ -507,40 +514,8 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     return createFindHelper().findNextTreeNode(node);
   }
 
-  private void fireComponentCreated() {
-    if (myComponentCreationListeners == null) {
-      return;
-    }
-    for (ComponentCreationListener l : myComponentCreationListeners.toArray(new ComponentCreationListener[myComponentCreationListeners.size()])) {
-      l.componentCreated(this);
-    }
-  }
-
-  public void addComponentCreationListener(@NotNull ComponentCreationListener l) {
-    if (myComponentCreationListeners == null) {
-      myComponentCreationListeners = new HashSet();
-    }
-    myComponentCreationListeners.add(l);
-  }
-
-  public void removeComponentCreationListener(@NotNull ComponentCreationListener l) {
-    if (myComponentCreationListeners == null) {
-      return;
-    }
-    myComponentCreationListeners.remove(l);
-    if (myComponentCreationListeners.isEmpty()) {
-      myComponentCreationListeners = null;
-    }
-  }
-
-  //---gen status---
-
-  public static void setShowGenStatus(boolean showGenStatusInTree) {
-    ourShowGenStatus = showGenStatusInTree;
-  }
-
-  public static boolean isShowGenStatus() {
-    return ourShowGenStatus;
+  public boolean isDescriptorModelInGeneratorVisible() {
+    return myShowDescriptorModelsAction.isSelected();
   }
 
   @NotNull
@@ -560,10 +535,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     public Object getData(@NonNls String dataId) {
       return ProjectPane.this.getData(dataId);
     }
-  }
-
-  public interface ComponentCreationListener {
-    void componentCreated(ProjectPane projectPane);
   }
 
   private enum UpdateID {
@@ -675,6 +646,31 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
       if (toSelect != null) {
         getTree().selectNode(toSelect);
       }
+    }
+  }
+
+  private static class ShowDescriptorModelsAction extends ToggleAction {
+    private final ProjectPane myProjectPane;
+    private boolean myState = false;
+
+    ShowDescriptorModelsAction(ProjectPane projectPane) {
+      super("Show @descriptor models in Generators");
+      myProjectPane = projectPane;
+    }
+
+    public boolean isSelected() {
+      return myState;
+    }
+
+    @Override
+    public boolean isSelected(AnActionEvent e) {
+      return isSelected();
+    }
+
+    @Override
+    public void setSelected(AnActionEvent e, boolean state) {
+      myState = state;
+      myProjectPane.rebuild();
     }
   }
 }

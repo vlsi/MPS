@@ -33,8 +33,7 @@ public class ViewAs_Group_ActionGroup extends GeneratedActionGroup {
     this.setPopup(true);
   }
   public void doUpdate(AnActionEvent event) {
-    ViewAs_Group_ActionGroup.this.removeAll();
-
+    removeAll();
     final IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
     if (value == null || !(value instanceof ValueWrapper)) {
       event.getPresentation().setVisible(false);

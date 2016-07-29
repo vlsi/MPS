@@ -25,7 +25,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IsMark = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IsWall = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LeftTurn = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Library = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Library = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0n).create();
   private final ConceptPresentation props_LogicalExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Looking = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_North = new ConceptPresentationBuilder().create();
@@ -35,7 +35,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_Require = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RoutineCall = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RoutineDefinition = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Script = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Script = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0x).create();
   private final ConceptPresentation props_South = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Step = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TraceMessage = new ConceptPresentationBuilder().create();

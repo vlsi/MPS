@@ -30,6 +30,7 @@ public class TransformationMenuPartAlias implements ConceptEditorComponent {
   private EditorCell createComponent_3z1roq_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
+    Styles_StyleSheet.apply_EditorKeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TransformationMenuPartAlias.ReplaceWith_TransformationMenuPart_cellMenu_3z1roq_a0a()}));

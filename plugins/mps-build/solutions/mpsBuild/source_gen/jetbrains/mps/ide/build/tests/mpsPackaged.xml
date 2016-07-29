@@ -105,7 +105,7 @@
     <jar destfile="${build.layout}/testPackagedLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testPackagedLanguage" />
       <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/testPackagedLanguage.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testPackaged-testPackagedLanguage-languageModels">
@@ -115,6 +115,8 @@
       <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/testPackagedLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testPackaged-testPackagedLanguage-languageModels" prefix="module/languageModels" />
@@ -178,6 +180,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
@@ -380,6 +383,7 @@
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />

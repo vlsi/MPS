@@ -41,13 +41,11 @@ import java.util.Set;
 @Deprecated
 public final class ClassPathCachingFacility {
   private static final ClassPathCachingFacility ourInstance = new ClassPathCachingFacility();
-  private static final Object LOCK = new Object();
-
-  private final Map<String, RealClassPathItem> myPath2ClassPath = new HashMap<>();
 
   private ClassPathCachingFacility() {
   }
 
+  @Deprecated
   public static ClassPathCachingFacility getInstance() {
     return ourInstance;
   }
@@ -59,14 +57,7 @@ public final class ClassPathCachingFacility {
   @ToRemove(version = 3.4)
   @NotNull
   public RealClassPathItem createFromPath(String path, @Nullable String caller) {
-    synchronized (LOCK) {
-      if (!myPath2ClassPath.containsKey(path)) {
-        RealClassPathItem item = RealClassPathItem.create(path, caller);
-        myPath2ClassPath.put(path, item);
-        return item;
-      }
-      return myPath2ClassPath.get(path);
-    }
+    return RealClassPathItem.create(path, caller);
   }
 
   /**
@@ -75,9 +66,8 @@ public final class ClassPathCachingFacility {
    *
    * Will be dropped soon.
    */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public void invalidate(Set<String> paths) {
-    synchronized (LOCK) {
-      paths.forEach(myPath2ClassPath::remove);
-    }
   }
 }

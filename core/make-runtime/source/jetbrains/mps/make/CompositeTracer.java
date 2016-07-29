@@ -15,13 +15,19 @@
  */
 package jetbrains.mps.make;
 
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.Priority;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
+
+import static jetbrains.mps.messages.MessageKind.fromPriority;
 
 /**
  * A composite which traces perfomance and also updates the progress monitor if it is presented
@@ -29,28 +35,42 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
  * Created by apyshkin on 5/26/16.
  */
 public final class CompositeTracer {
-  private final static Logger LOG = LogManager.getLogger(ModuleMaker.class);
-
   private final static Priority DEFAULT_LEVEL = Priority.DEBUG;
   private final IPerformanceTracer myTracer;
+  private final MessageSender mySender;
+  private String myCurrentStartMsg;
 
-  @Nullable
-  private final ProgressMonitor myMonitor;
+  @Nullable private final ProgressMonitor myMonitor;
 
-  CompositeTracer(@NotNull IPerformanceTracer tracer) {
-    this(tracer, null, null, 0);
+  CompositeTracer(@NotNull IPerformanceTracer tracer, @NotNull MessageSender sender) {
+    this(tracer, sender, null);
   }
 
-  CompositeTracer(@NotNull IPerformanceTracer tracer, @Nullable ProgressMonitor monitor, @Nullable String startMsg, int stepsCount) {
-    myTracer = tracer;
+  CompositeTracer(@NotNull CompositeTracer tracer, @Nullable ProgressMonitor monitor) {
+    myTracer = tracer.myTracer;
+    mySender = tracer.mySender;
     myMonitor = monitor;
-    if (startMsg != null) {
-      LOG.info(startMsg);
+  }
+
+  CompositeTracer(@NotNull IPerformanceTracer tracer, @NotNull MessageSender sender, @Nullable ProgressMonitor monitor) {
+    myTracer = tracer;
+    mySender = sender;
+    myMonitor = monitor;
+  }
+
+  public void start(@NotNull String startMsg, int stepsCount, Priority level) {
+    myCurrentStartMsg = startMsg;
+    if (!startMsg.isEmpty()) {
+      msg(startMsg, level);
+      myTracer.push(startMsg, true); // major by default
     }
     if (myMonitor != null) {
       myMonitor.start(startMsg, stepsCount);
     }
-    myTracer.push(startMsg, false);
+  }
+
+  public void start(@NotNull String startMsg, int stepsCount) {
+    start(startMsg, stepsCount, DEFAULT_LEVEL);
   }
 
   /**
@@ -68,15 +88,19 @@ public final class CompositeTracer {
   }
 
   public void push(@NotNull String msg, Priority level, boolean major) {
-    LOG.log(level, msg);
+    msg(msg, level);
     myTracer.push(msg, major);
     if (myMonitor != null) {
       myMonitor.step(msg);
     }
   }
 
+  public void msg(@NotNull String msg, Priority level) {
+    mySender.handle(Message.createMessage(fromPriority(level), "composite tracer", msg));
+  }
+
   public void pop() {
-    pop(1);
+    pop(0);
   }
 
   public void pop(int work) {
@@ -91,10 +115,17 @@ public final class CompositeTracer {
   }
 
   public void done() {
+    done(0);
+  }
+
+  public void done(int work) {
     if (myMonitor != null) {
+      myMonitor.advance(work);
       myMonitor.done();
     }
-    LOG.debug("Done");
+    if (!myCurrentStartMsg.isEmpty()) {
+      myTracer.pop();
+    }
   }
 
   @Nullable
@@ -104,10 +135,48 @@ public final class CompositeTracer {
 
   @NotNull
   public CompositeTracer subTracer(int size) {
+    return subTracer(size, SubProgressKind.DEFAULT);
+  }
+
+  public void advance(int i) {
+    if (myMonitor != null) {
+      myMonitor.advance(i);
+    }
+  }
+
+  @NotNull
+  public CompositeTracer subTracer(int size, SubProgressKind kind) {
     ProgressMonitor monitor = null;
     if (myMonitor != null) {
-      monitor = myMonitor.subTask(size);
+      monitor = myMonitor.subTask(size, kind);
     }
-    return new CompositeTracer(myTracer, monitor, null, size);
+    return new CompositeTracer(myTracer, mySender, monitor);
+  }
+
+  public void error(@NotNull String msg) {
+    error(msg, null);
+  }
+
+  public void error(@NotNull String msg, @Nullable Throwable ex) {
+    mySender.handle(Message.createMessage(MessageKind.ERROR, mySender.toString(), msg, ex));
+  }
+
+  public void warn(@NotNull String msg, @Nullable Object hintObject) {
+    mySender.handle(Message.createMessage(MessageKind.WARNING, mySender.toString(), msg, hintObject));
+  }
+
+  public void info(@NotNull String msg) {
+    mySender.handle(Message.createMessage(MessageKind.INFORMATION, mySender.toString(), msg));
+  }
+
+  public MessageSender getSender() {
+    return mySender;
+  }
+
+  public void printReport() {
+    final String report = getReport();
+    if (report != null) {
+      info(report);
+    }
   }
 }

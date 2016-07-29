@@ -31,14 +31,14 @@ public class ModuleTreeNode extends AbstractFileTreeNode implements MPSModuleTre
     myModule = m;
 
     setNodeIdentifier(getFile().getPath());
-    add(new FolderTreeNode(project, VirtualFileUtils.getVirtualFile(m.getModuleSourceDir()), true));
+    add(new FolderTreeNode(project, VirtualFileUtils.getProjectVirtualFile(m.getModuleSourceDir()), true));
   }
 
   @Override
   protected void doUpdatePresentation() {
     super.doUpdatePresentation();
     setText(myModule.getModuleName());
-    VirtualFile file = VirtualFileUtils.getVirtualFile(myModule.getDescriptorFile());
+    VirtualFile file = VirtualFileUtils.getProjectVirtualFile(myModule.getDescriptorFile());
     if (file != null) {
       setIcon(file.getFileType().getIcon());
     }

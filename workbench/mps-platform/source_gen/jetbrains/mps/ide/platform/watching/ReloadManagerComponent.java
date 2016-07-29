@@ -26,7 +26,9 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import com.intellij.util.WaitForProgressToShow;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -182,28 +184,40 @@ public class ReloadManagerComponent extends ReloadManager implements Application
           return;
         }
 
-        // see MPS-18743, 21760 
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          public void run() {
-            assert ApplicationManager.getApplication().isWriteAccessAllowed() : "Platform write access not allowed: execute from EDT or under progress";
-            MPSModuleRepository.getInstance().saveAll();
+
+        ProgressManager.getInstance().run(new Task.Modal(null, "Reloading Files", false) {
+          @Override
+          public void run(@NotNull final ProgressIndicator progressIndicator) {
+            ProgressMonitor monitor = new ProgressMonitorAdapter(progressIndicator);
+            monitor.start("Reloading Files", 1);
+            try {
+              monitor.step("Saving Repository");
+              progressIndicator.setIndeterminate(true);
+              if (ProjectManager.getInstance().getOpenProjects().length > 0) {
+                WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
+                  public void run() {
+                    // see MPS-18743, 21760 
+                    ModelAccess.instance().runWriteAction(new Runnable() {
+                      public void run() {
+                        assert ApplicationManager.getApplication().isWriteAccessAllowed() : "Platform write access not allowed: execute from EDT or under progress";
+                        MPSModuleRepository.getInstance().saveAll();
+                      }
+                    });
+                  }
+                }, progressIndicator.getModalityState());
+
+              }
+              monitor.step("Reloading File System");
+              rs.doReload(monitor.subTask(1));
+            } finally {
+              monitor.done();
+            }
           }
         });
-
-        if (rs.wantsToShowProgress()) {
-          ProgressManager.getInstance().run(new Task.Modal(null, "Reloading", false) {
-            @Override
-            public void run(@NotNull final ProgressIndicator progressIndicator) {
-              rs.doReload(new ProgressMonitorAdapter(progressIndicator));
-            }
-          });
-
-        } else {
-          rs.doReload(new EmptyProgressMonitor());
-        }
       }
     });
   }
+
   private class ReloadSessionBroker {
     private ReloadSession myReloadSession;
     /*package*/ synchronized ReloadSession employ() {
@@ -213,15 +227,18 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       myReloadSession.incEmployCount();
       return myReloadSession;
     }
+
     /*package*/ synchronized void dismiss(ReloadSession rs) {
       assert myReloadSession == rs;
       rs.decEmployCount();
       notify();
     }
+
     /*package*/ boolean hasUnemployed() {
       ReloadSession rs = myReloadSession;
       return rs != null && !(rs.isBeingEmployed());
     }
+
     /*package*/ synchronized ReloadSession getUnemployed() {
       if (myReloadSession == null || myReloadSession.isBeingEmployed()) {
         return null;
@@ -230,6 +247,7 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       myReloadSession = null;
       return rs;
     }
+
     /*package*/ synchronized ReloadSession waitForUnemployed() {
       if (myReloadSession == null) {
         return null;

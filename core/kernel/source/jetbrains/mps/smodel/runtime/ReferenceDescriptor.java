@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public interface ReferenceDescriptor {
   @Deprecated
@@ -33,4 +34,6 @@ public interface ReferenceDescriptor {
   boolean isOptional();
 
   SReferenceLink getLink();
+
+  SNodeReference getSourceNode();
 }

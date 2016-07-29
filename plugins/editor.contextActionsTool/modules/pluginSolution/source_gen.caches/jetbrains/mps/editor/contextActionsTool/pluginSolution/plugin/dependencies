@@ -180,7 +180,6 @@
   <dependency className="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolComponent" file="ToolComponent.java">
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindow" />
     <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Font" />
     <classNode dependClassName="java.awt.HeadlessException" />
     <classNode dependClassName="java.awt.dnd.InvalidDnDOperationException" />

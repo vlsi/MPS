@@ -55,7 +55,8 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import javax.lang.model.SourceVersion;
 import org.jetbrains.annotations.Nullable;
@@ -334,12 +335,12 @@ public class NewModelDialog extends DialogWrapper {
     }
     MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(myResult, myProject);
     final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(myProject), configurable, "#MPSPropertiesConfigurable");
-    SwingUtilities.invokeLater(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
       public void run() {
         configurableEditor.show();
       }
-    });
+    }, ModalityState.current());
   }
 
   private String getFqName() {
@@ -372,6 +373,7 @@ public class NewModelDialog extends DialogWrapper {
       if (LanguageAspectSupport.isLanguageModelNameForbidden(modelName)) {
         String shortName = modelName.substring(modelName.lastIndexOf(".") + 1);
         setErrorText("This name isn't allowed because '" + shortName + "' is language aspect name");
+        return false;
       }
     }
 

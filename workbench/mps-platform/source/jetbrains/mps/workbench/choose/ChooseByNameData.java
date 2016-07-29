@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.choose;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
+import jetbrains.mps.ide.IdeBundle;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.util.containers.MultiMap;
@@ -45,6 +46,10 @@ import java.util.Set;
  * in case there's legitimate scenario that requires subclassing, 'final' can be removed. 'Legitimate', among other, means documented justification with
  * specific scenarios.
  *
+ * XXX perhaps, it's worth adding own callback, parameterized, to avoid casts to <T> in Callback.elementChosen(). Alternative is to ressurect getModelObject
+ *     like in BaseMPSChooseModel (where it was needed because user objects were wrapped with NavigationItem) which would cast to <T>. I don't like unchecked
+ *     casts, though, that's why I don't fall into this alternative right away.
+ *
  * @param <T> elements of the list to choose from. No restriction (e.g. like need for {@link Object#hashCode()} is imposed on elements.
  *
  * @author Artem Tikhomirov
@@ -57,7 +62,8 @@ public final class ChooseByNameData<T> implements ChooseByNameModel {
   private String myNotInScopeMessage;
   private String myNotFoundMessage;
   private String myPromptText;
-  private MultiMap<String, T> myNameElementMap;
+  private MultiMap<String, T> myLocalNameElementMap;
+  private MultiMap<String, T> myGlobalNameElementMap;
   private boolean myInitialCheckboxState = false;
   private boolean myOpensEditor = false;
   private Iterable<T> myLocalScope;
@@ -118,30 +124,43 @@ public final class ChooseByNameData<T> implements ChooseByNameModel {
   @NotNull
   @Override
   public String[] getNames(boolean checkBoxState) {
-    if (myNameElementMap == null) {
+    MultiMap<String, T> elementMap = checkBoxState ? myGlobalNameElementMap : myLocalNameElementMap;
+
+    if (elementMap == null) {
       // ChooseByNameBase caches names, but we need to keep the map to ensure subsequent getElementsByName return elements with names we use in getNames().
       // FIXME use of multimap is merely a quick way to support elements with identical names. It's quite ineffective (memory-wise) structure.
-      MultiMap<String, T> elements = new MultiMap<String, T>() {
-        @Override
-        protected Collection<T> createCollection() {
-          // I don't expect a lot of duplicating names
-          return new ArrayList<T>(4);
-        }
-      };
-      myPresentation.names(getElements(checkBoxState), (t, s) -> elements.putValue(s, t));
-      myNameElementMap = elements;
+      elementMap = buildMap(getElements(checkBoxState));
+      if (checkBoxState) {
+        myGlobalNameElementMap = elementMap;
+      } else {
+        myLocalNameElementMap = elementMap;
+      }
     }
     // XXX no idea whether getNames() is expected to return unique values only. Provided getElementByName() takes single name and expects multiple values,
     // likely, unique names are expected here. It's ok with MultiMap, however needs attention if we switch to another container.
-    Set<String> keys = myNameElementMap.keySet();
+    Set<String> keys = elementMap.keySet();
     return keys.toArray(new String[keys.size()]);
+  }
+
+  private MultiMap<String, T> buildMap(Iterable<T> elements) {
+    MultiMap<String, T> rv = new MultiMap<String, T>() {
+      @Override
+      protected Collection<T> createCollection() {
+        // I don't expect a lot of duplicating names
+        return new ArrayList<>(4);
+      }
+    };
+    myPresentation.names(elements, (t, s) -> rv.putValue(s, t));
+    return rv;
   }
 
   @NotNull
   @Override
   public Object[] getElementsByName(String name, boolean checkBoxState, String pattern) {
-    assert myNameElementMap != null : "How come getElementsByName() is invoked before getNames()? Where from the name comes then?";
-    Collection<T> rv = myNameElementMap.get(name);
+    MultiMap<String, T> elementMap = checkBoxState ? myGlobalNameElementMap : myLocalNameElementMap;
+    // not that I insist not to invoke getNames() when myNamesElementMap is empty, just curious if there's real scenario (not in test) when getElementByName comes first
+    assert elementMap != null : "How come getElementsByName() is invoked before getNames()? Where from the name comes then?";
+    Collection<T> rv = elementMap.get(name);
     return rv.toArray();
   }
 
@@ -238,10 +257,10 @@ public final class ChooseByNameData<T> implements ChooseByNameModel {
    * @return {@code this} for convenience
    */
   public ChooseByNameData<T> derivePrompts(String elementName) {
-    myCheckboxName = String.format("Include &non-&&project %s", NameUtil.pluralize(elementName));
-    myPromptText = String.format("%s name:", NameUtil.capitalize(elementName));
-    myNotInScopeMessage = String.format("no %s found in the scope", NameUtil.pluralize(elementName));
-    myNotFoundMessage = "no matches found";
+    myCheckboxName = String.format(IdeBundle.message("checkbox.include.non.project.elements"), NameUtil.pluralize(elementName));
+    myPromptText = String.format(IdeBundle.message("lable.elemet.name"), NameUtil.capitalize(elementName));
+    myNotInScopeMessage = String.format(IdeBundle.message("lable.no.elemet.found.in.scope"), NameUtil.pluralize(elementName));
+    myNotFoundMessage = com.intellij.ide.IdeBundle.message("label.choosebyname.no.matches.found");
     return this;
   }
 

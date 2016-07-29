@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.ThreadUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -167,7 +168,7 @@ class EDTExecutor {
 
             /* start worker */
             workerStarted = true;
-            ApplicationManager.getApplication().invokeLater(myWorker);
+            ApplicationManager.getApplication().invokeLater(myWorker, ModalityState.NON_MODAL);
           }
         }
       } catch (Exception e) {

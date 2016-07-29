@@ -40,7 +40,7 @@ public interface SubstituteMenuContext {
   SContainmentLink getLink();
 
   @Nullable
-  SNode getCurrentChild();
+  SNode getCurrentTargetNode();
 
   SModel getModel();
   /**

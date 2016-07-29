@@ -82,14 +82,14 @@
       </concept>
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
       <concept id="1630016958697718209" name="jetbrains.mps.lang.editor.structure.IMenuReference_Default" flags="ng" index="2Z_bC8">
-        <reference id="1630016958698373342" name="conceptNew" index="2ZyFGn" />
+        <reference id="1630016958698373342" name="concept" index="2ZyFGn" />
       </concept>
       <concept id="1630016958697344083" name="jetbrains.mps.lang.editor.structure.IMenu_Concept" flags="ng" index="2ZABuq">
-        <reference id="6591946374543067572" name="conceptDeclarationNew" index="aqKnT" />
+        <reference id="6591946374543067572" name="conceptDeclaration" index="aqKnT" />
       </concept>
       <concept id="1630016958697286851" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_parameterObject" flags="ng" index="2ZBlsa" />
       <concept id="1630016958697057551" name="jetbrains.mps.lang.editor.structure.IMenuPartParameterized" flags="ng" index="2ZBHr6">
-        <child id="1630016958697057552" name="parameterTypeNew" index="2ZBHrp" />
+        <child id="1630016958697057552" name="parameterType" index="2ZBHrp" />
       </concept>
       <concept id="3360401466585705291" name="jetbrains.mps.lang.editor.structure.CellModel_ContextAssistant" flags="ng" index="18a60v" />
       <concept id="1838685759388685703" name="jetbrains.mps.lang.editor.structure.TransformationFeature_DescriptionText" flags="ng" index="3cqGtN">
@@ -312,7 +312,7 @@
         <node concept="3EZMnI" id="7X9XNV5zcds" role="3EZMnx">
           <node concept="2iRkQZ" id="7X9XNV5zcdt" role="2iSdaV" />
           <node concept="3F2HdR" id="4PEyPcYohj2" role="3EZMnx">
-            <ref role="1NtTu8" to="hsq4:4PEyPcYoaDo" />
+            <ref role="1NtTu8" to="hsq4:4PEyPcYoaDo" resolve="children" />
             <node concept="2iRkQZ" id="4PEyPcYooD0" role="2czzBx" />
             <node concept="3F0ifn" id="6hDDo_O9yJm" role="2czzBI">
               <property role="3F0ifm" value="&lt;no items&gt;" />

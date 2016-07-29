@@ -176,6 +176,9 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   }
 
   public boolean showNodeStructure() {
+    if (isDisposed()) {
+      return false;
+    }
     return getProjectView().isShowMembers(getId());
   }
 
@@ -426,14 +429,14 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
         AbstractModule module = (AbstractModule) m;
         IFile home = module.getModuleSourceDir();
         if (home != null) {
-          VirtualFile vfile = VirtualFileUtils.getVirtualFile(home);
+          VirtualFile vfile = VirtualFileUtils.getProjectVirtualFile(home);
           if (vfile != null) {
             selectedFilesList.add(vfile);
           }
         }
         IFile ifile = module.getDescriptorFile();
         if (ifile != null) {
-          VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
+          VirtualFile vfile = VirtualFileUtils.getProjectVirtualFile(ifile);
           if (vfile != null) {
             selectedFilesList.add(vfile);
           }

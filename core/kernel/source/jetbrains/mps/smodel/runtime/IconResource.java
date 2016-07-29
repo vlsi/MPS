@@ -16,9 +16,12 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.classloading.ModuleClassLoader;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.Nullable;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
 
@@ -31,10 +34,6 @@ public class IconResource {
   public IconResource(String iconResId, Class resourceProvider) {
     myIconResId = iconResId;
     myResourceProvider = new WeakReference<Class>(resourceProvider);
-  }
-
-  public boolean isValid() {
-    return getResource() != null;
   }
 
   /**
@@ -50,6 +49,9 @@ public class IconResource {
     return cl instanceof ModuleClassLoader && ((ModuleClassLoader) cl).isDisposed();
   }
 
+  @Deprecated
+  @ToRemove(version = 3.4)
+  //left for compatibility purposes. Does not allow to use 2x & dark icons
   public InputStream getResource() {
     Class c = myResourceProvider.get();
     if (c == null) {
@@ -66,6 +68,15 @@ public class IconResource {
       LOG.warn("Unable to get icon's InputStream. Resource provider=" + c.getSimpleName() + "; iconId:=" + myIconResId);
     }
     return result;
+  }
+
+  public String getResourceId() {
+    return myIconResId;
+  }
+
+  @Nullable
+  public Class getProvider() {
+    return myResourceProvider.get();
   }
 
   private void showDisposedError(String rp) {

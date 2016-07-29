@@ -17,14 +17,17 @@ package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -58,17 +61,18 @@ public class ClassesGenPolicy extends BaseDirectoryIndexExcludePolicy {
             continue;
           }
 
-          VirtualFile classesGenVF = VirtualFileUtils.getVirtualFile(classesGen);
+          VirtualFile classesGenVF = VirtualFileUtils.getProjectVirtualFile(classesGen);
           if (classesGenVF != null) {
             roots.add(classesGenVF);
           }
 
-          if (((AbstractModule) module).getModuleSourceDir() == null) continue;
-          IFile classesDir = ((AbstractModule) module).getModuleSourceDir().getDescendant(AbstractModule.CLASSES);
-          if (classesDir.exists()) {
-            VirtualFile classesVF = VirtualFileUtils.getVirtualFile(classesDir);
-            if (classesVF != null) {
-              roots.add(classesVF);
+          if (((AbstractModule) module).getModuleSourceDir() != null) {
+            IFile classesDir = ((AbstractModule) module).getModuleSourceDir().getDescendant(AbstractModule.CLASSES);
+            if (classesDir.exists()) {
+              VirtualFile classesVF = VirtualFileUtils.getProjectVirtualFile(classesDir);
+              if (classesVF != null) {
+                roots.add(classesVF);
+              }
             }
           }
         }

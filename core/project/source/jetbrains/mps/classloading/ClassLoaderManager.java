@@ -33,6 +33,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
@@ -324,7 +325,7 @@ public class ClassLoaderManager implements CoreComponent {
    */
   Collection<ReloadableModule> preLoadModules(Iterable<? extends ReloadableModule> modules, ProgressMonitor monitor) {
     checkWriteAccess();
-    monitor.start("Pre-loading modules...", 1);
+    monitor.start("Loading", 6);
     try {
       Set<ReloadableModule> modulesPreLoad = filterModules(modules, myValidCondition);
       if (modulesPreLoad.isEmpty()) return Collections.emptySet();
@@ -340,12 +341,26 @@ public class ClassLoaderManager implements CoreComponent {
       modulesPreLoad = filterModules(modulesPreLoad, myUnloadedCondition, myMPSLoadableCondition, myValidCondition);
       if (modulesPreLoad.isEmpty()) return Collections.emptySet();
 
-      Collection<ReloadableModule> modulesToNotify = myClassLoadersHolder.onLazyLoaded(modulesPreLoad);
-      myBroadCaster.onLoad(modulesToNotify);
+      Set<ReloadableModule> modulesToNotify = myClassLoadersHolder.onLazyLoaded(modulesPreLoad);
+      myBroadCaster.onLoad(modulesToNotify, monitor.subTask(5, SubProgressKind.AS_COMMENT));
 
       return modulesToNotify;
     } finally {
       monitor.done();
+    }
+  }
+
+  /**
+   * hack for 3.4
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
+  public synchronized void runNonReloadableTransaction(Runnable runnable) {
+    try {
+      myRepositoryListener.pause();
+      runnable.run();
+    } finally {
+      myRepositoryListener.proceed();
     }
   }
 
@@ -357,28 +372,25 @@ public class ClassLoaderManager implements CoreComponent {
    */
   @NotNull
   private Collection<ReloadableModule> doLoadModules(final Iterable<? extends ReloadableModule> modules, final ProgressMonitor monitor) {
-    monitor.start("Loading modules...", 1);
+    monitor.start("Loading", 1);
     try {
-      return new ModelAccessHelper(myRepository).runReadAction(new Computable<Collection<ReloadableModule>>() {
-        @Override
-        public Collection<ReloadableModule> compute() {
-          synchronized (myLoadingModulesLock) { // provides synchronization only in this block
-            Set<ReloadableModule> modulesToLoad = new LinkedHashSet<ReloadableModule>(filterModules(modules, myWatchableCondition, myValidCondition));
-            if (modulesToLoad.isEmpty()) return Collections.emptySet();
+      return new ModelAccessHelper(myRepository).runReadAction((Computable<Collection<ReloadableModule>>) () -> {
+        synchronized (myLoadingModulesLock) { // provides synchronization only in this block
+          Set<ReloadableModule> modulesToLoad = new LinkedHashSet<ReloadableModule>(filterModules(modules, myWatchableCondition, myValidCondition));
+          if (modulesToLoad.isEmpty()) return Collections.emptySet();
 
-            // transitive closure
-            modulesToLoad.addAll(myModulesWatcher.getResolvedDependencies(modulesToLoad));
-            modulesToLoad = filterModules(modulesToLoad, myMPSLoadableCondition, myNotLoadedCondition);
-            if (modulesToLoad.isEmpty()) return Collections.emptySet();
+          // transitive closure
+          modulesToLoad.addAll(myModulesWatcher.getResolvedDependencies(modulesToLoad));
+          modulesToLoad = filterModules(modulesToLoad, myMPSLoadableCondition, myNotLoadedCondition);
+          if (modulesToLoad.isEmpty()) return Collections.emptySet();
 
-            LOG.debug("Loading " + modulesToLoad.size() + " modules");
-            monitor.advance(1);
-            if (!filterModules(modulesToLoad, myUnloadedCondition).isEmpty()) {
-              LOG.warn("Some modules are not preloaded yet : cannot load them");
-            }
-            myClassLoadersHolder.doLoadModules(modulesToLoad, monitor);
-            return modulesToLoad;
+          LOG.debug("Loading " + modulesToLoad.size() + " modules");
+          monitor.advance(1);
+          if (!filterModules(modulesToLoad, myUnloadedCondition).isEmpty()) {
+            LOG.warn("Some modules are not preloaded yet : cannot load them");
           }
+          myClassLoadersHolder.doLoadModules(modulesToLoad);
+          return modulesToLoad;
         }
       });
     } finally {
@@ -396,7 +408,7 @@ public class ClassLoaderManager implements CoreComponent {
   @NotNull
   Collection<ReloadableModule> unloadModules(Iterable<? extends SModuleReference> modules, @NotNull ProgressMonitor monitor) {
     checkWriteAccess();
-    monitor.start("Unloading modules...", 1);
+    monitor.start("Unloading", 6);
     try {
       Condition<SModuleReference> loadedCondition = new NotCondition<SModuleReference>(myUnloadedRefCondition);
       Set<SModuleReference> modulesToUnload = filterModules(modules, loadedCondition);
@@ -408,10 +420,8 @@ public class ClassLoaderManager implements CoreComponent {
       if (modulesToUnload.isEmpty()) return Collections.emptySet();
 
       LOG.debug("Unloading " + modulesToUnload.size() + " modules");
-      monitor.step("Disposing old class loaders...");
-      Collection<ReloadableModule> unloadedModules = myBroadCaster.onUnload(modulesToUnload);
+      Collection<ReloadableModule> unloadedModules = myBroadCaster.onUnload(modulesToUnload, monitor.subTask(5, SubProgressKind.AS_COMMENT));
       myClassLoadersHolder.doUnloadModules(modulesToUnload);
-      monitor.advance(1);
 
       return unloadedModules;
     } finally {
@@ -429,19 +439,32 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   /**
-   * NOTE: It is recommended to use {@link jetbrains.mps.classloading.ModuleReloadListener}
-   * Although you can use the old listening mechanism {@link MPSClassesListener}
+   * @deprecated It is recommended to use {@link jetbrains.mps.classloading.DeployListener}
    */
+  @Deprecated
   public void addClassesHandler(MPSClassesListener handler) {
     myBroadCaster.addClassesHandler(handler);
   }
 
+  @Deprecated
   public void removeClassesHandler(MPSClassesListener handler) {
     myBroadCaster.removeClassesHandler(handler);
   }
 
+  /**
+   * @deprecated It is recommended to use {@link jetbrains.mps.classloading.DeployListener}
+   */
+  @Deprecated
   public void addReloadListener(ModuleReloadListener listener) {
     myBroadCaster.addReloadListener(listener);
+  }
+
+  public void addListener(@NotNull DeployListener listener) {
+    myBroadCaster.addListener(listener);
+  }
+
+  public void removeListener(@NotNull DeployListener listener) {
+    myBroadCaster.removeListener(listener);
   }
 
   public void removeReloadListener(ModuleReloadListener listener) {
@@ -459,13 +482,8 @@ public class ClassLoaderManager implements CoreComponent {
   @Deprecated
   public void reloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     checkWriteAccess();
-    try {
-      monitor.start("Reloading modules' class loaders...", 1);
-      refresh();
-      doReloadModules(modules, monitor.subTask(1));
-    } finally {
-      monitor.done();
-    }
+    refresh();
+    doReloadModules(modules, monitor);
   }
 
   Collection<ReloadableModule> doReloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
@@ -476,7 +494,7 @@ public class ClassLoaderManager implements CoreComponent {
     }
     try {
       long beginTime = System.nanoTime();
-      monitor.start("Reloading modules' class loaders...", 2);
+      monitor.start("Reloading Modules", 2);
       boolean silentMode = true;
       for (SModule module : modules) {
         if (!(module instanceof TempModule)) {

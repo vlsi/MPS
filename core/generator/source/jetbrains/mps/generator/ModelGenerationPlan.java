@@ -62,6 +62,8 @@ public interface ModelGenerationPlan {
       return myName;
     }
 
+    // FIXME do I still need hashCode/equals when I can use CheckpointIdentity?
+
     @Override
     public int hashCode() {
       return myName.hashCode();

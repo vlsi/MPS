@@ -43,10 +43,12 @@ import com.intellij.openapi.module.Module;
 public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, ApplicationComponent {
   public ClassifierSuccessorsFinder(MPSCoreComponents coreComponents) {
   }
+
   @Override
   public boolean isIndexReady(Project project) {
     return !(DumbService.getInstance(ProjectHelper.toIdeaProject(project)).isDumb());
   }
+
   @Override
   public List<SNode> getDerivedClassifiers(SNode classifier, org.jetbrains.mps.openapi.module.SearchScope scope) {
     Set<VirtualFile> unModifiedModelFiles = SetSequence.fromSet(new HashSet<VirtualFile>());
@@ -66,7 +68,7 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
         ListSequence.fromList(modifiedClasses).addSequence(ListSequence.fromList(SModelOperations.nodes(md, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
         ListSequence.fromList(modifiedInterfaces).addSequence(ListSequence.fromList(SModelOperations.nodes(md, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))));
       } else {
-        SetSequence.fromSet(unModifiedModelFiles).addElement(VirtualFileUtils.getVirtualFile(modelFile));
+        SetSequence.fromSet(unModifiedModelFiles).addElement(VirtualFileUtils.getOrCreateVirtualFile(modelFile));
       }
     }
     List<SNode> result = new ArrayList<SNode>();
@@ -82,14 +84,17 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
     }
     return result;
   }
+
   @Override
   public void initComponent() {
     ClassifierSuccessors.getInstance().setFinder(this);
   }
+
   @Override
   public void disposeComponent() {
     ClassifierSuccessors.getInstance().setFinder(null);
   }
+
   @NonNls
   @NotNull
   @Override

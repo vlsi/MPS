@@ -78,7 +78,7 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
 
   @Override
   @Nullable
-  public SNode getCurrentChild() {
+  public SNode getCurrentTargetNode() {
     return myCurrentChild;
   }
 
@@ -99,7 +99,7 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   }
   @Override
   public int hashCode() {
-    return Objects.hash(getParentNode(), getEditorContext(), getCurrentChild(), getLink());
+    return Objects.hash(getParentNode(), getEditorContext(), getCurrentTargetNode(), getLink());
   }
 
   @Override
@@ -114,6 +114,6 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
     DefaultSubstituteMenuContext that = (DefaultSubstituteMenuContext) o;
 
     return getParentNode().equals(that.getParentNode()) && getEditorContext().equals(that.getEditorContext()) &&
-        Objects.equals(getCurrentChild(), that.getCurrentChild()) && Objects.equals(getLink(), that.getLink());
+        Objects.equals(getCurrentTargetNode(), that.getCurrentTargetNode()) && Objects.equals(getLink(), that.getLink());
   }
 }

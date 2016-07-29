@@ -17,7 +17,6 @@ import com.intellij.util.Consumer;
 import java.awt.event.MouseEvent;
 import javax.swing.Icon;
 import jetbrains.mps.ide.ThreadUtils;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.icons.MPSIcons;
 import javax.swing.Timer;
 
@@ -130,7 +129,6 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
       if (isConnected()) {
         if (canOperate()) {
           setNewState(state, PluginStateWidget.State.CONNECTED);
-        } else {
         }
       } else {
         setNewState(state, PluginStateWidget.State.TRYING_TO_CONNECT);
@@ -167,7 +165,7 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
   private boolean setNewState(PluginStateWidget.State oldState, PluginStateWidget.State newState) {
     if (myState.compareAndSet(oldState, newState)) {
       myTimer.setNewDelay(myState.get().getDefaultDelay());
-      SwingUtilities.invokeLater(new Runnable() {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
         @Override
         public void run() {
           myStatusBar.updateWidget(ID());

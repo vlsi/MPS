@@ -19,6 +19,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 
 public class CellModelListWithRole_FoldedCellComponent implements ConceptEditorComponent {
   @NotNull
@@ -74,6 +75,7 @@ public class CellModelListWithRole_FoldedCellComponent implements ConceptEditorC
       EditorCell editorCell = super.createEmptyCell();
       editorCell.setCellId("empty_foldedCellModel");
       installCellInfo(null, editorCell);
+      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x53e9723ab9b3b776L, "foldedCellModel")));
 
       return editorCell;
     }

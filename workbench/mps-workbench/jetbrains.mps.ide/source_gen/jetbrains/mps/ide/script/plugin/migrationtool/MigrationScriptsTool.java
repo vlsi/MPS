@@ -4,7 +4,6 @@ package jetbrains.mps.ide.script.plugin.migrationtool;
 
 import jetbrains.mps.ide.findusages.view.TabbedUsagesTool;
 import java.util.List;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
@@ -13,7 +12,7 @@ import java.util.Collection;
 import jetbrains.mps.lang.script.runtime.RefactoringScript;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.ThreadUtils;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
@@ -21,14 +20,15 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import javax.swing.JOptionPane;
 import com.intellij.ui.content.Content;
 import jetbrains.mps.ide.findusages.view.icons.IconManager;
 
 public class MigrationScriptsTool extends TabbedUsagesTool {
-  private List<SNodeReference> myScripts;
   private List<MigrationScriptsView> myViews = new ArrayList<MigrationScriptsView>();
   public MigrationScriptsTool(Project project) {
     super(project, "Migration", -1, null, ToolWindowAnchor.BOTTOM, true);
@@ -47,7 +47,7 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
   }
   public void startMigration(final Collection<RefactoringScript> scripts, final SearchScope scope) {
     ThreadUtils.assertEDT();
-    SwingUtilities.invokeLater(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
       public void run() {
         ProgressManager.getInstance().run(new Task.Modal(getProject(), "Searching", true) {
@@ -57,11 +57,16 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
             final MigrationScriptFinder finder = new MigrationScriptFinder(scripts);
             final IResultProvider provider = FindUtils.makeProvider(finder);
             final SearchQuery query = new SearchQuery(scope);
-            final SearchResults results = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), query, provider);
-            SwingUtilities.invokeLater(new Runnable() {
+            final Wrappers._T<SearchResults> results = new Wrappers._T<SearchResults>();
+            ProjectHelper.fromIdeaProject(getProject()).getRepository().getModelAccess().runReadAction(new Runnable() {
+              public void run() {
+                results.value = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), query, provider);
+              }
+            });
+            ApplicationManager.getApplication().invokeLater(new Runnable() {
               @Override
               public void run() {
-                if (results.getSearchResults().isEmpty()) {
+                if (results.value.getSearchResults().isEmpty()) {
                   JOptionPane.showMessageDialog(getContentManager().getComponent(), "No applicable nodes found", "Migration Scripts", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                   int count = myViews.size();

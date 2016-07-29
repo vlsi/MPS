@@ -44,6 +44,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action" file="AttachMappingLabel_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -53,7 +54,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
@@ -107,12 +107,15 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.util.AndCondition" />
     <classNode dependClassName="jetbrains.mps.util.NotCondition" />
-    <classNode dependClassName="jetbrains.mps.workbench.choose.models.BaseModelModel" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ChooseByNameData" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ModelScopeIterable" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.ModelsPresentation" />
     <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel" />
     <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.MpsPopupFactory" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>

@@ -34,10 +34,13 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.FileSystemModelHelper;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.choose.models.BaseModelModel;
+import jetbrains.mps.workbench.choose.ChooseByNameData;
+import jetbrains.mps.workbench.choose.ModelScopeIterable;
+import jetbrains.mps.workbench.choose.ModelsPresentation;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.util.Condition;
 
 import java.util.Map;
@@ -59,22 +62,26 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
         return rightStereotype && hasModule;
       }
     };
-    final BaseModelModel goToModelModel = new BaseModelModel(project, new ConditionalScope(project.getScope(), null, cond), new ConditionalScope(new FilteredGlobalScope(), null, cond));
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project.getProject(), goToModelModel, null);
+    ConditionalScope localScope = new ConditionalScope(project.getScope(), null, cond);
+    ConditionalScope globalScope = new ConditionalScope(new FilteredGlobalScope(), null, cond);
+    SRepository repo = project.getRepository();
+    ChooseByNameData<SModelReference> gotoData = new ChooseByNameData<>(new ModelsPresentation(repo));
+    gotoData.derivePrompts("model").setScope(new ModelScopeIterable(localScope, repo), new ModelScopeIterable(globalScope, repo));
+
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project.getProject(), gotoData, null);
     popup.setShowListForEmptyPattern(true);
     popup.setCheckBoxShortcut(getShortcutSet());
     popup.invoke(new Callback() {
       @Override
-      public void elementChosen(Object element) {
-        final SModelReference modelReference = goToModelModel.getModelObject(element);
-        if (modelReference == null) {
+      public void elementChosen(final Object element) {
+        if (!(element instanceof SModelReference)) {
           return;
         }
 
         VirtualFile modelFile = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<VirtualFile>() {
           @Override
           public VirtualFile compute() {
-            final SModel model = modelReference.resolve(project.getRepository());
+            final SModel model = ((SModelReference) element).resolve(project.getRepository());
 
             if (model == null) {
               return null;

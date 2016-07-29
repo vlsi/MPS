@@ -1804,7 +1804,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/6868777471677432036">
     <file name="NullableAnalyzerRunner.java">
       <node id="6868777471677432036" at="27,0,28,0" concept="5" trace="myNode" />
-      <node id="6868777471677432036" at="28,45,29,71" concept="15" />
+      <node id="6868777471677432036" at="28,45,29,63" concept="15" />
       <node id="6868777471677432036" at="31,86,32,22" concept="14" />
       <node id="6868777471677432036" at="32,22,33,18" concept="4" />
       <node id="6868777471677432036" at="33,18,34,63" concept="4" />
@@ -1858,7 +1858,7 @@
       <node id="6868777471677432151" at="64,58,82,7" concept="7" />
       <node id="6868777471677432036" at="61,0,97,0" concept="8" trace="fun#(Ljava/util/Map;Ljetbrains/mps/lang/dataFlow/framework/ProgramState;Ljava/util/Map;)Ljava/util/Map;" />
       <scope id="6868777471677432036" at="40,31,40,31" />
-      <scope id="6868777471677432036" at="28,45,29,71" />
+      <scope id="6868777471677432036" at="28,45,29,63" />
       <scope id="4212311917866530344" at="53,33,54,46" />
       <scope id="6868777471677432166" at="67,56,68,48" />
       <scope id="6868777471677432174" at="70,57,71,49" />

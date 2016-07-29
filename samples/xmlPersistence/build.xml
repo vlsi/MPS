@@ -41,7 +41,7 @@
     <jar destfile="${build.tmp}/default/MPS-sample-persistence.zip/mps-sample-persistence/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.ideaPlugin" />
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.samples.xmlPersistence.ideaPlugin.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.samples.xmlPersistence.ideaPlugin-models">
@@ -51,6 +51,8 @@
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/jetbrains.mps.samples.xmlPersistence.ideaPlugin.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.samples.xmlPersistence.ideaPlugin-models" prefix="module/models" />
@@ -76,8 +78,8 @@
     <jar destfile="${build.tmp}/default/MPS-sample-persistence.zip/mps-sample-persistence/lib/jetbrains.mps.samples.xmlPersistence.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence" />
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/testdata" includes="**/trace.info, **/exports" />
-      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/testdata" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.samples.xmlPersistence.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.samples.xmlPersistence-models">
@@ -87,10 +89,14 @@
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/testdata">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/jetbrains.mps.samples.xmlPersistence.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.samples.xmlPersistence-models" prefix="module/models" />
@@ -149,6 +155,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.menus.extras.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.intentions.jar" />

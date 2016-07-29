@@ -29,7 +29,7 @@ public class AddToFavoritesGroup_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
   }
   public void doUpdate(AnActionEvent event) {
-    AddToFavoritesGroup_ActionGroup.this.removeAll();
+    removeAll();
     Project project = event.getData(MPSDataKeys.PROJECT);
     if (project == null) {
       return;

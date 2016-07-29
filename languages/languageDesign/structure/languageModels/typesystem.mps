@@ -73,6 +73,7 @@
       </concept>
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271221393" name="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" flags="nn" index="17QLQc" />
       <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
@@ -457,7 +458,7 @@
                       </node>
                       <node concept="2OqwBi" id="hRzafqU" role="33vP2m">
                         <node concept="3Tsc0h" id="hRzafqV" role="2OqNvi">
-                          <ref role="3TtcxE" to="tpce:f_TKVDF" />
+                          <ref role="3TtcxE" to="tpce:f_TKVDF" resolve="linkDeclaration" />
                         </node>
                         <node concept="37vLTw" id="2BHiRxglgu9" role="2Oq$k0">
                           <ref role="3cqZAo" node="hRzafqO" resolve="concept" />
@@ -505,7 +506,7 @@
                     <ref role="1YBMHb" node="hCVECpX" resolve="linkToCheck" />
                   </node>
                   <node concept="3TrEf2" id="7nn$HtllTq2" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpce:fA0ks94" />
+                    <ref role="3Tt5mk" to="tpce:fA0ks94" resolve="specializedLink" />
                   </node>
                 </node>
               </node>
@@ -1001,7 +1002,7 @@
                     </node>
                   </node>
                   <node concept="3TrEf2" id="71Dyx1siQ$Q" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpce:f_TJDff" />
+                    <ref role="3Tt5mk" to="tpce:f_TJDff" resolve="extends" />
                   </node>
                 </node>
               </node>
@@ -1066,11 +1067,11 @@
                         </node>
                       </node>
                       <node concept="3Tsc0h" id="71Dyx1sirF5" role="2OqNvi">
-                        <ref role="3TtcxE" to="tpce:h0PrDRO" />
+                        <ref role="3TtcxE" to="tpce:h0PrDRO" resolve="extends" />
                       </node>
                     </node>
                     <node concept="13MTOL" id="71Dyx1siw3k" role="2OqNvi">
-                      <ref role="13MTZf" to="tpce:h0PrY0D" />
+                      <ref role="13MTZf" to="tpce:h0PrY0D" resolve="intfc" />
                     </node>
                   </node>
                 </node>
@@ -1231,7 +1232,7 @@
               <ref role="1YBMHb" node="2urHzIcHTdR" resolve="link" />
             </node>
             <node concept="3TrEf2" id="2urHzIcHTfu" role="2OqNvi">
-              <ref role="3Tt5mk" to="tpce:fA0ks94" />
+              <ref role="3Tt5mk" to="tpce:fA0ks94" resolve="specializedLink" />
             </node>
           </node>
         </node>
@@ -2516,7 +2517,7 @@
                 <ref role="3cqZAo" node="3yB0zvVOebG" resolve="stub" />
               </node>
               <node concept="3TrEf2" id="3yB0zvVOhfW" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpce:f_TJDff" />
+                <ref role="3Tt5mk" to="tpce:f_TJDff" resolve="extends" />
               </node>
             </node>
             <node concept="2oxUTD" id="3yB0zvVOhPo" role="2OqNvi">
@@ -2548,7 +2549,7 @@
                 <ref role="3cqZAo" node="3yB0zvVO_Co" resolve="ref1" />
               </node>
               <node concept="3TrEf2" id="3yB0zvVOAl7" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpce:h0PrY0D" />
+                <ref role="3Tt5mk" to="tpce:h0PrY0D" resolve="intfc" />
               </node>
             </node>
             <node concept="2oxUTD" id="3yB0zvVOBUN" role="2OqNvi">
@@ -2568,7 +2569,7 @@
                 <ref role="3cqZAo" node="3yB0zvVOebG" resolve="stub" />
               </node>
               <node concept="3Tsc0h" id="3yB0zvVOkaQ" role="2OqNvi">
-                <ref role="3TtcxE" to="tpce:h0Pzm$Y" />
+                <ref role="3TtcxE" to="tpce:h0Pzm$Y" resolve="implements" />
               </node>
             </node>
             <node concept="TSZUe" id="3yB0zvVOvfY" role="2OqNvi">
@@ -2600,7 +2601,7 @@
                 <ref role="3cqZAo" node="3yB0zvVOC62" resolve="ref2" />
               </node>
               <node concept="3TrEf2" id="3yB0zvVOC6b" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpce:h0PrY0D" />
+                <ref role="3Tt5mk" to="tpce:h0PrY0D" resolve="intfc" />
               </node>
             </node>
             <node concept="2oxUTD" id="3yB0zvVOC6c" role="2OqNvi">
@@ -2620,7 +2621,7 @@
                 <ref role="3cqZAo" node="3yB0zvVOebG" resolve="stub" />
               </node>
               <node concept="3Tsc0h" id="3yB0zvVOC6k" role="2OqNvi">
-                <ref role="3TtcxE" to="tpce:h0Pzm$Y" />
+                <ref role="3TtcxE" to="tpce:h0Pzm$Y" resolve="implements" />
               </node>
             </node>
             <node concept="TSZUe" id="3yB0zvVOC6l" role="2OqNvi">
@@ -2724,7 +2725,7 @@
                 <ref role="3cqZAo" node="5qAq7iVH0Et" resolve="editor" />
               </node>
               <node concept="3TrEf2" id="5qAq7iVHmC9" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpc2:gXXX56I" />
+                <ref role="3Tt5mk" to="tpc2:gXXX56I" resolve="conceptDeclaration" />
               </node>
             </node>
             <node concept="2oxUTD" id="5j4BJGPKmlr" role="2OqNvi">
@@ -2771,7 +2772,7 @@
                 <ref role="3cqZAo" node="5j4BJGPL0Kl" resolve="component" />
               </node>
               <node concept="3TrEf2" id="5j4BJGPL2sA" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpc2:fGPMmyn" />
+                <ref role="3Tt5mk" to="tpc2:fGPMmyn" resolve="editorComponent" />
               </node>
             </node>
             <node concept="2oxUTD" id="5j4BJGPL4j4" role="2OqNvi">
@@ -2788,7 +2789,7 @@
                 <ref role="3cqZAo" node="5qAq7iVH0Et" resolve="editor" />
               </node>
               <node concept="3TrEf2" id="5qAq7iVHnsN" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpc2:fIwV5gl" />
+                <ref role="3Tt5mk" to="tpc2:fIwV5gl" resolve="cellModel" />
               </node>
             </node>
             <node concept="2oxUTD" id="5j4BJGPKTrP" role="2OqNvi">
@@ -2893,7 +2894,7 @@
                 <ref role="1YBMHb" node="6LkeDcbPyMP" resolve="enumerationDataTypeDeclaration" />
               </node>
               <node concept="3Tsc0h" id="1gmd4rN_xZN" role="2OqNvi">
-                <ref role="3TtcxE" to="tpce:fKM5hVY" />
+                <ref role="3TtcxE" to="tpce:fKM5hVY" resolve="member" />
               </node>
             </node>
             <node concept="2HxqBE" id="1gmd4rN__Mx" role="2OqNvi">
@@ -2933,7 +2934,7 @@
               <ref role="1YBMHb" node="6LkeDcbPyMP" resolve="enumerationDataTypeDeclaration" />
             </node>
             <node concept="3Tsc0h" id="6LkeDcbP_M_" role="2OqNvi">
-              <ref role="3TtcxE" to="tpce:fKM5hVY" />
+              <ref role="3TtcxE" to="tpce:fKM5hVY" resolve="member" />
             </node>
           </node>
           <node concept="2es0OD" id="6LkeDcbPD7U" role="2OqNvi">
@@ -3366,6 +3367,44 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbJ" id="2sxsDnZy4BZ" role="3cqZAp">
+              <node concept="3clFbS" id="2sxsDnZy4C1" role="3clFbx">
+                <node concept="a7r0C" id="2sxsDnZyzGA" role="3cqZAp">
+                  <node concept="Xl_RD" id="2sxsDnZy$mQ" role="a7wSD">
+                    <property role="Xl_RC" value="Node id and concept id differ. It's recommended to keep ids synchronised until MPS 3.5. Use quickfix to set corrected id" />
+                  </node>
+                  <node concept="1YBJjd" id="2sxsDnZyzGV" role="2OEOjV">
+                    <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
+                  </node>
+                  <node concept="3Cnw8n" id="2sxsDnZyzHn" role="2OEOjU">
+                    <ref role="QpYPw" node="4H96pIbEyix" resolve="CorrectDuplicateId" />
+                    <node concept="3CnSsL" id="2sxsDnZy$3e" role="3Coj4f">
+                      <ref role="QkamJ" node="4H96pIbEyju" resolve="c" />
+                      <node concept="1YBJjd" id="2sxsDnZy$3p" role="3CoRuB">
+                        <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="17QLQc" id="2sxsDnZy5TI" role="3clFbw">
+                <node concept="2OqwBi" id="2sxsDnZy4KB" role="3uHU7B">
+                  <node concept="1YBJjd" id="2sxsDnZy4CS" role="2Oq$k0">
+                    <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
+                  </node>
+                  <node concept="3TrcHB" id="2sxsDnZy5oy" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpce:5OIo7_R7SN0" resolve="conceptId" />
+                  </node>
+                </node>
+                <node concept="2YIFZM" id="2sxsDnZyz5P" role="3uHU7w">
+                  <ref role="37wK5l" to="twe9:2sxsDnZygBx" resolve="getNodeIdString" />
+                  <ref role="1Pybhc" to="twe9:5OIo7_R8hKr" resolve="ConceptIdHelper" />
+                  <node concept="1YBJjd" id="2sxsDnZyzpc" role="37wK5m">
+                    <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node concept="2OqwBi" id="5OIo7_R7W$m" role="3clFbw">
@@ -3419,7 +3458,7 @@
             <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
           </node>
           <node concept="3Tsc0h" id="dqwjwHx5rG" role="2OqNvi">
-            <ref role="3TtcxE" to="tpce:f_TKVDG" />
+            <ref role="3TtcxE" to="tpce:f_TKVDG" resolve="propertyDeclaration" />
           </node>
         </node>
         <node concept="3clFbS" id="dqwjwHx53W" role="2LFqv$">
@@ -3473,7 +3512,7 @@
                         <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
                       </node>
                       <node concept="3Tsc0h" id="4H96pIbERPH" role="2OqNvi">
-                        <ref role="3TtcxE" to="tpce:f_TKVDG" />
+                        <ref role="3TtcxE" to="tpce:f_TKVDG" resolve="propertyDeclaration" />
                       </node>
                     </node>
                     <node concept="2HwmR7" id="4H96pIbEzwX" role="2OqNvi">
@@ -3542,6 +3581,44 @@
                     </node>
                   </node>
                 </node>
+                <node concept="3clFbJ" id="2sxsDnZy_0Y" role="3cqZAp">
+                  <node concept="3clFbS" id="2sxsDnZy_0Z" role="3clFbx">
+                    <node concept="a7r0C" id="2sxsDnZy_10" role="3cqZAp">
+                      <node concept="Xl_RD" id="2sxsDnZy_11" role="a7wSD">
+                        <property role="Xl_RC" value="Node id and property id differ. It's recommended to keep ids synchronised until MPS 3.5. Use quickfix to set corrected id" />
+                      </node>
+                      <node concept="2GrUjf" id="2sxsDnZyBUB" role="2OEOjV">
+                        <ref role="2Gs0qQ" node="dqwjwHx53S" resolve="p" />
+                      </node>
+                      <node concept="3Cnw8n" id="2sxsDnZy_13" role="2OEOjU">
+                        <ref role="QpYPw" node="4H96pIbEyix" resolve="CorrectDuplicateId" />
+                        <node concept="3CnSsL" id="2sxsDnZy_14" role="3Coj4f">
+                          <ref role="QkamJ" node="4H96pIbEyjh" resolve="p" />
+                          <node concept="2GrUjf" id="2sxsDnZyCTF" role="3CoRuB">
+                            <ref role="2Gs0qQ" node="dqwjwHx53S" resolve="p" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="17QLQc" id="2sxsDnZy_16" role="3clFbw">
+                    <node concept="2OqwBi" id="2sxsDnZy_IM" role="3uHU7B">
+                      <node concept="2GrUjf" id="2sxsDnZy_ox" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="dqwjwHx53S" resolve="p" />
+                      </node>
+                      <node concept="3TrcHB" id="2sxsDnZyAnD" role="2OqNvi">
+                        <ref role="3TsBF5" to="tpce:dqwjwHwEjp" resolve="propertyId" />
+                      </node>
+                    </node>
+                    <node concept="2YIFZM" id="2sxsDnZy_1a" role="3uHU7w">
+                      <ref role="1Pybhc" to="twe9:5OIo7_R8hKr" resolve="ConceptIdHelper" />
+                      <ref role="37wK5l" to="twe9:2sxsDnZygBx" resolve="getNodeIdString" />
+                      <node concept="2GrUjf" id="2sxsDnZyAFM" role="37wK5m">
+                        <ref role="2Gs0qQ" node="dqwjwHx53S" resolve="p" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -3557,7 +3634,7 @@
             <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
           </node>
           <node concept="3Tsc0h" id="dqwjwHx96d" role="2OqNvi">
-            <ref role="3TtcxE" to="tpce:f_TKVDF" />
+            <ref role="3TtcxE" to="tpce:f_TKVDF" resolve="linkDeclaration" />
           </node>
         </node>
         <node concept="3clFbS" id="dqwjwHx8JN" role="2LFqv$">
@@ -3681,6 +3758,44 @@
                         <node concept="Xl_RD" id="4H96pIbEzQb" role="3uHU7w">
                           <property role="Xl_RC" value="Please invoke the \&quot;Correct ID\&quot; intention on it" />
                         </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbJ" id="2sxsDnZyDes" role="3cqZAp">
+                  <node concept="3clFbS" id="2sxsDnZyDet" role="3clFbx">
+                    <node concept="a7r0C" id="2sxsDnZyDeu" role="3cqZAp">
+                      <node concept="Xl_RD" id="2sxsDnZyDev" role="a7wSD">
+                        <property role="Xl_RC" value="Node id and property id differ. It's recommended to keep ids synchronised until MPS 3.5. Use quickfix to set corrected id" />
+                      </node>
+                      <node concept="3Cnw8n" id="2sxsDnZyDex" role="2OEOjU">
+                        <ref role="QpYPw" node="4H96pIbEyix" resolve="CorrectDuplicateId" />
+                        <node concept="3CnSsL" id="2sxsDnZyDey" role="3Coj4f">
+                          <ref role="QkamJ" node="4H96pIbEyjV" resolve="l" />
+                          <node concept="2GrUjf" id="2sxsDnZyFYq" role="3CoRuB">
+                            <ref role="2Gs0qQ" node="dqwjwHx8JJ" resolve="l" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2GrUjf" id="2sxsDnZyFiU" role="2OEOjV">
+                        <ref role="2Gs0qQ" node="dqwjwHx8JJ" resolve="l" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="17QLQc" id="2sxsDnZyDe$" role="3clFbw">
+                    <node concept="2YIFZM" id="2sxsDnZyDeC" role="3uHU7w">
+                      <ref role="37wK5l" to="twe9:2sxsDnZygBx" resolve="getNodeIdString" />
+                      <ref role="1Pybhc" to="twe9:5OIo7_R8hKr" resolve="ConceptIdHelper" />
+                      <node concept="2GrUjf" id="2sxsDnZyEDi" role="37wK5m">
+                        <ref role="2Gs0qQ" node="dqwjwHx8JJ" resolve="l" />
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="2sxsDnZyDLo" role="3uHU7B">
+                      <node concept="2GrUjf" id="2sxsDnZyDLp" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="dqwjwHx8JJ" resolve="l" />
+                      </node>
+                      <node concept="3TrcHB" id="2sxsDnZyDLq" role="2OqNvi">
+                        <ref role="3TsBF5" to="tpce:dqwjwHwEj$" resolve="linkId" />
                       </node>
                     </node>
                   </node>

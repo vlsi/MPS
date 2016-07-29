@@ -19,11 +19,14 @@ import jetbrains.mps.project.DevKit;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.scope.ConditionalScope;
 import jetbrains.mps.FilteredGlobalScope;
-import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.workbench.choose.ChooseByNameData;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.workbench.choose.ModulesPresentation;
+import jetbrains.mps.workbench.choose.ModuleScopeIterable;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import com.intellij.openapi.application.ModalityState;
 
@@ -62,14 +65,16 @@ public class GoToModule_Action extends BaseAction {
     SearchScope localScope = new ConditionalScope(mpsProject.getScope(), knownModules, null);
     SearchScope globalScope = new ConditionalScope(new FilteredGlobalScope(), knownModules, null);
 
-    final BaseModuleModel goToModuleModel = new BaseModuleModel(mpsProject, "module", localScope, globalScope);
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(mpsProject.getProject(), goToModuleModel, GoToModule_Action.this);
+    SRepository repo = mpsProject.getRepository();
+    ChooseByNameData<SModuleReference> gotoData = new ChooseByNameData<SModuleReference>(new ModulesPresentation(repo));
+    gotoData.derivePrompts("module").setScope(new ModuleScopeIterable(localScope, repo), new ModuleScopeIterable(globalScope, repo));
+
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(mpsProject.getProject(), gotoData, GoToModule_Action.this);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void elementChosen(Object p0) {
-        SModuleReference moduleRef = goToModuleModel.getModelObject(p0);
-        if (moduleRef != null) {
-          new ProjectPaneNavigator(mpsProject).shallFocus(true).select(moduleRef);
+        if (p0 instanceof SModuleReference) {
+          new ProjectPaneNavigator(mpsProject).shallFocus(true).select((SModuleReference) p0);
         }
       }
     }, ModalityState.current(), true);

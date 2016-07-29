@@ -205,6 +205,11 @@ public final class MPSNodeVirtualFile extends VirtualFile {
   }
 
   /*package*/ void invalidate() {
+    if (myNode == null) {
+      // FIXME this is a quick workaround for https://youtrack.jetbrains.com/issue/MPS-24248
+      //       shall fix it in a way the same file not invalidated twice, but for now (RC!), == null check would suffice.
+      return;
+    }
     myRepoFiles.forgetVirtualFile(myNode);
     myNode = null;
   }

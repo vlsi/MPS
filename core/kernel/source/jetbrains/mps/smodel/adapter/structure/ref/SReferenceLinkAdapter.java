@@ -56,8 +56,6 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   @NotNull
   public abstract SAbstractConcept getOwner();
 
-  protected abstract SNode findInConcept(SNode cnode);
-
   @Override
   public String getRole() {
     return getRoleName();
@@ -96,15 +94,6 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   @Override
   public boolean isMultiple() {
     return false;
-  }
-
-  @Override
-  public SNode getDeclarationNode() {
-    SNode cnode = getOwner().getDeclarationNode();
-    if (cnode == null) {
-      return null;
-    }
-    return findInConcept(cnode);
   }
 
   public SScope getScope(SNode referenceNode) {

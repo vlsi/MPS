@@ -61,7 +61,7 @@
     <jar destfile="${build.layout}/test1/languages/jetbrains.mps.build.tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.tests" />
       <fileset dir="${basedir}/jetbrains.mps.build.tests" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/jetbrains.mps.build.tests/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/jetbrains.mps.build.tests/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.tests.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.tests-models" stripImplementation="true">
@@ -71,6 +71,8 @@
       <fileset dir="${basedir}/jetbrains.mps.build.tests/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/jetbrains.mps.build.tests/jetbrains.mps.build.tests.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.tests-models" prefix="module/models" />
@@ -97,7 +99,7 @@
     <jar destfile="${build.layout}/test1/languages/jetbrains.mps.build.sandbox.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" />
       <fileset dir="${basedir}/jetbrains.mps.build.sandbox" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/jetbrains.mps.build.sandbox/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/jetbrains.mps.build.sandbox/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.sandbox.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.sandbox-models">
@@ -107,6 +109,8 @@
       <fileset dir="${basedir}/jetbrains.mps.build.sandbox/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/jetbrains.mps.build.sandbox/jetbrains.mps.build.sandbox.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.sandbox-models" prefix="module/models" />
@@ -182,6 +186,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.menus.extras.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.intentions.jar" />

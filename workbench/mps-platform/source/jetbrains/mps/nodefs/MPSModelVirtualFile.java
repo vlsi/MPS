@@ -121,9 +121,9 @@ public final class MPSModelVirtualFile extends VirtualFile {
         }
         DataSource ds = model.getSource();
         if (ds instanceof FileDataSource) {
-          return VirtualFileUtils.getVirtualFile(((FileDataSource) ds).getFile());
+          return VirtualFileUtils.getOrCreateVirtualFile(((FileDataSource) ds).getFile());
         } else if (ds instanceof FolderDataSource) {
-          return VirtualFileUtils.getVirtualFile(((FolderDataSource) ds).getFolder());
+          return VirtualFileUtils.getOrCreateVirtualFile(((FolderDataSource) ds).getFolder());
         } else {
           return null;
         }

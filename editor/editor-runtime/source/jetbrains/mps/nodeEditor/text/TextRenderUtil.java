@@ -26,16 +26,18 @@ import jetbrains.mps.openapi.editor.selection.Selection;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Utility methods to render an editor selection as text.
+ *
+ * @see EditorCell#renderText()
+ */
 public class TextRenderUtil {
 
   public static TextBuilder renderText(Selection selection) {
     if (selection == null || selection.getSelectedCells().size() == 0) {
       return new TextBuilderImpl();
     }
-    List<EditorCell> selectedCells = new ArrayList<EditorCell>();
-    for (EditorCell selectedCell : selection.getSelectedCells()) {
-      selectedCells.add(selectedCell);
-    }
+    List<EditorCell> selectedCells = new ArrayList<>(selection.getSelectedCells());
     EditorCell firstSelectedCell = selectedCells.get(0);
     if (selectedCells.size() == 1) {
       return firstSelectedCell.renderText();

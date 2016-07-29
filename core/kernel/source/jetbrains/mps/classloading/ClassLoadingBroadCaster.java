@@ -19,8 +19,11 @@ import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -41,6 +44,7 @@ public class ClassLoadingBroadCaster {
   // reload handlers
   private final List<MPSClassesListener> myClassesHandlers = new CopyOnWriteArrayList<MPSClassesListener>();
   private final List<ModuleReloadListener> myReloadListeners = new CopyOnWriteArrayList<ModuleReloadListener>();
+  private final List<DeployListener> myDeployListeners = new CopyOnWriteArrayList<>();
 
   public ClassLoadingBroadCaster(ModelAccess modelAccess) {
     myModelAccess = modelAccess;
@@ -62,15 +66,15 @@ public class ClassLoadingBroadCaster {
     myReloadListeners.remove(listener);
   }
 
-  public Set<ReloadableModule> onUnload(Collection<? extends SModuleReference> refsToUnload) {
+  public Set<ReloadableModule> onUnload(Collection<? extends SModuleReference> refsToUnload, @NotNull ProgressMonitor monitor) {
     if (refsToUnload.isEmpty()) return Collections.emptySet();
 
     myModelAccess.checkWriteAccess();
-    final Set<ReloadableModuleBase> modulesToUnload = new LinkedHashSet<ReloadableModuleBase>();
+    final Set<ReloadableModule> modulesToUnload = new LinkedHashSet<>();
     for (ReloadableModule loadedModule : myLoadedModules) {
       SModuleReference mRef = loadedModule.getModuleReference();
       if (refsToUnload.contains(mRef)) {
-        modulesToUnload.add((ReloadableModuleBase) loadedModule);
+        modulesToUnload.add(loadedModule);
       }
     }
     if (modulesToUnload.size() < refsToUnload.size()) {
@@ -79,12 +83,24 @@ public class ClassLoadingBroadCaster {
 
     myLoadedModules.removeAll(modulesToUnload);
 
-    for (MPSClassesListener listener : myClassesHandlers) {
-      try {
-        listener.beforeClassesUnloaded(modulesToUnload);
-      } catch (Exception e) {
-        LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
+    try {
+      monitor.start("Broadcasting Events", myClassesHandlers.size() + myDeployListeners.size());
+      for (MPSClassesListener listener : myClassesHandlers) {
+        try {
+          listener.onUnloaded(modulesToUnload, monitor.subTask(1));
+        } catch (Exception e) {
+          LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
+        }
       }
+      for (DeployListener listener : myDeployListeners) {
+        try {
+          listener.onUnloaded(modulesToUnload, monitor.subTask(1));
+        } catch (Exception e) {
+          LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
+        }
+      }
+    } finally {
+      monitor.done();
     }
 
     final Set<ReloadableModule> resultingUnload = new LinkedHashSet<ReloadableModule>();
@@ -92,20 +108,34 @@ public class ClassLoadingBroadCaster {
     return resultingUnload;
   }
 
-  public void onLoad(Collection<? extends ReloadableModule> toLoad) {
+  public void onLoad(Set<ReloadableModule> toLoad, @NotNull ProgressMonitor monitor) {
     if (toLoad.isEmpty()) return;
 
     myModelAccess.checkWriteAccess();
-    final Set<ReloadableModuleBase> modulesToLoad = new LinkedHashSet<ReloadableModuleBase>(toLoad.size());
-    for (ReloadableModule module : toLoad) modulesToLoad.add((ReloadableModuleBase) module);
+    final Set<ReloadableModuleBase> modulesToLoad = new LinkedHashSet<>(toLoad.size());
+    for (ReloadableModule module : toLoad) {
+      modulesToLoad.add((ReloadableModuleBase) module);
+    }
     myLoadedModules.addAll(modulesToLoad);
 
-    for (MPSClassesListener listener : myClassesHandlers) {
-      try {
-        listener.afterClassesLoaded(modulesToLoad);
-      } catch (Exception e) {
-        LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
+    try {
+      monitor.start("Broadcasting Events", myClassesHandlers.size() + myDeployListeners.size());
+      for (MPSClassesListener listener : myClassesHandlers) {
+        try {
+          listener.onLoaded(toLoad, monitor.subTask(1));
+        } catch (Exception e) {
+          LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
+        }
       }
+      for (DeployListener listener : myDeployListeners) {
+        try {
+          listener.onLoaded(toLoad, monitor.subTask(1));
+        } catch (Exception e) {
+          LOG.error("Caught exception from the listener " + listener + ". Will continue.", e);
+        }
+      }
+    } finally {
+      monitor.done();
     }
   }
 
@@ -119,5 +149,13 @@ public class ClassLoadingBroadCaster {
     for (ModuleReloadListener listener : myReloadListeners) {
       listener.modulesReloaded(modulesToReload);
     }
+  }
+
+  public void addListener(@NotNull DeployListener listener) {
+    myDeployListeners.add(listener);
+  }
+
+  public void removeListener(@NotNull DeployListener listener) {
+    myDeployListeners.remove(listener);
   }
 }

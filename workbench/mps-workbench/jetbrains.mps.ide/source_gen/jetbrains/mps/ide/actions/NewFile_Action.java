@@ -18,7 +18,6 @@ import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.ide.IdeBundle;
 import com.intellij.ide.projectView.ProjectView;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane;
 
 public class NewFile_Action extends BaseAction {
@@ -86,7 +85,7 @@ public class NewFile_Action extends BaseAction {
     Messages.showInputDialog(((Project) MapSequence.fromMap(_params).get("project")), IdeBundle.message("prompt.enter.new.file.name"), IdeBundle.message("title.new.file"), Messages.getQuestionIcon(), "", validator);
     if (result[0] != null) {
       ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).refresh();
-      SwingUtilities.invokeLater(new Runnable() {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getProjectViewPaneById(FileViewProjectPane.ID).select(null, result[0], true);
         }

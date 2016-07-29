@@ -42,6 +42,8 @@ import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -65,6 +67,7 @@ import java.util.Set;
     storages = @Storage("intentions.xml")
 )
 public class IntentionsManager implements ApplicationComponent, PersistentStateComponent<IntentionsManager.MyState> {
+  private static final Logger LOG = LogManager.getLogger(IntentionsManager.class);
 
   public static String getDescriptorClassName(SModuleReference langRef) {
     return "IntentionsDescriptor";
@@ -153,7 +156,11 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     List<IntentionExecutable> result = new ArrayList<IntentionExecutable>();
 
     for (IntentionFactory factory : visitor.getAvailableIntentionFactories()) {
-      result.addAll(factory.instances(node, context));
+      try {
+        result.addAll(factory.instances(node, context));
+      } catch (Throwable t) {
+        LOG.error("Exception during parameterized intentions instantiation", t);
+      }
     }
 
     List<SimpleEditorMessage> messages = ((EditorComponent) context.getEditorComponent()).getHighlightManager().getMessagesFor(node);
@@ -165,7 +172,11 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
         if ((isAncestor && !intention.isAvailableInChildNodes()) || !intention.isApplicable(node, context)) {
           continue;
         }
-        result.addAll(intention.instances(node, context));
+        try {
+          result.addAll(intention.instances(node, context));
+        } catch (Throwable t) {
+          LOG.error("Exception during parameterized intentions instantiation", t);
+        }
       }
     }
     return result;
@@ -245,7 +256,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
         activeIntentionsFromMigrationScripts.add(new MigrationRefactoringIntentions(lr, scriptsAspect));
       }
     }
-
 
     // there's no special meaning in using depth-first iterator, it's just the only one available at the moment
     // and looks pretty reasonable for the task (super-concepts first, then implemented interfaces)

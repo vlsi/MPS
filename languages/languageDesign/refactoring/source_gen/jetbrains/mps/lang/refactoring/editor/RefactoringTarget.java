@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 
 public class RefactoringTarget implements ConceptEditorComponent {
   @NotNull
@@ -95,6 +96,7 @@ public class RefactoringTarget implements ConceptEditorComponent {
       EditorCell editorCell = super.createEmptyCell();
       editorCell.setCellId("empty_isApplicableBlock");
       installCellInfo(null, editorCell);
+      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0569L, 0x4c4b92003e4d7817L, "isApplicableBlock")));
 
       return editorCell;
     }

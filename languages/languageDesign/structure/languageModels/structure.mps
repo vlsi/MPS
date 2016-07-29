@@ -185,6 +185,9 @@
     <node concept="PrWs8" id="1oksCg99EhD" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="PrWs8" id="3pPFrMaA2Yn" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRH" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/link.png" />
     </node>

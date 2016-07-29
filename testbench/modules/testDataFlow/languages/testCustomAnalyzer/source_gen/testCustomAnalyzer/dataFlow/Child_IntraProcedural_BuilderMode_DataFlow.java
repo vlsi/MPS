@@ -5,15 +5,16 @@ package testCustomAnalyzer.dataFlow;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilder;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import java.util.Collection;
+import jetbrains.mps.lang.dataFlow.framework.IDataFlowModeId;
 import java.util.Arrays;
-import jetbrains.mps.lang.dataFlow.DataFlowBuilderModes;
+import jetbrains.mps.lang.dataFlow.framework.ConceptDataFlowModeId;
 
 public class Child_IntraProcedural_BuilderMode_DataFlow extends DataFlowBuilder {
   public void build(final DataFlowBuilderContext _context) {
     _context.getBuilder().emitNop("r:11be8b48-b45e-48e5-98ad-b77dc1b202b1(testCustomAnalyzer.dataFlow)/2955426575105812292");
   }
   @Override
-  public Collection<String> getModes() {
-    return Arrays.asList(DataFlowBuilderModes.INTRA_PROCEDURAL);
+  public Collection<IDataFlowModeId> getModes() {
+    return Arrays.<IDataFlowModeId>asList(new ConceptDataFlowModeId("jetbrains.mps.lang.dataFlow.structure.IntraProcedural_BuilderMode"));
   }
 }

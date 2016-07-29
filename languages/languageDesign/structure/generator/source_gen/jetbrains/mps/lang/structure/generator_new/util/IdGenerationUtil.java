@@ -12,7 +12,7 @@ public class IdGenerationUtil {
   public static long getConceptId(TemplateQueryContext genContext, SNode concept) {
     long id;
     if (isEmptyString(SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId")))) {
-      genContext.showWarningMessage(concept, "Concept id not set");
+      genContext.showWarningMessage(concept, "Concept id not set (j.m.lang.structure->Set Ids migration not run?)");
       id = ((SNodeId.Regular) concept.getNodeId()).getId();
     } else {
       try {
@@ -28,7 +28,7 @@ public class IdGenerationUtil {
   public static long getPropertyId(TemplateQueryContext genContext, SNode prop) {
     long id;
     if (isEmptyString(SPropertyOperations.getString(prop, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0x35a81382d82a4d9L, "propertyId")))) {
-      genContext.showWarningMessage(prop, "Property id not set");
+      genContext.showWarningMessage(prop, "Property id not set (j.m.lang.structure->Set Ids migration not run?)");
       id = ((SNodeId.Regular) prop.getNodeId()).getId();
     } else {
       try {
@@ -44,7 +44,7 @@ public class IdGenerationUtil {
   public static long getLinkId(TemplateQueryContext genContext, SNode link) {
     long id;
     if (isEmptyString(SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId")))) {
-      genContext.showWarningMessage(link, "Link id not set");
+      genContext.showWarningMessage(link, "Link id not set (j.m.lang.structure->Set Ids migration not run?)");
       id = ((SNodeId.Regular) link.getNodeId()).getId();
     } else {
       try {

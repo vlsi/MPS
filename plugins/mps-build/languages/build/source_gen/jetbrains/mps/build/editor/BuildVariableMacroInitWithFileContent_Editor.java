@@ -17,6 +17,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 
 public class BuildVariableMacroInitWithFileContent_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -63,6 +64,7 @@ public class BuildVariableMacroInitWithFileContent_Editor extends DefaultNodeEdi
       EditorCell editorCell = super.createEmptyCell();
       editorCell.setCellId("empty_fileName");
       installCellInfo(null, editorCell);
+      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x74a438668c1b9d5aL, 0x74a438668c1d66d0L, "fileName")));
 
       return editorCell;
     }

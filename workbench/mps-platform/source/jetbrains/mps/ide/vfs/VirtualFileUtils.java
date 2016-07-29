@@ -20,18 +20,34 @@ import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.util.Processor;
+import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemExtPoint;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.impl.IoFileSystem;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 
-public class VirtualFileUtils {
+public final class VirtualFileUtils {
+  private static final Logger LOG = LogManager.getLogger(VirtualFileUtils.class);
+
+  private VirtualFileUtils() {
+  }
+
   @Nullable
   public static VirtualFile getVirtualFile(String path) {
     return getVirtualFile(FileSystem.getInstance().getFileByPath(path));
   }
 
+  /**
+   * @deprecated please use {@link #getProjectVirtualFile(IFile)} or [if absolutely needed] {@link #getOrCreateVirtualFile(IFile)}
+   */
+  @Deprecated
   @Nullable
   public static VirtualFile getVirtualFile(IFile file) {
     if (file instanceof IdeaFile) {
@@ -39,6 +55,42 @@ public class VirtualFileUtils {
     } else {
       return null;
     }
+  }
+
+  @Nullable
+  public static VirtualFile getProjectVirtualFile(@NotNull IFile file) {
+    if (file instanceof IdeaFile) {
+      return ((IdeaFile) file).getVirtualFile();
+    } else {
+      if (FileSystemExtPoint.getFS() instanceof IdeaFileSystem) {
+        LOG.warn("File " + file + " is supposed to be in project and tracked by Idea FS");
+      }
+      return null;
+    }
+  }
+
+  /**
+   * It is hack due to the 3.4 release coming soon. We have to use idea vfs to comply with
+   * IDEA subsystems which require VirtualFile (e.g. idea indexing/find usages)
+   *
+   * AP: I hope that it will go away in the nearest future since we do not need vfs tracking these files' physical changes
+   * (we would rather make them read-only)
+   */
+  @Hack
+  @Deprecated
+  @ToRemove(version = 3.4)
+  public static VirtualFile getOrCreateVirtualFile(@NotNull IFile file) {
+    if (file.getFileSystem() instanceof IoFileSystem) {
+      file = FileSystemExtPoint.getFS().getFile(file.getPath());
+      if (file instanceof IdeaFile) {
+        return ((IdeaFile) file).getVirtualFile();
+      }
+    } else if (file instanceof IdeaFile) {
+      return ((IdeaFile) file).getVirtualFile();
+    } else {
+      LOG.warn("Unknown file " + file);
+    }
+    return null;
   }
 
   public static IFile toIFile(VirtualFile f) {

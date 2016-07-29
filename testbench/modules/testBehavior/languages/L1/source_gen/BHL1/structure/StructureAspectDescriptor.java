@@ -64,6 +64,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return new ConceptDescriptorBuilder("BHL1.structure.I", MetaIdFactory.conceptId(0x43359135f67c4a3dL, 0x9fdda3d7dba50995L, 0x54fc4b17de4f24ccL)).version(1).interface_().sourceNode(new SNodePointer("r:28855287-2116-4523-9c44-f18e3449e08d(BHL1.structure)", "6123852159203091660")).create();
   }
   private static ConceptDescriptor createDescriptorForI1() {
-    return new ConceptDescriptorBuilder("BHL1.structure.I1", MetaIdFactory.conceptId(0x43359135f67c4a3dL, 0x9fdda3d7dba50995L, 0x7e5c09dfa07d591fL)).version(1).interface_().propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x7e5c09dfa07d59cbL, "a")).properties("a").sourceNode(new SNodePointer("r:28855287-2116-4523-9c44-f18e3449e08d(BHL1.structure)", "9105163402711226655")).create();
+    return new ConceptDescriptorBuilder("BHL1.structure.I1", MetaIdFactory.conceptId(0x43359135f67c4a3dL, 0x9fdda3d7dba50995L, 0x7e5c09dfa07d591fL)).version(1).interface_().propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x7e5c09dfa07d59cbL, "a", new SNodePointer("r:28855287-2116-4523-9c44-f18e3449e08d(BHL1.structure)", "9105163402711226827"))).properties("a").sourceNode(new SNodePointer("r:28855287-2116-4523-9c44-f18e3449e08d(BHL1.structure)", "9105163402711226655")).create();
   }
 }

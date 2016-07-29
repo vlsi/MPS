@@ -40,7 +40,7 @@
     <jar destfile="${build.layout}/jetbrains.mps.build.mps.runner.test.test1.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" />
       <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test1" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps.runner.test.test1.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.mps.runner.test.test1-models">
@@ -50,6 +50,8 @@
       <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/jetbrains.mps.build.mps.runner.test.test1/jetbrains.mps.build.mps.runner.test.test1.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.mps.runner.test.test1-models" prefix="module/models" />
@@ -74,7 +76,7 @@
     <jar destfile="${build.layout}/jetbrains.mps.build.mps.runner.test.test4.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test4" />
       <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test4" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test4/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test4/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps.runner.test.test4.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.mps.runner.test.test4-models">
@@ -84,6 +86,8 @@
       <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test4/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/jetbrains.mps.build.mps.runner.test.test4/jetbrains.mps.build.mps.runner.test.test4.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.mps.runner.test.test4-models" prefix="module/models" />
@@ -138,6 +142,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.intentions.jar" />
@@ -159,6 +164,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.refactoring.participant.jar" />
       <library file="${artifacts.mps}/languages/make/jetbrains.mps.make.reduced.jar" />
       <library file="${artifacts.mps}/languages/make/jetbrains.mps.tool.gentest.jar" />
       <library file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -195,7 +201,7 @@
   <target name="java.compile.jetbrains.mps.build.mps.runner.test.test1">
     <mkdir dir="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen" />
@@ -207,7 +213,7 @@
   <target name="java.compile.jetbrains.mps.build.mps.runner.test.test4" depends="java.compile.jetbrains.mps.build.mps.runner.test.test1, fetchDependencies">
     <mkdir dir="${basedir}/jetbrains.mps.build.mps.runner.test.test4/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test4" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test4" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test4" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/jetbrains.mps.build.mps.runner.test.test4/source_gen" />
@@ -274,6 +280,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.intentions.jar" />
@@ -295,6 +302,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.refactoring.participant.jar" />
       <library file="${artifacts.mps}/languages/make/jetbrains.mps.make.reduced.jar" />
       <library file="${artifacts.mps}/languages/make/jetbrains.mps.tool.gentest.jar" />
       <library file="${artifacts.mps}/lib/mps-behavior-api.jar" />

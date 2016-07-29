@@ -47,7 +47,7 @@
   <target name="java.compile.module-B-in-Z" depends="fetchDependencies">
     <mkdir dir="${basedir}/subprojects/buildB/moduleB" />
     <mkdir dir="${build.tmp}/java/out/module-B-in-Z" />
-    <javac destdir="${build.tmp}/java/out/module-B-in-Z" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/module-B-in-Z" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/subprojects/buildB/moduleB" />

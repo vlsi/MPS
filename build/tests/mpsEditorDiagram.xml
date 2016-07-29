@@ -63,7 +63,7 @@
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.figures.sandbox.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures.sandbox" />
       <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.figures.sandbox.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-test-jetbrains.mps.lang.editor.figures.sandbox-models">
@@ -73,6 +73,8 @@
       <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/jetbrains.mps.lang.editor.figures.sandbox.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-test-jetbrains.mps.lang.editor.figures.sandbox-models" prefix="module/models" />
@@ -105,7 +107,7 @@
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.diagram.testLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.testLanguage" />
       <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.diagram.testLanguage.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-test-jetbrains.mps.lang.editor.diagram.testLanguage-languageModels">
@@ -115,6 +117,8 @@
       <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/jetbrains.mps.lang.editor.diagram.testLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-test-jetbrains.mps.lang.editor.diagram.testLanguage-languageModels" prefix="module/languageModels" />
@@ -212,6 +216,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
@@ -524,6 +529,7 @@
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />

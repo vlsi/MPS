@@ -24,7 +24,7 @@ public class ParameterizedByPrimitiveType extends SubstituteMenuBase {
     result.add(new ParameterizedByPrimitiveType.SubstituteMenuPart_Parameterized_ud82js_a());
     return result;
   }
-  private static class SubstituteMenuPart_Parameterized_ud82js_a extends ParameterizedMenuPart<Integer, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SubstituteMenuPart_Parameterized_ud82js_a extends ParameterizedMenuPart<Integer, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(Integer parameter, SubstituteMenuContext context) {
@@ -49,13 +49,8 @@ public class ParameterizedByPrimitiveType extends SubstituteMenuBase {
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
         public Item(SubstituteMenuContext context) {
-          super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x75a761fb50351afbL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestConceptForMenuParameterizedByPrimitiveType"), context.getParentNode(), context.getCurrentChild());
+          super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x75a761fb50351afbL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestConceptForMenuParameterizedByPrimitiveType"), context.getParentNode(), context.getCurrentTargetNode());
           _context = context;
-        }
-
-        @Override
-        public boolean canExecute(String pattern) {
-          return super.canExecute(pattern);
         }
 
         @Override

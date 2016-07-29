@@ -27,6 +27,21 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
           break;
         case 1:
           if (true) {
+            return Collections.<ConceptEditor>singletonList(new OtherChild_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new OtherRoot_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new OtherSubChild_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
             return Collections.<ConceptEditor>singletonList(new Root_Editor());
           }
           break;
@@ -46,5 +61,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed5L, "testCustomAnalyzer.structure.Child"), MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, "testCustomAnalyzer.structure.Root"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed5L, "testCustomAnalyzer.structure.Child"), MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x623d57b40400d6bbL, "testCustomAnalyzer.structure.OtherChild"), MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x623d57b40400d6baL, "testCustomAnalyzer.structure.OtherRoot"), MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x623d57b40400d6bcL, "testCustomAnalyzer.structure.OtherSubChild"), MetaAdapterFactory.getConcept(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, "testCustomAnalyzer.structure.Root"));
 }

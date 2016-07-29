@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.adapter.structure.ref;
 
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.ConceptFeatureHelper;
@@ -23,6 +24,8 @@ import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.LinkDescriptor;
+import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -30,6 +33,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public final class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
   public static final java.lang.String REF_PREFIX = "r";
@@ -98,7 +102,17 @@ public final class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
   }
 
   @Override
-  protected SNode findInConcept(SNode cnode) {
+  public SNode getDeclarationNode() {
+    ReferenceDescriptor d = getReferenceDescriptor();
+    if (d != null) {
+      SNodeReference sn = d.getSourceNode();
+      if(sn!=null) return sn.resolve(MPSModuleRepository.getInstance());
+    }
+
+    SNode cnode = getOwner().getDeclarationNode();
+    if (cnode == null) {
+      return null;
+    }
     SModel model = cnode.getModel();
     return model.getNode(new SNodeId.Regular(myRoleId.getIdValue()));
   }

@@ -28,7 +28,7 @@ public class ScriptsGlobally_ActionGroup extends GeneratedActionGroup {
     this.setPopup(true);
   }
   public void doUpdate(AnActionEvent event) {
-    ScriptsGlobally_ActionGroup.this.removeAll();
+    removeAll();
     event.getPresentation().setVisible(true);
     MPSProject project = event.getData(MPSDataKeys.MPS_PROJECT);
     if (project == null) {

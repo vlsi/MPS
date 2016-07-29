@@ -53,7 +53,7 @@ public class QueriesGenerated {
     return ((Integer) _context.getVariable("cv:i"));
   }
   public static Object propertyMacro_GetPropertyValue_1889794043260300864(final PropertyMacroContext _context) {
-    return ((Integer) _context.getVariable("cv:i"));
+    return ((Integer) _context.getVariable("cv:i")) + Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:i1"))).count();
   }
   public static Object propertyMacro_GetPropertyValue_5378595502815609483(final PropertyMacroContext _context) {
     return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"))).count() + ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, "jetbrains.mps.lang.intentions.structure.Intention"))).count();

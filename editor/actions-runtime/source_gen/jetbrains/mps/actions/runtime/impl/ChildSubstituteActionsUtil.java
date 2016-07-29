@@ -140,7 +140,11 @@ public class ChildSubstituteActionsUtil {
       return false;
     }
     SModel sModel = actionsModelDescr;
-    return ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(sModel, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebc25367L, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"))).isNotEmpty();
+    return ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(sModel, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebc25367L, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebc25367L, 0x102ebd353e0L, "actionsBuilder"))).isNotEmpty();
+      }
+    }).isNotEmpty();
   }
   private static List<SNode> getAllActionsBuilders(List<Language> languages) {
     List<SNode> result = new ArrayList<SNode>();

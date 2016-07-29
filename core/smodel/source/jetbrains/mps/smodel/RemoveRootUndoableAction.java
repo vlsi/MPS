@@ -40,4 +40,9 @@ class RemoveRootUndoableAction extends SNodeUndoableAction {
   public boolean isGlobal() {
     return true;
   }
+
+  @Override
+  public SNode getRoot() {
+    return null;
+  }
 }

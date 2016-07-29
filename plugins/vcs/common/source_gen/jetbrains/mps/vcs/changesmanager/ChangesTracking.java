@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.apache.log4j.Level;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
@@ -37,10 +37,11 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.persistence.FilePerRootDataSource;
+import jetbrains.mps.ide.vfs.IdeaFile;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.FileStatusManager;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -50,6 +51,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
@@ -107,6 +109,7 @@ public class ChangesTracking {
     myRegistry = registry;
     registry.addEventCollector(myModelDescriptor, myEventCollector);
   }
+
   public void dispose() {
     synchronized (this) {
       if (!(myDisposed)) {
@@ -120,6 +123,7 @@ public class ChangesTracking {
       }
     }
   }
+
   private void updateCacheForChange(@NotNull ModelChange change) {
     SNodeId id = getNodeIdForChange(change);
     if (id != null) {
@@ -135,6 +139,7 @@ public class ChangesTracking {
       }
     }
   }
+
   private void buildCaches() {
     myNodesToChanges.clear();
     SetSequence.fromSet(myMetadataChanges).clear();
@@ -144,6 +149,7 @@ public class ChangesTracking {
       updateCacheForChange(ch);
     }
   }
+
   /*package*/ void scheduleFullUpdate(final boolean force) {
     myQueue.addTask(new Runnable() {
       public void run() {
@@ -151,6 +157,7 @@ public class ChangesTracking {
       }
     });
   }
+
   private void update(boolean force) {
     myQueue.assertSoftlyIsCommandThread();
     if (!(myDifference.isEnabled())) {
@@ -197,7 +204,7 @@ public class ChangesTracking {
         return;
       }
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ProjectHelper.fromIdeaProject(myProject).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         synchronized (ChangesTracking.this) {
           if (!(myDisposed)) {
@@ -210,6 +217,7 @@ public class ChangesTracking {
       }
     });
   }
+
   private boolean isUnderVcs(SModel model) {
     DataSource ds = model.getSource();
     IFile file = null;
@@ -218,9 +226,16 @@ public class ChangesTracking {
     } else if (ds instanceof FilePerRootDataSource) {
       file = ((FilePerRootDataSource) ds).getFile(FilePerRootDataSource.HEADER_FILE);
     }
-    VirtualFile vFile = VirtualFileUtils.getVirtualFile(file);
+    if (!(file instanceof IdeaFile)) {
+      if (LOG.isEnabledFor(Level.WARN)) {
+        LOG.warn("File " + file + " must be a project file and managed by IDEA FS");
+      }
+      return false;
+    }
+    VirtualFile vFile = ((IdeaFile) file).getVirtualFile();
     return vFile != null && ProjectLevelVcsManager.getInstance(myProject).getVcsFor(vFile) != null;
   }
+
   private boolean isAdded(SModel model) {
     DataSource ds = model.getSource();
     IFile file = null;
@@ -232,6 +247,7 @@ public class ChangesTracking {
     FileStatus status = FileStatusManager.getInstance(myProject).getStatus(VirtualFileUtils.getVirtualFile(file));
     return BaseVersionUtil.isAddedFileStatus(status);
   }
+
   private FileStatus getStatus(SModel model) {
     DataSource ds = model.getSource();
     if (ds instanceof FileDataSource) {
@@ -248,6 +264,7 @@ public class ChangesTracking {
     updateCacheForChange(change);
     myDifference.addChange(change);
   }
+
   private void removeChange(@NotNull ModelChange change) {
     if (change instanceof MetadataChange) {
       SetSequence.fromSet(myMetadataChanges).removeElement((MetadataChange) change);
@@ -257,6 +274,7 @@ public class ChangesTracking {
     myAddedNodesToChanges.removeValue(change);
     myDifference.removeChange(change);
   }
+
   private <C extends ModelChange> int removeChanges(SNodeId nodeId, final Class<C> changeClass, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super C> condition) {
     Set<ModelChange> changes = (nodeId == null ? myMetadataChanges : myNodesToChanges.getValues(nodeId));
     List<ModelChange> toRemove = SetSequence.fromSet(changes).where(new IWhereFilter<ModelChange>() {
@@ -271,6 +289,7 @@ public class ChangesTracking {
     });
     return ListSequence.fromList(toRemove).count();
   }
+
   private void removeDescendantChanges(SNodeId parentId, String role) {
     SNode oldNode = getOldNode(parentId);
     assert oldNode != null;
@@ -281,6 +300,7 @@ public class ChangesTracking {
       }
     });
   }
+
   private void removeDescendantChanges(SNodeId nodeId) {
     SNode oldNode = getOldNode(nodeId);
     assert oldNode != null;
@@ -292,6 +312,7 @@ public class ChangesTracking {
       });
     }
   }
+
   private void buildAndAddChanges(_FunctionTypes._void_P1_E0<? super ChangeSetBuilder> buildAction) {
     ChangeSet cs = myDifference.getChangeSet();
     ChangeSetBuilder builder = ChangeSetBuilder.createBuilder(cs);
@@ -302,10 +323,12 @@ public class ChangesTracking {
       }
     });
   }
+
   @Nullable
   private SNode getOldNode(@NotNull SNodeId id) {
-    return check_5iuzi5_a0a92(check_5iuzi5_a0a0a92(myDifference.getChangeSet()), id);
+    return check_5iuzi5_a0a34(check_5iuzi5_a0a0a34(myDifference.getChangeSet()), id);
   }
+
   private void runUpdateTask(final _FunctionTypes._void_P0_E0 task, SNode currentNode, final SModelEvent event) {
     myEventConsumingMapping.addEvent(event);
     final List<SNodeId> ancestors = ListSequence.fromList(SNodeOperations.getNodeAncestors(currentNode, null, true)).select(new ISelector<SNode, SNodeId>() {
@@ -343,9 +366,10 @@ public class ChangesTracking {
       }
     });
   }
+
   private static Iterable<SNodeId> getNodeIdsForNodeGroupChange(@NotNull NodeGroupChange ngc, @Nullable Tuples._2<SNodeId, List<SNodeId>> lastParentAndNewChildrenIds) {
     List<SNodeId> childrenIds;
-    if (lastParentAndNewChildrenIds == null || neq_5iuzi5_a0a1a13(lastParentAndNewChildrenIds._0(), ngc.getParentNodeId())) {
+    if (lastParentAndNewChildrenIds == null || neq_5iuzi5_a0a1a74(lastParentAndNewChildrenIds._0(), ngc.getParentNodeId())) {
       List<? extends SNode> children = IterableUtil.asList(ngc.getChangeSet().getNewModel().getNode(ngc.getParentNodeId()).getChildren(ngc.getRole()));
       childrenIds = ListSequence.fromList(children).select(new ISelector<SNode, SNodeId>() {
         public SNodeId select(SNode n) {
@@ -357,6 +381,7 @@ public class ChangesTracking {
     }
     return ListSequence.fromList(childrenIds).page(ngc.getResultBegin(), ngc.getResultEnd());
   }
+
   @Nullable
   private static SNodeId getNodeIdForChange(@NotNull ModelChange change) {
     if (change instanceof NodeChange) {
@@ -609,19 +634,19 @@ public class ChangesTracking {
     }
   }
   protected static Logger LOG = LogManager.getLogger(ChangesTracking.class);
-  private static SNode check_5iuzi5_a0a92(SModel checkedDotOperand, SNodeId id) {
+  private static SNode check_5iuzi5_a0a34(SModel checkedDotOperand, SNodeId id) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode(id);
     }
     return null;
   }
-  private static SModel check_5iuzi5_a0a0a92(ChangeSet checkedDotOperand) {
+  private static SModel check_5iuzi5_a0a0a34(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getOldModel();
     }
     return null;
   }
-  private static boolean neq_5iuzi5_a0a1a13(Object a, Object b) {
+  private static boolean neq_5iuzi5_a0a1a74(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }

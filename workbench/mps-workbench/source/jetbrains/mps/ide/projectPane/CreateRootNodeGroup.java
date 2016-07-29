@@ -133,9 +133,7 @@ public class CreateRootNodeGroup extends BaseGroup {
     ArrayList<DefaultActionGroup> byLanguage = new ArrayList<DefaultActionGroup>();
     for (SLanguage language : modelLanguages) {
       String name = language.getQualifiedName();
-      Icon icon = IconManager.getIconForNamespace(name);
       DefaultActionGroup langRootsGroup = new DefaultActionGroup(NameUtil.compactNamespace(name), true);
-      langRootsGroup.getTemplatePresentation().setIcon(icon);
 
       addActionsForRoots(language, targetModel, langRootsGroup);
 

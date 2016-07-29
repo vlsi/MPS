@@ -261,44 +261,6 @@ public class MPSPsiProvider extends AbstractProjectComponent {
             if (smodel instanceof EditableSModel) {
               ((EditableSModel) smodel).save();
             }
-            // This is needed to make subsequent index queries, like those from ClassifierSuccessorFinder, to see
-            // all indices in up-to-date state. Otherwise, idea tries to index the files that have been changed
-            // since last indexing. And it fails with an assertion error in case if the provided GlobalSearchScope
-            // has getProject() == null, which is the case is the query goes from mps.
-            //
-            // If either code change happens
-            // 1) mps starts querying indices with a GlobalSearchScope where getProject() in not null (for instance,
-            // when we have honest per-projecy repositories)
-            // 2) we stop saving the model here (and in other places like NewRootAction) right after model file
-            // modification (e.g. creating a new root)
-            // then this hack will no longer be needed
-            makeIndicesUpToDate(smodel);
-          }
-
-          /**
-           * Forces indices that are relevant for this model's virtual file up-to-date by issuing a fake
-           * query. The thing is idea index serves queries by first making sure that all indices are up-to-date. It's
-           * crucial that the provided GlobalSearchScope has non-null project. But MPS code like ClassifierSuccessorFinder
-           * queries indices with a scope where project is null (MPS's GlobalScope)
-           */
-          private void makeIndicesUpToDate(SModel smodel) {
-            if (DumbService.isDumb(myProject)) {
-              return;
-            }
-            if (smodel.getSource() instanceof FileSystemBasedDataSource) {
-              for (IFile f : ((FileSystemBasedDataSource) smodel.getSource()).getAffectedFiles()) {
-                VirtualFile file = VirtualFileUtils.getVirtualFile(f);
-                GlobalSearchScope oneFileScope = GlobalSearchScope.fileScope(myProject, file);
-                FileBasedIndex.getInstance().requestReindex(file);
-                for (FileBasedIndexExtension indexExt : FileBasedIndexExtension.EXTENSION_POINT_NAME.getExtensions()) {
-                  if (!indexExt.getInputFilter().acceptInput(file)) {
-                    continue;
-                  }
-                  ID id = indexExt.getName();
-                  FileBasedIndex.getInstance().processFilesContainingAllKeys(id, Collections.emptyList(), oneFileScope, null, Processor.FALSE);
-                }
-              }
-            }
           }
         };
       }

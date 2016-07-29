@@ -1702,6 +1702,32 @@
                       </node>
                     </node>
                     <node concept="3clFbS" id="5tGs5KqKiEj" role="3clFbx">
+                      <node concept="3SKdUt" id="6Rwprm4tBJq" role="3cqZAp">
+                        <node concept="3SKdUq" id="6Rwprm4tBJs" role="3SKWNk">
+                          <property role="3SKdUp" value="model can be null in case it's generation process and the target node was removed due to in-place transformation" />
+                        </node>
+                      </node>
+                      <node concept="3SKdUt" id="6Rwprm4tBSX" role="3cqZAp">
+                        <node concept="3SKdUq" id="6Rwprm4tBSZ" role="3SKWNk">
+                          <property role="3SKdUp" value=" see MPS-24188, this may be fixed when MPS-23902 is fixed" />
+                        </node>
+                      </node>
+                      <node concept="3cpWs8" id="6Rwprm4tAP9" role="3cqZAp">
+                        <node concept="3cpWsn" id="6Rwprm4tAPa" role="3cpWs9">
+                          <property role="TrG5h" value="model" />
+                          <node concept="3uibUv" id="6Rwprm4tAP4" role="1tU5fm">
+                            <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+                          </node>
+                          <node concept="2OqwBi" id="6Rwprm4tAPb" role="33vP2m">
+                            <node concept="37vLTw" id="6Rwprm4tAPc" role="2Oq$k0">
+                              <ref role="3cqZAo" node="5tGs5KqKiDy" resolve="oldTargetNode" />
+                            </node>
+                            <node concept="liA8E" id="6Rwprm4tAPd" role="2OqNvi">
+                              <ref role="37wK5l" to="mhbf:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                       <node concept="3clFbF" id="5tGs5KqKiEk" role="3cqZAp">
                         <node concept="37vLTI" id="5tGs5KqKiEl" role="3clFbG">
                           <node concept="2YIFZM" id="7opur9x71dZ" role="37vLTx">
@@ -1718,16 +1744,20 @@
                             <node concept="37vLTw" id="7opur9x71e3" role="37wK5m">
                               <ref role="3cqZAo" node="5tGs5KqKiDr" resolve="newSourceNode" />
                             </node>
-                            <node concept="2OqwBi" id="7opur9x71e4" role="37wK5m">
-                              <node concept="liA8E" id="7opur9x71e5" role="2OqNvi">
-                                <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                              </node>
-                              <node concept="2OqwBi" id="7opur9x71e6" role="2Oq$k0">
-                                <node concept="37vLTw" id="7opur9x71e7" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="5tGs5KqKiDy" resolve="oldTargetNode" />
+                            <node concept="3K4zz7" id="6Rwprm4tBpM" role="37wK5m">
+                              <node concept="10Nm6u" id="6Rwprm4tBuc" role="3K4E3e" />
+                              <node concept="3clFbC" id="6Rwprm4tBbw" role="3K4Cdx">
+                                <node concept="10Nm6u" id="6Rwprm4tBiV" role="3uHU7w" />
+                                <node concept="37vLTw" id="6Rwprm4tB4g" role="3uHU7B">
+                                  <ref role="3cqZAo" node="6Rwprm4tAPa" resolve="model" />
                                 </node>
-                                <node concept="liA8E" id="7opur9x71e8" role="2OqNvi">
-                                  <ref role="37wK5l" to="mhbf:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
+                              </node>
+                              <node concept="2OqwBi" id="7opur9x71e4" role="3K4GZi">
+                                <node concept="liA8E" id="7opur9x71e5" role="2OqNvi">
+                                  <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                                </node>
+                                <node concept="37vLTw" id="6Rwprm4tAPe" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="6Rwprm4tAPa" resolve="model" />
                                 </node>
                               </node>
                             </node>

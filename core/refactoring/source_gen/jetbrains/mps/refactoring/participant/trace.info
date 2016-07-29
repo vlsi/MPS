@@ -494,6 +494,48 @@
       <unit id="5418820454547629216" at="13,0,47,0" name="jetbrains.mps.refactoring.participant.RefactoringParticipantBase" />
     </file>
   </root>
+  <root nodeRef="r:27bc780b-59b2-4d26-9db5-a38b63c35884(jetbrains.mps.refactoring.participant)/6884273804135045612">
+    <file name="NodeCopyTracker.java">
+      <node id="6884273804135078932" at="15,0,16,0" concept="10" trace="id" />
+      <node id="4690207358415358635" at="16,0,17,0" concept="3" trace="copyMap" />
+      <node id="6884273804135080763" at="17,65,18,69" concept="7" />
+      <node id="6884273804135091667" at="19,25,20,37" concept="2" />
+      <node id="6884273804135099269" at="20,37,21,36" concept="2" />
+      <node id="6884273804135096539" at="22,5,23,18" concept="8" />
+      <node id="4661652150168152589" at="25,41,26,48" concept="8" />
+      <node id="6286765307940508620" at="28,57,29,86" concept="7" />
+      <node id="6286765307940508629" at="29,86,30,76" concept="7" />
+      <node id="6286765307940508636" at="30,76,31,54" concept="2" />
+      <node id="6286765307940508644" at="32,73,33,60" concept="2" />
+      <node id="6286765307940508668" at="34,5,35,18" concept="8" />
+      <node id="4690207358415517956" at="25,0,28,0" concept="6" trace="getCopyMap#()Ljava/util/Map;" />
+      <node id="6286765307940508641" at="31,54,34,5" concept="4" />
+      <node id="6884273804135086001" at="18,69,22,5" concept="5" />
+      <node id="6884273804135064996" at="17,0,25,0" concept="11" trace="get#(Ljetbrains/mps/refactoring/participant/RefactoringSession;)Ljetbrains/mps/refactoring/participant/NodeCopyTracker;" />
+      <node id="6286765307940508606" at="28,0,37,0" concept="6" trace="copyAndTrack#(Ljava/util/List;)Ljava/util/List;" />
+      <scope id="4690207358415517960" at="25,41,26,48" />
+      <scope id="6286765307940508643" at="32,73,33,60" />
+      <scope id="6884273804135086003" at="19,25,21,36" />
+      <scope id="4690207358415517956" at="25,0,28,0" />
+      <scope id="6286765307940508641" at="31,54,34,5">
+        <var name="mapping" id="6286765307940508642" />
+      </scope>
+      <scope id="6884273804135065000" at="17,65,23,18">
+        <var name="result" id="6884273804135080764" />
+      </scope>
+      <scope id="6286765307940508607" at="28,57,35,18">
+        <var name="localCopyMap" id="6286765307940508621" />
+        <var name="result" id="6286765307940508630" />
+      </scope>
+      <scope id="6884273804135064996" at="17,0,25,0">
+        <var name="session" id="6884273804135068123" />
+      </scope>
+      <scope id="6286765307940508606" at="28,0,37,0">
+        <var name="oldNodes" id="6286765307940508672" />
+      </scope>
+      <unit id="6884273804135045612" at="14,0,38,0" name="jetbrains.mps.refactoring.participant.NodeCopyTracker" />
+    </file>
+  </root>
   <root nodeRef="r:27bc780b-59b2-4d26-9db5-a38b63c35884(jetbrains.mps.refactoring.participant)/788503456865530690">
     <file name="RefactoringSessionImpl.java">
       <node id="788503456865542741" at="17,0,18,0" concept="3" trace="myChanges" />

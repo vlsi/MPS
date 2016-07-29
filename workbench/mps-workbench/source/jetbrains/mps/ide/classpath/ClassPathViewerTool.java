@@ -18,6 +18,8 @@ package jetbrains.mps.ide.classpath;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.ScrollPaneFactory;
@@ -35,7 +37,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -57,13 +58,10 @@ public class ClassPathViewerTool extends BaseProjectTool {
     this.myTree = new MyClassPathTree();
     myComponent.add(ScrollPaneFactory.createScrollPane(myTree), BorderLayout.CENTER);
 
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        DefaultActionGroup group = ActionUtils.groupFromActions(createCloseAction());
-        JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
-        myComponent.add(toolbar, BorderLayout.WEST);
-      }
+    ApplicationManager.getApplication().invokeLater(() -> {
+      DefaultActionGroup group = ActionUtils.groupFromActions(createCloseAction());
+      JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
+      myComponent.add(toolbar, BorderLayout.WEST);
     });
     myTree.rebuildLater();
   }
@@ -89,7 +87,7 @@ public class ClassPathViewerTool extends BaseProjectTool {
       final Set<String> classPath = JavaModuleOperations.collectCompileClasspath(Collections.singleton(myInspectedModule), true);
       CompositeClassPathItem cpItem = JavaModuleOperations.createClassPathItem(classPath, ClassPathViewerTool.class.getName());
 
-      List<IClassPathItem> items = new ArrayList<IClassPathItem>(cpItem.optimize().getChildren());
+      List<IClassPathItem> items = new ArrayList<>(cpItem.optimize().getChildren());
       Collections.sort(items, new ToStringComparator());
 
       for (IClassPathItem item : items) {

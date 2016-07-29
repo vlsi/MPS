@@ -42,7 +42,7 @@ public abstract class ProjectBase extends Project {
   private final ProjectManager myProjectManager = ProjectManager.getInstance();
 
   // AP fixme must be final, however standalone mps project exposes it (a client can publicly reset the project descriptor)
-  protected ProjectDescriptor myProjectDescriptor;
+  ProjectDescriptor myProjectDescriptor;
   // contract : each project module must have a corresponding ModulePath in this map
   private final Map<SModule, ModulePath> myModuleToPathMap = new LinkedHashMap<>();
   private final ModuleLoader myModuleLoader;
@@ -139,18 +139,15 @@ public abstract class ProjectBase extends Project {
    * in the other case they are triggered at the init/dispose methods
    */
   public void projectOpened() {
+    LOG.info("Project '" + getName() + "' is opened");
     myProjectManager.projectOpened(this);
   }
 
   public void projectClosed() {
     checkNotDisposed();
+    LOG.info("Project '" + getName() + "' is closing");
     myProjectManager.projectClosed(this);
-    getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        new ModuleRepositoryFacade(ProjectBase.this).unregisterModules(ProjectBase.this);
-      }
-    });
+    getModelAccess().runWriteAction(() -> new ModuleRepositoryFacade(ProjectBase.this).unregisterModules(ProjectBase.this));
   }
 
   @NotNull

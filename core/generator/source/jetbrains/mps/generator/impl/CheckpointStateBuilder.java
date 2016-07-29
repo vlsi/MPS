@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
+import jetbrains.mps.generator.impl.plan.CheckpointIdentity;
 import jetbrains.mps.generator.impl.plan.CheckpointState;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.annotations.NotNull;
@@ -91,7 +91,7 @@ class CheckpointStateBuilder {
     return myTransitionTrace.getOrigin(inputNode);
   }
 
-  /*package*/ CheckpointState create(Checkpoint step) {
+  /*package*/ CheckpointState create(CheckpointIdentity step) {
     new CloneUtil(myTransientModel, myCheckpointModel).cloneModel();
     // ReferenceResolvers could have added references to nodes in other checkpoint models, we need to propagate these
     // dependencies into imports to ensure subsequent module.forget() could find and clear all dependant models as well

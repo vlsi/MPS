@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.migration.component.util.MigrationDataUtil;
-import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -85,32 +84,19 @@ public class MigrationComponent extends AbstractProjectComponent {
 
   @Override
   public void initComponent() {
-    UIUtil.invokeLaterIfNeeded(new Runnable() {
+    myMpsProject.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         dataModuleOptions = TempModuleOptions.forDefaultModule();
-        myMpsProject.getRepository().getModelAccess().executeCommand(new Runnable() {
-          public void run() {
-            dataModule = dataModuleOptions.createModule();
-          }
-        });
+        dataModule = dataModuleOptions.createModule();
       }
     });
   }
 
   @Override
   public void disposeComponent() {
-    UIUtil.invokeLaterIfNeeded(new Runnable() {
+    myMpsProject.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
-        // TODO: get rid off this HACK 
-        // In NoPendingMigrationsTest Idea project has already disposed here 
-        if (myProject.isDisposed()) {
-          return;
-        }
-        myMpsProject.getRepository().getModelAccess().executeCommand(new Runnable() {
-          public void run() {
-            dataModuleOptions.disposeModule();
-          }
-        });
+        dataModuleOptions.disposeModule();
       }
     });
   }

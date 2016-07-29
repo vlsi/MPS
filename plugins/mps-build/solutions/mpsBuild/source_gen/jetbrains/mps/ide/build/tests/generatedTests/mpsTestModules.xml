@@ -73,7 +73,7 @@
     <jar destfile="${build.layout}/languages/testAnnotatedType.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testAnnotatedType" />
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/testAnnotatedType.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-languages-testAnnotatedType-languageModels">
@@ -83,6 +83,8 @@
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType/testAnnotatedType.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-languages-testAnnotatedType-languageModels" prefix="module/languageModels" />
@@ -113,7 +115,7 @@
     <jar destfile="${build.layout}/languages/testOverridingType.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testOverridingType" />
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/testOverridingType.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-languages-testOverridingType-models">
@@ -123,6 +125,8 @@
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/testOverridingType.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-languages-testOverridingType-models" prefix="module/models" />
@@ -153,7 +157,7 @@
     <jar destfile="${build.layout}/languages/testWrappedType.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testWrappedType" />
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/testWrappedType.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-languages-testWrappedType-languageModels">
@@ -163,6 +167,8 @@
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/testWrappedType.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-languages-testWrappedType-languageModels" prefix="module/languageModels" />
@@ -193,7 +199,7 @@
     <jar destfile="${build.layout}/languages/testPrimitiveType.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testPrimitiveType" />
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/testPrimitiveType.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-languages-testPrimitiveType-languageModels">
@@ -203,6 +209,8 @@
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType/testPrimitiveType.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-languages-testPrimitiveType-languageModels" prefix="module/languageModels" />
@@ -233,7 +241,7 @@
     <jar destfile="${build.layout}/languages/testSubtypingA.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testSubtypingA" />
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingA" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingA/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingA/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/testSubtypingA.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-languages-testSubtypingA-languageModels">
@@ -243,6 +251,8 @@
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingA/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingA/testSubtypingA.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-languages-testSubtypingA-languageModels" prefix="module/languageModels" />
@@ -273,7 +283,7 @@
     <jar destfile="${build.layout}/languages/testSubtypingB.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testSubtypingB" />
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/testSubtypingB.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-languages-testSubtypingB-languageModels">
@@ -283,6 +293,8 @@
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/testSubtypingB.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-languages-testSubtypingB-languageModels" prefix="module/languageModels" />
@@ -311,7 +323,7 @@
     <jar destfile="${build.layout}/tests/testSubstituteType.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testSubstituteType" />
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/solutions/testSubstituteType" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/plugins/testModules/testSubstituteType/solutions/testSubstituteType/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/plugins/testModules/testSubstituteType/solutions/testSubstituteType/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/testSubstituteType.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-solutions-testSubstituteType-models">
@@ -321,6 +333,8 @@
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/solutions/testSubstituteType/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/plugins/testModules/testSubstituteType/solutions/testSubstituteType/testSubstituteType.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-solutions-testSubstituteType-models" prefix="module/models" />
@@ -354,7 +368,7 @@
     <jar destfile="${build.layout}/tests/testSubtypingTest.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testSubtypingTest" />
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/solutions/testSubtypingTest" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/plugins/testModules/testSubtyping/solutions/testSubtypingTest/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/plugins/testModules/testSubtyping/solutions/testSubtypingTest/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/testSubtypingTest.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-solutions-testSubtypingTest-models">
@@ -364,6 +378,8 @@
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/solutions/testSubtypingTest/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/plugins/testModules/testSubtyping/solutions/testSubtypingTest/testSubtypingTest.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-solutions-testSubtypingTest-models" prefix="module/models" />
@@ -392,7 +408,7 @@
     <jar destfile="${build.layout}/tests/jetbrains.mps.baseLanguage.closures.test.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures.test" />
       <fileset dir="${basedir}/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.closures.test.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testClosures-solutions-jetbrains.mps.baseLanguage.closures.test-models">
@@ -402,6 +418,8 @@
       <fileset dir="${basedir}/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/jetbrains.mps.baseLanguage.closures.test.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testClosures-solutions-jetbrains.mps.baseLanguage.closures.test-models" prefix="module/models" />
@@ -429,7 +447,7 @@
     <jar destfile="${build.layout}/tests/tests.testDepViewer.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/tests.testDepViewer" />
       <fileset dir="${basedir}/testbench/modules/testDepViewer" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/modules/testDepViewer/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/modules/testDepViewer/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/tests.testDepViewer.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDepViewer-models">
@@ -439,6 +457,8 @@
       <fileset dir="${basedir}/testbench/modules/testDepViewer/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testDepViewer/tests.testDepViewer.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDepViewer-models" prefix="module/models" />
@@ -498,6 +518,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
@@ -1181,6 +1202,7 @@
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />

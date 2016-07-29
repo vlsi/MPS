@@ -2701,6 +2701,11 @@
     <node concept="3clFb_" id="h$zZZMn" role="jymVt">
       <property role="TrG5h" value="doUpdate" />
       <node concept="3clFbS" id="h$zZZMq" role="3clF47">
+        <node concept="3clFbF" id="2_UAdqjR0Fd" role="3cqZAp">
+          <node concept="1rXfSq" id="2_UAdqjR0Fb" role="3clFbG">
+            <ref role="37wK5l" to="qkt:~DefaultActionGroup.removeAll():void" resolve="removeAll" />
+          </node>
+        </node>
         <node concept="3clFbH" id="2OV1G3umCZ6" role="3cqZAp">
           <node concept="2b32R4" id="2OV1G3umDs5" role="lGtFl">
             <node concept="3JmXsc" id="2OV1G3umDs7" role="2P8S$">

@@ -12,16 +12,15 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.extapi.model.TransientSModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import java.util.Collection;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.generator.impl.cache.MappingsMemento;
-import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SReference;
-import java.util.List;
-import java.util.ArrayList;
 
 public class DebugMappingsBuilder {
   private final SRepository myRepo;
@@ -41,7 +40,22 @@ public class DebugMappingsBuilder {
       for (Map.Entry<SNode, Object> e : mappings.getMappings(label).entrySet()) {
         SNode entry = SModelOperations.createNewNode(nodeFactory, null, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_NodeMapEntry"));
         ListSequence.fromList(SLinkOperations.getChildren(labelEntry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, 0x35a02f6bfc9810ebL, "entries"))).addElement(entry);
-        SLinkOperations.setTarget(entry, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x35a02f6bfc9806caL, "inputNode"), e.getKey());
+        SLinkOperations.setNewChild(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_InputNode"));
+        SLinkOperations.setTarget(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f0aeL, "node"), ((SNode) BHReflection.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity")), SMethodTrimmedId.create("create", MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity"), "7PoJpZpIp9n"), nodeFactory, e.getKey())));
+        SPropertyOperations.set(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f702L, "presentation"), e.getKey().getPresentation());
+        SModel inputNodeModel = e.getKey().getModel();
+        if (inputNodeModel != null) {
+          SPropertyOperations.set(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a9989481dbL, "modelName"), inputNodeModel.getName().getValue());
+          if (!(inputNodeModel instanceof TransientSModel)) {
+            // no reason to save reference to a model that would be disposed and eventually break the reference 
+            // OTOH, other CP models may be exposed as transients as well, and it's reasonable to keep references 
+            // to other CP models. Need better condition (can check stereotype start with 'cp-', but it's a hack 
+            // Perhaps, once I start to keep attributes in a CP model (like name of checkpoint in SModelHeader.properties) 
+            // I can have better logic here (would need t respect change in model reference for persisted CP model 
+            // exposed in transients, though). 
+            SLinkOperations.setTarget(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f6ffL, "nodePtr"), e.getKey());
+          }
+        }
         SNodeReference origin = TracingUtil.getInput(e.getKey());
         SLinkOperations.setTarget(entry, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x35a02f6bfc9806dbL, "inputOrigin"), (origin == null ? null : origin.resolve(myRepo)));
         Collection<SNode> c;
@@ -61,42 +75,6 @@ public class DebugMappingsBuilder {
       }
     }
     return rv;
-  }
-
-
-  /**
-   * Reverse operation to {@link jetbrains.mps.generator.impl.DebugMappingsBuilder#build(SModel, GeneratorMappings) }, restore mappings information from debug node.
-   * Likely shall use same mapping API in both build() and restore() (MappingsMemento or its newer, better version)
-   * or even split restore code into separate class (provided it may need different initialization values)
-   */
-  public void restore(SNode debugNode, MappingsMemento memento) {
-    for (SNode labelEntry : ListSequence.fromList(SLinkOperations.getChildren(debugNode, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc97f1c1L, 0x35a02f6bfc9806c5L, "labels")))) {
-      final String labelName = SPropertyOperations.getString(labelEntry, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, 0x35a02f6bfc9810e9L, "label"));
-      for (SNode entry : ListSequence.fromList(SLinkOperations.getChildren(labelEntry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, 0x35a02f6bfc9810ebL, "entries")))) {
-        // reference to input node may not necessarily resolve as the transient input model amy have been already disposed 
-        final SNodeId inputNodeId;
-        if ((SLinkOperations.getTarget(entry, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x35a02f6bfc9806caL, "inputNode")) == null)) {
-          SReference ref = entry.getReference(MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x35a02f6bfc9806caL, "inputNode"));
-          inputNodeId = ref.getTargetNodeId();
-        } else {
-          inputNodeId = SLinkOperations.getTarget(entry, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x35a02f6bfc9806caL, "inputNode")).getNodeId();
-        }
-        // output node shall resolve as it's from the same node as debugNode, it's checkpoint model, after all. 
-        if (ListSequence.fromList(SLinkOperations.getChildren(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x35a02f6bfc9806d5L, "outputNode"))).count() == 1) {
-          memento.addOutputNodeByInputNodeAndMappingName(inputNodeId, labelName, SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x35a02f6bfc9806d5L, "outputNode"))).first(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806d2L, 0x35a02f6bfc9806d3L, "node")));
-        } else {
-          List<SNode> t = new ArrayList<SNode>();
-          for (SNode on : ListSequence.fromList(SLinkOperations.getChildren(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x35a02f6bfc9806d5L, "outputNode")))) {
-            ListSequence.fromList(t).addElement(SLinkOperations.getTarget(on, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806d2L, 0x35a02f6bfc9806d3L, "node")));
-          }
-          memento.addOutputNodeByInputNodeAndMappingName(inputNodeId, labelName, t);
-        }
-      }
-    }
-  }
-
-  public static SNode findDebugNode(SModel cpModel) {
-    return ListSequence.fromList(SModelOperations.roots(cpModel, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc97f1c1L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_Mappings"))).first();
   }
 
   private SNode substitute(SNode n) {

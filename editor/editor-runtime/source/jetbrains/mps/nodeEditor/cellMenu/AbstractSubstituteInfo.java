@@ -22,6 +22,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
 import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
 import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItemAsSubstituteAction;
 import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItemVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -44,14 +45,14 @@ public abstract class AbstractSubstituteInfo extends AbstractNodeSubstituteInfo 
 
   @Override
   protected List<SubstituteAction> createActions() {
-    DefaultTransformationMenuContext context = createTransformationContext();
+    TransformationMenuContext context = createTransformationContext();
     List<TransformationMenuItem> items = context.createItems(myEditorCell.getTransformationMenuLookup());
     List<SubstituteAction> completionItems = new ArrayList<>();
     collectItems(items, completionItems);
     return completionItems;
   }
 
-  protected abstract DefaultTransformationMenuContext createTransformationContext();
+  protected abstract TransformationMenuContext createTransformationContext();
 
   private void collectItems(List<TransformationMenuItem> inItems, final List<SubstituteAction> outItems) {
     inItems.forEach(menuItem -> menuItem.accept(new TransformationMenuItemVisitor<Void>() {

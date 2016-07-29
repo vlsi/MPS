@@ -26,7 +26,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.workbench.action.BaseAction;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import com.intellij.openapi.project.DumbAware;
@@ -197,7 +196,7 @@ public class NextPreviousTraverser {
     EditorCell rc = myLastEditor.getRootCell();
     final int minY = (firstGroup == null ? rc.getY() + 1 : (int) firstGroup.start());
     final int maxY = rc.getY() + rc.getHeight() - 2;
-    SwingUtilities.invokeLater(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         goToBounds(new Bounds(minY, maxY));
       }

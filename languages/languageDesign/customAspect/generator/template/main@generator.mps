@@ -4,7 +4,7 @@
   <languages>
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect" version="0" />
+    <use id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect" version="1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="1" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
@@ -281,6 +281,7 @@
       <concept id="982871510064032177" name="jetbrains.mps.lang.generator.structure.IParameterizedTemplate" flags="ng" index="1s_3nv">
         <child id="982871510064032342" name="parameter" index="1s_3oS" />
       </concept>
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX" />
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
       <concept id="1167945743726" name="jetbrains.mps.lang.generator.structure.IfMacro_Condition" flags="in" index="3IZrLx" />
@@ -668,6 +669,25 @@
                   <ref role="xH3mL" to="tp27:3TEgbCBRq7d" resolve="reduce_LanguageRefExpression" />
                 </node>
               </node>
+              <node concept="10Nm6u" id="5iYmYly3l1d" role="HW$Y0">
+                <node concept="1WS0z7" id="5iYmYly3l1e" role="lGtFl">
+                  <node concept="3JmXsc" id="5iYmYly3l1f" role="3Jn$fo">
+                    <node concept="3clFbS" id="5iYmYly3l1g" role="2VODD2">
+                      <node concept="3clFbF" id="5iYmYly3l1h" role="3cqZAp">
+                        <node concept="2OqwBi" id="5iYmYly3l1i" role="3clFbG">
+                          <node concept="30H73N" id="5iYmYly3l1j" role="2Oq$k0" />
+                          <node concept="3Tsc0h" id="5iYmYly3m5U" role="2OqNvi">
+                            <ref role="3TtcxE" to="hfbu:5iYmYly31HR" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="1sPUBX" id="5iYmYly3ovT" role="lGtFl">
+                  <ref role="v9R2y" to="tp27:2ztrlDPhXlD" resolve="switch_LanguageIdentity_SLanguage" />
+                </node>
+              </node>
               <node concept="3uibUv" id="2Y$EcRKOdDw" role="HW$YZ">
                 <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
               </node>
@@ -707,6 +727,25 @@
                 </node>
                 <node concept="xERo3" id="2Y$EcRKOoG8" role="lGtFl">
                   <ref role="xH3mL" to="tp27:3TEgbCBRq7d" resolve="reduce_LanguageRefExpression" />
+                </node>
+              </node>
+              <node concept="10Nm6u" id="5iYmYly3oOE" role="HW$Y0">
+                <node concept="1WS0z7" id="5iYmYly3oOF" role="lGtFl">
+                  <node concept="3JmXsc" id="5iYmYly3oOG" role="3Jn$fo">
+                    <node concept="3clFbS" id="5iYmYly3oOH" role="2VODD2">
+                      <node concept="3clFbF" id="5iYmYly3oOI" role="3cqZAp">
+                        <node concept="2OqwBi" id="5iYmYly3oOJ" role="3clFbG">
+                          <node concept="30H73N" id="5iYmYly3oOK" role="2Oq$k0" />
+                          <node concept="3Tsc0h" id="5iYmYly3pTm" role="2OqNvi">
+                            <ref role="3TtcxE" to="hfbu:5iYmYly31HX" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="1sPUBX" id="5iYmYly3oOM" role="lGtFl">
+                  <ref role="v9R2y" to="tp27:2ztrlDPhXlD" resolve="switch_LanguageIdentity_SLanguage" />
                 </node>
               </node>
               <node concept="3uibUv" id="2Y$EcRKOoB$" role="HW$YZ">

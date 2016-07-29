@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.assist;
 
 import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
+import jetbrains.mps.nodeEditor.selection.SingularSelectionUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
@@ -47,7 +48,7 @@ public class SelectionMenuProviderByCellAndConcept implements SelectionMenuProvi
   @NotNull
   @Override
   public List<TransformationMenuItem> getMenuItems(@NotNull Selection selection) {
-    EditorCell selectedCell = ContextAssistantSelectionUtil.getSingleSelectedCell(selection);
+    EditorCell selectedCell = SingularSelectionUtil.getSingleSelectedCell(selection);
     if (selectedCell == null) return Collections.emptyList();
 
     final Pair<MenuLookup<TransformationMenu>, EditorCell> menuLookupAndCell = getMenuLookupAndCell(selectedCell);

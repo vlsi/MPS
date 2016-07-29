@@ -357,7 +357,7 @@
       <node id="4915141521380953057" at="97,136,105,9" concept="16" />
       <node id="5047908084943665620" at="49,0,70,0" concept="8" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <node id="5047908084943708029" at="82,0,107,0" concept="8" trace="run#()V" />
-      <node id="5047908084943704384" at="80,52,107,7" concept="4" />
+      <node id="1092784201483719405" at="80,52,107,7" concept="4" />
       <node id="5047908084943665620" at="70,0,109,0" concept="8" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <scope id="5047908084943665620" at="46,32,47,16" />
       <scope id="5047908084943665620" at="51,53,52,19" />
@@ -411,7 +411,7 @@
         <var name="event" id="5047908084943665620" />
       </scope>
       <unit id="5047908084943704349" at="72,49,77,5" name="jetbrains.mps.vcs.plugin.TestMergeAction_Action$1" />
-      <unit id="5047908084943708029" at="81,35,107,5" name="jetbrains.mps.vcs.plugin.TestMergeAction_Action$2" />
+      <unit id="5047908084943708029" at="81,56,107,5" name="jetbrains.mps.vcs.plugin.TestMergeAction_Action$2" />
       <unit id="5047908084943665620" at="37,0,111,0" name="jetbrains.mps.vcs.plugin.TestMergeAction_Action" />
     </file>
   </root>

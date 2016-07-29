@@ -45,6 +45,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -68,7 +69,6 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   private Project myProject;
   private jetbrains.mps.project.Project myMpsProject;
   private FileEditorManager myManager;
-  private boolean myInitialized = false;
   private final List<PluginReloadingListener> myReloadingListeners = new CopyOnWriteArrayList<PluginReloadingListener>();
 
   public ProjectPluginManager(@NotNull Project project, jetbrains.mps.project.Project mpsProject, PluginLoaderRegistry pluginLoaderRegistry, @SuppressWarnings("unused") StartupModuleMaker moduleMaker, FileEditorManager manager) {
@@ -80,35 +80,23 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
 
   @Override
   public void projectOpened() {
-    StartupManager.getInstance(myProject).registerStartupActivity(new Runnable() {
-      @Override
-      public void run() {
-        runStartupActivity();
-      }
-    });
+    runStartupActivity();
   }
 
   private void runStartupActivity() {
     LOG.debug("Running startup activity");
-    if (!myMpsProject.isDisposed()) {
-      register();
-      myInitialized = true;
-    }
+    register();
     LOG.debug("Finished running startup activity");
   }
 
   @Override
   public void projectClosed() {
-    if (myInitialized) {
-      runShutDownActivity();
-    }
+    runShutDownActivity();
   }
 
   private void runShutDownActivity() {
     LOG.debug("Running shutdown activity");
-    if (!myMpsProject.isDisposed()) {
-      unregister();
-    }
+    unregister();
     LOG.debug("Finished running shutdown activity");
   }
 
@@ -184,15 +172,15 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   }
 
   @Override
-  public final void unloadPlugins(List<PluginContributor> contributors) {
-    fireBeforePluginsUnloaded(contributors);
-    super.unloadPlugins(contributors);
-  }
-
-  @Override
   public final void loadPlugins(List<PluginContributor> contributors) {
     super.loadPlugins(contributors);
     fireAfterPluginsLoaded(contributors);
+  }
+
+  @Override
+  public final void unloadPlugins(List<PluginContributor> contributors) {
+    fireBeforePluginsUnloaded(contributors);
+    super.unloadPlugins(contributors);
   }
 
   private void fireAfterPluginsLoaded(List<PluginContributor> contributors) {

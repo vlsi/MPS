@@ -21,7 +21,7 @@ import java.util.List;
  * Note: plugins must come in the right order
  */
 public interface PluginLoader {
-  void loadPlugins(List<PluginContributor> contributors);
+  void loadPlugins(final List<PluginContributor> contributors);
 
   void unloadPlugins(List<PluginContributor> contributors);
 }

@@ -50,7 +50,9 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
 
   public BaseApplicationPlugin getPlugin(PluginId id) {
     for (BaseApplicationPlugin p : getPlugins()) {
-      if (p.getId() == id) return p;
+      if (p.getId() == id) {
+        return p;
+      }
     }
     return null;
   }
@@ -116,45 +118,40 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
   }
 
   @Override
-    protected void beforePluginsDisposed(List<BaseApplicationPlugin> plugins) {
-    }
+  protected void beforePluginsDisposed(List<BaseApplicationPlugin> plugins) {
+  }
 
-    @Override
-    protected void disposePlugin(BaseApplicationPlugin plugin) {
-      plugin.dispose();
-    }
+  @Override
+  protected void disposePlugin(BaseApplicationPlugin plugin) {
+    plugin.dispose();
+  }
 
-    @Override
-    @NonNls
-    @NotNull
-    public String getComponentName() {
-      return ApplicationPluginManager.class.getName();
-    }
+  @Override
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return ApplicationPluginManager.class.getName();
+  }
 
-    /**
-     * Cannot load existing plugins here since:
-     * 1. we need to initialize ide plugin at the first place here (other plugins' actions depend on it)
-     * 2. it has some action which recursively addresses this component via Application#getComponent which leads to infinite recursive initialization
-     *    fixme we can get rid of that but probably some generated code needs to be rewritten (the only place is {@link jetbrains.mps.plugins.actions.GeneratedActionGroup}
-     *
+  /**
+   * Cannot load existing plugins here since:
+   * 1. we need to initialize ide plugin at the first place here (other plugins' actions depend on it)
+   * 2. it has some action which recursively addresses this component via Application#getComponent which leads to infinite recursive initialization
+   *    fixme we can get rid of that but probably some generated code needs to be rewritten (the only place is {@link jetbrains.mps.plugins.actions.GeneratedActionGroup}
+   *
    * Thus we state that currently there must be no loaded modules in the repository when #initComponent() is called
    */
   @Override
   public void initComponent() {
     LOG.debug("Running startup activity");
-    if (!ApplicationManager.getApplication().isDisposed()) {
-      register();
-      myInitialized = true;
-    }
+    register();
     LOG.debug("Finished running startup activity");
   }
 
   @Override
   public void disposeComponent() {
     LOG.debug("Running shutdown app activity");
-    if (myInitialized && !ApplicationManager.getApplication().isDisposed()) {
-      unregister();
-    }
+    unregister();
     LOG.debug("Finished running shutdown app activity");
   }
 

@@ -20,6 +20,7 @@ import jetbrains.mps.ide.ui.tree.module.SModelsSubtree.StubsTreeNode;
 import jetbrains.mps.ide.ui.tree.module.SModelsSubtree.TestsTreeNode;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.util.NameUtil;
@@ -66,6 +67,14 @@ public class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
 
   @Override
   protected void doInit() {
+    ModuleNodeChildrenProvider childrenProvider = getAncestor(ModuleNodeChildrenProvider.class);
+    if (childrenProvider == null || !childrenProvider.populate(this, (Solution) getModule())) {
+      populate();
+    }
+    myInitialized = true;
+  }
+
+  private void populate() {
     List<SModel> regularModels = new ArrayList<SModel>();
     List<SModel> tests = new ArrayList<SModel>();
     List<SModel> stubs = new ArrayList<SModel>();
@@ -94,7 +103,6 @@ public class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
       new SModelsSubtree(stubsNode).create(stubs);
       add(stubsNode);
     }
-    myInitialized = true;
   }
 
 }

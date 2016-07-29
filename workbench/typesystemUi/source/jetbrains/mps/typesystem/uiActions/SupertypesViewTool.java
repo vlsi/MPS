@@ -20,6 +20,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ToggleAction;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyView;
@@ -29,7 +30,6 @@ import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 
 public class SupertypesViewTool extends AbstractHierarchyView {
@@ -53,13 +53,10 @@ public class SupertypesViewTool extends AbstractHierarchyView {
   protected void createControlPanel() {
     final JPanel panel = new JPanel(new BorderLayout());
     myComponent.add(panel, BorderLayout.EAST);
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        JComponent buttonsPanel =
-            ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, createButtonsGroup(), false).getComponent();
-        panel.add(buttonsPanel, BorderLayout.EAST);
-      }
+    ApplicationManager.getApplication().invokeLater(() -> {
+      JComponent buttonsPanel =
+          ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, createButtonsGroup(), false).getComponent();
+      panel.add(buttonsPanel, BorderLayout.EAST);
     });
   }
 

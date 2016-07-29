@@ -162,8 +162,9 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   }
 
   public IMessageHandler newHandler(@NotNull final String name) {
-    return new MsgHandler(getAvailableList(name, true));
-
+    MessageList availableList = getAvailableList(name, true);
+    availableList.clear();
+    return new MsgHandler(availableList);
   }
 
   private synchronized void addList(String name, MessageList list) {

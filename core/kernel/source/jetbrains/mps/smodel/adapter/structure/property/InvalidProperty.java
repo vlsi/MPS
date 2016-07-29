@@ -75,8 +75,9 @@ public final class InvalidProperty extends SPropertyAdapter {
     return myPropertyName;
   }
 
+  @Nullable
   @Override
-  protected SNode findInConcept(SNode cnode) {
+  public SNode getDeclarationNode() {
     return null;
   }
 

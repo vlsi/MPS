@@ -19,7 +19,7 @@ import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
 public class CustomAnalyzerWithModeAnalyzerRunner extends CustomAnalyzerRunner<Integer> {
   private SNode myNode;
   public CustomAnalyzerWithModeAnalyzerRunner(SNode node) {
-    this(node, new MPSProgramFactory(Collections.<String>emptyList()));
+    this(node, new MPSProgramFactory(Collections.emptyList()));
   }
   public CustomAnalyzerWithModeAnalyzerRunner(SNode node, ProgramFactory<NamedAnalyzerId> factory) {
     super(null, null);

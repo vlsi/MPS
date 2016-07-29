@@ -194,12 +194,12 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   @NotNull
   protected SearchScope getGlobalScope() {
-    return new FilteredGlobalScope();
+    return myGlobalScope != null ? myGlobalScope : new FilteredGlobalScope();
   }
 
   @NotNull
   protected SearchScope getLocalScope() {
-    return getProject().getScope();
+    return myLocalScope != null ? myLocalScope : getProject().getScope();
   }
 
   /**
@@ -236,6 +236,10 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   /**
    * Translates representation element back to original model entry, reverts {@link #doGetNavigationItem(Object)}
+   * XXX note, this is needed due th the fact this model implementation exposes our internal structure to outer world, so clients
+   * need to care about {@code <T>} parameter of the model and that selection returns them not instance of {@code <T>}, but some other object
+   * (namely, NavigationItem)
+   *
    * @return <code>null</code> if can't translate back
    */
   public abstract T getModelObject(Object element);

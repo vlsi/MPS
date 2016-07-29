@@ -19,6 +19,7 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.ActionToolbar;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
@@ -43,7 +44,6 @@ import javax.swing.BoxLayout;
 import javax.swing.Icon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
@@ -54,7 +54,7 @@ import java.util.List;
 public class GenerationTracerViewTool extends BaseProjectTool {
   private NoTabsComponent myNoTabsComponent;
 
-  private List<GenerationTracerView> myTracerViews = new ArrayList<GenerationTracerView>();
+  private List<GenerationTracerView> myTracerViews = new ArrayList<>();
   private ContentManagerAdapter myContentListener;
   private final TransientModelsComponent myTransientModelsOwner;
   private boolean myAutoscroll;
@@ -68,12 +68,9 @@ public class GenerationTracerViewTool extends BaseProjectTool {
 
   //////
   public boolean hasTracingData() {
-    ComputeRunnable<Boolean> r = new ComputeRunnable<Boolean>(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        // FIXME not quite nice code
-        return myTransientModelsOwner.getModules().iterator().hasNext();
-      }
+    ComputeRunnable<Boolean> r = new ComputeRunnable<>(() -> {
+      // FIXME not quite nice code
+      return myTransientModelsOwner.getModules().iterator().hasNext();
     });
     ProjectHelper.getModelAccess(getProject()).runReadAction(r);
     return r.getResult();
@@ -119,12 +116,10 @@ public class GenerationTracerViewTool extends BaseProjectTool {
 
   @Override
   protected void createTool(boolean early) {
-    StartupManager.getInstance(getProject()).runWhenProjectIsInitialized(new Runnable() {
-      public void run() {
-        showNoTabsComponent();
-        setTracingDataIsAvailable(hasTracingData());
-        setAvailable(false);
-      }
+    StartupManager.getInstance(getProject()).runWhenProjectIsInitialized(() -> {
+      showNoTabsComponent();
+      setTracingDataIsAvailable(hasTracingData());
+      setAvailable(false);
     });
   }
 
@@ -221,11 +216,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
   }
 
   public void setTracingDataIsAvailable(final boolean dataPresent) {
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        myNoTabsComponent.setDataIsAvailable(dataPresent);
-      }
-    });
+    ApplicationManager.getApplication().invokeLater(() -> myNoTabsComponent.setDataIsAvailable(dataPresent));
   }
 
   @Override
@@ -269,13 +260,11 @@ public class GenerationTracerViewTool extends BaseProjectTool {
       mainPanel.add(myLabelsPanel, c);
       add(mainPanel, BorderLayout.CENTER);
 
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          ActionGroup group = ActionUtils.groupFromActions(new CloseAction(tool));
+      ApplicationManager.getApplication().invokeLater(() -> {
+        ActionGroup group = ActionUtils.groupFromActions(new CloseAction(tool));
 
-          ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
-          add(toolbar.getComponent(), BorderLayout.WEST);
-        }
+        ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
+        add(toolbar.getComponent(), BorderLayout.WEST);
       });
     }
 

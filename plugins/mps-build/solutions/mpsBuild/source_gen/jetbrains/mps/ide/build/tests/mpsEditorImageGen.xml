@@ -72,7 +72,7 @@
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.imageGen.testLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.imageGen.testLanguage" />
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.imageGen.testLanguage" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.imageGen.testLanguage/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.imageGen.testLanguage/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.imageGen.testLanguage.jar" />
     </jar>
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.imageGen.testLanguage-generator.jar" duplicate="preserve">
@@ -88,10 +88,14 @@
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.imageGen.testLanguage/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.imageGen.testLanguage/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.imageGen.testLanguage/jetbrains.mps.lang.editor.imageGen.testLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-testlangs-jetbrains.mps.lang.editor.imageGen.testLanguage-generator-template" prefix="module/generator/template" />
@@ -185,6 +189,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.imageGen.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
@@ -436,6 +441,7 @@
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.imageGen.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />

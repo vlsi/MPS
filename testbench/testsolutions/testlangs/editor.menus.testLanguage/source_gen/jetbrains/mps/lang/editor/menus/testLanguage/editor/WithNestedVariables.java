@@ -43,7 +43,6 @@ public class WithNestedVariables extends TransformationMenuBase {
           return v + 2;
         }
       }.compute();
-
     }
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
@@ -64,7 +63,6 @@ public class WithNestedVariables extends TransformationMenuBase {
             return v + 1;
           }
         }.compute();
-
       }
 
       @Override

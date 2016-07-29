@@ -4,14 +4,20 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.smodel.structure.DefaultExtensionDescriptor;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.smodel.structure.Extension;
 import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
   private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.lang.core.GeneratorCache")};
+  private Extension[] extensions = new Extension[]{new UpdateModelImports.UpdateModelImports_extension(), new UpdateReferencesParticipantBase.UpdateReferencesParticipant_extension(), new RenameReferencesParticipant.RenameReferencesParticipant_extension()};
   public ExtensionDescriptor() {
   }
   @Override
   public Iterable<? extends ExtensionPoint> getExtensionPoints() {
     return Arrays.asList(extensionPoints);
+  }
+  @Override
+  public Iterable<? extends Extension> getExtensions() {
+    return Arrays.asList(extensions);
   }
 }

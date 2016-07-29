@@ -16,18 +16,16 @@
 package jetbrains.mps.project;
 
 import com.intellij.ide.impl.ProjectUtil;
+import com.intellij.ide.startup.impl.StartupManagerImpl;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ProjectComponent;
-import jetbrains.mps.ide.ThreadUtils;
+import com.intellij.openapi.startup.StartupManager;
+import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import jetbrains.mps.vfs.FileListener;
-import jetbrains.mps.vfs.FileSystemEvent;
-import jetbrains.mps.vfs.FileSystemExtPoint;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -47,6 +45,7 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
     NotFoundModulesListener listener = new NotFoundModulesListener(this);
     myListeners.add(listener);
     addListener(listener);
+    ClassLoaderManager.getInstance().runNonReloadableTransaction(this::update);
   }
 
   public void disposeComponent() {
@@ -109,7 +108,7 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
   public void dispose() {
     List<Project> openProjects = jetbrains.mps.project.ProjectManager.getInstance().getOpenedProjects();
     if (openProjects.contains(this)) {
-      ApplicationManager.getApplication().invokeAndWait(() -> ProjectUtil.closeAndDispose(getProject()), ModalityState.current());
+      ApplicationManager.getApplication().invokeAndWait(() -> ProjectUtil.closeAndDispose(getProject()), ModalityState.NON_MODAL);
     }
     super.dispose();
   }

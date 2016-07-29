@@ -35,12 +35,19 @@ import jetbrains.mps.ide.ui.smodel.ConceptTreeNode;
 import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
 import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
+import jetbrains.mps.ide.ui.tree.module.SModelsSubtree;
 import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeChildrenProvider;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
@@ -68,6 +75,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /**
  * GUESS: while {@link ProjectTree} is deemed for embedded UI components, e.g. in a dialog,
@@ -75,30 +84,31 @@ import java.util.List;
  * need move to ProjectPane, as it's project stuff and needs Idea's project Message bus), integration with
  * editor (activation, auto-select/expand), etc.
  */
-public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider {
+public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider, ProjectModuleTreeNode.ModuleNodeChildrenProvider {
   private ProjectPane myProjectPane;
   private KeyAdapter myKeyListener = new KeyAdapter() {
     @Override
     public void keyPressed(KeyEvent e) {
-      if (e.getModifiers() != 0) return;
-      if (!(e.getKeyCode() == KeyEvent.VK_ENTER)) return;
+      if (e.getModifiers() != 0 || e.getKeyCode() != KeyEvent.VK_ENTER) {
+        return;
+      }
 
       TreePath selPath = getSelectionPath();
-      if (selPath == null) return;
-      MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
-      selNode.doubleClick();
-
-      e.consume();
+      if (selPath != null && selPath.getLastPathComponent() instanceof MPSTreeNode) {
+        // reuse method for double click
+        doubleClick((MPSTreeNode) selPath.getLastPathComponent());
+        e.consume();
+      }
     }
   };
   private final ProjectPaneTreeHighlighter myHighlighter;
   private final TreeStructureUpdate myStructureUpdate;
 
   public ProjectPaneTree(ProjectPane projectPane, Project project) {
-    super(ProjectHelper.toMPSProject(project));
+    super(ProjectHelper.fromIdeaProject(project));
     myProjectPane = projectPane;
 
-    myHighlighter = new ProjectPaneTreeHighlighter(this, ProjectHelper.toMPSProject(project));
+    myHighlighter = new ProjectPaneTreeHighlighter(this, ProjectHelper.fromIdeaProject(project));
     myHighlighter.init();
     myStructureUpdate = new TreeStructureUpdate(this);
     myStructureUpdate.init();
@@ -117,6 +127,7 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
         // there used to be update both on enter and exit of the dumb mode, however, I don't see a reason to
         // do it twice. Moreover, there's guard condition in TreeUpdateVisitor that waits for dumb mode to complete.
       }
+
       @Override
       public void exitDumbMode() {
         myHighlighter.dumbUpdate();
@@ -142,7 +153,6 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
     removeKeyListener(myKeyListener);
     super.dispose();
   }
-
 
 
   @Override
@@ -200,12 +210,39 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
   public void populate(SNodeTreeNode treeNode) {
     if (myProjectPane.showNodeStructure()) {
       SNode n = treeNode.getSNode();
-      if (n == null || n.getModel() == null) return;
+      if (n == null || n.getModel() == null) {
+        return;
+      }
 
       treeNode.add(new ConceptTreeNode(n));
       treeNode.add(new PropertiesTreeNode(n));
       treeNode.add(new ReferencesTreeNode(n));
     }
+  }
+
+  @Override
+  public boolean populate(MPSTreeNode treeNode, Language language) {
+    return false;
+  }
+
+  @Override
+  public boolean populate(MPSTreeNode treeNode, Solution solution) {
+    return false;
+  }
+
+  @Override
+  public boolean populate(MPSTreeNode treeNode, Generator generator) {
+    if (myProjectPane.isDescriptorModelInGeneratorVisible()) {
+      return false;
+    }
+    Predicate<SModel> isDescriptorModel = SModelStereotype::isDescriptorModel;
+    new SModelsSubtree(treeNode).create(generator.getModels().stream().filter(isDescriptorModel.negate()).collect(Collectors.toList()));
+    return true;
+  }
+
+  @Override
+  public boolean populate(MPSTreeNode treeNode, DevKit devkit) {
+    return false;
   }
 
   private class MyTransferable implements Transferable {
@@ -255,29 +292,41 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
   private class MyDragGestureListener implements DragGestureListener {
     @Override
     public void dragGestureRecognized(final DragGestureEvent dge) {
-      if ((dge.getDragAction() & DnDConstants.ACTION_COPY_OR_MOVE) == 0) return;
+      if ((dge.getDragAction() & DnDConstants.ACTION_COPY_OR_MOVE) == 0) {
+        return;
+      }
       ProjectView projectView = ProjectView.getInstance(myProjectPane.getProject());
-      if (projectView == null) return;
+      if (projectView == null) {
+        return;
+      }
       final AbstractProjectViewPane currentPane = projectView.getCurrentProjectViewPane();
-      if (!(currentPane instanceof BaseLogicalViewProjectPane)) return;
+      if (!(currentPane instanceof BaseLogicalViewProjectPane)) {
+        return;
+      }
 
-      final List<Pair<SNodeReference, String>> result = new ArrayList<Pair<SNodeReference, String>>();
+      final List<Pair<SNodeReference, String>> result = new ArrayList<>();
 
       getProject().getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
           for (SNode node : myProjectPane.getSelectedSNodes()) {
-            result.add(new Pair<SNodeReference, String>(new jetbrains.mps.smodel.SNodePointer(node), ""));
+            result.add(new Pair<>(new jetbrains.mps.smodel.SNodePointer(node), ""));
           }
           SModel contextDescriptor = myProjectPane.getContextModel();
           if (contextDescriptor != null) {
             for (PackageNode treeNode : myProjectPane.getSelectedTreeNodes(PackageNode.class)) {
               String searchedPack = treeNode.getFullPackage();
-              if (treeNode.getChildCount() == 0 || searchedPack == null) continue;
+              if (treeNode.getChildCount() == 0 || searchedPack == null) {
+                continue;
+              }
               for (final SNode node : contextDescriptor.getRootNodes()) {
                 String nodePack = SNodeAccessUtil.getProperty(node, SNodeUtil.propertyName_BaseConcept_virtualPackage);
-                if (nodePack == null) continue;
-                if (!nodePack.startsWith(searchedPack)) continue;
+                if (nodePack == null) {
+                  continue;
+                }
+                if (!nodePack.startsWith(searchedPack)) {
+                  continue;
+                }
 
                 StringBuilder basePack = new StringBuilder();
                 String firstPart = treeNode.getPackage();
@@ -290,7 +339,7 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
                   basePack.append(".");
                 }
                 basePack.append(secondPart);
-                result.add(new Pair<SNodeReference,String>(new jetbrains.mps.smodel.SNodePointer(node), basePack.toString()));
+                result.add(new Pair<>(new jetbrains.mps.smodel.SNodePointer(node), basePack.toString()));
               }
             }
           }

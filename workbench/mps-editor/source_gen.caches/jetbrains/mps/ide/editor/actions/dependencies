@@ -743,6 +743,7 @@
   <dependency className="jetbrains.mps.ide.editor.actions.PushEditorHints_Action" file="PushEditorHints_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.DialogWrapper" />
     <classNode dependClassName="java.lang.Object" />
@@ -753,7 +754,6 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.HintsDialog" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />

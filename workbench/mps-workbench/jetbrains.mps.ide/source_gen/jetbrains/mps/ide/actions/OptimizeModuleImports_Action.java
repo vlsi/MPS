@@ -20,12 +20,12 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.util.WaitForProgressToShow;
 import jetbrains.mps.project.OptimizeImportsHelper;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
-import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.application.ModalityState;
 
 public class OptimizeModuleImports_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -84,15 +84,19 @@ public class OptimizeModuleImports_Action extends BaseAction {
           final OptimizeImportsHelper helper = new OptimizeImportsHelper(repo);
           for (final SModule module : ((List<SModule>) MapSequence.fromMap(_params).get("modules"))) {
             monitor.step("Optimizing imports of the " + module);
-            repo.getModelAccess().runWriteAction(new Runnable() {
+            ApplicationManager.getApplication().invokeAndWait(new Runnable() {
               public void run() {
-                if (module instanceof Solution) {
-                  report.value += helper.optimizeSolutionImports(((Solution) module));
-                } else if (module instanceof Language) {
-                  report.value += helper.optimizeLanguageImports(((Language) module));
-                }
+                repo.getModelAccess().executeCommand(new Runnable() {
+                  public void run() {
+                    if (module instanceof Solution) {
+                      report.value += helper.optimizeSolutionImports(((Solution) module));
+                    } else if (module instanceof Language) {
+                      report.value += helper.optimizeLanguageImports(((Language) module));
+                    }
+                  }
+                });
               }
-            });
+            }, ModalityState.any());
             monitor.advance(1);
             if (monitor.isCanceled()) {
               return;

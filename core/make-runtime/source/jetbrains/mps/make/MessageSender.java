@@ -21,33 +21,38 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModule;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * A simple wrapper around IMessageHandler
  *
  * Created by apyshkin on 5/25/16.
  */
-class MessageSender {
+public class MessageSender {
   private final IMessageHandler myHandler;
   private final Object mySender;
 
-  MessageSender(@NotNull IMessageHandler handler, Object sender) {
+  private final MessageKind myLevel; // only this kind and higher
+
+  MessageSender(@NotNull IMessageHandler handler, Object sender, MessageKind level) {
     myHandler = handler;
     mySender = sender == null ? "" : sender;
+    myLevel = level;
   }
 
   public MessageSender(@NotNull MessageSender anotherSender, Object sender) {
     myHandler = anotherSender.myHandler;
+    myLevel = anotherSender.getLevel();
     mySender = sender == null ? "" : sender;
   }
 
+  public MessageKind getLevel() {
+    return myLevel;
+  }
+
   public void handle(@NotNull IMessage msg) {
-    myHandler.handle(msg);
+    if (msg.getKind().ordinal() >= myLevel.ordinal()) {
+      myHandler.handle(msg);
+    }
   }
 
   public void error(@NotNull String msg) {

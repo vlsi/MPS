@@ -70,7 +70,7 @@
     <jar destfile="${build.layout}/jetbrains.mps.ide.java.tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.ide.java.tests" />
       <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.java.tests.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-jetbrains.mps.ide.java.tests-models">
@@ -80,6 +80,8 @@
       <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/jetbrains.mps.ide.java.tests.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-jetbrains.mps.ide.java.tests-models" prefix="module/models" />
@@ -132,6 +134,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.intentions.jar" />

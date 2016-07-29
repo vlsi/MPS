@@ -69,7 +69,7 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
 
   @Override
   public SNode createNode(String pattern) {
-    return NodeFactoryManager.createNode(myConcept, myParentNode, myCurrentChild, myParentNode.getModel());
+    return NodeFactoryManager.createNode(myConcept, myCurrentChild, myParentNode, myParentNode.getModel());
   }
 
   @Override

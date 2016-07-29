@@ -73,7 +73,7 @@
     <jar destfile="${build.layout}/tests/jetbrains.mps.samples.Kaja.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.samples.Kaja" />
       <fileset dir="${basedir}/samples/robot_Kaja/languages/Kajak" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/samples/robot_Kaja/languages/Kajak/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/samples/robot_Kaja/languages/Kajak/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.samples.Kaja.jar" />
     </jar>
     <jar destfile="${build.layout}/tests/jetbrains.mps.samples.Kaja-generator.jar" duplicate="preserve">
@@ -89,10 +89,14 @@
       <fileset dir="${basedir}/samples/robot_Kaja/languages/Kajak/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${basedir}/samples/robot_Kaja/languages/Kajak/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/samples/robot_Kaja/languages/Kajak/Kajak.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/samples-robot_Kaja-languages-Kajak-generator-template" prefix="module/generator/template" />
@@ -112,7 +116,7 @@
     <jar destfile="${build.layout}/tests/jetbrains.mps.samples.JavaKaja.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.samples.JavaKaja" />
       <fileset dir="${basedir}/samples/robot_Kaja/solutions/JavaKajak" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/samples/robot_Kaja/solutions/JavaKajak/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/samples/robot_Kaja/solutions/JavaKajak/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.samples.JavaKaja.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/samples-robot_Kaja-solutions-JavaKajak-models" stripImplementation="true">
@@ -122,6 +126,8 @@
       <fileset dir="${basedir}/samples/robot_Kaja/solutions/JavaKajak/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/samples/robot_Kaja/solutions/JavaKajak/JavaKajak.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/samples-robot_Kaja-solutions-JavaKajak-models" prefix="module/models" />
@@ -218,6 +224,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
@@ -508,6 +515,7 @@
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />

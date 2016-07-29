@@ -107,20 +107,19 @@ public class Binaries_Facet extends IFacet.Stub {
                         public void visit(SNode it) {
                           IFile outputRootFile = Target_make.vars(pa.global()).pathToFile().invoke(SModuleOperations.getOutputPathFor(model));
 
-                          Tuples._2<IFile, byte[]> data = Resource__BehaviorDescriptor.generate_id7Mb2akaesv8.invoke(it, outputRootFile);
-                          if (data == null) {
-                            return;
-                          }
+                          List<Tuples._2<IFile, byte[]>> data = Resource__BehaviorDescriptor.generate_id7Mb2akaesv8.invoke(it, outputRootFile);
 
-                          if (data._1() != null) {
-                            MapSequence.fromMap(dataToWrite).put(data._0(), data._1());
-                          }
+                          for (Tuples._2<IFile, byte[]> d : ListSequence.fromList(data)) {
+                            if (d._1() != null) {
+                              MapSequence.fromMap(dataToWrite).put(d._0(), d._1());
+                            }
 
-                          // todo check whether it's possible to pass not outputDir here 
-                          FilesDelta fd = new FilesDelta(outputRootFile);
-                          new StaleFilesCollector(outputRootFile).updateDelta(fd);
-                          fd.written(data._0());
-                          ListSequence.fromList(deltaList).addElement(fd);
+                            // todo check whether it's possible to pass not outputDir here 
+                            FilesDelta fd = new FilesDelta(outputRootFile);
+                            new StaleFilesCollector(outputRootFile).updateDelta(fd);
+                            fd.written(d._0());
+                            ListSequence.fromList(deltaList).addElement(fd);
+                          }
                         }
                       });
                     }
