@@ -156,7 +156,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
       return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new TestSubstituteChild_SubstituteMenu.SubstituteMenuPart_Group_ddv2zo_c.SubstituteMenuPart_Wrapper_ddv2zo_a2());
     }
     private class SubstituteMenuPart_Wrapper_ddv2zo_a2 extends WrapperSubstituteMenuPart {
-      protected SubstituteMenuItem wrapItem(SubstituteMenuItem item) {
+      protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {
         return new SubstituteMenuItemWrapper(item) {
 
           @Override

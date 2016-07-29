@@ -35166,8 +35166,16 @@
           </node>
           <node concept="37vLTG" id="5N5pDMJWo4r" role="3clF46">
             <property role="TrG5h" value="item" />
+            <property role="3TUv4t" value="true" />
             <node concept="3uibUv" id="6HyqU7avPVx" role="1tU5fm">
               <ref role="3uigEE" to="78sh:~SubstituteMenuItem" resolve="SubstituteMenuItem" />
+            </node>
+          </node>
+          <node concept="37vLTG" id="6HFUSydsMsv" role="3clF46">
+            <property role="TrG5h" value="_context" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="6HFUSydt0H4" role="1tU5fm">
+              <ref role="3uigEE" to="78sh:~SubstituteMenuContext" resolve="SubstituteMenuContext" />
             </node>
           </node>
           <node concept="3clFbS" id="5N5pDMJWo4t" role="3clF47">
