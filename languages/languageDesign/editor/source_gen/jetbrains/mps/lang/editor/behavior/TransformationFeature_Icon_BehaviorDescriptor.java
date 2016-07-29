@@ -9,5 +9,5 @@ package jetbrains.mps.lang.editor.behavior;
  * This class is not involved in the actual method invocation
  */
 @Deprecated
-public class TransformationFeature_IconNode_BehaviorDescriptor {
+public class TransformationFeature_Icon_BehaviorDescriptor {
 }
