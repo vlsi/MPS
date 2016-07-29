@@ -158,6 +158,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
           SLinkOperations.setTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), _quotation_createNode_ehvekh_a0b0d0b0b0x());
           SPropertyOperations.set(variableDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "condition_" + counter);
           SLinkOperations.setTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403987bL, 0x780e672842435c4L, "initializerBlock"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e672842435c6L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenuVariable_Initializer")));
+          SLinkOperations.setTarget(SLinkOperations.getTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403987bL, 0x780e672842435c4L, "initializerBlock")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"), helper.getConditionStatementList(SLinkOperations.getTarget(part, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, 0x10ccb7fcf83L, "precondition"))));
           ListSequence.fromList(SLinkOperations.getChildren(mainGroup, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL, 0x780e672842433a1L, "variables"))).addElement(variableDeclaration);
           counter++;
         }
@@ -206,6 +207,8 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     SubstituteBuildersMigrationHelper helper = new SubstituteBuildersMigrationHelper();
     List<SNode> result = new ArrayList<SNode>();
     for (SNode builder : Sequence.fromIterable(builders)) {
+      List<SNode> parts = helper.createMenuParts(builder);
+      result.addAll(parts);
     }
     return result;
   }
