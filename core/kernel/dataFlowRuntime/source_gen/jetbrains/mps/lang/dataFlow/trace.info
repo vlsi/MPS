@@ -23,15 +23,19 @@
       <node id="8324812022359605434" at="19,63,20,58" concept="3" />
       <node id="3364696741417507211" at="23,44,24,95" concept="9" />
       <node id="3364696741417438147" at="27,87,28,115" concept="3" />
+      <node id="223297548981473151" at="30,48,31,21" concept="9" />
       <node id="8324812022359605430" at="19,0,22,0" concept="2" trace="MPSProgramFactory#(Ljava/util/Collection;)V" />
+      <node id="223297548981472625" at="30,0,33,0" concept="7" trace="getContext#()Ljetbrains/mps/lang/dataFlow/framework/ProgramBuilderContext;" />
       <node id="3364696741417543896" at="22,0,26,0" concept="7" trace="createProgram#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/dataFlow/framework/Program;" />
       <node id="3364696741417543905" at="26,0,30,0" concept="7" trace="prepareProgram#(Ljetbrains/mps/lang/dataFlow/framework/Program;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/dataFlow/framework/NamedAnalyzerId;)V" />
       <scope id="8324812022359605433" at="19,63,20,58" />
       <scope id="3364696741417543903" at="23,44,24,95" />
       <scope id="3364696741417543914" at="27,87,28,115" />
+      <scope id="223297548981472628" at="30,48,31,21" />
       <scope id="8324812022359605430" at="19,0,22,0">
         <var name="modes" id="8324812022359605442" />
       </scope>
+      <scope id="223297548981472625" at="30,0,33,0" />
       <scope id="3364696741417543896" at="22,0,26,0">
         <var name="node" id="3364696741417622013" />
       </scope>
@@ -40,7 +44,7 @@
         <var name="node" id="3364696741418391711" />
         <var name="program" id="3364696741417543911" />
       </scope>
-      <unit id="3364696741417541264" at="17,0,31,0" name="jetbrains.mps.lang.dataFlow.MPSProgramFactory" />
+      <unit id="3364696741417541264" at="17,0,34,0" name="jetbrains.mps.lang.dataFlow.MPSProgramFactory" />
     </file>
   </root>
   <root nodeRef="2af156ab-65c1-4a62-bd0d-ea734f71eab6/r:a1d8bbbf-d4f0-431f-8dcd-a6badc777315(jetbrains.mps.dataFlow.runtime/jetbrains.mps.lang.dataFlow)/4282822416100096468">

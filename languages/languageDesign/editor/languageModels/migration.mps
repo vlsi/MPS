@@ -80,9 +80,6 @@
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
       </concept>
-      <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
-        <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -7066,8 +7063,8 @@
                       </node>
                     </node>
                     <node concept="TSZUe" id="4xah2hlIwjC" role="2OqNvi">
-                      <node concept="37vLTw" id="4xah2hlIwjD" role="25WWJ7">
-                        <ref role="3cqZAo" node="4xah2hlIwiL" resolve="newVariable" />
+                      <node concept="2GrUjf" id="5nAf6Lxmbvv" role="25WWJ7">
+                        <ref role="2Gs0qQ" node="4xah2hlIR4v" resolve="newVariable" />
                       </node>
                     </node>
                   </node>
@@ -13357,9 +13354,12 @@
                         <node concept="3uibUv" id="7f0kPyFVhqr" role="1tU5fm">
                           <ref role="3uigEE" node="7f0kPyFPADo" resolve="SubstituteBuildersMigrationHelper" />
                         </node>
-                        <node concept="2ShNRf" id="7f0kPyFVhqu" role="33vP2m">
-                          <node concept="HV5vD" id="7f0kPyFVhqv" role="2ShVmc">
-                            <ref role="HV5vE" node="7f0kPyFPADo" resolve="SubstituteBuildersMigrationHelper" />
+                        <node concept="2ShNRf" id="5nAf6LxmIUN" role="33vP2m">
+                          <node concept="1pGfFk" id="5nAf6LxmSug" role="2ShVmc">
+                            <ref role="37wK5l" node="4xah2hlI6Hg" resolve="SubstituteBuildersMigrationHelper" />
+                            <node concept="2GrUjf" id="5nAf6LxmSFe" role="37wK5m">
+                              <ref role="2Gs0qQ" node="7f0kPyFVwmJ" resolve="builder" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -13928,19 +13928,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="7f0kPyFPgA4" role="3clF47">
-        <node concept="3cpWs8" id="7f0kPyFPgAN" role="3cqZAp">
-          <node concept="3cpWsn" id="7f0kPyFPgAO" role="3cpWs9">
-            <property role="TrG5h" value="helper" />
-            <node concept="3uibUv" id="7f0kPyFQnFs" role="1tU5fm">
-              <ref role="3uigEE" node="7f0kPyFPADo" resolve="SubstituteBuildersMigrationHelper" />
-            </node>
-            <node concept="2ShNRf" id="7f0kPyFPgAQ" role="33vP2m">
-              <node concept="HV5vD" id="7f0kPyFQciQ" role="2ShVmc">
-                <ref role="HV5vE" node="7f0kPyFPADo" resolve="SubstituteBuildersMigrationHelper" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="7f0kPyFR7y5" role="3cqZAp">
           <node concept="3cpWsn" id="7f0kPyFR7y6" role="3cpWs9">
             <property role="TrG5h" value="result" />
@@ -13968,6 +13955,22 @@
             <ref role="3cqZAo" node="7f0kPyFPg_Z" resolve="builders" />
           </node>
           <node concept="3clFbS" id="7f0kPyFPgAV" role="2LFqv$">
+            <node concept="3cpWs8" id="7f0kPyFPgAN" role="3cqZAp">
+              <node concept="3cpWsn" id="7f0kPyFPgAO" role="3cpWs9">
+                <property role="TrG5h" value="helper" />
+                <node concept="3uibUv" id="7f0kPyFQnFs" role="1tU5fm">
+                  <ref role="3uigEE" node="7f0kPyFPADo" resolve="SubstituteBuildersMigrationHelper" />
+                </node>
+                <node concept="2ShNRf" id="5nAf6Lxn54n" role="33vP2m">
+                  <node concept="1pGfFk" id="5nAf6Lxn5xr" role="2ShVmc">
+                    <ref role="37wK5l" node="4xah2hlI6Hg" resolve="SubstituteBuildersMigrationHelper" />
+                    <node concept="2GrUjf" id="5nAf6Lxn5Gn" role="37wK5m">
+                      <ref role="2Gs0qQ" node="7f0kPyFPgAT" resolve="builder" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs8" id="7f0kPyFPgAW" role="3cqZAp">
               <node concept="3cpWsn" id="7f0kPyFPgAX" role="3cpWs9">
                 <property role="TrG5h" value="parts" />
@@ -13977,9 +13980,6 @@
                   </node>
                   <node concept="liA8E" id="7f0kPyFQo9g" role="2OqNvi">
                     <ref role="37wK5l" node="7f0kPyFPADp" resolve="createMenuParts" />
-                    <node concept="2GrUjf" id="7f0kPyFQqwH" role="37wK5m">
-                      <ref role="2Gs0qQ" node="7f0kPyFPgAT" resolve="builder" />
-                    </node>
                   </node>
                 </node>
                 <node concept="3uibUv" id="7f0kPyFPgB2" role="1tU5fm">

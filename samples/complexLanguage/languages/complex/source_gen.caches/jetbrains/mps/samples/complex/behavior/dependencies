@@ -1,3 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot />
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.samples.complex.behavior.AbsExpression_BehaviorDescriptor" file="AbsExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.complex.behavior.ArgExpression_BehaviorDescriptor" file="ArgExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.complex.behavior.ComplexType_BehaviorDescriptor" file="ComplexType_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.complex.behavior.ConjugateComplexExpression_BehaviorDescriptor" file="ConjugateComplexExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.complex.behavior.DegreeComplexExpression_BehaviorDescriptor" file="DegreeComplexExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.complex.behavior.ImExpression_BehaviorDescriptor" file="ImExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.complex.behavior.ImaginaryUnit_BehaviorDescriptor" file="ImaginaryUnit_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.complex.behavior.ReExpression_BehaviorDescriptor" file="ReExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.complex.behavior.SingleComplexExpression_BehaviorDescriptor" file="SingleComplexExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+</dependenciesRoot>
 

@@ -303,9 +303,8 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     SNode section = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, "jetbrains.mps.lang.editor.structure.TransformationMenuSection"));
     ListSequence.fromList(SLinkOperations.getChildren(section, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbdL, "locations"))).addElement(location);
     ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, 0x16be955f384efffcL, "sections"))).addElement(section);
-    SideTransformBuildersMigrationHelper helper = new SideTransformBuildersMigrationHelper();
     for (SNode builder : Sequence.fromIterable(filteredBuilders)) {
-      List<SNode> parts = helper.createMenuParts(builder);
+      List<SNode> parts = new SideTransformBuildersMigrationHelper(builder).createMenuParts();
       ListSequence.fromList(SLinkOperations.getChildren(section, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbfL, "parts"))).addSequence(ListSequence.fromList(parts));
     }
   }

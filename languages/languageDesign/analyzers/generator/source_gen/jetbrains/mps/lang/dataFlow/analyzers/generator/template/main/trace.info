@@ -18,11 +18,11 @@
     <file name="QueriesGenerated.java">
       <node id="3364696741418295389" at="160,109,161,340" concept="4" />
       <node id="3364696741418295374" at="262,108,263,193" concept="4" />
-      <node id="4114958853125551770" at="265,108,266,187" concept="4" />
+      <node id="8695274341979439471" at="265,108,266,187" concept="4" />
       <node id="3364696741418295382" at="354,120,355,195" concept="4" />
       <scope id="3364696741418295388" at="160,109,161,340" />
       <scope id="3364696741418295373" at="262,108,263,193" />
-      <scope id="4114958853125551769" at="265,108,266,187" />
+      <scope id="8695274341979431418" at="265,108,266,187" />
       <scope id="3364696741418295381" at="354,120,355,195" />
     </file>
   </root>
@@ -56,40 +56,6 @@
       <scope id="3727642986273964968" at="298,108,301,21">
         <var name="reference" id="3727642986273964970" />
       </scope>
-    </file>
-  </root>
-  <root nodeRef="r:a906d1cd-0886-4e6d-bb7e-484119b7a54f(jetbrains.mps.lang.dataFlow.analyzers.generator.template.main@generator)/4114958853125535794">
-    <file name="QueriesGenerated.java">
-      <node id="4114958853129181967" at="371,50,372,379" concept="4" />
-      <node id="5822764508148178666" at="375,48,376,42" concept="4" />
-      <node id="4114958853129191135" at="386,74,387,51" concept="4" />
-      <node id="4114958853129184237" at="389,76,390,51" concept="4" />
-      <node id="4114958853129180601" at="371,0,374,0" concept="2" trace="accept#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-      <node id="5822764508148176367" at="375,0,378,0" concept="2" trace="select#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4114958853129191135" at="386,0,389,0" concept="5" trace="neq_x583g4_a0a0a0a0a0a0a0de#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="4114958853129184237" at="389,0,392,0" concept="5" trace="neq_x583g4_a0a0a0a0a0a0a0de_0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="4114958853128222265" at="369,120,378,7" concept="4" />
-      <scope id="4114958853129180602" at="371,50,372,379" />
-      <scope id="5822764508148176368" at="375,48,376,42" />
-      <scope id="4114958853129191135" at="386,74,387,51" />
-      <scope id="4114958853129184237" at="389,76,390,51" />
-      <scope id="4114958853129180601" at="371,0,374,0">
-        <var name="it" id="4114958853129180601" />
-      </scope>
-      <scope id="5822764508148176367" at="375,0,378,0">
-        <var name="it" id="5822764508148176367" />
-      </scope>
-      <scope id="4114958853129191135" at="386,0,389,0">
-        <var name="a" id="4114958853129191135" />
-        <var name="b" id="4114958853129191135" />
-      </scope>
-      <scope id="4114958853129184237" at="389,0,392,0">
-        <var name="a" id="4114958853129184237" />
-        <var name="b" id="4114958853129184237" />
-      </scope>
-      <scope id="4114958853125548283" at="369,120,378,7" />
-      <unit id="4114958853129180601" at="370,137,374,5" name="jetbrains.mps.lang.dataFlow.analyzers.generator.template.main.QueriesGenerated$1" />
-      <unit id="5822764508148176367" at="374,18,378,5" name="jetbrains.mps.lang.dataFlow.analyzers.generator.template.main.QueriesGenerated$2" />
     </file>
   </root>
   <root nodeRef="r:a906d1cd-0886-4e6d-bb7e-484119b7a54f(jetbrains.mps.lang.dataFlow.analyzers.generator.template.main@generator)/4413230749907802506">
@@ -264,6 +230,40 @@
       <scope id="1420906503568700592" at="157,109,158,517" />
       <scope id="3712979728669095239" at="187,94,188,574" />
       <scope id="1420906503568700578" at="351,120,352,362" />
+    </file>
+  </root>
+  <root nodeRef="r:a906d1cd-0886-4e6d-bb7e-484119b7a54f(jetbrains.mps.lang.dataFlow.analyzers.generator.template.main@generator)/8695274341979450680">
+    <file name="QueriesGenerated.java">
+      <node id="8695274341979451460" at="371,50,372,379" concept="4" />
+      <node id="8695274341979451473" at="375,48,376,42" concept="4" />
+      <node id="8695274341979451462" at="386,74,387,51" concept="4" />
+      <node id="8695274341979451465" at="389,76,390,51" concept="4" />
+      <node id="8695274341979451458" at="371,0,374,0" concept="2" trace="accept#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <node id="8695274341979451471" at="375,0,378,0" concept="2" trace="select#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8695274341979451462" at="386,0,389,0" concept="5" trace="neq_x583g4_a0a0a0a0a0a0a0de#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="8695274341979451465" at="389,0,392,0" concept="5" trace="neq_x583g4_a0a0a0a0a0a0a0de_0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="8695274341979451448" at="369,120,378,7" concept="4" />
+      <scope id="8695274341979451459" at="371,50,372,379" />
+      <scope id="8695274341979451472" at="375,48,376,42" />
+      <scope id="8695274341979451462" at="386,74,387,51" />
+      <scope id="8695274341979451465" at="389,76,390,51" />
+      <scope id="8695274341979451458" at="371,0,374,0">
+        <var name="it" id="8695274341979451458" />
+      </scope>
+      <scope id="8695274341979451471" at="375,0,378,0">
+        <var name="it" id="8695274341979451471" />
+      </scope>
+      <scope id="8695274341979451462" at="386,0,389,0">
+        <var name="a" id="8695274341979451462" />
+        <var name="b" id="8695274341979451462" />
+      </scope>
+      <scope id="8695274341979451465" at="389,0,392,0">
+        <var name="a" id="8695274341979451465" />
+        <var name="b" id="8695274341979451465" />
+      </scope>
+      <scope id="8695274341979451447" at="369,120,378,7" />
+      <unit id="8695274341979451458" at="370,137,374,5" name="jetbrains.mps.lang.dataFlow.analyzers.generator.template.main.QueriesGenerated$1" />
+      <unit id="8695274341979451471" at="374,18,378,5" name="jetbrains.mps.lang.dataFlow.analyzers.generator.template.main.QueriesGenerated$2" />
     </file>
   </root>
   <root nodeRef="r:a906d1cd-0886-4e6d-bb7e-484119b7a54f(jetbrains.mps.lang.dataFlow.analyzers.generator.template.main@generator)/9177062368042328055">

@@ -11,6 +11,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class ActionMigrationHelper {
   public static boolean isDefinedInLanguage(SNode concept, Language language) {
@@ -41,5 +45,13 @@ public class ActionMigrationHelper {
     SLinkOperations.setTarget(expressionStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"), expression);
     return expressionStatement;
   }
+  public static void replace(SNode result, SAbstractConcept conceptToReplace, final SAbstractConcept conceptToReplaceOnto) {
+    ListSequence.fromList(SNodeOperations.getNodeDescendants(result, SNodeOperations.asSConcept(conceptToReplace), false, new SAbstractConcept[]{})).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        SNodeOperations.replaceWithAnother(it, SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(conceptToReplaceOnto)));
+      }
+    });
+  }
+
 
 }

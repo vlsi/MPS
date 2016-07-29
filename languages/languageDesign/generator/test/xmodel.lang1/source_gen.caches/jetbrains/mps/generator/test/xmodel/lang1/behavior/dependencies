@@ -1,3 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot />
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.generator.test.xmodel.lang1.behavior.Bean_BehaviorDescriptor" file="Bean_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.generator.test.xmodel.lang1.behavior.Operation_BehaviorDescriptor" file="Operation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.generator.test.xmodel.lang1.behavior.Property_BehaviorDescriptor" file="Property_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+</dependenciesRoot>
 

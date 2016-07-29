@@ -262,7 +262,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_3364696741418295372(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, 0x27b1f33dd958ca0L, "nodeToCheck"));
   }
-  public static SNode sourceNodeQuery_4114958853125551768(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_8695274341979431417(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, 0x2eb1cddc01267d7aL, "mode"));
   }
   public static SNode sourceNodeQuery_7985661997283753112(final SourceSubstituteMacroNodeContext _context) {
@@ -366,7 +366,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_5034669639901741787(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, 0x376a4d52f8d10dc6L, "parameters"));
   }
-  public static Iterable<SNode> sourceNodesQuery_4114958853125548282(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_8695274341979451446(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SConceptOperations.getAllSuperConcepts(SNodeOperations.getConcept(_context.getNode()), true)).where(new IWhereFilter<SAbstractConcept>() {
       public boolean accept(SAbstractConcept it) {
         return neq_x583g4_a0a0a0a0a0a0a0de_0(it, MetaAdapterFactory.getInterfaceConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x6e8db6877fc9fed4L, "jetbrains.mps.lang.dataFlow.structure.IBuilderMode")) && neq_x583g4_a0a0a0a0a0a0a0de(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));

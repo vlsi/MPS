@@ -1,3 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot />
+<dependenciesRoot>
+  <dependency className="testMoveElements.behavior.DummyBlock_BehaviorDescriptor" file="DummyBlock_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="testMoveElements.behavior.ManyStatementsContainer_BehaviorDescriptor" file="ManyStatementsContainer_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="testMoveElements.behavior.ManyStatements_BehaviorDescriptor" file="ManyStatements_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+</dependenciesRoot>
 

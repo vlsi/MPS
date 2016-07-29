@@ -133,6 +133,10 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
             return node;
           }
           @Override
+          public String getDescriptionText(String pattern) {
+            return "";
+          }
+          @Override
           public String getMatchingText(String pattern) {
             return myParameterObject;
           }
