@@ -389,7 +389,7 @@
         <property role="3F0ifm" value="node holder&lt;" />
       </node>
       <node concept="3F1sOY" id="4CpFf$TvO_D" role="3EZMnx">
-        <ref role="1NtTu8" to="wtc3:4CpFf$TvO_9" />
+        <ref role="1NtTu8" to="wtc3:4CpFf$TvO_9" resolve="node" />
       </node>
       <node concept="3F0ifn" id="4CpFf$TvWoF" role="3EZMnx">
         <property role="3F0ifm" value="&gt;" />
@@ -651,6 +651,31 @@
       </node>
       <node concept="ZR7TO" id="4yPLZV9qC8O" role="1Qtc8$" />
     </node>
+  </node>
+  <node concept="IW6AY" id="6zfximEX6Wn">
+    <property role="3GE5qa" value="LookupWithLocations" />
+    <ref role="aqKnT" to="wtc3:6zfximEX6Tb" resolve="BaseWithNonEmptyMenu" />
+    <node concept="1Qtc8_" id="6zfximEX6Wo" role="IW6Ez">
+      <node concept="ZR7TO" id="6zfximEX7r0" role="1Qtc8$" />
+      <node concept="IWgqT" id="6zfximEX7ra" role="1Qtc8A">
+        <node concept="1hCUdq" id="6zfximEX7rc" role="1hCUd6">
+          <node concept="3clFbS" id="6zfximEX7re" role="2VODD2">
+            <node concept="3clFbF" id="6zfximEX7zR" role="3cqZAp">
+              <node concept="Xl_RD" id="6zfximEX7zQ" role="3clFbG">
+                <property role="Xl_RC" value="action from base menu" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="IWg2L" id="6zfximEX7rg" role="IWgqQ">
+          <node concept="3clFbS" id="6zfximEX7ri" role="2VODD2" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="IW6AY" id="6zfximEX7XQ">
+    <property role="3GE5qa" value="LookupWithLocations" />
+    <ref role="aqKnT" to="wtc3:6zfximEX6Tc" resolve="DerivedWithEmptyMenu" />
   </node>
 </model>
 

@@ -507,5 +507,31 @@
       <unit id="6869361321631669289" at="12,0,33,0" name="jetbrains.mps.lang.editor.menus.tests.ContributionScopes_Test" />
     </file>
   </root>
+  <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/7552401496952053104">
+    <file name="ActionLookup_SubconceptDefinesAMenuWithoutSuperconceptsLocation_Test.java">
+      <node id="7552401496952053104" at="19,103,20,115" concept="1" />
+      <node id="7552401496952053104" at="20,115,21,152" concept="1" />
+      <node id="7552401496952053104" at="27,51,28,53" concept="1" />
+      <node id="7552401496952061544" at="28,53,29,115" concept="3" />
+      <node id="7552401496952103120" at="31,58,32,112" concept="4" />
+      <node id="7552401496952102643" at="31,0,34,0" concept="2" trace="accept#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;)Z" />
+      <node id="7552401496952053104" at="18,0,23,0" concept="2" trace="test_ActionLookup_SubconceptDefinesAMenuWithoutSuperconceptsLocation#()V" />
+      <node id="7552401496952063628" at="29,115,34,10" concept="1" />
+      <node id="7552401496952053104" at="26,0,36,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7552401496952102644" at="31,58,32,112" />
+      <scope id="7552401496952053104" at="19,103,21,152" />
+      <scope id="7552401496952102643" at="31,0,34,0">
+        <var name="it" id="7552401496952102643" />
+      </scope>
+      <scope id="7552401496952053104" at="18,0,23,0" />
+      <scope id="7552401496952053104" at="27,51,34,10">
+        <var name="items" id="7552401496952061545" />
+      </scope>
+      <scope id="7552401496952053104" at="26,0,36,0" />
+      <unit id="7552401496952102643" at="30,109,34,7" name="jetbrains.mps.lang.editor.menus.tests.ActionLookup_SubconceptDefinesAMenuWithoutSuperconceptsLocation_Test$1" />
+      <unit id="7552401496952053104" at="24,0,37,0" name="jetbrains.mps.lang.editor.menus.tests.ActionLookup_SubconceptDefinesAMenuWithoutSuperconceptsLocation_Test$TestBody" />
+      <unit id="7552401496952053104" at="16,0,38,0" name="jetbrains.mps.lang.editor.menus.tests.ActionLookup_SubconceptDefinesAMenuWithoutSuperconceptsLocation_Test" />
+    </file>
+  </root>
 </debug-info>
 
