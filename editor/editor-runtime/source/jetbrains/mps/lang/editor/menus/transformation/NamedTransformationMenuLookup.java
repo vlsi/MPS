@@ -44,4 +44,9 @@ public class NamedTransformationMenuLookup extends NamedMenuLookup<Transformatio
   protected Collection<TransformationMenu> getForAspectDescriptor(EditorAspectDescriptor aspectDescriptor, @NotNull Collection<SLanguage> usedLanguages) {
     return aspectDescriptor.getNamedTransformationMenus(getId(), usedLanguages);
   }
+
+  @Override
+  public TransformationMenu createImplicitMenu() {
+    return new ImplicitTransformationMenu(getId().getConcept());
+  }
 }

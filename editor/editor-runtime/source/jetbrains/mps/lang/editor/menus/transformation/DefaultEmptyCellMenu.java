@@ -19,6 +19,7 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -37,6 +38,7 @@ public class DefaultEmptyCellMenu extends TransformationMenuBase {
     myLink = link;
   }
 
+  @NotNull
   @Override
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext context) {
     if (context.getMenuLocation().equals(MenuLocations.SUBSTITUTE)) {
@@ -58,5 +60,10 @@ public class DefaultEmptyCellMenu extends TransformationMenuBase {
       });
     }
     return new ArrayList<>();
+  }
+
+  @Override
+  public boolean isApplicableToLocation(@NotNull String location) {
+    return location.equals(MenuLocations.SUBSTITUTE);
   }
 }

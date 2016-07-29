@@ -33,6 +33,7 @@
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="tpc5" ref="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)" />
     <import index="9anm" ref="r:6f374023-1b4e-4a80-8bf6-2cc3148faa52(jetbrains.mps.lang.editor.plugin)" />
+    <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
@@ -326,6 +327,7 @@
         <child id="1145567471833" name="createdType" index="2T96Bj" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="6995935425733782641" name="jetbrains.mps.lang.smodel.structure.Model_GetModule" flags="nn" index="13u695" />
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
         <reference id="3562215692195600259" name="link" index="13MTZf" />
       </concept>
@@ -5427,6 +5429,105 @@
     <node concept="1YaCAy" id="7Bgcg3wk9Z0" role="1YuTPh">
       <property role="TrG5h" value="part" />
       <ref role="1YaFvo" to="tpc2:6DRYsxO8ara" resolve="TransformationMenuPart_IncludeSubstituteMenu" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="7$8NXlZpdna">
+    <property role="3GE5qa" value="Menu" />
+    <property role="TrG5h" value="check_ContributionIsNotInConceptLanguage" />
+    <node concept="3clFbS" id="7$8NXlZpdnb" role="18ibNy">
+      <node concept="3cpWs8" id="7$8NXlZpevK" role="3cqZAp">
+        <node concept="3cpWsn" id="7$8NXlZpevL" role="3cpWs9">
+          <property role="TrG5h" value="applicableConcept" />
+          <node concept="3Tqbb2" id="7$8NXlZpevJ" role="1tU5fm">
+            <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+          </node>
+          <node concept="2OqwBi" id="7$8NXlZpevM" role="33vP2m">
+            <node concept="1YBJjd" id="7$8NXlZpevN" role="2Oq$k0">
+              <ref role="1YBMHb" node="7$8NXlZpe8u" resolve="contribution" />
+            </node>
+            <node concept="2qgKlT" id="7$8NXlZpevO" role="2OqNvi">
+              <ref role="37wK5l" to="tpcb:1quYWAD18xk" resolve="getApplicableConcept" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="7$8NXlZpfLc" role="3cqZAp">
+        <node concept="3clFbS" id="7$8NXlZpfLe" role="3clFbx">
+          <node concept="3cpWs6" id="7$8NXlZpfU5" role="3cqZAp" />
+        </node>
+        <node concept="2OqwBi" id="7$8NXlZpg1W" role="3clFbw">
+          <node concept="37vLTw" id="7$8NXlZpfM8" role="2Oq$k0">
+            <ref role="3cqZAo" node="7$8NXlZpevL" resolve="applicableConcept" />
+          </node>
+          <node concept="3w_OXm" id="7$8NXlZpgVl" role="2OqNvi" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="7$8NXlZpjx7" role="3cqZAp">
+        <node concept="3cpWsn" id="7$8NXlZpjx8" role="3cpWs9">
+          <property role="TrG5h" value="conceptModule" />
+          <node concept="3Tqbb2" id="7$8NXlZpjx0" role="1tU5fm">
+            <ref role="ehGHo" to="hypd:5xDtKQA7vSu" resolve="Module" />
+          </node>
+          <node concept="2EnYce" id="7$8NXlZpjI9" role="33vP2m">
+            <node concept="2OqwBi" id="7$8NXlZpjxa" role="2Oq$k0">
+              <node concept="37vLTw" id="7$8NXlZpjxb" role="2Oq$k0">
+                <ref role="3cqZAo" node="7$8NXlZpevL" resolve="applicableConcept" />
+              </node>
+              <node concept="I4A8Y" id="7$8NXlZpjxc" role="2OqNvi" />
+            </node>
+            <node concept="13u695" id="7$8NXlZpjxd" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+      <node concept="3cpWs8" id="7$8NXlZpk3L" role="3cqZAp">
+        <node concept="3cpWsn" id="7$8NXlZpk3M" role="3cpWs9">
+          <property role="TrG5h" value="contributionModule" />
+          <node concept="3Tqbb2" id="7$8NXlZpk3H" role="1tU5fm">
+            <ref role="ehGHo" to="hypd:5xDtKQA7vSu" resolve="Module" />
+          </node>
+          <node concept="2EnYce" id="7$8NXlZpko3" role="33vP2m">
+            <node concept="2OqwBi" id="7$8NXlZpk3O" role="2Oq$k0">
+              <node concept="1YBJjd" id="7$8NXlZpk3P" role="2Oq$k0">
+                <ref role="1YBMHb" node="7$8NXlZpe8u" resolve="contribution" />
+              </node>
+              <node concept="I4A8Y" id="7$8NXlZpk3Q" role="2OqNvi" />
+            </node>
+            <node concept="13u695" id="7$8NXlZpk3R" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="7$8NXlZpeDx" role="3cqZAp">
+        <node concept="3clFbS" id="7$8NXlZpeDz" role="3clFbx">
+          <node concept="2MkqsV" id="7$8NXlZphPA" role="3cqZAp">
+            <node concept="Xl_RD" id="7$8NXlZphPP" role="2MkJ7o">
+              <property role="Xl_RC" value="Contribution to a menu must not be defined in the same language as the menu" />
+            </node>
+            <node concept="1YBJjd" id="7$8NXlZphRr" role="2OEOjV">
+              <ref role="1YBMHb" node="7$8NXlZpe8u" resolve="contribution" />
+            </node>
+          </node>
+        </node>
+        <node concept="1Wc70l" id="7$8NXlZpkKx" role="3clFbw">
+          <node concept="2OqwBi" id="7$8NXlZpl6L" role="3uHU7B">
+            <node concept="37vLTw" id="7$8NXlZpkRY" role="2Oq$k0">
+              <ref role="3cqZAo" node="7$8NXlZpjx8" resolve="conceptModule" />
+            </node>
+            <node concept="3x8VRR" id="7$8NXlZpmbA" role="2OqNvi" />
+          </node>
+          <node concept="3clFbC" id="7$8NXlZpfEf" role="3uHU7w">
+            <node concept="37vLTw" id="7$8NXlZpk3S" role="3uHU7w">
+              <ref role="3cqZAo" node="7$8NXlZpk3M" resolve="contributionModule" />
+            </node>
+            <node concept="37vLTw" id="7$8NXlZpjxe" role="3uHU7B">
+              <ref role="3cqZAo" node="7$8NXlZpjx8" resolve="conceptModule" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="7$8NXlZpe8u" role="1YuTPh">
+      <property role="TrG5h" value="contribution" />
+      <ref role="1YaFvo" to="tpc2:1quYWAD2_Py" resolve="IMenu_Contribution" />
     </node>
   </node>
 </model>

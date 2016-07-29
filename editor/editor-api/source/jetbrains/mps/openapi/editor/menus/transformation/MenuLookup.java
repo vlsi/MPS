@@ -26,5 +26,8 @@ import java.util.Collection;
  * Looks up a collection of menus. Must implement {@code equals()} and {@code hashCode()} (used for cycle detection).
  */
 public interface MenuLookup<T extends Menu> {
+  @NotNull
   Collection<T> lookup(@NotNull Collection<SLanguage> usedLanguages);
+
+  T createImplicitMenu();
 }

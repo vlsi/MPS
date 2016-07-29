@@ -16,8 +16,10 @@
 package jetbrains.mps.nodeEditor.menus.substitute;
 
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
-import jetbrains.mps.nodeEditor.menus.CircularReferenceSafeMenuItemFactory;
+import jetbrains.mps.nodeEditor.menus.DefaultMenuItemFactory;
+import jetbrains.mps.nodeEditor.menus.MenuItemFactory;
 import jetbrains.mps.nodeEditor.menus.MenuUtil;
+import jetbrains.mps.nodeEditor.menus.RecursionSafeMenuItemFactory;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
@@ -42,8 +44,9 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   private SContainmentLink myContainmentLink;
   private SNode myParentNode;
   private SNode myCurrentChild;
-  private CircularReferenceSafeMenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenu> myMenuItemFactory;
-  private DefaultSubstituteMenuContext(CircularReferenceSafeMenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenu> menuItemFactory, SContainmentLink containmentLink, SNode parentNode,
+  private MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenu> myMenuItemFactory;
+
+  private DefaultSubstituteMenuContext(MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenu> menuItemFactory, SContainmentLink containmentLink, SNode parentNode,
       SNode currentChild, EditorContext editorContext) {
     myMenuItemFactory = menuItemFactory;
     myContainmentLink = containmentLink;
@@ -95,7 +98,8 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   @NotNull
   public static DefaultSubstituteMenuContext createInitialContextForNode(SContainmentLink containmentLink, SNode parentNode,
       SNode currentChild, EditorContext editorContext) {
-    return new DefaultSubstituteMenuContext(new CircularReferenceSafeMenuItemFactory<>(MenuUtil.getUsedLanguages(parentNode)), containmentLink, parentNode, currentChild, editorContext);
+    return new DefaultSubstituteMenuContext(new RecursionSafeMenuItemFactory<>(new DefaultMenuItemFactory<>(MenuUtil.getUsedLanguages(parentNode))),
+        containmentLink, parentNode, currentChild, editorContext);
   }
   @Override
   public int hashCode() {

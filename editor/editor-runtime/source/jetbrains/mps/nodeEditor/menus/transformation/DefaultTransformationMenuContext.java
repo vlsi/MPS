@@ -16,8 +16,10 @@
 package jetbrains.mps.nodeEditor.menus.transformation;
 
 import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
-import jetbrains.mps.nodeEditor.menus.CircularReferenceSafeMenuItemFactory;
+import jetbrains.mps.nodeEditor.menus.DefaultMenuItemFactory;
+import jetbrains.mps.nodeEditor.menus.MenuItemFactory;
 import jetbrains.mps.nodeEditor.menus.MenuUtil;
+import jetbrains.mps.nodeEditor.menus.RecursionSafeMenuItemFactory;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
@@ -34,11 +36,11 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * A default implementation of {@link TransformationMenuContext}. Uses {@link CircularReferenceSafeMenuItemFactory} to protect against endless recursion.
+ * A default implementation of {@link TransformationMenuContext}. Uses {@link DefaultMenuItemFactory} to protect against endless recursion.
  */
 public class DefaultTransformationMenuContext implements TransformationMenuContext {
   @NotNull
-  private final CircularReferenceSafeMenuItemFactory<TransformationMenuItem, TransformationMenuContext, TransformationMenu> myMenuItemFactory;
+  private final MenuItemFactory<TransformationMenuItem, TransformationMenuContext, TransformationMenu> myMenuItemFactory;
   @NotNull
   private final String myMenuLocation;
   @NotNull
@@ -58,12 +60,13 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
 
   @NotNull
   public static DefaultTransformationMenuContext createInitialContextForNode(EditorContext editorContext, SNode node, @NotNull String menuLocation) {
-    return new DefaultTransformationMenuContext(new CircularReferenceSafeMenuItemFactory<>(MenuUtil.getUsedLanguages(node)), menuLocation, editorContext,
-        node);
+    return new DefaultTransformationMenuContext(
+        new RecursionSafeMenuItemFactory<>(new TransformationMenuItemFactory(MenuUtil.getUsedLanguages(node))),
+        menuLocation, editorContext, node);
   }
 
   private DefaultTransformationMenuContext(
-      @NotNull CircularReferenceSafeMenuItemFactory<TransformationMenuItem, TransformationMenuContext, TransformationMenu> menuItemFactory,
+      @NotNull MenuItemFactory<TransformationMenuItem, TransformationMenuContext, TransformationMenu> menuItemFactory,
       @NotNull String menuLocation,
       @NotNull EditorContext editorContext, @NotNull SNode node) {
     myMenuItemFactory = menuItemFactory;

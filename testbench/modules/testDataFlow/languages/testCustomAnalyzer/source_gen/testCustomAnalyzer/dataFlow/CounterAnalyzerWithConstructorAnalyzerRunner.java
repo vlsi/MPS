@@ -6,6 +6,7 @@ import jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.dataFlow.MPSProgramFactory;
 import java.util.Collections;
+import jetbrains.mps.lang.dataFlow.framework.IDataFlowModeId;
 import jetbrains.mps.lang.dataFlow.framework.ProgramFactory;
 import jetbrains.mps.lang.dataFlow.framework.NamedAnalyzerId;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzerBase;
@@ -19,7 +20,7 @@ import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
 public class CounterAnalyzerWithConstructorAnalyzerRunner extends CustomAnalyzerRunner<Integer> {
   private SNode myNode;
   public CounterAnalyzerWithConstructorAnalyzerRunner(SNode node, int initialCounter) {
-    this(node, new MPSProgramFactory(Collections.emptyList()), initialCounter);
+    this(node, new MPSProgramFactory(Collections.<IDataFlowModeId>emptyList()), initialCounter);
   }
   public CounterAnalyzerWithConstructorAnalyzerRunner(SNode node, ProgramFactory<NamedAnalyzerId> factory, int initialCounter) {
     super(null, null);

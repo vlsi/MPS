@@ -5681,7 +5681,7 @@
     <property role="EcuMT" value="2857509971901907635" />
     <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
     <property role="TrG5h" value="QueryFunction_SubstituteMenu_Concepts" />
-    <ref role="1TJDcQ" node="5EbKzCm8o62" resolve="QueryFunction_SubstituteMenuPart" />
+    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
   </node>
   <node concept="1TIwiD" id="7gIXFjgNa3h">
     <property role="EcuMT" value="8371900013785948369" />
@@ -5822,6 +5822,9 @@
     </node>
     <node concept="PrWs8" id="3rSzFHWOfw7" role="PzmwI">
       <ref role="PrY4T" node="3rSzFHWOd_m" resolve="IIncludeSubstituteMenuPart" />
+    </node>
+    <node concept="PrWs8" id="6HFUSydwlkd" role="PzmwI">
+      <ref role="PrY4T" node="7mC_uHFNIAt" resolve="IExtensibleSubstituteMenuPart" />
     </node>
   </node>
   <node concept="1TIwiD" id="n0c53aH5hG">
@@ -6068,6 +6071,14 @@
     <property role="TrG5h" value="QueryFunction_SubstituteMenuPart" />
     <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
   </node>
+  <node concept="1TIwiD" id="1MWbOI3$5oV">
+    <property role="3GE5qa" value="Menu.Transformation.SideTransform" />
+    <property role="TrG5h" value="QueryFunction_TransformationMenu_Icon" />
+    <property role="34LRSv" value="query" />
+    <property role="EcuMT" value="2070581930059912763" />
+    <property role="R4oN_" value="a block of code" />
+    <ref role="1TJDcQ" node="6kJcyCQ_LoK" resolve="QueryFunction_TransformationMenu_Extensible" />
+  </node>
   <node concept="1TIwiD" id="8PFTpqtF0Z">
     <property role="EcuMT" value="159226422139203647" />
     <property role="3GE5qa" value="SNode.select" />
@@ -6127,14 +6138,6 @@
     <node concept="PrWs8" id="6$Nf2sMl38F" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="1MWbOI3$5oV">
-    <property role="3GE5qa" value="Menu.Transformation.SideTransform" />
-    <property role="TrG5h" value="QueryFunction_TransformationMenu_Icon" />
-    <property role="34LRSv" value="query" />
-    <property role="EcuMT" value="2070581930059912763" />
-    <property role="R4oN_" value="a block of code" />
-    <ref role="1TJDcQ" node="6kJcyCQ_LoK" resolve="QueryFunction_TransformationMenu_Extensible" />
   </node>
 </model>
 

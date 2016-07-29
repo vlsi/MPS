@@ -37,10 +37,10 @@ public abstract class WrapperSubstituteMenuPart implements SubstituteMenuPart {
   @Override
   public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
     List<SubstituteMenuItem> itemsToWrap = context.createItems(getLookup(context));
-    return itemsToWrap.stream().map(this::wrapItem).collect(Collectors.toList());
+    return itemsToWrap.stream().map(item -> wrapItem(item, context)).collect(Collectors.toList());
   }
 
   protected abstract MenuLookup<SubstituteMenu> getLookup(SubstituteMenuContext context);
 
-  protected abstract SubstituteMenuItem wrapItem(SubstituteMenuItem itemToWrap);
+  protected abstract SubstituteMenuItem wrapItem(final SubstituteMenuItem itemToWrap, final SubstituteMenuContext context);
 }

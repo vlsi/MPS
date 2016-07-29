@@ -1,0 +1,54 @@
+/*
+ * Copyright 2003-2016 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.nodeEditor.menus;
+
+import jetbrains.mps.openapi.editor.descriptor.Menu;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
+/**
+ * A straightforward implementation of {@link MenuItemFactory}. Looks up the menus and returns items created by each menu, concatenated.
+ */
+public class DefaultMenuItemFactory<ItemT, ContextT, MenuT extends Menu<ItemT, ContextT>> implements MenuItemFactory<ItemT, ContextT, MenuT> {
+  private final Collection<SLanguage> myUsedLanguages;
+
+  public DefaultMenuItemFactory(Collection<SLanguage> usedLanguages) {
+    myUsedLanguages = usedLanguages;
+  }
+
+  @Override
+  @NotNull
+  public List<ItemT> createItems(@NotNull ContextT context, @NotNull MenuLookup<? extends MenuT> menuLookup) {
+    Collection<? extends MenuT> menus = menuLookup.lookup(myUsedLanguages);
+
+    if (menus.isEmpty()) {
+      return Collections.emptyList();
+    }
+
+    List<ItemT> result = new ArrayList<>();
+    for (MenuT menu : menus) {
+      result.addAll(menu.createMenuItems(context));
+    }
+    return result;
+  }
+
+}
