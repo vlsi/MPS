@@ -5246,7 +5246,7 @@
     <node concept="1TJgyj" id="6VAVyI4xoy9" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="outputConcept" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="7991336459489872009" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
@@ -5308,12 +5308,6 @@
     <property role="34LRSv" value="substitute action" />
     <property role="EcuMT" value="7342352913006985483" />
     <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
-    <node concept="1TJgyj" id="7mC_uHFK8vN" role="1TKVEi">
-      <property role="IQ2ns" value="8478191136882591731" />
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="outputConcept" />
-      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-    </node>
     <node concept="1TJgyj" id="7u5_96XhUqi" role="1TKVEi">
       <property role="IQ2ns" value="8612453216082699922" />
       <property role="20lmBu" value="aggregation" />
@@ -5326,6 +5320,9 @@
     </node>
     <node concept="PrWs8" id="7mC_uHFNIAy" role="PzmwI">
       <ref role="PrY4T" node="7mC_uHFNIAt" resolve="IExtensibleSubstituteMenuPart" />
+    </node>
+    <node concept="PrWs8" id="AIV2SducGp" role="PzmwI">
+      <ref role="PrY4T" node="6VAVyI4xoxZ" resolve="IOutputConceptMenuPart" />
     </node>
   </node>
   <node concept="1TIwiD" id="6n_hLaFlw4s">
@@ -5695,8 +5692,12 @@
     <property role="TrG5h" value="SubstituteMenuPart_AddConcept" />
     <property role="34LRSv" value="add concept" />
     <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
-    <node concept="PrWs8" id="n0c53aHDXd" role="PzmwI">
-      <ref role="PrY4T" node="6VAVyI4xoxZ" resolve="IOutputConceptMenuPart" />
+    <node concept="1TJgyj" id="AIV2Sdu1tN" role="1TKVEi">
+      <property role="IQ2ns" value="697754674827630451" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="concept" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="3fw9B$5YUrX">
@@ -5819,6 +5820,9 @@
       <property role="20kJfa" value="reference" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="3rSzFHWLpTi" resolve="ISubstituteMenuReference" />
+    </node>
+    <node concept="PrWs8" id="AIV2SdxeQp" role="PzmwI">
+      <ref role="PrY4T" node="6VAVyI4xoxZ" resolve="IOutputConceptMenuPart" />
     </node>
     <node concept="PrWs8" id="3rSzFHWOfw7" role="PzmwI">
       <ref role="PrY4T" node="3rSzFHWOd_m" resolve="IIncludeSubstituteMenuPart" />

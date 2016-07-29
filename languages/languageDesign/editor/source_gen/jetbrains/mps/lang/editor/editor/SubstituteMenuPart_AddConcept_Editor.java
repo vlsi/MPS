@@ -31,14 +31,14 @@ public class SubstituteMenuPart_AddConcept_Editor extends DefaultNodeEditor {
   }
   private EditorCell createRefCell_d4k5h5_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("outputConcept");
-    provider.setNoTargetText("<no outputConcept>");
+    provider.setRole("concept");
+    provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new SubstituteMenuPart_AddConcept_Editor._Inline_d4k5h5_a1a());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("outputConcept");
+      editorCell.setRole("concept");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -990,7 +990,7 @@
       <property role="20kJfa" value="nodeBuilderVariableDeclaration" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1178541757413" />
-      <ref role="20ksaX" to="tpee:fzcqZ_w" />
+      <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
       <ref role="20lvS9" node="h9At2QK" resolve="SubstituteNodeBuilderVariableDeclaration" />
     </node>
   </node>
@@ -1244,7 +1244,7 @@
       <property role="20kJfa" value="rightTransformVariableDeclaration" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1203348041102" />
-      <ref role="20ksaX" to="tpee:fzcqZ_w" />
+      <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
       <ref role="20lvS9" node="hwH6Al_" resolve="SideTransformVariableDeclaration" />
     </node>
   </node>
