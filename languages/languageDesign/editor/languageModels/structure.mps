@@ -5668,7 +5668,7 @@
     <property role="EcuMT" value="2857509971901907635" />
     <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
     <property role="TrG5h" value="QueryFunction_SubstituteMenu_Concepts" />
-    <ref role="1TJDcQ" node="5EbKzCm8o62" resolve="QueryFunction_SubstituteMenuPart" />
+    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
   </node>
   <node concept="1TIwiD" id="7gIXFjgNa3h">
     <property role="EcuMT" value="8371900013785948369" />

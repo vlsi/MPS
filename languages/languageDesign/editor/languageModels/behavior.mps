@@ -18713,8 +18713,8 @@
       <node concept="3clFbS" id="2uBUyS1mo$w" role="3clF47">
         <node concept="3clFbF" id="3no4VMf52w8" role="3cqZAp">
           <node concept="2c44tf" id="3no4VMf52wa" role="3clFbG">
-            <node concept="_YKpA" id="3no4VMf52wb" role="2c44tc">
-              <node concept="3bZ5Sz" id="3no4VMf52BX" role="_ZDj9" />
+            <node concept="A3Dl8" id="6HFUSydu1_L" role="2c44tc">
+              <node concept="3bZ5Sz" id="6HFUSydu1_N" role="A3Ik2" />
             </node>
           </node>
         </node>
@@ -21031,6 +21031,29 @@
     </node>
     <node concept="13hLZK" id="7$awSNEyl$Q" role="13h7CW">
       <node concept="3clFbS" id="7$awSNEyl$R" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="6HFUSydv3ED">
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
+    <ref role="13h7C2" to="tpc2:hTNCABk" resolve="QueryFunction_SubstituteMenu_ActionType" />
+    <node concept="13hLZK" id="6HFUSydv3EE" role="13h7CW">
+      <node concept="3clFbS" id="6HFUSydv3EF" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="6HFUSydv3EO" role="13h7CS">
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getExpectedReturnType" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:hEwIGRD" resolve="getExpectedReturnType" />
+      <node concept="3Tm1VV" id="6HFUSydv3ES" role="1B3o_S" />
+      <node concept="3clFbS" id="6HFUSydv3EU" role="3clF47">
+        <node concept="3clFbF" id="6HFUSydv3M1" role="3cqZAp">
+          <node concept="2c44tf" id="6HFUSydv3LR" role="3clFbG">
+            <node concept="3Tqbb2" id="6HFUSydv3N7" role="2c44tc" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="6HFUSydv3EV" role="3clF45" />
     </node>
   </node>
 </model>
