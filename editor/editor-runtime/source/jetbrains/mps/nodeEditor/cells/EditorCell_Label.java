@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cells;
 import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.editor.runtime.TextBuilderImpl;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.editor.runtime.cells.CaretState;
 import jetbrains.mps.editor.runtime.commands.EditorComputable;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -59,7 +60,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   protected boolean myNoTextSet;
   protected TextLine myTextLine;
   protected TextLine myNullTextLine;
-  protected boolean myCaretIsVisible = true;
+  private CaretState myCaret = new CaretState();
 
   protected EditorCell_Label(@NotNull jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node, String text) {
     super(editorContext, node);
@@ -112,6 +113,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     if (!selected && !getEditor().selectionStackContains(this)) {
       myTextLine.resetSelection();
     }
+    myCaret.touch(selected);
   }
 
   @Override
@@ -173,7 +175,11 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   public void setCaretPosition(int position, boolean selection) {
     assert isCaretPositionAllowed(position) : "Position " + position + " is not allowed for EditorCell_Label: \"" + myTextLine.getText() + "\"";
+    int x1 = getCaretX();
     myTextLine.setCaretPosition(position, selection);
+    int x2 = getCaretX();
+    myCaret.touch();
+    getEditor().repaint(Math.min(x1, x2) - 1, getY() - 1, Math.abs(x1 - x2) + 2, getHeight() + 2);
     getEditor().getBracesHighlighter().updateBracesSelection(this);
   }
 
@@ -348,7 +354,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   public void switchCaretVisible() {
-    myCaretIsVisible = !myCaretIsVisible;
+    myCaret.tick();
   }
 
   @Override
@@ -364,11 +370,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     textLine.setSelected(selected);
     textLine.setShowCaret(toShowCaret);
     Color cellFontColor = getEditor().getAdditionalCellFontColor(this);
-    if (isDrawBrackets()) {
-      textLine.paint(g, myX + myGapLeft + BRACKET_WIDTH, myY, cellFontColor);
-    } else {
-      textLine.paint(g, myX + myGapLeft, myY, cellFontColor);
-    }
+    textLine.paint(g, getShiftX(), myY, cellFontColor);
   }
 
   @Override
@@ -386,7 +388,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   }
 
   protected boolean toShowCaret() {
-    return myCaretIsVisible && isWithinSelection() && getEditor().isActive();
+    return myCaret.isVisible() && isWithinSelection() && getEditor().isActive();
   }
 
   TextLine getTextLine() {
@@ -426,7 +428,11 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   public int getCaretX() {
-    return myTextLine.getCaretX(myX + myGapLeft);
+    return myTextLine.getCaretX(getShiftX());
+  }
+
+  private int getShiftX() {
+    return isDrawBrackets() ? myX + myGapLeft + BRACKET_WIDTH : myX + myGapLeft;
   }
 
   @Override
