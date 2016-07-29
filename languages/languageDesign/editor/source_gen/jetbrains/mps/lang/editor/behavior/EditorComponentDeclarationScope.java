@@ -14,8 +14,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SDependency;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 
@@ -33,10 +33,9 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__Behavio
     if (model.getModule() instanceof Language) {
       Language language = (Language) model.getModule();
       SetSequence.fromSet(editorModels).addElement(SModuleOperations.getAspect(language, "editor"));
-      for (SModuleReference extendedLangRef : SetSequence.fromSet(language.getExtendedLanguageRefs())) {
-        SModule extendedLang = extendedLangRef.resolve(model.getRepository());
-        if (extendedLang instanceof Language) {
-          SetSequence.fromSet(editorModels).addElement(SModuleOperations.getAspect(extendedLang, "editor"));
+      for (SDependency dep : Sequence.fromIterable(language.getDeclaredDependencies())) {
+        if (dep.getTarget() instanceof Language) {
+          SetSequence.fromSet(editorModels).addElement(SModuleOperations.getAspect(dep.getTarget(), "editor"));
         }
       }
     }
