@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.menus.transformation;
+package jetbrains.mps.nodeEditor.cellMenu;
 
+import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.menus.transformation.CommandPolicy;
+import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.util.PatternUtil;
 import org.apache.log4j.Logger;
@@ -118,7 +121,12 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
   @Override
   public SNode substitute(@Nullable EditorContext context, String pattern) {
     assert myActionItem.getCommandPolicy() == CommandPolicy.COMMAND_REQUIRED : "Cannot execute a substitute action outside of command";
-    myActionItem.execute(pattern);
+    if (context == null) {
+      myActionItem.execute(pattern);
+    } else {
+      context.getRepository().getModelAccess().executeCommand(new EditorCommandAdapter(() -> myActionItem.execute(pattern), context));
+    }
+
     // myActionItem should change selection itself, so return null here
     return null;
   }
