@@ -7,9 +7,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.NamedMenuId;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -27,7 +27,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       switch (switchIndex) {
         case 0:
           if (true) {
-            return Collections.<TransformationMenu>singletonList(new Child_MoreDefaultActions());
+            return Arrays.asList(new TransformationMenu[]{new Child_MoreDefaultActions(), new DefaultMenuContribution(), new Extras(), new Parameterized()});
           }
           break;
         default:
@@ -47,7 +47,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
           if (true) {
             switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a3a0a3, menuId.getFqName())) {
               case 0:
-                return Arrays.asList(new TransformationMenu[]{new Child_MoreNamedActions()});
+                return Arrays.asList(new TransformationMenu[]{new Child_MoreNamedActions(), new NamedMenuContribution()});
               default:
             }
           }

@@ -9,8 +9,8 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
-import java.util.Arrays;
 import jetbrains.mps.openapi.editor.descriptor.NamedMenuId;
+import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -55,7 +55,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       switch (switchIndex) {
         case 0:
           if (true) {
-            return Arrays.asList(new TransformationMenu[]{new Child_TransformationMenu(), new DefaultMenuContribution(), new Extras(), new Parameterized()});
+            return Collections.<TransformationMenu>singletonList(new Child_TransformationMenu());
           }
           break;
         default:
@@ -75,7 +75,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
           if (true) {
             switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a3a0a4, menuId.getFqName())) {
               case 0:
-                return Arrays.asList(new TransformationMenu[]{new NamedMenu(), new NamedMenuContribution()});
+                return Arrays.asList(new TransformationMenu[]{new NamedMenu()});
               case 1:
                 return Arrays.asList(new TransformationMenu[]{new Recursive()});
               default:
