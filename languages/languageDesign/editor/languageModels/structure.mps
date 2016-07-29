@@ -5733,7 +5733,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="query" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpdg:hTNCABk" resolve="QueryFunction_ActionType" />
+      <ref role="20lvS9" node="hTNCABk" resolve="QueryFunction_SubstituteMenu_ActionType" />
     </node>
   </node>
   <node concept="1TIwiD" id="7mC_uHFNI_D">
