@@ -47,7 +47,7 @@
     <property role="TrG5h" value="main" />
   </node>
   <node concept="jVnub" id="5_kqtpAy5$t">
-    <property role="TrG5h" value="switch_TransformationLocation_Test_asExpressions" />
+    <property role="TrG5h" value="switch_TransformationLocation_asExpressions" />
     <ref role="phYkn" to="tpc3:3EZUZhmTWq7" resolve="switch_TransformationLocation_asExpressions" />
     <node concept="3aamgX" id="5_kqtpAy5E5" role="3aUrZf">
       <property role="36QftV" value="true" />

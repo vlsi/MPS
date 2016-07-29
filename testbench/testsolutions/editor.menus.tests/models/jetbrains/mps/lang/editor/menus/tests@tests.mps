@@ -344,6 +344,7 @@
     </language>
     <language id="4eb772b0-4df3-414a-b894-63abeb912f56" name="jetbrains.mps.lang.editor.menus.testLanguage">
       <concept id="2344528742722056854" name="jetbrains.mps.lang.editor.menus.testLanguage.structure.TransformationMenuTestConcept" flags="ng" index="rbkbI" />
+      <concept id="7552401496952041036" name="jetbrains.mps.lang.editor.menus.testLanguage.structure.DerivedWithOneLocation" flags="ng" index="32eYHD" />
       <concept id="5339489019635910984" name="jetbrains.mps.lang.editor.menus.testLanguage.structure.NodeHolder" flags="ng" index="1NpImL">
         <child id="5339489019635910985" name="node" index="1NpImK" />
       </concept>
@@ -1788,7 +1789,7 @@
             <node concept="2pJPED" id="5ZcqSl_VeJM" role="2pJPEn">
               <ref role="2pJxaS" to="tp25:gzTqbfa" resolve="SNodeType" />
               <node concept="2pIpSj" id="5ZcqSl_VeJN" role="2pJxcM">
-                <ref role="2pIpSl" to="tp25:g$ehGDh" />
+                <ref role="2pIpSl" to="tp25:g$ehGDh" resolve="concept" />
                 <node concept="36bGnv" id="5ZcqSl_VeJO" role="2pJxcZ">
                   <ref role="36bGnp" to="wtc3:2mcvySy0$_k" resolve="Derived" />
                 </node>
@@ -2118,6 +2119,103 @@
             <node concept="Xl_RD" id="20vEJZ2C3Dw" role="37wK5m" />
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="6zfximEX9PK">
+    <property role="3GE5qa" value="RunTime" />
+    <property role="TrG5h" value="ActionLookup_SubconceptDefinesAMenuWithoutSuperconceptsLocation" />
+    <property role="3YCmrE" value="menus that don't have any sections for the location are ignored when creating menu items for a location" />
+    <node concept="3clFbS" id="6zfximEXbC8" role="LjaKd">
+      <node concept="3cpWs8" id="6zfximEXbTC" role="3cqZAp">
+        <node concept="3cpWsn" id="6zfximEXbTD" role="3cpWs9">
+          <property role="TrG5h" value="items" />
+          <node concept="_YKpA" id="6zfximEXbTE" role="1tU5fm">
+            <node concept="3uibUv" id="6zfximEXbTF" role="_ZDj9">
+              <ref role="3uigEE" to="uddc:~TransformationMenuItem" resolve="TransformationMenuItem" />
+            </node>
+          </node>
+          <node concept="2YIFZM" id="6zfximEXbTG" role="33vP2m">
+            <ref role="37wK5l" node="229s7wVDm$w" resolve="loadDefaultMenu" />
+            <ref role="1Pybhc" node="229s7wVDmym" resolve="MenuLoadingUtils" />
+            <node concept="369mXd" id="6zfximEXbTH" role="37wK5m" />
+            <node concept="Xl_RD" id="6zfximEXbTI" role="37wK5m">
+              <property role="Xl_RC" value="test location" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="6zfximEXcqc" role="3cqZAp">
+        <node concept="2OqwBi" id="6zfximEXeEz" role="3vwVQn">
+          <node concept="37vLTw" id="6zfximEXcv1" role="2Oq$k0">
+            <ref role="3cqZAo" node="6zfximEXbTD" resolve="items" />
+          </node>
+          <node concept="2HwmR7" id="6zfximEXlVL" role="2OqNvi">
+            <node concept="1bVj0M" id="6zfximEXlVN" role="23t8la">
+              <node concept="3clFbS" id="6zfximEXlVO" role="1bW5cS">
+                <node concept="3clFbF" id="6zfximEXm3g" role="3cqZAp">
+                  <node concept="1Wc70l" id="7IT5NuQuBJO" role="3clFbG">
+                    <node concept="2ZW3vV" id="6zfximEXozr" role="3uHU7B">
+                      <node concept="3uibUv" id="6zfximEXoKr" role="2ZW6by">
+                        <ref role="3uigEE" to="uddc:~ActionItem" resolve="ActionItem" />
+                      </node>
+                      <node concept="37vLTw" id="6zfximEXm3f" role="2ZW6bz">
+                        <ref role="3cqZAo" node="6zfximEXlVP" resolve="it" />
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="7IT5NuQuFgd" role="3uHU7w">
+                      <node concept="Xl_RD" id="7IT5NuQuENG" role="2Oq$k0">
+                        <property role="Xl_RC" value="action from base menu" />
+                      </node>
+                      <node concept="liA8E" id="7IT5NuQuFGY" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                        <node concept="2OqwBi" id="7IT5NuQuDcH" role="37wK5m">
+                          <node concept="1eOMI4" id="7IT5NuQuCIT" role="2Oq$k0">
+                            <node concept="10QFUN" id="7IT5NuQuCIQ" role="1eOMHV">
+                              <node concept="3uibUv" id="7IT5NuQuCUC" role="10QFUM">
+                                <ref role="3uigEE" to="uddc:~ActionItem" resolve="ActionItem" />
+                              </node>
+                              <node concept="37vLTw" id="7IT5NuQuD0$" role="10QFUP">
+                                <ref role="3cqZAo" node="6zfximEXlVP" resolve="it" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="7IT5NuQuDZh" role="2OqNvi">
+                            <ref role="37wK5l" to="uddc:~ActionItem.getLabelText(java.lang.String):java.lang.String" resolve="getLabelText" />
+                            <node concept="Xl_RD" id="7IT5NuQuEjo" role="37wK5m" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="Rh6nW" id="6zfximEXlVP" role="1bW2Oz">
+                <property role="TrG5h" value="it" />
+                <node concept="2jxLKc" id="6zfximEXlVQ" role="1tU5fm" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3_1$Yv" id="7IT5NuQvu8$" role="3_9lra">
+          <node concept="3cpWs3" id="7IT5NuQvu$v" role="3_1BAH">
+            <node concept="37vLTw" id="7IT5NuQvu$A" role="3uHU7w">
+              <ref role="3cqZAo" node="6zfximEXbTD" resolve="items" />
+            </node>
+            <node concept="Xl_RD" id="7IT5NuQvu8S" role="3uHU7B">
+              <property role="Xl_RC" value="Expected 'action from base menu' in " />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="32eYHD" id="6zfximEXc3p" role="LiRBU">
+      <node concept="LIFWc" id="6zfximEXcd3" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="constant_0" />
       </node>
     </node>
   </node>
