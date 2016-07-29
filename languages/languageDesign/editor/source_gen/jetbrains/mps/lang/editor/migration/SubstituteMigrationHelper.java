@@ -25,6 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
+import jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -77,6 +78,9 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
           continue;
         }
         SNode mainGroup = getOrCreateMainGroup(mainMenu);
+        if (mainGroup == null) {
+          ListSequence.fromList(SLinkOperations.getChildren(mainMenu, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1bc2c2df999a7727L, 0x5c03050cab44f64L, "parts"))).addElement(_quotation_createNode_ehvekh_a0a0a2a4a2a31());
+        }
         SNode condition = null;
         for (SNode variable : ListSequence.fromList(SLinkOperations.getChildren(mainGroup, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL, 0x780e672842433a1L, "variables")))) {
           if (condition == null) {
@@ -94,7 +98,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
         SNode not = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression"));
         SLinkOperations.setTarget(not, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, 0xfbcf6c30a4L, "expression"), copy);
         fillCondition(falseGroup, not);
-        ListSequence.fromList(SLinkOperations.getChildren(falseGroup, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL, 0x5c03050cab46dafL, "parts"))).addElement(_quotation_createNode_ehvekh_a0a11a4a2a31());
+        ListSequence.fromList(SLinkOperations.getChildren(falseGroup, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL, 0x5c03050cab46dafL, "parts"))).addElement(_quotation_createNode_ehvekh_a0a21a4a2a31());
       }
     }
   }
@@ -123,7 +127,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
       migrateBuilders(mainMenu, additionalMenu, actionBuilders);
     } else {
       migrateBuilders(mainMenu, null, actionBuilders);
-      if (SNodeOperations.isInstanceOf(mainMenu, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c10ff0L, "jetbrains.mps.lang.editor.structure.TransformationMenuContribution"))) {
+      if (SNodeOperations.isInstanceOf(mainMenu, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de9c932f4e5cb53L, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Contribution"))) {
         SPropertyOperations.set(mainMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), getAdditionalMenuName(actions, concept) + "_Contribution");
       }
     }
@@ -162,8 +166,9 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
           ListSequence.fromList(SLinkOperations.getChildren(mainGroup, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL, 0x780e672842433a1L, "variables"))).addElement(variableDeclaration);
           counter++;
         }
-        addParts(additionalMenu, getNewParts(nodesWithConditionAndRemoveDefaults), SLinkOperations.getChildren(mainGroup, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL, 0x5c03050cab46dafL, "parts")));
-        addParts(additionalMenu, getNewParts(Sequence.fromIterable(builders).subtract(Sequence.fromIterable(nodesWithConditionAndRemoveDefaults))), SLinkOperations.getChildren(mainMenu, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1bc2c2df999a7727L, 0x5c03050cab44f64L, "parts")));
+        SNode trueGroup = getOrCreateTrueGroup(mainMenu);
+        addParts(additionalMenu, getNewParts(nodesWithConditionAndRemoveDefaults), SLinkOperations.getChildren(trueGroup, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL, 0x5c03050cab46dafL, "parts")));
+        addParts(additionalMenu, getNewParts(Sequence.fromIterable(builders).subtract(Sequence.fromIterable(nodesWithConditionAndRemoveDefaults))), SLinkOperations.getChildren(trueGroup, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL, 0x5c03050cab46dafL, "parts")));
         return;
       }
     }
@@ -209,6 +214,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
       SubstituteBuildersMigrationHelper helper = new SubstituteBuildersMigrationHelper(builder);
       List<SNode> parts = helper.createMenuParts();
       result.addAll(parts);
+      CommentUtil.commentOut(builder);
     }
     return result;
   }
@@ -258,10 +264,14 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     }
     String oldName = ActionMigrationHelper.substituteSpacesWithUnderscore(SPropertyOperations.getString(actions, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     String newName;
-    if (isUniqueConcept) {
-      newName = oldName;
+    if (oldName == null) {
+      newName = SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_SubstituteMenu";
     } else {
-      newName = oldName + "_" + SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+      if (isUniqueConcept) {
+        newName = oldName;
+      } else {
+        newName = oldName + "_" + SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+      }
     }
     return newName;
   }
@@ -300,7 +310,13 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     return includePart;
   }
 
-  private static SNode _quotation_createNode_ehvekh_a0a11a4a2a31() {
+  private static SNode _quotation_createNode_ehvekh_a0a0a2a4a2a31() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x88a6ffdb3b4f8c6L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Subconcepts"), null, null, false);
+    return quotedNode_1;
+  }
+  private static SNode _quotation_createNode_ehvekh_a0a21a4a2a31() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x88a6ffdb3b4f8c6L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Subconcepts"), null, null, false);

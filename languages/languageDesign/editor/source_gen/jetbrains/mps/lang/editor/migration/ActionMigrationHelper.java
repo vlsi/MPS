@@ -15,6 +15,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ActionMigrationHelper {
   public static boolean isDefinedInLanguage(SNode concept, Language language) {
@@ -32,6 +33,9 @@ public class ActionMigrationHelper {
     return LanguageAspect.EDITOR.get(language);
   }
   public static String substituteSpacesWithUnderscore(String name) {
+    if (name == null) {
+      return name;
+    }
     return name.replace(' ', '_');
   }
   public static String getMainMenuContributionName(SNode concept, String tag) {
@@ -52,6 +56,16 @@ public class ActionMigrationHelper {
       }
     });
   }
+  public static SNode getLastStatement(SNode statementList) {
+    return ListSequence.fromList(SLinkOperations.getChildren(statementList, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).reversedList().findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !((eq_qgr84z_a0a0a0a0a0a0a0i(SNodeOperations.getConcept(it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"))));
+      }
+    });
+  }
 
 
+  private static boolean eq_qgr84z_a0a0a0a0a0a0a0i(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
 }
