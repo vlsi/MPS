@@ -105,7 +105,9 @@
       <concept id="7342352913006985483" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Action" flags="ng" index="3eGOop">
         <child id="8612453216082699922" name="substituteHandler" index="3aKz83" />
       </concept>
-      <concept id="414384289274424754" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept" flags="ng" index="3ft5Ry" />
+      <concept id="414384289274424754" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept" flags="ng" index="3ft5Ry">
+        <reference id="697754674827630451" name="concept" index="4PJHt" />
+      </concept>
       <concept id="414384289274418283" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Group" flags="ng" index="3ft6gV">
         <child id="540685334802084769" name="variables" index="23Ddnj" />
         <child id="414384289274424750" name="condition" index="3ft5RY" />
@@ -130,9 +132,6 @@
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
         <property id="1140017977771" name="readOnly" index="1Intyy" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
-      </concept>
-      <concept id="7991336459489871999" name="jetbrains.mps.lang.editor.structure.IOutputConceptMenuPart" flags="ng" index="3EoQpk">
-        <reference id="7991336459489872009" name="outputConcept" index="3EoQqy" />
       </concept>
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
         <child id="4202667662392416064" name="transformationMenu" index="3vIgyS" />
@@ -2184,7 +2183,7 @@
         </node>
       </node>
       <node concept="3ft5Ry" id="7Nx4mSUse8i" role="3ft5RZ">
-        <ref role="3EoQqy" to="wdez:7Nx4mSUrZaD" resolve="TestSubstituteSubChild2" />
+        <ref role="4PJHt" to="wdez:7Nx4mSUrZaD" resolve="TestSubstituteSubChild2" />
       </node>
     </node>
     <node concept="3ft6gV" id="7Nx4mSUse8n" role="3ft7WO">
@@ -2218,7 +2217,7 @@
         </node>
       </node>
       <node concept="3ft5Ry" id="7Nx4mSUsf93" role="3ft5RZ">
-        <ref role="3EoQqy" to="wdez:7Nx4mSUrZaI" resolve="TestSubstituteSubChildSmartReference" />
+        <ref role="4PJHt" to="wdez:7Nx4mSUrZaI" resolve="TestSubstituteSubChildSmartReference" />
       </node>
     </node>
     <node concept="3ft6gV" id="7Nx4mSUsopf" role="3ft7WO">
