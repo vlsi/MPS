@@ -24,8 +24,16 @@ package jetbrains.mps.openapi.editor.cells.optional;
  */
 public interface WithCaret {
   /**
-   * Changing the visibility of the caret.
-   * Used by CaretBlinker.
+   * Switching caret visibility on/off.
+   * Used to hide/show caret if editor loosing/getting focus.
+   *
+   * @param visible visibility state of the caret
+   */
+  void setCaretVisible(boolean visible);
+
+  /**
+   * Changing (inverting) the visibility of the caret.
+   * Used by CaretManager.
    */
   void switchCaretVisible();
 

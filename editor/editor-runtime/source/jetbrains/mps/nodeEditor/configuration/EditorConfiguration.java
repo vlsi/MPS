@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.nodeEditor.configuration;
 
+import jetbrains.mps.nodeEditor.caret.CaretManager;
 import jetbrains.mps.openapi.editor.EditorPanelManager;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * User: shatalin
@@ -23,6 +25,9 @@ import jetbrains.mps.openapi.editor.EditorPanelManager;
  */
 public class EditorConfiguration {
   public final EditorPanelManager editorPanelManager;
+  @NotNull
+  public final CaretManager caretManager;
+
   public final boolean showErrorsGutter;
   public final boolean rightToLeft;
   public final boolean withUI;
@@ -31,10 +36,12 @@ public class EditorConfiguration {
       boolean rightToLeft,
       boolean showErrorsGutter,
       boolean withUI,
-      EditorPanelManager editorPanelManager) {
+      EditorPanelManager editorPanelManager,
+      @NotNull CaretManager caretManager) {
     this.rightToLeft = rightToLeft;
     this.showErrorsGutter = showErrorsGutter;
     this.withUI = withUI;
     this.editorPanelManager = editorPanelManager;
+    this.caretManager = caretManager;
   }
 }

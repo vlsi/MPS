@@ -48,6 +48,10 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
   private static final Color DEFAULT_CARET_ROW_COLOR = new Color(255, 255, 215);
   private static final Color DEFAULT_CARET_COLOR = Color.BLACK;
 
+  private static final int DEFAULT_CARET_BLINK_PERIOD = 500;
+  public static final int MIN_CARET_BLINK_PERIOD = 100;
+  public static final int MAX_CARET_BLINK_PERIOD = 1000;
+
   private static final Color DEFAULT_LEFT_HIGHLIGHTER_BACKGROUND_COLOR = Color.WHITE;
   private static final Color DEFAULT_LEFT_HIGHLIGHTER_TEAR_LINE_COLOR = Color.gray;
 
@@ -185,6 +189,14 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
     myState.myShowContextAssistant = showContextAssistant;
   }
 
+  public int getCaretBlinkPeriod() {
+    return myState.myCaretBlinkPeriod;
+  }
+
+  public void setCaretBlinkPeriod(int rate) {
+    myState.myCaretBlinkPeriod = rate;
+  }
+
   public Color getRangeSelectionForegroundColor() {
     return EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_FOREGROUND_COLOR);
   }
@@ -310,6 +322,7 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
     private boolean show = true;
 
     private boolean myShowContextAssistant = true;
+    public int myCaretBlinkPeriod = DEFAULT_CARET_BLINK_PERIOD;
 
     @Override
     public boolean equals(Object o) {
@@ -340,21 +353,19 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
       if (myFontFamily != null ? !myFontFamily.equals(otherState.myFontFamily) : otherState.myFontFamily != null) {
         return false;
       }
-
       if (myIndentSize != otherState.myIndentSize) {
         return false;
       }
-
       if (myVerticalBound != otherState.myVerticalBound) {
         return false;
       }
-
-
       if (myAutoQuickFix != otherState.myAutoQuickFix) {
         return false;
       }
-
       if (myShowContextAssistant != otherState.myShowContextAssistant) {
+        return false;
+      }
+      if (myCaretBlinkPeriod != otherState.myCaretBlinkPeriod) {
         return false;
       }
 
@@ -376,6 +387,7 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
       result = 31 * result + (myUseAntialiasing ? 1 : 0);
       result = 31 * result + (myUseBraces ? 1 : 0);
       result = 31 * result + (myShowContextAssistant ? 1 : 0);
+      result = 31 * result + myCaretBlinkPeriod;
       return result;
     }
 

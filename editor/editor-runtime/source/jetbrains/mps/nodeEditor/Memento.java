@@ -25,6 +25,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.optional.WithCaret;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
@@ -137,6 +138,10 @@ class Memento {
     }
 
     editor.getSelectionManager().setSelectionInfoStack(mySelectionStack);
+    EditorCell selectedCell = editor.getDeepestSelectedCell();
+    if (selectedCell instanceof WithCaret) {
+      ((WithCaret) selectedCell).setCaretVisible(false);
+    }
     for (CellInfo collectionInfo : myCollectionsWithEnabledBraces) {
       EditorCell collection = collectionInfo.findCell(editor);
       if (!(collection instanceof EditorCell_Collection)) {

@@ -627,6 +627,37 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="3ix2P_WZV88" role="jymVt" />
+    <node concept="3clFb_" id="2skD8pubZAu" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="setCaretVisible" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="2skD8pubZAv" role="1B3o_S" />
+      <node concept="3cqZAl" id="2skD8pubZAx" role="3clF45" />
+      <node concept="37vLTG" id="2skD8pubZAy" role="3clF46">
+        <property role="TrG5h" value="visible" />
+        <node concept="10P_77" id="2skD8pubZAz" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="2skD8pubZAC" role="3clF47">
+        <node concept="3clFbF" id="3ix2P_X00bq" role="3cqZAp">
+          <node concept="2OqwBi" id="3ix2P_X00Iu" role="3clFbG">
+            <node concept="37vLTw" id="3ix2P_X00bp" role="2Oq$k0">
+              <ref role="3cqZAo" node="WuSeI5nnZ3" resolve="myCaretState" />
+            </node>
+            <node concept="liA8E" id="3ix2P_X016C" role="2OqNvi">
+              <ref role="37wK5l" to="3ahc:~CaretState.touch(boolean):void" resolve="touch" />
+              <node concept="37vLTw" id="2skD8pucbgT" role="37wK5m">
+                <ref role="3cqZAo" node="2skD8pubZAy" resolve="visible" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="2skD8pubZAD" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="3J9H4udx5EO" role="jymVt" />
     <node concept="3clFb_" id="7dwhomQPrBW" role="jymVt">
       <property role="TrG5h" value="isSelectionPainted" />

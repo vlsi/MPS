@@ -21,7 +21,7 @@ package jetbrains.mps.editor.runtime.cells;
  * Created by shatalin on 29/07/16.
  */
 public class CaretState {
-  private boolean myCaretIsVisible = true;
+  private boolean myCaretIsVisible;
   private long myChangeCaretTimeStamp = 0;
 
   /**

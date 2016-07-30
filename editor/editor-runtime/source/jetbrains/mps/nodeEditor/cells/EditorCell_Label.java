@@ -60,7 +60,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   protected boolean myNoTextSet;
   protected TextLine myTextLine;
   protected TextLine myNullTextLine;
-  private CaretState myCaret = new CaretState();
+  private CaretState myCaretState = new CaretState();
 
   protected EditorCell_Label(@NotNull jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node, String text) {
     super(editorContext, node);
@@ -113,7 +113,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     if (!selected && !getEditor().selectionStackContains(this)) {
       myTextLine.resetSelection();
     }
-    myCaret.touch(selected);
+    myCaretState.touch(selected);
   }
 
   @Override
@@ -178,7 +178,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     int x1 = getCaretX();
     myTextLine.setCaretPosition(position, selection);
     int x2 = getCaretX();
-    myCaret.touch();
+    myCaretState.touch();
     getEditor().repaint(Math.min(x1, x2) - 1, getY() - 1, Math.abs(x1 - x2) + 2, getHeight() + 2);
     getEditor().getBracesHighlighter().updateBracesSelection(this);
   }
@@ -354,7 +354,19 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   public void switchCaretVisible() {
-    myCaret.tick();
+    myCaretState.tick();
+    repaintCaret();
+  }
+
+  @Override
+  public void setCaretVisible(boolean visible) {
+    myCaretState.touch(visible);
+    repaintCaret();
+  }
+
+  private void repaintCaret() {
+    int x = getCaretX();
+    getEditor().repaint(x - 1, getY() - 1, x + 2, getHeight() + 2);
   }
 
   @Override
@@ -388,7 +400,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   }
 
   protected boolean toShowCaret() {
-    return myCaret.isVisible() && isWithinSelection() && getEditor().isActive();
+    return myCaretState.isVisible() && isWithinSelection();
   }
 
   TextLine getTextLine() {

@@ -73,7 +73,6 @@ class EditorSettingsPreferencesPage implements Disposable {
   private JBRadioButton myFirstSelection;
 
   private final EditorSettings mySettings;
-  private final CaretBlinker myCaretBlinker = CaretBlinker.getInstance();
 
   public EditorSettingsPreferencesPage(EditorSettings settings) {
     mySettings = settings;
@@ -163,7 +162,8 @@ class EditorSettingsPreferencesPage implements Disposable {
     JPanel caretBlinkingPanel = new JPanel(new HorizontalLayout(gap));
     caretBlinkingPanel.add(new JLabel(EditorSettingsBundle.message("label.caret.blinking")));
     myCaretBlinkPeriod =
-        new JSpinner(new SpinnerNumberModel(CaretBlinker.MIN_BLINKING_PERIOD, CaretBlinker.MIN_BLINKING_PERIOD, CaretBlinker.MAX_BLINKING_PERIOD, 100));
+        new JSpinner(
+            new SpinnerNumberModel(mySettings.getCaretBlinkPeriod(), EditorSettings.MIN_CARET_BLINK_PERIOD, EditorSettings.MAX_CARET_BLINK_PERIOD, 100));
     caretBlinkingPanel.add(myCaretBlinkPeriod);
 
     panel.add(caretBlinkingPanel,
@@ -205,9 +205,7 @@ class EditorSettingsPreferencesPage implements Disposable {
 
     mySettings.setIndentSize((Integer) myIndentSize.getModel().getValue());
 
-    if (myCaretBlinker != null) {
-      myCaretBlinker.setCaretBlinkingRateTimeMillis((Integer) myCaretBlinkPeriod.getModel().getValue());
-    }
+    mySettings.setCaretBlinkPeriod((Integer) myCaretBlinkPeriod.getModel().getValue());
 
     mySettings.setUseAntialiasing(myAntialiasingCheckBox.isSelected());
     mySettings.setUseBraces(myUseBraces.isSelected());
@@ -250,10 +248,7 @@ class EditorSettingsPreferencesPage implements Disposable {
     boolean sameFontSize = myFontSizesComboBox.getSelectedItem().equals(Integer.toString(mySettings.getState().getFontSize()));
     boolean sameFontFamily = myFontsComboBox.getFontName().equals(mySettings.getState().getFontFamily());
     boolean sameLineSpacing = myLineSpacing.getModel().getValue().equals(mySettings.getState().getLineSpacing());
-    boolean sameBlinkingRate = true;
-    if (myCaretBlinker != null) {
-      sameBlinkingRate = myCaretBlinkPeriod.getModel().getValue().equals(myCaretBlinker.getCaretBlinkingRateTimeMillis());
-    }
+    boolean sameBlinkingRate = myCaretBlinkPeriod.getModel().getValue().equals(mySettings.getCaretBlinkPeriod());
     boolean sameTabs = myFirstSelection.isSelected();
     boolean sameUseContextAssistant = myShowContextAssistant.isSelected() == mySettings.isShowContextAssistant();
 
@@ -282,9 +277,7 @@ class EditorSettingsPreferencesPage implements Disposable {
 
     myLineSpacing.setValue(mySettings.getState().getLineSpacing());
 
-    if (myCaretBlinker != null) {
-      myCaretBlinkPeriod.setValue(myCaretBlinker.getCaretBlinkingRateTimeMillis());
-    }
+    myCaretBlinkPeriod.setValue(mySettings.getCaretBlinkPeriod());
 
     applyState();
     myFirstSelection.setSelected(true);
