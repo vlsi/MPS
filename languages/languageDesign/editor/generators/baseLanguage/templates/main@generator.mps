@@ -7332,7 +7332,7 @@
     <node concept="3aamgX" id="6lizslHiW3N" role="3acgRq">
       <ref role="30HIoZ" to="tpc2:h5t6ywT" resolve="CellMenuPart_ReplaceChildPrimary" />
       <node concept="j$656" id="6lizslHjlay" role="1lVwrX">
-        <ref role="v9R2y" node="heOxY6o" resolve="reduce_CellMenuPart_ReplaceChildPrimary" />
+        <ref role="v9R2y" node="heOxY6o" resolve="reduce_CellMenuPart_ReplaceChildPrima" />
       </node>
     </node>
     <node concept="3aamgX" id="6lizslHj5J_" role="3acgRq">
@@ -10519,7 +10519,7 @@
     </node>
   </node>
   <node concept="13MO4I" id="heOxY6o">
-    <property role="TrG5h" value="reduce_CellMenuPart_ReplaceChildPrimary" />
+    <property role="TrG5h" value="reduce_CellMenuPart_ReplaceChildPrima" />
     <property role="3GE5qa" value="cellMenu" />
     <ref role="3gUMe" to="tpc2:h5t6ywT" resolve="CellMenuPart_ReplaceChildPrimary" />
     <node concept="312cEu" id="heOy4g3" role="13RCb5">

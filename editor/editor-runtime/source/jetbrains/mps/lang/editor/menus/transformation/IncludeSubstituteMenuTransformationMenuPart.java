@@ -26,7 +26,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author simon
@@ -40,13 +39,8 @@ public class IncludeSubstituteMenuTransformationMenuPart implements Transformati
     SNode parent = getParentNode(context);
     SContainmentLink containmentLink = getContainmentLink(context);
     if (parent != null && containmentLink != null) {
-      DefaultSubstituteMenuContext substituteMenuContext = DefaultSubstituteMenuContext.createInitialContextForNode(containmentLink, parent, currentChild, context.getEditorContext());
       MenuLookup<SubstituteMenu> substituteMenuLookup = getSubstituteMenuLookup(context);
-      return substituteMenuContext.createItems(substituteMenuLookup).stream().
-          filter(new InUsedLanguagesPredicate(parent.getModel())).
-          filter(new SuitableForConstraintsPredicate(parent, containmentLink, context.getEditorContext().getRepository())).
-          map(item -> new DefaultSubstituteMenuItemAsCompletionActionItem(item, substituteMenuContext)).
-          collect(Collectors.toList());
+      return new SubstituteItemsCollector(parent, currentChild, containmentLink, context.getEditorContext(), substituteMenuLookup).collect();
     }
     return Collections.emptyList();
   }

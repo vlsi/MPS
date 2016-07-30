@@ -17,17 +17,30 @@ package jetbrains.mps.lang.editor.generator.internal;
 
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
+import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
+import jetbrains.mps.lang.editor.menus.transformation.SubstituteActionsCollector;
+import jetbrains.mps.lang.editor.menus.transformation.SubstituteItemsCollector;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.nodeEditor.cellMenu.OldNewSubstituteUtil;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -51,7 +64,19 @@ public abstract class AbstractCellMenuPart_ReplaceChild_CustomChildConcept imple
       return Collections.emptyList();
     }
 
-    return ModelActions.createChildNodeSubstituteActions(parentNode, currentChild, childNodeConcept, setter, context);
+    if (OldNewSubstituteUtil.areOldActionsApplicable(childNodeConcept)) {
+      return ModelActions.createChildNodeSubstituteActions(parentNode, currentChild, childNodeConcept, setter, context);
+    } else {
+      SAbstractConcept concept = MetaAdapterByDeclaration.getConcept(childNodeConcept);
+      if (concept == null) {
+        return new ArrayList<>();
+      }
+      SContainmentLink containmentLink = MetaAdapterByDeclaration.getContainmentLink(linkDeclaration);
+      MenuLookup<SubstituteMenu> lookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()),
+          concept);
+      List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parentNode, currentChild, containmentLink, editorContext, lookup).collect();
+      return new SubstituteActionsCollector(parentNode, transformationItems).collect();
+    }
   }
 
   protected abstract SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IOperationContext context,

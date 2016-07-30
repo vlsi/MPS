@@ -1036,7 +1036,7 @@
                         <ref role="3cqZAo" node="1Z_xaSi0xnZ" resolve="myLink" />
                       </node>
                       <node concept="3TrEf2" id="5ebN1fWh3CQ" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpce:fA0lvVK" />
+                        <ref role="3Tt5mk" to="tpce:fA0lvVK" resolve="target" />
                       </node>
                     </node>
                   </node>
@@ -1152,7 +1152,7 @@
                       <ref role="3cqZAo" node="1Z_xaSi0xnZ" resolve="myLink" />
                     </node>
                     <node concept="3TrEf2" id="4PZEGlYUqX2" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpce:fA0lvVK" />
+                      <ref role="3Tt5mk" to="tpce:fA0lvVK" resolve="target" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="4PZEGlYUqX3" role="37wK5m">
@@ -2546,7 +2546,7 @@
               <ref role="3cqZAo" node="zdLDfNXhpA" resolve="comment" />
             </node>
             <node concept="3TrEf2" id="zdLDfNXhEK" role="2OqNvi">
-              <ref role="3Tt5mk" to="tpck:2ETBKOyieyt" />
+              <ref role="3Tt5mk" to="tpck:2ETBKOyieyt" resolve="commentedNode" />
             </node>
           </node>
         </node>
@@ -2688,7 +2688,7 @@
                 <ref role="3cqZAo" node="2VTQtA8$f7g" resolve="myNode" />
               </node>
               <node concept="3TrEf2" id="4Q3VJD7s6Pv" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpck:2ETBKOyieyt" />
+                <ref role="3Tt5mk" to="tpck:2ETBKOyieyt" resolve="commentedNode" />
               </node>
             </node>
           </node>
@@ -4685,7 +4685,7 @@
               <ref role="37wK5l" to="mhbf:~SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChildBefore" />
               <node concept="359W_D" id="3An7dX0ijc7" role="37wK5m">
                 <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                <ref role="359W_F" to="tpck:4uZwTti3__2" />
+                <ref role="359W_F" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
               </node>
               <node concept="37vLTw" id="24Me8yyn5C2" role="37wK5m">
                 <ref role="3cqZAo" node="24Me8yyn4WI" resolve="comment" />
@@ -5074,7 +5074,7 @@
                 <ref role="3cqZAo" node="24Me8yynqXI" resolve="comment" />
               </node>
               <node concept="3TrEf2" id="24Me8yynqXH" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpck:2ETBKOyieyt" />
+                <ref role="3Tt5mk" to="tpck:2ETBKOyieyt" resolve="commentedNode" />
               </node>
             </node>
           </node>
@@ -5208,7 +5208,7 @@
                 <ref role="3cqZAo" node="24Me8yyn6Hg" resolve="myComment" />
               </node>
               <node concept="3TrEf2" id="24Me8yynhIU" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpck:2ETBKOyieyt" />
+                <ref role="3Tt5mk" to="tpck:2ETBKOyieyt" resolve="commentedNode" />
               </node>
             </node>
           </node>

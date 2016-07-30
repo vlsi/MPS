@@ -18,7 +18,10 @@ package jetbrains.mps.lang.editor.generator.internal;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellContext;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
+import jetbrains.mps.lang.editor.menus.transformation.SubstituteActionsCollector;
+import jetbrains.mps.lang.editor.menus.transformation.SubstituteItemsCollector;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.nodeEditor.cellMenu.OldNewSubstituteUtil;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.menus.substitute.DefaultSubstituteMenuContext;
@@ -29,6 +32,7 @@ import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
@@ -39,6 +43,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
@@ -61,37 +66,41 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
     }
     IOperationContext context = editorContext.getOperationContext();
 
-    List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(parent, node, getReplacementConcept().getDeclarationNode(), this, context);
-    SubstituteMenuContext substituteMenuContext = DefaultSubstituteMenuContext.createInitialContextForNode(node.getContainmentLink(), parent, node, editorContext);
-    MenuLookup<SubstituteMenu> lookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), getReplacementConcept());
-    List<SubstituteMenuItem> items = substituteMenuContext.createItems(lookup);
+    List<SubstituteAction> result;
+    if (OldNewSubstituteUtil.areOldActionsApplicable(getReplacementConcept(), editorContext.getRepository())) {
+      List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(parent, node, getReplacementConcept().getDeclarationNode(), this, context);
+      result = new ArrayList<SubstituteAction>(actions.size());
+      for (SubstituteAction a : actions) {
+        result.add(new NodeSubstituteActionWrapper(a) {
+          @Override
+          public SNode substitute(@Nullable EditorContext context, String pattern) {
+            String selectedCellId = null;
+            if (context != null && context.getSelectedCell() != null) {
+              selectedCellId = context.getSelectedCell().getCellId();
+            }
 
-    List<SubstituteAction> result = new ArrayList<SubstituteAction>(actions.size());
-    for (SubstituteAction a : actions) {
-      result.add(new NodeSubstituteActionWrapper(a) {
-        @Override
-        public SNode substitute(@Nullable EditorContext context, String pattern) {
-          String selectedCellId = null;
-          if (context != null && context.getSelectedCell() != null) {
-            selectedCellId = context.getSelectedCell().getCellId();
-          }
+            SNode result = super.substitute(context, pattern);
 
-          SNode result = super.substitute(context, pattern);
-
-          if (selectedCellId != null) {
-            EditorCell toSelect = context.getEditorComponent().findCellWithId(result, selectedCellId);
-            if (toSelect != null) {
-              context.flushEvents();
-              context.getSelectionManager().setSelection(toSelect);
-              if (context.getSelectedCell() instanceof EditorCell_Label) {
-                context.getSelectedCell().end();
+            if (selectedCellId != null) {
+              EditorCell toSelect = context.getEditorComponent().findCellWithId(result, selectedCellId);
+              if (toSelect != null) {
+                context.flushEvents();
+                context.getSelectionManager().setSelection(toSelect);
+                if (context.getSelectedCell() instanceof EditorCell_Label) {
+                  context.getSelectedCell().end();
+                }
               }
             }
+            return result;
           }
-
-          return result;
-        }
-      });
+        });
+      }
+    } else {
+      MenuLookup<SubstituteMenu> lookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), getReplacementConcept());
+      SContainmentLink containmentLink = node.getContainmentLink();
+      assert containmentLink != null;
+      List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parent, node, containmentLink, editorContext, lookup).collect();
+      result = new SubstituteActionsCollector(node, transformationItems).collect();
     }
     return result;
   }
