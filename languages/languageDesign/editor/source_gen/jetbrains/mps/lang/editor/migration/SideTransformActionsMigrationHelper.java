@@ -92,7 +92,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
         } else {
           SModule module = SNodeOperations.getModel(concept).getModule();
           if (module instanceof Language) {
-            menu = findMainNamedMenu(module, tag, concept);
+            menu = findMainNamedMenu(tag, concept);
           }
         }
         if (menu == null) {
@@ -123,7 +123,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
       } else {
         SModule module = SNodeOperations.getModel(concept).getModule();
         if (module instanceof Language) {
-          SNode mainMenu = findMainNamedMenu(module, tag, concept);
+          SNode mainMenu = findMainNamedMenu(tag, concept);
           if (mainMenu != null) {
             SLinkOperations.setTarget(contribution, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c10ff0L, 0x5d3b34577b60a0bfL, "menuReference"), _quotation_createNode_syzi2_a0a0b0b0a1a5a21(mainMenu));
           }
@@ -136,7 +136,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     } else {
       SNode mainMenu;
       if (eq_syzi2_a0b0a5a21(tag, "default_RTransform")) {
-        mainMenu = findDefaultMenu(myModule, concept);
+        mainMenu = findDefaultMenu(concept);
         if (mainMenu == null) {
           mainMenu = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Default"));
         }
@@ -153,16 +153,16 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
       return mainMenu;
     }
   }
-  private SNode findMainNamedMenu(SModule module, final String tag, final SNode concept) {
-    SModel conceptEditorAspect = ActionMigrationHelper.getEditorAspect(((Language) module));
+  private SNode findMainNamedMenu(final String tag, final SNode concept) {
+    SModel conceptEditorAspect = ActionMigrationHelper.getEditorAspect(myLanguage);
     return ListSequence.fromList(SModelOperations.roots(conceptEditorAspect, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_syzi2_a0a0a0a0a0a0b0n_0(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration")), concept) && eq_syzi2_a0a0a0a0a0a0b0n(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), getMainMenuName(concept, tag));
       }
     }).first();
   }
-  private SNode findDefaultMenu(SModule module, final SNode concept) {
-    SModel conceptEditorAspect = ActionMigrationHelper.getEditorAspect(((Language) module));
+  private SNode findDefaultMenu(final SNode concept) {
+    SModel conceptEditorAspect = ActionMigrationHelper.getEditorAspect(myLanguage);
     return ListSequence.fromList(SModelOperations.roots(conceptEditorAspect, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Default"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_syzi2_a0a0a0a0a0a1a41(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration")), concept);

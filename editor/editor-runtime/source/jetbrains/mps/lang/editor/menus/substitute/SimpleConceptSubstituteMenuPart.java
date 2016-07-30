@@ -37,12 +37,8 @@ import java.util.List;
 public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
   private SConcept myConcept;
 
-  public SimpleConceptSubstituteMenuPart(SAbstractConcept concept) {
-    if (concept instanceof SConcept) {
-      myConcept = ((SConcept) concept);
-    } else {
-      myConcept = MetaAdapterByDeclaration.asInstanceConcept(concept);
-    }
+  public SimpleConceptSubstituteMenuPart(SConcept concept) {
+    myConcept = concept;
   }
 
   @NotNull

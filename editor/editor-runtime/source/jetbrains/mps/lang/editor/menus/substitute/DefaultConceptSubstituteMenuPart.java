@@ -30,10 +30,10 @@ import java.util.List;
 /**
  * @author simon
  */
-public class DefaultConceptSubstituteMenuPart implements SubstituteMenuPart {
+class DefaultConceptSubstituteMenuPart implements SubstituteMenuPart {
   private final SAbstractConcept myConcept;
 
-  public DefaultConceptSubstituteMenuPart(SAbstractConcept concept) {
+  DefaultConceptSubstituteMenuPart(SAbstractConcept concept) {
     myConcept = concept;
   }
 
@@ -41,7 +41,9 @@ public class DefaultConceptSubstituteMenuPart implements SubstituteMenuPart {
   @Override
   public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<>();
-    result.add(new SimpleConceptSubstituteMenuPart(myConcept));
+    if (myConcept instanceof SConcept) {
+      result.add(new SimpleConceptSubstituteMenuPart(((SConcept) myConcept)));
+    }
     result.add(new DefaultConceptMenusSubstituteMenuPart(ConceptDescendantsCache.getInstance().getDirectDescendants(myConcept)));
     return new CompositeMenuPart<>(result).createItems(context);
   }
