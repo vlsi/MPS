@@ -100,7 +100,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
       SContainmentLink containmentLink = node.getContainmentLink();
       assert containmentLink != null;
       List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parent, node, containmentLink, editorContext, lookup).collect();
-      result = new SubstituteActionsCollector(node, transformationItems).collect();
+      result = new SubstituteActionsCollector(parent, transformationItems).collect();
     }
     return result;
   }

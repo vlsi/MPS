@@ -37,8 +37,6 @@ import java.util.HashMap;
  * @author simon
  */
 public class SChildSubstituteInfo extends AbstractSubstituteInfo {
-  //todo remove
-  public final static String SUBSTITUTE = "jetbrains.mps.nodeEditor.cellMenu.SUBSTITUTE";
   private SContainmentLink myLink;
   private SNode myParentNode;
   private SNode myCurrentChild;
@@ -49,7 +47,7 @@ public class SChildSubstituteInfo extends AbstractSubstituteInfo {
   }
 
   public SChildSubstituteInfo(EditorCell editorCell, SNode parentNode, SContainmentLink link, SNode currentChild) {
-    super(editorCell);
+    super(editorCell, parentNode);
     myParentNode = parentNode;
     myLink =  link;
     myCurrentChild = currentChild;
@@ -59,9 +57,11 @@ public class SChildSubstituteInfo extends AbstractSubstituteInfo {
   protected TransformationMenuContext createTransformationContext() {
     TransformationMenuContext context =
         DefaultTransformationMenuContext.createInitialContextForCell(getEditorCell(), MenuLocations.SUBSTITUTE);
-    Object oldNodeForSubstitution = context.getNode().getUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION);
-    if (oldNodeForSubstitution instanceof SNode) {
-      context = context.withNode(((SNode) oldNodeForSubstitution));
+    if (myCurrentChild != null) {
+      Object oldNodeForSubstitution = myCurrentChild.getUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION);
+      if (oldNodeForSubstitution instanceof SNode) {
+        context = context.withNode(((SNode) oldNodeForSubstitution));
+      }
     }
     return context;
   }

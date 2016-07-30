@@ -41,6 +41,11 @@ public abstract class AbstractSubstituteInfo extends AbstractNodeSubstituteInfo 
     myEditorCell = editorCell;
     mySourceNode = editorCell.getSNode();
   }
+  public AbstractSubstituteInfo(EditorCell editorCell, SNode sourceNode) {
+    super(editorCell.getContext());
+    myEditorCell = editorCell;
+    mySourceNode = sourceNode;
+  }
 
   @Override
   protected List<SubstituteAction> createActions() {

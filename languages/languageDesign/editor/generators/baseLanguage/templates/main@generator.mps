@@ -6544,6 +6544,14 @@
                             </node>
                           </node>
                         </node>
+                        <node concept="2ShNRf" id="AIV2SdRq3U" role="3g7hyw">
+                          <node concept="1pGfFk" id="AIV2SdRq3V" role="2ShVmc">
+                            <ref role="37wK5l" to="6lvu:~SChildSubstituteInfoPartEx.&lt;init&gt;(jetbrains.mps.openapi.editor.cells.EditorCell)" resolve="SChildSubstituteInfoPartEx" />
+                            <node concept="37vLTw" id="AIV2SdRq3W" role="37wK5m">
+                              <ref role="3cqZAo" node="g_CeiMo" resolve="editorCell" />
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -9112,6 +9120,14 @@
                                     </node>
                                   </node>
                                 </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="2ShNRf" id="AIV2SdRxoF" role="3g7hyw">
+                            <node concept="1pGfFk" id="AIV2SdRxoG" role="2ShVmc">
+                              <ref role="37wK5l" to="6lvu:~SChildSubstituteInfoPartEx.&lt;init&gt;(jetbrains.mps.openapi.editor.cells.EditorCell)" resolve="SChildSubstituteInfoPartEx" />
+                              <node concept="37vLTw" id="AIV2SdRxoH" role="37wK5m">
+                                <ref role="3cqZAo" node="heOoiKG" resolve="editorCell" />
                               </node>
                             </node>
                           </node>
@@ -16350,6 +16366,14 @@
                                 </node>
                               </node>
                             </node>
+                            <node concept="2ShNRf" id="AIV2SdR1uj" role="3g7hyw">
+                              <node concept="1pGfFk" id="AIV2SdRiZ_" role="2ShVmc">
+                                <ref role="37wK5l" to="6lvu:~SChildSubstituteInfoPartEx.&lt;init&gt;(jetbrains.mps.openapi.editor.cells.EditorCell)" resolve="SChildSubstituteInfoPartEx" />
+                                <node concept="37vLTw" id="AIV2SdRomq" role="37wK5m">
+                                  <ref role="3cqZAo" node="i0tV1ET" resolve="editorCell" />
+                                </node>
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -19800,6 +19824,14 @@
                                 </node>
                               </node>
                             </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2ShNRf" id="AIV2SdRyC3" role="3g7hyw">
+                        <node concept="1pGfFk" id="AIV2SdRyC4" role="2ShVmc">
+                          <ref role="37wK5l" to="6lvu:~SChildSubstituteInfoPartEx.&lt;init&gt;(jetbrains.mps.openapi.editor.cells.EditorCell)" resolve="SChildSubstituteInfoPartEx" />
+                          <node concept="37vLTw" id="AIV2SdRyC5" role="37wK5m">
+                            <ref role="3cqZAo" node="5t2DUc51cIJ" resolve="editorCell" />
                           </node>
                         </node>
                       </node>
@@ -28523,6 +28555,14 @@
                                         </node>
                                       </node>
                                     </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="2ShNRf" id="AIV2SdRsn3" role="3g7hyw">
+                                <node concept="1pGfFk" id="AIV2SdRsn4" role="2ShVmc">
+                                  <ref role="37wK5l" to="6lvu:~SChildSubstituteInfoPartEx.&lt;init&gt;(jetbrains.mps.openapi.editor.cells.EditorCell)" resolve="SChildSubstituteInfoPartEx" />
+                                  <node concept="37vLTw" id="AIV2SdRt2G" role="37wK5m">
+                                    <ref role="3cqZAo" node="XrrhtvD5CG" resolve="elementCell" />
                                   </node>
                                 </node>
                               </node>
