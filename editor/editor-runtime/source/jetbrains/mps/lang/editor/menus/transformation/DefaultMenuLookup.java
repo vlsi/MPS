@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 public abstract class DefaultMenuLookup<T extends Menu> implements MenuLookup<T> {
   @NotNull
@@ -60,17 +61,13 @@ public abstract class DefaultMenuLookup<T extends Menu> implements MenuLookup<T>
     return "default menu for " + myConcept;
   }
 
-  public boolean exists(@NotNull Collection<SLanguage> usedLanguages) {
-    return !getForConcept(usedLanguages).isEmpty();
-  }
-
   @NotNull
   @Override
   public Collection<T> lookup(@NotNull Collection<SLanguage> usedLanguages) {
-    Collection<T> conceptMenu = new ArrayList<>();
+    List<T> conceptMenu = new ArrayList<>();
     conceptMenu.addAll(getForConcept(usedLanguages));
     if (conceptMenu.stream().allMatch(Menu::isContribution)) {
-      conceptMenu.add(createDefaultMenu());
+      conceptMenu.add(0, createImplicitMenu());
     }
     return conceptMenu;
   }
@@ -83,8 +80,9 @@ public abstract class DefaultMenuLookup<T extends Menu> implements MenuLookup<T>
     }
     return getForAspectDescriptor(aspectDescriptor, usedLanguages);
   }
+
   @NotNull
-  protected abstract T createDefaultMenu();
+  public abstract T createImplicitMenu();
 
   @NotNull
   protected SAbstractConcept getConcept() {

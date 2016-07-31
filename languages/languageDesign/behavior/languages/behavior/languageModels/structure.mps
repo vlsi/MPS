@@ -2,8 +2,8 @@
 <model ref="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -18,10 +18,7 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
-        <property id="1225118929411" name="build" index="YLPcu" />
-        <property id="1225118933224" name="comment" index="YLQ7P" />
-      </concept>
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
@@ -73,6 +70,9 @@
     <property role="34LRSv" value="Concept Behavior" />
     <property role="EcuMT" value="1225194240794" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1QGGSu" id="4Q8sAA5iJQF" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/behavior.png" />
+    </node>
     <node concept="PrWs8" id="hP3h7Gr" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -103,9 +103,6 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1225194240805" />
       <ref role="20lvS9" node="hP3i0lY" resolve="ConceptMethodDeclaration" />
-    </node>
-    <node concept="1QGGSu" id="4Q8sAA5iJQF" role="rwd14">
-      <property role="1iqoE4" value="${module}/icons/behavior.png" />
     </node>
   </node>
   <node concept="1TIwiD" id="hP3hLVH">
@@ -210,10 +207,6 @@
     <node concept="PrWs8" id="1653mnvB6ep" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
-    <node concept="asaX9" id="1yaLb$IdFc" role="lGtFl">
-      <property role="YLQ7P" value="was used for the 3.2 behavior generated code" />
-      <property role="YLPcu" value="3.2" />
-    </node>
   </node>
   <node concept="1TIwiD" id="zUeTq_2vSb">
     <property role="19KtqR" value="true" />
@@ -232,10 +225,6 @@
     </node>
     <node concept="PrWs8" id="1653mnvAlOe" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-    <node concept="asaX9" id="1yaLb$IdFe" role="lGtFl">
-      <property role="YLQ7P" value="was used for the 3.2 behavior generated code" />
-      <property role="YLPcu" value="3.2" />
     </node>
   </node>
 </model>

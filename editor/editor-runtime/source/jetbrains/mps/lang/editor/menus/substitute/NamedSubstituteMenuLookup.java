@@ -44,4 +44,9 @@ public class NamedSubstituteMenuLookup extends NamedMenuLookup<SubstituteMenu> {
   protected Collection<SubstituteMenu> getForAspectDescriptor(EditorAspectDescriptor aspectDescriptor, @NotNull Collection<SLanguage> usedLanguages) {
     return aspectDescriptor.getNamedSubstituteMenus(getId(), usedLanguages);
   }
+
+  @Override
+  public SubstituteMenu createImplicitMenu() {
+    return new ImplicitSubstituteMenu(getId().getConcept());
+  }
 }

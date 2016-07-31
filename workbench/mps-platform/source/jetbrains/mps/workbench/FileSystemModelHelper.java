@@ -56,7 +56,7 @@ public final class FileSystemModelHelper {
 
     Collection<IFile> modelPaths = getFiles();
     for (IFile path : modelPaths) {
-      VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(path);
+      VirtualFile virtualFile = VirtualFileUtils.getOrCreateVirtualFile(path);
       if (virtualFile != null) {
         vFiles.add(virtualFile);
       }

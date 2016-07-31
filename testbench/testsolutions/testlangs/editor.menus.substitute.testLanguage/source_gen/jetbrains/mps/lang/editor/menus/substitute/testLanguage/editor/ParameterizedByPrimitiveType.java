@@ -62,6 +62,14 @@ public class ParameterizedByPrimitiveType extends SubstituteMenuBase {
           }
           return null;
         }
+        @Override
+        public String getMatchingText(String pattern) {
+          return "" + myParameterObject;
+        }
+        @Override
+        public String getDescriptionText(String pattern) {
+          return "";
+        }
       }
     }
 

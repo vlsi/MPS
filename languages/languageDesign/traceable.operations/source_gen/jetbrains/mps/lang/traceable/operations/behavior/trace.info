@@ -15,6 +15,12 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,48,0" name="jetbrains.mps.lang.traceable.operations.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="NList_CopyWithTraceOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.traceable.operations.behavior.NList_CopyWithTraceOperation_BehaviorDescriptor" />
+    </file>
+    <file name="Node_CopyWithTraceOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.traceable.operations.behavior.Node_CopyWithTraceOperation_BehaviorDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:0305b770-140c-4492-809c-8fad4cbadc02(jetbrains.mps.lang.traceable.operations.behavior)/1262430001741703821">
     <file name="Node_CopyWithTraceOperation__BehaviorDescriptor.java">

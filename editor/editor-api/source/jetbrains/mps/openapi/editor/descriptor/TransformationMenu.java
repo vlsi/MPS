@@ -19,5 +19,5 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuConte
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 
 public interface TransformationMenu extends Menu<TransformationMenuItem, TransformationMenuContext> {
-
+  boolean isApplicableToLocation(String location);
 }

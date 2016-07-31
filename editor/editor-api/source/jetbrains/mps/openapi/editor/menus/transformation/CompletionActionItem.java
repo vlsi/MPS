@@ -45,6 +45,12 @@ public interface CompletionActionItem extends ActionItem {
     return null;
   }
 
+  /**
+   * Returns the icon resource that corresponds to this action
+   *
+   * @param pattern the text that the user has typed so far
+   * @return the icon resource, null if not defined
+   */
   @Nullable
   default IconResource getIcon(String pattern) {
     return null;

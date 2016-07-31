@@ -132,7 +132,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
     final Set<OrderRoot> roots = new LinkedHashSet<OrderRoot>();
     for (SModuleReference moduleReference : chosenElements) {
       AbstractModule module = (AbstractModule) ModuleRepositoryFacade.getInstance().getModule(moduleReference);
-      roots.add(new OrderRoot(VirtualFileUtils.getVirtualFile(module.getDescriptorFile()), ModuleXmlRootDetector.MPS_MODULE_XML, false));
+      roots.add(new OrderRoot(VirtualFileUtils.getOrCreateVirtualFile(module.getDescriptorFile()), ModuleXmlRootDetector.MPS_MODULE_XML, false));
       for (VirtualFile virtualFile : getModuleJars(module)) {
         roots.add(new OrderRoot(virtualFile, OrderRootType.CLASSES, false));
       }
@@ -260,7 +260,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
             public void run() {
               for (SModuleReference module : chosenElements) {
                 AbstractModule chosenModule = (AbstractModule) ModuleRepositoryFacade.getInstance().getModule(module);
-                addedDescriptors.add(VirtualFileUtils.getVirtualFile(chosenModule.getDescriptorFile()));
+                addedDescriptors.add(VirtualFileUtils.getOrCreateVirtualFile(chosenModule.getDescriptorFile()));
                 for (VirtualFile virtualFile : getModuleJars(chosenModule)) {
                   addedJars.add(virtualFile);
                 }
@@ -288,7 +288,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
           if (module instanceof SolutionIdea || ((AbstractModule) module).getDescriptorFile() == null) {
             continue;
           }
-          if (excluded.contains(VirtualFileUtils.getVirtualFile(((AbstractModule) module).getDescriptorFile()))) {
+          if (excluded.contains(VirtualFileUtils.getOrCreateVirtualFile(((AbstractModule) module).getDescriptorFile()))) {
             // skip solutions that are already in a lib
             continue;
           }

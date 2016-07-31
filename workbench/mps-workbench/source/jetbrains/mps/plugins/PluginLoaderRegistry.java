@@ -23,6 +23,8 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
+import com.intellij.util.WaitFor;
+import com.intellij.util.WaitForProgressToShow;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.DeployListener;
 import jetbrains.mps.ide.MPSCoreComponents;
@@ -285,15 +287,18 @@ public class PluginLoaderRegistry implements ApplicationComponent {
       assert indicator.isRunning();
       LOG.info("Running Update Task : loaders " + loadersDelta + "; contributors : " + contributorsDelta + "; " + Thread.currentThread());
       indicator.pushState();
+      indicator.setIndeterminate(true);
       ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
       monitor.start("Reloading MPS Plugins", 5);
       try {
         myTaskInProgress.compareAndSet(false, true);
-        removeLoaders(monitor);
-        removeContributors(monitor);
-        addLoaders(monitor);
-        addFactories(monitor);
-        addContributors(monitor);
+        WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(() -> {
+          removeLoaders(monitor);
+          removeContributors(monitor);
+          addLoaders(monitor);
+          addFactories(monitor);
+          addContributors(monitor);
+        }, indicator.getModalityState());
       } finally {
         myTaskInProgress.compareAndSet(true, false);
         monitor.done();
@@ -461,7 +466,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
 
     @Override
     public String toString() {
-      return "Delta [load " + toLoad.size() + " : unload " + toUnload.size() + "]";
+      return "[toLoad: " + toLoad.size() + "; toUnload:" + toUnload.size() + "]";
     }
   }
 }

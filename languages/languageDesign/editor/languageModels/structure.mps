@@ -5055,15 +5055,15 @@
   <node concept="1TIwiD" id="1A4kJjlVAph">
     <property role="EcuMT" value="1838685759388673617" />
     <property role="3GE5qa" value="Menu.Transformation.SideTransform" />
-    <property role="TrG5h" value="TransformationFeature_IconNode" />
-    <property role="34LRSv" value="icon node" />
+    <property role="TrG5h" value="TransformationFeature_Icon" />
+    <property role="34LRSv" value="icon" />
     <ref role="1TJDcQ" node="7L5lpRJH$E_" resolve="TransformationFeature" />
     <node concept="1TJgyj" id="1A4kJjlVDlT" role="1TKVEi">
       <property role="IQ2ns" value="1838685759388685689" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="query" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="7L5lpRJILFa" resolve="QueryFunction_TransformationMenu_Node" />
+      <ref role="20lvS9" node="1MWbOI3$5oV" resolve="QueryFunction_TransformationMenu_Icon" />
     </node>
   </node>
   <node concept="AxPO7" id="30NnNOohrQJ">
@@ -5301,18 +5301,6 @@
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="outputConcept" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-    </node>
-    <node concept="1TJgyj" id="7u5_96XhUR0" role="1TKVEi">
-      <property role="IQ2ns" value="8612453216082701760" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="matchingText" />
-      <ref role="20lvS9" node="hqh421K" resolve="ISubstituteMenu_String" />
-    </node>
-    <node concept="1TJgyj" id="7u5_96XhUR4" role="1TKVEi">
-      <property role="IQ2ns" value="8612453216082701764" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="descriptionText" />
-      <ref role="20lvS9" node="hqh421K" resolve="ISubstituteMenu_String" />
     </node>
     <node concept="1TJgyj" id="7u5_96XhUqi" role="1TKVEi">
       <property role="IQ2ns" value="8612453216082699922" />
@@ -5680,7 +5668,7 @@
     <property role="EcuMT" value="2857509971901907635" />
     <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
     <property role="TrG5h" value="QueryFunction_SubstituteMenu_Concepts" />
-    <ref role="1TJDcQ" node="5EbKzCm8o62" resolve="QueryFunction_SubstituteMenuPart" />
+    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
   </node>
   <node concept="1TIwiD" id="7gIXFjgNa3h">
     <property role="EcuMT" value="8371900013785948369" />
@@ -5745,7 +5733,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="query" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpdg:hTNCABk" resolve="QueryFunction_ActionType" />
+      <ref role="20lvS9" node="hTNCABk" resolve="QueryFunction_SubstituteMenu_ActionType" />
     </node>
   </node>
   <node concept="1TIwiD" id="7mC_uHFNI_D">
@@ -5821,6 +5809,9 @@
     </node>
     <node concept="PrWs8" id="3rSzFHWOfw7" role="PzmwI">
       <ref role="PrY4T" node="3rSzFHWOd_m" resolve="IIncludeSubstituteMenuPart" />
+    </node>
+    <node concept="PrWs8" id="6HFUSydwlkd" role="PzmwI">
+      <ref role="PrY4T" node="7mC_uHFNIAt" resolve="IExtensibleSubstituteMenuPart" />
     </node>
   </node>
   <node concept="1TIwiD" id="n0c53aH5hG">
@@ -6066,6 +6057,14 @@
     <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
     <property role="TrG5h" value="QueryFunction_SubstituteMenuPart" />
     <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+  </node>
+  <node concept="1TIwiD" id="1MWbOI3$5oV">
+    <property role="3GE5qa" value="Menu.Transformation.SideTransform" />
+    <property role="TrG5h" value="QueryFunction_TransformationMenu_Icon" />
+    <property role="34LRSv" value="query" />
+    <property role="EcuMT" value="2070581930059912763" />
+    <property role="R4oN_" value="a block of code" />
+    <ref role="1TJDcQ" node="6kJcyCQ_LoK" resolve="QueryFunction_TransformationMenu_Extensible" />
   </node>
 </model>
 

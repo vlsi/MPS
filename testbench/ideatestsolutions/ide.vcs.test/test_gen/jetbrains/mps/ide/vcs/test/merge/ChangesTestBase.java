@@ -225,7 +225,7 @@ public abstract class ChangesTestBase {
   }
 
   protected VirtualFile getTestModelFile() {
-    return VirtualFileUtils.getVirtualFile(((FileDataSource) getTestModel().getSource()).getFile());
+    return VirtualFileUtils.getProjectVirtualFile(((FileDataSource) getTestModel().getSource()).getFile());
   }
 
   protected String getChangeSetString(ChangeSet changeSet) {

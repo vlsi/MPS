@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import testCustomAnalyzer.dataFlow.CustomAnalyzerWithModeAnalyzerRunner;
 import jetbrains.mps.lang.dataFlow.MPSProgramFactory;
 import java.util.Arrays;
+import jetbrains.mps.lang.dataFlow.framework.IDataFlowModeId;
 import jetbrains.mps.lang.dataFlow.framework.ConceptDataFlowModeId;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
 import java.util.List;
@@ -31,7 +32,7 @@ public class check_ParentCounter_NonTypesystemRule extends AbstractNonTypesystem
     if (SPropertyOperations.getInteger(root, MetaAdapterFactory.getProperty(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, 0x73a316f7f548c73dL, "maxChildCount")) < 10) {
       runner = new CustomAnalyzerWithModeAnalyzerRunner(root);
     } else {
-      runner = new CustomAnalyzerWithModeAnalyzerRunner(root, new MPSProgramFactory(Arrays.asList(new ConceptDataFlowModeId("jetbrains.mps.lang.dataFlow.structure.IntraProcedural_BuilderMode"))));
+      runner = new CustomAnalyzerWithModeAnalyzerRunner(root, new MPSProgramFactory(Arrays.<IDataFlowModeId>asList(new ConceptDataFlowModeId("jetbrains.mps.lang.dataFlow.structure.IntraProcedural_BuilderMode"))));
     }
     AnalysisResult<Integer> result = runner.analyze();
     List<Instruction> instructions = runner.getProgram().getInstructions();

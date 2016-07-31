@@ -132,12 +132,10 @@ public abstract class BasePluginManager<T> implements PluginLoader {
   private Map<PluginContributor, T> createPlugins(List<PluginContributor> contributors) {
     Map<PluginContributor, T> plugins = new LinkedHashMap<>();
 
-    ApplicationManager.getApplication().invokeAndWait(() -> {
-      for (PluginContributor contributor : contributors) {
-        T plugin = createPluginChecked(contributor);
-        plugins.put(contributor, plugin);
-      }
-    }, getModalityState());
+    for (PluginContributor contributor : contributors) {
+      T plugin = createPluginChecked(contributor);
+      plugins.put(contributor, plugin);
+    }
     return plugins;
   }
 
@@ -155,23 +153,16 @@ public abstract class BasePluginManager<T> implements PluginLoader {
     return plugin;
   }
 
-  @NotNull
-  private ModalityState getModalityState() {
-    return ModalityState.defaultModalityState();
-  }
-
   private void disposePlugins(final List<T> plugins) {
-    ApplicationManager.getApplication().invokeAndWait(() -> {
-      for (T plugin : plugins) {
-        try {
-          disposePlugin(plugin);
-        } catch (LinkageError le) {
-          LOG.error(this + ": plugin " + plugin + " threw a linkage error during disposing", le);
-        } catch (Throwable t) {
-          LOG.error(this + ": plugin " + plugin + " threw an exception during disposing " + t.getMessage(), t);
-        }
+    for (T plugin : plugins) {
+      try {
+        disposePlugin(plugin);
+      } catch (LinkageError le) {
+        LOG.error(this + ": plugin " + plugin + " threw a linkage error during disposing", le);
+      } catch (Throwable t) {
+        LOG.error(this + ": plugin " + plugin + " threw an exception during disposing " + t.getMessage(), t);
       }
-    }, getModalityState());
+    }
   }
 
   public List<T> getPlugins() {

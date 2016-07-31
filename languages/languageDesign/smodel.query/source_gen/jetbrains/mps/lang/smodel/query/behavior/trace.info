@@ -13,8 +13,101 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
+    <file name="AbstractPrintExpression_old_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.AbstractPrintExpression_old_BehaviorDescriptor" />
+    </file>
+    <file name="BLCommand_old_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.BLCommand_old_BehaviorDescriptor" />
+    </file>
+    <file name="BLExpression_old_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.BLExpression_old_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,102,0" name="jetbrains.mps.lang.smodel.query.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="CustomScope_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.CustomScope_BehaviorDescriptor" />
+    </file>
+    <file name="ExpressionHelpProvider_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.smodel.query.behavior.ExpressionHelpProvider_BehaviorDescriptor" />
+    </file>
+    <file name="GlobalScope_old_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.GlobalScope_old_BehaviorDescriptor" />
+    </file>
+    <file name="HelpProvider_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.smodel.query.behavior.HelpProvider_BehaviorDescriptor" />
+    </file>
+    <file name="InstancesExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.InstancesExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ModelScope_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.ModelScope_BehaviorDescriptor" />
+    </file>
+    <file name="ModelsExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.ModelsExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ModulesExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.ModulesExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ModulesScope_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.ModulesScope_BehaviorDescriptor" />
+    </file>
+    <file name="NodesExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.NodesExpression_BehaviorDescriptor" />
+    </file>
+    <file name="OperationHelpProvider_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.smodel.query.behavior.OperationHelpProvider_BehaviorDescriptor" />
+    </file>
+    <file name="PrintExpression_old_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.PrintExpression_old_BehaviorDescriptor" />
+    </file>
+    <file name="PrintNodeExpression_old_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.PrintNodeExpression_old_BehaviorDescriptor" />
+    </file>
+    <file name="PrintNodeReferenceExpression_old_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.PrintNodeReferenceExpression_old_BehaviorDescriptor" />
+    </file>
+    <file name="PrintSequenceExpression_old_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.PrintSequenceExpression_old_BehaviorDescriptor" />
+    </file>
+    <file name="PrintTextExpression_old_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.PrintTextExpression_old_BehaviorDescriptor" />
+    </file>
+    <file name="ProjectExpression_old_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.ProjectExpression_old_BehaviorDescriptor" />
+    </file>
+    <file name="ProjectScope_old_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.ProjectScope_old_BehaviorDescriptor" />
+    </file>
+    <file name="QueryExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.QueryExpression_BehaviorDescriptor" />
+    </file>
+    <file name="QueryParameterIncludeReadOnly_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.QueryParameterIncludeReadOnly_BehaviorDescriptor" />
+    </file>
+    <file name="QueryParameterList_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.QueryParameterList_BehaviorDescriptor" />
+    </file>
+    <file name="QueryParameterScope_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.QueryParameterScope_BehaviorDescriptor" />
+    </file>
+    <file name="QueryParameter_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.QueryParameter_BehaviorDescriptor" />
+    </file>
+    <file name="ReferencesExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.ReferencesExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ScopeParameter_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.ScopeParameter_BehaviorDescriptor" />
+    </file>
+    <file name="ShowExpression_old_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.ShowExpression_old_BehaviorDescriptor" />
+    </file>
+    <file name="UsagesExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.UsagesExpression_BehaviorDescriptor" />
+    </file>
+    <file name="WithStatement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.WithStatement_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.lang.smodel.query.behavior)/4307205004146936308">
