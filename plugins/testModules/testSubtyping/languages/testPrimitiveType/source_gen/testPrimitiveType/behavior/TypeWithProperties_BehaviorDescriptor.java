@@ -10,4 +10,7 @@ package testPrimitiveType.behavior;
  */
 @Deprecated
 public class TypeWithProperties_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

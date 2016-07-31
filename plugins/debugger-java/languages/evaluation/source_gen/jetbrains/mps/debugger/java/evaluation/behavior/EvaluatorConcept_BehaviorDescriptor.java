@@ -10,4 +10,7 @@ package jetbrains.mps.debugger.java.evaluation.behavior;
  */
 @Deprecated
 public class EvaluatorConcept_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

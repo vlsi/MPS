@@ -10,4 +10,7 @@ package jetbrains.mps.lang.access.behavior;
  */
 @Deprecated
 public class CommandClosureLiteral_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

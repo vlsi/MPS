@@ -10,4 +10,7 @@ package jetbrains.mps.lang.generator.behavior;
  */
 @Deprecated
 public class SourceSubstituteMacro_SourceNodesQuery_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

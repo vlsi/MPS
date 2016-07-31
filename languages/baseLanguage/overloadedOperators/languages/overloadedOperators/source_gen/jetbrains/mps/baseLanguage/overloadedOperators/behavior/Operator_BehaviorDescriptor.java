@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.overloadedOperators.behavior;
  */
 @Deprecated
 public abstract class Operator_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

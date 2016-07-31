@@ -15,6 +15,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.extras.behavior.QueryFunctionParameter_IntentionExecutable_BehaviorDescriptor" file="QueryFunctionParameter_IntentionExecutable_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.extras.behavior.QueryFunctionParameter_IntentionExecutable__BehaviorDescriptor" file="QueryFunctionParameter_IntentionExecutable__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -43,6 +44,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.extras.behavior.TransformationMenuPart_Intention_BehaviorDescriptor" file="TransformationMenuPart_Intention_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.extras.behavior.TransformationMenuPart_Intention__BehaviorDescriptor" file="TransformationMenuPart_Intention__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -71,9 +73,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.extras.behavior.TransformationMenuPart_PluginAction_BehaviorDescriptor" file="TransformationMenuPart_PluginAction_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.extras.behavior.TransformationMenuPart_Refactoring_BehaviorDescriptor" file="TransformationMenuPart_Refactoring_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

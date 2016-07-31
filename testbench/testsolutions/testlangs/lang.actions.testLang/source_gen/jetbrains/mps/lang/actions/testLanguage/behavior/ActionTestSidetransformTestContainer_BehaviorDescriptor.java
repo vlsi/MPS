@@ -10,4 +10,7 @@ package jetbrains.mps.lang.actions.testLanguage.behavior;
  */
 @Deprecated
 public class ActionTestSidetransformTestContainer_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

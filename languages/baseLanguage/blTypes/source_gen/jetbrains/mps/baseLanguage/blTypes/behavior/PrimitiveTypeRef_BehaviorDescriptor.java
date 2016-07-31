@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.blTypes.behavior;
  */
 @Deprecated
 public class PrimitiveTypeRef_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

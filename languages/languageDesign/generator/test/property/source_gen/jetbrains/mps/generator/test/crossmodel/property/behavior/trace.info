@@ -2,13 +2,13 @@
 <debug-info version="2">
   <root>
     <file name="BeanProperty_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.generator.test.crossmodel.property.behavior.BeanProperty_BehaviorDescriptor" />
+      <unit at="11,0,17,0" name="jetbrains.mps.generator.test.crossmodel.property.behavior.BeanProperty_BehaviorDescriptor" />
     </file>
     <file name="Bean_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.generator.test.crossmodel.property.behavior.Bean_BehaviorDescriptor" />
+      <unit at="11,0,17,0" name="jetbrains.mps.generator.test.crossmodel.property.behavior.Bean_BehaviorDescriptor" />
     </file>
     <file name="InitOp_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.generator.test.crossmodel.property.behavior.InitOp_BehaviorDescriptor" />
+      <unit at="11,0,17,0" name="jetbrains.mps.generator.test.crossmodel.property.behavior.InitOp_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

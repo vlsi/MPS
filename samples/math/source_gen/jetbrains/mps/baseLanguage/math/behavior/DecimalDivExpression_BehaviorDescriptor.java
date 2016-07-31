@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.math.behavior;
  */
 @Deprecated
 public class DecimalDivExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

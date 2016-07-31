@@ -10,4 +10,7 @@ package org.jetbrains.mps.samples.Constants.behavior;
  */
 @Deprecated
 public class GeneratedClassKeeper_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

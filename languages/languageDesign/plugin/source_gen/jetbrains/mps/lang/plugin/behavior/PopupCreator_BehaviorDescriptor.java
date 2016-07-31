@@ -10,4 +10,7 @@ package jetbrains.mps.lang.plugin.behavior;
  */
 @Deprecated
 public class PopupCreator_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

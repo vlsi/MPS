@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
  */
 @Deprecated
 public abstract class SingleArgumentSequenceOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

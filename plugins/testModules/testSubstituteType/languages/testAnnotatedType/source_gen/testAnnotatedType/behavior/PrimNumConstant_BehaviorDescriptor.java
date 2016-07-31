@@ -10,4 +10,7 @@ package testAnnotatedType.behavior;
  */
 @Deprecated
 public class PrimNumConstant_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

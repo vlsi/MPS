@@ -10,4 +10,7 @@ package jetbrains.mps.build.workflow.behavior;
  */
 @Deprecated
 public class BwfTaskDependency_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

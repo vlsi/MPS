@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.math.behavior;
  */
 @Deprecated
 public class MatrixIndexWildcard_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

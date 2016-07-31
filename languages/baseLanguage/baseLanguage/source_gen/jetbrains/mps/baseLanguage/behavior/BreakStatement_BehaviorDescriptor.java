@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.behavior;
  */
 @Deprecated
 public class BreakStatement_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

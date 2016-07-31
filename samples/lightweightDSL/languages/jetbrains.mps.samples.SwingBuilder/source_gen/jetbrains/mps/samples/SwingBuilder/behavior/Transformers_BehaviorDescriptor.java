@@ -10,4 +10,7 @@ package jetbrains.mps.samples.SwingBuilder.behavior;
  */
 @Deprecated
 public class Transformers_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

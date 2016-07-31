@@ -10,4 +10,7 @@ package jetbrains.mps.console.base.behavior;
  */
 @Deprecated
 public abstract class AbstractPrintExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

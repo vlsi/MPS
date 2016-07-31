@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.money.behavior;
  */
 @Deprecated
 public abstract class MoneyMethodCall_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

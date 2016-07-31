@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
  */
 @Deprecated
 public class SequenceCreator_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

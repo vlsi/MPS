@@ -10,4 +10,7 @@ package jetbrains.mps.lang.project.behavior;
  */
 @Deprecated
 public class MappingConfigRefAllLocal_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

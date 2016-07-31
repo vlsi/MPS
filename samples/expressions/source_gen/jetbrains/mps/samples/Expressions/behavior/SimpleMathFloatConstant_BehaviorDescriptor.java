@@ -10,4 +10,7 @@ package jetbrains.mps.samples.Expressions.behavior;
  */
 @Deprecated
 public class SimpleMathFloatConstant_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

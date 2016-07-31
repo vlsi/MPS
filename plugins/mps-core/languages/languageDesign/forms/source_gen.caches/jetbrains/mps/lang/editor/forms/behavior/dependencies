@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.editor.forms.behavior.AbstractCheckboxUI_BehaviorDescriptor" file="AbstractCheckboxUI_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.forms.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
@@ -17,6 +18,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.forms.behavior.CellModel_Checkbox_BehaviorDescriptor" file="CellModel_Checkbox_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.forms.behavior.CellModel_Checkbox__BehaviorDescriptor" file="CellModel_Checkbox__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -42,12 +44,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.forms.behavior.CheckboxUI_Platform_BehaviorDescriptor" file="CheckboxUI_Platform_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.forms.behavior.CheckboxUI_Text_BehaviorDescriptor" file="CheckboxUI_Text_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.forms.behavior.StubCellModel_Checkbox_BehaviorDescriptor" file="StubCellModel_Checkbox_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

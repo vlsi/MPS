@@ -10,4 +10,7 @@ package jetbrains.mps.lang.generator.plan.behavior;
  */
 @Deprecated
 public class Plan_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

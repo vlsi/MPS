@@ -10,4 +10,7 @@ package jetbrains.mps.lang.generator.behavior;
  */
 @Deprecated
 public class ExportLabelParameter_outputNode_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

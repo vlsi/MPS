@@ -10,4 +10,7 @@ package jetbrains.mps.debugger.api.lang.behavior;
  */
 @Deprecated
 public class DebuggerReference_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

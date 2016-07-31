@@ -10,4 +10,7 @@ package jetbrains.mps.samples.highlevel.simpleEditor.behavior;
  */
 @Deprecated
 public class SimplePropertyReference_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package testDefaultEditor.behavior;
  */
 @Deprecated
 public abstract class AbstractDeveloper_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

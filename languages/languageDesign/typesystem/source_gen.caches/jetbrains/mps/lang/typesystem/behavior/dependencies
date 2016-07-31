@@ -2,15 +2,19 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.AbstractCheckingRule_BehaviorDescriptor" file="AbstractCheckingRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.AbstractComparableStatement_BehaviorDescriptor" file="AbstractComparableStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.AbstractEquationStatement_BehaviorDescriptor" file="AbstractEquationStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.AbstractInequationStatement_BehaviorDescriptor" file="AbstractInequationStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.AbstractInequationStatement__BehaviorDescriptor" file="AbstractInequationStatement__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -37,9 +41,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.AbstractOverloadedOpsTypeRule_BehaviorDescriptor" file="AbstractOverloadedOpsTypeRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.AbstractRule_BehaviorDescriptor" file="AbstractRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.AbstractRule__BehaviorDescriptor" file="AbstractRule__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -72,6 +78,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.AbstractSubtypingRule_BehaviorDescriptor" file="AbstractSubtypingRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.AbstractSubtypingRule__BehaviorDescriptor" file="AbstractSubtypingRule__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -101,9 +108,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.AddDependencyStatement_BehaviorDescriptor" file="AddDependencyStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ApplicableNodeCondition_BehaviorDescriptor" file="ApplicableNodeCondition_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ApplicableNodeCondition__BehaviorDescriptor" file="ApplicableNodeCondition__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -129,6 +138,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ApplicableNodeReference_BehaviorDescriptor" file="ApplicableNodeReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ApplicableNodeReference__BehaviorDescriptor" file="ApplicableNodeReference__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -149,9 +159,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.AssertStatement_BehaviorDescriptor" file="AssertStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.AttributedNodeExpression_BehaviorDescriptor" file="AttributedNodeExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
@@ -223,18 +235,23 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.CaretPositionOperation_BehaviorDescriptor" file="CaretPositionOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.CoerceExpression_BehaviorDescriptor" file="CoerceExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.CoerceStatement_BehaviorDescriptor" file="CoerceStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.CoerceStrongExpression_BehaviorDescriptor" file="CoerceStrongExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ComparisonRule_BehaviorDescriptor" file="ComparisonRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ComparisonRule__BehaviorDescriptor" file="ComparisonRule__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -261,9 +278,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ConceptClauseLinkInfo_BehaviorDescriptor" file="ConceptClauseLinkInfo_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_ContextNode_BehaviorDescriptor" file="ConceptFunctionParameter_ContextNode_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_ContextNode__BehaviorDescriptor" file="ConceptFunctionParameter_ContextNode__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -291,6 +310,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_EditorContext_BehaviorDescriptor" file="ConceptFunctionParameter_EditorContext_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_EditorContext__BehaviorDescriptor" file="ConceptFunctionParameter_EditorContext__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -319,6 +339,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_Role_BehaviorDescriptor" file="ConceptFunctionParameter_Role_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_Role__BehaviorDescriptor" file="ConceptFunctionParameter_Role__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -346,6 +367,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_Selection_BehaviorDescriptor" file="ConceptFunctionParameter_Selection_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_Selection__BehaviorDescriptor" file="ConceptFunctionParameter_Selection__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -373,6 +395,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_isAggregation_BehaviorDescriptor" file="ConceptFunctionParameter_isAggregation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_isAggregation__BehaviorDescriptor" file="ConceptFunctionParameter_isAggregation__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -400,6 +423,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" file="ConceptFunctionParameter_node_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_node__BehaviorDescriptor" file="ConceptFunctionParameter_node__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -427,6 +451,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_var_BehaviorDescriptor" file="ConceptFunctionParameter_var_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_var__BehaviorDescriptor" file="ConceptFunctionParameter_var__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -455,6 +480,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ConceptReference_BehaviorDescriptor" file="ConceptReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ConceptReference__BehaviorDescriptor" file="ConceptReference__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -481,27 +507,35 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.CreateComparableEquationStatementStrong_BehaviorDescriptor" file="CreateComparableEquationStatementStrong_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.CreateComparableEquationStatement_BehaviorDescriptor" file="CreateComparableEquationStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.CreateEquationStatement_BehaviorDescriptor" file="CreateEquationStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.CreateGreaterThanInequationStatement_BehaviorDescriptor" file="CreateGreaterThanInequationStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.CreateLessThanInequationStatement_BehaviorDescriptor" file="CreateLessThanInequationStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.CreateStrongGreaterThanInequationStatement_BehaviorDescriptor" file="CreateStrongGreaterThanInequationStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.CreateStrongLessThanInequationStatement_BehaviorDescriptor" file="CreateStrongLessThanInequationStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.DefaultGroupReference_BehaviorDescriptor" file="DefaultGroupReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.DefaultGroupReference__BehaviorDescriptor" file="DefaultGroupReference__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -527,9 +561,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ErrorInfoExpression_BehaviorDescriptor" file="ErrorInfoExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.GetOperationType_BehaviorDescriptor" file="GetOperationType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.IRuleWithOneNode_BehaviorDescriptor" file="IRuleWithOneNode_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
@@ -561,12 +597,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ImmediateSupertypesExpression_BehaviorDescriptor" file="ImmediateSupertypesExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.InequationReference_BehaviorDescriptor" file="InequationReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.InequationReplacementRule_BehaviorDescriptor" file="InequationReplacementRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.InequationReplacementRule__BehaviorDescriptor" file="InequationReplacementRule__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -593,6 +632,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.InferenceRule_BehaviorDescriptor" file="InferenceRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.InferenceRule__BehaviorDescriptor" file="InferenceRule__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -621,9 +661,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.InfoStatementAnnotation_BehaviorDescriptor" file="InfoStatementAnnotation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.InfoStatement_BehaviorDescriptor" file="InfoStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.InfoStatement__BehaviorDescriptor" file="InfoStatement__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -656,6 +698,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.IsApplicableConceptFunction_BehaviorDescriptor" file="IsApplicableConceptFunction_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.IsApplicableConceptFunction__BehaviorDescriptor" file="IsApplicableConceptFunction__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -683,6 +726,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.IsReplacementRuleApplicable_ConceptFunction_BehaviorDescriptor" file="IsReplacementRuleApplicable_ConceptFunction_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.IsReplacementRuleApplicable_ConceptFunction__BehaviorDescriptor" file="IsReplacementRuleApplicable_ConceptFunction__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -710,12 +754,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.IsStrongSubtypeExpression_BehaviorDescriptor" file="IsStrongSubtypeExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.IsSubtypeExpression_BehaviorDescriptor" file="IsSubtypeExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.JoinContainer_BehaviorDescriptor" file="JoinContainer_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.JoinContainer__BehaviorDescriptor" file="JoinContainer__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -736,6 +783,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.JoinType_BehaviorDescriptor" file="JoinType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.JoinType__BehaviorDescriptor" file="JoinType__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -768,6 +816,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.LeftOperandType_parameter_BehaviorDescriptor" file="LeftOperandType_parameter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.LeftOperandType_parameter__BehaviorDescriptor" file="LeftOperandType_parameter__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -795,15 +844,19 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.LinkPatternVariableReference_BehaviorDescriptor" file="LinkPatternVariableReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.MatchStatementItem_BehaviorDescriptor" file="MatchStatementItem_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.MatchStatement_BehaviorDescriptor" file="MatchStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.MeetContainer_BehaviorDescriptor" file="MeetContainer_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.MeetContainer__BehaviorDescriptor" file="MeetContainer__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -824,6 +877,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.MeetType_BehaviorDescriptor" file="MeetType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.MeetType__BehaviorDescriptor" file="MeetType__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -856,6 +910,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.MessageStatementAnnotation_BehaviorDescriptor" file="MessageStatementAnnotation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.MessageStatementUtil" file="MessageStatementUtil.java">
     <classNode dependClassName="java.lang.String" />
@@ -895,12 +950,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.MessageTarget_BehaviorDescriptor" file="MessageTarget_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoopVariable_BehaviorDescriptor" file="MultipleForeachLoopVariable_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_BehaviorDescriptor" file="MultipleForeachLoop_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop__BehaviorDescriptor" file="MultipleForeachLoop__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -935,9 +993,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.NodeInfo_BehaviorDescriptor" file="NodeInfo_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.Node_InferTypeOperation_BehaviorDescriptor" file="Node_InferTypeOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.Node_InferTypeOperation__BehaviorDescriptor" file="Node_InferTypeOperation__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -963,6 +1023,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.Node_TypeOperation_BehaviorDescriptor" file="Node_TypeOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.Node_TypeOperation__BehaviorDescriptor" file="Node_TypeOperation__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -988,6 +1049,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.NonTypesystemRule_BehaviorDescriptor" file="NonTypesystemRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.NonTypesystemRule__BehaviorDescriptor" file="NonTypesystemRule__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1016,9 +1078,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.NormalTypeClause_BehaviorDescriptor" file="NormalTypeClause_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.Operation_parameter_BehaviorDescriptor" file="Operation_parameter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.Operation_parameter__BehaviorDescriptor" file="Operation_parameter__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1046,9 +1110,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.OrStatement_BehaviorDescriptor" file="OrStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.OriginalNodeId_BehaviorDescriptor" file="OriginalNodeId_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.OriginalNodeId__BehaviorDescriptor" file="OriginalNodeId__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -1069,6 +1135,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.OverloadedOpIsApplicableFunction_BehaviorDescriptor" file="OverloadedOpIsApplicableFunction_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.OverloadedOpIsApplicableFunction__BehaviorDescriptor" file="OverloadedOpIsApplicableFunction__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1099,12 +1166,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.OverloadedOpRulesContainer_BehaviorDescriptor" file="OverloadedOpRulesContainer_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.OverloadedOpTypeRule_OneTypeSpecified_BehaviorDescriptor" file="OverloadedOpTypeRule_OneTypeSpecified_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.OverloadedOperatorTypeFunction_BehaviorDescriptor" file="OverloadedOperatorTypeFunction_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.OverloadedOperatorTypeFunction__BehaviorDescriptor" file="OverloadedOperatorTypeFunction__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1135,9 +1205,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.OverloadedOperatorTypeRule_BehaviorDescriptor" file="OverloadedOperatorTypeRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.OverridesConceptFunction_BehaviorDescriptor" file="OverridesConceptFunction_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.OverridesConceptFunction__BehaviorDescriptor" file="OverridesConceptFunction__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1165,6 +1237,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.PatternCondition_BehaviorDescriptor" file="PatternCondition_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.PatternCondition__BehaviorDescriptor" file="PatternCondition__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1193,12 +1266,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.PatternVariableReference_BehaviorDescriptor" file="PatternVariableReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.PrintToTrace_BehaviorDescriptor" file="PrintToTrace_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.Processed_BehaviorDescriptor" file="Processed_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.Processed__BehaviorDescriptor" file="Processed__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -1219,21 +1295,27 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.PropertyMessageTarget_BehaviorDescriptor" file="PropertyMessageTarget_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.PropertyNameTarget_BehaviorDescriptor" file="PropertyNameTarget_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.PropertyPatternVariableReference_BehaviorDescriptor" file="PropertyPatternVariableReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.QuickFixArgumentReference_BehaviorDescriptor" file="QuickFixArgumentReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.QuickFixArgument_BehaviorDescriptor" file="QuickFixArgument_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.QuickFixDescriptionBlock_BehaviorDescriptor" file="QuickFixDescriptionBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.QuickFixDescriptionBlock__BehaviorDescriptor" file="QuickFixDescriptionBlock__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -1265,6 +1347,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.QuickFixExecuteBlock_BehaviorDescriptor" file="QuickFixExecuteBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.QuickFixExecuteBlock__BehaviorDescriptor" file="QuickFixExecuteBlock__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -1296,6 +1379,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.QuickFixFieldReference_BehaviorDescriptor" file="QuickFixFieldReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.QuickFixFieldReference__BehaviorDescriptor" file="QuickFixFieldReference__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -1321,9 +1405,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.QuickFixField_BehaviorDescriptor" file="QuickFixField_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.QuickFixSetSelectionBlock_BehaviorDescriptor" file="QuickFixSetSelectionBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.QuickFixSetSelectionBlock__BehaviorDescriptor" file="QuickFixSetSelectionBlock__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -1355,18 +1441,23 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ReferenceMessageTarget_BehaviorDescriptor" file="ReferenceMessageTarget_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ReferenceRoleTarget_BehaviorDescriptor" file="ReferenceRoleTarget_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ReplacementRuleReference_BehaviorDescriptor" file="ReplacementRuleReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ReportErrorStatementAnnotation_BehaviorDescriptor" file="ReportErrorStatementAnnotation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ReportErrorStatement_BehaviorDescriptor" file="ReportErrorStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.ReportErrorStatement__BehaviorDescriptor" file="ReportErrorStatement__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -1399,6 +1490,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.RightOperandType_parameter_BehaviorDescriptor" file="RightOperandType_parameter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.RightOperandType_parameter__BehaviorDescriptor" file="RightOperandType_parameter__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1426,6 +1518,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.RuntimeErrorType_BehaviorDescriptor" file="RuntimeErrorType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.RuntimeErrorType__BehaviorDescriptor" file="RuntimeErrorType__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -1452,12 +1545,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.RuntimeHoleType_BehaviorDescriptor" file="RuntimeHoleType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.RuntimeListVariable_BehaviorDescriptor" file="RuntimeListVariable_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.RuntimeTypeVariable_BehaviorDescriptor" file="RuntimeTypeVariable_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.RuntimeTypeVariable__BehaviorDescriptor" file="RuntimeTypeVariable__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -1484,9 +1580,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.SelectionType_BehaviorDescriptor" file="SelectionType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.SubstituteTypeRule_BehaviorDescriptor" file="SubstituteTypeRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.SubstituteTypeRule__BehaviorDescriptor" file="SubstituteTypeRule__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1518,6 +1616,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.SubtypingRule_BehaviorDescriptor" file="SubtypingRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.SubtypingRule__BehaviorDescriptor" file="SubtypingRule__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -1547,6 +1646,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.SupersedeConceptFunction_BehaviorDescriptor" file="SupersedeConceptFunction_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.SupersedeConceptFunction__BehaviorDescriptor" file="SupersedeConceptFunction__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1574,12 +1674,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.TypeCheckerAccessExpression_BehaviorDescriptor" file="TypeCheckerAccessExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.TypeClause_BehaviorDescriptor" file="TypeClause_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.TypeOfExpression_BehaviorDescriptor" file="TypeOfExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.TypeOfExpression__BehaviorDescriptor" file="TypeOfExpression__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -1605,9 +1708,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.TypeVarDeclaration_BehaviorDescriptor" file="TypeVarDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.TypeVarReference_BehaviorDescriptor" file="TypeVarReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.TypeVarReference__BehaviorDescriptor" file="TypeVarReference__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -1628,6 +1733,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.TypesystemIntentionArgument_BehaviorDescriptor" file="TypesystemIntentionArgument_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.TypesystemIntentionArgument__BehaviorDescriptor" file="TypesystemIntentionArgument__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -1648,12 +1754,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.TypesystemIntention_BehaviorDescriptor" file="TypesystemIntention_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.TypesystemQuickFix_BehaviorDescriptor" file="TypesystemQuickFix_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.VariableConverterItem_ApplicableBlock_BehaviorDescriptor" file="VariableConverterItem_ApplicableBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.VariableConverterItem_ApplicableBlock__BehaviorDescriptor" file="VariableConverterItem_ApplicableBlock__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1684,9 +1793,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.VariableConverterItem_BehaviorDescriptor" file="VariableConverterItem_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.VariableConverterItem_ConvertBlock_BehaviorDescriptor" file="VariableConverterItem_ConvertBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.VariableConverterItem_ConvertBlock__BehaviorDescriptor" file="VariableConverterItem_ConvertBlock__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1717,12 +1828,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.VariableConvertersContainer_BehaviorDescriptor" file="VariableConvertersContainer_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.WarningStatementAnnotation_BehaviorDescriptor" file="WarningStatementAnnotation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.WarningStatement_BehaviorDescriptor" file="WarningStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.WarningStatement__BehaviorDescriptor" file="WarningStatement__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -1755,12 +1869,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.WasSelectedNodeOperation_BehaviorDescriptor" file="WasSelectedNodeOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.WhenConcreteStatement_BehaviorDescriptor" file="WhenConcreteStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.WhenConcreteVariableDeclaration_BehaviorDescriptor" file="WhenConcreteVariableDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.WhenConcreteVariableDeclaration__BehaviorDescriptor" file="WhenConcreteVariableDeclaration__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -1782,6 +1899,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.WhenConcreteVariableReference_BehaviorDescriptor" file="WhenConcreteVariableReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.WhenConcreteVariableReference__BehaviorDescriptor" file="WhenConcreteVariableReference__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />

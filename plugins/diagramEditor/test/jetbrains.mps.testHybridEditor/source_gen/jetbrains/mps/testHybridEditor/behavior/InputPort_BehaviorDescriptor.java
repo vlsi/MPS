@@ -10,4 +10,7 @@ package jetbrains.mps.testHybridEditor.behavior;
  */
 @Deprecated
 public class InputPort_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

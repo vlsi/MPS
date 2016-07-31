@@ -10,4 +10,7 @@ package jetbrains.mps.lang.plugin.standalone.behavior;
  */
 @Deprecated
 public class ProjectPluginInitBlock_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

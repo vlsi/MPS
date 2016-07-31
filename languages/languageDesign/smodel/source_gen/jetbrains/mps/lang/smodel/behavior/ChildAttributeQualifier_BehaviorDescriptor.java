@@ -10,4 +10,7 @@ package jetbrains.mps.lang.smodel.behavior;
  */
 @Deprecated
 public class ChildAttributeQualifier_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

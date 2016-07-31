@@ -10,4 +10,7 @@ package jetbrains.mps.build.behavior;
  */
 @Deprecated
 public class BuildVariableMacroInitWithFileContent_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

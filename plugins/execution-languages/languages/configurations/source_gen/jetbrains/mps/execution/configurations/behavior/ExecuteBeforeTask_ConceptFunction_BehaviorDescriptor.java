@@ -10,4 +10,7 @@ package jetbrains.mps.execution.configurations.behavior;
  */
 @Deprecated
 public class ExecuteBeforeTask_ConceptFunction_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.samples.languagePatterns.Basic.behavior;
  */
 @Deprecated
 public abstract class AbstractRequestDescription_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

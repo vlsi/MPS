@@ -10,4 +10,7 @@ package jetbrains.mps.samples.Shapes.behavior;
  */
 @Deprecated
 public class ColorReference_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

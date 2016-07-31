@@ -10,4 +10,7 @@ package jetbrains.mps.lang.resources.behavior;
  */
 @Deprecated
 public class FileIcon_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

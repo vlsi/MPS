@@ -10,4 +10,7 @@ package jetbrains.mps.lang.smodel.behavior;
  */
 @Deprecated
 public class OperationParm_StopConceptList_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

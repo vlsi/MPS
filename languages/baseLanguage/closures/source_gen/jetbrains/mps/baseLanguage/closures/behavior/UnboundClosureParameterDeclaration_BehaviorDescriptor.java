@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.closures.behavior;
  */
 @Deprecated
 public abstract class UnboundClosureParameterDeclaration_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

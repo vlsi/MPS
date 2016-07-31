@@ -10,4 +10,7 @@ package jetbrains.mps.console.base.behavior;
  */
 @Deprecated
 public abstract class InterpretedCommand_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

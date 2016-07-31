@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.behavior;
  */
 @Deprecated
 public abstract class PrimitiveType_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

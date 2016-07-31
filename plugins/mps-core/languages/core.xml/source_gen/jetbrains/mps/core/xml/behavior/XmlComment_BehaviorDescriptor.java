@@ -10,4 +10,7 @@ package jetbrains.mps.core.xml.behavior;
  */
 @Deprecated
 public class XmlComment_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

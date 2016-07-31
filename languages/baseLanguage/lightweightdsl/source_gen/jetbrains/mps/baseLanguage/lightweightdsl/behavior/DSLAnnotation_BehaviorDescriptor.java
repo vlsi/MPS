@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.lightweightdsl.behavior;
  */
 @Deprecated
 public class DSLAnnotation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package org.jetbrains.mps.samples.DecisionTable.behavior;
  */
 @Deprecated
 public class DecisionTable_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

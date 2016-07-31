@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.imageGen.testLanguage.behavior;
  */
 @Deprecated
 public class ExportAsImage_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

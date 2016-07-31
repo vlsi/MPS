@@ -10,4 +10,7 @@ package jetbrains.mps.lang.dataFlow.behavior;
  */
 @Deprecated
 public class EmitReadStatement_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

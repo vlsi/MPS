@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.behavior;
  */
 @Deprecated
 public class QueryFunction_SubstituteMenu_WrapperHandler_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.behavior;
  */
 @Deprecated
 public class TransformationFeature_ActionType_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

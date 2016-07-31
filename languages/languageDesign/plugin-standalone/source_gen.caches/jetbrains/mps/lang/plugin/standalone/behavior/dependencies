@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDeclaration_BehaviorDescriptor" file="ApplicationPluginDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDeclaration__BehaviorDescriptor" file="ApplicationPluginDeclaration__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -34,6 +35,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDisposeBlock_BehaviorDescriptor" file="ApplicationPluginDisposeBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDisposeBlock__BehaviorDescriptor" file="ApplicationPluginDisposeBlock__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -62,6 +64,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginInitBlock_BehaviorDescriptor" file="ApplicationPluginInitBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginInitBlock__BehaviorDescriptor" file="ApplicationPluginInitBlock__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -90,6 +93,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginType_BehaviorDescriptor" file="ApplicationPluginType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginType__BehaviorDescriptor" file="ApplicationPluginType__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -136,12 +140,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.GetPreferencesComponentInProjectOperation_BehaviorDescriptor" file="GetPreferencesComponentInProjectOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.GetToolInProjectOperation_BehaviorDescriptor" file="GetToolInProjectOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDeclaration_BehaviorDescriptor" file="ProjectPluginDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDeclaration__BehaviorDescriptor" file="ProjectPluginDeclaration__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -174,6 +181,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDisposeBlock_BehaviorDescriptor" file="ProjectPluginDisposeBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDisposeBlock__BehaviorDescriptor" file="ProjectPluginDisposeBlock__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -205,6 +213,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginInitBlock_BehaviorDescriptor" file="ProjectPluginInitBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginInitBlock__BehaviorDescriptor" file="ProjectPluginInitBlock__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -236,6 +245,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginType_BehaviorDescriptor" file="ProjectPluginType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginType__BehaviorDescriptor" file="ProjectPluginType__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -263,6 +273,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.behavior.StandalonePluginDescriptor_BehaviorDescriptor" file="StandalonePluginDescriptor_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

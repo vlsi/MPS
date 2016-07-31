@@ -10,4 +10,7 @@ package jetbrains.mps.samples.customAspect.sampleLanguage.behavior;
  */
 @Deprecated
 public class DocumentedConcept_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

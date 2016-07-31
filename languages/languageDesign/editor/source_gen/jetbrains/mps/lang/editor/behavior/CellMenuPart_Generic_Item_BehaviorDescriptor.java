@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.behavior;
  */
 @Deprecated
 public class CellMenuPart_Generic_Item_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package BHL4.behavior;
  */
 @Deprecated
 public class C4_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

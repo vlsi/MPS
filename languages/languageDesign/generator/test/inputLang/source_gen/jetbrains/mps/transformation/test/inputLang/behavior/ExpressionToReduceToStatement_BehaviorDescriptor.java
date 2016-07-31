@@ -10,4 +10,7 @@ package jetbrains.mps.transformation.test.inputLang.behavior;
  */
 @Deprecated
 public class ExpressionToReduceToStatement_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

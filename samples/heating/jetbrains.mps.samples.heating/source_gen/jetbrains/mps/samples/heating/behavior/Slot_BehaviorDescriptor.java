@@ -10,4 +10,7 @@ package jetbrains.mps.samples.heating.behavior;
  */
 @Deprecated
 public class Slot_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

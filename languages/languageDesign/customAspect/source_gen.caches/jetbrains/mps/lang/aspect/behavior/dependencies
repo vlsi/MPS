@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.aspect.behavior.AspectMethodDescriptor_BehaviorDescriptor" file="AspectMethodDescriptor_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.aspect.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
@@ -20,9 +21,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.aspect.behavior.GenerationDescriptor_BehaviorDescriptor" file="GenerationDescriptor_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.aspect.behavior.GenerationDescriptor_ByInterface_BehaviorDescriptor" file="GenerationDescriptor_ByInterface_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.aspect.behavior.GenerationDescriptor_ByInterface__BehaviorDescriptor" file="GenerationDescriptor_ByInterface__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -43,9 +46,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.aspect.behavior.GenerationDescriptor_Class_BehaviorDescriptor" file="GenerationDescriptor_Class_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.aspect.behavior.HelpURL_BehaviorDescriptor" file="HelpURL_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.aspect.behavior.IAspectConcept_BehaviorDescriptor" file="IAspectConcept_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
@@ -74,6 +79,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.aspect.behavior.LanguageAspectDescriptor_BehaviorDescriptor" file="LanguageAspectDescriptor_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.aspect.behavior.LanguageAspectDescriptor__BehaviorDescriptor" file="LanguageAspectDescriptor__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -103,9 +109,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.aspect.behavior.LanguageReference_BehaviorDescriptor" file="LanguageReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.aspect.behavior.SimpleLanguageAspectDescriptor_BehaviorDescriptor" file="SimpleLanguageAspectDescriptor_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.aspect.behavior.SimpleLanguageAspectDescriptor__BehaviorDescriptor" file="SimpleLanguageAspectDescriptor__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />

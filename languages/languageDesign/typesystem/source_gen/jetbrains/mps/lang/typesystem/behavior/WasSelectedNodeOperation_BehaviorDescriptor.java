@@ -10,4 +10,7 @@ package jetbrains.mps.lang.typesystem.behavior;
  */
 @Deprecated
 public class WasSelectedNodeOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

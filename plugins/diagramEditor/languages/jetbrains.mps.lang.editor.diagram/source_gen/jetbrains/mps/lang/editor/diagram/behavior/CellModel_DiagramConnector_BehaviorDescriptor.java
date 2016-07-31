@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.diagram.behavior;
  */
 @Deprecated
 public class CellModel_DiagramConnector_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

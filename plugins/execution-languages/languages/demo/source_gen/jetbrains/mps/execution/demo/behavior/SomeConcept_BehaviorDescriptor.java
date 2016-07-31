@@ -10,4 +10,7 @@ package jetbrains.mps.execution.demo.behavior;
  */
 @Deprecated
 public class SomeConcept_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

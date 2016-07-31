@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.behavior;
  */
 @Deprecated
 public class UnknownLocalCall_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

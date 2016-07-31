@@ -16,6 +16,7 @@
   </dependency>
   <dependency className="testAnnotatedType.behavior.PresenceCondition_BehaviorDescriptor" file="PresenceCondition_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="testAnnotatedType.behavior.PresenceCondition__BehaviorDescriptor" file="PresenceCondition__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -42,6 +43,7 @@
   </dependency>
   <dependency className="testAnnotatedType.behavior.PrimDoubleType_BehaviorDescriptor" file="PrimDoubleType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="testAnnotatedType.behavior.PrimDoubleType__BehaviorDescriptor" file="PrimDoubleType__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -69,18 +71,23 @@
   </dependency>
   <dependency className="testAnnotatedType.behavior.PrimFloatType_BehaviorDescriptor" file="PrimFloatType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="testAnnotatedType.behavior.PrimIntType_BehaviorDescriptor" file="PrimIntType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="testAnnotatedType.behavior.PrimLongType_BehaviorDescriptor" file="PrimLongType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="testAnnotatedType.behavior.PrimNumConstant_BehaviorDescriptor" file="PrimNumConstant_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="testAnnotatedType.behavior.PrimType_BehaviorDescriptor" file="PrimType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="testAnnotatedType.behavior.PrimType__BehaviorDescriptor" file="PrimType__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -106,6 +113,7 @@
   </dependency>
   <dependency className="testAnnotatedType.behavior.SubstituteAnnotation_BehaviorDescriptor" file="SubstituteAnnotation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

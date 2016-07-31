@@ -10,4 +10,7 @@ package jetbrains.mps.lang.dataFlow.analyzers.behavior;
  */
 @Deprecated
 public class IsOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.samples.KajaAndOr.behavior;
  */
 @Deprecated
 public class And_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

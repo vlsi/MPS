@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="BHL2.behavior.A_BehaviorDescriptor" file="A_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="BHL2.behavior.A__BehaviorDescriptor" file="A__BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
@@ -28,6 +29,7 @@
   </dependency>
   <dependency className="BHL2.behavior.B_BehaviorDescriptor" file="B_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="BHL2.behavior.B__BehaviorDescriptor" file="B__BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />

@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.behavior;
  */
 @Deprecated
 public abstract class CellModel_WithRole_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

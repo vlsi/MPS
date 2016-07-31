@@ -10,4 +10,7 @@ package jetbrains.mps.samples.SwingBuilder.behavior;
  */
 @Deprecated
 public class Frame_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

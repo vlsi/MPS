@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.figures.behavior;
  */
 @Deprecated
 public abstract class Figure_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

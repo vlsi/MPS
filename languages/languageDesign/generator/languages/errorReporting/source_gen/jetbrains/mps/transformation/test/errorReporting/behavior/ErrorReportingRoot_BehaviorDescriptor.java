@@ -10,4 +10,7 @@ package jetbrains.mps.transformation.test.errorReporting.behavior;
  */
 @Deprecated
 public class ErrorReportingRoot_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

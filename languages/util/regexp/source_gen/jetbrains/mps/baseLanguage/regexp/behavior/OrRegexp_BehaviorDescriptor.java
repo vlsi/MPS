@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
  */
 @Deprecated
 public class OrRegexp_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

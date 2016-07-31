@@ -10,4 +10,7 @@ package jetbrains.mps.samples.componentDependencies.behavior;
  */
 @Deprecated
 public class Dependency_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

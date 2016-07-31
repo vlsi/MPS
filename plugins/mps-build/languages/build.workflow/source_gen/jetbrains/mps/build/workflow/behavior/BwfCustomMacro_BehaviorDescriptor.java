@@ -10,4 +10,7 @@ package jetbrains.mps.build.workflow.behavior;
  */
 @Deprecated
 public class BwfCustomMacro_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

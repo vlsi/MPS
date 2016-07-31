@@ -10,4 +10,7 @@ package jetbrains.mps.lang.script.behavior;
  */
 @Deprecated
 public class MigrationScriptPart_Instance_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

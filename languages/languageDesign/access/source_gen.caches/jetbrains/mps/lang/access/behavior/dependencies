@@ -2,9 +2,11 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.access.behavior.BaseExecuteCommandStatementSync_BehaviorDescriptor" file="BaseExecuteCommandStatementSync_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.access.behavior.BaseExecuteCommandStatement_BehaviorDescriptor" file="BaseExecuteCommandStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.access.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
@@ -20,6 +22,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.access.behavior.CommandClosureLiteral_BehaviorDescriptor" file="CommandClosureLiteral_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.access.behavior.CommandClosureLiteral__BehaviorDescriptor" file="CommandClosureLiteral__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -46,21 +49,27 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.access.behavior.ExecuteCommandInEDTStatement_BehaviorDescriptor" file="ExecuteCommandInEDTStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.access.behavior.ExecuteCommandStatement_BehaviorDescriptor" file="ExecuteCommandStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.access.behavior.ExecuteEDTCommandStatement_BehaviorDescriptor" file="ExecuteEDTCommandStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.access.behavior.ExecuteLightweightCommandStatement_BehaviorDescriptor" file="ExecuteLightweightCommandStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.access.behavior.ExecuteTransparentCommandStatement_BehaviorDescriptor" file="ExecuteTransparentCommandStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.access.behavior.ExecuteWriteActionStatement_BehaviorDescriptor" file="ExecuteWriteActionStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.access.behavior.IExecuteCommandStatementSync_BehaviorDescriptor" file="IExecuteCommandStatementSync_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />

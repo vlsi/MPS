@@ -10,4 +10,7 @@ package jetbrains.mps.samples.Kaja.behavior;
  */
 @Deprecated
 public class TraceMessage_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

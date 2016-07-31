@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.formsTests.behavior;
  */
 @Deprecated
 public class VariousCheckboxes_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

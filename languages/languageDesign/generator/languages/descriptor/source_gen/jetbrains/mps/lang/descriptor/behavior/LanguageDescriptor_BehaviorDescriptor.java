@@ -10,4 +10,7 @@ package jetbrains.mps.lang.descriptor.behavior;
  */
 @Deprecated
 public class LanguageDescriptor_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

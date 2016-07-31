@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.behavior;
  */
 @Deprecated
 public class QueryFunction_AttributeStyleParameter_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

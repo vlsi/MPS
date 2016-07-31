@@ -10,4 +10,7 @@ package jetbrains.mps.lang.smodel.behavior;
  */
 @Deprecated
 public class LinkList_AddNewChildOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

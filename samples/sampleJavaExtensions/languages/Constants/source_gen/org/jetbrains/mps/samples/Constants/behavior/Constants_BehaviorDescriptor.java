@@ -10,4 +10,7 @@ package org.jetbrains.mps.samples.Constants.behavior;
  */
 @Deprecated
 public class Constants_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

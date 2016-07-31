@@ -10,4 +10,7 @@ package jetbrains.mps.editor.contextActionsTool.lang.menus.behavior;
  */
 @Deprecated
 public class TransformationLocation_ContextActionsTool_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

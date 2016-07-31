@@ -10,4 +10,7 @@ package jetbrains.mps.samples.Shapes.behavior;
  */
 @Deprecated
 public class Square_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

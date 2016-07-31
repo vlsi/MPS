@@ -10,4 +10,7 @@ package jetbrains.mps.samples.generator_demo.demoLang6.behavior;
  */
 @Deprecated
 public class Label_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

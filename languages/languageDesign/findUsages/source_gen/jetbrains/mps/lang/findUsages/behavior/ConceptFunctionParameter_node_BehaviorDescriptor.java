@@ -10,4 +10,7 @@ package jetbrains.mps.lang.findUsages.behavior;
  */
 @Deprecated
 public class ConceptFunctionParameter_node_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

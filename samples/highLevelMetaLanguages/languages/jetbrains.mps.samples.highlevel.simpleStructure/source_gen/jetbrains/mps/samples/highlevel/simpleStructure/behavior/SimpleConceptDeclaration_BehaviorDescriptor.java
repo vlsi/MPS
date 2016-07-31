@@ -10,4 +10,7 @@ package jetbrains.mps.samples.highlevel.simpleStructure.behavior;
  */
 @Deprecated
 public class SimpleConceptDeclaration_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

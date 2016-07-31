@@ -10,4 +10,7 @@ package jetbrains.mps.lang.project.behavior;
  */
 @Deprecated
 public class MappingPriorityRule_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

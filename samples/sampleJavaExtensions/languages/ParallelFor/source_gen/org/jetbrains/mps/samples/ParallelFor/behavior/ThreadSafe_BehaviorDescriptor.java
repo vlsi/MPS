@@ -10,4 +10,7 @@ package org.jetbrains.mps.samples.ParallelFor.behavior;
  */
 @Deprecated
 public class ThreadSafe_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

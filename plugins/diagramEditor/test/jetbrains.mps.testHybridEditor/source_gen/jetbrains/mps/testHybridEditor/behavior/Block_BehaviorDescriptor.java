@@ -10,4 +10,7 @@ package jetbrains.mps.testHybridEditor.behavior;
  */
 @Deprecated
 public class Block_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.editorTest.behavior;
  */
 @Deprecated
 public class DelTestRoot_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

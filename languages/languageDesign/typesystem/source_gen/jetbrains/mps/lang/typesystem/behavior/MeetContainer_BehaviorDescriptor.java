@@ -10,4 +10,7 @@ package jetbrains.mps.lang.typesystem.behavior;
  */
 @Deprecated
 public class MeetContainer_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

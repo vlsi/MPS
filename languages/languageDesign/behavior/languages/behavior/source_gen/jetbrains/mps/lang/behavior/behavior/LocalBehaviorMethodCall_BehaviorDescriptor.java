@@ -10,4 +10,7 @@ package jetbrains.mps.lang.behavior.behavior;
  */
 @Deprecated
 public class LocalBehaviorMethodCall_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

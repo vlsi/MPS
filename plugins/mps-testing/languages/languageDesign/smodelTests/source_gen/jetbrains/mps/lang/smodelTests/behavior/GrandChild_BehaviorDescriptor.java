@@ -10,4 +10,7 @@ package jetbrains.mps.lang.smodelTests.behavior;
  */
 @Deprecated
 public class GrandChild_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

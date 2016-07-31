@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.tableTests.behavior;
  */
 @Deprecated
 public class EventReference_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

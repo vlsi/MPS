@@ -10,4 +10,7 @@ package jetbrains.mps.execution.configurations.behavior;
  */
 @Deprecated
 public class ConsoleCreator_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

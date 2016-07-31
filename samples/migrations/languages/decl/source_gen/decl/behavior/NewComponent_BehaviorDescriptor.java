@@ -10,4 +10,7 @@ package decl.behavior;
  */
 @Deprecated
 public class NewComponent_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

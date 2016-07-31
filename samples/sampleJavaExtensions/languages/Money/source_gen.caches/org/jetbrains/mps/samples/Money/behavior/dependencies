@@ -18,15 +18,19 @@
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.behavior.ConvertTo_BehaviorDescriptor" file="ConvertTo_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.behavior.CurrencyDefTable_BehaviorDescriptor" file="CurrencyDefTable_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.behavior.CurrencyUnit_BehaviorDescriptor" file="CurrencyUnit_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.behavior.CurrentStockPrice_BehaviorDescriptor" file="CurrentStockPrice_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.behavior.CurrentStockPrice__BehaviorDescriptor" file="CurrentStockPrice__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -56,12 +60,15 @@
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.behavior.GetAmount_BehaviorDescriptor" file="GetAmount_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.behavior.GetCurrency_BehaviorDescriptor" file="GetCurrency_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.behavior.MoneyLiteral_BehaviorDescriptor" file="MoneyLiteral_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.behavior.MoneyLiteral__BehaviorDescriptor" file="MoneyLiteral__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
@@ -94,6 +101,7 @@
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.behavior.MoneyType_BehaviorDescriptor" file="MoneyType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.behavior.MoneyType__BehaviorDescriptor" file="MoneyType__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -122,6 +130,7 @@
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.behavior.MovingAverage_BehaviorDescriptor" file="MovingAverage_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.behavior.MovingAverage__BehaviorDescriptor" file="MovingAverage__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -149,6 +158,7 @@
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.behavior.StockSymbol_BehaviorDescriptor" file="StockSymbol_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.behavior.StockSymbol__BehaviorDescriptor" file="StockSymbol__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />

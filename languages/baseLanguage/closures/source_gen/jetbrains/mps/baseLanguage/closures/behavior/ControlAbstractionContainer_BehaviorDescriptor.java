@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.closures.behavior;
  */
 @Deprecated
 public class ControlAbstractionContainer_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

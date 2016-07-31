@@ -10,4 +10,7 @@ package jetbrains.mps.lang.traceable.operations.behavior;
  */
 @Deprecated
 public class NList_CopyWithTraceOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

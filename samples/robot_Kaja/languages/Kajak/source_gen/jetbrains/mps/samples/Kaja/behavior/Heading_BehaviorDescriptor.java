@@ -10,4 +10,7 @@ package jetbrains.mps.samples.Kaja.behavior;
  */
 @Deprecated
 public class Heading_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

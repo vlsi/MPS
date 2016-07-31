@@ -10,4 +10,7 @@ package MultiTarget.behavior;
  */
 @Deprecated
 public class Container_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

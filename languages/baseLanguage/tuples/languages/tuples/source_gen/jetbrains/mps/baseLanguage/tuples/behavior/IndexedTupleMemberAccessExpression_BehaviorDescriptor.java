@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
  */
 @Deprecated
 public class IndexedTupleMemberAccessExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

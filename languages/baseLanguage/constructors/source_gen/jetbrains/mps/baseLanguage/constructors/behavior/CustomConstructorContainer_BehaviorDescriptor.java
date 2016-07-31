@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.constructors.behavior;
  */
 @Deprecated
 public class CustomConstructorContainer_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

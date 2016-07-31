@@ -10,4 +10,7 @@ package jetbrains.mps.lang.dataFlow.behavior;
  */
 @Deprecated
 public abstract class Position_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

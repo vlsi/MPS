@@ -10,4 +10,7 @@ package jetbrains.mps.console.ideCommands.behavior;
  */
 @Deprecated
 public abstract class RebuildProjectCommand_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

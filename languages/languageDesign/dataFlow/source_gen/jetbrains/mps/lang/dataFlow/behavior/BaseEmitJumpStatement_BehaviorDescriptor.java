@@ -10,4 +10,7 @@ package jetbrains.mps.lang.dataFlow.behavior;
  */
 @Deprecated
 public abstract class BaseEmitJumpStatement_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

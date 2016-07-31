@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.builders.behavior;
  */
 @Deprecated
 public class SimpleBuilderChildExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

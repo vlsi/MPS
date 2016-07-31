@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.diagram.testLanguage.behavior;
  */
 @Deprecated
 public class NodeWithPorts_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

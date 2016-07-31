@@ -10,4 +10,7 @@ package jetbrains.mps.lang.dataFlow.analyzers.behavior;
  */
 @Deprecated
 public class InsertBeforePosition_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

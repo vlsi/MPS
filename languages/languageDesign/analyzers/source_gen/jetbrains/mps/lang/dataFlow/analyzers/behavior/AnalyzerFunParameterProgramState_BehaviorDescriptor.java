@@ -10,4 +10,7 @@ package jetbrains.mps.lang.dataFlow.analyzers.behavior;
  */
 @Deprecated
 public class AnalyzerFunParameterProgramState_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

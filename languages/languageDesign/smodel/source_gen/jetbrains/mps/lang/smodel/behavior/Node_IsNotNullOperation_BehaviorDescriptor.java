@@ -10,4 +10,7 @@ package jetbrains.mps.lang.smodel.behavior;
  */
 @Deprecated
 public class Node_IsNotNullOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

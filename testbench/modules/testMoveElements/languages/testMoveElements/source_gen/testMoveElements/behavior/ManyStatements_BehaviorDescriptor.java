@@ -10,4 +10,7 @@ package testMoveElements.behavior;
  */
 @Deprecated
 public class ManyStatements_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

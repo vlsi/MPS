@@ -10,4 +10,7 @@ package jetbrains.mps.build.behavior;
  */
 @Deprecated
 public class BuildSource_JavaJars_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

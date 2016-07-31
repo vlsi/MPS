@@ -10,4 +10,7 @@ package jetbrains.mps.lang.actions.behavior;
  */
 @Deprecated
 public class QueryFunction_SideTransform_Icon_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

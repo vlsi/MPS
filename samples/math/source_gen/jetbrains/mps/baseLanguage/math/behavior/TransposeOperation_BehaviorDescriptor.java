@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.math.behavior;
  */
 @Deprecated
 public class TransposeOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.lang.dataFlow.behavior;
  */
 @Deprecated
 public class InstructionType_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

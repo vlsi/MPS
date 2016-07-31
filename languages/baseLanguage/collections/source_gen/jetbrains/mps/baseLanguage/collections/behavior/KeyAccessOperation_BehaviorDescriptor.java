@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
  */
 @Deprecated
 public class KeyAccessOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

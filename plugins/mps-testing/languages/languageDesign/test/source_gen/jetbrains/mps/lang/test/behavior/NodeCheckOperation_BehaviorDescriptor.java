@@ -10,4 +10,7 @@ package jetbrains.mps.lang.test.behavior;
  */
 @Deprecated
 public abstract class NodeCheckOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

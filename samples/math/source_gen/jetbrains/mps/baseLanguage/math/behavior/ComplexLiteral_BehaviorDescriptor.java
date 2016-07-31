@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.math.behavior;
  */
 @Deprecated
 public class ComplexLiteral_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

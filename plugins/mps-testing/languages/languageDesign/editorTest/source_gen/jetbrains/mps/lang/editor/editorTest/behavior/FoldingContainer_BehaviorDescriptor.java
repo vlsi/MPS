@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.editorTest.behavior;
  */
 @Deprecated
 public class FoldingContainer_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

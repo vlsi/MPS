@@ -10,4 +10,7 @@ package jetbrains.mps.lang.migration.behavior;
  */
 @Deprecated
 public class MoveProperty_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

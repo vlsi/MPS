@@ -10,4 +10,7 @@ package jetbrains.mps.lang.constraints.behavior;
  */
 @Deprecated
 public class ConstraintFunctionParameter_linkTarget_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

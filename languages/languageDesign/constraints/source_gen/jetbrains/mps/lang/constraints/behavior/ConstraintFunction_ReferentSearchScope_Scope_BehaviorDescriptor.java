@@ -10,4 +10,7 @@ package jetbrains.mps.lang.constraints.behavior;
  */
 @Deprecated
 public class ConstraintFunction_ReferentSearchScope_Scope_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

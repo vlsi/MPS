@@ -10,4 +10,7 @@ package jetbrains.mps.console.scripts.behavior;
  */
 @Deprecated
 public class ConsoleScript_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

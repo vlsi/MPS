@@ -10,4 +10,7 @@ package jetbrains.mps.lang.refactoring.behavior;
  */
 @Deprecated
 public abstract class ContextMemberOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

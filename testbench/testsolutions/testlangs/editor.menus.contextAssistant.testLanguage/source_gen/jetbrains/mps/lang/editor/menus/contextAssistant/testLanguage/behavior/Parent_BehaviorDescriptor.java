@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.behavior;
  */
 @Deprecated
 public class Parent_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

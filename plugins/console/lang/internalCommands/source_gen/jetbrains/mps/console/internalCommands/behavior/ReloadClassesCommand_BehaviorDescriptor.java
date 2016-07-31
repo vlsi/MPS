@@ -10,4 +10,7 @@ package jetbrains.mps.console.internalCommands.behavior;
  */
 @Deprecated
 public class ReloadClassesCommand_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

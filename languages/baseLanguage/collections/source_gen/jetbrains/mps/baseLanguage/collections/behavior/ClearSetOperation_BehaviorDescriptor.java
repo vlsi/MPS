@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
  */
 @Deprecated
 public class ClearSetOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

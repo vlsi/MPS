@@ -10,4 +10,7 @@ package jetbrains.mps.samples.complex.behavior;
  */
 @Deprecated
 public class DegreeComplexExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.console.internalCommands.behavior;
  */
 @Deprecated
 public class InternalMode_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.samples.mindmaps.behavior;
  */
 @Deprecated
 public abstract class VisualBox_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

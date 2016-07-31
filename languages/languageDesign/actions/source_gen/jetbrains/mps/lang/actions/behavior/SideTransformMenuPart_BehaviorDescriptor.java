@@ -10,4 +10,7 @@ package jetbrains.mps.lang.actions.behavior;
  */
 @Deprecated
 public abstract class SideTransformMenuPart_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

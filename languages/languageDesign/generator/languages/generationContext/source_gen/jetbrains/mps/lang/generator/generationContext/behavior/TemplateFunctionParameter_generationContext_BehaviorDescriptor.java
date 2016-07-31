@@ -10,4 +10,7 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
  */
 @Deprecated
 public class TemplateFunctionParameter_generationContext_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

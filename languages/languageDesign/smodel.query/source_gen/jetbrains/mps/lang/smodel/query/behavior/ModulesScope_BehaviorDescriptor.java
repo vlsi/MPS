@@ -10,4 +10,7 @@ package jetbrains.mps.lang.smodel.query.behavior;
  */
 @Deprecated
 public class ModulesScope_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.lang.refactoring.behavior;
  */
 @Deprecated
 public class RefactoringParameter_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

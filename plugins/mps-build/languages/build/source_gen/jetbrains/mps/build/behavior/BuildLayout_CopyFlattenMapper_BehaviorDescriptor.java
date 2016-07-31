@@ -10,4 +10,7 @@ package jetbrains.mps.build.behavior;
  */
 @Deprecated
 public class BuildLayout_CopyFlattenMapper_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

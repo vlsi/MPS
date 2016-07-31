@@ -10,4 +10,7 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
  */
 @Deprecated
 public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

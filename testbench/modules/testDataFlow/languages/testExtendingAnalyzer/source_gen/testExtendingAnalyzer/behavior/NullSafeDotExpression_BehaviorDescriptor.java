@@ -10,4 +10,7 @@ package testExtendingAnalyzer.behavior;
  */
 @Deprecated
 public class NullSafeDotExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

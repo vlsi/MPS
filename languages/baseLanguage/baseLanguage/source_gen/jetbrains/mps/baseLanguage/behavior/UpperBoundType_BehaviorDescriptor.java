@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.behavior;
  */
 @Deprecated
 public class UpperBoundType_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

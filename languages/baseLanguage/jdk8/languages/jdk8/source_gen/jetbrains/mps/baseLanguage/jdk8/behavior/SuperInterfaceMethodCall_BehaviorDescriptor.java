@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.jdk8.behavior;
  */
 @Deprecated
 public class SuperInterfaceMethodCall_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

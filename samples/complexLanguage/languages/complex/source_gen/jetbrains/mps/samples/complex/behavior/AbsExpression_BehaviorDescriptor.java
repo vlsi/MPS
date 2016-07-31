@@ -10,4 +10,7 @@ package jetbrains.mps.samples.complex.behavior;
  */
 @Deprecated
 public class AbsExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

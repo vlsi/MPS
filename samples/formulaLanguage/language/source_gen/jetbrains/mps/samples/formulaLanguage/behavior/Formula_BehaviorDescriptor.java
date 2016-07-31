@@ -10,4 +10,7 @@ package jetbrains.mps.samples.formulaLanguage.behavior;
  */
 @Deprecated
 public class Formula_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

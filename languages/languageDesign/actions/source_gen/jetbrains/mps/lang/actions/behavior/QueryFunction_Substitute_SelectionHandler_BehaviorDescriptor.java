@@ -10,4 +10,7 @@ package jetbrains.mps.lang.actions.behavior;
  */
 @Deprecated
 public class QueryFunction_Substitute_SelectionHandler_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
  */
 @Deprecated
 public class ValueAccessOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

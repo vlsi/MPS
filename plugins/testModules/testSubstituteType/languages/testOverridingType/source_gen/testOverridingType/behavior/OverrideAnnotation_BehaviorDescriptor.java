@@ -10,4 +10,7 @@ package testOverridingType.behavior;
  */
 @Deprecated
 public class OverrideAnnotation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

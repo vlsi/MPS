@@ -10,4 +10,7 @@ package jetbrains.mps.lang.slanguage.behavior;
  */
 @Deprecated
 public class AspectModelRefExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

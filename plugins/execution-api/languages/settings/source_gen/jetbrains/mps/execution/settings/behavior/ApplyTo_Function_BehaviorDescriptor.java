@@ -10,4 +10,7 @@ package jetbrains.mps.execution.settings.behavior;
  */
 @Deprecated
 public class ApplyTo_Function_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

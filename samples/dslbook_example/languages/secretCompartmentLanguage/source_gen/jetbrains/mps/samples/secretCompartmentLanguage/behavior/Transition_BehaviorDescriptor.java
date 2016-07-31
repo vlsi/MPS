@@ -10,4 +10,7 @@ package jetbrains.mps.samples.secretCompartmentLanguage.behavior;
  */
 @Deprecated
 public class Transition_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

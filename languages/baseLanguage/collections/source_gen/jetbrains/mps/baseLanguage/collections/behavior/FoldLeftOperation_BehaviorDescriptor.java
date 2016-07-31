@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
  */
 @Deprecated
 public class FoldLeftOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

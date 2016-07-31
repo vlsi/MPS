@@ -10,4 +10,7 @@ package jetbrains.mps.lang.generator.plan.behavior;
  */
 @Deprecated
 public class Checkpoint_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

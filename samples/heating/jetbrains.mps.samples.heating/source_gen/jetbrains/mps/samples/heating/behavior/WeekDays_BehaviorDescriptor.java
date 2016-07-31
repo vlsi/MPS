@@ -10,4 +10,7 @@ package jetbrains.mps.samples.heating.behavior;
  */
 @Deprecated
 public class WeekDays_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

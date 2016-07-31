@@ -10,4 +10,7 @@ package jetbrains.mps.samples.mindmaps.behavior;
  */
 @Deprecated
 public class Specializes_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

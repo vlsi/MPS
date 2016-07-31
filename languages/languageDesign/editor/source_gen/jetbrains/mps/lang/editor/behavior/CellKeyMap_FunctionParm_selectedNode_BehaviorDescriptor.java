@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.behavior;
  */
 @Deprecated
 public class CellKeyMap_FunctionParm_selectedNode_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

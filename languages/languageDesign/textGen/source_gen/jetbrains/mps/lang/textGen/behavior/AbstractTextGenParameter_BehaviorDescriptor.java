@@ -10,4 +10,7 @@ package jetbrains.mps.lang.textGen.behavior;
  */
 @Deprecated
 public abstract class AbstractTextGenParameter_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

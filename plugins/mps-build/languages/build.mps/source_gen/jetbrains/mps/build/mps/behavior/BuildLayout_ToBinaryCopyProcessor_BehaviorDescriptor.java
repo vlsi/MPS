@@ -10,4 +10,7 @@ package jetbrains.mps.build.mps.behavior;
  */
 @Deprecated
 public class BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

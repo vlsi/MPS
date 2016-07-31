@@ -10,4 +10,7 @@ package jetbrains.mps.lang.generator.generationParameters.behavior;
  */
 @Deprecated
 public class DefaultGeneratorParameterContainer_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

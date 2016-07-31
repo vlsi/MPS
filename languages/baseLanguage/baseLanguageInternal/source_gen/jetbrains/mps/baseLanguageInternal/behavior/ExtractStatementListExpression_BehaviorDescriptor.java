@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguageInternal.behavior;
  */
 @Deprecated
 public class ExtractStatementListExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

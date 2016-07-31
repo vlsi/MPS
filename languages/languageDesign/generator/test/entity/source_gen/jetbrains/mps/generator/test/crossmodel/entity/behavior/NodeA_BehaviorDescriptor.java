@@ -10,4 +10,7 @@ package jetbrains.mps.generator.test.crossmodel.entity.behavior;
  */
 @Deprecated
 public class NodeA_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

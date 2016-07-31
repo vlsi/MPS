@@ -10,4 +10,7 @@ package jetbrains.mps.lang.actions.behavior;
  */
 @Deprecated
 public class NF_Node_InsertNewPrevSiblingOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

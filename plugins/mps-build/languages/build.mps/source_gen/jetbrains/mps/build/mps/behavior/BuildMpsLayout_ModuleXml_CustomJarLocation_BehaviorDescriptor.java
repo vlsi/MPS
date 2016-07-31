@@ -10,4 +10,7 @@ package jetbrains.mps.build.mps.behavior;
  */
 @Deprecated
 public class BuildMpsLayout_ModuleXml_CustomJarLocation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

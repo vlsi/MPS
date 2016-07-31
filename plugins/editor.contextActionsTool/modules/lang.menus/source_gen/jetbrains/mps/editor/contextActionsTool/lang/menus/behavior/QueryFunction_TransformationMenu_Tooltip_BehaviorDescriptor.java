@@ -10,4 +10,7 @@ package jetbrains.mps.editor.contextActionsTool.lang.menus.behavior;
  */
 @Deprecated
 public class QueryFunction_TransformationMenu_Tooltip_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

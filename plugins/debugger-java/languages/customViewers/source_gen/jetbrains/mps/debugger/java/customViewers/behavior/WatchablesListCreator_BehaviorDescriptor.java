@@ -10,4 +10,7 @@ package jetbrains.mps.debugger.java.customViewers.behavior;
  */
 @Deprecated
 public class WatchablesListCreator_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

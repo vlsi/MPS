@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.math.behavior;
  */
 @Deprecated
 public class VectorInitializer_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

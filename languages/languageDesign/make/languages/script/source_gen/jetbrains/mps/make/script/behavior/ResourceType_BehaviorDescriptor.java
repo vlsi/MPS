@@ -10,4 +10,7 @@ package jetbrains.mps.make.script.behavior;
  */
 @Deprecated
 public class ResourceType_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -21,6 +21,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleLiteral_BehaviorDescriptor" file="IndexedTupleLiteral_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleLiteral__BehaviorDescriptor" file="IndexedTupleLiteral__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -49,6 +50,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleMemberAccessExpression_BehaviorDescriptor" file="IndexedTupleMemberAccessExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleMemberAccessExpression__BehaviorDescriptor" file="IndexedTupleMemberAccessExpression__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -76,6 +78,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleType_BehaviorDescriptor" file="IndexedTupleType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleType__BehaviorDescriptor" file="IndexedTupleType__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -112,6 +115,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleComponentAccessOperation_BehaviorDescriptor" file="NamedTupleComponentAccessOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleComponentAccessOperation__BehaviorDescriptor" file="NamedTupleComponentAccessOperation__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -139,6 +143,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleComponentDeclaration_BehaviorDescriptor" file="NamedTupleComponentDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleComponentDeclaration__BehaviorDescriptor" file="NamedTupleComponentDeclaration__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -160,9 +165,11 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleComponentReference_BehaviorDescriptor" file="NamedTupleComponentReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_BehaviorDescriptor" file="NamedTupleDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration__BehaviorDescriptor" file="NamedTupleDeclaration__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -221,6 +228,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleLiteral_BehaviorDescriptor" file="NamedTupleLiteral_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleLiteral__BehaviorDescriptor" file="NamedTupleLiteral__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -246,6 +254,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleType_BehaviorDescriptor" file="NamedTupleType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleType__BehaviorDescriptor" file="NamedTupleType__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />

@@ -10,4 +10,7 @@ package jetbrains.mps.make.outlook.behavior;
  */
 @Deprecated
 public class Outlook_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

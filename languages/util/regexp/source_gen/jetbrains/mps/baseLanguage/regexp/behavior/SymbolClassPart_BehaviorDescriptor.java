@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
  */
 @Deprecated
 public abstract class SymbolClassPart_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

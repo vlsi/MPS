@@ -10,4 +10,7 @@ package jetbrains.mps.make.facet.behavior;
  */
 @Deprecated
 public class RelatedFacetReference_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

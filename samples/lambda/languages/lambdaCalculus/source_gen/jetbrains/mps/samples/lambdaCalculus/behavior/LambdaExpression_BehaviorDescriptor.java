@@ -10,4 +10,7 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
  */
 @Deprecated
 public abstract class LambdaExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

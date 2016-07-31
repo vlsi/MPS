@@ -10,4 +10,7 @@ package jetbrains.mps.debugger.java.privateMembers.behavior;
  */
 @Deprecated
 public class PrivateStaticMethodCall_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

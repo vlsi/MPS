@@ -10,4 +10,7 @@ package jetbrains.mps.calculator.behavior;
  */
 @Deprecated
 public class InputFieldReference_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
  */
 @Deprecated
 public class DefaultClassifierMethodCallOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

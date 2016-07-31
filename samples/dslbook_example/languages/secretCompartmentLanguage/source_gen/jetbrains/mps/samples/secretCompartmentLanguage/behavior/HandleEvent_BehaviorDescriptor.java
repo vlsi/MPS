@@ -10,4 +10,7 @@ package jetbrains.mps.samples.secretCompartmentLanguage.behavior;
  */
 @Deprecated
 public class HandleEvent_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

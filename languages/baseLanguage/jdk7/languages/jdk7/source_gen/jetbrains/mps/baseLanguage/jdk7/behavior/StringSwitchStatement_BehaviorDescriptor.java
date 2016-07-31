@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.jdk7.behavior;
  */
 @Deprecated
 public class StringSwitchStatement_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

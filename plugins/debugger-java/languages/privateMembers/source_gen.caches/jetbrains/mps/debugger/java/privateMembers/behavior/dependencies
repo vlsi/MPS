@@ -16,6 +16,7 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateFieldReferenceOperation_BehaviorDescriptor" file="PrivateFieldReferenceOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateFieldReferenceOperation__BehaviorDescriptor" file="PrivateFieldReferenceOperation__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -45,6 +46,7 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateInstanceMethodCallOperation_BehaviorDescriptor" file="PrivateInstanceMethodCallOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateInstanceMethodCallOperation__BehaviorDescriptor" file="PrivateInstanceMethodCallOperation__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -70,6 +72,7 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateStaticFieldReference_BehaviorDescriptor" file="PrivateStaticFieldReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateStaticFieldReference__BehaviorDescriptor" file="PrivateStaticFieldReference__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -99,6 +102,7 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateStaticMethodCall_BehaviorDescriptor" file="PrivateStaticMethodCall_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

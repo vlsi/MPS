@@ -10,4 +10,7 @@ package jetbrains.mps.samples.KajaSceneConstruction.behavior;
  */
 @Deprecated
 public class DestroyWall_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

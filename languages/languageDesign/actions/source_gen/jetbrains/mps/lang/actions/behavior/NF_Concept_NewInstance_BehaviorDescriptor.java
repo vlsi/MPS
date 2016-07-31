@@ -10,4 +10,7 @@ package jetbrains.mps.lang.actions.behavior;
  */
 @Deprecated
 public class NF_Concept_NewInstance_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

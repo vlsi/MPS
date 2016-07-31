@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.closures.behavior;
  */
 @Deprecated
 public class InvokeFunctionExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

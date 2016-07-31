@@ -10,4 +10,7 @@ package jetbrains.mps.samples.attribute.behavior;
  */
 @Deprecated
 public class HandlerAsRoot_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

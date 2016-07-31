@@ -10,4 +10,7 @@ package jetbrains.mps.build.startup.behavior;
  */
 @Deprecated
 public abstract class VmOptions_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

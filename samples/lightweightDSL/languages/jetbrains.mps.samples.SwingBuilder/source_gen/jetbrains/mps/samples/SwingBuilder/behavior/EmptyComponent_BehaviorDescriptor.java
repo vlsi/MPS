@@ -10,4 +10,7 @@ package jetbrains.mps.samples.SwingBuilder.behavior;
  */
 @Deprecated
 public class EmptyComponent_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

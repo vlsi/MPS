@@ -10,4 +10,7 @@ package jetbrains.mps.build.mps.tests.behavior;
  */
 @Deprecated
 public class BuildMpsLayout_TestModuleGroup_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

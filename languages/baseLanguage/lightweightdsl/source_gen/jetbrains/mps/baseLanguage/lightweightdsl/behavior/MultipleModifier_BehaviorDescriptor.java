@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.lightweightdsl.behavior;
  */
 @Deprecated
 public class MultipleModifier_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.samples.formulaLanguage.behavior;
  */
 @Deprecated
 public class MultOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

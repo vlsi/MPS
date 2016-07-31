@@ -10,4 +10,7 @@ package jetbrains.mps.lang.slanguage.behavior;
  */
 @Deprecated
 public class Model_IsAspectOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

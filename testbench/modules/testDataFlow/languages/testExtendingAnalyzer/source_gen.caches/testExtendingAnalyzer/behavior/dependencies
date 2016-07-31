@@ -15,6 +15,7 @@
   </dependency>
   <dependency className="testExtendingAnalyzer.behavior.NullSafeDotExpression_BehaviorDescriptor" file="NullSafeDotExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="testExtendingAnalyzer.behavior.NullSafeDotExpression__BehaviorDescriptor" file="NullSafeDotExpression__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -41,6 +42,7 @@
   </dependency>
   <dependency className="testExtendingAnalyzer.behavior.NullUnsafeDotExpression_BehaviorDescriptor" file="NullUnsafeDotExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="testExtendingAnalyzer.behavior.NullUnsafeDotExpression__BehaviorDescriptor" file="NullUnsafeDotExpression__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />

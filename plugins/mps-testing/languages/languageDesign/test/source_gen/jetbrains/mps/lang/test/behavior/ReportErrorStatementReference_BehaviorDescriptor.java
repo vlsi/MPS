@@ -10,4 +10,7 @@ package jetbrains.mps.lang.test.behavior;
  */
 @Deprecated
 public class ReportErrorStatementReference_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

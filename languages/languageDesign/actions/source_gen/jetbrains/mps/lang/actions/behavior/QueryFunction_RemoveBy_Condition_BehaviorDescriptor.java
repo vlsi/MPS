@@ -10,4 +10,7 @@ package jetbrains.mps.lang.actions.behavior;
  */
 @Deprecated
 public class QueryFunction_RemoveBy_Condition_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

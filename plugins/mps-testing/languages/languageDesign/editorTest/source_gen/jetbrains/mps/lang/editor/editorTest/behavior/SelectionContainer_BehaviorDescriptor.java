@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.editorTest.behavior;
  */
 @Deprecated
 public class SelectionContainer_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

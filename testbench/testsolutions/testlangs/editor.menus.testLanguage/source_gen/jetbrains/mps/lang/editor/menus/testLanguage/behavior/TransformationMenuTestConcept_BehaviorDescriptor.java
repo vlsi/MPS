@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.menus.testLanguage.behavior;
  */
 @Deprecated
 public class TransformationMenuTestConcept_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.lang.quotation.behavior;
  */
 @Deprecated
 public class GeneratorInternal_InternalReferenceHolder_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

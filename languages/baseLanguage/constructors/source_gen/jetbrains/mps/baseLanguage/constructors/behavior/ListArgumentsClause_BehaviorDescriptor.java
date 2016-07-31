@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.constructors.behavior;
  */
 @Deprecated
 public class ListArgumentsClause_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.samples.customizedDebugger.Highlevel.behavior;
  */
 @Deprecated
 public class Conversation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

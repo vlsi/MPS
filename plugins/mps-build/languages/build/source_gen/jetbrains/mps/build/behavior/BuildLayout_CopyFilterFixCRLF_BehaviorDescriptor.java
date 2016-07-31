@@ -10,4 +10,7 @@ package jetbrains.mps.build.behavior;
  */
 @Deprecated
 public class BuildLayout_CopyFilterFixCRLF_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

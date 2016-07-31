@@ -10,4 +10,7 @@ package testMoveElements.behavior;
  */
 @Deprecated
 public class DummyBlock_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

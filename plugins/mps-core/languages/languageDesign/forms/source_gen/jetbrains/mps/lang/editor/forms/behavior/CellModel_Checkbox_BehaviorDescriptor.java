@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.forms.behavior;
  */
 @Deprecated
 public class CellModel_Checkbox_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

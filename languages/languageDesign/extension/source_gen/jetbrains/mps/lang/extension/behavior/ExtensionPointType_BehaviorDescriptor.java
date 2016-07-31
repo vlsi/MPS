@@ -10,4 +10,7 @@ package jetbrains.mps.lang.extension.behavior;
  */
 @Deprecated
 public class ExtensionPointType_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }
