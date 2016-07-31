@@ -34,14 +34,20 @@ public class EditorCell_Empty extends EditorCell_Basic implements WithCaret {
     myTextLine.paint(g, myX + myGapLeft, myY);
   }
 
+  public void repaintCaret() {
+    myTextLine.repaintCaret(getEditor(), getX() + getLeftGap(), getY());
+  }
+
   @Override
   public void switchCaretVisible() {
     myCaretState.tick();
+    repaintCaret();
   }
 
   @Override
   public void setCaretVisible(boolean visible) {
     myCaretState.touch(visible);
+    repaintCaret();
   }
 
   @Override
@@ -78,6 +84,7 @@ public class EditorCell_Empty extends EditorCell_Basic implements WithCaret {
     }
 
     myCaretState.touch();
+    repaintCaret();
     final CellActionType actionType;
     if (isFirstCaretPosition()) {
       actionType = CellActionType.LEFT_TRANSFORM;

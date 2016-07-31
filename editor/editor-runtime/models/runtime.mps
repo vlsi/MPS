@@ -606,6 +606,38 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6$XxRXayrm6" role="jymVt" />
+    <node concept="3clFb_" id="6$XxRXayyTd" role="jymVt">
+      <property role="TrG5h" value="repaintCaret" />
+      <node concept="3cqZAl" id="6$XxRXayyTf" role="3clF45" />
+      <node concept="3Tm1VV" id="6$XxRXayyTg" role="1B3o_S" />
+      <node concept="3clFbS" id="6$XxRXayyTh" role="3clF47">
+        <node concept="3clFbF" id="6$XxRXayFDb" role="3cqZAp">
+          <node concept="2OqwBi" id="6$XxRXayGcr" role="3clFbG">
+            <node concept="37vLTw" id="6$XxRXayFD9" role="2Oq$k0">
+              <ref role="3cqZAo" node="7dwhomQPrA_" resolve="myTextLine" />
+            </node>
+            <node concept="liA8E" id="6$XxRXayG$G" role="2OqNvi">
+              <ref role="37wK5l" to="g51k:~TextLine.repaintCaret(java.awt.Component,int,int):void" resolve="repaintCaret" />
+              <node concept="1rXfSq" id="6$XxRXayH4B" role="37wK5m">
+                <ref role="37wK5l" to="g51k:~EditorCell_Basic.getEditor():jetbrains.mps.nodeEditor.EditorComponent" resolve="getEditor" />
+              </node>
+              <node concept="3cpWs3" id="6$XxRXayJSV" role="37wK5m">
+                <node concept="1rXfSq" id="6$XxRXayKHe" role="3uHU7w">
+                  <ref role="37wK5l" to="g51k:~EditorCell_Basic.getLeftGap():int" resolve="getLeftGap" />
+                </node>
+                <node concept="1rXfSq" id="6$XxRXayHGC" role="3uHU7B">
+                  <ref role="37wK5l" to="g51k:~EditorCell_Basic.getX():int" resolve="getX" />
+                </node>
+              </node>
+              <node concept="1rXfSq" id="6$XxRXayLRz" role="37wK5m">
+                <ref role="37wK5l" to="g51k:~EditorCell_Basic.getY():int" resolve="getY" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="3J9H4udx3NH" role="jymVt" />
     <node concept="3clFb_" id="7dwhomQPrBI" role="jymVt">
       <property role="TrG5h" value="switchCaretVisible" />
@@ -620,6 +652,11 @@
             <node concept="liA8E" id="WuSeI5nCOX" role="2OqNvi">
               <ref role="37wK5l" to="3ahc:~CaretState.tick():void" resolve="tick" />
             </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6$XxRXayQY8" role="3cqZAp">
+          <node concept="1rXfSq" id="6$XxRXayQY6" role="3clFbG">
+            <ref role="37wK5l" node="6$XxRXayyTd" resolve="repaintCaret" />
           </node>
         </node>
       </node>
@@ -651,6 +688,11 @@
                 <ref role="3cqZAo" node="2skD8pubZAy" resolve="visible" />
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6$XxRXaySak" role="3cqZAp">
+          <node concept="1rXfSq" id="6$XxRXaySai" role="3clFbG">
+            <ref role="37wK5l" node="6$XxRXayyTd" resolve="repaintCaret" />
           </node>
         </node>
       </node>
@@ -873,6 +915,11 @@
             <node concept="liA8E" id="WuSeI5nHij" role="2OqNvi">
               <ref role="37wK5l" to="3ahc:~CaretState.touch():void" resolve="touch" />
             </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6$XxRXayUyn" role="3cqZAp">
+          <node concept="1rXfSq" id="6$XxRXayUyl" role="3clFbG">
+            <ref role="37wK5l" node="6$XxRXayyTd" resolve="repaintCaret" />
           </node>
         </node>
         <node concept="3cpWs8" id="5PQzQx6_9xN" role="3cqZAp">

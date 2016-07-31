@@ -175,12 +175,10 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   public void setCaretPosition(int position, boolean selection) {
     assert isCaretPositionAllowed(position) : "Position " + position + " is not allowed for EditorCell_Label: \"" + myTextLine.getText() + "\"";
-    int x1 = getCaretX();
+    repaintCaret();
     myTextLine.setCaretPosition(position, selection);
-    int x2 = getCaretX();
     myCaretState.touch();
-    getEditor().repaint(Math.min(x1, x2) - 1, getY() - 1, Math.abs(x1 - x2) + 2, getHeight() + 2);
-    getEditor().getBracesHighlighter().updateBracesSelection(this);
+    repaintCaret();
   }
 
   public boolean isCaretPositionAllowed(int position) {
@@ -365,8 +363,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   }
 
   private void repaintCaret() {
-    int x = getCaretX();
-    getEditor().repaint(x - 1, getY() - 1, x + 2, getHeight() + 2);
+    getRenderedTextLine().repaintCaret(getEditor(), getShiftX(), getY());
   }
 
   @Override
