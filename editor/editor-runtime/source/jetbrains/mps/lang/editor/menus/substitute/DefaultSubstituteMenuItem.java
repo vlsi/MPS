@@ -68,6 +68,11 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
   }
 
   @Override
+  public boolean canExecuteStrictly(String pattern) {
+    return canExecute(pattern);
+  }
+
+  @Override
   public SNode createNode(String pattern) {
     return NodeFactoryManager.createNode(myConcept, myCurrentChild, myParentNode, myParentNode.getModel());
   }

@@ -9,5 +9,5 @@ package jetbrains.mps.lang.editor.behavior;
  * This class is not involved in the actual method invocation
  */
 @Deprecated
-public class QueryFunction_SubstituteMenu_CanExecute_BehaviorDescriptor {
+public class SubstituteFeature_CanSubstitute_BehaviorDescriptor {
 }

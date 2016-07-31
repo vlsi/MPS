@@ -29,6 +29,7 @@ public interface SubstituteMenuItem {
   String getMatchingText(String pattern);
   String getDescriptionText(String pattern);
   boolean canExecute(String pattern);
+  boolean canExecuteStrictly(String pattern);
   SNode createNode(String pattern);
   IconResource getIcon(String pattern);
   boolean select(SNode createdNode, String pattern);

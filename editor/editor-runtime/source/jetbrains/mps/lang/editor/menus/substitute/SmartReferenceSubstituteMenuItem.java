@@ -98,6 +98,10 @@ class SmartReferenceSubstituteMenuItem implements SubstituteMenuItem {
     return true;
   }
 
+  public boolean canExecuteStrictly(String pattern) {
+    return true;
+  }
+
   @Override
   public IconResource getIcon(String pattern) {
     SAbstractConcept concept = MetaAdapterByDeclaration.getConcept(myReferentNode);

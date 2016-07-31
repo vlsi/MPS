@@ -36,7 +36,7 @@ public interface SubstituteMenuContext {
   @NotNull
   SNode getParentNode();
 
-  @Nullable
+  @NotNull
   SContainmentLink getLink();
 
   @Nullable

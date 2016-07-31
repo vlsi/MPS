@@ -123,6 +123,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
         public void visit(SNode it) {
           if (findDefaultMenu(it) == null) {
             SNode menu = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de9c932f4e5ab84L, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Default"));
+            SLinkOperations.setTarget(menu, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration"), it);
             editorAspect.addRootNode(menu);
           }
         }

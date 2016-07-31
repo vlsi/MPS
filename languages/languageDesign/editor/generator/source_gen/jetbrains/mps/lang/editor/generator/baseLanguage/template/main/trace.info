@@ -3336,10 +3336,10 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)/8998492695583140261">
     <file name="QueriesGenerated.java">
-      <node id="8998492695583148044" at="1899,94,1900,199" concept="6" />
-      <node id="8998492695583148056" at="2918,120,2919,490" concept="6" />
-      <scope id="8998492695583148043" at="1899,94,1900,199" />
-      <scope id="8998492695583148055" at="2918,120,2919,490" />
+      <node id="6481697812329668897" at="1899,94,1900,199" concept="6" />
+      <node id="6481697812329668909" at="2918,120,2919,490" concept="6" />
+      <scope id="6481697812329668896" at="1899,94,1900,199" />
+      <scope id="6481697812329668908" at="2918,120,2919,490" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)/9122903797325718360">

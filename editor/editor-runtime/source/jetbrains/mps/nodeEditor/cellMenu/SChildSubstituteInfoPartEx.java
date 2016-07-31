@@ -41,7 +41,6 @@ public class SChildSubstituteInfoPartEx implements SubstituteInfoPartExt {
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
-    SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
     SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
     TransformationMenuContext context =
         DefaultTransformationMenuContext.createInitialContextForCell(myEditorCell, MenuLocations.SUBSTITUTE);

@@ -93,7 +93,7 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
 
   @Override
   public boolean canSubstituteStrictly(String pattern) {
-    return pattern.equals(getMatchingText(pattern)) && myActionItem.canExecute(pattern);
+    return pattern.equals(getMatchingText(pattern)) && myActionItem.canExecuteStriclty(pattern);
   }
 
   @Override

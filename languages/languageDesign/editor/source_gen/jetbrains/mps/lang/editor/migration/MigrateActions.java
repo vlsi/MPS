@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.migration;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -17,6 +18,9 @@ public class MigrateActions extends MigrationScriptBase {
     return false;
   }
   public SNode execute(final SModule m) {
+    if (!(m instanceof Language)) {
+      return null;
+    }
     new SubstituteMigrationHelper(m).migrate();
     new SideTransformActionsMigrationHelper(m).migrate();
     return null;

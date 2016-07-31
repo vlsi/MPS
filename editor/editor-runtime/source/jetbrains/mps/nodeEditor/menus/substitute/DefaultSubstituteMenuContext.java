@@ -74,7 +74,7 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   }
 
   @Override
-  @Nullable
+  @NotNull
   public SContainmentLink getLink() {
     return myContainmentLink;
   }

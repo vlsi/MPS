@@ -55,6 +55,11 @@ public class SubstituteMenuItemWrapper implements SubstituteMenuItem {
   }
 
   @Override
+  public boolean canExecuteStrictly(String pattern) {
+    return myItem.canExecuteStrictly(pattern);
+  }
+
+  @Override
   public SNode createNode(String pattern) {
     return myItem.createNode(pattern);
   }

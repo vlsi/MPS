@@ -62,8 +62,12 @@ abstract class SubstituteMenuItemAsCompletionActionItem extends ActionItemBase i
     return mySubstituteItem.canExecute(pattern);
   }
 
+  @Override
+  public boolean canExecuteStriclty(@NotNull String pattern) {
+    return mySubstituteItem.canExecuteStrictly(pattern);
+  }
+
   SubstituteMenuItem getSubstituteItem() {
     return mySubstituteItem;
   }
-
 }

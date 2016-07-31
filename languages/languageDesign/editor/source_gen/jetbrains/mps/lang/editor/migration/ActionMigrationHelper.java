@@ -36,6 +36,9 @@ public class ActionMigrationHelper {
   public static SModel getEditorAspect(Language language) {
     return LanguageAspect.EDITOR.get(language);
   }
+  public static SModel getActionsAspect(Language language) {
+    return LanguageAspect.ACTIONS.get(language);
+  }
   public static String substituteSpacesWithUnderscore(String name) {
     if (name == null) {
       return name;
@@ -63,7 +66,7 @@ public class ActionMigrationHelper {
   public static SNode getLastStatement(SNode statementList) {
     return ListSequence.fromList(SLinkOperations.getChildren(statementList, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).reversedList().findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !((eq_qgr84z_a0a0a0a0a0a0a0i(SNodeOperations.getConcept(it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"))));
+        return !((eq_qgr84z_a0a0a0a0a0a0a0j(SNodeOperations.getConcept(it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"))));
       }
     });
   }
@@ -95,14 +98,14 @@ public class ActionMigrationHelper {
     SLinkOperations.setTarget(dot, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), returnExpression);
     SNode select = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, "jetbrains.mps.lang.editor.structure.SelectInEditorOperation"));
     SLinkOperations.setTarget(select, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x1b0a9b8c0e947adeL, "editorContext"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10e76200a6fL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext")));
-    SLinkOperations.setTarget(select, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x1b0a9b8c0eb90bdeL, "cellSelector"), _quotation_createNode_qgr84z_a0e0m());
+    SLinkOperations.setTarget(select, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x1b0a9b8c0eb90bdeL, "cellSelector"), _quotation_createNode_qgr84z_a0e0n());
     SLinkOperations.setTarget(dot, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), select);
     return dot;
   }
-  private static boolean eq_qgr84z_a0a0a0a0a0a0a0i(Object a, Object b) {
+  private static boolean eq_qgr84z_a0a0a0a0a0a0a0j(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static SNode _quotation_createNode_qgr84z_a0e0m() {
+  private static SNode _quotation_createNode_qgr84z_a0e0n() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;

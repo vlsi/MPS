@@ -66,4 +66,8 @@ public interface CompletionActionItem extends ActionItem {
   default String getShortDescriptionText(@NotNull String pattern) {
     return null;
   }
+
+  default boolean canExecuteStriclty(@NotNull String pattern) {
+    return canExecute(pattern);
+  }
 }

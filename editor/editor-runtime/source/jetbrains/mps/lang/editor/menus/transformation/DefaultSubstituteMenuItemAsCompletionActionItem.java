@@ -30,12 +30,12 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 /**
  * @author simon
  */
-public class DefaultSubstituteMenuItemAsCompletionActionItem extends SubstituteMenuItemAsCompletionActionItem {
+class DefaultSubstituteMenuItemAsCompletionActionItem extends SubstituteMenuItemAsCompletionActionItem {
   private static final Logger LOG = Logger.getLogger(DefaultSubstituteMenuItemAsCompletionActionItem.class);
 
   private final SubstituteMenuContext myContext;
 
-  public DefaultSubstituteMenuItemAsCompletionActionItem(SubstituteMenuItem substituteItem, SubstituteMenuContext context) {
+  DefaultSubstituteMenuItemAsCompletionActionItem(SubstituteMenuItem substituteItem, SubstituteMenuContext context) {
     super(substituteItem);
     myContext = context;
   }
