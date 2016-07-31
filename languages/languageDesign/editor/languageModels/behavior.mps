@@ -18576,7 +18576,7 @@
   </node>
   <node concept="13h7C7" id="7Nx4mSUbr7y">
     <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
-    <ref role="13h7C2" to="tpc2:7Nx4mSUbr7x" resolve="QueryFunction_SubstituteMenu_CanExecute" />
+    <ref role="13h7C2" to="tpc2:7Nx4mSUbr7x" resolve="QueryFunction_SubstituteMenu_CanSubstitute" />
     <node concept="13hLZK" id="7Nx4mSUbr7z" role="13h7CW">
       <node concept="3clFbS" id="7Nx4mSUbr7$" role="2VODD2" />
     </node>
@@ -18595,6 +18595,55 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="7Nx4mSUbr7O" role="3clF45" />
+    </node>
+    <node concept="13i0hz" id="5BNBt6t4Poc" role="13h7CS">
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getParameters" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:hEwIGRM" resolve="getParameters" />
+      <node concept="3Tm1VV" id="5BNBt6t4Pod" role="1B3o_S" />
+      <node concept="3clFbS" id="5BNBt6t4Pov" role="3clF47">
+        <node concept="3cpWs8" id="5BNBt6t4Pxz" role="3cqZAp">
+          <node concept="3cpWsn" id="5BNBt6t4Px$" role="3cpWs9">
+            <property role="TrG5h" value="result" />
+            <node concept="_YKpA" id="5BNBt6t4Pxq" role="1tU5fm">
+              <node concept="3THzug" id="5BNBt6t4Pxt" role="_ZDj9">
+                <ref role="3qa414" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="5BNBt6t4PMg" role="33vP2m">
+              <node concept="Tc6Ow" id="i1VbFdd" role="2ShVmc">
+                <node concept="3THzug" id="5BNBt6t5ilE" role="HW$YZ">
+                  <ref role="3qa414" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5BNBt6t5iUu" role="3cqZAp">
+          <node concept="2OqwBi" id="5BNBt6t5kEi" role="3clFbG">
+            <node concept="37vLTw" id="5BNBt6t5iUv" role="2Oq$k0">
+              <ref role="3cqZAo" node="5BNBt6t4Px$" resolve="result" />
+            </node>
+            <node concept="TSZUe" id="5BNBt6t5lHs" role="2OqNvi">
+              <node concept="3TUQnm" id="5BNBt6t5m4q" role="25WWJ7">
+                <ref role="3TV0OU" to="tpc2:5BNBt6t5ird" resolve="QueryFunctionParameter_SubstituteMenu_Strictly" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5BNBt6t4Po_" role="3cqZAp">
+          <node concept="37vLTw" id="5BNBt6t4PxC" role="3clFbG">
+            <ref role="3cqZAo" node="5BNBt6t4Px$" resolve="result" />
+          </node>
+        </node>
+      </node>
+      <node concept="_YKpA" id="5BNBt6t4Pow" role="3clF45">
+        <node concept="3THzug" id="5BNBt6t4Pox" role="_ZDj9">
+          <ref role="3qa414" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="13h7C7" id="5i0CB70OE9x">
@@ -18626,7 +18675,7 @@
   </node>
   <node concept="13h7C7" id="7mC_uHFK4Z5">
     <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
-    <ref role="13h7C2" to="tpc2:7mC_uHFK4Z4" resolve="QueryFunctionParameter_SubstituteMenu_CreatedNodeToSelect" />
+    <ref role="13h7C2" to="tpc2:7mC_uHFK4Z4" resolve="QueryFunctionParameter_SubstituteMenu_CreatedNode" />
     <node concept="13i0hz" id="7mC_uHFK4Zg" role="13h7CS">
       <property role="TrG5h" value="getType" />
       <property role="13i0it" value="false" />
@@ -19375,7 +19424,7 @@
             </node>
             <node concept="TSZUe" id="7mC_uHFKdYh" role="2OqNvi">
               <node concept="3TUQnm" id="7mC_uHFKdYi" role="25WWJ7">
-                <ref role="3TV0OU" to="tpc2:7mC_uHFK4Z4" resolve="QueryFunctionParameter_SubstituteMenu_CreatedNodeToSelect" />
+                <ref role="3TV0OU" to="tpc2:7mC_uHFK4Z4" resolve="QueryFunctionParameter_SubstituteMenu_CreatedNode" />
               </node>
             </node>
           </node>
@@ -20012,7 +20061,7 @@
             </node>
             <node concept="TSZUe" id="5N5pDMJPfJn" role="2OqNvi">
               <node concept="3TUQnm" id="5N5pDMJPfP9" role="25WWJ7">
-                <ref role="3TV0OU" to="tpc2:5N5pDMJPfSO" resolve="QueryFunctionParameter_SubstituteMenu_CreatedNode" />
+                <ref role="3TV0OU" to="tpc2:5N5pDMJPfSO" resolve="QueryFunctionParameter_SubstituteMenu_NodeToWrap" />
               </node>
             </node>
           </node>
@@ -20316,7 +20365,7 @@
   </node>
   <node concept="13h7C7" id="5N5pDMJPfSP">
     <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
-    <ref role="13h7C2" to="tpc2:5N5pDMJPfSO" resolve="QueryFunctionParameter_SubstituteMenu_CreatedNode" />
+    <ref role="13h7C2" to="tpc2:5N5pDMJPfSO" resolve="QueryFunctionParameter_SubstituteMenu_NodeToWrap" />
     <node concept="13hLZK" id="5N5pDMJPfSQ" role="13h7CW">
       <node concept="3clFbS" id="5N5pDMJPfSR" role="2VODD2" />
     </node>
@@ -21311,6 +21360,30 @@
         <node concept="3THzug" id="77L_peGGpAG" role="_ZDj9">
           <ref role="3qa414" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="5BNBt6t5ire">
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
+    <ref role="13h7C2" to="tpc2:5BNBt6t5ird" resolve="QueryFunctionParameter_SubstituteMenu_Strictly" />
+    <node concept="13hLZK" id="5BNBt6t5irf" role="13h7CW">
+      <node concept="3clFbS" id="5BNBt6t5irg" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="5BNBt6t5is9" role="13h7CS">
+      <property role="TrG5h" value="getType" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:27DJnJtIQ9C" resolve="getType" />
+      <node concept="3Tm1VV" id="5BNBt6t5isa" role="1B3o_S" />
+      <node concept="3clFbS" id="5BNBt6t5isf" role="3clF47">
+        <node concept="3clFbF" id="5BNBt6t5iMo" role="3cqZAp">
+          <node concept="2c44tf" id="5BNBt6t5iMp" role="3clFbG">
+            <node concept="10P_77" id="5BNBt6t5iMq" role="2c44tc" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="5BNBt6t5isg" role="3clF45">
+        <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
       </node>
     </node>
   </node>

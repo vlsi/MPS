@@ -5254,8 +5254,9 @@
   <node concept="1TIwiD" id="7mC_uHFK4Z4">
     <property role="EcuMT" value="8478191136882577348" />
     <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
-    <property role="TrG5h" value="QueryFunctionParameter_SubstituteMenu_CreatedNodeToSelect" />
+    <property role="TrG5h" value="QueryFunctionParameter_SubstituteMenu_CreatedNode" />
     <property role="34LRSv" value="createdNode" />
+    <property role="R4oN_" value="node&lt;&gt; returned from create child node block" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="hLJ7k9d">
@@ -5640,15 +5641,15 @@
   <node concept="1TIwiD" id="7Nx4mSUbw67">
     <property role="EcuMT" value="8998492695583129991" />
     <property role="3GE5qa" value="Menu.Substitute" />
-    <property role="TrG5h" value="SubstituteFeature_CanExecute" />
-    <property role="34LRSv" value="can execute" />
+    <property role="TrG5h" value="SubstituteFeature_CanSubstitute" />
+    <property role="34LRSv" value="can substitute" />
     <ref role="1TJDcQ" node="7mC_uHFNI_D" resolve="SubstituteFeature" />
     <node concept="1TJgyj" id="7Nx4mSUbw68" role="1TKVEi">
       <property role="IQ2ns" value="8998492695583129992" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="query" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="7Nx4mSUbr7x" resolve="QueryFunction_SubstituteMenu_CanExecute" />
+      <ref role="20lvS9" node="7Nx4mSUbr7x" resolve="QueryFunction_SubstituteMenu_CanSubstitute" />
     </node>
   </node>
   <node concept="PlHQZ" id="3rSzFHWJPbd">
@@ -5669,8 +5670,8 @@
   <node concept="1TIwiD" id="7Nx4mSUbr7x">
     <property role="EcuMT" value="8998492695583109601" />
     <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
-    <property role="TrG5h" value="QueryFunction_SubstituteMenu_CanExecute" />
-    <property role="34LRSv" value="can execute" />
+    <property role="TrG5h" value="QueryFunction_SubstituteMenu_CanSubstitute" />
+    <property role="34LRSv" value="can substitute" />
     <property role="R4oN_" value="return false if this action should be excluded from the substitute menu" />
     <ref role="1TJDcQ" node="5EbKzCm8o62" resolve="QueryFunction_SubstituteMenuPart" />
   </node>
@@ -5934,9 +5935,9 @@
   <node concept="1TIwiD" id="5N5pDMJPfSO">
     <property role="EcuMT" value="6684862045052272180" />
     <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
-    <property role="TrG5h" value="QueryFunctionParameter_SubstituteMenu_CreatedNode" />
-    <property role="34LRSv" value="createdNode" />
-    <property role="R4oN_" value="node&lt;&gt; returned from create child node block" />
+    <property role="TrG5h" value="QueryFunctionParameter_SubstituteMenu_NodeToWrap" />
+    <property role="34LRSv" value="nodeToWrap" />
+    <property role="R4oN_" value="instance of wrapped concept created by another substitute action" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="2RDMjbOTqI4">
@@ -6142,6 +6143,14 @@
     <node concept="PrWs8" id="6$Nf2sMl38F" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="5BNBt6t5ird">
+    <property role="EcuMT" value="6481697812325410509" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
+    <property role="TrG5h" value="QueryFunctionParameter_SubstituteMenu_Strictly" />
+    <property role="34LRSv" value="strictly" />
+    <property role="R4oN_" value="true if matching text should match specified pattern completely, false if only beggining of matching text should match this pattern" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
 </model>
 
