@@ -190,7 +190,7 @@ class EditorSettingsPreferencesPage implements Disposable {
 
   public void commit() {
     String fontName = myFontsComboBox.getFontName();
-    int fontSize = mySettings.getState().getFontSize();
+    int fontSize = mySettings.getSpecifiedFontSize();
     try {
       fontSize = Integer.parseInt(myFontSizesComboBox.getSelectedItem().toString());
     } catch (NumberFormatException e) {
@@ -214,11 +214,11 @@ class EditorSettingsPreferencesPage implements Disposable {
     mySettings.setPowerSaveMode(myPowerSaveModeCheckBox.isSelected());
     mySettings.setAutoQuickFix(myAutoQuickFixCheckBox.isSelected());
 
-    mySettings.getState().setLineSpacing((Double) myLineSpacing.getModel().getValue());
+    mySettings.setLineSpacing((Double) myLineSpacing.getModel().getValue());
 
-    mySettings.getState().setShow(myTabPerAspect.isSelected() || myTabPerNode.isSelected() || myAllTabs.isSelected());
-    mySettings.getState().setShowPlain(myTabPerNode.isSelected() || myAllTabs.isSelected());
-    mySettings.getState().setShowGrayed(myAllTabs.isSelected());
+    mySettings.setShow(myTabPerAspect.isSelected() || myTabPerNode.isSelected() || myAllTabs.isSelected());
+    mySettings.setShowPlain(myTabPerNode.isSelected() || myAllTabs.isSelected());
+    mySettings.setShowGrayed(myAllTabs.isSelected());
     applyState();
 
     mySettings.updateCachedValue();
@@ -227,11 +227,11 @@ class EditorSettingsPreferencesPage implements Disposable {
   }
 
   private void applyState() {
-    if (!mySettings.getState().isShow()) {
+    if (!mySettings.isShow()) {
       myFirstSelection = myDontShow;
-    } else if (!mySettings.getState().isShowPlain()) {
+    } else if (!mySettings.isShowPlain()) {
       myFirstSelection = myTabPerAspect;
-    } else if (!mySettings.getState().isShowGrayed()) {
+    } else if (!mySettings.isShowGrayed()) {
       myFirstSelection = myTabPerNode;
     } else {
       myFirstSelection = myAllTabs;
@@ -245,9 +245,9 @@ class EditorSettingsPreferencesPage implements Disposable {
     boolean sameUseBraces = myUseBraces.isSelected() == mySettings.useBraces();
     boolean samePowerSaveMode = myPowerSaveModeCheckBox.isSelected() == mySettings.isPowerSaveMode();
     boolean sameAutoQuickFix = myAutoQuickFixCheckBox.isSelected() == mySettings.isAutoQuickFix();
-    boolean sameFontSize = myFontSizesComboBox.getSelectedItem().equals(Integer.toString(mySettings.getState().getFontSize()));
-    boolean sameFontFamily = myFontsComboBox.getFontName().equals(mySettings.getState().getFontFamily());
-    boolean sameLineSpacing = myLineSpacing.getModel().getValue().equals(mySettings.getState().getLineSpacing());
+    boolean sameFontSize = myFontSizesComboBox.getSelectedItem().equals(Integer.toString(mySettings.getSpecifiedFontSize()));
+    boolean sameFontFamily = myFontsComboBox.getFontName().equals(mySettings.getFontFamily());
+    boolean sameLineSpacing = myLineSpacing.getModel().getValue().equals(mySettings.getLineSpacing());
     boolean sameBlinkingRate = myCaretBlinkPeriod.getModel().getValue().equals(mySettings.getCaretBlinkPeriod());
     boolean sameTabs = myFirstSelection.isSelected();
     boolean sameUseContextAssistant = myShowContextAssistant.isSelected() == mySettings.isShowContextAssistant();
@@ -271,11 +271,11 @@ class EditorSettingsPreferencesPage implements Disposable {
 
     myShowContextAssistant.setSelected(mySettings.isShowContextAssistant());
 
-    myFontSizesComboBox.setSelectedItem(Integer.toString(mySettings.getState().getFontSize()));
+    myFontSizesComboBox.setSelectedItem(Integer.toString(mySettings.getSpecifiedFontSize()));
 
-    myFontsComboBox.setFontName(mySettings.getState().getFontFamily());
+    myFontsComboBox.setFontName(mySettings.getFontFamily());
 
-    myLineSpacing.setValue(mySettings.getState().getLineSpacing());
+    myLineSpacing.setValue(mySettings.getLineSpacing());
 
     myCaretBlinkPeriod.setValue(mySettings.getCaretBlinkPeriod());
 

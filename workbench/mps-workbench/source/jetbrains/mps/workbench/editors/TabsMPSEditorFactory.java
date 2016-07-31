@@ -41,7 +41,7 @@ public class TabsMPSEditorFactory extends NodeEditorFactoryBase {
   }
 
   private boolean isUseTabs() {
-    return myEditorSettings.getState().isShow();
+    return myEditorSettings.isShow();
   }
 
   @Override
