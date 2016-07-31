@@ -736,7 +736,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   private boolean isTheOnlyCompletelySelectedLabelInBigCell() {
     jetbrains.mps.openapi.editor.cells.EditorCell containingBigCell = CellTraversalUtil.getContainingBigCell(this);
-    return containingBigCell != null && CellTraversalUtil.getFirstLeaf(containingBigCell) == this && CellTraversalUtil.getLastLeaf(containingBigCell) == this &&
+    return CellTraversalUtil.getFirstLeaf(containingBigCell) == this && CellTraversalUtil.getLastLeaf(containingBigCell) == this &&
         getText().equals(getSelectedText());
   }
 
