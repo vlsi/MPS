@@ -18,6 +18,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.diff.DiffProvider;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.changes.ContentRevision;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -65,10 +66,14 @@ public class VcsActionsUtil {
         });
         iFile = ((FilePerRootDataSource) source).getFile(rootName + "." + MPSExtentions.MODEL_ROOT);
       }
-      VirtualFile vFile = VirtualFileUtils.getVirtualFile(iFile);
+      VirtualFile vFile = VirtualFileUtils.getProjectVirtualFile(iFile);
+      assert vFile != null;
       AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(vFile);
-      VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(vFile);
-      ContentRevision revision = vcs.getDiffProvider().createFileContent(revisionNumber, vFile);
+      assert vcs != null;
+      DiffProvider diffProvider = vcs.getDiffProvider();
+      assert diffProvider != null;
+      VcsRevisionNumber revisionNumber = diffProvider.getCurrentRevision(vFile);
+      ContentRevision revision = diffProvider.createFileContent(revisionNumber, vFile);
       final Wrappers._T<SModel> newModel = new Wrappers._T<SModel>();
       final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
       final Wrappers._T<String> title = new Wrappers._T<String>();

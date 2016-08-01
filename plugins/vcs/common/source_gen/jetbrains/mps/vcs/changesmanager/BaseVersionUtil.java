@@ -81,7 +81,7 @@ public class BaseVersionUtil {
       if (!(file.exists())) {
         return null;
       }
-      VirtualFile vFile = VirtualFileUtils.getVirtualFile(file);
+      VirtualFile vFile = VirtualFileUtils.getProjectVirtualFile(file);
       if (vFile == null || ProjectLevelVcsManager.getInstance(project).getVcsFor(vFile) == null) {
         return null;
       }
@@ -106,7 +106,7 @@ public class BaseVersionUtil {
       Map<String, Object> content = MapSequence.fromMap(new HashMap<String, Object>());
       for (String stream : rds.getAvailableStreams()) {
         IFile file = rds.getFile(stream);
-        VirtualFile vFile = VirtualFileUtils.getVirtualFile(file);
+        VirtualFile vFile = VirtualFileUtils.getProjectVirtualFile(file);
         if (vFile == null) {
           continue;
         }

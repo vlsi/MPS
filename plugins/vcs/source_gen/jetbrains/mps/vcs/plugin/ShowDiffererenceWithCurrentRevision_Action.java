@@ -44,7 +44,8 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
   public boolean isApplicable(final AnActionEvent event, final Map<String, Object> _params) {
     DataSource dataSource = event.getData(MPSCommonDataKeys.CONTEXT_MODEL).getSource();
     if (dataSource instanceof FileDataSource) {
-      VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((FileDataSource) event.getData(MPSCommonDataKeys.CONTEXT_MODEL).getSource()).getFile());
+      VirtualFile virtualFile = VirtualFileUtils.getProjectVirtualFile(((FileDataSource) event.getData(MPSCommonDataKeys.CONTEXT_MODEL).getSource()).getFile());
+      assert virtualFile != null;
       if (SNodeOperations.isRoot(event.getData(MPSCommonDataKeys.NODE)) && ProjectLevelVcsManager.getInstance(event.getData(CommonDataKeys.PROJECT)).getVcsFor(virtualFile) != null) {
         FileStatus fileStatus = event.getData(CommonDataKeys.PROJECT).getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
         return FileStatus.ADDED != fileStatus && FileStatus.UNKNOWN != fileStatus;
@@ -58,7 +59,8 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
           return event.getData(MPSCommonDataKeys.NODE).getName();
         }
       });
-      VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((FilePerRootDataSource) event.getData(MPSCommonDataKeys.CONTEXT_MODEL).getSource()).getFile(rootName + "." + MPSExtentions.MODEL_ROOT));
+      VirtualFile virtualFile = VirtualFileUtils.getProjectVirtualFile(((FilePerRootDataSource) event.getData(MPSCommonDataKeys.CONTEXT_MODEL).getSource()).getFile(rootName + "." + MPSExtentions.MODEL_ROOT));
+      assert virtualFile != null;
       if (ProjectLevelVcsManager.getInstance(event.getData(CommonDataKeys.PROJECT)).getVcsFor(virtualFile) != null) {
         FileStatus fileStatus = event.getData(CommonDataKeys.PROJECT).getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
         return FileStatus.ADDED != fileStatus && FileStatus.UNKNOWN != fileStatus;

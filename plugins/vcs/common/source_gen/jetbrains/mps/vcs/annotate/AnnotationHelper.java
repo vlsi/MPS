@@ -17,9 +17,9 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.persistence.FilePerRootDataSource;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -83,8 +83,11 @@ public class AnnotationHelper {
     } else {
       return false;
     }
-    final VirtualFile file = VirtualFileUtils.getVirtualFile(iFile);
     final Project ideaProject = myProject.getProject();
+    final VirtualFile file = VirtualFileUtils.getVirtualFile(iFile);
+    if (file == null) {
+      return false;
+    }
     final AbstractVcs vcs = ProjectLevelVcsManager.getInstance(ideaProject).getVcsFor(file);
     if (vcs == null) {
       return false;

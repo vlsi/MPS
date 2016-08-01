@@ -65,7 +65,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
     if (manager.getAllVersionedRoots().length == 0) {
       return false;
     }
-    VirtualFile file = VirtualFileUtils.getVirtualFile(ReRunMergeFromBackup_Action.this.getModelFile(_params));
+    VirtualFile file = VirtualFileUtils.getProjectVirtualFile(ReRunMergeFromBackup_Action.this.getModelFile(_params));
     if (file == null) {
       return false;
     }
@@ -124,7 +124,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
         if (mine == null) {
           return;
         }
-        VirtualFile file = VirtualFileUtils.getVirtualFile(ReRunMergeFromBackup_Action.this.getModelFile(_params));
+        VirtualFile file = VirtualFileUtils.getProjectVirtualFile(ReRunMergeFromBackup_Action.this.getModelFile(_params));
         assert file != null;
         List<String> contents = ListSequence.fromListAndArray(new ArrayList<String>(), mine, base, repository);
         List<String> titles = ListSequence.fromListAndArray(new ArrayList<String>(), "Mine", "Base version", "Repository");
