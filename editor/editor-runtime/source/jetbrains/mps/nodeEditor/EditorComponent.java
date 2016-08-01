@@ -1457,7 +1457,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myLeftMarginPressListeners.clear();
 
     myFocusTracker.dispose();
-    deActivateCaretBlinker();
   }
 
   protected void detachListeners() {
@@ -2774,7 +2773,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void deActivateCaretBlinker() {
-    myEditorConfiguration.caretManager.setActiveEditor(null);
+    myEditorConfiguration.caretManager.unsetActiveEditor(this);
   }
 
   private List<EditorCell_Property> getCellsToCommit() {

@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.caret;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.optional.WithCaret;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.ScheduledFuture;
 
@@ -49,7 +50,23 @@ public abstract class CaretManager {
    *
    * @param editor
    */
-  public void setActiveEditor(EditorComponent editor) {
+  public void unsetActiveEditor(@NotNull EditorComponent editor) {
+    if (editor != myActiveEditor) {
+      return;
+    }
+    doSetActiveEditor(null);
+  }
+
+  /**
+   * should be called in EDT
+   *
+   * @param editor
+   */
+  public void setActiveEditor(@NotNull EditorComponent editor) {
+    doSetActiveEditor(editor);
+  }
+
+  private void doSetActiveEditor(EditorComponent editor) {
     setCaretVisible(false);
     myActiveEditor = editor;
     setCaretVisible(true);
