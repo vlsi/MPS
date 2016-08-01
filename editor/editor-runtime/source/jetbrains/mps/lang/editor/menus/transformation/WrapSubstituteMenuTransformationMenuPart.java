@@ -15,16 +15,16 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.nodeEditor.menus.substitute.DefaultSubstituteMenuContext;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author simon
@@ -34,15 +34,15 @@ public abstract class WrapSubstituteMenuTransformationMenuPart implements Transf
   @NotNull
   @Override
   public List<TransformationMenuItem> createItems(TransformationMenuContext context) {
-    DefaultSubstituteMenuContext substituteMenuContext =
-        DefaultSubstituteMenuContext.createInitialContextForNode(null, context.getNode(), null, context.getEditorContext());
-    return substituteMenuContext.createItems(getSubstituteMenuLookup(context)).stream().
-        filter(new InUsedLanguagesPredicate(context.getNode().getModel())).
-        map(item -> createTransformationItem(context, item)).
-        collect(Collectors.toList());
+    return new SubstituteItemsCollector(getParentNode(context), null, null, context.getEditorContext(), getSubstituteMenuLookup(context)) {
+      @Override
+      protected TransformationMenuItem convert(SubstituteMenuItem item, SubstituteMenuContext substituteMenuContext) {
+        return createTransformationItem(item, context);
+      }
+    }.collect();
   }
 
-  private TransformationMenuItem createTransformationItem(TransformationMenuContext context, SubstituteMenuItem item) {
+  private TransformationMenuItem createTransformationItem(SubstituteMenuItem item, TransformationMenuContext context) {
     return new SubstituteMenuItemAsCompletionActionItem(item) {
       @Override
       public void execute(@NotNull String pattern) {
@@ -55,5 +55,8 @@ public abstract class WrapSubstituteMenuTransformationMenuPart implements Transf
     return null;
   }
 
+  protected SNode getParentNode(TransformationMenuContext context) {
+    return context.getNode();
+  }
   protected abstract void execute(TransformationMenuContext context, SubstituteMenuItem item, String pattern);
 }

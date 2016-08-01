@@ -18,6 +18,8 @@ package jetbrains.mps.lang.editor.menus.transformation;
 import jetbrains.mps.nodeEditor.menus.substitute.DefaultSubstituteMenuContext;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
@@ -39,7 +41,7 @@ public class SubstituteItemsCollector {
   private final EditorContext myEditorContext;
   private final MenuLookup<SubstituteMenu> myMenuLookup;
 
-  public SubstituteItemsCollector(@NotNull SNode parentNode, @Nullable SNode currentChild, @NotNull SContainmentLink containmentLink,
+  public SubstituteItemsCollector(@NotNull SNode parentNode, @Nullable SNode currentChild, @Nullable SContainmentLink containmentLink,
       @NotNull EditorContext editorContext, @Nullable MenuLookup<SubstituteMenu> menuLookup) {
     myParent = parentNode;
     myCurrentChild = currentChild;
@@ -52,7 +54,11 @@ public class SubstituteItemsCollector {
     DefaultSubstituteMenuContext substituteMenuContext =
         DefaultSubstituteMenuContext.createInitialContextForNode(myContainmentLink, myParent, myCurrentChild, myEditorContext);
     return substituteMenuContext.createItems(myMenuLookup).stream().
-        map(item -> new DefaultSubstituteMenuItemAsCompletionActionItem(item, substituteMenuContext)).
+        map(item -> convert(item, substituteMenuContext)).
         collect(Collectors.toList());
+  }
+
+  protected TransformationMenuItem convert(SubstituteMenuItem item, SubstituteMenuContext context) {
+    return new DefaultSubstituteMenuItemAsCompletionActionItem(item, context);
   }
 }

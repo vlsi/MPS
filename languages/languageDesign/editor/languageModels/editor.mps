@@ -14601,7 +14601,7 @@
   </node>
   <node concept="24kQdi" id="7Nx4mSUbw6h">
     <property role="3GE5qa" value="Menu.Substitute" />
-    <ref role="1XX52x" to="tpc2:7Nx4mSUbw67" resolve="SubstituteFeature_CanExecute" />
+    <ref role="1XX52x" to="tpc2:7Nx4mSUbw67" resolve="SubstituteFeature_CanSubstitute" />
     <node concept="3EZMnI" id="7Nx4mSUbw6j" role="2wV5jI">
       <node concept="l2Vlx" id="7Nx4mSUbw6k" role="2iSdaV" />
       <node concept="PMmxH" id="7Nx4mSUbw6l" role="3EZMnx">
@@ -14633,6 +14633,20 @@
     <node concept="3EZMnI" id="6K28JrTTrQy" role="2wV5jI">
       <node concept="PMmxH" id="6K28JrTTrQz" role="3EZMnx">
         <ref role="PMmxG" node="VN4DhfD2Vg" resolve="TransformationMenuPartAlias" />
+      </node>
+      <node concept="3F0ifn" id="41ZU75WoTJ6" role="3EZMnx">
+        <property role="3F0ifm" value="parent node" />
+        <ref role="1k5W1q" node="2NgG6tkHXk9" resolve="EditorKeyWord" />
+        <node concept="pVoyu" id="41ZU75WoTJ7" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="41ZU75WoTJ8" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="41ZU75WoTJ5" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;source node&gt;" />
+        <ref role="1NtTu8" to="tpc2:41ZU75WoKYQ" resolve="parentNode" />
       </node>
       <node concept="3F0ifn" id="6K28JrTTrQ$" role="3EZMnx">
         <property role="3F0ifm" value="menu to wrap" />

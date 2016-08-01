@@ -5445,6 +5445,12 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="3rSzFHWLpTi" resolve="ISubstituteMenuReference" />
     </node>
+    <node concept="1TJgyj" id="41ZU75WoKYQ" role="1TKVEi">
+      <property role="IQ2ns" value="4647688914585456566" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parentNode" />
+      <ref role="20lvS9" node="7L5lpRJILFa" resolve="QueryFunction_TransformationMenu_Node" />
+    </node>
     <node concept="1TJgyj" id="1Djcm3ms6CX" role="1TKVEi">
       <property role="IQ2ns" value="1896914160037423677" />
       <property role="20lmBu" value="aggregation" />

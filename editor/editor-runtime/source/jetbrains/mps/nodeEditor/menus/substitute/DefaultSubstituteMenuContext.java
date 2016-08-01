@@ -94,7 +94,6 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
     if (menuLookup == null) {
       menuLookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(myEditorContext.getRepository()), myContainmentLink.getTargetConcept());
     }
-
     return myMenuItemFactory.createItems(this, menuLookup).stream()
         .filter(new InUsedLanguagesPredicate(getModel()))
         .filter(new SuitableForConstraintsPredicate(myParentNode, myContainmentLink, myEditorContext.getRepository()))

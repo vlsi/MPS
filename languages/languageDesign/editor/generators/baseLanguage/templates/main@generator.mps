@@ -37111,8 +37111,54 @@
             </node>
           </node>
         </node>
-        <node concept="2tJIrI" id="6K28JrTTSqQ" role="jymVt" />
         <node concept="2tJIrI" id="6K28JrTTYbj" role="jymVt" />
+        <node concept="3clFb_" id="41ZU75WoXpn" role="jymVt">
+          <property role="1EzhhJ" value="false" />
+          <property role="TrG5h" value="getParentNode" />
+          <property role="DiZV1" value="false" />
+          <property role="od$2w" value="false" />
+          <node concept="3Tmbuc" id="41ZU75WoXpo" role="1B3o_S" />
+          <node concept="3uibUv" id="41ZU75WoXpq" role="3clF45">
+            <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+          </node>
+          <node concept="37vLTG" id="41ZU75WoXpr" role="3clF46">
+            <property role="TrG5h" value="_context" />
+            <node concept="3uibUv" id="41ZU75WoXps" role="1tU5fm">
+              <ref role="3uigEE" to="uddc:~TransformationMenuContext" resolve="TransformationMenuContext" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="41ZU75WoXpt" role="3clF47">
+            <node concept="3clFbF" id="41ZU75WoXpx" role="3cqZAp">
+              <node concept="3nyPlj" id="41ZU75WoXpw" role="3clFbG">
+                <ref role="37wK5l" to="9eyi:~WrapSubstituteMenuTransformationMenuPart.getParentNode(jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext):org.jetbrains.mps.openapi.model.SNode" resolve="getParentNode" />
+                <node concept="37vLTw" id="41ZU75WoXpv" role="37wK5m">
+                  <ref role="3cqZAo" node="41ZU75WoXpr" resolve="_context" />
+                </node>
+              </node>
+              <node concept="29HgVG" id="41ZU75Wpmhl" role="lGtFl" />
+            </node>
+          </node>
+          <node concept="2AHcQZ" id="41ZU75WoXpu" role="2AJF6D">
+            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+          </node>
+          <node concept="1W57fq" id="41ZU75WoYvg" role="lGtFl">
+            <node concept="3IZrLx" id="41ZU75WoYvi" role="3IZSJc">
+              <node concept="3clFbS" id="41ZU75WoYvk" role="2VODD2">
+                <node concept="3clFbF" id="41ZU75Wp1La" role="3cqZAp">
+                  <node concept="2OqwBi" id="41ZU75Wp2XZ" role="3clFbG">
+                    <node concept="2OqwBi" id="41ZU75Wp1Yn" role="2Oq$k0">
+                      <node concept="30H73N" id="41ZU75Wp1L9" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="41ZU75Wp2pE" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpc2:41ZU75WoKYQ" resolve="parentNode" />
+                      </node>
+                    </node>
+                    <node concept="3x8VRR" id="41ZU75Wp3Qp" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFb_" id="2uBUyS1iPqa" role="jymVt">
           <property role="1EzhhJ" value="false" />
           <property role="TrG5h" value="execute" />
