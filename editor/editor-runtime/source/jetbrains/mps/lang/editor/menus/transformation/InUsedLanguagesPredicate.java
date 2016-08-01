@@ -26,11 +26,11 @@ import java.util.function.Predicate;
 /**
  * @author simon
  */
-class InUsedLanguagesPredicate implements Predicate<SubstituteMenuItem> {
+public class InUsedLanguagesPredicate implements Predicate<SubstituteMenuItem> {
   private final SModel myModel;
   private final Collection<SLanguage> myUsedLanguages;
 
-  InUsedLanguagesPredicate(SModel model) {
+  public InUsedLanguagesPredicate(SModel model) {
     myModel = model;
     myUsedLanguages = MenuUtil.getUsedLanguages(myModel);
   }

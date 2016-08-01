@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.menus.substitute;
 
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
+import jetbrains.mps.lang.editor.menus.transformation.InUsedLanguagesPredicate;
 import jetbrains.mps.nodeEditor.menus.DefaultMenuItemFactory;
 import jetbrains.mps.nodeEditor.menus.MenuItemFactory;
 import jetbrains.mps.nodeEditor.menus.MenuUtil;
@@ -34,6 +35,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * @author simon
@@ -92,7 +94,7 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
       menuLookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(myEditorContext.getRepository()), myContainmentLink.getTargetConcept());
     }
 
-    return myMenuItemFactory.createItems(this, menuLookup);
+    return myMenuItemFactory.createItems(this, menuLookup).stream().filter(new InUsedLanguagesPredicate(getModel())).collect(Collectors.toList());
   }
 
   @NotNull

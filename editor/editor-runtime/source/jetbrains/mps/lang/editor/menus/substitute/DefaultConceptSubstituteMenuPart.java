@@ -41,8 +41,8 @@ class DefaultConceptSubstituteMenuPart implements SubstituteMenuPart {
   @Override
   public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<>();
-    if (myConcept instanceof SConcept) {
-      result.add(new SimpleConceptSubstituteMenuPart(((SConcept) myConcept)));
+    if (myConcept instanceof SConcept && !myConcept.isAbstract()) {
+      result.add(new SimpleConceptSubstituteMenuPart(myConcept));
     }
     result.add(new DefaultConceptMenusSubstituteMenuPart(ConceptDescendantsCache.getInstance().getDirectDescendants(myConcept)));
     return new CompositeMenuPart<>(result).createItems(context);
