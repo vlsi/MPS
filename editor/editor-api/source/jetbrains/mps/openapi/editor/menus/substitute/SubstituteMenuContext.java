@@ -36,7 +36,7 @@ public interface SubstituteMenuContext {
   @NotNull
   SNode getParentNode();
 
-  @NotNull
+  @Nullable
   SContainmentLink getLink();
 
   @Nullable
@@ -51,4 +51,6 @@ public interface SubstituteMenuContext {
    */
   @NotNull
   List<SubstituteMenuItem> createItems(@Nullable MenuLookup<SubstituteMenu> menuLookup);
+
+  SubstituteMenuContext withLink(SContainmentLink link);
 }

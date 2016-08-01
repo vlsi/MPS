@@ -16,9 +16,11 @@
 package jetbrains.mps.lang.editor.menus.transformation;
 
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -39,10 +41,10 @@ public class SuitableForConstraintsPredicate implements Predicate<SubstituteMenu
   @Nullable
   private final SNode myLinkDeclarationNode;
 
-  public SuitableForConstraintsPredicate(@NotNull SNode parentNode, @NotNull SContainmentLink link, @NotNull SRepository repository) {
+  public SuitableForConstraintsPredicate(@NotNull SNode parentNode, @Nullable SContainmentLink link, @NotNull SRepository repository) {
     myParentNode = parentNode;
     myRepository = repository;
-    myLinkDeclarationNode = link.getDeclarationNode();
+    myLinkDeclarationNode = link == null ? null : link.getDeclarationNode();
   }
 
   @Override
@@ -50,12 +52,14 @@ public class SuitableForConstraintsPredicate implements Predicate<SubstituteMenu
     if (myLinkDeclarationNode == null) {
       return true;
     }
-    SNodeReference sourceNode = item.getOutputConcept().getSourceNode();
-    if (sourceNode == null) {
+    SAbstractConcept outputConcept = item.getOutputConcept();
+    SNodeReference outputConceptSourceNodeReference = outputConcept.getSourceNode();
+    if (outputConceptSourceNodeReference == null) {
       return true;
     }
-    SNode conceptNode = sourceNode.resolve(myRepository);
-    return conceptNode != null && ModelConstraints.canBeParent(myParentNode, conceptNode, myLinkDeclarationNode, null, null) &&
-        ModelConstraints.canBeAncestor(myParentNode, null, conceptNode, null);
+    SNode outputConceptSourceNode = outputConceptSourceNodeReference.resolve(myRepository);
+    return outputConceptSourceNode != null && ModelConstraints.canBeChild(outputConcept, myParentNode, myLinkDeclarationNode, null, null) &&
+        ModelConstraints.canBeParent(myParentNode, outputConceptSourceNode, myLinkDeclarationNode, null, null) &&
+        ModelConstraints.canBeAncestor(myParentNode, null, outputConceptSourceNode, null);
   }
 }

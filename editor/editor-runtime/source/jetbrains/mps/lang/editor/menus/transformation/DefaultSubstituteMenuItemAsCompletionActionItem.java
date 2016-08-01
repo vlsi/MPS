@@ -48,6 +48,10 @@ class DefaultSubstituteMenuItemAsCompletionActionItem extends SubstituteMenuItem
       SContainmentLink containmentLink = myContext.getLink();
       SNode parentNode = myContext.getParentNode();
       SNode currentChild = myContext.getCurrentTargetNode();
+      if (containmentLink == null) {
+        LOG.error("Containment link should not be null. " + "Parent node" + parentNode.getPresentation() + " Parent id: " + parentNode.getNodeId());
+        return;
+      }
       if (!newChild.getConcept().isSubConceptOf(containmentLink.getTargetConcept())) {
         LOG.error("couldn't set instance of " + newChild.getConcept().getName() +
             " as child '" + containmentLink.getName() + "' to parent" + parentNode.getPresentation() + " Parent id: " + parentNode.getNodeId());
@@ -58,20 +62,20 @@ class DefaultSubstituteMenuItemAsCompletionActionItem extends SubstituteMenuItem
         SNodeUtil.replaceWithAnother(currentChild, newChild);
         currentChild.delete();
       }
-    }
-    boolean wasSelected = getSubstituteItem().select(newChild, pattern);
-    if (!wasSelected) {
-      EditorContext editorContext = myContext.getEditorContext();
-      //todo move to select class;
-      editorContext.flushEvents();
-      EditorComponent editorComponent = ((EditorComponent) editorContext.getEditorComponent());
-      EditorCell cell = editorComponent.findNodeCell(newChild);
-      if (cell != null) {
-        EditorCell errorCell = CellFinderUtil.findFirstError(cell, true);
-        if (errorCell != null) {
-          editorComponent.changeSelectionWRTFocusPolicy(errorCell);
-        } else {
-          editorComponent.changeSelectionWRTFocusPolicy(cell);
+      boolean wasSelected = getSubstituteItem().select(newChild, pattern);
+      if (!wasSelected) {
+        EditorContext editorContext = myContext.getEditorContext();
+        //todo move to select class;
+        editorContext.flushEvents();
+        EditorComponent editorComponent = ((EditorComponent) editorContext.getEditorComponent());
+        EditorCell cell = editorComponent.findNodeCell(newChild);
+        if (cell != null) {
+          EditorCell errorCell = CellFinderUtil.findFirstError(cell, true);
+          if (errorCell != null) {
+            editorComponent.changeSelectionWRTFocusPolicy(errorCell);
+          } else {
+            editorComponent.changeSelectionWRTFocusPolicy(cell);
+          }
         }
       }
     }

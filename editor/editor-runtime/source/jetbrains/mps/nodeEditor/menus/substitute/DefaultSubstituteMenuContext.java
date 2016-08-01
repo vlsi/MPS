@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.menus.substitute;
 
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.lang.editor.menus.transformation.InUsedLanguagesPredicate;
+import jetbrains.mps.lang.editor.menus.transformation.SuitableForConstraintsPredicate;
 import jetbrains.mps.nodeEditor.menus.DefaultMenuItemFactory;
 import jetbrains.mps.nodeEditor.menus.MenuItemFactory;
 import jetbrains.mps.nodeEditor.menus.MenuUtil;
@@ -76,7 +77,7 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public SContainmentLink getLink() {
     return myContainmentLink;
   }
@@ -94,7 +95,15 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
       menuLookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(myEditorContext.getRepository()), myContainmentLink.getTargetConcept());
     }
 
-    return myMenuItemFactory.createItems(this, menuLookup).stream().filter(new InUsedLanguagesPredicate(getModel())).collect(Collectors.toList());
+    return myMenuItemFactory.createItems(this, menuLookup).stream()
+        .filter(new InUsedLanguagesPredicate(getModel()))
+        .filter(new SuitableForConstraintsPredicate(myParentNode, myContainmentLink, myEditorContext.getRepository()))
+        .collect(Collectors.toList());
+  }
+
+  @Override
+  public SubstituteMenuContext withLink(SContainmentLink link) {
+    return new DefaultSubstituteMenuContext(myMenuItemFactory, link, myParentNode, myCurrentChild, myEditorContext);
   }
 
   @NotNull

@@ -52,7 +52,6 @@ public class SubstituteItemsCollector {
     DefaultSubstituteMenuContext substituteMenuContext =
         DefaultSubstituteMenuContext.createInitialContextForNode(myContainmentLink, myParent, myCurrentChild, myEditorContext);
     return substituteMenuContext.createItems(myMenuLookup).stream().
-        filter(new SuitableForConstraintsPredicate(myParent, myContainmentLink, myEditorContext.getRepository())).
         map(item -> new DefaultSubstituteMenuItemAsCompletionActionItem(item, substituteMenuContext)).
         collect(Collectors.toList());
   }
