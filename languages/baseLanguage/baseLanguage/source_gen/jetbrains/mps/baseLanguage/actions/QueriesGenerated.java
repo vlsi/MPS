@@ -6750,29 +6750,6 @@ __switch__:
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_SwitchStatement_6064641261145679622(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, 0x10ef02c1b6eL, "defaultBlock")) == null);
   }
-  public static List<SubstituteAction> sideTransform_ActionsFactory_StringLiteral_3841328616808765348(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept").getDeclarationNode(), _context.getSourceNode()) {
-      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SPropertyOperations.set(_context.getSourceNode(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "abc");
-        return null;
-      }
-      public String getMatchingText(String pattern) {
-        return "abc";
-      }
-      public String getVisibleMatchingText(String pattern) {
-        return getMatchingText(pattern);
-      }
-      @Override
-      protected boolean isEnabled() {
-        SNode sourceNode = getSourceNode();
-        SNode parent = SNodeOperations.getParent(sourceNode);
-        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept").getDeclarationNode(), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept").getDeclarationNode(), null));
-      }
-    });
-    return result;
-  }
   private static SNode _quotation_createNode_8p1vjw_a0a0a0c0a0b0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

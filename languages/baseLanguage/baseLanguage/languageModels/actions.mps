@@ -36242,39 +36242,5 @@
       </node>
     </node>
   </node>
-  <node concept="3UOs0u" id="3lf90pmrtuz">
-    <property role="3GE5qa" value="" />
-    <node concept="3UNGvq" id="3lf90pmrtu$" role="3UOs0v">
-      <ref role="3UNGvu" to="tpee:f$Xl_Og" resolve="StringLiteral" />
-      <node concept="tYCnQ" id="3lf90pmrtuB" role="_1QTJ">
-        <ref role="uz4UX" to="tpck:gw2VY9q" resolve="BaseConcept" />
-        <node concept="Cmt7Y" id="3lf90pmrtuG" role="uz6Si">
-          <node concept="Cnhdc" id="3lf90pmrtuI" role="Cncma">
-            <node concept="3clFbS" id="3lf90pmrtuK" role="2VODD2">
-              <node concept="3clFbF" id="3lf90pmrtyj" role="3cqZAp">
-                <node concept="37vLTI" id="3lf90pmrupR" role="3clFbG">
-                  <node concept="Xl_RD" id="3lf90pmruvR" role="37vLTx">
-                    <property role="Xl_RC" value="abc" />
-                  </node>
-                  <node concept="2OqwBi" id="3lf90pmrtFE" role="37vLTJ">
-                    <node concept="Cj7Ep" id="3lf90pmrtyi" role="2Oq$k0" />
-                    <node concept="3TrcHB" id="3lf90pmrtTn" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpee:f$Xl_Oh" resolve="value" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="3lf90pmrv6H" role="3cqZAp">
-                <node concept="10Nm6u" id="3lf90pmrv6F" role="3clFbG" />
-              </node>
-            </node>
-          </node>
-          <node concept="2h1dTh" id="3lf90pmrty6" role="Cn2iK">
-            <property role="2h1i$Z" value="abc" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
 </model>
 
