@@ -101,7 +101,7 @@ public class TransformationMenu_Sections_Component implements ConceptEditorCompo
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, 0, true);
       editorCell.getStyle().putAll(style);
-      editorCell.setDefaultText("<no items>");
+      editorCell.setDefaultText("<no sections>");
       return editorCell;
     }
   }
