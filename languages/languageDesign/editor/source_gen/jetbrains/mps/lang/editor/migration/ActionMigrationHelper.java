@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
 import java.util.Collection;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -110,16 +111,18 @@ public class ActionMigrationHelper {
     SLinkOperations.setTarget(dot, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), select);
     return dot;
   }
-  public static void addMissingImports(Collection<SNode> roots, jetbrains.mps.smodel.SModel model) {
+  public static void addMissingImports(Collection<SNode> roots, SModel model) {
+    if (!(model instanceof SModelInternal)) {
+      return;
+    }
     for (SNode root : CollectionSequence.fromCollection(roots)) {
       for (SNode node : ListSequence.fromList(SNodeOperations.getNodeDescendants(root, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), false, new SAbstractConcept[]{}))) {
         SLanguage language = node.getConcept().getLanguage();
-        if (!(model.usedLanguages().contains(language))) {
-          model.addLanguage(language);
+        if (!(((SModelInternal) model).importedLanguageIds().contains(language))) {
+          ((SModelInternal) model).addLanguage(language);
         }
       }
     }
-
   }
   private static boolean eq_qgr84z_a0a0a0a0a0a0a0j(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

@@ -109,7 +109,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
         }
       }
     }
-    SModel editorAspect = ActionMigrationHelper.getEditorAspect(myLanguage);
+    ActionMigrationHelper.addMissingImports(myNewlyCreatedMenus, ActionMigrationHelper.getEditorAspect(myLanguage));
   }
   private SNode getMainMenu(SNode concept, String tag, boolean isConceptFromSameLanguage, SModel editorAspect) {
     Pair<SNode, String> pair = new Pair<SNode, String>(concept, tag);
