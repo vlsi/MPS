@@ -19,6 +19,7 @@ import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -29,6 +30,7 @@ import jetbrains.mps.classloading.DeployListener;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.Ide_PluginInitializer;
+import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.progress.ProgressMonitorBase.SubProgressMonitor;
@@ -173,7 +175,11 @@ public class PluginLoaderRegistry implements ApplicationComponent {
 
   private void runTask(Task task) {
     LOG.trace("running task with new indicator");
-    ProgressManager.getInstance().run(task);
+    if (isMakeActive()) {
+      task.run(new EmptyProgressIndicator());
+    } else {
+      ProgressManager.getInstance().run(task);
+    }
   }
 
   private Set<PluginContributor> calcContributorsToUnload(Set<PluginContributor> currentContributors, Set<ReloadableModule> toUnload) {
@@ -263,6 +269,14 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     runTask(task);
   }
 
+  private void reschedule() {
+    doScheduleUpdate(ApplicationManager.getApplication());
+  }
+
+  private boolean isMakeActive() {
+    return IMakeService.INSTANCE.isSessionActive();
+  }
+
   /**
    * This task flushes all added/removed loaders and added/removed contributors
    * update happens only inside this task
@@ -287,7 +301,6 @@ public class PluginLoaderRegistry implements ApplicationComponent {
         LOG.debug("Nothing to do in update");
         return;
       }
-      assert indicator.isRunning();
       LOG.info("Running Update Task : loaders " + loadersDelta + "; contributors : " + contributorsDelta + "; " + Thread.currentThread());
       indicator.pushState();
       indicator.setIndeterminate(true);
@@ -361,9 +374,13 @@ public class PluginLoaderRegistry implements ApplicationComponent {
       if (ThreadUtils.isInEDT() && !application.isDisposed()) {
         update();
       } else {
-        application.invokeLater(this::update, ModalityState.NON_MODAL, application.getDisposed());
+        reschedule();
       }
     }
+  }
+
+  private void doScheduleUpdate(Application application) {
+    application.invokeLater(this::update, ModalityState.NON_MODAL, application.getDisposed());
   }
 
   private static ProgressIndicator getIndicator(ProgressMonitor monitor) {
