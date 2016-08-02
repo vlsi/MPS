@@ -109,7 +109,11 @@ public class Binaries_Facet extends IFacet.Stub {
 
                           List<Tuples._2<IFile, byte[]>> data = Resource__BehaviorDescriptor.generate_id7Mb2akaesv8.invoke(it, outputRootFile);
 
-                          for (Tuples._2<IFile, byte[]> d : ListSequence.fromList(data)) {
+                          for (Tuples._2<IFile, byte[]> d : ListSequence.fromList(data).where(new IWhereFilter<Tuples._2<IFile, byte[]>>() {
+                            public boolean accept(Tuples._2<IFile, byte[]> it) {
+                              return it != null;
+                            }
+                          })) {
                             if (d._1() != null) {
                               MapSequence.fromMap(dataToWrite).put(d._0(), d._1());
                             }
