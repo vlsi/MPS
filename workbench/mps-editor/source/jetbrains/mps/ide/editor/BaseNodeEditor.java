@@ -35,6 +35,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.util.EqualUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jdom.Content;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -46,21 +47,23 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public abstract class BaseNodeEditor implements Editor {
-  private static Logger LOG = LogManager.getLogger(BaseNodeEditor.class);
+  private static final Logger LOG = LogManager.getLogger(BaseNodeEditor.class);
 
   private EditorComponent myEditorComponent;
-  private JComponent myComponent = new EditorPanel();
-  private JComponent myEditorPanel = new JPanel();
+  private final JComponent myComponent = new EditorPanel();
+  private final JComponent myEditorPanel = new JPanel();
   protected final Project myProject;
   private JComponent myReplace = null;
   private SNodeReference myCurrentlyEditedNode = null;
-  protected Map<TaskType, PrioritizedTask> myType2TaskMap = new HashMap<TaskType, PrioritizedTask>();
+  protected final Map<TaskType, PrioritizedTask> myType2TaskMap = new HashMap<>();
   private boolean mySelected;
+  private BaseEditorState initialState = null;
 
   public BaseNodeEditor(@NotNull Project mpsProject) {
     myProject = mpsProject;
@@ -226,18 +229,28 @@ public abstract class BaseNodeEditor implements Editor {
     BaseEditorState result = new BaseEditorState();
     EditorContext editorContext = getEditorContext();
     if (editorContext != null) {
-      result.myMemento = editorContext.createMemento();
+      result.memento = editorContext.createMemento();
       EditorComponent editorComponent = getCurrentEditorComponent();
       if (editorComponent instanceof NodeEditorComponent) {
         NodeEditorComponent nodeEditorComponent = (NodeEditorComponent) editorComponent;
-        result.myEditorFocused = nodeEditorComponent.getFocusTracker().getEffectiveFocusState();
+        result.isEditorFocused = nodeEditorComponent.getFocusTracker().getEffectiveFocusState();
         EditorComponent inspector = nodeEditorComponent.getInspector();
         if (inspector != null) {
-          result.myInspectorMemento = inspector.getEditorContext().createMemento();
-          result.myInspectorFocused = !result.myEditorFocused && inspector.getFocusTracker().getEffectiveFocusState();
+          result.inspectorMemento = inspector.getEditorContext().createMemento();
+          result.isInspectorFocused = !result.isEditorFocused && inspector.getFocusTracker().getEffectiveFocusState();
         }
       }
     }
+
+    /*
+    * If state was saved on load, that it holds additional data.
+    * Current default state will be loaded to initial to save additional data.
+    * */
+    if (initialState != null) {
+      initialState.refCopyFrom(result);
+      return initialState;
+    }
+
     return result;
   }
 
@@ -247,10 +260,17 @@ public abstract class BaseNodeEditor implements Editor {
       return;
     }
 
+    /* If state is not instance of BaseEditorState, it can hold some additional data.
+    * In case of default NodeEditor such data will be lost, if it isn't stored.
+    * */
+    if (!state.getClass().equals(BaseEditorState.class)) {
+      initialState = (BaseEditorState) state;
+    }
+
     final BaseEditorState s = (BaseEditorState) state;
     final EditorContext editorContext = getEditorContext();
     final EditorComponent editorComponent = getCurrentEditorComponent();
-    if (s.myMemento == null || editorContext == null || editorComponent == null) {
+    if (s.memento == null || editorContext == null || editorComponent == null) {
       return;
     }
     final IdeFocusManager focusManager = myProject.getComponent(IdeFocusManager.class);
@@ -261,15 +281,15 @@ public abstract class BaseNodeEditor implements Editor {
         if (editorComponent.isDisposed()) {
           return;
         }
-        editorContext.setMemento(s.myMemento);
+        editorContext.setMemento(s.memento);
 
-        editorComponent.getFocusTracker().setEffectiveFocusState(s.myEditorFocused);
-        if (s.myEditorFocused && focusManager != null) {
+        editorComponent.getFocusTracker().setEffectiveFocusState(s.isEditorFocused);
+        if (s.isEditorFocused && focusManager != null) {
           focusManager.requestFocus(editorComponent, true);
         }
       }
     });
-    if (s.myInspectorMemento == null || !(editorComponent instanceof NodeEditorComponent)) {
+    if (s.inspectorMemento == null || !(editorComponent instanceof NodeEditorComponent)) {
       return;
     }
     final NodeEditorComponent nodeEditorComponent = (NodeEditorComponent) editorComponent;
@@ -282,9 +302,9 @@ public abstract class BaseNodeEditor implements Editor {
     executeInEDT(new PrioritizedTask(TaskType.INSPECTOR_MEMENTO, myType2TaskMap) {
       @Override
       public void performTask() {
-        inspectorEditorContext.setMemento(s.myInspectorMemento);
-        inspectorEditorComponent.getFocusTracker().setEffectiveFocusState(s.myInspectorFocused);
-        if (s.myInspectorFocused && focusManager != null) {
+        inspectorEditorContext.setMemento(s.inspectorMemento);
+        inspectorEditorComponent.getFocusTracker().setEffectiveFocusState(s.isInspectorFocused);
+        if (s.isInspectorFocused && focusManager != null) {
           InspectorTool inspectorTool = myProject.getComponent(InspectorTool.class);
           if (inspectorTool != null && inspectorTool.isAvailable()) {
             inspectorTool.activate();
@@ -340,7 +360,7 @@ public abstract class BaseNodeEditor implements Editor {
     EDIT_NODE,
     EDITOR_MEMENTO,
     INSPECTOR_MEMENTO,
-    UPDATE_PROPERTIES;
+    UPDATE_PROPERTIES
   }
 
   public static class BaseEditorState implements EditorState {
@@ -349,36 +369,47 @@ public abstract class BaseNodeEditor implements Editor {
     private static final String FOCUSED_COMPONENT_EDITOR = "editorFocused";
     private static final String FOCUSED_COMPONENT_INSPECTOR = "inspectorFocused";
 
-    private Object myMemento;
-    private boolean myEditorFocused;
-    private Object myInspectorMemento;
-    private boolean myInspectorFocused;
+    private Object memento;
+    private boolean isEditorFocused;
+    private Object inspectorMemento;
+    private boolean isInspectorFocused;
+    /**
+     * Holds additional data from loaded {@link Element},
+     * which is not stored in memento and inspectorMemento
+     */
+    protected List<Element> elements = new ArrayList<>();
 
     public void refCopyFrom(BaseEditorState source) {
-      myMemento = source.myMemento;
-      myEditorFocused = source.myEditorFocused;
-      myInspectorMemento = source.myInspectorMemento;
-      myInspectorFocused = source.myInspectorFocused;
+      memento = source.memento;
+      isEditorFocused = source.isEditorFocused;
+      inspectorMemento = source.inspectorMemento;
+      isInspectorFocused = source.isInspectorFocused;
+      elements = source.elements;
     }
 
     @Override
     public void save(Element e) {
-      if (myMemento != null) {
+      if (memento != null) {
         Element mementoElem = new Element(MEMENTO);
-        MementoPersistence.saveMemento(myMemento, mementoElem);
+        MementoPersistence.saveMemento(memento, mementoElem);
         e.addContent(mementoElem);
       }
-      if (myInspectorMemento != null) {
+      if (inspectorMemento != null) {
         Element mementoElem = new Element(INSPECTOR_MEMENTO);
-        MementoPersistence.saveMemento(myInspectorMemento, mementoElem);
+        MementoPersistence.saveMemento(inspectorMemento, mementoElem);
         e.addContent(mementoElem);
       }
 
-      if (myEditorFocused) {
+      if (isEditorFocused) {
         e.setAttribute(FOCUSED_COMPONENT_EDITOR, Boolean.TRUE.toString());
       }
-      if (myInspectorFocused) {
+      if (isInspectorFocused) {
         e.setAttribute(FOCUSED_COMPONENT_EDITOR, Boolean.TRUE.toString());
+      }
+
+      // save additional data to Element
+      for (Element element : elements) {
+        e.addContent(element.clone());
       }
     }
 
@@ -386,19 +417,35 @@ public abstract class BaseNodeEditor implements Editor {
     public void load(Element e) {
       Element mementoElem = e.getChild(MEMENTO);
       if (mementoElem != null) {
-        myMemento = MementoPersistence.loadMemento(mementoElem);
+        memento = MementoPersistence.loadMemento(mementoElem);
       }
       Element inspectorMementoElem = e.getChild(INSPECTOR_MEMENTO);
       if (inspectorMementoElem != null) {
-        myInspectorMemento = MementoPersistence.loadMemento(inspectorMementoElem);
+        inspectorMemento = MementoPersistence.loadMemento(inspectorMementoElem);
       }
 
-      myEditorFocused = Boolean.parseBoolean(e.getAttributeValue(FOCUSED_COMPONENT_EDITOR));
-      myInspectorFocused = Boolean.parseBoolean(e.getAttributeValue(FOCUSED_COMPONENT_INSPECTOR));
+      isEditorFocused = Boolean.parseBoolean(e.getAttributeValue(FOCUSED_COMPONENT_EDITOR));
+      isInspectorFocused = Boolean.parseBoolean(e.getAttributeValue(FOCUSED_COMPONENT_INSPECTOR));
+
+      for (Content content : e.getContent()) {
+        // Store only Elements
+        if (!(content instanceof Element)) {
+          continue;
+        }
+
+        final Element element = (Element) content;
+        final String name = element.getName();
+        if (MEMENTO.equals(name) || INSPECTOR_MEMENTO.equals(name)) {
+          // Store only additional data, memento and inspectorMemento have been already saved
+          continue;
+        }
+
+        elements.add(element);
+      }
     }
 
     public int hashCode() {
-      return myMemento.hashCode() + myInspectorMemento.hashCode();
+      return memento.hashCode() + inspectorMemento.hashCode() + elements.hashCode();
     }
 
     public boolean equals(Object obj) {
@@ -407,8 +454,8 @@ public abstract class BaseNodeEditor implements Editor {
       }
 
       BaseEditorState state = (BaseEditorState) obj;
-      return EqualUtil.equals(state.myMemento, myMemento) && EqualUtil.equals(state.myInspectorMemento, myInspectorMemento) &&
-          state.myEditorFocused == myEditorFocused && state.myInspectorFocused == myInspectorFocused;
+      return EqualUtil.equals(state.memento, memento) && EqualUtil.equals(state.inspectorMemento, inspectorMemento) &&
+          state.isEditorFocused == isEditorFocused && state.isInspectorFocused == isInspectorFocused && EqualUtil.equals(state.elements, elements);
     }
   }
 }
