@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.behavior;
  */
 @Deprecated
 public class QueryFunctionParameter_TransformationMenu_targetNode_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }
