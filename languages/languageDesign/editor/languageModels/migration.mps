@@ -25,6 +25,7 @@
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="wcxw" ref="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="pz2c" ref="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
@@ -5072,7 +5073,7 @@
             <property role="TrG5h" value="oldName" />
             <node concept="17QB3L" id="1MdDphDzk0b" role="1tU5fm" />
             <node concept="2YIFZM" id="1mnY7H6dMHG" role="33vP2m">
-              <ref role="37wK5l" node="1mnY7H6dh7a" resolve="substituteSpacesWithUnderscore" />
+              <ref role="37wK5l" node="1mnY7H6dh7a" resolve="getValidName" />
               <ref role="1Pybhc" node="1mnY7H6daTl" resolve="ActionMigrationHelper" />
               <node concept="2OqwBi" id="1MdDphDzk0d" role="37wK5m">
                 <node concept="37vLTw" id="1MdDphDzk1l" role="2Oq$k0">
@@ -13275,7 +13276,7 @@
       </node>
     </node>
     <node concept="2YIFZL" id="1mnY7H6dh7a" role="jymVt">
-      <property role="TrG5h" value="substituteSpacesWithUnderscore" />
+      <property role="TrG5h" value="getValidName" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="5W1UxLa75MN" role="3clF47">
@@ -13308,6 +13309,37 @@
                 <property role="1XhdNS" value="_" />
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="41ZU75YLn_7" role="3cqZAp">
+          <node concept="3clFbS" id="41ZU75YLn_9" role="3clFbx">
+            <node concept="3clFbF" id="41ZU75YLz05" role="3cqZAp">
+              <node concept="37vLTI" id="41ZU75YLzm5" role="3clFbG">
+                <node concept="3cpWs3" id="41ZU75YLzEp" role="37vLTx">
+                  <node concept="Xl_RD" id="41ZU75YLzFm" role="3uHU7w">
+                    <property role="Xl_RC" value="_" />
+                  </node>
+                  <node concept="37vLTw" id="41ZU75YLzsm" role="3uHU7B">
+                    <ref role="3cqZAo" node="5W1UxLa78UY" resolve="name" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="41ZU75YLz03" role="37vLTJ">
+                  <ref role="3cqZAo" node="5W1UxLa78UY" resolve="name" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2YIFZM" id="41ZU75YLyPb" role="3clFbw">
+            <ref role="37wK5l" to="pz2c:DxJezr2d4j" resolve="isJavaReserved" />
+            <ref role="1Pybhc" to="pz2c:6FltliuC5is" resolve="IdentifierConstraintsUtil" />
+            <node concept="37vLTw" id="41ZU75YLyRM" role="37wK5m">
+              <ref role="3cqZAo" node="5W1UxLa78UY" resolve="name" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="41ZU75YLzXH" role="3cqZAp">
+          <node concept="37vLTw" id="41ZU75YL$0c" role="3cqZAk">
+            <ref role="3cqZAo" node="5W1UxLa78UY" resolve="name" />
           </node>
         </node>
       </node>
@@ -17062,7 +17094,7 @@
             <node concept="17QB3L" id="7f0kPyFOdFb" role="1tU5fm" />
             <node concept="2YIFZM" id="7f0kPyFOdFc" role="33vP2m">
               <ref role="1Pybhc" node="1mnY7H6daTl" resolve="ActionMigrationHelper" />
-              <ref role="37wK5l" node="1mnY7H6dh7a" resolve="substituteSpacesWithUnderscore" />
+              <ref role="37wK5l" node="1mnY7H6dh7a" resolve="getValidName" />
               <node concept="2OqwBi" id="7f0kPyFOdFd" role="37wK5m">
                 <node concept="37vLTw" id="7f0kPyFOdFe" role="2Oq$k0">
                   <ref role="3cqZAo" node="7f0kPyFOdEm" resolve="actions" />
