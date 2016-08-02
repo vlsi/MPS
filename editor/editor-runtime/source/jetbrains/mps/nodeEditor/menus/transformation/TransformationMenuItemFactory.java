@@ -59,7 +59,7 @@ public class TransformationMenuItemFactory implements MenuItemFactory<Transforma
       result.addAll(menu.createMenuItems(context));
     }
 
-    if (!foundApplicableMenu) {
+    if (!foundApplicableMenu && menuLookup instanceof DefaultMenuLookup) {
       result.addAll(menuLookup.createImplicitMenu().createMenuItems(context));
     }
 
