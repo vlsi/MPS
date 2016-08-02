@@ -55,15 +55,7 @@ public class SChildSubstituteInfo extends AbstractSubstituteInfo {
 
   @Override
   protected TransformationMenuContext createTransformationContext() {
-    TransformationMenuContext context =
-        DefaultTransformationMenuContext.createInitialContextForCell(getEditorCell(), MenuLocations.SUBSTITUTE);
-    if (myCurrentChild != null) {
-      Object oldNodeForSubstitution = myCurrentChild.getUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION);
-      if (oldNodeForSubstitution instanceof SNode) {
-        context = context.withNode(((SNode) oldNodeForSubstitution));
-      }
-    }
-    return context;
+    return DefaultTransformationMenuContext.createInitialContextForCell(getEditorCell(), MenuLocations.SUBSTITUTE);
   }
 
   @Override

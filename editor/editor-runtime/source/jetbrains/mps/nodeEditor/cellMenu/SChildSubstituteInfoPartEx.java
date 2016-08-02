@@ -27,6 +27,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuConte
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -38,18 +39,15 @@ public class SChildSubstituteInfoPartEx implements SubstituteInfoPartExt {
   public SChildSubstituteInfoPartEx(EditorCell editorCell) {
     myEditorCell = editorCell;
   }
+
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+    if (myEditorCell.getTransformationMenuLookup() == null) {
+      return Collections.emptyList();
+    }
     SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
-    SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
     TransformationMenuContext context =
         DefaultTransformationMenuContext.createInitialContextForCell(myEditorCell, MenuLocations.SUBSTITUTE);
-    if (currentChild != null) {
-      Object oldNodeForSubstitution = context.getNode().getUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION);
-      if (oldNodeForSubstitution instanceof SNode) {
-        context = context.withNode(((SNode) oldNodeForSubstitution));
-      }
-    }
     List<TransformationMenuItem> items = context.createItems(myEditorCell.getTransformationMenuLookup());
     return new SubstituteActionsCollector(parentNode, items).collect();
   }

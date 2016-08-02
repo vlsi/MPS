@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.editor.menus.substitute;
 
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -74,7 +75,14 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
 
   @Override
   public SNode createNode(String pattern) {
-    return NodeFactoryManager.createNode(myConcept, myCurrentChild, myParentNode, myParentNode.getModel());
+    SNode currentChild = myCurrentChild;
+    if (myCurrentChild != null) {
+      final Object oldNodeForSubstitute = myCurrentChild.getUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION);
+      if (oldNodeForSubstitute != null) {
+        currentChild = ((SNode) oldNodeForSubstitute);
+      }
+    }
+    return NodeFactoryManager.createNode(myConcept, currentChild, myParentNode, myParentNode.getModel());
   }
 
   @Override
