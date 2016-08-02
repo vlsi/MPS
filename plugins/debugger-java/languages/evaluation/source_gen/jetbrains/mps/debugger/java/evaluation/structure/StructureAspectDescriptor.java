@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(14);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(13);
   /*package*/ final ConceptDescriptor myConceptDebuggedType = createDescriptorForDebuggedType();
   /*package*/ final ConceptDescriptor myConceptDoNotTransformAnnotation = createDescriptorForDoNotTransformAnnotation();
   /*package*/ final ConceptDescriptor myConceptDownCastToLowLevel = createDescriptorForDownCastToLowLevel();
@@ -28,7 +28,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptIEvaluatorConcept = createDescriptorForIEvaluatorConcept();
   /*package*/ final ConceptDescriptor myConceptLowLevelVariable = createDescriptorForLowLevelVariable();
   /*package*/ final ConceptDescriptor myConceptLowLevelVariableReference = createDescriptorForLowLevelVariableReference();
-  /*package*/ final ConceptDescriptor myConceptToEvaluateAnnotation = createDescriptorForToEvaluateAnnotation();
   /*package*/ final ConceptDescriptor myConceptUnitNode = createDescriptorForUnitNode();
   /*package*/ final ConceptDescriptor myConceptUnprocessedAnnotation = createDescriptorForUnprocessedAnnotation();
 
@@ -44,14 +43,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     myIndexMap.put(myConceptIEvaluatorConcept.getId(), 8);
     myIndexMap.put(myConceptLowLevelVariable.getId(), 9);
     myIndexMap.put(myConceptLowLevelVariableReference.getId(), 10);
-    myIndexMap.put(myConceptToEvaluateAnnotation.getId(), 11);
-    myIndexMap.put(myConceptUnitNode.getId(), 12);
-    myIndexMap.put(myConceptUnprocessedAnnotation.getId(), 13);
+    myIndexMap.put(myConceptUnitNode.getId(), 11);
+    myIndexMap.put(myConceptUnprocessedAnnotation.getId(), 12);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptDebuggedType, myConceptDoNotTransformAnnotation, myConceptDownCastToLowLevel, myConceptEvaluator, myConceptEvaluatorConcept, myConceptEvaluatorsSuperMethodCall, myConceptEvaluatorsThisExpression, myConceptGenerationHelperAnnotation, myConceptIEvaluatorConcept, myConceptLowLevelVariable, myConceptLowLevelVariableReference, myConceptToEvaluateAnnotation, myConceptUnitNode, myConceptUnprocessedAnnotation);
+    return Arrays.asList(myConceptDebuggedType, myConceptDoNotTransformAnnotation, myConceptDownCastToLowLevel, myConceptEvaluator, myConceptEvaluatorConcept, myConceptEvaluatorsSuperMethodCall, myConceptEvaluatorsThisExpression, myConceptGenerationHelperAnnotation, myConceptIEvaluatorConcept, myConceptLowLevelVariable, myConceptLowLevelVariableReference, myConceptUnitNode, myConceptUnprocessedAnnotation);
   }
 
   @Override
@@ -85,10 +83,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 10:
         return myConceptLowLevelVariableReference;
       case 11:
-        return myConceptToEvaluateAnnotation;
-      case 12:
         return myConceptUnitNode;
-      case 13:
+      case 12:
         return myConceptUnprocessedAnnotation;
       default:
         throw new IllegalStateException();
@@ -127,9 +123,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForLowLevelVariableReference() {
     return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference", MetaIdFactory.conceptId(0x7da4580f9d754603L, 0x816251a896d78375L, 0x7d9a547f857a394bL)).super_("jetbrains.mps.baseLanguage.structure.BaseVariableReference").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4c4b92003e49a704L)).parents("jetbrains.mps.baseLanguage.structure.BaseVariableReference").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4c4b92003e49a704L)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)", "9050639307831392587")).create();
-  }
-  private static ConceptDescriptor createDescriptorForToEvaluateAnnotation() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation", MetaIdFactory.conceptId(0x7da4580f9d754603L, 0x816251a896d78375L, 0x4135c73fbe7fc985L)).super_("jetbrains.mps.debugger.java.evaluation.structure.GenerationHelperAnnotation").version(1).super_(MetaIdFactory.conceptId(0x7da4580f9d754603L, 0x816251a896d78375L, 0x17b1c8f7ef7ab40cL)).parents("jetbrains.mps.debugger.java.evaluation.structure.GenerationHelperAnnotation").parentIds(MetaIdFactory.conceptId(0x7da4580f9d754603L, 0x816251a896d78375L, 0x17b1c8f7ef7ab40cL)).sourceNode(new SNodePointer("r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)", "4698880862823893381")).create();
   }
   private static ConceptDescriptor createDescriptorForUnitNode() {
     return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.UnitNode", MetaIdFactory.conceptId(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3c2f40ee0bb3cbf5L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x3c2f40ee0bb3cbf8L, "highLevelNodeId", new SNodePointer("r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)", "4336756357323803640"))).properties("highLevelNodeId").childDescriptors(new ConceptDescriptorBuilder.Link(0x3f11b1341fa2c39cL, "debuggedType", MetaIdFactory.conceptId(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L), false, false, false, new SNodePointer("r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)", "4544608336420717468"))).children(new String[]{"debuggedType"}, new boolean[]{false}).sourceNode(new SNodePointer("r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)", "4336756357323803637")).create();

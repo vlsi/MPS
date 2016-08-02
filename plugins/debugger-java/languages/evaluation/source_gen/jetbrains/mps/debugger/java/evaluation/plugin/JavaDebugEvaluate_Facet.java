@@ -30,6 +30,10 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.Properties;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.generator.GenerationStatus;
@@ -89,7 +93,12 @@ public class JavaDebugEvaluate_Facet extends IFacet.Stub {
                       if (evaluator.value != null) {
                         try {
                           assert SNodeOperations.getModel(evaluator.value) != null;
-                          TransformatorBuilder.getInstance().build(evaluator.value, true).transformEvaluator();
+                          SNode evaluateMethod = ListSequence.fromList(SNodeOperations.getNodeDescendants(evaluator.value, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false, new SAbstractConcept[]{})).findFirst(new IWhereFilter<SNode>() {
+                            public boolean accept(SNode it) {
+                              return "evaluate".equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+                            }
+                          });
+                          TransformatorBuilder.getInstance().build(evaluateMethod, true).transformEvaluator();
                           // TextGen would use model's repository to obtain read lock, and if model is not registered, there'd be no lock 
                           // which is fine for the transient model itself, but once there's reference outside of the model, e.g. to a java stub elsewhere, 
                           // there would be a lock violation exception 

@@ -23,7 +23,7 @@ public class TransformatorBuilderImpl extends TransformatorBuilder {
   }
   @Override
   public TransformatorBuilder.Transformator build(@NotNull SNode node, boolean insideTransformation) {
-    return new TransformatorImpl(node, insideTransformation);
+    return new TransformatorImpl(node);
   }
   @Override
   public String getJniSignatureFromType(SNode type) {

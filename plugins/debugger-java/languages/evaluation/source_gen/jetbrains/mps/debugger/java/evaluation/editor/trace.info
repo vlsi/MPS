@@ -12,7 +12,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="15,0,96,0" name="jetbrains.mps.debugger.java.evaluation.editor.EditorAspectDescriptorImpl" />
+      <unit at="15,0,91,0" name="jetbrains.mps.debugger.java.evaluation.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:1725327f-608f-49f4-82f5-b90b00e35b3f(jetbrains.mps.debugger.java.evaluation.editor)/1707366700950402061">
@@ -171,31 +171,6 @@
       <scope id="4336756357323803642" at="48,0,57,0" />
       <unit id="4336756357323803642" at="33,0,61,0" name="jetbrains.mps.debugger.java.evaluation.editor.UnitNode_Editor$debuggedTypeSingleRoleHandler_ht3f9v_a0" />
       <unit id="4336756357323803642" at="18,0,62,0" name="jetbrains.mps.debugger.java.evaluation.editor.UnitNode_Editor" />
-    </file>
-  </root>
-  <root nodeRef="r:1725327f-608f-49f4-82f5-b90b00e35b3f(jetbrains.mps.debugger.java.evaluation.editor)/4454641827113735796">
-    <file name="ToEvaluateAnnotation_Editor.java">
-      <node id="4454641827113735796" at="13,79,14,71" concept="6" />
-      <node id="4454641827113735802" at="16,97,17,80" concept="5" />
-      <node id="4454641827113735802" at="17,80,18,101" concept="5" />
-      <node id="4454641827113735802" at="18,101,19,28" concept="1" />
-      <node id="4454641827113735802" at="19,28,20,22" concept="6" />
-      <node id="4454641827113735796" at="13,0,16,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="4454641827113735802" at="16,0,22,0" concept="4" trace="createAttributedNodeCell_62jluc_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="4454641827113735796" at="13,79,14,71" />
-      <scope id="4454641827113735796" at="13,0,16,0">
-        <var name="editorContext" id="4454641827113735796" />
-        <var name="node" id="4454641827113735796" />
-      </scope>
-      <scope id="4454641827113735802" at="16,97,20,22">
-        <var name="editorCell" id="4454641827113735802" />
-        <var name="manager" id="4454641827113735802" />
-      </scope>
-      <scope id="4454641827113735802" at="16,0,22,0">
-        <var name="editorContext" id="4454641827113735802" />
-        <var name="node" id="4454641827113735802" />
-      </scope>
-      <unit id="4454641827113735796" at="12,0,23,0" name="jetbrains.mps.debugger.java.evaluation.editor.ToEvaluateAnnotation_Editor" />
     </file>
   </root>
   <root nodeRef="r:1725327f-608f-49f4-82f5-b90b00e35b3f(jetbrains.mps.debugger.java.evaluation.editor)/4544608336420691675">

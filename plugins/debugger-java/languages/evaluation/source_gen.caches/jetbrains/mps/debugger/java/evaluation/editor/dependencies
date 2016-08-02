@@ -71,7 +71,6 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.editor.GenerationHelperAnnotation_Editor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.editor.LowLevelVariableReference_Editor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.editor.LowLevelVariable_Editor" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.editor.ToEvaluateAnnotation_Editor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.editor.UnitNode_Editor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -241,14 +240,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-  </dependency>
-  <dependency className="jetbrains.mps.debugger.java.evaluation.editor.ToEvaluateAnnotation_Editor" file="ToEvaluateAnnotation_Editor.java">
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.attribute.AttributeKind" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
