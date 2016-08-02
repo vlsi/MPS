@@ -95,7 +95,7 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
       }
       Language language = Language.getLanguageFor(event.getModel());
       if (language != null) {
-        refreshModule(language);
+        refreshModule(language,true);
       }
     }
 
@@ -106,7 +106,7 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
       }
       Language language = Language.getLanguageFor(event.getModel());
       if (language != null) {
-        refreshModule(language);
+        refreshModule(language,true);
       }
     }
   }
@@ -166,12 +166,19 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
 
   @Override
   public void refreshModule(SModule language) {
+    refreshModule(language,false);
+  }
+
+  public void refreshModule(SModule language,boolean nodeChange) {
     myListener.attach(language);
     Language module = (Language) language;
     SModelReference ref = getSModelReference(module);
     if (!myModels.containsKey(ref)) {
       createModel(ref, module);
     } else {
+      if (!nodeChange){
+        myModels.get(ref).updateGenerationLanguages();
+      }
       LanguageModelDescriptor languageModelDescriptor = myModels.get(ref);
       if (languageModelDescriptor != null) {
         languageModelDescriptor.invalidate();

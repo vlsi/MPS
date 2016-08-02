@@ -88,7 +88,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
       public void visit(Conflictable it) {
         IFile ifile = it.getFile();
         if (isInConflict(ifile)) {
-          VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
+          VirtualFile vfile = VirtualFileUtils.getProjectVirtualFile(ifile);
           Conflictable prev = fileToConflictable.put(vfile, it);
 
           if (prev != null) {

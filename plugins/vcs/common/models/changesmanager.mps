@@ -1324,10 +1324,10 @@
                 <node concept="3uibUv" id="2LgKyNJ4b$R" role="1tU5fm">
                   <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
                 </node>
-                <node concept="2YIFZM" id="2LgKyNJ4b$S" role="33vP2m">
+                <node concept="2YIFZM" id="6tLsn3mUaB1" role="33vP2m">
+                  <ref role="37wK5l" to="4hrd:~VirtualFileUtils.getProjectVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolve="getProjectVirtualFile" />
                   <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
-                  <ref role="37wK5l" to="4hrd:~VirtualFileUtils.getVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolve="getVirtualFile" />
-                  <node concept="37vLTw" id="2LgKyNJ4m1$" role="37wK5m">
+                  <node concept="37vLTw" id="6tLsn3mUaB2" role="37wK5m">
                     <ref role="3cqZAo" node="2LgKyNJ4jvu" resolve="file" />
                   </node>
                 </node>
@@ -1604,10 +1604,10 @@
                       <node concept="3uibUv" id="2LgKyNJnkLj" role="1tU5fm">
                         <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
                       </node>
-                      <node concept="2YIFZM" id="2LgKyNJnkLk" role="33vP2m">
-                        <ref role="37wK5l" to="4hrd:~VirtualFileUtils.getVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolve="getVirtualFile" />
+                      <node concept="2YIFZM" id="6tLsn3mUaYE" role="33vP2m">
+                        <ref role="37wK5l" to="4hrd:~VirtualFileUtils.getProjectVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolve="getProjectVirtualFile" />
                         <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
-                        <node concept="37vLTw" id="2LgKyNJnpv6" role="37wK5m">
+                        <node concept="37vLTw" id="6tLsn3mUaYF" role="37wK5m">
                           <ref role="3cqZAo" node="2LgKyNJnkqR" resolve="file" />
                         </node>
                       </node>
@@ -6002,6 +6002,29 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="6tLsn3mTnNV" role="3cqZAp">
+          <node concept="3cpWsn" id="6tLsn3mTnNW" role="3cpWs9">
+            <property role="TrG5h" value="vFile" />
+            <node concept="3uibUv" id="6tLsn3mTnNT" role="1tU5fm">
+              <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
+            </node>
+            <node concept="2YIFZM" id="6tLsn3mU0tU" role="33vP2m">
+              <ref role="37wK5l" to="4hrd:~VirtualFileUtils.getProjectVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolve="getProjectVirtualFile" />
+              <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
+              <node concept="37vLTw" id="6tLsn3mU0tV" role="37wK5m">
+                <ref role="3cqZAo" node="2LgKyNJjadn" resolve="file" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1gVbGN" id="6tLsn3mTMyR" role="3cqZAp">
+          <node concept="3y3z36" id="6tLsn3mTWnl" role="1gVkn0">
+            <node concept="10Nm6u" id="6tLsn3mU0k4" role="3uHU7w" />
+            <node concept="37vLTw" id="6tLsn3mTR7s" role="3uHU7B">
+              <ref role="3cqZAo" node="6tLsn3mTnNW" resolve="vFile" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="2LgKyNJjsQj" role="3cqZAp">
           <node concept="3cpWsn" id="2LgKyNJjsQk" role="3cpWs9">
             <property role="TrG5h" value="status" />
@@ -6018,12 +6041,8 @@
               </node>
               <node concept="liA8E" id="2LgKyNJjCgH" role="2OqNvi">
                 <ref role="37wK5l" to="jlcu:~FileStatusManager.getStatus(com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vcs.FileStatus" resolve="getStatus" />
-                <node concept="2YIFZM" id="2LgKyNJjUr_" role="37wK5m">
-                  <ref role="37wK5l" to="4hrd:~VirtualFileUtils.getVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolve="getVirtualFile" />
-                  <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
-                  <node concept="37vLTw" id="2LgKyNJjUrA" role="37wK5m">
-                    <ref role="3cqZAo" node="2LgKyNJjadn" resolve="file" />
-                  </node>
+                <node concept="37vLTw" id="6tLsn3mTnNZ" role="37wK5m">
+                  <ref role="3cqZAo" node="6tLsn3mTnNW" resolve="vFile" />
                 </node>
               </node>
             </node>
@@ -6079,21 +6098,21 @@
                 <node concept="3uibUv" id="2LgKyNJ8d8J" role="1tU5fm">
                   <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
                 </node>
-                <node concept="2YIFZM" id="2LgKyNJ8d8K" role="33vP2m">
+                <node concept="2YIFZM" id="6tLsn3mU7Zi" role="33vP2m">
+                  <ref role="37wK5l" to="4hrd:~VirtualFileUtils.getProjectVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolve="getProjectVirtualFile" />
                   <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
-                  <ref role="37wK5l" to="4hrd:~VirtualFileUtils.getVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolve="getVirtualFile" />
-                  <node concept="2OqwBi" id="2LgKyNJ8d8L" role="37wK5m">
-                    <node concept="1eOMI4" id="2LgKyNJ8d8M" role="2Oq$k0">
-                      <node concept="10QFUN" id="2LgKyNJ8d8N" role="1eOMHV">
-                        <node concept="3uibUv" id="2LgKyNJ8d8O" role="10QFUM">
+                  <node concept="2OqwBi" id="6tLsn3mU7Zj" role="37wK5m">
+                    <node concept="1eOMI4" id="6tLsn3mU7Zk" role="2Oq$k0">
+                      <node concept="10QFUN" id="6tLsn3mU7Zl" role="1eOMHV">
+                        <node concept="3uibUv" id="6tLsn3mU7Zm" role="10QFUM">
                           <ref role="3uigEE" to="ends:~FileDataSource" resolve="FileDataSource" />
                         </node>
-                        <node concept="37vLTw" id="2LgKyNJganB" role="10QFUP">
+                        <node concept="37vLTw" id="6tLsn3mU7Zn" role="10QFUP">
                           <ref role="3cqZAo" node="2LgKyNJfwKI" resolve="ds" />
                         </node>
                       </node>
                     </node>
-                    <node concept="liA8E" id="2LgKyNJ8d8Q" role="2OqNvi">
+                    <node concept="liA8E" id="6tLsn3mU7Zo" role="2OqNvi">
                       <ref role="37wK5l" to="ends:~FileDataSource.getFile():jetbrains.mps.vfs.IFile" resolve="getFile" />
                     </node>
                   </node>

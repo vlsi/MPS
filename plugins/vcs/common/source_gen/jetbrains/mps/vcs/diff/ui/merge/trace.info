@@ -1276,12 +1276,12 @@
       <node id="3086864304964366462" at="52,26,53,69" concept="9" />
       <node id="3086864304964366475" at="54,30,55,64" concept="9" />
       <node id="3086864304964366486" at="56,5,57,22" concept="9" />
-      <node id="708166622413812794" at="59,89,60,231" concept="8" />
-      <node id="708166622413812806" at="61,114,62,42" concept="9" />
+      <node id="708166622413812794" at="59,89,60,240" concept="8" />
+      <node id="708166622413812806" at="61,117,62,42" concept="9" />
       <node id="708166622413812816" at="63,12,64,38" concept="9" />
-      <node id="708166622413812829" at="67,87,68,190" concept="8" />
-      <node id="708166622413812843" at="68,190,69,68" concept="8" />
-      <node id="708166622413812855" at="69,68,70,100" concept="8" />
+      <node id="708166622413812829" at="67,87,68,183" concept="8" />
+      <node id="708166622413812843" at="68,183,69,68" concept="8" />
+      <node id="708166622413812855" at="69,68,70,200" concept="8" />
       <node id="708166622413812865" at="71,22,72,53" concept="9" />
       <node id="708166622413812871" at="73,29,74,52" concept="10" />
       <node id="708166622413812873" at="74,52,75,42" concept="9" />
@@ -1298,10 +1298,10 @@
       <node id="3086864304964952813" at="34,32,39,26" concept="3" />
       <node id="3086864304965057958" at="40,57,45,17" concept="3" />
       <node id="3086864304964366460" at="51,99,56,5" concept="6" />
-      <node id="708166622413812804" at="60,231,65,5" concept="6" />
+      <node id="708166622413812804" at="60,240,65,5" concept="6" />
       <node id="3086864304964366412" at="51,0,59,0" concept="13" trace="showMergeConfirmationIfNeeded#(Ljava/awt/Component;II)I" />
       <node id="708166622413812790" at="59,0,67,0" concept="13" trace="showUnresolvedConflictsConfirmation#(Ljava/awt/Component;I)I" />
-      <node id="708166622413812863" at="70,100,78,5" concept="6" />
+      <node id="708166622413812863" at="70,200,78,5" concept="6" />
       <node id="3086864304964914043" at="33,15,46,5" concept="6" />
       <node id="708166622413812821" at="67,0,80,0" concept="13" trace="showUnresolvedChangesConfirmation#(Ljava/awt/Component;I)I" />
       <node id="3086864304964272266" at="22,0,51,0" concept="13" trace="showMergeConfirmationAndTakeAction#(Ljava/awt/Component;Ljetbrains/mps/vcs/diff/merge/MergeSession;Ljava/lang/Iterable;Ljetbrains/mps/vcs/diff/merge/MergeSession;Ljava/lang/Iterable;)I" />
@@ -1312,7 +1312,7 @@
       <scope id="3086864304965073494" at="42,47,43,89" />
       <scope id="3086864304964366461" at="52,26,53,69" />
       <scope id="3086864304964366474" at="54,30,55,64" />
-      <scope id="708166622413812805" at="61,114,62,42" />
+      <scope id="708166622413812805" at="61,117,62,42" />
       <scope id="708166622413812815" at="63,12,64,38" />
       <scope id="708166622413812864" at="71,22,72,53" />
       <scope id="708166622413812878" at="76,12,77,38" />
