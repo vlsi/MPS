@@ -5551,6 +5551,9 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="2uBUyS1moaN" resolve="QueryFunction_SubstituteMenu_Concepts" />
     </node>
+    <node concept="PrWs8" id="41ZU75YGwqg" role="PzmwI">
+      <ref role="PrY4T" node="6VAVyI4xoxZ" resolve="IOutputConceptMenuPart" />
+    </node>
   </node>
   <node concept="1TIwiD" id="7mC_uHG0PRU">
     <property role="TrG5h" value="QueryFunction_SubstituteMenu_Icon" />

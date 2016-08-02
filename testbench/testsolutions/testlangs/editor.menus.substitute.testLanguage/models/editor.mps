@@ -290,7 +290,9 @@
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
-      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz">
+        <reference id="6677504323281689839" name="conceptDeclaraton" index="3bZ5Sy" />
+      </concept>
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
@@ -2207,7 +2209,9 @@
             <node concept="3clFbF" id="7Nx4mSUsa12" role="3cqZAp">
               <node concept="2ShNRf" id="7Nx4mSUsa10" role="3clFbG">
                 <node concept="Tc6Ow" id="7Nx4mSUsaSj" role="2ShVmc">
-                  <node concept="3bZ5Sz" id="7Nx4mSUsbDX" role="HW$YZ" />
+                  <node concept="3bZ5Sz" id="7Nx4mSUsbDX" role="HW$YZ">
+                    <ref role="3bZ5Sy" to="wdez:7Nx4mSUrV2Y" resolve="TestSubstituteChild" />
+                  </node>
                   <node concept="35c_gC" id="7Nx4mSUsccP" role="HW$Y0">
                     <ref role="35c_gD" to="wdez:7Nx4mSUrZaC" resolve="TestSubstituteSubChild1" />
                   </node>

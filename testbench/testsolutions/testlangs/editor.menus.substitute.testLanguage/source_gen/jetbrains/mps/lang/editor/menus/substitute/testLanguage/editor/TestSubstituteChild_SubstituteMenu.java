@@ -35,6 +35,7 @@ import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.lang.editor.menus.ConceptMenusPart;
 import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultConceptMenusSubstituteMenuPart;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
@@ -355,7 +356,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
         tmpVar = tmpVar && _context.getLink() != null;
         tmpVar = tmpVar && _context.getEditorContext() != null;
 
-        return ListSequence.fromListAndArray(new ArrayList<SAbstractConcept>(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a8L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild1"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a9L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild2"));
+        return ListSequence.fromListAndArray(new ArrayList<SConcept>(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a8L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild1"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a9L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild2"));
       }
       @Override
       protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {

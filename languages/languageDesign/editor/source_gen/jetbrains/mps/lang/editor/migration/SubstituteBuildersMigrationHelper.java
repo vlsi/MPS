@@ -86,6 +86,7 @@ import jetbrains.mps.smodel.SReference;
             result.add(action);
           } else if (SNodeOperations.isInstanceOf(oldSubPart, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122264243cL, "jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart"))) {
             SNode part = createConceptsSubstituteMenuPart(oldSubPart, oldPart);
+            setOutputConcept(oldAddMenuPart, part);
             result.add(part);
           } else if (SNodeOperations.isInstanceOf(oldSubPart, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11222a8b06bL, "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"))) {
             SNode wrapper = createWrapperPart(SNodeOperations.cast(oldSubPart, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11222a8b06bL, "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart")));
