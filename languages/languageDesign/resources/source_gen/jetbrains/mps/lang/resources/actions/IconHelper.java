@@ -15,15 +15,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class IconHelper {
   public static String createId(SModel m) {
-    String newId = "1";
-    Set<String> usedIds = SetSequence.fromSetWithValues(new HashSet<String>(), ListSequence.fromList(SModelOperations.nodes(m, MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L, "jetbrains.mps.lang.resources.structure.TextIcon"))).select(new ISelector<SNode, String>() {
+    Set<String> used = SetSequence.fromSetWithValues(new HashSet<String>(), ListSequence.fromList(SModelOperations.nodes(m, MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L, "jetbrains.mps.lang.resources.structure.TextIcon"))).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L, 0x12dbb53bb6b60039L, "iconId"));
       }
     }));
-    while (SetSequence.fromSet(usedIds).contains(newId)) {
-      newId = ((int) (Math.random() * Integer.MAX_VALUE)) + "";
+    int id = 1;
+    while (SetSequence.fromSet(used).contains(id + "")) {
+      id++;
     }
-    return newId;
+    return id + "";
   }
 }
