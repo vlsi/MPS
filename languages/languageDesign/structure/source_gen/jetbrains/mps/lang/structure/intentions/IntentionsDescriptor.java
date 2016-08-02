@@ -42,10 +42,11 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
         case 1:
           if (true) {
             // Concept: ConceptDeclaration 
-            intentions = new IntentionFactory[3];
+            intentions = new IntentionFactory[4];
             intentions[0] = new MakeRootable_Intention();
             intentions[1] = new MakeFinal_Intention();
             intentions[2] = new MakeAbstract_Intention();
+            intentions[3] = new CreateConceptIcon_Intention();
           }
           break;
         case 2:
@@ -66,12 +67,13 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[5];
+    IntentionFactory[] rv = new IntentionFactory[6];
     rv[0] = new AddDeprecatedAnnotation_Intention();
     rv[1] = new MakeRootable_Intention();
     rv[2] = new MakeFinal_Intention();
     rv[3] = new MakeAbstract_Intention();
     rv[4] = new ForbidIncomingReferencesInSubconcepts_Intention();
+    rv[5] = new CreateConceptIcon_Intention();
     return Arrays.asList(rv);
   }
   private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
