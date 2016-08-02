@@ -57,17 +57,17 @@ public class MergeConfirmation {
     return SAVE_AS_IS;
   }
   private static int showUnresolvedConflictsConfirmation(Component parent, int changes) {
-    String msg = String.format("You have %s left. You need to resolve them manually.\n" + "Are you sure want to close merge dialog without resolving them?", NameUtil.formatNumericalString(changes, "unresolved conflicting change"));
-    if (Messages.showYesNoDialog(parent, msg, "Unresolved Conflicting Changes", Messages.getWarningIcon()) == 0) {
+    String msg = String.format("You have %s left. You need to resolve them manually.\n" + "Close merge dialog and save model without remaining conflicts resolving?", NameUtil.formatNumericalString(changes, "unresolved conflicting change"));
+    if (Messages.showOkCancelDialog(parent, msg, "Unresolved Conflicting Changes", Messages.getWarningIcon()) == 0) {
       return MergeConfirmation.SAVE_AS_IS;
     } else {
       return MergeConfirmation.RETURN;
     }
   }
   private static int showUnresolvedChangesConfirmation(Component parent, int changes) {
-    String message = String.format("You have %s left. Do you want to resolve %s automatically?", NameUtil.formatNumericalString(changes, "unresolved change"), (changes > 1 ? "them" : "it"));
+    String message = String.format("You have %s left. You can resolve %s automatically.", NameUtil.formatNumericalString(changes, "unresolved change"), (changes > 1 ? "them" : "it"));
     String title = "Unresolved Change" + ((changes > 1 ? "s" : ""));
-    int answer = Messages.showYesNoCancelDialog(parent, message, title, Messages.getQuestionIcon());
+    int answer = Messages.showYesNoCancelDialog(parent, message, title, "Resolve automatically and exit", "Exit without remaining changes resolving", "Return to resolving", Messages.getWarningIcon());
     if (answer == 0) {
       return MergeConfirmation.RESOLVE_AUTOMATICALLY;
     } else if (answer == 1) {
