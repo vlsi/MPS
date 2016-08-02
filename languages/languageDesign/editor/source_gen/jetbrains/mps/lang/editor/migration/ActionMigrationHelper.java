@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.util.IdentifierConstraintsUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -17,6 +18,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -39,11 +43,15 @@ public class ActionMigrationHelper {
   public static SModel getActionsAspect(Language language) {
     return LanguageAspect.ACTIONS.get(language);
   }
-  public static String substituteSpacesWithUnderscore(String name) {
+  public static String getValidName(String name) {
     if (name == null) {
       return name;
     }
-    return name.replace(' ', '_');
+    name = name.replace(' ', '_');
+    if (IdentifierConstraintsUtil.isJavaReserved(name)) {
+      name = name + "_";
+    }
+    return name;
   }
   public static String getMainMenuContributionName(SNode concept, String tag) {
     return SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_" + tag + "_Contribution";
@@ -101,6 +109,17 @@ public class ActionMigrationHelper {
     SLinkOperations.setTarget(select, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x1b0a9b8c0eb90bdeL, "cellSelector"), _quotation_createNode_qgr84z_a0e0n());
     SLinkOperations.setTarget(dot, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), select);
     return dot;
+  }
+  public static void addMissingImports(Collection<SNode> roots, jetbrains.mps.smodel.SModel model) {
+    for (SNode root : CollectionSequence.fromCollection(roots)) {
+      for (SNode node : ListSequence.fromList(SNodeOperations.getNodeDescendants(root, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), false, new SAbstractConcept[]{}))) {
+        SLanguage language = node.getConcept().getLanguage();
+        if (!(model.usedLanguages().contains(language))) {
+          model.addLanguage(language);
+        }
+      }
+    }
+
   }
   private static boolean eq_qgr84z_a0a0a0a0a0a0a0j(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
