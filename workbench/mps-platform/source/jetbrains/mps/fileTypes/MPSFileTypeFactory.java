@@ -23,6 +23,9 @@ import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * IDEA extension for the MPS file types
+ */
 public class MPSFileTypeFactory extends FileTypeFactory {
 
   public static final FileType MPS_FILE_TYPE = MPSFileType.INSTANCE;

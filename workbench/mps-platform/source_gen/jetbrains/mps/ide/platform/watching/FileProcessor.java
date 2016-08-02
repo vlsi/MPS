@@ -18,6 +18,7 @@ import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -119,7 +120,7 @@ public class FileProcessor extends ReloadParticipant {
   }
 
   protected boolean accepts(VirtualFile file) {
-    return true;
+    return MPSFileTypesManager.isFileIgnored(file.getPath());
   }
 
   protected void processDelete(VirtualFile file) {

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.fileTypes;
 
+import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.fileTypes.LanguageFileType;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.annotations.NonNls;
@@ -57,5 +58,4 @@ public class MPSFileType extends LanguageFileType {
   public Icon getIcon() {
     return FileIcons.MODEL_ICON;
   }
-
 }

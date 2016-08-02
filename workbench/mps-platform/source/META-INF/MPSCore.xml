@@ -17,10 +17,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.fileTypes.MPSFileTypesManager</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.workbench.findusages.MPSModelsFastFindSupport</implementation-class>
     </component>
 
