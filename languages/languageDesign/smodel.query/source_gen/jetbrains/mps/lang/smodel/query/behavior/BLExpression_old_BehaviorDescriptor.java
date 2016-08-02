@@ -10,4 +10,7 @@ package jetbrains.mps.lang.smodel.query.behavior;
  */
 @Deprecated
 public class BLExpression_old_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

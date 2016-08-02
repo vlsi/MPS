@@ -10,4 +10,7 @@ package jetbrains.mps.lang.migration.behavior;
  */
 @Deprecated
 public class RefactoringLog_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

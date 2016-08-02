@@ -10,4 +10,7 @@ package jetbrains.mps.samples.readerConfigLanguage.behavior;
  */
 @Deprecated
 public class Mapping_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

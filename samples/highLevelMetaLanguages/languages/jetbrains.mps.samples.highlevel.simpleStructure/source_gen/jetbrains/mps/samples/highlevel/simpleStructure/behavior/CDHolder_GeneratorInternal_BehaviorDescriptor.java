@@ -10,4 +10,7 @@ package jetbrains.mps.samples.highlevel.simpleStructure.behavior;
  */
 @Deprecated
 public class CDHolder_GeneratorInternal_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
  */
 @Deprecated
 public class TailSetOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

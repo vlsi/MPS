@@ -10,4 +10,7 @@ package ref.behavior;
  */
 @Deprecated
 public class NewComponentRef_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

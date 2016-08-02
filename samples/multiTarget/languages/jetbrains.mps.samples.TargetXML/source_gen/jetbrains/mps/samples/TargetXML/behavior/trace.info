@@ -2,7 +2,7 @@
 <debug-info version="2">
   <root>
     <file name="IncludeXMLTarget_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.samples.TargetXML.behavior.IncludeXMLTarget_BehaviorDescriptor" />
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.TargetXML.behavior.IncludeXMLTarget_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

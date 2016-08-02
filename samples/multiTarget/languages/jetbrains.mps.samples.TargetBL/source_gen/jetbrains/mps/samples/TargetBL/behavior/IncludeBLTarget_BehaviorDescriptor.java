@@ -10,4 +10,7 @@ package jetbrains.mps.samples.TargetBL.behavior;
  */
 @Deprecated
 public class IncludeBLTarget_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

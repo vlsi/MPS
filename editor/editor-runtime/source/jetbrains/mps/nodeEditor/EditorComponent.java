@@ -195,7 +195,6 @@ import java.awt.RenderingHints;
 import java.awt.Toolkit;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
-import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyAdapter;
@@ -598,46 +597,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (isDisposed()) {
           return;
         }
-        if (getSelectionManager().getSelection() == null) {
-          EditorCell rootCell = getRootCell();
-          if (rootCell instanceof EditorCell_Collection) {
-            jetbrains.mps.openapi.editor.cells.EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(rootCell);
-            jetbrains.mps.openapi.editor.cells.EditorCell toSelect;
-            if (focusPolicyCell == null || (focusPolicyCell == rootCell && !FocusPolicyUtil.hasFocusPolicy(focusPolicyCell))) {
-              toSelect = CellFinderUtil.findChildByManyFinders(rootCell, Finder.FIRST_EDITABLE, Finder.FIRST_SELECTABLE_LEAF);
-            } else {
-              toSelect = focusPolicyCell;
-            }
-            if (toSelect == null) {
-              toSelect = rootCell;
-            }
-            changeSelection(toSelect);
-            repaintExternalComponent();
-            return;
-          }
-          if (rootCell != null && rootCell.isSelectable()) {
-            changeSelection(rootCell);
-          }
-        }
-        repaintExternalComponent();
+        setDefaultSelection();
+        activateCaretBlinker();
       }
 
       @Override
       public void focusLost(FocusEvent e) {
-        repaintExternalComponent();
-        if (myNodeSubstituteChooser.getWindow() != null &&
-            (myNodeSubstituteChooser.getWindow().isAncestorOf(
-                e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent())) {
-          return;
-        }
-        deactivateSubstituteChooser();
-      }
-    });
-
-    addFocusListener(new FocusAdapter() {
-      @Override
-      public void focusLost(FocusEvent e) {
-        commitAll();
+        closeSubstituteChooser(e.getOppositeComponent());
+        commitAllCellValues();
+        deActivateCaretBlinker();
       }
     });
 
@@ -743,10 +711,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myScrollPane.setRowHeaderView(myLeftHighlighter);
 
     myIntentionsSupport = new IntentionsSupport(this);
-
-    if (CaretBlinker.getInstance() != null) {
-      CaretBlinker.getInstance().registerEditor(this);
-    }
 
     if (MPSToolTipManager.getInstance() != null) {
       MPSToolTipManager.getInstance().registerComponent(this);
@@ -1492,9 +1456,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     myLeftMarginPressListeners.clear();
 
-    if (CaretBlinker.getInstance() != null) {
-      CaretBlinker.getInstance().unregisterEditor(this);
-    }
     myFocusTracker.dispose();
   }
 
@@ -2765,13 +2726,54 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return null;
   }
 
-  private void commitAll() {
+  private void commitAllCellValues() {
     final List<EditorCell_Property> cellsToCommit = getCellsToCommit();
     if (cellsToCommit.isEmpty()) {
       return;
     }
 
     getModelAccess().executeCommand(() -> doCommitAll(cellsToCommit));
+  }
+
+  private void setDefaultSelection() {
+    if (getSelectionManager().getSelection() != null) {
+      return;
+    }
+
+    EditorCell rootCell = getRootCell();
+    if (rootCell instanceof EditorCell_Collection) {
+      jetbrains.mps.openapi.editor.cells.EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(rootCell);
+      jetbrains.mps.openapi.editor.cells.EditorCell toSelect;
+      if (focusPolicyCell == null || (focusPolicyCell == rootCell && !FocusPolicyUtil.hasFocusPolicy(focusPolicyCell))) {
+        toSelect = CellFinderUtil.findChildByManyFinders(rootCell, Finder.FIRST_EDITABLE, Finder.FIRST_SELECTABLE_LEAF);
+      } else {
+        toSelect = focusPolicyCell;
+      }
+      if (toSelect == null) {
+        toSelect = rootCell;
+      }
+      changeSelection(toSelect);
+      return;
+    }
+    if (rootCell != null && rootCell.isSelectable()) {
+      changeSelection(rootCell);
+    }
+  }
+
+  private void closeSubstituteChooser(Component newFocusOwner) {
+    if (myNodeSubstituteChooser.getWindow() != null &&
+        (myNodeSubstituteChooser.getWindow().isAncestorOf(newFocusOwner) || myNodeSubstituteChooser.getWindow() == newFocusOwner)) {
+      return;
+    }
+    deactivateSubstituteChooser();
+  }
+
+  private void activateCaretBlinker() {
+    myEditorConfiguration.caretManager.setActiveEditor(this);
+  }
+
+  private void deActivateCaretBlinker() {
+    myEditorConfiguration.caretManager.unsetActiveEditor(this);
   }
 
   private List<EditorCell_Property> getCellsToCommit() {

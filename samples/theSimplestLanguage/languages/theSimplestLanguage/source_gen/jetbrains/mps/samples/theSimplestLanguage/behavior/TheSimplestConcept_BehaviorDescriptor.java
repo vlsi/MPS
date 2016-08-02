@@ -10,4 +10,7 @@ package jetbrains.mps.samples.theSimplestLanguage.behavior;
  */
 @Deprecated
 public class TheSimplestConcept_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

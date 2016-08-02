@@ -14338,7 +14338,7 @@
         <property role="VOm3f" value="true" />
       </node>
       <node concept="3F0ifn" id="6VgTvK0jg8o" role="2czzBI">
-        <property role="ilYzB" value="&lt;no items&gt;" />
+        <property role="ilYzB" value="&lt;no sections&gt;" />
         <node concept="VPxyj" id="VN4DhfBlIW" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>

@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.math.behavior;
  */
 @Deprecated
 public class ConjugateOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

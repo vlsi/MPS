@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.behavior;
  */
 @Deprecated
 public abstract class AbstractComponent_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

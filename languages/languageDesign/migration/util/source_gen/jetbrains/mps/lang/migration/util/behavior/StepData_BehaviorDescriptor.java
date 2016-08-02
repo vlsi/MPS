@@ -10,4 +10,7 @@ package jetbrains.mps.lang.migration.util.behavior;
  */
 @Deprecated
 public class StepData_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

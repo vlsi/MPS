@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.math.behavior;
  */
 @Deprecated
 public class LinearSolveOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

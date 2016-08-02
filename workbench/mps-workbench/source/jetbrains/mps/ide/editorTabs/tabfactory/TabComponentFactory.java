@@ -23,7 +23,6 @@ import jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs.ButtonTabsCompone
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.plaintabs.PlainTabsComponent;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.EditorSettings.MyState;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -31,16 +30,17 @@ import javax.swing.JComponent;
 import java.util.Set;
 
 public abstract class TabComponentFactory {
-  public static TabsComponent createTabsComponent(final SNodeReference baseNode, final Set<RelationDescriptor> possibleTabs, JComponent component, NodeChangeCallback callback, CreateModeCallback createModeCallback, Project project) {
-    MyState state = ApplicationManager.getApplication().getComponent(EditorSettings.class).getState();
-    if (!state.isShow()) {
+  public static TabsComponent createTabsComponent(final SNodeReference baseNode, final Set<RelationDescriptor> possibleTabs, JComponent component,
+      NodeChangeCallback callback, CreateModeCallback createModeCallback, Project project) {
+    EditorSettings editorSettings = ApplicationManager.getApplication().getComponent(EditorSettings.class);
+    if (!editorSettings.isShow()) {
       return new EmptyTabsComponent(baseNode, callback, ProjectHelper.fromIdeaProject(project));
     }
 
-    if (state.isShowPlain()) {
-      return new PlainTabsComponent(baseNode, possibleTabs, component, callback, state.isShowGrayed(), createModeCallback, project);
+    if (editorSettings.isShowPlain()) {
+      return new PlainTabsComponent(baseNode, possibleTabs, component, callback, editorSettings.isShowGrayed(), createModeCallback, project);
     } else {
-      return new ButtonTabsComponent(baseNode, possibleTabs, component, callback, state.isShowGrayed(), project);
+      return new ButtonTabsComponent(baseNode, possibleTabs, component, callback, editorSettings.isShowGrayed(), project);
     }
   }
 }

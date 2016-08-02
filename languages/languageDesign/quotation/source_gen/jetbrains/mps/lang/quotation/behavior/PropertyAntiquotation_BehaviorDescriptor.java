@@ -10,4 +10,7 @@ package jetbrains.mps.lang.quotation.behavior;
  */
 @Deprecated
 public class PropertyAntiquotation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

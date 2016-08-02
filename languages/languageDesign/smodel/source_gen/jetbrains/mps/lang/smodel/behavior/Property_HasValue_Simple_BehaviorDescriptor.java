@@ -10,4 +10,7 @@ package jetbrains.mps.lang.smodel.behavior;
  */
 @Deprecated
 public class Property_HasValue_Simple_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

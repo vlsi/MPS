@@ -10,4 +10,7 @@ package jetbrains.mps.lang.aspect.behavior;
  */
 @Deprecated
 public class SimpleLanguageAspectDescriptor_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

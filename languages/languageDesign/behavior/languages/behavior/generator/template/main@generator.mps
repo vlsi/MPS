@@ -151,6 +151,7 @@
       </concept>
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
+      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -2400,7 +2401,7 @@
               </node>
             </node>
             <node concept="1sPUBX" id="44O701NnieY" role="lGtFl">
-              <ref role="v9R2y" node="44O701NmIyR" resolve="ide.devswitch_Parameter" />
+              <ref role="v9R2y" node="44O701NmIyR" resolve="switch_Parameter" />
             </node>
           </node>
         </node>
@@ -3634,7 +3635,7 @@
     <node concept="3Tm1VV" id="43r_HzNqTJc" role="1B3o_S" />
   </node>
   <node concept="jVnub" id="44O701NmIyR">
-    <property role="TrG5h" value="ide.devswitch_Parameter" />
+    <property role="TrG5h" value="switch_Parameter" />
     <node concept="3aamgX" id="44O701NmIzq" role="3aUrZf">
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
@@ -4290,6 +4291,19 @@
   <node concept="312cEu" id="6RPbHZpmcpT">
     <property role="TrG5h" value="LegacyBehaviorDescriptor" />
     <property role="1sVAO0" value="true" />
+    <node concept="3clFb_" id="nnwD67Zc0u" role="jymVt">
+      <property role="IEkAT" value="false" />
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getConceptFqName" />
+      <property role="DiZV1" value="false" />
+      <node concept="17QB3L" id="16LDQ58Ib5k" role="3clF45" />
+      <node concept="3clFbS" id="nnwD67Zc0x" role="3clF47">
+        <node concept="3cpWs6" id="2jijkEeI8Ip" role="3cqZAp">
+          <node concept="10Nm6u" id="2jijkEeI8IS" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="nnwD67Zc0v" role="1B3o_S" />
+    </node>
     <node concept="3Tm1VV" id="6RPbHZpmcpZ" role="1B3o_S" />
     <node concept="n94m4" id="6RPbHZpmcq4" role="lGtFl">
       <ref role="n9lRv" to="1i04:zUeTq_2vS9" resolve="InternalConceptDeclarationReference" />

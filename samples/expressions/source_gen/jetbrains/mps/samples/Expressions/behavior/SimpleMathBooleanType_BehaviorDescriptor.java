@@ -10,4 +10,7 @@ package jetbrains.mps.samples.Expressions.behavior;
  */
 @Deprecated
 public class SimpleMathBooleanType_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

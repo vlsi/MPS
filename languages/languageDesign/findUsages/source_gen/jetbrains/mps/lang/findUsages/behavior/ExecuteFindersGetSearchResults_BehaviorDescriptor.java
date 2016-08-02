@@ -10,4 +10,7 @@ package jetbrains.mps.lang.findUsages.behavior;
  */
 @Deprecated
 public class ExecuteFindersGetSearchResults_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

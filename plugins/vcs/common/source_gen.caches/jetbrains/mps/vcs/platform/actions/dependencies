@@ -179,6 +179,7 @@
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsException" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ContentRevision" />
+    <classNode dependClassName="com.intellij.openapi.vcs.diff.DiffProvider" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.VcsRevisionNumber" />
     <classNode dependClassName="com.intellij.openapi.vcs.impl.VcsFileStatusProvider" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />

@@ -10,4 +10,7 @@ package jetbrains.mps.lang.refactoring.behavior;
  */
 @Deprecated
 public class InitClause_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

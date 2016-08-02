@@ -17,6 +17,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_editorContext_BehaviorDescriptor" file="ConceptFunctionParameter_editorContext_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_editorContext__BehaviorDescriptor" file="ConceptFunctionParameter_editorContext__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -45,6 +46,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_model_BehaviorDescriptor" file="ConceptFunctionParameter_model_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_model__BehaviorDescriptor" file="ConceptFunctionParameter_model__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -72,6 +74,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" file="ConceptFunctionParameter_node_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_node__BehaviorDescriptor" file="ConceptFunctionParameter_node__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -99,6 +102,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_operationContext_BehaviorDescriptor" file="ConceptFunctionParameter_operationContext_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_operationContext__BehaviorDescriptor" file="ConceptFunctionParameter_operationContext__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -128,9 +132,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_progressMonitor_BehaviorDescriptor" file="ConceptFunctionParameter_progressMonitor_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_scope_BehaviorDescriptor" file="ConceptFunctionParameter_scope_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

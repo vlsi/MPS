@@ -2,13 +2,13 @@
 <debug-info version="2">
   <root>
     <file name="EditorAspectDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.samples.highlevel.simpleEditor.behavior.EditorAspectDeclaration_BehaviorDescriptor" />
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.highlevel.simpleEditor.behavior.EditorAspectDeclaration_BehaviorDescriptor" />
     </file>
     <file name="SimpleEditorDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.samples.highlevel.simpleEditor.behavior.SimpleEditorDeclaration_BehaviorDescriptor" />
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.highlevel.simpleEditor.behavior.SimpleEditorDeclaration_BehaviorDescriptor" />
     </file>
     <file name="SimplePropertyReference_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.samples.highlevel.simpleEditor.behavior.SimplePropertyReference_BehaviorDescriptor" />
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.highlevel.simpleEditor.behavior.SimplePropertyReference_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

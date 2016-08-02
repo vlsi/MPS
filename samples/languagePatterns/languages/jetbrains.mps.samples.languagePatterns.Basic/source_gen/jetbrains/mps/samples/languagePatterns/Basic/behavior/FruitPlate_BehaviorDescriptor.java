@@ -10,4 +10,7 @@ package jetbrains.mps.samples.languagePatterns.Basic.behavior;
  */
 @Deprecated
 public class FruitPlate_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

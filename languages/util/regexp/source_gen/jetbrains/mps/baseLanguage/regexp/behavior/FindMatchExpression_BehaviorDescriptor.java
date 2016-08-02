@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
  */
 @Deprecated
 public class FindMatchExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

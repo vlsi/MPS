@@ -10,4 +10,7 @@ package jetbrains.mps.make.facet.behavior;
  */
 @Deprecated
 public class LocalParametersExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

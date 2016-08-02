@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.AbstractFinderDeclaration_BehaviorDescriptor" file="AbstractFinderDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
@@ -27,6 +28,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.CategorizeBlock_BehaviorDescriptor" file="CategorizeBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.CategorizeBlock__BehaviorDescriptor" file="CategorizeBlock__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -58,6 +60,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.CheckCancelledStatusStatement_BehaviorDescriptor" file="CheckCancelledStatusStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.CheckCancelledStatusStatement__BehaviorDescriptor" file="CheckCancelledStatusStatement__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -78,9 +81,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" file="ConceptFunctionParameter_node_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.ExecuteFinderExpression_BehaviorDescriptor" file="ExecuteFinderExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.ExecuteFinderExpression__BehaviorDescriptor" file="ExecuteFinderExpression__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -101,9 +106,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.ExecuteFindersGetSearchResults_BehaviorDescriptor" file="ExecuteFindersGetSearchResults_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.FindBlock_BehaviorDescriptor" file="FindBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.FindBlock__BehaviorDescriptor" file="FindBlock__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -135,6 +142,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_BehaviorDescriptor" file="FinderDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.FinderDeclaration__BehaviorDescriptor" file="FinderDeclaration__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -169,9 +177,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.FinderReference_BehaviorDescriptor" file="FinderReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.IsApplicableBlock_BehaviorDescriptor" file="IsApplicableBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.IsApplicableBlock__BehaviorDescriptor" file="IsApplicableBlock__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -203,6 +213,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.IsUsedByDefault_BehaviorDescriptor" file="IsUsedByDefault_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.IsUsedByDefault__BehaviorDescriptor" file="IsUsedByDefault__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -234,6 +245,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.IsVisibleBlock_BehaviorDescriptor" file="IsVisibleBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.IsVisibleBlock__BehaviorDescriptor" file="IsVisibleBlock__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -265,9 +277,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.MakeResultProvider_BehaviorDescriptor" file="MakeResultProvider_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.NodeStatement_BehaviorDescriptor" file="NodeStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.NodeStatement__BehaviorDescriptor" file="NodeStatement__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -288,6 +302,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.ResultStatement_BehaviorDescriptor" file="ResultStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.ResultStatement__BehaviorDescriptor" file="ResultStatement__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -308,6 +323,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.SearchedNodesBlock_BehaviorDescriptor" file="SearchedNodesBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.behavior.SearchedNodesBlock__BehaviorDescriptor" file="SearchedNodesBlock__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />

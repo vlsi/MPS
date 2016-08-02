@@ -10,4 +10,7 @@ package jetbrains.mps.console.ideCommands.behavior;
  */
 @Deprecated
 public class ClickableGenerator_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

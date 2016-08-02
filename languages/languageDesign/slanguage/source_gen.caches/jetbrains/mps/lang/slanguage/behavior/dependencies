@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.slanguage.behavior.AspectModelRefExpression_BehaviorDescriptor" file="AspectModelRefExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.slanguage.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
@@ -17,6 +18,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.slanguage.behavior.Model_IsAspectOperation_BehaviorDescriptor" file="Model_IsAspectOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.slanguage.behavior.Model_IsAspectOperation__BehaviorDescriptor" file="Model_IsAspectOperation__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />

@@ -10,4 +10,7 @@ package org.jetbrains.mps.samples.Money.behavior;
  */
 @Deprecated
 public class MovingAverage_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

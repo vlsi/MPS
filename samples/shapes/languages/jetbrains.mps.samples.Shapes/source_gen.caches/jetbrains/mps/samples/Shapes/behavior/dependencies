@@ -18,6 +18,7 @@
   </dependency>
   <dependency className="jetbrains.mps.samples.Shapes.behavior.Canvas_BehaviorDescriptor" file="Canvas_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Shapes.behavior.Canvas__BehaviorDescriptor" file="Canvas__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -47,6 +48,7 @@
   </dependency>
   <dependency className="jetbrains.mps.samples.Shapes.behavior.Circle_BehaviorDescriptor" file="Circle_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Shapes.behavior.Circle__BehaviorDescriptor" file="Circle__BehaviorDescriptor.java">
     <classNode dependClassName="java.awt.Graphics" />
@@ -76,6 +78,7 @@
   </dependency>
   <dependency className="jetbrains.mps.samples.Shapes.behavior.ColorReference_BehaviorDescriptor" file="ColorReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Shapes.behavior.ColorReference__BehaviorDescriptor" file="ColorReference__BehaviorDescriptor.java">
     <classNode dependClassName="java.awt.Color" />
@@ -123,6 +126,7 @@
   </dependency>
   <dependency className="jetbrains.mps.samples.Shapes.behavior.Shape_BehaviorDescriptor" file="Shape_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Shapes.behavior.Shape__BehaviorDescriptor" file="Shape__BehaviorDescriptor.java">
     <classNode dependClassName="java.awt.Graphics" />
@@ -152,6 +156,7 @@
   </dependency>
   <dependency className="jetbrains.mps.samples.Shapes.behavior.Square_BehaviorDescriptor" file="Square_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Shapes.behavior.Square__BehaviorDescriptor" file="Square__BehaviorDescriptor.java">
     <classNode dependClassName="java.awt.Graphics" />

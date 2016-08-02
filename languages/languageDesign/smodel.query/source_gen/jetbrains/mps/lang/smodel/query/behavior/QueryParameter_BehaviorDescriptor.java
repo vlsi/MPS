@@ -10,4 +10,7 @@ package jetbrains.mps.lang.smodel.query.behavior;
  */
 @Deprecated
 public abstract class QueryParameter_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package BHL2.behavior;
  */
 @Deprecated
 public class A_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.lang.generator.behavior;
  */
 @Deprecated
 public class InlineTemplate_RuleConsequence_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
  */
 @Deprecated
 public class SuperClassifierExpresson_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.lang.textGen.behavior;
  */
 @Deprecated
 public class TextUnitLayout_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.samples.mindmaps.behavior;
  */
 @Deprecated
 public class Thought_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

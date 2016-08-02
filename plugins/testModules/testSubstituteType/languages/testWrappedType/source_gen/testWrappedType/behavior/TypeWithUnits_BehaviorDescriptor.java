@@ -10,4 +10,7 @@ package testWrappedType.behavior;
  */
 @Deprecated
 public class TypeWithUnits_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

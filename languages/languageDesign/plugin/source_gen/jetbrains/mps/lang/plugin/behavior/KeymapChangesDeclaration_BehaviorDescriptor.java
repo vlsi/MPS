@@ -10,4 +10,7 @@ package jetbrains.mps.lang.plugin.behavior;
  */
 @Deprecated
 public class KeymapChangesDeclaration_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

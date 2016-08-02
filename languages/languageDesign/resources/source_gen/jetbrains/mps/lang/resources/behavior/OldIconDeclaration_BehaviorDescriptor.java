@@ -10,4 +10,7 @@ package jetbrains.mps.lang.resources.behavior;
  */
 @Deprecated
 public class OldIconDeclaration_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

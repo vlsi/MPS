@@ -10,4 +10,7 @@ package jetbrains.mps.lang.typesystem.behavior;
  */
 @Deprecated
 public abstract class AbstractOverloadedOpsTypeRule_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

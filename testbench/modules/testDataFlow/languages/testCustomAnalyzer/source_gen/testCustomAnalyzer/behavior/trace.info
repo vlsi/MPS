@@ -2,19 +2,19 @@
 <debug-info version="2">
   <root>
     <file name="Child_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="testCustomAnalyzer.behavior.Child_BehaviorDescriptor" />
+      <unit at="11,0,17,0" name="testCustomAnalyzer.behavior.Child_BehaviorDescriptor" />
     </file>
     <file name="OtherChild_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="testCustomAnalyzer.behavior.OtherChild_BehaviorDescriptor" />
+      <unit at="11,0,17,0" name="testCustomAnalyzer.behavior.OtherChild_BehaviorDescriptor" />
     </file>
     <file name="OtherRoot_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="testCustomAnalyzer.behavior.OtherRoot_BehaviorDescriptor" />
+      <unit at="11,0,17,0" name="testCustomAnalyzer.behavior.OtherRoot_BehaviorDescriptor" />
     </file>
     <file name="OtherSubChild_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="testCustomAnalyzer.behavior.OtherSubChild_BehaviorDescriptor" />
+      <unit at="11,0,17,0" name="testCustomAnalyzer.behavior.OtherSubChild_BehaviorDescriptor" />
     </file>
     <file name="Root_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="testCustomAnalyzer.behavior.Root_BehaviorDescriptor" />
+      <unit at="11,0,17,0" name="testCustomAnalyzer.behavior.Root_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

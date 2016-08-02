@@ -10,4 +10,7 @@ package jetbrains.mps.console.ideCommands.behavior;
  */
 @Deprecated
 public class RemoveGenSources_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.forms.behavior;
  */
 @Deprecated
 public abstract class AbstractCheckboxUI_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

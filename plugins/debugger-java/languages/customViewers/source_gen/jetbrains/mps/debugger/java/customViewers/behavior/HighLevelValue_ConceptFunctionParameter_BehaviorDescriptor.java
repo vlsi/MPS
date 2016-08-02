@@ -10,4 +10,7 @@ package jetbrains.mps.debugger.java.customViewers.behavior;
  */
 @Deprecated
 public class HighLevelValue_ConceptFunctionParameter_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

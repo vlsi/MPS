@@ -10,4 +10,7 @@ package jetbrains.mps.lang.plugin.behavior;
  */
 @Deprecated
 public class GetSelectedTabOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

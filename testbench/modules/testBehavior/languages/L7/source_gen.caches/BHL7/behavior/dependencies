@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="BHL7.behavior.A_BehaviorDescriptor" file="A_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="BHL7.behavior.A__BehaviorDescriptor" file="A__BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
@@ -35,6 +36,7 @@
   </dependency>
   <dependency className="BHL7.behavior.B_BehaviorDescriptor" file="B_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="BHL7.behavior.B__BehaviorDescriptor" file="B__BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
@@ -87,6 +89,7 @@
   </dependency>
   <dependency className="BHL7.behavior.C_BehaviorDescriptor" file="C_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="BHL7.behavior.C__BehaviorDescriptor" file="C__BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
@@ -113,6 +116,7 @@
   </dependency>
   <dependency className="BHL7.behavior.D_BehaviorDescriptor" file="D_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="BHL7.behavior.D__BehaviorDescriptor" file="D__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
@@ -138,6 +142,7 @@
   </dependency>
   <dependency className="BHL7.behavior.E_BehaviorDescriptor" file="E_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="BHL7.behavior.E__BehaviorDescriptor" file="E__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
@@ -163,6 +168,7 @@
   </dependency>
   <dependency className="BHL7.behavior.F_BehaviorDescriptor" file="F_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="BHL7.behavior.F__BehaviorDescriptor" file="F__BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
@@ -189,6 +195,7 @@
   </dependency>
   <dependency className="BHL7.behavior.G_BehaviorDescriptor" file="G_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="BHL7.behavior.G__BehaviorDescriptor" file="G__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
@@ -214,6 +221,7 @@
   </dependency>
   <dependency className="BHL7.behavior.H_BehaviorDescriptor" file="H_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="BHL7.behavior.H__BehaviorDescriptor" file="H__BehaviorDescriptor.java">
     <classNode dependClassName="UtilSolution.util.TestResults" />
@@ -315,6 +323,7 @@
   </dependency>
   <dependency className="BHL7.behavior.K_BehaviorDescriptor" file="K_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="BHL7.behavior.K__BehaviorDescriptor" file="K__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />

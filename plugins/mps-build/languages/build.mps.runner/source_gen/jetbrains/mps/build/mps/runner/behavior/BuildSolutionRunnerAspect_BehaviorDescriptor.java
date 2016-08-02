@@ -10,4 +10,7 @@ package jetbrains.mps.build.mps.runner.behavior;
  */
 @Deprecated
 public class BuildSolutionRunnerAspect_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

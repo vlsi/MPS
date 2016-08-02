@@ -10,4 +10,7 @@ package jetbrains.mps.lang.core.behavior;
  */
 @Deprecated
 public class PropertyAttribute_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

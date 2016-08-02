@@ -10,4 +10,7 @@ package jetbrains.mps.samples.attribute.behavior;
  */
 @Deprecated
 public class CommentAttribute_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

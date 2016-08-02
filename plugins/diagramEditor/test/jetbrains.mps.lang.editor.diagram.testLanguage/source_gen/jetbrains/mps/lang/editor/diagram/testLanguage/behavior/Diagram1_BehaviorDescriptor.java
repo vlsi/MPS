@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.diagram.testLanguage.behavior;
  */
 @Deprecated
 public class Diagram1_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -2,15 +2,18 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.generator.behavior.AbandonInput_RuleConsequence_BehaviorDescriptor" file="AbandonInput_RuleConsequence_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.AbstractMacro_BehaviorDescriptor" file="AbstractMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.BaseMappingRule_BehaviorDescriptor" file="BaseMappingRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.BaseMappingRule_Condition_BehaviorDescriptor" file="BaseMappingRule_Condition_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.BaseMappingRule_Condition__BehaviorDescriptor" file="BaseMappingRule_Condition__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -151,6 +154,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.ContextVariableDeclaration_BehaviorDescriptor" file="ContextVariableDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.ContextVariableProvider_BehaviorDescriptor" file="ContextVariableProvider_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
@@ -179,6 +183,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.CopySrcListMacro_BehaviorDescriptor" file="CopySrcListMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.CopySrcListMacro__BehaviorDescriptor" file="CopySrcListMacro__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -210,6 +215,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.CopySrcNodeMacro_BehaviorDescriptor" file="CopySrcNodeMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.CopySrcNodeMacro__BehaviorDescriptor" file="CopySrcNodeMacro__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -241,9 +247,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.CreateRootRule_BehaviorDescriptor" file="CreateRootRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.CreateRootRule_Condition_BehaviorDescriptor" file="CreateRootRule_Condition_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.CreateRootRule_Condition__BehaviorDescriptor" file="CreateRootRule_Condition__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -300,12 +308,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.DismissTopMappingRule_BehaviorDescriptor" file="DismissTopMappingRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.DropAttributeRule_BehaviorDescriptor" file="DropAttributeRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.DropAttributeRule_Condition_BehaviorDescriptor" file="DropAttributeRule_Condition_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.DropAttributeRule_Condition__BehaviorDescriptor" file="DropAttributeRule_Condition__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -336,9 +347,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.DropRootRule_BehaviorDescriptor" file="DropRootRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.DropRootRule_Condition_BehaviorDescriptor" file="DropRootRule_Condition_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.DropRootRule_Condition__BehaviorDescriptor" file="DropRootRule_Condition__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -369,27 +382,35 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.ExportEntry_BehaviorDescriptor" file="ExportEntry_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.ExportLabelParameter_inputNode_BehaviorDescriptor" file="ExportLabelParameter_inputNode_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.ExportLabelParameter_keeper_BehaviorDescriptor" file="ExportLabelParameter_keeper_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.ExportLabelParameter_outputNode_BehaviorDescriptor" file="ExportLabelParameter_outputNode_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.ExportLabel_BehaviorDescriptor" file="ExportLabel_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.ExportMacro_BehaviorDescriptor" file="ExportMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.GeneratorDebug_InputNode_BehaviorDescriptor" file="GeneratorDebug_InputNode_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.GeneratorDebug_LabelEntry_BehaviorDescriptor" file="GeneratorDebug_LabelEntry_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.GeneratorDebug_LabelEntry__BehaviorDescriptor" file="GeneratorDebug_LabelEntry__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -416,9 +437,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.GeneratorDebug_Mappings_BehaviorDescriptor" file="GeneratorDebug_Mappings_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.GeneratorDebug_NodeMapEntry_BehaviorDescriptor" file="GeneratorDebug_NodeMapEntry_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.GeneratorDebug_NodeMapEntry__BehaviorDescriptor" file="GeneratorDebug_NodeMapEntry__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -447,24 +470,31 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.GeneratorDebug_NodeRef_BehaviorDescriptor" file="GeneratorDebug_NodeRef_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.GeneratorInternal_AbstractReferenceDescriptor_BehaviorDescriptor" file="GeneratorInternal_AbstractReferenceDescriptor_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.GeneratorInternal_InternalReferenceDescriptor_BehaviorDescriptor" file="GeneratorInternal_InternalReferenceDescriptor_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.GeneratorInternal_PropertyDescriptor_BehaviorDescriptor" file="GeneratorInternal_PropertyDescriptor_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor" file="GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.GeneratorMessage_BehaviorDescriptor" file="GeneratorMessage_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.GeneratorParameterReference_BehaviorDescriptor" file="GeneratorParameterReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.IGeneratorParameter_BehaviorDescriptor" file="IGeneratorParameter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
@@ -524,9 +554,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.IfMacro_BehaviorDescriptor" file="IfMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.IfMacro_Condition_BehaviorDescriptor" file="IfMacro_Condition_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.IfMacro_Condition__BehaviorDescriptor" file="IfMacro_Condition__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -574,6 +606,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.IncludeMacro_BehaviorDescriptor" file="IncludeMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.IncludeMacro__BehaviorDescriptor" file="IncludeMacro__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -606,12 +639,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.InlineSwitch_Case_BehaviorDescriptor" file="InlineSwitch_Case_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.InlineSwitch_RuleConsequence_BehaviorDescriptor" file="InlineSwitch_RuleConsequence_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.InlineTemplateWithContext_RuleConsequence_BehaviorDescriptor" file="InlineTemplateWithContext_RuleConsequence_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.InlineTemplateWithContext_RuleConsequence__BehaviorDescriptor" file="InlineTemplateWithContext_RuleConsequence__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -640,6 +676,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.InlineTemplate_RuleConsequence_BehaviorDescriptor" file="InlineTemplate_RuleConsequence_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.InlineTemplate_RuleConsequence__BehaviorDescriptor" file="InlineTemplate_RuleConsequence__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -667,9 +704,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.InsertMacro_BehaviorDescriptor" file="InsertMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.InsertMacro_CreateNodeQuery_BehaviorDescriptor" file="InsertMacro_CreateNodeQuery_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.InsertMacro_CreateNodeQuery__BehaviorDescriptor" file="InsertMacro_CreateNodeQuery__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -717,6 +756,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.LabelMacro_BehaviorDescriptor" file="LabelMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.LabelMacro__BehaviorDescriptor" file="LabelMacro__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -737,6 +777,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.LoopMacro_BehaviorDescriptor" file="LoopMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.LoopMacro__BehaviorDescriptor" file="LoopMacro__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -780,6 +821,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.MapSrcListMacro_BehaviorDescriptor" file="MapSrcListMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.MapSrcListMacro__BehaviorDescriptor" file="MapSrcListMacro__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -811,6 +853,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.MapSrcMacro_MapperFunction_BehaviorDescriptor" file="MapSrcMacro_MapperFunction_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.MapSrcMacro_MapperFunction__BehaviorDescriptor" file="MapSrcMacro_MapperFunction__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -841,6 +884,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.MapSrcMacro_PostMapperFunction_BehaviorDescriptor" file="MapSrcMacro_PostMapperFunction_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.MapSrcMacro_PostMapperFunction__BehaviorDescriptor" file="MapSrcMacro_PostMapperFunction__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -869,6 +913,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.MapSrcNodeMacro_BehaviorDescriptor" file="MapSrcNodeMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.MapSrcNodeMacro__BehaviorDescriptor" file="MapSrcNodeMacro__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -900,9 +945,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.MappingConfiguration_BehaviorDescriptor" file="MappingConfiguration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.MappingConfiguration_Condition_BehaviorDescriptor" file="MappingConfiguration_Condition_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.MappingConfiguration_Condition__BehaviorDescriptor" file="MappingConfiguration_Condition__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -964,15 +1011,19 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.MappingLabelDeclaration_BehaviorDescriptor" file="MappingLabelDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.MappingScriptReference_BehaviorDescriptor" file="MappingScriptReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.MappingScript_BehaviorDescriptor" file="MappingScript_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.MappingScript_CodeBlock_BehaviorDescriptor" file="MappingScript_CodeBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.MappingScript_CodeBlock__BehaviorDescriptor" file="MappingScript_CodeBlock__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1001,6 +1052,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.MarshalFunction_BehaviorDescriptor" file="MarshalFunction_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.MarshalFunction__BehaviorDescriptor" file="MarshalFunction__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1091,6 +1143,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.NodeMacro_BehaviorDescriptor" file="NodeMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.NodeMacro__BehaviorDescriptor" file="NodeMacro__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -1125,6 +1178,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.PatternReduction_MappingRule_BehaviorDescriptor" file="PatternReduction_MappingRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.PatternReduction_MappingRule__BehaviorDescriptor" file="PatternReduction_MappingRule__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1192,9 +1246,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.PropertyMacro_BehaviorDescriptor" file="PropertyMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.PropertyMacro_GetPropertyValue_BehaviorDescriptor" file="PropertyMacro_GetPropertyValue_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.PropertyMacro_GetPropertyValue__BehaviorDescriptor" file="PropertyMacro_GetPropertyValue__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1248,6 +1304,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.Reduction_MappingRule_BehaviorDescriptor" file="Reduction_MappingRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.Reduction_MappingRule__BehaviorDescriptor" file="Reduction_MappingRule__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1275,9 +1332,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.ReferenceMacro_BehaviorDescriptor" file="ReferenceMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.ReferenceMacro_GetReferent_BehaviorDescriptor" file="ReferenceMacro_GetReferent_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.ReferenceMacro_GetReferent__BehaviorDescriptor" file="ReferenceMacro_GetReferent__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1338,6 +1397,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.RootTemplateAnnotation_BehaviorDescriptor" file="RootTemplateAnnotation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.RootTemplateAnnotation__BehaviorDescriptor" file="RootTemplateAnnotation__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -1358,6 +1418,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.Root_MappingRule_BehaviorDescriptor" file="Root_MappingRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.Root_MappingRule__BehaviorDescriptor" file="Root_MappingRule__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1385,6 +1446,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.RuleConsequence_BehaviorDescriptor" file="RuleConsequence_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.RuleConsequence__BehaviorDescriptor" file="RuleConsequence__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1410,9 +1472,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_BehaviorDescriptor" file="SourceSubstituteMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_SourceNodeQuery_BehaviorDescriptor" file="SourceSubstituteMacro_SourceNodeQuery_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_SourceNodeQuery__BehaviorDescriptor" file="SourceSubstituteMacro_SourceNodeQuery__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1443,6 +1507,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_SourceNodesQuery_BehaviorDescriptor" file="SourceSubstituteMacro_SourceNodesQuery_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_SourceNodesQuery__BehaviorDescriptor" file="SourceSubstituteMacro_SourceNodesQuery__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1502,6 +1567,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentLinkPatternRefExpression_BehaviorDescriptor" file="TemplateArgumentLinkPatternRefExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentLinkPatternRefExpression__BehaviorDescriptor" file="TemplateArgumentLinkPatternRefExpression__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -1529,9 +1595,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentParameterExpression_BehaviorDescriptor" file="TemplateArgumentParameterExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternRef_BehaviorDescriptor" file="TemplateArgumentPatternRef_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternRef__BehaviorDescriptor" file="TemplateArgumentPatternRef__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -1557,6 +1625,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternVarRefExpression_BehaviorDescriptor" file="TemplateArgumentPatternVarRefExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternVarRefExpression__BehaviorDescriptor" file="TemplateArgumentPatternVarRefExpression__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -1584,6 +1653,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentPropertyPatternRefExpression_BehaviorDescriptor" file="TemplateArgumentPropertyPatternRefExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentPropertyPatternRefExpression__BehaviorDescriptor" file="TemplateArgumentPropertyPatternRefExpression__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -1611,9 +1681,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentQueryExpression_BehaviorDescriptor" file="TemplateArgumentQueryExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentQuery_BehaviorDescriptor" file="TemplateArgumentQuery_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentQuery__BehaviorDescriptor" file="TemplateArgumentQuery__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1645,9 +1717,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentVariableRefExpression_BehaviorDescriptor" file="TemplateArgumentVariableRefExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateCallMacro_BehaviorDescriptor" file="TemplateCallMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateCallMacro__BehaviorDescriptor" file="TemplateCallMacro__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1681,6 +1755,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_BehaviorDescriptor" file="TemplateDeclarationReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference__BehaviorDescriptor" file="TemplateDeclarationReference__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1709,6 +1784,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateDeclaration_BehaviorDescriptor" file="TemplateDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateDeclaration__BehaviorDescriptor" file="TemplateDeclaration__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1737,9 +1813,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateFragment_BehaviorDescriptor" file="TemplateFragment_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateFragment_ContextNodeQuery_BehaviorDescriptor" file="TemplateFragment_ContextNodeQuery_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateFragment_ContextNodeQuery__BehaviorDescriptor" file="TemplateFragment_ContextNodeQuery__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1787,6 +1865,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_mainContextNode_BehaviorDescriptor" file="TemplateFunctionParameter_mainContextNode_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_mainContextNode__BehaviorDescriptor" file="TemplateFunctionParameter_mainContextNode__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1814,9 +1893,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_outputNode_BehaviorDescriptor" file="TemplateFunctionParameter_outputNode_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_parentOutputNode_BehaviorDescriptor" file="TemplateFunctionParameter_parentOutputNode_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_parentOutputNode__BehaviorDescriptor" file="TemplateFunctionParameter_parentOutputNode__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1844,6 +1925,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_sourceNode_BehaviorDescriptor" file="TemplateFunctionParameter_sourceNode_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_sourceNode__BehaviorDescriptor" file="TemplateFunctionParameter_sourceNode__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -1870,6 +1952,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_templatePropertyValue_BehaviorDescriptor" file="TemplateFunctionParameter_templatePropertyValue_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_templatePropertyValue__BehaviorDescriptor" file="TemplateFunctionParameter_templatePropertyValue__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1897,6 +1980,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_templateReferent_BehaviorDescriptor" file="TemplateFunctionParameter_templateReferent_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_templateReferent__BehaviorDescriptor" file="TemplateFunctionParameter_templateReferent__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1924,9 +2008,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateParameterDeclaration_BehaviorDescriptor" file="TemplateParameterDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateQueryBase_BehaviorDescriptor" file="TemplateQueryBase_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateQueryBase__BehaviorDescriptor" file="TemplateQueryBase__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -1957,6 +2043,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateSwitchMacro_BehaviorDescriptor" file="TemplateSwitchMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateSwitchMacro__BehaviorDescriptor" file="TemplateSwitchMacro__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1984,9 +2071,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateSwitchReference_BehaviorDescriptor" file="TemplateSwitchReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateSwitch_BehaviorDescriptor" file="TemplateSwitch_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateSwitch__BehaviorDescriptor" file="TemplateSwitch__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -2017,9 +2106,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TraceMacro_BehaviorDescriptor" file="TraceMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TrivialModelId_BehaviorDescriptor" file="TrivialModelId_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TrivialModelId__BehaviorDescriptor" file="TrivialModelId__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -2052,6 +2143,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TrivialNodeId_BehaviorDescriptor" file="TrivialNodeId_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TrivialNodeId__BehaviorDescriptor" file="TrivialNodeId__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -2085,6 +2177,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.UnmarshalFunction_BehaviorDescriptor" file="UnmarshalFunction_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.UnmarshalFunction__BehaviorDescriptor" file="UnmarshalFunction__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -2112,9 +2205,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.VarMacro_BehaviorDescriptor" file="VarMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.VarMacro_ValueQuery_BehaviorDescriptor" file="VarMacro_ValueQuery_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.VarMacro_ValueQuery__BehaviorDescriptor" file="VarMacro_ValueQuery__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -2176,9 +2271,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.WeaveEach_RuleConsequence_BehaviorDescriptor" file="WeaveEach_RuleConsequence_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.WeaveMacro_BehaviorDescriptor" file="WeaveMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.WeaveMacro__BehaviorDescriptor" file="WeaveMacro__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -2211,6 +2308,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.WeavingAnchorQuery_BehaviorDescriptor" file="WeavingAnchorQuery_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.WeavingAnchorQuery__BehaviorDescriptor" file="WeavingAnchorQuery__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -2241,9 +2339,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.Weaving_MappingRule_BehaviorDescriptor" file="Weaving_MappingRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.Weaving_MappingRule_ContextNodeQuery_BehaviorDescriptor" file="Weaving_MappingRule_ContextNodeQuery_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.Weaving_MappingRule_ContextNodeQuery__BehaviorDescriptor" file="Weaving_MappingRule_ContextNodeQuery__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />

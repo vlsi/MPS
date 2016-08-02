@@ -10,4 +10,7 @@ package jetbrains.mps.testbench.suite.behavior;
  */
 @Deprecated
 public class TestCaseRef_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

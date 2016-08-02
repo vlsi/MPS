@@ -10,4 +10,7 @@ package jetbrains.mps.samples.generator_demo.demoLang7.behavior;
  */
 @Deprecated
 public class XMLDocument_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

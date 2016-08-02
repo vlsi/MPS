@@ -10,4 +10,7 @@ package jetbrains.mps.lang.descriptor.behavior;
  */
 @Deprecated
 public class GeneratorInternal_Aspect_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

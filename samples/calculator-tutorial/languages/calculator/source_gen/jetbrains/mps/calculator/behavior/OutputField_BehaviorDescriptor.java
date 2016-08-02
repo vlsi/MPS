@@ -10,4 +10,7 @@ package jetbrains.mps.calculator.behavior;
  */
 @Deprecated
 public class OutputField_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

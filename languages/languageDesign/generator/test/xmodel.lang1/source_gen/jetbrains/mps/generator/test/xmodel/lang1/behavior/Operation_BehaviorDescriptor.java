@@ -10,4 +10,7 @@ package jetbrains.mps.generator.test.xmodel.lang1.behavior;
  */
 @Deprecated
 public class Operation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

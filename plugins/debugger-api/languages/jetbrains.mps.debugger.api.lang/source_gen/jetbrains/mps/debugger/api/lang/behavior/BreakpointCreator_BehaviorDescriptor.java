@@ -10,4 +10,7 @@ package jetbrains.mps.debugger.api.lang.behavior;
  */
 @Deprecated
 public class BreakpointCreator_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

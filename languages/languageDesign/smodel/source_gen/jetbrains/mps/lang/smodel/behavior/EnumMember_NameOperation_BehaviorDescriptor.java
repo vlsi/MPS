@@ -10,4 +10,7 @@ package jetbrains.mps.lang.smodel.behavior;
  */
 @Deprecated
 public class EnumMember_NameOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

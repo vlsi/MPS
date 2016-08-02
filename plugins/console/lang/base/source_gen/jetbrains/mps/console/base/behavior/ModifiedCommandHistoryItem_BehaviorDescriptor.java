@@ -10,4 +10,7 @@ package jetbrains.mps.console.base.behavior;
  */
 @Deprecated
 public class ModifiedCommandHistoryItem_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

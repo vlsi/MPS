@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.behavior;
  */
 @Deprecated
 public abstract class ColorStyleClassItem_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

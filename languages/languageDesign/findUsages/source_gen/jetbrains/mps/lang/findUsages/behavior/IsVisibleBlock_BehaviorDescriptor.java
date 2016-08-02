@@ -10,4 +10,7 @@ package jetbrains.mps.lang.findUsages.behavior;
  */
 @Deprecated
 public class IsVisibleBlock_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

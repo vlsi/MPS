@@ -10,4 +10,7 @@ package jetbrains.mps.testCustomDataFlow.behavior;
  */
 @Deprecated
 public class IntraProceduralSpecific_BuilderMode_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

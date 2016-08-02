@@ -73,7 +73,6 @@ class EditorSettingsPreferencesPage implements Disposable {
   private JBRadioButton myFirstSelection;
 
   private final EditorSettings mySettings;
-  private final CaretBlinker myCaretBlinker = CaretBlinker.getInstance();
 
   public EditorSettingsPreferencesPage(EditorSettings settings) {
     mySettings = settings;
@@ -163,7 +162,8 @@ class EditorSettingsPreferencesPage implements Disposable {
     JPanel caretBlinkingPanel = new JPanel(new HorizontalLayout(gap));
     caretBlinkingPanel.add(new JLabel(EditorSettingsBundle.message("label.caret.blinking")));
     myCaretBlinkPeriod =
-        new JSpinner(new SpinnerNumberModel(CaretBlinker.MIN_BLINKING_PERIOD, CaretBlinker.MIN_BLINKING_PERIOD, CaretBlinker.MAX_BLINKING_PERIOD, 100));
+        new JSpinner(
+            new SpinnerNumberModel(mySettings.getCaretBlinkPeriod(), EditorSettings.MIN_CARET_BLINK_PERIOD, EditorSettings.MAX_CARET_BLINK_PERIOD, 100));
     caretBlinkingPanel.add(myCaretBlinkPeriod);
 
     panel.add(caretBlinkingPanel,
@@ -190,7 +190,7 @@ class EditorSettingsPreferencesPage implements Disposable {
 
   public void commit() {
     String fontName = myFontsComboBox.getFontName();
-    int fontSize = mySettings.getState().getFontSize();
+    int fontSize = mySettings.getSpecifiedFontSize();
     try {
       fontSize = Integer.parseInt(myFontSizesComboBox.getSelectedItem().toString());
     } catch (NumberFormatException e) {
@@ -205,9 +205,7 @@ class EditorSettingsPreferencesPage implements Disposable {
 
     mySettings.setIndentSize((Integer) myIndentSize.getModel().getValue());
 
-    if (myCaretBlinker != null) {
-      myCaretBlinker.setCaretBlinkingRateTimeMillis((Integer) myCaretBlinkPeriod.getModel().getValue());
-    }
+    mySettings.setCaretBlinkPeriod((Integer) myCaretBlinkPeriod.getModel().getValue());
 
     mySettings.setUseAntialiasing(myAntialiasingCheckBox.isSelected());
     mySettings.setUseBraces(myUseBraces.isSelected());
@@ -216,11 +214,11 @@ class EditorSettingsPreferencesPage implements Disposable {
     mySettings.setPowerSaveMode(myPowerSaveModeCheckBox.isSelected());
     mySettings.setAutoQuickFix(myAutoQuickFixCheckBox.isSelected());
 
-    mySettings.getState().setLineSpacing((Double) myLineSpacing.getModel().getValue());
+    mySettings.setLineSpacing((Double) myLineSpacing.getModel().getValue());
 
-    mySettings.getState().setShow(myTabPerAspect.isSelected() || myTabPerNode.isSelected() || myAllTabs.isSelected());
-    mySettings.getState().setShowPlain(myTabPerNode.isSelected() || myAllTabs.isSelected());
-    mySettings.getState().setShowGrayed(myAllTabs.isSelected());
+    mySettings.setShow(myTabPerAspect.isSelected() || myTabPerNode.isSelected() || myAllTabs.isSelected());
+    mySettings.setShowPlain(myTabPerNode.isSelected() || myAllTabs.isSelected());
+    mySettings.setShowGrayed(myAllTabs.isSelected());
     applyState();
 
     mySettings.updateCachedValue();
@@ -229,11 +227,11 @@ class EditorSettingsPreferencesPage implements Disposable {
   }
 
   private void applyState() {
-    if (!mySettings.getState().isShow()) {
+    if (!mySettings.isShow()) {
       myFirstSelection = myDontShow;
-    } else if (!mySettings.getState().isShowPlain()) {
+    } else if (!mySettings.isShowPlain()) {
       myFirstSelection = myTabPerAspect;
-    } else if (!mySettings.getState().isShowGrayed()) {
+    } else if (!mySettings.isShowGrayed()) {
       myFirstSelection = myTabPerNode;
     } else {
       myFirstSelection = myAllTabs;
@@ -247,13 +245,10 @@ class EditorSettingsPreferencesPage implements Disposable {
     boolean sameUseBraces = myUseBraces.isSelected() == mySettings.useBraces();
     boolean samePowerSaveMode = myPowerSaveModeCheckBox.isSelected() == mySettings.isPowerSaveMode();
     boolean sameAutoQuickFix = myAutoQuickFixCheckBox.isSelected() == mySettings.isAutoQuickFix();
-    boolean sameFontSize = myFontSizesComboBox.getSelectedItem().equals(Integer.toString(mySettings.getState().getFontSize()));
-    boolean sameFontFamily = myFontsComboBox.getFontName().equals(mySettings.getState().getFontFamily());
-    boolean sameLineSpacing = myLineSpacing.getModel().getValue().equals(mySettings.getState().getLineSpacing());
-    boolean sameBlinkingRate = true;
-    if (myCaretBlinker != null) {
-      sameBlinkingRate = myCaretBlinkPeriod.getModel().getValue().equals(myCaretBlinker.getCaretBlinkingRateTimeMillis());
-    }
+    boolean sameFontSize = myFontSizesComboBox.getSelectedItem().equals(Integer.toString(mySettings.getSpecifiedFontSize()));
+    boolean sameFontFamily = myFontsComboBox.getFontName().equals(mySettings.getFontFamily());
+    boolean sameLineSpacing = myLineSpacing.getModel().getValue().equals(mySettings.getLineSpacing());
+    boolean sameBlinkingRate = myCaretBlinkPeriod.getModel().getValue().equals(mySettings.getCaretBlinkPeriod());
     boolean sameTabs = myFirstSelection.isSelected();
     boolean sameUseContextAssistant = myShowContextAssistant.isSelected() == mySettings.isShowContextAssistant();
 
@@ -276,15 +271,13 @@ class EditorSettingsPreferencesPage implements Disposable {
 
     myShowContextAssistant.setSelected(mySettings.isShowContextAssistant());
 
-    myFontSizesComboBox.setSelectedItem(Integer.toString(mySettings.getState().getFontSize()));
+    myFontSizesComboBox.setSelectedItem(Integer.toString(mySettings.getSpecifiedFontSize()));
 
-    myFontsComboBox.setFontName(mySettings.getState().getFontFamily());
+    myFontsComboBox.setFontName(mySettings.getFontFamily());
 
-    myLineSpacing.setValue(mySettings.getState().getLineSpacing());
+    myLineSpacing.setValue(mySettings.getLineSpacing());
 
-    if (myCaretBlinker != null) {
-      myCaretBlinkPeriod.setValue(myCaretBlinker.getCaretBlinkingRateTimeMillis());
-    }
+    myCaretBlinkPeriod.setValue(mySettings.getCaretBlinkPeriod());
 
     applyState();
     myFirstSelection.setSelected(true);

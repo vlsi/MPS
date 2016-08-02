@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
  */
 @Deprecated
 public class NamedTupleComponentDeclaration_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

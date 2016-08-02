@@ -10,4 +10,7 @@ package jetbrains.mps.execution.settings.behavior;
  */
 @Deprecated
 public class DeprecatedAnnotation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

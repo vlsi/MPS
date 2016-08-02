@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.diagram.testLanguage.behavior;
  */
 @Deprecated
 public class OutputToInputPortConnector_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

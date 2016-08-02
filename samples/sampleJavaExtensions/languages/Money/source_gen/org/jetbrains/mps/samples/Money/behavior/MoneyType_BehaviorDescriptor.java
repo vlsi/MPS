@@ -10,4 +10,7 @@ package org.jetbrains.mps.samples.Money.behavior;
  */
 @Deprecated
 public class MoneyType_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

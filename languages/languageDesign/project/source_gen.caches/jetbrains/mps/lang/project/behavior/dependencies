@@ -21,9 +21,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.DevKit_BehaviorDescriptor" file="DevKit_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.Generator_BehaviorDescriptor" file="Generator_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.Generator__BehaviorDescriptor" file="Generator__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -50,9 +52,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.Language_BehaviorDescriptor" file="Language_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigExternalRef_BehaviorDescriptor" file="MappingConfigExternalRef_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigExternalRef__BehaviorDescriptor" file="MappingConfigExternalRef__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -80,6 +84,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigNormalRef_BehaviorDescriptor" file="MappingConfigNormalRef_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigNormalRef__BehaviorDescriptor" file="MappingConfigNormalRef__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -107,12 +112,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigRefAllGlobal_BehaviorDescriptor" file="MappingConfigRefAllGlobal_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigRefAllLocal_BehaviorDescriptor" file="MappingConfigRefAllLocal_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigRefBase_BehaviorDescriptor" file="MappingConfigRefBase_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigRefBase__BehaviorDescriptor" file="MappingConfigRefBase__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -138,6 +146,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigRefSet_BehaviorDescriptor" file="MappingConfigRefSet_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigRefSet__BehaviorDescriptor" file="MappingConfigRefSet__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -166,9 +175,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.MappingPriorityRule_BehaviorDescriptor" file="MappingPriorityRule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.ModelReference_BehaviorDescriptor" file="ModelReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.ModelReference__BehaviorDescriptor" file="ModelReference__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
@@ -205,12 +216,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.ModelRoot_BehaviorDescriptor" file="ModelRoot_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.ModuleDependency_BehaviorDescriptor" file="ModuleDependency_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.ModuleReference_BehaviorDescriptor" file="ModuleReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.ModuleReference__BehaviorDescriptor" file="ModuleReference__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
@@ -241,6 +255,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.Module_BehaviorDescriptor" file="Module_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.Module__BehaviorDescriptor" file="Module__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -267,15 +282,19 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.Solution_BehaviorDescriptor" file="Solution_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.SourcePath_BehaviorDescriptor" file="SourcePath_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.StubEntry_BehaviorDescriptor" file="StubEntry_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.behavior.StubSolution_BehaviorDescriptor" file="StubSolution_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

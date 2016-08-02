@@ -10,4 +10,7 @@ package jetbrains.mps.build.behavior;
  */
 @Deprecated
 public abstract class BuildLayout_CopyHandler_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

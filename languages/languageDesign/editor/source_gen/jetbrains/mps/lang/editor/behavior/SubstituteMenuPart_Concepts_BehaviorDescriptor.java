@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.behavior;
  */
 @Deprecated
 public class SubstituteMenuPart_Concepts_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

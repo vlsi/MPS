@@ -42,6 +42,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.scripts.behavior.ConsoleScript_BehaviorDescriptor" file="ConsoleScript_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.scripts.behavior.ConsoleScript__BehaviorDescriptor" file="ConsoleScript__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -69,9 +70,11 @@
   </dependency>
   <dependency className="jetbrains.mps.console.scripts.behavior.Execute_BehaviorDescriptor" file="Execute_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.scripts.behavior.RefactorOperation_BehaviorDescriptor" file="RefactorOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.scripts.behavior.RefactorOperation__BehaviorDescriptor" file="RefactorOperation__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />

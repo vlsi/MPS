@@ -2,7 +2,7 @@
 <debug-info version="2">
   <root>
     <file name="MergeHint_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.vcs.mergehints.behavior.MergeHint_BehaviorDescriptor" />
+      <unit at="11,0,17,0" name="jetbrains.mps.vcs.mergehints.behavior.MergeHint_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

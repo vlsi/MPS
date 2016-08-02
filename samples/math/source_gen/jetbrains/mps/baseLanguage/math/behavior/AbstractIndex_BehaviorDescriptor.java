@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.math.behavior;
  */
 @Deprecated
 public abstract class AbstractIndex_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.ide.vcs.modelmetadata.behavior;
  */
 @Deprecated
 public class ModelReference_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

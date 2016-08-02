@@ -10,4 +10,7 @@ package jetbrains.mps.samples.multipleProjections.requestTracking.behavior;
  */
 @Deprecated
 public class Workflow_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

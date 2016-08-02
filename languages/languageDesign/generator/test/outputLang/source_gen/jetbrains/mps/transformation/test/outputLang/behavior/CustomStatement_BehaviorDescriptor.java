@@ -10,4 +10,7 @@ package jetbrains.mps.transformation.test.outputLang.behavior;
  */
 @Deprecated
 public class CustomStatement_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

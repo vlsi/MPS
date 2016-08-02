@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.doubleDispatch.behavior;
  */
 @Deprecated
 public class DispatchModifier_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

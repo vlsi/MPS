@@ -10,4 +10,7 @@ package jetbrains.mps.lang.test.behavior;
  */
 @Deprecated
 public abstract class ActionReference_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

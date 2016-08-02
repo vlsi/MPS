@@ -10,4 +10,7 @@ package jetbrains.mps.lang.plugin.behavior;
  */
 @Deprecated
 public class DisposeBlock_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

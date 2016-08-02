@@ -10,4 +10,7 @@ package jetbrains.mps.execution.commands.behavior;
  */
 @Deprecated
 public class PropertyCommandPart_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

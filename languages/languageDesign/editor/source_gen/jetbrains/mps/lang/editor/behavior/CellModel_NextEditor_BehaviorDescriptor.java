@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.behavior;
  */
 @Deprecated
 public class CellModel_NextEditor_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

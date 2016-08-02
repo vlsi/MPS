@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.styleTests.behavior;
  */
 @Deprecated
 public class HugePriorityStyle_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

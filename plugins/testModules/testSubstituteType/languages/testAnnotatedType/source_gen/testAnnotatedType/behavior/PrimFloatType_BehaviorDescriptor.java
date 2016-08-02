@@ -10,4 +10,7 @@ package testAnnotatedType.behavior;
  */
 @Deprecated
 public class PrimFloatType_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

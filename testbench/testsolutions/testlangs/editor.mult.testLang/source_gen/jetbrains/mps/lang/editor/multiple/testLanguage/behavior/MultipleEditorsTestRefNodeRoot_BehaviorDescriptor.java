@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.multiple.testLanguage.behavior;
  */
 @Deprecated
 public class MultipleEditorsTestRefNodeRoot_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

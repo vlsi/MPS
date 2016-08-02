@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.behavior.test.behavior.A_BehaviorDescriptor" file="A_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.behavior.test.behavior.A__BehaviorDescriptor" file="A__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
@@ -29,6 +30,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.behavior.test.behavior.B_BehaviorDescriptor" file="B_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.behavior.test.behavior.B__BehaviorDescriptor" file="B__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
@@ -72,6 +74,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.behavior.test.behavior.C_BehaviorDescriptor" file="C_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.behavior.test.behavior.C__BehaviorDescriptor" file="C__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />

@@ -10,4 +10,7 @@ package jetbrains.mps.execution.settings.behavior;
  */
 @Deprecated
 public class SettingsEditor_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

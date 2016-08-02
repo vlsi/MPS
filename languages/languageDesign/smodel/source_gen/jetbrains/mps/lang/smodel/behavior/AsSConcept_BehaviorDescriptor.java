@@ -10,4 +10,7 @@ package jetbrains.mps.lang.smodel.behavior;
  */
 @Deprecated
 public class AsSConcept_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.samples.notesOrganizer.behavior;
  */
 @Deprecated
 public abstract class NotePart_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.behavior;
  */
 @Deprecated
 public class TransformationLocation_SideTransform_PlaceInCellHolder_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.varVariable.behavior;
  */
 @Deprecated
 public class VarVariableDeclaration_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

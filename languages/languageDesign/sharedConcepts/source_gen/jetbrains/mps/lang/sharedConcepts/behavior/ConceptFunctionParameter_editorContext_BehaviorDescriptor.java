@@ -10,4 +10,7 @@ package jetbrains.mps.lang.sharedConcepts.behavior;
  */
 @Deprecated
 public class ConceptFunctionParameter_editorContext_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

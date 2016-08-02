@@ -21,14 +21,10 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.ide.vfs.IdeaFile;
-import org.apache.log4j.Level;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ConflictsUtil {
   public ConflictsUtil() {
@@ -71,14 +67,7 @@ public class ConflictsUtil {
   }
 
   private static boolean isConflictedFile(IFile file, @NotNull Project project) {
-    if (!(file instanceof IdeaFile)) {
-      if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("File " + file + " must be a project file and managed by IDEA FS");
-      }
-      return false;
-    }
-    VirtualFile vf = ((IdeaFile) file).getVirtualFile();
-
+    VirtualFile vf = VirtualFileUtils.getProjectVirtualFile(file);
     if (vf == null) {
       return false;
     }
@@ -93,9 +82,8 @@ public class ConflictsUtil {
       }
     }).select(new ISelector<IFile, VirtualFile>() {
       public VirtualFile select(IFile f) {
-        return VirtualFileUtils.getVirtualFile(f);
+        return VirtualFileUtils.getProjectVirtualFile(f);
       }
     }).toListSequence();
   }
-  protected static Logger LOG = LogManager.getLogger(ConflictsUtil.class);
 }

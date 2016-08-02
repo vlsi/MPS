@@ -10,4 +10,7 @@ package jetbrains.mps.lang.smodel.behavior;
  */
 @Deprecated
 public class Reference_GetRoleOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

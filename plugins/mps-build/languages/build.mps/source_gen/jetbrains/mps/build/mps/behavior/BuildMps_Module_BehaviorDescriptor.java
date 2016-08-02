@@ -10,4 +10,7 @@ package jetbrains.mps.build.mps.behavior;
  */
 @Deprecated
 public abstract class BuildMps_Module_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

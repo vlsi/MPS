@@ -10,4 +10,7 @@ package jetbrains.mps.lang.typesystem.behavior;
  */
 @Deprecated
 public class ConceptFunctionParameter_EditorContext_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

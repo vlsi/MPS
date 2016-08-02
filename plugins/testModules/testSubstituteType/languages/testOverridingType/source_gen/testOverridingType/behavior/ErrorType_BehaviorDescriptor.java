@@ -10,4 +10,7 @@ package testOverridingType.behavior;
  */
 @Deprecated
 public class ErrorType_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

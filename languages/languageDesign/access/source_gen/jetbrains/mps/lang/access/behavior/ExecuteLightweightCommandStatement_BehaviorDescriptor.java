@@ -10,4 +10,7 @@ package jetbrains.mps.lang.access.behavior;
  */
 @Deprecated
 public class ExecuteLightweightCommandStatement_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

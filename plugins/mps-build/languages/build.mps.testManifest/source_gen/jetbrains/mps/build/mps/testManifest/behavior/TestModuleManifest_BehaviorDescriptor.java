@@ -10,4 +10,7 @@ package jetbrains.mps.build.mps.testManifest.behavior;
  */
 @Deprecated
 public class TestModuleManifest_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

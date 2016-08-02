@@ -10,4 +10,7 @@ package jetbrains.mps.lang.dataFlow.analyzers.behavior;
  */
 @Deprecated
 public class PatternCondition_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

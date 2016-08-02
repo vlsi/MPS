@@ -10,4 +10,7 @@ package BHL7.behavior;
  */
 @Deprecated
 public class H_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

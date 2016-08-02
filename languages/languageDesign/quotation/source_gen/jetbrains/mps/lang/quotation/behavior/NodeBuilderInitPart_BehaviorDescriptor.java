@@ -10,4 +10,7 @@ package jetbrains.mps.lang.quotation.behavior;
  */
 @Deprecated
 public abstract class NodeBuilderInitPart_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

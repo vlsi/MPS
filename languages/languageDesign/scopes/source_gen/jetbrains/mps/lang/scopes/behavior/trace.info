@@ -16,13 +16,13 @@
       <unit at="14,0,48,0" name="jetbrains.mps.lang.scopes.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ComeFromExpression_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.scopes.behavior.ComeFromExpression_BehaviorDescriptor" />
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.scopes.behavior.ComeFromExpression_BehaviorDescriptor" />
     </file>
     <file name="CompositeWithParentScopeExpression_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.scopes.behavior.CompositeWithParentScopeExpression_BehaviorDescriptor" />
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.scopes.behavior.CompositeWithParentScopeExpression_BehaviorDescriptor" />
     </file>
     <file name="ParentScope_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.scopes.behavior.ParentScope_BehaviorDescriptor" />
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.scopes.behavior.ParentScope_BehaviorDescriptor" />
     </file>
     <file name="UniformScopeProvider_BehaviorDescriptor.java">
       <unit at="11,0,14,0" name="jetbrains.mps.lang.scopes.behavior.UniformScopeProvider_BehaviorDescriptor" />

@@ -10,4 +10,7 @@ package jetbrains.mps.lang.pattern.behavior;
  */
 @Deprecated
 public class ListPattern_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

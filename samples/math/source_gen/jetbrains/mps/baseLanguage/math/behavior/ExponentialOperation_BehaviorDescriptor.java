@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.math.behavior;
  */
 @Deprecated
 public abstract class ExponentialOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

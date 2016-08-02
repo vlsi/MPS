@@ -10,4 +10,7 @@ package jetbrains.mps.lang.checkedName.behavior;
  */
 @Deprecated
 public class PropertyRefExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

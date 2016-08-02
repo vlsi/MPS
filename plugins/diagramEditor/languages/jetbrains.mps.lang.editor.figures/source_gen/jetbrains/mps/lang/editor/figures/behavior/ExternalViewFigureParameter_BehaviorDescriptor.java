@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.figures.behavior;
  */
 @Deprecated
 public class ExternalViewFigureParameter_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

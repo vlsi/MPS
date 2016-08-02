@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.diagram.behavior;
  */
 @Deprecated
 public class ToIdFunctionParameter_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

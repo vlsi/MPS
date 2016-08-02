@@ -10,4 +10,7 @@ package declarations.behavior;
  */
 @Deprecated
 public class OldComponent_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

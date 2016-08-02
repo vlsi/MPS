@@ -10,4 +10,7 @@ package jetbrains.mps.debugger.java.evaluation.behavior;
  */
 @Deprecated
 public class GenerationHelperAnnotation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.lang.pattern.behavior;
  */
 @Deprecated
 public class GeneratorInternal_ChildDescriptor_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

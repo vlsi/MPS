@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.menus.testMetaLanguage.behavior;
  */
 @Deprecated
 public class TransformationLocation_WithFeatures_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

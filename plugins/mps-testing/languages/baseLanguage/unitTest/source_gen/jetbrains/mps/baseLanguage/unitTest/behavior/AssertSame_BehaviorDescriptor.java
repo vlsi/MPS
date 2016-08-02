@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
  */
 @Deprecated
 public class AssertSame_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

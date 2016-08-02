@@ -2,12 +2,15 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.generator.test.crossmodel.property.behavior.BeanProperty_BehaviorDescriptor" file="BeanProperty_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.generator.test.crossmodel.property.behavior.Bean_BehaviorDescriptor" file="Bean_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.generator.test.crossmodel.property.behavior.InitOp_BehaviorDescriptor" file="InitOp_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

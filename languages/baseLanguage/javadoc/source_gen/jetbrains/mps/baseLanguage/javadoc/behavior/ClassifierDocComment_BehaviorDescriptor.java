@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
  */
 @Deprecated
 public class ClassifierDocComment_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

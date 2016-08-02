@@ -10,4 +10,7 @@ package jetbrains.mps.lang.core.behavior;
  */
 @Deprecated
 public abstract class ExportScope_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

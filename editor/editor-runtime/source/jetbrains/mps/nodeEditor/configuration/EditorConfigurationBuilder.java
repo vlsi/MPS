@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.nodeEditor.configuration;
 
+import jetbrains.mps.nodeEditor.caret.CaretManager;
 import jetbrains.mps.openapi.editor.EditorPanelManager;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * User: shatalin
@@ -26,6 +28,7 @@ public class EditorConfigurationBuilder {
   private boolean myShowErrorsGutter;
   private boolean myWithUI = true;
   private EditorPanelManager myEditorPanelManager;
+  private CaretManager myCaretManager = CaretManager.getInstance();
 
   public static EditorConfiguration buildDefault() {
     return new EditorConfigurationBuilder().build();
@@ -51,11 +54,17 @@ public class EditorConfigurationBuilder {
     return this;
   }
 
+  public EditorConfigurationBuilder caretManager(@NotNull CaretManager caretManager) {
+    myCaretManager = caretManager;
+    return this;
+  }
+
   public EditorConfiguration build() {
     return new EditorConfiguration(
         myRightToLeft,
         myShowErrorsGutter,
         myWithUI,
-        myEditorPanelManager);
+        myEditorPanelManager,
+        myCaretManager);
   }
 }

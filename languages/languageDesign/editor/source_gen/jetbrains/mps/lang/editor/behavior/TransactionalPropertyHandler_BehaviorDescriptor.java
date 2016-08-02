@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.behavior;
  */
 @Deprecated
 public class TransactionalPropertyHandler_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

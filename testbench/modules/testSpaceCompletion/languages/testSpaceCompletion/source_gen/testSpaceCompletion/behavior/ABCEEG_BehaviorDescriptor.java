@@ -10,4 +10,7 @@ package testSpaceCompletion.behavior;
  */
 @Deprecated
 public class ABCEEG_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

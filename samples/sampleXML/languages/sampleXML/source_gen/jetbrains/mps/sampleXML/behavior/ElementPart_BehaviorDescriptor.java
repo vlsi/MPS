@@ -10,4 +10,7 @@ package jetbrains.mps.sampleXML.behavior;
  */
 @Deprecated
 public abstract class ElementPart_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

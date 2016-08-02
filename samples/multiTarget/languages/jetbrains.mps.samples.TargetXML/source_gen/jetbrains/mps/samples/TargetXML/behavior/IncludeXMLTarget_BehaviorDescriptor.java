@@ -10,4 +10,7 @@ package jetbrains.mps.samples.TargetXML.behavior;
  */
 @Deprecated
 public class IncludeXMLTarget_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

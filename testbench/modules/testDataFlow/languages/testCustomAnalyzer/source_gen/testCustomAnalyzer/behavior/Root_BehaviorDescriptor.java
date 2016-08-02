@@ -10,4 +10,7 @@ package testCustomAnalyzer.behavior;
  */
 @Deprecated
 public class Root_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

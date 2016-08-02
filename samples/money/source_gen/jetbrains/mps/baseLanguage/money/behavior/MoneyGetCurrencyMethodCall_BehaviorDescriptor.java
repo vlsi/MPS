@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.money.behavior;
  */
 @Deprecated
 public class MoneyGetCurrencyMethodCall_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

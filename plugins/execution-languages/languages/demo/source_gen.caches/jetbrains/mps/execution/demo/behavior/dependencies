@@ -14,6 +14,7 @@
   </dependency>
   <dependency className="jetbrains.mps.execution.demo.behavior.SomeConcept_BehaviorDescriptor" file="SomeConcept_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.execution.demo.behavior.SomeConcept__BehaviorDescriptor" file="SomeConcept__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />

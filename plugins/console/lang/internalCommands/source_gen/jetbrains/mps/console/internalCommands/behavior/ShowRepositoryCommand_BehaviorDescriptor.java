@@ -10,4 +10,7 @@ package jetbrains.mps.console.internalCommands.behavior;
  */
 @Deprecated
 public abstract class ShowRepositoryCommand_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

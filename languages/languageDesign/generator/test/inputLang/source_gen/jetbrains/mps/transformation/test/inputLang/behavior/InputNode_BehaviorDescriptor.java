@@ -10,4 +10,7 @@ package jetbrains.mps.transformation.test.inputLang.behavior;
  */
 @Deprecated
 public abstract class InputNode_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

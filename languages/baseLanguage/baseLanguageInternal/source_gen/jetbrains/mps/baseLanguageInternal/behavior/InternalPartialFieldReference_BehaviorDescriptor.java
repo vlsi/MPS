@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguageInternal.behavior;
  */
 @Deprecated
 public class InternalPartialFieldReference_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

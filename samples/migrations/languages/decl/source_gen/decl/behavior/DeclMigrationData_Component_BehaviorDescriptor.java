@@ -10,4 +10,7 @@ package decl.behavior;
  */
 @Deprecated
 public class DeclMigrationData_Component_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

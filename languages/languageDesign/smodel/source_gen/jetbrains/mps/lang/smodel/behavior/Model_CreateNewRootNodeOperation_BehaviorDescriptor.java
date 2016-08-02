@@ -10,4 +10,7 @@ package jetbrains.mps.lang.smodel.behavior;
  */
 @Deprecated
 public class Model_CreateNewRootNodeOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

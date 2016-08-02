@@ -10,4 +10,7 @@ package jetbrains.mps.lang.intentions.behavior;
  */
 @Deprecated
 public class ErrorIntentionPriority_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

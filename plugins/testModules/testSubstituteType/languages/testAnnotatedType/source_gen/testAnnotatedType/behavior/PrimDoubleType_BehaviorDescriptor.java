@@ -10,4 +10,7 @@ package testAnnotatedType.behavior;
  */
 @Deprecated
 public class PrimDoubleType_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

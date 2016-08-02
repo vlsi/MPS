@@ -10,4 +10,7 @@ package testWrappedType.behavior;
  */
 @Deprecated
 public abstract class WrapperType_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

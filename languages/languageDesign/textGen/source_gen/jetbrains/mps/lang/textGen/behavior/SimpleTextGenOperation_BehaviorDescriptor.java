@@ -10,4 +10,7 @@ package jetbrains.mps.lang.textGen.behavior;
  */
 @Deprecated
 public abstract class SimpleTextGenOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.menus.extras.behavior;
  */
 @Deprecated
 public class TransformationMenuPart_PluginAction_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

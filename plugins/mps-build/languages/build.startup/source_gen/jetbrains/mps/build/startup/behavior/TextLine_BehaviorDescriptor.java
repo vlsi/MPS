@@ -10,4 +10,7 @@ package jetbrains.mps.build.startup.behavior;
  */
 @Deprecated
 public class TextLine_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

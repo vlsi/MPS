@@ -10,4 +10,7 @@ package jetbrains.mps.samples.KajaSceneConstruction.behavior;
  */
 @Deprecated
 public abstract class AbstractBuilderCommand_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

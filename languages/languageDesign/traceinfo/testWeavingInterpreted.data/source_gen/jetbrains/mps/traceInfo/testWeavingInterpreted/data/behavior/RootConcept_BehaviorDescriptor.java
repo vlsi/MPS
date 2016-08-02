@@ -10,4 +10,7 @@ package jetbrains.mps.traceInfo.testWeavingInterpreted.data.behavior;
  */
 @Deprecated
 public class RootConcept_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

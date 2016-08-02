@@ -10,4 +10,7 @@ package jetbrains.mps.samples.xmlLiterals.behavior;
  */
 @Deprecated
 public class ElementMacro_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

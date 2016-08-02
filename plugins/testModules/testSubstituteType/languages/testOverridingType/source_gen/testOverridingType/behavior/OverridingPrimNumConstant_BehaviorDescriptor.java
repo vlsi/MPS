@@ -10,4 +10,7 @@ package testOverridingType.behavior;
  */
 @Deprecated
 public class OverridingPrimNumConstant_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

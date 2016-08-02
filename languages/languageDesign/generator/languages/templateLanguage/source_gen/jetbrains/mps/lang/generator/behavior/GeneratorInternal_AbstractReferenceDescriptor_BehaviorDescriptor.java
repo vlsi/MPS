@@ -10,4 +10,7 @@ package jetbrains.mps.lang.generator.behavior;
  */
 @Deprecated
 public abstract class GeneratorInternal_AbstractReferenceDescriptor_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

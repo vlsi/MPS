@@ -10,4 +10,7 @@ package testSubtypingB.behavior;
  */
 @Deprecated
 public class CustomType_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

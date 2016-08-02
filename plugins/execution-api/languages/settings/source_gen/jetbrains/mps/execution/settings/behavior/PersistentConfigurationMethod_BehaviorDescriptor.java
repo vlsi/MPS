@@ -10,4 +10,7 @@ package jetbrains.mps.execution.settings.behavior;
  */
 @Deprecated
 public class PersistentConfigurationMethod_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

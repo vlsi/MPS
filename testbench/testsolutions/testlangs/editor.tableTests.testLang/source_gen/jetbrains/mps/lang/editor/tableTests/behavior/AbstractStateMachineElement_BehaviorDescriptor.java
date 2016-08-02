@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.tableTests.behavior;
  */
 @Deprecated
 public abstract class AbstractStateMachineElement_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

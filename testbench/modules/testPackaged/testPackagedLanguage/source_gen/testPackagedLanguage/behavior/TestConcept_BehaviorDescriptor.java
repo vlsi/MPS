@@ -10,4 +10,7 @@ package testPackagedLanguage.behavior;
  */
 @Deprecated
 public class TestConcept_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

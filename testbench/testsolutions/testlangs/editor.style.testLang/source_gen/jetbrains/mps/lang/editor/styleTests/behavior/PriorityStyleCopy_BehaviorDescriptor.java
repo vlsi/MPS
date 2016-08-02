@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.styleTests.behavior;
  */
 @Deprecated
 public class PriorityStyleCopy_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

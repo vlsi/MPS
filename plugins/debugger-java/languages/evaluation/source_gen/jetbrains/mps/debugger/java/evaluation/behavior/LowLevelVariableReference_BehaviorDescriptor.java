@@ -10,4 +10,7 @@ package jetbrains.mps.debugger.java.evaluation.behavior;
  */
 @Deprecated
 public class LowLevelVariableReference_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

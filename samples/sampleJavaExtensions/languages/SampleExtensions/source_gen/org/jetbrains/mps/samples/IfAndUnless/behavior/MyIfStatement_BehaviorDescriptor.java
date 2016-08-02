@@ -10,4 +10,7 @@ package org.jetbrains.mps.samples.IfAndUnless.behavior;
  */
 @Deprecated
 public class MyIfStatement_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

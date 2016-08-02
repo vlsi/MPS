@@ -10,4 +10,7 @@ package jetbrains.mps.vcs.mergehints.behavior;
  */
 @Deprecated
 public class MergeHint_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

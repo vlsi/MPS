@@ -40,8 +40,8 @@ import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.ide.vfs.IdeaFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -244,14 +244,16 @@ public class ChangesTracking {
     } else if (ds instanceof FilePerRootDataSource) {
       file = ((FilePerRootDataSource) ds).getFile(FilePerRootDataSource.HEADER_FILE);
     }
-    FileStatus status = FileStatusManager.getInstance(myProject).getStatus(VirtualFileUtils.getVirtualFile(file));
+    VirtualFile vFile = VirtualFileUtils.getProjectVirtualFile(file);
+    assert vFile != null;
+    FileStatus status = FileStatusManager.getInstance(myProject).getStatus(vFile);
     return BaseVersionUtil.isAddedFileStatus(status);
   }
 
   private FileStatus getStatus(SModel model) {
     DataSource ds = model.getSource();
     if (ds instanceof FileDataSource) {
-      VirtualFile file = VirtualFileUtils.getVirtualFile(((FileDataSource) ds).getFile());
+      VirtualFile file = VirtualFileUtils.getProjectVirtualFile(((FileDataSource) ds).getFile());
       return FileStatusManager.getInstance(myProject).getStatus(file);
     } else if (ds instanceof FilePerRootDataSource) {
       // todo: do we need status at all? 

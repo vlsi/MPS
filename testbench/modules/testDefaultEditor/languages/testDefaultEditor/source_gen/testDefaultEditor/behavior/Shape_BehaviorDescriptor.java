@@ -10,4 +10,7 @@ package testDefaultEditor.behavior;
  */
 @Deprecated
 public class Shape_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

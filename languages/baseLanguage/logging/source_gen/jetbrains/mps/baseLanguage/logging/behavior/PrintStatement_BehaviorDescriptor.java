@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.logging.behavior;
  */
 @Deprecated
 public class PrintStatement_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.lang.test.behavior;
  */
 @Deprecated
 public class BootstrapActionReference_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

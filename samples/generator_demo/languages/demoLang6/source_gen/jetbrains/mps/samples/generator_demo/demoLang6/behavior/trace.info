@@ -2,10 +2,10 @@
 <debug-info version="2">
   <root>
     <file name="Button_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.samples.generator_demo.demoLang6.behavior.Button_BehaviorDescriptor" />
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.generator_demo.demoLang6.behavior.Button_BehaviorDescriptor" />
     </file>
     <file name="Label_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.samples.generator_demo.demoLang6.behavior.Label_BehaviorDescriptor" />
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.generator_demo.demoLang6.behavior.Label_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

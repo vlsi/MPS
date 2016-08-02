@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.AbsractMake_BehaviorDescriptor" file="AbsractMake_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.AbsractMake__BehaviorDescriptor" file="AbsractMake__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -30,6 +31,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ActionCallDeclaredParameter_BehaviorDescriptor" file="ActionCallDeclaredParameter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ActionCallDeclaredParameter__BehaviorDescriptor" file="ActionCallDeclaredParameter__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -57,6 +59,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ActionCallGlobalParameter_BehaviorDescriptor" file="ActionCallGlobalParameter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ActionCallGlobalParameter__BehaviorDescriptor" file="ActionCallGlobalParameter__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -83,6 +86,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ActionCallParameter_BehaviorDescriptor" file="ActionCallParameter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ActionCallParameter__BehaviorDescriptor" file="ActionCallParameter__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -144,6 +148,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.CallActionExpression_BehaviorDescriptor" file="CallActionExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.CallActionExpression__BehaviorDescriptor" file="CallActionExpression__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -169,6 +174,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.Clean_BehaviorDescriptor" file="Clean_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.Clean__BehaviorDescriptor" file="Clean__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -189,6 +195,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator_BehaviorDescriptor" file="ClickableGenerator_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator__BehaviorDescriptor" file="ClickableGenerator__BehaviorDescriptor.java">
     <classNode dependClassName="com.intellij.openapi.options.ex.SingleConfigurableEditor" />
@@ -233,9 +240,11 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.GlobalScope_BehaviorDescriptor" file="GlobalScope_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.GlobalStatisticTarget_BehaviorDescriptor" file="GlobalStatisticTarget_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.GlobalStatisticTarget__BehaviorDescriptor" file="GlobalStatisticTarget__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -334,6 +343,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.Make_BehaviorDescriptor" file="Make_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.Make__BehaviorDescriptor" file="Make__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -362,6 +372,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelProperties_BehaviorDescriptor" file="ModelProperties_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelProperties__BehaviorDescriptor" file="ModelProperties__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -387,6 +398,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelReference_BehaviorDescriptor" file="ModelReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelReference__BehaviorDescriptor" file="ModelReference__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -416,6 +428,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelStatisticsTarget_BehaviorDescriptor" file="ModelStatisticsTarget_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelStatisticsTarget__BehaviorDescriptor" file="ModelStatisticsTarget__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -456,6 +469,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ModuleProperties_BehaviorDescriptor" file="ModuleProperties_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ModuleProperties__BehaviorDescriptor" file="ModuleProperties__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -481,9 +495,11 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.NodeReference_BehaviorDescriptor" file="NodeReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.OfAspectOperation_BehaviorDescriptor" file="OfAspectOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.OfAspectOperation__BehaviorDescriptor" file="OfAspectOperation__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -504,6 +520,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget_BehaviorDescriptor" file="ProjectStatisticsTarget_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget__BehaviorDescriptor" file="ProjectStatisticsTarget__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -543,6 +560,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.RebuildProjectCommand_BehaviorDescriptor" file="RebuildProjectCommand_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.RebuildProjectCommand__BehaviorDescriptor" file="RebuildProjectCommand__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -570,6 +588,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.RemoveGenSources_BehaviorDescriptor" file="RemoveGenSources_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.RemoveGenSources__BehaviorDescriptor" file="RemoveGenSources__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -595,6 +614,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_BehaviorDescriptor" file="ShowBrokenReferences_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences__BehaviorDescriptor" file="ShowBrokenReferences__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -633,6 +653,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ShowExpression_BehaviorDescriptor" file="ShowExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ShowExpression__BehaviorDescriptor" file="ShowExpression__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -659,6 +680,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ShowGenPlan_BehaviorDescriptor" file="ShowGenPlan_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ShowGenPlan__BehaviorDescriptor" file="ShowGenPlan__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -697,6 +719,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.StatCommand_BehaviorDescriptor" file="StatCommand_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.StatCommand__BehaviorDescriptor" file="StatCommand__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -727,6 +750,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.SubtreeStatisticsTarget_BehaviorDescriptor" file="SubtreeStatisticsTarget_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.SubtreeStatisticsTarget__BehaviorDescriptor" file="SubtreeStatisticsTarget__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -765,6 +789,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand_BehaviorDescriptor" file="UnloadModelsCommand_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand__BehaviorDescriptor" file="UnloadModelsCommand__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -792,6 +817,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.WithDependencies_BehaviorDescriptor" file="WithDependencies_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

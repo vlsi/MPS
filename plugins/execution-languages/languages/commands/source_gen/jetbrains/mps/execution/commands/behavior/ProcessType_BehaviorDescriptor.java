@@ -10,4 +10,7 @@ package jetbrains.mps.execution.commands.behavior;
  */
 @Deprecated
 public class ProcessType_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

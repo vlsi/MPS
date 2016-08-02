@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
  */
 @Deprecated
 public abstract class BinaryAssert_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

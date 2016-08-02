@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.behavior;
  */
 @Deprecated
 public class ConceptFunctionParameter_StyledText_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

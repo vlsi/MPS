@@ -10,4 +10,7 @@ package updatedLanguage.behavior;
  */
 @Deprecated
 public class RootConcept_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.core.xml.sax.behavior;
  */
 @Deprecated
 public class XMLSAXHandler_resultObject_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

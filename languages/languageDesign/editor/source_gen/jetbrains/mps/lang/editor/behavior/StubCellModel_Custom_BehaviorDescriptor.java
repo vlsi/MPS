@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.behavior;
  */
 @Deprecated
 public class StubCellModel_Custom_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

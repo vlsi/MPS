@@ -10,4 +10,7 @@ package jetbrains.mps.generator.test.crossmodel.property.behavior;
  */
 @Deprecated
 public class BeanProperty_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

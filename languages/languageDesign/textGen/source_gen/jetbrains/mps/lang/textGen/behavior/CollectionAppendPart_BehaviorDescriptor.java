@@ -10,4 +10,7 @@ package jetbrains.mps.lang.textGen.behavior;
  */
 @Deprecated
 public class CollectionAppendPart_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

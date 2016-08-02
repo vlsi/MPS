@@ -10,4 +10,7 @@ package jetbrains.mps.lang.structure.behavior;
  */
 @Deprecated
 public class ConstrainedDataTypeDeclaration_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

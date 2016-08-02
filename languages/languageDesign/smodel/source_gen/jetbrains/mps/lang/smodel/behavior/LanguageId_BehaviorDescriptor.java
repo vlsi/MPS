@@ -10,4 +10,7 @@ package jetbrains.mps.lang.smodel.behavior;
  */
 @Deprecated
 public class LanguageId_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

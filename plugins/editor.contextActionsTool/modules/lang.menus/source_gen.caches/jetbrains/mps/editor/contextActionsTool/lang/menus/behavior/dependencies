@@ -16,6 +16,7 @@
   </dependency>
   <dependency className="jetbrains.mps.editor.contextActionsTool.lang.menus.behavior.QueryFunction_TransformationMenu_Icon_BehaviorDescriptor" file="QueryFunction_TransformationMenu_Icon_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.editor.contextActionsTool.lang.menus.behavior.QueryFunction_TransformationMenu_Icon__BehaviorDescriptor" file="QueryFunction_TransformationMenu_Icon__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -44,6 +45,7 @@
   </dependency>
   <dependency className="jetbrains.mps.editor.contextActionsTool.lang.menus.behavior.QueryFunction_TransformationMenu_Tooltip_BehaviorDescriptor" file="QueryFunction_TransformationMenu_Tooltip_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.editor.contextActionsTool.lang.menus.behavior.QueryFunction_TransformationMenu_Tooltip__BehaviorDescriptor" file="QueryFunction_TransformationMenu_Tooltip__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -71,12 +73,15 @@
   </dependency>
   <dependency className="jetbrains.mps.editor.contextActionsTool.lang.menus.behavior.TransformationFeature_Icon_BehaviorDescriptor" file="TransformationFeature_Icon_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.editor.contextActionsTool.lang.menus.behavior.TransformationFeature_Tooltip_BehaviorDescriptor" file="TransformationFeature_Tooltip_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.editor.contextActionsTool.lang.menus.behavior.TransformationLocation_ContextActionsTool_BehaviorDescriptor" file="TransformationLocation_ContextActionsTool_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.editor.contextActionsTool.lang.menus.behavior.TransformationLocation_ContextActionsTool__BehaviorDescriptor" file="TransformationLocation_ContextActionsTool__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />

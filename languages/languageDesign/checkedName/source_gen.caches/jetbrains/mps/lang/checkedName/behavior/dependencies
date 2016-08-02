@@ -42,9 +42,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.checkedName.behavior.PropertyRefExpression_BehaviorDescriptor" file="PropertyRefExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.checkedName.behavior.PropertyRefType_BehaviorDescriptor" file="PropertyRefType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

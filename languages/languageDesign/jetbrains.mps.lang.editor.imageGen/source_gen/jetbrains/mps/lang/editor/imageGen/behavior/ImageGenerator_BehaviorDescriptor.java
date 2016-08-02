@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.imageGen.behavior;
  */
 @Deprecated
 public class ImageGenerator_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

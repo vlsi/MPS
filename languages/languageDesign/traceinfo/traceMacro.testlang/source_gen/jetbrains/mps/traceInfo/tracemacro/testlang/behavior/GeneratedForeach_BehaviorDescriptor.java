@@ -10,4 +10,7 @@ package jetbrains.mps.traceInfo.tracemacro.testlang.behavior;
  */
 @Deprecated
 public class GeneratedForeach_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

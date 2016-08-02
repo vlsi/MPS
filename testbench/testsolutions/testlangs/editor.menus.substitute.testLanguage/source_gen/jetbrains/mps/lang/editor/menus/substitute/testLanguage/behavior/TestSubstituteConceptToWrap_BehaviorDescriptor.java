@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior;
  */
 @Deprecated
 public class TestSubstituteConceptToWrap_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -15,6 +15,7 @@
   </dependency>
   <dependency className="jetbrains.mps.samples.customizedDebugger.Bottomline.behavior.MessageSequence_BehaviorDescriptor" file="MessageSequence_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.samples.customizedDebugger.Bottomline.behavior.MessageSequence__BehaviorDescriptor" file="MessageSequence__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -41,6 +42,7 @@
   </dependency>
   <dependency className="jetbrains.mps.samples.customizedDebugger.Bottomline.behavior.OutputMessage_BehaviorDescriptor" file="OutputMessage_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.samples.customizedDebugger.Bottomline.behavior.OutputMessage__BehaviorDescriptor" file="OutputMessage__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />

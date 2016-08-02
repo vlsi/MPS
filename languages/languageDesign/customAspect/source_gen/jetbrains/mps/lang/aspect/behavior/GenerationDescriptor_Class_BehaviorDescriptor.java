@@ -10,4 +10,7 @@ package jetbrains.mps.lang.aspect.behavior;
  */
 @Deprecated
 public class GenerationDescriptor_Class_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

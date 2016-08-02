@@ -10,4 +10,7 @@ package jetbrains.mps.debugger.java.customViewers.behavior;
  */
 @Deprecated
 public class ToProcessMethod_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

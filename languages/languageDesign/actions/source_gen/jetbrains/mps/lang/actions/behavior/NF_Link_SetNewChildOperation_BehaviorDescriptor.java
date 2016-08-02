@@ -10,4 +10,7 @@ package jetbrains.mps.lang.actions.behavior;
  */
 @Deprecated
 public class NF_Link_SetNewChildOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

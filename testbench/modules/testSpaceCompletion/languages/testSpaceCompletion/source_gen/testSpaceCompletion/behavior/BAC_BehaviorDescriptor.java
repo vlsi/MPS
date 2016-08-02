@@ -10,4 +10,7 @@ package testSpaceCompletion.behavior;
  */
 @Deprecated
 public class BAC_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

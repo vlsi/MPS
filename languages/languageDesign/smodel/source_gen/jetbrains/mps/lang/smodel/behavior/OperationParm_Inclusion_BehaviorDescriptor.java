@@ -10,4 +10,7 @@ package jetbrains.mps.lang.smodel.behavior;
  */
 @Deprecated
 public class OperationParm_Inclusion_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

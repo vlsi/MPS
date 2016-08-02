@@ -10,4 +10,7 @@ package jetbrains.mps.console.internalCommands.behavior;
  */
 @Deprecated
 public class ConsoleModelExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

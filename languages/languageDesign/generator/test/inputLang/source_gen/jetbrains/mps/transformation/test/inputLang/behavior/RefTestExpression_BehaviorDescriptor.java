@@ -10,4 +10,7 @@ package jetbrains.mps.transformation.test.inputLang.behavior;
  */
 @Deprecated
 public abstract class RefTestExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.console.ideCommands.behavior;
  */
 @Deprecated
 public abstract class ActionCallParameter_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

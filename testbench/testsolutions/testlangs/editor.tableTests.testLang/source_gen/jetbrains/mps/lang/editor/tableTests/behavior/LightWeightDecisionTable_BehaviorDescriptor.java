@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.tableTests.behavior;
  */
 @Deprecated
 public class LightWeightDecisionTable_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

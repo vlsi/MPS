@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.table.behavior;
  */
 @Deprecated
 public class QueryFunction_TableModel_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

@@ -10,4 +10,7 @@ package jetbrains.mps.samples.multipleProjections.stateMachine.behavior;
  */
 @Deprecated
 public class Transition_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

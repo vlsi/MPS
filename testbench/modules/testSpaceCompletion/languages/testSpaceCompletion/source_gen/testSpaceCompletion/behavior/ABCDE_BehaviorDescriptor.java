@@ -10,4 +10,7 @@ package testSpaceCompletion.behavior;
  */
 @Deprecated
 public class ABCDE_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

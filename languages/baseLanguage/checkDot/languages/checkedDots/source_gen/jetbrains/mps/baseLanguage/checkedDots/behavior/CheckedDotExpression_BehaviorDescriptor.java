@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.checkedDots.behavior;
  */
 @Deprecated
 public class CheckedDotExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

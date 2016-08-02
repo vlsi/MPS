@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
  */
 @Deprecated
 public abstract class PrepareMethod_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

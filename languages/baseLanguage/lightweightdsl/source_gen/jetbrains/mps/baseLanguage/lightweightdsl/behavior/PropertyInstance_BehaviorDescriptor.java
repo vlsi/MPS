@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.lightweightdsl.behavior;
  */
 @Deprecated
 public abstract class PropertyInstance_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

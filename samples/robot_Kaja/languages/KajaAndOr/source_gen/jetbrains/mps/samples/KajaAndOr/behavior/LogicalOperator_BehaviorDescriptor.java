@@ -10,4 +10,7 @@ package jetbrains.mps.samples.KajaAndOr.behavior;
  */
 @Deprecated
 public abstract class LogicalOperator_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

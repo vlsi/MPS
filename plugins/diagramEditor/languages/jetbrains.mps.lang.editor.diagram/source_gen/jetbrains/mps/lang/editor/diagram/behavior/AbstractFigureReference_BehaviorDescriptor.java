@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.diagram.behavior;
  */
 @Deprecated
 public abstract class AbstractFigureReference_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

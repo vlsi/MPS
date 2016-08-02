@@ -10,4 +10,7 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
  */
 @Deprecated
 public class NumberType_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

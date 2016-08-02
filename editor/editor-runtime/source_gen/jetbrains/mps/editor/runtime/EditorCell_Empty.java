@@ -4,6 +4,7 @@ package jetbrains.mps.editor.runtime;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.openapi.editor.cells.optional.WithCaret;
+import jetbrains.mps.editor.runtime.cells.CaretState;
 import jetbrains.mps.nodeEditor.cells.TextLine;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -19,7 +20,7 @@ import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 
 public class EditorCell_Empty extends EditorCell_Basic implements WithCaret {
-  private boolean myCaretVisible = false;
+  private CaretState myCaretState = new CaretState();
   protected TextLine myTextLine = new TextLine("", getStyle(), false);
 
   public EditorCell_Empty(EditorContext c, SNode node) {
@@ -29,13 +30,24 @@ public class EditorCell_Empty extends EditorCell_Basic implements WithCaret {
 
   @Override
   protected void paintContent(Graphics g, ParentSettings parentSettings) {
-    myTextLine.setShowCaret(myCaretVisible && isWithinSelection() && getEditor().hasFocus());
+    myTextLine.setShowCaret(myCaretState.isVisible() && isWithinSelection() && getEditor().hasFocus());
     myTextLine.paint(g, myX + myGapLeft, myY);
+  }
+
+  public void repaintCaret() {
+    myTextLine.repaintCaret(getEditor(), getX() + getLeftGap(), getY());
   }
 
   @Override
   public void switchCaretVisible() {
-    myCaretVisible = !(myCaretVisible);
+    myCaretState.tick();
+    repaintCaret();
+  }
+
+  @Override
+  public void setCaretVisible(boolean visible) {
+    myCaretState.touch(visible);
+    repaintCaret();
   }
 
   @Override
@@ -71,7 +83,8 @@ public class EditorCell_Empty extends EditorCell_Basic implements WithCaret {
       return false;
     }
 
-    myCaretVisible = true;
+    myCaretState.touch();
+    repaintCaret();
     final CellActionType actionType;
     if (isFirstCaretPosition()) {
       actionType = CellActionType.LEFT_TRANSFORM;
@@ -103,5 +116,11 @@ public class EditorCell_Empty extends EditorCell_Basic implements WithCaret {
   @Override
   public boolean isFirstCaretPosition() {
     return StyleAttributesUtil.isFirstPositionAllowed(getStyle()) && !(StyleAttributesUtil.isLastPositionAllowed(getStyle()));
+  }
+
+  @Override
+  public void setSelected(boolean selected) {
+    super.setSelected(selected);
+    myCaretState.touch(selected);
   }
 }

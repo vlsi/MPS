@@ -10,4 +10,7 @@ package jetbrains.mps.lang.intentions.behavior;
  */
 @Deprecated
 public class ForConceptMethodParameter_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

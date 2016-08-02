@@ -10,4 +10,7 @@ package jetbrains.mps.baseLanguage.extensionMethods.behavior;
  */
 @Deprecated
 public class LocalExtendedMethodCall_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

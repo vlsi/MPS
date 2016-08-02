@@ -10,4 +10,7 @@ package jetbrains.mps.samples.Kaja.behavior;
  */
 @Deprecated
 public abstract class LogicalExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

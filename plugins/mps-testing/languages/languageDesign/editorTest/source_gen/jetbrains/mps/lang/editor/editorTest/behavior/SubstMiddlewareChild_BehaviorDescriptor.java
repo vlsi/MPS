@@ -10,4 +10,7 @@ package jetbrains.mps.lang.editor.editorTest.behavior;
  */
 @Deprecated
 public class SubstMiddlewareChild_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

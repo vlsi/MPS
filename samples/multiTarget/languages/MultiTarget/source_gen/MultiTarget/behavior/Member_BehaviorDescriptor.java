@@ -10,4 +10,7 @@ package MultiTarget.behavior;
  */
 @Deprecated
 public abstract class Member_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

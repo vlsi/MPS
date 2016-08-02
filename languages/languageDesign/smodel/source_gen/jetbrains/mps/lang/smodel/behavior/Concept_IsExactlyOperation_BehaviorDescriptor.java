@@ -10,4 +10,7 @@ package jetbrains.mps.lang.smodel.behavior;
  */
 @Deprecated
 public class Concept_IsExactlyOperation_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

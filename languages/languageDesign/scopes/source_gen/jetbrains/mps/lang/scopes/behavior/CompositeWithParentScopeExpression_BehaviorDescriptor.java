@@ -10,4 +10,7 @@ package jetbrains.mps.lang.scopes.behavior;
  */
 @Deprecated
 public class CompositeWithParentScopeExpression_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

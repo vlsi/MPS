@@ -10,4 +10,7 @@ package org.jetbrains.mps.samples.IfAndUnless.behavior;
  */
 @Deprecated
 public abstract class Flow_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

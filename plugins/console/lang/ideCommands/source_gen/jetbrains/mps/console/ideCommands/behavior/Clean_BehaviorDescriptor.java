@@ -10,4 +10,7 @@ package jetbrains.mps.console.ideCommands.behavior;
  */
 @Deprecated
 public class Clean_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

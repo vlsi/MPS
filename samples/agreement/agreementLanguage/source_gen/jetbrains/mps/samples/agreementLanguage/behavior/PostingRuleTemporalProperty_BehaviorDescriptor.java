@@ -10,4 +10,7 @@ package jetbrains.mps.samples.agreementLanguage.behavior;
  */
 @Deprecated
 public class PostingRuleTemporalProperty_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }

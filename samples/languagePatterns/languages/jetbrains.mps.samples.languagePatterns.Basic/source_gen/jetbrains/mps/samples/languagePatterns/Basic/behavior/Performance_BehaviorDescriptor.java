@@ -10,4 +10,7 @@ package jetbrains.mps.samples.languagePatterns.Basic.behavior;
  */
 @Deprecated
 public class Performance_BehaviorDescriptor {
+  public String getConceptFqName() {
+    return null;
+  }
 }
