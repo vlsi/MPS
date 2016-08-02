@@ -5046,7 +5046,7 @@
     <property role="34LRSv" value="query" />
     <property role="R4oN_" value="a block of code" />
     <property role="EcuMT" value="8954657570916342474" />
-    <ref role="1TJDcQ" node="6kJcyCQ_LoK" resolve="QueryFunction_TransformationMenu_Extensible" />
+    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
   </node>
   <node concept="1TIwiD" id="7L5lpRJH$EA">
     <property role="EcuMT" value="8954657570916027046" />
@@ -5448,7 +5448,7 @@
     <node concept="1TJgyj" id="41ZU75WoKYQ" role="1TKVEi">
       <property role="IQ2ns" value="4647688914585456566" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="parentNode" />
+      <property role="20kJfa" value="targetNode" />
       <ref role="20lvS9" node="7L5lpRJILFa" resolve="QueryFunction_TransformationMenu_Node" />
     </node>
     <node concept="1TJgyj" id="1Djcm3ms6CX" role="1TKVEi">
@@ -6156,6 +6156,14 @@
     <property role="TrG5h" value="QueryFunctionParameter_SubstituteMenu_Strictly" />
     <property role="34LRSv" value="strictly" />
     <property role="R4oN_" value="true if matching text should match specified pattern completely, false if only beggining of matching text should match this pattern" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="41ZU75XqPik">
+    <property role="3GE5qa" value="Menu.Transformation" />
+    <property role="TrG5h" value="QueryFunctionParameter_TransformationMenu_targetNode" />
+    <property role="34LRSv" value="targetNode" />
+    <property role="R4oN_" value="the node that the menu is being shown for" />
+    <property role="EcuMT" value="4647688914602775700" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
 </model>

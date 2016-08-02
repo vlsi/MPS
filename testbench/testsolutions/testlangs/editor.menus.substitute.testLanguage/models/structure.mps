@@ -106,6 +106,13 @@
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="7Nx4mSUrV2Y" resolve="TestSubstituteChild" />
     </node>
+    <node concept="1TJgyj" id="41ZU75Xz30D" role="1TKVEi">
+      <property role="IQ2ns" value="4647688914604929065" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="wrapSubstituteFromTransform" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="7Nx4mSUrV2Y" resolve="TestSubstituteChild" />
+    </node>
     <node concept="1TJgyj" id="7W01XocYQAh" role="1TKVEi">
       <property role="IQ2ns" value="9151323058739046801" />
       <property role="20lmBu" value="aggregation" />

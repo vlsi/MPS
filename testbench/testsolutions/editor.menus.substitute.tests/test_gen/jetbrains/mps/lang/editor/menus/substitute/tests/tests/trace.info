@@ -4,6 +4,22 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/4647688914604968764">
+    <file name="TestSubstitute_WrapFromTransform_Test.java">
+      <node id="4647688914604968764" at="13,72,14,132" concept="1" />
+      <node id="4647688914604968764" at="14,132,15,138" concept="1" />
+      <node id="4647688914604968764" at="21,51,22,72" concept="1" />
+      <node id="4647688914605724424" at="22,72,23,22" concept="1" />
+      <node id="4647688914604968764" at="12,0,17,0" concept="2" trace="test_TestSubstitute_WrapFromTransform#()V" />
+      <node id="4647688914604968764" at="20,0,25,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="4647688914604968764" at="13,72,15,138" />
+      <scope id="4647688914604968764" at="21,51,23,22" />
+      <scope id="4647688914604968764" at="12,0,17,0" />
+      <scope id="4647688914604968764" at="20,0,25,0" />
+      <unit id="4647688914604968764" at="18,0,26,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_WrapFromTransform_Test$TestBody" />
+      <unit id="4647688914604968764" at="10,0,27,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_WrapFromTransform_Test" />
+    </file>
+  </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8032286684682627347">
     <file name="TestSubstitute_Group_Test.java">
       <node id="8032286684682627347" at="15,60,16,132" concept="1" />

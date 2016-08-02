@@ -14635,7 +14635,7 @@
         <ref role="PMmxG" node="VN4DhfD2Vg" resolve="TransformationMenuPartAlias" />
       </node>
       <node concept="3F0ifn" id="41ZU75WoTJ6" role="3EZMnx">
-        <property role="3F0ifm" value="parent node" />
+        <property role="3F0ifm" value="target node" />
         <ref role="1k5W1q" node="2NgG6tkHXk9" resolve="EditorKeyWord" />
         <node concept="pVoyu" id="41ZU75WoTJ7" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -14645,8 +14645,11 @@
         </node>
       </node>
       <node concept="3F1sOY" id="41ZU75WoTJ5" role="3EZMnx">
-        <property role="1$x2rV" value="&lt;source node&gt;" />
-        <ref role="1NtTu8" to="tpc2:41ZU75WoKYQ" resolve="parentNode" />
+        <property role="1$x2rV" value="&lt;default&gt;" />
+        <ref role="1NtTu8" to="tpc2:41ZU75WoKYQ" resolve="targetNode" />
+        <node concept="lj46D" id="41ZU75Xw22B" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
       </node>
       <node concept="3F0ifn" id="6K28JrTTrQ$" role="3EZMnx">
         <property role="3F0ifm" value="menu to wrap" />

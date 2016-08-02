@@ -334,6 +334,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunctionParameter_SubstituteMenu_ParentNode__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunctionParameter_SubstituteMenu_Strictly__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunctionParameter_TransformationMenu_CreatedNode__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunctionParameter_TransformationMenu_targetNode__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunctionParameter_parameterObject__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunctionParameter_pattern__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_AttributeStyleParameter__BehaviorDescriptor" />
@@ -386,6 +387,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_TransformationMenu_Parameter__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_TransformationMenu_TargetNode__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_TransformationMenu_Text__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_TransformationMenu_WrapperHandler__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_TransformationMenu__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_Underlined__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryHintsSpecification__BehaviorDescriptor" />
@@ -3834,6 +3836,33 @@
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunctionParameter_TransformationMenu_node_BehaviorDescriptor" file="QueryFunctionParameter_TransformationMenu_node_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunctionParameter_TransformationMenu_targetNode_BehaviorDescriptor" file="QueryFunctionParameter_TransformationMenu_targetNode_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunctionParameter_TransformationMenu_targetNode__BehaviorDescriptor" file="QueryFunctionParameter_TransformationMenu_targetNode__BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SModifiersImpl" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunctionParameter_parameterObject_BehaviorDescriptor" file="QueryFunctionParameter_parameterObject_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
@@ -5327,6 +5356,31 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_TransformationMenu_WrapperHandler_BehaviorDescriptor" file="QueryFunction_TransformationMenu_WrapperHandler_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_TransformationMenu_WrapperHandler__BehaviorDescriptor" file="QueryFunction_TransformationMenu_WrapperHandler__BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SModifiersImpl" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_TransformationMenu_Extensible__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_TransformationMenu__BehaviorDescriptor" file="QueryFunction_TransformationMenu__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />

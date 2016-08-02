@@ -82,6 +82,7 @@
       </concept>
       <concept id="8998492695587434686" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild" flags="ng" index="16zE7g" />
       <concept id="8998492695587434685" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteParent" flags="ng" index="16zE7j">
+        <child id="4647688914604929065" name="wrapSubstituteFromTransform" index="XWXxo" />
         <child id="8998492695590981091" name="smartReference" index="16hdMd" />
         <child id="8998492695587434689" name="parameterizedQuery" index="16zE6J" />
         <child id="8998492695587434687" name="simpleAction" index="16zE7h" />
@@ -619,6 +620,35 @@
       </node>
       <node concept="3clFbH" id="5EbKzCm4sja" role="3cqZAp" />
       <node concept="3clFbH" id="5EbKzCm3ZOT" role="3cqZAp" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="41ZU75XzcGW">
+    <property role="TrG5h" value="TestSubstitute_WrapFromTransform" />
+    <node concept="16zE7j" id="41ZU75XzcGX" role="LiRBU">
+      <node concept="LIFWc" id="41ZU75XA53S" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="30" />
+        <property role="p6zMs" value="30" />
+        <property role="LIFWd" value="Constant_tkqw7v_x2a" />
+      </node>
+    </node>
+    <node concept="16zE7j" id="41ZU75XzcGZ" role="LiZbd">
+      <node concept="16zIf0" id="41ZU75XA543" role="XWXxo">
+        <ref role="16hRdc" node="7Nx4mSUE3OS" resolve="a" />
+        <node concept="LIFWc" id="41ZU75XA548" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="1" />
+          <property role="p6zMs" value="1" />
+          <property role="LIFWd" value="property_name" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="41ZU75XzcH3" role="LjaKd">
+      <node concept="2TK7Tu" id="41ZU75XA5c8" role="3cqZAp">
+        <property role="2TTd_B" value="a" />
+      </node>
     </node>
   </node>
 </model>

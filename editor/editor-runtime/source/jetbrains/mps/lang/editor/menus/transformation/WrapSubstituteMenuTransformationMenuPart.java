@@ -34,19 +34,20 @@ public abstract class WrapSubstituteMenuTransformationMenuPart implements Transf
   @NotNull
   @Override
   public List<TransformationMenuItem> createItems(TransformationMenuContext context) {
-    return new SubstituteItemsCollector(getParentNode(context), null, null, context.getEditorContext(), getSubstituteMenuLookup(context)) {
+    final SNode targetNode = getTargetNode(context);
+    return new SubstituteItemsCollector(targetNode, null, null, context.getEditorContext(), getSubstituteMenuLookup(context)) {
       @Override
       protected TransformationMenuItem convert(SubstituteMenuItem item, SubstituteMenuContext substituteMenuContext) {
-        return createTransformationItem(item, context);
+        return createTransformationItem(targetNode, item, context);
       }
     }.collect();
   }
 
-  private TransformationMenuItem createTransformationItem(SubstituteMenuItem item, TransformationMenuContext context) {
+  private TransformationMenuItem createTransformationItem(SNode targetNode, SubstituteMenuItem item, TransformationMenuContext context) {
     return new SubstituteMenuItemAsCompletionActionItem(item) {
       @Override
       public void execute(@NotNull String pattern) {
-        WrapSubstituteMenuTransformationMenuPart.this.execute(context, item, pattern);
+        WrapSubstituteMenuTransformationMenuPart.this.execute(targetNode, item, context, pattern);
       }
     };
   }
@@ -55,8 +56,8 @@ public abstract class WrapSubstituteMenuTransformationMenuPart implements Transf
     return null;
   }
 
-  protected SNode getParentNode(TransformationMenuContext context) {
+  protected SNode getTargetNode(TransformationMenuContext context) {
     return context.getNode();
   }
-  protected abstract void execute(TransformationMenuContext context, SubstituteMenuItem item, String pattern);
+  protected abstract void execute(SNode targetNode, SubstituteMenuItem item,TransformationMenuContext context, String pattern);
 }

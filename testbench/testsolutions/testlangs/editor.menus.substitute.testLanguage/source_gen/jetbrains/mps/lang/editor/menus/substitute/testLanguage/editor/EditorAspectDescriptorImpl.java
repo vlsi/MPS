@@ -101,6 +101,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
             switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b3a0a4, menuId.getFqName())) {
               case 0:
                 return Arrays.asList(new TransformationMenu[]{new NamedTransformationMenu_EmptyCell()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new WrapSubstitute()});
               default:
             }
           }
@@ -180,7 +182,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"));
   private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0g = buildConceptIndices(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x75a761fb50351afbL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestConceptForMenuParameterizedByPrimitiveType"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"));
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a4 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedTransformationMenu"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0b3a0a4 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedTransformationMenu_EmptyCell"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0b3a0a4 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedTransformationMenu_EmptyCell", "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.WrapSubstitute"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a6 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.ParameterizedByPrimitiveType"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0b3a0a6 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedSubstituteMenu", "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedSubstituteMenuForContribution", "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedSubstituteMenu_EmptyCell"};
 }
