@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class ModuleDependencyUtils {
-  /*package*/ static void addDependencyOnJDKIfMissing(SModule currentModule) {
+  public static void addDependencyOnJDKIfMissing(SModule currentModule) {
     if (currentModule instanceof AbstractModule) {
       ((AbstractModule) currentModule).addDependency(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"), false);
     }
