@@ -10,7 +10,7 @@ import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
 import jetbrains.mps.ide.vfs.IdeaFileSystem;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemExtPoint;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.InternalFlag;
@@ -32,9 +33,10 @@ public class FileProcessor extends ReloadParticipant {
   private FileSystemListenersContainer listenersContainer;
   private Map<FileSystemListener, FileProcessor.ListenerData> dataMap = MapSequence.fromMap(new HashMap<FileSystemListener, FileProcessor.ListenerData>());
   private Queue<FileSystemListener> postNotify = QueueSequence.fromQueue(new LinkedList<FileSystemListener>());
+  private static final IdeaFileSystem FS = ((IdeaFileSystem) FileSystemExtPoint.getFS());
 
   public FileProcessor() {
-    listenersContainer = ((IdeaFileSystem) FileSystem.getInstance()).getListenersContainer();
+    listenersContainer = FS.getListenersContainer();
   }
 
   @Override
@@ -120,13 +122,12 @@ public class FileProcessor extends ReloadParticipant {
   }
 
   protected boolean accepts(VirtualFile file) {
-    return MPSFileTypesManager.isFileIgnored(file.getPath());
+    return !(MPSFileTypesManager.isFileIgnored(file.getPath()));
   }
 
   protected void processDelete(VirtualFile file) {
-    String path = file.getPath();
-    final IFile ifile = FileSystem.getInstance().getFileByPath(path);
-    Sequence.fromIterable(get(path)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
+    final IFile ifile = new IdeaFile(FS, file);
+    Sequence.fromIterable(get(ifile.getPath())).visitAll(new IVisitor<FileProcessor.ListenerData>() {
       public void visit(FileProcessor.ListenerData it) {
         it.removed.add(ifile);
       }
@@ -135,7 +136,7 @@ public class FileProcessor extends ReloadParticipant {
 
   protected void processCreate(VirtualFile file) {
     String path = file.getPath();
-    final IFile ifile = FileSystem.getInstance().getFileByPath(path);
+    final IFile ifile = FS.getFile(path);
     Sequence.fromIterable(get(path)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
       public void visit(FileProcessor.ListenerData it) {
         it.added.add(ifile);
@@ -145,7 +146,7 @@ public class FileProcessor extends ReloadParticipant {
 
   protected void processContentChanged(VirtualFile file) {
     String path = file.getPath();
-    final IFile ifile = FileSystem.getInstance().getFileByPath(path);
+    final IFile ifile = FS.getFile(path);
     Sequence.fromIterable(get(path)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
       public void visit(FileProcessor.ListenerData it) {
         it.changed.add(ifile);

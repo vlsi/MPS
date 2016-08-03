@@ -1888,9 +1888,16 @@
       <node concept="3uibUv" id="5bPhg88PhzF" role="1tU5fm">
         <ref role="3uigEE" to="4hrd:~IdeaFileSystem" resolve="IdeaFileSystem" />
       </node>
-      <node concept="2YIFZM" id="5bPhg88PkBR" role="33vP2m">
-        <ref role="37wK5l" to="3ju5:~FileSystemExtPoint.getFS():jetbrains.mps.vfs.FileSystem" resolve="getFS" />
-        <ref role="1Pybhc" to="3ju5:~FileSystemExtPoint" resolve="FileSystemExtPoint" />
+      <node concept="1eOMI4" id="3osYecOxNW3" role="33vP2m">
+        <node concept="10QFUN" id="3osYecOxNW4" role="1eOMHV">
+          <node concept="2YIFZM" id="3osYecOxNW2" role="10QFUP">
+            <ref role="37wK5l" to="3ju5:~FileSystemExtPoint.getFS():jetbrains.mps.vfs.FileSystem" resolve="getFS" />
+            <ref role="1Pybhc" to="3ju5:~FileSystemExtPoint" resolve="FileSystemExtPoint" />
+          </node>
+          <node concept="3uibUv" id="3osYecOxNW1" role="10QFUM">
+            <ref role="3uigEE" to="4hrd:~IdeaFileSystem" resolve="IdeaFileSystem" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="1OabvAshn1q" role="jymVt" />
@@ -2685,15 +2692,17 @@
       </node>
       <node concept="3clFbS" id="6KWQXOSpcPW" role="3clF47">
         <node concept="3clFbF" id="6KWQXOSpcPY" role="3cqZAp">
-          <node concept="2YIFZM" id="7SNWoNmpufV" role="3clFbG">
-            <ref role="37wK5l" to="tcg7:~MPSFileTypesManager.isFileIgnored(java.lang.String):boolean" resolve="isFileIgnored" />
-            <ref role="1Pybhc" to="tcg7:~MPSFileTypesManager" resolve="MPSFileTypesManager" />
-            <node concept="2OqwBi" id="7SNWoNmpupC" role="37wK5m">
-              <node concept="37vLTw" id="7SNWoNmpugo" role="2Oq$k0">
-                <ref role="3cqZAo" node="6KWQXOSpcPU" resolve="file" />
-              </node>
-              <node concept="liA8E" id="7SNWoNmpuIG" role="2OqNvi">
-                <ref role="37wK5l" to="jlff:~VirtualFile.getPath():java.lang.String" resolve="getPath" />
+          <node concept="3fqX7Q" id="3osYecOxX9x" role="3clFbG">
+            <node concept="2YIFZM" id="3osYecOxX9z" role="3fr31v">
+              <ref role="37wK5l" to="tcg7:~MPSFileTypesManager.isFileIgnored(java.lang.String):boolean" resolve="isFileIgnored" />
+              <ref role="1Pybhc" to="tcg7:~MPSFileTypesManager" resolve="MPSFileTypesManager" />
+              <node concept="2OqwBi" id="3osYecOxX9$" role="37wK5m">
+                <node concept="37vLTw" id="3osYecOxX9_" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6KWQXOSpcPU" resolve="file" />
+                </node>
+                <node concept="liA8E" id="3osYecOxX9A" role="2OqNvi">
+                  <ref role="37wK5l" to="jlff:~VirtualFile.getPath():java.lang.String" resolve="getPath" />
+                </node>
               </node>
             </node>
           </node>
@@ -2895,14 +2904,13 @@
             <property role="TrG5h" value="ifile" />
             <node concept="2OqwBi" id="3Fdn9B$Wl_o" role="33vP2m">
               <node concept="liA8E" id="3Fdn9B$WlLP" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                <ref role="37wK5l" to="4hrd:~IdeaFileSystem.getFile(java.lang.String):jetbrains.mps.ide.vfs.IdeaFile" resolve="getFile" />
                 <node concept="37vLTw" id="3Fdn9B$WlVk" role="37wK5m">
                   <ref role="3cqZAo" node="5gUstTWjqka" resolve="path" />
                 </node>
               </node>
-              <node concept="2YIFZM" id="3Fdn9B$WlnO" role="2Oq$k0">
-                <ref role="37wK5l" to="3ju5:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
-                <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
+              <node concept="37vLTw" id="3osYecOxCMU" role="2Oq$k0">
+                <ref role="3cqZAo" node="5bPhg88PhzH" resolve="FS" />
               </node>
             </node>
             <node concept="3uibUv" id="5gUstTWjrco" role="1tU5fm">
