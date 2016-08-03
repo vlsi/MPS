@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ConstantValue = new ConceptPresentationBuilder().create();
@@ -42,153 +42,61 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0bb.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_ConstantValue;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_ExtractStatementListExpression;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ExtractStatementListInnerExpression;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ExtractStaticInnerClassConcept;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ExtractStaticInnerClassCreator;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_ExtractStaticInnerClassExpression;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_ExtractStaticMethodExpression;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_ExtractStaticMethod_CallExpression;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_ExtractToConstantExpression;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_ExtractToConstantRefExpression;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_InternalAnonymousClass;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_InternalAnonymousClassCreator;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_InternalClassCreator;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_InternalClassExpression;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_InternalClassifierType;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_InternalNewExpression;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_InternalPartialFieldReference;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_InternalPartialInstanceMethodCall;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_InternalStaticFieldReference;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_InternalStaticMethodCall;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_InternalSuperMethodCallOperation;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_InternalThisExpression;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_InternalTypedStaticFieldReference;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_InternalVariableReference;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_TypeHintExpression;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_WeakClassReference;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("df345b11-b8c7-4213-ac66-48d2a9b75d88"), "jetbrains.mps.baseLanguageInternal")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_ConstantValue;
+      case 1:
+        return props_ExtractStatementListExpression;
+      case 2:
+        return props_ExtractStatementListInnerExpression;
+      case 3:
+        return props_ExtractStaticInnerClassConcept;
+      case 4:
+        return props_ExtractStaticInnerClassCreator;
+      case 5:
+        return props_ExtractStaticInnerClassExpression;
+      case 6:
+        return props_ExtractStaticMethodExpression;
+      case 7:
+        return props_ExtractStaticMethod_CallExpression;
+      case 8:
+        return props_ExtractToConstantExpression;
+      case 9:
+        return props_ExtractToConstantRefExpression;
+      case 10:
+        return props_InternalAnonymousClass;
+      case 11:
+        return props_InternalAnonymousClassCreator;
+      case 12:
+        return props_InternalClassCreator;
+      case 13:
+        return props_InternalClassExpression;
+      case 14:
+        return props_InternalClassifierType;
+      case 15:
+        return props_InternalNewExpression;
+      case 16:
+        return props_InternalPartialFieldReference;
+      case 17:
+        return props_InternalPartialInstanceMethodCall;
+      case 18:
+        return props_InternalStaticFieldReference;
+      case 19:
+        return props_InternalStaticMethodCall;
+      case 20:
+        return props_InternalSuperMethodCallOperation;
+      case 21:
+        return props_InternalThisExpression;
+      case 22:
+        return props_InternalTypedStaticFieldReference;
+      case 23:
+        return props_InternalVariableReference;
+      case 24:
+        return props_TypeHintExpression;
+      case 25:
+        return props_WeakClassReference;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0bb = buildConceptIndices(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x16007da97856bd8aL, "jetbrains.mps.baseLanguageInternal.structure.ConstantValue"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2c5dbc7b762fd2a7L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2c5dbc7b763512c9L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0xd01bb6e8b1cd97aL, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x50cc34ef144c9181L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x6b63d4344723dac8L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x31c3f88088ea0ac4L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x31c3f88088ed999aL, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1204d897032L, "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x162724dabcdc671L, "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2f7b79225e746809L, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2f7b79225e746808L, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClassCreator"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0xf46f1c42ee50930L, "jetbrains.mps.baseLanguageInternal.structure.InternalClassCreator"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1117461827dL, "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1118e558c6dL, "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1122dd58737L, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1116962fa68L, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157912ec1L, "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x33c9311d003a97d3L, "jetbrains.mps.baseLanguageInternal.structure.InternalSuperMethodCallOperation"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1180ebdd5b4L, "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x7232370459dfc310L, "jetbrains.mps.baseLanguageInternal.structure.InternalTypedStaticFieldReference"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x111fb5bb1f2L, "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11763791866L, "jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x7a00a2a7a8b080daL, "jetbrains.mps.baseLanguageInternal.structure.WeakClassReference"));
 }

@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractConsoleScript = new ConceptPresentationBuilder().create();
@@ -20,43 +20,17 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0f.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractConsoleScript;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_ConsoleScript;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_Execute;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_RefactorOperation;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("f26691d2-0def-4c06-aec6-2cb90c4af0a4"), "jetbrains.mps.console.scripts")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_AbstractConsoleScript;
+      case 1:
+        return props_ConsoleScript;
+      case 2:
+        return props_Execute;
+      case 3:
+        return props_RefactorOperation;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0f = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0xf26691d20def4c06L, 0xaec62cb90c4af0a4L, 0x1811ccc46ac3f6d9L, "jetbrains.mps.console.scripts.structure.AbstractConsoleScript"), MetaAdapterFactory.getConcept(0xf26691d20def4c06L, 0xaec62cb90c4af0a4L, 0x1811ccc46ac3f6deL, "jetbrains.mps.console.scripts.structure.ConsoleScript"), MetaAdapterFactory.getConcept(0xf26691d20def4c06L, 0xaec62cb90c4af0a4L, 0x1811ccc46ac3dc6aL, "jetbrains.mps.console.scripts.structure.Execute"), MetaAdapterFactory.getConcept(0xf26691d20def4c06L, 0xaec62cb90c4af0a4L, 0x20fd2063d7de993eL, "jetbrains.mps.console.scripts.structure.RefactorOperation"));
 }

@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_BaseIntentionDeclaration = new ConceptPresentationBuilder().create();
@@ -36,123 +36,49 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0v.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_BaseIntentionDeclaration;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_ChildFilterBlock;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ChildFilterFunction;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ConceptFunctionParameter_childNode;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ConceptFunctionParameter_node;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_DescriptionBlock;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_ErrorIntentionPriority;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_ExecuteBlock;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_ForConceptMethodParameter;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_Intention;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_IntentionDeclaration;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_IntentionParameter;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_IntentionPriority;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_IsApplicableBlock;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_Parameter;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_ParameterizedDescriptionBlock;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_ParameterizedExecuteBlock;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_ParameterizedIntentionDeclaration;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_QueryBlock;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_SurroundWithIntentionDeclaration;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("d7a92d38-f7db-40d0-8431-763b0c3c9f20"), "jetbrains.mps.lang.intentions")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_BaseIntentionDeclaration;
+      case 1:
+        return props_ChildFilterBlock;
+      case 2:
+        return props_ChildFilterFunction;
+      case 3:
+        return props_ConceptFunctionParameter_childNode;
+      case 4:
+        return props_ConceptFunctionParameter_node;
+      case 5:
+        return props_DescriptionBlock;
+      case 6:
+        return props_ErrorIntentionPriority;
+      case 7:
+        return props_ExecuteBlock;
+      case 8:
+        return props_ForConceptMethodParameter;
+      case 9:
+        return props_Intention;
+      case 10:
+        return props_IntentionDeclaration;
+      case 11:
+        return props_IntentionParameter;
+      case 12:
+        return props_IntentionPriority;
+      case 13:
+        return props_IsApplicableBlock;
+      case 14:
+        return props_Parameter;
+      case 15:
+        return props_ParameterizedDescriptionBlock;
+      case 16:
+        return props_ParameterizedExecuteBlock;
+      case 17:
+        return props_ParameterizedIntentionDeclaration;
+      case 18:
+        return props_QueryBlock;
+      case 19:
+        return props_SurroundWithIntentionDeclaration;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0v = buildConceptIndices(MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x323731f511d1c198L, "jetbrains.mps.lang.intentions.structure.ChildFilterBlock"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x323731f511d1c1bbL, "jetbrains.mps.lang.intentions.structure.ChildFilterFunction"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x323731f511d1c750L, "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b83c562eL, "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b81bfaa7L, "jetbrains.mps.lang.intentions.structure.DescriptionBlock"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x59427edd75744615L, "jetbrains.mps.lang.intentions.structure.ErrorIntentionPriority"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b82d36d9L, "jetbrains.mps.lang.intentions.structure.ExecuteBlock"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x44d08b803f255effL, "jetbrains.mps.lang.intentions.structure.ForConceptMethodParameter"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, "jetbrains.mps.lang.intentions.structure.Intention"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b81b652bL, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x120c8fd57fbL, "jetbrains.mps.lang.intentions.structure.IntentionParameter"), MetaAdapterFactory.getInterfaceConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x59427edd75744617L, "jetbrains.mps.lang.intentions.structure.IntentionPriority"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b82b10f5L, "jetbrains.mps.lang.intentions.structure.IsApplicableBlock"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x6688b42d39674b7aL, "jetbrains.mps.lang.intentions.structure.Parameter"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x1925e8184af03861L, "jetbrains.mps.lang.intentions.structure.ParameterizedDescriptionBlock"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x1925e8184af310edL, "jetbrains.mps.lang.intentions.structure.ParameterizedExecuteBlock"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x120cd519c2dL, "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x120c89cc719L, "jetbrains.mps.lang.intentions.structure.QueryBlock"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3e6815L, "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"));
 }

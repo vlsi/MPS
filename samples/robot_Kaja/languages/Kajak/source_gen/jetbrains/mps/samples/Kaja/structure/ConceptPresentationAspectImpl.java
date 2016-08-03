@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractCommand = new ConceptPresentationBuilder().create();
@@ -45,168 +45,67 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0eb.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractCommand;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_CommandList;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_CommentLine;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_Direction;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_Drop;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_East;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_EmptyLine;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_Heading;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_IfStatement;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_IsFull;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_IsMark;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_IsWall;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_LeftTurn;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_Library;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_LogicalExpression;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_Looking;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_North;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_Not;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_Pick;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_Repeat;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_Require;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_RoutineCall;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_RoutineDefinition;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_Script;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_South;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_Step;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_TraceMessage;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_West;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_While;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("049a08c5-1fe5-43cc-bd99-8b46d641d7f5"), "jetbrains.mps.samples.Kaja")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_AbstractCommand;
+      case 1:
+        return props_CommandList;
+      case 2:
+        return props_CommentLine;
+      case 3:
+        return props_Direction;
+      case 4:
+        return props_Drop;
+      case 5:
+        return props_East;
+      case 6:
+        return props_EmptyLine;
+      case 7:
+        return props_Heading;
+      case 8:
+        return props_IfStatement;
+      case 9:
+        return props_IsFull;
+      case 10:
+        return props_IsMark;
+      case 11:
+        return props_IsWall;
+      case 12:
+        return props_LeftTurn;
+      case 13:
+        return props_Library;
+      case 14:
+        return props_LogicalExpression;
+      case 15:
+        return props_Looking;
+      case 16:
+        return props_North;
+      case 17:
+        return props_Not;
+      case 18:
+        return props_Pick;
+      case 19:
+        return props_Repeat;
+      case 20:
+        return props_Require;
+      case 21:
+        return props_RoutineCall;
+      case 22:
+        return props_RoutineDefinition;
+      case 23:
+        return props_Script;
+      case 24:
+        return props_South;
+      case 25:
+        return props_Step;
+      case 26:
+        return props_TraceMessage;
+      case 27:
+        return props_West;
+      case 28:
+        return props_While;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0eb = buildConceptIndices(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc4574aL, "jetbrains.mps.samples.Kaja.structure.AbstractCommand"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785f06a3fL, "jetbrains.mps.samples.Kaja.structure.CommandList"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x58e59ea713fa2b43L, "jetbrains.mps.samples.Kaja.structure.CommentLine"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed0d39L, "jetbrains.mps.samples.Kaja.structure.Direction"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x58e59ea713f79f27L, "jetbrains.mps.samples.Kaja.structure.Drop"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed0d41L, "jetbrains.mps.samples.Kaja.structure.East"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ee0a16L, "jetbrains.mps.samples.Kaja.structure.EmptyLine"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed2c41L, "jetbrains.mps.samples.Kaja.structure.Heading"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fbeL, "jetbrains.mps.samples.Kaja.structure.IfStatement"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0xbebd01a737bec18L, "jetbrains.mps.samples.Kaja.structure.IsFull"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x58e59ea713f89fe6L, "jetbrains.mps.samples.Kaja.structure.IsMark"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785eca02cL, "jetbrains.mps.samples.Kaja.structure.IsWall"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9f8bL, "jetbrains.mps.samples.Kaja.structure.LeftTurn"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x3cfcda239f19d316L, "jetbrains.mps.samples.Kaja.structure.Library"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fc1L, "jetbrains.mps.samples.Kaja.structure.LogicalExpression"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x61fd16e423a38042L, "jetbrains.mps.samples.Kaja.structure.Looking"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed0d3bL, "jetbrains.mps.samples.Kaja.structure.North"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecb8b0L, "jetbrains.mps.samples.Kaja.structure.Not"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x58e59ea713f85f1dL, "jetbrains.mps.samples.Kaja.structure.Pick"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecd14cL, "jetbrains.mps.samples.Kaja.structure.Repeat"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x3cfcda239f1a1049L, "jetbrains.mps.samples.Kaja.structure.Require"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed6f92L, "jetbrains.mps.samples.Kaja.structure.RoutineCall"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed6f79L, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc45746L, "jetbrains.mps.samples.Kaja.structure.Script"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed0d4bL, "jetbrains.mps.samples.Kaja.structure.South"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc45762L, "jetbrains.mps.samples.Kaja.structure.Step"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2c8eb033a8375aeeL, "jetbrains.mps.samples.Kaja.structure.TraceMessage"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed2c3cL, "jetbrains.mps.samples.Kaja.structure.West"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecece0L, "jetbrains.mps.samples.Kaja.structure.While"));
 }

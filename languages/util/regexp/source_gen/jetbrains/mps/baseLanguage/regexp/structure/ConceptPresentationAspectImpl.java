@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AtLeastNTimesRegexp = new ConceptPresentationBuilder().create();
@@ -77,328 +77,131 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0kc.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AtLeastNTimesRegexp;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_BinaryRegexp;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_CharacterSymbolClassPart;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_DotRegexp;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_FindMatchExpression;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_FindMatchStatement;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_ForEachMatchStatement;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_FromNToMTimesRegexp;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_InlineRegexpExpression;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_IntersectionSymbolClassPart;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_IntervalSymbolClassPart;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_LazyPlusRegexp;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_LazyQuestionRegexp;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_LazyStarRegexp;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_LineEndRegexp;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_LineStartRegexp;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_LiteralReplacement;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_LookRegexp;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_MatchParensRegexp;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_MatchRegexpExpression;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_MatchRegexpOperation;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_MatchRegexpStatement;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_MatchVariableReference;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_MatchVariableReferenceRegexp;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_MatchVariableReferenceReplacement;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_NTimesRegexp;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_NegativeLookAheadRegexp;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_NegativeLookBehindRegexp;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_NegativeSymbolClassRegexp;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_OrRegexp;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_ParensRegexp;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_PlusRegexp;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_PositiveLookAheadRegexp;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_PositiveLookBehindRegexp;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_PositiveSymbolClassRegexp;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_PredefinedSymbolClassDeclaration;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_PredefinedSymbolClassRegexp;
-          }
-          break;
-        case 37:
-          if (true) {
-            return props_PredefinedSymbolClassSymbolClassPart;
-          }
-          break;
-        case 38:
-          if (true) {
-            return props_PredefinedSymbolClasses;
-          }
-          break;
-        case 39:
-          if (true) {
-            return props_QuestionRegexp;
-          }
-          break;
-        case 40:
-          if (true) {
-            return props_Regexp;
-          }
-          break;
-        case 41:
-          if (true) {
-            return props_RegexpDeclaration;
-          }
-          break;
-        case 42:
-          if (true) {
-            return props_RegexpDeclarationReferenceRegexp;
-          }
-          break;
-        case 43:
-          if (true) {
-            return props_RegexpExpression;
-          }
-          break;
-        case 44:
-          if (true) {
-            return props_RegexpUsingConstruction;
-          }
-          break;
-        case 45:
-          if (true) {
-            return props_Regexps;
-          }
-          break;
-        case 46:
-          if (true) {
-            return props_ReplaceBlock;
-          }
-          break;
-        case 47:
-          if (true) {
-            return props_ReplaceRegexpOperation;
-          }
-          break;
-        case 48:
-          if (true) {
-            return props_ReplaceWithRegexpExpression;
-          }
-          break;
-        case 49:
-          if (true) {
-            return props_ReplaceWithRegexpOperation;
-          }
-          break;
-        case 50:
-          if (true) {
-            return props_Replacement;
-          }
-          break;
-        case 51:
-          if (true) {
-            return props_SeqRegexp;
-          }
-          break;
-        case 52:
-          if (true) {
-            return props_SplitExpression;
-          }
-          break;
-        case 53:
-          if (true) {
-            return props_SplitOperation;
-          }
-          break;
-        case 54:
-          if (true) {
-            return props_StarRegexp;
-          }
-          break;
-        case 55:
-          if (true) {
-            return props_StringLiteralRegexp;
-          }
-          break;
-        case 56:
-          if (true) {
-            return props_SymbolClassPart;
-          }
-          break;
-        case 57:
-          if (true) {
-            return props_SymbolClassRegexp;
-          }
-          break;
-        case 58:
-          if (true) {
-            return props_SymbolClassRegexpAndPart;
-          }
-          break;
-        case 59:
-          if (true) {
-            return props_UnaryRegexp;
-          }
-          break;
-        case 60:
-          if (true) {
-            return props_UnicodeCharacterRegexp;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("daafa647-f1f7-4b0b-b096-69cd7c8408c0"), "jetbrains.mps.baseLanguage.regexp")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_AtLeastNTimesRegexp;
+      case 1:
+        return props_BinaryRegexp;
+      case 2:
+        return props_CharacterSymbolClassPart;
+      case 3:
+        return props_DotRegexp;
+      case 4:
+        return props_FindMatchExpression;
+      case 5:
+        return props_FindMatchStatement;
+      case 6:
+        return props_ForEachMatchStatement;
+      case 7:
+        return props_FromNToMTimesRegexp;
+      case 8:
+        return props_InlineRegexpExpression;
+      case 9:
+        return props_IntersectionSymbolClassPart;
+      case 10:
+        return props_IntervalSymbolClassPart;
+      case 11:
+        return props_LazyPlusRegexp;
+      case 12:
+        return props_LazyQuestionRegexp;
+      case 13:
+        return props_LazyStarRegexp;
+      case 14:
+        return props_LineEndRegexp;
+      case 15:
+        return props_LineStartRegexp;
+      case 16:
+        return props_LiteralReplacement;
+      case 17:
+        return props_LookRegexp;
+      case 18:
+        return props_MatchParensRegexp;
+      case 19:
+        return props_MatchRegexpExpression;
+      case 20:
+        return props_MatchRegexpOperation;
+      case 21:
+        return props_MatchRegexpStatement;
+      case 22:
+        return props_MatchVariableReference;
+      case 23:
+        return props_MatchVariableReferenceRegexp;
+      case 24:
+        return props_MatchVariableReferenceReplacement;
+      case 25:
+        return props_NTimesRegexp;
+      case 26:
+        return props_NegativeLookAheadRegexp;
+      case 27:
+        return props_NegativeLookBehindRegexp;
+      case 28:
+        return props_NegativeSymbolClassRegexp;
+      case 29:
+        return props_OrRegexp;
+      case 30:
+        return props_ParensRegexp;
+      case 31:
+        return props_PlusRegexp;
+      case 32:
+        return props_PositiveLookAheadRegexp;
+      case 33:
+        return props_PositiveLookBehindRegexp;
+      case 34:
+        return props_PositiveSymbolClassRegexp;
+      case 35:
+        return props_PredefinedSymbolClassDeclaration;
+      case 36:
+        return props_PredefinedSymbolClassRegexp;
+      case 37:
+        return props_PredefinedSymbolClassSymbolClassPart;
+      case 38:
+        return props_PredefinedSymbolClasses;
+      case 39:
+        return props_QuestionRegexp;
+      case 40:
+        return props_Regexp;
+      case 41:
+        return props_RegexpDeclaration;
+      case 42:
+        return props_RegexpDeclarationReferenceRegexp;
+      case 43:
+        return props_RegexpExpression;
+      case 44:
+        return props_RegexpUsingConstruction;
+      case 45:
+        return props_Regexps;
+      case 46:
+        return props_ReplaceBlock;
+      case 47:
+        return props_ReplaceRegexpOperation;
+      case 48:
+        return props_ReplaceWithRegexpExpression;
+      case 49:
+        return props_ReplaceWithRegexpOperation;
+      case 50:
+        return props_Replacement;
+      case 51:
+        return props_SeqRegexp;
+      case 52:
+        return props_SplitExpression;
+      case 53:
+        return props_SplitOperation;
+      case 54:
+        return props_StarRegexp;
+      case 55:
+        return props_StringLiteralRegexp;
+      case 56:
+        return props_SymbolClassPart;
+      case 57:
+        return props_SymbolClassRegexp;
+      case 58:
+        return props_SymbolClassRegexpAndPart;
+      case 59:
+        return props_UnaryRegexp;
+      case 60:
+        return props_UnicodeCharacterRegexp;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0kc = buildConceptIndices(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc30ee2L, "jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c56bf9L, "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791ae82fL, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111790aa926L, "jetbrains.mps.baseLanguage.regexp.structure.DotRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x550fbf4ebc5de3f5L, "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1119d8807a3L, "jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1119caff72eL, "jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc58c6eL, "jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c0ef7f429L, "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11179215e8bL, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f38e076L, "jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f394b67L, "jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f383367L, "jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1119d126564L, "jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1119d11da7eL, "jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94cL, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118de32185L, "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x112972a0c32L, "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c9466ae95L, "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11176652f14L, "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117987ff5eL, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94eL, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dbeda57L, "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118de1f935L, "jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118de6e3f6L, "jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178e35c63L, "jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0d780L, "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a15de8L, "jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118ddfb973L, "jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118de6742fL, "jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178e2f48cL, "jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178e59fd0L, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178fa2a18L, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117928d9f2L, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178e5efc7L, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178c4e1e0L, "jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a6454dL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118ea37105L, "jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression"), MetaAdapterFactory.getInterfaceConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117ecbc07aL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f550b6dL, "jetbrains.mps.baseLanguage.regexp.structure.Regexps"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117ef80054L, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117ef3f72dL, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c94680172L, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab952L, "jetbrains.mps.baseLanguage.regexp.structure.Replacement"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174bc30e7L, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1119d41c734L, "jetbrains.mps.baseLanguage.regexp.structure.SplitExpression"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c942ab86bL, "jetbrains.mps.baseLanguage.regexp.structure.SplitOperation"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a16ffaL, "jetbrains.mps.baseLanguage.regexp.structure.StarRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791aa602L, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178e2916aL, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"), MetaAdapterFactory.getInterfaceConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c22ec8f79L, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11831260718L, "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp"));
 }

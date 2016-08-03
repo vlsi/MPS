@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractFunctionType = new ConceptPresentationBuilder().deprecated().create();
@@ -37,128 +37,51 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0w.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractFunctionType;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_ClosureArgReference;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ClosureControlStatement;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ClosureLiteral;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ClosureLiteralType;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_CompactInvokeFunctionExpression;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_ControlAbstractionContainer;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_ControlAbstractionDeclaration;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_ControlClosureLiteral;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_FunctionMethodDeclaration;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_FunctionType;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_InvokeExpression;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_InvokeFunctionExpression;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_InvokeFunctionOperation;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_PairOfInts;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_StringPropertyHolder;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_UnboundClosureParameterDeclaration;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_UnrestrictedClosureLiteral;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_UnrestrictedFunctionType;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_YieldAllStatement;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_YieldStatement;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("fd392034-7849-419d-9071-12563d152375"), "jetbrains.mps.baseLanguage.closures")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_AbstractFunctionType;
+      case 1:
+        return props_ClosureArgReference;
+      case 2:
+        return props_ClosureControlStatement;
+      case 3:
+        return props_ClosureLiteral;
+      case 4:
+        return props_ClosureLiteralType;
+      case 5:
+        return props_CompactInvokeFunctionExpression;
+      case 6:
+        return props_ControlAbstractionContainer;
+      case 7:
+        return props_ControlAbstractionDeclaration;
+      case 8:
+        return props_ControlClosureLiteral;
+      case 9:
+        return props_FunctionMethodDeclaration;
+      case 10:
+        return props_FunctionType;
+      case 11:
+        return props_InvokeExpression;
+      case 12:
+        return props_InvokeFunctionExpression;
+      case 13:
+        return props_InvokeFunctionOperation;
+      case 14:
+        return props_PairOfInts;
+      case 15:
+        return props_StringPropertyHolder;
+      case 16:
+        return props_UnboundClosureParameterDeclaration;
+      case 17:
+        return props_UnrestrictedClosureLiteral;
+      case 18:
+        return props_UnrestrictedFunctionType;
+      case 19:
+        return props_YieldAllStatement;
+      case 20:
+        return props_YieldStatement;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0w = buildConceptIndices(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x4de23a15f719357dL, "jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x5620d42a452422c7L, "jetbrains.mps.baseLanguage.closures.structure.ClosureArgReference"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L, "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0xe8770ba07b68051L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11fb8425aa8L, "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49db3870L, "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49dc8097L, "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49d1841dL, "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x42d79e63a78a7784L, "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x117545d385aL, "jetbrains.mps.baseLanguage.closures.structure.InvokeExpression"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a964795L, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11d67349093L, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, "jetbrains.mps.baseLanguage.closures.structure.PairOfInts"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0d18e07L, "jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x118276b7086L, "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cdf7cbL, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e505b9d83L, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e25fc6c63L, "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11797183e82L, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement"));
 }

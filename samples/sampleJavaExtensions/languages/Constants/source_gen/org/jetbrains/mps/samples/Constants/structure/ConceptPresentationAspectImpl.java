@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_Constant = new ConceptPresentationBuilder().create();
@@ -22,53 +22,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0h.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_Constant;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_ConstantReference;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ConstantReferenceKeeper;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_Constants;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_DistantConstantReference;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_GeneratedClassKeeper;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("0d40d465-dded-40d0-8d4c-2c6d177f60d7"), "org.jetbrains.mps.samples.Constants")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_Constant;
+      case 1:
+        return props_ConstantReference;
+      case 2:
+        return props_ConstantReferenceKeeper;
+      case 3:
+        return props_Constants;
+      case 4:
+        return props_DistantConstantReference;
+      case 5:
+        return props_GeneratedClassKeeper;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0h = buildConceptIndices(MetaAdapterFactory.getConcept(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x14be6cdec1861419L, "org.jetbrains.mps.samples.Constants.structure.Constant"), MetaAdapterFactory.getConcept(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x37600150f5294665L, "org.jetbrains.mps.samples.Constants.structure.ConstantReference"), MetaAdapterFactory.getConcept(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d0f2365L, "org.jetbrains.mps.samples.Constants.structure.ConstantReferenceKeeper"), MetaAdapterFactory.getConcept(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x14be6cdec1861417L, "org.jetbrains.mps.samples.Constants.structure.Constants"), MetaAdapterFactory.getConcept(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d06d11fL, "org.jetbrains.mps.samples.Constants.structure.DistantConstantReference"), MetaAdapterFactory.getConcept(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d0f9f20L, "org.jetbrains.mps.samples.Constants.structure.GeneratedClassKeeper"));
 }

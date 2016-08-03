@@ -10,6 +10,9 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.SNodePointer;
@@ -52,6 +55,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       default:
         throw new IllegalStateException();
     }
+  }
+
+  /*package*/ int internalIndex(SAbstractConcept c) {
+    Integer res = null;
+    if (c instanceof SConceptAdapterById) {
+      res = myIndexMap.get(((SConceptAdapterById) c).getId());
+    } else if (c instanceof SInterfaceConceptAdapterById) {
+      res = myIndexMap.get(((SInterfaceConceptAdapterById) c).getId());
+    }
+    return (res == null ? -1 : res);
   }
 
   private static ConceptDescriptor createDescriptorForQueryFunctionParameter_IntentionExecutable() {

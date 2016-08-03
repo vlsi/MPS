@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractRequestDescription = new ConceptPresentationBuilder().create();
@@ -55,218 +55,87 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0ob.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractRequestDescription;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_Address;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_AddressReference;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_AgendaItem;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_Apple;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_Car;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_CombinedPerformance;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_Component;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_ComponentUsage;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_Concert;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_Container;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_DottedLine;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_DrawCommand;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_DrawLine;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_DrawRect;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_EmptyLine;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_FormDescription;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_Fruit;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_FruitPlate;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_IncompleteCommand;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_Item;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_ItemReference;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_LineStyle;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_ListOfDrawCommands;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_OperationOnAddress;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_Orange;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_Participant;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_Performance;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_PerformanceWithTitle;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_RaceParticipant;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_Request;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_SimplifiedFormDescription;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_Singer;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_SolidLine;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_SomeForm;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_StreetOperation;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_StringDescription;
-          }
-          break;
-        case 37:
-          if (true) {
-            return props_Truck;
-          }
-          break;
-        case 38:
-          if (true) {
-            return props_ZipOperation;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("7a6f7ef7-3988-464b-8cc5-1182671c136e"), "jetbrains.mps.samples.languagePatterns.Basic")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_AbstractRequestDescription;
+      case 1:
+        return props_Address;
+      case 2:
+        return props_AddressReference;
+      case 3:
+        return props_AgendaItem;
+      case 4:
+        return props_Apple;
+      case 5:
+        return props_Car;
+      case 6:
+        return props_CombinedPerformance;
+      case 7:
+        return props_Component;
+      case 8:
+        return props_ComponentUsage;
+      case 9:
+        return props_Concert;
+      case 10:
+        return props_Container;
+      case 11:
+        return props_DottedLine;
+      case 12:
+        return props_DrawCommand;
+      case 13:
+        return props_DrawLine;
+      case 14:
+        return props_DrawRect;
+      case 15:
+        return props_EmptyLine;
+      case 16:
+        return props_FormDescription;
+      case 17:
+        return props_Fruit;
+      case 18:
+        return props_FruitPlate;
+      case 19:
+        return props_IncompleteCommand;
+      case 20:
+        return props_Item;
+      case 21:
+        return props_ItemReference;
+      case 22:
+        return props_LineStyle;
+      case 23:
+        return props_ListOfDrawCommands;
+      case 24:
+        return props_OperationOnAddress;
+      case 25:
+        return props_Orange;
+      case 26:
+        return props_Participant;
+      case 27:
+        return props_Performance;
+      case 28:
+        return props_PerformanceWithTitle;
+      case 29:
+        return props_RaceParticipant;
+      case 30:
+        return props_Request;
+      case 31:
+        return props_SimplifiedFormDescription;
+      case 32:
+        return props_Singer;
+      case 33:
+        return props_SolidLine;
+      case 34:
+        return props_SomeForm;
+      case 35:
+        return props_StreetOperation;
+      case 36:
+        return props_StringDescription;
+      case 37:
+        return props_Truck;
+      case 38:
+        return props_ZipOperation;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0ob = buildConceptIndices(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26b3f40bL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Address"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26b53535L, "jetbrains.mps.samples.languagePatterns.Basic.structure.AddressReference"), MetaAdapterFactory.getInterfaceConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78db30bL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AgendaItem"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae786badaL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Apple"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae79f4defL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Car"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78de950L, "jetbrains.mps.samples.languagePatterns.Basic.structure.CombinedPerformance"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fa2aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Component"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fb71L, "jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895c45L, "jetbrains.mps.samples.languagePatterns.Basic.structure.Concert"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7f9fbL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Container"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb2666ff96L, "jetbrains.mps.samples.languagePatterns.Basic.structure.DottedLine"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265d1022L, "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawCommand"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265dade0L, "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawLine"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb26647490L, "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawRect"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265d1a2bL, "jetbrains.mps.samples.languagePatterns.Basic.structure.EmptyLine"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2245eL, "jetbrains.mps.samples.languagePatterns.Basic.structure.FormDescription"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae786b2fbL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Fruit"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae786b02dL, "jetbrains.mps.samples.languagePatterns.Basic.structure.FruitPlate"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x7d09f66a13005410L, "jetbrains.mps.samples.languagePatterns.Basic.structure.IncompleteCommand"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x7e8fc6224ac7e021L, "jetbrains.mps.samples.languagePatterns.Basic.structure.Item"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x7e8fc6224ac7e053L, "jetbrains.mps.samples.languagePatterns.Basic.structure.ItemReference"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb2666fc54L, "jetbrains.mps.samples.languagePatterns.Basic.structure.LineStyle"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265d07e6L, "jetbrains.mps.samples.languagePatterns.Basic.structure.ListOfDrawCommands"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26bb7860L, "jetbrains.mps.samples.languagePatterns.Basic.structure.OperationOnAddress"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae786bb3aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Orange"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78e59fbL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Participant"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895ce1L, "jetbrains.mps.samples.languagePatterns.Basic.structure.Performance"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae795648bL, "jetbrains.mps.samples.languagePatterns.Basic.structure.PerformanceWithTitle"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae79f4cedL, "jetbrains.mps.samples.languagePatterns.Basic.structure.RaceParticipant"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db22351L, "jetbrains.mps.samples.languagePatterns.Basic.structure.Request"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db223f4L, "jetbrains.mps.samples.languagePatterns.Basic.structure.SimplifiedFormDescription"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895c8dL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Singer"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb2666fc55L, "jetbrains.mps.samples.languagePatterns.Basic.structure.SolidLine"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26b3f406L, "jetbrains.mps.samples.languagePatterns.Basic.structure.SomeForm"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26b9b2e7L, "jetbrains.mps.samples.languagePatterns.Basic.structure.StreetOperation"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db223d5L, "jetbrains.mps.samples.languagePatterns.Basic.structure.StringDescription"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae79f4fc1L, "jetbrains.mps.samples.languagePatterns.Basic.structure.Truck"), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26b8b81dL, "jetbrains.mps.samples.languagePatterns.Basic.structure.ZipOperation"));
 }

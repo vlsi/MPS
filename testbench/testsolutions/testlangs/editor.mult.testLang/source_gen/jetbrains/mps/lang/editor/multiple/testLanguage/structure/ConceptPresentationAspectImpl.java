@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_MultipleEditorsTestChild = new ConceptPresentationBuilder().create();
@@ -25,68 +25,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0k.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_MultipleEditorsTestChild;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_MultipleEditorsTestEditorComponentChild;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_MultipleEditorsTestEditorComponentChildSubconcept;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_MultipleEditorsTestEditorComponentRoot;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_MultipleEditorsTestMostSpecificChild;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_MultipleEditorsTestMostSpecificRoot;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_MultipleEditorsTestRefNodeListRoot;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_MultipleEditorsTestRefNodeRoot;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_MultipleEditorsTestRoot;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("7a80051c-66e9-4bfc-9698-b12adfed3d9f"), "jetbrains.mps.lang.editor.multiple.testLanguage")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_MultipleEditorsTestChild;
+      case 1:
+        return props_MultipleEditorsTestEditorComponentChild;
+      case 2:
+        return props_MultipleEditorsTestEditorComponentChildSubconcept;
+      case 3:
+        return props_MultipleEditorsTestEditorComponentRoot;
+      case 4:
+        return props_MultipleEditorsTestMostSpecificChild;
+      case 5:
+        return props_MultipleEditorsTestMostSpecificRoot;
+      case 6:
+        return props_MultipleEditorsTestRefNodeListRoot;
+      case 7:
+        return props_MultipleEditorsTestRefNodeRoot;
+      case 8:
+        return props_MultipleEditorsTestRoot;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0k = buildConceptIndices(MetaAdapterFactory.getConcept(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x5c5c8f07ee27f5c1L, "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestChild"), MetaAdapterFactory.getConcept(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x10e3b2b96584da79L, "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestEditorComponentChild"), MetaAdapterFactory.getConcept(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x591b11eaedfa2868L, "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestEditorComponentChildSubconcept"), MetaAdapterFactory.getConcept(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x10e3b2b965847f13L, "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestEditorComponentRoot"), MetaAdapterFactory.getConcept(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x76f70aa86b49610dL, "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestMostSpecificChild"), MetaAdapterFactory.getConcept(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x76f70aa86b495d20L, "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestMostSpecificRoot"), MetaAdapterFactory.getConcept(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x650641cc62465f6cL, "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRefNodeListRoot"), MetaAdapterFactory.getConcept(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x51568a5db0cc3a79L, "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRefNodeRoot"), MetaAdapterFactory.getConcept(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x5c5c8f07ee27ef15L, "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRoot"));
 }

@@ -2,13 +2,13 @@
 <debug-info version="2">
   <root>
     <file name="ConceptPresentationAspectImpl.java">
-      <unit at="14,0,93,0" name="jetbrains.mps.baseLanguage.tuples.structure.ConceptPresentationAspectImpl" />
+      <unit at="14,0,52,0" name="jetbrains.mps.baseLanguage.tuples.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="IconContainer.java">
       <unit at="7,0,10,0" name="jetbrains.mps.baseLanguage.tuples.structure.IconContainer" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="18,0,106,0" name="jetbrains.mps.baseLanguage.tuples.structure.StructureAspectDescriptor" />
+      <unit at="21,0,119,0" name="jetbrains.mps.baseLanguage.tuples.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ArgumentClause = new ConceptPresentationBuilder().create();
@@ -26,73 +26,29 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0l.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_ArgumentClause;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_CustomArgumentClause;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_CustomConstructor;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_CustomConstructorContainer;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_CustomConstructorParameter;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_CustomConstructorParameterReference;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_CustomConstructorUsage;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_ListArgumentsClause;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_ListCustomParameter;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_ListParameterReference;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("0ae47ad3-5abd-486c-ac0f-298884f39393"), "jetbrains.mps.baseLanguage.constructors")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_ArgumentClause;
+      case 1:
+        return props_CustomArgumentClause;
+      case 2:
+        return props_CustomConstructor;
+      case 3:
+        return props_CustomConstructorContainer;
+      case 4:
+        return props_CustomConstructorParameter;
+      case 5:
+        return props_CustomConstructorParameterReference;
+      case 6:
+        return props_CustomConstructorUsage;
+      case 7:
+        return props_ListArgumentsClause;
+      case 8:
+        return props_ListCustomParameter;
+      case 9:
+        return props_ListParameterReference;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0l = buildConceptIndices(MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b742b6b7L, "jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause"), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b742b6baL, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x7500da2cf0943c2L, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor"), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x7500da2cf0943c1L, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer"), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b7431819L, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter"), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b745ce64L, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference"), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x5ea800dcf8ca1ca6L, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage"), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b742b6b9L, "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause"), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x41c47a5073807afbL, "jetbrains.mps.baseLanguage.constructors.structure.ListCustomParameter"), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x41c47a50737ea2a7L, "jetbrains.mps.baseLanguage.constructors.structure.ListParameterReference"));
 }

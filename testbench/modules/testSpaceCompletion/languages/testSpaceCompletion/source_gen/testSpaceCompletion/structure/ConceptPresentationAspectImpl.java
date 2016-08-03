@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ABC = new ConceptPresentationBuilder().create();
@@ -23,58 +23,23 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0i.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_ABC;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_ABCDE;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ABCDEF;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ABCDEG;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ABCEEG;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_BAC;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_BCA;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("4dd3c558-f0fc-4807-bade-5d6bcad6b3f1"), "testSpaceCompletion")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_ABC;
+      case 1:
+        return props_ABCDE;
+      case 2:
+        return props_ABCDEF;
+      case 3:
+        return props_ABCDEG;
+      case 4:
+        return props_ABCEEG;
+      case 5:
+        return props_BAC;
+      case 6:
+        return props_BCA;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0x4dd3c558f0fc4807L, 0xbade5d6bcad6b3f1L, 0x31c4a809e6410e71L, "testSpaceCompletion.structure.ABC"), MetaAdapterFactory.getConcept(0x4dd3c558f0fc4807L, 0xbade5d6bcad6b3f1L, 0x31c4a809e641174cL, "testSpaceCompletion.structure.ABCDE"), MetaAdapterFactory.getConcept(0x4dd3c558f0fc4807L, 0xbade5d6bcad6b3f1L, 0x31c4a809e6411758L, "testSpaceCompletion.structure.ABCDEF"), MetaAdapterFactory.getConcept(0x4dd3c558f0fc4807L, 0xbade5d6bcad6b3f1L, 0x31c4a809e6411754L, "testSpaceCompletion.structure.ABCDEG"), MetaAdapterFactory.getConcept(0x4dd3c558f0fc4807L, 0xbade5d6bcad6b3f1L, 0x6a37442ca9969678L, "testSpaceCompletion.structure.ABCEEG"), MetaAdapterFactory.getConcept(0x4dd3c558f0fc4807L, 0xbade5d6bcad6b3f1L, 0x7bf89c7591b82d85L, "testSpaceCompletion.structure.BAC"), MetaAdapterFactory.getConcept(0x4dd3c558f0fc4807L, 0xbade5d6bcad6b3f1L, 0x7bf89c7591b848d3L, "testSpaceCompletion.structure.BCA"));
 }

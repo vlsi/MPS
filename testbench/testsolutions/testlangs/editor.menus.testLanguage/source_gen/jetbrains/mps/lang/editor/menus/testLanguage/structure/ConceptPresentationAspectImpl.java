@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_Base = new ConceptPresentationBuilder().create();
@@ -24,63 +24,25 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0j.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_Base;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_BaseWithNonEmptyMenu;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ConceptWithoutDefaultMenu;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_Derived;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_DerivedWithEmptyMenu;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_NodeHolder;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_ScopesTestConceptBase;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_TransformationMenuTestConcept;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("4eb772b0-4df3-414a-b894-63abeb912f56"), "jetbrains.mps.lang.editor.menus.testLanguage")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_Base;
+      case 1:
+        return props_BaseWithNonEmptyMenu;
+      case 2:
+        return props_ConceptWithoutDefaultMenu;
+      case 3:
+        return props_Derived;
+      case 4:
+        return props_DerivedWithEmptyMenu;
+      case 5:
+        return props_NodeHolder;
+      case 6:
+        return props_ScopesTestConceptBase;
+      case 7:
+        return props_TransformationMenuTestConcept;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0j = buildConceptIndices(MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x258c7e2e22024953L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.Base"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x68cf8525aaf46e4bL, "jetbrains.mps.lang.editor.menus.testLanguage.structure.BaseWithNonEmptyMenu"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x1de1fbd5fbf62470L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ConceptWithoutDefaultMenu"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x258c7e2e22024954L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.Derived"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x68cf8525aaf46e4cL, "jetbrains.mps.lang.editor.menus.testLanguage.structure.DerivedWithEmptyMenu"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x4a19acf9397f4948L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.NodeHolder"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0xed49174618e8812L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ScopesTestConceptBase"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x208970783ba43296L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.TransformationMenuTestConcept"));
 }

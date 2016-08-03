@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractNodeReference = new ConceptPresentationBuilder().create();
@@ -53,208 +53,83 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0mb.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractNodeReference;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_ClassifierMemberData;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ConceptMigrationReference;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ConsequenceFunction;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_DataDependency;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_DataDependencyReference;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_DirectNodeReference;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_ExecuteAfterDeclaration;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_IMigrationUnit;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_IncludeMigrationPart;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_LinkPatternVariableReference;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_ListPatternVariableReference;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_MigrationScript;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_MigrationScriptReference;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_MoveConcept;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_MoveConceptMember;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_MoveContainmentLink;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_MoveNodeMigrationPart;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_MoveNodeSpecialization;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_MoveProperty;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_MoveReferenceLink;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_NodePatternVariableReference;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_OrderDependency;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_ProducedDataDeclaration;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_PropertyPatternVariableReference;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_PureMigrationPart;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_PureMigrationScript;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_QuotationConsequence;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_RefactoringLog;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_RefactoringOption;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_RefactoringOptions;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_RefactoringOrderDependency;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_RefactoringPart;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_ReflectionNodeReference;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_RequiredDataDeclaration;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_TransformConsequence;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_TransformStatement;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("90746344-04fd-4286-97d5-b46ae6a81709"), "jetbrains.mps.lang.migration")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_AbstractNodeReference;
+      case 1:
+        return props_ClassifierMemberData;
+      case 2:
+        return props_ConceptMigrationReference;
+      case 3:
+        return props_ConsequenceFunction;
+      case 4:
+        return props_DataDependency;
+      case 5:
+        return props_DataDependencyReference;
+      case 6:
+        return props_DirectNodeReference;
+      case 7:
+        return props_ExecuteAfterDeclaration;
+      case 8:
+        return props_IMigrationUnit;
+      case 9:
+        return props_IncludeMigrationPart;
+      case 10:
+        return props_LinkPatternVariableReference;
+      case 11:
+        return props_ListPatternVariableReference;
+      case 12:
+        return props_MigrationScript;
+      case 13:
+        return props_MigrationScriptReference;
+      case 14:
+        return props_MoveConcept;
+      case 15:
+        return props_MoveConceptMember;
+      case 16:
+        return props_MoveContainmentLink;
+      case 17:
+        return props_MoveNodeMigrationPart;
+      case 18:
+        return props_MoveNodeSpecialization;
+      case 19:
+        return props_MoveProperty;
+      case 20:
+        return props_MoveReferenceLink;
+      case 21:
+        return props_NodePatternVariableReference;
+      case 22:
+        return props_OrderDependency;
+      case 23:
+        return props_ProducedDataDeclaration;
+      case 24:
+        return props_PropertyPatternVariableReference;
+      case 25:
+        return props_PureMigrationPart;
+      case 26:
+        return props_PureMigrationScript;
+      case 27:
+        return props_QuotationConsequence;
+      case 28:
+        return props_RefactoringLog;
+      case 29:
+        return props_RefactoringOption;
+      case 30:
+        return props_RefactoringOptions;
+      case 31:
+        return props_RefactoringOrderDependency;
+      case 32:
+        return props_RefactoringPart;
+      case 33:
+        return props_ReflectionNodeReference;
+      case 34:
+        return props_RequiredDataDeclaration;
+      case 35:
+        return props_TransformConsequence;
+      case 36:
+        return props_TransformStatement;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0mb = buildConceptIndices(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.structure.AbstractNodeReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x7e209440ba59c1e7L, "jetbrains.mps.lang.migration.structure.ClassifierMemberData"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x36182c4cf6238c95L, "jetbrains.mps.lang.migration.structure.ConceptMigrationReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6532eb7L, "jetbrains.mps.lang.migration.structure.ConsequenceFunction"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x44b28148e401c891L, "jetbrains.mps.lang.migration.structure.DataDependency"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x63476c2ad9bcd736L, "jetbrains.mps.lang.migration.structure.DataDependencyReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a58303771L, "jetbrains.mps.lang.migration.structure.DirectNodeReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f07b404L, "jetbrains.mps.lang.migration.structure.ExecuteAfterDeclaration"), MetaAdapterFactory.getInterfaceConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.structure.IMigrationUnit"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x267418e6b5c2b903L, "jetbrains.mps.lang.migration.structure.IncludeMigrationPart"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2cb3222730d5c47bL, "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x550f7de0eda8c07aL, "jetbrains.mps.lang.migration.structure.ListPatternVariableReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x66eed171c5f83bcaL, "jetbrains.mps.lang.migration.structure.MigrationScriptReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b6L, "jetbrains.mps.lang.migration.structure.MoveConcept"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b8L, "jetbrains.mps.lang.migration.structure.MoveConceptMember"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741baL, "jetbrains.mps.lang.migration.structure.MoveContainmentLink"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, "jetbrains.mps.lang.migration.structure.MoveNodeMigrationPart"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c165c5dL, "jetbrains.mps.lang.migration.structure.MoveNodeSpecialization"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b9L, "jetbrains.mps.lang.migration.structure.MoveProperty"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b7L, "jetbrains.mps.lang.migration.structure.MoveReferenceLink"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x6877ea6323b8f1a3L, "jetbrains.mps.lang.migration.structure.NodePatternVariableReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f099b7aL, "jetbrains.mps.lang.migration.structure.OrderDependency"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x50c63f9f4a0dacfbL, "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2cb3222730cfcbccL, "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x267418e6b5c2b902L, "jetbrains.mps.lang.migration.structure.PureMigrationPart"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5836cabbL, "jetbrains.mps.lang.migration.structure.PureMigrationScript"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6532d41L, "jetbrains.mps.lang.migration.structure.QuotationConsequence"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, "jetbrains.mps.lang.migration.structure.RefactoringLog"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x31ee543051f23343L, "jetbrains.mps.lang.migration.structure.RefactoringOption"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x31ee543051f23340L, "jetbrains.mps.lang.migration.structure.RefactoringOptions"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d9dL, "jetbrains.mps.lang.migration.structure.RefactoringOrderDependency"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, "jetbrains.mps.lang.migration.structure.RefactoringPart"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL, "jetbrains.mps.lang.migration.structure.ReflectionNodeReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x3d90e8d384845a8fL, "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration"), MetaAdapterFactory.getInterfaceConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ef3L, "jetbrains.mps.lang.migration.structure.TransformConsequence"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, "jetbrains.mps.lang.migration.structure.TransformStatement"));
 }

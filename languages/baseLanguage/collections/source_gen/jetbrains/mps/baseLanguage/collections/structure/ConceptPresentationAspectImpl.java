@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractContainerCreator = new ConceptPresentationBuilder().create();
@@ -186,873 +186,349 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0pg.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractContainerCreator;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_AbstractContainerType;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_AbstractEnumeratorOperation;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_AbstractIteratorOperation;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_AbstractMappingOperation;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_AbstractSetOperation;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_AddAllElementsOperation;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_AddAllSetElementsOperation;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_AddElementOperation;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_AddFirstElementOperation;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_AddLastElementOperation;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_AddSetElementOperation;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_AllConstant;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_AllOperation;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_AlsoSortOperation;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_AnyOperation;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_AsSequenceOperation;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_AsSynchronizedOperation;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_AsUnmodifiableOperation;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_BinaryOperation;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_ChunkOperation;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_ClearAllElementsOperation;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_ClearSetOperation;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_CollectionType;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_ComparatorSortOperation;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_ConcatOperation;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_ContainerIteratorType;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_ContainsAllOperation;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_ContainsKeyOperation;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_ContainsOperation;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_ContainsValueOperation;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_CustomContainerCreator;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_CustomContainerDeclaration;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_CustomContainers;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_CustomMapCreator;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_CutOperation;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_DequeType;
-          }
-          break;
-        case 37:
-          if (true) {
-            return props_DisjunctOperation;
-          }
-          break;
-        case 38:
-          if (true) {
-            return props_DistinctOperation;
-          }
-          break;
-        case 39:
-          if (true) {
-            return props_DowncastExpression;
-          }
-          break;
-        case 40:
-          if (true) {
-            return props_EnumeratorType;
-          }
-          break;
-        case 41:
-          if (true) {
-            return props_ExcludeOperation;
-          }
-          break;
-        case 42:
-          if (true) {
-            return props_FindFirstOperation;
-          }
-          break;
-        case 43:
-          if (true) {
-            return props_FindLastOperation;
-          }
-          break;
-        case 44:
-          if (true) {
-            return props_FoldLeftOperation;
-          }
-          break;
-        case 45:
-          if (true) {
-            return props_FoldRightOperation;
-          }
-          break;
-        case 46:
-          if (true) {
-            return props_ForEachStatement;
-          }
-          break;
-        case 47:
-          if (true) {
-            return props_ForEachVariable;
-          }
-          break;
-        case 48:
-          if (true) {
-            return props_ForEachVariableReference;
-          }
-          break;
-        case 49:
-          if (true) {
-            return props_GetCurrentOperation;
-          }
-          break;
-        case 50:
-          if (true) {
-            return props_GetElementOperation;
-          }
-          break;
-        case 51:
-          if (true) {
-            return props_GetEnumeratorOperation;
-          }
-          break;
-        case 52:
-          if (true) {
-            return props_GetFirstOperation;
-          }
-          break;
-        case 53:
-          if (true) {
-            return props_GetIndexOfOperation;
-          }
-          break;
-        case 54:
-          if (true) {
-            return props_GetIteratorOperation;
-          }
-          break;
-        case 55:
-          if (true) {
-            return props_GetKeysOperation;
-          }
-          break;
-        case 56:
-          if (true) {
-            return props_GetLastIndexOfOperation;
-          }
-          break;
-        case 57:
-          if (true) {
-            return props_GetLastOperation;
-          }
-          break;
-        case 58:
-          if (true) {
-            return props_GetNextOperation;
-          }
-          break;
-        case 59:
-          if (true) {
-            return props_GetSizeOperation;
-          }
-          break;
-        case 60:
-          if (true) {
-            return props_GetValuesOperation;
-          }
-          break;
-        case 61:
-          if (true) {
-            return props_HasNextOperation;
-          }
-          break;
-        case 62:
-          if (true) {
-            return props_HashMapCreator;
-          }
-          break;
-        case 63:
-          if (true) {
-            return props_HashSetCreator;
-          }
-          break;
-        case 64:
-          if (true) {
-            return props_HeadListOperation;
-          }
-          break;
-        case 65:
-          if (true) {
-            return props_HeadMapOperation;
-          }
-          break;
-        case 66:
-          if (true) {
-            return props_HeadSetOperation;
-          }
-          break;
-        case 67:
-          if (true) {
-            return props_IApplicableToCollection;
-          }
-          break;
-        case 68:
-          if (true) {
-            return props_IApplicableToDeque;
-          }
-          break;
-        case 69:
-          if (true) {
-            return props_IApplicableToList;
-          }
-          break;
-        case 70:
-          if (true) {
-            return props_IApplicableToNothing;
-          }
-          break;
-        case 71:
-          if (true) {
-            return props_IApplicableToQueue;
-          }
-          break;
-        case 72:
-          if (true) {
-            return props_IApplicableToStack;
-          }
-          break;
-        case 73:
-          if (true) {
-            return props_ICollectionOperation;
-          }
-          break;
-        case 74:
-          if (true) {
-            return props_IContainerOperation;
-          }
-          break;
-        case 75:
-          if (true) {
-            return props_IDequeOperation;
-          }
-          break;
-        case 76:
-          if (true) {
-            return props_IListOperation;
-          }
-          break;
-        case 77:
-          if (true) {
-            return props_IQueueOperation;
-          }
-          break;
-        case 78:
-          if (true) {
-            return props_IStackOperation;
-          }
-          break;
-        case 79:
-          if (true) {
-            return props_InsertElementOperation;
-          }
-          break;
-        case 80:
-          if (true) {
-            return props_InternalSequenceOperation;
-          }
-          break;
-        case 81:
-          if (true) {
-            return props_IntersectOperation;
-          }
-          break;
-        case 82:
-          if (true) {
-            return props_IsEmptyOperation;
-          }
-          break;
-        case 83:
-          if (true) {
-            return props_IsNotEmptyOperation;
-          }
-          break;
-        case 84:
-          if (true) {
-            return props_IteratorType;
-          }
-          break;
-        case 85:
-          if (true) {
-            return props_JoinOperation;
-          }
-          break;
-        case 86:
-          if (true) {
-            return props_KeyAccessOperation;
-          }
-          break;
-        case 87:
-          if (true) {
-            return props_LinkedHashMapCreator;
-          }
-          break;
-        case 88:
-          if (true) {
-            return props_LinkedHashSetCreator;
-          }
-          break;
-        case 89:
-          if (true) {
-            return props_LinkedListCreator;
-          }
-          break;
-        case 90:
-          if (true) {
-            return props_LinkedListType;
-          }
-          break;
-        case 91:
-          if (true) {
-            return props_ListCreatorWithInit;
-          }
-          break;
-        case 92:
-          if (true) {
-            return props_ListElementAccessExpression;
-          }
-          break;
-        case 93:
-          if (true) {
-            return props_ListType;
-          }
-          break;
-        case 94:
-          if (true) {
-            return props_MapAsSequenceVarRef;
-          }
-          break;
-        case 95:
-          if (true) {
-            return props_MapClearOperation;
-          }
-          break;
-        case 96:
-          if (true) {
-            return props_MapElement;
-          }
-          break;
-        case 97:
-          if (true) {
-            return props_MapEntry;
-          }
-          break;
-        case 98:
-          if (true) {
-            return props_MapInitializer;
-          }
-          break;
-        case 99:
-          if (true) {
-            return props_MapOperation;
-          }
-          break;
-        case 100:
-          if (true) {
-            return props_MapOperationExpression;
-          }
-          break;
-        case 101:
-          if (true) {
-            return props_MapRemoveOperation;
-          }
-          break;
-        case 102:
-          if (true) {
-            return props_MapType;
-          }
-          break;
-        case 103:
-          if (true) {
-            return props_MappingType;
-          }
-          break;
-        case 104:
-          if (true) {
-            return props_MappingsSetOperation;
-          }
-          break;
-        case 105:
-          if (true) {
-            return props_MoveNextOperation;
-          }
-          break;
-        case 106:
-          if (true) {
-            return props_MultiForEachPair;
-          }
-          break;
-        case 107:
-          if (true) {
-            return props_MultiForEachStatement;
-          }
-          break;
-        case 108:
-          if (true) {
-            return props_MultiForEachVariable;
-          }
-          break;
-        case 109:
-          if (true) {
-            return props_MultiForEachVariableReference;
-          }
-          break;
-        case 110:
-          if (true) {
-            return props_NoArgumentsSequenceOperation;
-          }
-          break;
-        case 111:
-          if (true) {
-            return props_OfTypeOperation;
-          }
-          break;
-        case 112:
-          if (true) {
-            return props_PageOperation;
-          }
-          break;
-        case 113:
-          if (true) {
-            return props_PeekOperation;
-          }
-          break;
-        case 114:
-          if (true) {
-            return props_PopOperation;
-          }
-          break;
-        case 115:
-          if (true) {
-            return props_PriorityQueueCreator;
-          }
-          break;
-        case 116:
-          if (true) {
-            return props_PushOperation;
-          }
-          break;
-        case 117:
-          if (true) {
-            return props_PutAllOperation;
-          }
-          break;
-        case 118:
-          if (true) {
-            return props_QueueType;
-          }
-          break;
-        case 119:
-          if (true) {
-            return props_ReduceLeftOperation;
-          }
-          break;
-        case 120:
-          if (true) {
-            return props_ReduceRightOperation;
-          }
-          break;
-        case 121:
-          if (true) {
-            return props_RemoveAllElementsOperation;
-          }
-          break;
-        case 122:
-          if (true) {
-            return props_RemoveAllSetElementsOperation;
-          }
-          break;
-        case 123:
-          if (true) {
-            return props_RemoveAtElementOperation;
-          }
-          break;
-        case 124:
-          if (true) {
-            return props_RemoveElementOperation;
-          }
-          break;
-        case 125:
-          if (true) {
-            return props_RemoveFirstElementOperation;
-          }
-          break;
-        case 126:
-          if (true) {
-            return props_RemoveLastElementOperation;
-          }
-          break;
-        case 127:
-          if (true) {
-            return props_RemoveOperation;
-          }
-          break;
-        case 128:
-          if (true) {
-            return props_RemoveSetElementOperation;
-          }
-          break;
-        case 129:
-          if (true) {
-            return props_RemoveWhereOperation;
-          }
-          break;
-        case 130:
-          if (true) {
-            return props_ReverseOperation;
-          }
-          break;
-        case 131:
-          if (true) {
-            return props_SelectOperation;
-          }
-          break;
-        case 132:
-          if (true) {
-            return props_SequenceCreator;
-          }
-          break;
-        case 133:
-          if (true) {
-            return props_SequenceOperation;
-          }
-          break;
-        case 134:
-          if (true) {
-            return props_SequenceType;
-          }
-          break;
-        case 135:
-          if (true) {
-            return props_SetElementOperation;
-          }
-          break;
-        case 136:
-          if (true) {
-            return props_SetType;
-          }
-          break;
-        case 137:
-          if (true) {
-            return props_SingleArgumentSequenceOperation;
-          }
-          break;
-        case 138:
-          if (true) {
-            return props_SingletonSequenceCreator;
-          }
-          break;
-        case 139:
-          if (true) {
-            return props_SkipOperation;
-          }
-          break;
-        case 140:
-          if (true) {
-            return props_SkipStatement;
-          }
-          break;
-        case 141:
-          if (true) {
-            return props_SmartClosureParameterDeclaration;
-          }
-          break;
-        case 142:
-          if (true) {
-            return props_SortDirection;
-          }
-          break;
-        case 143:
-          if (true) {
-            return props_SortOperation;
-          }
-          break;
-        case 144:
-          if (true) {
-            return props_SortedMapOperation;
-          }
-          break;
-        case 145:
-          if (true) {
-            return props_SortedMapType;
-          }
-          break;
-        case 146:
-          if (true) {
-            return props_SortedSetOperation;
-          }
-          break;
-        case 147:
-          if (true) {
-            return props_SortedSetType;
-          }
-          break;
-        case 148:
-          if (true) {
-            return props_StackType;
-          }
-          break;
-        case 149:
-          if (true) {
-            return props_StopStatement;
-          }
-          break;
-        case 150:
-          if (true) {
-            return props_SubListOperation;
-          }
-          break;
-        case 151:
-          if (true) {
-            return props_SubMapOperation;
-          }
-          break;
-        case 152:
-          if (true) {
-            return props_SubSetOperation;
-          }
-          break;
-        case 153:
-          if (true) {
-            return props_TailListOperation;
-          }
-          break;
-        case 154:
-          if (true) {
-            return props_TailMapOperation;
-          }
-          break;
-        case 155:
-          if (true) {
-            return props_TailOperation;
-          }
-          break;
-        case 156:
-          if (true) {
-            return props_TailSetOperation;
-          }
-          break;
-        case 157:
-          if (true) {
-            return props_TakeOperation;
-          }
-          break;
-        case 158:
-          if (true) {
-            return props_TestAddElementOperation;
-          }
-          break;
-        case 159:
-          if (true) {
-            return props_TestRemoveElementOperation;
-          }
-          break;
-        case 160:
-          if (true) {
-            return props_ToArrayOperation;
-          }
-          break;
-        case 161:
-          if (true) {
-            return props_ToIteratorOperation;
-          }
-          break;
-        case 162:
-          if (true) {
-            return props_ToListOperation;
-          }
-          break;
-        case 163:
-          if (true) {
-            return props_TranslateOperation;
-          }
-          break;
-        case 164:
-          if (true) {
-            return props_TreeMapCreator;
-          }
-          break;
-        case 165:
-          if (true) {
-            return props_TreeSetCreator;
-          }
-          break;
-        case 166:
-          if (true) {
-            return props_UnionOperation;
-          }
-          break;
-        case 167:
-          if (true) {
-            return props_ValueAccessOperation;
-          }
-          break;
-        case 168:
-          if (true) {
-            return props_VisitAllOperation;
-          }
-          break;
-        case 169:
-          if (true) {
-            return props_WhereOperation;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("83888646-71ce-4f1c-9c53-c54016f6ad4f"), "jetbrains.mps.baseLanguage.collections")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_AbstractContainerCreator;
+      case 1:
+        return props_AbstractContainerType;
+      case 2:
+        return props_AbstractEnumeratorOperation;
+      case 3:
+        return props_AbstractIteratorOperation;
+      case 4:
+        return props_AbstractMappingOperation;
+      case 5:
+        return props_AbstractSetOperation;
+      case 6:
+        return props_AddAllElementsOperation;
+      case 7:
+        return props_AddAllSetElementsOperation;
+      case 8:
+        return props_AddElementOperation;
+      case 9:
+        return props_AddFirstElementOperation;
+      case 10:
+        return props_AddLastElementOperation;
+      case 11:
+        return props_AddSetElementOperation;
+      case 12:
+        return props_AllConstant;
+      case 13:
+        return props_AllOperation;
+      case 14:
+        return props_AlsoSortOperation;
+      case 15:
+        return props_AnyOperation;
+      case 16:
+        return props_AsSequenceOperation;
+      case 17:
+        return props_AsSynchronizedOperation;
+      case 18:
+        return props_AsUnmodifiableOperation;
+      case 19:
+        return props_BinaryOperation;
+      case 20:
+        return props_ChunkOperation;
+      case 21:
+        return props_ClearAllElementsOperation;
+      case 22:
+        return props_ClearSetOperation;
+      case 23:
+        return props_CollectionType;
+      case 24:
+        return props_ComparatorSortOperation;
+      case 25:
+        return props_ConcatOperation;
+      case 26:
+        return props_ContainerIteratorType;
+      case 27:
+        return props_ContainsAllOperation;
+      case 28:
+        return props_ContainsKeyOperation;
+      case 29:
+        return props_ContainsOperation;
+      case 30:
+        return props_ContainsValueOperation;
+      case 31:
+        return props_CustomContainerCreator;
+      case 32:
+        return props_CustomContainerDeclaration;
+      case 33:
+        return props_CustomContainers;
+      case 34:
+        return props_CustomMapCreator;
+      case 35:
+        return props_CutOperation;
+      case 36:
+        return props_DequeType;
+      case 37:
+        return props_DisjunctOperation;
+      case 38:
+        return props_DistinctOperation;
+      case 39:
+        return props_DowncastExpression;
+      case 40:
+        return props_EnumeratorType;
+      case 41:
+        return props_ExcludeOperation;
+      case 42:
+        return props_FindFirstOperation;
+      case 43:
+        return props_FindLastOperation;
+      case 44:
+        return props_FoldLeftOperation;
+      case 45:
+        return props_FoldRightOperation;
+      case 46:
+        return props_ForEachStatement;
+      case 47:
+        return props_ForEachVariable;
+      case 48:
+        return props_ForEachVariableReference;
+      case 49:
+        return props_GetCurrentOperation;
+      case 50:
+        return props_GetElementOperation;
+      case 51:
+        return props_GetEnumeratorOperation;
+      case 52:
+        return props_GetFirstOperation;
+      case 53:
+        return props_GetIndexOfOperation;
+      case 54:
+        return props_GetIteratorOperation;
+      case 55:
+        return props_GetKeysOperation;
+      case 56:
+        return props_GetLastIndexOfOperation;
+      case 57:
+        return props_GetLastOperation;
+      case 58:
+        return props_GetNextOperation;
+      case 59:
+        return props_GetSizeOperation;
+      case 60:
+        return props_GetValuesOperation;
+      case 61:
+        return props_HasNextOperation;
+      case 62:
+        return props_HashMapCreator;
+      case 63:
+        return props_HashSetCreator;
+      case 64:
+        return props_HeadListOperation;
+      case 65:
+        return props_HeadMapOperation;
+      case 66:
+        return props_HeadSetOperation;
+      case 67:
+        return props_IApplicableToCollection;
+      case 68:
+        return props_IApplicableToDeque;
+      case 69:
+        return props_IApplicableToList;
+      case 70:
+        return props_IApplicableToNothing;
+      case 71:
+        return props_IApplicableToQueue;
+      case 72:
+        return props_IApplicableToStack;
+      case 73:
+        return props_ICollectionOperation;
+      case 74:
+        return props_IContainerOperation;
+      case 75:
+        return props_IDequeOperation;
+      case 76:
+        return props_IListOperation;
+      case 77:
+        return props_IQueueOperation;
+      case 78:
+        return props_IStackOperation;
+      case 79:
+        return props_InsertElementOperation;
+      case 80:
+        return props_InternalSequenceOperation;
+      case 81:
+        return props_IntersectOperation;
+      case 82:
+        return props_IsEmptyOperation;
+      case 83:
+        return props_IsNotEmptyOperation;
+      case 84:
+        return props_IteratorType;
+      case 85:
+        return props_JoinOperation;
+      case 86:
+        return props_KeyAccessOperation;
+      case 87:
+        return props_LinkedHashMapCreator;
+      case 88:
+        return props_LinkedHashSetCreator;
+      case 89:
+        return props_LinkedListCreator;
+      case 90:
+        return props_LinkedListType;
+      case 91:
+        return props_ListCreatorWithInit;
+      case 92:
+        return props_ListElementAccessExpression;
+      case 93:
+        return props_ListType;
+      case 94:
+        return props_MapAsSequenceVarRef;
+      case 95:
+        return props_MapClearOperation;
+      case 96:
+        return props_MapElement;
+      case 97:
+        return props_MapEntry;
+      case 98:
+        return props_MapInitializer;
+      case 99:
+        return props_MapOperation;
+      case 100:
+        return props_MapOperationExpression;
+      case 101:
+        return props_MapRemoveOperation;
+      case 102:
+        return props_MapType;
+      case 103:
+        return props_MappingType;
+      case 104:
+        return props_MappingsSetOperation;
+      case 105:
+        return props_MoveNextOperation;
+      case 106:
+        return props_MultiForEachPair;
+      case 107:
+        return props_MultiForEachStatement;
+      case 108:
+        return props_MultiForEachVariable;
+      case 109:
+        return props_MultiForEachVariableReference;
+      case 110:
+        return props_NoArgumentsSequenceOperation;
+      case 111:
+        return props_OfTypeOperation;
+      case 112:
+        return props_PageOperation;
+      case 113:
+        return props_PeekOperation;
+      case 114:
+        return props_PopOperation;
+      case 115:
+        return props_PriorityQueueCreator;
+      case 116:
+        return props_PushOperation;
+      case 117:
+        return props_PutAllOperation;
+      case 118:
+        return props_QueueType;
+      case 119:
+        return props_ReduceLeftOperation;
+      case 120:
+        return props_ReduceRightOperation;
+      case 121:
+        return props_RemoveAllElementsOperation;
+      case 122:
+        return props_RemoveAllSetElementsOperation;
+      case 123:
+        return props_RemoveAtElementOperation;
+      case 124:
+        return props_RemoveElementOperation;
+      case 125:
+        return props_RemoveFirstElementOperation;
+      case 126:
+        return props_RemoveLastElementOperation;
+      case 127:
+        return props_RemoveOperation;
+      case 128:
+        return props_RemoveSetElementOperation;
+      case 129:
+        return props_RemoveWhereOperation;
+      case 130:
+        return props_ReverseOperation;
+      case 131:
+        return props_SelectOperation;
+      case 132:
+        return props_SequenceCreator;
+      case 133:
+        return props_SequenceOperation;
+      case 134:
+        return props_SequenceType;
+      case 135:
+        return props_SetElementOperation;
+      case 136:
+        return props_SetType;
+      case 137:
+        return props_SingleArgumentSequenceOperation;
+      case 138:
+        return props_SingletonSequenceCreator;
+      case 139:
+        return props_SkipOperation;
+      case 140:
+        return props_SkipStatement;
+      case 141:
+        return props_SmartClosureParameterDeclaration;
+      case 142:
+        return props_SortDirection;
+      case 143:
+        return props_SortOperation;
+      case 144:
+        return props_SortedMapOperation;
+      case 145:
+        return props_SortedMapType;
+      case 146:
+        return props_SortedSetOperation;
+      case 147:
+        return props_SortedSetType;
+      case 148:
+        return props_StackType;
+      case 149:
+        return props_StopStatement;
+      case 150:
+        return props_SubListOperation;
+      case 151:
+        return props_SubMapOperation;
+      case 152:
+        return props_SubSetOperation;
+      case 153:
+        return props_TailListOperation;
+      case 154:
+        return props_TailMapOperation;
+      case 155:
+        return props_TailOperation;
+      case 156:
+        return props_TailSetOperation;
+      case 157:
+        return props_TakeOperation;
+      case 158:
+        return props_TestAddElementOperation;
+      case 159:
+        return props_TestRemoveElementOperation;
+      case 160:
+        return props_ToArrayOperation;
+      case 161:
+        return props_ToIteratorOperation;
+      case 162:
+        return props_ToListOperation;
+      case 163:
+        return props_TranslateOperation;
+      case 164:
+        return props_TreeMapCreator;
+      case 165:
+        return props_TreeSetCreator;
+      case 166:
+        return props_UnionOperation;
+      case 167:
+        return props_ValueAccessOperation;
+      case 168:
+        return props_VisitAllOperation;
+      case 169:
+        return props_WhereOperation;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0pg = buildConceptIndices(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x4eec26fcbaf8c39bL, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x12020925ee9L, "jetbrains.mps.baseLanguage.collections.structure.AbstractEnumeratorOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1201f00ef75L, "jetbrains.mps.baseLanguage.collections.structure.AbstractIteratorOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120e6ea9ddcL, "jetbrains.mps.baseLanguage.collections.structure.AbstractMappingOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d95148c3eL, "jetbrains.mps.baseLanguage.collections.structure.AbstractSetOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10e3d20dbefL, "jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d969dca87L, "jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10e39e3ff80L, "jetbrains.mps.baseLanguage.collections.structure.AddElementOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11db0384e32L, "jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11db0389d32L, "jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d9514ebd8L, "jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x12031a066ecL, "jetbrains.mps.baseLanguage.collections.structure.AllConstant"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11fad85a8f5L, "jetbrains.mps.baseLanguage.collections.structure.AllOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x85158df752ff560L, "jetbrains.mps.baseLanguage.collections.structure.AlsoSortOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11fad816cd8L, "jetbrains.mps.baseLanguage.collections.structure.AnyOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c92e6703L, "jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x3fffa24b059bcd85L, "jetbrains.mps.baseLanguage.collections.structure.AsSynchronizedOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x230f7a18a5abce80L, "jetbrains.mps.baseLanguage.collections.structure.AsUnmodifiableOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11205199ac2L, "jetbrains.mps.baseLanguage.collections.structure.BinaryOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x118bc7e66e2L, "jetbrains.mps.baseLanguage.collections.structure.ChunkOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11db03915deL, "jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11daafd2413L, "jetbrains.mps.baseLanguage.collections.structure.ClearSetOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x62e1df06bd2172b2L, "jetbrains.mps.baseLanguage.collections.structure.CollectionType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x119a966b94dL, "jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x112f6f0e9beL, "jetbrains.mps.baseLanguage.collections.structure.ConcatOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120bec64a7eL, "jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x5507720272481451L, "jetbrains.mps.baseLanguage.collections.structure.ContainsAllOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x117b3740258L, "jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x110efd61311L, "jetbrains.mps.baseLanguage.collections.structure.ContainsOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1203903c318L, "jetbrains.mps.baseLanguage.collections.structure.ContainsValueOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x127be81db92655b3L, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x54a5d587c1f3c7e0L, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x54a5d587c1f3c84cL, "jetbrains.mps.baseLanguage.collections.structure.CustomContainers"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x15e2150d4bff8a67L, "jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x118bc83b40eL, "jetbrains.mps.baseLanguage.collections.structure.CutOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x2e99e9ab97de7711L, "jetbrains.mps.baseLanguage.collections.structure.DequeType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x118b342c640L, "jetbrains.mps.baseLanguage.collections.structure.DisjunctOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1127b99dbbcL, "jetbrains.mps.baseLanguage.collections.structure.DistinctOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11df825e596L, "jetbrains.mps.baseLanguage.collections.structure.DowncastExpression"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x12020864111L, "jetbrains.mps.baseLanguage.collections.structure.EnumeratorType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x112061bbddcL, "jetbrains.mps.baseLanguage.collections.structure.ExcludeOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d6310c940L, "jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d6339caa8L, "jetbrains.mps.baseLanguage.collections.structure.FindLastOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1520010667848262L, "jetbrains.mps.baseLanguage.collections.structure.FoldLeftOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x152001066784e507L, "jetbrains.mps.baseLanguage.collections.structure.FoldRightOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6f0962L, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6fa5c3L, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1201f063174L, "jetbrains.mps.baseLanguage.collections.structure.GetCurrentOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10ec44fd67eL, "jetbrains.mps.baseLanguage.collections.structure.GetElementOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x12023af43bdL, "jetbrains.mps.baseLanguage.collections.structure.GetEnumeratorOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10f5eb70c62L, "jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x110bc593e18L, "jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1201ecef58aL, "jetbrains.mps.baseLanguage.collections.structure.GetIteratorOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x117d52db67cL, "jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x37cbb2bef55da8aeL, "jetbrains.mps.baseLanguage.collections.structure.GetLastIndexOfOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10f62ee22c8L, "jetbrains.mps.baseLanguage.collections.structure.GetLastOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1201f05703dL, "jetbrains.mps.baseLanguage.collections.structure.GetNextOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10ec4627e6fL, "jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x12039220e97L, "jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1201f035df4L, "jetbrains.mps.baseLanguage.collections.structure.HasNextOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d9210de65L, "jetbrains.mps.baseLanguage.collections.structure.HashSetCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x489c7f2006b05842L, "jetbrains.mps.baseLanguage.collections.structure.HeadListOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4071445L, "jetbrains.mps.baseLanguage.collections.structure.HeadMapOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4bdd40dL, "jetbrains.mps.baseLanguage.collections.structure.HeadSetOperation"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eef7L, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToCollection"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eefbL, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToDeque"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eef8L, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToList"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eaf6L, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eefcL, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToQueue"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eefdL, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToStack"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x3c0d0942c3fd6ec8L, "jetbrains.mps.baseLanguage.collections.structure.ICollectionOperation"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1db93187ffc4d808L, "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x5e6446aa46f18429L, "jetbrains.mps.baseLanguage.collections.structure.IDequeOperation"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1db93187ffc7e7efL, "jetbrains.mps.baseLanguage.collections.structure.IListOperation"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x6e5d0cf857f4bd6L, "jetbrains.mps.baseLanguage.collections.structure.IQueueOperation"), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x5e6446aa46f1842bL, "jetbrains.mps.baseLanguage.collections.structure.IStackOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d5cc25c8fL, "jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1120602b2e4L, "jetbrains.mps.baseLanguage.collections.structure.IntersectOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10f5f053dc7L, "jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x111ecf423b7L, "jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1201ed2b158L, "jetbrains.mps.baseLanguage.collections.structure.IteratorType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120debe16c6L, "jetbrains.mps.baseLanguage.collections.structure.JoinOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120e6f85873L, "jetbrains.mps.baseLanguage.collections.structure.KeyAccessOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c2ad6432L, "jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c2b5bbfdL, "jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11daf69a138L, "jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x2e9a0b9a890137e9L, "jetbrains.mps.baseLanguage.collections.structure.LinkedListType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10e39306c2eL, "jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d6213c318L, "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, "jetbrains.mps.baseLanguage.collections.structure.ListType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x59f2b8b299d62ef0L, "jetbrains.mps.baseLanguage.collections.structure.MapAsSequenceVarRef"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11962b7f964L, "jetbrains.mps.baseLanguage.collections.structure.MapClearOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116ea555a25L, "jetbrains.mps.baseLanguage.collections.structure.MapElement"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x118f249550fL, "jetbrains.mps.baseLanguage.collections.structure.MapEntry"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x118f2481867L, "jetbrains.mps.baseLanguage.collections.structure.MapInitializer"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x117aea47a16L, "jetbrains.mps.baseLanguage.collections.structure.MapOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x117ae10e4d9L, "jetbrains.mps.baseLanguage.collections.structure.MapOperationExpression"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11914b836a4L, "jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116db7e6bcbL, "jetbrains.mps.baseLanguage.collections.structure.MapType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120cf0ddd15L, "jetbrains.mps.baseLanguage.collections.structure.MappingType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120e8af3ac1L, "jetbrains.mps.baseLanguage.collections.structure.MappingsSetOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1201f0773d2L, "jetbrains.mps.baseLanguage.collections.structure.MoveNextOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7d7db8f4181fea15L, "jetbrains.mps.baseLanguage.collections.structure.MultiForEachPair"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7d7db8f4181fe9f2L, "jetbrains.mps.baseLanguage.collections.structure.MultiForEachStatement"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7d7db8f4181fea18L, "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariable"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x731a0dad81895f16L, "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7818f71827269adL, "jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x3fffa24b05a04797L, "jetbrains.mps.baseLanguage.collections.structure.OfTypeOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11108717200L, "jetbrains.mps.baseLanguage.collections.structure.PageOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x50486375c8941225L, "jetbrains.mps.baseLanguage.collections.structure.PeekOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x2e9a0b9a88f42ff5L, "jetbrains.mps.baseLanguage.collections.structure.PopOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x2e9a0b9a89009f6cL, "jetbrains.mps.baseLanguage.collections.structure.PriorityQueueCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x2e9a0b9a88f4311cL, "jetbrains.mps.baseLanguage.collections.structure.PushOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120ebcea0f9L, "jetbrains.mps.baseLanguage.collections.structure.PutAllOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x4eec26fcbaf74491L, "jetbrains.mps.baseLanguage.collections.structure.QueueType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x152001066783f27aL, "jetbrains.mps.baseLanguage.collections.structure.ReduceLeftOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x15200106678481b3L, "jetbrains.mps.baseLanguage.collections.structure.ReduceRightOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11154a8aed3L, "jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d96b14ae4L, "jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11db038dd8cL, "jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10fcd477695L, "jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11db0742a49L, "jetbrains.mps.baseLanguage.collections.structure.RemoveFirstElementOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11db074584bL, "jetbrains.mps.baseLanguage.collections.structure.RemoveLastElementOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120becad360L, "jetbrains.mps.baseLanguage.collections.structure.RemoveOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d968cae32L, "jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x2a691766608266ccL, "jetbrains.mps.baseLanguage.collections.structure.RemoveWhereOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x111c5da033eL, "jetbrains.mps.baseLanguage.collections.structure.ReverseOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x117e4785fdeL, "jetbrains.mps.baseLanguage.collections.structure.SelectOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d14c97b16L, "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c26c9a2d9L, "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d5e2fc7c1L, "jetbrains.mps.baseLanguage.collections.structure.SetElementOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d91cbbcd0L, "jetbrains.mps.baseLanguage.collections.structure.SetType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7818f71827244b5L, "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11fade5d82aL, "jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x111076c0538L, "jetbrains.mps.baseLanguage.collections.structure.SkipOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d16b423daL, "jetbrains.mps.baseLanguage.collections.structure.SkipStatement"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x118374464e4L, "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11257567b07L, "jetbrains.mps.baseLanguage.collections.structure.SortDirection"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x118b81cc8f6L, "jetbrains.mps.baseLanguage.collections.structure.SortOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4060180L, "jetbrains.mps.baseLanguage.collections.structure.SortedMapOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4067207L, "jetbrains.mps.baseLanguage.collections.structure.SortedMapType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4baf9d4L, "jetbrains.mps.baseLanguage.collections.structure.SortedSetOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c482dd1aL, "jetbrains.mps.baseLanguage.collections.structure.SortedSetType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x5e6446aa46ee5eecL, "jetbrains.mps.baseLanguage.collections.structure.StackType"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d17046bf4L, "jetbrains.mps.baseLanguage.collections.structure.StopStatement"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x4e2f4f8785270237L, "jetbrains.mps.baseLanguage.collections.structure.SubListOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4139de2L, "jetbrains.mps.baseLanguage.collections.structure.SubMapOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4c28b15L, "jetbrains.mps.baseLanguage.collections.structure.SubSetOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x489c7f2006b0588eL, "jetbrains.mps.baseLanguage.collections.structure.TailListOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4127c90L, "jetbrains.mps.baseLanguage.collections.structure.TailMapOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x118bc844e46L, "jetbrains.mps.baseLanguage.collections.structure.TailOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4c1050eL, "jetbrains.mps.baseLanguage.collections.structure.TailSetOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x111083dd9b7L, "jetbrains.mps.baseLanguage.collections.structure.TakeOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x4f19baa8d7926e59L, "jetbrains.mps.baseLanguage.collections.structure.TestAddElementOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x3888a033868c4fa5L, "jetbrains.mps.baseLanguage.collections.structure.TestRemoveElementOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x113e55393bdL, "jetbrains.mps.baseLanguage.collections.structure.ToArrayOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11914e10330L, "jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c26cea325L, "jetbrains.mps.baseLanguage.collections.structure.ToListOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x117d06362dcL, "jetbrains.mps.baseLanguage.collections.structure.TranslateOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c408d37aL, "jetbrains.mps.baseLanguage.collections.structure.TreeMapCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4838d33L, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11204e5336dL, "jetbrains.mps.baseLanguage.collections.structure.UnionOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120e6ec6b83L, "jetbrains.mps.baseLanguage.collections.structure.ValueAccessOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188e700c31L, "jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x117e3fd45c4L, "jetbrains.mps.baseLanguage.collections.structure.WhereOperation"));
 }

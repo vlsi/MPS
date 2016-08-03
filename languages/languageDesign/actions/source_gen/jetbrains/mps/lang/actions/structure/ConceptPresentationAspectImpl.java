@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AddMenuPart = new ConceptPresentationBuilder().create();
@@ -130,593 +130,237 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0le.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AddMenuPart;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_ConceptFunctionParameter_EditorCell;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ConceptFunctionParameter_OperationContext;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ConceptFunctionParameter_childConcept;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ConceptFunctionParameter_childSetter;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_ConceptFunctionParameter_concept;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_ConceptFunctionParameter_createdNode;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_ConceptFunctionParameter_currentTargetNode;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_ConceptFunctionParameter_link;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_ConceptFunctionParameter_nodeToCopyPreProcess;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_ConceptFunctionParameter_nodeToCopyPreProcessOriginal;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_ConceptFunctionParameter_nodeToPastePostProcess;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_ConceptFunctionParameter_nodeToPasteWrap;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_ConceptFunctionParameter_nodeToWrap;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_ConceptFunctionParameter_parameterObject;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_ConceptFunctionParameter_parentNode;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_ConceptFunctionParameter_pattern;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_ConceptFunctionParameter_result;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_ConceptFunctionParameter_sourceNode;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_ConceptFunctionParameter_strictly;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_ConceptFunctionParameter_targetNode;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_ConceptFunctionParameter_wrapped;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_ConceptPart;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_ConceptRightTransformPart;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_ConceptSubstitutePart;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_ConceptsSubstituteMenuPart;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_CopyPasteHandlers;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_CopyPreProcessFunction;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_CopyPreProcessor;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_ExecuteSmartActionFunction;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_GenerateCodeAction;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_GenericSubstituteMenuPart;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_GetActionUIFunction;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_ISideTransform_String;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_ISubstitute_String;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_IncludeRightTransformForNodePart;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_IsSmartActionApplicableFunction;
-          }
-          break;
-        case 37:
-          if (true) {
-            return props_MenuPart;
-          }
-          break;
-        case 38:
-          if (true) {
-            return props_NF_Concept_NewInstance;
-          }
-          break;
-        case 39:
-          if (true) {
-            return props_NF_LinkList_AddNewChildOperation;
-          }
-          break;
-        case 40:
-          if (true) {
-            return props_NF_Link_SetNewChildOperation;
-          }
-          break;
-        case 41:
-          if (true) {
-            return props_NF_Model_CreateNewNodeOperation;
-          }
-          break;
-        case 42:
-          if (true) {
-            return props_NF_Model_CreateNewRootNodeOperation;
-          }
-          break;
-        case 43:
-          if (true) {
-            return props_NF_Node_InsertNewNextSiblingOperation;
-          }
-          break;
-        case 44:
-          if (true) {
-            return props_NF_Node_InsertNewPrevSiblingOperation;
-          }
-          break;
-        case 45:
-          if (true) {
-            return props_NF_Node_ReplaceWithNewOperation;
-          }
-          break;
-        case 46:
-          if (true) {
-            return props_NodeFactories;
-          }
-          break;
-        case 47:
-          if (true) {
-            return props_NodeFactory;
-          }
-          break;
-        case 48:
-          if (true) {
-            return props_NodeSetupFunction;
-          }
-          break;
-        case 49:
-          if (true) {
-            return props_NodeSetupFunction_EnclosingNode;
-          }
-          break;
-        case 50:
-          if (true) {
-            return props_NodeSetupFunction_NewNode;
-          }
-          break;
-        case 51:
-          if (true) {
-            return props_NodeSetupFunction_SampleNode;
-          }
-          break;
-        case 52:
-          if (true) {
-            return props_NodeSubstituteActions;
-          }
-          break;
-        case 53:
-          if (true) {
-            return props_NodeSubstituteActionsBuilder;
-          }
-          break;
-        case 54:
-          if (true) {
-            return props_NodeSubstituteMenuBuilderPart;
-          }
-          break;
-        case 55:
-          if (true) {
-            return props_NodeSubstitutePreconditionFunction;
-          }
-          break;
-        case 56:
-          if (true) {
-            return props_ParameterizedSideTransformMenuPart;
-          }
-          break;
-        case 57:
-          if (true) {
-            return props_ParameterizedSubstituteMenuPart;
-          }
-          break;
-        case 58:
-          if (true) {
-            return props_PastePostProcessFunction;
-          }
-          break;
-        case 59:
-          if (true) {
-            return props_PastePostProcessor;
-          }
-          break;
-        case 60:
-          if (true) {
-            return props_PasteWrapper;
-          }
-          break;
-        case 61:
-          if (true) {
-            return props_PasteWrappers;
-          }
-          break;
-        case 62:
-          if (true) {
-            return props_QueryFunction_ActionType;
-          }
-          break;
-        case 63:
-          if (true) {
-            return props_QueryFunction_CanSubstitute;
-          }
-          break;
-        case 64:
-          if (true) {
-            return props_QueryFunction_GenericSubstituteMenuPart;
-          }
-          break;
-        case 65:
-          if (true) {
-            return props_QueryFunction_IconNode;
-          }
-          break;
-        case 66:
-          if (true) {
-            return props_QueryFunction_ParameterizedSideTransform_Handler;
-          }
-          break;
-        case 67:
-          if (true) {
-            return props_QueryFunction_ParameterizedSideTransform_Query;
-          }
-          break;
-        case 68:
-          if (true) {
-            return props_QueryFunction_ParameterizedSubstitute_Handler;
-          }
-          break;
-        case 69:
-          if (true) {
-            return props_QueryFunction_ParameterizedSubstitute_Icon;
-          }
-          break;
-        case 70:
-          if (true) {
-            return props_QueryFunction_ParameterizedSubstitute_Query;
-          }
-          break;
-        case 71:
-          if (true) {
-            return props_QueryFunction_ParameterizedSubstitute_String;
-          }
-          break;
-        case 72:
-          if (true) {
-            return props_QueryFunction_PasteWrapper;
-          }
-          break;
-        case 73:
-          if (true) {
-            return props_QueryFunction_RemoveBy_Condition;
-          }
-          break;
-        case 74:
-          if (true) {
-            return props_QueryFunction_ReturnSmallPart;
-          }
-          break;
-        case 75:
-          if (true) {
-            return props_QueryFunction_STVariableInitializer;
-          }
-          break;
-        case 76:
-          if (true) {
-            return props_QueryFunction_ST_CommonInitializer;
-          }
-          break;
-        case 77:
-          if (true) {
-            return props_QueryFunction_ST_RemoveBy_Condition;
-          }
-          break;
-        case 78:
-          if (true) {
-            return props_QueryFunction_SideTransform_ConceptHandler;
-          }
-          break;
-        case 79:
-          if (true) {
-            return props_QueryFunction_SideTransform_Handler;
-          }
-          break;
-        case 80:
-          if (true) {
-            return props_QueryFunction_SideTransform_Icon;
-          }
-          break;
-        case 81:
-          if (true) {
-            return props_QueryFunction_SideTransform_NodeQuery;
-          }
-          break;
-        case 82:
-          if (true) {
-            return props_QueryFunction_SideTransform_String;
-          }
-          break;
-        case 83:
-          if (true) {
-            return props_QueryFunction_SubstituteIcon;
-          }
-          break;
-        case 84:
-          if (true) {
-            return props_QueryFunction_SubstituteString;
-          }
-          break;
-        case 85:
-          if (true) {
-            return props_QueryFunction_SubstituteVariableInitializer;
-          }
-          break;
-        case 86:
-          if (true) {
-            return props_QueryFunction_SubstituteWrapper;
-          }
-          break;
-        case 87:
-          if (true) {
-            return props_QueryFunction_Substitute_CommonInitializer;
-          }
-          break;
-        case 88:
-          if (true) {
-            return props_QueryFunction_Substitute_Handler;
-          }
-          break;
-        case 89:
-          if (true) {
-            return props_QueryFunction_Substitute_SelectionHandler;
-          }
-          break;
-        case 90:
-          if (true) {
-            return props_RemoveByConditionPart;
-          }
-          break;
-        case 91:
-          if (true) {
-            return props_RemoveDefaultsPart;
-          }
-          break;
-        case 92:
-          if (true) {
-            return props_RemovePart;
-          }
-          break;
-        case 93:
-          if (true) {
-            return props_RemoveSTByConditionPart;
-          }
-          break;
-        case 94:
-          if (true) {
-            return props_SNodeCreatorAndInitializer;
-          }
-          break;
-        case 95:
-          if (true) {
-            return props_SideTransformHintSubstituteActions;
-          }
-          break;
-        case 96:
-          if (true) {
-            return props_SideTransformHintSubstituteActionsBuilder;
-          }
-          break;
-        case 97:
-          if (true) {
-            return props_SideTransformHintSubstitutePreconditionFunction;
-          }
-          break;
-        case 98:
-          if (true) {
-            return props_SideTransformMenuBuilderPart;
-          }
-          break;
-        case 99:
-          if (true) {
-            return props_SideTransformMenuPart;
-          }
-          break;
-        case 100:
-          if (true) {
-            return props_SideTransformVariableDeclaration;
-          }
-          break;
-        case 101:
-          if (true) {
-            return props_SideTransformVariableReference;
-          }
-          break;
-        case 102:
-          if (true) {
-            return props_SideTransform_SimpleString;
-          }
-          break;
-        case 103:
-          if (true) {
-            return props_SimpleItemSubstitutePart;
-          }
-          break;
-        case 104:
-          if (true) {
-            return props_SimpleSideTransformMenuPart;
-          }
-          break;
-        case 105:
-          if (true) {
-            return props_SmartActionParameter;
-          }
-          break;
-        case 106:
-          if (true) {
-            return props_SmartActionParameterReference;
-          }
-          break;
-        case 107:
-          if (true) {
-            return props_SmartEditorActions;
-          }
-          break;
-        case 108:
-          if (true) {
-            return props_SubstituteMenuPart;
-          }
-          break;
-        case 109:
-          if (true) {
-            return props_SubstituteNodeBuilderVariableDeclaration;
-          }
-          break;
-        case 110:
-          if (true) {
-            return props_SubstituteNodeBuilderVariableReference;
-          }
-          break;
-        case 111:
-          if (true) {
-            return props_Substitute_SimpleString;
-          }
-          break;
-        case 112:
-          if (true) {
-            return props_SurroundWithAction;
-          }
-          break;
-        case 113:
-          if (true) {
-            return props_WrapperSubstituteMenuPart;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("aee9cad2-acd4-4608-aef2-0004f6a1cdbd"), "jetbrains.mps.lang.actions")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_AddMenuPart;
+      case 1:
+        return props_ConceptFunctionParameter_EditorCell;
+      case 2:
+        return props_ConceptFunctionParameter_OperationContext;
+      case 3:
+        return props_ConceptFunctionParameter_childConcept;
+      case 4:
+        return props_ConceptFunctionParameter_childSetter;
+      case 5:
+        return props_ConceptFunctionParameter_concept;
+      case 6:
+        return props_ConceptFunctionParameter_createdNode;
+      case 7:
+        return props_ConceptFunctionParameter_currentTargetNode;
+      case 8:
+        return props_ConceptFunctionParameter_link;
+      case 9:
+        return props_ConceptFunctionParameter_nodeToCopyPreProcess;
+      case 10:
+        return props_ConceptFunctionParameter_nodeToCopyPreProcessOriginal;
+      case 11:
+        return props_ConceptFunctionParameter_nodeToPastePostProcess;
+      case 12:
+        return props_ConceptFunctionParameter_nodeToPasteWrap;
+      case 13:
+        return props_ConceptFunctionParameter_nodeToWrap;
+      case 14:
+        return props_ConceptFunctionParameter_parameterObject;
+      case 15:
+        return props_ConceptFunctionParameter_parentNode;
+      case 16:
+        return props_ConceptFunctionParameter_pattern;
+      case 17:
+        return props_ConceptFunctionParameter_result;
+      case 18:
+        return props_ConceptFunctionParameter_sourceNode;
+      case 19:
+        return props_ConceptFunctionParameter_strictly;
+      case 20:
+        return props_ConceptFunctionParameter_targetNode;
+      case 21:
+        return props_ConceptFunctionParameter_wrapped;
+      case 22:
+        return props_ConceptPart;
+      case 23:
+        return props_ConceptRightTransformPart;
+      case 24:
+        return props_ConceptSubstitutePart;
+      case 25:
+        return props_ConceptsSubstituteMenuPart;
+      case 26:
+        return props_CopyPasteHandlers;
+      case 27:
+        return props_CopyPreProcessFunction;
+      case 28:
+        return props_CopyPreProcessor;
+      case 29:
+        return props_ExecuteSmartActionFunction;
+      case 30:
+        return props_GenerateCodeAction;
+      case 31:
+        return props_GenericSubstituteMenuPart;
+      case 32:
+        return props_GetActionUIFunction;
+      case 33:
+        return props_ISideTransform_String;
+      case 34:
+        return props_ISubstitute_String;
+      case 35:
+        return props_IncludeRightTransformForNodePart;
+      case 36:
+        return props_IsSmartActionApplicableFunction;
+      case 37:
+        return props_MenuPart;
+      case 38:
+        return props_NF_Concept_NewInstance;
+      case 39:
+        return props_NF_LinkList_AddNewChildOperation;
+      case 40:
+        return props_NF_Link_SetNewChildOperation;
+      case 41:
+        return props_NF_Model_CreateNewNodeOperation;
+      case 42:
+        return props_NF_Model_CreateNewRootNodeOperation;
+      case 43:
+        return props_NF_Node_InsertNewNextSiblingOperation;
+      case 44:
+        return props_NF_Node_InsertNewPrevSiblingOperation;
+      case 45:
+        return props_NF_Node_ReplaceWithNewOperation;
+      case 46:
+        return props_NodeFactories;
+      case 47:
+        return props_NodeFactory;
+      case 48:
+        return props_NodeSetupFunction;
+      case 49:
+        return props_NodeSetupFunction_EnclosingNode;
+      case 50:
+        return props_NodeSetupFunction_NewNode;
+      case 51:
+        return props_NodeSetupFunction_SampleNode;
+      case 52:
+        return props_NodeSubstituteActions;
+      case 53:
+        return props_NodeSubstituteActionsBuilder;
+      case 54:
+        return props_NodeSubstituteMenuBuilderPart;
+      case 55:
+        return props_NodeSubstitutePreconditionFunction;
+      case 56:
+        return props_ParameterizedSideTransformMenuPart;
+      case 57:
+        return props_ParameterizedSubstituteMenuPart;
+      case 58:
+        return props_PastePostProcessFunction;
+      case 59:
+        return props_PastePostProcessor;
+      case 60:
+        return props_PasteWrapper;
+      case 61:
+        return props_PasteWrappers;
+      case 62:
+        return props_QueryFunction_ActionType;
+      case 63:
+        return props_QueryFunction_CanSubstitute;
+      case 64:
+        return props_QueryFunction_GenericSubstituteMenuPart;
+      case 65:
+        return props_QueryFunction_IconNode;
+      case 66:
+        return props_QueryFunction_ParameterizedSideTransform_Handler;
+      case 67:
+        return props_QueryFunction_ParameterizedSideTransform_Query;
+      case 68:
+        return props_QueryFunction_ParameterizedSubstitute_Handler;
+      case 69:
+        return props_QueryFunction_ParameterizedSubstitute_Icon;
+      case 70:
+        return props_QueryFunction_ParameterizedSubstitute_Query;
+      case 71:
+        return props_QueryFunction_ParameterizedSubstitute_String;
+      case 72:
+        return props_QueryFunction_PasteWrapper;
+      case 73:
+        return props_QueryFunction_RemoveBy_Condition;
+      case 74:
+        return props_QueryFunction_ReturnSmallPart;
+      case 75:
+        return props_QueryFunction_STVariableInitializer;
+      case 76:
+        return props_QueryFunction_ST_CommonInitializer;
+      case 77:
+        return props_QueryFunction_ST_RemoveBy_Condition;
+      case 78:
+        return props_QueryFunction_SideTransform_ConceptHandler;
+      case 79:
+        return props_QueryFunction_SideTransform_Handler;
+      case 80:
+        return props_QueryFunction_SideTransform_Icon;
+      case 81:
+        return props_QueryFunction_SideTransform_NodeQuery;
+      case 82:
+        return props_QueryFunction_SideTransform_String;
+      case 83:
+        return props_QueryFunction_SubstituteIcon;
+      case 84:
+        return props_QueryFunction_SubstituteString;
+      case 85:
+        return props_QueryFunction_SubstituteVariableInitializer;
+      case 86:
+        return props_QueryFunction_SubstituteWrapper;
+      case 87:
+        return props_QueryFunction_Substitute_CommonInitializer;
+      case 88:
+        return props_QueryFunction_Substitute_Handler;
+      case 89:
+        return props_QueryFunction_Substitute_SelectionHandler;
+      case 90:
+        return props_RemoveByConditionPart;
+      case 91:
+        return props_RemoveDefaultsPart;
+      case 92:
+        return props_RemovePart;
+      case 93:
+        return props_RemoveSTByConditionPart;
+      case 94:
+        return props_SNodeCreatorAndInitializer;
+      case 95:
+        return props_SideTransformHintSubstituteActions;
+      case 96:
+        return props_SideTransformHintSubstituteActionsBuilder;
+      case 97:
+        return props_SideTransformHintSubstitutePreconditionFunction;
+      case 98:
+        return props_SideTransformMenuBuilderPart;
+      case 99:
+        return props_SideTransformMenuPart;
+      case 100:
+        return props_SideTransformVariableDeclaration;
+      case 101:
+        return props_SideTransformVariableReference;
+      case 102:
+        return props_SideTransform_SimpleString;
+      case 103:
+        return props_SimpleItemSubstitutePart;
+      case 104:
+        return props_SimpleSideTransformMenuPart;
+      case 105:
+        return props_SmartActionParameter;
+      case 106:
+        return props_SmartActionParameterReference;
+      case 107:
+        return props_SmartEditorActions;
+      case 108:
+        return props_SubstituteMenuPart;
+      case 109:
+        return props_SubstituteNodeBuilderVariableDeclaration;
+      case 110:
+        return props_SubstituteNodeBuilderVariableReference;
+      case 111:
+        return props_Substitute_SimpleString;
+      case 112:
+        return props_SurroundWithAction;
+      case 113:
+        return props_WrapperSubstituteMenuPart;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0le = buildConceptIndices(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121dfa84e4L, "jetbrains.mps.lang.actions.structure.AddMenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8f120523L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_EditorCell"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8f139b1dL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_OperationContext"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112387cf896L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childConcept"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1175fd19500L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childSetter"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112235845abL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_concept"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x61f403867e2f6f6L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_createdNode"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122c8bef38L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11c6f1d424dL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_link"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3326034L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcess"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3326068L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x53a34ae13c0d287bL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPastePostProcess"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11c51740034L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPasteWrap"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11222aa8df0L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToWrap"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121ecda6bbL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10ccb7e17b2L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121e2c89d1L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122a0d061aL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112284c7b8bL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11976233a0aL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_strictly"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x4b4c9b482992dc34L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_targetNode"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11ad991846fL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_wrapped"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121e8bfbfdL, "jetbrains.mps.lang.actions.structure.ConceptPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1136583873dL, "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112c58682cfL, "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122264243cL, "jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3383e1eL, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3317b9fL, "jetbrains.mps.lang.actions.structure.CopyPreProcessFunction"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3311946L, "jetbrains.mps.lang.actions.structure.CopyPreProcessor"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8f52c18fL, "jetbrains.mps.lang.actions.structure.ExecuteSmartActionFunction"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8eca117bL, "jetbrains.mps.lang.actions.structure.GenerateCodeAction"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1175fc5138eL, "jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8f5118d4L, "jetbrains.mps.lang.actions.structure.GetActionUIFunction"), MetaAdapterFactory.getInterfaceConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1169101ee91L, "jetbrains.mps.lang.actions.structure.ISideTransform_String"), MetaAdapterFactory.getInterfaceConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11691102070L, "jetbrains.mps.lang.actions.structure.ISubstitute_String"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112c41b4114L, "jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8effcd77L, "jetbrains.mps.lang.actions.structure.IsSmartActionApplicableFunction"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122837a3cdL, "jetbrains.mps.lang.actions.structure.MenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x6bea674d717de5f4L, "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0xaa57300a39f8701L, "jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0xaa57300a39f86feL, "jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x4c0fd74709e9e128L, "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x4c0fd74709e9f70cL, "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0xaa57300a39f86f8L, "jetbrains.mps.lang.actions.structure.NF_Node_InsertNewNextSiblingOperation"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0xaa57300a39f86faL, "jetbrains.mps.lang.actions.structure.NF_Node_InsertNewPrevSiblingOperation"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0xaa57300a39f86fcL, "jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f106b2L, "jetbrains.mps.lang.actions.structure.NodeFactories"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f1f421L, "jetbrains.mps.lang.actions.structure.NodeFactory"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f89eecL, "jetbrains.mps.lang.actions.structure.NodeSetupFunction"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x4d7fc32c166cf35eL, "jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x4d7fc32c166cd43fL, "jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x4d7fc32c166cf25dL, "jetbrains.mps.lang.actions.structure.NodeSetupFunction_SampleNode"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebc25367L, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder"), MetaAdapterFactory.getInterfaceConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x743255fa452e1d4eL, "jetbrains.mps.lang.actions.structure.NodeSubstituteMenuBuilderPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10ccb7b7b84L, "jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11228fddb03L, "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121ecab8a6L, "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x53a34ae13c0cee4fL, "jetbrains.mps.lang.actions.structure.PastePostProcessFunction"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7d4ebb4f893516cL, "jetbrains.mps.lang.actions.structure.PastePostProcessor"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11c51563250L, "jetbrains.mps.lang.actions.structure.PasteWrapper"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11c51553d4eL, "jetbrains.mps.lang.actions.structure.PasteWrappers"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11e73a269d4L, "jetbrains.mps.lang.actions.structure.QueryFunction_ActionType"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121e2acf26L, "jetbrains.mps.lang.actions.structure.QueryFunction_CanSubstitute"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1175fc590cfL, "jetbrains.mps.lang.actions.structure.QueryFunction_GenericSubstituteMenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x58d3fff801434049L, "jetbrains.mps.lang.actions.structure.QueryFunction_IconNode"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122905dd10L, "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Handler"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11228ff0cb4L, "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Query"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121ee2e40fL, "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Handler"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1181cb91355L, "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Icon"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121ece8624L, "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121ee13382L, "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11c51746008L, "jetbrains.mps.lang.actions.structure.QueryFunction_PasteWrapper"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11223572c26L, "jetbrains.mps.lang.actions.structure.QueryFunction_RemoveBy_Condition"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x118ccd8c942L, "jetbrains.mps.lang.actions.structure.QueryFunction_ReturnSmallPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1182d1b57deL, "jetbrains.mps.lang.actions.structure.QueryFunction_STVariableInitializer"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1182d37f835L, "jetbrains.mps.lang.actions.structure.QueryFunction_ST_CommonInitializer"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x116cdd863ddL, "jetbrains.mps.lang.actions.structure.QueryFunction_ST_RemoveBy_Condition"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122a0de432L, "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112285d125eL, "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1181cc7eba9L, "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Icon"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11266483c18L, "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112285ab108L, "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1181cbf9d29L, "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteIcon"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121eb0d54dL, "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteString"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1129d121a7cL, "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteVariableInitializer"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11222a97b92L, "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteWrapper"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11274dc9ebaL, "jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_CommonInitializer"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121e310c5dL, "jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x61f4038641e3123L, "jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_SelectionHandler"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11223561225L, "jetbrains.mps.lang.actions.structure.RemoveByConditionPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122f4e71c0L, "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122318438cL, "jetbrains.mps.lang.actions.structure.RemovePart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x116cddb8de5L, "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x52fd3043dd42f3a9L, "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108fad1c116L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10cd4def236L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction"), MetaAdapterFactory.getInterfaceConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x743255fa452e1995L, "jetbrains.mps.lang.actions.structure.SideTransformMenuBuilderPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112283d3033L, "jetbrains.mps.lang.actions.structure.SideTransformMenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1182d1a6565L, "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1182d21ed8dL, "jetbrains.mps.lang.actions.structure.SideTransformVariableReference"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1169104df47L, "jetbrains.mps.lang.actions.structure.SideTransform_SimpleString"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121e328443L, "jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122859d0ecL, "jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8eeedcb4L, "jetbrains.mps.lang.actions.structure.SmartActionParameter"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8ef01705L, "jetbrains.mps.lang.actions.structure.SmartActionParameterReference"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8ec8c7e9L, "jetbrains.mps.lang.actions.structure.SmartEditorActions"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121df5451bL, "jetbrains.mps.lang.actions.structure.SubstituteMenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11266742db0L, "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112668f8fe4L, "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableReference"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x116910ff20bL, "jetbrains.mps.lang.actions.structure.Substitute_SimpleString"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8ec99f09L, "jetbrains.mps.lang.actions.structure.SurroundWithAction"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11222a8b06bL, "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"));
 }

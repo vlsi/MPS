@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AfterPosition = new ConceptPresentationBuilder().create();
@@ -50,193 +50,77 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0jb.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AfterPosition;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_BaseEmitJumpStatement;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_BaseEmitVariableStatement;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_BaseInstructionOperation;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_BeforePosition;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_BooleanInstructionOperation;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_BuilderBlock;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_DataFlowBuilderDeclaration;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_EmitCodeForStatement;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_EmitIfJumpStatement;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_EmitJumpStatement;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_EmitLabelStatement;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_EmitMayBeUnreachable;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_EmitNopStatement;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_EmitReadStatement;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_EmitRetStatement;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_EmitStatement;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_EmitTryFinallyStatement;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_EmitWriteStatement;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_GetCodeForExpression;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_IBuilderMode;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_InsertAfter;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_InsertBefore;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_InsertPosition;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_InstructionGetSourceOperation;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_InstructionIsJump;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_InstructionIsNop;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_InstructionIsRet;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_InstructionType;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_IntraProcedural_BuilderMode;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_LabelPosition;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_NodeParameter;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_Position;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_RelativePosition;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("7fa12e9c-b949-4976-b4fa-19accbc320b4"), "jetbrains.mps.lang.dataFlow")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_AfterPosition;
+      case 1:
+        return props_BaseEmitJumpStatement;
+      case 2:
+        return props_BaseEmitVariableStatement;
+      case 3:
+        return props_BaseInstructionOperation;
+      case 4:
+        return props_BeforePosition;
+      case 5:
+        return props_BooleanInstructionOperation;
+      case 6:
+        return props_BuilderBlock;
+      case 7:
+        return props_DataFlowBuilderDeclaration;
+      case 8:
+        return props_EmitCodeForStatement;
+      case 9:
+        return props_EmitIfJumpStatement;
+      case 10:
+        return props_EmitJumpStatement;
+      case 11:
+        return props_EmitLabelStatement;
+      case 12:
+        return props_EmitMayBeUnreachable;
+      case 13:
+        return props_EmitNopStatement;
+      case 14:
+        return props_EmitReadStatement;
+      case 15:
+        return props_EmitRetStatement;
+      case 16:
+        return props_EmitStatement;
+      case 17:
+        return props_EmitTryFinallyStatement;
+      case 18:
+        return props_EmitWriteStatement;
+      case 19:
+        return props_GetCodeForExpression;
+      case 20:
+        return props_IBuilderMode;
+      case 21:
+        return props_InsertAfter;
+      case 22:
+        return props_InsertBefore;
+      case 23:
+        return props_InsertPosition;
+      case 24:
+        return props_InstructionGetSourceOperation;
+      case 25:
+        return props_InstructionIsJump;
+      case 26:
+        return props_InstructionIsNop;
+      case 27:
+        return props_InstructionIsRet;
+      case 28:
+        return props_InstructionType;
+      case 29:
+        return props_IntraProcedural_BuilderMode;
+      case 30:
+        return props_LabelPosition;
+      case 31:
+        return props_NodeParameter;
+      case 32:
+        return props_Position;
+      case 33:
+        return props_RelativePosition;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0jb = buildConceptIndices(MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5bb091aL, "jetbrains.mps.lang.dataFlow.structure.AfterPosition"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5bc8a99L, "jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5b40208L, "jetbrains.mps.lang.dataFlow.structure.BaseEmitVariableStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x194dbbd57c9dbb65L, "jetbrains.mps.lang.dataFlow.structure.BaseInstructionOperation"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5bad3a1L, "jetbrains.mps.lang.dataFlow.structure.BeforePosition"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x63a490c22d094d63L, "jetbrains.mps.lang.dataFlow.structure.BooleanInstructionOperation"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5960f51L, "jetbrains.mps.lang.dataFlow.structure.BuilderBlock"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e643e7efL, "jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5be47c5L, "jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5be8165L, "jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x1190a87adadL, "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118eb0b6674L, "jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a554f4L, "jetbrains.mps.lang.dataFlow.structure.EmitNopStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a7d02aL, "jetbrains.mps.lang.dataFlow.structure.EmitReadStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e6ca4377L, "jetbrains.mps.lang.dataFlow.structure.EmitRetStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a42658L, "jetbrains.mps.lang.dataFlow.structure.EmitStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x119043714f5L, "jetbrains.mps.lang.dataFlow.structure.EmitTryFinallyStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5afd8deL, "jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x2912c3e08c4f3324L, "jetbrains.mps.lang.dataFlow.structure.GetCodeForExpression"), MetaAdapterFactory.getInterfaceConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x6e8db6877fc9fed4L, "jetbrains.mps.lang.dataFlow.structure.IBuilderMode"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x75c73261efe5e662L, "jetbrains.mps.lang.dataFlow.structure.InsertAfter"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x75c73261efe5e664L, "jetbrains.mps.lang.dataFlow.structure.InsertBefore"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x75c73261efe5e666L, "jetbrains.mps.lang.dataFlow.structure.InsertPosition"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x194dbbd57c9dbb64L, "jetbrains.mps.lang.dataFlow.structure.InstructionGetSourceOperation"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x797fabdf814e7af5L, "jetbrains.mps.lang.dataFlow.structure.InstructionIsJump"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x63a490c22d094d5cL, "jetbrains.mps.lang.dataFlow.structure.InstructionIsNop"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x63a490c22d094d5dL, "jetbrains.mps.lang.dataFlow.structure.InstructionIsRet"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x44f5e79f9e613080L, "jetbrains.mps.lang.dataFlow.structure.InstructionType"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x6e8db6877fc9fed5L, "jetbrains.mps.lang.dataFlow.structure.IntraProcedural_BuilderMode"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x1190a8b1526L, "jetbrains.mps.lang.dataFlow.structure.LabelPosition"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e597667fL, "jetbrains.mps.lang.dataFlow.structure.NodeParameter"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5b7dfc0L, "jetbrains.mps.lang.dataFlow.structure.Position"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5b86667L, "jetbrains.mps.lang.dataFlow.structure.RelativePosition"));
 }

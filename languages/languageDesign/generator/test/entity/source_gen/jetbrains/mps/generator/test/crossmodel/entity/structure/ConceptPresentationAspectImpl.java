@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_Entry = new ConceptPresentationBuilder().create();
@@ -19,38 +19,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0e.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_Entry;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_NodeA;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_TrivialKeeper;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("4d14758c-3ecb-486d-b8c8-ea5beb8ae408"), "jetbrains.mps.generator.test.crossmodel.entity")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_Entry;
+      case 1:
+        return props_NodeA;
+      case 2:
+        return props_TrivialKeeper;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, 0x3c70a9e3bda965f6L, "jetbrains.mps.generator.test.crossmodel.entity.structure.Entry"), MetaAdapterFactory.getConcept(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, 0x3c70a9e3bda96463L, "jetbrains.mps.generator.test.crossmodel.entity.structure.NodeA"), MetaAdapterFactory.getConcept(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, 0x7bb9ef7499a8e15dL, "jetbrains.mps.generator.test.crossmodel.entity.structure.TrivialKeeper"));
 }

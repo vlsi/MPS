@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ExpressionToReduceToStatement = new ConceptPresentationBuilder().create();
@@ -29,88 +29,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0o.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_ExpressionToReduceToStatement;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_InputNode;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_InputNode_A;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_InputNode_B;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_InputNode_C;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_InputRoot;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_InputRootWithStatementList;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_RefTestClass;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_RefTestExpression;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_RefTestMethod;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_RefTestMethodCall;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_RefTestParam;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_RefTestParamRef;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("ab0ae915-e3b5-4f35-b55a-c655d649a03c"), "jetbrains.mps.transformation.test.inputLang")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_ExpressionToReduceToStatement;
+      case 1:
+        return props_InputNode;
+      case 2:
+        return props_InputNode_A;
+      case 3:
+        return props_InputNode_B;
+      case 4:
+        return props_InputNode_C;
+      case 5:
+        return props_InputRoot;
+      case 6:
+        return props_InputRootWithStatementList;
+      case 7:
+        return props_RefTestClass;
+      case 8:
+        return props_RefTestExpression;
+      case 9:
+        return props_RefTestMethod;
+      case 10:
+        return props_RefTestMethodCall;
+      case 11:
+        return props_RefTestParam;
+      case 12:
+        return props_RefTestParamRef;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0o = buildConceptIndices(MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11986c01fc7L, "jetbrains.mps.transformation.test.inputLang.structure.ExpressionToReduceToStatement"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645a1114eL, "jetbrains.mps.transformation.test.inputLang.structure.InputNode"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645be5a7aL, "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x118e69cb58aL, "jetbrains.mps.transformation.test.inputLang.structure.InputNode_B"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x118e6cad46aL, "jetbrains.mps.transformation.test.inputLang.structure.InputNode_C"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11986ebf992L, "jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995dfbL, "jetbrains.mps.transformation.test.inputLang.structure.RefTestClass"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e01L, "jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995dfeL, "jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e09L, "jetbrains.mps.transformation.test.inputLang.structure.RefTestMethodCall"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e00L, "jetbrains.mps.transformation.test.inputLang.structure.RefTestParam"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e07L, "jetbrains.mps.transformation.test.inputLang.structure.RefTestParamRef"));
 }

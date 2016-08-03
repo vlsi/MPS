@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_C1 = new ConceptPresentationBuilder().create();
@@ -23,58 +23,23 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0i.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_C1;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_C2;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_C3;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_C4;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_I;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_I1;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_I2;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("2b679aa1-c9e8-4a47-84b9-ce94c2202df5"), "BHL4")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_C1;
+      case 1:
+        return props_C2;
+      case 2:
+        return props_C3;
+      case 3:
+        return props_C4;
+      case 4:
+        return props_I;
+      case 5:
+        return props_I1;
+      case 6:
+        return props_I2;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495a9L, "BHL4.structure.C1"), MetaAdapterFactory.getConcept(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6c7dcb937b144615L, "BHL4.structure.C2"), MetaAdapterFactory.getConcept(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6c7dcb937b14482aL, "BHL4.structure.C3"), MetaAdapterFactory.getConcept(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x3f852a67e912f9d9L, "BHL4.structure.C4"), MetaAdapterFactory.getInterfaceConcept(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495a3L, "BHL4.structure.I"), MetaAdapterFactory.getInterfaceConcept(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495aaL, "BHL4.structure.I1"), MetaAdapterFactory.getInterfaceConcept(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495adL, "BHL4.structure.I2"));
 }

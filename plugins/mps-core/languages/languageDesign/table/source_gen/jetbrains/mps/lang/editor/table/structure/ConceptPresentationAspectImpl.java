@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_CellModel_HierarchycalTable = new ConceptPresentationBuilder().create();
@@ -19,38 +19,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0e.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_CellModel_HierarchycalTable;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_CellModel_Table;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_QueryFunction_TableModel;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("0272d3b4-4cc8-481e-9e2f-07793fbfcb41"), "jetbrains.mps.lang.editor.table")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_CellModel_HierarchycalTable;
+      case 1:
+        return props_CellModel_Table;
+      case 2:
+        return props_QueryFunction_TableModel;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, "jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable"), MetaAdapterFactory.getConcept(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x40e932ec28a2d18bL, "jetbrains.mps.lang.editor.table.structure.CellModel_Table"), MetaAdapterFactory.getConcept(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x3e51593e83e97a4dL, "jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel"));
 }

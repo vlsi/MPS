@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_NullSafeDotExpression = new ConceptPresentationBuilder().create();
@@ -18,33 +18,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0d.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_NullSafeDotExpression;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_NullUnsafeDotExpression;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("3ac033a0-bffa-48e3-a843-a40cbdd89859"), "testExtendingAnalyzer")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_NullSafeDotExpression;
+      case 1:
+        return props_NullUnsafeDotExpression;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0d = buildConceptIndices(MetaAdapterFactory.getConcept(0x3ac033a0bffa48e3L, 0xa843a40cbdd89859L, 0x13ac54c0e557dc29L, "testExtendingAnalyzer.structure.NullSafeDotExpression"), MetaAdapterFactory.getConcept(0x3ac033a0bffa48e3L, 0xa843a40cbdd89859L, 0x13ac54c0e557da2eL, "testExtendingAnalyzer.structure.NullUnsafeDotExpression"));
 }
