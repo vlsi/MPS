@@ -191,8 +191,6 @@ public class HighlighterUpdateSession {
             return null;
           }
 
-          boolean recreateMessages = myHighlighter.getEditorTracker().isInspector(editor) && recreateInspectorMessages;
-
           try {
             return checker.update(editor, wasCheckedOnce, applyQuickFixes,
                 new HighlighterUpdateSessionCancellable(myHighlighter, checker.toString(), editor));
