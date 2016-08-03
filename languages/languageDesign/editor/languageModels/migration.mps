@@ -6408,7 +6408,7 @@
             <node concept="3cpWs6" id="5HbQSkucTxR" role="3cqZAp">
               <node concept="3cpWs3" id="5HbQSkuesEW" role="3cqZAk">
                 <node concept="Xl_RD" id="5HbQSkuesHE" role="3uHU7w">
-                  <property role="Xl_RC" value="TansformMenu" />
+                  <property role="Xl_RC" value="TransformMenu" />
                 </node>
                 <node concept="3cpWs3" id="5HbQSkuek4n" role="3uHU7B">
                   <node concept="3cpWs3" id="5HbQSkue2jz" role="3uHU7B">
@@ -19181,7 +19181,7 @@
                 </node>
                 <node concept="3cpWs3" id="5HbQSkucpas" role="37vLTx">
                   <node concept="Xl_RD" id="5HbQSkucpdI" role="3uHU7w">
-                    <property role="Xl_RC" value="_SubstituteMenu" />
+                    <property role="Xl_RC" value="_SubstituteMenu_Additional" />
                   </node>
                   <node concept="2OqwBi" id="5HbQSkucoBB" role="3uHU7B">
                     <node concept="37vLTw" id="5HbQSkucoBC" role="2Oq$k0">
