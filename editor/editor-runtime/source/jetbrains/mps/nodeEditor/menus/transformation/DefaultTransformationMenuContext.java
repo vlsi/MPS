@@ -108,6 +108,11 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
     return new DefaultTransformationMenuContext(myMenuItemFactory, myMenuLocation, myEditorContext, node);
   }
 
+  @NotNull
+  @Override
+  public TransformationMenuContext withLocation(@NotNull String location) {
+    return new DefaultTransformationMenuContext(myMenuItemFactory, location, myEditorContext, myNode);
+  }
 
   @NotNull
   @Override

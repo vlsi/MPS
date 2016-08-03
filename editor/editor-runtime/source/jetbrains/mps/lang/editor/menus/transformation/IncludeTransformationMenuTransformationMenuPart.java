@@ -33,6 +33,10 @@ public abstract class IncludeTransformationMenuTransformationMenuPart implements
 
     TransformationMenuContext newContext = newNode == null ? context : context.withNode(newNode);
 
+    String location = getLocation(context);
+
+    newContext = location == null ? newContext : newContext.withLocation(location);
+
     return newContext.createItems(getMenuLookup(context));
   }
 
@@ -44,5 +48,9 @@ public abstract class IncludeTransformationMenuTransformationMenuPart implements
   @Nullable
   protected SNode getNode(TransformationMenuContext context) {
     return context.getNode();
+  }
+
+  protected String getLocation(TransformationMenuContext context) {
+    return context.getMenuLocation();
   }
 }

@@ -4830,6 +4830,12 @@
       <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="3rSzFHWJPbd" resolve="ITransformationMenuReference" />
     </node>
+    <node concept="1TJgyj" id="1C09V4pvRcP" role="1TKVEi">
+      <property role="IQ2ns" value="1873541086576603957" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="location" />
+      <ref role="20lvS9" node="7L5lpRJH$EA" resolve="TransformationLocation" />
+    </node>
     <node concept="PrWs8" id="2mcvySy2piN" role="PzmwI">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>

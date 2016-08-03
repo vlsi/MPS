@@ -454,6 +454,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.intentions.RemoveIndent_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.editor.intentions.RemoveNewLine_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.editor.intentions.RemoveOnNewLine_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.intentions.SpecifyLocation_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.editor.intentions.SplitConstantCellIntoWords_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.editor.intentions.SurroundWithHorizontalCollection_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.editor.intentions.SurroundWithIndentCollection_Intention" />
@@ -537,6 +538,25 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorCellModel__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IStyleContainer__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionDescriptorBase" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.intentions.SpecifyLocation_Intention" file="SpecifyLocation_Intention.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutableBase" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

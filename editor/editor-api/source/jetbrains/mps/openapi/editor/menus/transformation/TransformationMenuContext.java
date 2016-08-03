@@ -44,6 +44,13 @@ public interface TransformationMenuContext {
   TransformationMenuContext withNode(@NotNull SNode node);
 
   /**
+   * Returns a context similar to the current one but with location changed to {@code location}. May return this instance if {@code location} is the same as the current
+   * location.
+   */
+  @NotNull
+  TransformationMenuContext withLocation(@NotNull String location);
+
+  /**
    * Creates applicable menu items from the menus returned by {@code menuLookup}. If menuLookup is null, creates the default menu lookup.
    *
    * @param menuLookup a menu reference, may be null
