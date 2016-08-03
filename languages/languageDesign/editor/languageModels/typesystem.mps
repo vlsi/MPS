@@ -119,7 +119,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -5589,7 +5589,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="Zr7fahXKeO">
-    <property role="TrG5h" value="check_CellModel_Component" />
+    <property role="TrG5h" value="check_CellModel_Component_EditorComponentIsInExtendedLanguage" />
     <property role="3GE5qa" value="CellModel" />
     <node concept="3clFbS" id="Zr7fahXKeP" role="18ibNy">
       <node concept="3cpWs8" id="hYjR2Jb" role="3cqZAp">
@@ -5711,22 +5711,37 @@
                 </node>
               </node>
               <node concept="3cpWs3" id="hYjSaT1" role="3uHU7B">
-                <node concept="3cpWs3" id="hYjSRYd" role="3uHU7B">
-                  <node concept="3cpWs3" id="hYjS450" role="3uHU7B">
-                    <node concept="Xl_RD" id="hYjRUzZ" role="3uHU7B">
-                      <property role="Xl_RC" value="language " />
+                <node concept="3cpWs3" id="6WNWQDXKpMM" role="3uHU7B">
+                  <node concept="2OqwBi" id="6WNWQDXKrf3" role="3uHU7w">
+                    <node concept="2OqwBi" id="6WNWQDXKqbc" role="2Oq$k0">
+                      <node concept="1YBJjd" id="6WNWQDXKpWh" role="2Oq$k0">
+                        <ref role="1YBMHb" node="Zr7fahXKeR" resolve="cmc" />
+                      </node>
+                      <node concept="3TrEf2" id="6WNWQDXKqJ$" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpc2:fGPMmyn" resolve="editorComponent" />
+                      </node>
                     </node>
-                    <node concept="2OqwBi" id="hYjS5Fq" role="3uHU7w">
-                      <node concept="37vLTw" id="3GM_nagTz6m" role="2Oq$k0">
-                        <ref role="3cqZAo" node="hYjRD2$" resolve="ecLanguage" />
-                      </node>
-                      <node concept="liA8E" id="4WpFdPuvzuB" role="2OqNvi">
-                        <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
-                      </node>
+                    <node concept="3TrcHB" id="6WNWQDXKrB4" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                     </node>
                   </node>
-                  <node concept="Xl_RD" id="hYjSSdx" role="3uHU7w">
-                    <property role="Xl_RC" value=" of " />
+                  <node concept="3cpWs3" id="hYjSRYd" role="3uHU7B">
+                    <node concept="3cpWs3" id="hYjS450" role="3uHU7B">
+                      <node concept="Xl_RD" id="hYjRUzZ" role="3uHU7B">
+                        <property role="Xl_RC" value="language " />
+                      </node>
+                      <node concept="2OqwBi" id="hYjS5Fq" role="3uHU7w">
+                        <node concept="37vLTw" id="3GM_nagTz6m" role="2Oq$k0">
+                          <ref role="3cqZAo" node="hYjRD2$" resolve="ecLanguage" />
+                        </node>
+                        <node concept="liA8E" id="4WpFdPuvzuB" role="2OqNvi">
+                          <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="hYjSSdx" role="3uHU7w">
+                      <property role="Xl_RC" value=" of editor component " />
+                    </node>
                   </node>
                 </node>
                 <node concept="Xl_RD" id="hYjScx7" role="3uHU7w">

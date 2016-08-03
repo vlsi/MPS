@@ -15,26 +15,27 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 
-public class check_CellModel_Component_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_CellModel_Component_NonTypesystemRule() {
+public class check_CellModel_Component_EditorComponentIsInExtendedLanguage_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_CellModel_Component_EditorComponentIsInExtendedLanguage_NonTypesystemRule() {
   }
   public void applyRule(final SNode cmc, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    Language language = as_beptsw_a0a0a1(check_beptsw_a0a0a1(cmc.getModel()), Language.class);
+    Language language = as_5bg4jt_a0a0a1(check_5bg4jt_a0a0a1(cmc.getModel()), Language.class);
     if (language == null) {
       return;
     }
     Set<Language> extendedLanguages = language.getAllExtendedLanguages();
 
-    Language ecLanguage = as_beptsw_a0a4a1(check_beptsw_a0a4a1(SLinkOperations.getTarget(cmc, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, 0xfb35c96897L, "editorComponent")).getModel()), Language.class);
+    Language ecLanguage = as_5bg4jt_a0a4a1(check_5bg4jt_a0a4a1(SLinkOperations.getTarget(cmc, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, 0xfb35c96897L, "editorComponent")).getModel()), Language.class);
     if (!(SetSequence.fromSet(extendedLanguages).contains(ecLanguage))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cmc, "language " + ecLanguage.getModuleName() + " of " + " is not extended by " + language.getModuleName(), "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1235136520823", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cmc, "language " + ecLanguage.getModuleName() + " of editor component " + SPropertyOperations.getString(SLinkOperations.getTarget(cmc, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, 0xfb35c96897L, "editorComponent")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " is not extended by " + language.getModuleName(), "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1235136520823", null, errorTarget);
         {
           BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.editor.typesystem.AddExtendedLanguage_QuickFix", false);
           intentionProvider.putArgument("extLang", ecLanguage);
@@ -54,22 +55,22 @@ public class check_CellModel_Component_NonTypesystemRule extends AbstractNonType
   public boolean overrides() {
     return false;
   }
-  private static SModule check_beptsw_a0a0a1(SModel checkedDotOperand) {
+  private static SModule check_5bg4jt_a0a0a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static SModule check_beptsw_a0a4a1(SModel checkedDotOperand) {
+  private static SModule check_5bg4jt_a0a4a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static <T> T as_beptsw_a0a0a1(Object o, Class<T> type) {
+  private static <T> T as_5bg4jt_a0a0a1(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_beptsw_a0a4a1(Object o, Class<T> type) {
+  private static <T> T as_5bg4jt_a0a4a1(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
