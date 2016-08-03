@@ -101,6 +101,7 @@ public class ActionMigrationHelper {
     for (SNode returnStatement : ListSequence.fromList(returns)) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(returnStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral"))) {
         SNodeOperations.deleteNode(SLinkOperations.getTarget(returnStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression")));
+        continue;
       }
       SNode returnExpression = SLinkOperations.getTarget(returnStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression"));
       SNode dot = createSelectingOperation(returnExpression);
