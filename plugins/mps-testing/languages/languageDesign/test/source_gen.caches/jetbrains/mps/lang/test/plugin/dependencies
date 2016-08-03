@@ -12,6 +12,7 @@
   <dependency className="jetbrains.mps.lang.test.plugin.IconContainer" file="IconContainer.java">
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.IconResource" />
+    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.plugin.Icons" file="Icons.java">
     <classNode dependClassName="com.intellij.ui.LayeredIcon" />
