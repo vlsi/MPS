@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.openapi.editor.menus.substitute;
 
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.runtime.IconResource;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -65,8 +66,8 @@ public class SubstituteMenuItemWrapper implements SubstituteMenuItem {
   }
 
   @Override
-  public boolean select(SNode createdNode, String pattern) {
-    return myItem.select(createdNode, pattern);
+  public void select(SNode createdNode, String pattern) {
+    myItem.select(createdNode, pattern);
   }
 
   @Override

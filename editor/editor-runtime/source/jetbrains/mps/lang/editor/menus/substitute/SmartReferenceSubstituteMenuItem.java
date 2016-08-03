@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.editor.menus.substitute;
 
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
@@ -33,20 +34,17 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 /**
  * @author simon
  */
-class SmartReferenceSubstituteMenuItem implements SubstituteMenuItem {
+class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem {
   private String myMatchingText;
-  private final SNode myParentNode;
-  private final SNode myCurrentChild;
   private final SNode myReferentNode;
   private final SConcept mySmartConcept;
   private final SReferenceLink mySmartReference;
   private final ReferenceDescriptor myRefDescriptor;
 
   SmartReferenceSubstituteMenuItem(SNode referentNode, SNode parentNode, SNode currentChild, SConcept smartConcept,
-      SReferenceLink smartReference, @NotNull ReferenceDescriptor descriptor) {
+      SReferenceLink smartReference, @NotNull ReferenceDescriptor descriptor, EditorContext editorContext) {
+    super(smartConcept, parentNode, currentChild, editorContext);
     myReferentNode = referentNode;
-    myParentNode = parentNode;
-    myCurrentChild = currentChild;
     mySmartConcept = smartConcept;
     mySmartReference = smartReference;
     myRefDescriptor = descriptor;
@@ -78,28 +76,14 @@ class SmartReferenceSubstituteMenuItem implements SubstituteMenuItem {
 
   @Override
   public SNode createNode(String pattern) {
-    SNode childNode = NodeFactoryManager.createNode(mySmartConcept, myCurrentChild, myParentNode, myParentNode.getModel());
+    SNode childNode = NodeFactoryManager.createNode(mySmartConcept, getCurrentChild(), getParentNode(), getParentNode().getModel());
     SNodeAccessUtil.setReferenceTarget(childNode, mySmartReference, myReferentNode);
     return childNode;
   }
 
   @Override
-  public SAbstractConcept getOutputConcept() {
-    return mySmartConcept;
-  }
-
-  @Override
   public SNode getType(String pattern) {
     return null;
-  }
-
-  @Override
-  public boolean canExecute(String pattern) {
-    return true;
-  }
-
-  public boolean canExecuteStrictly(String pattern) {
-    return true;
   }
 
   @Override
@@ -110,10 +94,5 @@ class SmartReferenceSubstituteMenuItem implements SubstituteMenuItem {
     } else {
       return IconResourceUtil.getIconResourceForConcept(myReferentNode.getConcept());
     }
-  }
-
-  @Override
-  public boolean select(SNode createdNode, String pattern) {
-    return false;
   }
 }

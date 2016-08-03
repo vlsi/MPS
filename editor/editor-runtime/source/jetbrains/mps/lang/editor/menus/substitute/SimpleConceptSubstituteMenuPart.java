@@ -52,7 +52,7 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
     if (smartReference != null) {
       return createSmartSubstituteMenuItems(context, smartReference);
     } else {
-      return Collections.singletonList(new DefaultSubstituteMenuItem(myConcept, context.getParentNode(), context.getCurrentTargetNode()));
+      return Collections.singletonList(new DefaultSubstituteMenuItem(myConcept, context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext()));
     }
   }
 
@@ -74,7 +74,7 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
         continue;
       }
       result.add(new SmartReferenceSubstituteMenuItem(referentNode, context.getParentNode(),
-          currentChild, myConcept, smartReference, refDescriptor));
+          currentChild, myConcept, smartReference, refDescriptor, context.getEditorContext()));
     }
     return result;
   }

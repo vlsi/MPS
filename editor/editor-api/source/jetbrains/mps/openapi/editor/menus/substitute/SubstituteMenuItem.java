@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.openapi.editor.menus.substitute;
 
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.runtime.IconResource;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -32,5 +33,5 @@ public interface SubstituteMenuItem {
   boolean canExecuteStrictly(String pattern);
   SNode createNode(String pattern);
   IconResource getIcon(String pattern);
-  boolean select(SNode createdNode, String pattern);
+  void select(SNode createdNode, String pattern);
 }

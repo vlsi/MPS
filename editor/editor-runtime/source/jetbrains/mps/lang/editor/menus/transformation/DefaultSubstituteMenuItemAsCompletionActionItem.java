@@ -62,22 +62,8 @@ class DefaultSubstituteMenuItemAsCompletionActionItem extends SubstituteMenuItem
         SNodeUtil.replaceWithAnother(currentChild, newChild);
         currentChild.delete();
       }
-      boolean wasSelected = getSubstituteItem().select(newChild, pattern);
-      if (!wasSelected) {
-        EditorContext editorContext = myContext.getEditorContext();
-        //todo move to select class;
-        editorContext.flushEvents();
-        EditorComponent editorComponent = ((EditorComponent) editorContext.getEditorComponent());
-        EditorCell cell = editorComponent.findNodeCell(newChild);
-        if (cell != null) {
-          EditorCell errorCell = CellFinderUtil.findFirstError(cell, true);
-          if (errorCell != null) {
-            editorComponent.changeSelectionWRTFocusPolicy(errorCell);
-          } else {
-            editorComponent.changeSelectionWRTFocusPolicy(cell);
-          }
-        }
-      }
+      myContext.getEditorContext().flushEvents();
+      getSubstituteItem().select(newChild, pattern);
     }
   }
 }

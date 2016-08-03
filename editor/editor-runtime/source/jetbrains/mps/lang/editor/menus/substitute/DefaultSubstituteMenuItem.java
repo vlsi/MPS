@@ -15,7 +15,11 @@
  */
 package jetbrains.mps.lang.editor.menus.substitute;
 
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -32,11 +36,19 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
   private final SNode myParentNode;
   private final SNode myCurrentChild;
   private SAbstractConcept myConcept;
+  private EditorContext myEditorContext;
 
   public DefaultSubstituteMenuItem(SAbstractConcept concept, SNode parentNode, SNode currentChild) {
     myConcept = concept;
     myParentNode = parentNode;
     myCurrentChild = currentChild;
+  }
+
+  public DefaultSubstituteMenuItem(SAbstractConcept concept, SNode parentNode, SNode currentChild, EditorContext editorContext) {
+    myConcept = concept;
+    myParentNode = parentNode;
+    myCurrentChild = currentChild;
+    myEditorContext = editorContext;
   }
 
   @Override
@@ -91,7 +103,24 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
   }
 
   @Override
-  public boolean select(SNode createdNode, String pattern) {
-    return false;
+  public void select(SNode createdNode, String pattern) {
+    EditorComponent editorComponent = ((EditorComponent) myEditorContext.getEditorComponent());
+    EditorCell cell = editorComponent.findNodeCell(createdNode);
+    if (cell != null) {
+      EditorCell errorCell = CellFinderUtil.findFirstError(cell, true);
+      if (errorCell != null) {
+        editorComponent.changeSelectionWRTFocusPolicy(errorCell);
+      } else {
+        editorComponent.changeSelectionWRTFocusPolicy(cell);
+      }
+    }
+  }
+
+  protected SNode getCurrentChild() {
+    return myCurrentChild;
+  }
+
+  protected SNode getParentNode() {
+    return myParentNode;
   }
 }
