@@ -24,6 +24,7 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.project.Project;
+import com.intellij.util.concurrency.EdtExecutorService;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -54,8 +55,10 @@ import org.jetbrains.mps.openapi.repository.CommandListener;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -69,10 +72,10 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private final ApplicationAdapter myApplicationListener = new PauseDuringWriteAction();
   private final com.intellij.openapi.command.CommandAdapter myCommandListener = new PauseDuringCommandOrUndoTransparentAction();
 
-  private volatile boolean myStopThread = false;
   private GlobalSModelEventsManager myGlobalSModelEventsManager;
   private ClassLoaderManager myClassLoaderManager;
-  protected Thread myThread;
+  private ScheduledExecutorService myBackgroundExecutor;
+  private ScheduleHighlighterUpdate myScheduleHighlighterUpdate;
 
   private final List<EditorChecker> myCheckers = new CopyOnWriteArrayList<EditorChecker>();
 
@@ -81,7 +84,6 @@ public class Highlighter implements IHighlighter, ProjectComponent {
    */
   private boolean myForceUpdateInPowerSaveModeFlag = false;
   private InspectorTool myInspectorTool;
-  private final ConcurrentLinkedQueue<Runnable> myPendingActions = new ConcurrentLinkedQueue<Runnable>();
 
   private MessageBusConnection myMessageBusConnection;
 
@@ -121,10 +123,6 @@ public class Highlighter implements IHighlighter, ProjectComponent {
 
   @Override
   public void projectOpened() {
-    if (myThread != null && myThread.isAlive()) {
-      LOG.error("trying to initialize a Highlighter being already initialized", new Throwable());
-      return;
-    }
     myClassLoaderManager.addClassesHandler(myClassesListener);
     myEventCollector.startListening(myGlobalSModelEventsManager, myMPSProject.getRepository());
 
@@ -151,13 +149,10 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     ApplicationManager.getApplication().addApplicationListener(myApplicationListener);
     CommandProcessor.getInstance().addCommandListener(myCommandListener);
     myMPSProject.getModelAccess().addCommandListener(myCommandWatcher);
-    myThread = new HighlighterThread();
-    myThread.start();
   }
 
   @Override
   public void projectClosed() {
-    stopUpdater();
     myMPSProject.getModelAccess().removeCommandListener(myCommandWatcher);
     CommandProcessor.getInstance().removeCommandListener(myCommandListener);
     ApplicationManager.getApplication().removeApplicationListener(myApplicationListener);
@@ -171,26 +166,21 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   @NonNls
   @NotNull
   public String getComponentName() {
-    return "MPS Higlighter";
+    return "MPS Highlighter";
   }
 
   @Override
   public void initComponent() {
+    startUpdater();
   }
 
   @Override
   public void disposeComponent() {
+    stopUpdater();
   }
 
   private void addPendingAction(Runnable r) {
-    myPendingActions.offer(r);
-  }
-
-  private void processPendingActions() {
-    Runnable r;
-    while ((r = myPendingActions.poll()) != null) {
-      r.run();
-    }
+    myBackgroundExecutor.submit(r);
   }
 
   public void addChecker(@NotNull final EditorChecker checker) {
@@ -269,26 +259,32 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     myEditorList.removeAdditionalEditor(additionalEditor);
   }
 
+  private void startUpdater() {
+    if (myBackgroundExecutor != null && !myBackgroundExecutor.isShutdown()) {
+      LOG.error("trying to initialize a Highlighter being already initialized", new Throwable());
+      return;
+    }
+    myBackgroundExecutor = Executors.newSingleThreadScheduledExecutor(runnable -> new Thread(runnable, "Highlighter"));
+    myScheduleHighlighterUpdate = new ScheduleHighlighterUpdate(EdtExecutorService.getScheduledExecutorInstance(), DumbService.getInstance(myProject));
+    if (!RuntimeFlags.isTestMode()) {
+      myScheduleHighlighterUpdate.scheduleNext();
+    }
+  }
+
   public void stopUpdater() {
-    myStopThread = true;
+    myScheduleHighlighterUpdate = null;
+    myBackgroundExecutor.shutdown();
     try {
-      /**
-       * This method will be called inside write action, so by a chance there can be a deadlock
-       * (Highligher is trying to call read actions from time to time), so we are limiting waiting time
-       * to some reasonable value here and adding "if (myStopThread)" checks as a first statement into
-       * all read actions executed by Highligher.
-       */
-      int attemptCounter = 10;
-      while (myThread.isAlive() && attemptCounter > 0) {
-        Thread.sleep(10);
-        attemptCounter--;
-      }
+      myBackgroundExecutor.awaitTermination(100, TimeUnit.MILLISECONDS);
     } catch (InterruptedException e) {
       LOG.error(null, e);
     }
   }
 
-  private HighlighterUpdateSession createUpdateSession(boolean essentialOnly) {
+  @NotNull
+  private HighlighterUpdateSession createUpdateSession(List<EditorComponent> activeEditors, boolean essentialOnly) {
+    processAccumulatedEvents();
+
     final Set<EditorChecker> checkers = new LinkedHashSet<EditorChecker>();
     if (!EditorSettings.getInstance().isPowerSaveMode() || myForceUpdateInPowerSaveModeFlag) {
       // calling checkers only if we are not in powerSafeMode or updateEditorFlag was set by
@@ -302,7 +298,6 @@ public class Highlighter implements IHighlighter, ProjectComponent {
       myForceUpdateInPowerSaveModeFlag = false;
     }
 
-    final List<EditorComponent> activeEditors = myEditorList.getActiveEditorsInEDT();
 
     if (EditorSettings.getInstance().isPowerSaveMode()) {
       // if we are in powerSaveMode then next editor checkers execution should
@@ -332,7 +327,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
 
   @Override
   public boolean isStopping() {
-    return myStopThread;
+    return myBackgroundExecutor.isShutdown();
   }
 
   @NotNull
@@ -350,9 +345,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
    * Feeds events collected at this point to all registered checkers for processing. Must be called on the highlighter thread because the collection of all
    * checkers is accessed.
    */
-  private void beginUpdate() {
-    assert Thread.currentThread() == myThread : "This method should be called on the highlighter thread";
-
+  private void processAccumulatedEvents() {
     List<SModelEvent> events = myEventCollector.drainEvents();
 
     for (SModelEvent event : events) {
@@ -430,62 +423,59 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     }
   }
 
-  private class HighlighterThread extends Thread {
-    public HighlighterThread() {
-      super("Highlighter");
-      setDaemon(true);
+  /**
+   * Runs in EDT
+   */
+  private class ScheduleHighlighterUpdate implements Runnable {
+    private final ScheduledExecutorService myEdtExecutor;
+    private final DumbService myDumbService;
+
+    public ScheduleHighlighterUpdate(ScheduledExecutorService edtExecutor, DumbService dumbService) {
+      myEdtExecutor = edtExecutor;
+      myDumbService = dumbService;
     }
 
     @Override
     public void run() {
-      if (RuntimeFlags.isTestMode()) return;
-      DumbService dumbService = DumbService.getInstance(myProject);
-      while (true) {
-        try {
-          while (true) {
-            while (isPausedOrStopping()) {
-              if (isStopping()) {
-                return;
-              }
-              Thread.sleep(DEFAULT_GRACE_PERIOD);
-            }
-            while (dumbService.isDumb()) {
-              if (myStopThread) return;
-              Thread.sleep(DEFAULT_GRACE_PERIOD * 3);
-            }
-            if (!myCommandWatcher.isGracePeriodExpired()) {
-              Thread.sleep(myCommandWatcher.timeToExpiration());
-              continue;
-            }
-            break;
-          }
-
-          if (myStopThread) return;
-
-          try {
-            boolean essentialOnly = !myCommandWatcher.isLargerGracePeriodExpired();
-            if (!IMakeService.INSTANCE.isSessionActive()) {
-              beginUpdate();
-              HighlighterUpdateSession updateSession = createUpdateSession(essentialOnly);
-              updateSession.doUpdate();
-              updateSession.doneUpdating();
-            }
-          } catch (IndexNotReadyException ex) {
-            myEditorTracker.markEverythingUnchecked();
-          }
-          processPendingActions();
-          if (myStopThread) {
-            return;
-          }
-          Thread.sleep(DEFAULT_GRACE_PERIOD);
-
-          if (myCommandWatcher.isLargerGracePeriodExpired()) {
-            myCommandWatcher.resetGracePeriod();
-          }
-        } catch (Throwable t) {
-          LOG.error(null, t);
+      if (!isGoodTimeToUpdate()) {
+        if (!isStopping()) {
+          scheduleNext();
         }
+        return;
       }
+
+      List<EditorComponent> activeEditors = myEditorList.getActiveEditors(); // Must be called in EDT
+
+      myBackgroundExecutor.submit(() -> update(activeEditors));
+    }
+
+    private boolean isGoodTimeToUpdate() {
+      return !isPausedOrStopping() && !myDumbService.isDumb() && !IMakeService.INSTANCE.isSessionActive() && myCommandWatcher.isGracePeriodExpired();
+    }
+
+    private void update(List<EditorComponent> activeEditors) {
+      try {
+        createUpdateSession(activeEditors, shouldOnlyUpdateEssentialCheckers()).update();
+      } catch (IndexNotReadyException ex) {
+        myEditorTracker.markEverythingUnchecked();
+      } finally {
+        scheduleNext();
+      }
+    }
+
+    private void scheduleNext() {
+      myEdtExecutor.schedule(this, Math.max(myCommandWatcher.timeToExpiration(), DEFAULT_GRACE_PERIOD), TimeUnit.MILLISECONDS);
+    }
+
+    private boolean shouldOnlyUpdateEssentialCheckers() {
+      boolean essentialOnly;
+      if (myCommandWatcher.isLargerGracePeriodExpired()) {
+        myCommandWatcher.resetGracePeriod();
+        essentialOnly = false;
+      } else {
+        essentialOnly = true;
+      }
+      return essentialOnly;
     }
   }
 

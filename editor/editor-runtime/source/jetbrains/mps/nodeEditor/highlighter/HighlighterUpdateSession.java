@@ -82,7 +82,7 @@ public class HighlighterUpdateSession {
     return result;
   }
 
-  public void doUpdate() {
+  private void doUpdate() {
     if (myCheckers.isEmpty()) {
       return;
     }
@@ -225,9 +225,14 @@ public class HighlighterUpdateSession {
     return anyMessageChanged;
   }
 
-  public void doneUpdating() {
+  private void doneUpdating() {
     for (EditorChecker checker : myCheckers) {
       checker.doneUpdating();
     }
+  }
+
+  public void update() {
+    doUpdate();
+    doneUpdating();
   }
 }
