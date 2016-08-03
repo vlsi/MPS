@@ -15,22 +15,30 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.nodeEditor.cellMenu.OldNewSubstituteUtil;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Comparator;
 
 public class SubstituteActionComparator implements Comparator<SubstituteAction> {
   private String myPattern;
+  private SRepository myRepository;
 
   public SubstituteActionComparator(String pattern) {
     this.myPattern = pattern;
   }
+  public SubstituteActionComparator(String pattern, SRepository repository) {
+    this.myPattern = pattern;
+    myRepository = repository;
+  }
 
   protected int getLocalSortPriority(SubstituteAction action) {
-    if (action.getParameterObject() instanceof SNode) {
-      return NodePresentationUtil.getSortPriority(action.getSourceNode(), (SNode) action.getParameterObject());
+    final Object parameterObject = OldNewSubstituteUtil.getParameterObject(action, myRepository);
+    if (parameterObject instanceof SNode) {
+      return NodePresentationUtil.getSortPriority(action.getSourceNode(), (SNode) parameterObject);
     } else {
       return 0;
     }

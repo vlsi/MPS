@@ -20,8 +20,8 @@ import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.editor.runtime.commands.EditorComputable;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellActions.OldNewCompositeSideTransformSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.OldNewSubstituteUtil;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil.Finder;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -35,7 +35,6 @@ import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
-import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
@@ -114,8 +113,12 @@ public class IntelligentInputUtil {
       List<SubstituteAction> matchingActions = info.getMatchingActions(smallPattern, true);
       SubstituteAction item = matchingActions.get(0);
       SNode newNode = item.substitute(editorContext, smallPattern);
+      if (newNode == null) {
+        newNode = editorContext.getSelectedNode();
+      }
       editorContext.flushEvents();
-      EditorCell cellForNewNode = editorContext.getEditorComponent().findNodeCell(newNode);
+      EditorCell cellForNewNode;
+      cellForNewNode = editorContext.getEditorComponent().findNodeCell(newNode);
       if (cellForNewNode != null) {
         EditorCell_Label target = null;
         EditorCell errorOrEditable =
@@ -269,7 +272,11 @@ public class IntelligentInputUtil {
       }
 
       SubstituteAction rtItem = rtMatchingActions.get(0);
-      final SNode yetNewNode = rtItem.substitute(editorContext, tail);
+      SNode yetNewNode = rtItem.substitute(editorContext, tail);
+
+      if (yetNewNode == null) {
+        yetNewNode = editorContext.getSelectedNode();
+      }
 
       editorContext.flushEvents();
 
@@ -298,7 +305,7 @@ public class IntelligentInputUtil {
   }
 
   private static boolean tryToSubstituteFirstSutable(EditorContext editorContext, String text, SubstituteInfo substituteInfo) {
-    SNode concept = substituteInfo.getMatchingActions(text, true).get(0).getOutputConcept();
+    SNode concept = OldNewSubstituteUtil.getOutputConcept(substituteInfo.getMatchingActions(text, true).get(0), editorContext.getRepository());
     if (concept == null) {
       return false;
     }
@@ -306,9 +313,9 @@ public class IntelligentInputUtil {
         SMethodTrimmedId.create("substituteInAmbigousPosition", null, "1653mnvAgq$"));
 
     if (property) {
-      SNode outputConcept = substituteInfo.getMatchingActions(text, true).get(0).getOutputConcept();
+      SNode outputConcept = OldNewSubstituteUtil.getOutputConcept(substituteInfo.getMatchingActions(text, true).get(0), editorContext.getRepository());
       for (SubstituteAction action : substituteInfo.getMatchingActions(text, true)) {
-        if (outputConcept != action.getOutputConcept()) {
+        if (outputConcept != OldNewSubstituteUtil.getOutputConcept(action, editorContext.getRepository())) {
           return false;
         }
       }

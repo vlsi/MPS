@@ -34,7 +34,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 /**
  * @author simon
  */
-class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem {
+public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem {
   private String myMatchingText;
   private final SNode myReferentNode;
   private final SConcept mySmartConcept;
@@ -94,5 +94,9 @@ class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem {
     } else {
       return IconResourceUtil.getIconResourceForConcept(myReferentNode.getConcept());
     }
+  }
+
+  public SNode getReferentNode(){
+    return myReferentNode;
   }
 }

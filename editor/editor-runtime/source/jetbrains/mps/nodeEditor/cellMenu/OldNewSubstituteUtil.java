@@ -16,7 +16,11 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.actions.runtime.impl.ChildSubstituteActionsUtil;
+import jetbrains.mps.lang.editor.menus.transformation.CompletionActionItemUtil;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -57,5 +61,36 @@ public class OldNewSubstituteUtil {
     }
     SModule sourceModule = model.getModule();
     return sourceModule instanceof Language && ChildSubstituteActionsUtil.hasActionBuilders(((Language) sourceModule));
+  }
+
+  public static SNode getOutputConcept(SubstituteAction action, SRepository repository) {
+    return action.getOutputConcept();
+  }
+
+  @Nullable
+  public static SNode getOutputConcept(CompletionActionItemAsSubstituteAction action, SRepository repository) {
+    final CompletionActionItem actionItem = action.getActionItem();
+    final SAbstractConcept outputConcept = CompletionActionItemUtil.getOutputConcept(actionItem);
+    final SNodeReference sourceNode = outputConcept == null ? null : outputConcept.getSourceNode();
+    if (repository != null && sourceNode != null) {
+      return sourceNode.resolve(repository);
+    }
+    return null;
+  }
+
+  public static Object getParameterObject(SubstituteAction action, SRepository repository) {
+    final Object parameterObject = action.getParameterObject();
+    if (parameterObject != null) {
+      return parameterObject;
+    }
+    if (repository != null && action instanceof CompletionActionItemAsSubstituteAction){
+      final CompletionActionItem actionItem = ((CompletionActionItemAsSubstituteAction) action).getActionItem();
+      final SNode referentNode = CompletionActionItemUtil.getReferentNode(actionItem);
+      if (referentNode != null) {
+        return referentNode;
+      }
+      return getOutputConcept((CompletionActionItemAsSubstituteAction) action, repository);
+    }
+    return null;
   }
 }

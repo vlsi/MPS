@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -124,10 +125,18 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
     if (context == null) {
       myActionItem.execute(pattern);
     } else {
+      EditorCell contextCell = context.getContextCell();
+      if (contextCell instanceof EditorCell_Constant && contextCell.isErrorState()) {
+          ((EditorCell_Constant) contextCell).synchronizeViewWithModel();
+      }
       context.getRepository().getModelAccess().executeCommand(new EditorCommandAdapter(() -> myActionItem.execute(pattern), context));
     }
 
     // myActionItem should change selection itself, so return null here
     return null;
+  }
+
+  CompletionActionItem getActionItem() {
+    return myActionItem;
   }
 }

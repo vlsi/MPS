@@ -212,8 +212,9 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
 
   private int getStyle(SubstituteAction action) {
     int style;
-    if (action.getParameterObject() instanceof SNode) {
-      style = NodePresentationUtil.getFontStyle(action.getSourceNode(), (SNode) action.getParameterObject());
+    final Object parameterObject = OldNewSubstituteUtil.getParameterObject(action, mySubstituteChooser.getEditorComponent().getEditorContext().getRepository());
+    if (parameterObject instanceof SNode) {
+      style = NodePresentationUtil.getFontStyle(action.getSourceNode(), (SNode) parameterObject);
     } else {
       style = Font.PLAIN;
     }
