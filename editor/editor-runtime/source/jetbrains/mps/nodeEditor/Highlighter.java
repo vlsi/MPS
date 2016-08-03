@@ -31,6 +31,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
@@ -55,8 +56,11 @@ import org.jetbrains.mps.openapi.repository.CommandListener;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.Callable;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -179,8 +183,12 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     stopUpdater();
   }
 
-  private void addPendingAction(Runnable r) {
-    myBackgroundExecutor.submit(r);
+  private Future<?> addPendingAction(Runnable action) {
+    return myBackgroundExecutor.submit(action);
+  }
+
+  private <T> Future<T> addPendingAction(Callable<T> action) {
+    return myBackgroundExecutor.submit(action);
   }
 
   public void addChecker(@NotNull final EditorChecker checker) {
@@ -195,12 +203,13 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   }
 
   /**
-   * Removes a checker from the set of active checkers. Also removes its messages from any known open editors. May be called from any thread, the removal
-   * happens asynchronously (so do not add back a checker that has just been removed).
+   * Removes a checker from the set of active checkers. Also removes its messages from any known open editors. Must be called from EDT.
+   *
    * @param checker the checker to remove
    */
   public void removeChecker(@NotNull final EditorChecker checker) {
     if (RuntimeFlags.isTestMode()) return;
+    ThreadUtils.assertEDT();
 
     // Checker removal is done in three steps:
     //
@@ -212,33 +221,37 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     // 3. In the highlighter thread again (actually, any background thread would do), go through the list retrieved in the previous step and remove
     //    the checker's messages from each editor.
 
+    try {
+      pauseUpdater();
+      if (LOG.isDebugEnabled()) {
+        LOG.debug("Removing " + checker + " from checkers list");
+      }
+      if (!addPendingAction(() -> myCheckers.remove(checker)).get()) {
+        return;
+      }
+    } catch (InterruptedException | ExecutionException e) {
+      // Shouldn't happen
+      throw new RuntimeException(e);
+    } finally {
+      LOG.debug("Done removing " + checker + " from checkers list");
+      resumeUpdater();
+    }
+
+    final List<EditorComponent> editors = myEditorList.getAllEditors();
+    if (editors.isEmpty()) return;
+
     addPendingAction(new Runnable() {
       @Override
       public void run() {
-        if (!myCheckers.remove(checker)) return;
-
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          @Override
-          public void run() {
-            final List<EditorComponent> editors = myEditorList.getAllEditors();
-            if (editors.isEmpty()) return;
-
-            addPendingAction(new Runnable() {
-              @Override
-              public void run() {
-                long time = System.currentTimeMillis();
-                for (EditorComponent component : editors) {
-                  component.getHighlightManager().clearForOwner(checker.getEditorMessageOwner(), true);
-                }
-                if (LOG.isDebugEnabled()) {
-                  long elapsed = System.currentTimeMillis() - time;
-                  LOG.debug(String.format("Removing %s messages from %d editors took %d ms",
-                      checker, editors.size(), elapsed));
-                }
-              }
-            });
-          }
-        });
+        long time = System.currentTimeMillis();
+        for (EditorComponent component : editors) {
+          component.getHighlightManager().clearForOwner(checker.getEditorMessageOwner(), true);
+        }
+        if (LOG.isDebugEnabled()) {
+          long elapsed = System.currentTimeMillis() - time;
+          LOG.debug(String.format("Removing %s messages from %d editors took %d ms",
+              checker, editors.size(), elapsed));
+        }
       }
     });
   }
