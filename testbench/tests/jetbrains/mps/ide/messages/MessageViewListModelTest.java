@@ -15,16 +15,17 @@
  */
 package jetbrains.mps.ide.messages;
 
-import org.junit.Test;
-import org.junit.Assert;
 import jetbrains.mps.ide.messages.MessageList.FastListModel;
+import org.junit.Assert;
+import org.junit.Test;
 
 import javax.swing.event.ListDataEvent;
 import javax.swing.event.ListDataListener;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class MessageViewListModelTest {
-  private FastListModel myModel = new FastListModel(2);
+  private FastListModel<String> myModel = new FastListModel<>(2);
 
   @Test
   public void creation() {
@@ -83,40 +84,42 @@ public class MessageViewListModelTest {
 
   @Test
   public void addAllOne() {
-    myModel.addListDataListener(new MyListDataListener(){
+    myModel.addListDataListener(new MyListDataListener() {
       int addedOnce = 1;
+
       @Override
       public void intervalAdded(ListDataEvent e) {
         Assert.assertTrue(--addedOnce == 0);
       }
     });
-    myModel.addAll(Arrays.asList("b"));
+    myModel.addAll(Collections.singletonList("b"));
     Assert.assertEquals(1, myModel.getSize());
   }
 
   @Test
   public void addAllTwo() {
-    myModel.addListDataListener(new MyListDataListener(){
+    myModel.addListDataListener(new MyListDataListener() {
       int addedOnce = 1;
+
       @Override
       public void intervalAdded(ListDataEvent e) {
         Assert.assertTrue(--addedOnce == 0);
       }
     });
-    myModel.addAll(Arrays.asList("a","b"));
+    myModel.addAll(Arrays.asList("a", "b"));
     Assert.assertEquals(2, myModel.getSize());
   }
 
   @Test
   public void addAllNone() {
     myModel.addListDataListener(new MyListDataListener());
-    myModel.addAll(Arrays.asList());
+    myModel.addAll(Collections.emptyList());
   }
 
   @Test(expected = RuntimeException.class)
   public void addAllOverflow() {
     myModel.addListDataListener(new MyListDataListener());
-    myModel.addAll(Arrays.asList("a","b","c"));
+    myModel.addAll(Arrays.asList("a", "b", "c"));
     Assert.assertTrue(false);
   }
 
@@ -124,8 +127,9 @@ public class MessageViewListModelTest {
   public void removeFirstOne() {
     myModel.add("a");
     myModel.add("b");
-    myModel.addListDataListener(new MyListDataListener(){
+    myModel.addListDataListener(new MyListDataListener() {
       int removedOnce = 1;
+
       @Override
       public void intervalRemoved(ListDataEvent e) {
         Assert.assertTrue(--removedOnce == 0);
@@ -139,8 +143,9 @@ public class MessageViewListModelTest {
   public void removeFirstTwo() {
     myModel.add("a");
     myModel.add("b");
-    myModel.addListDataListener(new MyListDataListener(){
+    myModel.addListDataListener(new MyListDataListener() {
       int removedOnce = 1;
+
       @Override
       public void intervalRemoved(ListDataEvent e) {
         Assert.assertTrue(--removedOnce == 0);
