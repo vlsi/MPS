@@ -19,9 +19,14 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
 import java.util.Collection;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import java.util.ArrayList;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -111,19 +116,51 @@ public class ActionMigrationHelper {
     SLinkOperations.setTarget(dot, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), select);
     return dot;
   }
-  public static void addMissingImports(Collection<SNode> roots, SModel model) {
-    if (!(model instanceof SModelInternal)) {
+  public static void addMissingImports(Collection<SNode> roots, SModel newModel, SModel oldModel, SRepository repository) {
+    if (!(newModel instanceof SModelInternal) || !(oldModel instanceof SModelInternal)) {
       return;
     }
     for (SNode root : CollectionSequence.fromCollection(roots)) {
       for (SNode node : ListSequence.fromList(SNodeOperations.getNodeDescendants(root, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), false, new SAbstractConcept[]{}))) {
-        SLanguage language = node.getConcept().getLanguage();
-        if (!(((SModelInternal) model).importedLanguageIds().contains(language))) {
-          ((SModelInternal) model).addLanguage(language);
-        }
+        ActionMigrationHelper.addMissingLanguageImport(node, ((SModelInternal) oldModel), ((SModelInternal) newModel));
+        ActionMigrationHelper.addMissingModelImports(node, repository, ((SModelInternal) oldModel), ((SModelInternal) newModel));
+
       }
     }
   }
+  private static void addMissingModelImports(SNode node, SRepository repository, SModelInternal oldModel, SModelInternal newModel) {
+    List<SModelReference> missingModelImports = findMissingModelImports(node, repository);
+    for (SModelReference modelImport : ListSequence.fromList(missingModelImports)) {
+      if (oldModel.getModelImports().contains(modelImport) && !(newModel.getModelImports().contains(modelImport))) {
+        newModel.addModelImport(modelImport);
+      }
+    }
+  }
+  private static void addMissingLanguageImport(SNode node, SModelInternal oldModel, SModelInternal newModel) {
+    SLanguage language = node.getConcept().getLanguage();
+    if (oldModel.importedLanguageIds().contains(language) && !(newModel.importedLanguageIds().contains(language))) {
+      newModel.addLanguage(language);
+    }
+  }
+  /**
+   * copied from Dependency Helper
+   */
+  private static List<SModelReference> findMissingModelImports(SNode node, SRepository repository) {
+    ArrayList<SModelReference> rv = new ArrayList<SModelReference>();
+    for (SReference ref : node.getReferences()) {
+      SModelReference targetModelRef = ref.getTargetSModelReference();
+      SModel modelToImport = (targetModelRef == null ? null : targetModelRef.resolve(repository));
+      if (modelToImport == null) {
+        continue;
+      }
+
+      if (!(ModelConstraints.getScope(ref).contains(ref.getTargetNode()))) {
+        rv.add(targetModelRef);
+      }
+    }
+    return rv;
+  }
+
   private static boolean eq_qgr84z_a0a0a0a0a0a0a0j(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
