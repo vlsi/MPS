@@ -21,8 +21,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.refactoring.SModelReferenceDialog;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
@@ -71,7 +71,7 @@ public class MoveConcepts implements MoveNodesAction {
       }
     });
     if (hasGenerator.value) {
-      Messages.showWarningDialog(project.getProject(), "Generator fragments will not be moved.", "Move concepts");
+      Messages.showWarningDialog(project.getProject(), "Generator fragments will not be moved.", "Move Concepts");
     }
 
     final Wrappers._T<List<SModelReference>> structureModels = new Wrappers._T<List<SModelReference>>();
@@ -80,11 +80,7 @@ public class MoveConcepts implements MoveNodesAction {
         Iterable<SModule> modules = project.getRepository().getModules();
         return structureModels.value = Sequence.fromIterable(modules).ofType(Language.class).select(new ISelector<Language, SModelReference>() {
           public SModelReference select(Language it) {
-            SModel structureModelDescriptor = it.getStructureModelDescriptor();
-            if (structureModelDescriptor != null) {
-              return structureModelDescriptor.getReference();
-            }
-            return null;
+            return check_u6ijv2_a0a0a0a0a1a0a0h0f(it.getStructureModelDescriptor());
           }
         }).where(new IWhereFilter<SModelReference>() {
           public boolean accept(SModelReference it) {
@@ -108,4 +104,10 @@ public class MoveConcepts implements MoveNodesAction {
     MoveNodesUtil.moveTo(project, getName(), MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(targetModel.value), project)).withValues(nodesToMove));
   }
 
+  private static SModelReference check_u6ijv2_a0a0a0a0a1a0a0h0f(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getReference();
+    }
+    return null;
+  }
 }
