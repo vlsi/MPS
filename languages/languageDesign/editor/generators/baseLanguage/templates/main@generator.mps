@@ -9419,12 +9419,29 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbH" id="2WBlPBygbzG" role="3cqZAp" />
             <node concept="3clFbF" id="7jOwiXZ3tzW" role="3cqZAp">
               <node concept="1rXfSq" id="7jOwiXZ3tzX" role="3clFbG">
                 <ref role="37wK5l" node="heOoiJj" resolve="installCellInfo" />
                 <node concept="10Nm6u" id="7jOwiXZ3tKU" role="37wK5m" />
                 <node concept="37vLTw" id="7jOwiXZ3tLK" role="37wK5m">
                   <ref role="3cqZAo" node="4yOeMfyN0KS" resolve="editorCell" />
+                </node>
+              </node>
+              <node concept="1W57fq" id="2WBlPBygff7" role="lGtFl">
+                <node concept="3IZrLx" id="2WBlPBygff9" role="3IZSJc">
+                  <node concept="3clFbS" id="2WBlPBygffb" role="2VODD2">
+                    <node concept="3clFbF" id="2WBlPByghKw" role="3cqZAp">
+                      <node concept="3fqX7Q" id="2WBlPByghKu" role="3clFbG">
+                        <node concept="2OqwBi" id="2WBlPBygiA_" role="3fr31v">
+                          <node concept="1iwH7S" id="2WBlPBygi2A" role="2Oq$k0" />
+                          <node concept="1bhEwm" id="2WBlPBygiOJ" role="2OqNvi">
+                            <ref role="1bhEwk" node="5ojGctkv2dJ" resolve="customizeEmptyCell" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -35086,6 +35103,9 @@
         <node concept="37vLTG" id="7Nx4mSUb$82" role="3clF46">
           <property role="TrG5h" value="pattern" />
           <node concept="17QB3L" id="7Nx4mSUb$83" role="1tU5fm" />
+          <node concept="2AHcQZ" id="74cV3cf9Uix" role="2AJF6D">
+            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+          </node>
         </node>
       </node>
       <node concept="3Tm1VV" id="7Nx4mSUb$84" role="1B3o_S" />
@@ -35172,6 +35192,9 @@
         <node concept="37vLTG" id="7Nx4mSUb$wz" role="3clF46">
           <property role="TrG5h" value="pattern" />
           <node concept="17QB3L" id="7Nx4mSUb$w$" role="1tU5fm" />
+          <node concept="2AHcQZ" id="74cV3cf9nKX" role="2AJF6D">
+            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+          </node>
         </node>
       </node>
       <node concept="3clFb_" id="5BNBt6tlxB1" role="jymVt">
@@ -35201,6 +35224,9 @@
         <node concept="37vLTG" id="5BNBt6tlxBw" role="3clF46">
           <property role="TrG5h" value="pattern" />
           <node concept="17QB3L" id="5BNBt6tlxBx" role="1tU5fm" />
+          <node concept="2AHcQZ" id="74cV3cf9nNV" role="2AJF6D">
+            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+          </node>
         </node>
       </node>
       <node concept="3clFb_" id="5BNBt6tly4p" role="jymVt">
@@ -35267,6 +35293,9 @@
         <node concept="37vLTG" id="5BNBt6tly4S" role="3clF46">
           <property role="TrG5h" value="pattern" />
           <node concept="17QB3L" id="5BNBt6tly4T" role="1tU5fm" />
+          <node concept="2AHcQZ" id="74cV3cf9nQT" role="2AJF6D">
+            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+          </node>
         </node>
         <node concept="37vLTG" id="5BNBt6tlB2C" role="3clF46">
           <property role="TrG5h" value="strictly" />
@@ -35654,8 +35683,8 @@
                 <node concept="YeOm9" id="6HyqU7awhoK" role="2ShVmc">
                   <node concept="1Y3b0j" id="6HyqU7awhoN" role="YeSDq">
                     <property role="2bfB8j" value="true" />
-                    <ref role="1Y3XeK" to="78sh:~SubstituteMenuItemWrapper" resolve="SubstituteMenuItemWrapper" />
-                    <ref role="37wK5l" to="78sh:~SubstituteMenuItemWrapper.&lt;init&gt;(jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem)" resolve="SubstituteMenuItemWrapper" />
+                    <ref role="1Y3XeK" to="qtqj:~SubstituteMenuItemWrapper" resolve="SubstituteMenuItemWrapper" />
+                    <ref role="37wK5l" to="qtqj:~SubstituteMenuItemWrapper.&lt;init&gt;(jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem)" resolve="SubstituteMenuItemWrapper" />
                     <node concept="312cEg" id="3wUrfbnvEM0" role="jymVt">
                       <property role="34CwA1" value="false" />
                       <property role="eg7rD" value="false" />
@@ -35720,6 +35749,9 @@
                         <node concept="3uibUv" id="6HyqU7awhV4" role="1tU5fm">
                           <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                         </node>
+                        <node concept="2AHcQZ" id="74cV3cf9mOy" role="2AJF6D">
+                          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+                        </node>
                       </node>
                       <node concept="3clFbS" id="6HyqU7awhV6" role="3clF47">
                         <node concept="3cpWs8" id="6HyqU7aKwDg" role="3cqZAp">
@@ -35727,7 +35759,7 @@
                             <property role="TrG5h" value="nodeToWrap" />
                             <node concept="3Tqbb2" id="6HyqU7aKwDe" role="1tU5fm" />
                             <node concept="3nyPlj" id="6HyqU7aKxqQ" role="33vP2m">
-                              <ref role="37wK5l" to="78sh:~SubstituteMenuItemWrapper.createNode(java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="createNode" />
+                              <ref role="37wK5l" to="qtqj:~SubstituteMenuItemWrapper.createNode(java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="createNode" />
                               <node concept="37vLTw" id="3wUrfbnvrM5" role="37wK5m">
                                 <ref role="3cqZAo" node="6HyqU7awhV3" resolve="pattern" />
                               </node>
@@ -35770,7 +35802,7 @@
                         </node>
                         <node concept="3clFbF" id="6HyqU7awhVa" role="3cqZAp">
                           <node concept="3nyPlj" id="6HyqU7awhV9" role="3clFbG">
-                            <ref role="37wK5l" to="78sh:~SubstituteMenuItemWrapper.createNode(java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="createNode" />
+                            <ref role="37wK5l" to="qtqj:~SubstituteMenuItemWrapper.createNode(java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="createNode" />
                             <node concept="37vLTw" id="3wUrfbnvsaY" role="37wK5m">
                               <ref role="3cqZAo" node="6HyqU7awhV3" resolve="pattern" />
                             </node>
@@ -35807,17 +35839,23 @@
                         <node concept="3uibUv" id="3wUrfbnvsRZ" role="1tU5fm">
                           <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                         </node>
+                        <node concept="2AHcQZ" id="74cV3cf9n1N" role="2AJF6D">
+                          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+                        </node>
                       </node>
                       <node concept="37vLTG" id="3wUrfbnvsS0" role="3clF46">
                         <property role="TrG5h" value="pattern" />
                         <node concept="3uibUv" id="3wUrfbnvsS1" role="1tU5fm">
                           <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                         </node>
+                        <node concept="2AHcQZ" id="74cV3cf9naq" role="2AJF6D">
+                          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+                        </node>
                       </node>
                       <node concept="3clFbS" id="3wUrfbnvsS3" role="3clF47">
                         <node concept="3clFbF" id="3wUrfbo1WQK" role="3cqZAp">
                           <node concept="3nyPlj" id="3wUrfbnvU$H" role="3clFbG">
-                            <ref role="37wK5l" to="78sh:~SubstituteMenuItemWrapper.select(org.jetbrains.mps.openapi.model.SNode,java.lang.String):void" resolve="select" />
+                            <ref role="37wK5l" to="qtqj:~SubstituteMenuItemWrapper.select(org.jetbrains.mps.openapi.model.SNode,java.lang.String):void" resolve="select" />
                             <node concept="37vLTw" id="3wUrfbnXM3r" role="37wK5m">
                               <ref role="3cqZAo" node="3wUrfbnvEM0" resolve="myCreatedNode" />
                             </node>
@@ -36281,6 +36319,9 @@
         <node concept="37vLTG" id="7mC_uHFZM4M" role="3clF46">
           <property role="TrG5h" value="pattern" />
           <node concept="17QB3L" id="7mC_uHFZM4N" role="1tU5fm" />
+          <node concept="2AHcQZ" id="74cV3cf9TYX" role="2AJF6D">
+            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+          </node>
         </node>
       </node>
       <node concept="3Tm1VV" id="7mC_uHFZM4O" role="1B3o_S" />
@@ -37934,6 +37975,9 @@
               <node concept="3uibUv" id="1pfqmFIjz6B" role="1tU5fm">
                 <ref role="3uigEE" to="wyt6:~String" resolve="String" />
               </node>
+              <node concept="2AHcQZ" id="74cV3cf9V1k" role="2AJF6D">
+                <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+              </node>
             </node>
             <node concept="3clFbS" id="1pfqmFIjz6C" role="3clF47">
               <node concept="3clFbF" id="1pfqmFIjz6G" role="3cqZAp">
@@ -37974,6 +38018,9 @@
               <property role="TrG5h" value="pattern" />
               <node concept="3uibUv" id="1MWbOI3DD7l" role="1tU5fm">
                 <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+              </node>
+              <node concept="2AHcQZ" id="74cV3cf9WqJ" role="2AJF6D">
+                <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
               </node>
             </node>
             <node concept="3clFbS" id="1MWbOI3DD7m" role="3clF47">
@@ -38053,6 +38100,9 @@
               <property role="TrG5h" value="pattern" />
               <node concept="3uibUv" id="1MWbOI3E9cY" role="1tU5fm">
                 <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+              </node>
+              <node concept="2AHcQZ" id="74cV3cf9W_9" role="2AJF6D">
+                <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
               </node>
             </node>
             <node concept="3clFbS" id="1MWbOI3E9cZ" role="3clF47">
@@ -38265,10 +38315,16 @@
         <node concept="37vLTG" id="7mC_uHFWf0Z" role="3clF46">
           <property role="TrG5h" value="createdNode" />
           <node concept="3Tqbb2" id="7mC_uHFWfrv" role="1tU5fm" />
+          <node concept="2AHcQZ" id="74cV3cf9UVw" role="2AJF6D">
+            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+          </node>
         </node>
         <node concept="37vLTG" id="7mC_uHFNRUN" role="3clF46">
           <property role="TrG5h" value="pattern" />
           <node concept="17QB3L" id="7mC_uHFNRUO" role="1tU5fm" />
+          <node concept="2AHcQZ" id="74cV3cf9UZr" role="2AJF6D">
+            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+          </node>
         </node>
         <node concept="3cqZAl" id="3wUrfbo2bmz" role="3clF45" />
       </node>
@@ -38398,6 +38454,7 @@
         <node concept="37vLTG" id="7mC_uHG0Rnm" role="3clF46">
           <property role="TrG5h" value="pattern" />
           <node concept="17QB3L" id="7mC_uHG0Rnn" role="1tU5fm" />
+          <node concept="2AHcQZ" id="74cV3cf9UGT" role="2AJF6D" />
         </node>
       </node>
       <node concept="3Tm1VV" id="7mC_uHG0Rno" role="1B3o_S" />
