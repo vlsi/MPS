@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.menus.substitute;
+package jetbrains.mps.lang.editor.menus.substitute;
 
-import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.smodel.runtime.IconResource;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -73,5 +73,9 @@ public class SubstituteMenuItemWrapper implements SubstituteMenuItem {
   @Override
   public IconResource getIcon(String pattern) {
     return myItem.getIcon(pattern);
+  }
+
+  public SubstituteMenuItem getWrappedItem() {
+    return myItem;
   }
 }

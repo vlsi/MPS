@@ -48,6 +48,8 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   private SNode myParentNode;
   private SNode myCurrentChild;
   private MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenu> myMenuItemFactory;
+  private InUsedLanguagesPredicate myInUsedLanguagesPredicate;
+  private SuitableForConstraintsPredicate mySuitableForConstraintsPredicate;
 
   private DefaultSubstituteMenuContext(MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenu> menuItemFactory, SContainmentLink containmentLink, SNode parentNode,
       SNode currentChild, EditorContext editorContext) {
@@ -56,6 +58,18 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
     myParentNode = parentNode;
     myCurrentChild = currentChild;
     myEditorContext = editorContext;
+    myInUsedLanguagesPredicate = new InUsedLanguagesPredicate(getModel());
+    mySuitableForConstraintsPredicate = new SuitableForConstraintsPredicate(myParentNode, myContainmentLink, myEditorContext.getRepository());
+  }
+  private DefaultSubstituteMenuContext(MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenu> menuItemFactory, SContainmentLink containmentLink, SNode parentNode,
+      SNode currentChild, EditorContext editorContext, InUsedLanguagesPredicate inUsedLanguagesPredicate, SuitableForConstraintsPredicate suitableForConstraintsPredicate) {
+    myMenuItemFactory = menuItemFactory;
+    myContainmentLink = containmentLink;
+    myParentNode = parentNode;
+    myCurrentChild = currentChild;
+    myEditorContext = editorContext;
+    myInUsedLanguagesPredicate = inUsedLanguagesPredicate;
+    mySuitableForConstraintsPredicate = suitableForConstraintsPredicate;
   }
 
 
@@ -95,14 +109,14 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
       menuLookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(myEditorContext.getRepository()), myContainmentLink.getTargetConcept());
     }
     return myMenuItemFactory.createItems(this, menuLookup).stream()
-        .filter(new InUsedLanguagesPredicate(getModel()))
-        .filter(new SuitableForConstraintsPredicate(myParentNode, myContainmentLink, myEditorContext.getRepository()))
+        .filter(myInUsedLanguagesPredicate)
+        .filter(mySuitableForConstraintsPredicate)
         .collect(Collectors.toList());
   }
 
   @Override
   public SubstituteMenuContext withLink(SContainmentLink link) {
-    return new DefaultSubstituteMenuContext(myMenuItemFactory, link, myParentNode, myCurrentChild, myEditorContext);
+    return new DefaultSubstituteMenuContext(myMenuItemFactory, link, myParentNode, myCurrentChild, myEditorContext, myInUsedLanguagesPredicate, mySuitableForConstraintsPredicate);
   }
 
   @NotNull

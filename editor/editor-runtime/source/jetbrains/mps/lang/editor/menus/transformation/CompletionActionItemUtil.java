@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.editor.menus.transformation;
 
 import jetbrains.mps.lang.editor.menus.substitute.SmartReferenceSubstituteMenuItem;
+import jetbrains.mps.lang.editor.menus.substitute.SubstituteMenuItemWrapper;
 import jetbrains.mps.nodeEditor.cellMenu.CompletionActionItemAsSubstituteAction;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
@@ -36,10 +37,18 @@ public class CompletionActionItemUtil {
   public static SNode getReferentNode(CompletionActionItem item) {
     if (item instanceof SubstituteMenuItemAsCompletionActionItem) {
       final SubstituteMenuItem substituteItem = ((SubstituteMenuItemAsCompletionActionItem) item).getSubstituteItem();
-      if (substituteItem instanceof SmartReferenceSubstituteMenuItem) {
-        return ((SmartReferenceSubstituteMenuItem) substituteItem).getReferentNode();
-      }
+      return getReferentNode(substituteItem);
     }
     return null;
   }
+
+   private static SNode getReferentNode(SubstituteMenuItem item) {
+    if (item instanceof SmartReferenceSubstituteMenuItem) {
+      return ((SmartReferenceSubstituteMenuItem) item).getReferentNode();
+    } else if (item instanceof SubstituteMenuItemWrapper) {
+      return getReferentNode(((SubstituteMenuItemWrapper) item).getWrappedItem());
+    }
+    return null;
+  }
+
 }
