@@ -56,7 +56,7 @@ public class CopyPrefPageIconsToResources extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.models(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SModel>() {
         public boolean accept(SModel it) {
-          return LanguageAspect.STRUCTURE.is(it);
+          return LanguageAspect.STRUCTURE.is(it) && !(((SModelInternal) it).importedLanguageIds().contains(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x982eb8df2c964bd7L, 0x996311712ea622e5L), "jetbrains.mps.lang.resources")));
         }
       }).visitAll(new IVisitor<SModel>() {
         public void visit(SModel it) {
