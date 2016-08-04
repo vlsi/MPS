@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractSubstituteInfo;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -39,7 +40,7 @@ public class SideTransformSubstituteInfo extends AbstractSubstituteInfo {
 
   public SideTransformSubstituteInfo(EditorCell editorCell, Side side) {
     super(editorCell);
-    mySide =  side;
+    mySide = side;
   }
 
   @Override
@@ -49,7 +50,18 @@ public class SideTransformSubstituteInfo extends AbstractSubstituteInfo {
 
   @Override
   protected TransformationMenuContext createTransformationContext() {
-    return DefaultTransformationMenuContext.createInitialContextForCell(getEditorCell(), mySide.myMenuLocation);
+    final EditorCell editorCell = getEditorCell();
+    if (editorCell.getTransformationMenuLookup() != null) {
+      return DefaultTransformationMenuContext.createInitialContextForCell(getEditorCell(), mySide.myMenuLocation);
+    }
+    SNode node = getEditorCell().getSNode();
+    while (AttributeOperations.isAttribute(node)) {
+      node = node.getParent();
+    }
+    if (node != null) {
+      return DefaultTransformationMenuContext.createInitialContextForNode(getEditorContext(), node, mySide.myMenuLocation);
+    }
+    return null;
   }
 
   private List<SubstituteAction> wrapToRemovingSTInfoActions(List<SubstituteAction> actions) {
@@ -65,7 +77,6 @@ public class SideTransformSubstituteInfo extends AbstractSubstituteInfo {
       }
     }).collect(Collectors.toList());
   }
-
 
 
   public enum Side {

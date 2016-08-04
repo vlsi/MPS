@@ -50,6 +50,9 @@ public abstract class AbstractSubstituteInfo extends AbstractNodeSubstituteInfo 
   @Override
   protected List<SubstituteAction> createActions() {
     TransformationMenuContext context = createTransformationContext();
+    if (context == null) {
+      return new ArrayList<>();
+    }
     List<TransformationMenuItem> items = context.createItems(myEditorCell.getTransformationMenuLookup());
     return new SubstituteActionsCollector(mySourceNode, items).collect();
   }
