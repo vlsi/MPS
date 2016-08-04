@@ -297,32 +297,20 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
         return results;
       }
       public void confirm(SNodeReference finalState, SRepository repository, RefactoringSession refactoringSession) {
-        final SNode targetNode = finalState.resolve(repository);
+        SNode targetNode = finalState.resolve(repository);
         SModule targetModule = SNodeOperations.getModel(targetNode).getModule();
-        List<SNode> finalStates = ListSequence.fromList(participantStates).select(new ISelector<MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>, SNode>() {
-          public SNode select(MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?> it) {
-            return it.getSerializedFinal(targetNode);
-          }
-        }).toListSequence();
         MoveNodeRefactoringLogParticipant.LogBuilder logBuilder = MoveNodeRefactoringLogParticipant.LogBuilder.getBuilder(refactoringSession, searchScope, sourceModule);
         logBuilder.addOptions(selectedOptions);
         {
-          Iterator<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode>> participant_it = ListSequence.fromList(participantStates).select(new ISelector<MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode>>() {
-            public RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode> select(MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?> it) {
-              return it.getParticipant();
-            }
-          }).iterator();
+          Iterator<MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>> ps_it = ListSequence.fromList(participantStates).iterator();
           Iterator<SNode> i_it = ListSequence.fromList(initialStates).iterator();
-          Iterator<SNode> f_it = ListSequence.fromList(finalStates).iterator();
-          RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode> participant_var;
+          MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?> ps_var;
           SNode i_var;
-          SNode f_var;
-          while (participant_it.hasNext() && i_it.hasNext() && f_it.hasNext()) {
-            participant_var = participant_it.next();
+          while (ps_it.hasNext() && i_it.hasNext()) {
+            ps_var = ps_it.next();
             i_var = i_it.next();
-            f_var = f_it.next();
             if (i_var != null) {
-              logBuilder.addPart(participant_var, i_var, f_var);
+              logBuilder.addPart(ps_var.getParticipant(), i_var, ps_var.getSerializedFinal(targetNode));
             }
           }
         }
