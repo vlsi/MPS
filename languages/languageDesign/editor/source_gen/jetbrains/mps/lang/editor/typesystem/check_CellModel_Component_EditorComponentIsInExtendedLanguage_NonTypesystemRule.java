@@ -7,10 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.smodel.Language;
-import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.Language;
+import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -25,13 +25,16 @@ public class check_CellModel_Component_EditorComponentIsInExtendedLanguage_NonTy
   public check_CellModel_Component_EditorComponentIsInExtendedLanguage_NonTypesystemRule() {
   }
   public void applyRule(final SNode cmc, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    Language language = as_5bg4jt_a0a0a1(check_5bg4jt_a0a0a1(cmc.getModel()), Language.class);
+    if ((SLinkOperations.getTarget(cmc, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, 0xfb35c96897L, "editorComponent")) == null)) {
+      return;
+    }
+    Language language = as_5bg4jt_a0a1a1(check_5bg4jt_a0a1a1(cmc.getModel()), Language.class);
     if (language == null) {
       return;
     }
     Set<Language> extendedLanguages = language.getAllExtendedLanguages();
 
-    Language ecLanguage = as_5bg4jt_a0a4a1(check_5bg4jt_a0a4a1(SLinkOperations.getTarget(cmc, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, 0xfb35c96897L, "editorComponent")).getModel()), Language.class);
+    Language ecLanguage = as_5bg4jt_a0a5a1(check_5bg4jt_a0a5a1(SLinkOperations.getTarget(cmc, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, 0xfb35c96897L, "editorComponent")).getModel()), Language.class);
     if (!(SetSequence.fromSet(extendedLanguages).contains(ecLanguage))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
@@ -55,22 +58,22 @@ public class check_CellModel_Component_EditorComponentIsInExtendedLanguage_NonTy
   public boolean overrides() {
     return false;
   }
-  private static SModule check_5bg4jt_a0a0a1(SModel checkedDotOperand) {
+  private static SModule check_5bg4jt_a0a1a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static SModule check_5bg4jt_a0a4a1(SModel checkedDotOperand) {
+  private static SModule check_5bg4jt_a0a5a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static <T> T as_5bg4jt_a0a0a1(Object o, Class<T> type) {
+  private static <T> T as_5bg4jt_a0a1a1(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_5bg4jt_a0a4a1(Object o, Class<T> type) {
+  private static <T> T as_5bg4jt_a0a5a1(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

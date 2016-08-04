@@ -5592,6 +5592,22 @@
     <property role="TrG5h" value="check_CellModel_Component_EditorComponentIsInExtendedLanguage" />
     <property role="3GE5qa" value="CellModel" />
     <node concept="3clFbS" id="Zr7fahXKeP" role="18ibNy">
+      <node concept="3clFbJ" id="5XD4qVJ3ymF" role="3cqZAp">
+        <node concept="3clFbS" id="5XD4qVJ3ymH" role="3clFbx">
+          <node concept="3cpWs6" id="5XD4qVJ3$ZO" role="3cqZAp" />
+        </node>
+        <node concept="2OqwBi" id="5XD4qVJ3zM8" role="3clFbw">
+          <node concept="2OqwBi" id="5XD4qVJ3yN1" role="2Oq$k0">
+            <node concept="1YBJjd" id="5XD4qVJ3yC8" role="2Oq$k0">
+              <ref role="1YBMHb" node="Zr7fahXKeR" resolve="cmc" />
+            </node>
+            <node concept="3TrEf2" id="5XD4qVJ3zk6" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpc2:fGPMmyn" resolve="editorComponent" />
+            </node>
+          </node>
+          <node concept="3w_OXm" id="5XD4qVJ3$X1" role="2OqNvi" />
+        </node>
+      </node>
       <node concept="3cpWs8" id="hYjR2Jb" role="3cqZAp">
         <node concept="3cpWsn" id="hYjR2Jc" role="3cpWs9">
           <property role="TrG5h" value="language" />
