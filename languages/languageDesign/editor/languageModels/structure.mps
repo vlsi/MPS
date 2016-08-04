@@ -5205,6 +5205,12 @@
     <property role="34LRSv" value="subconcepts menu" />
     <property role="R4oN_" value="subconcepts menu" />
     <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
+    <node concept="1TJgyj" id="6xArtG41BPw" role="1TKVEi">
+      <property role="IQ2ns" value="7522821015001791840" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="filter" />
+      <ref role="20lvS9" node="6xArtG40Wbc" resolve="QueryFunction_SubstituteMenu_FilterConcepts" />
+    </node>
   </node>
   <node concept="PlHQZ" id="1quYWAD18L7">
     <property role="EcuMT" value="1630016958697344071" />
@@ -6173,6 +6179,20 @@
     <property role="34LRSv" value="targetNode" />
     <property role="R4oN_" value="the node that the menu is being shown for" />
     <property role="EcuMT" value="4647688914602775700" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="6xArtG40Wbc">
+    <property role="EcuMT" value="7522821015001613004" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
+    <property role="TrG5h" value="QueryFunction_SubstituteMenu_FilterConcepts" />
+    <ref role="1TJDcQ" node="7u5_96XhKbP" resolve="QueryFunction_SubstituteMenu" />
+  </node>
+  <node concept="1TIwiD" id="6xArtG40Wbo">
+    <property role="EcuMT" value="7522821015001613016" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
+    <property role="TrG5h" value="QueryFunctionParameter_SubstituteMenu_Concept" />
+    <property role="34LRSv" value="concept" />
+    <property role="R4oN_" value="subconcept of current concept" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
 </model>
