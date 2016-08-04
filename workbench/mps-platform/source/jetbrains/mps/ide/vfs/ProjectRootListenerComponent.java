@@ -50,12 +50,12 @@ import java.util.Map;
 public final class ProjectRootListenerComponent implements ProjectComponent {
   private static final Logger LOG = LogManager.getLogger(ProjectRootListenerComponent.class);
 
-  private final WatchingIdeaFileSystem myFileSystem;
+  private final IdeaFileSystem myFileSystem;
   private final Project myProject;
   private final Map<Project, FileListener> myProject2ListenerMap = new HashMap<>();
   private IFile myFile;
 
-  public ProjectRootListenerComponent(@NotNull WatchingIdeaFileSystem fileSystem, Project project) {
+  public ProjectRootListenerComponent(@NotNull IdeaFileSystem fileSystem, Project project) {
     myFileSystem = fileSystem;
     myProject = project;
   }
