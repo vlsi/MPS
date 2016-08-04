@@ -17,6 +17,7 @@ package jetbrains.mps.lang.editor.menus.substitute;
 
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.smodel.runtime.IconResource;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -36,37 +37,37 @@ public class SubstituteMenuItemWrapper implements SubstituteMenuItem {
   }
 
   @Override
-  public SNode getType(String pattern) {
+  public SNode getType(@NotNull String pattern) {
     return myItem.getType(pattern);
   }
 
   @Override
-  public String getMatchingText(String pattern) {
+  public String getMatchingText(@NotNull String pattern) {
     return myItem.getMatchingText(pattern);
   }
 
   @Override
-  public String getDescriptionText(String pattern) {
+  public String getDescriptionText(@NotNull String pattern) {
     return myItem.getDescriptionText(pattern);
   }
 
   @Override
-  public boolean canExecute(String pattern) {
+  public boolean canExecute(@NotNull String pattern) {
     return myItem.canExecute(pattern);
   }
 
   @Override
-  public boolean canExecuteStrictly(String pattern) {
+  public boolean canExecuteStrictly(@NotNull String pattern) {
     return myItem.canExecuteStrictly(pattern);
   }
 
   @Override
-  public SNode createNode(String pattern) {
+  public SNode createNode(@NotNull String pattern) {
     return myItem.createNode(pattern);
   }
 
   @Override
-  public void select(SNode createdNode, String pattern) {
+  public void select(@NotNull SNode createdNode, @NotNull String pattern) {
     myItem.select(createdNode, pattern);
   }
 

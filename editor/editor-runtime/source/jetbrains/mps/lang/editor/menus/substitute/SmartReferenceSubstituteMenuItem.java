@@ -16,7 +16,6 @@
 package jetbrains.mps.lang.editor.menus.substitute;
 
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
@@ -51,7 +50,7 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
   }
 
   @Override
-  public String getMatchingText(String pattern) {
+  public String getMatchingText(@NotNull String pattern) {
     if (myMatchingText == null) {
       myMatchingText = myRefDescriptor.getReferencePresentation(myReferentNode, false, true, false);
       if (myMatchingText == null) {
@@ -62,7 +61,7 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
   }
 
   private String getSmartMatchingText() {
-    String referentMatchingText = NodePresentationUtil.matchingText(myReferentNode, true, true);
+    String referentMatchingText = NodePresentationUtil.matchingText(myReferentNode, true, false);
     if (ReferenceConceptUtil.hasSmartAlias(mySmartConcept)) {
       return ReferenceConceptUtil.getPresentationFromSmartAlias(mySmartConcept, referentMatchingText);
     }
@@ -70,24 +69,24 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
   }
 
   @Override
-  public String getDescriptionText(String pattern) {
+  public String getDescriptionText(@NotNull String pattern) {
     return "^" + NodePresentationUtil.descriptionText(myReferentNode, true);
   }
 
   @Override
-  public SNode createNode(String pattern) {
+  public SNode createNode(@NotNull String pattern) {
     SNode childNode = NodeFactoryManager.createNode(mySmartConcept, getCurrentChild(), getParentNode(), getParentNode().getModel());
     SNodeAccessUtil.setReferenceTarget(childNode, mySmartReference, myReferentNode);
     return childNode;
   }
 
   @Override
-  public SNode getType(String pattern) {
+  public SNode getType(@NotNull String pattern) {
     return null;
   }
 
   @Override
-  public IconResource getIcon(String pattern) {
+  public IconResource getIcon(@NotNull String pattern) {
     SAbstractConcept concept = MetaAdapterByDeclaration.getConcept(myReferentNode);
     if (concept != null) {
       return IconResourceUtil.getIconResourceForConcept(concept);

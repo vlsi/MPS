@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.actions.runtime.impl.ChildSubstituteActionsUtil;
 import jetbrains.mps.lang.editor.menus.transformation.CompletionActionItemUtil;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
 import jetbrains.mps.smodel.Language;
@@ -90,6 +91,24 @@ public class OldNewSubstituteUtil {
         return referentNode;
       }
       return getOutputConcept((CompletionActionItemAsSubstituteAction) action, repository);
+    }
+    return null;
+  }
+
+  public static SNode getNewNode(SNode parentNode, EditorContext editorContext) {
+    SNode result = editorContext.getSelectedNode();
+    if (result == null) {
+      return null;
+    }
+
+    SNode resultParent = result.getParent();
+
+    while (resultParent != null) {
+      if (resultParent == parentNode) {
+        return result;
+      }
+      result = resultParent;
+      resultParent = resultParent.getParent();
     }
     return null;
   }

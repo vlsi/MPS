@@ -26,11 +26,6 @@ public class ActionItemBase implements ActionItem {
   }
 
   @Override
-  public boolean canExecute(@NotNull String pattern) {
-    return true;
-  }
-
-  @Override
   public void execute(@NotNull String pattern) {
   }
 

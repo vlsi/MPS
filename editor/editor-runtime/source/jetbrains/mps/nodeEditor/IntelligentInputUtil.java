@@ -121,10 +121,10 @@ public class IntelligentInputUtil {
       cellForNewNode = editorContext.getEditorComponent().findNodeCell(newNode);
       if (cellForNewNode != null) {
         EditorCell_Label target = null;
-        EditorCell errorOrEditable =
-            CellFinderUtil.findChildByManyFinders(cellForNewNode, true, Finder.FIRST_ERROR, Finder.LAST_EDITABLE);
-        if (errorOrEditable instanceof EditorCell_Label) {
-          target = (EditorCell_Label) errorOrEditable;
+        EditorCell errorCell =
+            CellFinderUtil.findChildByManyFinders(cellForNewNode, true, Finder.FIRST_ERROR);
+        if (errorCell instanceof EditorCell_Label) {
+          target = (EditorCell_Label) errorCell;
         }
 
         if (target != null) {
@@ -274,10 +274,6 @@ public class IntelligentInputUtil {
       SubstituteAction rtItem = rtMatchingActions.get(0);
       SNode yetNewNode = rtItem.substitute(editorContext, tail);
 
-      if (yetNewNode == null) {
-        yetNewNode = editorContext.getSelectedNode();
-      }
-
       editorContext.flushEvents();
 
       if (yetNewNode != null) {
@@ -342,7 +338,11 @@ public class IntelligentInputUtil {
       return applyLeftTransform(editorContext, head, smallPattern, cellForNewNode, newNode, true);
     } else if (canCompleteSmallPatternImmediatelyLeft(info, head, smallPattern) &&
         !canCompleteTheWholeStringImmediately(info, head + smallPattern)) {
-      newNode = info.getMatchingActions(smallPattern, true).get(0).substitute(editorContext, smallPattern);
+      final SubstituteAction substituteAction = info.getMatchingActions(smallPattern, true).get(0);
+      newNode = substituteAction.substitute(editorContext, smallPattern);
+      if (newNode == null) {
+        newNode = editorContext.getSelectedNode();
+      }
       if (newNode == null) {
         return true;
       }

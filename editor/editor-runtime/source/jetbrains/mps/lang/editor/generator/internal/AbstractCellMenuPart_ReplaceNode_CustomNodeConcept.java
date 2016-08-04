@@ -25,6 +25,14 @@ import jetbrains.mps.nodeEditor.cellMenu.OldNewSubstituteUtil;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.menus.substitute.DefaultSubstituteMenuContext;
+import jetbrains.mps.nodeEditor.selectionRestoring.CellIdLocator;
+import jetbrains.mps.nodeEditor.selectionRestoring.CellLocator;
+import jetbrains.mps.nodeEditor.selectionRestoring.CellSelector;
+import jetbrains.mps.nodeEditor.selectionRestoring.ChildCellLocator;
+import jetbrains.mps.nodeEditor.selectionRestoring.LabelCellSelector;
+import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection;
+import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelectionByCell;
+import jetbrains.mps.nodeEditor.selectionRestoring.WholeCellSelector;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -41,6 +49,7 @@ import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -50,6 +59,7 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Igor Alshannikov
@@ -74,23 +84,9 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
         result.add(new NodeSubstituteActionWrapper(a) {
           @Override
           public SNode substitute(@Nullable EditorContext context, String pattern) {
-            String selectedCellId = null;
-            if (context != null && context.getSelectedCell() != null) {
-              selectedCellId = context.getSelectedCell().getCellId();
-            }
-
+            String selectedCellId = getSelectedCellId(context);
             SNode result = super.substitute(context, pattern);
-
-            if (selectedCellId != null) {
-              EditorCell toSelect = context.getEditorComponent().findCellWithId(result, selectedCellId);
-              if (toSelect != null) {
-                context.flushEvents();
-                context.getSelectionManager().setSelection(toSelect);
-                if (context.getSelectedCell() instanceof EditorCell_Label) {
-                  context.getSelectedCell().end();
-                }
-              }
-            }
+            select(context, selectedCellId, result);
             return result;
           }
         });
@@ -100,9 +96,43 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
       SContainmentLink containmentLink = node.getContainmentLink();
       assert containmentLink != null;
       List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parent, node, containmentLink, editorContext, lookup).collect();
-      result = new SubstituteActionsCollector(parent, transformationItems).collect();
+      result = new SubstituteActionsCollector(parent, transformationItems).collect().stream().map(action -> new NodeSubstituteActionWrapper(action) {
+        @Override
+        public SNode substitute(@Nullable EditorContext context, String pattern) {
+          String selectedCellId = getSelectedCellId(context);
+
+          super.substitute(context, pattern);
+          if (context != null) {
+            //hack to find substituted node
+            select(editorContext, selectedCellId, OldNewSubstituteUtil.getNewNode(parent, editorContext));
+          }
+          return null;
+        }
+      }).collect(Collectors.toList());
     }
     return result;
+  }
+
+  private void select(@Nullable EditorContext context, String selectedCellId, SNode result) {
+    if (selectedCellId != null && context != null && result != null) {
+      EditorCell toSelect = context.getEditorComponent().findCellWithId(result, selectedCellId);
+      if (toSelect != null) {
+        context.flushEvents();
+        context.getSelectionManager().setSelection(toSelect);
+        if (context.getSelectedCell() instanceof EditorCell_Label) {
+          context.getSelectedCell().end();
+        }
+      }
+    }
+  }
+
+  @Nullable
+  private String getSelectedCellId(@Nullable EditorContext context) {
+    String selectedCellId = null;
+    if (context != null && context.getSelectedCell() != null) {
+      selectedCellId = context.getSelectedCell().getCellId();
+    }
+    return selectedCellId;
   }
 
   @Deprecated
