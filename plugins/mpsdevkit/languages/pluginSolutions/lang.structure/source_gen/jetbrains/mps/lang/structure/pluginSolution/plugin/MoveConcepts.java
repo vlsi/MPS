@@ -17,11 +17,12 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import com.intellij.openapi.ui.Messages;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.ide.refactoring.SModelReferenceDialog;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.ide.refactoring.SModelReferenceDialog;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
@@ -74,16 +75,24 @@ public class MoveConcepts implements MoveNodesAction {
     }
 
     final Wrappers._T<List<SModelReference>> structureModels = new Wrappers._T<List<SModelReference>>();
-    project.getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
+    project.getRepository().getModelAccess().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<List<SModelReference>>() {
+      public List<SModelReference> invoke() {
         Iterable<SModule> modules = project.getRepository().getModules();
-        structureModels.value = Sequence.fromIterable(modules).ofType(Language.class).select(new ISelector<Language, SModelReference>() {
+        return structureModels.value = Sequence.fromIterable(modules).ofType(Language.class).select(new ISelector<Language, SModelReference>() {
           public SModelReference select(Language it) {
-            return it.getStructureModelDescriptor().getReference();
+            SModel structureModelDescriptor = it.getStructureModelDescriptor();
+            if (structureModelDescriptor != null) {
+              return structureModelDescriptor.getReference();
+            }
+            return null;
+          }
+        }).where(new IWhereFilter<SModelReference>() {
+          public boolean accept(SModelReference it) {
+            return it != null;
           }
         }).toListSequence();
       }
-    });
+    }));
     final SModelReference targetModelRef = SModelReferenceDialog.getSelectedModel(project, structureModels.value);
     if (targetModelRef == null) {
       return;
