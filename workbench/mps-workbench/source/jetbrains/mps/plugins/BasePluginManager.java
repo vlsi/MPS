@@ -15,12 +15,6 @@
  */
 package jetbrains.mps.plugins;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.util.WaitForProgressToShow;
-import jetbrains.mps.ide.ThreadUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -31,7 +25,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
@@ -147,6 +140,8 @@ public abstract class BasePluginManager<T> implements PluginLoader {
       LOG.trace(this + ": creating plugin " + plugin + " from the contributor " + contributor);
     } catch (LinkageError le) {
       LOG.error(this + ": contributor " + contributor + " threw a linkage error during plugin creation ", le);
+    } catch (VirtualMachineError virtualMachineError) {
+      throw virtualMachineError;
     } catch (Throwable t) {
       LOG.error(this + ": contributor " + contributor + " threw an exception during plugin creation " + t.getMessage(), t);
     }
@@ -159,6 +154,8 @@ public abstract class BasePluginManager<T> implements PluginLoader {
         disposePlugin(plugin);
       } catch (LinkageError le) {
         LOG.error(this + ": plugin " + plugin + " threw a linkage error during disposing", le);
+      } catch (VirtualMachineError virtualMachineError) {
+        throw virtualMachineError;
       } catch (Throwable t) {
         LOG.error(this + ": plugin " + plugin + " threw an exception during disposing " + t.getMessage(), t);
       }

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.plugins.applicationplugins;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.MPSCoreComponents;
