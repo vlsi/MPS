@@ -67,7 +67,5 @@ public interface CompletionActionItem extends ActionItem {
     return null;
   }
 
-  default boolean canExecuteStriclty(@NotNull String pattern) {
-    return canExecute(pattern);
-  }
+  boolean canExecuteStrictly(@NotNull String pattern);
 }

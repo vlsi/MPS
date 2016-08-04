@@ -25,6 +25,10 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.IconResourceUtil;
+import jetbrains.mps.util.PatternUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -33,6 +37,8 @@ import org.jetbrains.mps.openapi.model.SNode;
  * @author simon
  */
 public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
+  private static final Logger LOG = LogManager.getLogger(DefaultSubstituteMenuItem.class);
+
   private final SNode myParentNode;
   private final SNode myCurrentChild;
   private SAbstractConcept myConcept;
@@ -57,36 +63,36 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
   }
 
   @Override
-  public SNode getType(String pattern) {
+  public SNode getType(@NotNull String pattern) {
     return null;
   }
 
   @Override
-  public String getMatchingText(String pattern) {
+  public String getMatchingText(@NotNull String pattern) {
     return NodePresentationUtil.matchingText(myConcept, false);
   }
 
   @Override
-  public String getDescriptionText(String pattern) {
+  public String getDescriptionText(@NotNull String pattern) {
     if (myConcept instanceof SConcept) {
-      return NodePresentationUtil.descriptionText(((SConcept) myConcept), false);
+      return NodePresentationUtil.descriptionText(myConcept, false);
     }
     //todo...
     return "";
   }
 
   @Override
-  public boolean canExecute(String pattern) {
-    return true;
+  public boolean canExecute(@NotNull String pattern) {
+    return PatternUtil.matchesPattern(pattern, getMatchingText(pattern));
   }
 
   @Override
-  public boolean canExecuteStrictly(String pattern) {
-    return canExecute(pattern);
+  public boolean canExecuteStrictly(@NotNull String pattern) {
+    return pattern.equals(getMatchingText(pattern));
   }
 
   @Override
-  public SNode createNode(String pattern) {
+  public SNode createNode(@NotNull String pattern) {
     SNode currentChild = myCurrentChild;
     if (myCurrentChild != null) {
       final Object oldNodeForSubstitute = myCurrentChild.getUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION);
@@ -98,12 +104,12 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
   }
 
   @Override
-  public IconResource getIcon(String pattern) {
+  public IconResource getIcon(@NotNull String pattern) {
     return IconResourceUtil.getIconResourceForConcept(myConcept);
   }
 
   @Override
-  public void select(SNode createdNode, String pattern) {
+  public void select(@NotNull SNode createdNode, @NotNull String pattern) {
     EditorComponent editorComponent = ((EditorComponent) myEditorContext.getEditorComponent());
     EditorCell cell = editorComponent.findNodeCell(createdNode);
     if (cell != null) {

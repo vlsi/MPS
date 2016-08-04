@@ -16,14 +16,12 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.menus.transformation.CommandPolicy;
 import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
 import jetbrains.mps.smodel.runtime.IconResource;
-import jetbrains.mps.util.PatternUtil;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -94,29 +92,12 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
 
   @Override
   public boolean canSubstituteStrictly(String pattern) {
-    return pattern.equals(getMatchingText(pattern)) && myActionItem.canExecuteStriclty(pattern);
+    return myActionItem.canExecuteStrictly(pattern);
   }
 
   @Override
   public boolean canSubstitute(String pattern) {
-    return matchesPattern(pattern) && myActionItem.canExecute(pattern);
-  }
-
-  private boolean matchesPattern(String pattern) {
-    if (pattern == null || pattern.length() == 0) {
-      return true;
-    }
-    String matchingText = null;
-    try {
-      matchingText = getMatchingText(pattern);
-    } catch (Exception e) {
-      LOG.error(null, e);
-    }
-    if (matchingText == null || matchingText.length() == 0) {
-      return false;
-    }
-    return matchingText.charAt(0) == pattern.charAt(0) &&
-        (matchingText.startsWith(pattern) || matchingText.matches(PatternUtil.getExactItemPatternBuilder(pattern, false, false).toString() + ".*"));
+    return myActionItem.canExecute(pattern);
   }
 
   @Override
@@ -126,8 +107,8 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
       myActionItem.execute(pattern);
     } else {
       EditorCell contextCell = context.getContextCell();
-      if (contextCell instanceof EditorCell_Constant && contextCell.isErrorState()) {
-          ((EditorCell_Constant) contextCell).synchronizeViewWithModel();
+      if (contextCell instanceof jetbrains.mps.nodeEditor.cells.EditorCell) {
+        ((jetbrains.mps.nodeEditor.cells.EditorCell) contextCell).synchronizeViewWithModel();
       }
       context.getRepository().getModelAccess().executeCommand(new EditorCommandAdapter(() -> myActionItem.execute(pattern), context));
     }

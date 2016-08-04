@@ -34579,8 +34579,8 @@
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpc2:2wNq5j$KpC6" resolve="TransformationLocation_SideTransform" />
       <node concept="gft3U" id="6VgTvK0ospZ" role="1lVwrX">
-        <node concept="3uibUv" id="3WiHtPHdtCJ" role="gfFT$">
-          <ref role="3uigEE" to="pzjl:3no4VMf9D4J" resolve="SideTransformCompletionActionItem" />
+        <node concept="3uibUv" id="6mc99hXl6q_" role="gfFT$">
+          <ref role="3uigEE" to="6lvu:~SideTransformCompletionActionItem" resolve="SideTransformCompletionActionItem" />
         </node>
       </node>
     </node>
@@ -34588,8 +34588,8 @@
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpc2:6n_hLaFlw4s" resolve="TransformationLocation_Completion" />
       <node concept="gft3U" id="39pdj2NGUwd" role="1lVwrX">
-        <node concept="3uibUv" id="3WiHtPHdtCN" role="gfFT$">
-          <ref role="3uigEE" to="pzjl:3no4VMf9D3M" resolve="SubstituteCompletionActionItem" />
+        <node concept="3uibUv" id="6mc99hXl6Mj" role="gfFT$">
+          <ref role="3uigEE" to="6lvu:~SubstituteCompletionActionItem" resolve="SubstituteCompletionActionItem" />
         </node>
       </node>
     </node>
@@ -35654,8 +35654,8 @@
                 <node concept="YeOm9" id="6HyqU7awhoK" role="2ShVmc">
                   <node concept="1Y3b0j" id="6HyqU7awhoN" role="YeSDq">
                     <property role="2bfB8j" value="true" />
-                    <ref role="1Y3XeK" to="qtqj:~SubstituteMenuItemWrapper" resolve="SubstituteMenuItemWrapper" />
-                    <ref role="37wK5l" to="qtqj:~SubstituteMenuItemWrapper.&lt;init&gt;(jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem)" resolve="SubstituteMenuItemWrapper" />
+                    <ref role="1Y3XeK" to="78sh:~SubstituteMenuItemWrapper" resolve="SubstituteMenuItemWrapper" />
+                    <ref role="37wK5l" to="78sh:~SubstituteMenuItemWrapper.&lt;init&gt;(jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem)" resolve="SubstituteMenuItemWrapper" />
                     <node concept="312cEg" id="3wUrfbnvEM0" role="jymVt">
                       <property role="34CwA1" value="false" />
                       <property role="eg7rD" value="false" />
@@ -35727,7 +35727,7 @@
                             <property role="TrG5h" value="nodeToWrap" />
                             <node concept="3Tqbb2" id="6HyqU7aKwDe" role="1tU5fm" />
                             <node concept="3nyPlj" id="6HyqU7aKxqQ" role="33vP2m">
-                              <ref role="37wK5l" to="qtqj:~SubstituteMenuItemWrapper.createNode(java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="createNode" />
+                              <ref role="37wK5l" to="78sh:~SubstituteMenuItemWrapper.createNode(java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="createNode" />
                               <node concept="37vLTw" id="3wUrfbnvrM5" role="37wK5m">
                                 <ref role="3cqZAo" node="6HyqU7awhV3" resolve="pattern" />
                               </node>
@@ -35817,7 +35817,7 @@
                       <node concept="3clFbS" id="3wUrfbnvsS3" role="3clF47">
                         <node concept="3clFbF" id="3wUrfbo1WQK" role="3cqZAp">
                           <node concept="3nyPlj" id="3wUrfbnvU$H" role="3clFbG">
-                            <ref role="37wK5l" to="qtqj:~SubstituteMenuItemWrapper.select(org.jetbrains.mps.openapi.model.SNode,java.lang.String):void" resolve="select" />
+                            <ref role="37wK5l" to="78sh:~SubstituteMenuItemWrapper.select(org.jetbrains.mps.openapi.model.SNode,java.lang.String):void" resolve="select" />
                             <node concept="37vLTw" id="3wUrfbnXM3r" role="37wK5m">
                               <ref role="3cqZAo" node="3wUrfbnvEM0" resolve="myCreatedNode" />
                             </node>
