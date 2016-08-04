@@ -34,6 +34,7 @@
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentContainer" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.ReadUtil" />
+    <classNode dependClassName="jetbrains.mps.util.Reference" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
