@@ -31,7 +31,7 @@ import java.util.function.Predicate;
 /**
  * @author simon
  */
-public class SuitableForConstraintsPredicate implements Predicate<SubstituteMenuItem> {
+public class SuitableForConstraintsPredicate implements Predicate<SAbstractConcept> {
   @NotNull
   private final SNode myParentNode;
 
@@ -48,18 +48,19 @@ public class SuitableForConstraintsPredicate implements Predicate<SubstituteMenu
   }
 
   @Override
-  public boolean test(SubstituteMenuItem item) {
-    if (myLinkDeclarationNode == null) {
+  public boolean test(SAbstractConcept concept) {
+    if (concept == null) {
       return true;
     }
-    SAbstractConcept outputConcept = item.getOutputConcept();
-    SNodeReference outputConceptSourceNodeReference = outputConcept.getSourceNode();
+    SNodeReference outputConceptSourceNodeReference = concept.getSourceNode();
     if (outputConceptSourceNodeReference == null) {
       return true;
     }
     SNode outputConceptSourceNode = outputConceptSourceNodeReference.resolve(myRepository);
-    return outputConceptSourceNode != null && ModelConstraints.canBeChild(outputConcept, myParentNode, myLinkDeclarationNode, null, null) &&
-        ModelConstraints.canBeParent(myParentNode, outputConceptSourceNode, myLinkDeclarationNode, null, null) &&
-        ModelConstraints.canBeAncestor(myParentNode, null, outputConceptSourceNode, null);
+    if (outputConceptSourceNode == null) {
+      return true;
+    }
+    return  ModelConstraints.canBeChild(concept, myParentNode, myLinkDeclarationNode, null, null) && (myLinkDeclarationNode == null || ModelConstraints.canBeParent(myParentNode, outputConceptSourceNode, myLinkDeclarationNode, null, null) &&
+        ModelConstraints.canBeAncestor(myParentNode, null, outputConceptSourceNode, null));
   }
 }

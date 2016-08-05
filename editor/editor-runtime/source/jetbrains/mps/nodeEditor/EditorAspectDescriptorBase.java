@@ -121,7 +121,8 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDefaultSubstituteMenus(SAbstractConcept concept, @NotNull Collection<SLanguage> usedLanguages) {
-    return myDefaultSubstituteMenusCache.get(concept);
+    clearCachesIfStale();
+    return myDefaultSubstituteMenusCache.getInLanguages(concept, toNamespaces(usedLanguages));
   }
 
   @NotNull
@@ -133,7 +134,8 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor, Langu
   @NotNull
   @Override
   public Collection<SubstituteMenu> getNamedSubstituteMenus(NamedMenuId menuId, @NotNull Collection<SLanguage> usedLanguages) {
-    return myNamedSubstituteMenusCache.get(menuId);
+    clearCachesIfStale();
+    return myNamedSubstituteMenusCache.getInLanguages(menuId, toNamespaces(usedLanguages));
   }
 
   @NotNull

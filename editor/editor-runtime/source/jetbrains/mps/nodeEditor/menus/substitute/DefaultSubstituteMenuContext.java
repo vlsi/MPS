@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.menus.substitute;
 
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
+import jetbrains.mps.lang.editor.menus.transformation.CachingPredicate;
 import jetbrains.mps.lang.editor.menus.transformation.InUsedLanguagesPredicate;
 import jetbrains.mps.lang.editor.menus.transformation.SuitableForConstraintsPredicate;
 import jetbrains.mps.nodeEditor.menus.DefaultMenuItemFactory;
@@ -30,12 +31,14 @@ import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 /**
@@ -48,8 +51,8 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   private SNode myParentNode;
   private SNode myCurrentChild;
   private MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenu> myMenuItemFactory;
-  private InUsedLanguagesPredicate myInUsedLanguagesPredicate;
-  private SuitableForConstraintsPredicate mySuitableForConstraintsPredicate;
+  private Predicate<SAbstractConcept> myInUsedLanguagesPredicate;
+  private Predicate<SAbstractConcept> mySuitableForConstraintsPredicate;
 
   private DefaultSubstituteMenuContext(MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenu> menuItemFactory, SContainmentLink containmentLink, SNode parentNode,
       SNode currentChild, EditorContext editorContext) {
@@ -58,11 +61,12 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
     myParentNode = parentNode;
     myCurrentChild = currentChild;
     myEditorContext = editorContext;
-    myInUsedLanguagesPredicate = new InUsedLanguagesPredicate(getModel());
-    mySuitableForConstraintsPredicate = new SuitableForConstraintsPredicate(myParentNode, myContainmentLink, myEditorContext.getRepository());
+    myInUsedLanguagesPredicate = createInUsedLanguagesPredicate();
+    mySuitableForConstraintsPredicate = createSuitableForConstraintsPredicate(myContainmentLink);
   }
+
   private DefaultSubstituteMenuContext(MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenu> menuItemFactory, SContainmentLink containmentLink, SNode parentNode,
-      SNode currentChild, EditorContext editorContext, InUsedLanguagesPredicate inUsedLanguagesPredicate, SuitableForConstraintsPredicate suitableForConstraintsPredicate) {
+      SNode currentChild, EditorContext editorContext, Predicate<SAbstractConcept> inUsedLanguagesPredicate, Predicate<SAbstractConcept> suitableForConstraintsPredicate) {
     myMenuItemFactory = menuItemFactory;
     myContainmentLink = containmentLink;
     myParentNode = parentNode;
@@ -70,6 +74,16 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
     myEditorContext = editorContext;
     myInUsedLanguagesPredicate = inUsedLanguagesPredicate;
     mySuitableForConstraintsPredicate = suitableForConstraintsPredicate;
+  }
+
+  @NotNull
+  private SuitableForConstraintsPredicate createSuitableForConstraintsPredicate(SContainmentLink containmentLink) {
+    return new SuitableForConstraintsPredicate(myParentNode, containmentLink, myEditorContext.getRepository());
+  }
+
+  @NotNull
+  private Predicate<SAbstractConcept> createInUsedLanguagesPredicate() {
+    return new CachingPredicate<>(new InUsedLanguagesPredicate(getModel()));
   }
 
 
@@ -109,14 +123,15 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
       menuLookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(myEditorContext.getRepository()), myContainmentLink.getTargetConcept());
     }
     return myMenuItemFactory.createItems(this, menuLookup).stream()
-        .filter(myInUsedLanguagesPredicate)
-        .filter(mySuitableForConstraintsPredicate)
+        .filter(item -> myInUsedLanguagesPredicate.test(item.getOutputConcept()))
+        .filter(item -> mySuitableForConstraintsPredicate.test(item.getOutputConcept()))
         .collect(Collectors.toList());
   }
 
   @Override
   public SubstituteMenuContext withLink(SContainmentLink link) {
-    return new DefaultSubstituteMenuContext(myMenuItemFactory, link, myParentNode, myCurrentChild, myEditorContext, myInUsedLanguagesPredicate, mySuitableForConstraintsPredicate);
+    return new DefaultSubstituteMenuContext(myMenuItemFactory, link, myParentNode, myCurrentChild, myEditorContext, myInUsedLanguagesPredicate,
+        createSuitableForConstraintsPredicate(link));
   }
 
   @NotNull
