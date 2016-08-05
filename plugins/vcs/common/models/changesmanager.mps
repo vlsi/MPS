@@ -5344,16 +5344,47 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5zpsdFy4A7f" role="3cqZAp">
-          <node concept="2OqwBi" id="5zpsdFy4A7h" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuqQa" role="2Oq$k0">
-              <ref role="3cqZAo" node="2JwSLRbzlkK" resolve="myDifference" />
+        <node concept="3clFbH" id="43LPOOeGBo7" role="3cqZAp" />
+        <node concept="3cpWs8" id="43LPOOeGBSP" role="3cqZAp">
+          <node concept="3cpWsn" id="43LPOOeGBSQ" role="3cpWs9">
+            <property role="TrG5h" value="repo" />
+            <node concept="3uibUv" id="43LPOOeGBSM" role="1tU5fm">
+              <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
             </node>
-            <node concept="liA8E" id="5zpsdFy4A7l" role="2OqNvi">
-              <ref role="37wK5l" node="2JwSLRbzm_i" resolve="removeChangeSet" />
+            <node concept="2OqwBi" id="43LPOOeGBSR" role="33vP2m">
+              <node concept="2YIFZM" id="43LPOOeGBSS" role="2Oq$k0">
+                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
+                <node concept="37vLTw" id="43LPOOeGBST" role="37wK5m">
+                  <ref role="3cqZAo" node="2JwSLRbzlnZ" resolve="myProject" />
+                </node>
+              </node>
+              <node concept="liA8E" id="43LPOOeGBSU" role="2OqNvi">
+                <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+              </node>
             </node>
           </node>
         </node>
+        <node concept="1QHqEK" id="43LPOOeG_xr" role="3cqZAp">
+          <node concept="1QHqEC" id="43LPOOeG_xs" role="1QHqEI">
+            <node concept="3clFbS" id="43LPOOeG_xt" role="1bW5cS">
+              <node concept="3clFbF" id="5zpsdFy4A7f" role="3cqZAp">
+                <node concept="2OqwBi" id="5zpsdFy4A7h" role="3clFbG">
+                  <node concept="37vLTw" id="2BHiRxeuqQa" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2JwSLRbzlkK" resolve="myDifference" />
+                  </node>
+                  <node concept="liA8E" id="5zpsdFy4A7l" role="2OqNvi">
+                    <ref role="37wK5l" node="2JwSLRbzm_i" resolve="removeChangeSet" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="37vLTw" id="43LPOOeGBSV" role="ukAjM">
+            <ref role="3cqZAo" node="43LPOOeGBSQ" resolve="repo" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="43LPOOeG_5s" role="3cqZAp" />
         <node concept="3clFbF" id="5tlS4MXLuvB" role="3cqZAp">
           <node concept="37vLTI" id="5tlS4MXLuvD" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagTxKn" role="37vLTx">
@@ -5681,17 +5712,8 @@
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="15yHJj8k6Q3" role="ukAjM">
-            <node concept="2YIFZM" id="15yHJj8k63T" role="2Oq$k0">
-              <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
-              <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-              <node concept="37vLTw" id="15yHJj8k6sz" role="37wK5m">
-                <ref role="3cqZAo" node="2JwSLRbzlnZ" resolve="myProject" />
-              </node>
-            </node>
-            <node concept="liA8E" id="15yHJj8k8br" role="2OqNvi">
-              <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-            </node>
+          <node concept="37vLTw" id="43LPOOeGBSW" role="ukAjM">
+            <ref role="3cqZAo" node="43LPOOeGBSQ" resolve="repo" />
           </node>
         </node>
       </node>

@@ -23,12 +23,13 @@ import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.apache.log4j.Level;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
@@ -174,7 +175,14 @@ public class ChangesTracking {
     if (status != null && myStatusOnLastUpdate == status && !(force)) {
       return;
     }
-    myDifference.removeChangeSet();
+
+    SRepository repo = ProjectHelper.fromIdeaProject(myProject).getRepository();
+    repo.getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        myDifference.removeChangeSet();
+      }
+    });
+
     myStatusOnLastUpdate = status;
     if (FileStatus.NOT_CHANGED == status && !(force)) {
       return;
@@ -204,7 +212,7 @@ public class ChangesTracking {
         return;
       }
     }
-    ProjectHelper.fromIdeaProject(myProject).getRepository().getModelAccess().runReadAction(new Runnable() {
+    repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         synchronized (ChangesTracking.this) {
           if (!(myDisposed)) {
