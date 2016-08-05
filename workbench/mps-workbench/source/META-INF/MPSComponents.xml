@@ -39,6 +39,7 @@
       <implementation-class>jetbrains.mps.ide.platform.watching.FSChangesWatcher</implementation-class>
     </component>
     <component>
+      <interface-class>jetbrains.mps.ide.platform.watching.ReloadManager</interface-class>
       <implementation-class>jetbrains.mps.ide.platform.watching.ReloadManagerComponent</implementation-class>
     </component>
     <component>

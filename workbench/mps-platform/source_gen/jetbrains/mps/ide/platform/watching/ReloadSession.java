@@ -56,7 +56,7 @@ public class ReloadSession {
   }
 
   /*package*/ void updateStatus() {
-    this.myEmpty = Sequence.fromIterable(getParticipants()).all(new IWhereFilter<ReloadParticipant>() {
+    myEmpty = Sequence.fromIterable(getParticipants()).all(new IWhereFilter<ReloadParticipant>() {
       public boolean accept(ReloadParticipant it) {
         return it.isEmpty();
       }
@@ -102,8 +102,8 @@ public class ReloadSession {
       try {
         p = participantClass.newInstance();
         MapSequence.fromMap(myParticipants).put(participantClass, p);
-      } catch (IllegalAccessException e) {
-      } catch (InstantiationException e) {
+      } catch (IllegalAccessException ignored) {
+      } catch (InstantiationException ignored) {
       }
     }
     return (T) p;
@@ -112,11 +112,13 @@ public class ReloadSession {
   private Iterable<ReloadParticipant> getParticipants() {
     return MapSequence.fromMap(myParticipants).values();
   }
+
   private void fireReloadStarted() {
     for (ReloadListener rl : myListeners) {
       rl.reloadStarted();
     }
   }
+
   private void fireReloadFinished() {
     for (ReloadListener rl : myListeners) {
       rl.reloadFinished();

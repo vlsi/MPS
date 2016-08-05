@@ -4,16 +4,16 @@ package jetbrains.mps.ide.platform.watching;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.IMakeNotificationListener;
-import jetbrains.mps.make.MakeNotification;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import java.util.concurrent.atomic.AtomicInteger;
+import jetbrains.mps.make.IMakeService;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Level;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModelAccess;
@@ -29,40 +29,30 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.make.MakeNotification;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class ReloadManagerComponent extends ReloadManager implements ApplicationComponent {
   private final ProjectManager myProjectManager;
-  private IMakeService myMakeService;
-  private IMakeNotificationListener myMakeListener = new IMakeNotificationListener.Stub() {
-    @Override
-    public void sessionOpened(MakeNotification notification) {
-      suspendReloads();
-    }
+  private final IMakeNotificationListener myMakeListener = new ReloadManagerComponent.NotReloadingOnMakeListener();
+  private final List<ReloadListener> myReloadListeners = ListSequence.fromList(new ArrayList<ReloadListener>());
+  private final ReloadManagerComponent.ReloadSessionBroker myReloadSessionBroker = new ReloadManagerComponent.ReloadSessionBroker();
+  private final MergingUpdateQueue myTaskQueue = new MergingUpdateQueue("Reload Manager Queue", 500, true, null, null, null, true);
+  private final Object myUpdateId = new Object();
+  private final AtomicInteger mySuspendCount = new AtomicInteger(0);
 
-    @Override
-    public void sessionClosed(MakeNotification notification) {
-      resumeReloads();
-    }
-  };
-  private List<ReloadListener> myReloadListeners = ListSequence.fromList(new ArrayList<ReloadListener>());
-  private ReloadManagerComponent.ReloadSessionBroker myReloadSessionBroker = new ReloadManagerComponent.ReloadSessionBroker();
-  private MergingUpdateQueue myQueue = new MergingUpdateQueue("Reload Manager Queue", 500, true, null, null, null, true);
-  private Object myUpdateId = new Object();
-  private AtomicInteger mySuspendCount = new AtomicInteger(0);
+  private IMakeService myMakeService;
 
   public ReloadManagerComponent(ProjectManager projectManager) {
     myProjectManager = projectManager;
-    myQueue.setRestartTimerOnAdd(true);
+    myTaskQueue.setRestartTimerOnAdd(true);
   }
 
   public void initComponent() {
-    ReloadManager.setInstance(this);
   }
 
   public void disposeComponent() {
-    ReloadManager.setInstance(null);
     if (myMakeService != null) {
       myMakeService.removeListener(myMakeListener);
       myMakeService = null;
@@ -75,6 +65,12 @@ public class ReloadManagerComponent extends ReloadManager implements Application
     return "Reload Manager";
   }
 
+  /**
+   * 
+   * @deprecated the dependency between components must be the other way around
+   */
+  @ToRemove(version = 3.4)
+  @Deprecated
   public void setMakeService(IMakeService ms) {
     if (ms != null) {
       ms.addListener(myMakeListener);
@@ -89,14 +85,14 @@ public class ReloadManagerComponent extends ReloadManager implements Application
   public void suspendReloads() {
     int count = mySuspendCount.incrementAndGet();
     assert count >= 0;
-    myQueue.suspend();
+    myTaskQueue.suspend();
   }
 
   public void resumeReloads() {
     int count = mySuspendCount.decrementAndGet();
     assert count >= 0;
     if (count == 0) {
-      myQueue.resume();
+      myTaskQueue.resume();
     }
   }
 
@@ -165,7 +161,7 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       return;
     }
 
-    myQueue.queue(new Update(myUpdateId) {
+    myTaskQueue.queue(new Update(myUpdateId) {
       public void run() {
         for (Project project : myProjectManager.getOpenProjects()) {
           if (project.getComponent(ProjectLevelVcsManager.class).isBackgroundVcsOperationRunning()) {
@@ -257,6 +253,18 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       ReloadSession rs = myReloadSession;
       myReloadSession = null;
       return rs;
+    }
+  }
+
+  private class NotReloadingOnMakeListener extends IMakeNotificationListener.Stub {
+    @Override
+    public void sessionOpened(MakeNotification notification) {
+      suspendReloads();
+    }
+
+    @Override
+    public void sessionClosed(MakeNotification notification) {
+      resumeReloads();
     }
   }
   protected static Logger LOG = LogManager.getLogger(ReloadManagerComponent.class);

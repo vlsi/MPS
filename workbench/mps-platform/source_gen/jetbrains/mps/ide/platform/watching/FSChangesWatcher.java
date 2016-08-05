@@ -87,9 +87,11 @@ public class FSChangesWatcher implements ApplicationComponent {
   private class BulkFileChangesListener implements BulkFileListener {
     private BulkFileChangesListener() {
     }
+
     @Override
     public void before(@NotNull List<? extends VFileEvent> events) {
     }
+
     @Override
     public void after(@NotNull final List<? extends VFileEvent> events) {
       final Application application = ApplicationManager.getApplication();
@@ -103,7 +105,6 @@ public class FSChangesWatcher implements ApplicationComponent {
       })) {
         return;
       }
-
       myReloadManager.runReload(FileProcessor.class, new ReloadAction<FileProcessor>() {
         public void runAction(final FileProcessor participant) {
           ListSequence.fromList(events).where(new IWhereFilter<VFileEvent>() {
@@ -121,6 +122,7 @@ public class FSChangesWatcher implements ApplicationComponent {
         }
       });
     }
+
     private void processAfterEvent(VFileEvent event, FileProcessor processor) {
       if (LOG.isDebugEnabled()) {
         LOG.debug("Process after event for " + event.getPath());
