@@ -75,7 +75,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_CustomChildConcept imple
       MenuLookup<SubstituteMenu> lookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()),
           concept);
       List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parentNode, currentChild, containmentLink, editorContext, lookup).collect();
-      return new SubstituteActionsCollector(parentNode, transformationItems).collect();
+      return new SubstituteActionsCollector(parentNode, transformationItems, editorContext.getRepository()).collect();
     }
   }
 

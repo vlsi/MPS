@@ -16,21 +16,13 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.actions.runtime.impl.ChildSubstituteActionsUtil;
-import jetbrains.mps.lang.editor.menus.transformation.CompletionActionItemUtil;
-import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
 import jetbrains.mps.smodel.Language;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
-
-import java.util.Optional;
 
 /**
  * @author simon
@@ -39,9 +31,9 @@ public class OldNewSubstituteUtil {
 
   public static final String EDITOR_LANG = "jetbrains.mps.lang.editor";
 
-  public static boolean areOldActionsApplicable(SAbstractConcept concept, SRepository repository){
+  public static boolean areOldActionsApplicable(SAbstractConcept concept, SRepository repository) {
     SNodeReference sourceRef = concept.getSourceNode();
-    if (sourceRef == null ){
+    if (sourceRef == null) {
       return false;
     }
     SNode sourceNode = sourceRef.resolve(repository);
@@ -51,7 +43,7 @@ public class OldNewSubstituteUtil {
     return hasActionBuilders(sourceNode);
   }
 
-  public static boolean areOldActionsApplicable(SNode concept){
+  public static boolean areOldActionsApplicable(SNode concept) {
     return hasActionBuilders(concept);
   }
 
@@ -64,52 +56,4 @@ public class OldNewSubstituteUtil {
     return sourceModule instanceof Language && ChildSubstituteActionsUtil.hasActionBuilders(((Language) sourceModule));
   }
 
-  public static SNode getOutputConcept(SubstituteAction action, SRepository repository) {
-    return action.getOutputConcept();
-  }
-
-  @Nullable
-  public static SNode getOutputConcept(CompletionActionItemAsSubstituteAction action, SRepository repository) {
-    final CompletionActionItem actionItem = action.getActionItem();
-    final SAbstractConcept outputConcept = CompletionActionItemUtil.getOutputConcept(actionItem);
-    final SNodeReference sourceNode = outputConcept == null ? null : outputConcept.getSourceNode();
-    if (repository != null && sourceNode != null) {
-      return sourceNode.resolve(repository);
-    }
-    return null;
-  }
-
-  public static Object getParameterObject(SubstituteAction action, SRepository repository) {
-    final Object parameterObject = action.getParameterObject();
-    if (parameterObject != null) {
-      return parameterObject;
-    }
-    if (repository != null && action instanceof CompletionActionItemAsSubstituteAction){
-      final CompletionActionItem actionItem = ((CompletionActionItemAsSubstituteAction) action).getActionItem();
-      final SNode referentNode = CompletionActionItemUtil.getReferentNode(actionItem);
-      if (referentNode != null) {
-        return referentNode;
-      }
-      return getOutputConcept((CompletionActionItemAsSubstituteAction) action, repository);
-    }
-    return null;
-  }
-
-  public static SNode getNewNode(SNode parentNode, EditorContext editorContext) {
-    SNode result = editorContext.getSelectedNode();
-    if (result == null) {
-      return null;
-    }
-
-    SNode resultParent = result.getParent();
-
-    while (resultParent != null) {
-      if (resultParent == parentNode) {
-        return result;
-      }
-      result = resultParent;
-      resultParent = resultParent.getParent();
-    }
-    return null;
-  }
 }

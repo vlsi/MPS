@@ -49,6 +49,6 @@ public class SChildSubstituteInfoPartEx implements SubstituteInfoPartExt {
     TransformationMenuContext context =
         DefaultTransformationMenuContext.createInitialContextForCell(myEditorCell, MenuLocations.SUBSTITUTE);
     List<TransformationMenuItem> items = context.createItems(myEditorCell.getTransformationMenuLookup());
-    return new SubstituteActionsCollector(parentNode, items).collect();
+    return new SubstituteActionsCollector(parentNode, items, context.getEditorContext().getRepository()).collect();
   }
 }

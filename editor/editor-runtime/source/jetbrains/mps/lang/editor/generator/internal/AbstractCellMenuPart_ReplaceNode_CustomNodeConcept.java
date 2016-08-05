@@ -96,7 +96,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
       SContainmentLink containmentLink = node.getContainmentLink();
       assert containmentLink != null;
       List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parent, node, containmentLink, editorContext, lookup).collect();
-      result = new SubstituteActionsCollector(parent, transformationItems).collect().stream().map(action -> new NodeSubstituteActionWrapper(action) {
+      result = new SubstituteActionsCollector(parent, transformationItems, editorContext.getRepository()).collect().stream().map(action -> new NodeSubstituteActionWrapper(action) {
         @Override
         public SNode substitute(@Nullable EditorContext context, String pattern) {
           String selectedCellId = getSelectedCellId(context);
@@ -104,7 +104,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
           super.substitute(context, pattern);
           if (context != null) {
             //hack to find substituted node
-            select(editorContext, selectedCellId, OldNewSubstituteUtil.getNewNode(parent, editorContext));
+            select(editorContext, selectedCellId, getNewNode(parent, editorContext));
           }
           return null;
         }
@@ -112,6 +112,25 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
     }
     return result;
   }
+
+  private SNode getNewNode(SNode parentNode, EditorContext editorContext) {
+    SNode result = editorContext.getSelectedNode();
+    if (result == null) {
+      return null;
+    }
+
+    SNode resultParent = result.getParent();
+
+    while (resultParent != null) {
+      if (resultParent == parentNode) {
+        return result;
+      }
+      result = resultParent;
+      resultParent = resultParent.getParent();
+    }
+    return null;
+  }
+
 
   private void select(@Nullable EditorContext context, String selectedCellId, SNode result) {
     if (selectedCellId != null && context != null && result != null) {

@@ -301,7 +301,7 @@ public class IntelligentInputUtil {
   }
 
   private static boolean tryToSubstituteFirstSutable(EditorContext editorContext, String text, SubstituteInfo substituteInfo) {
-    SNode concept = OldNewSubstituteUtil.getOutputConcept(substituteInfo.getMatchingActions(text, true).get(0), editorContext.getRepository());
+    SNode concept = substituteInfo.getMatchingActions(text, true).get(0).getOutputConcept();
     if (concept == null) {
       return false;
     }
@@ -309,9 +309,9 @@ public class IntelligentInputUtil {
         SMethodTrimmedId.create("substituteInAmbigousPosition", null, "1653mnvAgq$"));
 
     if (property) {
-      SNode outputConcept = OldNewSubstituteUtil.getOutputConcept(substituteInfo.getMatchingActions(text, true).get(0), editorContext.getRepository());
+      SNode outputConcept = substituteInfo.getMatchingActions(text, true).get(0).getOutputConcept();
       for (SubstituteAction action : substituteInfo.getMatchingActions(text, true)) {
-        if (outputConcept != OldNewSubstituteUtil.getOutputConcept(action, editorContext.getRepository())) {
+        if (outputConcept != action.getOutputConcept()) {
           return false;
         }
       }

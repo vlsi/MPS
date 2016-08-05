@@ -25,18 +25,14 @@ import java.util.Comparator;
 
 public class SubstituteActionComparator implements Comparator<SubstituteAction> {
   private String myPattern;
-  private SRepository myRepository;
 
   public SubstituteActionComparator(String pattern) {
     this.myPattern = pattern;
   }
-  public SubstituteActionComparator(String pattern, SRepository repository) {
-    this.myPattern = pattern;
-    myRepository = repository;
-  }
+
 
   protected int getLocalSortPriority(SubstituteAction action) {
-    final Object parameterObject = OldNewSubstituteUtil.getParameterObject(action, myRepository);
+    final Object parameterObject = action.getParameterObject();
     if (parameterObject instanceof SNode) {
       return NodePresentationUtil.getSortPriority(action.getSourceNode(), (SNode) parameterObject);
     } else {

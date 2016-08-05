@@ -319,7 +319,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       matchingActions = getMatchingActions(trimPattern, false);
     }
     try {
-      Collections.sort(matchingActions, new SubstituteActionComparator(needToTrim ? trimPattern : pattern, myEditorComponent.getEditorContext().getRepository()) {
+      Collections.sort(matchingActions, new SubstituteActionComparator(needToTrim ? trimPattern : pattern) {
         private Map<SubstituteAction, Integer> myLocalSortPrioritiesMap = new HashMap<SubstituteAction, Integer>();
         private Map<SubstituteAction, Integer> myRatesMap = new HashMap<SubstituteAction, Integer>();
         private Map<SubstituteAction, String> myVisibleMatchingTextsMap = new HashMap<SubstituteAction, String>();

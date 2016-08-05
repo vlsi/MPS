@@ -20,6 +20,7 @@ import jetbrains.mps.lang.editor.menus.substitute.SubstituteMenuItemWrapper;
 import jetbrains.mps.nodeEditor.cellMenu.CompletionActionItemAsSubstituteAction;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -29,7 +30,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class CompletionActionItemUtil {
   public static SAbstractConcept getOutputConcept(CompletionActionItem item) {
     if (item instanceof SubstituteMenuItemAsCompletionActionItem) {
-      ((SubstituteMenuItemAsCompletionActionItem) item).getSubstituteItem().getOutputConcept();
+      return ((SubstituteMenuItemAsCompletionActionItem) item).getSubstituteItem().getOutputConcept();
     }
     return null;
   }
@@ -38,6 +39,16 @@ public class CompletionActionItemUtil {
     if (item instanceof SubstituteMenuItemAsCompletionActionItem) {
       final SubstituteMenuItem substituteItem = ((SubstituteMenuItemAsCompletionActionItem) item).getSubstituteItem();
       return getReferentNode(substituteItem);
+    }
+    return null;
+  }
+
+  public static String getVisibleMatchingText(CompletionActionItem item) {
+    if (item instanceof SubstituteMenuItemAsCompletionActionItem) {
+      final SNode referentNode = getReferentNode(item);
+      if (referentNode != null) {
+        return NodePresentationUtil.matchingText((SNode) referentNode, true, true);
+      }
     }
     return null;
   }

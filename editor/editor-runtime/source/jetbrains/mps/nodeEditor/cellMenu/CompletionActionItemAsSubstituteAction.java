@@ -16,24 +16,36 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
+import jetbrains.mps.lang.editor.menus.transformation.CompletionActionItemUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.CommandPolicy;
 import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public class CompletionActionItemAsSubstituteAction implements SubstituteAction {
   private static final Logger LOG = Logger.getLogger(CompletionActionItemAsSubstituteAction.class);
   private final CompletionActionItem myActionItem;
   private final SNode mySourceNode;
+  private final SRepository myRepository;
 
   public CompletionActionItemAsSubstituteAction(CompletionActionItem actionItem, SNode sourceNode) {
+    this(actionItem, sourceNode, null);
+  }
+
+  public CompletionActionItemAsSubstituteAction(CompletionActionItem actionItem, SNode sourceNode, SRepository repository) {
     myActionItem = actionItem;
     mySourceNode = sourceNode;
+    myRepository = repository;
   }
 
   public IconResource getIcon(String pattern) {
@@ -57,11 +69,20 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
 
   @Override
   public Object getParameterObject() {
-    return null;
+    final SNode referentNode = CompletionActionItemUtil.getReferentNode(myActionItem);
+    if (referentNode != null) {
+      return referentNode;
+    }
+    return getOutputConcept();
   }
 
   @Override
   public SNode getOutputConcept() {
+    final SAbstractConcept outputConcept = CompletionActionItemUtil.getOutputConcept(myActionItem);
+    final SNodeReference sourceNode = outputConcept == null ? null : outputConcept.getSourceNode();
+    if (myRepository != null && sourceNode != null) {
+      return sourceNode.resolve(myRepository);
+    }
     return null;
   }
 
@@ -82,7 +103,8 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
 
   @Override
   public String getVisibleMatchingText(String pattern) {
-    return myActionItem.getLabelText(pattern);
+    final String visibleMatchingText = CompletionActionItemUtil.getVisibleMatchingText(myActionItem);
+    return visibleMatchingText != null ? visibleMatchingText : getMatchingText(pattern);
   }
 
   @Override
