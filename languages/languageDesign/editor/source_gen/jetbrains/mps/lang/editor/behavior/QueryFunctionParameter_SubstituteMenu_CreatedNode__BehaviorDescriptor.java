@@ -36,9 +36,12 @@ public final class QueryFunctionParameter_SubstituteMenu_CreatedNode__BehaviorDe
   }
 
   /*package*/ static SNode getType_id27DJnJtIQ9C(@NotNull SNode __thisNode__) {
-    SNode action = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546aL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart"), false, false);
+    SNode action = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bcee99dL, "jetbrains.mps.lang.editor.structure.IExtensibleSubstituteMenuPart"), false, false);
     if (action != null) {
-      return _quotation_createNode_2yhl6z_a0a1a0(SubstituteMenuPart__BehaviorDescriptor.getOutputConcept_id7mC_uHFK7Hn.invoke(action));
+      SNode outputConcept = IExtensibleSubstituteMenuPart__BehaviorDescriptor.getCreatedConcept_id6e716hiEcRp.invoke(action);
+      if (outputConcept != null) {
+        return _quotation_createNode_2yhl6z_a0a1a1a0(outputConcept);
+      }
     }
     return _quotation_createNode_2yhl6z_a2a0();
   }
@@ -89,7 +92,7 @@ public final class QueryFunctionParameter_SubstituteMenu_CreatedNode__BehaviorDe
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static SNode _quotation_createNode_2yhl6z_a0a1a0(Object parameter_1) {
+  private static SNode _quotation_createNode_2yhl6z_a0a1a1a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"), null, null, false);

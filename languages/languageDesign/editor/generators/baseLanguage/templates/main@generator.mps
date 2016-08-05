@@ -35716,28 +35716,16 @@
                         <ref role="3uigEE" to="c17a:~SAbstractConcept" resolve="SAbstractConcept" />
                       </node>
                       <node concept="3clFbS" id="CH8DZ9IwWg" role="3clF47">
-                        <node concept="3clFbF" id="CH8DZ9Iz_K" role="3cqZAp">
-                          <node concept="35c_gC" id="CH8DZ9Iz_I" role="3clFbG">
-                            <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                            <node concept="1ZhdrF" id="CH8DZ9IzDR" role="lGtFl">
-                              <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/2644386474300074836/2644386474300074837" />
-                              <property role="2qtEX8" value="conceptDeclaration" />
-                              <node concept="3$xsQk" id="CH8DZ9IzDS" role="3$ytzL">
-                                <node concept="3clFbS" id="CH8DZ9IzDT" role="2VODD2">
-                                  <node concept="3clFbF" id="AIV2SdxnRU" role="3cqZAp">
-                                    <node concept="2OqwBi" id="AIV2Sdxokm" role="3clFbG">
-                                      <node concept="30H73N" id="AIV2SdxnRT" role="2Oq$k0" />
-                                      <node concept="2qgKlT" id="AIV2Sdxp9C" role="2OqNvi">
-                                        <ref role="37wK5l" to="tpcb:7mC_uHFK7Hn" resolve="getOutputConcept" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
+                        <node concept="3clFbF" id="6e716hiA_uu" role="3cqZAp">
+                          <node concept="2OqwBi" id="6e716hiA_SF" role="3clFbG">
+                            <node concept="37vLTw" id="6e716hiA_ut" role="2Oq$k0">
+                              <ref role="3cqZAo" node="5N5pDMJWo4r" resolve="item" />
+                            </node>
+                            <node concept="liA8E" id="6e716hiAA8$" role="2OqNvi">
+                              <ref role="37wK5l" to="78sh:~SubstituteMenuItem.getOutputConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getOutputConcept" />
                             </node>
                           </node>
                         </node>
-                        <node concept="3clFbH" id="1iX_5GKXJao" role="3cqZAp" />
                       </node>
                       <node concept="2AHcQZ" id="CH8DZ9IwWh" role="2AJF6D">
                         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
