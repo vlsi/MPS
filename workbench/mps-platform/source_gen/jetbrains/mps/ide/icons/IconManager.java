@@ -217,7 +217,7 @@ public final class IconManager {
     }
 
     // compatibility code, can be removed after 3.4 
-    SNode dn = SNodeOperations.cast(concept.getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+    SNode dn = SNodeOperations.as(concept.getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
     if (dn == null) {
       return null;
     }
