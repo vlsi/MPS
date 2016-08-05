@@ -259,7 +259,7 @@ public final class IconManager {
     }
 
     Icon icon;
-    if (ir.getResourceId() != null) {
+    if (ir.getResourceId() != null && ir.getProvider() != null) {
       Image image = ImageLoader.loadFromResource(ir.getResourceId(), ir.getProvider());
       if (image == null) {
         return null;

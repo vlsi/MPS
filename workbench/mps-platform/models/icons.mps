@@ -1731,7 +1731,7 @@
                     <ref role="3cqZAo" node="4qFb6JnFy0h" resolve="dn" />
                   </node>
                   <node concept="3TrEf2" id="Z6TQiSSu7u" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpce:f_TJDff" />
+                    <ref role="3Tt5mk" to="tpce:f_TJDff" resolve="extends" />
                   </node>
                 </node>
               </node>
@@ -1988,14 +1988,27 @@
               </node>
             </node>
           </node>
-          <node concept="3y3z36" id="4k7GEFswyZi" role="3clFbw">
-            <node concept="10Nm6u" id="4k7GEFswzOQ" role="3uHU7w" />
-            <node concept="2OqwBi" id="4k7GEFswqj1" role="3uHU7B">
-              <node concept="37vLTw" id="4k7GEFswpsF" role="2Oq$k0">
-                <ref role="3cqZAo" node="Z6TQiSQgLN" resolve="ir" />
+          <node concept="1Wc70l" id="2wzsDB$1rmU" role="3clFbw">
+            <node concept="3y3z36" id="4k7GEFswyZi" role="3uHU7B">
+              <node concept="2OqwBi" id="4k7GEFswqj1" role="3uHU7B">
+                <node concept="37vLTw" id="4k7GEFswpsF" role="2Oq$k0">
+                  <ref role="3cqZAo" node="Z6TQiSQgLN" resolve="ir" />
+                </node>
+                <node concept="liA8E" id="4k7GEFswroE" role="2OqNvi">
+                  <ref role="37wK5l" to="ze1i:~IconResource.getResourceId():java.lang.String" resolve="getResourceId" />
+                </node>
               </node>
-              <node concept="liA8E" id="4k7GEFswroE" role="2OqNvi">
-                <ref role="37wK5l" to="ze1i:~IconResource.getResourceId():java.lang.String" resolve="getResourceId" />
+              <node concept="10Nm6u" id="4k7GEFswzOQ" role="3uHU7w" />
+            </node>
+            <node concept="3y3z36" id="2wzsDB$1svC" role="3uHU7w">
+              <node concept="10Nm6u" id="2wzsDB$1sAQ" role="3uHU7w" />
+              <node concept="2OqwBi" id="2wzsDB$1sgT" role="3uHU7B">
+                <node concept="37vLTw" id="2wzsDB$1sgU" role="2Oq$k0">
+                  <ref role="3cqZAo" node="Z6TQiSQgLN" resolve="ir" />
+                </node>
+                <node concept="liA8E" id="2wzsDB$1sgV" role="2OqNvi">
+                  <ref role="37wK5l" to="ze1i:~IconResource.getProvider():java.lang.Class" resolve="getProvider" />
+                </node>
               </node>
             </node>
           </node>
@@ -3322,7 +3335,7 @@
                       <ref role="37wK5l" node="394DX$h7RuI" resolve="getIcon" />
                       <node concept="2OqwBi" id="394DX$h8iMF" role="37wK5m">
                         <node concept="3TrEf2" id="394DX$h96Zk" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpce:f_TJDff" />
+                          <ref role="3Tt5mk" to="tpce:f_TJDff" resolve="extends" />
                         </node>
                         <node concept="37vLTw" id="394DX$h8iIV" role="2Oq$k0">
                           <ref role="3cqZAo" node="394DX$h80bw" resolve="conceptDeclaration" />
@@ -3337,7 +3350,7 @@
                   <node concept="10Nm6u" id="394DX$h8i41" role="3uHU7w" />
                   <node concept="2OqwBi" id="394DX$h8hoD" role="3uHU7B">
                     <node concept="3TrEf2" id="394DX$h96q_" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpce:f_TJDff" />
+                      <ref role="3Tt5mk" to="tpce:f_TJDff" resolve="extends" />
                     </node>
                     <node concept="37vLTw" id="394DX$h8hjc" role="2Oq$k0">
                       <ref role="3cqZAo" node="394DX$h80bw" resolve="conceptDeclaration" />

@@ -234,6 +234,12 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
 
   private Icon getIcon(SubstituteAction action, String pattern) {
     Icon icon = null;
+    if (action instanceof CompletionActionItemAsSubstituteAction){
+      icon = IconManager.getIconForResource(((CompletionActionItemAsSubstituteAction) action).getIcon(pattern));
+    }
+    if (icon != null) {
+      return icon;
+    }
     SNode iconNode = action.getIconNode(pattern);
     if (iconNode != null) {
       boolean isConcept = SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !(action.isReferentPresentation());
@@ -254,8 +260,6 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
           myNodeIconMap.put(iconNode, icon);
         }
       }
-    } else if (action instanceof CompletionActionItemAsSubstituteAction){
-      icon = IconManager.getIconForResource(((CompletionActionItemAsSubstituteAction) action).getIcon(pattern));
     }
     if (icon == null) {
       icon = IdeIcons.DEFAULT_ICON;

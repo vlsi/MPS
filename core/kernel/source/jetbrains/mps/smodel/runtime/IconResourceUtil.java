@@ -15,17 +15,21 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * @author simon
  */
 public class IconResourceUtil {
-  private IconResourceUtil(){}
+  private IconResourceUtil() {
+  }
+
   public static IconResource getIconResourceForConcept(SAbstractConcept concept) {
-    if (concept instanceof SConcept){
+    if (concept instanceof SConcept) {
       SConcept current = ((SConcept) concept);
       while (current != null) {
         IconResource ir = getIconForExactConcept(current);
@@ -39,9 +43,20 @@ public class IconResourceUtil {
       return getIconForExactConcept(concept);
     }
   }
+
   private static IconResource getIconForExactConcept(SAbstractConcept concept) {
     ConceptPresentation pres = ConceptRegistry.getInstance().getConceptProperties(concept);
-    if (pres == null) { return null; }
+    if (pres == null) {
+      return null;
+    }
     return pres.getIcon();
+  }
+
+  public static IconResource getIconResourceForNode(SNode node) {
+    final IconResource instanceIcon = ConceptRegistry.getInstance().getConstraintsDescriptor(SNodeOperations.getConcept(node)).getInstanceIcon(node);
+    if (instanceIcon != null && (instanceIcon.getProvider() != null)) {
+      return instanceIcon;
+    }
+    return getIconResourceForConcept(node.getConcept());
   }
 }
