@@ -74,13 +74,10 @@ public abstract class SingleRoleCellProvider {
 
   private void setDeleteActions(SNode child, boolean isRealChild, EditorCell editorCell, CellActionType actionType) {
     //todo get rid of getDeclarationNode
-    CellAction action = editorCell.getAction(actionType);
-    if (action == null || action.equals(EmptyCellAction.getInstance())) {
-      if (isRealChild) {
-        editorCell.setAction(actionType, new CellAction_DeleteSmart(myOwnerNode, myContainmentLink.getDeclarationNode(), child));
-      } else {
-        editorCell.setAction(actionType, new CellAction_DeleteSimple(child, actionType.equals(CellActionType.BACKSPACE) ? DeleteDirection.BACKWARD: DeleteDirection.FORWARD));
-      }
+    if (isRealChild) {
+      editorCell.setAction(actionType, new CellAction_DeleteSmart(myOwnerNode, myContainmentLink.getDeclarationNode(), child));
+    } else {
+      editorCell.setAction(actionType, new CellAction_DeleteSimple(child, actionType.equals(CellActionType.BACKSPACE) ? DeleteDirection.BACKWARD: DeleteDirection.FORWARD));
     }
   }
 
