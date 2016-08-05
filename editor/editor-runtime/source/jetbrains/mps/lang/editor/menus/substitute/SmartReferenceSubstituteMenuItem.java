@@ -87,12 +87,7 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
 
   @Override
   public IconResource getIcon(@NotNull String pattern) {
-    SAbstractConcept concept = MetaAdapterByDeclaration.getConcept(myReferentNode);
-    if (concept != null) {
-      return IconResourceUtil.getIconResourceForConcept(concept);
-    } else {
-      return IconResourceUtil.getIconResourceForConcept(myReferentNode.getConcept());
-    }
+    return IconResourceUtil.getIconResourceForConcept(myReferentNode.getConcept());
   }
 
   public SNode getReferentNode(){

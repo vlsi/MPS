@@ -23,6 +23,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItemVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,13 +32,16 @@ import java.util.List;
  * @author simon
  */
 public class SubstituteActionsCollector {
-  private final List<TransformationMenuItem> myMenuItems;
   private final SNode mySourceNode;
+  private final List<TransformationMenuItem> myMenuItems;
+  private final SRepository myRepository;
 
-  public SubstituteActionsCollector(SNode sourceNode, List<TransformationMenuItem> menuItems) {
+  public SubstituteActionsCollector(SNode sourceNode, List<TransformationMenuItem> menuItems, SRepository repository) {
     mySourceNode = sourceNode;
-    myMenuItems =  menuItems;
+    myMenuItems = menuItems;
+    myRepository = repository;
   }
+
   public List<SubstituteAction> collect() {
     ArrayList<SubstituteAction> outItems = new ArrayList<>();
     collectItems(myMenuItems, outItems);
@@ -49,10 +53,11 @@ public class SubstituteActionsCollector {
       @Override
       public Void visit(ActionItem actionItem) {
         if (actionItem instanceof CompletionActionItem) {
-          outItems.add(new CompletionActionItemAsSubstituteAction(((CompletionActionItem) actionItem), mySourceNode));
+          outItems.add(new CompletionActionItemAsSubstituteAction(((CompletionActionItem) actionItem), mySourceNode, myRepository));
         }
         return null;
       }
+
       @Override
       public Void visit(SubMenu subMenu) {
         collectItems(subMenu.getItems(), outItems);

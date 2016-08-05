@@ -47,7 +47,7 @@ public class CompletionActionItemUtil {
     if (item instanceof SubstituteMenuItemAsCompletionActionItem) {
       final SNode referentNode = getReferentNode(item);
       if (referentNode != null) {
-        return NodePresentationUtil.matchingText((SNode) referentNode, true, true);
+        return NodePresentationUtil.matchingText(referentNode, true, true);
       }
     }
     return null;

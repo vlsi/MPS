@@ -20,10 +20,8 @@ import jetbrains.mps.lang.editor.menus.transformation.CompletionActionItemUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.CommandPolicy;
 import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
@@ -33,14 +31,9 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 public class CompletionActionItemAsSubstituteAction implements SubstituteAction {
-  private static final Logger LOG = Logger.getLogger(CompletionActionItemAsSubstituteAction.class);
   private final CompletionActionItem myActionItem;
   private final SNode mySourceNode;
   private final SRepository myRepository;
-
-  public CompletionActionItemAsSubstituteAction(CompletionActionItem actionItem, SNode sourceNode) {
-    this(actionItem, sourceNode, null);
-  }
 
   public CompletionActionItemAsSubstituteAction(CompletionActionItem actionItem, SNode sourceNode, SRepository repository) {
     myActionItem = actionItem;
@@ -54,6 +47,10 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
 
   @Override
   public SNode getIconNode(String pattern) {
+    final Object parameterObject = getParameterObject();
+    if (parameterObject instanceof  SNode){
+      return ((SNode) parameterObject);
+    }
     return null;
   }
 
