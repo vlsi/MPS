@@ -20,10 +20,10 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.icons.IdeIcons;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.plugins.tool.IComponentDisposer;
 
@@ -50,7 +50,7 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
     } else {
       finder = new ModelCheckerIssueFinder(checkers);
     }
-    String title = (ListSequence.fromList(models).count() == 1 ? ListSequence.fromList(models).first().getModelName() : String.format("%d models", ListSequence.fromList(models).count()));
+    String title = (ListSequence.fromList(models).count() == 1 ? ListSequence.fromList(models).first().getName().getValue() : String.format("%d models", ListSequence.fromList(models).count()));
     newViewer.runCheck(FindUtils.makeProvider(finder), new SearchQuery(new ModelsHolder(ListSequence.fromList(models).select(new ISelector<SModel, SModelReference>() {
       public SModelReference select(SModel it) {
         return it.getReference();
@@ -66,16 +66,22 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
     revealResults(newViewer, title, icon);
   }
   private void revealResults(ModelCheckerViewer newViewer, String title, Icon icon) {
-    if (newViewer.getSearchResults().getSearchResults().isEmpty()) {
+    SearchResults<ModelCheckerIssue> searchResults = newViewer.getSearchResults();
+    if (searchResults == null) {
+      // Search was cancelled, do nothing 
+      return;
+    }
+    if (searchResults.getSearchResults().isEmpty()) {
       JOptionPane.showMessageDialog(this.getComponent(), "There were no problems detected during Model Checker execution", "Model Checker results", JOptionPane.INFORMATION_MESSAGE);
     } else {
       this.showTabWithResults(newViewer, title, icon);
     }
   }
   public void checkProjectAndShowResults() {
-    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(myProject);
+    assert mpsProject != null;
     ModelCheckerViewer newViewer = createViewerForTab();
-    newViewer.checkModules(ListSequence.fromListWithValues(new ArrayList<SModule>(), mpsProject.getModules()), mpsProject.getName());
+    newViewer.checkModules(ListSequence.fromListWithValues(new ArrayList<SModule>(), mpsProject.getProjectModules()), mpsProject.getName());
     revealResults(newViewer, mpsProject.getName(), IdeIcons.PROJECT_ICON);
   }
   public CheckinHandler.ReturnResult checkModelsBeforeCommit(List<SModel> models) {
@@ -83,6 +89,9 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
     viewer.checkModels(models, "models");
 
     SearchResults<ModelCheckerIssue> issues = viewer.getSearchResults();
+    if (issues == null) {
+      return CheckinHandler.ReturnResult.CANCEL;
+    }
 
     int warnings = ModelCheckerUtils.getIssueCountForSeverity(issues, ModelChecker.SEVERITY_WARNING);
     int errors = ModelCheckerUtils.getIssueCountForSeverity(issues, ModelChecker.SEVERITY_ERROR);

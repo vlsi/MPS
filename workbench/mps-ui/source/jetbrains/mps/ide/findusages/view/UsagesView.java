@@ -97,6 +97,7 @@ public class UsagesView implements IExternalizeable {
   private boolean myOwnChangeTracker = false; // true indicates this class shall manage repository listener (myChangeTracker)
 
   // note: this field is not restored from XML
+  @Nullable
   private SearchResults myLastResults;
 
   public UsagesView(com.intellij.openapi.project.Project project, ViewOptions defaultOptions) {
@@ -199,6 +200,7 @@ public class UsagesView implements IExternalizeable {
     return myTreeComponent.getAllResultNodes();
   }
 
+  @Nullable
   public SearchResults getSearchResults() {
     return myLastResults;
   }

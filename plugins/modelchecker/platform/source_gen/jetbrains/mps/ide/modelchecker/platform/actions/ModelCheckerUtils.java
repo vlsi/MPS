@@ -13,7 +13,9 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.Project;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -40,7 +42,7 @@ public class ModelCheckerUtils {
     }
     return modelDescrpitors;
   }
-  public static List<SModel> getModelDescriptors(Iterable<? extends SModule> modules) {
+  public static List<SModel> getModelDescriptors(Iterable<SModule> modules) {
     List<SModel> modelDescrpitors = ListSequence.fromList(new ArrayList<SModel>());
     for (SModule module : Sequence.fromIterable(modules)) {
       ListSequence.fromList(modelDescrpitors).addSequence(ListSequence.fromList(getModelDescriptors(module)));
@@ -48,9 +50,9 @@ public class ModelCheckerUtils {
     return modelDescrpitors;
   }
   public static List<SModel> getModelDescriptors(Project project) {
-    return getModelDescriptors(project.getModules());
+    return getModelDescriptors(project.getProjectModules());
   }
-  public static int getIssueCountForSeverity(SearchResults<ModelCheckerIssue> issues, String severity) {
+  public static int getIssueCountForSeverity(@NotNull SearchResults<ModelCheckerIssue> issues, @Nullable String severity) {
     if (severity == null) {
       return 0;
     }
