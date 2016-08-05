@@ -20,11 +20,12 @@ import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public final class MPSFileTypesManager {
-  private static final List<String> DEFAULT_MPS_IGNORED_PATTERNS = Collections.singletonList(".idea");
+  private static final List<String> DEFAULT_MPS_IGNORED_PATTERNS = Arrays.asList(".idea", ".mps");
 
   public static boolean isModuleFile(VirtualFile file) {
     if (file == null) return false;
