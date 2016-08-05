@@ -372,6 +372,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
       migrateBuilders(mainMenu, actionBuilders);
       if (SNodeOperations.isInstanceOf(mainMenu, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c10ff0L, "jetbrains.mps.lang.editor.structure.TransformationMenuContribution"))) {
         SPropertyOperations.set(mainMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), getAdditionalMenuName(actions, concept, tag) + "_Contribution");
+      } else if (SNodeOperations.isInstanceOf(mainMenu, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named"))) {
+        SPropertyOperations.set(mainMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), getAdditionalMenuName(actions, concept, tag));
       }
     }
   }
