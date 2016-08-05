@@ -24,6 +24,10 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.Deque;
+import java.util.ArrayDeque;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -90,11 +94,24 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
           continue;
         }
         SNode concept = getConceptDeclaration(cell);
-        if (concept == null) {
-          continue;
+        SNode menu = null;
+        final Deque<SNode> conceptDeque = new ArrayDeque<SNode>();
+        conceptDeque.offer(concept);
+        while (!(conceptDeque.isEmpty())) {
+          concept = conceptDeque.remove();
+          if (concept == null) {
+            continue;
+          }
+          menu = getOrFindMainMenu(concept, tag);
+          if (menu != null) {
+            break;
+          }
+          ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getImmediateSuperconcepts_idhMuxyK2.invoke(concept)).visitAll(new IVisitor<SNode>() {
+            public void visit(SNode it) {
+              conceptDeque.offer(it);
+            }
+          });
         }
-        SNode menu;
-        menu = getOrFindMainMenu(concept, tag);
         if (menu == null) {
           continue;
         }
@@ -242,8 +259,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
       } else {
         SModule module = SNodeOperations.getModel(concept).getModule();
         if (module instanceof Language) {
-          SNode mainMenu = findMainNamedMenu(tag, concept);
-          if (mainMenu != null) {
+          SNode mainMenu = getOrFindMainMenu(concept, tag);
+          if (mainMenu != null && SNodeOperations.isInstanceOf(mainMenu, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.ITransformationMenu"))) {
             SLinkOperations.setTarget(contribution, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c10ff0L, 0x5d3b34577b60a0bfL, "menuReference"), _quotation_createNode_syzi2_a0a0b0b0a1a5a91(mainMenu));
           }
         }
