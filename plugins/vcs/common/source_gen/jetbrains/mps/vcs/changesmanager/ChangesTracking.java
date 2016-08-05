@@ -302,7 +302,9 @@ public class ChangesTracking {
 
   private void removeDescendantChanges(SNodeId parentId, String role) {
     SNode oldNode = getOldNode(parentId);
-    assert oldNode != null;
+    if (oldNode == null) {
+      return;
+    }
     List<? extends SNode> children = IterableUtil.asList(oldNode.getChildren(role));
     ListSequence.fromList(children).visitAll(new IVisitor<SNode>() {
       public void visit(SNode c) {
