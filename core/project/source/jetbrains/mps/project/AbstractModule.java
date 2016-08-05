@@ -604,16 +604,21 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void rename(String newName) {
     renameModels(getModuleName(), newName, true);
 
-    //see MPS-18743, need to save before setting descriptor
-    getRepository().saveAll();
+    save(); //see MPS-18743, need to save before setting descriptor
 
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (myDescriptorFile != null) {
+      // fixme AP: this looks awful -- I agree; the right way is to have IFile something immutable
+      // fixme or just work in <code>WatchedRoots</code> by IFile (not by String) and listen for rename
+      myDescriptorFile.removeListener(this);
       myDescriptorFile.rename(newName + "." + FileUtil.getExtension(myDescriptorFile.getName()));
+      myDescriptorFile.addListener(this);
     }
 
-    descriptor.setNamespace(newName);
-    setModuleDescriptor(descriptor);
+    if (descriptor != null) {
+      descriptor.setNamespace(newName);
+      setModuleDescriptor(descriptor);
+    }
   }
 
   protected void renameModels(String oldName, String newName, boolean moveModels) {
