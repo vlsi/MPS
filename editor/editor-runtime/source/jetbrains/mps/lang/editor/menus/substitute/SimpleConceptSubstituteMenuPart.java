@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.editor.menus.substitute;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
@@ -22,10 +23,12 @@ import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -48,35 +51,139 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
   @NotNull
   @Override
   public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+    List<SubstituteMenuItem> smartItems = createSmartItemsItems(context);
+    if (smartItems != null) return smartItems;
+    return Collections.singletonList(
+        new DefaultSubstituteMenuItem(myConcept, context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext()));
+
+  }
+
+  @Nullable
+  private List<SubstituteMenuItem> createSmartItemsItems(SubstituteMenuContext context) {
     SReferenceLink smartReference = ReferenceConceptUtil.getCharacteristicReference(myConcept);
+    SNode smartReferenceNode = getSmartReferenceNode(context);
+    final SAbstractConcept smartReferenceNodeTargetConcept = getSpecialSmartReferenceTargetConcept(smartReferenceNode);
+
     if (smartReference != null) {
-      return createSmartSubstituteMenuItems(context, smartReference);
-    } else {
-      return Collections.singletonList(new DefaultSubstituteMenuItem(myConcept, context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext()));
+      SAbstractConcept targetConcept = smartReference.getTargetConcept();
+      if (smartReferenceNodeTargetConcept != null && checkSmartReferenceNodeSpecializesSmartReference(smartReferenceNode, smartReference)) {
+        targetConcept = smartReferenceNodeTargetConcept;
+      }
+      return createSmartSubstituteMenuItems(context, smartReference, targetConcept, createSmartReferenceDescriptor(context));
+    } else if (smartReferenceNode != null && smartReferenceNodeTargetConcept != null) {
+      final SReferenceLink smartReferenceNodeReference = getReferenceLink(smartReferenceNode);
+      if (smartReferenceNodeReference != null) {
+        return createSmartSubstituteMenuItems(context, smartReferenceNodeReference,
+            smartReferenceNodeTargetConcept, createSmartReferenceDescriptorByNode(context, getMyConceptSourceNode(context)));
+      }
     }
+    return null;
+  }
+
+  private SNode getSmartReferenceNode(SubstituteMenuContext context) {
+    final SNode conceptSourceNode = getMyConceptSourceNode(context);
+    if (conceptSourceNode == null) {
+      return null;
+    }
+    return ReferenceConceptUtil.getCharacteristicReference(
+        conceptSourceNode);
+  }
+
+  @Nullable
+  private SNode getMyConceptSourceNode(SubstituteMenuContext context) {
+    final SNodeReference conceptSourceNodeRef = myConcept.getSourceNode();
+    if (conceptSourceNodeRef == null) {
+      return null;
+    }
+
+    final SNode conceptSourceNode = conceptSourceNodeRef.resolve(context.getEditorContext().getRepository());
+    if (conceptSourceNode == null) {
+      return null;
+    }
+    return conceptSourceNode;
+  }
+
+  //todo remove this method when we will get rid of specialized concepts
+  @Nullable
+  private SAbstractConcept getSpecialSmartReferenceTargetConcept(SNode specialSmartReference) {
+    final SNode specializedTargetConceptNode = SModelUtil.getLinkDeclarationTarget(specialSmartReference);
+    if (specializedTargetConceptNode == null) {
+      return null;
+    }
+    return MetaAdapterByDeclaration.getInstanceConcept(specializedTargetConceptNode);
+  }
+
+  //todo remove this method when we will get rid of specialized concepts
+  private boolean checkSmartReferenceNodeSpecializesSmartReference(SNode specialSmartReference, @NotNull SReferenceLink smartReference) {
+    if (specialSmartReference == null) {
+      return false;
+    }
+    final SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(specialSmartReference);
+    if (genuineLinkDeclaration == null || genuineLinkDeclaration == specialSmartReference) {
+      return false;
+    }
+    return smartReference.equals(MetaAdapterByDeclaration.getReferenceLink(genuineLinkDeclaration));
+  }
+
+  //todo remove this method when we will get rid of specialized concepts
+  private SReferenceLink getReferenceLink(SNode rerefenceNode) {
+    final SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(rerefenceNode);
+    if (genuineLinkDeclaration == null) {
+      return null;
+    }
+    return MetaAdapterByDeclaration.getReferenceLink(genuineLinkDeclaration);
   }
 
   @NotNull
-  private List<SubstituteMenuItem> createSmartSubstituteMenuItems(SubstituteMenuContext context, SReferenceLink smartReference) {
+  private List<SubstituteMenuItem> createSmartSubstituteMenuItems(SubstituteMenuContext context, SReferenceLink smartReference,
+      SAbstractConcept targetConcept, ReferenceDescriptor refDescriptor) {
     SNode currentChild = context.getCurrentTargetNode();
+    SNode parentNode = context.getParentNode();
 
     List<SubstituteMenuItem> result = new ArrayList<>();
-    int index = 0;
-    if (currentChild != null) {
-      index = ((jetbrains.mps.smodel.SNode) context.getParentNode()).getChildren().indexOf(currentChild);
-    }
-    ReferenceDescriptor refDescriptor = ModelConstraints.getSmartReferenceDescriptor(context.getParentNode(),
-        context.getLink(), index, myConcept, context.getEditorContext().getRepository());
     Iterable<SNode> referentNodes = refDescriptor.getScope().getAvailableElements(null);
     for (SNode referentNode : referentNodes) {
       if (referentNode == null ||
-          !referentNode.getConcept().isSubConceptOf(smartReference.getTargetConcept())) {
+          !checkForSubconcept(targetConcept, referentNode)) {
         continue;
       }
-      result.add(new SmartReferenceSubstituteMenuItem(referentNode, context.getParentNode(),
+      result.add(new SmartReferenceSubstituteMenuItem(referentNode, parentNode,
           currentChild, myConcept, smartReference, refDescriptor, context.getEditorContext()));
     }
     return result;
+  }
+
+  @NotNull
+  private ReferenceDescriptor createSmartReferenceDescriptor(SubstituteMenuContext context) {
+    SNode currentChild = context.getCurrentTargetNode();
+    final SNode parentNode = context.getParentNode();
+
+    int index = getIndex(currentChild, parentNode);
+    return ModelConstraints.getSmartReferenceDescriptor(parentNode,
+        context.getLink(), index, myConcept, context.getEditorContext().getRepository());
+  }
+
+  @NotNull
+  private ReferenceDescriptor createSmartReferenceDescriptorByNode(SubstituteMenuContext context, SNode conceptNode) {
+    SNode currentChild = context.getCurrentTargetNode();
+    final SNode parentNode = context.getParentNode();
+
+    int index = getIndex(currentChild, parentNode);
+
+    return ModelConstraints.getSmartReferenceDescriptor(parentNode,
+        context.getLink() != null ? context.getLink().getName() : null, index, conceptNode);
+  }
+
+  private int getIndex(SNode currentChild, SNode parentNode) {
+    int index = 0;
+    if (currentChild instanceof jetbrains.mps.smodel.SNode && parentNode instanceof jetbrains.mps.smodel.SNode) {
+      index = ((jetbrains.mps.smodel.SNode) parentNode).getChildren().indexOf(currentChild);
+    }
+    return index;
+  }
+
+  private boolean checkForSubconcept(SAbstractConcept concept, SNode referentNode) {
+    return referentNode.getConcept().isSubConceptOf(concept);
   }
 
 }

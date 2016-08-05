@@ -118,7 +118,6 @@ public class ReferenceConceptUtil {
           return link;
         }
       }
-      LOG.warn("the '" + alias + "' doesn't match any reference link in " + concept.getName());
     } else {
       // if concept declares exactly ONE REQUIRED reference link...
       Iterator<SReferenceLink> iterator = links.iterator();
