@@ -40,6 +40,7 @@ import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
@@ -171,6 +172,7 @@ public class ModelCheckerViewer extends JPanel {
   public void dispose() {
     myUsagesView.dispose();
   }
+  @Nullable
   public SearchResults<ModelCheckerIssue> getSearchResults() {
     return myUsagesView.getSearchResults();
   }
