@@ -23,12 +23,12 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import com.intellij.util.ui.update.Update;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
-import com.intellij.util.WaitForProgressToShow;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -184,29 +184,24 @@ public class ReloadManagerComponent extends ReloadManager implements Application
           return;
         }
 
+        ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+          public void run() {
+            // see MPS-18743, 21760 
+            // fixme the problem itself must be fixed (reloading module while there are changed models in it 
+            ModelAccess.instance().runWriteAction(new Runnable() {
+              public void run() {
+                MPSModuleRepository.getInstance().saveAll();
+              }
+            });
+          }
+        }, ModalityState.NON_MODAL);
 
-        ProgressManager.getInstance().run(new Task.Modal(null, "Reloading Files", false) {
+        ProgressManager.getInstance().run(new Task.Backgroundable(null, "Reloading Files", false) {
           @Override
           public void run(@NotNull final ProgressIndicator progressIndicator) {
             ProgressMonitor monitor = new ProgressMonitorAdapter(progressIndicator);
             monitor.start("Reloading Files", 1);
             try {
-              monitor.step("Saving Repository");
-              progressIndicator.setIndeterminate(true);
-              if (ProjectManager.getInstance().getOpenProjects().length > 0) {
-                WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
-                  public void run() {
-                    // see MPS-18743, 21760 
-                    ModelAccess.instance().runWriteAction(new Runnable() {
-                      public void run() {
-                        assert ApplicationManager.getApplication().isWriteAccessAllowed() : "Platform write access not allowed: execute from EDT or under progress";
-                        MPSModuleRepository.getInstance().saveAll();
-                      }
-                    });
-                  }
-                }, progressIndicator.getModalityState());
-
-              }
               monitor.step("Reloading File System");
               rs.doReload(monitor.subTask(1));
             } finally {

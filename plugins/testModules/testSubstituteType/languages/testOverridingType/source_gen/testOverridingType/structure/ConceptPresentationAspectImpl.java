@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ErrorType = new ConceptPresentationBuilder().create();
@@ -22,53 +22,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0h.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_ErrorType;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_OverrideAnnotation;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_OverridingPrimFloatType;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_OverridingPrimIntType;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_OverridingPrimNumConstant;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_UnconditionalOverrideAnnotation;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("394e3857-3256-4e8b-9601-5abe7ad354d9"), "testOverridingType")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_ErrorType;
+      case 1:
+        return props_OverrideAnnotation;
+      case 2:
+        return props_OverridingPrimFloatType;
+      case 3:
+        return props_OverridingPrimIntType;
+      case 4:
+        return props_OverridingPrimNumConstant;
+      case 5:
+        return props_UnconditionalOverrideAnnotation;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0h = buildConceptIndices(MetaAdapterFactory.getConcept(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x19f3ac4f6f2a7f40L, "testOverridingType.structure.ErrorType"), MetaAdapterFactory.getConcept(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L, "testOverridingType.structure.OverrideAnnotation"), MetaAdapterFactory.getConcept(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x5b362c13a4993604L, "testOverridingType.structure.OverridingPrimFloatType"), MetaAdapterFactory.getConcept(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x5b362c13a49935f1L, "testOverridingType.structure.OverridingPrimIntType"), MetaAdapterFactory.getConcept(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x5b362c13a4988795L, "testOverridingType.structure.OverridingPrimNumConstant"), MetaAdapterFactory.getConcept(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x19f3ac4f6f2a050aL, "testOverridingType.structure.UnconditionalOverrideAnnotation"));
 }

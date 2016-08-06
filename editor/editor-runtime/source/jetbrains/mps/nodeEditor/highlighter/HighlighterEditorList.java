@@ -41,28 +41,9 @@ public class HighlighterEditorList {
   }
 
   /**
-   * Returns a list of editor components that should be highlighted. Blocks to run in EDT.
-   */
-  public List<EditorComponent> getActiveEditorsInEDT() {
-    AbstractComputeRunnable<List<EditorComponent>> getActiveEditorsRunnable = new AbstractComputeRunnable<List<EditorComponent>>() {
-      @Override
-      protected List<EditorComponent> compute() {
-        return getActiveEditors();
-      }
-    };
-
-    //noinspection ThrowableResultOfMethodCallIgnored
-    if (ThreadUtils.runInUIThreadAndWait(getActiveEditorsRunnable) != null) {
-      return new ArrayList<EditorComponent>();
-    }
-
-    return getActiveEditorsRunnable.getResult();
-  }
-
-  /**
    * Returns a list of editor components that should be highlighted. Requires EDT since it checks UI state.
    */
-  private List<EditorComponent> getActiveEditors() {
+  public List<EditorComponent> getActiveEditors() {
     ThreadUtils.assertEDT();
 
     final List<Editor> activeAndAdditionalEditors;

@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AsBuilderStatement = new ConceptPresentationBuilder().create();
@@ -41,148 +41,59 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0ab.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AsBuilderStatement;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_AsTypeBuilder;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_BaseSimpleBuilderDeclaration;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_BeanBuilder;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_BeanPropertyBuilder;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_Builder;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_BuilderContainer;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_BuilderCreator;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_BuilderStatement;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_ResultExpression;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_SimpleBuilder;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_SimpleBuilderChild;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_SimpleBuilderChildExpression;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_SimpleBuilderDeclaration;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_SimpleBuilderExpression;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_SimpleBuilderExtensionDeclaration;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_SimpleBuilderParameter;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_SimpleBuilderParameterReference;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_SimpleBuilderParentExpression;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_SimpleBuilderProperty;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_SimpleBuilderPropertyBuilder;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_SimpleBuilderPropertyExpression;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_SimpleBuilderPropertyParent;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_SimpleBuilderPropertyValue;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_SimpleBuilders;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("132aa4d8-a3f7-441c-a7eb-3fce23492c6a"), "jetbrains.mps.baseLanguage.builders")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_AsBuilderStatement;
+      case 1:
+        return props_AsTypeBuilder;
+      case 2:
+        return props_BaseSimpleBuilderDeclaration;
+      case 3:
+        return props_BeanBuilder;
+      case 4:
+        return props_BeanPropertyBuilder;
+      case 5:
+        return props_Builder;
+      case 6:
+        return props_BuilderContainer;
+      case 7:
+        return props_BuilderCreator;
+      case 8:
+        return props_BuilderStatement;
+      case 9:
+        return props_ResultExpression;
+      case 10:
+        return props_SimpleBuilder;
+      case 11:
+        return props_SimpleBuilderChild;
+      case 12:
+        return props_SimpleBuilderChildExpression;
+      case 13:
+        return props_SimpleBuilderDeclaration;
+      case 14:
+        return props_SimpleBuilderExpression;
+      case 15:
+        return props_SimpleBuilderExtensionDeclaration;
+      case 16:
+        return props_SimpleBuilderParameter;
+      case 17:
+        return props_SimpleBuilderParameterReference;
+      case 18:
+        return props_SimpleBuilderParentExpression;
+      case 19:
+        return props_SimpleBuilderProperty;
+      case 20:
+        return props_SimpleBuilderPropertyBuilder;
+      case 21:
+        return props_SimpleBuilderPropertyExpression;
+      case 22:
+        return props_SimpleBuilderPropertyParent;
+      case 23:
+        return props_SimpleBuilderPropertyValue;
+      case 24:
+        return props_SimpleBuilders;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0ab = buildConceptIndices(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a08195e1cL, "jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d721d314L, "jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x56cd40dfa78d35b1L, "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x5c83892592e1ebbfL, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x252efd34f8a58ec7L, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf0bL, "jetbrains.mps.baseLanguage.builders.structure.Builder"), MetaAdapterFactory.getInterfaceConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a081aa9e4L, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf0eL, "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf23L, "jetbrains.mps.baseLanguage.builders.structure.BuilderStatement"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e18dae0L, "jetbrains.mps.baseLanguage.builders.structure.ResultExpression"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e24c0baL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d353aL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d353eL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e38L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d3540L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x56cd40dfa78dcaf3L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4b4c01fdd9010958L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4b4c01fdd9029ce4L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d353cL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72870eaL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72ec05fL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72c48e2L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72c5e70L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72c5e8aL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"));
 }

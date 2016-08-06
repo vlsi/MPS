@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractCheckboxUI = new ConceptPresentationBuilder().create();
@@ -21,48 +21,19 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0g.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractCheckboxUI;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_CellModel_Checkbox;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_CheckboxUI_Platform;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_CheckboxUI_Text;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_StubCellModel_Checkbox;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("602c36ad-cc55-47ff-8c40-73d7f12f035c"), "jetbrains.mps.lang.editor.forms")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_AbstractCheckboxUI;
+      case 1:
+        return props_CellModel_Checkbox;
+      case 2:
+        return props_CheckboxUI_Platform;
+      case 3:
+        return props_CheckboxUI_Text;
+      case 4:
+        return props_StubCellModel_Checkbox;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0g = buildConceptIndices(MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1900c370e334d3daL, "jetbrains.mps.lang.editor.forms.structure.AbstractCheckboxUI"), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, "jetbrains.mps.lang.editor.forms.structure.CellModel_Checkbox"), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x617bb6da72073973L, "jetbrains.mps.lang.editor.forms.structure.CheckboxUI_Platform"), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1298d6f05780e83bL, "jetbrains.mps.lang.editor.forms.structure.CheckboxUI_Text"), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63eef06L, "jetbrains.mps.lang.editor.forms.structure.StubCellModel_Checkbox"));
 }

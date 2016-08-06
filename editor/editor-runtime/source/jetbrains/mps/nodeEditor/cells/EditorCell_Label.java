@@ -60,7 +60,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   protected boolean myNoTextSet;
   protected TextLine myTextLine;
   protected TextLine myNullTextLine;
-  private CaretState myCaretState = new CaretState();
+  protected CaretState myCaretState = new CaretState();
 
   protected EditorCell_Label(@NotNull jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node, String text) {
     super(editorContext, node);

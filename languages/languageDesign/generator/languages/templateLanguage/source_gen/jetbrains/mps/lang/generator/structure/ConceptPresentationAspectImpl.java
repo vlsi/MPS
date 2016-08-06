@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbandonInput_RuleConsequence = new ConceptPresentationBuilder().create();
@@ -124,563 +124,225 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0fe.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbandonInput_RuleConsequence;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_AbstractMacro;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_BaseMappingRule;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_BaseMappingRule_Condition;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ContextVariableDeclaration;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_ContextVariableProvider;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_CopySrcListMacro;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_CopySrcNodeMacro;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_CreateRootRule;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_CreateRootRule_Condition;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_DismissTopMappingRule;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_DropAttributeRule;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_DropAttributeRule_Condition;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_DropRootRule;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_DropRootRule_Condition;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_ExportEntry;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_ExportLabel;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_ExportLabelParameter_inputNode;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_ExportLabelParameter_keeper;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_ExportLabelParameter_outputNode;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_ExportMacro;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_GeneratorDebug_InputNode;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_GeneratorDebug_LabelEntry;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_GeneratorDebug_Mappings;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_GeneratorDebug_NodeMapEntry;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_GeneratorDebug_NodeRef;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_GeneratorInternal_AbstractReferenceDescriptor;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_GeneratorInternal_InternalReferenceDescriptor;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_GeneratorInternal_PropertyDescriptor;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_GeneratorInternal_ReferenceDescriptor;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_GeneratorMessage;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_GeneratorParameterReference;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_IGeneratorParameter;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_IParameterizedTemplate;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_ITemplateCall;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_IfMacro;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_IfMacro_Condition;
-          }
-          break;
-        case 37:
-          if (true) {
-            return props_IncludeMacro;
-          }
-          break;
-        case 38:
-          if (true) {
-            return props_InlineSwitch_Case;
-          }
-          break;
-        case 39:
-          if (true) {
-            return props_InlineSwitch_RuleConsequence;
-          }
-          break;
-        case 40:
-          if (true) {
-            return props_InlineTemplateWithContext_RuleConsequence;
-          }
-          break;
-        case 41:
-          if (true) {
-            return props_InlineTemplate_RuleConsequence;
-          }
-          break;
-        case 42:
-          if (true) {
-            return props_InsertMacro;
-          }
-          break;
-        case 43:
-          if (true) {
-            return props_InsertMacro_CreateNodeQuery;
-          }
-          break;
-        case 44:
-          if (true) {
-            return props_LabelMacro;
-          }
-          break;
-        case 45:
-          if (true) {
-            return props_LoopMacro;
-          }
-          break;
-        case 46:
-          if (true) {
-            return props_MapSrcListMacro;
-          }
-          break;
-        case 47:
-          if (true) {
-            return props_MapSrcMacro_MapperFunction;
-          }
-          break;
-        case 48:
-          if (true) {
-            return props_MapSrcMacro_PostMapperFunction;
-          }
-          break;
-        case 49:
-          if (true) {
-            return props_MapSrcNodeMacro;
-          }
-          break;
-        case 50:
-          if (true) {
-            return props_MappingConfiguration;
-          }
-          break;
-        case 51:
-          if (true) {
-            return props_MappingConfiguration_Condition;
-          }
-          break;
-        case 52:
-          if (true) {
-            return props_MappingLabelDeclaration;
-          }
-          break;
-        case 53:
-          if (true) {
-            return props_MappingScript;
-          }
-          break;
-        case 54:
-          if (true) {
-            return props_MappingScriptReference;
-          }
-          break;
-        case 55:
-          if (true) {
-            return props_MappingScript_CodeBlock;
-          }
-          break;
-        case 56:
-          if (true) {
-            return props_MarshalFunction;
-          }
-          break;
-        case 57:
-          if (true) {
-            return props_ModelIdentity;
-          }
-          break;
-        case 58:
-          if (true) {
-            return props_NodeIdentity;
-          }
-          break;
-        case 59:
-          if (true) {
-            return props_NodeMacro;
-          }
-          break;
-        case 60:
-          if (true) {
-            return props_PatternReduction_MappingRule;
-          }
-          break;
-        case 61:
-          if (true) {
-            return props_PropertyMacro;
-          }
-          break;
-        case 62:
-          if (true) {
-            return props_PropertyMacro_GetPropertyValue;
-          }
-          break;
-        case 63:
-          if (true) {
-            return props_ReductionRule;
-          }
-          break;
-        case 64:
-          if (true) {
-            return props_Reduction_MappingRule;
-          }
-          break;
-        case 65:
-          if (true) {
-            return props_ReferenceMacro;
-          }
-          break;
-        case 66:
-          if (true) {
-            return props_ReferenceMacro_GetReferent;
-          }
-          break;
-        case 67:
-          if (true) {
-            return props_RootTemplateAnnotation;
-          }
-          break;
-        case 68:
-          if (true) {
-            return props_Root_MappingRule;
-          }
-          break;
-        case 69:
-          if (true) {
-            return props_RuleConsequence;
-          }
-          break;
-        case 70:
-          if (true) {
-            return props_SourceSubstituteMacro;
-          }
-          break;
-        case 71:
-          if (true) {
-            return props_SourceSubstituteMacro_SourceNodeQuery;
-          }
-          break;
-        case 72:
-          if (true) {
-            return props_SourceSubstituteMacro_SourceNodesQuery;
-          }
-          break;
-        case 73:
-          if (true) {
-            return props_TemplateArgumentLinkPatternRefExpression;
-          }
-          break;
-        case 74:
-          if (true) {
-            return props_TemplateArgumentParameterExpression;
-          }
-          break;
-        case 75:
-          if (true) {
-            return props_TemplateArgumentPatternRef;
-          }
-          break;
-        case 76:
-          if (true) {
-            return props_TemplateArgumentPatternVarRefExpression;
-          }
-          break;
-        case 77:
-          if (true) {
-            return props_TemplateArgumentPropertyPatternRefExpression;
-          }
-          break;
-        case 78:
-          if (true) {
-            return props_TemplateArgumentQuery;
-          }
-          break;
-        case 79:
-          if (true) {
-            return props_TemplateArgumentQueryExpression;
-          }
-          break;
-        case 80:
-          if (true) {
-            return props_TemplateArgumentVariableRefExpression;
-          }
-          break;
-        case 81:
-          if (true) {
-            return props_TemplateCallMacro;
-          }
-          break;
-        case 82:
-          if (true) {
-            return props_TemplateDeclaration;
-          }
-          break;
-        case 83:
-          if (true) {
-            return props_TemplateDeclarationReference;
-          }
-          break;
-        case 84:
-          if (true) {
-            return props_TemplateFragment;
-          }
-          break;
-        case 85:
-          if (true) {
-            return props_TemplateFragment_ContextNodeQuery;
-          }
-          break;
-        case 86:
-          if (true) {
-            return props_TemplateFunctionParameter_mainContextNode;
-          }
-          break;
-        case 87:
-          if (true) {
-            return props_TemplateFunctionParameter_outputNode;
-          }
-          break;
-        case 88:
-          if (true) {
-            return props_TemplateFunctionParameter_parentOutputNode;
-          }
-          break;
-        case 89:
-          if (true) {
-            return props_TemplateFunctionParameter_sourceNode;
-          }
-          break;
-        case 90:
-          if (true) {
-            return props_TemplateFunctionParameter_templatePropertyValue;
-          }
-          break;
-        case 91:
-          if (true) {
-            return props_TemplateFunctionParameter_templateReferent;
-          }
-          break;
-        case 92:
-          if (true) {
-            return props_TemplateParameterDeclaration;
-          }
-          break;
-        case 93:
-          if (true) {
-            return props_TemplateQueryBase;
-          }
-          break;
-        case 94:
-          if (true) {
-            return props_TemplateSwitch;
-          }
-          break;
-        case 95:
-          if (true) {
-            return props_TemplateSwitchMacro;
-          }
-          break;
-        case 96:
-          if (true) {
-            return props_TemplateSwitchReference;
-          }
-          break;
-        case 97:
-          if (true) {
-            return props_TraceMacro;
-          }
-          break;
-        case 98:
-          if (true) {
-            return props_TrivialModelId;
-          }
-          break;
-        case 99:
-          if (true) {
-            return props_TrivialNodeId;
-          }
-          break;
-        case 100:
-          if (true) {
-            return props_UnmarshalFunction;
-          }
-          break;
-        case 101:
-          if (true) {
-            return props_VarMacro;
-          }
-          break;
-        case 102:
-          if (true) {
-            return props_VarMacro_ValueQuery;
-          }
-          break;
-        case 103:
-          if (true) {
-            return props_WeaveEach_RuleConsequence;
-          }
-          break;
-        case 104:
-          if (true) {
-            return props_WeaveMacro;
-          }
-          break;
-        case 105:
-          if (true) {
-            return props_WeavingAnchorQuery;
-          }
-          break;
-        case 106:
-          if (true) {
-            return props_Weaving_MappingRule;
-          }
-          break;
-        case 107:
-          if (true) {
-            return props_Weaving_MappingRule_ContextNodeQuery;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("b401a680-8325-4110-8fd3-84331ff25bef"), "jetbrains.mps.lang.generator")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_AbandonInput_RuleConsequence;
+      case 1:
+        return props_AbstractMacro;
+      case 2:
+        return props_BaseMappingRule;
+      case 3:
+        return props_BaseMappingRule_Condition;
+      case 4:
+        return props_ContextVariableDeclaration;
+      case 5:
+        return props_ContextVariableProvider;
+      case 6:
+        return props_CopySrcListMacro;
+      case 7:
+        return props_CopySrcNodeMacro;
+      case 8:
+        return props_CreateRootRule;
+      case 9:
+        return props_CreateRootRule_Condition;
+      case 10:
+        return props_DismissTopMappingRule;
+      case 11:
+        return props_DropAttributeRule;
+      case 12:
+        return props_DropAttributeRule_Condition;
+      case 13:
+        return props_DropRootRule;
+      case 14:
+        return props_DropRootRule_Condition;
+      case 15:
+        return props_ExportEntry;
+      case 16:
+        return props_ExportLabel;
+      case 17:
+        return props_ExportLabelParameter_inputNode;
+      case 18:
+        return props_ExportLabelParameter_keeper;
+      case 19:
+        return props_ExportLabelParameter_outputNode;
+      case 20:
+        return props_ExportMacro;
+      case 21:
+        return props_GeneratorDebug_InputNode;
+      case 22:
+        return props_GeneratorDebug_LabelEntry;
+      case 23:
+        return props_GeneratorDebug_Mappings;
+      case 24:
+        return props_GeneratorDebug_NodeMapEntry;
+      case 25:
+        return props_GeneratorDebug_NodeRef;
+      case 26:
+        return props_GeneratorInternal_AbstractReferenceDescriptor;
+      case 27:
+        return props_GeneratorInternal_InternalReferenceDescriptor;
+      case 28:
+        return props_GeneratorInternal_PropertyDescriptor;
+      case 29:
+        return props_GeneratorInternal_ReferenceDescriptor;
+      case 30:
+        return props_GeneratorMessage;
+      case 31:
+        return props_GeneratorParameterReference;
+      case 32:
+        return props_IGeneratorParameter;
+      case 33:
+        return props_IParameterizedTemplate;
+      case 34:
+        return props_ITemplateCall;
+      case 35:
+        return props_IfMacro;
+      case 36:
+        return props_IfMacro_Condition;
+      case 37:
+        return props_IncludeMacro;
+      case 38:
+        return props_InlineSwitch_Case;
+      case 39:
+        return props_InlineSwitch_RuleConsequence;
+      case 40:
+        return props_InlineTemplateWithContext_RuleConsequence;
+      case 41:
+        return props_InlineTemplate_RuleConsequence;
+      case 42:
+        return props_InsertMacro;
+      case 43:
+        return props_InsertMacro_CreateNodeQuery;
+      case 44:
+        return props_LabelMacro;
+      case 45:
+        return props_LoopMacro;
+      case 46:
+        return props_MapSrcListMacro;
+      case 47:
+        return props_MapSrcMacro_MapperFunction;
+      case 48:
+        return props_MapSrcMacro_PostMapperFunction;
+      case 49:
+        return props_MapSrcNodeMacro;
+      case 50:
+        return props_MappingConfiguration;
+      case 51:
+        return props_MappingConfiguration_Condition;
+      case 52:
+        return props_MappingLabelDeclaration;
+      case 53:
+        return props_MappingScript;
+      case 54:
+        return props_MappingScriptReference;
+      case 55:
+        return props_MappingScript_CodeBlock;
+      case 56:
+        return props_MarshalFunction;
+      case 57:
+        return props_ModelIdentity;
+      case 58:
+        return props_NodeIdentity;
+      case 59:
+        return props_NodeMacro;
+      case 60:
+        return props_PatternReduction_MappingRule;
+      case 61:
+        return props_PropertyMacro;
+      case 62:
+        return props_PropertyMacro_GetPropertyValue;
+      case 63:
+        return props_ReductionRule;
+      case 64:
+        return props_Reduction_MappingRule;
+      case 65:
+        return props_ReferenceMacro;
+      case 66:
+        return props_ReferenceMacro_GetReferent;
+      case 67:
+        return props_RootTemplateAnnotation;
+      case 68:
+        return props_Root_MappingRule;
+      case 69:
+        return props_RuleConsequence;
+      case 70:
+        return props_SourceSubstituteMacro;
+      case 71:
+        return props_SourceSubstituteMacro_SourceNodeQuery;
+      case 72:
+        return props_SourceSubstituteMacro_SourceNodesQuery;
+      case 73:
+        return props_TemplateArgumentLinkPatternRefExpression;
+      case 74:
+        return props_TemplateArgumentParameterExpression;
+      case 75:
+        return props_TemplateArgumentPatternRef;
+      case 76:
+        return props_TemplateArgumentPatternVarRefExpression;
+      case 77:
+        return props_TemplateArgumentPropertyPatternRefExpression;
+      case 78:
+        return props_TemplateArgumentQuery;
+      case 79:
+        return props_TemplateArgumentQueryExpression;
+      case 80:
+        return props_TemplateArgumentVariableRefExpression;
+      case 81:
+        return props_TemplateCallMacro;
+      case 82:
+        return props_TemplateDeclaration;
+      case 83:
+        return props_TemplateDeclarationReference;
+      case 84:
+        return props_TemplateFragment;
+      case 85:
+        return props_TemplateFragment_ContextNodeQuery;
+      case 86:
+        return props_TemplateFunctionParameter_mainContextNode;
+      case 87:
+        return props_TemplateFunctionParameter_outputNode;
+      case 88:
+        return props_TemplateFunctionParameter_parentOutputNode;
+      case 89:
+        return props_TemplateFunctionParameter_sourceNode;
+      case 90:
+        return props_TemplateFunctionParameter_templatePropertyValue;
+      case 91:
+        return props_TemplateFunctionParameter_templateReferent;
+      case 92:
+        return props_TemplateParameterDeclaration;
+      case 93:
+        return props_TemplateQueryBase;
+      case 94:
+        return props_TemplateSwitch;
+      case 95:
+        return props_TemplateSwitchMacro;
+      case 96:
+        return props_TemplateSwitchReference;
+      case 97:
+        return props_TraceMacro;
+      case 98:
+        return props_TrivialModelId;
+      case 99:
+        return props_TrivialNodeId;
+      case 100:
+        return props_UnmarshalFunction;
+      case 101:
+        return props_VarMacro;
+      case 102:
+        return props_VarMacro_ValueQuery;
+      case 103:
+        return props_WeaveEach_RuleConsequence;
+      case 104:
+        return props_WeaveMacro;
+      case 105:
+        return props_WeavingAnchorQuery;
+      case 106:
+        return props_Weaving_MappingRule;
+      case 107:
+        return props_Weaving_MappingRule_ContextNodeQuery;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0fe = buildConceptIndices(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1180b1792dbL, "jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence"), MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11dc0f7933bL, "jetbrains.mps.lang.generator.structure.AbstractMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b05beaL, "jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x671e792f3d94989fL, "jetbrains.mps.lang.generator.structure.ContextVariableDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x671e792f3d934cacL, "jetbrains.mps.lang.generator.structure.ContextVariableProvider"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1038b0c2cc7L, "jetbrains.mps.lang.generator.structure.CopySrcListMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10389b50fefL, "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fbbd5854aL, "jetbrains.mps.lang.generator.structure.CreateRootRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fbbd643c6L, "jetbrains.mps.lang.generator.structure.CreateRootRule_Condition"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013931abdL, "jetbrains.mps.lang.generator.structure.DismissTopMappingRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x67b585b44f4d943bL, "jetbrains.mps.lang.generator.structure.DropAttributeRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x67b585b44f4d9446L, "jetbrains.mps.lang.generator.structure.DropAttributeRule_Condition"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11c0acf58efL, "jetbrains.mps.lang.generator.structure.DropRootRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11c0ad08d2aL, "jetbrains.mps.lang.generator.structure.DropRootRule_Condition"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, "jetbrains.mps.lang.generator.structure.ExportEntry"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x6db65d569f9bacaL, "jetbrains.mps.lang.generator.structure.ExportLabel"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x65a7fcfba8f41bdeL, "jetbrains.mps.lang.generator.structure.ExportLabelParameter_inputNode"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7bb9ef7499a77cc2L, "jetbrains.mps.lang.generator.structure.ExportLabelParameter_keeper"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x65a7fcfba8f4e964L, "jetbrains.mps.lang.generator.structure.ExportLabelParameter_outputNode"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7bb9ef7499aab606L, "jetbrains.mps.lang.generator.structure.ExportMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_InputNode"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_LabelEntry"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc97f1c1L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_Mappings"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_NodeMapEntry"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806d2L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_NodeRef"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x2073070af8a4bc2aL, "jetbrains.mps.lang.generator.structure.GeneratorInternal_AbstractReferenceDescriptor"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x2073070af8a4bc1bL, "jetbrains.mps.lang.generator.structure.GeneratorInternal_InternalReferenceDescriptor"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x2073070af892f9edL, "jetbrains.mps.lang.generator.structure.GeneratorInternal_PropertyDescriptor"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x2073070af8a42ba1L, "jetbrains.mps.lang.generator.structure.GeneratorInternal_ReferenceDescriptor"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11055c63121L, "jetbrains.mps.lang.generator.structure.GeneratorMessage"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x90726ff283cbf8aL, "jetbrains.mps.lang.generator.structure.GeneratorParameterReference"), MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x90726ff283822d4L, "jetbrains.mps.lang.generator.structure.IGeneratorParameter"), MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, "jetbrains.mps.lang.generator.structure.IParameterizedTemplate"), MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, "jetbrains.mps.lang.generator.structure.ITemplateCall"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047c1472deL, "jetbrains.mps.lang.generator.structure.IfMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10feefdbd6eL, "jetbrains.mps.lang.generator.structure.IfMacro_Condition"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11621ab7715L, "jetbrains.mps.lang.generator.structure.IncludeMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11644fdbf49L, "jetbrains.mps.lang.generator.structure.InlineSwitch_Case"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11644fa2edeL, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7b85dded0be53d6cL, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1231e32ff7a958ceL, "jetbrains.mps.lang.generator.structure.InsertMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1231e32ff7a958cfL, "jetbrains.mps.lang.generator.structure.InsertMacro_CreateNodeQuery"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x473cc5baf8a1e7a4L, "jetbrains.mps.lang.generator.structure.LabelMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, "jetbrains.mps.lang.generator.structure.LoopMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11094af4e18L, "jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11d455674bfL, "jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10759372d78L, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x6cab949e66d5ae81L, "jetbrains.mps.lang.generator.structure.MappingConfiguration_Condition"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1179be47606L, "jetbrains.mps.lang.generator.structure.MappingLabelDeclaration"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1165958fcd6L, "jetbrains.mps.lang.generator.structure.MappingScript"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x116597b27aaL, "jetbrains.mps.lang.generator.structure.MappingScriptReference"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11659655aa8L, "jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x65a7fcfba8f40208L, "jetbrains.mps.lang.generator.structure.MarshalFunction"), MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9c8b6d3L, "jetbrains.mps.lang.generator.structure.ModelIdentity"), MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, "jetbrains.mps.lang.generator.structure.NodeMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, "jetbrains.mps.lang.generator.structure.PropertyMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fe3afb5ffL, "jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue"), MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x3592736deb001cfdL, "jetbrains.mps.lang.generator.structure.ReductionRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fca296532L, "jetbrains.mps.lang.generator.structure.Reduction_MappingRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fe485cc9bL, "jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fd54746dbL, "jetbrains.mps.lang.generator.structure.Root_MappingRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x110138ccc4bL, "jetbrains.mps.lang.generator.structure.RuleConsequence"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fef52f5efL, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10ff3acfa74L, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fef5bd603L, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x42d71bfbeb1a5de8L, "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x457655815a794e79L, "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x42d71bfbeb1a07e5L, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x40be82ad503b3c88L, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x42d71bfbeb1a5de7L, "jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x380132d742e95ce5L, "jetbrains.mps.lang.generator.structure.TemplateArgumentQuery"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x380132d742e8ccb0L, "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x3d6f2506d88aa028L, "jetbrains.mps.lang.generator.structure.TemplateArgumentVariableRefExpression"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x14f7f8a311b8f14fL, "jetbrains.mps.lang.generator.structure.TemplateCallMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013906056L, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, "jetbrains.mps.lang.generator.structure.TemplateFragment"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x113c2300eb1L, "jetbrains.mps.lang.generator.structure.TemplateFragment_ContextNodeQuery"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x113c23283bdL, "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_mainContextNode"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x113d50d6be6L, "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x113db24924aL, "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_parentOutputNode"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b471fcL, "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fe3b1dbebL, "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fe4879c6aL, "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templateReferent"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a0962e6L, "jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11b4d0ca830L, "jetbrains.mps.lang.generator.structure.TemplateQueryBase"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, "jetbrains.mps.lang.generator.structure.TemplateSwitch"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e51747593L, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1031eb3122dL, "jetbrains.mps.lang.generator.structure.TemplateSwitchReference"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x2b456582595e739bL, "jetbrains.mps.lang.generator.structure.TraceMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9c8b8cbL, "jetbrains.mps.lang.generator.structure.TrivialModelId"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b64463L, "jetbrains.mps.lang.generator.structure.TrivialNodeId"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x65a7fcfba8f41ba9L, "jetbrains.mps.lang.generator.structure.UnmarshalFunction"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x45991daad6a3d34eL, "jetbrains.mps.lang.generator.structure.VarMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x45991daad6a5c71aL, "jetbrains.mps.lang.generator.structure.VarMacro_ValueQuery"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1104fcac3b1L, "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x300c02df884235d3L, "jetbrains.mps.lang.generator.structure.WeaveMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xe2b8adb3aba4b3bL, "jetbrains.mps.lang.generator.structure.WeavingAnchorQuery"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0d8c573L, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x113d09e4da2L, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery"));
 }

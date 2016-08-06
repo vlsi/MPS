@@ -26,7 +26,6 @@ import com.intellij.openapi.editor.EditorFactory;
 import com.intellij.openapi.editor.colors.EditorColors;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.editor.colors.EditorColorsScheme;
-import com.intellij.util.xmlb.annotations.Property;
 import jetbrains.mps.nodeEditor.EditorSettings.MyState;
 import jetbrains.mps.nodeEditor.cells.FontRegistry;
 import jetbrains.mps.nodeEditor.cells.TextLine;
@@ -335,41 +334,28 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
     return "EditorSettings";
   }
 
+  @SuppressWarnings("WeakerAccess")
   public static class MyState {
-    @Property
-    private String fontFamily = "Monospaced";
-    @Property
-    private int fontSize = 13;
-    @Property
-    private double lineSpacing = 1.0;
+    public String fontFamily = "Monospaced";
+    public int fontSize = 13;
+    public double lineSpacing = 1.0;
 
-    @Property
-    private int textWidth = 500;
-    @Property
-    private boolean useAntialiasing = true;
+    public int textWidth = 500;
+    public boolean useAntialiasing = true;
 
-    @Property
-    private boolean useBraces = true;
+    public boolean useBraces = true;
 
-    @Property
-    private int indentSize = 2;
-    @Property
-    private int verticalBound = 120;
+    public int indentSize = 2;
+    public int verticalBound = 120;
 
-    @Property
-    private boolean autoQuickFix = false;
+    public boolean autoQuickFix = false;
 
-    @Property
-    private boolean showPlain = true;
-    @Property
-    private boolean showGrayed = true;
-    @Property
-    private boolean show = true;
+    public boolean showPlain = true;
+    public boolean showGrayed = true;
+    public boolean show = true;
 
-    @Property
-    private boolean showContextAssistant = true;
-    @Property
-    private int caretBlinkPeriod = DEFAULT_CARET_BLINK_PERIOD;
+    public boolean showContextAssistant = true;
+    public int caretBlinkPeriod = DEFAULT_CARET_BLINK_PERIOD;
 
     @Override
     public boolean equals(Object o) {

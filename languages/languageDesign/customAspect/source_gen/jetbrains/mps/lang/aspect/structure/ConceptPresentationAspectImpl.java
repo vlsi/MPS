@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AspectMethodDescriptor = new ConceptPresentationBuilder().create();
@@ -25,68 +25,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0k.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AspectMethodDescriptor;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_GenerationDescriptor;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_GenerationDescriptor_ByInterface;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_GenerationDescriptor_Class;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_HelpURL;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_IAspectConcept;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_LanguageAspectDescriptor;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_LanguageReference;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_SimpleLanguageAspectDescriptor;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("f159adf4-3c93-40f9-9c5a-1f245a8697af"), "jetbrains.mps.lang.aspect")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_AspectMethodDescriptor;
+      case 1:
+        return props_GenerationDescriptor;
+      case 2:
+        return props_GenerationDescriptor_ByInterface;
+      case 3:
+        return props_GenerationDescriptor_Class;
+      case 4:
+        return props_HelpURL;
+      case 5:
+        return props_IAspectConcept;
+      case 6:
+        return props_LanguageAspectDescriptor;
+      case 7:
+        return props_LanguageReference;
+      case 8:
+        return props_SimpleLanguageAspectDescriptor;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0k = buildConceptIndices(MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x4ac0e6949ea3f2b0L, "jetbrains.mps.lang.aspect.structure.AspectMethodDescriptor"), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x5c6b2d0d258655f8L, "jetbrains.mps.lang.aspect.structure.GenerationDescriptor"), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x4ac0e6949ea3f2abL, "jetbrains.mps.lang.aspect.structure.GenerationDescriptor_ByInterface"), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x5c2c36f4ea0d3b2fL, "jetbrains.mps.lang.aspect.structure.GenerationDescriptor_Class"), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, "jetbrains.mps.lang.aspect.structure.HelpURL"), MetaAdapterFactory.getInterfaceConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x7bcf8452e0dac0c9L, "jetbrains.mps.lang.aspect.structure.IAspectConcept"), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2d72cdccef70b086L, "jetbrains.mps.lang.aspect.structure.LanguageAspectDescriptor"), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9c87aL, "jetbrains.mps.lang.aspect.structure.LanguageReference"), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, "jetbrains.mps.lang.aspect.structure.SimpleLanguageAspectDescriptor"));
 }

@@ -21,6 +21,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.vfs.ProjectRootListenerComponent;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
@@ -56,8 +57,8 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   private static final Logger LOG = LogManager.getLogger(StandaloneMPSProject.class);
 
   @SuppressWarnings("UnusedParameters")
-  public StandaloneMPSProject(final Project project, ProjectLibraryManager projectLibraryManager) {
-    super(project);
+  public StandaloneMPSProject(final Project project, ProjectLibraryManager projectLibraryManager, ProjectRootListenerComponent unused) {
+    super(project, unused);
   }
 
   @Override

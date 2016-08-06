@@ -114,6 +114,9 @@
       <implementation-class>jetbrains.mps.project.MPSProject</implementation-class>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.ide.vfs.ProjectRootListenerComponent</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.idea.core.psi.impl.MPSPsiProvider</implementation-class>
     </component>
     <component>

@@ -3205,12 +3205,13 @@
       <node concept="3Tm6S6" id="6m1MVDkVd36" role="1B3o_S" />
       <node concept="2ShNRf" id="6m1MVDkVd37" role="33vP2m">
         <node concept="1pGfFk" id="6m1MVDkVd38" role="2ShVmc">
-          <ref role="37wK5l" to="z1c4:~StandaloneMPSProject.&lt;init&gt;(com.intellij.openapi.project.Project,jetbrains.mps.project.ProjectLibraryManager)" resolve="StandaloneMPSProject" />
+          <ref role="37wK5l" to="z1c4:~StandaloneMPSProject.&lt;init&gt;(com.intellij.openapi.project.Project,jetbrains.mps.project.ProjectLibraryManager,jetbrains.mps.ide.vfs.ProjectRootListenerComponent)" resolve="StandaloneMPSProject" />
           <node concept="10M0yZ" id="7Psq8BycfpK" role="37wK5m">
             <ref role="1PxDUh" node="6m1MVDkVd29" resolve="TestMergeDialog" />
             <ref role="3cqZAo" node="6m1MVDkVd2k" resolve="ourProject" />
           </node>
           <node concept="10Nm6u" id="XZsBAoNACb" role="37wK5m" />
+          <node concept="10Nm6u" id="1vlERrpaDgc" role="37wK5m" />
         </node>
       </node>
     </node>

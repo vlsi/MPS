@@ -50,6 +50,6 @@ public enum ClassType {
 
   public static boolean isJDK_ToolsInSeparateJar() {
     // on Mac & jdkVersion < 7 classes from `tools.jar' are located inside classes.jar
-    return !SystemInfo.isMac || !SystemInfo.isJavaVersionAtLeast("1.7");
+    return !SystemInfo.isMac || SystemInfo.isJavaVersionAtLeast("1.7");
   }
 }

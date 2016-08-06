@@ -28,6 +28,7 @@
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1173175405605" name="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" flags="nn" index="AH0OO">
         <child id="1173175577737" name="index" index="AHEQo" />
         <child id="1173175590490" name="array" index="AHHXb" />
@@ -686,6 +687,7 @@
       <node concept="3cqZAl" id="6FKiTwA0J6m" role="3clF45" />
       <node concept="3clFbS" id="6FKiTwA0J6n" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="23viR04BEmO" role="jymVt" />
     <node concept="3clFb_" id="6FKiTwA0J6o" role="jymVt">
       <property role="TrG5h" value="actionPerformed" />
       <node concept="3Tmbuc" id="6FKiTwA0J6p" role="1B3o_S" />
@@ -780,29 +782,19 @@
           </node>
         </node>
         <node concept="3clFbJ" id="6FKiTwA0J6S" role="3cqZAp">
-          <node concept="2OqwBi" id="6FKiTwA0J6T" role="3clFbw">
-            <node concept="2YIFZM" id="6FKiTwA0J6U" role="2Oq$k0">
-              <ref role="37wK5l" to="tcg7:~MPSFileTypesManager.instance():jetbrains.mps.fileTypes.MPSFileTypesManager" resolve="instance" />
-              <ref role="1Pybhc" to="tcg7:~MPSFileTypesManager" resolve="MPSFileTypesManager" />
-            </node>
-            <node concept="liA8E" id="6FKiTwA0J6V" role="2OqNvi">
-              <ref role="37wK5l" to="tcg7:~MPSFileTypesManager.isModelFile(com.intellij.openapi.vfs.VirtualFile):boolean" resolve="isModelFile" />
-              <node concept="37vLTw" id="3GM_nagTu97" role="37wK5m">
-                <ref role="3cqZAo" node="6FKiTwA0J6_" resolve="selectedFile" />
-              </node>
+          <node concept="2YIFZM" id="4eU08Jjpred" role="3clFbw">
+            <ref role="37wK5l" to="tcg7:~MPSFileTypesManager.isModelFile(com.intellij.openapi.vfs.VirtualFile):boolean" resolve="isModelFile" />
+            <ref role="1Pybhc" to="tcg7:~MPSFileTypesManager" resolve="MPSFileTypesManager" />
+            <node concept="37vLTw" id="4eU08JjprnG" role="37wK5m">
+              <ref role="3cqZAo" node="6FKiTwA0J6_" resolve="selectedFile" />
             </node>
           </node>
           <node concept="3clFbJ" id="6FKiTwA0J6X" role="9aQIa">
-            <node concept="2OqwBi" id="6FKiTwA0J6Y" role="3clFbw">
-              <node concept="2YIFZM" id="6FKiTwA0J6Z" role="2Oq$k0">
-                <ref role="37wK5l" to="tcg7:~MPSFileTypesManager.instance():jetbrains.mps.fileTypes.MPSFileTypesManager" resolve="instance" />
-                <ref role="1Pybhc" to="tcg7:~MPSFileTypesManager" resolve="MPSFileTypesManager" />
-              </node>
-              <node concept="liA8E" id="6FKiTwA0J70" role="2OqNvi">
-                <ref role="37wK5l" to="tcg7:~MPSFileTypesManager.isModuleFile(com.intellij.openapi.vfs.VirtualFile):boolean" resolve="isModuleFile" />
-                <node concept="37vLTw" id="3GM_nagTwaX" role="37wK5m">
-                  <ref role="3cqZAo" node="6FKiTwA0J6_" resolve="selectedFile" />
-                </node>
+            <node concept="2YIFZM" id="4eU08Jjprq2" role="3clFbw">
+              <ref role="37wK5l" to="tcg7:~MPSFileTypesManager.isModuleFile(com.intellij.openapi.vfs.VirtualFile):boolean" resolve="isModuleFile" />
+              <ref role="1Pybhc" to="tcg7:~MPSFileTypesManager" resolve="MPSFileTypesManager" />
+              <node concept="37vLTw" id="4eU08Jjprth" role="37wK5m">
+                <ref role="3cqZAo" node="6FKiTwA0J6_" resolve="selectedFile" />
               </node>
             </node>
             <node concept="3clFbS" id="6FKiTwA0J72" role="3clFbx">
@@ -1010,6 +1002,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="23viR04BEmP" role="jymVt" />
     <node concept="3clFb_" id="6FKiTwA0J7O" role="jymVt">
       <property role="TrG5h" value="getSelectedFile" />
       <node concept="3Tm6S6" id="6FKiTwA0J7P" role="1B3o_S" />
@@ -1071,6 +1064,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="23viR04BEmQ" role="jymVt" />
     <node concept="3clFb_" id="6FKiTwA0J8e" role="jymVt">
       <property role="TrG5h" value="update" />
       <node concept="3Tmbuc" id="6FKiTwA0J8f" role="1B3o_S" />
@@ -1110,28 +1104,18 @@
             <node concept="liA8E" id="6FKiTwA0J8u" role="2OqNvi">
               <ref role="37wK5l" to="qkt:~Presentation.setEnabled(boolean):void" resolve="setEnabled" />
               <node concept="22lmx$" id="6FKiTwA0J8v" role="37wK5m">
-                <node concept="2OqwBi" id="6FKiTwA0J8w" role="3uHU7B">
-                  <node concept="2YIFZM" id="6FKiTwA0J8x" role="2Oq$k0">
-                    <ref role="37wK5l" to="tcg7:~MPSFileTypesManager.instance():jetbrains.mps.fileTypes.MPSFileTypesManager" resolve="instance" />
-                    <ref role="1Pybhc" to="tcg7:~MPSFileTypesManager" resolve="MPSFileTypesManager" />
-                  </node>
-                  <node concept="liA8E" id="6FKiTwA0J8y" role="2OqNvi">
-                    <ref role="37wK5l" to="tcg7:~MPSFileTypesManager.isModelFile(com.intellij.openapi.vfs.VirtualFile):boolean" resolve="isModelFile" />
-                    <node concept="37vLTw" id="3GM_nagTttG" role="37wK5m">
-                      <ref role="3cqZAo" node="6FKiTwA0J8n" resolve="selectedFile" />
-                    </node>
+                <node concept="2YIFZM" id="4eU08JjprAF" role="3uHU7B">
+                  <ref role="37wK5l" to="tcg7:~MPSFileTypesManager.isModelFile(com.intellij.openapi.vfs.VirtualFile):boolean" resolve="isModelFile" />
+                  <ref role="1Pybhc" to="tcg7:~MPSFileTypesManager" resolve="MPSFileTypesManager" />
+                  <node concept="37vLTw" id="4eU08JjprDU" role="37wK5m">
+                    <ref role="3cqZAo" node="6FKiTwA0J8n" resolve="selectedFile" />
                   </node>
                 </node>
-                <node concept="2OqwBi" id="6FKiTwA0J8$" role="3uHU7w">
-                  <node concept="2YIFZM" id="6FKiTwA0J8_" role="2Oq$k0">
-                    <ref role="37wK5l" to="tcg7:~MPSFileTypesManager.instance():jetbrains.mps.fileTypes.MPSFileTypesManager" resolve="instance" />
-                    <ref role="1Pybhc" to="tcg7:~MPSFileTypesManager" resolve="MPSFileTypesManager" />
-                  </node>
-                  <node concept="liA8E" id="6FKiTwA0J8A" role="2OqNvi">
-                    <ref role="37wK5l" to="tcg7:~MPSFileTypesManager.isModuleFile(com.intellij.openapi.vfs.VirtualFile):boolean" resolve="isModuleFile" />
-                    <node concept="37vLTw" id="3GM_nagTx17" role="37wK5m">
-                      <ref role="3cqZAo" node="6FKiTwA0J8n" resolve="selectedFile" />
-                    </node>
+                <node concept="2YIFZM" id="4eU08JjprI9" role="3uHU7w">
+                  <ref role="37wK5l" to="tcg7:~MPSFileTypesManager.isModuleFile(com.intellij.openapi.vfs.VirtualFile):boolean" resolve="isModuleFile" />
+                  <ref role="1Pybhc" to="tcg7:~MPSFileTypesManager" resolve="MPSFileTypesManager" />
+                  <node concept="37vLTw" id="4eU08JjprLo" role="37wK5m">
+                    <ref role="3cqZAo" node="6FKiTwA0J8n" resolve="selectedFile" />
                   </node>
                 </node>
               </node>

@@ -894,6 +894,12 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return ProjectPathUtil.getGeneratorOutputPath(getModuleSourceDir(), getModuleDescriptor());
   }
 
+  /**
+   * AP
+   * the contract is not clear: when should this method be called?
+   * it seems to be our internal mechanism which is exposed to the client
+   * FIXME
+   */
   public void validateLanguageVersions() {
     assertCanChange();
     ModuleDescriptor md = getModuleDescriptor();
@@ -941,7 +947,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
           }
         }
       }
-      if (!md.getUsedDevkits().equals(devkits)) {
+      if (!md.getUsedDevkits().containsAll(devkits)) {
         // intentionally no clean(), augmentation only, just in case there's anything vital already.
         md.getUsedDevkits().addAll(devkits);
         setChanged();

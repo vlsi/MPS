@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbsExpression = new ConceptPresentationBuilder().create();
@@ -25,68 +25,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0k.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbsExpression;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_ArgExpression;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ComplexType;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ConjugateComplexExpression;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_DegreeComplexExpression;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_ImExpression;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_ImaginaryUnit;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_ReExpression;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_SingleComplexExpression;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("ff24ab03-965e-4d15-9aed-52dc276658f4"), "jetbrains.mps.samples.complex")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_AbsExpression;
+      case 1:
+        return props_ArgExpression;
+      case 2:
+        return props_ComplexType;
+      case 3:
+        return props_ConjugateComplexExpression;
+      case 4:
+        return props_DegreeComplexExpression;
+      case 5:
+        return props_ImExpression;
+      case 6:
+        return props_ImaginaryUnit;
+      case 7:
+        return props_ReExpression;
+      case 8:
+        return props_SingleComplexExpression;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0k = buildConceptIndices(MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686e48f9fL, "jetbrains.mps.samples.complex.structure.AbsExpression"), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686e1a51cL, "jetbrains.mps.samples.complex.structure.ArgExpression"), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686a0422aL, "jetbrains.mps.samples.complex.structure.ComplexType"), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x116901f57f4L, "jetbrains.mps.samples.complex.structure.ConjugateComplexExpression"), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x116904e45f4L, "jetbrains.mps.samples.complex.structure.DegreeComplexExpression"), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686c35f98L, "jetbrains.mps.samples.complex.structure.ImExpression"), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11691060ce1L, "jetbrains.mps.samples.complex.structure.ImaginaryUnit"), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression"), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b3b49dL, "jetbrains.mps.samples.complex.structure.SingleComplexExpression"));
 }

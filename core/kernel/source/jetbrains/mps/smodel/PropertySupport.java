@@ -20,7 +20,6 @@ import jetbrains.mps.classloading.ModuleReloadListener;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
@@ -201,19 +200,17 @@ public abstract class PropertySupport {
 
   private static PropertySupport loadPropertySupport(SNode propertyDeclaration) {
     SNode propertyDataType = SNodeUtil.getPropertyDeclaration_DataType(propertyDeclaration);
-
-    SNode cd = propertyDeclaration.getParent();
-    Language l = SModelUtil.getDeclaringLanguage(cd);
+    Language l = SModelUtil.getDeclaringLanguage(propertyDataType);
 
     String propertySupportClassName = JavaNameUtil.fqClassName(propertyDataType.getModel(), getClassName(propertyDataType));
     PropertySupport propertySupport = null;
     try {
-      Class propertySupportClass = ClassLoaderManager.getInstance().getClass(l, propertySupportClassName);
+      Class propertySupportClass = ClassLoaderManager.getInstance().getOwnClass(l, propertySupportClassName);
       if (propertySupportClass != null) {
         Constructor constructor = propertySupportClass.getConstructor();
         propertySupport = (PropertySupport) constructor.newInstance();
       } else {
-        LOG.error("Can't find a class " + propertySupportClassName);
+        LOG.error("Can't find a class " + propertySupportClassName + " using classloader of " + l.getModuleName() + " module");
       }
     } catch (NoSuchMethodException e) {
       LOG.error(null, e);

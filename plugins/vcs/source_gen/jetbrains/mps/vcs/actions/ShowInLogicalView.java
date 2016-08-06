@@ -21,6 +21,7 @@ import com.intellij.openapi.actionSystem.Presentation;
 public class ShowInLogicalView extends AbstractVcsAction {
   public ShowInLogicalView() {
   }
+
   @Override
   protected void actionPerformed(VcsContext e) {
     final Project project = e.getProject();
@@ -31,7 +32,7 @@ public class ShowInLogicalView extends AbstractVcsAction {
     assert project != null;
     final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
     ProjectPane projectPane = ProjectPane.getInstance(project);
-    if (MPSFileTypesManager.instance().isModelFile(selectedFile)) {
+    if (MPSFileTypesManager.isModelFile(selectedFile)) {
       SModel model = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<SModel>() {
         @Override
         public SModel compute() {
@@ -42,7 +43,7 @@ public class ShowInLogicalView extends AbstractVcsAction {
         projectPane.selectModel(model, false);
       }
     } else
-    if (MPSFileTypesManager.instance().isModuleFile(selectedFile)) {
+    if (MPSFileTypesManager.isModuleFile(selectedFile)) {
       SModule module = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<SModule>() {
         @Override
         public SModule compute() {
@@ -54,6 +55,7 @@ public class ShowInLogicalView extends AbstractVcsAction {
       }
     }
   }
+
   private VirtualFile getSelectedFile(VcsContext e) {
     VirtualFile[] selectedFiles = e.getSelectedFiles();
     if (selectedFiles.length == 0) {
@@ -61,9 +63,10 @@ public class ShowInLogicalView extends AbstractVcsAction {
     }
     return selectedFiles[0];
   }
+
   @Override
   protected void update(VcsContext vcsContext, Presentation presentation) {
     VirtualFile selectedFile = getSelectedFile(vcsContext);
-    presentation.setEnabled(MPSFileTypesManager.instance().isModelFile(selectedFile) || MPSFileTypesManager.instance().isModuleFile(selectedFile));
+    presentation.setEnabled(MPSFileTypesManager.isModelFile(selectedFile) || MPSFileTypesManager.isModuleFile(selectedFile));
   }
 }

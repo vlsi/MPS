@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractNodeRefExpression = new ConceptPresentationBuilder().create();
@@ -184,863 +184,345 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0ng.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractNodeRefExpression;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_AbstractOperationParameter;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_AbstractTypeCastExpression;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_AllAttributeQualifier;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_AsNodeOperation;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_AsSConcept;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_AttributeAccess;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_AttributeQualifier;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_BootstrapAwareMetaObject;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_CheckedModuleQualifiedName;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_CheckedModuleReference;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_ChildAttributeQualifier;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_ChildNodeRefExpression;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_ConceptAliasOperation;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_ConceptFqNameRefExpression;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_ConceptId;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_ConceptIdRefExpression;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_ConceptIdentity;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_ConceptNodeType;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_ConceptRefExpression;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_ConceptReference;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_ConceptShortDescriptionOperation;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_ConceptSwitchStatement;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_Concept_GetAllSubConcepts;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_Concept_GetAllSuperConcepts;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_Concept_GetDirectSuperConcepts;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_Concept_GetHierarchy;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_Concept_IsExactlyOperation;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_Concept_IsSubConceptOfOperation;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_Concept_IsSuperConceptOfOperation;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_Concept_NewInstance;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_EnumMemberReference;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_EnumMemberValueRefExpression;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_EnumMember_NameOperation;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_EnumMember_ValueOperation;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_EqualsStructurallyExpression;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_ExactConceptCase;
-          }
-          break;
-        case 37:
-          if (true) {
-            return props_GeneratorIdentity;
-          }
-          break;
-        case 38:
-          if (true) {
-            return props_GeneratorModulePointer;
-          }
-          break;
-        case 39:
-          if (true) {
-            return props_IConceptSwitchCase;
-          }
-          break;
-        case 40:
-          if (true) {
-            return props_ILinkAccess;
-          }
-          break;
-        case 41:
-          if (true) {
-            return props_ILinkAccessQualifier;
-          }
-          break;
-        case 42:
-          if (true) {
-            return props_ILinkAccessQualifierContainer;
-          }
-          break;
-        case 43:
-          if (true) {
-            return props_ILinkQualifier;
-          }
-          break;
-        case 44:
-          if (true) {
-            return props_IPropertyQualifier;
-          }
-          break;
-        case 45:
-          if (true) {
-            return props_IRefConceptArg;
-          }
-          break;
-        case 46:
-          if (true) {
-            return props_IReferenceOperation;
-          }
-          break;
-        case 47:
-          if (true) {
-            return props_IfInstanceOfStatement;
-          }
-          break;
-        case 48:
-          if (true) {
-            return props_IfInstanceOfVarReference;
-          }
-          break;
-        case 49:
-          if (true) {
-            return props_IfInstanceOfVariable;
-          }
-          break;
-        case 50:
-          if (true) {
-            return props_LanguageId;
-          }
-          break;
-        case 51:
-          if (true) {
-            return props_LanguageIdentity;
-          }
-          break;
-        case 52:
-          if (true) {
-            return props_LanguageRefExpression;
-          }
-          break;
-        case 53:
-          if (true) {
-            return props_LanguageReferenceExpression;
-          }
-          break;
-        case 54:
-          if (true) {
-            return props_LinkAttributeQualifier;
-          }
-          break;
-        case 55:
-          if (true) {
-            return props_LinkIdRefExpression;
-          }
-          break;
-        case 56:
-          if (true) {
-            return props_LinkList_AddNewChildOperation;
-          }
-          break;
-        case 57:
-          if (true) {
-            return props_LinkNameRefExpression;
-          }
-          break;
-        case 58:
-          if (true) {
-            return props_LinkQualifier;
-          }
-          break;
-        case 59:
-          if (true) {
-            return props_LinkRefExpression;
-          }
-          break;
-        case 60:
-          if (true) {
-            return props_LinkRefQualifier;
-          }
-          break;
-        case 61:
-          if (true) {
-            return props_Link_SetNewChildOperation;
-          }
-          break;
-        case 62:
-          if (true) {
-            return props_Link_SetTargetOperation;
-          }
-          break;
-        case 63:
-          if (true) {
-            return props_ModelReferenceExpression;
-          }
-          break;
-        case 64:
-          if (true) {
-            return props_Model_AddRootOperation;
-          }
-          break;
-        case 65:
-          if (true) {
-            return props_Model_CreateNewNodeOperation;
-          }
-          break;
-        case 66:
-          if (true) {
-            return props_Model_CreateNewRootNodeOperation;
-          }
-          break;
-        case 67:
-          if (true) {
-            return props_Model_GetLongNameOperation;
-          }
-          break;
-        case 68:
-          if (true) {
-            return props_Model_GetModule;
-          }
-          break;
-        case 69:
-          if (true) {
-            return props_Model_NodesIncludingImportedOperation;
-          }
-          break;
-        case 70:
-          if (true) {
-            return props_Model_NodesOperation;
-          }
-          break;
-        case 71:
-          if (true) {
-            return props_Model_RootsIncludingImportedOperation;
-          }
-          break;
-        case 72:
-          if (true) {
-            return props_Model_RootsOperation;
-          }
-          break;
-        case 73:
-          if (true) {
-            return props_ModuleIdentity;
-          }
-          break;
-        case 74:
-          if (true) {
-            return props_ModulePointer;
-          }
-          break;
-        case 75:
-          if (true) {
-            return props_ModuleRefExpression;
-          }
-          break;
-        case 76:
-          if (true) {
-            return props_ModuleReferenceExpression;
-          }
-          break;
-        case 77:
-          if (true) {
-            return props_NodeAttributeQualifier;
-          }
-          break;
-        case 78:
-          if (true) {
-            return props_NodePointerExpression;
-          }
-          break;
-        case 79:
-          if (true) {
-            return props_NodeRefExpression;
-          }
-          break;
-        case 80:
-          if (true) {
-            return props_Node_ConceptMethodCall;
-          }
-          break;
-        case 81:
-          if (true) {
-            return props_Node_CopyOperation;
-          }
-          break;
-        case 82:
-          if (true) {
-            return props_Node_DeleteOperation;
-          }
-          break;
-        case 83:
-          if (true) {
-            return props_Node_DetachOperation;
-          }
-          break;
-        case 84:
-          if (true) {
-            return props_Node_GetAllSiblingsOperation;
-          }
-          break;
-        case 85:
-          if (true) {
-            return props_Node_GetAncestorOperation;
-          }
-          break;
-        case 86:
-          if (true) {
-            return props_Node_GetAncestorsOperation;
-          }
-          break;
-        case 87:
-          if (true) {
-            return props_Node_GetChildrenAndChildAttributesOperation;
-          }
-          break;
-        case 88:
-          if (true) {
-            return props_Node_GetChildrenOperation;
-          }
-          break;
-        case 89:
-          if (true) {
-            return props_Node_GetConceptOperation;
-          }
-          break;
-        case 90:
-          if (true) {
-            return props_Node_GetContainingLinkOperation;
-          }
-          break;
-        case 91:
-          if (true) {
-            return props_Node_GetContainingRoleOperation;
-          }
-          break;
-        case 92:
-          if (true) {
-            return props_Node_GetContainingRootOperation;
-          }
-          break;
-        case 93:
-          if (true) {
-            return props_Node_GetDescendantsOperation;
-          }
-          break;
-        case 94:
-          if (true) {
-            return props_Node_GetIndexInParentOperation;
-          }
-          break;
-        case 95:
-          if (true) {
-            return props_Node_GetModelOperation;
-          }
-          break;
-        case 96:
-          if (true) {
-            return props_Node_GetNextSiblingOperation;
-          }
-          break;
-        case 97:
-          if (true) {
-            return props_Node_GetNextSiblingsOperation;
-          }
-          break;
-        case 98:
-          if (true) {
-            return props_Node_GetParentOperation;
-          }
-          break;
-        case 99:
-          if (true) {
-            return props_Node_GetPrevSiblingOperation;
-          }
-          break;
-        case 100:
-          if (true) {
-            return props_Node_GetPrevSiblingsOperation;
-          }
-          break;
-        case 101:
-          if (true) {
-            return props_Node_GetReferenceOperation;
-          }
-          break;
-        case 102:
-          if (true) {
-            return props_Node_GetReferencesOperation;
-          }
-          break;
-        case 103:
-          if (true) {
-            return props_Node_GetReferentSearchScopeOperation;
-          }
-          break;
-        case 104:
-          if (true) {
-            return props_Node_GetSConceptOperation;
-          }
-          break;
-        case 105:
-          if (true) {
-            return props_Node_InsertNewNextSiblingOperation;
-          }
-          break;
-        case 106:
-          if (true) {
-            return props_Node_InsertNewPrevSiblingOperation;
-          }
-          break;
-        case 107:
-          if (true) {
-            return props_Node_InsertNextSiblingOperation;
-          }
-          break;
-        case 108:
-          if (true) {
-            return props_Node_InsertPrevSiblingOperation;
-          }
-          break;
-        case 109:
-          if (true) {
-            return props_Node_IsAttributeOperation;
-          }
-          break;
-        case 110:
-          if (true) {
-            return props_Node_IsInstanceOfOperation;
-          }
-          break;
-        case 111:
-          if (true) {
-            return props_Node_IsNotNullOperation;
-          }
-          break;
-        case 112:
-          if (true) {
-            return props_Node_IsNullOperation;
-          }
-          break;
-        case 113:
-          if (true) {
-            return props_Node_IsRoleOperation;
-          }
-          break;
-        case 114:
-          if (true) {
-            return props_Node_PointerOperation;
-          }
-          break;
-        case 115:
-          if (true) {
-            return props_Node_ReplaceWithAnotherOperation;
-          }
-          break;
-        case 116:
-          if (true) {
-            return props_Node_ReplaceWithNewOperation;
-          }
-          break;
-        case 117:
-          if (true) {
-            return props_OfConceptOperation;
-          }
-          break;
-        case 118:
-          if (true) {
-            return props_OperationParm_Concept;
-          }
-          break;
-        case 119:
-          if (true) {
-            return props_OperationParm_ConceptList;
-          }
-          break;
-        case 120:
-          if (true) {
-            return props_OperationParm_Inclusion;
-          }
-          break;
-        case 121:
-          if (true) {
-            return props_OperationParm_LinkQualifier;
-          }
-          break;
-        case 122:
-          if (true) {
-            return props_OperationParm_Root;
-          }
-          break;
-        case 123:
-          if (true) {
-            return props_OperationParm_SameMetaLevel;
-          }
-          break;
-        case 124:
-          if (true) {
-            return props_OperationParm_StopConceptList;
-          }
-          break;
-        case 125:
-          if (true) {
-            return props_PoundExpression;
-          }
-          break;
-        case 126:
-          if (true) {
-            return props_PropertyAttributeQualifier;
-          }
-          break;
-        case 127:
-          if (true) {
-            return props_PropertyId;
-          }
-          break;
-        case 128:
-          if (true) {
-            return props_PropertyIdRefExpression;
-          }
-          break;
-        case 129:
-          if (true) {
-            return props_PropertyIdentity;
-          }
-          break;
-        case 130:
-          if (true) {
-            return props_PropertyNameRefExpression;
-          }
-          break;
-        case 131:
-          if (true) {
-            return props_PropertyQualifier;
-          }
-          break;
-        case 132:
-          if (true) {
-            return props_Property_HasValue_Enum;
-          }
-          break;
-        case 133:
-          if (true) {
-            return props_Property_HasValue_Simple;
-          }
-          break;
-        case 134:
-          if (true) {
-            return props_Property_RemoveOperation;
-          }
-          break;
-        case 135:
-          if (true) {
-            return props_Property_SetOperation;
-          }
-          break;
-        case 136:
-          if (true) {
-            return props_RefConcept_Reference;
-          }
-          break;
-        case 137:
-          if (true) {
-            return props_Reference_GetLinkDeclarationOperation;
-          }
-          break;
-        case 138:
-          if (true) {
-            return props_Reference_GetResolveInfo;
-          }
-          break;
-        case 139:
-          if (true) {
-            return props_Reference_GetRoleOperation;
-          }
-          break;
-        case 140:
-          if (true) {
-            return props_Reference_GetTargetOperation;
-          }
-          break;
-        case 141:
-          if (true) {
-            return props_SConceptOperation;
-          }
-          break;
-        case 142:
-          if (true) {
-            return props_SConceptType;
-          }
-          break;
-        case 143:
-          if (true) {
-            return props_SConceptTypeCastExpression;
-          }
-          break;
-        case 144:
-          if (true) {
-            return props_SEnumMemberOperation;
-          }
-          break;
-        case 145:
-          if (true) {
-            return props_SEnumMemberType;
-          }
-          break;
-        case 146:
-          if (true) {
-            return props_SEnumOperation;
-          }
-          break;
-        case 147:
-          if (true) {
-            return props_SEnumOperationInvocation;
-          }
-          break;
-        case 148:
-          if (true) {
-            return props_SEnum_MemberForNameOperation;
-          }
-          break;
-        case 149:
-          if (true) {
-            return props_SEnum_MemberForValueOperation;
-          }
-          break;
-        case 150:
-          if (true) {
-            return props_SEnum_MemberOperation;
-          }
-          break;
-        case 151:
-          if (true) {
-            return props_SEnum_MembersOperation;
-          }
-          break;
-        case 152:
-          if (true) {
-            return props_SLinkAccess;
-          }
-          break;
-        case 153:
-          if (true) {
-            return props_SLinkImplicitSelect;
-          }
-          break;
-        case 154:
-          if (true) {
-            return props_SLinkListAccess;
-          }
-          break;
-        case 155:
-          if (true) {
-            return props_SModelType;
-          }
-          break;
-        case 156:
-          if (true) {
-            return props_SNodeCreator;
-          }
-          break;
-        case 157:
-          if (true) {
-            return props_SNodeListCreator;
-          }
-          break;
-        case 158:
-          if (true) {
-            return props_SNodeListType;
-          }
-          break;
-        case 159:
-          if (true) {
-            return props_SNodeOperation;
-          }
-          break;
-        case 160:
-          if (true) {
-            return props_SNodeType;
-          }
-          break;
-        case 161:
-          if (true) {
-            return props_SNodeTypeCastExpression;
-          }
-          break;
-        case 162:
-          if (true) {
-            return props_SPropertyAccess;
-          }
-          break;
-        case 163:
-          if (true) {
-            return props_SReferenceType;
-          }
-          break;
-        case 164:
-          if (true) {
-            return props_SearchScopeType;
-          }
-          break;
-        case 165:
-          if (true) {
-            return props_SearchScope_ContainsOperation;
-          }
-          break;
-        case 166:
-          if (true) {
-            return props_SemanticDowncastExpression;
-          }
-          break;
-        case 167:
-          if (true) {
-            return props_SubconceptCase;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("7866978e-a0f0-4cc7-81bc-4d213d9375e1"), "jetbrains.mps.lang.smodel")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_AbstractNodeRefExpression;
+      case 1:
+        return props_AbstractOperationParameter;
+      case 2:
+        return props_AbstractTypeCastExpression;
+      case 3:
+        return props_AllAttributeQualifier;
+      case 4:
+        return props_AsNodeOperation;
+      case 5:
+        return props_AsSConcept;
+      case 6:
+        return props_AttributeAccess;
+      case 7:
+        return props_AttributeQualifier;
+      case 8:
+        return props_BootstrapAwareMetaObject;
+      case 9:
+        return props_CheckedModuleQualifiedName;
+      case 10:
+        return props_CheckedModuleReference;
+      case 11:
+        return props_ChildAttributeQualifier;
+      case 12:
+        return props_ChildNodeRefExpression;
+      case 13:
+        return props_ConceptAliasOperation;
+      case 14:
+        return props_ConceptFqNameRefExpression;
+      case 15:
+        return props_ConceptId;
+      case 16:
+        return props_ConceptIdRefExpression;
+      case 17:
+        return props_ConceptIdentity;
+      case 18:
+        return props_ConceptNodeType;
+      case 19:
+        return props_ConceptRefExpression;
+      case 20:
+        return props_ConceptReference;
+      case 21:
+        return props_ConceptShortDescriptionOperation;
+      case 22:
+        return props_ConceptSwitchStatement;
+      case 23:
+        return props_Concept_GetAllSubConcepts;
+      case 24:
+        return props_Concept_GetAllSuperConcepts;
+      case 25:
+        return props_Concept_GetDirectSuperConcepts;
+      case 26:
+        return props_Concept_GetHierarchy;
+      case 27:
+        return props_Concept_IsExactlyOperation;
+      case 28:
+        return props_Concept_IsSubConceptOfOperation;
+      case 29:
+        return props_Concept_IsSuperConceptOfOperation;
+      case 30:
+        return props_Concept_NewInstance;
+      case 31:
+        return props_EnumMemberReference;
+      case 32:
+        return props_EnumMemberValueRefExpression;
+      case 33:
+        return props_EnumMember_NameOperation;
+      case 34:
+        return props_EnumMember_ValueOperation;
+      case 35:
+        return props_EqualsStructurallyExpression;
+      case 36:
+        return props_ExactConceptCase;
+      case 37:
+        return props_GeneratorIdentity;
+      case 38:
+        return props_GeneratorModulePointer;
+      case 39:
+        return props_IConceptSwitchCase;
+      case 40:
+        return props_ILinkAccess;
+      case 41:
+        return props_ILinkAccessQualifier;
+      case 42:
+        return props_ILinkAccessQualifierContainer;
+      case 43:
+        return props_ILinkQualifier;
+      case 44:
+        return props_IPropertyQualifier;
+      case 45:
+        return props_IRefConceptArg;
+      case 46:
+        return props_IReferenceOperation;
+      case 47:
+        return props_IfInstanceOfStatement;
+      case 48:
+        return props_IfInstanceOfVarReference;
+      case 49:
+        return props_IfInstanceOfVariable;
+      case 50:
+        return props_LanguageId;
+      case 51:
+        return props_LanguageIdentity;
+      case 52:
+        return props_LanguageRefExpression;
+      case 53:
+        return props_LanguageReferenceExpression;
+      case 54:
+        return props_LinkAttributeQualifier;
+      case 55:
+        return props_LinkIdRefExpression;
+      case 56:
+        return props_LinkList_AddNewChildOperation;
+      case 57:
+        return props_LinkNameRefExpression;
+      case 58:
+        return props_LinkQualifier;
+      case 59:
+        return props_LinkRefExpression;
+      case 60:
+        return props_LinkRefQualifier;
+      case 61:
+        return props_Link_SetNewChildOperation;
+      case 62:
+        return props_Link_SetTargetOperation;
+      case 63:
+        return props_ModelReferenceExpression;
+      case 64:
+        return props_Model_AddRootOperation;
+      case 65:
+        return props_Model_CreateNewNodeOperation;
+      case 66:
+        return props_Model_CreateNewRootNodeOperation;
+      case 67:
+        return props_Model_GetLongNameOperation;
+      case 68:
+        return props_Model_GetModule;
+      case 69:
+        return props_Model_NodesIncludingImportedOperation;
+      case 70:
+        return props_Model_NodesOperation;
+      case 71:
+        return props_Model_RootsIncludingImportedOperation;
+      case 72:
+        return props_Model_RootsOperation;
+      case 73:
+        return props_ModuleIdentity;
+      case 74:
+        return props_ModulePointer;
+      case 75:
+        return props_ModuleRefExpression;
+      case 76:
+        return props_ModuleReferenceExpression;
+      case 77:
+        return props_NodeAttributeQualifier;
+      case 78:
+        return props_NodePointerExpression;
+      case 79:
+        return props_NodeRefExpression;
+      case 80:
+        return props_Node_ConceptMethodCall;
+      case 81:
+        return props_Node_CopyOperation;
+      case 82:
+        return props_Node_DeleteOperation;
+      case 83:
+        return props_Node_DetachOperation;
+      case 84:
+        return props_Node_GetAllSiblingsOperation;
+      case 85:
+        return props_Node_GetAncestorOperation;
+      case 86:
+        return props_Node_GetAncestorsOperation;
+      case 87:
+        return props_Node_GetChildrenAndChildAttributesOperation;
+      case 88:
+        return props_Node_GetChildrenOperation;
+      case 89:
+        return props_Node_GetConceptOperation;
+      case 90:
+        return props_Node_GetContainingLinkOperation;
+      case 91:
+        return props_Node_GetContainingRoleOperation;
+      case 92:
+        return props_Node_GetContainingRootOperation;
+      case 93:
+        return props_Node_GetDescendantsOperation;
+      case 94:
+        return props_Node_GetIndexInParentOperation;
+      case 95:
+        return props_Node_GetModelOperation;
+      case 96:
+        return props_Node_GetNextSiblingOperation;
+      case 97:
+        return props_Node_GetNextSiblingsOperation;
+      case 98:
+        return props_Node_GetParentOperation;
+      case 99:
+        return props_Node_GetPrevSiblingOperation;
+      case 100:
+        return props_Node_GetPrevSiblingsOperation;
+      case 101:
+        return props_Node_GetReferenceOperation;
+      case 102:
+        return props_Node_GetReferencesOperation;
+      case 103:
+        return props_Node_GetReferentSearchScopeOperation;
+      case 104:
+        return props_Node_GetSConceptOperation;
+      case 105:
+        return props_Node_InsertNewNextSiblingOperation;
+      case 106:
+        return props_Node_InsertNewPrevSiblingOperation;
+      case 107:
+        return props_Node_InsertNextSiblingOperation;
+      case 108:
+        return props_Node_InsertPrevSiblingOperation;
+      case 109:
+        return props_Node_IsAttributeOperation;
+      case 110:
+        return props_Node_IsInstanceOfOperation;
+      case 111:
+        return props_Node_IsNotNullOperation;
+      case 112:
+        return props_Node_IsNullOperation;
+      case 113:
+        return props_Node_IsRoleOperation;
+      case 114:
+        return props_Node_PointerOperation;
+      case 115:
+        return props_Node_ReplaceWithAnotherOperation;
+      case 116:
+        return props_Node_ReplaceWithNewOperation;
+      case 117:
+        return props_OfConceptOperation;
+      case 118:
+        return props_OperationParm_Concept;
+      case 119:
+        return props_OperationParm_ConceptList;
+      case 120:
+        return props_OperationParm_Inclusion;
+      case 121:
+        return props_OperationParm_LinkQualifier;
+      case 122:
+        return props_OperationParm_Root;
+      case 123:
+        return props_OperationParm_SameMetaLevel;
+      case 124:
+        return props_OperationParm_StopConceptList;
+      case 125:
+        return props_PoundExpression;
+      case 126:
+        return props_PropertyAttributeQualifier;
+      case 127:
+        return props_PropertyId;
+      case 128:
+        return props_PropertyIdRefExpression;
+      case 129:
+        return props_PropertyIdentity;
+      case 130:
+        return props_PropertyNameRefExpression;
+      case 131:
+        return props_PropertyQualifier;
+      case 132:
+        return props_Property_HasValue_Enum;
+      case 133:
+        return props_Property_HasValue_Simple;
+      case 134:
+        return props_Property_RemoveOperation;
+      case 135:
+        return props_Property_SetOperation;
+      case 136:
+        return props_RefConcept_Reference;
+      case 137:
+        return props_Reference_GetLinkDeclarationOperation;
+      case 138:
+        return props_Reference_GetResolveInfo;
+      case 139:
+        return props_Reference_GetRoleOperation;
+      case 140:
+        return props_Reference_GetTargetOperation;
+      case 141:
+        return props_SConceptOperation;
+      case 142:
+        return props_SConceptType;
+      case 143:
+        return props_SConceptTypeCastExpression;
+      case 144:
+        return props_SEnumMemberOperation;
+      case 145:
+        return props_SEnumMemberType;
+      case 146:
+        return props_SEnumOperation;
+      case 147:
+        return props_SEnumOperationInvocation;
+      case 148:
+        return props_SEnum_MemberForNameOperation;
+      case 149:
+        return props_SEnum_MemberForValueOperation;
+      case 150:
+        return props_SEnum_MemberOperation;
+      case 151:
+        return props_SEnum_MembersOperation;
+      case 152:
+        return props_SLinkAccess;
+      case 153:
+        return props_SLinkImplicitSelect;
+      case 154:
+        return props_SLinkListAccess;
+      case 155:
+        return props_SModelType;
+      case 156:
+        return props_SNodeCreator;
+      case 157:
+        return props_SNodeListCreator;
+      case 158:
+        return props_SNodeListType;
+      case 159:
+        return props_SNodeOperation;
+      case 160:
+        return props_SNodeType;
+      case 161:
+        return props_SNodeTypeCastExpression;
+      case 162:
+        return props_SPropertyAccess;
+      case 163:
+        return props_SReferenceType;
+      case 164:
+        return props_SearchScopeType;
+      case 165:
+        return props_SearchScope_ContainsOperation;
+      case 166:
+        return props_SemanticDowncastExpression;
+      case 167:
+        return props_SubconceptCase;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0ng = buildConceptIndices(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x319fd776da5d8e3cL, "jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a61b7ea2aL, "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, "jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045c8b0L, "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7b0da3c650be8558L, "jetbrains.mps.lang.smodel.structure.AsNodeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x4a4d7215f163131L, "jetbrains.mps.lang.smodel.structure.AsSConcept"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045a3b2L, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9abL, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2399a155048244c5L, "jetbrains.mps.lang.smodel.structure.BootstrapAwareMetaObject"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x6085898237feae86L, "jetbrains.mps.lang.smodel.structure.CheckedModuleQualifiedName"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3c7a9d8c8d63d4f3L, "jetbrains.mps.lang.smodel.structure.CheckedModuleReference"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x9d98713f24a0e5bL, "jetbrains.mps.lang.smodel.structure.ChildAttributeQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x84baf20c71f8a79L, "jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5f5952af8856be80L, "jetbrains.mps.lang.smodel.structure.ConceptAliasOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73bd24cca4f91254L, "jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, "jetbrains.mps.lang.smodel.structure.ConceptId"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x24b2bf7ce180eb54L, "jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb4642L, "jetbrains.mps.lang.smodel.structure.ConceptIdentity"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9eb64c6L, "jetbrains.mps.lang.smodel.structure.ConceptRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10cd05c601dL, "jetbrains.mps.lang.smodel.structure.ConceptReference"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5f5952af8862fd1cL, "jetbrains.mps.lang.smodel.structure.ConceptShortDescriptionOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x527e98a73771f42dL, "jetbrains.mps.lang.smodel.structure.ConceptSwitchStatement"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11331e18cdcL, "jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112d8bf5d03L, "jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11296bd8374L, "jetbrains.mps.lang.smodel.structure.Concept_GetDirectSuperConcepts"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112d8ce685dL, "jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f41acfb7L, "jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112bf601180L, "jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112bf289d94L, "jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11331ad1f2aL, "jetbrains.mps.lang.smodel.structure.Concept_NewInstance"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1091e6212fdL, "jetbrains.mps.lang.smodel.structure.EnumMemberReference"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x60c7f83bafd83b5bL, "jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120c01735d3L, "jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120bff92dbeL, "jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11dbead8683L, "jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x53cfca750a909c64L, "jetbrains.mps.lang.smodel.structure.ExactConceptCase"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73246de9adeca173L, "jetbrains.mps.lang.smodel.structure.GeneratorIdentity"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73246de9adecb80dL, "jetbrains.mps.lang.smodel.structure.GeneratorModulePointer"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x53cfca750a909c96L, "jetbrains.mps.lang.smodel.structure.IConceptSwitchCase"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x37d97a5712d396cbL, "jetbrains.mps.lang.smodel.structure.ILinkAccess"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1188696e5f6L, "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifier"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312a67f61731e269L, "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x26b292a5afc7ccaaL, "jetbrains.mps.lang.smodel.structure.ILinkQualifier"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x26b292a5afc7ccabL, "jetbrains.mps.lang.smodel.structure.IPropertyQualifier"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x118f285e4f7L, "jetbrains.mps.lang.smodel.structure.IRefConceptArg"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x157abf675bd53df2L, "jetbrains.mps.lang.smodel.structure.IReferenceOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1a228da1357e4a44L, "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1a228da1357fca73L, "jetbrains.mps.lang.smodel.structure.IfInstanceOfVarReference"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1a228da1357e4a49L, "jetbrains.mps.lang.smodel.structure.IfInstanceOfVariable"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c318L, "jetbrains.mps.lang.smodel.structure.LanguageIdentity"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3e6a40ba27dd70f3L, "jetbrains.mps.lang.smodel.structure.LanguageRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3dc174aL, "jetbrains.mps.lang.smodel.structure.LanguageReferenceExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9b7L, "jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x24b2bf7ce1957615L, "jetbrains.mps.lang.smodel.structure.LinkIdRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1093caead54L, "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x48e6e2695189e59aL, "jetbrains.mps.lang.smodel.structure.LinkNameRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x26b292a5afc7ccacL, "jetbrains.mps.lang.smodel.structure.LinkQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11d88b27d15L, "jetbrains.mps.lang.smodel.structure.LinkRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11886c4bac0L, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x109233dbca1L, "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1099887af60L, "jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x118e7faea40L, "jetbrains.mps.lang.smodel.structure.Model_AddRootOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2e210544L, "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10fa1ac23f2L, "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11a3152e18bL, "jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x61168e34226eec71L, "jetbrains.mps.lang.smodel.structure.Model_GetModule"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1135326811cL, "jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, "jetbrains.mps.lang.smodel.structure.Model_NodesOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x111d5999a91L, "jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b7dcc9bcL, "jetbrains.mps.lang.smodel.structure.Model_RootsOperation"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5ef5a1e85338e1eL, "jetbrains.mps.lang.smodel.structure.ModuleIdentity"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5ef5a1e853388b3L, "jetbrains.mps.lang.smodel.structure.ModulePointer"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1749acf3d038bbe2L, "jetbrains.mps.lang.smodel.structure.ModuleRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9b5L, "jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x195fd0576ac9bb49L, "jetbrains.mps.lang.smodel.structure.NodePointerExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11be716563cL, "jetbrains.mps.lang.smodel.structure.NodeRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1129a43046bL, "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a646d8514L, "jetbrains.mps.lang.smodel.structure.Node_CopyOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1097542784fL, "jetbrains.mps.lang.smodel.structure.Node_DeleteOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11dfede6ec0L, "jetbrains.mps.lang.smodel.structure.Node_DetachOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10ab97e0a94L, "jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110bd4e0067L, "jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1112390be59L, "jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x6cbc725f4b35314cL, "jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110c2e679e7L, "jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f3e65fdcL, "jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x50c63f2cd5142697L, "jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1b35e18a1a3b2c9aL, "jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b78550e8L, "jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b73c3484L, "jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1128be3ca6aL, "jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2e126334L, "jetbrains.mps.lang.smodel.structure.Node_GetModelOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a3ea0a40dL, "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10ab957e8bbL, "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingsOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x109563e6169L, "jetbrains.mps.lang.smodel.structure.Node_GetParentOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a3e9fedc7L, "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10ab975b657L, "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x32187d80f5b88800L, "jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x798c0d67da9045abL, "jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11c530706b2L, "jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x6771eac6c5cbe7d2L, "jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10964e26717L, "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2d494062L, "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2d76e31eL, "jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2d77d0e1L, "jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x118c2f5b5f6L, "jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10956bb6029L, "jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110e123bce7L, "jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110e0974e46L, "jetbrains.mps.lang.smodel.structure.Node_IsNullOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a67578ddeL, "jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x4604033d54faa023L, "jetbrains.mps.lang.smodel.structure.Node_PointerOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975273750L, "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10965697d7aL, "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x412437525e297780L, "jetbrains.mps.lang.smodel.structure.OfConceptOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a61caab68L, "jetbrains.mps.lang.smodel.structure.OperationParm_Concept"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10cd05bec71L, "jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a61bacc13L, "jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x47bb2de70d00ff8cL, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a61c4f312L, "jetbrains.mps.lang.smodel.structure.OperationParm_Root"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x155fb7143719d578L, "jetbrains.mps.lang.smodel.structure.OperationParm_SameMetaLevel"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x190735f308e2250bL, "jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11885c0d945L, "jetbrains.mps.lang.smodel.structure.PoundExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045c9b9L, "jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefc235cL, "jetbrains.mps.lang.smodel.structure.PropertyId"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x24b2bf7ce1a42fa0L, "jetbrains.mps.lang.smodel.structure.PropertyIdRefExpression"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb4617L, "jetbrains.mps.lang.smodel.structure.PropertyIdentity"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x48e6e269518c89f7L, "jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x26b292a5afc7ccadL, "jetbrains.mps.lang.smodel.structure.PropertyQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10add1ded2bL, "jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10ae2053294L, "jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11aff7f2bb2L, "jetbrains.mps.lang.smodel.structure.Property_RemoveOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1091d8a1d53L, "jetbrains.mps.lang.smodel.structure.Property_SetOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1120c45902cL, "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x157abf675bd53debL, "jetbrains.mps.lang.smodel.structure.Reference_GetLinkDeclarationOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x4f37053c240837e1L, "jetbrains.mps.lang.smodel.structure.Reference_GetResolveInfo"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x4efeb22247ff02a7L, "jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x393cc52c868a600aL, "jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5f5952af8843faf9L, "jetbrains.mps.lang.smodel.structure.SConceptOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5cab42cd97571ceeL, "jetbrains.mps.lang.smodel.structure.SConceptType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1871b2e3b0ef0078L, "jetbrains.mps.lang.smodel.structure.SConceptTypeCastExpression"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120f244ef53L, "jetbrains.mps.lang.smodel.structure.SEnumMemberOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120bfe51421L, "jetbrains.mps.lang.smodel.structure.SEnumMemberType"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed37273dL, "jetbrains.mps.lang.smodel.structure.SEnumOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed32e98bL, "jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed37e60cL, "jetbrains.mps.lang.smodel.structure.SEnum_MemberForNameOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed37e64eL, "jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed37e691L, "jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed37e6b4L, "jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f96ea2caL, "jetbrains.mps.lang.smodel.structure.SLinkAccess"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x316f884c72a4157dL, "jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f970c119L, "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2d94c0cdL, "jetbrains.mps.lang.smodel.structure.SModelType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112e36f7135L, "jetbrains.mps.lang.smodel.structure.SNodeCreator"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10ab923b94aL, "jetbrains.mps.lang.smodel.structure.SNodeListCreator"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aae26be32L, "jetbrains.mps.lang.smodel.structure.SNodeListType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f96cca6fL, "jetbrains.mps.lang.smodel.structure.SPropertyAccess"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x798c0d67da9d2175L, "jetbrains.mps.lang.smodel.structure.SReferenceType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11c52ebfbe2L, "jetbrains.mps.lang.smodel.structure.SearchScopeType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11c536d2503L, "jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aaf6d7435L, "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x527e98a73771f432L, "jetbrains.mps.lang.smodel.structure.SubconceptCase"));
 }

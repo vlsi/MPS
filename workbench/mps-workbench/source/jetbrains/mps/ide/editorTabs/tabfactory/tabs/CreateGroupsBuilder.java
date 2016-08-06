@@ -25,10 +25,7 @@ import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.StringUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -56,9 +53,9 @@ public class CreateGroupsBuilder {
     return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<List<DefaultActionGroup>>() {
       @Override
       public List<DefaultActionGroup> compute() {
-        List<DefaultActionGroup> groups = new ArrayList<DefaultActionGroup>();
+        List<DefaultActionGroup> groups = new ArrayList<>();
 
-        List<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>(possibleTabs);
+        List<RelationDescriptor> tabs = new ArrayList<>(possibleTabs);
         Collections.sort(tabs, new RelationComparator());
 
         if (currentAspect != null) {
@@ -87,17 +84,14 @@ public class CreateGroupsBuilder {
 
   @NotNull
   public DefaultActionGroup getCreateGroup(final RelationDescriptor d) {
-    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<DefaultActionGroup>() {
-      @Override
-      public DefaultActionGroup compute() {
-        return doGetCreateGroup(d);
-      }
-    });
+    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(() -> doGetCreateGroup(d));
   }
 
-  /*package*/ DefaultActionGroup doGetCreateGroup(RelationDescriptor d) {
+  private DefaultActionGroup doGetCreateGroup(RelationDescriptor d) {
     Iterable<SConcept> concepts = d.getAspectConcepts(myBaseNode.resolve(myProject.getRepository()));
-    if (!concepts.iterator().hasNext()) return new DefaultActionGroup();
+    if (!concepts.iterator().hasNext()) {
+      return new DefaultActionGroup();
+    }
 
     DefaultActionGroup group = new DefaultActionGroup(d.getTitle(), true);
     for (SConcept concept : concepts) {
@@ -112,7 +106,10 @@ public class CreateGroupsBuilder {
 
     public CreateAction(SConcept concept, RelationDescriptor descriptor) {
       //todo pass concepts instead of nodes
-      super(concept.getConceptAlias().replaceAll("_", "__"), "", IconManager.getIcon(concept));
+      super(!concept.getConceptAlias().replaceAll("_", "__").isEmpty()
+              ? concept.getConceptAlias().replaceAll("_", "__") : concept.getName(),
+          "", IconManager.getIconFor(concept)
+      );
       myConcept = concept;
       myDescriptor = descriptor;
     }
@@ -122,27 +119,16 @@ public class CreateGroupsBuilder {
       // FIXME bloody sh!t, two commands depending on boolean; package name set with a separate command - ORLY?
       final SNode[] created = new SNode[1];
 
-      final Runnable r1 = new Runnable() {
-        @Override
-        public void run() {
-          SNode node = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<SNode>() {
-            @Override
-            public SNode compute() {
-              return myBaseNode.resolve(myProject.getRepository());
-            }
-          });
-          created[0] = myDescriptor.createAspect(node, myConcept);
-        }
+      final Runnable r1 = () -> {
+        SNode node = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(() -> myBaseNode.resolve(myProject.getRepository()));
+        created[0] = myDescriptor.createAspect(node, myConcept);
       };
 
-      final Runnable r2 = new Runnable() {
-        @Override
-        public void run() {
-          String mainPack = SNodeAccessUtil.getProperty(myBaseNode.resolve(myProject.getRepository()), SNodeUtil.property_BaseConcept_virtualPackage);
-          // TODO: remove this code. Virtual package is specified inside ConceptAspectsHelper class
-          SNodeAccessUtil.setProperty(created[0], SNodeUtil.property_BaseConcept_virtualPackage, mainPack);
-          myCallback.changeNode(created[0].getReference());
-        }
+      final Runnable r2 = () -> {
+        String mainPack = SNodeAccessUtil.getProperty(myBaseNode.resolve(myProject.getRepository()), SNodeUtil.property_BaseConcept_virtualPackage);
+        // TODO: remove this code. Virtual package is specified inside ConceptAspectsHelper class
+        SNodeAccessUtil.setProperty(created[0], SNodeUtil.property_BaseConcept_virtualPackage, mainPack);
+        myCallback.changeNode(created[0].getReference());
       };
 
       if (myDescriptor.commandOnCreate()) {

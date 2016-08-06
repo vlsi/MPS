@@ -82,7 +82,7 @@ public class HighlighterUpdateSession {
     return result;
   }
 
-  public void doUpdate() {
+  private void doUpdate() {
     if (myCheckers.isEmpty()) {
       return;
     }
@@ -191,8 +191,6 @@ public class HighlighterUpdateSession {
             return null;
           }
 
-          boolean recreateMessages = myHighlighter.getEditorTracker().isInspector(editor) && recreateInspectorMessages;
-
           try {
             return checker.update(editor, wasCheckedOnce, applyQuickFixes,
                 new HighlighterUpdateSessionCancellable(myHighlighter, checker.toString(), editor));
@@ -225,9 +223,14 @@ public class HighlighterUpdateSession {
     return anyMessageChanged;
   }
 
-  public void doneUpdating() {
+  private void doneUpdating() {
     for (EditorChecker checker : myCheckers) {
       checker.doneUpdating();
     }
+  }
+
+  public void update() {
+    doUpdate();
+    doneUpdating();
   }
 }

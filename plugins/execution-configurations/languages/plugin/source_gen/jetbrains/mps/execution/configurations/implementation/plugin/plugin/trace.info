@@ -25,7 +25,7 @@
       <unit at="15,0,40,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.BeforeTasksInitializer_CustomProjectPlugin" />
     </file>
     <file name="IconContainer.java">
-      <unit at="7,0,10,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.IconContainer" />
+      <unit at="8,0,11,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.IconContainer" />
     </file>
     <file name="RunConfigurationsInitializer_CustomApplicationPlugin.java">
       <unit at="49,108,60,5" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RunConfigurationsInitializer_CustomApplicationPlugin$1" />

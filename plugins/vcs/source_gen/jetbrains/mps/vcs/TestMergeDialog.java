@@ -64,7 +64,7 @@ public class TestMergeDialog {
     }
   };
 
-  private static MPSProject ourMPSProject = new StandaloneMPSProject(TestMergeDialog.ourProject, null);
+  private static MPSProject ourMPSProject = new StandaloneMPSProject(TestMergeDialog.ourProject, null, null);
 
   public TestMergeDialog() {
   }

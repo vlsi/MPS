@@ -298,16 +298,16 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     }
 
     @Override
-    protected boolean canNavigate(@NotNull IMessage msg) {
-      return msg.getHintObject() != null && myNavigationManager.canNavigateTo(msg.getHintObject());
+    protected boolean canNavigate(@NotNull IMessage message) {
+      return message.getHintObject() != null && myNavigationManager.canNavigateTo(message.getHintObject());
     }
 
     @Override
-    protected void navigate(@NotNull IMessage msg, boolean focus) {
+    protected void navigate(@NotNull IMessage message, boolean focus) {
       // XXX could receive Navigatable from NM and in case navigation fails (e.g. due to deleted/missing node)
       // could show a balloon with explanation (it's better to do it here rather than in Navigatable itself as here we've
       // got tool window to anchor.
-      myNavigationManager.navigateTo(msg.getHintObject(), focus);
+      myNavigationManager.navigateTo(message.getHintObject(), focus);
     }
 
     @Override

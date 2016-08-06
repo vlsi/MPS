@@ -2,10 +2,10 @@
 <debug-info version="2">
   <root>
     <file name="ConceptPresentationAspectImpl.java">
-      <unit at="14,0,117,0" name="jetbrains.mps.baseLanguage.classifiers.structure.ConceptPresentationAspectImpl" />
+      <unit at="14,0,64,0" name="jetbrains.mps.baseLanguage.classifiers.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="18,0,134,0" name="jetbrains.mps.baseLanguage.classifiers.structure.StructureAspectDescriptor" />
+      <unit at="21,0,147,0" name="jetbrains.mps.baseLanguage.classifiers.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

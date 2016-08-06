@@ -23,6 +23,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.ide.vfs.ProjectRootListenerComponent;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -40,6 +41,11 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
   private final com.intellij.openapi.project.Project myProject;
   private final List<ProjectModuleLoadingListener> myListeners = new ArrayList<ProjectModuleLoadingListener>();
 
+  public MPSProject(@NotNull com.intellij.openapi.project.Project project, ProjectRootListenerComponent unused) {
+    super(new ProjectDescriptor(project.getName()));
+    myProject = project;
+  }
+
   @Override
   public void initComponent() {
     NotFoundModulesListener listener = new NotFoundModulesListener(this);
@@ -52,11 +58,6 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
     for (ProjectModuleLoadingListener listener : myListeners) {
       removeListener(listener);
     }
-  }
-
-  public MPSProject(@NotNull com.intellij.openapi.project.Project project) {
-    super(new ProjectDescriptor(project.getName()));
-    myProject = project;
   }
 
   @NotNull

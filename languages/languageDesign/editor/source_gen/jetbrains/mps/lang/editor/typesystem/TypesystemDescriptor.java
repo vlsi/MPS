@@ -149,6 +149,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_CellModel_Component_EditorComponentIsInExtendedLanguage_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }

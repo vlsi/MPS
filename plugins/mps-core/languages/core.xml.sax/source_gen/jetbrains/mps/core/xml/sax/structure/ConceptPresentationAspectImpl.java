@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_XMLSAXAttributeHandler = new ConceptPresentationBuilder().create();
@@ -42,153 +42,61 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0bb.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_XMLSAXAttributeHandler;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_XMLSAXAttributeHandler_value;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_XMLSAXAttributeReference;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_XMLSAXAttributeRule;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_XMLSAXBreakStatement;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_XMLSAXChildHandler;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_XMLSAXChildHandler_childObject;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_XMLSAXChildRule;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_XMLSAXChildRuleCondition;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_XMLSAXDefaultChildHandler;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_XMLSAXDefaultChildHandler_tagName;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_XMLSAXDefaultChildRule;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_XMLSAXFieldDeclaration;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_XMLSAXFieldReference;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_XMLSAXHandlerFunction;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_XMLSAXHandler_resultObject;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_XMLSAXLocatorExpression;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_XMLSAXNodeCreator;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_XMLSAXNodeRule;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_XMLSAXNodeRuleParam;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_XMLSAXNodeRuleParamRef;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_XMLSAXNodeValidator;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_XMLSAXParser;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_XMLSAXTextHandler;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_XMLSAXTextHandler_value;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_XMLSAXTextRule;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("dcb5a83a-19a8-44ff-a4cb-fc7d324ecc63"), "jetbrains.mps.core.xml.sax")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_XMLSAXAttributeHandler;
+      case 1:
+        return props_XMLSAXAttributeHandler_value;
+      case 2:
+        return props_XMLSAXAttributeReference;
+      case 3:
+        return props_XMLSAXAttributeRule;
+      case 4:
+        return props_XMLSAXBreakStatement;
+      case 5:
+        return props_XMLSAXChildHandler;
+      case 6:
+        return props_XMLSAXChildHandler_childObject;
+      case 7:
+        return props_XMLSAXChildRule;
+      case 8:
+        return props_XMLSAXChildRuleCondition;
+      case 9:
+        return props_XMLSAXDefaultChildHandler;
+      case 10:
+        return props_XMLSAXDefaultChildHandler_tagName;
+      case 11:
+        return props_XMLSAXDefaultChildRule;
+      case 12:
+        return props_XMLSAXFieldDeclaration;
+      case 13:
+        return props_XMLSAXFieldReference;
+      case 14:
+        return props_XMLSAXHandlerFunction;
+      case 15:
+        return props_XMLSAXHandler_resultObject;
+      case 16:
+        return props_XMLSAXLocatorExpression;
+      case 17:
+        return props_XMLSAXNodeCreator;
+      case 18:
+        return props_XMLSAXNodeRule;
+      case 19:
+        return props_XMLSAXNodeRuleParam;
+      case 20:
+        return props_XMLSAXNodeRuleParamRef;
+      case 21:
+        return props_XMLSAXNodeValidator;
+      case 22:
+        return props_XMLSAXParser;
+      case 23:
+        return props_XMLSAXTextHandler;
+      case 24:
+        return props_XMLSAXTextHandler_value;
+      case 25:
+        return props_XMLSAXTextRule;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0bb = buildConceptIndices(MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2c1L, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x30181d5ee4a76f2eL, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler_value"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2c9L, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeReference"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2cbL, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2cfL, "jetbrains.mps.core.xml.sax.structure.XMLSAXBreakStatement"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d2L, "jetbrains.mps.core.xml.sax.structure.XMLSAXChildHandler"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d5L, "jetbrains.mps.core.xml.sax.structure.XMLSAXChildHandler_childObject"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRule"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x4180d2369bed9265L, "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRuleCondition"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x3afd693759ffee07L, "jetbrains.mps.core.xml.sax.structure.XMLSAXDefaultChildHandler"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x3afd69375a089554L, "jetbrains.mps.core.xml.sax.structure.XMLSAXDefaultChildHandler_tagName"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x3afd693759ffa97fL, "jetbrains.mps.core.xml.sax.structure.XMLSAXDefaultChildRule"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2ddL, "jetbrains.mps.core.xml.sax.structure.XMLSAXFieldDeclaration"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2e0L, "jetbrains.mps.core.xml.sax.structure.XMLSAXFieldReference"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2e3L, "jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2eaL, "jetbrains.mps.core.xml.sax.structure.XMLSAXHandler_resultObject"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2edL, "jetbrains.mps.core.xml.sax.structure.XMLSAXLocatorExpression"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2efL, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeCreator"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2f2L, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0xd9be961730be3edL, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRuleParam"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x4180d2369b1f16c6L, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRuleParamRef"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2fcL, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeValidator"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e301L, "jetbrains.mps.core.xml.sax.structure.XMLSAXParser"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e308L, "jetbrains.mps.core.xml.sax.structure.XMLSAXTextHandler"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x30181d5ee4a78284L, "jetbrains.mps.core.xml.sax.structure.XMLSAXTextHandler_value"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e310L, "jetbrains.mps.core.xml.sax.structure.XMLSAXTextRule"));
 }

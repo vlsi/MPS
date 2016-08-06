@@ -718,12 +718,12 @@
                     </node>
                   </node>
                   <node concept="3TrEf2" id="4NKeWDvIyRc" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:hqOqNr4" />
+                    <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
                   </node>
                 </node>
               </node>
               <node concept="3TrEf2" id="4NKeWDvIyRd" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:hqOxapj" />
+                <ref role="3Tt5mk" to="tpee:hqOxapj" resolve="fieldDeclaration" />
               </node>
             </node>
           </node>
@@ -750,7 +750,7 @@
                 <ref role="3cqZAo" node="4NKeWDvIyRf" resolve="instanceFieldReference" />
               </node>
               <node concept="3TrEf2" id="4NKeWDvIyRo" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:fzcqZ_w" />
+                <ref role="3Tt5mk" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
               </node>
             </node>
             <node concept="2oxUTD" id="4NKeWDvIyRp" role="2OqNvi">
@@ -933,7 +933,7 @@
                 <ref role="3xOPvv" node="4NKeWDvIyTS" resolve="staticFieldReference" />
               </node>
               <node concept="3TrEf2" id="4NKeWDvIyRR" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:f_2Pw7K" />
+                <ref role="3Tt5mk" to="tpee:f_2Pw7K" resolve="staticFieldDeclaration" />
               </node>
             </node>
           </node>
@@ -960,7 +960,7 @@
                 <ref role="3cqZAo" node="4NKeWDvIyRT" resolve="staticFieldReference" />
               </node>
               <node concept="3TrEf2" id="4NKeWDvIyS2" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:fzcqZ_w" />
+                <ref role="3Tt5mk" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
               </node>
             </node>
             <node concept="2oxUTD" id="4NKeWDvIyS3" role="2OqNvi">
@@ -1147,12 +1147,12 @@
                     <ref role="3xOPvv" node="4NKeWDvIyUk" resolve="methodReference" />
                   </node>
                   <node concept="3TrEf2" id="xJcAfRvq8Q" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:hqOqNr4" />
+                    <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
                   </node>
                 </node>
               </node>
               <node concept="3TrEf2" id="xJcAfRvq8R" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:hwllgre" />
+                <ref role="3Tt5mk" to="tpee:hwllgre" resolve="instanceMethodDeclaration" />
               </node>
             </node>
           </node>
@@ -1171,12 +1171,12 @@
                     <ref role="3xOPvv" node="4NKeWDvIyUk" resolve="methodReference" />
                   </node>
                   <node concept="3TrEf2" id="xJcAfRvsFA" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:hqOqNr4" />
+                    <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
                   </node>
                 </node>
               </node>
               <node concept="3Tsc0h" id="xJcAfRvsFB" role="2OqNvi">
-                <ref role="3TtcxE" to="tpee:fz7wK6I" />
+                <ref role="3TtcxE" to="tpee:fz7wK6I" resolve="actualArgument" />
               </node>
             </node>
           </node>
@@ -1207,7 +1207,7 @@
                 <ref role="3cqZAo" node="xJcAfRvrrB" resolve="localInstanceMethodCall" />
               </node>
               <node concept="3TrEf2" id="xJcAfRvrrP" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:6LFqxSRBTg7" />
+                <ref role="3Tt5mk" to="tpee:6LFqxSRBTg7" resolve="method" />
               </node>
             </node>
             <node concept="2oxUTD" id="xJcAfRvrrU" role="2OqNvi">
@@ -1390,7 +1390,7 @@
                 <ref role="3xOPvv" node="xJcAfRvt0U" resolve="staticMethodReference" />
               </node>
               <node concept="3TrEf2" id="xJcAfRvt1g" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:fIYIWN3" />
+                <ref role="3Tt5mk" to="tpee:fIYIWN3" resolve="staticMethodDeclaration" />
               </node>
             </node>
           </node>
@@ -1406,7 +1406,7 @@
                 <ref role="3xOPvv" node="xJcAfRvt0U" resolve="staticMethodReference" />
               </node>
               <node concept="3Tsc0h" id="xJcAfRvt1m" role="2OqNvi">
-                <ref role="3TtcxE" to="tpee:fz7wK6I" />
+                <ref role="3TtcxE" to="tpee:fz7wK6I" resolve="actualArgument" />
               </node>
             </node>
           </node>
@@ -1437,7 +1437,7 @@
                 <ref role="3cqZAo" node="xJcAfRvsZG" resolve="localStaticMethodCall" />
               </node>
               <node concept="3TrEf2" id="xJcAfRvtqz" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:6LFqxSRBTg7" />
+                <ref role="3Tt5mk" to="tpee:6LFqxSRBTg7" resolve="method" />
               </node>
             </node>
             <node concept="2oxUTD" id="xJcAfRvsZS" role="2OqNvi">

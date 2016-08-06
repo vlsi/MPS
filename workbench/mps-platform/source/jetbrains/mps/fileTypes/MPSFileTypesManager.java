@@ -15,46 +15,39 @@
  */
 package jetbrains.mps.fileTypes;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.fileTypes.FileType;
+import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-// TODO get rid of
-public class MPSFileTypesManager implements ApplicationComponent {
-  public static MPSFileTypesManager instance() {
-    return ApplicationManager.getApplication().getComponent(MPSFileTypesManager.class);
-  }
+import java.util.Collections;
+import java.util.List;
 
-  @Override
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "MPS File Types Component";
-  }
+public final class MPSFileTypesManager {
+  private static final List<String> DEFAULT_MPS_IGNORED_PATTERNS = Collections.singletonList(".idea");
 
-  @Override
-  public void initComponent() {
-
-  }
-
-  @Override
-  public void disposeComponent() {
-
-  }
-
-  public boolean isModuleFile(VirtualFile file) {
+  public static boolean isModuleFile(VirtualFile file) {
     if (file == null) return false;
     FileType type = file.getFileType();
     return type.equals(MPSFileTypeFactory.LANGUAGE_FILE_TYPE) ||
-      type.equals(MPSFileTypeFactory.SOLUTION_FILE_TYPE) ||
-      type.equals(MPSFileTypeFactory.DEVKIT_FILE_TYPE);
+        type.equals(MPSFileTypeFactory.SOLUTION_FILE_TYPE) ||
+        type.equals(MPSFileTypeFactory.DEVKIT_FILE_TYPE);
   }
 
-  public boolean isModelFile(VirtualFile vfile) {
-    if (vfile == null) return false;
-    return vfile.getFileType().equals(MPSFileTypeFactory.MPS_FILE_TYPE);
+  public static boolean isModelFile(VirtualFile vfile) {
+    return vfile != null && vfile.getFileType().equals(MPSFileTypeFactory.MPS_FILE_TYPE);
+  }
+
+  public static boolean isFileIgnored(@NotNull String fileName) {
+    return FileTypeManager.getInstance().isFileIgnored(fileName) || isIgnoredByDefault(fileName);
+  }
+
+  private static boolean isIgnoredByDefault(String fileName) {
+    for (String matchingString : DEFAULT_MPS_IGNORED_PATTERNS) {
+      if (fileName.contains(matchingString)) {
+        return true;
+      }
+    }
+    return false;
   }
 }

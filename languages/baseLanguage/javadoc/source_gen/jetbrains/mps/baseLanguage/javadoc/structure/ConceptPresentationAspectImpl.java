@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AuthorBlockDocTag = new ConceptPresentationBuilder().create();
@@ -50,193 +50,77 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0jb.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AuthorBlockDocTag;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_BaseBlockDocTag;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_BaseDocComment;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_BaseDocReference;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_BaseInlineDocTag;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_BaseParameterReference;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_BaseVariableDocReference;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_ClassifierDocComment;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_ClassifierDocReference;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_CodeInlineDocTag;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_CodeSnippet;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_CommentLine;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_CommentLinePart;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_DeprecatedBlockDocTag;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_DocMethodParameterReference;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_DocTypeParameterReference;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_EmptyBlockDocTag;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_FieldDocComment;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_FieldDocReference;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_HTMLElement;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_InheritDocInlineDocTag;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_InlineTagCommentLinePart;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_LinkInlineDocTag;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_MethodDocComment;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_MethodDocReference;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_ParameterBlockDocTag;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_ReturnBlockDocTag;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_SeeBlockDocTag;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_SinceBlockDocTag;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_StaticFieldDocReference;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_TextCommentLinePart;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_ThrowsBlockDocTag;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_ValueInlineDocTag;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_VersionBlockDocTag;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("f2801650-65d5-424e-bb1b-463a8781b786"), "jetbrains.mps.baseLanguage.javadoc")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case 0:
+        return props_AuthorBlockDocTag;
+      case 1:
+        return props_BaseBlockDocTag;
+      case 2:
+        return props_BaseDocComment;
+      case 3:
+        return props_BaseDocReference;
+      case 4:
+        return props_BaseInlineDocTag;
+      case 5:
+        return props_BaseParameterReference;
+      case 6:
+        return props_BaseVariableDocReference;
+      case 7:
+        return props_ClassifierDocComment;
+      case 8:
+        return props_ClassifierDocReference;
+      case 9:
+        return props_CodeInlineDocTag;
+      case 10:
+        return props_CodeSnippet;
+      case 11:
+        return props_CommentLine;
+      case 12:
+        return props_CommentLinePart;
+      case 13:
+        return props_DeprecatedBlockDocTag;
+      case 14:
+        return props_DocMethodParameterReference;
+      case 15:
+        return props_DocTypeParameterReference;
+      case 16:
+        return props_EmptyBlockDocTag;
+      case 17:
+        return props_FieldDocComment;
+      case 18:
+        return props_FieldDocReference;
+      case 19:
+        return props_HTMLElement;
+      case 20:
+        return props_InheritDocInlineDocTag;
+      case 21:
+        return props_InlineTagCommentLinePart;
+      case 22:
+        return props_LinkInlineDocTag;
+      case 23:
+        return props_MethodDocComment;
+      case 24:
+        return props_MethodDocReference;
+      case 25:
+        return props_ParameterBlockDocTag;
+      case 26:
+        return props_ReturnBlockDocTag;
+      case 27:
+        return props_SeeBlockDocTag;
+      case 28:
+        return props_SinceBlockDocTag;
+      case 29:
+        return props_StaticFieldDocReference;
+      case 30:
+        return props_TextCommentLinePart;
+      case 31:
+        return props_ThrowsBlockDocTag;
+      case 32:
+        return props_ValueInlineDocTag;
+      case 33:
+        return props_VersionBlockDocTag;
     }
     throw new IllegalStateException();
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0jb = buildConceptIndices(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faee13eL, "jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faee13dL, "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec252c9a26L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x60a0f9237ac5e838L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dbe86d7L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4d316b5973d644c2L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec2531d2e4L, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec252a7b73L, "jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x2398cefbc261e3ffL, "jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dbe86d8L, "jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dbe86dbL, "jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x44ac82392ce5c6b0L, "jetbrains.mps.baseLanguage.javadoc.structure.EmptyBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dc44bf2L, "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec252c9a28L, "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x41a6af3499e5305fL, "jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990289L, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x235789022a5d3a2fL, "jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec2531d2d3L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c905f8aL, "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f687050918eL, "jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec252ca3abL, "jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87ddadL, "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5a38b07c2d6d7c7bL, "jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f68704ec270L, "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x60a0f9237ac5e83bL, "jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87dda0L, "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag"));
 }

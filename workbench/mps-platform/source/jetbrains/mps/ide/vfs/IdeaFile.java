@@ -70,7 +70,7 @@ public class IdeaFile implements IFileEx, CachingFile {
     myPath = path.replace("//", "/").replace("\\\\", "\\");
   }
 
-  private IdeaFile(IdeaFileSystem fileSystem, @NotNull VirtualFile virtualFile) {
+  public IdeaFile(IdeaFileSystem fileSystem, @NotNull VirtualFile virtualFile) {
     myFileSystem = fileSystem;
     myVirtualFile = virtualFile;
     myPath = virtualFile.getPath();

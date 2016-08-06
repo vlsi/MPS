@@ -17,14 +17,15 @@ import java.io.FileOutputStream;
 import jetbrains.mps.util.ReadUtil;
 import java.io.IOException;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
+import jetbrains.mps.util.Reference;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.project.MPSProject;
-import java.util.concurrent.Semaphore;
-import com.intellij.openapi.startup.StartupManager;
-import com.intellij.ide.startup.StartupManagerEx;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.core.platform.Platform;
 import org.jetbrains.annotations.Nullable;
+import java.util.concurrent.Semaphore;
+import com.intellij.openapi.startup.StartupManager;
+import com.intellij.ide.startup.StartupManagerEx;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -153,47 +154,34 @@ public class IdeaEnvironment extends EnvironmentBase {
     }
     final ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
     final String filePath = projectFile.getAbsolutePath();
-    // this is a workaround for MPS-8840 
-    final com.intellij.openapi.project.Project[] project = new com.intellij.openapi.project.Project[1];
-    final Exception[] exc = new Exception[]{null};
+
+    final IdeaEnvironment.PostStartupActivitiesWaiter waiter = new IdeaEnvironment.PostStartupActivitiesWaiter();
+    final Reference<com.intellij.openapi.project.Project> project = new Reference<com.intellij.openapi.project.Project>();
+    final Reference<Exception> exc = new Reference<Exception>();
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         try {
           if (LOG.isInfoEnabled()) {
             LOG.info("Load and open the project with path '" + filePath + "'");
           }
-          project[0] = projectManager.loadAndOpenProject(filePath);
+          project.set(projectManager.loadAndOpenProject(filePath));
+          waiter.init(project.get());
           // calling sync refresh for FS in order to update all modules/models loaded from the project 
           // if unit-test is executed with the "reuse caches" option. 
           VirtualFileManager.getInstance().syncRefresh();
         } catch (Exception e) {
-          exc[0] = e;
+          exc.set(e);
         }
       }
     }, ModalityState.NON_MODAL);
-    if (exc[0] != null) {
-      throw new RuntimeException("ProjectManager could not load project from " + projectFile.getAbsolutePath(), exc[0]);
-    }
-    waitForPostStartupActivities(project);
 
-    return project[0].getComponent(MPSProject.class);
-  }
+    if (!(exc.isNull())) {
+      throw new RuntimeException("ProjectManager could not load project from " + projectFile.getAbsolutePath(), exc.get());
+    }
 
-  private void waitForPostStartupActivities(final com.intellij.openapi.project.Project[] project) {
-    final Semaphore sem = new Semaphore(0);
-    if (project[0] != null) {
-      StartupManager.getInstance(project[0]).registerPostStartupActivity(new Runnable() {
-        public void run() {
-          sem.release();
-        }
-      });
-    }
-    try {
-      sem.acquire();
-    } catch (InterruptedException e) {
-      throw new RuntimeException("Caught exception while waiting for the post startup activities", e);
-    }
-    assert StartupManagerEx.getInstanceEx(project[0]).postStartupActivityPassed();
+    waiter.wait0();
+
+    return project.get().getComponent(MPSProject.class);
   }
 
   @Override
@@ -206,7 +194,6 @@ public class IdeaEnvironment extends EnvironmentBase {
     ModelAccess.instance().flushEventQueue();
   }
 
-
   @Override
   public Platform getPlatform() {
     return getMPSCoreComponents().getPlatform();
@@ -216,6 +203,33 @@ public class IdeaEnvironment extends EnvironmentBase {
   @Override
   protected ClassLoader rootClassLoader() {
     return null;
+  }
+
+  private static final class PostStartupActivitiesWaiter {
+    private final Semaphore mySem = new Semaphore(0);
+    private volatile com.intellij.openapi.project.Project myProject;
+
+    public void init(com.intellij.openapi.project.Project project) {
+      if (project != null) {
+        myProject = project;
+        StartupManager.getInstance(project).registerPostStartupActivity(new Runnable() {
+          public void run() {
+            mySem.release();
+          }
+        });
+      }
+    }
+
+    public void wait0() {
+      if (myProject != null) {
+        try {
+          mySem.acquire();
+        } catch (InterruptedException e) {
+          throw new RuntimeException("Caught exception while waiting for the post startup activities", e);
+        }
+        assert StartupManagerEx.getInstanceEx(myProject).postStartupActivityPassed();
+      }
+    }
   }
   protected static Logger LOG = LogManager.getLogger(IdeaEnvironment.class);
 }
