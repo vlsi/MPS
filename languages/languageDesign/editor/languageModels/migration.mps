@@ -10316,7 +10316,7 @@
       <node concept="37vLTG" id="AIV2SdBivH" role="3clF46">
         <property role="TrG5h" value="outputConceptPart" />
         <node concept="3Tqbb2" id="AIV2SdBivI" role="1tU5fm">
-          <ref role="ehGHo" to="tpc2:6VAVyI4xoxZ" resolve="IOutputConceptMenuPart" />
+          <ref role="ehGHo" to="tpc2:6VAVyI4xoxZ" resolve="IOutputConceptSubstituteMenuPart" />
         </node>
       </node>
       <node concept="3clFbS" id="AIV2SdBivp" role="3clF47">
