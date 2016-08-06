@@ -513,8 +513,11 @@
     <file name="INodeProvider_BehaviorDescriptor.java">
       <unit at="11,0,14,0" name="jetbrains.mps.lang.editor.behavior.INodeProvider_BehaviorDescriptor" />
     </file>
-    <file name="IOutputConceptMenuPart_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.editor.behavior.IOutputConceptMenuPart_BehaviorDescriptor" />
+    <file name="IOutputConceptSubstituteMenuPart_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.editor.behavior.IOutputConceptSubstituteMenuPart_BehaviorDescriptor" />
+    </file>
+    <file name="IOutputConceptTransformationMenuPart_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.editor.behavior.IOutputConceptTransformationMenuPart_BehaviorDescriptor" />
     </file>
     <file name="IParameterizableMenuPart_BehaviorDescriptor.java">
       <unit at="11,0,14,0" name="jetbrains.mps.lang.editor.behavior.IParameterizableMenuPart_BehaviorDescriptor" />
@@ -602,6 +605,9 @@
     </file>
     <file name="NavigatableReferenceStyleClassItem_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.behavior.NavigatableReferenceStyleClassItem_BehaviorDescriptor" />
+    </file>
+    <file name="OptionalConceptReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.behavior.OptionalConceptReference_BehaviorDescriptor" />
     </file>
     <file name="OrCellSelector_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.behavior.OrCellSelector_BehaviorDescriptor" />

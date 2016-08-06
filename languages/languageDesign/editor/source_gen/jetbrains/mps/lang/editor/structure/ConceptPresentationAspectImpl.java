@@ -174,7 +174,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IMenu_Default = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IMenu_Named = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_INodeProvider = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IOutputConceptMenuPart = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IOutputConceptSubstituteMenuPart = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IOutputConceptTransformationMenuPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IParameterizableMenuPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IQueryFunction_Color = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IStyle = new ConceptPresentationBuilder().create();
@@ -204,12 +205,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ModelAccessor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NavigatableNodeStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NavigatableReferenceStyleClassItem = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_OptionalConceptReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OrCellSelector = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PaddingBottomStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PaddingLeftStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PaddingRightStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PaddingTopStyleClassItem = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ParametersInformationQuery = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ph).create();
+  private final ConceptPresentation props_ParametersInformationQuery = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0rh).create();
   private final ConceptPresentation props_ParametersInformationStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PositionChildrenStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PositionStyleClassItem = new ConceptPresentationBuilder().create();
@@ -328,9 +330,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_StyleClassReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StyleClassReferenceList = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StyleKey = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StyleKeyPack = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0em).create();
+  private final ConceptPresentation props_StyleKeyPack = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0gm).create();
   private final ConceptPresentation props_StyleReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StyleSheet = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0gm).create();
+  private final ConceptPresentation props_StyleSheet = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0im).create();
   private final ConceptPresentation props_StyleSheetClass = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_StyleSheetClassReference = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_StyledTextType = new ConceptPresentationBuilder().create();
@@ -341,7 +343,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SubstituteFeature_Icon = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteFeature_MatchingText = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteFeature_Selection = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SubstituteMenu = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0rm).create();
+  private final ConceptPresentation props_SubstituteMenu = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0tm).create();
   private final ConceptPresentation props_SubstituteMenuPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuPart_Action = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuPart_AddConcept = new ConceptPresentationBuilder().create();
@@ -357,9 +359,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SubstituteMenuReference_Named = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuVariableDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuVariableReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SubstituteMenu_Contribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0hn).create();
-  private final ConceptPresentation props_SubstituteMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0in).create();
-  private final ConceptPresentation props_SubstituteMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0jn).create();
+  private final ConceptPresentation props_SubstituteMenu_Contribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0jn).create();
+  private final ConceptPresentation props_SubstituteMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0kn).create();
+  private final ConceptPresentation props_SubstituteMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ln).create();
   private final ConceptPresentation props_SubstituteMenu_SimpleString = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Synchronizeable = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TableComponentStyleClassItem = new ConceptPresentationBuilder().create();
@@ -377,8 +379,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TransformationLocation_ContextAssistant = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationLocation_SideTransform = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationLocation_SideTransform_PlaceInCellHolder = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationMenu = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0bo).create();
-  private final ConceptPresentation props_TransformationMenuContribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0co).create();
+  private final ConceptPresentation props_TransformationMenu = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0do).create();
+  private final ConceptPresentation props_TransformationMenuContribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0eo).create();
   private final ConceptPresentation props_TransformationMenuPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuPart_Action = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuPart_Group = new ConceptPresentationBuilder().create();
@@ -394,8 +396,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TransformationMenuSection = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuVariableDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuVariableReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0so).create();
-  private final ConceptPresentation props_TransformationMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0to).create();
+  private final ConceptPresentation props_TransformationMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0uo).create();
+  private final ConceptPresentation props_TransformationMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0vo).create();
   private final ConceptPresentation props_UnapplyStyle = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_UnderlinedStyleClassItem = new ConceptPresentationBuilder().create();
 
@@ -404,7 +406,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     {
       SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0xo.get(cncpt);
+      Integer preIndex = indices_lpa09p_a0zo.get(cncpt);
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
@@ -1219,1120 +1221,1130 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           break;
         case 162:
           if (true) {
-            return props_IOutputConceptMenuPart;
+            return props_IOutputConceptSubstituteMenuPart;
           }
           break;
         case 163:
           if (true) {
-            return props_IParameterizableMenuPart;
+            return props_IOutputConceptTransformationMenuPart;
           }
           break;
         case 164:
           if (true) {
-            return props_IQueryFunction_Color;
+            return props_IParameterizableMenuPart;
           }
           break;
         case 165:
           if (true) {
-            return props_IStyle;
+            return props_IQueryFunction_Color;
           }
           break;
         case 166:
           if (true) {
-            return props_IStyleContainer;
+            return props_IStyle;
           }
           break;
         case 167:
           if (true) {
-            return props_IStyleSheetItem;
+            return props_IStyleContainer;
           }
           break;
         case 168:
           if (true) {
-            return props_IStyleSheetMember;
+            return props_IStyleSheetItem;
           }
           break;
         case 169:
           if (true) {
-            return props_ISubstituteMenu;
+            return props_IStyleSheetMember;
           }
           break;
         case 170:
           if (true) {
-            return props_ISubstituteMenuReference;
+            return props_ISubstituteMenu;
           }
           break;
         case 171:
           if (true) {
-            return props_ISubstituteMenu_String;
+            return props_ISubstituteMenuReference;
           }
           break;
         case 172:
           if (true) {
-            return props_ITransformationMenu;
+            return props_ISubstituteMenu_String;
           }
           break;
         case 173:
           if (true) {
-            return props_ITransformationMenuReference;
+            return props_ITransformationMenu;
           }
           break;
         case 174:
           if (true) {
-            return props_IdSelector;
+            return props_ITransformationMenuReference;
           }
           break;
         case 175:
           if (true) {
-            return props_ImagePathProvider;
+            return props_IdSelector;
           }
           break;
         case 176:
           if (true) {
-            return props_IndentLayoutIndentAnchorStyleClassItem;
+            return props_ImagePathProvider;
           }
           break;
         case 177:
           if (true) {
-            return props_IndentLayoutIndentStyleClassItem;
+            return props_IndentLayoutIndentAnchorStyleClassItem;
           }
           break;
         case 178:
           if (true) {
-            return props_IndentLayoutNewLineChildrenStyleClassItem;
+            return props_IndentLayoutIndentStyleClassItem;
           }
           break;
         case 179:
           if (true) {
-            return props_IndentLayoutNewLineStyleClassItem;
+            return props_IndentLayoutNewLineChildrenStyleClassItem;
           }
           break;
         case 180:
           if (true) {
-            return props_IndentLayoutNoWrapClassItem;
+            return props_IndentLayoutNewLineStyleClassItem;
           }
           break;
         case 181:
           if (true) {
-            return props_IndentLayoutOnNewLineStyleClassItem;
+            return props_IndentLayoutNoWrapClassItem;
           }
           break;
         case 182:
           if (true) {
-            return props_IndentLayoutWrapAnchorStyleClassItem;
+            return props_IndentLayoutOnNewLineStyleClassItem;
           }
           break;
         case 183:
           if (true) {
-            return props_InlineEditorComponent;
+            return props_IndentLayoutWrapAnchorStyleClassItem;
           }
           break;
         case 184:
           if (true) {
-            return props_InlineStyleDeclaration;
+            return props_InlineEditorComponent;
           }
           break;
         case 185:
           if (true) {
-            return props_LastPositionAllowedStyleClassItem;
+            return props_InlineStyleDeclaration;
           }
           break;
         case 186:
           if (true) {
-            return props_LayoutConstraintStyleClassItem;
+            return props_LastPositionAllowedStyleClassItem;
           }
           break;
         case 187:
           if (true) {
-            return props_MatchingLabelStyleClassItem;
+            return props_LayoutConstraintStyleClassItem;
           }
           break;
         case 188:
           if (true) {
-            return props_MaxWidthStyleClassItem;
+            return props_MatchingLabelStyleClassItem;
           }
           break;
         case 189:
           if (true) {
-            return props_ModelAccessor;
+            return props_MaxWidthStyleClassItem;
           }
           break;
         case 190:
           if (true) {
-            return props_NavigatableNodeStyleClassItem;
+            return props_ModelAccessor;
           }
           break;
         case 191:
           if (true) {
-            return props_NavigatableReferenceStyleClassItem;
+            return props_NavigatableNodeStyleClassItem;
           }
           break;
         case 192:
           if (true) {
-            return props_OrCellSelector;
+            return props_NavigatableReferenceStyleClassItem;
           }
           break;
         case 193:
           if (true) {
-            return props_PaddingBottomStyleClassItem;
+            return props_OptionalConceptReference;
           }
           break;
         case 194:
           if (true) {
-            return props_PaddingLeftStyleClassItem;
+            return props_OrCellSelector;
           }
           break;
         case 195:
           if (true) {
-            return props_PaddingRightStyleClassItem;
+            return props_PaddingBottomStyleClassItem;
           }
           break;
         case 196:
           if (true) {
-            return props_PaddingTopStyleClassItem;
+            return props_PaddingLeftStyleClassItem;
           }
           break;
         case 197:
           if (true) {
-            return props_ParametersInformationQuery;
+            return props_PaddingRightStyleClassItem;
           }
           break;
         case 198:
           if (true) {
-            return props_ParametersInformationStyleClassItem;
+            return props_PaddingTopStyleClassItem;
           }
           break;
         case 199:
           if (true) {
-            return props_PositionChildrenStyleClassItem;
+            return props_ParametersInformationQuery;
           }
           break;
         case 200:
           if (true) {
-            return props_PositionStyleClassItem;
+            return props_ParametersInformationStyleClassItem;
           }
           break;
         case 201:
           if (true) {
-            return props_PreDefinedStyleClassItem;
+            return props_PositionChildrenStyleClassItem;
           }
           break;
         case 202:
           if (true) {
-            return props_PredefinedSelector;
+            return props_PositionStyleClassItem;
           }
           break;
         case 203:
           if (true) {
-            return props_PropertyDeclarationCellSelector;
+            return props_PreDefinedStyleClassItem;
           }
           break;
         case 204:
           if (true) {
-            return props_PropertyExpressionCellSelector;
+            return props_PredefinedSelector;
           }
           break;
         case 205:
           if (true) {
-            return props_PunctuationLeftStyleClassItem;
+            return props_PropertyDeclarationCellSelector;
           }
           break;
         case 206:
           if (true) {
-            return props_PunctuationRightStyleClassItem;
+            return props_PropertyExpressionCellSelector;
           }
           break;
         case 207:
           if (true) {
-            return props_QueryFunctionParameter_SubstituteMenu_Concept;
+            return props_PunctuationLeftStyleClassItem;
           }
           break;
         case 208:
           if (true) {
-            return props_QueryFunctionParameter_SubstituteMenu_CreatedNode;
+            return props_PunctuationRightStyleClassItem;
           }
           break;
         case 209:
           if (true) {
-            return props_QueryFunctionParameter_SubstituteMenu_CurrentTargetNode;
+            return props_QueryFunctionParameter_SubstituteMenu_Concept;
           }
           break;
         case 210:
           if (true) {
-            return props_QueryFunctionParameter_SubstituteMenu_Link;
+            return props_QueryFunctionParameter_SubstituteMenu_CreatedNode;
           }
           break;
         case 211:
           if (true) {
-            return props_QueryFunctionParameter_SubstituteMenu_NodeToWrap;
+            return props_QueryFunctionParameter_SubstituteMenu_CurrentTargetNode;
           }
           break;
         case 212:
           if (true) {
-            return props_QueryFunctionParameter_SubstituteMenu_ParentNode;
+            return props_QueryFunctionParameter_SubstituteMenu_Link;
           }
           break;
         case 213:
           if (true) {
-            return props_QueryFunctionParameter_SubstituteMenu_Strictly;
+            return props_QueryFunctionParameter_SubstituteMenu_NodeToWrap;
           }
           break;
         case 214:
           if (true) {
-            return props_QueryFunctionParameter_TransformationMenu_CreatedNode;
+            return props_QueryFunctionParameter_SubstituteMenu_ParentNode;
           }
           break;
         case 215:
           if (true) {
-            return props_QueryFunctionParameter_TransformationMenu_node;
+            return props_QueryFunctionParameter_SubstituteMenu_Strictly;
           }
           break;
         case 216:
           if (true) {
-            return props_QueryFunctionParameter_TransformationMenu_targetNode;
+            return props_QueryFunctionParameter_TransformationMenu_CreatedNode;
           }
           break;
         case 217:
           if (true) {
-            return props_QueryFunctionParameter_parameterObject;
+            return props_QueryFunctionParameter_TransformationMenu_node;
           }
           break;
         case 218:
           if (true) {
-            return props_QueryFunctionParameter_pattern;
+            return props_QueryFunctionParameter_TransformationMenu_targetNode;
           }
           break;
         case 219:
           if (true) {
-            return props_QueryFunction_AttributeStyleParameter;
+            return props_QueryFunctionParameter_parameterObject;
           }
           break;
         case 220:
           if (true) {
-            return props_QueryFunction_Boolean;
+            return props_QueryFunctionParameter_pattern;
           }
           break;
         case 221:
           if (true) {
-            return props_QueryFunction_CellProvider;
+            return props_QueryFunction_AttributeStyleParameter;
           }
           break;
         case 222:
           if (true) {
-            return props_QueryFunction_Color;
+            return props_QueryFunction_Boolean;
           }
           break;
         case 223:
           if (true) {
-            return props_QueryFunction_ColorComposit;
+            return props_QueryFunction_CellProvider;
           }
           break;
         case 224:
           if (true) {
-            return props_QueryFunction_FontStyle;
+            return props_QueryFunction_Color;
           }
           break;
         case 225:
           if (true) {
-            return props_QueryFunction_ImagePath;
+            return props_QueryFunction_ColorComposit;
           }
           break;
         case 226:
           if (true) {
-            return props_QueryFunction_Integer;
+            return props_QueryFunction_FontStyle;
           }
           break;
         case 227:
           if (true) {
-            return props_QueryFunction_IsMethodCurrent;
+            return props_QueryFunction_ImagePath;
           }
           break;
         case 228:
           if (true) {
-            return props_QueryFunction_JComponent;
+            return props_QueryFunction_Integer;
           }
           break;
         case 229:
           if (true) {
-            return props_QueryFunction_Menu;
+            return props_QueryFunction_IsMethodCurrent;
           }
           break;
         case 230:
           if (true) {
-            return props_QueryFunction_MethodPresentation;
+            return props_QueryFunction_JComponent;
           }
           break;
         case 231:
           if (true) {
-            return props_QueryFunction_ModelAccess_Getter;
+            return props_QueryFunction_Menu;
           }
           break;
         case 232:
           if (true) {
-            return props_QueryFunction_ModelAccess_Setter;
+            return props_QueryFunction_MethodPresentation;
           }
           break;
         case 233:
           if (true) {
-            return props_QueryFunction_ModelAccess_Validator;
+            return props_QueryFunction_ModelAccess_Getter;
           }
           break;
         case 234:
           if (true) {
-            return props_QueryFunction_ModuleAndPath;
+            return props_QueryFunction_ModelAccess_Setter;
           }
           break;
         case 235:
           if (true) {
-            return props_QueryFunction_NodeCondition;
+            return props_QueryFunction_ModelAccess_Validator;
           }
           break;
         case 236:
           if (true) {
-            return props_QueryFunction_NodeFactory;
+            return props_QueryFunction_ModuleAndPath;
           }
           break;
         case 237:
           if (true) {
-            return props_QueryFunction_NodeListFilter;
+            return props_QueryFunction_NodeCondition;
           }
           break;
         case 238:
           if (true) {
-            return props_QueryFunction_ParametersList;
+            return props_QueryFunction_NodeFactory;
           }
           break;
         case 239:
           if (true) {
-            return props_QueryFunction_SNode;
+            return props_QueryFunction_NodeListFilter;
           }
           break;
         case 240:
           if (true) {
-            return props_QueryFunction_SeparatorText;
+            return props_QueryFunction_ParametersList;
           }
           break;
         case 241:
           if (true) {
-            return props_QueryFunction_String;
+            return props_QueryFunction_SNode;
           }
           break;
         case 242:
           if (true) {
-            return props_QueryFunction_Style;
+            return props_QueryFunction_SeparatorText;
           }
           break;
         case 243:
           if (true) {
-            return props_QueryFunction_StyleParameter;
+            return props_QueryFunction_String;
           }
           break;
         case 244:
           if (true) {
-            return props_QueryFunction_SubstituteMenu;
+            return props_QueryFunction_Style;
           }
           break;
         case 245:
           if (true) {
-            return props_QueryFunction_SubstituteMenuPart;
+            return props_QueryFunction_StyleParameter;
           }
           break;
         case 246:
           if (true) {
-            return props_QueryFunction_SubstituteMenuVariable_Initializer;
+            return props_QueryFunction_SubstituteMenu;
           }
           break;
         case 247:
           if (true) {
-            return props_QueryFunction_SubstituteMenu_ActionType;
+            return props_QueryFunction_SubstituteMenuPart;
           }
           break;
         case 248:
           if (true) {
-            return props_QueryFunction_SubstituteMenu_CanSubstitute;
+            return props_QueryFunction_SubstituteMenuVariable_Initializer;
           }
           break;
         case 249:
           if (true) {
-            return props_QueryFunction_SubstituteMenu_Concept;
+            return props_QueryFunction_SubstituteMenu_ActionType;
           }
           break;
         case 250:
           if (true) {
-            return props_QueryFunction_SubstituteMenu_Concepts;
+            return props_QueryFunction_SubstituteMenu_CanSubstitute;
           }
           break;
         case 251:
           if (true) {
-            return props_QueryFunction_SubstituteMenu_Condition;
+            return props_QueryFunction_SubstituteMenu_Concept;
           }
           break;
         case 252:
           if (true) {
-            return props_QueryFunction_SubstituteMenu_FilterConcepts;
+            return props_QueryFunction_SubstituteMenu_Concepts;
           }
           break;
         case 253:
           if (true) {
-            return props_QueryFunction_SubstituteMenu_Icon;
+            return props_QueryFunction_SubstituteMenu_Condition;
           }
           break;
         case 254:
           if (true) {
-            return props_QueryFunction_SubstituteMenu_Parameter;
+            return props_QueryFunction_SubstituteMenu_FilterConcepts;
           }
           break;
         case 255:
           if (true) {
-            return props_QueryFunction_SubstituteMenu_Select;
+            return props_QueryFunction_SubstituteMenu_Icon;
           }
           break;
         case 256:
           if (true) {
-            return props_QueryFunction_SubstituteMenu_Substitute;
+            return props_QueryFunction_SubstituteMenu_Parameter;
           }
           break;
         case 257:
           if (true) {
-            return props_QueryFunction_SubstituteMenu_SubstituteString;
+            return props_QueryFunction_SubstituteMenu_Select;
           }
           break;
         case 258:
           if (true) {
-            return props_QueryFunction_SubstituteMenu_WrapperHandler;
+            return props_QueryFunction_SubstituteMenu_Substitute;
           }
           break;
         case 259:
           if (true) {
-            return props_QueryFunction_TransformationMenu;
+            return props_QueryFunction_SubstituteMenu_SubstituteString;
           }
           break;
         case 260:
           if (true) {
-            return props_QueryFunction_TransformationMenuVariable_Initializer;
+            return props_QueryFunction_SubstituteMenu_WrapperHandler;
           }
           break;
         case 261:
           if (true) {
-            return props_QueryFunction_TransformationMenu_ActionLabelText;
+            return props_QueryFunction_TransformationMenu;
           }
           break;
         case 262:
           if (true) {
-            return props_QueryFunction_TransformationMenu_Condition;
+            return props_QueryFunction_TransformationMenuVariable_Initializer;
           }
           break;
         case 263:
           if (true) {
-            return props_QueryFunction_TransformationMenu_DescriptionText;
+            return props_QueryFunction_TransformationMenu_ActionLabelText;
           }
           break;
         case 264:
           if (true) {
-            return props_QueryFunction_TransformationMenu_Execute;
+            return props_QueryFunction_TransformationMenu_Condition;
           }
           break;
         case 265:
           if (true) {
-            return props_QueryFunction_TransformationMenu_Extensible;
+            return props_QueryFunction_TransformationMenu_DescriptionText;
           }
           break;
         case 266:
           if (true) {
-            return props_QueryFunction_TransformationMenu_Icon;
+            return props_QueryFunction_TransformationMenu_Execute;
           }
           break;
         case 267:
           if (true) {
-            return props_QueryFunction_TransformationMenu_Node;
+            return props_QueryFunction_TransformationMenu_Extensible;
           }
           break;
         case 268:
           if (true) {
-            return props_QueryFunction_TransformationMenu_Parameter;
+            return props_QueryFunction_TransformationMenu_Icon;
           }
           break;
         case 269:
           if (true) {
-            return props_QueryFunction_TransformationMenu_TargetNode;
+            return props_QueryFunction_TransformationMenu_Node;
           }
           break;
         case 270:
           if (true) {
-            return props_QueryFunction_TransformationMenu_Text;
+            return props_QueryFunction_TransformationMenu_Parameter;
           }
           break;
         case 271:
           if (true) {
-            return props_QueryFunction_TransformationMenu_WrapperHandler;
+            return props_QueryFunction_TransformationMenu_TargetNode;
           }
           break;
         case 272:
           if (true) {
-            return props_QueryFunction_Underlined;
+            return props_QueryFunction_TransformationMenu_Text;
           }
           break;
         case 273:
           if (true) {
-            return props_QueryHintsSpecification;
+            return props_QueryFunction_TransformationMenu_WrapperHandler;
           }
           break;
         case 274:
           if (true) {
-            return props_RGBColor;
+            return props_QueryFunction_Underlined;
           }
           break;
         case 275:
           if (true) {
-            return props_ReadOnlyModelAccessor;
+            return props_QueryHintsSpecification;
           }
           break;
         case 276:
           if (true) {
-            return props_ReadOnlyStyleClassItem;
+            return props_RGBColor;
           }
           break;
         case 277:
           if (true) {
-            return props_RightTransformAnchorTagWrapper;
+            return props_ReadOnlyModelAccessor;
           }
           break;
         case 278:
           if (true) {
-            return props_ScriptKindClassItem;
+            return props_ReadOnlyStyleClassItem;
           }
           break;
         case 279:
           if (true) {
-            return props_SelectInEditorOperation;
+            return props_RightTransformAnchorTagWrapper;
           }
           break;
         case 280:
           if (true) {
-            return props_SelectParameter;
+            return props_ScriptKindClassItem;
           }
           break;
         case 281:
           if (true) {
-            return props_SelectPositionParameter;
+            return props_SelectInEditorOperation;
           }
           break;
         case 282:
           if (true) {
-            return props_SelectableStyleSheetItem;
+            return props_SelectParameter;
           }
           break;
         case 283:
           if (true) {
-            return props_SetBoldOperation;
+            return props_SelectPositionParameter;
           }
           break;
         case 284:
           if (true) {
-            return props_ShowBoundariesInStyleClassItem;
+            return props_SelectableStyleSheetItem;
           }
           break;
         case 285:
           if (true) {
-            return props_SideTransformAnchorTagStyleClassItem;
+            return props_SetBoldOperation;
           }
           break;
         case 286:
           if (true) {
-            return props_StrikeOutStyleSheet;
+            return props_ShowBoundariesInStyleClassItem;
           }
           break;
         case 287:
           if (true) {
-            return props_StubCellModel_Alternation;
+            return props_SideTransformAnchorTagStyleClassItem;
           }
           break;
         case 288:
           if (true) {
-            return props_StubCellModel_Block;
+            return props_StrikeOutStyleSheet;
           }
           break;
         case 289:
           if (true) {
-            return props_StubCellModel_Collection;
+            return props_StubCellModel_Alternation;
           }
           break;
         case 290:
           if (true) {
-            return props_StubCellModel_Component;
+            return props_StubCellModel_Block;
           }
           break;
         case 291:
           if (true) {
-            return props_StubCellModel_Constant;
+            return props_StubCellModel_Collection;
           }
           break;
         case 292:
           if (true) {
-            return props_StubCellModel_ContextAssistant;
+            return props_StubCellModel_Component;
           }
           break;
         case 293:
           if (true) {
-            return props_StubCellModel_Custom;
+            return props_StubCellModel_Constant;
           }
           break;
         case 294:
           if (true) {
-            return props_StubCellModel_Error;
+            return props_StubCellModel_ContextAssistant;
           }
           break;
         case 295:
           if (true) {
-            return props_StubCellModel_Image;
+            return props_StubCellModel_Custom;
           }
           break;
         case 296:
           if (true) {
-            return props_StubCellModel_JComponent;
+            return props_StubCellModel_Error;
           }
           break;
         case 297:
           if (true) {
-            return props_StubCellModel_ModelAccess;
+            return props_StubCellModel_Image;
           }
           break;
         case 298:
           if (true) {
-            return props_StubCellModel_NonEmptyProperty;
+            return props_StubCellModel_JComponent;
           }
           break;
         case 299:
           if (true) {
-            return props_StubCellModel_Property;
+            return props_StubCellModel_ModelAccess;
           }
           break;
         case 300:
           if (true) {
-            return props_StubCellModel_ReadOnlyModelAccessor;
+            return props_StubCellModel_NonEmptyProperty;
           }
           break;
         case 301:
           if (true) {
-            return props_StubCellModel_RefCell;
+            return props_StubCellModel_Property;
           }
           break;
         case 302:
           if (true) {
-            return props_StubCellModel_RefNode;
+            return props_StubCellModel_ReadOnlyModelAccessor;
           }
           break;
         case 303:
           if (true) {
-            return props_StubCellModel_RefNodeList;
+            return props_StubCellModel_RefCell;
           }
           break;
         case 304:
           if (true) {
-            return props_StubCellModel_ReferencePresentation;
+            return props_StubCellModel_RefNode;
           }
           break;
         case 305:
           if (true) {
-            return props_StubCellModel_Table;
+            return props_StubCellModel_RefNodeList;
           }
           break;
         case 306:
           if (true) {
-            return props_StubCellModel_TransactionalProperty;
+            return props_StubCellModel_ReferencePresentation;
           }
           break;
         case 307:
           if (true) {
-            return props_StubCellModel_URL;
+            return props_StubCellModel_Table;
           }
           break;
         case 308:
           if (true) {
-            return props_StubEditorCellModel;
+            return props_StubCellModel_TransactionalProperty;
           }
           break;
         case 309:
           if (true) {
-            return props_StyleAttributeDeclaration;
+            return props_StubCellModel_URL;
           }
           break;
         case 310:
           if (true) {
-            return props_StyleAttributeReferenceExpression;
+            return props_StubEditorCellModel;
           }
           break;
         case 311:
           if (true) {
-            return props_StyleClass;
+            return props_StyleAttributeDeclaration;
           }
           break;
         case 312:
           if (true) {
-            return props_StyleClassItem;
+            return props_StyleAttributeReferenceExpression;
           }
           break;
         case 313:
           if (true) {
-            return props_StyleClassReference;
+            return props_StyleClass;
           }
           break;
         case 314:
           if (true) {
-            return props_StyleClassReferenceList;
+            return props_StyleClassItem;
           }
           break;
         case 315:
           if (true) {
-            return props_StyleKey;
+            return props_StyleClassReference;
           }
           break;
         case 316:
           if (true) {
-            return props_StyleKeyPack;
+            return props_StyleClassReferenceList;
           }
           break;
         case 317:
           if (true) {
-            return props_StyleReference;
+            return props_StyleKey;
           }
           break;
         case 318:
           if (true) {
-            return props_StyleSheet;
+            return props_StyleKeyPack;
           }
           break;
         case 319:
           if (true) {
-            return props_StyleSheetClass;
+            return props_StyleReference;
           }
           break;
         case 320:
           if (true) {
-            return props_StyleSheetClassReference;
+            return props_StyleSheet;
           }
           break;
         case 321:
           if (true) {
-            return props_StyledTextType;
+            return props_StyleSheetClass;
           }
           break;
         case 322:
           if (true) {
-            return props_SubstituteFeature;
+            return props_StyleSheetClassReference;
           }
           break;
         case 323:
           if (true) {
-            return props_SubstituteFeature_ActionType;
+            return props_StyledTextType;
           }
           break;
         case 324:
           if (true) {
-            return props_SubstituteFeature_CanSubstitute;
+            return props_SubstituteFeature;
           }
           break;
         case 325:
           if (true) {
-            return props_SubstituteFeature_DescriptionText;
+            return props_SubstituteFeature_ActionType;
           }
           break;
         case 326:
           if (true) {
-            return props_SubstituteFeature_Icon;
+            return props_SubstituteFeature_CanSubstitute;
           }
           break;
         case 327:
           if (true) {
-            return props_SubstituteFeature_MatchingText;
+            return props_SubstituteFeature_DescriptionText;
           }
           break;
         case 328:
           if (true) {
-            return props_SubstituteFeature_Selection;
+            return props_SubstituteFeature_Icon;
           }
           break;
         case 329:
           if (true) {
-            return props_SubstituteMenu;
+            return props_SubstituteFeature_MatchingText;
           }
           break;
         case 330:
           if (true) {
-            return props_SubstituteMenuPart;
+            return props_SubstituteFeature_Selection;
           }
           break;
         case 331:
           if (true) {
-            return props_SubstituteMenuPart_Action;
+            return props_SubstituteMenu;
           }
           break;
         case 332:
           if (true) {
-            return props_SubstituteMenuPart_AddConcept;
+            return props_SubstituteMenuPart;
           }
           break;
         case 333:
           if (true) {
-            return props_SubstituteMenuPart_Concepts;
+            return props_SubstituteMenuPart_Action;
           }
           break;
         case 334:
           if (true) {
-            return props_SubstituteMenuPart_Group;
+            return props_SubstituteMenuPart_AddConcept;
           }
           break;
         case 335:
           if (true) {
-            return props_SubstituteMenuPart_IncludeMenu;
+            return props_SubstituteMenuPart_Concepts;
           }
           break;
         case 336:
           if (true) {
-            return props_SubstituteMenuPart_Parameterized;
+            return props_SubstituteMenuPart_Group;
           }
           break;
         case 337:
           if (true) {
-            return props_SubstituteMenuPart_Subconcepts;
+            return props_SubstituteMenuPart_IncludeMenu;
           }
           break;
         case 338:
           if (true) {
-            return props_SubstituteMenuPart_Wrapper;
+            return props_SubstituteMenuPart_Parameterized;
           }
           break;
         case 339:
           if (true) {
-            return props_SubstituteMenuReference;
+            return props_SubstituteMenuPart_Subconcepts;
           }
           break;
         case 340:
           if (true) {
-            return props_SubstituteMenuReference_Default;
+            return props_SubstituteMenuPart_Wrapper;
           }
           break;
         case 341:
           if (true) {
-            return props_SubstituteMenuReference_DefaultWithFunction;
+            return props_SubstituteMenuReference;
           }
           break;
         case 342:
           if (true) {
-            return props_SubstituteMenuReference_Named;
+            return props_SubstituteMenuReference_Default;
           }
           break;
         case 343:
           if (true) {
-            return props_SubstituteMenuVariableDeclaration;
+            return props_SubstituteMenuReference_DefaultWithFunction;
           }
           break;
         case 344:
           if (true) {
-            return props_SubstituteMenuVariableReference;
+            return props_SubstituteMenuReference_Named;
           }
           break;
         case 345:
           if (true) {
-            return props_SubstituteMenu_Contribution;
+            return props_SubstituteMenuVariableDeclaration;
           }
           break;
         case 346:
           if (true) {
-            return props_SubstituteMenu_Default;
+            return props_SubstituteMenuVariableReference;
           }
           break;
         case 347:
           if (true) {
-            return props_SubstituteMenu_Named;
+            return props_SubstituteMenu_Contribution;
           }
           break;
         case 348:
           if (true) {
-            return props_SubstituteMenu_SimpleString;
+            return props_SubstituteMenu_Default;
           }
           break;
         case 349:
           if (true) {
-            return props_Synchronizeable;
+            return props_SubstituteMenu_Named;
           }
           break;
         case 350:
           if (true) {
-            return props_TableComponentStyleClassItem;
+            return props_SubstituteMenu_SimpleString;
           }
           break;
         case 351:
           if (true) {
-            return props_TextBackgroundColorSelectedStyleClassItem;
+            return props_Synchronizeable;
           }
           break;
         case 352:
           if (true) {
-            return props_TextBackgroundColorStyleClassItem;
+            return props_TableComponentStyleClassItem;
           }
           break;
         case 353:
           if (true) {
-            return props_TransactionPropertyHandler_newValue;
+            return props_TextBackgroundColorSelectedStyleClassItem;
           }
           break;
         case 354:
           if (true) {
-            return props_TransactionPropertyHandler_oldValue;
+            return props_TextBackgroundColorStyleClassItem;
           }
           break;
         case 355:
           if (true) {
-            return props_TransactionalPropertyHandler;
+            return props_TransactionPropertyHandler_newValue;
           }
           break;
         case 356:
           if (true) {
-            return props_TransformationFeature;
+            return props_TransactionPropertyHandler_oldValue;
           }
           break;
         case 357:
           if (true) {
-            return props_TransformationFeature_ActionType;
+            return props_TransactionalPropertyHandler;
           }
           break;
         case 358:
           if (true) {
-            return props_TransformationFeature_DescriptionText;
+            return props_TransformationFeature;
           }
           break;
         case 359:
           if (true) {
-            return props_TransformationFeature_Icon;
+            return props_TransformationFeature_ActionType;
           }
           break;
         case 360:
           if (true) {
-            return props_TransformationLocation;
+            return props_TransformationFeature_DescriptionText;
           }
           break;
         case 361:
           if (true) {
-            return props_TransformationLocation_Completion;
+            return props_TransformationFeature_Icon;
           }
           break;
         case 362:
           if (true) {
-            return props_TransformationLocation_ContextAssistant;
+            return props_TransformationLocation;
           }
           break;
         case 363:
           if (true) {
-            return props_TransformationLocation_SideTransform;
+            return props_TransformationLocation_Completion;
           }
           break;
         case 364:
           if (true) {
-            return props_TransformationLocation_SideTransform_PlaceInCellHolder;
+            return props_TransformationLocation_ContextAssistant;
           }
           break;
         case 365:
           if (true) {
-            return props_TransformationMenu;
+            return props_TransformationLocation_SideTransform;
           }
           break;
         case 366:
           if (true) {
-            return props_TransformationMenuContribution;
+            return props_TransformationLocation_SideTransform_PlaceInCellHolder;
           }
           break;
         case 367:
           if (true) {
-            return props_TransformationMenuPart;
+            return props_TransformationMenu;
           }
           break;
         case 368:
           if (true) {
-            return props_TransformationMenuPart_Action;
+            return props_TransformationMenuContribution;
           }
           break;
         case 369:
           if (true) {
-            return props_TransformationMenuPart_Group;
+            return props_TransformationMenuPart;
           }
           break;
         case 370:
           if (true) {
-            return props_TransformationMenuPart_IncludeMenu;
+            return props_TransformationMenuPart_Action;
           }
           break;
         case 371:
           if (true) {
-            return props_TransformationMenuPart_IncludeSubstituteMenu;
+            return props_TransformationMenuPart_Group;
           }
           break;
         case 372:
           if (true) {
-            return props_TransformationMenuPart_Parameterized;
+            return props_TransformationMenuPart_IncludeMenu;
           }
           break;
         case 373:
           if (true) {
-            return props_TransformationMenuPart_Placeholder;
+            return props_TransformationMenuPart_IncludeSubstituteMenu;
           }
           break;
         case 374:
           if (true) {
-            return props_TransformationMenuPart_SubMenu;
+            return props_TransformationMenuPart_Parameterized;
           }
           break;
         case 375:
           if (true) {
-            return props_TransformationMenuPart_Super;
+            return props_TransformationMenuPart_Placeholder;
           }
           break;
         case 376:
           if (true) {
-            return props_TransformationMenuPart_WrapSubstituteMenu;
+            return props_TransformationMenuPart_SubMenu;
           }
           break;
         case 377:
           if (true) {
-            return props_TransformationMenuReference_Default;
+            return props_TransformationMenuPart_Super;
           }
           break;
         case 378:
           if (true) {
-            return props_TransformationMenuReference_Named;
+            return props_TransformationMenuPart_WrapSubstituteMenu;
           }
           break;
         case 379:
           if (true) {
-            return props_TransformationMenuSection;
+            return props_TransformationMenuReference_Default;
           }
           break;
         case 380:
           if (true) {
-            return props_TransformationMenuVariableDeclaration;
+            return props_TransformationMenuReference_Named;
           }
           break;
         case 381:
           if (true) {
-            return props_TransformationMenuVariableReference;
+            return props_TransformationMenuSection;
           }
           break;
         case 382:
           if (true) {
-            return props_TransformationMenu_Default;
+            return props_TransformationMenuVariableDeclaration;
           }
           break;
         case 383:
           if (true) {
-            return props_TransformationMenu_Named;
+            return props_TransformationMenuVariableReference;
           }
           break;
         case 384:
           if (true) {
-            return props_UnapplyStyle;
+            return props_TransformationMenu_Default;
           }
           break;
         case 385:
+          if (true) {
+            return props_TransformationMenu_Named;
+          }
+          break;
+        case 386:
+          if (true) {
+            return props_UnapplyStyle;
+          }
+          break;
+        case 387:
           if (true) {
             return props_UnderlinedStyleClassItem;
           }
@@ -2350,5 +2362,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0xo = buildConceptIndices(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b0a9b8c0eb8e726L, "jetbrains.mps.lang.editor.structure.AbstractCellSelector"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L, "jetbrains.mps.lang.editor.structure.AbstractComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878e7095L, "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e34c38c0ad5587L, "jetbrains.mps.lang.editor.structure.AppendTextOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b1161f6e648b4b2L, "jetbrains.mps.lang.editor.structure.ApplyStyleClass"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab20495600L, "jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9eae0a402L, "jetbrains.mps.lang.editor.structure.AttributeStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd774e0L, "jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b3924ccL, "jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L, "jetbrains.mps.lang.editor.structure.BaseEditorComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fb7279917L, "jetbrains.mps.lang.editor.structure.BaseLineCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bc5e6f6L, "jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x117b152bc1fL, "jetbrains.mps.lang.editor.structure.CaretPositionParameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, "jetbrains.mps.lang.editor.structure.CellActionMapItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3001698d23c1e791L, "jetbrains.mps.lang.editor.structure.CellActionMap_CanExecuteFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519ae500L, "jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x13781fdf13c3c7bdL, "jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb8556f621L, "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfbc216b31bL, "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b5877365L, "jetbrains.mps.lang.editor.structure.CellKeyMapItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b5885461L, "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b58b0fabL, "jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b58d1765L, "jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x13781fdf13caee0bL, "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x13781fdf13caee25L, "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNodes"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b58c7e8fL, "jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10192dc11caL, "jetbrains.mps.lang.editor.structure.CellLayout"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10192de4f16L, "jetbrains.mps.lang.editor.structure.CellLayout_Flow"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10192dcf685L, "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120150bb441L, "jetbrains.mps.lang.editor.structure.CellLayout_Indent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b474f936aL, "jetbrains.mps.lang.editor.structure.CellLayout_Indent_Old"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1a2fd43187388681L, "jetbrains.mps.lang.editor.structure.CellLayout_Superscript"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x52915e535decd581L, "jetbrains.mps.lang.editor.structure.CellLayout_Table"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10192dd4cbeL, "jetbrains.mps.lang.editor.structure.CellLayout_Vertical"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120aab61370L, "jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d702058L, "jetbrains.mps.lang.editor.structure.CellMenuComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d762adcL, "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d86ed9bL, "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d811428L, "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f8c0deL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4e874cf6L, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f06f0e8a4L, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f06eea1c5L, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eecbddc4fL, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eecc5b3feL, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eecc9de0fL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72449b609d0e77bbL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7e91dcf6L, "jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f58784317L, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f587b827aL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f58b5e5f6L, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f58b90423L, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x112e2300bcaL, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x112e23362bdL, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f357f9ab7L, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10e32c7f49dL, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3f33baebL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1115d1a2839L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f5021674eL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f5026c90dL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4f87862dL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4f906349L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4f8b3f0fL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f53a0aafeL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f53a2ada9L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item_Create"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eaa3a3c68L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eaa4bf8b2L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3a50ec74L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3fa975a0L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eecbf54a7L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb4e7c3a4cL, "jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, "jetbrains.mps.lang.editor.structure.CellModel_Alternation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108a0861503L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10bb871ad98L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1081e457de7L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1170b90f356L, "jetbrains.mps.lang.editor.structure.CellModel_Block"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdba37cdL, "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdb876c6L, "jetbrains.mps.lang.editor.structure.CellModel_BlockStart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, "jetbrains.mps.lang.editor.structure.CellModel_Component"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, "jetbrains.mps.lang.editor.structure.CellModel_Constant"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ea28b54668aeb4bL, "jetbrains.mps.lang.editor.structure.CellModel_ContextAssistant"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb103073dcL, "jetbrains.mps.lang.editor.structure.CellModel_Custom"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x73604585b6d5c973L, "jetbrains.mps.lang.editor.structure.CellModel_Empty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfa61615ec3L, "jetbrains.mps.lang.editor.structure.CellModel_Error"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1095e12de6fL, "jetbrains.mps.lang.editor.structure.CellModel_Image"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdad17a0L, "jetbrains.mps.lang.editor.structure.CellModel_Indent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x100d0e71cb2L, "jetbrains.mps.lang.editor.structure.CellModel_JComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfa3d28fe7dL, "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7456aec153c7f5a2L, "jetbrains.mps.lang.editor.structure.CellModel_NextEditor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113bef3a464L, "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb02612eL, "jetbrains.mps.lang.editor.structure.CellModel_Property"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d6d56c00cL, "jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd52a2c922L, "jetbrains.mps.lang.editor.structure.CellModel_RefCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb05cdc7L, "jetbrains.mps.lang.editor.structure.CellModel_RefNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x8ace515f0191e6eL, "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f4f515L, "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x334adf8cb15f3fdeL, "jetbrains.mps.lang.editor.structure.CellModel_URL"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L, "jetbrains.mps.lang.editor.structure.ColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef4e35767L, "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef50d095eL, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5eadaecad41188dcL, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x42e5e943db1f2dd0L, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReferenceExpression"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ed01d37608fe0afL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1134297c615L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10e76200a6fL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x69333c273254322aL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_model"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee8c7d6704ae262L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_nextNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10a195cc7c5L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111faaffcc5L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x950e7629b27d763L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee8c7d6704ae9f2L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_prevNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3a54c53a29dbb0faL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_selectedNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9d863e4L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x40953da3e594b7a8L, "jetbrains.mps.lang.editor.structure.ContextHintsSpecification"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e119f99L, "jetbrains.mps.lang.editor.structure.ContextVariable"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1160d5L, "jetbrains.mps.lang.editor.structure.ContextVariable_EditorContext"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1140f4L, "jetbrains.mps.lang.editor.structure.ContextVariable_Node"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x69c06896a0e42a51L, "jetbrains.mps.lang.editor.structure.DefaultBaseLine"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ac437b468L, "jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x22926e62b7d495a0L, "jetbrains.mps.lang.editor.structure.DominatesRecord"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd7dc37L, "jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11bdf8bf6bbL, "jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd61987L, "jetbrains.mps.lang.editor.structure.EditableStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb846a5817L, "jetbrains.mps.lang.editor.structure.EditorCellId"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x619d95571435dfe8L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ae0865e9a712712L, "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae8b76d40L, "jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae41b27e5L, "jetbrains.mps.lang.editor.structure.FloatStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143be33e36L, "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b38c56eL, "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1146e20cfb3L, "jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fc74ebe6cL, "jetbrains.mps.lang.editor.structure.HorizontalAlign"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f459b72d3L, "jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x132a500f473d6174L, "jetbrains.mps.lang.editor.structure.ICellStyle"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6147683099dd6351L, "jetbrains.mps.lang.editor.structure.IContextProvider"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2a184f1d9310d4eL, "jetbrains.mps.lang.editor.structure.IContextVariableProvider"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1160d4L, "jetbrains.mps.lang.editor.structure.IEditorContextProvider"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bcee99dL, "jetbrains.mps.lang.editor.structure.IExtensibleSubstituteMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, "jetbrains.mps.lang.editor.structure.IExtensibleTransformationMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x36f88ebb7cd0d956L, "jetbrains.mps.lang.editor.structure.IIncludeSubstituteMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048846L, "jetbrains.mps.lang.editor.structure.IMenu"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9002d0fL, "jetbrains.mps.lang.editor.structure.IMenuPartParameterized"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41b3L, "jetbrains.mps.lang.editor.structure.IMenuReference"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, "jetbrains.mps.lang.editor.structure.IMenuReference_Default"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41b6L, "jetbrains.mps.lang.editor.structure.IMenuReference_Named"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, "jetbrains.mps.lang.editor.structure.IMenu_Concept"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a5d62L, "jetbrains.mps.lang.editor.structure.IMenu_Contribution"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c47L, "jetbrains.mps.lang.editor.structure.IMenu_Default"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c46L, "jetbrains.mps.lang.editor.structure.IMenu_Named"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1140f3L, "jetbrains.mps.lang.editor.structure.INodeProvider"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee6ee2b8485887fL, "jetbrains.mps.lang.editor.structure.IOutputConceptMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9002d0dL, "jetbrains.mps.lang.editor.structure.IParameterizableMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d52e019f6L, "jetbrains.mps.lang.editor.structure.IQueryFunction_Color"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1f5847b8L, "jetbrains.mps.lang.editor.structure.IStyle"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, "jetbrains.mps.lang.editor.structure.IStyleContainer"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x78f111e66a606618L, "jetbrains.mps.lang.editor.structure.IStyleSheetItem"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a0b8287L, "jetbrains.mps.lang.editor.structure.IStyleSheetMember"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1bc2c2df999a7727L, "jetbrains.mps.lang.editor.structure.ISubstituteMenu"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x36f88ebb7cc59e52L, "jetbrains.mps.lang.editor.structure.ISubstituteMenuReference"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11691102070L, "jetbrains.mps.lang.editor.structure.ISubstituteMenu_String"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.ITransformationMenu"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x36f88ebb7cbf52cdL, "jetbrains.mps.lang.editor.structure.ITransformationMenuReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1e02662c4b880750L, "jetbrains.mps.lang.editor.structure.IdSelector"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x511249404d30c46aL, "jetbrains.mps.lang.editor.structure.ImagePathProvider"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a692c170d1b09d8L, "jetbrains.mps.lang.editor.structure.IndentLayoutIndentAnchorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120154c4089L, "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120194c6bfdL, "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120154df6f3L, "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120c4d9abaeL, "jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x12019ed89beL, "jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a692c170d1d584eL, "jetbrains.mps.lang.editor.structure.IndentLayoutWrapAnchorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd5cee772bL, "jetbrains.mps.lang.editor.structure.InlineEditorComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f1d6594edL, "jetbrains.mps.lang.editor.structure.InlineStyleDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae8b8b7d7L, "jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abafc10eaL, "jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fd6f8d518L, "jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a2febf37d13730eL, "jetbrains.mps.lang.editor.structure.MaxWidthStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9dbb2ccL, "jetbrains.mps.lang.editor.structure.ModelAccessor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x696ed29ebd7c1429L, "jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11de23fdb1fL, "jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, "jetbrains.mps.lang.editor.structure.OrCellSelector"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878c87bcL, "jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae41cffc4L, "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae41d378fL, "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878b980aL, "jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a67a319ce06acceL, "jetbrains.mps.lang.editor.structure.ParametersInformationQuery"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a67a319ce060712L, "jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b40a56a20L, "jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b31a45ad7L, "jetbrains.mps.lang.editor.structure.PositionStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x399cb6c68c707bf7L, "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, "jetbrains.mps.lang.editor.structure.PredefinedSelector"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc3009e3a3L, "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc30443a0aL, "jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f41c44bf7L, "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f41c727e1L, "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x68666ddb0403c2d8L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_Concept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bc04fc4L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_CreatedNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4b4c9b482992dc34L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_CurrentTargetNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c6f1d424dL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_Link"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd4fe34L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_NodeToWrap"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10ccb7e17b2L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_ParentNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x59f39dd19d1526cdL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_Strictly"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1a533160d6709f7aL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_CreatedNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x162bf82611fb4032L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_node"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x407fe8717d6b5494L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_targetNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a903acc3L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_parameterObject"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121e2c89d1L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_pattern"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9eb0a02a3L, "jetbrains.mps.lang.editor.structure.QueryFunction_AttributeStyleParameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11cd78e1636L, "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111fbbfae55L, "jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111ff56f066L, "jetbrains.mps.lang.editor.structure.QueryFunction_Color"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de97a3d3b88abfaL, "jetbrains.mps.lang.editor.structure.QueryFunction_ColorComposit"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c47c26987L, "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11204aae906L, "jetbrains.mps.lang.editor.structure.QueryFunction_ImagePath"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4caca3eeL, "jetbrains.mps.lang.editor.structure.QueryFunction_Integer"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5917043ba8fab771L, "jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111eb58c684L, "jetbrains.mps.lang.editor.structure.QueryFunction_JComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9039c3cL, "jetbrains.mps.lang.editor.structure.QueryFunction_Menu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x950e7629b27d75eL, "jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9d95571L, "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9d9c896L, "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9da0bacL, "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x511249404d287d9dL, "jetbrains.mps.lang.editor.structure.QueryFunction_ModuleAndPath"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10a1953c797L, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1120492bc7eL, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113401f5070L, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a67a319ce06ae0fL, "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x696ed29ebd7c142bL, "jetbrains.mps.lang.editor.structure.QueryFunction_SNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x9da6a4591fc7fb5L, "jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fe1c8b36cL, "jetbrains.mps.lang.editor.structure.QueryFunction_String"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x30eb862d8702cebfL, "jetbrains.mps.lang.editor.structure.QueryFunction_Style"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4cd1c73aL, "jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x77859491bd4702f5L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5a8bc23a16218182L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenuPart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e672842435c6L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenuVariable_Initializer"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11e73a269d4L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_ActionType"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce1116e3a2db1e1L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_CanSubstitute"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x71f19593ac95deecL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Concept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x27a7ea2e015982b3L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Concepts"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546cL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Condition"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x68666ddb0403c2ccL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_FilterConcepts"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6c035dfaL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Icon"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x742ef6b4d0cca0d1L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Parameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bc04f2aL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Select"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121e310c5dL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Substitute"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121eb0d54dL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_SubstituteString"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd1c001L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_WrapperHandler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d9a96L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403df05L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenuVariable_Initializer"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4eff4d8b1f5ceed1L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_ActionLabelText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5a6f546add818550L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Condition"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x198452f4d5eea7e1L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_DescriptionText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f95eeL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Execute"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a36971630L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Extensible"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1cbc2f4b8390563bL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Icon"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defbb1acaL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Node"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8c5e3L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Parameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6e2eL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_TargetNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2241a13dab4fb50cL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Text"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1a533160d6706a40L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_WrapperHandler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4d022befL, "jetbrains.mps.lang.editor.structure.QueryFunction_Underlined"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x555cb285f801e1a1L, "jetbrains.mps.lang.editor.structure.QueryHintsSpecification"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d52e2b1a0L, "jetbrains.mps.lang.editor.structure.RGBColor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d6d3fe71eL, "jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xb09275c2ae83bcdL, "jetbrains.mps.lang.editor.structure.ReadOnlyStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3212fe82cb95ffe7L, "jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72908ac6c78618c8L, "jetbrains.mps.lang.editor.structure.ScriptKindClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, "jetbrains.mps.lang.editor.structure.SelectInEditorOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x117b10a719eL, "jetbrains.mps.lang.editor.structure.SelectParameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x117b132f8cdL, "jetbrains.mps.lang.editor.structure.SelectPositionParameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd721ebL, "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e34c38c0b28cacL, "jetbrains.mps.lang.editor.structure.SetBoldOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x49177f9006c530a0L, "jetbrains.mps.lang.editor.structure.ShowBoundariesInStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abb1e8d85L, "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11cd786e1a9L, "jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d25391L, "jetbrains.mps.lang.editor.structure.StubCellModel_Alternation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d25652L, "jetbrains.mps.lang.editor.structure.StubCellModel_Block"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29d0bd0428267261L, "jetbrains.mps.lang.editor.structure.StubCellModel_Collection"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2be50c0a8c63bc55L, "jetbrains.mps.lang.editor.structure.StubCellModel_Component"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x321a2bd05d4979f1L, "jetbrains.mps.lang.editor.structure.StubCellModel_Constant"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x675ef60bff553a25L, "jetbrains.mps.lang.editor.structure.StubCellModel_ContextAssistant"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d25654L, "jetbrains.mps.lang.editor.structure.StubCellModel_Custom"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d2538cL, "jetbrains.mps.lang.editor.structure.StubCellModel_Error"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d25abbL, "jetbrains.mps.lang.editor.structure.StubCellModel_Image"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d25abcL, "jetbrains.mps.lang.editor.structure.StubCellModel_JComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d2538dL, "jetbrains.mps.lang.editor.structure.StubCellModel_ModelAccess"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb7922L, "jetbrains.mps.lang.editor.structure.StubCellModel_NonEmptyProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb78f5L, "jetbrains.mps.lang.editor.structure.StubCellModel_Property"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x33785c07eefb0b0eL, "jetbrains.mps.lang.editor.structure.StubCellModel_ReadOnlyModelAccessor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edc886a6L, "jetbrains.mps.lang.editor.structure.StubCellModel_RefCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edc8d3b2L, "jetbrains.mps.lang.editor.structure.StubCellModel_RefNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x26c84408aa729003L, "jetbrains.mps.lang.editor.structure.StubCellModel_RefNodeList"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edc8d589L, "jetbrains.mps.lang.editor.structure.StubCellModel_ReferencePresentation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d25abdL, "jetbrains.mps.lang.editor.structure.StubCellModel_Table"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d2538eL, "jetbrains.mps.lang.editor.structure.StubCellModel_TransactionalProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d2538fL, "jetbrains.mps.lang.editor.structure.StubCellModel_URL"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb8ed2L, "jetbrains.mps.lang.editor.structure.StubEditorCellModel"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9ea5367ebL, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x53ac4acb2cb6e9d7L, "jetbrains.mps.lang.editor.structure.StyleAttributeReferenceExpression"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a126f24L, "jetbrains.mps.lang.editor.structure.StyleClass"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b191dc6L, "jetbrains.mps.lang.editor.structure.StyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a130c0dL, "jetbrains.mps.lang.editor.structure.StyleClassReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1cb5b6d8L, "jetbrains.mps.lang.editor.structure.StyleClassReferenceList"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x399cb6c68aa9aeaaL, "jetbrains.mps.lang.editor.structure.StyleKey"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x399cb6c68aa9af02L, "jetbrains.mps.lang.editor.structure.StyleKeyPack"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1edbd2fbL, "jetbrains.mps.lang.editor.structure.StyleReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b151743L, "jetbrains.mps.lang.editor.structure.StyleSheet"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b178f1fL, "jetbrains.mps.lang.editor.structure.StyleSheetClass"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fd64815dL, "jetbrains.mps.lang.editor.structure.StyleSheetClassReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x362b8be848e5c49bL, "jetbrains.mps.lang.editor.structure.StyledTextType"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bcee969L, "jetbrains.mps.lang.editor.structure.SubstituteFeature"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bcee96cL, "jetbrains.mps.lang.editor.structure.SubstituteFeature_ActionType"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce1116e3a2e0187L, "jetbrains.mps.lang.editor.structure.SubstituteFeature_CanSubstitute"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce1116e3a2e0173L, "jetbrains.mps.lang.editor.structure.SubstituteFeature_DescriptionText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6c03385dL, "jetbrains.mps.lang.editor.structure.SubstituteFeature_Icon"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce1116e3a2dee5aL, "jetbrains.mps.lang.editor.structure.SubstituteFeature_MatchingText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bcee97fL, "jetbrains.mps.lang.editor.structure.SubstituteFeature_Selection"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1bc2c2df999a0078L, "jetbrains.mps.lang.editor.structure.SubstituteMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546aL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x65e54712ab56010bL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Action"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x49f6d25f12102816L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Concepts"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Group"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa22200b56b57990L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_IncludeMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4467282afd5201dL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Parameterized"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x88a6ffdb3b4f8c6L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Subconcepts"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd1be9bL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Wrapper"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5480a271c0d14ff0L, "jetbrains.mps.lang.editor.structure.SubstituteMenuReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5480a271c0d1df1eL, "jetbrains.mps.lang.editor.structure.SubstituteMenuReference_Default"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x71f19593ac95dee9L, "jetbrains.mps.lang.editor.structure.SubstituteMenuReference_DefaultWithFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5480a271c0d1df1fL, "jetbrains.mps.lang.editor.structure.SubstituteMenuReference_Named"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403987bL, "jetbrains.mps.lang.editor.structure.SubstituteMenuVariableDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403987eL, "jetbrains.mps.lang.editor.structure.SubstituteMenuVariableReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de9c932f4e5cb53L, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Contribution"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de9c932f4e5ab84L, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Default"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x33e0267905fba6fdL, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Named"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116910ff20bL, "jetbrains.mps.lang.editor.structure.SubstituteMenu_SimpleString"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL, "jetbrains.mps.lang.editor.structure.Synchronizeable"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5ea66701cd0a0c86L, "jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ac0441c7eL, "jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ac043ee66L, "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f75b6dL, "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f6e2acL, "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f5eefdL, "jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L, "jetbrains.mps.lang.editor.structure.TransformationFeature"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x198452f4d5eea7f2L, "jetbrains.mps.lang.editor.structure.TransformationFeature_ActionType"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x198452f4d5ee9587L, "jetbrains.mps.lang.editor.structure.TransformationFeature_DescriptionText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x198452f4d5ee6651L, "jetbrains.mps.lang.editor.structure.TransformationFeature_Icon"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L, "jetbrains.mps.lang.editor.structure.TransformationLocation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x65e54712ab56011cL, "jetbrains.mps.lang.editor.structure.TransformationLocation_Completion"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defd26bcbL, "jetbrains.mps.lang.editor.structure.TransformationLocation_ContextAssistant"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x28336854e4c19a06L, "jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x30335f3d1845bdccL, "jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform_PlaceInCellHolder"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL, "jetbrains.mps.lang.editor.structure.TransformationMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c10ff0L, "jetbrains.mps.lang.editor.structure.TransformationMenuContribution"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL, "jetbrains.mps.lang.editor.structure.TransformationMenuPart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f93e6L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Action"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d224047L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Group"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6be2L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_IncludeMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a77f9c87420a6caL, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_IncludeSubstituteMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8ad25L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Parameterized"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ed0e5fc004ba432L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Placeholder"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x384b3925671e99efL, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_SubMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7541587144d24773L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Super"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1a533160d670600cL, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_WrapSubstituteMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff0cL, "jetbrains.mps.lang.editor.structure.TransformationMenuReference_Default"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff09L, "jetbrains.mps.lang.editor.structure.TransformationMenuReference_Named"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, "jetbrains.mps.lang.editor.structure.TransformationMenuSection"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11266742db0L, "jetbrains.mps.lang.editor.structure.TransformationMenuVariableDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x201faaffc29bac4fL, "jetbrains.mps.lang.editor.structure.TransformationMenuVariableReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Default"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b1161f6e68dfae3L, "jetbrains.mps.lang.editor.structure.UnapplyStyle"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd837d7L, "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"));
+  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0zo = buildConceptIndices(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b0a9b8c0eb8e726L, "jetbrains.mps.lang.editor.structure.AbstractCellSelector"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L, "jetbrains.mps.lang.editor.structure.AbstractComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878e7095L, "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e34c38c0ad5587L, "jetbrains.mps.lang.editor.structure.AppendTextOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b1161f6e648b4b2L, "jetbrains.mps.lang.editor.structure.ApplyStyleClass"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab20495600L, "jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9eae0a402L, "jetbrains.mps.lang.editor.structure.AttributeStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd774e0L, "jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b3924ccL, "jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L, "jetbrains.mps.lang.editor.structure.BaseEditorComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fb7279917L, "jetbrains.mps.lang.editor.structure.BaseLineCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bc5e6f6L, "jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x117b152bc1fL, "jetbrains.mps.lang.editor.structure.CaretPositionParameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, "jetbrains.mps.lang.editor.structure.CellActionMapItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3001698d23c1e791L, "jetbrains.mps.lang.editor.structure.CellActionMap_CanExecuteFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519ae500L, "jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x13781fdf13c3c7bdL, "jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb8556f621L, "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfbc216b31bL, "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b5877365L, "jetbrains.mps.lang.editor.structure.CellKeyMapItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b5885461L, "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b58b0fabL, "jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b58d1765L, "jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x13781fdf13caee0bL, "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x13781fdf13caee25L, "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNodes"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b58c7e8fL, "jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10192dc11caL, "jetbrains.mps.lang.editor.structure.CellLayout"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10192de4f16L, "jetbrains.mps.lang.editor.structure.CellLayout_Flow"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10192dcf685L, "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120150bb441L, "jetbrains.mps.lang.editor.structure.CellLayout_Indent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b474f936aL, "jetbrains.mps.lang.editor.structure.CellLayout_Indent_Old"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1a2fd43187388681L, "jetbrains.mps.lang.editor.structure.CellLayout_Superscript"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x52915e535decd581L, "jetbrains.mps.lang.editor.structure.CellLayout_Table"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10192dd4cbeL, "jetbrains.mps.lang.editor.structure.CellLayout_Vertical"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120aab61370L, "jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d702058L, "jetbrains.mps.lang.editor.structure.CellMenuComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d762adcL, "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d86ed9bL, "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d811428L, "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f8c0deL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4e874cf6L, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f06f0e8a4L, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f06eea1c5L, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eecbddc4fL, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eecc5b3feL, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eecc9de0fL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72449b609d0e77bbL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7e91dcf6L, "jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f58784317L, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f587b827aL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f58b5e5f6L, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f58b90423L, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x112e2300bcaL, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x112e23362bdL, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f357f9ab7L, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10e32c7f49dL, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3f33baebL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1115d1a2839L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f5021674eL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f5026c90dL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4f87862dL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4f906349L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4f8b3f0fL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f53a0aafeL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f53a2ada9L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item_Create"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eaa3a3c68L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eaa4bf8b2L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3a50ec74L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3fa975a0L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eecbf54a7L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb4e7c3a4cL, "jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, "jetbrains.mps.lang.editor.structure.CellModel_Alternation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108a0861503L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10bb871ad98L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1081e457de7L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1170b90f356L, "jetbrains.mps.lang.editor.structure.CellModel_Block"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdba37cdL, "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdb876c6L, "jetbrains.mps.lang.editor.structure.CellModel_BlockStart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, "jetbrains.mps.lang.editor.structure.CellModel_Component"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, "jetbrains.mps.lang.editor.structure.CellModel_Constant"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ea28b54668aeb4bL, "jetbrains.mps.lang.editor.structure.CellModel_ContextAssistant"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb103073dcL, "jetbrains.mps.lang.editor.structure.CellModel_Custom"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x73604585b6d5c973L, "jetbrains.mps.lang.editor.structure.CellModel_Empty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfa61615ec3L, "jetbrains.mps.lang.editor.structure.CellModel_Error"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1095e12de6fL, "jetbrains.mps.lang.editor.structure.CellModel_Image"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdad17a0L, "jetbrains.mps.lang.editor.structure.CellModel_Indent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x100d0e71cb2L, "jetbrains.mps.lang.editor.structure.CellModel_JComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfa3d28fe7dL, "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7456aec153c7f5a2L, "jetbrains.mps.lang.editor.structure.CellModel_NextEditor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113bef3a464L, "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb02612eL, "jetbrains.mps.lang.editor.structure.CellModel_Property"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d6d56c00cL, "jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd52a2c922L, "jetbrains.mps.lang.editor.structure.CellModel_RefCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb05cdc7L, "jetbrains.mps.lang.editor.structure.CellModel_RefNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x8ace515f0191e6eL, "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f4f515L, "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x334adf8cb15f3fdeL, "jetbrains.mps.lang.editor.structure.CellModel_URL"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L, "jetbrains.mps.lang.editor.structure.ColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef4e35767L, "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef50d095eL, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5eadaecad41188dcL, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x42e5e943db1f2dd0L, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReferenceExpression"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ed01d37608fe0afL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1134297c615L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10e76200a6fL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x69333c273254322aL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_model"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee8c7d6704ae262L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_nextNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10a195cc7c5L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111faaffcc5L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x950e7629b27d763L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee8c7d6704ae9f2L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_prevNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3a54c53a29dbb0faL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_selectedNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9d863e4L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x40953da3e594b7a8L, "jetbrains.mps.lang.editor.structure.ContextHintsSpecification"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e119f99L, "jetbrains.mps.lang.editor.structure.ContextVariable"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1160d5L, "jetbrains.mps.lang.editor.structure.ContextVariable_EditorContext"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1140f4L, "jetbrains.mps.lang.editor.structure.ContextVariable_Node"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x69c06896a0e42a51L, "jetbrains.mps.lang.editor.structure.DefaultBaseLine"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ac437b468L, "jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x22926e62b7d495a0L, "jetbrains.mps.lang.editor.structure.DominatesRecord"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd7dc37L, "jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11bdf8bf6bbL, "jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd61987L, "jetbrains.mps.lang.editor.structure.EditableStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb846a5817L, "jetbrains.mps.lang.editor.structure.EditorCellId"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x619d95571435dfe8L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ae0865e9a712712L, "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae8b76d40L, "jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae41b27e5L, "jetbrains.mps.lang.editor.structure.FloatStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143be33e36L, "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b38c56eL, "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1146e20cfb3L, "jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fc74ebe6cL, "jetbrains.mps.lang.editor.structure.HorizontalAlign"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f459b72d3L, "jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x132a500f473d6174L, "jetbrains.mps.lang.editor.structure.ICellStyle"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6147683099dd6351L, "jetbrains.mps.lang.editor.structure.IContextProvider"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2a184f1d9310d4eL, "jetbrains.mps.lang.editor.structure.IContextVariableProvider"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1160d4L, "jetbrains.mps.lang.editor.structure.IEditorContextProvider"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bcee99dL, "jetbrains.mps.lang.editor.structure.IExtensibleSubstituteMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, "jetbrains.mps.lang.editor.structure.IExtensibleTransformationMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x36f88ebb7cd0d956L, "jetbrains.mps.lang.editor.structure.IIncludeSubstituteMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048846L, "jetbrains.mps.lang.editor.structure.IMenu"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9002d0fL, "jetbrains.mps.lang.editor.structure.IMenuPartParameterized"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41b3L, "jetbrains.mps.lang.editor.structure.IMenuReference"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, "jetbrains.mps.lang.editor.structure.IMenuReference_Default"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41b6L, "jetbrains.mps.lang.editor.structure.IMenuReference_Named"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, "jetbrains.mps.lang.editor.structure.IMenu_Concept"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a5d62L, "jetbrains.mps.lang.editor.structure.IMenu_Contribution"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c47L, "jetbrains.mps.lang.editor.structure.IMenu_Default"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c46L, "jetbrains.mps.lang.editor.structure.IMenu_Named"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1140f3L, "jetbrains.mps.lang.editor.structure.INodeProvider"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee6ee2b8485887fL, "jetbrains.mps.lang.editor.structure.IOutputConceptSubstituteMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xbb2f315607dc214L, "jetbrains.mps.lang.editor.structure.IOutputConceptTransformationMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9002d0dL, "jetbrains.mps.lang.editor.structure.IParameterizableMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d52e019f6L, "jetbrains.mps.lang.editor.structure.IQueryFunction_Color"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1f5847b8L, "jetbrains.mps.lang.editor.structure.IStyle"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, "jetbrains.mps.lang.editor.structure.IStyleContainer"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x78f111e66a606618L, "jetbrains.mps.lang.editor.structure.IStyleSheetItem"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a0b8287L, "jetbrains.mps.lang.editor.structure.IStyleSheetMember"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1bc2c2df999a7727L, "jetbrains.mps.lang.editor.structure.ISubstituteMenu"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x36f88ebb7cc59e52L, "jetbrains.mps.lang.editor.structure.ISubstituteMenuReference"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11691102070L, "jetbrains.mps.lang.editor.structure.ISubstituteMenu_String"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.ITransformationMenu"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x36f88ebb7cbf52cdL, "jetbrains.mps.lang.editor.structure.ITransformationMenuReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1e02662c4b880750L, "jetbrains.mps.lang.editor.structure.IdSelector"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x511249404d30c46aL, "jetbrains.mps.lang.editor.structure.ImagePathProvider"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a692c170d1b09d8L, "jetbrains.mps.lang.editor.structure.IndentLayoutIndentAnchorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120154c4089L, "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120194c6bfdL, "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120154df6f3L, "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120c4d9abaeL, "jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x12019ed89beL, "jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a692c170d1d584eL, "jetbrains.mps.lang.editor.structure.IndentLayoutWrapAnchorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd5cee772bL, "jetbrains.mps.lang.editor.structure.InlineEditorComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f1d6594edL, "jetbrains.mps.lang.editor.structure.InlineStyleDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae8b8b7d7L, "jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abafc10eaL, "jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fd6f8d518L, "jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a2febf37d13730eL, "jetbrains.mps.lang.editor.structure.MaxWidthStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9dbb2ccL, "jetbrains.mps.lang.editor.structure.ModelAccessor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x696ed29ebd7c1429L, "jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11de23fdb1fL, "jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xbb2f315607dc1f1L, "jetbrains.mps.lang.editor.structure.OptionalConceptReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, "jetbrains.mps.lang.editor.structure.OrCellSelector"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878c87bcL, "jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae41cffc4L, "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae41d378fL, "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878b980aL, "jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a67a319ce06acceL, "jetbrains.mps.lang.editor.structure.ParametersInformationQuery"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a67a319ce060712L, "jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b40a56a20L, "jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b31a45ad7L, "jetbrains.mps.lang.editor.structure.PositionStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x399cb6c68c707bf7L, "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, "jetbrains.mps.lang.editor.structure.PredefinedSelector"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc3009e3a3L, "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc30443a0aL, "jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f41c44bf7L, "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f41c727e1L, "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x68666ddb0403c2d8L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_Concept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bc04fc4L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_CreatedNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4b4c9b482992dc34L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_CurrentTargetNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c6f1d424dL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_Link"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd4fe34L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_NodeToWrap"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10ccb7e17b2L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_ParentNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x59f39dd19d1526cdL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_Strictly"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1a533160d6709f7aL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_CreatedNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x162bf82611fb4032L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_node"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x407fe8717d6b5494L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_targetNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a903acc3L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_parameterObject"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121e2c89d1L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_pattern"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9eb0a02a3L, "jetbrains.mps.lang.editor.structure.QueryFunction_AttributeStyleParameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11cd78e1636L, "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111fbbfae55L, "jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111ff56f066L, "jetbrains.mps.lang.editor.structure.QueryFunction_Color"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de97a3d3b88abfaL, "jetbrains.mps.lang.editor.structure.QueryFunction_ColorComposit"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c47c26987L, "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11204aae906L, "jetbrains.mps.lang.editor.structure.QueryFunction_ImagePath"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4caca3eeL, "jetbrains.mps.lang.editor.structure.QueryFunction_Integer"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5917043ba8fab771L, "jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111eb58c684L, "jetbrains.mps.lang.editor.structure.QueryFunction_JComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9039c3cL, "jetbrains.mps.lang.editor.structure.QueryFunction_Menu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x950e7629b27d75eL, "jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9d95571L, "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9d9c896L, "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9da0bacL, "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x511249404d287d9dL, "jetbrains.mps.lang.editor.structure.QueryFunction_ModuleAndPath"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10a1953c797L, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1120492bc7eL, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113401f5070L, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a67a319ce06ae0fL, "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x696ed29ebd7c142bL, "jetbrains.mps.lang.editor.structure.QueryFunction_SNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x9da6a4591fc7fb5L, "jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fe1c8b36cL, "jetbrains.mps.lang.editor.structure.QueryFunction_String"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x30eb862d8702cebfL, "jetbrains.mps.lang.editor.structure.QueryFunction_Style"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4cd1c73aL, "jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x77859491bd4702f5L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5a8bc23a16218182L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenuPart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e672842435c6L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenuVariable_Initializer"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11e73a269d4L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_ActionType"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce1116e3a2db1e1L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_CanSubstitute"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x71f19593ac95deecL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Concept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x27a7ea2e015982b3L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Concepts"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546cL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Condition"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x68666ddb0403c2ccL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_FilterConcepts"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6c035dfaL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Icon"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x742ef6b4d0cca0d1L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Parameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bc04f2aL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Select"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121e310c5dL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Substitute"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121eb0d54dL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_SubstituteString"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd1c001L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_WrapperHandler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d9a96L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403df05L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenuVariable_Initializer"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4eff4d8b1f5ceed1L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_ActionLabelText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5a6f546add818550L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Condition"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x198452f4d5eea7e1L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_DescriptionText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f95eeL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Execute"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a36971630L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Extensible"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1cbc2f4b8390563bL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Icon"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defbb1acaL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Node"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8c5e3L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Parameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6e2eL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_TargetNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2241a13dab4fb50cL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Text"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1a533160d6706a40L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_WrapperHandler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4d022befL, "jetbrains.mps.lang.editor.structure.QueryFunction_Underlined"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x555cb285f801e1a1L, "jetbrains.mps.lang.editor.structure.QueryHintsSpecification"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d52e2b1a0L, "jetbrains.mps.lang.editor.structure.RGBColor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d6d3fe71eL, "jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xb09275c2ae83bcdL, "jetbrains.mps.lang.editor.structure.ReadOnlyStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3212fe82cb95ffe7L, "jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72908ac6c78618c8L, "jetbrains.mps.lang.editor.structure.ScriptKindClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, "jetbrains.mps.lang.editor.structure.SelectInEditorOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x117b10a719eL, "jetbrains.mps.lang.editor.structure.SelectParameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x117b132f8cdL, "jetbrains.mps.lang.editor.structure.SelectPositionParameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd721ebL, "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e34c38c0b28cacL, "jetbrains.mps.lang.editor.structure.SetBoldOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x49177f9006c530a0L, "jetbrains.mps.lang.editor.structure.ShowBoundariesInStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abb1e8d85L, "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11cd786e1a9L, "jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d25391L, "jetbrains.mps.lang.editor.structure.StubCellModel_Alternation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d25652L, "jetbrains.mps.lang.editor.structure.StubCellModel_Block"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29d0bd0428267261L, "jetbrains.mps.lang.editor.structure.StubCellModel_Collection"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2be50c0a8c63bc55L, "jetbrains.mps.lang.editor.structure.StubCellModel_Component"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x321a2bd05d4979f1L, "jetbrains.mps.lang.editor.structure.StubCellModel_Constant"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x675ef60bff553a25L, "jetbrains.mps.lang.editor.structure.StubCellModel_ContextAssistant"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d25654L, "jetbrains.mps.lang.editor.structure.StubCellModel_Custom"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d2538cL, "jetbrains.mps.lang.editor.structure.StubCellModel_Error"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d25abbL, "jetbrains.mps.lang.editor.structure.StubCellModel_Image"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d25abcL, "jetbrains.mps.lang.editor.structure.StubCellModel_JComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d2538dL, "jetbrains.mps.lang.editor.structure.StubCellModel_ModelAccess"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb7922L, "jetbrains.mps.lang.editor.structure.StubCellModel_NonEmptyProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb78f5L, "jetbrains.mps.lang.editor.structure.StubCellModel_Property"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x33785c07eefb0b0eL, "jetbrains.mps.lang.editor.structure.StubCellModel_ReadOnlyModelAccessor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edc886a6L, "jetbrains.mps.lang.editor.structure.StubCellModel_RefCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edc8d3b2L, "jetbrains.mps.lang.editor.structure.StubCellModel_RefNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x26c84408aa729003L, "jetbrains.mps.lang.editor.structure.StubCellModel_RefNodeList"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edc8d589L, "jetbrains.mps.lang.editor.structure.StubCellModel_ReferencePresentation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d25abdL, "jetbrains.mps.lang.editor.structure.StubCellModel_Table"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d2538eL, "jetbrains.mps.lang.editor.structure.StubCellModel_TransactionalProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x707876b4d5d2538fL, "jetbrains.mps.lang.editor.structure.StubCellModel_URL"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb8ed2L, "jetbrains.mps.lang.editor.structure.StubEditorCellModel"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9ea5367ebL, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x53ac4acb2cb6e9d7L, "jetbrains.mps.lang.editor.structure.StyleAttributeReferenceExpression"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a126f24L, "jetbrains.mps.lang.editor.structure.StyleClass"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b191dc6L, "jetbrains.mps.lang.editor.structure.StyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a130c0dL, "jetbrains.mps.lang.editor.structure.StyleClassReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1cb5b6d8L, "jetbrains.mps.lang.editor.structure.StyleClassReferenceList"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x399cb6c68aa9aeaaL, "jetbrains.mps.lang.editor.structure.StyleKey"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x399cb6c68aa9af02L, "jetbrains.mps.lang.editor.structure.StyleKeyPack"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1edbd2fbL, "jetbrains.mps.lang.editor.structure.StyleReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b151743L, "jetbrains.mps.lang.editor.structure.StyleSheet"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b178f1fL, "jetbrains.mps.lang.editor.structure.StyleSheetClass"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fd64815dL, "jetbrains.mps.lang.editor.structure.StyleSheetClassReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x362b8be848e5c49bL, "jetbrains.mps.lang.editor.structure.StyledTextType"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bcee969L, "jetbrains.mps.lang.editor.structure.SubstituteFeature"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bcee96cL, "jetbrains.mps.lang.editor.structure.SubstituteFeature_ActionType"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce1116e3a2e0187L, "jetbrains.mps.lang.editor.structure.SubstituteFeature_CanSubstitute"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce1116e3a2e0173L, "jetbrains.mps.lang.editor.structure.SubstituteFeature_DescriptionText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6c03385dL, "jetbrains.mps.lang.editor.structure.SubstituteFeature_Icon"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce1116e3a2dee5aL, "jetbrains.mps.lang.editor.structure.SubstituteFeature_MatchingText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bcee97fL, "jetbrains.mps.lang.editor.structure.SubstituteFeature_Selection"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1bc2c2df999a0078L, "jetbrains.mps.lang.editor.structure.SubstituteMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546aL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x65e54712ab56010bL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Action"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x49f6d25f12102816L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Concepts"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Group"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa22200b56b57990L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_IncludeMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4467282afd5201dL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Parameterized"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x88a6ffdb3b4f8c6L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Subconcepts"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd1be9bL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Wrapper"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5480a271c0d14ff0L, "jetbrains.mps.lang.editor.structure.SubstituteMenuReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5480a271c0d1df1eL, "jetbrains.mps.lang.editor.structure.SubstituteMenuReference_Default"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x71f19593ac95dee9L, "jetbrains.mps.lang.editor.structure.SubstituteMenuReference_DefaultWithFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5480a271c0d1df1fL, "jetbrains.mps.lang.editor.structure.SubstituteMenuReference_Named"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403987bL, "jetbrains.mps.lang.editor.structure.SubstituteMenuVariableDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403987eL, "jetbrains.mps.lang.editor.structure.SubstituteMenuVariableReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de9c932f4e5cb53L, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Contribution"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de9c932f4e5ab84L, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Default"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x33e0267905fba6fdL, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Named"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116910ff20bL, "jetbrains.mps.lang.editor.structure.SubstituteMenu_SimpleString"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL, "jetbrains.mps.lang.editor.structure.Synchronizeable"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5ea66701cd0a0c86L, "jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ac0441c7eL, "jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ac043ee66L, "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f75b6dL, "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f6e2acL, "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f5eefdL, "jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L, "jetbrains.mps.lang.editor.structure.TransformationFeature"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x198452f4d5eea7f2L, "jetbrains.mps.lang.editor.structure.TransformationFeature_ActionType"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x198452f4d5ee9587L, "jetbrains.mps.lang.editor.structure.TransformationFeature_DescriptionText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x198452f4d5ee6651L, "jetbrains.mps.lang.editor.structure.TransformationFeature_Icon"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L, "jetbrains.mps.lang.editor.structure.TransformationLocation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x65e54712ab56011cL, "jetbrains.mps.lang.editor.structure.TransformationLocation_Completion"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defd26bcbL, "jetbrains.mps.lang.editor.structure.TransformationLocation_ContextAssistant"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x28336854e4c19a06L, "jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x30335f3d1845bdccL, "jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform_PlaceInCellHolder"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL, "jetbrains.mps.lang.editor.structure.TransformationMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c10ff0L, "jetbrains.mps.lang.editor.structure.TransformationMenuContribution"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL, "jetbrains.mps.lang.editor.structure.TransformationMenuPart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f93e6L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Action"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d224047L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Group"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6be2L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_IncludeMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a77f9c87420a6caL, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_IncludeSubstituteMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8ad25L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Parameterized"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ed0e5fc004ba432L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Placeholder"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x384b3925671e99efL, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_SubMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7541587144d24773L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Super"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1a533160d670600cL, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_WrapSubstituteMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff0cL, "jetbrains.mps.lang.editor.structure.TransformationMenuReference_Default"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff09L, "jetbrains.mps.lang.editor.structure.TransformationMenuReference_Named"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, "jetbrains.mps.lang.editor.structure.TransformationMenuSection"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11266742db0L, "jetbrains.mps.lang.editor.structure.TransformationMenuVariableDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x201faaffc29bac4fL, "jetbrains.mps.lang.editor.structure.TransformationMenuVariableReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Default"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b1161f6e68dfae3L, "jetbrains.mps.lang.editor.structure.UnapplyStyle"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd837d7L, "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"));
 }

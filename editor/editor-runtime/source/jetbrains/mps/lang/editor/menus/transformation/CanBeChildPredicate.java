@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -31,36 +29,20 @@ import java.util.function.Predicate;
 /**
  * @author simon
  */
-public class SuitableForConstraintsPredicate implements Predicate<SAbstractConcept> {
+public class CanBeChildPredicate implements Predicate<SAbstractConcept>{
   @NotNull
   private final SNode myParentNode;
-
-  @NotNull
-  private final SRepository myRepository;
 
   @Nullable
   private final SNode myLinkDeclarationNode;
 
-  public SuitableForConstraintsPredicate(@NotNull SNode parentNode, @Nullable SContainmentLink link, @NotNull SRepository repository) {
+  public CanBeChildPredicate(@NotNull SNode parentNode,  @Nullable SContainmentLink link) {
     myParentNode = parentNode;
-    myRepository = repository;
     myLinkDeclarationNode = link == null ? null : link.getDeclarationNode();
   }
 
   @Override
   public boolean test(SAbstractConcept concept) {
-    if (concept == null) {
-      return true;
-    }
-    SNodeReference outputConceptSourceNodeReference = concept.getSourceNode();
-    if (outputConceptSourceNodeReference == null) {
-      return true;
-    }
-    SNode outputConceptSourceNode = outputConceptSourceNodeReference.resolve(myRepository);
-    if (outputConceptSourceNode == null) {
-      return true;
-    }
-    return  ModelConstraints.canBeChild(concept, myParentNode, myLinkDeclarationNode, null, null) && (myLinkDeclarationNode == null || ModelConstraints.canBeParent(myParentNode, outputConceptSourceNode, myLinkDeclarationNode, null, null) &&
-        ModelConstraints.canBeAncestor(myParentNode, null, outputConceptSourceNode, null));
+    return ModelConstraints.canBeChild(concept, myParentNode, myLinkDeclarationNode, null, null);
   }
 }

@@ -9,5 +9,5 @@ package jetbrains.mps.lang.editor.behavior;
  * This interface is not involved in the actual method invocation
  */
 @Deprecated
-public interface IOutputConceptMenuPart_BehaviorDescriptor {
+public interface IOutputConceptTransformationMenuPart_BehaviorDescriptor {
 }

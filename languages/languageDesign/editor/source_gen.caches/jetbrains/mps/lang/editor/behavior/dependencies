@@ -3198,7 +3198,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.behavior.IOutputConceptMenuPart_BehaviorDescriptor" file="IOutputConceptMenuPart_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.behavior.IOutputConceptSubstituteMenuPart_BehaviorDescriptor" file="IOutputConceptSubstituteMenuPart_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.IOutputConceptTransformationMenuPart_BehaviorDescriptor" file="IOutputConceptTransformationMenuPart_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.IParameterizableMenuPart_BehaviorDescriptor" file="IParameterizableMenuPart_BehaviorDescriptor.java">
@@ -3628,6 +3631,10 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.NavigatableReferenceStyleClassItem_BehaviorDescriptor" file="NavigatableReferenceStyleClassItem_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.OptionalConceptReference_BehaviorDescriptor" file="OptionalConceptReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
