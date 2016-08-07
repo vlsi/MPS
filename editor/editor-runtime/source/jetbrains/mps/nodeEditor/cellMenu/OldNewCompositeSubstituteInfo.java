@@ -46,7 +46,7 @@ public class OldNewCompositeSubstituteInfo extends AbstractNodeSubstituteInfo im
 
   @Override
   protected List<SubstituteAction> createActions() {
-    if (OldNewSubstituteUtil.areOldActionsApplicable(getLinkDeclarationTarget())) {
+    if (OldNewSubstituteUtil.areOldActionsApplicable(getLinkDeclarationTarget(), myOldSubstituteInfo.getEditorContext().getRepository())) {
         return myOldSubstituteInfo.createActions();
     }
 
@@ -60,7 +60,7 @@ public class OldNewCompositeSubstituteInfo extends AbstractNodeSubstituteInfo im
 
   @Override
   protected InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
-    if (OldNewSubstituteUtil.areOldActionsApplicable(getLinkDeclarationTarget())) {
+    if (OldNewSubstituteUtil.areOldActionsApplicable(getLinkDeclarationTarget(), myOldSubstituteInfo.getEditorContext().getRepository())) {
       return myOldSubstituteInfo.getInequalitiesSystem(contextCell);
     }
     return myNewSubstituteInfo.getInequalitiesSystem(contextCell);

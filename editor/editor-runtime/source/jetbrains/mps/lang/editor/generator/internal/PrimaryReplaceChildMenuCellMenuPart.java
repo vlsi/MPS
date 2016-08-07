@@ -54,7 +54,7 @@ public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPartEx
     SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
     final String role = CellUtil.getLinkDeclarationRole(linkDeclaration);
     SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
-    if (OldNewSubstituteUtil.areOldActionsApplicable(SModelUtil.getLinkDeclarationTarget(linkDeclaration))) {
+    if (OldNewSubstituteUtil.areOldActionsApplicable(SModelUtil.getLinkDeclarationTarget(linkDeclaration), editorContext.getRepository())) {
       return ModelActions.createChildNodeSubstituteActions(
           parentNode,
           currentChild,

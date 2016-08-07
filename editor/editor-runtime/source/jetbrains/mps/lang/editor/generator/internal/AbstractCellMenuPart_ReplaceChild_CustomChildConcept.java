@@ -64,7 +64,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_CustomChildConcept imple
       return Collections.emptyList();
     }
 
-    if (OldNewSubstituteUtil.areOldActionsApplicable(childNodeConcept)) {
+    if (OldNewSubstituteUtil.areOldActionsApplicable(childNodeConcept, editorContext.getRepository())) {
       return ModelActions.createChildNodeSubstituteActions(parentNode, currentChild, childNodeConcept, setter, context);
     } else {
       SAbstractConcept concept = MetaAdapterByDeclaration.getConcept(childNodeConcept);
