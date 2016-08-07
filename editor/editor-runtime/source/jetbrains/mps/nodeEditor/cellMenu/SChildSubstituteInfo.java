@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cellMenu;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
+import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.smodel.CopyUtil;
@@ -36,7 +37,7 @@ import java.util.HashMap;
 /**
  * @author simon
  */
-public class SChildSubstituteInfo extends AbstractSubstituteInfo {
+public class SChildSubstituteInfo extends AbstractSubstituteInfo implements DefaultSubstituteInfo {
   private SContainmentLink myLink;
   private SNode myParentNode;
   private SNode myCurrentChild;
