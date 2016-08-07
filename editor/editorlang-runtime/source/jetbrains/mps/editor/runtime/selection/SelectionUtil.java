@@ -16,7 +16,12 @@
 package jetbrains.mps.editor.runtime.selection;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.util.test.Checker.Result;
 import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
 
 /**
  * User: shatalin
@@ -24,7 +29,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 public class SelectionUtil {
 
-  private static final String SEPARATOR = "#";
+  private static final String SEPARATOR = "|";
 
   public static void selectNode(EditorContext editorContext, SNode node) {
     editorContext.flushEvents();
@@ -61,7 +66,12 @@ public class SelectionUtil {
     }
   }
 
-  private static String[] getCellIdsSplitted(String cellId) {
-    return cellId.split(SEPARATOR);
+  private static List<String> getCellIdsSplitted(String cellId) {
+    List<String> result = new ArrayList<>();
+    StringTokenizer tokenizer = new StringTokenizer(cellId, SEPARATOR);
+    while (tokenizer.hasMoreElements()) {
+      result.add(tokenizer.nextToken());
+    }
+    return result;
   }
 }

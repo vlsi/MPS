@@ -15588,7 +15588,7 @@
               </node>
             </node>
             <node concept="Xl_RD" id="3jGTVlCvDgp" role="3uHU7w">
-              <property role="Xl_RC" value="#" />
+              <property role="Xl_RC" value="|" />
             </node>
           </node>
         </node>
