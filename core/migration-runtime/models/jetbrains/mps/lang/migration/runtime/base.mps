@@ -1374,7 +1374,7 @@
               </node>
               <node concept="1BlSNk" id="5Lr1AjmfU7h" role="2OqNvi">
                 <ref role="1BmUXE" to="53vh:4SSaNAQkDV9" resolve="TransformStatement" />
-                <ref role="1Bn3mz" to="53vh:4SSaNAQkDVI" />
+                <ref role="1Bn3mz" to="53vh:4SSaNAQkDVI" resolve="pattern" />
               </node>
             </node>
           </node>

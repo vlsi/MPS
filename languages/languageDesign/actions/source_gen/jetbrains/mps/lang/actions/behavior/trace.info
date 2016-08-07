@@ -119,6 +119,9 @@
     <file name="GetActionUIFunction_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.actions.behavior.GetActionUIFunction_BehaviorDescriptor" />
     </file>
+    <file name="ICouldBeAnnotatedWithMigrateManually_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.actions.behavior.ICouldBeAnnotatedWithMigrateManually_BehaviorDescriptor" />
+    </file>
     <file name="ISideTransform_String_BehaviorDescriptor.java">
       <unit at="11,0,14,0" name="jetbrains.mps.lang.actions.behavior.ISideTransform_String_BehaviorDescriptor" />
     </file>

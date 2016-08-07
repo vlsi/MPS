@@ -58,7 +58,9 @@
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
-      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
+        <child id="1169127546356" name="extends" index="PrDN$" />
+      </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
@@ -164,6 +166,9 @@
     <node concept="PrWs8" id="37EzmTE8kJP" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
+    <node concept="PrWs8" id="7pgPxC8nT$I" role="PzmwI">
+      <ref role="PrY4T" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gzUNGri">
     <property role="TrG5h" value="SideTransformHintSubstituteActionsBuilder" />
@@ -221,6 +226,9 @@
     </node>
     <node concept="PrWs8" id="5QKDH3E8lSr" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
+    </node>
+    <node concept="PrWs8" id="7pgPxC8nT$R" role="PzmwI">
+      <ref role="PrY4T" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
     </node>
   </node>
   <node concept="1TIwiD" id="gzUOs4m">
@@ -754,6 +762,9 @@
       <property role="20kJfa" value="actionType" />
       <property role="IQ2ns" value="1230300823443" />
       <ref role="20lvS9" node="hTNCABk" resolve="QueryFunction_ActionType" />
+    </node>
+    <node concept="PrWs8" id="7pgPxC8nT_0" role="PzmwI">
+      <ref role="PrY4T" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
     </node>
   </node>
   <node concept="1TIwiD" id="h8Cfj0N">
@@ -1842,11 +1853,17 @@
     <property role="TrG5h" value="SideTransformMenuBuilderPart" />
     <property role="3GE5qa" value="menuBuilderParts" />
     <property role="EcuMT" value="8372849190626007445" />
+    <node concept="PrWs8" id="7pgPxC8nT$Y" role="PrDN$">
+      <ref role="PrY4T" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
+    </node>
   </node>
   <node concept="PlHQZ" id="7gMlvD5bxPe">
     <property role="TrG5h" value="NodeSubstituteMenuBuilderPart" />
     <property role="3GE5qa" value="menuBuilderParts" />
     <property role="EcuMT" value="8372849190626008398" />
+    <node concept="PrWs8" id="7pgPxC8nT$W" role="PrDN$">
+      <ref role="PrY4T" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5zjZZw1gO19">
     <property role="TrG5h" value="QueryFunction_IconNode" />
@@ -1919,25 +1936,18 @@
     </node>
     <node concept="M6xJ_" id="ve0pwAl3QR" role="lGtFl">
       <property role="Hh88m" value="migrateManualy" />
-      <node concept="trNpa" id="ve0pwAnpGR" role="EQaZv">
-        <ref role="trN6q" node="gbFOIBE" resolve="NodeSubstituteActionsBuilder" />
-      </node>
-      <node concept="trNpa" id="ve0pwAnpH3" role="EQaZv">
-        <ref role="trN6q" node="gzUNGri" resolve="SideTransformHintSubstituteActionsBuilder" />
-      </node>
-      <node concept="trNpa" id="ve0pwAl3QU" role="EQaZv">
-        <ref role="trN6q" node="7gMlvD5bxPe" resolve="NodeSubstituteMenuBuilderPart" />
-      </node>
-      <node concept="trNpa" id="ve0pwAl3QV" role="EQaZv">
-        <ref role="trN6q" node="7gMlvD5bxAl" resolve="SideTransformMenuBuilderPart" />
-      </node>
-      <node concept="trNpa" id="ve0pwAl3QW" role="EQaZv">
-        <ref role="trN6q" node="h8CdUfd" resolve="MenuPart" />
+      <node concept="trNpa" id="7pgPxC8o4R6" role="EQaZv">
+        <ref role="trN6q" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
       </node>
       <node concept="tn0Fv" id="ve0pwAl6FO" role="HhnKV">
         <property role="tnX3d" value="false" />
       </node>
     </node>
+  </node>
+  <node concept="PlHQZ" id="7pgPxC8nT$D">
+    <property role="EcuMT" value="8525549501910325545" />
+    <property role="3GE5qa" value="migration" />
+    <property role="TrG5h" value="ICouldBeAnnotatedWithMigrateManually" />
   </node>
 </model>
 

@@ -603,6 +603,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.actions.behavior.ICouldBeAnnotatedWithMigrateManually_BehaviorDescriptor" file="ICouldBeAnnotatedWithMigrateManually_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.actions.behavior.ISideTransform_String_BehaviorDescriptor" file="ISideTransform_String_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
