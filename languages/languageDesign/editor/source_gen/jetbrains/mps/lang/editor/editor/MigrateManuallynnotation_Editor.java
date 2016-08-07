@@ -32,37 +32,50 @@ public class MigrateManuallynnotation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_cgp5y5_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_cgp5y5_a0(editorContext, node));
-    if (renderingCondition_cgp5y5_a1a(node, editorContext)) {
-      editorCell.addEditorCell(this.createCollection_cgp5y5_b0(editorContext, node));
-    }
-    editorCell.addEditorCell(this.createAttributedNodeCell_cgp5y5_c0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_cgp5y5_a0(editorContext, node));
+    editorCell.addEditorCell(this.createAttributedNodeCell_cgp5y5_b0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createConstant_cgp5y5_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@Migrate Manually");
-    editorCell.setCellId("Constant_cgp5y5_a0");
+  private EditorCell createCollection_cgp5y5_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_cgp5y5_a0");
+    editorCell.addEditorCell(this.createConstant_cgp5y5_a0a(editorContext, node));
+    if (renderingCondition_cgp5y5_a1a0(node, editorContext)) {
+      editorCell.addEditorCell(this.createCollection_cgp5y5_b0a(editorContext, node));
+    }
+    return editorCell;
+  }
+  private EditorCell createConstant_cgp5y5_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@Migrate manually");
+    editorCell.setCellId("Constant_cgp5y5_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_cgp5y5_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_cgp5y5_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_cgp5y5_b0");
+    editorCell.setCellId("Collection_cgp5y5_b0a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createRefCell_cgp5y5_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_cgp5y5_a1a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_cgp5y5_b1a0(editorContext, node));
     return editorCell;
   }
-  private static boolean renderingCondition_cgp5y5_a1a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_cgp5y5_a1a0(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce0198267c4eb2L, 0x7ce0198267c4eb3L, "migrateTo")) != null);
   }
-  private EditorCell createRefCell_cgp5y5_a1a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_cgp5y5_a1a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "to");
+    editorCell.setCellId("Constant_cgp5y5_a1a0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefCell_cgp5y5_b1a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("migrateTo");
     provider.setNoTargetText("<no migrateTo>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MigrateManuallynnotation_Editor._Inline_cgp5y5_a0b0());
+    provider.setAuxiliaryCellProvider(new MigrateManuallynnotation_Editor._Inline_cgp5y5_a1b0a());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -82,23 +95,23 @@ public class MigrateManuallynnotation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-  public static class _Inline_cgp5y5_a0b0 extends InlineCellProvider {
-    public _Inline_cgp5y5_a0b0() {
+  public static class _Inline_cgp5y5_a1b0a extends InlineCellProvider {
+    public _Inline_cgp5y5_a1b0a() {
       super();
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createReferencePresentation_cgp5y5_a0a1a(editorContext, node);
+      return this.createReferencePresentation_cgp5y5_a0b1a0(editorContext, node);
     }
-    private EditorCell createReferencePresentation_cgp5y5_a0a1a(EditorContext editorContext, SNode node) {
+    private EditorCell createReferencePresentation_cgp5y5_a0b1a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "migrateTo");
-      editorCell.setCellId("ReferencePresentation_cgp5y5_a0a1a");
+      editorCell.setCellId("ReferencePresentation_cgp5y5_a0b1a0");
       return editorCell;
     }
   }
-  private EditorCell createAttributedNodeCell_cgp5y5_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createAttributedNodeCell_cgp5y5_b0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, node);
     return editorCell;

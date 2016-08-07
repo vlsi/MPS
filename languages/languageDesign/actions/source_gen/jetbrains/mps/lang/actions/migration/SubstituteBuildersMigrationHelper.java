@@ -114,27 +114,27 @@ import jetbrains.mps.smodel.SReference;
             SNode action = createSimpleAction(SNodeOperations.cast(oldSubPart, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121e328443L, "jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart")));
             setOutputConcept(oldAddMenuPart, action);
             result.add(action);
-            addMigrationAnnotation(oldPart, action, true);
+            addMigrationAnnotation(oldSubPart, action, true);
           } else if (SNodeOperations.isInstanceOf(oldSubPart, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121ecab8a6L, "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart"))) {
             SNode action = createParameterizedAction(oldAddMenuPart, SNodeOperations.cast(oldSubPart, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121ecab8a6L, "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart")));
             result.add(action);
-            addMigrationAnnotation(oldPart, action, true);
+            addMigrationAnnotation(oldSubPart, action, true);
           } else if (SNodeOperations.isInstanceOf(oldSubPart, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122264243cL, "jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart"))) {
             SNode part = createConceptsSubstituteMenuPart(SNodeOperations.cast(oldSubPart, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122264243cL, "jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart")));
             setOutputConcept(oldAddMenuPart, part);
             result.add(part);
-            addMigrationAnnotation(oldPart, part, true);
+            addMigrationAnnotation(oldSubPart, part, true);
           } else if (SNodeOperations.isInstanceOf(oldSubPart, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11222a8b06bL, "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"))) {
             SNode wrapper = createWrapperPart(SNodeOperations.cast(oldSubPart, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11222a8b06bL, "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart")));
             setOutputConcept(oldAddMenuPart, wrapper);
             if ((SLinkOperations.getTarget(SNodeOperations.cast(oldSubPart, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11222a8b06bL, "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart")), MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11222a8b06bL, 0x118ccd9894dL, "returnSmallPart")) != null)) {
-              addMigrationAnnotation(oldPart, wrapper, false);
+              addMigrationAnnotation(oldSubPart, wrapper, false);
             } else {
-              addMigrationAnnotation(oldPart, wrapper, true);
+              addMigrationAnnotation(oldSubPart, wrapper, true);
             }
             result.add(wrapper);
           } else {
-            addMigrationAnnotation(oldPart, whereMigrateTo, false);
+            addMigrationAnnotation(oldSubPart, whereMigrateTo, false);
           }
         }
       } else if (SNodeOperations.isInstanceOf(oldPart, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112c58682cfL, "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart"))) {

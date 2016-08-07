@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="2" />
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
@@ -18670,14 +18670,14 @@
           <node concept="3cpWsn" id="7mC_uHFK4Zk" role="3cpWs9">
             <property role="TrG5h" value="action" />
             <node concept="3Tqbb2" id="7mC_uHFK4Zl" role="1tU5fm">
-              <ref role="ehGHo" to="tpc2:7mC_uHFNIAt" resolve="IExtensibleSubstituteMenuPart" />
+              <ref role="ehGHo" to="tpc2:n0c53aH5hE" resolve="SubstituteMenuPart" />
             </node>
             <node concept="2OqwBi" id="7mC_uHFK4Zm" role="33vP2m">
               <node concept="13iPFW" id="7mC_uHFK4Zn" role="2Oq$k0" />
               <node concept="2Xjw5R" id="7mC_uHFK4Zo" role="2OqNvi">
                 <node concept="1xMEDy" id="7mC_uHFK4Zp" role="1xVPHs">
-                  <node concept="chp4Y" id="6e716hiEm_f" role="ri$Ld">
-                    <ref role="cht4Q" to="tpc2:7mC_uHFNIAt" resolve="IExtensibleSubstituteMenuPart" />
+                  <node concept="chp4Y" id="39yDt$XqA7f" role="ri$Ld">
+                    <ref role="cht4Q" to="tpc2:n0c53aH5hE" resolve="SubstituteMenuPart" />
                   </node>
                 </node>
               </node>
@@ -18696,8 +18696,8 @@
                   <node concept="37vLTw" id="6e716hiEmQx" role="2Oq$k0">
                     <ref role="3cqZAo" node="7mC_uHFK4Zk" resolve="action" />
                   </node>
-                  <node concept="2qgKlT" id="6e716hiFgKa" role="2OqNvi">
-                    <ref role="37wK5l" node="6e716hiEcRp" resolve="getCreatedConcept" />
+                  <node concept="2qgKlT" id="39yDt$XqAiJ" role="2OqNvi">
+                    <ref role="37wK5l" node="7mC_uHFK7Hn" resolve="getOutputConcept" />
                   </node>
                 </node>
               </node>

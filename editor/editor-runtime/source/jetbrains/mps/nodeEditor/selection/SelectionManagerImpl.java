@@ -325,8 +325,7 @@ public class SelectionManagerImpl implements SelectionManager {
       return null;
     }
     if (FOCUS_POLICY_CELL.equals(cellId)) {
-      EditorCell focusedCell = FocusPolicyUtil.findFocusedCell(nodeCell);
-      return FocusPolicyUtil.hasFocusPolicy(focusedCell) ? focusedCell : null;
+      return FocusPolicyUtil.findFocusedCell(nodeCell);
     }
     if (isSpecifiedById(nodeCell, cellId)) {
       return nodeCell;

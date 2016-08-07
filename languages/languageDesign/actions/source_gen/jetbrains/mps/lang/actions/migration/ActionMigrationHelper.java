@@ -172,7 +172,7 @@ public class ActionMigrationHelper {
   private static void addMissingModelImports(SNode node, SRepository repository, SModelInternal oldModel, SModelInternal newModel) {
     List<SModelReference> missingModelImports = findMissingModelImports(node, repository);
     for (SModelReference modelImport : ListSequence.fromList(missingModelImports)) {
-      if (oldModel.getModelImports().contains(modelImport) && !(newModel.getModelImports().contains(modelImport))) {
+      if (oldModel.getModelImports().contains(modelImport) || eq_qgr84z_a0a0a0b0r(oldModel, modelImport.resolve(repository)) && !(newModel.getModelImports().contains(modelImport))) {
         newModel.addModelImport(modelImport);
       }
     }
@@ -203,12 +203,15 @@ public class ActionMigrationHelper {
   }
 
   public static SNode createLocation(String side) {
+    if (side == null) {
+      side = "";
+    }
     SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x28336854e4c19a06L, "jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform"));
-    if (eq_qgr84z_a0b0v(side, "left")) {
+    if (eq_qgr84z_a0c0v(side, "left")) {
       addLeftPlaceInCell(result);
-    } else if (eq_qgr84z_a0a1a12(side, "")) {
+    } else if (eq_qgr84z_a0a2a12(side, "")) {
       addRightPlaceInCell(result);
-    } else if (eq_qgr84z_a0b1a12(side, "both")) {
+    } else if (eq_qgr84z_a0b2a12(side, "both")) {
       addLeftPlaceInCell(result);
       addRightPlaceInCell(result);
     }
@@ -277,13 +280,16 @@ public class ActionMigrationHelper {
     SNodeAccessUtil.setProperty(quotedNode_1, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), "-1");
     return quotedNode_1;
   }
-  private static boolean eq_qgr84z_a0b0v(Object a, Object b) {
+  private static boolean eq_qgr84z_a0a0a0b0r(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_qgr84z_a0a1a12(Object a, Object b) {
+  private static boolean eq_qgr84z_a0c0v(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_qgr84z_a0b1a12(Object a, Object b) {
+  private static boolean eq_qgr84z_a0a2a12(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_qgr84z_a0b2a12(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_qgr84z_a0a0a0a0a0a0e0z(Object a, Object b) {

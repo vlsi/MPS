@@ -108,9 +108,6 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
-      <concept id="3547227755871693971" name="jetbrains.mps.lang.editor.structure.PredefinedSelector" flags="ng" index="2B6iha">
-        <property id="2162403111523065396" name="cellId" index="1lyBwo" />
-      </concept>
       <concept id="1164824717996" name="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" flags="ng" index="OXEIz" />
       <concept id="1186403751766" name="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" flags="ln" index="Vb9p2">
         <property id="1186403771423" name="style" index="Vbekb" />
@@ -131,10 +128,6 @@
       <concept id="1139535439104" name="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" flags="in" index="1hAIg9" />
       <concept id="1236262245656" name="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" flags="ln" index="3mYdg7">
         <property id="1238091709220" name="labelName" index="1413C4" />
-      </concept>
-      <concept id="159226422139203647" name="jetbrains.mps.lang.editor.structure.OrCellSelector" flags="ng" index="1ogLYD">
-        <child id="159226422139203650" name="rightSelector" index="1ogLZk" />
-        <child id="159226422139203648" name="leftSelector" index="1ogLZm" />
       </concept>
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1215007762405" name="jetbrains.mps.lang.editor.structure.FloatStyleClassItem" flags="ln" index="3$6MrZ">
@@ -15846,17 +15839,30 @@
     <node concept="3aamgX" id="59pBc0SIJc9" role="3acgRq">
       <ref role="30HIoZ" to="tpc2:34UidAm8QMj" resolve="PredefinedSelector" />
       <node concept="gft3U" id="59pBc0SIJca" role="1lVwrX">
-        <node concept="1ogLYD" id="59pBc0SIKij" role="gfFT$">
-          <node concept="2B6iha" id="59pBc0SIM7t" role="1ogLZm">
-            <property role="1lyBwo" value="firstError" />
+        <node concept="3cpWs3" id="39yDt$WkspH" role="gfFT$">
+          <node concept="3cpWs3" id="39yDt$XyyDt" role="3uHU7B">
+            <node concept="Xl_RD" id="39yDt$XyyJ2" role="3uHU7w">
+              <property role="Xl_RC" value="|" />
+            </node>
+            <node concept="3cpWs3" id="39yDt$WkrQT" role="3uHU7B">
+              <node concept="3cpWs3" id="39yDt$XyyeQ" role="3uHU7B">
+                <node concept="Xl_RD" id="39yDt$Xyyfi" role="3uHU7w">
+                  <property role="Xl_RC" value="|" />
+                </node>
+                <node concept="10M0yZ" id="39yDt$Wksas" role="3uHU7B">
+                  <ref role="1PxDUh" to="lwvz:~SelectionManager" resolve="SelectionManager" />
+                  <ref role="3cqZAo" to="lwvz:~SelectionManager.FIRST_ERROR_CELL" resolve="FIRST_ERROR_CELL" />
+                </node>
+              </node>
+              <node concept="10M0yZ" id="39yDt$WksaR" role="3uHU7w">
+                <ref role="1PxDUh" to="lwvz:~SelectionManager" resolve="SelectionManager" />
+                <ref role="3cqZAo" to="lwvz:~SelectionManager.FOCUS_POLICY_CELL" resolve="FOCUS_POLICY_CELL" />
+              </node>
+            </node>
           </node>
-          <node concept="1ogLYD" id="59pBc0SIM7z" role="1ogLZk">
-            <node concept="2B6iha" id="59pBc0SIM7v" role="1ogLZm">
-              <property role="1lyBwo" value="focusPolicy" />
-            </node>
-            <node concept="2B6iha" id="59pBc0SIM7G" role="1ogLZk">
-              <property role="1lyBwo" value="firstEditable" />
-            </node>
+          <node concept="10M0yZ" id="39yDt$Wksvm" role="3uHU7w">
+            <ref role="3cqZAo" to="lwvz:~SelectionManager.FIRST_EDITABLE_CELL" resolve="FIRST_EDITABLE_CELL" />
+            <ref role="1PxDUh" to="lwvz:~SelectionManager" resolve="SelectionManager" />
           </node>
         </node>
       </node>
