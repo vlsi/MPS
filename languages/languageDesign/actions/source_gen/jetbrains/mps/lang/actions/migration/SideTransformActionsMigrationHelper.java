@@ -192,23 +192,29 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 
     if (oldName == null) {
-      return SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_" + tag + "_" + "TransformMenu";
+      return SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_" + shortTag(tag) + "_" + "TransformMenu";
     }
     String newName;
     if (isUniqueConcept) {
       if (isUniqueTag) {
         newName = oldName;
       } else {
-        newName = oldName + "_" + tag;
+        newName = oldName + "_" + shortTag(tag);
       }
     } else {
       if (isUniqueTag) {
         newName = oldName + "_" + SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       } else {
-        newName = oldName + "_" + SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_" + tag;
+        newName = oldName + "_" + SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_" + shortTag(tag);
       }
     }
     return newName;
+  }
+  private String shortTag(String tag) {
+    if (tag == null || !(tag.endsWith("_RTransform"))) {
+      return tag;
+    }
+    return tag.substring(0, tag.length() - 11);
   }
 
   private boolean isDefinedInSameLanguage(SNode concept) {
@@ -257,7 +263,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     SNode section = findLeftRightSection(mainMenu);
     if (section == null) {
       section = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, "jetbrains.mps.lang.editor.structure.TransformationMenuSection"));
-      ListSequence.fromList(SLinkOperations.getChildren(section, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbdL, "locations"))).addElement(_quotation_createNode_syzi2_a0a1a1a13());
+      ListSequence.fromList(SLinkOperations.getChildren(section, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbdL, "locations"))).addElement(_quotation_createNode_syzi2_a0a1a1a23());
       ListSequence.fromList(SLinkOperations.getChildren(mainMenu, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, 0x16be955f384efffcL, "sections"))).addElement(section);
     }
     return section;
@@ -295,7 +301,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
   private void migrateBuilders(SNode root, Iterable<SNode> builders, final String side) {
     Iterable<SNode> filteredBuilders = Sequence.fromIterable(builders).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_syzi2_a0a0a0a0a0a0a73(SPropertyOperations.getString_def(it, MetaAdapterFactory.getProperty(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x11b07b83602L, "side"), null), side);
+        return eq_syzi2_a0a0a0a0a0a0a83(SPropertyOperations.getString_def(it, MetaAdapterFactory.getProperty(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x11b07b83602L, "side"), null), side);
       }
     });
     if (Sequence.fromIterable(filteredBuilders).isEmpty()) {
@@ -366,7 +372,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
   private static boolean neq_syzi2_a0b0c0z(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static SNode _quotation_createNode_syzi2_a0a1a1a13() {
+  private static SNode _quotation_createNode_syzi2_a0a1a1a23() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -380,7 +386,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x28336854e4c19a06L, 0x30335f3d1845bdcfL, "placeInCell"), quotedNode_3);
     return quotedNode_1;
   }
-  private static boolean eq_syzi2_a0a0a0a0a0a0a73(Object a, Object b) {
+  private static boolean eq_syzi2_a0a0a0a0a0a0a83(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
