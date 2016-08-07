@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(114);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(116);
   /*package*/ final ConceptDescriptor myConceptAddMenuPart = createDescriptorForAddMenuPart();
   /*package*/ final ConceptDescriptor myConceptConceptFunctionParameter_EditorCell = createDescriptorForConceptFunctionParameter_EditorCell();
   /*package*/ final ConceptDescriptor myConceptConceptFunctionParameter_OperationContext = createDescriptorForConceptFunctionParameter_OperationContext();
@@ -58,6 +58,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptIncludeRightTransformForNodePart = createDescriptorForIncludeRightTransformForNodePart();
   /*package*/ final ConceptDescriptor myConceptIsSmartActionApplicableFunction = createDescriptorForIsSmartActionApplicableFunction();
   /*package*/ final ConceptDescriptor myConceptMenuPart = createDescriptorForMenuPart();
+  /*package*/ final ConceptDescriptor myConceptMigrateManuallyAnnotation = createDescriptorForMigrateManuallyAnnotation();
+  /*package*/ final ConceptDescriptor myConceptMigratedToAnnotation = createDescriptorForMigratedToAnnotation();
   /*package*/ final ConceptDescriptor myConceptNF_Concept_NewInstance = createDescriptorForNF_Concept_NewInstance();
   /*package*/ final ConceptDescriptor myConceptNF_LinkList_AddNewChildOperation = createDescriptorForNF_LinkList_AddNewChildOperation();
   /*package*/ final ConceptDescriptor myConceptNF_Link_SetNewChildOperation = createDescriptorForNF_Link_SetNewChildOperation();
@@ -174,87 +176,89 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     myIndexMap.put(myConceptIncludeRightTransformForNodePart.getId(), 35);
     myIndexMap.put(myConceptIsSmartActionApplicableFunction.getId(), 36);
     myIndexMap.put(myConceptMenuPart.getId(), 37);
-    myIndexMap.put(myConceptNF_Concept_NewInstance.getId(), 38);
-    myIndexMap.put(myConceptNF_LinkList_AddNewChildOperation.getId(), 39);
-    myIndexMap.put(myConceptNF_Link_SetNewChildOperation.getId(), 40);
-    myIndexMap.put(myConceptNF_Model_CreateNewNodeOperation.getId(), 41);
-    myIndexMap.put(myConceptNF_Model_CreateNewRootNodeOperation.getId(), 42);
-    myIndexMap.put(myConceptNF_Node_InsertNewNextSiblingOperation.getId(), 43);
-    myIndexMap.put(myConceptNF_Node_InsertNewPrevSiblingOperation.getId(), 44);
-    myIndexMap.put(myConceptNF_Node_ReplaceWithNewOperation.getId(), 45);
-    myIndexMap.put(myConceptNodeFactories.getId(), 46);
-    myIndexMap.put(myConceptNodeFactory.getId(), 47);
-    myIndexMap.put(myConceptNodeSetupFunction.getId(), 48);
-    myIndexMap.put(myConceptNodeSetupFunction_EnclosingNode.getId(), 49);
-    myIndexMap.put(myConceptNodeSetupFunction_NewNode.getId(), 50);
-    myIndexMap.put(myConceptNodeSetupFunction_SampleNode.getId(), 51);
-    myIndexMap.put(myConceptNodeSubstituteActions.getId(), 52);
-    myIndexMap.put(myConceptNodeSubstituteActionsBuilder.getId(), 53);
-    myIndexMap.put(myConceptNodeSubstituteMenuBuilderPart.getId(), 54);
-    myIndexMap.put(myConceptNodeSubstitutePreconditionFunction.getId(), 55);
-    myIndexMap.put(myConceptParameterizedSideTransformMenuPart.getId(), 56);
-    myIndexMap.put(myConceptParameterizedSubstituteMenuPart.getId(), 57);
-    myIndexMap.put(myConceptPastePostProcessFunction.getId(), 58);
-    myIndexMap.put(myConceptPastePostProcessor.getId(), 59);
-    myIndexMap.put(myConceptPasteWrapper.getId(), 60);
-    myIndexMap.put(myConceptPasteWrappers.getId(), 61);
-    myIndexMap.put(myConceptQueryFunction_ActionType.getId(), 62);
-    myIndexMap.put(myConceptQueryFunction_CanSubstitute.getId(), 63);
-    myIndexMap.put(myConceptQueryFunction_GenericSubstituteMenuPart.getId(), 64);
-    myIndexMap.put(myConceptQueryFunction_IconNode.getId(), 65);
-    myIndexMap.put(myConceptQueryFunction_ParameterizedSideTransform_Handler.getId(), 66);
-    myIndexMap.put(myConceptQueryFunction_ParameterizedSideTransform_Query.getId(), 67);
-    myIndexMap.put(myConceptQueryFunction_ParameterizedSubstitute_Handler.getId(), 68);
-    myIndexMap.put(myConceptQueryFunction_ParameterizedSubstitute_Icon.getId(), 69);
-    myIndexMap.put(myConceptQueryFunction_ParameterizedSubstitute_Query.getId(), 70);
-    myIndexMap.put(myConceptQueryFunction_ParameterizedSubstitute_String.getId(), 71);
-    myIndexMap.put(myConceptQueryFunction_PasteWrapper.getId(), 72);
-    myIndexMap.put(myConceptQueryFunction_RemoveBy_Condition.getId(), 73);
-    myIndexMap.put(myConceptQueryFunction_ReturnSmallPart.getId(), 74);
-    myIndexMap.put(myConceptQueryFunction_STVariableInitializer.getId(), 75);
-    myIndexMap.put(myConceptQueryFunction_ST_CommonInitializer.getId(), 76);
-    myIndexMap.put(myConceptQueryFunction_ST_RemoveBy_Condition.getId(), 77);
-    myIndexMap.put(myConceptQueryFunction_SideTransform_ConceptHandler.getId(), 78);
-    myIndexMap.put(myConceptQueryFunction_SideTransform_Handler.getId(), 79);
-    myIndexMap.put(myConceptQueryFunction_SideTransform_Icon.getId(), 80);
-    myIndexMap.put(myConceptQueryFunction_SideTransform_NodeQuery.getId(), 81);
-    myIndexMap.put(myConceptQueryFunction_SideTransform_String.getId(), 82);
-    myIndexMap.put(myConceptQueryFunction_SubstituteIcon.getId(), 83);
-    myIndexMap.put(myConceptQueryFunction_SubstituteString.getId(), 84);
-    myIndexMap.put(myConceptQueryFunction_SubstituteVariableInitializer.getId(), 85);
-    myIndexMap.put(myConceptQueryFunction_SubstituteWrapper.getId(), 86);
-    myIndexMap.put(myConceptQueryFunction_Substitute_CommonInitializer.getId(), 87);
-    myIndexMap.put(myConceptQueryFunction_Substitute_Handler.getId(), 88);
-    myIndexMap.put(myConceptQueryFunction_Substitute_SelectionHandler.getId(), 89);
-    myIndexMap.put(myConceptRemoveByConditionPart.getId(), 90);
-    myIndexMap.put(myConceptRemoveDefaultsPart.getId(), 91);
-    myIndexMap.put(myConceptRemovePart.getId(), 92);
-    myIndexMap.put(myConceptRemoveSTByConditionPart.getId(), 93);
-    myIndexMap.put(myConceptSNodeCreatorAndInitializer.getId(), 94);
-    myIndexMap.put(myConceptSideTransformHintSubstituteActions.getId(), 95);
-    myIndexMap.put(myConceptSideTransformHintSubstituteActionsBuilder.getId(), 96);
-    myIndexMap.put(myConceptSideTransformHintSubstitutePreconditionFunction.getId(), 97);
-    myIndexMap.put(myConceptSideTransformMenuBuilderPart.getId(), 98);
-    myIndexMap.put(myConceptSideTransformMenuPart.getId(), 99);
-    myIndexMap.put(myConceptSideTransformVariableDeclaration.getId(), 100);
-    myIndexMap.put(myConceptSideTransformVariableReference.getId(), 101);
-    myIndexMap.put(myConceptSideTransform_SimpleString.getId(), 102);
-    myIndexMap.put(myConceptSimpleItemSubstitutePart.getId(), 103);
-    myIndexMap.put(myConceptSimpleSideTransformMenuPart.getId(), 104);
-    myIndexMap.put(myConceptSmartActionParameter.getId(), 105);
-    myIndexMap.put(myConceptSmartActionParameterReference.getId(), 106);
-    myIndexMap.put(myConceptSmartEditorActions.getId(), 107);
-    myIndexMap.put(myConceptSubstituteMenuPart.getId(), 108);
-    myIndexMap.put(myConceptSubstituteNodeBuilderVariableDeclaration.getId(), 109);
-    myIndexMap.put(myConceptSubstituteNodeBuilderVariableReference.getId(), 110);
-    myIndexMap.put(myConceptSubstitute_SimpleString.getId(), 111);
-    myIndexMap.put(myConceptSurroundWithAction.getId(), 112);
-    myIndexMap.put(myConceptWrapperSubstituteMenuPart.getId(), 113);
+    myIndexMap.put(myConceptMigrateManuallyAnnotation.getId(), 38);
+    myIndexMap.put(myConceptMigratedToAnnotation.getId(), 39);
+    myIndexMap.put(myConceptNF_Concept_NewInstance.getId(), 40);
+    myIndexMap.put(myConceptNF_LinkList_AddNewChildOperation.getId(), 41);
+    myIndexMap.put(myConceptNF_Link_SetNewChildOperation.getId(), 42);
+    myIndexMap.put(myConceptNF_Model_CreateNewNodeOperation.getId(), 43);
+    myIndexMap.put(myConceptNF_Model_CreateNewRootNodeOperation.getId(), 44);
+    myIndexMap.put(myConceptNF_Node_InsertNewNextSiblingOperation.getId(), 45);
+    myIndexMap.put(myConceptNF_Node_InsertNewPrevSiblingOperation.getId(), 46);
+    myIndexMap.put(myConceptNF_Node_ReplaceWithNewOperation.getId(), 47);
+    myIndexMap.put(myConceptNodeFactories.getId(), 48);
+    myIndexMap.put(myConceptNodeFactory.getId(), 49);
+    myIndexMap.put(myConceptNodeSetupFunction.getId(), 50);
+    myIndexMap.put(myConceptNodeSetupFunction_EnclosingNode.getId(), 51);
+    myIndexMap.put(myConceptNodeSetupFunction_NewNode.getId(), 52);
+    myIndexMap.put(myConceptNodeSetupFunction_SampleNode.getId(), 53);
+    myIndexMap.put(myConceptNodeSubstituteActions.getId(), 54);
+    myIndexMap.put(myConceptNodeSubstituteActionsBuilder.getId(), 55);
+    myIndexMap.put(myConceptNodeSubstituteMenuBuilderPart.getId(), 56);
+    myIndexMap.put(myConceptNodeSubstitutePreconditionFunction.getId(), 57);
+    myIndexMap.put(myConceptParameterizedSideTransformMenuPart.getId(), 58);
+    myIndexMap.put(myConceptParameterizedSubstituteMenuPart.getId(), 59);
+    myIndexMap.put(myConceptPastePostProcessFunction.getId(), 60);
+    myIndexMap.put(myConceptPastePostProcessor.getId(), 61);
+    myIndexMap.put(myConceptPasteWrapper.getId(), 62);
+    myIndexMap.put(myConceptPasteWrappers.getId(), 63);
+    myIndexMap.put(myConceptQueryFunction_ActionType.getId(), 64);
+    myIndexMap.put(myConceptQueryFunction_CanSubstitute.getId(), 65);
+    myIndexMap.put(myConceptQueryFunction_GenericSubstituteMenuPart.getId(), 66);
+    myIndexMap.put(myConceptQueryFunction_IconNode.getId(), 67);
+    myIndexMap.put(myConceptQueryFunction_ParameterizedSideTransform_Handler.getId(), 68);
+    myIndexMap.put(myConceptQueryFunction_ParameterizedSideTransform_Query.getId(), 69);
+    myIndexMap.put(myConceptQueryFunction_ParameterizedSubstitute_Handler.getId(), 70);
+    myIndexMap.put(myConceptQueryFunction_ParameterizedSubstitute_Icon.getId(), 71);
+    myIndexMap.put(myConceptQueryFunction_ParameterizedSubstitute_Query.getId(), 72);
+    myIndexMap.put(myConceptQueryFunction_ParameterizedSubstitute_String.getId(), 73);
+    myIndexMap.put(myConceptQueryFunction_PasteWrapper.getId(), 74);
+    myIndexMap.put(myConceptQueryFunction_RemoveBy_Condition.getId(), 75);
+    myIndexMap.put(myConceptQueryFunction_ReturnSmallPart.getId(), 76);
+    myIndexMap.put(myConceptQueryFunction_STVariableInitializer.getId(), 77);
+    myIndexMap.put(myConceptQueryFunction_ST_CommonInitializer.getId(), 78);
+    myIndexMap.put(myConceptQueryFunction_ST_RemoveBy_Condition.getId(), 79);
+    myIndexMap.put(myConceptQueryFunction_SideTransform_ConceptHandler.getId(), 80);
+    myIndexMap.put(myConceptQueryFunction_SideTransform_Handler.getId(), 81);
+    myIndexMap.put(myConceptQueryFunction_SideTransform_Icon.getId(), 82);
+    myIndexMap.put(myConceptQueryFunction_SideTransform_NodeQuery.getId(), 83);
+    myIndexMap.put(myConceptQueryFunction_SideTransform_String.getId(), 84);
+    myIndexMap.put(myConceptQueryFunction_SubstituteIcon.getId(), 85);
+    myIndexMap.put(myConceptQueryFunction_SubstituteString.getId(), 86);
+    myIndexMap.put(myConceptQueryFunction_SubstituteVariableInitializer.getId(), 87);
+    myIndexMap.put(myConceptQueryFunction_SubstituteWrapper.getId(), 88);
+    myIndexMap.put(myConceptQueryFunction_Substitute_CommonInitializer.getId(), 89);
+    myIndexMap.put(myConceptQueryFunction_Substitute_Handler.getId(), 90);
+    myIndexMap.put(myConceptQueryFunction_Substitute_SelectionHandler.getId(), 91);
+    myIndexMap.put(myConceptRemoveByConditionPart.getId(), 92);
+    myIndexMap.put(myConceptRemoveDefaultsPart.getId(), 93);
+    myIndexMap.put(myConceptRemovePart.getId(), 94);
+    myIndexMap.put(myConceptRemoveSTByConditionPart.getId(), 95);
+    myIndexMap.put(myConceptSNodeCreatorAndInitializer.getId(), 96);
+    myIndexMap.put(myConceptSideTransformHintSubstituteActions.getId(), 97);
+    myIndexMap.put(myConceptSideTransformHintSubstituteActionsBuilder.getId(), 98);
+    myIndexMap.put(myConceptSideTransformHintSubstitutePreconditionFunction.getId(), 99);
+    myIndexMap.put(myConceptSideTransformMenuBuilderPart.getId(), 100);
+    myIndexMap.put(myConceptSideTransformMenuPart.getId(), 101);
+    myIndexMap.put(myConceptSideTransformVariableDeclaration.getId(), 102);
+    myIndexMap.put(myConceptSideTransformVariableReference.getId(), 103);
+    myIndexMap.put(myConceptSideTransform_SimpleString.getId(), 104);
+    myIndexMap.put(myConceptSimpleItemSubstitutePart.getId(), 105);
+    myIndexMap.put(myConceptSimpleSideTransformMenuPart.getId(), 106);
+    myIndexMap.put(myConceptSmartActionParameter.getId(), 107);
+    myIndexMap.put(myConceptSmartActionParameterReference.getId(), 108);
+    myIndexMap.put(myConceptSmartEditorActions.getId(), 109);
+    myIndexMap.put(myConceptSubstituteMenuPart.getId(), 110);
+    myIndexMap.put(myConceptSubstituteNodeBuilderVariableDeclaration.getId(), 111);
+    myIndexMap.put(myConceptSubstituteNodeBuilderVariableReference.getId(), 112);
+    myIndexMap.put(myConceptSubstitute_SimpleString.getId(), 113);
+    myIndexMap.put(myConceptSurroundWithAction.getId(), 114);
+    myIndexMap.put(myConceptWrapperSubstituteMenuPart.getId(), 115);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAddMenuPart, myConceptConceptFunctionParameter_EditorCell, myConceptConceptFunctionParameter_OperationContext, myConceptConceptFunctionParameter_childConcept, myConceptConceptFunctionParameter_childSetter, myConceptConceptFunctionParameter_concept, myConceptConceptFunctionParameter_createdNode, myConceptConceptFunctionParameter_currentTargetNode, myConceptConceptFunctionParameter_link, myConceptConceptFunctionParameter_nodeToCopyPreProcess, myConceptConceptFunctionParameter_nodeToCopyPreProcessOriginal, myConceptConceptFunctionParameter_nodeToPastePostProcess, myConceptConceptFunctionParameter_nodeToPasteWrap, myConceptConceptFunctionParameter_nodeToWrap, myConceptConceptFunctionParameter_parameterObject, myConceptConceptFunctionParameter_parentNode, myConceptConceptFunctionParameter_pattern, myConceptConceptFunctionParameter_result, myConceptConceptFunctionParameter_sourceNode, myConceptConceptFunctionParameter_strictly, myConceptConceptFunctionParameter_targetNode, myConceptConceptFunctionParameter_wrapped, myConceptConceptPart, myConceptConceptRightTransformPart, myConceptConceptSubstitutePart, myConceptConceptsSubstituteMenuPart, myConceptCopyPasteHandlers, myConceptCopyPreProcessFunction, myConceptCopyPreProcessor, myConceptExecuteSmartActionFunction, myConceptGenerateCodeAction, myConceptGenericSubstituteMenuPart, myConceptGetActionUIFunction, myConceptISideTransform_String, myConceptISubstitute_String, myConceptIncludeRightTransformForNodePart, myConceptIsSmartActionApplicableFunction, myConceptMenuPart, myConceptNF_Concept_NewInstance, myConceptNF_LinkList_AddNewChildOperation, myConceptNF_Link_SetNewChildOperation, myConceptNF_Model_CreateNewNodeOperation, myConceptNF_Model_CreateNewRootNodeOperation, myConceptNF_Node_InsertNewNextSiblingOperation, myConceptNF_Node_InsertNewPrevSiblingOperation, myConceptNF_Node_ReplaceWithNewOperation, myConceptNodeFactories, myConceptNodeFactory, myConceptNodeSetupFunction, myConceptNodeSetupFunction_EnclosingNode, myConceptNodeSetupFunction_NewNode, myConceptNodeSetupFunction_SampleNode, myConceptNodeSubstituteActions, myConceptNodeSubstituteActionsBuilder, myConceptNodeSubstituteMenuBuilderPart, myConceptNodeSubstitutePreconditionFunction, myConceptParameterizedSideTransformMenuPart, myConceptParameterizedSubstituteMenuPart, myConceptPastePostProcessFunction, myConceptPastePostProcessor, myConceptPasteWrapper, myConceptPasteWrappers, myConceptQueryFunction_ActionType, myConceptQueryFunction_CanSubstitute, myConceptQueryFunction_GenericSubstituteMenuPart, myConceptQueryFunction_IconNode, myConceptQueryFunction_ParameterizedSideTransform_Handler, myConceptQueryFunction_ParameterizedSideTransform_Query, myConceptQueryFunction_ParameterizedSubstitute_Handler, myConceptQueryFunction_ParameterizedSubstitute_Icon, myConceptQueryFunction_ParameterizedSubstitute_Query, myConceptQueryFunction_ParameterizedSubstitute_String, myConceptQueryFunction_PasteWrapper, myConceptQueryFunction_RemoveBy_Condition, myConceptQueryFunction_ReturnSmallPart, myConceptQueryFunction_STVariableInitializer, myConceptQueryFunction_ST_CommonInitializer, myConceptQueryFunction_ST_RemoveBy_Condition, myConceptQueryFunction_SideTransform_ConceptHandler, myConceptQueryFunction_SideTransform_Handler, myConceptQueryFunction_SideTransform_Icon, myConceptQueryFunction_SideTransform_NodeQuery, myConceptQueryFunction_SideTransform_String, myConceptQueryFunction_SubstituteIcon, myConceptQueryFunction_SubstituteString, myConceptQueryFunction_SubstituteVariableInitializer, myConceptQueryFunction_SubstituteWrapper, myConceptQueryFunction_Substitute_CommonInitializer, myConceptQueryFunction_Substitute_Handler, myConceptQueryFunction_Substitute_SelectionHandler, myConceptRemoveByConditionPart, myConceptRemoveDefaultsPart, myConceptRemovePart, myConceptRemoveSTByConditionPart, myConceptSNodeCreatorAndInitializer, myConceptSideTransformHintSubstituteActions, myConceptSideTransformHintSubstituteActionsBuilder, myConceptSideTransformHintSubstitutePreconditionFunction, myConceptSideTransformMenuBuilderPart, myConceptSideTransformMenuPart, myConceptSideTransformVariableDeclaration, myConceptSideTransformVariableReference, myConceptSideTransform_SimpleString, myConceptSimpleItemSubstitutePart, myConceptSimpleSideTransformMenuPart, myConceptSmartActionParameter, myConceptSmartActionParameterReference, myConceptSmartEditorActions, myConceptSubstituteMenuPart, myConceptSubstituteNodeBuilderVariableDeclaration, myConceptSubstituteNodeBuilderVariableReference, myConceptSubstitute_SimpleString, myConceptSurroundWithAction, myConceptWrapperSubstituteMenuPart);
+    return Arrays.asList(myConceptAddMenuPart, myConceptConceptFunctionParameter_EditorCell, myConceptConceptFunctionParameter_OperationContext, myConceptConceptFunctionParameter_childConcept, myConceptConceptFunctionParameter_childSetter, myConceptConceptFunctionParameter_concept, myConceptConceptFunctionParameter_createdNode, myConceptConceptFunctionParameter_currentTargetNode, myConceptConceptFunctionParameter_link, myConceptConceptFunctionParameter_nodeToCopyPreProcess, myConceptConceptFunctionParameter_nodeToCopyPreProcessOriginal, myConceptConceptFunctionParameter_nodeToPastePostProcess, myConceptConceptFunctionParameter_nodeToPasteWrap, myConceptConceptFunctionParameter_nodeToWrap, myConceptConceptFunctionParameter_parameterObject, myConceptConceptFunctionParameter_parentNode, myConceptConceptFunctionParameter_pattern, myConceptConceptFunctionParameter_result, myConceptConceptFunctionParameter_sourceNode, myConceptConceptFunctionParameter_strictly, myConceptConceptFunctionParameter_targetNode, myConceptConceptFunctionParameter_wrapped, myConceptConceptPart, myConceptConceptRightTransformPart, myConceptConceptSubstitutePart, myConceptConceptsSubstituteMenuPart, myConceptCopyPasteHandlers, myConceptCopyPreProcessFunction, myConceptCopyPreProcessor, myConceptExecuteSmartActionFunction, myConceptGenerateCodeAction, myConceptGenericSubstituteMenuPart, myConceptGetActionUIFunction, myConceptISideTransform_String, myConceptISubstitute_String, myConceptIncludeRightTransformForNodePart, myConceptIsSmartActionApplicableFunction, myConceptMenuPart, myConceptMigrateManuallyAnnotation, myConceptMigratedToAnnotation, myConceptNF_Concept_NewInstance, myConceptNF_LinkList_AddNewChildOperation, myConceptNF_Link_SetNewChildOperation, myConceptNF_Model_CreateNewNodeOperation, myConceptNF_Model_CreateNewRootNodeOperation, myConceptNF_Node_InsertNewNextSiblingOperation, myConceptNF_Node_InsertNewPrevSiblingOperation, myConceptNF_Node_ReplaceWithNewOperation, myConceptNodeFactories, myConceptNodeFactory, myConceptNodeSetupFunction, myConceptNodeSetupFunction_EnclosingNode, myConceptNodeSetupFunction_NewNode, myConceptNodeSetupFunction_SampleNode, myConceptNodeSubstituteActions, myConceptNodeSubstituteActionsBuilder, myConceptNodeSubstituteMenuBuilderPart, myConceptNodeSubstitutePreconditionFunction, myConceptParameterizedSideTransformMenuPart, myConceptParameterizedSubstituteMenuPart, myConceptPastePostProcessFunction, myConceptPastePostProcessor, myConceptPasteWrapper, myConceptPasteWrappers, myConceptQueryFunction_ActionType, myConceptQueryFunction_CanSubstitute, myConceptQueryFunction_GenericSubstituteMenuPart, myConceptQueryFunction_IconNode, myConceptQueryFunction_ParameterizedSideTransform_Handler, myConceptQueryFunction_ParameterizedSideTransform_Query, myConceptQueryFunction_ParameterizedSubstitute_Handler, myConceptQueryFunction_ParameterizedSubstitute_Icon, myConceptQueryFunction_ParameterizedSubstitute_Query, myConceptQueryFunction_ParameterizedSubstitute_String, myConceptQueryFunction_PasteWrapper, myConceptQueryFunction_RemoveBy_Condition, myConceptQueryFunction_ReturnSmallPart, myConceptQueryFunction_STVariableInitializer, myConceptQueryFunction_ST_CommonInitializer, myConceptQueryFunction_ST_RemoveBy_Condition, myConceptQueryFunction_SideTransform_ConceptHandler, myConceptQueryFunction_SideTransform_Handler, myConceptQueryFunction_SideTransform_Icon, myConceptQueryFunction_SideTransform_NodeQuery, myConceptQueryFunction_SideTransform_String, myConceptQueryFunction_SubstituteIcon, myConceptQueryFunction_SubstituteString, myConceptQueryFunction_SubstituteVariableInitializer, myConceptQueryFunction_SubstituteWrapper, myConceptQueryFunction_Substitute_CommonInitializer, myConceptQueryFunction_Substitute_Handler, myConceptQueryFunction_Substitute_SelectionHandler, myConceptRemoveByConditionPart, myConceptRemoveDefaultsPart, myConceptRemovePart, myConceptRemoveSTByConditionPart, myConceptSNodeCreatorAndInitializer, myConceptSideTransformHintSubstituteActions, myConceptSideTransformHintSubstituteActionsBuilder, myConceptSideTransformHintSubstitutePreconditionFunction, myConceptSideTransformMenuBuilderPart, myConceptSideTransformMenuPart, myConceptSideTransformVariableDeclaration, myConceptSideTransformVariableReference, myConceptSideTransform_SimpleString, myConceptSimpleItemSubstitutePart, myConceptSimpleSideTransformMenuPart, myConceptSmartActionParameter, myConceptSmartActionParameterReference, myConceptSmartEditorActions, myConceptSubstituteMenuPart, myConceptSubstituteNodeBuilderVariableDeclaration, myConceptSubstituteNodeBuilderVariableReference, myConceptSubstitute_SimpleString, myConceptSurroundWithAction, myConceptWrapperSubstituteMenuPart);
   }
 
   @Override
@@ -342,156 +346,160 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 37:
         return myConceptMenuPart;
       case 38:
-        return myConceptNF_Concept_NewInstance;
+        return myConceptMigrateManuallyAnnotation;
       case 39:
-        return myConceptNF_LinkList_AddNewChildOperation;
+        return myConceptMigratedToAnnotation;
       case 40:
-        return myConceptNF_Link_SetNewChildOperation;
+        return myConceptNF_Concept_NewInstance;
       case 41:
-        return myConceptNF_Model_CreateNewNodeOperation;
+        return myConceptNF_LinkList_AddNewChildOperation;
       case 42:
-        return myConceptNF_Model_CreateNewRootNodeOperation;
+        return myConceptNF_Link_SetNewChildOperation;
       case 43:
-        return myConceptNF_Node_InsertNewNextSiblingOperation;
+        return myConceptNF_Model_CreateNewNodeOperation;
       case 44:
-        return myConceptNF_Node_InsertNewPrevSiblingOperation;
+        return myConceptNF_Model_CreateNewRootNodeOperation;
       case 45:
-        return myConceptNF_Node_ReplaceWithNewOperation;
+        return myConceptNF_Node_InsertNewNextSiblingOperation;
       case 46:
-        return myConceptNodeFactories;
+        return myConceptNF_Node_InsertNewPrevSiblingOperation;
       case 47:
-        return myConceptNodeFactory;
+        return myConceptNF_Node_ReplaceWithNewOperation;
       case 48:
-        return myConceptNodeSetupFunction;
+        return myConceptNodeFactories;
       case 49:
-        return myConceptNodeSetupFunction_EnclosingNode;
+        return myConceptNodeFactory;
       case 50:
-        return myConceptNodeSetupFunction_NewNode;
+        return myConceptNodeSetupFunction;
       case 51:
-        return myConceptNodeSetupFunction_SampleNode;
+        return myConceptNodeSetupFunction_EnclosingNode;
       case 52:
-        return myConceptNodeSubstituteActions;
+        return myConceptNodeSetupFunction_NewNode;
       case 53:
-        return myConceptNodeSubstituteActionsBuilder;
+        return myConceptNodeSetupFunction_SampleNode;
       case 54:
-        return myConceptNodeSubstituteMenuBuilderPart;
+        return myConceptNodeSubstituteActions;
       case 55:
-        return myConceptNodeSubstitutePreconditionFunction;
+        return myConceptNodeSubstituteActionsBuilder;
       case 56:
-        return myConceptParameterizedSideTransformMenuPart;
+        return myConceptNodeSubstituteMenuBuilderPart;
       case 57:
-        return myConceptParameterizedSubstituteMenuPart;
+        return myConceptNodeSubstitutePreconditionFunction;
       case 58:
-        return myConceptPastePostProcessFunction;
+        return myConceptParameterizedSideTransformMenuPart;
       case 59:
-        return myConceptPastePostProcessor;
+        return myConceptParameterizedSubstituteMenuPart;
       case 60:
-        return myConceptPasteWrapper;
+        return myConceptPastePostProcessFunction;
       case 61:
-        return myConceptPasteWrappers;
+        return myConceptPastePostProcessor;
       case 62:
-        return myConceptQueryFunction_ActionType;
+        return myConceptPasteWrapper;
       case 63:
-        return myConceptQueryFunction_CanSubstitute;
+        return myConceptPasteWrappers;
       case 64:
-        return myConceptQueryFunction_GenericSubstituteMenuPart;
+        return myConceptQueryFunction_ActionType;
       case 65:
-        return myConceptQueryFunction_IconNode;
+        return myConceptQueryFunction_CanSubstitute;
       case 66:
-        return myConceptQueryFunction_ParameterizedSideTransform_Handler;
+        return myConceptQueryFunction_GenericSubstituteMenuPart;
       case 67:
-        return myConceptQueryFunction_ParameterizedSideTransform_Query;
+        return myConceptQueryFunction_IconNode;
       case 68:
-        return myConceptQueryFunction_ParameterizedSubstitute_Handler;
+        return myConceptQueryFunction_ParameterizedSideTransform_Handler;
       case 69:
-        return myConceptQueryFunction_ParameterizedSubstitute_Icon;
+        return myConceptQueryFunction_ParameterizedSideTransform_Query;
       case 70:
-        return myConceptQueryFunction_ParameterizedSubstitute_Query;
+        return myConceptQueryFunction_ParameterizedSubstitute_Handler;
       case 71:
-        return myConceptQueryFunction_ParameterizedSubstitute_String;
+        return myConceptQueryFunction_ParameterizedSubstitute_Icon;
       case 72:
-        return myConceptQueryFunction_PasteWrapper;
+        return myConceptQueryFunction_ParameterizedSubstitute_Query;
       case 73:
-        return myConceptQueryFunction_RemoveBy_Condition;
+        return myConceptQueryFunction_ParameterizedSubstitute_String;
       case 74:
-        return myConceptQueryFunction_ReturnSmallPart;
+        return myConceptQueryFunction_PasteWrapper;
       case 75:
-        return myConceptQueryFunction_STVariableInitializer;
+        return myConceptQueryFunction_RemoveBy_Condition;
       case 76:
-        return myConceptQueryFunction_ST_CommonInitializer;
+        return myConceptQueryFunction_ReturnSmallPart;
       case 77:
-        return myConceptQueryFunction_ST_RemoveBy_Condition;
+        return myConceptQueryFunction_STVariableInitializer;
       case 78:
-        return myConceptQueryFunction_SideTransform_ConceptHandler;
+        return myConceptQueryFunction_ST_CommonInitializer;
       case 79:
-        return myConceptQueryFunction_SideTransform_Handler;
+        return myConceptQueryFunction_ST_RemoveBy_Condition;
       case 80:
-        return myConceptQueryFunction_SideTransform_Icon;
+        return myConceptQueryFunction_SideTransform_ConceptHandler;
       case 81:
-        return myConceptQueryFunction_SideTransform_NodeQuery;
+        return myConceptQueryFunction_SideTransform_Handler;
       case 82:
-        return myConceptQueryFunction_SideTransform_String;
+        return myConceptQueryFunction_SideTransform_Icon;
       case 83:
-        return myConceptQueryFunction_SubstituteIcon;
+        return myConceptQueryFunction_SideTransform_NodeQuery;
       case 84:
-        return myConceptQueryFunction_SubstituteString;
+        return myConceptQueryFunction_SideTransform_String;
       case 85:
-        return myConceptQueryFunction_SubstituteVariableInitializer;
+        return myConceptQueryFunction_SubstituteIcon;
       case 86:
-        return myConceptQueryFunction_SubstituteWrapper;
+        return myConceptQueryFunction_SubstituteString;
       case 87:
-        return myConceptQueryFunction_Substitute_CommonInitializer;
+        return myConceptQueryFunction_SubstituteVariableInitializer;
       case 88:
-        return myConceptQueryFunction_Substitute_Handler;
+        return myConceptQueryFunction_SubstituteWrapper;
       case 89:
-        return myConceptQueryFunction_Substitute_SelectionHandler;
+        return myConceptQueryFunction_Substitute_CommonInitializer;
       case 90:
-        return myConceptRemoveByConditionPart;
+        return myConceptQueryFunction_Substitute_Handler;
       case 91:
-        return myConceptRemoveDefaultsPart;
+        return myConceptQueryFunction_Substitute_SelectionHandler;
       case 92:
-        return myConceptRemovePart;
+        return myConceptRemoveByConditionPart;
       case 93:
-        return myConceptRemoveSTByConditionPart;
+        return myConceptRemoveDefaultsPart;
       case 94:
-        return myConceptSNodeCreatorAndInitializer;
+        return myConceptRemovePart;
       case 95:
-        return myConceptSideTransformHintSubstituteActions;
+        return myConceptRemoveSTByConditionPart;
       case 96:
-        return myConceptSideTransformHintSubstituteActionsBuilder;
+        return myConceptSNodeCreatorAndInitializer;
       case 97:
-        return myConceptSideTransformHintSubstitutePreconditionFunction;
+        return myConceptSideTransformHintSubstituteActions;
       case 98:
-        return myConceptSideTransformMenuBuilderPart;
+        return myConceptSideTransformHintSubstituteActionsBuilder;
       case 99:
-        return myConceptSideTransformMenuPart;
+        return myConceptSideTransformHintSubstitutePreconditionFunction;
       case 100:
-        return myConceptSideTransformVariableDeclaration;
+        return myConceptSideTransformMenuBuilderPart;
       case 101:
-        return myConceptSideTransformVariableReference;
+        return myConceptSideTransformMenuPart;
       case 102:
-        return myConceptSideTransform_SimpleString;
+        return myConceptSideTransformVariableDeclaration;
       case 103:
-        return myConceptSimpleItemSubstitutePart;
+        return myConceptSideTransformVariableReference;
       case 104:
-        return myConceptSimpleSideTransformMenuPart;
+        return myConceptSideTransform_SimpleString;
       case 105:
-        return myConceptSmartActionParameter;
+        return myConceptSimpleItemSubstitutePart;
       case 106:
-        return myConceptSmartActionParameterReference;
+        return myConceptSimpleSideTransformMenuPart;
       case 107:
-        return myConceptSmartEditorActions;
+        return myConceptSmartActionParameter;
       case 108:
-        return myConceptSubstituteMenuPart;
+        return myConceptSmartActionParameterReference;
       case 109:
-        return myConceptSubstituteNodeBuilderVariableDeclaration;
+        return myConceptSmartEditorActions;
       case 110:
-        return myConceptSubstituteNodeBuilderVariableReference;
+        return myConceptSubstituteMenuPart;
       case 111:
-        return myConceptSubstitute_SimpleString;
+        return myConceptSubstituteNodeBuilderVariableDeclaration;
       case 112:
-        return myConceptSurroundWithAction;
+        return myConceptSubstituteNodeBuilderVariableReference;
       case 113:
+        return myConceptSubstitute_SimpleString;
+      case 114:
+        return myConceptSurroundWithAction;
+      case 115:
         return myConceptWrapperSubstituteMenuPart;
       default:
         throw new IllegalStateException();
@@ -621,6 +629,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForMenuPart() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.actions.structure.MenuPart", MetaIdFactory.conceptId(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122837a3cdL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x11e73a4bf93L, "actionType", MetaIdFactory.conceptId(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11e73a269d4L), true, false, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "1230300823443"))).children(new String[]{"actionType"}, new boolean[]{false}).abstract_().sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "1177495774157")).create();
+  }
+  private static ConceptDescriptor createDescriptorForMigrateManuallyAnnotation() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.actions.structure.MigrateManuallyAnnotation", MetaIdFactory.conceptId(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7ce019826543db5L)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x7ce019826543db6L, "migrateTo", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), true, new SNodePointer("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "562388756457602486"))).references("migrateTo").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "562388756457602485")).create();
+  }
+  private static ConceptDescriptor createDescriptorForMigratedToAnnotation() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.actions.structure.MigratedToAnnotation", MetaIdFactory.conceptId(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7ce01982652a98aL)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x7ce01982652a9f9L, "migratedTo", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), true, new SNodePointer("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "562388756457499129"))).references("migratedTo").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "562388756457499018")).create();
   }
   private static ConceptDescriptor createDescriptorForNF_Concept_NewInstance() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance", MetaIdFactory.conceptId(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x6bea674d717de5f4L)).super_("jetbrains.mps.lang.smodel.structure.Concept_NewInstance").version(1).super_(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11331ad1f2aL)).parents("jetbrains.mps.lang.smodel.structure.Concept_NewInstance").parentIds(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11331ad1f2aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x3425402a54bf5f34L, "prototype", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), true, false, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "3757480014665178932"))).children(new String[]{"prototype"}, new boolean[]{false}).alias("new initialized instance", "create new initialized node").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "7776141288922801652")).create();

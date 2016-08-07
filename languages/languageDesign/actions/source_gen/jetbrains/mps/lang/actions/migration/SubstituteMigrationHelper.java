@@ -218,7 +218,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
           SLinkOperations.setTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), _quotation_createNode_ehvekh_a0b0d0b0a0z());
           SPropertyOperations.set(variableDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), (counter == 0 ? "condition" : "condition_" + counter));
           SLinkOperations.setTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403987bL, 0x780e672842435c4L, "initializerBlock"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e672842435c6L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenuVariable_Initializer")));
-          SubstituteBuildersMigrationHelper helper = new SubstituteBuildersMigrationHelper(builder, null);
+          SubstituteBuildersMigrationHelper helper = new SubstituteBuildersMigrationHelper(builder, null, null);
           SLinkOperations.setTarget(SLinkOperations.getTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403987bL, 0x780e672842435c4L, "initializerBlock")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"), helper.getConditionStatementList(SLinkOperations.getTarget(builder, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, 0x10ccb7fcf83L, "precondition"))));
           ListSequence.fromList(SLinkOperations.getChildren(mainGroup, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL, 0x780e672842433a1L, "variables"))).addElement(variableDeclaration);
           if (additionalMenu == null) {
@@ -226,11 +226,11 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
           }
           counter++;
         }
-        addParts(additionalMenu, getNewParts(builders, builderToConditionMap), SLinkOperations.getChildren(mainGroup, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL, 0x5c03050cab46dafL, "parts")));
+        addParts(additionalMenu, getNewParts(builders, builderToConditionMap, mainMenu), SLinkOperations.getChildren(mainGroup, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL, 0x5c03050cab46dafL, "parts")));
         return;
       }
     }
-    addParts(additionalMenu, getNewParts(builders, null), SLinkOperations.getChildren(mainMenu, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1bc2c2df999a7727L, 0x5c03050cab44f64L, "parts")));
+    addParts(additionalMenu, getNewParts(builders, null, mainMenu), SLinkOperations.getChildren(mainMenu, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1bc2c2df999a7727L, 0x5c03050cab44f64L, "parts")));
   }
   private void addParts(SNode additionalMenu, List<SNode> newParts, List<SNode> partsWhereToAdd) {
     if (additionalMenu != null) {
@@ -259,15 +259,15 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
       }
     });
   }
-  private List<SNode> getNewParts(Iterable<SNode> builders, Map<SNode, SNode> conditionVariableMap) {
+  private List<SNode> getNewParts(Iterable<SNode> builders, Map<SNode, SNode> conditionVariableMap, SNode root) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode builder : Sequence.fromIterable(builders)) {
       SNode conditionVariable = null;
       if (conditionVariableMap != null) {
         conditionVariable = MapSequence.fromMap(conditionVariableMap).get(builder);
       }
-      SubstituteBuildersMigrationHelper helper = new SubstituteBuildersMigrationHelper(builder, conditionVariable);
-      List<SNode> parts = helper.createMenuParts();
+      SubstituteBuildersMigrationHelper helper = new SubstituteBuildersMigrationHelper(builder, conditionVariable, root);
+      List<SNode> parts = helper.createMenuPartsAndAddMigrationAnnotations();
       result.addAll(parts);
       CommentUtil.commentOut(builder);
     }

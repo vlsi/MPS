@@ -17,8 +17,8 @@ public class MigrateActions extends MigrationScriptBase {
     return false;
   }
   public SNode execute(final SModule m) {
-    new SubstituteMigrationHelper(m).migrate();
     new SideTransformActionsMigrationHelper(m, true).migrate();
+    new SubstituteMigrationHelper(m).migrate();
     return null;
   }
   public MigrationScriptReference getDescriptor() {

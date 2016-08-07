@@ -134,6 +134,12 @@
     <file name="MenuPart_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.actions.behavior.MenuPart_BehaviorDescriptor" />
     </file>
+    <file name="MigrateManuallyAnnotation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.actions.behavior.MigrateManuallyAnnotation_BehaviorDescriptor" />
+    </file>
+    <file name="MigratedToAnnotation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.actions.behavior.MigratedToAnnotation_BehaviorDescriptor" />
+    </file>
     <file name="NF_Concept_NewInstance_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.actions.behavior.NF_Concept_NewInstance_BehaviorDescriptor" />
     </file>

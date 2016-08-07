@@ -11,9 +11,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class MigrateActions extends MigrationScriptBase {
+public class MigrateCellsWithSideTransforms extends MigrationScriptBase {
   public String getCaption() {
-    return "MigrateActions";
+    return "MigrateCellsWithSideTransforms";
   }
   @Override
   public boolean isRerunnable() {

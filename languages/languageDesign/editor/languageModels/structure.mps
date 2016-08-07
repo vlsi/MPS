@@ -6256,5 +6256,50 @@
       </node>
     </node>
   </node>
+  <node concept="1TIwiD" id="ve0pwAkEAa">
+    <property role="EcuMT" value="562388756457499018" />
+    <property role="TrG5h" value="MigratedToAnnotation" />
+    <property role="3GE5qa" value="migration" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="1TJgyj" id="ve0pwAkEBT" role="1TKVEi">
+      <property role="IQ2ns" value="562388756457499129" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="migratedTo" />
+      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    </node>
+    <node concept="M6xJ_" id="ve0pwAkEAb" role="lGtFl">
+      <property role="Hh88m" value="migratedTo" />
+      <node concept="trNpa" id="ve0pwAl5DS" role="EQaZv">
+        <ref role="trN6q" node="hEV7CQ5" resolve="SideTransformAnchorTagStyleClassItem" />
+      </node>
+      <node concept="trNpa" id="ve0pwAl5X7" role="EQaZv">
+        <ref role="trN6q" node="794AQ2t3BuV" resolve="CellMenuPart_ApplySideTransforms" />
+      </node>
+      <node concept="tn0Fv" id="ve0pwAl6FM" role="HhnKV">
+        <property role="tnX3d" value="false" />
+      </node>
+    </node>
+  </node>
+  <node concept="1TIwiD" id="ve0pwAv4UM">
+    <property role="EcuMT" value="562388756460228274" />
+    <property role="TrG5h" value="MigrateManuallynnotation" />
+    <property role="3GE5qa" value="migration" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="1TJgyj" id="ve0pwAv4UN" role="1TKVEi">
+      <property role="IQ2ns" value="562388756460228275" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="migrateTo" />
+      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    </node>
+    <node concept="M6xJ_" id="ve0pwAv4UO" role="lGtFl">
+      <property role="Hh88m" value="migrateManually" />
+      <node concept="tn0Fv" id="ve0pwAv4UR" role="HhnKV">
+        <property role="tnX3d" value="false" />
+      </node>
+      <node concept="trNpa" id="ve0pwAv4UT" role="EQaZv">
+        <ref role="trN6q" node="4Sf$XywKgZK" resolve="TransformationMenuContribution" />
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -50,6 +50,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IncludeRightTransformForNodePart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IsSmartActionApplicableFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MenuPart = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_MigrateManuallyAnnotation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_MigratedToAnnotation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NF_Concept_NewInstance = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NF_LinkList_AddNewChildOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NF_Link_SetNewChildOperation = new ConceptPresentationBuilder().create();
@@ -58,13 +60,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_NF_Node_InsertNewNextSiblingOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NF_Node_InsertNewPrevSiblingOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NF_Node_ReplaceWithNewOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeFactories = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ub).create();
+  private final ConceptPresentation props_NodeFactories = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0wb).create();
   private final ConceptPresentation props_NodeFactory = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeSetupFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeSetupFunction_EnclosingNode = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeSetupFunction_NewNode = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeSetupFunction_SampleNode = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeSubstituteActions = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ac).create();
+  private final ConceptPresentation props_NodeSubstituteActions = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0cc).create();
   private final ConceptPresentation props_NodeSubstituteActionsBuilder = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeSubstituteMenuBuilderPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeSubstitutePreconditionFunction = new ConceptPresentationBuilder().create();
@@ -73,7 +75,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_PastePostProcessFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PastePostProcessor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PasteWrapper = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PasteWrappers = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0jc).create();
+  private final ConceptPresentation props_PasteWrappers = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0lc).create();
   private final ConceptPresentation props_QueryFunction_ActionType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryFunction_CanSubstitute = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryFunction_GenericSubstituteMenuPart = new ConceptPresentationBuilder().create();
@@ -107,7 +109,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_RemovePart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RemoveSTByConditionPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SNodeCreatorAndInitializer = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SideTransformHintSubstituteActions = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0rd).create();
+  private final ConceptPresentation props_SideTransformHintSubstituteActions = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0td).create();
   private final ConceptPresentation props_SideTransformHintSubstituteActionsBuilder = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SideTransformHintSubstitutePreconditionFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SideTransformMenuBuilderPart = new ConceptPresentationBuilder().create();
@@ -119,7 +121,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SimpleSideTransformMenuPart = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_SmartActionParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SmartActionParameterReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SmartEditorActions = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0de).create();
+  private final ConceptPresentation props_SmartEditorActions = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0fe).create();
   private final ConceptPresentation props_SubstituteMenuPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteNodeBuilderVariableDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteNodeBuilderVariableReference = new ConceptPresentationBuilder().create();
@@ -209,156 +211,160 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 37:
         return props_MenuPart;
       case 38:
-        return props_NF_Concept_NewInstance;
+        return props_MigrateManuallyAnnotation;
       case 39:
-        return props_NF_LinkList_AddNewChildOperation;
+        return props_MigratedToAnnotation;
       case 40:
-        return props_NF_Link_SetNewChildOperation;
+        return props_NF_Concept_NewInstance;
       case 41:
-        return props_NF_Model_CreateNewNodeOperation;
+        return props_NF_LinkList_AddNewChildOperation;
       case 42:
-        return props_NF_Model_CreateNewRootNodeOperation;
+        return props_NF_Link_SetNewChildOperation;
       case 43:
-        return props_NF_Node_InsertNewNextSiblingOperation;
+        return props_NF_Model_CreateNewNodeOperation;
       case 44:
-        return props_NF_Node_InsertNewPrevSiblingOperation;
+        return props_NF_Model_CreateNewRootNodeOperation;
       case 45:
-        return props_NF_Node_ReplaceWithNewOperation;
+        return props_NF_Node_InsertNewNextSiblingOperation;
       case 46:
-        return props_NodeFactories;
+        return props_NF_Node_InsertNewPrevSiblingOperation;
       case 47:
-        return props_NodeFactory;
+        return props_NF_Node_ReplaceWithNewOperation;
       case 48:
-        return props_NodeSetupFunction;
+        return props_NodeFactories;
       case 49:
-        return props_NodeSetupFunction_EnclosingNode;
+        return props_NodeFactory;
       case 50:
-        return props_NodeSetupFunction_NewNode;
+        return props_NodeSetupFunction;
       case 51:
-        return props_NodeSetupFunction_SampleNode;
+        return props_NodeSetupFunction_EnclosingNode;
       case 52:
-        return props_NodeSubstituteActions;
+        return props_NodeSetupFunction_NewNode;
       case 53:
-        return props_NodeSubstituteActionsBuilder;
+        return props_NodeSetupFunction_SampleNode;
       case 54:
-        return props_NodeSubstituteMenuBuilderPart;
+        return props_NodeSubstituteActions;
       case 55:
-        return props_NodeSubstitutePreconditionFunction;
+        return props_NodeSubstituteActionsBuilder;
       case 56:
-        return props_ParameterizedSideTransformMenuPart;
+        return props_NodeSubstituteMenuBuilderPart;
       case 57:
-        return props_ParameterizedSubstituteMenuPart;
+        return props_NodeSubstitutePreconditionFunction;
       case 58:
-        return props_PastePostProcessFunction;
+        return props_ParameterizedSideTransformMenuPart;
       case 59:
-        return props_PastePostProcessor;
+        return props_ParameterizedSubstituteMenuPart;
       case 60:
-        return props_PasteWrapper;
+        return props_PastePostProcessFunction;
       case 61:
-        return props_PasteWrappers;
+        return props_PastePostProcessor;
       case 62:
-        return props_QueryFunction_ActionType;
+        return props_PasteWrapper;
       case 63:
-        return props_QueryFunction_CanSubstitute;
+        return props_PasteWrappers;
       case 64:
-        return props_QueryFunction_GenericSubstituteMenuPart;
+        return props_QueryFunction_ActionType;
       case 65:
-        return props_QueryFunction_IconNode;
+        return props_QueryFunction_CanSubstitute;
       case 66:
-        return props_QueryFunction_ParameterizedSideTransform_Handler;
+        return props_QueryFunction_GenericSubstituteMenuPart;
       case 67:
-        return props_QueryFunction_ParameterizedSideTransform_Query;
+        return props_QueryFunction_IconNode;
       case 68:
-        return props_QueryFunction_ParameterizedSubstitute_Handler;
+        return props_QueryFunction_ParameterizedSideTransform_Handler;
       case 69:
-        return props_QueryFunction_ParameterizedSubstitute_Icon;
+        return props_QueryFunction_ParameterizedSideTransform_Query;
       case 70:
-        return props_QueryFunction_ParameterizedSubstitute_Query;
+        return props_QueryFunction_ParameterizedSubstitute_Handler;
       case 71:
-        return props_QueryFunction_ParameterizedSubstitute_String;
+        return props_QueryFunction_ParameterizedSubstitute_Icon;
       case 72:
-        return props_QueryFunction_PasteWrapper;
+        return props_QueryFunction_ParameterizedSubstitute_Query;
       case 73:
-        return props_QueryFunction_RemoveBy_Condition;
+        return props_QueryFunction_ParameterizedSubstitute_String;
       case 74:
-        return props_QueryFunction_ReturnSmallPart;
+        return props_QueryFunction_PasteWrapper;
       case 75:
-        return props_QueryFunction_STVariableInitializer;
+        return props_QueryFunction_RemoveBy_Condition;
       case 76:
-        return props_QueryFunction_ST_CommonInitializer;
+        return props_QueryFunction_ReturnSmallPart;
       case 77:
-        return props_QueryFunction_ST_RemoveBy_Condition;
+        return props_QueryFunction_STVariableInitializer;
       case 78:
-        return props_QueryFunction_SideTransform_ConceptHandler;
+        return props_QueryFunction_ST_CommonInitializer;
       case 79:
-        return props_QueryFunction_SideTransform_Handler;
+        return props_QueryFunction_ST_RemoveBy_Condition;
       case 80:
-        return props_QueryFunction_SideTransform_Icon;
+        return props_QueryFunction_SideTransform_ConceptHandler;
       case 81:
-        return props_QueryFunction_SideTransform_NodeQuery;
+        return props_QueryFunction_SideTransform_Handler;
       case 82:
-        return props_QueryFunction_SideTransform_String;
+        return props_QueryFunction_SideTransform_Icon;
       case 83:
-        return props_QueryFunction_SubstituteIcon;
+        return props_QueryFunction_SideTransform_NodeQuery;
       case 84:
-        return props_QueryFunction_SubstituteString;
+        return props_QueryFunction_SideTransform_String;
       case 85:
-        return props_QueryFunction_SubstituteVariableInitializer;
+        return props_QueryFunction_SubstituteIcon;
       case 86:
-        return props_QueryFunction_SubstituteWrapper;
+        return props_QueryFunction_SubstituteString;
       case 87:
-        return props_QueryFunction_Substitute_CommonInitializer;
+        return props_QueryFunction_SubstituteVariableInitializer;
       case 88:
-        return props_QueryFunction_Substitute_Handler;
+        return props_QueryFunction_SubstituteWrapper;
       case 89:
-        return props_QueryFunction_Substitute_SelectionHandler;
+        return props_QueryFunction_Substitute_CommonInitializer;
       case 90:
-        return props_RemoveByConditionPart;
+        return props_QueryFunction_Substitute_Handler;
       case 91:
-        return props_RemoveDefaultsPart;
+        return props_QueryFunction_Substitute_SelectionHandler;
       case 92:
-        return props_RemovePart;
+        return props_RemoveByConditionPart;
       case 93:
-        return props_RemoveSTByConditionPart;
+        return props_RemoveDefaultsPart;
       case 94:
-        return props_SNodeCreatorAndInitializer;
+        return props_RemovePart;
       case 95:
-        return props_SideTransformHintSubstituteActions;
+        return props_RemoveSTByConditionPart;
       case 96:
-        return props_SideTransformHintSubstituteActionsBuilder;
+        return props_SNodeCreatorAndInitializer;
       case 97:
-        return props_SideTransformHintSubstitutePreconditionFunction;
+        return props_SideTransformHintSubstituteActions;
       case 98:
-        return props_SideTransformMenuBuilderPart;
+        return props_SideTransformHintSubstituteActionsBuilder;
       case 99:
-        return props_SideTransformMenuPart;
+        return props_SideTransformHintSubstitutePreconditionFunction;
       case 100:
-        return props_SideTransformVariableDeclaration;
+        return props_SideTransformMenuBuilderPart;
       case 101:
-        return props_SideTransformVariableReference;
+        return props_SideTransformMenuPart;
       case 102:
-        return props_SideTransform_SimpleString;
+        return props_SideTransformVariableDeclaration;
       case 103:
-        return props_SimpleItemSubstitutePart;
+        return props_SideTransformVariableReference;
       case 104:
-        return props_SimpleSideTransformMenuPart;
+        return props_SideTransform_SimpleString;
       case 105:
-        return props_SmartActionParameter;
+        return props_SimpleItemSubstitutePart;
       case 106:
-        return props_SmartActionParameterReference;
+        return props_SimpleSideTransformMenuPart;
       case 107:
-        return props_SmartEditorActions;
+        return props_SmartActionParameter;
       case 108:
-        return props_SubstituteMenuPart;
+        return props_SmartActionParameterReference;
       case 109:
-        return props_SubstituteNodeBuilderVariableDeclaration;
+        return props_SmartEditorActions;
       case 110:
-        return props_SubstituteNodeBuilderVariableReference;
+        return props_SubstituteMenuPart;
       case 111:
-        return props_Substitute_SimpleString;
+        return props_SubstituteNodeBuilderVariableDeclaration;
       case 112:
-        return props_SurroundWithAction;
+        return props_SubstituteNodeBuilderVariableReference;
       case 113:
+        return props_Substitute_SimpleString;
+      case 114:
+        return props_SurroundWithAction;
+      case 115:
         return props_WrapperSubstituteMenuPart;
     }
     throw new IllegalStateException();

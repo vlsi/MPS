@@ -224,24 +224,7 @@ public class ActionMigrationHelper {
     SPropertyOperations.set(place, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x30335f3d1845bdccL, 0x30335f3d1845bdcdL, "placeInCell"), "RIGHT");
     ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x28336854e4c19a06L, 0x30335f3d1845bdcfL, "placeInCell"))).addElement(place);
   }
-  public static SNode findMainMenu(final SNode concept, String tag) {
-    // todo mark migrate manually if not found 
-    if (eq_qgr84z_a0b0y(tag, "default_RTransform")) {
-      SModule module = SNodeOperations.getModel(concept).getModule();
-      if (!(module instanceof Language)) {
-        return null;
-      }
 
-      SModel conceptEditorAspect = ActionMigrationHelper.getEditorAspect(((Language) module));
-      return ListSequence.fromList(SModelOperations.roots(conceptEditorAspect, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Default"))).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return eq_qgr84z_a0a0a0a0a0a4a1a42(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration")), concept);
-        }
-      }).first();
-    } else {
-      return findMainNamedMenu(concept, tag);
-    }
-  }
   public static SNode findMainNamedMenu(final SNode concept, final String tag) {
     SModule module = SNodeOperations.getModel(concept).getModule();
     if (!(module instanceof Language)) {
@@ -301,12 +284,6 @@ public class ActionMigrationHelper {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_qgr84z_a0b1a12(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_qgr84z_a0a0a0a0a0a4a1a42(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_qgr84z_a0b0y(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_qgr84z_a0a0a0a0a0a0e0z(Object a, Object b) {
