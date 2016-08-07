@@ -30,6 +30,9 @@
     <file name="Color_BehaviorDescriptor.java">
       <unit at="11,0,14,0" name="jetbrains.mps.lang.resources.behavior.Color_BehaviorDescriptor" />
     </file>
+    <file name="ConceptIconResourceExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.ConceptIconResourceExpression_BehaviorDescriptor" />
+    </file>
     <file name="FileIcon_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.FileIcon_BehaviorDescriptor" />
     </file>
@@ -47,6 +50,9 @@
     </file>
     <file name="Image_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.Image_BehaviorDescriptor" />
+    </file>
+    <file name="NodeIconResourceExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.NodeIconResourceExpression_BehaviorDescriptor" />
     </file>
     <file name="OldIconBundle_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.resources.behavior.OldIconBundle_BehaviorDescriptor" />

@@ -13,6 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
@@ -23,7 +24,7 @@ public class SubstituteMenu_Group_CanExecute extends SubstituteMenuBase {
     super(true);
   }
   @Override
-  protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(SubstituteMenuContext _context) {
+  protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
     result.add(new SubstituteMenu_Group_CanExecute.SubstituteMenuPart_Action_ulw6p1_a());
     result.add(new SubstituteMenu_Group_CanExecute.SubstituteMenuPart_Group_ulw6p1_b());
@@ -39,19 +40,26 @@ public class SubstituteMenu_Group_CanExecute extends SubstituteMenuBase {
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       public Item(SubstituteMenuContext context) {
-        super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"), context.getParentNode(), context.getCurrentTargetNode());
+        super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
         _context = context;
       }
 
       @Override
-      public SNode createNode(String pattern) {
+      public SNode createNode(@NotNull String pattern) {
         SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"));
         SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "named_canexecute");
         return node;
       }
       @Override
-      public boolean canExecute(String pattern) {
-        return eq_ulw6p1_a0a0a0a0e2c(pattern, "canexecute") && _context.getParentNode() != null && _context.getCurrentTargetNode() != null && _context.getLink() != null && _context.getEditorContext() != null;
+      public boolean canExecute(@NotNull String pattern) {
+        return canExecute_internal(pattern, false);
+      }
+      @Override
+      public boolean canExecuteStrictly(@NotNull String pattern) {
+        return canExecute_internal(pattern, true);
+      }
+      public boolean canExecute_internal(@NotNull String pattern, boolean strictly) {
+        return eq_ulw6p1_a0a0a0a0g2c(pattern, "canexecute") && _context.getParentNode() != null && _context.getCurrentTargetNode() != null && _context.getLink() != null && _context.getEditorContext() != null;
       }
       @Override
       public String getMatchingText(String pattern) {
@@ -79,12 +87,12 @@ public class SubstituteMenu_Group_CanExecute extends SubstituteMenuBase {
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
         public Item(SubstituteMenuContext context) {
-          super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"), context.getParentNode(), context.getCurrentTargetNode());
+          super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
           _context = context;
         }
 
         @Override
-        public SNode createNode(String pattern) {
+        public SNode createNode(@NotNull String pattern) {
           SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"));
           SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "named_group");
           return node;
@@ -96,7 +104,7 @@ public class SubstituteMenu_Group_CanExecute extends SubstituteMenuBase {
       }
     }
   }
-  private static boolean eq_ulw6p1_a0a0a0a0e2c(Object a, Object b) {
+  private static boolean eq_ulw6p1_a0a0a0a0g2c(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

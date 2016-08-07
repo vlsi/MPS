@@ -15,13 +15,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_Circle = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Color = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ColorLiteral = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConceptIconResourceExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FileIcon = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")).create();
   private final ConceptPresentation props_Icon = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IconExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IconLayerDescription = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IconResourceExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Image = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OldIconBundle = new ConceptPresentationBuilder().deprecated().icon(IconContainer.RESOURCE_a0a0j).create();
+  private final ConceptPresentation props_NodeIconResourceExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_OldIconBundle = new ConceptPresentationBuilder().deprecated().icon(IconContainer.RESOURCE_a0a0l).create();
   private final ConceptPresentation props_OldIconDeclaration = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_OldIconReference = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_Primitive = new ConceptPresentationBuilder().create();
@@ -42,32 +44,36 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 2:
         return props_ColorLiteral;
       case 3:
-        return props_FileIcon;
+        return props_ConceptIconResourceExpression;
       case 4:
-        return props_Icon;
+        return props_FileIcon;
       case 5:
-        return props_IconExpression;
+        return props_Icon;
       case 6:
-        return props_IconLayerDescription;
+        return props_IconExpression;
       case 7:
-        return props_IconResourceExpression;
+        return props_IconLayerDescription;
       case 8:
-        return props_Image;
+        return props_IconResourceExpression;
       case 9:
-        return props_OldIconBundle;
+        return props_Image;
       case 10:
-        return props_OldIconDeclaration;
+        return props_NodeIconResourceExpression;
       case 11:
-        return props_OldIconReference;
+        return props_OldIconBundle;
       case 12:
-        return props_Primitive;
+        return props_OldIconDeclaration;
       case 13:
-        return props_Rect;
+        return props_OldIconReference;
       case 14:
-        return props_Resource;
+        return props_Primitive;
       case 15:
-        return props_Text;
+        return props_Rect;
       case 16:
+        return props_Resource;
+      case 17:
+        return props_Text;
+      case 18:
         return props_TextIcon;
     }
     throw new IllegalStateException();

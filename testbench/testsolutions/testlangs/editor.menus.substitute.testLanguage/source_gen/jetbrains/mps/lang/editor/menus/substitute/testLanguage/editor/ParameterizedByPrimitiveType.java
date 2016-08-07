@@ -16,10 +16,11 @@ import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.runtime.IconResource;
 
 public class ParameterizedByPrimitiveType extends SubstituteMenuBase {
   @Override
-  protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(SubstituteMenuContext _context) {
+  protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
     result.add(new ParameterizedByPrimitiveType.SubstituteMenuPart_Parameterized_ud82js_a());
     return result;
@@ -36,8 +37,8 @@ public class ParameterizedByPrimitiveType extends SubstituteMenuBase {
       return Arrays.asList(1, 2, 3);
     }
     private class SubstituteMenuPart_Action_ud82js_a0 extends SingleItemSubstituteMenuPart {
-      private final int myParameterObject;
-      public SubstituteMenuPart_Action_ud82js_a0(int parameterObject) {
+      private final Integer myParameterObject;
+      public SubstituteMenuPart_Action_ud82js_a0(Integer parameterObject) {
         myParameterObject = parameterObject;
       }
 
@@ -49,12 +50,12 @@ public class ParameterizedByPrimitiveType extends SubstituteMenuBase {
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
         public Item(SubstituteMenuContext context) {
-          super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x75a761fb50351afbL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestConceptForMenuParameterizedByPrimitiveType"), context.getParentNode(), context.getCurrentTargetNode());
+          super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x75a761fb50351afbL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestConceptForMenuParameterizedByPrimitiveType"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
           _context = context;
         }
 
         @Override
-        public SNode createNode(String pattern) {
+        public SNode createNode(@NotNull String pattern) {
           // Check that we can use parameterObject of a primitive type without errors 
           int param = myParameterObject;
           if (myParameterObject < 3) {
@@ -63,12 +64,16 @@ public class ParameterizedByPrimitiveType extends SubstituteMenuBase {
           return null;
         }
         @Override
-        public String getMatchingText(String pattern) {
+        public String getMatchingText(@NotNull String pattern) {
           return "" + myParameterObject;
         }
         @Override
-        public String getDescriptionText(String pattern) {
+        public String getDescriptionText(@NotNull String pattern) {
           return "";
+        }
+        @Override
+        public IconResource getIcon(@NotNull String pattern) {
+          return null;
         }
       }
     }
