@@ -184,6 +184,9 @@ public class CellsWithSideTransformMigrationHelper {
           addMigrationAnnotation(apply, SLinkOperations.getTarget(cell, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x3a52dff8e5ebd740L, "transformationMenu")));
           CommentUtil.commentOut(apply);
         }
+        if (SLinkOperations.getTarget(cell, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x10f3514bb7cL, "menuDescriptor")) != null && ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(cell, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x10f3514bb7cL, "menuDescriptor")), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, 0x10f34f82910L, "cellMenuPart"))).isEmpty()) {
+          CommentUtil.commentOut(SLinkOperations.getTarget(cell, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x10f3514bb7cL, "menuDescriptor")));
+        }
       }
     }
   }
