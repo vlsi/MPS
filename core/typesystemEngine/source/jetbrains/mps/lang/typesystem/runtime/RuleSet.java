@@ -17,10 +17,8 @@ package jetbrains.mps.lang.typesystem.runtime;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.newTypesystem.rules.LanguageScope;
+import jetbrains.mps.languageScope.LanguageScope;
 import jetbrains.mps.newTypesystem.rules.SingleTermRules;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;

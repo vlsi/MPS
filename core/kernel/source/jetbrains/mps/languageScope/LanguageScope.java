@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.rules;
+package jetbrains.mps.languageScope;
 
 import java.util.BitSet;
 import java.util.Collections;

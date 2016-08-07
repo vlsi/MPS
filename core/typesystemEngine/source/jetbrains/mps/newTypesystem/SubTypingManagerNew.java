@@ -21,7 +21,7 @@ import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
-import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
+import jetbrains.mps.languageScope.LanguageScopeExecutor;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;

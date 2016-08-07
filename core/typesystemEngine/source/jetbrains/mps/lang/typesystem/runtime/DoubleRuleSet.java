@@ -16,7 +16,7 @@
 package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.newTypesystem.rules.DoubleTermRules;
-import jetbrains.mps.newTypesystem.rules.LanguageScope;
+import jetbrains.mps.languageScope.LanguageScope;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
