@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class MigrateActions extends MigrationScriptBase {
@@ -18,12 +20,13 @@ public class MigrateActions extends MigrationScriptBase {
     return false;
   }
   public SNode execute(final SModule m) {
-    if (!(m instanceof Language)) {
-      return null;
+    if (m instanceof Language) {
+      new CellsWithSideTransformMigrationHelper(m).migrate();
     }
-    new SubstituteMigrationHelper(m).migrate();
-    new SideTransformActionsMigrationHelper(m).migrate();
     return null;
+  }
+  public Iterable<MigrationScriptReference> executeAfter() {
+    return ListSequence.fromListAndArray(new ArrayList<MigrationScriptReference>(), new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, "jetbrains.mps.lang.actions"), 1));
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor"), 3);

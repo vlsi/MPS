@@ -24,6 +24,12 @@
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
+      <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
+        <property id="6054523464626875854" name="value" index="tnX3d" />
+      </concept>
+      <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
+        <reference id="6054523464627965081" name="concept" index="trN6q" />
+      </concept>
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
         <property id="1212080844762" name="hasNoDefaultMember" index="PDuV0" />
         <property id="1197591154882" name="memberIdentifierPolicy" index="3lZH7k" />
@@ -37,6 +43,11 @@
       <concept id="1083171877298" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ig" index="M4N5e">
         <property id="1083923523172" name="externalValue" index="1uS6qo" />
         <property id="1083923523171" name="internalValue" index="1uS6qv" />
+      </concept>
+      <concept id="2992811758677295509" name="jetbrains.mps.lang.structure.structure.AttributeInfo" flags="ng" index="M6xJ_">
+        <property id="7588428831955550663" name="role" index="Hh88m" />
+        <child id="7588428831947959310" name="attributed" index="EQaZv" />
+        <child id="7588428831955550186" name="multiple" index="HhnKV" />
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
@@ -6223,6 +6234,26 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="outputConceptReference" />
       <ref role="20lvS9" node="IMWLlwvs7L" resolve="OptionalConceptReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="ve0pw_E$U2">
+    <property role="EcuMT" value="562388756446465666" />
+    <property role="TrG5h" value="MigratedSideTransformMenuAttribute" />
+    <property role="3GE5qa" value="migration" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="1TJgyi" id="ve0pw_E$Wj" role="1TKVEl">
+      <property role="TrG5h" value="transformTag" />
+      <property role="IQ2nx" value="562388756446465811" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="M6xJ_" id="ve0pw_E$Wz" role="lGtFl">
+      <property role="Hh88m" value="migratedMainMenuAttribute" />
+      <node concept="trNpa" id="ve0pw_E$W_" role="EQaZv">
+        <ref role="trN6q" node="4Sf$XywF4VC" resolve="TransformationMenu_Named" />
+      </node>
+      <node concept="tn0Fv" id="ve0pw_Ldun" role="HhnKV">
+        <property role="tnX3d" value="false" />
+      </node>
     </node>
   </node>
 </model>

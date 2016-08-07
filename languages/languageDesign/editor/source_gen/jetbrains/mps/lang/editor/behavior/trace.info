@@ -597,6 +597,9 @@
     <file name="MaxWidthStyleClassItem_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.behavior.MaxWidthStyleClassItem_BehaviorDescriptor" />
     </file>
+    <file name="MigratedSideTransformMenuAttribute_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.behavior.MigratedSideTransformMenuAttribute_BehaviorDescriptor" />
+    </file>
     <file name="ModelAccessor_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.behavior.ModelAccessor_BehaviorDescriptor" />
     </file>

@@ -202,6 +202,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_LayoutConstraintStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MatchingLabelStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MaxWidthStyleClassItem = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_MigratedSideTransformMenuAttribute = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ModelAccessor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NavigatableNodeStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NavigatableReferenceStyleClassItem = new ConceptPresentationBuilder().create();
@@ -211,7 +212,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_PaddingLeftStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PaddingRightStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PaddingTopStyleClassItem = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ParametersInformationQuery = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0rh).create();
+  private final ConceptPresentation props_ParametersInformationQuery = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0sh).create();
   private final ConceptPresentation props_ParametersInformationStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PositionChildrenStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PositionStyleClassItem = new ConceptPresentationBuilder().create();
@@ -330,9 +331,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_StyleClassReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StyleClassReferenceList = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StyleKey = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StyleKeyPack = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0gm).create();
+  private final ConceptPresentation props_StyleKeyPack = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0hm).create();
   private final ConceptPresentation props_StyleReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StyleSheet = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0im).create();
+  private final ConceptPresentation props_StyleSheet = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0jm).create();
   private final ConceptPresentation props_StyleSheetClass = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_StyleSheetClassReference = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_StyledTextType = new ConceptPresentationBuilder().create();
@@ -343,7 +344,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SubstituteFeature_Icon = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteFeature_MatchingText = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteFeature_Selection = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SubstituteMenu = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0tm).create();
+  private final ConceptPresentation props_SubstituteMenu = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0um).create();
   private final ConceptPresentation props_SubstituteMenuPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuPart_Action = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuPart_AddConcept = new ConceptPresentationBuilder().create();
@@ -359,9 +360,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SubstituteMenuReference_Named = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuVariableDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuVariableReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SubstituteMenu_Contribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0jn).create();
-  private final ConceptPresentation props_SubstituteMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0kn).create();
-  private final ConceptPresentation props_SubstituteMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ln).create();
+  private final ConceptPresentation props_SubstituteMenu_Contribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0kn).create();
+  private final ConceptPresentation props_SubstituteMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ln).create();
+  private final ConceptPresentation props_SubstituteMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0mn).create();
   private final ConceptPresentation props_SubstituteMenu_SimpleString = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Synchronizeable = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TableComponentStyleClassItem = new ConceptPresentationBuilder().create();
@@ -379,8 +380,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TransformationLocation_ContextAssistant = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationLocation_SideTransform = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationLocation_SideTransform_PlaceInCellHolder = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationMenu = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0do).create();
-  private final ConceptPresentation props_TransformationMenuContribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0eo).create();
+  private final ConceptPresentation props_TransformationMenu = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0eo).create();
+  private final ConceptPresentation props_TransformationMenuContribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0fo).create();
   private final ConceptPresentation props_TransformationMenuPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuPart_Action = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuPart_Group = new ConceptPresentationBuilder().create();
@@ -396,8 +397,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TransformationMenuSection = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuVariableDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuVariableReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0uo).create();
-  private final ConceptPresentation props_TransformationMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0vo).create();
+  private final ConceptPresentation props_TransformationMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0vo).create();
+  private final ConceptPresentation props_TransformationMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0wo).create();
   private final ConceptPresentation props_UnapplyStyle = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_UnderlinedStyleClassItem = new ConceptPresentationBuilder().create();
 
@@ -787,400 +788,402 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 189:
         return props_MaxWidthStyleClassItem;
       case 190:
-        return props_ModelAccessor;
+        return props_MigratedSideTransformMenuAttribute;
       case 191:
-        return props_NavigatableNodeStyleClassItem;
+        return props_ModelAccessor;
       case 192:
-        return props_NavigatableReferenceStyleClassItem;
+        return props_NavigatableNodeStyleClassItem;
       case 193:
-        return props_OptionalConceptReference;
+        return props_NavigatableReferenceStyleClassItem;
       case 194:
-        return props_OrCellSelector;
+        return props_OptionalConceptReference;
       case 195:
-        return props_PaddingBottomStyleClassItem;
+        return props_OrCellSelector;
       case 196:
-        return props_PaddingLeftStyleClassItem;
+        return props_PaddingBottomStyleClassItem;
       case 197:
-        return props_PaddingRightStyleClassItem;
+        return props_PaddingLeftStyleClassItem;
       case 198:
-        return props_PaddingTopStyleClassItem;
+        return props_PaddingRightStyleClassItem;
       case 199:
-        return props_ParametersInformationQuery;
+        return props_PaddingTopStyleClassItem;
       case 200:
-        return props_ParametersInformationStyleClassItem;
+        return props_ParametersInformationQuery;
       case 201:
-        return props_PositionChildrenStyleClassItem;
+        return props_ParametersInformationStyleClassItem;
       case 202:
-        return props_PositionStyleClassItem;
+        return props_PositionChildrenStyleClassItem;
       case 203:
-        return props_PreDefinedStyleClassItem;
+        return props_PositionStyleClassItem;
       case 204:
-        return props_PredefinedSelector;
+        return props_PreDefinedStyleClassItem;
       case 205:
-        return props_PropertyDeclarationCellSelector;
+        return props_PredefinedSelector;
       case 206:
-        return props_PropertyExpressionCellSelector;
+        return props_PropertyDeclarationCellSelector;
       case 207:
-        return props_PunctuationLeftStyleClassItem;
+        return props_PropertyExpressionCellSelector;
       case 208:
-        return props_PunctuationRightStyleClassItem;
+        return props_PunctuationLeftStyleClassItem;
       case 209:
-        return props_QueryFunctionParameter_SubstituteMenu_Concept;
+        return props_PunctuationRightStyleClassItem;
       case 210:
-        return props_QueryFunctionParameter_SubstituteMenu_CreatedNode;
+        return props_QueryFunctionParameter_SubstituteMenu_Concept;
       case 211:
-        return props_QueryFunctionParameter_SubstituteMenu_CurrentTargetNode;
+        return props_QueryFunctionParameter_SubstituteMenu_CreatedNode;
       case 212:
-        return props_QueryFunctionParameter_SubstituteMenu_Link;
+        return props_QueryFunctionParameter_SubstituteMenu_CurrentTargetNode;
       case 213:
-        return props_QueryFunctionParameter_SubstituteMenu_NodeToWrap;
+        return props_QueryFunctionParameter_SubstituteMenu_Link;
       case 214:
-        return props_QueryFunctionParameter_SubstituteMenu_ParentNode;
+        return props_QueryFunctionParameter_SubstituteMenu_NodeToWrap;
       case 215:
-        return props_QueryFunctionParameter_SubstituteMenu_Strictly;
+        return props_QueryFunctionParameter_SubstituteMenu_ParentNode;
       case 216:
-        return props_QueryFunctionParameter_TransformationMenu_CreatedNode;
+        return props_QueryFunctionParameter_SubstituteMenu_Strictly;
       case 217:
-        return props_QueryFunctionParameter_TransformationMenu_node;
+        return props_QueryFunctionParameter_TransformationMenu_CreatedNode;
       case 218:
-        return props_QueryFunctionParameter_TransformationMenu_targetNode;
+        return props_QueryFunctionParameter_TransformationMenu_node;
       case 219:
-        return props_QueryFunctionParameter_parameterObject;
+        return props_QueryFunctionParameter_TransformationMenu_targetNode;
       case 220:
-        return props_QueryFunctionParameter_pattern;
+        return props_QueryFunctionParameter_parameterObject;
       case 221:
-        return props_QueryFunction_AttributeStyleParameter;
+        return props_QueryFunctionParameter_pattern;
       case 222:
-        return props_QueryFunction_Boolean;
+        return props_QueryFunction_AttributeStyleParameter;
       case 223:
-        return props_QueryFunction_CellProvider;
+        return props_QueryFunction_Boolean;
       case 224:
-        return props_QueryFunction_Color;
+        return props_QueryFunction_CellProvider;
       case 225:
-        return props_QueryFunction_ColorComposit;
+        return props_QueryFunction_Color;
       case 226:
-        return props_QueryFunction_FontStyle;
+        return props_QueryFunction_ColorComposit;
       case 227:
-        return props_QueryFunction_ImagePath;
+        return props_QueryFunction_FontStyle;
       case 228:
-        return props_QueryFunction_Integer;
+        return props_QueryFunction_ImagePath;
       case 229:
-        return props_QueryFunction_IsMethodCurrent;
+        return props_QueryFunction_Integer;
       case 230:
-        return props_QueryFunction_JComponent;
+        return props_QueryFunction_IsMethodCurrent;
       case 231:
-        return props_QueryFunction_Menu;
+        return props_QueryFunction_JComponent;
       case 232:
-        return props_QueryFunction_MethodPresentation;
+        return props_QueryFunction_Menu;
       case 233:
-        return props_QueryFunction_ModelAccess_Getter;
+        return props_QueryFunction_MethodPresentation;
       case 234:
-        return props_QueryFunction_ModelAccess_Setter;
+        return props_QueryFunction_ModelAccess_Getter;
       case 235:
-        return props_QueryFunction_ModelAccess_Validator;
+        return props_QueryFunction_ModelAccess_Setter;
       case 236:
-        return props_QueryFunction_ModuleAndPath;
+        return props_QueryFunction_ModelAccess_Validator;
       case 237:
-        return props_QueryFunction_NodeCondition;
+        return props_QueryFunction_ModuleAndPath;
       case 238:
-        return props_QueryFunction_NodeFactory;
+        return props_QueryFunction_NodeCondition;
       case 239:
-        return props_QueryFunction_NodeListFilter;
+        return props_QueryFunction_NodeFactory;
       case 240:
-        return props_QueryFunction_ParametersList;
+        return props_QueryFunction_NodeListFilter;
       case 241:
-        return props_QueryFunction_SNode;
+        return props_QueryFunction_ParametersList;
       case 242:
-        return props_QueryFunction_SeparatorText;
+        return props_QueryFunction_SNode;
       case 243:
-        return props_QueryFunction_String;
+        return props_QueryFunction_SeparatorText;
       case 244:
-        return props_QueryFunction_Style;
+        return props_QueryFunction_String;
       case 245:
-        return props_QueryFunction_StyleParameter;
+        return props_QueryFunction_Style;
       case 246:
-        return props_QueryFunction_SubstituteMenu;
+        return props_QueryFunction_StyleParameter;
       case 247:
-        return props_QueryFunction_SubstituteMenuPart;
+        return props_QueryFunction_SubstituteMenu;
       case 248:
-        return props_QueryFunction_SubstituteMenuVariable_Initializer;
+        return props_QueryFunction_SubstituteMenuPart;
       case 249:
-        return props_QueryFunction_SubstituteMenu_ActionType;
+        return props_QueryFunction_SubstituteMenuVariable_Initializer;
       case 250:
-        return props_QueryFunction_SubstituteMenu_CanSubstitute;
+        return props_QueryFunction_SubstituteMenu_ActionType;
       case 251:
-        return props_QueryFunction_SubstituteMenu_Concept;
+        return props_QueryFunction_SubstituteMenu_CanSubstitute;
       case 252:
-        return props_QueryFunction_SubstituteMenu_Concepts;
+        return props_QueryFunction_SubstituteMenu_Concept;
       case 253:
-        return props_QueryFunction_SubstituteMenu_Condition;
+        return props_QueryFunction_SubstituteMenu_Concepts;
       case 254:
-        return props_QueryFunction_SubstituteMenu_FilterConcepts;
+        return props_QueryFunction_SubstituteMenu_Condition;
       case 255:
-        return props_QueryFunction_SubstituteMenu_Icon;
+        return props_QueryFunction_SubstituteMenu_FilterConcepts;
       case 256:
-        return props_QueryFunction_SubstituteMenu_Parameter;
+        return props_QueryFunction_SubstituteMenu_Icon;
       case 257:
-        return props_QueryFunction_SubstituteMenu_Select;
+        return props_QueryFunction_SubstituteMenu_Parameter;
       case 258:
-        return props_QueryFunction_SubstituteMenu_Substitute;
+        return props_QueryFunction_SubstituteMenu_Select;
       case 259:
-        return props_QueryFunction_SubstituteMenu_SubstituteString;
+        return props_QueryFunction_SubstituteMenu_Substitute;
       case 260:
-        return props_QueryFunction_SubstituteMenu_WrapperHandler;
+        return props_QueryFunction_SubstituteMenu_SubstituteString;
       case 261:
-        return props_QueryFunction_TransformationMenu;
+        return props_QueryFunction_SubstituteMenu_WrapperHandler;
       case 262:
-        return props_QueryFunction_TransformationMenuVariable_Initializer;
+        return props_QueryFunction_TransformationMenu;
       case 263:
-        return props_QueryFunction_TransformationMenu_ActionLabelText;
+        return props_QueryFunction_TransformationMenuVariable_Initializer;
       case 264:
-        return props_QueryFunction_TransformationMenu_Condition;
+        return props_QueryFunction_TransformationMenu_ActionLabelText;
       case 265:
-        return props_QueryFunction_TransformationMenu_DescriptionText;
+        return props_QueryFunction_TransformationMenu_Condition;
       case 266:
-        return props_QueryFunction_TransformationMenu_Execute;
+        return props_QueryFunction_TransformationMenu_DescriptionText;
       case 267:
-        return props_QueryFunction_TransformationMenu_Extensible;
+        return props_QueryFunction_TransformationMenu_Execute;
       case 268:
-        return props_QueryFunction_TransformationMenu_Icon;
+        return props_QueryFunction_TransformationMenu_Extensible;
       case 269:
-        return props_QueryFunction_TransformationMenu_Node;
+        return props_QueryFunction_TransformationMenu_Icon;
       case 270:
-        return props_QueryFunction_TransformationMenu_Parameter;
+        return props_QueryFunction_TransformationMenu_Node;
       case 271:
-        return props_QueryFunction_TransformationMenu_TargetNode;
+        return props_QueryFunction_TransformationMenu_Parameter;
       case 272:
-        return props_QueryFunction_TransformationMenu_Text;
+        return props_QueryFunction_TransformationMenu_TargetNode;
       case 273:
-        return props_QueryFunction_TransformationMenu_WrapperHandler;
+        return props_QueryFunction_TransformationMenu_Text;
       case 274:
-        return props_QueryFunction_Underlined;
+        return props_QueryFunction_TransformationMenu_WrapperHandler;
       case 275:
-        return props_QueryHintsSpecification;
+        return props_QueryFunction_Underlined;
       case 276:
-        return props_RGBColor;
+        return props_QueryHintsSpecification;
       case 277:
-        return props_ReadOnlyModelAccessor;
+        return props_RGBColor;
       case 278:
-        return props_ReadOnlyStyleClassItem;
+        return props_ReadOnlyModelAccessor;
       case 279:
-        return props_RightTransformAnchorTagWrapper;
+        return props_ReadOnlyStyleClassItem;
       case 280:
-        return props_ScriptKindClassItem;
+        return props_RightTransformAnchorTagWrapper;
       case 281:
-        return props_SelectInEditorOperation;
+        return props_ScriptKindClassItem;
       case 282:
-        return props_SelectParameter;
+        return props_SelectInEditorOperation;
       case 283:
-        return props_SelectPositionParameter;
+        return props_SelectParameter;
       case 284:
-        return props_SelectableStyleSheetItem;
+        return props_SelectPositionParameter;
       case 285:
-        return props_SetBoldOperation;
+        return props_SelectableStyleSheetItem;
       case 286:
-        return props_ShowBoundariesInStyleClassItem;
+        return props_SetBoldOperation;
       case 287:
-        return props_SideTransformAnchorTagStyleClassItem;
+        return props_ShowBoundariesInStyleClassItem;
       case 288:
-        return props_StrikeOutStyleSheet;
+        return props_SideTransformAnchorTagStyleClassItem;
       case 289:
-        return props_StubCellModel_Alternation;
+        return props_StrikeOutStyleSheet;
       case 290:
-        return props_StubCellModel_Block;
+        return props_StubCellModel_Alternation;
       case 291:
-        return props_StubCellModel_Collection;
+        return props_StubCellModel_Block;
       case 292:
-        return props_StubCellModel_Component;
+        return props_StubCellModel_Collection;
       case 293:
-        return props_StubCellModel_Constant;
+        return props_StubCellModel_Component;
       case 294:
-        return props_StubCellModel_ContextAssistant;
+        return props_StubCellModel_Constant;
       case 295:
-        return props_StubCellModel_Custom;
+        return props_StubCellModel_ContextAssistant;
       case 296:
-        return props_StubCellModel_Error;
+        return props_StubCellModel_Custom;
       case 297:
-        return props_StubCellModel_Image;
+        return props_StubCellModel_Error;
       case 298:
-        return props_StubCellModel_JComponent;
+        return props_StubCellModel_Image;
       case 299:
-        return props_StubCellModel_ModelAccess;
+        return props_StubCellModel_JComponent;
       case 300:
-        return props_StubCellModel_NonEmptyProperty;
+        return props_StubCellModel_ModelAccess;
       case 301:
-        return props_StubCellModel_Property;
+        return props_StubCellModel_NonEmptyProperty;
       case 302:
-        return props_StubCellModel_ReadOnlyModelAccessor;
+        return props_StubCellModel_Property;
       case 303:
-        return props_StubCellModel_RefCell;
+        return props_StubCellModel_ReadOnlyModelAccessor;
       case 304:
-        return props_StubCellModel_RefNode;
+        return props_StubCellModel_RefCell;
       case 305:
-        return props_StubCellModel_RefNodeList;
+        return props_StubCellModel_RefNode;
       case 306:
-        return props_StubCellModel_ReferencePresentation;
+        return props_StubCellModel_RefNodeList;
       case 307:
-        return props_StubCellModel_Table;
+        return props_StubCellModel_ReferencePresentation;
       case 308:
-        return props_StubCellModel_TransactionalProperty;
+        return props_StubCellModel_Table;
       case 309:
-        return props_StubCellModel_URL;
+        return props_StubCellModel_TransactionalProperty;
       case 310:
-        return props_StubEditorCellModel;
+        return props_StubCellModel_URL;
       case 311:
-        return props_StyleAttributeDeclaration;
+        return props_StubEditorCellModel;
       case 312:
-        return props_StyleAttributeReferenceExpression;
+        return props_StyleAttributeDeclaration;
       case 313:
-        return props_StyleClass;
+        return props_StyleAttributeReferenceExpression;
       case 314:
-        return props_StyleClassItem;
+        return props_StyleClass;
       case 315:
-        return props_StyleClassReference;
+        return props_StyleClassItem;
       case 316:
-        return props_StyleClassReferenceList;
+        return props_StyleClassReference;
       case 317:
-        return props_StyleKey;
+        return props_StyleClassReferenceList;
       case 318:
-        return props_StyleKeyPack;
+        return props_StyleKey;
       case 319:
-        return props_StyleReference;
+        return props_StyleKeyPack;
       case 320:
-        return props_StyleSheet;
+        return props_StyleReference;
       case 321:
-        return props_StyleSheetClass;
+        return props_StyleSheet;
       case 322:
-        return props_StyleSheetClassReference;
+        return props_StyleSheetClass;
       case 323:
-        return props_StyledTextType;
+        return props_StyleSheetClassReference;
       case 324:
-        return props_SubstituteFeature;
+        return props_StyledTextType;
       case 325:
-        return props_SubstituteFeature_ActionType;
+        return props_SubstituteFeature;
       case 326:
-        return props_SubstituteFeature_CanSubstitute;
+        return props_SubstituteFeature_ActionType;
       case 327:
-        return props_SubstituteFeature_DescriptionText;
+        return props_SubstituteFeature_CanSubstitute;
       case 328:
-        return props_SubstituteFeature_Icon;
+        return props_SubstituteFeature_DescriptionText;
       case 329:
-        return props_SubstituteFeature_MatchingText;
+        return props_SubstituteFeature_Icon;
       case 330:
-        return props_SubstituteFeature_Selection;
+        return props_SubstituteFeature_MatchingText;
       case 331:
-        return props_SubstituteMenu;
+        return props_SubstituteFeature_Selection;
       case 332:
-        return props_SubstituteMenuPart;
+        return props_SubstituteMenu;
       case 333:
-        return props_SubstituteMenuPart_Action;
+        return props_SubstituteMenuPart;
       case 334:
-        return props_SubstituteMenuPart_AddConcept;
+        return props_SubstituteMenuPart_Action;
       case 335:
-        return props_SubstituteMenuPart_Concepts;
+        return props_SubstituteMenuPart_AddConcept;
       case 336:
-        return props_SubstituteMenuPart_Group;
+        return props_SubstituteMenuPart_Concepts;
       case 337:
-        return props_SubstituteMenuPart_IncludeMenu;
+        return props_SubstituteMenuPart_Group;
       case 338:
-        return props_SubstituteMenuPart_Parameterized;
+        return props_SubstituteMenuPart_IncludeMenu;
       case 339:
-        return props_SubstituteMenuPart_Subconcepts;
+        return props_SubstituteMenuPart_Parameterized;
       case 340:
-        return props_SubstituteMenuPart_Wrapper;
+        return props_SubstituteMenuPart_Subconcepts;
       case 341:
-        return props_SubstituteMenuReference;
+        return props_SubstituteMenuPart_Wrapper;
       case 342:
-        return props_SubstituteMenuReference_Default;
+        return props_SubstituteMenuReference;
       case 343:
-        return props_SubstituteMenuReference_DefaultWithFunction;
+        return props_SubstituteMenuReference_Default;
       case 344:
-        return props_SubstituteMenuReference_Named;
+        return props_SubstituteMenuReference_DefaultWithFunction;
       case 345:
-        return props_SubstituteMenuVariableDeclaration;
+        return props_SubstituteMenuReference_Named;
       case 346:
-        return props_SubstituteMenuVariableReference;
+        return props_SubstituteMenuVariableDeclaration;
       case 347:
-        return props_SubstituteMenu_Contribution;
+        return props_SubstituteMenuVariableReference;
       case 348:
-        return props_SubstituteMenu_Default;
+        return props_SubstituteMenu_Contribution;
       case 349:
-        return props_SubstituteMenu_Named;
+        return props_SubstituteMenu_Default;
       case 350:
-        return props_SubstituteMenu_SimpleString;
+        return props_SubstituteMenu_Named;
       case 351:
-        return props_Synchronizeable;
+        return props_SubstituteMenu_SimpleString;
       case 352:
-        return props_TableComponentStyleClassItem;
+        return props_Synchronizeable;
       case 353:
-        return props_TextBackgroundColorSelectedStyleClassItem;
+        return props_TableComponentStyleClassItem;
       case 354:
-        return props_TextBackgroundColorStyleClassItem;
+        return props_TextBackgroundColorSelectedStyleClassItem;
       case 355:
-        return props_TransactionPropertyHandler_newValue;
+        return props_TextBackgroundColorStyleClassItem;
       case 356:
-        return props_TransactionPropertyHandler_oldValue;
+        return props_TransactionPropertyHandler_newValue;
       case 357:
-        return props_TransactionalPropertyHandler;
+        return props_TransactionPropertyHandler_oldValue;
       case 358:
-        return props_TransformationFeature;
+        return props_TransactionalPropertyHandler;
       case 359:
-        return props_TransformationFeature_ActionType;
+        return props_TransformationFeature;
       case 360:
-        return props_TransformationFeature_DescriptionText;
+        return props_TransformationFeature_ActionType;
       case 361:
-        return props_TransformationFeature_Icon;
+        return props_TransformationFeature_DescriptionText;
       case 362:
-        return props_TransformationLocation;
+        return props_TransformationFeature_Icon;
       case 363:
-        return props_TransformationLocation_Completion;
+        return props_TransformationLocation;
       case 364:
-        return props_TransformationLocation_ContextAssistant;
+        return props_TransformationLocation_Completion;
       case 365:
-        return props_TransformationLocation_SideTransform;
+        return props_TransformationLocation_ContextAssistant;
       case 366:
-        return props_TransformationLocation_SideTransform_PlaceInCellHolder;
+        return props_TransformationLocation_SideTransform;
       case 367:
-        return props_TransformationMenu;
+        return props_TransformationLocation_SideTransform_PlaceInCellHolder;
       case 368:
-        return props_TransformationMenuContribution;
+        return props_TransformationMenu;
       case 369:
-        return props_TransformationMenuPart;
+        return props_TransformationMenuContribution;
       case 370:
-        return props_TransformationMenuPart_Action;
+        return props_TransformationMenuPart;
       case 371:
-        return props_TransformationMenuPart_Group;
+        return props_TransformationMenuPart_Action;
       case 372:
-        return props_TransformationMenuPart_IncludeMenu;
+        return props_TransformationMenuPart_Group;
       case 373:
-        return props_TransformationMenuPart_IncludeSubstituteMenu;
+        return props_TransformationMenuPart_IncludeMenu;
       case 374:
-        return props_TransformationMenuPart_Parameterized;
+        return props_TransformationMenuPart_IncludeSubstituteMenu;
       case 375:
-        return props_TransformationMenuPart_Placeholder;
+        return props_TransformationMenuPart_Parameterized;
       case 376:
-        return props_TransformationMenuPart_SubMenu;
+        return props_TransformationMenuPart_Placeholder;
       case 377:
-        return props_TransformationMenuPart_Super;
+        return props_TransformationMenuPart_SubMenu;
       case 378:
-        return props_TransformationMenuPart_WrapSubstituteMenu;
+        return props_TransformationMenuPart_Super;
       case 379:
-        return props_TransformationMenuReference_Default;
+        return props_TransformationMenuPart_WrapSubstituteMenu;
       case 380:
-        return props_TransformationMenuReference_Named;
+        return props_TransformationMenuReference_Default;
       case 381:
-        return props_TransformationMenuSection;
+        return props_TransformationMenuReference_Named;
       case 382:
-        return props_TransformationMenuVariableDeclaration;
+        return props_TransformationMenuSection;
       case 383:
-        return props_TransformationMenuVariableReference;
+        return props_TransformationMenuVariableDeclaration;
       case 384:
-        return props_TransformationMenu_Default;
+        return props_TransformationMenuVariableReference;
       case 385:
-        return props_TransformationMenu_Named;
+        return props_TransformationMenu_Default;
       case 386:
-        return props_UnapplyStyle;
+        return props_TransformationMenu_Named;
       case 387:
+        return props_UnapplyStyle;
+      case 388:
         return props_UnderlinedStyleClassItem;
     }
     throw new IllegalStateException();

@@ -8,21 +8,20 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class MigrateActions extends MigrationScriptBase {
+public class MigrateContributions extends MigrationScriptBase {
   public String getCaption() {
-    return "MigrateActions";
+    return "MigrateContributions";
   }
   @Override
   public boolean isRerunnable() {
     return false;
   }
   public SNode execute(final SModule m) {
-    new SubstituteMigrationHelper(m).migrate();
     new SideTransformActionsMigrationHelper(m, true).migrate();
     return null;
   }
   public MigrationScriptReference getDescriptor() {
-    return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, "jetbrains.mps.lang.actions"), 0);
+    return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, "jetbrains.mps.lang.actions"), 1);
   }
 
 }
