@@ -6,7 +6,7 @@ import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo;
+import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.lang.editor.menus.MenuPart;
@@ -32,7 +32,7 @@ import jetbrains.mps.baseLanguage.actions.PrecedenceUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class binaryOperations extends TransformationMenuBase {
-  private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), SideTransformSubstituteInfo.Side.RIGHT.myMenuLocation);
+  private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM);
   @Override
   public boolean isApplicableToLocation(@NotNull String location) {
     return SetSequence.fromSet(myLocations).contains(location);
@@ -42,7 +42,7 @@ public class binaryOperations extends TransformationMenuBase {
   @NotNull
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
-    if (ListSequence.fromListAndArray(new ArrayList<String>(), SideTransformSubstituteInfo.Side.RIGHT.myMenuLocation).contains(_context.getMenuLocation())) {
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
       result.add(new binaryOperations.TransformationMenuPart_Group_vwyr1i_a0());
     }
     return result;
@@ -73,7 +73,7 @@ public class binaryOperations extends TransformationMenuBase {
       }
       protected void execute(SNode targetNode, SubstituteMenuItem item, TransformationMenuContext _context, String pattern) {
         SNode createdNode = item.createNode(pattern);
-        SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), PrecedenceUtil.processRightTransform(targetNode, createdNode), SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL, -1);
+        SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), PrecedenceUtil.processRightTransform(targetNode, createdNode), SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);
       }
     }
   }

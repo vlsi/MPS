@@ -6,7 +6,7 @@ import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo;
+import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.lang.editor.menus.MenuPart;
@@ -15,14 +15,14 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuConte
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression__BehaviorDescriptor;
 import java.util.Arrays;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
@@ -34,7 +34,7 @@ import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class convertVariableAssignmentToVarDeclaration extends TransformationMenuBase {
-  private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), SideTransformSubstituteInfo.Side.LEFT.myMenuLocation);
+  private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.LEFT_SIDE_TRANSFORM);
   @Override
   public boolean isApplicableToLocation(@NotNull String location) {
     return SetSequence.fromSet(myLocations).contains(location);
@@ -44,29 +44,13 @@ public class convertVariableAssignmentToVarDeclaration extends TransformationMen
   @NotNull
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
-    if (ListSequence.fromListAndArray(new ArrayList<String>(), SideTransformSubstituteInfo.Side.LEFT.myMenuLocation).contains(_context.getMenuLocation())) {
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
       result.add(new convertVariableAssignmentToVarDeclaration.TransformationMenuPart_Group_lavomd_a0());
     }
     return result;
   }
 
   public class TransformationMenuPart_Group_lavomd_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
-    private SNode assignment;
-    private SNode type;
-    @Override
-    protected void initialize(TransformationMenuContext _context) {
-      super.initialize(_context);
-      assignment = new Computable<SNode>() {
-        public SNode compute() {
-          return SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e96L, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"));
-        }
-      }.compute();
-      type = new Computable<SNode>() {
-        public SNode compute() {
-          return (SNode) TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(assignment, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e99L, "rValue")));
-        }
-      }.compute();
-    }
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")))) {
@@ -81,36 +65,59 @@ public class convertVariableAssignmentToVarDeclaration extends TransformationMen
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new convertVariableAssignmentToVarDeclaration.TransformationMenuPart_Group_lavomd_a0.TransformationMenuPart_Action_lavomd_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new convertVariableAssignmentToVarDeclaration.TransformationMenuPart_Group_lavomd_a0.TransformationMenuPart_Group_lavomd_a0a());
     }
-    private class TransformationMenuPart_Action_lavomd_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-      @Nullable
-      protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new convertVariableAssignmentToVarDeclaration.TransformationMenuPart_Group_lavomd_a0.TransformationMenuPart_Action_lavomd_a0a.Item(context);
+    public class TransformationMenuPart_Group_lavomd_a0a extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private SNode assignment;
+      private SNode type;
+      @Override
+      protected void initialize(TransformationMenuContext _context) {
+        super.initialize(_context);
+        assignment = new Computable<SNode>() {
+          public SNode compute() {
+            return SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e96L, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"));
+          }
+        }.compute();
+        type = new Computable<SNode>() {
+          public SNode compute() {
+            return (SNode) TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(assignment, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e99L, "rValue")));
+          }
+        }.compute();
       }
 
-      private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
-        private final TransformationMenuContext _context;
-
-        private Item(TransformationMenuContext context) {
-          _context = context;
-        }
-
+      @Override
+      protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
+        return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new convertVariableAssignmentToVarDeclaration.TransformationMenuPart_Group_lavomd_a0.TransformationMenuPart_Group_lavomd_a0a.TransformationMenuPart_Action_lavomd_a0a0());
+      }
+      private class TransformationMenuPart_Action_lavomd_a0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         @Nullable
-        @Override
-        public String getLabelText(String pattern) {
-          return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(type);
+        protected TransformationMenuItem createItem(TransformationMenuContext context) {
+          return new convertVariableAssignmentToVarDeclaration.TransformationMenuPart_Group_lavomd_a0.TransformationMenuPart_Group_lavomd_a0a.TransformationMenuPart_Action_lavomd_a0a0.Item(context);
         }
 
-        @Override
-        public void execute(@NotNull String pattern) {
-          SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), AssignmentExpression__BehaviorDescriptor.convertToLocalVariableDeclaration_idhLFsFld.invoke(assignment, null), SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL, -1);
-        }
+        private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
+          private final TransformationMenuContext _context;
+
+          private Item(TransformationMenuContext context) {
+            _context = context;
+          }
+
+          @Nullable
+          @Override
+          public String getLabelText(String pattern) {
+            return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(type);
+          }
+
+          @Override
+          public void execute(@NotNull String pattern) {
+            SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), AssignmentExpression__BehaviorDescriptor.convertToLocalVariableDeclaration_idhLFsFld.invoke(assignment, null), SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);
+          }
 
 
-        @Override
-        public SAbstractConcept getOutputConcept() {
-          return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression");
+          @Override
+          public SAbstractConcept getOutputConcept() {
+            return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression");
+          }
         }
       }
     }

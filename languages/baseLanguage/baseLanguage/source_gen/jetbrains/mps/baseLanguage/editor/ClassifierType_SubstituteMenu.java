@@ -286,7 +286,7 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
     public class SubstituteMenuPart_Group_6wdawe_d0 extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
       @Override
       protected boolean isApplicable(SubstituteMenuContext _context) {
-        return !((condition || condition_1 || condition_2));
+        return !((condition || condition_1 || condition_2)) && (_context.getLink() != null || !(SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"))));
       }
 
       @Override

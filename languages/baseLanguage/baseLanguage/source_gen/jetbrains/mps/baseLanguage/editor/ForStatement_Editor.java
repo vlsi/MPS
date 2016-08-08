@@ -184,34 +184,27 @@ public class ForStatement_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     Delete_Loop.setCellActions(editorCell, node, editorContext);
-    editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "jetbrains.mps.baseLanguage.editor.loopLabels"));
+    editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "jetbrains.mps.baseLanguage.editor.loopLabelsAndIfStatement"));
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ForStatement_Editor.ReplaceWith_IfStatement_cellMenu_l9yc2b_a0c0(), new ForStatement_Editor.ReplaceWith_WhileStatement_cellMenu_l9yc2b_b0c0(), new ForStatement_Editor.ReplaceWith_DoWhileStatement_cellMenu_l9yc2b_c0c0(), new ForStatement_Editor.ReplaceWith_ForeachStatement_cellMenu_l9yc2b_d0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ForStatement_Editor.ReplaceWith_WhileStatement_cellMenu_l9yc2b_a0c0(), new ForStatement_Editor.ReplaceWith_DoWhileStatement_cellMenu_l9yc2b_b0c0(), new ForStatement_Editor.ReplaceWith_ForeachStatement_cellMenu_l9yc2b_c0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
-  public static class ReplaceWith_IfStatement_cellMenu_l9yc2b_a0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_IfStatement_cellMenu_l9yc2b_a0c0() {
-    }
-    public SAbstractConcept getReplacementConcept() {
-      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement");
-    }
-  }
-  public static class ReplaceWith_WhileStatement_cellMenu_l9yc2b_b0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_WhileStatement_cellMenu_l9yc2b_b0c0() {
+  public static class ReplaceWith_WhileStatement_cellMenu_l9yc2b_a0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_WhileStatement_cellMenu_l9yc2b_a0c0() {
     }
     public SAbstractConcept getReplacementConcept() {
       return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfaa4bf0f2fL, "jetbrains.mps.baseLanguage.structure.WhileStatement");
     }
   }
-  public static class ReplaceWith_DoWhileStatement_cellMenu_l9yc2b_c0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_DoWhileStatement_cellMenu_l9yc2b_c0c0() {
+  public static class ReplaceWith_DoWhileStatement_cellMenu_l9yc2b_b0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_DoWhileStatement_cellMenu_l9yc2b_b0c0() {
     }
     public SAbstractConcept getReplacementConcept() {
       return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11232674988L, "jetbrains.mps.baseLanguage.structure.DoWhileStatement");
     }
   }
-  public static class ReplaceWith_ForeachStatement_cellMenu_l9yc2b_d0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_ForeachStatement_cellMenu_l9yc2b_d0c0() {
+  public static class ReplaceWith_ForeachStatement_cellMenu_l9yc2b_c0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_ForeachStatement_cellMenu_l9yc2b_c0c0() {
     }
     public SAbstractConcept getReplacementConcept() {
       return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a6933ce33L, "jetbrains.mps.baseLanguage.structure.ForeachStatement");
