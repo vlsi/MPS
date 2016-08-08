@@ -30,6 +30,7 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.IMigrationUnit__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />

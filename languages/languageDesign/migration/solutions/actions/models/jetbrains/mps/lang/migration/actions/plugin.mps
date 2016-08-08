@@ -31,7 +31,6 @@
     <import index="che4" ref="r:e5186c75-12ba-46bf-934f-f0e026ef8c26(jetbrains.mps.lang.migration.plugin)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="buve" ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" implicit="true" />
-    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -587,14 +586,14 @@
                             </node>
                           </node>
                           <node concept="2OqwBi" id="WEmn41FJVb" role="ukAjM">
-                            <node concept="2OqwBi" id="WEmn41FIvZ" role="2Oq$k0">
-                              <node concept="2WthIp" id="WEmn41FI10" role="2Oq$k0" />
-                              <node concept="1DTwFV" id="WEmn41FJjU" role="2OqNvi">
-                                <ref role="2WH_rO" node="5VZG9FqCIyg" resolve="module" />
+                            <node concept="2OqwBi" id="6mLeQiRDrIN" role="2Oq$k0">
+                              <node concept="2WthIp" id="6mLeQiRDrIQ" role="2Oq$k0" />
+                              <node concept="1DTwFV" id="6mLeQiRDrIS" role="2OqNvi">
+                                <ref role="2WH_rO" node="6mLeQiRDpKY" resolve="mpsProject" />
                               </node>
                             </node>
                             <node concept="liA8E" id="WEmn41FL4U" role="2OqNvi">
-                              <ref role="37wK5l" to="lui2:~SModule.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                             </node>
                           </node>
                         </node>
@@ -617,6 +616,11 @@
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
       <node concept="1oajcY" id="5VZG9FqE87r" role="1oa70y" />
+    </node>
+    <node concept="1DS2jV" id="6mLeQiRDpKY" role="1NuT2Z">
+      <property role="TrG5h" value="mpsProject" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="6mLeQiRDpKZ" role="1oa70y" />
     </node>
     <node concept="2ScWuX" id="LEy1UHDOrc" role="tmbBb">
       <node concept="3clFbS" id="LEy1UHDOrd" role="2VODD2">
