@@ -355,7 +355,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
       }
     };
     editorContext.getRepository().getModelAccess().executeCommand(canExecute);
-    return !canExecute.getResult();
+    return canExecute.getResult();
   }
 
   private boolean selectNode(SNode node, boolean startPosition) {
