@@ -108,7 +108,7 @@ public abstract class SReferenceBase extends SReference {
     ImmatureReferences.getInstance().remove(this);
     SNode sourceNode = getSourceNode();
     SModel sourceModel = sourceNode.getModel();
-    if (sourceModel == null || sourceModel.getRepository() == null) {
+    if (sourceModel == null) {
       return myImmatureTargetNode == null;
     }
 

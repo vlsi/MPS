@@ -28,6 +28,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.smodel.references.ImmatureReferencesTracker;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.apache.log4j.LogManager;
@@ -106,6 +107,9 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
   }
 
   public void removeAll() {
+    for (TransientSModelDescriptor model : myModelVault.allModels()) {
+      model.makeRefsMature();
+    }
     for (SModel model : myModelVault.allModels()) {
       removeModel(model);
     }
@@ -274,9 +278,11 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
   public final class TransientSModelDescriptor extends EditableSModelBase implements jetbrains.mps.extapi.model.TransientSModel {
     protected volatile jetbrains.mps.smodel.SModel mySModel;
     private boolean wasUnloaded = false;
+    private ImmatureReferencesTracker myRefsTracker = new ImmatureReferencesTracker();
 
     private TransientSModelDescriptor(@NotNull SModelReference modelRef) {
       super(modelRef, new NullDataSource());
+      myRefsTracker.attach(this,false);
     }
 
     @Override
@@ -365,6 +371,7 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
     // unlike unload, doesn't not swap out model data
     private void dropModel() {
+      myRefsTracker.detach();
       if (mySModel != null) {
         LOG.debug("Dropped " + getReference());
         mySModel.setModelDescriptor(null);
@@ -398,6 +405,10 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
     @Override
     protected void reloadContents() {
       throw new UnsupportedOperationException();
+    }
+
+    public void makeRefsMature() {
+      myRefsTracker.makeMature();
     }
   }
 }
