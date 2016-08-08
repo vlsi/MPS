@@ -17,6 +17,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
@@ -27,6 +31,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.structure.plugin.RefactoringRuntime;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class MoveAbstractConceptSpecialization extends StructureSpecializationBase<SAbstractConcept> {
   public Tuples._2<SAbstractConcept, SNodeReference> fetchState(SNode movingNode) {
@@ -48,7 +53,14 @@ public class MoveAbstractConceptSpecialization extends StructureSpecializationBa
     } else {
       throw new IllegalStateException();
     }
-    migrationBuilder.addPart(from, to, createMoveConcept_c4c66o_c0a5a1());
+
+
+    SModule module = SNodeOperations.getModel(from).getModule();
+    assert module instanceof Language;
+    SModel editorModel = LanguageAspect.EDITOR.getOrCreate((Language) module);
+    SModelOperations.addRootNode(editorModel, _quotation_createNode_c4c66o_a0a01a1(from));
+
+    migrationBuilder.addPart(from, to, createMoveConcept_c4c66o_c0a21a1());
   }
   public Collection<SNode> findInstances(final SAbstractConcept concept, SearchScope searchScope) {
     {
@@ -80,7 +92,14 @@ public class MoveAbstractConceptSpecialization extends StructureSpecializationBa
     n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, 0x110356fe029L, "intfc"), (SNode) p0);
     return n1;
   }
-  private static SNode createMoveConcept_c4c66o_c0a5a1() {
+  private static SNode _quotation_createNode_c4c66o_a0a01a1(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de9c932f4e5ab84L, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Default"), null, null, false);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration"), (SNode) parameter_1);
+    return quotedNode_2;
+  }
+  private static SNode createMoveConcept_c4c66o_c0a21a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b6L, "jetbrains.mps.lang.migration.structure.MoveConcept"), null, null, false);
     return n1;
