@@ -28,7 +28,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.ide.findusages.model.scopes.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -123,7 +123,7 @@ public class DeleteNodesHelper {
           public void run() {
             ListSequence.fromList(myNodesToDelete).visitAll(new IVisitor<SNode>() {
               public void visit(SNode it) {
-                SearchResults<SNode> usages = FindUtils.getSearchResults(new EmptyProgressMonitor(), it, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
+                SearchResults<SNode> usages = FindUtils.getSearchResults(new EmptyProgressMonitor(), it, new GlobalScope(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
                 SetSequence.fromSet(results).addSequence(ListSequence.fromList(usages.getSearchResults()));
 
                 if (pi.isCanceled()) {
@@ -131,7 +131,7 @@ public class DeleteNodesHelper {
                 }
 
                 if (SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
-                  SearchResults<SNode> instances = FindUtils.getSearchResults(new EmptyProgressMonitor(), it, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
+                  SearchResults<SNode> instances = FindUtils.getSearchResults(new EmptyProgressMonitor(), it, new GlobalScope(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
                   SetSequence.fromSet(results).addSequence(ListSequence.fromList(instances.getSearchResults()));
                 }
 

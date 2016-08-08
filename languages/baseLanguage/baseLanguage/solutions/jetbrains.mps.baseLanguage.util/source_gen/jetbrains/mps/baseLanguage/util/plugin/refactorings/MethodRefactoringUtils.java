@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.ide.findusages.model.scopes.GlobalScope;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -27,9 +27,9 @@ public class MethodRefactoringUtils {
       }
       SearchResults<SNode> searchResults;
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(method), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-        searchResults = FindUtils.getSearchResults(progressMonitor, method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder");
+        searchResults = FindUtils.getSearchResults(progressMonitor, method, new GlobalScope(), "jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder");
       } else {
-        searchResults = FindUtils.getSearchResults(progressMonitor, method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder");
+        searchResults = FindUtils.getSearchResults(progressMonitor, method, new GlobalScope(), "jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder");
       }
 
       for (SearchResult<SNode> result : ListSequence.fromList(searchResults.getSearchResults())) {
@@ -37,7 +37,7 @@ public class MethodRefactoringUtils {
       }
     }
     if (SNodeOperations.isInstanceOf(method, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"))) {
-      SearchResults<SNode> searchResults = FindUtils.getSearchResults(progressMonitor, method, GlobalScope.getInstance(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
+      SearchResults<SNode> searchResults = FindUtils.getSearchResults(progressMonitor, method, new GlobalScope(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
       for (SearchResult<SNode> result : ListSequence.fromList(searchResults.getSearchResults())) {
         ListSequence.fromList(results).addElement(SNodeOperations.cast(result.getObject(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")));
       }
@@ -45,6 +45,6 @@ public class MethodRefactoringUtils {
     return results;
   }
   public static SearchResults findMethodUsages(SNode method, ProgressMonitor progressMonitor) {
-    return FindUtils.getSearchResults(progressMonitor, method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder");
+    return FindUtils.getSearchResults(progressMonitor, method, new GlobalScope(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder");
   }
 }
