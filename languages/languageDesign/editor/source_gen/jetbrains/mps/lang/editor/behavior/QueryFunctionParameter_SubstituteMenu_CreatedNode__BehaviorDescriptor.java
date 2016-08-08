@@ -36,9 +36,9 @@ public final class QueryFunctionParameter_SubstituteMenu_CreatedNode__BehaviorDe
   }
 
   /*package*/ static SNode getType_id27DJnJtIQ9C(@NotNull SNode __thisNode__) {
-    SNode action = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bcee99dL, "jetbrains.mps.lang.editor.structure.IExtensibleSubstituteMenuPart"), false, false);
+    SNode action = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546aL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart"), false, false);
     if (action != null) {
-      SNode outputConcept = IExtensibleSubstituteMenuPart__BehaviorDescriptor.getCreatedConcept_id6e716hiEcRp.invoke(action);
+      SNode outputConcept = SubstituteMenuPart__BehaviorDescriptor.getOutputConcept_id7mC_uHFK7Hn.invoke(action);
       if (outputConcept != null) {
         return _quotation_createNode_2yhl6z_a0a1a1a0(outputConcept);
       }

@@ -44,8 +44,8 @@ import jetbrains.mps.smodel.SReference;
       if (whereMigrated != null) {
         SLinkOperations.setTarget(annotation, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7ce01982652a98aL, 0x7ce01982652a9f9L, "migratedTo"), whereMigrated);
       }
-      if (SNodeOperations.isInstanceOf(part, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121df5451bL, "jetbrains.mps.lang.actions.structure.SubstituteMenuPart"))) {
-        AttributeOperations.setAttribute(SNodeOperations.cast(part, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121df5451bL, "jetbrains.mps.lang.actions.structure.SubstituteMenuPart")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7ce01982652a98aL, "jetbrains.mps.lang.actions.structure.MigratedToAnnotation")), annotation);
+      if (SNodeOperations.isInstanceOf(part, MetaAdapterFactory.getInterfaceConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x743255fa452e1d4eL, "jetbrains.mps.lang.actions.structure.NodeSubstituteMenuBuilderPart"))) {
+        AttributeOperations.setAttribute(SNodeOperations.cast(part, MetaAdapterFactory.getInterfaceConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x743255fa452e1d4eL, "jetbrains.mps.lang.actions.structure.NodeSubstituteMenuBuilderPart")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7ce01982652a98aL, "jetbrains.mps.lang.actions.structure.MigratedToAnnotation")), annotation);
       } else if (SNodeOperations.isInstanceOf(part, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122837a3cdL, "jetbrains.mps.lang.actions.structure.MenuPart"))) {
         AttributeOperations.setAttribute(SNodeOperations.cast(part, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122837a3cdL, "jetbrains.mps.lang.actions.structure.MenuPart")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7ce01982652a98aL, "jetbrains.mps.lang.actions.structure.MigratedToAnnotation")), annotation);
       }
@@ -54,8 +54,8 @@ import jetbrains.mps.smodel.SReference;
       if (whereMigrated != null) {
         SLinkOperations.setTarget(annotation, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7ce019826543db5L, 0x7ce019826543db6L, "migrateTo"), whereMigrated);
       }
-      if (SNodeOperations.isInstanceOf(part, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121df5451bL, "jetbrains.mps.lang.actions.structure.SubstituteMenuPart"))) {
-        AttributeOperations.setAttribute(SNodeOperations.cast(part, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121df5451bL, "jetbrains.mps.lang.actions.structure.SubstituteMenuPart")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7ce019826543db5L, "jetbrains.mps.lang.actions.structure.MigrateManuallyAnnotation")), annotation);
+      if (SNodeOperations.isInstanceOf(part, MetaAdapterFactory.getInterfaceConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x743255fa452e1d4eL, "jetbrains.mps.lang.actions.structure.NodeSubstituteMenuBuilderPart"))) {
+        AttributeOperations.setAttribute(SNodeOperations.cast(part, MetaAdapterFactory.getInterfaceConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x743255fa452e1d4eL, "jetbrains.mps.lang.actions.structure.NodeSubstituteMenuBuilderPart")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7ce019826543db5L, "jetbrains.mps.lang.actions.structure.MigrateManuallyAnnotation")), annotation);
       } else if (SNodeOperations.isInstanceOf(part, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122837a3cdL, "jetbrains.mps.lang.actions.structure.MenuPart"))) {
         AttributeOperations.setAttribute(SNodeOperations.cast(part, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122837a3cdL, "jetbrains.mps.lang.actions.structure.MenuPart")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7ce019826543db5L, "jetbrains.mps.lang.actions.structure.MigrateManuallyAnnotation")), annotation);
       }
@@ -141,7 +141,7 @@ import jetbrains.mps.smodel.SReference;
         SNode addConceptPart = _quotation_createNode_uzg6hh_a0a0a0a2a11(SLinkOperations.getTarget(SNodeOperations.cast(oldPart, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112c58682cfL, "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart")), MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112c58682cfL, 0x112c58871bdL, "concept")));
         result.add(addConceptPart);
         addMigrationAnnotation(oldPart, addConceptPart, true);
-      } else {
+      } else if (!(SNodeOperations.isInstanceOf(oldPart, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122f4e71c0L, "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart")))) {
         addMigrationAnnotation(oldPart, whereMigrateTo, false);
       }
     }
