@@ -51,7 +51,7 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
     if (parameterObject instanceof  SNode){
       return ((SNode) parameterObject);
     }
-    return null;
+    return getOutputConcept();
   }
 
   @Override
@@ -66,11 +66,7 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
 
   @Override
   public Object getParameterObject() {
-    final SNode referentNode = CompletionActionItemUtil.getReferentNode(myActionItem);
-    if (referentNode != null) {
-      return referentNode;
-    }
-    return getOutputConcept();
+    return CompletionActionItemUtil.getReferentNode(myActionItem);
   }
 
   @Override
