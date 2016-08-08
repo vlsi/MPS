@@ -15160,18 +15160,6 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
-      <node concept="3F0ifn" id="7mC_uHFK8$7" role="3EZMnx">
-        <property role="3F0ifm" value=")" />
-        <ref role="1k5W1q" node="hFCSUmN" resolve="RightParen" />
-        <node concept="3Xmtl4" id="6sfXVdVSQTV" role="3F10Kt">
-          <node concept="1wgc9g" id="6sfXVdVSQU4" role="3XvnJa">
-            <ref role="1wgcnl" node="4VK1yxGZqxI" resolve="EditorKeyWordForeground" />
-          </node>
-        </node>
-        <node concept="ljvvj" id="Cy80HmMgWr" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
       <node concept="3EZMnI" id="7u5_96XhUBV" role="3EZMnx">
         <node concept="lj46D" id="7u5_96XhUBW" role="3F10Kt">
           <property role="VOm3f" value="true" />

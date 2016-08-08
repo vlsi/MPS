@@ -3362,9 +3362,11 @@
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="matchingText" />
       <property role="3TUv4t" value="false" />
-      <node concept="10Nm6u" id="2cHV7yHFtCW" role="33vP2m" />
       <node concept="17QB3L" id="2cHV7yHFspf" role="1tU5fm" />
       <node concept="3Tm1VV" id="1wEcoXjpy7e" role="1B3o_S" />
+      <node concept="Xl_RD" id="3PLPHlN4DXw" role="33vP2m">
+        <property role="Xl_RC" value="newChild1" />
+      </node>
     </node>
     <node concept="3Tm1VV" id="2cHV7yHCgZ_" role="1B3o_S" />
   </node>

@@ -15839,30 +15839,41 @@
     <node concept="3aamgX" id="59pBc0SIJc9" role="3acgRq">
       <ref role="30HIoZ" to="tpc2:34UidAm8QMj" resolve="PredefinedSelector" />
       <node concept="gft3U" id="59pBc0SIJca" role="1lVwrX">
-        <node concept="3cpWs3" id="39yDt$WkspH" role="gfFT$">
-          <node concept="3cpWs3" id="39yDt$XyyDt" role="3uHU7B">
-            <node concept="Xl_RD" id="39yDt$XyyJ2" role="3uHU7w">
+        <node concept="3cpWs3" id="1kjMAFr7Q5G" role="gfFT$">
+          <node concept="10M0yZ" id="1kjMAFr7RV0" role="3uHU7w">
+            <ref role="1PxDUh" to="lwvz:~SelectionManager" resolve="SelectionManager" />
+            <ref role="3cqZAo" to="lwvz:~SelectionManager.FIRST_CELL" resolve="FIRST_CELL" />
+          </node>
+          <node concept="3cpWs3" id="1kjMAFr9drt" role="3uHU7B">
+            <node concept="Xl_RD" id="1kjMAFr9drA" role="3uHU7w">
               <property role="Xl_RC" value="|" />
             </node>
-            <node concept="3cpWs3" id="39yDt$WkrQT" role="3uHU7B">
-              <node concept="3cpWs3" id="39yDt$XyyeQ" role="3uHU7B">
-                <node concept="Xl_RD" id="39yDt$Xyyfi" role="3uHU7w">
+            <node concept="3cpWs3" id="39yDt$WkspH" role="3uHU7B">
+              <node concept="3cpWs3" id="39yDt$XyyDt" role="3uHU7B">
+                <node concept="Xl_RD" id="39yDt$XyyJ2" role="3uHU7w">
                   <property role="Xl_RC" value="|" />
                 </node>
-                <node concept="10M0yZ" id="39yDt$Wksas" role="3uHU7B">
-                  <ref role="1PxDUh" to="lwvz:~SelectionManager" resolve="SelectionManager" />
-                  <ref role="3cqZAo" to="lwvz:~SelectionManager.FIRST_ERROR_CELL" resolve="FIRST_ERROR_CELL" />
+                <node concept="3cpWs3" id="39yDt$WkrQT" role="3uHU7B">
+                  <node concept="3cpWs3" id="39yDt$XyyeQ" role="3uHU7B">
+                    <node concept="Xl_RD" id="39yDt$Xyyfi" role="3uHU7w">
+                      <property role="Xl_RC" value="|" />
+                    </node>
+                    <node concept="10M0yZ" id="39yDt$Wksas" role="3uHU7B">
+                      <ref role="1PxDUh" to="lwvz:~SelectionManager" resolve="SelectionManager" />
+                      <ref role="3cqZAo" to="lwvz:~SelectionManager.FIRST_ERROR_CELL" resolve="FIRST_ERROR_CELL" />
+                    </node>
+                  </node>
+                  <node concept="10M0yZ" id="39yDt$WksaR" role="3uHU7w">
+                    <ref role="1PxDUh" to="lwvz:~SelectionManager" resolve="SelectionManager" />
+                    <ref role="3cqZAo" to="lwvz:~SelectionManager.FOCUS_POLICY_CELL" resolve="FOCUS_POLICY_CELL" />
+                  </node>
                 </node>
               </node>
-              <node concept="10M0yZ" id="39yDt$WksaR" role="3uHU7w">
+              <node concept="10M0yZ" id="39yDt$Wksvm" role="3uHU7w">
+                <ref role="3cqZAo" to="lwvz:~SelectionManager.FIRST_EDITABLE_CELL" resolve="FIRST_EDITABLE_CELL" />
                 <ref role="1PxDUh" to="lwvz:~SelectionManager" resolve="SelectionManager" />
-                <ref role="3cqZAo" to="lwvz:~SelectionManager.FOCUS_POLICY_CELL" resolve="FOCUS_POLICY_CELL" />
               </node>
             </node>
-          </node>
-          <node concept="10M0yZ" id="39yDt$Wksvm" role="3uHU7w">
-            <ref role="3cqZAo" to="lwvz:~SelectionManager.FIRST_EDITABLE_CELL" resolve="FIRST_EDITABLE_CELL" />
-            <ref role="1PxDUh" to="lwvz:~SelectionManager" resolve="SelectionManager" />
           </node>
         </node>
       </node>

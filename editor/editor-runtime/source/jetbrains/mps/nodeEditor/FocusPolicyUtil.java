@@ -52,6 +52,9 @@ public class FocusPolicyUtil {
     while (focusedCell instanceof EditorCell_Collection && ((EditorCell_Collection) focusedCell).isTransparentCollection()) {
       focusedCell = ((EditorCell_Collection) focusedCell).firstCell();
     }
+    if (!hasFocusPolicy(focusedCell)) {
+      return null;
+    }
     return focusedCell;
   }
 

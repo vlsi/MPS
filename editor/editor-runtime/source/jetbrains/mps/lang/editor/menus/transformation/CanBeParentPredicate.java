@@ -63,7 +63,7 @@ public class CanBeParentPredicate implements Predicate<SAbstractConcept> {
     if (outputConceptSourceNode == null) {
       return true;
     }
-    return myLinkDeclarationNode == null || ModelConstraints.canBeParent(myParentNode, outputConceptSourceNode, myLinkDeclarationNode, null, null) &&
+    return (myLinkDeclarationNode == null || ModelConstraints.canBeParent(myParentNode, outputConceptSourceNode, myLinkDeclarationNode, null, null)) &&
         ModelConstraints.canBeAncestor(myParentNode, null, outputConceptSourceNode, null);
   }
 }

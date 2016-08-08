@@ -1023,6 +1023,9 @@
     <property role="R4oN_" value="common init block" />
     <property role="EcuMT" value="1178781654714" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="3PLPHlN3_I5" role="PzmwI">
+      <ref role="PrY4T" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hat4xDW">
     <property role="TrG5h" value="QueryFunction_SubstituteVariableInitializer" />
@@ -1276,6 +1279,9 @@
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="1203349485621" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="3PLPHlN2NxA" role="PzmwI">
+      <ref role="PrY4T" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hzcQc_2">
     <property role="TrG5h" value="QueryFunction_ReturnSmallPart" />

@@ -71,7 +71,7 @@
       <property role="20kJfa" value="addMenu_conceptSubstitute" />
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="3213804652589512225" />
-      <ref role="20lvS9" node="2d_KkSmsy3T" resolve="ActionTestChild1" />
+      <ref role="20lvS9" node="2d_KkSmsqBa" resolve="ActionTestAbstractChild" />
     </node>
     <node concept="1TJgyj" id="2MpI$RnczQV" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

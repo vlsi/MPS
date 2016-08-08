@@ -13,6 +13,9 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.descriptor.NamedMenuId;
+import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -946,6 +949,1022 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
     return myHints;
   }
 
+  @NotNull
+  @Override
+  public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_xbvbvu_a0g.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new AbstractClassifierReference_TransformationMenu());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new AbstractCreator_TransformationMenu());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new AnonymousClass_TransformationMenu());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new ArrayCreator_TransformationMenu());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new ArrayType_TransformationMenu());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new BinaryOperation_TransformationMenu());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new BreakStatement_TransformationMenu());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new CatchClause_TransformationMenu());
+          }
+          break;
+        case 8:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new ClassConcept_TransformationMenu());
+          }
+          break;
+        case 9:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new ClassCreator_TransformationMenu());
+          }
+          break;
+        case 10:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new ClassifierType_TransformationMenu());
+          }
+          break;
+        case 11:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new ContinueStatement_TransformationMenu());
+          }
+          break;
+        case 12:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new DefaultClassCreator_TransformationMenu());
+          }
+          break;
+        case 13:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new DimensionExpression_TransformationMenu());
+          }
+          break;
+        case 14:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new ElsifClause_TransformationMenu());
+          }
+          break;
+        case 15:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new Expression_TransformationMenu());
+          }
+          break;
+        case 16:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new FieldDeclaration_TransformationMenu());
+          }
+          break;
+        case 17:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new GenericDeclaration_TransformationMenu());
+          }
+          break;
+        case 18:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new IOperation_TransformationMenu());
+          }
+          break;
+        case 19:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new IncompleteMemberDeclaration_TransformationMenu());
+          }
+          break;
+        case 20:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new InstanceMethodDeclaration_TransformationMenu());
+          }
+          break;
+        case 21:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new Interface_TransformationMenu());
+          }
+          break;
+        case 22:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new LocalMethodCall_TransformationMenu());
+          }
+          break;
+        case 23:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new MethodDeclaration_TransformationMenu());
+          }
+          break;
+        case 24:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new PlaceholderMember_TransformationMenu());
+          }
+          break;
+        case 25:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new ReturnStatement_TransformationMenu());
+          }
+          break;
+        case 26:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new Statement_TransformationMenu());
+          }
+          break;
+        case 27:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new StaticFieldDeclaration_TransformationMenu());
+          }
+          break;
+        case 28:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new SwitchStatement_TransformationMenu());
+          }
+          break;
+        case 29:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new ThisExpression_TransformationMenu());
+          }
+          break;
+        case 30:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new TryCatchStatement_TransformationMenu());
+          }
+          break;
+        case 31:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new TryStatement_TransformationMenu());
+          }
+          break;
+        case 32:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new Type_TransformationMenu());
+          }
+          break;
+        case 33:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new VariableDeclaration_TransformationMenu());
+          }
+          break;
+        case 34:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new VariableReference_TransformationMenu());
+          }
+          break;
+        case 35:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new Visibility_TransformationMenu());
+          }
+          break;
+        case 36:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new WildCardType_TransformationMenu());
+          }
+          break;
+        default:
+      }
+    }
+    return Collections.<TransformationMenu>emptyList();
+  }
+  @NotNull
+  @Override
+  public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId) {
+    {
+      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+      Integer preIndex = indices_xbvbvu_a0h.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new loopLabels()});
+              default:
+            }
+          }
+          break;
+        case 1:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new AddAnnotationMemberDefaultValue()});
+              default:
+            }
+          }
+          break;
+        case 2:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0c3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new AnonymousClass_ApplySideTransforms()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new expressionRTAfterAnonymous()});
+              default:
+            }
+          }
+          break;
+        case 3:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0d3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new AddSquareBracketsToarrayCreatorWithInitializer()});
+              default:
+            }
+          }
+          break;
+        case 4:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0e3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new AddThrowsToMethods()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new AddThrowsToMethods_ext_5()});
+              default:
+            }
+          }
+          break;
+        case 5:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0f3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new convertToTry()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new tryCatch_CatchClause()});
+              default:
+            }
+          }
+          break;
+        case 6:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0g3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new ClassConceptModifiersExtendsAndImplements()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new ClassConceptModifiersExtendsAndImplements_ext_3()});
+              case 2:
+                return Arrays.asList(new TransformationMenu[]{new ClassConceptModifiersExtendsAndImplements_ext_4()});
+              case 3:
+                return Arrays.asList(new TransformationMenu[]{new ClassConceptModifiersExtendsAndImplements_ext_5()});
+              case 4:
+                return Arrays.asList(new TransformationMenu[]{new ClassConcept_ApplySideTransforms()});
+              default:
+            }
+          }
+          break;
+        case 7:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0h3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new ClassCreator_ApplySideTransforms()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new newExpression_ClassCreator_ext_2()});
+              default:
+            }
+          }
+          break;
+        case 8:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0i3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new ClassifierClassExpressionToArray()});
+              default:
+            }
+          }
+          break;
+        case 9:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0j3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new ExtendedClassImplementTransform()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new addGenericParameter()});
+              case 2:
+                return Arrays.asList(new TransformationMenu[]{new binaryOperations()});
+              case 3:
+                return Arrays.asList(new TransformationMenu[]{new classifierTypeInLocalVarRT()});
+              case 4:
+                return Arrays.asList(new TransformationMenu[]{new csharp_rTransform()});
+              default:
+            }
+          }
+          break;
+        case 10:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0k3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new ConstructorDeclaration_ApplySideTransforms()});
+              default:
+            }
+          }
+          break;
+        case 11:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0l3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new newExpression_DefaultClassCreator_ext_2()});
+              default:
+            }
+          }
+          break;
+        case 12:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0m3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new EnumClass_ApplySideTransforms()});
+              default:
+            }
+          }
+          break;
+        case 13:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0n3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new EnumConstantDeclaration_ApplySideTransforms()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new enumConstant_rt()});
+              default:
+            }
+          }
+          break;
+        case 14:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0o3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new Expression_to_type_Cast()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new SubstringExpression_Transform()});
+              case 2:
+                return Arrays.asList(new TransformationMenu[]{new UnaryMinusLeftTransform()});
+              case 3:
+                return Arrays.asList(new TransformationMenu[]{new addComment_Expression()});
+              case 4:
+                return Arrays.asList(new TransformationMenu[]{new arrayAccess()});
+              case 5:
+                return Arrays.asList(new TransformationMenu[]{new assert_()});
+              case 6:
+                return Arrays.asList(new TransformationMenu[]{new assignments()});
+              case 7:
+                return Arrays.asList(new TransformationMenu[]{new binaryOperations_Expression()});
+              case 8:
+                return Arrays.asList(new TransformationMenu[]{new csharp_rTransform_Expression()});
+              case 9:
+                return Arrays.asList(new TransformationMenu[]{new dotExpression()});
+              case 10:
+                return Arrays.asList(new TransformationMenu[]{new expressionStatement()});
+              case 11:
+                return Arrays.asList(new TransformationMenu[]{new expressionToNotExpression()});
+              case 12:
+                return Arrays.asList(new TransformationMenu[]{new expressionToParenthesis()});
+              case 13:
+                return Arrays.asList(new TransformationMenu[]{new expression_to_varaible_declaration()});
+              case 14:
+                return Arrays.asList(new TransformationMenu[]{new instanceOf()});
+              case 15:
+                return Arrays.asList(new TransformationMenu[]{new postfix()});
+              case 16:
+                return Arrays.asList(new TransformationMenu[]{new prefix()});
+              case 17:
+                return Arrays.asList(new TransformationMenu[]{new ternaryOperator()});
+              default:
+            }
+          }
+          break;
+        case 15:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0p3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new FieldDeclaration_ApplySideTransforms()});
+              default:
+            }
+          }
+          break;
+        case 16:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0q3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new genericDeclaration_ext_4()});
+              default:
+            }
+          }
+          break;
+        case 17:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0r3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new AddMethodCallTypeArgument()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new AddMethodCallTypeArgument_ext_1()});
+              default:
+            }
+          }
+          break;
+        case 18:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0s3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new ifStatement()});
+              default:
+            }
+          }
+          break;
+        case 19:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0t3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new IncompleteMemberDeclaration_ApplySideTransforms()});
+              default:
+            }
+          }
+          break;
+        case 20:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0u3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new InstanceMethodCallOperation_ApplySideTransforms()});
+              default:
+            }
+          }
+          break;
+        case 21:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0v3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new InstanceMethodDeclaration_ApplySideTransforms()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new InstanceMethodDeclaration_ApplySideTransforms_1()});
+              default:
+            }
+          }
+          break;
+        case 22:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0w3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new InterfaceModifiersAndExtends_ext_2()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new InterfaceModifiersAndExtends_ext_4()});
+              case 2:
+                return Arrays.asList(new TransformationMenu[]{new InterfaceModifiersAndExtends_ext_5()});
+              case 3:
+                return Arrays.asList(new TransformationMenu[]{new Interface_ApplySideTransforms()});
+              default:
+            }
+          }
+          break;
+        case 23:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0x3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new StaticFieldDeclaration_ApplySideTransforms()});
+              default:
+            }
+          }
+          break;
+        case 24:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0y3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new StaticMethodDeclaration_ApplySideTransforms()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new StaticMethodDeclaration_ApplySideTransforms_1()});
+              default:
+            }
+          }
+          break;
+        case 25:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0z3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new SwitchStatement_ApplySideTransforms()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new switchLabels()});
+              default:
+            }
+          }
+          break;
+        case 26:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0ab3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new convertToTry_TryCatchStatement()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new tryCatch_TryCatchStatement()});
+              default:
+            }
+          }
+          break;
+        case 27:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0bb3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new AddFieldModifiersOnTypes()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new AddMethodModifiersOnTypes()});
+              case 2:
+                return Arrays.asList(new TransformationMenu[]{new AddStaticFieldModifiersOnTypes()});
+              case 3:
+                return Arrays.asList(new TransformationMenu[]{new addComment_Type()});
+              case 4:
+                return Arrays.asList(new TransformationMenu[]{new addGenericTypeDeclaration_Type_default()});
+              case 5:
+                return Arrays.asList(new TransformationMenu[]{new arrayBrackets()});
+              case 6:
+                return Arrays.asList(new TransformationMenu[]{new finalOnTypesInVariables()});
+              case 7:
+                return Arrays.asList(new TransformationMenu[]{new instanceOfIntoTernary()});
+              case 8:
+                return Arrays.asList(new TransformationMenu[]{new variableArityType()});
+              default:
+            }
+          }
+          break;
+        case 28:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0cb3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new ArrayAndGenericTypesFromTypesInVarDeclarations()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new VariableDeclaration_ApplySideTransforms()});
+              case 2:
+                return Arrays.asList(new TransformationMenu[]{new variableDeclarationInitializer()});
+              default:
+            }
+          }
+          break;
+        case 29:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0db3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new LocalInstanceFieldReference_Transform()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new convertVariableAssignmentToVarDeclaration()});
+              default:
+            }
+          }
+          break;
+        case 30:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0eb3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new Visibility_ext_1_RTransform_Menu()});
+              case 1:
+                return Arrays.asList(new TransformationMenu[]{new addAbstract()});
+              case 2:
+                return Arrays.asList(new TransformationMenu[]{new addGenericTypeDeclaration()});
+              default:
+            }
+          }
+          break;
+        case 31:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0fb3a0a7, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new WildCardType_ApplySideTransforms()});
+              default:
+            }
+          }
+          break;
+        default:
+      }
+    }
+
+    return Collections.<TransformationMenu>emptyList();
+  }
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_xbvbvu_a0i.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new AbstractCreator_SubstituteMenu());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new AnnotationInstanceExpression_SubstituteMenu());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new AnnotationInstanceValue_SubstituteMenu());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new AnonymousClass_SubstituteMenu());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new AnonymousClassCreator_SubstituteMenu());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new ArrayLiteral_SubstituteMenu());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new ArrayType_SubstituteMenu());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new AsExpression_SubstituteMenu());
+          }
+          break;
+        case 8:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new BLBottomType_SubstituteMenu());
+          }
+          break;
+        case 9:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new BooleanConstant_SubstituteMenu());
+          }
+          break;
+        case 10:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new BreakStatement_SubstituteMenu());
+          }
+          break;
+        case 11:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new CastExpression_SubstituteMenu());
+          }
+          break;
+        case 12:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new ClassifierClassExpression_SubstituteMenu());
+          }
+          break;
+        case 13:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new ClassifierMember_SubstituteMenu());
+          }
+          break;
+        case 14:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new ClassifierType_SubstituteMenu());
+          }
+          break;
+        case 15:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new CommentedStatement_SubstituteMenu());
+          }
+          break;
+        case 16:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new CommentedStatementsBlock_SubstituteMenu());
+          }
+          break;
+        case 17:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_SubstituteMenu());
+          }
+          break;
+        case 18:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new ContinueStatement_SubstituteMenu());
+          }
+          break;
+        case 19:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new DotExpression_SubstituteMenu());
+          }
+          break;
+        case 20:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new EnumValueOfExpression_SubstituteMenu());
+          }
+          break;
+        case 21:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new EnumValuesExpression_SubstituteMenu());
+          }
+          break;
+        case 22:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new Expression_SubstituteMenu());
+          }
+          break;
+        case 23:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new FloatingPointConstant_SubstituteMenu());
+          }
+          break;
+        case 24:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new FloatingPointFloatConstant_SubstituteMenu());
+          }
+          break;
+        case 25:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new IfStatement_SubstituteMenu());
+          }
+          break;
+        case 26:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new ImplicitAnnotationInstanceValue_SubstituteMenu());
+          }
+          break;
+        case 27:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new IncompleteMemberDeclaration_SubstituteMenu());
+          }
+          break;
+        case 28:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new IntegerConstant_SubstituteMenu());
+          }
+          break;
+        case 29:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new LocalInstanceFieldReference_SubstituteMenu());
+          }
+          break;
+        case 30:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new LocalInstanceMethodCall_SubstituteMenu());
+          }
+          break;
+        case 31:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new LocalStaticFieldReference_SubstituteMenu());
+          }
+          break;
+        case 32:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new LocalStaticMethodCall_SubstituteMenu());
+          }
+          break;
+        case 33:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new LocalVariableDeclaration_SubstituteMenu());
+          }
+          break;
+        case 34:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new LocalVariableReference_SubstituteMenu());
+          }
+          break;
+        case 35:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new LongLiteral_SubstituteMenu());
+          }
+          break;
+        case 36:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new NullType_SubstituteMenu());
+          }
+          break;
+        case 37:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new ParameterDeclaration_SubstituteMenu());
+          }
+          break;
+        case 38:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new ParameterReference_SubstituteMenu());
+          }
+          break;
+        case 39:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new PlaceholderMember_SubstituteMenu());
+          }
+          break;
+        case 40:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new PrimitiveClassExpression_SubstituteMenu());
+          }
+          break;
+        case 41:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new RemarkStatement_SubstituteMenu());
+          }
+          break;
+        case 42:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new Statement_SubstituteMenu());
+          }
+          break;
+        case 43:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new StatementCommentPart_SubstituteMenu());
+          }
+          break;
+        case 44:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new StatementList_SubstituteMenu());
+          }
+          break;
+        case 45:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new StaticFieldDeclaration_SubstituteMenu());
+          }
+          break;
+        case 46:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new StaticMethodDeclaration_SubstituteMenu());
+          }
+          break;
+        case 47:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new StringLiteral_SubstituteMenu());
+          }
+          break;
+        case 48:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new StringToken_SubstituteMenu());
+          }
+          break;
+        case 49:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new StubStatementList_SubstituteMenu());
+          }
+          break;
+        case 50:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new SubstringExpression_SubstituteMenu());
+          }
+          break;
+        case 51:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new SuperConstructorInvocation_SubstituteMenu());
+          }
+          break;
+        case 52:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new TextCommentPart_SubstituteMenu());
+          }
+          break;
+        case 53:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new ThisConstructorInvocation_SubstituteMenu());
+          }
+          break;
+        case 54:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new Type_SubstituteMenu());
+          }
+          break;
+        case 55:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new UndefinedType_SubstituteMenu());
+          }
+          break;
+        case 56:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new UnknownConsCall_SubstituteMenu());
+          }
+          break;
+        case 57:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new UnknownDotCall_SubstituteMenu());
+          }
+          break;
+        case 58:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new UnknownLocalCall_SubstituteMenu());
+          }
+          break;
+        case 59:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new UnknownNameRef_SubstituteMenu());
+          }
+          break;
+        case 60:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new UnknownNew_SubstituteMenu());
+          }
+          break;
+        case 61:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new UnresolvedNameReference_SubstituteMenu());
+          }
+          break;
+        case 62:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new ValueParameter_SubstituteMenu());
+          }
+          break;
+        case 63:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new Visibility_SubstituteMenu());
+          }
+          break;
+        default:
+      }
+    }
+    return Collections.<SubstituteMenu>emptyList();
+  }
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedMenuId menuId) {
+    {
+      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+      Integer preIndex = indices_xbvbvu_a0j.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a3a0a9, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new SubstituteMenu[]{new StaticFieldInClassifier()});
+              case 1:
+                return Arrays.asList(new SubstituteMenu[]{new ctor_IncompleteMember()});
+              case 2:
+                return Arrays.asList(new SubstituteMenu[]{new ctor_IncompleteMemberInInterface()});
+              case 3:
+                return Arrays.asList(new SubstituteMenu[]{new ctor_InterfaceMemberBasedOnIncomplete()});
+              case 4:
+                return Arrays.asList(new SubstituteMenu[]{new ctor_MemberBasedOnIncomplete()});
+              default:
+            }
+          }
+          break;
+        case 1:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b3a0a9, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new SubstituteMenu[]{new CreateEnumConstantReferences()});
+              case 1:
+                return Arrays.asList(new SubstituteMenu[]{new ParensAroundEmptyExpression()});
+              case 2:
+                return Arrays.asList(new SubstituteMenu[]{new PrimitiveClassExpression()});
+              case 3:
+                return Arrays.asList(new SubstituteMenu[]{new conceptFunctionParameters()});
+              case 4:
+                return Arrays.asList(new SubstituteMenu[]{new constants()});
+              case 5:
+                return Arrays.asList(new SubstituteMenu[]{new liveTemplates_Expression()});
+              case 6:
+                return Arrays.asList(new SubstituteMenu[]{new new_()});
+              case 7:
+                return Arrays.asList(new SubstituteMenu[]{new qualifiedSuperMethodCallExpression()});
+              case 8:
+                return Arrays.asList(new SubstituteMenu[]{new smartCast()});
+              case 9:
+                return Arrays.asList(new SubstituteMenu[]{new staticAccess()});
+              case 10:
+                return Arrays.asList(new SubstituteMenu[]{new thisExpression()});
+              case 11:
+                return Arrays.asList(new SubstituteMenu[]{new valueParameter()});
+              default:
+            }
+          }
+          break;
+        case 2:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0c3a0a9, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new SubstituteMenu[]{new expressionStatement_()});
+              case 1:
+                return Arrays.asList(new SubstituteMenu[]{new ifStatement_()});
+              case 2:
+                return Arrays.asList(new SubstituteMenu[]{new localVariables()});
+              case 3:
+                return Arrays.asList(new SubstituteMenu[]{new localVariablesWithType()});
+              case 4:
+                return Arrays.asList(new SubstituteMenu[]{new loopStatements()});
+              case 5:
+                return Arrays.asList(new SubstituteMenu[]{new thisAndSuperConstructor()});
+              default:
+            }
+          }
+          break;
+        default:
+      }
+    }
+
+    return Collections.<SubstituteMenu>emptyList();
+  }
 
   private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
     HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
@@ -957,8 +1976,47 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   }
   private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0b = buildConceptIndices(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab844af9bL, "jetbrains.mps.baseLanguage.structure.AbstractCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1196792d150L, "jetbrains.mps.baseLanguage.structure.AbstractOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x19659b074928781eL, "jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71a2770L, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71b1af4L, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6a17a27L, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11126b40c25L, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x115f7830a32a65e7L, "jetbrains.mps.baseLanguage.structure.ArrayClassExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x483ee9d7f09580d6L, "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x113e4952f12L, "jetbrains.mps.baseLanguage.structure.ArrayCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cd01b77ddL, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1197781411dL, "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a770dc0dL, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d00538bdfL, "jetbrains.mps.baseLanguage.structure.AsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10e50ecba3dL, "jetbrains.mps.baseLanguage.structure.AssertStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1210c38a8adL, "jetbrains.mps.baseLanguage.structure.BLBottomType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4c4b92003e49a704L, "jetbrains.mps.baseLanguage.structure.BaseVariableReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d6d026f5fL, "jetbrains.mps.baseLanguage.structure.BitwiseNotExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, "jetbrains.mps.baseLanguage.structure.BreakStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, "jetbrains.mps.baseLanguage.structure.CastExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, "jetbrains.mps.baseLanguage.structure.CatchClause"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, "jetbrains.mps.baseLanguage.structure.CharConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L, "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c7edb2aa8L, "jetbrains.mps.baseLanguage.structure.ClosureParameter"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c7edba8b3L, "jetbrains.mps.baseLanguage.structure.ClosureParameterReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11ef4675fccL, "jetbrains.mps.baseLanguage.structure.CommentedStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1121e2102fdL, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbf3043726L, "jetbrains.mps.baseLanguage.structure.ContinueStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b8f1b18eL, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3b7a2005a14cfe5eL, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117e0abf7abL, "jetbrains.mps.baseLanguage.structure.DefaultGetAccessor"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b7633177L, "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117e16a7273L, "jetbrains.mps.baseLanguage.structure.DefaultSetAccessor"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x113e4b2dfdaL, "jetbrains.mps.baseLanguage.structure.DimensionExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11232674988L, "jetbrains.mps.baseLanguage.structure.DoWhileStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, "jetbrains.mps.baseLanguage.structure.ElsifClause"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, "jetbrains.mps.baseLanguage.structure.EnumConstantReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d1e5db156L, "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d1e4bce56L, "jetbrains.mps.baseLanguage.structure.EnumValuesExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x144805fc3e36da43L, "jetbrains.mps.baseLanguage.structure.EscapeOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102cb19a434L, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219b9L, "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a698082feL, "jetbrains.mps.baseLanguage.structure.ForStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a6933ce33L, "jetbrains.mps.baseLanguage.structure.ForeachStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b9245fc5L, "jetbrains.mps.baseLanguage.structure.GetAccessor"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129761e073L, "jetbrains.mps.baseLanguage.structure.HexIntegerLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x23cf7b405b3b9761L, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64a1ef64cd9b42ceL, "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32175ac2e6fcc181L, "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2052c4520af308e1L, "jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbff03700L, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, "jetbrains.mps.baseLanguage.structure.JavaImport"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x515d7a8d927e9fb3L, "jetbrains.mps.baseLanguage.structure.LocalPropertyReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3b418722717710b4L, "jetbrains.mps.baseLanguage.structure.LongLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x50c493bf9552f6aL, "jetbrains.mps.baseLanguage.structure.LoopLabel"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x50c493bf9555129L, "jetbrains.mps.baseLanguage.structure.LoopLabelReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae9d53dL, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x650f9fedfcb5b664L, "jetbrains.mps.baseLanguage.structure.NestedNewExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10d68c2ecd3L, "jetbrains.mps.baseLanguage.structure.Number"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1458378889e6d166L, "jetbrains.mps.baseLanguage.structure.PlaceholderMember"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11aded05fe6L, "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11adecdb4f0L, "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a472f0e8L, "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a46df580L, "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3f57ea36bd70a4e1L, "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b744dafeL, "jetbrains.mps.baseLanguage.structure.Property"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b821eaaeL, "jetbrains.mps.baseLanguage.structure.PropertyReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2463999e524f3bf5L, "jetbrains.mps.baseLanguage.structure.PropertyValueReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x37f722a7ce38076aL, "jetbrains.mps.baseLanguage.structure.QualifiedSuperMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, "jetbrains.mps.baseLanguage.structure.RemarkStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117bd9ac3d9L, "jetbrains.mps.baseLanguage.structure.SetAccessor"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af16ff67L, "jetbrains.mps.baseLanguage.structure.StatementCommentPart"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c7538039dL, "jetbrains.mps.baseLanguage.structure.StaticInitializer"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47de7e99L, "jetbrains.mps.baseLanguage.structure.StringBooleanOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5eb0cab441189a51L, "jetbrains.mps.baseLanguage.structure.StringToken"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4975dc2bdcfa0c49L, "jetbrains.mps.baseLanguage.structure.StubStatementList"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47df21f3L, "jetbrains.mps.baseLanguage.structure.SubstringExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d512e1eL, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9d78b55aaL, "jetbrains.mps.baseLanguage.structure.SuperMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02cdd1bL, "jetbrains.mps.baseLanguage.structure.SwitchCase"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1106df1d8d8L, "jetbrains.mps.baseLanguage.structure.SynchronizedStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1127b878882L, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, "jetbrains.mps.baseLanguage.structure.ThisExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f3ee082d8L, "jetbrains.mps.baseLanguage.structure.ThrowStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47e0122aL, "jetbrains.mps.baseLanguage.structure.TrimOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, "jetbrains.mps.baseLanguage.structure.TryStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6fea7de6103549b1L, "jetbrains.mps.baseLanguage.structure.UnaryMinus"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x431d52a5d09a4ea9L, "jetbrains.mps.baseLanguage.structure.UndefinedType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x7e4a5cff51167b74L, "jetbrains.mps.baseLanguage.structure.UnknownConsCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x245faa02186fc7b5L, "jetbrains.mps.baseLanguage.structure.UnknownDotCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x245faa02186fc5d6L, "jetbrains.mps.baseLanguage.structure.UnknownLocalCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x759937a5973279b7L, "jetbrains.mps.baseLanguage.structure.UnknownNameRef"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2dda7700ec3ae154L, "jetbrains.mps.baseLanguage.structure.UnknownNew"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x28e9fc3ba3fa3940L, "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110daeaa84aL, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d0053f19bL, "jetbrains.mps.baseLanguage.structure.UsingStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117dd047c70L, "jetbrains.mps.baseLanguage.structure.ValueParameter"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, "jetbrains.mps.baseLanguage.structure.VariableArityType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af957d96eL, "jetbrains.mps.baseLanguage.structure.Visibility"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfaa4bf0f2fL, "jetbrains.mps.baseLanguage.structure.WhileStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae5f4a3L, "jetbrains.mps.baseLanguage.structure.WildCardType"));
   private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0d = buildConceptIndices(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, "jetbrains.mps.baseLanguage.structure.IVisible"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9d78b55aaL, "jetbrains.mps.baseLanguage.structure.SuperMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x759937a5973279b7L, "jetbrains.mps.baseLanguage.structure.UnknownNameRef"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0g = buildConceptIndices(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab844af9bL, "jetbrains.mps.baseLanguage.structure.AbstractCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x113e4952f12L, "jetbrains.mps.baseLanguage.structure.ArrayCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, "jetbrains.mps.baseLanguage.structure.BreakStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, "jetbrains.mps.baseLanguage.structure.CatchClause"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbf3043726L, "jetbrains.mps.baseLanguage.structure.ContinueStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x113e4b2dfdaL, "jetbrains.mps.baseLanguage.structure.DimensionExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, "jetbrains.mps.baseLanguage.structure.ElsifClause"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L, "jetbrains.mps.baseLanguage.structure.IOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32175ac2e6fcc181L, "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1458378889e6d166L, "jetbrains.mps.baseLanguage.structure.PlaceholderMember"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, "jetbrains.mps.baseLanguage.structure.ThisExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, "jetbrains.mps.baseLanguage.structure.TryStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af957d96eL, "jetbrains.mps.baseLanguage.structure.Visibility"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae5f4a3L, "jetbrains.mps.baseLanguage.structure.WildCardType"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0h = buildConceptIndices(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6a17a27L, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cd01b77ddL, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, "jetbrains.mps.baseLanguage.structure.CatchClause"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L, "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32175ac2e6fcc181L, "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af957d96eL, "jetbrains.mps.baseLanguage.structure.Visibility"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae5f4a3L, "jetbrains.mps.baseLanguage.structure.WildCardType"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab844af9bL, "jetbrains.mps.baseLanguage.structure.AbstractCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71a2770L, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71b1af4L, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a770dc0dL, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d00538bdfL, "jetbrains.mps.baseLanguage.structure.AsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1210c38a8adL, "jetbrains.mps.baseLanguage.structure.BLBottomType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, "jetbrains.mps.baseLanguage.structure.BreakStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, "jetbrains.mps.baseLanguage.structure.CastExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L, "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11ef4675fccL, "jetbrains.mps.baseLanguage.structure.CommentedStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1121e2102fdL, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbf3043726L, "jetbrains.mps.baseLanguage.structure.ContinueStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d1e5db156L, "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d1e4bce56L, "jetbrains.mps.baseLanguage.structure.EnumValuesExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102cb19a434L, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219b9L, "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x23cf7b405b3b9761L, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32175ac2e6fcc181L, "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c0ba864df016178L, "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2a8fe0cadfaa8af2L, "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110e12d8c7dL, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110e4207559L, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f2L, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3b418722717710b4L, "jetbrains.mps.baseLanguage.structure.LongLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1185ff468caL, "jetbrains.mps.baseLanguage.structure.NullType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7faL, "jetbrains.mps.baseLanguage.structure.ParameterReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1458378889e6d166L, "jetbrains.mps.baseLanguage.structure.PlaceholderMember"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3f57ea36bd70a4e1L, "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, "jetbrains.mps.baseLanguage.structure.RemarkStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af16ff67L, "jetbrains.mps.baseLanguage.structure.StatementCommentPart"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5eb0cab441189a51L, "jetbrains.mps.baseLanguage.structure.StringToken"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4975dc2bdcfa0c49L, "jetbrains.mps.baseLanguage.structure.StubStatementList"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47df21f3L, "jetbrains.mps.baseLanguage.structure.SubstringExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d512e1eL, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1127b878882L, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x431d52a5d09a4ea9L, "jetbrains.mps.baseLanguage.structure.UndefinedType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x7e4a5cff51167b74L, "jetbrains.mps.baseLanguage.structure.UnknownConsCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x245faa02186fc7b5L, "jetbrains.mps.baseLanguage.structure.UnknownDotCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x245faa02186fc5d6L, "jetbrains.mps.baseLanguage.structure.UnknownLocalCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x759937a5973279b7L, "jetbrains.mps.baseLanguage.structure.UnknownNameRef"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2dda7700ec3ae154L, "jetbrains.mps.baseLanguage.structure.UnknownNew"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x28e9fc3ba3fa3940L, "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117dd047c70L, "jetbrains.mps.baseLanguage.structure.ValueParameter"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af957d96eL, "jetbrains.mps.baseLanguage.structure.Visibility"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0j = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"));
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a3 = new String[]{"jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_BodyComponent", "jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_NameCellComponent"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0d3a0a3 = new String[]{"jetbrains.mps.baseLanguage.editor.ConceptFunctionAliased_Component", "jetbrains.mps.baseLanguage.editor.ConceptFunction_Component", "jetbrains.mps.baseLanguage.editor.ConceptFunction_Folded_Component"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0e3a0a3 = new String[]{"jetbrains.mps.baseLanguage.editor.GenericDeclaration_FoldedCodeBlock_Component", "jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component", "jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_WithAnchor_Component"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0h3a0a3 = new String[]{"jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments", "jetbrains.mps.baseLanguage.editor.IMethodCall_typeArguments"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.loopLabels"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0b3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.AddAnnotationMemberDefaultValue"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0c3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.AnonymousClass_ApplySideTransforms", "jetbrains.mps.baseLanguage.editor.expressionRTAfterAnonymous"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0d3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.AddSquareBracketsToarrayCreatorWithInitializer"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0e3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.AddThrowsToMethods", "jetbrains.mps.baseLanguage.editor.AddThrowsToMethods_ext_5"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0f3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.convertToTry", "jetbrains.mps.baseLanguage.editor.tryCatch_CatchClause"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0g3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.ClassConceptModifiersExtendsAndImplements", "jetbrains.mps.baseLanguage.editor.ClassConceptModifiersExtendsAndImplements_ext_3", "jetbrains.mps.baseLanguage.editor.ClassConceptModifiersExtendsAndImplements_ext_4", "jetbrains.mps.baseLanguage.editor.ClassConceptModifiersExtendsAndImplements_ext_5", "jetbrains.mps.baseLanguage.editor.ClassConcept_ApplySideTransforms"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0h3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.ClassCreator_ApplySideTransforms", "jetbrains.mps.baseLanguage.editor.newExpression_ClassCreator_ext_2"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0i3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.ClassifierClassExpressionToArray"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0j3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.ExtendedClassImplementTransform", "jetbrains.mps.baseLanguage.editor.addGenericParameter", "jetbrains.mps.baseLanguage.editor.binaryOperations", "jetbrains.mps.baseLanguage.editor.classifierTypeInLocalVarRT", "jetbrains.mps.baseLanguage.editor.csharp_rTransform"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0k3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.ConstructorDeclaration_ApplySideTransforms"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0l3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.newExpression_DefaultClassCreator_ext_2"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0m3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.EnumClass_ApplySideTransforms"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0n3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.EnumConstantDeclaration_ApplySideTransforms", "jetbrains.mps.baseLanguage.editor.enumConstant_rt"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0o3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.Expression_to_type_Cast", "jetbrains.mps.baseLanguage.editor.SubstringExpression_Transform", "jetbrains.mps.baseLanguage.editor.UnaryMinusLeftTransform", "jetbrains.mps.baseLanguage.editor.addComment_Expression", "jetbrains.mps.baseLanguage.editor.arrayAccess", "jetbrains.mps.baseLanguage.editor.assert_", "jetbrains.mps.baseLanguage.editor.assignments", "jetbrains.mps.baseLanguage.editor.binaryOperations_Expression", "jetbrains.mps.baseLanguage.editor.csharp_rTransform_Expression", "jetbrains.mps.baseLanguage.editor.dotExpression", "jetbrains.mps.baseLanguage.editor.expressionStatement", "jetbrains.mps.baseLanguage.editor.expressionToNotExpression", "jetbrains.mps.baseLanguage.editor.expressionToParenthesis", "jetbrains.mps.baseLanguage.editor.expression_to_varaible_declaration", "jetbrains.mps.baseLanguage.editor.instanceOf", "jetbrains.mps.baseLanguage.editor.postfix", "jetbrains.mps.baseLanguage.editor.prefix", "jetbrains.mps.baseLanguage.editor.ternaryOperator"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0p3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.FieldDeclaration_ApplySideTransforms"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0q3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.genericDeclaration_ext_4"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0r3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.AddMethodCallTypeArgument", "jetbrains.mps.baseLanguage.editor.AddMethodCallTypeArgument_ext_1"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0s3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.ifStatement"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0t3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.IncompleteMemberDeclaration_ApplySideTransforms"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0u3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.InstanceMethodCallOperation_ApplySideTransforms"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0v3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.InstanceMethodDeclaration_ApplySideTransforms", "jetbrains.mps.baseLanguage.editor.InstanceMethodDeclaration_ApplySideTransforms_1"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0w3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.InterfaceModifiersAndExtends_ext_2", "jetbrains.mps.baseLanguage.editor.InterfaceModifiersAndExtends_ext_4", "jetbrains.mps.baseLanguage.editor.InterfaceModifiersAndExtends_ext_5", "jetbrains.mps.baseLanguage.editor.Interface_ApplySideTransforms"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0x3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.StaticFieldDeclaration_ApplySideTransforms"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0y3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.StaticMethodDeclaration_ApplySideTransforms", "jetbrains.mps.baseLanguage.editor.StaticMethodDeclaration_ApplySideTransforms_1"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0z3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.SwitchStatement_ApplySideTransforms", "jetbrains.mps.baseLanguage.editor.switchLabels"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0ab3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.convertToTry_TryCatchStatement", "jetbrains.mps.baseLanguage.editor.tryCatch_TryCatchStatement"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0bb3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.AddFieldModifiersOnTypes", "jetbrains.mps.baseLanguage.editor.AddMethodModifiersOnTypes", "jetbrains.mps.baseLanguage.editor.AddStaticFieldModifiersOnTypes", "jetbrains.mps.baseLanguage.editor.addComment_Type", "jetbrains.mps.baseLanguage.editor.addGenericTypeDeclaration_Type_default", "jetbrains.mps.baseLanguage.editor.arrayBrackets", "jetbrains.mps.baseLanguage.editor.finalOnTypesInVariables", "jetbrains.mps.baseLanguage.editor.instanceOfIntoTernary", "jetbrains.mps.baseLanguage.editor.variableArityType"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0cb3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.ArrayAndGenericTypesFromTypesInVarDeclarations", "jetbrains.mps.baseLanguage.editor.VariableDeclaration_ApplySideTransforms", "jetbrains.mps.baseLanguage.editor.variableDeclarationInitializer"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0db3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.LocalInstanceFieldReference_Transform", "jetbrains.mps.baseLanguage.editor.convertVariableAssignmentToVarDeclaration"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0eb3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.Visibility_ext_1_RTransform_Menu", "jetbrains.mps.baseLanguage.editor.addAbstract", "jetbrains.mps.baseLanguage.editor.addGenericTypeDeclaration"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0fb3a0a7 = new String[]{"jetbrains.mps.baseLanguage.editor.WildCardType_ApplySideTransforms"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a9 = new String[]{"jetbrains.mps.baseLanguage.editor.StaticFieldInClassifier", "jetbrains.mps.baseLanguage.editor.ctor_IncompleteMember", "jetbrains.mps.baseLanguage.editor.ctor_IncompleteMemberInInterface", "jetbrains.mps.baseLanguage.editor.ctor_InterfaceMemberBasedOnIncomplete", "jetbrains.mps.baseLanguage.editor.ctor_MemberBasedOnIncomplete"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0b3a0a9 = new String[]{"jetbrains.mps.baseLanguage.editor.CreateEnumConstantReferences", "jetbrains.mps.baseLanguage.editor.ParensAroundEmptyExpression", "jetbrains.mps.baseLanguage.editor.PrimitiveClassExpression", "jetbrains.mps.baseLanguage.editor.conceptFunctionParameters", "jetbrains.mps.baseLanguage.editor.constants", "jetbrains.mps.baseLanguage.editor.liveTemplates_Expression", "jetbrains.mps.baseLanguage.editor.new_", "jetbrains.mps.baseLanguage.editor.qualifiedSuperMethodCallExpression", "jetbrains.mps.baseLanguage.editor.smartCast", "jetbrains.mps.baseLanguage.editor.staticAccess", "jetbrains.mps.baseLanguage.editor.thisExpression", "jetbrains.mps.baseLanguage.editor.valueParameter"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0c3a0a9 = new String[]{"jetbrains.mps.baseLanguage.editor.expressionStatement_", "jetbrains.mps.baseLanguage.editor.ifStatement_", "jetbrains.mps.baseLanguage.editor.localVariables", "jetbrains.mps.baseLanguage.editor.localVariablesWithType", "jetbrains.mps.baseLanguage.editor.loopStatements", "jetbrains.mps.baseLanguage.editor.thisAndSuperConstructor"};
 }
