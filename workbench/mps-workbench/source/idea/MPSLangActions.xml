@@ -141,6 +141,10 @@
       <action id="SelectIn" class="com.intellij.ide.actions.SelectInAction"/>
       <action id="ShowNavBar" class="com.intellij.ide.navigationToolbar.ShowNavBarAction"/>
       <action id="GotoDeclaration" class="com.intellij.codeInsight.navigation.actions.GotoDeclarationAction"/>
+      -->
+      <!-- MPS Patch -->
+      <action id="GotoDeclaration" class="jetbrains.mps.codeInsight.navigation.actions.MockGotoDeclarationAction"/>
+      <!--
       <action id="GotoImplementation" class="com.intellij.codeInsight.navigation.actions.GotoImplementationAction"/>
       <action id="GotoTypeDeclaration" class="com.intellij.codeInsight.navigation.actions.GotoTypeDeclarationAction"/>
       <action id="GotoSuperMethod" class="com.intellij.codeInsight.navigation.actions.GotoSuperAction"/>
