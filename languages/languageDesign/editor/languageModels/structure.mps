@@ -6299,6 +6299,12 @@
       <node concept="trNpa" id="ve0pwAv4UT" role="EQaZv">
         <ref role="trN6q" node="4Sf$XywKgZK" resolve="TransformationMenuContribution" />
       </node>
+      <node concept="trNpa" id="1wEcoXivwy1" role="EQaZv">
+        <ref role="trN6q" node="hEV7CQ5" resolve="SideTransformAnchorTagStyleClassItem" />
+      </node>
+      <node concept="trNpa" id="1wEcoXivwye" role="EQaZv">
+        <ref role="trN6q" node="794AQ2t3BuV" resolve="CellMenuPart_ApplySideTransforms" />
+      </node>
     </node>
   </node>
 </model>

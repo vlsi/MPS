@@ -5,20 +5,17 @@ package jetbrains.mps.lang.actions.migration;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import java.util.Map;
-import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 
 public class MigrateContributions extends MigrationScriptBase {
   public String getCaption() {
@@ -29,7 +26,6 @@ public class MigrateContributions extends MigrationScriptBase {
     return false;
   }
   public SNode execute(final SModule m) {
-    final Map<SModule, SNode> actions = getDataCollector().collectData(m, new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, "jetbrains.mps.lang.actions"), 0));
     new SideTransformActionsMigrationHelper(m, false).migrate();
     return null;
   }
@@ -52,9 +48,6 @@ public class MigrateContributions extends MigrationScriptBase {
         }
       });
     }
-  }
-  public Iterable<MigrationScriptReference> requiresData() {
-    return ListSequence.fromListAndArray(new ArrayList<MigrationScriptReference>(), new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, "jetbrains.mps.lang.actions"), 0));
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, "jetbrains.mps.lang.actions"), 1);
