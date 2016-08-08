@@ -1919,7 +1919,7 @@
       <node id="6239791100560660232" at="24,0,27,0" concept="4" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SConcept;" />
       <node id="6239791100560660241" at="30,0,33,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
       <node id="6239791100560660244" at="37,0,40,0" concept="8" trace="neq_wnuenf_a0a0a0a0a0a0a2a0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="6239791100560660193" at="17,194,22,7" concept="5" />
+      <node id="6239791100560660193" at="17,189,22,7" concept="5" />
       <node id="6239791100560660214" at="22,7,27,8" concept="5" />
       <node id="106767531336915729" at="28,36,33,9" concept="1" />
       <node id="106767531336914235" at="27,8,34,5" concept="3" />
@@ -1942,7 +1942,7 @@
         <var name="b" id="6239791100560660244" />
       </scope>
       <scope id="106767531336914237" at="28,36,33,9" />
-      <scope id="6239791100560660174" at="17,194,35,95">
+      <scope id="6239791100560660174" at="17,189,35,95">
         <var name="currentConcepts" id="6239791100560660215" />
         <var name="subConcepts" id="6239791100560660194" />
       </scope>

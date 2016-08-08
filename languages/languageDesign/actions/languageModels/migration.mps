@@ -15654,17 +15654,12 @@
             <node concept="Xl_RD" id="7f0kPyFO$Fw" role="3uHU7w">
               <property role="Xl_RC" value="_Contribution" />
             </node>
-            <node concept="3cpWs3" id="7f0kPyFO$Fy" role="3uHU7B">
-              <node concept="2OqwBi" id="7f0kPyFO$Fz" role="3uHU7B">
-                <node concept="37vLTw" id="7f0kPyFO$F$" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7f0kPyFO$Fp" resolve="concept" />
-                </node>
-                <node concept="3TrcHB" id="7f0kPyFO$F_" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                </node>
+            <node concept="2OqwBi" id="7f0kPyFO$Fz" role="3uHU7B">
+              <node concept="37vLTw" id="7f0kPyFO$F$" role="2Oq$k0">
+                <ref role="3cqZAo" node="7f0kPyFO$Fp" resolve="concept" />
               </node>
-              <node concept="Xl_RD" id="7f0kPyFO$FA" role="3uHU7w">
-                <property role="Xl_RC" value="_" />
+              <node concept="3TrcHB" id="7f0kPyFO$F_" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
               </node>
             </node>
           </node>
@@ -17044,51 +17039,53 @@
               </node>
             </node>
           </node>
-          <node concept="22lmx$" id="1wEcoXjmZ71" role="3clFbw">
-            <node concept="1Wc70l" id="17utbT9WYQR" role="3uHU7w">
-              <node concept="3fqX7Q" id="17utbT9WYQS" role="3uHU7w">
-                <node concept="2OqwBi" id="17utbT9WYQT" role="3fr31v">
-                  <node concept="2OqwBi" id="17utbT9WYQU" role="2Oq$k0">
-                    <node concept="37vLTw" id="17utbT9WYRj" role="2Oq$k0">
-                      <ref role="3cqZAo" node="17utbT9WYRf" resolve="newModel" />
+          <node concept="1Wc70l" id="17utbT9WYQR" role="3clFbw">
+            <node concept="3fqX7Q" id="17utbT9WYQS" role="3uHU7w">
+              <node concept="2OqwBi" id="17utbT9WYQT" role="3fr31v">
+                <node concept="2OqwBi" id="17utbT9WYQU" role="2Oq$k0">
+                  <node concept="37vLTw" id="17utbT9WYRj" role="2Oq$k0">
+                    <ref role="3cqZAo" node="17utbT9WYRf" resolve="newModel" />
+                  </node>
+                  <node concept="liA8E" id="17utbT9WYQZ" role="2OqNvi">
+                    <ref role="37wK5l" to="w1kc:~SModelInternal.importedLanguageIds():java.util.Collection" resolve="importedLanguageIds" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="17utbT9WYR0" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~Collection.contains(java.lang.Object):boolean" resolve="contains" />
+                  <node concept="37vLTw" id="17utbT9WYR1" role="37wK5m">
+                    <ref role="3cqZAo" node="17utbT9WYQ_" resolve="language" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="1eOMI4" id="1wEcoXjpOjd" role="3uHU7B">
+              <node concept="22lmx$" id="1wEcoXjmZ71" role="1eOMHV">
+                <node concept="2OqwBi" id="17utbT9WYR2" role="3uHU7B">
+                  <node concept="2OqwBi" id="17utbT9WYR3" role="2Oq$k0">
+                    <node concept="37vLTw" id="17utbT9WYRk" role="2Oq$k0">
+                      <ref role="3cqZAo" node="17utbT9WYRd" resolve="oldModel" />
                     </node>
-                    <node concept="liA8E" id="17utbT9WYQZ" role="2OqNvi">
+                    <node concept="liA8E" id="17utbT9WYR8" role="2OqNvi">
                       <ref role="37wK5l" to="w1kc:~SModelInternal.importedLanguageIds():java.util.Collection" resolve="importedLanguageIds" />
                     </node>
                   </node>
-                  <node concept="liA8E" id="17utbT9WYR0" role="2OqNvi">
+                  <node concept="liA8E" id="17utbT9WYR9" role="2OqNvi">
                     <ref role="37wK5l" to="33ny:~Collection.contains(java.lang.Object):boolean" resolve="contains" />
-                    <node concept="37vLTw" id="17utbT9WYR1" role="37wK5m">
+                    <node concept="37vLTw" id="17utbT9WYRa" role="37wK5m">
                       <ref role="3cqZAo" node="17utbT9WYQ_" resolve="language" />
                     </node>
                   </node>
                 </node>
-              </node>
-              <node concept="17R0WA" id="1wEcoXjmZBh" role="3uHU7B">
-                <node concept="pHN19" id="1wEcoXjmZI6" role="3uHU7w">
-                  <node concept="2V$Bhx" id="1wEcoXjmZLm" role="2V$M_3">
-                    <property role="2V$B1T" value="982eb8df-2c96-4bd7-9963-11712ea622e5" />
-                    <property role="2V$B1Q" value="jetbrains.mps.lang.resources" />
+                <node concept="17R0WA" id="1wEcoXjmZBh" role="3uHU7w">
+                  <node concept="pHN19" id="1wEcoXjmZI6" role="3uHU7w">
+                    <node concept="2V$Bhx" id="1wEcoXjmZLm" role="2V$M_3">
+                      <property role="2V$B1T" value="982eb8df-2c96-4bd7-9963-11712ea622e5" />
+                      <property role="2V$B1Q" value="jetbrains.mps.lang.resources" />
+                    </node>
                   </node>
-                </node>
-                <node concept="37vLTw" id="1wEcoXjmZsN" role="3uHU7B">
-                  <ref role="3cqZAo" node="17utbT9WYQ_" resolve="language" />
-                </node>
-              </node>
-            </node>
-            <node concept="2OqwBi" id="17utbT9WYR2" role="3uHU7B">
-              <node concept="2OqwBi" id="17utbT9WYR3" role="2Oq$k0">
-                <node concept="37vLTw" id="17utbT9WYRk" role="2Oq$k0">
-                  <ref role="3cqZAo" node="17utbT9WYRd" resolve="oldModel" />
-                </node>
-                <node concept="liA8E" id="17utbT9WYR8" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~SModelInternal.importedLanguageIds():java.util.Collection" resolve="importedLanguageIds" />
-                </node>
-              </node>
-              <node concept="liA8E" id="17utbT9WYR9" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~Collection.contains(java.lang.Object):boolean" resolve="contains" />
-                <node concept="37vLTw" id="17utbT9WYRa" role="37wK5m">
-                  <ref role="3cqZAo" node="17utbT9WYQ_" resolve="language" />
+                  <node concept="37vLTw" id="1wEcoXjmZsN" role="3uHU7B">
+                    <ref role="3cqZAo" node="17utbT9WYQ_" resolve="language" />
+                  </node>
                 </node>
               </node>
             </node>

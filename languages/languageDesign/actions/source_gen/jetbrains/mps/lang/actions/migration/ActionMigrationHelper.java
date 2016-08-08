@@ -69,7 +69,7 @@ public class ActionMigrationHelper {
     return SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_" + tag + "_Contribution";
   }
   public static String getMainMenuContributionName(SNode concept) {
-    return SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_" + "_Contribution";
+    return SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_Contribution";
   }
   public static SNode wrapDotExpressionToStatement(SNode expression) {
     SNode expressionStatement = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
@@ -187,7 +187,7 @@ public class ActionMigrationHelper {
   }
   private static void addMissingLanguageImport(SNode node, SModelInternal oldModel, SModelInternal newModel) {
     SLanguage language = node.getConcept().getLanguage();
-    if (oldModel.importedLanguageIds().contains(language) || eq_qgr84z_a0a0b0s(language, MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x982eb8df2c964bd7L, 0x996311712ea622e5L), "jetbrains.mps.lang.resources")) && !(newModel.importedLanguageIds().contains(language))) {
+    if ((oldModel.importedLanguageIds().contains(language) || eq_qgr84z_a0a0a1a81(language, MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x982eb8df2c964bd7L, 0x996311712ea622e5L), "jetbrains.mps.lang.resources"))) && !(newModel.importedLanguageIds().contains(language))) {
       newModel.addLanguage(language);
     }
   }
@@ -294,7 +294,7 @@ public class ActionMigrationHelper {
   private static boolean eq_qgr84z_a0a0a0b0r(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_qgr84z_a0a0b0s(Object a, Object b) {
+  private static boolean eq_qgr84z_a0a0a1a81(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_qgr84z_a0c0v(Object a, Object b) {

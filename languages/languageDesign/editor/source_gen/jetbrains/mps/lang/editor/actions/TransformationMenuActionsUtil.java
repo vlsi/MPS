@@ -13,8 +13,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
-/*package*/ class TransformationMenuActionsUtil {
-  /*package*/ static Iterable<SAbstractConcept> getSubconceptsWithCurrentChildConceptsExcluded(SAbstractConcept concept, SNode parentNode, SContainmentLink link, final SNode currentTargetNode) {
+public class TransformationMenuActionsUtil {
+  public static Iterable<SAbstractConcept> getSubconceptsWithCurrentChildConceptsExcluded(SAbstractConcept concept, SNode parentNode, SContainmentLink link, final SNode currentTargetNode) {
     Iterable<SAbstractConcept> subConcepts = ListSequence.fromList(SConceptOperations.getAllSubConcepts(concept, SNodeOperations.getModel(parentNode))).where(new IWhereFilter<SAbstractConcept>() {
       public boolean accept(SAbstractConcept it) {
         return !(it.isAbstract());
