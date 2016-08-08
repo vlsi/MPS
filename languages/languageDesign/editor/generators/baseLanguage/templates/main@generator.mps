@@ -32483,15 +32483,10 @@
               </node>
             </node>
           </node>
-          <node concept="gft3U" id="30NnNOoibdS" role="150oIE">
-            <node concept="2OqwBi" id="9fgZe5XE3e" role="gfFT$">
-              <node concept="Rm8GO" id="9fgZe5XE5h" role="2Oq$k0">
-                <ref role="Rm8GQ" to="q4oi:~SideTransformSubstituteInfo$Side.LEFT" resolve="LEFT" />
-                <ref role="1Px2BO" to="q4oi:~SideTransformSubstituteInfo$Side" resolve="SideTransformSubstituteInfo.Side" />
-              </node>
-              <node concept="2OwXpG" id="9fgZe5XE3g" role="2OqNvi">
-                <ref role="2Oxat5" to="q4oi:~SideTransformSubstituteInfo$Side.myMenuLocation" resolve="myMenuLocation" />
-              </node>
+          <node concept="gft3U" id="71jmo987PRO" role="150oIE">
+            <node concept="10M0yZ" id="71jmo987Q0X" role="gfFT$">
+              <ref role="1PxDUh" to="9eyi:~MenuLocations" resolve="MenuLocations" />
+              <ref role="3cqZAo" to="9eyi:~MenuLocations.LEFT_SIDE_TRANSFORM" resolve="LEFT_SIDE_TRANSFORM" />
             </node>
           </node>
         </node>
@@ -32515,15 +32510,10 @@
               </node>
             </node>
           </node>
-          <node concept="gft3U" id="30NnNOoif0S" role="150oIE">
-            <node concept="2OqwBi" id="9fgZe5X_5p" role="gfFT$">
-              <node concept="Rm8GO" id="9fgZe5X$Pg" role="2Oq$k0">
-                <ref role="Rm8GQ" to="q4oi:~SideTransformSubstituteInfo$Side.RIGHT" resolve="RIGHT" />
-                <ref role="1Px2BO" to="q4oi:~SideTransformSubstituteInfo$Side" resolve="SideTransformSubstituteInfo.Side" />
-              </node>
-              <node concept="2OwXpG" id="9fgZe5XDQd" role="2OqNvi">
-                <ref role="2Oxat5" to="q4oi:~SideTransformSubstituteInfo$Side.myMenuLocation" resolve="myMenuLocation" />
-              </node>
+          <node concept="gft3U" id="71jmo987Q1h" role="150oIE">
+            <node concept="10M0yZ" id="71jmo987Q1i" role="gfFT$">
+              <ref role="1PxDUh" to="9eyi:~MenuLocations" resolve="MenuLocations" />
+              <ref role="3cqZAo" to="9eyi:~MenuLocations.RIGHT_SIDE_TRANSFORM" resolve="RIGHT_SIDE_TRANSFORM" />
             </node>
           </node>
         </node>
