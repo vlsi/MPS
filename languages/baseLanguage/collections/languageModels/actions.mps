@@ -210,9 +210,6 @@
       </concept>
       <concept id="1177335944525" name="jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteString" flags="in" index="uGdhv" />
       <concept id="1177337890340" name="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query" flags="in" index="uNCsQ" />
-      <concept id="562388756457602485" name="jetbrains.mps.lang.actions.structure.MigrateManuallyAnnotation" flags="ng" index="xAzKH">
-        <reference id="562388756457602486" name="migrateTo" index="xAzKI" />
-      </concept>
       <concept id="562388756457499018" name="jetbrains.mps.lang.actions.structure.MigratedToAnnotation" flags="ng" index="xBawi">
         <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
       </concept>
@@ -819,13 +816,8 @@
         </node>
         <node concept="z64au" id="hOmI_Vb" role="tZc4B">
           <ref role="z65TK" to="tp2q:hOmH2fq" resolve="SkipStatement" />
-          <node concept="xAzKH" id="1wEcoXjIBQ$" role="lGtFl">
-            <ref role="xAzKI" to="tp2u:1wEcoXjIBPB" />
-          </node>
         </node>
-        <node concept="xBawi" id="1wEcoXjIBPA" role="lGtFl">
-          <ref role="xBaxx" to="tp2u:1wEcoXjIBPB" />
-        </node>
+        <node concept="xBawi" id="1wEcoXjIBPA" role="lGtFl" />
       </node>
     </node>
     <node concept="1X3_iC" id="1wEcoXjIBRE" role="lGtFl">
@@ -918,13 +910,8 @@
         </node>
         <node concept="z64au" id="hOn4xK3" role="tZc4B">
           <ref role="z65TK" to="tp2q:hOn16JO" resolve="StopStatement" />
-          <node concept="xAzKH" id="1wEcoXjIBRD" role="lGtFl">
-            <ref role="xAzKI" to="tp2u:1wEcoXjIBQB" />
-          </node>
         </node>
-        <node concept="xBawi" id="1wEcoXjIBQA" role="lGtFl">
-          <ref role="xBaxx" to="tp2u:1wEcoXjIBQB" />
-        </node>
+        <node concept="xBawi" id="1wEcoXjIBQA" role="lGtFl" />
       </node>
     </node>
   </node>
@@ -5476,9 +5463,6 @@
         <ref role="3FOWKa" to="tp2q:hQl5eJo" resolve="AddSetElementOperation" />
         <node concept="z64au" id="4dZhGkwxf$5" role="tZc4B">
           <ref role="z65TK" to="tp2q:hQl5eJo" resolve="AddSetElementOperation" />
-          <node concept="xAzKH" id="1wEcoXjIBSt" role="lGtFl">
-            <ref role="xAzKI" to="tp2u:1wEcoXjIBSr" resolve="AddSetElementOperation_SubstituteMenu" />
-          </node>
         </node>
         <node concept="xBawi" id="1wEcoXjIBSs" role="lGtFl">
           <ref role="xBaxx" to="tp2u:1wEcoXjIBSr" resolve="AddSetElementOperation_SubstituteMenu" />
@@ -5496,9 +5480,6 @@
         <ref role="3FOWKa" to="tp2q:hQmzaSM" resolve="RemoveSetElementOperation" />
         <node concept="z64au" id="4dZhGkwxf$8" role="tZc4B">
           <ref role="z65TK" to="tp2q:hQmzaSM" resolve="RemoveSetElementOperation" />
-          <node concept="xAzKH" id="1wEcoXjIBCk" role="lGtFl">
-            <ref role="xAzKI" to="tp2u:1wEcoXjIBCi" resolve="RemoveSetElementOperation_SubstituteMenu" />
-          </node>
         </node>
         <node concept="xBawi" id="1wEcoXjIBCj" role="lGtFl">
           <ref role="xBaxx" to="tp2u:1wEcoXjIBCi" resolve="RemoveSetElementOperation_SubstituteMenu" />
@@ -5516,9 +5497,6 @@
         <ref role="3FOWKa" to="tp2q:hQmGkF$" resolve="RemoveAllSetElementsOperation" />
         <node concept="z64au" id="4dZhGkwxpdL" role="tZc4B">
           <ref role="z65TK" to="tp2q:hQmGkF$" resolve="RemoveAllSetElementsOperation" />
-          <node concept="xAzKH" id="1wEcoXjIBAY" role="lGtFl">
-            <ref role="xAzKI" to="tp2u:1wEcoXjIBAW" resolve="RemoveAllSetElementsOperation_SubstituteMenu" />
-          </node>
         </node>
         <node concept="xBawi" id="1wEcoXjIBAX" role="lGtFl">
           <ref role="xBaxx" to="tp2u:1wEcoXjIBAW" resolve="RemoveAllSetElementsOperation_SubstituteMenu" />
@@ -5536,9 +5514,6 @@
         <ref role="3FOWKa" to="tp2q:hQmBsE7" resolve="AddAllSetElementsOperation" />
         <node concept="z64au" id="4dZhGkwxpdP" role="tZc4B">
           <ref role="z65TK" to="tp2q:hQmBsE7" resolve="AddAllSetElementsOperation" />
-          <node concept="xAzKH" id="1wEcoXjIBSx" role="lGtFl">
-            <ref role="xAzKI" to="tp2u:1wEcoXjIBSv" resolve="AddAllSetElementsOperation_SubstituteMenu" />
-          </node>
         </node>
         <node concept="xBawi" id="1wEcoXjIBSw" role="lGtFl">
           <ref role="xBaxx" to="tp2u:1wEcoXjIBSv" resolve="AddAllSetElementsOperation_SubstituteMenu" />
