@@ -2,7 +2,7 @@
 <model ref="r:b940fadc-cf0e-4ede-b197-0825b3588718(testExtendingAnalyzer.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -40,13 +40,13 @@
         <property role="3F0ifm" value="null unsafe" />
       </node>
       <node concept="3F1sOY" id="1eGlc3_lXF1" role="3EZMnx">
-        <ref role="1NtTu8" to="tpee:hqOq$gm" />
+        <ref role="1NtTu8" to="tpee:hqOq$gm" resolve="operand" />
       </node>
       <node concept="3F0ifn" id="1eGlc3_lXFe" role="3EZMnx">
         <property role="3F0ifm" value="." />
       </node>
       <node concept="3F1sOY" id="1eGlc3_lXFv" role="3EZMnx">
-        <ref role="1NtTu8" to="tpee:hqOqNr4" />
+        <ref role="1NtTu8" to="tpee:hqOqNr4" resolve="operation" />
       </node>
     </node>
   </node>
@@ -58,13 +58,13 @@
         <property role="3F0ifm" value="null safe" />
       </node>
       <node concept="3F1sOY" id="1eGlc3_lXLa" role="3EZMnx">
-        <ref role="1NtTu8" to="tpee:hqOq$gm" />
+        <ref role="1NtTu8" to="tpee:hqOq$gm" resolve="operand" />
       </node>
       <node concept="3F0ifn" id="1eGlc3_lXLb" role="3EZMnx">
         <property role="3F0ifm" value="." />
       </node>
       <node concept="3F1sOY" id="1eGlc3_lXLc" role="3EZMnx">
-        <ref role="1NtTu8" to="tpee:hqOqNr4" />
+        <ref role="1NtTu8" to="tpee:hqOqNr4" resolve="operation" />
       </node>
     </node>
   </node>

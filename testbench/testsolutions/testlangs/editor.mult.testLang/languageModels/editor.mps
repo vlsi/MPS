@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -252,7 +252,7 @@
             </node>
           </node>
           <node concept="3F2HdR" id="5ajRFTcS8bI" role="3EZMnx">
-            <ref role="1NtTu8" to="jap4:5LszKvIa80G" />
+            <ref role="1NtTu8" to="jap4:5LszKvIa80G" resolve="richChild" />
             <node concept="l2Vlx" id="5ajRFTcS8bJ" role="2czzBx" />
             <node concept="pj6Ft" id="5ajRFTcS8bK" role="3F10Kt">
               <property role="VOm3f" value="true" />
@@ -292,7 +292,7 @@
               </node>
             </node>
             <node concept="3F2HdR" id="5ajRFTcS8bT" role="3EZMnx">
-              <ref role="1NtTu8" to="jap4:5UHFGFjUVIi" />
+              <ref role="1NtTu8" to="jap4:5UHFGFjUVIi" resolve="compactChild" />
               <node concept="l2Vlx" id="5ajRFTcS8bU" role="2czzBx" />
               <node concept="pj6Ft" id="5ajRFTcS8bV" role="3F10Kt">
                 <property role="VOm3f" value="true" />
@@ -333,7 +333,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="5ajRFTcS8c4" role="3EZMnx">
-          <ref role="1NtTu8" to="jap4:5ajRFTcS87I" />
+          <ref role="1NtTu8" to="jap4:5ajRFTcS87I" resolve="defaultChild" />
           <node concept="l2Vlx" id="5ajRFTcS8c5" role="2czzBx" />
           <node concept="pj6Ft" id="5ajRFTcS8c6" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -365,7 +365,7 @@
         </node>
         <node concept="3EZMnI" id="6EI1ZZqOjzy" role="3EZMnx">
           <node concept="3F2HdR" id="6EI1ZZqOjNH" role="3EZMnx">
-            <ref role="1NtTu8" to="jap4:6EI1ZZqOi2f" />
+            <ref role="1NtTu8" to="jap4:6EI1ZZqOi2f" resolve="conditionallyProjectedChild" />
             <node concept="pj6Ft" id="6EI1ZZqWZZQ" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
@@ -475,7 +475,7 @@
           </node>
           <node concept="3EZMnI" id="6BSFEB5nzQd" role="3EZMnx">
             <node concept="3F2HdR" id="6BSFEB5nzQe" role="3EZMnx">
-              <ref role="1NtTu8" to="jap4:6BSFEB5mELX" />
+              <ref role="1NtTu8" to="jap4:6BSFEB5mELX" resolve="conditionallyRichOrCompactChild" />
               <node concept="pj6Ft" id="6BSFEB5nzQf" role="3F10Kt">
                 <property role="VOm3f" value="true" />
               </node>
@@ -570,7 +570,7 @@
             </node>
           </node>
           <node concept="3F2HdR" id="2gpcfU7j3tg" role="3EZMnx">
-            <ref role="1NtTu8" to="jap4:2gpcfU7iF_E" />
+            <ref role="1NtTu8" to="jap4:2gpcfU7iF_E" resolve="notSupportedPresentation" />
             <node concept="l2Vlx" id="2gpcfU7j3th" role="2czzBx" />
             <node concept="lj46D" id="2gpcfU7j6vP" role="3F10Kt">
               <property role="VOm3f" value="true" />
@@ -785,7 +785,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="6k6gsLyhJDz" role="3EZMnx">
-          <ref role="1NtTu8" to="jap4:6k6gsLyhJCq" />
+          <ref role="1NtTu8" to="jap4:6k6gsLyhJCq" resolve="richChildren" />
           <node concept="l2Vlx" id="6k6gsLyhJD$" role="2czzBx" />
           <node concept="pj6Ft" id="6k6gsLyhJD_" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -825,7 +825,7 @@
             </node>
           </node>
           <node concept="3F2HdR" id="6k6gsLyhJDI" role="3EZMnx">
-            <ref role="1NtTu8" to="jap4:6k6gsLyhJCr" />
+            <ref role="1NtTu8" to="jap4:6k6gsLyhJCr" resolve="compactChildren" />
             <node concept="l2Vlx" id="6k6gsLyhJDJ" role="2czzBx" />
             <node concept="pj6Ft" id="6k6gsLyhJDK" role="3F10Kt">
               <property role="VOm3f" value="true" />
@@ -872,7 +872,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="4R_sg7X6QBN" role="3EZMnx">
-          <ref role="1NtTu8" to="jap4:4R_sg7X6RC8" />
+          <ref role="1NtTu8" to="jap4:4R_sg7X6RC8" resolve="conditionallyProjectedChildren" />
           <node concept="pj6Ft" id="4R_sg7X6QBO" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -976,7 +976,7 @@
             </node>
           </node>
           <node concept="3F2HdR" id="uMiWVbXxhN" role="3EZMnx">
-            <ref role="1NtTu8" to="jap4:uMiWVbXr8C" />
+            <ref role="1NtTu8" to="jap4:uMiWVbXr8C" resolve="conditionallyRichOrCompactChildren" />
             <node concept="pj6Ft" id="uMiWVbXxhO" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
@@ -1095,7 +1095,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="55my_QKO818" role="3EZMnx">
-          <ref role="1NtTu8" to="jap4:55my_QKN6AY" />
+          <ref role="1NtTu8" to="jap4:55my_QKN6AY" resolve="richChild" />
           <node concept="lj46D" id="55my_QKO819" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -1131,7 +1131,7 @@
             </node>
           </node>
           <node concept="3F1sOY" id="55my_QKO81h" role="3EZMnx">
-            <ref role="1NtTu8" to="jap4:55my_QKNdi2" />
+            <ref role="1NtTu8" to="jap4:55my_QKNdi2" resolve="compactChild" />
             <node concept="lj46D" id="55my_QKO81i" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
@@ -1174,7 +1174,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="1G6ITli8t4Q" role="3EZMnx">
-          <ref role="1NtTu8" to="jap4:1G6ITli8lj8" />
+          <ref role="1NtTu8" to="jap4:1G6ITli8lj8" resolve="conditionallyProjectedChild" />
           <node concept="lj46D" id="1G6ITli8vnQ" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -1274,7 +1274,7 @@
             </node>
           </node>
           <node concept="3F1sOY" id="1G6ITli8zLP" role="3EZMnx">
-            <ref role="1NtTu8" to="jap4:1G6ITli8lj9" />
+            <ref role="1NtTu8" to="jap4:1G6ITli8lj9" resolve="conditionallyRichOrCompactChild" />
             <node concept="lj46D" id="1G6ITli8$nn" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
@@ -1542,7 +1542,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="7rR2ExFimhP" role="3EZMnx">
-          <ref role="1NtTu8" to="jap4:7rR2ExFim6p" />
+          <ref role="1NtTu8" to="jap4:7rR2ExFim6p" resolve="mostSpecificChildren" />
           <node concept="l2Vlx" id="7rR2ExFimhQ" role="2czzBx" />
           <node concept="pj6Ft" id="7rR2ExFimhR" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -1601,7 +1601,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="13zGF__xgU2" role="3EZMnx">
-          <ref role="1NtTu8" to="jap4:13zGF__xe2Y" />
+          <ref role="1NtTu8" to="jap4:13zGF__xe2Y" resolve="defaultChildren" />
           <node concept="l2Vlx" id="13zGF__xgU3" role="2czzBx" />
           <node concept="pj6Ft" id="13zGF__xgU4" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -1636,7 +1636,7 @@
             </node>
           </node>
           <node concept="3F2HdR" id="13zGF__xgUd" role="3EZMnx">
-            <ref role="1NtTu8" to="jap4:13zGF__xgR6" />
+            <ref role="1NtTu8" to="jap4:13zGF__xgR6" resolve="richChildren" />
             <node concept="l2Vlx" id="13zGF__xgUe" role="2czzBx" />
             <node concept="pj6Ft" id="13zGF__xgUf" role="3F10Kt">
               <property role="VOm3f" value="true" />
@@ -1671,7 +1671,7 @@
               </node>
             </node>
             <node concept="3F2HdR" id="13zGF__xgUo" role="3EZMnx">
-              <ref role="1NtTu8" to="jap4:13zGF__xgRc" />
+              <ref role="1NtTu8" to="jap4:13zGF__xgRc" resolve="richCompactChildren" />
               <node concept="l2Vlx" id="13zGF__xgUp" role="2czzBx" />
               <node concept="pj6Ft" id="13zGF__xgUq" role="3F10Kt">
                 <property role="VOm3f" value="true" />
@@ -1715,7 +1715,7 @@
             </node>
           </node>
           <node concept="3F2HdR" id="5$r4uFHY$ie" role="3EZMnx">
-            <ref role="1NtTu8" to="jap4:5$r4uFHYyk4" />
+            <ref role="1NtTu8" to="jap4:5$r4uFHYyk4" resolve="childSubconcepts" />
             <node concept="pj6Ft" id="5$r4uFHY$uO" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>

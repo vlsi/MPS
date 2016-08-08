@@ -2,7 +2,7 @@
 <model ref="r:94330202-b33f-456a-85ea-8a2bb978933f(jetbrains.mps.samples.multipleProjections.requestTracking.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -128,7 +128,7 @@
         </node>
       </node>
       <node concept="3F2HdR" id="3c1Y2R7OIm4" role="3EZMnx">
-        <ref role="1NtTu8" to="f4vt:3c1Y2R7OIbe" />
+        <ref role="1NtTu8" to="f4vt:3c1Y2R7OIbe" resolve="workflows" />
         <node concept="l2Vlx" id="3c1Y2R7OIm5" role="2czzBx" />
         <node concept="pj6Ft" id="3c1Y2R7OIm6" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -161,7 +161,7 @@
       <node concept="3EZMnI" id="3c1Y2R7PjqX" role="3EZMnx">
         <node concept="l2Vlx" id="3c1Y2R7PjqY" role="2iSdaV" />
         <node concept="3F1sOY" id="3c1Y2R7OIkG" role="3EZMnx">
-          <ref role="1NtTu8" to="f4vt:3c1Y2R7OIkf" />
+          <ref role="1NtTu8" to="f4vt:3c1Y2R7OIkf" resolve="stateMachine" />
           <node concept="ljvvj" id="3c1Y2R7OIkI" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>

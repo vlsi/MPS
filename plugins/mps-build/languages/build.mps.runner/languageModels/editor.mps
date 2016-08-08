@@ -2,7 +2,7 @@
 <model ref="r:a874629d-0982-4f95-a5f4-d979f0120bd1(jetbrains.mps.build.mps.runner.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -132,7 +132,7 @@
       <node concept="3EZMnI" id="6rDosczKbVo" role="3EZMnx">
         <node concept="2iRkQZ" id="6rDosczKbVp" role="2iSdaV" />
         <node concept="1iCGBv" id="5iKxrmkn83n" role="3EZMnx">
-          <ref role="1NtTu8" to="as3y:5iKxrmkn6qh" />
+          <ref role="1NtTu8" to="as3y:5iKxrmkn6qh" resolve="solution" />
           <node concept="1sVBvm" id="5iKxrmkn83r" role="1sWHZn">
             <node concept="3SHvHV" id="5iKxrmkn83F" role="2wV5jI" />
           </node>
@@ -157,7 +157,7 @@
                         <node concept="2OqwBi" id="6rDosczKU5D" role="2Oq$k0">
                           <node concept="pncrf" id="6rDosczKTYn" role="2Oq$k0" />
                           <node concept="3TrEf2" id="6rDosczKUAU" role="2OqNvi">
-                            <ref role="3Tt5mk" to="as3y:5iKxrmkn6qh" />
+                            <ref role="3Tt5mk" to="as3y:5iKxrmkn6qh" resolve="solution" />
                           </node>
                         </node>
                         <node concept="3x8VRR" id="6rDosczKXGV" role="2OqNvi" />
@@ -246,7 +246,7 @@
         <property role="3F0ifm" value="of model" />
       </node>
       <node concept="1iCGBv" id="5iKxrmkn84c" role="3EZMnx">
-        <ref role="1NtTu8" to="as3y:5iKxrmkn6qh" />
+        <ref role="1NtTu8" to="as3y:5iKxrmkn6qh" resolve="solution" />
         <node concept="1sVBvm" id="5iKxrmkn84e" role="1sWHZn">
           <node concept="3F0A7n" id="5iKxrmkn84m" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -258,7 +258,7 @@
         <property role="3F0ifm" value="from solution" />
       </node>
       <node concept="1iCGBv" id="5iKxrmkn84R" role="3EZMnx">
-        <ref role="1NtTu8" to="as3y:5iKxrmkn6qh" />
+        <ref role="1NtTu8" to="as3y:5iKxrmkn6qh" resolve="solution" />
         <node concept="1sVBvm" id="5iKxrmkn84T" role="1sWHZn">
           <node concept="3SHvHV" id="5iKxrmkn855" role="2wV5jI" />
         </node>

@@ -2,7 +2,7 @@
 <model ref="r:2de9cc1a-057f-4953-afea-1abb5cfe7f56(testMoveElements.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -88,7 +88,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="6bOvqMpaR_P" role="3EZMnx">
-          <ref role="1NtTu8" to="kvy4:6bOvqMpaRe9" />
+          <ref role="1NtTu8" to="kvy4:6bOvqMpaRe9" resolve="list" />
           <node concept="lj46D" id="6bOvqMpaR_Q" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -116,7 +116,7 @@
             </node>
           </node>
           <node concept="3F2HdR" id="6bOvqMpaRAg" role="3EZMnx">
-            <ref role="1NtTu8" to="kvy4:4MNTpfZQnxe" />
+            <ref role="1NtTu8" to="kvy4:4MNTpfZQnxe" resolve="statement" />
             <node concept="l2Vlx" id="6bOvqMpaRAh" role="2czzBx" />
             <node concept="pj6Ft" id="6bOvqMpaRAi" role="3F10Kt">
               <property role="VOm3f" value="true" />
@@ -142,7 +142,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="6bOvqMpaR_Y" role="3EZMnx">
-          <ref role="1NtTu8" to="kvy4:4MNTpfZQnx9" />
+          <ref role="1NtTu8" to="kvy4:4MNTpfZQnx9" resolve="list1" />
           <node concept="lj46D" id="6bOvqMpaR_Z" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -168,7 +168,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="6bOvqMpaRA7" role="3EZMnx">
-          <ref role="1NtTu8" to="kvy4:4MNTpfZQnxb" />
+          <ref role="1NtTu8" to="kvy4:4MNTpfZQnxb" resolve="list2" />
           <node concept="lj46D" id="6bOvqMpaRA8" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -224,7 +224,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="2W10Odg4r8g" role="3EZMnx">
-          <ref role="1NtTu8" to="kvy4:2W10Odg4r7N" />
+          <ref role="1NtTu8" to="kvy4:2W10Odg4r7N" resolve="first" />
           <node concept="lj46D" id="2W10Odg4r8h" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -250,7 +250,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="2W10Odg4r8p" role="3EZMnx">
-          <ref role="1NtTu8" to="kvy4:2W10Odg4r7T" />
+          <ref role="1NtTu8" to="kvy4:2W10Odg4r7T" resolve="second" />
           <node concept="lj46D" id="2W10Odg4r8q" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>

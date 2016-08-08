@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="2" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -351,7 +351,7 @@
         <property role="3F0ifm" value="" />
       </node>
       <node concept="3F2HdR" id="4s4uRp_lDh7" role="3EZMnx">
-        <ref role="1NtTu8" to="kisg:4s4uRp_lDgY" />
+        <ref role="1NtTu8" to="kisg:4s4uRp_lDgY" resolve="watchable" />
         <node concept="2iRkQZ" id="4s4uRp_lDh8" role="2czzBx" />
       </node>
       <node concept="2iRkQZ" id="4s4uRp_lDh3" role="2iSdaV" />
@@ -374,7 +374,7 @@
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="1iCGBv" id="2q5hg4g9ix" role="3EZMnx">
-        <ref role="1NtTu8" to="kisg:2q5hg4g98_" />
+        <ref role="1NtTu8" to="kisg:2q5hg4g98_" resolve="watchable" />
         <node concept="1sVBvm" id="2q5hg4g9iy" role="1sWHZn">
           <node concept="3F0A7n" id="2q5hg4g9iz" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -386,7 +386,7 @@
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F1sOY" id="2q5hg4g9i_" role="3EZMnx">
-        <ref role="1NtTu8" to="kisg:2q5hg4g9dV" />
+        <ref role="1NtTu8" to="kisg:2q5hg4g9dV" resolve="value" />
       </node>
       <node concept="3F0ifn" id="2q5hg4g9iA" role="3EZMnx">
         <property role="3F0ifm" value=")" />
@@ -431,7 +431,7 @@
           <property role="3F0ifm" value="for type:" />
         </node>
         <node concept="3F1sOY" id="4s2bfgk3dG$" role="3EZMnx">
-          <ref role="1NtTu8" to="kisg:2q5hg4fVKq" />
+          <ref role="1NtTu8" to="kisg:2q5hg4fVKq" resolve="valueType" />
         </node>
       </node>
       <node concept="3F0ifn" id="2q5hg4gcki" role="3EZMnx" />
@@ -439,21 +439,21 @@
         <property role="3F0ifm" value="can wrap:" />
       </node>
       <node concept="3F1sOY" id="2q5hg4gckm" role="3EZMnx">
-        <ref role="1NtTu8" to="kisg:2q5hg4fGJv" />
+        <ref role="1NtTu8" to="kisg:2q5hg4fGJv" resolve="canWrap" />
       </node>
       <node concept="3F0ifn" id="2q5hg4gcko" role="3EZMnx" />
       <node concept="3F0ifn" id="2q5hg4gckq" role="3EZMnx">
         <property role="3F0ifm" value="get presentation:" />
       </node>
       <node concept="3F1sOY" id="2q5hg4gcks" role="3EZMnx">
-        <ref role="1NtTu8" to="kisg:2q5hg4fGKM" />
+        <ref role="1NtTu8" to="kisg:2q5hg4fGKM" resolve="getPresentation" />
       </node>
       <node concept="3F0ifn" id="2q5hg4gcku" role="3EZMnx" />
       <node concept="3F0ifn" id="2q5hg4gckw" role="3EZMnx">
         <property role="3F0ifm" value="get custom watchables" />
       </node>
       <node concept="3F1sOY" id="2q5hg4gcky" role="3EZMnx">
-        <ref role="1NtTu8" to="kisg:2q5hg4fGKN" />
+        <ref role="1NtTu8" to="kisg:2q5hg4fGKN" resolve="getWatchables" />
       </node>
       <node concept="2iRkQZ" id="2q5hg4gck8" role="2iSdaV" />
     </node>

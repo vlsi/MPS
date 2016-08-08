@@ -2,7 +2,7 @@
 <model ref="r:deb6d2ec-081d-477c-be0d-cb6048dca9ea(jetbrains.mps.lang.generator.generationParameters.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -114,7 +114,7 @@
         <property role="3F0ifm" value=":" />
       </node>
       <node concept="3F1sOY" id="7mYJ4gC7JF2" role="3EZMnx">
-        <ref role="1NtTu8" to="tpf8:$79JWCe2bl" />
+        <ref role="1NtTu8" to="tpf8:$79JWCe2bl" resolve="type" />
       </node>
       <node concept="2iRfu4" id="7mYJ4gC7JF3" role="2iSdaV" />
     </node>
@@ -161,7 +161,7 @@
         </node>
       </node>
       <node concept="3F2HdR" id="1rpARzFLgwW" role="3EZMnx">
-        <ref role="1NtTu8" to="q5cj:7mYJ4gC7JET" />
+        <ref role="1NtTu8" to="q5cj:7mYJ4gC7JET" resolve="parameters" />
         <node concept="l2Vlx" id="1rpARzFLgwX" role="2czzBx" />
         <node concept="pj6Ft" id="1rpARzFLgCD" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -185,7 +185,7 @@
         </node>
       </node>
       <node concept="1iCGBv" id="2E6akI4$s3f" role="3EZMnx">
-        <ref role="1NtTu8" to="q5cj:2E6akI4$s32" />
+        <ref role="1NtTu8" to="q5cj:2E6akI4$s32" resolve="container" />
         <node concept="1sVBvm" id="2E6akI4$s3g" role="1sWHZn">
           <node concept="3F0A7n" id="2E6akI4$s3i" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -207,7 +207,7 @@
         </node>
       </node>
       <node concept="1iCGBv" id="2E6akI4$s3k" role="3EZMnx">
-        <ref role="1NtTu8" to="q5cj:2E6akI4$s33" />
+        <ref role="1NtTu8" to="q5cj:2E6akI4$s33" resolve="parameter" />
         <node concept="1sVBvm" id="2E6akI4$s3l" role="1sWHZn">
           <node concept="3F0A7n" id="2E6akI4$s3n" role="2wV5jI">
             <property role="1Intyy" value="true" />

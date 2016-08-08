@@ -2,7 +2,7 @@
 <model ref="r:62b685a8-caa0-436e-bd8f-043142e659b2(jetbrains.mps.build.mps.testManifest.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -95,7 +95,7 @@
         <property role="3F0ifm" value="languages:" />
       </node>
       <node concept="3F2HdR" id="vgcurbAZYK" role="3EZMnx">
-        <ref role="1NtTu8" to="jjwj:vgcurbAYi0" />
+        <ref role="1NtTu8" to="jjwj:vgcurbAYi0" resolve="language" />
         <node concept="2iRkQZ" id="vgcurbAZYM" role="2czzBx" />
       </node>
       <node concept="2iRkQZ" id="2R6x4AnxQyi" role="2iSdaV" />
@@ -139,7 +139,7 @@
           </node>
           <node concept="l2Vlx" id="6DW_AMA$3CT" role="2iSdaV" />
           <node concept="3F1sOY" id="6DW_AMA$3Dk" role="3EZMnx">
-            <ref role="1NtTu8" to="jjwj:6DW_AMA$3Cx" />
+            <ref role="1NtTu8" to="jjwj:6DW_AMA$3Cx" resolve="target" />
           </node>
           <node concept="ljvvj" id="6DW_AMA$82J" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -159,7 +159,7 @@
           </node>
           <node concept="3F2HdR" id="2R6x4AnydJa" role="3EZMnx">
             <property role="2czwfO" value=" " />
-            <ref role="1NtTu8" to="jjwj:2R6x4AnydJ4" />
+            <ref role="1NtTu8" to="jjwj:2R6x4AnydJ4" resolve="manifest" />
             <node concept="l2Vlx" id="2R6x4AnydJc" role="2czzBx" />
             <node concept="tppnM" id="6DW_AMABklN" role="sWeuL">
               <node concept="ljvvj" id="6DW_AMABklP" role="3F10Kt">
@@ -203,7 +203,7 @@
     <ref role="1XX52x" to="jjwj:2R6x4Anyc74" resolve="TestModuleManifestRef" />
     <node concept="3EZMnI" id="2R6x4Anyc7e" role="2wV5jI">
       <node concept="1iCGBv" id="2R6x4Anyc7l" role="3EZMnx">
-        <ref role="1NtTu8" to="jjwj:2R6x4Anyc75" />
+        <ref role="1NtTu8" to="jjwj:2R6x4Anyc75" resolve="manifest" />
         <node concept="1sVBvm" id="2R6x4Anyc7n" role="1sWHZn">
           <node concept="3F0A7n" id="2R6x4Anyc7u" role="2wV5jI">
             <property role="1Intyy" value="true" />

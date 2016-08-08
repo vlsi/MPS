@@ -2,7 +2,7 @@
 <model ref="r:c1ef22cb-79d9-43c5-a7c0-3497c3269866(jetbrains.mps.lang.editor.forms.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -117,7 +117,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="1aoPJ1nweNO" role="3EZMnx">
-          <ref role="1NtTu8" to="f55a:1aoPJ1nweEq" />
+          <ref role="1NtTu8" to="f55a:1aoPJ1nweEq" resolve="ui" />
           <node concept="Vb9p2" id="2gdyhRQt8jL" role="3F10Kt" />
         </node>
         <node concept="3F0ifn" id="2gdyhRQt8TU" role="3EZMnx">
@@ -147,7 +147,7 @@
         </node>
         <node concept="1iCGBv" id="g_U_RSN" role="3EZMnx">
           <property role="1$x2rV" value="&lt;no property&gt;" />
-          <ref role="1NtTu8" to="f55a:3daRSMLnNZv" />
+          <ref role="1NtTu8" to="f55a:3daRSMLnNZv" resolve="propertyDeclaration" />
           <node concept="1sVBvm" id="g_U_RSM" role="1sWHZn">
             <node concept="3F0A7n" id="g_U_U1N" role="2wV5jI">
               <property role="1Intyy" value="true" />
@@ -170,7 +170,7 @@
       </node>
       <node concept="3F1sOY" id="783I1NXqJ_N" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no label&gt;" />
-        <ref role="1NtTu8" to="f55a:783I1NXqJjA" />
+        <ref role="1NtTu8" to="f55a:783I1NXqJjA" resolve="label" />
       </node>
       <node concept="PMmxH" id="h7TNGSX" role="3EZMnx">
         <ref role="PMmxG" to="tpc5:h7TMK$j" resolve="_CloseTag" />

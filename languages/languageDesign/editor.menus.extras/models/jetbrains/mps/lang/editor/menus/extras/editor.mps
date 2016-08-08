@@ -2,7 +2,7 @@
 <model ref="r:f9027d3e-0a0c-40cc-8f3c-22568753f6bb(jetbrains.mps.lang.editor.menus.extras.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -66,7 +66,7 @@
         <ref role="PMmxG" to="tpc5:VN4DhfD2Vg" resolve="TransformationMenuPartAlias" />
       </node>
       <node concept="1iCGBv" id="2ytFvC$HnDV" role="3EZMnx">
-        <ref role="1NtTu8" to="a1gu:2ytFvC$HnDi" />
+        <ref role="1NtTu8" to="a1gu:2ytFvC$HnDi" resolve="intention" />
         <node concept="1sVBvm" id="2ytFvC$HnDX" role="1sWHZn">
           <node concept="3F0A7n" id="2ytFvC$HnE5" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -75,7 +75,7 @@
         </node>
       </node>
       <node concept="3F2HdR" id="6kJcyCQ$ipD" role="3EZMnx">
-        <ref role="1NtTu8" to="tpc2:7L5lpRJINkn" />
+        <ref role="1NtTu8" to="tpc2:7L5lpRJINkn" resolve="features" />
         <node concept="l2Vlx" id="6kJcyCQ$ipF" role="2czzBx" />
         <node concept="pVoyu" id="6kJcyCQ$irq" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -107,7 +107,7 @@
         <ref role="PMmxG" to="tpc5:VN4DhfD2Vg" resolve="TransformationMenuPartAlias" />
       </node>
       <node concept="1iCGBv" id="20Jj4S2C9RY" role="3EZMnx">
-        <ref role="1NtTu8" to="a1gu:20Jj4S2C96k" />
+        <ref role="1NtTu8" to="a1gu:20Jj4S2C96k" resolve="action" />
         <node concept="1sVBvm" id="20Jj4S2C9RZ" role="1sWHZn">
           <node concept="3F0A7n" id="20Jj4S2C9S0" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -117,7 +117,7 @@
       </node>
       <node concept="l2Vlx" id="20Jj4S2C9S1" role="2iSdaV" />
       <node concept="3F2HdR" id="20Jj4S2C9S2" role="3EZMnx">
-        <ref role="1NtTu8" to="tpc2:7L5lpRJINkn" />
+        <ref role="1NtTu8" to="tpc2:7L5lpRJINkn" resolve="features" />
         <node concept="l2Vlx" id="20Jj4S2C9S3" role="2czzBx" />
         <node concept="pVoyu" id="20Jj4S2C9S4" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -149,7 +149,7 @@
         <ref role="PMmxG" to="tpc5:VN4DhfD2Vg" resolve="TransformationMenuPartAlias" />
       </node>
       <node concept="1iCGBv" id="46W80XA3se9" role="3EZMnx">
-        <ref role="1NtTu8" to="a1gu:46W80XA3sdU" />
+        <ref role="1NtTu8" to="a1gu:46W80XA3sdU" resolve="refactoring" />
         <node concept="1sVBvm" id="46W80XA3sea" role="1sWHZn">
           <node concept="3F0A7n" id="46W80XA3seb" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -159,7 +159,7 @@
       </node>
       <node concept="l2Vlx" id="46W80XA3sec" role="2iSdaV" />
       <node concept="3F2HdR" id="46W80XA3sed" role="3EZMnx">
-        <ref role="1NtTu8" to="tpc2:7L5lpRJINkn" />
+        <ref role="1NtTu8" to="tpc2:7L5lpRJINkn" resolve="features" />
         <node concept="l2Vlx" id="46W80XA3see" role="2czzBx" />
         <node concept="pVoyu" id="46W80XA3sef" role="3F10Kt">
           <property role="VOm3f" value="true" />

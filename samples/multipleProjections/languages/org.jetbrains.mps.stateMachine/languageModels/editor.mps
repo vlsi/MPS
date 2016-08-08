@@ -2,7 +2,7 @@
 <model ref="r:ab3ec9f7-a74b-4f27-b12e-43d436cdab82(jetbrains.mps.samples.multipleProjections.stateMachine.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -56,7 +56,7 @@
     <ref role="1XX52x" to="owg1:EpZY78hmIx" resolve="StateMachine" />
     <node concept="3EZMnI" id="3c1Y2R7NRkR" role="2wV5jI">
       <node concept="3F2HdR" id="3c1Y2R7NRNa" role="3EZMnx">
-        <ref role="1NtTu8" to="owg1:EpZY78hmI_" />
+        <ref role="1NtTu8" to="owg1:EpZY78hmI_" resolve="states" />
         <node concept="l2Vlx" id="3c1Y2R7NRNb" role="2czzBx" />
         <node concept="pj6Ft" id="3c1Y2R7NRNc" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -75,7 +75,7 @@
         </node>
       </node>
       <node concept="3F2HdR" id="3c1Y2R7NRl5" role="3EZMnx">
-        <ref role="1NtTu8" to="owg1:EpZY78hmIz" />
+        <ref role="1NtTu8" to="owg1:EpZY78hmIz" resolve="events" />
         <node concept="l2Vlx" id="3c1Y2R7NRl6" role="2czzBx" />
         <node concept="pj6Ft" id="3c1Y2R7NRl7" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -93,7 +93,7 @@
         </node>
       </node>
       <node concept="3F2HdR" id="3c1Y2R7NRlg" role="3EZMnx">
-        <ref role="1NtTu8" to="owg1:EpZY78hmI$" />
+        <ref role="1NtTu8" to="owg1:EpZY78hmI$" resolve="transitions" />
         <node concept="l2Vlx" id="3c1Y2R7NRlh" role="2czzBx" />
         <node concept="pj6Ft" id="3c1Y2R7NRli" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -149,7 +149,7 @@
     <node concept="3EZMnI" id="3c1Y2R7NPuB" role="2wV5jI">
       <node concept="l2Vlx" id="3c1Y2R7NPuC" role="2iSdaV" />
       <node concept="1iCGBv" id="3c1Y2R7NPuF" role="3EZMnx">
-        <ref role="1NtTu8" to="owg1:EpZY78hnh7" />
+        <ref role="1NtTu8" to="owg1:EpZY78hnh7" resolve="event" />
         <node concept="1sVBvm" id="3c1Y2R7NPuI" role="1sWHZn">
           <node concept="3F0A7n" id="3c1Y2R7NPuK" role="2wV5jI">
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -163,7 +163,7 @@
     <node concept="3EZMnI" id="3c1Y2R7NPwb" role="2wV5jI">
       <node concept="l2Vlx" id="3c1Y2R7NPwc" role="2iSdaV" />
       <node concept="1iCGBv" id="3c1Y2R7NPwf" role="3EZMnx">
-        <ref role="1NtTu8" to="owg1:EpZY78hnh5" />
+        <ref role="1NtTu8" to="owg1:EpZY78hnh5" resolve="state" />
         <node concept="1sVBvm" id="3c1Y2R7NPwi" role="1sWHZn">
           <node concept="3F0A7n" id="3c1Y2R7NPwk" role="2wV5jI">
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -179,7 +179,7 @@
         <property role="3F0ifm" value="on event" />
       </node>
       <node concept="3F1sOY" id="3c1Y2R7NR4h" role="3EZMnx">
-        <ref role="1NtTu8" to="owg1:EpZY78hngZ" />
+        <ref role="1NtTu8" to="owg1:EpZY78hngZ" resolve="trigger" />
         <node concept="ljvvj" id="7R1YSR9aZKY" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -187,13 +187,13 @@
       <node concept="l2Vlx" id="3c1Y2R7NPAr" role="2iSdaV" />
       <node concept="3EZMnI" id="3c1Y2R7NR7_" role="3EZMnx">
         <node concept="3F1sOY" id="3c1Y2R7NR89" role="3EZMnx">
-          <ref role="1NtTu8" to="owg1:EpZY78hngY" />
+          <ref role="1NtTu8" to="owg1:EpZY78hngY" resolve="fromState" />
         </node>
         <node concept="3F0ifn" id="3c1Y2R7NR8q" role="3EZMnx">
           <property role="3F0ifm" value="-&gt;" />
         </node>
         <node concept="3F1sOY" id="3c1Y2R7NR8A" role="3EZMnx">
-          <ref role="1NtTu8" to="owg1:EpZY78hnh0" />
+          <ref role="1NtTu8" to="owg1:EpZY78hnh0" resolve="toState" />
         </node>
         <node concept="VPM3Z" id="3c1Y2R7NR7B" role="3F10Kt">
           <property role="VOm3f" value="false" />

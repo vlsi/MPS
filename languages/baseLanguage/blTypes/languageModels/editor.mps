@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
   </languages>
   <imports>
     <import index="tpdt" ref="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" />
@@ -68,7 +68,7 @@
       </node>
       <node concept="3F2HdR" id="gRDMIcv" role="3EZMnx">
         <property role="2czwfO" value="," />
-        <ref role="1NtTu8" to="tpdt:gRDMI7g" />
+        <ref role="1NtTu8" to="tpdt:gRDMI7g" resolve="extends" />
         <node concept="l2Vlx" id="i0NSiLk" role="2czzBx" />
       </node>
       <node concept="l2Vlx" id="i0I8OMN" role="2iSdaV" />
@@ -78,7 +78,7 @@
     <ref role="1XX52x" to="tpdt:gRDMZzC" resolve="PrimitiveTypeRef" />
     <node concept="3EZMnI" id="gRDMZCy" role="2wV5jI">
       <node concept="1iCGBv" id="gRDMZCz" role="3EZMnx">
-        <ref role="1NtTu8" to="tpdt:gRDMZzB" />
+        <ref role="1NtTu8" to="tpdt:gRDMZzB" resolve="descriptor" />
         <node concept="1sVBvm" id="gRDMZC$" role="1sWHZn">
           <node concept="3F0A7n" id="gRDMZC_" role="2wV5jI">
             <property role="1Intyy" value="true" />

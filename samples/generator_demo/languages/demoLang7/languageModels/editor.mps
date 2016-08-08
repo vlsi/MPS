@@ -2,7 +2,7 @@
 <model ref="r:f08b1eba-d157-4242-b1d4-18f615d583e8(jetbrains.mps.samples.generator_demo.demoLang7.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
   </languages>
   <imports>
     <import index="e3ke" ref="r:45723a22-341f-445c-b1e4-1a01f6efecf1(jetbrains.mps.samples.generator_demo.demoLang7.structure)" />
@@ -48,7 +48,7 @@
       </node>
       <node concept="3EZMnI" id="38QROcrvMJn" role="3EZMnx">
         <node concept="3F2HdR" id="38QROcrvMJz" role="3EZMnx">
-          <ref role="1NtTu8" to="e3ke:38QROcrvMuw" />
+          <ref role="1NtTu8" to="e3ke:38QROcrvMuw" resolve="element" />
           <node concept="2iRkQZ" id="38QROcrvMJ$" role="2czzBx" />
         </node>
         <node concept="VPM3Z" id="38QROcrvMJp" role="3F10Kt">

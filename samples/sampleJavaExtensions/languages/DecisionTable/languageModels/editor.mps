@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="0272d3b4-4cc8-481e-9e2f-07793fbfcb41" name="jetbrains.mps.lang.editor.table" version="0" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -70,13 +70,13 @@
     <ref role="1XX52x" to="278c:1Ik8KAj6Lm1" resolve="DecisionTable" />
     <node concept="3EZMnI" id="1Ik8KAj6Lmb" role="2wV5jI">
       <node concept="3F1sOY" id="1Ik8KAj6Lme" role="3EZMnx">
-        <ref role="1NtTu8" to="278c:1Ik8KAj6Lm2" />
+        <ref role="1NtTu8" to="278c:1Ik8KAj6Lm2" resolve="expectedType" />
       </node>
       <node concept="3F0ifn" id="79m2eqVFu40" role="3EZMnx">
         <property role="3F0ifm" value="Default:" />
       </node>
       <node concept="3F1sOY" id="1Ik8KAj6Lmg" role="3EZMnx">
-        <ref role="1NtTu8" to="278c:1Ik8KAj6Lm3" />
+        <ref role="1NtTu8" to="278c:1Ik8KAj6Lm3" resolve="defaultValue" />
       </node>
       <node concept="1CiYdB" id="1Ik8KAj6Lmi" role="3EZMnx">
         <node concept="2XI2dN" id="1Ik8KAj6Lmj" role="2XI0mt">
@@ -88,15 +88,15 @@
                   <node concept="pncrf" id="1Ik8KAj6Nd9" role="37wK5m" />
                   <node concept="28GBK8" id="1Ik8KAj6Ndb" role="37wK5m">
                     <ref role="28GBKb" to="278c:1Ik8KAj6Lm1" resolve="DecisionTable" />
-                    <ref role="28H3Ia" to="278c:1Ik8KAj6Lm4" />
+                    <ref role="28H3Ia" to="278c:1Ik8KAj6Lm4" resolve="colHeaders" />
                   </node>
                   <node concept="28GBK8" id="1Ik8KAj6Ndd" role="37wK5m">
                     <ref role="28GBKb" to="278c:1Ik8KAj6Lm1" resolve="DecisionTable" />
-                    <ref role="28H3Ia" to="278c:1Ik8KAj6Lm5" />
+                    <ref role="28H3Ia" to="278c:1Ik8KAj6Lm5" resolve="rowHeaders" />
                   </node>
                   <node concept="28GBK8" id="1Ik8KAj6Ndf" role="37wK5m">
                     <ref role="28GBKb" to="278c:1Ik8KAj6Lm1" resolve="DecisionTable" />
-                    <ref role="28H3Ia" to="278c:1Ik8KAj6Lm6" />
+                    <ref role="28H3Ia" to="278c:1Ik8KAj6Lm6" resolve="resultValues" />
                   </node>
                   <node concept="1Q80Hx" id="1Ik8KAj6Ndh" role="37wK5m" />
                 </node>

@@ -2,7 +2,7 @@
 <model ref="r:8561f8de-2895-494b-93be-4f557afb8444(jetbrains.mps.samples.attribute.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
   </languages>
   <imports>
     <import index="t1gd" ref="r:e99786b4-cb81-48f5-ad96-d9e0d7c7aa3c(jetbrains.mps.samples.attribute.structure)" implicit="true" />
@@ -141,7 +141,7 @@
           <property role="VOm3f" value="true" />
         </node>
         <node concept="3F2HdR" id="70B0YGk0BJE" role="3EZMnx">
-          <ref role="1NtTu8" to="t1gd:70B0YGk0BJ7" />
+          <ref role="1NtTu8" to="t1gd:70B0YGk0BJ7" resolve="nested" />
           <node concept="lj46D" id="70B0YGk0EJ4" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>

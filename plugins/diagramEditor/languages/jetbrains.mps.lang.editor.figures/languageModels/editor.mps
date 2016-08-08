@@ -2,7 +2,7 @@
 <model ref="r:e4d83561-5cd9-4b01-bf95-b441a061d0de(jetbrains.mps.lang.editor.figures.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -126,7 +126,7 @@
         <property role="3F0ifm" value="view class" />
       </node>
       <node concept="1iCGBv" id="1SVBbIvt9k3" role="3EZMnx">
-        <ref role="1NtTu8" to="ny2:1SVBbIvt9fR" />
+        <ref role="1NtTu8" to="ny2:1SVBbIvt9fR" resolve="classifier" />
         <node concept="1sVBvm" id="1SVBbIvt9k4" role="1sWHZn">
           <node concept="3F0A7n" id="1SVBbIvt9k5" role="2wV5jI">
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -143,7 +143,7 @@
         </node>
       </node>
       <node concept="3F2HdR" id="1SVBbIvt9k9" role="3EZMnx">
-        <ref role="1NtTu8" to="ny2:1SVBbIvt9h0" />
+        <ref role="1NtTu8" to="ny2:1SVBbIvt9h0" resolve="fields" />
         <node concept="l2Vlx" id="1SVBbIvt9ka" role="2czzBx" />
         <node concept="pj6Ft" id="1SVBbIvt9kb" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -168,7 +168,7 @@
     <node concept="3EZMnI" id="1SVBbIvt9o6" role="2wV5jI">
       <node concept="l2Vlx" id="1SVBbIvt9o7" role="2iSdaV" />
       <node concept="1iCGBv" id="1SVBbIvt9oa" role="3EZMnx">
-        <ref role="1NtTu8" to="ny2:1SVBbIvt9gL" />
+        <ref role="1NtTu8" to="ny2:1SVBbIvt9gL" resolve="fieldDeclaration" />
         <node concept="1sVBvm" id="1SVBbIvt9ob" role="1sWHZn">
           <node concept="3F0A7n" id="1SVBbIvt9oc" role="2wV5jI">
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />

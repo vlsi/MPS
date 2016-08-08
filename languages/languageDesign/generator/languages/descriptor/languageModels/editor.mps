@@ -2,7 +2,7 @@
 <model ref="r:7ed7a88c-17bf-40a5-be72-b50cea0614c7(jetbrains.mps.lang.descriptor.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="2" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
   </languages>
   <imports>
     <import index="yv2q" ref="r:cdf8afc0-fdc6-47ca-b829-7b2226168efa(jetbrains.mps.lang.descriptor.structure)" />
@@ -51,7 +51,7 @@
       <node concept="3EZMnI" id="1uh_eNRS9l1" role="3EZMnx">
         <node concept="l2Vlx" id="1uh_eNRS9l2" role="2iSdaV" />
         <node concept="3F1sOY" id="1uh_eNRS9l0" role="3EZMnx">
-          <ref role="1NtTu8" to="yv2q:1uh_eNRS9kV" />
+          <ref role="1NtTu8" to="yv2q:1uh_eNRS9kV" resolve="language" />
         </node>
       </node>
     </node>
@@ -63,7 +63,7 @@
         <property role="3F0ifm" value="generator descriptor for " />
       </node>
       <node concept="1iCGBv" id="3pzUVOrWgYz" role="3EZMnx">
-        <ref role="1NtTu8" to="yv2q:3pzUVOrWgq4" />
+        <ref role="1NtTu8" to="yv2q:3pzUVOrWgq4" resolve="generator" />
         <node concept="1sVBvm" id="3pzUVOrWgY_" role="1sWHZn">
           <node concept="3F0A7n" id="3pzUVOrWiXt" role="2wV5jI">
             <property role="1Intyy" value="true" />

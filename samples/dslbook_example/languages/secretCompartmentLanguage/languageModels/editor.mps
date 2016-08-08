@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c8959042d(jetbrains.mps.samples.secretCompartmentLanguage.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
   </languages>
   <imports>
     <import index="tpo2" ref="r:00000000-0000-4000-0000-011c8959042e(jetbrains.mps.samples.secretCompartmentLanguage.structure)" />
@@ -80,7 +80,7 @@
         </node>
         <node concept="3F2HdR" id="hqWRC$Z" role="3EZMnx">
           <property role="2czwfN" value="true" />
-          <ref role="1NtTu8" to="tpo2:hqWRrc6" />
+          <ref role="1NtTu8" to="tpo2:hqWRrc6" resolve="event" />
           <node concept="2iRkQZ" id="i2IQKCV" role="2czzBx" />
         </node>
         <node concept="VPM3Z" id="hF4QVI8" role="3F10Kt">
@@ -95,7 +95,7 @@
           <property role="3F0ifm" value="Start state:" />
         </node>
         <node concept="1iCGBv" id="hr121Gw" role="3EZMnx">
-          <ref role="1NtTu8" to="tpo2:hr11S1x" />
+          <ref role="1NtTu8" to="tpo2:hr11S1x" resolve="startState" />
           <node concept="1sVBvm" id="hr121Gx" role="1sWHZn">
             <node concept="3F0A7n" id="hr123VR" role="2wV5jI">
               <property role="1Intyy" value="true" />
@@ -111,7 +111,7 @@
       <node concept="3F0ifn" id="hr125iN" role="3EZMnx" />
       <node concept="3F2HdR" id="hr03MLH" role="3EZMnx">
         <property role="2czwfN" value="true" />
-        <ref role="1NtTu8" to="tpo2:hr03EUJ" />
+        <ref role="1NtTu8" to="tpo2:hr03EUJ" resolve="state" />
         <node concept="2iRkQZ" id="i2IQKCY" role="2czzBx" />
       </node>
       <node concept="2iRkQZ" id="i2IQKC_" role="2iSdaV" />
@@ -157,7 +157,7 @@
         </node>
         <node concept="3F2HdR" id="hr166bf" role="3EZMnx">
           <property role="2czwfN" value="true" />
-          <ref role="1NtTu8" to="tpo2:hr15Sar" />
+          <ref role="1NtTu8" to="tpo2:hr15Sar" resolve="transition" />
           <node concept="2iRkQZ" id="i2IQKCW" role="2czzBx" />
         </node>
         <node concept="VPM3Z" id="hF4QVGK" role="3F10Kt">
@@ -174,7 +174,7 @@
     <node concept="3EZMnI" id="hr14Vw9" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="1iCGBv" id="hr14XXD" role="3EZMnx">
-        <ref role="1NtTu8" to="tpo2:hr14QoW" />
+        <ref role="1NtTu8" to="tpo2:hr14QoW" resolve="trigger" />
         <node concept="1sVBvm" id="hr14XXE" role="1sWHZn">
           <node concept="3F0A7n" id="hr14ZqX" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -186,7 +186,7 @@
         <property role="3F0ifm" value="=&gt;" />
       </node>
       <node concept="1iCGBv" id="hr153qp" role="3EZMnx">
-        <ref role="1NtTu8" to="tpo2:hr14S0H" />
+        <ref role="1NtTu8" to="tpo2:hr14S0H" resolve="target" />
         <node concept="1sVBvm" id="hr153qq" role="1sWHZn">
           <node concept="3F0A7n" id="hr154h8" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -204,7 +204,7 @@
       <node concept="3EZMnI" id="hr1uBbI" role="3EZMnx">
         <property role="3EZMnw" value="false" />
         <node concept="1iCGBv" id="hr1y1Mq" role="3EZMnx">
-          <ref role="1NtTu8" to="tpo2:hr1xS$3" />
+          <ref role="1NtTu8" to="tpo2:hr1xS$3" resolve="stateMachine" />
           <node concept="1sVBvm" id="hr1y1Mr" role="1sWHZn">
             <node concept="3F0A7n" id="hr1y3cz" role="2wV5jI">
               <property role="1Intyy" value="true" />
@@ -223,7 +223,7 @@
       <node concept="3F0ifn" id="hr1PBRv" role="3EZMnx" />
       <node concept="3F2HdR" id="hr1PD85" role="3EZMnx">
         <property role="2czwfN" value="true" />
-        <ref role="1NtTu8" to="tpo2:hr1P$7t" />
+        <ref role="1NtTu8" to="tpo2:hr1P$7t" resolve="testMethod" />
         <node concept="2iRkQZ" id="i2IQKCS" role="2czzBx" />
       </node>
       <node concept="2iRkQZ" id="i2IQKCy" role="2iSdaV" />
@@ -258,7 +258,7 @@
           <property role="3EZMnw" value="true" />
           <node concept="3F2HdR" id="hr20$di" role="3EZMnx">
             <property role="2czwfN" value="true" />
-            <ref role="1NtTu8" to="tpo2:hr20vOZ" />
+            <ref role="1NtTu8" to="tpo2:hr20vOZ" resolve="handleEvent" />
             <node concept="2iRkQZ" id="i2IQKCT" role="2czzBx" />
           </node>
           <node concept="3EZMnI" id="hr1Ym8W" role="3EZMnx">
@@ -267,7 +267,7 @@
               <property role="3F0ifm" value="final state:" />
             </node>
             <node concept="1iCGBv" id="hr1Yo26" role="3EZMnx">
-              <ref role="1NtTu8" to="tpo2:hr1YeKF" />
+              <ref role="1NtTu8" to="tpo2:hr1YeKF" resolve="finalState" />
               <node concept="1sVBvm" id="hr1Yo27" role="1sWHZn">
                 <node concept="3F0A7n" id="hr1YpJi" role="2wV5jI">
                   <property role="1Intyy" value="true" />
@@ -301,7 +301,7 @@
         <property role="3F0ifm" value="handle" />
       </node>
       <node concept="1iCGBv" id="hr20s12" role="3EZMnx">
-        <ref role="1NtTu8" to="tpo2:hr20na8" />
+        <ref role="1NtTu8" to="tpo2:hr20na8" resolve="event" />
         <node concept="1sVBvm" id="hr20s13" role="1sWHZn">
           <node concept="3F0A7n" id="hr20sDQ" role="2wV5jI">
             <property role="1Intyy" value="true" />

@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c8959031f(jetbrains.mps.lang.script.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -48,12 +48,16 @@
       <concept id="1186414860679" name="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" flags="ln" index="VPxyj" />
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
       <concept id="1186414976055" name="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" flags="ln" index="VPXOz" />
+      <concept id="1630016958697344083" name="jetbrains.mps.lang.editor.structure.IMenu_Concept" flags="ng" index="2ZABuq">
+        <reference id="6591946374543067572" name="conceptDeclaration" index="aqKnT" />
+      </concept>
       <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
         <child id="1088186146602" name="editorComponent" index="1sWHZn" />
       </concept>
       <concept id="1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" flags="ng" index="1k5N5V">
         <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
+      <concept id="3308396621974580100" name="jetbrains.mps.lang.editor.structure.SubstituteMenu_Default" flags="ng" index="3p36aQ" />
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1219226236603" name="jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem" flags="ln" index="3vyZuw" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
@@ -214,7 +218,7 @@
         <node concept="3XFhqQ" id="hOInIHC" role="3EZMnx" />
         <node concept="3F2HdR" id="h8A853e" role="3EZMnx">
           <property role="2czwfN" value="true" />
-          <ref role="1NtTu8" to="tp33:h8_YvH9" />
+          <ref role="1NtTu8" to="tp33:h8_YvH9" resolve="part" />
           <node concept="4$FPG" id="1QpaM9zEVCO" role="4_6I_">
             <node concept="3clFbS" id="1QpaM9zEVCP" role="2VODD2">
               <node concept="3clFbF" id="1QpaM9zEVCQ" role="3cqZAp">
@@ -310,7 +314,7 @@
           </node>
           <node concept="1iCGBv" id="h8Fygae" role="3EZMnx">
             <property role="1$x2rV" value="&lt;choose concept&gt;" />
-            <ref role="1NtTu8" to="tp33:h8_XDD_" />
+            <ref role="1NtTu8" to="tp33:h8_XDD_" resolve="affectedInstanceConcept" />
             <node concept="1sVBvm" id="h8Fygaf" role="1sWHZn">
               <node concept="3F0A7n" id="h8Fygag" role="2wV5jI">
                 <property role="1Intyy" value="true" />
@@ -342,7 +346,7 @@
           </node>
           <node concept="3F1sOY" id="h8Fygak" role="3EZMnx">
             <property role="1$x2rV" value="&lt;no condition&gt;" />
-            <ref role="1NtTu8" to="tp33:h8_XDDA" />
+            <ref role="1NtTu8" to="tp33:h8_XDDA" resolve="affectedInstancePredicate" />
           </node>
           <node concept="VPM3Z" id="hEU$PLH" role="3F10Kt">
             <property role="VOm3f" value="false" />
@@ -364,7 +368,7 @@
             </node>
           </node>
           <node concept="3F1sOY" id="h8Fygao" role="3EZMnx">
-            <ref role="1NtTu8" to="tp33:h8_XPlb" />
+            <ref role="1NtTu8" to="tp33:h8_XPlb" resolve="affectedInstanceUpdater" />
           </node>
           <node concept="VPM3Z" id="hEU$PXT" role="3F10Kt">
             <property role="VOm3f" value="false" />
@@ -401,7 +405,7 @@
         <property role="3F0ifm" value="Factory static method: " />
       </node>
       <node concept="3F1sOY" id="2ggmC1WtnKS" role="3EZMnx">
-        <ref role="1NtTu8" to="tp33:2ggmC1WtnKJ" />
+        <ref role="1NtTu8" to="tp33:2ggmC1WtnKJ" resolve="factoryMethod" />
       </node>
       <node concept="2iRfu4" id="2ggmC1WtnKO" role="2iSdaV" />
     </node>
@@ -424,7 +428,7 @@
       </node>
       <node concept="3F1sOY" id="1ZdZFkoR13T" role="3EZMnx">
         <property role="39s7Ar" value="true" />
-        <ref role="1NtTu8" to="tp33:49356IxH1a1" />
+        <ref role="1NtTu8" to="tp33:49356IxH1a1" resolve="oldMethodSpecification" />
       </node>
       <node concept="3F0ifn" id="J8xZ2l39PC" role="3EZMnx">
         <property role="3F0ifm" value="-&gt;" />
@@ -432,7 +436,7 @@
       </node>
       <node concept="1iCGBv" id="3FxWUsVB_nD" role="3EZMnx">
         <property role="39s7Ar" value="true" />
-        <ref role="1NtTu8" to="tp33:3FxWUsVB_nq" />
+        <ref role="1NtTu8" to="tp33:3FxWUsVB_nq" resolve="newMethodDeclaration" />
         <node concept="1sVBvm" id="3FxWUsVB_nE" role="1sWHZn">
           <node concept="3SHvHV" id="3FxWUsVB_nG" role="2wV5jI" />
         </node>
@@ -450,14 +454,14 @@
         <ref role="1k5W1q" to="tpen:5Rb$VBtciRq" resolve="FirstLevel" />
       </node>
       <node concept="3F1sOY" id="4HFrnGEo$3O" role="3EZMnx">
-        <ref role="1NtTu8" to="tp33:4HFrnGEow_Z" />
+        <ref role="1NtTu8" to="tp33:4HFrnGEow_Z" resolve="oldClassifier" />
       </node>
       <node concept="3F0ifn" id="5Ls_1gSlNiF" role="3EZMnx">
         <property role="3F0ifm" value="-&gt;" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       </node>
       <node concept="1iCGBv" id="5Ls_1gSlNiH" role="3EZMnx">
-        <ref role="1NtTu8" to="tp33:5Ls_1gSlNir" />
+        <ref role="1NtTu8" to="tp33:5Ls_1gSlNir" resolve="newClassifier" />
         <node concept="1sVBvm" id="5Ls_1gSlNiI" role="1sWHZn">
           <node concept="3SHvHV" id="J8xZ2l39PM" role="2wV5jI" />
         </node>
@@ -470,7 +474,7 @@
         </node>
       </node>
       <node concept="3F2HdR" id="J8xZ2l3fds" role="3EZMnx">
-        <ref role="1NtTu8" to="tp33:J8xZ2l3fdd" />
+        <ref role="1NtTu8" to="tp33:J8xZ2l3fdd" resolve="pullUpMethods" />
         <node concept="lj46D" id="J8xZ2l3fdw" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -528,7 +532,7 @@
     <property role="3GE5qa" value="api" />
     <ref role="1XX52x" to="tp33:4HFrnGEoSOz" resolve="DirectClassifierSpecification" />
     <node concept="1iCGBv" id="4HFrnGEqXRJ" role="2wV5jI">
-      <ref role="1NtTu8" to="tp33:4HFrnGEoSTt" />
+      <ref role="1NtTu8" to="tp33:4HFrnGEoSTt" resolve="classifier" />
       <node concept="1sVBvm" id="4HFrnGEqXRK" role="1sWHZn">
         <node concept="3SHvHV" id="4HFrnGEqXUt" role="2wV5jI" />
       </node>
@@ -584,7 +588,7 @@
     <property role="3GE5qa" value="api" />
     <ref role="1XX52x" to="tp33:1ZdZFkoL3m3" resolve="DirectMethodSpecification" />
     <node concept="1iCGBv" id="1ZdZFkoL3N8" role="2wV5jI">
-      <ref role="1NtTu8" to="tp33:1ZdZFkoL3Lp" />
+      <ref role="1NtTu8" to="tp33:1ZdZFkoL3Lp" resolve="methodDeclaration" />
       <node concept="1sVBvm" id="1ZdZFkoL3N9" role="1sWHZn">
         <node concept="3SHvHV" id="1ZdZFkoL3Ne" role="2wV5jI" />
       </node>
@@ -596,6 +600,9 @@
     <node concept="3F0A7n" id="1ZdZFkoOK54" role="2wV5jI">
       <ref role="1NtTu8" to="tp33:1ZdZFkoOJSD" resolve="snodeId" />
     </node>
+  </node>
+  <node concept="3p36aQ" id="1wEcoXjJm4q">
+    <ref role="aqKnT" to="tp33:h8_YI7L" resolve="MigrationScriptPart_node" />
   </node>
 </model>
 
