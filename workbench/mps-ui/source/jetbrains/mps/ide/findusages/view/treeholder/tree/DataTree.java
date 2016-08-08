@@ -78,18 +78,20 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
   //----EXCLUSION/EXPANSION----
 
-  public void setExcluded(List<DataNode> nodes, boolean value) {
+  public void setExcluded(Set<DataNode> nodes, boolean value) {
     for (DataNode node : nodes) {
-      setExcludedRecursively(node, value);
+      setExcludedRecursively(nodes, node, value);
     }
     checkExcluded();
     notifyChangeListeners();
   }
 
-  private void setExcludedRecursively(DataNode node, boolean value) {
+  //doNotProcess is needed as there might be many pairs of nodes in the list, one of which is a child of another
+  private void setExcludedRecursively(Set<DataNode> doNotProcess, DataNode node, boolean value) {
     node.getData().setExcluded(value);
     for (DataNode child : node.getChildren()) {
-      setExcludedRecursively(child, value);
+      if (doNotProcess.contains(child)) continue;
+      setExcludedRecursively(doNotProcess, child, value);
     }
   }
 

@@ -60,6 +60,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -331,7 +332,9 @@ public class UsagesTree extends MPSTree {
 
       @Override
       public int compare(UsagesTreeNode o1, UsagesTreeNode o2) {
-        if (isIgnored(o1) || isIgnored(o2)) return 0;
+        if (isIgnored(o1) || isIgnored(o2)) {
+          return 0;
+        }
         String s1 = o1.getUserObject().getData().getPlainText();
         String s2 = o2.getUserObject().getData().getPlainText();
         return s1.compareTo(s2);
@@ -454,21 +457,29 @@ public class UsagesTree extends MPSTree {
   }
 
   private void setCurrentNodesExclusion(boolean isExcluded) {
-    List<DataNode> nodes = new ArrayList<DataNode>();
+    Set<DataNode> nodes = new HashSet<>();
+
+    //we need to traverse UI tree nodes here as some child nodes of a UI node can correspond to non-child nodes of its data node
     for (UsagesTreeNode node : getCurrentNodes()) {
-      nodes.add(node.getUserObject());
+      Enumeration e = node.breadthFirstEnumeration();
+      while (e.hasMoreElements()) {
+        UsagesTreeNode n = ((UsagesTreeNode) e.nextElement());
+        nodes.add(n.getUserObject());
+      }
     }
     myContents.setExcluded(nodes, isExcluded);
   }
 
   private void setCurrentNodesOnlyExclusion() {
-    myContents.setExcluded(Arrays.asList(myContents.getTreeRoot()), true);
+    myContents.setExcluded(new HashSet<DataNode>(Arrays.asList(myContents.getTreeRoot())), true);
     setCurrentNodesExclusion(false);
   }
 
   @Override
   protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
-    if (!myShowPopupMenu) return null;
+    if (!myShowPopupMenu) {
+      return null;
+    }
 
     BaseAction includeAction = new BaseAction("Include") {
       {
@@ -509,15 +520,21 @@ public class UsagesTree extends MPSTree {
 
   private void openCurrentNodeLink(boolean inProjectIfPossible, boolean focus) {
     UsagesTreeNode treeNode = getCurrentNode();
-    if (treeNode == null) return;
+    if (treeNode == null) {
+      return;
+    }
     goByNodeLink(treeNode, inProjectIfPossible, focus);
   }
 
   private void openNewlySelectedNodeLink(TreeSelectionEvent e, boolean inProjectIfPossible, boolean focus) {
     TreePath path = e.getNewLeadSelectionPath();
-    if (path == null) return;
+    if (path == null) {
+      return;
+    }
     Object treeNode = path.getLastPathComponent();
-    if (!(treeNode instanceof UsagesTreeNode)) return;
+    if (!(treeNode instanceof UsagesTreeNode)) {
+      return;
+    }
     goByNodeLink((UsagesTreeNode) treeNode, inProjectIfPossible, focus);
   }
 
@@ -550,11 +567,15 @@ public class UsagesTree extends MPSTree {
   private UsagesTreeNode findFirstResultInSubtree(UsagesTreeNode root, boolean includeRoot) {
     assert root != null;
 
-    if (includeRoot && isAliveResultNode(root.getUserObject())) return root;
+    if (includeRoot && isAliveResultNode(root.getUserObject())) {
+      return root;
+    }
 
     for (MPSTreeNode node : root) {
       UsagesTreeNode result = findFirstResultInSubtree(((UsagesTreeNode) node), true);
-      if (result != null) return result;
+      if (result != null) {
+        return result;
+      }
     }
 
     return null;
@@ -571,10 +592,14 @@ public class UsagesTree extends MPSTree {
 
     for (MPSTreeNode node : children) {
       UsagesTreeNode result = findLastResultInSubtree(((UsagesTreeNode) node), true);
-      if (result != null) return result;
+      if (result != null) {
+        return result;
+      }
     }
 
-    if (includeRoot && isAliveResultNode(root.getUserObject())) return root;
+    if (includeRoot && isAliveResultNode(root.getUserObject())) {
+      return root;
+    }
 
     return null;
   }
@@ -584,19 +609,25 @@ public class UsagesTree extends MPSTree {
 
     //trying to do step into
     UsagesTreeNode node = findFirstResultInSubtree(fromNode, false);
-    if (node != null) return node;
+    if (node != null) {
+      return node;
+    }
 
     //go up until reach a node with child to the right from that we came from and try to get results from its children, the go to parent...
     UsagesTreeNode current = fromNode;
     while (true) {
       UsagesTreeNode parent = (UsagesTreeNode) current.getParent();
-      if (parent == getResultsNode().getParent()) return null;
+      if (parent == getResultsNode().getParent()) {
+        return null;
+      }
 
       //step into next children of that parent
       int nextIndex = parent.getIndex(current) + 1;
       while (nextIndex < parent.getChildCount()) {
         UsagesTreeNode firstResult = findFirstResultInSubtree((UsagesTreeNode) parent.getChildAt(nextIndex), true);
-        if (firstResult != null) return firstResult;
+        if (firstResult != null) {
+          return firstResult;
+        }
         nextIndex++;
       }
       current = parent;
@@ -610,19 +641,25 @@ public class UsagesTree extends MPSTree {
     UsagesTreeNode current = fromNode;
     while (true) {
       UsagesTreeNode parent = (UsagesTreeNode) current.getParent();
-      if (parent == null) return null;
+      if (parent == null) {
+        return null;
+      }
 
       //step into prev children of that parent
       int prevIndex = parent.getIndex(current) - 1;
       while (prevIndex >= 0) {
         UsagesTreeNode lastResult = findLastResultInSubtree((UsagesTreeNode) parent.getChildAt(prevIndex), true);
-        if (lastResult != null) return lastResult;
+        if (lastResult != null) {
+          return lastResult;
+        }
         prevIndex--;
       }
 
       DataNode userObject = parent.getUserObject();
       if (userObject != null) {
-        if (isAliveResultNode(userObject)) return parent;
+        if (isAliveResultNode(userObject)) {
+          return parent;
+        }
       }
 
       current = parent;
@@ -636,7 +673,9 @@ public class UsagesTree extends MPSTree {
 
   @Nullable
   private UsagesTreeNode getSearchedNodesNode() {
-    if (!myShowSearchedNodes) return null;
+    if (!myShowSearchedNodes) {
+      return null;
+    }
     return (UsagesTreeNode) getRootNode().getChildAt(0);
   }
 
@@ -700,7 +739,9 @@ public class UsagesTree extends MPSTree {
     }
 
     List<UsagesTreeNode> internalGetChildren() {
-      if (children == null) return new ArrayList<UsagesTreeNode>();
+      if (children == null) {
+        return new ArrayList<UsagesTreeNode>();
+      }
       return children;
     }
   }
