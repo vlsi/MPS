@@ -66,9 +66,6 @@
       </concept>
     </language>
     <language id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions">
-      <concept id="562388756457602485" name="jetbrains.mps.lang.actions.structure.MigrateManuallyAnnotation" flags="ng" index="xAzKH">
-        <reference id="562388756457602486" name="migrateTo" index="xAzKI" />
-      </concept>
       <concept id="562388756457499018" name="jetbrains.mps.lang.actions.structure.MigratedToAnnotation" flags="ng" index="xBawi">
         <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
       </concept>
@@ -156,27 +153,15 @@
         <ref role="3FOWKa" to="tpf8:h0jzcLb" resolve="RuleConsequence" />
         <node concept="z64au" id="h8zhKw5" role="tZc4B">
           <ref role="z65TK" to="tpf8:h0j$LEX" resolve="DismissTopMappingRule" />
-          <node concept="xAzKH" id="1wEcoXjJG7b" role="lGtFl">
-            <ref role="xAzKI" to="tpfj:1wEcoXjJG6C" />
-          </node>
         </node>
         <node concept="z64au" id="h8zhMVG" role="tZc4B">
           <ref role="z65TK" to="tpf8:h8gft7C" resolve="InlineTemplate_RuleConsequence" />
-          <node concept="xAzKH" id="1wEcoXjJG7c" role="lGtFl">
-            <ref role="xAzKI" to="tpfj:1wEcoXjJG6C" />
-          </node>
         </node>
         <node concept="z64au" id="7I5RuObTnvX" role="tZc4B">
           <ref role="z65TK" to="tpf8:7I5RuObTjPG" resolve="InlineTemplateWithContext_RuleConsequence" />
-          <node concept="xAzKH" id="1wEcoXjJG7d" role="lGtFl">
-            <ref role="xAzKI" to="tpfj:1wEcoXjJG6C" />
-          </node>
         </node>
         <node concept="z64au" id="hwb6eEY" role="tZc4B">
           <ref role="z65TK" to="tpf8:hwb5Tbr" resolve="AbandonInput_RuleConsequence" />
-          <node concept="xAzKH" id="1wEcoXjJG7e" role="lGtFl">
-            <ref role="xAzKI" to="tpfj:1wEcoXjJG6C" />
-          </node>
         </node>
         <node concept="35xCft" id="hpa6N8_" role="tZc4B">
           <ref role="35y72J" to="tpf8:h1fMGeL" resolve="WeaveEach_RuleConsequence" />
