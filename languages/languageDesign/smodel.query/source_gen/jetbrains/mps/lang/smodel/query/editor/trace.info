@@ -13,7 +13,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="17,0,167,0" name="jetbrains.mps.lang.smodel.query.editor.EditorAspectDescriptorImpl" />
+      <unit at="18,0,193,0" name="jetbrains.mps.lang.smodel.query.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.lang.smodel.query.editor)/1741258697587175586">
@@ -1843,6 +1843,90 @@
       <scope id="7738379549910147461" at="71,0,81,0" />
       <unit id="7738379549910147461" at="54,0,85,0" name="jetbrains.mps.lang.smodel.query.editor.InstancesExpression_Editor$conceptArgSingleRoleHandler_le77e3_c0" />
       <unit id="7738379549910147461" at="23,0,95,0" name="jetbrains.mps.lang.smodel.query.editor.InstancesExpression_Editor" />
+    </file>
+  </root>
+  <root nodeRef="r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.lang.smodel.query.editor)/897702244203076631">
+    <file name="PrintExpression_old_SubstituteMenu.java">
+      <node id="897702244203076631" at="14,118,15,140" concept="6" />
+      <node id="897702244203076631" at="15,140,16,18" concept="7" />
+      <node id="897702244203076631" at="13,0,18,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="897702244203076631" at="14,118,16,18">
+        <var name="result" id="897702244203076631" />
+      </scope>
+      <scope id="897702244203076631" at="13,0,18,0">
+        <var name="_context" id="897702244203076631" />
+      </scope>
+      <unit id="897702244203076631" at="12,0,19,0" name="jetbrains.mps.lang.smodel.query.editor.PrintExpression_old_SubstituteMenu" />
+    </file>
+  </root>
+  <root nodeRef="r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.lang.smodel.query.editor)/897702244203076632">
+    <file name="PrintNodeExpression_old_SubstituteMenu.java">
+      <node id="897702244203076632" at="14,118,15,140" concept="6" />
+      <node id="897702244203076632" at="15,140,16,18" concept="7" />
+      <node id="897702244203076632" at="13,0,18,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="897702244203076632" at="14,118,16,18">
+        <var name="result" id="897702244203076632" />
+      </scope>
+      <scope id="897702244203076632" at="13,0,18,0">
+        <var name="_context" id="897702244203076632" />
+      </scope>
+      <unit id="897702244203076632" at="12,0,19,0" name="jetbrains.mps.lang.smodel.query.editor.PrintNodeExpression_old_SubstituteMenu" />
+    </file>
+  </root>
+  <root nodeRef="r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.lang.smodel.query.editor)/897702244203076633">
+    <file name="PrintNodeReferenceExpression_old_SubstituteMenu.java">
+      <node id="897702244203076633" at="14,118,15,140" concept="6" />
+      <node id="897702244203076633" at="15,140,16,18" concept="7" />
+      <node id="897702244203076633" at="13,0,18,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="897702244203076633" at="14,118,16,18">
+        <var name="result" id="897702244203076633" />
+      </scope>
+      <scope id="897702244203076633" at="13,0,18,0">
+        <var name="_context" id="897702244203076633" />
+      </scope>
+      <unit id="897702244203076633" at="12,0,19,0" name="jetbrains.mps.lang.smodel.query.editor.PrintNodeReferenceExpression_old_SubstituteMenu" />
+    </file>
+  </root>
+  <root nodeRef="r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.lang.smodel.query.editor)/897702244203076634">
+    <file name="PrintSequenceExpression_old_SubstituteMenu.java">
+      <node id="897702244203076634" at="14,118,15,140" concept="6" />
+      <node id="897702244203076634" at="15,140,16,18" concept="7" />
+      <node id="897702244203076634" at="13,0,18,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="897702244203076634" at="14,118,16,18">
+        <var name="result" id="897702244203076634" />
+      </scope>
+      <scope id="897702244203076634" at="13,0,18,0">
+        <var name="_context" id="897702244203076634" />
+      </scope>
+      <unit id="897702244203076634" at="12,0,19,0" name="jetbrains.mps.lang.smodel.query.editor.PrintSequenceExpression_old_SubstituteMenu" />
+    </file>
+  </root>
+  <root nodeRef="r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.lang.smodel.query.editor)/897702244203076635">
+    <file name="PrintTextExpression_old_SubstituteMenu.java">
+      <node id="897702244203076635" at="14,118,15,140" concept="6" />
+      <node id="897702244203076635" at="15,140,16,18" concept="7" />
+      <node id="897702244203076635" at="13,0,18,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="897702244203076635" at="14,118,16,18">
+        <var name="result" id="897702244203076635" />
+      </scope>
+      <scope id="897702244203076635" at="13,0,18,0">
+        <var name="_context" id="897702244203076635" />
+      </scope>
+      <unit id="897702244203076635" at="12,0,19,0" name="jetbrains.mps.lang.smodel.query.editor.PrintTextExpression_old_SubstituteMenu" />
+    </file>
+  </root>
+  <root nodeRef="r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.lang.smodel.query.editor)/897702244203093501">
+    <file name="GlobalScope_old_SubstituteMenu.java">
+      <node id="897702244203093501" at="14,118,15,140" concept="6" />
+      <node id="897702244203093501" at="15,140,16,18" concept="7" />
+      <node id="897702244203093501" at="13,0,18,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="897702244203093501" at="14,118,16,18">
+        <var name="result" id="897702244203093501" />
+      </scope>
+      <scope id="897702244203093501" at="13,0,18,0">
+        <var name="_context" id="897702244203093501" />
+      </scope>
+      <unit id="897702244203093501" at="12,0,19,0" name="jetbrains.mps.lang.smodel.query.editor.GlobalScope_old_SubstituteMenu" />
     </file>
   </root>
 </debug-info>

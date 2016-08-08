@@ -2,8 +2,8 @@
 <model ref="r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.lang.smodel.query.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="2" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -310,8 +310,8 @@
       </node>
       <node concept="3F1sOY" id="3J6h25QeYYl" role="3EZMnx">
         <property role="1cu_pB" value="1" />
-        <ref role="1NtTu8" to="3xdn:3J6h25QeYY9" resolve="value" />
         <ref role="1ERwB7" node="qdYczXcLw1" resolve="QueryParameterScopeValue_Actions" />
+        <ref role="1NtTu8" to="3xdn:3J6h25QeYY9" resolve="value" />
       </node>
     </node>
   </node>
@@ -579,8 +579,8 @@
     <ref role="1XX52x" to="3xdn:3J6h25Q5HRT" resolve="QueryParameterList" />
     <node concept="3F2HdR" id="3J6h25QCBQN" role="2wV5jI">
       <property role="2czwfO" value="," />
-      <ref role="1NtTu8" to="3xdn:3J6h25QCAaA" resolve="parameter" />
       <ref role="APP_o" node="3_Z1D7Uv0CK" resolve="QueryParameter_Actions" />
+      <ref role="1NtTu8" to="3xdn:3J6h25QCAaA" resolve="parameter" />
       <node concept="l2Vlx" id="3J6h25QCBQO" role="2czzBx" />
     </node>
   </node>
@@ -588,8 +588,8 @@
     <property role="3GE5qa" value="query.parameter" />
     <ref role="1XX52x" to="3xdn:31Tct3Txnn9" resolve="CustomScope" />
     <node concept="3F1sOY" id="31Tct3Txpmx" role="2wV5jI">
-      <ref role="1NtTu8" to="3xdn:31Tct3Txpke" resolve="scope" />
       <ref role="1ERwB7" node="1N$kF6q0sBF" resolve="CustomScope_Actions" />
+      <ref role="1NtTu8" to="3xdn:31Tct3Txpke" resolve="scope" />
     </node>
   </node>
   <node concept="24kQdi" id="31Tct3Tk$xC">
@@ -990,6 +990,42 @@
       <node concept="l2Vlx" id="4uVwhQyzpgj" role="2iSdaV" />
     </node>
   </node>
+  <node concept="3p36aQ" id="LPhQXjMTKn">
+    <ref role="aqKnT" to="3xdn:6_TW7xVaDdR" resolve="PrintExpression_old" />
+  </node>
+  <node concept="3p36aQ" id="LPhQXjMTKp">
+    <ref role="aqKnT" to="3xdn:5WpmwkrQrRs" resolve="PrintNodeReferenceExpression_old" />
+  </node>
+  <node concept="3p36aQ" id="LPhQXjMTKo">
+    <ref role="aqKnT" to="3xdn:4LU9FcrO3Hp" resolve="PrintNodeExpression_old" />
+  </node>
+  <node concept="3p36aQ" id="LPhQXjMTKr">
+    <ref role="aqKnT" to="3xdn:7gnNafF7YMD" resolve="PrintTextExpression_old" />
+  </node>
+  <node concept="3p36aQ" id="LPhQXjMTKq">
+    <ref role="aqKnT" to="3xdn:6_TW7xVvrpf" resolve="PrintSequenceExpression_old" />
+  </node>
+  <node concept="3p36aQ" id="1wEcoXjJz39">
+    <ref role="aqKnT" to="3xdn:3J6h25QeHP2" resolve="GlobalScope_old" />
+  </node>
+  <node concept="3p36aQ" id="1wEcoXjJz38">
+    <ref role="aqKnT" to="3xdn:DM6_$iqV$8" resolve="ProjectExpression_old" />
+  </node>
+  <node concept="3p36aQ" id="1wEcoXjJz37">
+    <ref role="aqKnT" to="3xdn:4Jke6BA4ffD" resolve="BLCommand_old" />
+  </node>
+  <node concept="3p36aQ" id="1wEcoXjJz36">
+    <ref role="aqKnT" to="3xdn:3J6h25QeHQy" resolve="ProjectScope_old" />
+  </node>
+  <node concept="3p36aQ" id="1wEcoXjJz35">
+    <ref role="aqKnT" to="3xdn:6D0CP__oaBp" resolve="BLExpression_old" />
+  </node>
+  <node concept="3p36aQ" id="1wEcoXjJz34">
+    <ref role="aqKnT" to="3xdn:7mV0m3L$tuv" resolve="ShowExpression_old" />
+  </node>
+  <node concept="3p36aQ" id="LPhQXjMXRX">
+    <ref role="aqKnT" to="3xdn:3J6h25QeHP2" resolve="GlobalScope_old" />
+  </node>
   <node concept="3p36aQ" id="1wEcoXjJz2y">
     <ref role="aqKnT" to="3xdn:6M9lfhDDWgw" resolve="AbstractPrintExpression_old" />
     <node concept="3ft6gV" id="1wEcoXjJz2$" role="3ft7WO">
@@ -1003,24 +1039,6 @@
         </node>
       </node>
     </node>
-  </node>
-  <node concept="3p36aQ" id="1wEcoXjJz34">
-    <ref role="aqKnT" to="3xdn:7mV0m3L$tuv" resolve="ShowExpression_old" />
-  </node>
-  <node concept="3p36aQ" id="1wEcoXjJz35">
-    <ref role="aqKnT" to="3xdn:6D0CP__oaBp" resolve="BLExpression_old" />
-  </node>
-  <node concept="3p36aQ" id="1wEcoXjJz36">
-    <ref role="aqKnT" to="3xdn:3J6h25QeHQy" resolve="ProjectScope_old" />
-  </node>
-  <node concept="3p36aQ" id="1wEcoXjJz37">
-    <ref role="aqKnT" to="3xdn:4Jke6BA4ffD" resolve="BLCommand_old" />
-  </node>
-  <node concept="3p36aQ" id="1wEcoXjJz38">
-    <ref role="aqKnT" to="3xdn:DM6_$iqV$8" resolve="ProjectExpression_old" />
-  </node>
-  <node concept="3p36aQ" id="1wEcoXjJz39">
-    <ref role="aqKnT" to="3xdn:3J6h25QeHP2" resolve="GlobalScope_old" />
   </node>
 </model>
 
