@@ -21180,6 +21180,7 @@
         <node concept="l2Vlx" id="6hjlZS7jm99" role="2iSdaV" />
         <node concept="3F0ifn" id="ve0pwAl48O" role="3EZMnx">
           <property role="3F0ifm" value="@Migrate manually" />
+          <ref role="1ERwB7" node="2GhHZlI5e4Q" resolve="DeleteMigratedManuallyAnnotation" />
         </node>
         <node concept="3EZMnI" id="ve0pwAl48P" role="3EZMnx">
           <node concept="VPM3Z" id="ve0pwAl48Q" role="3F10Kt">
@@ -21233,6 +21234,7 @@
         <node concept="l2Vlx" id="6hjlZS7jkp6" role="2iSdaV" />
         <node concept="3F0ifn" id="ve0pwAkECc" role="3EZMnx">
           <property role="3F0ifm" value="@Migrated" />
+          <ref role="1ERwB7" node="2GhHZlI55xz" resolve="DeleteMigratedToAnnotation" />
         </node>
         <node concept="3EZMnI" id="ve0pwAkECi" role="3EZMnx">
           <node concept="VPM3Z" id="ve0pwAkECk" role="3F10Kt">
@@ -25552,6 +25554,42 @@
                   </node>
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="2GhHZlI55xz">
+    <property role="3GE5qa" value="migration" />
+    <property role="TrG5h" value="DeleteMigratedToAnnotation" />
+    <ref role="1h_SK9" to="tpc2:ve0pwAkEAa" resolve="MigratedToAnnotation" />
+    <node concept="1hA7zw" id="2GhHZlI55x$" role="1h_SK8">
+      <property role="1hAc7j" value="delete_action_id" />
+      <node concept="1hAIg9" id="2GhHZlI55x_" role="1hA7z_">
+        <node concept="3clFbS" id="2GhHZlI55xA" role="2VODD2">
+          <node concept="3clFbF" id="2GhHZlI5dN$" role="3cqZAp">
+            <node concept="2OqwBi" id="2GhHZlI5dR$" role="3clFbG">
+              <node concept="0IXxy" id="2GhHZlI5dNz" role="2Oq$k0" />
+              <node concept="1PgB_6" id="2GhHZlI5dZh" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="2GhHZlI5e4Q">
+    <property role="3GE5qa" value="migration" />
+    <property role="TrG5h" value="DeleteMigratedManuallyAnnotation" />
+    <ref role="1h_SK9" to="tpc2:ve0pwAv4UM" resolve="MigrateManuallynnotation" />
+    <node concept="1hA7zw" id="2GhHZlI5e4R" role="1h_SK8">
+      <property role="1hAc7j" value="delete_action_id" />
+      <node concept="1hAIg9" id="2GhHZlI5e4S" role="1hA7z_">
+        <node concept="3clFbS" id="2GhHZlI5e4T" role="2VODD2">
+          <node concept="3clFbF" id="2GhHZlI5e4U" role="3cqZAp">
+            <node concept="2OqwBi" id="2GhHZlI5e4V" role="3clFbG">
+              <node concept="0IXxy" id="2GhHZlI5e4W" role="2Oq$k0" />
+              <node concept="1PgB_6" id="2GhHZlI5e4X" role="2OqNvi" />
             </node>
           </node>
         </node>

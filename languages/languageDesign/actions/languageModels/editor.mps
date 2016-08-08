@@ -19,6 +19,7 @@
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
+      <concept id="1402906326895675325" name="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" flags="nn" index="0IXxy" />
       <concept id="2000375450116454183" name="jetbrains.mps.lang.editor.structure.ISubstituteMenu" flags="ng" index="22mbnS">
         <child id="414384289274416996" name="parts" index="3ft7WO" />
       </concept>
@@ -77,6 +78,7 @@
         <child id="8612453216082699922" name="substituteHandler" index="3aKz83" />
       </concept>
       <concept id="1139535219966" name="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" flags="ig" index="1h_SRR">
+        <reference id="1139535219968" name="applicableConcept" index="1h_SK9" />
         <child id="1139535219969" name="item" index="1h_SK8" />
       </concept>
       <concept id="1139535280617" name="jetbrains.mps.lang.editor.structure.CellActionMapItem" flags="lg" index="1hA7zw">
@@ -192,6 +194,7 @@
         <child id="5168775467716640653" name="linkQualifier" index="1aIX9E" />
       </concept>
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
+      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -2766,6 +2769,7 @@
         <node concept="l2Vlx" id="6hjlZS7jkp6" role="2iSdaV" />
         <node concept="3F0ifn" id="ve0pwAkECc" role="3EZMnx">
           <property role="3F0ifm" value="@Migrated" />
+          <ref role="1ERwB7" node="2GhHZlI4T9T" resolve="DeleteMigratedAnnotation" />
         </node>
         <node concept="3EZMnI" id="ve0pwAkECi" role="3EZMnx">
           <node concept="VPM3Z" id="ve0pwAkECk" role="3F10Kt">
@@ -2819,6 +2823,7 @@
         <node concept="l2Vlx" id="6hjlZS7jm99" role="2iSdaV" />
         <node concept="3F0ifn" id="ve0pwAl48O" role="3EZMnx">
           <property role="3F0ifm" value="@Migrate manually" />
+          <ref role="1ERwB7" node="2GhHZlI4wJu" resolve="DeleteMigratedManuallyAnnotation" />
         </node>
         <node concept="3EZMnI" id="ve0pwAl48P" role="3EZMnx">
           <node concept="VPM3Z" id="ve0pwAl48Q" role="3F10Kt">
@@ -2967,6 +2972,42 @@
   </node>
   <node concept="3p36aQ" id="1wEcoXjJMBF">
     <ref role="aqKnT" to="tpdg:hLht00O" resolve="ConceptFunctionParameter_nodeToPasteWrap" />
+  </node>
+  <node concept="1h_SRR" id="2GhHZlI4wJu">
+    <property role="3GE5qa" value="migration" />
+    <property role="TrG5h" value="DeleteMigratedManuallyAnnotation" />
+    <ref role="1h_SK9" to="tpdg:ve0pwAl3QP" resolve="MigrateManuallyAnnotation" />
+    <node concept="1hA7zw" id="2GhHZlI4wJv" role="1h_SK8">
+      <property role="1hAc7j" value="delete_action_id" />
+      <node concept="1hAIg9" id="2GhHZlI4wJw" role="1hA7z_">
+        <node concept="3clFbS" id="2GhHZlI4wJx" role="2VODD2">
+          <node concept="3clFbF" id="2GhHZlI4wJM" role="3cqZAp">
+            <node concept="2OqwBi" id="2GhHZlI4wNC" role="3clFbG">
+              <node concept="0IXxy" id="2GhHZlI4wJL" role="2Oq$k0" />
+              <node concept="1PgB_6" id="2GhHZlI4wVr" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="2GhHZlI4T9T">
+    <property role="3GE5qa" value="migration" />
+    <property role="TrG5h" value="DeleteMigratedAnnotation" />
+    <ref role="1h_SK9" to="tpdg:ve0pwAkEAa" resolve="MigratedToAnnotation" />
+    <node concept="1hA7zw" id="2GhHZlI4T9U" role="1h_SK8">
+      <property role="1hAc7j" value="delete_action_id" />
+      <node concept="1hAIg9" id="2GhHZlI4T9V" role="1hA7z_">
+        <node concept="3clFbS" id="2GhHZlI4T9W" role="2VODD2">
+          <node concept="3clFbF" id="2GhHZlI4T9X" role="3cqZAp">
+            <node concept="2OqwBi" id="2GhHZlI4T9Y" role="3clFbG">
+              <node concept="0IXxy" id="2GhHZlI4T9Z" role="2Oq$k0" />
+              <node concept="1PgB_6" id="2GhHZlI4Ta0" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

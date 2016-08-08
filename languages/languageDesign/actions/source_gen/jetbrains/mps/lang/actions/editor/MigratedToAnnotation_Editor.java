@@ -48,6 +48,7 @@ public class MigratedToAnnotation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_9ydd10_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@Migrated");
     editorCell.setCellId("Constant_9ydd10_a0a");
+    DeleteMigratedAnnotation.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

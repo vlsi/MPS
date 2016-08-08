@@ -48,6 +48,7 @@ public class MigrateManuallyAnnotation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_kasd0f_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@Migrate manually");
     editorCell.setCellId("Constant_kasd0f_a0a");
+    DeleteMigratedManuallyAnnotation.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
