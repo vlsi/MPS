@@ -300,6 +300,9 @@
       <concept id="1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" flags="nn" index="2oxUTD">
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
+      <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
+        <child id="3542851458883491298" name="languageId" index="2V$M_3" />
+      </concept>
       <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
@@ -331,6 +334,10 @@
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
+      </concept>
+      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
+        <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
+        <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
       <concept id="1139184414036" name="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" flags="nn" index="WFELt">
         <reference id="1139877738879" name="concept" index="1A0vxQ" />
@@ -1287,6 +1294,40 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="1wEcoXjlAad" role="3cqZAp">
+          <node concept="3clFbS" id="1wEcoXjlAaf" role="3clFbx">
+            <node concept="3clFbF" id="1wEcoXjlGK7" role="3cqZAp">
+              <node concept="2YIFZM" id="1wEcoXjlGMO" role="3clFbG">
+                <ref role="37wK5l" node="1wEcoXiBS0k" resolve="addModelImport" />
+                <ref role="1Pybhc" node="1mnY7H6daTl" resolve="ActionMigrationHelper" />
+                <node concept="2YIFZM" id="1wEcoXjm1M6" role="37wK5m">
+                  <ref role="37wK5l" node="1pZy1AhS$A" resolve="getActionsAspect" />
+                  <ref role="1Pybhc" node="1mnY7H6daTl" resolve="ActionMigrationHelper" />
+                  <node concept="37vLTw" id="1wEcoXjm1XJ" role="37wK5m">
+                    <ref role="3cqZAo" node="3lf90pm_Nlb" resolve="myLanguage" />
+                  </node>
+                </node>
+                <node concept="2YIFZM" id="1wEcoXjm136" role="37wK5m">
+                  <ref role="37wK5l" node="4RIg_teZpik" resolve="getEditorAspect" />
+                  <ref role="1Pybhc" node="1mnY7H6daTl" resolve="ActionMigrationHelper" />
+                  <node concept="37vLTw" id="1wEcoXjm188" role="37wK5m">
+                    <ref role="3cqZAo" node="3lf90pm_Nlb" resolve="myLanguage" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="1wEcoXjlFtJ" role="3clFbw">
+            <node concept="2OqwBi" id="1wEcoXjlFtL" role="3fr31v">
+              <node concept="37vLTw" id="1wEcoXjlFtM" role="2Oq$k0">
+                <ref role="3cqZAo" node="41ZU75YPCBf" resolve="myNewlyCreatedMenus" />
+              </node>
+              <node concept="liA8E" id="1wEcoXjlFtN" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3Tm1VV" id="3lf90pm$_cK" role="1B3o_S" />
     </node>
@@ -1899,12 +1940,15 @@
                       <node concept="3clFbF" id="1wEcoXiC7lo" role="3cqZAp">
                         <node concept="2YIFZM" id="1wEcoXiCaoX" role="3clFbG">
                           <ref role="1Pybhc" node="1mnY7H6daTl" resolve="ActionMigrationHelper" />
-                          <ref role="37wK5l" node="1wEcoXiBS0k" resolve="addMissingMenuReference" />
+                          <ref role="37wK5l" node="1wEcoXiBS0k" resolve="addModelImport" />
                           <node concept="37vLTw" id="1wEcoXiFeTU" role="37wK5m">
                             <ref role="3cqZAo" node="ve0pw_KSCx" resolve="editorAspect" />
                           </node>
-                          <node concept="37vLTw" id="1wEcoXiCN2D" role="37wK5m">
-                            <ref role="3cqZAo" node="ve0pw_KSB_" resolve="mainMenu" />
+                          <node concept="2OqwBi" id="1wEcoXjkWt3" role="37wK5m">
+                            <node concept="37vLTw" id="1wEcoXiCN2D" role="2Oq$k0">
+                              <ref role="3cqZAo" node="ve0pw_KSB_" resolve="mainMenu" />
+                            </node>
+                            <node concept="I4A8Y" id="1wEcoXjkWSh" role="2OqNvi" />
                           </node>
                         </node>
                       </node>
@@ -12650,6 +12694,40 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="1wEcoXjmoj0" role="3cqZAp">
+          <node concept="3clFbS" id="1wEcoXjmoj1" role="3clFbx">
+            <node concept="3clFbF" id="1wEcoXjmoj2" role="3cqZAp">
+              <node concept="2YIFZM" id="1wEcoXjmoj3" role="3clFbG">
+                <ref role="1Pybhc" node="1mnY7H6daTl" resolve="ActionMigrationHelper" />
+                <ref role="37wK5l" node="1wEcoXiBS0k" resolve="addModelImport" />
+                <node concept="2YIFZM" id="1wEcoXjmoj4" role="37wK5m">
+                  <ref role="1Pybhc" node="1mnY7H6daTl" resolve="ActionMigrationHelper" />
+                  <ref role="37wK5l" node="1pZy1AhS$A" resolve="getActionsAspect" />
+                  <node concept="37vLTw" id="1wEcoXjmoj5" role="37wK5m">
+                    <ref role="3cqZAo" node="1mnY7H6cURB" resolve="myLanguage" />
+                  </node>
+                </node>
+                <node concept="2YIFZM" id="1wEcoXjmoj6" role="37wK5m">
+                  <ref role="1Pybhc" node="1mnY7H6daTl" resolve="ActionMigrationHelper" />
+                  <ref role="37wK5l" node="4RIg_teZpik" resolve="getEditorAspect" />
+                  <node concept="37vLTw" id="1wEcoXjmoj7" role="37wK5m">
+                    <ref role="3cqZAo" node="1mnY7H6cURB" resolve="myLanguage" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="1wEcoXjmoj8" role="3clFbw">
+            <node concept="2OqwBi" id="1wEcoXjmoj9" role="3fr31v">
+              <node concept="37vLTw" id="1wEcoXjmsfG" role="2Oq$k0">
+                <ref role="3cqZAo" node="41ZU75YSBeh" resolve="myNewlyCreatedMenus" />
+              </node>
+              <node concept="liA8E" id="1wEcoXjmojb" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbH" id="41ZU75YSqNL" role="3cqZAp" />
       </node>
       <node concept="3Tm1VV" id="1mnY7H6cXBr" role="1B3o_S" />
@@ -15935,7 +16013,7 @@
       <node concept="3Tm1VV" id="ve0pw_AY6S" role="1B3o_S" />
     </node>
     <node concept="2YIFZL" id="1wEcoXiBS0k" role="jymVt">
-      <property role="TrG5h" value="addMissingMenuReference" />
+      <property role="TrG5h" value="addModelImport" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="39yDt$Wvo3u" role="3clF47">
@@ -15948,12 +16026,9 @@
                   <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
                 </node>
                 <node concept="2OqwBi" id="39yDt$Wvo3$" role="33vP2m">
-                  <node concept="2JrnkZ" id="39yDt$Wvo3_" role="2Oq$k0">
-                    <node concept="2OqwBi" id="39yDt$Wvo3A" role="2JrQYb">
-                      <node concept="37vLTw" id="39yDt$Wvo4p" role="2Oq$k0">
-                        <ref role="3cqZAo" node="39yDt$Wvo4h" resolve="menuToReference" />
-                      </node>
-                      <node concept="I4A8Y" id="39yDt$Wvo3C" role="2OqNvi" />
+                  <node concept="2JrnkZ" id="1wEcoXjlpNN" role="2Oq$k0">
+                    <node concept="37vLTw" id="39yDt$Wvo4p" role="2JrQYb">
+                      <ref role="3cqZAo" node="39yDt$Wvo4h" resolve="modelToImport" />
                     </node>
                   </node>
                   <node concept="liA8E" id="39yDt$Wvo3D" role="2OqNvi">
@@ -15968,8 +16043,10 @@
                   <node concept="2OqwBi" id="39yDt$Wvo3H" role="3clFbG">
                     <node concept="1eOMI4" id="39yDt$Wvo3I" role="2Oq$k0">
                       <node concept="10QFUN" id="39yDt$Wvo3J" role="1eOMHV">
-                        <node concept="37vLTw" id="39yDt$Wvo4q" role="10QFUP">
-                          <ref role="3cqZAo" node="39yDt$Wvo4j" resolve="model" />
+                        <node concept="2JrnkZ" id="1wEcoXjlqLh" role="10QFUP">
+                          <node concept="37vLTw" id="39yDt$Wvo4q" role="2JrQYb">
+                            <ref role="3cqZAo" node="39yDt$Wvo4j" resolve="model" />
+                          </node>
                         </node>
                         <node concept="3uibUv" id="39yDt$Wvo3O" role="10QFUM">
                           <ref role="3uigEE" to="w1kc:~SModelInternal" resolve="SModelInternal" />
@@ -15991,8 +16068,10 @@
                     <node concept="2OqwBi" id="1wEcoXiDDuL" role="2Oq$k0">
                       <node concept="1eOMI4" id="1wEcoXiDDuM" role="2Oq$k0">
                         <node concept="10QFUN" id="1wEcoXiDDuN" role="1eOMHV">
-                          <node concept="37vLTw" id="1wEcoXiDDuQ" role="10QFUP">
-                            <ref role="3cqZAo" node="39yDt$Wvo4j" resolve="model" />
+                          <node concept="2JrnkZ" id="1wEcoXjlqr6" role="10QFUP">
+                            <node concept="37vLTw" id="1wEcoXiDDuQ" role="2JrQYb">
+                              <ref role="3cqZAo" node="39yDt$Wvo4j" resolve="model" />
+                            </node>
                           </node>
                           <node concept="3uibUv" id="1wEcoXiDDuS" role="10QFUM">
                             <ref role="3uigEE" to="w1kc:~SModelInternal" resolve="SModelInternal" />
@@ -16015,8 +16094,10 @@
                   <node concept="3uibUv" id="39yDt$Wvo45" role="2ZW6by">
                     <ref role="3uigEE" to="w1kc:~SModelInternal" resolve="SModelInternal" />
                   </node>
-                  <node concept="37vLTw" id="39yDt$Wvo4l" role="2ZW6bz">
-                    <ref role="3cqZAo" node="39yDt$Wvo4j" resolve="model" />
+                  <node concept="2JrnkZ" id="1wEcoXjlq7O" role="2ZW6bz">
+                    <node concept="37vLTw" id="39yDt$Wvo4l" role="2JrQYb">
+                      <ref role="3cqZAo" node="39yDt$Wvo4j" resolve="model" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -16026,32 +16107,24 @@
             <node concept="37vLTw" id="39yDt$Wvo4m" role="3uHU7w">
               <ref role="3cqZAo" node="39yDt$Wvo4j" resolve="model" />
             </node>
-            <node concept="2OqwBi" id="39yDt$Wvo4e" role="3uHU7B">
-              <node concept="37vLTw" id="39yDt$Wvo4n" role="2Oq$k0">
-                <ref role="3cqZAo" node="39yDt$Wvo4h" resolve="menuToReference" />
-              </node>
-              <node concept="I4A8Y" id="39yDt$Wvo4g" role="2OqNvi" />
+            <node concept="37vLTw" id="39yDt$Wvo4n" role="3uHU7B">
+              <ref role="3cqZAo" node="39yDt$Wvo4h" resolve="modelToImport" />
             </node>
           </node>
         </node>
       </node>
       <node concept="37vLTG" id="39yDt$Wvo4j" role="3clF46">
         <property role="TrG5h" value="model" />
-        <node concept="3uibUv" id="1wEcoXiEM8x" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-        </node>
+        <node concept="H_c77" id="1wEcoXjlp7T" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="39yDt$Wvo4h" role="3clF46">
-        <property role="TrG5h" value="menuToReference" />
-        <node concept="3Tqbb2" id="39yDt$Wvo4i" role="1tU5fm">
-          <ref role="ehGHo" to="tpc2:4Sf$XywKhwM" resolve="ITransformationMenu" />
-        </node>
+        <property role="TrG5h" value="modelToImport" />
+        <node concept="H_c77" id="1wEcoXjlppV" role="1tU5fm" />
       </node>
       <node concept="3cqZAl" id="39yDt$Wvo4v" role="3clF45" />
       <node concept="3Tm1VV" id="1wEcoXiBNpm" role="1B3o_S" />
     </node>
-    <node concept="2tJIrI" id="4xah2hlJ_ib" role="jymVt" />
-    <node concept="2tJIrI" id="7f0kPyFX8dp" role="jymVt" />
+    <node concept="2tJIrI" id="1wEcoXjn1fu" role="jymVt" />
     <node concept="2YIFZL" id="AIV2SdCpyQ" role="jymVt">
       <property role="TrG5h" value="replaceReturnsWithSelectAndReturn" />
       <property role="DiZV1" value="false" />
@@ -16971,22 +17044,35 @@
               </node>
             </node>
           </node>
-          <node concept="1Wc70l" id="17utbT9WYQR" role="3clFbw">
-            <node concept="3fqX7Q" id="17utbT9WYQS" role="3uHU7w">
-              <node concept="2OqwBi" id="17utbT9WYQT" role="3fr31v">
-                <node concept="2OqwBi" id="17utbT9WYQU" role="2Oq$k0">
-                  <node concept="37vLTw" id="17utbT9WYRj" role="2Oq$k0">
-                    <ref role="3cqZAo" node="17utbT9WYRf" resolve="newModel" />
+          <node concept="22lmx$" id="1wEcoXjmZ71" role="3clFbw">
+            <node concept="1Wc70l" id="17utbT9WYQR" role="3uHU7w">
+              <node concept="3fqX7Q" id="17utbT9WYQS" role="3uHU7w">
+                <node concept="2OqwBi" id="17utbT9WYQT" role="3fr31v">
+                  <node concept="2OqwBi" id="17utbT9WYQU" role="2Oq$k0">
+                    <node concept="37vLTw" id="17utbT9WYRj" role="2Oq$k0">
+                      <ref role="3cqZAo" node="17utbT9WYRf" resolve="newModel" />
+                    </node>
+                    <node concept="liA8E" id="17utbT9WYQZ" role="2OqNvi">
+                      <ref role="37wK5l" to="w1kc:~SModelInternal.importedLanguageIds():java.util.Collection" resolve="importedLanguageIds" />
+                    </node>
                   </node>
-                  <node concept="liA8E" id="17utbT9WYQZ" role="2OqNvi">
-                    <ref role="37wK5l" to="w1kc:~SModelInternal.importedLanguageIds():java.util.Collection" resolve="importedLanguageIds" />
+                  <node concept="liA8E" id="17utbT9WYR0" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~Collection.contains(java.lang.Object):boolean" resolve="contains" />
+                    <node concept="37vLTw" id="17utbT9WYR1" role="37wK5m">
+                      <ref role="3cqZAo" node="17utbT9WYQ_" resolve="language" />
+                    </node>
                   </node>
                 </node>
-                <node concept="liA8E" id="17utbT9WYR0" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Collection.contains(java.lang.Object):boolean" resolve="contains" />
-                  <node concept="37vLTw" id="17utbT9WYR1" role="37wK5m">
-                    <ref role="3cqZAo" node="17utbT9WYQ_" resolve="language" />
+              </node>
+              <node concept="17R0WA" id="1wEcoXjmZBh" role="3uHU7B">
+                <node concept="pHN19" id="1wEcoXjmZI6" role="3uHU7w">
+                  <node concept="2V$Bhx" id="1wEcoXjmZLm" role="2V$M_3">
+                    <property role="2V$B1T" value="982eb8df-2c96-4bd7-9963-11712ea622e5" />
+                    <property role="2V$B1Q" value="jetbrains.mps.lang.resources" />
                   </node>
+                </node>
+                <node concept="37vLTw" id="1wEcoXjmZsN" role="3uHU7B">
+                  <ref role="3cqZAo" node="17utbT9WYQ_" resolve="language" />
                 </node>
               </node>
             </node>

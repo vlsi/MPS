@@ -94,6 +94,9 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
     }
     ActionMigrationHelper.addMissingImports(myNewlyCreatedMenus, ActionMigrationHelper.getEditorAspect(myLanguage), ActionMigrationHelper.getActionsAspect(myLanguage), myLanguage.getRepository());
+    if (!(myNewlyCreatedMenus.isEmpty())) {
+      ActionMigrationHelper.addModelImport(ActionMigrationHelper.getActionsAspect(myLanguage), ActionMigrationHelper.getEditorAspect(myLanguage));
+    }
   }
 
   private SNode getOrCreateMainMenu(SNode concept, String tag, SModel editorAspect) {
@@ -143,7 +146,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
         SNode mainMenu = ActionMigrationHelper.findMainNamedMenu(concept, tag);
         if (mainMenu != null) {
           SLinkOperations.setTarget(contribution, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c10ff0L, 0x5d3b34577b60a0bfL, "menuReference"), _quotation_createNode_syzi2_a0a0b0b0a1a91(mainMenu));
-          ActionMigrationHelper.addMissingMenuReference(editorAspect, mainMenu);
+          ActionMigrationHelper.addModelImport(editorAspect, SNodeOperations.getModel(mainMenu));
         } else {
           AttributeOperations.setAttribute(contribution, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce0198267c4eb2L, "jetbrains.mps.lang.editor.structure.MigrateManuallynnotation")), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce0198267c4eb2L, "jetbrains.mps.lang.editor.structure.MigrateManuallynnotation")));
         }

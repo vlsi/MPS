@@ -4184,15 +4184,18 @@
                         <node concept="3clFbF" id="1wEcoXiCoWT" role="3cqZAp">
                           <node concept="2YIFZM" id="1wEcoXiCoWU" role="3clFbG">
                             <ref role="1Pybhc" to="mp3v:1mnY7H6daTl" resolve="ActionMigrationHelper" />
-                            <ref role="37wK5l" to="mp3v:1wEcoXiBS0k" resolve="addMissingMenuReference" />
+                            <ref role="37wK5l" to="mp3v:1wEcoXiBS0k" resolve="addModelImport" />
                             <node concept="2OqwBi" id="1wEcoXiF0Wv" role="37wK5m">
                               <node concept="2GrUjf" id="1wEcoXiCoWV" role="2Oq$k0">
                                 <ref role="2Gs0qQ" node="7D5KpylhhKS" resolve="cell" />
                               </node>
                               <node concept="I4A8Y" id="1wEcoXiF5sj" role="2OqNvi" />
                             </node>
-                            <node concept="2GrUjf" id="1wEcoXiCoWW" role="37wK5m">
-                              <ref role="2Gs0qQ" node="ve0pw_YzJm" resolve="menu" />
+                            <node concept="2OqwBi" id="1wEcoXjkXrk" role="37wK5m">
+                              <node concept="2GrUjf" id="1wEcoXiCoWW" role="2Oq$k0">
+                                <ref role="2Gs0qQ" node="ve0pw_YzJm" resolve="menu" />
+                              </node>
+                              <node concept="I4A8Y" id="1wEcoXjkXRW" role="2OqNvi" />
                             </node>
                           </node>
                         </node>
@@ -4988,7 +4991,7 @@
                                         <node concept="3clFbS" id="17utbTa7iJ6" role="3clFbx">
                                           <node concept="3clFbF" id="1wEcoXiC7lo" role="3cqZAp">
                                             <node concept="2YIFZM" id="1wEcoXiCaoX" role="3clFbG">
-                                              <ref role="37wK5l" to="mp3v:1wEcoXiBS0k" resolve="addMissingMenuReference" />
+                                              <ref role="37wK5l" to="mp3v:1wEcoXiBS0k" resolve="addModelImport" />
                                               <ref role="1Pybhc" to="mp3v:1mnY7H6daTl" resolve="ActionMigrationHelper" />
                                               <node concept="2OqwBi" id="1wEcoXiET52" role="37wK5m">
                                                 <node concept="2GrUjf" id="1wEcoXiCass" role="2Oq$k0">
@@ -4996,8 +4999,11 @@
                                                 </node>
                                                 <node concept="I4A8Y" id="1wEcoXiEWB2" role="2OqNvi" />
                                               </node>
-                                              <node concept="2GrUjf" id="1wEcoXiCayo" role="37wK5m">
-                                                <ref role="2Gs0qQ" node="ve0pwA9vqY" resolve="menu" />
+                                              <node concept="2OqwBi" id="1wEcoXjll3R" role="37wK5m">
+                                                <node concept="2GrUjf" id="1wEcoXiCayo" role="2Oq$k0">
+                                                  <ref role="2Gs0qQ" node="ve0pwA9vqY" resolve="menu" />
+                                                </node>
+                                                <node concept="I4A8Y" id="1wEcoXjllVr" role="2OqNvi" />
                                               </node>
                                             </node>
                                           </node>

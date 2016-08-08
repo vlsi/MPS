@@ -136,6 +136,9 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
     }
     ActionMigrationHelper.addMissingImports(myNewlyCreatedMenus, ActionMigrationHelper.getEditorAspect(myLanguage), ActionMigrationHelper.getActionsAspect(myLanguage), myLanguage.getRepository());
+    if (!(myNewlyCreatedMenus.isEmpty())) {
+      ActionMigrationHelper.addModelImport(ActionMigrationHelper.getActionsAspect(myLanguage), ActionMigrationHelper.getEditorAspect(myLanguage));
+    }
 
   }
   private SNode findDefaultMenu(final SNode concept) {
