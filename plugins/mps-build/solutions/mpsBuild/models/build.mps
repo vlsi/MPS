@@ -2,10 +2,10 @@
 <model ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
   <persistence version="9" />
   <languages>
-    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
-    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="-1" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
+    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="0" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="2" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
   </languages>
   <imports />
   <registry>
@@ -7919,12 +7919,6 @@
               <ref role="3bR37D" node="7Kfy9QB6L4B" resolve="jetbrains.mps.lang.dataFlow" />
             </node>
           </node>
-          <node concept="1SiIV0" id="3Nk3eRzuh_q" role="3bR37C">
-            <node concept="3bR9La" id="3Nk3eRzuh_r" role="1SiIV1">
-              <property role="3bR36h" value="false" />
-              <ref role="3bR37D" node="7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
-            </node>
-          </node>
         </node>
         <node concept="1SiIV0" id="2a9bszgruxa" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgrux9" role="1SiIV1">
@@ -9471,6 +9465,12 @@
             <node concept="3bR9La" id="tXmJuW3t8u" role="1SiIV1">
               <property role="3bR36h" value="false" />
               <ref role="3bR37D" node="6zkSwmUIjUj" resolve="jetbrains.mps.lang.aspect#3274906159125927726" />
+            </node>
+          </node>
+          <node concept="1SiIV0" id="7Qxu_6FI7AQ" role="3bR37C">
+            <node concept="3bR9La" id="7Qxu_6FI7AR" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="1TaHNgiIbJb" resolve="MPS.Platform" />
             </node>
           </node>
         </node>
