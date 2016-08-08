@@ -2379,7 +2379,7 @@
       <node id="1741258697587039545" at="88,67,89,0" concept="8" />
       <node id="1741258697587039546" at="89,0,90,49" concept="7" />
       <node id="1741258697587039548" at="90,49,91,348" concept="5" />
-      <node id="4427556120929080969" at="92,395,93,424" concept="1" />
+      <node id="4427556120929080969" at="92,395,93,302" concept="1" />
       <node id="1741258697587039557" at="94,13,95,39" concept="7" />
       <node id="1741258697587039559" at="95,39,96,54" concept="1" />
       <node id="1741258697587039563" at="96,54,97,116" concept="5" />
@@ -2405,7 +2405,7 @@
       <node id="1741258697587039336" at="53,0,111,0" concept="4" trace="wrapItem#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuItem;Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuItem;" />
       <scope id="1741258697587039336" at="49,84,50,188" />
       <scope id="1741258697587039336" at="58,54,59,43" />
-      <scope id="4427556120929077181" at="92,395,93,424" />
+      <scope id="4427556120929077181" at="92,395,93,302" />
       <scope id="1741258697587039593" at="101,58,102,67" />
       <scope id="1741258697587039340" at="43,68,45,213">
         <var name="linkNode" id="1741258697587039357" />

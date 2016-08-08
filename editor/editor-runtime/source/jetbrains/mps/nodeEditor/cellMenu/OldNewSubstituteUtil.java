@@ -65,7 +65,7 @@ public class OldNewSubstituteUtil {
     }
     final SLanguage language = MetaAdapterFactory.getLanguage(actionsLanguageRuntime.getId(), ACTIONS_LANG);
     if (!module.getUsedLanguages().contains(language)) {
-      return true;
+      return false;
     }
     final int usedLanguageVersion = module.getUsedLanguageVersion(language);
     return usedLanguageVersion <= 0;

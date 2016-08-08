@@ -72,7 +72,6 @@ public class SideTransformUtil {
     }
     return result;
   }
-
   public static List<SubstituteAction> createActions(SNode node, Set<String> stringTags, CellSide cellSide, IOperationContext context) {
 
     Set<SNode> conceptsToRemove = SetSequence.fromSet(new HashSet<SNode>());

@@ -11,6 +11,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleMemberAccessExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleMemberAccessExpression_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleType_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NTCD_add_final_Contribution" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentAccessOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentReference_Editor" />

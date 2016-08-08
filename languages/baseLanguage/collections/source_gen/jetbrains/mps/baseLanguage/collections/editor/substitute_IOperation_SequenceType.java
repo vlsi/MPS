@@ -135,7 +135,7 @@ public class substitute_IOperation_SequenceType extends SubstituteMenuBase {
         ListSequence.fromList(allApplicable).addSequence(Sequence.fromIterable(subconceptOfIATN).where(new IWhereFilter<SAbstractConcept>() {
           public boolean accept(SAbstractConcept it) {
             return SetSequence.fromSet(IApplicableToNothing__BehaviorDescriptor.getAllApplicableTypes_id5cL0w3DYWgB.invoke(SNodeOperations.asSConcept(it))).any(new IWhereFilter<SNode>() {
-              public boolean accept(final SNode it) {
+              public boolean accept(SNode it) {
                 return TypeChecker.getInstance().getSubtypingManager().isSubtype(opndType, it, false);
               }
             });

@@ -103,18 +103,6 @@
         <property id="1280144168199506909" name="moduleFQName" index="2R4zub" />
       </concept>
     </language>
-    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
-      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
-        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
-      </concept>
-    </language>
   </registry>
   <node concept="lpD6F" id="2m_lP2P5XUf">
     <node concept="2R4zua" id="2m_lP2P5XUg" role="2R4z3u">
@@ -4012,13 +4000,6 @@
     <node concept="lpD6D" id="6RwmBhqUA3n" role="lpD6w">
       <ref role="lpD7u" to="t7u:2MpI$Rn4dGk" resolve="AddMenuPart_ConceptSubstitute" />
     </node>
-    <node concept="1X3_iC" id="3PLPHlN1tZO" role="lGtFl">
-      <property role="3V$3am" value="testRef" />
-      <property role="3V$3ak" value="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599477/4504141816188599486" />
-      <node concept="lpD6D" id="6RwmBhqUA3w" role="8Wnug">
-        <ref role="lpD7u" to="t7u:2MpI$Rn9qwV" resolve="AddMenuPart_GenericQuery" />
-      </node>
-    </node>
     <node concept="lpD6D" id="4ZdCZRVj1aK" role="lpD6w">
       <ref role="lpD7u" to="t7u:2Qso1vorfGl" resolve="AddMenuPart_ParameterizedSubstitute" />
     </node>
@@ -4037,12 +4018,8 @@
     <node concept="lpD6D" id="2vmcqdDWgjP" role="lpD6w">
       <ref role="lpD7u" to="t7u:2vmcqdDPJ1x" resolve="AddMenuPart_WrapperSubstituteDefaultSelection" />
     </node>
-    <node concept="1X3_iC" id="3PLPHlN6wbI" role="lGtFl">
-      <property role="3V$3am" value="testRef" />
-      <property role="3V$3ak" value="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599477/4504141816188599486" />
-      <node concept="lpD6D" id="7fvSfK$$tvk" role="8Wnug">
-        <ref role="lpD7u" to="t7u:7fvSfK$sPNu" resolve="AddMenuPart_WrapperSubstitute_returnSmallPart" />
-      </node>
+    <node concept="lpD6D" id="7fvSfK$$tvk" role="lpD6w">
+      <ref role="lpD7u" to="t7u:7fvSfK$sPNu" resolve="AddMenuPart_WrapperSubstitute_returnSmallPart" />
     </node>
     <node concept="lpD6D" id="6RwmBhqUA3F" role="lpD6w">
       <ref role="lpD7u" to="t7u:5XbhVerLqVa" resolve="ConceptSubstitutePart" />

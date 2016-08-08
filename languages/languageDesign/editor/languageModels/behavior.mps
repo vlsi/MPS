@@ -1565,6 +1565,52 @@
       <ref role="13i0hy" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
       <node concept="3Tm1VV" id="2GhHZlI9CQo" role="1B3o_S" />
       <node concept="3clFbS" id="2GhHZlI9CQT" role="3clF47">
+        <node concept="3clFbJ" id="71jmo99DQ7X" role="3cqZAp">
+          <node concept="3clFbS" id="71jmo99DQ7Y" role="3clFbx">
+            <node concept="3SKdUt" id="71jmo99DQ7Z" role="3cqZAp">
+              <node concept="3SKdUq" id="71jmo99DQ80" role="3SKWNk">
+                <property role="3SKdUp" value="Empty cells belong to the parent node, not child, so return null here to avoid calling the superclass" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="71jmo99DQ81" role="3cqZAp">
+              <node concept="3SKdUq" id="71jmo99DQ82" role="3SKWNk">
+                <property role="3SKdUp" value="implementation which would return the scope from the point of view of the child." />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="71jmo99DQ83" role="3cqZAp">
+              <node concept="3SKdUq" id="71jmo99DQ84" role="3SKWNk">
+                <property role="3SKdUp" value="Instead, returning null will cause the search for scope provider to continue upwards in cell hierarchy." />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="71jmo99DQ85" role="3cqZAp">
+              <node concept="10Nm6u" id="71jmo99DQ86" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="1Wc70l" id="71jmo99DQ87" role="3clFbw">
+            <node concept="2OqwBi" id="71jmo99DQ88" role="3uHU7B">
+              <node concept="37vLTw" id="71jmo99DQ89" role="2Oq$k0">
+                <ref role="3cqZAo" node="2GhHZlI9CQU" resolve="kind" />
+              </node>
+              <node concept="3O6GUB" id="71jmo99DQ8a" role="2OqNvi">
+                <node concept="chp4Y" id="71jmo99DQ8b" role="3QVz_e">
+                  <ref role="cht4Q" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbC" id="71jmo99DQ8c" role="3uHU7w">
+              <node concept="2OqwBi" id="71jmo99DQ8d" role="3uHU7w">
+                <node concept="13iPFW" id="71jmo99DQ8e" role="2Oq$k0" />
+                <node concept="3TrEf2" id="71jmo99DQOM" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpc2:gAczzzB" resolve="emptyCellModel" />
+                </node>
+              </node>
+              <node concept="37vLTw" id="71jmo99DQ8g" role="3uHU7B">
+                <ref role="3cqZAo" node="2GhHZlI9CQW" resolve="child" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="71jmo99DPQ4" role="3cqZAp" />
         <node concept="3clFbJ" id="2GhHZlI9DB3" role="3cqZAp">
           <node concept="3clFbS" id="2GhHZlI9DB4" role="3clFbx">
             <node concept="3cpWs6" id="2GhHZlI9DB5" role="3cqZAp">

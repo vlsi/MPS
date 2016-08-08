@@ -247,39 +247,6 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="2MpI$Rn9qwV">
-    <property role="3YCmrE" value="Substituting ActionTestAbstractChild concept instance with ActionTestChild1 concept specified in corresponsing &quot;generic query&quot; item of custom add menu part" />
-    <property role="TrG5h" value="AddMenuPart_GenericQuery" />
-    <node concept="P5awx" id="2MpI$RnlQZ$" role="LiZbd">
-      <node concept="P5Y6R" id="ovg3x$20eM" role="3VESvQ" />
-      <node concept="LIFWc" id="ovg3x$20eO" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="property_name" />
-      </node>
-    </node>
-    <node concept="P5awx" id="2MpI$RndUWL" role="LiRBU">
-      <node concept="LIFWc" id="5n86THyGRdn" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_addMenu_genericQuery" />
-      </node>
-    </node>
-    <node concept="3clFbS" id="2MpI$RnlQZG" role="LjaKd">
-      <node concept="2TK7Tu" id="2MpI$RnlQZF" role="3cqZAp">
-        <property role="2TTd_B" value="chil" />
-      </node>
-      <node concept="2HxZob" id="3d3YzDnsdh5" role="3cqZAp">
-        <node concept="1iFQzN" id="3d3YzDnsdh6" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="LiM7Y" id="2Qso1vorfGl">
     <property role="3YCmrE" value="Substituting ActionTestAbstractChild concept instance with ActionTestChild2 concept specified in corresponsing &quot;parameterized item&quot; item of custom add menu part" />
     <property role="TrG5h" value="AddMenuPart_ParameterizedSubstitute" />
@@ -704,6 +671,39 @@
     <node concept="3clFbS" id="2vmcqdDPJ1D" role="LjaKd">
       <node concept="2TK7Tu" id="2vmcqdDPJ1E" role="3cqZAp">
         <property role="2TTd_B" value="wrappedChild1" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="2MpI$Rn9qwV">
+    <property role="3YCmrE" value="Substituting ActionTestAbstractChild concept instance with ActionTestChild1 concept specified in corresponsing &quot;generic query&quot; item of custom add menu part" />
+    <property role="TrG5h" value="AddMenuPart_GenericQuery" />
+    <node concept="P5awx" id="2MpI$RnlQZ$" role="LiZbd">
+      <node concept="P5Y6R" id="ovg3x$20eM" role="3VESvQ" />
+      <node concept="LIFWc" id="ovg3x$20eO" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="property_name" />
+      </node>
+    </node>
+    <node concept="P5awx" id="2MpI$RndUWL" role="LiRBU">
+      <node concept="LIFWc" id="5n86THyGRdn" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_addMenu_genericQuery" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="2MpI$RnlQZG" role="LjaKd">
+      <node concept="2TK7Tu" id="2MpI$RnlQZF" role="3cqZAp">
+        <property role="2TTd_B" value="chil" />
+      </node>
+      <node concept="2HxZob" id="3d3YzDnsdh5" role="3cqZAp">
+        <node concept="1iFQzN" id="3d3YzDnsdh6" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
       </node>
     </node>
   </node>
