@@ -180,7 +180,8 @@ public class ActionMigrationHelper {
   private static void addMissingModelImports(SNode node, SRepository repository, SModelInternal oldModel, SModelInternal newModel) {
     List<SModelReference> missingModelImports = findMissingModelImports(node, repository);
     for (SModelReference modelImport : ListSequence.fromList(missingModelImports)) {
-      if (oldModel.getModelImports().contains(modelImport) || eq_qgr84z_a0a0a0b0r(oldModel, modelImport.resolve(repository)) && !(newModel.getModelImports().contains(modelImport))) {
+      SModel resolve = modelImport.resolve(repository);
+      if ((oldModel.getModelImports().contains(modelImport) || eq_qgr84z_a0a0a0b0b0r(oldModel, resolve)) && !(newModel.getModelImports().contains(modelImport)) && neq_qgr84z_a0a1a1a71(newModel, resolve)) {
         newModel.addModelImport(modelImport);
       }
     }
@@ -291,7 +292,10 @@ public class ActionMigrationHelper {
     SNodeAccessUtil.setProperty(quotedNode_1, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), "-1");
     return quotedNode_1;
   }
-  private static boolean eq_qgr84z_a0a0a0b0r(Object a, Object b) {
+  private static boolean neq_qgr84z_a0a1a1a71(Object a, Object b) {
+    return !(((a != null ? a.equals(b) : a == b)));
+  }
+  private static boolean eq_qgr84z_a0a0a0b0b0r(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_qgr84z_a0a0a1a81(Object a, Object b) {

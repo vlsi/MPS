@@ -17217,9 +17217,64 @@
             <ref role="3cqZAo" node="17utbT9Xeyg" resolve="missingModelImports" />
           </node>
           <node concept="3clFbS" id="17utbT9Xeyp" role="2LFqv$">
+            <node concept="3cpWs8" id="71jmo99xVfM" role="3cqZAp">
+              <node concept="3cpWsn" id="71jmo99xVfN" role="3cpWs9">
+                <property role="TrG5h" value="resolve" />
+                <node concept="3uibUv" id="71jmo99xVfd" role="1tU5fm">
+                  <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+                </node>
+                <node concept="2OqwBi" id="71jmo99xVfO" role="33vP2m">
+                  <node concept="2GrUjf" id="71jmo99xVfP" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="17utbT9Xeyn" resolve="modelImport" />
+                  </node>
+                  <node concept="liA8E" id="71jmo99xVfQ" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
+                    <node concept="37vLTw" id="71jmo99xVfR" role="37wK5m">
+                      <ref role="3cqZAo" node="17utbT9XeyU" resolve="repository" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3clFbJ" id="17utbT9Xeyq" role="3cqZAp">
-              <node concept="22lmx$" id="6hjlZS7lp1D" role="3clFbw">
-                <node concept="1Wc70l" id="17utbT9Xeyr" role="3uHU7w">
+              <node concept="1Wc70l" id="71jmo99xWiq" role="3clFbw">
+                <node concept="17QLQc" id="71jmo99xXej" role="3uHU7w">
+                  <node concept="37vLTw" id="71jmo99xXkx" role="3uHU7w">
+                    <ref role="3cqZAo" node="71jmo99xVfN" resolve="resolve" />
+                  </node>
+                  <node concept="37vLTw" id="71jmo99xWUn" role="3uHU7B">
+                    <ref role="3cqZAo" node="17utbT9XeyY" resolve="newModel" />
+                  </node>
+                </node>
+                <node concept="1Wc70l" id="17utbT9Xeyr" role="3uHU7B">
+                  <node concept="1eOMI4" id="71jmo99xVOH" role="3uHU7B">
+                    <node concept="22lmx$" id="6hjlZS7lp1D" role="1eOMHV">
+                      <node concept="2OqwBi" id="17utbT9XeyA" role="3uHU7B">
+                        <node concept="2OqwBi" id="17utbT9XeyB" role="2Oq$k0">
+                          <node concept="37vLTw" id="17utbT9Xez1" role="2Oq$k0">
+                            <ref role="3cqZAo" node="17utbT9XeyW" resolve="oldModel" />
+                          </node>
+                          <node concept="liA8E" id="17utbT9XeyG" role="2OqNvi">
+                            <ref role="37wK5l" to="w1kc:~SModelInternal.getModelImports():java.util.Collection" resolve="getModelImports" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="17utbT9XeyH" role="2OqNvi">
+                          <ref role="37wK5l" to="33ny:~Collection.contains(java.lang.Object):boolean" resolve="contains" />
+                          <node concept="2GrUjf" id="17utbT9XeyI" role="37wK5m">
+                            <ref role="2Gs0qQ" node="17utbT9Xeyn" resolve="modelImport" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="17R0WA" id="6hjlZS7lpKr" role="3uHU7w">
+                        <node concept="37vLTw" id="71jmo99xVfS" role="3uHU7w">
+                          <ref role="3cqZAo" node="71jmo99xVfN" resolve="resolve" />
+                        </node>
+                        <node concept="37vLTw" id="6hjlZS7lpzv" role="3uHU7B">
+                          <ref role="3cqZAo" node="17utbT9XeyW" resolve="oldModel" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3fqX7Q" id="17utbT9Xeys" role="3uHU7w">
                     <node concept="2OqwBi" id="17utbT9Xeyt" role="3fr31v">
                       <node concept="2OqwBi" id="17utbT9Xeyu" role="2Oq$k0">
@@ -17236,38 +17291,6 @@
                           <ref role="2Gs0qQ" node="17utbT9Xeyn" resolve="modelImport" />
                         </node>
                       </node>
-                    </node>
-                  </node>
-                  <node concept="17R0WA" id="6hjlZS7lpKr" role="3uHU7B">
-                    <node concept="2OqwBi" id="6hjlZS7lpZz" role="3uHU7w">
-                      <node concept="2GrUjf" id="6hjlZS7lpR0" role="2Oq$k0">
-                        <ref role="2Gs0qQ" node="17utbT9Xeyn" resolve="modelImport" />
-                      </node>
-                      <node concept="liA8E" id="6hjlZS7lsXC" role="2OqNvi">
-                        <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
-                        <node concept="37vLTw" id="6hjlZS7ltC3" role="37wK5m">
-                          <ref role="3cqZAo" node="17utbT9XeyU" resolve="repository" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="37vLTw" id="6hjlZS7lpzv" role="3uHU7B">
-                      <ref role="3cqZAo" node="17utbT9XeyW" resolve="oldModel" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="17utbT9XeyA" role="3uHU7B">
-                  <node concept="2OqwBi" id="17utbT9XeyB" role="2Oq$k0">
-                    <node concept="37vLTw" id="17utbT9Xez1" role="2Oq$k0">
-                      <ref role="3cqZAo" node="17utbT9XeyW" resolve="oldModel" />
-                    </node>
-                    <node concept="liA8E" id="17utbT9XeyG" role="2OqNvi">
-                      <ref role="37wK5l" to="w1kc:~SModelInternal.getModelImports():java.util.Collection" resolve="getModelImports" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="17utbT9XeyH" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~Collection.contains(java.lang.Object):boolean" resolve="contains" />
-                    <node concept="2GrUjf" id="17utbT9XeyI" role="37wK5m">
-                      <ref role="2Gs0qQ" node="17utbT9Xeyn" resolve="modelImport" />
                     </node>
                   </node>
                 </node>
