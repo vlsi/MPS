@@ -509,19 +509,11 @@
         </node>
         <node concept="z64au" id="hvfwdIJ" role="tZc4B">
           <ref role="z65TK" to="tp2c:hun63U2" resolve="YieldStatement" />
-          <node concept="xAzKH" id="1wEcoXjJ4F3" role="lGtFl">
-            <ref role="xAzKI" to="tp2i:1wEcoXjJ4Em" />
-          </node>
         </node>
         <node concept="z64au" id="hSAdUhI" role="tZc4B">
           <ref role="z65TK" to="tp2c:hS_Z6Lz" resolve="YieldAllStatement" />
-          <node concept="xAzKH" id="1wEcoXjJ4F4" role="lGtFl">
-            <ref role="xAzKI" to="tp2i:1wEcoXjJ4Em" />
-          </node>
         </node>
-        <node concept="xBawi" id="1wEcoXjJ4El" role="lGtFl">
-          <ref role="xBaxx" to="tp2i:1wEcoXjJ4Em" />
-        </node>
+        <node concept="xBawi" id="1wEcoXjJ4El" role="lGtFl" />
       </node>
     </node>
   </node>

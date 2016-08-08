@@ -61,7 +61,6 @@
         <child id="8478191136883534238" name="features" index="upBLP" />
       </concept>
       <concept id="1177335944525" name="jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_SubstituteString" flags="in" index="uGdhv" />
-      <concept id="2070581930059912763" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Icon" flags="ig" index="2vb7_K" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
@@ -118,9 +117,6 @@
       </concept>
       <concept id="8998492695583129971" name="jetbrains.mps.lang.editor.structure.SubstituteFeature_DescriptionText" flags="ng" index="16NL0t">
         <child id="8998492695583129972" name="query" index="16NL0q" />
-      </concept>
-      <concept id="1838685759388673617" name="jetbrains.mps.lang.editor.structure.TransformationFeature_Icon" flags="ng" index="3cqzi_">
-        <child id="1838685759388685689" name="query" index="3cqGud" />
       </concept>
       <concept id="1838685759388685703" name="jetbrains.mps.lang.editor.structure.TransformationFeature_DescriptionText" flags="ng" index="3cqGtN">
         <child id="1838685759388685704" name="query" index="3cqGtW" />
@@ -1186,11 +1182,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3cqzi_" id="1wEcoXjJhxU" role="2jZA2a">
-          <node concept="2vb7_K" id="1wEcoXjJhxV" role="3cqGud">
-            <node concept="3clFbS" id="1wEcoXjJhxW" role="2VODD2" />
           </node>
         </node>
         <node concept="IWg2L" id="1wEcoXjJhxX" role="IWgqQ">

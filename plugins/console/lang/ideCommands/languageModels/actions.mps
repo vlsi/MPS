@@ -72,9 +72,6 @@
       <concept id="1176544042499" name="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" flags="nn" index="3JvlWi" />
     </language>
     <language id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions">
-      <concept id="562388756457602485" name="jetbrains.mps.lang.actions.structure.MigrateManuallyAnnotation" flags="ng" index="xAzKH">
-        <reference id="562388756457602486" name="migrateTo" index="xAzKI" />
-      </concept>
       <concept id="562388756457499018" name="jetbrains.mps.lang.actions.structure.MigratedToAnnotation" flags="ng" index="xBawi">
         <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
       </concept>
@@ -373,9 +370,6 @@
                 </node>
               </node>
             </node>
-          </node>
-          <node concept="xAzKH" id="1wEcoXjJ7K7" role="lGtFl">
-            <ref role="xAzKI" to="eatw:1wEcoXjJ7K5" resolve="OfAspectOperation_SubstituteMenu" />
           </node>
         </node>
         <node concept="xBawi" id="1wEcoXjJ7K6" role="lGtFl">

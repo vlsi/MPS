@@ -1943,23 +1943,20 @@
       <node concept="3ft6gW" id="1wEcoXjJiDC" role="3ft5RY">
         <node concept="3clFbS" id="1wEcoXjJiDD" role="2VODD2">
           <node concept="3clFbF" id="1wEcoXjJiDE" role="3cqZAp">
-            <node concept="3fqX7Q" id="1wEcoXjJiDF" role="3clFbG">
-              <node concept="2OqwBi" id="1wEcoXjJiDG" role="3fr31v">
-                <node concept="1mIQ4w" id="1wEcoXjJiDH" role="2OqNvi">
-                  <node concept="chp4Y" id="1wEcoXjJiDI" role="cj9EA">
-                    <ref role="cht4Q" to="vvvw:6AQAnCEF7k" resolve="ResourceTypeDeclaration" />
-                  </node>
+            <node concept="2OqwBi" id="1wEcoXjJiDG" role="3clFbG">
+              <node concept="1mIQ4w" id="1wEcoXjJiDH" role="2OqNvi">
+                <node concept="chp4Y" id="1wEcoXjJiDI" role="cj9EA">
+                  <ref role="cht4Q" to="vvvw:6AQAnCEF7k" resolve="ResourceTypeDeclaration" />
                 </node>
-                <node concept="3bvxqY" id="1wEcoXjJiDK" role="2Oq$k0" />
               </node>
+              <node concept="3bvxqY" id="1wEcoXjJiDK" role="2Oq$k0" />
             </node>
           </node>
         </node>
       </node>
-    </node>
-    <node concept="2VfDsV" id="1wEcoXjJiPz" role="3ft7WO" />
-    <node concept="3ft5Ry" id="1wEcoXjJiP$" role="3ft7WO">
-      <ref role="4PJHt" to="vvvw:6AQAnCFE2O" resolve="ResourceClassifierType" />
+      <node concept="3ft5Ry" id="1wEcoXjJiP$" role="3ft5RZ">
+        <ref role="4PJHt" to="vvvw:6AQAnCFE2O" resolve="ResourceClassifierType" />
+      </node>
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJiEd">

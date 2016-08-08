@@ -6540,6 +6540,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.SubstituteMenuPart_Placeholder_BehaviorDescriptor" file="SubstituteMenuPart_Placeholder_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.SubstituteMenuPart_Subconcepts_BehaviorDescriptor" file="SubstituteMenuPart_Subconcepts_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />

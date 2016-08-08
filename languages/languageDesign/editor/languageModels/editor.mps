@@ -15658,7 +15658,7 @@
               <node concept="2ShNRf" id="6ed47gdcsXk" role="3clFbG">
                 <node concept="3zrR0B" id="6ed47gdcsXl" role="2ShVmc">
                   <node concept="3Tqbb2" id="6ed47gdcsXm" role="3zrR0E">
-                    <ref role="ehGHo" to="tpc2:6VgTvK0iUgM" resolve="TransformationMenuPart_Placeholder" />
+                    <ref role="ehGHo" to="tpc2:2n7QBnujfW5" resolve="SubstituteMenuPart_Placeholder" />
                   </node>
                 </node>
               </node>
@@ -25593,6 +25593,24 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3p36aQ" id="2n7QBnujfWf">
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <ref role="aqKnT" to="tpc2:2n7QBnujfW5" resolve="SubstituteMenuPart_Placeholder" />
+  </node>
+  <node concept="24kQdi" id="2n7QBnujo4B">
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <ref role="1XX52x" to="tpc2:2n7QBnujfW5" resolve="SubstituteMenuPart_Placeholder" />
+    <node concept="3F0ifn" id="2n7QBnujo4D" role="2wV5jI">
+      <node concept="OXEIz" id="2n7QBnujo4E" role="P5bDN">
+        <node concept="UkePV" id="2n7QBnujo4F" role="OY2wv">
+          <ref role="Ul1FP" to="tpc2:n0c53aH5hE" resolve="SubstituteMenuPart" />
+        </node>
+      </node>
+      <node concept="VPxyj" id="2n7QBnujo4G" role="3F10Kt">
+        <property role="VOm3f" value="true" />
       </node>
     </node>
   </node>

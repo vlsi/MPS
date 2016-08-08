@@ -106,7 +106,9 @@
         <property id="1186403771423" name="style" index="Vbekb" />
       </concept>
       <concept id="1186404549998" name="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" flags="ln" index="VechU" />
-      <concept id="615427434521884870" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Subconcepts" flags="ng" index="2VfDsV" />
+      <concept id="615427434521884870" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Subconcepts" flags="ng" index="2VfDsV">
+        <child id="7522821015001791840" name="filter" index="1Go12V" />
+      </concept>
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
@@ -135,9 +137,6 @@
       </concept>
       <concept id="7342352913006985483" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Action" flags="ng" index="3eGOop">
         <child id="8612453216082699922" name="substituteHandler" index="3aKz83" />
-      </concept>
-      <concept id="414384289274424754" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept" flags="ng" index="3ft5Ry">
-        <reference id="697754674827630451" name="concept" index="4PJHt" />
       </concept>
       <concept id="414384289274418283" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Group" flags="ng" index="3ft6gV">
         <child id="414384289274424750" name="condition" index="3ft5RY" />
@@ -206,6 +205,8 @@
       </concept>
       <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
       <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
+      <concept id="7522821015001613016" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_Concept" flags="ng" index="1GpqW3" />
+      <concept id="7522821015001613004" name="jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_FilterConcepts" flags="ig" index="1GpqWn" />
       <concept id="5624877018226904808" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Named" flags="ng" index="3ICXOK" />
       <concept id="5624877018228267058" name="jetbrains.mps.lang.editor.structure.ITransformationMenu" flags="ng" index="3INCJE">
         <child id="1638911550608572412" name="sections" index="IW6Ez" />
@@ -263,6 +264,7 @@
       </concept>
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271221393" name="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" flags="nn" index="17QLQc" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -2341,10 +2343,6 @@
         </node>
       </node>
     </node>
-    <node concept="2VfDsV" id="1wEcoXjJhk3" role="3ft7WO" />
-    <node concept="3ft5Ry" id="1wEcoXjJhk4" role="3ft7WO">
-      <ref role="4PJHt" to="8xvf:6S1jmf0vFOr" resolve="BwfFileSet" />
-    </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJhj6">
     <ref role="aqKnT" to="8xvf:5KZfyKsVu1I" resolve="BwfJavaDependency" />
@@ -2410,7 +2408,20 @@
         </node>
       </node>
     </node>
-    <node concept="2VfDsV" id="1wEcoXjJhk5" role="3ft7WO" />
+    <node concept="2VfDsV" id="1wEcoXjJhk5" role="3ft7WO">
+      <node concept="1GpqWn" id="2jHvEnOA1y9" role="1Go12V">
+        <node concept="3clFbS" id="2jHvEnOA1ya" role="2VODD2">
+          <node concept="3clFbF" id="2jHvEnOA1Dj" role="3cqZAp">
+            <node concept="17QLQc" id="2jHvEnOA1SK" role="3clFbG">
+              <node concept="35c_gC" id="2jHvEnOA2lT" role="3uHU7w">
+                <ref role="35c_gD" to="8xvf:5KZfyKsVu1I" resolve="BwfJavaDependency" />
+              </node>
+              <node concept="1GpqW3" id="2jHvEnOA1Di" role="3uHU7B" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="3ICXOK" id="1wEcoXjJHbP">
     <property role="TrG5h" value="BwfSubTask_ApplySideTransforms" />

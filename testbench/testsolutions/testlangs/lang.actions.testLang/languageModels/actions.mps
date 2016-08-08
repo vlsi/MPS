@@ -4215,9 +4215,6 @@
               </node>
             </node>
           </node>
-          <node concept="xAzKH" id="1wEcoXjJ1G5" role="lGtFl">
-            <ref role="xAzKI" to="guyj:1wEcoXjJ1Fx" />
-          </node>
         </node>
         <node concept="3buRE8" id="7fvSfK_my7Y" role="3bvWUf">
           <node concept="3clFbS" id="7fvSfK_my7Z" role="2VODD2">
@@ -4248,9 +4245,6 @@
         <ref role="3FOWKa" to="kxd5:7fvSfK_kkId" resolve="ActionTestDefaultAbstractChild" />
         <node concept="z64au" id="7fvSfK_tj7V" role="tZc4B">
           <ref role="z65TK" to="kxd5:7fvSfK_kmRl" resolve="ActionTestDefaultChild2" />
-          <node concept="xAzKH" id="1wEcoXjJ1Re" role="lGtFl">
-            <ref role="xAzKI" to="guyj:1wEcoXjJ1QE" />
-          </node>
         </node>
         <node concept="3buRE8" id="7fvSfK_txVB" role="3bvWUf">
           <node concept="3clFbS" id="7fvSfK_txVC" role="2VODD2">

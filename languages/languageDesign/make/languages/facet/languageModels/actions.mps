@@ -158,9 +158,6 @@
       <concept id="1177337890340" name="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query" flags="in" index="uNCsQ" />
       <concept id="1177339114370" name="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String" flags="in" index="uSjag" />
       <concept id="1177339225103" name="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Handler" flags="in" index="uSIkt" />
-      <concept id="562388756457602485" name="jetbrains.mps.lang.actions.structure.MigrateManuallyAnnotation" flags="ng" index="xAzKH">
-        <reference id="562388756457602486" name="migrateTo" index="xAzKI" />
-      </concept>
       <concept id="562388756457499018" name="jetbrains.mps.lang.actions.structure.MigratedToAnnotation" flags="ng" index="xBawi">
         <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
       </concept>
@@ -1447,9 +1444,6 @@
         <ref role="3FOWKa" to="vvvw:6AQAnCFE2O" resolve="ResourceClassifierType" />
         <node concept="z64au" id="4g8ToP3qcT2" role="tZc4B">
           <ref role="z65TK" to="vvvw:6AQAnCFE2O" resolve="ResourceClassifierType" />
-          <node concept="xAzKH" id="1wEcoXjJiEb" role="lGtFl">
-            <ref role="xAzKI" to="fvlq:1wEcoXjJiDB" />
-          </node>
         </node>
         <node concept="3buRE8" id="4g8ToP3qeqi" role="3bvWUf">
           <node concept="3clFbS" id="4g8ToP3qeqj" role="2VODD2">

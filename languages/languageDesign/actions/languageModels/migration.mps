@@ -6418,8 +6418,8 @@
             </node>
           </node>
           <node concept="2OqwBi" id="ve0pw_AqqW" role="3clFbw">
-            <node concept="37vLTw" id="ve0pw_AqqX" role="2Oq$k0">
-              <ref role="3cqZAo" node="5W1UxLa4u1_" resolve="oldActionType" />
+            <node concept="37vLTw" id="2n7QBnuoobU" role="2Oq$k0">
+              <ref role="3cqZAo" node="ve0pw__VzW" resolve="oldIconNode" />
             </node>
             <node concept="3x8VRR" id="ve0pw_AqqY" role="2OqNvi" />
           </node>

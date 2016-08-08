@@ -1050,6 +1050,9 @@
     <file name="SubstituteMenuPart_Parameterized_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.behavior.SubstituteMenuPart_Parameterized_BehaviorDescriptor" />
     </file>
+    <file name="SubstituteMenuPart_Placeholder_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.behavior.SubstituteMenuPart_Placeholder_BehaviorDescriptor" />
+    </file>
     <file name="SubstituteMenuPart_Subconcepts_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.behavior.SubstituteMenuPart_Subconcepts_BehaviorDescriptor" />
     </file>

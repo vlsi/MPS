@@ -6307,5 +6307,11 @@
       </node>
     </node>
   </node>
+  <node concept="1TIwiD" id="2n7QBnujfW5">
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteMenuPart_Placeholder" />
+    <property role="EcuMT" value="2722384699544370949" />
+    <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
+  </node>
 </model>
 

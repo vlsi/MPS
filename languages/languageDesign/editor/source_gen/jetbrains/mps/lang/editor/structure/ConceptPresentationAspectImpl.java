@@ -354,6 +354,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SubstituteMenuPart_Group = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuPart_IncludeMenu = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuPart_Parameterized = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SubstituteMenuPart_Placeholder = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuPart_Subconcepts = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuPart_Wrapper = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuReference = new ConceptPresentationBuilder().create();
@@ -362,9 +363,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SubstituteMenuReference_Named = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuVariableDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuVariableReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SubstituteMenu_Contribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0mn).create();
-  private final ConceptPresentation props_SubstituteMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0nn).create();
-  private final ConceptPresentation props_SubstituteMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0on).create();
+  private final ConceptPresentation props_SubstituteMenu_Contribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0nn).create();
+  private final ConceptPresentation props_SubstituteMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0on).create();
+  private final ConceptPresentation props_SubstituteMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0pn).create();
   private final ConceptPresentation props_SubstituteMenu_SimpleString = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Synchronizeable = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TableComponentStyleClassItem = new ConceptPresentationBuilder().create();
@@ -382,8 +383,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TransformationLocation_ContextAssistant = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationLocation_SideTransform = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationLocation_SideTransform_PlaceInCellHolder = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationMenu = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0go).create();
-  private final ConceptPresentation props_TransformationMenuContribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ho).create();
+  private final ConceptPresentation props_TransformationMenu = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ho).create();
+  private final ConceptPresentation props_TransformationMenuContribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0io).create();
   private final ConceptPresentation props_TransformationMenuPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuPart_Action = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuPart_Group = new ConceptPresentationBuilder().create();
@@ -399,8 +400,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TransformationMenuSection = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuVariableDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuVariableReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0xo).create();
-  private final ConceptPresentation props_TransformationMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0yo).create();
+  private final ConceptPresentation props_TransformationMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0yo).create();
+  private final ConceptPresentation props_TransformationMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0zo).create();
   private final ConceptPresentation props_UnapplyStyle = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_UnderlinedStyleClassItem = new ConceptPresentationBuilder().create();
 
@@ -1094,102 +1095,104 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 341:
         return props_SubstituteMenuPart_Parameterized;
       case 342:
-        return props_SubstituteMenuPart_Subconcepts;
+        return props_SubstituteMenuPart_Placeholder;
       case 343:
-        return props_SubstituteMenuPart_Wrapper;
+        return props_SubstituteMenuPart_Subconcepts;
       case 344:
-        return props_SubstituteMenuReference;
+        return props_SubstituteMenuPart_Wrapper;
       case 345:
-        return props_SubstituteMenuReference_Default;
+        return props_SubstituteMenuReference;
       case 346:
-        return props_SubstituteMenuReference_DefaultWithFunction;
+        return props_SubstituteMenuReference_Default;
       case 347:
-        return props_SubstituteMenuReference_Named;
+        return props_SubstituteMenuReference_DefaultWithFunction;
       case 348:
-        return props_SubstituteMenuVariableDeclaration;
+        return props_SubstituteMenuReference_Named;
       case 349:
-        return props_SubstituteMenuVariableReference;
+        return props_SubstituteMenuVariableDeclaration;
       case 350:
-        return props_SubstituteMenu_Contribution;
+        return props_SubstituteMenuVariableReference;
       case 351:
-        return props_SubstituteMenu_Default;
+        return props_SubstituteMenu_Contribution;
       case 352:
-        return props_SubstituteMenu_Named;
+        return props_SubstituteMenu_Default;
       case 353:
-        return props_SubstituteMenu_SimpleString;
+        return props_SubstituteMenu_Named;
       case 354:
-        return props_Synchronizeable;
+        return props_SubstituteMenu_SimpleString;
       case 355:
-        return props_TableComponentStyleClassItem;
+        return props_Synchronizeable;
       case 356:
-        return props_TextBackgroundColorSelectedStyleClassItem;
+        return props_TableComponentStyleClassItem;
       case 357:
-        return props_TextBackgroundColorStyleClassItem;
+        return props_TextBackgroundColorSelectedStyleClassItem;
       case 358:
-        return props_TransactionPropertyHandler_newValue;
+        return props_TextBackgroundColorStyleClassItem;
       case 359:
-        return props_TransactionPropertyHandler_oldValue;
+        return props_TransactionPropertyHandler_newValue;
       case 360:
-        return props_TransactionalPropertyHandler;
+        return props_TransactionPropertyHandler_oldValue;
       case 361:
-        return props_TransformationFeature;
+        return props_TransactionalPropertyHandler;
       case 362:
-        return props_TransformationFeature_ActionType;
+        return props_TransformationFeature;
       case 363:
-        return props_TransformationFeature_DescriptionText;
+        return props_TransformationFeature_ActionType;
       case 364:
-        return props_TransformationFeature_Icon;
+        return props_TransformationFeature_DescriptionText;
       case 365:
-        return props_TransformationLocation;
+        return props_TransformationFeature_Icon;
       case 366:
-        return props_TransformationLocation_Completion;
+        return props_TransformationLocation;
       case 367:
-        return props_TransformationLocation_ContextAssistant;
+        return props_TransformationLocation_Completion;
       case 368:
-        return props_TransformationLocation_SideTransform;
+        return props_TransformationLocation_ContextAssistant;
       case 369:
-        return props_TransformationLocation_SideTransform_PlaceInCellHolder;
+        return props_TransformationLocation_SideTransform;
       case 370:
-        return props_TransformationMenu;
+        return props_TransformationLocation_SideTransform_PlaceInCellHolder;
       case 371:
-        return props_TransformationMenuContribution;
+        return props_TransformationMenu;
       case 372:
-        return props_TransformationMenuPart;
+        return props_TransformationMenuContribution;
       case 373:
-        return props_TransformationMenuPart_Action;
+        return props_TransformationMenuPart;
       case 374:
-        return props_TransformationMenuPart_Group;
+        return props_TransformationMenuPart_Action;
       case 375:
-        return props_TransformationMenuPart_IncludeMenu;
+        return props_TransformationMenuPart_Group;
       case 376:
-        return props_TransformationMenuPart_IncludeSubstituteMenu;
+        return props_TransformationMenuPart_IncludeMenu;
       case 377:
-        return props_TransformationMenuPart_Parameterized;
+        return props_TransformationMenuPart_IncludeSubstituteMenu;
       case 378:
-        return props_TransformationMenuPart_Placeholder;
+        return props_TransformationMenuPart_Parameterized;
       case 379:
-        return props_TransformationMenuPart_SubMenu;
+        return props_TransformationMenuPart_Placeholder;
       case 380:
-        return props_TransformationMenuPart_Super;
+        return props_TransformationMenuPart_SubMenu;
       case 381:
-        return props_TransformationMenuPart_WrapSubstituteMenu;
+        return props_TransformationMenuPart_Super;
       case 382:
-        return props_TransformationMenuReference_Default;
+        return props_TransformationMenuPart_WrapSubstituteMenu;
       case 383:
-        return props_TransformationMenuReference_Named;
+        return props_TransformationMenuReference_Default;
       case 384:
-        return props_TransformationMenuSection;
+        return props_TransformationMenuReference_Named;
       case 385:
-        return props_TransformationMenuVariableDeclaration;
+        return props_TransformationMenuSection;
       case 386:
-        return props_TransformationMenuVariableReference;
+        return props_TransformationMenuVariableDeclaration;
       case 387:
-        return props_TransformationMenu_Default;
+        return props_TransformationMenuVariableReference;
       case 388:
-        return props_TransformationMenu_Named;
+        return props_TransformationMenu_Default;
       case 389:
-        return props_UnapplyStyle;
+        return props_TransformationMenu_Named;
       case 390:
+        return props_UnapplyStyle;
+      case 391:
         return props_UnderlinedStyleClassItem;
     }
     throw new IllegalStateException();

@@ -135,9 +135,6 @@
       <concept id="1177337890340" name="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query" flags="in" index="uNCsQ" />
       <concept id="1177339114370" name="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String" flags="in" index="uSjag" />
       <concept id="1177339225103" name="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Handler" flags="in" index="uSIkt" />
-      <concept id="562388756457602485" name="jetbrains.mps.lang.actions.structure.MigrateManuallyAnnotation" flags="ng" index="xAzKH">
-        <reference id="562388756457602486" name="migrateTo" index="xAzKI" />
-      </concept>
       <concept id="562388756457499018" name="jetbrains.mps.lang.actions.structure.MigratedToAnnotation" flags="ng" index="xBawi">
         <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
       </concept>
@@ -276,9 +273,6 @@
                   </node>
                 </node>
               </node>
-            </node>
-            <node concept="xAzKH" id="1wEcoXjJkDz" role="lGtFl">
-              <ref role="xAzKI" to="nu9j:1wEcoXjJkCQ" />
             </node>
           </node>
         </node>

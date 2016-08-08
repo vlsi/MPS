@@ -59,9 +59,6 @@
         <reference id="1177333551023" name="concept" index="uz4UX" />
         <child id="1177333559040" name="part" index="uz6Si" />
       </concept>
-      <concept id="562388756457602485" name="jetbrains.mps.lang.actions.structure.MigrateManuallyAnnotation" flags="ng" index="xAzKH">
-        <reference id="562388756457602486" name="migrateTo" index="xAzKI" />
-      </concept>
       <concept id="562388756457499018" name="jetbrains.mps.lang.actions.structure.MigratedToAnnotation" flags="ng" index="xBawi">
         <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
       </concept>
@@ -242,9 +239,6 @@
                 </node>
               </node>
             </node>
-            <node concept="xAzKH" id="1wEcoXjJkVw" role="lGtFl">
-              <ref role="xAzKI" to="wbzf:1wEcoXjJkUN" />
-            </node>
           </node>
         </node>
         <node concept="xBawi" id="1wEcoXjJkUM" role="lGtFl">
@@ -306,9 +300,6 @@
                   </node>
                 </node>
               </node>
-            </node>
-            <node concept="xAzKH" id="1wEcoXjJkUI" role="lGtFl">
-              <ref role="xAzKI" to="wbzf:1wEcoXjJkU1" />
             </node>
           </node>
         </node>

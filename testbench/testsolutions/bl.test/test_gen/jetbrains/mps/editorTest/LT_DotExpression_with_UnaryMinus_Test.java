@@ -24,7 +24,6 @@ public class LT_DotExpression_with_UnaryMinus_Test extends BaseTransformationTes
       initEditorComponent("4507831107788316824", "4507831107788317078");
       typeString("-");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }

@@ -16,7 +16,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="20,0,1293,0" name="jetbrains.mps.lang.editor.editor.EditorAspectDescriptorImpl" />
+      <unit at="20,0,1303,0" name="jetbrains.mps.lang.editor.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)/1077225164072300240">
@@ -30414,6 +30414,58 @@
       <unit id="2701921320708992364" at="14,0,33,0" name="jetbrains.mps.lang.editor.editor.SelectInEditorOperation_selectionStartActions" />
     </file>
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)/2722384699544370959">
+    <file name="SubstituteMenuPart_Placeholder_SubstituteMenu.java">
+      <node id="2722384699544370959" at="14,118,15,140" concept="7" />
+      <node id="2722384699544370959" at="15,140,16,18" concept="8" />
+      <node id="2722384699544370959" at="13,0,18,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="2722384699544370959" at="14,118,16,18">
+        <var name="result" id="2722384699544370959" />
+      </scope>
+      <scope id="2722384699544370959" at="13,0,18,0">
+        <var name="_context" id="2722384699544370959" />
+      </scope>
+      <unit id="2722384699544370959" at="12,0,19,0" name="jetbrains.mps.lang.editor.editor.SubstituteMenuPart_Placeholder_SubstituteMenu" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)/2722384699544404263">
+    <file name="SubstituteMenuPart_Placeholder_Editor.java">
+      <node id="2722384699544404263" at="22,79,23,61" concept="8" />
+      <node id="2722384699544404263" at="25,87,26,86" concept="7" />
+      <node id="2722384699544404263" at="26,86,27,46" concept="2" />
+      <node id="2722384699544404263" at="27,46,28,28" concept="2" />
+      <node id="2722384699544404263" at="28,28,29,34" concept="7" />
+      <node id="2722384699544404263" at="29,34,30,49" concept="2" />
+      <node id="2722384699544404263" at="30,49,31,40" concept="2" />
+      <node id="2722384699544404263" at="31,40,32,34" concept="2" />
+      <node id="2722384699544404263" at="32,34,33,274" concept="2" />
+      <node id="2722384699544404263" at="33,274,34,22" concept="8" />
+      <node id="2722384699544404267" at="39,53,40,163" concept="8" />
+      <node id="2722384699544404267" at="37,0,39,0" concept="1" trace="ReplaceWith_SubstituteMenuPart_cellMenu_tu0x7q_a0a#()V" />
+      <node id="2722384699544404263" at="22,0,25,0" concept="6" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2722384699544404267" at="39,0,42,0" concept="6" trace="getReplacementConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="2722384699544404263" at="25,0,36,0" concept="6" trace="createConstant_tu0x7q_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="2722384699544404267" at="37,65,37,65" />
+      <scope id="2722384699544404263" at="22,79,23,61" />
+      <scope id="2722384699544404267" at="39,53,40,163" />
+      <scope id="2722384699544404267" at="37,0,39,0" />
+      <scope id="2722384699544404263" at="22,0,25,0">
+        <var name="editorContext" id="2722384699544404263" />
+        <var name="node" id="2722384699544404263" />
+      </scope>
+      <scope id="2722384699544404267" at="39,0,42,0" />
+      <scope id="2722384699544404263" at="25,87,34,22">
+        <var name="editorCell" id="2722384699544404263" />
+        <var name="style" id="2722384699544404263" />
+      </scope>
+      <scope id="2722384699544404263" at="25,0,36,0">
+        <var name="editorContext" id="2722384699544404263" />
+        <var name="node" id="2722384699544404263" />
+      </scope>
+      <unit id="2722384699544404267" at="36,0,43,0" name="jetbrains.mps.lang.editor.editor.SubstituteMenuPart_Placeholder_Editor$ReplaceWith_SubstituteMenuPart_cellMenu_tu0x7q_a0a" />
+      <unit id="2722384699544404263" at="21,0,44,0" name="jetbrains.mps.lang.editor.editor.SubstituteMenuPart_Placeholder_Editor" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)/2857509971901910062">
     <file name="SubstituteMenuPart_Concepts_Editor.java">
       <node id="2857509971901910062" at="31,79,32,63" concept="8" />
@@ -39782,7 +39834,7 @@
       <node id="7173407872094687040" at="213,97,214,50" concept="12" />
       <node id="7173407872094687040" at="216,66,217,41" concept="7" />
       <node id="7173407872094687040" at="217,41,218,51" concept="8" />
-      <node id="7173407872094687059" at="220,71,221,214" concept="8" />
+      <node id="7173407872094687059" at="220,71,221,210" concept="8" />
       <node id="7173407872094687040" at="223,86,224,80" concept="7" />
       <node id="7173407872094687040" at="224,80,225,95" concept="2" />
       <node id="7173407872094687040" at="225,95,226,25" concept="8" />
@@ -39854,7 +39906,7 @@
       <scope id="7173407872094687040" at="176,40,177,30" />
       <scope id="7426426660806949007" at="188,44,189,46" />
       <scope id="7173407872094687040" at="213,97,214,50" />
-      <scope id="7173407872094687058" at="220,71,221,214" />
+      <scope id="7173407872094687058" at="220,71,221,210" />
       <scope id="7173407872094687040" at="242,122,243,390" />
       <scope id="7173407872094687043" at="49,89,51,22">
         <var name="editorCell" id="7173407872094687043" />
