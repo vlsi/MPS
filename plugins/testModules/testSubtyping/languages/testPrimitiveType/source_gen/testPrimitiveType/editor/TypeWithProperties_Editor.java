@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
@@ -91,7 +92,7 @@ public class TypeWithProperties_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "null");
     editorCell.setCellId("Constant_8yz4v0_a3a");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TypeWithProperties_Editor.TypeWithProperties_generic_cellMenu_8yz4v0_a0a3a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TypeWithProperties_Editor.TypeWithProperties_generic_cellMenu_8yz4v0_a0a3a(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   public static class TypeWithProperties_generic_cellMenu_8yz4v0_a0a3a extends AbstractCellMenuPart_Generic_Item {
@@ -150,7 +151,7 @@ public class TypeWithProperties_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "null");
     editorCell.setCellId("Constant_8yz4v0_a6a");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TypeWithProperties_Editor.TypeWithProperties_generic_cellMenu_8yz4v0_a0a6a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TypeWithProperties_Editor.TypeWithProperties_generic_cellMenu_8yz4v0_a0a6a(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   public static class TypeWithProperties_generic_cellMenu_8yz4v0_a0a6a extends AbstractCellMenuPart_Generic_Item {
@@ -209,7 +210,7 @@ public class TypeWithProperties_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "null");
     editorCell.setCellId("Constant_8yz4v0_a9a");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TypeWithProperties_Editor.TypeWithProperties_generic_cellMenu_8yz4v0_a0a9a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TypeWithProperties_Editor.TypeWithProperties_generic_cellMenu_8yz4v0_a0a9a(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   public static class TypeWithProperties_generic_cellMenu_8yz4v0_a0a9a extends AbstractCellMenuPart_Generic_Item {

@@ -97,6 +97,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
         public void execute(@NotNull String pattern) {
         }
 
+
       }
     }
   }
@@ -123,6 +124,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
       public void execute(@NotNull String pattern) {
         throw new RuntimeException("Intentional exception from 'execute'");
       }
+
 
     }
   }
@@ -160,6 +162,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
           SNodeOperations.deleteNode(_context.getNode());
         }
 
+
       }
     }
     private class TransformationMenuPart_Action_qk1e79_b2b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
@@ -187,6 +190,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
           SNodeOperations.insertPrevSiblingChild(_context.getNode(), newNode);
           _context.getEditorContext().selectWRTFocusPolicy(newNode);
         }
+
 
       }
     }
@@ -225,6 +229,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
           SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).replaceAll("a", ""));
         }
 
+
       }
     }
     private class TransformationMenuPart_Action_qk1e79_b3b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
@@ -249,6 +254,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
         @Override
         public void execute(@NotNull String pattern) {
         }
+
 
       }
     }
@@ -287,6 +293,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
           SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "a");
         }
 
+
       }
     }
   }
@@ -299,6 +306,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
 
       return new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Child"), "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.NamedMenu");
     }
+
   }
   private class TransformationMenuPart_Action_qk1e79_g1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
@@ -322,6 +330,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
       @Override
       public void execute(@NotNull String pattern) {
       }
+
 
     }
   }

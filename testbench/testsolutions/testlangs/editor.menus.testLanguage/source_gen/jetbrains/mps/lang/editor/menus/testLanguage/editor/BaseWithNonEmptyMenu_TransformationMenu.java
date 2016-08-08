@@ -57,6 +57,7 @@ public class BaseWithNonEmptyMenu_TransformationMenu extends TransformationMenuB
       public void execute(@NotNull String pattern) {
       }
 
+
     }
   }
 }

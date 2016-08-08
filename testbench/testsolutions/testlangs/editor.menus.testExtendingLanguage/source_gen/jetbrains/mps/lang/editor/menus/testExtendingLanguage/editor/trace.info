@@ -83,9 +83,9 @@
       <scope id="3526874291840845051" at="30,0,39,0">
         <var name="_context" id="3526874291840845051" />
       </scope>
-      <unit id="3526874291840845056" at="46,0,64,0" name="jetbrains.mps.lang.editor.menus.testExtendingLanguage.editor.UsedContribution$TransformationMenuPart_Action_vz5f0m_a0$Item" />
-      <unit id="3526874291840845056" at="40,0,65,0" name="jetbrains.mps.lang.editor.menus.testExtendingLanguage.editor.UsedContribution$TransformationMenuPart_Action_vz5f0m_a0" />
-      <unit id="3526874291840845051" at="20,0,66,0" name="jetbrains.mps.lang.editor.menus.testExtendingLanguage.editor.UsedContribution" />
+      <unit id="3526874291840845056" at="46,0,65,0" name="jetbrains.mps.lang.editor.menus.testExtendingLanguage.editor.UsedContribution$TransformationMenuPart_Action_vz5f0m_a0$Item" />
+      <unit id="3526874291840845056" at="40,0,66,0" name="jetbrains.mps.lang.editor.menus.testExtendingLanguage.editor.UsedContribution$TransformationMenuPart_Action_vz5f0m_a0" />
+      <unit id="3526874291840845051" at="20,0,67,0" name="jetbrains.mps.lang.editor.menus.testExtendingLanguage.editor.UsedContribution" />
     </file>
   </root>
 </debug-info>

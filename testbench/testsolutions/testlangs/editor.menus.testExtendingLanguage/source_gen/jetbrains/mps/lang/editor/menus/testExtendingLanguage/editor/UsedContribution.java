@@ -60,6 +60,7 @@ public class UsedContribution extends TransformationMenuBase {
       public void execute(@NotNull String pattern) {
       }
 
+
     }
   }
 }

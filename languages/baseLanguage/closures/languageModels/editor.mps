@@ -2633,11 +2633,6 @@
         <ref role="2kkw0f" node="1wEcoXjJ4Ai" resolve="subsitute_ClosureControlStatement" />
       </node>
     </node>
-    <node concept="1s_PAr" id="1wEcoXjJ4F6" role="3ft7WO">
-      <node concept="2kknPI" id="1wEcoXjJ4F7" role="1s_PAo">
-        <ref role="2kkw0f" node="1wEcoXjJ4Ek" resolve="remove_YieldStatement" />
-      </node>
-    </node>
     <node concept="1s_PAr" id="1wEcoXjJ4FT" role="3ft7WO">
       <node concept="2kknPI" id="1wEcoXjJ4FU" role="1s_PAo">
         <ref role="2kkw0f" node="1wEcoXjJ4F8" resolve="remove_ReturnStatement" />

@@ -67,6 +67,7 @@ public class OtherCommands extends TransformationMenuBase {
         SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x58e59ea713f79f27L, "jetbrains.mps.samples.Kaja.structure.Drop")), null));
       }
 
+
     }
   }
   private class TransformationMenuPart_Action_uewb7w_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
@@ -92,6 +93,7 @@ public class OtherCommands extends TransformationMenuBase {
       public void execute(@NotNull String pattern) {
         SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x58e59ea713f85f1dL, "jetbrains.mps.samples.Kaja.structure.Pick")), null));
       }
+
 
     }
   }
@@ -129,6 +131,7 @@ public class OtherCommands extends TransformationMenuBase {
           SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x3cfcda239f1a1049L, "jetbrains.mps.samples.Kaja.structure.Require")), null));
           _context.getEditorContext().selectWRTFocusPolicy(inserted);
         }
+
 
       }
     }

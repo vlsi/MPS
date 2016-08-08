@@ -62,6 +62,7 @@ public class UnusedContribution extends TransformationMenuBase {
       public void execute(@NotNull String pattern) {
       }
 
+
     }
   }
 }

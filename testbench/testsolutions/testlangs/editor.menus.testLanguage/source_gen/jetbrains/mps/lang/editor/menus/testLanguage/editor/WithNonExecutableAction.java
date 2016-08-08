@@ -61,6 +61,7 @@ public class WithNonExecutableAction extends TransformationMenuBase {
       public boolean canExecute(@NotNull String pattern) {
         return !("cannot".equals(pattern));
       }
+
     }
   }
 }

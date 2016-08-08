@@ -21,7 +21,7 @@
       <node id="4647688914604929173" at="31,0,32,0" concept="2" trace="myLocations" />
       <node id="4647688914604929173" at="33,67,34,63" concept="6" />
       <node id="4647688914604929173" at="39,124,40,156" concept="5" />
-      <node id="4647688914604929173" at="41,157,42,91" concept="1" />
+      <node id="4647688914604929173" at="41,138,42,91" concept="1" />
       <node id="4647688914604929173" at="43,5,44,18" concept="6" />
       <node id="4647688914604929174" at="51,102,52,70" concept="5" />
       <node id="4647688914604929174" at="52,70,53,289" concept="6" />
@@ -37,7 +37,7 @@
       <node id="4647688914604929174" at="49,0,55,0" concept="4" trace="getSubstituteMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/MenuLookup;" />
       <node id="4647688914604929173" at="37,0,46,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="4647688914604929173" at="33,67,34,63" />
-      <scope id="4647688914604929173" at="41,157,42,91" />
+      <scope id="4647688914604929173" at="41,138,42,91" />
       <scope id="4647688914604929174" at="51,102,53,289">
         <var name="editorContext" id="4647688914604929174" />
       </scope>

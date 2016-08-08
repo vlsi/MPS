@@ -35,7 +35,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 
 public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
   @Override
-  protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(SubstituteMenuContext _context) {
+  protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
     result.add(new BaseConcept_SubstituteMenu.SubstituteMenuPart_Group_s3h0kg_a());
     return result;
@@ -91,12 +91,12 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
           private class Item extends DefaultSubstituteMenuItem {
             private final SubstituteMenuContext _context;
             public Item(SubstituteMenuContext context) {
-              super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), context.getParentNode(), context.getCurrentTargetNode());
+              super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
               _context = context;
             }
 
             @Override
-            public SNode createNode(String pattern) {
+            public SNode createNode(@NotNull String pattern) {
               return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(myParameterObject));
             }
             @Override
@@ -104,12 +104,12 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
               return myParameterObject.getName();
             }
             @Override
-            public String getDescriptionText(String pattern) {
+            public String getDescriptionText(@NotNull String pattern) {
               String fqName = ConceptRegistry.getInstance().getConceptDescriptor(myParameterObject).getConceptFqName();
               return "lang: " + NameUtil.compactNamespace(NameUtil.namespaceFromConceptFQName(fqName));
             }
             @Override
-            public IconResource getIcon(String pattern) {
+            public IconResource getIcon(@NotNull String pattern) {
               return IconResourceUtil.getIconResourceForConcept(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
             }
           }

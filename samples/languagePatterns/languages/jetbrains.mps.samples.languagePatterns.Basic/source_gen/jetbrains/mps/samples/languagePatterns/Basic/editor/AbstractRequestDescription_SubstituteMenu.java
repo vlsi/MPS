@@ -8,13 +8,18 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultConceptMenusSubstituteMenuPart;
+import jetbrains.mps.lang.editor.menus.ConceptMenusPart;
+import java.util.Collection;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -26,11 +31,20 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class AbstractRequestDescription_SubstituteMenu extends SubstituteMenuBase {
   @Override
-  protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(SubstituteMenuContext _context) {
+  protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new DefaultConceptMenusSubstituteMenuPart(ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription"))));
+    result.add(new AbstractRequestDescription_SubstituteMenu.SubstituteMenuPart_Subconcepts_dcepxw_a());
     result.add(new AbstractRequestDescription_SubstituteMenu.SubstituteMenuPart_Action_dcepxw_b());
     return result;
+  }
+  public class SubstituteMenuPart_Subconcepts_dcepxw_a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+    protected Collection getConcepts(final SubstituteMenuContext _context) {
+      return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription"));
+    }
+    @Override
+    protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
+      return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
+    }
   }
   private class SubstituteMenuPart_Action_dcepxw_b extends SingleItemSubstituteMenuPart {
 
@@ -42,12 +56,12 @@ public class AbstractRequestDescription_SubstituteMenu extends SubstituteMenuBas
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
       public Item(SubstituteMenuContext context) {
-        super(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription"), context.getParentNode(), context.getCurrentTargetNode());
+        super(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
         _context = context;
       }
 
       @Override
-      public SNode createNode(String pattern) {
+      public SNode createNode(@NotNull String pattern) {
         SNode desc = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db223d5L, "jetbrains.mps.samples.languagePatterns.Basic.structure.StringDescription")), null);
         SPropertyOperations.set(desc, MetaAdapterFactory.getProperty(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db223d5L, 0x1a2a793c4db223d6L, "value"), pattern);
         return desc;
@@ -57,7 +71,14 @@ public class AbstractRequestDescription_SubstituteMenu extends SubstituteMenuBas
         return pattern;
       }
       @Override
-      public boolean canExecute(final String pattern) {
+      public boolean canExecute(@NotNull String pattern) {
+        return canExecute_internal(pattern, false);
+      }
+      @Override
+      public boolean canExecuteStrictly(@NotNull String pattern) {
+        return canExecute_internal(pattern, true);
+      }
+      public boolean canExecute_internal(@NotNull final String pattern, boolean strictly) {
         Iterable<SConcept> concreteSubConcepts = ListSequence.fromList(SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription"), SNodeOperations.getModel(_context.getParentNode()))).where(new IWhereFilter<SConcept>() {
           public boolean accept(SConcept it) {
             return !(it.isAbstract());
@@ -70,7 +91,7 @@ public class AbstractRequestDescription_SubstituteMenu extends SubstituteMenuBas
         });
       }
       @Override
-      public String getDescriptionText(String pattern) {
+      public String getDescriptionText(@NotNull String pattern) {
         return "that starts with " + pattern;
       }
     }

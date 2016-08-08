@@ -99,8 +99,8 @@ __switch__:
     }
 
     private class TransformationMenuPart_Action_ud82js_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-      private final int myParameterObject;
-      public TransformationMenuPart_Action_ud82js_a0a(int parameterObject) {
+      private final Integer myParameterObject;
+      public TransformationMenuPart_Action_ud82js_a0a(Integer parameterObject) {
         myParameterObject = parameterObject;
       }
       @Nullable
@@ -134,6 +134,7 @@ __switch__:
             param++;
           }
         }
+
 
       }
     }

@@ -102,6 +102,7 @@ public class WithNestedVariables extends TransformationMenuBase {
           public void execute(@NotNull String pattern) {
           }
 
+
         }
       }
     }

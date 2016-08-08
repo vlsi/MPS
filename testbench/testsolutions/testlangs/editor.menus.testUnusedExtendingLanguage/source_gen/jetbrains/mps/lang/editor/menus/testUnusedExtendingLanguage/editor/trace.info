@@ -59,9 +59,9 @@
       <scope id="1068638940632617910" at="27,0,36,0">
         <var name="_context" id="1068638940632617910" />
       </scope>
-      <unit id="1068638940632619209" at="43,0,61,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.MenuForBaseInUnusedExtendingLanguage$TransformationMenuPart_Action_kkl41h_a0$Item" />
-      <unit id="1068638940632619209" at="37,0,62,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.MenuForBaseInUnusedExtendingLanguage$TransformationMenuPart_Action_kkl41h_a0" />
-      <unit id="1068638940632617910" at="20,0,63,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.MenuForBaseInUnusedExtendingLanguage" />
+      <unit id="1068638940632619209" at="43,0,62,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.MenuForBaseInUnusedExtendingLanguage$TransformationMenuPart_Action_kkl41h_a0$Item" />
+      <unit id="1068638940632619209" at="37,0,63,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.MenuForBaseInUnusedExtendingLanguage$TransformationMenuPart_Action_kkl41h_a0" />
+      <unit id="1068638940632617910" at="20,0,64,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.MenuForBaseInUnusedExtendingLanguage" />
     </file>
   </root>
   <root nodeRef="r:965afa85-7195-40ad-84ac-dc46d395c63b(jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor)/189670312547646590">
@@ -115,9 +115,9 @@
       <scope id="189670312547646590" at="30,0,39,0">
         <var name="_context" id="189670312547646590" />
       </scope>
-      <unit id="3526874291840080425" at="46,0,66,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.UnusedContribution$TransformationMenuPart_Action_upxn7_a0$Item" />
-      <unit id="3526874291840080425" at="40,0,67,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.UnusedContribution$TransformationMenuPart_Action_upxn7_a0" />
-      <unit id="189670312547646590" at="20,0,68,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.UnusedContribution" />
+      <unit id="3526874291840080425" at="46,0,67,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.UnusedContribution$TransformationMenuPart_Action_upxn7_a0$Item" />
+      <unit id="3526874291840080425" at="40,0,68,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.UnusedContribution$TransformationMenuPart_Action_upxn7_a0" />
+      <unit id="189670312547646590" at="20,0,69,0" name="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.editor.UnusedContribution" />
     </file>
   </root>
 </debug-info>

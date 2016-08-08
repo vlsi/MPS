@@ -23,8 +23,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -49,7 +49,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
 
   public class TransformationMenuPart_IncludeSubstituteMenu_supj5f_a0 extends IncludeSubstituteMenuTransformationMenuPart {
   }
-  public static class TransformationMenuPart_WrapSubstituteMenu_supj5f_b0 extends WrapSubstituteMenuTransformationMenuPart {
+  public class TransformationMenuPart_WrapSubstituteMenu_supj5f_b0 extends WrapSubstituteMenuTransformationMenuPart {
 
     @Nullable
     @Override
@@ -58,8 +58,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
       return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb2666fc54L, "jetbrains.mps.samples.languagePatterns.Basic.structure.LineStyle"));
     }
 
-
-    protected void execute(TransformationMenuContext _context, SubstituteMenuItem item, String pattern) {
+    protected void execute(SNode targetNode, SubstituteMenuItem item, TransformationMenuContext _context, String pattern) {
       SNode createdNode = item.createNode(pattern);
       SNode cmd = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x7d09f66a13005410L, "jetbrains.mps.samples.languagePatterns.Basic.structure.IncompleteCommand")), null);
       SNodeOperations.replaceWithAnother(_context.getNode(), cmd);

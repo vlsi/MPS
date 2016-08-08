@@ -57,6 +57,7 @@ public class MenuForBaseInUnusedExtendingLanguage extends TransformationMenuBase
       public void execute(@NotNull String pattern) {
       }
 
+
     }
   }
 }

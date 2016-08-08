@@ -79,6 +79,7 @@ public class SceneBuildingCommands extends TransformationMenuBase {
           _context.getEditorContext().selectWRTFocusPolicy(inserted);
         }
 
+
       }
     }
     private class TransformationMenuPart_Action_572eic_b0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
@@ -107,6 +108,7 @@ public class SceneBuildingCommands extends TransformationMenuBase {
 
         }
 
+
       }
     }
     private class TransformationMenuPart_Action_572eic_c0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
@@ -134,6 +136,7 @@ public class SceneBuildingCommands extends TransformationMenuBase {
           _context.getEditorContext().selectWRTFocusPolicy(inserted);
         }
 
+
       }
     }
     private class TransformationMenuPart_Action_572eic_d0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
@@ -160,6 +163,7 @@ public class SceneBuildingCommands extends TransformationMenuBase {
           SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a835165fL, "jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark")), null));
           _context.getEditorContext().selectWRTFocusPolicy(inserted);
         }
+
 
       }
     }

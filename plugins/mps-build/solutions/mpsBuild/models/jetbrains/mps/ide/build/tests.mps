@@ -4770,6 +4770,18 @@
             <ref role="3bR37D" node="7Nx4mSUEB9S" resolve="jetbrains.mps.lang.editor.menus.substitute.testLanguage" />
           </node>
         </node>
+        <node concept="1SiIV0" id="71jmo990LMb" role="3bR37C">
+          <node concept="3bR9La" id="71jmo990LMc" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:1H905DlDUSw" resolve="MPS.OpenAPI" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="71jmo990LMd" role="3bR37C">
+          <node concept="3bR9La" id="71jmo990LMe" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:1TaHNgiIbIZ" resolve="MPS.Editor" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="7Nx4mSUEBa7" role="2G$12L">
         <property role="BnDLt" value="true" />

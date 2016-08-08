@@ -148,6 +148,7 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
 
             return true;
           }
+
         }
       }
       private class TransformationMenuPart_Action_dubn3u_b0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
@@ -202,6 +203,7 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
               }
             });
           }
+
         }
       }
     }
@@ -251,6 +253,7 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
             }
           }).isEmpty();
         }
+
       }
     }
     public class TransformationMenuPart_Group_dubn3u_c0a extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
@@ -319,6 +322,7 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
               }
             }).isNotEmpty();
           }
+
         }
       }
       private class TransformationMenuPart_Action_dubn3u_b2a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
@@ -360,6 +364,7 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
               }
             }).isNotEmpty();
           }
+
         }
       }
     }

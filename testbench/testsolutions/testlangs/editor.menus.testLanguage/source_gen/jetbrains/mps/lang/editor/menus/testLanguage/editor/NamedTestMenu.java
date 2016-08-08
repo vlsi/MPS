@@ -57,6 +57,7 @@ public class NamedTestMenu extends TransformationMenuBase {
       public void execute(@NotNull String pattern) {
       }
 
+
     }
   }
 }

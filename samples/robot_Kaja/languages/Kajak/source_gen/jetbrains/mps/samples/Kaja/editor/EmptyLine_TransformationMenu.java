@@ -76,6 +76,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
         SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc45762L, "jetbrains.mps.samples.Kaja.structure.Step")), null));
       }
 
+
     }
   }
   private class TransformationMenuPart_Action_supj5f_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
@@ -101,6 +102,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
       public void execute(@NotNull String pattern) {
         SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9f8bL, "jetbrains.mps.samples.Kaja.structure.LeftTurn")), null));
       }
+
 
     }
   }
@@ -138,6 +140,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
           SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed6f79L, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition")), null));
           _context.getEditorContext().selectWRTFocusPolicy(inserted);
         }
+
 
       }
     }
@@ -178,6 +181,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
 
         }
 
+
       }
     }
     private class TransformationMenuPart_Action_supj5f_b3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
@@ -204,6 +208,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
           SNode inserted = SNodeOperations.insertPrevSiblingChild(_context.getNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecece0L, "jetbrains.mps.samples.Kaja.structure.While")), null));
           _context.getEditorContext().selectWRTFocusPolicy(inserted);
         }
+
 
       }
     }
@@ -232,6 +237,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
           _context.getEditorContext().selectWRTFocusPolicy(inserted);
         }
 
+
       }
     }
   }
@@ -254,6 +260,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
 
         return new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ee0a16L, "jetbrains.mps.samples.Kaja.structure.EmptyLine"), "jetbrains.mps.samples.Kaja.editor.OtherCommands");
       }
+
     }
   }
   private static boolean eq_supj5f_a0a0a7(Object a, Object b) {

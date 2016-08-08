@@ -13,6 +13,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -38,7 +39,7 @@ public class EmptyBlockDocTag_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     DeleteEmptyBlockDocTag.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EmptyBlockDocTag_Editor.ReplaceWith_AuthorBlockDocTag_cellMenu_4ui9jp_a0a(), new EmptyBlockDocTag_Editor.ReplaceWith_ParameterBlockDocTag_cellMenu_4ui9jp_b0a(), new EmptyBlockDocTag_Editor.ReplaceWith_ReturnBlockDocTag_cellMenu_4ui9jp_c0a(), new EmptyBlockDocTag_Editor.ReplaceWith_SeeBlockDocTag_cellMenu_4ui9jp_d0a(), new EmptyBlockDocTag_Editor.ReplaceWith_VersionBlockDocTag_cellMenu_4ui9jp_e0a(), new EmptyBlockDocTag_Editor.ReplaceWith_SinceBlockDocTag_cellMenu_4ui9jp_f0a(), new EmptyBlockDocTag_Editor.ReplaceWith_ThrowsBlockDocTag_cellMenu_4ui9jp_g0a(), new EmptyBlockDocTag_Editor.EmptyBlockDocTag_generic_cellMenu_4ui9jp_h0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EmptyBlockDocTag_Editor.ReplaceWith_AuthorBlockDocTag_cellMenu_4ui9jp_a0a(), new EmptyBlockDocTag_Editor.ReplaceWith_ParameterBlockDocTag_cellMenu_4ui9jp_b0a(), new EmptyBlockDocTag_Editor.ReplaceWith_ReturnBlockDocTag_cellMenu_4ui9jp_c0a(), new EmptyBlockDocTag_Editor.ReplaceWith_SeeBlockDocTag_cellMenu_4ui9jp_d0a(), new EmptyBlockDocTag_Editor.ReplaceWith_VersionBlockDocTag_cellMenu_4ui9jp_e0a(), new EmptyBlockDocTag_Editor.ReplaceWith_SinceBlockDocTag_cellMenu_4ui9jp_f0a(), new EmptyBlockDocTag_Editor.ReplaceWith_ThrowsBlockDocTag_cellMenu_4ui9jp_g0a(), new EmptyBlockDocTag_Editor.EmptyBlockDocTag_generic_cellMenu_4ui9jp_h0a(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   public static class ReplaceWith_AuthorBlockDocTag_cellMenu_4ui9jp_a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

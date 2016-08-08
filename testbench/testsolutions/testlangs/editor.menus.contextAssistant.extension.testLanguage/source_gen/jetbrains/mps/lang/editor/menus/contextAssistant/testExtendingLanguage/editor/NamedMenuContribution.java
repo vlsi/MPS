@@ -61,6 +61,7 @@ public class NamedMenuContribution extends TransformationMenuBase {
       public void execute(@NotNull String pattern) {
       }
 
+
     }
   }
 }

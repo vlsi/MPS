@@ -70,6 +70,7 @@ public class DefaultMenuContribution extends TransformationMenuBase {
       public void execute(@NotNull String pattern) {
       }
 
+
     }
   }
   private class TransformationMenuPart_Action_qwzmaw_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
@@ -98,9 +99,10 @@ public class DefaultMenuContribution extends TransformationMenuBase {
         }
       }
 
+
       @Override
       public IconResource getIcon() {
-        return IconContainer.RESOURCE_a0a8c7;
+        return IconContainer.RESOURCE_a0a9c7;
       }
       @Override
       public String getTooltipText() {

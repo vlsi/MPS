@@ -286,8 +286,6 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
               case 0:
                 return Arrays.asList(new SubstituteMenu[]{new remove_ReturnStatement()});
               case 1:
-                return Arrays.asList(new SubstituteMenu[]{new remove_YieldStatement()});
-              case 2:
                 return Arrays.asList(new SubstituteMenu[]{new subsitute_ClosureControlStatement()});
               default:
             }
@@ -316,5 +314,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a4 = new String[]{"jetbrains.mps.baseLanguage.closures.editor.add_parameter_to_ControlClosure", "jetbrains.mps.baseLanguage.closures.editor.compact_invoke"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0b3a0a4 = new String[]{"jetbrains.mps.baseLanguage.closures.editor.transform_FunctionType_to_ClassifierLiteralType"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0c3a0a4 = new String[]{"jetbrains.mps.baseLanguage.closures.editor.add_throw_to_ClosureLiteralType", "jetbrains.mps.baseLanguage.closures.editor.add_throw_to_FunctionType"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a6 = new String[]{"jetbrains.mps.baseLanguage.closures.editor.remove_ReturnStatement", "jetbrains.mps.baseLanguage.closures.editor.remove_YieldStatement", "jetbrains.mps.baseLanguage.closures.editor.subsitute_ClosureControlStatement"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a6 = new String[]{"jetbrains.mps.baseLanguage.closures.editor.remove_ReturnStatement", "jetbrains.mps.baseLanguage.closures.editor.subsitute_ClosureControlStatement"};
 }

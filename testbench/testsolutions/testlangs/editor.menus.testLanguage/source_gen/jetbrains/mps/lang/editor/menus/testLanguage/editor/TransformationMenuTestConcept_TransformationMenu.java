@@ -57,6 +57,7 @@ public class TransformationMenuTestConcept_TransformationMenu extends Transforma
       public void execute(@NotNull String pattern) {
       }
 
+
     }
   }
 }

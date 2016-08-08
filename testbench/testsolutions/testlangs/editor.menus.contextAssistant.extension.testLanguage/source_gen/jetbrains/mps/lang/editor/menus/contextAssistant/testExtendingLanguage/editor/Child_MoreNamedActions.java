@@ -61,6 +61,7 @@ public class Child_MoreNamedActions extends TransformationMenuBase {
       public void execute(@NotNull String pattern) {
       }
 
+
     }
   }
 }

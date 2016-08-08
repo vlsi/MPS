@@ -7,7 +7,6 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
-import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.lang.editor.menus.MenuPart;
@@ -18,14 +17,14 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
-import jetbrains.mps.editor.runtime.items.SideTransformCompletionActionItem;
+import jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.extras.runtime.IntentionMenuPartBase;
 import jetbrains.mps.intentions.IntentionExecutable;
 
 public class NamedMenu extends TransformationMenuBase {
-  private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.CONTEXT_ASSISTANT, SideTransformSubstituteInfo.Side.LEFT.myMenuLocation, SideTransformSubstituteInfo.Side.RIGHT.myMenuLocation);
+  private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.CONTEXT_ASSISTANT, MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM);
   @Override
   public boolean isApplicableToLocation(@NotNull String location) {
     return SetSequence.fromSet(myLocations).contains(location);
@@ -40,7 +39,7 @@ public class NamedMenu extends TransformationMenuBase {
       result.add(new NamedMenu.TransformationMenuPart_Intention_qsw3kc_b0());
       result.add(new NamedMenu.TransformationMenuPart_Action_qsw3kc_c0());
     }
-    if (ListSequence.fromListAndArray(new ArrayList<String>(), SideTransformSubstituteInfo.Side.LEFT.myMenuLocation, SideTransformSubstituteInfo.Side.RIGHT.myMenuLocation).contains(_context.getMenuLocation())) {
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
       result.add(new NamedMenu.TransformationMenuPart_Action_qsw3kc_a0());
       result.add(new NamedMenu.TransformationMenuPart_Intention_qsw3kc_b0());
       result.add(new NamedMenu.TransformationMenuPart_Action_qsw3kc_c0());
@@ -72,8 +71,9 @@ public class NamedMenu extends TransformationMenuBase {
         SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), pattern);
       }
 
+
       @Override
-      public String getShortDescriptionText(String pattern) {
+      public String getShortDescriptionText(@NotNull String pattern) {
         return "set name to" + pattern;
       }
     }
@@ -94,7 +94,7 @@ public class NamedMenu extends TransformationMenuBase {
       }
 
       @Override
-      public String getShortDescriptionText(String pattern) {
+      public String getShortDescriptionText(@NotNull String pattern) {
         return "Add Letter To name";
       }
     }
@@ -121,6 +121,7 @@ public class NamedMenu extends TransformationMenuBase {
       @Override
       public void execute(@NotNull String pattern) {
       }
+
 
     }
   }

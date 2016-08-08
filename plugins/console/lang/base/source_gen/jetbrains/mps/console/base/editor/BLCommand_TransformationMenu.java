@@ -61,6 +61,7 @@ public class BLCommand_TransformationMenu extends TransformationMenuBase {
         tool.getCurrentEditableTab().executeCurrentCommand();
       }
 
+
     }
   }
 }

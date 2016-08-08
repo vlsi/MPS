@@ -56,8 +56,8 @@ public class Parameterized extends TransformationMenuBase {
     }
 
     private class TransformationMenuPart_Action_3h2zbg_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-      private final int myParameterObject;
-      public TransformationMenuPart_Action_3h2zbg_a0a(int parameterObject) {
+      private final Integer myParameterObject;
+      public TransformationMenuPart_Action_3h2zbg_a0a(Integer parameterObject) {
         myParameterObject = parameterObject;
       }
       @Nullable
@@ -81,6 +81,7 @@ public class Parameterized extends TransformationMenuBase {
         @Override
         public void execute(@NotNull String pattern) {
         }
+
 
         @Override
         public IconResource getIcon() {

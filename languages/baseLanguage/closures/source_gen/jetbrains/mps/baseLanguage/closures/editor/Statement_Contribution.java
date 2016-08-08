@@ -26,7 +26,6 @@ public class Statement_Contribution extends SubstituteMenuBase {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
     result.add(new Statement_Contribution.SubstituteMenuPart_IncludeMenu_zhpsb4_a());
     result.add(new Statement_Contribution.SubstituteMenuPart_IncludeMenu_zhpsb4_b());
-    result.add(new Statement_Contribution.SubstituteMenuPart_IncludeMenu_zhpsb4_c());
     return result;
   }
   public class SubstituteMenuPart_IncludeMenu_zhpsb4_a extends IncludeSubstituteMenuSubstituteMenuPart {
@@ -39,15 +38,6 @@ public class Statement_Contribution extends SubstituteMenuBase {
     }
   }
   public class SubstituteMenuPart_IncludeMenu_zhpsb4_b extends IncludeSubstituteMenuSubstituteMenuPart {
-
-    @Nullable
-    @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
-      final EditorContext editorContext = _context.getEditorContext();
-      return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), "jetbrains.mps.baseLanguage.closures.editor.remove_YieldStatement");
-    }
-  }
-  public class SubstituteMenuPart_IncludeMenu_zhpsb4_c extends IncludeSubstituteMenuSubstituteMenuPart {
 
     @Nullable
     @Override
