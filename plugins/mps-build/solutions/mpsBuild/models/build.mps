@@ -18657,6 +18657,9 @@
             </node>
           </node>
           <node concept="2HvfSZ" id="35zoHQHRZ44" role="39821P">
+            <node concept="3LWZYq" id="1T_EcTFZQvM" role="2HvfZ1">
+              <property role="3LWZYl" value="**/vcs.xml" />
+            </node>
             <node concept="3LWZYq" id="5b4JZ0Ul2Ss" role="2HvfZ1">
               <property role="3LWZYl" value="**/*.history" />
             </node>
