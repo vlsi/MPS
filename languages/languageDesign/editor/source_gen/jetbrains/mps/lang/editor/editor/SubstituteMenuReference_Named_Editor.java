@@ -13,6 +13,7 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -41,7 +42,7 @@ public class SubstituteMenuReference_Named_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.apply_EditorKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SubstituteMenuReference_Named_Editor.ReplaceWith_ISubstituteMenuReference_cellMenu_trrlmo_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SubstituteMenuReference_Named_Editor.ReplaceWith_ISubstituteMenuReference_cellMenu_trrlmo_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   public static class ReplaceWith_ISubstituteMenuReference_cellMenu_trrlmo_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

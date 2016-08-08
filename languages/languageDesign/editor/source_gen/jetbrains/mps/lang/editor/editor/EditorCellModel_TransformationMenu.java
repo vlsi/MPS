@@ -94,6 +94,7 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
         EditorAssistantUtilities assistantUtils = new EditorAssistantUtilities(_context.getNode());
         return assistantUtils.isTopLevelCell() && assistantUtils.isAbstratCell();
       }
+
     }
   }
   private class TransformationMenuPart_Action_puymhi_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
@@ -140,6 +141,7 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
 
         return !(assistantUtils.hasFeatures());
       }
+
     }
   }
   private class TransformationMenuPart_Parameterized_puymhi_c0 extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
@@ -210,6 +212,7 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
           SNodeOperations.replaceWithAnother(_context.getNode(), _quotation_createNode_puymhi_a0a0a0a2a(myParameterObject));
         }
 
+
       }
     }
   }
@@ -258,6 +261,7 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
           }
         });
       }
+
     }
   }
   private class TransformationMenuPart_Parameterized_puymhi_e0 extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
@@ -354,6 +358,7 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
           }
         }
 
+
       }
     }
   }
@@ -438,6 +443,7 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
 
         return Sequence.fromIterable(allConceptProperties).subtract(Sequence.fromIterable(editedProperties)).isNotEmpty() || Sequence.fromIterable(allConceptLinks).subtract(Sequence.fromIterable(editedLinks)).isNotEmpty();
       }
+
     }
   }
   private class TransformationMenuPart_Action_puymhi_g0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
@@ -481,6 +487,7 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
 
         return SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, "jetbrains.mps.lang.editor.structure.CellModel_Component")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, 0xfb35c96897L, "editorComponent")) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)", "2900100530630621651") && !(SPropertyOperations.getBoolean(AbstractComponent__BehaviorDescriptor.getConceptDeclaration_id67EYkym$wx3.invoke(assistantUtils.getEditorDeclaration()), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"))) && _context.getEditorContext().getEditorPanelManager() != null;
       }
+
     }
   }
   private class TransformationMenuPart_Action_puymhi_h0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
@@ -564,6 +571,7 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
         return Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(AbstractComponent__BehaviorDescriptor.getConceptDeclaration_id67EYkym$wx3.invoke(assistantUtils.getEditorDeclaration()), ((boolean) true))).contains(SLinkOperations.getTarget(left, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")));
         // TODO: add another binary operation action recognizing YouTrack Workflow-like binary operations (with the link to a kind) 
       }
+
     }
   }
   private static SNode _quotation_createNode_puymhi_a0a0a0a0() {

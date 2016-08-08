@@ -12,6 +12,7 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -38,7 +39,7 @@ public class DefaultCaretPositionStyleClassItem_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_item(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DefaultCaretPositionStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_djhfgj_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DefaultCaretPositionStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_djhfgj_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   public static class ReplaceWith_StyleClassItem_cellMenu_djhfgj_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

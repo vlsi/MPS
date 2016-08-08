@@ -14,6 +14,7 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -31,7 +32,7 @@ public class SubstituteFeatureAlias implements ConceptEditorComponent {
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_EditorKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SubstituteFeatureAlias.ReplaceWith_SubstituteFeature_cellMenu_m8lox6_a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SubstituteFeatureAlias.ReplaceWith_SubstituteFeature_cellMenu_m8lox6_a0a(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   public static class ReplaceWith_SubstituteFeature_cellMenu_m8lox6_a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

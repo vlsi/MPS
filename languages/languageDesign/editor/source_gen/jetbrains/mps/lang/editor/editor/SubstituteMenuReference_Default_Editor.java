@@ -14,6 +14,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -56,7 +57,7 @@ public class SubstituteMenuReference_Default_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.NAVIGATABLE_NODE, 0, SubstituteMenuReference_Default_Editor._StyleParameter_QueryFunction_h77kbg_a0a0(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SubstituteMenuReference_Default_Editor.ReplaceWith_ISubstituteMenuReference_cellMenu_h77kbg_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SubstituteMenuReference_Default_Editor.ReplaceWith_ISubstituteMenuReference_cellMenu_h77kbg_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   private static SNode _StyleParameter_QueryFunction_h77kbg_a0a0(EditorContext editorContext, SNode node) {
@@ -103,7 +104,7 @@ public class SubstituteMenuReference_Default_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("concept");
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new SubstituteMenuReference_Default_Editor.SubstituteMenuReference_Default_generic_cellMenu_h77kbg_a0c0(), new SubstituteMenuReference_Default_Editor.SubstituteMenuReference_Default_concept_cellMenu_h77kbg_b0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new SubstituteMenuReference_Default_Editor.SubstituteMenuReference_Default_generic_cellMenu_h77kbg_a0c0(), new SubstituteMenuReference_Default_Editor.SubstituteMenuReference_Default_concept_cellMenu_h77kbg_b0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
