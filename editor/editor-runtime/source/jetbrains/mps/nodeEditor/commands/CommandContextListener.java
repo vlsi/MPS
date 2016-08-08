@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,24 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.commands;
-
-import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.nodeEditor.commands;
 
 /**
  * User: shatalin
- * Date: 09/10/14
+ * Date: 09/08/16
  */
-public interface CommandContext {
-  void commandStarted();
+public class CommandContextListener {
+  public void topLevelCommandStarted() {
+  }
 
-  void commandFinished();
-
-  /**
-   * Returning contextual node to associate undo context with it. Usually contextual node is a
-   * root node (of a node opened in an editor). Contextual node has VirtualFile associated with it.
-   *
-   * @return contextual node or null if current editor has no node inside
-   */
-  SNode getContextNode();
+  public void topLevelCommandFinished() {
+  }
 }

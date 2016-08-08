@@ -538,7 +538,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="1xyr94TevAl" role="2OqNvi">
-                    <ref role="37wK5l" to="k3nr:~BaseNodeEditor.getCurrentEditorComponent():jetbrains.mps.nodeEditor.EditorComponent" resolve="getCurrentEditorComponent" />
+                    <ref role="37wK5l" to="k3nr:~BaseNodeEditor.getCurrentEditorComponent():jetbrains.mps.nodeEditor.NodeEditorComponent" resolve="getCurrentEditorComponent" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1xyr94TevAm" role="2OqNvi">

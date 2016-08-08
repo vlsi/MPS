@@ -45,7 +45,6 @@ import com.intellij.openapi.wm.ex.StatusBarEx;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBScrollBar;
 import com.intellij.ui.components.JBScrollPane;
-import com.intellij.util.LocalTimeCounter;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.RuntimeFlags;
@@ -91,6 +90,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.commands.CommandContextImpl;
 import jetbrains.mps.nodeEditor.configuration.EditorConfiguration;
 import jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder;
 import jetbrains.mps.nodeEditor.folding.CallAction_ToggleCellFolding;
@@ -108,7 +108,6 @@ import jetbrains.mps.nodeEditor.selection.SelectionManagerImpl;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.updater.UpdaterImpl;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
-import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.openapi.editor.assist.ContextAssistant;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
@@ -312,7 +311,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private int myShiftY = 10;
 
   private SelectionManagerImpl mySelectionManager = new SelectionManagerImpl(this);
-  private UpdaterImpl myUpdater = createUpdater();
+  private final CommandContextImpl myCommandContext;
+  private final UpdaterImpl myUpdater;
 
   private Stack<KeyboardHandler> myKbdHandlersStack;
   private MouseListener myMouseEventHandler;
@@ -322,14 +322,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private NodeInformationDialog myNodeInformationDialog;
 
   private List<EditorDisposeListener> myDisposeListeners = new ArrayList<>();
-  private final NodeHighlightManager myHighlightManager = new NodeHighlightManager(this);
+  private final NodeHighlightManager myHighlightManager;
 
   private MessagesGutter myMessagesGutter;
   private LeftEditorHighlighter myLeftHighlighter;
   @Nullable
   protected SNode myNode;
-  @Nullable
-  private MPSNodeVirtualFile myVirtualFile;
   private boolean myNoVirtualFile;
 
   @Nullable
@@ -385,6 +383,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected EditorComponent(@NotNull SRepository repository, @NotNull EditorConfiguration configuration) {
     myRepository = repository;
     myEditorConfiguration = configuration;
+    myCommandContext = createCommandContext();
+    myUpdater = createUpdater(myCommandContext);
+    myHighlightManager = new NodeHighlightManager(this);
+
     if (ApplicationManager.getApplication() != null && ApplicationManager.getApplication().getComponent(MPSCoreComponents.class) != null) {
       myClassLoaderManager = ApplicationManager.getApplication().getComponent(MPSCoreComponents.class).getClassLoaderManager();
     } else {
@@ -754,8 +756,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
-  protected UpdaterImpl createUpdater() {
-    return new UpdaterImpl(this);
+  protected UpdaterImpl createUpdater(CommandContextImpl commandContext) {
+    return new UpdaterImpl(this, commandContext);
+  }
+
+  protected CommandContextImpl createCommandContext() {
+    return new CommandContextImpl(this);
   }
 
   protected void attachListeners() {
@@ -797,8 +803,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return false;
   }
 
+  /**
+   * From now on only NodeEditorComponent has virtual file.
+   * This method will be removed in the next release.
+   *
+   * @param noVirtualFile
+   * @deprecated since MPS 3.4
+   */
+  @Deprecated
   public void setNoVirtualFile(boolean noVirtualFile) {
-    myNoVirtualFile = noVirtualFile;
   }
 
   public int getShiftX() {
@@ -894,16 +907,20 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myNode;
   }
 
+  /**
+   * From now on only NodeEditorComponent has virtual file.
+   * This method will be removed in the next release.
+   *
+   * @deprecated since MPS 3.4
+   */
+  @Deprecated
   @Nullable
   public MPSNodeVirtualFile getVirtualFile() {
-    return myVirtualFile;
+    return null;
   }
 
   @Override
   public void touch() {
-    if (getVirtualFile() != null) {
-      getVirtualFile().setModificationStamp(LocalTimeCounter.currentTime());
-    }
   }
 
   @Override
@@ -1097,18 +1114,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
         myNode = node;
         if (myNode != null) {
-          myNodePointer = new jetbrains.mps.smodel.SNodePointer(myNode);
-          myVirtualFile = !myNoVirtualFile ? NodeVirtualFileSystem.getInstance().getFileFor(getRepository(), node.getContainingRoot()) : null;
+          myNodePointer = myNode.getReference();
           SModel model = node.getModel();
           assert model != null : "Can't edit a node that is not registered in a model";
           setEditorContext(model, myRepository);
           myReadOnly = model.isReadOnly();
         } else {
           myNodePointer = null;
-          myVirtualFile = null;
           setEditorContext(null, myRepository);
           myReadOnly = true;
         }
+        myCommandContext.updateContextNode();
 
         if (needNewTypecheckingContext) {
           acquireTypeCheckingContext();
@@ -2424,7 +2440,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public CommandContext getCommandContext() {
-    return myUpdater;
+    return myCommandContext;
   }
 
   <T> T runRead(final Computable<T> c) {
@@ -2708,9 +2724,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName()) && (isFocusOwner() || mySearchPanel == null || !mySearchPanel.isVisible())) {
       return new MyPasteProvider();
-    }
-    if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
-      return getVirtualFile() != null ? new VirtualFile[]{getVirtualFile()} : new VirtualFile[0];
     }
 
     if (dataId.equals(SelectInContext.DATA_KEY.getName())) {
@@ -3009,9 +3022,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         @Override
         protected void doExecute() {
           if (isInvalid() || !isCutEnabled(dataContext)) {
-            return;
-          }
-          if (!isCutEnabled(dataContext)) {
             return;
           }
           jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
