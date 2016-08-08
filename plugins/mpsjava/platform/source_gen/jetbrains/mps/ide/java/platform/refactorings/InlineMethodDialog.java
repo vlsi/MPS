@@ -31,6 +31,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import javax.swing.JLabel;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -161,7 +162,7 @@ public class InlineMethodDialog extends RefactoringDialog {
       public void run(@NotNull final ProgressIndicator indicator) {
         myEditorRepo.getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            usages.value = MethodRefactoringUtils.findMethodUsages(myModel.getMethod(), new ProgressMonitorAdapter(indicator));
+            usages.value = MethodRefactoringUtils.findMethodUsages(ProjectHelper.toMPSProject(getProject()).new ProjectScope(), myModel.getMethod(), new ProgressMonitorAdapter(indicator));
           }
         });
       }
@@ -180,7 +181,7 @@ public class InlineMethodDialog extends RefactoringDialog {
             } else {
               analyzer = new InlineMethodRefactoringAnalyzer(myModel.getMethodCall().getNode(), myModel.getMethod());
             }
-            analyzer.appendProblems(usages, sb, new ProgressMonitorAdapter(pi));
+            analyzer.appendProblems(ProjectHelper.toMPSProject(getProject()).new ProjectScope(), usages, sb, new ProgressMonitorAdapter(pi));
           }
         });
       }

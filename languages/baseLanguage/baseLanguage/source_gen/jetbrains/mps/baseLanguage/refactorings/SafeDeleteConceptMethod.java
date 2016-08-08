@@ -26,7 +26,7 @@ public class SafeDeleteConceptMethod extends BaseRefactoring {
   }
   public void refactor(final RefactoringContext refactoringContext) {
     SNode method = refactoringContext.getSelectedNode();
-    new SafeDeleteMethod(method).doRefactor();
+    new SafeDeleteMethod(refactoringContext.getCurrentScope(), method).doRefactor();
   }
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
     return (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel());

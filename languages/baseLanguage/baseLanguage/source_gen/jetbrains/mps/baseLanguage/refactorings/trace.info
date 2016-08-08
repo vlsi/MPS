@@ -71,35 +71,38 @@
   </root>
   <root nodeRef="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)/3051706240924250100">
     <file name="SafeDeleteMethod.java">
-      <node id="3051706240924250101" at="14,0,15,0" concept="3" trace="myMethod" />
-      <node id="3051706240924250108" at="16,41,17,22" concept="2" />
-      <node id="7271917062036789846" at="22,204,23,211" concept="7" />
-      <node id="3051706240924250127" at="23,211,24,211" concept="2" />
-      <node id="3051706240924250138" at="26,5,27,41" concept="2" />
-      <node id="3508103059753504018" at="30,58,31,180" concept="8" />
-      <node id="3051706240924250105" at="16,0,19,0" concept="1" trace="SafeDeleteMethod#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3508103059753504024" at="30,0,33,0" concept="6" trace="getNewOverriddenMethod#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3051706240924250125" at="21,132,25,7" concept="5" />
-      <node id="3051706240924250118" at="20,28,26,5" concept="4" />
-      <node id="3051706240924250116" at="20,0,29,0" concept="6" trace="doRefactor#()V" />
-      <scope id="3051706240924250107" at="16,41,17,22" />
-      <scope id="3508103059753504014" at="30,58,31,180" />
-      <scope id="3051706240924250126" at="22,204,24,211">
+      <node id="3051706240924250101" at="15,0,16,0" concept="3" trace="myMethod" />
+      <node id="7350413709594234737" at="16,0,17,0" concept="3" trace="myScope" />
+      <node id="3051706240924250108" at="18,60,19,22" concept="2" />
+      <node id="7350413709594234741" at="19,22,20,20" concept="2" />
+      <node id="7271917062036789846" at="25,204,26,211" concept="7" />
+      <node id="3051706240924250127" at="26,211,27,211" concept="2" />
+      <node id="3051706240924250138" at="29,5,30,41" concept="2" />
+      <node id="3508103059753504018" at="33,58,34,180" concept="8" />
+      <node id="3508103059753504024" at="33,0,36,0" concept="6" trace="getNewOverriddenMethod#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3051706240924250105" at="18,0,22,0" concept="1" trace="SafeDeleteMethod#(Lorg/jetbrains/mps/openapi/module/SearchScope;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3051706240924250125" at="24,141,28,7" concept="5" />
+      <node id="3051706240924250118" at="23,28,29,5" concept="4" />
+      <node id="3051706240924250116" at="23,0,32,0" concept="6" trace="doRefactor#()V" />
+      <scope id="3508103059753504014" at="33,58,34,180" />
+      <scope id="3051706240924250107" at="18,60,20,20" />
+      <scope id="3051706240924250126" at="25,204,27,211">
         <var name="methodDecl" id="7271917062036789847" />
       </scope>
-      <scope id="3051706240924250105" at="16,0,19,0">
-        <var name="method" id="3051706240924250113" />
-      </scope>
-      <scope id="3508103059753504024" at="30,0,33,0">
+      <scope id="3508103059753504024" at="33,0,36,0">
         <var name="methodDecl" id="7271917062036792881" />
       </scope>
-      <scope id="3051706240924250124" at="21,132,25,7" />
-      <scope id="3051706240924250118" at="20,28,26,5">
+      <scope id="3051706240924250105" at="18,0,22,0">
+        <var name="method" id="3051706240924250113" />
+        <var name="scope" id="7350413709594234570" />
+      </scope>
+      <scope id="3051706240924250124" at="24,141,28,7" />
+      <scope id="3051706240924250118" at="23,28,29,5">
         <var name="method" id="3051706240924250123" />
       </scope>
-      <scope id="3051706240924250117" at="20,28,27,41" />
-      <scope id="3051706240924250116" at="20,0,29,0" />
-      <unit id="3051706240924250100" at="13,0,34,0" name="jetbrains.mps.baseLanguage.refactorings.SafeDeleteMethod" />
+      <scope id="3051706240924250117" at="23,28,30,41" />
+      <scope id="3051706240924250116" at="23,0,32,0" />
+      <unit id="3051706240924250100" at="14,0,37,0" name="jetbrains.mps.baseLanguage.refactorings.SafeDeleteMethod" />
     </file>
   </root>
   <root nodeRef="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)/3051706240924250145">
@@ -107,7 +110,7 @@
       <node id="3051706240924250145" at="21,52,22,48" concept="8" />
       <node id="3051706240924250145" at="24,39,25,40" concept="8" />
       <node id="3051706240924250167" at="27,69,28,56" concept="7" />
-      <node id="3051706240924250176" at="28,56,29,46" concept="2" />
+      <node id="3051706240924250176" at="28,56,29,84" concept="2" />
       <node id="3051706240924250215" at="31,88,32,104" concept="8" />
       <node id="3051706240924250189" at="34,86,35,233" concept="7" />
       <node id="3051706240924250198" at="35,233,36,226" concept="8" />
@@ -122,7 +125,7 @@
       <scope id="3051706240924250145" at="24,39,25,40" />
       <scope id="3051706240924250214" at="31,88,32,104" />
       <scope id="3051706240924250145" at="19,0,21,0" />
-      <scope id="3051706240924250166" at="27,69,29,46">
+      <scope id="3051706240924250166" at="27,69,29,84">
         <var name="method" id="3051706240924250168" />
       </scope>
       <scope id="3051706240924250188" at="34,86,36,226">
@@ -262,7 +265,7 @@
       <node id="7874812549549771289" at="30,39,31,27" concept="8" />
       <node id="7874812549549771289" at="33,47,34,24" concept="8" />
       <node id="7874812549549876826" at="36,69,37,100" concept="7" />
-      <node id="1494876485718558729" at="38,128,39,205" concept="2" />
+      <node id="1494876485718558729" at="38,166,39,205" concept="2" />
       <node id="5679731535836386771" at="40,5,41,205" concept="2" />
       <node id="4347648036456963189" at="43,88,44,104" concept="8" />
       <node id="4955044055727112112" at="46,86,47,100" concept="7" />
@@ -282,7 +285,7 @@
       <scope id="7874812549549771289" at="27,52,28,37" />
       <scope id="7874812549549771289" at="30,39,31,27" />
       <scope id="7874812549549771289" at="33,47,34,24" />
-      <scope id="1494876485718558728" at="38,128,39,205" />
+      <scope id="1494876485718558728" at="38,166,39,205" />
       <scope id="4955044055727176778" at="43,88,44,104" />
       <scope id="334613783244104665" at="48,202,49,228" />
       <scope id="334613783244104850" at="50,12,51,160" />
