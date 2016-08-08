@@ -181,9 +181,6 @@
         <child id="1177333559040" name="part" index="uz6Si" />
       </concept>
       <concept id="1177337890340" name="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query" flags="in" index="uNCsQ" />
-      <concept id="562388756457602485" name="jetbrains.mps.lang.actions.structure.MigrateManuallyAnnotation" flags="ng" index="xAzKH">
-        <reference id="562388756457602486" name="migrateTo" index="xAzKI" />
-      </concept>
       <concept id="562388756457499018" name="jetbrains.mps.lang.actions.structure.MigratedToAnnotation" flags="ng" index="xBawi">
         <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
       </concept>
@@ -1066,9 +1063,6 @@
               </node>
             </node>
           </node>
-          <node concept="xAzKH" id="1wEcoXjJgsJ" role="lGtFl">
-            <ref role="xAzKI" to="tpep:1wEcoXjJgsc" />
-          </node>
         </node>
         <node concept="zlxcR" id="hTPHMg2" role="tZc4B">
           <node concept="zlMOO" id="hTPHMg3" role="zmozY">
@@ -1156,9 +1150,6 @@
                 </node>
               </node>
             </node>
-          </node>
-          <node concept="xAzKH" id="1wEcoXjJgsK" role="lGtFl">
-            <ref role="xAzKI" to="tpep:1wEcoXjJgsc" />
           </node>
         </node>
         <node concept="3buRE8" id="2$CGp_M2Ncx" role="3bvWUf">
@@ -3085,9 +3076,6 @@
               </node>
             </node>
           </node>
-          <node concept="xAzKH" id="1wEcoXjJguW" role="lGtFl">
-            <ref role="xAzKI" to="tpep:1wEcoXjJguU" resolve="OfConceptOperation_SubstituteMenu" />
-          </node>
         </node>
         <node concept="xBawi" id="1wEcoXjJguV" role="lGtFl">
           <ref role="xBaxx" to="tpep:1wEcoXjJguU" resolve="OfConceptOperation_SubstituteMenu" />
@@ -3205,9 +3193,6 @@
                 </node>
               </node>
             </node>
-          </node>
-          <node concept="xAzKH" id="1wEcoXjJgtp" role="lGtFl">
-            <ref role="xAzKI" to="tpep:1wEcoXjJgsQ" />
           </node>
         </node>
         <node concept="3buRE8" id="2$CGp_M2U8Q" role="3bvWUf">
@@ -3342,9 +3327,6 @@
                 </node>
               </node>
             </node>
-          </node>
-          <node concept="xAzKH" id="1wEcoXjJgpM" role="lGtFl">
-            <ref role="xAzKI" to="tpep:1wEcoXjJgpf" />
           </node>
         </node>
         <node concept="3buRE8" id="2$CGp_M2VjE" role="3bvWUf">
