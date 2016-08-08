@@ -23,6 +23,7 @@ import jetbrains.mps.datatransfer.CopyPasteManager;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
 import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
+import jetbrains.mps.languageScope.LanguageScopeFactory;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.facets.BootstrapMakeFacets;
 import jetbrains.mps.make.java.BLDependenciesCache;
@@ -102,6 +103,7 @@ public final class MPSCore extends ComponentPluginBase {
 
     init(new QueryMethodGenerated(myClassLoaderManager));
     myLanguageRegistry = init(new LanguageRegistry(myModuleRepository, myClassLoaderManager));
+    init(new LanguageScopeFactory(myClassLoaderManager));
     init(new ConceptRegistry(myLanguageRegistry));
     init(new ExtensionRegistry(myClassLoaderManager, myModuleRepository));
     init(new ConceptDescendantsCache(myModuleRepository, myLanguageRegistry));
