@@ -61,10 +61,10 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
       }
       monitor.advance(1);
 
-      Collection<SModel> current = new LinkedHashSet<SModel>();;
+      Collection<SModel> current = new LinkedHashSet<SModel>();
       Collection<SModel> simpleSearch = new LinkedHashSet<SModel>();
-      for (SModel m:IterableUtil.asCollection(scope.getModels())){
-        if (m instanceof EditableSModel && ((EditableSModel) m).isChanged()){
+      for (SModel m : IterableUtil.asCollection(scope.getModels())) {
+        if (m instanceof EditableSModel && ((EditableSModel) m).isChanged()) {
           simpleSearch.add(m);
         } else {
           current.add(m);
@@ -85,12 +85,14 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
 
       ProgressMonitor subMonitor = monitor.subTask(4, SubProgressKind.DEFAULT);
       subMonitor.start("", current.size());
-      showNoFastFindTipIfNeeded(monitor, current);
+      showNoFastFindTipIfNeeded(current);
       current.addAll(simpleSearch);
       for (SModel m : current) {
         subMonitor.step(m.getModelName());
         FindUsagesUtil.collectInstances(m, queryConcepts, consumer);
-        if (monitor.isCanceled()) break;
+        if (monitor.isCanceled()) {
+          break;
+        }
         subMonitor.advance(1);
       }
       subMonitor.done();

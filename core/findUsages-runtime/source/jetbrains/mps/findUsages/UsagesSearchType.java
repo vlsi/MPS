@@ -75,7 +75,7 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
       ProgressMonitor subMonitor = monitor.subTask(4, SubProgressKind.DEFAULT);
       subMonitor.start("", current.size());
       NodeUsageFinder nf = new NodeUsageFinder(nodes, consumer);
-      showNoFastFindTipIfNeeded(monitor, current);
+      showNoFastFindTipIfNeeded(current);
       current.addAll(simpleSearch);
       for (SModel m : current) {
         subMonitor.step(m.getModelName());

@@ -32,7 +32,7 @@ public abstract class SearchType<T, R> {
 
   public abstract Set<T> search(Set<R> elements, SearchScope scope, @NotNull ProgressMonitor monitor);
 
-  protected void showNoFastFindTipIfNeeded(@NotNull ProgressMonitor monitor, Collection<SModel> noFastFindModels) {
+  protected void showNoFastFindTipIfNeeded(Collection<SModel> noFastFindModels) {
     if (!PersistenceRegistry.getInstance().isFastSearch()) {
       return;
     }
