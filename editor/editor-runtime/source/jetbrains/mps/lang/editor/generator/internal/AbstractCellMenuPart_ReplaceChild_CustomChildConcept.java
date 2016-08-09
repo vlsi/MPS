@@ -34,7 +34,6 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -64,7 +63,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_CustomChildConcept imple
       return Collections.emptyList();
     }
 
-    if (OldNewSubstituteUtil.areOldActionsApplicable(childNodeConcept, editorContext.getRepository())) {
+    if (OldNewSubstituteUtil.areOldActionsApplicableToConcept(childNodeConcept, editorContext.getRepository())) {
       return ModelActions.createChildNodeSubstituteActions(parentNode, currentChild, childNodeConcept, setter, context);
     } else {
       SAbstractConcept concept = MetaAdapterByDeclaration.getConcept(childNodeConcept);

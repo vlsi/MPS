@@ -17,8 +17,7 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.actions.runtime.impl.ChildSubstituteActionsUtil;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -37,7 +36,11 @@ public class OldNewSubstituteUtil {
 
   private static final String ACTIONS_LANG = "jetbrains.mps.lang.actions";
 
-  public static boolean areOldActionsApplicable(SAbstractConcept concept, SRepository repository) {
+  public static boolean areOldActionsApplicableToNode(SNode node, SRepository repository) {
+    return areOldActionsApplicableToConcept(node.getConcept(), repository);
+  }
+
+  public static boolean areOldActionsApplicableToConcept(SAbstractConcept concept, SRepository repository) {
     SNodeReference sourceRef = concept.getSourceNode();
     if (sourceRef == null) {
       return false;
@@ -46,10 +49,10 @@ public class OldNewSubstituteUtil {
     if (sourceNode == null) {
       return false;
     }
-    return areOldActionsApplicable(sourceNode, repository);
+    return areOldActionsApplicableToConcept(sourceNode, repository);
   }
 
-  public static boolean areOldActionsApplicable(SNode concept, SRepository repository) {
+  public static boolean areOldActionsApplicableToConcept(SNode concept, SRepository repository) {
     if (concept == null) {
       return false;
     }

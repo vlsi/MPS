@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.lang.editor.generator.internal;
 
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellContext;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.lang.editor.menus.transformation.SubstituteActionsCollector;
@@ -24,21 +23,10 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewSubstituteUtil;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.menus.substitute.DefaultSubstituteMenuContext;
-import jetbrains.mps.nodeEditor.selectionRestoring.CellIdLocator;
-import jetbrains.mps.nodeEditor.selectionRestoring.CellLocator;
-import jetbrains.mps.nodeEditor.selectionRestoring.CellSelector;
-import jetbrains.mps.nodeEditor.selectionRestoring.ChildCellLocator;
-import jetbrains.mps.nodeEditor.selectionRestoring.LabelCellSelector;
-import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection;
-import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelectionByCell;
-import jetbrains.mps.nodeEditor.selectionRestoring.WholeCellSelector;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
-import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
-import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.smodel.IOperationContext;
@@ -49,7 +37,6 @@ import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -77,7 +64,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
     IOperationContext context = editorContext.getOperationContext();
 
     List<SubstituteAction> result;
-    if (OldNewSubstituteUtil.areOldActionsApplicable(getReplacementConcept(), editorContext.getRepository())) {
+    if (OldNewSubstituteUtil.areOldActionsApplicableToConcept(getReplacementConcept(), editorContext.getRepository())) {
       List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(parent, node, getReplacementConcept().getDeclarationNode(), this, context);
       result = new ArrayList<SubstituteAction>(actions.size());
       for (SubstituteAction a : actions) {

@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.cellMenu.OldNewSubstituteUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -56,7 +57,8 @@ public class OldNewCompositeSideTransformSubstituteInfo extends AbstractNodeSubs
     if (sourceNode == null) {
       return new ArrayList<>();
     }
-    if (OldNewSubstituteUtil.areOldActionsApplicable(sourceNode.getConcept(), myOldSubstituteInfo.getEditorContext().getRepository())) {
+    if (OldNewSubstituteUtil.areOldActionsApplicableToNode(SideTransformHintSubstituteActionsHelper.getNodeForSideTransforms(sourceNode),
+        myOldSubstituteInfo.getEditorContext().getRepository())) {
       return myOldSubstituteInfo.createActions();
     } else {
       return myNewSubstituteInfo.createActions();

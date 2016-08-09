@@ -24,6 +24,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collections;
@@ -43,10 +45,7 @@ public class SideTransformHintSubstituteActionsHelper {
 
   public SideTransformHintSubstituteActionsHelper(SNode sourceNode, CellSide side, String transformTags, IOperationContext context) {
     myContext = context;
-    while (AttributeOperations.isAttribute(sourceNode)) {
-      sourceNode = sourceNode.getParent();
-    }
-    mySourceNode = sourceNode;
+    mySourceNode = getNodeForSideTransforms(sourceNode);
     if (mySourceNode != null) {
       if (transformTags != null) {
         for (StringTokenizer tokenizer = new StringTokenizer(transformTags, SIDE_TRANSFORM_TAG_SEPARATOR); tokenizer.hasMoreTokens(); ) {
@@ -55,6 +54,16 @@ public class SideTransformHintSubstituteActionsHelper {
       }
       mySide = side;
     }
+  }
+
+  /**
+   * "Unwraps" attributes and returns the attributed node. Side transforms work on the attributed node.
+   */
+  public static SNode getNodeForSideTransforms(SNode sourceNode) {
+    while (AttributeOperations.isAttribute(sourceNode)) {
+      sourceNode = sourceNode.getParent();
+    }
+    return sourceNode;
   }
 
   public boolean isValid() {
