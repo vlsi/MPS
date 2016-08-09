@@ -57,7 +57,7 @@ public class ImmatureReferencesTracker {
       if (!r.isDirect()) {
         continue;
       }
-      r.makeIndirect(true);
+      r.makeIndirect();
     }
     myImmatureRefs.clear();
   }
