@@ -148,7 +148,7 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
     });
   }
 
-  private  void propagateStatusToNamespaceNodes(ProjectModuleTreeNode node, GenerationStatus status) {
+  private void propagateStatusToNamespaceNodes(ProjectModuleTreeNode node, GenerationStatus status) {
     final AdditionalTextNodeUpdate r = new AdditionalTextNodeUpdate(status.getMessage());
     for (TreeNode n = node; n != null; n = n.getParent()) {
       if (n instanceof NamespaceTextNode) {
