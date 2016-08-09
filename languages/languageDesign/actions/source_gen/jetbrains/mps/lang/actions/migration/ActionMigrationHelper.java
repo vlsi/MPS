@@ -144,7 +144,8 @@ public class ActionMigrationHelper {
       public void visit(SNode expression) {
         SNode expressionToReplaceWith;
         if (SNodeOperations.isInstanceOf(expression, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9eb64c6L, "jetbrains.mps.lang.smodel.structure.ConceptRefExpression"))) {
-          expressionToReplaceWith = _quotation_createNode_qgr84z_a0a0b0a0a1a41(SLinkOperations.getTarget(SNodeOperations.cast(expression, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9eb64c6L, "jetbrains.mps.lang.smodel.structure.ConceptRefExpression")), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9eb64c6L, 0x110f9ec0c2aL, "conceptDeclaration")));
+          SNode conceptDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(expression, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9eb64c6L, "jetbrains.mps.lang.smodel.structure.ConceptRefExpression")), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9eb64c6L, 0x110f9ec0c2aL, "conceptDeclaration"));
+          expressionToReplaceWith = _quotation_createNode_qgr84z_a0b0b0a0a1a41(conceptDeclaration);
           SNodeOperations.replaceWithAnother(expression, expressionToReplaceWith);
         } else if (!(SNodeOperations.isInstanceOf(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral")))) {
           expressionToReplaceWith = _quotation_createNode_qgr84z_a0a0a1a0a0b0o();
@@ -265,7 +266,7 @@ public class ActionMigrationHelper {
   private static boolean neq_qgr84z_a0f0d0n(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static SNode _quotation_createNode_qgr84z_a0a0b0a0a1a41(Object parameter_1) {
+  private static SNode _quotation_createNode_qgr84z_a0b0b0a0a1a41(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce01982590bd1eL, "jetbrains.mps.lang.resources.structure.ConceptIconResourceExpression"), null, null, false);
