@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.messages;
 
+import com.intellij.icons.AllIcons;
 import com.intellij.icons.AllIcons.General;
 import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.CopyPasteManagerEx;
@@ -331,7 +332,6 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     }, KeyStroke.getKeyStroke('F', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
 
-
     myList.setFixedCellHeight(FontDesignMetrics.getMetrics(myList.getFont()).getHeight() + 5);
 
     final AbstractAction openCurrentMessage = new AbstractAction() {
@@ -350,12 +350,8 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
       }
     }, KeyStroke.getKeyStroke("F1"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
-    myList.registerKeyboardAction(new AbstractAction() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        myList.getSelectionModel().setSelectionInterval(0, myList.getModel().getSize());
-      }
-    }, KeyStroke.getKeyStroke('A', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    myList.registerKeyboardAction(e -> selectAll(),
+        KeyStroke.getKeyStroke('A', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     myList.addMouseListener(new MouseAdapter() {
       // Holds index of item, that was under cursor on mouse press action
@@ -418,6 +414,10 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     if (selectedMessage != null && canNavigate(selectedMessage)) {
       navigate(selectedMessage, true);
     }
+  }
+
+  private void selectAll() {
+    myList.setSelectionInterval(0, myList.getModel().getSize() - 1);
   }
 
   /**
@@ -519,6 +519,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     group.addSeparator();
 
     group.add(new ClearAction());
+    group.add(new SelectAllAction());
 
     return group;
   }
@@ -958,6 +959,18 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     @Override
     public void actionPerformed(AnActionEvent e) {
       clear();
+    }
+  }
+
+  private class SelectAllAction extends AnAction {
+
+    public SelectAllAction() {
+      super("Select All", "", AllIcons.Actions.Selectall);
+    }
+
+    @Override
+    public void actionPerformed(AnActionEvent e) {
+      selectAll();
     }
   }
 }

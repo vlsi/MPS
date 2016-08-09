@@ -8280,21 +8280,6 @@
             <ref role="3bR37D" node="7Kfy9QB6LaO" resolve="jetbrains.mps.lang.structure" />
           </node>
         </node>
-        <node concept="398BVA" id="6wK_PpNA8DX" role="3LF7KH">
-          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-          <node concept="2Ry0Ak" id="6wK_PpNA8DY" role="iGT6I">
-            <property role="2Ry0Am" value="languages" />
-            <node concept="2Ry0Ak" id="6wK_PpNA8DZ" role="2Ry0An">
-              <property role="2Ry0Am" value="languageDesign" />
-              <node concept="2Ry0Ak" id="6wK_PpNA8E0" role="2Ry0An">
-                <property role="2Ry0Am" value="actions" />
-                <node concept="2Ry0Ak" id="6wK_PpNA8E1" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.lang.actions.mpl" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="1SiIV0" id="41ZU75YL_4h" role="3bR37C">
           <node concept="3bR9La" id="41ZU75YL_4i" role="1SiIV1">
             <property role="3bR36h" value="false" />
@@ -8353,6 +8338,21 @@
           <node concept="3bR9La" id="71jmo990LeV" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="14x5$qAUbkv" resolve="jetbrains.mps.lang.resources" />
+          </node>
+        </node>
+        <node concept="398BVA" id="6wK_PpNA8DX" role="3LF7KH">
+          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
+          <node concept="2Ry0Ak" id="6wK_PpNA8DY" role="iGT6I">
+            <property role="2Ry0Am" value="languages" />
+            <node concept="2Ry0Ak" id="6wK_PpNA8DZ" role="2Ry0An">
+              <property role="2Ry0Am" value="languageDesign" />
+              <node concept="2Ry0Ak" id="6wK_PpNA8E0" role="2Ry0An">
+                <property role="2Ry0Am" value="actions" />
+                <node concept="2Ry0Ak" id="6wK_PpNA8E1" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.lang.actions.mpl" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -18740,6 +18740,9 @@
             </node>
           </node>
           <node concept="2HvfSZ" id="35zoHQHRZ44" role="39821P">
+            <node concept="3LWZYq" id="1T_EcTFZQvM" role="2HvfZ1">
+              <property role="3LWZYl" value="**/vcs.xml" />
+            </node>
             <node concept="3LWZYq" id="5b4JZ0Ul2Ss" role="2HvfZ1">
               <property role="3LWZYl" value="**/*.history" />
             </node>

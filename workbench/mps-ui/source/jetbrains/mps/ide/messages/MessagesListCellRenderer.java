@@ -32,7 +32,7 @@ import java.util.Date;
 import java.util.Formatter;
 
 public class MessagesListCellRenderer extends DefaultListCellRenderer {
-  private final EmptyBorder myEmptyBorder = new EmptyBorder(0, 0, 0, 0);
+  private final EmptyBorder myEmptyBorder = new EmptyBorder(1, 1, 1, 1);
   private final TextAttributes myAttributes =
       EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.SYSTEM_OUTPUT_KEY);
   private final TextAttributes myErrorAttributes =
@@ -43,6 +43,7 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
       EditorColorsManager.getInstance().getGlobalScheme().getColor(ConsoleViewContentType.CONSOLE_BACKGROUND_KEY);
   private final Color myConsoleBackgroundBrighter = JBColor.GRAY; // some neutral color, with works for both light and dark themes
   private final Color myConsoleBackgroundDarker = myConsoleBackground.darker();
+  private final LineBorder myLineBorder = new LineBorder(myConsoleBackgroundBrighter, 1, true);
 
   // Holds index of item, which must be highlighted by border, because it is under mouse cursor
   private int indexUnderMouse = -1;
@@ -55,7 +56,7 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
     final IMessage message = (IMessage) value;
 
     component.setBackground(isSelected ? myConsoleBackgroundDarker : myConsoleBackground);
-    component.setBorder(index == indexUnderMouse ? new LineBorder(myConsoleBackgroundBrighter, 1, true) : myEmptyBorder);
+    component.setBorder(index == indexUnderMouse ? myLineBorder : myEmptyBorder);
 
     StringBuilder sb = new StringBuilder(120);
     new Formatter(sb).format("%tT\t: ", new Date(message.getCreationTime()));

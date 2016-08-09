@@ -165,6 +165,7 @@
     </copy>
     <zip destfile="${build.layout}/samples.zip">
       <zipfileset dir="${basedir}/samples" prefix="MPSSamples">
+        <exclude name="**/vcs.xml" />
         <exclude name="**/*.history" />
       </zipfileset>
     </zip>

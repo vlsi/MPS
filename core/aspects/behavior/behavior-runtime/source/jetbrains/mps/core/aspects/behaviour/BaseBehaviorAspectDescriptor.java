@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -38,6 +39,16 @@ public abstract class BaseBehaviorAspectDescriptor implements BehaviorAspectDesc
   @ToRemove(version = 3.4)
   public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
     return getDescriptor(MetaAdapterFactory.getConceptById(conceptId));
+  }
+
+  /**
+   * @deprecated use {@link #getDescriptor(SAbstractConcept)} instead
+   * AP: left for compatibility reasons
+   */
+  @ToRemove(version = 3.4)
+  @Deprecated
+  public BehaviorDescriptor getDescriptor(@NotNull String conceptName) {
+    return null;
   }
 
   /**
