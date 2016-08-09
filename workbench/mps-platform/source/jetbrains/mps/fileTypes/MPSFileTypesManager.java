@@ -25,7 +25,7 @@ import java.util.Collections;
 import java.util.List;
 
 public final class MPSFileTypesManager {
-  private static final List<String> DEFAULT_MPS_IGNORED_PATTERNS = Arrays.asList(".idea", ".mps");
+  private static final List<String> DEFAULT_MPS_IGNORED_PATTERNS = Arrays.asList(".idea", ".mps", ".git"); // AP not sure whether it should be here
 
   public static boolean isModuleFile(VirtualFile file) {
     if (file == null) return false;
