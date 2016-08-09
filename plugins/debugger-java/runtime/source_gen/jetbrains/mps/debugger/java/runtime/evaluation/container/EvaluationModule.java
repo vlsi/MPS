@@ -117,4 +117,9 @@ public class EvaluationModule extends AbstractModule implements SModule {
       }
     }));
   }
+
+  @Override
+  public boolean isReadOnly() {
+    return false;
+  }
 }

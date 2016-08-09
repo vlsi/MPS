@@ -187,6 +187,7 @@
         <property id="1113006610751" name="value" index="$nhwW" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
+        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
         <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1164879685961" name="throwsItem" index="Sfmx6" />
         <child id="1068580123133" name="returnType" index="3clF45" />
@@ -2075,6 +2076,25 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="1tJ4mqhttG7" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4vwge_xfjuc" role="jymVt" />
+    <node concept="3clFb_" id="4vwge_xfz9l" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="isReadOnly" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="4vwge_xfz9m" role="1B3o_S" />
+      <node concept="10P_77" id="4vwge_xfz9o" role="3clF45" />
+      <node concept="3clFbS" id="4vwge_xfz9p" role="3clF47">
+        <node concept="3clFbF" id="4vwge_xfz9s" role="3cqZAp">
+          <node concept="3clFbT" id="4vwge_xfA9T" role="3clFbG">
+            <property role="3clFbU" value="false" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="4vwge_xfz9q" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
