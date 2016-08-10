@@ -142,8 +142,8 @@
       <action id="ShowNavBar" class="com.intellij.ide.navigationToolbar.ShowNavBarAction"/>
       <action id="GotoDeclaration" class="com.intellij.codeInsight.navigation.actions.GotoDeclarationAction"/>
       -->
-      <!-- MPS Patch -->
-      <action id="GotoDeclaration" class="jetbrains.mps.codeInsight.navigation.actions.MockGotoDeclarationAction"/>
+      <!-- MPS Patch TODO remove after fix in OpenInEditorWithMouseAction constructor -->
+      <action id="GotoDeclaration" class="com.intellij.openapi.actionSystem.EmptyAction"/>
       <!--
       <action id="GotoImplementation" class="com.intellij.codeInsight.navigation.actions.GotoImplementationAction"/>
       <action id="GotoTypeDeclaration" class="com.intellij.codeInsight.navigation.actions.GotoTypeDeclarationAction"/>
