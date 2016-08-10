@@ -2522,6 +2522,12 @@
               <node concept="Xl_RD" id="55$LBuYmD0y" role="37wK5m">
                 <property role="Xl_RC" value="java-stub" />
               </node>
+              <node concept="Xl_RD" id="35GJQMDB4cd" role="37wK5m">
+                <property role="Xl_RC" value="util" />
+              </node>
+              <node concept="Xl_RD" id="4vEZpy3EAaI" role="37wK5m">
+                <property role="Xl_RC" value="vfs" />
+              </node>
               <node concept="3cpWs3" id="4J5nzKIHHyD" role="37wK5m">
                 <node concept="3cpWs3" id="4J5nzKIHJvF" role="3uHU7B">
                   <node concept="37vLTw" id="4J5nzKIHJMs" role="3uHU7w">
