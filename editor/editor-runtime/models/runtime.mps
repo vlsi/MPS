@@ -3189,14 +3189,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4AUcghxsOv6" role="3cqZAp">
-          <node concept="1rXfSq" id="4AUcghxsOv4" role="3clFbG">
-            <ref role="37wK5l" to="exr9:~EditorComponent.setNoVirtualFile(boolean):void" resolve="setNoVirtualFile" />
-            <node concept="3clFbT" id="4AUcghxsOT_" role="37wK5m">
-              <property role="3clFbU" value="true" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="2qx2hw9g$ur" role="3cqZAp">
           <node concept="1rXfSq" id="2qx2hw9g$up" role="3clFbG">
             <ref role="37wK5l" to="exr9:~EditorComponent.editNode(org.jetbrains.mps.openapi.model.SNode):void" resolve="editNode" />

@@ -41,7 +41,6 @@ public abstract class BaseNodeDialog extends DialogWrapper {
 
     InspectorEditorComponent inspector = new InspectorEditorComponent(myProject.getRepository());
     EditorExtensionUtil.extendUsingProject(inspector, myProject);
-    inspector.setNoVirtualFile(true);
     myEditorComponent = new UIEditorComponent(myProject.getRepository(), inspector);
     EditorExtensionUtil.extendUsingProject(myEditorComponent, myProject);
 

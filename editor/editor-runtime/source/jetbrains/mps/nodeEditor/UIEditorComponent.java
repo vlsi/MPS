@@ -29,7 +29,6 @@ public class UIEditorComponent extends EditorComponent {
   public UIEditorComponent(SRepository repository, InspectorEditorComponent inspector) {
     super(repository);
     unregisterKeyboardAction(KeyStroke.getKeyStroke("ESCAPE"));
-    setNoVirtualFile(true);
     myInspector = inspector;
 
     if (myInspector == null) return;

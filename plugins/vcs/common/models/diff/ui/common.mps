@@ -8394,19 +8394,6 @@
             <node concept="2es0OD" id="42hl10VHaz_" role="2OqNvi">
               <node concept="1bVj0M" id="42hl10VHazA" role="23t8la">
                 <node concept="3clFbS" id="42hl10VHazB" role="1bW5cS">
-                  <node concept="3clFbF" id="42hl10VHazC" role="3cqZAp">
-                    <node concept="2OqwBi" id="42hl10VHazD" role="3clFbG">
-                      <node concept="liA8E" id="42hl10VHazF" role="2OqNvi">
-                        <ref role="37wK5l" to="exr9:~EditorComponent.setNoVirtualFile(boolean):void" resolve="setNoVirtualFile" />
-                        <node concept="3clFbT" id="42hl10VHazG" role="37wK5m">
-                          <property role="3clFbU" value="true" />
-                        </node>
-                      </node>
-                      <node concept="37vLTw" id="2BHiRxgm8YB" role="2Oq$k0">
-                        <ref role="3cqZAo" node="42hl10VHazH" resolve="ec" />
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3clFbF" id="2crodf9Sdup" role="3cqZAp">
                     <node concept="2YIFZM" id="2crodf9SdGM" role="3clFbG">
                       <ref role="37wK5l" to="wvnl:~EditorExtensionUtil.extendUsingProject(jetbrains.mps.openapi.editor.EditorComponent,jetbrains.mps.project.IProject):void" resolve="extendUsingProject" />

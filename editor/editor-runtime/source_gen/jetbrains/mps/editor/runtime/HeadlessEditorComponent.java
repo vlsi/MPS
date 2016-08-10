@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder;
 public class HeadlessEditorComponent extends EditorComponent {
   public HeadlessEditorComponent(SNode node, SRepository repository) {
     super(repository, new EditorConfigurationBuilder().withUI(false).build());
-    setNoVirtualFile(true);
     editNode(node);
   }
 
