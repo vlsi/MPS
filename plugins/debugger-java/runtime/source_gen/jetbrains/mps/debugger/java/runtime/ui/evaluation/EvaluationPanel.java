@@ -88,4 +88,7 @@ public class EvaluationPanel extends EvaluationUi {
   protected void update() {
     myEvaluationModel.updateState();
   }
+  public JComponent getPreferredFocusedComponent() {
+    return myEditor.getPreferredFocusedComponent();
+  }
 }

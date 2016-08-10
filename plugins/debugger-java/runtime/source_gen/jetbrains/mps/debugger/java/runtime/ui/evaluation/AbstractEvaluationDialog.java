@@ -64,4 +64,9 @@ public abstract class AbstractEvaluationDialog extends DialogWrapper {
     super.dispose();
     myEvaluationPanel.dispose();
   }
+  @Nullable
+  @Override
+  public JComponent getPreferredFocusedComponent() {
+    return myEvaluationPanel.getPreferredFocusedComponent();
+  }
 }

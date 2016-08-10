@@ -23,6 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.nodefs.NodeVirtualFileSystem;
+import javax.swing.JComponent;
 
 public class EmbeddableEditor extends JPanel implements DataProvider {
   private final Project project;
@@ -106,5 +107,9 @@ public class EmbeddableEditor extends JPanel implements DataProvider {
     if (nodeEditor != null) {
       nodeEditor.dispose();
     }
+  }
+
+  public JComponent getPreferredFocusedComponent() {
+    return nodeEditor.getPreferredFocusedComponent();
   }
 }
