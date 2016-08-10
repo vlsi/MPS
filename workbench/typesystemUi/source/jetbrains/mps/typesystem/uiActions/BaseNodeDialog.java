@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.UIEditorComponent;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.extensions.EditorExtensionUtil;
 import jetbrains.mps.project.Project;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.JComponent;
@@ -58,6 +59,12 @@ public abstract class BaseNodeDialog extends DialogWrapper {
 
   protected JComponent getMainComponent() {
     return mySplitter;
+  }
+
+  @Nullable
+  @Override
+  public JComponent getPreferredFocusedComponent() {
+    return myEditorComponent;
   }
 
   @Override
