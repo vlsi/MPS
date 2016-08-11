@@ -327,20 +327,16 @@ public class NewModelDialog extends DialogWrapper {
     assert myResult != null;
 
     super.doOKAction();
-  }
 
-  public void openSettings() {
-    if (myResult == null || myProject == null) {
-      return;
+    if (myResult != null && myProject != null) {
+      MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(myResult, myProject);
+      final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(myProject), configurable, "#MPSPropertiesConfigurable");
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          configurableEditor.show();
+        }
+      }, ModalityState.current());
     }
-    MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(myResult, myProject);
-    final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(myProject), configurable, "#MPSPropertiesConfigurable");
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        configurableEditor.show();
-      }
-    }, ModalityState.current());
   }
 
   private String getFqName() {
