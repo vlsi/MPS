@@ -45,6 +45,9 @@
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
       <concept id="1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" flags="in" index="pkWqt" />
       <concept id="1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" flags="nn" index="pncrf" />
+      <concept id="7671875129586001610" name="jetbrains.mps.lang.editor.structure.TransformationMenuPart_IncludeSubstituteMenu" flags="ng" index="ulPW2">
+        <reference id="6089045305656903095" name="link" index="2ks2v6" />
+      </concept>
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
@@ -104,6 +107,7 @@
       </concept>
       <concept id="3360401466585705291" name="jetbrains.mps.lang.editor.structure.CellModel_ContextAssistant" flags="ng" index="18a60v" />
       <concept id="1221062700015" name="jetbrains.mps.lang.editor.structure.QueryFunction_Underlined" flags="in" index="1d0yFN" />
+      <concept id="7342352913006985500" name="jetbrains.mps.lang.editor.structure.TransformationLocation_Completion" flags="ng" index="3eGOoe" />
       <concept id="1139535219966" name="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" flags="ig" index="1h_SRR">
         <reference id="1139535219968" name="applicableConcept" index="1h_SK9" />
         <child id="1139535219969" name="item" index="1h_SK8" />
@@ -1112,6 +1116,12 @@
   <node concept="3ICXOK" id="7PU0zk4VAyV">
     <property role="TrG5h" value="CommandHolder_Empty_ContextAssistantMenu" />
     <ref role="aqKnT" to="eynw:jysm2GH4xb" resolve="CommandHolder" />
+    <node concept="1Qtc8_" id="t4bZ_AiXc5" role="IW6Ez">
+      <node concept="3eGOoe" id="t4bZ_AiXcb" role="1Qtc8$" />
+      <node concept="ulPW2" id="t4bZ_AiXce" role="1Qtc8A">
+        <ref role="2ks2v6" to="eynw:jysm2GH4$$" resolve="command" />
+      </node>
+    </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjIDmU">
     <ref role="aqKnT" to="eynw:5WvH$QO98uv" resolve="Command" />
