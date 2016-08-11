@@ -116,6 +116,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         public void run() {
           ApplicationManager.getApplication().runWriteAction(new Runnable() {
             public void run() {
+              myProject.getBaseDir().getChildren();
               VirtualFileUtils.refreshSynchronouslyRecursively(myProject.getBaseDir());
               VirtualFileManager.getInstance().syncRefresh();
               ReloadManager.getInstance().flush();
