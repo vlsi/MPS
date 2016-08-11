@@ -85,9 +85,12 @@ public class DeleteModuleHelper {
 
       if (module instanceof AbstractModule) {
         AbstractModule curModule = (AbstractModule) module;
-        String outputPath = curModule.getOutputPath().toPath().toString();
-        deleteFile(outputPath);
-        deleteFile(FileGenerationUtil.getCachesPath(outputPath));
+        final IFile output = curModule.getOutputPath();
+        if (output != null) {
+          String outputPath = output.toPath().toString();
+          deleteFile(outputPath);
+          deleteFile(FileGenerationUtil.getCachesPath(outputPath));
+        }
 
         if (curModule.getDescriptorFile() != null) {
           curModule.getDescriptorFile().delete();
@@ -99,7 +102,7 @@ public class DeleteModuleHelper {
 
         if (curModule.getDescriptorFile() != null) {
           IFile moduleFolder = curModule.getDescriptorFile().getParent();
-          if (moduleFolder !=null && deleteDirIfEmpty(moduleFolder)) {
+          if (moduleFolder != null && deleteDirIfEmpty(moduleFolder)) {
             moduleFolder.delete();
           }
         }

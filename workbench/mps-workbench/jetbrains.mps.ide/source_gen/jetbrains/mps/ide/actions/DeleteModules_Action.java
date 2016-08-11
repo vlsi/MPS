@@ -17,6 +17,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
 import java.awt.Frame;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
+import com.intellij.util.ui.UIUtil;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -92,8 +93,8 @@ public class DeleteModules_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    String message = "Are you sure you want to delete selected modules? This operation is not undoable.";
-    final DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", false, true);
+    String message = "<html>Are you sure you want to delete selected modules?<br>This operation is not undoable.</html>";
+    final DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption(UIUtil.replaceMnemonicAmpersand("Delete &Files"), false, true);
     DeleteDialog dialog = new DeleteDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), "Delete Modules", message, filesOption);
     dialog.show();
     if (!(dialog.isOK())) {
