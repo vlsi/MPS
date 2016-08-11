@@ -73,7 +73,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
       for (SNode actions : CollectionSequence.fromCollection(allSideTransformActions)) {
         for (SNode builder : ListSequence.fromList(SLinkOperations.getChildren(actions, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108fad1c116L, 0x108fad1c117L, "actionsBuilder"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return !((myMigrateConceptFromSameLanguage ^ isDefinedInSameLanguage(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x108facec6d6L, "applicableConcept")))));
+            return myMigrateConceptFromSameLanguage == isDefinedInSameLanguage(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x108facec6d6L, "applicableConcept")));
           }
         })) {
           if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(builder)), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder"))) {
