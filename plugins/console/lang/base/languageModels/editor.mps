@@ -382,7 +382,7 @@
             <property role="VOm3f" value="true" />
           </node>
           <node concept="A1WHu" id="3DiRZz_Y3Uy" role="3vIgyS">
-            <ref role="A1WHt" node="7PU0zk4VAyV" resolve="CommandHolder_Empty_ContextAssistantMenu" />
+            <ref role="A1WHt" node="7PU0zk4VAyV" resolve="CommandHolder_EmptyCell_TransformationMenu" />
           </node>
         </node>
         <node concept="xShMh" id="3$RjcTxpe_T" role="3F10Kt">
@@ -1114,7 +1114,7 @@
     </node>
   </node>
   <node concept="3ICXOK" id="7PU0zk4VAyV">
-    <property role="TrG5h" value="CommandHolder_Empty_ContextAssistantMenu" />
+    <property role="TrG5h" value="CommandHolder_EmptyCell_TransformationMenu" />
     <ref role="aqKnT" to="eynw:jysm2GH4xb" resolve="CommandHolder" />
     <node concept="1Qtc8_" id="t4bZ_AiXc5" role="IW6Ez">
       <node concept="3eGOoe" id="t4bZ_AiXcb" role="1Qtc8$" />

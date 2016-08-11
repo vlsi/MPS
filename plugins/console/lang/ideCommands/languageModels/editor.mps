@@ -1032,7 +1032,7 @@
       </node>
     </node>
     <node concept="A1WHu" id="5OVd5tVsX$t" role="AmTjC">
-      <ref role="A1WHt" to="4l22:7PU0zk4VAyV" resolve="CommandHolder_Empty_ContextAssistantMenu" />
+      <ref role="A1WHt" to="4l22:7PU0zk4VAyV" resolve="CommandHolder_EmptyCell_TransformationMenu" />
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJ7K5">

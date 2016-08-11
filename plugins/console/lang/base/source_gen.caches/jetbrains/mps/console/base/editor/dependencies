@@ -164,7 +164,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.editor.CommandHolder_Empty_ContextAssistantMenu" file="CommandHolder_Empty_ContextAssistantMenu.java">
+  <dependency className="jetbrains.mps.console.base.editor.CommandHolder_EmptyCell_TransformationMenu" file="CommandHolder_EmptyCell_TransformationMenu.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -256,7 +256,7 @@
     <classNode dependClassName="jetbrains.mps.console.base.editor.BLExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.ClickableEditorComponent" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.CommandHolder_Editor" />
-    <classNode dependClassName="jetbrains.mps.console.base.editor.CommandHolder_Empty_ContextAssistantMenu" />
+    <classNode dependClassName="jetbrains.mps.console.base.editor.CommandHolder_EmptyCell_TransformationMenu" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.Command_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.ConsoleRoot_Editor" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.ExceptionHolder_Editor" />

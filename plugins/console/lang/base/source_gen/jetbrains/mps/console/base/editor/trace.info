@@ -682,8 +682,8 @@
       <node id="9041541628638924931" at="99,63,100,107" concept="2" />
       <node id="9041541628638924931" at="100,107,101,51" concept="2" />
       <node id="9041541628638924931" at="101,51,102,42" concept="2" />
-      <node id="9041541628638924931" at="102,42,103,366" concept="2" />
-      <node id="9041541628638924931" at="103,366,104,48" concept="2" />
+      <node id="9041541628638924931" at="102,42,103,368" concept="2" />
+      <node id="9041541628638924931" at="103,368,104,48" concept="2" />
       <node id="9041541628638924931" at="104,48,105,73" concept="2" />
       <node id="9041541628638924931" at="105,73,106,24" concept="7" />
       <node id="2401921116440678138" at="109,108,110,90" concept="6" />
@@ -2396,11 +2396,11 @@
     </file>
   </root>
   <root nodeRef="r:f09c85c2-fb88-4283-852e-78d5fc87420e(jetbrains.mps.console.base.editor)/9041541628638947515">
-    <file name="CommandHolder_Empty_ContextAssistantMenu.java">
+    <file name="CommandHolder_EmptyCell_TransformationMenu.java">
       <node id="9041541628638947515" at="23,0,24,0" concept="3" trace="myLocations" />
       <node id="9041541628638947515" at="25,67,26,63" concept="7" />
       <node id="9041541628638947515" at="31,124,32,156" concept="6" />
-      <node id="9041541628638947515" at="33,128,34,120" concept="2" />
+      <node id="9041541628638947515" at="33,128,34,122" concept="2" />
       <node id="9041541628638947515" at="35,5,36,18" concept="7" />
       <node id="523596204891427589" at="41,70,42,31" concept="7" />
       <node id="523596204891427589" at="45,72,46,18" concept="7" />
@@ -2412,7 +2412,7 @@
       <node id="523596204891427589" at="48,0,52,0" concept="5" trace="getContainmentLink#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Lorg/jetbrains/mps/openapi/language/SContainmentLink;" />
       <node id="9041541628638947515" at="29,0,38,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="9041541628638947515" at="25,67,26,63" />
-      <scope id="9041541628638947515" at="33,128,34,120" />
+      <scope id="9041541628638947515" at="33,128,34,122" />
       <scope id="523596204891427589" at="41,70,42,31" />
       <scope id="523596204891427589" at="45,72,46,18" />
       <scope id="523596204891427589" at="49,86,50,144" />
@@ -2434,8 +2434,8 @@
       <scope id="9041541628638947515" at="29,0,38,0">
         <var name="_context" id="9041541628638947515" />
       </scope>
-      <unit id="523596204891427589" at="39,0,53,0" name="jetbrains.mps.console.base.editor.CommandHolder_Empty_ContextAssistantMenu$TransformationMenuPart_IncludeSubstituteMenu_yhc0fo_a0" />
-      <unit id="9041541628638947515" at="22,0,54,0" name="jetbrains.mps.console.base.editor.CommandHolder_Empty_ContextAssistantMenu" />
+      <unit id="523596204891427589" at="39,0,53,0" name="jetbrains.mps.console.base.editor.CommandHolder_EmptyCell_TransformationMenu$TransformationMenuPart_IncludeSubstituteMenu_8yeiqo_a0" />
+      <unit id="9041541628638947515" at="22,0,54,0" name="jetbrains.mps.console.base.editor.CommandHolder_EmptyCell_TransformationMenu" />
     </file>
   </root>
   <root nodeRef="r:f09c85c2-fb88-4283-852e-78d5fc87420e(jetbrains.mps.console.base.editor)/963101385307642090">
