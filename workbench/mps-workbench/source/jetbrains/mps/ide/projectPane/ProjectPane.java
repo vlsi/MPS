@@ -338,13 +338,18 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
 
     // keep the binary format in sync with what IDEA writes
     Element subPane = new Element("subPane");
-    // we probabbly don't need this...
+    // we probably don't need this...
     if (getSubId() != null) {
       subPane.setAttribute("subId", getSubId());
     }
 
     writePaths(subPane, myExpandedPathsRaw, "PATH");
     writePaths(subPane, mySelectedPathsRaw, "SELECTED");
+    if (!myShowDescriptorModelsAction.isDefaultState()) {
+      Element option1 = new Element(ShowDescriptorModelsAction.KEY);
+      option1.setAttribute("value", Boolean.toString(myShowDescriptorModelsAction.isSelected()));
+      subPane.addContent(option1);
+    }
 
     element.addContent(subPane);
   }
@@ -383,6 +388,10 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     for (Element subPane : subPanes) {
       myExpandedPathsRaw = readPaths(subPane, "PATH");
       mySelectedPathsRaw = readPaths(subPane, "SELECTED");
+      Element option1 = subPane.getChild(ShowDescriptorModelsAction.KEY);
+      if (option1 != null) {
+        myShowDescriptorModelsAction.setState(Boolean.parseBoolean(option1.getAttributeValue("value")));
+      }
     }
   }
 
@@ -652,6 +661,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   private static class ShowDescriptorModelsAction extends ToggleAction {
     private final ProjectPane myProjectPane;
     private boolean myState = false;
+    /*package*/ static final String KEY = "showGeneratorDescriptor";
 
     ShowDescriptorModelsAction(ProjectPane projectPane) {
       super("Show @descriptor models in Generators");
@@ -661,6 +671,14 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     public boolean isSelected() {
       return myState;
     }
+
+    /*package*/ boolean isDefaultState() {
+      return !isSelected();
+    }
+    /*package*/ void setState(boolean selected) {
+      myState = selected;
+    }
+
 
     @Override
     public boolean isSelected(AnActionEvent e) {
