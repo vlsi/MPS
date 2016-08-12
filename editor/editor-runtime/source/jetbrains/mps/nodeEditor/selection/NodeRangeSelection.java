@@ -330,7 +330,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
         return;
       }
 
-      if (canExecute(editorContext, action)) {
+      if (!canExecute(editorContext, action)) {
         return;
       }
 
