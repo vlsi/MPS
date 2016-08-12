@@ -23,12 +23,12 @@ import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.ide.vfs.IdeaFileSystem;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -84,7 +84,8 @@ public class ProjectPaneSelectInTarget extends AbstractProjectViewSelectInTarget
     }
 
     IFile moduleFile = new IdeaFile(ourFileSystem, virtualFile);
-    return ModuleFileTracker.getInstance().getModuleByFile(moduleFile);
+    // XXX why don't we obtain model read here? ModuleFileTracker might need to walk repository to find out actual modules and their files
+    return ModuleFileTracker.getInstance(myProject.getRepository()).getModuleByFile(moduleFile);
   }
 
   private SNode getNode(SelectInContext context) {

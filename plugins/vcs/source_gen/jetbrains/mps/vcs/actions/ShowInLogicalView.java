@@ -7,13 +7,15 @@ import com.intellij.openapi.vcs.actions.VcsContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
-import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import com.intellij.openapi.actionSystem.Presentation;
@@ -26,32 +28,36 @@ public class ShowInLogicalView extends AbstractVcsAction {
   protected void actionPerformed(VcsContext e) {
     final Project project = e.getProject();
     final VirtualFile selectedFile = getSelectedFile(e);
-    if (selectedFile == null) {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(project);
+    if (selectedFile == null || mpsProject == null) {
       return;
     }
-    assert project != null;
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
-    ProjectPane projectPane = ProjectPane.getInstance(project);
+    ProjectPaneNavigator ppn = new ProjectPaneNavigator(mpsProject);
     if (MPSFileTypesManager.isModelFile(selectedFile)) {
-      SModel model = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<SModel>() {
+      SModelReference model = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<SModelReference>() {
         @Override
-        public SModel compute() {
-          return SModelFileTracker.getInstance(mpsProject.getRepository()).findModel(VirtualFileUtils.toIFile(selectedFile));
+        public SModelReference compute() {
+          SModel m = SModelFileTracker.getInstance(mpsProject.getRepository()).findModel(VirtualFileUtils.toIFile(selectedFile));
+          return (m == null ? null : m.getReference());
         }
       });
       if (model != null) {
-        projectPane.selectModel(model, false);
+        ppn.select(model);
       }
     } else
     if (MPSFileTypesManager.isModuleFile(selectedFile)) {
-      SModule module = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<SModule>() {
+      // FIXME why on earth we obtain model access here? ProjectPaneSelectInTarget does the same without model access. 
+      SModuleReference module = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<SModuleReference>() {
         @Override
-        public SModule compute() {
-          return ModuleFileTracker.getInstance().getModuleByFile(VirtualFileUtils.toIFile(selectedFile));
+        public SModuleReference compute() {
+          SModule m = ModuleFileTracker.getInstance(mpsProject.getRepository()).getModuleByFile(VirtualFileUtils.toIFile(selectedFile));
+          return (m == null ? null : m.getModuleReference());
         }
       });
       if (module != null) {
-        projectPane.selectModule(module, true);
+        // I have no idea why we focus module only, and do not focus on models, but it's the way it used to be for years 
+        ppn.shallFocus(true);
+        ppn.select(module);
       }
     }
   }
