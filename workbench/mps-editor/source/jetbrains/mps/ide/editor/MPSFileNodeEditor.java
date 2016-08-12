@@ -32,10 +32,12 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.editor.Editor;
+import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.CommandListenerAdapter;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelFileTracker;
+import jetbrains.mps.util.AbstractComputeRunnable;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NonNls;
@@ -61,6 +63,8 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   private final MPSProject myProject;
   private MPSNodeVirtualFile myFile;
   private boolean myDisposed = false;
+  // See: https://youtrack.jetbrains.com/issue/MPS-24409
+  private EditorState myDelayedState = null;
 
   // do not duplicate code that obtains MPSNodeVirtualFile from regular IDEA VirtualFile
   // in MPSFileNodeEditorProvider and MPSFileNodeEditor
@@ -102,7 +106,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
         MPSNodeVirtualFile mpsNodeVirtualFile = nodeFileComputable.compute();
         if (mpsNodeVirtualFile != null) {
           myFile = mpsNodeVirtualFile;
-          MPSFileNodeEditor.this.recreateEditor();
+          MPSFileNodeEditor.this.initEditor();
           repository.getModelAccess().removeCommandListener(this);
         }
       }
@@ -113,7 +117,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     myProject = project;
     myFile = file;
 
-    myProject.getModelAccess().runReadAction(this::recreateEditor);
+    myProject.getModelAccess().runReadAction(this::initEditor);
   }
 
   @Nullable
@@ -157,7 +161,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   @Override
   @NotNull
-  public FileEditorState getState(@NotNull final FileEditorStateLevel level) {
+  public MPSEditorStateWrapper getState(@NotNull final FileEditorStateLevel level) {
     final MPSEditorStateWrapper state = new MPSEditorStateWrapper();
     if (!isDisposed() && myNodeEditor != null) {
       myProject.getModelAccess().runReadAction(() -> state.setEditorState(myNodeEditor.saveState()));
@@ -170,19 +174,30 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   @Override
   public void setState(final @NotNull FileEditorState state) {
-    if (!(state instanceof MPSEditorStateWrapper)) {
-      return;
-    }
     if (myNodeEditor == null) {
       return;
     }
     final MPSEditorStateWrapper wrapper = (MPSEditorStateWrapper) state;
+    setState(wrapper.getEditorState(), wrapper.getLevel() == FileEditorStateLevel.UNDO);
+  }
 
-    if (wrapper.getLevel() == FileEditorStateLevel.UNDO) {
+  private void setState(EditorState editorState, boolean isUndo) {
+    myDelayedState = null;
+    if (isUndo) {
       //we need it here since undo might need to flush events which requires write action
-      myProject.getModelAccess().runWriteAction(() -> myNodeEditor.loadState(wrapper.getEditorState()));
+      myProject.getModelAccess().runWriteAction(() -> myNodeEditor.loadState(editorState));
     } else {
-      myNodeEditor.loadState(wrapper.getEditorState());
+      myNodeEditor.loadState(editorState);
+      AbstractComputeRunnable<EditorState> runnable = new AbstractComputeRunnable<EditorState>() {
+        @Override
+        protected EditorState compute() {
+          return myNodeEditor.saveState();
+        }
+      };
+      myProject.getModelAccess().runReadAction(runnable);
+      if (runnable.getResult().getClass() != editorState.getClass()) {
+        myDelayedState = editorState;
+      }
     }
   }
 
@@ -267,14 +282,12 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   }
 
   // expects model read, and likely EDT?
-  public void recreateEditor() {
+  private void recreateEditor(EditorState state) {
     if (myProject.isDisposed() || !isValid() || waitingForNodeFile()) {
       return;
     }
 
     myComponent.removeAll();
-
-    FileEditorState state = myNodeEditor != null ? getState(FileEditorStateLevel.FULL) : null;
 
     Editor oldNodeEditor = myNodeEditor;
     myNodeEditor = new MPSEditorOpener(myProject).createEditorFor(myFile.getNode());
@@ -283,11 +296,24 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     }
 
     if (state != null) {
-      setState(state);
+      setState(state, false);
     }
 
     myComponent.add(((BaseNodeEditor) myNodeEditor).getComponent(), BorderLayout.CENTER);
     myComponent.validate();
+  }
+
+  private void initEditor() {
+    recreateEditor(myNodeEditor != null ? getState(FileEditorStateLevel.FULL).getEditorState() : null);
+  }
+
+  public void recreateEditorOnTabChange() {
+    EditorState currentState = myNodeEditor != null ? getState(FileEditorStateLevel.FULL).getEditorState() : null;
+    if (myDelayedState == null) {
+      recreateEditor(currentState);
+    } else {
+      recreateEditor(myDelayedState);
+    }
   }
 
   @Override

@@ -35,7 +35,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.util.EqualUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jdom.Content;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -47,7 +46,6 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -63,7 +61,6 @@ public abstract class BaseNodeEditor implements Editor {
   private SNodeReference myCurrentlyEditedNode = null;
   protected final Map<TaskType, PrioritizedTask> myType2TaskMap = new HashMap<>();
   private boolean mySelected;
-  private BaseEditorState initialState = null;
 
   public BaseNodeEditor(@NotNull Project mpsProject) {
     myProject = mpsProject;
@@ -226,44 +223,31 @@ public abstract class BaseNodeEditor implements Editor {
 
   @Override
   public EditorState saveState() {
-    BaseEditorState result = new BaseEditorState();
+    BaseEditorState state = new BaseEditorState();
+    saveState(state);
+    return state;
+  }
+
+  protected void saveState(BaseEditorState state) {
     EditorContext editorContext = getEditorContext();
     if (editorContext != null) {
-      result.memento = editorContext.createMemento();
+      state.memento = editorContext.createMemento();
       NodeEditorComponent editorComponent = getCurrentEditorComponent();
       if (editorComponent != null) {
-        result.isEditorFocused = editorComponent.getFocusTracker().getEffectiveFocusState();
+        state.isEditorFocused = editorComponent.getFocusTracker().getEffectiveFocusState();
         EditorComponent inspector = editorComponent.getInspector();
         if (inspector != null) {
-          result.inspectorMemento = inspector.getEditorContext().createMemento();
-          result.isInspectorFocused = !result.isEditorFocused && inspector.getFocusTracker().getEffectiveFocusState();
+          state.inspectorMemento = inspector.getEditorContext().createMemento();
+          state.isInspectorFocused = !state.isEditorFocused && inspector.getFocusTracker().getEffectiveFocusState();
         }
       }
     }
-
-    /*
-    * If state was saved on load, that it holds additional data.
-    * Current default state will be loaded to initial to save additional data.
-    * */
-    if (initialState != null) {
-      initialState.refCopyFrom(result);
-      return initialState;
-    }
-
-    return result;
   }
 
   @Override
   public void loadState(@NotNull EditorState state) {
     if (!(state instanceof BaseEditorState)) {
       return;
-    }
-
-    /* If state is not instance of BaseEditorState, it can hold some additional data.
-    * In case of default NodeEditor such data will be lost, if it isn't stored.
-    * */
-    if (!state.getClass().equals(BaseEditorState.class)) {
-      initialState = (BaseEditorState) state;
     }
 
     final BaseEditorState s = (BaseEditorState) state;
@@ -371,19 +355,6 @@ public abstract class BaseNodeEditor implements Editor {
     private boolean isEditorFocused;
     private Object inspectorMemento;
     private boolean isInspectorFocused;
-    /**
-     * Holds additional data from loaded {@link Element},
-     * which is not stored in memento and inspectorMemento
-     */
-    protected List<Element> elements = new ArrayList<>();
-
-    public void refCopyFrom(BaseEditorState source) {
-      memento = source.memento;
-      isEditorFocused = source.isEditorFocused;
-      inspectorMemento = source.inspectorMemento;
-      isInspectorFocused = source.isInspectorFocused;
-      elements = source.elements;
-    }
 
     @Override
     public void save(Element e) {
@@ -404,11 +375,6 @@ public abstract class BaseNodeEditor implements Editor {
       if (isInspectorFocused) {
         e.setAttribute(FOCUSED_COMPONENT_EDITOR, Boolean.TRUE.toString());
       }
-
-      // save additional data to Element
-      for (Element element : elements) {
-        e.addContent(element.clone());
-      }
     }
 
     @Override
@@ -424,26 +390,10 @@ public abstract class BaseNodeEditor implements Editor {
 
       isEditorFocused = Boolean.parseBoolean(e.getAttributeValue(FOCUSED_COMPONENT_EDITOR));
       isInspectorFocused = Boolean.parseBoolean(e.getAttributeValue(FOCUSED_COMPONENT_INSPECTOR));
-
-      for (Content content : e.getContent()) {
-        // Store only Elements
-        if (!(content instanceof Element)) {
-          continue;
-        }
-
-        final Element element = (Element) content;
-        final String name = element.getName();
-        if (MEMENTO.equals(name) || INSPECTOR_MEMENTO.equals(name)) {
-          // Store only additional data, memento and inspectorMemento have been already saved
-          continue;
-        }
-
-        elements.add(element);
-      }
     }
 
     public int hashCode() {
-      return memento.hashCode() + inspectorMemento.hashCode() + elements.hashCode();
+      return memento.hashCode() + inspectorMemento.hashCode();
     }
 
     public boolean equals(Object obj) {
@@ -453,7 +403,7 @@ public abstract class BaseNodeEditor implements Editor {
 
       BaseEditorState state = (BaseEditorState) obj;
       return EqualUtil.equals(state.memento, memento) && EqualUtil.equals(state.inspectorMemento, inspectorMemento) &&
-          state.isEditorFocused == isEditorFocused && state.isInspectorFocused == isInspectorFocused && EqualUtil.equals(state.elements, elements);
+          state.isEditorFocused == isEditorFocused && state.isInspectorFocused == isInspectorFocused;
     }
   }
 }

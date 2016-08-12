@@ -318,16 +318,17 @@ public class TabbedEditor extends BaseNodeEditor {
   @Override
   public EditorState saveState() {
     TabbedEditorState state = new TabbedEditorState();
-    state.setNode(getCurrentlyEditedNode());
-
-    BaseEditorState superState = (BaseEditorState) super.saveState();
-    state.refCopyFrom(superState);
+    saveState(state);
     return state;
+  }
+
+  protected void saveState(TabbedEditorState state) {
+    super.saveState(state);
+    state.setNode(getCurrentlyEditedNode());
   }
 
   @Override
   public void loadState(@NotNull final EditorState state) {
-    super.loadState(state);
     myProject.getModelAccess().runReadAction(() -> {
       if (state instanceof TabbedEditorState) {
         SNodeReference nodePointer = ((TabbedEditorState) state).getNode();
@@ -340,6 +341,7 @@ public class TabbedEditor extends BaseNodeEditor {
         showNode(myBaseNode.resolve(myProject.getRepository()), false);
       }
     });
+    super.loadState(state);
   }
 
   public final static class TabbedEditorState extends BaseEditorState implements EditorState {
@@ -373,14 +375,10 @@ public class TabbedEditor extends BaseNodeEditor {
     @Override
     public void load(Element e) {
       super.load(e);
-      for (Element element : elements) {
-        if (NODE.equals(element.getName())) {
-          String val = element.getAttributeValue(NODE_REF);
-          if (val != null) {
-            myCurrentNode = jetbrains.mps.smodel.SNodePointer.deserialize(val);
-          }
-          break;
-        }
+      Element nodeElem = e.getChild(NODE);
+      String val = nodeElem.getAttributeValue(NODE_REF);
+      if (val != null) {
+        myCurrentNode = jetbrains.mps.smodel.SNodePointer.deserialize(val);
       }
     }
 

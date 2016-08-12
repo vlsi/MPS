@@ -288,13 +288,13 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
 
         if (editor.getNodeEditor() instanceof TabbedEditor) {
           //this is for recreating tabbed editors on reload to renew tab classes
-          editor.recreateEditor();
+          editor.recreateEditorOnTabChange();
         } else if (editor.getNodeEditor() instanceof NodeEditor) {
           //and this is to make non-tabbed editors tabbed if they need to
           for (RelationDescriptor tab : getTabDescriptors()) {
             SNode node = editor.getNodeEditor().getCurrentlyEditedNode().resolve(myRepository);
             if (tab.isApplicable(node)) {
-              editor.recreateEditor();
+              editor.recreateEditorOnTabChange();
               break;
             }
           }
