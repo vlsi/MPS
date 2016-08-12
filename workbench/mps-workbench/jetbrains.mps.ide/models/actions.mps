@@ -1517,7 +1517,6 @@
     </node>
   </node>
   <node concept="sE7Ow" id="hGnLICq">
-    <property role="fJN8o" value="true" />
     <property role="TrG5h" value="CloneModel" />
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Clone Model" />
@@ -1596,15 +1595,66 @@
         </node>
       </node>
     </node>
-    <node concept="2ScWuX" id="hGnLUv2" role="tmbBb">
-      <node concept="3clFbS" id="hGnLUv3" role="2VODD2">
-        <node concept="3clFbJ" id="hMkT8jo" role="3cqZAp">
-          <node concept="3clFbS" id="hMkT8jp" role="3clFbx">
-            <node concept="3cpWs6" id="hMkTa_2" role="3cqZAp">
-              <node concept="3clFbT" id="hMkTb$i" role="3cqZAk">
-                <property role="3clFbU" value="false" />
+    <node concept="1DS2jV" id="hHNVdtM" role="1NuT2Z">
+      <property role="TrG5h" value="model" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MODEL" resolve="MODEL" />
+      <node concept="1oajcY" id="7HZe2EwZDpi" role="1oa70y" />
+    </node>
+    <node concept="1DS2jV" id="5cQVs3w_b66" role="1NuT2Z">
+      <property role="TrG5h" value="project" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="5cQVs3w_b67" role="1oa70y" />
+    </node>
+    <node concept="1DS2jV" id="3QUOuRomm5p" role="1NuT2Z">
+      <property role="TrG5h" value="selSize" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.TREE_SELECTION_SIZE" resolve="TREE_SELECTION_SIZE" />
+      <node concept="1oajcY" id="7HZe2EwZDh6" role="1oa70y" />
+    </node>
+    <node concept="tkhdA" id="QAhkh$zG9f" role="tmbBb">
+      <node concept="3clFbS" id="QAhkh$zG9g" role="2VODD2">
+        <node concept="3cpWs8" id="QAhkh$$FTN" role="3cqZAp">
+          <node concept="3cpWsn" id="QAhkh$$FTO" role="3cpWs9">
+            <property role="TrG5h" value="presentation" />
+            <node concept="3uibUv" id="QAhkh$$FTM" role="1tU5fm">
+              <ref role="3uigEE" to="qkt:~Presentation" resolve="Presentation" />
+            </node>
+            <node concept="2OqwBi" id="QAhkh$$FTP" role="33vP2m">
+              <node concept="tl45R" id="QAhkh$$FTQ" role="2Oq$k0" />
+              <node concept="liA8E" id="QAhkh$$FTR" role="2OqNvi">
+                <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="hMkT8jo" role="3cqZAp">
+          <node concept="3clFbS" id="hMkT8jp" role="3clFbx">
+            <node concept="3clFbF" id="QAhkh$$EsU" role="3cqZAp">
+              <node concept="2OqwBi" id="QAhkh$$Fmn" role="3clFbG">
+                <node concept="37vLTw" id="QAhkh$$FTS" role="2Oq$k0">
+                  <ref role="3cqZAo" node="QAhkh$$FTO" resolve="presentation" />
+                </node>
+                <node concept="liA8E" id="QAhkh$$FI1" role="2OqNvi">
+                  <ref role="37wK5l" to="qkt:~Presentation.setVisible(boolean):void" resolve="setVisible" />
+                  <node concept="3clFbT" id="QAhkh$$FJu" role="37wK5m">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="QAhkh$$GlD" role="3cqZAp">
+              <node concept="2OqwBi" id="QAhkh$$G$X" role="3clFbG">
+                <node concept="37vLTw" id="QAhkh$$GlB" role="2Oq$k0">
+                  <ref role="3cqZAo" node="QAhkh$$FTO" resolve="presentation" />
+                </node>
+                <node concept="liA8E" id="QAhkh$$GVR" role="2OqNvi">
+                  <ref role="37wK5l" to="qkt:~Presentation.setEnabled(boolean):void" resolve="setEnabled" />
+                  <node concept="3clFbT" id="QAhkh$$GXj" role="37wK5m">
+                    <property role="3clFbU" value="false" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="QAhkh$$Hcd" role="3cqZAp" />
           </node>
           <node concept="3y3z36" id="3QUOuRomwpe" role="3clFbw">
             <node concept="3cmrfG" id="3QUOuRomwph" role="3uHU7w">
@@ -1614,6 +1664,34 @@
               <node concept="2WthIp" id="3QUOuRomwot" role="2Oq$k0" />
               <node concept="1DTwFV" id="3QUOuRomwou" role="2OqNvi">
                 <ref role="2WH_rO" node="3QUOuRomm5p" resolve="selSize" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="4cYFakSLzqf" role="3cqZAp">
+          <node concept="3clFbS" id="4cYFakSLzqh" role="3clFbx">
+            <node concept="3clFbF" id="QAhkh$$HBq" role="3cqZAp">
+              <node concept="2OqwBi" id="QAhkh$$HQY" role="3clFbG">
+                <node concept="37vLTw" id="QAhkh$$HBo" role="2Oq$k0">
+                  <ref role="3cqZAo" node="QAhkh$$FTO" resolve="presentation" />
+                </node>
+                <node concept="liA8E" id="QAhkh$$IdS" role="2OqNvi">
+                  <ref role="37wK5l" to="qkt:~Presentation.setVisible(boolean):void" resolve="setVisible" />
+                  <node concept="3clFbT" id="QAhkh$$Ifj" role="37wK5m">
+                    <property role="3clFbU" value="false" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="QAhkh$$IHF" role="3cqZAp" />
+          </node>
+          <node concept="2YIFZM" id="4cYFakSLzTa" role="3clFbw">
+            <ref role="37wK5l" to="w1kc:~SModelStereotype.isDescriptorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isDescriptorModel" />
+            <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+            <node concept="2OqwBi" id="4cYFakSL$AK" role="37wK5m">
+              <node concept="2WthIp" id="4cYFakSL$AN" role="2Oq$k0" />
+              <node concept="1DTwFV" id="4cYFakSL$AP" role="2OqNvi">
+                <ref role="2WH_rO" node="hHNVdtM" resolve="model" />
               </node>
             </node>
           </node>
@@ -1637,59 +1715,63 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="hMkTq5s" role="3cqZAp">
-          <node concept="3clFbS" id="hMkTq5t" role="3clFbx">
-            <node concept="3cpWs6" id="hMkTvnx" role="3cqZAp">
-              <node concept="3fqX7Q" id="7IH442cUlmE" role="3cqZAk">
-                <node concept="1eOMI4" id="7IH442cUlmG" role="3fr31v">
-                  <node concept="2YIFZM" id="7IH442cUkqI" role="1eOMHV">
-                    <ref role="37wK5l" to="vndm:~LanguageAspectSupport.isAspectModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isAspectModel" />
-                    <ref role="1Pybhc" to="vndm:~LanguageAspectSupport" resolve="LanguageAspectSupport" />
-                    <node concept="2OqwBi" id="7IH442cUk_g" role="37wK5m">
-                      <node concept="2WthIp" id="7IH442cUk_j" role="2Oq$k0" />
-                      <node concept="1DTwFV" id="7IH442cUk_l" role="2OqNvi">
-                        <ref role="2WH_rO" node="hHNVdtM" resolve="model" />
-                      </node>
-                    </node>
+        <node concept="3cpWs8" id="QAhkh$$K8M" role="3cqZAp">
+          <node concept="3cpWsn" id="QAhkh$$K8N" role="3cpWs9">
+            <property role="TrG5h" value="isAspectModel" />
+            <node concept="10P_77" id="QAhkh$$K8I" role="1tU5fm" />
+            <node concept="1Wc70l" id="QAhkh$$Ln9" role="33vP2m">
+              <node concept="2YIFZM" id="QAhkh$$K8O" role="3uHU7w">
+                <ref role="37wK5l" to="vndm:~LanguageAspectSupport.isAspectModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isAspectModel" />
+                <ref role="1Pybhc" to="vndm:~LanguageAspectSupport" resolve="LanguageAspectSupport" />
+                <node concept="2OqwBi" id="QAhkh$$K8P" role="37wK5m">
+                  <node concept="2WthIp" id="QAhkh$$K8Q" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="QAhkh$$K8R" role="2OqNvi">
+                    <ref role="2WH_rO" node="hHNVdtM" resolve="model" />
                   </node>
+                </node>
+              </node>
+              <node concept="2ZW3vV" id="hMkTsfU" role="3uHU7B">
+                <node concept="3uibUv" id="hMkTsfV" role="2ZW6by">
+                  <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+                </node>
+                <node concept="37vLTw" id="3GM_nagTBof" role="2ZW6bz">
+                  <ref role="3cqZAo" node="hMkTEYJ" resolve="module" />
                 </node>
               </node>
             </node>
           </node>
-          <node concept="2ZW3vV" id="hMkTsfU" role="3clFbw">
-            <node concept="3uibUv" id="hMkTsfV" role="2ZW6by">
-              <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+        </node>
+        <node concept="3clFbF" id="QAhkh$$Jef" role="3cqZAp">
+          <node concept="2OqwBi" id="QAhkh$$Jeg" role="3clFbG">
+            <node concept="37vLTw" id="QAhkh$$Jeh" role="2Oq$k0">
+              <ref role="3cqZAo" node="QAhkh$$FTO" resolve="presentation" />
             </node>
-            <node concept="37vLTw" id="3GM_nagTBof" role="2ZW6bz">
-              <ref role="3cqZAo" node="hMkTEYJ" resolve="module" />
+            <node concept="liA8E" id="QAhkh$$Jei" role="2OqNvi">
+              <ref role="37wK5l" to="qkt:~Presentation.setVisible(boolean):void" resolve="setVisible" />
+              <node concept="3fqX7Q" id="QAhkh$$M6Y" role="37wK5m">
+                <node concept="37vLTw" id="QAhkh$$MAO" role="3fr31v">
+                  <ref role="3cqZAo" node="QAhkh$$K8N" resolve="isAspectModel" />
+                </node>
+              </node>
             </node>
           </node>
-          <node concept="9aQIb" id="hMkTt40" role="9aQIa">
-            <node concept="3clFbS" id="hMkTt41" role="9aQI4">
-              <node concept="3cpWs6" id="hMkTtvC" role="3cqZAp">
-                <node concept="3clFbT" id="hMkTtUh" role="3cqZAk">
-                  <property role="3clFbU" value="true" />
+        </node>
+        <node concept="3clFbF" id="QAhkh$$Jek" role="3cqZAp">
+          <node concept="2OqwBi" id="QAhkh$$Jel" role="3clFbG">
+            <node concept="37vLTw" id="QAhkh$$Jem" role="2Oq$k0">
+              <ref role="3cqZAo" node="QAhkh$$FTO" resolve="presentation" />
+            </node>
+            <node concept="liA8E" id="QAhkh$$Jen" role="2OqNvi">
+              <ref role="37wK5l" to="qkt:~Presentation.setEnabled(boolean):void" resolve="setEnabled" />
+              <node concept="3fqX7Q" id="QAhkh$$MBv" role="37wK5m">
+                <node concept="37vLTw" id="QAhkh$$MBw" role="3fr31v">
+                  <ref role="3cqZAo" node="QAhkh$$K8N" resolve="isAspectModel" />
                 </node>
               </node>
             </node>
           </node>
         </node>
       </node>
-    </node>
-    <node concept="1DS2jV" id="hHNVdtM" role="1NuT2Z">
-      <property role="TrG5h" value="model" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MODEL" resolve="MODEL" />
-      <node concept="1oajcY" id="7HZe2EwZDpi" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="5cQVs3w_b66" role="1NuT2Z">
-      <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
-      <node concept="1oajcY" id="5cQVs3w_b67" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="3QUOuRomm5p" role="1NuT2Z">
-      <property role="TrG5h" value="selSize" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.TREE_SELECTION_SIZE" resolve="TREE_SELECTION_SIZE" />
-      <node concept="1oajcY" id="7HZe2EwZDh6" role="1oa70y" />
     </node>
   </node>
   <node concept="sE7Ow" id="hGnMLrO">
