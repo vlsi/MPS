@@ -4,6 +4,9 @@ package jetbrains.mps.core.tool.environment.util;
 
 import jetbrains.mps.project.ProjectBase;
 import jetbrains.mps.project.FileBasedProject;
+import jetbrains.mps.util.MacroHelper;
+import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.vfs.impl.IoFile;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.io.File;
@@ -31,13 +34,19 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
     return myProjectFile.getName();
   }
 
+  @NotNull
+  private MacroHelper createMacroHelper() {
+    return MacrosFactory.forProjectFile(new IoFile(getProjectFile().getPath()));
+  }
+
   @Override
   public void save() {
+    MacroHelper macroHelper = createMacroHelper();
+    new ProjectDescriptorPersistence(getProjectFile(), macroHelper).save(myProjectDescriptor);
   }
 
   /**
-   * 
-   * @deprecated 
+   * @deprecated
    */
   @Deprecated
   @Override
@@ -46,18 +55,22 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
   }
 
   /**
-   * 
    * @return the element with xml description of the project
    */
   @Nullable
   private Element getElement() {
-    return new ProjectDescriptorPersistence(getProjectFile()).loadProjectElement();
+    MacroHelper macroHelper = createMacroHelper();
+    return new ProjectDescriptorPersistence(getProjectFile(), macroHelper).loadProjectElement();
   }
 
   private void init() {
-    loadDescriptor(new ElementProjectDataSource(getElement(), getProjectFile()));
+    loadProjectDescriptorWithMacroHelper();
     update();
     projectOpened();
+  }
+
+  private void loadProjectDescriptorWithMacroHelper() {
+    loadDescriptor(new ElementProjectDataSource(getElement(), getProjectFile(), createMacroHelper()));
   }
 
   @Override

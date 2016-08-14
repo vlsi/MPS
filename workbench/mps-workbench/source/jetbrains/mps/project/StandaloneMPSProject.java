@@ -27,6 +27,7 @@ import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.MacroHelper.MacroNoHelper;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -50,8 +51,8 @@ import java.util.List;
  * evgeny, 11/10/11
  */
 @State(
-    name = "MPSProject",
-    storages = @Storage("modules.xml")
+  name = "MPSProject",
+  storages = @Storage("modules.xml")
 )
 public class StandaloneMPSProject extends MPSProject implements PersistentStateComponent<Element> {
   private static final Logger LOG = LogManager.getLogger(StandaloneMPSProject.class);
@@ -66,16 +67,13 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     if (getProject().isDefault()) {
       return null;
     }
-    return new ModelAccessHelper(getModelAccess()).runReadAction(new Computable<Element>() {
-      @Override
-      public Element compute() {
-        ProjectDescriptor descriptor = getProjectDescriptor();
+    return new ModelAccessHelper(getModelAccess()).runReadAction(() -> {
+      ProjectDescriptor descriptor = getProjectDescriptor();
 
-        String presentableUrl = getProject().getPresentableUrl();
-        assert presentableUrl != null; // by contract the project is default <=> url == null
-        File projectFile = new File(presentableUrl);
-        return new ProjectDescriptorPersistence(projectFile).saveProjectDescriptor(descriptor);
-      }
+      String presentableUrl = getProject().getPresentableUrl();
+      assert presentableUrl != null; // by contract the project is default <=> url == null
+      File projectFile = new File(presentableUrl);
+      return new ProjectDescriptorPersistence(projectFile, new MacroNoHelper()).save(descriptor);
     });
   }
 
@@ -161,7 +159,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     // TODO: remove duplication of ModulePath in ProjectBase.myModuleToPathMap to avoid handling both lists
     ModulePath modulePath = getPath(module);
     if (modulePath != null) {
-      if(myProjectDescriptor.contains(modulePath)) {
+      if (myProjectDescriptor.contains(modulePath)) {
         myProjectDescriptor.removeModulePath(modulePath);
       }
       modulePath.setVirtualFolder(newFolder);

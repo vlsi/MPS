@@ -100,7 +100,7 @@ public final class ModuleLoader {
     int loadedModules = 0;
     for (ModulePath modulePath : pathsToLoad) {
       String path = modulePath.getPath();
-      IFile descriptorFile = FS.getFileByPath(path);
+      IFile descriptorFile = FS.getFile(path);
       if (descriptorFile.exists()) {
         final ModulesMiner modulesMiner = new ModulesMiner();
         ModuleHandle handle = modulesMiner.loadModuleHandle(descriptorFile);

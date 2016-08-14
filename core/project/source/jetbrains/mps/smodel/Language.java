@@ -296,7 +296,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   @Override
-  public void rename(String newNamespace) {
+  public void rename(@NotNull String newNamespace) {
     for (Generator g : getGenerators()) {
       g.rename(newNamespace);
     }

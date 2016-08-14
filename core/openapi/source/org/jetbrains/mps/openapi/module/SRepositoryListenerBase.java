@@ -21,7 +21,6 @@ import org.jetbrains.annotations.NotNull;
  * A convenient empty implementation of the SRepositoryListener interface.
  */
 public abstract class SRepositoryListenerBase implements SRepositoryListener {
-
   @Override
   public void moduleAdded(@NotNull SModule module) {
   }

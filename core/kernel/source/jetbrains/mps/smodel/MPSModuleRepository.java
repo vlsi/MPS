@@ -114,7 +114,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   //-----------------register/unregister-merge-----------
 
   @Override
-  public <T extends SModule> T registerModule(T moduleToRegister, MPSModuleOwner owner) {
+  public <T extends SModule> T registerModule(@NotNull T moduleToRegister, @NotNull MPSModuleOwner owner) {
     getModelAccess().checkWriteAccess();
 
     SModuleId moduleId = moduleToRegister.getModuleReference().getModuleId();
@@ -186,7 +186,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   }
 
   @Override
-  public void unregisterModule(SModule module, MPSModuleOwner owner) {
+  public void unregisterModule(@NotNull SModule module, @NotNull MPSModuleOwner owner) {
     getModelAccess().checkWriteAccess();
 
     boolean moduleRemoved = doUnregisterModule(module, owner);

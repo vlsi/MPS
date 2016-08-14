@@ -601,7 +601,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return descriptor == null ? 0 : descriptor.getModuleVersion();
   }
 
-  public void rename(String newName) {
+  public void rename(@NotNull String newName) {
+    SModuleReference oldRef = getModuleReference();
     renameModels(getModuleName(), newName, true);
 
     save(); //see MPS-18743, need to save before setting descriptor
@@ -619,6 +620,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       descriptor.setNamespace(newName);
       setModuleDescriptor(descriptor);
     }
+
+    fireModuleRenamed(oldRef);
   }
 
   protected void renameModels(String oldName, String newName, boolean moveModels) {
@@ -672,7 +675,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     assertCanChange();
     for (IFile file : event.getRemoved()) {
       if (file.equals(myDescriptorFile)) {
-        ModuleRepositoryFacade.getInstance().removeModuleForced(this);
+        ModuleRepositoryFacade.getInstance().unregisterModule(this);
         return;
       }
     }
@@ -756,7 +759,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       if (model instanceof EditableSModel && ((EditableSModel) model).isChanged()) {
         LOG.warn(
             "Trying to reload module " + getModuleName() + " which contains a non-saved model '" +
-                model.getModelName() + "'. To prevent data loss, MPS will not update models in this module. " +
+                model.getName() + "'. To prevent data loss, MPS will not update models in this module. " +
                 "Please save your work and restart MPS. See MPS-18743 for details."
         );
         return;

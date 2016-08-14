@@ -17,6 +17,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.util.MacroHelper;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -29,19 +30,23 @@ import java.io.File;
  * Created by apyshkin on 11/2/15.
  */
 public class ElementProjectDataSource implements ProjectDataSource {
-  @Nullable
-  private final Element myElement;
-  @NotNull
-  private final File myProjectFile;
+  @Nullable private final Element myElement;
+  @NotNull private final File myProjectFile;
+  @NotNull private final MacroHelper myMacroHelper;
 
   public ElementProjectDataSource(@Nullable Element element, @NotNull File projectFile) {
+    this(element, projectFile, new MacroHelper.MacroNoHelper());
+  }
+
+  public ElementProjectDataSource(@Nullable Element element, @NotNull File projectFile, @NotNull MacroHelper macroHelper) {
     myElement = element;
     myProjectFile = projectFile;
+    myMacroHelper = macroHelper;
   }
 
   @NotNull
   @Override
   public ProjectDescriptor loadDescriptor() {
-    return new ProjectDescriptorPersistence(myProjectFile).loadProjectDescriptor(myElement);
+    return new ProjectDescriptorPersistence(myProjectFile, myMacroHelper).load(myElement);
   }
 }

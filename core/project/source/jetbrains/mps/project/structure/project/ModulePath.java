@@ -31,22 +31,23 @@ public final class ModulePath {
   private final Logger LOG = LogManager.getLogger(ModulePath.class);
 
   @NotNull
-  private String myPath; // always canonical path to the module descriptor file
-  @Nullable
+  private final String myPath; // always canonical path to the module descriptor file
+  @NotNull
   private String myVirtualFolder; // virtual folder, optional
 
   public ModulePath(@NotNull String path) {
     try {
-      myPath = new File(path).getCanonicalPath();
+      path = new File(path).getCanonicalPath();
     } catch (IOException e) {
-      myPath = path;
-      LOG.error(e);
+      LOG.error("", e);
     }
+    myPath = path;
+    myVirtualFolder = "";
   }
 
   public ModulePath(@NotNull String path, @Nullable String virtualFolder) {
     this(path);
-    myVirtualFolder = virtualFolder;
+    myVirtualFolder = virtualFolder != null ? virtualFolder : "";
   }
 
   @NotNull
@@ -54,13 +55,13 @@ public final class ModulePath {
     return myPath;
   }
 
-  @Nullable
+  @NotNull
   public String getVirtualFolder() {
     return myVirtualFolder;
   }
 
   public void setVirtualFolder(@Nullable String virtualFolder) {
-    myVirtualFolder = virtualFolder;
+    myVirtualFolder = virtualFolder != null ? virtualFolder : "";
   }
 
   @Override
