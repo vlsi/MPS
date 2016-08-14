@@ -41,7 +41,7 @@ public final class VirtualFileUtils {
 
   @Nullable
   public static VirtualFile getVirtualFile(String path) {
-    return getVirtualFile(FileSystem.getInstance().getFileByPath(path));
+    return getVirtualFile(FileSystem.getInstance().getFile(path));
   }
 
   /**
@@ -93,8 +93,18 @@ public final class VirtualFileUtils {
     return null;
   }
 
-  public static IFile toIFile(VirtualFile f) {
-    return FileSystem.getInstance().getFileByPath(f.getPath());
+  /**
+   * @return null if current fs is not idea-based (it is very unlikely but still)
+   */
+  @Nullable
+  public static IFile toIFile(@NotNull VirtualFile f) {
+    FileSystem fs = FileSystemExtPoint.getFS();
+    if (!(fs instanceof IdeaFileSystem)) {
+      LOG.warn("Current file system is not base on the IDEA VFS " + fs + ". Requested file is " + f);
+      return null;
+    }
+    IdeaFileSystem ideaFS = (IdeaFileSystem) fs;
+    return new IdeaFile(ideaFS, f);
   }
 
   public static File toFile(VirtualFile f) {
@@ -109,6 +119,7 @@ public final class VirtualFileUtils {
     VfsUtilCore.processFilesRecursively(file, new Processor<VirtualFile>() {
       @Override
       public boolean process(VirtualFile virtualFile) {
+        virtualFile.getChildren(); // for directories to be included into the vfs snapshot
         virtualFile.refresh(false, false);
         return true;
       }
@@ -119,9 +130,9 @@ public final class VirtualFileUtils {
    * Allows to distinguish file events from MPS code and from IDEA platform code
    * We don't process events on file updates from MPS
    *
-   * @param event
    * @return true - event is from IdeaFile processing, false - event from refresh or any other VirtualFile changes
    */
+  @ToRemove(version = 3.4)
   public static boolean isFileEventFromMPS(VFileEvent event) {
     return event.getRequestor() instanceof IdeaFileSystem;
   }
