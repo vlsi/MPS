@@ -24,6 +24,7 @@ import jetbrains.mps.PlatformMpsTest;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.ide.vfs.IdeaFileSystem;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
@@ -46,7 +47,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -56,7 +56,6 @@ public final class ModuleIDETests extends PlatformMpsTest {
   private static MPSProject ourProject;
 
   private static int ourModuleCounter = 0;
-  private static List<File> ourTmpDirs = new ArrayList<>();
 
   private static String getNewModuleName() {
     return MODULE_NAME_PREFIX + ++ourModuleCounter;
@@ -68,7 +67,7 @@ public final class ModuleIDETests extends PlatformMpsTest {
   }
 
   private void saveProjectInTest() {
-    writeCommandInEDTAndWait(() -> StoreUtil.save(ServiceKt.getStateStore(ourProject.getProject()), ourProject.getProject()));
+    StoreUtil.save(ServiceKt.getStateStore(ourProject.getProject()), ourProject.getProject());
   }
 
   @After
@@ -76,17 +75,13 @@ public final class ModuleIDETests extends PlatformMpsTest {
     ourProject.dispose();
   }
 
-  @AfterClass
-  public static void afterAll() {
-    ourTmpDirs.forEach(FileUtil::delete);
-  }
-
   @Test
   public void createSolution() {
     String solutionName = getNewModuleName();
+    Reference<Solution> solutionRef = new Reference<>();
+    writeCommandInEDTAndWait(() -> solutionRef.set(NewModuleUtil.createSolution(solutionName, createNewDirInProject(), ourProject)));
     writeCommandInEDTAndWait(() -> {
-      Solution solution = NewModuleUtil.createSolution(solutionName, createNewDirInProject(), ourProject);
-
+      Solution solution = solutionRef.get();
       Assert.assertNotNull(solution.getRepository());
       Assert.assertEquals(solutionName, solution.getModuleName());
       Assert.assertTrue(ourProject.getProjectModules().contains(solution));
@@ -96,9 +91,10 @@ public final class ModuleIDETests extends PlatformMpsTest {
   @Test
   public void createLanguage() {
     String langName = getNewModuleName();
+    Reference<Language> langRef = new Reference<>();
+    writeCommandInEDTAndWait(() -> langRef.set(NewModuleUtil.createLanguage(langName, createNewDirInProject(), ourProject)));
     writeCommandInEDTAndWait(() -> {
-      Language language = NewModuleUtil.createLanguage(langName, createNewDirInProject(), ourProject);
-
+      Language language = langRef.get();
       Assert.assertNotNull(language.getRepository());
       Assert.assertEquals(langName, language.getModuleName());
       Assert.assertTrue(ourProject.getProjectModules().contains(language));
@@ -117,9 +113,10 @@ public final class ModuleIDETests extends PlatformMpsTest {
   @Test
   public void createDevkit() {
     String devkitName = getNewModuleName();
+    Reference<DevKit> devkitRef = new Reference<>();
+    writeCommandInEDTAndWait(() -> devkitRef.set(NewModuleUtil.createDevKit(devkitName, createNewDirInProject(), ourProject)));
     writeCommandInEDTAndWait(() -> {
-      DevKit devkit = NewModuleUtil.createDevKit(devkitName, createNewDirInProject(), ourProject);
-
+      DevKit devkit = devkitRef.get();
       Assert.assertNotNull(devkit.getRepository());
       Assert.assertEquals(devkitName, devkit.getModuleName());
       Assert.assertTrue(ourProject.getProjectModules().contains(devkit));
@@ -131,8 +128,10 @@ public final class ModuleIDETests extends PlatformMpsTest {
   public void renameModule() {
     String moduleName = getNewModuleName();
     String newModuleName = getNewModuleName();
+    Reference<Language> langRef = new Reference<>();
+    writeCommandInEDTAndWait(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
     writeCommandInEDTAndWait(() -> {
-      Language lang = NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject);
+      Language lang = langRef.get();
       Renamer.renameModule(lang, newModuleName);
       Assert.assertEquals(newModuleName, lang.getModuleName());
       IFile descriptorFile = lang.getDescriptorFile();
@@ -146,9 +145,11 @@ public final class ModuleIDETests extends PlatformMpsTest {
   @Test
   public void deleteModule() {
     String moduleName = getNewModuleName();
+    Reference<Language> langRef = new Reference<>();
+    writeCommandInEDTAndWait(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
     writeCommandInEDTAndWait(() -> {
-      Language lang = NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject);
-      new DeleteModuleHelper(ourProject).deleteModules(Collections.singletonList(lang), false, false);
+      @NotNull Language lang = langRef.get();
+      deleteModule(lang, false);
       CachingFile descriptorFile = (CachingFile) lang.getDescriptorFile();
       Assert.assertNotNull(descriptorFile);
       descriptorFile.refresh(new DefaultCachingContext(true, false));
@@ -161,9 +162,11 @@ public final class ModuleIDETests extends PlatformMpsTest {
   @Test
   public void deleteModuleWithFiles() {
     String moduleName = getNewModuleName();
+    Reference<Language> langRef = new Reference<>();
+    writeCommandInEDTAndWait(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
     writeCommandInEDTAndWait(() -> {
-      Language lang = NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject);
-      new DeleteModuleHelper(ourProject).deleteModules(Collections.singletonList(lang), false, true);
+      @NotNull Language lang = langRef.get();
+      deleteModule(lang, true);
       CachingFile moduleSourceDir = (CachingFile) lang.getModuleSourceDir();
       Assert.assertNotNull(moduleSourceDir);
       moduleSourceDir.refresh(new DefaultCachingContext(true, true));
@@ -174,16 +177,27 @@ public final class ModuleIDETests extends PlatformMpsTest {
 
   @Test
   public void deleteRenamedLanguage() {
+    deleteRenamedLang(true);
+  }
+
+  @Test
+  public void deleteWithFilesRenamedLanguage() {
+    deleteRenamedLang(false);
+  }
+
+  private void deleteRenamedLang(boolean deleteFiles) {
     String moduleName = getNewModuleName();
     String newModuleName = getNewModuleName();
+    Reference<Language> langRef = new Reference<>();
+    writeCommandInEDTAndWait(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
     writeCommandInEDTAndWait(() -> {
-      Language lang = NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject);
+      @NotNull Language lang = langRef.get();
       Renamer.renameModule(lang, newModuleName);
-      new DeleteModuleHelper(ourProject).deleteModules(Collections.singletonList(lang), false, false);
+      deleteModule(lang, deleteFiles);
       CachingFile descriptorFile = (CachingFile) lang.getDescriptorFile();
       Assert.assertNotNull(descriptorFile);
       descriptorFile.refresh(new DefaultCachingContext(true, false));
-      Assert.assertTrue(descriptorFile.exists());
+      Assert.assertTrue(deleteFiles ^ descriptorFile.exists());
       Assert.assertFalse(ourProject.getProjectModules().contains(lang));
     });
   }
@@ -193,8 +207,10 @@ public final class ModuleIDETests extends PlatformMpsTest {
     String oldModuleName = getNewModuleName();
     String newModuleName = getNewModuleName();
     ProjectBackup projectBackup = new ProjectBackup(ourProject);
+    Reference<Language> langRef = new Reference<>();
+    writeCommandInEDTAndWait(() -> langRef.set(NewModuleUtil.createLanguage(oldModuleName, createNewDirInProject(), ourProject)));
     writeCommandInEDTAndWait(() -> {
-      Language lang = NewModuleUtil.createLanguage(oldModuleName, createNewDirInProject(), ourProject);
+      @NotNull Language lang = langRef.get();
       saveProjectInTest();
       projectBackup.doBackup();
       Renamer.renameModule(lang, newModuleName);
@@ -214,14 +230,24 @@ public final class ModuleIDETests extends PlatformMpsTest {
 
   @Test
   public void revertDeletedModule() {
+    revertDeletedModule0(false);
+  }
+
+  @Test
+  public void revertDeletedWithFilesModule() {
+    revertDeletedModule0(true);
+  }
+
+  private void revertDeletedModule0(boolean deleteFiles) {
     String moduleName = getNewModuleName();
     ProjectBackup projectBackup = new ProjectBackup(ourProject);
+    Reference<Language> langRef = new Reference<>();
+    writeCommandInEDTAndWait(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
     writeCommandInEDTAndWait(() -> {
-      Language lang = NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject);
+      @NotNull Language lang = langRef.get();
       saveProjectInTest();
       projectBackup.doBackup();
-
-      new DeleteModuleHelper(ourProject).deleteModules(Collections.singletonList(lang), false, false);
+      deleteModule(lang, deleteFiles);
       saveProjectInTest();
       Assert.assertTrue(ourProject.getProjectModules().isEmpty());
       projectBackup.restoreFromBackup();
@@ -231,6 +257,10 @@ public final class ModuleIDETests extends PlatformMpsTest {
       lang = (Language) ourProject.getProjectModules().get(0); // the module is changed when SMPSProject#update is called (like in this case)
       Assert.assertEquals(lang.getModuleName(), moduleName);
     });
+  }
+
+  private void deleteModule(AbstractModule lang, boolean deleteFiles) {
+    new DeleteModuleHelper(ourProject).deleteModules(Collections.singletonList(lang), false, deleteFiles);
   }
 
   private void refreshProjectRecursively() {
@@ -259,6 +289,7 @@ public final class ModuleIDETests extends PlatformMpsTest {
         throwableReference.set(e);
       }
     })), ModalityState.NON_MODAL);
+    ENV.flushAllEvents();
     if (!throwableReference.isNull()) {
       throw new RuntimeException(throwableReference.get());
     }
