@@ -270,7 +270,8 @@ public class PluginLoaderRegistry implements ApplicationComponent {
   }
 
   private void reschedule() {
-    doScheduleUpdate(ApplicationManager.getApplication());
+    Application application = ApplicationManager.getApplication();
+    application.invokeLater(this::update, ModalityState.NON_MODAL, application.getDisposed());
   }
 
   private boolean isMakeActive() {

@@ -7,10 +7,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSProject;
 import java.awt.HeadlessException;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.refactoring.Renamer;
-import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import jetbrains.mps.project.structure.project.ModulePath;
 
 public class RenameModuleDialog extends RenameDialog {
   private final AbstractModule myModule;
@@ -30,7 +27,6 @@ public class RenameModuleDialog extends RenameDialog {
         final String fqName = getCurrentValue();
 
         // FIXME why validation code is part of change command? Shall refactor into distinct read 
-
         for (final SModule module : myProject.getRepository().getModules()) {
           // module.getModuleName() can be null 
           if (fqName.equals(module.getModuleName())) {
@@ -39,22 +35,7 @@ public class RenameModuleDialog extends RenameDialog {
           }
         }
 
-        if (myProject instanceof StandaloneMPSProject) {
-          StandaloneMPSProject smp = (StandaloneMPSProject) myProject;
-          String folder = smp.getFolderFor(myModule);
-          String oldName = myModule.getDescriptorFile().toPath().toString();
-
-          Renamer.renameModule(myModule, fqName);
-
-          // TODO: add moduleRenamed to SRepositoryListener? 
-          // update module path in project descriptor 
-          final ProjectDescriptor projectDescriptor = smp.getProjectDescriptor();
-          String virtualFolder = projectDescriptor.removeModulePath(new ModulePath(oldName, folder));
-          ModulePath modulePath = new ModulePath(myModule.getDescriptorFile().toPath().toString(), virtualFolder);
-          projectDescriptor.addModulePath(modulePath);
-        } else {
-          Renamer.renameModule(myModule, fqName);
-        }
+        Renamer.renameModule(myModule, fqName);
         RenameModuleDialog.super.doRefactoringAction();
       }
     });

@@ -19,6 +19,20 @@ import org.jetbrains.annotations.Nullable;
 
 public interface MacroHelper {
   String expandPath(@Nullable String path);
-
   String shrinkPath(@Nullable String absolutePath);
+
+  /**
+   * leaves the path unchanged
+   */
+  final class MacroNoHelper implements MacroHelper {
+    @Override
+    public String expandPath(@Nullable String path) {
+      return path;
+    }
+
+    @Override
+    public String shrinkPath(@Nullable String absolutePath) {
+      return absolutePath;
+    }
+  }
 }

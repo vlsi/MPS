@@ -8455,28 +8455,38 @@
                       </node>
                     </node>
                     <node concept="3clFbS" id="36tV70ZqjCy" role="2LFqv$">
-                      <node concept="3clFbF" id="36tV70ZqjCE" role="3cqZAp">
-                        <node concept="2YIFZM" id="36tV70ZqjCF" role="3clFbG">
-                          <ref role="1Pybhc" to="bmn6:~DeleteModuleHelper" resolve="DeleteModuleHelper" />
-                          <ref role="37wK5l" to="bmn6:~DeleteModuleHelper.deleteModule(jetbrains.mps.project.MPSProject,org.jetbrains.mps.openapi.module.SModule,boolean,boolean):void" resolve="deleteModule" />
-                          <node concept="2OqwBi" id="36tV70ZqjCG" role="37wK5m">
-                            <node concept="2WthIp" id="36tV70ZqjCH" role="2Oq$k0" />
-                            <node concept="1DTwFV" id="36tV70ZqjCI" role="2OqNvi">
-                              <ref role="2WH_rO" node="OqYxEj90LV" resolve="project" />
+                      <node concept="3clFbF" id="6s6LYnVx2av" role="3cqZAp">
+                        <node concept="2OqwBi" id="6s6LYnVxBzm" role="3clFbG">
+                          <node concept="2ShNRf" id="6s6LYnVx2ar" role="2Oq$k0">
+                            <node concept="1pGfFk" id="6s6LYnVxAHM" role="2ShVmc">
+                              <ref role="37wK5l" to="bmn6:~DeleteModuleHelper.&lt;init&gt;(jetbrains.mps.project.MPSProject)" resolve="DeleteModuleHelper" />
+                              <node concept="2OqwBi" id="6s6LYnVxB0U" role="37wK5m">
+                                <node concept="2WthIp" id="6s6LYnVxAIa" role="2Oq$k0" />
+                                <node concept="1DTwFV" id="6s6LYnVxBqv" role="2OqNvi">
+                                  <ref role="2WH_rO" node="OqYxEj90LV" resolve="project" />
+                                </node>
+                              </node>
                             </node>
                           </node>
-                          <node concept="2GrUjf" id="36tV70ZqjCW" role="37wK5m">
-                            <ref role="2Gs0qQ" node="36tV70ZqjCw" resolve="module" />
-                          </node>
-                          <node concept="3clFbT" id="7OWEUve5Yy7" role="37wK5m">
-                            <property role="3clFbU" value="false" />
-                          </node>
-                          <node concept="2OqwBi" id="7OWEUve5Yy0" role="37wK5m">
-                            <node concept="37vLTw" id="3GM_nagTBL7" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7OWEUve5Yx0" resolve="filesOption" />
+                          <node concept="liA8E" id="6s6LYnVxC4W" role="2OqNvi">
+                            <ref role="37wK5l" to="bmn6:~DeleteModuleHelper.deleteModules(java.util.List,boolean,boolean):void" resolve="deleteModules" />
+                            <node concept="2YIFZM" id="6s6LYnVxCid" role="37wK5m">
+                              <ref role="37wK5l" to="33ny:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
+                              <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+                              <node concept="2GrUjf" id="6s6LYnVxCj2" role="37wK5m">
+                                <ref role="2Gs0qQ" node="36tV70ZqjCw" resolve="module" />
+                              </node>
                             </node>
-                            <node concept="2OwXpG" id="7OWEUve5Yy5" role="2OqNvi">
-                              <ref role="2Oxat5" to="52hy:~DeleteDialog$DeleteOption.selected" resolve="selected" />
+                            <node concept="3clFbT" id="6s6LYnVxCxd" role="37wK5m">
+                              <property role="3clFbU" value="false" />
+                            </node>
+                            <node concept="2OqwBi" id="6s6LYnVxCOt" role="37wK5m">
+                              <node concept="37vLTw" id="6s6LYnVxCD1" role="2Oq$k0">
+                                <ref role="3cqZAo" node="7OWEUve5Yx0" resolve="filesOption" />
+                              </node>
+                              <node concept="2OwXpG" id="6s6LYnVxDae" role="2OqNvi">
+                                <ref role="2Oxat5" to="52hy:~DeleteDialog$DeleteOption.selected" resolve="selected" />
+                              </node>
                             </node>
                           </node>
                         </node>

@@ -31,6 +31,7 @@
     <import index="2k9e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure(MPS.Core/)" />
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="mcvo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure.language(MPS.Core/)" />
+    <import index="eurq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.path(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -9060,16 +9061,6 @@
         <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
       </node>
     </node>
-    <node concept="312cEg" id="3v_OXaS40oa" role="jymVt">
-      <property role="34CwA1" value="false" />
-      <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myMacroHelper" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm6S6" id="3v_OXaS40iM" role="1B3o_S" />
-      <node concept="3uibUv" id="3v_OXaS40nN" role="1tU5fm">
-        <ref role="3uigEE" to="18ew:~MacroHelper" resolve="MacroHelper" />
-      </node>
-    </node>
     <node concept="2tJIrI" id="3v_OXaS40dQ" role="jymVt" />
     <node concept="3Tm1VV" id="IMUMWuHR49" role="1B3o_S" />
     <node concept="3clFbW" id="4F07P_yBO_t" role="jymVt">
@@ -9092,7 +9083,7 @@
                 <ref role="3cqZAo" node="15VbAzMDRob" resolve="FS" />
               </node>
               <node concept="liA8E" id="15VbAzMDRD8" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                 <node concept="2OqwBi" id="15VbAzMDRH5" role="37wK5m">
                   <node concept="37vLTw" id="15VbAzMDRF5" role="2Oq$k0">
                     <ref role="3cqZAo" node="3v_OXaS3Zx$" resolve="baseDir" />
@@ -9105,20 +9096,6 @@
             </node>
             <node concept="37vLTw" id="3v_OXaS3ZJH" role="37vLTJ">
               <ref role="3cqZAo" node="3v_OXaS3ZEG" resolve="myBaseDir" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3v_OXaS40uo" role="3cqZAp">
-          <node concept="37vLTI" id="3v_OXaS40vC" role="3clFbG">
-            <node concept="37vLTw" id="3v_OXaS40um" role="37vLTJ">
-              <ref role="3cqZAo" node="3v_OXaS40oa" resolve="myMacroHelper" />
-            </node>
-            <node concept="2YIFZM" id="3v_OXaS40yu" role="37vLTx">
-              <ref role="37wK5l" to="18ew:~MacrosFactory.forProjectFile(jetbrains.mps.vfs.IFile):jetbrains.mps.util.MacroHelper" resolve="forProjectFile" />
-              <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
-              <node concept="37vLTw" id="3v_OXaS40$K" role="37wK5m">
-                <ref role="3cqZAo" node="3v_OXaS3ZEG" resolve="myBaseDir" />
-              </node>
             </node>
           </node>
         </node>
@@ -9162,26 +9139,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="15VbAzMDS53" role="3cqZAp">
-          <node concept="3clFbS" id="15VbAzMDS55" role="3clFbx">
-            <node concept="3cpWs6" id="15VbAzMDSGo" role="3cqZAp">
-              <node concept="10Nm6u" id="15VbAzMDSQ1" role="3cqZAk" />
-            </node>
-          </node>
-          <node concept="2OqwBi" id="15VbAzMDSqg" role="3clFbw">
-            <node concept="2OqwBi" id="15VbAzMDShL" role="2Oq$k0">
-              <node concept="37vLTw" id="15VbAzMDSf8" role="2Oq$k0">
-                <ref role="3cqZAo" node="IMUMWuHQYa" resolve="descriptor" />
-              </node>
-              <node concept="liA8E" id="15VbAzMDSl1" role="2OqNvi">
-                <ref role="37wK5l" to="y8s3:~ProjectDescriptor.getModulePaths():java.util.List" resolve="getModulePaths" />
-              </node>
-            </node>
-            <node concept="liA8E" id="15VbAzMDSEh" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~List.isEmpty():boolean" resolve="isEmpty" />
-            </node>
-          </node>
-        </node>
         <node concept="2Gpval" id="1Tieq1imnQr" role="3cqZAp">
           <node concept="2OqwBi" id="1Tieq1imnQs" role="2GsD0m">
             <node concept="1eOMI4" id="1Tieq1imnQt" role="2Oq$k0">
@@ -9205,20 +9162,12 @@
               <node concept="1bVj0M" id="1Tieq1imnQ_" role="23t8la">
                 <node concept="3clFbS" id="1Tieq1imnQA" role="1bW5cS">
                   <node concept="3clFbF" id="1Tieq1imnQB" role="3cqZAp">
-                    <node concept="2OqwBi" id="1Tieq1imnQC" role="3clFbG">
-                      <node concept="37vLTw" id="3v_OXaS47ew" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3v_OXaS40oa" resolve="myMacroHelper" />
+                    <node concept="2OqwBi" id="1_ERPxYPvBJ" role="3clFbG">
+                      <node concept="37vLTw" id="1_ERPxYPvrR" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1Tieq1imnQI" resolve="p" />
                       </node>
-                      <node concept="liA8E" id="1Tieq1imnQE" role="2OqNvi">
-                        <ref role="37wK5l" to="18ew:~MacroHelper.shrinkPath(java.lang.String):java.lang.String" resolve="shrinkPath" />
-                        <node concept="2OqwBi" id="1Tieq1imnQF" role="37wK5m">
-                          <node concept="37vLTw" id="2BHiRxglgry" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1Tieq1imnQI" resolve="p" />
-                          </node>
-                          <node concept="liA8E" id="1Tieq1imnQH" role="2OqNvi">
-                            <ref role="37wK5l" to="y8s3:~ModulePath.getPath():java.lang.String" resolve="getPath" />
-                          </node>
-                        </node>
+                      <node concept="liA8E" id="1_ERPxYPvKO" role="2OqNvi">
+                        <ref role="37wK5l" to="y8s3:~ModulePath.getPath():java.lang.String" resolve="getPath" />
                       </node>
                     </node>
                   </node>
@@ -9240,28 +9189,6 @@
             <node concept="3SKdUt" id="5TpSSNj_KP$" role="3cqZAp">
               <node concept="3SKdUq" id="5TpSSNj_KPX" role="3SKWNk">
                 <property role="3SKdUp" value="TODO: move from MacrosFactory to PathMacroUtil" />
-              </node>
-            </node>
-            <node concept="3cpWs8" id="15VbAzME0Rl" role="3cqZAp">
-              <node concept="3cpWsn" id="15VbAzME0Rm" role="3cpWs9">
-                <property role="TrG5h" value="shrinkedPath" />
-                <node concept="17QB3L" id="15VbAzME146" role="1tU5fm" />
-                <node concept="2OqwBi" id="15VbAzME0Rn" role="33vP2m">
-                  <node concept="37vLTw" id="15VbAzME0Ro" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3v_OXaS40oa" resolve="myMacroHelper" />
-                  </node>
-                  <node concept="liA8E" id="15VbAzME0Rp" role="2OqNvi">
-                    <ref role="37wK5l" to="18ew:~MacroHelper.shrinkPath(java.lang.String):java.lang.String" resolve="shrinkPath" />
-                    <node concept="2OqwBi" id="15VbAzME0Rq" role="37wK5m">
-                      <node concept="2GrUjf" id="15VbAzME0Rr" role="2Oq$k0">
-                        <ref role="2Gs0qQ" node="1Tieq1imnQL" resolve="path" />
-                      </node>
-                      <node concept="liA8E" id="15VbAzME0Rs" role="2OqNvi">
-                        <ref role="37wK5l" to="y8s3:~ModulePath.getPath():java.lang.String" resolve="getPath" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
               </node>
             </node>
             <node concept="3clFbF" id="1Tieq1imnRu" role="3cqZAp">
@@ -9288,35 +9215,24 @@
                       <ref role="3cqZAo" node="15VbAzMDQcN" resolve="PROJECT_DIR_MACRO" />
                     </node>
                   </node>
-                  <node concept="37vLTw" id="15VbAzME0Rt" role="2Oq$k0">
-                    <ref role="3cqZAo" node="15VbAzME0Rm" resolve="shrinkedPath" />
+                  <node concept="2OqwBi" id="1_ERPxYPXrX" role="2Oq$k0">
+                    <node concept="2GrUjf" id="1_ERPxYPw0z" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="1Tieq1imnQL" resolve="path" />
+                    </node>
+                    <node concept="liA8E" id="1_ERPxYPXGW" role="2OqNvi">
+                      <ref role="37wK5l" to="y8s3:~ModulePath.getPath():java.lang.String" resolve="getPath" />
+                    </node>
                   </node>
                 </node>
                 <node concept="37vLTw" id="3v_OXaS4aJY" role="37wK5m">
                   <ref role="3cqZAo" node="3v_OXaS49KE" resolve="FOLDER_TAG" />
                 </node>
-                <node concept="3K4zz7" id="1Tieq1imnTW" role="37wK5m">
-                  <node concept="2OqwBi" id="1Tieq1imnUf" role="3K4E3e">
-                    <node concept="2GrUjf" id="1Tieq1imnU0" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="1Tieq1imnQL" resolve="path" />
-                    </node>
-                    <node concept="liA8E" id="1Tieq1imnUk" role="2OqNvi">
-                      <ref role="37wK5l" to="y8s3:~ModulePath.getVirtualFolder():java.lang.String" resolve="getVirtualFolder" />
-                    </node>
+                <node concept="2OqwBi" id="1_ERPxYQcmo" role="37wK5m">
+                  <node concept="2GrUjf" id="1_ERPxYQc4R" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="1Tieq1imnQL" resolve="path" />
                   </node>
-                  <node concept="Xl_RD" id="1Tieq1imnUl" role="3K4GZi">
-                    <property role="Xl_RC" value="" />
-                  </node>
-                  <node concept="3y3z36" id="1Tieq1imnTE" role="3K4Cdx">
-                    <node concept="10Nm6u" id="1Tieq1imnTH" role="3uHU7w" />
-                    <node concept="2OqwBi" id="1Tieq1imnTm" role="3uHU7B">
-                      <node concept="2GrUjf" id="1Tieq1imnT7" role="2Oq$k0">
-                        <ref role="2Gs0qQ" node="1Tieq1imnQL" resolve="path" />
-                      </node>
-                      <node concept="liA8E" id="1Tieq1imnTr" role="2OqNvi">
-                        <ref role="37wK5l" to="y8s3:~ModulePath.getVirtualFolder():java.lang.String" resolve="getVirtualFolder" />
-                      </node>
-                    </node>
+                  <node concept="liA8E" id="1_ERPxYQcC$" role="2OqNvi">
+                    <ref role="37wK5l" to="y8s3:~ModulePath.getVirtualFolder():java.lang.String" resolve="getVirtualFolder" />
                   </node>
                 </node>
               </node>
@@ -9552,36 +9468,28 @@
               <node concept="3clFbS" id="IMUMWuHQZt" role="2LFqv$">
                 <node concept="3cpWs8" id="15VbAzME5Ss" role="3cqZAp">
                   <node concept="3cpWsn" id="15VbAzME5St" role="3cpWs9">
-                    <property role="TrG5h" value="expandedPath" />
+                    <property role="TrG5h" value="path" />
                     <node concept="17QB3L" id="15VbAzME_D1" role="1tU5fm" />
-                    <node concept="2OqwBi" id="15VbAzME5Su" role="33vP2m">
-                      <node concept="37vLTw" id="15VbAzME5Sv" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3v_OXaS40oa" resolve="myMacroHelper" />
+                    <node concept="2OqwBi" id="15VbAzME5Sx" role="33vP2m">
+                      <node concept="2OqwBi" id="15VbAzME5Sy" role="2Oq$k0">
+                        <node concept="2GrUjf" id="15VbAzME5Sz" role="2Oq$k0">
+                          <ref role="2Gs0qQ" node="IMUMWuHQZl" resolve="moduleElement" />
+                        </node>
+                        <node concept="liA8E" id="15VbAzME5S$" role="2OqNvi">
+                          <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
+                          <node concept="37vLTw" id="1_ERPxYPwdJ" role="37wK5m">
+                            <ref role="3cqZAo" node="3v_OXaS4ac8" resolve="PATH_TAG" />
+                          </node>
+                        </node>
                       </node>
-                      <node concept="liA8E" id="15VbAzME5Sw" role="2OqNvi">
-                        <ref role="37wK5l" to="18ew:~MacroHelper.expandPath(java.lang.String):java.lang.String" resolve="expandPath" />
-                        <node concept="2OqwBi" id="15VbAzME5Sx" role="37wK5m">
-                          <node concept="2OqwBi" id="15VbAzME5Sy" role="2Oq$k0">
-                            <node concept="2GrUjf" id="15VbAzME5Sz" role="2Oq$k0">
-                              <ref role="2Gs0qQ" node="IMUMWuHQZl" resolve="moduleElement" />
-                            </node>
-                            <node concept="liA8E" id="15VbAzME5S$" role="2OqNvi">
-                              <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
-                              <node concept="37vLTw" id="15VbAzME5S_" role="37wK5m">
-                                <ref role="3cqZAo" node="3v_OXaS4ac8" resolve="PATH_TAG" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="15VbAzME5SA" role="2OqNvi">
-                            <ref role="37wK5l" to="wyt6:~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolve="replace" />
-                            <node concept="37vLTw" id="15VbAzME5SB" role="37wK5m">
-                              <ref role="3cqZAo" node="15VbAzMDQcN" resolve="PROJECT_DIR_MACRO" />
-                            </node>
-                            <node concept="10M0yZ" id="15VbAzME5SC" role="37wK5m">
-                              <ref role="1PxDUh" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
-                              <ref role="3cqZAo" to="18ew:~MacrosFactory.PROJECT" resolve="PROJECT" />
-                            </node>
-                          </node>
+                      <node concept="liA8E" id="15VbAzME5SA" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolve="replace" />
+                        <node concept="37vLTw" id="1_ERPxYPwdO" role="37wK5m">
+                          <ref role="3cqZAo" node="15VbAzMDQcN" resolve="PROJECT_DIR_MACRO" />
+                        </node>
+                        <node concept="10M0yZ" id="15VbAzME5SC" role="37wK5m">
+                          <ref role="3cqZAo" to="18ew:~MacrosFactory.PROJECT" resolve="PROJECT" />
+                          <ref role="1PxDUh" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
                         </node>
                       </node>
                     </node>
@@ -9614,7 +9522,7 @@
                       <node concept="1pGfFk" id="IMUMWuHQZy" role="2ShVmc">
                         <ref role="37wK5l" to="y8s3:~ModulePath.&lt;init&gt;(java.lang.String,java.lang.String)" resolve="ModulePath" />
                         <node concept="37vLTw" id="15VbAzME6a0" role="37wK5m">
-                          <ref role="3cqZAo" node="15VbAzME5St" resolve="expandedPath" />
+                          <ref role="3cqZAo" node="15VbAzME5St" resolve="path" />
                         </node>
                         <node concept="37vLTw" id="15VbAzME7w_" role="37wK5m">
                           <ref role="3cqZAo" node="15VbAzME6ep" resolve="virtualFolder" />
@@ -9707,12 +9615,17 @@
                 </node>
                 <node concept="1rXfSq" id="15VbAzME8vs" role="33vP2m">
                   <ref role="37wK5l" node="15VbAzME8wr" resolve="findProjectFile" />
-                  <node concept="2OqwBi" id="15VbAzME8xk" role="37wK5m">
-                    <node concept="37vLTw" id="15VbAzME8xj" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3v_OXaS3ZEG" resolve="myBaseDir" />
+                  <node concept="2OqwBi" id="1_ERPxYQri_" role="37wK5m">
+                    <node concept="2OqwBi" id="15VbAzME8xk" role="2Oq$k0">
+                      <node concept="37vLTw" id="15VbAzME8xj" role="2Oq$k0">
+                        <ref role="3cqZAo" node="3v_OXaS3ZEG" resolve="myBaseDir" />
+                      </node>
+                      <node concept="liA8E" id="15VbAzME8xl" role="2OqNvi">
+                        <ref role="37wK5l" to="3ju5:~IFile.toPath():jetbrains.mps.vfs.path.UniPath" resolve="toPath" />
+                      </node>
                     </node>
-                    <node concept="liA8E" id="15VbAzME8xl" role="2OqNvi">
-                      <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
+                    <node concept="liA8E" id="7$ME23pA0EH" role="2OqNvi">
+                      <ref role="37wK5l" to="eurq:~UniPath.toString():java.lang.String" resolve="toString" />
                     </node>
                   </node>
                 </node>
@@ -9849,7 +9762,7 @@
                 <ref role="3cqZAo" node="15VbAzMDRob" resolve="FS" />
               </node>
               <node concept="liA8E" id="15VbAzMEbfz" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                 <node concept="37vLTw" id="15VbAzME8w$" role="37wK5m">
                   <ref role="3cqZAo" node="15VbAzME8wt" resolve="path" />
                 </node>
@@ -9903,7 +9816,7 @@
                   <ref role="3cqZAo" node="15VbAzME8ww" resolve="projectFile" />
                 </node>
                 <node concept="liA8E" id="15VbAzME8y1" role="2OqNvi">
-                  <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
+                  <ref role="37wK5l" to="3ju5:~IFile.toPath():jetbrains.mps.vfs.path.UniPath" resolve="toPath" />
                 </node>
               </node>
               <node concept="liA8E" id="15VbAzME8wP" role="2OqNvi">

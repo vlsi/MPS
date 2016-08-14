@@ -110,12 +110,10 @@ public class ProjectFactory {
     StartupManager.getInstance(myCreatedProject).registerPostStartupActivity(() -> mpsProject.getModelAccess().executeCommand(() -> {
       if (myOptions.getCreateNewLanguage()) {
         myCreatedLanguage = NewModuleUtil.createLanguage(myOptions.getLanguageNamespace(), myOptions.getLanguagePath(), mpsProject);
-        mpsProject.addModule(myCreatedLanguage);
       }
 
       if (myOptions.getCreateNewSolution()) {
         myCreatedSolution = NewModuleUtil.createSolution(myOptions.getSolutionNamespace(), myOptions.getSolutionPath(), mpsProject);
-        mpsProject.addModule(myCreatedSolution);
       }
 
       if (myCreatedSolution != null && myCreatedLanguage != null) {

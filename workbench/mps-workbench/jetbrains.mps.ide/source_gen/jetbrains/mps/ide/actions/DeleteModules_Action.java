@@ -23,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import javax.swing.JOptionPane;
 import jetbrains.mps.workbench.actions.module.DeleteModuleHelper;
+import java.util.Collections;
 
 public class DeleteModules_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -114,7 +115,7 @@ public class DeleteModules_Action extends BaseAction {
     modelAccess.executeCommandInEDT(new Runnable() {
       public void run() {
         for (SModule module : ListSequence.fromList(((List<SModule>) MapSequence.fromMap(_params).get("modules")))) {
-          DeleteModuleHelper.deleteModule(((MPSProject) MapSequence.fromMap(_params).get("project")), module, false, filesOption.selected);
+          new DeleteModuleHelper(((MPSProject) MapSequence.fromMap(_params).get("project"))).deleteModules(Collections.singletonList(module), false, filesOption.selected);
         }
       }
     });

@@ -169,7 +169,6 @@
     <classNode dependClassName="jetbrains.mps.project.structure.project.ModulePath" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.ProjectDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
-    <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="jetbrains.mps.util.xml.XmlUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
