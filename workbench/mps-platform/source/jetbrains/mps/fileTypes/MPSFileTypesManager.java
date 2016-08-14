@@ -18,6 +18,7 @@ package jetbrains.mps.fileTypes;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.vfs.path.UniPath;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
@@ -45,8 +46,12 @@ public final class MPSFileTypesManager {
 
   private static boolean isIgnoredByDefault(String fileName) {
     for (String matchingString : DEFAULT_MPS_IGNORED_PATTERNS) {
-      if (fileName.contains(matchingString)) {
-        return true;
+      List<String> names = UniPath.fromString(fileName).getNames();
+      if (!names.isEmpty()) {
+        names = names.subList(0, names.size() - 1);
+        if (names.stream().anyMatch(dirName -> dirName.contains(matchingString))) {
+          return true;
+        }
       }
     }
     return false;
