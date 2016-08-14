@@ -46,7 +46,8 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.vfs.VfsTest.class,
 //    jetbrains.mps.ide.test.blame.command.AffectedVersionTest.class  //TODO: move this test to closed repository
     jetbrains.mps.generator.impl.plan.CheckpointModelTest.class,
-    jetbrains.mps.workbench.ProjectPlatformTest.class
+    jetbrains.mps.workbench.ProjectPlatformTest.class,
+    jetbrains.mps.ide.ModuleIDETests.class
 })
 public class PlatformTestSuite extends OutputWatchingTestSuite {
   // creating the platform environment for the first time

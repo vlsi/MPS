@@ -225,7 +225,7 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
     return GenerationStatus.NOT_REQUIRED;
   }
 
-  static GenerationStatus getGenerationStatus(SModelTreeNode node) {
+  private static GenerationStatus getGenerationStatus(SModelTreeNode node) {
     if (node.getModel() == null) return GenerationStatus.NOT_REQUIRED;
     if (isPackaged(node)) return GenerationStatus.READONLY;
     if (isDoNotGenerate(node)) return GenerationStatus.DO_NOT_GENERATE;
