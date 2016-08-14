@@ -59,8 +59,7 @@ import org.jetbrains.annotations.Nullable;
  * 1. The reload cycle with migration wizard happens w/o adding repo listeners
  * 2. Models should be unloaded after migration
  */
-@State(name = "MigrationTrigger", storages = @Storage(value = StoragePathMacros.WORKSPACE_FILE)
-, reloadable = true)
+@State(name = "MigrationTrigger", storages = @Storage(value = StoragePathMacros.WORKSPACE_FILE))
 public class MigrationTrigger extends AbstractProjectComponent implements PersistentStateComponent<MigrationTrigger.MyState>, IStartupMigrationExecutor, MigrationProblemsContainer {
   private final ClassLoaderManager myClassLoaderManager;
 
@@ -118,7 +117,12 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
             public void run() {
               myProject.getBaseDir().getChildren();
               VirtualFileUtils.refreshSynchronouslyRecursively(myProject.getBaseDir());
+              // FIXME remove in 3.4
+              // TODO AP Why do you need to update FS roots??
+              // TODO AP These are essentially these files which have been requested from IDEA VFS at least once before the execution of this line
+              // TODO AP I sense that we have no way to control those files perhaps the author rather meant checking the project files
               VirtualFileManager.getInstance().syncRefresh();
+              // FIXME seems that reload happens synchronously when the refresh is synchronous, todo double check and remove this #flush call
               ReloadManager.getInstance().flush();
             }
           });

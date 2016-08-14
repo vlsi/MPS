@@ -47,35 +47,33 @@ public class FileUtil {
   private static final String[] IGNORED_DIRS = new String[]{".svn", ".git", "_svn"};
   public static final String DEFAULT_CHARSET_NAME = "UTF-8";
   public static final Charset DEFAULT_CHARSET = Charset.forName(DEFAULT_CHARSET_NAME);
+  private static final String MPSTEMP = "mpstemp";
 
   public static File createTmpDir() {
     File tmp = getTempDir();
-    int i = 0;
-    while (true) {
-
-      if (!new File(tmp, "mpstemp" + i).exists()) {
-        break;
+    for (int i = 0;; ++i) {
+      if (!new File(tmp, MPSTEMP + i).exists()) {
+        File tmpDir = new File(tmp, MPSTEMP + i);
+        boolean result = tmpDir.mkdir();
+        if (!result) {
+          throw new IllegalStateException("Could not create a directory " + tmpDir);
+        }
+        return tmpDir;
       }
-      i++;
     }
-
-    File result = new File(tmp, "mpstemp" + i);
-    result.mkdir();
-    return result;
   }
 
   public static File createTmpFile() {
     File tmp = getTempDir();
     int i = 0;
     while (true) {
-
-      if (!new File(tmp, "mpstemp" + i).exists()) {
+      if (!new File(tmp, MPSTEMP + i).exists()) {
         break;
       }
       i++;
     }
 
-    File result = new File(tmp, "mpstemp" + i);
+    File result = new File(tmp, MPSTEMP + i);
     try {
       result.createNewFile();
     } catch (IOException e) {
@@ -124,7 +122,6 @@ public class FileUtil {
 
     for (File f : what.listFiles()) {
       if (f.isDirectory()) {
-
         if (isIgnoredDir(f.getName())) continue;
 
         File fCopy = new File(to, f.getName());

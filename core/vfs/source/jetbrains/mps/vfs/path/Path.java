@@ -169,9 +169,9 @@ public interface Path extends Comparable<Path>, /*AP: do I want this?*/ Watchabl
    *          if {@code other} is not a {@code Path} that can be relativized
    *          against this path
    */
-  @NotNull Path relativize(@NotNull Path other);
+  @NotNull Path relativize(@NotNull Path other); // TODO
 
-  @NotNull Path resolve(@NotNull Path other);
+  @NotNull Path resolve(@NotNull Path other); // TODO
 
   @NotNull Path resolve(@NotNull String other);
 
