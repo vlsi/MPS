@@ -59,6 +59,7 @@ public class IdeaFileSystem extends IdeaFSComponent implements SafeWriteRequesto
   @Override
   public void refresh(@NotNull CachingContext context, Collection<CachingFile> files) {
     Set<VirtualFile> virtualFiles = files.stream().map(file -> ((IdeaFile) file).getVirtualFile()).filter(Objects::nonNull).collect(Collectors.toSet());
+    virtualFiles.forEach(VirtualFile::getChildren); // to enforce refresh for this file
     RefreshQueue.getInstance().refresh(!context.isSynchronous(), context.isRecursive(), null, virtualFiles);
   }
 

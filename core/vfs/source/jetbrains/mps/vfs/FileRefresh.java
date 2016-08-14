@@ -59,7 +59,6 @@ public final class FileRefresh implements Runnable {
       CachingFile firstFile = cachingFiles.get(0);
       CachingFileSystem fs = firstFile.getFileSystem();
       while (!cachingFiles.isEmpty()) {
-        cachingFiles.forEach(IFile::getChildren); // otherwise refresh does not work
         fs.refresh(myDefaultCachingContext, cachingFiles);
         cachingFiles = cachingFiles.stream().flatMap(
             file -> {
