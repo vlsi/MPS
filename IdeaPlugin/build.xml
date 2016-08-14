@@ -166,15 +166,6 @@
     </copy>
     <mkdir dir="${ideaPath}/java/mockJDK-1.7/jre/lib"/>
 
-    <!--
-      #1: Unless fix for IDEA-130738 is available, we turn off VfsRootAccess.assertAccessInTests:
-          PluginLibrariesContributor updates LibraryInitializer. If the update comes right during
-          initComponent(), assertAccessInTests() is ignored (ApplicationImpl.isComponentCreated() == false).
-          If update goes in runWriteInEDT (to address deadlock on write actions from initComponent, MPS-20566)
-          we get into assertAccessInTests() and fail with NPE of IDEA-130738.
-          FIXME once fix is available, drop NO_FS_ROOTS_ACCESS_CHECK environment variable.
-    -->
-
     <junit fork="true"
            dir="."
            haltonfailure="false"
@@ -194,7 +185,6 @@
       <sysproperty key="idea.home.path" value="${ideaPath}"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
       <sysproperty key="file.encoding" value="UTF-8"/>
-      <env key="NO_FS_ROOTS_ACCESS_CHECK" value="yes"/> <!-- @see #1 above -->
       <classpath>
         <fileset dir="${ideaPath}/lib">
           <include name="**/*.jar"/>
@@ -233,7 +223,6 @@
       <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.testing"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
       <sysproperty key="file.encoding" value="UTF-8"/>
-      <env key="NO_FS_ROOTS_ACCESS_CHECK" value="yes"/> <!-- @see #1 above -->
       <classpath>
         <fileset dir="${ideaPath}/lib">
           <include name="**/*.jar"/>
@@ -272,7 +261,6 @@
       <sysproperty key="jdk.home.path" value="${jdkPath}"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
       <sysproperty key="file.encoding" value="UTF-8"/>
-      <env key="NO_FS_ROOTS_ACCESS_CHECK" value="yes"/> <!-- @see #1 above -->
       <classpath>
         <fileset dir="${ideaPath}/lib">
           <include name="**/*.jar"/>
@@ -289,6 +277,7 @@
              (compileServer.plugin section)
              The goal is to catch problems caused by NoClassDefFound in jps tests.
              Keep in sync with plugin.xml
+             FIXME and it is an awful design AP
         -->
         <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib">
           <include name="mps-common.jar"/>
