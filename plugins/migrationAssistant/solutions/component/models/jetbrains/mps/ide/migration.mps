@@ -1234,12 +1234,6 @@
           </node>
         </node>
       </node>
-      <node concept="2B6LJw" id="3q33vpWnw5O" role="2B76xF">
-        <ref role="2B6OnR" to="1m72:~State.reloadable()" resolve="reloadable" />
-        <node concept="3clFbT" id="3q33vpWnw83" role="2B70Vg">
-          <property role="3clFbU" value="true" />
-        </node>
-      </node>
     </node>
     <node concept="3Tm1VV" id="5SsFeroaak1" role="1B3o_S" />
     <node concept="3uibUv" id="5SsFeroaakf" role="1zkMxy">
@@ -1626,6 +1620,21 @@
                                       </node>
                                     </node>
                                   </node>
+                                  <node concept="3SKdUt" id="6uMmfEAu9bh" role="3cqZAp">
+                                    <node concept="3SKdUq" id="6uMmfEAu9bj" role="3SKWNk">
+                                      <property role="3SKdUp" value="fixme remove in 3.4" />
+                                    </node>
+                                  </node>
+                                  <node concept="3SKdUt" id="6uMmfEAu9$L" role="3cqZAp">
+                                    <node concept="3SKdUq" id="6uMmfEAu9$N" role="3SKWNk">
+                                      <property role="3SKdUp" value="TODO AP: these are essentially those files which have been requested from IDEA vfs at least once so far" />
+                                    </node>
+                                  </node>
+                                  <node concept="3SKdUt" id="6uMmfEAubZk" role="3cqZAp">
+                                    <node concept="3SKdUq" id="6uMmfEAubZm" role="3SKWNk">
+                                      <property role="3SKdUp" value="AP: I sense the author rather meant just refreshing the project directory" />
+                                    </node>
+                                  </node>
                                   <node concept="3clFbF" id="5SsFeroaalc" role="3cqZAp">
                                     <node concept="2OqwBi" id="5SsFeroaald" role="3clFbG">
                                       <node concept="2YIFZM" id="5SsFeroafMD" role="2Oq$k0">
@@ -1635,6 +1644,11 @@
                                       <node concept="liA8E" id="5qfN6LqBXsK" role="2OqNvi">
                                         <ref role="37wK5l" to="jlff:~VirtualFileManager.syncRefresh():long" resolve="syncRefresh" />
                                       </node>
+                                    </node>
+                                  </node>
+                                  <node concept="3SKdUt" id="6uMmfEAue2O" role="3cqZAp">
+                                    <node concept="3SKdUq" id="6uMmfEAue2Q" role="3SKWNk">
+                                      <property role="3SKdUp" value="fixme AP: it seems to me that reload happens synchronously here, double check and remove" />
                                     </node>
                                   </node>
                                   <node concept="3clFbF" id="4tP09YuEkC_" role="3cqZAp">
@@ -5395,6 +5409,7 @@
     <property role="TrG5h" value="MigrationMakeBlocker" />
     <node concept="312cEg" id="7rAJ3yo2aBK" role="jymVt">
       <property role="TrG5h" value="myMake" />
+      <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="7rAJ3yo2aBL" role="1B3o_S" />
       <node concept="3uibUv" id="7rAJ3yo2aBN" role="1tU5fm">
         <ref role="3uigEE" to="hfuk:1NAY6bPd4nM" resolve="IMakeService" />
@@ -5403,8 +5418,8 @@
     <node concept="312cEg" id="7rAJ3yo1Tz1" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myMigationTrigger" />
-      <property role="3TUv4t" value="false" />
+      <property role="TrG5h" value="myMigrationTrigger" />
+      <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="7rAJ3yo1Tuv" role="1B3o_S" />
       <node concept="3uibUv" id="7rAJ3yo1TyW" role="1tU5fm">
         <ref role="3uigEE" node="5SsFeroaajZ" resolve="MigrationTrigger" />
@@ -5442,7 +5457,7 @@
                 <node concept="3clFbF" id="7rAJ3yo2_Wy" role="3cqZAp">
                   <node concept="2OqwBi" id="7rAJ3yo2_Wz" role="3clFbG">
                     <node concept="37vLTw" id="7rAJ3yo2_W$" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7rAJ3yo1Tz1" resolve="myMigationTrigger" />
+                      <ref role="3cqZAo" node="7rAJ3yo1Tz1" resolve="myMigrationTrigger" />
                     </node>
                     <node concept="liA8E" id="7rAJ3yo2_W_" role="2OqNvi">
                       <ref role="37wK5l" node="7RkTcA9EKKP" resolve="blockMigrationsCheck" />
@@ -5469,7 +5484,7 @@
                 <node concept="3clFbF" id="7rAJ3yo2_WH" role="3cqZAp">
                   <node concept="2OqwBi" id="7rAJ3yo2_WI" role="3clFbG">
                     <node concept="37vLTw" id="7rAJ3yo2_WJ" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7rAJ3yo1Tz1" resolve="myMigationTrigger" />
+                      <ref role="3cqZAo" node="7rAJ3yo1Tz1" resolve="myMigrationTrigger" />
                     </node>
                     <node concept="liA8E" id="7rAJ3yo2_WK" role="2OqNvi">
                       <ref role="37wK5l" node="7RkTcA9EM7H" resolve="unblockMigrationsCheck" />
@@ -5509,7 +5524,7 @@
             <node concept="3clFbF" id="7rAJ3yo1TLm" role="3cqZAp">
               <node concept="37vLTI" id="7rAJ3yo1TLo" role="3clFbG">
                 <node concept="37vLTw" id="7rAJ3yo1TLs" role="37vLTJ">
-                  <ref role="3cqZAo" node="7rAJ3yo1Tz1" resolve="myMigationTrigger" />
+                  <ref role="3cqZAo" node="7rAJ3yo1Tz1" resolve="myMigrationTrigger" />
                 </node>
                 <node concept="1eOMI4" id="7rAJ3yo2Gr8" role="37vLTx">
                   <node concept="10QFUN" id="7rAJ3yo2Gr9" role="1eOMHV">
@@ -5530,6 +5545,18 @@
             </node>
             <node concept="37vLTw" id="7rAJ3yo2GkW" role="2ZW6bz">
               <ref role="3cqZAo" node="7rAJ3yo1TLl" resolve="migationTrigger" />
+            </node>
+          </node>
+          <node concept="9aQIb" id="6uMmfEAtiL_" role="9aQIa">
+            <node concept="3clFbS" id="6uMmfEAtiLA" role="9aQI4">
+              <node concept="3clFbF" id="6uMmfEAtiXK" role="3cqZAp">
+                <node concept="37vLTI" id="6uMmfEAtjqe" role="3clFbG">
+                  <node concept="10Nm6u" id="6uMmfEAtjy$" role="37vLTx" />
+                  <node concept="37vLTw" id="6uMmfEAtiXJ" role="37vLTJ">
+                    <ref role="3cqZAo" node="7rAJ3yo1Tz1" resolve="myMigrationTrigger" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -5565,7 +5592,7 @@
         <node concept="3clFbJ" id="7rAJ3yo2Gtx" role="3cqZAp">
           <node concept="3clFbC" id="7rAJ3yo2GKj" role="3clFbw">
             <node concept="37vLTw" id="7rAJ3yo2Gvb" role="3uHU7B">
-              <ref role="3cqZAo" node="7rAJ3yo1Tz1" resolve="myMigationTrigger" />
+              <ref role="3cqZAo" node="7rAJ3yo1Tz1" resolve="myMigrationTrigger" />
             </node>
             <node concept="10Nm6u" id="7rAJ3yo2GBF" role="3uHU7w" />
           </node>
@@ -5606,7 +5633,7 @@
         <node concept="3clFbJ" id="7rAJ3yo2GVv" role="3cqZAp">
           <node concept="3clFbC" id="7rAJ3yo2GVw" role="3clFbw">
             <node concept="37vLTw" id="7rAJ3yo2GVx" role="3uHU7B">
-              <ref role="3cqZAo" node="7rAJ3yo1Tz1" resolve="myMigationTrigger" />
+              <ref role="3cqZAo" node="7rAJ3yo1Tz1" resolve="myMigrationTrigger" />
             </node>
             <node concept="10Nm6u" id="7rAJ3yo2GVy" role="3uHU7w" />
           </node>
