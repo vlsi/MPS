@@ -178,36 +178,6 @@ public abstract class Project implements MPSModuleOwner, IProject {
     }
   }
 
-  /**
-   * @deprecated use {@link #addModule(SModule)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public void addModule(final SModuleReference moduleReference) {
-    myRepository.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SModule module = moduleReference.resolve(myRepository);
-        addModule(module);
-      }
-    });
-  }
-
-  /**
-   * @deprecated use {@link #removeModule(SModule)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public void removeModule(final SModuleReference moduleReference) {
-    myRepository.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SModule module = moduleReference.resolve(myRepository);
-        removeModule(module);
-      }
-    });
-  }
-
   public boolean isDisposed() {
     return myDisposed;
   }
