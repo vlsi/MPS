@@ -189,32 +189,32 @@ public class ModulesWatcher {
   }
 
   private Collection<SModuleReference> findInvalidModules() {
-    return findInvalidModules0(false);
+    return findInvalidModules0(false).keySet();
   }
 
   @TestOnly
-  Collection<SModuleReference> findInvalidModulesAndReport() {
+  Map<SModuleReference, String> findInvalidModulesProblems() {
     return findInvalidModules0(true);
   }
 
   @NotNull
-  private Collection<SModuleReference> findInvalidModules0(boolean errorLevel) {
+  private Map<SModuleReference, String> findInvalidModules0(boolean errorLevel) {
     myRepository.getModelAccess().checkReadAccess();
 
     Map<ReloadableModule, AbsentDependencyException> modulesWithAbsentDeps = myModuleUpdater.getModulesWithAbsentDeps();
-    Collection<SModuleReference> result = new HashSet<SModuleReference>();
+    Map<SModuleReference, String> mRefToProblem = new HashMap<>();
     Collection<? extends SModuleReference> allModuleRefs = getAllModules();
     for (SModuleReference mRef : allModuleRefs) {
-      if (!result.contains(mRef)) {
+      if (!mRefToProblem.containsKey(mRef)) {
         String msg = getModuleProblemMessage(mRef, modulesWithAbsentDeps);
         if (msg == null) {
           continue;
         }
         if (errorLevel) LOG.error(msg); else LOG.debug(msg);
-        result.add(mRef);
+        mRefToProblem.put(mRef, msg);
       }
     }
-    return result;
+    return mRefToProblem;
   }
 
   // FIXME rewrite!! need to extract some common API class for validity checking

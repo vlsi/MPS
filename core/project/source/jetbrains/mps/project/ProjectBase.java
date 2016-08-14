@@ -71,7 +71,9 @@ public abstract class ProjectBase extends Project {
   @Override
   public final void addModule(@NotNull SModule module) {
     if (myModuleToPathMap.containsKey(module)) {
-      throw new IllegalArgumentException(module + " is already in the " + this);
+//      throw new IllegalArgumentException(module + " is already in the " + this); todo enable after MPS-24400
+      LOG.warn(module + " is already in " + this);
+      return;
     }
     IFile descriptorFile = getDescriptorFileChecked(module);
     if (descriptorFile != null) {
