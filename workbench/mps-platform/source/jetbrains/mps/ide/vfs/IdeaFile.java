@@ -347,9 +347,6 @@ public class IdeaFile implements IFileEx, CachingFile {
 
   @Override
   public void refresh(@NotNull CachingContext context) {
-    if (context.isSynchronous()) {
-      ApplicationManager.getApplication().assertWriteAccessAllowed();
-    }
     if (findVirtualFile()) {
       myVirtualFile.getChildren(); // This was added to force refresh
       // synchronous non-recursive refresh

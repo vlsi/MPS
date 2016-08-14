@@ -12,14 +12,12 @@ import java.io.File;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.util.FileUtil;
-import java.io.InputStream;
-import java.io.FileOutputStream;
-import jetbrains.mps.util.ReadUtil;
-import java.io.IOException;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.util.Reference;
-import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.vfs.CachingFileSystem;
+import jetbrains.mps.ide.vfs.IdeaFSComponent;
+import jetbrains.mps.vfs.DefaultCachingContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.core.platform.Platform;
 import org.jetbrains.annotations.Nullable;
@@ -34,8 +32,6 @@ import org.apache.log4j.LogManager;
  * TODO: fix dispose methods
  */
 public class IdeaEnvironment extends EnvironmentBase {
-  private static final String MISC_XML_URI = "/jetbrains/mps/testbench/junit/runners/misc.xml";
-
   private IdeaTestApplication myIdeaApplication;
 
   static {
@@ -129,20 +125,8 @@ public class IdeaEnvironment extends EnvironmentBase {
 
   private File createDummyProjectFile() {
     File dummyProjDir = FileUtil.createTmpDir();
-    File dotMps = new File(dummyProjDir, ".mps");
+    File dotMps = new File(dummyProjDir, com.intellij.openapi.project.Project.DIRECTORY_STORE_FOLDER);
     dotMps.mkdir();
-    File projectFile = new File(dotMps, IdeaEnvironment.MISC_XML_URI.substring(IdeaEnvironment.MISC_XML_URI.lastIndexOf("/") + 1));
-    try {
-      projectFile.createNewFile();
-      InputStream input = IdeaEnvironment.class.getResourceAsStream(IdeaEnvironment.MISC_XML_URI);
-      FileOutputStream stream = new FileOutputStream(projectFile);
-      stream.write(ReadUtil.read(input));
-      stream.close();
-      input.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-      return null;
-    }
     dummyProjDir.deleteOnExit();
     return dummyProjDir;
   }
@@ -166,9 +150,7 @@ public class IdeaEnvironment extends EnvironmentBase {
           }
           project.set(projectManager.loadAndOpenProject(filePath));
           waiter.init(project.get());
-          // calling sync refresh for FS in order to update all modules/models loaded from the project 
-          // if unit-test is executed with the "reuse caches" option. 
-          VirtualFileManager.getInstance().syncRefresh();
+          refreshProjectDir(project.get());
         } catch (Exception e) {
           exc.set(e);
         }
@@ -182,6 +164,16 @@ public class IdeaEnvironment extends EnvironmentBase {
     waiter.wait0();
 
     return project.get().getComponent(MPSProject.class);
+  }
+
+  private void refreshProjectDir(@NotNull com.intellij.openapi.project.Project project) {
+    // calling sync refresh for FS in order to update all modules/models loaded from the project 
+    // if unit-test is executed with the "reuse caches" option. 
+    String basePath = project.getBasePath();
+    if (basePath != null) {
+      CachingFileSystem fs = ApplicationManager.getApplication().getComponent(IdeaFSComponent.class);
+      fs.getFile(basePath).refresh(new DefaultCachingContext(true, true));
+    }
   }
 
   @Override

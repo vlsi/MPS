@@ -36,7 +36,7 @@ import java.io.OutputStream;
 public final class MPSNodeVirtualFile extends VirtualFile {
   private static final byte[] CONTENTS = new byte[0];
   private static final Logger LOG = LogManager.getLogger(MPSNodeVirtualFile.class);
-  public static final String NODE_PREFIX = "node://";
+  static final String NODE_PREFIX = "node://";
 
   private SNodeReference myNode;
   private final RepositoryVirtualFiles myRepoFiles;
@@ -61,7 +61,7 @@ public final class MPSNodeVirtualFile extends VirtualFile {
       public void run() {
         SNode node = myNode.resolve(myRepoFiles.getRepository());
         if (node == null) {
-          LOG.error(new Throwable("Cannot find node for passed SNodeReference: " + myNode.toString()));
+          LOG.error("Cannot find node for passed SNodeReference: " + myNode, new Throwable());
           myName = myPresentationName = "";
           myPath = "";
         } else {
