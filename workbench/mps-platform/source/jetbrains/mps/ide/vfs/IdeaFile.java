@@ -63,7 +63,7 @@ public class IdeaFile implements IFileEx, CachingFile {
   private String myPath;
   private VirtualFile myVirtualFile = null;
 
-  IdeaFile(IdeaFileSystem fileSystem, @NotNull String path) {
+  public IdeaFile(IdeaFileSystem fileSystem, @NotNull String path) {
     myFileSystem = fileSystem;
 
     // fix for MPS-10350; todo move

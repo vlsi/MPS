@@ -2738,7 +2738,7 @@
             <property role="TrG5h" value="ifile" />
             <node concept="2ShNRf" id="5bPhg88OBxD" role="33vP2m">
               <node concept="1pGfFk" id="5bPhg88PmuT" role="2ShVmc">
-                <ref role="37wK5l" to="4hrd:~IdeaFile.&lt;init&gt;(jetbrains.mps.ide.vfs.IdeaFileSystem,java.lang.String)" resolve="IdeaFile" />
+                <ref role="37wK5l" to="4hrd:~IdeaFile.&lt;init&gt;(jetbrains.mps.ide.vfs.IdeaFileSystem,com.intellij.openapi.vfs.VirtualFile)" resolve="IdeaFile" />
                 <node concept="37vLTw" id="5bPhg88Pmvl" role="37wK5m">
                   <ref role="3cqZAo" node="5bPhg88PhzH" resolve="FS" />
                 </node>
