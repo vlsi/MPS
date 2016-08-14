@@ -26,6 +26,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.util.Reference;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.AfterClass;
@@ -39,8 +40,8 @@ import java.util.Set;
 
 public class EclipseJavaCompilerTest extends CoreMpsTest {
   private static final File PROJECT_PATH = new File("testbench/modules/testCompilation");
-  private static Project ourProject;
-  private static Solution ourSolution;
+  @NotNull private static Project ourProject;
+  @NotNull private static Solution ourSolution;
 
   @BeforeClass
   public static void setUp() {
