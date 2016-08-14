@@ -61,7 +61,9 @@ public class ModelDigestHelper {
 
     for (DigestProvider p : myProviders) {
       Map<String, String> result = p.getGenerationHashes(((FileDataSource) source).getFile());
-      if (result != null) return result.get(GeneratableSModel.FILE);
+      if (result != null) {
+        return result.get(GeneratableSModel.FILE);
+      }
     }
 
     return null;

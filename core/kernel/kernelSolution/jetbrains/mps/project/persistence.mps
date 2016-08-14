@@ -7,6 +7,8 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
+    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
   </languages>
   <imports>
     <import index="7a2w" ref="r:10bf3684-5fb2-4fa0-9dd9-1d05589df2e9(jetbrains.mps.util.xml)" />
@@ -5317,11 +5319,13 @@
         <property role="Xl_RC" value=".*&lt;(language|dev-kit|solution)[^&gt;]+(namespace|name)=\\\&quot;([^\&quot;]+)\\\&quot;[^&gt;]+uuid=\\\&quot;([^\&quot;]+)\\\&quot;.*" />
       </node>
     </node>
+    <node concept="2tJIrI" id="4zP2wWxbI2m" role="jymVt" />
     <node concept="3clFbW" id="4F07P_yBO9J" role="jymVt">
       <node concept="3cqZAl" id="4F07P_yBO9K" role="3clF45" />
       <node concept="3Tm6S6" id="4F07P_yBO9N" role="1B3o_S" />
       <node concept="3clFbS" id="4F07P_yBO9M" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="4zP2wWxbHFI" role="jymVt" />
     <node concept="2YIFZL" id="IMUMWuHQMZ" role="jymVt">
       <property role="TrG5h" value="loadDependencies" />
       <node concept="3cqZAl" id="IMUMWuHQN0" role="3clF45" />
@@ -5928,6 +5932,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4zP2wWxbHFJ" role="jymVt" />
     <node concept="2YIFZL" id="IMUMWuHQP1" role="jymVt">
       <property role="TrG5h" value="saveDependencies" />
       <node concept="3cqZAl" id="IMUMWuHQP2" role="3clF45" />
@@ -6851,6 +6856,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4zP2wWxbHFK" role="jymVt" />
     <node concept="2YIFZL" id="IMUMWuHQQL" role="jymVt">
       <property role="TrG5h" value="loadDependenciesList" />
       <node concept="37vLTG" id="IMUMWuHQQM" role="3clF46">
@@ -6992,6 +6998,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4zP2wWxbHFL" role="jymVt" />
     <node concept="2YIFZL" id="IMUMWuHQRt" role="jymVt">
       <property role="TrG5h" value="saveDependencyList" />
       <node concept="3Tm6S6" id="IMUMWuHQRu" role="1B3o_S" />
@@ -7443,6 +7450,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4zP2wWxbHFM" role="jymVt" />
     <node concept="2YIFZL" id="2xoEMW8Tgmb" role="jymVt">
       <property role="TrG5h" value="loadFacets" />
       <node concept="_YKpA" id="2xoEMW8Tgmc" role="3clF45">
@@ -7577,6 +7585,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4zP2wWxbHFN" role="jymVt" />
     <node concept="2YIFZL" id="56cLWC10PWx" role="jymVt">
       <property role="TrG5h" value="readMemento" />
       <node concept="3cqZAl" id="56cLWC10ZHT" role="3clF45" />
@@ -7752,6 +7761,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4zP2wWxbHFO" role="jymVt" />
     <node concept="2YIFZL" id="56cLWC11FNF" role="jymVt">
       <property role="TrG5h" value="writeMemento" />
       <node concept="3cqZAl" id="56cLWC11FNG" role="3clF45" />
@@ -7913,6 +7923,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4zP2wWxbHFP" role="jymVt" />
     <node concept="2YIFZL" id="56cLWC11mgd" role="jymVt">
       <property role="TrG5h" value="isPathAttribute" />
       <node concept="3Tm6S6" id="56cLWC11mge" role="1B3o_S" />
@@ -7952,6 +7963,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4zP2wWxbHFQ" role="jymVt" />
     <node concept="2YIFZL" id="B0RVt9PquF" role="jymVt">
       <property role="TrG5h" value="loadStubModelEntries" />
       <node concept="_YKpA" id="B0RVt9PquG" role="3clF45">
@@ -8031,6 +8043,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4zP2wWxbHFR" role="jymVt" />
     <node concept="2YIFZL" id="4xPRg7rvKwn" role="jymVt">
       <property role="TrG5h" value="loadStubModelEntry" />
       <node concept="17QB3L" id="4xPRg7rvVaW" role="3clF45" />
@@ -8138,6 +8151,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4zP2wWxbHFS" role="jymVt" />
     <node concept="2YIFZL" id="2xoEMW8SV3t" role="jymVt">
       <property role="TrG5h" value="saveFacets" />
       <node concept="3cqZAl" id="2xoEMW8SV3u" role="3clF45" />
@@ -8433,6 +8447,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4zP2wWxbHFT" role="jymVt" />
     <node concept="2YIFZL" id="B0RVt9PwOe" role="jymVt">
       <property role="TrG5h" value="saveStubModelEntries" />
       <node concept="3cqZAl" id="B0RVt9PwOf" role="3clF45" />
@@ -8532,6 +8547,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4zP2wWxbHFU" role="jymVt" />
     <node concept="2YIFZL" id="2moQNDghoaL" role="jymVt">
       <property role="TrG5h" value="setTimestamp" />
       <node concept="3cqZAl" id="2moQNDghoaM" role="3clF45" />
@@ -8573,11 +8589,44 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4zP2wWxbHFV" role="jymVt" />
     <node concept="2YIFZL" id="78tlMyQ1R1q" role="jymVt">
       <property role="TrG5h" value="loadBrokenModule" />
       <node concept="3cqZAl" id="78tlMyQ1R1r" role="3clF45" />
       <node concept="3Tm1VV" id="78tlMyQ1R1s" role="1B3o_S" />
       <node concept="3clFbS" id="78tlMyQ1R1t" role="3clF47">
+        <node concept="34ab3g" id="4zP2wWxbIU_" role="3cqZAp">
+          <property role="35gtTG" value="warn" />
+          <node concept="3cpWs3" id="4zP2wWxbKUW" role="34bqiv">
+            <node concept="37vLTw" id="4zP2wWxbL18" role="3uHU7w">
+              <ref role="3cqZAo" node="78tlMyQ1TYl" resolve="exception" />
+            </node>
+            <node concept="3cpWs3" id="4zP2wWxbKy9" role="3uHU7B">
+              <node concept="3cpWs3" id="4zP2wWxbK8k" role="3uHU7B">
+                <node concept="3cpWs3" id="4zP2wWxbJJW" role="3uHU7B">
+                  <node concept="3cpWs3" id="4zP2wWxbJo4" role="3uHU7B">
+                    <node concept="Xl_RD" id="4zP2wWxbIUB" role="3uHU7B">
+                      <property role="Xl_RC" value="Module descriptor " />
+                    </node>
+                    <node concept="37vLTw" id="4zP2wWxbJr5" role="3uHU7w">
+                      <ref role="3cqZAo" node="78tlMyQ1R38" resolve="md" />
+                    </node>
+                  </node>
+                  <node concept="Xl_RD" id="4zP2wWxbJMT" role="3uHU7w">
+                    <property role="Xl_RC" value=" from the file " />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="4zP2wWxbKbu" role="3uHU7w">
+                  <ref role="3cqZAo" node="78tlMyQ1R3a" resolve="file" />
+                </node>
+              </node>
+              <node concept="Xl_RD" id="4zP2wWxbK_6" role="3uHU7w">
+                <property role="Xl_RC" value=" has been loaded with error " />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="4zP2wWxbIPB" role="3cqZAp" />
         <node concept="3clFbF" id="78tlMyQ1R1u" role="3cqZAp">
           <node concept="2OqwBi" id="78tlMyQ1R1v" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgmtvq" role="2Oq$k0">
