@@ -9023,19 +9023,6 @@
         <property role="Xl_RC" value="path" />
       </node>
     </node>
-    <node concept="Wx3nA" id="15VbAzMDQcN" role="jymVt">
-      <property role="2dlcS1" value="false" />
-      <property role="2dld4O" value="false" />
-      <property role="TrG5h" value="PROJECT_DIR_MACRO" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm6S6" id="15VbAzMDQ00" role="1B3o_S" />
-      <node concept="3uibUv" id="15VbAzMDQc4" role="1tU5fm">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
-      <node concept="Xl_RD" id="15VbAzMDQpN" role="33vP2m">
-        <property role="Xl_RC" value="$PROJECT_DIR$" />
-      </node>
-    </node>
     <node concept="Wx3nA" id="15VbAzMDRob" role="jymVt">
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
@@ -9061,6 +9048,16 @@
         <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
       </node>
     </node>
+    <node concept="312cEg" id="6uMmfEAqLQJ" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myMacroHelper" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="6uMmfEAqLL8" role="1B3o_S" />
+      <node concept="3uibUv" id="6uMmfEAqLQH" role="1tU5fm">
+        <ref role="3uigEE" to="18ew:~MacroHelper" resolve="MacroHelper" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="3v_OXaS40dQ" role="jymVt" />
     <node concept="3Tm1VV" id="IMUMWuHR49" role="1B3o_S" />
     <node concept="3clFbW" id="4F07P_yBO_t" role="jymVt">
@@ -9070,6 +9067,15 @@
           <ref role="3uigEE" to="guwi:~File" resolve="File" />
         </node>
         <node concept="2AHcQZ" id="3v_OXaS48RW" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="6uMmfEAqLWk" role="3clF46">
+        <property role="TrG5h" value="macroHelper" />
+        <node concept="3uibUv" id="6uMmfEAqLWr" role="1tU5fm">
+          <ref role="3uigEE" to="18ew:~MacroHelper" resolve="MacroHelper" />
+        </node>
+        <node concept="2AHcQZ" id="6uMmfEAqLWv" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
@@ -9099,11 +9105,21 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="6uMmfEAqLXk" role="3cqZAp">
+          <node concept="37vLTI" id="6uMmfEAqMRb" role="3clFbG">
+            <node concept="37vLTw" id="6uMmfEAqMTE" role="37vLTx">
+              <ref role="3cqZAo" node="6uMmfEAqLWk" resolve="macroHelper" />
+            </node>
+            <node concept="37vLTw" id="6uMmfEAqLXi" role="37vLTJ">
+              <ref role="3cqZAo" node="6uMmfEAqLQJ" resolve="myMacroHelper" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="3v_OXaS3PIm" role="jymVt" />
     <node concept="3clFb_" id="3v_OXaS41F3" role="jymVt">
-      <property role="TrG5h" value="saveProjectDescriptor" />
+      <property role="TrG5h" value="save" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="IMUMWuHQUu" role="3clF47">
@@ -9162,12 +9178,20 @@
               <node concept="1bVj0M" id="1Tieq1imnQ_" role="23t8la">
                 <node concept="3clFbS" id="1Tieq1imnQA" role="1bW5cS">
                   <node concept="3clFbF" id="1Tieq1imnQB" role="3cqZAp">
-                    <node concept="2OqwBi" id="1_ERPxYPvBJ" role="3clFbG">
-                      <node concept="37vLTw" id="1_ERPxYPvrR" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1Tieq1imnQI" resolve="p" />
+                    <node concept="2OqwBi" id="6uMmfEAqNwT" role="3clFbG">
+                      <node concept="37vLTw" id="6uMmfEAqNwU" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6uMmfEAqLQJ" resolve="myMacroHelper" />
                       </node>
-                      <node concept="liA8E" id="1_ERPxYPvKO" role="2OqNvi">
-                        <ref role="37wK5l" to="y8s3:~ModulePath.getPath():java.lang.String" resolve="getPath" />
+                      <node concept="liA8E" id="6uMmfEAqNwV" role="2OqNvi">
+                        <ref role="37wK5l" to="18ew:~MacroHelper.shrinkPath(java.lang.String):java.lang.String" resolve="shrinkPath" />
+                        <node concept="2OqwBi" id="6uMmfEAqNwW" role="37wK5m">
+                          <node concept="37vLTw" id="6uMmfEAqNFL" role="2Oq$k0">
+                            <ref role="3cqZAo" node="1Tieq1imnQI" resolve="p" />
+                          </node>
+                          <node concept="liA8E" id="6uMmfEAqNwY" role="2OqNvi">
+                            <ref role="37wK5l" to="y8s3:~ModulePath.getPath():java.lang.String" resolve="getPath" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -9204,23 +9228,19 @@
                 <node concept="37vLTw" id="3v_OXaS4aCd" role="37wK5m">
                   <ref role="3cqZAo" node="3v_OXaS4ac8" resolve="PATH_TAG" />
                 </node>
-                <node concept="2OqwBi" id="5TpSSNj_OzU" role="37wK5m">
-                  <node concept="liA8E" id="5TpSSNj_Red" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolve="replace" />
-                    <node concept="10M0yZ" id="15VbAzME19o" role="37wK5m">
-                      <ref role="1PxDUh" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
-                      <ref role="3cqZAo" to="18ew:~MacrosFactory.PROJECT" resolve="PROJECT" />
-                    </node>
-                    <node concept="37vLTw" id="15VbAzME1gW" role="37wK5m">
-                      <ref role="3cqZAo" node="15VbAzMDQcN" resolve="PROJECT_DIR_MACRO" />
-                    </node>
+                <node concept="2OqwBi" id="6uMmfEAqNjG" role="37wK5m">
+                  <node concept="37vLTw" id="6uMmfEAqN3h" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6uMmfEAqLQJ" resolve="myMacroHelper" />
                   </node>
-                  <node concept="2OqwBi" id="1_ERPxYPXrX" role="2Oq$k0">
-                    <node concept="2GrUjf" id="1_ERPxYPw0z" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="1Tieq1imnQL" resolve="path" />
-                    </node>
-                    <node concept="liA8E" id="1_ERPxYPXGW" role="2OqNvi">
-                      <ref role="37wK5l" to="y8s3:~ModulePath.getPath():java.lang.String" resolve="getPath" />
+                  <node concept="liA8E" id="6uMmfEAqNq9" role="2OqNvi">
+                    <ref role="37wK5l" to="18ew:~MacroHelper.shrinkPath(java.lang.String):java.lang.String" resolve="shrinkPath" />
+                    <node concept="2OqwBi" id="1_ERPxYPXrX" role="37wK5m">
+                      <node concept="2GrUjf" id="1_ERPxYPw0z" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="1Tieq1imnQL" resolve="path" />
+                      </node>
+                      <node concept="liA8E" id="1_ERPxYPXGW" role="2OqNvi">
+                        <ref role="37wK5l" to="y8s3:~ModulePath.getPath():java.lang.String" resolve="getPath" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -9277,7 +9297,7 @@
     </node>
     <node concept="2tJIrI" id="3v_OXaS3PqH" role="jymVt" />
     <node concept="3clFb_" id="3v_OXaS41lA" role="jymVt">
-      <property role="TrG5h" value="loadProjectDescriptor" />
+      <property role="TrG5h" value="load" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="IMUMWuHQYW" role="3clF47">
@@ -9470,26 +9490,22 @@
                   <node concept="3cpWsn" id="15VbAzME5St" role="3cpWs9">
                     <property role="TrG5h" value="path" />
                     <node concept="17QB3L" id="15VbAzME_D1" role="1tU5fm" />
-                    <node concept="2OqwBi" id="15VbAzME5Sx" role="33vP2m">
-                      <node concept="2OqwBi" id="15VbAzME5Sy" role="2Oq$k0">
-                        <node concept="2GrUjf" id="15VbAzME5Sz" role="2Oq$k0">
-                          <ref role="2Gs0qQ" node="IMUMWuHQZl" resolve="moduleElement" />
-                        </node>
-                        <node concept="liA8E" id="15VbAzME5S$" role="2OqNvi">
-                          <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
-                          <node concept="37vLTw" id="1_ERPxYPwdJ" role="37wK5m">
-                            <ref role="3cqZAo" node="3v_OXaS4ac8" resolve="PATH_TAG" />
-                          </node>
-                        </node>
+                    <node concept="2OqwBi" id="6uMmfEAqQ2s" role="33vP2m">
+                      <node concept="37vLTw" id="6uMmfEAqPfT" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6uMmfEAqLQJ" resolve="myMacroHelper" />
                       </node>
-                      <node concept="liA8E" id="15VbAzME5SA" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolve="replace" />
-                        <node concept="37vLTw" id="1_ERPxYPwdO" role="37wK5m">
-                          <ref role="3cqZAo" node="15VbAzMDQcN" resolve="PROJECT_DIR_MACRO" />
-                        </node>
-                        <node concept="10M0yZ" id="15VbAzME5SC" role="37wK5m">
-                          <ref role="3cqZAo" to="18ew:~MacrosFactory.PROJECT" resolve="PROJECT" />
-                          <ref role="1PxDUh" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
+                      <node concept="liA8E" id="6uMmfEAqQ8c" role="2OqNvi">
+                        <ref role="37wK5l" to="18ew:~MacroHelper.expandPath(java.lang.String):java.lang.String" resolve="expandPath" />
+                        <node concept="2OqwBi" id="15VbAzME5Sy" role="37wK5m">
+                          <node concept="2GrUjf" id="15VbAzME5Sz" role="2Oq$k0">
+                            <ref role="2Gs0qQ" node="IMUMWuHQZl" resolve="moduleElement" />
+                          </node>
+                          <node concept="liA8E" id="15VbAzME5S$" role="2OqNvi">
+                            <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
+                            <node concept="37vLTw" id="6uMmfEAqQbd" role="37wK5m">
+                              <ref role="3cqZAo" node="3v_OXaS4ac8" resolve="PATH_TAG" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -9737,6 +9753,7 @@
         <ref role="3uigEE" to="mmaq:~Element" resolve="Element" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6uMmfEAqQHR" role="jymVt" />
     <node concept="2YIFZL" id="15VbAzME8wr" role="jymVt">
       <property role="TrG5h" value="findProjectFile" />
       <property role="DiZV1" value="false" />
@@ -9766,6 +9783,40 @@
                 <node concept="37vLTw" id="15VbAzME8w$" role="37wK5m">
                   <ref role="3cqZAo" node="15VbAzME8wt" resolve="path" />
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="6uMmfEAqQOz" role="3cqZAp">
+          <node concept="3clFbS" id="6uMmfEAqQO_" role="3clFbx">
+            <node concept="YS8fn" id="6uMmfEAqRII" role="3cqZAp">
+              <node concept="2ShNRf" id="6uMmfEAqRJ6" role="YScLw">
+                <node concept="1pGfFk" id="6uMmfEAqSqM" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
+                  <node concept="3cpWs3" id="6uMmfEAqSRg" role="37wK5m">
+                    <node concept="Xl_RD" id="6uMmfEAqSR_" role="3uHU7w">
+                      <property role="Xl_RC" value=" does not exist" />
+                    </node>
+                    <node concept="3cpWs3" id="6uMmfEAqSyW" role="3uHU7B">
+                      <node concept="Xl_RD" id="6uMmfEAqSr8" role="3uHU7B">
+                        <property role="Xl_RC" value="Path " />
+                      </node>
+                      <node concept="37vLTw" id="6uMmfEAqSzl" role="3uHU7w">
+                        <ref role="3cqZAo" node="15VbAzME8wt" resolve="path" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="6uMmfEAqQPC" role="3clFbw">
+            <node concept="2OqwBi" id="6uMmfEAqRBu" role="3fr31v">
+              <node concept="37vLTw" id="6uMmfEAqQPY" role="2Oq$k0">
+                <ref role="3cqZAo" node="15VbAzME8ww" resolve="projectFile" />
+              </node>
+              <node concept="liA8E" id="6uMmfEAqRFY" role="2OqNvi">
+                <ref role="37wK5l" to="3ju5:~IFile.exists():boolean" resolve="exists" />
               </node>
             </node>
           </node>
@@ -9820,7 +9871,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="15VbAzME8wP" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
+                <ref role="37wK5l" to="eurq:~UniPath.endsWith(java.lang.String):boolean" resolve="endsWith" />
                 <node concept="37vLTw" id="15VbAzME8wQ" role="37wK5m">
                   <ref role="3cqZAo" node="15VbAzMDPzt" resolve="MODULES_XML_LOCATION" />
                 </node>

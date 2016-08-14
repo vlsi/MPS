@@ -71,10 +71,10 @@ public class RootDependencies implements Comparable<RootDependencies> {
     }
   }
   public Set<String> getDependencies() {
-    return new HashSet((Collection) myDependNodes);
+    return new HashSet<String>((Collection) myDependNodes);
   }
   public Set<String> getExtends() {
-    return new HashSet((Collection) myExtendsNodes);
+    return new HashSet<String>((Collection) myExtendsNodes);
   }
   /*package*/ void addDependNode(String s) {
     ListSequence.fromList(myDependNodes).addElement(s);
