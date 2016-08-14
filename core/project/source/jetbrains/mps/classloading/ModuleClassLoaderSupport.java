@@ -94,7 +94,7 @@ public class ModuleClassLoaderSupport {
    * important to have the calculation here: at the time of construction the classloaders might be not available yet
    */
   List<ClassLoader> getCompileDependencies() {
-    return myCompileDependencies.stream().map(myHolder::getClassLoader).collect(Collectors.toList());
+    return myCompileDependencies.stream().map(myHolder::getClassLoader).distinct().collect(Collectors.toList());
   }
 
   /**
