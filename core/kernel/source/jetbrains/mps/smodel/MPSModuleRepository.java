@@ -58,20 +58,20 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   /**
    * Use {@link org.jetbrains.mps.openapi.module.SRepository} from the project whenever it is possible
-   *
+   * <p>
    * Currently the context object is an MPS project class
-   * @see jetbrains.mps.project.Project
    *
+   * @see jetbrains.mps.project.Project
+   * <p>
    * It can provide a repository and a model access
    * {@link jetbrains.mps.project.Project#getModelAccess()}
    * {@link jetbrains.mps.project.Project#getRepository()}}
-   *
+   * <p>
    * So in each case you must have an MPS project within your scope and request SRepository explicitily from the project.
    * <p/>
    * To access register/unregister methods for modules, consider using {@link SRepositoryExt}
-   *
-   * @deprecated
    * @since 3.2
+   * @deprecated
    */
   @Deprecated
   @ToRemove(version = 3.4)
@@ -104,7 +104,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     myGlobalModelAccess.addCommandListener(myCommandListener);
   }
 
-    @Override
+  @Override
   public void dispose() {
     myGlobalModelAccess.removeCommandListener(myCommandListener);
     ourInstance = null;
@@ -121,10 +121,17 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     String moduleFqName = moduleToRegister.getModuleName();
 
     AbstractModule aModuleToRegister = (AbstractModule) moduleToRegister;
-    if (moduleId == null) throw new NullModuleIdException(aModuleToRegister);
+    if (moduleId == null) {
+      throw new NullModuleIdException(aModuleToRegister);
+    }
 
     SModule existing = getModule(moduleId);
     if (existing != null) {
+      //paranoid check relates to MPS-24219
+      if (existing.getClass() != moduleToRegister.getClass()) {
+        throw new RuntimeException("Module to register has class " + moduleToRegister.getClass().getSimpleName() +
+            ", while there's already another module with the same id registered with class " + existing.getClass().getSimpleName());
+      }
       myModuleToOwners.addLink(existing, owner);
       return (T) existing;
     }
@@ -167,7 +174,9 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
         modulesToDispose.add(module);
       }
     }
-    if (modulesToDispose.isEmpty()) return;
+    if (modulesToDispose.isEmpty()) {
+      return;
+    }
 
     invalidateCaches();
     for (SModule module : modulesToDispose) {
@@ -258,7 +267,9 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   public SModule getModule(SModuleId id) {
     getModelAccess().checkReadAccess();
 
-    if (id == null) return null;
+    if (id == null) {
+      return null;
+    }
     return myIdToModuleMap.get(id);
   }
 
@@ -275,7 +286,9 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   public SModule getModuleById(SModuleId moduleId) {
     //todo assertCanRead();
 
-    if (moduleId == null) return null;
+    if (moduleId == null) {
+      return null;
+    }
     return myIdToModuleMap.get(moduleId);
   }
 
@@ -355,8 +368,8 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   private static class NullModuleIdException extends RuntimeException {
     public NullModuleIdException(AbstractModule aModuleToRegister) {
       super("Trying to add module with null id to the repository:\n" +
-            "moduleName: " + aModuleToRegister.getModuleName() + ";\n" +
-            "file: '" + aModuleToRegister.getDescriptorFile() + "'");
+          "moduleName: " + aModuleToRegister.getModuleName() + ";\n" +
+          "file: '" + aModuleToRegister.getDescriptorFile() + "'");
     }
   }
 }
