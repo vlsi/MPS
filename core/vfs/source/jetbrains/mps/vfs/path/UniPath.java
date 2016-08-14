@@ -258,7 +258,7 @@ public class UniPath extends AbstractPath {
   @NotNull
   @Override
   public List<String> getNames() {
-    List<String> result = myPath.getNames();
+    List<String> result = new ArrayList<>(myPath.getNames());
     for (CommonPath path : myArchivePaths) {
       result.addAll(path.getNames());
     }
