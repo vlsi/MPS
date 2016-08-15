@@ -73,79 +73,85 @@
   <root nodeRef="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)/397101727194120959">
     <file name="NodeChooserDialog.java">
       <node id="397101727194125937" at="25,0,26,0" concept="3" trace="myChooser" />
-      <node id="279286349825693925" at="26,0,27,0" concept="3" trace="myChosenElement" />
-      <node id="681803901115684911" at="28,91,29,25" concept="12" />
-      <node id="681803901115684914" at="29,25,30,28" concept="2" />
-      <node id="681803901115684917" at="30,28,31,0" concept="10" />
-      <node id="681803901115684984" at="31,0,32,86" concept="2" />
-      <node id="279286349825695620" at="35,49,36,68" concept="2" />
-      <node id="681803901115685004" at="36,68,37,21" concept="2" />
-      <node id="681803901115685010" at="39,60,40,0" concept="10" />
-      <node id="681803901115685011" at="40,0,41,11" concept="2" />
-      <node id="397101727194123977" at="46,59,47,81" concept="9" />
-      <node id="397101727194124279" at="50,55,51,68" concept="14" />
-      <node id="884095344014786770" at="57,46,58,46" concept="9" />
-      <node id="3475620386633472254" at="64,44,65,67" concept="2" />
-      <node id="6451627261807357073" at="65,67,66,32" concept="9" />
-      <node id="884095344014661259" at="70,54,71,18" concept="9" />
-      <node id="884095344014661269" at="72,5,73,27" concept="9" />
-      <node id="2476433916569952378" at="77,52,78,52" concept="9" />
-      <node id="884095344014786762" at="57,0,60,0" concept="7" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="884095344014661254" at="69,37,72,5" concept="6" />
-      <node id="397101727194123959" at="45,0,49,0" concept="7" trace="find#(Z)[Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="397101727194123518" at="49,0,53,0" concept="7" trace="find#(Lorg/jetbrains/mps/openapi/module/SearchScope;)[Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="681803901115684998" at="34,0,39,0" concept="7" trace="elementChosen#(Ljava/lang/Object;)V" />
-      <node id="884095344014786713" at="55,70,60,8" concept="13" />
-      <node id="2476433916569952370" at="75,0,80,0" concept="7" trace="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
-      <node id="397101727194120966" at="62,0,68,0" concept="7" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
-      <node id="681803901115684990" at="32,86,39,60" concept="2" />
-      <node id="884095344014786581" at="55,0,62,0" concept="1" trace="NodeChooserDialog#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)V" />
-      <node id="884095344014661250" at="68,0,75,0" concept="7" trace="getResult#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="681803901115806563" at="43,83,53,7" concept="13" />
-      <node id="397101727194120961" at="43,0,55,0" concept="1" trace="NodeChooserDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/Iterable;)V" />
-      <node id="681803901115684902" at="28,0,43,0" concept="1" trace="NodeChooserDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/workbench/choose/nodes/BaseNodePointerModel;)V" />
-      <scope id="397101727194123965" at="46,59,47,81" />
-      <scope id="397101727194123524" at="50,55,51,68" />
-      <scope id="884095344014786763" at="57,46,58,46" />
-      <scope id="884095344014661258" at="70,54,71,18" />
-      <scope id="2476433916569952374" at="77,52,78,52" />
-      <scope id="681803901115685003" at="35,49,37,21" />
-      <scope id="397101727194120970" at="64,44,66,32" />
-      <scope id="884095344014786762" at="57,0,60,0">
+      <node id="985078568023897801" at="26,0,27,0" concept="3" trace="myChooseByNameModel" />
+      <node id="279286349825693925" at="27,0,28,0" concept="3" trace="myChosenElement" />
+      <node id="681803901115684911" at="29,91,30,25" concept="12" />
+      <node id="681803901115684914" at="30,25,31,28" concept="2" />
+      <node id="681803901115684917" at="31,28,32,0" concept="10" />
+      <node id="985078568023898037" at="32,0,33,44" concept="2" />
+      <node id="681803901115684984" at="33,44,34,86" concept="2" />
+      <node id="985078568023896238" at="37,49,38,21" concept="2" />
+      <node id="681803901115685010" at="40,60,41,0" concept="10" />
+      <node id="681803901115685011" at="41,0,42,11" concept="2" />
+      <node id="985078568023854479" at="46,31,47,87" concept="2" />
+      <node id="985078568023854117" at="47,87,48,23" concept="2" />
+      <node id="397101727194123977" at="54,59,55,81" concept="9" />
+      <node id="397101727194124279" at="58,55,59,68" concept="14" />
+      <node id="884095344014786770" at="66,46,67,46" concept="9" />
+      <node id="3475620386633472254" at="74,44,75,67" concept="2" />
+      <node id="6451627261807357073" at="75,67,76,32" concept="9" />
+      <node id="884095344014661259" at="81,54,82,18" concept="9" />
+      <node id="884095344014661269" at="83,5,84,27" concept="9" />
+      <node id="2476433916569952378" at="89,52,90,52" concept="9" />
+      <node id="884095344014786762" at="66,0,69,0" concept="7" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="884095344014661254" at="80,37,83,5" concept="6" />
+      <node id="681803901115684998" at="36,0,40,0" concept="7" trace="elementChosen#(Ljava/lang/Object;)V" />
+      <node id="397101727194123959" at="53,0,57,0" concept="7" trace="find#(Z)[Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="397101727194123518" at="57,0,61,0" concept="7" trace="find#(Lorg/jetbrains/mps/openapi/module/SearchScope;)[Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="985078568023854110" at="45,0,50,0" concept="7" trace="doOKAction#()V" />
+      <node id="884095344014786713" at="64,70,69,8" concept="13" />
+      <node id="2476433916569952370" at="87,0,92,0" concept="7" trace="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
+      <node id="681803901115684990" at="34,86,40,60" concept="2" />
+      <node id="397101727194120966" at="72,0,78,0" concept="7" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
+      <node id="884095344014786581" at="64,0,71,0" concept="1" trace="NodeChooserDialog#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)V" />
+      <node id="884095344014661250" at="79,0,86,0" concept="7" trace="getResult#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="681803901115806563" at="51,83,61,7" concept="13" />
+      <node id="397101727194120961" at="51,0,63,0" concept="1" trace="NodeChooserDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/Iterable;)V" />
+      <node id="681803901115684902" at="29,0,44,0" concept="1" trace="NodeChooserDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/workbench/choose/nodes/BaseNodePointerModel;)V" />
+      <scope id="681803901115685003" at="37,49,38,21" />
+      <scope id="397101727194123965" at="54,59,55,81" />
+      <scope id="397101727194123524" at="58,55,59,68" />
+      <scope id="884095344014786763" at="66,46,67,46" />
+      <scope id="884095344014661258" at="81,54,82,18" />
+      <scope id="2476433916569952374" at="89,52,90,52" />
+      <scope id="985078568023854114" at="46,31,48,23" />
+      <scope id="397101727194120970" at="74,44,76,32" />
+      <scope id="884095344014786762" at="66,0,69,0">
         <var name="it" id="884095344014786762" />
       </scope>
-      <scope id="397101727194123959" at="45,0,49,0">
-        <var name="checkboxState" id="397101727194123963" />
-      </scope>
-      <scope id="397101727194123518" at="49,0,53,0">
-        <var name="scope" id="397101727194123522" />
-      </scope>
-      <scope id="884095344014661253" at="69,37,73,27" />
-      <scope id="681803901115684998" at="34,0,39,0">
+      <scope id="681803901115684998" at="36,0,40,0">
         <var name="element" id="681803901115685001" />
       </scope>
-      <scope id="884095344014786589" at="55,70,60,8" />
-      <scope id="2476433916569952370" at="75,0,80,0" />
-      <scope id="397101727194120966" at="62,0,68,0" />
-      <scope id="884095344014786581" at="55,0,62,0">
+      <scope id="397101727194123959" at="53,0,57,0">
+        <var name="checkboxState" id="397101727194123963" />
+      </scope>
+      <scope id="397101727194123518" at="57,0,61,0">
+        <var name="scope" id="397101727194123522" />
+      </scope>
+      <scope id="884095344014661253" at="80,37,84,27" />
+      <scope id="985078568023854110" at="45,0,50,0" />
+      <scope id="884095344014786589" at="64,70,69,8" />
+      <scope id="2476433916569952370" at="87,0,92,0" />
+      <scope id="397101727194120966" at="72,0,78,0" />
+      <scope id="884095344014786581" at="64,0,71,0">
         <var name="nodes" id="884095344014786584" />
         <var name="project" id="884095344014786582" />
       </scope>
-      <scope id="884095344014661250" at="68,0,75,0" />
-      <scope id="397101727194120964" at="43,83,53,7" />
-      <scope id="397101727194120961" at="43,0,55,0">
+      <scope id="884095344014661250" at="79,0,86,0" />
+      <scope id="397101727194120964" at="51,83,61,7" />
+      <scope id="397101727194120961" at="51,0,63,0">
         <var name="nodes" id="397101727194120998" />
         <var name="project" id="397101727194120973" />
       </scope>
-      <scope id="681803901115684910" at="28,91,41,11" />
-      <scope id="681803901115684902" at="28,0,43,0">
+      <scope id="681803901115684910" at="29,91,42,11" />
+      <scope id="681803901115684902" at="29,0,44,0">
         <var name="chooseByNameModel" id="681803901115794932" />
         <var name="project" id="681803901115684903" />
       </scope>
-      <unit id="884095344014786762" at="56,58,60,5" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$3" />
-      <unit id="681803901115684996" at="33,25,39,5" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$1" />
-      <unit id="397101727194123504" at="44,22,53,5" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$2" />
-      <unit id="397101727194120959" at="24,0,81,0" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog" />
+      <unit id="884095344014786762" at="65,58,69,5" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$3" />
+      <unit id="681803901115684996" at="35,25,40,5" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$1" />
+      <unit id="397101727194123504" at="52,22,61,5" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$2" />
+      <unit id="397101727194120959" at="24,0,93,0" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog" />
     </file>
   </root>
   <root nodeRef="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)/890761188649854308">

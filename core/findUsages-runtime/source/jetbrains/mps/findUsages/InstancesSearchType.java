@@ -46,7 +46,7 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
   public Set<SNode> search(Set<SAbstractConcept> elements, SearchScope scope, @NotNull ProgressMonitor monitor) {
     assert !elements.contains(null);
 
-    CollectConsumer<SNode> consumer = new CollectConsumer(new HashSet<SNode>());
+    CollectConsumer<SNode> consumer = new CollectConsumer<>(new HashSet<SNode>());
     Collection<FindUsagesParticipant> participants = PersistenceFacade.getInstance().getFindUsagesParticipants();
 
     monitor.start("Finding usages...", participants.size() + 5);
