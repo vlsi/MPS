@@ -4,17 +4,17 @@ package jetbrains.mps.core.tool.environment.util;
 
 import jetbrains.mps.project.ProjectBase;
 import jetbrains.mps.project.FileBasedProject;
-import jetbrains.mps.util.MacroHelper;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.vfs.impl.IoFile;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.io.File;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.util.MacroHelper;
+import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.vfs.impl.IoFile;
+import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import org.jetbrains.annotations.Nullable;
 import org.jdom.Element;
-import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.ElementProjectDataSource;
 
 public class FileMPSProject extends ProjectBase implements FileBasedProject {
@@ -28,25 +28,26 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
     init();
   }
 
-  @Override
-  @NotNull
-  public String getName() {
-    return myProjectFile.getName();
-  }
-
   @NotNull
   private MacroHelper createMacroHelper() {
     return MacrosFactory.forProjectFile(new IoFile(getProjectFile().getPath()));
   }
 
   @Override
+  @NotNull
+  public String getName() {
+    return myProjectFile.getName();
+  }
+
+  @Override
   public void save() {
-    MacroHelper macroHelper = createMacroHelper();
-    new ProjectDescriptorPersistence(getProjectFile(), macroHelper).save(myProjectDescriptor);
+    MacroHelper helper = createMacroHelper();
+    new ProjectDescriptorPersistence(getProjectFile(), helper).save(myProjectDescriptor);
   }
 
   /**
-   * @deprecated
+   * 
+   * @deprecated 
    */
   @Deprecated
   @Override
@@ -55,21 +56,21 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
   }
 
   /**
+   * 
    * @return the element with xml description of the project
    */
   @Nullable
   private Element getElement() {
-    MacroHelper macroHelper = createMacroHelper();
-    return new ProjectDescriptorPersistence(getProjectFile(), macroHelper).loadProjectElement();
+    return new ProjectDescriptorPersistence(getProjectFile(), createMacroHelper()).loadProjectElement();
   }
 
   private void init() {
-    loadProjectDescriptorWithMacroHelper();
+    loadProjectDescriptorWithMacros();
     update();
     projectOpened();
   }
 
-  private void loadProjectDescriptorWithMacroHelper() {
+  private void loadProjectDescriptorWithMacros() {
     loadDescriptor(new ElementProjectDataSource(getElement(), getProjectFile(), createMacroHelper()));
   }
 

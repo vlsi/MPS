@@ -58,7 +58,6 @@ public class ModelSourceChangeTracker implements DataSourceListener {
     return dataSource.getTimestamp() != mySourceTimestamp;
   }
 
-
   @Override
   public void changed(DataSource source) {
     if (needsReloading(source)) {
