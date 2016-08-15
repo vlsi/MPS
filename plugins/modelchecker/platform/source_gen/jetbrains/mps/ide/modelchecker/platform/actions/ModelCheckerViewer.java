@@ -146,7 +146,9 @@ public class ModelCheckerViewer extends JPanel {
       }
     }).where(new IWhereFilter<ModelCheckerIssue>() {
       public boolean accept(ModelCheckerIssue sr) {
-        return sr instanceof ModelCheckerIssue.NodeIssue && SetSequence.fromSet(includedResultNodes).contains(((ModelCheckerIssue.NodeIssue) sr).getNode().getReference()) && sr.isFixable() || sr instanceof ModelCheckerIssue.ModelIssue && SetSequence.fromSet(includedResultModels).contains(((ModelCheckerIssue.ModelIssue) sr).getModel()) && sr.isFixable();
+        boolean isNodeIssueAndFixable = sr instanceof ModelCheckerIssue.NodeIssue && SetSequence.fromSet(includedResultNodes).contains(((ModelCheckerIssue.NodeIssue) sr).getNode().getReference()) && sr.isFixable();
+        boolean isModelIssueAndFixable = sr instanceof ModelCheckerIssue.ModelIssue && SetSequence.fromSet(includedResultModels).contains(((ModelCheckerIssue.ModelIssue) sr).getModel()) && sr.isFixable();
+        return isNodeIssueAndFixable || isModelIssueAndFixable;
       }
     }).toListSequence();
 
