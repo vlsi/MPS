@@ -347,7 +347,7 @@ public class UsagesTree extends MPSTree {
     }
 
     BaseNodeData data = root.getData();
-    if (nodeCategories.contains(data.getRole()) || data.isResultNode()) {
+    if (nodeCategories.contains(data.getRole()) || data.isPathTail()) {
       UsagesTreeNode node = new UsagesTreeNode(root);
 
       for (UsagesTreeNode child : children) {
@@ -683,16 +683,16 @@ public class UsagesTree extends MPSTree {
 
     @Override
     public int getToggleClickCount() {
-      return isResult() ? -1 : 2;
+      return isPathTail() ? -1 : 2;
     }
 
-    private boolean isResult() {
-      return getUserObject() != null && getUserObject().getData().isResultNode();
+    private boolean isPathTail() {
+      return getUserObject() != null && getUserObject().getData().isPathTail();
     }
 
     @Override
     public void doubleClick() {
-      if (isResult()) {
+      if (isPathTail()) {
         goByNodeLink(false, true);
       }
     }

@@ -32,8 +32,8 @@ public abstract class AbstractResultNodeData extends BaseNodeData {
   }
 
   public AbstractResultNodeData(PathItemRole role, @NotNull String caption,
-      @NotNull String additionalInfo, boolean isExpanded, boolean isResultNode, boolean resultsSection) {
-    super(role, caption, additionalInfo, isExpanded, isResultNode, resultsSection);
+      @NotNull String additionalInfo, boolean isExpanded, boolean isPathTail, boolean resultsSection) {
+    super(role, caption, additionalInfo, isExpanded, isPathTail, resultsSection);
   }
 
   @Override

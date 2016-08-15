@@ -45,8 +45,8 @@ public class NodeNodeData extends AbstractResultNodeData {
 
   private SNodeReference myNodePointer;
 
-  public NodeNodeData(PathItemRole role, @Nullable String caption, @NotNull SNode pathObject, boolean isResultNode, boolean resultsSection) {
-    super(role, caption != null ? caption : snodeRepresentation(pathObject), nodeAdditionalInfo(pathObject), false, isResultNode, resultsSection);
+  public NodeNodeData(PathItemRole role, @Nullable String caption, @NotNull SNode pathObject, boolean isPathTail, boolean resultsSection) {
+    super(role, caption != null ? caption : snodeRepresentation(pathObject), nodeAdditionalInfo(pathObject), false, isPathTail, resultsSection);
     myNodePointer = pathObject.getReference();
   }
 
