@@ -681,7 +681,7 @@ public class SNodeOperations {
     return node.getReference(SPropertyOperations.getString(linkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")));
   }
   public static Iterable<SNode> ofConcept(Iterable<SNode> nodes, SAbstractConcept concept) {
-    if (concept == null) {
+    if (concept == null || nodes == null) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
     InstanceOfCondition condition = new InstanceOfCondition(concept).tolerateNulls();
