@@ -49,7 +49,7 @@ public final class MPSFileTypesManager {
       List<String> names = UniPath.fromString(fileName).getNames();
       if (!names.isEmpty()) {
         names = names.subList(0, names.size() - 1);
-        if (names.stream().anyMatch(dirName -> dirName.contains(matchingString))) {
+        if (names.stream().anyMatch(dirName -> dirName.equals(matchingString))) {
           return true;
         }
       }
