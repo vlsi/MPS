@@ -37,6 +37,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.model.SModelBase;
+import com.intellij.openapi.application.ModalityState;
 import javax.swing.JOptionPane;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.FileUtil;
@@ -175,7 +176,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     }
     final IFile file = ((FileDataSource) model.getSource()).getFile();
     final File backupFile = doBackup(file, model);
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         // do nothing if conflict was already resolved and model was saved or reloaded or unregistered 
         if (!(model.isChanged()) || model.getRepository() == null) {
@@ -212,7 +213,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
           });
         }
       }
-    });
+    }, ModalityState.NON_MODAL);
   }
 
   private static boolean showDeletedFromDiskQuestion(SModel inMemory, File backupFile) {
