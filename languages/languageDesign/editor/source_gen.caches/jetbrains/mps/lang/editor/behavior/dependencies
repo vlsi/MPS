@@ -3630,7 +3630,7 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.behavior.MigrateManuallynnotation_BehaviorDescriptor" file="MigrateManuallynnotation_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.behavior.MigrateManuallyAnnotation_BehaviorDescriptor" file="MigrateManuallyAnnotation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>

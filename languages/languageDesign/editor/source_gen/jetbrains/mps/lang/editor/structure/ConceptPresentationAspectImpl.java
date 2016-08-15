@@ -202,7 +202,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_LayoutConstraintStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MatchingLabelStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MaxWidthStyleClassItem = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MigrateManuallynnotation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_MigrateManuallyAnnotation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MigratedSideTransformMenuAttribute = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MigratedToAnnotation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ModelAccessor = new ConceptPresentationBuilder().create();
@@ -791,7 +791,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 189:
         return props_MaxWidthStyleClassItem;
       case 190:
-        return props_MigrateManuallynnotation;
+        return props_MigrateManuallyAnnotation;
       case 191:
         return props_MigratedSideTransformMenuAttribute;
       case 192:
