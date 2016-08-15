@@ -15,14 +15,13 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.actions.runtime.impl.ChildSubstituteActionsUtil;
+import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -33,8 +32,6 @@ import org.jetbrains.mps.openapi.module.SRepository;
  * @author simon
  */
 public class OldNewSubstituteUtil {
-
-  private static final String ACTIONS_LANG = "jetbrains.mps.lang.actions";
 
   public static boolean areOldActionsApplicableToNode(SNode node, SRepository repository) {
     return areOldActionsApplicableToConcept(node.getConcept(), repository);
@@ -52,7 +49,7 @@ public class OldNewSubstituteUtil {
     return areOldActionsApplicableToConcept(sourceNode, repository);
   }
 
-  public static boolean areOldActionsApplicableToConcept(SNode concept, SRepository repository) {
+  public static boolean areOldActionsApplicableToConcept(@Nullable SNode concept, @NotNull SRepository repository) {
     if (concept == null) {
       return false;
     }
@@ -60,27 +57,18 @@ public class OldNewSubstituteUtil {
     if (model == null) {
       return false;
     }
+
     final SModule module = model.getModule();
+    if (!(module instanceof Language)) {
+      return false;
+    }
 
-    final LanguageRuntime actionsLanguageRuntime = LanguageRegistry.getInstance(repository).getLanguage(ACTIONS_LANG);
-    if (actionsLanguageRuntime == null) {
+    LanguageRuntime languageRuntime = LanguageRegistry.getInstance(repository).getLanguage((Language) module);
+    if (languageRuntime == null) {
       return false;
     }
-    final SLanguage language = MetaAdapterFactory.getLanguage(actionsLanguageRuntime.getId(), ACTIONS_LANG);
-    if (!module.getUsedLanguages().contains(language)) {
-      return false;
-    }
-    final int usedLanguageVersion = module.getUsedLanguageVersion(language);
-    return usedLanguageVersion <= 0;
+
+    ActionAspectDescriptor aspect = languageRuntime.getAspect(ActionAspectDescriptor.class);
+    return aspect != null && aspect.hasBuilders();
   }
-
-  private static boolean hasActionBuilders(SNode concept) {
-    SModel model = concept.getModel();
-    if (model == null) {
-      return false;
-    }
-    SModule sourceModule = model.getModule();
-    return sourceModule instanceof Language && ChildSubstituteActionsUtil.hasActionBuilders(((Language) sourceModule));
-  }
-
 }
