@@ -22,7 +22,7 @@ public class MigrateActions extends MigrationScriptBase {
   }
   public void doExecute(final SModule m) {
     new SideTransformActionsMigrationHelper(m, true).migrate();
-    new SubstituteMigrationHelper(m).migrate();
+    new SubstituteActionsMigrationHelper(m).migrate();
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, "jetbrains.mps.lang.actions"), 0);

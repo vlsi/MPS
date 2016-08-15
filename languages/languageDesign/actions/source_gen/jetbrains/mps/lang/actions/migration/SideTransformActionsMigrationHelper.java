@@ -76,12 +76,13 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
             return myMigrateConceptFromSameLanguage == isDefinedInSameLanguage(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x108facec6d6L, "applicableConcept")));
           }
         })) {
-          if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(builder)), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder"))) {
-            addToConceptAndTagToBuilderMap(actions, builder);
-            addToBuilderToMenuMap(actions, builder);
-          } else {
+          if (!(SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(builder)), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder")))) {
             AttributeOperations.setAttribute(builder, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7ce019826543db5L, "jetbrains.mps.lang.actions.structure.MigrateManuallyAnnotation")), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7ce019826543db5L, "jetbrains.mps.lang.actions.structure.MigrateManuallyAnnotation")));
+            continue;
           }
+
+          addToConceptAndTagToBuilderMap(actions, builder);
+          addToBuilderToMenuMap(actions, builder);
         }
       }
       Set<SNode> actionsKeySet = myActionsToConceptAndTagToBuilder.keySet();
