@@ -302,6 +302,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     return null;
   }
 
+  @Nullable
   public LanguageRuntime getLanguage(Language language) {
     return getLanguage(MetaAdapterByDeclaration.getLanguage(language));
   }
