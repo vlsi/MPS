@@ -20,6 +20,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ServiceKt;
 import com.intellij.openapi.components.impl.stores.StoreUtil;
+import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.PlatformMpsTest;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.vfs.IdeaFile;
@@ -51,6 +52,14 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Tests for Rename and Delete actions.
+ * Also checks some elementary vfs changes.
+ * Note: several {@link #writeCommandInEDTAndWait(Runnable)} calls
+ * are needed because of the absent undo realisation for the 'create module' actions.
+ *
+ * Also {@link StoreAwareProjectManager#flushChangedAlarm()} requires zero-level command
+ */
 public final class ModuleIDETests extends PlatformMpsTest {
   private final static String MODULE_NAME_PREFIX = "TEST";
   private static MPSProject ourProject;
@@ -218,6 +227,9 @@ public final class ModuleIDETests extends PlatformMpsTest {
       Assert.assertEquals(lang.getModuleName(), newModuleName);
       Assert.assertTrue(ourProject.getProjectModules().contains(lang));
 
+    });
+    writeCommandInEDTAndWait(() -> {
+      @NotNull Language lang = langRef.get();
       projectBackup.restoreFromBackup();
       refreshProjectRecursively();
 
@@ -266,7 +278,7 @@ public final class ModuleIDETests extends PlatformMpsTest {
   private void refreshProjectRecursively() {
     IdeaFile projectFile = new IdeaFileSystem().getFile(ourProject.getProjectFile().toString());
     projectFile.refresh(new DefaultCachingContext(true, true));
-    ((StoreAwareProjectManager) StoreAwareProjectManager.getInstance()).flushChangedAlarm();
+    ((StoreAwareProjectManager) ProjectManager.getInstance()).flushChangedAlarm(); // needed to trigger refresh on the project folder components in test environment
   }
 
   @NotNull
