@@ -63,7 +63,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
       addMigrationAnnotation(SLinkOperations.getTarget(myBuilder, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x1182d38806cL, "commonInitializer")), whereMigrated, false);
     }
   }
-  /*package*/ List<SNode> createMenuPartsAndCommentOld() {
+  /*package*/ List<SNode> createMenuParts() {
     AttributeOperations.setAttribute(myBuilder, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7ce01982652a98aL, "jetbrains.mps.lang.actions.structure.MigratedToAnnotation")), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7ce01982652a98aL, "jetbrains.mps.lang.actions.structure.MigratedToAnnotation")));
     if ((SLinkOperations.getTarget(myBuilder, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x10cd4e11b18L, "precondition")) != null) || ListSequence.fromList(SLinkOperations.getChildren(myBuilder, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x1182d1f5f8bL, "variable"))).isNotEmpty()) {
       SNode group = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d224047L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Group"));

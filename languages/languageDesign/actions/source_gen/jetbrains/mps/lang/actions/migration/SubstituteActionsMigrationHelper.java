@@ -32,7 +32,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.ArrayList;
-import jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -280,7 +279,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
       SubstituteBuildersMigrationHelper helper = new SubstituteBuildersMigrationHelper(builder, conditionVariable, root);
       List<SNode> parts = helper.createMenuPartsAndAddMigrationAnnotations();
       result.addAll(parts);
-      CommentUtil.commentOut(builder);
     }
     return result;
   }
