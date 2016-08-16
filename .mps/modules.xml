@@ -214,6 +214,8 @@
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/jetbrains.mps.execution.impl/jetbrains.mps.execution.impl.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/library/jetbrains.mps.execution.library.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/plugin/jetbrains.mps.execution.languages.msd" folder="workbench.execution" />
+      <modulePath path="$PROJECT_DIR$/plugins/httpsupport/jetbrains.mps.ide.httpsupport.manager.msd" folder="platform.httpsupport" />
+      <modulePath path="$PROJECT_DIR$/plugins/httpsupport/language/jetbrains.mps.ide.httpsupport.mpl" folder="platform.httpsupport" />
       <modulePath path="$PROJECT_DIR$/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="platform" />
       <modulePath path="$PROJECT_DIR$/plugins/jetpad/solutions/jetbrains.jetpad/jetbrains.jetpad.msd" folder="core.aspects.editor.diagram" />
       <modulePath path="$PROJECT_DIR$/plugins/migrationAssistant/solutions/component/jetbrains.mps.migration.component.msd" folder="platform.migration" />

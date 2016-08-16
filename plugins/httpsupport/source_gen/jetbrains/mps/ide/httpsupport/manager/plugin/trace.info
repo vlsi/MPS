@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082113931046:jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539:jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <root nodeRef="r:05ff02e5-9836-4ae9-a454-eab43fa58c8f(jetbrains.mps.ide.httpsupport.manager.plugin)/4060668212259736923">
+    <file name="MPSRequestManager.java">
+      <node id="4060668212259749396" at="23,64,24,46" concept="6" />
+      <node id="8905019541642954471" at="30,171,31,28" concept="5" />
+      <node id="8905019541642958152" at="32,11,33,46" concept="1" />
+      <node id="8905019541642909046" at="35,44,36,60" concept="1" />
+      <node id="8905019541642957975" at="37,9,38,17" concept="0" />
+      <node id="8905019541642904937" at="40,29,41,61" concept="1" />
+      <node id="8905019541642925828" at="41,61,42,20" concept="6" />
+      <node id="8905019541642977261" at="44,5,45,0" concept="7" />
+      <node id="8905019541642977752" at="45,0,46,17" concept="6" />
+      <node id="4060668212259736923" at="48,0,49,0" concept="8" trace="LOG" />
+      <node id="8905019541642909046" at="34,29,37,9" concept="3" />
+      <node id="4060668212259748934" at="22,0,26,0" concept="4" trace="isSupported#(Lio/netty/handler/codec/http/FullHttpRequest;)Z" />
+      <node id="8905019541642980014" at="39,7,43,7" concept="3" />
+      <node id="8905019541642956276" at="31,28,39,7" concept="9" />
+      <node id="8905019541642929951" at="29,156,44,5" concept="2" />
+      <node id="4060668212259753571" at="28,0,48,0" concept="4" trace="process#(Lio/netty/handler/codec/http/QueryStringDecoder;Lio/netty/handler/codec/http/FullHttpRequest;Lio/netty/channel/ChannelHandlerContext;)Z" />
+      <scope id="4060668212259748941" at="23,64,24,46" />
+      <scope id="8905019541642956278" at="32,11,33,46" />
+      <scope id="8905019541642909046" at="35,44,36,60" />
+      <scope id="8905019541642980016" at="40,29,42,20" />
+      <scope id="4060668212259748934" at="22,0,26,0">
+        <var name="request" id="4060668212259748938" />
+      </scope>
+      <scope id="8905019541642956279" at="34,0,38,17">
+        <var name="e" id="8905019541642956281" />
+      </scope>
+      <scope id="8905019541642956285" at="34,29,38,17" />
+      <scope id="8905019541642929957" at="30,171,43,7">
+        <var name="response" id="8905019541642954472" />
+      </scope>
+      <scope id="8905019541642929951" at="29,156,44,5">
+        <var name="handler" id="8905019541642929953" />
+      </scope>
+      <scope id="4060668212259753585" at="29,156,46,17" />
+      <scope id="4060668212259753571" at="28,0,48,0">
+        <var name="context" id="4060668212259753581" />
+        <var name="decoder" id="4060668212259753575" />
+        <var name="request" id="4060668212259753578" />
+      </scope>
+      <unit id="4060668212259736923" at="20,0,50,0" name="jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestManager" />
+    </file>
+  </root>
+  <root nodeRef="r:05ff02e5-9836-4ae9-a454-eab43fa58c8f(jetbrains.mps.ide.httpsupport.manager.plugin)/8905019541642880645">
+    <file name="IHttpRequestHandler.java">
+      <node id="8905019541642880982" at="12,0,14,0" concept="4" trace="tryHandle#(Lio/netty/handler/codec/http/HttpRequest;)Lio/netty/handler/codec/http/HttpResponse;" />
+      <scope id="8905019541642880982" at="12,0,14,0">
+        <var name="request" id="8905019541642881047" />
+      </scope>
+      <unit id="8905019541642880645" at="10,0,15,0" name="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" />
+    </file>
+  </root>
+</debug-info>
+
