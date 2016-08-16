@@ -236,7 +236,7 @@ public class MethodResolveUtil {
         indexOfArg++;
       }
     }
-    return new Pair<SNode, Boolean>(ListSequence.fromList(candidates).first(), good);
+    return new Pair<SNode, Boolean>(ListSequence.fromList(candidates).first(), (ListSequence.fromList(actualArgs).isEmpty() ? false : good));
   }
 
   private static List<SNode> selectByParameterTypeNode(@Nullable SNode typeOfArg, int indexOfArg, List<SNode> candidates, final Map<SNode, SNode> typeByTypeVar, boolean mostSpecific, boolean isWeak) {
