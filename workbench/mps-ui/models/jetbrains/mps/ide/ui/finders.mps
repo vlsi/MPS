@@ -4429,7 +4429,53 @@
       </node>
       <node concept="TZ5HA" id="ZVS8OJnJum" role="TZ5H$">
         <node concept="1dT_AC" id="ZVS8OJnJun" role="1dT_Ay">
-          <property role="1dT_AB" value="SeearchResult include both modules and models." />
+          <property role="1dT_AB" value="SearchResult include both modules and models." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="376iOPjTbXU" role="TZ5H$">
+        <node concept="1dT_AC" id="376iOPjTbXV" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="376iOPjTkfX" role="TZ5H$">
+        <node concept="1dT_AC" id="376iOPjTkfY" role="1dT_Ay">
+          <property role="1dT_AB" value="Note, this finder looks up SLanguage, not a Language module uses, thus it shall not be used when" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="376iOPjTkfd" role="TZ5H$">
+        <node concept="1dT_AC" id="376iOPjTkfe" role="1dT_Ay">
+          <property role="1dT_AB" value="we care about module dependencies." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="376iOPjTkf$" role="TZ5H$">
+        <node concept="1dT_AC" id="376iOPjTkf_" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="376iOPjTkgP" role="TZ5H$">
+        <node concept="1dT_AC" id="376iOPjTkgQ" role="1dT_Ay">
+          <property role="1dT_AB" value="Unlike " />
+        </node>
+        <node concept="1dT_AA" id="376iOPjTkhl" role="1dT_Ay">
+          <node concept="92FcH" id="376iOPjTkhr" role="qph3F">
+            <node concept="TZ5HA" id="376iOPjTkht" role="2XjZqd" />
+            <node concept="VXe08" id="376iOPjToK2" role="92FcQ">
+              <ref role="VXe09" node="pogCqdRFxj" resolve="LanguageModelImportFinder" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="376iOPjTkhk" role="1dT_Ay">
+          <property role="1dT_AB" value=", this finder focuses on modules. I'm not confident we need" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="376iOPjTqjq" role="TZ5H$">
+        <node concept="1dT_AC" id="376iOPjTqjr" role="1dT_Ay">
+          <property role="1dT_AB" value="both finders, though." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="376iOPjTkgo" role="TZ5H$">
+        <node concept="1dT_AC" id="376iOPjTkgp" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
         </node>
       </node>
       <node concept="TZ5HA" id="ZVS8OJnH1e" role="TZ5H$">

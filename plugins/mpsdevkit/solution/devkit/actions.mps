@@ -14568,46 +14568,6 @@
     <property role="3GE5qa" value="Menu.ProjectPane.Module" />
     <property role="2uzpH1" value="Find Usages" />
     <property role="TrG5h" value="FindModuleUsage" />
-    <node concept="2XrIbr" id="6gJrPYfVXI1" role="32lrUH">
-      <property role="TrG5h" value="providerForModule" />
-      <node concept="3uibUv" id="6gJrPYfVXWf" role="3clF45">
-        <ref role="3uigEE" to="9erk:~IResultProvider" resolve="IResultProvider" />
-      </node>
-      <node concept="3clFbS" id="6gJrPYfVXI3" role="3clF47">
-        <node concept="3cpWs6" id="6gJrPYfVYQL" role="3cqZAp">
-          <node concept="2YIFZM" id="6gJrPYfVYU$" role="3cqZAk">
-            <ref role="1Pybhc" to="ngmm:~FindUtils" resolve="FindUtils" />
-            <ref role="37wK5l" to="ngmm:~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.IResultProvider" resolve="makeProvider" />
-            <node concept="3K4zz7" id="6gJrPYfW9Qk" role="37wK5m">
-              <node concept="2ZW3vV" id="6gJrPYfW8LU" role="3K4Cdx">
-                <node concept="3uibUv" id="6gJrPYfW9eL" role="2ZW6by">
-                  <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-                </node>
-                <node concept="37vLTw" id="6gJrPYfW8xV" role="2ZW6bz">
-                  <ref role="3cqZAo" node="6gJrPYfVY53" resolve="module" />
-                </node>
-              </node>
-              <node concept="2ShNRf" id="6gJrPYfVYU_" role="3K4GZi">
-                <node concept="1pGfFk" id="6gJrPYfVYUA" role="2ShVmc">
-                  <ref role="37wK5l" to="kkd6:3_o1C0wGpEX" resolve="ModuleUsagesFinder" />
-                </node>
-              </node>
-              <node concept="2ShNRf" id="6gJrPYfVY65" role="3K4E3e">
-                <node concept="1pGfFk" id="6gJrPYfVY66" role="2ShVmc">
-                  <ref role="37wK5l" to="kkd6:ZVS8OJmVFy" resolve="LanguageImportFinder" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="6gJrPYfVY53" role="3clF46">
-        <property role="TrG5h" value="module" />
-        <node concept="3uibUv" id="6gJrPYfVY52" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-        </node>
-      </node>
-    </node>
     <node concept="1DS2jV" id="6gJrPYfVx6g" role="1NuT2Z">
       <property role="TrG5h" value="module" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MODULE" resolve="MODULE" />
@@ -14660,17 +14620,17 @@
           <node concept="3cpWsn" id="6gJrPYfVXeG" role="3cpWs9">
             <property role="TrG5h" value="provider" />
             <property role="3TUv4t" value="true" />
-            <node concept="2OqwBi" id="6gJrPYfWa5_" role="33vP2m">
-              <node concept="2WthIp" id="6gJrPYfWa5C" role="2Oq$k0" />
-              <node concept="2XshWL" id="6gJrPYfWa5E" role="2OqNvi">
-                <ref role="2WH_rO" node="6gJrPYfVXI1" resolve="providerForModule" />
-                <node concept="37vLTw" id="6gJrPYfWa7G" role="2XxRq1">
-                  <ref role="3cqZAo" node="6gJrPYfVXev" resolve="module" />
-                </node>
-              </node>
-            </node>
             <node concept="3uibUv" id="6gJrPYfVXeK" role="1tU5fm">
               <ref role="3uigEE" to="9erk:~IResultProvider" resolve="IResultProvider" />
+            </node>
+            <node concept="2YIFZM" id="6gJrPYfVYU$" role="33vP2m">
+              <ref role="37wK5l" to="ngmm:~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.IResultProvider" resolve="makeProvider" />
+              <ref role="1Pybhc" to="ngmm:~FindUtils" resolve="FindUtils" />
+              <node concept="2ShNRf" id="6gJrPYfVYU_" role="37wK5m">
+                <node concept="1pGfFk" id="6gJrPYfVYUA" role="2ShVmc">
+                  <ref role="37wK5l" to="kkd6:3_o1C0wGpEX" resolve="ModuleUsagesFinder" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
