@@ -25,25 +25,20 @@ import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataNode;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTree;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.AbstractResultNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.BaseNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData;
-import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.openapi.navigation.EditorNavigator;
-import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import javax.swing.AbstractAction;
 import javax.swing.Icon;
@@ -520,10 +515,9 @@ public class UsagesTree extends MPSTree {
 
   private void openCurrentNodeLink(boolean inProjectIfPossible, boolean focus) {
     UsagesTreeNode treeNode = getCurrentNode();
-    if (treeNode == null) {
-      return;
+    if (treeNode != null) {
+      treeNode.goByNodeLink(inProjectIfPossible, focus);
     }
-    goByNodeLink(treeNode, inProjectIfPossible, focus);
   }
 
   private void openNewlySelectedNodeLink(TreeSelectionEvent e, boolean inProjectIfPossible, boolean focus) {
@@ -532,31 +526,8 @@ public class UsagesTree extends MPSTree {
       return;
     }
     Object treeNode = path.getLastPathComponent();
-    if (!(treeNode instanceof UsagesTreeNode)) {
-      return;
-    }
-    goByNodeLink((UsagesTreeNode) treeNode, inProjectIfPossible, focus);
-  }
-
-  private void goByNodeLink(final UsagesTreeNode treeNode, final boolean inProjectIfPossible, final boolean focus) {
-    if (treeNode.getUserObject() == null) {
-      return;
-    }
-
-    BaseNodeData data = treeNode.getUserObject().getData();
-    if (data instanceof NodeNodeData) {
-      SNodeReference node = ((NodeNodeData) data).getNodePointer();
-      if (inProjectIfPossible) {
-        new ProjectPaneNavigator(myProject).shallFocus(focus).select(node);
-      } else {
-        new EditorNavigator(myProject).shallFocus(focus).selectIfChild().open(node);
-      }
-    } else if (data instanceof ModelNodeData) {
-      SModelReference model = ((ModelNodeData) data).getModelReference();
-      new ProjectPaneNavigator(myProject).shallFocus(focus).select(model);
-    } else if (data instanceof ModuleNodeData) {
-      SModuleReference module = ((ModuleNodeData) data).getModuleReference();
-      new ProjectPaneNavigator(myProject).shallFocus(focus).select(module);
+    if (treeNode instanceof UsagesTreeNode) {
+      ((UsagesTreeNode) treeNode).goByNodeLink(inProjectIfPossible, focus);
     }
   }
 
@@ -681,8 +652,9 @@ public class UsagesTree extends MPSTree {
 
   public void setAutoscroll(boolean autoscroll) {
     myAutoscroll = autoscroll;
+
     if (getCurrentNode() != null) {
-      goByNodeLink(getCurrentNode(), false, false);
+      getCurrentNode().goByNodeLink(false, false);
     }
   }
 
@@ -715,13 +687,20 @@ public class UsagesTree extends MPSTree {
     }
 
     private boolean isResult() {
-      return getUserObject().getData().isResultNode();
+      return getUserObject() != null && getUserObject().getData().isResultNode();
     }
 
     @Override
     public void doubleClick() {
       if (isResult()) {
-        openCurrentNodeLink(false, true);
+        goByNodeLink(false, true);
+      }
+    }
+
+    /*package*/ void goByNodeLink(boolean inProjectIfPossible, boolean focus) {
+      BaseNodeData data = getUserObject().getData();
+      if (data instanceof AbstractResultNodeData) {
+        ((AbstractResultNodeData) data).navigate(myProject, inProjectIfPossible, focus);
       }
     }
 
@@ -739,10 +718,7 @@ public class UsagesTree extends MPSTree {
     }
 
     List<UsagesTreeNode> internalGetChildren() {
-      if (children == null) {
-        return new ArrayList<UsagesTreeNode>();
-      }
-      return children;
+      return children == null ? Collections.emptyList() : children;
     }
   }
 }

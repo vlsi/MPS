@@ -35,6 +35,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItem;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathProvider;
 import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Pair;
 import org.jdom.Element;
@@ -258,6 +259,11 @@ public class DataTree implements IExternalizeable, IChangeListener {
             @Override
             public Icon getIcon() {
               return IdeIcons.LANGUAGE_ICON;
+            }
+
+            @Override
+            public void navigate(Project mpsProject, boolean useProjectTree, boolean focus) {
+              new ProjectPaneNavigator(mpsProject).shallFocus(focus).select(l);
             }
           };
         } else if (currentIdObject instanceof Pair) {
