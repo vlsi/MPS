@@ -56,7 +56,7 @@ public class TestDepViewer_Test extends BaseTransformationTest {
       DependencyViewerScope testScope = new DependencyViewerScope(myProject.getRepository());
       testScope.add(this.model1());
 
-      Iterable<SNode> nodes = finder.getNodes(testScope);
+      Iterable<SNode> nodes = testScope.getNodes();
       SearchResults targetSearchResults = finder.findRefsFromScopeToOuter(nodes, testScope, new EmptyProgressMonitor());
       Assert.assertFalse(targetSearchResults.getSearchResults().isEmpty());
     }
@@ -65,7 +65,7 @@ public class TestDepViewer_Test extends BaseTransformationTest {
       DependencyViewerScope testScope = new DependencyViewerScope(myProject.getRepository());
       testScope.add(this.model3());
 
-      Iterable<SNode> nodes = finder.getNodes(testScope);
+      Iterable<SNode> nodes = testScope.getNodes();
       SearchResults targetSearchResults = finder.findRefsFromScopeToOuter(nodes, testScope, new EmptyProgressMonitor());
       Assert.assertTrue(targetSearchResults.getSearchResults().isEmpty());
     }
@@ -76,7 +76,7 @@ public class TestDepViewer_Test extends BaseTransformationTest {
       DependencyViewerScope targetScope = new DependencyViewerScope(myProject.getRepository());
       targetScope.add(this.model2());
 
-      Iterable<SNode> nodes = finder.getNodes(testScope);
+      Iterable<SNode> nodes = testScope.getNodes();
       SearchResults refSearchResults = finder.getRefsBetweenScopes(nodes, testScope, targetScope, new EmptyProgressMonitor());
       Assert.assertFalse(refSearchResults.getSearchResults().isEmpty());
     }
@@ -87,7 +87,7 @@ public class TestDepViewer_Test extends BaseTransformationTest {
       DependencyViewerScope targetScope = new DependencyViewerScope(myProject.getRepository());
       targetScope.add(this.model3());
 
-      Iterable<SNode> nodes = finder.getNodes(testScope);
+      Iterable<SNode> nodes = testScope.getNodes();
       SearchResults refSearchResults = finder.getRefsBetweenScopes(nodes, testScope, targetScope, new EmptyProgressMonitor());
       Assert.assertTrue(refSearchResults.getSearchResults().isEmpty());
     }

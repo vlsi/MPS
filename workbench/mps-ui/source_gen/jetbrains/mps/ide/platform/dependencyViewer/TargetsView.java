@@ -8,6 +8,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Enumeration;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataNode;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.BaseNodeData;
@@ -42,12 +43,12 @@ public class TargetsView extends UsagesView {
     usagesTree.setShowPopupMenu(false);
   }
   public void selectModule(SModule module) {
-    MPSTreeNode node = findModule(module);
+    MPSTreeNode node = findModule(module.getModuleReference());
     if (node != null) {
       getTreeComponent().getTree().selectNode(node);
     }
   }
-  private MPSTreeNode findModule(SModule module) {
+  private MPSTreeNode findModule(SModuleReference module) {
     UsagesTree usagesTree = getTreeComponent().getTree();
     Enumeration nodes = usagesTree.getRootNode().breadthFirstEnumeration();
     while (nodes.hasMoreElements()) {
@@ -59,7 +60,7 @@ public class TargetsView extends UsagesView {
       if (userObject instanceof DataNode) {
         BaseNodeData data = ((DataNode) userObject).getData();
         if (data instanceof ModuleNodeData) {
-          if (((ModuleNodeData) data).getModule() == module) {
+          if (module.equals(((ModuleNodeData) data).getModuleReference())) {
             return treeNode;
           }
         }
@@ -87,13 +88,13 @@ public class TargetsView extends UsagesView {
         if (userObject instanceof DataNode) {
           BaseNodeData data = ((DataNode) userObject).getData();
           if (data instanceof ModelNodeData) {
-            scope.add(as_w7qo2b_a0a0a0a1a2a3a3e(data, ModelNodeData.class).getModelReference());
+            scope.add(((ModelNodeData) data).getModelReference());
           }
           if (data instanceof ModuleNodeData) {
-            scope.add(as_w7qo2b_a0a0a0a2a2a3a3e(data, ModuleNodeData.class).getModuleReference());
+            scope.add(((ModuleNodeData) data).getModuleReference());
           }
           if (data instanceof NodeNodeData) {
-            scope.add(as_w7qo2b_a0a0a0a3a2a3a3e(data, NodeNodeData.class).getNodePointer());
+            scope.add(((NodeNodeData) data).getNodePointer());
           }
         }
       }
@@ -141,15 +142,6 @@ public class TargetsView extends UsagesView {
     }
   }
   private static <T> T as_w7qo2b_a0a0a2a3(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
-  private static <T> T as_w7qo2b_a0a0a0a1a2a3a3e(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
-  private static <T> T as_w7qo2b_a0a0a0a2a2a3a3e(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
-  private static <T> T as_w7qo2b_a0a0a0a3a2a3a3e(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -18,7 +18,6 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -87,10 +86,10 @@ public class DependenciesPanel extends JPanel {
     ProgressManager.getInstance().run(new Task.Modal(myProject, "Analyzing dependencies", true) {
       @Override
       public void run(@NotNull final ProgressIndicator indicator) {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        myMPSProject.getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
             ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
-            mySourceNodes = myReferencesFinder.getNodes(sourceScope);
+            mySourceNodes = sourceScope.getNodes();
             try {
               if (myIsMeta) {
                 monitor.start("computing used languages", Sequence.fromIterable(mySourceNodes).count());
@@ -123,7 +122,7 @@ public class DependenciesPanel extends JPanel {
       public void run(@NotNull ProgressIndicator indicator) {
         final ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
         final Wrappers._T<SearchResults> result = new Wrappers._T<SearchResults>();
-        ModelAccess.instance().runReadAction(new Runnable() {
+        myMPSProject.getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
             try {
               if (myIsMeta) {

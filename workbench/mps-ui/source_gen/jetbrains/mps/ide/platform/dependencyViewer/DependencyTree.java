@@ -16,7 +16,6 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.smodel.ModelReadRunnable;
@@ -65,7 +64,7 @@ public class DependencyTree extends MPSTree {
         return;
       }
       final DependencyViewerScope scope = new DependencyViewerScope(myProject.getRepository());
-      ModelAccess.instance().runReadAction(new Runnable() {
+      myProject.getModelAccess().runReadAction(new Runnable() {
         public void run() {
           for (TreePath path : paths) {
             MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
