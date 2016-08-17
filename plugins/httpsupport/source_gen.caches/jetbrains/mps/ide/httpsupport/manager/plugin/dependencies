@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" file="IHttpRequestHandler.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" file="HttpRequest.java">
     <classNode dependClassName="io.netty.handler.codec.http.HttpRequest" />
+    <classNode dependClassName="io.netty.handler.codec.http.QueryStringDecoder" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.io.NettyKt" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" file="IHttpRequestHandler.java">
     <classNode dependClassName="io.netty.handler.codec.http.HttpResponse" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
@@ -15,7 +24,11 @@
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Objects" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
     <classNode dependClassName="org.apache.log4j.Level" />

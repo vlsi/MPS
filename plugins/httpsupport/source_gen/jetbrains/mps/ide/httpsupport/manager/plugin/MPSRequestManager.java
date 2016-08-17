@@ -6,6 +6,7 @@ import org.jetbrains.ide.HttpRequestHandler;
 import org.jetbrains.annotations.NotNull;
 import io.netty.handler.codec.http.FullHttpRequest;
 import io.netty.handler.codec.http.HttpMethod;
+import java.util.Objects;
 import io.netty.handler.codec.http.QueryStringDecoder;
 import io.netty.channel.ChannelHandlerContext;
 import java.io.IOException;
@@ -14,6 +15,7 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
 import io.netty.handler.codec.http.HttpResponse;
 import org.apache.log4j.Level;
 import org.jetbrains.io.Responses;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -24,26 +26,51 @@ public class MPSRequestManager extends HttpRequestHandler {
     return request.method() == HttpMethod.GET;
   }
 
+  private boolean isSupportsByHandler(IHttpRequestHandler handler, HttpRequest request) {
+    String[] applicationIDSegments = getSegmentsFor(handler.applicationID());
+    String[] queryPathSegments = getSegmentsFor(request.getQueryPath());
+    if (queryPathSegments.length < applicationIDSegments.length) {
+      return false;
+    }
+    for (int i = 0; i < applicationIDSegments.length; i++) {
+      if (!(Objects.equals(queryPathSegments[i], applicationIDSegments[i]))) {
+        return false;
+      }
+    }
+    return true;
+  }
 
   @Override
   public boolean process(@NotNull QueryStringDecoder decoder, @NotNull FullHttpRequest request, @NotNull ChannelHandlerContext context) throws IOException {
+    HttpRequest boxedRequest = new HttpRequest(request, decoder);
+
     for (IHttpRequestHandler handler : Sequence.fromIterable(new ExtensionPoint<IHttpRequestHandler>("jetbrains.mps.ide.httpsupport.HttpRequestHandlerEP").getObjects())) {
-      HttpResponse response;
-      try {
-        response = handler.tryHandle(request);
-      } catch (Exception e) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("Request handler throws exception.", e);
+      if (isSupportsByHandler(handler, boxedRequest)) {
+        HttpResponse response;
+        try {
+          response = handler.tryHandle(boxedRequest);
+        } catch (Exception e) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
+            LOG.error("Request handler throws exception.", e);
+          }
+          continue;
         }
-        continue;
-      }
-      if (response != null) {
-        Responses.send(response, context.channel(), request);
-        return true;
+        if (response != null) {
+          Responses.send(response, context.channel(), request);
+          return true;
+        }
       }
     }
 
     return false;
+  }
+
+  private static String[] getSegmentsFor(String path) {
+    return Sequence.fromIterable(Sequence.fromArray(path.split("/"))).where(new IWhereFilter<String>() {
+      public boolean accept(String it) {
+        return (it != null && it.length() > 0);
+      }
+    }).toGenericArray(String.class);
   }
   protected static Logger LOG = LogManager.getLogger(MPSRequestManager.class);
 }
