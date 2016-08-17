@@ -28651,6 +28651,12 @@
           <ref role="3bR37D" node="7Kfy9QB6L62" resolve="jetbrains.mps.lang.findUsages" />
         </node>
       </node>
+      <node concept="1SiIV0" id="xobTEHbnBV" role="3bR37C">
+        <node concept="3bR9La" id="xobTEHbnBW" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" node="7Kfy9QB6Lfd" resolve="jetbrains.mps.findUsages.runtime" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="1l3spW" id="1diLdO26mQ6">

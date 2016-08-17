@@ -55,6 +55,7 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="urda" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.kernel.model(MPS.Core/)" />
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
+    <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1432,7 +1433,7 @@
           <node concept="3cpWsn" id="7vbFQ4bPXB_" role="3cpWs9">
             <property role="TrG5h" value="finders" />
             <node concept="10Q1$e" id="7vbFQ4bPXBA" role="1tU5fm">
-              <node concept="3uibUv" id="7vbFQ4bPXBB" role="10Q1$1">
+              <node concept="3uibUv" id="xobTEH9Nqd" role="10Q1$1">
                 <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
               </node>
             </node>
@@ -1443,7 +1444,7 @@
                     <ref role="37wK5l" to="5wna:6hha$XdHb04" resolve="AspectMethodsFinder" />
                   </node>
                 </node>
-                <node concept="3uibUv" id="7vbFQ4bPXBG" role="3g7fb8">
+                <node concept="3uibUv" id="xobTEHazMt" role="3g7fb8">
                   <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
                 </node>
               </node>
@@ -1878,7 +1879,7 @@
                                                 <ref role="3cqZAo" node="7XREFl2mvcd" resolve="it" />
                                               </node>
                                               <node concept="3Tsc0h" id="7XREFl2mvcw" role="2OqNvi">
-                                                <ref role="3TtcxE" to="tpee:fzclF7Y" />
+                                                <ref role="3TtcxE" to="tpee:fzclF7Y" resolve="parameter" />
                                               </node>
                                             </node>
                                             <node concept="34oBXx" id="7XREFl2mvcx" role="2OqNvi" />
