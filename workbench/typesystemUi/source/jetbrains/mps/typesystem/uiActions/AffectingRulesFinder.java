@@ -16,6 +16,7 @@
 
 package jetbrains.mps.typesystem.uiActions;
 
+import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -38,7 +39,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class AffectingRulesFinder implements IFinder {
+public class AffectingRulesFinder extends BaseFinder {
+  @Override
+  public String getDescription() {
+    return "Affecting Rules";
+  }
+
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SNode term = (SNode) query.getObjectHolder().getObject();
     SNode root = term.getContainingRoot();

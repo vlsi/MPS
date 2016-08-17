@@ -16,6 +16,23 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1178893518978:jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <root nodeRef="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)/1937421445113686258">
+    <file name="BaseFinder.java">
+      <node id="1937421445113694126" at="8,34,9,68" concept="10" />
+      <node id="1937421445113689539" at="9,68,10,38" concept="9" />
+      <node id="1937421445113689283" at="7,0,12,0" concept="7" trace="getDescription#()Ljava/lang/String;" />
+      <scope id="1937421445113689287" at="8,34,10,38" />
+      <scope id="1937421445113689283" at="7,0,12,0" />
+      <unit id="1937421445113686258" at="6,0,13,0" name="jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder" />
+    </file>
+  </root>
+  <root nodeRef="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)/1937421445113687419">
+    <file name="Finder.java">
+      <node id="1937421445113687439" at="7,0,8,0" concept="7" trace="getDescription#()Ljava/lang/String;" />
+      <scope id="1937421445113687439" at="7,0,8,0" />
+      <unit id="1937421445113687419" at="6,0,9,0" name="jetbrains.mps.ide.findusages.findalgorithm.finders.Finder" />
+    </file>
+  </root>
   <root nodeRef="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)/6443678531916429550">
     <file name="FinderUtils.java">
       <node id="1321355654840752580" at="24,51,25,21" concept="9" />
@@ -435,12 +452,12 @@
   </root>
   <root nodeRef="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)/8267733531687413176">
     <file name="IFinder.java">
-      <node id="8267733531687413178" at="10,0,11,0" concept="7" trace="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-      <scope id="8267733531687413178" at="10,0,11,0">
+      <node id="8267733531687413178" at="16,0,17,0" concept="7" trace="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+      <scope id="8267733531687413178" at="16,0,17,0">
         <var name="monitor" id="8267733531687413183" />
         <var name="query" id="8267733531687413181" />
       </scope>
-      <unit id="8267733531687413176" at="9,0,12,0" name="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
+      <unit id="8267733531687413176" at="14,0,18,0" name="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
     </file>
   </root>
 </debug-info>

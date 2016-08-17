@@ -139,7 +139,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
-    <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
+    <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerPreferencesPage" file="ModelCheckerPreferencesPage.java">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />

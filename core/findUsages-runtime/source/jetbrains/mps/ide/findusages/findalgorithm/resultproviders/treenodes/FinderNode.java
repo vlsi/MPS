@@ -18,16 +18,17 @@ package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.Finder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.FinderUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -36,6 +37,8 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 public class FinderNode extends BaseLeaf {
+  private static final Logger LOG = LogManager.getLogger(FinderNode.class);
+
   private static final String FINDER = "finder";
   private static final String GENERATED_FINDER = "generated_finder";
   private static final String CLASS_NAME = "class_name";
@@ -50,9 +53,10 @@ public class FinderNode extends BaseLeaf {
   }
 
   public String getTaskName() {
-    if (myFinder instanceof IInterfacedFinder) {
-      return ((IInterfacedFinder) myFinder).getDescription();
+    if (myFinder instanceof Finder) {
+      return ((Finder) myFinder).getDescription();
     } else {
+      LOG.warn("IFinder is deprecated and will be removed after 3.4. Please change " + myFinder.getClass().getName() + " accordingly");
       return myFinder.getClass().getName();
     }
   }

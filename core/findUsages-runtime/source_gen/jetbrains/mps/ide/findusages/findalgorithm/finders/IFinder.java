@@ -6,6 +6,12 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
+/**
+ * Use Finder instead
+ * 
+ * @deprecated 
+ */
+@Deprecated
 public interface IFinder {
   SearchResults find(SearchQuery query, ProgressMonitor monitor);
 }

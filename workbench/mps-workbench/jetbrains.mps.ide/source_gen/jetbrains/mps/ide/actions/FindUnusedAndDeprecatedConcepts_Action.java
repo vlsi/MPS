@@ -43,7 +43,7 @@ import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -158,7 +158,7 @@ public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
     FindUnusedAndDeprecatedConcepts_Action.this.showUsagesViewForNodes(conceptsToShow, _params);
   }
   /*package*/ void showUsagesViewForNodes(final List<SNodeReference> nodes, final Map<String, Object> _params) {
-    IResultProvider provider = FindUtils.makeProvider(new IFinder() {
+    IResultProvider provider = FindUtils.makeProvider(new BaseFinder() {
       @Override
       public SearchResults find(SearchQuery query, ProgressMonitor progress) {
         final SRepository repo = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository();
@@ -175,6 +175,10 @@ public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
           results.getSearchResults().add(new SearchResult<SNode>(node, "Uncategorized"));
         }
         return results;
+      }
+      @Override
+      public String getDescription() {
+        return "Specific Nodes";
       }
     });
     UsageToolOptions opt = new UsageToolOptions().allowRunAgain(false).navigateIfSingle(false).forceNewTab(false).notFoundMessage("Nothing");
