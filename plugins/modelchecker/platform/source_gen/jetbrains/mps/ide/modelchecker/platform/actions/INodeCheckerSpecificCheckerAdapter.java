@@ -14,8 +14,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
+import jetbrains.mps.errors.QuickFixProvider;
 
 public class INodeCheckerSpecificCheckerAdapter extends SpecificChecker {
   private INodeChecker myChecker;
@@ -39,18 +39,15 @@ public class INodeCheckerSpecificCheckerAdapter extends SpecificChecker {
     for (final SNode rootNode : SModelOperations.roots(model, null)) {
       SRepository repository = (myRepository != null ? myRepository : model.getRepository());
       for (final IErrorReporter errorReporter : SetSequence.fromSet(myChecker.getErrors(rootNode, repository))) {
-        QuickFixProvider provider = check_m7souj_a0a0b0d0h(errorReporter);
+        final QuickFix_Runtime quickFix = check_m7souj_a0a0b0d0h(check_m7souj_a0a0a1a3a7(errorReporter));
         IModelCheckerFix fix = null;
-        if (provider != null) {
-          final QuickFix_Runtime quickFix = provider.getQuickFix();
-          if (quickFix != null && provider.isExecutedImmediately()) {
-            fix = new IModelCheckerFix() {
-              public boolean doFix() {
-                quickFix.execute(errorReporter.getSNode());
-                return true;
-              }
-            };
-          }
+        if (quickFix != null) {
+          fix = new IModelCheckerFix() {
+            public boolean doFix() {
+              quickFix.execute(errorReporter.getSNode());
+              return true;
+            }
+          };
         }
         SpecificChecker.addIssue(results, errorReporter.getSNode(), errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), "typesystem", fix);
       }
@@ -58,7 +55,13 @@ public class INodeCheckerSpecificCheckerAdapter extends SpecificChecker {
     monitor.done();
     return results;
   }
-  private static QuickFixProvider check_m7souj_a0a0b0d0h(IErrorReporter checkedDotOperand) {
+  private static QuickFix_Runtime check_m7souj_a0a0b0d0h(QuickFixProvider checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getQuickFix();
+    }
+    return null;
+  }
+  private static QuickFixProvider check_m7souj_a0a0a1a3a7(IErrorReporter checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getIntentionProvider();
     }
