@@ -36791,9 +36791,6 @@
         <node concept="CtIbL" id="1wEcoXjIE4o" role="CtIbM">
           <property role="CtIbK" value="LEFT" />
         </node>
-        <node concept="CtIbL" id="1wEcoXjIE4p" role="CtIbM">
-          <property role="CtIbK" value="RIGHT" />
-        </node>
       </node>
       <node concept="L$LW2" id="1wEcoXjIE4q" role="1Qtc8A" />
       <node concept="mvV$s" id="1wEcoXjIE5B" role="1Qtc8A">
@@ -37745,15 +37742,15 @@
   <node concept="3ICXOK" id="1wEcoXjIEcw">
     <property role="TrG5h" value="ClassConceptModifiersExtendsAndImplements_ext_5" />
     <ref role="aqKnT" to="tpee:fz12cDA" resolve="ClassConcept" />
-    <node concept="yp4Wq" id="1wEcoXjIEcx" role="lGtFl">
-      <property role="yp4Ub" value="ext_5_RTransform" />
-    </node>
     <node concept="1Qtc8_" id="T1zfcyXgZV" role="IW6Ez">
       <node concept="3cWJ9i" id="T1zfcyXhv1" role="1Qtc8$">
         <node concept="CtIbL" id="T1zfcyXhv3" role="CtIbM">
           <property role="CtIbK" value="RIGHT" />
         </node>
       </node>
+    </node>
+    <node concept="yp4Wq" id="1wEcoXjIEcx" role="lGtFl">
+      <property role="yp4Ub" value="ext_5_RTransform" />
     </node>
     <node concept="1Qtc8_" id="1wEcoXjIEc$" role="IW6Ez">
       <node concept="3cWJ9i" id="1wEcoXjIEcy" role="1Qtc8$">
