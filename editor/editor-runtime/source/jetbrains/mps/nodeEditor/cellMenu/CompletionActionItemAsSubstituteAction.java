@@ -121,11 +121,13 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
     if (context == null) {
       myActionItem.execute(pattern);
     } else {
-      EditorCell contextCell = context.getContextCell();
-      if (contextCell instanceof jetbrains.mps.nodeEditor.cells.EditorCell) {
-        ((jetbrains.mps.nodeEditor.cells.EditorCell) contextCell).synchronizeViewWithModel();
-      }
-      context.getRepository().getModelAccess().executeCommand(new EditorCommandAdapter(() -> myActionItem.execute(pattern), context));
+      context.getRepository().getModelAccess().executeCommand(new EditorCommandAdapter(() -> {
+        EditorCell contextCell = context.getContextCell();
+        if (contextCell instanceof jetbrains.mps.nodeEditor.cells.EditorCell) {
+          ((jetbrains.mps.nodeEditor.cells.EditorCell) contextCell).synchronizeViewWithModel();
+        }
+        myActionItem.execute(pattern);
+      }, context));
     }
 
     // myActionItem should change selection itself, so return null here
