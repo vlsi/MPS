@@ -90,6 +90,9 @@
     <component>
       <implementation-class>jetbrains.mps.ide.platform.watching.WatchedRoots</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.core.project.PluginsPathMacroCrutch</implementation-class>
+    </component>
   </application-components>
 
   <xi:include href="../../../workbench/mps-platform/source/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
