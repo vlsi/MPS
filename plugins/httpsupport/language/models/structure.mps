@@ -46,7 +46,7 @@
   </registry>
   <node concept="1TIwiD" id="4PqLM5kX$4Q">
     <property role="TrG5h" value="HandleRequestFunction" />
-    <property role="34LRSv" value="handleRequest" />
+    <property role="34LRSv" value="handle" />
     <property role="EcuMT" value="5573986434797682998" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
@@ -65,6 +65,13 @@
       <property role="TrG5h" value="applicationID" />
       <property role="IQ2nx" value="8564455257661398345" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyj" id="5dkEk59WWZa" role="1TKVEi">
+      <property role="IQ2ns" value="6004610301070397386" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="canHandleFunction" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5dkEk59WRcm" resolve="CanHandleRequestFunction" />
     </node>
     <node concept="1TJgyj" id="4PqLM5kY3nJ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -89,6 +96,12 @@
       <property role="IQ2ns" value="3379970138993099791" />
       <ref role="20lvS9" node="4PqLM5kXdu0" resolve="RequestHandler" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="5dkEk59WRcm">
+    <property role="EcuMT" value="6004610301070373654" />
+    <property role="TrG5h" value="CanHandleRequestFunction" />
+    <property role="34LRSv" value="canHandle" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
 </model>
 

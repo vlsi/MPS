@@ -23,17 +23,16 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SReference;
 
-public final class HandleRequestFunction__BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f64136L, "jetbrains.mps.ide.httpsupport.structure.HandleRequestFunction");
+public final class CanHandleRequestFunction__BehaviorDescriptor extends BaseBHDescriptor {
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x5354a94149f37316L, "jetbrains.mps.ide.httpsupport.structure.CanHandleRequestFunction");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<List<SNode>> getParameters_idhEwIGRM = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getParameters").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIGRM").registry(REGISTRY).build();
+  public static final SMethod<SNode> getExpectedReturnType_idhEwIGRD = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getExpectedReturnType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIGRD").registry(REGISTRY).build();
   public static final SMethod<Boolean> showName_id1653mnvAgry = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("showName").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgry").registry(REGISTRY).build();
-  public static final SMethod<List<SNode>> getThrowableTypes_id5op8ooRkkc7 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getThrowableTypes").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5op8ooRkkc7").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getParameters_idhEwIGRM, showName_id1653mnvAgry, getThrowableTypes_id5op8ooRkkc7);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getParameters_idhEwIGRM, getExpectedReturnType_idhEwIGRD, showName_id1653mnvAgry);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -43,16 +42,14 @@ public final class HandleRequestFunction__BehaviorDescriptor extends BaseBHDescr
     ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f781d2L, "jetbrains.mps.ide.httpsupport.structure.HttpRequestParameter").getDeclarationNode());
     return result;
   }
+  /*package*/ static SNode getExpectedReturnType_idhEwIGRD(@NotNull SNode __thisNode__) {
+    return _quotation_createNode_du5fdt_a0a1();
+  }
   /*package*/ static boolean showName_id1653mnvAgry(@NotNull SAbstractConcept __thisConcept__) {
     return true;
   }
-  /*package*/ static List<SNode> getThrowableTypes_id5op8ooRkkc7(@NotNull SNode __thisNode__) {
-    List<SNode> types = new ArrayList<SNode>();
-    ListSequence.fromList(types).addElement(_quotation_createNode_usmhc9_a0a1a2());
-    return types;
-  }
 
-  /*package*/ HandleRequestFunction__BehaviorDescriptor() {
+  /*package*/ CanHandleRequestFunction__BehaviorDescriptor() {
     super(REGISTRY);
   }
 
@@ -70,8 +67,8 @@ public final class HandleRequestFunction__BehaviorDescriptor extends BaseBHDescr
     switch (methodIndex) {
       case 0:
         return (T) ((List<SNode>) getParameters_idhEwIGRM(node));
-      case 2:
-        return (T) ((List<SNode>) getThrowableTypes_id5op8ooRkkc7(node));
+      case 1:
+        return (T) ((SNode) getExpectedReturnType_idhEwIGRD(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -84,7 +81,7 @@ public final class HandleRequestFunction__BehaviorDescriptor extends BaseBHDescr
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 1:
+      case 2:
         return (T) ((Boolean) showName_id1653mnvAgry(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -102,11 +99,10 @@ public final class HandleRequestFunction__BehaviorDescriptor extends BaseBHDescr
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static SNode _quotation_createNode_usmhc9_a0a1a2() {
+  private static SNode _quotation_createNode_du5fdt_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
-    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), facade.createNodeId("~Exception")));
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d6513eL, "jetbrains.mps.baseLanguage.structure.BooleanType"), null, null, false);
     return quotedNode_1;
   }
 }

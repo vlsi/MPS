@@ -17,6 +17,7 @@
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" flags="ln" index="lj46D" />
+      <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
       <concept id="1237385578942" name="jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem" flags="ln" index="pVoyu" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
@@ -56,7 +57,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="6GArDv5Jyyo">
-    <ref role="1XX52x" to="ndib:2VC4eVY78fW" resolve="RequestHandlerExpression" />
+    <ref role="1XX52x" to="ndib:2VC4eVY78fW" resolve="HandlerAppIdExpression" />
     <node concept="3EZMnI" id="2VC4eVY78hw" role="2wV5jI">
       <node concept="2iRfu4" id="2VC4eVY78hx" role="2iSdaV" />
       <node concept="PMmxH" id="6GArDv5Jzll" role="3EZMnx">
@@ -113,6 +114,21 @@
         <node concept="pVoyu" id="4PqLM5kY3Xt" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
+        <node concept="ljvvj" id="4yQMaPlJ1t_" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="4yQMaPlJ1ud" role="3EZMnx">
+        <ref role="1NtTu8" to="ndib:5dkEk59WWZa" resolve="canHandleFunction" />
+        <node concept="lj46D" id="4yQMaPlJ1uJ" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="4yQMaPlJ1_i" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="4yQMaPlJ1_p" role="3EZMnx">
+        <property role="3F0ifm" value="" />
       </node>
       <node concept="3F1sOY" id="4PqLM5kY3PH" role="3EZMnx">
         <ref role="1NtTu8" to="ndib:4PqLM5kY3nJ" resolve="handleFunction" />

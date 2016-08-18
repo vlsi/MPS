@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private final ConceptPresentation props_CanHandleRequestFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HandleRequestFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HandlerAppIdExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HttpRequestParameter = new ConceptPresentationBuilder().create();
@@ -23,12 +24,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("817e4e70-961e-4a95-98a1-15e9f32231f1"), "jetbrains.mps.ide.httpsupport")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case 0:
-        return props_HandleRequestFunction;
+        return props_CanHandleRequestFunction;
       case 1:
-        return props_HandlerAppIdExpression;
+        return props_HandleRequestFunction;
       case 2:
-        return props_HttpRequestParameter;
+        return props_HandlerAppIdExpression;
       case 3:
+        return props_HttpRequestParameter;
+      case 4:
         return props_RequestHandler;
     }
     throw new IllegalStateException();

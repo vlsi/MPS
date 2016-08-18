@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myHandleRequestFunction__BehaviorDescriptor = new HandleRequestFunction__BehaviorDescriptor();
+  private final BHDescriptor myCanHandleRequestFunction__BehaviorDescriptor = new CanHandleRequestFunction__BehaviorDescriptor();
 
   public BehaviorAspectDescriptor() {
   }
@@ -21,10 +22,15 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_846f5o_a0e.get(cncpt);
+      Integer preIndex = indices_846f5o_a0f.get(cncpt);
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
+          if (true) {
+            return myCanHandleRequestFunction__BehaviorDescriptor;
+          }
+          break;
+        case 1:
           if (true) {
             return myHandleRequestFunction__BehaviorDescriptor;
           }
@@ -43,5 +49,5 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f64136L, "jetbrains.mps.ide.httpsupport.structure.HandleRequestFunction"));
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x5354a94149f37316L, "jetbrains.mps.ide.httpsupport.structure.CanHandleRequestFunction"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f64136L, "jetbrains.mps.ide.httpsupport.structure.HandleRequestFunction"));
 }
