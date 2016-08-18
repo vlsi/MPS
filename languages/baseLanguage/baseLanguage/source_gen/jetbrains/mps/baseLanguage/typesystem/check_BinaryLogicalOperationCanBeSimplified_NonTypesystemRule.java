@@ -27,7 +27,6 @@ public class check_BinaryLogicalOperationCanBeSimplified_NonTypesystemRule exten
     if (!(SNodeOperations.isInstanceOf(binaryOperation, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb7c3070eeL, "jetbrains.mps.baseLanguage.structure.AndExpression"))) && !(SNodeOperations.isInstanceOf(binaryOperation, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb8255689fL, "jetbrains.mps.baseLanguage.structure.OrExpression")))) {
       return;
     }
-
     SNode left = SLinkOperations.getTarget(binaryOperation, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"));
     SNode right = SLinkOperations.getTarget(binaryOperation, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"));
     SNode remainingNode;
@@ -35,27 +34,17 @@ public class check_BinaryLogicalOperationCanBeSimplified_NonTypesystemRule exten
     SModule module = SNodeOperations.getModel(binaryOperation).getModule();
 
     // Both sides could be eliminated 
-    String msg = "The binary logical expression " + ExpressionPresentationUtil.getExpressionPresentation(binaryOperation) + " can be simplified";
     if ((boolean) Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(binaryOperation)) {
       Object binaryValue = Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(binaryOperation, module);
       if (binaryValue != null && binaryValue instanceof Boolean) {
-        if (QFixUtil.hasAttributes(binaryOperation)) {
-          // no qfix 
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(binaryOperation, "The binary logical expression " + ExpressionPresentationUtil.getExpressionPresentation(binaryOperation) + " can be simplified", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8626468694779180757", null, errorTarget);
           {
-            MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(binaryOperation, msg, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "601282891628535041", null, errorTarget);
-          }
-        } else {
-          // with qfix 
-          {
-            MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(binaryOperation, msg, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8626468694779180757", null, errorTarget);
-            {
-              BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SimplifyWholeBinaryLogicalExpressionWithBooleanConstant_QuickFix", false);
-              intentionProvider.putArgument("operation", binaryOperation);
-              intentionProvider.putArgument("value", (Boolean) binaryValue);
-              _reporter_2309309498.addIntentionProvider(intentionProvider);
-            }
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SimplifyWholeBinaryLogicalExpressionWithBooleanConstant_QuickFix", false);
+            intentionProvider.putArgument("operation", binaryOperation);
+            intentionProvider.putArgument("value", (Boolean) binaryValue);
+            _reporter_2309309498.addIntentionProvider(intentionProvider);
           }
         }
         return;
@@ -82,25 +71,17 @@ public class check_BinaryLogicalOperationCanBeSimplified_NonTypesystemRule exten
       SPropertyOperations.set(SNodeOperations.cast(remainingNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), "" + (true));
     }
 
-    if (QFixUtil.hasAttributes(binaryOperation)) {
-      // no qfix 
+    {
+      MessageTarget errorTarget = new NodeMessageTarget();
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(binaryOperation, "The binary logical expression " + ExpressionPresentationUtil.getExpressionPresentation(binaryOperation) + " can be simplified", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3832376534028382760", null, errorTarget);
       {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(binaryOperation, msg, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "601282891628558324", null, errorTarget);
-      }
-    } else {
-      // with qfix 
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(binaryOperation, msg, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3832376534028382760", null, errorTarget);
-        {
-          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix", false);
-          intentionProvider.putArgument("remainingNode", remainingNode);
-          intentionProvider.putArgument("operation", binaryOperation);
-          _reporter_2309309498.addIntentionProvider(intentionProvider);
-        }
+        BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix", false);
+        intentionProvider.putArgument("remainingNode", remainingNode);
+        intentionProvider.putArgument("operation", binaryOperation);
+        _reporter_2309309498.addIntentionProvider(intentionProvider);
       }
     }
+
   }
   public SAbstractConcept getApplicableConcept() {
     return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation");

@@ -725,15 +725,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.QFixUtil" file="QFixUtil.java">
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.Queries" file="Queries.java">
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
@@ -892,6 +883,19 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.ReplaceAlwaysTrueFalseWithLiteral_QuickFix" file="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.ReplaceClassAntiquotationWithClassifierType_QuickFix" file="ReplaceClassAntiquotationWithClassifierType_QuickFix.java">
@@ -2066,10 +2070,8 @@
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_BinaryLogicalOperationCanBeSimplified_NonTypesystemRule" file="check_BinaryLogicalOperationCanBeSimplified_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.ExpressionPresentationUtil" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.QFixUtil" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -2747,9 +2749,8 @@
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_Expression_NonTypesystemRule" file="check_Expression_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.QFixUtil" />
+    <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -3377,9 +3378,7 @@
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_NotExpressionCanBeSimplified_NonTypesystemRule" file="check_NotExpressionCanBeSimplified_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.QFixUtil" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -3790,9 +3789,7 @@
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_TernaryOperationCanBeSimplified_NonTypesystemRule" file="check_TernaryOperationCanBeSimplified_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.QFixUtil" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />

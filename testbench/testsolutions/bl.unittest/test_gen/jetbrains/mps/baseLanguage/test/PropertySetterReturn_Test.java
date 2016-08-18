@@ -19,9 +19,9 @@ public class PropertySetterReturn_Test extends BaseTransformationTest {
     runTest("jetbrains.mps.baseLanguage.test.PropertySetterReturn_Test$TestBody", "test_NodeNotStatementCheck6696611297029671896", true);
   }
   @Test
-  public void test_NodeUnnamedWarningCheck2857825852305744070() throws Throwable {
+  public void test_NodeTheConditionIsAlwaysCheck2857825852305744070() throws Throwable {
     initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    runTest("jetbrains.mps.baseLanguage.test.PropertySetterReturn_Test$TestBody", "test_NodeUnnamedWarningCheck2857825852305744070", true);
+    runTest("jetbrains.mps.baseLanguage.test.PropertySetterReturn_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2857825852305744070", true);
   }
   @Test
   public void test_NodeNoReturnValueExpectedCheck6696611297029670760() throws Throwable {
@@ -41,7 +41,7 @@ public class PropertySetterReturn_Test extends BaseTransformationTest {
       SNode operation = SNodeOperations.cast(getRealNodeById("6696611297029671896"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));
       INodesTestMethod__BehaviorDescriptor.perform_id1kgh5YabdhC.invoke(operation, getRealNodeById("5772383102105101132"));
     }
-    public void test_NodeUnnamedWarningCheck2857825852305744070() throws Exception {
+    public void test_NodeTheConditionIsAlwaysCheck2857825852305744070() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("2857825852305744070"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));
       INodesTestMethod__BehaviorDescriptor.perform_id1kgh5YabdhC.invoke(operation, getRealNodeById("5772383102105103385"));
     }

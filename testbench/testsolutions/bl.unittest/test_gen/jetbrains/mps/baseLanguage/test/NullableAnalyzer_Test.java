@@ -34,9 +34,9 @@ public class NullableAnalyzer_Test extends BaseTransformationTest {
     runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_testDot6011730950863071516", true);
   }
   @Test
-  public void test_NodeUnnamedWarningCheck2857825852305621536() throws Throwable {
+  public void test_NodeTheConditionIsAlwaysCheck2857825852305621536() throws Throwable {
     initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeUnnamedWarningCheck2857825852305621536", true);
+    runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2857825852305621536", true);
   }
   @Test
   public void test_NodeOperationCanProduceNPECheck6923385624929530194() throws Throwable {
@@ -648,7 +648,7 @@ public class NullableAnalyzer_Test extends BaseTransformationTest {
       SNode operation = SNodeOperations.cast(getRealNodeById("6011730950863071516"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));
       INodesTestMethod__BehaviorDescriptor.perform_id1kgh5YabdhC.invoke(operation, getRealNodeById("6011730950863071458"));
     }
-    public void test_NodeUnnamedWarningCheck2857825852305621536() throws Exception {
+    public void test_NodeTheConditionIsAlwaysCheck2857825852305621536() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("2857825852305621536"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));
       INodesTestMethod__BehaviorDescriptor.perform_id1kgh5YabdhC.invoke(operation, getRealNodeById("1228615757308512340"));
     }
