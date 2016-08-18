@@ -131,7 +131,7 @@ public final class ModuleLoader {
     for (SModule module : removedModules) {
       newModuleToPathMap.remove(module);
       fireModuleRemoved(module);
-      new ModuleRepositoryFacade(myProject).unregisterModules(myProject);
+      new ModuleRepositoryFacade(myProject).unregisterModule(module);
     }
   }
 
