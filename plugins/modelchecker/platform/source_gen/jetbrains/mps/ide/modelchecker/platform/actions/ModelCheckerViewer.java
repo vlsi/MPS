@@ -62,6 +62,10 @@ public class ModelCheckerViewer extends JPanel {
   private JButton myFixButton;
   private UsagesView.RerunAction myCheckAction;
   public ModelCheckerViewer(Project project) {
+    this(project, true);
+  }
+
+  public ModelCheckerViewer(Project project, boolean canFix) {
     myIdeaProject = project;
     myProject = ProjectHelper.toMPSProject(project);
 
@@ -81,15 +85,16 @@ public class ModelCheckerViewer extends JPanel {
 
     JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     // XXX fix button might be an action along with others above (i.e. button in the left pane) 
-    myFixButton = new JButton("Perform Quick Fixes");
-    myFixButton.setToolTipText("Remove undeclared children and undeclared references, resolve links in included nodes");
-    myFixButton.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent event) {
-        performQuickFixes();
-      }
-    });
-    buttonPanel.add(myFixButton);
+    if (canFix) {
+      myFixButton = new JButton("Perform Quick Fixes");
+      myFixButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent event) {
+          performQuickFixes();
+        }
+      });
+      buttonPanel.add(myFixButton);
+    }
     add(buttonPanel, BorderLayout.SOUTH);
   }
   protected void close() {

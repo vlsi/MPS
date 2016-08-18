@@ -42,7 +42,7 @@ public class MigrationOutputUtil {
       return;
     }
 
-    ModelCheckerViewer v = new ModelCheckerViewer(project) {
+    ModelCheckerViewer v = new ModelCheckerViewer(project, false) {
       @Override
       protected void close() {
         ModelCheckerTool.getInstance(project).closeTab(this);
