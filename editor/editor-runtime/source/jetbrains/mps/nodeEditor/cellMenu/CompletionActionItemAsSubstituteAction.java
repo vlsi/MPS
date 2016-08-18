@@ -23,7 +23,6 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.menus.transformation.CommandPolicy;
 import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
 import jetbrains.mps.smodel.runtime.IconResource;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -132,9 +131,5 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
 
     // myActionItem should change selection itself, so return null here
     return null;
-  }
-
-  CompletionActionItem getActionItem() {
-    return myActionItem;
   }
 }
