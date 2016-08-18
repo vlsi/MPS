@@ -907,7 +907,11 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
    * the contract is not clear: when should this method be called?
    * it seems to be our internal mechanism which is exposed to the client
    * FIXME
+   * Obviously it must be internal module method:
+   * it must be done on the fs update (actually it is #update method here)
+   * Nobody must recount the module lang versions from the outside
    */
+  @ToRemove(version = 3.4)
   public void validateLanguageVersions() {
     assertCanChange();
     ModuleDescriptor md = getModuleDescriptor();
@@ -971,6 +975,14 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     oldLanguageVersions.putAll(newLanguageVersions);
   }
 
+  /**
+   * FIXME
+   * Obviously it must be internal module method:
+   * it must be done on the fs update (actually it is #update method here)
+   * Nobody must recount the module dependency versions from the outside
+   * AP
+   */
+  @ToRemove(version = 3.4)
   public void validateDependencyVersions() {
     assertCanChange();
     ModuleDescriptor md = getModuleDescriptor();
@@ -979,7 +991,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
     Map<SModuleReference, Integer> oldDepVersions = md.getDependencyVersions();
     Map<SModuleReference, Integer> newDepVersions = new HashMap<SModuleReference, Integer>();
-    List<SModule> visible = new ArrayList<SModule>();
+    Set<SModule> visible = new LinkedHashSet<SModule>();
     visible.add(this);
     visible.addAll(new GlobalModuleDependenciesManager(this).getModules(Deptype.VISIBLE));
     if (!md.hasDependencyVersions()) {

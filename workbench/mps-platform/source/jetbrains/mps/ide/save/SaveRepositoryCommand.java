@@ -59,7 +59,7 @@ public class SaveRepositoryCommand implements Runnable {
 //      public void run(@NotNull ProgressIndicator indicator) {
 //        indicator.setIndeterminate(true);
 //        WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(() -> {
-    myRepository.getModelAccess().runWriteAction(SaveRepositoryCommand.this);
+    execute();
 //              indicator.getModalityState()        });
 //      }
 //    });

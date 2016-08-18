@@ -339,6 +339,10 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     return LanguageAspect.STRUCTURE.get(this);
   }
 
+  /**
+   * fixme why generator saves language??
+   * generator is contained in language it must be the other way around!
+   */
   @Override
   public void save() {
     super.save();
