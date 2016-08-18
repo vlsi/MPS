@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.progress;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
@@ -41,7 +43,10 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
 
     myActiveChild = null;
     myDone = 0;
-    myTotal = Math.max(0, totalWork);
+    if (totalWork <= 0) {
+      throw new IllegalStateException("totalWork=" + totalWork);
+    }
+    myTotal = totalWork;
     myName = taskName;
     setTitleInternal(taskName);
     setStepInternal("");
@@ -67,7 +72,9 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
   @Override
   public void advance(int work) {
     check();
-    if (work == 0) return;
+    if (work == 0) {
+      return;
+    }
     if (myTotal <= 0) {
       throw new IllegalStateException("call start() first");
     }
@@ -149,7 +156,7 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     protected void setTitleInternal(String name) {
       if (kind == SubProgressKind.DEFAULT) {
         parent.setTitleInternal(combineTasks(parent.getTaskName(), name));
-      } else if(kind == SubProgressKind.REPLACING){
+      } else if (kind == SubProgressKind.REPLACING) {
         parent.setTitleInternal(name);
       } else if (kind == SubProgressKind.AS_COMMENT) {
         parent.setStepInternal(name);
@@ -190,16 +197,24 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
       if (parent.myActiveChild == this) {
         int startTicks = parent.myAfterActiveChild - parentTotalWork;
         double parentFraction = (startTicks + fraction * parentTotalWork) / parent.myTotal;
-        if (parentFraction < 0d) parentFraction = 0d;
-        if (parentFraction > 1d) parentFraction = 1d;
+        if (parentFraction < 0d) {
+          parentFraction = 0d;
+        }
+        if (parentFraction > 1d) {
+          parentFraction = 1d;
+        }
         parent.update(parentFraction);
       }
     }
   }
 
   private static String combineTasks(String taskName, String subTask) {
-    if (taskName == null || taskName.isEmpty()) return subTask;
-    if (subTask == null || subTask.isEmpty()) return taskName;
+    if (taskName == null || taskName.isEmpty()) {
+      return subTask;
+    }
+    if (subTask == null || subTask.isEmpty()) {
+      return taskName;
+    }
     return taskName.trim() + " :: " + subTask;
   }
 }
