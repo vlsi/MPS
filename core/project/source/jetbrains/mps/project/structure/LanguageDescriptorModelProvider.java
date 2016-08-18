@@ -237,7 +237,10 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
           addEngagedOnGenerationLanguage(aspectLanguage);
 
           //todo this line is a hack, fixing that the runtime solutions of languages engaged on generations are ignored at compilation
-          getSModel().addLanguage(aspectLanguage);
+          jetbrains.mps.smodel.SModel m = getSModel();
+          if (!m.usedLanguages().contains(aspectLanguage)){
+            m.addLanguage(aspectLanguage);
+          }
           updated = true;
         }
       }
