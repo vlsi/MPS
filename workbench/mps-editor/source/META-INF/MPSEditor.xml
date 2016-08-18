@@ -51,7 +51,9 @@
     </component>
 
     <component>
+      <interface-class>jetbrains.mps.nodeEditor.Highlighter</interface-class>
       <implementation-class>jetbrains.mps.nodeEditor.Highlighter</implementation-class>
+      <headless-implementation-class>jetbrains.mps.nodeEditor.EmptyHighlighter</headless-implementation-class>
     </component>
 
     <component>
