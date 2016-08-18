@@ -16,15 +16,7 @@
 package jetbrains.mps.ide;
 
 import com.intellij.configurationStore.StoreAwareProjectManager;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.components.ServiceKt;
-import com.intellij.openapi.components.impl.stores.StoreUtil;
-import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.PlatformMpsTest;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
-import jetbrains.mps.ide.vfs.IdeaFile;
-import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.MPSProject;
@@ -32,22 +24,16 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.refactoring.Renamer;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.vfs.CachingFile;
 import jetbrains.mps.vfs.DefaultCachingContext;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.actions.module.DeleteModuleHelper;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
-import java.io.File;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -55,62 +41,12 @@ import java.util.List;
 /**
  * Tests for Rename and Delete actions.
  * Also checks some elementary vfs changes.
- * Note: several {@link #writeCommandInEDTAndWait(Runnable)} calls
+ * Note: several {@link #invokeInCommand(Runnable)} calls
  * are needed because of the absent undo realisation for the 'create module' actions.
  *
  * Also {@link StoreAwareProjectManager#flushChangedAlarm()} requires zero-level command
  */
-public final class ModuleIDETests extends PlatformMpsTest {
-  private final static String MODULE_NAME_PREFIX = "TEST";
-  private static MPSProject ourProject;
-
-  private static int ourModuleCounter = 0;
-
-  private static String getNewModuleName() {
-    return MODULE_NAME_PREFIX + ++ourModuleCounter;
-  }
-
-  @Before
-  public void before() {
-    ourProject = (MPSProject) getEnvironment().createEmptyProject();
-  }
-
-  private void saveProjectInTest() {
-    StoreUtil.save(ServiceKt.getStateStore(ourProject.getProject()), ourProject.getProject());
-  }
-
-  @After
-  public void after() {
-    ourProject.dispose();
-  }
-
-  @Test
-  public void createSolution() {
-    String solutionName = getNewModuleName();
-    Reference<Solution> solutionRef = new Reference<>();
-    writeCommandInEDTAndWait(() -> solutionRef.set(NewModuleUtil.createSolution(solutionName, createNewDirInProject(), ourProject)));
-    writeCommandInEDTAndWait(() -> {
-      Solution solution = solutionRef.get();
-      Assert.assertNotNull(solution.getRepository());
-      Assert.assertEquals(solutionName, solution.getModuleName());
-      Assert.assertTrue(ourProject.getProjectModules().contains(solution));
-    });
-  }
-
-  @Test
-  public void createLanguage() {
-    String langName = getNewModuleName();
-    Reference<Language> langRef = new Reference<>();
-    writeCommandInEDTAndWait(() -> langRef.set(NewModuleUtil.createLanguage(langName, createNewDirInProject(), ourProject)));
-    writeCommandInEDTAndWait(() -> {
-      Language language = langRef.get();
-      Assert.assertNotNull(language.getRepository());
-      Assert.assertEquals(langName, language.getModuleName());
-      Assert.assertTrue(ourProject.getProjectModules().contains(language));
-
-      checkGenerators(language);
-    });
-  }
+public class ModuleIDETests extends ModuleInProjectTest {
 
   private void checkGenerators(@NotNull Language language) {
     Collection<Generator> generators = language.getGenerators();
@@ -120,11 +56,38 @@ public final class ModuleIDETests extends PlatformMpsTest {
   }
 
   @Test
+  public void createSolution() {
+    String solutionName = getNewModuleName();
+    Reference<Solution> solutionRef = new Reference<>();
+    invokeInCommand(() -> solutionRef.set(NewModuleUtil.createSolution(solutionName, createNewDirInProject(), ModuleIDETests.ourProject)));
+    invokeInCommand(() -> {
+      Solution solution = solutionRef.get();
+      Assert.assertNotNull(solution.getRepository());
+      Assert.assertEquals(solutionName, solution.getModuleName());
+      Assert.assertTrue(ModuleIDETests.ourProject.getProjectModules().contains(solution));
+    });
+  }
+
+  @Test
+  public void createLanguage() {
+    String langName = getNewModuleName();
+    Reference<Language> langRef = new Reference<>();
+    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(langName, createNewDirInProject(), ModuleIDETests.ourProject)));
+    invokeInCommand(() -> {
+      Language language = langRef.get();
+      Assert.assertNotNull(language.getRepository());
+      Assert.assertEquals(langName, language.getModuleName());
+      Assert.assertTrue(ModuleIDETests.ourProject.getProjectModules().contains(language));
+
+      checkGenerators(language);
+    });
+  }
+  @Test
   public void createDevkit() {
     String devkitName = getNewModuleName();
     Reference<DevKit> devkitRef = new Reference<>();
-    writeCommandInEDTAndWait(() -> devkitRef.set(NewModuleUtil.createDevKit(devkitName, createNewDirInProject(), ourProject)));
-    writeCommandInEDTAndWait(() -> {
+    invokeInCommand(() -> devkitRef.set(NewModuleUtil.createDevKit(devkitName, createNewDirInProject(), ourProject)));
+    invokeInCommand(() -> {
       DevKit devkit = devkitRef.get();
       Assert.assertNotNull(devkit.getRepository());
       Assert.assertEquals(devkitName, devkit.getModuleName());
@@ -138,8 +101,8 @@ public final class ModuleIDETests extends PlatformMpsTest {
     String moduleName = getNewModuleName();
     String newModuleName = getNewModuleName();
     Reference<Language> langRef = new Reference<>();
-    writeCommandInEDTAndWait(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
-    writeCommandInEDTAndWait(() -> {
+    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
+    invokeInCommand(() -> {
       Language lang = langRef.get();
       Renamer.renameModule(lang, newModuleName);
       Assert.assertEquals(newModuleName, lang.getModuleName());
@@ -155,8 +118,8 @@ public final class ModuleIDETests extends PlatformMpsTest {
   public void deleteModule() {
     String moduleName = getNewModuleName();
     Reference<Language> langRef = new Reference<>();
-    writeCommandInEDTAndWait(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
-    writeCommandInEDTAndWait(() -> {
+    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
+    invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
       deleteModule(lang, false);
       CachingFile descriptorFile = (CachingFile) lang.getDescriptorFile();
@@ -172,8 +135,8 @@ public final class ModuleIDETests extends PlatformMpsTest {
   public void deleteModuleWithFiles() {
     String moduleName = getNewModuleName();
     Reference<Language> langRef = new Reference<>();
-    writeCommandInEDTAndWait(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
-    writeCommandInEDTAndWait(() -> {
+    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
+    invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
       deleteModule(lang, true);
       CachingFile moduleSourceDir = (CachingFile) lang.getModuleSourceDir();
@@ -198,8 +161,8 @@ public final class ModuleIDETests extends PlatformMpsTest {
     String moduleName = getNewModuleName();
     String newModuleName = getNewModuleName();
     Reference<Language> langRef = new Reference<>();
-    writeCommandInEDTAndWait(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
-    writeCommandInEDTAndWait(() -> {
+    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
+    invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
       Renamer.renameModule(lang, newModuleName);
       deleteModule(lang, deleteFiles);
@@ -217,8 +180,8 @@ public final class ModuleIDETests extends PlatformMpsTest {
     String newModuleName = getNewModuleName();
     ProjectBackup projectBackup = new ProjectBackup(ourProject);
     Reference<Language> langRef = new Reference<>();
-    writeCommandInEDTAndWait(() -> langRef.set(NewModuleUtil.createLanguage(oldModuleName, createNewDirInProject(), ourProject)));
-    writeCommandInEDTAndWait(() -> {
+    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(oldModuleName, createNewDirInProject(), ourProject)));
+    invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
       saveProjectInTest();
       projectBackup.doBackup();
@@ -226,16 +189,15 @@ public final class ModuleIDETests extends PlatformMpsTest {
       saveProjectInTest();
       Assert.assertEquals(lang.getModuleName(), newModuleName);
       Assert.assertTrue(ourProject.getProjectModules().contains(lang));
-
-    });
-    writeCommandInEDTAndWait(() -> {
-      @NotNull Language lang = langRef.get();
       projectBackup.restoreFromBackup();
-      refreshProjectRecursively();
+    });
+    refreshProjectRecursively();
+    invokeInCommand(() -> {
+      @NotNull Language lang = langRef.get();
 
       List<SModule> projectModules = ourProject.getProjectModules();
       Assert.assertTrue(projectModules.size() == 1);
-      lang = (Language) projectModules.get(0); // the module is changed when SMPSProject#update is called (like in this case)
+      lang = (Language) projectModules.get(0); // the module is changed when MPSProject#update is called (like in this case)
       Assert.assertEquals(lang.getModuleName(), oldModuleName);
     });
   }
@@ -254,8 +216,8 @@ public final class ModuleIDETests extends PlatformMpsTest {
     String moduleName = getNewModuleName();
     ProjectBackup projectBackup = new ProjectBackup(ourProject);
     Reference<Language> langRef = new Reference<>();
-    writeCommandInEDTAndWait(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
-    writeCommandInEDTAndWait(() -> {
+    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
+    invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
       saveProjectInTest();
       projectBackup.doBackup();
@@ -263,48 +225,18 @@ public final class ModuleIDETests extends PlatformMpsTest {
       saveProjectInTest();
       Assert.assertTrue(ourProject.getProjectModules().isEmpty());
       projectBackup.restoreFromBackup();
+    });
       refreshProjectRecursively();
 
+    invokeInCommand(() -> {
       Assert.assertTrue(ourProject.getProjectModules().size() == 1);
-      lang = (Language) ourProject.getProjectModules().get(0); // the module is changed when SMPSProject#update is called (like in this case)
+      Language lang = (Language) ourProject.getProjectModules().get(0); // the module is changed when SMPSProject#update is called (like in this case)
       Assert.assertEquals(lang.getModuleName(), moduleName);
     });
   }
 
-  private void deleteModule(AbstractModule lang, boolean deleteFiles) {
+  void deleteModule(AbstractModule lang, boolean deleteFiles) {
     new DeleteModuleHelper(ourProject).deleteModules(Collections.singletonList(lang), false, deleteFiles);
-  }
-
-  private void refreshProjectRecursively() {
-    IdeaFile projectFile = new IdeaFileSystem().getFile(ourProject.getProjectFile().toString());
-    projectFile.refresh(new DefaultCachingContext(true, true));
-    ((StoreAwareProjectManager) ProjectManager.getInstance()).flushChangedAlarm(); // needed to trigger refresh on the project folder components in test environment
-  }
-
-  @NotNull
-  private String createNewDirInProject() {
-    String projectRoot = ourProject.getProjectFile().getAbsolutePath();
-    File file;
-    for (int i = 0; (file = new File(projectRoot, String.valueOf(i))).exists(); ++i);
-    return file.getAbsolutePath();
-  }
-
-  private void writeCommandInEDTAndWait(@NotNull Runnable runnable) {
-    Reference<Throwable> throwableReference = new Reference<>();
-    ModelAccess modelAccess = ourProject.getRepository().getModelAccess();
-    ApplicationManager.getApplication().invokeAndWait(() -> modelAccess.executeCommand(() -> modelAccess.runWriteAction(() -> {
-      try {
-        runnable.run();
-      } catch (VirtualMachineError e) {
-        throw e;
-      } catch (Throwable e) {
-        throwableReference.set(e);
-      }
-    })), ModalityState.NON_MODAL);
-    ENV.flushAllEvents();
-    if (!throwableReference.isNull()) {
-      throw new RuntimeException(throwableReference.get());
-    }
   }
 }
 

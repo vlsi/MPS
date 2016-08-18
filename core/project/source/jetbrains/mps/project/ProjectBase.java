@@ -166,8 +166,17 @@ public abstract class ProjectBase extends Project {
     checkNotDisposed();
     LOG.info("Project '" + getName() + "' is closing");
     myProjectManager.projectClosed(this);
-    getModelAccess().runWriteAction(() -> new ModuleRepositoryFacade(ProjectBase.this).unregisterModules(ProjectBase.this));
+    getModelAccess().runWriteAction(() -> {
+      new ModuleRepositoryFacade(ProjectBase.this).unregisterModules(ProjectBase.this);
+    });
+    getProjectModules().forEach(this::removeModule);
   }
+
+  @Override
+  public boolean isOpened() {
+    return ProjectManager.getInstance().getOpenedProjects().contains(this);
+  }
+
 
   @NotNull
   public String toString() {

@@ -21,6 +21,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.ide.vfs.ProjectRootListenerComponent;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.project.ModulePath;
@@ -32,11 +33,13 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
+import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
@@ -141,6 +144,10 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     } finally {
       LOG.info(String.format("Updating %s took %.3f s", this, (System.nanoTime() - beginTime) / 1e9));
     }
+  }
+
+  public static StandaloneMPSProject open(@NotNull String projectPath) throws JDOMException, InvalidDataException, IOException {
+    return (StandaloneMPSProject) MPSProject.open(projectPath);
   }
 
   // AP: fixme these two methods are working with the UI virtual paths; I want them to be extracted somewhere else

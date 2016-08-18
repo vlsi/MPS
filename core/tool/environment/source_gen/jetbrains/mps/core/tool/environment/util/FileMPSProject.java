@@ -4,6 +4,7 @@ package jetbrains.mps.core.tool.environment.util;
 
 import jetbrains.mps.project.ProjectBase;
 import jetbrains.mps.project.FileBasedProject;
+import jetbrains.mps.project.ProjectManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.io.File;
@@ -76,8 +77,20 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
 
   @Override
   public void dispose() {
-    projectClosed();
+    close();
     super.dispose();
+  }
+
+  @NotNull
+  public static FileMPSProject open(@NotNull String projectPath) {
+    return new FileMPSProject(new File(projectPath));
+  }
+
+  private boolean close() {
+    getProjectModules().forEach(this::removeModule);
+    projectClosed();
+    assert getProjectModules().isEmpty();
+    return true;
   }
 
   @Override
