@@ -49,10 +49,11 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
 
     monitor.start("Finding usages...", participants.size() + 4);
     try {
-      Collection<SModel> current = new LinkedHashSet<SModel>();;
+      Collection<SModel> current = new LinkedHashSet<SModel>();
+      ;
       Collection<SModel> simpleSearch = new LinkedHashSet<SModel>();
-      for (SModel m:IterableUtil.asCollection(scope.getModels())){
-        if (m instanceof EditableSModel && ((EditableSModel) m).isChanged()){
+      for (SModel m : IterableUtil.asCollection(scope.getModels())) {
+        if (m instanceof EditableSModel && ((EditableSModel) m).isChanged()) {
           simpleSearch.add(m);
         } else {
           current.add(m);
@@ -73,7 +74,7 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
       }
 
       ProgressMonitor subMonitor = monitor.subTask(4, SubProgressKind.DEFAULT);
-      subMonitor.start("", current.size());
+      subMonitor.start("", current.size() + simpleSearch.size());
       NodeUsageFinder nf = new NodeUsageFinder(nodes, consumer);
       showNoFastFindTipIfNeeded(current);
       current.addAll(simpleSearch);
