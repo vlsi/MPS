@@ -34,6 +34,10 @@ public class MoveDocTagsIntoTagsChildCollection extends MigrationScriptBase {
     return true;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     Iterable<SModel> models = m.getModels();
     Sequence.fromIterable(models).ofType(SModel.class).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel model) {
@@ -71,7 +75,6 @@ public class MoveDocTagsIntoTagsChildCollection extends MigrationScriptBase {
         JavaDocConverter.convertTags(it);
       }
     });
-    return null;
   }
   @Override
   public Iterable<Problem> check(SModule m) {

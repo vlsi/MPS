@@ -38,6 +38,10 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
     return true;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     {
       final GeneratedMatchingPattern pattern = new Pattern_10dat7t2je9d7(_quotation_createNode_fgay1s_a0a0a5());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
@@ -71,7 +75,6 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
         }
       });
     }
-    return null;
   }
   @Override
   public Iterable<Problem> check(SModule m) {

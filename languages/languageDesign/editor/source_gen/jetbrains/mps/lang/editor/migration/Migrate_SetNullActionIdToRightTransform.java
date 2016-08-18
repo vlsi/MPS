@@ -25,6 +25,10 @@ public class Migrate_SetNullActionIdToRightTransform extends MigrationScriptBase
     return false;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     {
       final SearchScope scope = CommandUtil.createScope(m);
       QueryExecutionContext context = new QueryExecutionContext() {
@@ -43,7 +47,6 @@ public class Migrate_SetNullActionIdToRightTransform extends MigrationScriptBase
         }
       });
     }
-    return null;
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor"), 2);

@@ -32,12 +32,15 @@ public class MigrateConceptNodeParameter extends MigrationScriptBase {
     return true;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     Sequence.fromIterable(getNodesToMigrate(m)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         SNodeOperations.replaceWithAnother(it, _quotation_createNode_q4h85_a0a0a0a0a0g(it));
       }
     });
-    return null;
   }
   @Override
   public Iterable<Problem> check(SModule m) {

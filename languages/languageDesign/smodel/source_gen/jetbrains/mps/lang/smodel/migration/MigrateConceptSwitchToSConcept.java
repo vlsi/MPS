@@ -33,6 +33,10 @@ public class MigrateConceptSwitchToSConcept extends MigrationScriptBase {
     return true;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     {
       final SearchScope scope = CommandUtil.createScope(m);
       QueryExecutionContext context = new QueryExecutionContext() {
@@ -72,7 +76,6 @@ public class MigrateConceptSwitchToSConcept extends MigrationScriptBase {
         }
       });
     }
-    return null;
   }
   @Override
   public Iterable<Problem> check(SModule m) {

@@ -34,6 +34,10 @@ public class Migrate_EditorCellModelConditionsConsideringChildAttributes extends
     return false;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     {
       final SearchScope scope = CommandUtil.createScope(m);
       QueryExecutionContext context = new QueryExecutionContext() {
@@ -97,7 +101,6 @@ public class Migrate_EditorCellModelConditionsConsideringChildAttributes extends
         }
       });
     }
-    return null;
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor"), 0);
@@ -133,7 +136,7 @@ public class Migrate_EditorCellModelConditionsConsideringChildAttributes extends
     if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
       return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110e123bce7L, "jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation"));
     } else if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"))) {
-      if (eq_3lt69g_a0a0a1a6(node.getContainmentLink(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"))) {
+      if (eq_3lt69g_a0a0a1a7(node.getContainmentLink(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"))) {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral"));
       } else {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral"));
@@ -162,7 +165,7 @@ public class Migrate_EditorCellModelConditionsConsideringChildAttributes extends
     if (!((SNodeOperations.isInstanceOf(grandParent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))))) {
       return false;
     }
-    boolean isLeft = eq_3lt69g_a0a6a9(parent.getContainmentLink(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"));
+    boolean isLeft = eq_3lt69g_a0a6a01(parent.getContainmentLink(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"));
     SNode otherExpression;
     if (isLeft) {
       otherExpression = SLinkOperations.getTarget(SNodeOperations.cast(grandParent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"));
@@ -175,7 +178,7 @@ public class Migrate_EditorCellModelConditionsConsideringChildAttributes extends
     }
     {
       SAbstractConcept cncpt = SNodeOperations.getConcept(grandParent);
-      Integer preIndex = indices_3lt69g_l0j.get(cncpt);
+      Integer preIndex = indices_3lt69g_l0k.get(cncpt);
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         default:
@@ -288,11 +291,11 @@ public class Migrate_EditorCellModelConditionsConsideringChildAttributes extends
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_3lt69g_l0j = buildConceptIndices();
-  private static boolean eq_3lt69g_a0a0a1a6(Object a, Object b) {
+  private static final Map<SAbstractConcept, Integer> indices_3lt69g_l0k = buildConceptIndices();
+  private static boolean eq_3lt69g_a0a0a1a7(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_3lt69g_a0a6a9(Object a, Object b) {
+  private static boolean eq_3lt69g_a0a6a01(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

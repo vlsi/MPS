@@ -41,6 +41,10 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
     return true;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     {
       final GeneratedMatchingPattern pattern = new Pattern_1xaun2ykvsnf6(_quotation_createNode_q6klpg_a0a0a5());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
@@ -115,7 +119,6 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
         }
       });
     }
-    return null;
   }
   @Override
   public Iterable<Problem> check(SModule m) {

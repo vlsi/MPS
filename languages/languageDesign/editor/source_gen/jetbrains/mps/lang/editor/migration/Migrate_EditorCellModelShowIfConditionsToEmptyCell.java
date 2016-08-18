@@ -31,6 +31,10 @@ public class Migrate_EditorCellModelShowIfConditionsToEmptyCell extends Migratio
     return false;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     {
       final SearchScope scope = CommandUtil.createScope(m);
       QueryExecutionContext context = new QueryExecutionContext() {
@@ -49,7 +53,6 @@ public class Migrate_EditorCellModelShowIfConditionsToEmptyCell extends Migratio
         SLinkOperations.setTarget(cellModel, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb05cdc7L, 0x3a4d559b42e5cbL, "emptyCellModel"), _quotation_createNode_i6fkmm_a0c0b0a0h());
       }
     }
-    return null;
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor"), 1);

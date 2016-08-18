@@ -24,7 +24,10 @@ public class OfAspectCheckMigration extends MigrationScriptBase {
     return false;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
     return null;
+  }
+  public void doExecute(final SModule m) {
   }
   @Override
   public Iterable<Problem> check(SModule m) {

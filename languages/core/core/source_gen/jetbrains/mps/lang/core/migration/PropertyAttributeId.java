@@ -37,6 +37,10 @@ public class PropertyAttributeId extends MigrationScriptBase {
     return true;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     Iterable<SModel> models = m.getModels();
     Iterable<SNode> propertyAttributes = Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel model) {
@@ -60,7 +64,6 @@ public class PropertyAttributeId extends MigrationScriptBase {
         attribute.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x129f3f612792fc5cL, "linkId"), MetaIdHelper.getAssociation(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(attribute)).serialize());
       }
     });
-    return null;
   }
   @Override
   public Iterable<Problem> check(SModule m) {

@@ -24,6 +24,10 @@ public class PatternNodeToQuotation extends MigrationScriptBase {
     return true;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     {
       final SearchScope scope = CommandUtil.createScope(m);
       QueryExecutionContext context = new QueryExecutionContext() {
@@ -42,7 +46,6 @@ public class PatternNodeToQuotation extends MigrationScriptBase {
         }
       });
     }
-    return null;
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, "jetbrains.mps.lang.pattern"), 0);

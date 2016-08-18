@@ -39,6 +39,10 @@ public class AddNecessaryParenthsToNotExpressions extends MigrationScriptBase {
     return true;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     {
       final GeneratedMatchingPattern pattern = new Pattern_10dat7t2je1ad(_quotation_createNode_fbexqr_a0a0a5());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
@@ -72,7 +76,6 @@ public class AddNecessaryParenthsToNotExpressions extends MigrationScriptBase {
         }
       });
     }
-    return null;
   }
   @Override
   public Iterable<Problem> check(SModule m) {

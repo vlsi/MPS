@@ -29,10 +29,13 @@ public class MigrateCellsWithSideTransforms extends MigrationScriptBase {
     return false;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     if (m instanceof Language) {
       new CellsWithSideTransformMigrationHelper(m).migrate();
     }
-    return null;
   }
   @Override
   public Iterable<Problem> check(SModule m) {

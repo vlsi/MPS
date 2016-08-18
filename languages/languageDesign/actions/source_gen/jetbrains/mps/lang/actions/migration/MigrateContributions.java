@@ -29,9 +29,12 @@ public class MigrateContributions extends MigrationScriptBase {
     return false;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     final Map<SModule, SNode> actions = getDataCollector().collectData(m, new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, "jetbrains.mps.lang.actions"), 0));
     new SideTransformActionsMigrationHelper(m, false).migrate();
-    return null;
   }
   @Override
   public Iterable<Problem> check(SModule m) {
