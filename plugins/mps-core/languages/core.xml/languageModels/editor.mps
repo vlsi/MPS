@@ -2,7 +2,7 @@
 <model ref="r:2f32078d-2a84-4fef-b050-97e346d25159(jetbrains.mps.core.xml.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="2" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -67,7 +67,7 @@
       <concept id="562388756457499018" name="jetbrains.mps.lang.editor.structure.MigratedToAnnotation" flags="ng" index="xBawi">
         <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
       </concept>
-      <concept id="562388756460228274" name="jetbrains.mps.lang.editor.structure.MigrateManuallynnotation" flags="ng" index="xG$WE" />
+      <concept id="562388756460228274" name="jetbrains.mps.lang.editor.structure.MigrateManuallyAnnotation" flags="ng" index="xG$WE" />
       <concept id="562388756446465666" name="jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute" flags="ng" index="yp4Wq">
         <property id="562388756446465811" name="transformTag" index="yp4Ub" />
       </concept>

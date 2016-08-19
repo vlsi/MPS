@@ -27,7 +27,7 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
 
   @Override
   public boolean hasBuilders() {
-    return true;
+    return false;
   }
   private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"ExponentialOperation"};
 }

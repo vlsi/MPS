@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="2" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
@@ -123,7 +123,7 @@
       <concept id="562388756457499018" name="jetbrains.mps.lang.editor.structure.MigratedToAnnotation" flags="ng" index="xBawi">
         <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
       </concept>
-      <concept id="562388756460228274" name="jetbrains.mps.lang.editor.structure.MigrateManuallynnotation" flags="ng" index="xG$WE" />
+      <concept id="562388756460228274" name="jetbrains.mps.lang.editor.structure.MigrateManuallyAnnotation" flags="ng" index="xG$WE" />
       <concept id="562388756446465666" name="jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute" flags="ng" index="yp4Wq">
         <property id="562388756446465811" name="transformTag" index="yp4Ub" />
       </concept>
@@ -21174,7 +21174,7 @@
   </node>
   <node concept="24kQdi" id="7AT7M8ityxW">
     <property role="3GE5qa" value="migration" />
-    <ref role="1XX52x" to="tpc2:ve0pwAv4UM" resolve="MigrateManuallynnotation" />
+    <ref role="1XX52x" to="tpc2:ve0pwAv4UM" resolve="MigrateManuallyAnnotation" />
     <node concept="3EZMnI" id="ve0pwAl48N" role="2wV5jI">
       <node concept="3EZMnI" id="6hjlZS7jm98" role="3EZMnx">
         <node concept="l2Vlx" id="6hjlZS7jm99" role="2iSdaV" />
@@ -25581,7 +25581,7 @@
   <node concept="1h_SRR" id="2GhHZlI5e4Q">
     <property role="3GE5qa" value="migration" />
     <property role="TrG5h" value="DeleteMigratedManuallyAnnotation" />
-    <ref role="1h_SK9" to="tpc2:ve0pwAv4UM" resolve="MigrateManuallynnotation" />
+    <ref role="1h_SK9" to="tpc2:ve0pwAv4UM" resolve="MigrateManuallyAnnotation" />
     <node concept="1hA7zw" id="2GhHZlI5e4R" role="1h_SK8">
       <property role="1hAc7j" value="delete_action_id" />
       <node concept="1hAIg9" id="2GhHZlI5e4S" role="1hA7z_">
