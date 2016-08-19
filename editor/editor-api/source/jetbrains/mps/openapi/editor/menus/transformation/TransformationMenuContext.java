@@ -19,6 +19,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -31,21 +32,28 @@ public interface TransformationMenuContext {
   @NotNull
   SNode getNode();
 
+  /**
+   * Non-null if the menu is looked up for an empty child cell. In this case the transformation menus are looked up for the parent node since transformations
+   * work on existing nodes. However, substitute menus are looked up for the link because substitutions may set new values to null links.
+   */
+  @Nullable
+  SContainmentLink getContainmentLink();
+
   SModel getModel();
 
   @NotNull
   EditorContext getEditorContext();
 
   /**
-   * Returns a context similar to the current one but with node changed to {@code node}. May return this instance if {@code node} is the same as the current
-   * node.
+   * Returns a context similar to the current one but with node changed to {@code node} and link set to {@code null}. May return this instance if {@code node}
+   * is the same as the current node (in which case link will keep its value).
    */
   @NotNull
   TransformationMenuContext withNode(@NotNull SNode node);
 
   /**
-   * Returns a context similar to the current one but with location changed to {@code location}. May return this instance if {@code location} is the same as the current
-   * location.
+   * Returns a context similar to the current one but with location changed to {@code location}. May return this instance if {@code location} is the same as the
+   * current location.
    */
   @NotNull
   TransformationMenuContext withLocation(@NotNull String location);

@@ -8,6 +8,10 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.testLanguage.behavior.ChildOfParentWithEmptyCell_BehaviorDescriptor" file="ChildOfParentWithEmptyCell_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.testLanguage.behavior.ConceptWithoutDefaultMenu_BehaviorDescriptor" file="ConceptWithoutDefaultMenu_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
@@ -21,6 +25,10 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.testLanguage.behavior.NodeHolder_BehaviorDescriptor" file="NodeHolder_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.testLanguage.behavior.ParentWithEmptyCell_BehaviorDescriptor" file="ParentWithEmptyCell_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>

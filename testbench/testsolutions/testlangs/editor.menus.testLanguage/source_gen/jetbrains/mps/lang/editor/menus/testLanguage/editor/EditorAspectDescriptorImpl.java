@@ -11,6 +11,7 @@ import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.descriptor.NamedMenuId;
 import java.util.Arrays;
+import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -30,10 +31,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
           break;
         case 1:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new ScopesTestConceptBase_Editor());
+            return Collections.<ConceptEditor>singletonList(new ParentWithEmptyCell_Editor());
           }
           break;
         case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ScopesTestConceptBase_Editor());
+          }
+          break;
+        case 3:
           if (true) {
             return Collections.<ConceptEditor>singletonList(new TransformationMenuTestConcept_Editor());
           }
@@ -113,7 +119,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
           if (true) {
             switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0c3a0a4, menuId.getFqName())) {
               case 0:
-                return Arrays.asList(new TransformationMenu[]{new NamedMenuForBase()});
+                return Arrays.asList(new TransformationMenu[]{new MenuForEmptyCell()});
               default:
             }
           }
@@ -121,6 +127,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
         case 3:
           if (true) {
             switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0d3a0a4, menuId.getFqName())) {
+              case 0:
+                return Arrays.asList(new TransformationMenu[]{new NamedMenuForBase()});
+              default:
+            }
+          }
+          break;
+        case 4:
+          if (true) {
+            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0e3a0a4, menuId.getFqName())) {
               case 0:
                 return Arrays.asList(new TransformationMenu[]{new ContributedToFromUnusedLanguage()});
               case 1:
@@ -145,6 +160,24 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
     return Collections.<TransformationMenu>emptyList();
   }
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_xbvbvu_a0f.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new ChildOfParentWithEmptyCell_SubstituteMenu());
+          }
+          break;
+        default:
+      }
+    }
+    return Collections.<SubstituteMenu>emptyList();
+  }
 
   private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
     HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
@@ -154,11 +187,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x4a19acf9397f4948L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.NodeHolder"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0xed49174618e8812L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ScopesTestConceptBase"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x208970783ba43296L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.TransformationMenuTestConcept"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x4a19acf9397f4948L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.NodeHolder"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x7cc9c0c2af1b18c2L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ParentWithEmptyCell"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0xed49174618e8812L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ScopesTestConceptBase"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x208970783ba43296L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.TransformationMenuTestConcept"));
   private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0d = buildConceptIndices(MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x258c7e2e22024953L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.Base"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x68cf8525aaf46e4bL, "jetbrains.mps.lang.editor.menus.testLanguage.structure.BaseWithNonEmptyMenu"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x258c7e2e22024954L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.Derived"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x68cf8525aaf46e4cL, "jetbrains.mps.lang.editor.menus.testLanguage.structure.DerivedWithEmptyMenu"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x208970783ba43296L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.TransformationMenuTestConcept"));
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x258c7e2e22024953L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.Base"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x258c7e2e22024954L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.Derived"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0xed49174618e8812L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ScopesTestConceptBase"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x208970783ba43296L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.TransformationMenuTestConcept"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x258c7e2e22024953L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.Base"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x258c7e2e22024954L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.Derived"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x7cc9c0c2af1b18c2L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ParentWithEmptyCell"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0xed49174618e8812L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ScopesTestConceptBase"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x208970783ba43296L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.TransformationMenuTestConcept"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x7cc9c0c2af1b18deL, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ChildOfParentWithEmptyCell"));
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a4 = new String[]{"jetbrains.mps.lang.editor.menus.testLanguage.editor.Base_NamedTransformationMenu"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0b3a0a4 = new String[]{"jetbrains.mps.lang.editor.menus.testLanguage.editor.Derived_NamedTransformationMenu"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0c3a0a4 = new String[]{"jetbrains.mps.lang.editor.menus.testLanguage.editor.NamedMenuForBase"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0d3a0a4 = new String[]{"jetbrains.mps.lang.editor.menus.testLanguage.editor.ContributedToFromUnusedLanguage", "jetbrains.mps.lang.editor.menus.testLanguage.editor.ContributedToFromUsedLanguage", "jetbrains.mps.lang.editor.menus.testLanguage.editor.NamedTestMenu", "jetbrains.mps.lang.editor.menus.testLanguage.editor.ParameterizedByPrimitiveType", "jetbrains.mps.lang.editor.menus.testLanguage.editor.WithExecutableAction", "jetbrains.mps.lang.editor.menus.testLanguage.editor.WithNestedVariables", "jetbrains.mps.lang.editor.menus.testLanguage.editor.WithNonExecutableAction"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0c3a0a4 = new String[]{"jetbrains.mps.lang.editor.menus.testLanguage.editor.MenuForEmptyCell"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0d3a0a4 = new String[]{"jetbrains.mps.lang.editor.menus.testLanguage.editor.NamedMenuForBase"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0e3a0a4 = new String[]{"jetbrains.mps.lang.editor.menus.testLanguage.editor.ContributedToFromUnusedLanguage", "jetbrains.mps.lang.editor.menus.testLanguage.editor.ContributedToFromUsedLanguage", "jetbrains.mps.lang.editor.menus.testLanguage.editor.NamedTestMenu", "jetbrains.mps.lang.editor.menus.testLanguage.editor.ParameterizedByPrimitiveType", "jetbrains.mps.lang.editor.menus.testLanguage.editor.WithExecutableAction", "jetbrains.mps.lang.editor.menus.testLanguage.editor.WithNestedVariables", "jetbrains.mps.lang.editor.menus.testLanguage.editor.WithNonExecutableAction"};
 }

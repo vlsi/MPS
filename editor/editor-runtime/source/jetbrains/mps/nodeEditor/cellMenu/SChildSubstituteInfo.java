@@ -16,8 +16,6 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -31,7 +29,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 
@@ -57,18 +54,7 @@ public class SChildSubstituteInfo extends AbstractSubstituteInfo implements Defa
 
   @Override
   protected TransformationMenuContext createTransformationContext() {
-    final EditorCell editorCell = getEditorCell();
-    if (editorCell.getTransformationMenuLookup() != null) {
-      return DefaultTransformationMenuContext.createInitialContextForCell(getEditorCell(), MenuLocations.SUBSTITUTE);
-    }
-    SNode node = getEditorCell().getSNode();
-    while (AttributeOperations.isAttribute(node)) {
-      node = node.getParent();
-    }
-    if (node != null) {
-      return DefaultTransformationMenuContext.createInitialContextForNode(getEditorContext(), node, MenuLocations.SUBSTITUTE);
-    }
-    return null;
+    return DefaultTransformationMenuContext.createInitialContextForCell(getEditorCell(), MenuLocations.SUBSTITUTE);
   }
 
   @Override

@@ -90,5 +90,23 @@
     <property role="TrG5h" value="DerivedWithEmptyMenu" />
     <ref role="1TJDcQ" node="6zfximEX6Tb" resolve="BaseWithNonEmptyMenu" />
   </node>
+  <node concept="1TIwiD" id="7N9KcaJ6Lz2">
+    <property role="EcuMT" value="8991930073415882946" />
+    <property role="TrG5h" value="ParentWithEmptyCell" />
+    <property role="3GE5qa" value="EmptyCell" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7N9KcaJ6LzU" role="1TKVEi">
+      <property role="IQ2ns" value="8991930073415883002" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="child" />
+      <ref role="20lvS9" node="7N9KcaJ6Lzu" resolve="ChildOfParentWithEmptyCell" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7N9KcaJ6Lzu">
+    <property role="EcuMT" value="8991930073415882974" />
+    <property role="3GE5qa" value="EmptyCell" />
+    <property role="TrG5h" value="ChildOfParentWithEmptyCell" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
 </model>
 

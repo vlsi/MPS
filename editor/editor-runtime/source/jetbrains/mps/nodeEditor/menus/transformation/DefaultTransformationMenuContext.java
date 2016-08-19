@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.menus.transformation;
 
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.lang.editor.menus.transformation.CachingPredicate;
 import jetbrains.mps.lang.editor.menus.transformation.CanBeParentPredicate;
 import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
@@ -33,6 +34,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -54,7 +56,8 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
   private final EditorContext myEditorContext;
   @NotNull
   private final SNode myNode;
-
+  @Nullable
+  private final SContainmentLink myContainmentLink;
   @NotNull
   private final Predicate<SAbstractConcept> mySuitableForConstraintsPredicate;
 
@@ -65,30 +68,27 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
       throw new IllegalArgumentException("cell should have a node: " + cell);
     }
 
-    return createInitialContextForNode(cell.getContext(), cellNode, menuLocation);
+    return createInitialContextForNode(cell.getContext(), cellNode, CellUtil.getCellContainmentLink(cell), menuLocation);
   }
 
   @NotNull
-  public static DefaultTransformationMenuContext createInitialContextForNode(EditorContext editorContext, SNode node, @NotNull String menuLocation) {
+  public static DefaultTransformationMenuContext createInitialContextForNode(@NotNull EditorContext editorContext, @NotNull SNode node,
+      @Nullable SContainmentLink containmentLink, @NotNull String menuLocation) {
     return new DefaultTransformationMenuContext(
         new RecursionSafeMenuItemFactory<>(new TransformationMenuItemFactory(MenuUtil.getUsedLanguages(node))),
-        menuLocation, editorContext, node, createSuitableForConstraintsPredicate(node, editorContext.getRepository()));
+        menuLocation, editorContext, node, containmentLink, createSuitableForConstraintsPredicate(node, editorContext.getRepository()));
   }
 
   public DefaultTransformationMenuContext(
       @NotNull MenuItemFactory<TransformationMenuItem, TransformationMenuContext, TransformationMenu> menuItemFactory, @NotNull String menuLocation,
-      @NotNull EditorContext editorContext, @NotNull SNode node,
+      @NotNull EditorContext editorContext, @NotNull SNode node, @Nullable SContainmentLink containmentLink,
       @NotNull Predicate<SAbstractConcept> suitableForConstraintsPredicate) {
     myMenuItemFactory = menuItemFactory;
     myMenuLocation = menuLocation;
     myEditorContext = editorContext;
     myNode = node;
+    myContainmentLink = containmentLink;
     mySuitableForConstraintsPredicate = suitableForConstraintsPredicate;
-  }
-
-  public DefaultTransformationMenuContext(@NotNull SNode node, @NotNull EditorContext editorContext, @NotNull String menuLocation,
-      @NotNull MenuItemFactory<TransformationMenuItem, TransformationMenuContext, TransformationMenu> menuItemFactory) {
-    this(menuItemFactory, menuLocation, editorContext, node, createSuitableForConstraintsPredicate(node, editorContext.getRepository()));
   }
 
   @NotNull
@@ -109,6 +109,12 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
   }
 
   @Override
+  @Nullable
+  public SContainmentLink getContainmentLink() {
+    return myContainmentLink;
+  }
+
+  @Override
   public SModel getModel() {
     return myNode.getModel();
   }
@@ -126,13 +132,14 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
       return this;
     }
 
-    return new DefaultTransformationMenuContext(myMenuItemFactory, myMenuLocation, myEditorContext, node, createSuitableForConstraintsPredicate(node, myEditorContext.getRepository()));
+    return new DefaultTransformationMenuContext(myMenuItemFactory, myMenuLocation, myEditorContext, node, null,
+        createSuitableForConstraintsPredicate(node, myEditorContext.getRepository()));
   }
 
   @NotNull
   @Override
   public TransformationMenuContext withLocation(@NotNull String location) {
-    return new DefaultTransformationMenuContext(myMenuItemFactory, location, myEditorContext, myNode, mySuitableForConstraintsPredicate);
+    return new DefaultTransformationMenuContext(myMenuItemFactory, location, myEditorContext, myNode, myContainmentLink, mySuitableForConstraintsPredicate);
   }
 
   @NotNull
