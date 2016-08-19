@@ -1,5 +1,5 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
-<idea-plugin>
+<idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
   <id>jetbrains.mps.ide.httpsupport</id>
   <name>HTTP Support Plugin</name>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
@@ -7,5 +7,8 @@
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir=""/>
     <httpRequestHandler implementation="jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestManager" />
+  </extensions>
+  <extensions defaultExtensionNs="org.jetbrains">
+    <customPortServerManager implementation="jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager"/>
   </extensions>
 </idea-plugin>

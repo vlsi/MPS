@@ -154,6 +154,31 @@
       <unit id="7720980209309576946" at="11,0,43,0" name="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
     </file>
   </root>
+  <root nodeRef="r:05ff02e5-9836-4ae9-a454-eab43fa58c8f(jetbrains.mps.ide.httpsupport.manager.plugin)/802768723527085987">
+    <file name="MPSRequestPortManager.java">
+      <node id="802768723527122924" at="12,0,13,0" concept="11" trace="PORT_DEFAULT" />
+      <node id="802768723527124546" at="15,24,16,33" concept="9" />
+      <node id="802768723527124220" at="16,33,17,24" concept="8" />
+      <node id="802768723527131903" at="22,40,23,45" concept="1" />
+      <node id="802768723527124730" at="28,42,29,16" concept="8" />
+      <node id="802768723527085987" at="31,0,32,0" concept="11" trace="LOG" />
+      <node id="802768723527131903" at="21,49,24,5" concept="5" />
+      <node id="802768723527124722" at="27,0,31,0" concept="6" trace="isAvailableExternally#()Z" />
+      <node id="802768723527114377" at="14,0,19,0" concept="6" trace="getPort#()I" />
+      <node id="802768723527124711" at="20,0,26,0" concept="6" trace="cannotBind#(Ljava/lang/Exception;I)V" />
+      <scope id="802768723527131903" at="22,40,23,45" />
+      <scope id="802768723527124727" at="28,42,29,16" />
+      <scope id="802768723527114382" at="15,24,17,24" />
+      <scope id="802768723527124720" at="21,49,24,5" />
+      <scope id="802768723527124722" at="27,0,31,0" />
+      <scope id="802768723527114377" at="14,0,19,0" />
+      <scope id="802768723527124711" at="20,0,26,0">
+        <var name="e" id="802768723527124715" />
+        <var name="port" id="802768723527124717" />
+      </scope>
+      <unit id="802768723527085987" at="10,0,33,0" name="jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager" />
+    </file>
+  </root>
   <root nodeRef="r:05ff02e5-9836-4ae9-a454-eab43fa58c8f(jetbrains.mps.ide.httpsupport.manager.plugin)/8905019541642880645">
     <file name="IHttpRequestHandler.java">
       <node id="6004610301070371543" at="12,0,13,0" concept="6" trace="canHandle#(Ljetbrains/mps/ide/httpsupport/manager/plugin/HttpRequest;)Z" />

@@ -37,6 +37,14 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="org.jetbrains.ide.HttpRequestHandler" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager" file="MPSRequestPortManager.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode extendsClassName="org.jetbrains.io.CustomPortServerManagerBase" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.Responses" file="Responses.java">
     <classNode dependClassName="io.netty.handler.codec.http.HttpResponse" />
     <classNode dependClassName="java.lang.CharSequence" />

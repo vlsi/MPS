@@ -1076,5 +1076,106 @@
       </node>
     </node>
   </node>
+  <node concept="312cEu" id="G$0uqqC2Yz">
+    <property role="TrG5h" value="MPSRequestPortManager" />
+    <node concept="2tJIrI" id="G$0uqqC9TY" role="jymVt" />
+    <node concept="Wx3nA" id="G$0uqqCbZG" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="PORT_DEFAULT" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="G$0uqqCaAr" role="1B3o_S" />
+      <node concept="10Oyi0" id="G$0uqqCbY6" role="1tU5fm" />
+      <node concept="3cmrfG" id="G$0uqqCc1O" role="33vP2m">
+        <property role="3cmrfH" value="63330" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="G$0uqqC9U0" role="jymVt" />
+    <node concept="3clFb_" id="G$0uqqC9U9" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getPort" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="G$0uqqC9Ua" role="1B3o_S" />
+      <node concept="10Oyi0" id="G$0uqqC9Uc" role="3clF45" />
+      <node concept="3clFbS" id="G$0uqqC9Ue" role="3clF47">
+        <node concept="3SKdUt" id="G$0uqqCcp2" role="3cqZAp">
+          <node concept="3SKdUq" id="G$0uqqCcp4" role="3SKWNk">
+            <property role="3SKdUp" value="TODO make it like in IDEA" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="G$0uqqCcjW" role="3cqZAp">
+          <node concept="37vLTw" id="G$0uqqCcjV" role="3clFbG">
+            <ref role="3cqZAo" node="G$0uqqCbZG" resolve="PORT_DEFAULT" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="G$0uqqC9Uf" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="G$0uqqCcpk" role="jymVt" />
+    <node concept="3clFb_" id="G$0uqqCcrB" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="cannotBind" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="G$0uqqCcrC" role="1B3o_S" />
+      <node concept="3cqZAl" id="G$0uqqCcrE" role="3clF45" />
+      <node concept="37vLTG" id="G$0uqqCcrF" role="3clF46">
+        <property role="TrG5h" value="e" />
+        <node concept="3uibUv" id="G$0uqqCcrG" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="G$0uqqCcrH" role="3clF46">
+        <property role="TrG5h" value="port" />
+        <node concept="10Oyi0" id="G$0uqqCcrI" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="G$0uqqCcrK" role="3clF47">
+        <node concept="34ab3g" id="G$0uqqCebZ" role="3cqZAp">
+          <property role="35gtTG" value="error" />
+          <property role="34fQS0" value="true" />
+          <node concept="3cpWs3" id="G$0uqqCh6O" role="34bqiv">
+            <node concept="37vLTw" id="G$0uqqCh7v" role="3uHU7w">
+              <ref role="3cqZAo" node="G$0uqqCcrH" resolve="port" />
+            </node>
+            <node concept="Xl_RD" id="G$0uqqCec1" role="3uHU7B">
+              <property role="Xl_RC" value="Cannot bind to " />
+            </node>
+          </node>
+          <node concept="37vLTw" id="G$0uqqCgdS" role="34bMjA">
+            <ref role="3cqZAo" node="G$0uqqCcrF" resolve="e" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="G$0uqqCcrL" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="G$0uqqChyY" role="jymVt" />
+    <node concept="3clFb_" id="G$0uqqCcrM" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="isAvailableExternally" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="G$0uqqCcrN" role="1B3o_S" />
+      <node concept="10P_77" id="G$0uqqCcrP" role="3clF45" />
+      <node concept="3clFbS" id="G$0uqqCcrR" role="3clF47">
+        <node concept="3clFbF" id="G$0uqqCcrU" role="3cqZAp">
+          <node concept="3clFbT" id="G$0uqqCcrT" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="G$0uqqCcrS" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="G$0uqqC2Y$" role="1B3o_S" />
+    <node concept="3uibUv" id="G$0uqqC9TU" role="1zkMxy">
+      <ref role="3uigEE" to="iwnc:~CustomPortServerManagerBase" resolve="CustomPortServerManagerBase" />
+    </node>
+  </node>
 </model>
 
