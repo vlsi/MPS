@@ -7,6 +7,7 @@ import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
 import jetbrains.mps.vcs.changesmanager.CurrentDifference;
 import com.intellij.openapi.vcs.AbstractVcs;
 import jetbrains.mps.tool.environment.Environment;
+import org.junit.Assume;
 import org.junit.BeforeClass;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
@@ -98,6 +99,7 @@ public abstract class ChangesTestBase {
     myGitVcs = AllVcses.getInstance(myIdeaProject).getByName("Git");
     assert myGitVcs != null;
 
+    Assume.assumeNotNull(getTestModel());
     myDiff = CurrentDifferenceRegistry.getInstance(myIdeaProject).getCurrentDifference((getTestModel()));
     myChangeListManager = ChangeListManagerImpl.getInstanceImpl(myIdeaProject);
     setAutoaddPolicy(VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY);
