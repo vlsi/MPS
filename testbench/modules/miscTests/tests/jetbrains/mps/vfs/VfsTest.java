@@ -46,34 +46,44 @@ public class VfsTest extends PlatformMpsTest {
   private static final TestInvoker IO_TEST_INVOKER = new TestInvoker() {
     @Override
     public void invokeTest(Runnable testRunnable) {
-      FileSystemExtPoint.setFS(new IoFileSystem());
-      testRunnable.run();
+      FileSystem oldFS = FileSystemExtPoint.getFS();
+      try {
+        FileSystemExtPoint.setFS(new IoFileSystem());
+        testRunnable.run();
+      } finally {
+        FileSystemExtPoint.setFS(oldFS);
+      }
     }
   };
 
   private static final TestInvoker IDEA_TEST_INVOKER = new TestInvoker() {
     @Override
     public void invokeTest(final Runnable testRunnable) {
-      FileSystemExtPoint.setFS(new IdeaFileSystem());
-      final Throwable[] ex = new Throwable[1];
-      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-        @Override
-        public void run() {
-          ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            @Override
-            public void run() {
-              try {
-                testRunnable.run();
-              } catch (Throwable e) {
-                ex[0] = e;
+      FileSystem oldFS = FileSystemExtPoint.getFS();
+      try {
+        FileSystemExtPoint.setFS(new IdeaFileSystem());
+        final Throwable[] ex = new Throwable[1];
+        ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+          @Override
+          public void run() {
+            ApplicationManager.getApplication().runWriteAction(new Runnable() {
+              @Override
+              public void run() {
+                try {
+                  testRunnable.run();
+                } catch (Throwable e) {
+                  ex[0] = e;
+                }
               }
-            }
-          });
+            });
+          }
+        }, ModalityState.defaultModalityState());
+        if (ex[0] != null) {
+          ex[0].printStackTrace();
+          fail();
         }
-      }, ModalityState.defaultModalityState());
-      if (ex[0] != null) {
-        ex[0].printStackTrace();
-        fail();
+      } finally {
+        FileSystemExtPoint.setFS(oldFS);
       }
     }
   };
