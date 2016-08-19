@@ -320,6 +320,7 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
+      <concept id="1208623485264" name="jetbrains.mps.baseLanguage.structure.AbstractOperation" flags="nn" index="1B$H19" />
       <concept id="1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" flags="nn" index="1DcWWT">
         <child id="1144226360166" name="iterable" index="1DdaDG" />
       </concept>
@@ -3511,6 +3512,7 @@
       <node concept="3Tm1VV" id="6KmbN9hT7QY" role="1B3o_S" />
       <node concept="3clFbS" id="6KmbN9hT7QZ" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="eUUR2W0OGy" role="jymVt" />
     <node concept="3clFb_" id="6KmbN9hT7R1" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -3530,6 +3532,20 @@
             </node>
             <node concept="3uibUv" id="6KmbN9hT7Re" role="1tU5fm">
               <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="eUUR2W1oR7" role="3cqZAp">
+          <node concept="3cpWsn" id="eUUR2W1oR8" role="3cpWs9">
+            <property role="TrG5h" value="module" />
+            <node concept="3uibUv" id="eUUR2W1oR9" role="1tU5fm">
+              <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+            </node>
+            <node concept="2OqwBi" id="eUUR2W1saw" role="33vP2m">
+              <node concept="37vLTw" id="eUUR2W1p6S" role="2Oq$k0">
+                <ref role="3cqZAo" node="6KmbN9hT7Rd" resolve="md" />
+              </node>
+              <node concept="1B$H19" id="eUUR2W1sa_" role="2OqNvi" />
             </node>
           </node>
         </node>
@@ -3852,6 +3868,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="eUUR2W0OGz" role="jymVt" />
     <node concept="2YIFZL" id="6KmbN9hT7Qs" role="jymVt">
       <property role="TrG5h" value="getModuleType" />
       <node concept="37vLTG" id="6KmbN9hT7Qt" role="3clF46">
