@@ -25,6 +25,8 @@ import org.jetbrains.mps.openapi.util.SubProgressKind;
  * Evgeny Gryaznov, 10/3/11
  */
 public abstract class ProgressMonitorBase implements ProgressMonitor {
+  private static final Logger LOG = LogManager.getLogger(ProgressMonitorBase.class);
+
   private int myTotal = 0;
   private int myDone = 0;
   private SubProgressMonitor myActiveChild;
@@ -43,8 +45,10 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
 
     myActiveChild = null;
     myDone = 0;
-    if (totalWork <= 0) {
-      throw new IllegalStateException("totalWork=" + totalWork);
+    //should be >, but currently this leads to MPS-24438
+    assert totalWork >= 0 : "totalWork=" + totalWork;
+    if (totalWork==0){
+      LOG.warn("ProgressMonitorBase: totalWork==0");
     }
     myTotal = totalWork;
     myName = taskName;
