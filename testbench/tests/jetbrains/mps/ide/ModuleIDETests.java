@@ -93,7 +93,6 @@ public class ModuleIDETests extends ModuleInProjectTest {
       Assert.assertEquals(devkitName, devkit.getModuleName());
       Assert.assertTrue(ourProject.getProjectModules().contains(devkit));
     });
-
   }
 
   @Test
@@ -186,9 +185,11 @@ public class ModuleIDETests extends ModuleInProjectTest {
       saveProjectInTest();
       projectBackup.doBackup();
       Renamer.renameModule(lang, newModuleName);
-      saveProjectInTest();
       Assert.assertEquals(lang.getModuleName(), newModuleName);
       Assert.assertTrue(ourProject.getProjectModules().contains(lang));
+    });
+    invokeInCommand(() -> {
+      saveProjectInTest();
       projectBackup.restoreFromBackup();
     });
     refreshProjectRecursively();
@@ -222,15 +223,20 @@ public class ModuleIDETests extends ModuleInProjectTest {
       saveProjectInTest();
       projectBackup.doBackup();
       deleteModule(lang, deleteFiles);
-      saveProjectInTest();
+      Assert.assertFalse(deleteFiles && lang.getDescriptorFile().exists());
       Assert.assertTrue(ourProject.getProjectModules().isEmpty());
+    });
+    invokeInCommand(() -> {
+      saveProjectInTest();
       projectBackup.restoreFromBackup();
     });
-      refreshProjectRecursively();
+    refreshProjectRecursively();
 
     invokeInCommand(() -> {
+      @NotNull Language lang = langRef.get();
       Assert.assertTrue(ourProject.getProjectModules().size() == 1);
-      Language lang = (Language) ourProject.getProjectModules().get(0); // the module is changed when SMPSProject#update is called (like in this case)
+      Assert.assertTrue(lang.getDescriptorFile().exists());
+      lang = (Language) ourProject.getProjectModules().get(0); // the module is changed when SMPSProject#update is called (like in this case)
       Assert.assertEquals(lang.getModuleName(), moduleName);
     });
   }

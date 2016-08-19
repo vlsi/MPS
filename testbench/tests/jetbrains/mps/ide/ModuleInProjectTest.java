@@ -39,9 +39,6 @@ import org.junit.Test;
 
 import java.io.File;
 
-/**
- * Created by apyshkin on 8/17/16.
- */
 public class ModuleInProjectTest extends PlatformMpsTest {
   private final static String MODULE_NAME_PREFIX = "TEST";
   private static int ourModuleCounter = 0;
@@ -66,7 +63,6 @@ public class ModuleInProjectTest extends PlatformMpsTest {
   public void after() {
     ModuleIDETests.ourProject.dispose();
   }
-
 
   void refreshProjectRecursively() {
     IdeaFile projectFile = new IdeaFileSystem().getFile(ModuleIDETests.ourProject.getProjectFile().toString());

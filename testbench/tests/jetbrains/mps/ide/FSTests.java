@@ -50,6 +50,8 @@ public final class FSTests extends ModuleInProjectTest { // e.g. in order to get
       lang.addDependency(solution.getModuleReference(), false);
       lang.save();
       lang.getGenerators().forEach(Generator::save);
+    });
+    invokeInCommand(() -> {
       projectBackup.restoreFromBackup();
     });
     refreshProjectRecursively();
