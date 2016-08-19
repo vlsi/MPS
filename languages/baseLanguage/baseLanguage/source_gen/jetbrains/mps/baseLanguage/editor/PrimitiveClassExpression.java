@@ -9,22 +9,23 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
+import jetbrains.mps.smodel.runtime.IconResourceUtil;
 
 public class PrimitiveClassExpression extends SubstituteMenuBase {
   @Override
@@ -33,31 +34,26 @@ public class PrimitiveClassExpression extends SubstituteMenuBase {
     result.add(new PrimitiveClassExpression.SubstituteMenuPart_Parameterized_vqoe2c_a());
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_vqoe2c_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
+  private class SubstituteMenuPart_Parameterized_vqoe2c_a extends ParameterizedMenuPart<SConcept, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
-    protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
+    protected List<SubstituteMenuItem> createItems(SConcept parameter, SubstituteMenuContext context) {
       return new PrimitiveClassExpression.SubstituteMenuPart_Parameterized_vqoe2c_a.SubstituteMenuPart_Action_vqoe2c_a0(parameter).createItems(context);
     }
     @Nullable
     @Override
-    protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
-      List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-      SModel blStructure = BootstrapLanguages.baseLanguage().getStructureModelDescriptor();
-      for (SNode conceptDeclaration : SModelOperations.roots(blStructure, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-        if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(conceptDeclaration), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
-          SNode param = (SNode) conceptDeclaration;
-          if (isEmptyString(SPropertyOperations.getString(param, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"))) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(((SNode) param)), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")) || SPropertyOperations.getBoolean(param, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"))) {
-            continue;
-          }
-          ListSequence.fromList(result).addElement(param);
+    protected Iterable<? extends SConcept> getParameters(SubstituteMenuContext _context) {
+      List<SConcept> result = ListSequence.fromList(new ArrayList<SConcept>());
+      for (SAbstractConcept concept : MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage").getConcepts()) {
+        if (!(concept.isAbstract()) && SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"))) && isNotEmptyString(concept.getConceptAlias())) {
+          ListSequence.fromList(result).addElement((SConcept) concept);
         }
       }
       return result;
     }
     private class SubstituteMenuPart_Action_vqoe2c_a0 extends SingleItemSubstituteMenuPart {
-      private final SNode myParameterObject;
-      public SubstituteMenuPart_Action_vqoe2c_a0(SNode parameterObject) {
+      private final SConcept myParameterObject;
+      public SubstituteMenuPart_Action_vqoe2c_a0(SConcept parameterObject) {
         myParameterObject = parameterObject;
       }
 
@@ -81,22 +77,28 @@ public class PrimitiveClassExpression extends SubstituteMenuBase {
         }
         @Override
         public String getDescriptionText(@NotNull String pattern) {
-          return "";
+          if (myParameterObject instanceof SAbstractConcept) {
+            return NodePresentationUtil.descriptionText((SAbstractConcept) myParameterObject);
+          }
+          return "" + myParameterObject;
         }
         @Override
         public IconResource getIcon(@NotNull String pattern) {
+          if (myParameterObject instanceof SAbstractConcept) {
+            return IconResourceUtil.getIconResourceForConcept(((SAbstractConcept) myParameterObject));
+          }
           return null;
         }
         @Override
         public String getMatchingText(String pattern) {
-          String alias = SPropertyOperations.getString(myParameterObject, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+          String alias = myParameterObject.getConceptAlias();
           return alias + ".class";
         }
       }
     }
 
   }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }
