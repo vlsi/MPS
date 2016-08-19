@@ -9,7 +9,7 @@ package jetbrains.mps.lang.editor.behavior;
  * This class is not involved in the actual method invocation
  */
 @Deprecated
-public class MigrateManuallynnotation_BehaviorDescriptor {
+public class MigrateManuallyAnnotation_BehaviorDescriptor {
   public String getConceptFqName() {
     return null;
   }

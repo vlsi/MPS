@@ -1941,7 +1941,7 @@
       <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
     </node>
     <node concept="M6xJ_" id="ve0pwAl3QR" role="lGtFl">
-      <property role="Hh88m" value="migrateManualy" />
+      <property role="Hh88m" value="migrateManually" />
       <node concept="trNpa" id="7pgPxC8o4R6" role="EQaZv">
         <ref role="trN6q" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
       </node>

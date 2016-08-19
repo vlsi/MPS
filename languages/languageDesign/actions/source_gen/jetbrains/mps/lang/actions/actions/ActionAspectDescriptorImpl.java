@@ -13,6 +13,7 @@ import java.util.Collections;
 public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor implements ActionAspectDescriptor {
   private static final String LANGUAGE_FQ_NAME = "jetbrains.mps.lang.actions";
 
+  @Override
   public Collection<NodeFactory> getFactories(SAbstractConcept concept) {
     if (LANGUAGE_FQ_NAME.equals(concept.getLanguage().getQualifiedName())) {
       switch (Arrays.binarySearch(stringSwitchCases_tpto26_a0a0a0c, concept.getName())) {
@@ -28,6 +29,11 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
       }
     }
     return Collections.<NodeFactory>emptyList();
+  }
+
+  @Override
+  public boolean hasBuilders() {
+    return false;
   }
   private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"NF_Concept_NewInstance", "NF_Model_CreateNewNodeOperation", "NF_Model_CreateNewRootNodeOperation", "SNodeCreatorAndInitializer"};
 }

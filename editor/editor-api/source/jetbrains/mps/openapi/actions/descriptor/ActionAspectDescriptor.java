@@ -25,5 +25,8 @@ import java.util.Collection;
  * Date: 29/01/15
  */
 public interface ActionAspectDescriptor extends LanguageAspectDescriptor {
+
   Collection<NodeFactory> getFactories(SAbstractConcept concept);
+
+  boolean hasBuilders();
 }
