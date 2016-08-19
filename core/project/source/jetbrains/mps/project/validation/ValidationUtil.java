@@ -49,7 +49,6 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -528,7 +527,7 @@ public class ValidationUtil {
       if (languageRegistry.getLanguage(lang) != null) {
         continue;
       }
-      if (!processor.process(new ValidationProblem(Severity.ERROR, String.format("Can't find used language: %s", lang.getQualifiedName())))) {
+      if (!processor.process(new ValidationProblem(Severity.ERROR, String.format("Used language %s is not deployed", lang.getQualifiedName())))) {
         return false;
       }
     }
@@ -554,24 +553,22 @@ public class ValidationUtil {
 
     if (descriptor.getSourcePaths() != null && !module.isPackaged()) {
       for (String sourcePath : descriptor.getSourcePaths()) {
-        IFile file = FileSystem.getInstance().getFileByPath(sourcePath);
-        if (file != null && file.exists()) {
-          continue;
-        }
-        if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find source path: " + sourcePath))) {
-          return false;
+        IFile file = module.getFileSystem().getFile(sourcePath);
+        if (!file.exists()) {
+          if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find source path: " + sourcePath))) {
+            return false;
+          }
         }
       }
     }
     if (descriptor.getAdditionalJavaStubPaths() != null) {
       for (String path : descriptor.getAdditionalJavaStubPaths()) {
-        IFile file = FileSystem.getInstance().getFileByPath(path);
-        if (file != null && file.exists()) {
-          continue;
-        }
-        String msg = (new File(path).exists() ? "Idea VFS is not up-to-date. " : "") + "Can't find library: " + path;
-        if (!processor.process(new ValidationProblem(Severity.ERROR, msg))) {
-          return false;
+        IFile file = module.getFileSystem().getFile(path);
+        if (!file.exists()) {
+          String msg = (new File(path).exists() ? "Idea VFS is not up-to-date. " : "") + "Can't find library: " + path;
+          if (!processor.process(new ValidationProblem(Severity.ERROR, msg))) {
+            return false;
+          }
         }
       }
     }
