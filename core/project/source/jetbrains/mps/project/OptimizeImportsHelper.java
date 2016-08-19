@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -253,17 +252,12 @@ public class OptimizeImportsHelper {
 
     Set<SModuleReference> unusedDevkits = new HashSet<SModuleReference>();
     for (SModuleReference devkitRef : ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).importedDevkits()) {
-      DevKit dk = ((DevKit) devkitRef.resolve(myRepository));
-      if (dk == null) {
-        LOG.warn("The devkit " + devkitRef + " could not be found in the " + myRepository +
-            ".\nProceeding...");
+      if (ModelsAutoImportsManager.getDevKits(modelDescriptor.getModule(), modelDescriptor).contains(devkitRef)) {
         continue;
       }
-      if (ModelsAutoImportsManager.getAutoImportedDevKits(modelDescriptor.getModule(), modelDescriptor).contains(dk)) {
-        continue;
+      if (isUnusedDevkitRef(result, devkitRef)) {
+        unusedDevkits.add(devkitRef);
       }
-      SModuleReference ref = getUnusedDevkitRef(result, devkitRef);
-      if (ref != null) unusedDevkits.add(devkitRef);
     }
 
     result.myReport = removeFromImports(modelDescriptor, unusedModels, unusedLanguages, unusedDevkits);
@@ -328,22 +322,26 @@ public class OptimizeImportsHelper {
     return removeFromImports(module, unusedDeps);
   }
 
-  private SModuleReference getUnusedDevkitRef(Result result, SModuleReference devkitRef) {
+  private boolean isUnusedDevkitRef(Result result, SModuleReference devkitRef) {
     DevKit dk = ((DevKit) devkitRef.resolve(myRepository));
-    if (dk == null) return null;
+    if (dk == null) {
+      return false;
+    }
 
     for (SLanguage lang : dk.getAllExportedLanguageIds()) {
       if (!isUnusedLanguageRef(result, lang)) {
-        return null;
+        return false;
       }
     }
 
     for (Solution solution : dk.getAllExportedSolutions()) {
       for (SModel model : solution.getModels()) {
-        if (result.myUsedModels.contains(model.getReference())) return null;
+        if (result.myUsedModels.contains(model.getReference())) {
+          return false;
+        }
       }
     }
-    return dk.getModuleReference();
+    return true;
   }
 
   private boolean isUnusedLanguageRef(Result result, SLanguage languageRef) {

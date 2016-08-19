@@ -9,6 +9,7 @@
       <modulePath path="$PROJECT_DIR$/core/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" folder="core.devkits" />
       <modulePath path="$PROJECT_DIR$/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" folder="core.devkits" />
       <modulePath path="$PROJECT_DIR$/core/devkits/jetbrains.mps.devkit.language-design.devkit" folder="core.devkits" />
+      <modulePath path="$PROJECT_DIR$/core/devkits/jetbrains.mps.devkit.templates.devkit" folder="core.devkits" />
       <modulePath path="$PROJECT_DIR$/core/findUsages-runtime/jetbrains.mps.findUsages.runtime.msd" folder="core.aspects.findUsages" />
       <modulePath path="$PROJECT_DIR$/core/generator/solutions/generator/jetbrains.mps.generator.msd" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/core/generator/solutions/traceInfo/util/jetbrains.mps.traceInfo.cache.msd" folder="platform.traceInfo" />

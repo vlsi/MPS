@@ -500,8 +500,15 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     }
 
     @Override
+    public Collection<SModuleReference> getDevKits(Language contextModule, SModel forModel) {
+      return Collections.singleton(BootstrapLanguages.getGeneralPurposeDevKit());
+    }
+
+    @Override
     public Set<DevKit> getAutoImportedDevKits(Language contextModule, org.jetbrains.mps.openapi.model.SModel model) {
-      return Collections.singleton(BootstrapLanguages.generalDevKit());
+      // left just in case anyone uses MAIM.getAutoImportedDevKits(). Contemporary code relies on #getDevKits().
+      SModule dk = BootstrapLanguages.getGeneralPurposeDevKit().resolve(contextModule.getRepository());
+      return dk instanceof DevKit ? Collections.singleton((DevKit) dk) : super.getAutoImportedDevKits(contextModule, model);
     }
   }
 }

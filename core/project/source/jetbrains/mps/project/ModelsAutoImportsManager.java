@@ -15,15 +15,18 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ModelsAutoImportsManager {
   // todo: should be application component ?
@@ -54,11 +57,26 @@ public class ModelsAutoImportsManager {
     return result;
   }
 
+  /**
+   * @return use {@link #getDevKits(SModule, SModel)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static Set<DevKit> getAutoImportedDevKits(SModule contextModule, SModel model) {
     Set<DevKit> result = new HashSet<DevKit>();
     for (AutoImportsContributor contributor : contributors) {
       if (contributor.getApplicableSModuleClass().isInstance(contextModule)) {
         result.addAll(contributor.getAutoImportedDevKits(contextModule, model));
+      }
+    }
+    return result;
+  }
+
+  public static Set<SModuleReference> getDevKits(SModule contextModule, SModel forModel) {
+    Set<SModuleReference> result = new HashSet<>();
+    for (AutoImportsContributor contributor : contributors) {
+      if (contributor.getApplicableSModuleClass().isInstance(contextModule)) {
+        result.addAll(contributor.getDevKits(contextModule, forModel));
       }
     }
     return result;
@@ -76,8 +94,8 @@ public class ModelsAutoImportsManager {
     for (SLanguage language : getLanguages(module, model)) {
       ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(language);
     }
-    for (DevKit devKit : getAutoImportedDevKits(module, model)) {
-      ((jetbrains.mps.smodel.SModelInternal) model).addDevKit(devKit.getModuleReference());
+    for (SModuleReference devKit : getDevKits(module, model)) {
+      ((jetbrains.mps.smodel.SModelInternal) model).addDevKit(devKit);
     }
   }
 
@@ -92,6 +110,16 @@ public class ModelsAutoImportsManager {
     @NotNull
     public abstract Collection<SLanguage> getLanguages(ModuleType contextModule, SModel model);
 
+    public Collection<SModuleReference> getDevKits(ModuleType contextModule, SModel forModel) {
+      // replace with empty collection once delegate is history
+      return getAutoImportedDevKits(contextModule, forModel).stream().map(SModule::getModuleReference).collect(Collectors.toList());
+    }
+
+    /**
+     * @deprecated replaced with {@link #getDevKits(SModule, SModel)}, override that one instead.
+     */
+    @Deprecated
+    @ToRemove(version = 3.4)
     public Set<DevKit> getAutoImportedDevKits(ModuleType contextModule, SModel model) {
       return Collections.emptySet();
     }
