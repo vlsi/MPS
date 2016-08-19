@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="workbench" pattern="file[mps-workbench]:*/" />
+</component>
