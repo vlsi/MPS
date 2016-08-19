@@ -17,11 +17,13 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -32,6 +34,8 @@ import org.jetbrains.mps.openapi.module.SRepository;
  * @author simon
  */
 public class OldNewSubstituteUtil {
+
+  private static final String ACTIONS_LANG = "jetbrains.mps.lang.actions";
 
   public static boolean areOldActionsApplicableToNode(SNode node, SRepository repository) {
     return areOldActionsApplicableToConcept(node.getConcept(), repository);
@@ -59,16 +63,45 @@ public class OldNewSubstituteUtil {
     }
 
     final SModule module = model.getModule();
-    if (!(module instanceof Language)) {
+
+    final SLanguage actionsLanguage = getActionsLanguage(repository);
+    if (actionsLanguage == null) {
       return false;
     }
 
-    LanguageRuntime languageRuntime = LanguageRegistry.getInstance(repository).getLanguage((Language) module);
-    if (languageRuntime == null) {
-      return false;
+    if (module.getUsedLanguages().contains(actionsLanguage) && module.getUsedLanguageVersion(actionsLanguage) <= 0) {
+      // Languages using version 0 of j.m.l.actions always use builders.
+      return true;
     }
 
-    ActionAspectDescriptor aspect = languageRuntime.getAspect(ActionAspectDescriptor.class);
+    // For languages using a higher version of j.m.l.actions we check ActionAspectDescriptor#hasBuilders().
+    ActionAspectDescriptor aspect = getActionsAspect(repository, module);
     return aspect != null && aspect.hasBuilders();
+  }
+
+  @Nullable
+  private static SLanguage getActionsLanguage(@NotNull SRepository repository) {
+    final LanguageRuntime actionsLanguageRuntime = LanguageRegistry.getInstance(repository).getLanguage(ACTIONS_LANG);
+    if (actionsLanguageRuntime == null) {
+      return null;
+    }
+
+    return MetaAdapterFactory.getLanguage(actionsLanguageRuntime.getId(), ACTIONS_LANG);
+  }
+
+  @Nullable
+  private static ActionAspectDescriptor getActionsAspect(@NotNull SRepository repository, @NotNull SModule module) {
+    if (!(module instanceof Language)) {
+      return null;
+    }
+
+    Language conceptLanguage = (Language) module;
+
+    LanguageRuntime languageRuntime = LanguageRegistry.getInstance(repository).getLanguage(conceptLanguage);
+    if (languageRuntime == null) {
+      return null;
+    }
+
+    return languageRuntime.getAspect(ActionAspectDescriptor.class);
   }
 }
