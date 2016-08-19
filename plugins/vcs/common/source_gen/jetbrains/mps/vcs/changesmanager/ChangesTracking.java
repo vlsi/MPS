@@ -226,13 +226,16 @@ public class ChangesTracking {
     });
   }
 
-  private boolean isUnderVcs(SModel model) {
+  private boolean isUnderVcs(@NotNull SModel model) {
     DataSource ds = model.getSource();
     IFile file = null;
     if (ds instanceof FileDataSource) {
       file = ((FileDataSource) ds).getFile();
     } else if (ds instanceof FilePerRootDataSource) {
       file = ((FilePerRootDataSource) ds).getFile(FilePerRootDataSource.HEADER_FILE);
+    }
+    if (file == null) {
+      return false;
     }
     if (!(file instanceof IdeaFile)) {
       if (LOG.isEnabledFor(Level.WARN)) {
