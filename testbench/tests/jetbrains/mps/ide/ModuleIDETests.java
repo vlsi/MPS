@@ -29,6 +29,7 @@ import jetbrains.mps.vfs.CachingFile;
 import jetbrains.mps.vfs.DefaultCachingContext;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.actions.module.DeleteModuleHelper;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Assert;
@@ -180,6 +181,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
     ProjectBackup projectBackup = new ProjectBackup(ourProject);
     Reference<Language> langRef = new Reference<>();
     invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(oldModuleName, createNewDirInProject(), ourProject)));
+    LogManager.getLogger(ModuleIDETests.class).info("1");
     invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
       saveProjectInTest();
@@ -188,11 +190,14 @@ public class ModuleIDETests extends ModuleInProjectTest {
       Assert.assertEquals(lang.getModuleName(), newModuleName);
       Assert.assertTrue(ourProject.getProjectModules().contains(lang));
     });
+    LogManager.getLogger(ModuleIDETests.class).info("1");
     invokeInCommand(() -> {
       saveProjectInTest();
       projectBackup.restoreFromBackup();
     });
+    LogManager.getLogger(ModuleIDETests.class).info("1");
     refreshProjectRecursively();
+    LogManager.getLogger(ModuleIDETests.class).info("1");
     invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
 
@@ -201,6 +206,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
       lang = (Language) projectModules.get(0); // the module is changed when MPSProject#update is called (like in this case)
       Assert.assertEquals(lang.getModuleName(), oldModuleName);
     });
+    LogManager.getLogger(ModuleIDETests.class).info("1");
   }
 
   @Test
