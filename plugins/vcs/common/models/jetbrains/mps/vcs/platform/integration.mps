@@ -320,7 +320,6 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
-      <concept id="1208623485264" name="jetbrains.mps.baseLanguage.structure.AbstractOperation" flags="nn" index="1B$H19" />
       <concept id="1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" flags="nn" index="1DcWWT">
         <child id="1144226360166" name="iterable" index="1DdaDG" />
       </concept>
@@ -3535,6 +3534,19 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="6qMd1Cr5oqs" role="3cqZAp">
+          <node concept="3clFbS" id="6qMd1Cr5oqu" role="3clFbx">
+            <node concept="3cpWs6" id="6qMd1Cr5qQy" role="3cqZAp">
+              <node concept="10Nm6u" id="6qMd1Cr5r4m" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="3clFbC" id="6qMd1Cr5pR_" role="3clFbw">
+            <node concept="10Nm6u" id="6qMd1Cr5qzO" role="3uHU7w" />
+            <node concept="37vLTw" id="6qMd1Cr5p6C" role="3uHU7B">
+              <ref role="3cqZAo" node="6KmbN9hT7Rd" resolve="md" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="eUUR2W1oR7" role="3cqZAp">
           <node concept="3cpWsn" id="eUUR2W1oR8" role="3cpWs9">
             <property role="TrG5h" value="module" />
@@ -3545,7 +3557,57 @@
               <node concept="37vLTw" id="eUUR2W1p6S" role="2Oq$k0">
                 <ref role="3cqZAo" node="6KmbN9hT7Rd" resolve="md" />
               </node>
-              <node concept="1B$H19" id="eUUR2W1sa_" role="2OqNvi" />
+              <node concept="liA8E" id="3G5Nwf9xnGm" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6qMd1Cr5tEg" role="3cqZAp">
+          <node concept="3cpWsn" id="6qMd1Cr5tEh" role="3cpWs9">
+            <property role="TrG5h" value="mpsProject" />
+            <node concept="3uibUv" id="6qMd1Cr5tEi" role="1tU5fm">
+              <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+            </node>
+            <node concept="2YIFZM" id="6qMd1Cr5uqE" role="33vP2m">
+              <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
+              <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+              <node concept="37vLTw" id="6qMd1Cr5uFD" role="37wK5m">
+                <ref role="3cqZAo" node="6KmbN9hT7R7" resolve="project" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="6qMd1Cr5vAz" role="3cqZAp">
+          <node concept="3clFbS" id="6qMd1Cr5vA_" role="3clFbx">
+            <node concept="3cpWs6" id="6qMd1Cr5Bh6" role="3cqZAp">
+              <node concept="10Nm6u" id="6qMd1Cr5C27" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="22lmx$" id="6qMd1Cr5ya2" role="3clFbw">
+            <node concept="3fqX7Q" id="6qMd1Cr5ySN" role="3uHU7w">
+              <node concept="2OqwBi" id="6qMd1Cr5$Ki" role="3fr31v">
+                <node concept="2OqwBi" id="6qMd1Cr5zwx" role="2Oq$k0">
+                  <node concept="37vLTw" id="6qMd1Cr5z7o" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6qMd1Cr5tEh" resolve="mpsProject" />
+                  </node>
+                  <node concept="liA8E" id="6qMd1Cr5zQO" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getProjectModulesWithGenerators():java.util.List" resolve="getProjectModulesWithGenerators" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="6qMd1Cr5AbT" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~List.contains(java.lang.Object):boolean" resolve="contains" />
+                  <node concept="37vLTw" id="6qMd1Cr5ANC" role="37wK5m">
+                    <ref role="3cqZAo" node="eUUR2W1oR8" resolve="module" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbC" id="6qMd1Cr5xdp" role="3uHU7B">
+              <node concept="37vLTw" id="6qMd1Cr5wna" role="3uHU7B">
+                <ref role="3cqZAo" node="6qMd1Cr5tEh" resolve="mpsProject" />
+              </node>
+              <node concept="10Nm6u" id="6qMd1Cr5xrd" role="3uHU7w" />
             </node>
           </node>
         </node>

@@ -1940,9 +1940,37 @@
                 <ref role="37wK5l" node="7lByCvUySng" resolve="addListeners" />
               </node>
             </node>
-            <node concept="3clFbF" id="285c2S_WYWL" role="3cqZAp">
-              <node concept="1rXfSq" id="285c2S_WYWK" role="3clFbG">
-                <ref role="37wK5l" node="285c2S_WYWH" resolve="checkMigrationNeeded" />
+            <node concept="3SKdUt" id="6qMd1Cr6INs" role="3cqZAp">
+              <node concept="3SKdUq" id="6qMd1Cr6INu" role="3SKWNk">
+                <property role="3SKdUp" value="FiXME AP the  listening mechanism must be changed to consistent one; " />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="6qMd1Cr6ISl" role="3cqZAp">
+              <node concept="3SKdUq" id="6qMd1Cr6ISm" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME AP this post startup activity hack let us have modules isChanged=true after the first reload happens" />
+              </node>
+            </node>
+            <node concept="3clFbF" id="6qMd1Cr6Fc8" role="3cqZAp">
+              <node concept="2OqwBi" id="6qMd1Cr6Fca" role="3clFbG">
+                <node concept="2YIFZM" id="6qMd1Cr6Fcb" role="2Oq$k0">
+                  <ref role="1Pybhc" to="v27p:~StartupManager" resolve="StartupManager" />
+                  <ref role="37wK5l" to="v27p:~StartupManager.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.startup.StartupManager" resolve="getInstance" />
+                  <node concept="37vLTw" id="6qMd1Cr6Fcc" role="37wK5m">
+                    <ref role="3cqZAo" to="1m72:~AbstractProjectComponent.myProject" resolve="myProject" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="6qMd1Cr6Fcd" role="2OqNvi">
+                  <ref role="37wK5l" to="v27p:~StartupManager.registerPostStartupActivity(java.lang.Runnable):void" resolve="registerPostStartupActivity" />
+                  <node concept="1bVj0M" id="6qMd1Cr6Fce" role="37wK5m">
+                    <node concept="3clFbS" id="6qMd1Cr6Fcf" role="1bW5cS">
+                      <node concept="3clFbF" id="285c2S_WYWL" role="3cqZAp">
+                        <node concept="1rXfSq" id="285c2S_WYWK" role="3clFbG">
+                          <ref role="37wK5l" node="285c2S_WYWH" resolve="checkMigrationNeeded" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>

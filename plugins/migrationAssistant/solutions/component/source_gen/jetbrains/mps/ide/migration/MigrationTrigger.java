@@ -7,7 +7,6 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
-import com.intellij.openapi.ui.Messages.OkCancelResult;
 import jetbrains.mps.ide.migration.wizard.MigrationProblemsContainer;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.project.MPSProject;
@@ -16,8 +15,6 @@ import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.MPSCoreComponents;
-
-import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.startup.StartupManager;
@@ -112,8 +109,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
     if (!(myState.migrationRequired)) {
       addListeners();
+      // FiXME AP the  listening mechanism must be changed to consistent one;  
+      // FIXME AP this post startup activity hack let us have modules isChanged=true after the first reload happens 
       StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
-        @Override
         public void run() {
           checkMigrationNeeded();
         }

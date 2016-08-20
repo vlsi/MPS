@@ -35,6 +35,7 @@
     <import index="zymn" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.startup(MPS.IDEA/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="4hrd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.vfs(MPS.Platform/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -58,6 +59,9 @@
       </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
+      </concept>
+      <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
+        <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
@@ -190,6 +194,12 @@
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
+      </concept>
+      <concept id="1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" flags="nn" index="1DcWWT">
+        <child id="1144226360166" name="iterable" index="1DdaDG" />
+      </concept>
+      <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
+        <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
       <concept id="1221737317277" name="jetbrains.mps.baseLanguage.structure.StaticInitializer" flags="lg" index="1Pe0a1">
         <child id="1221737317278" name="statementList" index="1Pe0a2" />
@@ -740,12 +750,64 @@
                                       <node concept="3Tm1VV" id="5A5jZrz7ufQ" role="1B3o_S" />
                                       <node concept="3cqZAl" id="5A5jZrz7ufR" role="3clF45" />
                                       <node concept="3clFbS" id="5A5jZrz7ufS" role="3clF47">
-                                        <node concept="3clFbF" id="5A5jZrz7ufT" role="3cqZAp">
-                                          <node concept="2YIFZM" id="52ulQBk0tun" role="3clFbG">
-                                            <ref role="37wK5l" to="zn9m:~Disposer.dispose(com.intellij.openapi.Disposable):void" resolve="dispose" />
-                                            <ref role="1Pybhc" to="zn9m:~Disposer" resolve="Disposer" />
-                                            <node concept="37vLTw" id="52ulQBk0twc" role="37wK5m">
+                                        <node concept="3cpWs8" id="6qMd1Cr4xOT" role="3cqZAp">
+                                          <node concept="3cpWsn" id="6qMd1Cr4xOU" role="3cpWs9">
+                                            <property role="TrG5h" value="openedProjects" />
+                                            <node concept="3uibUv" id="6qMd1Cr4xOR" role="1tU5fm">
+                                              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                                              <node concept="3uibUv" id="6qMd1Cr4y6k" role="11_B2D">
+                                                <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+                                              </node>
+                                            </node>
+                                            <node concept="2ShNRf" id="6qMd1Cr4ytp" role="33vP2m">
+                                              <node concept="1pGfFk" id="6qMd1Cr4Ufk" role="2ShVmc">
+                                                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
+                                                <node concept="2OqwBi" id="6qMd1Cr4Vyc" role="37wK5m">
+                                                  <node concept="2YIFZM" id="6qMd1Cr4VlT" role="2Oq$k0">
+                                                    <ref role="37wK5l" to="z1c3:~ProjectManager.getInstance():jetbrains.mps.project.ProjectManager" resolve="getInstance" />
+                                                    <ref role="1Pybhc" to="z1c3:~ProjectManager" resolve="ProjectManager" />
+                                                  </node>
+                                                  <node concept="liA8E" id="6qMd1Cr4VJl" role="2OqNvi">
+                                                    <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenedProjects():java.util.List" resolve="getOpenedProjects" />
+                                                  </node>
+                                                </node>
+                                                <node concept="3uibUv" id="6qMd1Cr4WwC" role="1pMfVU">
+                                                  <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+                                                </node>
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                        <node concept="1DcWWT" id="6qMd1Cr50MW" role="3cqZAp">
+                                          <node concept="3clFbS" id="6qMd1Cr50MY" role="2LFqv$">
+                                            <node concept="3clFbF" id="6qMd1Cr52Fu" role="3cqZAp">
+                                              <node concept="2OqwBi" id="6qMd1Cr52Y8" role="3clFbG">
+                                                <node concept="37vLTw" id="6qMd1Cr52Fs" role="2Oq$k0">
+                                                  <ref role="3cqZAo" node="6qMd1Cr50MZ" resolve="project" />
+                                                </node>
+                                                <node concept="liA8E" id="6qMd1Cr53a5" role="2OqNvi">
+                                                  <ref role="37wK5l" to="z1c3:~Project.dispose():void" resolve="dispose" />
+                                                </node>
+                                              </node>
+                                            </node>
+                                          </node>
+                                          <node concept="3cpWsn" id="6qMd1Cr50MZ" role="1Duv9x">
+                                            <property role="TrG5h" value="project" />
+                                            <node concept="3uibUv" id="6qMd1Cr51kb" role="1tU5fm">
+                                              <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+                                            </node>
+                                          </node>
+                                          <node concept="37vLTw" id="6qMd1Cr51Zg" role="1DdaDG">
+                                            <ref role="3cqZAo" node="6qMd1Cr4xOU" resolve="openedProjects" />
+                                          </node>
+                                        </node>
+                                        <node concept="3clFbF" id="6qMd1Cr54eX" role="3cqZAp">
+                                          <node concept="2OqwBi" id="6qMd1Cr550P" role="3clFbG">
+                                            <node concept="37vLTw" id="6qMd1Cr54eV" role="2Oq$k0">
                                               <ref role="3cqZAo" node="2jln2VraCpX" resolve="myIdeaApplication" />
+                                            </node>
+                                            <node concept="liA8E" id="6qMd1Cr55BC" role="2OqNvi">
+                                              <ref role="37wK5l" to="1wbl:~IdeaTestApplication.dispose():void" resolve="dispose" />
                                             </node>
                                           </node>
                                         </node>

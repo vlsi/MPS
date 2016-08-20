@@ -4,7 +4,6 @@ package jetbrains.mps.core.tool.environment.util;
 
 import jetbrains.mps.project.ProjectBase;
 import jetbrains.mps.project.FileBasedProject;
-import jetbrains.mps.project.ProjectManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.io.File;
@@ -17,6 +16,9 @@ import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import org.jetbrains.annotations.Nullable;
 import org.jdom.Element;
 import jetbrains.mps.project.ElementProjectDataSource;
+import java.util.List;
+import org.jetbrains.mps.openapi.module.SModule;
+import java.util.ArrayList;
 
 public class FileMPSProject extends ProjectBase implements FileBasedProject {
   private static Logger LOG = LogManager.getLogger(FileMPSProject.class);
@@ -75,22 +77,25 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
     loadDescriptor(new ElementProjectDataSource(getElement(), getProjectFile(), createMacroHelper()));
   }
 
-  @Override
-  public void dispose() {
-    close();
-    super.dispose();
-  }
-
   @NotNull
   public static FileMPSProject open(@NotNull String projectPath) {
     return new FileMPSProject(new File(projectPath));
   }
 
   private boolean close() {
-    getProjectModules().forEach(this::removeModule);
+    List<SModule> projectModules = new ArrayList<SModule>(getProjectModules());
+    for (SModule module : projectModules) {
+      removeModule(module);
+    }
     projectClosed();
     assert getProjectModules().isEmpty();
     return true;
+  }
+
+  @Override
+  public void dispose() {
+    close();
+    super.dispose();
   }
 
   @Override

@@ -1497,83 +1497,93 @@
   </root>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/7788464498752650651">
     <file name="ConflictingModelsWarnings.java">
-      <node id="7788464498752650700" at="28,92,29,32" concept="10" />
-      <node id="7788464498752650708" at="29,32,30,93" concept="10" />
-      <node id="7788464498752650714" at="30,93,31,116" concept="10" />
-      <node id="7788464498752650724" at="32,58,33,50" concept="10" />
-      <node id="7788464498752650731" at="33,50,34,26" concept="0" />
-      <node id="7788464498752650737" at="35,59,36,40" concept="12" />
-      <node id="3193265634049278274" at="38,29,39,150" concept="5" />
-      <node id="7788464498752650765" at="42,14,43,30" concept="12" />
-      <node id="3193265634049783199" at="45,29,46,80" concept="5" />
-      <node id="7788464498752650791" at="51,59,52,29" concept="12" />
-      <node id="3193265634049873391" at="54,29,55,79" concept="5" />
-      <node id="7788464498752650812" at="58,14,59,20" concept="11" />
-      <node id="7788464498752650661" at="65,37,66,24" concept="11" />
-      <node id="7788464498752650671" at="67,44,68,24" concept="11" />
-      <node id="7788464498752650678" at="69,45,70,25" concept="11" />
-      <node id="7788464498752650680" at="71,5,72,16" concept="11" />
-      <node id="7788464498752650717" at="75,36,76,43" concept="11" />
-      <node id="7788464498752650717" at="77,5,78,16" concept="11" />
-      <node id="7788464498752650684" at="24,0,26,0" concept="3" trace="ConflictingModelsWarnings#()V" />
-      <node id="7788464498752650810" at="58,12,60,7" concept="1" />
-      <node id="7788464498752650753" at="38,0,41,0" concept="9" trace="run#()V" />
-      <node id="7788464498752650778" at="45,0,48,0" concept="9" trace="run#()V" />
-      <node id="7788464498752650801" at="54,0,57,0" concept="9" trace="run#()V" />
-      <node id="7788464498752650717" at="74,72,77,5" concept="8" />
-      <node id="7788464498752650739" at="36,40,41,11" concept="11" />
-      <node id="7788464498752650767" at="43,30,48,11" concept="11" />
-      <node id="7788464498752650793" at="52,29,57,11" concept="11" />
-      <node id="7788464498752650717" at="74,0,80,0" concept="15" trace="check_bmsafs_a0a2a1#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
-      <node id="7788464498752650763" at="42,12,49,7" concept="1" />
-      <node id="7788464498752650659" at="64,64,71,5" concept="8" />
-      <node id="7788464498752650789" at="50,12,60,7" concept="8" />
-      <node id="7788464498752650787" at="50,10,61,5" concept="1" />
-      <node id="7788464498752650652" at="63,0,74,0" concept="15" trace="getModuleType#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/String;" />
-      <node id="7788464498752650735" at="34,26,49,7" concept="8" />
-      <node id="7788464498752650722" at="31,116,61,5" concept="8" />
-      <node id="7788464498752650689" at="26,0,63,0" concept="9" trace="getWarningPanel#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/ide/editor/warningPanel/WarningPanel;" />
-      <scope id="7788464498752650687" at="24,38,24,38" />
-      <scope id="7788464498752650754" at="38,29,39,150" />
-      <scope id="7788464498752650779" at="45,29,46,80" />
-      <scope id="7788464498752650802" at="54,29,55,79" />
-      <scope id="7788464498752650811" at="58,14,59,20" />
-      <scope id="7788464498752650660" at="65,37,66,24" />
-      <scope id="7788464498752650670" at="67,44,68,24" />
-      <scope id="7788464498752650677" at="69,45,70,25" />
-      <scope id="7788464498752650717" at="75,36,76,43" />
-      <scope id="7788464498752650684" at="24,0,26,0" />
-      <scope id="7788464498752650753" at="38,0,41,0" />
-      <scope id="7788464498752650778" at="45,0,48,0" />
-      <scope id="7788464498752650801" at="54,0,57,0" />
-      <scope id="7788464498752650717" at="74,72,78,16" />
-      <scope id="7788464498752650736" at="35,59,41,11" />
-      <scope id="7788464498752650764" at="42,14,48,11" />
-      <scope id="7788464498752650790" at="51,59,57,11" />
-      <scope id="7788464498752650717" at="74,0,80,0">
+      <node id="7788464498752650700" at="30,92,31,32" concept="10" />
+      <node id="7400034424451345826" at="32,21,33,18" concept="11" />
+      <node id="268785997205310919" at="34,5,35,36" concept="10" />
+      <node id="7400034424451357328" at="35,36,36,86" concept="10" />
+      <node id="7400034424451396678" at="37,97,38,18" concept="11" />
+      <node id="7788464498752650708" at="39,5,40,93" concept="10" />
+      <node id="7788464498752650714" at="40,93,41,116" concept="10" />
+      <node id="7788464498752650724" at="42,58,43,50" concept="10" />
+      <node id="7788464498752650731" at="43,50,44,26" concept="0" />
+      <node id="7788464498752650737" at="45,59,46,40" concept="12" />
+      <node id="3193265634049278274" at="48,29,49,150" concept="5" />
+      <node id="7788464498752650765" at="52,14,53,30" concept="12" />
+      <node id="3193265634049783199" at="55,29,56,80" concept="5" />
+      <node id="7788464498752650791" at="61,59,62,29" concept="12" />
+      <node id="3193265634049873391" at="64,29,65,79" concept="5" />
+      <node id="7788464498752650812" at="68,14,69,20" concept="11" />
+      <node id="7788464498752650661" at="76,37,77,24" concept="11" />
+      <node id="7788464498752650671" at="78,44,79,24" concept="11" />
+      <node id="7788464498752650678" at="80,45,81,25" concept="11" />
+      <node id="7788464498752650680" at="82,5,83,16" concept="11" />
+      <node id="7788464498752650717" at="86,36,87,43" concept="11" />
+      <node id="7788464498752650717" at="88,5,89,16" concept="11" />
+      <node id="7788464498752650684" at="25,0,27,0" concept="3" trace="ConflictingModelsWarnings#()V" />
+      <node id="7788464498752650810" at="68,12,70,7" concept="1" />
+      <node id="7400034424451335836" at="31,32,34,5" concept="8" />
+      <node id="7400034424451365283" at="36,86,39,5" concept="8" />
+      <node id="7788464498752650753" at="48,0,51,0" concept="9" trace="run#()V" />
+      <node id="7788464498752650778" at="55,0,58,0" concept="9" trace="run#()V" />
+      <node id="7788464498752650801" at="64,0,67,0" concept="9" trace="run#()V" />
+      <node id="7788464498752650717" at="85,72,88,5" concept="8" />
+      <node id="7788464498752650739" at="46,40,51,11" concept="11" />
+      <node id="7788464498752650767" at="53,30,58,11" concept="11" />
+      <node id="7788464498752650793" at="62,29,67,11" concept="11" />
+      <node id="7788464498752650717" at="85,0,91,0" concept="15" trace="check_bmsafs_a0a6a2#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <node id="7788464498752650763" at="52,12,59,7" concept="1" />
+      <node id="7788464498752650659" at="75,64,82,5" concept="8" />
+      <node id="7788464498752650789" at="60,12,70,7" concept="8" />
+      <node id="7788464498752650787" at="60,10,71,5" concept="1" />
+      <node id="7788464498752650652" at="74,0,85,0" concept="15" trace="getModuleType#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/String;" />
+      <node id="7788464498752650735" at="44,26,59,7" concept="8" />
+      <node id="7788464498752650722" at="41,116,71,5" concept="8" />
+      <node id="7788464498752650689" at="28,0,73,0" concept="9" trace="getWarningPanel#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/ide/editor/warningPanel/WarningPanel;" />
+      <scope id="7788464498752650687" at="25,38,25,38" />
+      <scope id="7400034424451335838" at="32,21,33,18" />
+      <scope id="7400034424451365285" at="37,97,38,18" />
+      <scope id="7788464498752650754" at="48,29,49,150" />
+      <scope id="7788464498752650779" at="55,29,56,80" />
+      <scope id="7788464498752650802" at="64,29,65,79" />
+      <scope id="7788464498752650811" at="68,14,69,20" />
+      <scope id="7788464498752650660" at="76,37,77,24" />
+      <scope id="7788464498752650670" at="78,44,79,24" />
+      <scope id="7788464498752650677" at="80,45,81,25" />
+      <scope id="7788464498752650717" at="86,36,87,43" />
+      <scope id="7788464498752650684" at="25,0,27,0" />
+      <scope id="7788464498752650753" at="48,0,51,0" />
+      <scope id="7788464498752650778" at="55,0,58,0" />
+      <scope id="7788464498752650801" at="64,0,67,0" />
+      <scope id="7788464498752650717" at="85,72,89,16" />
+      <scope id="7788464498752650736" at="45,59,51,11" />
+      <scope id="7788464498752650764" at="52,14,58,11" />
+      <scope id="7788464498752650790" at="61,59,67,11" />
+      <scope id="7788464498752650717" at="85,0,91,0">
         <var name="checkedDotOperand" id="7788464498752650717" />
       </scope>
-      <scope id="7788464498752650658" at="64,64,72,16" />
-      <scope id="7788464498752650788" at="50,12,60,7" />
-      <scope id="7788464498752650652" at="63,0,74,0">
+      <scope id="7788464498752650658" at="75,64,83,16" />
+      <scope id="7788464498752650788" at="60,12,70,7" />
+      <scope id="7788464498752650652" at="74,0,85,0">
         <var name="module" id="7788464498752650653" />
       </scope>
-      <scope id="7788464498752650723" at="32,58,49,7">
+      <scope id="7788464498752650723" at="42,58,59,7">
         <var name="type" id="7788464498752650725" />
       </scope>
-      <scope id="7788464498752650699" at="28,92,61,5">
+      <scope id="7788464498752650699" at="30,92,71,5">
         <var name="md" id="7788464498752650701" />
         <var name="modelFiles" id="7788464498752650709" />
+        <var name="module" id="268785997205310920" />
         <var name="moduleFiles" id="7788464498752650715" />
+        <var name="mpsProject" id="7400034424451357329" />
       </scope>
-      <scope id="7788464498752650689" at="26,0,63,0">
+      <scope id="7788464498752650689" at="28,0,73,0">
         <var name="node" id="7788464498752650692" />
         <var name="project" id="7788464498752650695" />
       </scope>
-      <unit id="7788464498752650753" at="37,290,41,9" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings$3" />
-      <unit id="7788464498752650778" at="44,200,48,9" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings$2" />
-      <unit id="7788464498752650801" at="53,222,57,9" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings$1" />
-      <unit id="7788464498752650651" at="23,0,81,0" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings" />
+      <unit id="7788464498752650753" at="47,290,51,9" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings$3" />
+      <unit id="7788464498752650778" at="54,200,58,9" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings$2" />
+      <unit id="7788464498752650801" at="63,222,67,9" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings$1" />
+      <unit id="7788464498752650651" at="24,0,92,0" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings" />
     </file>
   </root>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/843347128766303813">
