@@ -57,20 +57,15 @@ public final class MPSModelVirtualFile extends VirtualFile {
   }
 
   private void updateFields() {
-    myRepoFiles.getRepository().getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SModel model = myModelReference.resolve(myRepoFiles.getRepository());
-        if (model == null) {
-          LOG.error(new Throwable("Model resolve failed for SModelReference: " + myModelReference.toString()));
-          myName = "";
-          myPath = "";
-        } else {
-          myName = NameUtil.shortNameFromLongName(model.getModelName());
-          myPath = MODEL_PREFIX + myRepoFiles.getPathFacility().serializeModel(model);
-        }
-      }
-    });
+    SModel model = myModelReference.resolve(myRepoFiles.getRepository());
+    if (model == null) {
+      LOG.error("Model resolve failed for SModelReference: " + myModelReference.toString(), new Throwable());
+      myName = "";
+      myPath = "";
+    } else {
+      myName = model.getName().getSimpleName();
+      myPath = MODEL_PREFIX + myRepoFiles.getPathFacility().serializeModel(model);
+    }
   }
 
   public SModelReference getModelReference() {
@@ -89,6 +84,7 @@ public final class MPSModelVirtualFile extends VirtualFile {
     return myRepoFiles.getFileSystem();
   }
 
+  @NotNull
   @Override
   public String getPath() {
     return myPath;

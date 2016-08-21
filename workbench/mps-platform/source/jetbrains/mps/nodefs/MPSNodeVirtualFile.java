@@ -157,28 +157,25 @@ public final class MPSNodeVirtualFile extends VirtualFile {
     // Needed for idea scope to work (see PsiSearchScopeUtil.isInScope)
     // but why it's not MPSModelVirtualFile that serves as parent for node VF?
     if (myNode == null || myNode.getModelReference() == null) return null;
-    return new ModelAccessHelper(myRepoFiles.getRepository()).runReadAction(new Computable<VirtualFile>() {
-      @Override
-      public VirtualFile compute() {
-        if (myNode == null) {
-          // wow! this double check is needed even with the fact, that read action is run in the same thread
-          // i.e. getParent() and this runnable are in the same thread
-          // But! idea waits for the current write action to complete before proceeding to the read action
-          // (see ApplicationalImpl.startRead())
-          // And it happens so that invalidate() which sets myNode to null reproducibly happens exactly
-          // in the write action we're waiting for, hence NPE
-          return null;
-        }
-        org.jetbrains.mps.openapi.model.SModelReference modelRef = myNode.getModelReference();
-        if (modelRef.resolve(myRepoFiles.getRepository()) == null) {
-          return null;
-        }
-        MPSModelVirtualFile modelVFile = myRepoFiles.getFileFor(modelRef);
-        if (modelVFile != null) {
-          return modelVFile.getParent();
-        }
+    return new ModelAccessHelper(myRepoFiles.getRepository()).runReadAction(() -> {
+      if (myNode == null) {
+        // wow! this double check is needed even with the fact, that read action is run in the same thread
+        // i.e. getParent() and this runnable are in the same thread
+        // But! idea waits for the current write action to complete before proceeding to the read action
+        // (see ApplicationalImpl.startRead())
+        // And it happens so that invalidate() which sets myNode to null reproducibly happens exactly
+        // in the write action we're waiting for, hence NPE
         return null;
       }
+      org.jetbrains.mps.openapi.model.SModelReference modelRef = myNode.getModelReference();
+      if (modelRef.resolve(myRepoFiles.getRepository()) == null) {
+        return null;
+      }
+      MPSModelVirtualFile modelVFile = myRepoFiles.getFileFor(modelRef);
+      if (modelVFile != null) {
+        return modelVFile.getParent();
+      }
+      return null;
     });
   }
 

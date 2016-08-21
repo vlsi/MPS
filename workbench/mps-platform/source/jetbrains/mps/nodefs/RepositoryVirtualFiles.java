@@ -16,8 +16,6 @@
 package jetbrains.mps.nodefs;
 
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -44,7 +42,7 @@ final class RepositoryVirtualFiles {
   private Map<SModelReference, MPSModelVirtualFile> myModelVirtualFiles = new ConcurrentHashMap<SModelReference, MPSModelVirtualFile>();
   private final NiceReferenceSerializer myPathFacility;
 
-  public RepositoryVirtualFiles(@NotNull NodeVirtualFileSystem mpsFileSystem, @NotNull SRepository repository) {
+  RepositoryVirtualFiles(@NotNull NodeVirtualFileSystem mpsFileSystem, @NotNull SRepository repository) {
     myFileSystem = mpsFileSystem;
     myRepository = repository;
     myPathFacility = new NiceReferenceSerializer(repository);
@@ -70,19 +68,18 @@ final class RepositoryVirtualFiles {
   }
 
   @NotNull
-  /*package*/ SRepository getRepository() {
+  SRepository getRepository() {
     return myRepository;
   }
 
   @NotNull
-  /*package*/ NodeVirtualFileSystem getFileSystem() {
+  NodeVirtualFileSystem getFileSystem() {
     return myFileSystem;
   }
 
-  /*package*/ NiceReferenceSerializer getPathFacility() {
+  NiceReferenceSerializer getPathFacility() {
     return myPathFacility;
   }
-
 
   public MPSNodeVirtualFile getFileFor(@NotNull final SNodeReference nodePointer) {
     if (hasVirtualFileFor(nodePointer)) {
@@ -105,7 +102,7 @@ final class RepositoryVirtualFiles {
     return vf;
   }
 
-  public boolean hasVirtualFileFor(SNodeReference nodePointer) {
+  boolean hasVirtualFileFor(SNodeReference nodePointer) {
     return myVirtualFiles.containsKey(nodePointer);
   }
 
@@ -113,12 +110,12 @@ final class RepositoryVirtualFiles {
    * @return existing VF, if any.
    */
   @Nullable
-  /*package*/ MPSNodeVirtualFile getVirtualFile(SNodeReference nodeRef) {
+  MPSNodeVirtualFile getVirtualFile(SNodeReference nodeRef) {
     return myVirtualFiles.get(nodeRef);
   }
 
   // XXX likely, RVF shall be responsible to collect deleted/renamed files, rather than give access to known vf
-  /*package*/ Collection<MPSNodeVirtualFile> getKnownVirtualFilesIn(SModelReference modelRef) {
+  Collection<MPSNodeVirtualFile> getKnownVirtualFilesIn(SModelReference modelRef) {
     ArrayList<MPSNodeVirtualFile> rv = new ArrayList<MPSNodeVirtualFile>();
     for (MPSNodeVirtualFile vf : myVirtualFiles.values()) {
       if (modelRef.equals(vf.getSNodePointer().getModelReference())) {
@@ -128,34 +125,29 @@ final class RepositoryVirtualFiles {
     return rv;
   }
 
-  /*package*/ void forgetVirtualFile(SNodeReference nodeRef) {
+  void forgetVirtualFile(SNodeReference nodeRef) {
     myVirtualFiles.remove(nodeRef);
   }
 
   @Nullable
-  /*package*/ VirtualFile findFileByPath(final @NotNull String path) {
-    return new ModelAccessHelper(myRepository).runReadAction(new Computable<VirtualFile>() {
-      @Override
-      public VirtualFile compute() {
-        try {
-          if (path.startsWith(MPSNodeVirtualFile.NODE_PREFIX)) {
-            SNode node = getPathFacility().deserializeNode(path.substring(MPSNodeVirtualFile.NODE_PREFIX.length()));
-            if (node == null) {
-              return null;
-            }
-            return getFileFor(node.getReference());
-          } else if (path.startsWith(MPSModelVirtualFile.MODEL_PREFIX)) {
-            SModel model = getPathFacility().deserializeModel(path.substring(MPSModelVirtualFile.MODEL_PREFIX.length()));
-            if (model == null) {
-              return null;
-            }
-            return getFileFor(model.getReference());
-          }
-        } catch (IllegalArgumentException e) {
-          // ignore, parse model ref exception
+  VirtualFile findFileByPath(final @NotNull String path) {
+    try {
+      if (path.startsWith(MPSNodeVirtualFile.NODE_PREFIX)) {
+        SNode node = getPathFacility().deserializeNode(path.substring(MPSNodeVirtualFile.NODE_PREFIX.length()));
+        if (node == null) {
+          return null;
         }
-        return null;
+        return getFileFor(node.getReference());
+      } else if (path.startsWith(MPSModelVirtualFile.MODEL_PREFIX)) {
+        SModel model = getPathFacility().deserializeModel(path.substring(MPSModelVirtualFile.MODEL_PREFIX.length()));
+        if (model == null) {
+          return null;
+        }
+        return getFileFor(model.getReference());
       }
-    });
+    } catch (IllegalArgumentException e) {
+      // ignore, parse model ref exception
+    }
+    return null;
   }
 }
