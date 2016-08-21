@@ -27,7 +27,9 @@ import org.jetbrains.mps.openapi.util.SubProgressKind;
 public abstract class ProgressMonitorBase implements ProgressMonitor {
   private static final Logger LOG = LogManager.getLogger(ProgressMonitorBase.class);
 
-  private int myTotal = 0;
+  // -1 means "not started", 0 is possible not to check collection.size()>0 when calling start()
+  // if totalWork==0, step() can be called, advance(>0) can't
+  private int myTotal = -1;
   private int myDone = 0;
   private SubProgressMonitor myActiveChild;
   private int myAfterActiveChild;
@@ -39,17 +41,13 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
 
   @Override
   public final void start(@NotNull String taskName, int totalWork) {
-    if (myTotal > 0) {
+    if (myTotal >= 0) {
       throw new IllegalStateException("start() is called twice");
     }
 
     myActiveChild = null;
     myDone = 0;
-    //should be >, but currently this leads to MPS-24438
     assert totalWork >= 0 : "totalWork=" + totalWork;
-    if (totalWork==0){
-      LOG.warn("ProgressMonitorBase: totalWork==0");
-    }
     myTotal = totalWork;
     myName = taskName;
     setTitleInternal(taskName);
@@ -65,7 +63,7 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
   @Override
   public final void step(String title) {
     check();
-    if (myTotal <= 0) {
+    if (myTotal < 0) {
       throw new IllegalStateException("call start() first");
     }
 
@@ -76,14 +74,16 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
   @Override
   public void advance(int work) {
     check();
-    if (work == 0) {
-      return;
-    }
-    if (myTotal <= 0) {
+    if (myTotal < 0) {
       throw new IllegalStateException("call start() first");
     }
+    assert work>=0;
+    if (myTotal < myDone + work){
+      LOG.error("advance(work): work is too big: total=" + myTotal + "; done=" + myDone + "; work=" + work, new Throwable());
+      //todo throw new IllegalArgumentException();
+    }
 
-    myDone = Math.min(myTotal, Math.max(0, myDone + work));
+    myDone += work;
     update();
   }
 
@@ -135,9 +135,12 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     if (work < 0) {
       throw new IllegalArgumentException("illegal amount of work");
     }
+    if (myTotal < myDone + work){
+      LOG.error("subTask(work): work is too big: total=" + myTotal + "; done=" + myDone + "; work=" + work, new Throwable());
+      //todo throw new IllegalArgumentException("subTask(work): work is too big: total=" + myTotal + "; done=" + myDone + "; work=" + work);
+    }
 
-    work = Math.max(0, work);
-    myAfterActiveChild = Math.min(myDone + work, myTotal);
+    myAfterActiveChild = myDone + work;
     return (myActiveChild = subTaskInternal(work, kind));
   }
 
