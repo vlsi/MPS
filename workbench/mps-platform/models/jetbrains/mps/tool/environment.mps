@@ -760,19 +760,19 @@
                                               </node>
                                             </node>
                                             <node concept="2ShNRf" id="6qMd1Cr4ytp" role="33vP2m">
-                                              <node concept="1pGfFk" id="6qMd1Cr4Ufk" role="2ShVmc">
-                                                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
-                                                <node concept="2OqwBi" id="6qMd1Cr4Vyc" role="37wK5m">
-                                                  <node concept="2YIFZM" id="6qMd1Cr4VlT" role="2Oq$k0">
+                                              <node concept="1pGfFk" id="OecwLLhehX" role="2ShVmc">
+                                                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;(java.util.Collection)" resolve="ArrayList" />
+                                                <node concept="3uibUv" id="OecwLLheKW" role="1pMfVU">
+                                                  <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+                                                </node>
+                                                <node concept="2OqwBi" id="OecwLLhgf_" role="37wK5m">
+                                                  <node concept="2YIFZM" id="OecwLLhg0N" role="2Oq$k0">
                                                     <ref role="37wK5l" to="z1c3:~ProjectManager.getInstance():jetbrains.mps.project.ProjectManager" resolve="getInstance" />
                                                     <ref role="1Pybhc" to="z1c3:~ProjectManager" resolve="ProjectManager" />
                                                   </node>
-                                                  <node concept="liA8E" id="6qMd1Cr4VJl" role="2OqNvi">
+                                                  <node concept="liA8E" id="OecwLLhgxx" role="2OqNvi">
                                                     <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenedProjects():java.util.List" resolve="getOpenedProjects" />
                                                   </node>
-                                                </node>
-                                                <node concept="3uibUv" id="6qMd1Cr4WwC" role="1pMfVU">
-                                                  <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
                                                 </node>
                                               </node>
                                             </node>
