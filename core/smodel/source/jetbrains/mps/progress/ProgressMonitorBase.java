@@ -77,13 +77,16 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     if (myTotal < 0) {
       throw new IllegalStateException("call start() first");
     }
-    assert work>=0;
-    if (myTotal < myDone + work){
-      LOG.error("advance(work): work is too big: total=" + myTotal + "; done=" + myDone + "; work=" + work, new Throwable());
-      //todo throw new IllegalArgumentException();
+    assert work >= 0;
+
+    //todo replace with exception and remove overflow check when MPS-24455 is fixed
+    if (myTotal < myDone + work || myDone + work < 0) {
+      LOG.warn("advance(work): work is too big: total=" + myTotal + "; done=" + myDone + "; work=" + work);
+      myDone = myTotal;
+    } else {
+      myDone += work;
     }
 
-    myDone += work;
     update();
   }
 
@@ -135,12 +138,14 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     if (work < 0) {
       throw new IllegalArgumentException("illegal amount of work");
     }
-    if (myTotal < myDone + work){
-      LOG.error("subTask(work): work is too big: total=" + myTotal + "; done=" + myDone + "; work=" + work, new Throwable());
-      //todo throw new IllegalArgumentException("subTask(work): work is too big: total=" + myTotal + "; done=" + myDone + "; work=" + work);
+    //todo replace with exception and remove overflow check when MPS-24455 is fixed
+    if (myTotal < myDone + work || myDone + work < 0) {
+      LOG.warn("subTask(work): work is too big: total=" + myTotal + "; done=" + myDone + "; work=" + work);
+      myAfterActiveChild = myTotal;
+    } else {
+      myAfterActiveChild = myDone + work;
     }
 
-    myAfterActiveChild = myDone + work;
     return (myActiveChild = subTaskInternal(work, kind));
   }
 
