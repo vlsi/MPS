@@ -66,6 +66,7 @@
     <import index="4ugc" ref="r:bd779a69-a10b-4882-b646-c1303f2dd4f7(jetbrains.mps.refactoring.participant.plugin)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
+    <import index="xygl" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.progress(MPS.IDEA/)" />
     <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -1947,25 +1948,86 @@
             </node>
             <node concept="3SKdUt" id="6qMd1Cr6ISl" role="3cqZAp">
               <node concept="3SKdUq" id="6qMd1Cr6ISm" role="3SKWNk">
-                <property role="3SKdUp" value="FIXME AP this post startup activity hack let us have modules isChanged=true after the first reload happens" />
+                <property role="3SKdUp" value="FIXME AP this dumb service hack let us have modules isChanged=true after the first reload happens" />
               </node>
             </node>
-            <node concept="3clFbF" id="6qMd1Cr6Fc8" role="3cqZAp">
-              <node concept="2OqwBi" id="6qMd1Cr6Fca" role="3clFbG">
-                <node concept="2YIFZM" id="6qMd1Cr6Fcb" role="2Oq$k0">
-                  <ref role="1Pybhc" to="v27p:~StartupManager" resolve="StartupManager" />
-                  <ref role="37wK5l" to="v27p:~StartupManager.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.startup.StartupManager" resolve="getInstance" />
-                  <node concept="37vLTw" id="6qMd1Cr6Fcc" role="37wK5m">
+            <node concept="3cpWs8" id="45$_j8ATAe0" role="3cqZAp">
+              <node concept="3cpWsn" id="45$_j8ATAe1" role="3cpWs9">
+                <property role="TrG5h" value="dumbService" />
+                <node concept="3uibUv" id="45$_j8ATAe2" role="1tU5fm">
+                  <ref role="3uigEE" to="4nm9:~DumbServiceImpl" resolve="DumbServiceImpl" />
+                </node>
+                <node concept="2YIFZM" id="45$_j8ATAMe" role="33vP2m">
+                  <ref role="37wK5l" to="4nm9:~DumbServiceImpl.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.project.DumbServiceImpl" resolve="getInstance" />
+                  <ref role="1Pybhc" to="4nm9:~DumbServiceImpl" resolve="DumbServiceImpl" />
+                  <node concept="37vLTw" id="45$_j8ATB3p" role="37wK5m">
                     <ref role="3cqZAo" to="1m72:~AbstractProjectComponent.myProject" resolve="myProject" />
                   </node>
                 </node>
-                <node concept="liA8E" id="6qMd1Cr6Fcd" role="2OqNvi">
-                  <ref role="37wK5l" to="v27p:~StartupManager.registerPostStartupActivity(java.lang.Runnable):void" resolve="registerPostStartupActivity" />
-                  <node concept="1bVj0M" id="6qMd1Cr6Fce" role="37wK5m">
-                    <node concept="3clFbS" id="6qMd1Cr6Fcf" role="1bW5cS">
-                      <node concept="3clFbF" id="285c2S_WYWL" role="3cqZAp">
-                        <node concept="1rXfSq" id="285c2S_WYWK" role="3clFbG">
-                          <ref role="37wK5l" node="285c2S_WYWH" resolve="checkMigrationNeeded" />
+              </node>
+            </node>
+            <node concept="3clFbF" id="45$_j8ATBsM" role="3cqZAp">
+              <node concept="2OqwBi" id="45$_j8ATBTQ" role="3clFbG">
+                <node concept="37vLTw" id="45$_j8ATBsK" role="2Oq$k0">
+                  <ref role="3cqZAo" node="45$_j8ATAe1" resolve="dumbService" />
+                </node>
+                <node concept="liA8E" id="45$_j8ATCaa" role="2OqNvi">
+                  <ref role="37wK5l" to="4nm9:~DumbServiceImpl.queueTask(com.intellij.openapi.project.DumbModeTask):void" resolve="queueTask" />
+                  <node concept="2ShNRf" id="45$_j8ATCr$" role="37wK5m">
+                    <node concept="YeOm9" id="45$_j8AUbdJ" role="2ShVmc">
+                      <node concept="1Y3b0j" id="45$_j8AUbdM" role="YeSDq">
+                        <property role="2bfB8j" value="true" />
+                        <ref role="1Y3XeK" to="4nm9:~DumbModeTask" resolve="DumbModeTask" />
+                        <ref role="37wK5l" to="4nm9:~DumbModeTask.&lt;init&gt;()" resolve="DumbModeTask" />
+                        <node concept="3Tm1VV" id="45$_j8AUbdN" role="1B3o_S" />
+                        <node concept="3clFb_" id="45$_j8AUbdP" role="jymVt">
+                          <property role="1EzhhJ" value="false" />
+                          <property role="TrG5h" value="performInDumbMode" />
+                          <property role="DiZV1" value="false" />
+                          <property role="od$2w" value="false" />
+                          <node concept="3Tm1VV" id="45$_j8AUbdQ" role="1B3o_S" />
+                          <node concept="3cqZAl" id="45$_j8AUbdS" role="3clF45" />
+                          <node concept="37vLTG" id="45$_j8AUbdT" role="3clF46">
+                            <property role="TrG5h" value="p0" />
+                            <node concept="3uibUv" id="45$_j8AUbdU" role="1tU5fm">
+                              <ref role="3uigEE" to="xygl:~ProgressIndicator" resolve="ProgressIndicator" />
+                            </node>
+                            <node concept="2AHcQZ" id="45$_j8AUbdV" role="2AJF6D">
+                              <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+                            </node>
+                          </node>
+                          <node concept="3clFbS" id="45$_j8AUbdW" role="3clF47">
+                            <node concept="3clFbF" id="45$_j8AUejz" role="3cqZAp">
+                              <node concept="1rXfSq" id="45$_j8AUejy" role="3clFbG">
+                                <ref role="37wK5l" node="285c2S_WYWH" resolve="checkMigrationNeeded" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="2AHcQZ" id="45$_j8AUd9d" role="2AJF6D">
+                            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                          </node>
+                        </node>
+                        <node concept="2tJIrI" id="45$_j8AUb$c" role="jymVt" />
+                        <node concept="3clFb_" id="45$_j8AUbXQ" role="jymVt">
+                          <property role="1EzhhJ" value="false" />
+                          <property role="TrG5h" value="toString" />
+                          <property role="od$2w" value="false" />
+                          <property role="DiZV1" value="false" />
+                          <property role="2aFKle" value="false" />
+                          <node concept="3clFbS" id="45$_j8AUbXT" role="3clF47">
+                            <node concept="3cpWs6" id="45$_j8AUcHM" role="3cqZAp">
+                              <node concept="Xl_RD" id="45$_j8AUd67" role="3cqZAk">
+                                <property role="Xl_RC" value="Migration Trigger" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3Tm1VV" id="45$_j8AUbKd" role="1B3o_S" />
+                          <node concept="3uibUv" id="45$_j8AUbXO" role="3clF45">
+                            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                          </node>
+                          <node concept="2AHcQZ" id="45$_j8AUdb$" role="2AJF6D">
+                            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                          </node>
                         </node>
                       </node>
                     </node>

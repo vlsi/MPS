@@ -17,6 +17,10 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.MPSCoreComponents;
 import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.RuntimeFlags;
+import com.intellij.openapi.project.DumbServiceImpl;
+import com.intellij.openapi.project.DumbModeTask;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vfs.VirtualFileManager;
@@ -33,7 +37,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.ide.GeneralSettings;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -110,10 +113,17 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     if (!(myState.migrationRequired)) {
       addListeners();
       // FiXME AP the  listening mechanism must be changed to consistent one;  
-      // FIXME AP this post startup activity hack let us have modules isChanged=true after the first reload happens 
-      StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
-        public void run() {
+      // FIXME AP this dumb service hack let us have modules isChanged=true after the first reload happens 
+      DumbServiceImpl dumbService = DumbServiceImpl.getInstance(myProject);
+      dumbService.queueTask(new DumbModeTask() {
+        @Override
+        public void performInDumbMode(@NotNull ProgressIndicator p0) {
           checkMigrationNeeded();
+        }
+
+        @Override
+        public String toString() {
+          return "Migration Trigger";
         }
       });
     } else {
