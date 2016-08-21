@@ -1199,34 +1199,36 @@
         </node>
         <node concept="3clFbJ" id="5vfjF5c9S5O" role="3cqZAp">
           <node concept="22lmx$" id="5vfjF5c9S5P" role="3clFbw">
-            <node concept="1Wc70l" id="5vfjF5c9S5Q" role="3uHU7w">
-              <node concept="2OqwBi" id="5vfjF5c9S5R" role="3uHU7w">
-                <node concept="liA8E" id="5vfjF5c9S5S" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SModel.isReadOnly():boolean" resolve="isReadOnly" />
-                </node>
-                <node concept="2JrnkZ" id="5vfjF5c9S5T" role="2Oq$k0">
-                  <node concept="37vLTw" id="5vfjF5c9S5U" role="2JrQYb">
-                    <ref role="3cqZAo" node="5vfjF5c9S5$" resolve="model" />
-                  </node>
-                </node>
+            <node concept="2OqwBi" id="5vfjF5c9S5R" role="3uHU7w">
+              <node concept="liA8E" id="5vfjF5c9S5S" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SModel.isReadOnly():boolean" resolve="isReadOnly" />
               </node>
-              <node concept="2ZW3vV" id="5vfjF5c9S5V" role="3uHU7B">
-                <node concept="2JrnkZ" id="5vfjF5c9S5W" role="2ZW6bz">
-                  <node concept="37vLTw" id="5vfjF5c9S5X" role="2JrQYb">
-                    <ref role="3cqZAo" node="5vfjF5c9S5$" resolve="model" />
+              <node concept="2JrnkZ" id="5vfjF5c9S5T" role="2Oq$k0">
+                <node concept="1eOMI4" id="2AVoH8nE44S" role="2JrQYb">
+                  <node concept="10QFUN" id="2AVoH8nE44T" role="1eOMHV">
+                    <node concept="37vLTw" id="2AVoH8nE44R" role="10QFUP">
+                      <ref role="3cqZAo" node="5vfjF5c9S5$" resolve="model" />
+                    </node>
+                    <node concept="3uibUv" id="2AVoH8nE4dS" role="10QFUM">
+                      <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
+                    </node>
                   </node>
-                </node>
-                <node concept="3uibUv" id="5vfjF5c9S5Y" role="2ZW6by">
-                  <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
                 </node>
               </node>
             </node>
-            <node concept="3fqX7Q" id="5vfjF5c9S5Z" role="3uHU7B">
-              <node concept="2YIFZM" id="5vfjF5c9S60" role="3fr31v">
-                <ref role="37wK5l" to="w1kc:~SModelStereotype.isUserModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isUserModel" />
-                <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                <node concept="37vLTw" id="5vfjF5c9S61" role="37wK5m">
-                  <ref role="3cqZAo" node="5vfjF5c9S5$" resolve="model" />
+            <node concept="1eOMI4" id="2AVoH8nE3_M" role="3uHU7B">
+              <node concept="3fqX7Q" id="2AVoH8nE3_N" role="1eOMHV">
+                <node concept="1eOMI4" id="2AVoH8nE3LY" role="3fr31v">
+                  <node concept="2ZW3vV" id="2AVoH8nE3LZ" role="1eOMHV">
+                    <node concept="2JrnkZ" id="2AVoH8nE3M0" role="2ZW6bz">
+                      <node concept="37vLTw" id="2AVoH8nE3M1" role="2JrQYb">
+                        <ref role="3cqZAo" node="5vfjF5c9S5$" resolve="model" />
+                      </node>
+                    </node>
+                    <node concept="3uibUv" id="2AVoH8nE3M2" role="2ZW6by">
+                      <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
