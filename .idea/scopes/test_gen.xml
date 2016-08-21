@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="test_gen" pattern="file:*test_gen//*" />
+</component>
