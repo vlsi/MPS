@@ -23,7 +23,17 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       switch (switchIndex) {
         case 0:
           if (true) {
+            return new QueryParameterReference_Constraints();
+          }
+          break;
+        case 1:
+          if (true) {
             return new RequestHandler_Constraints();
+          }
+          break;
+        case 2:
+          if (true) {
+            return new ResponseSendStatement_Constraints();
           }
           break;
         default:
@@ -40,5 +50,5 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_2qnle6_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f4d780L, "jetbrains.mps.ide.httpsupport.structure.RequestHandler"));
+  private static final Map<SAbstractConcept, Integer> indices_2qnle6_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c5884e95L, "jetbrains.mps.ide.httpsupport.structure.QueryParameterReference"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f4d780L, "jetbrains.mps.ide.httpsupport.structure.RequestHandler"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c59c0a7fL, "jetbrains.mps.ide.httpsupport.structure.ResponseSendStatement"));
 }

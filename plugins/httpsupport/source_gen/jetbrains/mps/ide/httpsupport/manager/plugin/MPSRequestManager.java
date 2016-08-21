@@ -6,14 +6,12 @@ import org.jetbrains.ide.HttpRequestHandler;
 import org.jetbrains.annotations.NotNull;
 import io.netty.handler.codec.http.FullHttpRequest;
 import io.netty.handler.codec.http.HttpMethod;
-import java.util.Objects;
 import io.netty.handler.codec.http.QueryStringDecoder;
 import io.netty.channel.ChannelHandlerContext;
 import java.io.IOException;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -24,32 +22,17 @@ public class MPSRequestManager extends HttpRequestHandler {
     return request.method() == HttpMethod.GET;
   }
 
-  private boolean isSupportsByHandler(IHttpRequestHandler handler, HttpRequest request) {
-    String[] applicationIDSegments = getSegmentsFor(handler.applicationID());
-    String[] queryPathSegments = getSegmentsFor(request.getQueryPath());
-    if (queryPathSegments.length < applicationIDSegments.length) {
-      return false;
-    }
-    for (int i = 0; i < applicationIDSegments.length; i++) {
-      if (!(Objects.equals(queryPathSegments[i], applicationIDSegments[i]))) {
-        return false;
-      }
-    }
-    return true;
-  }
-
   @Override
   public boolean process(@NotNull QueryStringDecoder decoder, @NotNull FullHttpRequest request, @NotNull ChannelHandlerContext context) throws IOException {
     HttpRequest boxedRequest = new HttpRequest(request, decoder, context.channel());
 
     for (IHttpRequestHandler handler : Sequence.fromIterable(new ExtensionPoint<IHttpRequestHandler>("jetbrains.mps.ide.httpsupport.HttpRequestHandlerEP").getObjects())) {
-      if (isSupportsByHandler(handler, boxedRequest) && handler.canHandle(boxedRequest)) {
+      if (handler.canHandle(boxedRequest)) {
         try {
           handler.handle(boxedRequest);
         } catch (Exception e) {
           String errorText = "Request handler '" + handler.applicationID() + "' throws exception: " + e.getMessage();
-          // TODO : implement Responses#sendError an use it here 
-          Responses.sendText(boxedRequest, errorText);
+          boxedRequest.sendResponse(errorText, "text/plain");
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error(errorText, e);
           }
@@ -61,12 +44,5 @@ public class MPSRequestManager extends HttpRequestHandler {
     return false;
   }
 
-  private static String[] getSegmentsFor(String path) {
-    return Sequence.fromIterable(Sequence.fromArray(path.split("/"))).where(new IWhereFilter<String>() {
-      public boolean accept(String it) {
-        return (it != null && it.length() > 0);
-      }
-    }).toGenericArray(String.class);
-  }
   protected static Logger LOG = LogManager.getLogger(MPSRequestManager.class);
 }

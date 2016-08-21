@@ -4,29 +4,41 @@ package jetbrains.mps.ide.httpsupport.manager.plugin;
 
 import org.jetbrains.io.CustomPortServerManagerBase;
 import org.apache.log4j.Level;
+import org.jetbrains.ide.CustomPortServerManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class MPSRequestPortManager extends CustomPortServerManagerBase {
 
-  public static final int PORT_DEFAULT = 63330;
+  public static final int PORT_FIRST = 63330;
+  public static final int PORT_LAST = 63340;
+
+  public int port = PORT_FIRST;
 
   @Override
   public int getPort() {
-    // TODO make it like in IDEA 
-    return PORT_DEFAULT;
+    return port;
   }
 
   @Override
   public void cannotBind(Exception e, int port) {
-    if (LOG.isEnabledFor(Level.ERROR)) {
-      LOG.error("Cannot bind to " + port, e);
+    if (port >= PORT_LAST) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Cannot bind to any port from " + PORT_FIRST + ".." + PORT_LAST + ". HTTP Support Plugin disabled.");
+      }
+      return;
     }
+    this.port = port + 1;
+    portChanged();
   }
 
   @Override
   public boolean isAvailableExternally() {
     return true;
+  }
+
+  public static int getCurrentPort() {
+    return CustomPortServerManager.EP_NAME.findExtension(MPSRequestPortManager.class).getPort();
   }
   protected static Logger LOG = LogManager.getLogger(MPSRequestPortManager.class);
 }

@@ -16,7 +16,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_HandleRequestFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HandlerAppIdExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HttpRequestParameter = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_QueryParameter = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_QueryParameterReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RequestHandler = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ResponseSendStatement = new ConceptPresentationBuilder().create();
 
   @Override
   @Nullable
@@ -32,7 +35,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 3:
         return props_HttpRequestParameter;
       case 4:
+        return props_QueryParameter;
+      case 5:
+        return props_QueryParameterReference;
+      case 6:
         return props_RequestHandler;
+      case 7:
+        return props_ResponseSendStatement;
     }
     throw new IllegalStateException();
   }

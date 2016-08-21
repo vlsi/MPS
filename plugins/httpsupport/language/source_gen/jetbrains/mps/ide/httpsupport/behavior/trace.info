@@ -27,8 +27,17 @@
     <file name="HttpRequestParameter_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.ide.httpsupport.behavior.HttpRequestParameter_BehaviorDescriptor" />
     </file>
+    <file name="QueryParameterReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.ide.httpsupport.behavior.QueryParameterReference_BehaviorDescriptor" />
+    </file>
+    <file name="QueryParameter_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.ide.httpsupport.behavior.QueryParameter_BehaviorDescriptor" />
+    </file>
     <file name="RequestHandler_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.ide.httpsupport.behavior.RequestHandler_BehaviorDescriptor" />
+    </file>
+    <file name="ResponseSendStatement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.ide.httpsupport.behavior.ResponseSendStatement_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:ebfb0797-fa90-42cb-9f6b-3e661ce06d64(jetbrains.mps.ide.httpsupport.behavior)/6004610301070373682">

@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" file="HttpRequest.java">
+    <classNode dependClassName="io.netty.buffer.Unpooled" />
     <classNode dependClassName="io.netty.channel.Channel" />
     <classNode dependClassName="io.netty.handler.codec.http.HttpRequest" />
+    <classNode dependClassName="io.netty.handler.codec.http.HttpResponse" />
     <classNode dependClassName="io.netty.handler.codec.http.QueryStringDecoder" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.nio.charset.Charset" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.io.NettyKt" />
+    <classNode dependClassName="org.jetbrains.io.Responses" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequestHandlerBase" file="HttpRequestHandlerBase.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" file="IHttpRequestHandler.java">
     <classNode dependClassName="java.lang.Exception" />
@@ -24,11 +41,8 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" />
-    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.Responses" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
     <classNode dependClassName="org.apache.log4j.Level" />
@@ -43,14 +57,8 @@
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.ide.CustomPortServerManager" />
     <classNode extendsClassName="org.jetbrains.io.CustomPortServerManagerBase" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.Responses" file="Responses.java">
-    <classNode dependClassName="io.netty.handler.codec.http.HttpResponse" />
-    <classNode dependClassName="java.lang.CharSequence" />
-    <classNode dependClassName="java.nio.charset.Charset" />
-    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
-    <classNode dependClassName="org.jetbrains.io.Responses" />
   </dependency>
 </dependenciesRoot>
 
