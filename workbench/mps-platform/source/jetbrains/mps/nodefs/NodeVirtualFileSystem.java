@@ -394,6 +394,10 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
       myChangedFiles.addAll(changed);
     }
 
+    /**
+     * Asynchronous invocation does not guarantee that node reference will persist in the given repository.
+     * However Artem proposed to get rid of SNodeReference#resolve at all.
+     */
     public void execute() {
       if (hasPendingNotifications()) {
         mySource.getRepository().getModelAccess().runWriteInEDT(this);
