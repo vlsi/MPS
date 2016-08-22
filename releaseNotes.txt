@@ -1,18 +1,17 @@
-New Features in MPS 3.3
+New Features in MPS 3.4
 
-- Custom language aspects
-- Generic comment-out functionality
-- Paste from history
-- Reflective editor
-- Compare two nodes
-- No used langauges in modules
-- baseLanguage compile-time expression value assistance
-- Provisional mechanism to control layout of output files in textgen
-- Generator: attribute support
-- Generator: anchors in weavings rules
-- Generator: updated cross-model generation
-- Editor: collapse by default
-- Editor: "next applicable editor" cell
-- Generating images of MPS nodes
+- Transformation Menu Language
+- Context Assistant
+- Context Actions Tool
+- Cross-model generation enhancements
+- Explicit generator specification in generation plans
+- Debug information in checkpoint models
+- Enhanced handling of attributes during generation
+- Common build infrastructure
+- Context Assistant for language definition
+- Performance improvements
+- Generating icons from textual description
+- Find usages for Solutions and DevKits
+- Remove unused languages easily
 
 See more on MPS web site: http://www.jetbrains.com/mps/whatsnew/index.html
