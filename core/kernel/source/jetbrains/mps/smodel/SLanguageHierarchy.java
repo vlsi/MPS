@@ -19,6 +19,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
@@ -35,6 +37,8 @@ import java.util.Set;
  * @author Artem Tikhomirov
  */
 public class SLanguageHierarchy {
+  private final static Logger LOG = LogManager.getLogger(SLanguageHierarchy.class);
+
   private final LanguageRegistry myRegistry;
   private final Collection<SLanguage> myLanguages;
 
@@ -64,6 +68,7 @@ public class SLanguageHierarchy {
       if (rv.add(l)) {
         final LanguageRuntime rt = myRegistry.getLanguage(l);
         if (rt == null) {
+          LOG.warn("The language runtime is not found for " + l);
           continue;
         }
         queue.addAll(fromRuntime(rt.getExtendedLanguages()));
