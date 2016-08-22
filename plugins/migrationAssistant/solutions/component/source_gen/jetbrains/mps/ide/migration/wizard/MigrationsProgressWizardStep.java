@@ -59,12 +59,14 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
   private Set<String> myExecuted = new HashSet<String>();
   private MigrationProblemsContainer myErrorContainer;
   private volatile boolean myIsComplete = false;
+  private InitialStep myInitialStep;
 
   protected static Logger LOG = LogManager.getLogger(MigrationsProgressWizardStep.class);
-  public MigrationsProgressWizardStep(Project project, MigrationManager manager, MigrationProblemsContainer errorContainer) {
+  public MigrationsProgressWizardStep(Project project, InitialStep initialStep, MigrationManager manager, MigrationProblemsContainer errorContainer) {
     super(project, "Migration In Progress", ID);
     myManager = manager;
     myErrorContainer = errorContainer;
+    myInitialStep = initialStep;
     this.myTask = new Task.Modal(project, "Migration progress", false) {
       public void run(@NotNull ProgressIndicator progress) {
         PersistenceRegistry.getInstance().disableFastFindUsages();
@@ -126,7 +128,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
   }
 
   private void doRun(final ProgressIndicator progress) {
-    Map<String, Object> options = InitialStep.getOptions();
+    Map<String, Object> options = myInitialStep.getOptions();
     setFraction(progress, ProgressEstimation.initial());
 
     boolean cleanNotification = false;

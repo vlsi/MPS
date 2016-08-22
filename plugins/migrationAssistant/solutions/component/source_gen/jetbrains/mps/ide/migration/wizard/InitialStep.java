@@ -34,10 +34,7 @@ public class InitialStep extends MigrationWizardStep {
 
   private static final String TEXT = "Welcome to Migration Assistant!<br><br>" + "MPS has detected that your project requires migration before it can be used with this version of the product.<br><br>" + "This wizard will guide you through the migration process. It's going to take a while.<br><br>" + "Select Next to proceed with migration or Cancel if you wish to postpone it.";
 
-  /**
-   * due to wizard architecture we need this hacky way of passing data from one step to another
-   */
-  private static final Map<String, Object> ourOptions = new HashMap<String, Object>();
+  private final Map<String, Object> myOptions = new HashMap<String, Object>();
 
   private Map<String, JComponent> myComponents = new HashMap<String, JComponent>();
 
@@ -100,19 +97,19 @@ public class InitialStep extends MigrationWizardStep {
     return null;
   }
 
-  public static Map<String, Object> getOptions() {
-    return ourOptions;
+  public Map<String, Object> getOptions() {
+    return myOptions;
   }
 
   @Override
   public void commit(AbstractWizardStepEx.CommitType commitType) throws CommitStepException {
     super.commit(commitType);
 
-    ourOptions.clear();
+    myOptions.clear();
     for (String id : myComponents.keySet()) {
       JComponent c = myComponents.get(id);
       Object val = ProjectOptionsRegistry.getInstance().getValueFromComponent(c);
-      ourOptions.put(id, val);
+      myOptions.put(id, val);
     }
   }
 }
