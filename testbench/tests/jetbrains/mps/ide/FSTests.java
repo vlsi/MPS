@@ -32,6 +32,11 @@ import java.util.List;
  * Tests for the mps-vfs interaction
  */
 public final class FSTests extends ModuleInProjectTest { // e.g. in order to get create/delete module functionality
+  /**
+   * MigrationTrigger does not work in test environment however if it worked it would fail these tests (22.08.16) AP
+   * It updates all modules which effectively makes them isChanged = true. Thus on the refresh the save happens first and
+   * the wrong state is written on disk.
+   */
   @Test
   public void revertModuleDependencies() {
     String langName = getNewModuleName();

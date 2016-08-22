@@ -24,6 +24,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.refactoring.Renamer;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.vfs.CachingFile;
 import jetbrains.mps.vfs.DefaultCachingContext;
@@ -35,6 +36,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.File;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -181,7 +183,6 @@ public class ModuleIDETests extends ModuleInProjectTest {
     ProjectBackup projectBackup = new ProjectBackup(ourProject);
     Reference<Language> langRef = new Reference<>();
     invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(oldModuleName, createNewDirInProject(), ourProject)));
-    LogManager.getLogger(ModuleIDETests.class).info("1");
     invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
       saveProjectInTest();
@@ -190,23 +191,20 @@ public class ModuleIDETests extends ModuleInProjectTest {
       Assert.assertEquals(lang.getModuleName(), newModuleName);
       Assert.assertTrue(ourProject.getProjectModules().contains(lang));
     });
-    LogManager.getLogger(ModuleIDETests.class).info("1");
     invokeInCommand(() -> {
       saveProjectInTest();
       projectBackup.restoreFromBackup();
     });
-    LogManager.getLogger(ModuleIDETests.class).info("1");
     refreshProjectRecursively();
-    LogManager.getLogger(ModuleIDETests.class).info("1");
     invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
-
       List<SModule> projectModules = ourProject.getProjectModules();
       Assert.assertTrue(projectModules.size() == 1);
+      Assert.assertNotEquals("The old language must have been unregistered", lang, projectModules.get(0));
+      Assert.assertNull(lang.getRepository());
       lang = (Language) projectModules.get(0); // the module is changed when MPSProject#update is called (like in this case)
       Assert.assertEquals(lang.getModuleName(), oldModuleName);
     });
-    LogManager.getLogger(ModuleIDETests.class).info("1");
   }
 
   @Test

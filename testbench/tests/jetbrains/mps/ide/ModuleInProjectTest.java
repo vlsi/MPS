@@ -21,6 +21,8 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ServiceKt;
 import com.intellij.openapi.components.impl.stores.StoreUtil;
 import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.testFramework.PlatformTestUtil;
 import jetbrains.mps.PlatformMpsTest;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.vfs.IdeaFile;
@@ -56,7 +58,7 @@ public class ModuleInProjectTest extends PlatformMpsTest {
 
   void saveProjectInTest() {
     ourProject.save();
-    StoreUtil.save(ServiceKt.getStateStore(ModuleIDETests.ourProject.getProject()), ModuleIDETests.ourProject.getProject());
+    PlatformTestUtil.saveProject(ourProject.getProject());
   }
 
   @After

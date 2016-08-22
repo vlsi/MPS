@@ -17,13 +17,22 @@ package jetbrains.mps.ide;
 
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.util.FileUtil;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.TestOnly;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
+/**
+ * Tests utility to restore project state (all files in the project directory)
+ * When copying need to put timestamps for VFS tests to work (vfs relies on timestamps)
+ */
+@TestOnly
 class ProjectBackup {
-  @NotNull
-  private final MPSProject myProject;
+  private static final long ONE_SECOND = TimeUnit.SECONDS.toMillis(1);
+
+  @NotNull private final MPSProject myProject;
   private File backupDir;
 
   public ProjectBackup(@NotNull MPSProject project) {
@@ -36,8 +45,16 @@ class ProjectBackup {
   }
 
   public void restoreFromBackup() {
-    FileUtil.clear(myProject.getProjectFile());
-    FileUtil.copyDir(backupDir, myProject.getProjectFile());
+    File projectFile = myProject.getProjectFile();
+    FileUtil.clear(projectFile);
+    FileUtil.copyDir(backupDir, projectFile);
+    com.intellij.openapi.util.io.FileUtil.processFilesRecursively(projectFile, file -> {
+      boolean success = file.setLastModified(file.lastModified() + ONE_SECOND);
+      if (!success) {
+        LogManager.getLogger(ProjectBackup.class).error("not possible to provide correct timestamps", new IllegalArgumentException());
+      }
+      return success;
+    });
 
     FileUtil.delete(backupDir);
   }
