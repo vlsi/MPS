@@ -40,6 +40,7 @@ public class CloneModel_Action extends BaseAction {
     }
     if (SModelStereotype.isDescriptorModel(((SModel) MapSequence.fromMap(_params).get("model")))) {
       presentation.setVisible(false);
+      presentation.setEnabled(false);
       return;
     }
     SModule module = ((SModel) MapSequence.fromMap(_params).get("model")).getModule();

@@ -1685,6 +1685,19 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbF" id="54VZRxIIlv3" role="3cqZAp">
+              <node concept="2OqwBi" id="54VZRxIIlA9" role="3clFbG">
+                <node concept="37vLTw" id="54VZRxIIlv1" role="2Oq$k0">
+                  <ref role="3cqZAo" node="QAhkh$$FTO" resolve="presentation" />
+                </node>
+                <node concept="liA8E" id="54VZRxIIlX5" role="2OqNvi">
+                  <ref role="37wK5l" to="qkt:~Presentation.setEnabled(boolean):void" resolve="setEnabled" />
+                  <node concept="3clFbT" id="54VZRxIIlYy" role="37wK5m">
+                    <property role="3clFbU" value="false" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs6" id="QAhkh$$IHF" role="3cqZAp" />
           </node>
           <node concept="2YIFZM" id="4cYFakSLzTa" role="3clFbw">
