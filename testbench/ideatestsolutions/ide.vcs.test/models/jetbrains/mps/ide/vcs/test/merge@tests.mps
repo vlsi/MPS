@@ -345,7 +345,6 @@
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
-      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
@@ -5813,108 +5812,25 @@
         <node concept="3cpWsb" id="6m1MVDkUQbm" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="6m1MVDkUQbn" role="3clF47">
-        <node concept="3SKdUt" id="6m1MVDkUQbo" role="3cqZAp">
-          <node concept="3SKdUq" id="6m1MVDkUQbp" role="3SKWNk">
-            <property role="3SKdUp" value=" this is a workaround of JRE bug #4243868" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="6m1MVDkUQbq" role="3cqZAp">
-          <node concept="3SKdUq" id="6m1MVDkUQbr" role="3SKWNk">
-            <property role="3SKdUp" value=" http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4243868" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="6m1MVDkUQbs" role="3cqZAp">
-          <node concept="3cpWsn" id="6m1MVDkUQbt" role="3cpWs9">
-            <property role="TrG5h" value="count" />
-            <property role="3TUv4t" value="false" />
-            <node concept="10Oyi0" id="6m1MVDkUQbu" role="1tU5fm" />
-            <node concept="3cmrfG" id="6m1MVDkUQbv" role="33vP2m">
-              <property role="3cmrfH" value="0" />
-            </node>
-          </node>
-        </node>
-        <node concept="2$JKZl" id="6m1MVDkUQbw" role="3cqZAp">
-          <node concept="1Wc70l" id="6m1MVDkUQbx" role="2$JKZa">
-            <node concept="3fqX7Q" id="6m1MVDkUQby" role="3uHU7B">
-              <node concept="2OqwBi" id="6m1MVDkUQbz" role="3fr31v">
-                <node concept="10M0yZ" id="7uIch3P6RoO" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6m1MVDkUPXD" resolve="MODEL_FILE" />
-                  <ref role="1PxDUh" node="6m1MVDkUPWT" resolve="DiskMemoryConflictsTest" />
-                </node>
-                <node concept="liA8E" id="6m1MVDkUQb_" role="2OqNvi">
-                  <ref role="37wK5l" to="guwi:~File.setLastModified(long):boolean" resolve="setLastModified" />
-                  <node concept="37vLTw" id="2BHiRxghfgI" role="37wK5m">
-                    <ref role="3cqZAo" node="6m1MVDkUQbl" resolve="timeStamp" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3eOVzh" id="6m1MVDkUQbB" role="3uHU7w">
-              <node concept="37vLTw" id="3GM_nagTyhE" role="3uHU7B">
-                <ref role="3cqZAo" node="6m1MVDkUQbt" resolve="count" />
-              </node>
-              <node concept="3cmrfG" id="6m1MVDkUQbD" role="3uHU7w">
-                <property role="3cmrfH" value="10" />
+        <node concept="3clFbJ" id="69OmYVxlyTg" role="3cqZAp">
+          <node concept="3clFbS" id="6m1MVDkUQbE" role="3clFbx">
+            <node concept="3clFbF" id="6m1MVDkUQbN" role="3cqZAp">
+              <node concept="2YIFZM" id="6m1MVDkUQbO" role="3clFbG">
+                <ref role="37wK5l" to="rjhg:~Assert.fail():void" resolve="fail" />
+                <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
               </node>
             </node>
           </node>
-          <node concept="3clFbS" id="6m1MVDkUQbE" role="2LFqv$">
-            <node concept="3clFbF" id="6m1MVDkUQbF" role="3cqZAp">
-              <node concept="3uNrnE" id="6m1MVDkUQbG" role="3clFbG">
-                <node concept="37vLTw" id="3GM_nagTynk" role="2$L3a6">
-                  <ref role="3cqZAo" node="6m1MVDkUQbt" resolve="count" />
+          <node concept="3fqX7Q" id="6m1MVDkUQby" role="3clFbw">
+            <node concept="2OqwBi" id="6m1MVDkUQbz" role="3fr31v">
+              <node concept="37vLTw" id="69OmYVxlzOf" role="2Oq$k0">
+                <ref role="3cqZAo" node="6m1MVDkUPXD" resolve="MODEL_FILE" />
+              </node>
+              <node concept="liA8E" id="6m1MVDkUQb_" role="2OqNvi">
+                <ref role="37wK5l" to="guwi:~File.setLastModified(long):boolean" resolve="setLastModified" />
+                <node concept="37vLTw" id="2BHiRxghfgI" role="37wK5m">
+                  <ref role="3cqZAo" node="6m1MVDkUQbl" resolve="timeStamp" />
                 </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="6m1MVDkUQbI" role="3cqZAp">
-              <node concept="2YIFZM" id="6m1MVDkUQbJ" role="3clFbG">
-                <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-                <ref role="37wK5l" to="wyt6:~System.gc():void" resolve="gc" />
-              </node>
-            </node>
-            <node concept="SfApY" id="6m1MVDkUQbK" role="3cqZAp">
-              <node concept="TDmWw" id="6m1MVDkUQbL" role="TEbGg">
-                <node concept="3clFbS" id="6m1MVDkUQbM" role="TDEfX">
-                  <node concept="3clFbF" id="6m1MVDkUQbN" role="3cqZAp">
-                    <node concept="2YIFZM" id="6m1MVDkUQbO" role="3clFbG">
-                      <ref role="37wK5l" to="rjhg:~Assert.fail():void" resolve="fail" />
-                      <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
-                    </node>
-                  </node>
-                  <node concept="3cpWs6" id="6m1MVDkUQbP" role="3cqZAp" />
-                </node>
-                <node concept="3cpWsn" id="6m1MVDkUQbQ" role="TDEfY">
-                  <property role="TrG5h" value="e" />
-                  <property role="3TUv4t" value="false" />
-                  <node concept="3uibUv" id="6m1MVDkUQbR" role="1tU5fm">
-                    <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbS" id="6m1MVDkUQbS" role="SfCbr">
-                <node concept="3clFbF" id="6m1MVDkUQbT" role="3cqZAp">
-                  <node concept="2YIFZM" id="6m1MVDkUQbU" role="3clFbG">
-                    <ref role="37wK5l" to="wyt6:~Thread.sleep(long):void" resolve="sleep" />
-                    <ref role="1Pybhc" to="wyt6:~Thread" resolve="Thread" />
-                    <node concept="3cmrfG" id="6m1MVDkUQbV" role="37wK5m">
-                      <property role="3cmrfH" value="100" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6m1MVDkUQbW" role="3cqZAp">
-          <node concept="2YIFZM" id="6m1MVDkUQbX" role="3clFbG">
-            <ref role="37wK5l" to="rjhg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
-            <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
-            <node concept="3eOVzh" id="6m1MVDkUQbY" role="37wK5m">
-              <node concept="37vLTw" id="3GM_nagTsZM" role="3uHU7B">
-                <ref role="3cqZAo" node="6m1MVDkUQbt" resolve="count" />
-              </node>
-              <node concept="3cmrfG" id="6m1MVDkUQc0" role="3uHU7w">
-                <property role="3cmrfH" value="10" />
               </node>
             </node>
           </node>
@@ -5928,105 +5844,22 @@
       <node concept="3Tm6S6" id="6m1MVDkUQc2" role="1B3o_S" />
       <node concept="3cqZAl" id="6m1MVDkUQc3" role="3clF45" />
       <node concept="3clFbS" id="6m1MVDkUQc4" role="3clF47">
-        <node concept="3SKdUt" id="6m1MVDkUQc5" role="3cqZAp">
-          <node concept="3SKdUq" id="6m1MVDkUQc6" role="3SKWNk">
-            <property role="3SKdUp" value=" this is a workaround of JRE bug similar to #4243868" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="6m1MVDkUQc7" role="3cqZAp">
-          <node concept="3SKdUq" id="6m1MVDkUQc8" role="3SKWNk">
-            <property role="3SKdUp" value=" http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4243868" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="6m1MVDkUQc9" role="3cqZAp">
-          <node concept="3cpWsn" id="6m1MVDkUQca" role="3cpWs9">
-            <property role="TrG5h" value="count" />
-            <property role="3TUv4t" value="false" />
-            <node concept="10Oyi0" id="6m1MVDkUQcb" role="1tU5fm" />
-            <node concept="3cmrfG" id="6m1MVDkUQcc" role="33vP2m">
-              <property role="3cmrfH" value="0" />
-            </node>
-          </node>
-        </node>
-        <node concept="2$JKZl" id="6m1MVDkUQcd" role="3cqZAp">
-          <node concept="1Wc70l" id="6m1MVDkUQce" role="2$JKZa">
-            <node concept="3fqX7Q" id="6m1MVDkUQcf" role="3uHU7B">
-              <node concept="2OqwBi" id="6m1MVDkUQcg" role="3fr31v">
-                <node concept="10M0yZ" id="7uIch3P6RoP" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6m1MVDkUPXD" resolve="MODEL_FILE" />
-                  <ref role="1PxDUh" node="6m1MVDkUPWT" resolve="DiskMemoryConflictsTest" />
-                </node>
-                <node concept="liA8E" id="6m1MVDkUQci" role="2OqNvi">
-                  <ref role="37wK5l" to="guwi:~File.delete():boolean" resolve="delete" />
-                </node>
-              </node>
-            </node>
-            <node concept="3eOVzh" id="6m1MVDkUQcj" role="3uHU7w">
-              <node concept="37vLTw" id="3GM_nagTBGE" role="3uHU7B">
-                <ref role="3cqZAo" node="6m1MVDkUQca" resolve="count" />
-              </node>
-              <node concept="3cmrfG" id="6m1MVDkUQcl" role="3uHU7w">
-                <property role="3cmrfH" value="10" />
+        <node concept="3clFbJ" id="69OmYVxlBe3" role="3cqZAp">
+          <node concept="3clFbS" id="69OmYVxlBe5" role="3clFbx">
+            <node concept="3clFbF" id="69OmYVxlBC6" role="3cqZAp">
+              <node concept="2YIFZM" id="69OmYVxlBC7" role="3clFbG">
+                <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+                <ref role="37wK5l" to="rjhg:~Assert.fail():void" resolve="fail" />
               </node>
             </node>
           </node>
-          <node concept="3clFbS" id="6m1MVDkUQcm" role="2LFqv$">
-            <node concept="3clFbF" id="6m1MVDkUQcn" role="3cqZAp">
-              <node concept="3uNrnE" id="6m1MVDkUQco" role="3clFbG">
-                <node concept="37vLTw" id="3GM_nagTr93" role="2$L3a6">
-                  <ref role="3cqZAo" node="6m1MVDkUQca" resolve="count" />
-                </node>
+          <node concept="3fqX7Q" id="6m1MVDkUQcf" role="3clFbw">
+            <node concept="2OqwBi" id="6m1MVDkUQcg" role="3fr31v">
+              <node concept="37vLTw" id="69OmYVxlBhN" role="2Oq$k0">
+                <ref role="3cqZAo" node="6m1MVDkUPXD" resolve="MODEL_FILE" />
               </node>
-            </node>
-            <node concept="3clFbF" id="6m1MVDkUQcq" role="3cqZAp">
-              <node concept="2YIFZM" id="6m1MVDkUQcr" role="3clFbG">
-                <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-                <ref role="37wK5l" to="wyt6:~System.gc():void" resolve="gc" />
-              </node>
-            </node>
-            <node concept="SfApY" id="6m1MVDkUQcs" role="3cqZAp">
-              <node concept="TDmWw" id="6m1MVDkUQct" role="TEbGg">
-                <node concept="3clFbS" id="6m1MVDkUQcu" role="TDEfX">
-                  <node concept="3clFbF" id="6m1MVDkUQcv" role="3cqZAp">
-                    <node concept="2YIFZM" id="6m1MVDkUQcw" role="3clFbG">
-                      <ref role="37wK5l" to="rjhg:~Assert.fail():void" resolve="fail" />
-                      <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
-                    </node>
-                  </node>
-                  <node concept="3cpWs6" id="6m1MVDkUQcx" role="3cqZAp" />
-                </node>
-                <node concept="3cpWsn" id="6m1MVDkUQcy" role="TDEfY">
-                  <property role="TrG5h" value="e" />
-                  <property role="3TUv4t" value="false" />
-                  <node concept="3uibUv" id="6m1MVDkUQcz" role="1tU5fm">
-                    <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbS" id="6m1MVDkUQc$" role="SfCbr">
-                <node concept="3clFbF" id="6m1MVDkUQc_" role="3cqZAp">
-                  <node concept="2YIFZM" id="6m1MVDkUQcA" role="3clFbG">
-                    <ref role="1Pybhc" to="wyt6:~Thread" resolve="Thread" />
-                    <ref role="37wK5l" to="wyt6:~Thread.sleep(long):void" resolve="sleep" />
-                    <node concept="3cmrfG" id="6m1MVDkUQcB" role="37wK5m">
-                      <property role="3cmrfH" value="100" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6m1MVDkUQcC" role="3cqZAp">
-          <node concept="2YIFZM" id="6m1MVDkUQcD" role="3clFbG">
-            <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
-            <ref role="37wK5l" to="rjhg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
-            <node concept="3eOVzh" id="6m1MVDkUQcE" role="37wK5m">
-              <node concept="37vLTw" id="3GM_nagTyf1" role="3uHU7B">
-                <ref role="3cqZAo" node="6m1MVDkUQca" resolve="count" />
-              </node>
-              <node concept="3cmrfG" id="6m1MVDkUQcG" role="3uHU7w">
-                <property role="3cmrfH" value="10" />
+              <node concept="liA8E" id="6m1MVDkUQci" role="2OqNvi">
+                <ref role="37wK5l" to="guwi:~File.delete():boolean" resolve="delete" />
               </node>
             </node>
           </node>

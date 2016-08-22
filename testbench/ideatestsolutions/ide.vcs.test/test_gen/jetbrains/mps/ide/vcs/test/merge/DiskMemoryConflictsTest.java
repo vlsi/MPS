@@ -365,37 +365,15 @@ public class DiskMemoryConflictsTest extends BaseMpsTest {
   }
 
   private static void setLastModified(long timeStamp) {
-    //  this is a workaround of JRE bug #4243868 
-    //  http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4243868 
-    int count = 0;
-    while (!(DiskMemoryConflictsTest.MODEL_FILE.setLastModified(timeStamp)) && count < 10) {
-      count++;
-      System.gc();
-      try {
-        Thread.sleep(100);
-      } catch (InterruptedException e) {
-        Assert.fail();
-        return;
-      }
+    if (!(MODEL_FILE.setLastModified(timeStamp))) {
+      Assert.fail();
     }
-    Assert.assertTrue(count < 10);
   }
 
   private static void delete() {
-    //  this is a workaround of JRE bug similar to #4243868 
-    //  http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4243868 
-    int count = 0;
-    while (!(DiskMemoryConflictsTest.MODEL_FILE.delete()) && count < 10) {
-      count++;
-      System.gc();
-      try {
-        Thread.sleep(100);
-      } catch (InterruptedException e) {
-        Assert.fail();
-        return;
-      }
+    if (!(MODEL_FILE.delete())) {
+      Assert.fail();
     }
-    Assert.assertTrue(count < 10);
   }
 
   private static void waitEDT() {
