@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.util.FileUtil;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -30,14 +31,17 @@ public class WatchedRoots implements ApplicationComponent {
     myLocalFileSystem = lfs;
   }
 
+  @Override
   public void initComponent() {
   }
 
+  @Override
   public void disposeComponent() {
   }
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "Watched Roots";
   }
@@ -88,7 +92,9 @@ public class WatchedRoots implements ApplicationComponent {
     ApplicationManager.getApplication().assertReadAccessAllowed();
     Integer count = myRequestedPaths.get(path);
     if (count == null || count == 0) {
-      throw new IllegalArgumentException("The watch request for the path " + path + " is not presented");
+      if (LOG.isEnabledFor(Level.WARN)) {
+        LOG.warn("The watch request for the path " + path + " is not presented");
+      }
     }
     if (--count > 0) {
       myRequestedPaths.put(path, count);

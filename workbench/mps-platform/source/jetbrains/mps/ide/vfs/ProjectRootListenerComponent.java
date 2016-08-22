@@ -95,6 +95,11 @@ public final class ProjectRootListenerComponent implements ProjectComponent {
 
   private static class EmptyFSListener implements FileListener {
     @Override
+    public String toString() {
+      return "EMPTY LISTENER";
+    }
+
+    @Override
     public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
     }
   }

@@ -26,6 +26,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.vfs.FileSystemEvent;
 import java.util.HashSet;
+import org.jetbrains.annotations.NotNull;
+import java.util.Arrays;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -208,6 +210,16 @@ public class FileProcessor extends ReloadParticipant {
     @Override
     public void notify(FileSystemListener listener) {
       FileProcessor.this.notify(listener, this);
+    }
+
+    @Override
+    public String toString() {
+      return String.format("[added: %s; removed: %s; changed: %s.", setToString(added), setToString(removed), setToString(changed));
+    }
+
+    @NotNull
+    private String setToString(Set<?> set) {
+      return Arrays.toString(set.toArray());
     }
   }
   protected static Logger LOG = LogManager.getLogger(FileProcessor.class);

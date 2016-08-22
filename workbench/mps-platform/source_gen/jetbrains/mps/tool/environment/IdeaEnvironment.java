@@ -20,6 +20,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.CachingFileSystem;
 import jetbrains.mps.ide.vfs.IdeaFSComponent;
 import jetbrains.mps.vfs.DefaultCachingContext;
+import com.intellij.testFramework.PlatformTestUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.core.platform.Platform;
 import org.jetbrains.annotations.Nullable;
@@ -187,6 +188,11 @@ public class IdeaEnvironment extends EnvironmentBase {
     checkInitialized();
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
+        try {
+          PlatformTestUtil.dispatchAllEventsInIdeEventQueue();
+        } catch (InterruptedException e) {
+          throw new RuntimeException(e);
+        }
       }
     }, ModalityState.NON_MODAL);
     ModelAccess.instance().flushEventQueue();

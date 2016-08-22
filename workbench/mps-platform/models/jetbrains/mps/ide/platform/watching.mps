@@ -258,6 +258,7 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
       <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
         <child id="1171903916107" name="bound" index="3qUE_r" />
       </concept>
@@ -3338,6 +3339,88 @@
         </node>
         <node concept="2AHcQZ" id="3tYsUK_Uv$O" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="69OmYVxiQ7i" role="jymVt" />
+      <node concept="3clFb_" id="69OmYVxj0sK" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="toString" />
+        <property role="od$2w" value="false" />
+        <property role="DiZV1" value="false" />
+        <property role="2aFKle" value="false" />
+        <node concept="3clFbS" id="69OmYVxj0sN" role="3clF47">
+          <node concept="3cpWs6" id="69OmYVxj3Ci" role="3cqZAp">
+            <node concept="2YIFZM" id="69OmYVxj6u6" role="3cqZAk">
+              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+              <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+              <node concept="Xl_RD" id="69OmYVxj7Uc" role="37wK5m">
+                <property role="Xl_RC" value="[added: %s; removed: %s; changed: %s." />
+              </node>
+              <node concept="1rXfSq" id="69OmYVxk8eS" role="37wK5m">
+                <ref role="37wK5l" node="69OmYVxjS1n" resolve="setToString" />
+                <node concept="37vLTw" id="69OmYVxk9QN" role="37wK5m">
+                  <ref role="3cqZAo" node="3Fdn9B$Wmdi" resolve="added" />
+                </node>
+              </node>
+              <node concept="1rXfSq" id="69OmYVxkbul" role="37wK5m">
+                <ref role="37wK5l" node="69OmYVxjS1n" resolve="setToString" />
+                <node concept="37vLTw" id="69OmYVxkd6f" role="37wK5m">
+                  <ref role="3cqZAo" node="3Fdn9B$Wn2z" resolve="removed" />
+                </node>
+              </node>
+              <node concept="1rXfSq" id="69OmYVxkeI6" role="37wK5m">
+                <ref role="37wK5l" node="69OmYVxjS1n" resolve="setToString" />
+                <node concept="37vLTw" id="69OmYVxkgkn" role="37wK5m">
+                  <ref role="3cqZAo" node="3Fdn9B$Wxgx" resolve="changed" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="69OmYVxiYO8" role="1B3o_S" />
+        <node concept="3uibUv" id="69OmYVxj0ld" role="3clF45">
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        </node>
+        <node concept="2AHcQZ" id="69OmYVxj23c" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="69OmYVxjOQo" role="jymVt" />
+      <node concept="3clFb_" id="69OmYVxjS1n" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="setToString" />
+        <property role="od$2w" value="false" />
+        <property role="DiZV1" value="false" />
+        <property role="2aFKle" value="false" />
+        <node concept="3clFbS" id="69OmYVxjS1q" role="3clF47">
+          <node concept="3cpWs6" id="69OmYVxjVje" role="3cqZAp">
+            <node concept="2YIFZM" id="69OmYVxjYnS" role="3cqZAk">
+              <ref role="37wK5l" to="33ny:~Arrays.toString(java.lang.Object[]):java.lang.String" resolve="toString" />
+              <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
+              <node concept="2OqwBi" id="69OmYVxk1_u" role="37wK5m">
+                <node concept="37vLTw" id="69OmYVxjZZ2" role="2Oq$k0">
+                  <ref role="3cqZAo" node="69OmYVxjTC$" resolve="set" />
+                </node>
+                <node concept="liA8E" id="69OmYVxk3oQ" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~Set.toArray():java.lang.Object[]" resolve="toArray" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm6S6" id="69OmYVxjQqK" role="1B3o_S" />
+        <node concept="3uibUv" id="69OmYVxjRSS" role="3clF45">
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        </node>
+        <node concept="37vLTG" id="69OmYVxjTC$" role="3clF46">
+          <property role="TrG5h" value="set" />
+          <node concept="3uibUv" id="69OmYVxjTCz" role="1tU5fm">
+            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+            <node concept="3qTvmN" id="69OmYVxjVfG" role="11_B2D" />
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="69OmYVxk51E" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
     </node>
@@ -7243,6 +7326,9 @@
       <node concept="3Tm1VV" id="501K0YLMPT2" role="1B3o_S" />
       <node concept="3cqZAl" id="501K0YLMPT3" role="3clF45" />
       <node concept="3clFbS" id="501K0YLMPT4" role="3clF47" />
+      <node concept="2AHcQZ" id="69OmYVxl8PL" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
     </node>
     <node concept="2tJIrI" id="501K0YLMPT8" role="jymVt" />
     <node concept="3clFb_" id="501K0YLMPT9" role="jymVt">
@@ -7253,6 +7339,9 @@
       <node concept="3Tm1VV" id="501K0YLMPTa" role="1B3o_S" />
       <node concept="3cqZAl" id="501K0YLMPTb" role="3clF45" />
       <node concept="3clFbS" id="501K0YLMPTc" role="3clF47" />
+      <node concept="2AHcQZ" id="69OmYVxl9OT" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
     </node>
     <node concept="2tJIrI" id="5LhcIq1SSjm" role="jymVt" />
     <node concept="3clFb_" id="501K0YLMPTg" role="jymVt">
@@ -7276,6 +7365,9 @@
             <property role="Xl_RC" value="Watched Roots" />
           </node>
         </node>
+      </node>
+      <node concept="2AHcQZ" id="69OmYVxlaOf" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="501K0YLMPTo" role="jymVt" />
@@ -7594,22 +7686,18 @@
         </node>
         <node concept="3clFbJ" id="5LhcIq1T4Kh" role="3cqZAp">
           <node concept="3clFbS" id="5LhcIq1T4Kj" role="3clFbx">
-            <node concept="YS8fn" id="5LhcIq1T6b$" role="3cqZAp">
-              <node concept="2ShNRf" id="5LhcIq1T6c6" role="YScLw">
-                <node concept="1pGfFk" id="5LhcIq1TdKW" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
-                  <node concept="3cpWs3" id="25HKs5OuOT0" role="37wK5m">
-                    <node concept="Xl_RD" id="25HKs5OuOTp" role="3uHU7w">
-                      <property role="Xl_RC" value=" is not presented" />
-                    </node>
-                    <node concept="3cpWs3" id="25HKs5OuLOp" role="3uHU7B">
-                      <node concept="Xl_RD" id="5LhcIq1TdMw" role="3uHU7B">
-                        <property role="Xl_RC" value="The watch request for the path " />
-                      </node>
-                      <node concept="37vLTw" id="25HKs5OuOE3" role="3uHU7w">
-                        <ref role="3cqZAo" node="501K0YLMPX_" resolve="path" />
-                      </node>
-                    </node>
+            <node concept="34ab3g" id="69OmYVxlbOV" role="3cqZAp">
+              <property role="35gtTG" value="warn" />
+              <node concept="3cpWs3" id="25HKs5OuOT0" role="34bqiv">
+                <node concept="Xl_RD" id="25HKs5OuOTp" role="3uHU7w">
+                  <property role="Xl_RC" value=" is not presented" />
+                </node>
+                <node concept="3cpWs3" id="25HKs5OuLOp" role="3uHU7B">
+                  <node concept="Xl_RD" id="5LhcIq1TdMw" role="3uHU7B">
+                    <property role="Xl_RC" value="The watch request for the path " />
+                  </node>
+                  <node concept="37vLTw" id="25HKs5OuOE3" role="3uHU7w">
+                    <ref role="3cqZAo" node="501K0YLMPX_" resolve="path" />
                   </node>
                 </node>
               </node>
