@@ -116,18 +116,19 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
     public void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules) {
       for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
         aspects: for (SModel aspect : LanguageAspectSupport.getAspectModels(l)) {
-          ArrayList<SLanguage> mainLanguages = new ArrayList<SLanguage>(LanguageAspectSupport.getMainLanguages(aspect));
+          List<SLanguage> mainLanguages = new ArrayList<>(LanguageAspectSupport.getMainLanguages(aspect));
           for (SModule loadedModule : loadedModules) {
-            if (! (loadedModule instanceof Language)) continue;
-            if (!mainLanguages.contains(MetaAdapterByDeclaration.getLanguage(((Language) loadedModule)))) continue;
+            if (loadedModule instanceof Language) {
+              if (mainLanguages.contains(MetaAdapterByDeclaration.getLanguage(((Language) loadedModule)))) {
+                SModelReference ref = getSModelReference(l);
+                LanguageModelDescriptor languageModelDescriptor = myModels.get(ref);
+                if (languageModelDescriptor != null) {
+                  languageModelDescriptor.updateGenerationLanguages();
+                }
 
-            SModelReference ref = getSModelReference(l);
-            LanguageModelDescriptor languageModelDescriptor = myModels.get(ref);
-            if (languageModelDescriptor != null) {
-              languageModelDescriptor.updateGenerationLanguages();
+                break aspects;
+              }
             }
-
-            break aspects;
           }
         }
       }
