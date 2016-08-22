@@ -30,33 +30,29 @@ public interface TransformationMenuContext {
   String getMenuLocation();
 
   @NotNull
-  SNode getNode();
+  default SNode getNode() {
+    return getNodeLocation().getContextNode();
+  }
 
   /**
-   * Non-null if the menu is looked up for an empty child cell. In this case the transformation menus are looked up for the parent node since transformations
-   * work on existing nodes. However, substitute menus are looked up for the link because substitutions may set new values to null links.
+   * The transformed/substituted node
    */
-  @Nullable
-  SContainmentLink getContainmentLink();
+  @NotNull
+  SNodeLocation getNodeLocation();
 
-  SModel getModel();
+  default SModel getModel() {
+    return getNode().getModel();
+  }
 
   @NotNull
   EditorContext getEditorContext();
 
   /**
-   * Returns a context similar to the current one but with node changed to {@code node} and link set to {@code null}. May return this instance if {@code node}
-   * is the same as the current node (in which case link will keep its value).
+   * Returns a context similar to the current one but with node location changed to {@code nodeLocation} (if non-null) and menu location changed to
+   * {@code menuLocation} (if non-null). May return this instance if both {@code nodeLocation} and {@code menuLocation} are unchanged or null.
    */
   @NotNull
-  TransformationMenuContext withNode(@NotNull SNode node);
-
-  /**
-   * Returns a context similar to the current one but with location changed to {@code location}. May return this instance if {@code location} is the same as the
-   * current location.
-   */
-  @NotNull
-  TransformationMenuContext withLocation(@NotNull String location);
+  TransformationMenuContext with(@Nullable SNodeLocation nodeLocation, @Nullable String menuLocation);
 
   /**
    * Creates applicable menu items from the menus returned by {@code menuLookup}. If menuLookup is null, creates the default menu lookup.

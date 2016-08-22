@@ -45,28 +45,15 @@ public class IncludeSubstituteMenuTransformationMenuPart implements Transformati
   }
 
   protected SNode getParentNode(TransformationMenuContext context) {
-    if (context.getContainmentLink() != null) {
-      // Null containmentLink means we want substitute menu for the missing child of the current node
-      return context.getNode();
-    }
-    return context.getNode().getParent();
+    return context.getNodeLocation().getParent();
   }
 
   protected SNode getCurrentChild(TransformationMenuContext context) {
-    if (context.getContainmentLink() != null) {
-      // Null containmentLink means we want substitute menu for the missing child of the current node
-      return null;
-    }
-    return context.getNode();
+    return context.getNodeLocation().getChild();
   }
 
   protected SContainmentLink getContainmentLink(TransformationMenuContext context) {
-    SContainmentLink containmentLink = context.getContainmentLink();
-    if (containmentLink != null) {
-      return containmentLink;
-    }
-
-    return context.getNode().getContainmentLink();
+    return context.getNodeLocation().getContainmentLink();
   }
 
   protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext context) {
