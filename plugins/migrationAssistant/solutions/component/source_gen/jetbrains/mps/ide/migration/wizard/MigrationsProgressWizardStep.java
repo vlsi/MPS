@@ -27,6 +27,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressManager;
 import java.util.Map;
+import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import jetbrains.mps.ide.migration.ProgressEstimation;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -128,7 +129,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
   }
 
   private void doRun(final ProgressIndicator progress) {
-    Map<String, Object> options = myInitialStep.getOptions();
+    Map<ProjectMigrationWithOptions.Option, Object> options = myInitialStep.getOptions();
     setFraction(progress, ProgressEstimation.initial());
 
     boolean cleanNotification = false;

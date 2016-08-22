@@ -15,11 +15,60 @@
  */
 package jetbrains.mps.migration.global;
 
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.annotation.ToRemove;
+
+import javax.swing.JCheckBox;
+import javax.swing.JComponent;
 import java.util.Collection;
 import java.util.Map;
 
 public interface ProjectMigrationWithOptions extends ProjectMigration {
-  Collection<String> getOptionIds();
 
-  void setOptionValues(Map<String,Object> values);
+  abstract class Option {
+    public final String id;
+    public Option(String id) {
+      this.id = id;
+    }
+    public abstract JComponent createComponent();
+    public abstract Object getValue(JComponent component);
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (!(o instanceof Option)) {
+        return false;
+      }
+      Option option = (Option) o;
+      return EqualUtil.equals(option.id, id);
+    }
+    @Override
+    public int hashCode() {
+      return id.hashCode();
+    }
+  }
+
+  class BooleanOption extends Option {
+    public final String myDescription;
+    public final boolean myDefaultValue;
+    public BooleanOption(String id, String description, boolean defaultValue) {
+      super(id);
+      myDescription = description;
+      myDefaultValue = defaultValue;
+    }
+    @Override
+    public JComponent createComponent() {
+      return new JCheckBox(myDescription, myDefaultValue);
+    }
+    @Override
+    public Object getValue(JComponent c) {
+      if (!(c instanceof JCheckBox)) throw new IllegalArgumentException(c.toString());
+      return ((JCheckBox) c).isSelected();
+    }
+  }
+
+  Collection<Option> getOptions();
+
+  void setOptionValues(Map<Option, Object> values);
 }

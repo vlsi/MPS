@@ -6,6 +6,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -23,7 +24,7 @@ public class AntTaskExecutionUtil {
 
     while (true) {
       // we don't know which options are "better" so we "select" no one 
-      MigrationManager.MigrationStep step = m.nextProjectStep(MapSequence.fromMap(new HashMap<String, Object>()), true);
+      MigrationManager.MigrationStep step = m.nextProjectStep(MapSequence.fromMap(new HashMap<ProjectMigrationWithOptions.Option, Object>()), true);
       if (step == null) {
         break;
       }
@@ -52,7 +53,7 @@ public class AntTaskExecutionUtil {
     }
 
     while (true) {
-      MigrationManager.MigrationStep step = m.nextProjectStep(MapSequence.fromMap(new HashMap<String, Object>()), false);
+      MigrationManager.MigrationStep step = m.nextProjectStep(MapSequence.fromMap(new HashMap<ProjectMigrationWithOptions.Option, Object>()), false);
       if (step == null) {
         break;
       }

@@ -12,9 +12,9 @@
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="-1" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="-1" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
   </languages>
   <imports>
     <import index="v27p" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.startup(MPS.IDEA/)" />
@@ -3622,6 +3622,26 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="44NRCusPn$8" role="3clF47">
+        <node concept="3cpWs8" id="25gV4LspuWF" role="3cqZAp">
+          <node concept="3cpWsn" id="25gV4LspuWG" role="3cpWs9">
+            <property role="TrG5h" value="pMig" />
+            <node concept="_YKpA" id="25gV4Lspx4d" role="1tU5fm">
+              <node concept="3uibUv" id="25gV4Lspx4f" role="_ZDj9">
+                <ref role="3uigEE" to="bdlm:~ProjectMigration" resolve="ProjectMigration" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="25gV4LspuWH" role="33vP2m">
+              <node concept="2YIFZM" id="25gV4Lsxw$6" role="2Oq$k0">
+                <ref role="1Pybhc" to="bdlm:~ProjectMigrationsRegistry" resolve="ProjectMigrationsRegistry" />
+                <ref role="37wK5l" to="bdlm:~ProjectMigrationsRegistry.getInstance():jetbrains.mps.migration.global.ProjectMigrationsRegistry" resolve="getInstance" />
+              </node>
+              <node concept="liA8E" id="25gV4LspuWJ" role="2OqNvi">
+                <ref role="37wK5l" to="bdlm:~ProjectMigrationsRegistry.getMigrations():java.util.List" resolve="getMigrations" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="44NRCusTrux" role="3cqZAp" />
         <node concept="3cpWs8" id="44NRCusPros" role="3cqZAp">
           <node concept="3cpWsn" id="44NRCusProt" role="3cpWs9">
             <property role="TrG5h" value="initialStep" />
@@ -3633,6 +3653,70 @@
                 <ref role="37wK5l" to="o8ag:5SsFeroaa9m" resolve="InitialStep" />
                 <node concept="37vLTw" id="44NRCusPM$H" role="37wK5m">
                   <ref role="3cqZAo" node="44NRCusPw5S" resolve="project" />
+                </node>
+                <node concept="2OqwBi" id="44NRCusTIXz" role="37wK5m">
+                  <node concept="ANE8D" id="44NRCusTJp7" role="2OqNvi" />
+                  <node concept="2OqwBi" id="1u4Xg2YAHBy" role="2Oq$k0">
+                    <node concept="2OqwBi" id="25gV4LspBhR" role="2Oq$k0">
+                      <node concept="2OqwBi" id="6vz$Djul$$m" role="2Oq$k0">
+                        <node concept="37vLTw" id="25gV4LspBhS" role="2Oq$k0">
+                          <ref role="3cqZAo" node="25gV4LspuWG" resolve="pMig" />
+                        </node>
+                        <node concept="UnYns" id="6vz$DjulAOg" role="2OqNvi">
+                          <node concept="3uibUv" id="6vz$DjulIYf" role="UnYnz">
+                            <ref role="3uigEE" to="bdlm:~ProjectMigrationWithOptions" resolve="ProjectMigrationWithOptions" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3zZkjj" id="1u4Xg2YAFcX" role="2OqNvi">
+                        <node concept="1bVj0M" id="1u4Xg2YAFcZ" role="23t8la">
+                          <node concept="3clFbS" id="1u4Xg2YAFd0" role="1bW5cS">
+                            <node concept="3clFbF" id="1u4Xg2YAFd1" role="3cqZAp">
+                              <node concept="2OqwBi" id="1u4Xg2YAFd2" role="3clFbG">
+                                <node concept="37vLTw" id="1u4Xg2YAFd3" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="1u4Xg2YAFd7" resolve="it" />
+                                </node>
+                                <node concept="liA8E" id="1u4Xg2YAFd4" role="2OqNvi">
+                                  <ref role="37wK5l" to="bdlm:~ProjectMigration.shouldBeExecuted(jetbrains.mps.project.Project):boolean" resolve="shouldBeExecuted" />
+                                  <node concept="2YIFZM" id="6mkTi9xJJ15" role="37wK5m">
+                                    <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
+                                    <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                                    <node concept="37vLTw" id="44NRCusTyr8" role="37wK5m">
+                                      <ref role="3cqZAo" node="44NRCusPw5S" resolve="project" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="Rh6nW" id="1u4Xg2YAFd7" role="1bW2Oz">
+                            <property role="TrG5h" value="it" />
+                            <node concept="2jxLKc" id="1u4Xg2YAFd8" role="1tU5fm" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3goQfb" id="1u4Xg2YAJ3z" role="2OqNvi">
+                      <node concept="1bVj0M" id="1u4Xg2YAJ3_" role="23t8la">
+                        <node concept="3clFbS" id="1u4Xg2YAJ3A" role="1bW5cS">
+                          <node concept="3clFbF" id="1u4Xg2YAKk4" role="3cqZAp">
+                            <node concept="2OqwBi" id="1u4Xg2YAKuC" role="3clFbG">
+                              <node concept="37vLTw" id="1u4Xg2YAKk3" role="2Oq$k0">
+                                <ref role="3cqZAo" node="1u4Xg2YAJ3B" resolve="it" />
+                              </node>
+                              <node concept="liA8E" id="1u4Xg2YAKS6" role="2OqNvi">
+                                <ref role="37wK5l" to="bdlm:~ProjectMigrationWithOptions.getOptions():java.util.Collection" resolve="getOptions" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="Rh6nW" id="1u4Xg2YAJ3B" role="1bW2Oz">
+                          <property role="TrG5h" value="it" />
+                          <node concept="2jxLKc" id="1u4Xg2YAJ3C" role="1tU5fm" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -3988,8 +4072,8 @@
         <property role="TrG5h" value="options" />
         <node concept="3uibUv" id="6vz$DjuiXS4" role="1tU5fm">
           <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-          <node concept="3uibUv" id="6vz$DjuiXSa" role="11_B2D">
-            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+          <node concept="3uibUv" id="44NRCusUVzH" role="11_B2D">
+            <ref role="3uigEE" to="bdlm:~ProjectMigrationWithOptions$Option" resolve="ProjectMigrationWithOptions.Option" />
           </node>
           <node concept="3uibUv" id="6vz$DjuiXS9" role="11_B2D">
             <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
@@ -8320,8 +8404,8 @@
                     <ref role="37wK5l" node="25gV4LspSM9" resolve="nextProjectStep" />
                     <node concept="2ShNRf" id="75eqTYknxx9" role="37wK5m">
                       <node concept="3rGOSV" id="75eqTYknCtf" role="2ShVmc">
-                        <node concept="3uibUv" id="75eqTYknCth" role="3rHrn6">
-                          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                        <node concept="3uibUv" id="44NRCusWdUi" role="3rHrn6">
+                          <ref role="3uigEE" to="bdlm:~ProjectMigrationWithOptions$Option" resolve="ProjectMigrationWithOptions.Option" />
                         </node>
                         <node concept="3uibUv" id="75eqTYknCti" role="3rHtpV">
                           <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
@@ -8514,8 +8598,8 @@
                     <ref role="37wK5l" node="25gV4LspSM9" resolve="nextProjectStep" />
                     <node concept="2ShNRf" id="75eqTYko$Y$" role="37wK5m">
                       <node concept="3rGOSV" id="75eqTYko$Y_" role="2ShVmc">
-                        <node concept="3uibUv" id="75eqTYko$YA" role="3rHrn6">
-                          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                        <node concept="3uibUv" id="44NRCusWejO" role="3rHrn6">
+                          <ref role="3uigEE" to="bdlm:~ProjectMigrationWithOptions$Option" resolve="ProjectMigrationWithOptions.Option" />
                         </node>
                         <node concept="3uibUv" id="75eqTYko$YB" role="3rHtpV">
                           <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
@@ -10123,8 +10207,8 @@
         <property role="TrG5h" value="options" />
         <node concept="3uibUv" id="36$CdjYdELu" role="1tU5fm">
           <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-          <node concept="3uibUv" id="36$CdjYdELs" role="11_B2D">
-            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+          <node concept="3uibUv" id="44NRCusUYk5" role="11_B2D">
+            <ref role="3uigEE" to="bdlm:~ProjectMigrationWithOptions$Option" resolve="ProjectMigrationWithOptions.Option" />
           </node>
           <node concept="3uibUv" id="36$CdjYdELq" role="11_B2D">
             <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />

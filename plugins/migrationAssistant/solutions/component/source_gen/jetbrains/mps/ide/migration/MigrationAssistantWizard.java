@@ -8,10 +8,16 @@ import jetbrains.mps.ide.migration.wizard.MigrationProblemsContainer;
 import java.awt.Dimension;
 import java.util.List;
 import jetbrains.mps.ide.migration.wizard.MigrationWizardStep;
+import jetbrains.mps.migration.global.ProjectMigration;
+import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 import jetbrains.mps.ide.migration.wizard.InitialStep;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorWizardStep;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -26,8 +32,18 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     setSize(((int) oldSize.getWidth()), ((int) (oldSize.getHeight() + 90)));
   }
 
-  private static List<MigrationWizardStep> createSteps(Project project, MigrationManager manager, MigrationProblemsContainer errorContainer) {
-    InitialStep initialStep = new InitialStep(project);
+  private static List<MigrationWizardStep> createSteps(final Project project, MigrationManager manager, MigrationProblemsContainer errorContainer) {
+    List<ProjectMigration> pMig = ProjectMigrationsRegistry.getInstance().getMigrations();
+
+    InitialStep initialStep = new InitialStep(project, ListSequence.fromList(pMig).ofType(ProjectMigrationWithOptions.class).where(new IWhereFilter<ProjectMigrationWithOptions>() {
+      public boolean accept(ProjectMigrationWithOptions it) {
+        return it.shouldBeExecuted(ProjectHelper.fromIdeaProject(project));
+      }
+    }).translate(new ITranslator2<ProjectMigrationWithOptions, ProjectMigrationWithOptions.Option>() {
+      public Iterable<ProjectMigrationWithOptions.Option> translate(ProjectMigrationWithOptions it) {
+        return it.getOptions();
+      }
+    }).toListSequence());
     MigrationsProgressWizardStep migrationsProgressWizardStep = new MigrationsProgressWizardStep(project, initialStep, manager, errorContainer);
     MigrationErrorWizardStep migrationErrorWizardStep = new MigrationErrorWizardStep(project, errorContainer);
     return ListSequence.fromListAndArray(new ArrayList<MigrationWizardStep>(), initialStep, migrationsProgressWizardStep, migrationErrorWizardStep);

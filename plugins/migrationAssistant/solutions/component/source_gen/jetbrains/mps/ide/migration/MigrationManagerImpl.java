@@ -110,7 +110,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
   }
 
   protected static Logger LOG = LogManager.getLogger(MigrationManagerImpl.class);
-  public MigrationManager.MigrationStep nextProjectStep(Map<String, Object> options, boolean cleanup) {
+  public MigrationManager.MigrationStep nextProjectStep(Map<ProjectMigrationWithOptions.Option, Object> options, boolean cleanup) {
     ProjectMigration current = next(lastProjectMigration, cleanup);
 
     while (current != null && !(current.shouldBeExecuted(myMpsMproject))) {
