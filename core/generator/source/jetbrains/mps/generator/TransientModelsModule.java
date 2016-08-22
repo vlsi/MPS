@@ -107,15 +107,17 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
   }
 
   public void removeAll() {
-    for (TransientSModelDescriptor model : myModelVault.allModels()) {
-      model.makeRefsMature();
-    }
     for (SModel model : myModelVault.allModels()) {
       removeModel(model);
     }
   }
 
   public void clearUnused() {
+    // mature references as a distinct step (not as part of unload()) just in case there are reference
+    // between the models to publish and unload (hence, mature) in improper order may leave reference broken.
+    for (TransientSModelDescriptor model : myModelVault.modelsToPublish()) {
+      model.makeRefsMature();
+    }
     for (TransientSModelDescriptor model : myModelVault.modelsToPublish()) {
       unloadModel(model);
     }
