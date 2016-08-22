@@ -611,9 +611,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     if (myDescriptorFile != null) {
       // fixme AP: this looks awful -- I agree; the right way is to have IFile something immutable
       // fixme or just work in <code>WatchedRoots</code> by IFile (not by String) and listen for rename
-      myDescriptorFile.removeListener(this);
+      myFileSystem.removeListener(this);
       myDescriptorFile.rename(newName + "." + FileUtil.getExtension(myDescriptorFile.getName()));
-      myDescriptorFile.addListener(this);
+      myFileSystem.addListener(this);
     }
 
     if (descriptor != null) {
