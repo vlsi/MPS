@@ -62,7 +62,7 @@ public final class ShowGenPlan__BehaviorDescriptor extends BaseBHDescriptor {
     if (SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x2c510b378f8ce5ddL, "ignoreExternalPlan"))) {
       gp = new GenerationPlan(model);
       if (externalPlan != null) {
-        console.addText("Model has alternative plan configured externally, ingored\n");
+        console.addText("Model has alternative plan configured externally, ignored\n");
       }
     } else if (externalPlan != null) {
       console.addText("Model uses custom plan configured externally\n");
