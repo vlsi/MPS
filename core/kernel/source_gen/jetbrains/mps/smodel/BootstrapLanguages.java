@@ -75,7 +75,7 @@ public class BootstrapLanguages {
   }
   /**
    * 
-   * @deprecated refactor single use (switch to SConcepts) and remove
+   * @deprecated use module-reference instead of globally resolved module
    */
   @Deprecated
   @ToRemove(version = 3.4)
@@ -107,6 +107,9 @@ public class BootstrapLanguages {
     // unless we introduce anything like SLanguage for DevKit runtime, SModuleReference is the way 
     // we identify devkit at RT. 
     return PersistenceFacade.getInstance().createModuleReference("a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)");
+  }
+  public static SModuleReference getLanguageDesignDevKit() {
+    return PersistenceFacade.getInstance().createModuleReference("2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)");
   }
   public static SModuleReference descriptorLanguageRef() {
     return PersistenceFacade.getInstance().createModuleReference("f4ad079d-bc71-4ffb-9600-9328705cf998(jetbrains.mps.lang.descriptor)");

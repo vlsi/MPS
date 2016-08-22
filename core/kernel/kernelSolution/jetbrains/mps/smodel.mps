@@ -772,7 +772,7 @@
         <node concept="TZ5HI" id="5HHFAyrKjSY" role="3nqlJM">
           <node concept="TZ5HA" id="5HHFAyrKjSZ" role="3HnX3l">
             <node concept="1dT_AC" id="5HHFAyrKjW0" role="1dT_Ay">
-              <property role="1dT_AB" value="refactor single use (switch to SConcepts) and remove" />
+              <property role="1dT_AB" value="use module-reference instead of globally resolved module" />
             </node>
           </node>
         </node>
@@ -904,6 +904,23 @@
             <node concept="20RdaH" id="5HHFAyrKfDZ" role="37shsm">
               <property role="20Rdg5" value="a2eb3a43-fcc2-4200-80dc-c60110c4862d" />
               <property role="20Rdg7" value="jetbrains.mps.devkit.templates" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2YIFZL" id="6kDspgJfJXn" role="jymVt">
+      <property role="TrG5h" value="getLanguageDesignDevKit" />
+      <node concept="3uibUv" id="6kDspgJfK4k" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+      <node concept="3Tm1VV" id="6kDspgJfJXq" role="1B3o_S" />
+      <node concept="3clFbS" id="6kDspgJfJXr" role="3clF47">
+        <node concept="3clFbF" id="6kDspgJfK7N" role="3cqZAp">
+          <node concept="37shsh" id="6kDspgJfK7L" role="3clFbG">
+            <node concept="20RdaH" id="6kDspgJfK9n" role="37shsm">
+              <property role="20Rdg5" value="2677cb18-f558-4e33-bc38-a5139cee06dc" />
+              <property role="20Rdg7" value="jetbrains.mps.devkit.language-design" />
             </node>
           </node>
         </node>
