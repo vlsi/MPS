@@ -901,15 +901,11 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public IFile getOutputPath() {
     return ProjectPathUtil.getGeneratorOutputPath(getModuleSourceDir(), getModuleDescriptor());
   }
-
   /**
    * AP
    * the contract is not clear: when should this method be called?
    * it seems to be our internal mechanism which is exposed to the client
    * FIXME
-   * Obviously it must be internal module method:
-   * it must be done on the fs update (actually it is #update method here)
-   * Nobody must recount the module lang versions from the outside
    */
   @ToRemove(version = 3.4)
   public void validateLanguageVersions() {
