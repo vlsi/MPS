@@ -112,12 +112,15 @@ public class InlineLocalVariable_Action extends BaseAction {
     ModelAccess modelAccess = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess();
     final Wrappers._T<InlineVariableRefactoring> ref = new Wrappers._T<InlineVariableRefactoring>();
 
+    final Wrappers._T<SNode> alternativeSelection = new Wrappers._T<SNode>(null);
     final Wrappers._boolean isAvailable = new Wrappers._boolean(true);
     String messageDialogTitle = "Inline Variable";
     final Wrappers._T<String> infoMessage = new Wrappers._T<String>(null);
     final Wrappers._T<String> yesNoMessage = new Wrappers._T<String>(null);
     modelAccess.runReadAction(new Runnable() {
       public void run() {
+        SNode stmt = SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), true, false);
+        alternativeSelection.value = (SNodeOperations.getNextSibling(stmt) != null ? SNodeOperations.getNextSibling(stmt) : SNodeOperations.getPrevSibling(stmt));
         if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
           SNode localVariableDeclaration = SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
           InlineVariableAssignmentRefactoring inlineVARef = new InlineVariableAssignmentRefactoring(localVariableDeclaration);
@@ -159,7 +162,10 @@ public class InlineLocalVariable_Action extends BaseAction {
     modelAccess.executeCommand(new Runnable() {
       public void run() {
         SNode result = ref.value.doRefactoring();
-        ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(result);
+        if (result == null) {
+          result = alternativeSelection.value;
+        }
+        ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).selectWRTFocusPolicy(result);
       }
     });
   }

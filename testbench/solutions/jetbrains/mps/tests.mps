@@ -3922,17 +3922,20 @@
     <node concept="lpD6D" id="1I5CUWKBcs" role="lpD6w">
       <ref role="lpD7u" to="hbb4:1I5CUWKh1C" resolve="VariableDeclarationInitializer" />
     </node>
+    <node concept="lpD6D" id="2Pw8TrfeRhI" role="lpD6w">
+      <ref role="lpD7u" to="hbb4:2Pw8TrfesIX" resolve="InlineAssignment" />
+    </node>
     <node concept="lpD6D" id="3FJ0r$qO3c6" role="lpD6w">
-      <ref role="lpD7u" to="hbb4:5w_nepi1Hna" resolve="InlineAssingmentInClosure" />
+      <ref role="lpD7u" to="hbb4:5w_nepi1Hna" resolve="InlineAssignmentInClosure" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3c5" role="lpD6w">
-      <ref role="lpD7u" to="hbb4:7UcKRu2POzI" resolve="InlineAssingmentWithClosures" />
+      <ref role="lpD7u" to="hbb4:7UcKRu2POzI" resolve="InlineAssignmentWithClosures" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3bq" role="lpD6w">
       <ref role="lpD7u" to="hbb4:hT$SPeX" resolve="InlineFromConceptFunction" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3c4" role="lpD6w">
-      <ref role="lpD7u" to="hbb4:69JRtC3me0F" resolve="InlineInClosureWithOutsideAssingment" />
+      <ref role="lpD7u" to="hbb4:69JRtC3me0F" resolve="InlineInClosureWithOutsideAssignment" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3c3" role="lpD6w">
       <ref role="lpD7u" to="hbb4:69JRtC3mdYX" resolve="InlineInsideClosure" />

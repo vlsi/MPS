@@ -18,11 +18,11 @@ import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
 @MPSLaunch
-public class InlineInClosureWithOutsideAssingment_Test extends BaseTransformationTest {
+public class InlineInClosureWithOutsideAssignment_Test extends BaseTransformationTest {
   @Test
   public void test_InlineInClosureWithOutsideAssingmentTest() throws Throwable {
     initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
-    runTest("jetbrains.mps.refactoringTest.InlineInClosureWithOutsideAssingment_Test$TestBody", "test_InlineInClosureWithOutsideAssingmentTest", true);
+    runTest("jetbrains.mps.refactoringTest.InlineInClosureWithOutsideAssignment_Test$TestBody", "test_InlineInClosureWithOutsideAssingmentTest", true);
   }
 
   @MPSLaunch
