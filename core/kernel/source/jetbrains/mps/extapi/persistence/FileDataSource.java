@@ -62,10 +62,10 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   }
 
   public void setFile(@NotNull IFile file) {
-    myFile = file;
     synchronized (LOCK) {
       if (!(myListeners.isEmpty())) {
         stopListening();
+        myFile = file;
         startListening();
       }
     }

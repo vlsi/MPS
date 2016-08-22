@@ -537,11 +537,12 @@
       <node id="1958528365893304470" at="92,69,93,66" concept="5" />
       <node id="5765100171650883364" at="93,66,94,47" concept="10" />
       <node id="7094396394556144955" at="96,41,97,81" concept="5" />
-      <node id="5765100171650883389" at="100,22,101,40" concept="5" />
-      <node id="5765100171650883400" at="102,12,103,36" concept="5" />
-      <node id="5765100171650883405" at="103,36,104,62" concept="10" />
-      <node id="5765100171650883414" at="104,62,105,47" concept="5" />
-      <node id="5765100171650883419" at="105,47,106,30" concept="5" />
+      <node id="3046565826199166443" at="98,7,99,13" concept="11" />
+      <node id="5765100171650883389" at="101,22,102,40" concept="5" />
+      <node id="5765100171650883400" at="103,12,104,36" concept="5" />
+      <node id="5765100171650883405" at="104,36,105,62" concept="10" />
+      <node id="5765100171650883414" at="105,62,106,47" concept="5" />
+      <node id="5765100171650883419" at="106,47,107,30" concept="5" />
       <node id="5765100171650883126" at="30,0,33,0" concept="3" trace="WatchedRoots#(Lcom/intellij/openapi/vfs/LocalFileSystem;)V" />
       <node id="5765100171650883137" at="34,0,37,0" concept="9" trace="initComponent#()V" />
       <node id="5765100171650883145" at="38,0,41,0" concept="9" trace="disposeComponent#()V" />
@@ -551,15 +552,15 @@
       <node id="7094396394556144955" at="95,38,98,7" concept="8" />
       <node id="5765100171650883327" at="70,45,74,7" concept="8" />
       <node id="5765100171650883347" at="83,7,87,7" concept="8" />
-      <node id="6652154090206022673" at="94,47,99,5" concept="8" />
-      <node id="5765100171650883398" at="102,10,107,5" concept="1" />
+      <node id="5765100171650883398" at="103,10,108,5" concept="1" />
       <node id="5765100171650883152" at="42,0,48,0" concept="9" trace="getComponentName#()Ljava/lang/String;" />
+      <node id="6652154090206022673" at="94,47,100,5" concept="8" />
       <node id="5765100171650883278" at="55,47,62,5" concept="8" />
       <node id="5765100171650883315" at="68,0,75,5" concept="7" />
-      <node id="5765100171650883387" at="99,5,107,5" concept="8" />
+      <node id="5765100171650883387" at="100,5,108,5" concept="8" />
       <node id="5765100171650883269" at="53,0,64,0" concept="9" trace="addWatchRequest#(Ljava/lang/String;)Z" />
       <node id="5765100171650883337" at="75,5,88,5" concept="8" />
-      <node id="5765100171650883362" at="92,0,109,0" concept="9" trace="removeWatchRequest#(Ljava/lang/String;)V" />
+      <node id="5765100171650883362" at="92,0,110,0" concept="9" trace="removeWatchRequest#(Ljava/lang/String;)V" />
       <node id="5765100171650883306" at="66,0,91,0" concept="9" trace="maybeAddWatchRequest#(Ljava/lang/String;)Z" />
       <scope id="5765100171650883140" at="35,31,35,31" />
       <scope id="5765100171650883148" at="39,34,39,34" />
@@ -568,7 +569,7 @@
       <scope id="2408794412340179907" at="77,33,78,63" />
       <scope id="1958528365893395072" at="81,33,82,41" />
       <scope id="7094396394556144955" at="96,41,97,81" />
-      <scope id="5765100171650883388" at="100,22,101,40" />
+      <scope id="5765100171650883388" at="101,22,102,40" />
       <scope id="5765100171650883279" at="56,24,58,19" />
       <scope id="5765100171650883292" at="59,12,61,40" />
       <scope id="5765100171650883328" at="71,48,73,14" />
@@ -578,8 +579,8 @@
       </scope>
       <scope id="5765100171650883137" at="34,0,37,0" />
       <scope id="5765100171650883145" at="38,0,41,0" />
-      <scope id="6652154090206022675" at="95,38,98,7" />
-      <scope id="5765100171650883399" at="102,12,106,30">
+      <scope id="6652154090206022675" at="95,38,99,13" />
+      <scope id="5765100171650883399" at="103,12,107,30">
         <var name="req" id="5765100171650883406" />
       </scope>
       <scope id="5765100171650883320" at="69,103,74,7">
@@ -598,10 +599,10 @@
       <scope id="5765100171650883338" at="76,28,87,7">
         <var name="request" id="5765100171650883340" />
       </scope>
-      <scope id="5765100171650883363" at="92,69,107,5">
+      <scope id="5765100171650883363" at="92,69,108,5">
         <var name="count" id="5765100171650883365" />
       </scope>
-      <scope id="5765100171650883362" at="92,0,109,0">
+      <scope id="5765100171650883362" at="92,0,110,0">
         <var name="path" id="5765100171650883429" />
       </scope>
       <scope id="5765100171650883309" at="66,53,89,17">
@@ -610,7 +611,7 @@
       <scope id="5765100171650883306" at="66,0,91,0">
         <var name="path" id="5765100171650883360" />
       </scope>
-      <unit id="5765100171650883094" at="25,0,110,0" name="jetbrains.mps.ide.platform.watching.WatchedRoots" />
+      <unit id="5765100171650883094" at="25,0,111,0" name="jetbrains.mps.ide.platform.watching.WatchedRoots" />
     </file>
   </root>
   <root nodeRef="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)/6784047278245094901">

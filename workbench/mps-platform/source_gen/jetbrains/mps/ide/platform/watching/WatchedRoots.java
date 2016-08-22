@@ -96,6 +96,7 @@ public class WatchedRoots implements ApplicationComponent {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("The watch request for the path " + path + " is not presented");
       }
+      return;
     }
     if (--count > 0) {
       myRequestedPaths.put(path, count);
