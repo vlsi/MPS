@@ -31,7 +31,9 @@ public class PluginsPathMacroCrutch implements ApplicationComponent {
   public void initComponent() {
     String path = PathMacroUtil.getGlobalSystemMacroValue(ACTUAL_MACRO_NAME);
     if (path != null) {
-      PathMacros.getInstance().addLegacyMacro(LEGACY_MACRO_NAME, path);
+      // TODO Use addLegacyMacro()
+      // Reverted to normal macro because jps build fails when it doesn't find PLUGINS_PATH
+      PathMacros.getInstance().setMacro(LEGACY_MACRO_NAME, path);
     }
   }
 
