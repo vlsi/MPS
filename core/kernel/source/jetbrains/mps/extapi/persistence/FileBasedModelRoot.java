@@ -276,5 +276,10 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
       event.notify(FileBasedModelRoot.this);
     }
+
+    @Override
+    public String toString() {
+      return "[PathListener: path: " + path + "; modelRoot: " + FileBasedModelRoot.this + "]";
+    }
   }
 }

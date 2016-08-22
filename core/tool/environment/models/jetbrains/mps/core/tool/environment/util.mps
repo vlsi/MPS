@@ -4158,7 +4158,7 @@
             </node>
             <node concept="2ShNRf" id="6qMd1Cr4dxm" role="33vP2m">
               <node concept="1pGfFk" id="6qMd1Cr4e0a" role="2ShVmc">
-                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
+                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;(java.util.Collection)" resolve="ArrayList" />
                 <node concept="1rXfSq" id="6qMd1Cr4cQ_" role="37wK5m">
                   <ref role="37wK5l" to="z1c3:~ProjectBase.getProjectModules():java.util.List" resolve="getProjectModules" />
                 </node>
