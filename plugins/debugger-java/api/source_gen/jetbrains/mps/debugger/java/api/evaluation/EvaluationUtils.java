@@ -22,10 +22,10 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.PrimitiveValueProxy;
 import com.sun.jdi.InvocationException;
 import com.sun.jdi.InvalidTypeException;
 import com.sun.jdi.IncompatibleThreadStateException;
-import org.apache.log4j.Level;
-import com.sun.jdi.ClassNotLoadedException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Level;
+import com.sun.jdi.ClassNotLoadedException;
 
 public abstract class EvaluationUtils {
   protected static EvaluationUtils INSTANCE;
@@ -111,6 +111,7 @@ public abstract class EvaluationUtils {
       throw new EvaluationException(t);
     }
   }
+  protected static Logger LOG = LogManager.getLogger(EvaluationUtils.class);
   /**
    * When we need to call something from ui which throws evaluation exception.
    * For example when we update the tree.
@@ -176,5 +177,4 @@ public abstract class EvaluationUtils {
       return myThreadReference;
     }
   }
-  protected static Logger LOG = LogManager.getLogger(EvaluationUtils.class);
 }

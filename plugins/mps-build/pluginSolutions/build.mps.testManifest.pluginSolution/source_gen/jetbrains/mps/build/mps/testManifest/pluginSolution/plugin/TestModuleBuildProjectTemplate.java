@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.io.File;
 import org.apache.log4j.Level;
 import java.util.ArrayList;
@@ -20,8 +22,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -48,6 +48,7 @@ public class TestModuleBuildProjectTemplate {
     return updateReferences(root, testGroup);
   }
 
+  protected static Logger LOG = LogManager.getLogger(TestModuleBuildProjectTemplate.class);
   private List<SNode> createLanguageElements(List<SNode> tmms) {
     File projectFile = project.getProjectFile();
     if (projectFile == null) {
@@ -156,7 +157,6 @@ public class TestModuleBuildProjectTemplate {
   }
   private MPSProject project;
   private SModel target;
-  protected static Logger LOG = LogManager.getLogger(TestModuleBuildProjectTemplate.class);
   private static SNode _quotation_createNode_gglig1_a0e0d(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_11 = null;

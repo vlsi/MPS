@@ -19,6 +19,8 @@ import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.refactoring.participant.RefactoringSessionImpl;
 import jetbrains.mps.ide.platform.refactoring.UsagesModelTracker;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
@@ -38,8 +40,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class RefactoringProcessor {
 
@@ -99,6 +99,7 @@ public class RefactoringProcessor {
     }
   }
 
+  protected static Logger LOG = LogManager.getLogger(RefactoringProcessor.class);
   public static class RefactoringUIImpl extends RefactoringProcessor.RefactoringSearchUIImpl implements RefactoringProcessor.RefactoringUI {
     private RefactoringSessionImpl myRefactoringSession;
     public RefactoringUIImpl(MPSProject project, RefactoringSessionImpl refactoringSession) {
@@ -271,5 +272,4 @@ public class RefactoringProcessor {
     }, refactoringName, searchResults.value, participantChanges._1(), refactoringSession);
   }
 
-  protected static Logger LOG = LogManager.getLogger(RefactoringProcessor.class);
 }

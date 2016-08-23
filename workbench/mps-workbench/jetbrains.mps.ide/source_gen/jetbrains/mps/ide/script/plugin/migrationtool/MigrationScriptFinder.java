@@ -14,6 +14,8 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Collections;
 import java.util.ArrayList;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -22,8 +24,6 @@ import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.util.StringUtil;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MigrationScriptFinder extends BaseFinder {
   private final Collection<RefactoringScript> myScripts;
@@ -37,6 +37,7 @@ public class MigrationScriptFinder extends BaseFinder {
   public String getDescription() {
     return "Migration Scripts";
   }
+  protected static Logger LOG = LogManager.getLogger(MigrationScriptFinder.class);
   @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     myResults = new SearchResults<SNode>();
@@ -98,5 +99,4 @@ public class MigrationScriptFinder extends BaseFinder {
       rl.resultsChanged(this);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(MigrationScriptFinder.class);
 }

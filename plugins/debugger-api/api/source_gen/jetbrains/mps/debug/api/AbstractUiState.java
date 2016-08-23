@@ -9,11 +9,11 @@ import java.util.List;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import java.util.Collections;
 import jetbrains.mps.debug.api.programState.IWatchable;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ApplicationManager;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public abstract class AbstractUiState {
   protected static final int NO_FRAME = -1;
@@ -84,6 +84,7 @@ public abstract class AbstractUiState {
     }
     return Collections.emptyList();
   }
+  protected static Logger LOG = LogManager.getLogger(AbstractUiState.class);
   /**
    * It it a fact that we can not run evaluation (i.e. whatever code that executes something on virtual machine under debug) in EDT since it can and will slow down or even freeze ui.
    * And we also should have a list of threads on the virtual machine that do evaluation in order to skip events from them in the vm manager thread
@@ -106,5 +107,4 @@ public abstract class AbstractUiState {
       }
     });
   }
-  protected static Logger LOG = LogManager.getLogger(AbstractUiState.class);
 }

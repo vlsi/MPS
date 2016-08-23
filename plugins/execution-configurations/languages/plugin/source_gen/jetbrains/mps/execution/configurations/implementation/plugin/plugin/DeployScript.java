@@ -21,6 +21,8 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelOperations;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
@@ -38,8 +40,6 @@ import java.util.Collections;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class DeployScript {
   private final DeployScript.TemporalModuleWithDescriptorFile myModule;
@@ -66,6 +66,7 @@ public class DeployScript {
     SModelOperations.validateLanguagesAndImports(model, true, true);
   }
 
+  protected static Logger LOG = LogManager.getLogger(DeployScript.class);
   @Nullable
   public String make() {
     MakeSession session = new MakeSession(myProject, new DefaultMakeMessageHandler(myProject), false);
@@ -130,5 +131,4 @@ public class DeployScript {
       return false;
     }
   }
-  protected static Logger LOG = LogManager.getLogger(DeployScript.class);
 }

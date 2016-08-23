@@ -8,11 +8,11 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.util.ArrayList;
 import java.io.File;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ListCommandPart extends AbstractCommandPart implements CommandPart {
   public ListCommandPart(List<? extends Object> list) {
@@ -32,6 +32,7 @@ public class ListCommandPart extends AbstractCommandPart implements CommandPart 
       }
     });
   }
+  protected static Logger LOG = LogManager.getLogger(ListCommandPart.class);
   private Iterable<String> getCommandsFromItem(Object item) {
     if (item == null) {
       return ListSequence.fromList(new ArrayList<String>());
@@ -60,7 +61,6 @@ public class ListCommandPart extends AbstractCommandPart implements CommandPart 
     }
     return ListSequence.fromList(new ArrayList<String>());
   }
-  protected static Logger LOG = LogManager.getLogger(ListCommandPart.class);
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

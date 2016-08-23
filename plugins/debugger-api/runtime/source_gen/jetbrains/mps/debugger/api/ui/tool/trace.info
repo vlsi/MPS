@@ -49,68 +49,68 @@
       <node id="2162437716502778216" at="75,110,76,186" concept="2" />
       <node id="4474271214083120432" at="76,186,77,29" concept="8" />
       <node id="4474271214083120442" at="79,125,80,137" concept="8" />
-      <node id="4474271214083120460" at="82,69,83,84" concept="2" />
-      <node id="6225536200579577605" at="83,84,84,147" concept="7" />
-      <node id="6225536200579577638" at="86,42,87,105" concept="2" />
-      <node id="4474271214083120470" at="89,12,90,57" concept="2" />
-      <node id="4474271214083120478" at="91,5,92,182" concept="7" />
-      <node id="4474271214083120494" at="92,182,93,62" concept="2" />
-      <node id="4474271214083120501" at="93,62,94,39" concept="2" />
-      <node id="4474271214083120506" at="94,39,95,64" concept="2" />
-      <node id="4474271214083120522" at="97,102,98,62" concept="7" />
-      <node id="4474271214083127084" at="98,62,99,51" concept="9" />
-      <node id="4474271214083120548" at="99,51,100,84" concept="2" />
-      <node id="4474271214083120553" at="100,84,101,136" concept="2" />
-      <node id="4474271214083120561" at="101,136,102,55" concept="2" />
-      <node id="4474271214083120568" at="102,55,103,31" concept="2" />
-      <node id="4474271214083120572" at="103,31,104,56" concept="2" />
-      <node id="4474271214083120581" at="104,56,105,31" concept="2" />
-      <node id="4474271214083120585" at="105,31,106,93" concept="2" />
-      <node id="4474271214083120590" at="106,93,107,79" concept="2" />
-      <node id="4474271214083120599" at="107,79,108,23" concept="8" />
-      <node id="4474271214083120607" at="113,87,114,63" concept="7" />
-      <node id="4474271214083120616" at="115,31,116,71" concept="2" />
-      <node id="4474271214083120623" at="117,5,118,22" concept="8" />
-      <node id="4474271214083120251" at="121,0,122,0" concept="3" trace="myReuseProhibited" />
-      <node id="4474271214083120254" at="122,0,123,0" concept="3" trace="myAdditionalDisposable" />
-      <node id="4474271214083120629" at="123,201,124,137" concept="11" />
-      <node id="4474271214083120643" at="124,137,125,42" concept="2" />
-      <node id="4474271214083120647" at="125,42,126,52" concept="2" />
-      <node id="2850299710592992009" at="130,63,131,47" concept="8" />
-      <node id="2850299710592994293" at="132,11,133,22" concept="8" />
-      <node id="4474271214083120653" at="138,47,139,31" concept="8" />
-      <node id="4474271214083120656" at="142,27,143,47" concept="2" />
-      <node id="2850299710592995394" at="143,47,144,53" concept="2" />
-      <node id="4474271214083120659" at="144,53,145,22" concept="2" />
-      <node id="4474271214083120245" at="148,0,149,0" concept="10" trace="LOG" />
+      <node id="4474271214083120245" at="82,0,83,0" concept="10" trace="LOG" />
+      <node id="4474271214083120460" at="83,69,84,84" concept="2" />
+      <node id="6225536200579577605" at="84,84,85,147" concept="7" />
+      <node id="6225536200579577638" at="87,42,88,105" concept="2" />
+      <node id="4474271214083120470" at="90,12,91,57" concept="2" />
+      <node id="4474271214083120478" at="92,5,93,182" concept="7" />
+      <node id="4474271214083120494" at="93,182,94,62" concept="2" />
+      <node id="4474271214083120501" at="94,62,95,39" concept="2" />
+      <node id="4474271214083120506" at="95,39,96,64" concept="2" />
+      <node id="4474271214083120522" at="98,102,99,62" concept="7" />
+      <node id="4474271214083127084" at="99,62,100,51" concept="9" />
+      <node id="4474271214083120548" at="100,51,101,84" concept="2" />
+      <node id="4474271214083120553" at="101,84,102,136" concept="2" />
+      <node id="4474271214083120561" at="102,136,103,55" concept="2" />
+      <node id="4474271214083120568" at="103,55,104,31" concept="2" />
+      <node id="4474271214083120572" at="104,31,105,56" concept="2" />
+      <node id="4474271214083120581" at="105,56,106,31" concept="2" />
+      <node id="4474271214083120585" at="106,31,107,93" concept="2" />
+      <node id="4474271214083120590" at="107,93,108,79" concept="2" />
+      <node id="4474271214083120599" at="108,79,109,23" concept="8" />
+      <node id="4474271214083120607" at="114,87,115,63" concept="7" />
+      <node id="4474271214083120616" at="116,31,117,71" concept="2" />
+      <node id="4474271214083120623" at="118,5,119,22" concept="8" />
+      <node id="4474271214083120251" at="122,0,123,0" concept="3" trace="myReuseProhibited" />
+      <node id="4474271214083120254" at="123,0,124,0" concept="3" trace="myAdditionalDisposable" />
+      <node id="4474271214083120629" at="124,201,125,137" concept="11" />
+      <node id="4474271214083120643" at="125,137,126,42" concept="2" />
+      <node id="4474271214083120647" at="126,42,127,52" concept="2" />
+      <node id="2850299710592992009" at="131,63,132,47" concept="8" />
+      <node id="2850299710592994293" at="133,11,134,22" concept="8" />
+      <node id="4474271214083120653" at="139,47,140,31" concept="8" />
+      <node id="4474271214083120656" at="143,27,144,47" concept="2" />
+      <node id="2850299710592995394" at="144,47,145,53" concept="2" />
+      <node id="4474271214083120659" at="145,53,146,22" concept="2" />
       <node id="4474271214083120276" at="43,0,45,0" concept="10" trace="JAVA_RUNNER" />
-      <node id="6225536200579577663" at="89,10,91,5" concept="0" />
+      <node id="6225536200579577663" at="90,10,92,5" concept="0" />
       <node id="4474271214083120345" at="60,25,63,5" concept="4" />
       <node id="4474271214083120403" at="69,134,72,5" concept="5" />
       <node id="4474271214083120434" at="79,0,82,0" concept="6" trace="createDescriptorInternal#(Lcom/intellij/execution/ui/RunnerLayoutUi;Lcom/intellij/execution/configurations/RunProfile;)Ljetbrains/mps/debugger/api/ui/tool/DebuggerToolContentBuilder/MyRunContentDescriptor;" />
-      <node id="6225536200579577638" at="85,31,88,7" concept="5" />
-      <node id="4474271214083120611" at="114,63,117,5" concept="5" />
-      <node id="2850299710592987207" at="129,54,132,11" concept="5" />
-      <node id="4474271214083120270" at="137,0,141,0" concept="6" trace="isContentReuseProhibited#()Z" />
+      <node id="6225536200579577638" at="86,31,89,7" concept="5" />
+      <node id="4474271214083120611" at="115,63,118,5" concept="5" />
+      <node id="2850299710592987207" at="130,54,133,11" concept="5" />
+      <node id="4474271214083120270" at="138,0,142,0" concept="6" trace="isContentReuseProhibited#()Z" />
       <node id="4474271214083120341" at="59,0,65,0" concept="6" trace="dispose#()V" />
-      <node id="4474271214083120273" at="141,0,147,0" concept="6" trace="dispose#()V" />
+      <node id="4474271214083120273" at="142,0,148,0" concept="6" trace="dispose#()V" />
       <node id="4474271214083120307" at="52,0,59,0" concept="1" trace="DebuggerToolContentBuilder#(Lcom/intellij/openapi/project/Project;Lcom/intellij/execution/runners/ProgramRunner;Lcom/intellij/execution/Executor;Lcom/intellij/execution/ExecutionResult;Lcom/intellij/execution/runners/ExecutionEnvironment;)V" />
-      <node id="6225536200579577617" at="84,147,91,5" concept="5" />
-      <node id="4474271214083120601" at="113,0,120,0" concept="6" trace="showRunContent#(Lcom/intellij/execution/ui/RunContentDescriptor;)Lcom/intellij/execution/ui/RunContentDescriptor;" />
-      <node id="2850299710592986628" at="128,0,135,0" concept="6" trace="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
-      <node id="2850299710592882462" at="126,52,135,9" concept="2" />
-      <node id="4474271214083120514" at="97,0,110,0" concept="6" trace="createActionToolbar#(Lcom/intellij/execution/ui/RunnerLayoutUi;Lcom/intellij/execution/ui/RunContentDescriptor;)Lcom/intellij/openapi/actionSystem/ActionGroup;" />
+      <node id="6225536200579577617" at="85,147,92,5" concept="5" />
+      <node id="4474271214083120601" at="114,0,121,0" concept="6" trace="showRunContent#(Lcom/intellij/execution/ui/RunContentDescriptor;)Lcom/intellij/execution/ui/RunContentDescriptor;" />
+      <node id="2850299710592986628" at="129,0,136,0" concept="6" trace="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
+      <node id="2850299710592882462" at="127,52,136,9" concept="2" />
+      <node id="4474271214083120514" at="98,0,111,0" concept="6" trace="createActionToolbar#(Lcom/intellij/execution/ui/RunnerLayoutUi;Lcom/intellij/execution/ui/RunContentDescriptor;)Lcom/intellij/openapi/actionSystem/ActionGroup;" />
       <node id="4474271214083120354" at="65,0,79,0" concept="6" trace="createDescriptor#()Lcom/intellij/execution/ui/RunContentDescriptor;" />
-      <node id="4474271214083120257" at="123,0,137,0" concept="1" trace="MyRunContentDescriptor#(Lcom/intellij/execution/configurations/RunProfile;Lcom/intellij/execution/ExecutionResult;ZLjavax/swing/JComponent;Lcom/intellij/openapi/Disposable;)V" />
-      <node id="4474271214083120452" at="82,0,97,0" concept="6" trace="buildUi#(Lcom/intellij/execution/ui/RunnerLayoutUi;Lcom/intellij/execution/ui/ExecutionConsole;)V" />
+      <node id="4474271214083120257" at="124,0,138,0" concept="1" trace="MyRunContentDescriptor#(Lcom/intellij/execution/configurations/RunProfile;Lcom/intellij/execution/ExecutionResult;ZLjavax/swing/JComponent;Lcom/intellij/openapi/Disposable;)V" />
+      <node id="4474271214083120452" at="83,0,98,0" concept="6" trace="buildUi#(Lcom/intellij/execution/ui/RunnerLayoutUi;Lcom/intellij/execution/ui/ExecutionConsole;)V" />
       <scope id="4474271214083120349" at="61,50,62,27" />
       <scope id="4474271214083120407" at="70,63,71,51" />
       <scope id="4474271214083120441" at="79,125,80,137" />
-      <scope id="6225536200579577638" at="86,42,87,105" />
-      <scope id="6225536200579577664" at="89,12,90,57" />
-      <scope id="4474271214083120615" at="115,31,116,71" />
-      <scope id="2850299710592987208" at="130,63,131,47" />
-      <scope id="4474271214083120652" at="138,47,139,31" />
+      <scope id="6225536200579577638" at="87,42,88,105" />
+      <scope id="6225536200579577664" at="90,12,91,57" />
+      <scope id="4474271214083120615" at="116,31,117,71" />
+      <scope id="2850299710592987208" at="131,63,132,47" />
+      <scope id="4474271214083120652" at="139,47,140,31" />
       <scope id="4474271214083120344" at="60,25,63,5" />
       <scope id="4474271214083120345" at="60,25,63,5">
         <var name="disposable" id="4474271214083120347" />
@@ -119,16 +119,16 @@
         <var name="profile" id="4474271214083120439" />
         <var name="ui" id="4474271214083120437" />
       </scope>
-      <scope id="6225536200579577618" at="85,31,88,7" />
-      <scope id="4474271214083120655" at="142,27,145,22" />
-      <scope id="2850299710592986636" at="129,54,133,22" />
-      <scope id="4474271214083120270" at="137,0,141,0" />
+      <scope id="6225536200579577618" at="86,31,89,7" />
+      <scope id="4474271214083120655" at="143,27,146,22" />
+      <scope id="2850299710592986636" at="130,54,134,22" />
+      <scope id="4474271214083120270" at="138,0,142,0" />
       <scope id="4474271214083120320" at="52,154,57,24" />
-      <scope id="4474271214083120606" at="113,87,118,22">
+      <scope id="4474271214083120606" at="114,87,119,22">
         <var name="descriptor" id="4474271214083120608" />
       </scope>
       <scope id="4474271214083120341" at="59,0,65,0" />
-      <scope id="4474271214083120273" at="141,0,147,0" />
+      <scope id="4474271214083120273" at="142,0,148,0" />
       <scope id="4474271214083120307" at="52,0,59,0">
         <var name="env" id="4474271214083120318" />
         <var name="executionResult" id="4474271214083120316" />
@@ -136,13 +136,13 @@
         <var name="project" id="4474271214083120310" />
         <var name="runner" id="4474271214083120312" />
       </scope>
-      <scope id="4474271214083120601" at="113,0,120,0">
+      <scope id="4474271214083120601" at="114,0,121,0">
         <var name="reuseContent" id="4474271214083120604" />
       </scope>
-      <scope id="2850299710592986628" at="128,0,135,0">
+      <scope id="2850299710592986628" at="129,0,136,0">
         <var name="dataId" id="2850299710592986632" />
       </scope>
-      <scope id="4474271214083120521" at="97,102,108,23">
+      <scope id="4474271214083120521" at="98,102,109,23">
         <var name="actionGroup" id="4474271214083120523" />
       </scope>
       <scope id="4474271214083120357" at="65,51,77,29">
@@ -152,29 +152,29 @@
         <var name="runnerType" id="4474271214083120371" />
         <var name="ui" id="4474271214083120389" />
       </scope>
-      <scope id="4474271214083120628" at="123,201,135,9" />
-      <scope id="4474271214083120459" at="82,69,95,64">
+      <scope id="4474271214083120628" at="124,201,136,9" />
+      <scope id="4474271214083120459" at="83,69,96,64">
         <var name="consoleContent" id="4474271214083120479" />
         <var name="debugSession" id="6225536200579577606" />
       </scope>
-      <scope id="4474271214083120514" at="97,0,110,0">
+      <scope id="4474271214083120514" at="98,0,111,0">
         <var name="contentDescriptor" id="4474271214083120519" />
         <var name="ui" id="4474271214083120517" />
       </scope>
       <scope id="4474271214083120354" at="65,0,79,0" />
-      <scope id="4474271214083120257" at="123,0,137,0">
+      <scope id="4474271214083120257" at="124,0,138,0">
         <var name="additionalDisposable" id="4474271214083120268" />
         <var name="component" id="4474271214083120266" />
         <var name="executionResult" id="4474271214083120262" />
         <var name="profile" id="4474271214083120260" />
         <var name="reuseProhibited" id="4474271214083120264" />
       </scope>
-      <scope id="4474271214083120452" at="82,0,97,0">
+      <scope id="4474271214083120452" at="83,0,98,0">
         <var name="console" id="4474271214083120457" />
         <var name="ui" id="4474271214083120455" />
       </scope>
-      <unit id="2850299710592986626" at="127,54,135,7" name="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder$1" />
-      <unit id="4474271214083120248" at="120,0,148,0" name="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder$MyRunContentDescriptor" />
+      <unit id="2850299710592986626" at="128,54,136,7" name="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder$1" />
+      <unit id="4474271214083120248" at="121,0,149,0" name="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder$MyRunContentDescriptor" />
       <unit id="4474271214083120245" at="42,0,150,0" name="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder" />
     </file>
   </root>

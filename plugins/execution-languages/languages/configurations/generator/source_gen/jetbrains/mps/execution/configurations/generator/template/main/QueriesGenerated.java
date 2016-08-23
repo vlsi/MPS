@@ -37,10 +37,10 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
-import jetbrains.mps.generator.template.MappingScriptContext;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.generator.template.MappingScriptContext;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -518,6 +518,7 @@ public class QueriesGenerated {
   public static SNode weaving_MappingRule_ContextNodeQuery_7684700299064340036(final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToEditorClass");
   }
+  protected static Logger LOG = LogManager.getLogger(QueriesGenerated.class);
   public static void mappingScript_CodeBlock_2535050848643235299(final MappingScriptContext _context) {
     for (SNode runConfiguration : ListSequence.fromList(SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e49L, "jetbrains.mps.execution.configurations.structure.RunConfiguration")))) {
       if ((RunConfiguration__BehaviorDescriptor.getExecutor_id3gs394eDyIj.invoke(runConfiguration) == null)) {
@@ -527,7 +528,6 @@ public class QueriesGenerated {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(QueriesGenerated.class);
   private static SNode _quotation_createNode_x583g4_a0a0a77() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

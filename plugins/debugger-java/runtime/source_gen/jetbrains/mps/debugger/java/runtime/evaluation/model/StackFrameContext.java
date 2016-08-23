@@ -22,6 +22,8 @@ import java.util.Collections;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -53,8 +55,6 @@ import com.sun.jdi.ArrayType;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder;
 import com.sun.jdi.ObjectReference;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -101,6 +101,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     classpath.removeAll(CommonPaths.getJDKPath());
     return ListSequence.fromListWithValues(new ArrayList<String>(), classpath);
   }
+  protected static Logger LOG = LogManager.getLogger(StackFrameContext.class);
   @NotNull
   @Override
   public Map<String, VariableDescription> getVariables(final _FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType) {
@@ -287,10 +288,10 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     final Wrappers._boolean visible = new Wrappers._boolean(false);
     foreachVariable(new _FunctionTypes._return_P1_E0<Boolean, JavaLocalVariable>() {
       public Boolean invoke(JavaLocalVariable variable) {
-        if (eq_4zsmpx_a0a0a0a0a1a11(variable.getName(), variableName)) {
+        if (eq_4zsmpx_a0a0a0a0a1a21(variable.getName(), variableName)) {
           try {
             String variableTypeSignature = TransformatorBuilder.getInstance().getJniSignatureFromType(variableType);
-            if (eq_4zsmpx_a0b0a0a0a0a0a1a11(variableTypeSignature, variable.getLocalVariable().type().signature())) {
+            if (eq_4zsmpx_a0b0a0a0a0a0a1a21(variableTypeSignature, variable.getLocalVariable().type().signature())) {
               visible.value = true;
               return true;
             }
@@ -311,7 +312,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     if (thisObject == null) {
       return false;
     }
-    return eq_4zsmpx_a0c0m(thisObject.referenceType().signature(), TransformatorBuilder.getInstance().getJniSignatureFromType(thisType));
+    return eq_4zsmpx_a0c0n(thisObject.referenceType().signature(), TransformatorBuilder.getInstance().getJniSignatureFromType(thisType));
   }
   @Override
   public boolean isStaticContextTypeValid(SNode staticContextType) {
@@ -324,7 +325,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
     return staticContextTypeName.equals(((String) BHReflection.invoke(SLinkOperations.getTarget(SNodeOperations.cast(staticContextType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), SMethodTrimmedId.create("getFqName", null, "hEwIO9y"))));
   }
-  protected static Logger LOG = LogManager.getLogger(StackFrameContext.class);
   private static String check_4zsmpx_a0a6a6(SNodeId checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.toString();
@@ -396,13 +396,13 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
     return quotedNode_2;
   }
-  private static boolean eq_4zsmpx_a0a0a0a0a1a11(Object a, Object b) {
+  private static boolean eq_4zsmpx_a0a0a0a0a1a21(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_4zsmpx_a0b0a0a0a0a0a1a11(Object a, Object b) {
+  private static boolean eq_4zsmpx_a0b0a0a0a0a0a1a21(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_4zsmpx_a0c0m(Object a, Object b) {
+  private static boolean eq_4zsmpx_a0c0n(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

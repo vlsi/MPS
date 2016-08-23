@@ -18,6 +18,8 @@ import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.intellij.openapi.util.InvalidDataException;
 import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
@@ -34,8 +36,6 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class BuildScript_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -74,6 +74,7 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
       element.addContent(fieldElement);
     }
   }
+  protected static Logger LOG = LogManager.getLogger(BuildScript_Configuration.class);
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {
@@ -162,5 +163,4 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
   public Object[] createMakeNodePointersTask() {
     return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNodePointer())};
   }
-  protected static Logger LOG = LogManager.getLogger(BuildScript_Configuration.class);
 }

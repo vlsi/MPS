@@ -22,6 +22,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -85,8 +87,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.event.SModelImportEvent;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ChangesTracking {
   private final Project myProject;
@@ -159,6 +159,7 @@ public class ChangesTracking {
     });
   }
 
+  protected static Logger LOG = LogManager.getLogger(ChangesTracking.class);
   private void update(boolean force) {
     myQueue.assertSoftlyIsCommandThread();
     if (!(myDifference.isEnabled())) {
@@ -384,7 +385,7 @@ public class ChangesTracking {
 
   private static Iterable<SNodeId> getNodeIdsForNodeGroupChange(@NotNull NodeGroupChange ngc, @Nullable Tuples._2<SNodeId, List<SNodeId>> lastParentAndNewChildrenIds) {
     List<SNodeId> childrenIds;
-    if (lastParentAndNewChildrenIds == null || neq_5iuzi5_a0a1a74(lastParentAndNewChildrenIds._0(), ngc.getParentNodeId())) {
+    if (lastParentAndNewChildrenIds == null || neq_5iuzi5_a0a1a84(lastParentAndNewChildrenIds._0(), ngc.getParentNodeId())) {
       List<? extends SNode> children = IterableUtil.asList(ngc.getChangeSet().getNewModel().getNode(ngc.getParentNodeId()).getChildren(ngc.getRole()));
       childrenIds = ListSequence.fromList(children).select(new ISelector<SNode, SNodeId>() {
         public SNodeId select(SNode n) {
@@ -648,7 +649,6 @@ public class ChangesTracking {
       }, null, event);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ChangesTracking.class);
   private static SNode check_5iuzi5_a0a34(SModel checkedDotOperand, SNodeId id) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode(id);
@@ -661,7 +661,7 @@ public class ChangesTracking {
     }
     return null;
   }
-  private static boolean neq_5iuzi5_a0a1a74(Object a, Object b) {
+  private static boolean neq_5iuzi5_a0a1a84(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }

@@ -11,6 +11,8 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -31,8 +33,6 @@ import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.diff.DiffManager;
 import com.intellij.diff.InvalidDiffRequestException;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class TestMergeAction_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -67,6 +67,7 @@ public class TestMergeAction_Action extends BaseAction {
     }
     return true;
   }
+  protected static Logger LOG = LogManager.getLogger(TestMergeAction_Action.class);
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final FileChooserDescriptor descriptor = new FileChooserDescriptor(true, true, true, true, false, false) {
@@ -106,5 +107,4 @@ public class TestMergeAction_Action extends BaseAction {
       }
     });
   }
-  protected static Logger LOG = LogManager.getLogger(TestMergeAction_Action.class);
 }

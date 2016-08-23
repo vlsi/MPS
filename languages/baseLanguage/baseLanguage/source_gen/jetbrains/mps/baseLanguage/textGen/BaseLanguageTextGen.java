@@ -19,6 +19,8 @@ import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -31,8 +33,6 @@ import java.util.HashSet;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.util.InternUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public abstract class BaseLanguageTextGen {
   public static void typeParameters(List<SNode> types, final TextGenContext ctx) {
@@ -216,6 +216,7 @@ public abstract class BaseLanguageTextGen {
     String longName = NameUtil.longNameFromNamespaceAndShortName(packageAndShortName._0(), packageAndShortName._1());
     BaseLanguageTextGen.appendClassName(packageAndShortName._0(), longName, classifierRef.getSourceNode(), ctx);
   }
+  protected static Logger LOG = LogManager.getLogger(BaseLanguageTextGen.class);
   protected static Tuples._2<String, String> getPackageAndShortName(SReference classifierRef, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     SReference reference = classifierRef;
@@ -322,5 +323,4 @@ public abstract class BaseLanguageTextGen {
       SetSequence.fromSet(dependencies).addElement(NameUtil.nodeFQName(SLinkOperations.getTarget(c, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))));
     }
   }
-  protected static Logger LOG = LogManager.getLogger(BaseLanguageTextGen.class);
 }

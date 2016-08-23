@@ -9,6 +9,8 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import java.util.Set;
 import java.util.HashSet;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -46,8 +48,6 @@ import jetbrains.mps.ide.migration.check.MissingMigrationProblem;
 import jetbrains.mps.ide.migration.RefactoringLogApplied;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
 import jetbrains.mps.project.AbstractModule;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MigrationsProgressWizardStep extends MigrationWizardStep {
   public static final String ID = "progress";
@@ -60,6 +60,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
   private MigrationProblemsContainer myErrorContainer;
   private volatile boolean myIsComplete = false;
 
+  protected static Logger LOG = LogManager.getLogger(MigrationsProgressWizardStep.class);
   public MigrationsProgressWizardStep(Project project, MigrationManager manager, MigrationProblemsContainer errorContainer) {
     super(project, "Migration In Progress", ID);
     myManager = manager;
@@ -424,5 +425,4 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       }));
     }
   }
-  protected static Logger LOG = LogManager.getLogger(MigrationsProgressWizardStep.class);
 }

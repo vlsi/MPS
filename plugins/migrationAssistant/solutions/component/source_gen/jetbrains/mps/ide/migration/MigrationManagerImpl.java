@@ -16,14 +16,14 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.ArrayList;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.util.Map;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MigrationManagerImpl extends AbstractProjectComponent implements MigrationManager {
   private Project myMpsMproject;
@@ -109,6 +109,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     return (isCleanup ? cleanupSize : ListSequence.fromList(migrations).count() - cleanupSize);
   }
 
+  protected static Logger LOG = LogManager.getLogger(MigrationManagerImpl.class);
   public MigrationManager.MigrationStep nextProjectStep(Map<String, Object> options, boolean cleanup) {
     ProjectMigration current = next(lastProjectMigration, cleanup);
 
@@ -241,5 +242,4 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     return result.value;
   }
 
-  protected static Logger LOG = LogManager.getLogger(MigrationManagerImpl.class);
 }

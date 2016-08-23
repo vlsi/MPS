@@ -4,6 +4,8 @@ package jetbrains.mps.tool.environment;
 
 import com.intellij.idea.IdeaTestApplication;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import jetbrains.mps.ide.MPSCoreComponents;
 import com.intellij.openapi.application.ApplicationManager;
@@ -27,8 +29,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.Semaphore;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.ide.startup.StartupManagerEx;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 /**
  * Use #getOrCreate method to construct this kind of environment
@@ -65,6 +65,7 @@ public class IdeaEnvironment extends EnvironmentBase {
     }
   }
 
+  protected static Logger LOG = LogManager.getLogger(IdeaEnvironment.class);
   @Override
   public void init() {
     if (LOG.isInfoEnabled()) {
@@ -235,5 +236,4 @@ public class IdeaEnvironment extends EnvironmentBase {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(IdeaEnvironment.class);
 }

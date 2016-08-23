@@ -22,6 +22,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.apache.log4j.Level;
 import jetbrains.mps.build.util.DependenciesHelper;
@@ -29,8 +31,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -72,6 +72,7 @@ public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends Ba
     }
     return unpackPath + "/" + BuildCompositePath__BehaviorDescriptor.getPath_id7usrAn05okK.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")));
   }
+  protected static Logger LOG = LogManager.getLogger(BuildSourceArchiveRelativePath__BehaviorDescriptor.class);
   /*package*/ static String getUnpackPath_id7ro1Zzt$ck7(@NotNull SNode __thisNode__, Context context) {
     TemplateQueryContext generationContext = context.getGenerationContext();
     if (generationContext == null) {
@@ -174,7 +175,6 @@ public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends Ba
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  protected static Logger LOG = LogManager.getLogger(BuildSourceArchiveRelativePath__BehaviorDescriptor.class);
   private static SNode _quotation_createNode_ll2z5f_a0b0g(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

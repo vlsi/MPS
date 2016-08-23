@@ -29,6 +29,8 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.findUsages.FindUsagesUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.containers.SetBasedMultiMap;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
@@ -46,8 +48,6 @@ import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import java.util.Collections;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class StubModelsFastFindSupport implements ApplicationComponent, FindUsagesParticipant {
   private final PersistenceRegistry myRegistry;
@@ -133,6 +133,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
     }
   }
 
+  protected static Logger LOG = LogManager.getLogger(StubModelsFastFindSupport.class);
   private <T> MultiMap<SModel, T> findCandidates(Collection<SModel> models, Set<T> elems, Consumer<SModel> processedConsumer, @Nullable Mapper<T, String> id) {
     MultiMap<SModel, T> result = new SetBasedMultiMap<SModel, T>();
     if (elems.isEmpty()) {
@@ -211,5 +212,4 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
     }
     return result;
   }
-  protected static Logger LOG = LogManager.getLogger(StubModelsFastFindSupport.class);
 }

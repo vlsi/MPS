@@ -20,6 +20,8 @@ import jetbrains.mps.smodel.SModelLegacy;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.persistence.SNodeFactory;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -29,8 +31,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.apache.log4j.Level;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
   private ModelReader8Handler.ModelElementHandler modelHandler = new ModelReader8Handler.ModelElementHandler();
@@ -327,6 +327,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       super.handleAttribute(resultObject, name, value);
     }
   }
+  protected static Logger LOG = LogManager.getLogger(ModelReader8Handler.class);
   public class NodeElementHandler extends ModelReader8Handler.ElementHandler {
     public NodeElementHandler() {
       setRequiredAttributes("type", "nodeInfo");
@@ -533,5 +534,4 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
     public IgnoredLinkElementHandler() {
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ModelReader8Handler.class);
 }

@@ -23,13 +23,13 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.vfs.FileSystemEvent;
 import java.util.HashSet;
 import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class FileProcessor extends ReloadParticipant {
   private FileSystemListenersContainer listenersContainer;
@@ -174,6 +174,7 @@ public class FileProcessor extends ReloadParticipant {
     });
   }
 
+  protected static Logger LOG = LogManager.getLogger(FileProcessor.class);
   private void printStat(String name, long beginTime) {
     // todo: ideal for AOP in MPS! 
     if (InternalFlag.isInternalMode()) {
@@ -222,5 +223,4 @@ public class FileProcessor extends ReloadParticipant {
       return Arrays.toString(set.toArray());
     }
   }
-  protected static Logger LOG = LogManager.getLogger(FileProcessor.class);
 }

@@ -19,6 +19,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.workbench.action.BaseGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import org.apache.log4j.Level;
@@ -36,8 +38,6 @@ import com.intellij.openapi.actionSystem.DataProvider;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.util.Disposer;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class DebuggerToolContentBuilder implements Disposable {
   @NonNls
@@ -79,6 +79,7 @@ public class DebuggerToolContentBuilder implements Disposable {
   private DebuggerToolContentBuilder.MyRunContentDescriptor createDescriptorInternal(RunnerLayoutUi ui, RunProfile profile) {
     return new DebuggerToolContentBuilder.MyRunContentDescriptor(profile, myExecutionResult, myReuseProhibited, ui.getComponent(), this);
   }
+  protected static Logger LOG = LogManager.getLogger(DebuggerToolContentBuilder.class);
   private void buildUi(RunnerLayoutUi ui, ExecutionConsole console) {
     ui.getOptions().setMoveToGridActionEnabled(true).setMinimizeActionEnabled(true);
     AbstractDebugSession debugSession = DebugSessionManagerComponent.getInstance(myProject).getDebugSession(myExecutionResult.getProcessHandler());
@@ -145,5 +146,4 @@ public class DebuggerToolContentBuilder implements Disposable {
       super.dispose();
     }
   }
-  protected static Logger LOG = LogManager.getLogger(DebuggerToolContentBuilder.class);
 }

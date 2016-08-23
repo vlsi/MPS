@@ -10,6 +10,8 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JComponent;
 import com.intellij.ide.impl.ProjectUtil;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.StandaloneMPSProject;
@@ -17,8 +19,6 @@ import jetbrains.mps.project.Solution;
 import java.io.IOException;
 import org.apache.log4j.Level;
 import jetbrains.mps.project.MPSExtentions;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class NewLanguageDialog extends DialogWrapper {
   private final MPSProject myProject;
@@ -53,6 +53,7 @@ public class NewLanguageDialog extends DialogWrapper {
     return myLanguageSettings;
   }
 
+  protected static Logger LOG = LogManager.getLogger(NewLanguageDialog.class);
   @Override
   protected void doOKAction() {
     if (!(check())) {
@@ -104,5 +105,4 @@ public class NewLanguageDialog extends DialogWrapper {
     setErrorText(myError);
     return myError == null;
   }
-  protected static Logger LOG = LogManager.getLogger(NewLanguageDialog.class);
 }

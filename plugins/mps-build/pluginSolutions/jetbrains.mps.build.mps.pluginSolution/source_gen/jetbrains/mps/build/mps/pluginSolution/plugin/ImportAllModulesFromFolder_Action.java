@@ -14,6 +14,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.awt.Frame;
 import jetbrains.mps.project.MPSProject;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
@@ -29,8 +31,6 @@ import jetbrains.mps.build.mps.util.VisibleModules;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ImportAllModulesFromFolder_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Actions.ImportModulesFromFolder;
@@ -75,6 +75,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
     }
     return true;
   }
+  protected static Logger LOG = LogManager.getLogger(ImportAllModulesFromFolder_Action.class);
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
@@ -132,7 +133,6 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
       }
     });
   }
-  protected static Logger LOG = LogManager.getLogger(ImportAllModulesFromFolder_Action.class);
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

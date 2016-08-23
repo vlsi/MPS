@@ -16,13 +16,13 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import java.awt.Frame;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
 import jetbrains.mps.ide.blame.perform.Response;
 import javax.swing.JOptionPane;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class SubmitToTracker_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -77,6 +77,7 @@ public class SubmitToTracker_Action extends BaseAction {
     }
     return true;
   }
+  protected static Logger LOG = LogManager.getLogger(SubmitToTracker_Action.class);
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     BlameDialog dialog = BlameDialogComponent.getInstance().createDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")));
@@ -108,5 +109,4 @@ public class SubmitToTracker_Action extends BaseAction {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(SubmitToTracker_Action.class);
 }

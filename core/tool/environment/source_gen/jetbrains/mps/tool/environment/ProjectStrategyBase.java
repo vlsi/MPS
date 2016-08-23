@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import java.util.Collection;
 import jetbrains.mps.library.ModulesMiner;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
@@ -18,8 +20,6 @@ import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.AbstractModule;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public abstract class ProjectStrategyBase implements ProjectStrategy {
   @Override
@@ -45,6 +45,7 @@ public abstract class ProjectStrategyBase implements ProjectStrategy {
     return projectFilledWithModules;
   }
 
+  protected static Logger LOG = LogManager.getLogger(ProjectStrategyBase.class);
   private static MPSCompilationResult makeAllInCreatedEnvironment(final Project project) {
     if (LOG.isInfoEnabled()) {
       LOG.info("Building modules within project");
@@ -106,5 +107,4 @@ public abstract class ProjectStrategyBase implements ProjectStrategy {
       }
     });
   }
-  protected static Logger LOG = LogManager.getLogger(ProjectStrategyBase.class);
 }

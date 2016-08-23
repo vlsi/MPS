@@ -15,6 +15,8 @@ import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.changes.ContentRevision;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.intellij.openapi.vcs.merge.MergeProvider;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.vcs.merge.MergeData;
@@ -47,8 +49,6 @@ import java.io.IOException;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import com.intellij.openapi.vcs.VcsException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ConflictingModelsUtil {
   public static List<VirtualFile> getConflictingModelFiles(Project proj) {
@@ -82,6 +82,7 @@ public class ConflictingModelsUtil {
     }).toListSequence();
   }
 
+  protected static Logger LOG = LogManager.getLogger(ConflictingModelsUtil.class);
   public static boolean hasResolvableConflicts(Project project, MergeProvider provider, Iterable<VirtualFile> conflictedFiles) {
     for (VirtualFile file : Sequence.fromIterable(conflictedFiles)) {
       MergeData mergeData = loadRevisions(provider, file);
@@ -299,5 +300,4 @@ public class ConflictingModelsUtil {
     });
     return mergeData.value;
   }
-  protected static Logger LOG = LogManager.getLogger(ConflictingModelsUtil.class);
 }

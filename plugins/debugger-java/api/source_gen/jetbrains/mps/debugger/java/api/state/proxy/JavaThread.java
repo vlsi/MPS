@@ -12,12 +12,12 @@ import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.debug.api.AbstractDebugSession;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.sun.jdi.IncompatibleThreadStateException;
 import com.sun.jdi.AbsentInformationException;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.debugger.java.api.ui.Icons;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class JavaThread extends ProxyForJava implements IThread {
   @NotNull
@@ -36,6 +36,7 @@ public class JavaThread extends ProxyForJava implements IThread {
     myCachedIcon = calculateIcon();
     myDebugSession = debugSession;
   }
+  protected static Logger LOG = LogManager.getLogger(JavaThread.class);
   public synchronized void initializeFrames() {
     if (myInitialized) {
       return;
@@ -124,5 +125,4 @@ public class JavaThread extends ProxyForJava implements IThread {
         return "UNDEFINED";
     }
   }
-  protected static Logger LOG = LogManager.getLogger(JavaThread.class);
 }

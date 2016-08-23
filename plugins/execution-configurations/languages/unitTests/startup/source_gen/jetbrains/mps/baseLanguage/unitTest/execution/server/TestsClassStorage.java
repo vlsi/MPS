@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.module.ReloadableModule;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Level;
 
 public class TestsClassStorage {
   @Nullable
@@ -24,6 +24,7 @@ public class TestsClassStorage {
     return null;
   }
 
+  protected static Logger LOG = LogManager.getLogger(TestsClassStorage.class);
   @Nullable
   public Class<?> loadTestClass(String fqName, SModule module) {
     final Class<?> aClass = tryLoadTestClass(fqName, module);
@@ -34,5 +35,4 @@ public class TestsClassStorage {
     }
     return aClass;
   }
-  protected static Logger LOG = LogManager.getLogger(TestsClassStorage.class);
 }

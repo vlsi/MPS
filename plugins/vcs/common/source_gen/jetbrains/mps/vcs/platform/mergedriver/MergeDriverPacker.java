@@ -22,6 +22,8 @@ import java.util.LinkedHashMap;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
@@ -30,8 +32,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public abstract class MergeDriverPacker {
   private static MergeDriverPacker ourInstance;
@@ -107,6 +107,7 @@ public abstract class MergeDriverPacker {
       FileUtil.zip(files, to);
     }
   }
+  protected static Logger LOG = LogManager.getLogger(MergeDriverPacker.class);
   private void internalPack(Iterable<String> classpathDirs, File tmpDir, boolean isForZip) {
     for (String classpathDir : classpathDirs) {
       File file = new File(classpathDir);
@@ -185,5 +186,4 @@ public abstract class MergeDriverPacker {
   protected static void setInstance(MergeDriverPacker instance) {
     ourInstance = instance;
   }
-  protected static Logger LOG = LogManager.getLogger(MergeDriverPacker.class);
 }

@@ -22,6 +22,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -40,8 +42,6 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.IListSequence;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class StubResolver {
   private static final String JAVA_STUB = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
@@ -86,6 +86,7 @@ public class StubResolver {
     }
     return result;
   }
+  protected static Logger LOG = LogManager.getLogger(StubResolver.class);
   public void resolveInModel(final SModel model) {
     Map<SModelReference, SModelReference> models = MapSequence.fromMap(new HashMap<SModelReference, SModelReference>());
     List<SReference> toResolve = getReferencesToResolve(model, models);
@@ -173,7 +174,6 @@ public class StubResolver {
     } while (found);
     return cnt;
   }
-  protected static Logger LOG = LogManager.getLogger(StubResolver.class);
   private static SModelReference check_ar1im2_a0d0a0d0h(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();

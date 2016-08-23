@@ -18,6 +18,8 @@ import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -34,8 +36,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class LanguagesKeymapManager implements ApplicationComponent {
   private final Map<Language, List<KeyMap>> myLanguagesToKeyMaps = MapSequence.fromMap(new HashMap<Language, List<KeyMap>>());
@@ -84,6 +84,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     MapSequence.fromMap(myLanguagesToKeyMaps).clear();
   }
 
+  protected static Logger LOG = LogManager.getLogger(LanguagesKeymapManager.class);
   private void registerLanguageKeyMaps(Language language) {
     SModel editorModelDescriptor = SModuleOperations.getAspect(language, "editor");
     SModel editorModel = (editorModelDescriptor != null ? editorModelDescriptor : null);
@@ -150,5 +151,4 @@ public class LanguagesKeymapManager implements ApplicationComponent {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(LanguagesKeymapManager.class);
 }

@@ -18,6 +18,8 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.console.tool.BaseConsoleTab;
@@ -32,8 +34,6 @@ import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public final class GeneratedCommand__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c71L, "jetbrains.mps.console.base.structure.GeneratedCommand");
@@ -46,6 +46,7 @@ public final class GeneratedCommand__BehaviorDescriptor extends BaseBHDescriptor
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
+  protected static Logger LOG = LogManager.getLogger(GeneratedCommand__BehaviorDescriptor.class);
   /*package*/ static void execute_id5WvH$QO9bva(@NotNull SNode __thisNode__, final ConsoleContext context, final ConsoleStream console, final Runnable beforeCallback, final Runnable afterCallback) {
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
@@ -143,5 +144,4 @@ public final class GeneratedCommand__BehaviorDescriptor extends BaseBHDescriptor
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  protected static Logger LOG = LogManager.getLogger(GeneratedCommand__BehaviorDescriptor.class);
 }

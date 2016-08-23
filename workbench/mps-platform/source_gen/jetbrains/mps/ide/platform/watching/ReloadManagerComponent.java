@@ -14,6 +14,8 @@ import jetbrains.mps.make.IMakeService;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModelAccess;
@@ -30,8 +32,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.make.MakeNotification;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ReloadManagerComponent extends ReloadManager implements ApplicationComponent {
   private final ProjectManager myProjectManager;
@@ -96,6 +96,7 @@ public class ReloadManagerComponent extends ReloadManager implements Application
     }
   }
 
+  protected static Logger LOG = LogManager.getLogger(ReloadManagerComponent.class);
   @Override
   public <T extends ReloadParticipant> void runReload(Class<T> participantClass, ReloadAction<T> reloadAction) {
     ReloadSession rs;
@@ -267,5 +268,4 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       resumeReloads();
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ReloadManagerComponent.class);
 }

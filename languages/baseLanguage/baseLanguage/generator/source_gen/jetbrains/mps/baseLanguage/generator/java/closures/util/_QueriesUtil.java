@@ -12,12 +12,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.List;
 import java.util.Collections;
 import java.util.ArrayList;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.util.Condition;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class _QueriesUtil {
   public _QueriesUtil() {
@@ -80,6 +80,7 @@ public class _QueriesUtil {
     SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(varDecl);
     return ClosuresUtil.getVariableNameInClosureContext(contextOwner, varDecl, generator);
   }
+  protected static Logger LOG = LogManager.getLogger(_QueriesUtil.class);
   /**
    * method should be invoked in $MAP-SRC$ because it relay weaved members (MAP-SRC is processed after all other mappings)
    */
@@ -112,5 +113,4 @@ public class _QueriesUtil {
     // no variable found - return 'null' 
     return SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral"));
   }
-  protected static Logger LOG = LogManager.getLogger(_QueriesUtil.class);
 }

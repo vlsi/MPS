@@ -14,11 +14,11 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class Child_MoreDefaultActions extends TransformationMenuBase {
   public Child_MoreDefaultActions() {
@@ -40,6 +40,7 @@ public class Child_MoreDefaultActions extends TransformationMenuBase {
     return result;
   }
 
+  protected static Logger LOG = LogManager.getLogger(Child_MoreDefaultActions.class);
   private class TransformationMenuPart_Action_ch35tm_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
@@ -69,5 +70,4 @@ public class Child_MoreDefaultActions extends TransformationMenuBase {
 
     }
   }
-  protected static Logger LOG = LogManager.getLogger(Child_MoreDefaultActions.class);
 }

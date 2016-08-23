@@ -26,6 +26,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
@@ -46,8 +48,6 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -111,6 +111,7 @@ public final class ClassConcept__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return markIcons;
   }
+  protected static Logger LOG = LogManager.getLogger(ClassConcept__BehaviorDescriptor.class);
   /*package*/ static boolean isDescendant_checkLoops_id6dL7A1DpKoA(@NotNull SNode __thisNode__, final SNode nodeToCompare, Set<SNode> visited) {
     if ((boolean) Classifier__BehaviorDescriptor.isSame_id4dzXPK1BpyE.invoke(nodeToCompare, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object"))) {
       return true;
@@ -521,7 +522,6 @@ public final class ClassConcept__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  protected static Logger LOG = LogManager.getLogger(ClassConcept__BehaviorDescriptor.class);
   private static SNode _quotation_createNode_xjj00_a0c0i() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -7,13 +7,13 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.io.InputStream;
 import java.io.IOException;
 import org.apache.log4j.Level;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.ImageIcon;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class IconLoadHelper {
   private static final int IMAGE_LOADED = ~(((MediaTracker.ABORTED | MediaTracker.ERRORED | MediaTracker.LOADING)));
@@ -23,6 +23,7 @@ public class IconLoadHelper {
     return getIconFor(file);
   }
 
+  protected static Logger LOG = LogManager.getLogger(IconLoadHelper.class);
   private static Icon getIconFor(IFile file) {
     if (!(file.exists())) {
       return null;
@@ -79,5 +80,4 @@ public class IconLoadHelper {
     }
     return null;
   }
-  protected static Logger LOG = LogManager.getLogger(IconLoadHelper.class);
 }

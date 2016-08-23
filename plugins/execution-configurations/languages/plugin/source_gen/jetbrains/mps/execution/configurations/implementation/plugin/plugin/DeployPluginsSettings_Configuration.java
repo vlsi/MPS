@@ -14,11 +14,11 @@ import jetbrains.mps.execution.lib.ClonableList;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.execution.lib.PointerUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class DeployPluginsSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
@@ -45,6 +45,7 @@ public class DeployPluginsSettings_Configuration implements IPersistentConfigura
   public List<SNodeReference> getPluginsListToDeploy() {
     return PointerUtils.clonableListToNodes(this.getPluginsToDeploy());
   }
+  protected static Logger LOG = LogManager.getLogger(DeployPluginsSettings_Configuration.class);
   @Override
   public DeployPluginsSettings_Configuration clone() {
     DeployPluginsSettings_Configuration clone = null;
@@ -89,5 +90,4 @@ public class DeployPluginsSettings_Configuration implements IPersistentConfigura
     }
     return myEditorEx;
   }
-  protected static Logger LOG = LogManager.getLogger(DeployPluginsSettings_Configuration.class);
 }

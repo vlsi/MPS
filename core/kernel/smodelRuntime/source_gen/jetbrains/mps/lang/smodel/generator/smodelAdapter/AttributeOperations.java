@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.apache.log4j.Level;
 import jetbrains.mps.smodel.behaviour.BHReflection;
@@ -23,8 +25,6 @@ import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class AttributeOperations {
   private AttributeOperations() {
@@ -36,6 +36,7 @@ public class AttributeOperations {
       }
     });
   }
+  protected static Logger LOG = LogManager.getLogger(AttributeOperations.class);
   public static SNode getAttribute(SNode node, IAttributeDescriptor descriptor) {
     Iterable<SNode> list = getAttributes(node, descriptor);
     if (Sequence.fromIterable(list).isEmpty()) {
@@ -207,14 +208,14 @@ public class AttributeOperations {
   public static Iterable<SNode> getPropertyAttributes(SNode node, final String propertyName) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_b2vkxw_a0a0a0a0a0a0cb(getPropertyName(it), propertyName);
+        return eq_b2vkxw_a0a0a0a0a0a0db(getPropertyName(it), propertyName);
       }
     });
   }
   public static Iterable<SNode> getPropertyAttributes(SNode node, final SProperty property) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_b2vkxw_a0a0a0a0a0a0db(((SProperty) BHReflection.invoke(it, SMethodTrimmedId.create("getProperty", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"), "1avfQ4BBzOo"))), property);
+        return eq_b2vkxw_a0a0a0a0a0a0eb(((SProperty) BHReflection.invoke(it, SMethodTrimmedId.create("getProperty", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"), "1avfQ4BBzOo"))), property);
       }
     });
   }
@@ -223,28 +224,28 @@ public class AttributeOperations {
   public static Iterable<SNode> getLinkAttributes(SNode node, final String linkRole) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_b2vkxw_a0a0a0a0a0a0eb(getLinkRole(it), linkRole);
+        return eq_b2vkxw_a0a0a0a0a0a0fb(getLinkRole(it), linkRole);
       }
     });
   }
   public static Iterable<SNode> getLinkAttributes(SNode node, final SReferenceLink link) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_b2vkxw_a0a0a0a0a0a0fb(((SReferenceLink) BHReflection.invoke(it, SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"), "1avfQ4BEFo6"))), link);
+        return eq_b2vkxw_a0a0a0a0a0a0gb(((SReferenceLink) BHReflection.invoke(it, SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"), "1avfQ4BEFo6"))), link);
       }
     });
   }
   public static Iterable<SNode> getChildAttributes(SNode node, final SContainmentLink link) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_b2vkxw_a0a0a0a0a0a0gb(((SContainmentLink) BHReflection.invoke(it, SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), "BpxLfMirzf"))), link);
+        return eq_b2vkxw_a0a0a0a0a0a0hb(((SContainmentLink) BHReflection.invoke(it, SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), "BpxLfMirzf"))), link);
       }
     });
   }
   public static Iterable<SNode> getChildNodesAndAttributes(SNode parent, final SContainmentLink link) {
     return ListSequence.fromList(SNodeOperations.getChildren(parent)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_b2vkxw_a0a0a0a0a0a0a33(it.getContainmentLink(), link) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute")) && eq_b2vkxw_a0a0a0a0a0a0a0hb(((SContainmentLink) BHReflection.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute")), SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), "BpxLfMirzf"))), link);
+        return eq_b2vkxw_a0a0a0a0a0a0a43(it.getContainmentLink(), link) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute")) && eq_b2vkxw_a0a0a0a0a0a0a0ib(((SContainmentLink) BHReflection.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute")), SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), "BpxLfMirzf"))), link);
       }
     });
   }
@@ -276,10 +277,6 @@ public class AttributeOperations {
       AttributeOperations.deleteAttribute(myReferenceContainer, myAttributeDescriptor, (SNode) node);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(AttributeOperations.class);
-  private static boolean eq_b2vkxw_a0a0a0a0a0a0cb(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
   private static boolean eq_b2vkxw_a0a0a0a0a0a0db(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
@@ -292,10 +289,13 @@ public class AttributeOperations {
   private static boolean eq_b2vkxw_a0a0a0a0a0a0gb(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_b2vkxw_a0a0a0a0a0a0a0hb(Object a, Object b) {
+  private static boolean eq_b2vkxw_a0a0a0a0a0a0hb(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_b2vkxw_a0a0a0a0a0a0a33(Object a, Object b) {
+  private static boolean eq_b2vkxw_a0a0a0a0a0a0a0ib(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_b2vkxw_a0a0a0a0a0a0a43(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

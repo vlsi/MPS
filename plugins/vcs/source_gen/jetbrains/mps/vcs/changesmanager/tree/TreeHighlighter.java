@@ -21,6 +21,8 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import jetbrains.mps.util.AbstractComputeRunnable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -55,8 +57,6 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class TreeHighlighter implements TreeMessageOwner {
   private Map<FileStatus, TreeMessage> myTreeMessages = MapSequence.fromMap(new HashMap<FileStatus, TreeMessage>());
@@ -153,6 +153,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     }
   }
 
+  protected static Logger LOG = LogManager.getLogger(TreeHighlighter.class);
   private void unregisterNode(@NotNull MPSTreeNode node) {
     Feature feature = myFeatureExtractor.getFeature(node);
     if (feature != null) {
@@ -462,5 +463,4 @@ public class TreeHighlighter implements TreeMessageOwner {
       return features;
     }
   }
-  protected static Logger LOG = LogManager.getLogger(TreeHighlighter.class);
 }

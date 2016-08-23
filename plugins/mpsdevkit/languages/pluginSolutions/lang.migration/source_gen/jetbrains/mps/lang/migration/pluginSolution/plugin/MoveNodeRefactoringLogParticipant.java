@@ -11,6 +11,8 @@ import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -47,8 +49,6 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.Iterator;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBase<SNodeReference, SNodeReference, SNode, SNode> implements MoveNodeRefactoringParticipant<SNodeReference, SNodeReference> {
 
@@ -120,6 +120,7 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
     return myDataCollector;
   }
 
+  protected static Logger LOG = LogManager.getLogger(MoveNodeRefactoringLogParticipant.class);
   public static class LogBuilder {
     private static final String myId = "refactoringSession.logBuilder";
     public static MoveNodeRefactoringLogParticipant.LogBuilder getBuilder(RefactoringSession session, SearchScope searchScope, SModule module) {
@@ -321,7 +322,6 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
 
   public static final RefactoringParticipant.Option OPTION = new RefactoringParticipant.Option("moveNode.options.writeRefactoringLog", "Write refactoring log");
 
-  protected static Logger LOG = LogManager.getLogger(MoveNodeRefactoringLogParticipant.class);
   private static SModule check_29rp6m_a0a0o(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();

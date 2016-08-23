@@ -7,6 +7,8 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.lang.test.util.TestLightRunState;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcess;
 import com.intellij.util.WaitFor;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.io.IOException;
 import org.apache.log4j.Level;
 import java.io.IOError;
@@ -19,8 +21,6 @@ import org.junit.runner.notification.StoppedByUserException;
 import org.jetbrains.annotations.NotNull;
 import org.junit.runner.notification.RunListener;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class TestLightExecutor extends AbstractTestExecutor {
   private static final int TIME_TO_WAIT_FOR_START = 5 * 1000;
@@ -50,6 +50,7 @@ public class TestLightExecutor extends AbstractTestExecutor {
     }
   }
 
+  protected static Logger LOG = LogManager.getLogger(TestLightExecutor.class);
   @Override
   public void init() {
     if (LOG.isDebugEnabled()) {
@@ -142,5 +143,4 @@ public class TestLightExecutor extends AbstractTestExecutor {
       super(msg);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(TestLightExecutor.class);
 }

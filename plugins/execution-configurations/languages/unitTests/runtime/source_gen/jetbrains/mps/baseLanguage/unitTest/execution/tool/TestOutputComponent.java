@@ -16,6 +16,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.io.File;
 import jetbrains.mps.util.FileUtil;
 import java.io.DataOutputStream;
@@ -26,8 +28,6 @@ import org.apache.log4j.Level;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class TestOutputComponent implements TestView {
   private static final int MAX_SIZE = 10000;
@@ -218,6 +218,7 @@ public class TestOutputComponent implements TestView {
       return eq_r62oz9_a0a0e02(myClassName, testClass);
     }
   }
+  protected static Logger LOG = LogManager.getLogger(TestOutputComponent.class);
   public class MethodMessage extends TestOutputComponent.CompositeMessage implements TestOutputComponent.IMessage {
     private final String myMethod;
     private File myFile = null;
@@ -234,7 +235,7 @@ public class TestOutputComponent implements TestView {
     }
     @Override
     public boolean merges(String testClass, String testMethod) {
-      return eq_r62oz9_a0a0f12(testMethod, myMethod);
+      return eq_r62oz9_a0a0f22(testMethod, myMethod);
     }
     @Override
     public int size() {
@@ -324,7 +325,6 @@ public class TestOutputComponent implements TestView {
       TestOutputComponent.print(myConsoleView, myKey, myText);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(TestOutputComponent.class);
   private static boolean neq_r62oz9_a0a0a11(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
@@ -340,7 +340,7 @@ public class TestOutputComponent implements TestView {
   private static boolean eq_r62oz9_a0a0e02(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_r62oz9_a0a0f12(Object a, Object b) {
+  private static boolean eq_r62oz9_a0a0f22(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

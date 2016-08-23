@@ -14,6 +14,8 @@ import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.List;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import java.io.OutputStream;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -22,8 +24,6 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class LanguageDescriptorPersistence {
   private LanguageDescriptorPersistence() {
@@ -125,6 +125,7 @@ public class LanguageDescriptorPersistence {
     return descriptor;
   }
 
+  protected static Logger LOG = LogManager.getLogger(LanguageDescriptorPersistence.class);
   public static void saveLanguageDescriptor(IFile file, LanguageDescriptor descriptor, MacroHelper macroHelper) {
     if (file.isReadOnly()) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -212,5 +213,4 @@ public class LanguageDescriptorPersistence {
     languageElement.addContent(extendedLanguages);
     return new Document(languageElement);
   }
-  protected static Logger LOG = LogManager.getLogger(LanguageDescriptorPersistence.class);
 }

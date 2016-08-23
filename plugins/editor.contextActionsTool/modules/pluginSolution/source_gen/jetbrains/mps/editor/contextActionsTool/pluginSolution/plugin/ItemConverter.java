@@ -12,14 +12,14 @@ import java.util.ArrayList;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItemVisitor;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
 import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import javax.swing.Icon;
 import jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.SidebarActionItem;
 import jetbrains.mps.ide.icons.IconManager;
 import org.apache.log4j.Level;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.CommandPolicy;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ItemConverter {
   private final SelectionMenuProvider myMenuProvider;
@@ -57,6 +57,7 @@ public class ItemConverter {
     }
   }
 
+  protected static Logger LOG = LogManager.getLogger(ItemConverter.class);
   private static ToolComponent.IItem convertActionItem(ActionItem actionItem, String folderName) {
     Icon icon = null;
     String tooltip = null;
@@ -138,5 +139,4 @@ public class ItemConverter {
     }
   }
 
-  protected static Logger LOG = LogManager.getLogger(ItemConverter.class);
 }

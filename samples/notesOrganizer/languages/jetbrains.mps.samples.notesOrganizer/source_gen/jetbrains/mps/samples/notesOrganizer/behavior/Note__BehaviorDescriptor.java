@@ -17,13 +17,13 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.lang.reflect.Field;
 import org.apache.log4j.Level;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public final class Note__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df32dL, "jetbrains.mps.samples.notesOrganizer.structure.Note");
@@ -36,6 +36,7 @@ public final class Note__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
+  protected static Logger LOG = LogManager.getLogger(Note__BehaviorDescriptor.class);
   /*package*/ static Color findColor_id3o4bEdkAIk2(@NotNull SNode __thisNode__, String colorName) {
     try {
       if (colorName != null) {
@@ -107,5 +108,4 @@ public final class Note__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  protected static Logger LOG = LogManager.getLogger(Note__BehaviorDescriptor.class);
 }

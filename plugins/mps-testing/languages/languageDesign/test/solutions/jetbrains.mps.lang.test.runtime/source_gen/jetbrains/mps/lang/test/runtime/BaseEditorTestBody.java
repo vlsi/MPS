@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.ide.ThreadUtils;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
@@ -48,9 +50,7 @@ import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import com.intellij.openapi.command.impl.CurrentEditorProvider;
 import com.intellij.openapi.fileEditor.FileEditor;
-import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
-import org.apache.log4j.LogManager;
 
 /**
  * Common ancestor for all generated EditorTestCase instances
@@ -69,6 +69,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
 
   public abstract void testMethodImpl() throws Exception;
 
+  protected static Logger LOG = LogManager.getLogger(BaseEditorTestBody.class);
   /**
    * 
    * @deprecated use #initEditorComponent instead
@@ -390,5 +391,4 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   private void uninstallAppender(CachingAppender appender) {
     Logger.getRootLogger().removeAppender(appender);
   }
-  protected static Logger LOG = LogManager.getLogger(BaseEditorTestBody.class);
 }

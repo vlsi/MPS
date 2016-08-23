@@ -7,13 +7,13 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher
 import org.junit.runner.notification.Failure;
 import java.io.StringWriter;
 import java.io.PrintWriter;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.junit.runner.Result;
 import com.intellij.execution.process.ProcessOutputTypes;
 import org.junit.runner.Description;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 import org.junit.internal.AssumptionViolatedException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class TestLightRunListener extends RunListener {
   private final TestLightExecutor myExecutor;
@@ -37,6 +37,7 @@ public class TestLightRunListener extends RunListener {
     return sw.toString();
   }
 
+  protected static Logger LOG = LogManager.getLogger(TestLightRunListener.class);
   @Override
   public void testRunFinished(Result result) throws Exception {
     if (++currentRequest == myRequestCount) {
@@ -118,5 +119,4 @@ public class TestLightRunListener extends RunListener {
       return new TestEvent(token, fqName, methodName, memory, time);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(TestLightRunListener.class);
 }

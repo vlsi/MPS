@@ -41,19 +41,19 @@
       <node id="4968420405390489536" at="105,69,106,152" concept="14" />
       <node id="4968420405390508470" at="107,14,108,41" concept="14" />
       <node id="4727801710070562716" at="110,27,111,39" concept="14" />
-      <node id="4963955491753976931" at="124,9,125,34" concept="8" />
-      <node id="4963955491753976934" at="127,41,128,24" concept="2" />
-      <node id="4963955491753977082" at="131,41,132,24" concept="2" />
-      <node id="4963955491753977090" at="135,41,136,24" concept="2" />
-      <node id="4963955491753986496" at="139,32,140,24" concept="2" />
-      <node id="4963955491753986490" at="143,33,144,25" concept="2" />
-      <node id="4963955491753977102" at="146,5,147,19" concept="8" />
-      <node id="4727801710070561559" at="155,0,156,0" concept="6" trace="invoke#()null" />
-      <node id="4963955491753976892" at="163,0,164,0" concept="6" trace="invoke#()null" />
-      <node id="4727801710070561566" at="171,0,172,0" concept="3" trace="myThreadReference" />
-      <node id="4727801710070562735" at="172,63,173,42" concept="2" />
-      <node id="4727801710070562740" at="175,56,176,31" concept="8" />
-      <node id="4727801710070561555" at="179,0,180,0" concept="9" trace="LOG" />
+      <node id="4727801710070561555" at="114,0,115,0" concept="9" trace="LOG" />
+      <node id="4963955491753976931" at="125,9,126,34" concept="8" />
+      <node id="4963955491753976934" at="128,41,129,24" concept="2" />
+      <node id="4963955491753977082" at="132,41,133,24" concept="2" />
+      <node id="4963955491753977090" at="136,41,137,24" concept="2" />
+      <node id="4963955491753986496" at="140,32,141,24" concept="2" />
+      <node id="4963955491753986490" at="144,33,145,25" concept="2" />
+      <node id="4963955491753977102" at="147,5,148,19" concept="8" />
+      <node id="4727801710070561559" at="156,0,157,0" concept="6" trace="invoke#()null" />
+      <node id="4963955491753976892" at="164,0,165,0" concept="6" trace="invoke#()null" />
+      <node id="4727801710070561566" at="172,0,173,0" concept="3" trace="myThreadReference" />
+      <node id="4727801710070562735" at="173,63,174,42" concept="2" />
+      <node id="4727801710070562740" at="176,56,177,31" concept="8" />
       <node id="4727801710070561577" at="34,0,36,0" concept="1" trace="EvaluationUtils#()V" />
       <node id="7494124042451515108" at="39,0,41,0" concept="6" trace="findField#(Lcom/sun/jdi/ClassType;Ljava/lang/String;)Lcom/sun/jdi/Field;" />
       <node id="7494124042451515156" at="42,0,44,0" concept="6" trace="findConstructor#(Lcom/sun/jdi/ClassType;Ljava/lang/String;)Lcom/sun/jdi/Method;" />
@@ -73,19 +73,19 @@
       <node id="4968420405390505281" at="107,12,109,7" concept="0" />
       <node id="7494124042451449905" at="73,47,76,5" concept="12" />
       <node id="4963955491753986463" at="99,34,102,7" concept="5" />
-      <node id="4963955491753976934" at="126,53,129,7" concept="5" />
-      <node id="4963955491753977082" at="130,53,133,7" concept="5" />
-      <node id="4963955491753977090" at="134,45,137,7" concept="5" />
-      <node id="4963955491753986496" at="138,56,141,7" concept="5" />
-      <node id="4963955491753986490" at="142,37,145,7" concept="5" />
-      <node id="4727801710070561569" at="172,0,175,0" concept="1" trace="ThreadInvocatable#(Lcom/sun/jdi/ThreadReference;)V" />
-      <node id="4727801710070561574" at="175,0,178,0" concept="6" trace="getCurrentThreadReference#()Lcom/sun/jdi/ThreadReference;" />
+      <node id="4963955491753976934" at="127,53,130,7" concept="5" />
+      <node id="4963955491753977082" at="131,53,134,7" concept="5" />
+      <node id="4963955491753977090" at="135,45,138,7" concept="5" />
+      <node id="4963955491753986496" at="139,56,142,7" concept="5" />
+      <node id="4963955491753986490" at="143,37,146,7" concept="5" />
+      <node id="4727801710070561569" at="173,0,176,0" concept="1" trace="ThreadInvocatable#(Lcom/sun/jdi/ThreadReference;)V" />
+      <node id="4727801710070561574" at="176,0,179,0" concept="6" trace="getCurrentThreadReference#()Lcom/sun/jdi/ThreadReference;" />
       <node id="7494124042451449889" at="73,0,78,0" concept="10" trace="getInstance#()Ljetbrains/mps/debugger/java/api/evaluation/EvaluationUtils;" />
       <node id="4727801710070562675" at="89,37,94,7" concept="5" />
       <node id="4968420405390505277" at="104,50,109,7" concept="5" />
-      <node id="4963955491753976918" at="123,115,146,5" concept="15" />
+      <node id="4963955491753976918" at="124,115,147,5" concept="15" />
       <node id="4727801710070562672" at="86,121,112,5" concept="15" />
-      <node id="4963955491753976908" at="123,0,149,0" concept="10" trace="consumeEvaluationException#(Ljetbrains/mps/debugger/java/api/evaluation/EvaluationUtils/EvaluationInvocatable;null)null" />
+      <node id="4963955491753976908" at="124,0,150,0" concept="10" trace="consumeEvaluationException#(Ljetbrains/mps/debugger/java/api/evaluation/EvaluationUtils/EvaluationInvocatable;null)null" />
       <node id="4727801710070562664" at="86,0,114,0" concept="10" trace="handleInvocationExceptions#(Ljetbrains/mps/debugger/java/api/evaluation/EvaluationUtils/Invocatable;)null" />
       <scope id="4727801710070561580" at="34,28,34,28" />
       <scope id="7494124042451449857" at="36,0,37,0" />
@@ -139,16 +139,16 @@
         <var name="t" id="4727801710070562720" />
       </scope>
       <scope id="4727801710070562715" at="110,27,111,39" />
-      <scope id="4963955491753976919" at="124,9,125,34" />
-      <scope id="4963955491753976934" at="127,41,128,24" />
-      <scope id="4963955491753977082" at="131,41,132,24" />
-      <scope id="4963955491753977090" at="135,41,136,24" />
-      <scope id="4963955491753986496" at="139,32,140,24" />
-      <scope id="4963955491753986490" at="143,33,144,25" />
-      <scope id="4727801710070561559" at="155,0,156,0" />
-      <scope id="4963955491753976892" at="163,0,164,0" />
-      <scope id="4727801710070562734" at="172,63,173,42" />
-      <scope id="4727801710070562739" at="175,56,176,31" />
+      <scope id="4963955491753976919" at="125,9,126,34" />
+      <scope id="4963955491753976934" at="128,41,129,24" />
+      <scope id="4963955491753977082" at="132,41,133,24" />
+      <scope id="4963955491753977090" at="136,41,137,24" />
+      <scope id="4963955491753986496" at="140,32,141,24" />
+      <scope id="4963955491753986490" at="144,33,145,25" />
+      <scope id="4727801710070561559" at="156,0,157,0" />
+      <scope id="4963955491753976892" at="164,0,165,0" />
+      <scope id="4727801710070562734" at="173,63,174,42" />
+      <scope id="4727801710070562739" at="176,56,177,31" />
       <scope id="4727801710070561577" at="34,0,36,0" />
       <scope id="7494124042451515108" at="39,0,41,0">
         <var name="fieldName" id="7494124042451513808" />
@@ -213,30 +213,30 @@
         <var name="threadReference" id="7494124042451514543" />
       </scope>
       <scope id="7494124042451449892" at="73,47,76,5" />
-      <scope id="4963955491753976920" at="126,0,129,7">
+      <scope id="4963955491753976920" at="127,0,130,7">
         <var name="e" id="4963955491753976921" />
       </scope>
-      <scope id="4963955491753976923" at="126,53,129,7" />
-      <scope id="4963955491753977077" at="130,0,133,7">
+      <scope id="4963955491753976923" at="127,53,130,7" />
+      <scope id="4963955491753977077" at="131,0,134,7">
         <var name="e" id="4963955491753977078" />
       </scope>
-      <scope id="4963955491753977080" at="130,53,133,7" />
-      <scope id="4963955491753977085" at="134,0,137,7">
+      <scope id="4963955491753977080" at="131,53,134,7" />
+      <scope id="4963955491753977085" at="135,0,138,7">
         <var name="e" id="4963955491753977086" />
       </scope>
-      <scope id="4963955491753977088" at="134,45,137,7" />
-      <scope id="4963955491753986485" at="138,0,141,7">
+      <scope id="4963955491753977088" at="135,45,138,7" />
+      <scope id="4963955491753986485" at="139,0,142,7">
         <var name="e" id="4963955491753986486" />
       </scope>
-      <scope id="4963955491753986488" at="138,56,141,7" />
-      <scope id="4963955491753977093" at="142,0,145,7">
+      <scope id="4963955491753986488" at="139,56,142,7" />
+      <scope id="4963955491753977093" at="143,0,146,7">
         <var name="e" id="4963955491753977094" />
       </scope>
-      <scope id="4963955491753977096" at="142,37,145,7" />
-      <scope id="4727801710070561569" at="172,0,175,0">
+      <scope id="4963955491753977096" at="143,37,146,7" />
+      <scope id="4727801710070561569" at="173,0,176,0">
         <var name="threadReference" id="4727801710070561572" />
       </scope>
-      <scope id="4727801710070561574" at="175,0,178,0" />
+      <scope id="4727801710070561574" at="176,0,179,0" />
       <scope id="4963955491753986458" at="99,0,103,46">
         <var name="e" id="4963955491753986459" />
       </scope>
@@ -250,18 +250,18 @@
         <var name="e" id="4968420405390489431" />
       </scope>
       <scope id="4968420405390489433" at="104,50,109,7" />
-      <scope id="4963955491753976911" at="123,115,147,19" />
+      <scope id="4963955491753976911" at="124,115,148,19" />
       <scope id="4727801710070562671" at="86,121,112,5" />
-      <scope id="4963955491753976908" at="123,0,149,0">
+      <scope id="4963955491753976908" at="124,0,150,0">
         <var name="failure" id="4963955491753977105" />
         <var name="invocatable" id="4963955491753976914" />
       </scope>
       <scope id="4727801710070562664" at="86,0,114,0">
         <var name="invocatable" id="4727801710070562668" />
       </scope>
-      <unit id="4727801710070560806" at="154,0,157,0" name="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils$Invocatable" />
-      <unit id="4963955491753976889" at="162,0,165,0" name="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils$EvaluationInvocatable" />
-      <unit id="4727801710070560807" at="170,0,179,0" name="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils$ThreadInvocatable" />
+      <unit id="4727801710070560806" at="155,0,158,0" name="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils$Invocatable" />
+      <unit id="4963955491753976889" at="163,0,166,0" name="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils$EvaluationInvocatable" />
+      <unit id="4727801710070560807" at="171,0,180,0" name="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils$ThreadInvocatable" />
       <unit id="4727801710070561555" at="30,0,181,0" name="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils" />
     </file>
   </root>

@@ -20,6 +20,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debug.api.IDebugger;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.textgen.trace.TraceInfo;
@@ -48,8 +50,6 @@ import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
@@ -176,6 +176,7 @@ public class Java_Command {
   public static boolean isUnitNode(SNode node) {
     return isNotEmptyString(Java_Command.getClassName(node));
   }
+  protected static Logger LOG = LogManager.getLogger(Java_Command.class);
   private static String getClassName(SNode node) {
     SModel model = SNodeOperations.getModel(node);
     if (model == null) {
@@ -198,7 +199,7 @@ public class Java_Command {
       } else {
         return TraceInfo.unitNameWithPosition(node, new Condition<TraceablePositionInfo>() {
           public boolean met(TraceablePositionInfo position) {
-            return (eq_kk96hj_a0a0a0a0a1a0a0b0a2a52(position.getConcept(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) && (eq_kk96hj_a0a0a0a0a1a0a0b0a2a52_0(position.getPropertyString(), ((String) BHReflection.invoke(_quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0c0b(), SMethodTrimmedId.create("getTraceableProperty", null, "4pl5GY7LKmH")))));
+            return (eq_kk96hj_a0a0a0a0a1a0a0b0a2a62(position.getConcept(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) && (eq_kk96hj_a0a0a0a0a1a0a0b0a2a62_0(position.getPropertyString(), ((String) BHReflection.invoke(_quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0c0b(), SMethodTrimmedId.create("getTraceableProperty", null, "4pl5GY7LKmH")))));
           }
         });
       }
@@ -322,7 +323,6 @@ public class Java_Command {
       }
     };
   }
-  protected static Logger LOG = LogManager.getLogger(Java_Command.class);
   private static int check_yvpt_a0c0a2(CommandPart checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLength();
@@ -410,10 +410,10 @@ public class Java_Command {
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
-  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a52(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a62(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a52_0(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a62_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

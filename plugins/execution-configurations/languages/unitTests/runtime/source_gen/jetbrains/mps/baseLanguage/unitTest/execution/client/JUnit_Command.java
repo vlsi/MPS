@@ -15,6 +15,8 @@ import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -34,8 +36,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class JUnit_Command {
   private String myDebuggerSettings_String;
@@ -100,6 +100,7 @@ public class JUnit_Command {
     });
     return IterableUtils.join(ListSequence.fromList(testsCommandLine.value), " ");
   }
+  protected static Logger LOG = LogManager.getLogger(JUnit_Command.class);
   private static Tuples._2<List<ITestNodeWrapper>, Tuples._3<String, List<String>, List<String>>> getTestsToRunWithParameters(@NotNull List<ITestNodeWrapper> tests) throws ExecutionException {
     final Wrappers._T<List<ITestNodeWrapper>> _tests = new Wrappers._T<List<ITestNodeWrapper>>(tests);
     final Wrappers._T<Tuples._3<String, List<String>, List<String>>> runParams = new Wrappers._T<Tuples._3<String, List<String>, List<String>>>();
@@ -124,12 +125,12 @@ public class JUnit_Command {
         runParams.value = ListSequence.fromList(_tests.value).first().getTestRunParameters();
         testsToRun.value = ListSequence.fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
           public boolean accept(ITestNodeWrapper it) {
-            return eq_ifael_a0a0a0a0a0a0b0a0a0a0g0q(it.getTestRunParameters(), runParams.value);
+            return eq_ifael_a0a0a0a0a0a0b0a0a0a0g0r(it.getTestRunParameters(), runParams.value);
           }
         }).toListSequence();
         skipped.value = IterableUtils.join(ListSequence.fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
           public boolean accept(ITestNodeWrapper it) {
-            return neq_ifael_a0a0a0a0a0a0a2a0a0a0a6a61(it.getTestRunParameters(), runParams.value);
+            return neq_ifael_a0a0a0a0a0a0a2a0a0a0a6a71(it.getTestRunParameters(), runParams.value);
           }
         }).select(new ISelector<ITestNodeWrapper, String>() {
           public String select(ITestNodeWrapper it) {
@@ -220,7 +221,6 @@ public class JUnit_Command {
       }
     };
   }
-  protected static Logger LOG = LogManager.getLogger(JUnit_Command.class);
   private static String check_txeh3_a1a0a0a(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.vmOptions();
@@ -242,10 +242,10 @@ public class JUnit_Command {
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static boolean eq_ifael_a0a0a0a0a0a0b0a0a0a0g0q(Object a, Object b) {
+  private static boolean eq_ifael_a0a0a0a0a0a0b0a0a0a0g0r(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean neq_ifael_a0a0a0a0a0a0a2a0a0a0a6a61(Object a, Object b) {
+  private static boolean neq_ifael_a0a0a0a0a0a0a2a0a0a0a6a71(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean isNotEmptyString(String str) {

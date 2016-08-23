@@ -4,14 +4,14 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 
 import org.junit.runner.notification.RunListener;
 import org.jetbrains.annotations.Nullable;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.junit.runner.Request;
 import org.junit.runner.JUnitCore;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.test.util.RunEventsDispatcher;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public abstract class AbstractTestExecutor implements TestExecutor {
   protected static final int EXIT_CODE_FOR_EXCEPTION = -12345;
@@ -25,6 +25,7 @@ public abstract class AbstractTestExecutor implements TestExecutor {
     return myCurrentRunner;
   }
 
+  protected static Logger LOG = LogManager.getLogger(AbstractTestExecutor.class);
   @Override
   public void execute() {
     try {
@@ -83,5 +84,4 @@ public abstract class AbstractTestExecutor implements TestExecutor {
   @NotNull
   protected abstract RunListener createListener(Iterable<Request> requests);
 
-  protected static Logger LOG = LogManager.getLogger(AbstractTestExecutor.class);
 }

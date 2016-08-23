@@ -5,6 +5,8 @@ package jetbrains.mps.build.mps.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.build.mps.util.PathConverter;
@@ -13,8 +15,6 @@ import jetbrains.mps.build.mps.util.ModuleLoader;
 import jetbrains.mps.build.mps.util.ModuleChecker;
 import jetbrains.mps.build.mps.util.ModuleLoaderException;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ReloadRequired_QuickFix extends QuickFix_Runtime {
   public ReloadRequired_QuickFix() {
@@ -23,6 +23,7 @@ public class ReloadRequired_QuickFix extends QuickFix_Runtime {
   public String getDescription(SNode node) {
     return "Load required information from file";
   }
+  protected static Logger LOG = LogManager.getLogger(ReloadRequired_QuickFix.class);
   public void execute(SNode node) {
     SNode module = SNodeOperations.as(node, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"));
     if (module == null) {
@@ -54,5 +55,4 @@ public class ReloadRequired_QuickFix extends QuickFix_Runtime {
       // TODO report? 
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ReloadRequired_QuickFix.class);
 }

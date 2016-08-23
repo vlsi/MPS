@@ -27,6 +27,8 @@ import com.intellij.notification.Notifications;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.List;
 import jetbrains.mps.project.ProjectManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import org.apache.log4j.Level;
 import jetbrains.mps.vfs.IFile;
@@ -57,8 +59,6 @@ import com.intellij.diff.DiffDialogHints;
 import jetbrains.mps.vcs.util.ModelVersion;
 import com.intellij.openapi.ui.TestDialog;
 import com.intellij.openapi.application.Application;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
   private Notification myLastNotification;
@@ -167,6 +167,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     return project;
   }
 
+  protected static Logger LOG = LogManager.getLogger(ModelStorageProblemsListener.class);
   private void resolveDiskMemoryConflict(final EditableSModel model) {
     if (!(model.getSource() instanceof FileDataSource)) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -313,5 +314,4 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     final Application application = ApplicationManager.getApplication();
     return application != null && (application.isUnitTestMode() || application.isHeadlessEnvironment());
   }
-  protected static Logger LOG = LogManager.getLogger(ModelStorageProblemsListener.class);
 }

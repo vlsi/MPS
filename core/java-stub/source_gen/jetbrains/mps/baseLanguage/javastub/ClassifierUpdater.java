@@ -28,6 +28,8 @@ import java.util.List;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClassType;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMPrimitiveType;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
@@ -45,8 +47,6 @@ import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -475,6 +475,7 @@ public class ClassifierUpdater {
     }
     return result;
   }
+  protected static Logger LOG = LogManager.getLogger(ClassifierUpdater.class);
   private SNode getAnnotationValue(Object value) {
     if (value instanceof Integer) {
       return _quotation_createNode_ol94f8_a0a0a33(value.toString());
@@ -691,7 +692,6 @@ public class ClassifierUpdater {
     int i = className.indexOf('$');
     return ASMNodeId.createId((i == -1 ? className : className.substring(0, i)));
   }
-  protected static Logger LOG = LogManager.getLogger(ClassifierUpdater.class);
   private static SNode createPublicVisibility_ol94f8_a0a1a0a21() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"), null, null, false);

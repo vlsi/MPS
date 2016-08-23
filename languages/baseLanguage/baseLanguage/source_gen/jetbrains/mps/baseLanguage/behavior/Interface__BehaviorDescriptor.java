@@ -19,6 +19,8 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
@@ -39,8 +41,6 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public final class Interface__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface");
@@ -62,6 +62,7 @@ public final class Interface__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
+  protected static Logger LOG = LogManager.getLogger(Interface__BehaviorDescriptor.class);
   /*package*/ static boolean isDescendant_checkLoops_id6dL7A1DpKoA(@NotNull SNode __thisNode__, SNode nodeToCompare, Set<SNode> visited) {
     if (SetSequence.fromSet(visited).contains(__thisNode__)) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -249,5 +250,4 @@ public final class Interface__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  protected static Logger LOG = LogManager.getLogger(Interface__BehaviorDescriptor.class);
 }

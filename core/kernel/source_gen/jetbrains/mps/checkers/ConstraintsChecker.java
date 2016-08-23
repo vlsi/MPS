@@ -4,6 +4,8 @@ package jetbrains.mps.checkers;
 
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -26,8 +28,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ConstraintsChecker extends AbstractConstraintsChecker {
   public ConstraintsChecker() {
@@ -44,6 +44,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     return breakingNodePointer;
 
   }
+  protected static Logger LOG = LogManager.getLogger(ConstraintsChecker.class);
   @Override
   public void checkNode(final SNode node, LanguageErrorsComponent component, SRepository repository) {
     final SConcept nodeConcept = node.getConcept();
@@ -156,5 +157,4 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ConstraintsChecker.class);
 }

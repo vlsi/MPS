@@ -17,12 +17,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.SidebarActionItem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.IconResource;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class DefaultMenuContribution extends TransformationMenuBase {
   public DefaultMenuContribution() {
@@ -73,6 +73,7 @@ public class DefaultMenuContribution extends TransformationMenuBase {
 
     }
   }
+  protected static Logger LOG = LogManager.getLogger(DefaultMenuContribution.class);
   private class TransformationMenuPart_Action_qwzmaw_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
@@ -110,5 +111,4 @@ public class DefaultMenuContribution extends TransformationMenuBase {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(DefaultMenuContribution.class);
 }

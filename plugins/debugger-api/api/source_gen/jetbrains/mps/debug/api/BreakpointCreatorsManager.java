@@ -24,12 +24,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.Nullable;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.TraceInfo;
 import com.intellij.openapi.application.ApplicationManager;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class BreakpointCreatorsManager implements ApplicationComponent {
   @Deprecated
@@ -129,6 +129,7 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
       }
     }) != null;
   }
+  protected static Logger LOG = LogManager.getLogger(BreakpointCreatorsManager.class);
   private ILocationBreakpoint createBreakpoint(SAbstractConcept concept, SNode node, Project project) {
     for (BreakpointCreator creator : SetSequence.fromSet(myCreators)) {
       if (creator._0().invoke(concept, node)) {
@@ -171,5 +172,4 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
   public static BreakpointCreatorsManager getInstance() {
     return ApplicationManager.getApplication().getComponent(BreakpointCreatorsManager.class);
   }
-  protected static Logger LOG = LogManager.getLogger(BreakpointCreatorsManager.class);
 }

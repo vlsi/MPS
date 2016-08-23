@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Level;
 
 public class RefactoringSessionImpl implements RefactoringSession {
 
@@ -28,6 +28,7 @@ public class RefactoringSessionImpl implements RefactoringSession {
     ListSequence.fromList(myChanges).addElement(change);
   }
 
+  protected static Logger LOG = LogManager.getLogger(RefactoringSessionImpl.class);
   public void performAllRegistered() {
     for (Runnable change : ListSequence.fromList(myChanges)) {
       try {
@@ -39,5 +40,4 @@ public class RefactoringSessionImpl implements RefactoringSession {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(RefactoringSessionImpl.class);
 }

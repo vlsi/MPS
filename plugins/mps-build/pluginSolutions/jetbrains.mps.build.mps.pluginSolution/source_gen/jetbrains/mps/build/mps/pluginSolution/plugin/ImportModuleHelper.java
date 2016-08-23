@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.build.mps.util.PathConverter;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -21,8 +23,6 @@ import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.ModuleLoader;
 import jetbrains.mps.build.mps.util.ModuleChecker;
 import jetbrains.mps.build.mps.util.ModuleLoaderException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ImportModuleHelper {
   private SNode project;
@@ -36,6 +36,7 @@ public class ImportModuleHelper {
     this.moduleDescriptor = moduleDescriptor;
     this.converter = new PathConverter(project);
   }
+  protected static Logger LOG = LogManager.getLogger(ImportModuleHelper.class);
   public void create() {
     try {
       if (moduleDescriptor instanceof LanguageDescriptor) {
@@ -78,5 +79,4 @@ public class ImportModuleHelper {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ImportModuleHelper.class);
 }

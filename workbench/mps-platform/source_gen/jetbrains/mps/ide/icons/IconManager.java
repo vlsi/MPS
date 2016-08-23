@@ -42,6 +42,8 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
 import java.awt.Image;
 import com.intellij.util.ImageLoader;
@@ -57,8 +59,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.MPSProject;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public final class IconManager {
   public static final Icon EMPTY_ICON = new Icon() {
@@ -247,6 +247,7 @@ public final class IconManager {
    * This field should be used in getIcon(resource) method only
    */
   private static Map<IconResource, Icon> ourResToIcon = MapSequence.fromMap(new HashMap<IconResource, Icon>());
+  protected static Logger LOG = LogManager.getLogger(IconManager.class);
   public static Icon getIconForResource(@Nullable IconResource ir) {
     if (ir == null) {
       return null;
@@ -353,5 +354,4 @@ public final class IconManager {
     }
     return IdeIcons.DEFAULT_ICON;
   }
-  protected static Logger LOG = LogManager.getLogger(IconManager.class);
 }

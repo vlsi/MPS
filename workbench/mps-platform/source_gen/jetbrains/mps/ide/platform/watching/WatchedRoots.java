@@ -9,11 +9,11 @@ import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.application.ApplicationManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.util.FileUtil;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 /**
  * Component that lets you add watch requests.
@@ -62,6 +62,7 @@ public class WatchedRoots implements ApplicationComponent {
     }
   }
 
+  protected static Logger LOG = LogManager.getLogger(WatchedRoots.class);
   private boolean maybeAddWatchRequest(String path) {
     boolean alreadyCovered = false;
 
@@ -105,5 +106,4 @@ public class WatchedRoots implements ApplicationComponent {
       myRequests.remove(path);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(WatchedRoots.class);
 }

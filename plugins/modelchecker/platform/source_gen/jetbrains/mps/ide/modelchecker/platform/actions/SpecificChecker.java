@@ -6,6 +6,8 @@ import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Level;
@@ -15,13 +17,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public abstract class SpecificChecker {
   public SpecificChecker() {
   }
   public abstract List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor progressContext);
+  protected static Logger LOG = LogManager.getLogger(SpecificChecker.class);
   protected static void addIssue(List<SearchResult<ModelCheckerIssue>> results, SNode node, String message, String severity, String issueType, IModelCheckerFix fix) {
     if (filterIssue(node)) {
       if (SNodeOperations.getContainingRoot(node) == null) {
@@ -56,5 +57,4 @@ public abstract class SpecificChecker {
     }
     return true;
   }
-  protected static Logger LOG = LogManager.getLogger(SpecificChecker.class);
 }

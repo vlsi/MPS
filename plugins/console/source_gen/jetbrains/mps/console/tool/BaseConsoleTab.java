@@ -17,6 +17,8 @@ import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ide.PasteProvider;
 import jetbrains.mps.openapi.editor.extensions.EditorExtensionUtil;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import org.apache.log4j.Level;
@@ -89,8 +91,6 @@ import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public abstract class BaseConsoleTab extends JPanel implements Disposable {
@@ -158,6 +158,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     myEditor.editNode(myRoot);
   }
 
+  protected static Logger LOG = LogManager.getLogger(BaseConsoleTab.class);
   protected void createConsoleModel() {
     this.myModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModuleWithSourceAndClassesGen());
     if (myModel == null) {
@@ -536,7 +537,6 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     });
   }
 
-  protected static Logger LOG = LogManager.getLogger(BaseConsoleTab.class);
   private static void check_6q36mf_a71a03(Highlighter checkedDotOperand, UIEditorComponent myEditor) {
     if (null != checkedDotOperand) {
       checkedDotOperand.addAdditionalEditorComponent(myEditor);

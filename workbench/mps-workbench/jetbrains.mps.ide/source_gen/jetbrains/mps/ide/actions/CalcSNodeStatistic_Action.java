@@ -8,6 +8,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -23,8 +25,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class CalcSNodeStatistic_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -52,6 +52,7 @@ public class CalcSNodeStatistic_Action extends BaseAction {
     }
     return true;
   }
+  protected static Logger LOG = LogManager.getLogger(CalcSNodeStatistic_Action.class);
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Map<Integer, Integer> propertiesStatistic = MapSequence.fromMap(new HashMap<Integer, Integer>());
@@ -115,5 +116,4 @@ public class CalcSNodeStatistic_Action extends BaseAction {
       LOG.warn("Zeros statistic: " + zeros.value);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(CalcSNodeStatistic_Action.class);
 }

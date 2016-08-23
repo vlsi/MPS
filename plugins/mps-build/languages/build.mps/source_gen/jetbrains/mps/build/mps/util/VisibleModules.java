@@ -20,11 +20,11 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 public class VisibleModules {
@@ -74,6 +74,7 @@ public class VisibleModules {
       moduleByName.put(SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), module);
     }
   }
+  protected static Logger LOG = LogManager.getLogger(VisibleModules.class);
   protected void report(String message, SNode anchor) {
     // FIXME use (share) reported interface from ModuleChecker to report directly to gencontext, if available 
     if (LOG.isEnabledFor(Level.ERROR)) {
@@ -97,7 +98,6 @@ public class VisibleModules {
     }
     return result;
   }
-  protected static Logger LOG = LogManager.getLogger(VisibleModules.class);
   private static String check_xuwpka_a0a1a4a1a3a5(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelName();

@@ -50,6 +50,8 @@ import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.scope.FilteringByNameScope;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Level;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -57,8 +59,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import java.util.Map;
 import java.util.HashMap;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -547,6 +547,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return SNodeOperations.getNodeAncestor(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
   }
+  protected static Logger LOG = LogManager.getLogger(Classifier__BehaviorDescriptor.class);
   @Deprecated
   @ToRemove(version = 3.3)
   /*package*/ static List<SNode> getAccessibleMembers_id_8Pw6zYia7(@NotNull SAbstractConcept __thisConcept__, SNode contextNode, int constraint) {
@@ -693,7 +694,6 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
     return res;
   }
   private static final Map<SAbstractConcept, Integer> indices_hx1769_i0yc = buildConceptIndices();
-  protected static Logger LOG = LogManager.getLogger(Classifier__BehaviorDescriptor.class);
   private static String check_qw8l7c_a0a0d0s(SModelName checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getStereotype();

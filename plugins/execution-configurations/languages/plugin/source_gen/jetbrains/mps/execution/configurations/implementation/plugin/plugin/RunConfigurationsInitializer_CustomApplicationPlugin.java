@@ -8,19 +8,20 @@ import com.intellij.execution.configurations.ConfigurationType;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.junit.RuntimeConfigurationProducer;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.intellij.openapi.extensions.ExtensionPoint;
 import com.intellij.openapi.extensions.Extensions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.apache.log4j.Level;
 import com.intellij.util.containers.ContainerUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private List<ConfigurationType> myRegisteredKinds = ListSequence.fromList(new ArrayList<ConfigurationType>());
   private List<RuntimeConfigurationProducer> myRegisteredProducers = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
   public RunConfigurationsInitializer_CustomApplicationPlugin() {
   }
+  protected static Logger LOG = LogManager.getLogger(RunConfigurationsInitializer_CustomApplicationPlugin.class);
   public void doInit() {
     // register kinds 
     ExtensionPoint<ConfigurationType> configurationExtensionPoint = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
@@ -95,5 +96,4 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
     }
     ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredProducers).clear();
   }
-  protected static Logger LOG = LogManager.getLogger(RunConfigurationsInitializer_CustomApplicationPlugin.class);
 }

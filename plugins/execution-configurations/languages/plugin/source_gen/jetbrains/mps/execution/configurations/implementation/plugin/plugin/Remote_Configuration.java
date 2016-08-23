@@ -11,6 +11,8 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.debugger.java.api.settings.RemoteConnectionSettings;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
@@ -23,8 +25,6 @@ import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class Remote_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -48,6 +48,7 @@ public class Remote_Configuration extends BaseMpsRunConfiguration implements IPe
   public void setSettings(RemoteConnectionSettings value) {
     myState.mySettings = value;
   }
+  protected static Logger LOG = LogManager.getLogger(Remote_Configuration.class);
   @Override
   public Remote_Configuration clone() {
     Remote_Configuration clone = null;
@@ -102,5 +103,4 @@ public class Remote_Configuration extends BaseMpsRunConfiguration implements IPe
   public boolean canExecute(String executorId) {
     return Remote_Configuration_RunProfileState.canExecute(executorId);
   }
-  protected static Logger LOG = LogManager.getLogger(Remote_Configuration.class);
 }

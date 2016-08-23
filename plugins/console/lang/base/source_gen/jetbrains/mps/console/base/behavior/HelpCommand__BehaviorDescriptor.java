@@ -18,6 +18,8 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -38,8 +40,6 @@ import jetbrains.mps.internal.collections.runtime.IRightCombinator;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public final class HelpCommand__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730a1f80L, "jetbrains.mps.console.base.structure.HelpCommand");
@@ -54,6 +54,7 @@ public final class HelpCommand__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
+  protected static Logger LOG = LogManager.getLogger(HelpCommand__BehaviorDescriptor.class);
   /*package*/ static void doExecute_id2SpVAIqougW(@NotNull SNode __thisNode__, ConsoleContext context, ConsoleStream console) {
     if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730a1f80L, 0x60279080c2f4192bL, "target")) == null)) {
       Iterable<SAbstractConcept> constructions = ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getInterfaceConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x690b986730edd07L, "jetbrains.mps.lang.smodel.query.structure.HelpProvider"), context.getOutputWindow().getConsoleModel())).where(new IWhereFilter<SAbstractConcept>() {
@@ -203,7 +204,6 @@ public final class HelpCommand__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  protected static Logger LOG = LogManager.getLogger(HelpCommand__BehaviorDescriptor.class);
   private static String check_x46ur7_a0a0c0a0a(SAbstractConcept checkedDotOperand) {
     if (null != checkedDotOperand) {
       return HelpProvider__BehaviorDescriptor.getGroup_id60B$833p9Uj.invoke(SNodeOperations.asSConcept(checkedDotOperand));

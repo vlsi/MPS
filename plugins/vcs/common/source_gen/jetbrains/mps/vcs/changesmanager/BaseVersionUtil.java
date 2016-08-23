@@ -4,6 +4,8 @@ package jetbrains.mps.vcs.changesmanager;
 
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vcs.FileStatus;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
@@ -29,8 +31,6 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.persistence.PersistenceUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class BaseVersionUtil {
   private BaseVersionUtil() {
@@ -38,6 +38,7 @@ public class BaseVersionUtil {
   public static boolean isAddedFileStatus(@NotNull FileStatus status) {
     return status == FileStatus.ADDED || status == FileStatus.UNKNOWN || status == FileStatus.IGNORED;
   }
+  protected static Logger LOG = LogManager.getLogger(BaseVersionUtil.class);
   @Nullable
   public static Object getBaseVersionContent(@NotNull VirtualFile file, @NotNull Project project) {
     if (ModelAccess.instance().canRead()) {
@@ -120,5 +121,4 @@ public class BaseVersionUtil {
     }
     return null;
   }
-  protected static Logger LOG = LogManager.getLogger(BaseVersionUtil.class);
 }

@@ -44,8 +44,8 @@ import jetbrains.mps.smodel.Generator;
 import org.apache.log4j.Level;
 import java.io.StringWriter;
 import java.io.PrintWriter;
-import java.util.LinkedHashSet;
 import org.apache.log4j.LogManager;
+import java.util.LinkedHashSet;
 
 public abstract class MpsWorker {
   protected final List<String> myErrors = new ArrayList<String>();
@@ -276,6 +276,7 @@ public abstract class MpsWorker {
       }
     }
   }
+  protected static Logger LOG = LogManager.getLogger(MpsWorker.class);
   public static class LogLogger implements MpsWorker.AntLogger {
     public LogLogger() {
     }
@@ -334,5 +335,4 @@ public abstract class MpsWorker {
       return !(myModels.isEmpty()) || !(myProjects.isEmpty()) || !(myModules.isEmpty());
     }
   }
-  protected static Logger LOG = LogManager.getLogger(MpsWorker.class);
 }

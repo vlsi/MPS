@@ -24,6 +24,8 @@ import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.intellij.openapi.util.InvalidDataException;
 import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
@@ -38,8 +40,6 @@ import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class Java_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -85,6 +85,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
       element.addContent(fieldElement);
     }
   }
+  protected static Logger LOG = LogManager.getLogger(Java_Configuration.class);
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {
@@ -173,5 +174,4 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
   public Object[] createMakeNodePointersTask() {
     return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNodePointer())};
   }
-  protected static Logger LOG = LogManager.getLogger(Java_Configuration.class);
 }

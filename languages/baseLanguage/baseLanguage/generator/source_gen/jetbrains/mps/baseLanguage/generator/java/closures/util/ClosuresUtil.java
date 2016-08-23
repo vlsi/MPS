@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.generator.java.closures.util;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.util.Condition;
 import org.apache.log4j.Level;
 import java.util.List;
@@ -22,8 +24,6 @@ import java.util.HashSet;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.HashMap;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ClosuresUtil {
   private static Object CLOSURE_CONTEXT_DATA = new Object();
@@ -35,6 +35,7 @@ public class ClosuresUtil {
     }
     return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction")) && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c63f4f3f3L, "jetbrains.mps.baseLanguage.structure.Closure")));
   }
+  protected static Logger LOG = LogManager.getLogger(ClosuresUtil.class);
   public static SNode findEnclosingClosureContextOwner(SNode node) {
     if (node == null) {
       return null;
@@ -209,5 +210,4 @@ public class ClosuresUtil {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ClosuresUtil.class);
 }

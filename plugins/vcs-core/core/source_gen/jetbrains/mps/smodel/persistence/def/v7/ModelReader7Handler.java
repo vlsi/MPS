@@ -19,13 +19,13 @@ import jetbrains.mps.smodel.SModelLegacy;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeId;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.persistence.SNodeFactory;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.apache.log4j.Level;
 import jetbrains.mps.smodel.StaticReference;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
   private ModelReader7Handler.ModelElementHandler modelHandler = new ModelReader7Handler.ModelElementHandler();
@@ -350,6 +350,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       }
     }
   }
+  protected static Logger LOG = LogManager.getLogger(ModelReader7Handler.class);
   public class NodeElementHandler extends ModelReader7Handler.ElementHandler {
     public NodeElementHandler() {
       setRequiredAttributes("type");
@@ -485,5 +486,4 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       super.handleAttribute(resultObject, name, value);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ModelReader7Handler.class);
 }

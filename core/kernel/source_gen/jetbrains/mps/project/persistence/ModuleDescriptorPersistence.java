@@ -31,6 +31,8 @@ import java.util.Collection;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.annotations.Nullable;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.persistence.MementoImpl;
 import org.apache.log4j.Level;
@@ -44,8 +46,6 @@ import java.io.InputStreamReader;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.io.IOException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ModuleDescriptorPersistence {
   private static final String HEADER_PATTERN = ".*<(language|dev-kit|solution)[^>]+(namespace|name)=\\\"([^\"]+)\\\"[^>]+uuid=\\\"([^\"]+)\\\".*";
@@ -209,6 +209,7 @@ public class ModuleDescriptorPersistence {
     return new ModelRootDescriptor(type, m);
   }
 
+  protected static Logger LOG = LogManager.getLogger(ModuleDescriptorPersistence.class);
   public static List<ModelRootDescriptor> loadModelRoots(Iterable<Element> modelRootElements, String moduleContentRoot, MacroHelper macroHelper) {
     List<ModelRootDescriptor> result = ListSequence.fromList(new ArrayList<ModelRootDescriptor>());
     ModelRootDescriptor[] cache = new ModelRootDescriptor[2];
@@ -366,5 +367,4 @@ public class ModuleDescriptorPersistence {
     setTimestamp(md, file);
     md.setLoadException((exception.getCause() == null ? exception : exception.getCause()));
   }
-  protected static Logger LOG = LogManager.getLogger(ModuleDescriptorPersistence.class);
 }

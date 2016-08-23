@@ -28,6 +28,8 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.InputStream;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -40,8 +42,6 @@ import javax.swing.ImageIcon;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public final class FileIcon__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.FileIcon");
@@ -84,6 +84,7 @@ public final class FileIcon__BehaviorDescriptor extends BaseBHDescriptor {
       }
     }).toListSequence();
   }
+  protected static Logger LOG = LogManager.getLogger(FileIcon__BehaviorDescriptor.class);
   /*package*/ static Tuples._2<IFile, byte[]> copyFile_id34SjXUxB1C6(@NotNull SNode __thisNode__, String source, IFile outputDir) {
     if (source == null) {
       return null;
@@ -198,7 +199,6 @@ public final class FileIcon__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  protected static Logger LOG = LogManager.getLogger(FileIcon__BehaviorDescriptor.class);
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

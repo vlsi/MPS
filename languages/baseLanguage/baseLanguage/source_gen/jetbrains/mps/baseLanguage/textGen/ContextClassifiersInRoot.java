@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.apache.log4j.Level;
@@ -14,8 +16,6 @@ import java.util.HashMap;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ContextClassifiersInRoot {
   private SimpleCache<Tuples._2<SNode, String>, Map<String, String>> contextClassifiersCache;
@@ -34,6 +34,7 @@ public class ContextClassifiersInRoot {
       }
     };
   }
+  protected static Logger LOG = LogManager.getLogger(ContextClassifiersInRoot.class);
   public Map<String, String> getContextClassifiers(SNode contextNode) {
     // only AnonymousClass has Classifier as reference 
     // todo: make it clearer 
@@ -120,5 +121,4 @@ public class ContextClassifiersInRoot {
       bindings.put(simpleName, fqName);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ContextClassifiersInRoot.class);
 }

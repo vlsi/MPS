@@ -6,6 +6,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.InternalException;
 import com.sun.jdi.request.EventRequest;
@@ -13,8 +15,6 @@ import org.apache.log4j.Level;
 import org.jetbrains.annotations.Nullable;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ContextManager {
   private final List<EventContext> mySuspendedContexts = ListSequence.fromList(new ArrayList<EventContext>());
@@ -57,6 +57,7 @@ public class ContextManager {
       assert false : "Do not know what kind of context it is " + context;
     }
   }
+  protected static Logger LOG = LogManager.getLogger(ContextManager.class);
   private <C extends Context> void tryResume5Times(C context, _FunctionTypes._void_P1_E0<? super C> resume) {
     int resumeAttempts = 5;
     while (--resumeAttempts > 0) {
@@ -94,7 +95,7 @@ public class ContextManager {
   public synchronized Context findContextForThread(final ThreadReference threadReference) {
     EventContext context = ListSequence.fromList(mySuspendedContexts).findFirst(new IWhereFilter<EventContext>() {
       public boolean accept(EventContext it) {
-        return eq_toclu7_a0a0a0a0a0a0a9(it.getThread(), threadReference);
+        return eq_toclu7_a0a0a0a0a0a0a01(it.getThread(), threadReference);
       }
     });
     if (context != null) {
@@ -116,8 +117,7 @@ public class ContextManager {
   public synchronized boolean isPausedOnEvent(Context context) {
     return ListSequence.fromList(mySuspendedContexts).contains(context);
   }
-  protected static Logger LOG = LogManager.getLogger(ContextManager.class);
-  private static boolean eq_toclu7_a0a0a0a0a0a0a9(Object a, Object b) {
+  private static boolean eq_toclu7_a0a0a0a0a0a0a01(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

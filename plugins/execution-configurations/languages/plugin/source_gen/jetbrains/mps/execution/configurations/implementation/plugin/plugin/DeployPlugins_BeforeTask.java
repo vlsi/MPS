@@ -4,6 +4,8 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider;
 import com.intellij.openapi.util.Key;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.io.File;
@@ -35,8 +37,6 @@ import com.intellij.execution.ui.actions.CloseAction;
 import com.intellij.execution.ExecutionManager;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import jetbrains.mps.util.FileUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPlugins_BeforeTask.DeployPlugins_BeforeTask_RunTask> {
   private static final Key<DeployPlugins_BeforeTask.DeployPlugins_BeforeTask_RunTask> KEY = Key.create("jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_BeforeTask");
@@ -49,6 +49,7 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
   public Key<DeployPlugins_BeforeTask.DeployPlugins_BeforeTask_RunTask> getId() {
     return KEY;
   }
+  protected static Logger LOG = LogManager.getLogger(DeployPlugins_BeforeTask.class);
   public static class DeployPlugins_BeforeTask_RunTask extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask<DeployPlugins_BeforeTask.DeployPlugins_BeforeTask_RunTask> {
     private List<SNodeReference> myPlugins;
     private File myDeployLocation;
@@ -134,5 +135,4 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
       return true;
     }
   }
-  protected static Logger LOG = LogManager.getLogger(DeployPlugins_BeforeTask.class);
 }

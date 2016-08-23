@@ -9,6 +9,8 @@ import javax.swing.Timer;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.openapi.editor.extensions.EditorExtensionRegistry;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -22,8 +24,6 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.openapi.editor.extensions.EditorExtension;
 import jetbrains.mps.openapi.editor.selection.SelectionListener;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ToolController implements ItemExecutor {
   private final IProject myProject;
@@ -56,6 +56,7 @@ public class ToolController implements ItemExecutor {
     myUpdateTimer.stop();
   }
 
+  protected static Logger LOG = LogManager.getLogger(ToolController.class);
   private void update(@NotNull final Selection selection) {
     if (!(myToolComponent.isToolVisible())) {
       return;
@@ -178,7 +179,6 @@ public class ToolController implements ItemExecutor {
   }
 
 
-  protected static Logger LOG = LogManager.getLogger(ToolController.class);
   private static jetbrains.mps.openapi.editor.EditorComponent check_ae45oa_a0c0s(Selection checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getEditorComponent();

@@ -61,6 +61,7 @@ public class ModelMergeViewer implements MergeTool.MergeViewer {
     myPanel = new MergeModelsPanel(context.getProject(), base, mine, repo, request);
   }
 
+  protected static Logger LOG_276369528 = LogManager.getLogger(ModelMergeViewer.class);
   @Nullable
   public static ModelMergeViewer createComponent(@NotNull MergeContext context, @NotNull MergeRequest request) {
     try {
@@ -231,5 +232,4 @@ public class ModelMergeViewer implements MergeTool.MergeViewer {
     }
   }
 
-  protected static Logger LOG_276369528 = LogManager.getLogger(ModelMergeViewer.class);
 }

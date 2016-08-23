@@ -25,10 +25,10 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.apache.log4j.Level;
-import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Level;
+import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 
 public class JUnitSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
@@ -167,6 +167,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   private Iterable<ITestNodeWrapper> collectTests(final Project project) {
     return getJUnitRunType().collect(this, project);
   }
+  protected static Logger LOG = LogManager.getLogger(JUnitSettings_Configuration.class);
   @Override
   public JUnitSettings_Configuration clone() {
     JUnitSettings_Configuration clone = null;
@@ -229,7 +230,6 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     }
     return myEditorEx;
   }
-  protected static Logger LOG = LogManager.getLogger(JUnitSettings_Configuration.class);
   private static boolean eq_jtq3ac_a0c0a0a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

@@ -6,11 +6,11 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.apache.log4j.Level;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 /*package*/ class CurrentDifferenceBroadcaster implements CurrentDifferenceListener {
   private List<CurrentDifferenceListener> myListeners = ListSequence.fromList(new ArrayList<CurrentDifferenceListener>());
@@ -34,6 +34,7 @@ import org.apache.log4j.LogManager;
       return ListSequence.fromListWithValues(new ArrayList<CurrentDifferenceListener>(), myListeners);
     }
   }
+  protected static Logger LOG = LogManager.getLogger(CurrentDifferenceBroadcaster.class);
   private void fireEvent(String name, _FunctionTypes._void_P1_E0<? super CurrentDifferenceListener> task) {
     myCommandQueue.assertSoftlyIsCommandThread();
     for (CurrentDifferenceListener listener : ListSequence.fromList(copyListeners())) {
@@ -79,5 +80,4 @@ import org.apache.log4j.LogManager;
       }
     });
   }
-  protected static Logger LOG = LogManager.getLogger(CurrentDifferenceBroadcaster.class);
 }

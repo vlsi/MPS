@@ -20,11 +20,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MigrationOutputUtil {
   public static void showProblems(final Project project, Iterable<Problem> problems) {
@@ -78,6 +78,7 @@ public class MigrationOutputUtil {
     project.getComponent(UsagesViewTool.class).show(sr, "No results to show");
   }
 
+  protected static Logger LOG = LogManager.getLogger(MigrationOutputUtil.class);
   private static ModelCheckerIssue issueByProblem(Problem p) {
     Object r = p.getReason();
     if (r instanceof jetbrains.mps.smodel.SNode) {
@@ -95,5 +96,4 @@ public class MigrationOutputUtil {
     }
     return null;
   }
-  protected static Logger LOG = LogManager.getLogger(MigrationOutputUtil.class);
 }

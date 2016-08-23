@@ -5,6 +5,8 @@ package jetbrains.mps.execution.impl.configurations.tests.inprocess;
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
@@ -28,8 +30,6 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListe
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import junit.framework.Assert;
 import com.intellij.execution.ExecutionException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 @MPSLaunch
 public class JUnitInProcess_Test extends BaseTransformationTest {
@@ -44,6 +44,7 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
     runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test$TestBody", "test_startFailedTestCase", false);
   }
 
+  protected static Logger LOG = LogManager.getLogger(JUnitInProcess_Test.class);
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startSimpleTestCase() throws Exception {
@@ -94,5 +95,4 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(JUnitInProcess_Test.class);
 }

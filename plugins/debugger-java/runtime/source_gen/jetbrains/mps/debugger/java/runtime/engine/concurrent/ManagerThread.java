@@ -6,12 +6,12 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.CountDownLatch;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ManagerThread {
   private final BlockingQueue<IManagerCommand> myCommandQueue = new LinkedBlockingQueue<IManagerCommand>();
@@ -71,6 +71,7 @@ public class ManagerThread {
   public static void assertIsMangerThread() {
     assert isManagerThread();
   }
+  protected static Logger LOG = LogManager.getLogger(ManagerThread.class);
   private class WorkerThread extends Thread {
     public WorkerThread() {
     }
@@ -118,5 +119,4 @@ public class ManagerThread {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ManagerThread.class);
 }

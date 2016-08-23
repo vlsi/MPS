@@ -13,11 +13,11 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.Collections;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MigrationScriptsController {
   private final MigrationScriptFinder myFinder;
@@ -47,6 +47,7 @@ public class MigrationScriptsController {
     return Collections.unmodifiableCollection(aliveIncludedResults);
   }
 
+  protected static Logger LOG = LogManager.getLogger(MigrationScriptsController.class);
   public void process(final ProgressMonitor pmonitor, final Collection<SearchResult<SNode>> searchResults) {
     // requires model write 
     pmonitor.start("", searchResults.size());
@@ -70,5 +71,4 @@ public class MigrationScriptsController {
     }
     pmonitor.done();
   }
-  protected static Logger LOG = LogManager.getLogger(MigrationScriptsController.class);
 }
