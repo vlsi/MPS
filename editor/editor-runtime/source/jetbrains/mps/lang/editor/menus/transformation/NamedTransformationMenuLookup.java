@@ -52,6 +52,7 @@ public class NamedTransformationMenuLookup implements TransformationMenuLookup {
     return aspectDescriptor.getNamedTransformationMenus(myId, usedLanguages);
   }
 
+  @NotNull
   @Override
   public TransformationMenu createImplicitMenu() {
     return new ImplicitTransformationMenu(myId.getConcept());

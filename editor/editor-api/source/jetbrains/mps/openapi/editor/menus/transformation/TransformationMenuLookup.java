@@ -30,5 +30,6 @@ public interface TransformationMenuLookup {
   @NotNull
   Collection<TransformationMenu> lookup(@NotNull Collection<SLanguage> usedLanguages, @NotNull String menuLocation);
 
+  @NotNull
   TransformationMenu createImplicitMenu();
 }
