@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.impl.reference.RefResolver;
 import java.util.List;
 import java.util.ArrayList;
@@ -163,7 +164,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                                     final SNode tnode20 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                                     try {
                                       environment.nodeCopied(context18, tnode20, "tpl/r:00000000-0000-4000-0000-011c8959034c/4273238084345062280");
-                                      environment.resolve(new RefResolver(tnode20, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context18, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4273238084345062281"), "expr") {
+                                      environment.resolve((ReferenceResolver) new RefResolver(tnode20, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context18, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4273238084345062281"), "expr") {
+                                        @Override
                                         public Object resolve() {
                                           return QueriesGenerated.referenceMacro_GetReferent_4273238084345062282(createQueryContext());
                                         }
@@ -214,7 +216,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                                     final SNode tnode26 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                                     try {
                                       environment.nodeCopied(context24, tnode26, "tpl/r:00000000-0000-4000-0000-011c8959034c/4273238084345062312");
-                                      environment.resolve(new RefResolver(tnode26, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context24, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4273238084345062313"), "expr") {
+                                      environment.resolve((ReferenceResolver) new RefResolver(tnode26, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context24, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4273238084345062313"), "expr") {
+                                        @Override
                                         public Object resolve() {
                                           return QueriesGenerated.referenceMacro_GetReferent_4273238084345062314(createQueryContext());
                                         }
@@ -257,7 +260,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                           final SNode tnode29 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                           try {
                             environment.nodeCopied(context12, tnode29, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363115910");
-                            environment.resolve(new RefResolver(tnode29, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context12, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1201868926380"), "_node_") {
+                            environment.resolve((ReferenceResolver) new RefResolver(tnode29, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context12, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1201868926380"), "_node_") {
+                              @Override
                               public Object resolve() {
                                 return QueriesGenerated.referenceMacro_GetReferent_1201868926381(createQueryContext());
                               }
@@ -311,7 +315,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                                 final SNode tnode34 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                                 try {
                                   environment.nodeCopied(context33, tnode34, "tpl/r:00000000-0000-4000-0000-011c8959034c/2652588855789568141");
-                                  environment.resolve(new RefResolver(tnode34, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context33, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "2652588855789568142"), "_node_") {
+                                  environment.resolve((ReferenceResolver) new RefResolver(tnode34, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context33, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "2652588855789568142"), "_node_") {
+                                    @Override
                                     public Object resolve() {
                                       return QueriesGenerated.referenceMacro_GetReferent_2652588855789568143(createQueryContext());
                                     }
@@ -408,7 +413,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                                 final SNode tnode43 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                                 try {
                                   environment.nodeCopied(context42, tnode43, "tpl/r:00000000-0000-4000-0000-011c8959034c/2652588855789575362");
-                                  environment.resolve(new RefResolver(tnode43, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context42, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "2652588855789575363"), "_node_") {
+                                  environment.resolve((ReferenceResolver) new RefResolver(tnode43, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context42, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "2652588855789575363"), "_node_") {
+                                    @Override
                                     public Object resolve() {
                                       return QueriesGenerated.referenceMacro_GetReferent_2652588855789575364(createQueryContext());
                                     }
@@ -456,7 +462,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                                 final SNode tnode47 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                                 try {
                                   environment.nodeCopied(context46, tnode47, "tpl/r:00000000-0000-4000-0000-011c8959034c/2652588855789575381");
-                                  environment.resolve(new RefResolver(tnode47, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context46, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "2652588855789575382"), "expr") {
+                                  environment.resolve((ReferenceResolver) new RefResolver(tnode47, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context46, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "2652588855789575382"), "expr") {
+                                    @Override
                                     public Object resolve() {
                                       return QueriesGenerated.referenceMacro_GetReferent_2652588855789575383(createQueryContext());
                                     }
@@ -530,7 +537,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                                 final SNode tnode54 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                                 try {
                                   environment.nodeCopied(context53, tnode54, "tpl/r:00000000-0000-4000-0000-011c8959034c/5625022412249749123");
-                                  environment.resolve(new RefResolver(tnode54, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context53, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5625022412249791234"), "_node_") {
+                                  environment.resolve((ReferenceResolver) new RefResolver(tnode54, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context53, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5625022412249791234"), "_node_") {
+                                    @Override
                                     public Object resolve() {
                                       return QueriesGenerated.referenceMacro_GetReferent_5625022412249791235(createQueryContext());
                                     }
@@ -611,7 +619,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                                         final SNode tnode62 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                                         try {
                                           environment.nodeCopied(context61, tnode62, "tpl/r:00000000-0000-4000-0000-011c8959034c/3861025227903206988");
-                                          environment.resolve(new RefResolver(tnode62, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context61, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "3861025227903206989"), "_node_") {
+                                          environment.resolve((ReferenceResolver) new RefResolver(tnode62, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context61, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "3861025227903206989"), "_node_") {
+                                            @Override
                                             public Object resolve() {
                                               return QueriesGenerated.referenceMacro_GetReferent_3861025227903206990(createQueryContext());
                                             }
@@ -788,7 +797,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                                 final SNode tnode76 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                                 try {
                                   environment.nodeCopied(context75, tnode76, "tpl/r:00000000-0000-4000-0000-011c8959034c/2652588855790579719");
-                                  environment.resolve(new RefResolver(tnode76, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context75, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "2652588855790579720"), "_node_") {
+                                  environment.resolve((ReferenceResolver) new RefResolver(tnode76, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context75, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "2652588855790579720"), "_node_") {
+                                    @Override
                                     public Object resolve() {
                                       return QueriesGenerated.referenceMacro_GetReferent_2652588855790579721(createQueryContext());
                                     }
@@ -836,7 +846,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                                 final SNode tnode80 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                                 try {
                                   environment.nodeCopied(context79, tnode80, "tpl/r:00000000-0000-4000-0000-011c8959034c/2652588855790579738");
-                                  environment.resolve(new RefResolver(tnode80, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context79, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "2652588855790579739"), "expr") {
+                                  environment.resolve((ReferenceResolver) new RefResolver(tnode80, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context79, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "2652588855790579739"), "expr") {
+                                    @Override
                                     public Object resolve() {
                                       return QueriesGenerated.referenceMacro_GetReferent_2652588855790579740(createQueryContext());
                                     }
@@ -931,7 +942,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                             final SNode tnode91 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                             try {
                               environment.nodeCopied(context90, tnode91, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363074345");
-                              environment.resolve(new RefResolver(tnode91, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context90, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887114"), "parent") {
+                              environment.resolve((ReferenceResolver) new RefResolver(tnode91, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context90, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887114"), "parent") {
+                                @Override
                                 public Object resolve() {
                                   return QueriesGenerated.referenceMacro_GetReferent_1196351887115(createQueryContext());
                                 }
@@ -973,7 +985,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                                 final SNode tnode95 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                                 try {
                                   environment.nodeCopied(context92, tnode95, "tpl/r:00000000-0000-4000-0000-011c8959034c/5625022412249874921");
-                                  environment.resolve(new RefResolver(tnode95, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context92, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5625022412249892902"), "_node_") {
+                                  environment.resolve((ReferenceResolver) new RefResolver(tnode95, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context92, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5625022412249892902"), "_node_") {
+                                    @Override
                                     public Object resolve() {
                                       return QueriesGenerated.referenceMacro_GetReferent_5625022412249892903(createQueryContext());
                                     }
@@ -1051,7 +1064,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                           final SNode tnode103 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                           try {
                             environment.nodeCopied(context102, tnode103, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363110613");
-                            environment.resolve(new RefResolver(tnode103, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context102, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1201868923346"), "_node_") {
+                            environment.resolve((ReferenceResolver) new RefResolver(tnode103, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context102, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1201868923346"), "_node_") {
+                              @Override
                               public Object resolve() {
                                 return QueriesGenerated.referenceMacro_GetReferent_1201868923347(createQueryContext());
                               }
@@ -1072,7 +1086,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                               final SNode tnode105 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                               try {
                                 environment.nodeCopied(context104, tnode105, "tpl/r:00000000-0000-4000-0000-011c8959034c/3021153905151743980");
-                                environment.resolve(new RefResolver(tnode105, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context104, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887202"), "expr") {
+                                environment.resolve((ReferenceResolver) new RefResolver(tnode105, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context104, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887202"), "expr") {
+                                  @Override
                                   public Object resolve() {
                                     return QueriesGenerated.referenceMacro_GetReferent_1196351887203(createQueryContext());
                                   }
@@ -1130,7 +1145,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                           final SNode tnode109 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                           try {
                             environment.nodeCopied(context108, tnode109, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363100164");
-                            environment.resolve(new RefResolver(tnode109, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context108, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "767161977436068879"), "_node_") {
+                            environment.resolve((ReferenceResolver) new RefResolver(tnode109, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context108, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "767161977436068879"), "_node_") {
+                              @Override
                               public Object resolve() {
                                 return QueriesGenerated.referenceMacro_GetReferent_767161977436068880(createQueryContext());
                               }
@@ -1181,7 +1197,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                                     final SNode tnode115 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                                     try {
                                       environment.nodeCopied(context114, tnode115, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363112422");
-                                      environment.resolve(new RefResolver(tnode115, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context114, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196860192983"), "parent") {
+                                      environment.resolve((ReferenceResolver) new RefResolver(tnode115, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context114, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196860192983"), "parent") {
+                                        @Override
                                         public Object resolve() {
                                           return QueriesGenerated.referenceMacro_GetReferent_1196860192984(createQueryContext());
                                         }
@@ -1230,7 +1247,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                                             final SNode tnode120 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                                             try {
                                               environment.nodeCopied(context119, tnode120, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363113944");
-                                              environment.resolve(new RefResolver(tnode120, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context119, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "767161977436105373"), "_node_") {
+                                              environment.resolve((ReferenceResolver) new RefResolver(tnode120, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context119, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "767161977436105373"), "_node_") {
+                                                @Override
                                                 public Object resolve() {
                                                   return QueriesGenerated.referenceMacro_GetReferent_767161977436105374(createQueryContext());
                                                 }
@@ -1356,7 +1374,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                               final SNode tnode131 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                               try {
                                 environment.nodeCopied(context129, tnode131, "tpl/r:00000000-0000-4000-0000-011c8959034c/3021153905151615599");
-                                environment.resolve(new RefResolver(tnode131, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context129, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887410"), "expr") {
+                                environment.resolve((ReferenceResolver) new RefResolver(tnode131, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context129, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887410"), "expr") {
+                                  @Override
                                   public Object resolve() {
                                     return QueriesGenerated.referenceMacro_GetReferent_1196351887411(createQueryContext());
                                   }
@@ -1451,7 +1470,8 @@ public class Template_QuotedNode_to_statementList extends TemplateDeclarationBas
                                     final SNode tnode140 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                                     try {
                                       environment.nodeCopied(context139, tnode140, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363078255");
-                                      environment.resolve(new RefResolver(tnode140, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context139, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887465"), "parent") {
+                                      environment.resolve((ReferenceResolver) new RefResolver(tnode140, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context139, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887465"), "parent") {
+                                        @Override
                                         public Object resolve() {
                                           return QueriesGenerated.referenceMacro_GetReferent_1196351887466(createQueryContext());
                                         }
