@@ -851,6 +851,7 @@ public class QueriesGenerated {
       _context.showErrorMessage(_context.getNode(), "no function in reference macro");
       return null;
     }
+    // XXX why do we use string, not direct template reference with proper inputNode? 
     return TemplateFunctionMethodName.referenceMacro_GetReferent(function);
   }
   public static Object referenceMacro_GetReferent_1246578104714226075(final ReferenceMacroContext _context) {

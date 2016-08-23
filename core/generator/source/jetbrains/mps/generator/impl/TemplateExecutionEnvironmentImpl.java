@@ -27,6 +27,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodePostProcessor;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
+import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.ReferenceResolver2;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
@@ -225,9 +226,15 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
   @Override
-  public void resolve(@NotNull ReferenceResolver2 resolver) {
+  public void resolve(@NotNull ReferenceResolver resolver) {
     ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(resolver);
     new PostponedReference(resolver.getReferenceRole(), resolver.getOutputNode(), refInfo).registerWith(generator);
+  }
+
+  @Override
+  @Deprecated
+  public void resolve(@NotNull ReferenceResolver2 resolver) {
+    resolve((ReferenceResolver) resolver);
   }
 
   @Override

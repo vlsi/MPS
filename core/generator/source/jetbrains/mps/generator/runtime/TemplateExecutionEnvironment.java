@@ -25,6 +25,7 @@ import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -119,8 +120,18 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
 
   /**
    * ReferenceMacro support
+   * @since 3.4
+   */
+  void resolve(@NotNull ReferenceResolver resolver);
+
+  /**
+   * ReferenceMacro support
+   * @deprecated switch to {@link #resolve(ReferenceResolver)}
+   *             WHEN REMOVING THE METHOD, update reduce_TemplateNode template not to cast to (ReferenceResolver) any more in resolve() call
    * @since 3.3
    */
+  @Deprecated
+  @ToRemove(version = 3.4)
   void resolve(@NotNull ReferenceResolver2 resolver);
 
   /**

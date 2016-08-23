@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
+import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.ReferenceResolver2;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -24,9 +25,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
+ * Base implementation of resolver, used both for interpreted and compiled templates
  * @author Artem Tikhomirov
  */
-public abstract class RefResolver implements ReferenceResolver2 {
+public abstract class RefResolver implements ReferenceResolver, ReferenceResolver2 {
   private final SNode myOutputNode;
   private final SReferenceLink myRole;
   protected final TemplateContext myContext;
@@ -53,6 +55,7 @@ public abstract class RefResolver implements ReferenceResolver2 {
     return myRole;
   }
 
+  @NotNull
   @Override
   public SNodeReference getTemplateNode() {
     return myTemplate;
@@ -61,11 +64,6 @@ public abstract class RefResolver implements ReferenceResolver2 {
   @Override
   public String getDefaultResolveInfo() {
     return myDefaultResolveInfo;
-  }
-
-  @Override
-  public final Object resolve(SNode outputNode, TemplateContext context) {
-    throw new IllegalStateException();
   }
 
   protected final ReferenceMacroContext createQueryContext() {
