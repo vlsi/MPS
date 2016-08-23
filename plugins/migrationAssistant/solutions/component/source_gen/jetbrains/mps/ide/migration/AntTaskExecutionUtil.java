@@ -9,12 +9,10 @@ import java.util.HashMap;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class AntTaskExecutionUtil {
   public static boolean migrate(final Project project) throws Exception {
@@ -40,7 +38,7 @@ public class AntTaskExecutionUtil {
     }
 
     final Wrappers._boolean ok = new Wrappers._boolean(true);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(project);
         ok.value = !(MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
@@ -73,13 +71,13 @@ public class AntTaskExecutionUtil {
       }
     }
 
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    project.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
-        MPSModuleRepository.getInstance().saveAll();
+        project.getRepository().saveAll();
       }
     });
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(project);
         ok.value = MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
