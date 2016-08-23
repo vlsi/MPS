@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
-import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.ReferenceResolver2;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -72,24 +70,5 @@ public abstract class RefResolver implements ReferenceResolver2 {
 
   protected final ReferenceMacroContext createQueryContext() {
     return new ReferenceMacroContext(myContext, myOutputNode, myTemplate, myRole);
-  }
-
-
-  /**
-   * Compatibility with legacy ReferenceResolver
-   */
-  @ToRemove(version = 3.3)
-  public static final class RefResolverAdapter extends RefResolver {
-    private final ReferenceResolver myLegacyResolver;
-
-    public RefResolverAdapter(@NotNull SNode outputNode, @NotNull SReferenceLink role, @NotNull TemplateContext context, @NotNull ReferenceResolver legacyResolver) {
-      super(outputNode, role, context, legacyResolver.getTemplateNode(), legacyResolver.getDefaultResolveInfo());
-      myLegacyResolver = legacyResolver;
-    }
-
-    @Override
-    public Object resolve() {
-      return myLegacyResolver.resolve(getOutputNode(), myContext);
-    }
   }
 }

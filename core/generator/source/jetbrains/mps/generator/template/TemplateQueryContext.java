@@ -32,6 +32,8 @@ import java.util.Collection;
 import java.util.List;
 
 /**
+ * Context for operations of genContext parameter in generator's concept functions. This is what generated code of template queries (like input nodes query,
+ * property and reference macro, etc) have access to.
  * Igor Alshannikov
  * Jul 21, 2008
  */
