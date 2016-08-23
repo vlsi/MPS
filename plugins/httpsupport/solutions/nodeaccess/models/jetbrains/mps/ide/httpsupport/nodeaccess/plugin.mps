@@ -30,6 +30,7 @@
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <import index="9xw8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:io.netty.handler.codec.http(MPS.IDEA/)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
+    <import index="ap92" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:io.netty.util(MPS.IDEA/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -731,8 +732,8 @@
                       <node concept="3_KO$9" id="21vgRr5B6VZ" role="3cqZAp">
                         <property role="3_KOBQ" value="image/gif" />
                         <node concept="10M0yZ" id="6dOBq74S5CM" role="3_KOBO">
-                          <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
                           <ref role="3cqZAo" node="6dOBq74QFqg" resolve="SUCCESS_STREAM" />
+                          <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
                         </node>
                       </node>
                       <node concept="3clFbF" id="3whKZwB1kSz" role="3cqZAp">
@@ -1704,9 +1705,9 @@
                     </node>
                   </node>
                 </node>
-                <node concept="10M0yZ" id="3Apdfsuu6z" role="37wK5m">
-                  <ref role="1PxDUh" to="4h87:6GArDv5HYVM" resolve="HttpRequest" />
-                  <ref role="3cqZAo" to="4h87:5dkEk59WLAL" resolve="DEFAULT_CHARSET" />
+                <node concept="10M0yZ" id="5FAyHK_EbC6" role="37wK5m">
+                  <ref role="1PxDUh" to="ap92:~CharsetUtil" resolve="CharsetUtil" />
+                  <ref role="3cqZAo" to="ap92:~CharsetUtil.UTF_8" resolve="UTF_8" />
                 </node>
               </node>
             </node>

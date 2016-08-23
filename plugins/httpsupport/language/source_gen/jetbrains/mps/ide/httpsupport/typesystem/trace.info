@@ -70,25 +70,16 @@
       <node id="2332657309401775050" at="34,30,35,17" concept="5" />
       <node id="2332657309401810569" at="37,61,38,63" concept="4" />
       <node id="2332657309401810569" at="38,63,39,30" concept="4" />
-      <node id="2332657309401810569" at="39,30,40,30" concept="4" />
-      <node id="2332657309401810569" at="40,30,41,30" concept="4" />
-      <node id="2332657309401810569" at="41,30,42,30" concept="4" />
-      <node id="2332657309401810569" at="42,30,43,224" concept="2" />
-      <node id="2332657309401810569" at="43,224,44,227" concept="2" />
-      <node id="2332657309401810569" at="44,227,45,435" concept="2" />
-      <node id="2332657309401810569" at="45,435,46,165" concept="2" />
-      <node id="2332657309401810569" at="46,165,47,221" concept="2" />
-      <node id="2332657309401810569" at="47,221,48,220" concept="2" />
-      <node id="2332657309401810569" at="48,220,49,168" concept="2" />
-      <node id="2332657309401810569" at="49,168,50,165" concept="2" />
-      <node id="2332657309401810569" at="50,165,51,24" concept="5" />
+      <node id="2332657309401810569" at="39,30,40,227" concept="2" />
+      <node id="2332657309401810569" at="40,227,41,435" concept="2" />
+      <node id="2332657309401810569" at="41,435,42,24" concept="5" />
       <node id="2332657309401775050" at="19,0,21,0" concept="1" trace="typeof_ResponseSendStatement_InferenceRule#()V" />
       <node id="2332657309401775050" at="28,0,31,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="2332657309401775050" at="31,0,34,0" concept="3" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="2332657309401775050" at="34,0,37,0" concept="3" trace="overrides#()Z" />
       <node id="2332657309401808491" at="21,134,26,5" concept="0" />
       <node id="2332657309401775050" at="21,0,28,0" concept="3" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <node id="2332657309401810569" at="37,0,53,0" concept="6" trace="_quotation_createNode_coqmcn_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2332657309401810569" at="37,0,44,0" concept="6" trace="_quotation_createNode_coqmcn_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="2332657309401775050" at="19,55,19,55" />
       <scope id="2332657309401775050" at="28,50,29,169" />
       <scope id="2332657309401775050" at="31,68,32,102" />
@@ -104,20 +95,17 @@
       </scope>
       <scope id="2332657309401775050" at="34,0,37,0" />
       <scope id="2332657309401775051" at="21,134,26,5" />
+      <scope id="2332657309401810569" at="37,61,42,24">
+        <var name="facade" id="2332657309401810569" />
+        <var name="quotedNode_1" id="2332657309401810569" />
+      </scope>
       <scope id="2332657309401775050" at="21,0,28,0">
         <var name="responseSendStatement" id="2332657309401775050" />
         <var name="status" id="2332657309401775050" />
         <var name="typeCheckingContext" id="2332657309401775050" />
       </scope>
-      <scope id="2332657309401810569" at="37,61,51,24">
-        <var name="facade" id="2332657309401810569" />
-        <var name="quotedNode_1" id="2332657309401810569" />
-        <var name="quotedNode_2" id="2332657309401810569" />
-        <var name="quotedNode_3" id="2332657309401810569" />
-        <var name="quotedNode_4" id="2332657309401810569" />
-      </scope>
-      <scope id="2332657309401810569" at="37,0,53,0" />
-      <unit id="2332657309401775050" at="18,0,54,0" name="jetbrains.mps.ide.httpsupport.typesystem.typeof_ResponseSendStatement_InferenceRule" />
+      <scope id="2332657309401810569" at="37,0,44,0" />
+      <unit id="2332657309401775050" at="18,0,45,0" name="jetbrains.mps.ide.httpsupport.typesystem.typeof_ResponseSendStatement_InferenceRule" />
     </file>
   </root>
   <root nodeRef="r:c79f1d68-0099-426e-a3a4-72db4a9f1693(jetbrains.mps.ide.httpsupport.typesystem)/5573986434797767153">

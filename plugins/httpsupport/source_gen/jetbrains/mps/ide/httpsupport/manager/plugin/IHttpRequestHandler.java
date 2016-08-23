@@ -7,9 +7,12 @@ import org.jetbrains.annotations.NotNull;
 public interface IHttpRequestHandler {
 
   @NotNull
-  String applicationID();
+  String getName();
+
+  boolean isTrustful();
 
   boolean canHandle(@NotNull HttpRequest request);
 
   void handle(@NotNull HttpRequest request) throws Exception;
+
 }

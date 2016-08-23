@@ -8,7 +8,6 @@
   <imports>
     <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
-    <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <import index="ndib" ref="r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
@@ -25,7 +24,6 @@
       <concept id="4510086454722552739" name="jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector" flags="ng" index="eBIwv">
         <reference id="4510086454740628767" name="propertyDeclaration" index="fyFUz" />
       </concept>
-      <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
       <concept id="3459162043708467089" name="jetbrains.mps.lang.editor.structure.CellActionMap_CanExecuteFunction" flags="in" index="jK8Ss" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
@@ -167,32 +165,6 @@
       </concept>
     </language>
   </registry>
-  <node concept="24kQdi" id="6GArDv5Jyyo">
-    <ref role="1XX52x" to="ndib:2VC4eVY78fW" resolve="HandlerAppIdExpression" />
-    <node concept="3EZMnI" id="2VC4eVY78hw" role="2wV5jI">
-      <node concept="2iRfu4" id="2VC4eVY78hx" role="2iSdaV" />
-      <node concept="PMmxH" id="6GArDv5Jzll" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="3F0ifn" id="6GArDv5JzlL" role="3EZMnx">
-        <property role="3F0ifm" value="/" />
-        <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
-      </node>
-      <node concept="1iCGBv" id="2VC4eVY78hD" role="3EZMnx">
-        <ref role="1NtTu8" to="ndib:2VC4eVY78gf" resolve="requestHandler" />
-        <node concept="1sVBvm" id="2VC4eVY78hE" role="1sWHZn">
-          <node concept="3F0A7n" id="2VC4eVY78hK" role="2wV5jI">
-            <property role="1Intyy" value="true" />
-            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-          </node>
-        </node>
-      </node>
-      <node concept="3F0ifn" id="2VC4eVY78hS" role="3EZMnx">
-        <property role="3F0ifm" value="/" />
-        <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
-      </node>
-    </node>
-  </node>
   <node concept="24kQdi" id="4PqLM5kY3ob">
     <ref role="1XX52x" to="ndib:4PqLM5kXdu0" resolve="RequestHandler" />
     <node concept="3EZMnI" id="4PqLM5kY3OH" role="2wV5jI">
@@ -206,13 +178,13 @@
       </node>
       <node concept="3F0ifn" id="4PqLM5kY3P8" role="3EZMnx">
         <property role="3F0ifm" value="{" />
+        <node concept="ljvvj" id="5FAyHK_IvFz" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
       </node>
       <node concept="3F0ifn" id="7rr3ESJCAhP" role="3EZMnx">
         <property role="3F0ifm" value="query prefix:" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
-        <node concept="pVoyu" id="7rr3ESJCAn0" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
         <node concept="lj46D" id="7rr3ESJCAoI" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -223,9 +195,22 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
-      <node concept="3F0ifn" id="21vgRr5xtv9" role="3EZMnx">
+      <node concept="3F0ifn" id="5FAyHK_I4HA" role="3EZMnx">
+        <property role="3F0ifm" value="ask when host is untrusted:" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <node concept="lj46D" id="5FAyHK_I4J7" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0A7n" id="5FAyHK_I4IA" role="3EZMnx">
+        <ref role="1NtTu8" to="ndib:5FAyHK_I4H4" resolve="requireTrustedHosts" />
+        <node concept="ljvvj" id="5FAyHK_I4J5" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="5FAyHK_I4JE" role="3EZMnx">
         <property role="3F0ifm" value="" />
-        <node concept="ljvvj" id="21vgRr5xtx8" role="3F10Kt">
+        <node concept="ljvvj" id="5FAyHK_I4Kc" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>

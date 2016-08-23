@@ -11,6 +11,16 @@ public abstract class HttpRequestHandlerBase implements IHttpRequestHandler {
 
   protected HttpRequest request;
 
+  @NotNull
+  @Override
+  public String getName() {
+    return getClass().getSimpleName();
+  }
+
+  @Override
+  public boolean isTrustful() {
+    return false;
+  }
 
   @Override
   public boolean canHandle(@NotNull HttpRequest request) {
@@ -34,14 +44,14 @@ public abstract class HttpRequestHandlerBase implements IHttpRequestHandler {
     initParameterValues();
   }
 
-  private boolean checkQueryPrefix() {
-    List<String> applicationIDSegments = HttpRequest.getSegmentsFor(applicationID());
+  protected boolean checkQueryPrefix() {
+    List<String> queryPrefixSegments = HttpRequest.getSegmentsFor(getQueryPrefix());
     List<String> queryPathSegments = request.getSegments();
-    if (ListSequence.fromList(queryPathSegments).count() < ListSequence.fromList(applicationIDSegments).count()) {
+    if (ListSequence.fromList(queryPathSegments).count() < ListSequence.fromList(queryPrefixSegments).count()) {
       return false;
     }
-    for (int i = 0; i < ListSequence.fromList(applicationIDSegments).count(); i++) {
-      if (!(Objects.equals(ListSequence.fromList(queryPathSegments).getElement(i), ListSequence.fromList(applicationIDSegments).getElement(i)))) {
+    for (int i = 0; i < ListSequence.fromList(queryPrefixSegments).count(); i++) {
+      if (!(Objects.equals(ListSequence.fromList(queryPathSegments).getElement(i), ListSequence.fromList(queryPrefixSegments).getElement(i)))) {
         return false;
       }
     }
@@ -49,4 +59,5 @@ public abstract class HttpRequestHandlerBase implements IHttpRequestHandler {
   }
 
   protected abstract void initParameterValues();
+  protected abstract String getQueryPrefix();
 }

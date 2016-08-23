@@ -16,10 +16,6 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1070534604311" name="jetbrains.mps.baseLanguage.structure.ByteType" flags="in" index="10PrrI" />
-      <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
-        <child id="1070534760952" name="componentType" index="10Q1$1" />
-      </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
@@ -35,9 +31,6 @@
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
       <concept id="1185788614172" name="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" flags="ng" index="mw_s8">
         <child id="1185788644032" name="normalType" index="mwGJk" />
-      </concept>
-      <concept id="1179479408386" name="jetbrains.mps.lang.typesystem.structure.JoinType" flags="ng" index="2usRSg">
-        <child id="1179479418730" name="argument" index="2usUpS" />
       </concept>
       <concept id="1195213580585" name="jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule" flags="ig" index="18hYwZ">
         <child id="1195213635060" name="body" index="18ibNy" />
@@ -141,13 +134,8 @@
         </node>
         <node concept="mw_s8" id="21vgRr5Bgqd" role="1ZfhKB">
           <node concept="2c44tf" id="21vgRr5Bgq9" role="mwGJk">
-            <node concept="2usRSg" id="21vgRr5Bq3p" role="2c44tc">
-              <node concept="3uibUv" id="6dOBq74RJzz" role="2usUpS">
-                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-              </node>
-              <node concept="10Q1$e" id="21vgRr5Bq4R" role="2usUpS">
-                <node concept="10PrrI" id="21vgRr5Bq4u" role="10Q1$1" />
-              </node>
+            <node concept="3uibUv" id="5FAyHK_F143" role="2c44tc">
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
           </node>
         </node>

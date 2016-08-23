@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_CanHandleRequestFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HandleRequestFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_HandlerAppIdExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HttpRequestParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryParameterReference = new ConceptPresentationBuilder().create();
@@ -31,16 +30,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 1:
         return props_HandleRequestFunction;
       case 2:
-        return props_HandlerAppIdExpression;
-      case 3:
         return props_HttpRequestParameter;
-      case 4:
+      case 3:
         return props_QueryParameter;
-      case 5:
+      case 4:
         return props_QueryParameterReference;
-      case 6:
+      case 5:
         return props_RequestHandler;
-      case 7:
+      case 6:
         return props_ResponseSendStatement;
     }
     throw new IllegalStateException();

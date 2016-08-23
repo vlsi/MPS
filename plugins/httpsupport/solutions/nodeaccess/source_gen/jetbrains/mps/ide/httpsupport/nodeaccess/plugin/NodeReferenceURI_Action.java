@@ -13,7 +13,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import io.netty.handler.codec.http.QueryStringEncoder;
 import jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager;
-import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
+import io.netty.util.CharsetUtil;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 
 public class NodeReferenceURI_Action extends BaseAction {
@@ -49,7 +49,7 @@ public class NodeReferenceURI_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + MPSRequestPortManager.getCurrentPort() + "/node", HttpRequest.DEFAULT_CHARSET);
+    QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + MPSRequestPortManager.getCurrentPort() + "/node", CharsetUtil.UTF_8);
     encoder.addParam("ref", event.getData(MPSCommonDataKeys.NODE).getReference().toString());
     encoder.addParam("project", event.getData(CommonDataKeys.PROJECT).getName());
     CopyPasteUtil.copyTextToClipboard(encoder.toString());
