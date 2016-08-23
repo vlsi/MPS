@@ -16,13 +16,9 @@
 package jetbrains.mps.nodeEditor.assist;
 
 import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
-import jetbrains.mps.nodeEditor.menus.MenuFacade;
 import jetbrains.mps.nodeEditor.menus.MenuUtil;
-import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.selection.Selection;
@@ -32,7 +28,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -63,7 +58,7 @@ public class SelectionMenuProviderByCellAndConcept implements SelectionMenuProvi
       return Collections.emptyList();
     }
 
-    return MenuFacade.createMenu(menuLookupAndCell.o1, myMenuLocation, editorCell);
+    return MenuUtil.createMenu(menuLookupAndCell.o1, myMenuLocation, editorCell);
   }
 
   @Nullable
@@ -71,16 +66,15 @@ public class SelectionMenuProviderByCellAndConcept implements SelectionMenuProvi
     EditorCell cell = selectedCell;
     while (cell != null) {
       TransformationMenuLookup key = cell.getTransformationMenuLookup();
-      if (key != null && MenuFacade.isMenuDefined(key, myMenuLocation, cell.getSNode())) {
+      if (key != null && MenuUtil.isMenuApplicableToLocation(key, myMenuLocation, cell.getSNode())) {
         return new Pair<>(key, cell);
       }
 
       if (cell.isBig()) {
         SConcept concept = cell.getSNode().getConcept();
         DefaultTransformationMenuLookup menuLookup = new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(cell.getContext().getRepository()), concept);
-        if (MenuFacade.isMenuDefined(menuLookup, myMenuLocation, cell.getSNode())) {
-          return new Pair<>(menuLookup, cell);
-        }
+        assert MenuUtil.isMenuApplicableToLocation(menuLookup, myMenuLocation, cell.getSNode()) : "undefined default menu for " + menuLookup;
+        return new Pair<>(menuLookup, cell);
       }
 
       cell = cell.getParent();

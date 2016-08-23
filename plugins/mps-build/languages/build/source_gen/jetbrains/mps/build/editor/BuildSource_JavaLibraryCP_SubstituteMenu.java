@@ -18,8 +18,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -53,7 +52,8 @@ public class BuildSource_JavaLibraryCP_SubstituteMenu extends SubstituteMenuBase
         }
       };
     }
-    protected MenuLookup<SubstituteMenu> getLookup(SubstituteMenuContext _context) {
+    @Override
+    protected SubstituteMenuLookup getLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61c2404L, "jetbrains.mps.build.structure.BuildSource_JavaCP"));
     }

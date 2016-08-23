@@ -13,37 +13,54 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.editor.menus.substitute;
+package jetbrains.mps.nodeEditor.menus.transformation;
 
-import jetbrains.mps.lang.editor.menus.transformation.DefaultEmptyCellMenu;
-import jetbrains.mps.lang.editor.menus.transformation.EmptyTransformationMenu;
+import jetbrains.mps.lang.editor.menus.transformation.ImplicitTransformationMenu;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.Collection;
 import java.util.Collections;
 
-/**
- * @author simon
- */
-public class DefaultEmptyCellSubstituteMenuLookup implements TransformationMenuLookup {
-  private final SContainmentLink myLink;
+class ImplicitMenuLookup implements TransformationMenuLookup {
+  @NotNull
+  private final SAbstractConcept myConcept;
 
-  public DefaultEmptyCellSubstituteMenuLookup(SContainmentLink link) {
-    myLink = link;
+  ImplicitMenuLookup(@NotNull SAbstractConcept concept) {
+    myConcept = concept;
   }
 
   @NotNull
   @Override
   public Collection<TransformationMenu> lookup(@NotNull Collection<SLanguage> usedLanguages, @NotNull String menuLocation) {
-    return Collections.singleton(new DefaultEmptyCellMenu());
+    return Collections.singleton(new ImplicitTransformationMenu(myConcept));
   }
 
   @Override
-  public TransformationMenu createImplicitMenu() {
-    return EmptyTransformationMenu.INSTANCE;
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    ImplicitMenuLookup that = (ImplicitMenuLookup) o;
+
+    return myConcept.equals(that.myConcept);
+
+  }
+
+  @Override
+  public int hashCode() {
+    return myConcept.hashCode();
+  }
+
+  @Override
+  public String toString() {
+    return "implicit menu for " + myConcept;
   }
 }

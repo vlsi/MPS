@@ -16,8 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -52,7 +51,8 @@ public class StyleClassReferenceList_SubstituteMenu extends SubstituteMenuBase {
         }
       };
     }
-    protected MenuLookup<SubstituteMenu> getLookup(SubstituteMenuContext _context) {
+    @Override
+    protected SubstituteMenuLookup getLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a130c0dL, "jetbrains.mps.lang.editor.structure.StyleClassReference"));
     }

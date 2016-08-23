@@ -13,20 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.menus.transformation;
+package jetbrains.mps.openapi.editor.menus.substitute;
 
-
-import jetbrains.mps.openapi.editor.descriptor.Menu;
-import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.Collection;
 
 /**
- * Looks up a collection of transformation menus. Must implement {@code equals()} and {@code hashCode()} (used for cycle detection).
+ * Looks up a collection of substitute menus. Must implement {@code equals()} and {@code hashCode()} (used for cycle detection).
  */
-public interface TransformationMenuLookup {
+public interface SubstituteMenuLookup {
   @NotNull
-  Collection<TransformationMenu> lookup(@NotNull Collection<SLanguage> usedLanguages, @NotNull String menuLocation);
+  Collection<SubstituteMenu> lookup(@NotNull Collection<SLanguage> usedLanguages);
 }

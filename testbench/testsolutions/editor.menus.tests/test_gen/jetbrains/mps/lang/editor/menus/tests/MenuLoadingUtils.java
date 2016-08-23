@@ -13,7 +13,7 @@ import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuL
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.nodeEditor.menus.MenuFacade;
+import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
@@ -29,7 +29,7 @@ public class MenuLoadingUtils {
     final Wrappers._T<List<TransformationMenuItem>> items = new Wrappers._T<List<TransformationMenuItem>>();
     repository.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        items.value = MenuFacade.createMenu(lookup, location, editorContext.getSelectedCell());
+        items.value = MenuUtil.createMenu(lookup, location, editorContext.getSelectedCell());
       }
     });
     return items.value;
@@ -50,7 +50,7 @@ public class MenuLoadingUtils {
 
     repository.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        items.value = MenuFacade.createMenu(lookup, location, editorContext.getSelectedCell());
+        items.value = MenuUtil.createMenu(lookup, location, editorContext.getSelectedCell());
       }
     });
 

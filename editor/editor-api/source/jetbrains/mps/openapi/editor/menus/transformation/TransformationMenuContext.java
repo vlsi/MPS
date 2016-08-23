@@ -29,13 +29,16 @@ public interface TransformationMenuContext {
   @NotNull
   String getMenuLocation();
 
+  /**
+   * The transformed node
+   */
   @NotNull
   default SNode getNode() {
     return getNodeLocation().getContextNode();
   }
 
   /**
-   * The transformed/substituted node
+   * The transformed/substituted node location
    */
   @NotNull
   SNodeLocation getNodeLocation();
@@ -55,7 +58,7 @@ public interface TransformationMenuContext {
   TransformationMenuContext with(@Nullable SNodeLocation nodeLocation, @Nullable String menuLocation);
 
   /**
-   * Creates applicable menu items from the menus returned by {@code menuLookup}. If menuLookup is null, creates the default menu lookup.
+   * Creates applicable menu items from the menus returned by {@code menuLookup}. If {@code menuLookup} is null, creates the default menu.
    *
    * @param menuLookup a menu reference, may be null
    * @return menu items for the node, not null but possibly empty

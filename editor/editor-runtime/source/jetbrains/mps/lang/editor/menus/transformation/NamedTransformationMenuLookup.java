@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.lang.editor.menus.NamedMenuLookup;
 import jetbrains.mps.nodeEditor.LanguageRegistryHelper;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.NamedMenuId;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
@@ -46,16 +44,6 @@ public class NamedTransformationMenuLookup implements TransformationMenuLookup {
   public NamedTransformationMenuLookup(@NotNull LanguageRegistry languageRegistry, @NotNull NamedMenuId id) {
     myLanguageRegistry = languageRegistry;
     myId = id;
-  }
-
-  private Collection<TransformationMenu> getForAspectDescriptor(EditorAspectDescriptor aspectDescriptor, @NotNull Collection<SLanguage> usedLanguages) {
-    return aspectDescriptor.getNamedTransformationMenus(myId, usedLanguages);
-  }
-
-  @NotNull
-  @Override
-  public TransformationMenu createImplicitMenu() {
-    return new ImplicitTransformationMenu(myId.getConcept());
   }
 
   @Override
@@ -86,6 +74,6 @@ public class NamedTransformationMenuLookup implements TransformationMenuLookup {
     if (aspectDescriptor == null) {
       return Collections.emptyList();
     }
-    return getForAspectDescriptor(aspectDescriptor, usedLanguages);
+    return aspectDescriptor.getNamedTransformationMenus(myId, usedLanguages);
   }
 }

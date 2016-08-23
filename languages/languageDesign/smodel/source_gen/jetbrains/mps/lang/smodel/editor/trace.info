@@ -11972,27 +11972,27 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)/1741258697587099252">
     <file name="SNodeOperation_SubstituteMenu.java">
-      <node id="1741258697587099252" at="22,118,23,140" concept="7" />
-      <node id="1741258697587099252" at="23,140,24,92" concept="2" />
-      <node id="1741258697587099252" at="24,92,25,18" concept="8" />
-      <node id="1741258697587099252" at="31,88,32,70" concept="7" />
-      <node id="1741258697587099252" at="32,70,33,298" concept="8" />
-      <node id="1741258697587099252" at="21,0,27,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <node id="1741258697587099252" at="29,0,35,0" concept="6" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/MenuLookup;" />
-      <scope id="1741258697587099252" at="31,88,33,298">
+      <node id="1741258697587099252" at="21,118,22,140" concept="7" />
+      <node id="1741258697587099252" at="22,140,23,92" concept="2" />
+      <node id="1741258697587099252" at="23,92,24,18" concept="8" />
+      <node id="1741258697587099252" at="30,82,31,70" concept="7" />
+      <node id="1741258697587099252" at="31,70,32,298" concept="8" />
+      <node id="1741258697587099252" at="20,0,26,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="1741258697587099252" at="28,0,34,0" concept="6" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuLookup;" />
+      <scope id="1741258697587099252" at="30,82,32,298">
         <var name="editorContext" id="1741258697587099252" />
       </scope>
-      <scope id="1741258697587099252" at="22,118,25,18">
+      <scope id="1741258697587099252" at="21,118,24,18">
         <var name="result" id="1741258697587099252" />
       </scope>
-      <scope id="1741258697587099252" at="21,0,27,0">
+      <scope id="1741258697587099252" at="20,0,26,0">
         <var name="_context" id="1741258697587099252" />
       </scope>
-      <scope id="1741258697587099252" at="29,0,35,0">
+      <scope id="1741258697587099252" at="28,0,34,0">
         <var name="_context" id="1741258697587099252" />
       </scope>
-      <unit id="1741258697587099252" at="27,0,36,0" name="jetbrains.mps.lang.smodel.editor.SNodeOperation_SubstituteMenu$SubstituteMenuPart_IncludeMenu_u6z34j_a" />
-      <unit id="1741258697587099252" at="20,0,37,0" name="jetbrains.mps.lang.smodel.editor.SNodeOperation_SubstituteMenu" />
+      <unit id="1741258697587099252" at="26,0,35,0" name="jetbrains.mps.lang.smodel.editor.SNodeOperation_SubstituteMenu$SubstituteMenuPart_IncludeMenu_u6z34j_a" />
+      <unit id="1741258697587099252" at="19,0,36,0" name="jetbrains.mps.lang.smodel.editor.SNodeOperation_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)/1741258697587099253">

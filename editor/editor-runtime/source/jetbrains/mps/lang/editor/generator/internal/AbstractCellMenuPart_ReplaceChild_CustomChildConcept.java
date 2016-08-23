@@ -26,8 +26,7 @@ import jetbrains.mps.nodeEditor.cellMenu.OldNewSubstituteUtil;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
@@ -71,7 +70,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_CustomChildConcept imple
         return new ArrayList<>();
       }
       SContainmentLink containmentLink = MetaAdapterByDeclaration.getContainmentLink(linkDeclaration);
-      MenuLookup<SubstituteMenu> lookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()),
+      SubstituteMenuLookup lookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()),
           concept);
       List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parentNode, currentChild, containmentLink, editorContext, lookup).collect();
       return new SubstituteActionsCollector(parentNode, transformationItems, editorContext.getRepository()).collect();

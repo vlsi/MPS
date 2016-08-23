@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
@@ -52,7 +51,7 @@ public abstract class WrapSubstituteMenuTransformationMenuPart implements Transf
     };
   }
 
-  protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext context) {
+  protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext context) {
     return null;
   }
 

@@ -16,19 +16,13 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.lang.editor.menus.transformation.SubstituteActionsCollector;
-import jetbrains.mps.nodeEditor.menus.MenuFacade;
+import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
-import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
-import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItemVisitor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -51,7 +45,7 @@ public abstract class AbstractSubstituteInfo extends AbstractNodeSubstituteInfo 
 
   @Override
   protected List<SubstituteAction> createActions() {
-    List<TransformationMenuItem> items = MenuFacade.createMenu(myEditorCell.getTransformationMenuLookup(), getMenuLocation(), myEditorCell);
+    List<TransformationMenuItem> items = MenuUtil.createMenu(myEditorCell.getTransformationMenuLookup(), getMenuLocation(), myEditorCell);
     return new SubstituteActionsCollector(mySourceNode, items, myEditorCell.getContext().getRepository()).collect();
   }
 

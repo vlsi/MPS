@@ -17,17 +17,15 @@ package jetbrains.mps.lang.editor.menus.transformation;
 
 import jetbrains.mps.nodeEditor.menus.substitute.DefaultSubstituteMenuContext;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -39,10 +37,10 @@ public class SubstituteItemsCollector {
   private final SNode myCurrentChild;
   private final SContainmentLink myContainmentLink;
   private final EditorContext myEditorContext;
-  private final MenuLookup<SubstituteMenu> myMenuLookup;
+  private final SubstituteMenuLookup myMenuLookup;
 
   public SubstituteItemsCollector(@NotNull SNode parentNode, @Nullable SNode currentChild, @Nullable SContainmentLink containmentLink,
-      @NotNull EditorContext editorContext, @Nullable MenuLookup<SubstituteMenu> menuLookup) {
+      @NotNull EditorContext editorContext, @Nullable SubstituteMenuLookup menuLookup) {
     myParent = parentNode;
     myCurrentChild = currentChild;
     myContainmentLink = containmentLink;

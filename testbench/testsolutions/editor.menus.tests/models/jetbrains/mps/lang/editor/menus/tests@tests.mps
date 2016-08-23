@@ -529,8 +529,8 @@
                     <ref role="3cqZAo" node="3fN3QovvyrG" resolve="items" />
                   </node>
                   <node concept="2YIFZM" id="3kD8_UR0n79" role="37vLTx">
-                    <ref role="1Pybhc" to="y4ob:~MenuFacade" resolve="MenuFacade" />
-                    <ref role="37wK5l" to="y4ob:~MenuFacade.createMenu(jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup,java.lang.String,jetbrains.mps.openapi.editor.cells.EditorCell):java.util.List" resolve="createMenu" />
+                    <ref role="1Pybhc" to="y4ob:~MenuUtil" resolve="MenuUtil" />
+                    <ref role="37wK5l" to="y4ob:~MenuUtil.createMenu(jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup,java.lang.String,jetbrains.mps.openapi.editor.cells.EditorCell):java.util.List" resolve="createMenu" />
                     <node concept="37vLTw" id="3kD8_UR0ncS" role="37wK5m">
                       <ref role="3cqZAo" node="229s7wVD$NG" resolve="lookup" />
                     </node>
@@ -734,8 +734,8 @@
                     <ref role="3cqZAo" node="3fN3Qovv86x" resolve="items" />
                   </node>
                   <node concept="2YIFZM" id="3kD8_UR0pGa" role="37vLTx">
-                    <ref role="1Pybhc" to="y4ob:~MenuFacade" resolve="MenuFacade" />
-                    <ref role="37wK5l" to="y4ob:~MenuFacade.createMenu(jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup,java.lang.String,jetbrains.mps.openapi.editor.cells.EditorCell):java.util.List" resolve="createMenu" />
+                    <ref role="1Pybhc" to="y4ob:~MenuUtil" resolve="MenuUtil" />
+                    <ref role="37wK5l" to="y4ob:~MenuUtil.createMenu(jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup,java.lang.String,jetbrains.mps.openapi.editor.cells.EditorCell):java.util.List" resolve="createMenu" />
                     <node concept="37vLTw" id="3kD8_UR0pGb" role="37wK5m">
                       <ref role="3cqZAo" node="5_kqtpAxtG1" resolve="lookup" />
                     </node>

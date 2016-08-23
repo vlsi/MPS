@@ -18,8 +18,7 @@ import jetbrains.mps.lang.editor.menus.transformation.IncludeSubstituteMenuTrans
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.NamedSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -55,7 +54,7 @@ public class NamedTransformationMenu_EmptyCell extends TransformationMenuBase {
       return MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a711255L, "childrenForEmptyCell");
     }
     @Override
-    protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext context) {
+    protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext context) {
       final EditorContext editorContext = context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"), "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedSubstituteMenu_EmptyCell");
     }

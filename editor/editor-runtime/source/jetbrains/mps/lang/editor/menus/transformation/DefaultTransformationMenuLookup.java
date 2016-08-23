@@ -17,9 +17,7 @@ package jetbrains.mps.lang.editor.menus.transformation;
 
 import jetbrains.mps.nodeEditor.LanguageRegistryHelper;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
-import jetbrains.mps.openapi.editor.descriptor.Menu;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
@@ -65,19 +63,16 @@ public class DefaultTransformationMenuLookup implements TransformationMenuLookup
   @NotNull
   @Override
   public Collection<TransformationMenu> lookup(@NotNull Collection<SLanguage> usedLanguages, @NotNull String menuLocation) {
-    List<TransformationMenu> conceptMenu = new ArrayList<>();
+    List<TransformationMenu> menus = new ArrayList<>(getForConcept(usedLanguages));
 
-    for (TransformationMenu menu : getForConcept(usedLanguages)) {
-      if (menu.isApplicableToLocation(menuLocation)) {
-        conceptMenu.add(menu);
-      }
+    boolean haveApplicableExplicitMenu = menus.stream().anyMatch(menu -> menu.isApplicableToLocation(menuLocation) && !menu.isContribution());
+
+    // TODO: when can it happen that usedLanguages does not contain myConcept.getLanguage()? Explain.
+    if (usedLanguages.contains(myConcept.getLanguage()) && !haveApplicableExplicitMenu) {
+      menus.add(0, new ImplicitTransformationMenu(myConcept));
     }
 
-    if (usedLanguages.contains(myConcept.getLanguage()) && conceptMenu.stream().allMatch(Menu::isContribution)) {
-      conceptMenu.add(0, createImplicitMenu());
-    }
-
-    return conceptMenu;
+    return menus;
   }
 
   @NotNull
@@ -86,17 +81,7 @@ public class DefaultTransformationMenuLookup implements TransformationMenuLookup
     if (aspectDescriptor == null) {
       return Collections.emptyList();
     }
-    return getForAspectDescriptor(aspectDescriptor, usedLanguages);
-  }
-
-  @NotNull
-  private Collection<TransformationMenu> getForAspectDescriptor(EditorAspectDescriptor aspectDescriptor, Collection<SLanguage> usedLanguages) {
     return aspectDescriptor.getDefaultTransformationMenus(myConcept, usedLanguages);
   }
 
-  @NotNull
-  @Override
-  public ImplicitTransformationMenu createImplicitMenu() {
-    return new ImplicitTransformationMenu(myConcept);
-  }
 }

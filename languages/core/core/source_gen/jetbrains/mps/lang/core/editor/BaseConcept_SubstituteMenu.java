@@ -27,8 +27,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.IconResourceUtil;
 import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -134,7 +133,7 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
 
         @Nullable
         @Override
-        protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+        protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
           final EditorContext editorContext = _context.getEditorContext();
           return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), getConcept(_context));
         }

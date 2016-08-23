@@ -24,10 +24,9 @@ import jetbrains.mps.nodeEditor.menus.MenuItemFactory;
 import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import jetbrains.mps.nodeEditor.menus.RecursionSafeMenuItemFactory;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -37,6 +36,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Predicate;
@@ -51,11 +51,11 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   private SContainmentLink myContainmentLink;
   private SNode myParentNode;
   private SNode myCurrentChild;
-  private MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, MenuLookup<SubstituteMenu>> myMenuItemFactory;
+  private MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenuLookup> myMenuItemFactory;
   private Predicate<SAbstractConcept> myInUsedLanguagesPredicate;
   private Predicate<SAbstractConcept> mySuitableForConstraintsPredicate;
 
-  private DefaultSubstituteMenuContext(MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, MenuLookup<SubstituteMenu>> menuItemFactory,
+  private DefaultSubstituteMenuContext(MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenuLookup> menuItemFactory,
       SContainmentLink containmentLink, SNode parentNode,
       SNode currentChild, EditorContext editorContext) {
     myMenuItemFactory = menuItemFactory;
@@ -67,7 +67,7 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
     mySuitableForConstraintsPredicate = createSuitableForConstraintsPredicate(myParentNode, myContainmentLink, myEditorContext.getRepository());
   }
 
-  private DefaultSubstituteMenuContext(MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, MenuLookup<SubstituteMenu>> menuItemFactory,
+  private DefaultSubstituteMenuContext(MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenuLookup> menuItemFactory,
       SContainmentLink containmentLink, SNode parentNode,
       SNode currentChild, EditorContext editorContext, Predicate<SAbstractConcept> inUsedLanguagesPredicate,
       Predicate<SAbstractConcept> suitableForConstraintsPredicate) {
@@ -123,7 +123,7 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
 
   @NotNull
   @Override
-  public List<SubstituteMenuItem> createItems(@Nullable MenuLookup<SubstituteMenu> menuLookup) {
+  public List<SubstituteMenuItem> createItems(@Nullable SubstituteMenuLookup menuLookup) {
     if (menuLookup == null) {
       menuLookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(myEditorContext.getRepository()), myContainmentLink.getTargetConcept());
     }

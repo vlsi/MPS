@@ -2558,53 +2558,53 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959043b(jetbrains.mps.samples.formulaLanguage.editor)/1741258697587035631">
     <file name="Expression_TransformationMenu.java">
-      <node id="1741258697587035631" at="35,0,36,0" concept="3" trace="myLocations" />
-      <node id="1741258697587035631" at="37,67,38,63" concept="7" />
-      <node id="1741258697587035631" at="43,124,44,156" concept="6" />
-      <node id="1741258697587035631" at="45,173,46,250" concept="2" />
-      <node id="1741258697587035631" at="48,138,49,106" concept="2" />
-      <node id="1741258697587035631" at="50,5,51,18" concept="7" />
-      <node id="1741258697587035639" at="58,102,59,70" concept="6" />
-      <node id="1741258697587035639" at="59,70,60,256" concept="7" />
-      <node id="1741258697587035639" at="63,123,64,51" concept="6" />
-      <node id="1741258697587035645" at="64,51,65,74" concept="2" />
-      <node id="1741258697587035650" at="65,74,66,193" concept="2" />
-      <node id="1741258697587035669" at="66,193,67,251" concept="2" />
-      <node id="1741258697587035631" at="44,156,47,5" concept="4" />
-      <node id="1741258697587035631" at="47,5,50,5" concept="4" />
-      <node id="1741258697587035631" at="36,0,40,0" concept="5" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
-      <node id="1741258697587035639" at="56,0,62,0" concept="5" trace="getSubstituteMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/MenuLookup;" />
-      <node id="1741258697587035639" at="63,0,69,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuItem;Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;Ljava/lang/String;)V" />
-      <node id="1741258697587035631" at="41,0,53,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587035631" at="37,67,38,63" />
-      <scope id="1741258697587035631" at="45,173,46,250" />
-      <scope id="1741258697587035631" at="48,138,49,106" />
-      <scope id="1741258697587035639" at="58,102,60,256">
+      <node id="1741258697587035631" at="34,0,35,0" concept="3" trace="myLocations" />
+      <node id="1741258697587035631" at="36,67,37,63" concept="7" />
+      <node id="1741258697587035631" at="42,124,43,156" concept="6" />
+      <node id="1741258697587035631" at="44,173,45,250" concept="2" />
+      <node id="1741258697587035631" at="47,138,48,106" concept="2" />
+      <node id="1741258697587035631" at="49,5,50,18" concept="7" />
+      <node id="1741258697587035639" at="57,96,58,70" concept="6" />
+      <node id="1741258697587035639" at="58,70,59,256" concept="7" />
+      <node id="1741258697587035639" at="62,123,63,51" concept="6" />
+      <node id="1741258697587035645" at="63,51,64,74" concept="2" />
+      <node id="1741258697587035650" at="64,74,65,193" concept="2" />
+      <node id="1741258697587035669" at="65,193,66,251" concept="2" />
+      <node id="1741258697587035631" at="43,156,46,5" concept="4" />
+      <node id="1741258697587035631" at="46,5,49,5" concept="4" />
+      <node id="1741258697587035631" at="35,0,39,0" concept="5" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
+      <node id="1741258697587035639" at="55,0,61,0" concept="5" trace="getSubstituteMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuLookup;" />
+      <node id="1741258697587035639" at="62,0,68,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuItem;Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;Ljava/lang/String;)V" />
+      <node id="1741258697587035631" at="40,0,52,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587035631" at="36,67,37,63" />
+      <scope id="1741258697587035631" at="44,173,45,250" />
+      <scope id="1741258697587035631" at="47,138,48,106" />
+      <scope id="1741258697587035639" at="57,96,59,256">
         <var name="editorContext" id="1741258697587035639" />
       </scope>
-      <scope id="1741258697587035631" at="36,0,40,0">
+      <scope id="1741258697587035631" at="35,0,39,0">
         <var name="location" id="1741258697587035631" />
       </scope>
-      <scope id="1741258697587035639" at="63,123,67,251">
+      <scope id="1741258697587035639" at="62,123,66,251">
         <var name="createdNode" id="1741258697587035639" />
       </scope>
-      <scope id="1741258697587035639" at="56,0,62,0">
+      <scope id="1741258697587035639" at="55,0,61,0">
         <var name="_context" id="1741258697587035639" />
       </scope>
-      <scope id="1741258697587035639" at="63,0,69,0">
+      <scope id="1741258697587035639" at="62,0,68,0">
         <var name="_context" id="1741258697587035639" />
         <var name="item" id="1741258697587035639" />
         <var name="pattern" id="1741258697587035639" />
         <var name="targetNode" id="1741258697587035639" />
       </scope>
-      <scope id="1741258697587035631" at="43,124,51,18">
+      <scope id="1741258697587035631" at="42,124,50,18">
         <var name="result" id="1741258697587035631" />
       </scope>
-      <scope id="1741258697587035631" at="41,0,53,0">
+      <scope id="1741258697587035631" at="40,0,52,0">
         <var name="_context" id="1741258697587035631" />
       </scope>
-      <unit id="1741258697587035639" at="54,0,70,0" name="jetbrains.mps.samples.formulaLanguage.editor.Expression_TransformationMenu$TransformationMenuPart_WrapSubstituteMenu_g28b5z_a1" />
-      <unit id="1741258697587035631" at="34,0,71,0" name="jetbrains.mps.samples.formulaLanguage.editor.Expression_TransformationMenu" />
+      <unit id="1741258697587035639" at="53,0,69,0" name="jetbrains.mps.samples.formulaLanguage.editor.Expression_TransformationMenu$TransformationMenuPart_WrapSubstituteMenu_g28b5z_a1" />
+      <unit id="1741258697587035631" at="33,0,70,0" name="jetbrains.mps.samples.formulaLanguage.editor.Expression_TransformationMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959043b(jetbrains.mps.samples.formulaLanguage.editor)/1741258697587035675">

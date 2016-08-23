@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
@@ -38,7 +37,7 @@ public class IncludeSubstituteMenuTransformationMenuPart implements Transformati
     SNode parent = getParentNode(context);
     SContainmentLink containmentLink = getContainmentLink(context);
     if (parent != null && containmentLink != null) {
-      MenuLookup<SubstituteMenu> substituteMenuLookup = getSubstituteMenuLookup(context);
+      SubstituteMenuLookup substituteMenuLookup = getSubstituteMenuLookup(context);
       return new SubstituteItemsCollector(parent, currentChild, containmentLink, context.getEditorContext(), substituteMenuLookup).collect();
     }
     return Collections.emptyList();
@@ -56,7 +55,7 @@ public class IncludeSubstituteMenuTransformationMenuPart implements Transformati
     return context.getNodeLocation().getContainmentLink();
   }
 
-  protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext context) {
+  protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext context) {
     return null;
   }
 }

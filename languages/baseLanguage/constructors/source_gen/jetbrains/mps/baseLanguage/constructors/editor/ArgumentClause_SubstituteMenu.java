@@ -10,8 +10,7 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.NamedSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -35,7 +34,7 @@ public class ArgumentClause_SubstituteMenu extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b742b6b7L, "jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause"), "jetbrains.mps.baseLanguage.constructors.editor.CustomArgumentClauseSubstitute");
     }
@@ -44,7 +43,7 @@ public class ArgumentClause_SubstituteMenu extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b742b6b7L, "jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause"), "jetbrains.mps.baseLanguage.constructors.editor.ListArgumentClauseSubstitute");
     }

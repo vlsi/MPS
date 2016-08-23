@@ -25,16 +25,16 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * A straightforward implementation of {@link MenuItemFactory}. Looks up the menus and returns items created by each menu, concatenated.
  */
-public class DefaultTransformationMenuItemFactory implements MenuItemFactory<TransformationMenuItem, TransformationMenuContext, TransformationMenuLookup> {
+class DefaultTransformationMenuItemFactory implements MenuItemFactory<TransformationMenuItem, TransformationMenuContext, TransformationMenuLookup> {
   private final Collection<SLanguage> myUsedLanguages;
 
-  public DefaultTransformationMenuItemFactory(Collection<SLanguage> usedLanguages) {
+  DefaultTransformationMenuItemFactory(Collection<SLanguage> usedLanguages) {
     myUsedLanguages = usedLanguages;
   }
 
@@ -42,10 +42,6 @@ public class DefaultTransformationMenuItemFactory implements MenuItemFactory<Tra
   @Override
   public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context, @NotNull TransformationMenuLookup menuLookup) {
     Collection<TransformationMenu> menus = menuLookup.lookup(myUsedLanguages, context.getMenuLocation());
-
-    if (menus.isEmpty()) {
-      return Collections.emptyList();
-    }
 
     List<TransformationMenuItem> result = new ArrayList<>();
     for (TransformationMenu menu : menus) {

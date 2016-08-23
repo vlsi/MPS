@@ -10,8 +10,7 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.NamedSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -45,7 +44,7 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.editor.liveTemplates_Expression");
     }
@@ -54,7 +53,7 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.editor.valueParameter");
     }
@@ -63,7 +62,7 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.editor.qualifiedSuperMethodCallExpression");
     }
@@ -72,7 +71,7 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.editor.PrimitiveClassExpression");
     }
@@ -81,7 +80,7 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.editor.constants");
     }
@@ -90,7 +89,7 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.editor.thisExpression");
     }
@@ -99,7 +98,7 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.editor.smartCast");
     }
@@ -108,7 +107,7 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.editor.new_");
     }
@@ -117,7 +116,7 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.editor.staticAccess");
     }
@@ -126,7 +125,7 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.editor.CreateEnumConstantReferences");
     }
@@ -135,7 +134,7 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.editor.conceptFunctionParameters");
     }
@@ -144,7 +143,7 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), "jetbrains.mps.baseLanguage.editor.ParensAroundEmptyExpression");
     }

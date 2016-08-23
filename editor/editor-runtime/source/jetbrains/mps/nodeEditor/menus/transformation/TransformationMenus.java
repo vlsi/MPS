@@ -13,21 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.menus.transformation;
+package jetbrains.mps.nodeEditor.menus.transformation;
 
-
-import jetbrains.mps.openapi.editor.descriptor.Menu;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SLanguage;
-
-import java.util.Collection;
-
-/**
- * Looks up a collection of menus. Must implement {@code equals()} and {@code hashCode()} (used for cycle detection).
- */
-public interface MenuLookup<T extends Menu> {
-  @NotNull
-  Collection<T> lookup(@NotNull Collection<SLanguage> usedLanguages);
-
-  T createImplicitMenu();
+public class TransformationMenus {
 }

@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.nodeEditor.menus;
 
-import jetbrains.mps.openapi.editor.descriptor.Menu;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface MenuItemFactory<ItemT, ContextT, MenuLookupT> {
   @NotNull
