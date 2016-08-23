@@ -107,7 +107,23 @@ public class TemplateQueryContext {
     return myGenerator;
   }
 
+  /**
+   * @deprecated replaced with more generic alternative, {@link #getOutputNodeByMappingLabel(String, SModel)}
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public SNode getOutputNodeByMappingLabel(String label) {
+    return getOutputNodeByMappingLabel(label, null);
+  }
+
+  /**
+   * Find out conditional root with a given ML, created from specified model
+   * @param label generally shall not be null, as it's required in GenerationContextOp_GetOutputByLabel
+   * @param inputModel can be null, which indicates current input model. Otherwise, a model root was created from
+   * @return a node in a transient/checkpoint model if generator has any recorded.
+   */
+  @Nullable
+  public SNode getOutputNodeByMappingLabel(String label, @Nullable SModel inputModel) {
     if (!myGenerator.areMappingsAvailable()) {
       myGenerator.getLogger().error(getTemplateNodeRef(), "'get output by label' cannot be used here");
     }

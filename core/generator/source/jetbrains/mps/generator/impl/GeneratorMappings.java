@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,11 +21,10 @@ import jetbrains.mps.generator.impl.cache.BrokenCacheException;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
-import jetbrains.mps.generator.impl.plan.CheckpointState;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -116,7 +115,7 @@ public final class GeneratorMappings {
     // todo: is not unique
     // todo: generator should report error on attempt to obtain not unique output-node
     if (templateNodeId == null) return;
-    myTemplateNodeIdAndInputNodeToOutputNodeMap.put(new Pair(templateNodeId, inputNode), outputNode);
+    myTemplateNodeIdAndInputNodeToOutputNodeMap.put(new Pair<>(templateNodeId, inputNode), outputNode);
   }
 
   void addOutputNodeForContext(TemplateContext templateContext, String templateNodeId, SNode outputNode) {
@@ -125,7 +124,7 @@ public final class GeneratorMappings {
     // todo: generator should report error on attempt to obtain not unique output-node
     addOutputNodeByInputAndTemplateNode(templateContext.getInput(), templateNodeId, outputNode);
     for (SNode historyInputNode : templateContext.getInputHistory()) {
-      Pair key = new Pair(templateNodeId, historyInputNode);
+      Pair key = new Pair<>(templateNodeId, historyInputNode);
       myTemplateNodeIdAndInputNodeToOutputNodeMap.putIfAbsent(key, outputNode);
     }
     addOutputNodeByTemplateNode(templateNodeId, outputNode);
@@ -138,19 +137,24 @@ public final class GeneratorMappings {
     return o instanceof SNode ? (SNode) o : null;
   }
 
-  public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
-    if (mappingName == null) return null;
+  public SNode findOutputNodeByInputNodeAndMappingName(@Nullable SNode inputNode, @Nullable String mappingName) {
+    if (mappingName == null) {
+      return null;
+    }
     Map<SNode, Object> currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
-    if (currentMapping == null) return null;
+    if (currentMapping == null) {
+      return null;
+    }
     Object o = currentMapping.get(inputNode);
     if (o instanceof List) {
       List<SNode> list = (List<SNode>) o;
-      ProblemDescription[] descr = new ProblemDescription[list.size()];
+      ProblemDescription[] descr = new ProblemDescription[list.size() + 1];
       for (int i = 0; i < list.size(); i++) {
-        descr[i] = new ProblemDescription(list.get(i).getReference(), "output [" + i + "] : " + SNodeOperations.getDebugText(list.get(i)));
+        descr[i] = GeneratorUtil.describe(list.get(i), "output");
       }
-      String msg = "%d  output nodes found for mapping label '%s' and input %s";
-      myLog.warning(inputNode.getReference(), String.format(msg, list.size(), mappingName, SNodeOperations.getDebugText(inputNode)), descr);
+      descr[list.size()] = GeneratorUtil.describe(inputNode, "input");
+      String msg = "%d  output nodes found for mapping label '%s'";
+      myLog.warning(inputNode == null ? null : inputNode.getReference(), String.format(msg, list.size(), mappingName), descr);
       return list.get(0);
     }
 
@@ -158,12 +162,20 @@ public final class GeneratorMappings {
   }
 
   public List<SNode> findAllOutputNodesByInputNodeAndMappingName(SNode inputNode, String mappingName) {
-    if (mappingName == null) return null;
+    if (mappingName == null) {
+      return null;
+    }
     Map<SNode, Object> currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
-    if (currentMapping == null) return null;
+    if (currentMapping == null) {
+      return null;
+    }
     Object o = currentMapping.get(inputNode);
-    if (o == null) return Collections.emptyList();
-    if (o instanceof List) return ((List<SNode>) o);
+    if (o == null) {
+      return Collections.emptyList();
+    }
+    if (o instanceof List) {
+      return ((List<SNode>) o);
+    }
     return Collections.singletonList((SNode) o);
   }
 
@@ -179,7 +191,7 @@ public final class GeneratorMappings {
   }
 
   public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, String templateNodeId) {
-    return myTemplateNodeIdAndInputNodeToOutputNodeMap.get(new Pair(templateNodeId, inputNode));
+    return myTemplateNodeIdAndInputNodeToOutputNodeMap.get(new Pair<>(templateNodeId, inputNode));
   }
 
   public boolean isInputNodeHasUniqueCopiedOutputNode(SNode inputNode) {
