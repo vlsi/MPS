@@ -35,6 +35,7 @@
     <import index="iwf0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.descriptor(MPS.Editor/)" />
     <import index="f4zo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)" />
     <import index="b8lf" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.selection(MPS.Editor/)" />
+    <import index="y4ob" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.menus(MPS.Editor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpc6" ref="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
@@ -174,11 +175,11 @@
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
         <child id="4202667662392416064" name="transformationMenu" index="3vIgyS" />
       </concept>
-      <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" index="3EZMnI">
+      <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
-      <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" index="3F0ifn">
+      <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" stub="3610246225209162225" index="3F0ifn">
         <property id="1073389577007" name="text" index="3F0ifm" />
       </concept>
       <concept id="5624877018226904808" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Named" flags="ng" index="3ICXOK" />
@@ -258,7 +259,7 @@
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -484,11 +485,8 @@
         <node concept="3cpWs8" id="229s7wVD$NF" role="3cqZAp">
           <node concept="3cpWsn" id="229s7wVD$NG" role="3cpWs9">
             <property role="TrG5h" value="lookup" />
-            <node concept="3uibUv" id="229s7wVD$NA" role="1tU5fm">
-              <ref role="3uigEE" to="9eyi:~DefaultMenuLookup" resolve="DefaultMenuLookup" />
-              <node concept="3uibUv" id="3rSzFHX2DDR" role="11_B2D">
-                <ref role="3uigEE" to="iwf0:~TransformationMenu" resolve="TransformationMenu" />
-              </node>
+            <node concept="3uibUv" id="T1zfczaoBI" role="1tU5fm">
+              <ref role="3uigEE" to="uddc:~TransformationMenuLookup" resolve="TransformationMenuLookup" />
             </node>
             <node concept="2ShNRf" id="229s7wVD$NH" role="33vP2m">
               <node concept="1pGfFk" id="229s7wVD$NI" role="2ShVmc">
@@ -527,31 +525,26 @@
             <node concept="3clFbS" id="3fN3QovvzCU" role="1bW5cS">
               <node concept="3clFbF" id="3fN3Qovvz00" role="3cqZAp">
                 <node concept="37vLTI" id="3fN3Qovvz02" role="3clFbG">
-                  <node concept="2OqwBi" id="3fN3QovvyrH" role="37vLTx">
-                    <node concept="2YIFZM" id="5iFVnFAvWKW" role="2Oq$k0">
-                      <ref role="37wK5l" to="u59o:~DefaultTransformationMenuContext.createInitialContextForCell(jetbrains.mps.openapi.editor.cells.EditorCell,java.lang.String):jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext" resolve="createInitialContextForCell" />
-                      <ref role="1Pybhc" to="u59o:~DefaultTransformationMenuContext" resolve="DefaultTransformationMenuContext" />
-                      <node concept="2OqwBi" id="5iFVnFAvWXd" role="37wK5m">
-                        <node concept="37vLTw" id="5iFVnFAvWKX" role="2Oq$k0">
-                          <ref role="3cqZAo" node="5_kqtpAxV1D" resolve="editorContext" />
-                        </node>
-                        <node concept="liA8E" id="5iFVnFAvYwg" role="2OqNvi">
-                          <ref role="37wK5l" to="cj4x:~EditorContext.getSelectedCell():jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getSelectedCell" />
-                        </node>
-                      </node>
-                      <node concept="37vLTw" id="5iFVnFAvWKZ" role="37wK5m">
-                        <ref role="3cqZAo" node="229s7wVDBr6" resolve="location" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="3fN3QovvyrM" role="2OqNvi">
-                      <ref role="37wK5l" to="u59o:~DefaultTransformationMenuContext.createItems(jetbrains.mps.openapi.editor.menus.transformation.MenuLookup):java.util.List" resolve="createItems" />
-                      <node concept="37vLTw" id="3fN3QovvyrN" role="37wK5m">
-                        <ref role="3cqZAo" node="229s7wVD$NG" resolve="lookup" />
-                      </node>
-                    </node>
-                  </node>
                   <node concept="37vLTw" id="3fN3Qovvz06" role="37vLTJ">
                     <ref role="3cqZAo" node="3fN3QovvyrG" resolve="items" />
+                  </node>
+                  <node concept="2YIFZM" id="3kD8_UR0n79" role="37vLTx">
+                    <ref role="1Pybhc" to="y4ob:~MenuFacade" resolve="MenuFacade" />
+                    <ref role="37wK5l" to="y4ob:~MenuFacade.createMenu(jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup,java.lang.String,jetbrains.mps.openapi.editor.cells.EditorCell):java.util.List" resolve="createMenu" />
+                    <node concept="37vLTw" id="3kD8_UR0ncS" role="37wK5m">
+                      <ref role="3cqZAo" node="229s7wVD$NG" resolve="lookup" />
+                    </node>
+                    <node concept="37vLTw" id="3kD8_UR0nDp" role="37wK5m">
+                      <ref role="3cqZAo" node="229s7wVDBr6" resolve="location" />
+                    </node>
+                    <node concept="2OqwBi" id="3kD8_UR0ofR" role="37wK5m">
+                      <node concept="37vLTw" id="3kD8_UR0o66" role="2Oq$k0">
+                        <ref role="3cqZAo" node="5_kqtpAxV1D" resolve="editorContext" />
+                      </node>
+                      <node concept="liA8E" id="3kD8_UR0pg$" role="2OqNvi">
+                        <ref role="37wK5l" to="cj4x:~EditorContext.getSelectedCell():jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getSelectedCell" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -693,11 +686,8 @@
         <node concept="3cpWs8" id="5_kqtpAxtG0" role="3cqZAp">
           <node concept="3cpWsn" id="5_kqtpAxtG1" role="3cpWs9">
             <property role="TrG5h" value="lookup" />
-            <node concept="3uibUv" id="5_kqtpAxtLd" role="1tU5fm">
-              <ref role="3uigEE" to="uddc:~MenuLookup" resolve="MenuLookup" />
-              <node concept="3uibUv" id="3rSzFHX2C_v" role="11_B2D">
-                <ref role="3uigEE" to="iwf0:~TransformationMenu" resolve="TransformationMenu" />
-              </node>
+            <node concept="3uibUv" id="T1zfczaoXK" role="1tU5fm">
+              <ref role="3uigEE" to="uddc:~TransformationMenuLookup" resolve="TransformationMenuLookup" />
             </node>
             <node concept="2ShNRf" id="5_kqtpAxtG3" role="33vP2m">
               <node concept="1pGfFk" id="5_kqtpAxtG4" role="2ShVmc">
@@ -740,31 +730,26 @@
             <node concept="3clFbS" id="3fN3Qovv5LA" role="1bW5cS">
               <node concept="3clFbF" id="3fN3Qovv8Ja" role="3cqZAp">
                 <node concept="37vLTI" id="3fN3Qovv8Jc" role="3clFbG">
-                  <node concept="2OqwBi" id="3fN3Qovv86y" role="37vLTx">
-                    <node concept="2YIFZM" id="5iFVnFAvYJ6" role="2Oq$k0">
-                      <ref role="37wK5l" to="u59o:~DefaultTransformationMenuContext.createInitialContextForCell(jetbrains.mps.openapi.editor.cells.EditorCell,java.lang.String):jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext" resolve="createInitialContextForCell" />
-                      <ref role="1Pybhc" to="u59o:~DefaultTransformationMenuContext" resolve="DefaultTransformationMenuContext" />
-                      <node concept="2OqwBi" id="5iFVnFAvYSO" role="37wK5m">
-                        <node concept="37vLTw" id="5iFVnFAvYJ7" role="2Oq$k0">
-                          <ref role="3cqZAo" node="5_kqtpAxWCJ" resolve="editorContext" />
-                        </node>
-                        <node concept="liA8E" id="5iFVnFAw0qZ" role="2OqNvi">
-                          <ref role="37wK5l" to="cj4x:~EditorContext.getSelectedCell():jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getSelectedCell" />
-                        </node>
-                      </node>
-                      <node concept="37vLTw" id="5iFVnFAvYJ9" role="37wK5m">
-                        <ref role="3cqZAo" node="5_kqtpAxtA_" resolve="location" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="3fN3Qovv86B" role="2OqNvi">
-                      <ref role="37wK5l" to="u59o:~DefaultTransformationMenuContext.createItems(jetbrains.mps.openapi.editor.menus.transformation.MenuLookup):java.util.List" resolve="createItems" />
-                      <node concept="37vLTw" id="3fN3Qovv86C" role="37wK5m">
-                        <ref role="3cqZAo" node="5_kqtpAxtG1" resolve="lookup" />
-                      </node>
-                    </node>
-                  </node>
                   <node concept="37vLTw" id="3fN3Qovv8Jg" role="37vLTJ">
                     <ref role="3cqZAo" node="3fN3Qovv86x" resolve="items" />
+                  </node>
+                  <node concept="2YIFZM" id="3kD8_UR0pGa" role="37vLTx">
+                    <ref role="1Pybhc" to="y4ob:~MenuFacade" resolve="MenuFacade" />
+                    <ref role="37wK5l" to="y4ob:~MenuFacade.createMenu(jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup,java.lang.String,jetbrains.mps.openapi.editor.cells.EditorCell):java.util.List" resolve="createMenu" />
+                    <node concept="37vLTw" id="3kD8_UR0pGb" role="37wK5m">
+                      <ref role="3cqZAo" node="5_kqtpAxtG1" resolve="lookup" />
+                    </node>
+                    <node concept="37vLTw" id="3kD8_UR0pGc" role="37wK5m">
+                      <ref role="3cqZAo" node="5_kqtpAxtA_" resolve="location" />
+                    </node>
+                    <node concept="2OqwBi" id="3kD8_UR0pGd" role="37wK5m">
+                      <node concept="37vLTw" id="3kD8_UR0pGe" role="2Oq$k0">
+                        <ref role="3cqZAo" node="5_kqtpAxWCJ" resolve="editorContext" />
+                      </node>
+                      <node concept="liA8E" id="3kD8_UR0pGf" role="2OqNvi">
+                        <ref role="37wK5l" to="cj4x:~EditorContext.getSelectedCell():jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getSelectedCell" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

@@ -303,49 +303,49 @@
   </root>
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/1741258697587190277">
     <file name="TextCommentLinePart_ApplySideTransforms.java">
-      <node id="1741258697587190277" at="28,0,29,0" concept="3" trace="myLocations" />
-      <node id="1741258697587190277" at="30,67,31,63" concept="8" />
-      <node id="1741258697587190277" at="36,124,37,156" concept="7" />
-      <node id="1741258697587190277" at="38,173,39,109" concept="2" />
-      <node id="1741258697587190277" at="41,128,42,109" concept="2" />
-      <node id="1741258697587190277" at="43,5,44,18" concept="8" />
-      <node id="1741258697587190283" at="53,96,54,44" concept="7" />
-      <node id="1741258697587190283" at="54,44,55,70" concept="7" />
-      <node id="1741258697587190283" at="55,70,56,0" concept="10" />
-      <node id="1741258697587190283" at="56,0,57,272" concept="8" />
-      <node id="1741258697587190283" at="62,70,63,47" concept="8" />
-      <node id="1741258697587190277" at="37,156,40,5" concept="5" />
-      <node id="1741258697587190277" at="40,5,43,5" concept="5" />
-      <node id="1741258697587190277" at="29,0,33,0" concept="6" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
-      <node id="1741258697587190283" at="60,0,65,0" concept="6" trace="getLocation#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/lang/String;" />
-      <node id="1741258697587190283" at="51,0,59,0" concept="6" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/MenuLookup;" />
-      <node id="1741258697587190277" at="34,0,46,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587190277" at="30,67,31,63" />
-      <scope id="1741258697587190277" at="38,173,39,109" />
-      <scope id="1741258697587190277" at="41,128,42,109" />
-      <scope id="1741258697587190283" at="62,70,63,47" />
-      <scope id="1741258697587190277" at="29,0,33,0">
+      <node id="1741258697587190277" at="27,0,28,0" concept="3" trace="myLocations" />
+      <node id="1741258697587190277" at="29,67,30,63" concept="8" />
+      <node id="1741258697587190277" at="35,124,36,156" concept="7" />
+      <node id="1741258697587190277" at="37,173,38,109" concept="2" />
+      <node id="1741258697587190277" at="40,128,41,109" concept="2" />
+      <node id="1741258697587190277" at="42,5,43,18" concept="8" />
+      <node id="1741258697587190283" at="52,90,53,44" concept="7" />
+      <node id="1741258697587190283" at="53,44,54,70" concept="7" />
+      <node id="1741258697587190283" at="54,70,55,0" concept="10" />
+      <node id="1741258697587190283" at="55,0,56,272" concept="8" />
+      <node id="1741258697587190283" at="61,70,62,47" concept="8" />
+      <node id="1741258697587190277" at="36,156,39,5" concept="5" />
+      <node id="1741258697587190277" at="39,5,42,5" concept="5" />
+      <node id="1741258697587190277" at="28,0,32,0" concept="6" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
+      <node id="1741258697587190283" at="59,0,64,0" concept="6" trace="getLocation#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/lang/String;" />
+      <node id="1741258697587190283" at="50,0,58,0" concept="6" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuLookup;" />
+      <node id="1741258697587190277" at="33,0,45,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587190277" at="29,67,30,63" />
+      <scope id="1741258697587190277" at="37,173,38,109" />
+      <scope id="1741258697587190277" at="40,128,41,109" />
+      <scope id="1741258697587190283" at="61,70,62,47" />
+      <scope id="1741258697587190277" at="28,0,32,0">
         <var name="location" id="1741258697587190277" />
       </scope>
-      <scope id="1741258697587190283" at="53,96,57,272">
+      <scope id="1741258697587190283" at="52,90,56,272">
         <var name="editorContext" id="1741258697587190283" />
         <var name="node" id="1741258697587190283" />
       </scope>
-      <scope id="1741258697587190283" at="60,0,65,0">
+      <scope id="1741258697587190283" at="59,0,64,0">
         <var name="_context" id="1741258697587190283" />
       </scope>
-      <scope id="1741258697587190277" at="36,124,44,18">
+      <scope id="1741258697587190277" at="35,124,43,18">
         <var name="result" id="1741258697587190277" />
       </scope>
-      <scope id="1741258697587190283" at="51,0,59,0">
+      <scope id="1741258697587190283" at="50,0,58,0">
         <var name="_context" id="1741258697587190283" />
       </scope>
-      <scope id="1741258697587190277" at="34,0,46,0">
+      <scope id="1741258697587190277" at="33,0,45,0">
         <var name="_context" id="1741258697587190277" />
       </scope>
-      <unit id="1741258697587190278" at="47,0,50,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_ApplySideTransforms$TransformationMenuPart_IncludeMenu_v87s8j_a0" />
-      <unit id="1741258697587190283" at="50,0,66,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_ApplySideTransforms$TransformationMenuPart_IncludeMenu_v87s8j_a1" />
-      <unit id="1741258697587190277" at="27,0,67,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_ApplySideTransforms" />
+      <unit id="1741258697587190278" at="46,0,49,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_ApplySideTransforms$TransformationMenuPart_IncludeMenu_v87s8j_a0" />
+      <unit id="1741258697587190283" at="49,0,65,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_ApplySideTransforms$TransformationMenuPart_IncludeMenu_v87s8j_a1" />
+      <unit id="1741258697587190277" at="26,0,66,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_ApplySideTransforms" />
     </file>
   </root>
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/2068944020170241615">

@@ -18,9 +18,8 @@ package jetbrains.mps.nodeEditor.menus.substitute;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.lang.editor.menus.transformation.CachingPredicate;
 import jetbrains.mps.lang.editor.menus.transformation.CanBeChildPredicate;
-import jetbrains.mps.lang.editor.menus.transformation.InUsedLanguagesPredicate;
 import jetbrains.mps.lang.editor.menus.transformation.CanBeParentPredicate;
-import jetbrains.mps.nodeEditor.menus.DefaultMenuItemFactory;
+import jetbrains.mps.lang.editor.menus.transformation.InUsedLanguagesPredicate;
 import jetbrains.mps.nodeEditor.menus.MenuItemFactory;
 import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import jetbrains.mps.nodeEditor.menus.RecursionSafeMenuItemFactory;
@@ -52,11 +51,11 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   private SContainmentLink myContainmentLink;
   private SNode myParentNode;
   private SNode myCurrentChild;
-  private MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenu> myMenuItemFactory;
+  private MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, MenuLookup<SubstituteMenu>> myMenuItemFactory;
   private Predicate<SAbstractConcept> myInUsedLanguagesPredicate;
   private Predicate<SAbstractConcept> mySuitableForConstraintsPredicate;
 
-  private DefaultSubstituteMenuContext(MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenu> menuItemFactory,
+  private DefaultSubstituteMenuContext(MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, MenuLookup<SubstituteMenu>> menuItemFactory,
       SContainmentLink containmentLink, SNode parentNode,
       SNode currentChild, EditorContext editorContext) {
     myMenuItemFactory = menuItemFactory;
@@ -68,7 +67,7 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
     mySuitableForConstraintsPredicate = createSuitableForConstraintsPredicate(myParentNode, myContainmentLink, myEditorContext.getRepository());
   }
 
-  private DefaultSubstituteMenuContext(MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenu> menuItemFactory,
+  private DefaultSubstituteMenuContext(MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, MenuLookup<SubstituteMenu>> menuItemFactory,
       SContainmentLink containmentLink, SNode parentNode,
       SNode currentChild, EditorContext editorContext, Predicate<SAbstractConcept> inUsedLanguagesPredicate,
       Predicate<SAbstractConcept> suitableForConstraintsPredicate) {
@@ -148,7 +147,7 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   @NotNull
   public static DefaultSubstituteMenuContext createInitialContextForNode(SContainmentLink containmentLink, SNode parentNode,
       SNode currentChild, EditorContext editorContext) {
-    return new DefaultSubstituteMenuContext(new RecursionSafeMenuItemFactory<>(new DefaultMenuItemFactory<>(MenuUtil.getUsedLanguages(parentNode))),
+    return new DefaultSubstituteMenuContext(new RecursionSafeMenuItemFactory<>(new DefaultSubstituteMenuItemFactory(MenuUtil.getUsedLanguages(parentNode))),
         containmentLink, parentNode, currentChild, editorContext);
   }
 

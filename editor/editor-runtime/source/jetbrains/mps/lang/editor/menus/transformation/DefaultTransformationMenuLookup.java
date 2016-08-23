@@ -15,33 +15,88 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
+import jetbrains.mps.nodeEditor.LanguageRegistryHelper;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
+import jetbrains.mps.openapi.editor.descriptor.Menu;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
-/**
- * @author simon
- */
-public class DefaultTransformationMenuLookup extends DefaultMenuLookup<TransformationMenu> {
+public class DefaultTransformationMenuLookup implements TransformationMenuLookup {
+  @NotNull
+  private final LanguageRegistry myLanguageRegistry;
+  @NotNull
+  private final SAbstractConcept myConcept;
+
   public DefaultTransformationMenuLookup(@NotNull LanguageRegistry languageRegistry, @NotNull SAbstractConcept concept) {
-    super(languageRegistry, concept);
+    myLanguageRegistry = languageRegistry;
+    myConcept = concept;
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    DefaultTransformationMenuLookup that = (DefaultTransformationMenuLookup) o;
+
+    return myLanguageRegistry.equals(that.myLanguageRegistry) && myConcept.equals(that.myConcept);
+  }
+
+  @Override
+  public int hashCode() {
+    return myConcept.hashCode();
+  }
+
+  @Override
+  public String toString() {
+    return "default menu for " + myConcept;
+  }
 
   @NotNull
-  protected Collection<TransformationMenu> getForAspectDescriptor(EditorAspectDescriptor aspectDescriptor, Collection<SLanguage> usedLanguages) {
-    return aspectDescriptor.getDefaultTransformationMenus(getConcept(), usedLanguages);
+  @Override
+  public Collection<TransformationMenu> lookup(@NotNull Collection<SLanguage> usedLanguages, @NotNull String menuLocation) {
+    List<TransformationMenu> conceptMenu = new ArrayList<>();
+
+    for (TransformationMenu menu : getForConcept(usedLanguages)) {
+      if (menu.isApplicableToLocation(menuLocation)) {
+        conceptMenu.add(menu);
+      }
+    }
+
+    if (usedLanguages.contains(myConcept.getLanguage()) && conceptMenu.stream().allMatch(Menu::isContribution)) {
+      conceptMenu.add(0, createImplicitMenu());
+    }
+
+    return conceptMenu;
   }
 
+  @NotNull
+  private Collection<TransformationMenu> getForConcept(Collection<SLanguage> usedLanguages) {
+    EditorAspectDescriptor aspectDescriptor = LanguageRegistryHelper.getEditorAspectDescriptor(myLanguageRegistry, myConcept.getLanguage());
+    if (aspectDescriptor == null) {
+      return Collections.emptyList();
+    }
+    return getForAspectDescriptor(aspectDescriptor, usedLanguages);
+  }
+
+  @NotNull
+  private Collection<TransformationMenu> getForAspectDescriptor(EditorAspectDescriptor aspectDescriptor, Collection<SLanguage> usedLanguages) {
+    return aspectDescriptor.getDefaultTransformationMenus(myConcept, usedLanguages);
+  }
 
   @NotNull
   @Override
   public ImplicitTransformationMenu createImplicitMenu() {
-    return new ImplicitTransformationMenu(getConcept());
+    return new ImplicitTransformationMenu(myConcept);
   }
 }

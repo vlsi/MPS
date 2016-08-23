@@ -61,5 +61,5 @@ public interface TransformationMenuContext {
    * @return menu items for the node, not null but possibly empty
    */
   @NotNull
-  List<TransformationMenuItem> createItems(@Nullable MenuLookup<TransformationMenu> menuLookup);
+  List<TransformationMenuItem> createItems(@Nullable TransformationMenuLookup menuLookup);
 }

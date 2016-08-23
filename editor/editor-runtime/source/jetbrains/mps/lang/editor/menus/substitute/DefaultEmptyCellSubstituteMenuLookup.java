@@ -17,23 +17,19 @@ package jetbrains.mps.lang.editor.menus.substitute;
 
 import jetbrains.mps.lang.editor.menus.transformation.DefaultEmptyCellMenu;
 import jetbrains.mps.lang.editor.menus.transformation.EmptyTransformationMenu;
-import jetbrains.mps.lang.editor.menus.transformation.ImplicitTransformationMenu;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * @author simon
  */
-public class DefaultEmptyCellSubstituteMenuLookup implements MenuLookup<TransformationMenu> {
+public class DefaultEmptyCellSubstituteMenuLookup implements TransformationMenuLookup {
   private final SContainmentLink myLink;
 
   public DefaultEmptyCellSubstituteMenuLookup(SContainmentLink link) {
@@ -42,8 +38,8 @@ public class DefaultEmptyCellSubstituteMenuLookup implements MenuLookup<Transfor
 
   @NotNull
   @Override
-  public Collection<TransformationMenu> lookup(@NotNull Collection<SLanguage> usedLanguages) {
-    return Collections.singleton(new DefaultEmptyCellMenu(myLink));
+  public Collection<TransformationMenu> lookup(@NotNull Collection<SLanguage> usedLanguages, @NotNull String menuLocation) {
+    return Collections.singleton(new DefaultEmptyCellMenu());
   }
 
   @Override

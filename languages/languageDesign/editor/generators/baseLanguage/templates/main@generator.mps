@@ -9466,7 +9466,7 @@
                   <ref role="3cqZAo" node="4yOeMfyN0KS" resolve="editorCell" />
                 </node>
                 <node concept="liA8E" id="6sslvsbIBRB" role="2OqNvi">
-                  <ref role="37wK5l" to="f4zo:~EditorCell.setTransformationMenuLookup(jetbrains.mps.openapi.editor.menus.transformation.MenuLookup):void" resolve="setTransformationMenuLookup" />
+                  <ref role="37wK5l" to="f4zo:~EditorCell.setTransformationMenuLookup(jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup):void" resolve="setTransformationMenuLookup" />
                   <node concept="2ShNRf" id="yarZQNFY9y" role="37wK5m">
                     <node concept="1pGfFk" id="yarZQNFZIp" role="2ShVmc">
                       <ref role="37wK5l" to="qtqj:~DefaultEmptyCellSubstituteMenuLookup.&lt;init&gt;(org.jetbrains.mps.openapi.language.SContainmentLink)" resolve="DefaultEmptyCellSubstituteMenuLookup" />
@@ -17699,7 +17699,7 @@
                 <ref role="3cqZAo" node="4v1iCryNEJY" resolve="editorCell" />
               </node>
               <node concept="liA8E" id="4Sf$XywIo$R" role="2OqNvi">
-                <ref role="37wK5l" to="f4zo:~EditorCell.setTransformationMenuLookup(jetbrains.mps.openapi.editor.menus.transformation.MenuLookup):void" resolve="setTransformationMenuLookup" />
+                <ref role="37wK5l" to="f4zo:~EditorCell.setTransformationMenuLookup(jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup):void" resolve="setTransformationMenuLookup" />
                 <node concept="10Nm6u" id="4Sf$XywQlfB" role="37wK5m">
                   <node concept="1sPUBX" id="3DiRZz_UMb5" role="lGtFl">
                     <ref role="v9R2y" node="5OVd5tVfkL1" resolve="switch_TransformationMenuReference" />
@@ -28215,7 +28215,7 @@
                   <ref role="3cqZAo" node="XrrhtvD5$H" resolve="emptyCell" />
                 </node>
                 <node concept="liA8E" id="6sslvsbHY6a" role="2OqNvi">
-                  <ref role="37wK5l" to="f4zo:~EditorCell.setTransformationMenuLookup(jetbrains.mps.openapi.editor.menus.transformation.MenuLookup):void" resolve="setTransformationMenuLookup" />
+                  <ref role="37wK5l" to="f4zo:~EditorCell.setTransformationMenuLookup(jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup):void" resolve="setTransformationMenuLookup" />
                   <node concept="2ShNRf" id="6sslvsbHYc6" role="37wK5m">
                     <node concept="1pGfFk" id="yarZQNFXfR" role="2ShVmc">
                       <ref role="37wK5l" to="qtqj:~DefaultEmptyCellSubstituteMenuLookup.&lt;init&gt;(org.jetbrains.mps.openapi.language.SContainmentLink)" resolve="DefaultEmptyCellSubstituteMenuLookup" />
@@ -30556,7 +30556,7 @@
                 <ref role="3cqZAo" node="5DTV$TR_6Fe" resolve="editorCell" />
               </node>
               <node concept="liA8E" id="25llCucbGVV" role="2OqNvi">
-                <ref role="37wK5l" to="f4zo:~EditorCell.setTransformationMenuLookup(jetbrains.mps.openapi.editor.menus.transformation.MenuLookup):void" resolve="setTransformationMenuLookup" />
+                <ref role="37wK5l" to="f4zo:~EditorCell.setTransformationMenuLookup(jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup):void" resolve="setTransformationMenuLookup" />
                 <node concept="10Nm6u" id="25llCucbGVW" role="37wK5m">
                   <node concept="1sPUBX" id="25llCucbGVX" role="lGtFl">
                     <ref role="v9R2y" node="5OVd5tVfkL1" resolve="switch_TransformationMenuReference" />
@@ -33776,11 +33776,8 @@
           <property role="TrG5h" value="getMenuLookup" />
           <property role="DiZV1" value="false" />
           <property role="od$2w" value="false" />
-          <node concept="3uibUv" id="4PhMv8pV$$c" role="3clF45">
-            <ref role="3uigEE" to="uddc:~MenuLookup" resolve="MenuLookup" />
-            <node concept="3uibUv" id="6K28JrTTEfm" role="11_B2D">
-              <ref role="3uigEE" to="iwf0:~TransformationMenu" resolve="TransformationMenu" />
-            </node>
+          <node concept="3uibUv" id="5ytjPIF7dKe" role="3clF45">
+            <ref role="3uigEE" to="uddc:~TransformationMenuLookup" resolve="TransformationMenuLookup" />
           </node>
           <node concept="3Tmbuc" id="4sA1wzjgnkm" role="1B3o_S" />
           <node concept="2AHcQZ" id="4sA1wzjgnkn" role="2AJF6D">

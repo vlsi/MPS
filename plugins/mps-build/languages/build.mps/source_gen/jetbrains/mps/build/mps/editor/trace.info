@@ -1682,53 +1682,53 @@
   </root>
   <root nodeRef="r:589e3942-2f2d-42a2-9312-986a1d3e2f7f(jetbrains.mps.build.mps.editor)/1741258697587217178">
     <file name="BuildMps_Solution_ApplySideTransforms.java">
-      <node id="1741258697587217178" at="28,0,29,0" concept="2" trace="myLocations" />
-      <node id="1741258697587217178" at="30,67,31,63" concept="6" />
-      <node id="1741258697587217178" at="36,124,37,156" concept="5" />
-      <node id="1741258697587217178" at="38,173,39,107" concept="1" />
-      <node id="1741258697587217178" at="39,107,40,107" concept="1" />
-      <node id="1741258697587217178" at="41,5,42,18" concept="6" />
-      <node id="1741258697587217178" at="48,96,49,44" concept="5" />
-      <node id="1741258697587217178" at="49,44,50,70" concept="5" />
-      <node id="1741258697587217178" at="50,70,51,0" concept="7" />
-      <node id="1741258697587217178" at="51,0,52,317" concept="6" />
-      <node id="1741258697587217178" at="59,96,60,44" concept="5" />
-      <node id="1741258697587217178" at="60,44,61,70" concept="5" />
-      <node id="1741258697587217178" at="61,70,62,0" concept="7" />
-      <node id="1741258697587217178" at="62,0,63,337" concept="6" />
-      <node id="1741258697587217178" at="29,0,33,0" concept="4" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
-      <node id="1741258697587217178" at="37,156,41,5" concept="3" />
-      <node id="1741258697587217178" at="46,0,54,0" concept="4" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/MenuLookup;" />
-      <node id="1741258697587217178" at="57,0,65,0" concept="4" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/MenuLookup;" />
-      <node id="1741258697587217178" at="34,0,44,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587217178" at="30,67,31,63" />
-      <scope id="1741258697587217178" at="38,173,40,107" />
-      <scope id="1741258697587217178" at="29,0,33,0">
+      <node id="1741258697587217178" at="27,0,28,0" concept="2" trace="myLocations" />
+      <node id="1741258697587217178" at="29,67,30,63" concept="6" />
+      <node id="1741258697587217178" at="35,124,36,156" concept="5" />
+      <node id="1741258697587217178" at="37,173,38,107" concept="1" />
+      <node id="1741258697587217178" at="38,107,39,107" concept="1" />
+      <node id="1741258697587217178" at="40,5,41,18" concept="6" />
+      <node id="1741258697587217178" at="47,90,48,44" concept="5" />
+      <node id="1741258697587217178" at="48,44,49,70" concept="5" />
+      <node id="1741258697587217178" at="49,70,50,0" concept="7" />
+      <node id="1741258697587217178" at="50,0,51,317" concept="6" />
+      <node id="1741258697587217178" at="58,90,59,44" concept="5" />
+      <node id="1741258697587217178" at="59,44,60,70" concept="5" />
+      <node id="1741258697587217178" at="60,70,61,0" concept="7" />
+      <node id="1741258697587217178" at="61,0,62,337" concept="6" />
+      <node id="1741258697587217178" at="28,0,32,0" concept="4" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
+      <node id="1741258697587217178" at="36,156,40,5" concept="3" />
+      <node id="1741258697587217178" at="45,0,53,0" concept="4" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuLookup;" />
+      <node id="1741258697587217178" at="56,0,64,0" concept="4" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuLookup;" />
+      <node id="1741258697587217178" at="33,0,43,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587217178" at="29,67,30,63" />
+      <scope id="1741258697587217178" at="37,173,39,107" />
+      <scope id="1741258697587217178" at="28,0,32,0">
         <var name="location" id="1741258697587217178" />
       </scope>
-      <scope id="1741258697587217178" at="48,96,52,317">
+      <scope id="1741258697587217178" at="47,90,51,317">
         <var name="editorContext" id="1741258697587217178" />
         <var name="node" id="1741258697587217178" />
       </scope>
-      <scope id="1741258697587217178" at="59,96,63,337">
+      <scope id="1741258697587217178" at="58,90,62,337">
         <var name="editorContext" id="1741258697587217178" />
         <var name="node" id="1741258697587217178" />
       </scope>
-      <scope id="1741258697587217178" at="36,124,42,18">
+      <scope id="1741258697587217178" at="35,124,41,18">
         <var name="result" id="1741258697587217178" />
       </scope>
-      <scope id="1741258697587217178" at="46,0,54,0">
+      <scope id="1741258697587217178" at="45,0,53,0">
         <var name="_context" id="1741258697587217178" />
       </scope>
-      <scope id="1741258697587217178" at="57,0,65,0">
+      <scope id="1741258697587217178" at="56,0,64,0">
         <var name="_context" id="1741258697587217178" />
       </scope>
-      <scope id="1741258697587217178" at="34,0,44,0">
+      <scope id="1741258697587217178" at="33,0,43,0">
         <var name="_context" id="1741258697587217178" />
       </scope>
-      <unit id="1741258697587217178" at="45,0,56,0" name="jetbrains.mps.build.mps.editor.BuildMps_Solution_ApplySideTransforms$TransformationMenuPart_IncludeMenu_ij7rv5_a0" />
-      <unit id="1741258697587217178" at="56,0,67,0" name="jetbrains.mps.build.mps.editor.BuildMps_Solution_ApplySideTransforms$TransformationMenuPart_IncludeMenu_ij7rv5_b0" />
-      <unit id="1741258697587217178" at="27,0,68,0" name="jetbrains.mps.build.mps.editor.BuildMps_Solution_ApplySideTransforms" />
+      <unit id="1741258697587217178" at="44,0,55,0" name="jetbrains.mps.build.mps.editor.BuildMps_Solution_ApplySideTransforms$TransformationMenuPart_IncludeMenu_ij7rv5_a0" />
+      <unit id="1741258697587217178" at="55,0,66,0" name="jetbrains.mps.build.mps.editor.BuildMps_Solution_ApplySideTransforms$TransformationMenuPart_IncludeMenu_ij7rv5_b0" />
+      <unit id="1741258697587217178" at="26,0,67,0" name="jetbrains.mps.build.mps.editor.BuildMps_Solution_ApplySideTransforms" />
     </file>
   </root>
   <root nodeRef="r:589e3942-2f2d-42a2-9312-986a1d3e2f7f(jetbrains.mps.build.mps.editor)/2172791612907956749">

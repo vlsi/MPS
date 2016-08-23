@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public interface MenuItemFactory<ItemT, ContextT, MenuT extends Menu<ItemT, ContextT>> {
+public interface MenuItemFactory<ItemT, ContextT, MenuLookupT> {
   @NotNull
-  List<ItemT> createItems(@NotNull ContextT context, @NotNull MenuLookup<? extends MenuT> menuLookup);
+  List<ItemT> createItems(@NotNull ContextT context, @NotNull MenuLookupT menuLookup);
 }

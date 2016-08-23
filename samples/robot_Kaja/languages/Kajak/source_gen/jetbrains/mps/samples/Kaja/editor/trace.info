@@ -19,258 +19,258 @@
   </root>
   <root nodeRef="r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)/1108339487640189080">
     <file name="EmptyLine_TransformationMenu.java">
-      <node id="1108339487640189080" at="35,0,36,0" concept="3" trace="myLocations" />
-      <node id="1108339487640189080" at="37,67,38,63" concept="7" />
-      <node id="1108339487640189080" at="43,124,44,156" concept="6" />
-      <node id="1108339487640189080" at="45,135,46,93" concept="2" />
-      <node id="1108339487640189080" at="46,93,47,93" concept="2" />
-      <node id="1108339487640189080" at="47,93,48,92" concept="2" />
-      <node id="1108339487640189080" at="48,92,49,94" concept="2" />
-      <node id="1108339487640189080" at="49,94,50,94" concept="2" />
-      <node id="1108339487640189080" at="51,5,52,18" concept="7" />
-      <node id="1108339487640189080" at="57,84,58,100" concept="7" />
-      <node id="1108339487640189080" at="62,0,63,0" concept="3" trace="_context" />
-      <node id="1108339487640189080" at="64,55,65,27" concept="2" />
-      <node id="1108339487640189175" at="70,50,71,30" concept="7" />
-      <node id="1108339487640189679" at="75,52,76,291" concept="2" />
-      <node id="1108339487640189080" at="84,84,85,100" concept="7" />
-      <node id="1108339487640189080" at="89,0,90,0" concept="3" trace="_context" />
-      <node id="1108339487640189080" at="91,55,92,27" concept="2" />
-      <node id="1207648166366217833" at="97,50,98,27" concept="7" />
-      <node id="1207648166366218223" at="102,52,103,295" concept="2" />
-      <node id="6516520003788551497" at="111,72,112,324" concept="7" />
-      <node id="1108339487640189080" at="116,92,117,204" concept="7" />
-      <node id="1108339487640189080" at="121,86,122,142" concept="7" />
-      <node id="1108339487640189080" at="126,0,127,0" concept="3" trace="_context" />
-      <node id="1108339487640189080" at="128,57,129,29" concept="2" />
-      <node id="1207648166366225235" at="134,52,135,36" concept="7" />
-      <node id="542153281320168013" at="139,54,140,323" concept="6" />
-      <node id="1207648166366279290" at="140,323,141,69" concept="2" />
-      <node id="542153281319935853" at="150,66,151,28" concept="7" />
-      <node id="1108339487640189080" at="155,92,156,442" concept="7" />
-      <node id="1108339487640189080" at="160,86,161,144" concept="7" />
-      <node id="1108339487640189080" at="165,0,166,0" concept="3" trace="_context" />
-      <node id="1108339487640189080" at="167,57,168,29" concept="2" />
-      <node id="542153281319936316" at="173,52,174,26" concept="7" />
-      <node id="542153281319955888" at="178,54,179,312" concept="6" />
-      <node id="542153281319955714" at="179,312,180,69" concept="2" />
-      <node id="542153281319955700" at="180,69,181,0" concept="8" />
-      <node id="1108339487640189080" at="189,86,190,144" concept="7" />
-      <node id="1108339487640189080" at="194,0,195,0" concept="3" trace="_context" />
-      <node id="1108339487640189080" at="196,57,197,29" concept="2" />
-      <node id="542153281319936766" at="202,52,203,25" concept="7" />
-      <node id="542153281319956899" at="207,54,208,311" concept="6" />
-      <node id="542153281319956201" at="208,311,209,69" concept="2" />
-      <node id="1108339487640189080" at="217,86,218,144" concept="7" />
-      <node id="1108339487640189080" at="222,0,223,0" concept="3" trace="_context" />
-      <node id="1108339487640189080" at="224,57,225,29" concept="2" />
-      <node id="542153281319936926" at="230,52,231,22" concept="7" />
-      <node id="542153281319956640" at="235,54,236,317" concept="6" />
-      <node id="542153281319956422" at="236,317,237,69" concept="2" />
-      <node id="542153281319934862" at="246,66,247,29" concept="7" />
-      <node id="1108339487640189080" at="251,92,252,211" concept="7" />
-      <node id="1108339487640189080" at="257,98,258,46" concept="6" />
-      <node id="1108339487640189080" at="258,46,259,72" concept="6" />
-      <node id="1108339487640189080" at="259,72,260,0" concept="8" />
-      <node id="1108339487640189080" at="260,0,261,304" concept="7" />
-      <node id="7429591467343814401" at="266,63,267,46" concept="7" />
-      <node id="1108339487640189080" at="64,0,67,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
-      <node id="1108339487640189080" at="91,0,94,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
-      <node id="1108339487640189080" at="128,0,131,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
-      <node id="1108339487640189080" at="167,0,170,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
-      <node id="1108339487640189080" at="196,0,199,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
-      <node id="1108339487640189080" at="224,0,227,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
-      <node id="7429591467343814401" at="266,0,269,0" concept="9" trace="eq_supj5f_a0a0a7#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="1108339487640189080" at="36,0,40,0" concept="5" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
-      <node id="1108339487640189080" at="56,0,60,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
-      <node id="1108339487640189080" at="74,0,78,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
-      <node id="1108339487640189080" at="83,0,87,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
-      <node id="1108339487640189080" at="101,0,105,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
-      <node id="1108339487640189080" at="110,0,114,0" concept="5" trace="isApplicable#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Z" />
-      <node id="1108339487640189080" at="115,0,119,0" concept="5" trace="getParts#()Ljava/util/List;" />
-      <node id="1108339487640189080" at="120,0,124,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
-      <node id="1108339487640189080" at="149,0,153,0" concept="5" trace="getText#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/lang/String;" />
-      <node id="1108339487640189080" at="154,0,158,0" concept="5" trace="getParts#()Ljava/util/List;" />
-      <node id="1108339487640189080" at="159,0,163,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
-      <node id="1108339487640189080" at="188,0,192,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
-      <node id="1108339487640189080" at="216,0,220,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
-      <node id="1108339487640189080" at="245,0,249,0" concept="5" trace="getText#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/lang/String;" />
-      <node id="1108339487640189080" at="250,0,254,0" concept="5" trace="getParts#()Ljava/util/List;" />
-      <node id="1108339487640189080" at="68,0,73,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1108339487640189080" at="95,0,100,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1108339487640189080" at="132,0,137,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1108339487640189080" at="138,0,143,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
-      <node id="1108339487640189080" at="171,0,176,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1108339487640189080" at="200,0,205,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1108339487640189080" at="206,0,211,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
-      <node id="1108339487640189080" at="228,0,233,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1108339487640189080" at="234,0,239,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
-      <node id="1108339487640189080" at="177,0,183,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
-      <node id="1108339487640189080" at="44,156,51,5" concept="4" />
-      <node id="1108339487640189080" at="255,0,263,0" concept="5" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/MenuLookup;" />
-      <node id="1108339487640189080" at="41,0,54,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
-      <scope id="1108339487640189080" at="37,67,38,63" />
-      <scope id="1108339487640189080" at="57,84,58,100" />
-      <scope id="1108339487640189080" at="64,55,65,27" />
-      <scope id="1108339487640189093" at="70,50,71,30" />
-      <scope id="1108339487640189095" at="75,52,76,291" />
-      <scope id="1108339487640189080" at="84,84,85,100" />
-      <scope id="1108339487640189080" at="91,55,92,27" />
-      <scope id="1207648166366217716" at="97,50,98,27" />
-      <scope id="1207648166366217720" at="102,52,103,295" />
-      <scope id="6516520003788550954" at="111,72,112,324" />
-      <scope id="1108339487640189080" at="116,92,117,204" />
-      <scope id="1108339487640189080" at="121,86,122,142" />
-      <scope id="1108339487640189080" at="128,57,129,29" />
-      <scope id="1207648166366225095" at="134,52,135,36" />
-      <scope id="2468431357019898088" at="150,66,151,28" />
-      <scope id="1108339487640189080" at="155,92,156,442" />
-      <scope id="1108339487640189080" at="160,86,161,144" />
-      <scope id="1108339487640189080" at="167,57,168,29" />
-      <scope id="542153281319936231" at="173,52,174,26" />
-      <scope id="1108339487640189080" at="189,86,190,144" />
-      <scope id="1108339487640189080" at="196,57,197,29" />
-      <scope id="542153281319936765" at="202,52,203,25" />
-      <scope id="1108339487640189080" at="217,86,218,144" />
-      <scope id="1108339487640189080" at="224,57,225,29" />
-      <scope id="542153281319936925" at="230,52,231,22" />
-      <scope id="2468431357019900973" at="246,66,247,29" />
-      <scope id="1108339487640189080" at="251,92,252,211" />
-      <scope id="7429591467343814401" at="266,63,267,46" />
-      <scope id="1207648166366225099" at="139,54,141,69">
+      <node id="1108339487640189080" at="34,0,35,0" concept="3" trace="myLocations" />
+      <node id="1108339487640189080" at="36,67,37,63" concept="7" />
+      <node id="1108339487640189080" at="42,124,43,156" concept="6" />
+      <node id="1108339487640189080" at="44,135,45,93" concept="2" />
+      <node id="1108339487640189080" at="45,93,46,93" concept="2" />
+      <node id="1108339487640189080" at="46,93,47,92" concept="2" />
+      <node id="1108339487640189080" at="47,92,48,94" concept="2" />
+      <node id="1108339487640189080" at="48,94,49,94" concept="2" />
+      <node id="1108339487640189080" at="50,5,51,18" concept="7" />
+      <node id="1108339487640189080" at="56,84,57,100" concept="7" />
+      <node id="1108339487640189080" at="61,0,62,0" concept="3" trace="_context" />
+      <node id="1108339487640189080" at="63,55,64,27" concept="2" />
+      <node id="1108339487640189175" at="69,50,70,30" concept="7" />
+      <node id="1108339487640189679" at="74,52,75,291" concept="2" />
+      <node id="1108339487640189080" at="83,84,84,100" concept="7" />
+      <node id="1108339487640189080" at="88,0,89,0" concept="3" trace="_context" />
+      <node id="1108339487640189080" at="90,55,91,27" concept="2" />
+      <node id="1207648166366217833" at="96,50,97,27" concept="7" />
+      <node id="1207648166366218223" at="101,52,102,295" concept="2" />
+      <node id="6516520003788551497" at="110,72,111,324" concept="7" />
+      <node id="1108339487640189080" at="115,92,116,204" concept="7" />
+      <node id="1108339487640189080" at="120,86,121,142" concept="7" />
+      <node id="1108339487640189080" at="125,0,126,0" concept="3" trace="_context" />
+      <node id="1108339487640189080" at="127,57,128,29" concept="2" />
+      <node id="1207648166366225235" at="133,52,134,36" concept="7" />
+      <node id="542153281320168013" at="138,54,139,323" concept="6" />
+      <node id="1207648166366279290" at="139,323,140,69" concept="2" />
+      <node id="542153281319935853" at="149,66,150,28" concept="7" />
+      <node id="1108339487640189080" at="154,92,155,442" concept="7" />
+      <node id="1108339487640189080" at="159,86,160,144" concept="7" />
+      <node id="1108339487640189080" at="164,0,165,0" concept="3" trace="_context" />
+      <node id="1108339487640189080" at="166,57,167,29" concept="2" />
+      <node id="542153281319936316" at="172,52,173,26" concept="7" />
+      <node id="542153281319955888" at="177,54,178,312" concept="6" />
+      <node id="542153281319955714" at="178,312,179,69" concept="2" />
+      <node id="542153281319955700" at="179,69,180,0" concept="8" />
+      <node id="1108339487640189080" at="188,86,189,144" concept="7" />
+      <node id="1108339487640189080" at="193,0,194,0" concept="3" trace="_context" />
+      <node id="1108339487640189080" at="195,57,196,29" concept="2" />
+      <node id="542153281319936766" at="201,52,202,25" concept="7" />
+      <node id="542153281319956899" at="206,54,207,311" concept="6" />
+      <node id="542153281319956201" at="207,311,208,69" concept="2" />
+      <node id="1108339487640189080" at="216,86,217,144" concept="7" />
+      <node id="1108339487640189080" at="221,0,222,0" concept="3" trace="_context" />
+      <node id="1108339487640189080" at="223,57,224,29" concept="2" />
+      <node id="542153281319936926" at="229,52,230,22" concept="7" />
+      <node id="542153281319956640" at="234,54,235,317" concept="6" />
+      <node id="542153281319956422" at="235,317,236,69" concept="2" />
+      <node id="542153281319934862" at="245,66,246,29" concept="7" />
+      <node id="1108339487640189080" at="250,92,251,211" concept="7" />
+      <node id="1108339487640189080" at="256,92,257,46" concept="6" />
+      <node id="1108339487640189080" at="257,46,258,72" concept="6" />
+      <node id="1108339487640189080" at="258,72,259,0" concept="8" />
+      <node id="1108339487640189080" at="259,0,260,304" concept="7" />
+      <node id="7429591467343814401" at="265,63,266,46" concept="7" />
+      <node id="1108339487640189080" at="63,0,66,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
+      <node id="1108339487640189080" at="90,0,93,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
+      <node id="1108339487640189080" at="127,0,130,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
+      <node id="1108339487640189080" at="166,0,169,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
+      <node id="1108339487640189080" at="195,0,198,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
+      <node id="1108339487640189080" at="223,0,226,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
+      <node id="7429591467343814401" at="265,0,268,0" concept="9" trace="eq_supj5f_a0a0a7#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="1108339487640189080" at="35,0,39,0" concept="5" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
+      <node id="1108339487640189080" at="55,0,59,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
+      <node id="1108339487640189080" at="73,0,77,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
+      <node id="1108339487640189080" at="82,0,86,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
+      <node id="1108339487640189080" at="100,0,104,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
+      <node id="1108339487640189080" at="109,0,113,0" concept="5" trace="isApplicable#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Z" />
+      <node id="1108339487640189080" at="114,0,118,0" concept="5" trace="getParts#()Ljava/util/List;" />
+      <node id="1108339487640189080" at="119,0,123,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
+      <node id="1108339487640189080" at="148,0,152,0" concept="5" trace="getText#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/lang/String;" />
+      <node id="1108339487640189080" at="153,0,157,0" concept="5" trace="getParts#()Ljava/util/List;" />
+      <node id="1108339487640189080" at="158,0,162,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
+      <node id="1108339487640189080" at="187,0,191,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
+      <node id="1108339487640189080" at="215,0,219,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
+      <node id="1108339487640189080" at="244,0,248,0" concept="5" trace="getText#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/lang/String;" />
+      <node id="1108339487640189080" at="249,0,253,0" concept="5" trace="getParts#()Ljava/util/List;" />
+      <node id="1108339487640189080" at="67,0,72,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1108339487640189080" at="94,0,99,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1108339487640189080" at="131,0,136,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1108339487640189080" at="137,0,142,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
+      <node id="1108339487640189080" at="170,0,175,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1108339487640189080" at="199,0,204,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1108339487640189080" at="205,0,210,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
+      <node id="1108339487640189080" at="227,0,232,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1108339487640189080" at="233,0,238,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
+      <node id="1108339487640189080" at="176,0,182,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
+      <node id="1108339487640189080" at="43,156,50,5" concept="4" />
+      <node id="1108339487640189080" at="254,0,262,0" concept="5" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuLookup;" />
+      <node id="1108339487640189080" at="40,0,53,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
+      <scope id="1108339487640189080" at="36,67,37,63" />
+      <scope id="1108339487640189080" at="56,84,57,100" />
+      <scope id="1108339487640189080" at="63,55,64,27" />
+      <scope id="1108339487640189093" at="69,50,70,30" />
+      <scope id="1108339487640189095" at="74,52,75,291" />
+      <scope id="1108339487640189080" at="83,84,84,100" />
+      <scope id="1108339487640189080" at="90,55,91,27" />
+      <scope id="1207648166366217716" at="96,50,97,27" />
+      <scope id="1207648166366217720" at="101,52,102,295" />
+      <scope id="6516520003788550954" at="110,72,111,324" />
+      <scope id="1108339487640189080" at="115,92,116,204" />
+      <scope id="1108339487640189080" at="120,86,121,142" />
+      <scope id="1108339487640189080" at="127,57,128,29" />
+      <scope id="1207648166366225095" at="133,52,134,36" />
+      <scope id="2468431357019898088" at="149,66,150,28" />
+      <scope id="1108339487640189080" at="154,92,155,442" />
+      <scope id="1108339487640189080" at="159,86,160,144" />
+      <scope id="1108339487640189080" at="166,57,167,29" />
+      <scope id="542153281319936231" at="172,52,173,26" />
+      <scope id="1108339487640189080" at="188,86,189,144" />
+      <scope id="1108339487640189080" at="195,57,196,29" />
+      <scope id="542153281319936765" at="201,52,202,25" />
+      <scope id="1108339487640189080" at="216,86,217,144" />
+      <scope id="1108339487640189080" at="223,57,224,29" />
+      <scope id="542153281319936925" at="229,52,230,22" />
+      <scope id="2468431357019900973" at="245,66,246,29" />
+      <scope id="1108339487640189080" at="250,92,251,211" />
+      <scope id="7429591467343814401" at="265,63,266,46" />
+      <scope id="1207648166366225099" at="138,54,140,69">
         <var name="inserted" id="542153281320168014" />
       </scope>
-      <scope id="542153281319936769" at="207,54,209,69">
+      <scope id="542153281319936769" at="206,54,208,69">
         <var name="inserted" id="542153281319956900" />
       </scope>
-      <scope id="542153281319936929" at="235,54,237,69">
+      <scope id="542153281319936929" at="234,54,236,69">
         <var name="inserted" id="542153281319956641" />
       </scope>
-      <scope id="1108339487640189080" at="64,0,67,0">
+      <scope id="1108339487640189080" at="63,0,66,0">
         <var name="context" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="91,0,94,0">
+      <scope id="1108339487640189080" at="90,0,93,0">
         <var name="context" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="128,0,131,0">
+      <scope id="1108339487640189080" at="127,0,130,0">
         <var name="context" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="167,0,170,0">
+      <scope id="1108339487640189080" at="166,0,169,0">
         <var name="context" id="1108339487640189080" />
       </scope>
-      <scope id="542153281319936233" at="178,54,181,0">
+      <scope id="542153281319936233" at="177,54,180,0">
         <var name="inserted" id="542153281319955889" />
       </scope>
-      <scope id="1108339487640189080" at="196,0,199,0">
+      <scope id="1108339487640189080" at="195,0,198,0">
         <var name="context" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="224,0,227,0">
+      <scope id="1108339487640189080" at="223,0,226,0">
         <var name="context" id="1108339487640189080" />
       </scope>
-      <scope id="7429591467343814401" at="266,0,269,0">
+      <scope id="7429591467343814401" at="265,0,268,0">
         <var name="a" id="7429591467343814401" />
         <var name="b" id="7429591467343814401" />
       </scope>
-      <scope id="1108339487640189080" at="36,0,40,0">
+      <scope id="1108339487640189080" at="35,0,39,0">
         <var name="location" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="56,0,60,0">
+      <scope id="1108339487640189080" at="55,0,59,0">
         <var name="context" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="74,0,78,0">
+      <scope id="1108339487640189080" at="73,0,77,0">
         <var name="pattern" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="83,0,87,0">
+      <scope id="1108339487640189080" at="82,0,86,0">
         <var name="context" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="101,0,105,0">
+      <scope id="1108339487640189080" at="100,0,104,0">
         <var name="pattern" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="110,0,114,0">
+      <scope id="1108339487640189080" at="109,0,113,0">
         <var name="_context" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="115,0,119,0" />
-      <scope id="1108339487640189080" at="120,0,124,0">
+      <scope id="1108339487640189080" at="114,0,118,0" />
+      <scope id="1108339487640189080" at="119,0,123,0">
         <var name="context" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="149,0,153,0">
+      <scope id="1108339487640189080" at="148,0,152,0">
         <var name="_context" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="154,0,158,0" />
-      <scope id="1108339487640189080" at="159,0,163,0">
+      <scope id="1108339487640189080" at="153,0,157,0" />
+      <scope id="1108339487640189080" at="158,0,162,0">
         <var name="context" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="188,0,192,0">
+      <scope id="1108339487640189080" at="187,0,191,0">
         <var name="context" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="216,0,220,0">
+      <scope id="1108339487640189080" at="215,0,219,0">
         <var name="context" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="245,0,249,0">
+      <scope id="1108339487640189080" at="244,0,248,0">
         <var name="_context" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="250,0,254,0" />
-      <scope id="1108339487640189080" at="257,98,261,304">
+      <scope id="1108339487640189080" at="249,0,253,0" />
+      <scope id="1108339487640189080" at="256,92,260,304">
         <var name="editorContext" id="1108339487640189080" />
         <var name="node" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="45,135,50,94" />
-      <scope id="1108339487640189080" at="68,0,73,0">
+      <scope id="1108339487640189080" at="44,135,49,94" />
+      <scope id="1108339487640189080" at="67,0,72,0">
         <var name="pattern" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="95,0,100,0">
+      <scope id="1108339487640189080" at="94,0,99,0">
         <var name="pattern" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="132,0,137,0">
+      <scope id="1108339487640189080" at="131,0,136,0">
         <var name="pattern" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="138,0,143,0">
+      <scope id="1108339487640189080" at="137,0,142,0">
         <var name="pattern" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="171,0,176,0">
+      <scope id="1108339487640189080" at="170,0,175,0">
         <var name="pattern" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="200,0,205,0">
+      <scope id="1108339487640189080" at="199,0,204,0">
         <var name="pattern" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="206,0,211,0">
+      <scope id="1108339487640189080" at="205,0,210,0">
         <var name="pattern" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="228,0,233,0">
+      <scope id="1108339487640189080" at="227,0,232,0">
         <var name="pattern" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="234,0,239,0">
+      <scope id="1108339487640189080" at="233,0,238,0">
         <var name="pattern" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="177,0,183,0">
+      <scope id="1108339487640189080" at="176,0,182,0">
         <var name="pattern" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="255,0,263,0">
+      <scope id="1108339487640189080" at="254,0,262,0">
         <var name="_context" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="43,124,52,18">
+      <scope id="1108339487640189080" at="42,124,51,18">
         <var name="result" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="41,0,54,0">
+      <scope id="1108339487640189080" at="40,0,53,0">
         <var name="_context" id="1108339487640189080" />
       </scope>
-      <unit id="1108339487640189080" at="254,0,265,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_SubMenu_supj5f_e0$TransformationMenuPart_IncludeMenu_supj5f_a4a" />
-      <unit id="1108339487640189080" at="61,0,81,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_Action_supj5f_a0$Item" />
-      <unit id="1108339487640189080" at="88,0,108,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_Action_supj5f_b0$Item" />
-      <unit id="1108339487640189080" at="125,0,146,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_Group_supj5f_c0$TransformationMenuPart_Action_supj5f_a2a$Item" />
-      <unit id="1108339487640189080" at="193,0,214,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_SubMenu_supj5f_d0$TransformationMenuPart_Action_supj5f_b3a$Item" />
-      <unit id="1108339487640189080" at="221,0,242,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_SubMenu_supj5f_d0$TransformationMenuPart_Action_supj5f_c3a$Item" />
-      <unit id="1108339487640189080" at="164,0,186,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_SubMenu_supj5f_d0$TransformationMenuPart_Action_supj5f_a3a$Item" />
-      <unit id="1108339487640189080" at="244,0,266,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_SubMenu_supj5f_e0" />
-      <unit id="1108339487640189080" at="55,0,82,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_Action_supj5f_a0" />
-      <unit id="1108339487640189080" at="82,0,109,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_Action_supj5f_b0" />
-      <unit id="1108339487640189080" at="119,0,147,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_Group_supj5f_c0$TransformationMenuPart_Action_supj5f_a2a" />
-      <unit id="1108339487640189080" at="187,0,215,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_SubMenu_supj5f_d0$TransformationMenuPart_Action_supj5f_b3a" />
-      <unit id="1108339487640189080" at="215,0,243,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_SubMenu_supj5f_d0$TransformationMenuPart_Action_supj5f_c3a" />
-      <unit id="1108339487640189080" at="158,0,187,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_SubMenu_supj5f_d0$TransformationMenuPart_Action_supj5f_a3a" />
-      <unit id="1108339487640189080" at="109,0,148,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_Group_supj5f_c0" />
-      <unit id="1108339487640189080" at="148,0,244,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_SubMenu_supj5f_d0" />
-      <unit id="1108339487640189080" at="34,0,270,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu" />
+      <unit id="1108339487640189080" at="253,0,264,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_SubMenu_supj5f_e0$TransformationMenuPart_IncludeMenu_supj5f_a4a" />
+      <unit id="1108339487640189080" at="60,0,80,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_Action_supj5f_a0$Item" />
+      <unit id="1108339487640189080" at="87,0,107,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_Action_supj5f_b0$Item" />
+      <unit id="1108339487640189080" at="124,0,145,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_Group_supj5f_c0$TransformationMenuPart_Action_supj5f_a2a$Item" />
+      <unit id="1108339487640189080" at="192,0,213,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_SubMenu_supj5f_d0$TransformationMenuPart_Action_supj5f_b3a$Item" />
+      <unit id="1108339487640189080" at="220,0,241,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_SubMenu_supj5f_d0$TransformationMenuPart_Action_supj5f_c3a$Item" />
+      <unit id="1108339487640189080" at="163,0,185,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_SubMenu_supj5f_d0$TransformationMenuPart_Action_supj5f_a3a$Item" />
+      <unit id="1108339487640189080" at="243,0,265,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_SubMenu_supj5f_e0" />
+      <unit id="1108339487640189080" at="54,0,81,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_Action_supj5f_a0" />
+      <unit id="1108339487640189080" at="81,0,108,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_Action_supj5f_b0" />
+      <unit id="1108339487640189080" at="118,0,146,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_Group_supj5f_c0$TransformationMenuPart_Action_supj5f_a2a" />
+      <unit id="1108339487640189080" at="186,0,214,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_SubMenu_supj5f_d0$TransformationMenuPart_Action_supj5f_b3a" />
+      <unit id="1108339487640189080" at="214,0,242,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_SubMenu_supj5f_d0$TransformationMenuPart_Action_supj5f_c3a" />
+      <unit id="1108339487640189080" at="157,0,186,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_SubMenu_supj5f_d0$TransformationMenuPart_Action_supj5f_a3a" />
+      <unit id="1108339487640189080" at="108,0,147,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_Group_supj5f_c0" />
+      <unit id="1108339487640189080" at="147,0,243,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu$TransformationMenuPart_SubMenu_supj5f_d0" />
+      <unit id="1108339487640189080" at="33,0,269,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_TransformationMenu" />
     </file>
   </root>
   <root nodeRef="r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)/1741258697587172900">

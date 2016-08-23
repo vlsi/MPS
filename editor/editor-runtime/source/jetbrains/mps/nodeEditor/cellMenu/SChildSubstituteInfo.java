@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -52,9 +53,10 @@ public class SChildSubstituteInfo extends AbstractSubstituteInfo implements Defa
     myCurrentChild = currentChild;
   }
 
+  @NotNull
   @Override
-  protected TransformationMenuContext createTransformationContext() {
-    return DefaultTransformationMenuContext.createInitialContextForCell(getEditorCell(), MenuLocations.SUBSTITUTE);
+  protected String getMenuLocation() {
+    return MenuLocations.SUBSTITUTE;
   }
 
   @Override

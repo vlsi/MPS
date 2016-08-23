@@ -20,10 +20,13 @@ import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collection;
 import java.util.List;
 
 public abstract class IncludeTransformationMenuTransformationMenuPart implements TransformationMenuPart {
@@ -43,7 +46,7 @@ public abstract class IncludeTransformationMenuTransformationMenuPart implements
   }
 
   @Nullable
-  protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext context) {
+  protected TransformationMenuLookup getMenuLookup(TransformationMenuContext context) {
     return null;
   }
 

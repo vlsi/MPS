@@ -66,9 +66,11 @@ public abstract class DefaultMenuLookup<T extends Menu> implements MenuLookup<T>
   public Collection<T> lookup(@NotNull Collection<SLanguage> usedLanguages) {
     List<T> conceptMenu = new ArrayList<>();
     conceptMenu.addAll(getForConcept(usedLanguages));
+
     if (usedLanguages.contains(myConcept.getLanguage()) && conceptMenu.stream().allMatch(Menu::isContribution)) {
       conceptMenu.add(0, createImplicitMenu());
     }
+
     return conceptMenu;
   }
 

@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.menus;
 
-import jetbrains.mps.openapi.editor.descriptor.Menu;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
@@ -27,19 +25,19 @@ import java.util.List;
 /**
  * Wraps a {@link MenuItemFactory} and returns an empty list of items if {@link #createItems} is called with the same parameters several times.
  */
-public class RecursionSafeMenuItemFactory<ItemT, ContextT, MenuT extends Menu<ItemT, ContextT>> implements MenuItemFactory<ItemT, ContextT, MenuT> {
-  private static final Logger LOG = Logger.getLogger(DefaultMenuItemFactory.class);
+public class RecursionSafeMenuItemFactory<ItemT, ContextT, MenuLookupT> implements MenuItemFactory<ItemT, ContextT, MenuLookupT> {
+  private static final Logger LOG = Logger.getLogger(RecursionSafeMenuItemFactory.class);
   private final ArrayDeque<Key> myKeyStack = new ArrayDeque<>();
-  private final MenuItemFactory<ItemT, ContextT, MenuT> myFactory;
+  private final MenuItemFactory<ItemT, ContextT, MenuLookupT> myFactory;
 
-  public RecursionSafeMenuItemFactory(MenuItemFactory<ItemT, ContextT, MenuT> factory) {
+  public RecursionSafeMenuItemFactory(MenuItemFactory<ItemT, ContextT, MenuLookupT> factory) {
     myFactory = factory;
   }
 
   @Override
   @NotNull
-  public List<ItemT> createItems(@NotNull ContextT context, @NotNull MenuLookup<? extends MenuT> menuLookup) {
-    Key<ContextT> key = new Key<>(menuLookup, context);
+  public List<ItemT> createItems(@NotNull ContextT context, @NotNull MenuLookupT menuLookup) {
+    Key<ContextT, MenuLookupT> key = new Key<>(context, menuLookup);
 
     if (myKeyStack.contains(key)) {
       LOG.error("Menu for key '" + key + "' requested more than once, returning empty menu to prevent endless recursion");
@@ -56,13 +54,13 @@ public class RecursionSafeMenuItemFactory<ItemT, ContextT, MenuT extends Menu<It
     }
   }
 
-  private static class Key<ContextT> {
-    @NotNull
-    private final MenuLookup<?> myLookup;
+  private static class Key<ContextT, MenuLookupT> {
     @NotNull
     private final ContextT myContext;
+    @NotNull
+    private final MenuLookupT myLookup;
 
-    public Key(@NotNull MenuLookup<?> lookup, @NotNull ContextT context) {
+    public Key(@NotNull ContextT context, @NotNull MenuLookupT lookup) {
       myLookup = lookup;
       myContext = context;
     }
@@ -76,22 +74,22 @@ public class RecursionSafeMenuItemFactory<ItemT, ContextT, MenuT extends Menu<It
         return false;
       }
 
-      Key<ContextT> key = (Key<ContextT>) o;
+      Key<ContextT, MenuLookupT> key = (Key<ContextT, MenuLookupT>) o;
 
-      return myLookup.equals(key.myLookup) && myContext.equals(key.myContext);
+      return myContext.equals(key.myContext) && myLookup.equals(key.myLookup);
     }
 
     @Override
     public int hashCode() {
-      int result = myLookup.hashCode();
-      result = 31 * result + myContext.hashCode();
+      int result = myContext.hashCode();
+      result = 31 * result + myLookup.hashCode();
       return result;
     }
 
     @Override
     public String toString() {
       return "(lookup=" + myLookup +
-          ", node=" + myContext + ')';
+          ", context=" + myContext + ')';
     }
   }
 }

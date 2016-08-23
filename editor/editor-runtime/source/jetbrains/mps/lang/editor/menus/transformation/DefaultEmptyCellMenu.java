@@ -32,10 +32,7 @@ import java.util.List;
  */
 public class DefaultEmptyCellMenu extends TransformationMenuBase {
 
-  private final SContainmentLink myLink;
-
-  public DefaultEmptyCellMenu(SContainmentLink link) {
-    myLink = link;
+  public DefaultEmptyCellMenu() {
   }
 
   @NotNull
@@ -45,17 +42,17 @@ public class DefaultEmptyCellMenu extends TransformationMenuBase {
       return Collections.singletonList(new IncludeSubstituteMenuTransformationMenuPart() {
         @Override
         protected SNode getParentNode(TransformationMenuContext context) {
-          return context.getNode();
+          return context.getNodeLocation().getParent();
         }
 
         @Override
         protected SContainmentLink getContainmentLink(TransformationMenuContext context) {
-          return myLink;
+          return context.getNodeLocation().getContainmentLink();
         }
 
         @Override
         protected SNode getCurrentChild(TransformationMenuContext context) {
-          return null;
+          return context.getNodeLocation().getChild();
         }
       });
     }
