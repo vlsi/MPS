@@ -21,7 +21,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 
 public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -157,8 +156,6 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_valueType");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x97038071a3bfa40L, 0x9a1514043fbc1aL, "valueType")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -204,8 +201,6 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_canWrap");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x97038071a3bfa40L, 0x9a1514043ecbdfL, "canWrap")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -251,8 +246,6 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_getPresentation");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x97038071a3bfa40L, 0x9a1514043ecc32L, "getPresentation")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -298,8 +291,6 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_getWatchables");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x97038071a3bfa40L, 0x9a1514043ecc33L, "getWatchables")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

@@ -18,7 +18,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -137,8 +136,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_richChild");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x51568a5db0cc3a79L, 0x51568a5db0cc69beL, "richChild")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -231,8 +228,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_compactChild");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x51568a5db0cc3a79L, 0x51568a5db0ccd482L, "compactChild")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -323,8 +318,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_conditionallyProjectedChild");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x51568a5db0cc3a79L, 0x1b06bb95522154c8L, "conditionallyProjectedChild")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -451,8 +444,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_conditionallyRichOrCompactChild");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x51568a5db0cc3a79L, 0x1b06bb95522154c9L, "conditionallyRichOrCompactChild")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

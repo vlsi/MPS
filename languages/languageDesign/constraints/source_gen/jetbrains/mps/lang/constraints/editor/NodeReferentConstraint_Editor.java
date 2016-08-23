@@ -29,7 +29,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -210,8 +209,6 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_referentSetHandler");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x10ed4593a89L, "referentSetHandler")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -286,8 +283,6 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_keepsReference");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x7a8b97cf0435231fL, "keepsReference")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -358,8 +353,6 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_searchScopeFactory");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x10b7319e797L, "searchScopeFactory")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -432,8 +425,6 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_validator");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x30502bd604b5fe45L, "validator")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -489,8 +480,6 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_presentation");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x36367902116a44c4L, "presentation")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

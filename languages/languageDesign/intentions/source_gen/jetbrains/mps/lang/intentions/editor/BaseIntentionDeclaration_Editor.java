@@ -31,7 +31,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 
 public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -317,8 +316,6 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_childFilterFunction");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3cd0aaL, "childFilterFunction")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -358,8 +355,6 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_descriptionFunction");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3cd0a9L, "descriptionFunction")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -402,8 +397,6 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_isApplicableFunction");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3cd0abL, "isApplicableFunction")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -446,8 +439,6 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_executeFunction");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3e6813L, "executeFunction")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

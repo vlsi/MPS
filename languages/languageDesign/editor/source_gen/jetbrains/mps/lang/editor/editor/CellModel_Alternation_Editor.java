@@ -21,7 +21,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -128,8 +127,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_ifTrueCellModel");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd76638039L, "ifTrueCellModel")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -187,8 +184,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_ifFalseCellModel");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd7663bd83L, "ifFalseCellModel")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -265,8 +260,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_ifTrueCellModel");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd76638039L, "ifTrueCellModel")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -324,8 +317,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_ifFalseCellModel");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd7663bd83L, "ifFalseCellModel")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -473,8 +464,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_alternationCondition");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0x10ace10f2d6L, "alternationCondition")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
