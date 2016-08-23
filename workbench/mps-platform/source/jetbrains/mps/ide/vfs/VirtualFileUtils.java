@@ -20,6 +20,7 @@ import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.util.Processor;
+import com.intellij.util.containers.Convertor;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
@@ -119,11 +120,15 @@ public final class VirtualFileUtils {
     VfsUtilCore.processFilesRecursively(file, new Processor<VirtualFile>() {
       @Override
       public boolean process(VirtualFile virtualFile) {
-        virtualFile.getChildren(); // for directories to be included into the vfs snapshot
+        addFileToVFSSnapshot(virtualFile);
         virtualFile.refresh(false, false);
         return true;
       }
-    });
+
+      private void addFileToVFSSnapshot(@NotNull VirtualFile file) {
+        file.getChildren(); // for directories to be included into the vfs snapshot
+      }
+    }, directory -> directory.exists());
   }
 
   /**
