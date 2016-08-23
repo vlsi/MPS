@@ -35,6 +35,7 @@ import jetbrains.mps.project.validation.LanguageMissingError;
 import jetbrains.mps.project.validation.ConceptMissingError;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.project.validation.ConceptFeatureMissingError;
+import jetbrains.mps.project.validation.BrokenReferenceError;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.classloading.ModuleClassLoaderSupport;
@@ -126,11 +127,11 @@ __switch__:
     }).take(maxErrors).toListSequence();
   }
 
-  public static boolean haveProblems(Iterable<SModule> modules, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback) {
-    return CollectionSequence.fromCollection(getProblems(modules, progressCallback, 1)).isNotEmpty();
+  public static boolean haveProblems(Iterable<SModule> modules, boolean includeBrokenReferences, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback) {
+    return CollectionSequence.fromCollection(getProblems(modules, includeBrokenReferences, progressCallback, 1)).isNotEmpty();
   }
 
-  public static Collection<Problem> getProblems(Iterable<SModule> modules, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback, int maxErrors) {
+  public static Collection<Problem> getProblems(Iterable<SModule> modules, final boolean includeBrokenReferences, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback, int maxErrors) {
     final Wrappers._int _maxErrors = new Wrappers._int(maxErrors);
     final List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
 
@@ -167,7 +168,7 @@ __switch__:
     int processedModels = 0;
 
     // find missing concepts, when language's not missing 
-    // find missing concept features when concept's not mising 
+    // find missing concept features when concept's not missing 
     for (SModel model : Sequence.fromIterable(models)) {
       ValidationUtil.validateModelContent(model.getRootNodes(), new Processor<ValidationProblem>() {
         public boolean process(ValidationProblem vp) {
@@ -198,8 +199,12 @@ __switch__:
             }
             SetSequence.fromSet(missingFeatures).addElement(err.getFeature());
             ListSequence.fromList(result).addElement(new ConceptFeatureMissingProblem(err.getFeature(), err.getNode(), err.getMessage()));
+          } else if (includeBrokenReferences && vp instanceof BrokenReferenceError) {
+            BrokenReferenceError err = (BrokenReferenceError) vp;
+            ListSequence.fromList(result).addElement(new BrokenReferenceProblem(err.getReference(), err.getMessage()));
           } else {
             // ignore other errors 
+            return true;
           }
 
           _maxErrors.value--;

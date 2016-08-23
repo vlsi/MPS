@@ -44,9 +44,10 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
         return it.getOptions();
       }
     }).toListSequence());
-    MigrationsProgressWizardStep migrationsProgressWizardStep = new MigrationsProgressWizardStep(project, initialStep, manager, errorContainer);
+    MigrationsProgressWizardStep migrationsProgressWizardStep = new MigrationsProgressWizardStep(project, initialStep, manager, errorContainer, true);
     MigrationErrorWizardStep migrationErrorWizardStep = new MigrationErrorWizardStep(project, errorContainer);
-    return ListSequence.fromListAndArray(new ArrayList<MigrationWizardStep>(), initialStep, migrationsProgressWizardStep, migrationErrorWizardStep);
+    MigrationsProgressWizardStep fallBackProgressStep = new MigrationsProgressWizardStep(project, initialStep, manager, errorContainer, false);
+    return ListSequence.fromListAndArray(new ArrayList<MigrationWizardStep>(), initialStep, migrationsProgressWizardStep, migrationErrorWizardStep, fallBackProgressStep);
   }
 
   @Override
@@ -57,6 +58,15 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   protected void updateStep() {
     super.updateStep();
     getCancelButton().setEnabled(((MigrationWizardStep) getCurrentStepObject()).canBeCancelled());
+    String nextLabel = ((MigrationWizardStep) getCurrentStepObject()).nextButtonLabel();
+    if (nextLabel != null) {
+      getNextButton().setText(nextLabel);
+    }
+    String cancelLabel = ((MigrationWizardStep) getCurrentStepObject()).cancelButtonLabel();
+    if (cancelLabel != null) {
+      getCancelButton().setText(cancelLabel);
+      getRootPane().setDefaultButton(getCancelButton());
+    }
   }
   @Override
   protected void doNextAction() {

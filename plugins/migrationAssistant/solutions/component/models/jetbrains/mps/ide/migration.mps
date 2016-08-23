@@ -1770,13 +1770,21 @@
                                     </node>
                                   </node>
                                   <node concept="3clFbJ" id="5EyPfg3xGai" role="3cqZAp">
+                                    <node concept="1Wc70l" id="5AcrK94KYX9" role="3clFbw">
+                                      <node concept="3clFbC" id="5AcrK94L193" role="3uHU7w">
+                                        <node concept="10Nm6u" id="5AcrK94L24X" role="3uHU7w" />
+                                        <node concept="37vLTw" id="5AcrK94L07W" role="3uHU7B">
+                                          <ref role="3cqZAo" node="2htE_P_Moh7" resolve="myErrors" />
+                                        </node>
+                                      </node>
+                                      <node concept="3fqX7Q" id="5EyPfg3xGal" role="3uHU7B">
+                                        <node concept="37vLTw" id="5EyPfg3xGam" role="3fr31v">
+                                          <ref role="3cqZAo" node="5EyPfg3xGad" resolve="finished" />
+                                        </node>
+                                      </node>
+                                    </node>
                                     <node concept="3clFbS" id="5EyPfg3xGaj" role="3clFbx">
                                       <node concept="3cpWs6" id="5EyPfg3xGak" role="3cqZAp" />
-                                    </node>
-                                    <node concept="3fqX7Q" id="5EyPfg3xGal" role="3clFbw">
-                                      <node concept="37vLTw" id="5EyPfg3xGam" role="3fr31v">
-                                        <ref role="3cqZAo" node="5EyPfg3xGad" resolve="finished" />
-                                      </node>
                                     </node>
                                   </node>
                                   <node concept="3clFbH" id="5EyPfg3xGan" role="3cqZAp" />
@@ -3743,6 +3751,9 @@
                 <node concept="37vLTw" id="44NRCusPPhD" role="37wK5m">
                   <ref role="3cqZAo" node="44NRCusPw5W" resolve="errorContainer" />
                 </node>
+                <node concept="3clFbT" id="44NRCut2nRr" role="37wK5m">
+                  <property role="3clFbU" value="true" />
+                </node>
               </node>
             </node>
           </node>
@@ -3766,6 +3777,34 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="44NRCut2rcw" role="3cqZAp">
+          <node concept="3cpWsn" id="44NRCut2rcx" role="3cpWs9">
+            <property role="TrG5h" value="fallBackProgressStep" />
+            <node concept="3uibUv" id="44NRCut2rcy" role="1tU5fm">
+              <ref role="3uigEE" to="o8ag:5SsFeroaavG" resolve="MigrationsProgressWizardStep" />
+            </node>
+            <node concept="2ShNRf" id="44NRCut2rcz" role="33vP2m">
+              <node concept="1pGfFk" id="44NRCut2rc$" role="2ShVmc">
+                <ref role="37wK5l" to="o8ag:5SsFeroaawc" resolve="MigrationsProgressWizardStep" />
+                <node concept="37vLTw" id="44NRCut2rc_" role="37wK5m">
+                  <ref role="3cqZAo" node="44NRCusPw5S" resolve="project" />
+                </node>
+                <node concept="37vLTw" id="44NRCut2rcA" role="37wK5m">
+                  <ref role="3cqZAo" node="44NRCusProt" resolve="initialStep" />
+                </node>
+                <node concept="37vLTw" id="44NRCut2rcB" role="37wK5m">
+                  <ref role="3cqZAo" node="44NRCusPw5U" resolve="manager" />
+                </node>
+                <node concept="37vLTw" id="44NRCut2rcC" role="37wK5m">
+                  <ref role="3cqZAo" node="44NRCusPw5W" resolve="errorContainer" />
+                </node>
+                <node concept="3clFbT" id="44NRCut2tUF" role="37wK5m">
+                  <property role="3clFbU" value="false" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs6" id="44NRCusP_O3" role="3cqZAp">
           <node concept="2ShNRf" id="5vPxapF1PDC" role="3cqZAk">
             <node concept="Tc6Ow" id="5vPxapF2oRU" role="2ShVmc">
@@ -3780,6 +3819,9 @@
               </node>
               <node concept="37vLTw" id="44NRCusPtZ6" role="HW$Y0">
                 <ref role="3cqZAo" node="44NRCusPtZ1" resolve="migrationErrorWizardStep" />
+              </node>
+              <node concept="37vLTw" id="44NRCut2Hmy" role="HW$Y0">
+                <ref role="3cqZAo" node="44NRCut2rcx" resolve="fallBackProgressStep" />
               </node>
             </node>
           </node>
@@ -3867,6 +3909,107 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="44NRCut1z4W" role="3cqZAp">
+          <node concept="3cpWsn" id="44NRCut1z4X" role="3cpWs9">
+            <property role="TrG5h" value="nextLabel" />
+            <node concept="17QB3L" id="44NRCut1z4U" role="1tU5fm" />
+            <node concept="2OqwBi" id="44NRCut1z4Y" role="33vP2m">
+              <node concept="1eOMI4" id="44NRCut1z4Z" role="2Oq$k0">
+                <node concept="10QFUN" id="44NRCut1z50" role="1eOMHV">
+                  <node concept="1rXfSq" id="44NRCut1z51" role="10QFUP">
+                    <ref role="37wK5l" to="uxeh:~AbstractWizard.getCurrentStepObject():com.intellij.ide.wizard.Step" resolve="getCurrentStepObject" />
+                  </node>
+                  <node concept="3uibUv" id="44NRCut1z52" role="10QFUM">
+                    <ref role="3uigEE" to="o8ag:5SsFeroaacg" resolve="MigrationWizardStep" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="44NRCut1z53" role="2OqNvi">
+                <ref role="37wK5l" to="o8ag:44NRCut1oF9" resolve="nextButtonLabel" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="44NRCut1zml" role="3cqZAp">
+          <node concept="3clFbS" id="44NRCut1zmn" role="3clFbx">
+            <node concept="3clFbF" id="44NRCut1wiT" role="3cqZAp">
+              <node concept="2OqwBi" id="44NRCut1wPB" role="3clFbG">
+                <node concept="1rXfSq" id="44NRCut1wiR" role="2Oq$k0">
+                  <ref role="37wK5l" to="uxeh:~AbstractWizard.getNextButton():javax.swing.JButton" resolve="getNextButton" />
+                </node>
+                <node concept="liA8E" id="44NRCut1yPI" role="2OqNvi">
+                  <ref role="37wK5l" to="dxuu:~AbstractButton.setText(java.lang.String):void" resolve="setText" />
+                  <node concept="37vLTw" id="44NRCut1z54" role="37wK5m">
+                    <ref role="3cqZAo" node="44NRCut1z4X" resolve="nextLabel" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="44NRCut1zQS" role="3clFbw">
+            <node concept="37vLTw" id="44NRCut1ztb" role="3uHU7B">
+              <ref role="3cqZAo" node="44NRCut1z4X" resolve="nextLabel" />
+            </node>
+            <node concept="10Nm6u" id="44NRCut1zQw" role="3uHU7w" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="7CryZcmqSrW" role="3cqZAp">
+          <node concept="3cpWsn" id="7CryZcmqSrX" role="3cpWs9">
+            <property role="TrG5h" value="cancelLabel" />
+            <node concept="17QB3L" id="7CryZcmqSrY" role="1tU5fm" />
+            <node concept="2OqwBi" id="7CryZcmqSrZ" role="33vP2m">
+              <node concept="1eOMI4" id="7CryZcmqSs0" role="2Oq$k0">
+                <node concept="10QFUN" id="7CryZcmqSs1" role="1eOMHV">
+                  <node concept="1rXfSq" id="7CryZcmqSs2" role="10QFUP">
+                    <ref role="37wK5l" to="uxeh:~AbstractWizard.getCurrentStepObject():com.intellij.ide.wizard.Step" resolve="getCurrentStepObject" />
+                  </node>
+                  <node concept="3uibUv" id="7CryZcmqSs3" role="10QFUM">
+                    <ref role="3uigEE" to="o8ag:5SsFeroaacg" resolve="MigrationWizardStep" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="7CryZcmqSs4" role="2OqNvi">
+                <ref role="37wK5l" to="o8ag:7CryZcmqESC" resolve="cancelButtonLabel" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="7CryZcmqSs5" role="3cqZAp">
+          <node concept="3clFbS" id="7CryZcmqSs6" role="3clFbx">
+            <node concept="3clFbF" id="7CryZcmqSs7" role="3cqZAp">
+              <node concept="2OqwBi" id="7CryZcmqSs8" role="3clFbG">
+                <node concept="1rXfSq" id="7CryZcmqSs9" role="2Oq$k0">
+                  <ref role="37wK5l" to="uxeh:~AbstractWizard.getCancelButton():javax.swing.JButton" resolve="getCancelButton" />
+                </node>
+                <node concept="liA8E" id="7CryZcmqSsa" role="2OqNvi">
+                  <ref role="37wK5l" to="dxuu:~AbstractButton.setText(java.lang.String):void" resolve="setText" />
+                  <node concept="37vLTw" id="7CryZcmqSsb" role="37wK5m">
+                    <ref role="3cqZAo" node="7CryZcmqSrX" resolve="cancelLabel" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="7CryZcmqVIC" role="3cqZAp">
+              <node concept="2OqwBi" id="7CryZcmqW42" role="3clFbG">
+                <node concept="1rXfSq" id="7CryZcmqVIA" role="2Oq$k0">
+                  <ref role="37wK5l" to="jkm4:~DialogWrapper.getRootPane():javax.swing.JRootPane" resolve="getRootPane" />
+                </node>
+                <node concept="liA8E" id="7CryZcmqXxs" role="2OqNvi">
+                  <ref role="37wK5l" to="dxuu:~JRootPane.setDefaultButton(javax.swing.JButton):void" resolve="setDefaultButton" />
+                  <node concept="1rXfSq" id="7CryZcmqXAh" role="37wK5m">
+                    <ref role="37wK5l" to="uxeh:~AbstractWizard.getCancelButton():javax.swing.JButton" resolve="getCancelButton" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="7CryZcmqSsc" role="3clFbw">
+            <node concept="37vLTw" id="7CryZcmqSsd" role="3uHU7B">
+              <ref role="3cqZAo" node="7CryZcmqSrX" resolve="cancelLabel" />
+            </node>
+            <node concept="10Nm6u" id="7CryZcmqSse" role="3uHU7w" />
           </node>
         </node>
       </node>
@@ -5782,6 +5925,18 @@
         </node>
         <node concept="3clFbH" id="7rAJ3yo2GgI" role="3cqZAp" />
         <node concept="3clFbJ" id="7rAJ3yo2Gjk" role="3cqZAp">
+          <node concept="9aQIb" id="6uMmfEAtiL_" role="9aQIa">
+            <node concept="3clFbS" id="6uMmfEAtiLA" role="9aQI4">
+              <node concept="3clFbF" id="6uMmfEAtiXK" role="3cqZAp">
+                <node concept="37vLTI" id="6uMmfEAtjqe" role="3clFbG">
+                  <node concept="10Nm6u" id="6uMmfEAtjy$" role="37vLTx" />
+                  <node concept="37vLTw" id="6uMmfEAtiXJ" role="37vLTJ">
+                    <ref role="3cqZAo" node="7rAJ3yo1Tz1" resolve="myMigrationTrigger" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbS" id="7rAJ3yo2Gjm" role="3clFbx">
             <node concept="3clFbF" id="7rAJ3yo1TLm" role="3cqZAp">
               <node concept="37vLTI" id="7rAJ3yo1TLo" role="3clFbG">
@@ -5807,18 +5962,6 @@
             </node>
             <node concept="37vLTw" id="7rAJ3yo2GkW" role="2ZW6bz">
               <ref role="3cqZAo" node="7rAJ3yo1TLl" resolve="migationTrigger" />
-            </node>
-          </node>
-          <node concept="9aQIb" id="6uMmfEAtiL_" role="9aQIa">
-            <node concept="3clFbS" id="6uMmfEAtiLA" role="9aQI4">
-              <node concept="3clFbF" id="6uMmfEAtiXK" role="3cqZAp">
-                <node concept="37vLTI" id="6uMmfEAtjqe" role="3clFbG">
-                  <node concept="10Nm6u" id="6uMmfEAtjy$" role="37vLTx" />
-                  <node concept="37vLTw" id="6uMmfEAtiXJ" role="37vLTJ">
-                    <ref role="3cqZAo" node="7rAJ3yo1Tz1" resolve="myMigrationTrigger" />
-                  </node>
-                </node>
-              </node>
             </node>
           </node>
         </node>
@@ -8545,6 +8688,9 @@
                       <node concept="37vLTw" id="3n7MNzOJZrc" role="37wK5m">
                         <ref role="3cqZAo" node="6Sxc5MiBujK" resolve="modules" />
                       </node>
+                      <node concept="3clFbT" id="44NRCusZFt3" role="37wK5m">
+                        <property role="3clFbU" value="true" />
+                      </node>
                       <node concept="1bVj0M" id="6JtYk_H6EcX" role="37wK5m">
                         <node concept="3clFbS" id="6JtYk_H6EcZ" role="1bW5cS" />
                         <node concept="37vLTG" id="6JtYk_H6Ehe" role="1bW2Oz">
@@ -8792,6 +8938,9 @@
                     <ref role="37wK5l" to="t99v:3n7MNzOJVMu" resolve="haveProblems" />
                     <node concept="37vLTw" id="3n7MNzOJZQZ" role="37wK5m">
                       <ref role="3cqZAo" node="6Sxc5MitX7j" resolve="modules" />
+                    </node>
+                    <node concept="3clFbT" id="44NRCusZFMw" role="37wK5m">
+                      <property role="3clFbU" value="true" />
                     </node>
                     <node concept="1bVj0M" id="6JtYk_H6Wl9" role="37wK5m">
                       <node concept="3clFbS" id="6JtYk_H6Wla" role="1bW5cS" />

@@ -124,6 +124,11 @@ public class ValidationUtil {
 
     List<SReferenceLink> refs = IterableUtil.asList(concept.getReferenceLinks());
     for (SReference r : node.getReferences()) {
+      if (r.getTargetNodeReference().resolve(node.getModel().getRepository()) == null) {
+        if (!processor.process(new BrokenReferenceError(r))) {
+          return false;
+        }
+      }
       SReferenceLink l = r.getLink();
       if (refs.contains(l)) {
         continue;

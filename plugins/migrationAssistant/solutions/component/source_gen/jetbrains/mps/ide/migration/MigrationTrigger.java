@@ -155,7 +155,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
               // final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence) 
               boolean finished = wizard.showAndGet();
               restoreTipsState();
-              if (!(finished)) {
+              if (!(finished) && myErrors == null) {
                 return;
               }
 

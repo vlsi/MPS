@@ -54,10 +54,34 @@ public class MigrationErrorWizardStep extends MigrationWizardStep {
   }
   @Override
   public Object getNextStepId() {
-    return null;
+    if (myErrorContainer.getErrorDescriptor().canIgnore()) {
+      return MigrationsProgressWizardStep.ID_fallback;
+    } else {
+      return null;
+    }
   }
   @Override
   public boolean canBeCancelled() {
-    return false;
+    if (myErrorContainer.getErrorDescriptor().canIgnore()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  @Override
+  public String nextButtonLabel() {
+    if (myErrorContainer.getErrorDescriptor().canIgnore()) {
+      return "Ignore and Proceed";
+    } else {
+      return null;
+    }
+  }
+  @Override
+  public String cancelButtonLabel() {
+    if (myErrorContainer.getErrorDescriptor().canIgnore()) {
+      return "Stop Migration";
+    } else {
+      return null;
+    }
   }
 }

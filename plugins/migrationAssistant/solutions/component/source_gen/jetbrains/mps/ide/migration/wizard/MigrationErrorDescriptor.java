@@ -16,6 +16,12 @@ public abstract class MigrationErrorDescriptor {
 
   /**
    * 
+   * @return if migrations can start despite of errors
+   */
+  public abstract boolean canIgnore();
+
+  /**
+   * 
    * @return problems to show in model checker tool
    */
   public abstract Iterable<Problem> getProblems();

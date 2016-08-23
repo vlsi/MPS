@@ -5,6 +5,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.migration.check.BrokenReferenceProblem" file="BrokenReferenceProblem.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
+    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.migration.check.ConceptFeatureMissingProblem" file="ConceptFeatureMissingProblem.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptFeature" />
@@ -60,6 +66,7 @@
     <classNode dependClassName="jetbrains.mps.classloading.ModuleClassLoaderSupport" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationComponent" />
     <classNode dependClassName="jetbrains.mps.ide.migration.check.BinaryModelProblem" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.check.BrokenReferenceProblem" />
     <classNode dependClassName="jetbrains.mps.ide.migration.check.ConceptFeatureMissingProblem" />
     <classNode dependClassName="jetbrains.mps.ide.migration.check.ConceptMissingProblem" />
     <classNode dependClassName="jetbrains.mps.ide.migration.check.DependencyProblem" />
@@ -79,6 +86,7 @@
     <classNode dependClassName="jetbrains.mps.module.ReloadableModule" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
+    <classNode dependClassName="jetbrains.mps.project.validation.BrokenReferenceError" />
     <classNode dependClassName="jetbrains.mps.project.validation.ConceptFeatureMissingError" />
     <classNode dependClassName="jetbrains.mps.project.validation.ConceptMissingError" />
     <classNode dependClassName="jetbrains.mps.project.validation.LanguageMissingError" />
@@ -121,7 +129,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />

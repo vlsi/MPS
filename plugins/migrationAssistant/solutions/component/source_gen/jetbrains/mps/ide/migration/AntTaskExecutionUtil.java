@@ -42,7 +42,7 @@ public class AntTaskExecutionUtil {
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(project);
-        ok.value = !(MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
+        ok.value = !(MigrationCheckUtil.haveProblems(modules, true, new _FunctionTypes._void_P1_E0<Double>() {
           public void invoke(Double fraction) {
           }
         }));
@@ -81,7 +81,7 @@ public class AntTaskExecutionUtil {
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(project);
-        ok.value = MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
+        ok.value = MigrationCheckUtil.haveProblems(modules, true, new _FunctionTypes._void_P1_E0<Double>() {
           public void invoke(Double fraction) {
           }
         });

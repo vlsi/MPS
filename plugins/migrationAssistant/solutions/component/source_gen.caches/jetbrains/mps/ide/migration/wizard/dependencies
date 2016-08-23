@@ -51,6 +51,7 @@
     <classNode dependClassName="javax.swing.event.HyperlinkEvent" />
     <classNode dependClassName="javax.swing.event.HyperlinkListener" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationProblemsContainer" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep" />
     <classNode extendsClassName="jetbrains.mps.ide.migration.wizard.MigrationWizardStep" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.wizard.MigrationProblemsContainer" file="MigrationProblemsContainer.java">

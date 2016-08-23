@@ -51,6 +51,12 @@ public abstract class MigrationWizardStep extends AbstractWizardStepEx {
   public boolean canBeCancelled() {
     return true;
   }
+  public String nextButtonLabel() {
+    return null;
+  }
+  public String cancelButtonLabel() {
+    return null;
+  }
   public void autostart(_FunctionTypes._void_P0_E0 later) {
     later.invoke();
   }

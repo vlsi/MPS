@@ -81,10 +81,10 @@ public class MigrationOutputUtil {
   protected static Logger LOG = LogManager.getLogger(MigrationOutputUtil.class);
   private static ModelCheckerIssue issueByProblem(Problem p) {
     Object r = p.getReason();
-    if (r instanceof jetbrains.mps.smodel.SNode) {
+    if (r instanceof SNode) {
       return new ModelCheckerIssue.NodeIssue(((SNode) r), p.getMessage(), null);
     }
-    if (r instanceof jetbrains.mps.smodel.SNode) {
+    if (r instanceof SModel) {
       return new ModelCheckerIssue.ModelIssue(((SModel) r), p.getMessage(), null);
     }
     if (r instanceof SModule) {
