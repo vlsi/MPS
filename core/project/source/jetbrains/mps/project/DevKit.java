@@ -179,6 +179,11 @@ public class DevKit extends AbstractModule {
   @Override
   public void save() {
     super.save();
+
+    if (myDescriptor.getLoadException() != null){
+      return;
+    }
+
     DevkitDescriptorPersistence.saveDevKitDescriptor(myDescriptorFile, getModuleDescriptor());
   }
 

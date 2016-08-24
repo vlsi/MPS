@@ -351,6 +351,11 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
       gen.validateDependencyVersions();
     }
     if (isReadOnly()) return;
+
+    if (myLanguageDescriptor.getLoadException() != null){
+      return;
+    }
+
     LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
   }
 
