@@ -28,6 +28,10 @@ public class MappingLabelExtractor {
     for (SNode labelEntry : ListSequence.fromList(SLinkOperations.getChildren(debugNode, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc97f1c1L, 0x35a02f6bfc9806c5L, "labels")))) {
       final String labelName = SPropertyOperations.getString(labelEntry, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, 0x35a02f6bfc9810e9L, "label"));
       for (SNode entry : ListSequence.fromList(SLinkOperations.getChildren(labelEntry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, 0x35a02f6bfc9810ebL, "entries")))) {
+        if (SPropertyOperations.getBoolean(entry, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x511a0d44c7f45537L, "isNewRoot"))) {
+          rv.addNewOutputNode(labelName, SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x35a02f6bfc9806d5L, "outputNode"))).first(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806d2L, 0x35a02f6bfc9806d3L, "node")).getNodeId());
+          continue;
+        }
         // reference to input node may not necessarily exist or resolve, 
         // for inputs from transient models we don't keep nodePtr, just NodeIdentity 
         final SNodeId inputNodeId;

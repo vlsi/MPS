@@ -36,9 +36,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.stream.Collectors;
 
 /**
  * Runtime state of mapping labels at some transformation step.
@@ -239,6 +241,13 @@ public final class GeneratorMappings {
   }
   /*package*/Map<SNode,Object> getMappings(String label) {
     return myMappingNameAndInputNodeToOutputNodeMap.get(label);
+  }
+
+  /*package*/Set<String> getConditionalRootLabels() {
+    return myConditionalRoots.stream().map(p -> p.o1).collect(Collectors.toSet());
+  }
+  /*package*/List<SNode> getConditionalRoots(String label) {
+    return myConditionalRoots.stream().filter(p -> label.equals(p.o1)).map(p -> p.o2).collect(Collectors.toList());
   }
 
   // serialization
