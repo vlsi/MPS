@@ -17,6 +17,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -39,7 +40,22 @@ public interface ITemplateGenerator {
 
   void registerMappingLabel(SNode inputNode, String mappingName, SNode outputNode);
 
-  SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName);
+  /**
+   * @param inputNode node from almost any model that may have served as an input for a generator. We tolerate null value now, indicating
+   *                  we are looking for conditional root (takes no input to create one)
+   * @param mappingName label of the transformation of interest. Null value is tolerated but would yield no result instantly.
+   * @return node created from the specified input and marked with the label.
+   */
+  @Nullable
+  SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, @Nullable String mappingName);
+
+  /**
+   * @param inputModel null is tolerated, mappings for the actual model are looked up
+   * @param mappingName label of the transformation of interest. Null value is tolerated but would yield no result instantly.
+   * @return conditional root instantiated for the supplied model
+   */
+  @Nullable
+  SNode findOutputNode(@Nullable SModel inputModel, @Nullable String mappingName);
 
   List<SNode> findAllOutputNodesByInputNodeAndMappingName(SNode inputNode, String mappingName);
 

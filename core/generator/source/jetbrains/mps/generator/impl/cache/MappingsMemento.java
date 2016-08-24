@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,24 @@
  */
 package jetbrains.mps.generator.impl.cache;
 
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 /**
+ * Persistence-friendly snapshot of mapping labels.
  * Evgeny Gryaznov, Sep 30, 2010
  */
 public class MappingsMemento {
@@ -34,6 +42,8 @@ public class MappingsMemento {
 
   /* input -> output */
   private final Map<SNodeId, Object> myCopiedOutputNodeForInputNode = new HashMap<SNodeId, Object>();
+
+  private final List<Pair<String, SNodeId>> myConditionalRoots = new ArrayList<>();
 
 
   // add functions
@@ -64,6 +74,10 @@ public class MappingsMemento {
     myCopiedOutputNodeForInputNode.put(inputNode, isUnique ? outputNode : Collections.singletonList(outputNode));
   }
 
+  public void addNewOutputNode(String mappingLabel, SNodeId outputNode) {
+    myConditionalRoots.add(new Pair<>(mappingLabel, outputNode));
+  }
+
   // getters
 
   public Map<String, Map<SNodeId, Object>> getMappingNameAndInputNodeToOutputNodeMap() {
@@ -72,6 +86,10 @@ public class MappingsMemento {
 
   public Map<SNodeId, Object> getCopiedOutputNodeForInputNode() {
     return myCopiedOutputNodeForInputNode;
+  }
+
+  public Collection<SNodeId> getNewOutputNodes(String mappingLabel) {
+    return myConditionalRoots.stream().filter(p -> p.o1.equals(mappingLabel)).map(p -> p.o2).collect(Collectors.toList());
   }
 
   // serialization

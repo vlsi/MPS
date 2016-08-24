@@ -38,8 +38,12 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
+ * Runtime state of mapping labels at some transformation step.
+ * {@link MappingsMemento} is persistence-friendly companion.
+ *
  * Evgeny Gryaznov, Feb 16, 2010
  */
 public final class GeneratorMappings {
@@ -57,6 +61,11 @@ public final class GeneratorMappings {
   /* new style map: template,input -> output */
   private final ConcurrentMap<Pair<String, SNode>, SNode> myTemplateNodeIdAndInputNodeToOutputNodeMap = new ConcurrentHashMap<Pair<String, SNode>, SNode>();
 
+  /*
+   * there might be few conditional roots, and we can't prevent them from using same ML (not too much sense, however)
+   */
+  private final CopyOnWriteArrayList<Pair<String, SNode>> myConditionalRoots = new CopyOnWriteArrayList<>();
+
   public GeneratorMappings(IGeneratorLogger log) {
     myLog = log;
   }
@@ -70,7 +79,9 @@ public final class GeneratorMappings {
   }
 
   void addOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, SNode outputNode) {
-    if (mappingName == null) return;
+    if (mappingName == null) {
+      return;
+    }
     Map<SNode, Object> currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
     if (currentMapping == null) {
       myMappingNameAndInputNodeToOutputNodeMap.putIfAbsent(mappingName, new HashMap<SNode, Object>());
@@ -91,6 +102,18 @@ public final class GeneratorMappings {
         // TODO warning
       }
     }
+  }
+
+  /**
+   * record a newly created node (generally, conditional root rule - no input node)
+   * @param mappingLabel label
+   * @param outputNode new node
+   */
+  void addNewOutputNode(String mappingLabel, SNode outputNode) {
+    if (mappingLabel == null || outputNode == null) {
+      return;
+    }
+    myConditionalRoots.add(new Pair<>(mappingLabel, outputNode));
   }
 
   void addCopiedOutputNodeForInputNode(SNode inputNode, SNode outputNode) {
@@ -114,7 +137,9 @@ public final class GeneratorMappings {
     // todo: combination of (templateN, inputN) -> outputN
     // todo: is not unique
     // todo: generator should report error on attempt to obtain not unique output-node
-    if (templateNodeId == null) return;
+    if (templateNodeId == null) {
+      return;
+    }
     myTemplateNodeIdAndInputNodeToOutputNodeMap.put(new Pair<>(templateNodeId, inputNode), outputNode);
   }
 
@@ -124,7 +149,7 @@ public final class GeneratorMappings {
     // todo: generator should report error on attempt to obtain not unique output-node
     addOutputNodeByInputAndTemplateNode(templateContext.getInput(), templateNodeId, outputNode);
     for (SNode historyInputNode : templateContext.getInputHistory()) {
-      Pair key = new Pair<>(templateNodeId, historyInputNode);
+      Pair<String,SNode> key = new Pair<>(templateNodeId, historyInputNode);
       myTemplateNodeIdAndInputNodeToOutputNodeMap.putIfAbsent(key, outputNode);
     }
     addOutputNodeByTemplateNode(templateNodeId, outputNode);
@@ -199,6 +224,15 @@ public final class GeneratorMappings {
     return !(o instanceof List);
   }
 
+  @Nullable
+  public SNode findNewOutputNode(@Nullable String mappingLabel) {
+    if (mappingLabel == null) {
+      // all other methods tolerate null parameters, why this one would not?
+      return null;
+    }
+    return myConditionalRoots.stream().filter(p -> mappingLabel.equals(p.o1)).findFirst().map(p -> p.o2).orElse(null);
+  }
+
   // expose internal structure, to build GeneratorDebug_Mappings with MPS-coded DebugMappingsBuilder
   /*package*/ Collection<String> getAvailableLabels() {
     return myMappingNameAndInputNodeToOutputNodeMap.keySet();
@@ -248,8 +282,9 @@ public final class GeneratorMappings {
       for (Entry<SNode, Object> i : o.getValue().entrySet()) {
         SNode inputNode = i.getKey();
         if (inputNode == null) {
-          // FIXME shall I track nodes newly introduced at the given checkpoint step? Likely yes,
-          // need a way to register them into the state
+          // FIXME shall I track nodes newly introduced at the given checkpoint step? Yes.
+          //       However, for newly introduced nodes we keep separate collection, and there should be no
+          //       null input nodes in this map. The check left just in case there's one (no check for null input in addOutput.. yet).
           continue;
         }
         // perhaps, would be useful to record mappings even without original node (marked as 'useless')
@@ -264,6 +299,7 @@ public final class GeneratorMappings {
         }
       }
     }
+    myConditionalRoots.forEach(p -> cp.record(p.o1, p.o2));
   }
 
   public void importPersisted(MappingsMemento val, SModel inputModel, SModel outputModel) throws BrokenCacheException {

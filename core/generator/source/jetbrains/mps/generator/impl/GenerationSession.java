@@ -39,6 +39,7 @@ import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.CheckpointIdentity;
 import jetbrains.mps.generator.impl.plan.CheckpointState;
 import jetbrains.mps.generator.impl.plan.Conflict;
+import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.plan.MapCfgComparator;
@@ -51,7 +52,6 @@ import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.util.NameUtil;
@@ -220,8 +220,9 @@ class GenerationSession {
 
         ttrace.push("steps", false);
 
-        TransitionTrace transitionTrace = new TransitionTrace(); // FIXME make it optional, if there are no Checkpoint steps, do not record transitions
-        transitionTrace.reset(currInputModel);
+
+        ModelTransitions transitionTrace = new ModelTransitions(); // FIXME make it optional, if there are no Checkpoint steps, do not record transitions
+        transitionTrace.newTransition(null, myOriginalInputModel.getReference(), currInputModel);
 
         for (myMajorStep = 0; myMajorStep < myGenerationPlan.getSteps().size(); myMajorStep++) {
           Step planStep = myGenerationPlan.getSteps().get(myMajorStep);
@@ -237,7 +238,7 @@ class GenerationSession {
             if (myLogger.needsInfo()) {
               myLogger.info("executing step " + (myMajorStep + 1));
             }
-            currOutput = executeMajorStep(monitor.subTask(1), currInputModel, transformStep, transitionTrace);
+            currOutput = executeMajorStep(monitor.subTask(1), currInputModel, transformStep, transitionTrace.getActiveTransition());
             monitor.advance(0);
             if (currOutput == null || myLogger.getErrorCount() > 0) {
               break;
@@ -249,29 +250,19 @@ class GenerationSession {
           } else if (planStep instanceof Checkpoint) {
             Checkpoint checkpointStep = (Checkpoint) planStep;
             CheckpointIdentity checkpointIdentity = new CheckpointIdentity(myGenerationPlan, checkpointStep);
-            SModel checkpointModel = mySessionContext.getCrossModelEnvironment().createBlankCheckpointModel(myOriginalInputModel.getReference(),
-                checkpointIdentity);
-            CheckpointStateBuilder cpBuilder = new CheckpointStateBuilder(currInputModel, checkpointModel, transitionTrace);
-            // FIXME shall populate state with last generator's MappingLabels. Couldn't use last generator directly as it might be
-            // the one from post-processing scripts. What if I add ML in post-processing script?
-            //
-            // IMPORTANT need to create cpState (in fact cp model) first, as DebugMappingsBuilder need cloned nodes to substitute
-            // reference targets from transient model to that in CP model (see DMB.substitute)
-            CheckpointState cpState = cpBuilder.create(checkpointIdentity);
-            //
-            // FIXME could keep myStepArguments and access GeneratorMappings from there - myStepArguments is the same for pre/post and main part
+            final CrossModelEnvironment xmodelEnv = mySessionContext.getCrossModelEnvironment();
+            SModel checkpointModel = xmodelEnv.createBlankCheckpointModel(myOriginalInputModel.getReference(), checkpointIdentity);
+            CheckpointStateBuilder cpBuilder = new CheckpointStateBuilder(currInputModel, checkpointModel, transitionTrace.getActiveTransition());
+            // myStepArguments may be null if Checkpoint is the very first step. Not quite sure it's legitimate scenario, though, need to think it over.
             if (myStepArguments != null) {
+              // Shall populate state with last generator's MappingLabels. Note, ML could have been added from post-processing scripts. Generator
+              // instance could be different, we keep GeneratorMappings with step arguments, that span all pre/post scripts along with transformations.
               GeneratorMappings stepLabels = myStepArguments.mappingLabels;
-              stepLabels.export(cpBuilder);
-
-              new ModelImports(checkpointModel).addModelImport(myOriginalInputModel.getReference());
-              SNode debugMappings = new DebugMappingsBuilder(mySessionContext.getRepository(), Collections.singletonMap(currInputModel, checkpointModel)).build(checkpointModel, stepLabels);
-              checkpointModel.addRootNode(debugMappings);
+              cpBuilder.addMappings(myOriginalInputModel, stepLabels);
             }
-            mySessionContext.getCrossModelEnvironment().publishCheckpoint(myOriginalInputModel.getReference(),
-                cpState);
-            transitionTrace = new TransitionTrace(checkpointStep);
-            transitionTrace.reset(currInputModel);
+            CheckpointState cpState = cpBuilder.create(checkpointIdentity);
+            xmodelEnv.publishCheckpoint(myOriginalInputModel.getReference(), cpState);
+            transitionTrace.newTransition(checkpointStep, checkpointModel.getReference(), currInputModel);
             myStepArguments = null;
           }
         }
