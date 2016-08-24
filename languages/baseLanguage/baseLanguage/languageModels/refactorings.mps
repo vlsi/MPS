@@ -83,7 +83,6 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
-      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
@@ -257,6 +256,7 @@
         <reference id="7222148688691763792" name="finder" index="2$JaeB" />
       </concept>
       <concept id="2005690715325995353" name="jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults" flags="nn" index="zAVLd">
+        <child id="6366407517031970111" name="scope" index="2GiN3o" />
         <child id="6366407517031970110" name="queryNode" index="2GiN3p" />
         <child id="8150507060913099385" name="finder" index="1C5ry4" />
       </concept>
@@ -442,6 +442,10 @@
                 <node concept="zAVLb" id="i$Mnq7dIiY" role="1C5ry4">
                   <ref role="2$JaeB" to="tya3:hReyrfg" resolve="OverridingMethods" />
                 </node>
+                <node concept="2OqwBi" id="1KbO_aWRr6N" role="2GiN3o">
+                  <node concept="50NuE" id="1KbO_aWRqK7" role="2Oq$k0" />
+                  <node concept="50M6r" id="1KbO_aWRrsl" role="2OqNvi" />
+                </node>
               </node>
             </node>
           </node>
@@ -464,6 +468,10 @@
                   </node>
                   <node concept="37vLTw" id="3GM_nagT_xx" role="2GiN3p">
                     <ref role="3cqZAo" node="4j3Q_3k1BYL" resolve="method" />
+                  </node>
+                  <node concept="2OqwBi" id="1KbO_aWRs4H" role="2GiN3o">
+                    <node concept="50NuE" id="1KbO_aWRrHV" role="2Oq$k0" />
+                    <node concept="50M6r" id="1KbO_aWRsub" role="2OqNvi" />
                   </node>
                 </node>
               </node>
@@ -518,9 +526,12 @@
               <node concept="50NuE" id="3X$1g2Ty9BD" role="2Oq$k0" />
               <node concept="50M6j" id="3X$1g2Ty9BE" role="2OqNvi" />
             </node>
+            <node concept="2OqwBi" id="1KbO_aWRoLj" role="2GiN3o">
+              <node concept="50NuE" id="1KbO_aWRo$E" role="2Oq$k0" />
+              <node concept="50M6r" id="1KbO_aWRp2A" role="2OqNvi" />
+            </node>
           </node>
         </node>
-        <node concept="3clFbH" id="77Wku1dQc_3" role="3cqZAp" />
       </node>
     </node>
   </node>
@@ -1149,6 +1160,10 @@
                       <ref role="37wK5l" to="89o2:4uwyJ44usVb" resolve="getDeclaration" />
                     </node>
                   </node>
+                  <node concept="2OqwBi" id="1KbO_aWRnmV" role="2GiN3o">
+                    <node concept="50NuE" id="1KbO_aWRn0K" role="2Oq$k0" />
+                    <node concept="50M6r" id="1KbO_aWRo5G" role="2OqNvi" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -1472,6 +1487,10 @@
             </node>
             <node concept="zAVLb" id="2DpPExh8v1q" role="1C5ry4">
               <ref role="2$JaeB" to="tya3:hReyrfg" resolve="OverridingMethods" />
+            </node>
+            <node concept="2OqwBi" id="1KbO_aWRtpm" role="2GiN3o">
+              <node concept="50NuE" id="1KbO_aWRtaS" role="2Oq$k0" />
+              <node concept="50M6r" id="1KbO_aWRtEw" role="2OqNvi" />
             </node>
           </node>
         </node>

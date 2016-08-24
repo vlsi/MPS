@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -41,15 +42,15 @@ public abstract class FindUsagesFacade {
   /**
    * Finds references to the provided nodes in the scope.
    */
-  public abstract Set<SReference> findUsages(SearchScope scope, Set<SNode> nodes, ProgressMonitor monitor);
+  public abstract Set<SReference> findUsages(@NotNull SearchScope scope, Set<SNode> nodes, ProgressMonitor monitor);
 
   /**
    * Finds instances of the provided concepts in the scope.
    */
-  public abstract Set<SNode> findInstances(SearchScope scope, Set<? extends SAbstractConcept> concepts, boolean exact, ProgressMonitor monitor);
+  public abstract Set<SNode> findInstances(@NotNull SearchScope scope, Set<? extends SAbstractConcept> concepts, boolean exact, ProgressMonitor monitor);
 
   /**
    * Finds models referencing the provided set of models in the scope.
    */
-  public abstract Set<SModel> findModelUsages(SearchScope scope, Set<SModelReference> modelReferences, ProgressMonitor monitor);
+  public abstract Set<SModel> findModelUsages(@NotNull SearchScope scope, Set<SModelReference> modelReferences, ProgressMonitor monitor);
 }

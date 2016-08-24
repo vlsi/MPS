@@ -42,7 +42,7 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
   }
 
   @Override
-  public Set<SReference> search(Set<SNode> nodes, SearchScope scope, @NotNull ProgressMonitor monitor) {
+  public Set<SReference> search(Set<SNode> nodes, @NotNull SearchScope scope, @NotNull ProgressMonitor monitor) {
     final HashSet<SReference> rv = new HashSet<SReference>();
     CollectConsumer<SReference> consumer = new CollectConsumer<SReference>(rv);
     Collection<FindUsagesParticipant> participants = PersistenceRegistry.getInstance().getFindUsagesParticipants();
@@ -50,7 +50,6 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
     monitor.start("Finding usages...", participants.size() + 4);
     try {
       Collection<SModel> current = new LinkedHashSet<SModel>();
-      ;
       Collection<SModel> simpleSearch = new LinkedHashSet<SModel>();
       for (SModel m : IterableUtil.asCollection(scope.getModels())) {
         if (m instanceof EditableSModel && ((EditableSModel) m).isChanged()) {
