@@ -95,6 +95,9 @@
     <node concept="PrWs8" id="6GArDv5JHgQ" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
+    <node concept="PrWs8" id="2Vd38uMXhJ" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5dkEk59WRcm">
     <property role="EcuMT" value="6004610301070373654" />
@@ -115,14 +118,10 @@
     <node concept="PrWs8" id="21vgRr5xrgZ" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
-    <node concept="PrWs8" id="21vgRr5zYiZ" role="PzmwI">
-      <ref role="PrY4T" to="tpee:4H$HgYMZ7sw" resolve="IVariableDeclaration" />
-    </node>
   </node>
   <node concept="1TIwiD" id="21vgRr5y4Ul">
     <property role="EcuMT" value="2332657309400452757" />
     <property role="TrG5h" value="QueryParameterReference" />
-    <property role="34LRSv" value="#" />
     <property role="R4oN_" value="reference to query parameter" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="21vgRr5y4Um" role="1TKVEi">

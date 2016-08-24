@@ -7,16 +7,15 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class QueryParameterReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -26,26 +25,15 @@ public class QueryParameterReference_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3aahkx_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_3aahkx_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_3aahkx_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_3aahkx_a0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createConstant_3aahkx_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
-    editorCell.setCellId("Constant_3aahkx_a0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createRefCell_3aahkx_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_3aahkx_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("queryParameter");
     provider.setNoTargetText("<no queryParameter>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new QueryParameterReference_Editor._Inline_3aahkx_a1a());
+    provider.setAuxiliaryCellProvider(new QueryParameterReference_Editor._Inline_3aahkx_a0a());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -63,17 +51,17 @@ public class QueryParameterReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-  public static class _Inline_3aahkx_a1a extends InlineCellProvider {
-    public _Inline_3aahkx_a1a() {
+  public static class _Inline_3aahkx_a0a extends InlineCellProvider {
+    public _Inline_3aahkx_a0a() {
       super();
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_3aahkx_a0b0(editorContext, node);
+      return this.createProperty_3aahkx_a0a0(editorContext, node);
     }
-    private EditorCell createProperty_3aahkx_a0b0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_3aahkx_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -81,6 +69,9 @@ public class QueryParameterReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

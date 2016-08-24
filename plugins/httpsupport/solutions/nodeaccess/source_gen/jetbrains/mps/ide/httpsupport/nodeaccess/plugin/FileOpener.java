@@ -7,6 +7,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.project.MPSProject;
 import java.util.Iterator;
 import jetbrains.mps.textgen.trace.DebugInfo;
 import jetbrains.mps.textgen.trace.DefaultTraceInfoProvider;
@@ -14,6 +15,11 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.textgen.trace.BaseLanguageNodeLookup;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.netty.buffer.Unpooled;
+import jetbrains.mps.textgen.trace.DebugInfoRoot;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.common.FileOpenUtil;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -51,7 +57,7 @@ public class FileOpener extends HttpRequestHandlerBase {
     if (this.file == null) {
       return false;
     }
-    return true;
+    return this.file.endsWith(".java");
   }
 
   @Override
@@ -61,30 +67,54 @@ public class FileOpener extends HttpRequestHandlerBase {
     final Project project = HandlerUtil.getProjectByName(this.project);
 
     if (project != null) {
-      final int line = HandlerUtil.parseNumber(this.line);
+      final com.intellij.openapi.project.Project ideaProject = ((project instanceof MPSProject) ? ((MPSProject) project).getProject() : null);
 
 
       int sourceGen = this.file.lastIndexOf(HandlerUtil.SOURCE_GEN);
-      int fileNamePosition = (sourceGen == -1 ? 0 : sourceGen + HandlerUtil.SOURCE_GEN.length());
+      int unitNamePosition = (sourceGen == -1 ? 0 : sourceGen + HandlerUtil.SOURCE_GEN.length());
+      int unitNameLength = this.file.length() - ".java".length();
+      final String unitName = this.file.substring(unitNamePosition, unitNameLength).replace('/', '.');
+      final String namespace = unitName.substring(0, unitName.lastIndexOf("."));
 
-      int lastSeparator = this.file.lastIndexOf("/");
-      final String namespace = this.file.substring(fileNamePosition, lastSeparator).replace('/', '.');
-      final String simpleFileName = this.file.substring(lastSeparator + 1);
+      final String fileName = this.file.substring(this.file.lastIndexOf("/") + 1);
 
       project.getModelAccess().runWriteInEDT(new Runnable() {
         public void run() {
           Iterator<DebugInfo> it = new DefaultTraceInfoProvider(project.getRepository()).debugInfo(namespace).iterator();
           while (it.hasNext()) {
-            final SNodeReference nodeReference = new BaseLanguageNodeLookup(it.next()).getNodeAt(simpleFileName, line);
-            if (nodeReference != null) {
-              HandlerUtil.openNode(project, nodeReference);
-              FileOpener.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.SUCCESS_STREAM));
-              HandlerUtil.requestFocus(project);
-              return;
+            if (isNotEmptyString(FileOpener.this.line)) {
+              final SNodeReference nodeReference = new BaseLanguageNodeLookup(it.next()).getNodeAt(fileName, HandlerUtil.parseNumber(FileOpener.this.line));
+              if (nodeReference != null) {
+                HandlerUtil.openNode(project, nodeReference);
+                FileOpener.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.SUCCESS_STREAM));
+                HandlerUtil.requestFocus(project);
+                return;
+              }
+            } else {
+              Iterable<DebugInfoRoot> traceRoots = it.next().getRoots();
+              SNodeReference nodeReference = Sequence.fromIterable(traceRoots).where(new IWhereFilter<DebugInfoRoot>() {
+                public boolean accept(DebugInfoRoot traceRoot) {
+                  return traceRoot.getFileNames().contains(fileName);
+                }
+              }).first().getNodeRef();
+              if (nodeReference != null) {
+                HandlerUtil.openNode(project, nodeReference);
+                FileOpener.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.SUCCESS_STREAM));
+                HandlerUtil.requestFocus(project);
+                return;
+              }
             }
           }
-          FileOpener.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
 
+          final VirtualFile virtualFile = FileOpenUtil.findFile(ideaProject, unitName, fileName);
+          if (virtualFile != null) {
+            FileOpenUtil.openFile(ideaProject, virtualFile, (isEmptyString(FileOpener.this.line) ? 1 : HandlerUtil.parseNumber(FileOpener.this.line)));
+            FileOpener.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.SUCCESS_STREAM));
+            HandlerUtil.requestFocus(project);
+            return;
+          }
+
+          FileOpener.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
         }
       });
     } else {
@@ -95,4 +125,10 @@ public class FileOpener extends HttpRequestHandlerBase {
     }
   }
   protected static Logger LOG = LogManager.getLogger(FileOpener.class);
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
+  }
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
+  }
 }
