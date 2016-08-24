@@ -26,6 +26,7 @@ import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
@@ -60,6 +61,10 @@ public class BookmarksTree extends MPSTree {
     });
   }
 
+  @Override
+  protected void doInit(MPSTreeNode node, Runnable nodeInitRunnable) {
+    super.doInit(node, new ModelReadRunnable(myProject.getModelAccess(), nodeInitRunnable));
+  }
 
   @Override
   protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
