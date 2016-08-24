@@ -86,7 +86,7 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(_context.getNode());
   }
   public static Object referenceMacro_GetReferent_6759767305208080925(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("map_IconContainer");
+    return _context.getOutputNodeByMappingLabel("map_IconContainer", null);
   }
   public static Object referenceMacro_GetReferent_6759767305208080928(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_IconField");
@@ -101,7 +101,7 @@ public class QueriesGenerated {
     return (String) OldIconBundle__BehaviorDescriptor.getJavaName_id7Mb2akaesvf.invoke(_context.getNode());
   }
   public static Object referenceMacro_GetReferent_5979521222239280705(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("map_IconContainer");
+    return _context.getOutputNodeByMappingLabel("map_IconContainer", null);
   }
   public static Object referenceMacro_GetReferent_5979521222239280712(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_IconResourceField");
