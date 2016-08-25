@@ -6,6 +6,8 @@ import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequestHandlerBase;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.MPSProject;
 import java.util.Iterator;
@@ -21,8 +23,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.common.FileOpenUtil;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class FileOpener extends HttpRequestHandlerBase {
 
@@ -60,6 +60,7 @@ public class FileOpener extends HttpRequestHandlerBase {
     return this.file.endsWith(".java");
   }
 
+  protected static Logger LOG = LogManager.getLogger(FileOpener.class);
   @Override
   public void handle(@NotNull HttpRequest request) throws Exception {
     super.handle(request);
@@ -124,7 +125,6 @@ public class FileOpener extends HttpRequestHandlerBase {
       this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
     }
   }
-  protected static Logger LOG = LogManager.getLogger(FileOpener.class);
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

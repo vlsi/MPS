@@ -7,6 +7,8 @@ import java.util.Hashtable;
 import org.jetbrains.annotations.NotNull;
 import io.netty.handler.codec.http.FullHttpRequest;
 import io.netty.handler.codec.http.HttpMethod;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import io.netty.handler.codec.http.QueryStringDecoder;
 import io.netty.channel.ChannelHandlerContext;
 import java.io.IOException;
@@ -21,8 +23,6 @@ import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.ui.Messages;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MPSRequestManager extends HttpRequestHandler {
 
@@ -33,6 +33,7 @@ public class MPSRequestManager extends HttpRequestHandler {
     return request.method() == HttpMethod.GET;
   }
 
+  protected static Logger LOG = LogManager.getLogger(MPSRequestManager.class);
   @Override
   public boolean process(@NotNull QueryStringDecoder decoder, @NotNull FullHttpRequest request, @NotNull ChannelHandlerContext context) throws IOException {
     HttpRequest boxedRequest;
@@ -103,5 +104,4 @@ public class MPSRequestManager extends HttpRequestHandler {
   private static String getTrustDialogMessage(String host, IHttpRequestHandler handler) {
     return "'" + handler.getName() + "' handler is requested. Do you trust to '" + ((host == null ? "unknown host" : host)) + "'?";
   }
-  protected static Logger LOG = LogManager.getLogger(MPSRequestManager.class);
 }

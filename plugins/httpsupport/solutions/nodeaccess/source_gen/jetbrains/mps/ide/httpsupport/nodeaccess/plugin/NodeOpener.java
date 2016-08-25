@@ -6,6 +6,8 @@ import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequestHandlerBase;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -13,8 +15,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.netty.buffer.Unpooled;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class NodeOpener extends HttpRequestHandlerBase {
 
@@ -50,6 +50,7 @@ public class NodeOpener extends HttpRequestHandlerBase {
     return true;
   }
 
+  protected static Logger LOG = LogManager.getLogger(NodeOpener.class);
   @Override
   public void handle(@NotNull HttpRequest request) throws Exception {
     super.handle(request);
@@ -75,5 +76,4 @@ public class NodeOpener extends HttpRequestHandlerBase {
       this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
     }
   }
-  protected static Logger LOG = LogManager.getLogger(NodeOpener.class);
 }
