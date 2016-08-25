@@ -73,6 +73,7 @@
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="wvnl" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.extensions(MPS.Editor/)" />
     <import index="tqbz" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.actions(MPS.IDEA/)" />
+    <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -592,8 +593,8 @@
         <property role="eg7rD" value="false" />
         <property role="TrG5h" value="memento" />
         <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="mFGiHOElch" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        <node concept="3uibUv" id="6gWPce6xFl6" role="1tU5fm">
+          <ref role="3uigEE" to="cj4x:~EditorComponentState" resolve="EditorComponentState" />
         </node>
         <node concept="3Tm6S6" id="mFGiHOElci" role="1B3o_S" />
       </node>
@@ -604,8 +605,8 @@
         <node concept="37vLTG" id="mFGiHOElcl" role="3clF46">
           <property role="TrG5h" value="memento" />
           <property role="3TUv4t" value="false" />
-          <node concept="3uibUv" id="mFGiHOElcm" role="1tU5fm">
-            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+          <node concept="3uibUv" id="6gWPce6xGvt" role="1tU5fm">
+            <ref role="3uigEE" to="cj4x:~EditorComponentState" resolve="EditorComponentState" />
           </node>
         </node>
         <node concept="3clFbS" id="mFGiHOElcn" role="3clF47">
@@ -668,8 +669,8 @@
           </node>
         </node>
         <node concept="3Tm1VV" id="mFGiHOElcI" role="1B3o_S" />
-        <node concept="3uibUv" id="mFGiHOElcJ" role="3clF45">
-          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        <node concept="3uibUv" id="6gWPce6xHGM" role="3clF45">
+          <ref role="3uigEE" to="cj4x:~EditorComponentState" resolve="EditorComponentState" />
         </node>
       </node>
       <node concept="3clFb_" id="441$Vdofotl" role="jymVt">
@@ -921,8 +922,8 @@
         <node concept="3cpWs8" id="3qXhgcQKQCT" role="3cqZAp">
           <node concept="3cpWsn" id="3qXhgcQKQCU" role="3cpWs9">
             <property role="TrG5h" value="memento" />
-            <node concept="3uibUv" id="3qXhgcQKQCP" role="1tU5fm">
-              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+            <node concept="3uibUv" id="6gWPce6xIOc" role="1tU5fm">
+              <ref role="3uigEE" to="cj4x:~EditorComponentState" resolve="EditorComponentState" />
             </node>
             <node concept="10Nm6u" id="3qXhgcQKZUd" role="33vP2m" />
           </node>
@@ -942,7 +943,7 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="3qXhgcQKQCZ" role="2OqNvi">
-                      <ref role="37wK5l" to="exr9:~EditorContext.createMemento():java.lang.Object" resolve="createMemento" />
+                      <ref role="37wK5l" to="exr9:~EditorContext.getEditorComponentState():jetbrains.mps.openapi.editor.EditorComponentState" resolve="getEditorComponentState" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="3qXhgcQKUgR" role="37vLTJ">
@@ -1019,7 +1020,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="mFGiHOEy7q" role="2OqNvi">
-                        <ref role="37wK5l" to="exr9:~EditorContext.setMemento(java.lang.Object):boolean" resolve="setMemento" />
+                        <ref role="37wK5l" to="exr9:~EditorContext.restoreEditorComponentState(jetbrains.mps.openapi.editor.EditorComponentState):void" resolve="restoreEditorComponentState" />
                         <node concept="2OqwBi" id="mFGiHOEy7r" role="37wK5m">
                           <node concept="1eOMI4" id="mFGiHOEy7v" role="2Oq$k0">
                             <node concept="10QFUN" id="mFGiHOEy7s" role="1eOMHV">

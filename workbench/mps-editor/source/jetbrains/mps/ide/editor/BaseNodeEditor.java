@@ -28,6 +28,7 @@ import jetbrains.mps.nodeEditor.MementoPersistence;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder;
 import jetbrains.mps.openapi.editor.Editor;
+import jetbrains.mps.openapi.editor.EditorComponentState;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.openapi.editor.extensions.EditorExtensionUtil;
@@ -231,13 +232,13 @@ public abstract class BaseNodeEditor implements Editor {
   protected void saveState(BaseEditorState state) {
     EditorContext editorContext = getEditorContext();
     if (editorContext != null) {
-      state.memento = editorContext.createMemento();
+      state.memento = editorContext.getEditorComponentState();
       NodeEditorComponent editorComponent = getCurrentEditorComponent();
       if (editorComponent != null) {
         state.isEditorFocused = editorComponent.getFocusTracker().getEffectiveFocusState();
         EditorComponent inspector = editorComponent.getInspector();
         if (inspector != null) {
-          state.inspectorMemento = inspector.getEditorContext().createMemento();
+          state.inspectorMemento = inspector.getEditorContext().getEditorComponentState();
           state.isInspectorFocused = !state.isEditorFocused && inspector.getFocusTracker().getEffectiveFocusState();
         }
       }
@@ -264,7 +265,7 @@ public abstract class BaseNodeEditor implements Editor {
         if (editorComponent.isDisposed()) {
           return;
         }
-        editorContext.setMemento(s.memento);
+        editorContext.restoreEditorComponentState(s.memento);
 
         editorComponent.getFocusTracker().setEffectiveFocusState(s.isEditorFocused);
         if (s.isEditorFocused && focusManager != null) {
@@ -284,7 +285,7 @@ public abstract class BaseNodeEditor implements Editor {
     executeInEDT(new PrioritizedTask(TaskType.INSPECTOR_MEMENTO, myType2TaskMap) {
       @Override
       public void performTask() {
-        inspectorEditorContext.setMemento(s.inspectorMemento);
+        inspectorEditorContext.restoreEditorComponentState(s.inspectorMemento);
         inspectorEditorComponent.getFocusTracker().setEffectiveFocusState(s.isInspectorFocused);
         if (s.isInspectorFocused && focusManager != null) {
           InspectorTool inspectorTool = myProject.getComponent(InspectorTool.class);
@@ -351,9 +352,9 @@ public abstract class BaseNodeEditor implements Editor {
     private static final String FOCUSED_COMPONENT_EDITOR = "editorFocused";
     private static final String FOCUSED_COMPONENT_INSPECTOR = "inspectorFocused";
 
-    private Object memento;
+    private EditorComponentState memento;
     private boolean isEditorFocused;
-    private Object inspectorMemento;
+    private EditorComponentState inspectorMemento;
     private boolean isInspectorFocused;
 
     @Override
@@ -390,6 +391,12 @@ public abstract class BaseNodeEditor implements Editor {
 
       isEditorFocused = Boolean.parseBoolean(e.getAttributeValue(FOCUSED_COMPONENT_EDITOR));
       isInspectorFocused = Boolean.parseBoolean(e.getAttributeValue(FOCUSED_COMPONENT_INSPECTOR));
+    }
+
+    @Override
+    public void clearSessionState() {
+      memento.clearSessionState();
+      inspectorMemento.clearSessionState();
     }
 
     public int hashCode() {

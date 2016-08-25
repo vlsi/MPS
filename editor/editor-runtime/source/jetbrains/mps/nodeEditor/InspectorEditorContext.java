@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.configuration.EditorConfiguration;
+import jetbrains.mps.openapi.editor.EditorComponentState;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -33,7 +34,7 @@ public class InspectorEditorContext extends EditorContext {
   }
 
   @Override
-  public Object createMemento() {
+  public EditorComponentState getEditorComponentState() {
     return new Memento(this, true);
   }
 }

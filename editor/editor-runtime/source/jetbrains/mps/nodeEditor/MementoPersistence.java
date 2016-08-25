@@ -15,19 +15,20 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.openapi.editor.EditorComponentState;
 import org.jdom.Element;
 
 /**
  * Cyril.Konopko, 09.10.2010
  */
 public class MementoPersistence {
-  public static void saveMemento(Object o, Element e) {
+  public static void saveMemento(EditorComponentState o, Element e) {
     if (o instanceof Memento) {
-      ((Memento)o).save(e);
+      ((Memento) o).save(e);
     }
   }
 
-  public static Object loadMemento(Element e) {
+  public static EditorComponentState loadMemento(Element e) {
     return Memento.load(e);
   }
 }

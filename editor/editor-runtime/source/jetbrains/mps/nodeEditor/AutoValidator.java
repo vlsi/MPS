@@ -19,6 +19,7 @@ import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.EditorComponentState;
 import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.Selection;
@@ -45,12 +46,12 @@ class AutoValidator {
     if (cell == null) {
       return;
     }
-    Object memento = editorComponent.getEditorContext().createMemento();
+    EditorComponentState state = editorComponent.getEditorContext().getEditorComponentState();
     mySuppressSelectionChanges = true;
     try {
       APICellAdapter.validate(cell, true, false);
       editorComponent.getUpdater().flushModelEvents();
-      editorComponent.getEditorContext().setMemento(memento);
+      editorComponent.getEditorContext().restoreEditorComponentState(state);
     } finally {
       mySuppressSelectionChanges = false;
     }

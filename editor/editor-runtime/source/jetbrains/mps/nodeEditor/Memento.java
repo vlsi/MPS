@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
 import jetbrains.mps.nodeEditor.selection.SelectionInfoImpl;
+import jetbrains.mps.openapi.editor.EditorComponentState;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
@@ -47,7 +48,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
 
-class Memento {
+class Memento implements EditorComponentState {
   private static final Comparator<Pair<EditorCell_Collection, Boolean>> COLLAPSED_STATES_COMPARATOR = new Comparator<Pair<EditorCell_Collection, Boolean>>() {
     @Override
     public int compare(Pair<EditorCell_Collection, Boolean> p1,
@@ -80,8 +81,14 @@ class Memento {
   private Point myViewPosition;
   private String[] myEnabledHints = null;
   private SNodeReference myEditedNodeReference;
+  private boolean mySaveSessionState = true;
 
   private Memento() {
+  }
+
+  @Override
+  public void clearSessionState() {
+    mySaveSessionState = false;
   }
 
   Memento(EditorContext context, boolean saveEditedNode) {
@@ -144,7 +151,7 @@ class Memento {
         collapsedState -> new Pair<>(collapsedState.o1.getCellInfo(), collapsedState.o2));
   }
 
-  void restore(EditorComponent editor, boolean restoreInitiallyCollapsed) {
+  void restore(EditorComponent editor) {
     boolean editorRebuildRequired = editor.getUpdater().setInitialEditorHints(myEnabledHints);
 
     if (myEditedNodeReference != null) {
@@ -168,7 +175,7 @@ class Memento {
 
     // Restore collapse states before restoring selection, otherwise selection inside initially collapsed cells disappears
     needsRelayout = restoreFoldingStates(myFoldableStates, editor) | needsRelayout;
-    needsRelayout = restoreFoldingStates(restoreInitiallyCollapsed ? myInitiallyCollapsedStates : myRestoreAlwaysStates, editor) | needsRelayout;
+    needsRelayout = restoreFoldingStates(mySaveSessionState ? myInitiallyCollapsedStates : myRestoreAlwaysStates, editor) | needsRelayout;
 
     editor.getSelectionManager().setSelectionInfoStack(mySelectionStack);
     EditorCell selectedCell = editor.getDeepestSelectedCell();
@@ -294,11 +301,13 @@ class Memento {
   private static final String ERROR_MARKERS = "errorMarkers";
   private static final String TRANSACTIONAL_PROPERTIES = "transactionalProperties";
   private static final String EDITED_NODE = "currentlyEditedNode";
+  private static final String SAVE_SESSION_STATE = "saveSessionState";
 
   public void save(Element e) {
     if (myEditedNodeReference != null) {
       e.setAttribute(EDITED_NODE, SNodePointer.serialize(myEditedNodeReference));
     }
+    e.setAttribute(SAVE_SESSION_STATE, Boolean.toString(mySaveSessionState));
 
     Element selectionStack = new Element(SELECTION_STACK);
     e.addContent(selectionStack);
@@ -321,7 +330,9 @@ class Memento {
     }
 
     saveFoldingStates(new Element(FOLDABLE), e, myFoldableStates);
-    saveFoldingStates(new Element(INITIALLY_COLLAPSED), e, myInitiallyCollapsedStates);
+    if (mySaveSessionState) {
+      saveFoldingStates(new Element(INITIALLY_COLLAPSED), e, myInitiallyCollapsedStates);
+    }
     saveFoldingStates(new Element(RESTORE_ALWAYS), e, myRestoreAlwaysStates);
 
     e.setAttribute(VIEW_POSITION_X, String.valueOf(myViewPosition.x));
@@ -359,6 +370,8 @@ class Memento {
     if (editedNodeAttribute != null) {
       memento.myEditedNodeReference = SNodePointer.deserialize(editedNodeAttribute.getValue());
     }
+
+    memento.mySaveSessionState = Boolean.parseBoolean(e.getAttributeValue(SAVE_SESSION_STATE));
 
     Element selectionStack = e.getChild(SELECTION_STACK);
     if (selectionStack != null) {

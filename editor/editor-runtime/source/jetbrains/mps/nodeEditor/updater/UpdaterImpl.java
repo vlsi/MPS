@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.commands.CommandContextImpl;
 import jetbrains.mps.nodeEditor.commands.CommandContextListener;
+import jetbrains.mps.openapi.editor.EditorComponentState;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.update.Updater;
@@ -108,9 +109,9 @@ public class UpdaterImpl implements Updater {
     if (editedNode == null || editedNode.getModel() == null) {
       myEditorComponent.setRootCell(myEditorComponent.createEmptyCell());
     } else {
-      Object memento = getEditorContext().createMemento();
+      EditorComponentState state = getEditorContext().getEditorComponentState();
       myEditorComponent.setRootCell(updateRootCell(editedNode, events));
-      getEditorContext().setMemento(memento);
+      getEditorContext().restoreEditorComponentState(state);
     }
   }
 

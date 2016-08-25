@@ -1130,7 +1130,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
 
         rebuildEditorContent();
-        myEditorContext.resetRestoreInitiallyCollapsed();
 
         if (myNode != null && notifiesCreation()) {
           notifyCreation();

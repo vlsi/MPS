@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,18 +15,13 @@
  */
 package jetbrains.mps.openapi.editor;
 
-import org.jdom.Element;
-
-public interface EditorState {
-
-  void save(Element e);
-
-  void load(Element e);
-
+/**
+ * User: shatalin
+ * Date: 25/08/16
+ */
+public interface EditorComponentState {
   /**
-   * Cleaning all editor session-specific state information from this editor state object.
-   * Session specific editor state should be saved/restored during one editing session and
-   * will be completely reset on reopening the editor (starting new editing session).
+   * See {@link EditorState#clearSessionState()}
    */
   void clearSessionState();
 }

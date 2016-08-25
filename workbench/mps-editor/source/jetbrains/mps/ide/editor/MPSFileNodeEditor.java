@@ -164,7 +164,13 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   public MPSEditorStateWrapper getState(@NotNull final FileEditorStateLevel level) {
     final MPSEditorStateWrapper state = new MPSEditorStateWrapper();
     if (!isDisposed() && myNodeEditor != null) {
-      myProject.getModelAccess().runReadAction(() -> state.setEditorState(myNodeEditor.saveState()));
+      myProject.getModelAccess().runReadAction(() -> {
+        EditorState editorState = myNodeEditor.saveState();
+        if (level == FileEditorStateLevel.FULL) {
+          editorState.clearSessionState();
+        }
+        state.setEditorState(editorState);
+      });
     } else {
       state.setEditorState(new BaseEditorState());
     }
