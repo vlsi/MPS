@@ -53,7 +53,8 @@ class Memento implements EditorComponentState {
     @Override
     public int compare(Pair<EditorCell_Collection, Boolean> p1,
         Pair<EditorCell_Collection, Boolean> p2) {
-      return getDepth(p2.o1) - getDepth(p1.o1);
+      int depthDelta = getDepth(p2.o1) - getDepth(p1.o1);
+      return depthDelta != 0 ? depthDelta : CELL_COMPARATOR.compare(p2.o1, p1.o1);
     }
 
     private int getDepth(EditorCell cell) {
