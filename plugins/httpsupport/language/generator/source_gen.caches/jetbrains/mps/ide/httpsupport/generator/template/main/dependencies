@@ -22,7 +22,6 @@
     <classNode dependClassName="jetbrains.mps.generator.template.ReferenceMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
-    <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.RequestHandler__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.generator.template.main.Pattern_1drinxvtk6f0e" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.generator.template.main.Pattern_1drinxvtk6yv6" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.generator.template.main.Pattern_1drinxvtk80fb" />

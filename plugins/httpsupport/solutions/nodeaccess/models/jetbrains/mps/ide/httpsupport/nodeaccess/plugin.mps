@@ -281,6 +281,7 @@
       <concept id="5573986434797682998" name="jetbrains.mps.ide.httpsupport.structure.HandleRequestFunction" flags="ig" index="pF8on" />
       <concept id="5573986434797590400" name="jetbrains.mps.ide.httpsupport.structure.RequestHandler" flags="ng" index="pFx2x">
         <property id="8564455257661398345" name="queryPrefix" index="1pulfB" />
+        <property id="6550075386187238212" name="trustful" index="1ZnG6o" />
         <child id="5573986434797811183" name="handleFunction" index="pCJbe" />
         <child id="6004610301070397386" name="canHandleFunction" index="qDQqb" />
         <child id="2332657309400291202" name="queryParameters" index="3_QDjO" />
@@ -301,6 +302,7 @@
   <node concept="pFx2x" id="4yQMaPlJZ2q">
     <property role="TrG5h" value="FileOpener" />
     <property role="1pulfB" value="file" />
+    <property role="1ZnG6o" value="true" />
     <node concept="3_QJtf" id="21vgRr5xw8R" role="3_QDjO">
       <property role="TrG5h" value="file" />
       <property role="3_QJtb" value="true" />
@@ -423,7 +425,7 @@
             </node>
             <node concept="3cpWs8" id="2Vd38uKCDU" role="3cqZAp">
               <node concept="3cpWsn" id="2Vd38uKCDX" role="3cpWs9">
-                <property role="TrG5h" value="unitNameLength" />
+                <property role="TrG5h" value="unitNameEndPostion" />
                 <node concept="10Oyi0" id="2Vd38uKCDS" role="1tU5fm" />
                 <node concept="3cpWsd" id="2Vd38uKAW_" role="33vP2m">
                   <node concept="2OqwBi" id="2Vd38uKz$T" role="3uHU7B">
@@ -460,7 +462,7 @@
                         <ref role="3cqZAo" node="7prpbsC65XL" resolve="unitNamePosition" />
                       </node>
                       <node concept="37vLTw" id="2Vd38uKErQ" role="37wK5m">
-                        <ref role="3cqZAo" node="2Vd38uKCDX" resolve="unitNameLength" />
+                        <ref role="3cqZAo" node="2Vd38uKCDX" resolve="unitNameEndPostion" />
                       </node>
                     </node>
                   </node>
@@ -679,7 +681,7 @@
                               <node concept="3clFbS" id="2Vd38uPnUl" role="9aQI4">
                                 <node concept="3cpWs8" id="2Vd38uQMn$" role="3cqZAp">
                                   <node concept="3cpWsn" id="2Vd38uQMnB" role="3cpWs9">
-                                    <property role="TrG5h" value="traceRoots" />
+                                    <property role="TrG5h" value="debugInfoRoots" />
                                     <node concept="A3Dl8" id="2Vd38uQMnx" role="1tU5fm">
                                       <node concept="3uibUv" id="2Vd38uQPB_" role="A3Ik2">
                                         <ref role="3uigEE" to="fwk:~DebugInfoRoot" resolve="DebugInfoRoot" />
@@ -710,7 +712,7 @@
                                       <node concept="2OqwBi" id="2Vd38uR7p1" role="2Oq$k0">
                                         <node concept="2OqwBi" id="2Vd38uQQ6D" role="2Oq$k0">
                                           <node concept="37vLTw" id="2Vd38uQPLE" role="2Oq$k0">
-                                            <ref role="3cqZAo" node="2Vd38uQMnB" resolve="traceRoots" />
+                                            <ref role="3cqZAo" node="2Vd38uQMnB" resolve="debugInfoRoots" />
                                           </node>
                                           <node concept="3zZkjj" id="2Vd38uQQtL" role="2OqNvi">
                                             <node concept="1bVj0M" id="2Vd38uQQtN" role="23t8la">
@@ -719,7 +721,7 @@
                                                   <node concept="2OqwBi" id="2Vd38uQVIt" role="3clFbG">
                                                     <node concept="2OqwBi" id="2Vd38uQTOh" role="2Oq$k0">
                                                       <node concept="37vLTw" id="2Vd38uQQLg" role="2Oq$k0">
-                                                        <ref role="3cqZAo" node="2Vd38uQQtP" resolve="traceRoot" />
+                                                        <ref role="3cqZAo" node="2Vd38uQQtP" resolve="debugInfoRoot" />
                                                       </node>
                                                       <node concept="liA8E" id="2Vd38uQU7W" role="2OqNvi">
                                                         <ref role="37wK5l" to="fwk:~DebugInfoRoot.getFileNames():java.util.Set" resolve="getFileNames" />
@@ -735,7 +737,7 @@
                                                 </node>
                                               </node>
                                               <node concept="Rh6nW" id="2Vd38uQQtP" role="1bW2Oz">
-                                                <property role="TrG5h" value="traceRoot" />
+                                                <property role="TrG5h" value="debugInfoRoot" />
                                                 <node concept="2jxLKc" id="2Vd38uQQtQ" role="1tU5fm" />
                                               </node>
                                             </node>
@@ -942,6 +944,7 @@
   <node concept="pFx2x" id="2lt1tUBuq2$">
     <property role="TrG5h" value="NodeOpener" />
     <property role="1pulfB" value="node" />
+    <property role="1ZnG6o" value="true" />
     <node concept="pF8on" id="2lt1tUBuq2_" role="pCJbe">
       <node concept="3clFbS" id="2lt1tUBuq2A" role="2VODD2">
         <node concept="3cpWs8" id="4yQMaPlItl2" role="3cqZAp">

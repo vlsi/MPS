@@ -47,6 +47,7 @@
         <child id="1638911550608610281" name="executeFunction" index="IWgqQ" />
         <child id="5692353713941573325" name="textFunction" index="1hCUd6" />
       </concept>
+      <concept id="1078938745671" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" flags="ig" index="PKFIW" />
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
@@ -58,6 +59,7 @@
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
       <concept id="1186414860679" name="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" flags="ln" index="VPxyj" />
+      <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
       <concept id="1630016958697344083" name="jetbrains.mps.lang.editor.structure.IMenu_Concept" flags="ng" index="2ZABuq">
         <reference id="6591946374543067572" name="conceptDeclaration" index="aqKnT" />
       </concept>
@@ -195,16 +197,31 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
+      <node concept="3F0ifn" id="2RVPb60$t_4" role="3EZMnx">
+        <property role="3F0ifm" value="" />
+        <node concept="ljvvj" id="2RVPb60$t_F" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
       <node concept="3F0ifn" id="5FAyHK_I4HA" role="3EZMnx">
-        <property role="3F0ifm" value="ask when host is untrusted:" />
+        <property role="3F0ifm" value="trustful:" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
         <node concept="lj46D" id="5FAyHK_I4J7" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
       <node concept="3F0A7n" id="5FAyHK_I4IA" role="3EZMnx">
-        <ref role="1NtTu8" to="ndib:5FAyHK_I4H4" resolve="requireTrustedHosts" />
+        <ref role="1NtTu8" to="ndib:5FAyHK_I4H4" resolve="trustful" />
         <node concept="ljvvj" id="5FAyHK_I4J5" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="PMmxH" id="2RVPb60$t_L" role="3EZMnx">
+        <ref role="PMmxG" node="2RVPb60$t_H" resolve="TrustfulPropertyDescription" />
+        <node concept="ljvvj" id="2RVPb60$tAp" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="2RVPb60$tAr" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
@@ -475,6 +492,23 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="PKFIW" id="2RVPb60$t_H">
+    <property role="TrG5h" value="TrustfulPropertyDescription" />
+    <ref role="1XX52x" to="ndib:4PqLM5kXdu0" resolve="RequestHandler" />
+    <node concept="3EZMnI" id="2RVPb60_dm4" role="2wV5jI">
+      <node concept="l2Vlx" id="2RVPb60_dm5" role="2iSdaV" />
+      <node concept="3F0ifn" id="2RVPb60$tAu" role="3EZMnx">
+        <property role="3F0ifm" value="If true, it handles requests from all hosts, otherwise - only from trusted hosts" />
+        <ref role="1k5W1q" to="tpen:hshO_Yc" resolve="Comment" />
+        <node concept="VPM3Z" id="2RVPb60$tEJ" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="lj46D" id="2RVPb60_bh0" role="3F10Kt">
+          <property role="VOm3f" value="true" />
         </node>
       </node>
     </node>

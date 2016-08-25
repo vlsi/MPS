@@ -72,8 +72,8 @@ public class FileOpener extends HttpRequestHandlerBase {
 
       int sourceGen = this.file.lastIndexOf(HandlerUtil.SOURCE_GEN);
       int unitNamePosition = (sourceGen == -1 ? 0 : sourceGen + HandlerUtil.SOURCE_GEN.length());
-      int unitNameLength = this.file.length() - ".java".length();
-      final String unitName = this.file.substring(unitNamePosition, unitNameLength).replace('/', '.');
+      int unitNameEndPostion = this.file.length() - ".java".length();
+      final String unitName = this.file.substring(unitNamePosition, unitNameEndPostion).replace('/', '.');
       final String namespace = unitName.substring(0, unitName.lastIndexOf("."));
 
       final String fileName = this.file.substring(this.file.lastIndexOf("/") + 1);
@@ -91,10 +91,10 @@ public class FileOpener extends HttpRequestHandlerBase {
                 return;
               }
             } else {
-              Iterable<DebugInfoRoot> traceRoots = it.next().getRoots();
-              SNodeReference nodeReference = Sequence.fromIterable(traceRoots).where(new IWhereFilter<DebugInfoRoot>() {
-                public boolean accept(DebugInfoRoot traceRoot) {
-                  return traceRoot.getFileNames().contains(fileName);
+              Iterable<DebugInfoRoot> debugInfoRoots = it.next().getRoots();
+              SNodeReference nodeReference = Sequence.fromIterable(debugInfoRoots).where(new IWhereFilter<DebugInfoRoot>() {
+                public boolean accept(DebugInfoRoot debugInfoRoot) {
+                  return debugInfoRoot.getFileNames().contains(fileName);
                 }
               }).first().getNodeRef();
               if (nodeReference != null) {

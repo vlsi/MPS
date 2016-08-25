@@ -75,7 +75,7 @@
     </node>
     <node concept="1TJgyi" id="5FAyHK_I4H4" role="1TKVEl">
       <property role="IQ2nx" value="6550075386187238212" />
-      <property role="TrG5h" value="requireTrustedHosts" />
+      <property role="TrG5h" value="trustful" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="5dkEk59WWZa" role="1TKVEi">

@@ -23,7 +23,6 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="iil0" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:io.netty.buffer(MPS.IDEA/)" />
     <import index="ap92" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:io.netty.util(MPS.IDEA/)" />
-    <import index="zfj2" ref="r:ebfb0797-fa90-42cb-9f6b-3e661ce06d64(jetbrains.mps.ide.httpsupport.behavior)" implicit="true" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -271,7 +270,6 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
@@ -1027,8 +1025,8 @@
                   <node concept="3clFbF" id="5FAyHK_IiSt" role="3cqZAp">
                     <node concept="2OqwBi" id="5FAyHK_Ij4o" role="3clFbG">
                       <node concept="30H73N" id="5FAyHK_IiSs" role="2Oq$k0" />
-                      <node concept="2qgKlT" id="5FAyHK_Ipu8" role="2OqNvi">
-                        <ref role="37wK5l" to="zfj2:5FAyHK_IjSB" resolve="isTrustful" />
+                      <node concept="3TrcHB" id="2RVPb60$Msc" role="2OqNvi">
+                        <ref role="3TsBF5" to="ndib:5FAyHK_I4H4" resolve="trustful" />
                       </node>
                     </node>
                   </node>
