@@ -57,6 +57,16 @@ public interface TransformationMenuContext {
   @NotNull
   TransformationMenuContext with(@Nullable SNodeLocation nodeLocation, @Nullable String menuLocation);
 
+  @NotNull
+  default TransformationMenuContext withNode(@NotNull SNode node) {
+    return with(new SNodeLocation.FromNode(node), null);
+  }
+
+  @NotNull
+  default TransformationMenuContext withLocation(@NotNull String menuLocation) {
+    return with(null, menuLocation);
+  }
+
   /**
    * Creates applicable menu items from the menus returned by {@code menuLookup}. If {@code menuLookup} is null, creates the default menu.
    *
