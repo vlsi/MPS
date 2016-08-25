@@ -63,7 +63,8 @@ public class BasicPropertiesContributor implements CellTreeContributor {
         .property("leftGap", cell.getLeftGap())
         .property("selectable", cell.isSelectable())
         .property("referenceCell", cell.isReferenceCell())
-        .property("contextAssistantMenu", cell.getTransformationMenuLookup());
+        .property("transformationMenuLookup", cell.getTransformationMenuLookup())
+        .property("substituteInfo", cell.getSubstituteInfo());
   }
 
   private Icon getCellIcon(EditorCell cell) {
