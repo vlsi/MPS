@@ -122,6 +122,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_GenerationContextOp_GetOutputByLabel_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_op_inside_refMacro_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }

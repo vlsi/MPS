@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,7 +80,11 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   @Override
   public void registerMappingLabel(SNode inputNode, String mappingName, SNode outputNode) {
-    myMappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
+    if (inputNode != null) {
+      myMappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
+    } else {
+      myMappings.addNewOutputNode(mappingName, outputNode);
+    }
   }
 
   public SNode findOutputNodeByTemplateNodeUnique(String templateNode) {
@@ -89,7 +93,11 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   @Override
   public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
-    return myMappings.findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
+    if (inputNode != null) {
+      return myMappings.findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
+    } else {
+      return myMappings.findNewOutputNode(mappingName);
+    }
   }
 
   @Override

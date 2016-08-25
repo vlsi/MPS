@@ -1554,8 +1554,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)/3392060900980718989">
     <file name="QueriesGenerated.java">
-      <node id="5955416080080987365" at="84,109,85,61" concept="9" />
-      <scope id="5955416080080987364" at="84,109,85,61" />
+      <node id="5955416080080987365" at="84,109,85,67" concept="9" />
+      <scope id="5955416080080987364" at="84,109,85,67" />
     </file>
     <file name="Template_gen_static_method.java">
       <node id="3392060900980718989" at="26,43,27,186" concept="9" />

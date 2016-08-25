@@ -82,7 +82,7 @@ public class QueriesGenerated {
     return "a";
   }
   public static Object referenceMacro_GetReferent_5955416080080987363(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("testlabel");
+    return _context.getOutputNodeByMappingLabel("testlabel", null);
   }
   public static SNode sourceNodeQuery_2681305894288283515(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getPatternVariable("patternVar_right"));

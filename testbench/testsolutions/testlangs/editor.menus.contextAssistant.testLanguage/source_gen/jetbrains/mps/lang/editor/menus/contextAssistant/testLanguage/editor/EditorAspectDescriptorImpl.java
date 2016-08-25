@@ -38,6 +38,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
             return Collections.<ConceptEditor>singletonList(new Parent_Editor());
           }
           break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SubconceptOfChild_Editor());
+          }
+          break;
         default:
       }
     }
@@ -56,6 +61,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
         case 0:
           if (true) {
             return Collections.<TransformationMenu>singletonList(new Child_TransformationMenu());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<TransformationMenu>singletonList(new SubconceptOfChild_TransformationMenu());
           }
           break;
         default:
@@ -106,8 +116,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Child"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x7d40c2eb5957a904L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.OtherSubconceptOfChild"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Parent"));
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0d = buildConceptIndices(MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Child"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Child"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x7d40c2eb5957a904L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.OtherSubconceptOfChild"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Parent"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x1b49c84ee1cc743bL, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.SubconceptOfChild"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0d = buildConceptIndices(MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Child"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x1b49c84ee1cc743bL, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.SubconceptOfChild"));
   private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Child"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Parent"));
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a4 = new String[]{"jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.NamedMenu", "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.Recursive"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0b3a0a4 = new String[]{"jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.ParentNamedMenu"};

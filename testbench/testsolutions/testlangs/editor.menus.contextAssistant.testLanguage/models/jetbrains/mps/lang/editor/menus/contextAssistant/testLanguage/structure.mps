@@ -68,6 +68,15 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
+  <node concept="1TIwiD" id="1H9M4VxN7gV">
+    <property role="3GE5qa" value="" />
+    <property role="TrG5h" value="SubconceptOfChild" />
+    <property role="EcuMT" value="1966322953445209147" />
+    <ref role="1TJDcQ" node="4PEyPcYoaCM" resolve="Child" />
+    <node concept="PrWs8" id="3rSzFHWO0Uu" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
   <node concept="1TIwiD" id="7P0KIHplU$4">
     <property role="3GE5qa" value="" />
     <property role="TrG5h" value="OtherSubconceptOfChild" />

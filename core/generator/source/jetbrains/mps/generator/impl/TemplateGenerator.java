@@ -547,19 +547,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     if (inputNodeModel == null) {
       return null;
     }
-    CrossModelEnvironment env = getGeneratorSessionContext().getCrossModelEnvironment();
-    ModelCheckpoints modelHistory = env.getState(inputNodeModel, myPlanStep.getPlanIdentity());
-    if (modelHistory == null) {
-      return null;
-    }
-    // last and next are not necessarily in immediately adjacent generation steps, i.e. cpLast, transfStep1, transfStep2, activeTransformStep, transfStep3, cpNext
-    Checkpoint lastPoint = myPlanStep.getLastCheckpoint();
-    Checkpoint targetPoint = myPlanStep.getNextCheckpoint();
-    CheckpointState cp = modelHistory.find(targetPoint);
+    CheckpointState cp = findMatchingStateFor(inputNodeModel);
     if (cp == null) {
       return null;
     }
-    // FIXME we might want to ensure inputNode comes from the lastPoint checkpoint. However, unless we keep TransitionState along with the
+    // FIXME we might want to ensure inputNode comes from the myPlanStep.getLastCheckpoint() checkpoint.
+    //       However, unless we keep TransitionState along with the
     //       checkpointState, I see no way to confirm inputNode comes from lastPoint (the moment we've built CheckpointState, we dispose
     //       TransitionTrace and could not find out what are origins of the node in checkpoint model. Technically, it's not true now,
     //       as there are user objects in the checkpoint model, however, this might get changed, so I can't rely on that, unless there's
@@ -569,7 +562,41 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       return output.iterator().next();
     }
     return null;
+  }
 
+  private CheckpointState findMatchingStateFor(/*non-null*/SModel model) {
+    CrossModelEnvironment env = getGeneratorSessionContext().getCrossModelEnvironment();
+    ModelCheckpoints modelHistory = env.getState(model, myPlanStep.getPlanIdentity());
+    if (modelHistory == null) {
+      return null;
+    }
+    // last and next are not necessarily in immediately adjacent generation steps, i.e. cpLast, transfStep1, transfStep2, activeTransformStep, transfStep3, cpNext
+    Checkpoint lastPoint = myPlanStep.getLastCheckpoint();
+    // XXX alternatively, we can extract active checkpoint from TransitionTrace. Do we need both ways to get the value I don't care to use?
+    //     Isn't it too complicated?
+    Checkpoint targetPoint = myPlanStep.getNextCheckpoint();
+    return modelHistory.find(targetPoint);
+  }
+
+  @Nullable
+  @Override
+  public SNode findOutputNode(SModel inputModel, String mappingName) {
+    if (inputModel == null || inputModel == getInputModel()) {
+      // XXX 1. not sure it's proper delegation, perhaps findOutputNodeByInputNodeAndMappingName(null) shall delegate here. Did that
+      //        not to bother with refactoring right now.
+      //     2. inputModel might be some intermediate model between original and current input, shall I consult ModelTransitions or similar
+      //        facility to find out if this model is from active transformation or truly external.
+      return super.findOutputNodeByInputNodeAndMappingName(null, mappingName);
+    }
+    CheckpointState cps = findMatchingStateFor(inputModel);
+    if (cps == null) {
+      return null;
+    }
+    List<SNode> rv = cps.getOutputWithoutInput(mappingName);
+    if (rv.size() != 1) {
+      return null;
+    }
+    return rv.get(0);
   }
 
   // in fact, it's reasonable to keep this method in TEEI (in ReductionTrack, actually), to reflect narrowing scope of

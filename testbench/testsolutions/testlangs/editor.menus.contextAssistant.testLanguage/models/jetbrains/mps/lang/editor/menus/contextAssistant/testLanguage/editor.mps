@@ -796,5 +796,22 @@
       <property role="3F0ifm" value="other subconcept of child" />
     </node>
   </node>
+  <node concept="24kQdi" id="1H9M4VxNevw">
+    <property role="3GE5qa" value="" />
+    <ref role="1XX52x" to="hsq4:1H9M4VxN7gV" resolve="SubconceptOfChild" />
+    <node concept="3EZMnI" id="3rSzFHWO0Uw" role="2wV5jI">
+      <node concept="l2Vlx" id="3rSzFHWO0Ux" role="2iSdaV" />
+      <node concept="3F0ifn" id="1H9M4VxNevy" role="3EZMnx">
+        <property role="3F0ifm" value="subconcept of child" />
+      </node>
+      <node concept="3F0A7n" id="3rSzFHWO0UJ" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+    </node>
+  </node>
+  <node concept="IW6AY" id="1H9M4VxN7gW">
+    <property role="3GE5qa" value="" />
+    <ref role="aqKnT" to="hsq4:1H9M4VxN7gV" resolve="SubconceptOfChild" />
+  </node>
 </model>
 

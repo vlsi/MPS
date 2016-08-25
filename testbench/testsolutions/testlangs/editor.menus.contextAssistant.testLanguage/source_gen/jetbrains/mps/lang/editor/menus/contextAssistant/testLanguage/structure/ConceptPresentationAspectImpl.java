@@ -15,6 +15,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_Child = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OtherSubconceptOfChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Parent = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SubconceptOfChild = new ConceptPresentationBuilder().create();
 
   @Override
   @Nullable
@@ -27,6 +28,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_OtherSubconceptOfChild;
       case 2:
         return props_Parent;
+      case 3:
+        return props_SubconceptOfChild;
     }
     throw new IllegalStateException();
   }
