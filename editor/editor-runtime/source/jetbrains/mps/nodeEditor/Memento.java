@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
@@ -25,6 +24,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.optional.WithCaret;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
@@ -48,23 +48,22 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 class Memento {
-  private static final Comparator<Pair<jetbrains.mps.openapi.editor.cells.EditorCell_Collection, Boolean>> COLLAPSED_STATES_COMPARATOR =
-      new Comparator<Pair<jetbrains.mps.openapi.editor.cells.EditorCell_Collection, Boolean>>() {
-        @Override
-        public int compare(Pair<jetbrains.mps.openapi.editor.cells.EditorCell_Collection, Boolean> p1,
-            Pair<jetbrains.mps.openapi.editor.cells.EditorCell_Collection, Boolean> p2) {
-          return getDepth(p2.o1) - getDepth(p1.o1);
-        }
+  private static final Comparator<Pair<EditorCell_Collection, Boolean>> COLLAPSED_STATES_COMPARATOR = new Comparator<Pair<EditorCell_Collection, Boolean>>() {
+    @Override
+    public int compare(Pair<EditorCell_Collection, Boolean> p1,
+        Pair<EditorCell_Collection, Boolean> p2) {
+      return getDepth(p2.o1) - getDepth(p1.o1);
+    }
 
-        private int getDepth(EditorCell cell) {
-          int depth = 0;
-          while (cell.getParent() != null) {
-            cell = cell.getParent();
-            depth++;
-          }
-          return depth;
-        }
-      };
+    private int getDepth(EditorCell cell) {
+      int depth = 0;
+      while (cell.getParent() != null) {
+        cell = cell.getParent();
+        depth++;
+      }
+      return depth;
+    }
+  };
 
   private static final Comparator<EditorCell> CELL_COMPARATOR =
       (cell1, cell2) -> CellTraversalUtil.getCommonParent(cell1, cell2) == null ? 0 : CellTraversalUtil.compare(cell1, cell2);
@@ -116,17 +115,16 @@ class Memento {
   }
 
   @NotNull
-  private Stream<jetbrains.mps.openapi.editor.cells.EditorCell_Collection> collectRestoreAlways(EditorComponent nodeEditor,
-      List<SelectionInfo> selectionInfoStack) {
-    Set<jetbrains.mps.openapi.editor.cells.EditorCell_Collection> visitedCollections = new HashSet<>();
-    List<jetbrains.mps.openapi.editor.cells.EditorCell_Collection> result = new ArrayList<>();
+  private Stream<EditorCell_Collection> collectRestoreAlways(EditorComponent nodeEditor, List<SelectionInfo> selectionInfoStack) {
+    Set<EditorCell_Collection> visitedCollections = new HashSet<>();
+    List<EditorCell_Collection> result = new ArrayList<>();
     for (SelectionInfo selectionInfo : selectionInfoStack) {
       Selection selection = selectionInfo.createSelection(nodeEditor);
       if (selection == null) {
         continue;
       }
       for (EditorCell nextCell : selection.getSelectedCells()) {
-        for (jetbrains.mps.openapi.editor.cells.EditorCell_Collection parent = nextCell.getParent(); parent != null; parent = parent.getParent()) {
+        for (EditorCell_Collection parent = nextCell.getParent(); parent != null; parent = parent.getParent()) {
           if (visitedCollections.add(parent) && parent.isFoldable()) {
             result.add(parent);
           }
@@ -136,12 +134,12 @@ class Memento {
     return result.stream();
   }
 
-  private Stream<jetbrains.mps.openapi.editor.cells.EditorCell_Collection> collectFoldable(EditorComponent nodeEditor, boolean initiallyCollapsed) {
-    return nodeEditor.getCellTracker().getFoldableCells().stream().map(jetbrains.mps.openapi.editor.cells.EditorCell_Collection.class::cast).filter(
+  private Stream<EditorCell_Collection> collectFoldable(EditorComponent nodeEditor, boolean initiallyCollapsed) {
+    return nodeEditor.getCellTracker().getFoldableCells().stream().map(EditorCell_Collection.class::cast).filter(
         cell -> initiallyCollapsed == cell.isInitiallyCollapsed());
   }
 
-  private Stream<Pair<CellInfo, Boolean>> getFoldableStates(Stream<jetbrains.mps.openapi.editor.cells.EditorCell_Collection> cells) {
+  private Stream<Pair<CellInfo, Boolean>> getFoldableStates(Stream<EditorCell_Collection> cells) {
     return cells.map(cell -> new Pair<>(cell, cell.isCollapsed())).sorted(COLLAPSED_STATES_COMPARATOR).map(
         collapsedState -> new Pair<>(collapsedState.o1.getCellInfo(), collapsedState.o2));
   }
@@ -179,11 +177,11 @@ class Memento {
     }
     for (CellInfo collectionInfo : myCollectionsWithEnabledBraces) {
       EditorCell collection = collectionInfo.findCell(editor);
-      if (!(collection instanceof EditorCell_Collection)) {
+      if (!(collection instanceof jetbrains.mps.nodeEditor.cells.EditorCell_Collection)) {
         continue;
       }
-      if (((EditorCell_Collection) collection).usesBraces()) {
-        ((EditorCell_Collection) collection).enableBraces();
+      if (((jetbrains.mps.nodeEditor.cells.EditorCell_Collection) collection).usesBraces()) {
+        ((jetbrains.mps.nodeEditor.cells.EditorCell_Collection) collection).enableBraces();
       }
     }
 
@@ -198,12 +196,17 @@ class Memento {
   private boolean restoreFoldingStates(Iterable<Pair<CellInfo, Boolean>> foldingStates, EditorComponent editor) {
     boolean needsRelayout = false;
     for (Pair<CellInfo, Boolean> collapseState : foldingStates) {
-      EditorCell collection = collapseState.o1.findCell(editor);
-      if (!(collection instanceof EditorCell_Collection)) {
+      EditorCell cell = collapseState.o1.findCell(editor);
+      if (!(cell instanceof EditorCell_Collection)) {
         continue;
       }
+      EditorCell_Collection collection = (EditorCell_Collection) cell;
       needsRelayout = true;
-      ((EditorCell_Collection) collection).toggleCollapsed(collapseState.o2);
+      if (collapseState.o2) {
+        collection.fold();
+      } else {
+        collection.unfold();
+      }
     }
     return needsRelayout;
   }
