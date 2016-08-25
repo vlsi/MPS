@@ -28,8 +28,8 @@ public class ChangeCollapseCondition_ExpandCell_Test extends BaseTransformationT
       invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+
 
     }
   }
