@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
 import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -98,11 +98,11 @@ public class SelectionInfoImpl implements SelectionInfo {
           LOG.error("Specified selection class module was not found by ID: " + myModuleID);
           return null;
         }
-        if (!(module instanceof Language)) {
+        if (!(module instanceof ReloadableModule)) {
           LOG.error("Specified selection class module was not Language: " + myModuleID);
           return null;
         }
-        selectionClass = (Class<Selection>) ((Language) module).getClass(mySelectionClassName);
+        selectionClass = (Class<Selection>) ((ReloadableModule) module).getClass(mySelectionClassName);
       } else {
         selectionClass = (Class<Selection>) getClass().getClassLoader().loadClass(mySelectionClassName);
       }
