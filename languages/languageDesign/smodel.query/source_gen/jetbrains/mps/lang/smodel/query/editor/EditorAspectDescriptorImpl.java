@@ -10,7 +10,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -129,7 +128,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
           break;
         case 3:
           if (true) {
-            return Arrays.asList(new SubstituteMenu[]{new GlobalScope_old_SubstituteMenu(), new GlobalScope_old_SubstituteMenu()});
+            return Collections.<SubstituteMenu>singletonList(new GlobalScope_old_SubstituteMenu());
           }
           break;
         case 4:
