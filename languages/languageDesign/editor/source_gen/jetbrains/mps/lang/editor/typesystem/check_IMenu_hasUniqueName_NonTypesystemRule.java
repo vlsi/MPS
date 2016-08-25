@@ -22,7 +22,7 @@ public class check_IMenu_hasUniqueName_NonTypesystemRule extends AbstractNonType
   public check_IMenu_hasUniqueName_NonTypesystemRule() {
   }
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    for (SNode otherNode : ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(node), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.ITransformationMenu")))) {
+    for (SNode otherNode : ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(node), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048846L, "jetbrains.mps.lang.editor.structure.IMenu")))) {
       if (otherNode == node) {
         continue;
       }

@@ -1195,7 +1195,7 @@
       <node id="286080166051470866" at="44,30,45,17" concept="9" />
       <node id="286080166051471245" at="47,64,48,46" concept="9" />
       <node id="286080166051470866" at="22,0,24,0" concept="2" trace="check_IMenu_hasUniqueName_NonTypesystemRule#()V" />
-      <node id="286080166051471238" at="25,269,28,7" concept="6" />
+      <node id="286080166051471238" at="25,255,28,7" concept="6" />
       <node id="286080166051470866" at="38,0,41,0" concept="7" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="286080166051470866" at="41,0,44,0" concept="7" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="286080166051470866" at="44,0,47,0" concept="7" trace="overrides#()Z" />
@@ -1225,7 +1225,7 @@
         <var name="b" id="286080166051471245" />
       </scope>
       <scope id="286080166051471252" at="29,171,34,9" />
-      <scope id="286080166051471237" at="25,269,35,7" />
+      <scope id="286080166051471237" at="25,255,35,7" />
       <scope id="286080166051470867" at="24,117,36,5" />
       <scope id="286080166051471228" at="24,117,36,5">
         <var name="otherNode" id="286080166051471236" />
