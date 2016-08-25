@@ -20,7 +20,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 
@@ -91,8 +90,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_action");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1814cb54L, 0x3d3ef1fc1814cb59L, "action")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -131,8 +128,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_position");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1814cb54L, 0x7cc3195fc1d254beL, "position")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -207,8 +202,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_action");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1814cb54L, 0x3d3ef1fc1814cb59L, "action")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -242,8 +235,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_position");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1814cb54L, 0x7cc3195fc1d254beL, "position")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

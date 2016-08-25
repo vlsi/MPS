@@ -36,7 +36,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CreateChildRangeSelection;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
@@ -247,7 +246,6 @@ public class Notes_Editor extends DefaultNodeEditor {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
-      emptyCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x7ba12f0b163e1e47L, "notes")));
       return emptyCell;
     }
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {

@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 
 public class ClassConceptModifiersExtendsAndImplements_ext_5 extends TransformationMenuBase {
-  private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.LEFT_SIDE_TRANSFORM);
+  private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM, MenuLocations.LEFT_SIDE_TRANSFORM);
   @Override
   public boolean isApplicableToLocation(@NotNull String location) {
     return SetSequence.fromSet(myLocations).contains(location);
@@ -37,15 +37,17 @@ public class ClassConceptModifiersExtendsAndImplements_ext_5 extends Transformat
   @NotNull
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
+    if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
+    }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ClassConceptModifiersExtendsAndImplements_ext_5.TransformationMenuPart_Group_52qbsp_a0());
-      result.add(new ClassConceptModifiersExtendsAndImplements_ext_5.TransformationMenuPart_Group_52qbsp_b0());
-      result.add(new ClassConceptModifiersExtendsAndImplements_ext_5.TransformationMenuPart_Group_52qbsp_c0());
+      result.add(new ClassConceptModifiersExtendsAndImplements_ext_5.TransformationMenuPart_Group_52qbsp_a1());
+      result.add(new ClassConceptModifiersExtendsAndImplements_ext_5.TransformationMenuPart_Group_52qbsp_b1());
+      result.add(new ClassConceptModifiersExtendsAndImplements_ext_5.TransformationMenuPart_Group_52qbsp_c1());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_52qbsp_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TransformationMenuPart_Group_52qbsp_a1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !((boolean) ClassifierMember__BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(_context.getNode())) && (boolean) ClassConcept__BehaviorDescriptor.canBeStatic_id2L7NFMAtrRg.invoke(_context.getNode());
@@ -53,12 +55,12 @@ public class ClassConceptModifiersExtendsAndImplements_ext_5 extends Transformat
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ClassConceptModifiersExtendsAndImplements_ext_5.TransformationMenuPart_Group_52qbsp_a0.TransformationMenuPart_Action_52qbsp_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ClassConceptModifiersExtendsAndImplements_ext_5.TransformationMenuPart_Group_52qbsp_a1.TransformationMenuPart_Action_52qbsp_a0b());
     }
-    private class TransformationMenuPart_Action_52qbsp_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TransformationMenuPart_Action_52qbsp_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new ClassConceptModifiersExtendsAndImplements_ext_5.TransformationMenuPart_Group_52qbsp_a0.TransformationMenuPart_Action_52qbsp_a0a.Item(context);
+        return new ClassConceptModifiersExtendsAndImplements_ext_5.TransformationMenuPart_Group_52qbsp_a1.TransformationMenuPart_Action_52qbsp_a0b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -84,7 +86,7 @@ public class ClassConceptModifiersExtendsAndImplements_ext_5 extends Transformat
       }
     }
   }
-  public class TransformationMenuPart_Group_52qbsp_b0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TransformationMenuPart_Group_52qbsp_b1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x11c6af4b284L, "isFinal")));
@@ -92,12 +94,12 @@ public class ClassConceptModifiersExtendsAndImplements_ext_5 extends Transformat
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ClassConceptModifiersExtendsAndImplements_ext_5.TransformationMenuPart_Group_52qbsp_b0.TransformationMenuPart_Action_52qbsp_a1a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ClassConceptModifiersExtendsAndImplements_ext_5.TransformationMenuPart_Group_52qbsp_b1.TransformationMenuPart_Action_52qbsp_a1b());
     }
-    private class TransformationMenuPart_Action_52qbsp_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TransformationMenuPart_Action_52qbsp_a1b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new ClassConceptModifiersExtendsAndImplements_ext_5.TransformationMenuPart_Group_52qbsp_b0.TransformationMenuPart_Action_52qbsp_a1a.Item(context);
+        return new ClassConceptModifiersExtendsAndImplements_ext_5.TransformationMenuPart_Group_52qbsp_b1.TransformationMenuPart_Action_52qbsp_a1b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -123,7 +125,7 @@ public class ClassConceptModifiersExtendsAndImplements_ext_5 extends Transformat
       }
     }
   }
-  public class TransformationMenuPart_Group_52qbsp_c0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TransformationMenuPart_Group_52qbsp_c1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass")));
@@ -131,12 +133,12 @@ public class ClassConceptModifiersExtendsAndImplements_ext_5 extends Transformat
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ClassConceptModifiersExtendsAndImplements_ext_5.TransformationMenuPart_Group_52qbsp_c0.TransformationMenuPart_Action_52qbsp_a2a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ClassConceptModifiersExtendsAndImplements_ext_5.TransformationMenuPart_Group_52qbsp_c1.TransformationMenuPart_Action_52qbsp_a2b());
     }
-    private class TransformationMenuPart_Action_52qbsp_a2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TransformationMenuPart_Action_52qbsp_a2b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new ClassConceptModifiersExtendsAndImplements_ext_5.TransformationMenuPart_Group_52qbsp_c0.TransformationMenuPart_Action_52qbsp_a2a.Item(context);
+        return new ClassConceptModifiersExtendsAndImplements_ext_5.TransformationMenuPart_Group_52qbsp_c1.TransformationMenuPart_Action_52qbsp_a2b.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {

@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
@@ -101,7 +100,6 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
-      emptyCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L, 0x5058b4b262ffd5e0L, "conceptsToCreateBreakpoint")));
       return emptyCell;
     }
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -174,8 +172,6 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_isApplicableBreakpoint");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L, 0x2b1681328a5d11f6L, "isApplicableBreakpoint")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -229,8 +225,6 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_createBreakpoint");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L, 0x2bd07aa080dfb938L, "createBreakpoint")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

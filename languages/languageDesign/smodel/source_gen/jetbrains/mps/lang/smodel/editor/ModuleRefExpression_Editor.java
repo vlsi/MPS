@@ -23,7 +23,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
@@ -93,8 +92,6 @@ public class ModuleRefExpression_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_moduleId");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1749acf3d038bbe2L, 0x1749acf3d038bbe5L, "moduleId")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

@@ -28,7 +28,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 
 public class FinderDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -292,8 +291,6 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_isUsedByDefault");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, 0x1660f4e8320e447L, "isUsedByDefault")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -342,8 +339,6 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_isVisibleBlock");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, 0x11b36e6cbecL, "isVisibleBlock")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -392,8 +387,6 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_isApplicableFunction");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x11bd0c17f12L, 0x11bd0c21634L, "isApplicableFunction")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -442,8 +435,6 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_findFunction");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x11bd0c17f12L, 0x11bd0c21635L, "findFunction")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -492,8 +483,6 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_searchedNodesBlock");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x11bd0c17f12L, 0x11bd0c21636L, "searchedNodesBlock")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -542,8 +531,6 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_categorizeBlock");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x11bd0c17f12L, 0x11bd0c21637L, "categorizeBlock")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

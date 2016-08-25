@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
@@ -91,8 +90,6 @@ public class NodeInfoCheckOperation_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_statementRef");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbfe6272L, 0x1de1fbd5fbfe97adL, "statementRef")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

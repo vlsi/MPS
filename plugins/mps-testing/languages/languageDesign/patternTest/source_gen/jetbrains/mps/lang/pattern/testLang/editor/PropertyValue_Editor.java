@@ -19,7 +19,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class PropertyValue_Editor extends DefaultNodeEditor {
@@ -67,8 +66,6 @@ public class PropertyValue_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_variable");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x15b423b3f8d042b6L, 0x15b423b3f8d042b7L, "variable")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -113,8 +110,6 @@ public class PropertyValue_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_value");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x15b423b3f8d042b6L, 0x15b423b3f8d042b8L, "value")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractSubstituteInfo;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -25,6 +24,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -48,20 +48,10 @@ public class SideTransformSubstituteInfo extends AbstractSubstituteInfo {
     return wrapToRemovingSTInfoActions(super.createActions());
   }
 
+  @NotNull
   @Override
-  protected TransformationMenuContext createTransformationContext() {
-    final EditorCell editorCell = getEditorCell();
-    if (editorCell.getTransformationMenuLookup() != null) {
-      return DefaultTransformationMenuContext.createInitialContextForCell(getEditorCell(), mySide.myMenuLocation);
-    }
-    SNode node = getEditorCell().getSNode();
-    while (AttributeOperations.isAttribute(node)) {
-      node = node.getParent();
-    }
-    if (node != null) {
-      return DefaultTransformationMenuContext.createInitialContextForNode(getEditorContext(), node, mySide.myMenuLocation);
-    }
-    return null;
+  protected String getMenuLocation() {
+    return mySide.myMenuLocation;
   }
 
   private List<SubstituteAction> wrapToRemovingSTInfoActions(List<SubstituteAction> actions) {

@@ -18,7 +18,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -126,8 +125,6 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_list");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x4cb3e593ffd97846L, 0x62f47dac992b7389L, "list")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -196,7 +193,6 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
-      emptyCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x4cb3e593ffd97846L, 0x4cb3e593ffd9784eL, "statement")));
       return emptyCell;
     }
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -261,8 +257,6 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_list1");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x4cb3e593ffd97846L, 0x4cb3e593ffd97849L, "list1")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -327,8 +321,6 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_list2");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x4cb3e593ffd97846L, 0x4cb3e593ffd9784bL, "list2")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

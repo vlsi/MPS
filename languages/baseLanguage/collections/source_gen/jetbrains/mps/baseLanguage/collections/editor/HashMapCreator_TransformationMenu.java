@@ -19,8 +19,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
@@ -48,7 +47,7 @@ public class HashMapCreator_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_jcbzpg_b0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
@@ -59,7 +58,7 @@ public class HashMapCreator_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_jcbzpg_c0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 

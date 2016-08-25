@@ -14,7 +14,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 
 public class TransformationFeature_Tooltip_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -59,8 +58,6 @@ public class TransformationFeature_Tooltip_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_query");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1da5L, 0x7c45559defbb1da6L, "query")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

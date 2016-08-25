@@ -18,7 +18,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -96,8 +95,6 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_nodeToCoerce");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111f05e2451L, 0x111f0605ed0L, "nodeToCoerce")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -137,8 +134,6 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_pattern");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111f05e2451L, 0x111f05fb92aL, "pattern")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -197,8 +192,6 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_body");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111f05e2451L, 0x111f05f96ebL, "body")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -266,8 +259,6 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_elseClause");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111f05e2451L, 0x11c284fe10bL, "elseClause")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

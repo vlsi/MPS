@@ -25,8 +25,7 @@ import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuTransformationMenuPart;
 import jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -254,7 +253,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
     public class TransformationMenuPart_IncludeMenu_supj5f_a4a extends IncludeTransformationMenuTransformationMenuPart {
       @Nullable
       @Override
-      protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+      protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
         final SNode node = _context.getNode();
         final EditorContext editorContext = _context.getEditorContext();
 

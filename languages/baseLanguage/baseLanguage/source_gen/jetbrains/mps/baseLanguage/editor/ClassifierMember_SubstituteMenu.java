@@ -14,8 +14,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.NamedSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -50,7 +49,7 @@ public class ClassifierMember_SubstituteMenu extends SubstituteMenuBase {
 
       @Nullable
       @Override
-      protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+      protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
         final EditorContext editorContext = _context.getEditorContext();
         return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "jetbrains.mps.baseLanguage.editor.StaticFieldInClassifier");
       }
@@ -69,7 +68,7 @@ public class ClassifierMember_SubstituteMenu extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "jetbrains.mps.baseLanguage.editor.ctor_IncompleteMember");
     }
@@ -78,7 +77,7 @@ public class ClassifierMember_SubstituteMenu extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "jetbrains.mps.baseLanguage.editor.ctor_MemberBasedOnIncomplete");
     }
@@ -87,7 +86,7 @@ public class ClassifierMember_SubstituteMenu extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "jetbrains.mps.baseLanguage.editor.ctor_InterfaceMemberBasedOnIncomplete");
     }
@@ -96,7 +95,7 @@ public class ClassifierMember_SubstituteMenu extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "jetbrains.mps.baseLanguage.editor.ctor_IncompleteMemberInInterface");
     }

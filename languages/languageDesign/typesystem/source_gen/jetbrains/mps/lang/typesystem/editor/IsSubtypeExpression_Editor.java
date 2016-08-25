@@ -24,7 +24,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 
 public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -92,8 +91,6 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_subtypeExpression");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111ef7b9fb7L, 0x111ef7be155L, "subtypeExpression")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -133,8 +130,6 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_supertypeExpression");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111ef7b9fb7L, 0x111ef7bf5e7L, "supertypeExpression")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

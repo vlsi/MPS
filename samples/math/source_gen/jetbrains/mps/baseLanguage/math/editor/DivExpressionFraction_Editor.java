@@ -21,7 +21,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider;
@@ -89,8 +88,6 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_numerator");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, 0x1200914977fL, "numerator")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -138,8 +135,6 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_denominator");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, 0x12009149b1aL, "denominator")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

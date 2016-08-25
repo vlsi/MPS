@@ -17,7 +17,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class SwitchCase_Editor extends DefaultNodeEditor {
@@ -70,8 +69,6 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_expression");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02cdd1bL, 0x10ef02d67cfL, "expression")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -119,8 +116,6 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_body");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02cdd1bL, 0x10ef02d8048L, "body")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

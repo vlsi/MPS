@@ -18,7 +18,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -95,8 +94,6 @@ public class Circle_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_fillColor");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L, 0x19d079f4ec114c11L, "fillColor")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -154,8 +151,6 @@ public class Circle_Editor extends DefaultNodeEditor {
       EditorCell editorCell = createEmptyCell_internal(myEditorContext, myOwnerNode);
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L, 0x19d079f4ec114c13L, "borderColor")));
-
       return editorCell;
     }
     private EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {

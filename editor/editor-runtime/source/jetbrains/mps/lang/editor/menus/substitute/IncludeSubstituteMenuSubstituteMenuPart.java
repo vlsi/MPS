@@ -15,12 +15,9 @@
  */
 package jetbrains.mps.lang.editor.menus.substitute;
 
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
-import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -39,7 +36,7 @@ public class IncludeSubstituteMenuSubstituteMenuPart implements SubstituteMenuPa
 
 
   @Nullable
-  protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext context) {
+  protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext context) {
     return null;
   }
 

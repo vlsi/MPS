@@ -14,7 +14,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -60,8 +59,6 @@ public class MapOperationExpression_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_expression");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x117ae10e4d9L, 0x117ae11d026L, "expression")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -104,8 +101,6 @@ public class MapOperationExpression_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_mapOperation");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x117ae10e4d9L, 0x117aea4e016L, "mapOperation")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

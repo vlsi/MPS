@@ -19,8 +19,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
@@ -64,7 +63,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_g28b5z_b0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
@@ -75,7 +74,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_g28b5z_c0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
@@ -86,7 +85,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_g28b5z_d0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
@@ -97,7 +96,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_g28b5z_e0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
@@ -108,7 +107,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_g28b5z_f0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
@@ -119,7 +118,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_g28b5z_g0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
@@ -130,7 +129,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_g28b5z_h0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
@@ -141,7 +140,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_g28b5z_i0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
@@ -152,7 +151,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_g28b5z_j0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
@@ -163,7 +162,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_g28b5z_k0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
@@ -174,7 +173,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_g28b5z_l0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
@@ -185,7 +184,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_g28b5z_m0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
@@ -196,7 +195,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_g28b5z_n0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
@@ -207,7 +206,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_g28b5z_o0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
@@ -218,7 +217,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_g28b5z_p0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
@@ -229,7 +228,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_g28b5z_q0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
@@ -240,7 +239,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_g28b5z_r0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
@@ -251,7 +250,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
   public class TransformationMenuPart_IncludeMenu_g28b5z_s0 extends IncludeTransformationMenuTransformationMenuPart {
     @Nullable
     @Override
-    protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext _context) {
+    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 

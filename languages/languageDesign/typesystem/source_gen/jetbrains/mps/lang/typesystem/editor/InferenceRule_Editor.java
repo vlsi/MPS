@@ -37,7 +37,6 @@ import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.lang.typesystem.behavior.AbstractRule__BehaviorDescriptor;
@@ -212,8 +211,6 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_applicableNode");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e7b5c73L, 0x1117e7b9c40L, "applicableNode")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -275,8 +272,6 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_applicableFun");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, 0x669222c8f194bfa3L, "applicableFun")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -340,8 +335,6 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_overridesFun");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1164847e929L, 0x1885777d137135fcL, "overridesFun")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -411,8 +404,6 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_supercedesFun");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, 0x65684a1aee271b08L, "supercedesFun")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -498,8 +489,6 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_body");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1164847e929L, 0x1164848bdf4L, "body")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -582,7 +571,6 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
-      emptyCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, 0x115f0161343L, "dependency")));
       return emptyCell;
     }
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {

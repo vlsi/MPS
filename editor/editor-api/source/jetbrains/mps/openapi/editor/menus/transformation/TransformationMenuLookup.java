@@ -17,17 +17,16 @@ package jetbrains.mps.openapi.editor.menus.transformation;
 
 
 import jetbrains.mps.openapi.editor.descriptor.Menu;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.Collection;
 
 /**
- * Looks up a collection of menus. Must implement {@code equals()} and {@code hashCode()} (used for cycle detection).
+ * Looks up a collection of transformation menus. Must implement {@code equals()} and {@code hashCode()} (used for cycle detection).
  */
-public interface MenuLookup<T extends Menu> {
+public interface TransformationMenuLookup {
   @NotNull
-  Collection<T> lookup(@NotNull Collection<SLanguage> usedLanguages);
-
-  T createImplicitMenu();
+  Collection<TransformationMenu> lookup(@NotNull Collection<SLanguage> usedLanguages, @NotNull String menuLocation);
 }

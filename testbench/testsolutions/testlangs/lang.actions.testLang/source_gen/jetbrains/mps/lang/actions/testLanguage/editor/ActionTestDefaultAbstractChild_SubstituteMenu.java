@@ -16,8 +16,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.NamedSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -69,7 +68,7 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
 
       @Nullable
       @Override
-      protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+      protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
         final EditorContext editorContext = _context.getEditorContext();
         return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x73dfe0fc25514b8dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultAbstractChild"), "jetbrains.mps.lang.actions.testLanguage.editor.RemoveDefaultsPart");
       }
@@ -78,7 +77,7 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
 
       @Nullable
       @Override
-      protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+      protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
         final EditorContext editorContext = _context.getEditorContext();
         return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x73dfe0fc25514b8dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultAbstractChild"), "jetbrains.mps.lang.actions.testLanguage.editor.RemoveByConditionPart");
       }
@@ -87,7 +86,7 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
 
       @Nullable
       @Override
-      protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+      protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
         final EditorContext editorContext = _context.getEditorContext();
         return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x73dfe0fc25514b8dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultAbstractChild"), "jetbrains.mps.lang.actions.testLanguage.editor.RemovePart");
       }

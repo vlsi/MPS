@@ -17,8 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.IncludeSubstituteMenuTransformationMenuPart;
 import jetbrains.mps.lang.editor.menus.transformation.WrapSubstituteMenuTransformationMenuPart;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -53,7 +52,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext _context) {
+    protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb2666fc54L, "jetbrains.mps.samples.languagePatterns.Basic.structure.LineStyle"));
     }

@@ -19,8 +19,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.transformation.WrapSubstituteMenuTransformationMenuPart;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -57,7 +56,7 @@ public class ActionTestSidetransformAddConceptAbstractChild_TransformationMenu e
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext _context) {
+    protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x43d1b15d4168a426L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAddConceptChild"));
     }
@@ -72,7 +71,7 @@ public class ActionTestSidetransformAddConceptAbstractChild_TransformationMenu e
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext _context) {
+    protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x43d1b15d4168a426L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAddConceptChild"));
     }

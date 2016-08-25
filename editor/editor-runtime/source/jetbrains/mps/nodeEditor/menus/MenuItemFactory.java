@@ -15,13 +15,12 @@
  */
 package jetbrains.mps.nodeEditor.menus;
 
-import jetbrains.mps.openapi.editor.descriptor.Menu;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Optional;
 
-public interface MenuItemFactory<ItemT, ContextT, MenuT extends Menu<ItemT, ContextT>> {
+public interface MenuItemFactory<ItemT, ContextT, MenuLookupT> {
   @NotNull
-  List<ItemT> createItems(@NotNull ContextT context, @NotNull MenuLookup<? extends MenuT> menuLookup);
+  List<ItemT> createItems(@NotNull ContextT context, @NotNull MenuLookupT menuLookup);
 }

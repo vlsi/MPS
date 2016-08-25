@@ -41,7 +41,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
 
@@ -153,8 +152,6 @@ public class CustomMapCreator_component implements ConceptEditorComponent {
       editorCell.setCellId("empty_keyType");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, 0x116dbb5b4d0L, "keyType")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -203,8 +200,6 @@ public class CustomMapCreator_component implements ConceptEditorComponent {
       editorCell.setCellId("empty_valueType");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, 0x116dbb5d76dL, "valueType")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -252,8 +247,6 @@ public class CustomMapCreator_component implements ConceptEditorComponent {
       EditorCell editorCell = createEmptyCell_internal(myEditorContext, myOwnerNode);
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, 0x118f24c9eb0L, "initializer")));
-
       return editorCell;
     }
     private EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
@@ -318,8 +311,6 @@ public class CustomMapCreator_component implements ConceptEditorComponent {
       editorCell.setCellId("empty_initSize");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, 0x15ae66cec0613b7fL, "initSize")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

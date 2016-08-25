@@ -26,8 +26,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
@@ -79,7 +78,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
         });
       }
     } else {
-      MenuLookup<SubstituteMenu> lookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), getReplacementConcept());
+      SubstituteMenuLookup lookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), getReplacementConcept());
       SContainmentLink containmentLink = node.getContainmentLink();
       assert containmentLink != null;
       List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parent, node, containmentLink, editorContext, lookup).collect();

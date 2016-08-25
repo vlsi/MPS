@@ -31,8 +31,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -337,7 +336,8 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
           }
         };
       }
-      protected MenuLookup<SubstituteMenu> getLookup(SubstituteMenuContext _context) {
+      @Override
+      protected SubstituteMenuLookup getLookup(SubstituteMenuContext _context) {
         final EditorContext editorContext = _context.getEditorContext();
         return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aaL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteConceptToWrap"));
       }
@@ -424,7 +424,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
 
       @Nullable
       @Override
-      protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+      protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
         final EditorContext editorContext = _context.getEditorContext();
         return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"), "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedSubstituteMenuForContribution");
       }

@@ -21,7 +21,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 
@@ -88,8 +87,6 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_elementType");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11fade5d82aL, 0x11fade6759fL, "elementType")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -143,8 +140,6 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_singletonValue");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11fade5d82aL, 0x11fade6a3c0L, "singletonValue")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

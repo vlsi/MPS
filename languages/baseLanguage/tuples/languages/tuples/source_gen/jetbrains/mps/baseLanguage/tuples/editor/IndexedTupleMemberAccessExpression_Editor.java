@@ -14,7 +14,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -61,8 +60,6 @@ public class IndexedTupleMemberAccessExpression_Editor extends DefaultNodeEditor
       editorCell.setCellId("empty_tuple");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071acfb50L, 0x12071ad5056L, "tuple")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -105,8 +102,6 @@ public class IndexedTupleMemberAccessExpression_Editor extends DefaultNodeEditor
       editorCell.setCellId("empty_index");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071acfb50L, 0x12071ae5facL, "index")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

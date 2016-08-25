@@ -14,7 +14,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -61,8 +60,6 @@ public class ResourceSpecificPropertiesExpression_Editor extends DefaultNodeEdit
       editorCell.setCellId("empty_properties");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1e69fdb2a034c3f6L, 0x1e69fdb2a034c3f7L, "properties")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -107,8 +104,6 @@ public class ResourceSpecificPropertiesExpression_Editor extends DefaultNodeEdit
       editorCell.setCellId("empty_resource");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1e69fdb2a034c3f6L, 0x1e69fdb2a034c408L, "resource")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

@@ -25,7 +25,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.attribute.AttributeKind" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode" />
@@ -106,10 +105,9 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.TransformationMenu" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.MenuLookup" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -131,10 +129,9 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.TransformationMenu" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.MenuLookup" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -156,10 +153,9 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.TransformationMenu" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.MenuLookup" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -187,7 +183,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -290,10 +285,9 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.TransformationMenu" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.MenuLookup" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -539,7 +533,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
@@ -609,10 +602,9 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.TransformationMenu" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.MenuLookup" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -634,10 +626,9 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.TransformationMenu" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.MenuLookup" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -659,10 +650,9 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.MenuLocations" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.TransformationMenu" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.MenuLookup" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -686,7 +676,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />

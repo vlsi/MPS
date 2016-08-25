@@ -21,7 +21,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 
 public class DiagramElementCreationHandlers_EditoComponent implements ConceptEditorComponent {
   @NotNull
@@ -74,8 +73,6 @@ public class DiagramElementCreationHandlers_EditoComponent implements ConceptEdi
       editorCell.setCellId("empty_handler");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba75918aL, 0x76f1cb20ba7726e1L, "handler")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

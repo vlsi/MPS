@@ -20,7 +20,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class AssertSame_Editor extends DefaultNodeEditor {
@@ -75,8 +74,6 @@ public class AssertSame_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_expected");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x74f562a3a993fd3dL, 0x74f562a3a993fd44L, "expected")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -120,8 +117,6 @@ public class AssertSame_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_actual");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x74f562a3a993fd3dL, 0x74f562a3a993fd45L, "actual")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

@@ -16,8 +16,6 @@
 package jetbrains.mps.openapi.editor.menus.substitute;
 
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -50,7 +48,7 @@ public interface SubstituteMenuContext {
    * @return menu items for the node, not null but possibly empty
    */
   @NotNull
-  List<SubstituteMenuItem> createItems(@Nullable MenuLookup<SubstituteMenu> menuLookup);
+  List<SubstituteMenuItem> createItems(@Nullable SubstituteMenuLookup menuLookup);
 
   SubstituteMenuContext withLink(SContainmentLink link);
 }

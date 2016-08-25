@@ -24,7 +24,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -148,8 +147,6 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_type");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a67a319ce06acceL, 0x717f1070bf01cfc9L, "type")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -275,8 +272,6 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_methods");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a67a319ce06acceL, 0x6a67a319ce06accfL, "methods")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -333,8 +328,6 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_presentation");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a67a319ce06acceL, 0x950e7629b28dc95L, "presentation")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -391,8 +384,6 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_isMethodCurrent");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a67a319ce06acceL, 0x5917043ba8fab77aL, "isMethodCurrent")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -432,7 +423,6 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
-      emptyCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a67a319ce06acceL, 0x128d6818e3e19aa3L, "methodDeclaration")));
       return emptyCell;
     }
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {

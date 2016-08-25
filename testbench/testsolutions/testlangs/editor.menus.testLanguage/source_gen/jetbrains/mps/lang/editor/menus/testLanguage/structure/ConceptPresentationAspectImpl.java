@@ -14,10 +14,12 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_Base = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BaseWithNonEmptyMenu = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ChildOfParentWithEmptyCell = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptWithoutDefaultMenu = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Derived = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DerivedWithEmptyMenu = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeHolder = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ParentWithEmptyCell = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ScopesTestConceptBase = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuTestConcept = new ConceptPresentationBuilder().create();
 
@@ -31,16 +33,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 1:
         return props_BaseWithNonEmptyMenu;
       case 2:
-        return props_ConceptWithoutDefaultMenu;
+        return props_ChildOfParentWithEmptyCell;
       case 3:
-        return props_Derived;
+        return props_ConceptWithoutDefaultMenu;
       case 4:
-        return props_DerivedWithEmptyMenu;
+        return props_Derived;
       case 5:
-        return props_NodeHolder;
+        return props_DerivedWithEmptyMenu;
       case 6:
-        return props_ScopesTestConceptBase;
+        return props_NodeHolder;
       case 7:
+        return props_ParentWithEmptyCell;
+      case 8:
+        return props_ScopesTestConceptBase;
+      case 9:
         return props_TransformationMenuTestConcept;
     }
     throw new IllegalStateException();

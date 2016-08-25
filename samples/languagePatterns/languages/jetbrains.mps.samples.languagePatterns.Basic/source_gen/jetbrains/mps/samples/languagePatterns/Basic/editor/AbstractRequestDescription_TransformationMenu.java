@@ -15,8 +15,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuConte
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.IncludeSubstituteMenuTransformationMenuPart;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -41,7 +40,7 @@ public class AbstractRequestDescription_TransformationMenu extends Transformatio
 
   public class TransformationMenuPart_IncludeSubstituteMenu_20rdqk_a0 extends IncludeSubstituteMenuTransformationMenuPart {
     @Override
-    protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext context) {
+    protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext context) {
       final EditorContext editorContext = context.getEditorContext();
       return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription"));
     }

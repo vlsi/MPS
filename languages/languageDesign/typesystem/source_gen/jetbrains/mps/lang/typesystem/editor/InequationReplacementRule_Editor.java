@@ -21,7 +21,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
@@ -132,8 +131,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_applicableNode");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e7b5c73L, 0x1117e7b9c40L, "applicableNode")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -173,8 +170,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_supertypeNode");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x117c5668bf2L, 0x117c567f086L, "supertypeNode")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -236,8 +231,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_isApplicableClause");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x117c5668bf2L, 0x31d99a115038e5edL, "isApplicableClause")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -319,8 +312,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_body");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1119c40dfb0L, 0x1119c41b754L, "body")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

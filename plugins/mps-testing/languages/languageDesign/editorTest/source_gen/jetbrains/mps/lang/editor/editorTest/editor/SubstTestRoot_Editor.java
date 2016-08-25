@@ -18,7 +18,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -103,8 +102,6 @@ public class SubstTestRoot_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_singleChild");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, 0xd4944c0b03c35efL, "singleChild")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -155,8 +152,6 @@ public class SubstTestRoot_Editor extends DefaultNodeEditor {
       EditorCell editorCell = createEmptyCell_internal(myEditorContext, myOwnerNode);
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, 0x281d4238bc38995bL, "singleChildWithNonEmptyCell")));
-
       return editorCell;
     }
     private EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
@@ -235,7 +230,6 @@ public class SubstTestRoot_Editor extends DefaultNodeEditor {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
-      emptyCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, 0x7ebf3747d08ca4f6L, "separatorChild")));
       return emptyCell;
     }
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -350,7 +344,6 @@ public class SubstTestRoot_Editor extends DefaultNodeEditor {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell(editorContext);
         this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
-        emptyCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x7ebf3747d08cab96L, 0x7ebf3747d08cabf6L, "child")));
         return emptyCell;
       }
       public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -430,7 +423,6 @@ public class SubstTestRoot_Editor extends DefaultNodeEditor {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
-      emptyCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, 0xd4944c0b0434672L, "multiChild")));
       return emptyCell;
     }
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {

@@ -25,8 +25,7 @@ import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -109,7 +108,8 @@ public class AddMenuPart_WrapperSubstitute extends SubstituteMenuBase {
           }
         };
       }
-      protected MenuLookup<SubstituteMenu> getLookup(SubstituteMenuContext _context) {
+      @Override
+      protected SubstituteMenuLookup getLookup(SubstituteMenuContext _context) {
         final EditorContext editorContext = _context.getEditorContext();
         return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ee71badL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1"));
       }

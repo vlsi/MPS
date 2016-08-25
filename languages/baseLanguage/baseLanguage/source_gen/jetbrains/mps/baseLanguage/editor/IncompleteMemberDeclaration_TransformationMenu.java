@@ -31,8 +31,7 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.menus.transformation.WrapSubstituteMenuTransformationMenuPart;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -177,7 +176,7 @@ public class IncompleteMemberDeclaration_TransformationMenu extends Transformati
 
       @Nullable
       @Override
-      protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext _context) {
+      protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext _context) {
         final EditorContext editorContext = _context.getEditorContext();
         return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af957d96eL, "jetbrains.mps.baseLanguage.structure.Visibility"));
       }
@@ -203,7 +202,7 @@ public class IncompleteMemberDeclaration_TransformationMenu extends Transformati
 
       @Nullable
       @Override
-      protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext _context) {
+      protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext _context) {
         final EditorContext editorContext = _context.getEditorContext();
         return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
       }
@@ -218,7 +217,7 @@ public class IncompleteMemberDeclaration_TransformationMenu extends Transformati
 
       @Nullable
       @Override
-      protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext _context) {
+      protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext _context) {
         final EditorContext editorContext = _context.getEditorContext();
         return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af958b686L, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility"));
       }
@@ -244,7 +243,7 @@ public class IncompleteMemberDeclaration_TransformationMenu extends Transformati
 
       @Nullable
       @Override
-      protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext _context) {
+      protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext _context) {
         final EditorContext editorContext = _context.getEditorContext();
         return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
       }
@@ -270,7 +269,7 @@ public class IncompleteMemberDeclaration_TransformationMenu extends Transformati
 
       @Nullable
       @Override
-      protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext _context) {
+      protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext _context) {
         final EditorContext editorContext = _context.getEditorContext();
         return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"));
       }

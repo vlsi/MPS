@@ -13,42 +13,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.menus;
+package jetbrains.mps.nodeEditor.menus.transformation;
 
-import jetbrains.mps.openapi.editor.descriptor.Menu;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.nodeEditor.menus.MenuItemFactory;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * A straightforward implementation of {@link MenuItemFactory}. Looks up the menus and returns items created by each menu, concatenated.
  */
-public class DefaultMenuItemFactory<ItemT, ContextT, MenuT extends Menu<ItemT, ContextT>> implements MenuItemFactory<ItemT, ContextT, MenuT> {
+class DefaultTransformationMenuItemFactory implements MenuItemFactory<TransformationMenuItem, TransformationMenuContext, TransformationMenuLookup> {
   private final Collection<SLanguage> myUsedLanguages;
 
-  public DefaultMenuItemFactory(Collection<SLanguage> usedLanguages) {
+  DefaultTransformationMenuItemFactory(Collection<SLanguage> usedLanguages) {
     myUsedLanguages = usedLanguages;
   }
 
-  @Override
   @NotNull
-  public List<ItemT> createItems(@NotNull ContextT context, @NotNull MenuLookup<? extends MenuT> menuLookup) {
-    Collection<? extends MenuT> menus = menuLookup.lookup(myUsedLanguages);
+  @Override
+  public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context, @NotNull TransformationMenuLookup menuLookup) {
+    Collection<TransformationMenu> menus = menuLookup.lookup(myUsedLanguages, context.getMenuLocation());
 
-    if (menus.isEmpty()) {
-      return Collections.emptyList();
-    }
-
-    List<ItemT> result = new ArrayList<>();
-    for (MenuT menu : menus) {
+    List<TransformationMenuItem> result = new ArrayList<>();
+    for (TransformationMenu menu : menus) {
       result.addAll(menu.createMenuItems(context));
     }
     return result;
   }
-
 }

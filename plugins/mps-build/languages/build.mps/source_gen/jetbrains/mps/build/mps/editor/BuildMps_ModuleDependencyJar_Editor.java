@@ -18,7 +18,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -74,8 +73,6 @@ public class BuildMps_ModuleDependencyJar_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_path");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, 0x3b60c4a45c197e1aL, "path")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -131,8 +128,6 @@ public class BuildMps_ModuleDependencyJar_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_customLocation");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, 0x26d578f4b6e3757fL, "customLocation")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

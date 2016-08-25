@@ -21,7 +21,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 
 public class CellModel_DiagramConnector_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -108,8 +107,6 @@ public class CellModel_DiagramConnector_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_input");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x58940e88f3ef74c9L, 0x10efa534a50ae17fL, "input")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -149,8 +146,6 @@ public class CellModel_DiagramConnector_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_output");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x58940e88f3ef74c9L, 0x10efa534a50ae185L, "output")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

@@ -20,8 +20,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -68,7 +67,8 @@ public class UnresolvedNameReference_SubstituteMenu extends SubstituteMenuBase {
           }
         };
       }
-      protected MenuLookup<SubstituteMenu> getLookup(SubstituteMenuContext _context) {
+      @Override
+      protected SubstituteMenuLookup getLookup(SubstituteMenuContext _context) {
         final EditorContext editorContext = _context.getEditorContext();
         return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f2L, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"));
       }
@@ -95,7 +95,8 @@ public class UnresolvedNameReference_SubstituteMenu extends SubstituteMenuBase {
           }
         };
       }
-      protected MenuLookup<SubstituteMenu> getLookup(SubstituteMenuContext _context) {
+      @Override
+      protected SubstituteMenuLookup getLookup(SubstituteMenuContext _context) {
         final EditorContext editorContext = _context.getEditorContext();
         return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7faL, "jetbrains.mps.baseLanguage.structure.ParameterReference"));
       }
@@ -126,7 +127,8 @@ public class UnresolvedNameReference_SubstituteMenu extends SubstituteMenuBase {
           }
         };
       }
-      protected MenuLookup<SubstituteMenu> getLookup(SubstituteMenuContext _context) {
+      @Override
+      protected SubstituteMenuLookup getLookup(SubstituteMenuContext _context) {
         final EditorContext editorContext = _context.getEditorContext();
         return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
       }

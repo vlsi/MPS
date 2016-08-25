@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 
 public class Transition_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -72,8 +71,6 @@ public class Transition_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_trigger");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c845743dL, 0xa99ffe1c845743fL, "trigger")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -120,8 +117,6 @@ public class Transition_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_fromState");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c845743dL, 0xa99ffe1c845743eL, "fromState")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -161,8 +156,6 @@ public class Transition_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_toState");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c845743dL, 0xa99ffe1c8457440L, "toState")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

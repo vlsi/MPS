@@ -19,7 +19,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 
 public class MatrixInitializer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -90,8 +89,6 @@ public class MatrixInitializer_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_rowsCount");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, 0x5650ac0d42453499L, "rowsCount")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -135,8 +132,6 @@ public class MatrixInitializer_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_colsCount");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, 0x5650ac0d4245349aL, "colsCount")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -188,8 +183,6 @@ public class MatrixInitializer_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_rowIndex");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, 0x5650ac0d4240f25bL, "rowIndex")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -232,8 +225,6 @@ public class MatrixInitializer_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_colIndex");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, 0x5650ac0d4240f25cL, "colIndex")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -282,8 +273,6 @@ public class MatrixInitializer_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_expression");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, 0x5650ac0d4240d857L, "expression")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

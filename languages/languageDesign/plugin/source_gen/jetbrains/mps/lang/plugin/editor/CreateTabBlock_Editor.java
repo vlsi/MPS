@@ -18,7 +18,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultEmptyCellSubstituteMenuLookup;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CreateTabBlock_Editor extends DefaultNodeEditor {
@@ -96,8 +95,6 @@ public class CreateTabBlock_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_oldConceptsBlock");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x16c373ab7fdbb667L, 0x16c373ab7fdbb66aL, "oldConceptsBlock")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -134,8 +131,6 @@ public class CreateTabBlock_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_oldCreateBlock");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x16c373ab7fdbb667L, 0x16c373ab7fdbb66cL, "oldCreateBlock")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -172,8 +167,6 @@ public class CreateTabBlock_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_conceptsBlock");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x16c373ab7fdbb667L, 0x6785022a196e8ee3L, "conceptsBlock")));
-
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -207,8 +200,6 @@ public class CreateTabBlock_Editor extends DefaultNodeEditor {
       editorCell.setCellId("empty_createBlock");
 
       installCellInfo(null, editorCell);
-      editorCell.setTransformationMenuLookup(new DefaultEmptyCellSubstituteMenuLookup(MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x16c373ab7fdbb667L, 0x6785022a196e8f03L, "createBlock")));
-
       return editorCell;
     }
     protected String getNoTargetText() {

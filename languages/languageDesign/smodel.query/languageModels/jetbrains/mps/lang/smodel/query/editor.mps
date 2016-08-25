@@ -1005,9 +1005,6 @@
   <node concept="3p36aQ" id="LPhQXjMTKq">
     <ref role="aqKnT" to="3xdn:6_TW7xVvrpf" resolve="PrintSequenceExpression_old" />
   </node>
-  <node concept="3p36aQ" id="1wEcoXjJz39">
-    <ref role="aqKnT" to="3xdn:3J6h25QeHP2" resolve="GlobalScope_old" />
-  </node>
   <node concept="3p36aQ" id="1wEcoXjJz38">
     <ref role="aqKnT" to="3xdn:DM6_$iqV$8" resolve="ProjectExpression_old" />
   </node>

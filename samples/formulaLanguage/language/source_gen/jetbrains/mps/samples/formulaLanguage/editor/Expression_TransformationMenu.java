@@ -19,8 +19,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.transformation.WrapSubstituteMenuTransformationMenuPart;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -55,7 +54,7 @@ public class Expression_TransformationMenu extends TransformationMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext _context) {
+    protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, "jetbrains.mps.samples.formulaLanguage.structure.Operation"));
     }

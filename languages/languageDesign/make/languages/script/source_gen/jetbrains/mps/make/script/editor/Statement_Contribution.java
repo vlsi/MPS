@@ -10,8 +10,7 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.NamedSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -33,7 +32,7 @@ public class Statement_Contribution extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), "jetbrains.mps.make.script.editor.ResultStatement_subs");
     }
@@ -42,7 +41,7 @@ public class Statement_Contribution extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), "jetbrains.mps.make.script.editor.ReportFeedbackStatement_subs");
     }
@@ -51,7 +50,7 @@ public class Statement_Contribution extends SubstituteMenuBase {
 
     @Nullable
     @Override
-    protected MenuLookup<SubstituteMenu> getMenuLookup(SubstituteMenuContext _context) {
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
       return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), "jetbrains.mps.make.script.editor.ProgressStatement_subs");
     }
