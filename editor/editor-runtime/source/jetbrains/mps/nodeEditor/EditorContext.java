@@ -59,6 +59,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   private final SModel myModel;
   private final EditorConfiguration myConfiguration;
   private EditorManager myEditorManager;
+  private boolean myRestoreInitiallyCollapsed = true;
 
   private EditorCell myContextCell;
   private IPerformanceTracer myPerformanceTracer = null;
@@ -245,11 +246,12 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
       final Memento memento = (Memento) o;
       ModelAccess.instance().runReadAction(() -> {
         myNodeEditorComponent.relayout();
-        memento.restore(myNodeEditorComponent);
+        memento.restore(myNodeEditorComponent, myRestoreInitiallyCollapsed);
       });
 
       myNodeEditorComponent.getUpdater().flushModelEvents();
 
+      myRestoreInitiallyCollapsed = true;
       return true;
     }
     return false;
@@ -352,5 +354,9 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   @Override
   public EditorPanelManager getEditorPanelManager() {
     return myConfiguration.editorPanelManager;
+  }
+
+  public void resetRestoreInitiallyCollapsed() {
+    myRestoreInitiallyCollapsed = false;
   }
 }

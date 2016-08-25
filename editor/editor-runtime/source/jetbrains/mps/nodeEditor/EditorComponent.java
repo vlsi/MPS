@@ -37,7 +37,6 @@ import com.intellij.openapi.editor.impl.LeftHandScrollbarLayout;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.IdeGlassPane;
 import com.intellij.openapi.wm.WindowManager;
@@ -1131,6 +1130,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
 
         rebuildEditorContent();
+        myEditorContext.resetRestoreInitiallyCollapsed();
 
         if (myNode != null && notifiesCreation()) {
           notifyCreation();

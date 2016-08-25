@@ -555,6 +555,11 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
   }
 
+  @Override
+  public boolean isInitiallyCollapsed() {
+    return myInitiallyCollapsed;
+  }
+
   private boolean isDefaultCollapsedValueChanged() {
     return myCollapsed != null;
   }

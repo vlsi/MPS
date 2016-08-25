@@ -26,12 +26,14 @@ import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.optional.WithCaret;
+import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
 import org.jdom.Attribute;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -40,32 +42,39 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Stream;
 
 class Memento {
-  private static final Comparator<Pair<EditorCell, Boolean>> COLLAPSED_STATES_COMPARATOR = new Comparator<Pair<EditorCell, Boolean>>() {
-    @Override
-    public int compare(Pair<EditorCell, Boolean> p1, Pair<EditorCell, Boolean> p2) {
-      return getDepth(p2.o1) - getDepth(p1.o1);
-    }
+  private static final Comparator<Pair<jetbrains.mps.openapi.editor.cells.EditorCell_Collection, Boolean>> COLLAPSED_STATES_COMPARATOR =
+      new Comparator<Pair<jetbrains.mps.openapi.editor.cells.EditorCell_Collection, Boolean>>() {
+        @Override
+        public int compare(Pair<jetbrains.mps.openapi.editor.cells.EditorCell_Collection, Boolean> p1,
+            Pair<jetbrains.mps.openapi.editor.cells.EditorCell_Collection, Boolean> p2) {
+          return getDepth(p2.o1) - getDepth(p1.o1);
+        }
 
-    private int getDepth(EditorCell cell) {
-      int depth = 0;
-      while (cell.getParent() != null) {
-        cell = cell.getParent();
-        depth++;
-      }
-      return depth;
-    }
-  };
+        private int getDepth(EditorCell cell) {
+          int depth = 0;
+          while (cell.getParent() != null) {
+            cell = cell.getParent();
+            depth++;
+          }
+          return depth;
+        }
+      };
 
   private static final Comparator<EditorCell> CELL_COMPARATOR =
       (cell1, cell2) -> CellTraversalUtil.getCommonParent(cell1, cell2) == null ? 0 : CellTraversalUtil.compare(cell1, cell2);
 
   private List<SelectionInfo> mySelectionStack = new ArrayList<>();
   private List<CellInfo> myCollectionsWithEnabledBraces = new ArrayList<>();
-  private List<Pair<CellInfo, Boolean>> myCollapseStates = new ArrayList<>();
+
+  private List<Pair<CellInfo, Boolean>> myFoldableStates = new ArrayList<>();
+  private List<Pair<CellInfo, Boolean>> myInitiallyCollapsedStates = new ArrayList<>();
+  private List<Pair<CellInfo, Boolean>> myRestoreAlwaysStates = new ArrayList<>();
 
   private List<ErrorMarker> myErrors = new ArrayList<>();
   private List<TransactionalPropertyState> myTransactionalProperties = new ArrayList<>();
@@ -85,8 +94,9 @@ class Memento {
       }
       mySelectionStack = nodeEditor.getSelectionManager().getSelectionInfoStack();
 
-      nodeEditor.getCollapseStates().stream().sorted(COLLAPSED_STATES_COMPARATOR).map(
-          collapseState -> new Pair<>(collapseState.o1.getCellInfo(), collapseState.o2)).forEach(myCollapseStates::add);
+      getFoldableStates(collectRestoreAlways(nodeEditor, mySelectionStack)).forEach(myRestoreAlwaysStates::add);
+      getFoldableStates(collectFoldable(nodeEditor, false)).forEach(myFoldableStates::add);
+      getFoldableStates(collectFoldable(nodeEditor, true)).forEach(myInitiallyCollapsedStates::add);
 
       nodeEditor.getBracesEnabledCells().stream().sorted(CELL_COMPARATOR).map(EditorCell::getCellInfo).forEach(myCollectionsWithEnabledBraces::add);
 
@@ -105,7 +115,38 @@ class Memento {
     myEnabledHints = nodeEditor.getUpdater().getInitialEditorHints();
   }
 
-  void restore(EditorComponent editor) {
+  @NotNull
+  private Stream<jetbrains.mps.openapi.editor.cells.EditorCell_Collection> collectRestoreAlways(EditorComponent nodeEditor,
+      List<SelectionInfo> selectionInfoStack) {
+    Set<jetbrains.mps.openapi.editor.cells.EditorCell_Collection> visitedCollections = new HashSet<>();
+    List<jetbrains.mps.openapi.editor.cells.EditorCell_Collection> result = new ArrayList<>();
+    for (SelectionInfo selectionInfo : selectionInfoStack) {
+      Selection selection = selectionInfo.createSelection(nodeEditor);
+      if (selection == null) {
+        continue;
+      }
+      for (EditorCell nextCell : selection.getSelectedCells()) {
+        for (jetbrains.mps.openapi.editor.cells.EditorCell_Collection parent = nextCell.getParent(); parent != null; parent = parent.getParent()) {
+          if (visitedCollections.add(parent) && parent.isFoldable()) {
+            result.add(parent);
+          }
+        }
+      }
+    }
+    return result.stream();
+  }
+
+  private Stream<jetbrains.mps.openapi.editor.cells.EditorCell_Collection> collectFoldable(EditorComponent nodeEditor, boolean initiallyCollapsed) {
+    return nodeEditor.getCellTracker().getFoldableCells().stream().map(jetbrains.mps.openapi.editor.cells.EditorCell_Collection.class::cast).filter(
+        cell -> initiallyCollapsed == cell.isInitiallyCollapsed());
+  }
+
+  private Stream<Pair<CellInfo, Boolean>> getFoldableStates(Stream<jetbrains.mps.openapi.editor.cells.EditorCell_Collection> cells) {
+    return cells.map(cell -> new Pair<>(cell, cell.isCollapsed())).sorted(COLLAPSED_STATES_COMPARATOR).map(
+        collapsedState -> new Pair<>(collapsedState.o1.getCellInfo(), collapsedState.o2));
+  }
+
+  void restore(EditorComponent editor, boolean restoreInitiallyCollapsed) {
     boolean editorRebuildRequired = editor.getUpdater().setInitialEditorHints(myEnabledHints);
 
     if (myEditedNodeReference != null) {
@@ -128,14 +169,8 @@ class Memento {
     boolean needsRelayout = restoreErrors(editor) | restoreTransactionals(editor);
 
     // Restore collapse states before restoring selection, otherwise selection inside initially collapsed cells disappears
-    for (Pair<CellInfo, Boolean> collapseState : myCollapseStates) {
-      needsRelayout = true;
-      EditorCell collection = collapseState.o1.findCell(editor);
-      if (!(collection instanceof EditorCell_Collection)) {
-        continue;
-      }
-      ((EditorCell_Collection) collection).toggleCollapsed(collapseState.o2);
-    }
+    needsRelayout = restoreFoldingStates(myFoldableStates, editor) | needsRelayout;
+    needsRelayout = restoreFoldingStates(restoreInitiallyCollapsed ? myInitiallyCollapsedStates : myRestoreAlwaysStates, editor) | needsRelayout;
 
     editor.getSelectionManager().setSelectionInfoStack(mySelectionStack);
     EditorCell selectedCell = editor.getDeepestSelectedCell();
@@ -158,6 +193,19 @@ class Memento {
     if (myViewPosition != null) {
       editor.setViewPosition(myViewPosition);
     }
+  }
+
+  private boolean restoreFoldingStates(Iterable<Pair<CellInfo, Boolean>> foldingStates, EditorComponent editor) {
+    boolean needsRelayout = false;
+    for (Pair<CellInfo, Boolean> collapseState : foldingStates) {
+      EditorCell collection = collapseState.o1.findCell(editor);
+      if (!(collection instanceof EditorCell_Collection)) {
+        continue;
+      }
+      needsRelayout = true;
+      ((EditorCell_Collection) collection).toggleCollapsed(collapseState.o2);
+    }
+    return needsRelayout;
   }
 
   private boolean restoreErrors(EditorComponent editor) {
@@ -201,7 +249,8 @@ class Memento {
     if (object instanceof Memento) {
       Memento m = (Memento) object;
       if (EqualUtil.equals(mySelectionStack, m.mySelectionStack) && EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
-          EqualUtil.equals(myCollapseStates, m.myCollapseStates) && EqualUtil.equals(myErrors, m.myErrors) &&
+          EqualUtil.equals(myFoldableStates, m.myFoldableStates) && EqualUtil.equals(myInitiallyCollapsedStates, m.myInitiallyCollapsedStates) &&
+          EqualUtil.equals(myRestoreAlwaysStates, m.myRestoreAlwaysStates) && EqualUtil.equals(myErrors, m.myErrors) &&
           EqualUtil.equals(myTransactionalProperties, m.myTransactionalProperties) && EqualUtil.equals(myViewPosition, m.myViewPosition) &&
           Arrays.equals(myEnabledHints, m.myEnabledHints) && EqualUtil.equals(myEditedNodeReference, m.myEditedNodeReference)) {
         return true;
@@ -218,7 +267,9 @@ class Memento {
     return "Editor Memento[\n" +
         "  selectedStack = " + mySelectionStack + "\n" +
         "  collectionsWithBraces = " + myCollectionsWithEnabledBraces + "\n" +
-        "  collapsedCells = " + myCollapseStates + "\n" +
+        "  foldableCells = " + myFoldableStates + "\n" +
+        "  collapsedCells = " + myInitiallyCollapsedStates + "\n" +
+        "  expandAlwaysCells = " + myRestoreAlwaysStates + "\n" +
         "  enabledHints = " + Arrays.toString(myEnabledHints) + "\n" +
         "  editedNodeReference = " + myEditedNodeReference + "\n" +
         "]\n";
@@ -226,7 +277,9 @@ class Memento {
 
   private static final String SELECTION_STACK = "selectionStack";
   private static final String STACK_ELEMENT = "stackElement";
-  private static final String COLLAPSED = "collapsed";
+  private static final String FOLDABLE = "foldable";
+  private static final String INITIALLY_COLLAPSED = "initiallyCollapsed";
+  private static final String RESTORE_ALWAYS = "restoreAlways";
   private static final String COLLAPSED_ELEMENT = "collapsedElement";
   private static final String CELL_ID_ELEMENT = "cellIdElement";
   private static final String COLLAPSED_VALUE = "isCollapsed";
@@ -264,24 +317,10 @@ class Memento {
       transactionalProperty.save(transactionalProperties);
     }
 
-    boolean success = true;
-    Element collapsed = new Element(COLLAPSED);
-    for (Pair<CellInfo, Boolean> collapsedState : myCollapseStates) {
-      if (collapsedState.o1 instanceof DefaultCellInfo) {
-        Element collapsedElement = new Element(COLLAPSED_ELEMENT);
-        collapsedElement.setAttribute(COLLAPSED_VALUE, collapsedState.o2.toString());
-        Element cellId = new Element(CELL_ID_ELEMENT);
-        ((DefaultCellInfo) collapsedState.o1).saveTo(cellId);
-        collapsedElement.addContent(cellId);
-        collapsed.addContent(collapsedElement);
-      } else {
-        success = false;
-        break;
-      }
-    }
-    if (success) {
-      e.addContent(collapsed);
-    }
+    saveFoldingStates(new Element(FOLDABLE), e, myFoldableStates);
+    saveFoldingStates(new Element(INITIALLY_COLLAPSED), e, myInitiallyCollapsedStates);
+    saveFoldingStates(new Element(RESTORE_ALWAYS), e, myRestoreAlwaysStates);
+
     e.setAttribute(VIEW_POSITION_X, String.valueOf(myViewPosition.x));
     e.setAttribute(VIEW_POSITION_Y, String.valueOf(myViewPosition.y));
     if (myEnabledHints != null) {
@@ -293,6 +332,22 @@ class Memento {
       }
       e.addContent(hintsElement);
     }
+  }
+
+  private static void saveFoldingStates(Element element, Element parentElement, Iterable<Pair<CellInfo, Boolean>> foldingStates) {
+    for (Pair<CellInfo, Boolean> collapsedState : foldingStates) {
+      if (collapsedState.o1 instanceof DefaultCellInfo) {
+        Element collapsedElement = new Element(COLLAPSED_ELEMENT);
+        collapsedElement.setAttribute(COLLAPSED_VALUE, collapsedState.o2.toString());
+        Element cellId = new Element(CELL_ID_ELEMENT);
+        ((DefaultCellInfo) collapsedState.o1).saveTo(cellId);
+        collapsedElement.addContent(cellId);
+        element.addContent(collapsedElement);
+      } else {
+        return;
+      }
+    }
+    parentElement.addContent(element);
   }
 
   public static Memento load(Element e) {
@@ -317,12 +372,10 @@ class Memento {
       TransactionalPropertyState.load(transactionalProperties).forEach(memento.myTransactionalProperties::add);
     }
 
-    Element collapsed = e.getChild(COLLAPSED);
-    if (collapsed != null) {
-      collapsed.getChildren(COLLAPSED_ELEMENT).stream().map(
-          el -> new Pair<CellInfo, Boolean>(DefaultCellInfo.loadFrom(el.getChild(CELL_ID_ELEMENT)),
-              Boolean.valueOf(el.getAttributeValue(COLLAPSED_VALUE)))).forEach(pair -> memento.myCollapseStates.add(pair));
-    }
+    loadFoldingStates(e.getChild(FOLDABLE), memento.myFoldableStates);
+    loadFoldingStates(e.getChild(INITIALLY_COLLAPSED), memento.myInitiallyCollapsedStates);
+    loadFoldingStates(e.getChild(RESTORE_ALWAYS), memento.myRestoreAlwaysStates);
+
     try {
       int viewPositionX = Integer.valueOf(e.getAttributeValue(VIEW_POSITION_X));
       int viewPositionY = Integer.valueOf(e.getAttributeValue(VIEW_POSITION_Y));
@@ -341,6 +394,14 @@ class Memento {
     }
 
     return memento;
+  }
+
+  private static void loadFoldingStates(Element element, List<Pair<CellInfo, Boolean>> result) {
+    if (element == null) {
+      return;
+    }
+    element.getChildren(COLLAPSED_ELEMENT).stream().map(el -> new Pair<CellInfo, Boolean>(DefaultCellInfo.loadFrom(el.getChild(CELL_ID_ELEMENT)),
+        Boolean.valueOf(el.getAttributeValue(COLLAPSED_VALUE)))).forEach(result::add);
   }
 
   private static class ErrorMarker {
