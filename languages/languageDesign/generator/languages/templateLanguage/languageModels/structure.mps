@@ -2,19 +2,14 @@
 <model ref="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
-    <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpcw" ref="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
-    <import index="tpf3" ref="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" />
     <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
   </imports>
@@ -1767,6 +1762,10 @@
     <property role="3GE5qa" value="crossmodel" />
     <property role="EcuMT" value="7325101476742955528" />
     <ref role="1TJDcQ" node="hHd3awK" resolve="TemplateQueryBase" />
+    <node concept="asaX9" id="6FKagLNTwBQ" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.4" />
+      <property role="YLQ7P" value="See ExportLabel for details" />
+    </node>
   </node>
   <node concept="1TIwiD" id="21N1KFSD2Ix">
     <property role="TrG5h" value="GeneratorInternal_ReferenceDescriptor" />
@@ -1829,6 +1828,10 @@
     <node concept="PrWs8" id="rrptlDYWuR" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="asaX9" id="6FKagLNTwBO" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.4" />
+      <property role="YLQ7P" value="Functionality is superseded by custom generation plans and regular mapping labels" />
+    </node>
   </node>
   <node concept="1TIwiD" id="7ITVRipEFo6">
     <property role="3GE5qa" value="macro" />
@@ -1845,6 +1848,7 @@
       <ref role="20lvS9" node="rrptlDYrFa" resolve="ExportLabel" />
     </node>
     <node concept="M6xJ_" id="7ITVRipEFo7" role="lGtFl" />
+    <node concept="asaX9" id="6FKagLNUnQN" role="lGtFl" />
   </node>
   <node concept="PlHQZ" id="7PoJpZpHudo">
     <property role="3GE5qa" value="crossmodel.vault" />
@@ -1871,6 +1875,10 @@
     <property role="3GE5qa" value="crossmodel" />
     <property role="EcuMT" value="7325101476742962089" />
     <ref role="1TJDcQ" node="hHd3awK" resolve="TemplateQueryBase" />
+    <node concept="asaX9" id="6FKagLNTwBS" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.4" />
+      <property role="YLQ7P" value="See ExportLabel for details" />
+    </node>
   </node>
   <node concept="1TIwiD" id="7PoJpZpMbzb">
     <property role="3GE5qa" value="crossmodel.vault" />

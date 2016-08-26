@@ -377,6 +377,7 @@
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.MacroSymbol_Actions" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.Styles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.replace_node_macro" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.editor.Styles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />

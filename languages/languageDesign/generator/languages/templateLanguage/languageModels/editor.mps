@@ -2,10 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
@@ -23,6 +21,7 @@
     <import index="75ov" ref="r:cdd4fc54-626c-4040-b1f7-5bc8bfd2ee53(jetbrains.mps.lang.generator.helper)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
+    <import index="tpf0" ref="r:00000000-0000-4000-0000-011c895902f0(jetbrains.mps.lang.generator.generationContext.editor)" implicit="true" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -1120,6 +1119,10 @@
             <property role="2czwfM" value="true" />
             <ref role="1NtTu8" to="tpf8:2EwDY2In5dB" resolve="exports" />
             <node concept="2EHx9g" id="6Grr_rb8Z0X" role="2czzBx" />
+            <node concept="3F0ifn" id="6FKagLNT$Dg" role="2czzBI">
+              <property role="3F0ifm" value="Do not use, custom generation plans with regular mapping labels supersede Exports." />
+              <ref role="1k5W1q" node="6t_vhrzKdF" resolve="Comment" />
+            </node>
           </node>
           <node concept="VPM3Z" id="6Grr_rb8Z0Y" role="3F10Kt">
             <property role="VOm3f" value="false" />
@@ -7067,6 +7070,11 @@
         <node concept="11LMrY" id="5lAt$u$8JZ1" role="3F10Kt" />
         <node concept="3CIbrd" id="5lAt$u$8JZ2" role="3F10Kt">
           <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3Xmtl4" id="6FKagLNUnT0" role="3F10Kt">
+          <node concept="1wgc9g" id="6FKagLNUnT8" role="3XvnJa">
+            <ref role="1wgcnl" to="tpf0:3TwGi_N3NKw" resolve="deprecated" />
+          </node>
         </node>
         <node concept="OXEIz" id="1yjqjC7KGuU" role="P5bDN">
           <node concept="1Y$tRT" id="1yjqjC7KGuV" role="OY2wv">
