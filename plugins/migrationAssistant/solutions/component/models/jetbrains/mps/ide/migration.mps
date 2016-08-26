@@ -3571,53 +3571,14 @@
           </node>
         </node>
         <node concept="3clFbH" id="2htE_P_M7Ze" role="3cqZAp" />
-        <node concept="3cpWs8" id="3vhfhjcfU1z" role="3cqZAp">
-          <node concept="3cpWsn" id="3vhfhjcfU1y" role="3cpWs9">
-            <property role="3TUv4t" value="false" />
-            <property role="TrG5h" value="oldSize" />
-            <node concept="3uibUv" id="3vhfhjcgrHd" role="1tU5fm">
-              <ref role="3uigEE" to="z60i:~Dimension" resolve="Dimension" />
-            </node>
-            <node concept="3nyPlj" id="3vhfhjcfU1_" role="33vP2m">
-              <ref role="37wK5l" to="jkm4:~DialogWrapper.getPreferredSize():java.awt.Dimension" resolve="getPreferredSize" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3vhfhjcfU1A" role="3cqZAp">
-          <node concept="1rXfSq" id="3vhfhjcfU1B" role="3clFbG">
+        <node concept="3clFbF" id="4QZ_xUfNi$v" role="3cqZAp">
+          <node concept="1rXfSq" id="4QZ_xUfNi$t" role="3clFbG">
             <ref role="37wK5l" to="jkm4:~DialogWrapper.setSize(int,int):void" resolve="setSize" />
-            <node concept="1eOMI4" id="3vhfhjcfU1F" role="37wK5m">
-              <node concept="10QFUN" id="3vhfhjcfU1C" role="1eOMHV">
-                <node concept="2OqwBi" id="3vhfhjcfU2e" role="10QFUP">
-                  <node concept="37vLTw" id="3vhfhjcfU2d" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3vhfhjcfU1y" resolve="oldSize" />
-                  </node>
-                  <node concept="liA8E" id="3vhfhjcfU2f" role="2OqNvi">
-                    <ref role="37wK5l" to="z60i:~Dimension.getWidth():double" resolve="getWidth" />
-                  </node>
-                </node>
-                <node concept="10Oyi0" id="3vhfhjcfU1E" role="10QFUM" />
-              </node>
+            <node concept="3cmrfG" id="4QZ_xUfNjiZ" role="37wK5m">
+              <property role="3cmrfH" value="700" />
             </node>
-            <node concept="1eOMI4" id="3vhfhjcfU1M" role="37wK5m">
-              <node concept="10QFUN" id="3vhfhjcfU1G" role="1eOMHV">
-                <node concept="1eOMI4" id="3vhfhjcfU1K" role="10QFUP">
-                  <node concept="3cpWs3" id="3vhfhjcfU1H" role="1eOMHV">
-                    <node concept="2OqwBi" id="3vhfhjcfU2i" role="3uHU7B">
-                      <node concept="37vLTw" id="3vhfhjcfU2h" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3vhfhjcfU1y" resolve="oldSize" />
-                      </node>
-                      <node concept="liA8E" id="3vhfhjcfU2j" role="2OqNvi">
-                        <ref role="37wK5l" to="z60i:~Dimension.getHeight():double" resolve="getHeight" />
-                      </node>
-                    </node>
-                    <node concept="3cmrfG" id="3vhfhjcfU1J" role="3uHU7w">
-                      <property role="3cmrfH" value="90" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="10Oyi0" id="3vhfhjcfU1L" role="10QFUM" />
-              </node>
+            <node concept="3cmrfG" id="4QZ_xUfNjpa" role="37wK5m">
+              <property role="3cmrfH" value="400" />
             </node>
           </node>
         </node>
@@ -3864,8 +3825,8 @@
       <node concept="10P_77" id="3vhfhjcg1LK" role="3clF45" />
       <node concept="3clFbS" id="3vhfhjcg1LO" role="3clF47">
         <node concept="3clFbF" id="3vhfhjcg6Ub" role="3cqZAp">
-          <node concept="3clFbT" id="3vhfhjcg6Ua" role="3clFbG">
-            <property role="3clFbU" value="false" />
+          <node concept="3clFbT" id="4QZ_xUfNjD9" role="3clFbG">
+            <property role="3clFbU" value="true" />
           </node>
         </node>
       </node>
@@ -4118,6 +4079,27 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3krW$SwdKRL" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4QZ_xUfNlaF" role="jymVt" />
+    <node concept="3clFb_" id="4QZ_xUfNk1P" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getDimensionServiceKey" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tmbuc" id="4QZ_xUfNk1Q" role="1B3o_S" />
+      <node concept="3uibUv" id="4QZ_xUfNk1U" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="4QZ_xUfNk1Y" role="3clF47">
+        <node concept="3clFbF" id="4QZ_xUfNlQV" role="3cqZAp">
+          <node concept="Xl_RD" id="4QZ_xUfNlQU" role="3clFbG">
+            <property role="Xl_RC" value="#jetbrains.mps.ide.migration.MigrationAssistantWizard" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="4QZ_xUfNk1Z" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>

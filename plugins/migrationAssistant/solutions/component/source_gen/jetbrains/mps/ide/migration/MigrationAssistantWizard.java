@@ -5,7 +5,6 @@ package jetbrains.mps.ide.migration;
 import com.intellij.ide.wizard.AbstractWizardEx;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.migration.wizard.MigrationProblemsContainer;
-import java.awt.Dimension;
 import java.util.List;
 import jetbrains.mps.ide.migration.wizard.MigrationWizardStep;
 import jetbrains.mps.migration.global.ProjectMigration;
@@ -28,8 +27,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   public MigrationAssistantWizard(Project project, MigrationManager manager, MigrationProblemsContainer errorContainer) {
     super("Migration Assistant Wizard", project, createSteps(project, manager, errorContainer));
 
-    Dimension oldSize = super.getPreferredSize();
-    setSize(((int) oldSize.getWidth()), ((int) (oldSize.getHeight() + 90)));
+    setSize(700, 400);
   }
 
   private static List<MigrationWizardStep> createSteps(final Project project, MigrationManager manager, MigrationProblemsContainer errorContainer) {
@@ -52,7 +50,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
   @Override
   public boolean isAutoAdjustable() {
-    return false;
+    return true;
   }
   @Override
   protected void updateStep() {
@@ -90,5 +88,10 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   @Override
   protected String getHelpID() {
     return "migration.assistant";
+  }
+
+  @Override
+  protected String getDimensionServiceKey() {
+    return "#jetbrains.mps.ide.migration.MigrationAssistantWizard";
   }
 }
