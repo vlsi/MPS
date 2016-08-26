@@ -232,20 +232,24 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
     void updateGenerationLanguages() {
       addEngagedOnGenerationLanguage(BootstrapLanguages.getLanguageDescriptorLang());
       boolean updated = false;
+      //todo adding used languages to descriptor model is a hack, fixing that the runtime solutions of languages engaged on generations are ignored at compilation
+      Set<SLanguage> languageImports = new HashSet<>();
       Collection<SModel> aspectModels = LanguageAspectSupport.getAspectModels(myModule);
       for (SModel aspect : aspectModels) {
         for (SLanguage aspectLanguage : LanguageAspectSupport.getMainLanguages(aspect)) {
           addEngagedOnGenerationLanguage(aspectLanguage);
-
-          //todo this line is a hack, fixing that the runtime solutions of languages engaged on generations are ignored at compilation
-          jetbrains.mps.smodel.SModel m = getSModel();
-          if (!m.usedLanguages().contains(aspectLanguage)){
-            m.addLanguage(aspectLanguage);
-          }
-          updated = true;
+          languageImports.add(aspectLanguage);
         }
       }
-      if (updated) { // not calling validate lang versions too often
+      jetbrains.mps.smodel.SModel m = getSModel();
+      HashSet<SLanguage> currentUsedLanguages = new HashSet<>(m.usedLanguages());
+      if (!currentUsedLanguages.equals(languageImports)) { // not calling validate lang versions too often
+        for (SLanguage language : currentUsedLanguages) {
+          m.deleteLanguage(language);
+        }
+        for (SLanguage language : languageImports) {
+          m.addLanguage(language);
+        }
         if (isRegistered()) {
           assert myModule == getModule(); // lang descriptor can be only in this module
           myModule.validateLanguageVersions();
