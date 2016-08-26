@@ -399,7 +399,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     public MigrationExceptionError() {
     }
     public String getMessage() {
-      return "Exception while running migration. See error log for details.";
+      return "Exception occurred while running migration. See log file for details.";
     }
     public boolean canIgnore() {
       return false;

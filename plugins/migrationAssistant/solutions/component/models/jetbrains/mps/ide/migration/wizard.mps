@@ -3633,7 +3633,7 @@
         <node concept="3clFbS" id="2htE_P_OnpG" role="3clF47">
           <node concept="3clFbF" id="2htE_P_On$N" role="3cqZAp">
             <node concept="Xl_RD" id="2htE_P_On$M" role="3clFbG">
-              <property role="Xl_RC" value="Exception while running migration. See error log for details." />
+              <property role="Xl_RC" value="Exception occurred while running migration. See log file for details." />
             </node>
           </node>
         </node>
