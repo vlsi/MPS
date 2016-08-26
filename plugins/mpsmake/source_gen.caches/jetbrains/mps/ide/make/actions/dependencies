@@ -491,6 +491,7 @@
   <dependency className="jetbrains.mps.ide.make.actions.MakeActionImpl" file="MakeActionImpl.java">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GenerationCheckHelper" />
     <classNode dependClassName="jetbrains.mps.ide.make.DefaultMakeMessageHandler" />

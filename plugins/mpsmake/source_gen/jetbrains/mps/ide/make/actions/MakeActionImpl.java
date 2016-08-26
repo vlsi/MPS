@@ -44,24 +44,35 @@ public class MakeActionImpl {
       // We grab write access although read would suffice rather as a 'exclusive read'. Besides, until ModelValidatorAdapter is refactored 
       // not to mix model checking code with UI, which might request write access e.g. on focus lost and eventually lead to 'write from read' issue like 
       // FIXME https://youtrack.jetbrains.com/issue/MPS-24020. Proper fix is to split model check into read, and results reporting into EDT. 
-      final List<IResource> inputRes = new ModelAccessHelper(project.getModelAccess()).runWriteAction(new Computable<List<IResource>>() {
-        public List<IResource> compute() {
-          List<IResource> rv = Sequence.fromIterable(myParams.collectInput()).toListSequence();
-          List<SModel> models = ListSequence.fromList(rv).translate(new ITranslator2<IResource, SModel>() {
-            public Iterable<SModel> translate(IResource it) {
-              return ((MResource) it).models();
+      List<IResource> inputRes = null;
+      try {
+        inputRes = new ModelAccessHelper(project.getModelAccess()).runWriteAction(new Computable<List<IResource>>() {
+          public List<IResource> compute() {
+            List<IResource> rv = Sequence.fromIterable(myParams.collectInput()).toListSequence();
+            List<SModel> models = ListSequence.fromList(rv).translate(new ITranslator2<IResource, SModel>() {
+              public Iterable<SModel> translate(IResource it) {
+                return ((MResource) it).models();
+              }
+            }).toListSequence();
+            if (new GenerationCheckHelper().checkModelsBeforeGenerationIfNeeded(project, models)) {
+              return rv;
             }
-          }).toListSequence();
-          if (new GenerationCheckHelper().checkModelsBeforeGenerationIfNeeded(project, models)) {
-            return rv;
+            return null;
           }
-          return null;
-        }
-      });
+        });
+
+      } catch (RuntimeException e) {
+        IMakeService.INSTANCE.get().closeSession(session);
+        throw e;
+      }
 
       if (inputRes != null) {
         IMakeService.INSTANCE.get().make(session, inputRes);
+
+      } else {
+        IMakeService.INSTANCE.get().closeSession(session);
       }
+
     }
   }
 }
