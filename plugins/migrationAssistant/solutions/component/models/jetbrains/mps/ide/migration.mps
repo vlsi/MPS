@@ -1610,60 +1610,9 @@
                               <ref role="37wK5l" to="bd8o:~Application.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
                               <node concept="1bVj0M" id="3gptLqNGiMl" role="37wK5m">
                                 <node concept="3clFbS" id="3gptLqNGiMw" role="1bW5cS">
-                                  <node concept="3clFbF" id="5qfN6LqBUcZ" role="3cqZAp">
-                                    <node concept="2YIFZM" id="5qfN6LqBUGh" role="3clFbG">
-                                      <ref role="37wK5l" to="4hrd:~VirtualFileUtils.refreshSynchronouslyRecursively(com.intellij.openapi.vfs.VirtualFile):void" resolve="refreshSynchronouslyRecursively" />
-                                      <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
-                                      <node concept="2OqwBi" id="5qfN6LqBVY4" role="37wK5m">
-                                        <node concept="37vLTw" id="5qfN6LqBVo4" role="2Oq$k0">
-                                          <ref role="3cqZAo" to="1m72:~AbstractProjectComponent.myProject" resolve="myProject" />
-                                        </node>
-                                        <node concept="liA8E" id="5qfN6LqBWDa" role="2OqNvi">
-                                          <ref role="37wK5l" to="4nm9:~Project.getBaseDir():com.intellij.openapi.vfs.VirtualFile" resolve="getBaseDir" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                  <node concept="3SKdUt" id="6uMmfEAu9bh" role="3cqZAp">
-                                    <node concept="3SKdUq" id="6uMmfEAu9bj" role="3SKWNk">
-                                      <property role="3SKdUp" value="fixme remove in 3.4" />
-                                    </node>
-                                  </node>
-                                  <node concept="3SKdUt" id="6uMmfEAu9$L" role="3cqZAp">
-                                    <node concept="3SKdUq" id="6uMmfEAu9$N" role="3SKWNk">
-                                      <property role="3SKdUp" value="TODO AP: these are essentially those files which have been requested from IDEA vfs at least once so far" />
-                                    </node>
-                                  </node>
-                                  <node concept="3SKdUt" id="6uMmfEAubZk" role="3cqZAp">
-                                    <node concept="3SKdUq" id="6uMmfEAubZm" role="3SKWNk">
-                                      <property role="3SKdUp" value="AP: I sense the author rather meant just refreshing the project directory" />
-                                    </node>
-                                  </node>
-                                  <node concept="3clFbF" id="5SsFeroaalc" role="3cqZAp">
-                                    <node concept="2OqwBi" id="5SsFeroaald" role="3clFbG">
-                                      <node concept="2YIFZM" id="5SsFeroafMD" role="2Oq$k0">
-                                        <ref role="1Pybhc" to="jlff:~VirtualFileManager" resolve="VirtualFileManager" />
-                                        <ref role="37wK5l" to="jlff:~VirtualFileManager.getInstance():com.intellij.openapi.vfs.VirtualFileManager" resolve="getInstance" />
-                                      </node>
-                                      <node concept="liA8E" id="5qfN6LqBXsK" role="2OqNvi">
-                                        <ref role="37wK5l" to="jlff:~VirtualFileManager.syncRefresh():long" resolve="syncRefresh" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                  <node concept="3SKdUt" id="6uMmfEAue2O" role="3cqZAp">
-                                    <node concept="3SKdUq" id="6uMmfEAue2Q" role="3SKWNk">
-                                      <property role="3SKdUp" value="fixme AP: it seems to me that reload happens synchronously here, double check and remove" />
-                                    </node>
-                                  </node>
-                                  <node concept="3clFbF" id="4tP09YuEkC_" role="3cqZAp">
-                                    <node concept="2OqwBi" id="4tP09YuElC7" role="3clFbG">
-                                      <node concept="2YIFZM" id="4tP09YuEl4T" role="2Oq$k0">
-                                        <ref role="1Pybhc" to="2eq1:491od_XJZeq" resolve="ReloadManager" />
-                                        <ref role="37wK5l" to="2eq1:491od_XK12s" resolve="getInstance" />
-                                      </node>
-                                      <node concept="liA8E" id="4tP09YuElXu" role="2OqNvi">
-                                        <ref role="37wK5l" to="2eq1:4SUKy4FU8kE" resolve="flush" />
-                                      </node>
+                                  <node concept="3clFbF" id="oS3y_vlhLI" role="3cqZAp">
+                                    <node concept="1rXfSq" id="oS3y_vlhLH" role="3clFbG">
+                                      <ref role="37wK5l" node="oS3y_vl8ZB" resolve="syncRefresh" />
                                     </node>
                                   </node>
                                 </node>
@@ -2929,6 +2878,23 @@
                                 </node>
                               </node>
                             </node>
+                            <node concept="3clFbH" id="oS3y_vlszg" role="3cqZAp" />
+                            <node concept="3clFbJ" id="oS3y_vltfF" role="3cqZAp">
+                              <node concept="3clFbS" id="oS3y_vltfG" role="3clFbx">
+                                <node concept="3cpWs6" id="oS3y_vltfK" role="3cqZAp" />
+                              </node>
+                              <node concept="3fqX7Q" id="oS3y_vltfL" role="3clFbw">
+                                <node concept="2OqwBi" id="oS3y_vltfM" role="3fr31v">
+                                  <node concept="37vLTw" id="oS3y_vltfN" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="5SsFeroaaki" resolve="myMigrationManager" />
+                                  </node>
+                                  <node concept="liA8E" id="oS3y_vltfO" role="2OqNvi">
+                                    <ref role="37wK5l" node="5SsFeroaac6" resolve="isMigrationRequired" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3clFbH" id="oS3y_vlt10" role="3cqZAp" />
                             <node concept="3cpWs8" id="1AzqgyAiIN9" role="3cqZAp">
                               <node concept="3cpWsn" id="1AzqgyAiINa" role="3cpWs9">
                                 <property role="TrG5h" value="migrate" />
@@ -2996,20 +2962,36 @@
                               </node>
                             </node>
                             <node concept="3clFbH" id="7tl_fUThCeY" role="3cqZAp" />
-                            <node concept="3clFbF" id="4tP09YuEobM" role="3cqZAp">
-                              <node concept="2YIFZM" id="4tP09YuEoro" role="3clFbG">
-                                <ref role="37wK5l" to="4hrd:~VirtualFileUtils.refreshSynchronouslyRecursively(com.intellij.openapi.vfs.VirtualFile):void" resolve="refreshSynchronouslyRecursively" />
-                                <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
-                                <node concept="2OqwBi" id="4tP09YuEoYK" role="37wK5m">
-                                  <node concept="37vLTw" id="4tP09YuEoEU" role="2Oq$k0">
-                                    <ref role="3cqZAo" to="1m72:~AbstractProjectComponent.myProject" resolve="myProject" />
+                            <node concept="3clFbF" id="oS3y_vlj7b" role="3cqZAp">
+                              <node concept="1rXfSq" id="oS3y_vlj79" role="3clFbG">
+                                <ref role="37wK5l" node="oS3y_vl8ZB" resolve="syncRefresh" />
+                              </node>
+                            </node>
+                            <node concept="3clFbJ" id="oS3y_vlleP" role="3cqZAp">
+                              <node concept="3clFbS" id="oS3y_vlleR" role="3clFbx">
+                                <node concept="3clFbF" id="oS3y_vloX9" role="3cqZAp">
+                                  <node concept="2YIFZM" id="oS3y_vlpFq" role="3clFbG">
+                                    <ref role="37wK5l" node="6CdT9mpBjP3" resolve="showNoMigrationMessage" />
+                                    <ref role="1Pybhc" node="6CdT9mpAIg7" resolve="MigrationDialogUtil" />
+                                    <node concept="37vLTw" id="oS3y_vlqf5" role="37wK5m">
+                                      <ref role="3cqZAo" to="1m72:~AbstractProjectComponent.myProject" resolve="myProject" />
+                                    </node>
                                   </node>
-                                  <node concept="liA8E" id="4tP09YuEpGW" role="2OqNvi">
-                                    <ref role="37wK5l" to="4nm9:~Project.getBaseDir():com.intellij.openapi.vfs.VirtualFile" resolve="getBaseDir" />
+                                </node>
+                                <node concept="3cpWs6" id="oS3y_vlsl8" role="3cqZAp" />
+                              </node>
+                              <node concept="3fqX7Q" id="oS3y_vln_U" role="3clFbw">
+                                <node concept="2OqwBi" id="oS3y_vln_W" role="3fr31v">
+                                  <node concept="37vLTw" id="oS3y_vln_X" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="5SsFeroaaki" resolve="myMigrationManager" />
+                                  </node>
+                                  <node concept="liA8E" id="oS3y_vln_Y" role="2OqNvi">
+                                    <ref role="37wK5l" node="5SsFeroaac6" resolve="isMigrationRequired" />
                                   </node>
                                 </node>
                               </node>
                             </node>
+                            <node concept="3clFbH" id="oS3y_vlk1d" role="3cqZAp" />
                             <node concept="3clFbF" id="5qfN6LqEoKq" role="3cqZAp">
                               <node concept="2OqwBi" id="5qfN6LqEp97" role="3clFbG">
                                 <node concept="2YIFZM" id="5qfN6LqEoVG" role="2Oq$k0">
@@ -3094,7 +3076,82 @@
       </node>
       <node concept="3cqZAl" id="285c2S_YeHk" role="3clF45" />
     </node>
-    <node concept="2tJIrI" id="1AzqgyAjwMO" role="jymVt" />
+    <node concept="2tJIrI" id="oS3y_vnNGV" role="jymVt" />
+    <node concept="3clFb_" id="oS3y_vl8ZB" role="jymVt">
+      <property role="TrG5h" value="syncRefresh" />
+      <node concept="3cqZAl" id="oS3y_vl8ZD" role="3clF45" />
+      <node concept="3Tm6S6" id="oS3y_votJ$" role="1B3o_S" />
+      <node concept="3clFbS" id="oS3y_vl8ZF" role="3clF47">
+        <node concept="3clFbF" id="oS3y_vnSDk" role="3cqZAp">
+          <node concept="2OqwBi" id="oS3y_vnTqv" role="3clFbG">
+            <node concept="2YIFZM" id="oS3y_vnTca" role="2Oq$k0">
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+            </node>
+            <node concept="liA8E" id="oS3y_vnTKh" role="2OqNvi">
+              <ref role="37wK5l" to="bd8o:~Application.saveAll():void" resolve="saveAll" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5qfN6LqBUcZ" role="3cqZAp">
+          <node concept="2YIFZM" id="5qfN6LqBUGh" role="3clFbG">
+            <ref role="37wK5l" to="4hrd:~VirtualFileUtils.refreshSynchronouslyRecursively(com.intellij.openapi.vfs.VirtualFile):void" resolve="refreshSynchronouslyRecursively" />
+            <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
+            <node concept="2OqwBi" id="5qfN6LqBVY4" role="37wK5m">
+              <node concept="37vLTw" id="5qfN6LqBVo4" role="2Oq$k0">
+                <ref role="3cqZAo" to="1m72:~AbstractProjectComponent.myProject" resolve="myProject" />
+              </node>
+              <node concept="liA8E" id="5qfN6LqBWDa" role="2OqNvi">
+                <ref role="37wK5l" to="4nm9:~Project.getBaseDir():com.intellij.openapi.vfs.VirtualFile" resolve="getBaseDir" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6uMmfEAu9bh" role="3cqZAp">
+          <node concept="3SKdUq" id="6uMmfEAu9bj" role="3SKWNk">
+            <property role="3SKdUp" value="fixme remove in 3.4" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6uMmfEAu9$L" role="3cqZAp">
+          <node concept="3SKdUq" id="6uMmfEAu9$N" role="3SKWNk">
+            <property role="3SKdUp" value="TODO AP: these are essentially those files which have been requested from IDEA vfs at least once so far" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6uMmfEAubZk" role="3cqZAp">
+          <node concept="3SKdUq" id="6uMmfEAubZm" role="3SKWNk">
+            <property role="3SKdUp" value="AP: I sense the author rather meant just refreshing the project directory" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="5SsFeroaalc" role="3cqZAp">
+          <node concept="2OqwBi" id="5SsFeroaald" role="3clFbG">
+            <node concept="2YIFZM" id="5SsFeroafMD" role="2Oq$k0">
+              <ref role="37wK5l" to="jlff:~VirtualFileManager.getInstance():com.intellij.openapi.vfs.VirtualFileManager" resolve="getInstance" />
+              <ref role="1Pybhc" to="jlff:~VirtualFileManager" resolve="VirtualFileManager" />
+            </node>
+            <node concept="liA8E" id="5qfN6LqBXsK" role="2OqNvi">
+              <ref role="37wK5l" to="jlff:~VirtualFileManager.syncRefresh():long" resolve="syncRefresh" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6uMmfEAue2O" role="3cqZAp">
+          <node concept="3SKdUq" id="6uMmfEAue2Q" role="3SKWNk">
+            <property role="3SKdUp" value="fixme AP: it seems to me that reload happens synchronously here, double check and remove" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="4tP09YuEkC_" role="3cqZAp">
+          <node concept="2OqwBi" id="4tP09YuElC7" role="3clFbG">
+            <node concept="2YIFZM" id="4tP09YuEl4T" role="2Oq$k0">
+              <ref role="1Pybhc" to="2eq1:491od_XJZeq" resolve="ReloadManager" />
+              <ref role="37wK5l" to="2eq1:491od_XK12s" resolve="getInstance" />
+            </node>
+            <node concept="liA8E" id="4tP09YuElXu" role="2OqNvi">
+              <ref role="37wK5l" to="2eq1:4SUKy4FU8kE" resolve="flush" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="oS3y_vnPL_" role="jymVt" />
     <node concept="312cEu" id="1AzqgyAfxXw" role="jymVt">
       <property role="TrG5h" value="MyRepoListener" />
       <property role="2bfB8j" value="true" />

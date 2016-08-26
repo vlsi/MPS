@@ -22,9 +22,6 @@ import com.intellij.openapi.project.DumbModeTask;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.startup.StartupManager;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import com.intellij.openapi.vfs.VirtualFileManager;
-import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorWizardStep;
@@ -45,6 +42,9 @@ import java.util.List;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import com.intellij.openapi.vfs.VirtualFileManager;
+import jetbrains.mps.ide.platform.watching.ReloadManager;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.module.ReloadableModuleBase;
@@ -132,13 +132,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         public void run() {
           ApplicationManager.getApplication().runWriteAction(new Runnable() {
             public void run() {
-              VirtualFileUtils.refreshSynchronouslyRecursively(myProject.getBaseDir());
-              // fixme remove in 3.4 
-              // TODO AP: these are essentially those files which have been requested from IDEA vfs at least once so far 
-              // AP: I sense the author rather meant just refreshing the project directory 
-              VirtualFileManager.getInstance().syncRefresh();
-              // fixme AP: it seems to me that reload happens synchronously here, double check and remove 
-              ReloadManager.getInstance().flush();
+              syncRefresh();
             }
           });
           ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -325,6 +319,11 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                 updateUsedLanguagesVersions(allModules);
               }
             });
+
+            if (!(myMigrationManager.isMigrationRequired())) {
+              return;
+            }
+
             boolean migrate = MigrationDialogUtil.showMigrationConfirmation(myMpsProject, allModules, myMigrationManager);
             restoreTipsState();
 
@@ -337,7 +336,12 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
               return;
             }
 
-            VirtualFileUtils.refreshSynchronouslyRecursively(myProject.getBaseDir());
+            syncRefresh();
+            if (!(myMigrationManager.isMigrationRequired())) {
+              MigrationDialogUtil.showNoMigrationMessage(myProject);
+              return;
+            }
+
             VirtualFileManager.getInstance().asyncRefresh(new Runnable() {
               public void run() {
                 ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -355,6 +359,17 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     });
 
     myMigrationQueued = true;
+  }
+
+  private void syncRefresh() {
+    ApplicationManager.getApplication().saveAll();
+    VirtualFileUtils.refreshSynchronouslyRecursively(myProject.getBaseDir());
+    // fixme remove in 3.4 
+    // TODO AP: these are essentially those files which have been requested from IDEA vfs at least once so far 
+    // AP: I sense the author rather meant just refreshing the project directory 
+    VirtualFileManager.getInstance().syncRefresh();
+    // fixme AP: it seems to me that reload happens synchronously here, double check and remove 
+    ReloadManager.getInstance().flush();
   }
 
   private class MyRepoListener extends SRepositoryContentAdapter {
