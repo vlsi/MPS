@@ -62,6 +62,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
@@ -72,6 +73,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.repository.CommandListener;
@@ -204,7 +206,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
         final SNode node2 = (SNode) o2;
 
         if (!isSortByType()) {
-          return compareNames(node1, node2);
+          return comparePresentations(node1, node2);
         }
 
         // (1) node.getConcept() doesn't require model read, nor concept.getQualifiedName
@@ -215,7 +217,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
           return result;
         }
 
-        return compareNames(node1, node2);
+        return comparePresentations(node1, node2);
       }
 
       private int compareConceptFqNames(SNode node1, SNode node2) {
@@ -225,17 +227,17 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
         return concept1.compareTo(concept2);
       }
 
-      private int compareNames(SNode node1, SNode node2) {
-        String name1 = node1.getName();
-        String name2 = node2.getName();
+      private int comparePresentations(SNode node1, SNode node2) {
+        String presentation1 = node1.getPresentation();
+        String presentation2 = node2.getPresentation();
 
-        if (name1 == null) {
-          return name2 == null ? 0 : 1;
+        if (presentation1 == null) {
+          return presentation2 == null ? 0 : 1;
         }
-        if (name2 == null) {
+        if (presentation2 == null) {
           return -1;
         }
-        return name1.compareTo(name2);
+        return presentation1.compareTo(presentation2);
       }
     };
   }
