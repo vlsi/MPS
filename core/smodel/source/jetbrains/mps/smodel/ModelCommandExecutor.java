@@ -95,9 +95,12 @@ public interface ModelCommandExecutor {
    * Requires read lock in the "parent" thread.
    * Thread local. Returns previous value, to which it must be reset after use (in finally{}).
    *
-   * @param flag
-   * @return
+   * @deprecated Shall get replaced with full-fledged 'token' object
+   *
+   * @return previous value
    */
+  @Deprecated
+  @ToRemove(version = 3.4)
   boolean setReadEnabledFlag(boolean flag);
 
   /**
