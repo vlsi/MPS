@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,7 +106,15 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
     SModelReference mr = findCachedModelForFile(file);
     super.invalidateCacheForFile(file);
     if (mr != null) {
-      myGenStatusManager.invalidate(Collections.singleton(mr));
+      // XXX Likely, shall not notify immediately - not sure if it's appropriate to grab model read now.
+      // It won't hurt if notification comes later from e.g. pooled thread.
+      myRepository.getModelAccess().runReadAction(() -> {
+        SModel model = mr.resolve(myRepository);
+        if (model != null) {
+          myGenStatusManager.invalidateData(Collections.singleton(model));
+        }
+        clean(mr);
+      });
     }
   }
 
