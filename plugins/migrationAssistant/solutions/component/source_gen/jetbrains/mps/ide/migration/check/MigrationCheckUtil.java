@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Processor;
@@ -159,17 +160,17 @@ __switch__:
     final Set<SAbstractConcept> missingConcepts = SetSequence.fromSet(new HashSet<SAbstractConcept>());
     final Set<SConceptFeature> missingFeatures = SetSequence.fromSet(new HashSet<SConceptFeature>());
 
-    Iterable<SModel> models = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
+    Iterable<EditableSModel> models = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
       }
-    });
+    }).ofType(EditableSModel.class);
     int modelsCount = Sequence.fromIterable(models).count();
     int processedModels = 0;
 
     // find missing concepts, when language's not missing 
     // find missing concept features when concept's not missing 
-    for (SModel model : Sequence.fromIterable(models)) {
+    for (EditableSModel model : Sequence.fromIterable(models)) {
       ValidationUtil.validateModelContent(model.getRootNodes(), new Processor<ValidationProblem>() {
         public boolean process(ValidationProblem vp) {
           if (vp instanceof LanguageMissingError) {

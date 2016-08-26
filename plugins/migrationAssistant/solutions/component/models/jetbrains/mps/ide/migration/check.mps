@@ -939,32 +939,39 @@
           <node concept="3cpWsn" id="17tv9cWKWgM" role="3cpWs9">
             <property role="TrG5h" value="models" />
             <node concept="A3Dl8" id="17tv9cWKWgt" role="1tU5fm">
-              <node concept="3uibUv" id="17tv9cWKWgw" role="A3Ik2">
-                <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+              <node concept="3uibUv" id="oS3y_vpcCX" role="A3Ik2">
+                <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
               </node>
             </node>
-            <node concept="2OqwBi" id="17tv9cWKWgN" role="33vP2m">
-              <node concept="37vLTw" id="17tv9cWKWgO" role="2Oq$k0">
-                <ref role="3cqZAo" node="3n7MNzO_MGf" resolve="modules" />
-              </node>
-              <node concept="3goQfb" id="17tv9cWKWgP" role="2OqNvi">
-                <node concept="1bVj0M" id="17tv9cWKWgQ" role="23t8la">
-                  <node concept="3clFbS" id="17tv9cWKWgR" role="1bW5cS">
-                    <node concept="3clFbF" id="17tv9cWKWgS" role="3cqZAp">
-                      <node concept="2OqwBi" id="17tv9cWKWgT" role="3clFbG">
-                        <node concept="37vLTw" id="17tv9cWKWgU" role="2Oq$k0">
-                          <ref role="3cqZAo" node="17tv9cWKWgW" resolve="it" />
-                        </node>
-                        <node concept="liA8E" id="17tv9cWKWgV" role="2OqNvi">
-                          <ref role="37wK5l" to="lui2:~SModule.getModels():java.lang.Iterable" resolve="getModels" />
+            <node concept="2OqwBi" id="oS3y_vp6SF" role="33vP2m">
+              <node concept="2OqwBi" id="17tv9cWKWgN" role="2Oq$k0">
+                <node concept="37vLTw" id="17tv9cWKWgO" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3n7MNzO_MGf" resolve="modules" />
+                </node>
+                <node concept="3goQfb" id="17tv9cWKWgP" role="2OqNvi">
+                  <node concept="1bVj0M" id="17tv9cWKWgQ" role="23t8la">
+                    <node concept="3clFbS" id="17tv9cWKWgR" role="1bW5cS">
+                      <node concept="3clFbF" id="17tv9cWKWgS" role="3cqZAp">
+                        <node concept="2OqwBi" id="17tv9cWKWgT" role="3clFbG">
+                          <node concept="37vLTw" id="17tv9cWKWgU" role="2Oq$k0">
+                            <ref role="3cqZAo" node="17tv9cWKWgW" resolve="it" />
+                          </node>
+                          <node concept="liA8E" id="17tv9cWKWgV" role="2OqNvi">
+                            <ref role="37wK5l" to="lui2:~SModule.getModels():java.lang.Iterable" resolve="getModels" />
+                          </node>
                         </node>
                       </node>
                     </node>
+                    <node concept="Rh6nW" id="17tv9cWKWgW" role="1bW2Oz">
+                      <property role="TrG5h" value="it" />
+                      <node concept="2jxLKc" id="17tv9cWKWgX" role="1tU5fm" />
+                    </node>
                   </node>
-                  <node concept="Rh6nW" id="17tv9cWKWgW" role="1bW2Oz">
-                    <property role="TrG5h" value="it" />
-                    <node concept="2jxLKc" id="17tv9cWKWgX" role="1tU5fm" />
-                  </node>
+                </node>
+              </node>
+              <node concept="UnYns" id="oS3y_vp91b" role="2OqNvi">
+                <node concept="3uibUv" id="oS3y_vpaTJ" role="UnYnz">
+                  <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
                 </node>
               </node>
             </node>
