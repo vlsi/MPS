@@ -5501,7 +5501,7 @@
         <node concept="3clFbS" id="7$8NXlZpeDz" role="3clFbx">
           <node concept="2MkqsV" id="7$8NXlZphPA" role="3cqZAp">
             <node concept="Xl_RD" id="7$8NXlZphPP" role="2MkJ7o">
-              <property role="Xl_RC" value="Contribution to a menu must not be defined in the same language as the menu" />
+              <property role="Xl_RC" value="Contribution to a menu must be defined in a different language from the menu being contributed to" />
             </node>
             <node concept="1YBJjd" id="7$8NXlZphRr" role="2OEOjV">
               <ref role="1YBMHb" node="7$8NXlZpe8u" resolve="contribution" />

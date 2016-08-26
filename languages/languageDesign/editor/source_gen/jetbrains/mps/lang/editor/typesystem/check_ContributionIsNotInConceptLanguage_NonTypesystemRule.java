@@ -30,7 +30,7 @@ public class check_ContributionIsNotInConceptLanguage_NonTypesystemRule extends 
     if ((conceptModule != null) && conceptModule == contributionModule) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(contribution, "Contribution to a menu must not be defined in the same language as the menu", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "8721449194275282278", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(contribution, "Contribution to a menu must be defined in a different language from the menu being contributed to", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "8721449194275282278", null, errorTarget);
       }
     }
   }
