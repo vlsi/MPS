@@ -3247,16 +3247,6 @@
                                                   </node>
                                                 </node>
                                               </node>
-                                              <node concept="3clFbF" id="4N6D1IQcRE1" role="3cqZAp">
-                                                <node concept="2OqwBi" id="4N6D1IQcSnm" role="3clFbG">
-                                                  <node concept="37vLTw" id="XAmMeks87W" role="2Oq$k0">
-                                                    <ref role="3cqZAo" node="XAmMeks2Aq" resolve="myRefactoringSession" />
-                                                  </node>
-                                                  <node concept="liA8E" id="4N6D1IQcSJt" role="2OqNvi">
-                                                    <ref role="37wK5l" to="5nvm:3KqYwoBJ10q" resolve="performAllRegistered" />
-                                                  </node>
-                                                </node>
-                                              </node>
                                             </node>
                                             <node concept="TDmWw" id="2vOGnLEnvMW" role="TEbGg">
                                               <node concept="3cpWsn" id="2vOGnLEnvMX" role="TDEfY">

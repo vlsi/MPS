@@ -117,7 +117,6 @@ public class RefactoringProcessor {
               } else {
                 try {
                   performRefactoringTask.run();
-                  myRefactoringSession.performAllRegistered();
                 } catch (RuntimeException exception) {
                   if (LOG.isEnabledFor(Level.ERROR)) {
                     LOG.error("Exception during refactoring: ", exception);
