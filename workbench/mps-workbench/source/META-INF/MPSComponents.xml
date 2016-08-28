@@ -96,6 +96,9 @@
       <implementation-class>jetbrains.mps.plugins.PluginLoaderRegistry</implementation-class>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.classloading.WorkbenchClassloadingEDTDispatcher</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.ide.generator.GenerationSettings</implementation-class>
     </component>
     <component>

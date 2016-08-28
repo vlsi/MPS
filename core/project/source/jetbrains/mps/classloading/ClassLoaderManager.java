@@ -149,12 +149,22 @@ public class ClassLoaderManager implements CoreComponent {
 
   private final ModuleEventsHandler myRepositoryListener;
 
-  public ClassLoaderManager(SRepository repository) {
+  public ClassLoaderManager(@NotNull SRepository repository) {
+    this(repository, new DefaultEDTDispatcher());
+  }
+
+  ClassLoaderManager(@NotNull SRepository repository, @NotNull EDTDispatcher dispatcher) {
     myRepository = repository;
     myModulesWatcher = new ModulesWatcher(myRepository, myWatchableCondition);
-    myClassLoadersHolder = new ClassLoadersHolder(myRepository, myModulesWatcher);
+    myClassLoadersHolder = new ClassLoadersHolder(myRepository, myModulesWatcher, dispatcher);
     myRepositoryListener = new ModuleEventsHandler(repository, myModulesWatcher);
     myBroadCaster = new ClassLoadingBroadCaster(repository.getModelAccess());
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.4)
+  public void setDispatcher(@NotNull EDTDispatcher dispatcher) {
+    myClassLoadersHolder.setDispatcher(dispatcher);
   }
 
   @Override

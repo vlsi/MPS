@@ -64,9 +64,9 @@ public class ClassLoadersHolder {
   };
   private final SRepository myRepository;
 
-  public ClassLoadersHolder(SRepository repository, ModulesWatcher modulesWatcher) {
+  public ClassLoadersHolder(SRepository repository, ModulesWatcher modulesWatcher, EDTDispatcher dispatcher) {
     myRepository = repository;
-    myCLRegistry = new MPSClassLoadersRegistry(this, modulesWatcher, repository);
+    myCLRegistry = new MPSClassLoadersRegistry(this, modulesWatcher, repository, dispatcher);
   }
 
   public void init() {
@@ -150,6 +150,10 @@ public class ClassLoadersHolder {
    */
   public void doLoadModules(Set<ReloadableModule> toLoad) {
     myCLRegistry.doLoadModules(toLoad);
+  }
+
+  public void setDispatcher(@NotNull EDTDispatcher dispatcher) {
+    myCLRegistry.setDispatcher(dispatcher);
   }
 
   /**

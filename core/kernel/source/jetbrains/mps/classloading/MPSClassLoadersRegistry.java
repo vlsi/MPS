@@ -51,11 +51,13 @@ class MPSClassLoadersRegistry {
   private final ClassLoadersHolder myClHolder;
   private final ModulesWatcher myModulesWatcher;
   private final SRepository myRepository;
+  private volatile EDTDispatcher myDispatcher;
 
-  public MPSClassLoadersRegistry(ClassLoadersHolder clHolder, ModulesWatcher modulesWatcher, SRepository repository) {
+  public MPSClassLoadersRegistry(ClassLoadersHolder clHolder, ModulesWatcher modulesWatcher, SRepository repository, EDTDispatcher dispatcher) {
     myClHolder = clHolder;
     myModulesWatcher = modulesWatcher;
     myRepository = repository;
+    myDispatcher = dispatcher;
   }
 
   @Nullable
@@ -176,14 +178,12 @@ class MPSClassLoadersRegistry {
   public void flushDisposeQueue() {
     if (myDisposeQueue.isEmpty()) return;
     final List<ModuleClassLoader> toDispose = new ArrayList<ModuleClassLoader>(myDisposeQueue);
-    myRepository.getModelAccess().runWriteInEDT(() -> {
-          myRepository.getModelAccess().runWriteInEDT(() -> {
-            LOG.debug("Disposing " + toDispose.size() + " class loaders");
-            for (ModuleClassLoader classLoader : toDispose) {
-              classLoader.dispose();
-            }
-          });
-        });
+    myDispatcher.invokeInEDT(() -> {
+      LOG.debug("Disposing " + toDispose.size() + " class loaders");
+      for (ModuleClassLoader classLoader : toDispose) {
+        classLoader.dispose();
+      }
+    });
     myDisposeQueue.clear();
   }
 
@@ -191,5 +191,9 @@ class MPSClassLoadersRegistry {
     if (!myDisposeQueue.isEmpty()) {
       flushDisposeQueue();
     }
+  }
+
+  public void setDispatcher(@NotNull EDTDispatcher dispatcher) {
+    myDispatcher = dispatcher;
   }
 }
