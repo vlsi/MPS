@@ -79,7 +79,7 @@ public interface SLanguage {
    * will be able to work with it. E.g. generator can fail on generation of such a model.
    *
    * In MPS 3.2, version is changed only by adding language migrations.
-   * @return version of the language, or -1 the version could not be deduced.
+   * @return non-negative version of the language, or -1 the version could not be deduced.
    */
   @Deprecated //normally, one shouldn't have used it. If you had, switch to getting version from LanguageRuntime
   int getLanguageVersion();
