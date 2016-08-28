@@ -918,5 +918,24 @@
   <node concept="3p36aQ" id="1wEcoXjIBbC">
     <ref role="aqKnT" to="53vh:6szrkDodGEV" resolve="PureMigrationScript" />
   </node>
+  <node concept="24kQdi" id="7jb4LXp1dI$">
+    <property role="3GE5qa" value="refactoring.specialization" />
+    <ref role="1XX52x" to="53vh:2GZlO$G5O6Q" resolve="MoveConcept" />
+    <node concept="3EZMnI" id="7jb4LXp1dIE" role="2wV5jI">
+      <node concept="2iRfu4" id="7jb4LXp1dIF" role="2iSdaV" />
+      <node concept="3F0ifn" id="7jb4LXp1dIA" role="3EZMnx">
+        <property role="3F0ifm" value="concept" />
+      </node>
+      <node concept="3F1sOY" id="7jb4LXp2HsF" role="3EZMnx">
+        <ref role="1NtTu8" to="53vh:7jb4LXp2HrE" resolve="oldId" />
+      </node>
+      <node concept="3F0ifn" id="7jb4LXp1dJn" role="3EZMnx">
+        <property role="3F0ifm" value="-&gt;" />
+      </node>
+      <node concept="3F1sOY" id="7jb4LXp2Ht_" role="3EZMnx">
+        <ref role="1NtTu8" to="53vh:7jb4LXp2HrH" resolve="newId" />
+      </node>
+    </node>
+  </node>
 </model>
 
