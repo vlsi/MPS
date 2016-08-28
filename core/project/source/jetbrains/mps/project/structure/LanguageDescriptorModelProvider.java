@@ -229,32 +229,26 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
       myHash = null;
     }
 
+    /**
+     * FIXME
+     * adding used languages to descriptor model is a hack,
+     * fixing that the runtime solutions of languages engaged on generations are ignored at compilation
+     */
     void updateGenerationLanguages() {
+      jetbrains.mps.smodel.SModel m = getSModel();
       addEngagedOnGenerationLanguage(BootstrapLanguages.getLanguageDescriptorLang());
-      boolean updated = false;
-      //todo adding used languages to descriptor model is a hack, fixing that the runtime solutions of languages engaged on generations are ignored at compilation
-      Set<SLanguage> languageImports = new HashSet<>();
+      Set<SLanguage> importsToRemove = new HashSet<>(m.usedLanguages()); // calculating the delta
+      Set<SLanguage> importsToAdd = new HashSet<>();
       Collection<SModel> aspectModels = LanguageAspectSupport.getAspectModels(myModule);
       for (SModel aspect : aspectModels) {
-        for (SLanguage aspectLanguage : LanguageAspectSupport.getMainLanguages(aspect)) {
+        for (@NotNull SLanguage aspectLanguage : LanguageAspectSupport.getMainLanguages(aspect)) {
           addEngagedOnGenerationLanguage(aspectLanguage);
-          languageImports.add(aspectLanguage);
+          importsToRemove.remove(aspectLanguage);
+          importsToAdd.add(aspectLanguage);
         }
       }
-      jetbrains.mps.smodel.SModel m = getSModel();
-      HashSet<SLanguage> currentUsedLanguages = new HashSet<>(m.usedLanguages());
-      if (!currentUsedLanguages.equals(languageImports)) { // not calling validate lang versions too often
-        for (SLanguage language : currentUsedLanguages) {
-          m.deleteLanguage(language);
-        }
-        for (SLanguage language : languageImports) {
-          m.addLanguage(language);
-        }
-        if (isRegistered()) {
-          assert myModule == getModule(); // lang descriptor can be only in this module
-          myModule.validateLanguageVersions();
-        }
-      }
+      importsToRemove.forEach(m::deleteLanguage); // applying calculated delta
+      importsToAdd.forEach(m::addLanguage);
     }
 
     @Override
