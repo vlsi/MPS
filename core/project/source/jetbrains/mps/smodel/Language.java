@@ -276,7 +276,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
   // fixme: remove, use #setModuleDescriptor instead
   @Deprecated
-  public void setLanguageDescriptor(final LanguageDescriptor moduleDescriptor) {
+  public void setLanguageDescriptor(@NotNull final LanguageDescriptor moduleDescriptor) {
     setModuleDescriptor(moduleDescriptor);
   }
 
