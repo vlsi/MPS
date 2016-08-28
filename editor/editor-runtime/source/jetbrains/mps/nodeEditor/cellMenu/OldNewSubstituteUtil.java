@@ -16,10 +16,14 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -69,7 +73,7 @@ public class OldNewSubstituteUtil {
       return false;
     }
 
-    if (module.getUsedLanguages().contains(actionsLanguage) && module.getUsedLanguageVersion(actionsLanguage) <= 0) {
+    if (module.getUsedLanguages().contains(actionsLanguage) && getUsedLangVersion(module, actionsLanguage) <= 0) {
       // Languages using version 0 of j.m.l.actions always use builders.
       return true;
     }
@@ -103,5 +107,17 @@ public class OldNewSubstituteUtil {
     }
 
     return languageRuntime.getAspect(ActionAspectDescriptor.class);
+  }
+
+  /**
+   * temp hack to provide correct language versions
+   */
+  @ToRemove(version = 3.4)
+  @Hack
+  public static int getUsedLangVersion(@NotNull SModule module, @NotNull SLanguage lang) {
+    if (module instanceof AbstractModule) {
+      return ((AbstractModule) module).getUsedLanguageVersion(lang, false);
+    }
+    throw new IllegalArgumentException(String.format("Cannot calculate used language version for %s; used lang: %s", module, lang));
   }
 }

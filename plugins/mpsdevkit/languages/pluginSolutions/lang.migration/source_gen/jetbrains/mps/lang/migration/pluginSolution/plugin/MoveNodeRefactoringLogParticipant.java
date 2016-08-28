@@ -169,11 +169,11 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
             }
           }).where(new IWhereFilter<SModule>() {
             public boolean accept(SModule m) {
-              return SetSequence.fromSet(MigrationModuleUtil.getModuleDependencies(m)).contains(module) && MigrationModuleUtil.hasDepVersion(m, module.getModuleReference());
+              return SetSequence.fromSet(MigrationModuleUtil.getModuleDependencies(m)).contains(module);
             }
           }).toListSequence();
           for (SModule m : ListSequence.fromList(modulesToIncrementDependencyVersion)) {
-            int depVersion = MigrationModuleUtil.getDepVersion(m, module.getModuleReference());
+            int depVersion = MigrationModuleUtil.getDependencyVersion(m, module);
             if (moduleVersion != depVersion) {
               if (LOG.isEnabledFor(Level.ERROR)) {
                 LOG.error("Module " + m + " depends on module " + module + " with version " + depVersion + ", but current version is " + moduleVersion);

@@ -15,7 +15,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.migration.MigrationTrigger;
 import jetbrains.mps.ide.migration.IStartupMigrationExecutor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.ide.migration.MigrationManager;
 import jetbrains.mps.ide.migration.MigrationDialogUtil;
 
@@ -60,7 +59,6 @@ public class ExecuteMigrationAssistant_Action extends BaseAction {
 
     ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runWriteAction(new Runnable() {
       public void run() {
-        MigrationTrigger.updateUsedLanguagesVersions(MigrationsUtil.getMigrateableModulesFromProject(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))));
         migrationRequired.value = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MigrationManager.class).isMigrationRequired();
       }
     });

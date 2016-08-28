@@ -298,7 +298,7 @@ public class MigrationComponent extends AbstractProjectComponent {
     RefactoringLog rLog = logApplied.getRefactoringLog();
     AbstractModule module = ((AbstractModule) logApplied.getModule());
     SModule fromModule = rLog.getDescriptor().getModule();
-    int importedVersion = MigrationModuleUtil.getDepVersion(module, fromModule.getModuleReference());
+    int importedVersion = MigrationModuleUtil.getDependencyVersion(module, fromModule);
     importedVersion = Math.max(importedVersion, 0);
     assert importedVersion == rLog.getDescriptor().getFromVersion();
     try {

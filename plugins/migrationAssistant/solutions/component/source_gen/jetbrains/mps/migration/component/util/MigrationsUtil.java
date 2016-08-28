@@ -53,9 +53,11 @@ public class MigrationsUtil {
     }
     return result;
   }
+
   public static Set<SModule> getModuleDependencies(SModule module) {
     return MigrationModuleUtil.getModuleDependencies(module);
   }
+
   public static Set<SLanguage> getUsedLanguages(SModule module) {
     return MigrationModuleUtil.getUsedLanguages(module);
   }

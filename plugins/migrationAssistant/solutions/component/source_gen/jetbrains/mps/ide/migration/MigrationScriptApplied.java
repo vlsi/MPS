@@ -22,12 +22,15 @@ public final class MigrationScriptApplied implements ScriptApplied {
       myModule = module;
       myMigrationScriptReference = migrationScriptReference;
     }
+
     public SModule getModule() {
       return myModule;
     }
+
     public MigrationScriptReference getMigrationSciptReference() {
       return myMigrationScriptReference;
     }
+
     public MigrationScriptApplied resolve(MigrationComponent migrationComponent, boolean silently) {
       MigrationScript fetchMigrationScript = migrationComponent.fetchMigrationScript(myMigrationScriptReference, silently);
       if (fetchMigrationScript == null) {
@@ -35,9 +38,11 @@ public final class MigrationScriptApplied implements ScriptApplied {
       }
       return new MigrationScriptApplied(fetchMigrationScript, myModule);
     }
+
     public boolean isAlreadyDone() {
       return !(SetSequence.fromSet(MigrationsUtil.getUsedLanguages(myModule)).contains(myMigrationScriptReference.getLanguage())) || myMigrationScriptReference.getFromVersion() < myModule.getUsedLanguageVersion(myMigrationScriptReference.getLanguage());
     }
+
     public String getKindDescription(ScriptApplied resolved) {
       MigrationScriptApplied script = ((MigrationScriptApplied) resolved);
       String langNameShrinked = NameUtil.compactNamespace(myMigrationScriptReference.getLanguage().getQualifiedName());
@@ -54,12 +59,15 @@ public final class MigrationScriptApplied implements ScriptApplied {
     myScript = script;
     myModule = module;
   }
+
   public MigrationScript getScript() {
     return myScript;
   }
+
   public SModule getModule() {
     return myModule;
   }
+
   public Iterable<ScriptApplied.ScriptAppliedReference> getDependencies() {
     List<ScriptApplied.ScriptAppliedReference> result = ListSequence.fromList(new ArrayList<ScriptApplied.ScriptAppliedReference>());
     int fromVersion = myScript.getDescriptor().getFromVersion();
@@ -80,6 +88,7 @@ public final class MigrationScriptApplied implements ScriptApplied {
   public boolean execute(MigrationComponent migrationComponent) {
     return migrationComponent.executeMigrationScript(this);
   }
+
   public String getDescription() {
     return new MigrationScriptApplied.MigrationScriptAppliedReference(myScript.getDescriptor(), myModule).getKindDescription(this) + ": " + myModule.getModuleName();
   }

@@ -14,12 +14,12 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.language.LanguageRegistry;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import java.util.Map;
 
 public class MigrationModuleUtil {
   public static Iterable<SModule> getMigrateableModulesFromProject(Project p) {
@@ -30,28 +30,35 @@ public class MigrationModuleUtil {
       }
     }).ofType(SModule.class);
   }
+
   public static boolean isModuleMigrateable(SModule m) {
     return !((m instanceof DevKit)) && !((Solution.isBootstrapSolution(m.getModuleReference()))) && !((m.isReadOnly())) && !((m instanceof TempModule));
   }
+
   public static Set<SModule> getModuleDependencies(SModule module) {
     Set<SModule> dependencies = SetSequence.fromSetWithValues(new HashSet<SModule>(), new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE));
     SetSequence.fromSet(dependencies).addElement(module);
     return dependencies;
   }
-  public static Set<SLanguage> getUsedLanguages(SModule module) {
+
+  public static Set<SLanguage> getUsedLanguages(@NotNull SModule module) {
     return new SLanguageHierarchy(LanguageRegistry.getInstance(module.getRepository()), module.getUsedLanguages()).getExtended();
   }
-  public static boolean hasDepVersion(SModule module, SModuleReference dependency) {
-    Integer result = check_6ishgu_a0a0e(check_6ishgu_a0a0a4(((AbstractModule) module).getModuleDescriptor()), dependency);
-    return result != null;
-  }
-  public static int getDepVersion(SModule module, SModuleReference dependency) {
-    Integer result = check_6ishgu_a0a0f(check_6ishgu_a0a0a5(((AbstractModule) module).getModuleDescriptor()), dependency);
-    if (result == null) {
-      throw new IllegalArgumentException();
+
+  public static int getDependencyVersion(@NotNull SModule module, @NotNull SModule dependency) {
+    if (module instanceof AbstractModule) {
+      return ((AbstractModule) module).getDependencyVersion(dependency, false);
     }
-    return result;
+    throw new IllegalArgumentException("We are able to work only with AbstractModule instances");
   }
+
+  public static int getUsedLanguageVersion(@NotNull SModule module, @NotNull SLanguage usedLang) {
+    if (module instanceof AbstractModule) {
+      return ((AbstractModule) module).getUsedLanguageVersion(usedLang, false);
+    }
+    throw new IllegalArgumentException("We are able to work only with AbstractModule instances");
+  }
+
   public static void setDepVersion(SModule module, SModuleReference dependency, int version) {
     ModuleDescriptor moduleDescriptor = ((AbstractModule) module).getModuleDescriptor();
     if (moduleDescriptor == null) {
@@ -60,41 +67,15 @@ public class MigrationModuleUtil {
     moduleDescriptor.getDependencyVersions().put(dependency, version);
     ((AbstractModule) module).setChanged();
   }
+
   public static boolean allDependenciesActual(SModule module) {
     for (SModule dep : SetSequence.fromSet(getModuleDependencies(module))) {
-      if (!(hasDepVersion(module, dep.getModuleReference()))) {
-        continue;
-      }
       int currentDepVersion = ((AbstractModule) dep).getModuleVersion();
-      int ver = ((AbstractModule) module).getDependencyVersion(dep);
-      if (currentDepVersion != ver) {
+      int ver = getDependencyVersion(module, dep);
+      if (ver != currentDepVersion) {
         return false;
       }
     }
     return true;
-  }
-  private static Integer check_6ishgu_a0a0e(Map<SModuleReference, Integer> checkedDotOperand, SModuleReference dependency) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.get(dependency);
-    }
-    return null;
-  }
-  private static Map<SModuleReference, Integer> check_6ishgu_a0a0a4(ModuleDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getDependencyVersions();
-    }
-    return null;
-  }
-  private static Integer check_6ishgu_a0a0f(Map<SModuleReference, Integer> checkedDotOperand, SModuleReference dependency) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.get(dependency);
-    }
-    return null;
-  }
-  private static Map<SModuleReference, Integer> check_6ishgu_a0a0a5(ModuleDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getDependencyVersions();
-    }
-    return null;
   }
 }

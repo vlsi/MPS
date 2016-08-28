@@ -621,7 +621,7 @@
                     <ref role="3cqZAo" node="6rIOn75YKN3" resolve="stepData" />
                   </node>
                   <node concept="3TrEf2" id="6rIOn75Z99p" role="2OqNvi">
-                    <ref role="3Tt5mk" to="gqi5:6rIOn75Yg8A" />
+                    <ref role="3Tt5mk" to="gqi5:6rIOn75Yg8A" resolve="data" />
                   </node>
                 </node>
               </node>
@@ -897,7 +897,7 @@
                         <ref role="2Gs0qQ" node="6rIOn7603gB" resolve="root" />
                       </node>
                       <node concept="3TrEf2" id="6rIOn765YOZ" role="2OqNvi">
-                        <ref role="3Tt5mk" to="gqi5:6rIOn75Yg8A" />
+                        <ref role="3Tt5mk" to="gqi5:6rIOn75Yg8A" resolve="data" />
                       </node>
                     </node>
                   </node>
@@ -1666,6 +1666,7 @@
       </node>
       <node concept="3Tm1VV" id="79xDgbhe3y4" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="2RCunBMpP3H" role="jymVt" />
     <node concept="2YIFZL" id="3UfGsecu9ay" role="jymVt">
       <property role="TrG5h" value="getModuleDependencies" />
       <property role="IEkAT" value="false" />
@@ -1695,6 +1696,7 @@
       </node>
       <node concept="3Tm1VV" id="3UfGsecu9aW" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="2RCunBMpP3I" role="jymVt" />
     <node concept="2YIFZL" id="79xDgbhf49e" role="jymVt">
       <property role="TrG5h" value="getUsedLanguages" />
       <property role="IEkAT" value="false" />
@@ -2644,7 +2646,7 @@
                           <node concept="3clFbC" id="51adnVzVVEx" role="3clFbG">
                             <node concept="359W_D" id="51adnVzVVEy" role="3uHU7w">
                               <ref role="359W_E" to="tpee:hiAHcMF" resolve="AnnotationInstance" />
-                              <ref role="359W_F" to="tpee:hiAI5P0" />
+                              <ref role="359W_F" to="tpee:hiAI5P0" resolve="annotation" />
                             </node>
                             <node concept="2OqwBi" id="51adnVzVVEz" role="3uHU7B">
                               <node concept="37vLTw" id="51adnVzVVE$" role="2Oq$k0">

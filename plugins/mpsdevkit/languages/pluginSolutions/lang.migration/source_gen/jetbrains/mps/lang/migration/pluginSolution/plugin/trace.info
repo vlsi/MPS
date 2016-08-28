@@ -245,8 +245,8 @@
       <node id="5042723591541752614" at="163,53,164,0" concept="11" />
       <node id="5464540062510729064" at="164,0,165,63" concept="8" />
       <node id="5042723591540116174" at="167,46,168,64" concept="9" />
-      <node id="5042723591540116182" at="171,46,172,173" concept="9" />
-      <node id="7222086642609050818" at="175,88,176,95" concept="8" />
+      <node id="5042723591540116182" at="171,46,172,104" concept="9" />
+      <node id="7222086642609050818" at="175,88,176,81" concept="8" />
       <node id="7222086642608960139" at="178,50,179,152" concept="3" />
       <node id="5464540062512873482" at="181,20,182,99" concept="3" />
       <node id="3947813777275566268" at="188,132,189,669" concept="3" />
@@ -359,7 +359,7 @@
       <node id="3628660716136490626" at="68,0,75,0" concept="0" trace="get#()Ljava/lang/Iterable;" />
       <node id="3947813777275163735" at="93,0,100,0" concept="7" trace="getSerializedInitial#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3947813777275112040" at="100,0,107,0" concept="7" trace="getSerializedFinal#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="7222086642608954866" at="176,95,183,13" concept="6" />
+      <node id="7222086642608954866" at="176,81,183,13" concept="6" />
       <node id="1817798995039476850" at="198,91,205,9" concept="6" />
       <node id="1817798995039488713" at="228,0,235,0" concept="13" trace="createRefactoringOption_29rp6m_a0a0a0a1a6m#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="149909493390865402" at="259,266,266,5" concept="6" />
@@ -399,7 +399,7 @@
       <scope id="3947813777275489574" at="153,58,154,51" />
       <scope id="3947813777275489529" at="157,95,158,43" />
       <scope id="5042723591540116173" at="167,46,168,64" />
-      <scope id="5042723591540116181" at="171,46,172,173" />
+      <scope id="5042723591540116181" at="171,46,172,104" />
       <scope id="7222086642608960139" at="178,50,179,152" />
       <scope id="7222086642609120726" at="181,20,182,99" />
       <scope id="3947813777275393658" at="188,132,189,669" />
