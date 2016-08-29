@@ -67,7 +67,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_LanguageRefExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LanguageReferenceExpression = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_LinkAttributeQualifier = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_LinkId = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LinkIdRefExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_LinkIdentity = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LinkList_AddNewChildOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LinkNameRefExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LinkQualifier = new ConceptPresentationBuilder().create();
@@ -149,6 +151,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_Property_RemoveOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Property_SetOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RefConcept_Reference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ReferenceId = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ReferenceIdentity = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Reference_GetLinkDeclarationOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Reference_GetResolveInfo = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Reference_GetRoleOperation = new ConceptPresentationBuilder().deprecated().create();
@@ -297,230 +301,238 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 54:
         return props_LinkAttributeQualifier;
       case 55:
-        return props_LinkIdRefExpression;
+        return props_LinkId;
       case 56:
-        return props_LinkList_AddNewChildOperation;
+        return props_LinkIdRefExpression;
       case 57:
-        return props_LinkNameRefExpression;
+        return props_LinkIdentity;
       case 58:
-        return props_LinkQualifier;
+        return props_LinkList_AddNewChildOperation;
       case 59:
-        return props_LinkRefExpression;
+        return props_LinkNameRefExpression;
       case 60:
-        return props_LinkRefQualifier;
+        return props_LinkQualifier;
       case 61:
-        return props_Link_SetNewChildOperation;
+        return props_LinkRefExpression;
       case 62:
-        return props_Link_SetTargetOperation;
+        return props_LinkRefQualifier;
       case 63:
-        return props_ModelReferenceExpression;
+        return props_Link_SetNewChildOperation;
       case 64:
-        return props_Model_AddRootOperation;
+        return props_Link_SetTargetOperation;
       case 65:
-        return props_Model_CreateNewNodeOperation;
+        return props_ModelReferenceExpression;
       case 66:
-        return props_Model_CreateNewRootNodeOperation;
+        return props_Model_AddRootOperation;
       case 67:
-        return props_Model_GetLongNameOperation;
+        return props_Model_CreateNewNodeOperation;
       case 68:
-        return props_Model_GetModule;
+        return props_Model_CreateNewRootNodeOperation;
       case 69:
-        return props_Model_NodesIncludingImportedOperation;
+        return props_Model_GetLongNameOperation;
       case 70:
-        return props_Model_NodesOperation;
+        return props_Model_GetModule;
       case 71:
-        return props_Model_RootsIncludingImportedOperation;
+        return props_Model_NodesIncludingImportedOperation;
       case 72:
-        return props_Model_RootsOperation;
+        return props_Model_NodesOperation;
       case 73:
-        return props_ModuleIdentity;
+        return props_Model_RootsIncludingImportedOperation;
       case 74:
-        return props_ModulePointer;
+        return props_Model_RootsOperation;
       case 75:
-        return props_ModuleRefExpression;
+        return props_ModuleIdentity;
       case 76:
-        return props_ModuleReferenceExpression;
+        return props_ModulePointer;
       case 77:
-        return props_NodeAttributeQualifier;
+        return props_ModuleRefExpression;
       case 78:
-        return props_NodePointerExpression;
+        return props_ModuleReferenceExpression;
       case 79:
-        return props_NodeRefExpression;
+        return props_NodeAttributeQualifier;
       case 80:
-        return props_Node_ConceptMethodCall;
+        return props_NodePointerExpression;
       case 81:
-        return props_Node_CopyOperation;
+        return props_NodeRefExpression;
       case 82:
-        return props_Node_DeleteOperation;
+        return props_Node_ConceptMethodCall;
       case 83:
-        return props_Node_DetachOperation;
+        return props_Node_CopyOperation;
       case 84:
-        return props_Node_GetAllSiblingsOperation;
+        return props_Node_DeleteOperation;
       case 85:
-        return props_Node_GetAncestorOperation;
+        return props_Node_DetachOperation;
       case 86:
-        return props_Node_GetAncestorsOperation;
+        return props_Node_GetAllSiblingsOperation;
       case 87:
-        return props_Node_GetChildrenAndChildAttributesOperation;
+        return props_Node_GetAncestorOperation;
       case 88:
-        return props_Node_GetChildrenOperation;
+        return props_Node_GetAncestorsOperation;
       case 89:
-        return props_Node_GetConceptOperation;
+        return props_Node_GetChildrenAndChildAttributesOperation;
       case 90:
-        return props_Node_GetContainingLinkOperation;
+        return props_Node_GetChildrenOperation;
       case 91:
-        return props_Node_GetContainingRoleOperation;
+        return props_Node_GetConceptOperation;
       case 92:
-        return props_Node_GetContainingRootOperation;
+        return props_Node_GetContainingLinkOperation;
       case 93:
-        return props_Node_GetDescendantsOperation;
+        return props_Node_GetContainingRoleOperation;
       case 94:
-        return props_Node_GetIndexInParentOperation;
+        return props_Node_GetContainingRootOperation;
       case 95:
-        return props_Node_GetModelOperation;
+        return props_Node_GetDescendantsOperation;
       case 96:
-        return props_Node_GetNextSiblingOperation;
+        return props_Node_GetIndexInParentOperation;
       case 97:
-        return props_Node_GetNextSiblingsOperation;
+        return props_Node_GetModelOperation;
       case 98:
-        return props_Node_GetParentOperation;
+        return props_Node_GetNextSiblingOperation;
       case 99:
-        return props_Node_GetPrevSiblingOperation;
+        return props_Node_GetNextSiblingsOperation;
       case 100:
-        return props_Node_GetPrevSiblingsOperation;
+        return props_Node_GetParentOperation;
       case 101:
-        return props_Node_GetReferenceOperation;
+        return props_Node_GetPrevSiblingOperation;
       case 102:
-        return props_Node_GetReferencesOperation;
+        return props_Node_GetPrevSiblingsOperation;
       case 103:
-        return props_Node_GetReferentSearchScopeOperation;
+        return props_Node_GetReferenceOperation;
       case 104:
-        return props_Node_GetSConceptOperation;
+        return props_Node_GetReferencesOperation;
       case 105:
-        return props_Node_InsertNewNextSiblingOperation;
+        return props_Node_GetReferentSearchScopeOperation;
       case 106:
-        return props_Node_InsertNewPrevSiblingOperation;
+        return props_Node_GetSConceptOperation;
       case 107:
-        return props_Node_InsertNextSiblingOperation;
+        return props_Node_InsertNewNextSiblingOperation;
       case 108:
-        return props_Node_InsertPrevSiblingOperation;
+        return props_Node_InsertNewPrevSiblingOperation;
       case 109:
-        return props_Node_IsAttributeOperation;
+        return props_Node_InsertNextSiblingOperation;
       case 110:
-        return props_Node_IsInstanceOfOperation;
+        return props_Node_InsertPrevSiblingOperation;
       case 111:
-        return props_Node_IsNotNullOperation;
+        return props_Node_IsAttributeOperation;
       case 112:
-        return props_Node_IsNullOperation;
+        return props_Node_IsInstanceOfOperation;
       case 113:
-        return props_Node_IsRoleOperation;
+        return props_Node_IsNotNullOperation;
       case 114:
-        return props_Node_PointerOperation;
+        return props_Node_IsNullOperation;
       case 115:
-        return props_Node_ReplaceWithAnotherOperation;
+        return props_Node_IsRoleOperation;
       case 116:
-        return props_Node_ReplaceWithNewOperation;
+        return props_Node_PointerOperation;
       case 117:
-        return props_OfConceptOperation;
+        return props_Node_ReplaceWithAnotherOperation;
       case 118:
-        return props_OperationParm_Concept;
+        return props_Node_ReplaceWithNewOperation;
       case 119:
-        return props_OperationParm_ConceptList;
+        return props_OfConceptOperation;
       case 120:
-        return props_OperationParm_Inclusion;
+        return props_OperationParm_Concept;
       case 121:
-        return props_OperationParm_LinkQualifier;
+        return props_OperationParm_ConceptList;
       case 122:
-        return props_OperationParm_Root;
+        return props_OperationParm_Inclusion;
       case 123:
-        return props_OperationParm_SameMetaLevel;
+        return props_OperationParm_LinkQualifier;
       case 124:
-        return props_OperationParm_StopConceptList;
+        return props_OperationParm_Root;
       case 125:
-        return props_PoundExpression;
+        return props_OperationParm_SameMetaLevel;
       case 126:
-        return props_PropertyAttributeQualifier;
+        return props_OperationParm_StopConceptList;
       case 127:
-        return props_PropertyId;
+        return props_PoundExpression;
       case 128:
-        return props_PropertyIdRefExpression;
+        return props_PropertyAttributeQualifier;
       case 129:
-        return props_PropertyIdentity;
+        return props_PropertyId;
       case 130:
-        return props_PropertyNameRefExpression;
+        return props_PropertyIdRefExpression;
       case 131:
-        return props_PropertyQualifier;
+        return props_PropertyIdentity;
       case 132:
-        return props_Property_HasValue_Enum;
+        return props_PropertyNameRefExpression;
       case 133:
-        return props_Property_HasValue_Simple;
+        return props_PropertyQualifier;
       case 134:
-        return props_Property_RemoveOperation;
+        return props_Property_HasValue_Enum;
       case 135:
-        return props_Property_SetOperation;
+        return props_Property_HasValue_Simple;
       case 136:
-        return props_RefConcept_Reference;
+        return props_Property_RemoveOperation;
       case 137:
-        return props_Reference_GetLinkDeclarationOperation;
+        return props_Property_SetOperation;
       case 138:
-        return props_Reference_GetResolveInfo;
+        return props_RefConcept_Reference;
       case 139:
-        return props_Reference_GetRoleOperation;
+        return props_ReferenceId;
       case 140:
-        return props_Reference_GetTargetOperation;
+        return props_ReferenceIdentity;
       case 141:
-        return props_SConceptOperation;
+        return props_Reference_GetLinkDeclarationOperation;
       case 142:
-        return props_SConceptType;
+        return props_Reference_GetResolveInfo;
       case 143:
-        return props_SConceptTypeCastExpression;
+        return props_Reference_GetRoleOperation;
       case 144:
-        return props_SEnumMemberOperation;
+        return props_Reference_GetTargetOperation;
       case 145:
-        return props_SEnumMemberType;
+        return props_SConceptOperation;
       case 146:
-        return props_SEnumOperation;
+        return props_SConceptType;
       case 147:
-        return props_SEnumOperationInvocation;
+        return props_SConceptTypeCastExpression;
       case 148:
-        return props_SEnum_MemberForNameOperation;
+        return props_SEnumMemberOperation;
       case 149:
-        return props_SEnum_MemberForValueOperation;
+        return props_SEnumMemberType;
       case 150:
-        return props_SEnum_MemberOperation;
+        return props_SEnumOperation;
       case 151:
-        return props_SEnum_MembersOperation;
+        return props_SEnumOperationInvocation;
       case 152:
-        return props_SLinkAccess;
+        return props_SEnum_MemberForNameOperation;
       case 153:
-        return props_SLinkImplicitSelect;
+        return props_SEnum_MemberForValueOperation;
       case 154:
-        return props_SLinkListAccess;
+        return props_SEnum_MemberOperation;
       case 155:
-        return props_SModelType;
+        return props_SEnum_MembersOperation;
       case 156:
-        return props_SNodeCreator;
+        return props_SLinkAccess;
       case 157:
-        return props_SNodeListCreator;
+        return props_SLinkImplicitSelect;
       case 158:
-        return props_SNodeListType;
+        return props_SLinkListAccess;
       case 159:
-        return props_SNodeOperation;
+        return props_SModelType;
       case 160:
-        return props_SNodeType;
+        return props_SNodeCreator;
       case 161:
-        return props_SNodeTypeCastExpression;
+        return props_SNodeListCreator;
       case 162:
-        return props_SPropertyAccess;
+        return props_SNodeListType;
       case 163:
-        return props_SReferenceType;
+        return props_SNodeOperation;
       case 164:
-        return props_SearchScopeType;
+        return props_SNodeType;
       case 165:
-        return props_SearchScope_ContainsOperation;
+        return props_SNodeTypeCastExpression;
       case 166:
-        return props_SemanticDowncastExpression;
+        return props_SPropertyAccess;
       case 167:
+        return props_SReferenceType;
+      case 168:
+        return props_SearchScopeType;
+      case 169:
+        return props_SearchScope_ContainsOperation;
+      case 170:
+        return props_SemanticDowncastExpression;
+      case 171:
         return props_SubconceptCase;
     }
     throw new IllegalStateException();

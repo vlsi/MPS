@@ -41,6 +41,8 @@ import jetbrains.mps.lang.smodel.behavior.ConceptId__BehaviorDescriptor;
 import java.util.UUID;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.lang.smodel.behavior.PropertyId__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.behavior.ReferenceId__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.behavior.LinkId__BehaviorDescriptor;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor;
 import jetbrains.mps.lang.behavior.generator.template.util.Constants;
@@ -853,6 +855,40 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_5091528797226455113(final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(_context.getNode());
   }
+  public static Object propertyMacro_GetPropertyValue_8415841354032440745(final PropertyMacroContext _context) {
+    UUID langId = ((SConceptId) _context.getVariable("var:conceptId")).getLanguageId().getIdValue();
+    return "0x" + Long.toHexString(langId.getMostSignificantBits()) + 'L';
+  }
+  public static Object propertyMacro_GetPropertyValue_8415841354032440768(final PropertyMacroContext _context) {
+    UUID langId = ((SConceptId) _context.getVariable("var:conceptId")).getLanguageId().getIdValue();
+    return "0x" + Long.toHexString(langId.getLeastSignificantBits()) + 'L';
+  }
+  public static Object propertyMacro_GetPropertyValue_8415841354032440791(final PropertyMacroContext _context) {
+    return "0x" + Long.toHexString(((SConceptId) _context.getVariable("var:conceptId")).getIdValue()) + 'L';
+  }
+  public static Object propertyMacro_GetPropertyValue_8415841354032440806(final PropertyMacroContext _context) {
+    return "0x" + Long.toHexString((long) ReferenceId__BehaviorDescriptor.getIdValue_id7jb4LXp9a7d.invoke(_context.getNode())) + 'L';
+  }
+  public static Object propertyMacro_GetPropertyValue_8415841354032440819(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6ecL, 0x74cb131f5923b6efL, "referenceName"));
+  }
+  public static Object propertyMacro_GetPropertyValue_8415841354032518259(final PropertyMacroContext _context) {
+    UUID langId = ((SConceptId) _context.getVariable("var:conceptId")).getLanguageId().getIdValue();
+    return "0x" + Long.toHexString(langId.getMostSignificantBits()) + 'L';
+  }
+  public static Object propertyMacro_GetPropertyValue_8415841354032518282(final PropertyMacroContext _context) {
+    UUID langId = ((SConceptId) _context.getVariable("var:conceptId")).getLanguageId().getIdValue();
+    return "0x" + Long.toHexString(langId.getLeastSignificantBits()) + 'L';
+  }
+  public static Object propertyMacro_GetPropertyValue_8415841354032518305(final PropertyMacroContext _context) {
+    return "0x" + Long.toHexString(((SConceptId) _context.getVariable("var:conceptId")).getIdValue()) + 'L';
+  }
+  public static Object propertyMacro_GetPropertyValue_8415841354032518320(final PropertyMacroContext _context) {
+    return "0x" + Long.toHexString((long) LinkId__BehaviorDescriptor.getIdValue_id7jb4LXp8Vts.invoke(_context.getNode())) + 'L';
+  }
+  public static Object propertyMacro_GetPropertyValue_8415841354032518333(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6e7L, 0x74cb131f5923b6eaL, "linkName"));
+  }
   public static Object referenceMacro_GetReferent_1170457360268(final ReferenceMacroContext _context) {
     return QueriesUtil.get_SPropertyAccess_simple_getterMethod(_context.getNode());
   }
@@ -986,7 +1022,7 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, 0x1869004155f6ce22L, "conceptArgument")) != null);
   }
   public static boolean ifMacro_Condition_2965815627220345643(final IfMacroContext _context) {
-    return neq_x583g4_a0a0ij(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed32e98bL, 0x120ed32e98cL, "enumDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType")), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1082983041843"));
+    return neq_x583g4_a0a0sj(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed32e98bL, 0x120ed32e98cL, "enumDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType")), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1082983041843"));
   }
   public static boolean ifMacro_Condition_5616724231236702747(final IfMacroContext _context) {
     SNode grandParent = SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode()));
@@ -2185,6 +2221,16 @@ public class QueriesGenerated {
     // Just not sure it's right for xIdentity, and don't want to cast to ConceptId here 
     return MetaIdHelper.getConcept(ConceptIdentity__BehaviorDescriptor.getConcept_id5ZE7FBYYOpv.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefc235cL, 0x5fea1eb9fefc2364L, "conceptIdentity"))));
   }
+  public static Object insertMacro_varValue_8415841354032440827(final TemplateQueryContext _context) {
+    // XXX perhaps, makes sense to add ConceptIdentity.getConceptId() instead? 
+    // Just not sure it's right for xIdentity, and don't want to cast to ConceptId here 
+    return MetaIdHelper.getConcept(ConceptIdentity__BehaviorDescriptor.getConcept_id5ZE7FBYYOpv.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6ecL, 0x74cb131f5923b6edL, "conceptIdentity"))));
+  }
+  public static Object insertMacro_varValue_8415841354032518341(final TemplateQueryContext _context) {
+    // XXX perhaps, makes sense to add ConceptIdentity.getConceptId() instead? 
+    // Just not sure it's right for xIdentity, and don't want to cast to ConceptId here 
+    return MetaIdHelper.getConcept(ConceptIdentity__BehaviorDescriptor.getConcept_id5ZE7FBYYOpv.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6e7L, 0x74cb131f5923b6e8L, "conceptIdentity"))));
+  }
   private static SNode _quotation_createNode_x583g4_b0a2a31() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -2215,7 +2261,7 @@ public class QueriesGenerated {
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static boolean neq_x583g4_a0a0ij(Object a, Object b) {
+  private static boolean neq_x583g4_a0a0sj(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }
