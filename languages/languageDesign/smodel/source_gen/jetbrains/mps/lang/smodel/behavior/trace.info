@@ -72,6 +72,9 @@
     <file name="ConceptIdentity_BehaviorDescriptor.java">
       <unit at="11,0,14,0" name="jetbrains.mps.lang.smodel.behavior.ConceptIdentity_BehaviorDescriptor" />
     </file>
+    <file name="ConceptMemberIdentity_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.smodel.behavior.ConceptMemberIdentity_BehaviorDescriptor" />
+    </file>
     <file name="ConceptNodeType_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.behavior.ConceptNodeType_BehaviorDescriptor" />
     </file>
