@@ -43,7 +43,7 @@ public class MigrationScript_1 extends MigrationScriptBase {
       };
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add42L, "jetbrains.mps.lang.smodel.query.structure.GlobalScope_old"));
+          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add42L, "jetbrains.mps.lang.smodel.query.structure.GlobalScope_old")));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode node) {
@@ -65,7 +65,7 @@ public class MigrationScript_1 extends MigrationScriptBase {
         public Iterable<Problem> iterable() {
           return Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add42L, "jetbrains.mps.lang.smodel.query.structure.GlobalScope_old"));
+              return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add42L, "jetbrains.mps.lang.smodel.query.structure.GlobalScope_old")));
             }
           }).select(new ISelector<SNode, Problem>() {
             public Problem select(SNode it) {
