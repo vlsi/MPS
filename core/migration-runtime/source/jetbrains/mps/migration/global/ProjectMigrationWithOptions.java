@@ -16,7 +16,6 @@
 package jetbrains.mps.migration.global;
 
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
@@ -25,13 +24,13 @@ import java.util.Map;
 
 public interface ProjectMigrationWithOptions extends ProjectMigration {
 
-  abstract class Option {
+  abstract class Option<T> {
     public final String id;
     public Option(String id) {
       this.id = id;
     }
     public abstract JComponent createComponent();
-    public abstract Object getValue(JComponent component);
+    public abstract T getValue(JComponent component);
     @Override
     public boolean equals(Object o) {
       if (this == o) {
@@ -49,7 +48,7 @@ public interface ProjectMigrationWithOptions extends ProjectMigration {
     }
   }
 
-  class BooleanOption extends Option {
+  class BooleanOption extends Option<Boolean> {
     public final String myDescription;
     public final boolean myDefaultValue;
     public BooleanOption(String id, String description, boolean defaultValue) {
@@ -62,7 +61,7 @@ public interface ProjectMigrationWithOptions extends ProjectMigration {
       return new JCheckBox(myDescription, myDefaultValue);
     }
     @Override
-    public Object getValue(JComponent c) {
+    public Boolean getValue(JComponent c) {
       if (!(c instanceof JCheckBox)) throw new IllegalArgumentException(c.toString());
       return ((JCheckBox) c).isSelected();
     }

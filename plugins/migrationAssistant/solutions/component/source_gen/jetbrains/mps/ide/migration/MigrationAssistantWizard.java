@@ -9,15 +9,31 @@ import java.util.List;
 import jetbrains.mps.ide.migration.wizard.MigrationWizardStep;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
-import jetbrains.mps.ide.migration.wizard.InitialStep;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.SystemInfo;
+import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
+import javax.swing.JComponent;
+import javax.swing.JTextPane;
+import com.intellij.openapi.ui.Messages;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import com.intellij.ui.components.JBScrollPane;
+import com.intellij.ui.components.JBLabel;
+import java.awt.Dimension;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.ide.migration.wizard.InitialStep;
 import jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorWizardStep;
-import java.util.ArrayList;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ModalityState;
@@ -32,8 +48,48 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
   private static List<MigrationWizardStep> createSteps(final Project project, MigrationManager manager, MigrationProblemsContainer errorContainer) {
     List<ProjectMigration> pMig = ProjectMigrationsRegistry.getInstance().getMigrations();
+    final MPSProject mpsPoject = ProjectHelper.fromIdeaProject(project);
 
-    InitialStep initialStep = new InitialStep(project, ListSequence.fromList(pMig).ofType(ProjectMigrationWithOptions.class).where(new IWhereFilter<ProjectMigrationWithOptions>() {
+    final List<String> modulesToMigrate = ListSequence.fromList(new ArrayList<String>());
+    mpsPoject.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        ListSequence.fromList(modulesToMigrate).addSequence(Sequence.fromIterable(MigrationModuleUtil.getMigrateableModulesFromProject(mpsPoject)).where(new IWhereFilter<SModule>() {
+          public boolean accept(SModule module) {
+            return Sequence.fromIterable(MigrationsUtil.getAllSteps(module)).isNotEmpty();
+          }
+        }).select(new ISelector<SModule, String>() {
+          public String select(SModule module) {
+            return NameUtil.compactNamespace(module.getModuleName());
+          }
+        }));
+      }
+    });
+    final StringBuilder sb = new StringBuilder("<html><body><font face=\"Verdana\" ");
+    sb.append((SystemInfo.isMac ? "" : "size=\"-1\"")).append('>');
+    for (String m : modulesToMigrate) {
+      sb.append(m).append("<br />");
+    }
+    sb.append("</font></body></html>");
+    List<ProjectMigrationWithOptions.Option> options = ListSequence.fromList(new ArrayList<ProjectMigrationWithOptions.Option>());
+    ListSequence.fromList(options).addElement(new ProjectMigrationWithOptions.Option<Void>("viewModulesToMigrate") {
+      @Override
+      public JComponent createComponent() {
+        JTextPane list = new JTextPane();
+        Messages.installHyperlinkSupport(list);
+        list.setText(sb.toString());
+        JPanel panel = new JPanel(new BorderLayout());
+        JBScrollPane scrollPane = new JBScrollPane(list);
+        panel.add(scrollPane, BorderLayout.CENTER);
+        panel.add(new JBLabel("Modules to be migrated:"), BorderLayout.NORTH);
+        panel.setPreferredSize(new Dimension((int) panel.getPreferredSize().getWidth(), 100));
+        return panel;
+      }
+      @Override
+      public Void getValue(JComponent component) {
+        return null;
+      }
+    });
+    ListSequence.fromList(options).addSequence(ListSequence.fromList(pMig).ofType(ProjectMigrationWithOptions.class).where(new IWhereFilter<ProjectMigrationWithOptions>() {
       public boolean accept(ProjectMigrationWithOptions it) {
         return it.shouldBeExecuted(ProjectHelper.fromIdeaProject(project));
       }
@@ -41,7 +97,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       public Iterable<ProjectMigrationWithOptions.Option> translate(ProjectMigrationWithOptions it) {
         return it.getOptions();
       }
-    }).toListSequence());
+    }));
+    InitialStep initialStep = new InitialStep(project, options);
     MigrationsProgressWizardStep migrationsProgressWizardStep = new MigrationsProgressWizardStep(project, initialStep, manager, errorContainer, true);
     MigrationErrorWizardStep migrationErrorWizardStep = new MigrationErrorWizardStep(project, errorContainer);
     MigrationsProgressWizardStep fallBackProgressStep = new MigrationsProgressWizardStep(project, initialStep, manager, errorContainer, false);
