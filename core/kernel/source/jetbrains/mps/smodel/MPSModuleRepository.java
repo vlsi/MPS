@@ -210,8 +210,9 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
    */
   private boolean doUnregisterModule(SModule module, MPSModuleOwner owner) {
     getModelAccess().checkWriteAccess();
-    assert myModules.contains(
-        module) : "trying to unregister non-registered module: fqName=" + module.getModuleName() + "; file=" + ((AbstractModule) module).getDescriptorFile();
+    if  (!myModules.contains(module)) {
+      throw new IllegalArgumentException("Trying to unregister non-registered module: " + module);
+    }
 
     myModuleToOwners.removeLink(module, owner);
     boolean remove = myModuleToOwners.getByFirst(module).isEmpty();

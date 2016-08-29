@@ -96,12 +96,9 @@ public abstract class ProjectBase extends Project {
       LOG.warn("Module has not been registered in the project: " + module);
       return;
     }
-    IFile descriptorFile = getDescriptorFileChecked(module);
-    if (descriptorFile != null) {
-      final ModulePath modulePath = myModuleToPathMap.remove(module);
-      module.removeModuleListener(myModulesListeners.remove(module));
-      myProjectDescriptor.removeModulePath(modulePath);
-    }
+    final ModulePath modulePath = myModuleToPathMap.remove(module);
+    module.removeModuleListener(myModulesListeners.remove(module));
+    myProjectDescriptor.removeModulePath(modulePath);
   }
 
   @Nullable
@@ -166,9 +163,7 @@ public abstract class ProjectBase extends Project {
     checkNotDisposed();
     LOG.info("Project '" + getName() + "' is closing");
     myProjectManager.projectClosed(this);
-    getModelAccess().runWriteAction(() -> {
-      new ModuleRepositoryFacade(ProjectBase.this).unregisterModules(ProjectBase.this);
-    });
+    getModelAccess().runWriteAction(() -> new ModuleRepositoryFacade(ProjectBase.this).unregisterModules(ProjectBase.this));
     getProjectModules().forEach(this::removeModule);
   }
 
