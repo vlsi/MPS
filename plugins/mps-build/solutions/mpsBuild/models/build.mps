@@ -354,7 +354,6 @@
       <concept id="7753544965996377997" name="jetbrains.mps.build.mps.structure.BuildMps_Branding" flags="ng" index="1zClus">
         <property id="3497141547781541445" name="minor" index="2OjLBK" />
         <property id="3497141547781541444" name="major" index="2OjLBL" />
-        <property id="3497141547781541446" name="eap" index="2OjLBN" />
         <child id="6845119683729424406" name="customXmlElement" index="27hc03" />
         <child id="6845119683729337285" name="progressY" index="27hAJg" />
         <child id="6845119683729294884" name="progressColor" index="27hGoL" />
@@ -18312,6 +18311,16 @@
     <property role="turDy" value="mps.xml" />
     <property role="3GE5qa" value="ide" />
     <property role="2DA0ip" value="../../../../" />
+    <node concept="2kB4xC" id="3IKDaVZnAxg" role="1l3spd">
+      <property role="TrG5h" value="build.number" />
+      <node concept="3SJUkW" id="5FVH0wUOs_w" role="aVJcv">
+        <node concept="55IIr" id="5FVH0wUOs_x" role="3SIlUQ">
+          <node concept="2Ry0Ak" id="5FVH0wUOs_z" role="iGT6I">
+            <property role="2Ry0Am" value="build.txt" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2sgV4H" id="5sovPIfSiFb" role="1l3spa">
       <ref role="1l3spb" node="7pdFgzxlDme" resolve="mpsBuild" />
     </node>
@@ -18319,7 +18328,6 @@
       <property role="2OjLBK" value="4" />
       <property role="TrG5h" value="MPS" />
       <property role="2OjLBL" value="3" />
-      <property role="2OjLBN" value="true" />
       <node concept="3_J27D" id="6Iq8148f_Zd" role="HFo83">
         <node concept="3Mxwew" id="6Iq8148f_Ze" role="3MwsjC">
           <property role="3MwjfP" value="002387" />
@@ -18478,7 +18486,7 @@
         </node>
         <node concept="NbPM2" id="6Iq8148f_YW" role="HFWMp">
           <node concept="3Mxwew" id="6Iq8148f_YX" role="3MwsjC">
-            <property role="3MwjfP" value="MPS34EAP" />
+            <property role="3MwjfP" value="MPS34" />
           </node>
         </node>
       </node>
@@ -18573,16 +18581,6 @@
       <node concept="NbPM2" id="6U0n_nYVOoE" role="2gqIGF">
         <node concept="3Mxwew" id="6U0n_nYVOoD" role="3MwsjC">
           <property role="3MwjfP" value="3" />
-        </node>
-      </node>
-    </node>
-    <node concept="2kB4xC" id="3IKDaVZnAxg" role="1l3spd">
-      <property role="TrG5h" value="build.number" />
-      <node concept="aVJcg" id="6hnvgFycl60" role="aVJcv">
-        <node concept="NbPM2" id="6hnvgFycl61" role="aVJcq">
-          <node concept="3Mxwew" id="6hnvgFycl62" role="3MwsjC">
-            <property role="3MwjfP" value="MPS-144.SNAPSHOT" />
-          </node>
         </node>
       </node>
     </node>
