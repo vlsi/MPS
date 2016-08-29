@@ -169,7 +169,14 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
       return;
     }
 
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+    // 1. clear of the list shall happen synchronously with addition of messages, hence use of the same queue/update mechanism and same priority
+    //    as update on #add()
+    // 2. updates are not dispatched until view has been initialized (prevents exceptions like https://youtrack.jetbrains.com/issue/MPS-24408)
+    // 3. though only one clear() in the queue makes sense, and we can ignore all but the last one, I didn't find a way to accomplish this with
+    //    MergingUpdateQueue API. It seems possible to merge subsequent clear with the one already in the queue, but that would yield incorrect
+    //    results (e.g. update requests: m1, m2, clear1, m3, clear2. If clear2 is ignored and merged with clear1, m3 would be visible)
+    //    That's why identity is a new object each time (I don't expect thousands of successive clear() calls)
+    myUpdateQueue.queue(new Update(new Object()) {
       @Override
       public void run() {
         if (myIsDisposed) {

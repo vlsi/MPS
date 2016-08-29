@@ -135,12 +135,13 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     }
 
     public MessageViewToolState() {
+      // default cons is essential for IDEA to construct the state.
       this.defaultListState = new MessageListState();
-      this.showToolAfterAddingMessage = true;
     }
 
+    // XXX documentation of PersistentStateComponent tells it saves annotated and public fields. This one is neither of those.
+    //     I don't see MessagesViewTool entry in .mps/workspace.xml either. Does it work?
     MessageListState defaultListState;
-    boolean showToolAfterAddingMessage;
   }
 
   @Override
@@ -161,9 +162,23 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     return new MsgHandler(getDefaultList());
   }
 
+  /**
+   * Shorthand for {@link #newHandler(String, boolean) newHandler(name, false)}.
+   */
   public IMessageHandler newHandler(@NotNull final String name) {
+    return newHandler(name, false /*newHandler used to keep the list intact in MPS releases to date*/);
+  }
+
+  /**
+   * @param name identifies named collection of messages, value is visible in UI as the name of the collection.
+   * @param clear true if caller doesn't need to keep messages already reported under same named handler (if any)
+   * @return handler that pipes messages to designated UI component, never {@code null}
+   */
+  public IMessageHandler newHandler(@NotNull final String name, boolean clear) {
     MessageList availableList = getAvailableList(name, true);
-    availableList.clear();
+    if (clear) {
+      availableList.clear();
+    }
     return new MsgHandler(availableList);
   }
 
@@ -175,6 +190,11 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     lists.add(list);
   }
 
+  /**
+   * @deprecated I don't feel it's a nice idea to expose implementation detail, {@link #newHandler()} shall suffice, perhaps,
+   *             augmented with options object to pass info/warn/clear settings
+   */
+  @Deprecated
   public synchronized MessageList getAvailableList(String name, boolean createIfNotFound) {
     List<MessageList> lists;
     if (myMessageLists.containsKey(name)) {
