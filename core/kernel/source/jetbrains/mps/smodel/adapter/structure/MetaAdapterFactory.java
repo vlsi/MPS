@@ -169,6 +169,11 @@ public abstract class MetaAdapterFactory {
     return getReferenceLink(MetaIdFactory.refId(uuidHigh, uuidLow, concept, ref), refName);
   }
 
+  public static SReferenceLink getReferenceLink(@NotNull SAbstractConcept concept, long link, String linkName) {
+    final SConceptId cid = MetaIdHelper.getConcept(concept);
+    return getReferenceLink(MetaIdFactory.refId(cid, link), linkName);
+  }
+
   @NotNull
   @Deprecated //todo: 2 hex values instead of UUID
   public static SReferenceLink getReferenceLink(UUID lang, long concept, long ref, String refName) {
@@ -186,6 +191,11 @@ public abstract class MetaAdapterFactory {
   @NotNull
   public static SContainmentLink getContainmentLink(long uuidHigh, long uuidLow, long concept, long link, String linkName) {
     return getContainmentLink(MetaIdFactory.linkId(uuidHigh, uuidLow, concept, link), linkName);
+  }
+
+  public static SContainmentLink getContainmentLink(@NotNull SAbstractConcept concept, long link, String linkName) {
+    final SConceptId cid = MetaIdHelper.getConcept(concept);
+    return getContainmentLink(MetaIdFactory.linkId(cid, link), linkName);
   }
 
   @NotNull

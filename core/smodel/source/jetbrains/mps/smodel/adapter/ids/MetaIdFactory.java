@@ -73,6 +73,10 @@ public abstract class MetaIdFactory {
     return new SReferenceLinkId(conceptId(new UUID(uuidHigh, uuidLow), concept), ref);
   }
 
+  public static SReferenceLinkId refId(SConceptId concept, long ref) {
+    return new SReferenceLinkId(concept, ref);
+  }
+
   @Deprecated
   public static SContainmentLinkId linkId(UUID lang, long concept, long link) {
     return new SContainmentLinkId(conceptId(lang, concept), link);
@@ -80,5 +84,9 @@ public abstract class MetaIdFactory {
 
   public static SContainmentLinkId linkId(long uuidHigh, long uuidLow, long concept, long link) {
     return new SContainmentLinkId(conceptId(new UUID(uuidHigh, uuidLow), concept), link);
+  }
+
+  public static SContainmentLinkId linkId(SConceptId concept, long link) {
+    return new SContainmentLinkId(concept, link);
   }
 }
