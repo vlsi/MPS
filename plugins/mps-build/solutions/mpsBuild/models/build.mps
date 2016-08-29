@@ -10860,6 +10860,24 @@
             <ref role="3bR37D" node="1TaHNgiIbJb" resolve="MPS.Platform" />
           </node>
         </node>
+        <node concept="1SiIV0" id="2PiAZGepIDc" role="3bR37C">
+          <node concept="3bR9La" id="2PiAZGepIDd" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="2PiAZGepIDe" role="3bR37C">
+          <node concept="3bR9La" id="2PiAZGepIDf" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="mXGwHwhVPj" resolve="JDK" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="2PiAZGepIDg" role="3bR37C">
+          <node concept="3bR9La" id="2PiAZGepIDh" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="1CtrbKI23Wm" resolve="jetbrains.mps.lang.migration" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="7Kfy9QB6L8q" role="2G$12L">
         <property role="BnDLt" value="true" />
