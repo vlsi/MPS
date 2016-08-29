@@ -927,13 +927,70 @@
         <property role="3F0ifm" value="concept" />
       </node>
       <node concept="3F1sOY" id="7jb4LXp2HsF" role="3EZMnx">
-        <ref role="1NtTu8" to="53vh:7jb4LXp2HrE" resolve="oldId" />
+        <ref role="1NtTu8" to="53vh:7jb4LXp2HrE" resolve="sourceId" />
       </node>
       <node concept="3F0ifn" id="7jb4LXp1dJn" role="3EZMnx">
         <property role="3F0ifm" value="-&gt;" />
       </node>
       <node concept="3F1sOY" id="7jb4LXp2Ht_" role="3EZMnx">
-        <ref role="1NtTu8" to="53vh:7jb4LXp2HrH" resolve="newId" />
+        <ref role="1NtTu8" to="53vh:7jb4LXp2HrH" resolve="targetId" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="7jb4LXpbCFs">
+    <property role="3GE5qa" value="refactoring.specialization" />
+    <ref role="1XX52x" to="53vh:2GZlO$G5O6U" resolve="MoveContainmentLink" />
+    <node concept="3EZMnI" id="7jb4LXpbCFu" role="2wV5jI">
+      <node concept="2iRfu4" id="7jb4LXpbCFv" role="2iSdaV" />
+      <node concept="3F0ifn" id="7jb4LXpbCFw" role="3EZMnx">
+        <property role="3F0ifm" value="c.link" />
+      </node>
+      <node concept="3F1sOY" id="7jb4LXpbCFx" role="3EZMnx">
+        <ref role="1NtTu8" to="53vh:7jb4LXpbCEP" resolve="sourceId" />
+      </node>
+      <node concept="3F0ifn" id="7jb4LXpbCFy" role="3EZMnx">
+        <property role="3F0ifm" value="-&gt;" />
+      </node>
+      <node concept="3F1sOY" id="7jb4LXpbCFz" role="3EZMnx">
+        <ref role="1NtTu8" to="53vh:7jb4LXpbCEQ" resolve="targetId" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="7jb4LXpbCG5">
+    <property role="3GE5qa" value="refactoring.specialization" />
+    <ref role="1XX52x" to="53vh:2GZlO$G5O6T" resolve="MoveProperty" />
+    <node concept="3EZMnI" id="7jb4LXpbCG7" role="2wV5jI">
+      <node concept="2iRfu4" id="7jb4LXpbCG8" role="2iSdaV" />
+      <node concept="3F0ifn" id="7jb4LXpbCG9" role="3EZMnx">
+        <property role="3F0ifm" value="property" />
+      </node>
+      <node concept="3F1sOY" id="7jb4LXpbCGa" role="3EZMnx">
+        <ref role="1NtTu8" to="53vh:7jb4LXpbCET" resolve="sourceId" />
+      </node>
+      <node concept="3F0ifn" id="7jb4LXpbCGb" role="3EZMnx">
+        <property role="3F0ifm" value="-&gt;" />
+      </node>
+      <node concept="3F1sOY" id="7jb4LXpbCGc" role="3EZMnx">
+        <ref role="1NtTu8" to="53vh:7jb4LXpbCEU" resolve="targetId" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="7jb4LXpbCGI">
+    <property role="3GE5qa" value="refactoring.specialization" />
+    <ref role="1XX52x" to="53vh:2GZlO$G5O6R" resolve="MoveReferenceLink" />
+    <node concept="3EZMnI" id="7jb4LXpbCGK" role="2wV5jI">
+      <node concept="2iRfu4" id="7jb4LXpbCGL" role="2iSdaV" />
+      <node concept="3F0ifn" id="7jb4LXpbCGM" role="3EZMnx">
+        <property role="3F0ifm" value="r.link" />
+      </node>
+      <node concept="3F1sOY" id="7jb4LXpbCGN" role="3EZMnx">
+        <ref role="1NtTu8" to="53vh:7jb4LXpbCEX" resolve="sourceId" />
+      </node>
+      <node concept="3F0ifn" id="7jb4LXpbCGO" role="3EZMnx">
+        <property role="3F0ifm" value="-&gt;" />
+      </node>
+      <node concept="3F1sOY" id="7jb4LXpbCGP" role="3EZMnx">
+        <ref role="1NtTu8" to="53vh:7jb4LXpbCEY" resolve="targetId" />
       </node>
     </node>
   </node>

@@ -310,18 +310,60 @@
     <property role="TrG5h" value="MoveProperty" />
     <property role="EcuMT" value="3116305438947623353" />
     <ref role="1TJDcQ" node="2GZlO$G5O6S" resolve="MoveConceptMember" />
+    <node concept="1TJgyj" id="7jb4LXpbCET" role="1TKVEi">
+      <property role="IQ2ns" value="8415841354033040057" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="sourceId" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="tp25:5ZE7FBYZ2ds" resolve="PropertyId" />
+    </node>
+    <node concept="1TJgyj" id="7jb4LXpbCEU" role="1TKVEi">
+      <property role="IQ2ns" value="8415841354033040058" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="targetId" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="tp25:5ZE7FBYZ2ds" resolve="PropertyId" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2GZlO$G5O6R">
     <property role="3GE5qa" value="refactoring.specialization" />
     <property role="TrG5h" value="MoveReferenceLink" />
     <property role="EcuMT" value="3116305438947623351" />
     <ref role="1TJDcQ" node="2GZlO$G5O6S" resolve="MoveConceptMember" />
+    <node concept="1TJgyj" id="7jb4LXpbCEX" role="1TKVEi">
+      <property role="IQ2ns" value="8415841354033040061" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="sourceId" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="tp25:7jb4LXp8VrG" resolve="ReferenceId" />
+    </node>
+    <node concept="1TJgyj" id="7jb4LXpbCEY" role="1TKVEi">
+      <property role="IQ2ns" value="8415841354033040062" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="targetId" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="tp25:7jb4LXp8VrG" resolve="ReferenceId" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2GZlO$G5O6U">
     <property role="3GE5qa" value="refactoring.specialization" />
     <property role="TrG5h" value="MoveContainmentLink" />
     <property role="EcuMT" value="3116305438947623354" />
     <ref role="1TJDcQ" node="2GZlO$G5O6S" resolve="MoveConceptMember" />
+    <node concept="1TJgyj" id="7jb4LXpbCEP" role="1TKVEi">
+      <property role="IQ2ns" value="8415841354033040053" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="sourceId" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="tp25:7jb4LXp8VrB" resolve="LinkId" />
+    </node>
+    <node concept="1TJgyj" id="7jb4LXpbCEQ" role="1TKVEi">
+      <property role="IQ2ns" value="8415841354033040054" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="targetId" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="tp25:7jb4LXp8VrB" resolve="LinkId" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6szrkDoc28u">
     <property role="TrG5h" value="MoveNodeMigrationPart" />
