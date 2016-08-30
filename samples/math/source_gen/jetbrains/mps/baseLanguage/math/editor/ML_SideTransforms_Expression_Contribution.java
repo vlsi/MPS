@@ -37,8 +37,8 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public class ML_SideTransforms_Contribution extends TransformationMenuBase {
-  public ML_SideTransforms_Contribution() {
+public class ML_SideTransforms_Expression_Contribution extends TransformationMenuBase {
+  public ML_SideTransforms_Expression_Contribution() {
     super(true);
   }
   private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM);
@@ -52,17 +52,17 @@ public class ML_SideTransforms_Contribution extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new ML_SideTransforms_Contribution.TransformationMenuPart_Group_i7alig_a0());
-      result.add(new ML_SideTransforms_Contribution.TransformationMenuPart_Action_i7alig_b0());
-      result.add(new ML_SideTransforms_Contribution.TransformationMenuPart_Group_i7alig_c0());
+      result.add(new ML_SideTransforms_Expression_Contribution.TransformationMenuPart_Group_7vmljf_a0());
+      result.add(new ML_SideTransforms_Expression_Contribution.TransformationMenuPart_Action_7vmljf_b0());
+      result.add(new ML_SideTransforms_Expression_Contribution.TransformationMenuPart_Group_7vmljf_c0());
     }
     return result;
   }
 
-  public class TransformationMenuPart_Group_i7alig_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TransformationMenuPart_Group_7vmljf_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
-      SNode matrixType = _quotation_createNode_i7alig_a0a0a0a();
+      SNode matrixType = _quotation_createNode_7vmljf_a0a0a0a();
       SPropertyOperations.set(matrixType, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, 0x42d5783a62683dadL, "columns"), "" + (0));
       SPropertyOperations.set(matrixType, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, 0x42d5783a62683dacL, "rows"), "" + (0));
       return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), matrixType);
@@ -70,12 +70,12 @@ public class ML_SideTransforms_Contribution extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ML_SideTransforms_Contribution.TransformationMenuPart_Group_i7alig_a0.TransformationMenuPart_Action_i7alig_a0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ML_SideTransforms_Expression_Contribution.TransformationMenuPart_Group_7vmljf_a0.TransformationMenuPart_Action_7vmljf_a0a());
     }
-    private class TransformationMenuPart_Action_i7alig_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TransformationMenuPart_Action_7vmljf_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new ML_SideTransforms_Contribution.TransformationMenuPart_Group_i7alig_a0.TransformationMenuPart_Action_i7alig_a0a.Item(context);
+        return new ML_SideTransforms_Expression_Contribution.TransformationMenuPart_Group_7vmljf_a0.TransformationMenuPart_Action_7vmljf_a0a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -107,10 +107,10 @@ public class ML_SideTransforms_Contribution extends TransformationMenuBase {
       }
     }
   }
-  private class TransformationMenuPart_Action_i7alig_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TransformationMenuPart_Action_7vmljf_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new ML_SideTransforms_Contribution.TransformationMenuPart_Action_i7alig_b0.Item(context);
+      return new ML_SideTransforms_Expression_Contribution.TransformationMenuPart_Action_7vmljf_b0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -128,7 +128,7 @@ public class ML_SideTransforms_Contribution extends TransformationMenuBase {
 
       @Override
       public void execute(@NotNull String pattern) {
-        SNode result = SNodeOperations.replaceWithAnother(_context.getNode(), _quotation_createNode_i7alig_a0a0a0a1a(_context.getNode()));
+        SNode result = SNodeOperations.replaceWithAnother(_context.getNode(), _quotation_createNode_7vmljf_a0a0a0a1a(_context.getNode()));
         SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), SLinkOperations.getTarget(result, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12052b2cdd3L, 0x12052b722e7L, "exponent")), SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);
       }
 
@@ -139,7 +139,7 @@ public class ML_SideTransforms_Contribution extends TransformationMenuBase {
       }
     }
   }
-  public class TransformationMenuPart_Group_i7alig_c0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  public class TransformationMenuPart_Group_7vmljf_c0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
       return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getNode()), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, "jetbrains.mps.baseLanguage.math.structure.MatrixType")) || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getNode()), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f775L, "jetbrains.mps.baseLanguage.math.structure.VectorType"));
@@ -147,14 +147,14 @@ public class ML_SideTransforms_Contribution extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ML_SideTransforms_Contribution.TransformationMenuPart_Group_i7alig_c0.TransformationMenuPart_Parameterized_i7alig_a2a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ML_SideTransforms_Expression_Contribution.TransformationMenuPart_Group_7vmljf_c0.TransformationMenuPart_Parameterized_7vmljf_a2a());
     }
-    private class TransformationMenuPart_Parameterized_i7alig_a2a extends ParameterizedMenuPart<SConcept, TransformationMenuItem, TransformationMenuContext> {
+    private class TransformationMenuPart_Parameterized_7vmljf_a2a extends ParameterizedMenuPart<SConcept, TransformationMenuItem, TransformationMenuContext> {
 
       @NotNull
       @Override
       protected List<TransformationMenuItem> createItems(SConcept parameter, TransformationMenuContext context) {
-        return new ML_SideTransforms_Contribution.TransformationMenuPart_Group_i7alig_c0.TransformationMenuPart_Parameterized_i7alig_a2a.TransformationMenuPart_Action_i7alig_a0c0(parameter).createItems(context);
+        return new ML_SideTransforms_Expression_Contribution.TransformationMenuPart_Group_7vmljf_c0.TransformationMenuPart_Parameterized_7vmljf_a2a.TransformationMenuPart_Action_7vmljf_a0c0(parameter).createItems(context);
       }
 
       @Nullable
@@ -169,14 +169,14 @@ public class ML_SideTransforms_Contribution extends TransformationMenuBase {
         return result;
       }
 
-      private class TransformationMenuPart_Action_i7alig_a0c0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      private class TransformationMenuPart_Action_7vmljf_a0c0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         private final SConcept myParameterObject;
-        public TransformationMenuPart_Action_i7alig_a0c0(SConcept parameterObject) {
+        public TransformationMenuPart_Action_7vmljf_a0c0(SConcept parameterObject) {
           myParameterObject = parameterObject;
         }
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new ML_SideTransforms_Contribution.TransformationMenuPart_Group_i7alig_c0.TransformationMenuPart_Parameterized_i7alig_a2a.TransformationMenuPart_Action_i7alig_a0c0.Item(context);
+          return new ML_SideTransforms_Expression_Contribution.TransformationMenuPart_Group_7vmljf_c0.TransformationMenuPart_Parameterized_7vmljf_a2a.TransformationMenuPart_Action_7vmljf_a0c0.Item(context);
         }
 
         private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -206,7 +206,7 @@ public class ML_SideTransforms_Contribution extends TransformationMenuBase {
       }
     }
   }
-  private static SNode _quotation_createNode_i7alig_a0a0a0a() {
+  private static SNode _quotation_createNode_7vmljf_a0a0a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -215,7 +215,7 @@ public class ML_SideTransforms_Contribution extends TransformationMenuBase {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, 0x42d5783a62684653L, "elementType"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_i7alig_a0a0a0a1a(Object parameter_1) {
+  private static SNode _quotation_createNode_7vmljf_a0a0a0a1a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

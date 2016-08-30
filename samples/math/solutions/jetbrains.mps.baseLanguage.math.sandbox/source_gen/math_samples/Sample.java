@@ -40,6 +40,33 @@ public class Sample {
     }.invoke())));
     System.out.println(new Complex(a, b).exp().sub(new Complex(Math.exp(a), 0).mul((new Complex(Math.cos(b), Math.sin(b))))));
     Matrix<Double> s = new Matrix<Double>(false, Matrix.soDouble, new Matrix<Double>(new Double[][]{{3.0}, {Math.pow(3, 2)}, {(double) 0}, {(double) 4}}, Matrix.soDouble), new Matrix<Double>(new Double[][]{{Math.sin(1)}, {(double) 1}, {Math.pow(2, 7 - (1.0 / 2) + 1)}, {(double) 0}}, Matrix.soDouble), new Matrix<Double>(new Double[][]{{(double) 1}, {3 + (1.0 / 2)}, {Math.exp(1)}, {(double) 0}}, Matrix.soDouble), new Matrix<Double>(new Matrix<Integer>(new Integer[][]{{1}, {2}, {3}, {0}}, Matrix.soInt), Matrix.soDouble));
+    Matrix<Double> r = new Matrix<Double>(false, Matrix.soDouble, new Matrix<Double>(new Double[][]{{Math.cos(a)}, {Math.pow(3, 2)}, {new _FunctionTypes._return_P0_E0<Double>() {
+      public Double invoke() {
+        Double r_c0a0h0b;
+        r_c0a0h0b = null;
+        for (Integer e_a2a0a7a1 : ListSequence.fromList(list)) {
+          {
+            Double v_c0a0h0b = 3 * Math.log(e_a2a0a7a1);
+            if (r_c0a0h0b == null) {
+              r_c0a0h0b = v_c0a0h0b;
+            } else if (r_c0a0h0b.compareTo(v_c0a0h0b) < 0) {
+              r_c0a0h0b = v_c0a0h0b;
+            }
+          }
+        }
+        return r_c0a0h0b;
+      }
+    }.invoke()}, {(double) 4}}, Matrix.soDouble), new Matrix<Double>(new Double[][]{{Math.sin(1)}, {(double) 1}, {Math.pow(2, 7 - (a / 2) + b)}, {(double) 0}}, Matrix.soDouble), new Matrix<Double>(true, Matrix.soDouble, 1, 3 + (1.0 / 2), Math.exp(1), new _FunctionTypes._return_P0_E0<Integer>() {
+      public Integer invoke() {
+        Integer r_d2a0h0b;
+        r_d2a0h0b = (Integer) 1;
+        for (Integer n_a3c0a7a1 : ListSequence.fromList(list)) {
+          r_d2a0h0b = r_d2a0h0b * (n_a3c0a7a1);
+        }
+        return r_d2a0h0b;
+      }
+    }.invoke()));
+
     System.out.println(s);
     try {
       int i = 1;
