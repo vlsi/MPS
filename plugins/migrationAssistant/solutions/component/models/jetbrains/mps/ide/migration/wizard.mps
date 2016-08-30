@@ -48,6 +48,7 @@
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="u9vc" ref="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)" />
+    <import index="82te" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.ui.util(MPS.Platform/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -249,9 +250,6 @@
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
-      </concept>
-      <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
-        <property id="1200397540847" name="charConstant" index="1XhdNS" />
       </concept>
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
@@ -4449,103 +4447,18 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="6PeyMxx7BaN" role="3cqZAp">
-          <node concept="2YIFZM" id="6PeyMxx7LCp" role="3clFbG">
-            <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
-            <ref role="37wK5l" to="jkm4:~Messages.installHyperlinkSupport(javax.swing.JTextPane):void" resolve="installHyperlinkSupport" />
-            <node concept="37vLTw" id="6PeyMxx7BaP" role="37wK5m">
+        <node concept="3clFbF" id="5JxePJ2aYrl" role="3cqZAp">
+          <node concept="2YIFZM" id="5JxePJ2b0ma" role="3clFbG">
+            <ref role="37wK5l" to="82te:~UIUtil.setTextPaneHtmlText(javax.swing.JTextPane,java.lang.String):void" resolve="setTextPaneHtmlText" />
+            <ref role="1Pybhc" to="82te:~UIUtil" resolve="UIUtil" />
+            <node concept="37vLTw" id="5JxePJ2b1mo" role="37wK5m">
               <ref role="3cqZAo" node="5SsFeroaaaj" resolve="info" />
             </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="45bCy0j0Mp8" role="3cqZAp" />
-        <node concept="3cpWs8" id="45bCy0j0iWe" role="3cqZAp">
-          <node concept="3cpWsn" id="45bCy0j0iWd" role="3cpWs9">
-            <property role="3TUv4t" value="false" />
-            <property role="TrG5h" value="sb" />
-            <node concept="3uibUv" id="45bCy0j0iWf" role="1tU5fm">
-              <ref role="3uigEE" to="wyt6:~StringBuilder" resolve="StringBuilder" />
-            </node>
-            <node concept="2ShNRf" id="45bCy0j0iW_" role="33vP2m">
-              <node concept="1pGfFk" id="45bCy0j0iXV" role="2ShVmc">
-                <ref role="37wK5l" to="wyt6:~StringBuilder.&lt;init&gt;(java.lang.String)" resolve="StringBuilder" />
-                <node concept="Xl_RD" id="45bCy0j0iWh" role="37wK5m">
-                  <property role="Xl_RC" value="&lt;html&gt;&lt;body&gt;&lt;font face=\&quot;Verdana\&quot; " />
-                </node>
-              </node>
+            <node concept="37vLTw" id="5JxePJ2b2oO" role="37wK5m">
+              <ref role="3cqZAo" node="45bCy0j0NWk" resolve="TEXT" />
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="45bCy0j0iWi" role="3cqZAp">
-          <node concept="2OqwBi" id="45bCy0j0iWj" role="3clFbG">
-            <node concept="2OqwBi" id="45bCy0j0iY2" role="2Oq$k0">
-              <node concept="37vLTw" id="45bCy0j0iY1" role="2Oq$k0">
-                <ref role="3cqZAo" node="45bCy0j0iWd" resolve="sb" />
-              </node>
-              <node concept="liA8E" id="45bCy0j0iY3" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-                <node concept="3K4zz7" id="45bCy0j0iWo" role="37wK5m">
-                  <node concept="10M0yZ" id="45bCy0j0GRF" role="3K4Cdx">
-                    <ref role="3cqZAo" to="zn9m:~SystemInfo.isMac" resolve="isMac" />
-                    <ref role="1PxDUh" to="zn9m:~SystemInfo" resolve="SystemInfo" />
-                  </node>
-                  <node concept="Xl_RD" id="45bCy0j0iWm" role="3K4E3e">
-                    <property role="Xl_RC" value="" />
-                  </node>
-                  <node concept="Xl_RD" id="45bCy0j0iWn" role="3K4GZi">
-                    <property role="Xl_RC" value="size=\&quot;-1\&quot;" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="liA8E" id="45bCy0j0iWp" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~StringBuilder.append(char):java.lang.StringBuilder" resolve="append" />
-              <node concept="1Xhbcc" id="45bCy0j0iWq" role="37wK5m">
-                <property role="1XhdNS" value="&gt;" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="45bCy0j0iWr" role="3cqZAp">
-          <node concept="2OqwBi" id="45bCy0j0iWs" role="3clFbG">
-            <node concept="2OqwBi" id="45bCy0j0iYf" role="2Oq$k0">
-              <node concept="37vLTw" id="45bCy0j0iYe" role="2Oq$k0">
-                <ref role="3cqZAo" node="45bCy0j0iWd" resolve="sb" />
-              </node>
-              <node concept="liA8E" id="45bCy0j0iYg" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-                <node concept="37vLTw" id="45bCy0j0Qx6" role="37wK5m">
-                  <ref role="3cqZAo" node="45bCy0j0NWk" resolve="TEXT" />
-                </node>
-              </node>
-            </node>
-            <node concept="liA8E" id="45bCy0j0iWv" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-              <node concept="Xl_RD" id="45bCy0j0iWw" role="37wK5m">
-                <property role="Xl_RC" value="&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6PeyMxx7BaQ" role="3cqZAp">
-          <node concept="2OqwBi" id="6PeyMxx7GV9" role="3clFbG">
-            <node concept="37vLTw" id="6PeyMxx7GV8" role="2Oq$k0">
-              <ref role="3cqZAo" node="5SsFeroaaaj" resolve="info" />
-            </node>
-            <node concept="liA8E" id="6PeyMxx7GVa" role="2OqNvi">
-              <ref role="37wK5l" to="dxuu:~JEditorPane.setText(java.lang.String):void" resolve="setText" />
-              <node concept="2OqwBi" id="45bCy0j0SxC" role="37wK5m">
-                <node concept="37vLTw" id="45bCy0j0SkI" role="2Oq$k0">
-                  <ref role="3cqZAo" node="45bCy0j0iWd" resolve="sb" />
-                </node>
-                <node concept="liA8E" id="45bCy0j0Tb7" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~StringBuilder.toString():java.lang.String" resolve="toString" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="45bCy0j0hi1" role="3cqZAp" />
         <node concept="3clFbF" id="6PeyMxx7RsN" role="3cqZAp">
           <node concept="2OqwBi" id="6PeyMxx7RsY" role="3clFbG">
             <node concept="37vLTw" id="6PeyMxx7RsX" role="2Oq$k0">
@@ -5454,107 +5367,13 @@
       <node concept="3clFbS" id="12JIgXNwLbe" role="3clF47">
         <node concept="3clFbF" id="3$mAZJg3DKZ" role="3cqZAp">
           <node concept="37vLTI" id="3$mAZJg3DL0" role="3clFbG">
-            <node concept="2OqwBi" id="3$mAZJg3DL1" role="37vLTJ">
-              <node concept="Xjq3P" id="3$mAZJg3DL2" role="2Oq$k0" />
-              <node concept="2OwXpG" id="3$mAZJg3DL3" role="2OqNvi">
-                <ref role="2Oxat5" node="3$mAZJg3DKR" resolve="myInfoLabel" />
-              </node>
-            </node>
             <node concept="2ShNRf" id="3$mAZJg3DL4" role="37vLTx">
               <node concept="1pGfFk" id="3$mAZJg3DL5" role="2ShVmc">
                 <ref role="37wK5l" to="dxuu:~JTextPane.&lt;init&gt;()" resolve="JTextPane" />
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3F1hOdyB$SH" role="3cqZAp">
-          <node concept="2YIFZM" id="3F1hOdyB$SI" role="3clFbG">
-            <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
-            <ref role="37wK5l" to="jkm4:~Messages.installHyperlinkSupport(javax.swing.JTextPane):void" resolve="installHyperlinkSupport" />
-            <node concept="2OqwBi" id="3$mAZJg3E0X" role="37wK5m">
-              <node concept="Xjq3P" id="3$mAZJg3E0Y" role="2Oq$k0" />
-              <node concept="2OwXpG" id="3$mAZJg3E0Z" role="2OqNvi">
-                <ref role="2Oxat5" node="3$mAZJg3DKR" resolve="myInfoLabel" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="3F1hOdyB$SK" role="3cqZAp" />
-        <node concept="3clFbF" id="12JIgXNwLbE" role="3cqZAp">
-          <node concept="2OqwBi" id="12JIgXNwOHm" role="3clFbG">
-            <node concept="2OqwBi" id="3$mAZJg3E0U" role="2Oq$k0">
-              <node concept="Xjq3P" id="3$mAZJg3E0V" role="2Oq$k0" />
-              <node concept="2OwXpG" id="3$mAZJg3E0W" role="2OqNvi">
-                <ref role="2Oxat5" node="3$mAZJg3DKR" resolve="myInfoLabel" />
-              </node>
-            </node>
-            <node concept="liA8E" id="12JIgXNwOHn" role="2OqNvi">
-              <ref role="37wK5l" to="dxuu:~JEditorPane.addHyperlinkListener(javax.swing.event.HyperlinkListener):void" resolve="addHyperlinkListener" />
-              <node concept="2ShNRf" id="12JIgXNwOHo" role="37wK5m">
-                <node concept="YeOm9" id="12JIgXNwOHp" role="2ShVmc">
-                  <node concept="1Y3b0j" id="12JIgXNwOHq" role="YeSDq">
-                    <property role="2bfB8j" value="true" />
-                    <property role="1sVAO0" value="false" />
-                    <property role="1EXbeo" value="false" />
-                    <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                    <ref role="1Y3XeK" to="gsia:~HyperlinkListener" resolve="HyperlinkListener" />
-                    <node concept="3Tm1VV" id="12JIgXNwOHr" role="1B3o_S" />
-                    <node concept="3clFb_" id="12JIgXNwOHs" role="jymVt">
-                      <property role="TrG5h" value="hyperlinkUpdate" />
-                      <property role="DiZV1" value="false" />
-                      <property role="od$2w" value="false" />
-                      <node concept="37vLTG" id="12JIgXNwOHt" role="3clF46">
-                        <property role="TrG5h" value="e" />
-                        <property role="3TUv4t" value="false" />
-                        <node concept="3uibUv" id="12JIgXNwOHu" role="1tU5fm">
-                          <ref role="3uigEE" to="gsia:~HyperlinkEvent" resolve="HyperlinkEvent" />
-                        </node>
-                      </node>
-                      <node concept="3clFbS" id="12JIgXNwOHv" role="3clF47">
-                        <node concept="3clFbJ" id="12JIgXNwOHw" role="3cqZAp">
-                          <node concept="3clFbC" id="12JIgXNwOHx" role="3clFbw">
-                            <node concept="2OqwBi" id="12JIgXNwOHy" role="3uHU7B">
-                              <node concept="37vLTw" id="12JIgXNwOHz" role="2Oq$k0">
-                                <ref role="3cqZAo" node="12JIgXNwOHt" resolve="e" />
-                              </node>
-                              <node concept="liA8E" id="12JIgXNwOH$" role="2OqNvi">
-                                <ref role="37wK5l" to="gsia:~HyperlinkEvent.getEventType():javax.swing.event.HyperlinkEvent$EventType" resolve="getEventType" />
-                              </node>
-                            </node>
-                            <node concept="10M0yZ" id="12JIgXNwOH_" role="3uHU7w">
-                              <ref role="1PxDUh" to="gsia:~HyperlinkEvent$EventType" resolve="HyperlinkEvent.EventType" />
-                              <ref role="3cqZAo" to="gsia:~HyperlinkEvent$EventType.ACTIVATED" resolve="ACTIVATED" />
-                            </node>
-                          </node>
-                          <node concept="3clFbS" id="12JIgXNwOHA" role="3clFbx">
-                            <node concept="3clFbF" id="12JIgXNwOHB" role="3cqZAp">
-                              <node concept="2YIFZM" id="12JIgXNwOHC" role="3clFbG">
-                                <ref role="1Pybhc" to="ddhc:~BrowserUtil" resolve="BrowserUtil" />
-                                <ref role="37wK5l" to="ddhc:~BrowserUtil.launchBrowser(java.lang.String):void" resolve="launchBrowser" />
-                                <node concept="2OqwBi" id="12JIgXNwOHD" role="37wK5m">
-                                  <node concept="2OqwBi" id="12JIgXNwOHE" role="2Oq$k0">
-                                    <node concept="37vLTw" id="12JIgXNwOHF" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="12JIgXNwOHt" resolve="e" />
-                                    </node>
-                                    <node concept="liA8E" id="12JIgXNwOHG" role="2OqNvi">
-                                      <ref role="37wK5l" to="gsia:~HyperlinkEvent.getURL():java.net.URL" resolve="getURL" />
-                                    </node>
-                                  </node>
-                                  <node concept="liA8E" id="12JIgXNwOHH" role="2OqNvi">
-                                    <ref role="37wK5l" to="zf81:~URL.toString():java.lang.String" resolve="toString" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3Tm1VV" id="12JIgXNwOHI" role="1B3o_S" />
-                      <node concept="3cqZAl" id="12JIgXNwOHJ" role="3clF45" />
-                    </node>
-                  </node>
-                </node>
-              </node>
+            <node concept="37vLTw" id="5JxePJ2btSp" role="37vLTJ">
+              <ref role="3cqZAo" node="3$mAZJg3DKR" resolve="myInfoLabel" />
             </node>
           </node>
         </node>
@@ -5626,99 +5445,24 @@
             <ref role="37wK5l" to="uxeh:~AbstractWizardStepEx._init():void" resolve="_init" />
           </node>
         </node>
-        <node concept="3clFbH" id="3$mAZJg3DA1" role="3cqZAp" />
-        <node concept="3cpWs8" id="3F1hOdyB$SL" role="3cqZAp">
-          <node concept="3cpWsn" id="3F1hOdyB$SM" role="3cpWs9">
-            <property role="3TUv4t" value="false" />
-            <property role="TrG5h" value="sb" />
-            <node concept="3uibUv" id="3F1hOdyB$SN" role="1tU5fm">
-              <ref role="3uigEE" to="wyt6:~StringBuilder" resolve="StringBuilder" />
-            </node>
-            <node concept="2ShNRf" id="3F1hOdyB$SO" role="33vP2m">
-              <node concept="1pGfFk" id="3F1hOdyB$SP" role="2ShVmc">
-                <ref role="37wK5l" to="wyt6:~StringBuilder.&lt;init&gt;(java.lang.String)" resolve="StringBuilder" />
-                <node concept="Xl_RD" id="3F1hOdyB$SQ" role="37wK5m">
-                  <property role="Xl_RC" value="&lt;html&gt;&lt;body&gt;&lt;font face=\&quot;Verdana\&quot; " />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3F1hOdyB$SR" role="3cqZAp">
-          <node concept="2OqwBi" id="3F1hOdyB$SS" role="3clFbG">
-            <node concept="2OqwBi" id="3F1hOdyB$ST" role="2Oq$k0">
-              <node concept="37vLTw" id="3F1hOdyB$SU" role="2Oq$k0">
-                <ref role="3cqZAo" node="3F1hOdyB$SM" resolve="sb" />
-              </node>
-              <node concept="liA8E" id="3F1hOdyB$SV" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-                <node concept="3K4zz7" id="3F1hOdyB$SW" role="37wK5m">
-                  <node concept="10M0yZ" id="3F1hOdyB$SX" role="3K4Cdx">
-                    <ref role="1PxDUh" to="zn9m:~SystemInfo" resolve="SystemInfo" />
-                    <ref role="3cqZAo" to="zn9m:~SystemInfo.isMac" resolve="isMac" />
-                  </node>
-                  <node concept="Xl_RD" id="3F1hOdyB$SY" role="3K4E3e">
-                    <property role="Xl_RC" value="" />
-                  </node>
-                  <node concept="Xl_RD" id="3F1hOdyB$SZ" role="3K4GZi">
-                    <property role="Xl_RC" value="size=\&quot;-1\&quot;" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="liA8E" id="3F1hOdyB$T0" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~StringBuilder.append(char):java.lang.StringBuilder" resolve="append" />
-              <node concept="1Xhbcc" id="3F1hOdyB$T1" role="37wK5m">
-                <property role="1XhdNS" value="&gt;" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3F1hOdyB$T7" role="3cqZAp">
-          <node concept="2OqwBi" id="3F1hOdyB$T8" role="3clFbG">
-            <node concept="2OqwBi" id="3F1hOdyB$T9" role="2Oq$k0">
-              <node concept="37vLTw" id="3F1hOdyB$Ta" role="2Oq$k0">
-                <ref role="3cqZAo" node="3F1hOdyB$SM" resolve="sb" />
-              </node>
-              <node concept="liA8E" id="3F1hOdyB$Tb" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-                <node concept="2OqwBi" id="2htE_P_OWiJ" role="37wK5m">
-                  <node concept="2OqwBi" id="2htE_P_OVev" role="2Oq$k0">
-                    <node concept="37vLTw" id="2htE_P_OV3l" role="2Oq$k0">
-                      <ref role="3cqZAo" node="2htE_P_MQoX" resolve="myErrorContainer" />
-                    </node>
-                    <node concept="liA8E" id="2htE_P_OWgh" role="2OqNvi">
-                      <ref role="37wK5l" node="2htE_P_Mtoe" resolve="getErrorDescriptor" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="2htE_P_OWAa" role="2OqNvi">
-                    <ref role="37wK5l" node="2htE_P_MrC7" resolve="getMessage" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="liA8E" id="3F1hOdyB$Tc" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-              <node concept="Xl_RD" id="3F1hOdyB$Td" role="37wK5m">
-                <property role="Xl_RC" value="&lt;/font&gt;&lt;/body&gt;&lt;/html&gt;" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3F1hOdyB$Tj" role="3cqZAp">
-          <node concept="2OqwBi" id="3F1hOdyB$Tk" role="3clFbG">
-            <node concept="37vLTw" id="3$mAZJg3Fbh" role="2Oq$k0">
+        <node concept="3clFbF" id="5JxePJ2bp3R" role="3cqZAp">
+          <node concept="2YIFZM" id="5JxePJ2bpn$" role="3clFbG">
+            <ref role="37wK5l" to="82te:~UIUtil.setTextPaneHtmlText(javax.swing.JTextPane,java.lang.String):void" resolve="setTextPaneHtmlText" />
+            <ref role="1Pybhc" to="82te:~UIUtil" resolve="UIUtil" />
+            <node concept="37vLTw" id="5JxePJ2brHI" role="37wK5m">
               <ref role="3cqZAo" node="3$mAZJg3DKR" resolve="myInfoLabel" />
             </node>
-            <node concept="liA8E" id="3F1hOdyB$Tm" role="2OqNvi">
-              <ref role="37wK5l" to="dxuu:~JEditorPane.setText(java.lang.String):void" resolve="setText" />
-              <node concept="2OqwBi" id="3F1hOdyB$Tn" role="37wK5m">
-                <node concept="37vLTw" id="3F1hOdyB$To" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3F1hOdyB$SM" resolve="sb" />
+            <node concept="2OqwBi" id="2htE_P_OWiJ" role="37wK5m">
+              <node concept="2OqwBi" id="2htE_P_OVev" role="2Oq$k0">
+                <node concept="37vLTw" id="2htE_P_OV3l" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2htE_P_MQoX" resolve="myErrorContainer" />
                 </node>
-                <node concept="liA8E" id="3F1hOdyB$Tp" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~StringBuilder.toString():java.lang.String" resolve="toString" />
+                <node concept="liA8E" id="2htE_P_OWgh" role="2OqNvi">
+                  <ref role="37wK5l" node="2htE_P_Mtoe" resolve="getErrorDescriptor" />
                 </node>
+              </node>
+              <node concept="liA8E" id="2htE_P_OWAa" role="2OqNvi">
+                <ref role="37wK5l" node="2htE_P_MrC7" resolve="getMessage" />
               </node>
             </node>
           </node>

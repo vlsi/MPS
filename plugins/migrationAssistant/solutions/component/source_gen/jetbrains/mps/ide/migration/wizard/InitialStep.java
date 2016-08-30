@@ -16,8 +16,7 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.JBInsets;
 import java.awt.BorderLayout;
 import javax.swing.JTextPane;
-import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.util.SystemInfo;
+import jetbrains.mps.ide.ui.util.UIUtil;
 import com.intellij.uiDesigner.core.GridConstraints;
 import javax.swing.BoxLayout;
 import com.intellij.ui.IdeBorderFactory;
@@ -51,13 +50,7 @@ public class InitialStep extends MigrationWizardStep {
 
     JPanel infoHolder = new JPanel(new BorderLayout());
     JTextPane info = new JTextPane();
-    Messages.installHyperlinkSupport(info);
-
-    StringBuilder sb = new StringBuilder("<html><body><font face=\"Verdana\" ");
-    sb.append((SystemInfo.isMac ? "" : "size=\"-1\"")).append('>');
-    sb.append(TEXT).append("</font></body></html>");
-    info.setText(sb.toString());
-
+    UIUtil.setTextPaneHtmlText(info, TEXT);
     info.setPreferredSize(new Dimension(300, 220));
     infoHolder.add(info, BorderLayout.CENTER);
     pagePanel.add(infoHolder, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null));

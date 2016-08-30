@@ -20,11 +20,10 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.SystemInfo;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import javax.swing.JComponent;
 import javax.swing.JTextPane;
-import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.ide.ui.util.UIUtil;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import com.intellij.ui.components.JBScrollPane;
@@ -64,19 +63,16 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
         }));
       }
     });
-    final StringBuilder sb = new StringBuilder("<html><body><font face=\"Verdana\" ");
-    sb.append((SystemInfo.isMac ? "" : "size=\"-1\"")).append('>');
-    for (String m : modulesToMigrate) {
-      sb.append(m).append("<br />");
-    }
-    sb.append("</font></body></html>");
     List<ProjectMigrationWithOptions.Option> options = ListSequence.fromList(new ArrayList<ProjectMigrationWithOptions.Option>());
     ListSequence.fromList(options).addElement(new ProjectMigrationWithOptions.Option<Void>("viewModulesToMigrate") {
       @Override
       public JComponent createComponent() {
         JTextPane list = new JTextPane();
-        Messages.installHyperlinkSupport(list);
-        list.setText(sb.toString());
+        StringBuilder sb = new StringBuilder();
+        for (String m : modulesToMigrate) {
+          sb.append(m).append("<br />");
+        }
+        UIUtil.setTextPaneHtmlText(list, sb.toString());
         JPanel panel = new JPanel(new BorderLayout());
         JBScrollPane scrollPane = new JBScrollPane(list);
         panel.add(scrollPane, BorderLayout.CENTER);
