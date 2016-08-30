@@ -202,6 +202,7 @@ public class ModuleUpdater {
       try {
         deps = getModuleDeps(module, usedModulesCollector);
       } catch (AbsentDependencyException e) {
+        //noinspection ThrowableResultOfMethodCallIgnored
         myModulesWithAbsentDeps.put(module, e);
         continue;
       }

@@ -72,7 +72,7 @@ public final class ClassPathReader {
         LOG.error("Problem while parsing class path", ignored);
       }
     } else {
-      LOG.warn("The file with additional class path could not be found");
+      LOG.debug("The file with additional class path could not be found");
     }
     return result;
   }
