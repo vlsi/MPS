@@ -84,7 +84,7 @@ public class ProcessType_TransformationMenu extends TransformationMenuBase {
         return "command process";
       }
       @Override
-      public SNode getActionType(String pattern) {
+      public SNode getActionType(@NotNull String pattern) {
         return createCommandProcessType_fvqin_a0a0b0b();
       }
     }

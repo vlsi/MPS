@@ -102,7 +102,7 @@ public class BLC_rtansform extends TransformationMenuBase {
           return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116ea555a25L, "jetbrains.mps.baseLanguage.collections.structure.MapElement");
         }
         @Override
-        public SNode getActionType(String pattern) {
+        public SNode getActionType(@NotNull String pattern) {
           return SLinkOperations.getTarget(mapType, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116db7e6bcbL, 0x116db7f8516L, "valueType"));
         }
       }
