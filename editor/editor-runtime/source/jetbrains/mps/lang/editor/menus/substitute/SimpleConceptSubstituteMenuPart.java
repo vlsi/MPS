@@ -38,9 +38,10 @@ import java.util.List;
  * @author simon
  */
 public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
+  @NotNull
   private SConcept myConcept;
 
-  public SimpleConceptSubstituteMenuPart(SAbstractConcept concept) {
+  public SimpleConceptSubstituteMenuPart(@NotNull SAbstractConcept concept) {
     if (concept instanceof SConcept) {
       myConcept = ((SConcept) concept);
     } else {

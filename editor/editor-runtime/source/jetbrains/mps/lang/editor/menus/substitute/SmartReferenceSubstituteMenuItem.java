@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.IconResourceUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -49,6 +50,7 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
     myRefDescriptor = descriptor;
   }
 
+  @Nullable
   @Override
   public String getMatchingText(@NotNull String pattern) {
     if (myMatchingText == null) {
@@ -68,11 +70,13 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
     return referentMatchingText;
   }
 
+  @Nullable
   @Override
   public String getDescriptionText(@NotNull String pattern) {
     return "^" + NodePresentationUtil.descriptionText(myReferentNode, true);
   }
 
+  @Nullable
   @Override
   public SNode createNode(@NotNull String pattern) {
     SNode childNode = NodeFactoryManager.createNode(mySmartConcept, getCurrentChild(), getParentNode(), getParentNode().getModel());
@@ -80,11 +84,13 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
     return childNode;
   }
 
+  @Nullable
   @Override
   public SNode getType(@NotNull String pattern) {
     return null;
   }
 
+  @Nullable
   @Override
   public IconResource getIcon(@NotNull String pattern) {
     return IconResourceUtil.getIconResourceForConcept(myReferentNode.getConcept());

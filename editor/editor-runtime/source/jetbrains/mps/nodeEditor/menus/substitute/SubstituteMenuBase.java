@@ -49,5 +49,6 @@ public abstract class SubstituteMenuBase implements SubstituteMenu {
     return myIsContribution;
   }
 
+  @NotNull
   protected abstract List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(SubstituteMenuContext context);
 }

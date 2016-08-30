@@ -29,6 +29,7 @@ import jetbrains.mps.util.PatternUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -37,41 +38,45 @@ import org.jetbrains.mps.openapi.model.SNode;
  * @author simon
  */
 public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
-  private static final Logger LOG = LogManager.getLogger(DefaultSubstituteMenuItem.class);
 
-  private final SNode myParentNode;
-  private final SNode myCurrentChild;
+  @NotNull
   private SAbstractConcept myConcept;
+
+  @NotNull
+  private final SNode myParentNode;
+
+  @Nullable
+  private final SNode myCurrentChild;
+
+  @NotNull
   private EditorContext myEditorContext;
 
-  public DefaultSubstituteMenuItem(SAbstractConcept concept, SNode parentNode, SNode currentChild) {
-    myConcept = concept;
-    myParentNode = parentNode;
-    myCurrentChild = currentChild;
-  }
-
-  public DefaultSubstituteMenuItem(SAbstractConcept concept, SNode parentNode, SNode currentChild, EditorContext editorContext) {
+  public DefaultSubstituteMenuItem(@NotNull SAbstractConcept concept, @NotNull SNode parentNode, @Nullable SNode currentChild, @NotNull EditorContext editorContext) {
     myConcept = concept;
     myParentNode = parentNode;
     myCurrentChild = currentChild;
     myEditorContext = editorContext;
   }
 
+  @Nullable
   @Override
   public SAbstractConcept getOutputConcept() {
     return myConcept;
   }
 
+  @Nullable
   @Override
   public SNode getType(@NotNull String pattern) {
     return null;
   }
 
+  @Nullable
   @Override
   public String getMatchingText(@NotNull String pattern) {
     return NodePresentationUtil.matchingText(myConcept, false);
   }
 
+  @Nullable
   @Override
   public String getDescriptionText(@NotNull String pattern) {
     if (myConcept instanceof SConcept) {
@@ -81,16 +86,19 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
     return "";
   }
 
+  @Nullable
   @Override
   public boolean canExecute(@NotNull String pattern) {
     return PatternUtil.matchesPattern(pattern, getMatchingText(pattern));
   }
 
+  @Nullable
   @Override
   public boolean canExecuteStrictly(@NotNull String pattern) {
     return pattern.equals(getMatchingText(pattern));
   }
 
+  @Nullable
   @Override
   public SNode createNode(@NotNull String pattern) {
     SNode currentChild = myCurrentChild;
@@ -103,6 +111,7 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
     return NodeFactoryManager.createNode(myConcept, currentChild, myParentNode, myParentNode.getModel());
   }
 
+  @Nullable
   @Override
   public IconResource getIcon(@NotNull String pattern) {
     return IconResourceUtil.getIconResourceForConcept(myConcept);
@@ -122,10 +131,12 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
     }
   }
 
+  @Nullable
   protected SNode getCurrentChild() {
     return myCurrentChild;
   }
 
+  @NotNull
   protected SNode getParentNode() {
     return myParentNode;
   }

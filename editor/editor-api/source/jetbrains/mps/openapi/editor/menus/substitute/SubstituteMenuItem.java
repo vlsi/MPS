@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.openapi.editor.menus.substitute;
 
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.runtime.IconResource;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -26,13 +25,27 @@ import org.jetbrains.mps.openapi.model.SNode;
  * @author simon
  */
 public interface SubstituteMenuItem {
+  @Nullable
   SAbstractConcept getOutputConcept();
+
+  @Nullable
   SNode getType(@NotNull String pattern);
+
+  @Nullable
   String getMatchingText(@NotNull String pattern);
+
+  @Nullable
   String getDescriptionText(@NotNull String pattern);
+
   boolean canExecute(@NotNull String pattern);
+
   boolean canExecuteStrictly(@NotNull String pattern);
+
+  @Nullable
   SNode createNode(@NotNull String pattern);
+
+  @Nullable
   IconResource getIcon(@NotNull String pattern);
+
   void select(@NotNull SNode createdNode, @NotNull String pattern);
 }

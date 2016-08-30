@@ -31,9 +31,10 @@ import java.util.List;
  * @author simon
  */
 class DefaultConceptSubstituteMenuPart implements SubstituteMenuPart {
+  @NotNull
   private final SAbstractConcept myConcept;
 
-  DefaultConceptSubstituteMenuPart(SAbstractConcept concept) {
+  DefaultConceptSubstituteMenuPart(@NotNull SAbstractConcept concept) {
     myConcept = concept;
   }
 

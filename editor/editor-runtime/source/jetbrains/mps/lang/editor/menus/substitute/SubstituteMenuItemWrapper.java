@@ -18,6 +18,7 @@ package jetbrains.mps.lang.editor.menus.substitute;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.smodel.runtime.IconResource;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -31,21 +32,25 @@ public class SubstituteMenuItemWrapper implements SubstituteMenuItem {
     myItem = item;
   }
 
+  @Nullable
   @Override
   public SAbstractConcept getOutputConcept() {
     return myItem.getOutputConcept();
   }
 
+  @Nullable
   @Override
   public SNode getType(@NotNull String pattern) {
     return myItem.getType(pattern);
   }
 
+  @Nullable
   @Override
   public String getMatchingText(@NotNull String pattern) {
     return myItem.getMatchingText(pattern);
   }
 
+  @Nullable
   @Override
   public String getDescriptionText(@NotNull String pattern) {
     return myItem.getDescriptionText(pattern);
@@ -61,6 +66,7 @@ public class SubstituteMenuItemWrapper implements SubstituteMenuItem {
     return myItem.canExecuteStrictly(pattern);
   }
 
+  @Nullable
   @Override
   public SNode createNode(@NotNull String pattern) {
     return myItem.createNode(pattern);
@@ -71,8 +77,9 @@ public class SubstituteMenuItemWrapper implements SubstituteMenuItem {
     myItem.select(createdNode, pattern);
   }
 
+  @Nullable
   @Override
-  public IconResource getIcon(String pattern) {
+  public IconResource getIcon(@NotNull String pattern) {
     return myItem.getIcon(pattern);
   }
 

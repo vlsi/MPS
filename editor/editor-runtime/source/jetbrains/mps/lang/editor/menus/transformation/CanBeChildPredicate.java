@@ -29,14 +29,14 @@ import java.util.function.Predicate;
 /**
  * @author simon
  */
-public class CanBeChildPredicate implements Predicate<SAbstractConcept>{
+public class CanBeChildPredicate implements Predicate<SAbstractConcept> {
   @NotNull
   private final SNode myParentNode;
 
   @Nullable
   private final SNode myLinkDeclarationNode;
 
-  public CanBeChildPredicate(@NotNull SNode parentNode,  @Nullable SContainmentLink link) {
+  public CanBeChildPredicate(@NotNull SNode parentNode, @Nullable SContainmentLink link) {
     myParentNode = parentNode;
     myLinkDeclarationNode = link == null ? null : link.getDeclarationNode();
   }
