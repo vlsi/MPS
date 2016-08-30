@@ -128,6 +128,7 @@ public class XmlBaseAttribute_TransformationMenu extends TransformationMenuBase 
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement");

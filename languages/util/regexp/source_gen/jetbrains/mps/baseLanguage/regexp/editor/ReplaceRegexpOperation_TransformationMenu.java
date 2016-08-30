@@ -88,6 +88,7 @@ public class ReplaceRegexpOperation_TransformationMenu extends TransformationMen
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
@@ -135,6 +136,7 @@ public class ReplaceRegexpOperation_TransformationMenu extends TransformationMen
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
@@ -182,6 +184,7 @@ public class ReplaceRegexpOperation_TransformationMenu extends TransformationMen
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
@@ -229,6 +232,7 @@ public class ReplaceRegexpOperation_TransformationMenu extends TransformationMen
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");

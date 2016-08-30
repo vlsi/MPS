@@ -85,6 +85,7 @@ public class IPropertyExpression_TransformationMenu extends TransformationMenuBa
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1e69fdb2a034c3f6L, "jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression");

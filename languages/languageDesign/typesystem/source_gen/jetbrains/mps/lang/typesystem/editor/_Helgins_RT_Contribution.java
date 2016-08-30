@@ -110,6 +110,7 @@ public class _Helgins_RT_Contribution extends TransformationMenuBase {
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement");

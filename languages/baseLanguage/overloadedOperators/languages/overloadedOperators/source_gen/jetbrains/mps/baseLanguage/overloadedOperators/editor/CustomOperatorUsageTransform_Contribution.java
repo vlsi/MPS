@@ -98,6 +98,7 @@ public class CustomOperatorUsageTransform_Contribution extends TransformationMen
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc6084766fL, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage");

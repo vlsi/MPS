@@ -73,6 +73,7 @@ public class BaseEmitJumpStatement_TransformationMenu extends TransformationMenu
       }
 
 
+      @Nullable
       @Override
       public SAbstractConcept getOutputConcept() {
         return MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5be47c5L, "jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement");
@@ -104,6 +105,7 @@ public class BaseEmitJumpStatement_TransformationMenu extends TransformationMenu
       }
 
 
+      @Nullable
       @Override
       public SAbstractConcept getOutputConcept() {
         return MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5be8165L, "jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement");

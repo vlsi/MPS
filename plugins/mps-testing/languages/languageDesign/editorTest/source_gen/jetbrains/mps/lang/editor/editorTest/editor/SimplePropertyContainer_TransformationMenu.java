@@ -79,6 +79,7 @@ public class SimplePropertyContainer_TransformationMenu extends TransformationMe
       }
 
 
+      @Nullable
       @Override
       public SAbstractConcept getOutputConcept() {
         return MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2fd7ff1ee43ef592L, "jetbrains.mps.lang.editor.editorTest.structure.Composition");
@@ -112,6 +113,7 @@ public class SimplePropertyContainer_TransformationMenu extends TransformationMe
       }
 
 
+      @Nullable
       @Override
       public SAbstractConcept getOutputConcept() {
         return MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2fd7ff1ee43ef592L, "jetbrains.mps.lang.editor.editorTest.structure.Composition");

@@ -91,6 +91,7 @@ public class AddRedirect_Contribution extends TransformationMenuBase {
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2c14L, "jetbrains.mps.execution.commands.structure.RedirectOutputExpression");

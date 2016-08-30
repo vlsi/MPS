@@ -81,6 +81,7 @@ public class Complex_RightTransform_Contribution extends TransformationMenuBase 
       }
 
 
+      @Nullable
       @Override
       public SAbstractConcept getOutputConcept() {
         return MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression");
@@ -119,6 +120,7 @@ public class Complex_RightTransform_Contribution extends TransformationMenuBase 
       }
 
 
+      @Nullable
       @Override
       public SAbstractConcept getOutputConcept() {
         return MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression");
@@ -157,6 +159,7 @@ public class Complex_RightTransform_Contribution extends TransformationMenuBase 
       }
 
 
+      @Nullable
       @Override
       public SAbstractConcept getOutputConcept() {
         return MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression");
@@ -195,6 +198,7 @@ public class Complex_RightTransform_Contribution extends TransformationMenuBase 
       }
 
 
+      @Nullable
       @Override
       public SAbstractConcept getOutputConcept() {
         return MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression");
@@ -233,6 +237,7 @@ public class Complex_RightTransform_Contribution extends TransformationMenuBase 
       }
 
 
+      @Nullable
       @Override
       public SAbstractConcept getOutputConcept() {
         return MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression");
@@ -271,6 +276,7 @@ public class Complex_RightTransform_Contribution extends TransformationMenuBase 
       }
 
 
+      @Nullable
       @Override
       public SAbstractConcept getOutputConcept() {
         return MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b25791L, "jetbrains.mps.samples.complex.structure.ReExpression");

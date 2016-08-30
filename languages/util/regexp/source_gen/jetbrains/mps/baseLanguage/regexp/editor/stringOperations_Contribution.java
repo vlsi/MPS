@@ -89,6 +89,7 @@ public class stringOperations_Contribution extends TransformationMenuBase {
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x550fbf4ebc5de3f5L, "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression");
@@ -122,6 +123,7 @@ public class stringOperations_Contribution extends TransformationMenuBase {
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x112972a0c32L, "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression");
@@ -155,6 +157,7 @@ public class stringOperations_Contribution extends TransformationMenuBase {
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117ef3f72dL, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression");
@@ -188,6 +191,7 @@ public class stringOperations_Contribution extends TransformationMenuBase {
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1119d41c734L, "jetbrains.mps.baseLanguage.regexp.structure.SplitExpression");

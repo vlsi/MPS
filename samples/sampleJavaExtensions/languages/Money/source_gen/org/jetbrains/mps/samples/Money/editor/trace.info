@@ -38,7 +38,7 @@
       <node id="1741258697587187482" at="101,69,102,402" concept="1" />
       <node id="1741258697587187483" at="102,402,103,17" concept="7" />
       <node id="1741258697587187476" at="104,9,105,260" concept="1" />
-      <node id="1741258697587187363" at="110,50,111,166" concept="7" />
+      <node id="1741258697587187363" at="111,50,112,166" concept="7" />
       <node id="1741258697587187359" at="37,0,40,0" concept="0" trace="makeMoneyFromInteger_Contribution#()V" />
       <node id="1741258697587187359" at="49,156,52,5" concept="4" />
       <node id="1741258697587187363" at="65,0,68,0" concept="0" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
@@ -48,11 +48,11 @@
       <node id="1741258697587187418" at="93,0,96,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1741258697587187359" at="41,0,45,0" concept="5" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
       <node id="1741258697587187363" at="57,0,61,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
-      <node id="1741258697587187363" at="109,0,113,0" concept="5" trace="getOutputConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1741258697587187368" at="71,50,76,11" concept="6" />
       <node id="1741258697587187379" at="76,11,81,9" concept="3" />
       <node id="1741258697587187401" at="86,58,91,11" concept="6" />
       <node id="1741258697587187412" at="91,11,96,11" concept="6" />
+      <node id="1741258697587187363" at="109,0,114,0" concept="5" trace="getOutputConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1741258697587187429" at="96,11,104,9" concept="4" />
       <node id="1741258697587187359" at="46,0,55,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <node id="1741258697587187363" at="69,0,84,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
@@ -66,7 +66,7 @@
       <scope id="1741258697587187390" at="78,183,79,166" />
       <scope id="1741258697587187409" at="88,54,89,183" />
       <scope id="1741258697587187419" at="93,43,94,183" />
-      <scope id="1741258697587187363" at="110,50,111,166" />
+      <scope id="1741258697587187363" at="111,50,112,166" />
       <scope id="1741258697587187359" at="37,0,40,0" />
       <scope id="1741258697587187363" at="65,0,68,0">
         <var name="context" id="1741258697587187363" />
@@ -87,13 +87,13 @@
       <scope id="1741258697587187363" at="57,0,61,0">
         <var name="context" id="1741258697587187363" />
       </scope>
-      <scope id="1741258697587187363" at="109,0,113,0" />
       <scope id="1741258697587187359" at="48,124,53,18">
         <var name="result" id="1741258697587187359" />
       </scope>
       <scope id="1741258697587187379" at="76,11,81,9">
         <var name="u" id="1741258697587187380" />
       </scope>
+      <scope id="1741258697587187363" at="109,0,114,0" />
       <scope id="1741258697587187430" at="97,27,103,17">
         <var name="ml" id="1741258697587187432" />
       </scope>
@@ -116,9 +116,9 @@
       <unit id="1741258697587187376" at="72,294,76,9" name="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution$1" />
       <unit id="1741258697587187409" at="87,294,91,9" name="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution$2" />
       <unit id="1741258697587187418" at="92,64,96,9" name="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution$3" />
-      <unit id="1741258697587187363" at="62,0,114,0" name="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution$TransformationMenuPart_Action_h87bp2_a0$Item" />
-      <unit id="1741258697587187363" at="56,0,115,0" name="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution$TransformationMenuPart_Action_h87bp2_a0" />
-      <unit id="1741258697587187359" at="36,0,116,0" name="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution" />
+      <unit id="1741258697587187363" at="62,0,115,0" name="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution$TransformationMenuPart_Action_h87bp2_a0$Item" />
+      <unit id="1741258697587187363" at="56,0,116,0" name="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution$TransformationMenuPart_Action_h87bp2_a0" />
+      <unit id="1741258697587187359" at="36,0,117,0" name="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution" />
     </file>
   </root>
   <root nodeRef="r:363920dc-2dd0-49fc-94ed-f20b88b2ec02(org.jetbrains.mps.samples.Money.editor)/1790427706118304180">

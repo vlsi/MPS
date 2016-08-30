@@ -76,6 +76,7 @@ public class TryStatement_TransformationMenu extends TransformationMenuBase {
       }
 
 
+      @Nullable
       @Override
       public SAbstractConcept getOutputConcept() {
         return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, "jetbrains.mps.baseLanguage.structure.TryCatchStatement");

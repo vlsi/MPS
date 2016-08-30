@@ -73,6 +73,7 @@ public class SideTransformApplication extends TransformationMenuBase {
       }
 
 
+      @Nullable
       @Override
       public SAbstractConcept getOutputConcept() {
         return MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication");

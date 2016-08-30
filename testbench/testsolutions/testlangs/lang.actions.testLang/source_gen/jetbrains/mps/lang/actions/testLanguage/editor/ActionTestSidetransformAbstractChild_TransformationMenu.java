@@ -75,6 +75,7 @@ public class ActionTestSidetransformAbstractChild_TransformationMenu extends Tra
       }
 
 
+      @Nullable
       @Override
       public SAbstractConcept getOutputConcept() {
         return MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x44969b12b8c94c1bL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1");
@@ -106,6 +107,7 @@ public class ActionTestSidetransformAbstractChild_TransformationMenu extends Tra
       }
 
 
+      @Nullable
       @Override
       public SAbstractConcept getOutputConcept() {
         return MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x44969b12b8c94c1bL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1");

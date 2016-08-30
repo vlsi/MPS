@@ -73,6 +73,7 @@ public class SideTransformMultiple extends TransformationMenuBase {
       }
 
 
+      @Nullable
       @Override
       public SAbstractConcept getOutputConcept() {
         return MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x15b75b54f176d1a3L, "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression");

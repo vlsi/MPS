@@ -3782,8 +3782,8 @@
       <node id="1741258697587186758" at="85,54,86,334" concept="7" />
       <node id="1741258697587186767" at="86,334,87,183" concept="2" />
       <node id="1741258697587186783" at="87,183,88,247" concept="2" />
-      <node id="1741258697587186732" at="93,52,94,187" concept="8" />
-      <node id="1741258697587186754" at="97,72,98,48" concept="8" />
+      <node id="1741258697587186732" at="94,52,95,187" concept="8" />
+      <node id="1741258697587186754" at="98,72,99,48" concept="8" />
       <node id="1741258697587186728" at="36,0,39,0" concept="1" trace="tuple_member_access_Contribution#()V" />
       <node id="1741258697587186728" at="48,156,51,5" concept="5" />
       <node id="1741258697587186732" at="74,0,77,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
@@ -3791,9 +3791,9 @@
       <node id="1741258697587186732" at="56,0,60,0" concept="6" trace="isApplicable#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Z" />
       <node id="1741258697587186732" at="61,0,65,0" concept="6" trace="getParts#()Ljava/util/List;" />
       <node id="1741258697587186732" at="66,0,70,0" concept="6" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
-      <node id="1741258697587186732" at="92,0,96,0" concept="6" trace="getOutputConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="1741258697587186732" at="96,0,100,0" concept="6" trace="getShortDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1741258697587186732" at="97,0,101,0" concept="6" trace="getShortDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1741258697587186732" at="78,0,83,0" concept="6" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1741258697587186732" at="92,0,97,0" concept="6" trace="getOutputConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1741258697587186732" at="84,0,90,0" concept="6" trace="execute#(Ljava/lang/String;)V" />
       <node id="1741258697587186728" at="45,0,54,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587186728" at="36,45,37,16" />
@@ -3804,8 +3804,8 @@
       <scope id="1741258697587186732" at="67,86,68,146" />
       <scope id="1741258697587186732" at="74,57,75,29" />
       <scope id="1741258697587186748" at="80,52,81,21" />
-      <scope id="1741258697587186732" at="93,52,94,187" />
-      <scope id="1741258697587186753" at="97,72,98,48" />
+      <scope id="1741258697587186732" at="94,52,95,187" />
+      <scope id="1741258697587186753" at="98,72,99,48" />
       <scope id="1741258697587186728" at="36,0,39,0" />
       <scope id="1741258697587186732" at="74,0,77,0">
         <var name="context" id="1741258697587186732" />
@@ -3823,8 +3823,7 @@
       <scope id="1741258697587186732" at="66,0,70,0">
         <var name="context" id="1741258697587186732" />
       </scope>
-      <scope id="1741258697587186732" at="92,0,96,0" />
-      <scope id="1741258697587186732" at="96,0,100,0">
+      <scope id="1741258697587186732" at="97,0,101,0">
         <var name="pattern" id="1741258697587186732" />
       </scope>
       <scope id="1741258697587186728" at="47,124,52,18">
@@ -3833,16 +3832,17 @@
       <scope id="1741258697587186732" at="78,0,83,0">
         <var name="pattern" id="1741258697587186732" />
       </scope>
+      <scope id="1741258697587186732" at="92,0,97,0" />
       <scope id="1741258697587186732" at="84,0,90,0">
         <var name="pattern" id="1741258697587186732" />
       </scope>
       <scope id="1741258697587186728" at="45,0,54,0">
         <var name="_context" id="1741258697587186728" />
       </scope>
-      <unit id="1741258697587186732" at="71,0,101,0" name="jetbrains.mps.baseLanguage.tuples.editor.tuple_member_access_Contribution$TransformationMenuPart_Group_dlrmni_a0$TransformationMenuPart_Action_dlrmni_a0a$Item" />
-      <unit id="1741258697587186732" at="65,0,102,0" name="jetbrains.mps.baseLanguage.tuples.editor.tuple_member_access_Contribution$TransformationMenuPart_Group_dlrmni_a0$TransformationMenuPart_Action_dlrmni_a0a" />
-      <unit id="1741258697587186732" at="55,0,103,0" name="jetbrains.mps.baseLanguage.tuples.editor.tuple_member_access_Contribution$TransformationMenuPart_Group_dlrmni_a0" />
-      <unit id="1741258697587186728" at="35,0,104,0" name="jetbrains.mps.baseLanguage.tuples.editor.tuple_member_access_Contribution" />
+      <unit id="1741258697587186732" at="71,0,102,0" name="jetbrains.mps.baseLanguage.tuples.editor.tuple_member_access_Contribution$TransformationMenuPart_Group_dlrmni_a0$TransformationMenuPart_Action_dlrmni_a0a$Item" />
+      <unit id="1741258697587186732" at="65,0,103,0" name="jetbrains.mps.baseLanguage.tuples.editor.tuple_member_access_Contribution$TransformationMenuPart_Group_dlrmni_a0$TransformationMenuPart_Action_dlrmni_a0a" />
+      <unit id="1741258697587186732" at="55,0,104,0" name="jetbrains.mps.baseLanguage.tuples.editor.tuple_member_access_Contribution$TransformationMenuPart_Group_dlrmni_a0" />
+      <unit id="1741258697587186728" at="35,0,105,0" name="jetbrains.mps.baseLanguage.tuples.editor.tuple_member_access_Contribution" />
     </file>
   </root>
   <root nodeRef="r:a841fea4-52c0-4064-96f2-7687a509aba5(jetbrains.mps.baseLanguage.tuples.editor)/1741258697587186787">
@@ -3861,7 +3861,7 @@
       <node id="1741258697587186808" at="76,52,77,25" concept="8" />
       <node id="1741258697587186812" at="81,54,82,396" concept="2" />
       <node id="1741258697587186830" at="82,396,83,262" concept="2" />
-      <node id="1741258697587186791" at="88,52,89,183" concept="8" />
+      <node id="1741258697587186791" at="89,52,90,183" concept="8" />
       <node id="1741258697587186787" at="32,0,35,0" concept="1" trace="NTCD_add_final_Contribution#()V" />
       <node id="1741258697587186787" at="44,156,47,5" concept="5" />
       <node id="1741258697587186791" at="70,0,73,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
@@ -3869,9 +3869,9 @@
       <node id="1741258697587186791" at="52,0,56,0" concept="6" trace="isApplicable#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Z" />
       <node id="1741258697587186791" at="57,0,61,0" concept="6" trace="getParts#()Ljava/util/List;" />
       <node id="1741258697587186791" at="62,0,66,0" concept="6" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
-      <node id="1741258697587186791" at="87,0,91,0" concept="6" trace="getOutputConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1741258697587186791" at="74,0,79,0" concept="6" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1741258697587186791" at="80,0,85,0" concept="6" trace="execute#(Ljava/lang/String;)V" />
+      <node id="1741258697587186791" at="87,0,92,0" concept="6" trace="getOutputConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1741258697587186787" at="41,0,50,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587186787" at="32,40,33,16" />
       <scope id="1741258697587186787" at="37,67,38,63" />
@@ -3881,7 +3881,7 @@
       <scope id="1741258697587186791" at="63,86,64,141" />
       <scope id="1741258697587186791" at="70,57,71,29" />
       <scope id="1741258697587186807" at="76,52,77,25" />
-      <scope id="1741258697587186791" at="88,52,89,183" />
+      <scope id="1741258697587186791" at="89,52,90,183" />
       <scope id="1741258697587186811" at="81,54,83,262" />
       <scope id="1741258697587186787" at="32,0,35,0" />
       <scope id="1741258697587186791" at="70,0,73,0">
@@ -3897,7 +3897,6 @@
       <scope id="1741258697587186791" at="62,0,66,0">
         <var name="context" id="1741258697587186791" />
       </scope>
-      <scope id="1741258697587186791" at="87,0,91,0" />
       <scope id="1741258697587186787" at="43,124,48,18">
         <var name="result" id="1741258697587186787" />
       </scope>
@@ -3907,13 +3906,14 @@
       <scope id="1741258697587186791" at="80,0,85,0">
         <var name="pattern" id="1741258697587186791" />
       </scope>
+      <scope id="1741258697587186791" at="87,0,92,0" />
       <scope id="1741258697587186787" at="41,0,50,0">
         <var name="_context" id="1741258697587186787" />
       </scope>
-      <unit id="1741258697587186791" at="67,0,92,0" name="jetbrains.mps.baseLanguage.tuples.editor.NTCD_add_final_Contribution$TransformationMenuPart_Group_d177af_a0$TransformationMenuPart_Action_d177af_a0a$Item" />
-      <unit id="1741258697587186791" at="61,0,93,0" name="jetbrains.mps.baseLanguage.tuples.editor.NTCD_add_final_Contribution$TransformationMenuPart_Group_d177af_a0$TransformationMenuPart_Action_d177af_a0a" />
-      <unit id="1741258697587186791" at="51,0,94,0" name="jetbrains.mps.baseLanguage.tuples.editor.NTCD_add_final_Contribution$TransformationMenuPart_Group_d177af_a0" />
-      <unit id="1741258697587186787" at="31,0,95,0" name="jetbrains.mps.baseLanguage.tuples.editor.NTCD_add_final_Contribution" />
+      <unit id="1741258697587186791" at="67,0,93,0" name="jetbrains.mps.baseLanguage.tuples.editor.NTCD_add_final_Contribution$TransformationMenuPart_Group_d177af_a0$TransformationMenuPart_Action_d177af_a0a$Item" />
+      <unit id="1741258697587186791" at="61,0,94,0" name="jetbrains.mps.baseLanguage.tuples.editor.NTCD_add_final_Contribution$TransformationMenuPart_Group_d177af_a0$TransformationMenuPart_Action_d177af_a0a" />
+      <unit id="1741258697587186791" at="51,0,95,0" name="jetbrains.mps.baseLanguage.tuples.editor.NTCD_add_final_Contribution$TransformationMenuPart_Group_d177af_a0" />
+      <unit id="1741258697587186787" at="31,0,96,0" name="jetbrains.mps.baseLanguage.tuples.editor.NTCD_add_final_Contribution" />
     </file>
   </root>
 </debug-info>

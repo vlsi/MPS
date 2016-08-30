@@ -126,6 +126,7 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dbeda57L, "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp");
@@ -174,6 +175,7 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc30ee2L, "jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp");
@@ -241,6 +243,7 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc58c6eL, "jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp");
@@ -293,6 +296,7 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
           }
 
 
+          @Nullable
           @Override
           public SAbstractConcept getOutputConcept() {
             return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp");
@@ -344,6 +348,7 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
       }
 
 
+      @Nullable
       @Override
       public SAbstractConcept getOutputConcept() {
         return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp");
@@ -462,6 +467,7 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp");
@@ -522,6 +528,7 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178fa2a18L, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp");
@@ -582,6 +589,7 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp");

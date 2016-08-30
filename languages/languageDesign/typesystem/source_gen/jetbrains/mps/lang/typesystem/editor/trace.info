@@ -16366,21 +16366,21 @@
       <node id="1741258697587243194" at="106,257,107,189" concept="2" />
       <node id="1741258697587243201" at="107,189,108,181" concept="2" />
       <node id="1741258697587243218" at="108,181,109,250" concept="2" />
-      <node id="1741258697587243116" at="114,52,115,174" concept="7" />
-      <node id="1741258697590765183" at="120,52,121,44" concept="7" />
+      <node id="1741258697587243116" at="115,52,116,174" concept="7" />
+      <node id="1741258697590765183" at="121,52,122,44" concept="7" />
       <node id="1741258697587243112" at="37,0,40,0" concept="1" trace="_Helgins_RT_Contribution#()V" />
       <node id="1741258697587243112" at="49,156,52,5" concept="4" />
       <node id="1741258697587243135" at="69,0,72,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
       <node id="1741258697587243116" at="77,0,80,0" concept="1" trace="TransformationMenuPart_Action_hjeljm_a0a#(Lorg/jetbrains/mps/openapi/language/SConcept;)V" />
       <node id="1741258697587243116" at="88,0,91,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)V" />
       <node id="1741258697587243176" at="101,232,104,11" concept="4" />
-      <node id="1741258697590765183" at="120,0,123,0" concept="10" trace="isEmptyString#(Ljava/lang/String;)Z" />
+      <node id="1741258697590765183" at="121,0,124,0" concept="10" trace="isEmptyString#(Ljava/lang/String;)Z" />
       <node id="1741258697587243112" at="41,0,45,0" concept="5" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
       <node id="1741258697587243116" at="80,0,84,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
-      <node id="1741258697587243116" at="113,0,117,0" concept="5" trace="getOutputConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1741258697587243116" at="58,0,63,0" concept="5" trace="createItems#(Lorg/jetbrains/mps/openapi/language/SConcept;Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <node id="1741258697587243130" at="67,252,72,26" concept="7" />
       <node id="1741258697587243116" at="92,0,97,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1741258697587243116" at="113,0,118,0" concept="5" trace="getOutputConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1741258697587243112" at="46,0,55,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <node id="1741258697587243116" at="64,0,74,0" concept="5" trace="getParameters#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/lang/Iterable;" />
       <node id="1741258697587243116" at="98,0,111,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
@@ -16394,8 +16394,8 @@
       <scope id="1741258697587243116" at="88,57,89,29" />
       <scope id="1741258697587243146" at="94,52,95,171" />
       <scope id="1741258697587243177" at="102,34,103,19" />
-      <scope id="1741258697587243116" at="114,52,115,174" />
-      <scope id="1741258697590765183" at="120,52,121,44" />
+      <scope id="1741258697587243116" at="115,52,116,174" />
+      <scope id="1741258697590765183" at="121,52,122,44" />
       <scope id="1741258697587243112" at="37,0,40,0" />
       <scope id="1741258697587243135" at="69,0,72,0">
         <var name="it" id="1741258697587243135" />
@@ -16406,7 +16406,7 @@
       <scope id="1741258697587243116" at="88,0,91,0">
         <var name="context" id="1741258697587243116" />
       </scope>
-      <scope id="1741258697590765183" at="120,0,123,0">
+      <scope id="1741258697590765183" at="121,0,124,0">
         <var name="str" id="1741258697590765183" />
       </scope>
       <scope id="1741258697587243112" at="41,0,45,0">
@@ -16415,7 +16415,6 @@
       <scope id="1741258697587243116" at="80,0,84,0">
         <var name="context" id="1741258697587243116" />
       </scope>
-      <scope id="1741258697587243116" at="113,0,117,0" />
       <scope id="1741258697587243112" at="48,124,53,18">
         <var name="result" id="1741258697587243112" />
       </scope>
@@ -16426,6 +16425,7 @@
       <scope id="1741258697587243116" at="92,0,97,0">
         <var name="pattern" id="1741258697587243116" />
       </scope>
+      <scope id="1741258697587243116" at="113,0,118,0" />
       <scope id="1741258697587243121" at="66,94,72,26">
         <var name="subconcepts" id="1741258697587243123" />
       </scope>
@@ -16444,10 +16444,10 @@
         <var name="pattern" id="1741258697587243116" />
       </scope>
       <unit id="1741258697587243135" at="68,58,72,7" name="jetbrains.mps.lang.typesystem.editor._Helgins_RT_Contribution$1" />
-      <unit id="1741258697587243116" at="85,0,118,0" name="jetbrains.mps.lang.typesystem.editor._Helgins_RT_Contribution$TransformationMenuPart_Parameterized_hjeljm_a0$TransformationMenuPart_Action_hjeljm_a0a$Item" />
-      <unit id="1741258697587243116" at="75,0,119,0" name="jetbrains.mps.lang.typesystem.editor._Helgins_RT_Contribution$TransformationMenuPart_Parameterized_hjeljm_a0$TransformationMenuPart_Action_hjeljm_a0a" />
-      <unit id="1741258697587243116" at="56,0,120,0" name="jetbrains.mps.lang.typesystem.editor._Helgins_RT_Contribution$TransformationMenuPart_Parameterized_hjeljm_a0" />
-      <unit id="1741258697587243112" at="36,0,124,0" name="jetbrains.mps.lang.typesystem.editor._Helgins_RT_Contribution" />
+      <unit id="1741258697587243116" at="85,0,119,0" name="jetbrains.mps.lang.typesystem.editor._Helgins_RT_Contribution$TransformationMenuPart_Parameterized_hjeljm_a0$TransformationMenuPart_Action_hjeljm_a0a$Item" />
+      <unit id="1741258697587243116" at="75,0,120,0" name="jetbrains.mps.lang.typesystem.editor._Helgins_RT_Contribution$TransformationMenuPart_Parameterized_hjeljm_a0$TransformationMenuPart_Action_hjeljm_a0a" />
+      <unit id="1741258697587243116" at="56,0,121,0" name="jetbrains.mps.lang.typesystem.editor._Helgins_RT_Contribution$TransformationMenuPart_Parameterized_hjeljm_a0" />
+      <unit id="1741258697587243112" at="36,0,125,0" name="jetbrains.mps.lang.typesystem.editor._Helgins_RT_Contribution" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b0(jetbrains.mps.lang.typesystem.editor)/1741258697587243598">

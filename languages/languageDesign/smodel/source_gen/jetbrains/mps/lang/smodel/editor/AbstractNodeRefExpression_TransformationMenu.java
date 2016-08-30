@@ -90,6 +90,7 @@ public class AbstractNodeRefExpression_TransformationMenu extends Transformation
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x84baf20c71f8a79L, "jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression");

@@ -104,6 +104,7 @@ public class AbstractCellSelector_TransformationMenu extends TransformationMenuB
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, "jetbrains.mps.lang.editor.structure.OrCellSelector");
@@ -163,6 +164,7 @@ public class AbstractCellSelector_TransformationMenu extends TransformationMenuB
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, "jetbrains.mps.lang.editor.structure.OrCellSelector");
@@ -211,6 +213,7 @@ public class AbstractCellSelector_TransformationMenu extends TransformationMenuB
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression");
@@ -248,6 +251,7 @@ public class AbstractCellSelector_TransformationMenu extends TransformationMenuB
         }
 
 
+        @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
           return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression");
