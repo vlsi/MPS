@@ -67,5 +67,10 @@ public interface CompletionActionItem extends ActionItem {
     return null;
   }
 
+  /**
+   * Indicates whether the action may be executed with the given pattern immediately, without showing the completion menu. Always called in a read action.
+   *
+   * @param pattern the text that the user has typed so far
+   */
   boolean canExecuteStrictly(@NotNull String pattern);
 }
