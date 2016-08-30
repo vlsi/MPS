@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.openapi.editor.menus.transformation;
 
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /**
  * @author simon
  */
 public interface ConstraintsVerifiableActionItem {
+  @Nullable
   SAbstractConcept getOutputConcept();
 }

@@ -40,7 +40,7 @@ public class CanBeChildPredicate implements Predicate<SAbstractConcept> {
   }
 
   @Override
-  public boolean test(SAbstractConcept concept) {
-    return ModelConstraints.canBeChild(concept, myParentNode, myLinkDeclarationNode, null, null);
+  public boolean test(@Nullable SAbstractConcept concept) {
+    return concept == null || ModelConstraints.canBeChild(concept, myParentNode, myLinkDeclarationNode, null, null);
   }
 }

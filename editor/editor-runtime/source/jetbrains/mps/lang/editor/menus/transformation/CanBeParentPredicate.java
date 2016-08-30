@@ -48,7 +48,7 @@ public class CanBeParentPredicate implements Predicate<SAbstractConcept> {
   }
 
   @Override
-  public boolean test(SAbstractConcept concept) {
+  public boolean test(@Nullable SAbstractConcept concept) {
     if (myParentNode == null) {
       return true;
     }

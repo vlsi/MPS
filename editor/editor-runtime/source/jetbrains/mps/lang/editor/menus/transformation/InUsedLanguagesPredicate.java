@@ -17,6 +17,7 @@ package jetbrains.mps.lang.editor.menus.transformation;
 
 import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -37,7 +38,7 @@ public class InUsedLanguagesPredicate implements Predicate<SAbstractConcept> {
   }
 
   @Override
-  public boolean test(SAbstractConcept concept) {
+  public boolean test(@Nullable SAbstractConcept concept) {
     return concept == null || myModel == null || myUsedLanguages.contains(concept.getLanguage());
   }
 }
