@@ -55,24 +55,26 @@ public final class MPSNodeVirtualFile extends VirtualFile {
   // for exposed files, this shall happen in exclusive read (so that different threads from readAction do not get different
   // result e.g. for getName().
   /*package*/ void updateFields() {
-    SNode node = myNode.resolve(myRepoFiles.getRepository());
-    if (node == null) {
-      LOG.warn("Cannot find node for passed SNodeReference: " + myNode);
-      myName = myPresentationName = "";
-      myPath = "";
-    } else {
-      myName = myPresentationName = String.valueOf(node.getPresentation());
-      if (node.getModel() != null && node.getModel().getModule() instanceof TransientSModule) {
-        // it's common to open same node from different generation steps (transient models)
-        // and to tell nodes from different steps we append model's identification
-        final String s = node.getModel().getName().getStereotype();
-        if (!s.isEmpty()) {
-          myPresentationName = myName + '@' + s;
+    myRepoFiles.getRepository().getModelAccess().runReadAction(() -> {
+      SNode node = myNode.resolve(myRepoFiles.getRepository());
+      if (node == null) {
+        LOG.warn("Cannot find node for passed SNodeReference: " + myNode);
+        myName = myPresentationName = "";
+        myPath = "";
+      } else {
+        myName = myPresentationName = String.valueOf(node.getPresentation());
+        if (node.getModel() != null && node.getModel().getModule() instanceof TransientSModule) {
+          // it's common to open same node from different generation steps (transient models)
+          // and to tell nodes from different steps we append model's identification
+          final String s = node.getModel().getName().getStereotype();
+          if (!s.isEmpty()) {
+            myPresentationName = myName + '@' + s;
+          }
         }
+        myPath = NODE_PREFIX + myRepoFiles.getPathFacility().serializeNode(node);
+        myTimeStamp = node.getModel().getSource().getTimestamp();
       }
-      myPath = NODE_PREFIX + myRepoFiles.getPathFacility().serializeNode(node);
-      myTimeStamp = node.getModel().getSource().getTimestamp();
-    }
+    });
   }
 
   @Nullable

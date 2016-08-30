@@ -57,15 +57,17 @@ public final class MPSModelVirtualFile extends VirtualFile {
   }
 
   private void updateFields() {
-    SModel model = myModelReference.resolve(myRepoFiles.getRepository());
-    if (model == null) {
-      LOG.error("Model resolve failed for SModelReference: " + myModelReference.toString(), new Throwable());
-      myName = "";
-      myPath = "";
-    } else {
-      myName = model.getName().getSimpleName();
-      myPath = MODEL_PREFIX + myRepoFiles.getPathFacility().serializeModel(model);
-    }
+    myRepoFiles.getRepository().getModelAccess().runReadAction(() -> {
+      SModel model = myModelReference.resolve(myRepoFiles.getRepository());
+      if (model == null) {
+        LOG.error("Model resolve failed for SModelReference: " + myModelReference.toString(), new Throwable());
+        myName = "";
+        myPath = "";
+      } else {
+        myName = model.getName().getSimpleName();
+        myPath = MODEL_PREFIX + myRepoFiles.getPathFacility().serializeModel(model);
+      }
+    });
   }
 
   public SModelReference getModelReference() {
