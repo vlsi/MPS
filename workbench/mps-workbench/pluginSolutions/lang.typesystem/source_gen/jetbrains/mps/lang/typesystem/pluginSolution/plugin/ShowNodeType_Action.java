@@ -18,6 +18,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.errors.NullErrorReporter;
 import com.intellij.openapi.wm.ToolWindowManager;
@@ -84,7 +85,7 @@ public class ShowNodeType_Action extends BaseAction {
             if (!(typeCheckingContext.isCheckedRoot(false))) {
               typeCheckingContext.checkIfNotChecked(((SNode) MapSequence.fromMap(_params).get("node")), false);
             }
-            type.value = typeCheckingContext.getTypeDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
+            type.value = SNodeOperations.copyNode(((SNode) typeCheckingContext.getTypeDontCheck(((SNode) MapSequence.fromMap(_params).get("node")))));
             error.value = typeCheckingContext.getTypeMessageDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
 
             if (error.value == null && TypesUtil.hasVariablesInside(type.value)) {
@@ -125,6 +126,7 @@ public class ShowNodeType_Action extends BaseAction {
     } finally {
       ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
         public void run() {
+          // XXX what's the need to remove type node from the model we dispose anyway? 
           tmpModel.value.removeRootNode(type.value);
           TemporaryModels.getInstance().dispose(tmpModel.value);
         }

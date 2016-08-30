@@ -20,7 +20,6 @@ import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
@@ -56,24 +55,26 @@ public final class MPSNodeVirtualFile extends VirtualFile {
   // for exposed files, this shall happen in exclusive read (so that different threads from readAction do not get different
   // result e.g. for getName().
   /*package*/ void updateFields() {
-    SNode node = myNode.resolve(myRepoFiles.getRepository());
-    if (node == null) {
-      LOG.warn("Cannot find node for passed SNodeReference: " + myNode);
-      myName = myPresentationName = "";
-      myPath = "";
-    } else {
-      myName = myPresentationName = String.valueOf(node.getPresentation());
-      if (node.getModel() != null && node.getModel().getModule() instanceof TransientSModule) {
-        // it's common to open same node from different generation steps (transient models)
-        // and to tell nodes from different steps we append model's identification
-        final String s = node.getModel().getName().getStereotype();
-        if (!s.isEmpty()) {
-          myPresentationName = myName + '@' + s;
+    myRepoFiles.getRepository().getModelAccess().runReadAction(() -> {
+      SNode node = myNode.resolve(myRepoFiles.getRepository());
+      if (node == null) {
+        LOG.warn("Cannot find node for passed SNodeReference: " + myNode);
+        myName = myPresentationName = "";
+        myPath = "";
+      } else {
+        myName = myPresentationName = String.valueOf(node.getPresentation());
+        if (node.getModel() != null && node.getModel().getModule() instanceof TransientSModule) {
+          // it's common to open same node from different generation steps (transient models)
+          // and to tell nodes from different steps we append model's identification
+          final String s = node.getModel().getName().getStereotype();
+          if (!s.isEmpty()) {
+            myPresentationName = myName + '@' + s;
+          }
         }
+        myPath = NODE_PREFIX + myRepoFiles.getPathFacility().serializeNode(node);
+        myTimeStamp = node.getModel().getSource().getTimestamp();
       }
-      myPath = NODE_PREFIX + myRepoFiles.getPathFacility().serializeNode(node);
-      myTimeStamp = node.getModel().getSource().getTimestamp();
-    }
+    });
   }
 
   @Nullable
@@ -198,8 +199,9 @@ public final class MPSNodeVirtualFile extends VirtualFile {
 
   /*package*/ void invalidate() {
     if (myNode == null) {
-      // FIXME this is a quick workaround for https://youtrack.jetbrains.com/issue/MPS-24248
-      //       shall fix it in a way the same file not invalidated twice, but for now (RC!), == null check would suffice.
+      // With proper fix of https://youtrack.jetbrains.com/issue/MPS-24244 (shared VFS notifier instance), shall not happen,
+      // nevertheless, doesn't hurt to be alert.
+      LOG.error("Attempt to invalidate already disposed file", new Throwable());
       return;
     }
     myRepoFiles.forgetVirtualFile(myNode);

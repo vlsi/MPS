@@ -50,6 +50,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
 
@@ -253,7 +254,7 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
       if (rvf == null) {
         return;
       }
-      VFSNotifier vfsNotifier = new VFSNotifier(rvf);
+      VFSNotifier vfsNotifier = rvf.getNotifier(new VFSNotifier(rvf));
       vfsNotifier.deleted(rvf.getKnownVirtualFilesIn(modelDescriptor.getReference()));
       vfsNotifier.execute();
     }
@@ -278,7 +279,7 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
           changedFiles.add(vf);
         }
       }
-      VFSNotifier vfsNotifier = new VFSNotifier(rvf);
+      VFSNotifier vfsNotifier = rvf.getNotifier(new VFSNotifier(rvf));
       vfsNotifier.deleted(deletedFiles);
       vfsNotifier.changed(changedFiles);
       vfsNotifier.execute();
@@ -314,7 +315,7 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
           }
         }
       }
-      VFSNotifier vfsNotifier = new VFSNotifier(rvf);
+      VFSNotifier vfsNotifier = rvf.getNotifier(new VFSNotifier(rvf));
       vfsNotifier.deleted(deletedFiles);
       vfsNotifier.changed(changedFiles);
       vfsNotifier.execute();
@@ -381,16 +382,23 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
     private final RepositoryVirtualFiles mySource;
     private final Set<MPSNodeVirtualFile> myDeletedFiles = new HashSet<>();
     private final Set<MPSNodeVirtualFile> myChangedFiles = new HashSet<>();
+    private final AtomicBoolean myPendingChanges = new AtomicBoolean();
 
     public VFSNotifier(@NotNull RepositoryVirtualFiles source) {
       mySource = source;
     }
 
     public synchronized void deleted(Collection<MPSNodeVirtualFile> deletedFiles) {
+      if (!deletedFiles.isEmpty()) {
+        myPendingChanges.set(true);
+      }
       myDeletedFiles.addAll(deletedFiles);
     }
 
     public synchronized void changed(Collection<MPSNodeVirtualFile> changed) {
+      if (!changed.isEmpty()) {
+        myPendingChanges.set(true);
+      }
       myChangedFiles.addAll(changed);
     }
 
@@ -400,7 +408,7 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
      */
     public void execute() {
       if (hasPendingNotifications()) {
-        mySource.getRepository().getModelAccess().runWriteInEDT(this);
+        mySource.scheduleNotifier(this);
       }
     }
 
@@ -417,6 +425,10 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
         myDeletedFiles.clear();
         myChangedFiles.clear();
       }
+
+      // notifier is shared, it's possible to get both changed and deleted notification for the same file
+      // no reason to report changes for deleted.
+      changedFiles.removeAll(deletedFiles);
 
       for (MPSNodeVirtualFile deletedFile : deletedFiles) {
         fireBeforeFileDeletion(this, deletedFile);
@@ -436,7 +448,7 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
     }
 
     private boolean hasPendingNotifications() {
-      return !myDeletedFiles.isEmpty() || !myChangedFiles.isEmpty();
+      return myPendingChanges.get();
     }
   }
 }
