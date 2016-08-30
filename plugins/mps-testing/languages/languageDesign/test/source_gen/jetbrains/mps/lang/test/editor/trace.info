@@ -6183,58 +6183,58 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)/1741258697587166482">
     <file name="NodeConstraintsWarningCheckOperation_SubstituteMenu.java">
-      <node id="1741258697587166482" at="14,118,15,140" concept="7" />
-      <node id="1741258697587166482" at="15,140,16,18" concept="8" />
-      <node id="1741258697587166482" at="13,0,18,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587166482" at="14,118,16,18">
+      <node id="1741258697587166482" at="16,118,17,140" concept="7" />
+      <node id="1741258697587166482" at="17,140,18,18" concept="8" />
+      <node id="1741258697587166482" at="14,0,20,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587166482" at="16,118,18,18">
         <var name="result" id="1741258697587166482" />
       </scope>
-      <scope id="1741258697587166482" at="13,0,18,0">
+      <scope id="1741258697587166482" at="14,0,20,0">
         <var name="_context" id="1741258697587166482" />
       </scope>
-      <unit id="1741258697587166482" at="12,0,19,0" name="jetbrains.mps.lang.test.editor.NodeConstraintsWarningCheckOperation_SubstituteMenu" />
+      <unit id="1741258697587166482" at="13,0,21,0" name="jetbrains.mps.lang.test.editor.NodeConstraintsWarningCheckOperation_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)/1741258697587166483">
     <file name="NodeConstraintsErrorCheckOperation_SubstituteMenu.java">
-      <node id="1741258697587166483" at="14,118,15,140" concept="7" />
-      <node id="1741258697587166483" at="15,140,16,18" concept="8" />
-      <node id="1741258697587166483" at="13,0,18,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587166483" at="14,118,16,18">
+      <node id="1741258697587166483" at="16,118,17,140" concept="7" />
+      <node id="1741258697587166483" at="17,140,18,18" concept="8" />
+      <node id="1741258697587166483" at="14,0,20,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587166483" at="16,118,18,18">
         <var name="result" id="1741258697587166483" />
       </scope>
-      <scope id="1741258697587166483" at="13,0,18,0">
+      <scope id="1741258697587166483" at="14,0,20,0">
         <var name="_context" id="1741258697587166483" />
       </scope>
-      <unit id="1741258697587166483" at="12,0,19,0" name="jetbrains.mps.lang.test.editor.NodeConstraintsErrorCheckOperation_SubstituteMenu" />
+      <unit id="1741258697587166483" at="13,0,21,0" name="jetbrains.mps.lang.test.editor.NodeConstraintsErrorCheckOperation_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)/1741258697587166484">
     <file name="NodeUnknownErrorCheckOperation_SubstituteMenu.java">
-      <node id="1741258697587166484" at="14,118,15,140" concept="7" />
-      <node id="1741258697587166484" at="15,140,16,18" concept="8" />
-      <node id="1741258697587166484" at="13,0,18,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587166484" at="14,118,16,18">
+      <node id="1741258697587166484" at="16,118,17,140" concept="7" />
+      <node id="1741258697587166484" at="17,140,18,18" concept="8" />
+      <node id="1741258697587166484" at="14,0,20,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587166484" at="16,118,18,18">
         <var name="result" id="1741258697587166484" />
       </scope>
-      <scope id="1741258697587166484" at="13,0,18,0">
+      <scope id="1741258697587166484" at="14,0,20,0">
         <var name="_context" id="1741258697587166484" />
       </scope>
-      <unit id="1741258697587166484" at="12,0,19,0" name="jetbrains.mps.lang.test.editor.NodeUnknownErrorCheckOperation_SubstituteMenu" />
+      <unit id="1741258697587166484" at="13,0,21,0" name="jetbrains.mps.lang.test.editor.NodeUnknownErrorCheckOperation_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)/1741258697587166485">
     <file name="NodeUnknownWarningCheckOperation_SubstituteMenu.java">
-      <node id="1741258697587166485" at="14,118,15,140" concept="7" />
-      <node id="1741258697587166485" at="15,140,16,18" concept="8" />
-      <node id="1741258697587166485" at="13,0,18,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587166485" at="14,118,16,18">
+      <node id="1741258697587166485" at="16,118,17,140" concept="7" />
+      <node id="1741258697587166485" at="17,140,18,18" concept="8" />
+      <node id="1741258697587166485" at="14,0,20,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587166485" at="16,118,18,18">
         <var name="result" id="1741258697587166485" />
       </scope>
-      <scope id="1741258697587166485" at="13,0,18,0">
+      <scope id="1741258697587166485" at="14,0,20,0">
         <var name="_context" id="1741258697587166485" />
       </scope>
-      <unit id="1741258697587166485" at="12,0,19,0" name="jetbrains.mps.lang.test.editor.NodeUnknownWarningCheckOperation_SubstituteMenu" />
+      <unit id="1741258697587166485" at="13,0,21,0" name="jetbrains.mps.lang.test.editor.NodeUnknownWarningCheckOperation_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)/210559400605478601">

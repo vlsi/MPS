@@ -109,88 +109,88 @@
   </root>
   <root nodeRef="r:5d9868cc-091b-49b3-85eb-87af773e0884(jetbrains.mps.console.ideCommands.editor)/1741258697587063813">
     <file name="OfAspectOperation_SubstituteMenu.java">
-      <node id="1741258697587063813" at="22,118,23,140" concept="6" />
-      <node id="1741258697587063813" at="23,140,24,94" concept="2" />
-      <node id="1741258697587063813" at="24,94,25,211" concept="2" />
-      <node id="1741258697587063813" at="25,211,26,18" concept="7" />
-      <node id="1741258697587063813" at="29,76,30,231" concept="7" />
-      <node id="1741258697587063813" at="33,125,34,149" concept="7" />
-      <node id="1741258697587063813" at="29,0,32,0" concept="5" trace="getConcepts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/Collection;" />
-      <node id="1741258697587063813" at="32,0,36,0" concept="5" trace="createItemsForConcept#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/Collection;" />
-      <node id="1741258697587063813" at="21,0,28,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587063813" at="29,76,30,231" />
-      <scope id="1741258697587063813" at="33,125,34,149" />
-      <scope id="1741258697587063813" at="29,0,32,0">
+      <node id="1741258697587063813" at="24,118,25,140" concept="6" />
+      <node id="1741258697587063813" at="25,140,26,94" concept="2" />
+      <node id="1741258697587063813" at="26,94,27,211" concept="2" />
+      <node id="1741258697587063813" at="27,211,28,18" concept="7" />
+      <node id="1741258697587063813" at="31,76,32,231" concept="7" />
+      <node id="1741258697587063813" at="35,125,36,149" concept="7" />
+      <node id="1741258697587063813" at="31,0,34,0" concept="5" trace="getConcepts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/Collection;" />
+      <node id="1741258697587063813" at="34,0,38,0" concept="5" trace="createItemsForConcept#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/Collection;" />
+      <node id="1741258697587063813" at="22,0,30,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587063813" at="31,76,32,231" />
+      <scope id="1741258697587063813" at="35,125,36,149" />
+      <scope id="1741258697587063813" at="31,0,34,0">
         <var name="_context" id="1741258697587063813" />
       </scope>
-      <scope id="1741258697587063813" at="22,118,26,18">
+      <scope id="1741258697587063813" at="24,118,28,18">
         <var name="result" id="1741258697587063813" />
       </scope>
-      <scope id="1741258697587063813" at="32,0,36,0">
+      <scope id="1741258697587063813" at="34,0,38,0">
         <var name="concept" id="1741258697587063813" />
         <var name="context" id="1741258697587063813" />
       </scope>
-      <scope id="1741258697587063813" at="21,0,28,0">
+      <scope id="1741258697587063813" at="22,0,30,0">
         <var name="_context" id="1741258697587063813" />
       </scope>
-      <unit id="1741258697587063813" at="28,0,37,0" name="jetbrains.mps.console.ideCommands.editor.OfAspectOperation_SubstituteMenu$SubstituteMenuPart_Subconcepts_xdr5c_a" />
-      <unit id="1741258697587063813" at="20,0,38,0" name="jetbrains.mps.console.ideCommands.editor.OfAspectOperation_SubstituteMenu" />
+      <unit id="1741258697587063813" at="30,0,39,0" name="jetbrains.mps.console.ideCommands.editor.OfAspectOperation_SubstituteMenu$SubstituteMenuPart_Subconcepts_xdr5c_a" />
+      <unit id="1741258697587063813" at="21,0,40,0" name="jetbrains.mps.console.ideCommands.editor.OfAspectOperation_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:5d9868cc-091b-49b3-85eb-87af773e0884(jetbrains.mps.console.ideCommands.editor)/1741258697587063819">
     <file name="UnloadModelsCommand_SubstituteMenu.java">
-      <node id="1741258697587063819" at="14,118,15,140" concept="6" />
-      <node id="1741258697587063819" at="15,140,16,18" concept="7" />
-      <node id="1741258697587063819" at="13,0,18,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587063819" at="14,118,16,18">
+      <node id="1741258697587063819" at="16,118,17,140" concept="6" />
+      <node id="1741258697587063819" at="17,140,18,18" concept="7" />
+      <node id="1741258697587063819" at="14,0,20,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587063819" at="16,118,18,18">
         <var name="result" id="1741258697587063819" />
       </scope>
-      <scope id="1741258697587063819" at="13,0,18,0">
+      <scope id="1741258697587063819" at="14,0,20,0">
         <var name="_context" id="1741258697587063819" />
       </scope>
-      <unit id="1741258697587063819" at="12,0,19,0" name="jetbrains.mps.console.ideCommands.editor.UnloadModelsCommand_SubstituteMenu" />
+      <unit id="1741258697587063819" at="13,0,21,0" name="jetbrains.mps.console.ideCommands.editor.UnloadModelsCommand_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:5d9868cc-091b-49b3-85eb-87af773e0884(jetbrains.mps.console.ideCommands.editor)/1741258697587063820">
     <file name="ModuleProperties_SubstituteMenu.java">
-      <node id="1741258697587063820" at="14,118,15,140" concept="6" />
-      <node id="1741258697587063820" at="15,140,16,18" concept="7" />
-      <node id="1741258697587063820" at="13,0,18,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587063820" at="14,118,16,18">
+      <node id="1741258697587063820" at="16,118,17,140" concept="6" />
+      <node id="1741258697587063820" at="17,140,18,18" concept="7" />
+      <node id="1741258697587063820" at="14,0,20,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587063820" at="16,118,18,18">
         <var name="result" id="1741258697587063820" />
       </scope>
-      <scope id="1741258697587063820" at="13,0,18,0">
+      <scope id="1741258697587063820" at="14,0,20,0">
         <var name="_context" id="1741258697587063820" />
       </scope>
-      <unit id="1741258697587063820" at="12,0,19,0" name="jetbrains.mps.console.ideCommands.editor.ModuleProperties_SubstituteMenu" />
+      <unit id="1741258697587063820" at="13,0,21,0" name="jetbrains.mps.console.ideCommands.editor.ModuleProperties_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:5d9868cc-091b-49b3-85eb-87af773e0884(jetbrains.mps.console.ideCommands.editor)/1741258697587063821">
     <file name="ModelProperties_SubstituteMenu.java">
-      <node id="1741258697587063821" at="14,118,15,140" concept="6" />
-      <node id="1741258697587063821" at="15,140,16,18" concept="7" />
-      <node id="1741258697587063821" at="13,0,18,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587063821" at="14,118,16,18">
+      <node id="1741258697587063821" at="16,118,17,140" concept="6" />
+      <node id="1741258697587063821" at="17,140,18,18" concept="7" />
+      <node id="1741258697587063821" at="14,0,20,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587063821" at="16,118,18,18">
         <var name="result" id="1741258697587063821" />
       </scope>
-      <scope id="1741258697587063821" at="13,0,18,0">
+      <scope id="1741258697587063821" at="14,0,20,0">
         <var name="_context" id="1741258697587063821" />
       </scope>
-      <unit id="1741258697587063821" at="12,0,19,0" name="jetbrains.mps.console.ideCommands.editor.ModelProperties_SubstituteMenu" />
+      <unit id="1741258697587063821" at="13,0,21,0" name="jetbrains.mps.console.ideCommands.editor.ModelProperties_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:5d9868cc-091b-49b3-85eb-87af773e0884(jetbrains.mps.console.ideCommands.editor)/1741258697587063822">
     <file name="RebuildProjectCommand_SubstituteMenu.java">
-      <node id="1741258697587063822" at="14,118,15,140" concept="6" />
-      <node id="1741258697587063822" at="15,140,16,18" concept="7" />
-      <node id="1741258697587063822" at="13,0,18,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587063822" at="14,118,16,18">
+      <node id="1741258697587063822" at="16,118,17,140" concept="6" />
+      <node id="1741258697587063822" at="17,140,18,18" concept="7" />
+      <node id="1741258697587063822" at="14,0,20,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587063822" at="16,118,18,18">
         <var name="result" id="1741258697587063822" />
       </scope>
-      <scope id="1741258697587063822" at="13,0,18,0">
+      <scope id="1741258697587063822" at="14,0,20,0">
         <var name="_context" id="1741258697587063822" />
       </scope>
-      <unit id="1741258697587063822" at="12,0,19,0" name="jetbrains.mps.console.ideCommands.editor.RebuildProjectCommand_SubstituteMenu" />
+      <unit id="1741258697587063822" at="13,0,21,0" name="jetbrains.mps.console.ideCommands.editor.RebuildProjectCommand_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:5d9868cc-091b-49b3-85eb-87af773e0884(jetbrains.mps.console.ideCommands.editor)/2087237500458012113">

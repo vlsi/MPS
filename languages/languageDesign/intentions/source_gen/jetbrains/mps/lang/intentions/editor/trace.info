@@ -981,96 +981,96 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590350(jetbrains.mps.lang.intentions.editor)/1741258697587120409">
     <file name="parameter_Contribution.java">
-      <node id="1741258697587120409" at="22,35,23,16" concept="10" />
-      <node id="1741258697587120409" at="26,118,27,140" concept="6" />
-      <node id="1741258697587120409" at="27,140,28,82" concept="2" />
-      <node id="1741258697587120409" at="28,82,29,18" concept="7" />
-      <node id="1741258697587120415" at="32,70,33,77" concept="6" />
-      <node id="1741258697587120422" at="33,77,34,271" concept="6" />
-      <node id="1741258697587120432" at="34,271,35,262" concept="6" />
-      <node id="1741258697587120442" at="35,262,36,281" concept="6" />
-      <node id="1741258697587120459" at="37,65,38,225" concept="2" />
-      <node id="1741258697587120500" at="41,50,42,48" concept="7" />
-      <node id="1741258697587120409" at="47,125,48,79" concept="7" />
-      <node id="1741258697587120409" at="22,0,25,0" concept="1" trace="parameter_Contribution#()V" />
-      <node id="1741258697587120452" at="36,281,39,7" concept="4" />
-      <node id="1741258697587120498" at="41,0,44,0" concept="5" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="1741258697587120409" at="46,0,50,0" concept="5" trace="createItemsForConcept#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/Collection;" />
-      <node id="1741258697587120464" at="39,7,44,26" concept="7" />
-      <node id="1741258697587120409" at="25,0,31,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <node id="1741258697587120409" at="32,0,46,0" concept="5" trace="getConcepts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/Collection;" />
-      <scope id="1741258697587120409" at="22,35,23,16" />
-      <scope id="1741258697587120458" at="37,65,38,225" />
-      <scope id="1741258697587120499" at="41,50,42,48" />
-      <scope id="1741258697587120409" at="47,125,48,79" />
-      <scope id="1741258697587120409" at="22,0,25,0" />
-      <scope id="1741258697587120409" at="26,118,29,18">
+      <node id="1741258697587120409" at="23,35,24,16" concept="10" />
+      <node id="1741258697587120409" at="28,118,29,140" concept="6" />
+      <node id="1741258697587120409" at="29,140,30,82" concept="2" />
+      <node id="1741258697587120409" at="30,82,31,18" concept="7" />
+      <node id="1741258697587120415" at="34,70,35,77" concept="6" />
+      <node id="1741258697587120422" at="35,77,36,271" concept="6" />
+      <node id="1741258697587120432" at="36,271,37,262" concept="6" />
+      <node id="1741258697587120442" at="37,262,38,281" concept="6" />
+      <node id="1741258697587120459" at="39,65,40,225" concept="2" />
+      <node id="1741258697587120500" at="43,50,44,48" concept="7" />
+      <node id="1741258697587120409" at="49,125,50,79" concept="7" />
+      <node id="1741258697587120409" at="23,0,26,0" concept="1" trace="parameter_Contribution#()V" />
+      <node id="1741258697587120452" at="38,281,41,7" concept="4" />
+      <node id="1741258697587120498" at="43,0,46,0" concept="5" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1741258697587120409" at="48,0,52,0" concept="5" trace="createItemsForConcept#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/Collection;" />
+      <node id="1741258697587120464" at="41,7,46,26" concept="7" />
+      <node id="1741258697587120409" at="26,0,33,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="1741258697587120409" at="34,0,48,0" concept="5" trace="getConcepts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/Collection;" />
+      <scope id="1741258697587120409" at="23,35,24,16" />
+      <scope id="1741258697587120458" at="39,65,40,225" />
+      <scope id="1741258697587120499" at="43,50,44,48" />
+      <scope id="1741258697587120409" at="49,125,50,79" />
+      <scope id="1741258697587120409" at="23,0,26,0" />
+      <scope id="1741258697587120409" at="28,118,31,18">
         <var name="result" id="1741258697587120409" />
       </scope>
-      <scope id="1741258697587120498" at="41,0,44,0">
+      <scope id="1741258697587120498" at="43,0,46,0">
         <var name="it" id="1741258697587120498" />
       </scope>
-      <scope id="1741258697587120409" at="46,0,50,0">
+      <scope id="1741258697587120409" at="48,0,52,0">
         <var name="concept" id="1741258697587120409" />
         <var name="context" id="1741258697587120409" />
       </scope>
-      <scope id="1741258697587120409" at="25,0,31,0">
+      <scope id="1741258697587120409" at="26,0,33,0">
         <var name="_context" id="1741258697587120409" />
       </scope>
-      <scope id="1741258697587120414" at="32,70,44,26">
+      <scope id="1741258697587120414" at="34,70,46,26">
         <var name="inParInt" id="1741258697587120423" />
         <var name="notInApplicable" id="1741258697587120433" />
         <var name="notInChildFilterBlock" id="1741258697587120443" />
         <var name="parameters" id="1741258697587120416" />
       </scope>
-      <scope id="1741258697587120409" at="32,0,46,0">
+      <scope id="1741258697587120409" at="34,0,48,0">
         <var name="_context" id="1741258697587120409" />
       </scope>
-      <unit id="1741258697587120498" at="40,58,44,7" name="jetbrains.mps.lang.intentions.editor.parameter_Contribution$1" />
-      <unit id="1741258697587120409" at="31,0,51,0" name="jetbrains.mps.lang.intentions.editor.parameter_Contribution$SubstituteMenuPart_Concepts_bxx1tv_a" />
-      <unit id="1741258697587120409" at="21,0,52,0" name="jetbrains.mps.lang.intentions.editor.parameter_Contribution" />
+      <unit id="1741258697587120498" at="42,58,46,7" name="jetbrains.mps.lang.intentions.editor.parameter_Contribution$1" />
+      <unit id="1741258697587120409" at="33,0,53,0" name="jetbrains.mps.lang.intentions.editor.parameter_Contribution$SubstituteMenuPart_Concepts_bxx1tv_a" />
+      <unit id="1741258697587120409" at="22,0,54,0" name="jetbrains.mps.lang.intentions.editor.parameter_Contribution" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590350(jetbrains.mps.lang.intentions.editor)/1741258697587120510">
     <file name="IntentionParameter_SubstituteMenu.java">
-      <node id="1741258697587120510" at="14,118,15,140" concept="6" />
-      <node id="1741258697587120510" at="15,140,16,18" concept="7" />
-      <node id="1741258697587120510" at="13,0,18,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587120510" at="14,118,16,18">
+      <node id="1741258697587120510" at="16,118,17,140" concept="6" />
+      <node id="1741258697587120510" at="17,140,18,18" concept="7" />
+      <node id="1741258697587120510" at="14,0,20,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587120510" at="16,118,18,18">
         <var name="result" id="1741258697587120510" />
       </scope>
-      <scope id="1741258697587120510" at="13,0,18,0">
+      <scope id="1741258697587120510" at="14,0,20,0">
         <var name="_context" id="1741258697587120510" />
       </scope>
-      <unit id="1741258697587120510" at="12,0,19,0" name="jetbrains.mps.lang.intentions.editor.IntentionParameter_SubstituteMenu" />
+      <unit id="1741258697587120510" at="13,0,21,0" name="jetbrains.mps.lang.intentions.editor.IntentionParameter_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590350(jetbrains.mps.lang.intentions.editor)/1741258697587120511">
     <file name="ConceptFunctionParameter_childNode_SubstituteMenu.java">
-      <node id="1741258697587120511" at="14,118,15,140" concept="6" />
-      <node id="1741258697587120511" at="15,140,16,18" concept="7" />
-      <node id="1741258697587120511" at="13,0,18,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587120511" at="14,118,16,18">
+      <node id="1741258697587120511" at="16,118,17,140" concept="6" />
+      <node id="1741258697587120511" at="17,140,18,18" concept="7" />
+      <node id="1741258697587120511" at="14,0,20,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587120511" at="16,118,18,18">
         <var name="result" id="1741258697587120511" />
       </scope>
-      <scope id="1741258697587120511" at="13,0,18,0">
+      <scope id="1741258697587120511" at="14,0,20,0">
         <var name="_context" id="1741258697587120511" />
       </scope>
-      <unit id="1741258697587120511" at="12,0,19,0" name="jetbrains.mps.lang.intentions.editor.ConceptFunctionParameter_childNode_SubstituteMenu" />
+      <unit id="1741258697587120511" at="13,0,21,0" name="jetbrains.mps.lang.intentions.editor.ConceptFunctionParameter_childNode_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590350(jetbrains.mps.lang.intentions.editor)/1741258697587120512">
     <file name="ConceptFunctionParameter_node_SubstituteMenu.java">
-      <node id="1741258697587120512" at="14,118,15,140" concept="6" />
-      <node id="1741258697587120512" at="15,140,16,18" concept="7" />
-      <node id="1741258697587120512" at="13,0,18,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587120512" at="14,118,16,18">
+      <node id="1741258697587120512" at="16,118,17,140" concept="6" />
+      <node id="1741258697587120512" at="17,140,18,18" concept="7" />
+      <node id="1741258697587120512" at="14,0,20,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587120512" at="16,118,18,18">
         <var name="result" id="1741258697587120512" />
       </scope>
-      <scope id="1741258697587120512" at="13,0,18,0">
+      <scope id="1741258697587120512" at="14,0,20,0">
         <var name="_context" id="1741258697587120512" />
       </scope>
-      <unit id="1741258697587120512" at="12,0,19,0" name="jetbrains.mps.lang.intentions.editor.ConceptFunctionParameter_node_SubstituteMenu" />
+      <unit id="1741258697587120512" at="13,0,21,0" name="jetbrains.mps.lang.intentions.editor.ConceptFunctionParameter_node_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590350(jetbrains.mps.lang.intentions.editor)/5224465257169160416">

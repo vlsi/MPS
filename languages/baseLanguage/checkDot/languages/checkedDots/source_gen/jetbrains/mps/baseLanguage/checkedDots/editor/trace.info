@@ -18,61 +18,61 @@
   <root nodeRef="r:87dca7c3-9c03-4bb2-90a6-6d5e60f0974a(jetbrains.mps.baseLanguage.checkedDots.editor)/1741258697587212983">
     <file name="QuestionMarkAction_Contribution.java">
       <node id="1741258697587212983" at="22,44,23,16" concept="9" />
-      <node id="1741258697587212983" at="26,118,27,140" concept="5" />
-      <node id="1741258697587212983" at="27,140,28,89" concept="1" />
-      <node id="1741258697587212983" at="28,89,29,18" concept="6" />
-      <node id="1741258697587212983" at="35,77,36,99" concept="6" />
-      <node id="1741258697587212983" at="39,0,40,0" concept="2" trace="_context" />
-      <node id="1741258697587212983" at="40,50,41,248" concept="9" />
-      <node id="1741258697587212983" at="41,248,42,27" concept="1" />
-      <node id="1741258697587212993" at="46,56,47,210" concept="5" />
-      <node id="1741258697587212998" at="47,210,48,284" concept="5" />
-      <node id="1741258697587213004" at="48,284,49,326" concept="1" />
-      <node id="1741258697587213012" at="49,326,50,330" concept="1" />
-      <node id="1741258697587213020" at="50,330,51,20" concept="6" />
-      <node id="1741258697587212988" at="54,53,55,19" concept="6" />
-      <node id="1741258697587212990" at="58,65,59,29" concept="6" />
+      <node id="1741258697587212983" at="27,118,28,140" concept="5" />
+      <node id="1741258697587212983" at="28,140,29,89" concept="1" />
+      <node id="1741258697587212983" at="29,89,30,18" concept="6" />
+      <node id="1741258697587212983" at="36,77,37,99" concept="6" />
+      <node id="1741258697587212983" at="40,0,41,0" concept="2" trace="_context" />
+      <node id="1741258697587212983" at="41,50,42,248" concept="9" />
+      <node id="1741258697587212983" at="42,248,43,27" concept="1" />
+      <node id="1741258697587212993" at="48,56,49,210" concept="5" />
+      <node id="1741258697587212998" at="49,210,50,284" concept="5" />
+      <node id="1741258697587213004" at="50,284,51,326" concept="1" />
+      <node id="1741258697587213012" at="51,326,52,330" concept="1" />
+      <node id="1741258697587213020" at="52,330,53,20" concept="6" />
+      <node id="1741258697587212988" at="57,62,58,19" concept="6" />
+      <node id="1741258697587212990" at="62,65,63,29" concept="6" />
       <node id="1741258697587212983" at="22,0,25,0" concept="0" trace="QuestionMarkAction_Contribution#()V" />
-      <node id="1741258697587212983" at="40,0,44,0" concept="0" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)V" />
-      <node id="1741258697587212987" at="53,0,57,0" concept="4" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1741258697587212989" at="57,0,61,0" concept="4" trace="getDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1741258697587212983" at="33,0,38,0" concept="4" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuItem;" />
-      <node id="1741258697587212983" at="25,0,31,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <node id="1741258697587212983" at="45,0,53,0" concept="4" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1741258697587212983" at="41,0,45,0" concept="0" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)V" />
+      <node id="1741258697587212983" at="34,0,39,0" concept="4" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuItem;" />
+      <node id="1741258697587212987" at="55,0,60,0" concept="4" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1741258697587212989" at="60,0,65,0" concept="4" trace="getDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1741258697587212983" at="25,0,32,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="1741258697587212983" at="46,0,55,0" concept="4" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1741258697587212983" at="22,44,23,16" />
-      <scope id="1741258697587212983" at="35,77,36,99" />
-      <scope id="1741258697587212987" at="54,53,55,19" />
-      <scope id="1741258697587212989" at="58,65,59,29" />
-      <scope id="1741258697587212983" at="40,50,42,27" />
+      <scope id="1741258697587212983" at="36,77,37,99" />
+      <scope id="1741258697587212987" at="57,62,58,19" />
+      <scope id="1741258697587212989" at="62,65,63,29" />
+      <scope id="1741258697587212983" at="41,50,43,27" />
       <scope id="1741258697587212983" at="22,0,25,0" />
-      <scope id="1741258697587212983" at="26,118,29,18">
+      <scope id="1741258697587212983" at="27,118,30,18">
         <var name="result" id="1741258697587212983" />
       </scope>
-      <scope id="1741258697587212983" at="40,0,44,0">
+      <scope id="1741258697587212983" at="41,0,45,0">
         <var name="context" id="1741258697587212983" />
       </scope>
-      <scope id="1741258697587212987" at="53,0,57,0">
-        <var name="pattern" id="1741258697587212987" />
-      </scope>
-      <scope id="1741258697587212989" at="57,0,61,0">
-        <var name="pattern" id="1741258697587212989" />
-      </scope>
-      <scope id="1741258697587212983" at="33,0,38,0">
+      <scope id="1741258697587212983" at="34,0,39,0">
         <var name="_context" id="1741258697587212983" />
       </scope>
-      <scope id="1741258697587212983" at="46,56,51,20">
+      <scope id="1741258697587212983" at="48,56,53,20">
         <var name="checkedDot" id="1741258697587212999" />
         <var name="dot" id="1741258697587212994" />
       </scope>
-      <scope id="1741258697587212983" at="25,0,31,0">
+      <scope id="1741258697587212987" at="55,0,60,0">
+        <var name="pattern" id="1741258697587212987" />
+      </scope>
+      <scope id="1741258697587212989" at="60,0,65,0">
+        <var name="pattern" id="1741258697587212989" />
+      </scope>
+      <scope id="1741258697587212983" at="25,0,32,0">
         <var name="_context" id="1741258697587212983" />
       </scope>
-      <scope id="1741258697587212983" at="45,0,53,0">
+      <scope id="1741258697587212983" at="46,0,55,0">
         <var name="pattern" id="1741258697587212983" />
       </scope>
-      <unit id="1741258697587212983" at="38,0,62,0" name="jetbrains.mps.baseLanguage.checkedDots.editor.QuestionMarkAction_Contribution$SubstituteMenuPart_Action_mhw6z7_a$Item" />
-      <unit id="1741258697587212983" at="31,0,63,0" name="jetbrains.mps.baseLanguage.checkedDots.editor.QuestionMarkAction_Contribution$SubstituteMenuPart_Action_mhw6z7_a" />
-      <unit id="1741258697587212983" at="21,0,64,0" name="jetbrains.mps.baseLanguage.checkedDots.editor.QuestionMarkAction_Contribution" />
+      <unit id="1741258697587212983" at="39,0,66,0" name="jetbrains.mps.baseLanguage.checkedDots.editor.QuestionMarkAction_Contribution$SubstituteMenuPart_Action_mhw6z7_a$Item" />
+      <unit id="1741258697587212983" at="32,0,67,0" name="jetbrains.mps.baseLanguage.checkedDots.editor.QuestionMarkAction_Contribution$SubstituteMenuPart_Action_mhw6z7_a" />
+      <unit id="1741258697587212983" at="21,0,68,0" name="jetbrains.mps.baseLanguage.checkedDots.editor.QuestionMarkAction_Contribution" />
     </file>
   </root>
   <root nodeRef="r:87dca7c3-9c03-4bb2-90a6-6d5e60f0974a(jetbrains.mps.baseLanguage.checkedDots.editor)/1741258697587213166">

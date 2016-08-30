@@ -2494,32 +2494,32 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902d4(jetbrains.mps.baseLanguage.unitTest.editor)/1741258697587118775">
     <file name="removeAssert_Contribution.java">
-      <node id="1741258697587118775" at="17,38,18,16" concept="8" />
-      <node id="1741258697587118775" at="21,118,22,140" concept="4" />
-      <node id="1741258697587118775" at="22,140,23,82" concept="1" />
-      <node id="1741258697587118775" at="23,82,24,18" concept="5" />
-      <node id="1741258697587118781" at="28,68,29,244" concept="5" />
-      <node id="1741258697587118775" at="33,84,34,82" concept="5" />
-      <node id="1741258697587118775" at="17,0,20,0" concept="0" trace="removeAssert_Contribution#()V" />
-      <node id="1741258697587118775" at="27,0,31,0" concept="3" trace="isApplicable#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Z" />
-      <node id="1741258697587118775" at="32,0,36,0" concept="3" trace="getParts#()Ljava/util/List;" />
-      <node id="1741258697587118775" at="20,0,26,0" concept="3" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587118775" at="17,38,18,16" />
-      <scope id="1741258697587118780" at="28,68,29,244" />
-      <scope id="1741258697587118775" at="33,84,34,82" />
-      <scope id="1741258697587118775" at="17,0,20,0" />
-      <scope id="1741258697587118775" at="21,118,24,18">
+      <node id="1741258697587118775" at="18,38,19,16" concept="8" />
+      <node id="1741258697587118775" at="23,118,24,140" concept="4" />
+      <node id="1741258697587118775" at="24,140,25,82" concept="1" />
+      <node id="1741258697587118775" at="25,82,26,18" concept="5" />
+      <node id="1741258697587118781" at="30,68,31,244" concept="5" />
+      <node id="1741258697587118775" at="35,84,36,82" concept="5" />
+      <node id="1741258697587118775" at="18,0,21,0" concept="0" trace="removeAssert_Contribution#()V" />
+      <node id="1741258697587118775" at="29,0,33,0" concept="3" trace="isApplicable#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Z" />
+      <node id="1741258697587118775" at="34,0,38,0" concept="3" trace="getParts#()Ljava/util/List;" />
+      <node id="1741258697587118775" at="21,0,28,0" concept="3" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587118775" at="18,38,19,16" />
+      <scope id="1741258697587118780" at="30,68,31,244" />
+      <scope id="1741258697587118775" at="35,84,36,82" />
+      <scope id="1741258697587118775" at="18,0,21,0" />
+      <scope id="1741258697587118775" at="23,118,26,18">
         <var name="result" id="1741258697587118775" />
       </scope>
-      <scope id="1741258697587118775" at="27,0,31,0">
+      <scope id="1741258697587118775" at="29,0,33,0">
         <var name="_context" id="1741258697587118775" />
       </scope>
-      <scope id="1741258697587118775" at="32,0,36,0" />
-      <scope id="1741258697587118775" at="20,0,26,0">
+      <scope id="1741258697587118775" at="34,0,38,0" />
+      <scope id="1741258697587118775" at="21,0,28,0">
         <var name="_context" id="1741258697587118775" />
       </scope>
-      <unit id="1741258697587118775" at="26,0,37,0" name="jetbrains.mps.baseLanguage.unitTest.editor.removeAssert_Contribution$SubstituteMenuPart_Group_dksfci_a" />
-      <unit id="1741258697587118775" at="16,0,38,0" name="jetbrains.mps.baseLanguage.unitTest.editor.removeAssert_Contribution" />
+      <unit id="1741258697587118775" at="28,0,39,0" name="jetbrains.mps.baseLanguage.unitTest.editor.removeAssert_Contribution$SubstituteMenuPart_Group_dksfci_a" />
+      <unit id="1741258697587118775" at="17,0,40,0" name="jetbrains.mps.baseLanguage.unitTest.editor.removeAssert_Contribution" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902d4(jetbrains.mps.baseLanguage.unitTest.editor)/5168467225194540178">

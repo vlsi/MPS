@@ -18,16 +18,16 @@
   </root>
   <root nodeRef="r:c606fb3a-353f-490a-814f-40f533d38c2c(jetbrains.mps.samples.SwingBuilder.editor)/1741258697587112639">
     <file name="EmptyComponent_SubstituteMenu.java">
-      <node id="1741258697587112639" at="14,118,15,140" concept="5" />
-      <node id="1741258697587112639" at="15,140,16,18" concept="6" />
-      <node id="1741258697587112639" at="13,0,18,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587112639" at="14,118,16,18">
+      <node id="1741258697587112639" at="16,118,17,140" concept="5" />
+      <node id="1741258697587112639" at="17,140,18,18" concept="6" />
+      <node id="1741258697587112639" at="14,0,20,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587112639" at="16,118,18,18">
         <var name="result" id="1741258697587112639" />
       </scope>
-      <scope id="1741258697587112639" at="13,0,18,0">
+      <scope id="1741258697587112639" at="14,0,20,0">
         <var name="_context" id="1741258697587112639" />
       </scope>
-      <unit id="1741258697587112639" at="12,0,19,0" name="jetbrains.mps.samples.SwingBuilder.editor.EmptyComponent_SubstituteMenu" />
+      <unit id="1741258697587112639" at="13,0,21,0" name="jetbrains.mps.samples.SwingBuilder.editor.EmptyComponent_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:c606fb3a-353f-490a-814f-40f533d38c2c(jetbrains.mps.samples.SwingBuilder.editor)/5340361359451387348">

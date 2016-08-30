@@ -26,8 +26,6 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.IconResourceUtil;
 import jetbrains.mps.util.PatternUtil;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -86,13 +84,11 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
     return "";
   }
 
-  @Nullable
   @Override
   public boolean canExecute(@NotNull String pattern) {
     return PatternUtil.matchesPattern(pattern, getMatchingText(pattern));
   }
 
-  @Nullable
   @Override
   public boolean canExecuteStrictly(@NotNull String pattern) {
     return pattern.equals(getMatchingText(pattern));

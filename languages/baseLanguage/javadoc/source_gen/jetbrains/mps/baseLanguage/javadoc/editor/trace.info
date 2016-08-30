@@ -289,16 +289,16 @@
   </root>
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/1741258697587168533">
     <file name="EmptyBlockDocTag_SubstituteMenu.java">
-      <node id="1741258697587168533" at="14,118,15,140" concept="7" />
-      <node id="1741258697587168533" at="15,140,16,18" concept="8" />
-      <node id="1741258697587168533" at="13,0,18,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587168533" at="14,118,16,18">
+      <node id="1741258697587168533" at="16,118,17,140" concept="7" />
+      <node id="1741258697587168533" at="17,140,18,18" concept="8" />
+      <node id="1741258697587168533" at="14,0,20,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587168533" at="16,118,18,18">
         <var name="result" id="1741258697587168533" />
       </scope>
-      <scope id="1741258697587168533" at="13,0,18,0">
+      <scope id="1741258697587168533" at="14,0,20,0">
         <var name="_context" id="1741258697587168533" />
       </scope>
-      <unit id="1741258697587168533" at="12,0,19,0" name="jetbrains.mps.baseLanguage.javadoc.editor.EmptyBlockDocTag_SubstituteMenu" />
+      <unit id="1741258697587168533" at="13,0,21,0" name="jetbrains.mps.baseLanguage.javadoc.editor.EmptyBlockDocTag_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/1741258697587190277">

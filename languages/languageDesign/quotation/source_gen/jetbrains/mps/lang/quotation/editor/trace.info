@@ -2254,44 +2254,44 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)/1741258697587167951">
     <file name="GeneratorInternal_InternalReferenceHolder_SubstituteMenu.java">
-      <node id="1741258697587167951" at="14,118,15,140" concept="8" />
-      <node id="1741258697587167951" at="15,140,16,18" concept="9" />
-      <node id="1741258697587167951" at="13,0,18,0" concept="7" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587167951" at="14,118,16,18">
+      <node id="1741258697587167951" at="16,118,17,140" concept="8" />
+      <node id="1741258697587167951" at="17,140,18,18" concept="9" />
+      <node id="1741258697587167951" at="14,0,20,0" concept="7" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587167951" at="16,118,18,18">
         <var name="result" id="1741258697587167951" />
       </scope>
-      <scope id="1741258697587167951" at="13,0,18,0">
+      <scope id="1741258697587167951" at="14,0,20,0">
         <var name="_context" id="1741258697587167951" />
       </scope>
-      <unit id="1741258697587167951" at="12,0,19,0" name="jetbrains.mps.lang.quotation.editor.GeneratorInternal_InternalReferenceHolder_SubstituteMenu" />
+      <unit id="1741258697587167951" at="13,0,21,0" name="jetbrains.mps.lang.quotation.editor.GeneratorInternal_InternalReferenceHolder_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)/1741258697587167952">
     <file name="GeneratorInternal_PropertyDescriptor_SubstituteMenu.java">
-      <node id="1741258697587167952" at="14,118,15,140" concept="8" />
-      <node id="1741258697587167952" at="15,140,16,18" concept="9" />
-      <node id="1741258697587167952" at="13,0,18,0" concept="7" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587167952" at="14,118,16,18">
+      <node id="1741258697587167952" at="16,118,17,140" concept="8" />
+      <node id="1741258697587167952" at="17,140,18,18" concept="9" />
+      <node id="1741258697587167952" at="14,0,20,0" concept="7" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587167952" at="16,118,18,18">
         <var name="result" id="1741258697587167952" />
       </scope>
-      <scope id="1741258697587167952" at="13,0,18,0">
+      <scope id="1741258697587167952" at="14,0,20,0">
         <var name="_context" id="1741258697587167952" />
       </scope>
-      <unit id="1741258697587167952" at="12,0,19,0" name="jetbrains.mps.lang.quotation.editor.GeneratorInternal_PropertyDescriptor_SubstituteMenu" />
+      <unit id="1741258697587167952" at="13,0,21,0" name="jetbrains.mps.lang.quotation.editor.GeneratorInternal_PropertyDescriptor_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)/1741258697587167953">
     <file name="GeneratorInternal_ReferenceDescriptor_SubstituteMenu.java">
-      <node id="1741258697587167953" at="14,118,15,140" concept="8" />
-      <node id="1741258697587167953" at="15,140,16,18" concept="9" />
-      <node id="1741258697587167953" at="13,0,18,0" concept="7" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587167953" at="14,118,16,18">
+      <node id="1741258697587167953" at="16,118,17,140" concept="8" />
+      <node id="1741258697587167953" at="17,140,18,18" concept="9" />
+      <node id="1741258697587167953" at="14,0,20,0" concept="7" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587167953" at="16,118,18,18">
         <var name="result" id="1741258697587167953" />
       </scope>
-      <scope id="1741258697587167953" at="13,0,18,0">
+      <scope id="1741258697587167953" at="14,0,20,0">
         <var name="_context" id="1741258697587167953" />
       </scope>
-      <unit id="1741258697587167953" at="12,0,19,0" name="jetbrains.mps.lang.quotation.editor.GeneratorInternal_ReferenceDescriptor_SubstituteMenu" />
+      <unit id="1741258697587167953" at="13,0,21,0" name="jetbrains.mps.lang.quotation.editor.GeneratorInternal_ReferenceDescriptor_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)/5455284157993863842">
