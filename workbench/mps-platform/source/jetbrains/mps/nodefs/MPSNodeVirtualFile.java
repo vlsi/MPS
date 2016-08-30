@@ -20,7 +20,6 @@ import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
@@ -198,8 +197,9 @@ public final class MPSNodeVirtualFile extends VirtualFile {
 
   /*package*/ void invalidate() {
     if (myNode == null) {
-      // FIXME this is a quick workaround for https://youtrack.jetbrains.com/issue/MPS-24248
-      //       shall fix it in a way the same file not invalidated twice, but for now (RC!), == null check would suffice.
+      // With proper fix of https://youtrack.jetbrains.com/issue/MPS-24244 (shared VFS notifier instance), shall not happen,
+      // nevertheless, doesn't hurt to be alert.
+      LOG.error("Attempt to invalidate already disposed file", new Throwable());
       return;
     }
     myRepoFiles.forgetVirtualFile(myNode);

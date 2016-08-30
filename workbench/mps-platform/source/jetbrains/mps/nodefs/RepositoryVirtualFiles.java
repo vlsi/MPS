@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicMarkableReference;
 
 /**
  * Manages {@linkplain com.intellij.openapi.vfs.VirtualFile virtual files} for nodes of given repository
@@ -42,7 +43,7 @@ final class RepositoryVirtualFiles {
   private Map<SModelReference, MPSModelVirtualFile> myModelVirtualFiles = new ConcurrentHashMap<SModelReference, MPSModelVirtualFile>();
   private final NiceReferenceSerializer myPathFacility;
 
-  RepositoryVirtualFiles(@NotNull NodeVirtualFileSystem mpsFileSystem, @NotNull SRepository repository) {
+  /*package*/ RepositoryVirtualFiles(@NotNull NodeVirtualFileSystem mpsFileSystem, @NotNull SRepository repository) {
     myFileSystem = mpsFileSystem;
     myRepository = repository;
     myPathFacility = new NiceReferenceSerializer(repository);
@@ -68,16 +69,16 @@ final class RepositoryVirtualFiles {
   }
 
   @NotNull
-  SRepository getRepository() {
+  /*package*/ SRepository getRepository() {
     return myRepository;
   }
 
   @NotNull
-  NodeVirtualFileSystem getFileSystem() {
+  /*package*/ NodeVirtualFileSystem getFileSystem() {
     return myFileSystem;
   }
 
-  NiceReferenceSerializer getPathFacility() {
+  /*package*/ NiceReferenceSerializer getPathFacility() {
     return myPathFacility;
   }
 
@@ -102,7 +103,7 @@ final class RepositoryVirtualFiles {
     return vf;
   }
 
-  boolean hasVirtualFileFor(SNodeReference nodePointer) {
+  /*package*/ boolean hasVirtualFileFor(SNodeReference nodePointer) {
     return myVirtualFiles.containsKey(nodePointer);
   }
 
@@ -110,12 +111,12 @@ final class RepositoryVirtualFiles {
    * @return existing VF, if any.
    */
   @Nullable
-  MPSNodeVirtualFile getVirtualFile(SNodeReference nodeRef) {
+  /*package*/ MPSNodeVirtualFile getVirtualFile(SNodeReference nodeRef) {
     return myVirtualFiles.get(nodeRef);
   }
 
   // XXX likely, RVF shall be responsible to collect deleted/renamed files, rather than give access to known vf
-  Collection<MPSNodeVirtualFile> getKnownVirtualFilesIn(SModelReference modelRef) {
+  /*package*/ Collection<MPSNodeVirtualFile> getKnownVirtualFilesIn(SModelReference modelRef) {
     ArrayList<MPSNodeVirtualFile> rv = new ArrayList<MPSNodeVirtualFile>();
     for (MPSNodeVirtualFile vf : myVirtualFiles.values()) {
       if (modelRef.equals(vf.getSNodePointer().getModelReference())) {
@@ -125,12 +126,12 @@ final class RepositoryVirtualFiles {
     return rv;
   }
 
-  void forgetVirtualFile(SNodeReference nodeRef) {
+  /*package*/ void forgetVirtualFile(SNodeReference nodeRef) {
     myVirtualFiles.remove(nodeRef);
   }
 
   @Nullable
-  VirtualFile findFileByPath(final @NotNull String path) {
+  /*package*/ VirtualFile findFileByPath(final @NotNull String path) {
     try {
       if (path.startsWith(MPSNodeVirtualFile.NODE_PREFIX)) {
         SNode node = getPathFacility().deserializeNode(path.substring(MPSNodeVirtualFile.NODE_PREFIX.length()));
@@ -149,5 +150,40 @@ final class RepositoryVirtualFiles {
       // ignore, parse model ref exception
     }
     return null;
+  }
+
+  /*
+   * There are 3 valid states:
+   *   (null, false) initial and the moment notifier is processed, so any requestors would receive new instance
+   *   (notifier, false) notifier is registered but not yet scheduled
+   *   (notifier, true) notifier was scheduled, but not yet processed.
+   */
+  private final AtomicMarkableReference<Runnable> myNotifier = new AtomicMarkableReference<>(null, false);
+
+  /*package*/ <T extends Runnable> T getNotifier(T notifier) {
+    assert notifier != null;
+    if (myNotifier.compareAndSet(null, notifier, false, false)) {
+      return notifier;
+    } else {
+      @SuppressWarnings("unchecked")
+      T existing = (T) myNotifier.getReference();
+      // generally, existing shall not be null, just in case getNotifier is invoked in parallel with
+      // model write right after myNotifier has been cleared. Later, else in the scheduleNotifier would yield another write for notifier.
+      return existing == null ? notifier : existing;
+    }
+  }
+
+  /*package*/ <T extends Runnable> void scheduleNotifier(T notifier) {
+    assert notifier != null;
+    if (myNotifier.compareAndSet(notifier, notifier, false, true)) {
+      myRepository.getModelAccess().runWriteInEDT(() -> {
+        if (myNotifier.compareAndSet(notifier, null, true, false)) {
+          notifier.run();
+        }
+      });
+    } else if (notifier != myNotifier.getReference()) {
+      // fallback, just in case there's untracked notifier, run it anyway not to loose any notification
+      myRepository.getModelAccess().runReadInEDT(notifier);
+    }
   }
 }
