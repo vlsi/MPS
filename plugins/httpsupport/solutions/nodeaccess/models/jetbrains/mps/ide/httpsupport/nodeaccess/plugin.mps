@@ -1972,8 +1972,8 @@
   </node>
   <node concept="sE7Ow" id="3ApdfstLXw">
     <property role="TrG5h" value="NodeReferenceURI" />
-    <property role="2uzpH1" value="Copy Node Reference URI to Clipboard" />
     <property role="fJN8o" value="true" />
+    <property role="2uzpH1" value="Copy Node Reference URI to Clipboard" />
     <node concept="1DS2jV" id="7LWFAMfAqWL" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />

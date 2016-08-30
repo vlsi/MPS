@@ -9,12 +9,11 @@ import java.util.Collections;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class TrustfulPropertyDescription implements ConceptEditorComponent {
   @NotNull
@@ -22,21 +21,14 @@ public class TrustfulPropertyDescription implements ConceptEditorComponent {
     return Collections.emptyList();
   }
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_552xwx_a(editorContext, node);
+    return this.createConstant_552xwx_a(editorContext, node);
   }
-  private EditorCell createCollection_552xwx_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_552xwx_a");
-    editorCell.addEditorCell(this.createConstant_552xwx_a0(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createConstant_552xwx_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_552xwx_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "If true, it handles requests from all hosts, otherwise - only from trusted hosts");
-    editorCell.setCellId("Constant_552xwx_a0");
+    editorCell.setCellId("Constant_552xwx_a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, 0, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

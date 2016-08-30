@@ -10,51 +10,51 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
-import jetbrains.mps.editor.runtime.cells.CellIdManager;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
-public class PARAM_UNREQUIRE {
+public class TrustfulProperty_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(CellActionType.DELETE, new PARAM_UNREQUIRE.PARAM_UNREQUIRE_DELETE(node));
-    editorCell.setAction(CellActionType.BACKSPACE, new PARAM_UNREQUIRE.PARAM_UNREQUIRE_BACKSPACE(node));
+    editorCell.setAction(CellActionType.DELETE, new TrustfulProperty_Actions.TrustfulProperty_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new TrustfulProperty_Actions.TrustfulProperty_Actions_BACKSPACE(node));
   }
-  public static class PARAM_UNREQUIRE_DELETE extends AbstractCellAction {
+  public static class TrustfulProperty_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-    public PARAM_UNREQUIRE_DELETE(SNode node) {
+    public TrustfulProperty_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x205f4376c585b43dL, "required"), "" + (false));
-      SelectionUtil.selectCell(editorContext, node, "*" + CellIdManager.createPropertyId("name"));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f4d780L, 0x5ae68adc25b84b44L, "trustful"), "" + (false));
+      SelectionUtil.selectCell(editorContext, node, SelectionManager.FIRST_EDITABLE_CELL);
     }
     @Override
     public boolean canExecute(EditorContext editorContext) {
       return this.canExecute_internal(editorContext, this.myNode);
     }
     public boolean canExecute_internal(EditorContext editorContext, SNode node) {
-      return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x205f4376c585b43dL, "required"));
+      return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f4d780L, 0x5ae68adc25b84b44L, "trustful"));
     }
   }
-  public static class PARAM_UNREQUIRE_BACKSPACE extends AbstractCellAction {
+  public static class TrustfulProperty_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-    public PARAM_UNREQUIRE_BACKSPACE(SNode node) {
+    public TrustfulProperty_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x205f4376c585b43dL, "required"), "" + (false));
-      SelectionUtil.selectCell(editorContext, node, "*" + CellIdManager.createPropertyId("name"));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f4d780L, 0x5ae68adc25b84b44L, "trustful"), "" + (false));
+      SelectionUtil.selectCell(editorContext, node, SelectionManager.FIRST_EDITABLE_CELL);
     }
     @Override
     public boolean canExecute(EditorContext editorContext) {
       return this.canExecute_internal(editorContext, this.myNode);
     }
     public boolean canExecute_internal(EditorContext editorContext, SNode node) {
-      return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x205f4376c585b43dL, "required"));
+      return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f4d780L, 0x5ae68adc25b84b44L, "trustful"));
     }
   }
 }

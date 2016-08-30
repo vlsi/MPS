@@ -48,12 +48,14 @@
     <property role="TrG5h" value="HandleRequestFunction" />
     <property role="34LRSv" value="handle" />
     <property role="EcuMT" value="5573986434797682998" />
+    <property role="R4oN_" value="Handle given HTTP Request" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="4PqLM5kXS7i">
     <property role="TrG5h" value="HttpRequestParameter" />
     <property role="34LRSv" value="request" />
     <property role="EcuMT" value="5573986434797765074" />
+    <property role="R4oN_" value="Incoming HTTP Request" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="4PqLM5kXdu0">
@@ -103,6 +105,7 @@
     <property role="EcuMT" value="6004610301070373654" />
     <property role="TrG5h" value="CanHandleRequestFunction" />
     <property role="34LRSv" value="canHandle" />
+    <property role="R4oN_" value="Checks that handler can handle given HTTP Request" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="21vgRr5xrgT">
