@@ -15,4 +15,8 @@ public class _Replacer_mgabp8_a0a0b0ab implements Replacer {
     this._enclosingClass = enclosingClass;
     this._closureContext = (Object) closureContext;
   }
+  public _Replacer_mgabp8_a0a0b0ab(IGeneratedToClass__BehaviorDescriptor enclosingClass) {
+    this._enclosingClass = enclosingClass;
+    this._closureContext = null;
+  }
 }

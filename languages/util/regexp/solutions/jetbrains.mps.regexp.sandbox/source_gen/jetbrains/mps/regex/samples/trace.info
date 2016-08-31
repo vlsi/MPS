@@ -72,9 +72,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959051f(jetbrains.mps.regex.samples)/1174939813279">
     <file name="SimpleReplace.java">
       <node id="1174939822893" at="11,38,12,18" concept="7" />
-      <node id="1174939824537" at="12,18,13,114" concept="2" />
+      <node id="1174939824537" at="12,18,13,108" concept="2" />
       <node id="1174939854682" at="15,41,16,18" concept="7" />
-      <node id="1174939857046" at="16,18,17,114" concept="2" />
+      <node id="1174939857046" at="16,18,17,108" concept="2" />
       <node id="1174939838797" at="19,0,20,0" concept="9" trace="REGEXP_x5qji9_b0a1a1" />
       <node id="1174939865288" at="20,0,21,0" concept="9" trace="REGEXP_x5qji9_b0a1a2" />
       <node id="8961770717686428054" at="9,0,11,0" concept="1" trace="SimpleReplace#()V" />
@@ -82,10 +82,10 @@
       <node id="1174939848617" at="15,0,19,0" concept="6" trace="replaceWithCapture#()V" />
       <scope id="8961770717686428056" at="9,26,9,26" />
       <scope id="8961770717686428054" at="9,0,11,0" />
-      <scope id="1174939818423" at="11,38,13,114">
+      <scope id="1174939818423" at="11,38,13,108">
         <var name="s" id="1174939822894" />
       </scope>
-      <scope id="1174939848619" at="15,41,17,114">
+      <scope id="1174939848619" at="15,41,17,108">
         <var name="s" id="1174939854683" />
       </scope>
       <scope id="1174939818421" at="11,0,15,0" />
@@ -98,10 +98,14 @@
       <node id="1174939833887" at="13,0,14,0" concept="3" trace="_closureContext" />
       <node id="1174939833887" at="14,88,15,42" concept="2" />
       <node id="1174939833887" at="15,42,16,51" concept="2" />
+      <node id="1174939833887" at="18,65,19,42" concept="2" />
+      <node id="1174939833887" at="19,42,20,32" concept="2" />
       <node id="1174939833887" at="9,0,12,0" concept="6" trace="replace#(Ljava/util/regex/Matcher;)Ljava/lang/String;" />
       <node id="1174939833887" at="14,0,18,0" concept="1" trace="_Replacer_x5qji9_a0a0b0b#(Ljetbrains/mps/regex/samples/SimpleReplace;Ljava/lang/Object;)V" />
+      <node id="1174939833887" at="18,0,22,0" concept="1" trace="_Replacer_x5qji9_a0a0b0b#(Ljetbrains/mps/regex/samples/SimpleReplace;)V" />
       <scope id="1174939833888" at="9,42,10,17" />
       <scope id="1174939833887" at="14,88,16,51" />
+      <scope id="1174939833887" at="18,65,20,32" />
       <scope id="1174939833887" at="9,0,12,0">
         <var name="matcher" id="1174939833887" />
       </scope>
@@ -109,7 +113,10 @@
         <var name="closureContext" id="1174939833887" />
         <var name="enclosingClass" id="1174939833887" />
       </scope>
-      <unit id="1174939833887" at="8,0,19,0" name="jetbrains.mps.regex.samples._Replacer_x5qji9_a0a0b0b" />
+      <scope id="1174939833887" at="18,0,22,0">
+        <var name="enclosingClass" id="1174939833887" />
+      </scope>
+      <unit id="1174939833887" at="8,0,23,0" name="jetbrains.mps.regex.samples._Replacer_x5qji9_a0a0b0b" />
     </file>
     <file name="_Replacer_x5qji9_a0a0b0c.java">
       <node id="1174939889769" at="9,42,10,40" concept="8" />
@@ -117,10 +124,14 @@
       <node id="1174939860207" at="13,0,14,0" concept="3" trace="_closureContext" />
       <node id="1174939860207" at="14,88,15,42" concept="2" />
       <node id="1174939860207" at="15,42,16,51" concept="2" />
+      <node id="1174939860207" at="18,65,19,42" concept="2" />
+      <node id="1174939860207" at="19,42,20,32" concept="2" />
       <node id="1174939860207" at="9,0,12,0" concept="6" trace="replace#(Ljava/util/regex/Matcher;)Ljava/lang/String;" />
       <node id="1174939860207" at="14,0,18,0" concept="1" trace="_Replacer_x5qji9_a0a0b0c#(Ljetbrains/mps/regex/samples/SimpleReplace;Ljava/lang/Object;)V" />
+      <node id="1174939860207" at="18,0,22,0" concept="1" trace="_Replacer_x5qji9_a0a0b0c#(Ljetbrains/mps/regex/samples/SimpleReplace;)V" />
       <scope id="1174939860208" at="9,42,10,40" />
       <scope id="1174939860207" at="14,88,16,51" />
+      <scope id="1174939860207" at="18,65,20,32" />
       <scope id="1174939860207" at="9,0,12,0">
         <var name="matcher" id="1174939860207" />
       </scope>
@@ -128,7 +139,10 @@
         <var name="closureContext" id="1174939860207" />
         <var name="enclosingClass" id="1174939860207" />
       </scope>
-      <unit id="1174939860207" at="8,0,19,0" name="jetbrains.mps.regex.samples._Replacer_x5qji9_a0a0b0c" />
+      <scope id="1174939860207" at="18,0,22,0">
+        <var name="enclosingClass" id="1174939860207" />
+      </scope>
+      <unit id="1174939860207" at="8,0,23,0" name="jetbrains.mps.regex.samples._Replacer_x5qji9_a0a0b0c" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959051f(jetbrains.mps.regex.samples)/1174939949624">
@@ -139,7 +153,7 @@
       <node id="1174939977031" at="17,33,18,60" concept="2" />
       <node id="1174939996604" at="18,60,19,62" concept="2" />
       <node id="1174940018011" at="23,44,24,18" concept="7" />
-      <node id="1174940020124" at="24,18,25,118" concept="2" />
+      <node id="1174940020124" at="24,18,25,112" concept="2" />
       <node id="1174939971324" at="27,0,28,0" concept="9" trace="REGEXP_90k4hu_a0a0b0b" />
       <node id="1174940025804" at="28,0,29,0" concept="9" trace="REGEXP_90k4hu_b0a1a2" />
       <node id="5324518929218979345" at="10,0,12,0" concept="1" trace="PredefinedRegexps#()V" />
@@ -150,7 +164,7 @@
       <scope id="5324518929218979347" at="10,30,10,30" />
       <scope id="5324518929218979345" at="10,0,12,0" />
       <scope id="1174939964473" at="17,33,19,62" />
-      <scope id="1174940011260" at="23,44,25,118">
+      <scope id="1174940011260" at="23,44,25,112">
         <var name="s" id="1174940018012" />
       </scope>
       <scope id="1174940011258" at="23,0,27,0" />
@@ -170,10 +184,14 @@
       <node id="1174940022270" at="13,0,14,0" concept="3" trace="_closureContext" />
       <node id="1174940022270" at="14,92,15,42" concept="2" />
       <node id="1174940022270" at="15,42,16,51" concept="2" />
+      <node id="1174940022270" at="18,69,19,42" concept="2" />
+      <node id="1174940022270" at="19,42,20,32" concept="2" />
       <node id="1174940022270" at="9,0,12,0" concept="6" trace="replace#(Ljava/util/regex/Matcher;)Ljava/lang/String;" />
       <node id="1174940022270" at="14,0,18,0" concept="1" trace="_Replacer_90k4hu_a0a0b0c#(Ljetbrains/mps/regex/samples/PredefinedRegexps;Ljava/lang/Object;)V" />
+      <node id="1174940022270" at="18,0,22,0" concept="1" trace="_Replacer_90k4hu_a0a0b0c#(Ljetbrains/mps/regex/samples/PredefinedRegexps;)V" />
       <scope id="1174940022271" at="9,42,10,56" />
       <scope id="1174940022270" at="14,92,16,51" />
+      <scope id="1174940022270" at="18,69,20,32" />
       <scope id="1174940022270" at="9,0,12,0">
         <var name="matcher" id="1174940022270" />
       </scope>
@@ -181,7 +199,10 @@
         <var name="closureContext" id="1174940022270" />
         <var name="enclosingClass" id="1174940022270" />
       </scope>
-      <unit id="1174940022270" at="8,0,19,0" name="jetbrains.mps.regex.samples._Replacer_90k4hu_a0a0b0c" />
+      <scope id="1174940022270" at="18,0,22,0">
+        <var name="enclosingClass" id="1174940022270" />
+      </scope>
+      <unit id="1174940022270" at="8,0,23,0" name="jetbrains.mps.regex.samples._Replacer_90k4hu_a0a0b0c" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959051f(jetbrains.mps.regex.samples)/1175155050941">

@@ -38,7 +38,7 @@ import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
     }
   }
   public static String replaceAll(String s) {
-    s = RegexpOperations.replace(s, REGEXP_efh9at_b0a0a4, new _Replacer_efh9at_a0a0a0e(null, null));
+    s = RegexpOperations.replace(s, REGEXP_efh9at_b0a0a4, new _Replacer_efh9at_a0a0a0e(null));
     return s;
   }
   public static void split(String s) {
