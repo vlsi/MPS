@@ -44,6 +44,9 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTreeChangesNotifier
 import jetbrains.mps.ide.findusages.view.treeholder.tree.IChangeListener;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.AbstractResultNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.BaseNodeData;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree.UsagesTreeNode;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -63,7 +66,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -81,7 +84,7 @@ public class UsagesTreeComponent extends JPanel implements IChangeListener {
 
   private UsagesTree myTree;
   private final DataTree myContents;
-  private Set<PathItemRole> myPathProvider = new HashSet<PathItemRole>();
+  private Set<PathItemRole> myPathProvider = new HashSet<>();
 
   private ViewToolbar myViewToolbar;
   private ActionsToolbar myActionsToolbar;
@@ -159,12 +162,7 @@ public class UsagesTreeComponent extends JPanel implements IChangeListener {
 
   public void setContents(final SearchResults contents) {
     // XXX no idea if there's real need to have read action here, just refactored ModelAccess static out of DataTree here.
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        myContents.setContents(contents, myNodeRepresentator);
-      }
-    });
+    myProject.getModelAccess().runReadAction(() -> myContents.setContents(contents, myNodeRepresentator));
   }
 
   public OccurenceNavigator getOccurenceNavigator() {
@@ -289,7 +287,16 @@ public class UsagesTreeComponent extends JPanel implements IChangeListener {
     return new Navigatable() {
       @Override
       public void navigate(boolean requestFocus) {
-        ((AbstractResultNodeData) data).navigate(myProject, true, requestFocus);
+        boolean useProjectTree = !(data instanceof NodeNodeData);
+        if(data instanceof NodeNodeData) {
+          // Show nodes directly in editor instead of project pane
+          useProjectTree = false;
+        }
+        if(data instanceof ModelNodeData || data instanceof ModuleNodeData) {
+          // Leave focus in UsagesView or it became unusable
+          requestFocus = false;
+        }
+        ((AbstractResultNodeData) data).navigate(myProject, useProjectTree, requestFocus);
       }
 
       @Override
@@ -438,7 +445,7 @@ public class UsagesTreeComponent extends JPanel implements IChangeListener {
     }
 
     class PathOptionsToolbar {
-      private List<MyBaseToggleAction> myCategoryPathButtons = new ArrayList<MyBaseToggleAction>();
+      private List<MyBaseToggleAction> myCategoryPathButtons = new ArrayList<>();
       private MyBaseToggleAction myModulePathButton;
       private MyBaseToggleAction myModelPathButton;
       private MyBaseToggleAction myRootPathButton;
@@ -450,7 +457,7 @@ public class UsagesTreeComponent extends JPanel implements IChangeListener {
       }
 
       private void recreateActions() {
-        List<CategoryKind> categoryKinds = Arrays.asList(
+        List<CategoryKind> categoryKinds = Collections.singletonList(
             new CategoryKind(CategoryKind.DEFAULT_CATEGORY_KIND.getName(), General.Filter, CategoryKind.DEFAULT_CATEGORY_KIND.getTooltip())
         );
         if (myNodeRepresentator != null) {
@@ -460,7 +467,7 @@ public class UsagesTreeComponent extends JPanel implements IChangeListener {
         myCategoryPathButtons.clear();
         for (CategoryKind kind : categoryKinds) {
           myCategoryPathButtons.add(new MyBasePathToggleAction(
-            PathItemRole.getCategoryRole(kind), kind.getTooltip(), IconManager.getIconForCategoryKind(kind)));
+              PathItemRole.getCategoryRole(kind), kind.getTooltip(), IconManager.getIconForCategoryKind(kind)));
         }
 
         myModulePathButton = new MyBasePathToggleAction(PathItemRole.ROLE_MODULE, "Group by module", Icons.MODULE_ICON);
@@ -566,7 +573,9 @@ public class UsagesTreeComponent extends JPanel implements IChangeListener {
 
       @Override
       public void doSetSelected(AnActionEvent e, boolean state) {
-        if (myPathItemRole == null) return;
+        if (myPathItemRole == null) {
+          return;
+        }
         if (state) {
           addPathComponent(myPathItemRole);
         } else {
