@@ -77,7 +77,7 @@ public interface SubstituteMenuItem {
   boolean canExecuteStrictly(@NotNull String pattern);
 
   /**
-   * Creates a new node which will substitute current selected node
+   * Creates a new node which will substitute current selected node.
    *
    * @param pattern the text that the user has typed so far
    */
@@ -85,7 +85,7 @@ public interface SubstituteMenuItem {
   SNode createNode(@NotNull String pattern);
 
   /**
-   * Returns the icon resource that corresponds to this action
+   * Returns the icon resource that corresponds to this action.
    *
    * @param pattern the text that the user has typed so far
    * @return the icon resource, null if not defined
@@ -94,6 +94,7 @@ public interface SubstituteMenuItem {
   IconResource getIcon(@NotNull String pattern);
 
   /**
+   * Performs the selection.
    *
    * @param createdNode the node which was created by the actions
    * @param pattern the text that the user has typed so far
