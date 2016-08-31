@@ -230,7 +230,6 @@
         <child id="3071639529306477415" name="exports" index="24Zfi7" />
         <child id="1219952894531" name="dropRootRule" index="aQYdv" />
         <child id="1200911492601" name="mappingLabel" index="2rTMjI" />
-        <child id="1167088157977" name="createRootRule" index="2VS0gm" />
         <child id="1167328349397" name="reductionMappingRule" index="3acgRq" />
         <child id="1167514678247" name="rootMappingRule" index="3lj3bC" />
       </concept>
@@ -253,11 +252,6 @@
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
         <reference id="1722980698497626483" name="template" index="v9R2y" />
       </concept>
-      <concept id="1167087469898" name="jetbrains.mps.lang.generator.structure.CreateRootRule" flags="lg" index="2VPoh5">
-        <reference id="1167087469901" name="templateNode" index="2VPoh2" />
-        <child id="1167087469900" name="conditionFunction" index="2VPoh3" />
-      </concept>
-      <concept id="1167087518662" name="jetbrains.mps.lang.generator.structure.CreateRootRule_Condition" flags="in" index="2VP$b9" />
       <concept id="1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" flags="in" index="30G5F_" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
@@ -335,11 +329,6 @@
         <child id="2667874559098216723" name="text" index="3HnX3l" />
       </concept>
     </language>
-    <language id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage">
-      <concept id="2030416617761226491" name="jetbrains.mps.lang.slanguage.structure.Model_IsAspectOperation" flags="nn" index="3zA4fs">
-        <reference id="2030416617761226680" name="aspect" index="3zA4av" />
-      </concept>
-    </language>
     <language id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext">
       <concept id="1229477454423" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput" flags="nn" index="12$id9">
         <child id="1229477520175" name="outputNode" index="12$y8L" />
@@ -349,8 +338,6 @@
         <child id="1216860049632" name="inputNode" index="1iwH7V" />
       </concept>
       <concept id="1216860049635" name="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" flags="nn" index="1iwH7S" />
-      <concept id="1217004708011" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" flags="nn" index="1r8y6K" />
-      <concept id="1217026863835" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel" flags="nn" index="1st3f0" />
       <concept id="494100551407707431" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetExport" flags="ng" index="1J843M">
         <reference id="494100551407707432" name="label" index="1J843X" />
         <child id="1770874776445951671" name="inputNode" index="vkvud" />
@@ -380,9 +367,6 @@
       <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
-      </concept>
-      <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
-        <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
@@ -461,38 +445,6 @@
     <property role="3$yP7D" value="true" />
     <node concept="aNPBN" id="7fxZEB1w48A" role="aQYdv">
       <ref role="aOQi4" to="bj1v:7fxZEB1sFyL" resolve="CustomInstructionsContainer" />
-    </node>
-    <node concept="2VPoh5" id="1_Iic4WSosy" role="2VS0gm">
-      <ref role="2VPoh2" to="tp42:1_Iic4WSpJF" resolve="DataFlowAspectDescriptorImpl" />
-      <node concept="2VP$b9" id="1_Iic4WSp7w" role="2VPoh3">
-        <node concept="3clFbS" id="1_Iic4WSp7x" role="2VODD2">
-          <node concept="3clFbF" id="1_Iic4WSpdb" role="3cqZAp">
-            <node concept="1Wc70l" id="4UrKinLj41h" role="3clFbG">
-              <node concept="2OqwBi" id="1ZE6IpOfUCq" role="3uHU7B">
-                <node concept="2OqwBi" id="1ZE6IpOfVSI" role="2Oq$k0">
-                  <node concept="1iwH7S" id="1ZE6IpOfVRk" role="2Oq$k0" />
-                  <node concept="1st3f0" id="1ZE6IpOfVUL" role="2OqNvi" />
-                </node>
-                <node concept="3zA4fs" id="1ZE6IpOfV6j" role="2OqNvi">
-                  <ref role="3zA4av" to="hgrf:2LiUEk8oQ$g" resolve="dataFlow" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="4UrKinLj4g_" role="3uHU7w">
-                <node concept="2OqwBi" id="4UrKinLj5DD" role="2Oq$k0">
-                  <node concept="2OqwBi" id="4UrKinLj4gB" role="2Oq$k0">
-                    <node concept="1iwH7S" id="4UrKinLj4gC" role="2Oq$k0" />
-                    <node concept="1r8y6K" id="4UrKinLj4gD" role="2OqNvi" />
-                  </node>
-                  <node concept="2RRcyG" id="4UrKinLj5Vf" role="2OqNvi">
-                    <ref role="2RRcyH" to="bj1v:nUEAIXlVr8" resolve="Rule" />
-                  </node>
-                </node>
-                <node concept="3GX2aA" id="4UrKinLj4gF" role="2OqNvi" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
     <node concept="3aamgX" id="3eVfSJefkJq" role="3acgRq">
       <ref role="30HIoZ" to="bj1v:3eVfSJeeWos" resolve="ProgramParameter" />
