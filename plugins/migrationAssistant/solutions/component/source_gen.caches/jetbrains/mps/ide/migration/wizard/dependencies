@@ -29,6 +29,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.migration.wizard.MigrationWizardStep" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor" file="MigrationErrorDescriptor.java">
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
@@ -106,6 +107,7 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashSet" />
@@ -118,6 +120,7 @@
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationComponent" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationScriptApplied" />

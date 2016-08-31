@@ -23,8 +23,9 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.BorderFactory;
 import com.intellij.ui.components.JBScrollPane;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.progress.ProgressManager;
 import java.util.Map;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
@@ -101,6 +102,22 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     listPanel.add(new JBScrollPane(myList), BorderLayout.CENTER);
     myProgress = new InlineProgressIndicator(true, myTask) {
       @Override
+      protected void queueProgressUpdate() {
+        if (ThreadUtils.isInEDT()) {
+          updateAndRepaint();
+        } else {
+          ApplicationManager.getApplication().invokeLater(new Runnable() {
+            public void run() {
+              updateAndRepaint();
+            }
+          }, myModalityState);
+        }
+      }
+      @Override
+      protected void queueRunningUpdate(@NotNull Runnable update) {
+        throw new UnsupportedOperationException();
+      }
+      @Override
       protected boolean isFinished() {
         return myIsComplete;
       }
@@ -115,6 +132,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
   public void _init() {
     super._init();
     if (!(myInitialized)) {
+      myModalityState = ModalityState.stateForComponent(myList);
       myIsComplete = false;
       myErrorContainer.setErrorDescriptor(null);
       myInitialized = true;
@@ -126,7 +144,6 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     // this is needed to fully show the step before first migration is started 
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        myModalityState = ModalityState.stateForComponent(myList);
         ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
           public void run() {
             ProgressManager.getInstance().runProcess(new Runnable() {
@@ -190,7 +207,12 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
             setFraction(progress, ProgressEstimation.preCheck(fraction));
           }
         })) {
-          myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.PreCheckError());
+          boolean canIgnore = mySearchBrokenReferences && !(MigrationCheckUtil.haveProblems(modules, false, new _FunctionTypes._void_P1_E0<Double>() {
+            public void invoke(Double fraction) {
+              setFraction(progress, ProgressEstimation.fallbackPreCheck(fraction));
+            }
+          }));
+          myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.PreCheckError(canIgnore));
         }
       }
     });
@@ -276,12 +298,8 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     addElementToMigrationList("Done!");
   }
 
-  public void setFraction(final ProgressIndicator p, final double fraction) {
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        p.setFraction(fraction);
-      }
-    }, ModalityState.any());
+  public void setFraction(ProgressIndicator p, double fraction) {
+    p.setFraction(fraction);
   }
 
   private void addElementToMigrationList(final String step) {
@@ -346,9 +364,8 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
 
   private class PreCheckError extends MigrationErrorDescriptor {
     private final boolean myCanIgnore;
-    public PreCheckError() {
-      Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(getMPSProject());
-      myCanIgnore = (mySearchBrokenReferences ? !(MigrationCheckUtil.haveProblems(modules, false, null)) : false);
+    public PreCheckError(boolean canIgnore) {
+      myCanIgnore = canIgnore;
     }
     public String getMessage() {
       if (!(myCanIgnore)) {
@@ -360,9 +377,9 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     public boolean canIgnore() {
       return myCanIgnore;
     }
-    public Iterable<Problem> getProblems() {
+    public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
       Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(getMPSProject());
-      return MigrationCheckUtil.getProblems(modules, true, null, 100);
+      return MigrationCheckUtil.getProblems(modules, true, MigrationCheckUtil.progressIndicatorToCallback(progressIndicator, 0, 1), 100);
     }
   }
 
@@ -390,9 +407,9 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       }
       return res;
     }
-    public Iterable<Problem> getProblems() {
+    public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
       Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(getMPSProject());
-      return CollectionSequence.fromCollection(MigrationCheckUtil.getNotMigrated(modules, getMPSProject().getComponent(MigrationComponent.class), null, 100)).union(CollectionSequence.fromCollection(MigrationCheckUtil.getProblems(modules, true, null, 100)));
+      return CollectionSequence.fromCollection(MigrationCheckUtil.getNotMigrated(modules, getMPSProject().getComponent(MigrationComponent.class), MigrationCheckUtil.progressIndicatorToCallback(progressIndicator, 0, 0.5), 100)).union(CollectionSequence.fromCollection(MigrationCheckUtil.getProblems(modules, true, MigrationCheckUtil.progressIndicatorToCallback(progressIndicator, 0.5, 1), 100)));
     }
   }
   private class MigrationExceptionError extends MigrationErrorDescriptor {
@@ -404,7 +421,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     public boolean canIgnore() {
       return false;
     }
-    public Iterable<Problem> getProblems() {
+    public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
       return Collections.<Problem>emptyList();
     }
   }
@@ -419,7 +436,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     public boolean canIgnore() {
       return false;
     }
-    public Iterable<Problem> getProblems() {
+    public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
       final List<SModule> modules = ListSequence.fromList(errors).select(new ISelector<ScriptApplied.ScriptAppliedReference, SModule>() {
         public SModule select(ScriptApplied.ScriptAppliedReference it) {
           return it.getModule();

@@ -21,21 +21,26 @@ import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorWizardStep;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.List;
+import jetbrains.mps.lang.migration.runtime.base.Problem;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.migration.check.MigrationOutputUtil;
 import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.ide.GeneralSettings;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
-import java.util.List;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -152,11 +157,21 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
                 StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
                   public void run() {
+                    final Wrappers._T<List<Problem>> problems = new Wrappers._T<List<Problem>>();
+                    ProgressManager.getInstance().run(new Task.Modal(myProject, "Collecting Errors", false) {
+                      public void run(@NotNull final ProgressIndicator progressIndicator) {
+                        myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+                          public void run() {
+                            problems.value = Sequence.fromIterable(myErrors.getProblems(progressIndicator)).toListSequence();
+                          }
+                        });
+                      }
+                    });
                     ApplicationManager.getApplication().invokeLater(new Runnable() {
                       public void run() {
                         myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
                           public void run() {
-                            MigrationOutputUtil.showProblems(myProject, myErrors.getProblems());
+                            MigrationOutputUtil.showProblems(myProject, problems.value);
                           }
                         });
                       }

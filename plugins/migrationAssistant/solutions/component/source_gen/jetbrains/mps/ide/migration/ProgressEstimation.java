@@ -37,6 +37,10 @@ public class ProgressEstimation {
     return cleanupMigrations(1.0) + PRECHECK_FRACTION * doneFraction;
   }
 
+  public static double fallbackPreCheck(double doneFraction) {
+    return preCheck(1.0) + PRECHECK_FRACTION * doneFraction;
+  }
+
   public static double projectMigrations(double doneFraction) {
     return preCheck(1.0) + PROJECT_MIGRATIONS_FRACTION * doneFraction;
   }
