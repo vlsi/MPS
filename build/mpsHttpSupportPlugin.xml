@@ -56,7 +56,7 @@
     <mkdir dir="${build.layout}/http-support/languages/mps-http-support" />
     <mkdir dir="${build.layout}/http-support/lib" />
     <jar destfile="${build.layout}/http-support/lib/icons.jar" duplicate="preserve">
-      <fileset file="${basedir}/workbench/mps-workbench/source/MPS_16.png\" />
+      <fileset file="${basedir}/workbench/mps-icons/source/MPS_16.png" />
     </jar>
     <mkdir dir="${build.layout}/http-support/lib" />
     <jar destfile="${build.layout}/http-support/lib/httpsupport.jar" duplicate="preserve">
