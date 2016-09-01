@@ -470,7 +470,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       this.errors = errors;
     }
     public String getMessage() {
-      return "Migration was not started.<br>" + "Some migration scripts are missing or finished with errors.<br><br>" + "Problems will be shown in Model Checker tool after the project is loaded.<br>" + "You can try to continue migrations manually or execute Migration Assistant later by selecting Tools->Run Migration Assistant from the main menu.";
+      return "Migration was not started.<br>" + "Some migration scripts are missing or finished with errors.<br><br>" + "Problems will be shown in Model Checker tool after the project is loaded.<br>" + "It's possible to invoke Migration Assistant at any time by selecting Tools->Run Migration Assistant from the main menu.";
     }
     public boolean canIgnore() {
       return false;
@@ -524,7 +524,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       this.errors = errors;
     }
     public String getMessage() {
-      return "Migration was not started.<br>" + "The project depends on some external modules that were not fully migrated.<br><br>" + "Problems will be shown in Model Checker tool after the project is loaded.<br>" + "You can try to continue migrations manually or execute Migration Assistant later by selecting Tools->Run Migration Assistant from the main menu.";
+      return "Migration was not started.<br>" + "The project depends on some external modules that were not fully migrated.<br><br>" + "Problems will be shown in Model Checker tool after the project is loaded.<br>" + "It's possible to invoke Migration Assistant at any time by selecting Tools->Run Migration Assistant from the main menu.";
     }
     public boolean canIgnore() {
       return false;
