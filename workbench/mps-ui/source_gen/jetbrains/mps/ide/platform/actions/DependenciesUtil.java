@@ -14,6 +14,11 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class DependenciesUtil {
   public DependenciesUtil() {
   }
+  /**
+   * 
+   * @deprecated FIXME both idea and mps project as arguments, really? introduce new one, with MPSProject only
+   */
+  @Deprecated
   public static SearchResults analyzeDependencies(SModule from, SModule to, Project project, MPSProject mpsProject, boolean isMeta, boolean openTool) {
     DependencyViewerScope fromScope = new DependencyViewerScope(mpsProject.getRepository());
     fromScope.add(from);
@@ -22,7 +27,7 @@ public class DependenciesUtil {
 
     AnalyzeDependenciesViewTool tool = project.getComponent(AnalyzeDependenciesViewTool.class);
     DependenciesPanel panel = as_ehks51_a0a6a1(tool.getComponent(), DependenciesPanel.class);
-    panel.resetContent(fromScope, mpsProject, isMeta);
+    panel.resetContent(fromScope, isMeta);
     panel.selectInTargetsView(to);
     if (openTool) {
       tool.openToolLater(true);
@@ -45,7 +50,7 @@ public class DependenciesUtil {
 
     AnalyzeDependenciesViewTool tool = project.getComponent(AnalyzeDependenciesViewTool.class);
     DependenciesPanel panel = as_ehks51_a0a6a2(tool.getComponent(), DependenciesPanel.class);
-    panel.resetContent(fromScope, mpsProject, isMeta);
+    panel.resetContent(fromScope, isMeta);
     panel.selectInTargetsView(Sequence.fromIterable(to).first());
     tool.openToolLater(true);
     return panel.updateReferencesView(toScope);

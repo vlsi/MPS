@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.tools.BaseTool;
+import jetbrains.mps.project.MPSProject;
 import java.awt.BorderLayout;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.openapi.ui.Splitter;
@@ -36,20 +37,22 @@ public class DependenciesPanel extends JPanel {
   private DependencyTree myInitTree;
   private TargetsView myTargetsView;
   private ReferencesView myReferencesView;
-  private Project myProject;
-  private jetbrains.mps.project.Project myMPSProject;
+  private final Project myProject;
+  private final jetbrains.mps.project.Project myMPSProject;
   private DependencyViewerScope myScope;
   private DependencyViewerScope myInitialScope;
   private Iterable<SNode> mySourceNodes = ListSequence.fromList(new ArrayList<SNode>());
   private BaseTool myTool;
   private ReferencesFinder myReferencesFinder = null;
   private boolean myIsMeta;
-  public DependenciesPanel(BaseTool tool, Project project) {
+  public DependenciesPanel(BaseTool tool, MPSProject project) {
     super(new BorderLayout());
     myTool = tool;
     myIsMeta = false;
+    // FIXME pass project right into DependencyTree instead of setContent(scope, myMPSProject) later in resetContent(), below. 
     myInitTree = new DependencyTree(this);
-    myProject = project;
+    myProject = project.getProject();
+    myMPSProject = project;
     myTargetsView = new TargetsView(myProject, this);
     myReferencesView = new ReferencesView(myProject, this);
     JBScrollPane leftPane = new JBScrollPane(myInitTree);
@@ -64,14 +67,13 @@ public class DependenciesPanel extends JPanel {
     add(splitter, BorderLayout.CENTER);
     add(createToolbar(), BorderLayout.NORTH);
   }
-  public void resetContent(DependencyViewerScope scope, jetbrains.mps.project.Project project, boolean isMeta) {
+  public void resetContent(DependencyViewerScope scope, boolean isMeta) {
     myIsMeta = isMeta;
     myReferencesFinder = new ReferencesFinder();
     setVisible(true);
-    myInitTree.setContent(scope, project);
-    updateTargetsView(scope);
+    myInitTree.setContent(scope, myMPSProject);
     myInitialScope = scope;
-    myMPSProject = project;
+    updateTargetsView(scope);
     repaint();
   }
   public UsagesView getReferencesViewComponent() {
@@ -171,7 +173,7 @@ public class DependenciesPanel extends JPanel {
     }
     @Override
     public void actionPerformed(AnActionEvent event) {
-      resetContent(myInitialScope, myMPSProject, myIsMeta);
+      resetContent(myInitialScope, myIsMeta);
     }
   }
   public class ToggleUsedLanguages extends ToggleAction {
@@ -184,7 +186,7 @@ public class DependenciesPanel extends JPanel {
     }
     @Override
     public void setSelected(AnActionEvent event, boolean b) {
-      resetContent(myInitialScope, myMPSProject, b);
+      resetContent(myInitialScope, b);
     }
   }
 }

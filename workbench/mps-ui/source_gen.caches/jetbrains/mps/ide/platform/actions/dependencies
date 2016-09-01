@@ -37,6 +37,7 @@
   <dependency className="jetbrains.mps.ide.platform.actions.DependenciesUtil" file="DependenciesUtil.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
