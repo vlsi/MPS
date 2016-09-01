@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.lang.editor.menus.substitute.SmartReferenceSubstituteMenuItem;
-import jetbrains.mps.lang.editor.menus.substitute.SubstituteMenuItemWrapper;
-import jetbrains.mps.nodeEditor.cellMenu.CompletionActionItemAsSubstituteAction;
+import jetbrains.mps.lang.editor.menus.substitute.SubstituteMenuItemUtil;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -38,7 +37,7 @@ public class CompletionActionItemUtil {
   public static SNode getReferentNode(CompletionActionItem item) {
     if (item instanceof SubstituteMenuItemAsCompletionActionItem) {
       final SubstituteMenuItem substituteItem = ((SubstituteMenuItemAsCompletionActionItem) item).getSubstituteItem();
-      return getReferentNode(substituteItem);
+      return SubstituteMenuItemUtil.getReferentNode(substituteItem);
     }
     return null;
   }
@@ -47,17 +46,13 @@ public class CompletionActionItemUtil {
     if (item instanceof SubstituteMenuItemAsCompletionActionItem) {
       final SNode referentNode = getReferentNode(item);
       if (referentNode != null) {
-        return NodePresentationUtil.matchingText(referentNode, true, true);
+        final String referentMatchingText = NodePresentationUtil.matchingText(referentNode, true, true);
+        final SAbstractConcept outputConcept = ((SubstituteMenuItemAsCompletionActionItem) item).getSubstituteItem().getOutputConcept();
+        if (outputConcept != null && ReferenceConceptUtil.hasSmartAlias(outputConcept)) {
+          return ReferenceConceptUtil.getPresentationFromSmartAlias(outputConcept, referentMatchingText);
+        }
+        return referentMatchingText;
       }
-    }
-    return null;
-  }
-
-   private static SNode getReferentNode(SubstituteMenuItem item) {
-    if (item instanceof SmartReferenceSubstituteMenuItem) {
-      return ((SmartReferenceSubstituteMenuItem) item).getReferentNode();
-    } else if (item instanceof SubstituteMenuItemWrapper) {
-      return getReferentNode(((SubstituteMenuItemWrapper) item).getWrappedItem());
     }
     return null;
   }

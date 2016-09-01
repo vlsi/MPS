@@ -94,7 +94,7 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
     return IconResourceUtil.getIconResourceForConcept(myReferentNode.getConcept());
   }
 
-  public SNode getReferentNode(){
+  SNode getReferentNode(){
     return myReferentNode;
   }
 }

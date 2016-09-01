@@ -83,7 +83,7 @@ public class SubstituteMenuItemWrapper implements SubstituteMenuItem {
     return myItem.getIcon(pattern);
   }
 
-  public SubstituteMenuItem getWrappedItem() {
+  SubstituteMenuItem getWrappedItem() {
     return myItem;
   }
 }
