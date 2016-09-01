@@ -524,7 +524,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -36138,11 +36138,21 @@
       <ref role="1bYAoF" node="6R$xsE24aki" resolve="NewElement" />
       <node concept="pLAjd" id="2HiVo5Pctgf" role="Zd501">
         <property role="pLAjf" value="VK_N" />
-        <property role="pLAjc" value="ctrl+alt" />
+        <property role="pLAjc" value="meta" />
       </node>
       <node concept="pLAjd" id="2HiVo5Pctgg" role="Zd501">
         <property role="pLAjf" value="VK_ENTER" />
         <property role="pLAjc" value="ctrl" />
+      </node>
+      <node concept="pLAjd" id="1RsxAOl3wEE" role="Zd501">
+        <property role="pLAjf" value="VK_INSERT" />
+        <property role="pLAjc" value="alt" />
+        <property role="3hacHL" value="remove" />
+      </node>
+      <node concept="pLAjd" id="1RsxAOl3wEW" role="Zd501">
+        <property role="pLAjf" value="VK_INSERT" />
+        <property role="pLAjc" value="ctrl+alt" />
+        <property role="3hacHL" value="remove" />
       </node>
     </node>
     <node concept="Zd509" id="2HiVo5Pctgh" role="Zd508">
@@ -36150,10 +36160,7 @@
       <node concept="pLAjd" id="2HiVo5Pctgi" role="Zd501">
         <property role="pLAjf" value="VK_DELETE" />
         <property role="pLAjc" value="meta" />
-      </node>
-      <node concept="pLAjd" id="2HiVo5Pctom" role="Zd501">
-        <property role="pLAjf" value="VK_BACK_SPACE" />
-        <property role="pLAjc" value="meta" />
+        <property role="3hacHL" value="replace all" />
       </node>
     </node>
     <node concept="Zd509" id="2HiVo5Pctgj" role="Zd508">
@@ -36200,6 +36207,29 @@
       <node concept="pLAjd" id="2HiVo5Pctgy" role="Zd501">
         <property role="pLAjf" value="VK_B" />
         <property role="pLAjc" value="ctrl" />
+      </node>
+    </node>
+    <node concept="Zd509" id="__m$GJJprk" role="Zd508">
+      <ref role="1bYAoF" node="3oS0mv1G9Wv" resolve="GoToRootNode" />
+      <node concept="pLAjd" id="__m$GJJprm" role="Zd501">
+        <property role="pLAjc" value="meta" />
+        <property role="pLAjf" value="VK_O" />
+      </node>
+    </node>
+    <node concept="Zd509" id="1RsxAOl2GsZ" role="Zd508">
+      <ref role="1bYAoF" node="3oS0mv1G9XO" resolve="GoToModel" />
+      <node concept="pLAjd" id="1RsxAOl2Gt0" role="Zd501">
+        <property role="pLAjf" value="VK_O" />
+        <property role="pLAjc" value="meta+shift" />
+        <property role="3hacHL" value="replace all" />
+      </node>
+    </node>
+    <node concept="Zd509" id="1RsxAOl3vcr" role="Zd508">
+      <ref role="1bYAoF" node="3oS0mv1G9YQ" resolve="GoToModule" />
+      <node concept="pLAjd" id="1RsxAOl3vcs" role="Zd501">
+        <property role="pLAjf" value="VK_O" />
+        <property role="pLAjc" value="meta+alt" />
+        <property role="3hacHL" value="replace all" />
       </node>
     </node>
   </node>

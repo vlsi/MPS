@@ -6,8 +6,8 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="3ecd7c84-cde3-45de-886c-135ecc69b742" name="jetbrains.mps.lang.refactoring" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
@@ -108,6 +108,7 @@
       <concept id="1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" flags="ng" index="pLAjd">
         <property id="1207318242773" name="modifiers" index="pLAjc" />
         <property id="1207318242774" name="keycode" index="pLAjf" />
+        <property id="6785623076777470797" name="change" index="3hacHL" />
       </concept>
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
@@ -154,6 +155,7 @@
       </concept>
       <concept id="1562714432501166197" name="jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration" flags="ng" index="Zd50a">
         <property id="8646726056720906098" name="isPluginXmlKeymap" index="Z2u3V" />
+        <property id="1562714432501166281" name="keymap" index="Zd52Q" />
         <child id="1562714432501166199" name="shortcutChange" index="Zd508" />
       </concept>
       <concept id="6193305307616715384" name="jetbrains.mps.lang.plugin.structure.ShortcutChange" flags="lg" index="1bYyw_">
@@ -2833,6 +2835,9 @@
     <node concept="2zDL_w" id="3CM_lYH0f01" role="yhzZR">
       <node concept="2zDLo0" id="3CM_lYH0f03" role="2zDLrY">
         <ref role="2zDLo1" node="cvGLnZnSxc" resolve="Default" />
+      </node>
+      <node concept="2zDLo0" id="__m$GJKXXR" role="2zDLrY">
+        <ref role="2zDLo1" node="__m$GJJjC5" resolve="Mac_10_5" />
       </node>
       <node concept="2zDL_x" id="3CM_lYH0f04" role="2zDL_s">
         <ref role="2zDL_u" node="1bRM4HyGOKM" resolve="SolutionActionsEx" />
@@ -24291,6 +24296,35 @@
     <node concept="3Tm1VV" id="7UBFs_LRQGi" role="1B3o_S" />
     <node concept="3uibUv" id="42LwYUtsfx9" role="EKbjA">
       <ref role="3uigEE" to="lfzw:1F5g4zQqSPt" resolve="MoveNodesAction" />
+    </node>
+  </node>
+  <node concept="Zd50a" id="__m$GJJjC5">
+    <property role="Zd52Q" value="Mac OS X 10.5+" />
+    <property role="TrG5h" value="Mac_10_5" />
+    <property role="Z2u3V" value="true" />
+    <node concept="Zd509" id="__m$GJJjHW" role="Zd508">
+      <ref role="1bYAoF" node="7ECFGRPAHMR" resolve="OverrideMethod" />
+      <node concept="pLAjd" id="__m$GJJjHY" role="Zd501">
+        <property role="pLAjc" value="ctrl" />
+        <property role="pLAjf" value="VK_O" />
+        <property role="3hacHL" value="replace all" />
+      </node>
+    </node>
+    <node concept="Zd509" id="32_EJN4ggwd" role="Zd508">
+      <ref role="1bYAoF" node="7ECFGRPAHLT" resolve="ImplementMethod" />
+      <node concept="pLAjd" id="32_EJN4ggwe" role="Zd501">
+        <property role="pLAjf" value="VK_I" />
+        <property role="pLAjc" value="ctrl" />
+        <property role="3hacHL" value="replace all" />
+      </node>
+    </node>
+    <node concept="Zd509" id="32_EJN4ghKa" role="Zd508">
+      <ref role="1bYAoF" node="2o0RM2fztWF" resolve="SafeDeleteConceptMethod" />
+      <node concept="pLAjd" id="32_EJN4ghKc" role="Zd501">
+        <property role="pLAjc" value="meta" />
+        <property role="pLAjf" value="VK_DELETE" />
+        <property role="3hacHL" value="replace all" />
+      </node>
     </node>
   </node>
 </model>

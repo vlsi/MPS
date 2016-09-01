@@ -296,7 +296,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -10078,13 +10078,10 @@
     </node>
     <node concept="Zd509" id="2HiVo5PaRe0" role="Zd508">
       <ref role="1bYAoF" node="6KwcZ1G3Po2" resolve="SelectUp" />
-      <node concept="pLAjd" id="2HiVo5PaRe1" role="Zd501">
-        <property role="pLAjf" value="VK_UP" />
-        <property role="pLAjc" value="ctrl" />
-      </node>
       <node concept="pLAjd" id="2HiVo5PaRe2" role="Zd501">
-        <property role="pLAjf" value="VK_W" />
-        <property role="pLAjc" value="ctrl" />
+        <property role="pLAjf" value="VK_UP" />
+        <property role="pLAjc" value="alt" />
+        <property role="3hacHL" value="replace all" />
       </node>
     </node>
     <node concept="Zd509" id="2HiVo5PaRe3" role="Zd508">
@@ -10092,6 +10089,14 @@
       <node concept="pLAjd" id="2HiVo5PaRe4" role="Zd501">
         <property role="pLAjf" value="VK_N" />
         <property role="pLAjc" value="ctrl" />
+      </node>
+    </node>
+    <node concept="Zd509" id="32_EJN4gfmK" role="Zd508">
+      <ref role="1bYAoF" node="3hypUcHYaIV" resolve="DeleteLine" />
+      <node concept="pLAjd" id="32_EJN4gfmL" role="Zd501">
+        <property role="pLAjf" value="VK_BACK_SPACE" />
+        <property role="pLAjc" value="ctrl" />
+        <property role="3hacHL" value="replace all" />
       </node>
     </node>
   </node>
