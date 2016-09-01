@@ -532,7 +532,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     public Iterable<Problem> getProblems() {
       return MapSequence.fromMap(errors).select(new ISelector<IMapping<SModule, SModule>, DependencyOnNotMigratedLibProblem>() {
         public DependencyOnNotMigratedLibProblem select(IMapping<SModule, SModule> it) {
-          return new DependencyOnNotMigratedLibProblem(it.key(), it.value());
+          return new DependencyOnNotMigratedLibProblem(it.value(), it.key());
         }
       });
     }
