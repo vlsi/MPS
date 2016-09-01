@@ -1199,9 +1199,6 @@
   <node concept="312cEu" id="5JsnGMj1qiI">
     <property role="TrG5h" value="JavaClassStubModelRootFactory" />
     <node concept="3Tm1VV" id="5JsnGMj1qiJ" role="1B3o_S" />
-    <node concept="3uibUv" id="5JsnGMj1qiK" role="EKbjA">
-      <ref role="3uigEE" to="dush:~ModelRootFactory" resolve="ModelRootFactory" />
-    </node>
     <node concept="3clFb_" id="5JsnGMj1qiP" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -1226,6 +1223,9 @@
       <node concept="2AHcQZ" id="3tYsUK_sRLm" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
+    </node>
+    <node concept="3uibUv" id="2vQAd4gSK9c" role="EKbjA">
+      <ref role="3uigEE" to="dush:~ModelRootFactory" resolve="ModelRootFactory" />
     </node>
   </node>
   <node concept="312cEu" id="5JsnGMj1qiW">
