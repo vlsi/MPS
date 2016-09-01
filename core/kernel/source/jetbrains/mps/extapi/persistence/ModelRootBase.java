@@ -18,6 +18,7 @@ package jetbrains.mps.extapi.persistence;
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
+import jetbrains.mps.util.ReferenceUpdater;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -30,6 +31,7 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
@@ -42,7 +44,7 @@ public abstract class ModelRootBase implements ModelRoot {
 
   @Nullable private SModule myModule;
   @Nullable private volatile SRepository myRepository;
-  private final Set<SModel> myModels = new HashSet<SModel>();
+  private final Set<SModel> myModels = new LinkedHashSet<SModel>();
   private ModuleListener myModuleListener;
 
   @Nullable
@@ -165,6 +167,47 @@ public abstract class ModelRootBase implements ModelRoot {
         module.unregisterModel((SModelBase) model);
       }
     }
+  }
+
+  /**
+   * Returns {@link CloneCapabilities} of this model root.
+   *
+   * By default, model root doesn't support cloning,
+   * so returned {@link CloneCapabilities} instance will have no allowed {@link CloneType}'s
+   *
+   * If you implement custom model root and you want to support cloning for your model root,
+   * you should override this method.
+   *
+   * @return {@link CloneCapabilities} of this model root.
+   */
+  public CloneCapabilities getCloneCapabilities(){
+    CloneCapabilities capabilities = new CloneCapabilities();
+    capabilities.setErrorMessage("This model roots doesn't support cloning");
+    return capabilities;
+  }
+
+  /**
+   * Clones this model root to <t>targetModule</t> by given <t>cloneType</t>, or
+   * returns <t>null</t>, if this model root doesn't provide cloning of given <t>cloneType</t>.
+   *
+   * Note that returned model root is't attached to <t>targetModule</t>,
+   * so it should be done after all "after-clone" routines (e.g. updating references).
+   *
+   * @param targetModule target Module
+   * @param cloneType type of cloning operation
+   * @param referenceUpdater reference updater;
+   *                         supposed workflow : you have several model roots to clone,
+   *                         so you create {@linkplain ReferenceUpdater reference updater}, provide it for
+   *                         each invocation of this method to collect reference that should be updated and
+   *                         models where references should be updated, than invoke {@link ReferenceUpdater#adjust()}.
+   * @return clone of this model root, or <t>null</t>, if this model root can't be cloned.
+   */
+  @Nullable
+  public abstract ModelRoot cloneTo(@NotNull SModule targetModule, @NotNull CloneType cloneType, @NotNull ReferenceUpdater referenceUpdater);
+
+  @Override
+  public String toString() {
+    return "(" + getType() + ") " + getPresentation();
   }
 
   private class ModuleListener extends SModuleListenerBase {

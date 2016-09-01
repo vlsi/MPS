@@ -32,6 +32,7 @@ import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
 import java.io.IOException;
 import java.util.Map;
+import java.util.Objects;
 
 
 public class DefaultSModelDescriptor extends LazyEditableSModelBase implements GeneratableSModel, PersistenceVersionAware {
@@ -70,6 +71,12 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
     ModelLoadResult result;
     try {
       result = myPersistence.readModel(myHeader, state);
+      if (shouldCorrectModelRef()){
+        if(!Objects.equals(myHeader.getModelReference(),result.getModel().getReference())){
+          result.getModel().changeModelReference(myHeader.getModelReference());
+          setChanged(true);
+        }
+      }
     } catch (ModelReadException e) {
       LOG.warning(String.format("Failed to load model %s: %s", getSource().getLocation(), e.toString()));
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
@@ -93,6 +100,10 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
             "the model will not be available.\n" +
             "Make sure that all project's roots and/or the model namespace is correct");
     return result;
+  }
+
+  protected boolean shouldCorrectModelRef(){
+    return false;
   }
 
   /**

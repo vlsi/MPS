@@ -47,7 +47,7 @@ public abstract class FolderModelRootBase extends ModelRootBase implements FileS
 
   @Override
   public String getPresentation() {
-    return (getPath() != null ? getPath() : "no path") + " (" + getType() + ")";
+    return (getPath() != null ? getPath() : "no path");
   }
 
   @Override

@@ -15,20 +15,35 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.persistence.MementoImpl;
+import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MementoWithFS;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.MacroHelper;
+import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.util.PathUtil;
+import jetbrains.mps.util.ReferenceUpdater;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.vfs.openapi.FileSystem;
+import jetbrains.mps.vfs.path.Path;
+import jetbrains.mps.vfs.path.UniPath;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.Memento;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,6 +57,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
 
   public static final String CONTENT_PATH = "contentPath";
   public static final String LOCATION = "location";
+  public static final String PATH = "path";
 
   protected FileSystem myFileSystem = jetbrains.mps.vfs.FileSystem.getInstance(); // also read from memento
   private String myContentRoot;
@@ -121,12 +137,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
 
   @Override
   public String getPresentation() {
-    return getPresentation0();
-  }
-
-  @NotNull
-  private String getPresentation0() {
-    return "(" + getType() + ") " + (getContentRoot() != null ? getContentRoot() : "no path");
+    return getContentRoot() != null ? getContentRoot() : "no path";
   }
 
   public boolean supportsFiles(String kind) {
@@ -156,7 +167,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
         } else if (s.startsWith(myContentRoot + "/")) { // todo get rid of
           modelRoot.put(LOCATION, s.substring(myContentRoot.length() + 1));
         } else {
-          modelRoot.put("path", s);
+          modelRoot.put(PATH, s);
         }
       }
     }
@@ -182,7 +193,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
             files.add(myContentRoot + "/" + relPath);
           }
         } else {
-          files.add(root.get("path"));
+          files.add(root.get(PATH));
         }
       }
     }
@@ -232,6 +243,103 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   }
 
   @Override
+  public CloneCapabilities getCloneCapabilities() {
+    CloneCapabilities capabilities = new CloneCapabilities();
+    capabilities.setCloneable(CloneType.REUSE, true);
+    capabilities.setCloneable(CloneType.CLONE, isInModuleDirectory());
+    return capabilities;
+  }
+
+  protected  boolean isInModuleDirectory() {
+    AbstractModule module = (AbstractModule) getModule();
+    Path modelRootPath = UniPath.fromString(getContentRoot()).toAbsolute().toNormal().toSystemPath();
+    return module != null && modelRootPath.startsWith(module.getModuleSourceDir().toPath().toAbsolute().toNormal().toSystemPath());
+  }
+
+  @Override
+  public ModelRoot cloneTo(@NotNull SModule targetModule, @NotNull CloneType cloneType, @NotNull ReferenceUpdater referenceUpdater) {
+    if (getModule() == null) {
+      throw new IllegalStateException("Can't clone model root that isn't attached to any module");
+    }
+
+    AbstractModule sModule = (AbstractModule) getModule();
+    AbstractModule tModule = (AbstractModule) targetModule;
+
+    final Memento targetMemento = new MementoImpl();
+    final FileBasedModelRoot targetModelRoot = ((FileBasedModelRoot) PersistenceRegistry.getInstance().getModelRootFactory(getType()).create());
+
+    save(targetMemento);
+
+    if (cloneType == CloneType.CLONE) {
+      cloneContent(targetMemento, sModule, tModule);
+    }
+    targetModelRoot.setModule(tModule);
+    targetModelRoot.load(targetMemento);
+
+    loadClonedModelRootContent(targetModelRoot, referenceUpdater);
+
+    return targetModelRoot;
+  }
+
+  protected Iterable<SModel> loadClonedModelRootContent(FileBasedModelRoot targetModelRoot, ReferenceUpdater referenceUpdater) {
+    Iterator<SModel> sourceModelIterator = loadModels().iterator();
+
+    Iterable<SModel> targetModels = targetModelRoot.loadModels();
+    Iterator<SModel> targetModelIterator = targetModels.iterator();
+
+    while (sourceModelIterator.hasNext()) {
+      referenceUpdater.addModelReferenceMapping(sourceModelIterator.next().getReference(), targetModelIterator.next().getReference());
+    }
+    return targetModels;
+  }
+
+  private static void cloneContent(Memento memento, final AbstractModule source, final AbstractModule target) {
+    final MacroHelper sMacroHelper = MacrosFactory.forModuleFile(getModuleFile(source));
+    final MacroHelper tMacroHelper =  MacrosFactory.forModuleFile(getModuleFile(target));
+
+    final jetbrains.mps.vfs.FileSystem sFileSystem = (jetbrains.mps.vfs.FileSystem) source.getFileSystem();
+    final jetbrains.mps.vfs.FileSystem tFileSystem = (jetbrains.mps.vfs.FileSystem) target.getFileSystem();
+
+
+    final String sContentPath = memento.get(FileBasedModelRoot.CONTENT_PATH);
+    final String tContentPath = tMacroHelper.expandPath(sMacroHelper.shrinkPath(sContentPath));
+
+    final IFile sContentFile = sFileSystem.getFile(sContentPath);
+    final IFile tContentFile = tFileSystem.getFile(tContentPath);
+
+    memento.put(FileBasedModelRoot.CONTENT_PATH, tContentPath);
+
+    for (Memento child : memento.getChildren()) {
+      String location = child.get(FileBasedModelRoot.LOCATION);
+      String path = child.get(FileBasedModelRoot.PATH);
+
+      IFile sSourceFile = null;
+      IFile tSourceFile = null;
+
+      if (location != null) {
+        sSourceFile = sContentFile.getDescendant(location);
+        tSourceFile = tContentFile.getDescendant(location);
+      }
+      if (path != null) {
+        String newPath = tMacroHelper.expandPath(sMacroHelper.shrinkPath(path));
+
+        sSourceFile = sFileSystem.getFile(path);
+        tSourceFile = tFileSystem.getFile(newPath);
+
+        child.put(FileBasedModelRoot.PATH, newPath);
+      }
+      IFileUtils.copyDirectoryContent(sSourceFile, tSourceFile);
+    }
+  }
+
+  protected static IFile getModuleFile(final AbstractModule module) {
+    if (module instanceof Generator) {
+      return ((Generator) module).getSourceLanguage().getDescriptorFile();
+    }
+    return module.getDescriptorFile();
+  }
+
+  @Override
   public final boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
@@ -246,11 +354,6 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     int result = myContentRoot != null ? myContentRoot.hashCode() : 0;
     result = 31 * result + (myFilesForKind != null ? myFilesForKind.hashCode() : 0);
     return result;
-  }
-
-  @Override
-  public String toString() {
-    return getPresentation0();
   }
 
   private final class PathListener implements FileSystemListener {
