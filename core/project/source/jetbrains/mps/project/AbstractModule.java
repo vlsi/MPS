@@ -26,6 +26,8 @@ import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.ErrorHandler;
+import jetbrains.mps.project.dependency.PostingWarningsErrorHandler;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -42,12 +44,12 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
-import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.Reference;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.openapi.FileSystem;
@@ -182,15 +184,15 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @Override
   public Set<SLanguage> getUsedLanguages() {
     assertCanRead();
-    LinkedHashSet<SLanguage> usedLanguages = new LinkedHashSet<SLanguage>();
-    LinkedHashSet<SModuleReference> devkits = new LinkedHashSet<SModuleReference>();
-    collectLanguagesAndDevkits(usedLanguages, devkits);
-    return usedLanguages;
+    return collectLanguagesAndDevkits().languages;
   }
 
   // fills collections with of imported languages and devkits.
   // Languages include directly imported and coming immediately through devkits; listed devkits are imported directly, without those they extend (why?).
-  private void collectLanguagesAndDevkits(Set<SLanguage> usedLanguages, Set<SModuleReference> devkits) {
+  private LangAndDevkits collectLanguagesAndDevkits() {
+    Set<SLanguage> usedLanguages = new LinkedHashSet<>();
+    Set<SModuleReference> devkits = new LinkedHashSet<>();
+
     // perhaps, shall introduce ModuleImports similar to ModelImports to accomplish this?
     for (SModel m : getModels()) {
       final SModelInternal modelInternal = (SModelInternal) m;
@@ -210,6 +212,17 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       }
     }
     usedLanguages.add(BootstrapLanguages.getLangCore());
+    return new LangAndDevkits(usedLanguages, devkits);
+  }
+
+  private static class LangAndDevkits {
+    public final Set<SLanguage> languages;
+    public final Set<SModuleReference> devkits;
+
+    public LangAndDevkits(@NotNull Set<SLanguage> languages, @NotNull Set<SModuleReference> devkits) {
+      this.languages = languages;
+      this.devkits = devkits;
+    }
   }
 
   @Override
@@ -924,18 +937,23 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     Map<SLanguage, Integer> oldLanguageVersions = md.getLanguageVersions();
     Map<SLanguage, Integer> newLanguageVersions = new HashMap<SLanguage, Integer>();
 
-    Set<SLanguage> usedLanguages = new LinkedHashSet<SLanguage>();
-    Set<SModuleReference> devkits = new LinkedHashSet<SModuleReference>();
-    collectLanguagesAndDevkits(usedLanguages, devkits);
-    final Set<SLanguage> allUsedLanguages = new SLanguageHierarchy(usedLanguages).getExtended();
+    LangAndDevkits langAndDevkits = collectLanguagesAndDevkits();
+    Set<SLanguage> usedLanguages = langAndDevkits.languages;
+    Set<SModuleReference> devkits = langAndDevkits.devkits;
+    SLanguageHierarchy languageHierarchy = new SLanguageHierarchy(usedLanguages);
+    Reference<Boolean> hasErrors = new Reference<>(false);
+    Set<SLanguage> extendingLangsClosure = languageHierarchy.getExtendedLangs(language -> hasErrors.set(true));
+    if (hasErrors.get()) {
+      return;
+    }
     if (!md.hasLanguageVersions()) {
-      for (SLanguage lang : allUsedLanguages) {
+      for (SLanguage lang : extendingLangsClosure) {
         newLanguageVersions.put(lang, 0);
       }
       md.getUsedDevkits().addAll(devkits);
       md.setHasLanguageVersions(true);
     } else {
-      for (SLanguage lang : allUsedLanguages) {
+      for (SLanguage lang : extendingLangsClosure) {
         if (oldLanguageVersions.containsKey(lang)) {
           newLanguageVersions.put(lang, oldLanguageVersions.get(lang));
         } else {
@@ -1003,7 +1021,12 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     Map<SModuleReference, Integer> newDepVersions = new HashMap<SModuleReference, Integer>();
     Set<SModule> visible = new LinkedHashSet<SModule>();
     visible.add(this);
-    visible.addAll(new GlobalModuleDependenciesManager(this).getModules(Deptype.VISIBLE));
+    PostingWarningsErrorHandler handler = new PostingWarningsErrorHandler();
+    Collection<SModule> dependentModules = new GlobalModuleDependenciesManager(this, handler).getModules(Deptype.VISIBLE);
+    if (handler.hasErrors()) {
+      return;
+    }
+    visible.addAll(dependentModules);
     if (!md.hasDependencyVersions()) {
       for (SModule dep : visible) {
         newDepVersions.put(dep.getModuleReference(), 0);
@@ -1035,7 +1058,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
    * has a fallback if the usedLanguage is absent in the module descriptor. if it happens then returns simply the current usedLanguage version
    * @param check is whether to show error for not found version
    */
-  public int getUsedLanguageVersion(SLanguage usedLanguage, boolean check) {
+  public int getUsedLanguageVersion(@NotNull SLanguage usedLanguage, boolean check) {
     ModuleDescriptor moduleDescriptor = getModuleDescriptor();
     if (!checkDescriptorNotNull(moduleDescriptor)) {
       return -1;
@@ -1043,11 +1066,11 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     Integer res = moduleDescriptor.getLanguageVersions().get(usedLanguage);
     if (res == null) {
       if (check) {
-        LOG.error("getUsedLanguageVersion can't find a version for language " + usedLanguage.getQualifiedName() +
-                " in module " + getModuleName() + "." +
-                " This can either mean that the language is not imported into this module or that " +
-                "#validateLanguageVersions() was not called on this module in appropriate moment.",
-            new Throwable());
+        LOG.warn(String.format(
+            "#getUsedLanguageVersion can't find a version for language %s in module %s, so it is falling back to the current version of the language. " +
+                "Probably the language is not imported into this module or #validateLanguageVersions() was not called on this module in appropriate moment." +
+                "NB: there might be migrations which must be applied, however they are not going to.",
+            usedLanguage.getQualifiedName(), getModuleName()), new Throwable());
       }
       return usedLanguage.getLanguageVersion();
     }
