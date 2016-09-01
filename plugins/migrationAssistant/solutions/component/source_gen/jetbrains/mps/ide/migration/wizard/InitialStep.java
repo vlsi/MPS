@@ -57,7 +57,7 @@ public class InitialStep extends MigrationWizardStep {
 
     JPanel settingsPanel = new JPanel();
     settingsPanel.setLayout(new BoxLayout(settingsPanel, BoxLayout.Y_AXIS));
-    settingsPanel.setBorder(IdeBorderFactory.createTitledBorder("Settings", true));
+    settingsPanel.setBorder(IdeBorderFactory.createTitledBorder("Options", true));
     pagePanel.add(settingsPanel, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     for (ProjectMigrationWithOptions.Option option : ListSequence.fromList(myOptionList)) {

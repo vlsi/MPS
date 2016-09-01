@@ -4751,7 +4751,7 @@
                 <ref role="1Pybhc" to="lzb2:~IdeBorderFactory" resolve="IdeBorderFactory" />
                 <ref role="37wK5l" to="lzb2:~IdeBorderFactory.createTitledBorder(java.lang.String,boolean):com.intellij.ui.border.IdeaTitledBorder" resolve="createTitledBorder" />
                 <node concept="Xl_RD" id="2DL82jGzGL6" role="37wK5m">
-                  <property role="Xl_RC" value="Settings" />
+                  <property role="Xl_RC" value="Options" />
                 </node>
                 <node concept="3clFbT" id="2DL82jGzGL7" role="37wK5m">
                   <property role="3clFbU" value="true" />
