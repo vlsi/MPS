@@ -125,6 +125,9 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   @Override
   public List<SubstituteMenuItem> createItems(@Nullable SubstituteMenuLookup menuLookup) {
     if (menuLookup == null) {
+      if (myContainmentLink == null) {
+        return Collections.emptyList();
+      }
       menuLookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(myEditorContext.getRepository()), myContainmentLink.getTargetConcept());
     }
     final CachingPredicate<SAbstractConcept> cachingPredicate = createCachingPredicate();
