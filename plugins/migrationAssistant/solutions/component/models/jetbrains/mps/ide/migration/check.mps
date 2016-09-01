@@ -2,15 +2,15 @@
 <model ref="r:5c426f30-a9c9-463b-90a5-2fae21a10696(jetbrains.mps.ide.migration.check)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="1" />
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -4173,6 +4173,136 @@
       <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
       <node concept="3uibUv" id="5AcrK94Kgom" role="11_B2D">
         <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+      </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="ANqTy7p3iq">
+    <property role="2bfB8j" value="false" />
+    <property role="TrG5h" value="DependencyOnNotMigratedLibProblem" />
+    <node concept="312cEg" id="ANqTy7pLf7" role="jymVt">
+      <property role="TrG5h" value="myDepModule" />
+      <node concept="3Tm6S6" id="ANqTy7pLf8" role="1B3o_S" />
+      <node concept="3uibUv" id="ANqTy7pLfa" role="1tU5fm">
+        <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+      </node>
+    </node>
+    <node concept="312cEg" id="ANqTy7pLwj" role="jymVt">
+      <property role="TrG5h" value="myProjectModule" />
+      <node concept="3Tm6S6" id="ANqTy7pLwk" role="1B3o_S" />
+      <node concept="3uibUv" id="ANqTy7pLwl" role="1tU5fm">
+        <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+      </node>
+    </node>
+    <node concept="3clFbW" id="ANqTy7p3iy" role="jymVt">
+      <node concept="3cqZAl" id="ANqTy7p3iB" role="3clF45" />
+      <node concept="3Tm1VV" id="ANqTy7p3iC" role="1B3o_S" />
+      <node concept="3clFbS" id="ANqTy7p3iD" role="3clF47">
+        <node concept="XkiVB" id="ANqTy7pJqg" role="3cqZAp">
+          <ref role="37wK5l" to="6f4m:3n7MNzOKQKS" resolve="Problem" />
+          <node concept="37vLTw" id="ANqTy7pJtD" role="37wK5m">
+            <ref role="3cqZAo" node="ANqTy7pEHS" resolve="projectModule" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="ANqTy7pLOz" role="3cqZAp">
+          <node concept="37vLTI" id="ANqTy7pLWK" role="3clFbG">
+            <node concept="37vLTw" id="ANqTy7pM2a" role="37vLTx">
+              <ref role="3cqZAo" node="ANqTy7pEHS" resolve="projectModule" />
+            </node>
+            <node concept="37vLTw" id="ANqTy7pLOx" role="37vLTJ">
+              <ref role="3cqZAo" node="ANqTy7pLwj" resolve="myProjectModule" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="ANqTy7pLfb" role="3cqZAp">
+          <node concept="37vLTI" id="ANqTy7pLfd" role="3clFbG">
+            <node concept="37vLTw" id="ANqTy7pLfg" role="37vLTJ">
+              <ref role="3cqZAo" node="ANqTy7pLf7" resolve="myDepModule" />
+            </node>
+            <node concept="37vLTw" id="ANqTy7pLfh" role="37vLTx">
+              <ref role="3cqZAo" node="ANqTy7pEN1" resolve="depModule" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="ANqTy7pEHS" role="3clF46">
+        <property role="TrG5h" value="projectModule" />
+        <node concept="3uibUv" id="ANqTy7pKLf" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="ANqTy7pEN1" role="3clF46">
+        <property role="TrG5h" value="depModule" />
+        <node concept="3uibUv" id="ANqTy7pKRg" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="ANqTy7p3iM" role="jymVt">
+      <property role="TrG5h" value="getMessage" />
+      <property role="1EzhhJ" value="false" />
+      <node concept="3uibUv" id="ANqTy7p3iN" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="3Tm1VV" id="ANqTy7p3iO" role="1B3o_S" />
+      <node concept="3clFbS" id="ANqTy7p3iP" role="3clF47">
+        <node concept="3clFbF" id="ANqTy7pKXM" role="3cqZAp">
+          <node concept="3cpWs3" id="ANqTy7pPqb" role="3clFbG">
+            <node concept="Xl_RD" id="ANqTy7pPqA" role="3uHU7w">
+              <property role="Xl_RC" value=", which is not in project and is not fully migrated." />
+            </node>
+            <node concept="3cpWs3" id="ANqTy7pOS6" role="3uHU7B">
+              <node concept="3cpWs3" id="ANqTy7pMPa" role="3uHU7B">
+                <node concept="3cpWs3" id="ANqTy7pLbS" role="3uHU7B">
+                  <node concept="Xl_RD" id="ANqTy7pKXL" role="3uHU7B">
+                    <property role="Xl_RC" value="Module " />
+                  </node>
+                  <node concept="2OqwBi" id="ANqTy7pMfD" role="3uHU7w">
+                    <node concept="37vLTw" id="ANqTy7pM3D" role="2Oq$k0">
+                      <ref role="3cqZAo" node="ANqTy7pLwj" resolve="myProjectModule" />
+                    </node>
+                    <node concept="liA8E" id="ANqTy7pMvQ" role="2OqNvi">
+                      <ref role="37wK5l" to="lui2:~SModule.getModuleName():java.lang.String" resolve="getModuleName" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="ANqTy7pMP_" role="3uHU7w">
+                  <property role="Xl_RC" value=" depends on module " />
+                </node>
+              </node>
+              <node concept="37vLTw" id="ANqTy7pP5x" role="3uHU7w">
+                <ref role="3cqZAo" node="ANqTy7pLf7" resolve="myDepModule" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="ANqTy7p3j$" role="1B3o_S" />
+    <node concept="3uibUv" id="ANqTy7pHSe" role="1zkMxy">
+      <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+      <node concept="3uibUv" id="ANqTy7pJ8E" role="11_B2D">
+        <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="ANqTy7pROW" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getCategory" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3Tm1VV" id="ANqTy7pROY" role="1B3o_S" />
+      <node concept="3uibUv" id="ANqTy7pROZ" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="ANqTy7pRP0" role="3clF47">
+        <node concept="3clFbF" id="ANqTy7pS3Q" role="3cqZAp">
+          <node concept="Xl_RD" id="ANqTy7pS3P" role="3clFbG">
+            <property role="Xl_RC" value="Dependency is not migrated" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="ANqTy7pRP1" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>

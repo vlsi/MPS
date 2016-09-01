@@ -35,21 +35,28 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.migration.MigrationComponent;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.migration.MigrationScriptApplied;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.ide.migration.check.MissingMigrationProblem;
 import jetbrains.mps.ide.migration.RefactoringLogApplied;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.ide.migration.check.DependencyOnNotMigratedLibProblem;
 
 public class MigrationsProgressWizardStep extends MigrationWizardStep {
   public static final String ID = "progress";
@@ -190,15 +197,47 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
 
     addElementToMigrationList("Checking migrations consistency...");
     List<ScriptApplied.ScriptAppliedReference> missingMigrations = myManager.getMissingMigrations();
-    setFraction(progress, ProgressEstimation.migrationsCheck(1.0));
+    setFraction(progress, ProgressEstimation.migrationsCheck(0.9));
     if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
       myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.MigrationsMissingError(missingMigrations));
       addElementToMigrationList("Some migrations are missing. Press 'Next' to continue.");
       return;
     }
+    final jetbrains.mps.project.Project mpsProject = getMPSProject();
+    mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        final List<SModule> projectModules = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(mpsProject)).toListSequence();
+        Set<SModule> depModules = SetSequence.fromSetWithValues(new HashSet<SModule>(), new GlobalModuleDependenciesManager(projectModules).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE));
+        SetSequence.fromSet(depModules).removeSequence(Sequence.fromIterable(((Iterable<SModule>) mpsProject.getModulesWithGenerators())));
+        List<ScriptApplied.ScriptAppliedReference> depMigrationsToRun = myManager.getModuleMigrationsToApply(depModules);
+        Iterable<SModule> notMigratedModules = ListSequence.fromList(depMigrationsToRun).select(new ISelector<ScriptApplied.ScriptAppliedReference, SModule>() {
+          public SModule select(ScriptApplied.ScriptAppliedReference it) {
+            return it.getModule();
+          }
+        }).distinct();
+        final Map<SModule, SModule> errsToShow = MapSequence.fromMap(new HashMap<SModule, SModule>());
+        Sequence.fromIterable(notMigratedModules).visitAll(new IVisitor<SModule>() {
+          public void visit(final SModule notMigrated) {
+            MapSequence.fromMap(errsToShow).put(notMigrated, ListSequence.fromList(projectModules).findFirst(new IWhereFilter<SModule>() {
+              public boolean accept(SModule depCandidate) {
+                return new GlobalModuleDependenciesManager(depCandidate).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE).contains(notMigrated);
+              }
+            }));
+          }
+        });
+        if (ListSequence.fromList(depMigrationsToRun).isNotEmpty()) {
+          myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.NotMigratedLibsError(errsToShow));
+        }
+      }
+    });
+    if (myErrorContainer.getErrorDescriptor() != null) {
+      addElementToMigrationList("Some dependent modules are not migrated. Press 'Next' to continue.");
+      return;
+    }
+    setFraction(progress, ProgressEstimation.migrationsCheck(1.0));
+
 
     addElementToMigrationList("Checking models...");
-    final jetbrains.mps.project.Project mpsProject = getMPSProject();
     mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(mpsProject);
@@ -431,7 +470,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       this.errors = errors;
     }
     public String getMessage() {
-      return "Migration was not completed.<br>" + "Some migration scripts are missing or finished with errors.<br><br>" + "Problems will be shown in Model Checker tool after the project is loaded.<br>" + "You can try to continue migrations manually or execute Migration Assistant later by selecting Tools->Run Migration Assistant from the main menu.";
+      return "Migration was not started.<br>" + "Some migration scripts are missing or finished with errors.<br><br>" + "Problems will be shown in Model Checker tool after the project is loaded.<br>" + "You can try to continue migrations manually or execute Migration Assistant later by selecting Tools->Run Migration Assistant from the main menu.";
     }
     public boolean canIgnore() {
       return false;
@@ -477,6 +516,25 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
           }).toListSequence()));
         }
       }));
+    }
+  }
+  private class NotMigratedLibsError extends MigrationErrorDescriptor {
+    private Map<SModule, SModule> errors;
+    public NotMigratedLibsError(Map<SModule, SModule> errors) {
+      this.errors = errors;
+    }
+    public String getMessage() {
+      return "Migration was not started.<br>" + "The project depends on some external modules that were not fully migrated.<br><br>" + "Problems will be shown in Model Checker tool after the project is loaded.<br>" + "You can try to continue migrations manually or execute Migration Assistant later by selecting Tools->Run Migration Assistant from the main menu.";
+    }
+    public boolean canIgnore() {
+      return false;
+    }
+    public Iterable<Problem> getProblems() {
+      return MapSequence.fromMap(errors).select(new ISelector<IMapping<SModule, SModule>, DependencyOnNotMigratedLibProblem>() {
+        public DependencyOnNotMigratedLibProblem select(IMapping<SModule, SModule> it) {
+          return new DependencyOnNotMigratedLibProblem(it.key(), it.value());
+        }
+      });
     }
   }
 }
