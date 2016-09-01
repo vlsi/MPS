@@ -452,7 +452,8 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     ToolWindowManager windowManager = ToolWindowManager.getInstance(getProject());
     ToolWindow projectViewToolWindow = windowManager.getToolWindow(ToolWindowId.PROJECT_VIEW);
     //In unit test mode projectViewToolWindow == null
-    if (!ApplicationManager.getApplication().isUnitTestMode()) {
+    // besides, https://youtrack.jetbrains.com/issue/MPS-24516 suggests tool window may be missing even in non-test mode (in plugin?)
+    if (!ApplicationManager.getApplication().isUnitTestMode() && projectViewToolWindow != null) {
       projectViewToolWindow.activate(new Runnable() {
         @Override
         public void run() {
