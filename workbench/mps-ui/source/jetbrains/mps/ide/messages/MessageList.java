@@ -466,6 +466,10 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     myUpdateQueue.activate();
   }
 
+  public boolean isPinned() {
+    return false;
+  }
+
   private void showPopupMenu(MouseEvent event) {
     final int index = myList.locationToIndex(event.getPoint());
     final IMessage message = index != -1 ? myModel.getElementAt(index) : null;
