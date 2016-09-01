@@ -15,9 +15,10 @@ public class Mac_10_5_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.GoByCurrentReferenceToIDEA_Action", getShortcut("ctrl B"));
     addSimpleShortcut("jetbrains.mps.ide.actions.NewElement_Action", getShortcut("ctrl alt N"), getShortcut("ctrl ENTER"));
     addSimpleShortcut("jetbrains.mps.ide.actions.SafeDelete_Action", getShortcut("meta DELETE"), getShortcut("meta BACK_SPACE"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action", getShortcut("ctrl H"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", getShortcut("ctrl H"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.ShowNodeInfo_Action", getShortcut("ctrl Q"));
+    // simple with remove/replace 
+    addSimpleShortcut("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action", new BaseKeymapChanges.ShortcutWrapper(getShortcut("ctrl H"), false, true));
+    addSimpleShortcut("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", new BaseKeymapChanges.ShortcutWrapper(getShortcut("ctrl H"), false, true));
+    addSimpleShortcut("jetbrains.mps.ide.actions.ShowNodeInfo_Action", new BaseKeymapChanges.ShortcutWrapper(getShortcut("ctrl Q"), false, true));
     // simple parameterized 
     addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl 0")));
     // complex 

@@ -7,8 +7,8 @@
     </action>
     <action id="jetbrains.mps.ide.editor.actions.AddModelImportByRoot_Action" class="jetbrains.mps.ide.editor.actions.AddModelImportByRoot_Action">
       <keyboard-shortcut first-keystroke="ctrl R" keymap="$default" />
-      <keyboard-shortcut first-keystroke="ctrl R" keymap="Mac OS X" />
-      <keyboard-shortcut first-keystroke="ctrl R" keymap="Mac OS X 10.5+" />
+      <keyboard-shortcut first-keystroke="ctrl R" keymap="Mac OS X" replace-all="true" />
+      <keyboard-shortcut first-keystroke="ctrl R" keymap="Mac OS X 10.5+" replace-all="true" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.AddModelImport_Action" class="jetbrains.mps.ide.editor.actions.AddModelImport_Action">
       <keyboard-shortcut first-keystroke="ctrl M" keymap="$default" />
