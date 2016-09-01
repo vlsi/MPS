@@ -204,9 +204,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     }
     for (int i = lists.size() - 1; i >= 0; --i) {
       MessageList messageList = lists.get(i);
-      ContentManager contentManager = getMessagesService() == null ? null : getMessagesService().getContentManager();
-      Content content = contentManager != null ? contentManager.getContent(messageList.getComponent()) : null;
-      if (content == null || !content.isPinned()) {
+      if (!messageList.isPinned()) {
         return messageList;
       }
     }
@@ -243,6 +241,12 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     private final String myTitle;
     private String myTitleUpdateFormat =
         "{0}: {1,choice,0#--|1#1 error|2#{1} errors}/{2,choice,0#--|1#1 warning|2#{2} warnings}/{3,choice,0#--|1#1 info|2#{3} infos}";
+    /*
+     * getMessagesService().getContentManager() may fail with NPE as respective tool window is initialized as post-startup activity
+     * while users are quite quick to run rebuild (or another messages client). One way to prevent NPE is to check
+     * {@code myToolWindowManager.getToolWindow(ToolWindowId.MESSAGES_WINDOW) != null}, another is to track whether our createContent() completed.
+     */
+    private boolean myContentReady = false;
 
     protected MyMessageList(@NotNull String title) {
       myTitle = title;
@@ -250,6 +254,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
     @Override
     public void dispose() {
+      myContentReady = false;
       super.dispose();
       removeList(this, myTitle);
     }
@@ -295,11 +300,21 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
           content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
           service.getContentManager().addContent(content);
           activateUpdate();
+          myContentReady = true;
         }
       };
       getMessagesService().runWhenInitialized(new RunInUIRunnable(initRunnable, false));
     }
 
+    @Override
+    public boolean isPinned() {
+      if (myContentReady) {
+        ContentManager contentManager = getMessagesService().getContentManager();
+        Content content = contentManager != null ? contentManager.getContent(getComponent()) : null;
+        return content != null && content.isPinned();
+      }
+      return super.isPinned();
+    }
 
     @Override
     protected void updateHeader() {
