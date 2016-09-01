@@ -1887,6 +1887,9 @@
     </node>
     <node concept="22LTRH" id="yja7V_1MyS" role="1hWBAP">
       <property role="TrG5h" value="java" />
+      <node concept="22LTRF" id="PTnqpvDqSS" role="22LTRK">
+        <ref role="22LTRG" node="yja7V_1MyU" resolve="java-tests" />
+      </node>
     </node>
     <node concept="2G$12M" id="yja7V_1MyU" role="3989C9">
       <property role="TrG5h" value="java-tests" />
