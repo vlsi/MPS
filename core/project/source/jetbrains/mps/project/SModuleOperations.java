@@ -157,7 +157,7 @@ public class SModuleOperations {
     // so this goes to SModuleOperation method with createModel from ModelRoot, apply adj and register in module
     // deprecated
     if (!root.canCreateModel(name)) {
-      LOG.error("Can't create a model " + name + " under model root " + root.getPresentation());
+      LOG.error("Can't create a model " + name + " under model root " + root);
       return null;
     }
 

@@ -56,6 +56,26 @@ public class IFileUtils {
     }
   }
 
+  public static boolean copyDirectoryContent(IFile oldDirectory, IFile newDirectory) {
+    assert oldDirectory.isDirectory();
+    assert oldDirectory.exists();
+
+    newDirectory.mkdirs();
+
+    boolean result = true;
+    for (IFile oldChild : oldDirectory.getChildren()) {
+      String name = oldChild.getName();
+      IFile newChild = newDirectory.getDescendant(name);
+      if (oldChild.isDirectory()) {
+        result &= copyDirectoryContent(oldChild, newChild);
+      } else {
+        newChild.createNewFile();
+        result &= copyFileContent(oldChild, newChild);
+      }
+    }
+    return result;
+  }
+
   public static boolean isJarFile(@NotNull IFile file) {
     return file.getPath().endsWith(Path.DOT_JAR);
   }

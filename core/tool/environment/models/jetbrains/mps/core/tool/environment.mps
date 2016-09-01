@@ -1207,7 +1207,32 @@
         <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
       </node>
     </node>
-    <node concept="2tJIrI" id="MVJ1IE6A6O" role="jymVt" />
+    <node concept="2tJIrI" id="6uGRett36_g" role="jymVt" />
+    <node concept="3clFb_" id="6uGRett37Lr" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="withJavaPlugin" />
+      <node concept="3clFbS" id="6uGRett37Ls" role="3clF47">
+        <node concept="3cpWs6" id="6uGRett37Lt" role="3cqZAp">
+          <node concept="1rXfSq" id="6uGRett37Lu" role="3cqZAk">
+            <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
+            <node concept="Xl_RD" id="6uGRett37Lv" role="37wK5m">
+              <property role="Xl_RC" value="mpsjava" />
+            </node>
+            <node concept="Xl_RD" id="6uGRett37Lw" role="37wK5m">
+              <property role="Xl_RC" value="jetbrains.mps.ide.java" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6uGRett37Lx" role="1B3o_S" />
+      <node concept="3uibUv" id="6uGRett37Ly" role="3clF45">
+        <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6uGRett37GX" role="jymVt" />
     <node concept="3clFb_" id="5mza6QqhjgL" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="withBootstrapLibraries" />

@@ -767,7 +767,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
           toAttach.add(root);
         }
       } catch (Exception e) {
-        LOG.error("Error loading models from root `" + root.getPresentation() + "'. Requested by: " + this, e);
+        LOG.error("Error loading models from root `" + root + "'. Requested by: " + this, e);
       }
     }
     toUpdate.removeAll(toRemove);

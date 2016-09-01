@@ -27,6 +27,8 @@ import java.io.IOException;
  * evgeny, 2/27/13
  */
 public class ModuleFacetDescriptor {
+  private static final int START_MARKER = 0x53;
+
   private String type;
   private Memento memento;
 
@@ -44,13 +46,13 @@ public class ModuleFacetDescriptor {
   }
 
   public void save(ModelOutputStream stream) throws IOException {
-    stream.writeByte(0x53);
+    stream.writeByte(START_MARKER);
     stream.writeString(type);
     MementoStreamUtil.writeMemento(null, memento, stream);
   }
 
   public static ModuleFacetDescriptor load(ModelInputStream stream) throws IOException {
-    if (stream.readByte() != 0x53) throw new IOException("bad stream: no module facet descriptor start marker");
+    if (stream.readByte() != START_MARKER) throw new IOException("bad stream: no module facet descriptor start marker");
     return new ModuleFacetDescriptor(stream.readString(), MementoStreamUtil.readMemento(null, stream));
   }
 }
