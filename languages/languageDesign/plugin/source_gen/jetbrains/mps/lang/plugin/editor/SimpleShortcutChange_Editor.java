@@ -28,7 +28,6 @@ import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -40,7 +39,6 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_x0wya_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_x0wya_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_x0wya_c0(editorContext, node));
     return editorCell;
   }
   private EditorCell createRefCell_x0wya_a0(EditorContext editorContext, SNode node) {
@@ -132,11 +130,5 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
         }
       }
     }
-  }
-  private EditorCell createConstant_x0wya_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
-    editorCell.setCellId("Constant_x0wya_c0");
-    editorCell.setDefaultText("");
-    return editorCell;
   }
 }

@@ -26,6 +26,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -42,6 +44,9 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_paq7mh_e0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_paq7mh_f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_paq7mh_g0(editorContext, node));
+    if (renderingCondition_paq7mh_a7a(node, editorContext)) {
+      editorCell.addEditorCell(this.createProperty_paq7mh_h0(editorContext, node));
+    }
     return editorCell;
   }
   private EditorCell createConstant_paq7mh_a0(EditorContext editorContext, SNode node) {
@@ -126,7 +131,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<keycode>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_keycode");
+    editorCell.setCellId("keyCode");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
     editorCell.getStyle().putAll(style);
@@ -154,10 +159,32 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
-    style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.MATCHING_LABEL, 0, "keycode");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+  private EditorCell createProperty_paq7mh_h0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("change");
+    provider.setNoTargetText("<no change>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_change");
+    KeyMapKeystroke_Change.setCellActions(editorCell, node, editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
+      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+  private static boolean renderingCondition_paq7mh_a7a(SNode node, EditorContext editorContext) {
+    return isNotEmptyString(SPropertyOperations.getString_def(node, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x5e2b603c8f03ab4dL, "change"), null));
+  }
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }
