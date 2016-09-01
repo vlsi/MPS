@@ -7,6 +7,7 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.NameUtil;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -40,7 +41,7 @@ public final class MigrationScriptApplied implements ScriptApplied {
     }
 
     public boolean isAlreadyDone() {
-      return !(SetSequence.fromSet(MigrationsUtil.getUsedLanguages(myModule)).contains(myMigrationScriptReference.getLanguage())) || myMigrationScriptReference.getFromVersion() < myModule.getUsedLanguageVersion(myMigrationScriptReference.getLanguage());
+      return !(SetSequence.fromSet(MigrationsUtil.getUsedLanguages(myModule)).contains(myMigrationScriptReference.getLanguage())) || myMigrationScriptReference.getFromVersion() < ((AbstractModule) myModule).getUsedLanguageVersion(myMigrationScriptReference.getLanguage(), false);
     }
 
     public String getKindDescription(ScriptApplied resolved) {
