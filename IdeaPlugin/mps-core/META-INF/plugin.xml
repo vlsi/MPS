@@ -104,7 +104,10 @@
               xpointer="xpointer(/components/*)"/>
 
   <project-components>
-    <!-- coped from MPSUI.xml -->
+    <!-- next 3 components were copied from MPSUI.xml. Could I use xi:include xpointer(components/project-components) instead? -->
+    <component>
+      <implementation-class>jetbrains.mps.ide.findusages.view.UsagesViewTool</implementation-class>
+    </component>
     <component>
       <implementation-class>jetbrains.mps.ide.messages.MessagesViewTool</implementation-class>
     </component>
