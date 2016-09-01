@@ -43,7 +43,7 @@ public abstract class WrapSubstituteMenuTransformationMenuPart implements Transf
   }
 
   private TransformationMenuItem createTransformationItem(SNode targetNode, SubstituteMenuItem item, TransformationMenuContext context) {
-    return new SubstituteMenuItemAsCompletionActionItem(item) {
+    return new SubstituteMenuItemAsActionItem(item) {
       @Override
       public void execute(@NotNull String pattern) {
         WrapSubstituteMenuTransformationMenuPart.this.execute(targetNode, item, context, pattern);

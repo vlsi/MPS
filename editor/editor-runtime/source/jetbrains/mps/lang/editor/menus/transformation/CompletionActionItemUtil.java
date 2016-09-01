@@ -28,26 +28,26 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 public class CompletionActionItemUtil {
   public static SAbstractConcept getOutputConcept(CompletionActionItem item) {
-    if (item instanceof SubstituteMenuItemAsCompletionActionItem) {
-      return ((SubstituteMenuItemAsCompletionActionItem) item).getSubstituteItem().getOutputConcept();
+    if (item instanceof SubstituteMenuItemAsActionItem) {
+      return ((SubstituteMenuItemAsActionItem) item).getSubstituteItem().getOutputConcept();
     }
     return null;
   }
 
   public static SNode getReferentNode(CompletionActionItem item) {
-    if (item instanceof SubstituteMenuItemAsCompletionActionItem) {
-      final SubstituteMenuItem substituteItem = ((SubstituteMenuItemAsCompletionActionItem) item).getSubstituteItem();
+    if (item instanceof SubstituteMenuItemAsActionItem) {
+      final SubstituteMenuItem substituteItem = ((SubstituteMenuItemAsActionItem) item).getSubstituteItem();
       return SubstituteMenuItemUtil.getReferentNode(substituteItem);
     }
     return null;
   }
 
   public static String getVisibleMatchingText(CompletionActionItem item) {
-    if (item instanceof SubstituteMenuItemAsCompletionActionItem) {
+    if (item instanceof SubstituteMenuItemAsActionItem) {
       final SNode referentNode = getReferentNode(item);
       if (referentNode != null) {
         final String referentMatchingText = NodePresentationUtil.matchingText(referentNode, true, true);
-        final SAbstractConcept outputConcept = ((SubstituteMenuItemAsCompletionActionItem) item).getSubstituteItem().getOutputConcept();
+        final SAbstractConcept outputConcept = ((SubstituteMenuItemAsActionItem) item).getSubstituteItem().getOutputConcept();
         if (outputConcept != null && ReferenceConceptUtil.hasSmartAlias(outputConcept)) {
           return ReferenceConceptUtil.getPresentationFromSmartAlias(outputConcept, referentMatchingText);
         }

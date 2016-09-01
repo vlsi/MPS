@@ -57,6 +57,6 @@ public class SubstituteItemsCollector {
   }
 
   protected TransformationMenuItem convert(SubstituteMenuItem item, SubstituteMenuContext context) {
-    return new DefaultSubstituteMenuItemAsCompletionActionItem(item, context);
+    return new DefaultSubstituteMenuItemAsActionItem(item, context);
   }
 }

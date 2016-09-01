@@ -26,10 +26,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 /**
  * @author simon
  */
-abstract class SubstituteMenuItemAsCompletionActionItem extends ActionItemBase implements CompletionActionItem {
+abstract class SubstituteMenuItemAsActionItem extends ActionItemBase implements CompletionActionItem {
   private final SubstituteMenuItem mySubstituteItem;
 
-  SubstituteMenuItemAsCompletionActionItem(SubstituteMenuItem substituteItem) {
+  SubstituteMenuItemAsActionItem(SubstituteMenuItem substituteItem) {
     mySubstituteItem = substituteItem;
   }
 
