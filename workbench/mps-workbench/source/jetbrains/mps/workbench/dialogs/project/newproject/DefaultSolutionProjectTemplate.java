@@ -73,7 +73,7 @@ public class DefaultSolutionProjectTemplate implements SolutionProjectTemplate {
                                                              @Override
                                                              public void run() {
                                                                Solution
-                                                                   solution = NewModuleUtil.createSolution(myNewSolutionSettings.getSolutionName(), myNewSolutionSettings.getSolutionLocation(), project);
+                                                                   solution = NewModuleUtil.createSolution(myNewSolutionSettings.getModuleName(), myNewSolutionSettings.getModuleLocation(), project);
                                                                project.addModule(solution);
                                                              }
                                                            }

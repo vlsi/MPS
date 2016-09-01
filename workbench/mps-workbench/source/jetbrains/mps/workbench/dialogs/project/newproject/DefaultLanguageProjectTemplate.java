@@ -72,26 +72,25 @@ public class DefaultLanguageProjectTemplate implements LanguageProjectTemplate {
           @Override
           public void run() {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-                                                             @Override
-                                                             public void run() {
-                                                               Language language = NewModuleUtil.createLanguage(myLanguageSettings.getLanguageName(), myLanguageSettings.getLanguageLocation(),
-                                                                   project);
-                                                               project.addModule(language);
+              @Override
+              public void run() {
+                Language language = NewModuleUtil.createLanguage(myLanguageSettings.getModuleName(), myLanguageSettings.getModuleLocation(),
+                    project);
+                project.addModule(language);
 
-                                                               try {
-                                                                 if (myLanguageSettings.isRuntimeSolutionNeeded()) {
-                                                                   Solution runtimeSolution = NewModuleUtil.createRuntimeSolution(language, myLanguageSettings.getLanguageLocation(), project);
-                                                                   language.getModuleDescriptor().getRuntimeModules().add(runtimeSolution.getModuleReference());
-                                                                 }
-                                                                 if (myLanguageSettings.isSandboxSolutionNeeded()) {
-                                                                   NewModuleUtil.createSandboxSolution(language, myLanguageSettings.getLanguageLocation(), project);
-                                                                 }
-                                                               } catch (IOException e) {
-                                                                 // todo: !
-                                                               }
-                                                             }
-                                                           }
-            );
+                try {
+                  if (myLanguageSettings.isRuntimeSolutionNeeded()) {
+                    Solution runtimeSolution = NewModuleUtil.createRuntimeSolution(language, myLanguageSettings.getModuleLocation(), project);
+                    language.getModuleDescriptor().getRuntimeModules().add(runtimeSolution.getModuleReference());
+                  }
+                  if (myLanguageSettings.isSandboxSolutionNeeded()) {
+                    NewModuleUtil.createSandboxSolution(language, myLanguageSettings.getModuleLocation(), project);
+                  }
+                } catch (IOException e) {
+                  // todo: !
+                }
+              }
+            });
           }
         });
       }

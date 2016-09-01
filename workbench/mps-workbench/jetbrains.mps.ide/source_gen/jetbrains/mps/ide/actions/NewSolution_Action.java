@@ -58,11 +58,12 @@ public class NewSolution_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     NewSolutionDialog dialog = new NewSolutionDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((String) MapSequence.fromMap(_params).get("namespace")));
     dialog.show();
-    Solution s = dialog.getSolution();
+    Solution s = dialog.getModule();
     if (s == null) {
       return;
     }
 
+    // TODO: Sync ProjectPane.rebuildTree() with NewSolution, CloneModule actions 
     ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
     projectPane.selectModule(s, false);
   }

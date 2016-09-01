@@ -231,13 +231,14 @@ public class NewModuleUtil {
     return createNewLanguage(namespace, descriptorFile, false, false, moduleOwner);
   }
 
-  private static <T extends AbstractModule> T createModule(String extension, String namespace, String rootPath, Project project, _FunctionTypes._return_P3_E0<? extends T, ? super String, ? super IFile, ? super Project> creator) {
+  /*package*/ static <T extends AbstractModule> T createModule(String extension, String namespace, String rootPath, Project project, _FunctionTypes._return_P3_E0<? extends T, ? super String, ? super IFile, ? super Project> creator) {
     IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, extension);
     T module = creator.invoke(namespace, descriptorFile, project);
     project.addModule(module);
     module.save();
     return module;
   }
+
   private static IFile getModuleFile(String namespace, String rootPath, String extension) {
     String path = rootPath + File.separator + namespace + extension;
     return FileSystem.getInstance().getFileByPath(path);

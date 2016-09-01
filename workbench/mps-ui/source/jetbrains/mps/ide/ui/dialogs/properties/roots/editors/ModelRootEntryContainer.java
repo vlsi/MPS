@@ -122,7 +122,7 @@ public class ModelRootEntryContainer implements ModelRootEntryListener {
 
   protected JComponent createHeader() {
     final JPanel panel = new JPanel(new GridBagLayout());
-    myHeaderLabel = new JBLabel(myModelRootEntry.getModelRoot().getPresentation());
+    myHeaderLabel = new JBLabel(myModelRootEntry.getModelRoot().toString());
 
     myHeaderLabel.setFont(myHeaderLabel.getFont().deriveFont(Font.BOLD));
     myHeaderLabel.setOpaque(false);
@@ -186,7 +186,7 @@ public class ModelRootEntryContainer implements ModelRootEntryListener {
   }
 
   public void updateUI() {
-    myHeaderLabel.setText(myModelRootEntry.getModelRoot().getPresentation());
+    myHeaderLabel.setText(myModelRootEntry.getModelRoot().toString());
     if(myDetailsLabel != null)
       myDetailsLabel.setText(myModelRootEntry.getDetailsText());
     else {

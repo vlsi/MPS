@@ -25,8 +25,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import javax.swing.DefaultListCellRenderer;
-import java.awt.Component;
-import javax.swing.JList;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import jetbrains.mps.persistence.DefaultModelRoot;
@@ -38,6 +36,7 @@ import java.util.LinkedList;
 import java.util.Arrays;
 import jetbrains.mps.smodel.SModelStereotype;
 import com.intellij.ui.ColoredListCellRenderer;
+import javax.swing.JList;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.Memento;
@@ -149,15 +148,7 @@ public class NewModelDialog extends DialogWrapper {
     if (model.getSize() == 0) {
       model.addElement("<NO MODEL ROOTS FOR SELECTED NAMESPACE>");
     }
-    myModelRoots.setRenderer(new DefaultListCellRenderer() {
-      @Override
-      public Component getListCellRendererComponent(JList list, Object object, int i, boolean b, boolean b1) {
-        if (object instanceof ModelRoot) {
-          object = ((ModelRoot) object).getPresentation();
-        }
-        return super.getListCellRendererComponent(list, object, i, b, b1);
-      }
-    });
+    myModelRoots.setRenderer(new DefaultListCellRenderer());
     myModelRoots.addItemListener(new ItemListener() {
       @Override
       public void itemStateChanged(ItemEvent e) {

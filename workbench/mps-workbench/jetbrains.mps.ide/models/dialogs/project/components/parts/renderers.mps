@@ -1852,13 +1852,8 @@
               <node concept="37vLTw" id="2BHiRxgkWgz" role="37wK5m">
                 <ref role="3cqZAo" node="eAgPjiqkCi" resolve="list" />
               </node>
-              <node concept="2OqwBi" id="1mbjQQ5Eo15" role="37wK5m">
-                <node concept="liA8E" id="1mbjQQ5Eo6L" role="2OqNvi">
-                  <ref role="37wK5l" to="dush:~ModelRoot.getPresentation():java.lang.String" resolve="getPresentation" />
-                </node>
-                <node concept="37vLTw" id="1mbjQQ5EnYI" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1mbjQQ5EjvS" resolve="root" />
-                </node>
+              <node concept="37vLTw" id="1mbjQQ5EnYI" role="37wK5m">
+                <ref role="3cqZAo" node="1mbjQQ5EjvS" resolve="root" />
               </node>
               <node concept="37vLTw" id="2BHiRxgkWAG" role="37wK5m">
                 <ref role="3cqZAo" node="eAgPjiqkCm" resolve="index" />
