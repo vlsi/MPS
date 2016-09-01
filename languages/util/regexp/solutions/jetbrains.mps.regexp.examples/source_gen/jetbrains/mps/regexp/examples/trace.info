@@ -53,8 +53,8 @@
       <node id="1178535184339" at="32,5,33,49" concept="7" />
       <node id="1178535184339" at="33,49,34,52" concept="7" />
       <node id="1178535206675" at="35,33,36,62" concept="2" />
-      <node id="1178535227739" at="40,45,41,100" concept="2" />
-      <node id="1222616772849" at="41,100,42,13" concept="8" />
+      <node id="1178535227739" at="40,45,41,94" concept="2" />
+      <node id="1222616772849" at="41,94,42,13" concept="8" />
       <node id="1178535319557" at="45,70,46,38" concept="2" />
       <node id="1178535102782" at="49,0,50,0" concept="9" trace="REGEXP_efh9at_a0a0a0b" />
       <node id="1178535147654" at="50,0,51,0" concept="9" trace="REGEXP_efh9at_a0a0a0c" />
@@ -123,10 +123,14 @@
       <node id="1178535234174" at="13,0,14,0" concept="3" trace="_closureContext" />
       <node id="1178535234174" at="14,98,15,42" concept="2" />
       <node id="1178535234174" at="15,42,16,51" concept="2" />
+      <node id="1178535234174" at="18,75,19,42" concept="2" />
+      <node id="1178535234174" at="19,42,20,32" concept="2" />
       <node id="1178535234174" at="9,0,12,0" concept="6" trace="replace#(Ljava/util/regex/Matcher;)Ljava/lang/String;" />
       <node id="1178535234174" at="14,0,18,0" concept="1" trace="_Replacer_efh9at_a0a0a0e#(Ljetbrains/mps/regexp/examples/BaseLanguageIntegration;Ljava/lang/Object;)V" />
+      <node id="1178535234174" at="18,0,22,0" concept="1" trace="_Replacer_efh9at_a0a0a0e#(Ljetbrains/mps/regexp/examples/BaseLanguageIntegration;)V" />
       <scope id="1178535234175" at="9,42,10,40" />
       <scope id="1178535234174" at="14,98,16,51" />
+      <scope id="1178535234174" at="18,75,20,32" />
       <scope id="1178535234174" at="9,0,12,0">
         <var name="matcher" id="1178535234174" />
       </scope>
@@ -134,7 +138,10 @@
         <var name="closureContext" id="1178535234174" />
         <var name="enclosingClass" id="1178535234174" />
       </scope>
-      <unit id="1178535234174" at="8,0,19,0" name="jetbrains.mps.regexp.examples._Replacer_efh9at_a0a0a0e" />
+      <scope id="1178535234174" at="18,0,22,0">
+        <var name="enclosingClass" id="1178535234174" />
+      </scope>
+      <unit id="1178535234174" at="8,0,23,0" name="jetbrains.mps.regexp.examples._Replacer_efh9at_a0a0a0e" />
     </file>
   </root>
 </debug-info>

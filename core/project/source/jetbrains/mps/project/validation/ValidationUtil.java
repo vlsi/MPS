@@ -23,8 +23,6 @@ import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -484,21 +482,20 @@ public class ValidationUtil {
   //returns true to continue analysing, false to stop
   private static boolean warnMissingTargetLangRuntime(Generator generator, Set<SLanguage> usedLanguages, Processor<ValidationProblem> processor) {
     Language sourceLanguage = generator.getSourceLanguage();
-    usedLanguages.remove(MetaAdapterByDeclaration.getLanguage(sourceLanguage));
+    SLanguage sourceLanguageDeployed = MetaAdapterByDeclaration.getLanguage(sourceLanguage);
+    usedLanguages.remove(sourceLanguageDeployed);
     if (usedLanguages.isEmpty()) {
       return true;
     }
 
     final HashSet<SModuleReference> compileTimeDeps = new HashSet<SModuleReference>();
     /*
-     * FIXME GMDM(module).getModules(COMPILE) gives a set of classpath dependencies required to build given module, NOT cp dependencies to build
+     * Shall not use GMDM(module).getModules(COMPILE), as it gives a set of classpath dependencies required to build given module, NOT cp dependencies to build
      * modules using this language! E.g. see https://youtrack.jetbrains.com/issue/MPS-22857
-     * It's not clear whether ModuleMaker collects dependencies right, too. Given setup of the aforementioned issue, language B and its runtime would
-     * be discovered, but its generates into A dependency is likely to be ignored (it's not re-export dependency)
+     * Here we'd like to figure out if there's a model M written in sourceLanguage L, whether it's generated code would receive all runtime modules
+     * of languages L's generator would produce.
      */
-    for (SModule d : new GlobalModuleDependenciesManager(sourceLanguage).getModules(Deptype.COMPILE)) {
-      compileTimeDeps.add(d.getModuleReference());
-    }
+    compileTimeDeps.addAll(IterableUtil.asCollection(sourceLanguageDeployed.getLanguageRuntimes()));
 
     for (SLanguage lang : usedLanguages) {
       Collection<SModuleReference> langRuntimes = IterableUtil.asCollection(lang.getLanguageRuntimes());

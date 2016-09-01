@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 
 public class Replace_Test extends TestCase {
   public void test_replace1() throws Exception {
-    String s = RegexpOperations.replace("Manny goes home", REGEXP_55w9mm_b0a0a0, new _Replacer_55w9mm_a0a0a0(Replace_Test.this, null));
+    String s = RegexpOperations.replace("Manny goes home", REGEXP_55w9mm_b0a0a0, new _Replacer_55w9mm_a0a0a0(Replace_Test.this));
     Assert.assertEquals("<Manny> <goes> <home>", s);
   }
   public Replace_Test() {

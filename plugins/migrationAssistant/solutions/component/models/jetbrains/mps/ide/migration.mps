@@ -688,11 +688,18 @@
               </node>
               <node concept="3eOVzh" id="3UfGsecu9ai" role="3uHU7w">
                 <node concept="2OqwBi" id="3UfGsecu9aj" role="3uHU7w">
-                  <node concept="37vLTw" id="79xDgbhffDZ" role="2Oq$k0">
-                    <ref role="3cqZAo" node="79xDgbha7az" resolve="myModule" />
+                  <node concept="1eOMI4" id="nNuoq5OxUk" role="2Oq$k0">
+                    <node concept="10QFUN" id="nNuoq5OvBI" role="1eOMHV">
+                      <node concept="3uibUv" id="nNuoq5Ownm" role="10QFUM">
+                        <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+                      </node>
+                      <node concept="37vLTw" id="79xDgbhffDZ" role="10QFUP">
+                        <ref role="3cqZAo" node="79xDgbha7az" resolve="myModule" />
+                      </node>
+                    </node>
                   </node>
                   <node concept="liA8E" id="3UfGsecu9al" role="2OqNvi">
-                    <ref role="37wK5l" to="lui2:~SModule.getUsedLanguageVersion(org.jetbrains.mps.openapi.language.SLanguage):int" resolve="getUsedLanguageVersion" />
+                    <ref role="37wK5l" to="z1c3:~AbstractModule.getUsedLanguageVersion(org.jetbrains.mps.openapi.language.SLanguage,boolean):int" resolve="getUsedLanguageVersion" />
                     <node concept="2OqwBi" id="3UfGsecu9am" role="37wK5m">
                       <node concept="37vLTw" id="79xDgbhfgf0" role="2Oq$k0">
                         <ref role="3cqZAo" node="79xDgbha7tD" resolve="myMigrationScriptReference" />
@@ -700,6 +707,9 @@
                       <node concept="liA8E" id="3UfGsecu9ao" role="2OqNvi">
                         <ref role="37wK5l" to="6f4m:2RG318eWpZ$" resolve="getLanguage" />
                       </node>
+                    </node>
+                    <node concept="3clFbT" id="nNuoq5N59v" role="37wK5m">
+                      <property role="3clFbU" value="false" />
                     </node>
                   </node>
                 </node>
@@ -9643,7 +9653,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="79xDgbhfgH9" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~AbstractModule.getDependencyVersion(org.jetbrains.mps.openapi.module.SModule):int" resolve="getDependencyVersion" />
+                    <ref role="37wK5l" to="z1c3:~AbstractModule.getDependencyVersion(org.jetbrains.mps.openapi.module.SModule,boolean):int" resolve="getDependencyVersion" />
                     <node concept="2OqwBi" id="79xDgbhfgHa" role="37wK5m">
                       <node concept="37vLTw" id="79xDgbhfiFI" role="2Oq$k0">
                         <ref role="3cqZAo" node="79xDgbhb4AW" resolve="myRefactoringLogReference" />
@@ -9651,6 +9661,9 @@
                       <node concept="liA8E" id="79xDgbhfgHc" role="2OqNvi">
                         <ref role="37wK5l" to="6f4m:4uVwhQyPurF" resolve="getModule" />
                       </node>
+                    </node>
+                    <node concept="3clFbT" id="nNuoq5Nh5V" role="37wK5m">
+                      <property role="3clFbU" value="false" />
                     </node>
                   </node>
                 </node>

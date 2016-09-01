@@ -37,7 +37,7 @@ public final class RefactoringLogApplied implements ScriptApplied {
       return new RefactoringLogApplied(fetchRefactoringLog, myModule);
     }
     public boolean isAlreadyDone() {
-      return !(SetSequence.fromSet(MigrationsUtil.getModuleDependencies(myModule)).contains(myRefactoringLogReference.getModule())) || myRefactoringLogReference.getFromVersion() < ((AbstractModule) myModule).getDependencyVersion(myRefactoringLogReference.getModule());
+      return !(SetSequence.fromSet(MigrationsUtil.getModuleDependencies(myModule)).contains(myRefactoringLogReference.getModule())) || myRefactoringLogReference.getFromVersion() < ((AbstractModule) myModule).getDependencyVersion(myRefactoringLogReference.getModule(), false);
     }
     public String getKindDescription(ScriptApplied resolved) {
       RefactoringLogApplied script = ((RefactoringLogApplied) resolved);

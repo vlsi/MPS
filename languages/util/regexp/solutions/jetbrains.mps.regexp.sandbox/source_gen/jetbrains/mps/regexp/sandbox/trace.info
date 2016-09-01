@@ -8,12 +8,12 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590520(jetbrains.mps.regexp.sandbox)/1174921457453">
     <file name="YYY.java">
-      <node id="1175254959727" at="11,24,12,93" concept="1" />
+      <node id="1175254959727" at="11,24,12,87" concept="1" />
       <node id="1175254972364" at="14,0,15,0" concept="5" trace="REGEXP_y3g_b0a0b" />
       <node id="5324518929218979365" at="9,0,11,0" concept="0" trace="YYY#()V" />
       <node id="1174921462032" at="11,0,14,0" concept="3" trace="m#()V" />
       <scope id="5324518929218979367" at="9,16,9,16" />
-      <scope id="1174921462034" at="11,24,12,93" />
+      <scope id="1174921462034" at="11,24,12,87" />
       <scope id="5324518929218979365" at="9,0,11,0" />
       <scope id="1174921462032" at="11,0,14,0" />
       <unit id="1174921457453" at="8,0,16,0" name="jetbrains.mps.regexp.sandbox.YYY" />
@@ -24,10 +24,14 @@
       <node id="1175254963247" at="13,0,14,0" concept="2" trace="_closureContext" />
       <node id="1175254963247" at="14,74,15,42" concept="1" />
       <node id="1175254963247" at="15,42,16,51" concept="1" />
+      <node id="1175254963247" at="18,51,19,42" concept="1" />
+      <node id="1175254963247" at="19,42,20,32" concept="1" />
       <node id="1175254963247" at="9,0,12,0" concept="3" trace="replace#(Ljava/util/regex/Matcher;)Ljava/lang/String;" />
       <node id="1175254963247" at="14,0,18,0" concept="0" trace="_Replacer_y3g_a0a0a1#(Ljetbrains/mps/regexp/sandbox/YYY;Ljava/lang/Object;)V" />
+      <node id="1175254963247" at="18,0,22,0" concept="0" trace="_Replacer_y3g_a0a0a1#(Ljetbrains/mps/regexp/sandbox/YYY;)V" />
       <scope id="1175254963248" at="9,42,10,18" />
       <scope id="1175254963247" at="14,74,16,51" />
+      <scope id="1175254963247" at="18,51,20,32" />
       <scope id="1175254963247" at="9,0,12,0">
         <var name="matcher" id="1175254963247" />
       </scope>
@@ -35,7 +39,10 @@
         <var name="closureContext" id="1175254963247" />
         <var name="enclosingClass" id="1175254963247" />
       </scope>
-      <unit id="1175254963247" at="8,0,19,0" name="jetbrains.mps.regexp.sandbox._Replacer_y3g_a0a0a1" />
+      <scope id="1175254963247" at="18,0,22,0">
+        <var name="enclosingClass" id="1175254963247" />
+      </scope>
+      <unit id="1175254963247" at="8,0,23,0" name="jetbrains.mps.regexp.sandbox._Replacer_y3g_a0a0a1" />
     </file>
   </root>
 </debug-info>

@@ -15,4 +15,8 @@ public class _Replacer_90k4hu_a0a0b0c implements Replacer {
     this._enclosingClass = enclosingClass;
     this._closureContext = (Object) closureContext;
   }
+  public _Replacer_90k4hu_a0a0b0c(PredefinedRegexps enclosingClass) {
+    this._enclosingClass = enclosingClass;
+    this._closureContext = null;
+  }
 }

@@ -201,8 +201,8 @@
   </root>
   <root nodeRef="r:710bb5ca-133c-4e34-80eb-4be42af51339(tests)/6129327962763155569">
     <file name="Replace_Test.java">
-      <node id="6129327962763155612" at="11,48,12,135" concept="6" />
-      <node id="6129327962763155619" at="12,135,13,52" concept="2" />
+      <node id="6129327962763155612" at="11,48,12,129" concept="6" />
+      <node id="6129327962763155619" at="12,129,13,52" concept="2" />
       <node id="6129327962763155586" at="17,0,18,0" concept="8" trace="REGEXP_55w9mm_b0a0a0" />
       <node id="6129327962763155571" at="15,0,17,0" concept="1" trace="Replace_Test#()V" />
       <node id="6129327962763155576" at="11,0,15,0" concept="5" trace="test_replace1#()V" />
@@ -220,10 +220,14 @@
       <node id="6129327962763155583" at="13,0,14,0" concept="3" trace="_closureContext" />
       <node id="6129327962763155583" at="14,86,15,42" concept="2" />
       <node id="6129327962763155583" at="15,42,16,51" concept="2" />
+      <node id="6129327962763155583" at="18,63,19,42" concept="2" />
+      <node id="6129327962763155583" at="19,42,20,32" concept="2" />
       <node id="6129327962763155583" at="9,0,12,0" concept="5" trace="replace#(Ljava/util/regex/Matcher;)Ljava/lang/String;" />
       <node id="6129327962763155583" at="14,0,18,0" concept="1" trace="_Replacer_55w9mm_a0a0a0#(Ltests/Replace_Test;Ljava/lang/Object;)V" />
+      <node id="6129327962763155583" at="18,0,22,0" concept="1" trace="_Replacer_55w9mm_a0a0a0#(Ltests/Replace_Test;)V" />
       <scope id="6129327962763155584" at="9,42,10,40" />
       <scope id="6129327962763155583" at="14,86,16,51" />
+      <scope id="6129327962763155583" at="18,63,20,32" />
       <scope id="6129327962763155583" at="9,0,12,0">
         <var name="matcher" id="6129327962763155583" />
       </scope>
@@ -231,7 +235,10 @@
         <var name="closureContext" id="6129327962763155583" />
         <var name="enclosingClass" id="6129327962763155583" />
       </scope>
-      <unit id="6129327962763155583" at="8,0,19,0" name="tests._Replacer_55w9mm_a0a0a0" />
+      <scope id="6129327962763155583" at="18,0,22,0">
+        <var name="enclosingClass" id="6129327962763155583" />
+      </scope>
+      <unit id="6129327962763155583" at="8,0,23,0" name="tests._Replacer_55w9mm_a0a0a0" />
     </file>
   </root>
   <root nodeRef="r:710bb5ca-133c-4e34-80eb-4be42af51339(tests)/6129327962764348634">

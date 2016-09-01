@@ -1582,6 +1582,25 @@
                                         </node>
                                       </node>
                                     </node>
+                                    <node concept="3cpWs8" id="1qMfQ8fmD2c" role="3cqZAp">
+                                      <node concept="3cpWsn" id="1qMfQ8fmD2i" role="3cpWs9">
+                                        <property role="TrG5h" value="seenFileNames" />
+                                        <node concept="3uibUv" id="1qMfQ8fmD2k" role="1tU5fm">
+                                          <ref role="3uigEE" to="33ny:~HashSet" resolve="HashSet" />
+                                          <node concept="3uibUv" id="1qMfQ8fmEoU" role="11_B2D">
+                                            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                                          </node>
+                                        </node>
+                                        <node concept="2ShNRf" id="1qMfQ8fmFl6" role="33vP2m">
+                                          <node concept="1pGfFk" id="1qMfQ8fmG$N" role="2ShVmc">
+                                            <ref role="37wK5l" to="33ny:~HashSet.&lt;init&gt;()" resolve="HashSet" />
+                                            <node concept="3uibUv" id="1qMfQ8fmHfX" role="1pMfVU">
+                                              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
                                     <node concept="1DcWWT" id="ECV7zt8t4J" role="3cqZAp">
                                       <node concept="3clFbS" id="ECV7zt8t4L" role="2LFqv$">
                                         <node concept="3cpWs8" id="ECV7zt8_NU" role="3cqZAp">
@@ -1688,6 +1707,59 @@
                                             <node concept="Rm8GO" id="ECV7zt8D5Y" role="3uHU7w">
                                               <ref role="Rm8GQ" to="ao3:~TextUnit$Status.Failed" resolve="Failed" />
                                               <ref role="1Px2BO" to="ao3:~TextUnit$Status" resolve="TextUnit.Status" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                        <node concept="3clFbJ" id="1qMfQ8fmHM6" role="3cqZAp">
+                                          <node concept="3clFbS" id="1qMfQ8fmHM8" role="3clFbx">
+                                            <node concept="1daRAt" id="1qMfQ8fmNDt" role="3cqZAp">
+                                              <property role="1daRAr" value="WARNING" />
+                                              <node concept="2YIFZM" id="1qMfQ8fmOiV" role="1daK9t">
+                                                <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                                                <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                                                <node concept="Xl_RD" id="1qMfQ8fmOt6" role="37wK5m">
+                                                  <property role="Xl_RC" value="Duplicate unit name %s in model %s, output likely corrupt" />
+                                                </node>
+                                                <node concept="2OqwBi" id="1qMfQ8fmOTi" role="37wK5m">
+                                                  <node concept="37vLTw" id="1qMfQ8fmOMX" role="2Oq$k0">
+                                                    <ref role="3cqZAo" node="ECV7zt8t4M" resolve="tu" />
+                                                  </node>
+                                                  <node concept="liA8E" id="1qMfQ8fmPq0" role="2OqNvi">
+                                                    <ref role="37wK5l" to="ao3:~TextUnit.getFileName():java.lang.String" resolve="getFileName" />
+                                                  </node>
+                                                </node>
+                                                <node concept="2OqwBi" id="7Zf0vhU6FuY" role="37wK5m">
+                                                  <node concept="2OqwBi" id="7Zf0vhU6EDm" role="2Oq$k0">
+                                                    <node concept="37vLTw" id="7Zf0vhU6EyF" role="2Oq$k0">
+                                                      <ref role="3cqZAo" node="7A08csWcILH" resolve="tgr" />
+                                                    </node>
+                                                    <node concept="liA8E" id="7Zf0vhU6EVe" role="2OqNvi">
+                                                      <ref role="37wK5l" to="ao3:~TextGenResult.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
+                                                    </node>
+                                                  </node>
+                                                  <node concept="liA8E" id="7Zf0vhU6GuJ" role="2OqNvi">
+                                                    <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
+                                                  </node>
+                                                </node>
+                                              </node>
+                                            </node>
+                                          </node>
+                                          <node concept="3fqX7Q" id="1qMfQ8fmNgN" role="3clFbw">
+                                            <node concept="2OqwBi" id="1qMfQ8fmNgP" role="3fr31v">
+                                              <node concept="37vLTw" id="1qMfQ8fmNgQ" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="1qMfQ8fmD2i" resolve="seenFileNames" />
+                                              </node>
+                                              <node concept="liA8E" id="1qMfQ8fmNgR" role="2OqNvi">
+                                                <ref role="37wK5l" to="33ny:~HashSet.add(java.lang.Object):boolean" resolve="add" />
+                                                <node concept="2OqwBi" id="1qMfQ8fmNgS" role="37wK5m">
+                                                  <node concept="37vLTw" id="1qMfQ8fmNgT" role="2Oq$k0">
+                                                    <ref role="3cqZAo" node="ECV7zt8t4M" resolve="tu" />
+                                                  </node>
+                                                  <node concept="liA8E" id="1qMfQ8fmNgU" role="2OqNvi">
+                                                    <ref role="37wK5l" to="ao3:~TextUnit.getFileName():java.lang.String" resolve="getFileName" />
+                                                  </node>
+                                                </node>
+                                              </node>
                                             </node>
                                           </node>
                                         </node>

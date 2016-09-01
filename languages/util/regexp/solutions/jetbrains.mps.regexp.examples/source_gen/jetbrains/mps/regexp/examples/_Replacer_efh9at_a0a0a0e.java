@@ -15,4 +15,8 @@ public class _Replacer_efh9at_a0a0a0e implements Replacer {
     this._enclosingClass = enclosingClass;
     this._closureContext = (Object) closureContext;
   }
+  public _Replacer_efh9at_a0a0a0e(BaseLanguageIntegration enclosingClass) {
+    this._enclosingClass = enclosingClass;
+    this._closureContext = null;
+  }
 }
