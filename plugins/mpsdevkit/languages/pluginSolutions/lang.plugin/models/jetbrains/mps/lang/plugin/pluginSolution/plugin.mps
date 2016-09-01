@@ -454,7 +454,7 @@
                 <ref role="3cqZAo" node="hSQohnv" resolve="dialog" />
               </node>
               <node concept="liA8E" id="hSQoxy7" role="2OqNvi">
-                <ref role="37wK5l" to="dsk9:3pY4pKeZj_N" resolve="getSolution" />
+                <ref role="37wK5l" to="dsk9:3pY4pKeZj_N" resolve="getModule" />
               </node>
             </node>
           </node>

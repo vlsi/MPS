@@ -48,12 +48,13 @@ public class NewLanguage_Action extends BaseAction {
     NewLanguageDialog dialog = new NewLanguageDialog(event.getData(MPSCommonDataKeys.MPS_PROJECT), event.getData(MPSDataKeys.NAMESPACE));
     dialog.show();
 
-    Language l = dialog.getLangauge();
+    Language l = dialog.getModule();
     if (l == null) {
       return;
     }
+
+    // TODO: Sync ProjectPane.rebuildTree() with NewSolution, CloneModule actions 
     ProjectPane projectPane = ProjectPane.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    projectPane.rebuildTree();
     projectPane.selectModule(l, false);
   }
 }
