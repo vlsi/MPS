@@ -105,7 +105,7 @@ public class ProjectMPSDependenciesTest extends CoreMpsTest {
       Map<SModuleReference, String> invalidModules2Problems = modulesWatcher.findInvalidModulesProblems();
 
       for (SModuleReference mRef : invalidModules2Problems.keySet()) {
-        final String msg = String.format("Invalid dependencies (%s) for module %s: ", levelIndicator, mRef.getModuleName() + invalidModules2Problems.get(mRef));
+        final String msg = String.format("Invalid dependencies (%s) for module %s: %s", levelIndicator, mRef.getModuleName(), invalidModules2Problems.get(mRef));
         myErrors.addError(new AssertionError(msg));
       }
     });

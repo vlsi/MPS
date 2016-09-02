@@ -50,6 +50,7 @@ import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.Reference;
+import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.openapi.FileSystem;
@@ -1057,7 +1058,11 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   /**
    * has a fallback if the usedLanguage is absent in the module descriptor. if it happens then returns simply the current usedLanguage version
    * @param check is whether to show error for not found version
+   * @deprecated hack for migration, will be gone after 3.4
    */
+  @ToRemove(version = 3.4)
+  @Hack
+  @Deprecated
   public int getUsedLanguageVersion(@NotNull SLanguage usedLanguage, boolean check) {
     ModuleDescriptor moduleDescriptor = getModuleDescriptor();
     if (!checkDescriptorNotNull(moduleDescriptor)) {
