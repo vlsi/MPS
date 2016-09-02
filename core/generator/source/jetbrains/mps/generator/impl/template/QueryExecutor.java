@@ -16,16 +16,22 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
+import jetbrains.mps.generator.impl.query.VariableValueQuery;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -40,6 +46,11 @@ import java.util.Collection;
  * in addition to query execution. Note, this might change once we encapsulate all queries into objects. Then, factory for these query object may
  * augment them with proper extra tasks as needed, without need to have this indirection mediator. Meanwhile, however, we keep this and slowly
  * migrate methods of QEC here, with proper/better API.
+ * IMPORTANT: One real benefit of using indirection mechanism of this class is handling of user-code exceptions. While for reflective calls we can do that in
+ * query implementations from {@code ReflectiveQueryProvider}, we can't expect generated non-reflective queries to execute without a RuntimeException
+ * always. This indirection allows us to keep this handling in a single place (and report e.g. with dedicated GFE subclass). Besides,
+ * we can provide 'straightforward' QE implementation that doesn't do additional try/catch for templates from deployed generators to speed-up
+ * things a bit (if/when we are pretty confident our generators work good)
  *
  * Note, with extra layer of RT objects as Rules, for a query that is associated with a Rule, it's not always straightforward whether
  * generator implementation shall run it directly through <code>QueryExecutor</code> or shall delegate to Rule implementation instead
@@ -59,4 +70,10 @@ public interface QueryExecutor {
   Object evaluate(@NotNull PropertyValueQuery query, @NotNull PropertyMacroContext context) throws GenerationFailureException;
   boolean evaluate(@NotNull IfMacroCondition condition, @NotNull IfMacroContext context) throws GenerationFailureException;
   boolean evaluate(@NotNull InlineSwitchCaseCondition condition, @NotNull InlineSwitchCaseContext context) throws GenerationFailureException;
+  @Nullable
+  Object evaluate(@NotNull ReferenceTargetQuery query, @NotNull ReferenceMacroContext context) throws GenerationFailureException;
+  @Nullable
+  Object evaluate(@NotNull CallArgumentQuery query, @NotNull TemplateArgumentContext context) throws GenerationFailureException;
+  @Nullable
+  Object evaluate(@NotNull VariableValueQuery query, @NotNull TemplateVarContext context) throws GenerationFailureException;
 }

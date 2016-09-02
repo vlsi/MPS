@@ -19,7 +19,12 @@ import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.GeneratorUtilEx;
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.query.CallArgumentQuery;
+import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
+import jetbrains.mps.generator.impl.query.QueryKey;
+import jetbrains.mps.generator.impl.query.QueryKeyImpl;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -155,13 +160,27 @@ public class TemplateCall {
 
   // TemplateArgumentQueryExpression
   private static class QueryExpr implements ArgumentExpression {
-    private final SNode myQuery;
+    private final QueryKey myQueryKey;
+    private CallArgumentQuery myQuery;
+
     public QueryExpr(SNode queryExpr) {
-      myQuery = RuleUtil.getTemplateArgumentQueryExpression_Query(queryExpr);
+      SNode query = RuleUtil.getTemplateArgumentQueryExpression_Query(queryExpr);
+      myQueryKey = new QueryKeyImpl(queryExpr.getReference(), query.getNodeId());
     }
+
+    protected QueryExpr(QueryKey key) {
+      myQueryKey = key;
+    }
+
     @Override
     public Object evaluate(TemplateContext context) throws GenerationFailureException {
-      return context.getEnvironment().getQueryExecutor().evaluateArgumentQuery(context.getInput(), myQuery, context);
+      CallArgumentQuery q = myQuery;
+      if (q == null) {
+        // TODO perhaps, shall initialize it at construction time, rather than on first use?
+        GeneratorQueryProvider queryProvider = context.getEnvironment().getQueryProvider(myQueryKey.getTemplateNode());
+        q = myQuery = queryProvider.getTemplateCallArgumentQuery(myQueryKey);
+      }
+      return context.getEnvironment().getQueryExecutor().evaluate(q, new TemplateArgumentContext(context, myQueryKey.getTemplateNode()));
     }
   }
 
@@ -179,20 +198,11 @@ public class TemplateCall {
   }
 
   // Expression, requires generated code according to GeneratorUtilEx.shallGenerateFunctionToEvaluate
-  private static class GeneratedExpr implements ArgumentExpression {
-    private final SNode myExpr;
-
+  private static class GeneratedExpr extends QueryExpr implements ArgumentExpression {
     public GeneratedExpr(SNode expr) {
-      myExpr = expr;
-    }
-
-    @Override
-    public Object evaluate(TemplateContext context) throws GenerationFailureException {
       // Here we utilize the fact we generate identical methods both for TemplateArgumentQueryExpression and plain Expressions,
-      // and rely on fact evaluateArgumentQuery doesn't look into SNode supplied (except to build a method name).
-      // XXX And yes, I'm aware methods generated for expressions do not expect to take IOperationContext,
-      // and if someone makes NEED_OPCONTEXT=true, this call would fail. I plan to drop IOperationContext support soon, thus do not care
-      return context.getEnvironment().getQueryExecutor().evaluateArgumentQuery(context.getInput(), myExpr, context);
+      // and rely on the fact query provider needs only SNodeId to build a method name.
+      super(new QueryKeyImpl(expr.getReference(), expr.getNodeId()));
     }
   }
 

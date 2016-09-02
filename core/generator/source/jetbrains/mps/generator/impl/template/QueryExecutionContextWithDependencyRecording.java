@@ -19,11 +19,14 @@ import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.impl.interpreted.TemplateCreateRootRuleInterpreted;
 import jetbrains.mps.generator.impl.interpreted.TemplateRootMappingRuleInterpreted;
+import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
+import jetbrains.mps.generator.impl.query.VariableValueQuery;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
@@ -37,8 +40,11 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -122,11 +128,33 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
     }
   }
 
+  @Nullable
+  @Override
+  public Object evaluate(@NotNull CallArgumentQuery query, @NotNull TemplateArgumentContext context) throws GenerationFailureException {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.evaluate(query, context);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
   @Override
   public Object evaluateArgumentQuery(SNode inputNode, SNode query, @NotNull TemplateContext context) {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.evaluateArgumentQuery(inputNode, query, context);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Nullable
+  @Override
+  public Object evaluate(@NotNull VariableValueQuery query, @NotNull TemplateVarContext context) throws GenerationFailureException {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.evaluate(query, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }
@@ -168,6 +196,17 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.getContextNodeForTemplateFragment(templateFragmentNode, mainContextNode, context);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Nullable
+  @Override
+  public Object evaluate(@NotNull ReferenceTargetQuery query, @NotNull ReferenceMacroContext context) throws GenerationFailureException {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.evaluate(query, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }

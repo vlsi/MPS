@@ -88,7 +88,11 @@ public class TemplateFunctionMethodName {
   }
 
   public static String templateArgumentQuery(SNode function) {
-    return "templateArgumentQuery_" + function.getNodeId().toString();
+    return templateArgumentQuery(function.getNodeId());
+  }
+
+  public static String templateArgumentQuery(SNodeId function) {
+    return "templateArgumentQuery_" + function.toString();
   }
 
   public static String patternRule_Condition(SNode pattern) {
@@ -104,6 +108,10 @@ public class TemplateFunctionMethodName {
   }
 
   public static String varValue_Query(SNode function) {
-    return "insertMacro_varValue_" + function.getNodeId().toString();
+    return varValue_Query(function.getNodeId());
+  }
+
+  public static String varValue_Query(SNodeId function) {
+    return "insertMacro_varValue_" + function.toString();
   }
 }

@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import jetbrains.mps.generator.impl.query.CreateRootCondition;
 import jetbrains.mps.generator.impl.query.DropAttributeRuleCondition;
 import jetbrains.mps.generator.impl.query.DropRuleCondition;
@@ -34,6 +35,7 @@ import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.ScriptCodeBlock;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
+import jetbrains.mps.generator.impl.query.VariableValueQuery;
 import jetbrains.mps.generator.impl.query.WeaveAnchorQuery;
 import jetbrains.mps.generator.impl.query.WeaveRuleCondition;
 import jetbrains.mps.generator.impl.query.WeaveRuleQuery;
@@ -50,8 +52,10 @@ import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.generator.template.WeavingAnchorContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
@@ -253,6 +257,24 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     // so that we can ReferenceTargetQuery can tell link + defaultResolveInfo (like PropertyValueQuery does)
     String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(((QueryKeyImpl) identity).getQueryNodeId());
     return new RefMacro(identity.getTemplateNode(), methodName);
+  }
+
+  @NotNull
+  @Override
+  public CallArgumentQuery getTemplateCallArgumentQuery(@NotNull QueryKey identity) {
+    String methodName = TemplateFunctionMethodName.templateArgumentQuery(((QueryKeyImpl) identity).getQueryNodeId());
+    // DefaultQueryExecutionContext used to evaluate to null if no method was found.
+    // We need that to support bootstrap for generator templates (e.g. if I add an argument to a CALL inside QueriesGenerated template)
+    return new Impl2(identity.getTemplateNode(), methodName, null);
+  }
+
+  @NotNull
+  @Override
+  public VariableValueQuery getVariableValueQuery(@NotNull QueryKey identity) {
+    String methodName = TemplateFunctionMethodName.varValue_Query(((QueryKeyImpl) identity).getQueryNodeId());
+    // DefaultQueryExecutionContext used to evaluate to null if no method was found.
+    // We need that to support bootstrap for generator templates (e.g. if I add a new VAR into QueriesGenerated template)
+    return new Impl2(identity.getTemplateNode(), methodName, null);
   }
 
   private String getBaseRuleConditionMethod(SNode rule) {
@@ -468,7 +490,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     private final String myMethodName;
     private QueryMethod<Object> myMethod;
 
-    public RefMacro(SNodeReference templateNode, @NotNull  String methodName) {
+    public RefMacro(SNodeReference templateNode, @NotNull String methodName) {
       myTemplateNode = templateNode;
       myMethodName = methodName;
     }
@@ -503,6 +525,65 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
         ctx.getGenerator().getLogger().error(myTemplateNode, m);
         throw new GenerationFailureException(m);
       }
+    }
+  }
+
+
+  // queries that evaluate to Object
+  static final class Impl2 implements VariableValueQuery, CallArgumentQuery {
+    private final SNodeReference myTemplateNode;
+    private final String myMethodName;
+    private final Object myMissingMethodValue;
+    private final boolean myUseDefaultForMissing;
+    private QueryMethod<Object> myMethod;
+
+    public Impl2(@NotNull SNodeReference templateNode, @NotNull String methodName) {
+      myTemplateNode = templateNode;
+      myMethodName = methodName;
+      myMissingMethodValue = null;
+      myUseDefaultForMissing = false;
+    }
+
+    public Impl2(@NotNull SNodeReference templateNode, @NotNull String methodName, Object missingMethodValue) {
+      myTemplateNode = templateNode;
+      myMethodName = methodName;
+      myMissingMethodValue = missingMethodValue;
+      myUseDefaultForMissing = true;
+    }
+
+    @Nullable
+    @Override
+    public Object evaluate(@NotNull TemplateArgumentContext context) throws GenerationFailureException {
+      return getMethod(context, "cannot find method '%s' for template call argument").invoke(context);
+    }
+
+    @Nullable
+    @Override
+    public Object evaluate(@NotNull TemplateVarContext context) throws GenerationFailureException {
+      return getMethod(context, "cannot find method '%s' for VAR macro").invoke(context);
+    }
+
+    private QueryMethod<Object> getMethod(TemplateQueryContext ctx, String messageFormat) throws GenerationFailureException {
+      QueryMethod<Object> m = myMethod;
+      if (m == null) {
+        try {
+          m = myMethod = QueryMethodGenerated.getQueryMethod(myTemplateNode.getModelReference(), myMethodName);
+        } catch (NoSuchMethodException e) {
+          final String msg = String.format(messageFormat, myMethodName);
+          if (myUseDefaultForMissing) {
+            ctx.getGenerator().getLogger().warning(myTemplateNode, msg);
+            return contextObject -> myMissingMethodValue;
+          } else {
+            ctx.getGenerator().getLogger().error(myTemplateNode, msg);
+            throw new GenerationFailureException(msg);
+          }
+        } catch (ClassNotFoundException e){
+          final String msg = String.format(messageFormat, myMethodName);
+          ctx.getGenerator().getLogger().error(myTemplateNode, msg);
+          throw new GenerationFailureException(msg);
+        }
+      }
+      return m;
     }
   }
 }

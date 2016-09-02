@@ -261,12 +261,23 @@ public class TemplateQueryContext {
   /**
    * Node in template model most close to the query being evaluated. For macro nodes, however
    * shall point to macro's parent node (genContext.templateNode op contract)
-   * FIXME doesn't make sense for generated templates? Shall refactor/replace with templateNodeRef or drop altogether
+   * @deprecated  doesn't make sense for generated templates. Switch to {@link #getTemplateReference()}
+   *
    */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public SNode getTemplateNode() {
     SNodeReference tnr = getTemplateNodeRef();
     SRepository repo = myGenerator.getGeneratorSessionContext().getRepository();
     return tnr == null ? null : tnr.resolve(repo);
+  }
+
+  /**
+   * @return context template node where the query is evaluated, if known.
+   */
+  @Nullable
+  public final SNodeReference getTemplateReference() {
+    return getTemplateNodeRef();
   }
 
   /**

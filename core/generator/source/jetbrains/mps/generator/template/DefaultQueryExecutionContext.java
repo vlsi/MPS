@@ -19,11 +19,14 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
+import jetbrains.mps.generator.impl.query.VariableValueQuery;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
@@ -149,6 +152,19 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     }
   }
 
+  @Nullable
+  @Override
+  public Object evaluate(@NotNull CallArgumentQuery query, @NotNull TemplateArgumentContext context) throws GenerationFailureException {
+    try {
+      return query.evaluate(context);
+    } catch (GenerationFailureException ex) {
+      throw ex;
+    } catch (Throwable t) {
+      context.showErrorMessage(null, "failed to evaluate query for template call argument");
+      throw new GenerationFailureException(t);
+    }
+  }
+
   @Override
   public Object evaluateArgumentQuery(SNode inputNode, SNode query, @NotNull TemplateContext context) {
     String methodName = TemplateFunctionMethodName.templateArgumentQuery(query);
@@ -161,6 +177,19 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       getLog().handleException(e);
       getLog().error(query.getReference(), "cannot evaluate query, exception was thrown", GeneratorUtil.describeInput(context));
       return null;
+    }
+  }
+
+  @Nullable
+  @Override
+  public Object evaluate(@NotNull VariableValueQuery query, @NotNull TemplateVarContext context) throws GenerationFailureException {
+    try {
+      return query.evaluate(context);
+    } catch (GenerationFailureException ex) {
+      throw ex;
+    } catch (Throwable t) {
+      context.showErrorMessage(null, "failed to evaluate VAR macro query");
+      throw new GenerationFailureException(t);
     }
   }
 
@@ -231,6 +260,19 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
     // ok, main context node by default
     return mainContextNode;
+  }
+
+  @Nullable
+  @Override
+  public Object evaluate(@NotNull ReferenceTargetQuery query, @NotNull ReferenceMacroContext context) throws GenerationFailureException {
+    try {
+      return query.evaluate(context);
+    } catch (GenerationFailureException ex) {
+      throw ex;
+    } catch (Throwable t) {
+      context.showErrorMessage(null, "failed to evaluate query for reference macro target");
+      throw new GenerationFailureException(t);
+    }
   }
 
   @Override

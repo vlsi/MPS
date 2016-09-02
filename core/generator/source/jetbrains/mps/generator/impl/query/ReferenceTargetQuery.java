@@ -39,6 +39,7 @@ public interface ReferenceTargetQuery extends Query {
   Object evaluate(@NotNull ReferenceMacroContext ctx) throws GenerationFailureException;
 
   abstract class Base implements ReferenceTargetQuery {
+    // TODO expose in API and utlize in TemplateNode
     private String myDefaultResolveInfo;
 
     protected Base() {

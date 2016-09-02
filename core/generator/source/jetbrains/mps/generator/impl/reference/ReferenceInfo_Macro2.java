@@ -80,7 +80,8 @@ public class ReferenceInfo_Macro2 extends ReferenceInfo {
   private void expandReferenceMacro(PostponedReference ref) throws GenerationFailureException {
     SNode sourceNode = ref.getSourceNode();
     SReferenceLink macroLink = ref.getLink();
-    Object result = myQuery.evaluate(new ReferenceMacroContext(myContext, sourceNode, getMacroNodeRef(), macroLink));
+    ReferenceMacroContext queryContext = new ReferenceMacroContext(myContext, sourceNode, getMacroNodeRef(), macroLink);
+    Object result = myContext.getEnvironment().getQueryExecutor().evaluate(myQuery, queryContext);
     if (result instanceof SNode) {
       myOutputTargetNode = (SNode) result;
     } else if (result != null) {

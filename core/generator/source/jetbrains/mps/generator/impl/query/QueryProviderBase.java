@@ -30,7 +30,9 @@ import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.generator.template.WeavingAnchorContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
@@ -149,13 +151,13 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   @NotNull
   @Override
   public IfMacroCondition getIfMacroCondition(@NotNull SNode ifMacro) {
-    return new Defaults();
+    return new Missing(ifMacro);
   }
 
   @NotNull
   @Override
   public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull SNode caseNode) {
-    return new Defaults();
+    return new Missing(caseNode);
   }
 
   @NotNull
@@ -168,6 +170,29 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     return new RefQuery(identity);
   }
 
+  @NotNull
+  @Override
+  public CallArgumentQuery getTemplateCallArgumentQuery(@NotNull QueryKey identity) {
+    // XXX provisional code to support generated providers prior to addition of the method
+    return new ReflectiveQueryProvider().getTemplateCallArgumentQuery(identity);
+    // DefaultQueryExecutionContext used to evaluate to null if no method was found.
+    // It it reasonable for scenarios like bootstrap of the generator itself (e.g. to generate a new CALL inside QueriesGenerate)
+    // but for any other generator there's no reason to continue generation if QG is broken that's why fail with Missing.
+    // For lang.generator generator, we handle missing methods in ReflectiveQueryProvider, and unless we decide to switch to non-reflective
+    // QG in lang.generator itself, we shall not bother. Anyway, it's not possible to handle it here, we'll need to generate appropriate code
+    // in QPB subclass not to fail when it's asked for non-existent query (now switch:default throws an exception)
+//    return new Missing(identity);
+  }
+
+  @NotNull
+  @Override
+  public VariableValueQuery getVariableValueQuery(@NotNull QueryKey identity) {
+    // XXX provisional code to support generated providers prior to addition of the method
+    return new ReflectiveQueryProvider().getVariableValueQuery(identity);
+    // Same as above, no reason to default to null.
+//    return new Missing(identity);
+  }
+
   /**
    * Reasonable default values for all conditions and queries.
    * Note, these default values represent the case when no condition/query was specified. There's
@@ -175,7 +200,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
    */
   public static class Defaults implements CreateRootCondition, MapRootRuleCondition, ReductionRuleCondition, PatternRuleQuery,
       DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition, SourceNodeQuery, SourceNodesQuery,
-      IfMacroCondition, InlineSwitchCaseCondition, WeaveAnchorQuery, DropAttributeRuleCondition {
+      WeaveAnchorQuery, DropAttributeRuleCondition {
 
     @Override
     public boolean check(@NotNull CreateRootRuleContext ctx) {
@@ -239,19 +264,6 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     }
 
     @Override
-    public boolean check(@NotNull IfMacroContext context) throws GenerationFailureException {
-      context.showErrorMessage(null, "cannot evaluate if-macro condition");
-      throw new GenerationFailureException("cannot evaluate if-macro condition");
-    }
-
-    @Override
-    public boolean check(@NotNull InlineSwitchCaseContext context) throws GenerationFailureException {
-      // here comes the logic that used to live in DefaultQueryExecutionContext
-      context.showErrorMessage(null, "condition required for case in inline switch");
-      return false;
-    }
-
-    @Override
     @Nullable
     public SNode anchorNode(WeavingAnchorContext ctx) throws GenerationFailureException {
       // null is legitimate value, indicates 'just append'
@@ -305,6 +317,55 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     public Object evaluate(@NotNull ReferenceMacroContext ctx) throws GenerationFailureException {
       ctx.getGenerator().getLogger().error(myIdentity.getTemplateNode(), "missing reference macro");
       throw new GenerationFailureException("missing reference macro");
+    }
+  }
+
+  // unlike Defaults, complains about missing query
+  private static class Missing implements IfMacroCondition, InlineSwitchCaseCondition, CallArgumentQuery, VariableValueQuery {
+    private final SNodeReference myTemplate;
+
+    public Missing(QueryKey identity) {
+      myTemplate = identity.getTemplateNode();
+    }
+
+    // FIXME switch to QueryKey
+    public Missing(SNode identity) {
+      myTemplate = identity.getReference();
+    }
+
+    @Override
+    public boolean check(@NotNull IfMacroContext context) throws GenerationFailureException {
+      String msg = "no required condition for IF macro";
+      reportError(context, msg);
+      throw new GenerationFailureException(msg);
+    }
+
+    @Override
+    public boolean check(@NotNull InlineSwitchCaseContext context) throws GenerationFailureException {
+      // here comes the logic that used to live in DefaultQueryExecutionContext
+      String msg = "condition required for case in inline switch";
+      reportError(context, msg);
+      throw new GenerationFailureException(msg);
+    }
+
+    @Nullable
+    @Override
+    public Object evaluate(@NotNull TemplateArgumentContext context) throws GenerationFailureException {
+      String msg = "call argument query is missing";
+      reportError(context, msg);
+      throw new GenerationFailureException(msg);
+    }
+
+    @Nullable
+    @Override
+    public Object evaluate(@NotNull TemplateVarContext context) throws GenerationFailureException {
+      String msg = "variable value query is missing";
+      reportError(context, msg);
+      throw new GenerationFailureException(msg);
+    }
+
+    private void reportError(TemplateQueryContext context, String message) throws GenerationFailureException {
+      context.getGenerator().getLogger().error(myTemplate, message);
     }
   }
 }

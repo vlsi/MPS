@@ -88,6 +88,12 @@ public interface GeneratorQueryProvider {
   @NotNull
   ReferenceTargetQuery getReferenceTargetQuery(@NotNull QueryKey identity);
 
+  @NotNull
+  CallArgumentQuery getTemplateCallArgumentQuery(@NotNull QueryKey identity);
+
+  @NotNull
+  VariableValueQuery getVariableValueQuery(@NotNull QueryKey identity);
+
   interface Source {
     @NotNull
     GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference templateNodeRef);
