@@ -44,15 +44,8 @@ public class CompletionActionItemUtil {
 
   public static String getVisibleMatchingText(CompletionActionItem item) {
     if (item instanceof SubstituteMenuItemAsActionItem) {
-      final SNode referentNode = getReferentNode(item);
-      if (referentNode != null) {
-        final String referentMatchingText = NodePresentationUtil.matchingText(referentNode, true, true);
-        final SAbstractConcept outputConcept = ((SubstituteMenuItemAsActionItem) item).getSubstituteItem().getOutputConcept();
-        if (outputConcept != null && ReferenceConceptUtil.hasSmartAlias(outputConcept)) {
-          return ReferenceConceptUtil.getPresentationFromSmartAlias(outputConcept, referentMatchingText);
-        }
-        return referentMatchingText;
-      }
+      final SubstituteMenuItem substituteItem = ((SubstituteMenuItemAsActionItem) item).getSubstituteItem();
+      return SubstituteMenuItemUtil.getVisibleMatchingText(substituteItem);
     }
     return null;
   }

@@ -54,14 +54,14 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
     if (myMatchingText == null) {
       myMatchingText = myRefDescriptor.getReferencePresentation(myReferentNode, false, true, false);
       if (myMatchingText == null) {
-        myMatchingText = getSmartMatchingText();
+        myMatchingText = getSmartMatchingText(false);
       }
     }
     return myMatchingText;
   }
 
-  private String getSmartMatchingText() {
-    String referentMatchingText = NodePresentationUtil.matchingText(myReferentNode, true, false);
+  private String getSmartMatchingText(boolean visible) {
+    String referentMatchingText = NodePresentationUtil.matchingText(myReferentNode, true, visible);
     if (ReferenceConceptUtil.hasSmartAlias(mySmartConcept)) {
       return ReferenceConceptUtil.getPresentationFromSmartAlias(mySmartConcept, referentMatchingText);
     }
@@ -94,7 +94,15 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
     return IconResourceUtil.getIconResourceForConcept(myReferentNode.getConcept());
   }
 
-  SNode getReferentNode(){
+  SNode getReferentNode() {
     return myReferentNode;
+  }
+
+  String getVisibleMatchingText() {
+    String visibleMatchingText = myRefDescriptor.getReferencePresentation(myReferentNode, true, true, false);
+    if (visibleMatchingText == null) {
+      visibleMatchingText = getSmartMatchingText(true);
+    }
+    return visibleMatchingText;
   }
 }

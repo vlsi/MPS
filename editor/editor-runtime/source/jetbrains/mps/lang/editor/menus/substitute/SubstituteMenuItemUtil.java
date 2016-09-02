@@ -24,11 +24,22 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class SubstituteMenuItemUtil {
 
   public static SNode getReferentNode(SubstituteMenuItem item) {
-   if (item instanceof SmartReferenceSubstituteMenuItem) {
-     return ((SmartReferenceSubstituteMenuItem) item).getReferentNode();
-   } else if (item instanceof SubstituteMenuItemWrapper) {
-     return getReferentNode(((SubstituteMenuItemWrapper) item).getWrappedItem());
-   }
-   return null;
- }
+    final SmartReferenceSubstituteMenuItem smartItem = getSmartItem(item);
+    return smartItem == null ? null : smartItem.getReferentNode();
+  }
+
+  public static String getVisibleMatchingText(SubstituteMenuItem item) {
+    final SmartReferenceSubstituteMenuItem smartItem = getSmartItem(item);
+    return smartItem == null ? null : smartItem.getVisibleMatchingText();
+  }
+
+  private static SmartReferenceSubstituteMenuItem getSmartItem(SubstituteMenuItem item) {
+    if (item instanceof SmartReferenceSubstituteMenuItem) {
+      return ((SmartReferenceSubstituteMenuItem) item);
+    } else if (item instanceof SubstituteMenuItemWrapper) {
+      return getSmartItem(((SubstituteMenuItemWrapper) item).getWrappedItem());
+    }
+    return null;
+  }
+
 }
