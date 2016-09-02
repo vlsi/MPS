@@ -42,6 +42,11 @@ public final class UsedModulesCollector {
   private final Map<SLanguage, Collection<SModule>> myLanguageRuntimesCache = new HashMap<>();
 
   @NotNull
+  public Collection<SModule> directlyUsedModules(@NotNull SModule module, boolean includeNonReexport, boolean runtimes) {
+    return directlyUsedModules(module, new PostingWarningsErrorHandler(), includeNonReexport, runtimes);
+  }
+
+  @NotNull
   public Collection<SModule> directlyUsedModules(@NotNull SModule module, @NotNull ErrorHandler handler, boolean includeNonReexport, boolean runtimes) {
     Set<SModule> result = new HashSet<>();
     for (SDependency dependency : module.getDeclaredDependencies()) {
