@@ -15,7 +15,9 @@
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.CompositeStream" file="CompositeStream.java">
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="java.io.FilterOutputStream" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPluginsSettings_Configuration" file="DeployPluginsSettings_Configuration.java">
@@ -278,6 +280,7 @@
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcess" file="FakeProcess.java">
     <classNode dependClassName="com.intellij.util.WaitFor" />
+    <classNode dependClassName="java.io.BufferedOutputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.io.OutputStream" />
@@ -285,7 +288,10 @@
     <classNode dependClassName="java.io.PipedOutputStream" />
     <classNode dependClassName="java.io.PrintStream" />
     <classNode dependClassName="java.lang.InterruptedException" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.CompositeStream" />
     <classNode extendsClassName="java.lang.Process" />
   </dependency>

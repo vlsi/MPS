@@ -5,9 +5,10 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 import java.io.PrintStream;
 import java.io.PipedInputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.BufferedOutputStream;
 import java.io.PipedOutputStream;
 import java.io.InputStream;
-import java.io.OutputStream;
 import com.intellij.util.WaitFor;
 
 public class FakeProcess extends Process {
@@ -15,24 +16,24 @@ public class FakeProcess extends Process {
 
   private final PrintStream myOldOut;
   private final PrintStream myOldErr;
-  private final PipedInputStream myInputOut;
-  private final PipedInputStream myInputErr;
+  private final PipedInputStream myInputOut = new PipedInputStream();
+  private final PipedInputStream myInputErr = new PipedInputStream();
   private int myExitCode = -1;
   private boolean myDestroyed = false;
 
   public FakeProcess() {
     myOldOut = System.out;
     myOldErr = System.err;
-    myInputOut = new PipedInputStream();
-    myInputErr = new PipedInputStream();
   }
 
   public void init() throws IOException {
-    PrintStream newOut = new PrintStream(new PipedOutputStream(myInputOut), true);
-    PrintStream newErr = new PrintStream(new PipedOutputStream(myInputErr), true);
+    System.setOut(createCompositeWrapper(myInputOut, myOldOut));
+    System.setErr(createCompositeWrapper(myInputErr, myOldErr));
+  }
 
-    System.setOut(new PrintStream(new CompositeStream(myOldOut, newOut)));
-    System.setErr(new PrintStream(new CompositeStream(myOldErr, newErr)));
+  private PrintStream createCompositeWrapper(PipedInputStream pipeInput, PrintStream oldOut) throws IOException {
+    OutputStream newOut = new BufferedOutputStream(new PipedOutputStream(pipeInput));
+    return new PrintStream(new CompositeStream(oldOut, newOut));
   }
 
   public void setExitCode(int code) {
@@ -45,20 +46,23 @@ public class FakeProcess extends Process {
     System.setOut(myOldOut);
     System.setErr(myOldErr);
   }
+
   public int exitValue() {
-    assert false;
     return myExitCode;
   }
+
   public InputStream getErrorStream() {
     return myInputErr;
   }
+
   public InputStream getInputStream() {
     return myInputOut;
   }
+
   public OutputStream getOutputStream() {
-    assert false;
-    return null;
+    throw new UnsupportedOperationException("No output stream here");
   }
+
   public int waitFor() throws InterruptedException {
     new WaitFor() {
       protected boolean condition() {
@@ -66,5 +70,10 @@ public class FakeProcess extends Process {
       }
     };
     return myExitCode;
+  }
+
+  @Override
+  public String toString() {
+    return "Starting execution in-process";
   }
 }

@@ -6,9 +6,11 @@ import java.io.BufferedWriter;
 import org.jetbrains.annotations.NotNull;
 import java.io.OutputStreamWriter;
 import java.io.IOException;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.io.InputStream;
 import java.util.Scanner;
-import org.apache.log4j.LogManager;
+import org.apache.log4j.Level;
 
 public class UnitTestOutputReader {
   private final Process myUnitTestProcess;
@@ -16,10 +18,12 @@ public class UnitTestOutputReader {
   private final UnitTestOutputReader.BaseOutputReader myErrorReader;
   private final BufferedWriter myOutputWriter;
   private final UnitTestListener myUnitTestListener;
+
   private boolean myInsideTestError = false;
   private StringBuffer myLastError = new StringBuffer();
   private String myLastMessage = "";
   private String myCurrentlyRunningTest;
+
   public UnitTestOutputReader(@NotNull Process unitTestProcess, @NotNull UnitTestListener unitTestListener) {
     myUnitTestProcess = unitTestProcess;
     myUnitTestListener = unitTestListener;
@@ -37,6 +41,7 @@ public class UnitTestOutputReader {
     };
     myOutputWriter = new BufferedWriter(new OutputStreamWriter(myUnitTestProcess.getOutputStream()));
   }
+
   private void parseMessage(@NotNull String text, boolean error) {
     String textTrimmed = text.trim();
     if (text.startsWith(UnitTestRunner.START_TEST_PREFIX)) {
@@ -68,15 +73,18 @@ public class UnitTestOutputReader {
       myUnitTestListener.logMessage(text);
     }
   }
+
   private void saveLastTestIfNecessary() {
     if (myCurrentlyRunningTest != null) {
       myUnitTestListener.testFinished(myCurrentlyRunningTest);
       myCurrentlyRunningTest = null;
     }
   }
+
   private String removeTag(String text, String prefix) {
     return text.substring(prefix.length());
   }
+
   public int start() {
     myInputReader.start();
     myErrorReader.start();
@@ -84,27 +92,34 @@ public class UnitTestOutputReader {
       myOutputWriter.newLine();
       myOutputWriter.close();
       return myUnitTestProcess.waitFor();
-    } catch (InterruptedException e) {
-    } catch (IOException ignore) {
+    } catch (InterruptedException ignored) {
+    } catch (IOException ignored) {
     }
     return -1;
   }
+
+  protected static Logger LOG = LogManager.getLogger(UnitTestOutputReader.class);
   private static abstract class BaseOutputReader extends Thread {
-    private InputStream myIs;
+    private final InputStream myIs;
+
     public BaseOutputReader(InputStream is) {
-      this.myIs = is;
+      myIs = is;
     }
+
     @Override
     public void run() {
       Scanner s = new Scanner(this.myIs);
       try {
         while (!((this.isInterrupted())) && s.hasNextLine()) {
-          this.addMessage(s.nextLine());
+          addMessage(s.nextLine());
         }
       } catch (Exception e) {
-        LogManager.getLogger(UnitTestOutputReader.class).error("Error in BaseOutputReader", e);
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error("", e);
+        }
       }
     }
+
     protected abstract void addMessage(String message);
   }
 }

@@ -1411,23 +1411,23 @@
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/5901544768130632873">
     <file name="CompositeStream.java">
-      <node id="5901544768130672050" at="9,0,10,0" concept="5" trace="mySecond" />
-      <node id="5901544768130667160" at="10,79,11,17" concept="15" />
-      <node id="5901544768130673395" at="11,17,12,22" concept="4" />
-      <node id="5901544768130658451" at="15,47,16,19" concept="4" />
-      <node id="5901544768130689358" at="16,19,17,22" concept="4" />
-      <node id="5901544768130665902" at="10,0,14,0" concept="2" trace="CompositeStream#(Ljava/io/FilterOutputStream;Ljava/io/FilterOutputStream;)V" />
-      <node id="5901544768130658440" at="14,0,19,0" concept="8" trace="write#(I)V" />
-      <scope id="5901544768130665905" at="10,79,12,22" />
-      <scope id="5901544768130658447" at="15,47,17,22" />
-      <scope id="5901544768130665902" at="10,0,14,0">
+      <node id="5901544768130672050" at="11,0,12,0" concept="5" trace="mySecond" />
+      <node id="5901544768130667160" at="13,85,14,17" concept="15" />
+      <node id="5901544768130673395" at="14,17,15,22" concept="4" />
+      <node id="5901544768130658451" at="19,47,20,19" concept="4" />
+      <node id="5901544768130689358" at="20,19,21,22" concept="4" />
+      <node id="5901544768130665902" at="13,0,17,0" concept="2" trace="CompositeStream#(Ljava/io/OutputStream;Ljava/io/OutputStream;)V" />
+      <node id="5901544768130658440" at="18,0,23,0" concept="8" trace="write#(I)V" />
+      <scope id="5901544768130665905" at="13,85,15,22" />
+      <scope id="5901544768130658447" at="19,47,21,22" />
+      <scope id="5901544768130665902" at="13,0,17,0">
         <var name="first" id="5901544768130667611" />
         <var name="second" id="5901544768130668167" />
       </scope>
-      <scope id="5901544768130658440" at="14,0,19,0">
+      <scope id="5901544768130658440" at="18,0,23,0">
         <var name="i" id="5901544768130658444" />
       </scope>
-      <unit id="5901544768130632873" at="8,0,20,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.CompositeStream" />
+      <unit id="5901544768130632873" at="10,0,24,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.CompositeStream" />
     </file>
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/5963359171344105821">
@@ -3459,73 +3459,77 @@
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/6331234706169005048">
     <file name="FakeProcess.java">
-      <node id="6339244025082838083" at="14,0,15,0" concept="13" trace="TERMINATION_CODE" />
-      <node id="6331234706169216793" at="16,0,17,0" concept="5" trace="myOldOut" />
-      <node id="6331234706169217200" at="17,0,18,0" concept="5" trace="myOldErr" />
-      <node id="6331234706169251685" at="18,0,19,0" concept="5" trace="myInputOut" />
-      <node id="6331234706169251591" at="19,0,20,0" concept="5" trace="myInputErr" />
-      <node id="2127459597558607460" at="20,0,21,0" concept="5" trace="myExitCode" />
-      <node id="7611095800484358969" at="21,0,22,0" concept="5" trace="myDestroyed" />
-      <node id="6331234706169218048" at="23,24,24,26" concept="4" />
-      <node id="6331234706169219726" at="24,26,25,26" concept="4" />
-      <node id="6331234706169257130" at="25,26,26,40" concept="4" />
-      <node id="6331234706169280477" at="26,40,27,40" concept="4" />
-      <node id="5901544768131237768" at="30,41,31,82" concept="9" />
-      <node id="5901544768131245512" at="31,82,32,82" concept="9" />
-      <node id="5901544768131243841" at="32,82,33,0" concept="12" />
-      <node id="6331234706169056967" at="33,0,34,74" concept="4" />
-      <node id="6331234706169282422" at="34,74,35,74" concept="4" />
-      <node id="2127459597558610836" at="38,37,39,22" concept="4" />
-      <node id="7611095800484780697" at="42,25,43,26" concept="0" />
-      <node id="7611095800484361641" at="43,26,44,23" concept="4" />
-      <node id="6331234706169286828" at="44,23,45,28" concept="4" />
-      <node id="6331234706169287364" at="45,28,46,28" concept="4" />
-      <node id="6331234706169006716" at="48,26,49,17" concept="0" />
-      <node id="6331234706169005797" at="49,17,50,22" concept="10" />
-      <node id="6331234706169289375" at="52,39,53,22" concept="10" />
-      <node id="6331234706169289927" at="55,39,56,22" concept="10" />
-      <node id="6331234706169007568" at="58,41,59,17" concept="0" />
-      <node id="6331234706169005110" at="59,17,60,16" concept="10" />
-      <node id="7611095800484366596" at="64,37,65,27" concept="10" />
-      <node id="6331234706169007822" at="67,6,68,22" concept="10" />
-      <node id="2127459597558598593" at="38,0,41,0" concept="8" trace="setExitCode#(I)V" />
-      <node id="6331234706169005090" at="52,0,55,0" concept="8" trace="getErrorStream#()Ljava/io/InputStream;" />
-      <node id="6331234706169005097" at="55,0,58,0" concept="8" trace="getInputStream#()Ljava/io/InputStream;" />
-      <node id="7611095800483912651" at="64,0,67,0" concept="8" trace="condition#()Z" />
-      <node id="6331234706169005085" at="48,0,52,0" concept="8" trace="exitValue#()I" />
-      <node id="6331234706169005104" at="58,0,62,0" concept="8" trace="getOutputStream#()Ljava/io/OutputStream;" />
-      <node id="7611095800483712389" at="62,52,67,6" concept="4" />
-      <node id="6331234706169214768" at="23,0,29,0" concept="2" trace="FakeProcess#()V" />
-      <node id="6331234706169005080" at="42,0,48,0" concept="8" trace="destroy#()V" />
-      <node id="6331234706169609106" at="30,0,37,0" concept="8" trace="init#()V" />
-      <node id="6331234706169005111" at="62,0,70,0" concept="8" trace="waitFor#()I" />
-      <scope id="2127459597558598596" at="38,37,39,22" />
-      <scope id="6331234706169005094" at="52,39,53,22" />
-      <scope id="6331234706169005101" at="55,39,56,22" />
-      <scope id="7611095800483912655" at="64,37,65,27" />
-      <scope id="6331234706169005089" at="48,26,50,22" />
-      <scope id="6331234706169005108" at="58,41,60,16" />
-      <scope id="2127459597558598593" at="38,0,41,0">
+      <node id="6339244025082838083" at="15,0,16,0" concept="13" trace="TERMINATION_CODE" />
+      <node id="6331234706169216793" at="17,0,18,0" concept="5" trace="myOldOut" />
+      <node id="6331234706169217200" at="18,0,19,0" concept="5" trace="myOldErr" />
+      <node id="6331234706169251685" at="19,0,20,0" concept="5" trace="myInputOut" />
+      <node id="6331234706169251591" at="20,0,21,0" concept="5" trace="myInputErr" />
+      <node id="2127459597558607460" at="21,0,22,0" concept="5" trace="myExitCode" />
+      <node id="7611095800484358969" at="22,0,23,0" concept="5" trace="myDestroyed" />
+      <node id="6331234706169218048" at="24,24,25,26" concept="4" />
+      <node id="6331234706169219726" at="25,26,26,26" concept="4" />
+      <node id="6331234706169056967" at="29,41,30,64" concept="4" />
+      <node id="1934212670257988331" at="30,64,31,64" concept="4" />
+      <node id="1934212670257969206" at="34,113,35,85" concept="9" />
+      <node id="1934212670257975992" at="35,85,36,64" concept="10" />
+      <node id="2127459597558610836" at="39,37,40,22" concept="4" />
+      <node id="7611095800484780697" at="43,25,44,26" concept="0" />
+      <node id="7611095800484361641" at="44,26,45,23" concept="4" />
+      <node id="6331234706169286828" at="45,23,46,28" concept="4" />
+      <node id="6331234706169287364" at="46,28,47,28" concept="4" />
+      <node id="6331234706169005797" at="50,26,51,22" concept="10" />
+      <node id="6331234706169289375" at="54,39,55,22" concept="10" />
+      <node id="6331234706169289927" at="58,39,59,22" concept="10" />
+      <node id="6393573909194848710" at="62,41,63,69" concept="17" />
+      <node id="7611095800484366596" at="68,37,69,27" concept="10" />
+      <node id="6331234706169007822" at="71,6,72,22" concept="10" />
+      <node id="7830195192743934844" at="76,28,77,43" concept="10" />
+      <node id="2127459597558598593" at="39,0,42,0" concept="8" trace="setExitCode#(I)V" />
+      <node id="6331234706169005085" at="50,0,53,0" concept="8" trace="exitValue#()I" />
+      <node id="6331234706169005090" at="54,0,57,0" concept="8" trace="getErrorStream#()Ljava/io/InputStream;" />
+      <node id="6331234706169005097" at="58,0,61,0" concept="8" trace="getInputStream#()Ljava/io/InputStream;" />
+      <node id="6331234706169005104" at="62,0,65,0" concept="8" trace="getOutputStream#()Ljava/io/OutputStream;" />
+      <node id="7611095800483912651" at="68,0,71,0" concept="8" trace="condition#()Z" />
+      <node id="6331234706169214768" at="24,0,28,0" concept="2" trace="FakeProcess#()V" />
+      <node id="6331234706169609106" at="29,0,33,0" concept="8" trace="init#()V" />
+      <node id="1934212670257968824" at="34,0,38,0" concept="8" trace="createCompositeWrapper#(Ljava/io/PipedInputStream;Ljava/io/PrintStream;)Ljava/io/PrintStream;" />
+      <node id="7830195192743934250" at="75,0,79,0" concept="8" trace="toString#()Ljava/lang/String;" />
+      <node id="7611095800483712389" at="66,52,71,6" concept="4" />
+      <node id="6331234706169005080" at="43,0,49,0" concept="8" trace="destroy#()V" />
+      <node id="6331234706169005111" at="66,0,74,0" concept="8" trace="waitFor#()I" />
+      <scope id="2127459597558598596" at="39,37,40,22" />
+      <scope id="6331234706169005089" at="50,26,51,22" />
+      <scope id="6331234706169005094" at="54,39,55,22" />
+      <scope id="6331234706169005101" at="58,39,59,22" />
+      <scope id="6331234706169005108" at="62,41,63,69" />
+      <scope id="7611095800483912655" at="68,37,69,27" />
+      <scope id="7830195192743934253" at="76,28,77,43" />
+      <scope id="6331234706169214771" at="24,24,26,26" />
+      <scope id="6331234706169609109" at="29,41,31,64" />
+      <scope id="1934212670257968827" at="34,113,36,64">
+        <var name="newOut" id="1934212670257969207" />
+      </scope>
+      <scope id="2127459597558598593" at="39,0,42,0">
         <var name="code" id="2127459597558601530" />
       </scope>
-      <scope id="6331234706169005090" at="52,0,55,0" />
-      <scope id="6331234706169005097" at="55,0,58,0" />
-      <scope id="7611095800483912651" at="64,0,67,0" />
-      <scope id="6331234706169214771" at="23,24,27,40" />
-      <scope id="6331234706169005084" at="42,25,46,28" />
-      <scope id="6331234706169005085" at="48,0,52,0" />
-      <scope id="6331234706169005104" at="58,0,62,0" />
-      <scope id="6331234706169609109" at="30,41,35,74">
-        <var name="newErr" id="5901544768131245513" />
-        <var name="newOut" id="5901544768131237769" />
+      <scope id="6331234706169005085" at="50,0,53,0" />
+      <scope id="6331234706169005090" at="54,0,57,0" />
+      <scope id="6331234706169005097" at="58,0,61,0" />
+      <scope id="6331234706169005104" at="62,0,65,0" />
+      <scope id="7611095800483912651" at="68,0,71,0" />
+      <scope id="6331234706169214768" at="24,0,28,0" />
+      <scope id="6331234706169609106" at="29,0,33,0" />
+      <scope id="1934212670257968824" at="34,0,38,0">
+        <var name="oldOut" id="1934212670258504540" />
+        <var name="pipeInput" id="1934212670257969202" />
       </scope>
-      <scope id="6331234706169214768" at="23,0,29,0" />
-      <scope id="6331234706169005080" at="42,0,48,0" />
-      <scope id="6331234706169005116" at="62,52,68,22" />
-      <scope id="6331234706169609106" at="30,0,37,0" />
-      <scope id="6331234706169005111" at="62,0,70,0" />
-      <unit id="7611095800483912649" at="63,8,67,5" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcess$1" />
-      <unit id="6331234706169005048" at="13,0,71,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcess" />
+      <scope id="6331234706169005084" at="43,25,47,28" />
+      <scope id="7830195192743934250" at="75,0,79,0" />
+      <scope id="6331234706169005080" at="43,0,49,0" />
+      <scope id="6331234706169005116" at="66,52,72,22" />
+      <scope id="6331234706169005111" at="66,0,74,0" />
+      <unit id="7611095800483912649" at="67,8,71,5" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcess$1" />
+      <unit id="6331234706169005048" at="14,0,80,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcess" />
     </file>
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/6391517972808447555">
