@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl.query;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.interpreted.ReflectiveQueryProvider;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.template.DropAttributeRuleContext;
 import jetbrains.mps.generator.template.DropRootRuleContext;
@@ -26,6 +27,7 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -48,6 +50,18 @@ import java.util.Collections;
  * @author Artem Tikhomirov
  */
 public abstract class QueryProviderBase implements GeneratorQueryProvider {
+  private final int myVersion;
+
+  protected QueryProviderBase() {
+    // this cons is invoked from previous version of QueriesGenerated that implements GeneratorQueryProvider
+    myVersion = 0;
+  }
+
+  protected QueryProviderBase(int version) {
+    // this one is invoked from newly generated implementations to indicate new methods were generated
+    myVersion = version;
+  }
+
   @NotNull
   @Override
   public CreateRootCondition getCreateRootRuleCondition(@NotNull SNode rule) {
@@ -142,6 +156,16 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   @Override
   public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull SNode caseNode) {
     return new Defaults();
+  }
+
+  @NotNull
+  @Override
+  public ReferenceTargetQuery getReferenceTargetQuery(@NotNull QueryKey identity) {
+    if (myVersion == 0) {
+      // XXX provisional code to support generated providers prior to addition of the method
+      return new ReflectiveQueryProvider().getReferenceTargetQuery(identity);
+    }
+    return new RefQuery(identity);
   }
 
   /**
@@ -245,7 +269,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     @NotNull
     @Override
     public SProperty getProperty() {
-      throw new IllegalStateException();
+      throw new IllegalStateException("evaluate() shall had failed with exception");
     }
 
     @Override
@@ -262,8 +286,25 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     @Nullable
     @Override
     public Object evaluate(@NotNull PropertyMacroContext context) throws GenerationFailureException {
+      // XXX why not
+      // ctx.getGenerator().getLogger().error(myMacro,...); and some reasonable message?
       context.showErrorMessage(null, "cannot evaluate property macro");
       throw new GenerationFailureException("cannot evaluate property macro");
+    }
+  }
+
+  private static class RefQuery implements ReferenceTargetQuery {
+    private final QueryKey myIdentity;
+
+    RefQuery(QueryKey identity) {
+      myIdentity = identity;
+    }
+
+    @Nullable
+    @Override
+    public Object evaluate(@NotNull ReferenceMacroContext ctx) throws GenerationFailureException {
+      ctx.getGenerator().getLogger().error(myIdentity.getTemplateNode(), "missing reference macro");
+      throw new GenerationFailureException("missing reference macro");
     }
   }
 }

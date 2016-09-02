@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,13 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import jetbrains.mps.generator.impl.query.QueryKey;
+import jetbrains.mps.generator.impl.query.QueryKeyImpl;
+import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.reference.MacroResolver;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro2;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
@@ -103,7 +107,7 @@ class TemplateNode {
     for (PropertyMacro pm : myMold.myMacroProperties) {
       pm.expand(context, outputNode);
     }
-    for (ReferenceMacro rm : myMold.myMacroRefs) {
+    for (ReferenceMacro2 rm : myMold.myMacroRefs) {
       rm.newPostponedReference(outputNode, context).registerWith(generator);
     }
     for (RefInfo r : myMold.myStaticRefs) {
@@ -165,7 +169,7 @@ class TemplateNode {
     private final SProperty[] myTemplateProperties;
     private final String[] myTemplatePropertyValues;
     public final PropertyMacro[] myMacroProperties;
-    public final ReferenceMacro[] myMacroRefs;
+    public final ReferenceMacro2[] myMacroRefs;
     public final RefInfo[] myStaticRefs;
     public final RefInfo[] myInnerRefs;
     public final RefInfo[] myOtherRefs;
@@ -175,7 +179,11 @@ class TemplateNode {
       final ArrayList<SReferenceLink> refsHandledWithMacro = new ArrayList<>();
       final ArrayList<SNode> templateChildNodes = new ArrayList<SNode>();
       final ArrayList<PropertyMacro> propertyMacros = new ArrayList<PropertyMacro>();
-      final ArrayList<ReferenceMacro> refMacros = new ArrayList<>();
+      final ArrayList<ReferenceMacro2> refMacros = new ArrayList<>();
+
+      // property and reference macros could not yet use queries of a generator other than the one with template node,
+      // no need to obtain fresh GQP (namely, ReflectiveQP) instance for each macro.
+      final GeneratorQueryProvider queryProvider = gqps.getQueryProvider(templateNode.getReference());
 
       // process property and reference macros
       for (SNode templateChildNode : templateNode.getChildren()) {
@@ -184,19 +192,28 @@ class TemplateNode {
           if (templateChildNodeConcept.equals(RuleUtil.concept_PropertyMacro)) {
             final SProperty propertyName = AttributeOperations.getProperty(templateChildNode);
             propsHandledWithMacro.add(propertyName);
-            final PropertyValueQuery q = gqps.getQueryProvider(templateChildNode.getReference()).getPropertyValueQuery(templateChildNode);
+            final PropertyValueQuery q = queryProvider.getPropertyValueQuery(templateChildNode);
             propertyMacros.add(new PropertyMacro(q, templateChildNode.getReference()));
           } else if (templateChildNodeConcept.equals(RuleUtil.concept_ReferenceMacro)) {
             final SReferenceLink refMacroRole = AttributeOperations.getLink(templateChildNode);
+            SNode function = RuleUtil.getReferenceMacro_GetReferent(templateChildNode);
+            if (function == null) {
+              log.error(templateChildNode.getReference(), "No query function for reference macro, reference would be copied as is");
+              continue;
+            }
+            QueryKey qk = new QueryKeyImpl(templateChildNode.getReference(), function.getNodeId());
+            ReferenceTargetQuery q = queryProvider.getReferenceTargetQuery(qk);
+            String resolveInfo = MacroResolver.getDefaultResolveInfo(templateNode.getReferenceTarget(refMacroRole));
             refsHandledWithMacro.add(refMacroRole);
-            refMacros.add(new ReferenceMacro(templateChildNode, refMacroRole, templateNode.getReferenceTarget(refMacroRole)));
+            refMacros.add(new ReferenceMacro2(q, templateChildNode.getReference(), refMacroRole, resolveInfo));
+//            refMacros.add(new ReferenceMacro(templateChildNode, refMacroRole, templateNode.getReferenceTarget(refMacroRole)));
           }
         } else {
           templateChildNodes.add(templateChildNode);
         }
       }
       myChildTemplates = templateChildNodes.isEmpty() ? Collections.<SNode>emptyList() : Arrays.asList(templateChildNodes.toArray(new SNode[templateChildNodes.size()]));
-      myMacroRefs = refMacros.toArray(new ReferenceMacro[refMacros.size()]);
+      myMacroRefs = refMacros.toArray(new ReferenceMacro2[refMacros.size()]);
       myMacroProperties = propertyMacros.toArray(new PropertyMacro[propertyMacros.size()]);
       final ArrayList<SProperty> templateProps = new ArrayList<SProperty>();
       final ArrayList<String> templatePropValues = new ArrayList<String>();
@@ -338,6 +355,25 @@ class TemplateNode {
     public PostponedReference newPostponedReference(SNode outputNode, TemplateContext templateContext) {
       // XXX with new MacroResolver, could use TEE.resolve() here, instead of duplicating TEEI.resolve() implementation
       ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(new MacroResolver(myMacro, myTemplateTarget, outputNode, myAssociation, templateContext));
+      return new PostponedReference(myAssociation, outputNode, refInfo);
+    }
+  }
+
+  private static class ReferenceMacro2 {
+    private final ReferenceTargetQuery myQuery;
+    private final SNodeReference myMacro;
+    private final SReferenceLink myAssociation;
+    private final String myDefaultResolveInfo;
+
+    public ReferenceMacro2(ReferenceTargetQuery query, SNodeReference macro, SReferenceLink associationLink, String defaultResolveInfo) {
+      myQuery = query;
+      myMacro = macro;
+      myAssociation = associationLink;
+      myDefaultResolveInfo = defaultResolveInfo;
+    }
+
+    public PostponedReference newPostponedReference(SNode outputNode, TemplateContext templateContext) {
+      ReferenceInfo_Macro2 refInfo = new ReferenceInfo_Macro2(myQuery, templateContext, myMacro, myDefaultResolveInfo);
       return new PostponedReference(myAssociation, outputNode, refInfo);
     }
   }

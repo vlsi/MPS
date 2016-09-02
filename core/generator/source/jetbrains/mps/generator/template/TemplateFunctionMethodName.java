@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.template;
 
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 /**
  * Igor Alshannikov
@@ -47,7 +48,11 @@ public class TemplateFunctionMethodName {
   }
 
   public static String referenceMacro_GetReferent(SNode function) {
-    return "referenceMacro_GetReferent_" + function.getNodeId().toString();
+    return referenceMacro_GetReferent(function.getNodeId());
+  }
+
+  public static String referenceMacro_GetReferent(SNodeId functionId) {
+    return "referenceMacro_GetReferent_" + functionId.toString();
   }
 
   public static String sourceSubstituteMacro_SourceNodesQuery(SNode function) {

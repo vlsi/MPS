@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,8 +26,11 @@ import jetbrains.mps.generator.impl.query.MapConfigurationCondition;
 import jetbrains.mps.generator.impl.query.MapRootRuleCondition;
 import jetbrains.mps.generator.impl.query.PatternRuleQuery;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import jetbrains.mps.generator.impl.query.QueryKey;
+import jetbrains.mps.generator.impl.query.QueryKeyImpl;
 import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
+import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.ScriptCodeBlock;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
@@ -44,6 +47,7 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
@@ -72,6 +76,7 @@ import java.util.Collections;
  */
 public class ReflectiveQueryProvider extends QueryProviderBase {
   public ReflectiveQueryProvider() {
+    super(1);
   }
 
   @NotNull
@@ -241,6 +246,15 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     return new Impl(caseNode.getReference(), methodName, false);
   }
 
+  @NotNull
+  @Override
+  public ReferenceTargetQuery getReferenceTargetQuery(@NotNull QueryKey identity) {
+    // XXX in fact, RQP may keep template model and find actual references based on identity's information
+    // so that we can ReferenceTargetQuery can tell link + defaultResolveInfo (like PropertyValueQuery does)
+    String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(((QueryKeyImpl) identity).getQueryNodeId());
+    return new RefMacro(identity.getTemplateNode(), methodName);
+  }
+
   private String getBaseRuleConditionMethod(SNode rule) {
     SNode condition = RuleUtil.getBaseRuleCondition(rule);
     return condition == null ? null : TemplateFunctionMethodName.baseMappingRule_Condition(condition);
@@ -276,10 +290,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       if (m == null) {
         try {
           m = createMethod();
-        } catch (ClassNotFoundException e) {
-          ctx.showWarningMessage(null,
-              String.format("cannot find condition method '%s' : evaluate to %s", myMethodName, String.valueOf(myDefValue).toUpperCase()));
-        } catch (NoSuchMethodException e) {
+        } catch (NoSuchMethodException | ClassNotFoundException e) {
           ctx.showWarningMessage(null,
               String.format("cannot find condition method '%s' : evaluate to %s", myMethodName, String.valueOf(myDefValue).toUpperCase()));
         }
@@ -320,9 +331,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     public GeneratedMatchingPattern pattern(@NotNull PatternRuleContext ctx) {
       try {
         return this.<GeneratedMatchingPattern>createMethod().invoke(ctx);
-      } catch (ClassNotFoundException e) {
-        ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot find pattern condition method '%s' : not applied", myMethodName));
-      } catch (NoSuchMethodException e) {
+      } catch (NoSuchMethodException | ClassNotFoundException e) {
         ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot find pattern condition method '%s' : not applied", myMethodName));
       }
       return null;
@@ -342,9 +351,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     public SNode contextNode(WeavingMappingRuleContext ctx) {
       try {
         return this.<SNode>createMethod().invoke(ctx);
-      } catch (NoSuchMethodException e) {
-        ctx.showWarningMessage(null, String.format("cannot find context node query '%s' : evaluate to null", myMethodName));
-      } catch (ClassNotFoundException ex) {
+      } catch (NoSuchMethodException | ClassNotFoundException ex) {
         ctx.showWarningMessage(null, String.format("cannot find context node query '%s' : evaluate to null", myMethodName));
       }
       return null;
@@ -354,9 +361,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     public void invoke(MappingScriptContext ctx) {
       try {
         createMethod().invoke(ctx);
-      } catch (ClassNotFoundException e) {
-        ctx.showWarningMessage(null, String.format("cannot run script '%s' : no generated code found", myMethodName));
-      } catch (NoSuchMethodException e) {
+      } catch (NoSuchMethodException | ClassNotFoundException e) {
         ctx.showWarningMessage(null, String.format("cannot run script '%s' : no generated code found", myMethodName));
       }
     }
@@ -381,9 +386,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     public SNode anchorNode(WeavingAnchorContext ctx) throws GenerationFailureException {
       try {
         return this.<SNode>createMethod().invoke(ctx);
-      } catch (ClassNotFoundException e) {
-        ctx.showWarningMessage(null, String.format("cannot find anchor node query '%s' : evaluate to null", myMethodName));
-      } catch (NoSuchMethodException e) {
+      } catch (NoSuchMethodException | ClassNotFoundException e) {
         ctx.showWarningMessage(null, String.format("cannot find anchor node query '%s' : evaluate to null", myMethodName));
       }
       return null;
@@ -409,9 +412,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext context) throws GenerationFailureException {
       try {
         return this.<SNode>createMethod().invoke(context);
-      } catch (NoSuchMethodException e) {
-        context.showWarningMessage(null, String.format("cannot find nodes query '%s' : evaluate to null", myMethodName));
-      } catch (ClassNotFoundException ex) {
+      } catch (NoSuchMethodException | ClassNotFoundException ex) {
         context.showWarningMessage(null, String.format("cannot find nodes query '%s' : evaluate to null", myMethodName));
       }
       return null;
@@ -423,9 +424,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       try {
         Iterable<SNode> result = this.<Iterable<SNode>>createMethod().invoke(context);
         return IterableUtil.asCollection(result);
-      } catch (NoSuchMethodException e) {
-        context.showWarningMessage(null, String.format("cannot find nodes query '%s' : evaluate to empty list", myMethodName));
-      } catch (ClassNotFoundException e) {
+      } catch (NoSuchMethodException | ClassNotFoundException e) {
         context.showWarningMessage(null, String.format("cannot find nodes query '%s' : evaluate to empty list", myMethodName));
       }
       return Collections.emptyList();
@@ -453,16 +452,55 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       return myMethod.invoke(context);
     }
 
-    private QueryMethod<Object> getMethod(PropertyMacroContext context) throws GenerationFailureException{
+    private QueryMethod<Object> getMethod(PropertyMacroContext context) throws GenerationFailureException {
       try {
         return QueryMethodGenerated.getQueryMethod(getMacro().getModelReference(), myMethodName);
-      } catch (NoSuchMethodException e) {
+      } catch (NoSuchMethodException | ClassNotFoundException e) {
         final String m = String.format("cannot find method '%s' for property macro", myMethodName);
         context.showErrorMessage(null, m);
         throw new GenerationFailureException(m);
-      } catch (ClassNotFoundException e) {
-        final String m = String.format("cannot find method '%s' for property macro", myMethodName);
-        context.showErrorMessage(null, m);
+      }
+    }
+  }
+
+  static final class RefMacro extends ReferenceTargetQuery.Base {
+    private final SNodeReference myTemplateNode;
+    private final String myMethodName;
+    private QueryMethod<Object> myMethod;
+
+    public RefMacro(SNodeReference templateNode, @NotNull  String methodName) {
+      myTemplateNode = templateNode;
+      myMethodName = methodName;
+    }
+
+
+    @Nullable
+    @Override
+    public Object evaluate(@NotNull ReferenceMacroContext ctx) throws GenerationFailureException {
+      // trick with local variable is to bring attention to the fact, that parallel evaluate() may
+      // initialize myMethod twice and that invoke may work with an instance other than getMethod() had returned here.
+      // Since QueryMethod is just a simple wrap around reflective call, I'm not too much concerned at the moment that
+      // myMethod.invoke() might run with an instance different that came from getMethod(). Nor there's too much duplicated
+      // effort when looking up a method (QueryMethodGenerated caches them). We've got extra QueryMethod wrappers and 'other this'
+      // for invoke only.
+      // Still, I don't want to bother with synchronization here, with stateless QM I'm unlikely to face any issues, and
+      // though I don't like the code, I'd rather move forward towards non-reflective queries as the only option than
+      // deal with synch of reflective calls.
+      QueryMethod<Object> m = myMethod;
+      if (m == null) {
+        // FIXME see concern in PropMacro.evaluate above regarding failure/graceful default.
+        //       I now lean towards explicit failure rather than default value
+        m = myMethod = getMethod(ctx);
+      }
+      return m.invoke(ctx);
+    }
+
+    private QueryMethod<Object> getMethod(ReferenceMacroContext ctx) throws GenerationFailureException {
+      try {
+        return QueryMethodGenerated.getQueryMethod(myTemplateNode.getModelReference(), myMethodName);
+      } catch (NoSuchMethodException | ClassNotFoundException e) {
+        final String m = String.format("cannot find method '%s' for reference macro", myMethodName);
+        ctx.getGenerator().getLogger().error(myTemplateNode, m);
         throw new GenerationFailureException(m);
       }
     }

@@ -51,7 +51,10 @@ public class MacroResolver extends RefResolver {
     return queryExecutor.getReferentTarget(queryContext.getInputNode(), queryContext.getOutputNode(), myReferenceMacro, myContext);
   }
 
-  private static String getDefaultResolveInfo(SNode templateTargetNode) {
+  /**
+   * FIXME why don't we look into IResolveInfo in case target is instanceOf?
+   */
+  public static String getDefaultResolveInfo(SNode templateTargetNode) {
     return templateTargetNode != null ? templateTargetNode.getName() : null;
   }
 }
