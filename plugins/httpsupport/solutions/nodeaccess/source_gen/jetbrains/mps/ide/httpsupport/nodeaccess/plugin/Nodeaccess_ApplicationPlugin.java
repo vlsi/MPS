@@ -16,11 +16,12 @@ public class Nodeaccess_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     // actions w/o parameters 
     addAction(new NodeReferenceURI_Action());
+    addAction(new NodeURI_Action());
     // groups 
-    addGroup(new ShowIn_ActionGroup());
+    addGroup(new NodeAsUriActions_ActionGroup());
   }
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(ShowIn_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_showIn);
-    insertGroupIntoAnother(ShowIn_ActionGroup.ID, "EditorPopup_ActionGroupshowIn", null);
+    insertGroupIntoAnother(NodeAsUriActions_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_copy);
+    insertGroupIntoAnother(NodeAsUriActions_ActionGroup.ID, "EditorPopup_ActionGroupcopy", null);
   }
 }

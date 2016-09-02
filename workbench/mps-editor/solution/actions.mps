@@ -7048,6 +7048,9 @@
         <property role="TrG5h" value="structure" />
       </node>
       <node concept="2a7GMi" id="1xsN4xJX8VO" role="ftvYc" />
+      <node concept="10WQ6h" id="4h0_rmDoo08" role="ftvYc">
+        <property role="TrG5h" value="copy" />
+      </node>
       <node concept="10WQ6h" id="1xsN4xJX8VP" role="ftvYc">
         <property role="TrG5h" value="paste" />
       </node>

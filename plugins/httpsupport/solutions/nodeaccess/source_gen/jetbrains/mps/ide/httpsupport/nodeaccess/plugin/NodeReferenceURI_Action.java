@@ -11,16 +11,16 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.ide.actions.ModuleDependenies_Tool;
 import io.netty.handler.codec.http.QueryStringEncoder;
-import jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager;
-import io.netty.util.CharsetUtil;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 
 public class NodeReferenceURI_Action extends BaseAction {
   private static final Icon ICON = null;
 
   public NodeReferenceURI_Action() {
-    super("Copy Node Reference URI to Clipboard", "", ICON);
+    super("Copy Node Reference as URI", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
@@ -35,9 +35,6 @@ public class NodeReferenceURI_Action extends BaseAction {
     }
     {
       Project p = event.getData(CommonDataKeys.PROJECT);
-      if (p == null) {
-        return false;
-      }
     }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
@@ -49,9 +46,12 @@ public class NodeReferenceURI_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + MPSRequestPortManager.getCurrentPort() + "/node", CharsetUtil.UTF_8);
+    event.getData(CommonDataKeys.PROJECT).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class);
+    QueryStringEncoder encoder = HandlerUtil.createURItoMPS("node_ref");
     encoder.addParam("ref", event.getData(MPSCommonDataKeys.NODE).getReference().toString());
-    encoder.addParam("project", event.getData(CommonDataKeys.PROJECT).getName());
+    if (event.getData(CommonDataKeys.PROJECT) != null) {
+      encoder.addParam("project", event.getData(CommonDataKeys.PROJECT).getName());
+    }
     CopyPasteUtil.copyTextToClipboard(encoder.toString());
   }
 }

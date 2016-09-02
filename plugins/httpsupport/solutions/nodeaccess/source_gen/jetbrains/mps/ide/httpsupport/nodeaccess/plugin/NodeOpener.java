@@ -20,7 +20,7 @@ public class NodeOpener extends HttpRequestHandlerBase {
 
   @Override
   protected String getQueryPrefix() {
-    return "node";
+    return "node_ref";
   }
 
   @Override
