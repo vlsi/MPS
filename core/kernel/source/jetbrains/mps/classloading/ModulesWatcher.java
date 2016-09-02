@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.classloading;
 
+import jetbrains.mps.classloading.ModuleUpdater.SearchError;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.AbsentDependencyException;
 import jetbrains.mps.util.annotation.Hack;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -33,8 +33,8 @@ import org.jetbrains.mps.util.Condition;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -201,7 +201,7 @@ public class ModulesWatcher {
   private Map<SModuleReference, String> findInvalidModules0(boolean errorLevel) {
     myRepository.getModelAccess().checkReadAccess();
 
-    Map<ReloadableModule, AbsentDependencyException> modulesWithAbsentDeps = myModuleUpdater.getModulesWithAbsentDeps();
+    Map<ReloadableModule, List<SearchError>> modulesWithAbsentDeps = myModuleUpdater.getModulesWithAbsentDeps();
     Map<SModuleReference, String> mRefToProblem = new HashMap<>();
     Collection<? extends SModuleReference> allModuleRefs = getAllModules();
     for (SModuleReference mRef : allModuleRefs) {
@@ -225,7 +225,7 @@ public class ModulesWatcher {
    */
   @Nullable
   @Hack
-  private String getModuleProblemMessage(SModuleReference mRef, Map<ReloadableModule, AbsentDependencyException> modulesWithAbsentDeps) {
+  private String getModuleProblemMessage(SModuleReference mRef, Map<ReloadableModule, List<SearchError>> modulesWithAbsentDeps) {
     assert !isChanged();
     if (isModuleDisposed(mRef)) {
       return String.format("Module %s is disposed and therefore was marked invalid for class loading", mRef.getModuleName());
@@ -236,8 +236,8 @@ public class ModulesWatcher {
 
     // FIXME does not work for now, enable in the 3.4
     if (modulesWithAbsentDeps.containsKey(module)) {
-      AbsentDependencyException exception = modulesWithAbsentDeps.get(module);
-      return String.format("%s has got an absent dependency problem and therefore was marked invalid for class loading: %s", module, exception.getMessage());
+      List<SearchError> errors = modulesWithAbsentDeps.get(module);
+      return String.format("%s has got an absent dependency problem and therefore was marked invalid for class loading: %s", module, errors.get(0).getMsg());
     }
     for (SDependency dep : module.getDeclaredDependencies()) {
       if (dep.getScope() == SDependencyScope.DESIGN || dep.getScope() == SDependencyScope.GENERATES_INTO) {

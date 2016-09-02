@@ -2569,17 +2569,14 @@
         <property role="2GAjPV" value="false" />
         <property role="aoJFB" value="tests" />
         <node concept="55IIr" id="1NKy5CJqdGv" role="3LF7KH">
-          <node concept="2Ry0Ak" id="1NKy5CJqdGw" role="iGT6I">
-            <property role="2Ry0Am" value="plugins" />
-            <node concept="2Ry0Ak" id="1NKy5CJqdGx" role="2Ry0An">
-              <property role="2Ry0Am" value="mps-build" />
-              <node concept="2Ry0Ak" id="1vCYg$WbOge" role="2Ry0An">
-                <property role="2Ry0Am" value="test" />
-                <node concept="2Ry0Ak" id="1vCYg$WbOst" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.build.stripping.tests" />
-                  <node concept="2Ry0Ak" id="1vCYg$WbOsy" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.build.stripping.tests.msd" />
-                  </node>
+          <node concept="2Ry0Ak" id="1NKy5CJqdGx" role="iGT6I">
+            <property role="2Ry0Am" value="testbench" />
+            <node concept="2Ry0Ak" id="1vCYg$WbOge" role="2Ry0An">
+              <property role="2Ry0Am" value="testsolutions" />
+              <node concept="2Ry0Ak" id="1vCYg$WbOst" role="2Ry0An">
+                <property role="2Ry0Am" value="jetbrains.mps.build.stripping.tests" />
+                <node concept="2Ry0Ak" id="1vCYg$WbOsy" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.build.stripping.tests.msd" />
                 </node>
               </node>
             </node>

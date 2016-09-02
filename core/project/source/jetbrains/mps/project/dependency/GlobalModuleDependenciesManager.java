@@ -17,12 +17,16 @@ package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -34,16 +38,27 @@ import java.util.Set;
  * this will work O(M+N) in the worst case, regardless of S
  */
 public class GlobalModuleDependenciesManager {
-  private Set<SModule> myModules;
-  private UsedModulesCollector myUsedModulesCollector = new UsedModulesCollector();
+  final static Logger LOG = LogManager.getLogger(GlobalModuleDependenciesManager.class);
+
+  private final Set<SModule> myModules;
+  @NotNull private final ErrorHandler myHandler;
+  private final UsedModulesCollector myUsedModulesCollector = new UsedModulesCollector();
+
+  public GlobalModuleDependenciesManager(Collection<? extends SModule> modules, @NotNull ErrorHandler handler) {
+    myModules = new HashSet<>(modules);
+    myHandler = handler;
+  }
 
   public GlobalModuleDependenciesManager(Collection<? extends SModule> modules) {
-    myModules = new HashSet<>(modules);
+    this(modules, DEFAULT_HANDLER);
+  }
+
+  public GlobalModuleDependenciesManager(@NotNull SModule module, ErrorHandler handler) {
+    this(Collections.singletonList(module), handler);
   }
 
   public GlobalModuleDependenciesManager(@NotNull SModule module) {
-    myModules = new HashSet<>();
-    myModules.add(module);
+    this(module, DEFAULT_HANDLER);
   }
 
   /**
@@ -62,9 +77,12 @@ public class GlobalModuleDependenciesManager {
 
   /**
    * Return only modules with 'reexport' mark in the dependents subtree
+   * @deprecated one usage does not justify method's existence
    */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public Collection<SModule> getOnlyReexportModules() {
-    Set<SModule> result = new HashSet<SModule>();
+    Set<SModule> result = new HashSet<>();
     for (SModule module : myModules) {
       collect(module, result, Deptype.VISIBLE);
     }
@@ -88,10 +106,11 @@ public class GlobalModuleDependenciesManager {
    * @param depType determines the type of dependencies we want to get
    * @return all modules in scope of given
    */
+  @NotNull
   public Collection<SModule> getModules(Deptype depType) {
     Set<SModule> neighbours = collectNeighbours(depType);
 
-    Set<SModule> result = new HashSet<SModule>();
+    Set<SModule> result = new HashSet<>();
     for (SModule neighbour : neighbours) {
       collect(neighbour, result, depType);
     }
@@ -100,24 +119,25 @@ public class GlobalModuleDependenciesManager {
   }
 
   private Set<SModule> collectNeighbours(Deptype depType) {
-    HashSet<SModule> result = new HashSet<SModule>();
+    HashSet<SModule> result = new HashSet<>();
     for (SModule module : myModules) {
-      result.addAll(myUsedModulesCollector.directlyUsedModules0(module, true, depType.runtimes));
+      result.addAll(myUsedModulesCollector.directlyUsedModules(module, myHandler, true, depType.runtimes));
     }
     result.addAll(myModules);
     return result;
   }
 
   private void collect(SModule current, Set<SModule> result, Deptype depType) {
-    if (result.contains(current)) return;
-    result.add(current);
-    for (SModule m : myUsedModulesCollector.directlyUsedModules0(current, depType.reexportAll, depType.runtimes)) {
-      collect(m, result, depType);
+    if (!result.contains(current)) {
+      result.add(current);
+      for (SModule m : myUsedModulesCollector.directlyUsedModules(current, myHandler, depType.reexportAll, depType.runtimes)) {
+        collect(m, result, depType);
+      }
     }
   }
 
-  public static Collection<Language> directlyUsedLanguages(@NotNull SModule module) {
-    Set<Language> result = new HashSet<Language>();
+  private static Collection<Language> directlyUsedLanguages(@NotNull SModule module) {
+    Set<Language> result = new HashSet<>();
     for (SLanguage language : module.getUsedLanguages()) {
       final SModule sourceModule = language.getSourceModule();
       // respect sourceModule may be null
@@ -126,11 +146,6 @@ public class GlobalModuleDependenciesManager {
       }
     }
     return result;
-  }
-
-  public static Collection<SModule> directlyUsedModules(@NotNull SModule module, boolean includeNonReexport, boolean runtimes) throws
-      AbsentDependencyException {
-    return new UsedModulesCollector().directlyUsedModules0(module, includeNonReexport, runtimes, true);
   }
 
   public enum Deptype {
@@ -159,6 +174,7 @@ public class GlobalModuleDependenciesManager {
     EXECUTE(true, true);
 
     public boolean runtimes;
+
     public boolean reexportAll;
 
     Deptype(boolean runtimes, boolean reexportAll) {
@@ -167,17 +183,15 @@ public class GlobalModuleDependenciesManager {
     }
   }
 
-  public final static class AbsentDependencyException extends Exception {
-    public AbsentDependencyException(@NotNull SDependency unresolvableDep) {
-      super("The dependency cannot be resolved " + unresolvableDep);
-    }
+  public interface ErrorHandler {
+    void depCannotBeResolved(@NotNull SDependency unresolvableDep);
 
-    public AbsentDependencyException(@NotNull SLanguage languageWithoutSource) {
-      super("SLanguage's source module cannot be resolved " + languageWithoutSource);
-    }
+    void langSourceModuleCannotBeResolved(@NotNull SLanguage languageWithoutSource);
 
-    public AbsentDependencyException(String message) {
-      super(message);
-    }
+    void runtimeDependencyCannotBeFound(@NotNull SLanguage usedLang, @NotNull SModuleReference runtimeRef);
+
+    void runtimeDependencyCannotBeFound(@NotNull SModuleReference runtimeRef);
   }
+
+  public final static ErrorHandler DEFAULT_HANDLER = new PostingWarningsErrorHandler();
 }
