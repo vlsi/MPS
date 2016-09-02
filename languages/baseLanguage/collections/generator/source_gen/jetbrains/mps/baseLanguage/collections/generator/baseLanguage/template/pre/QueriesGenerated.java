@@ -28,6 +28,9 @@ import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 
 @Generated
 public class QueriesGenerated extends QueryProviderBase {
+  public QueriesGenerated() {
+    super(1);
+  }
   public static boolean baseMappingRule_Condition_5233164016162060882(final BaseMappingRuleContext _context) {
     SNode lt = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")));
     SNode rt = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")));
