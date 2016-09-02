@@ -700,13 +700,7 @@
                 </node>
               </node>
             </node>
-            <node concept="xBawi" id="1wEcoXjJ7PU" role="lGtFl">
-              <ref role="xBaxx" to="tpf0:1wEcoXjJ7OA" />
-            </node>
           </node>
-        </node>
-        <node concept="xBawi" id="1wEcoXjJ7NR" role="lGtFl">
-          <ref role="xBaxx" to="tpf0:1wEcoXjJ7NS" />
         </node>
       </node>
     </node>
