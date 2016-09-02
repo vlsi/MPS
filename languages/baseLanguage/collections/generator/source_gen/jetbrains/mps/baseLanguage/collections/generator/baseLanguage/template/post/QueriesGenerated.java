@@ -296,7 +296,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 17:
           return QueriesGenerated.sourceNodeQuery_1269198486696305052(ctx);
         default:
-          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
     }
   }
@@ -353,7 +353,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 9:
           return QueriesGenerated.propertyMacro_GetPropertyValue_1269198486696305020(ctx);
         default:
-          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
     }
   }
@@ -391,7 +391,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 3:
           return QueriesGenerated.baseMappingRule_Condition_1269198486696304917(ctx);
         default:
-          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for inline switch's case %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for inline switch's case %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
     }
   }
@@ -420,7 +420,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 0:
           return QueriesGenerated.referenceMacro_GetReferent_1269198486696305062(ctx);
         default:
-          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
     }
   }

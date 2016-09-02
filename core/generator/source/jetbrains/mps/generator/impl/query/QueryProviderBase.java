@@ -187,10 +187,12 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   @NotNull
   @Override
   public VariableValueQuery getVariableValueQuery(@NotNull QueryKey identity) {
-    // XXX provisional code to support generated providers prior to addition of the method
-    return new ReflectiveQueryProvider().getVariableValueQuery(identity);
+    if (myVersion == 0) {
+      // XXX provisional code to support generated providers prior to addition of the method
+      return new ReflectiveQueryProvider().getVariableValueQuery(identity);
+    }
     // Same as above, no reason to default to null.
-//    return new Missing(identity);
+    return new Missing(identity);
   }
 
   /**

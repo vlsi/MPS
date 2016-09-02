@@ -43,6 +43,7 @@
     <classNode dependClassName="jetbrains.mps.generator.impl.query.ScriptCodeBlock" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.SourceNodeQuery" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.SourceNodesQuery" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.VariableValueQuery" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.WeaveRuleCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.WeaveRuleQuery" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
@@ -58,6 +59,7 @@
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
+    <classNode dependClassName="jetbrains.mps.generator.template.TemplateVarContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.WeavingMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />

@@ -77,6 +77,8 @@ import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.QueryKey;
+import jetbrains.mps.generator.impl.query.VariableValueQuery;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -3224,7 +3226,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 24:
           return QueriesGenerated.baseMappingRule_Condition_7001216437968768489(ctx);
         default:
-          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for rule %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for rule %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
     }
   }
@@ -3256,7 +3258,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 1:
           return QueriesGenerated.createRootRule_Condition_1229873995157(ctx);
         default:
-          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for rule %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for rule %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
     }
   }
@@ -3324,7 +3326,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 10:
           return QueriesGenerated.baseMappingRule_Condition_2857237956452406728(ctx);
         default:
-          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for rule %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for rule %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
     }
     @Override
@@ -3353,7 +3355,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 10:
           return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_2857237956452406726(ctx);
         default:
-          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no context node query method for weaving rule %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no context node query method for weaving rule %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
     }
   }
@@ -3472,7 +3474,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 0:
           return QueriesGenerated.mappingConfiguration_Condition_5055396488948953918(ctx);
         default:
-          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for map configuration %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for map configuration %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
     }
   }
@@ -3858,7 +3860,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 119:
           return QueriesGenerated.sourceNodeQuery_1336567499628873686(ctx);
         default:
-          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
     }
   }
@@ -4193,7 +4195,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 102:
           return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_1232028943836(ctx));
         default:
-          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
     }
   }
@@ -4505,7 +4507,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 94:
           return QueriesGenerated.propertyMacro_GetPropertyValue_1336567499629120994(ctx);
         default:
-          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
     }
   }
@@ -4738,7 +4740,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 68:
           return QueriesGenerated.ifMacro_Condition_1232028944350(ctx);
         default:
-          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for if macro %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for if macro %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
     }
   }
@@ -4821,7 +4823,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 18:
           return QueriesGenerated.baseMappingRule_Condition_6344340345427280371(ctx);
         default:
-          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for inline switch's case %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for inline switch's case %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
     }
   }
@@ -5132,7 +5134,47 @@ public class QueriesGenerated extends QueryProviderBase {
         case 94:
           return QueriesGenerated.referenceMacro_GetReferent_1869794201078501556(ctx);
         default:
-          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
+      }
+    }
+  }
+  private final Map<String, VariableValueQuery> vvqMethods = new HashMap<String, VariableValueQuery>();
+  {
+    vvqMethods.put("5180156240568665228", new QueriesGenerated.VVQ(0));
+    vvqMethods.put("4640248974485794768", new QueriesGenerated.VVQ(1));
+    vvqMethods.put("349397194808798132", new QueriesGenerated.VVQ(2));
+    vvqMethods.put("3381384562914377840", new QueriesGenerated.VVQ(3));
+    vvqMethods.put("1336567499628816742", new QueriesGenerated.VVQ(4));
+  }
+  @NotNull
+  @Override
+  public VariableValueQuery getVariableValueQuery(@NotNull QueryKey queryKey) {
+    final String id = queryKey.getTemplateNode().getNodeId().toString();
+    if (!(vvqMethods.containsKey(id))) {
+      return super.getVariableValueQuery(queryKey);
+    }
+    return vvqMethods.get(id);
+  }
+  private static class VVQ implements VariableValueQuery {
+    private final int methodKey;
+    /*package*/ VVQ(int methodKey) {
+      this.methodKey = methodKey;
+    }
+    @Nullable
+    public Object evaluate(@NotNull TemplateVarContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.insertMacro_varValue_5180156240568665230(ctx);
+        case 1:
+          return QueriesGenerated.insertMacro_varValue_4640248974485794769(ctx);
+        case 2:
+          return QueriesGenerated.insertMacro_varValue_349397194808798133(ctx);
+        case 3:
+          return QueriesGenerated.insertMacro_varValue_3381384562914377841(ctx);
+        case 4:
+          return QueriesGenerated.insertMacro_varValue_1336567499628816744(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
     }
   }
