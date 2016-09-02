@@ -345,6 +345,7 @@
     </language>
     <language id="817e4e70-961e-4a95-98a1-15e9f32231f1" name="jetbrains.mps.ide.httpsupport">
       <concept id="5573986434797682998" name="jetbrains.mps.ide.httpsupport.structure.HandleRequestFunction" flags="ig" index="pF8on" />
+      <concept id="5573986434797765074" name="jetbrains.mps.ide.httpsupport.structure.HttpRequestParameter" flags="ng" index="pFkrN" />
       <concept id="5573986434797590400" name="jetbrains.mps.ide.httpsupport.structure.RequestHandler" flags="ng" index="pFx2x">
         <property id="8564455257661398345" name="queryPrefix" index="1pulfB" />
         <property id="6550075386187238212" name="trustful" index="1ZnG6o" />
@@ -353,15 +354,15 @@
         <child id="2332657309400291202" name="queryParameters" index="3_QDjO" />
       </concept>
       <concept id="6004610301070373654" name="jetbrains.mps.ide.httpsupport.structure.CanHandleRequestFunction" flags="ig" index="qDXDn" />
-      <concept id="2332657309401746047" name="jetbrains.mps.ide.httpsupport.structure.ResponseSendStatement" flags="ng" index="3_KO$9">
-        <property id="2332657309401746048" name="type" index="3_KOBQ" />
-        <child id="2332657309401746050" name="buffer" index="3_KOBO" />
-      </concept>
       <concept id="2332657309400452757" name="jetbrains.mps.ide.httpsupport.structure.QueryParameterReference" flags="ng" index="3_PKRz">
         <reference id="2332657309400452758" name="queryParameter" index="3_PKRw" />
       </concept>
       <concept id="2332657309400282169" name="jetbrains.mps.ide.httpsupport.structure.QueryParameter" flags="ng" index="3_QJtf">
         <property id="2332657309400282173" name="required" index="3_QJtb" />
+      </concept>
+      <concept id="6886330673564897217" name="jetbrains.mps.ide.httpsupport.structure.ResponseSendOperation" flags="ng" index="1W9Qq2">
+        <property id="6886330673564897341" name="type" index="1W9R_Y" />
+        <child id="6886330673564897343" name="buffer" index="1W9R_W" />
       </concept>
     </language>
   </registry>
@@ -711,18 +712,23 @@
                                       </node>
                                     </node>
                                   </node>
-                                  <node concept="3_KO$9" id="21vgRr5BHbA" role="3cqZAp">
-                                    <property role="3_KOBQ" value="image/gif" />
-                                    <node concept="10M0yZ" id="6dOBq74S7df" role="3_KOBO">
-                                      <ref role="3cqZAo" node="6dOBq74QFqg" resolve="SUCCESS_STREAM" />
-                                      <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
+                                  <node concept="3clFbF" id="5YhakczIX7I" role="3cqZAp">
+                                    <node concept="2OqwBi" id="5YhakczIXqf" role="3clFbG">
+                                      <node concept="pFkrN" id="5YhakczIX7G" role="2Oq$k0" />
+                                      <node concept="1W9Qq2" id="5YhakczIXQ3" role="2OqNvi">
+                                        <property role="1W9R_Y" value="image/gif" />
+                                        <node concept="10M0yZ" id="5YhakczIYoT" role="1W9R_W">
+                                          <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
+                                          <ref role="3cqZAo" node="6dOBq74QFqg" resolve="SUCCESS_STREAM" />
+                                        </node>
+                                      </node>
                                     </node>
                                   </node>
                                   <node concept="3clFbF" id="3whKZwB1jxy" role="3cqZAp">
                                     <node concept="2YIFZM" id="3whKZwB1kpK" role="3clFbG">
                                       <ref role="1Pybhc" node="2lt1tUBuCdK" resolve="HandlerUtil" />
                                       <ref role="37wK5l" node="3whKZwB1k79" resolve="requestFocus" />
-                                      <node concept="37vLTw" id="3whKZwB1k$f" role="37wK5m">
+                                      <node concept="37vLTw" id="5YhakczIZn2" role="37wK5m">
                                         <ref role="3cqZAo" node="4yQMaPlKg10" resolve="project" />
                                       </node>
                                     </node>
@@ -831,18 +837,23 @@
                                         </node>
                                       </node>
                                     </node>
-                                    <node concept="3_KO$9" id="2Vd38uRtsh" role="3cqZAp">
-                                      <property role="3_KOBQ" value="image/gif" />
-                                      <node concept="10M0yZ" id="2Vd38uRtsi" role="3_KOBO">
-                                        <ref role="3cqZAo" node="6dOBq74QFqg" resolve="SUCCESS_STREAM" />
-                                        <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
+                                    <node concept="3clFbF" id="5YhakczIR0S" role="3cqZAp">
+                                      <node concept="2OqwBi" id="5YhakczIRjP" role="3clFbG">
+                                        <node concept="pFkrN" id="5YhakczIR0Q" role="2Oq$k0" />
+                                        <node concept="1W9Qq2" id="5YhakczIU4K" role="2OqNvi">
+                                          <property role="1W9R_Y" value="image/gif" />
+                                          <node concept="10M0yZ" id="2Vd38uRtsi" role="1W9R_W">
+                                            <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
+                                            <ref role="3cqZAo" node="6dOBq74QFqg" resolve="SUCCESS_STREAM" />
+                                          </node>
+                                        </node>
                                       </node>
                                     </node>
                                     <node concept="3clFbF" id="2Vd38uRtsj" role="3cqZAp">
                                       <node concept="2YIFZM" id="2Vd38uRtsk" role="3clFbG">
                                         <ref role="37wK5l" node="3whKZwB1k79" resolve="requestFocus" />
                                         <ref role="1Pybhc" node="2lt1tUBuCdK" resolve="HandlerUtil" />
-                                        <node concept="37vLTw" id="2Vd38uRtsl" role="37wK5m">
+                                        <node concept="37vLTw" id="5YhakczIWwY" role="37wK5m">
                                           <ref role="3cqZAo" node="4yQMaPlKg10" resolve="project" />
                                         </node>
                                       </node>
@@ -930,18 +941,23 @@
                               </node>
                             </node>
                           </node>
-                          <node concept="3_KO$9" id="5gBxemGe8pP" role="3cqZAp">
-                            <property role="3_KOBQ" value="image/gif" />
-                            <node concept="10M0yZ" id="5gBxemGe8pQ" role="3_KOBO">
-                              <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
-                              <ref role="3cqZAo" node="6dOBq74QFqg" resolve="SUCCESS_STREAM" />
+                          <node concept="3clFbF" id="5YhakczIZXU" role="3cqZAp">
+                            <node concept="2OqwBi" id="5YhakczJ0ih" role="3clFbG">
+                              <node concept="pFkrN" id="5YhakczIZXS" role="2Oq$k0" />
+                              <node concept="1W9Qq2" id="5YhakczJ0BA" role="2OqNvi">
+                                <property role="1W9R_Y" value="image/gif" />
+                                <node concept="10M0yZ" id="5YhakczJ16r" role="1W9R_W">
+                                  <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
+                                  <ref role="3cqZAo" node="6dOBq74QFqg" resolve="SUCCESS_STREAM" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                           <node concept="3clFbF" id="2Vd38uLOKs" role="3cqZAp">
                             <node concept="2YIFZM" id="2Vd38uLOKt" role="3clFbG">
                               <ref role="37wK5l" node="3whKZwB1k79" resolve="requestFocus" />
                               <ref role="1Pybhc" node="2lt1tUBuCdK" resolve="HandlerUtil" />
-                              <node concept="37vLTw" id="2Vd38uLOKu" role="37wK5m">
+                              <node concept="37vLTw" id="5YhakczJ23K" role="37wK5m">
                                 <ref role="3cqZAo" node="4yQMaPlKg10" resolve="project" />
                               </node>
                             </node>
@@ -949,12 +965,16 @@
                           <node concept="3cpWs6" id="5gBxemGe8$H" role="3cqZAp" />
                         </node>
                       </node>
-                      <node concept="3clFbH" id="5gBxemGdWIQ" role="3cqZAp" />
-                      <node concept="3_KO$9" id="21vgRr5BFwH" role="3cqZAp">
-                        <property role="3_KOBQ" value="image/gif" />
-                        <node concept="10M0yZ" id="6dOBq74S8u_" role="3_KOBO">
-                          <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
-                          <ref role="3cqZAo" node="6dOBq74R6h8" resolve="FAILURE_STREAM" />
+                      <node concept="3clFbF" id="5YhakczJ2up" role="3cqZAp">
+                        <node concept="2OqwBi" id="5YhakczJ2OF" role="3clFbG">
+                          <node concept="pFkrN" id="5YhakczJ2un" role="2Oq$k0" />
+                          <node concept="1W9Qq2" id="5YhakczJ3a0" role="2OqNvi">
+                            <property role="1W9R_Y" value="image/gif" />
+                            <node concept="10M0yZ" id="6dOBq74S8u_" role="1W9R_W">
+                              <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
+                              <ref role="3cqZAo" node="6dOBq74R6h8" resolve="FAILURE_STREAM" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -977,11 +997,16 @@
                   <property role="Xl_RC" value="No project is available." />
                 </node>
               </node>
-              <node concept="3_KO$9" id="21vgRr5BGTJ" role="3cqZAp">
-                <property role="3_KOBQ" value="image/gif" />
-                <node concept="10M0yZ" id="6dOBq74S8Zo" role="3_KOBO">
-                  <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
-                  <ref role="3cqZAo" node="6dOBq74R6h8" resolve="FAILURE_STREAM" />
+              <node concept="3clFbF" id="5YhakczJ4zC" role="3cqZAp">
+                <node concept="2OqwBi" id="5YhakczJ4Dv" role="3clFbG">
+                  <node concept="pFkrN" id="5YhakczJ4zA" role="2Oq$k0" />
+                  <node concept="1W9Qq2" id="5YhakczJ4R1" role="2OqNvi">
+                    <property role="1W9R_Y" value="image/gif" />
+                    <node concept="10M0yZ" id="6dOBq74S8Zo" role="1W9R_W">
+                      <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
+                      <ref role="3cqZAo" node="6dOBq74R6h8" resolve="FAILURE_STREAM" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -1084,11 +1109,16 @@
                       </node>
                       <node concept="3clFbJ" id="3whKZwB1uGg" role="3cqZAp">
                         <node concept="3clFbS" id="3whKZwB1uGi" role="3clFbx">
-                          <node concept="3_KO$9" id="3whKZwB1vvx" role="3cqZAp">
-                            <property role="3_KOBQ" value="image/gif" />
-                            <node concept="10M0yZ" id="6dOBq74S63a" role="3_KOBO">
-                              <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
-                              <ref role="3cqZAo" node="6dOBq74R6h8" resolve="FAILURE_STREAM" />
+                          <node concept="3clFbF" id="5YhakczIdxD" role="3cqZAp">
+                            <node concept="2OqwBi" id="5YhakczIdBT" role="3clFbG">
+                              <node concept="pFkrN" id="5YhakczIdxB" role="2Oq$k0" />
+                              <node concept="1W9Qq2" id="5YhakczIdQV" role="2OqNvi">
+                                <property role="1W9R_Y" value="image/gif" />
+                                <node concept="10M0yZ" id="6dOBq74S63a" role="1W9R_W">
+                                  <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
+                                  <ref role="3cqZAo" node="6dOBq74R6h8" resolve="FAILURE_STREAM" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                           <node concept="3cpWs6" id="3whKZwB1xeP" role="3cqZAp" />
@@ -1100,18 +1130,23 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="3_KO$9" id="21vgRr5B6VZ" role="3cqZAp">
-                        <property role="3_KOBQ" value="image/gif" />
-                        <node concept="10M0yZ" id="6dOBq74S5CM" role="3_KOBO">
-                          <ref role="3cqZAo" node="6dOBq74QFqg" resolve="SUCCESS_STREAM" />
-                          <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
+                      <node concept="3clFbF" id="5YhakczIeg2" role="3cqZAp">
+                        <node concept="2OqwBi" id="5YhakczIem_" role="3clFbG">
+                          <node concept="pFkrN" id="5YhakczIeg0" role="2Oq$k0" />
+                          <node concept="1W9Qq2" id="5YhakczIe_B" role="2OqNvi">
+                            <property role="1W9R_Y" value="image/gif" />
+                            <node concept="10M0yZ" id="6dOBq74S5CM" role="1W9R_W">
+                              <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
+                              <ref role="3cqZAo" node="6dOBq74QFqg" resolve="SUCCESS_STREAM" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                       <node concept="3clFbF" id="3whKZwB1kSz" role="3cqZAp">
                         <node concept="2YIFZM" id="3whKZwB1kS$" role="3clFbG">
                           <ref role="1Pybhc" node="2lt1tUBuCdK" resolve="HandlerUtil" />
                           <ref role="37wK5l" node="3whKZwB1k79" resolve="requestFocus" />
-                          <node concept="37vLTw" id="3whKZwB1kS_" role="37wK5m">
+                          <node concept="37vLTw" id="5YhakczIeOH" role="37wK5m">
                             <ref role="3cqZAo" node="4yQMaPlItl3" resolve="project" />
                           </node>
                         </node>
@@ -1136,11 +1171,16 @@
                   <property role="Xl_RC" value="No project is available." />
                 </node>
               </node>
-              <node concept="3_KO$9" id="21vgRr5B4dk" role="3cqZAp">
-                <property role="3_KOBQ" value="image/gif" />
-                <node concept="10M0yZ" id="6dOBq74S6Iv" role="3_KOBO">
-                  <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
-                  <ref role="3cqZAo" node="6dOBq74R6h8" resolve="FAILURE_STREAM" />
+              <node concept="3clFbF" id="5YhakczIeZc" role="3cqZAp">
+                <node concept="2OqwBi" id="5YhakczIfdY" role="3clFbG">
+                  <node concept="pFkrN" id="5YhakczIeZa" role="2Oq$k0" />
+                  <node concept="1W9Qq2" id="5YhakczIfrk" role="2OqNvi">
+                    <property role="1W9R_Y" value="image/gif" />
+                    <node concept="10M0yZ" id="6dOBq74S6Iv" role="1W9R_W">
+                      <ref role="3cqZAo" node="6dOBq74R6h8" resolve="FAILURE_STREAM" />
+                      <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -2601,23 +2641,28 @@
                         </node>
                       </node>
                       <node concept="3clFbH" id="5YhakczErm2" role="3cqZAp" />
-                      <node concept="3_KO$9" id="4h0_rmDnU6v" role="3cqZAp">
-                        <property role="3_KOBQ" value="image/gif" />
-                        <node concept="3K4zz7" id="5YhakczEc4_" role="3_KOBO">
-                          <node concept="10M0yZ" id="5YhakczEc$j" role="3K4E3e">
-                            <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
-                            <ref role="3cqZAo" node="6dOBq74QFqg" resolve="SUCCESS_STREAM" />
-                          </node>
-                          <node concept="10M0yZ" id="5YhakczEcRu" role="3K4GZi">
-                            <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
-                            <ref role="3cqZAo" node="6dOBq74R6h8" resolve="FAILURE_STREAM" />
-                          </node>
-                          <node concept="2OqwBi" id="5YhakczDShQ" role="3K4Cdx">
-                            <node concept="37vLTw" id="5YhakczDS3Y" role="2Oq$k0">
-                              <ref role="3cqZAo" node="5YhakczDPPJ" resolve="dialog" />
-                            </node>
-                            <node concept="liA8E" id="5YhakczErS7" role="2OqNvi">
-                              <ref role="37wK5l" to="jkm4:~DialogWrapper.isOK():boolean" resolve="isOK" />
+                      <node concept="3clFbF" id="5YhakczI7ba" role="3cqZAp">
+                        <node concept="2OqwBi" id="5YhakczI7qU" role="3clFbG">
+                          <node concept="pFkrN" id="5YhakczI7b8" role="2Oq$k0" />
+                          <node concept="1W9Qq2" id="5YhakczI7FZ" role="2OqNvi">
+                            <property role="1W9R_Y" value="image/gif" />
+                            <node concept="3K4zz7" id="5YhakczEc4_" role="1W9R_W">
+                              <node concept="10M0yZ" id="5YhakczEc$j" role="3K4E3e">
+                                <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
+                                <ref role="3cqZAo" node="6dOBq74QFqg" resolve="SUCCESS_STREAM" />
+                              </node>
+                              <node concept="10M0yZ" id="5YhakczEcRu" role="3K4GZi">
+                                <ref role="3cqZAo" node="6dOBq74R6h8" resolve="FAILURE_STREAM" />
+                                <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
+                              </node>
+                              <node concept="2OqwBi" id="5YhakczDShQ" role="3K4Cdx">
+                                <node concept="37vLTw" id="5YhakczDS3Y" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="5YhakczDPPJ" resolve="dialog" />
+                                </node>
+                                <node concept="liA8E" id="5YhakczErS7" role="2OqNvi">
+                                  <ref role="37wK5l" to="jkm4:~DialogWrapper.isOK():boolean" resolve="isOK" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -2639,11 +2684,16 @@
                             <ref role="3cqZAo" node="5YhakczEMR$" resolve="e" />
                           </node>
                         </node>
-                        <node concept="3_KO$9" id="5YhakczERXz" role="3cqZAp">
-                          <property role="3_KOBQ" value="image/gif" />
-                          <node concept="10M0yZ" id="5YhakczETvj" role="3_KOBO">
-                            <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
-                            <ref role="3cqZAo" node="6dOBq74R6h8" resolve="FAILURE_STREAM" />
+                        <node concept="3clFbF" id="5YhakczIa7R" role="3cqZAp">
+                          <node concept="2OqwBi" id="5YhakczIao8" role="3clFbG">
+                            <node concept="pFkrN" id="5YhakczIa7P" role="2Oq$k0" />
+                            <node concept="1W9Qq2" id="5YhakczIaJQ" role="2OqNvi">
+                              <property role="1W9R_Y" value="image/gif" />
+                              <node concept="10M0yZ" id="5YhakczIaW2" role="1W9R_W">
+                                <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
+                                <ref role="3cqZAo" node="6dOBq74R6h8" resolve="FAILURE_STREAM" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>

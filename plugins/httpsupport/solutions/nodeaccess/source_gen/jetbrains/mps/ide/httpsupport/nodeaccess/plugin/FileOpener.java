@@ -114,7 +114,6 @@ public class FileOpener extends HttpRequestHandlerBase {
             HandlerUtil.requestFocus(project);
             return;
           }
-
           FileOpener.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
         }
       });

@@ -16,7 +16,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ResponseSendStatement_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_ResponseSendOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
   }

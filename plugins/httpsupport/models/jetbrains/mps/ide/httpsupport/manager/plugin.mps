@@ -525,44 +525,22 @@
                         </node>
                       </node>
                       <node concept="3clFbH" id="5FAyHK_DDOo" role="3cqZAp" />
-                      <node concept="3clFbF" id="1Hl7x1at2iq" role="3cqZAp">
-                        <node concept="2OqwBi" id="1Hl7x1at6LV" role="3clFbG">
-                          <node concept="37vLTw" id="1Hl7x1at6_t" role="2Oq$k0">
+                      <node concept="3clFbF" id="5YhakczIOox" role="3cqZAp">
+                        <node concept="2OqwBi" id="5YhakczIOJK" role="3clFbG">
+                          <node concept="37vLTw" id="5YhakczIOov" role="2Oq$k0">
                             <ref role="3cqZAo" node="24d57bnBvUG" resolve="boxedRequest" />
                           </node>
-                          <node concept="liA8E" id="1Hl7x1at6VB" role="2OqNvi">
-                            <ref role="37wK5l" node="5FAyHK_BXzF" resolve="sendResponse" />
+                          <node concept="liA8E" id="5YhakczIOSj" role="2OqNvi">
+                            <ref role="37wK5l" node="5YhakczIim2" resolve="sendErrorResponse" />
                             <node concept="10M0yZ" id="5FAyHK_D7zz" role="37wK5m">
-                              <ref role="1PxDUh" to="9xw8:~HttpResponseStatus" resolve="HttpResponseStatus" />
                               <ref role="3cqZAo" to="9xw8:~HttpResponseStatus.INTERNAL_SERVER_ERROR" resolve="INTERNAL_SERVER_ERROR" />
+                              <ref role="1PxDUh" to="9xw8:~HttpResponseStatus" resolve="HttpResponseStatus" />
                             </node>
-                            <node concept="Xl_RD" id="1Hl7x1at7dn" role="37wK5m">
-                              <property role="Xl_RC" value="text/plain" />
+                            <node concept="37vLTw" id="1Hl7x1at70F" role="37wK5m">
+                              <ref role="3cqZAo" node="5dkEk59XdrC" resolve="errorHeader" />
                             </node>
-                            <node concept="2YIFZM" id="5FAyHK_DPkG" role="37wK5m">
-                              <ref role="1Pybhc" to="iil0:~Unpooled" resolve="Unpooled" />
-                              <ref role="37wK5l" to="iil0:~Unpooled.copiedBuffer(java.lang.CharSequence,java.nio.charset.Charset):io.netty.buffer.ByteBuf" resolve="copiedBuffer" />
-                              <node concept="3cpWs3" id="5FAyHK_DNrz" role="37wK5m">
-                                <node concept="3cpWs3" id="5FAyHK_DMkw" role="3uHU7B">
-                                  <node concept="37vLTw" id="1Hl7x1at70F" role="3uHU7B">
-                                    <ref role="3cqZAo" node="5dkEk59XdrC" resolve="errorHeader" />
-                                  </node>
-                                  <node concept="Xl_RD" id="5FAyHK_DMy7" role="3uHU7w">
-                                    <property role="Xl_RC" value="\n\n" />
-                                  </node>
-                                </node>
-                                <node concept="2YIFZM" id="4PCEaucS6km" role="3uHU7w">
-                                  <ref role="37wK5l" to="9w4s:~ExceptionUtil.getThrowableText(java.lang.Throwable):java.lang.String" resolve="getThrowableText" />
-                                  <ref role="1Pybhc" to="9w4s:~ExceptionUtil" resolve="ExceptionUtil" />
-                                  <node concept="37vLTw" id="4PCEaucS6uL" role="37wK5m">
-                                    <ref role="3cqZAo" node="7IkZ1uxy$RT" resolve="e" />
-                                  </node>
-                                </node>
-                              </node>
-                              <node concept="10M0yZ" id="5FAyHK_DSo3" role="37wK5m">
-                                <ref role="1PxDUh" to="ap92:~CharsetUtil" resolve="CharsetUtil" />
-                                <ref role="3cqZAo" to="ap92:~CharsetUtil.UTF_8" resolve="UTF_8" />
-                              </node>
+                            <node concept="37vLTw" id="5YhakczIQvd" role="37wK5m">
+                              <ref role="3cqZAo" node="7IkZ1uxy$RT" resolve="e" />
                             </node>
                           </node>
                         </node>
@@ -1289,6 +1267,109 @@
         <property role="TrG5h" value="buffer" />
         <node concept="3uibUv" id="5FAyHK_C1$7" role="1tU5fm">
           <ref role="3uigEE" to="iil0:~ByteBuf" resolve="ByteBuf" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5YhakczIubC" role="jymVt" />
+    <node concept="3clFb_" id="5YhakczIvRr" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="sendText" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="5YhakczIvRu" role="3clF47">
+        <node concept="3clFbF" id="5YhakczIl4A" role="3cqZAp">
+          <node concept="2OqwBi" id="5YhakczIl4B" role="3clFbG">
+            <node concept="Xjq3P" id="5YhakczIlwP" role="2Oq$k0" />
+            <node concept="liA8E" id="5YhakczIl4D" role="2OqNvi">
+              <ref role="37wK5l" node="5FAyHK_BXzF" resolve="sendResponse" />
+              <node concept="37vLTw" id="5YhakczImKW" role="37wK5m">
+                <ref role="3cqZAo" node="5YhakczIwwe" resolve="status" />
+              </node>
+              <node concept="Xl_RD" id="5YhakczIl4F" role="37wK5m">
+                <property role="Xl_RC" value="text/plain" />
+              </node>
+              <node concept="2YIFZM" id="5YhakczIl4G" role="37wK5m">
+                <ref role="37wK5l" to="iil0:~Unpooled.copiedBuffer(java.lang.CharSequence,java.nio.charset.Charset):io.netty.buffer.ByteBuf" resolve="copiedBuffer" />
+                <ref role="1Pybhc" to="iil0:~Unpooled" resolve="Unpooled" />
+                <node concept="37vLTw" id="5YhakczIzXq" role="37wK5m">
+                  <ref role="3cqZAo" node="5YhakczIx0u" resolve="message" />
+                </node>
+                <node concept="10M0yZ" id="5YhakczIl4N" role="37wK5m">
+                  <ref role="3cqZAo" to="ap92:~CharsetUtil.UTF_8" resolve="UTF_8" />
+                  <ref role="1PxDUh" to="ap92:~CharsetUtil" resolve="CharsetUtil" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5YhakczIviT" role="1B3o_S" />
+      <node concept="3cqZAl" id="5YhakczIvRi" role="3clF45" />
+      <node concept="37vLTG" id="5YhakczIwwe" role="3clF46">
+        <property role="TrG5h" value="status" />
+        <node concept="3uibUv" id="5YhakczIwwd" role="1tU5fm">
+          <ref role="3uigEE" to="9xw8:~HttpResponseStatus" resolve="HttpResponseStatus" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="5YhakczIx0u" role="3clF46">
+        <property role="TrG5h" value="message" />
+        <node concept="17QB3L" id="5YhakczIxxA" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5YhakczIrWX" role="jymVt" />
+    <node concept="3clFb_" id="5YhakczIim2" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="sendErrorResponse" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="5YhakczIim5" role="3clF47">
+        <node concept="3clFbF" id="5YhakczI$6u" role="3cqZAp">
+          <node concept="2OqwBi" id="5YhakczI$bw" role="3clFbG">
+            <node concept="Xjq3P" id="5YhakczI$6t" role="2Oq$k0" />
+            <node concept="liA8E" id="5YhakczI$iX" role="2OqNvi">
+              <ref role="37wK5l" node="5YhakczIvRr" resolve="sendText" />
+              <node concept="37vLTw" id="5YhakczI$qq" role="37wK5m">
+                <ref role="3cqZAo" node="5YhakczIlOH" resolve="status" />
+              </node>
+              <node concept="3cpWs3" id="5YhakczIl4H" role="37wK5m">
+                <node concept="3cpWs3" id="5YhakczIl4I" role="3uHU7B">
+                  <node concept="Xl_RD" id="5YhakczIl4K" role="3uHU7w">
+                    <property role="Xl_RC" value="\n\n" />
+                  </node>
+                  <node concept="37vLTw" id="5YhakczIq3D" role="3uHU7B">
+                    <ref role="3cqZAo" node="5YhakczIiMf" resolve="message" />
+                  </node>
+                </node>
+                <node concept="2YIFZM" id="5YhakczIl4L" role="3uHU7w">
+                  <ref role="37wK5l" to="9w4s:~ExceptionUtil.getThrowableText(java.lang.Throwable):java.lang.String" resolve="getThrowableText" />
+                  <ref role="1Pybhc" to="9w4s:~ExceptionUtil" resolve="ExceptionUtil" />
+                  <node concept="37vLTw" id="5YhakczIqj1" role="37wK5m">
+                    <ref role="3cqZAo" node="5YhakczIjaj" resolve="error" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5YhakczIhU4" role="1B3o_S" />
+      <node concept="3cqZAl" id="5YhakczIile" role="3clF45" />
+      <node concept="37vLTG" id="5YhakczIlOH" role="3clF46">
+        <property role="TrG5h" value="status" />
+        <node concept="3uibUv" id="5YhakczIlOI" role="1tU5fm">
+          <ref role="3uigEE" to="9xw8:~HttpResponseStatus" resolve="HttpResponseStatus" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="5YhakczIiMf" role="3clF46">
+        <property role="TrG5h" value="message" />
+        <node concept="17QB3L" id="5YhakczIiMe" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="5YhakczIjaj" role="3clF46">
+        <property role="TrG5h" value="error" />
+        <node concept="3uibUv" id="5YhakczIj$R" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
         </node>
       </node>
     </node>

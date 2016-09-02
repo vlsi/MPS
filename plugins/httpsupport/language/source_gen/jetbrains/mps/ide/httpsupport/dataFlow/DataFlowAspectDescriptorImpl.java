@@ -24,7 +24,7 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       switch (switchIndex) {
         case 0:
           if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ResponseSendStatement_DataFlow());
+            return Collections.<IDataFlowBuilder>singletonList(new ResponseSendOperation_DataFlow());
           }
           break;
         default:
@@ -41,5 +41,5 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_vhxjlb_a0b = buildConceptIndices(MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c59c0a7fL, "jetbrains.mps.ide.httpsupport.structure.ResponseSendStatement"));
+  private static final Map<SAbstractConcept, Integer> indices_vhxjlb_a0b = buildConceptIndices(MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x5f91294323b64fc1L, "jetbrains.mps.ide.httpsupport.structure.ResponseSendOperation"));
 }

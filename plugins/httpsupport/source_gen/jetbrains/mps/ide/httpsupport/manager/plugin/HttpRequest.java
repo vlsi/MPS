@@ -11,6 +11,9 @@ import io.netty.handler.codec.http.HttpResponseStatus;
 import io.netty.buffer.ByteBuf;
 import io.netty.handler.codec.http.FullHttpResponse;
 import org.jetbrains.io.Responses;
+import io.netty.buffer.Unpooled;
+import io.netty.util.CharsetUtil;
+import com.intellij.util.ExceptionUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.io.NettyKt;
@@ -53,6 +56,14 @@ public class HttpRequest {
     FullHttpResponse response = Responses.response(contentType, buffer);
     response.setStatus(status);
     Responses.send(response, channel, request);
+  }
+
+  public void sendText(HttpResponseStatus status, String message) {
+    this.sendResponse(status, "text/plain", Unpooled.copiedBuffer(message, CharsetUtil.UTF_8));
+  }
+
+  public void sendErrorResponse(HttpResponseStatus status, String message, Throwable error) {
+    this.sendText(status, message + "\n\n" + ExceptionUtil.getThrowableText(error));
   }
 
   public static List<String> getSegmentsFor(String path) {

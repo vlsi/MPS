@@ -3,7 +3,7 @@
   <dependency className="jetbrains.mps.ide.httpsupport.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.typesystem.typeof_HttpRequestParameter_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.typesystem.typeof_QueryParameterReference_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.ide.httpsupport.typesystem.typeof_ResponseSendStatement_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.typesystem.typeof_ResponseSendOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
@@ -33,7 +33,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.typesystem.typeof_ResponseSendStatement_InferenceRule" file="typeof_ResponseSendStatement_InferenceRule.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.typesystem.typeof_ResponseSendOperation_InferenceRule" file="typeof_ResponseSendOperation_InferenceRule.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

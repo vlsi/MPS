@@ -14,6 +14,7 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
@@ -135,22 +136,30 @@
       <ref role="20lvS9" node="21vgRr5xrgT" resolve="QueryParameter" />
     </node>
   </node>
-  <node concept="1TIwiD" id="21vgRr5B0DZ">
-    <property role="EcuMT" value="2332657309401746047" />
-    <property role="TrG5h" value="ResponseSendStatement" />
-    <property role="34LRSv" value="send response" />
-    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
-    <node concept="1TJgyi" id="21vgRr5B0E0" role="1TKVEl">
-      <property role="IQ2nx" value="2332657309401746048" />
-      <property role="TrG5h" value="type" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+  <node concept="1TIwiD" id="5YhakczHpni">
+    <property role="EcuMT" value="6886330673564849618" />
+    <property role="TrG5h" value="HttpRequestOperation" />
+    <property role="R5$K7" value="true" />
+    <node concept="PrWs8" id="5YhakczHpG1" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
-    <node concept="1TJgyj" id="21vgRr5B0E2" role="1TKVEi">
-      <property role="IQ2ns" value="2332657309401746050" />
+  </node>
+  <node concept="1TIwiD" id="5YhakczH$Z1">
+    <property role="EcuMT" value="6886330673564897217" />
+    <property role="TrG5h" value="ResponseSendOperation" />
+    <property role="34LRSv" value="send response" />
+    <ref role="1TJDcQ" node="5YhakczHpni" resolve="HttpRequestOperation" />
+    <node concept="1TJgyj" id="5YhakczH_0Z" role="1TKVEi">
+      <property role="IQ2ns" value="6886330673564897343" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="buffer" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyi" id="5YhakczH_0X" role="1TKVEl">
+      <property role="IQ2nx" value="6886330673564897341" />
+      <property role="TrG5h" value="type" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>

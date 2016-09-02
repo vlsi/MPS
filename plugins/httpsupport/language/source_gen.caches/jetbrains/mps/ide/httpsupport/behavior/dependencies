@@ -77,6 +77,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.HttpRequestOperation_BehaviorDescriptor" file="HttpRequestOperation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.behavior.HttpRequestParameter_BehaviorDescriptor" file="HttpRequestParameter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
@@ -120,7 +124,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.ResponseSendStatement_BehaviorDescriptor" file="ResponseSendStatement_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.ResponseSendOperation_BehaviorDescriptor" file="ResponseSendOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>

@@ -9,7 +9,7 @@ package jetbrains.mps.ide.httpsupport.behavior;
  * This class is not involved in the actual method invocation
  */
 @Deprecated
-public class ResponseSendStatement_BehaviorDescriptor {
+public class ResponseSendOperation_BehaviorDescriptor {
   public String getConceptFqName() {
     return null;
   }

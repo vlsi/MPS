@@ -19,6 +19,7 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
@@ -117,17 +118,31 @@
     </node>
   </node>
   <node concept="1YbPZF" id="21vgRr5B7Ja">
-    <property role="TrG5h" value="typeof_ResponseSendStatement" />
+    <property role="TrG5h" value="typeof_ResponseSendOperation" />
     <node concept="3clFbS" id="21vgRr5B7Jb" role="18ibNy">
+      <node concept="1Z5TYs" id="5YhakczH_Wh" role="3cqZAp">
+        <node concept="mw_s8" id="5YhakczH_WI" role="1ZfhKB">
+          <node concept="2c44tf" id="5YhakczH_WE" role="mwGJk">
+            <node concept="3cqZAl" id="5YhakczH_X4" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="5YhakczH_Wk" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5YhakczH_xw" role="mwGJk">
+            <node concept="1YBJjd" id="5YhakczH_zr" role="1Z2MuG">
+              <ref role="1YBMHb" node="21vgRr5B7Jd" resolve="responseSendOperation" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="1ZobV4" id="21vgRr5BfTF" role="3cqZAp">
         <node concept="mw_s8" id="21vgRr5BfTN" role="1ZfhK$">
           <node concept="1Z2H0r" id="21vgRr5BoyP" role="mwGJk">
             <node concept="2OqwBi" id="21vgRr5Bg1r" role="1Z2MuG">
               <node concept="1YBJjd" id="21vgRr5BfTL" role="2Oq$k0">
-                <ref role="1YBMHb" node="21vgRr5B7Jd" resolve="responseSendStatement" />
+                <ref role="1YBMHb" node="21vgRr5B7Jd" resolve="responseSendOperation" />
               </node>
-              <node concept="3TrEf2" id="21vgRr5Bgni" role="2OqNvi">
-                <ref role="3Tt5mk" to="ndib:21vgRr5B0E2" resolve="buffer" />
+              <node concept="3TrEf2" id="5YhakczHC4l" role="2OqNvi">
+                <ref role="3Tt5mk" to="ndib:5YhakczH_0Z" resolve="buffer" />
               </node>
             </node>
           </node>
@@ -142,8 +157,8 @@
       </node>
     </node>
     <node concept="1YaCAy" id="21vgRr5B7Jd" role="1YuTPh">
-      <property role="TrG5h" value="responseSendStatement" />
-      <ref role="1YaFvo" to="ndib:21vgRr5B0DZ" resolve="ResponseSendStatement" />
+      <property role="TrG5h" value="responseSendOperation" />
+      <ref role="1YaFvo" to="ndib:5YhakczH$Z1" resolve="ResponseSendOperation" />
     </node>
   </node>
 </model>

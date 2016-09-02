@@ -16,9 +16,6 @@ import java.net.URISyntaxException;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import io.netty.handler.codec.http.HttpResponseStatus;
-import io.netty.buffer.Unpooled;
-import com.intellij.util.ExceptionUtil;
-import io.netty.util.CharsetUtil;
 import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import javax.swing.SwingUtilities;
@@ -57,7 +54,7 @@ public class MPSRequestManager extends HttpRequestHandler {
         } catch (Exception e) {
           String errorHeader = "Request handler '" + handler.getName() + "' throws exception";
 
-          boxedRequest.sendResponse(HttpResponseStatus.INTERNAL_SERVER_ERROR, "text/plain", Unpooled.copiedBuffer(errorHeader + "\n\n" + ExceptionUtil.getThrowableText(e), CharsetUtil.UTF_8));
+          boxedRequest.sendErrorResponse(HttpResponseStatus.INTERNAL_SERVER_ERROR, errorHeader, e);
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error(errorHeader, e);
           }
