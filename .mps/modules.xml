@@ -464,6 +464,7 @@
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/extension.test/jetbrains.mps.lang.extension.tests.msd" folder="core.aspects.plugin" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/generator.inputModels.test/jetbrains.mps.transformation.test.inputModels.msd" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/generator.test/jetbrains.mps.generator.tests.msd" folder="core.aspects.generator" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.build.stripping.tests/jetbrains.mps.build.stripping.tests.msd" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.lang.editor.imageGen.tests/jetbrains.mps.lang.editor.imageGen.tests.msd" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/kernel.test/jetbrains.mps.kernel.tests.msd" folder="core.kernel" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/make.test/jetbrains.mps.make.tests.msd" folder="core.make" />
@@ -490,7 +491,6 @@
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/traceInfo.test/jetbrains.mps.traceInfo.test.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/traceInfo.testWeaving/jetbrains.mps.traceInfo.testWeaving.msd" folder="platform.traceInfo" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/traceable.operations.test/jetbrains.mps.lang.traceable.operations.test.msd" folder="core.languages.smodel" />
-      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.build.stripping.tests/jetbrains.mps.build.stripping.tests.msd" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/workbench/mps-debugger/jetbrains.mps.debugger.core.msd" folder="workbench.debugger" />
       <modulePath path="$PROJECT_DIR$/workbench/mps-editor/jetbrains.mps.ide.editor.msd" folder="workbench.editor" />
       <modulePath path="$PROJECT_DIR$/workbench/mps-platform/jetbrains.mps.ide.platform.msd" folder="workbench.platform" />
