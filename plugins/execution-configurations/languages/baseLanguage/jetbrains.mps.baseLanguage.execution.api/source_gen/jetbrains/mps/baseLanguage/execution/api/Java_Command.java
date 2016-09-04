@@ -223,9 +223,6 @@ public class Java_Command {
     // we set the limit to 16384 (half as many) just in case 
     return 16384;
   }
-  public static List<String> getClasspath(SNode node) {
-    return Java_Command.getClasspath(SNodeOperations.getModel(node).getModule());
-  }
   public static List<String> getClasspath(final SModule module) {
     final Wrappers._T<Set<String>> classpath = new Wrappers._T<Set<String>>();
     ModelAccess.instance().runReadAction(new Runnable() {

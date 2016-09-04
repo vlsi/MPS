@@ -3234,7 +3234,7 @@
       <node id="2423584447083506091" at="80,9,81,21" concept="10" />
       <node id="7417504313513248929" at="82,12,83,98" concept="17" />
       <node id="6062668769034024422" at="87,41,88,52" concept="10" />
-      <node id="8424816274354227596" at="91,61,92,93" concept="10" />
+      <node id="8424816274354227596" at="91,61,92,87" concept="10" />
       <node id="6062668769034024460" at="94,54,95,100" concept="10" />
       <node id="6062668769034024474" at="97,47,98,100" concept="10" />
       <node id="6062668769034024507" at="103,13,104,49" concept="10" />
@@ -3285,7 +3285,7 @@
       <scope id="7417504313513242897" at="77,56,78,40" />
       <scope id="7417504313513248336" at="82,12,83,98" />
       <scope id="6062668769034024422" at="87,41,88,52" />
-      <scope id="6062668769034024436" at="91,61,92,93" />
+      <scope id="6062668769034024436" at="91,61,92,87" />
       <scope id="6062668769034024459" at="94,54,95,100" />
       <scope id="6062668769034024473" at="97,47,98,100" />
       <scope id="6062668769034024506" at="103,13,104,49" />
@@ -4165,14 +4165,11 @@
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/8424816274354128058">
     <file name="JvmArgs.java">
-      <node id="8424816274354173548" at="15,43,16,289" concept="10" />
-      <node id="8424816274354138193" at="12,0,14,0" concept="2" trace="JvmArgs#()V" />
-      <node id="8424816274354143893" at="15,0,18,0" concept="8" trace="getDefaultJvmArgs#()Ljava/util/List;" />
-      <scope id="8424816274354138196" at="12,20,12,20" />
-      <scope id="8424816274354143896" at="15,43,16,289" />
-      <scope id="8424816274354138193" at="12,0,14,0" />
-      <scope id="8424816274354143893" at="15,0,18,0" />
-      <unit id="8424816274354128058" at="11,0,19,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JvmArgs" />
+      <node id="8424816274354173548" at="12,50,13,289" concept="10" />
+      <node id="4732833069151285804" at="12,0,15,0" concept="14" trace="getDefaultJvmArgs#()Ljava/util/List;" />
+      <scope id="8424816274354143896" at="12,50,13,289" />
+      <scope id="4732833069151285804" at="12,0,15,0" />
+      <unit id="8424816274354128058" at="11,0,16,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JvmArgs" />
     </file>
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/8981187274662750476">

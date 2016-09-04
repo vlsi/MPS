@@ -14,10 +14,8 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.Set;
 import com.intellij.openapi.application.PathMacros;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JvmArgs;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.ArrayList;
@@ -77,20 +75,20 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
 
   @Override
   @NotNull
-  public Tuples._3<String, List<String>, List<String>> getTestRunParameters() {
+  public TestParameters getTestRunParameters() {
     SNode node = getNode();
-    if (node == null) {
-      return super.getTestRunParameters();
-    }
-    if (((boolean) (Boolean) BHReflection.invoke(node, SMethodTrimmedId.create("isMpsStartRequired", null, "2RMg39tmiFh")))) {
+    if (node != null && ((boolean) (Boolean) BHReflection.invoke(node, SMethodTrimmedId.create("isMpsStartRequired", null, "2RMg39tmiFh")))) {
       Set<String> userMacroNames = PathMacros.getInstance().getUserMacroNames();
-      return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.CachingTestExecutor", ListSequence.fromList(new JvmArgs().getDefaultJvmArgs()).union(SetSequence.fromSet(userMacroNames).select(new ISelector<String, String>() {
+      List<String> jvmArgsWithMacros = ListSequence.fromList(JvmArgs.getDefaultJvmArgs()).union(SetSequence.fromSet(userMacroNames).select(new ISelector<String, String>() {
         public String select(String key) {
           return String.format("-Dpath.macro.%s=\"%s\"", key, jetbrains.mps.project.PathMacros.getInstance().getValue(key));
         }
-      })).toListSequence(), ListSequence.fromList(getIdeaClasspath()).union(ListSequence.fromList(super.getTestRunParameters()._2())).toListSequence());
+      })).toListSequence();
+      List<String> classPath = getIdeaClasspath();
+      return new TestParameters("jetbrains.mps.baseLanguage.unitTest.execution.server.CachingTestExecutor", jvmArgsWithMacros, ListSequence.fromList(classPath).union(ListSequence.fromList(super.getTestRunParameters().getClassPath())).toListSequence());
+    } else {
+      return super.getTestRunParameters();
     }
-    return super.getTestRunParameters();
   }
 
   private List<String> getPluginClasspath() {
