@@ -151,7 +151,7 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
     final List<SLibrary> toUnload = libraryDelta.getRemoved();
     final List<SLibrary> toLoad = libraryDelta.getAdded();
 
-    LOG.info("Loading " + toLoad.size() + " libraries; Unloading " + toUnload.size() + " libraries.");
+    printStatus(toUnload, toLoad);
     for (SLibrary unloadLib : toUnload) {
       unloadLib.dispose();
     }
@@ -163,6 +163,15 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
       loadLib.attach();
     }
     LOG.info("Library update is finished");
+  }
+
+  private void printStatus(List<SLibrary> toUnload, List<SLibrary> toLoad) {
+    String message = toLoad.isEmpty() ? String.format("Loading %d libraries", toLoad.size()) : "";
+    if (!message.isEmpty() && !toUnload.isEmpty()) {
+      message += "; ";
+    }
+    message += toUnload.isEmpty() ? String.format("Unloading %d libraries.", toUnload.size()) : ".";
+    LOG.info(message);
   }
 
   private void refreshLibRoots(List<SLibrary> toLoad) {
