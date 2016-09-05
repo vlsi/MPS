@@ -38,7 +38,7 @@ import jetbrains.mps.baseLanguage.closures.helper.FunctionTypeUtil;
 import jetbrains.mps.baseLanguage.closures.helper.StatementListUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -50,6 +50,7 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.baseLanguage.closures.helper.PrepStatementUtil;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.behavior.TypeDerivable__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.closures.helper.WrappersUtils;
@@ -79,6 +80,7 @@ import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.QueryKey;
 import jetbrains.mps.generator.impl.query.VariableValueQuery;
 import jetbrains.mps.generator.template.TemplateVarContext;
+import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -1761,7 +1763,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static SNode sourceNodeQuery_1336567499628873686(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("var:wrapperType"));
   }
-  public static Object templateArgumentQuery_1336567499628988448(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_5360282374928738304(final TemplateArgumentContext _context) {
     return _context.getNode();
   }
   public static Iterable<SNode> sourceNodesQuery_1336567499631894812(final SourceSubstituteMacroNodesContext _context) {
@@ -5173,6 +5175,34 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.insertMacro_varValue_3381384562914377841(ctx);
         case 4:
           return QueriesGenerated.insertMacro_varValue_1336567499628816744(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
+      }
+    }
+  }
+  private final Map<String, CallArgumentQuery> caqMethods = new HashMap<String, CallArgumentQuery>();
+  {
+    caqMethods.put("5360282374928738304", new QueriesGenerated.CAQ(0));
+  }
+  @NotNull
+  @Override
+  public CallArgumentQuery getTemplateCallArgumentQuery(@NotNull QueryKey queryKey) {
+    final String id = queryKey.getTemplateNode().getNodeId().toString();
+    if (!(caqMethods.containsKey(id))) {
+      return super.getTemplateCallArgumentQuery(queryKey);
+    }
+    return caqMethods.get(id);
+  }
+  private static class CAQ implements CallArgumentQuery {
+    private final int methodKey;
+    /*package*/ CAQ(int methodKey) {
+      this.methodKey = methodKey;
+    }
+    @Nullable
+    public Object evaluate(@NotNull TemplateArgumentContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.templateArgumentQuery_5360282374928738304(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

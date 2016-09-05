@@ -51,6 +51,8 @@ import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.QueryKey;
+import jetbrains.mps.generator.impl.query.CallArgumentQuery;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -3535,6 +3537,64 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.referenceMacro_GetReferent_8293956702610522781(ctx);
         case 8:
           return QueriesGenerated.referenceMacro_GetReferent_8694759098144848308(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
+      }
+    }
+  }
+  private final Map<String, CallArgumentQuery> caqMethods = new HashMap<String, CallArgumentQuery>();
+  {
+    caqMethods.put("5187796033891072172", new QueriesGenerated.CAQ(0));
+    caqMethods.put("7880518146486633344", new QueriesGenerated.CAQ(1));
+    caqMethods.put("399060687648558934", new QueriesGenerated.CAQ(2));
+    caqMethods.put("2818205804948863151", new QueriesGenerated.CAQ(3));
+    caqMethods.put("4690457701364599084", new QueriesGenerated.CAQ(4));
+    caqMethods.put("7880518146485737441", new QueriesGenerated.CAQ(5));
+    caqMethods.put("7880518146485812222", new QueriesGenerated.CAQ(6));
+    caqMethods.put("7880518146485945808", new QueriesGenerated.CAQ(7));
+    caqMethods.put("7880518146486051870", new QueriesGenerated.CAQ(8));
+    caqMethods.put("7880518146486107755", new QueriesGenerated.CAQ(9));
+    caqMethods.put("7880518146486287816", new QueriesGenerated.CAQ(10));
+  }
+  @NotNull
+  @Override
+  public CallArgumentQuery getTemplateCallArgumentQuery(@NotNull QueryKey queryKey) {
+    final String id = queryKey.getTemplateNode().getNodeId().toString();
+    if (!(caqMethods.containsKey(id))) {
+      return super.getTemplateCallArgumentQuery(queryKey);
+    }
+    return caqMethods.get(id);
+  }
+  private static class CAQ implements CallArgumentQuery {
+    private final int methodKey;
+    /*package*/ CAQ(int methodKey) {
+      this.methodKey = methodKey;
+    }
+    @Nullable
+    public Object evaluate(@NotNull TemplateArgumentContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.templateArgumentQuery_5187796033891072172((TemplateQueryContext) ctx);
+        case 1:
+          return QueriesGenerated.templateArgumentQuery_7880518146486633344((TemplateQueryContext) ctx);
+        case 2:
+          return QueriesGenerated.templateArgumentQuery_399060687648558934((TemplateQueryContext) ctx);
+        case 3:
+          return QueriesGenerated.templateArgumentQuery_2818205804948863151((TemplateQueryContext) ctx);
+        case 4:
+          return QueriesGenerated.templateArgumentQuery_4690457701364599084((TemplateQueryContext) ctx);
+        case 5:
+          return QueriesGenerated.templateArgumentQuery_7880518146485737441((TemplateQueryContext) ctx);
+        case 6:
+          return QueriesGenerated.templateArgumentQuery_7880518146485812222((TemplateQueryContext) ctx);
+        case 7:
+          return QueriesGenerated.templateArgumentQuery_7880518146485945808((TemplateQueryContext) ctx);
+        case 8:
+          return QueriesGenerated.templateArgumentQuery_7880518146486051870((TemplateQueryContext) ctx);
+        case 9:
+          return QueriesGenerated.templateArgumentQuery_7880518146486107755((TemplateQueryContext) ctx);
+        case 10:
+          return QueriesGenerated.templateArgumentQuery_7880518146486287816((TemplateQueryContext) ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

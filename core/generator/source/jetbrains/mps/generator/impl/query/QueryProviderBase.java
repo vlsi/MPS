@@ -173,15 +173,16 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   @NotNull
   @Override
   public CallArgumentQuery getTemplateCallArgumentQuery(@NotNull QueryKey identity) {
-    // XXX provisional code to support generated providers prior to addition of the method
-    return new ReflectiveQueryProvider().getTemplateCallArgumentQuery(identity);
+    if (myVersion == 0) {
+      // XXX provisional code to support generated providers prior to addition of the method
+      return new ReflectiveQueryProvider().getTemplateCallArgumentQuery(identity);
+    }
     // DefaultQueryExecutionContext used to evaluate to null if no method was found.
-    // It it reasonable for scenarios like bootstrap of the generator itself (e.g. to generate a new CALL inside QueriesGenerate)
-    // but for any other generator there's no reason to continue generation if QG is broken that's why fail with Missing.
+    // It is reasonable for scenarios like bootstrap of the generator itself (e.g. to generate a new CALL inside QueriesGenerate)
+    // but for any other generator there's no reason to continue generation if QG is broken that's why we fail here with Missing.
     // For lang.generator generator, we handle missing methods in ReflectiveQueryProvider, and unless we decide to switch to non-reflective
-    // QG in lang.generator itself, we shall not bother. Anyway, it's not possible to handle it here, we'll need to generate appropriate code
-    // in QPB subclass not to fail when it's asked for non-existent query (now switch:default throws an exception)
-//    return new Missing(identity);
+    // QG in lang.generator itself, we shall not bother. QPB subclass delegates to super (i.e. this method) when it has been asked for non-existent query.
+    return new Missing(identity);
   }
 
   @NotNull
