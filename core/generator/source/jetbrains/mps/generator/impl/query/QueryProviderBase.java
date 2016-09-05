@@ -213,15 +213,19 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   @NotNull
   @Override
   public MapNodeQuery getMapNodeQuery(@NotNull QueryKey identity) {
-    return new ReflectiveQueryProvider().getMapNodeQuery(identity);
-//    return new Missing(identity);
+    if (myVersion == 0) {
+      return new ReflectiveQueryProvider().getMapNodeQuery(identity);
+    }
+    return new Missing(identity);
   }
 
   @NotNull
   @Override
   public MapPostProcessor getMapPostProcessor(@NotNull QueryKey identity) {
-    return new ReflectiveQueryProvider().getMapPostProcessor(identity);
-//    return new Missing(identity);
+    if (myVersion == 0) {
+      return new ReflectiveQueryProvider().getMapPostProcessor(identity);
+    }
+    return new Missing(identity);
   }
 
   /**

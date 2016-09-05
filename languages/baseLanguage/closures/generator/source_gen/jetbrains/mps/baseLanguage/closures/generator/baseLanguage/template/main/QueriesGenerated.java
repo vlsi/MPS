@@ -81,6 +81,7 @@ import jetbrains.mps.generator.impl.query.QueryKey;
 import jetbrains.mps.generator.impl.query.VariableValueQuery;
 import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.generator.impl.query.CallArgumentQuery;
+import jetbrains.mps.generator.impl.query.MapNodeQuery;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -5203,6 +5204,43 @@ public class QueriesGenerated extends QueryProviderBase {
       switch (methodKey) {
         case 0:
           return QueriesGenerated.templateArgumentQuery_5360282374928738304(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
+      }
+    }
+  }
+  private final Map<String, MapNodeQuery> mnqMethods = new HashMap<String, MapNodeQuery>();
+  {
+    mnqMethods.put("1207147146159", new QueriesGenerated.MNQ(0));
+    mnqMethods.put("1219934508838", new QueriesGenerated.MNQ(1));
+    mnqMethods.put("8665905049776863903", new QueriesGenerated.MNQ(2));
+    mnqMethods.put("8665905049776865882", new QueriesGenerated.MNQ(3));
+  }
+  @NotNull
+  @Override
+  public MapNodeQuery getMapNodeQuery(@NotNull QueryKey queryKey) {
+    final String id = queryKey.getTemplateNode().getNodeId().toString();
+    if (!(mnqMethods.containsKey(id))) {
+      return super.getMapNodeQuery(queryKey);
+    }
+    return mnqMethods.get(id);
+  }
+  private static class MNQ implements MapNodeQuery {
+    private final int methodKey;
+    /*package*/ MNQ(int methodKey) {
+      this.methodKey = methodKey;
+    }
+    @Nullable
+    public SNode evaluate(@NotNull MapSrcMacroContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.mapSrcMacro_mapper_1207147150424(ctx);
+        case 1:
+          return QueriesGenerated.mapSrcMacro_mapper_1219934508839(ctx);
+        case 2:
+          return QueriesGenerated.mapSrcMacro_mapper_8665905049776863912(ctx);
+        case 3:
+          return QueriesGenerated.mapSrcMacro_mapper_8665905049776865883(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

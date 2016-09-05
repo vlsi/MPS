@@ -53,6 +53,7 @@ import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.QueryKey;
 import jetbrains.mps.generator.impl.query.CallArgumentQuery;
+import jetbrains.mps.generator.impl.query.MapNodeQuery;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -3595,6 +3596,37 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.templateArgumentQuery_2818205804948863151(ctx);
         case 10:
           return QueriesGenerated.templateArgumentQuery_4690457701364599084(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
+      }
+    }
+  }
+  private final Map<String, MapNodeQuery> mnqMethods = new HashMap<String, MapNodeQuery>();
+  {
+    mnqMethods.put("1279588871815121471", new QueriesGenerated.MNQ(0));
+    mnqMethods.put("6651873253983906965", new QueriesGenerated.MNQ(1));
+  }
+  @NotNull
+  @Override
+  public MapNodeQuery getMapNodeQuery(@NotNull QueryKey queryKey) {
+    final String id = queryKey.getTemplateNode().getNodeId().toString();
+    if (!(mnqMethods.containsKey(id))) {
+      return super.getMapNodeQuery(queryKey);
+    }
+    return mnqMethods.get(id);
+  }
+  private static class MNQ implements MapNodeQuery {
+    private final int methodKey;
+    /*package*/ MNQ(int methodKey) {
+      this.methodKey = methodKey;
+    }
+    @Nullable
+    public SNode evaluate(@NotNull MapSrcMacroContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.mapSrcMacro_mapper_1279588871815121472(ctx);
+        case 1:
+          return QueriesGenerated.mapSrcMacro_mapper_6651873253983906966(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
