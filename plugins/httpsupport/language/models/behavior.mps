@@ -127,6 +127,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -146,6 +149,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="6GArDv5JHzI">
+    <property role="3GE5qa" value="handler" />
     <ref role="13h7C2" to="ndib:4PqLM5kX$4Q" resolve="HandleRequestFunction" />
     <node concept="13i0hz" id="4PqLM5kY37t" role="13h7CS">
       <property role="13i0iv" value="false" />
@@ -264,6 +268,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="5dkEk59WRcM">
+    <property role="3GE5qa" value="handler" />
     <ref role="13h7C2" to="ndib:5dkEk59WRcm" resolve="CanHandleRequestFunction" />
     <node concept="13i0hz" id="5dkEk59WRqw" role="13h7CS">
       <property role="13i0iv" value="false" />
@@ -352,6 +357,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="5FAyHK_IbFF">
+    <property role="3GE5qa" value="handler" />
     <ref role="13h7C2" to="ndib:4PqLM5kXdu0" resolve="RequestHandler" />
     <node concept="13i0hz" id="2Vd38uMXlK" role="13h7CS">
       <property role="13i0iv" value="false" />

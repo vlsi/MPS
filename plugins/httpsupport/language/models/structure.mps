@@ -40,6 +40,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -50,6 +53,7 @@
     <property role="34LRSv" value="handle" />
     <property role="EcuMT" value="5573986434797682998" />
     <property role="R4oN_" value="Handle given HTTP Request" />
+    <property role="3GE5qa" value="handler" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="4PqLM5kXS7i">
@@ -57,12 +61,14 @@
     <property role="34LRSv" value="request" />
     <property role="EcuMT" value="5573986434797765074" />
     <property role="R4oN_" value="Incoming HTTP Request" />
+    <property role="3GE5qa" value="handler" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="4PqLM5kXdu0">
     <property role="TrG5h" value="RequestHandler" />
     <property role="19KtqR" value="true" />
     <property role="EcuMT" value="5573986434797590400" />
+    <property role="3GE5qa" value="handler" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="21vgRr5xtu2" role="1TKVEi">
       <property role="IQ2ns" value="2332657309400291202" />
@@ -107,12 +113,14 @@
     <property role="TrG5h" value="CanHandleRequestFunction" />
     <property role="34LRSv" value="canHandle" />
     <property role="R4oN_" value="Checks that handler can handle given HTTP Request" />
+    <property role="3GE5qa" value="handler" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="21vgRr5xrgT">
     <property role="EcuMT" value="2332657309400282169" />
     <property role="TrG5h" value="QueryParameter" />
     <property role="34LRSv" value="parameter" />
+    <property role="3GE5qa" value="handler" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="21vgRr5xrgX" role="1TKVEl">
       <property role="IQ2nx" value="2332657309400282173" />
@@ -127,6 +135,7 @@
     <property role="EcuMT" value="2332657309400452757" />
     <property role="TrG5h" value="QueryParameterReference" />
     <property role="R4oN_" value="reference to query parameter" />
+    <property role="3GE5qa" value="handler" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="21vgRr5y4Um" role="1TKVEi">
       <property role="IQ2ns" value="2332657309400452758" />
@@ -140,6 +149,7 @@
     <property role="EcuMT" value="6886330673564849618" />
     <property role="TrG5h" value="HttpRequestOperation" />
     <property role="R5$K7" value="true" />
+    <property role="3GE5qa" value="handler" />
     <node concept="PrWs8" id="5YhakczHpG1" role="PzmwI">
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
@@ -148,6 +158,7 @@
     <property role="EcuMT" value="6886330673564897217" />
     <property role="TrG5h" value="ResponseSendOperation" />
     <property role="34LRSv" value="send response" />
+    <property role="3GE5qa" value="handler" />
     <ref role="1TJDcQ" node="5YhakczHpni" resolve="HttpRequestOperation" />
     <node concept="1TJgyj" id="5YhakczH_0Z" role="1TKVEi">
       <property role="IQ2ns" value="6886330673564897343" />

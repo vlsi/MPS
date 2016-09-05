@@ -62,6 +62,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -69,6 +72,7 @@
   </registry>
   <node concept="1YbPZF" id="4PqLM5kXSBL">
     <property role="TrG5h" value="typeof_HttpRequestParameter" />
+    <property role="3GE5qa" value="handler" />
     <node concept="3clFbS" id="4PqLM5kXSBM" role="18ibNy">
       <node concept="1Z5TYs" id="4PqLM5kXSG5" role="3cqZAp">
         <node concept="mw_s8" id="4PqLM5kXSG$" role="1ZfhKB">
@@ -94,6 +98,7 @@
   </node>
   <node concept="1YbPZF" id="21vgRr5yCow">
     <property role="TrG5h" value="typeof_QueryParameterReference" />
+    <property role="3GE5qa" value="handler" />
     <node concept="3clFbS" id="21vgRr5yCox" role="18ibNy">
       <node concept="1Z5TYs" id="21vgRr5yCpj" role="3cqZAp">
         <node concept="mw_s8" id="21vgRr5yCpk" role="1ZfhKB">
@@ -119,6 +124,7 @@
   </node>
   <node concept="1YbPZF" id="21vgRr5B7Ja">
     <property role="TrG5h" value="typeof_ResponseSendOperation" />
+    <property role="3GE5qa" value="handler" />
     <node concept="3clFbS" id="21vgRr5B7Jb" role="18ibNy">
       <node concept="1Z5TYs" id="5YhakczH_Wh" role="3cqZAp">
         <node concept="mw_s8" id="5YhakczH_WI" role="1ZfhKB">

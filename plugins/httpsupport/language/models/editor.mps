@@ -170,12 +170,16 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
   </registry>
   <node concept="24kQdi" id="4PqLM5kY3ob">
+    <property role="3GE5qa" value="handler" />
     <ref role="1XX52x" to="ndib:4PqLM5kXdu0" resolve="RequestHandler" />
     <node concept="3EZMnI" id="4PqLM5kY3OH" role="2wV5jI">
       <node concept="l2Vlx" id="4PqLM5kY3OI" role="2iSdaV" />
@@ -324,6 +328,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="21vgRr5xrjo">
+    <property role="3GE5qa" value="handler" />
     <ref role="1XX52x" to="ndib:21vgRr5xrgT" resolve="QueryParameter" />
     <node concept="3EZMnI" id="21vgRr5xrjL" role="2wV5jI">
       <node concept="PMmxH" id="21vgRr5xyw7" role="3EZMnx">
@@ -358,6 +363,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="21vgRr5y4UN">
+    <property role="3GE5qa" value="handler" />
     <ref role="1XX52x" to="ndib:21vgRr5y4Ul" resolve="QueryParameterReference" />
     <node concept="3EZMnI" id="21vgRr5$65W" role="2wV5jI">
       <node concept="1iCGBv" id="5JRjEZJSeHn" role="3EZMnx">
@@ -375,6 +381,7 @@
   </node>
   <node concept="1h_SRR" id="blMEiIaDch">
     <property role="TrG5h" value="QueryParameter_Actions" />
+    <property role="3GE5qa" value="handler" />
     <ref role="1h_SK9" to="ndib:21vgRr5xrgT" resolve="QueryParameter" />
     <node concept="1hA7zw" id="blMEiIaDci" role="1h_SK8">
       <property role="1hAc7j" value="delete_action_id" />
@@ -422,6 +429,7 @@
   </node>
   <node concept="PKFIW" id="2RVPb60$t_H">
     <property role="TrG5h" value="TrustfulPropertyDescription" />
+    <property role="3GE5qa" value="handler" />
     <ref role="1XX52x" to="ndib:4PqLM5kXdu0" resolve="RequestHandler" />
     <node concept="3F0ifn" id="2RVPb60$tAu" role="2wV5jI">
       <property role="3F0ifm" value="If true, it handles requests from all hosts, otherwise - only from trusted hosts" />
@@ -432,6 +440,7 @@
     </node>
   </node>
   <node concept="IW6AY" id="3unxRhmjMUI">
+    <property role="3GE5qa" value="handler" />
     <ref role="aqKnT" to="ndib:4PqLM5kXdu0" resolve="RequestHandler" />
     <node concept="1Qtc8_" id="3unxRhmjMV1" role="IW6Ez">
       <node concept="3cWJ9i" id="3unxRhmjMV5" role="1Qtc8$">
@@ -485,6 +494,7 @@
   </node>
   <node concept="1h_SRR" id="3unxRhmjOET">
     <property role="TrG5h" value="TrustfulProperty_Actions" />
+    <property role="3GE5qa" value="handler" />
     <ref role="1h_SK9" to="ndib:4PqLM5kXdu0" resolve="RequestHandler" />
     <node concept="1hA7zw" id="3unxRhmjOF0" role="1h_SK8">
       <property role="1hAc7j" value="delete_action_id" />
@@ -531,6 +541,7 @@
     </node>
   </node>
   <node concept="IW6AY" id="3unxRhmjTSM">
+    <property role="3GE5qa" value="handler" />
     <ref role="aqKnT" to="ndib:21vgRr5xrgT" resolve="QueryParameter" />
     <node concept="1Qtc8_" id="blMEiIao$u" role="IW6Ez">
       <node concept="3cWJ9i" id="blMEiIao$$" role="1Qtc8$">
@@ -584,6 +595,7 @@
   </node>
   <node concept="PKFIW" id="3unxRhmkBvX">
     <property role="TrG5h" value="RequestHandlerDescription" />
+    <property role="3GE5qa" value="handler" />
     <ref role="1XX52x" to="ndib:4PqLM5kXdu0" resolve="RequestHandler" />
     <node concept="3EZMnI" id="3unxRhmkLjh" role="2wV5jI">
       <node concept="2iRkQZ" id="3unxRhmkLji" role="2iSdaV" />
@@ -612,6 +624,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="5YhakczH$Zz">
+    <property role="3GE5qa" value="handler" />
     <ref role="1XX52x" to="ndib:5YhakczH$Z1" resolve="ResponseSendOperation" />
     <node concept="3EZMnI" id="5YhakczH$ZF" role="2wV5jI">
       <node concept="PMmxH" id="5YhakczH$ZS" role="3EZMnx">

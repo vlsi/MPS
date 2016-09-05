@@ -84,8 +84,14 @@
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
     </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
+    </language>
   </registry>
   <node concept="1M2fIO" id="6GArDv5JHhB">
+    <property role="3GE5qa" value="handler" />
     <ref role="1M2myG" to="ndib:4PqLM5kXdu0" resolve="RequestHandler" />
     <node concept="EnEH3" id="7rr3ESJCKu5" role="1MhHOB">
       <ref role="EomxK" to="ndib:7rr3ESJC_P9" resolve="queryPrefix" />
@@ -107,6 +113,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="21vgRr5y4Vv">
+    <property role="3GE5qa" value="handler" />
     <ref role="1M2myG" to="ndib:21vgRr5y4Ul" resolve="QueryParameterReference" />
     <node concept="1N5Pfh" id="21vgRr5y4Vw" role="1Mr941">
       <ref role="1N5Vy1" to="ndib:21vgRr5y4Um" resolve="queryParameter" />
@@ -116,6 +123,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="5YhakczHpGw">
+    <property role="3GE5qa" value="handler" />
     <ref role="1M2myG" to="ndib:5YhakczHpni" resolve="HttpRequestOperation" />
     <node concept="nKS2y" id="5YhakczHpGx" role="1MLUbF">
       <node concept="3clFbS" id="5YhakczHpGy" role="2VODD2">
