@@ -26,6 +26,7 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
@@ -52,7 +53,6 @@ import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.QueryKey;
 import jetbrains.mps.generator.impl.query.CallArgumentQuery;
-import jetbrains.mps.generator.template.TemplateArgumentContext;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -1655,21 +1655,6 @@ public class QueriesGenerated extends QueryProviderBase {
   public static SNode sourceNodeQuery_8694759098145114507(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, 0xf940d819f8L, "componentType"));
   }
-  public static Object templateArgumentQuery_5187796033891072172(final TemplateQueryContext _context) {
-    return _context.getNode();
-  }
-  public static Object templateArgumentQuery_7880518146486633344(final TemplateQueryContext _context) {
-    return _context.getNode();
-  }
-  public static Object templateArgumentQuery_399060687648558934(final TemplateQueryContext _context) {
-    return _context.getNode();
-  }
-  public static Object templateArgumentQuery_2818205804948863151(final TemplateQueryContext _context) {
-    return TypeChecker.getInstance().getTypeOf(_context.getNode());
-  }
-  public static Object templateArgumentQuery_4690457701364599084(final TemplateQueryContext _context) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x59f2b8b299d62ef0L, 0x59f2b8b299d6e72bL, "original")));
-  }
   public static Object templateArgumentQuery_7880518146485737441(final TemplateQueryContext _context) {
     return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(((SNode) _context.getVariable("dotExpr")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand")));
   }
@@ -1687,6 +1672,21 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   public static Object templateArgumentQuery_7880518146486287816(final TemplateQueryContext _context) {
     return SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(((SNode) _context.getVariable("dotExpr")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType"));
+  }
+  public static Object templateArgumentQuery_5187796033891072172(final TemplateArgumentContext _context) {
+    return _context.getNode();
+  }
+  public static Object templateArgumentQuery_7880518146486633344(final TemplateArgumentContext _context) {
+    return _context.getNode();
+  }
+  public static Object templateArgumentQuery_399060687648558934(final TemplateArgumentContext _context) {
+    return _context.getNode();
+  }
+  public static Object templateArgumentQuery_2818205804948863151(final TemplateArgumentContext _context) {
+    return TypeChecker.getInstance().getTypeOf(_context.getNode());
+  }
+  public static Object templateArgumentQuery_4690457701364599084(final TemplateArgumentContext _context) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x59f2b8b299d62ef0L, 0x59f2b8b299d6e72bL, "original")));
   }
   public static Iterable<SNode> sourceNodesQuery_1224452798669(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf02c34L, "parameter"));
@@ -3544,17 +3544,17 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   private final Map<String, CallArgumentQuery> caqMethods = new HashMap<String, CallArgumentQuery>();
   {
-    caqMethods.put("5187796033891072172", new QueriesGenerated.CAQ(0));
-    caqMethods.put("7880518146486633344", new QueriesGenerated.CAQ(1));
-    caqMethods.put("399060687648558934", new QueriesGenerated.CAQ(2));
-    caqMethods.put("2818205804948863151", new QueriesGenerated.CAQ(3));
-    caqMethods.put("4690457701364599084", new QueriesGenerated.CAQ(4));
-    caqMethods.put("7880518146485737441", new QueriesGenerated.CAQ(5));
-    caqMethods.put("7880518146485812222", new QueriesGenerated.CAQ(6));
-    caqMethods.put("7880518146485945808", new QueriesGenerated.CAQ(7));
-    caqMethods.put("7880518146486051870", new QueriesGenerated.CAQ(8));
-    caqMethods.put("7880518146486107755", new QueriesGenerated.CAQ(9));
-    caqMethods.put("7880518146486287816", new QueriesGenerated.CAQ(10));
+    caqMethods.put("7880518146485737441", new QueriesGenerated.CAQ(0));
+    caqMethods.put("7880518146485812222", new QueriesGenerated.CAQ(1));
+    caqMethods.put("7880518146485945808", new QueriesGenerated.CAQ(2));
+    caqMethods.put("7880518146486051870", new QueriesGenerated.CAQ(3));
+    caqMethods.put("7880518146486107755", new QueriesGenerated.CAQ(4));
+    caqMethods.put("7880518146486287816", new QueriesGenerated.CAQ(5));
+    caqMethods.put("5187796033891072172", new QueriesGenerated.CAQ(6));
+    caqMethods.put("7880518146486633344", new QueriesGenerated.CAQ(7));
+    caqMethods.put("399060687648558934", new QueriesGenerated.CAQ(8));
+    caqMethods.put("2818205804948863151", new QueriesGenerated.CAQ(9));
+    caqMethods.put("4690457701364599084", new QueriesGenerated.CAQ(10));
   }
   @NotNull
   @Override
@@ -3574,27 +3574,27 @@ public class QueriesGenerated extends QueryProviderBase {
     public Object evaluate(@NotNull TemplateArgumentContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.templateArgumentQuery_5187796033891072172((TemplateQueryContext) ctx);
-        case 1:
-          return QueriesGenerated.templateArgumentQuery_7880518146486633344((TemplateQueryContext) ctx);
-        case 2:
-          return QueriesGenerated.templateArgumentQuery_399060687648558934((TemplateQueryContext) ctx);
-        case 3:
-          return QueriesGenerated.templateArgumentQuery_2818205804948863151((TemplateQueryContext) ctx);
-        case 4:
-          return QueriesGenerated.templateArgumentQuery_4690457701364599084((TemplateQueryContext) ctx);
-        case 5:
           return QueriesGenerated.templateArgumentQuery_7880518146485737441((TemplateQueryContext) ctx);
-        case 6:
+        case 1:
           return QueriesGenerated.templateArgumentQuery_7880518146485812222((TemplateQueryContext) ctx);
-        case 7:
+        case 2:
           return QueriesGenerated.templateArgumentQuery_7880518146485945808((TemplateQueryContext) ctx);
-        case 8:
+        case 3:
           return QueriesGenerated.templateArgumentQuery_7880518146486051870((TemplateQueryContext) ctx);
-        case 9:
+        case 4:
           return QueriesGenerated.templateArgumentQuery_7880518146486107755((TemplateQueryContext) ctx);
-        case 10:
+        case 5:
           return QueriesGenerated.templateArgumentQuery_7880518146486287816((TemplateQueryContext) ctx);
+        case 6:
+          return QueriesGenerated.templateArgumentQuery_5187796033891072172(ctx);
+        case 7:
+          return QueriesGenerated.templateArgumentQuery_7880518146486633344(ctx);
+        case 8:
+          return QueriesGenerated.templateArgumentQuery_399060687648558934(ctx);
+        case 9:
+          return QueriesGenerated.templateArgumentQuery_2818205804948863151(ctx);
+        case 10:
+          return QueriesGenerated.templateArgumentQuery_4690457701364599084(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
