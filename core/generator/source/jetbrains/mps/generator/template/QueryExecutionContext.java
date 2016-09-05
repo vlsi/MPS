@@ -54,14 +54,6 @@ public interface QueryExecutionContext extends QueryExecutor {
 
   void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException;
 
-  @Deprecated
-  @ToRemove(version = 0)
-  Object evaluateArgumentQuery(SNode inputNode, SNode query, @NotNull TemplateContext context);
-
-  @Deprecated
-  @ToRemove(version = 0)
-  Object evaluateVariableQuery(SNode inputNode, SNode query, @NotNull TemplateContext context);
-
   SNode evaluateInsertQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context);
 
   SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode, @NotNull TemplateContext context);

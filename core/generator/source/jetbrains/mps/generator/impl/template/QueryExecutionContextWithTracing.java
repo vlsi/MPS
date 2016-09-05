@@ -207,32 +207,12 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     }
   }
 
-  @Override
-  public Object evaluateArgumentQuery(SNode inputNode, SNode query, @NotNull TemplateContext context) {
-    try {
-      tracer.push(taskName("evaluate template argument query", query), true);
-      return wrapped.evaluateArgumentQuery(inputNode, query, context);
-    } finally {
-      tracer.pop();
-    }
-  }
-
   @Nullable
   @Override
   public Object evaluate(@NotNull VariableValueQuery query, @NotNull TemplateVarContext context) throws GenerationFailureException {
     try {
       tracer.push(taskName("evaluate variable value query", context.getTemplateReference()), true);
       return wrapped.evaluate(query, context);
-    } finally {
-      tracer.pop();
-    }
-  }
-
-  @Override
-  public Object evaluateVariableQuery(SNode inputNode, SNode query, @NotNull TemplateContext context) {
-    try {
-      tracer.push(taskName("evaluate variable value query", query), true);
-      return wrapped.evaluateVariableQuery(inputNode, query, context);
     } finally {
       tracer.pop();
     }

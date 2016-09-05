@@ -165,21 +165,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     }
   }
 
-  @Override
-  public Object evaluateArgumentQuery(SNode inputNode, SNode query, @NotNull TemplateContext context) {
-    String methodName = TemplateFunctionMethodName.templateArgumentQuery(query);
-    try {
-      return createMethod(query.getModel(), methodName).invoke(new TemplateArgumentContext(context, query.getReference()));
-    } catch (NoSuchMethodException e) {
-      getLog().warning(query.getReference(), String.format("cannot find argument query '%s' : evaluate to null", methodName));
-      return null;
-    } catch (Exception e) {
-      getLog().handleException(e);
-      getLog().error(query.getReference(), "cannot evaluate query, exception was thrown", GeneratorUtil.describeInput(context));
-      return null;
-    }
-  }
-
   @Nullable
   @Override
   public Object evaluate(@NotNull VariableValueQuery query, @NotNull TemplateVarContext context) throws GenerationFailureException {
@@ -190,21 +175,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (Throwable t) {
       context.showErrorMessage(null, "failed to evaluate VAR macro query");
       throw new GenerationFailureException(t);
-    }
-  }
-
-  @Override
-  public Object evaluateVariableQuery(SNode inputNode, SNode query, @NotNull TemplateContext context) {
-    String methodName = TemplateFunctionMethodName.varValue_Query(query);
-    try {
-      return createMethod(query.getModel(), methodName).invoke(new TemplateVarContext(context, query.getReference()));
-    } catch (NoSuchMethodException e) {
-      getLog().warning(query.getReference(), String.format("cannot find variable value query '%s' : evaluate to null", methodName));
-      return null;
-    } catch (Exception e) {
-      getLog().handleException(e);
-      getLog().error(query.getReference(), "cannot evaluate query, exception was thrown", GeneratorUtil.describeInput(context));
-      return null;
     }
   }
 
