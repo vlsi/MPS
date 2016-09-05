@@ -22,6 +22,7 @@ import jetbrains.mps.generator.impl.interpreted.TemplateRootMappingRuleInterpret
 import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
+import jetbrains.mps.generator.impl.query.InsertMacroQuery;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
@@ -38,6 +39,7 @@ import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
+import jetbrains.mps.generator.template.InsertMacroContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -161,11 +163,12 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
     }
   }
 
+  @Nullable
   @Override
-  public SNode evaluateInsertQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
+  public SNode evaluate(@NotNull InsertMacroQuery query, @NotNull InsertMacroContext context) throws GenerationFailureException {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.evaluateInsertQuery(inputNode, macroNode, query, context);
+      return wrapped.evaluate(query, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }

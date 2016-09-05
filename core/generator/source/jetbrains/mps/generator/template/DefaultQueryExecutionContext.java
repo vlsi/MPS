@@ -22,6 +22,7 @@ import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
+import jetbrains.mps.generator.impl.query.InsertMacroQuery;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
@@ -191,19 +192,16 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     }
   }
 
+  @Nullable
   @Override
-  public SNode evaluateInsertQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
-    String methodName = TemplateFunctionMethodName.insertMacro_Query(query);
+  public SNode evaluate(@NotNull InsertMacroQuery query, @NotNull InsertMacroContext context) throws GenerationFailureException {
     try {
-      final TemplateQueryContextWithMacro qctx = new TemplateQueryContextWithMacro(context, macroNode.getReference());
-      return this.<SNode>createMethod(query.getModel(), methodName).invoke(qctx);
-    } catch (NoSuchMethodException e) {
-      getLog().warning(macroNode.getReference(), String.format("cannot find query '%s' : evaluate to null", methodName));
-      return null;
-    } catch (Throwable th) {
-      getLog().handleException(th);
-      getLog().error(query.getReference(), "cannot evaluate query, exception was thrown", GeneratorUtil.describeInput(context));
-      return null;
+      return query.evaluate(context);
+    } catch (GenerationFailureException ex) {
+      throw ex;
+    } catch (Throwable t) {
+      context.showErrorMessage(null, "failed to evaluate INSERT macro query");
+      throw new GenerationFailureException(t);
     }
   }
 

@@ -94,6 +94,9 @@ public interface GeneratorQueryProvider {
   @NotNull
   VariableValueQuery getVariableValueQuery(@NotNull QueryKey identity);
 
+  @NotNull
+  InsertMacroQuery getInsertMacroQuery(@NotNull QueryKey identity);
+
   interface Source {
     @NotNull
     GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference templateNodeRef);

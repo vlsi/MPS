@@ -22,6 +22,7 @@ import jetbrains.mps.generator.template.DropAttributeRuleContext;
 import jetbrains.mps.generator.template.DropRootRuleContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
+import jetbrains.mps.generator.template.InsertMacroContext;
 import jetbrains.mps.generator.template.MapRootRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.PatternRuleContext;
@@ -196,6 +197,17 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     return new Missing(identity);
   }
 
+  @NotNull
+  @Override
+  public InsertMacroQuery getInsertMacroQuery(@NotNull QueryKey identity) {
+    if (myVersion == 0) {
+      // XXX provisional code to support generated providers prior to addition of the method
+      return new ReflectiveQueryProvider().getInsertMacroQuery(identity);
+    }
+    // used to evaluate to null if missing in DQEC. Why not do the same here?
+    return new Missing(identity);
+  }
+
   /**
    * Reasonable default values for all conditions and queries.
    * Note, these default values represent the case when no condition/query was specified. There's
@@ -324,7 +336,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   }
 
   // unlike Defaults, complains about missing query
-  private static class Missing implements IfMacroCondition, InlineSwitchCaseCondition, CallArgumentQuery, VariableValueQuery {
+  private static class Missing implements IfMacroCondition, InlineSwitchCaseCondition, CallArgumentQuery, VariableValueQuery, InsertMacroQuery {
     private final SNodeReference myTemplate;
 
     public Missing(QueryKey identity) {
@@ -363,6 +375,14 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     @Override
     public Object evaluate(@NotNull TemplateVarContext context) throws GenerationFailureException {
       String msg = "variable value query is missing";
+      reportError(context, msg);
+      throw new GenerationFailureException(msg);
+    }
+
+    @Nullable
+    @Override
+    public SNode evaluate(@NotNull InsertMacroContext context) throws GenerationFailureException {
+      String msg = "insert node query is missing";
       reportError(context, msg);
       throw new GenerationFailureException(msg);
     }

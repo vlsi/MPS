@@ -104,7 +104,11 @@ public class TemplateFunctionMethodName {
   }
 
   public static String insertMacro_Query(SNode function) {
-    return "insertMacro_Query_" + function.getNodeId().toString();
+    return insertMacro_Query(function.getNodeId());
+  }
+
+  public static String insertMacro_Query(SNodeId function) {
+    return "insertMacro_Query_" + function.toString();
   }
 
   public static String varValue_Query(SNode function) {

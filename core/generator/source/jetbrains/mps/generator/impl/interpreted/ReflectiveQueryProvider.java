@@ -23,6 +23,7 @@ import jetbrains.mps.generator.impl.query.DropAttributeRuleCondition;
 import jetbrains.mps.generator.impl.query.DropRuleCondition;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
+import jetbrains.mps.generator.impl.query.InsertMacroQuery;
 import jetbrains.mps.generator.impl.query.MapConfigurationCondition;
 import jetbrains.mps.generator.impl.query.MapRootRuleCondition;
 import jetbrains.mps.generator.impl.query.PatternRuleQuery;
@@ -44,6 +45,7 @@ import jetbrains.mps.generator.template.DropAttributeRuleContext;
 import jetbrains.mps.generator.template.DropRootRuleContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
+import jetbrains.mps.generator.template.InsertMacroContext;
 import jetbrains.mps.generator.template.MapRootRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.PatternRuleContext;
@@ -265,7 +267,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     String methodName = TemplateFunctionMethodName.templateArgumentQuery(((QueryKeyImpl) identity).getQueryNodeId());
     // DefaultQueryExecutionContext used to evaluate to null if no method was found.
     // We need that to support bootstrap for generator templates (e.g. if I add an argument to a CALL inside QueriesGenerated template)
-    return new Impl2(identity.getTemplateNode(), methodName, null);
+    return new Impl2<>(identity.getTemplateNode(), methodName, null);
   }
 
   @NotNull
@@ -274,7 +276,17 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     String methodName = TemplateFunctionMethodName.varValue_Query(((QueryKeyImpl) identity).getQueryNodeId());
     // DefaultQueryExecutionContext used to evaluate to null if no method was found.
     // We need that to support bootstrap for generator templates (e.g. if I add a new VAR into QueriesGenerated template)
-    return new Impl2(identity.getTemplateNode(), methodName, null);
+    return new Impl2<>(identity.getTemplateNode(), methodName, null);
+  }
+
+  @NotNull
+  @Override
+  public InsertMacroQuery getInsertMacroQuery(@NotNull QueryKey identity) {
+    String methodName = TemplateFunctionMethodName.insertMacro_Query(((QueryKeyImpl) identity).getQueryNodeId());
+    // DefaultQueryExecutionContext used to evaluate to null if no method was found.
+    // We need that to support bootstrap for generator templates (e.g. if I add a new INSERT into QueriesGenerated template of any
+    // language with bootstrap dependency to self (e.g. bl.collections))
+    return new Impl2<>(identity.getTemplateNode(), methodName, null);
   }
 
   private String getBaseRuleConditionMethod(SNode rule) {
@@ -529,13 +541,13 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
   }
 
 
-  // queries that evaluate to Object
-  static final class Impl2 implements VariableValueQuery, CallArgumentQuery {
+  // queries that evaluate to <T>
+  static final class Impl2<T> implements VariableValueQuery, CallArgumentQuery, InsertMacroQuery {
     private final SNodeReference myTemplateNode;
     private final String myMethodName;
-    private final Object myMissingMethodValue;
+    private final T myMissingMethodValue;
     private final boolean myUseDefaultForMissing;
-    private QueryMethod<Object> myMethod;
+    private QueryMethod<T> myMethod;
 
     public Impl2(@NotNull SNodeReference templateNode, @NotNull String methodName) {
       myTemplateNode = templateNode;
@@ -544,7 +556,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       myUseDefaultForMissing = false;
     }
 
-    public Impl2(@NotNull SNodeReference templateNode, @NotNull String methodName, Object missingMethodValue) {
+    public Impl2(@NotNull SNodeReference templateNode, @NotNull String methodName, T missingMethodValue) {
       myTemplateNode = templateNode;
       myMethodName = methodName;
       myMissingMethodValue = missingMethodValue;
@@ -553,18 +565,26 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
 
     @Nullable
     @Override
-    public Object evaluate(@NotNull TemplateArgumentContext context) throws GenerationFailureException {
+    public T evaluate(@NotNull TemplateArgumentContext context) throws GenerationFailureException {
       return getMethod(context, "cannot find method '%s' for template call argument").invoke(context);
     }
 
     @Nullable
     @Override
-    public Object evaluate(@NotNull TemplateVarContext context) throws GenerationFailureException {
+    public T evaluate(@NotNull TemplateVarContext context) throws GenerationFailureException {
       return getMethod(context, "cannot find method '%s' for VAR macro").invoke(context);
     }
 
-    private QueryMethod<Object> getMethod(TemplateQueryContext ctx, String messageFormat) throws GenerationFailureException {
-      QueryMethod<Object> m = myMethod;
+    @Nullable
+    @Override
+    public SNode evaluate(@NotNull InsertMacroContext context) throws GenerationFailureException {
+      @SuppressWarnings("unchecked")
+      QueryMethod<SNode> method = (QueryMethod<SNode>) getMethod(context, "cannot find method '%s' for INSERT macro");
+      return method.invoke(context);
+    }
+
+    private QueryMethod<T> getMethod(TemplateQueryContext ctx, String messageFormat) throws GenerationFailureException {
+      QueryMethod<T> m = myMethod;
       if (m == null) {
         try {
           m = myMethod = QueryMethodGenerated.getQueryMethod(myTemplateNode.getModelReference(), myMethodName);

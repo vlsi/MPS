@@ -26,6 +26,7 @@ import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.impl.interpreted.TemplateCall;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
+import jetbrains.mps.generator.impl.query.InsertMacroQuery;
 import jetbrains.mps.generator.impl.query.QueryKeyImpl;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
@@ -39,6 +40,7 @@ import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.runtime.WeavingWithAnchor;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.generator.template.InsertMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.TemplateVarContext;
@@ -448,18 +450,16 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
   // $INSERT$
   private static class InsertMacro extends MacroImpl {
+    private final InsertMacroQuery myQuery;
+
     protected InsertMacro(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next, @NotNull TemplateProcessor templateProcessor) {
       super(macro, templateNode, next, templateProcessor);
+      QueryKeyImpl qk = new QueryKeyImpl(getMacroNodeRef(), RuleUtil.getInsertMacro_Query(macro).getNodeId());
+      myQuery = templateProcessor.getQueryProvider(getMacroNodeRef()).getInsertMacroQuery(qk);
     }
 
     private SNode getNodeToInsert(TemplateContext context) throws GenerationFailureException {
-      SNode query = RuleUtil.getInsertMacro_Query(macro);
-      if(query != null) {
-        return context.getEnvironment().getQueryExecutor().evaluateInsertQuery(context.getInput(), macro, query, context);
-      }
-
-      getLogger().error(getMacroNodeRef(), "couldn't get nodes to insert", GeneratorUtil.describeInput(context));
-      throw new GenerationFailureException("couldn't get nodes to insert");
+      return context.getEnvironment().getQueryExecutor().evaluate(myQuery, new InsertMacroContext(context, getMacroNodeRef()));
     }
 
     @NotNull
