@@ -23,6 +23,8 @@ import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.impl.query.InsertMacroQuery;
+import jetbrains.mps.generator.impl.query.MapNodeQuery;
+import jetbrains.mps.generator.impl.query.MapPostProcessor;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
@@ -89,41 +91,28 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     }
   }
 
+  @Nullable
   @Override
-  public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, @NotNull TemplateContext context) throws GenerationFailureException {
-    SNode mapperFunction = RuleUtil.getMapSrc_MapperFunction(mapSrcNodeOrListMacro);
-
-    String methodName = TemplateFunctionMethodName.mapSrcMacro_MapperFunction(mapperFunction);
+  public SNode evaluate(@NotNull MapNodeQuery query, @NotNull MapSrcMacroContext context) throws GenerationFailureException {
     try {
-      final MapSrcMacroContext qctx = new MapSrcMacroContext(context, parentOutputNode, mapSrcNodeOrListMacro.getReference());
-      return this.<SNode>createMethod(mapSrcNodeOrListMacro.getModel(), methodName).invoke(qctx);
-    } catch (Throwable t) {
-      getLog().error(mapSrcNodeOrListMacro.getReference(), "cannot evaluate macro: mapping func failed, exception was thrown", GeneratorUtil.describeInput(
-          context));
-      GenerationFailureException ex = new GenerationFailureException(t);
-      ex.setTemplateContext(context);
-      ex.setTemplateModelLocation(mapSrcNodeOrListMacro.getReference());
+      return query.evaluate(context);
+    } catch (GenerationFailureException ex) {
       throw ex;
+    } catch (Throwable t) {
+      context.showErrorMessage(null, "cannot evaluate macro: mapping func failed");
+      throw new GenerationFailureException(t);
     }
   }
 
   @Override
-  public void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
-    SNode postMapperFunction = RuleUtil.getMapSrc_PostMapperFunction(mapSrcNodeOrListMacro);
-    // post-proc function is optional
-    if (postMapperFunction == null) return;
-
-    String methodName = TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(postMapperFunction);
+  public void execute(@NotNull MapPostProcessor codeBlock, @NotNull MapSrcMacroPostProcContext context) throws GenerationFailureException {
     try {
-      final MapSrcMacroPostProcContext qctx = new MapSrcMacroPostProcContext(context, outputNode, mapSrcNodeOrListMacro.getReference());
-      createMethod(mapSrcNodeOrListMacro.getModel(), methodName).invoke(qctx);
-    } catch (Throwable t) {
-      getLog().error(mapSrcNodeOrListMacro.getReference(), "cannot evaluate macro: post-processing failed, exception was thrown",
-          GeneratorUtil.describeIfExists(inputNode, "input node"));
-      GenerationFailureException ex = new GenerationFailureException(t);
-      ex.setTemplateContext(context);
-      ex.setTemplateModelLocation(mapSrcNodeOrListMacro.getReference());
+      codeBlock.invoke(context);
+    } catch (GenerationFailureException ex) {
       throw ex;
+    } catch (Throwable t) {
+      context.showErrorMessage(null, "cannot evaluate macro: post-processing failed");
+      throw new GenerationFailureException(t);
     }
   }
 

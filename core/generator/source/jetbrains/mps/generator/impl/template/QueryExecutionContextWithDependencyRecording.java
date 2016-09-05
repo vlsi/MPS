@@ -23,6 +23,8 @@ import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.impl.query.InsertMacroQuery;
+import jetbrains.mps.generator.impl.query.MapNodeQuery;
+import jetbrains.mps.generator.impl.query.MapPostProcessor;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
@@ -40,6 +42,8 @@ import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.generator.template.InsertMacroContext;
+import jetbrains.mps.generator.template.MapSrcMacroContext;
+import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -88,21 +92,22 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
     }
   }
 
+  @Nullable
   @Override
-  public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, @NotNull TemplateContext context) throws GenerationFailureException {
+  public SNode evaluate(@NotNull MapNodeQuery query, @NotNull MapSrcMacroContext context) throws GenerationFailureException {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.executeMapSrcNodeMacro(inputNode, mapSrcNodeOrListMacro, parentOutputNode, context);
+      return wrapped.evaluate(query, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }
   }
 
   @Override
-  public void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
+  public void execute(@NotNull MapPostProcessor codeBlock, @NotNull MapSrcMacroPostProcContext context) throws GenerationFailureException {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
-      wrapped.executeMapSrcNodeMacro_PostProc(inputNode, mapSrcNodeOrListMacro, outputNode, context);
+      wrapped.execute(codeBlock, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }

@@ -97,6 +97,12 @@ public interface GeneratorQueryProvider {
   @NotNull
   InsertMacroQuery getInsertMacroQuery(@NotNull QueryKey identity);
 
+  @NotNull
+  MapNodeQuery getMapNodeQuery(@NotNull QueryKey identity);
+
+  @NotNull
+  MapPostProcessor getMapPostProcessor(@NotNull QueryKey identity);
+
   interface Source {
     @NotNull
     GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference templateNodeRef);

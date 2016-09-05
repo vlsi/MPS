@@ -50,10 +50,8 @@ public interface QueryExecutionContext extends QueryExecutor {
    */
   boolean isMultithreaded();
 
-  SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, @NotNull TemplateContext context) throws GenerationFailureException;
-
-  void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException;
-
+  @Deprecated
+  @ToRemove(version = 3.3)
   SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode, @NotNull TemplateContext context);
 
   @Deprecated

@@ -20,6 +20,8 @@ import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.impl.query.InsertMacroQuery;
+import jetbrains.mps.generator.impl.query.MapNodeQuery;
+import jetbrains.mps.generator.impl.query.MapPostProcessor;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
@@ -28,6 +30,8 @@ import jetbrains.mps.generator.impl.query.VariableValueQuery;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.generator.template.InsertMacroContext;
+import jetbrains.mps.generator.template.MapSrcMacroContext;
+import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -80,4 +84,7 @@ public interface QueryExecutor {
   Object evaluate(@NotNull VariableValueQuery query, @NotNull TemplateVarContext context) throws GenerationFailureException;
   @Nullable
   SNode evaluate(@NotNull InsertMacroQuery query, @NotNull InsertMacroContext context) throws GenerationFailureException;
+  @Nullable
+  SNode evaluate(@NotNull MapNodeQuery query, @NotNull MapSrcMacroContext context) throws GenerationFailureException;
+  void execute(@NotNull MapPostProcessor codeBlock, @NotNull MapSrcMacroPostProcContext context) throws GenerationFailureException;
 }

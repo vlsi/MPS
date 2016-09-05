@@ -24,6 +24,8 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.generator.template.InsertMacroContext;
 import jetbrains.mps.generator.template.MapRootRuleContext;
+import jetbrains.mps.generator.template.MapSrcMacroContext;
+import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
@@ -208,6 +210,20 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     return new Missing(identity);
   }
 
+  @NotNull
+  @Override
+  public MapNodeQuery getMapNodeQuery(@NotNull QueryKey identity) {
+    return new ReflectiveQueryProvider().getMapNodeQuery(identity);
+//    return new Missing(identity);
+  }
+
+  @NotNull
+  @Override
+  public MapPostProcessor getMapPostProcessor(@NotNull QueryKey identity) {
+    return new ReflectiveQueryProvider().getMapPostProcessor(identity);
+//    return new Missing(identity);
+  }
+
   /**
    * Reasonable default values for all conditions and queries.
    * Note, these default values represent the case when no condition/query was specified. There's
@@ -336,7 +352,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   }
 
   // unlike Defaults, complains about missing query
-  private static class Missing implements IfMacroCondition, InlineSwitchCaseCondition, CallArgumentQuery, VariableValueQuery, InsertMacroQuery {
+  private static class Missing implements IfMacroCondition, InlineSwitchCaseCondition, CallArgumentQuery, VariableValueQuery, InsertMacroQuery, MapNodeQuery, MapPostProcessor {
     private final SNodeReference myTemplate;
 
     public Missing(QueryKey identity) {
@@ -383,6 +399,21 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     @Override
     public SNode evaluate(@NotNull InsertMacroContext context) throws GenerationFailureException {
       String msg = "insert node query is missing";
+      reportError(context, msg);
+      throw new GenerationFailureException(msg);
+    }
+
+    @Nullable
+    @Override
+    public SNode evaluate(@NotNull MapSrcMacroContext context) throws GenerationFailureException {
+      String msg = "mapping function is missing";
+      reportError(context, msg);
+      throw new GenerationFailureException(msg);
+    }
+
+    @Override
+    public void invoke(@NotNull MapSrcMacroPostProcContext context) throws GenerationFailureException {
+      String msg = "post-processing function is missing";
       reportError(context, msg);
       throw new GenerationFailureException(msg);
     }

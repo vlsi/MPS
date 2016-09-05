@@ -27,6 +27,8 @@ import jetbrains.mps.generator.impl.interpreted.TemplateCall;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.InsertMacroQuery;
+import jetbrains.mps.generator.impl.query.MapNodeQuery;
+import jetbrains.mps.generator.impl.query.MapPostProcessor;
 import jetbrains.mps.generator.impl.query.QueryKeyImpl;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
@@ -630,22 +632,29 @@ public final class TemplateProcessor implements ITemplateProcessor {
       if (newInputNodes.isEmpty()) {
         return Collections.emptyList();
       }
-      ArrayList<SNode> outputNodes = new ArrayList<SNode>(newInputNodes.size());
+      GeneratorQueryProvider queryProvider = myTemplateProcessor.getQueryProvider(getMacroNodeRef());
+      SNode mf = RuleUtil.getMapSrc_MapperFunction(macro);
+      SNode ppf = RuleUtil.getMapSrc_PostMapperFunction(macro);
+      MapNodeQuery mapNodeQuery = mf == null ? null : queryProvider.getMapNodeQuery(new QueryKeyImpl(getMacroNodeRef(), mf.getNodeId()));
+      MapPostProcessor postProcessor = ppf == null ? null : queryProvider.getMapPostProcessor(new QueryKeyImpl(getMacroNodeRef(), ppf.getNodeId()));
+      // it's perfectly legal to have neither mapNodeQuery nor postProcessor
       final TemplateExecutionEnvironment env = templateContext.getEnvironment();
-      SNode macro_mapperFunction = RuleUtil.getMapSrc_MapperFunction(macro);
+      ArrayList<SNode> outputNodes = new ArrayList<SNode>(newInputNodes.size());
       final DelayedChanges delayedChanges = myTemplateProcessor.getGenerator().getDelayedChanges();
       for (SNode newInputNode : newInputNodes) {
         TemplateContext newcontext = templateContext.subContext(newInputNode);
-        if (macro_mapperFunction != null) {
+        if (mapNodeQuery != null) {
           SNode childToReplaceLater = env.createOutputNode(templateNode.getConcept());
           outputNodes.add(childToReplaceLater);
           // execute the 'mapper' function later
-          delayedChanges.add(new MapSrcMacroProcessorInterpreted(macro, childToReplaceLater, newcontext));
+          delayedChanges.add(new MapSrcMacroProcessorInterpreted(mapNodeQuery, postProcessor, getMacroNodeRef(), childToReplaceLater, newcontext));
         } else {
           List<SNode> _outputNodes = nextMacro(newcontext);
           outputNodes.addAll(_outputNodes);
-          for (SNode outputNode : _outputNodes) {
-            delayedChanges.add(new MapSrcMacroProcessorInterpreted(macro, outputNode, newcontext));
+          if (postProcessor != null) {
+            for (SNode outputNode : _outputNodes) {
+              delayedChanges.add(new MapSrcMacroProcessorInterpreted(postProcessor, getMacroNodeRef(), outputNode, newcontext));
+            }
           }
         }
       }

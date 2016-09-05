@@ -76,11 +76,18 @@ public class TemplateFunctionMethodName {
   }
 
   public static String mapSrcMacro_MapperFunction(SNode function) {
-    return "mapSrcMacro_mapper_" + function.getNodeId().toString();
+    return mapSrcMacro_MapperFunction(function.getNodeId());
+  }
+
+  public static String mapSrcMacro_MapperFunction(SNodeId function) {
+    return "mapSrcMacro_mapper_" + function.toString();
   }
 
   public static String mapSrcMacro_PostMapperFunction(SNode function) {
-    return "mapSrcMacro_post_mapper_" + function.getNodeId().toString();
+    return mapSrcMacro_PostMapperFunction(function.getNodeId());
+  }
+  public static String mapSrcMacro_PostMapperFunction(SNodeId function) {
+    return "mapSrcMacro_post_mapper_" + function.toString();
   }
 
   public static String mappingScript_CodeBlock(SNode function) {

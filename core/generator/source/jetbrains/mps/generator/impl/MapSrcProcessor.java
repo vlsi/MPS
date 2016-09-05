@@ -15,10 +15,15 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.impl.query.MapNodeQuery;
+import jetbrains.mps.generator.impl.query.MapPostProcessor;
 import jetbrains.mps.generator.runtime.NodePostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.template.MapSrcMacroContext;
+import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -77,33 +82,38 @@ public abstract class MapSrcProcessor implements NodePostProcessor {
    * Support for substitute/post-process functions in interpreted templates
    */
   public static class MapSrcMacroProcessorInterpreted extends MapSrcProcessor {
-    private final SNode myMacro;
+    private final MapNodeQuery myMapNodeQuery;
+    private final MapPostProcessor myPostProcessor;
 
-    public MapSrcMacroProcessorInterpreted(@NotNull SNode mapSrcMacro, @NotNull SNode outputAnchor, @NotNull TemplateContext context) {
-      super(mapSrcMacro.getReference(), outputAnchor, context);
-      myMacro = mapSrcMacro;
+    public MapSrcMacroProcessorInterpreted(@NotNull MapNodeQuery mapNodeQuery, @Nullable MapPostProcessor postProcessor, @NotNull SNodeReference mapSrcMacro, @NotNull SNode outputAnchor, @NotNull TemplateContext context) {
+      super(mapSrcMacro, outputAnchor, context);
+      myMapNodeQuery = mapNodeQuery;
+      myPostProcessor = postProcessor;
+    }
+
+    public MapSrcMacroProcessorInterpreted(@NotNull MapPostProcessor postProcessor, @NotNull SNodeReference mapSrcMacro, @NotNull SNode outputAnchor, @NotNull TemplateContext context) {
+      super(mapSrcMacro, outputAnchor, context);
+      myMapNodeQuery = null;
+      myPostProcessor = postProcessor;
     }
 
     @NotNull
     @Override
     public SNode substitute() throws GenerationFailureException {
-      if (RuleUtil.getMapSrc_MapperFunction(myMacro) != null) {
-        final QueryExecutionContext queryExecutor = getTemplateContext().getEnvironment().getQueryExecutor();
-        return queryExecutor.executeMapSrcNodeMacro(getTemplateContext().getInput(), myMacro, getOutputAnchor().getParent(), getTemplateContext());
+      if (myMapNodeQuery != null) {
+        TemplateContext tc = getTemplateContext();
+        final QueryExecutionContext queryExecutor = tc.getEnvironment().getQueryExecutor();
+        return queryExecutor.evaluate(myMapNodeQuery, new MapSrcMacroContext(tc, getOutputAnchor().getParent(), getTemplateNode()));
       }
       return super.substitute();
     }
 
     @Override
     public void postProcess(@NotNull SNode outputNode) throws GenerationFailureException {
-      if (RuleUtil.getMapSrc_PostMapperFunction(myMacro) != null) {
-        try {
-          final QueryExecutionContext queryExecutor = getTemplateContext().getEnvironment().getQueryExecutor();
-          queryExecutor.executeMapSrcNodeMacro_PostProc(getTemplateContext().getInput(), myMacro, outputNode, getTemplateContext());
-        } catch (Throwable t) {
-          getTemplateContext().getEnvironment().getLogger().error(getTemplateNode(), String.format("mapping failed: '%s'", t.getMessage()), GeneratorUtil.describeInput(getTemplateContext()));
-          getTemplateContext().getEnvironment().getLogger().handleException(t);
-        }
+      if (myPostProcessor != null) {
+        TemplateContext tc = getTemplateContext();
+        final QueryExecutionContext queryExecutor = tc.getEnvironment().getQueryExecutor();
+        queryExecutor.execute(myPostProcessor, new MapSrcMacroPostProcContext(tc, outputNode, getTemplateNode()));
       }
     }
   }

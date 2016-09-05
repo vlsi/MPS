@@ -25,6 +25,8 @@ import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.impl.query.InsertMacroQuery;
 import jetbrains.mps.generator.impl.query.MapConfigurationCondition;
+import jetbrains.mps.generator.impl.query.MapNodeQuery;
+import jetbrains.mps.generator.impl.query.MapPostProcessor;
 import jetbrains.mps.generator.impl.query.MapRootRuleCondition;
 import jetbrains.mps.generator.impl.query.PatternRuleQuery;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
@@ -47,6 +49,8 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.generator.template.InsertMacroContext;
 import jetbrains.mps.generator.template.MapRootRuleContext;
+import jetbrains.mps.generator.template.MapSrcMacroContext;
+import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
@@ -287,6 +291,21 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     // We need that to support bootstrap for generator templates (e.g. if I add a new INSERT into QueriesGenerated template of any
     // language with bootstrap dependency to self (e.g. bl.collections))
     return new Impl2<>(identity.getTemplateNode(), methodName, null);
+  }
+
+  @NotNull
+  @Override
+  public MapNodeQuery getMapNodeQuery(@NotNull QueryKey identity) {
+    String methodName = TemplateFunctionMethodName.mapSrcMacro_MapperFunction(((QueryKeyImpl) identity).getQueryNodeId());
+    // it's not expected for mapper function to return null
+    return new Impl2<>(identity.getTemplateNode(), methodName);
+  }
+
+  @NotNull
+  @Override
+  public MapPostProcessor getMapPostProcessor(@NotNull QueryKey identity) {
+    String methodName = TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(((QueryKeyImpl) identity).getQueryNodeId());
+    return new Impl2<>(identity.getTemplateNode(), methodName);
   }
 
   private String getBaseRuleConditionMethod(SNode rule) {
@@ -541,8 +560,9 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
   }
 
 
-  // queries that evaluate to <T>
-  static final class Impl2<T> implements VariableValueQuery, CallArgumentQuery, InsertMacroQuery {
+  // queries that evaluate to <T>. Another difference from Impl is that
+  // methods other than that with Boolean get cached in the field.
+  static final class Impl2<T> implements VariableValueQuery, CallArgumentQuery, InsertMacroQuery, MapNodeQuery, MapPostProcessor {
     private final SNodeReference myTemplateNode;
     private final String myMethodName;
     private final T myMissingMethodValue;
@@ -581,6 +601,19 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       @SuppressWarnings("unchecked")
       QueryMethod<SNode> method = (QueryMethod<SNode>) getMethod(context, "cannot find method '%s' for INSERT macro");
       return method.invoke(context);
+    }
+
+    @Nullable
+    @Override
+    public SNode evaluate(@NotNull MapSrcMacroContext context) throws GenerationFailureException {
+      @SuppressWarnings("unchecked")
+      QueryMethod<SNode> method = (QueryMethod<SNode>) getMethod(context, "cannot find method '%s' for MAP-SRC's mapping function");
+      return method.invoke(context);
+    }
+
+    @Override
+    public void invoke(@NotNull MapSrcMacroPostProcContext context) throws GenerationFailureException {
+      getMethod(context, "cannot find method '%s' for MAP-SRC's post-processor").invoke(context);
     }
 
     private QueryMethod<T> getMethod(TemplateQueryContext ctx, String messageFormat) throws GenerationFailureException {
