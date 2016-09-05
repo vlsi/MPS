@@ -124,26 +124,33 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
           break;
         case 11:
           if (true) {
+            // Concept: TemplateArgumentQueryExpression 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new UnwrapQueryExpression_Intention();
+          }
+          break;
+        case 12:
+          if (true) {
             // Concept: TemplateDeclarationReference 
             intentions = new IntentionFactory[1];
             intentions[0] = new ConvertTemplateDeclRefToInlineTemplate_Intention();
           }
           break;
-        case 12:
+        case 13:
           if (true) {
             // Concept: TemplateSwitch 
             intentions = new IntentionFactory[1];
             intentions[0] = new NewTemplateInSwitchDefault_Intention();
           }
           break;
-        case 13:
+        case 14:
           if (true) {
             // Concept: WeaveEach_RuleConsequence 
             intentions = new IntentionFactory[1];
             intentions[0] = new NewTemplateInWeaveEach_Intention();
           }
           break;
-        case 14:
+        case 15:
           if (true) {
             // Concept: Weaving_MappingRule 
             intentions = new IntentionFactory[1];
@@ -161,7 +168,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[28];
+    IntentionFactory[] rv = new IntentionFactory[29];
     rv[0] = new ConvertInlineTemplateToTemplateFragment_Intention();
     rv[1] = new ConvertTemplateDeclRefToInlineTemplate_Intention();
     rv[2] = new AddNodeMacro_Intention();
@@ -190,6 +197,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[25] = new AddContext_Intention();
     rv[26] = new ConvertLoopWithCopySrc_Intention();
     rv[27] = new DeleteTemplateMacro_Intention();
+    rv[28] = new UnwrapQueryExpression_Intention();
     return Arrays.asList(rv);
   }
   private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
@@ -200,5 +208,5 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11dc0f7933bL, "jetbrains.mps.lang.generator.structure.AbstractMacro"), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fbbd5854aL, "jetbrains.mps.lang.generator.structure.CreateRootRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11644fdbf49L, "jetbrains.mps.lang.generator.structure.InlineSwitch_Case"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11644fa2edeL, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, "jetbrains.mps.lang.generator.structure.LoopMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x116597b27aaL, "jetbrains.mps.lang.generator.structure.MappingScriptReference"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fca296532L, "jetbrains.mps.lang.generator.structure.Reduction_MappingRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fd54746dbL, "jetbrains.mps.lang.generator.structure.Root_MappingRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013906056L, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, "jetbrains.mps.lang.generator.structure.TemplateSwitch"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1104fcac3b1L, "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0d8c573L, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"));
+  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11dc0f7933bL, "jetbrains.mps.lang.generator.structure.AbstractMacro"), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fbbd5854aL, "jetbrains.mps.lang.generator.structure.CreateRootRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11644fdbf49L, "jetbrains.mps.lang.generator.structure.InlineSwitch_Case"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11644fa2edeL, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, "jetbrains.mps.lang.generator.structure.LoopMacro"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x116597b27aaL, "jetbrains.mps.lang.generator.structure.MappingScriptReference"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fca296532L, "jetbrains.mps.lang.generator.structure.Reduction_MappingRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fd54746dbL, "jetbrains.mps.lang.generator.structure.Root_MappingRule"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x380132d742e8ccb0L, "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013906056L, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, "jetbrains.mps.lang.generator.structure.TemplateSwitch"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1104fcac3b1L, "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0d8c573L, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"));
 }
