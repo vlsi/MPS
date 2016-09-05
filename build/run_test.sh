@@ -9,7 +9,7 @@ if [ "${UNAME}" = "Linux" ]; then
 elif [ "${UNAME}" = "Darwin" ]; then
     mps_home=`pwd`
     mps_home=`dirname "$mps_home"`
-    export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
+    export JAVA_HOME=`/usr/libexec/java_home`
 else 
     echo "Unknown OS: ${UNAME}"
     exit;
