@@ -17,7 +17,6 @@ package jetbrains.mps.classloading;
 
 import jetbrains.mps.classloading.GraphHolder.Graph;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.project.dependency.PostingWarningsErrorHandler;
 import jetbrains.mps.project.dependency.UsedModulesCollector;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -37,8 +36,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import static java.util.Collections.unmodifiableList;
 
 public class ModuleUpdater {
   private static final Logger LOG = LogManager.getLogger(ModuleUpdater.class);
@@ -270,7 +267,7 @@ public class ModuleUpdater {
   private DepsWithErrors getDepsWithErrors(@NotNull ReloadableModule module, UsedModulesCollector usedModulesCollector) {
     myRepository.getModelAccess().checkReadAccess();
     if (module.getRepository() == null) {
-      return DepsWithErrors.empty();
+      return DepsWithErrors.EMPTY;
     }
 
     ErrorContainer errorContainer = new ErrorContainer();
@@ -325,31 +322,7 @@ public class ModuleUpdater {
       this.errors = errors;
     }
 
-    public static DepsWithErrors empty() {
-      return new DepsWithErrors(Collections.emptySet(), Collections.emptyList());
-    }
-  }
-
-  private static class ErrorContainer extends PostingWarningsErrorHandler {
-    private final List<SearchError> myErrors = new ArrayList<>();
-
-    public boolean addError(@NotNull SearchError e) {
-      return myErrors.add(e);
-    }
-
-    public List<SearchError> getErrors() {
-      return unmodifiableList(myErrors);
-    }
-
-    @Override
-    protected void handleMsg(@NotNull String msg) {
-      addError(SearchError.of(msg));
-    }
-
-    @Override
-    public String toString() {
-      return String.format("Errors %d", myErrors.size());
-    }
+    public final static DepsWithErrors EMPTY = new DepsWithErrors(Collections.emptySet(), Collections.emptyList());
   }
 
   static class SearchError {

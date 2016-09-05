@@ -27,35 +27,35 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
  * Created by apyshkin on 9/1/16.
  */
 public class PostingWarningsErrorHandler implements ErrorHandler {
+  public final static String DEP_NOT_RESOLVED = "The dependency cannot be resolved %s";
+  public final static String LANG_SOURCE_NOT_RESOLVED = "SLanguage's source module cannot be resolved %s";
+  public final static String RUNTIME_OF_LANG_NOT_FOUND = "The runtime dependency could not be found in the repository: used language %s; runtime solution reference: %s";
+  public final static String RUNTIME_NOT_FOUND = "The runtime dependency could not be found in the repository: %s";
+
   private boolean myHasErrors = false;
 
   @Override
   public void depCannotBeResolved(@NotNull SDependency unresolvableDep) {
-    handleMsg0("The dependency cannot be resolved " + unresolvableDep);
+    handleMsg(String.format(DEP_NOT_RESOLVED, unresolvableDep));
   }
 
   @Override
   public void langSourceModuleCannotBeResolved(@NotNull SLanguage languageWithoutSource) {
-    handleMsg0("SLanguage's source module cannot be resolved " + languageWithoutSource);
+    handleMsg(String.format(LANG_SOURCE_NOT_RESOLVED, languageWithoutSource));
   }
 
   @Override
   public void runtimeDependencyCannotBeFound(@NotNull SLanguage usedLang, @NotNull SModuleReference runtimeRef) {
-    handleMsg0(
-        String.format("The runtime dependency could not be found in the repository: used language %s; runtime solution reference: %s", usedLang, runtimeRef));
+    handleMsg(String.format(RUNTIME_OF_LANG_NOT_FOUND, usedLang, runtimeRef));
   }
 
   @Override
   public void runtimeDependencyCannotBeFound(@NotNull SModuleReference runtimeRef) {
-    handleMsg0(String.format("The runtime dependency could not be found in the repository: %s", runtimeRef));
+    handleMsg(String.format(RUNTIME_NOT_FOUND, runtimeRef));
   }
 
-  private void handleMsg0(@NotNull String msg) {
+  private void handleMsg(@NotNull String msg) {
     myHasErrors = true;
-    handleMsg(msg);
-  }
-
-  protected void handleMsg(@NotNull String msg) {
     GlobalModuleDependenciesManager.LOG.warn(msg);
   }
 
