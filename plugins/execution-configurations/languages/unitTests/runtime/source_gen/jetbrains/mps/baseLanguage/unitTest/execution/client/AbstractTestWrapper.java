@@ -10,6 +10,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -40,7 +42,11 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   @Nullable
   @Override
   public N getNode() {
-    return (N) ((SNodePointer) myNodePointer).resolve(myRepo);
+    return new ModelAccessHelper(myRepo).runReadAction(new Computable<N>() {
+      public N compute() {
+        return (N) ((SNodePointer) myNodePointer).resolve(myRepo);
+      }
+    });
   }
 
   @NotNull

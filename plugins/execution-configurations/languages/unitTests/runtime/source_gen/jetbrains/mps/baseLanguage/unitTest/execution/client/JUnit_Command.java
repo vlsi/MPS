@@ -78,7 +78,7 @@ public class JUnit_Command {
     if (ListSequence.fromList(tests).isEmpty()) {
       throw new ExecutionException("Could not find tests to run.");
     }
-    return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun.getParameters().getJvmArgs()), " ") + (((myVirtualMachineParameter_String != null && myVirtualMachineParameter_String.length() > 0) ? " " + myVirtualMachineParameter_String : ""))).setClassPath_ListString(ListSequence.fromList(testsToRun.getParameters().getClassPath()).union(ListSequence.fromList(JUnit_Command.getClasspath(testsToRun.getTests()))).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(JUnit_Command.getProgramParameters(testsToRun.getTests())).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(testsToRun.getParameters().getExecutorFqName());
+    return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun.getParameters().getJvmArgs()), " ") + (((myVirtualMachineParameter_String != null && myVirtualMachineParameter_String.length() > 0) ? " " + myVirtualMachineParameter_String : ""))).setClassPath_ListString(ListSequence.fromList(testsToRun.getParameters().getClassPath()).union(ListSequence.fromList(JUnit_Command.getClasspath(testsToRun.getTests()))).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(JUnit_Command.getProgramParameters(testsToRun.getTests())).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(testsToRun.getParameters().getExecutorClass().getName());
   }
 
   public static IDebugger getDebugger() {
@@ -100,49 +100,48 @@ public class JUnit_Command {
   }
   protected static Logger LOG = LogManager.getLogger(JUnit_Command.class);
   private static TestsWithParameters getTestsToRunWithParameters(@NotNull List<ITestNodeWrapper> tests) throws ExecutionException {
-    final Wrappers._T<List<ITestNodeWrapper>> _tests = new Wrappers._T<List<ITestNodeWrapper>>(tests);
-    final Wrappers._T<TestParameters> runParams = new Wrappers._T<TestParameters>();
-    final Wrappers._T<List<ITestNodeWrapper>> testsToRun = new Wrappers._T<List<ITestNodeWrapper>>();
-    final Wrappers._T<String> skipped = new Wrappers._T<String>();
-    _tests.value = ListSequence.fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
+    tests = ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
       public boolean accept(ITestNodeWrapper it) {
         return it != null;
       }
     }).toListSequence();
-    if (ListSequence.fromList(_tests.value).isEmpty()) {
-      final Wrappers._T<TestParameters> defaultRunParameters = new Wrappers._T<TestParameters>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          defaultRunParameters.value = TestParameters.DEFAULT;
-        }
-      });
-      return new TestsWithParameters(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), defaultRunParameters.value);
+    if (ListSequence.fromList(tests).isEmpty()) {
+      TestParameters defaultRunParameters;
+      defaultRunParameters = TestParameters.DEFAULT;
+      return new TestsWithParameters(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), defaultRunParameters);
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        runParams.value = ListSequence.fromList(_tests.value).first().getTestRunParameters();
-        testsToRun.value = ListSequence.fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
-          public boolean accept(ITestNodeWrapper it) {
-            return eq_ifael_a0a0a0a0a0a0b0a0a0a0g0r(it.getTestRunParameters(), runParams.value);
-          }
-        }).toListSequence();
-        skipped.value = IterableUtils.join(ListSequence.fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
-          public boolean accept(ITestNodeWrapper it) {
-            return neq_ifael_a0a0a0a0a0a0a2a0a0a0a6a71(it.getTestRunParameters(), runParams.value);
-          }
-        }).select(new ISelector<ITestNodeWrapper, String>() {
-          public String select(ITestNodeWrapper it) {
-            return it.getName();
-          }
-        }), " ");
+    TestParameters runParams = JUnit_Command.getMaxParams(tests);
+    List<ITestNodeWrapper> testsToRun = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
+    List<ITestNodeWrapper> testsToSkip = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
+    for (ITestNodeWrapper test : ListSequence.fromList(tests)) {
+      TestParameters testRunParameters = test.getTestRunParameters();
+      if (runParams.comprises(testRunParameters)) {
+        ListSequence.fromList(testsToRun).addElement(test);
+      } else {
+        ListSequence.fromList(testsToSkip).addElement(test);
       }
-    });
-    if (isNotEmptyString(skipped.value)) {
+    }
+    String skipped = IterableUtils.join(ListSequence.fromList(testsToSkip).select(new ISelector<ITestNodeWrapper, String>() {
+      public String select(ITestNodeWrapper it) {
+        return it.getName();
+      }
+    }), " ");
+    if ((skipped != null && skipped.length() > 0)) {
       if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("All tests could not be executed together. Skipped " + skipped.value);
+        LOG.warn("All tests could not be executed together. Skipped: " + skipped);
       }
     }
-    return new TestsWithParameters(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), runParams.value);
+    return new TestsWithParameters(testsToRun, runParams);
+  }
+  private static TestParameters getMaxParams(List<ITestNodeWrapper> tests) {
+    TestParameters maxParams = ListSequence.fromList(tests).first().getTestRunParameters();
+    for (ITestNodeWrapper test : ListSequence.fromList(tests)) {
+      TestParameters newRunParams = test.getTestRunParameters();
+      if (newRunParams.comprises(maxParams)) {
+        maxParams = newRunParams;
+      }
+    }
+    return maxParams;
   }
   private static List<String> getClasspath(final List<ITestNodeWrapper> tests) {
     final Set<SModule> uniqueModules = SetSequence.fromSet(new HashSet<SModule>());
@@ -239,14 +238,5 @@ public class JUnit_Command {
   }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
-  }
-  private static boolean eq_ifael_a0a0a0a0a0a0b0a0a0a0g0r(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean neq_ifael_a0a0a0a0a0a0a2a0a0a0a6a71(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean isNotEmptyString(String str) {
-    return str != null && str.length() > 0;
   }
 }

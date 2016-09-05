@@ -16,7 +16,7 @@ import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -39,7 +39,11 @@ public final class ITestCase__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static String getClassName_idhGBnqtL(@NotNull SNode __thisNode__) {
-    return SNodeOperations.getModelLongName(__thisNode__.getModel()) + "." + ITestCase__BehaviorDescriptor.getSimpleClassName_idhSQIE8p.invoke(__thisNode__);
+    SModel model = __thisNode__.getModel();
+    if (model == null) {
+      return "[null model ]" + ITestCase__BehaviorDescriptor.getSimpleClassName_idhSQIE8p.invoke(__thisNode__);
+    }
+    return model.getName().getLongName() + "." + ITestCase__BehaviorDescriptor.getSimpleClassName_idhSQIE8p.invoke(__thisNode__);
   }
   /*package*/ static String getSimpleClassName_idhSQIE8p(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_Test";

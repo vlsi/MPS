@@ -6,42 +6,65 @@ import org.jetbrains.mps.annotations.Immutable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultTestExecutor;
 
 @Immutable
 public final class TestParameters {
-  private final String myExecutorFqName;
-  private final List<String> myJvmArgs;
+  private final Class<?> myExecutorClass;
   private final List<String> myClassPath;
+  private final List<String> myAdditionalJvmArgs;
 
-  public TestParameters(String executorFqName, List<String> classPath, List<String> jvmArgs) {
-    myExecutorFqName = executorFqName;
+  public TestParameters(Class<?> executorClass, List<String> classPath, List<String> jvmArgs) {
+    myExecutorClass = executorClass;
     myClassPath = classPath;
-    myJvmArgs = jvmArgs;
+    myAdditionalJvmArgs = jvmArgs;
   }
 
-  public TestParameters(String executorFqName, List<String> classPath) {
-    this(executorFqName, classPath, ListSequence.fromList(new LinkedList<String>()));
+  public TestParameters(Class<?> executorClass, List<String> classPath) {
+    this(executorClass, classPath, ListSequence.fromList(new LinkedList<String>()));
   }
 
-  public String getExecutorFqName() {
-    return myExecutorFqName;
+  public Class<?> getExecutorClass() {
+    return myExecutorClass;
   }
 
   public List<String> getJvmArgs() {
-    return ListSequence.fromList(myJvmArgs).asUnmodifiable();
+    return ListSequence.fromList(myAdditionalJvmArgs).asUnmodifiable();
   }
 
   public List<String> getClassPath() {
     return ListSequence.fromList(myClassPath).asUnmodifiable();
   }
 
+  public boolean comprises(@NotNull TestParameters other) {
+    if (this == other) {
+      return true;
+    }
+    if (other.getExecutorClass().isAssignableFrom(getExecutorClass())) {
+      if (ListSequence.fromList(myClassPath).containsSequence(ListSequence.fromList(other.getClassPath()))) {
+        if (ListSequence.fromList(myAdditionalJvmArgs).containsSequence(ListSequence.fromList(other.getJvmArgs()))) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
   public static final TestParameters DEFAULT = calcDefault();
 
   public static TestParameters calcDefault() {
-    List<String> classPath = Java_Command.getClasspath(PersistenceFacade.getInstance().createModuleReference("8b958198-128f-4136-80e5-ca9777caa869(jetbrains.mps.baseLanguage.unitTest.execution.startup)").resolve(MPSModuleRepository.getInstance()));
-    return new TestParameters("jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultTestExecutor", classPath);
+    final MPSModuleRepository repo = MPSModuleRepository.getInstance();
+    List<String> classPath = new ModelAccessHelper(repo).runReadAction(new Computable<List<String>>() {
+      public List<String> compute() {
+        return Java_Command.getClasspath(PersistenceFacade.getInstance().createModuleReference("8b958198-128f-4136-80e5-ca9777caa869(jetbrains.mps.baseLanguage.unitTest.execution.startup)").resolve(repo));
+      }
+    });
+    return new TestParameters(DefaultTestExecutor.class, classPath);
   }
 }
