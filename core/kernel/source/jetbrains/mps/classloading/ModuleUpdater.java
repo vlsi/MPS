@@ -330,7 +330,7 @@ public class ModuleUpdater {
     }
   }
 
-  static class ErrorContainer extends PostingWarningsErrorHandler {
+  private static class ErrorContainer extends PostingWarningsErrorHandler {
     private final List<SearchError> myErrors = new ArrayList<>();
 
     public boolean addError(@NotNull SearchError e) {

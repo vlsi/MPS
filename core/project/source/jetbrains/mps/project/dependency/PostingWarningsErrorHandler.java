@@ -31,27 +31,31 @@ public class PostingWarningsErrorHandler implements ErrorHandler {
 
   @Override
   public void depCannotBeResolved(@NotNull SDependency unresolvableDep) {
-    handleMsg("The dependency cannot be resolved " + unresolvableDep);
+    handleMsg0("The dependency cannot be resolved " + unresolvableDep);
   }
 
   @Override
   public void langSourceModuleCannotBeResolved(@NotNull SLanguage languageWithoutSource) {
-    handleMsg("SLanguage's source module cannot be resolved " + languageWithoutSource);
+    handleMsg0("SLanguage's source module cannot be resolved " + languageWithoutSource);
   }
 
   @Override
   public void runtimeDependencyCannotBeFound(@NotNull SLanguage usedLang, @NotNull SModuleReference runtimeRef) {
-    handleMsg(
+    handleMsg0(
         String.format("The runtime dependency could not be found in the repository: used language %s; runtime solution reference: %s", usedLang, runtimeRef));
   }
 
   @Override
   public void runtimeDependencyCannotBeFound(@NotNull SModuleReference runtimeRef) {
-    handleMsg(String.format("The runtime dependency could not be found in the repository: %s", runtimeRef));
+    handleMsg0(String.format("The runtime dependency could not be found in the repository: %s", runtimeRef));
+  }
+
+  private void handleMsg0(@NotNull String msg) {
+    myHasErrors = true;
+    handleMsg(msg);
   }
 
   protected void handleMsg(@NotNull String msg) {
-    myHasErrors = true;
     GlobalModuleDependenciesManager.LOG.warn(msg);
   }
 
