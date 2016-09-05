@@ -17,6 +17,7 @@ package jetbrains.mps.classloading;
 
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NotNull;
@@ -31,7 +32,7 @@ public final class WorkbenchClassloadingEDTDispatcher implements ApplicationComp
   @Override
   public void invokeInEDT(@NotNull Runnable runnable) {
     Application application = ApplicationManager.getApplication();
-    application.invokeLater(() -> application.invokeLater(runnable)); // double invocation because of the mps plugins loading
+    application.invokeLater(() -> application.invokeLater(runnable, ModalityState.NON_MODAL), ModalityState.NON_MODAL); // double invocation because of the mps plugins loading
   }
 
   @Override
