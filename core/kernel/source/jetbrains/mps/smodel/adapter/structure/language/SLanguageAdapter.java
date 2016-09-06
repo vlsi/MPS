@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.adapter.structure.language;
 
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
@@ -31,6 +30,7 @@ import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -94,7 +94,15 @@ public abstract class SLanguageAdapter implements SLanguage {
     if (sourceModule == null) {
       return Collections.emptyList();
     }
-    for (Language language : SetSequence.fromSet(sourceModule.getAllExtendedLanguages())) {
+    // XXX RuntimesOfUsedLanguageCalculator uses this method in its source strategy. I wonder if this logic matches
+    // what we generate during the build into module deployment descriptor (so that source and packaged strategies match).
+    HashSet<Language> processed = new HashSet<>();
+    ArrayDeque<Language> queue = new ArrayDeque<>(sourceModule.getAllExtendedLanguages());
+    while (!queue.isEmpty()) {
+      Language language = queue.removeFirst();
+      if (!processed.add(language)) {
+        continue;
+      }
       runtimes.addAll(language.getRuntimeModulesReferences());
       // GeneratesInto doesn't qualify as 'true' language runtime, it's rather generator aspect, however, for the time being,
       // while we transit from using 'Extends' between languages to 'GenerateInto' to grab runtime modules, keep them together
@@ -102,7 +110,8 @@ public abstract class SLanguageAdapter implements SLanguage {
       // we likely need to move both true RT and 'GeneratesInto' to LanguageRuntime to get rid of source module use here.
       for (SDependency dep : language.getDeclaredDependencies()) {
         if (dep.getScope() == SDependencyScope.GENERATES_INTO && dep.getTarget() instanceof Language) {
-          runtimes.addAll(((Language) dep.getTarget()).getRuntimeModulesReferences());
+          Language target = (Language) dep.getTarget();
+          queue.addAll(target.getAllExtendedLanguages());
         }
       }
     }
