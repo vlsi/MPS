@@ -4,6 +4,7 @@
   <languages>
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
+    <use id="d8f591ec-4d86-4af2-9f92-a9e93c803ffa" name="jetbrains.mps.lang.scopes" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -75,9 +76,15 @@
       <concept id="1176544042499" name="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" flags="nn" index="3JvlWi" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
+      <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
+        <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
@@ -150,6 +157,28 @@
         </node>
       </node>
     </node>
+  </node>
+  <node concept="1M2fIO" id="3OrGkZCedvO">
+    <property role="3GE5qa" value="converter" />
+    <ref role="1M2myG" to="ndib:3OrGkZCeajT" resolve="SerializeFunction" />
+    <node concept="nKS2y" id="3OrGkZCedvP" role="1MLUbF">
+      <node concept="3clFbS" id="3OrGkZCedvQ" role="2VODD2">
+        <node concept="3clFbF" id="3OrGkZCedAZ" role="3cqZAp">
+          <node concept="2OqwBi" id="3OrGkZCedQ4" role="3clFbG">
+            <node concept="nLn13" id="3OrGkZCedAY" role="2Oq$k0" />
+            <node concept="1mIQ4w" id="3OrGkZCee6l" role="2OqNvi">
+              <node concept="chp4Y" id="3OrGkZCeeiL" role="cj9EA">
+                <ref role="cht4Q" to="ndib:3OrGkZCe516" resolve="ParameterConverter" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="54yEpjYJ3g$">
+    <property role="3GE5qa" value="handler" />
+    <ref role="1M2myG" to="ndib:21vgRr5xrgT" resolve="QueryParameter" />
   </node>
 </model>
 

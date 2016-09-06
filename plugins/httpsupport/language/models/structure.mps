@@ -130,6 +130,20 @@
     <node concept="PrWs8" id="21vgRr5xrgZ" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
+    <node concept="1TJgyj" id="3OrGkZCk3us" role="1TKVEi">
+      <property role="IQ2ns" value="4403308017442895772" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="parameterConverter" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="3OrGkZCe516" resolve="ParameterConverter" />
+    </node>
+    <node concept="1TJgyj" id="54yEpjYJ3CV" role="1TKVEi">
+      <property role="IQ2ns" value="5846421723674327611" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="type" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
   </node>
   <node concept="1TIwiD" id="21vgRr5y4Ul">
     <property role="EcuMT" value="2332657309400452757" />
@@ -172,6 +186,68 @@
       <property role="TrG5h" value="type" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="3OrGkZCe516">
+    <property role="EcuMT" value="4403308017441329222" />
+    <property role="TrG5h" value="ParameterConverter" />
+    <property role="19KtqR" value="true" />
+    <property role="3GE5qa" value="converter" />
+    <property role="34LRSv" value="Parameter Converter" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="3OrGkZCe51i" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyj" id="3OrGkZCe6AF" role="1TKVEi">
+      <property role="IQ2ns" value="4403308017441335723" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameterType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="1TJgyj" id="3OrGkZCexFY" role="1TKVEi">
+      <property role="IQ2ns" value="4403308017441446654" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="serializeFunction" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="3OrGkZCeajT" resolve="SerializeFunction" />
+    </node>
+    <node concept="1TJgyj" id="3OrGkZCexG1" role="1TKVEi">
+      <property role="IQ2ns" value="4403308017441446657" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="deserializeFunctinon" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="3OrGkZCexG5" resolve="DeserializeFunction" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3OrGkZCeajT">
+    <property role="EcuMT" value="4403308017441350905" />
+    <property role="3GE5qa" value="converter" />
+    <property role="TrG5h" value="SerializeFunction" />
+    <property role="34LRSv" value="serialize" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="3OrGkZCecn$">
+    <property role="EcuMT" value="4403308017441359332" />
+    <property role="3GE5qa" value="converter" />
+    <property role="TrG5h" value="SerializedValueParameter" />
+    <property role="R4oN_" value="Serialized Value" />
+    <property role="34LRSv" value="string" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="3OrGkZCejW$">
+    <property role="EcuMT" value="4403308017441390372" />
+    <property role="3GE5qa" value="converter" />
+    <property role="TrG5h" value="ValueToSerializeParameter" />
+    <property role="34LRSv" value="value" />
+    <property role="R4oN_" value="Value to Serialize" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="3OrGkZCexG5">
+    <property role="EcuMT" value="4403308017441446661" />
+    <property role="3GE5qa" value="converter" />
+    <property role="TrG5h" value="DeserializeFunction" />
+    <property role="34LRSv" value="deserialize" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
 </model>
 
