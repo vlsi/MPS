@@ -12119,6 +12119,18 @@
       </node>
       <node concept="l2Vlx" id="i0vbXtl" role="2iSdaV" />
     </node>
+    <node concept="3EZMnI" id="vGg_2aihEY" role="6VMZX">
+      <node concept="l2Vlx" id="vGg_2aihEZ" role="2iSdaV" />
+      <node concept="3F0ifn" id="vGg_2aiidF" role="3EZMnx">
+        <property role="3F0ifm" value="Constructor:" />
+      </node>
+      <node concept="1iCGBv" id="vGg_2aiidK" role="3EZMnx">
+        <ref role="1NtTu8" to="tpee:2yoSzAaKW1s" resolve="constructorDeclaration" />
+        <node concept="1sVBvm" id="vGg_2aiidM" role="1sWHZn">
+          <node concept="3SHvHV" id="vGg_2aiidU" role="2wV5jI" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="24kQdi" id="h3qTy8t">
     <property role="3GE5qa" value="generics" />

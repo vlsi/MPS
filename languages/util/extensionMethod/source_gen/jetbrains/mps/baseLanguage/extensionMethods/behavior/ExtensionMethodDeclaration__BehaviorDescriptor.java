@@ -20,6 +20,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -30,8 +32,9 @@ public final class ExtensionMethodDeclaration__BehaviorDescriptor extends BaseBH
 
   public static final SMethod<SNode> getThisType_id6XkcKt_eUWM = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getThisType").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6XkcKt_eUWM").registry(REGISTRY).build();
   public static final SMethod<SNode> getClassifier_id6EBM_lhz9HU = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getClassifier").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6EBM_lhz9HU").registry(REGISTRY).build();
+  public static final SMethod<String> getFqName_idhEwIO9y = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getFqName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIO9y").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getThisType_id6XkcKt_eUWM, getClassifier_id6EBM_lhz9HU);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getThisType_id6XkcKt_eUWM, getClassifier_id6EBM_lhz9HU, getFqName_idhEwIO9y);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -56,6 +59,13 @@ public final class ExtensionMethodDeclaration__BehaviorDescriptor extends BaseBH
     }
     return SLinkOperations.getTarget(classifierType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
   }
+  /*package*/ static String getFqName_idhEwIO9y(@NotNull SNode __thisNode__) {
+    SNode containingClassifier = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+    if (containingClassifier != null) {
+      return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(containingClassifier) + "." + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    }
+    return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invokeSpecial(__thisNode__);
+  }
 
   /*package*/ ExtensionMethodDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
@@ -77,6 +87,8 @@ public final class ExtensionMethodDeclaration__BehaviorDescriptor extends BaseBH
         return (T) ((SNode) getThisType_id6XkcKt_eUWM(node));
       case 1:
         return (T) ((SNode) getClassifier_id6EBM_lhz9HU(node));
+      case 2:
+        return (T) ((String) getFqName_idhEwIO9y(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

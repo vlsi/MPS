@@ -28,6 +28,8 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.scopes.Signature;
 import jetbrains.mps.baseLanguage.scopes.MethodSignature;
 import java.util.Collections;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -46,8 +48,9 @@ public final class StaticMethodDeclaration__BehaviorDescriptor extends BaseBHDes
   public static final SMethod<IconResource> getSideIcon_id6TtJ6IUjtJX = new SMethodBuilder<IconResource>(new SJavaCompoundTypeImpl(IconResource.class)).name("getSideIcon").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6TtJ6IUjtJX").registry(REGISTRY).build();
   public static final SMethod<Void> populateMember_id6r77ob2UW9O = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("populateMember").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2UW9O").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MembersPopulatingContext.class, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> isAbstract_idhWjv7RO = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isAbstract").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hWjv7RO").registry(REGISTRY).build();
+  public static final SMethod<String> getFqName_idhEwIO9y = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getFqName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIO9y").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getIconMarks_id6TtJ6IUkhQJ, canBeAnnotated_idhWp4PwP, isMainMethod_idhEwJkuu, getChildrenToDisplayIntention_id3vsDNFqJVhw, isStatic_id7MS72Gc8avw, getSideIcon_id6TtJ6IUjtJX, populateMember_id6r77ob2UW9O, isAbstract_idhWjv7RO);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getIconMarks_id6TtJ6IUkhQJ, canBeAnnotated_idhWp4PwP, isMainMethod_idhEwJkuu, getChildrenToDisplayIntention_id3vsDNFqJVhw, isStatic_id7MS72Gc8avw, getSideIcon_id6TtJ6IUjtJX, populateMember_id6r77ob2UW9O, isAbstract_idhWjv7RO, getFqName_idhEwIO9y);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -92,6 +95,13 @@ public final class StaticMethodDeclaration__BehaviorDescriptor extends BaseBHDes
   /*package*/ static boolean isAbstract_idhWjv7RO(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, 0x73f30e3df95c0b73L, "isNative"));
   }
+  /*package*/ static String getFqName_idhEwIO9y(@NotNull SNode __thisNode__) {
+    SNode containingClassifier = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+    if (containingClassifier != null) {
+      return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(containingClassifier) + "." + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    }
+    return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invokeSpecial(__thisNode__);
+  }
 
   /*package*/ StaticMethodDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
@@ -126,6 +136,8 @@ public final class StaticMethodDeclaration__BehaviorDescriptor extends BaseBHDes
         return null;
       case 7:
         return (T) ((Boolean) isAbstract_idhWjv7RO(node));
+      case 8:
+        return (T) ((String) getFqName_idhEwIO9y(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

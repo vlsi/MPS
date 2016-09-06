@@ -28,6 +28,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.scopes.MethodSignature;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -45,8 +46,9 @@ public final class InstanceMethodDeclaration__BehaviorDescriptor extends BaseBHD
   public static final SMethod<SNode> getImplementedInterfaceMethod_id7cTWCexFh1W = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getImplementedInterfaceMethod").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7cTWCexFh1W").registry(REGISTRY).build();
   public static final SMethod<SNode> getNearestOverriddenMethod_id4DuBHEkPTzU = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getNearestOverriddenMethod").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DuBHEkPTzU").registry(REGISTRY).build();
   public static final SMethod<Void> populateMember_id6r77ob2UW9O = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("populateMember").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2UW9O").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MembersPopulatingContext.class, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<String> getFqName_idhEwIO9y = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getFqName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIO9y").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isDataFlowChecked_idhRptrfk, canBeAnnotated_idhWp4PwP, getSideIcon_id6TtJ6IUjtJX, isAbstract_idhWjv7RO, getChildrenToDisplayIntention_id3vsDNFqJVhw, canBeInterfaceMember_id2zJQqQIUx2B, getImplementedInterfaceMethod_id7cTWCexFh1W, getNearestOverriddenMethod_id4DuBHEkPTzU, populateMember_id6r77ob2UW9O);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isDataFlowChecked_idhRptrfk, canBeAnnotated_idhWp4PwP, getSideIcon_id6TtJ6IUjtJX, isAbstract_idhWjv7RO, getChildrenToDisplayIntention_id3vsDNFqJVhw, canBeInterfaceMember_id2zJQqQIUx2B, getImplementedInterfaceMethod_id7cTWCexFh1W, getNearestOverriddenMethod_id4DuBHEkPTzU, populateMember_id6r77ob2UW9O, getFqName_idhEwIO9y);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -82,7 +84,7 @@ public final class InstanceMethodDeclaration__BehaviorDescriptor extends BaseBHD
         return (Iterable<SNode>) Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(it);
       }
     })) {
-      if (eq_pjcvwi_a0a0a0d0x(SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) && ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count() == ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count() && (boolean) BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(method, __thisNode__)) {
+      if (eq_pjcvwi_a0a0a0d0y(SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) && ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count() == ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count() && (boolean) BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(method, __thisNode__)) {
         return method;
       }
     }
@@ -102,7 +104,7 @@ public final class InstanceMethodDeclaration__BehaviorDescriptor extends BaseBHD
       }
     });
     for (SNode methodCandidate : instanceMethods) {
-      if (methodCandidate != __thisNode__ && eq_pjcvwi_a0a0a0e0y(SPropertyOperations.getString(methodCandidate, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) && ListSequence.fromList(SLinkOperations.getChildren(methodCandidate, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count() == ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count()) {
+      if (methodCandidate != __thisNode__ && eq_pjcvwi_a0a0a0e0z(SPropertyOperations.getString(methodCandidate, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) && ListSequence.fromList(SLinkOperations.getChildren(methodCandidate, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count() == ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count()) {
         if ((boolean) BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(methodCandidate, __thisNode__)) {
           return methodCandidate;
         }
@@ -117,6 +119,13 @@ public final class InstanceMethodDeclaration__BehaviorDescriptor extends BaseBHD
     MethodSignature signature = new MethodSignature(__thisNode__, context.getTypeByTypeVariableMapping());
     context.addMember(__thisNode__, signature);
     context.hideMembers(signature);
+  }
+  /*package*/ static String getFqName_idhEwIO9y(@NotNull SNode __thisNode__) {
+    SNode containingClassifier = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+    if (containingClassifier != null) {
+      return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(containingClassifier) + "." + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    }
+    return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invokeSpecial(__thisNode__);
   }
 
   /*package*/ InstanceMethodDeclaration__BehaviorDescriptor() {
@@ -152,6 +161,8 @@ public final class InstanceMethodDeclaration__BehaviorDescriptor extends BaseBHD
       case 8:
         populateMember_id6r77ob2UW9O(node, (MembersPopulatingContext) parameters[0], (SNode) parameters[1]);
         return null;
+      case 9:
+        return (T) ((String) getFqName_idhEwIO9y(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -182,10 +193,10 @@ public final class InstanceMethodDeclaration__BehaviorDescriptor extends BaseBHD
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static boolean eq_pjcvwi_a0a0a0d0x(Object a, Object b) {
+  private static boolean eq_pjcvwi_a0a0a0d0y(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_pjcvwi_a0a0a0e0y(Object a, Object b) {
+  private static boolean eq_pjcvwi_a0a0a0e0z(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -35,6 +35,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -61,8 +62,9 @@ public final class FieldDeclaration__BehaviorDescriptor extends BaseBHDescriptor
   public static final SMethod<Void> markDeprecated_id6Va_BJexupi = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("markDeprecated").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6Va_BJexupi").registry(REGISTRY).build();
   public static final SMethod<Void> unmarkDeprecated_id6Va_BJex$aE = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("unmarkDeprecated").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6Va_BJex$aE").registry(REGISTRY).build();
   public static final SMethod<Void> markLoadedNodeAsDeprecated_id5H8W9_ECA0g = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("markLoadedNodeAsDeprecated").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5H8W9_ECA0g").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<String> getFqName_idhEwIO9y = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getFqName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIO9y").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getGetterName_idhEwIcY6, getSideIcon_id6TtJ6IUjtJX, createReference_idhEwJfME, getChildrenToDisplayIntention_id3vsDNFqJVhw, hasGetter_idhEwIcYw, isGetter_idhEwIcYT, getSetterName_idhEwIcZl, hasSetter_idhEwIcZv, isSetter_idhEwIcZS, isInitializable_idhEwJfMK, getSuffix_id2Bet8mWh3pg, getPrefix_id2Bet8mWh2lw, getTraceableProperty_id4pl5GY7LKmH, populateMember_id6r77ob2UW9O, markDeprecated_id6Va_BJexupi, unmarkDeprecated_id6Va_BJex$aE, markLoadedNodeAsDeprecated_id5H8W9_ECA0g);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getGetterName_idhEwIcY6, getSideIcon_id6TtJ6IUjtJX, createReference_idhEwJfME, getChildrenToDisplayIntention_id3vsDNFqJVhw, hasGetter_idhEwIcYw, isGetter_idhEwIcYT, getSetterName_idhEwIcZl, hasSetter_idhEwIcZv, isSetter_idhEwIcZS, isInitializable_idhEwJfMK, getSuffix_id2Bet8mWh3pg, getPrefix_id2Bet8mWh2lw, getTraceableProperty_id4pl5GY7LKmH, populateMember_id6r77ob2UW9O, markDeprecated_id6Va_BJexupi, unmarkDeprecated_id6Va_BJex$aE, markLoadedNodeAsDeprecated_id5H8W9_ECA0g, getFqName_idhEwIO9y);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
     SLinkOperations.setNewChild(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
@@ -159,6 +161,13 @@ public final class FieldDeclaration__BehaviorDescriptor extends BaseBHDescriptor
   /*package*/ static void markLoadedNodeAsDeprecated_id5H8W9_ECA0g(@NotNull SAbstractConcept __thisConcept__, SNode node) {
     AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dc44bf2L, "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), DeprecationUtil.createDocComment(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dc44bf2L, "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")));
   }
+  /*package*/ static String getFqName_idhEwIO9y(@NotNull SNode __thisNode__) {
+    SNode containingClassifier = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+    if (containingClassifier != null) {
+      return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(containingClassifier) + "." + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    }
+    return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invokeSpecial(__thisNode__);
+  }
 
   /*package*/ FieldDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
@@ -211,6 +220,8 @@ public final class FieldDeclaration__BehaviorDescriptor extends BaseBHDescriptor
       case 15:
         unmarkDeprecated_id6Va_BJex$aE(node);
         return null;
+      case 17:
+        return (T) ((String) getFqName_idhEwIO9y(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
