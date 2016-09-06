@@ -33,7 +33,6 @@ import jetbrains.mps.ide.actions.Ide_PluginInitializer;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
-import jetbrains.mps.progress.ProgressMonitorBase.SubProgressMonitor;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.Language;
@@ -80,7 +79,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
 
   private final AtomicBoolean myDirtyFlag = new AtomicBoolean(false);
 
-  public PluginLoaderRegistry(MPSCoreComponents coreComponents, Ide_PluginInitializer idePlugin) {
+  public PluginLoaderRegistry(MPSCoreComponents coreComponents, @SuppressWarnings(value="UnusedParameters") Ide_PluginInitializer idePlugin) {
     myClassLoaderManager = coreComponents.getClassLoaderManager();
     SRepository repo = coreComponents.getPlatform().findComponent(MPSModuleRepository.class);
     assert repo != null;
@@ -302,24 +301,29 @@ public class PluginLoaderRegistry implements ApplicationComponent {
         LOG.debug("Nothing to do in update");
         return;
       }
-      LOG.info("Running Update Task : loaders " + loadersDelta + "; contributors : " + contributorsDelta + "; " + Thread.currentThread());
-      indicator.pushState();
-      indicator.setIndeterminate(true);
       ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
-      monitor.start("Reloading MPS Plugins", 5);
       try {
-        myTaskInProgress.compareAndSet(false, true);
-        WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(() -> {
-          removeLoaders(monitor);
-          removeContributors(monitor);
-          addLoaders(monitor);
-          addFactories(monitor);
-          addContributors(monitor);
-        }, indicator.getModalityState());
+        LOG.info("Running Update Task : loaders " + loadersDelta + "; contributors : " + contributorsDelta + "; " + Thread.currentThread());
+        indicator.pushState();
+        indicator.setIndeterminate(true);
+        monitor.start("Reloading MPS Plugins", 5);
+        WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(() -> doUpdate(monitor), indicator.getModalityState());
       } finally {
-        myTaskInProgress.compareAndSet(true, false);
         monitor.done();
         indicator.popState();
+      }
+    }
+
+    private void doUpdate(ProgressMonitor monitor) {
+      try {
+        myTaskInProgress.compareAndSet(false, true);
+        removeLoaders(monitor);
+        removeContributors(monitor);
+        addLoaders(monitor);
+        addFactories(monitor);
+        addContributors(monitor);
+      } finally{
+        myTaskInProgress.compareAndSet(true, false);
       }
     }
 
@@ -378,24 +382,6 @@ public class PluginLoaderRegistry implements ApplicationComponent {
         reschedule();
       }
     }
-  }
-
-  private void doScheduleUpdate(Application application) {
-    application.invokeLater(this::update, ModalityState.NON_MODAL, application.getDisposed());
-  }
-
-  private static ProgressIndicator getIndicator(ProgressMonitor monitor) {
-    ProgressMonitor root = monitor;
-    while (root instanceof SubProgressMonitor) {
-      root = ((SubProgressMonitor) root).getParent();
-    }
-    if (root instanceof ProgressMonitorAdapter) {
-      return ((ProgressMonitorAdapter) root).getIndicator(); // during rebuild/make
-    }
-    if (ProgressManager.getGlobalProgressIndicator() != null) {
-      return ProgressManager.getGlobalProgressIndicator(); // on start
-    }
-    return null;
   }
 
   private Set<ReloadableModule> getPluginModules(Collection<ReloadableModule> modules) {
