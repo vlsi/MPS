@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.TemplateFragmentContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -21,6 +21,7 @@ import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.generator.template.PatternRuleContext;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -111,7 +112,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_2681305894288695056(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("expr"));
   }
-  public static Object templateArgumentQuery_4816349095291000368(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_4816349095291000368(final TemplateArgumentContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Iterable<SNode> sourceNodesQuery_3571912445009918069(final SourceSubstituteMacroNodesContext _context) {

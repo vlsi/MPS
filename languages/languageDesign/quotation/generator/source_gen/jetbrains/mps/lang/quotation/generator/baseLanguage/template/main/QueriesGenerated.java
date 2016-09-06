@@ -28,7 +28,7 @@ import jetbrains.mps.lang.smodel.behavior.PropertyId__BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
@@ -41,6 +41,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.generator.runtime.TemplateModel;
@@ -406,10 +407,10 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_5756354288101684824(final SourceSubstituteMacroNodeContext _context) {
     return SModelUtil.getGenuineLinkDeclaration(SLinkOperations.getTarget(((SNode) _context.getVariable("link")), MetaAdapterFactory.getReferenceLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20c8e1aL, 0x4bb51009d20c8e1cL, "link")));
   }
-  public static Object templateArgumentQuery_7091594365016949043(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_7091594365016949043(final TemplateArgumentContext _context) {
     return SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4aa0L, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode"));
   }
-  public static Object templateArgumentQuery_5756354288102620692(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_5756354288102620692(final TemplateArgumentContext _context) {
     return _context.getNode();
   }
   public static Iterable<SNode> sourceNodesQuery_1196351886802(final SourceSubstituteMacroNodesContext _context) {

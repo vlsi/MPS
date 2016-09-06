@@ -60,7 +60,6 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.Type__BehaviorDescriptor;
-import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -70,6 +69,7 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.generator.template.InsertMacroContext;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.Map;
 import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
 import java.util.HashMap;
@@ -2635,14 +2635,14 @@ public class QueriesGenerated extends QueryProviderBase {
   public static SNode sourceNodeQuery_7317263714739208878(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x88a6ffdb3b4f8c6L, 0x68666ddb04067d60L, "filter")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"));
   }
-  public static Object templateArgumentQuery_8382384506219714495(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_8382384506219714495(final TemplateArgumentContext _context) {
     return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:allEditorComponents"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it == _context.getNode() || SLinkOperations.getTarget(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, 0x619d955714550434L, "overridenEditorComponent")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x619d95571435dfe8L, 0x619d95571435e249L, "editorComponent")) == _context.getNode();
       }
     });
   }
-  public static Object templateArgumentQuery_8382384506219714586(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_8382384506219714586(final TemplateArgumentContext _context) {
     return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:allEditorComponents"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it == _context.getNode() || SLinkOperations.getTarget(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, 0x619d955714550434L, "overridenEditorComponent")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x619d95571435dfe8L, 0x619d95571435e249L, "editorComponent")) == _context.getNode();
@@ -5941,8 +5941,8 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   private final Map<String, CallArgumentQuery> caqMethods = new HashMap<String, CallArgumentQuery>();
   {
-    caqMethods.put("8382384506219714495", new QueriesGenerated.CAQ(0));
-    caqMethods.put("8382384506219714586", new QueriesGenerated.CAQ(1));
+    caqMethods.put("8382384506219714494", new QueriesGenerated.CAQ(0));
+    caqMethods.put("8382384506219714585", new QueriesGenerated.CAQ(1));
     caqMethods.put("4565427742315565556", new QueriesGenerated.CAQ(2));
     caqMethods.put("5700381506346626450", new QueriesGenerated.CAQ(3));
     caqMethods.put("2299680136821071935", new QueriesGenerated.CAQ(4));
@@ -5965,9 +5965,9 @@ public class QueriesGenerated extends QueryProviderBase {
     public Object evaluate(@NotNull TemplateArgumentContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.templateArgumentQuery_8382384506219714495((TemplateQueryContext) ctx);
+          return QueriesGenerated.templateArgumentQuery_8382384506219714495(ctx);
         case 1:
-          return QueriesGenerated.templateArgumentQuery_8382384506219714586((TemplateQueryContext) ctx);
+          return QueriesGenerated.templateArgumentQuery_8382384506219714586(ctx);
         case 2:
           return QueriesGenerated.templateArgumentQuery_4565427742315565556(ctx);
         case 3:

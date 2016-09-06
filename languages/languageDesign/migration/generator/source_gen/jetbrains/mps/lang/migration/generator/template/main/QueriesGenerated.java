@@ -34,11 +34,11 @@ import jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -341,16 +341,16 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1123359097945761592(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("id"));
   }
-  public static Object templateArgumentQuery_2770867049910688368(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_2770867049910688368(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(((SNode) _context.getVariable("var:moveNode")), MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, 0x67236d4a58343d15L, "fromNode"));
   }
-  public static Object templateArgumentQuery_2770867049910688377(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_2770867049910688377(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(((SNode) _context.getVariable("var:moveNode")), MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, 0x67236d4a58343d17L, "toNode"));
   }
-  public static Object templateArgumentQuery_2770867049910697922(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_2770867049910697922(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(((SNode) _context.getVariable("var:moveNode")), MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, 0x67236d4a58343d15L, "fromNode"));
   }
-  public static Object templateArgumentQuery_2770867049910697931(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_2770867049910697931(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(((SNode) _context.getVariable("var:moveNode")), MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, 0x67236d4a58343d17L, "toNode"));
   }
   public static Object templateArgumentQuery_3001160274377874336(final TemplateArgumentContext _context) {

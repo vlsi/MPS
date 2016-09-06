@@ -165,9 +165,7 @@ public class TemplateCall {
 
     public QueryExpr(SNode queryExpr) {
       SNode query = RuleUtil.getTemplateArgumentQueryExpression_Query(queryExpr);
-      // FIXME QG template loops over TemplateArgumentQuery, not TemplateArgumentQueryExpression, AND uses query.getTemplateNode().getNodeId()
-      //       as key (not QueryKeyImpl.getQueryNodeId()). Shall switch to use of queryKey.equals instead of nodeId.toString() as method map key.
-      myQueryKey = new QueryKeyImpl(query.getReference(), query.getNodeId());
+      myQueryKey = new QueryKeyImpl(queryExpr.getReference(), query.getNodeId());
     }
 
     protected QueryExpr(QueryKey key) {

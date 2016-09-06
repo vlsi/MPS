@@ -39,7 +39,7 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.resources.behavior.Icon__BehaviorDescriptor;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
@@ -1072,10 +1072,10 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_5386424596292410473(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x4ac06ca1bf6e6788L, 0x4ac06ca1bf6e678bL, "componentExpression"));
   }
-  public static Object templateArgumentQuery_2264311582633520105(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_2264311582633520105(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x45b64b294c2b3514L, 0x498be7ea73fbb5cL, "actions"));
   }
-  public static Object templateArgumentQuery_2264311582633533612(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_2264311582633533612(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7d36ab0e3b095aL, 0x2c7d36ab0e3b095cL, "actions"));
   }
   public static Iterable<SNode> sourceNodesQuery_1227009624470(final SourceSubstituteMacroNodesContext _context) {

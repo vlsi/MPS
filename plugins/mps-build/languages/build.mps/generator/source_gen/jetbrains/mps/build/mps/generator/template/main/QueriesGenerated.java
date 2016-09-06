@@ -36,7 +36,7 @@ import jetbrains.mps.build.mps.behavior.BuildMPSPlugin__BehaviorDescriptor;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.build.mps.util.MPSModulesClosure;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import java.util.Set;
@@ -51,6 +51,7 @@ import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.ModuleLoader;
 import jetbrains.mps.build.mps.util.ModuleChecker;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.build.util.LocalSourcePathArtifact;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -821,13 +822,13 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_3389822811994148446(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, 0x5b7be37b4de9bbddL, "target")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")));
   }
-  public static Object templateArgumentQuery_8252715012761547166(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_8252715012761547166(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x44e5dd192e7771cfL, 0x44e5dd192e7771d0L, "targetModule"));
   }
-  public static Object templateArgumentQuery_6859736767834858803(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_6859736767834858803(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x44e5dd192e77725eL, 0x44e5dd192e77725fL, "targetPath"));
   }
-  public static Object templateArgumentQuery_7753544965996903195(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_7753544965996903195(final TemplateArgumentContext _context) {
     return SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6b9a2011083f9404L, 0x6b9a2011083f9406L, "element")), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, "jetbrains.mps.build.mps.structure.BuildMps_Branding"));
   }
   public static Iterable<SNode> sourceNodesQuery_2303926226081111354(final SourceSubstituteMacroNodesContext _context) {

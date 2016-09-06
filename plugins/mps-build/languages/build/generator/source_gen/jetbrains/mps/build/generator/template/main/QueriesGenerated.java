@@ -46,7 +46,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.build.util.JavaModulesClosure;
 import jetbrains.mps.build.behavior.BuildSourceArchiveRelativePath__BehaviorDescriptor;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -62,6 +62,7 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.util.CopyFacetUtil;
 import jetbrains.mps.build.util.FetchDependenciesProcessor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.build.util.ProjectDependency;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -1231,46 +1232,46 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_6083230236994856570(final SourceSubstituteMacroNodeContext _context) {
     return (SNode) BuildSourceArchiveRelativePath__BehaviorDescriptor.getUnpackTask_id7N6lJotWaNm.invoke(_context.getNode(), Context.defaultContext(_context));
   }
-  public static Object templateArgumentQuery_4821808014881251890(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_4821808014881251890(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0c18L, 0x44e5dd192e7c0c19L, "targetModule"));
   }
-  public static Object templateArgumentQuery_8169228734285529871(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_8169228734285529871(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0de4L, 0x44e5dd192e7c0de5L, "targetJar"));
   }
-  public static Object templateArgumentQuery_6859736767834590331(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_6859736767834590331(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0d4aL, 0x44e5dd192e7c0d4bL, "targetFile"));
   }
-  public static Object templateArgumentQuery_5680938682773841398(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_5680938682773841398(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x508044c9892402f6L, 0x508044c9892402f7L, "targetFolder"));
   }
-  public static Object templateArgumentQuery_5680938682773841635(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_5680938682773841635(final TemplateArgumentContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x508044c9892402f6L, 0x508044c9892587e8L, "suffix"));
   }
-  public static Object templateArgumentQuery_144710003695561027(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_144710003695561027(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0e6fL, 0x44e5dd192e7c0e70L, "targetLibrary"));
   }
-  public static Object templateArgumentQuery_4821808014881175180(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_4821808014881175180(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd9079dceL, 0x454b730dd9079dcfL, "library"));
   }
-  public static Object templateArgumentQuery_4821808014881207678(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_4821808014881207678(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319896a7L, 0x263ae7d4319896aaL, "module"));
   }
-  public static Object templateArgumentQuery_8169228734285538410(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_8169228734285538410(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b6185c40L, 0x3395e884b6185c41L, "jar"));
   }
-  public static Object templateArgumentQuery_6859736767834590236(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_6859736767834590236(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5f32ae3ef3770dd4L, 0x4ddcec86afb2f72aL, "extJar")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, 0x4ddcec86afb2f64dL, "jar"));
   }
-  public static Object templateArgumentQuery_342830306171239709(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_342830306171239709(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c1fa58d992addeL, 0x4c1fa58d9932901L, "extFolder")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, 0x4ddcec86afb65a40L, "folder"));
   }
-  public static Object templateArgumentQuery_342830306171239896(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_342830306171239896(final TemplateArgumentContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c1fa58d992addeL, 0x4c1fa58d9933cacL, "suffix"));
   }
-  public static Object templateArgumentQuery_5610619299014495886(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_5610619299014495886(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb50da7L, 0x4ddcec86afb50da8L, "extJar")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, 0x4ddcec86afb2f64dL, "jar"));
   }
-  public static Object templateArgumentQuery_5610619299014531918(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_5610619299014531918(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65af8L, 0x4ddcec86afb65afaL, "extFolder")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, 0x4ddcec86afb65a40L, "folder"));
   }
   public static Iterable<SNode> sourceNodesQuery_1117643560963351248(final SourceSubstituteMacroNodesContext _context) {

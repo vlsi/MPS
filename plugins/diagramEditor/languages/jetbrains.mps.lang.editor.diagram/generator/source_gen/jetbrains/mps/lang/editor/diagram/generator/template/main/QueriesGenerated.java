@@ -33,7 +33,7 @@ import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration__BehaviorDescri
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping__BehaviorDescriptor;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -531,10 +531,10 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_2809327089715336710(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba75918aL, 0x76f1cb20ba7726e1L, "handler")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"));
   }
-  public static Object templateArgumentQuery_5827780068509126835(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_5827780068509126835(final TemplateArgumentContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd120282L, 0x3f6e840fd12753fL, "input"));
   }
-  public static Object templateArgumentQuery_4394877045816057615(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_4394877045816057615(final TemplateArgumentContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, 0x3cfdbd635b5afe8dL, "iconPath"));
   }
   public static Iterable<SNode> sourceNodesQuery_1042547819306886949(final SourceSubstituteMacroNodesContext _context) {

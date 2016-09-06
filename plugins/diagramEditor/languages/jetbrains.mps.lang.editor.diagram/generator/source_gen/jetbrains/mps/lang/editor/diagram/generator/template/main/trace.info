@@ -97,7 +97,7 @@
       <node id="5827780068509049243" at="81,112,82,73" concept="6" />
       <node id="5827780068509049162" at="171,109,172,324" concept="6" />
       <node id="7511215355803458536" at="433,108,434,49" concept="6" />
-      <node id="5827780068509126837" at="534,103,535,185" concept="6" />
+      <node id="5827780068509126837" at="534,106,535,185" concept="6" />
       <node id="7511215355803458537" at="688,62,689,63" concept="5" />
       <node id="7511215355803458537" at="689,63,690,30" concept="5" />
       <node id="7511215355803458537" at="690,30,691,30" concept="5" />
@@ -114,7 +114,6 @@
       <scope id="5827780068509049242" at="81,112,82,73" />
       <scope id="5827780068509049161" at="171,109,172,324" />
       <scope id="7511215355803410657" at="433,108,434,49" />
-      <scope id="5827780068509126836" at="534,103,535,185" />
       <scope id="7511215355803458537" at="688,62,699,24">
         <var name="facade" id="7511215355803458537" />
         <var name="quotedNode_1" id="7511215355803458537" />
@@ -577,9 +576,8 @@
   <root nodeRef="r:529e2ccf-8d81-4b68-8e71-328f91951f93(jetbrains.mps.lang.editor.diagram.generator.template.main@generator)/6619018968337210716">
     <file name="QueriesGenerated.java">
       <node id="2809327089715313748" at="525,108,526,198" concept="6" />
-      <node id="6216753879334064242" at="537,103,538,189" concept="6" />
+      <node id="6216753879334064242" at="537,106,538,189" concept="6" />
       <scope id="2809327089715313678" at="525,108,526,198" />
-      <scope id="4394877045816057616" at="537,103,538,189" />
     </file>
   </root>
   <root nodeRef="r:529e2ccf-8d81-4b68-8e71-328f91951f93(jetbrains.mps.lang.editor.diagram.generator.template.main@generator)/6619018968337529320">
