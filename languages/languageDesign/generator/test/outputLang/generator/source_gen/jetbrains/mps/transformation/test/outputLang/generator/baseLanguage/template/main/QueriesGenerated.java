@@ -22,8 +22,6 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.generator.runtime.TemplateModel;
-import jetbrains.mps.generator.runtime.TemplateModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -186,9 +184,6 @@ public class QueriesGenerated {
   }
   public static Object insertMacro_varValue_5015072279636761109(final TemplateQueryContext _context) {
     return 42;
-  }
-  public static TemplateModel getDescriptor(TemplateModule module) {
-    return new TemplateModelImpl(module);
   }
   private static SNode _quotation_createNode_x583g4_a0a0a0fb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

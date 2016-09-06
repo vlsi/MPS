@@ -14,7 +14,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="12,0,78,0" name="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.QueriesGenerated" />
+      <unit at="10,0,73,0" name="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
       <unit at="19,0,65,0" name="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.TemplateModelImpl" />
@@ -103,14 +103,14 @@
   </root>
   <root nodeRef="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)/3210697320273563034">
     <file name="QueriesGenerated.java">
-      <node id="3210697320273563064" at="14,112,15,185" concept="7" />
-      <node id="3210697320273563073" at="17,112,18,185" concept="7" />
-      <node id="3210697320273648349" at="20,112,21,185" concept="7" />
-      <node id="3210697320273648358" at="23,112,24,185" concept="7" />
-      <scope id="3210697320273563063" at="14,112,15,185" />
-      <scope id="3210697320273563072" at="17,112,18,185" />
-      <scope id="3210697320273648348" at="20,112,21,185" />
-      <scope id="3210697320273648357" at="23,112,24,185" />
+      <node id="3210697320273563064" at="12,112,13,185" concept="7" />
+      <node id="3210697320273563073" at="15,112,16,185" concept="7" />
+      <node id="3210697320273648349" at="18,112,19,185" concept="7" />
+      <node id="3210697320273648358" at="21,112,22,185" concept="7" />
+      <scope id="3210697320273563063" at="12,112,13,185" />
+      <scope id="3210697320273563072" at="15,112,16,185" />
+      <scope id="3210697320273648348" at="18,112,19,185" />
+      <scope id="3210697320273648357" at="21,112,22,185" />
     </file>
     <file name="Template_reduce_BuildWall.java">
       <node id="3210697320273563034" at="27,43,28,172" concept="7" />
@@ -476,14 +476,14 @@
   </root>
   <root nodeRef="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)/3210697320273607275">
     <file name="QueriesGenerated.java">
-      <node id="3210697320273608241" at="26,112,27,185" concept="7" />
-      <node id="3210697320273608250" at="29,112,30,185" concept="7" />
-      <node id="3210697320273648399" at="32,112,33,185" concept="7" />
-      <node id="3210697320273648408" at="35,112,36,185" concept="7" />
-      <scope id="3210697320273608240" at="26,112,27,185" />
-      <scope id="3210697320273608249" at="29,112,30,185" />
-      <scope id="3210697320273648398" at="32,112,33,185" />
-      <scope id="3210697320273648407" at="35,112,36,185" />
+      <node id="3210697320273608241" at="24,112,25,185" concept="7" />
+      <node id="3210697320273608250" at="27,112,28,185" concept="7" />
+      <node id="3210697320273648399" at="30,112,31,185" concept="7" />
+      <node id="3210697320273648408" at="33,112,34,185" concept="7" />
+      <scope id="3210697320273608240" at="24,112,25,185" />
+      <scope id="3210697320273608249" at="27,112,28,185" />
+      <scope id="3210697320273648398" at="30,112,31,185" />
+      <scope id="3210697320273648407" at="33,112,34,185" />
     </file>
     <file name="Template_reduce_DestroyWall.java">
       <node id="3210697320273607275" at="27,43,28,172" concept="7" />
@@ -836,18 +836,18 @@
   </root>
   <root nodeRef="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)/3210697320273612346">
     <file name="QueriesGenerated.java">
-      <node id="3210697320273614398" at="38,112,39,185" concept="7" />
-      <node id="3210697320273614407" at="41,112,42,185" concept="7" />
-      <node id="3210697320273614418" at="44,112,45,185" concept="7" />
-      <node id="3210697320273614427" at="47,112,48,185" concept="7" />
-      <node id="3210697320273648553" at="50,112,51,185" concept="7" />
-      <node id="3210697320273648562" at="53,112,54,185" concept="7" />
-      <scope id="3210697320273614397" at="38,112,39,185" />
-      <scope id="3210697320273614406" at="41,112,42,185" />
-      <scope id="3210697320273614417" at="44,112,45,185" />
-      <scope id="3210697320273614426" at="47,112,48,185" />
-      <scope id="3210697320273648552" at="50,112,51,185" />
-      <scope id="3210697320273648561" at="53,112,54,185" />
+      <node id="3210697320273614398" at="36,112,37,185" concept="7" />
+      <node id="3210697320273614407" at="39,112,40,185" concept="7" />
+      <node id="3210697320273614418" at="42,112,43,185" concept="7" />
+      <node id="3210697320273614427" at="45,112,46,185" concept="7" />
+      <node id="3210697320273648553" at="48,112,49,185" concept="7" />
+      <node id="3210697320273648562" at="51,112,52,185" concept="7" />
+      <scope id="3210697320273614397" at="36,112,37,185" />
+      <scope id="3210697320273614406" at="39,112,40,185" />
+      <scope id="3210697320273614417" at="42,112,43,185" />
+      <scope id="3210697320273614426" at="45,112,46,185" />
+      <scope id="3210697320273648552" at="48,112,49,185" />
+      <scope id="3210697320273648561" at="51,112,52,185" />
     </file>
     <file name="Template_reduce_DropMark.java">
       <node id="3210697320273612346" at="27,43,28,172" concept="7" />
@@ -1387,18 +1387,18 @@
   </root>
   <root nodeRef="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)/3210697320273614443">
     <file name="QueriesGenerated.java">
-      <node id="3210697320273614495" at="56,112,57,185" concept="7" />
-      <node id="3210697320273614504" at="59,112,60,185" concept="7" />
-      <node id="3210697320273614515" at="62,112,63,185" concept="7" />
-      <node id="3210697320273614526" at="65,112,66,185" concept="7" />
-      <node id="3210697320273648472" at="68,112,69,185" concept="7" />
-      <node id="3210697320273648481" at="71,112,72,185" concept="7" />
-      <scope id="3210697320273614494" at="56,112,57,185" />
-      <scope id="3210697320273614503" at="59,112,60,185" />
-      <scope id="3210697320273614514" at="62,112,63,185" />
-      <scope id="3210697320273614525" at="65,112,66,185" />
-      <scope id="3210697320273648471" at="68,112,69,185" />
-      <scope id="3210697320273648480" at="71,112,72,185" />
+      <node id="3210697320273614495" at="54,112,55,185" concept="7" />
+      <node id="3210697320273614504" at="57,112,58,185" concept="7" />
+      <node id="3210697320273614515" at="60,112,61,185" concept="7" />
+      <node id="3210697320273614526" at="63,112,64,185" concept="7" />
+      <node id="3210697320273648472" at="66,112,67,185" concept="7" />
+      <node id="3210697320273648481" at="69,112,70,185" concept="7" />
+      <scope id="3210697320273614494" at="54,112,55,185" />
+      <scope id="3210697320273614503" at="57,112,58,185" />
+      <scope id="3210697320273614514" at="60,112,61,185" />
+      <scope id="3210697320273614525" at="63,112,64,185" />
+      <scope id="3210697320273648471" at="66,112,67,185" />
+      <scope id="3210697320273648480" at="69,112,70,185" />
     </file>
     <file name="Template_reduce_PickMark.java">
       <node id="3210697320273614443" at="27,43,28,172" concept="7" />

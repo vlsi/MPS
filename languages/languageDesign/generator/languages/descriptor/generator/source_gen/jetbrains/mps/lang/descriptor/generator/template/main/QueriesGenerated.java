@@ -41,8 +41,6 @@ import jetbrains.mps.generator.impl.plan.ModelScanner;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.lang.smodel.behavior.LanguageIdentity__BehaviorDescriptor;
-import jetbrains.mps.generator.runtime.TemplateModel;
-import jetbrains.mps.generator.runtime.TemplateModule;
 
 @Generated
 public class QueriesGenerated {
@@ -299,9 +297,6 @@ public class QueriesGenerated {
         return lid;
       }
     }).toListSequence();
-  }
-  public static TemplateModel getDescriptor(TemplateModule module) {
-    return new TemplateModelImpl(module);
   }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;

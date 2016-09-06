@@ -1332,9 +1332,6 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1071051212912102685(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, 0x190d31fe6a12ebb5L, "conditionFunction")) != null);
   }
-  public static boolean ifMacro_Condition_8530225126180766850(final IfMacroContext _context) {
-    return GenUtil.isGeneratable(_context.getOriginalInputModel());
-  }
   public static boolean ifMacro_Condition_7602140671021486924(final IfMacroContext _context) {
     return ((Boolean) _context.getVariable("var:nonReflectiveQueries"));
   }

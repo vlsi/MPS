@@ -44,8 +44,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.generator.runtime.TemplateModel;
-import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 @Generated
@@ -627,9 +625,6 @@ public class QueriesGenerated {
   }
   public static Object insertMacro_varValue_5756354288101553887(final TemplateQueryContext _context) {
     return _context.getNode();
-  }
-  public static TemplateModel getDescriptor(TemplateModule module) {
-    return new TemplateModelImpl(module);
   }
   private static SNode _quotation_createNode_x583g4_a0a0b0b0a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
