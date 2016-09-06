@@ -54,7 +54,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
@@ -89,6 +89,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 
 public class ChangesTracking {
+  private static final Object LOCK = new Object();
   private final Project myProject;
   private final CurrentDifference myDifference;
   private final SimpleCommandQueue myQueue;
@@ -102,6 +103,7 @@ public class ChangesTracking {
   private Tuples._2<SNodeId, List<SNodeId>> myLastParentAndNewChildrenIds;
   private FileStatus myStatusOnLastUpdate;
   private EventConsumingMapping myEventConsumingMapping = new EventConsumingMapping();
+
   public ChangesTracking(@NotNull CurrentDifferenceRegistry registry, @NotNull CurrentDifference difference) {
     myDifference = difference;
     myProject = registry.getProject();
@@ -112,7 +114,7 @@ public class ChangesTracking {
   }
 
   public void dispose() {
-    synchronized (this) {
+    synchronized (LOCK) {
       if (!(myDisposed)) {
         myDisposed = true;
         myRegistry.removeEventCollector(myModelDescriptor, myEventCollector);
@@ -135,8 +137,8 @@ public class ChangesTracking {
     if (change instanceof AddRootChange) {
       MapSequence.fromMap(myAddedNodesToChanges).put(change.getRootId(), change);
     } else if (change instanceof NodeGroupChange) {
-      for (SNodeId i : Sequence.fromIterable(getNodeIdsForNodeGroupChange((NodeGroupChange) change, myLastParentAndNewChildrenIds))) {
-        MapSequence.fromMap(myAddedNodesToChanges).put(i, change);
+      for (SNodeId nodeId : Sequence.fromIterable(getNodeIdsForNodeGroupChange((NodeGroupChange) change, myLastParentAndNewChildrenIds))) {
+        MapSequence.fromMap(myAddedNodesToChanges).put(nodeId, change);
       }
     }
   }
@@ -215,7 +217,7 @@ public class ChangesTracking {
     }
     repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        synchronized (ChangesTracking.this) {
+        synchronized (LOCK) {
           if (!(myDisposed)) {
             DiffModelUtil.renameModel(baseVersionModel.value, "repository");
             ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, myModelDescriptor, true);
@@ -342,7 +344,7 @@ public class ChangesTracking {
 
   @Nullable
   private SNode getOldNode(@NotNull SNodeId id) {
-    return check_5iuzi5_a0a34(check_5iuzi5_a0a0a34(myDifference.getChangeSet()), id);
+    return check_5iuzi5_a0a54(check_5iuzi5_a0a0a54(myDifference.getChangeSet()), id);
   }
 
   private void runUpdateTask(final _FunctionTypes._void_P0_E0 task, SNode currentNode, final SModelEvent event) {
@@ -366,9 +368,10 @@ public class ChangesTracking {
           } else {
             if (myEventConsumingMapping.removeEvent(event)) {
               myDifference.getBroadcaster().changeUpdateStarted();
-              ModelAccess.instance().runReadAction(new Runnable() {
+              MPSProject mpsProject = ProjectHelper.fromIdeaProject(myProject);
+              mpsProject.getModelAccess().runReadAction(new Runnable() {
                 public void run() {
-                  synchronized (ChangesTracking.this) {
+                  synchronized (LOCK) {
                     if (!(myDisposed)) {
                       task.invoke();
                     }
@@ -385,7 +388,7 @@ public class ChangesTracking {
 
   private static Iterable<SNodeId> getNodeIdsForNodeGroupChange(@NotNull NodeGroupChange ngc, @Nullable Tuples._2<SNodeId, List<SNodeId>> lastParentAndNewChildrenIds) {
     List<SNodeId> childrenIds;
-    if (lastParentAndNewChildrenIds == null || neq_5iuzi5_a0a1a84(lastParentAndNewChildrenIds._0(), ngc.getParentNodeId())) {
+    if (lastParentAndNewChildrenIds == null || neq_5iuzi5_a0a1a05(lastParentAndNewChildrenIds._0(), ngc.getParentNodeId())) {
       List<? extends SNode> children = IterableUtil.asList(ngc.getChangeSet().getNewModel().getNode(ngc.getParentNodeId()).getChildren(ngc.getRole()));
       childrenIds = ListSequence.fromList(children).select(new ISelector<SNode, SNodeId>() {
         public SNodeId select(SNode n) {
@@ -409,6 +412,7 @@ public class ChangesTracking {
     }
     return null;
   }
+
   public class MyEventsCollector extends SModelEventVisitorAdapter implements SModelCommandListener {
     private Map<SNode, Set<String>> childChanged;
 
@@ -448,6 +452,7 @@ public class ChangesTracking {
         }
       }
     }
+
     @Override
     public void visitPropertyEvent(SModelPropertyEvent event) {
       final SNode node = event.getNode();
@@ -476,6 +481,7 @@ public class ChangesTracking {
         }
       }, node, event);
     }
+
     @Override
     public void visitReferenceEvent(SModelReferenceEvent event) {
       SReference ref = event.getReference();
@@ -500,6 +506,7 @@ public class ChangesTracking {
         }
       }, event.getReference().getSourceNode(), event);
     }
+
     @Override
     public void visitChildEvent(SModelChildEvent event) {
       SNode parent = event.getParent();
@@ -508,7 +515,7 @@ public class ChangesTracking {
       }
       final String childRoleName = event.getChildRole();
 
-      // tyring to avoid update task execution for the same child role twice 
+      // trying to avoid update task execution for the same child role twice 
       Set<String> childRoles = MapSequence.fromMap(childChanged).get(parent);
       if (childRoles == null) {
         childRoles = SetSequence.fromSet(new HashSet<String>());
@@ -530,7 +537,6 @@ public class ChangesTracking {
       }).toListSequence();
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
-
           removeChanges(parentId, NodeGroupChange.class, new _FunctionTypes._return_P1_E0<Boolean, NodeGroupChange>() {
             public Boolean invoke(NodeGroupChange ch) {
               return ch.isAbout(childRole);
@@ -544,12 +550,16 @@ public class ChangesTracking {
           }).toListSequence());
           buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
             public void invoke(ChangeSetBuilder b) {
-              b.buildForNodeRole(IterableUtil.asList(getOldNode(parentId).getChildren(childRole)), childrenRightAfterEvent.value, parentId, childRole);
+              SNode oldParentNode = getOldNode(parentId);
+              if (oldParentNode != null) {
+                b.buildForNodeRole(IterableUtil.asList(oldParentNode.getChildren(childRole)), childrenRightAfterEvent.value, parentId, childRole);
+              }
             }
           });
         }
       }, parent, event);
     }
+
     @Override
     public void visitRootEvent(final SModelRootEvent event) {
       SNode root = event.getRoot();
@@ -598,6 +608,7 @@ public class ChangesTracking {
         }
       }, null, event);
     }
+
     @Override
     public void visitLanguageEvent(SModelLanguageEvent event) {
       final SLanguage eventLang = MetaAdapterFactory.getLanguage(event.getLanguageNamespace());
@@ -616,10 +627,12 @@ public class ChangesTracking {
         }
       }, null, event);
     }
+
     @Override
     public void visitDevKitEvent(SModelDevKitEvent event) {
       moduleDependencyEvent(event, event.getDevkitNamespace(), ModuleDependencyChange.DependencyType.USED_DEVKIT, event.isAdded());
     }
+
     private void moduleDependencyEvent(SModelEvent event, final SModuleReference moduleRef, final ModuleDependencyChange.DependencyType type, final boolean added) {
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
@@ -633,6 +646,7 @@ public class ChangesTracking {
         }
       }, null, event);
     }
+
     @Override
     public void visitImportEvent(final SModelImportEvent event) {
       final SModelReference modelRef = event.getModelUID();
@@ -649,19 +663,19 @@ public class ChangesTracking {
       }, null, event);
     }
   }
-  private static SNode check_5iuzi5_a0a34(SModel checkedDotOperand, SNodeId id) {
+  private static SNode check_5iuzi5_a0a54(SModel checkedDotOperand, SNodeId id) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode(id);
     }
     return null;
   }
-  private static SModel check_5iuzi5_a0a0a34(ChangeSet checkedDotOperand) {
+  private static SModel check_5iuzi5_a0a0a54(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getOldModel();
     }
     return null;
   }
-  private static boolean neq_5iuzi5_a0a1a84(Object a, Object b) {
+  private static boolean neq_5iuzi5_a0a1a05(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }
