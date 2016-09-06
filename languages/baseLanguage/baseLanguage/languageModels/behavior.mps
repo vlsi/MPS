@@ -4197,7 +4197,7 @@
         <node concept="3cpWs6" id="vGg_2amzJ4" role="3cqZAp">
           <node concept="2OqwBi" id="vGg_2amzJ6" role="3cqZAk">
             <node concept="13iAh5" id="vGg_2amzJ7" role="2Oq$k0">
-              <ref role="3eA5LN" to="tpck:h0TrEE$" resolve="INamedConcept" />
+              <ref role="3eA5LN" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
             </node>
             <node concept="2qgKlT" id="vGg_2amzJ8" role="2OqNvi">
               <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
@@ -20786,7 +20786,7 @@
         <node concept="3cpWs6" id="vGg_2am$2G" role="3cqZAp">
           <node concept="2OqwBi" id="vGg_2am$2H" role="3cqZAk">
             <node concept="13iAh5" id="vGg_2am$2I" role="2Oq$k0">
-              <ref role="3eA5LN" to="tpck:h0TrEE$" resolve="INamedConcept" />
+              <ref role="3eA5LN" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
             </node>
             <node concept="2qgKlT" id="vGg_2am$2J" role="2OqNvi">
               <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
@@ -29902,7 +29902,7 @@
         <node concept="3cpWs6" id="vGg_2amABK" role="3cqZAp">
           <node concept="2OqwBi" id="vGg_2amABL" role="3cqZAk">
             <node concept="13iAh5" id="vGg_2amABM" role="2Oq$k0">
-              <ref role="3eA5LN" to="tpck:h0TrEE$" resolve="INamedConcept" />
+              <ref role="3eA5LN" to="tpee:6LFqxSRBTg8" resolve="MethodDeclaration" />
             </node>
             <node concept="2qgKlT" id="vGg_2amABN" role="2OqNvi">
               <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
@@ -38287,7 +38287,7 @@
         <node concept="3cpWs6" id="vGg_2am_ug" role="3cqZAp">
           <node concept="2OqwBi" id="vGg_2am_uh" role="3cqZAk">
             <node concept="13iAh5" id="vGg_2am_ui" role="2Oq$k0">
-              <ref role="3eA5LN" to="tpck:h0TrEE$" resolve="INamedConcept" />
+              <ref role="3eA5LN" to="tpee:6LFqxSRBTg8" resolve="MethodDeclaration" />
             </node>
             <node concept="2qgKlT" id="vGg_2am_uj" role="2OqNvi">
               <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />

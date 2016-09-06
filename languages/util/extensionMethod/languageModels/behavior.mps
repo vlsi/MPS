@@ -9,12 +9,11 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="uigu" ref="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -379,7 +378,7 @@
         <node concept="3cpWs6" id="vGg_2amzJ4" role="3cqZAp">
           <node concept="2OqwBi" id="vGg_2amzJ6" role="3cqZAk">
             <node concept="13iAh5" id="vGg_2amzJ7" role="2Oq$k0">
-              <ref role="3eA5LN" to="tpck:h0TrEE$" resolve="INamedConcept" />
+              <ref role="3eA5LN" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
             </node>
             <node concept="2qgKlT" id="vGg_2amzJ8" role="2OqNvi">
               <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
