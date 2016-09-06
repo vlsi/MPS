@@ -41,7 +41,7 @@ import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -2002,10 +2002,10 @@ parametersLoop:
     }
 
   }
-  public static Object insertMacro_varValue_1284935588965238874(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_1284935588965238874(final TemplateVarContext _context) {
     return _context.getNode();
   }
-  public static Object insertMacro_varValue_7078451712471876618(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_7078451712471876618(final TemplateVarContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), false, false), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).first();
   }
   private static boolean isEmptyString(String str) {

@@ -32,7 +32,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -403,7 +403,7 @@ public class QueriesGenerated {
     SModel structureModel = LanguageAspect.STRUCTURE.get(language);
     return SModelOperations.nodes(structureModel, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
   }
-  public static Object insertMacro_varValue_7385785963572954184(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_7385785963572954184(final TemplateVarContext _context) {
     SModel bhModel = _context.getInputModel();
     return ListSequence.fromList(SModelOperations.nodes(bhModel, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))).sort(new ISelector<SNode, Long>() {
       public Long select(SNode it) {
@@ -411,7 +411,7 @@ public class QueriesGenerated {
       }
     }, true).toListSequence();
   }
-  public static Object insertMacro_varValue_360045928603465626(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_360045928603465626(final TemplateVarContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
   }
   private static SNode _quotation_createNode_x583g4_a1a1a08(Object parameter_1) {

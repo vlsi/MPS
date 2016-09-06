@@ -173,8 +173,8 @@
       <node id="6676818848694520516" at="243,0,246,0" concept="0" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="4860312625245471850" at="250,0,253,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="4860312625245471839" at="254,0,257,0" concept="0" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="6676818848694500569" at="237,102,246,13" concept="1" />
-      <node id="4860312625245471836" at="248,102,257,13" concept="1" />
+      <node id="6676818848694500569" at="237,100,246,13" concept="1" />
+      <node id="4860312625245471836" at="248,100,257,13" concept="1" />
       <node id="6676818848693820137" at="204,120,217,13" concept="1" />
       <node id="4860312625245371421" at="222,120,235,13" concept="1" />
       <scope id="6676818848694468476" at="81,112,82,101" />
@@ -229,8 +229,8 @@
       <scope id="4860312625245471839" at="254,0,257,0">
         <var name="it" id="4860312625245471839" />
       </scope>
-      <scope id="6676818848694489087" at="237,102,246,13" />
-      <scope id="4860312625245470056" at="248,102,257,13" />
+      <scope id="6676818848694489087" at="237,100,246,13" />
+      <scope id="4860312625245470056" at="248,100,257,13" />
       <scope id="6676818848693807799" at="204,120,217,13" />
       <scope id="4860312625245371216" at="222,120,235,13" />
       <unit id="6676818848693820162" at="205,243,209,5" name="jetbrains.mps.lang.dataFlow.generator.baseLanguage.template.main.QueriesGenerated$1" />

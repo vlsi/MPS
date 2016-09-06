@@ -38,7 +38,7 @@ import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -502,10 +502,10 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_2770867049910697947(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, 0x2b3f57492c165c59L, "specialization"));
   }
-  public static Object insertMacro_varValue_2770867049910688354(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_2770867049910688354(final TemplateVarContext _context) {
     return _context.getNode();
   }
-  public static Object insertMacro_varValue_2770867049910697941(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_2770867049910697941(final TemplateVarContext _context) {
     return _context.getNode();
   }
   private static SNode _quotation_createNode_x583g4_a0a0fc() {

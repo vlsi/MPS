@@ -26,7 +26,7 @@ import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 
 @Generated
 public class QueriesGenerated {
@@ -234,7 +234,7 @@ public class QueriesGenerated {
       }
     }, true);
   }
-  public static Object insertMacro_varValue_6676818848694489085(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_6676818848694489085(final TemplateVarContext _context) {
     return ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, 0x3952cf7bd76e6440L, "analyzer")) == _context.getNode();
@@ -245,7 +245,7 @@ public class QueriesGenerated {
       }
     }, true);
   }
-  public static Object insertMacro_varValue_4860312625245470054(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_4860312625245470054(final TemplateVarContext _context) {
     return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x118e58d76a0L, "conceptDeclaration")) == _context.getNode();

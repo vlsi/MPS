@@ -40,6 +40,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 
 @Generated
 public class QueriesGenerated {
@@ -830,7 +831,7 @@ public class QueriesGenerated {
   public static boolean mappingConfiguration_Condition_6450631649356258427(final TemplateQueryContext _context) {
     return !(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1169104df47L, "jetbrains.mps.lang.actions.structure.SideTransform_SimpleString")).isEmpty()) || !(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x116910ff20bL, "jetbrains.mps.lang.actions.structure.Substitute_SimpleString")).isEmpty());
   }
-  public static Object insertMacro_varValue_5664333325053878565(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_5664333325053878565(final TemplateVarContext _context) {
     return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f106b2L, "jetbrains.mps.lang.actions.structure.NodeFactories"))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f106b2L, 0x10dc7f2c629L, "nodeFactory"));

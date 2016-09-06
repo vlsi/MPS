@@ -105,7 +105,7 @@
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateArgumentContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateFragmentContext" />
-    <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
+    <classNode dependClassName="jetbrains.mps.generator.template.TemplateVarContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.WeavingMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor" />

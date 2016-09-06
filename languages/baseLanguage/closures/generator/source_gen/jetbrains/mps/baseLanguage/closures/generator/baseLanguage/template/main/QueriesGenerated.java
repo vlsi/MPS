@@ -56,6 +56,7 @@ import jetbrains.mps.baseLanguage.behavior.TypeDerivable__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.closures.helper.WrappersUtils;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ExpressionStatement__BehaviorDescriptor;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
 import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
@@ -79,7 +80,6 @@ import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.QueryKey;
 import jetbrains.mps.generator.impl.query.VariableValueQuery;
-import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import jetbrains.mps.generator.impl.query.MapNodeQuery;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -3112,19 +3112,19 @@ public class QueriesGenerated extends QueryProviderBase {
     }
     return false;
   }
-  public static Object insertMacro_varValue_5180156240568665230(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_5180156240568665230(final TemplateVarContext _context) {
     return SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x5620d42a452422c7L, 0x5620d42a45242312L, "original")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
   }
-  public static Object insertMacro_varValue_4640248974485794769(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_4640248974485794769(final TemplateVarContext _context) {
     return TypeChecker.getInstance().getTypeOf(_context.getNode());
   }
-  public static Object insertMacro_varValue_349397194808798133(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_349397194808798133(final TemplateVarContext _context) {
     return TypeChecker.getInstance().getTypeOf(_context.getNode());
   }
-  public static Object insertMacro_varValue_3381384562914377841(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_3381384562914377841(final TemplateVarContext _context) {
     return TypeChecker.getInstance().getTypeOf(_context.getNode());
   }
-  public static Object insertMacro_varValue_1336567499628816744(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_1336567499628816744(final TemplateVarContext _context) {
     SNode t = SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
     if (SNodeOperations.isInstanceOf(t, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) || SNodeOperations.isInstanceOf(t, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType")) || SNodeOperations.isInstanceOf(t, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
       return t;

@@ -43,7 +43,7 @@ import jetbrains.mps.smodel.Language;
 import java.util.UUID;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
@@ -548,20 +548,20 @@ public class QueriesGenerated {
       });
     }
   }
-  public static Object insertMacro_varValue_4630900134062319164(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_4630900134062319164(final TemplateVarContext _context) {
     return ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       }
     }, true);
   }
-  public static Object insertMacro_varValue_540685334803407968(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_540685334803407968(final TemplateVarContext _context) {
     return (List<SNode>) AbstractConceptDeclaration__BehaviorDescriptor.getImmediateSuperconcepts_idhMuxyK2.invoke(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")));
   }
-  public static Object insertMacro_varValue_540685334803408110(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_540685334803408110(final TemplateVarContext _context) {
     return (List<SNode>) AbstractConceptDeclaration__BehaviorDescriptor.getImmediateSuperconcepts_idhMuxyK2.invoke(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")));
   }
-  public static Object insertMacro_varValue_3924233675613613493(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_3924233675613613493(final TemplateVarContext _context) {
     SNode ancestor = SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false);
     if ((ancestor == null)) {
       return null;
@@ -587,7 +587,7 @@ public class QueriesGenerated {
       }
     });
   }
-  public static Object insertMacro_varValue_3924233675613893713(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_3924233675613893713(final TemplateVarContext _context) {
     SNode ancestor = SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false);
     if ((ancestor == null)) {
       return null;
@@ -612,7 +612,7 @@ public class QueriesGenerated {
       }
     });
   }
-  public static Object insertMacro_varValue_3924233675613975938(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_3924233675613975938(final TemplateVarContext _context) {
     SNode ancestor = SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false);
     if ((ancestor == null)) {
       return null;
@@ -637,10 +637,10 @@ public class QueriesGenerated {
       }
     });
   }
-  public static Object insertMacro_varValue_2023354270459217973(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_2023354270459217973(final TemplateVarContext _context) {
     return ((SLanguageAdapterById) MetaAdapterByDeclaration.getLanguage(((Language) _context.getOriginalInputModel().getModule())));
   }
-  public static Object insertMacro_varValue_1444496069593706122(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_1444496069593706122(final TemplateVarContext _context) {
     return ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));

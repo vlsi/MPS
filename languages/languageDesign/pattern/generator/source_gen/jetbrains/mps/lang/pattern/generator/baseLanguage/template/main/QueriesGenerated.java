@@ -44,6 +44,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.generator.template.TemplateVarContext;
 
 @Generated
 public class QueriesGenerated {
@@ -647,22 +648,22 @@ public class QueriesGenerated {
     Iterable<SNode> orPattern = SNodeOperations.getNodeDescendants(((SNode) _context.getVariable("var:quotedNode")), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern"), false, new SAbstractConcept[]{});
     return ListSequence.fromList(d).union(Sequence.fromIterable(orPattern));
   }
-  public static Object insertMacro_varValue_5960292722835314360(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_5960292722835314360(final TemplateVarContext _context) {
     return _context.getNode();
   }
-  public static Object insertMacro_varValue_1949222934982329656(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_1949222934982329656(final TemplateVarContext _context) {
     return ListSequence.fromList(SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern"), false, new SAbstractConcept[]{})).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, 0x27f758f8bc6acaceL, "clause"));
       }
     });
   }
-  public static Object insertMacro_varValue_1949222934982522344(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_1949222934982522344(final TemplateVarContext _context) {
     // nature of template language dictates generation from right to left 
     // while order of disjunct registration shall match that in the model 
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, 0x27f758f8bc6acaceL, "clause"))).reversedList();
   }
-  public static Object insertMacro_varValue_1949222934982630096(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_1949222934982630096(final TemplateVarContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x7d8b4408504314cdL, "pattern")), MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x1168c10465aL, "quotedNode"));
   }
 }

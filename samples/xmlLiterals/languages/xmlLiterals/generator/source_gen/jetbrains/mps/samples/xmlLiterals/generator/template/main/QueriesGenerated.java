@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 
 @Generated
 public class QueriesGenerated {
@@ -117,7 +117,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_258516944916661196(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x16838b3fce9a4922L, "content"));
   }
-  public static Object insertMacro_varValue_258516944916488988(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_258516944916488988(final TemplateVarContext _context) {
     return _context.getNode();
   }
 }

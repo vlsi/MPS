@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 
 @Generated
 public class QueriesGenerated {
@@ -35,7 +35,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_3778147542048439085(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xc457c5de60274104L, 0xab9ca31c5404ae8bL, 0x346ead2c08ccf6ffL, 0x346ead2c08ccfa0dL, "visibleProperties"));
   }
-  public static Object insertMacro_varValue_3778147542048562258(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_3778147542048562258(final TemplateVarContext _context) {
     return _context.getOutputNodeProxy(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xc457c5de60274104L, 0xab9ca31c5404ae8bL, 0x346ead2c08ccf6ffL, 0x346ead2c08ccf9f3L, "cncpt")), "concept");
   }
   private static boolean eq_x583g4_a0a0a0a0a0a0c(Object a, Object b) {

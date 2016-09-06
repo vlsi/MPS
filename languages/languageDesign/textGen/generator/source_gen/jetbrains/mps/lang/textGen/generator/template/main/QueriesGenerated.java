@@ -27,7 +27,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -337,7 +337,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_7832257118928381083(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x2bad879ac8f27dcaL, 0x2bad879ac8f27dd2L, "nested"));
   }
-  public static Object insertMacro_varValue_9221686591909468720(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_9221686591909468720(final TemplateVarContext _context) {
     List<SNode> r = SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"));
     return ListSequence.fromList(r).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -349,7 +349,7 @@ public class QueriesGenerated {
       }
     }, true).toListSequence();
   }
-  public static Object insertMacro_varValue_7832257118928381077(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_7832257118928381077(final TemplateVarContext _context) {
     return _context.getNode();
   }
   private static SNode _quotation_createNode_x583g4_b0a0a24() {

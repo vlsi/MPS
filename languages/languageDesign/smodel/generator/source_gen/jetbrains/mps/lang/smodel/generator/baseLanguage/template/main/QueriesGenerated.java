@@ -62,6 +62,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.lang.smodel.behavior.ConceptIdentity__BehaviorDescriptor;
 import java.util.Map;
@@ -86,7 +87,6 @@ import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.QueryKey;
 import jetbrains.mps.generator.impl.query.VariableValueQuery;
-import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -2241,20 +2241,20 @@ public class QueriesGenerated extends QueryProviderBase {
   public static boolean mappingConfiguration_Condition_3624172675690776407(final TemplateQueryContext _context) {
     return ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x412437525e297780L, "jetbrains.mps.lang.smodel.structure.OfConceptOperation"))).isNotEmpty();
   }
-  public static Object insertMacro_varValue_2837022116960117135(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_2837022116960117135(final TemplateVarContext _context) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, 0x10a61ef5a56L, "parameter")), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a61caab68L, "jetbrains.mps.lang.smodel.structure.OperationParm_Concept"))).first();
   }
-  public static Object insertMacro_varValue_2836521009935076423(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_2836521009935076423(final TemplateVarContext _context) {
     // XXX perhaps, makes sense to add ConceptIdentity.getConceptId() instead? 
     // Just not sure it's right for xIdentity, and don't want to cast to ConceptId here 
     return MetaIdHelper.getConcept(ConceptIdentity__BehaviorDescriptor.getConcept_id5ZE7FBYYOpv.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefc235cL, 0x5fea1eb9fefc2364L, "conceptIdentity"))));
   }
-  public static Object insertMacro_varValue_8415841354032440827(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_8415841354032440827(final TemplateVarContext _context) {
     // XXX perhaps, makes sense to add ConceptIdentity.getConceptId() instead? 
     // Just not sure it's right for xIdentity, and don't want to cast to ConceptId here 
     return MetaIdHelper.getConcept(ConceptIdentity__BehaviorDescriptor.getConcept_id5ZE7FBYYOpv.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6ecL, 0x74cb131f5923b6edL, "conceptIdentity"))));
   }
-  public static Object insertMacro_varValue_8415841354032518341(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_8415841354032518341(final TemplateVarContext _context) {
     // XXX perhaps, makes sense to add ConceptIdentity.getConceptId() instead? 
     // Just not sure it's right for xIdentity, and don't want to cast to ConceptId here 
     return MetaIdHelper.getConcept(ConceptIdentity__BehaviorDescriptor.getConcept_id5ZE7FBYYOpv.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6e7L, 0x74cb131f5923b6e8L, "conceptIdentity"))));

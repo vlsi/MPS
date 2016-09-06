@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.generator.template.InsertMacroContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.generator.impl.plan.ModelScanner;
@@ -252,10 +253,10 @@ public class QueriesGenerated {
   public static SNode insertMacro_Query_263208052639706853(final InsertMacroContext _context) {
     return _context.getNode();
   }
-  public static Object insertMacro_varValue_2030416617761783846(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_2030416617761783846(final TemplateVarContext _context) {
     return ModelReference__BehaviorDescriptor.toModelReference_id2BHFktfnfdc.invoke(_context.getNode()).resolve(((Language) _context.getVariable("var:langModule")).getRepository());
   }
-  public static Object insertMacro_varValue_2509399947043525756(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_2509399947043525756(final TemplateVarContext _context) {
     SModuleReference ref = PersistenceFacade.getInstance().createModuleReference(Module__BehaviorDescriptor.getModuleReference_id7OJukvJ5PmG.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x7d2f7947ef1533a5L, 0x179194ecf7e0953bL, "language"))));
     Language l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
     if (l == null) {
@@ -263,7 +264,7 @@ public class QueriesGenerated {
     }
     return l;
   }
-  public static Object insertMacro_varValue_263208052639706738(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_263208052639706738(final TemplateVarContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe2bL, "model"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_x583g4_a0a0a0a0a0a0a0ic(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5c5cb5cdd09abfb1L, "stereotype")), SModelStereotype.GENERATOR);
@@ -274,7 +275,7 @@ public class QueriesGenerated {
       }
     }, true).toListSequence();
   }
-  public static Object insertMacro_varValue_263208052639706869(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_263208052639706869(final TemplateVarContext _context) {
     SRepository repo = _context.getOriginalInputModel().getRepository();
     SModuleReference generatorModuleRef = PersistenceFacade.getInstance().createModuleReference(Module__BehaviorDescriptor.getModuleReference_id7OJukvJ5PmG.invoke(_context.getNode()));
     SModule generatorModule = generatorModuleRef.resolve(repo);

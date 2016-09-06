@@ -2496,8 +2496,8 @@
       <node concept="37vLTG" id="4mp7qFmECFT" role="3clF46">
         <property role="TrG5h" value="_context" />
         <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="4mp7qFmECFU" role="1tU5fm">
-          <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
+        <node concept="3uibUv" id="3YNp5JWFtig" role="1tU5fm">
+          <ref role="3uigEE" to="q1l7:~TemplateVarContext" resolve="TemplateVarContext" />
         </node>
       </node>
       <node concept="17Uvod" id="Vt8Qt9RS$P" role="lGtFl">
