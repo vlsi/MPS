@@ -23,7 +23,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.TemplateVarContext;
-import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
+import jetbrains.mps.generator.template.InsertMacroContext;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 
 @Generated
@@ -1540,7 +1540,7 @@ public class Template_GeneratorRuntime extends TemplateDeclarationBase {
                             TemplateContext context142 = context138.subContext();
                             {
                               SNode tnode143 = null;
-                              final SNode insertInput143 = QueriesGenerated.insertMacro_Query_263208052639706853(new TemplateQueryContextWithMacro(context142, insertMacro_zfkl79_b0a0a1a2a1a3a1a2a4a3a3a1a8a4a91a3a2));
+                              final SNode insertInput143 = QueriesGenerated.insertMacro_Query_263208052639706853(new InsertMacroContext(context142, insertMacro_zfkl79_b0a0a1a2a1a3a1a2a4a3a3a1a8a4a91a3a2));
                               tnode143 = environment.insertNode(insertInput143, insertMacro_zfkl79_b0a0a1a2a1a3a1a2a4a3a3a1a8a4a91a3a2, context142);
                               if (tnode143 != null) {
                                 tnode142.addChild(MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3e6a40ba27dd70f3L, 0x312abca18ab995e2L, "languageId"), tnode143);

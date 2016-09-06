@@ -2402,8 +2402,8 @@
       <node concept="37vLTG" id="FIgV7YeaKJ" role="3clF46">
         <property role="TrG5h" value="_context" />
         <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="FIgV7YeaKK" role="1tU5fm">
-          <ref role="3uigEE" to="q1l7:~TemplateQueryContextWithMacro" resolve="TemplateQueryContextWithMacro" />
+        <node concept="3uibUv" id="5M01qOVCggl" role="1tU5fm">
+          <ref role="3uigEE" to="q1l7:~InsertMacroContext" resolve="InsertMacroContext" />
         </node>
       </node>
       <node concept="17Uvod" id="Vt8Qt9RLz_" role="lGtFl">
@@ -28946,7 +28946,7 @@
               <ref role="1Pybhc" node="gZ0modb" resolve="QueriesGenerated" />
               <node concept="2ShNRf" id="43oxzgDCcKo" role="37wK5m">
                 <node concept="1pGfFk" id="43oxzgDCcKp" role="2ShVmc">
-                  <ref role="37wK5l" to="q1l7:~TemplateQueryContextWithMacro.&lt;init&gt;(jetbrains.mps.generator.runtime.TemplateContext,org.jetbrains.mps.openapi.model.SNodeReference)" resolve="TemplateQueryContextWithMacro" />
+                  <ref role="37wK5l" to="q1l7:~InsertMacroContext.&lt;init&gt;(jetbrains.mps.generator.runtime.TemplateContext,org.jetbrains.mps.openapi.model.SNodeReference)" resolve="InsertMacroContext" />
                   <node concept="37vLTw" id="2BHiRxgm_5A" role="37wK5m">
                     <ref role="3cqZAo" node="FIgV7YeqoJ" resolve="context" />
                     <node concept="5jKBG" id="43oxzgDCcKs" role="lGtFl">

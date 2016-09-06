@@ -14,7 +14,7 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
+import jetbrains.mps.generator.template.InsertMacroContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -42,7 +42,7 @@ public class Template_OutputRoot extends TemplateDeclarationBase implements Temp
         try {
           // XXX is innerContext in use during reduce_Node? 
           SNode tnode3 = null;
-          final SNode insertInput3 = QueriesGenerated.insertMacro_Query_7612440128092282150(new TemplateQueryContextWithMacro(context1, insertMacro_38z9ys_b0a0a2a1a4a1a2));
+          final SNode insertInput3 = QueriesGenerated.insertMacro_Query_7612440128092282150(new InsertMacroContext(context1, insertMacro_38z9ys_b0a0a2a1a4a1a2));
           tnode3 = environment.insertNode(insertInput3, insertMacro_38z9ys_b0a0a2a1a4a1a2, context1);
           environment.registerLabel(context1.getInput(), tnode3, "testLabel1");
           tlist2 = TemplateUtil.singletonList(tnode3);

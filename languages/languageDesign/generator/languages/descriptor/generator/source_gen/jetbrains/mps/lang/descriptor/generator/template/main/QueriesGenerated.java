@@ -34,7 +34,7 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
+import jetbrains.mps.generator.template.InsertMacroContext;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.generator.impl.plan.ModelScanner;
@@ -248,10 +248,10 @@ public class QueriesGenerated {
     //  can't use genContext.inputModel as it has lost stereotype (it's transient model) 
     return SModelStereotype.isDescriptorModel(_context.getOriginalInputModel()) && SNodeOperations.isInstanceOf(SModelOperations.getModuleStub(_context.getOriginalInputModel()), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, "jetbrains.mps.lang.project.structure.Language"));
   }
-  public static SNode insertMacro_Query_1509962061695074412(final TemplateQueryContextWithMacro _context) {
+  public static SNode insertMacro_Query_1509962061695074412(final InsertMacroContext _context) {
     return SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, "jetbrains.mps.lang.project.structure.Language"));
   }
-  public static SNode insertMacro_Query_263208052639706853(final TemplateQueryContextWithMacro _context) {
+  public static SNode insertMacro_Query_263208052639706853(final InsertMacroContext _context) {
     return _context.getNode();
   }
   public static Object insertMacro_varValue_2030416617761783846(final TemplateQueryContext _context) {

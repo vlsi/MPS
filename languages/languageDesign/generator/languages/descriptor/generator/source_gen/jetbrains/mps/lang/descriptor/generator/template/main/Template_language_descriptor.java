@@ -14,7 +14,7 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
+import jetbrains.mps.generator.template.InsertMacroContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -33,7 +33,7 @@ public class Template_language_descriptor extends TemplateDeclarationBase implem
       TemplateContext context1 = context.subContext();
       {
         SNode tnode2 = null;
-        final SNode insertInput2 = QueriesGenerated.insertMacro_Query_1509962061695074412(new TemplateQueryContextWithMacro(context1, insertMacro_xu4w5k_b0a0a1a3a1a2));
+        final SNode insertInput2 = QueriesGenerated.insertMacro_Query_1509962061695074412(new InsertMacroContext(context1, insertMacro_xu4w5k_b0a0a1a3a1a2));
         tnode2 = environment.insertNode(insertInput2, insertMacro_xu4w5k_b0a0a1a3a1a2, context1);
         if (tnode2 != null) {
           tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x7d2f7947ef1533a5L, 0x179194ecf7e0953bL, "language"), tnode2);
