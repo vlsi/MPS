@@ -25,7 +25,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.net.URL;
 import jetbrains.mps.core.tool.environment.classloading.ClassloaderUtil;
 import com.intellij.openapi.application.PathManager;
@@ -153,13 +152,11 @@ public class JUnit_Command {
         }
       }
     });
-    List<String> classpath = SetSequence.fromSet(uniqueModules).translate(new ITranslator2<SModule, String>() {
-      public Iterable<String> translate(SModule it) {
-        return Java_Command.getClasspath(it);
-      }
-    }).toListSequence();
+    List<String> classpath = Java_Command.getClasspath(SetSequence.fromSet(uniqueModules).toListSequence().toGenericArray(SModule.class));
+    // fixme need this to allow user to start MPS inside the BTestCase 
     ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromLibFolder())).distinct();
     ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromPreInstalledPluginsFolder())).distinct();
+
     return classpath;
   }
   private static List<String> collectFromLibFolder() {

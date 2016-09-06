@@ -2,20 +2,20 @@
 <model ref="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="0" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
-    <use id="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" name="jetbrains.mps.debugger.api.lang" version="0" />
-    <use id="f3347d8a-0e79-4f35-8ac9-1574f25c986f" name="jetbrains.mps.execution.commands" version="0" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="-1" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
+    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
+    <use id="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" name="jetbrains.mps.debugger.api.lang" version="-1" />
+    <use id="f3347d8a-0e79-4f35-8ac9-1574f25c986f" name="jetbrains.mps.execution.commands" version="-1" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
   </languages>
   <imports>
     <import index="inrv" ref="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)" />
@@ -567,7 +567,6 @@
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
       <concept id="1240325842691" name="jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation" flags="nn" index="39bAoz" />
       <concept id="1167380149909" name="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" flags="nn" index="3dhRuq" />
-      <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
       <concept id="1201872418428" name="jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation" flags="nn" index="3lbrtF" />
       <concept id="1197683403723" name="jetbrains.mps.baseLanguage.collections.structure.MapType" flags="in" index="3rvAFt">
         <child id="1197683466920" name="keyType" index="3rvQeY" />
@@ -8712,40 +8711,31 @@
         <node concept="3cpWs8" id="6tKhx9Vl2oJ" role="3cqZAp">
           <node concept="3cpWsn" id="6tKhx9Vl2oK" role="3cpWs9">
             <property role="TrG5h" value="classpath" />
-            <node concept="_YKpA" id="6tKhx9Vl2od" role="1tU5fm">
-              <node concept="17QB3L" id="6tKhx9Vl2og" role="_ZDj9" />
-            </node>
-            <node concept="2OqwBi" id="6tKhx9Vl2oL" role="33vP2m">
-              <node concept="ANE8D" id="6tKhx9Vl2oM" role="2OqNvi" />
-              <node concept="2OqwBi" id="6tKhx9Vl2oO" role="2Oq$k0">
-                <node concept="3goQfb" id="6tKhx9Vl2oP" role="2OqNvi">
-                  <node concept="1bVj0M" id="6tKhx9Vl2oQ" role="23t8la">
-                    <node concept="3clFbS" id="6tKhx9Vl2oR" role="1bW5cS">
-                      <node concept="3clFbF" id="6tKhx9Vl2oS" role="3cqZAp">
-                        <node concept="2OqwBi" id="6tKhx9Vl2oT" role="3clFbG">
-                          <node concept="2LYoGc" id="6tKhx9Vl2oU" role="2Oq$k0">
-                            <ref role="2LYoGe" to="go48:14R2qyOBxa1" resolve="java" />
-                          </node>
-                          <node concept="2XshWL" id="6tKhx9Vl2oV" role="2OqNvi">
-                            <ref role="2WH_rO" to="go48:2reLP4orRPN" resolve="getClasspath" />
-                            <node concept="37vLTw" id="6tKhx9Vl2oW" role="2XxRq1">
-                              <ref role="3cqZAo" node="6tKhx9Vl2oX" resolve="it" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
+            <node concept="2OqwBi" id="5iBqK23KI1Y" role="33vP2m">
+              <node concept="2LYoGc" id="5iBqK23KHLv" role="2Oq$k0">
+                <ref role="2LYoGe" to="go48:14R2qyOBxa1" resolve="java" />
+              </node>
+              <node concept="2XshWL" id="5iBqK23KIi7" role="2OqNvi">
+                <ref role="2WH_rO" to="go48:2reLP4orRPN" resolve="getClasspath" />
+                <node concept="2OqwBi" id="5iBqK23KNAh" role="2XxRq1">
+                  <node concept="2OqwBi" id="5iBqK23KJsi" role="2Oq$k0">
+                    <node concept="37vLTw" id="5iBqK23KIyp" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5gyVhZ1bgPv" resolve="uniqueModules" />
                     </node>
-                    <node concept="Rh6nW" id="6tKhx9Vl2oX" role="1bW2Oz">
-                      <property role="TrG5h" value="it" />
-                      <node concept="2jxLKc" id="6tKhx9Vl2oY" role="1tU5fm" />
-                    </node>
+                    <node concept="ANE8D" id="5iBqK23KLCt" role="2OqNvi" />
                   </node>
-                </node>
-                <node concept="37vLTw" id="6tKhx9Vl2oZ" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5gyVhZ1bgPv" resolve="uniqueModules" />
+                  <node concept="3_kTaI" id="5iBqK23KOZy" role="2OqNvi" />
                 </node>
               </node>
             </node>
+            <node concept="_YKpA" id="6tKhx9Vl2od" role="1tU5fm">
+              <node concept="17QB3L" id="6tKhx9Vl2og" role="_ZDj9" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5iBqK23Mx$n" role="3cqZAp">
+          <node concept="3SKdUq" id="5iBqK23Mx$p" role="3SKWNk">
+            <property role="3SKdUp" value="fixme need this to allow user to start MPS inside the BTestCase" />
           </node>
         </node>
         <node concept="3clFbF" id="6tKhx9Vky2k" role="3cqZAp">
@@ -8784,6 +8774,7 @@
             <node concept="1VAtEI" id="1_4F7FNqmQw" role="2OqNvi" />
           </node>
         </node>
+        <node concept="3clFbH" id="5iBqK23MxOI" role="3cqZAp" />
         <node concept="3cpWs6" id="5gyVhZ1bgQh" role="3cqZAp">
           <node concept="37vLTw" id="6tKhx9Vl2p1" role="3cqZAk">
             <ref role="3cqZAo" node="6tKhx9Vl2oK" resolve="classpath" />

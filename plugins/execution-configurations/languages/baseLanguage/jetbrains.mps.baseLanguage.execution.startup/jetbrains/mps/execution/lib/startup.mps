@@ -20,6 +20,7 @@
       </concept>
       <concept id="1153417849900" name="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" flags="nn" index="2d3UOw" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" flags="nn" index="2$JKZl">
         <child id="1076505808688" name="condition" index="2$JKZa" />
       </concept>
@@ -223,6 +224,7 @@
       <node concept="3clFbS" id="1o0vq_SmlLl" role="3clF47" />
       <node concept="3Tm1VV" id="1o0vq_SmlLm" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="6BB1EWXdc6u" role="jymVt" />
     <node concept="2YIFZL" id="1o0vq_SmlEf" role="jymVt">
       <property role="TrG5h" value="main" />
       <node concept="37vLTG" id="1o0vq_SmlEg" role="3clF46">
@@ -1182,9 +1184,9 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="1o0vq_SmlK8" role="3cqZAp" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6BB1EWXdc6v" role="jymVt" />
     <node concept="2YIFZL" id="1o0vq_SmlK9" role="jymVt">
       <property role="TrG5h" value="readArguments" />
       <node concept="37vLTG" id="1o0vq_SmlKa" role="3clF46">
@@ -1205,21 +1207,6 @@
             <node concept="3uibUv" id="1o0vq_SmmzK" role="1tU5fm">
               <ref role="3uigEE" to="33ny:~List" resolve="List" />
               <node concept="17QB3L" id="1o0vq_SmmzM" role="11_B2D" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1o0vq_SmlKp" role="3cqZAp">
-          <node concept="2OqwBi" id="1o0vq_SmlKq" role="3clFbG">
-            <node concept="2ShNRf" id="1o0vq_SmlKr" role="2Oq$k0">
-              <node concept="1pGfFk" id="1o0vq_SmlKs" role="2ShVmc">
-                <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                <node concept="37vLTw" id="2BHiRxgm8Tz" role="37wK5m">
-                  <ref role="3cqZAo" node="1o0vq_SmlKa" resolve="fileName" />
-                </node>
-              </node>
-            </node>
-            <node concept="liA8E" id="1o0vq_SmlKu" role="2OqNvi">
-              <ref role="37wK5l" to="guwi:~File.deleteOnExit():void" resolve="deleteOnExit" />
             </node>
           </node>
         </node>
@@ -1316,6 +1303,7 @@
         <node concept="17QB3L" id="1o0vq_SmmzJ" role="11_B2D" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6BB1EWXdc6w" role="jymVt" />
     <node concept="2YIFZL" id="1o0vq_SmlL8" role="jymVt">
       <property role="TrG5h" value="getCommandLineFromPrefix" />
       <node concept="17QB3L" id="1o0vq_SmlL9" role="3clF45" />

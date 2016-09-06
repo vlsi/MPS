@@ -17,7 +17,7 @@ import java.io.FileNotFoundException;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.debug.api.IDebugger;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.apache.log4j.Logger;
@@ -32,13 +32,12 @@ import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Set;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.util.SystemInfo;
@@ -137,7 +136,7 @@ public class Java_Command {
           public File select(String it) {
             return new File(it);
           }
-        }).toListSequence();
+        }).distinct().toListSequence();
         return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_ProcessBuilderCommandPart).append(myDebuggerSettings_String).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classRunnerClassPath, File.pathSeparator))).append("jetbrains.mps.execution.lib.startup.ClassRunner").append(new KeyValueCommandPart("-" + ("c"), className)).append(new KeyValueCommandPart("-" + ("f"), parametersFile)).append(new KeyValueCommandPart("-" + ("p"), classPathFile)).build(myWorkingDirectory_File);
       } catch (FileNotFoundException e) {
         throw new ExecutionException("Could not create temporal file for program parameters.", e);
@@ -150,9 +149,10 @@ public class Java_Command {
   public ProcessHandler createProcess(final SNodeReference nodePointer) throws ExecutionException {
     final Wrappers._T<SModule> module = new Wrappers._T<SModule>(null);
     final Wrappers._T<String> text = new Wrappers._T<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final MPSModuleRepository repo = MPSModuleRepository.getInstance();
+    repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        module.value = check_yvpt_a0a0a2a0d(check_yvpt_a0a0a0c0a3(check_yvpt_a0a0a0a2a0d(nodePointer)));
+        module.value = check_yvpt_a0a0a3a0d(check_yvpt_a0a0a0d0a3(check_yvpt_a0a0a0a3a0d(nodePointer, repo)));
         if (module.value == null) {
           text.value = "Can't find module for node " + nodePointer;
         }
@@ -207,9 +207,10 @@ public class Java_Command {
   }
   private static String getClassName(final SNodeReference node) {
     final Wrappers._T<String> className = new Wrappers._T<String>(null);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final MPSModuleRepository repo = MPSModuleRepository.getInstance();
+    repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNode resolve = node.resolve(MPSModuleRepository.getInstance());
+        SNode resolve = node.resolve(repo);
         if (resolve != null) {
           className.value = Java_Command.getClassName(resolve);
         }
@@ -223,22 +224,15 @@ public class Java_Command {
     // we set the limit to 16384 (half as many) just in case 
     return 16384;
   }
-  public static List<String> getClasspath(final SModule module) {
+  public static List<String> getClasspath(final SModule... modules) {
     final Wrappers._T<Set<String>> classpath = new Wrappers._T<Set<String>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        classpath.value = JavaModuleOperations.collectExecuteClasspath(module);
+        classpath.value = JavaModuleOperations.collectExecuteClasspath(modules);
         classpath.value.removeAll(((AbstractModule) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"))).getModuleDescriptor().getAdditionalJavaStubPaths());
       }
     });
     return new ArrayList<String>(classpath.value);
-  }
-  public static List<String> getClasspath(SModule module, boolean withDependencies) {
-    if (withDependencies) {
-      return Java_Command.getClasspath(module);
-    } else {
-      return new ArrayList<String>(module.getFacet(JavaModuleFacet.class).getClassPath());
-    }
   }
   private static List<String> getClassRunnerClassPath() {
     return ModelAccess.instance().runReadAction(new Computable<List<String>>() {
@@ -326,21 +320,21 @@ public class Java_Command {
     }
     return 0;
   }
-  private static SModule check_yvpt_a0a0a2a0d(SModel checkedDotOperand) {
+  private static SModule check_yvpt_a0a0a3a0d(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static SModel check_yvpt_a0a0a0c0a3(SNode checkedDotOperand) {
+  private static SModel check_yvpt_a0a0a0d0a3(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }
     return null;
   }
-  private static SNode check_yvpt_a0a0a0a2a0d(SNodeReference checkedDotOperand) {
+  private static SNode check_yvpt_a0a0a0a3a0d(SNodeReference checkedDotOperand, MPSModuleRepository repo) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
+      return checkedDotOperand.resolve(repo);
     }
     return null;
   }

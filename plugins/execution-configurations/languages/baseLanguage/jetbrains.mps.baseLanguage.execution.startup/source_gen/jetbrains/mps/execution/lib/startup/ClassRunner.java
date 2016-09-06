@@ -20,6 +20,7 @@ public class ClassRunner {
   public static final String CLASSPATH_PREFIX = "p";
   public ClassRunner() {
   }
+
   public static void main(String[] args) {
     String className = null;
     String fileName = null;
@@ -102,11 +103,10 @@ public class ClassRunner {
       System.err.println("Method main in class " + className + " is not public.");
       e.printStackTrace();
     }
-
   }
+
   public static List<String> readArguments(String fileName) throws IOException {
     List<String> result = new ArrayList<String>();
-    new File(fileName).deleteOnExit();
     LineNumberReader reader = new LineNumberReader(new FileReader(fileName));
     while (true) {
       String line = reader.readLine();
@@ -120,6 +120,7 @@ public class ClassRunner {
     }
     return result;
   }
+
   private static String getCommandLineFromPrefix(String prefix) {
     return "-" + prefix;
   }
