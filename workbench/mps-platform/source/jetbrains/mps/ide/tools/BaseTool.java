@@ -30,6 +30,8 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.ide.ThreadUtils;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -40,6 +42,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public abstract class BaseTool {
+  private final static Logger LOG = LogManager.getLogger(BaseTool.class);
+
   private final Project myProject;
   private final String myId;
   private int myNumber;
@@ -227,12 +231,19 @@ public abstract class BaseTool {
       String actionId = ActivateToolWindowAction.getActionIdForToolWindow(myId);
 
       Keymap keymap = KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP);
-      assert keymap != null;
-      KeyboardShortcut defShortcut = new KeyboardShortcut(KeyStroke.getKeyStroke("alt " + myNumber), null);
-      keymap.addShortcut(actionId, defShortcut);
+      if (keymap == null) {
+        LOG.error("Default IDEA Keymap cannot be found");
+        return;
+      } else {
+        KeyboardShortcut defShortcut = new KeyboardShortcut(KeyStroke.getKeyStroke("alt " + myNumber), null);
+        keymap.addShortcut(actionId, defShortcut);
+      }
 
       keymap = KeymapManager.getInstance().getKeymap(KeymapManager.MAC_OS_X_KEYMAP);
-      assert keymap != null;
+      if (keymap == null) {
+        LOG.error("Keymap for MAC OS cannot be found");
+        return;
+      }
       KeyboardShortcut oldShortcut = new KeyboardShortcut(KeyStroke.getKeyStroke("alt " + myNumber), null);
       keymap.removeShortcut(actionId, oldShortcut);
       KeyboardShortcut macShortcut = new KeyboardShortcut(KeyStroke.getKeyStroke("meta " + myNumber), null);
@@ -318,12 +329,16 @@ public abstract class BaseTool {
     final List<Project> openedProjects = Arrays.asList(ProjectManager.getInstance().getOpenProjects());
     if (myNumber != -1 && (openedProjects.contains(getProject()) || openedProjects.isEmpty())) {
       Keymap keymap = KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP);
-      //noinspection ConstantConditions
-      keymap.removeAllActionShortcuts(ActivateToolWindowAction.getActionIdForToolWindow(myId));
+      if (keymap != null) {
+        //noinspection ConstantConditions
+        keymap.removeAllActionShortcuts(ActivateToolWindowAction.getActionIdForToolWindow(myId));
+      }
 
       keymap = KeymapManager.getInstance().getKeymap(KeymapManager.MAC_OS_X_KEYMAP);
-      //noinspection ConstantConditions
-      keymap.removeAllActionShortcuts(ActivateToolWindowAction.getActionIdForToolWindow(myId));
+      if (keymap != null) {
+        //noinspection ConstantConditions
+        keymap.removeAllActionShortcuts(ActivateToolWindowAction.getActionIdForToolWindow(myId));
+      }
     }
 
     ToolWindow toolWindow = getToolWindow();
