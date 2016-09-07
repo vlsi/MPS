@@ -24190,7 +24190,7 @@
         <var name="status" id="8899076737758937250" />
         <var name="typeCheckingContext" id="8899076737758937250" />
       </scope>
-      <unit id="8899076737758937321" at="27,452,31,5" name="jetbrains.mps.baseLanguage.typesystem.check_DefaultClassCreator_NonTypesystemRule$1" />
+      <unit id="8899076737758937321" at="27,450,31,5" name="jetbrains.mps.baseLanguage.typesystem.check_DefaultClassCreator_NonTypesystemRule$1" />
       <unit id="8899076737758937250" at="23,0,52,0" name="jetbrains.mps.baseLanguage.typesystem.check_DefaultClassCreator_NonTypesystemRule" />
     </file>
   </root>
