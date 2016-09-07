@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import junit.framework.TestCase;
@@ -28,7 +29,10 @@ public enum TestNodeWrapperFactory {
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dc94e923L, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase")) && SPropertyOperations.getBoolean(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dc94e923L, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"))) {
         return null;
       }
-      if (ListSequence.fromList(((List<SNode>) BHReflection.invoke(node, SMethodTrimmedId.create("getTestMethods", null, "1RfJDyhAUar")))).count() == 0) {
+      if (ListSequence.fromList(((List<SNode>) BHReflection.invoke(node, SMethodTrimmedId.create("getTestMethods", null, "1RfJDyhAUar")))).isEmpty()) {
+        return null;
+      }
+      if (!(SPropertyOperations.getBoolean(SModelOperations.getModuleStub(SNodeOperations.getModel(node)), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
         return null;
       }
       return new LanguageTestWrapper(node);
@@ -46,6 +50,9 @@ public enum TestNodeWrapperFactory {
   LanguageTestMethodNodeWrapperFactory() {
     @Nullable
     public ITestNodeWrapper<SNode> wrap(@NotNull SNode node) {
+      if (!(SPropertyOperations.getBoolean(SModelOperations.getModuleStub(SNodeOperations.getModel(node)), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
+        return null;
+      }
       return new LanguageTestWrapper(node);
     }
     @Override
@@ -187,6 +194,7 @@ public enum TestNodeWrapperFactory {
       }
     }).distinct();
   }
+
   public static Iterable<SAbstractConcept> getWrappedRootConcepts() {
     return getWrappedConcepts(new _FunctionTypes._return_P1_E0<Boolean, TestNodeWrapperFactory>() {
       public Boolean invoke(TestNodeWrapperFactory factory) {

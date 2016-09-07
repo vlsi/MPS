@@ -13,8 +13,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.util.Key;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Logger;
@@ -44,20 +44,20 @@ public class TestRunState {
 
   private final Project myProject;
 
-  public TestRunState(Iterable<? extends ITestNodeWrapper> tests, Project project) {
+  public TestRunState(List<ITestNodeWrapper> tests, Project project) {
     myProject = project;
-    initTestState(Sequence.fromIterable(tests).where(new IWhereFilter<ITestNodeWrapper>() {
+    initTestState(ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
       public boolean accept(ITestNodeWrapper it) {
         return it.isTestCase();
       }
-    }), Sequence.fromIterable(tests).where(new IWhereFilter<ITestNodeWrapper>() {
+    }).toListSequence(), ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
       public boolean accept(ITestNodeWrapper it) {
         return !(it.isTestCase());
       }
-    }));
+    }).toListSequence());
   }
 
-  private void initTestState(final Iterable<? extends ITestNodeWrapper> testCases, final Iterable<? extends ITestNodeWrapper> testMethods) {
+  private void initTestState(final List<ITestNodeWrapper> testCases, final List<ITestNodeWrapper> testMethods) {
     myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         TestRunState.this.addTestCases(testCases);
@@ -74,16 +74,16 @@ public class TestRunState {
     this.initView();
   }
 
-  private void addTestCases(Iterable<? extends ITestNodeWrapper> testCases) {
-    for (ITestNodeWrapper testCase : Sequence.fromIterable(testCases)) {
+  private void addTestCases(List<ITestNodeWrapper> testCases) {
+    for (ITestNodeWrapper testCase : ListSequence.fromList(testCases)) {
       List<ITestNodeWrapper> testMethods = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
       ListSequence.fromList(testMethods).addSequence(Sequence.fromIterable(testCase.getTestMethods()));
       MapSequence.fromMap(this.myTestToMethodsMap).put(testCase, testMethods);
     }
   }
 
-  private void addTestMethods(Iterable<? extends ITestNodeWrapper> testMethods) {
-    for (ITestNodeWrapper testMethod : Sequence.fromIterable(testMethods)) {
+  private void addTestMethods(List<ITestNodeWrapper> testMethods) {
+    for (ITestNodeWrapper testMethod : ListSequence.fromList(testMethods)) {
       ITestNodeWrapper testCase = testMethod.getTestCase();
       List<ITestNodeWrapper> curTestMethods = MapSequence.fromMap(this.myTestToMethodsMap).get(testCase);
       if (curTestMethods == null) {

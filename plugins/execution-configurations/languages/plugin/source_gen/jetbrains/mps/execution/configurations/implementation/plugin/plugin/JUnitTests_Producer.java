@@ -15,6 +15,7 @@ import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -90,8 +91,8 @@ public class JUnitTests_Producer {
     }
     protected JUnitTests_Configuration doCreateConfiguration(final SModel source) {
       setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
-      String name = source.getModelName();
-      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "Tests in '" + NameUtil.shortNameFromLongName(name) + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+      SModelName name = source.getName();
+      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "Tests in '" + name.getSimpleName() + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setJUnitRunType(JUnitRunTypes.MODEL);
       configuration.getJUnitSettings().setModel(source.getModelName());
       configuration.getJUnitSettings().setInProcess(false);

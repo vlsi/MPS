@@ -94,7 +94,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     return myJavaRunParameters;
   }
   public List<SNodeReference> getTestsToMake() {
-    return this.getJUnitSettings().getTestsToMake(ProjectHelper.toMPSProject(this.getProject()));
+    return this.getJUnitSettings().getTestsToMake(ProjectHelper.fromIdeaProject(this.getProject()));
   }
   public UnitTestViewComponent createTestViewComponent(TestRunState runState, final ProcessHandler process) {
     ConsoleView console = ConsoleCreator.createConsoleView(this.getProject(), false);

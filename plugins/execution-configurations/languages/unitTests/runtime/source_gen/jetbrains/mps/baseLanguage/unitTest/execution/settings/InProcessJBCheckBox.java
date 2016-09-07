@@ -11,14 +11,14 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
-public class JBLightExecCheckBox extends JBCheckBox {
+public class InProcessJBCheckBox extends JBCheckBox {
   private List<Component> myComponents = ListSequence.fromList(new LinkedList<Component>());
 
-  public JBLightExecCheckBox(String text, boolean selected) {
+  public InProcessJBCheckBox(String text, boolean selected) {
     super(text, selected);
     this.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent p0) {
-        JBLightExecCheckBox.this.update();
+        InProcessJBCheckBox.this.update();
       }
     });
   }

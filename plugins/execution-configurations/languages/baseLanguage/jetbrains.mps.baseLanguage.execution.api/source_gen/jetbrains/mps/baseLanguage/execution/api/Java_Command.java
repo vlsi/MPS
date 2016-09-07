@@ -24,12 +24,14 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.textgen.trace.TraceInfo;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.apache.log4j.Level;
+import jetbrains.mps.textgen.trace.TraceInfo;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.Set;
@@ -179,8 +181,14 @@ public class Java_Command {
   protected static Logger LOG = LogManager.getLogger(Java_Command.class);
   private static String getClassName(SNode node) {
     SModel model = SNodeOperations.getModel(node);
+    SNode module = SModelOperations.getModuleStub(SNodeOperations.getModel(node));
     if (model == null) {
       return null;
+    }
+    if (!(SPropertyOperations.getBoolean(module, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("The hosting module's " + module + " classes are not managed by MPS");
+      }
     }
     if (!(TraceInfo.hasTrace(model))) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -199,7 +207,7 @@ public class Java_Command {
       } else {
         return TraceInfo.unitNameWithPosition(node, new Condition<TraceablePositionInfo>() {
           public boolean met(TraceablePositionInfo position) {
-            return (eq_kk96hj_a0a0a0a0a1a0a0b0a2a62(position.getConcept(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) && (eq_kk96hj_a0a0a0a0a1a0a0b0a2a62_0(position.getPropertyString(), ((String) BHReflection.invoke(_quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0c0b(), SMethodTrimmedId.create("getTraceableProperty", null, "4pl5GY7LKmH")))));
+            return (eq_kk96hj_a0a0a0a0a1a0a0b0a4a62(position.getConcept(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) && (eq_kk96hj_a0a0a0a0a1a0a0b0a4a62_0(position.getPropertyString(), ((String) BHReflection.invoke(_quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0e0b(), SMethodTrimmedId.create("getTraceableProperty", null, "4pl5GY7LKmH")))));
           }
         });
       }
@@ -223,6 +231,16 @@ public class Java_Command {
     // (see http://blogs.msdn.com/b/oldnewthing/archive/2003/12/10/56028.aspx) 
     // we set the limit to 16384 (half as many) just in case 
     return 16384;
+  }
+  private static List<String> getClasspath(final SModule module) {
+    final Wrappers._T<Set<String>> classpath = new Wrappers._T<Set<String>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        classpath.value = JavaModuleOperations.collectExecuteClasspath(module);
+        classpath.value.removeAll(((AbstractModule) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"))).getModuleDescriptor().getAdditionalJavaStubPaths());
+      }
+    });
+    return new ArrayList<String>(classpath.value);
   }
   public static List<String> getClasspath(final SModule... modules) {
     final Wrappers._T<Set<String>> classpath = new Wrappers._T<Set<String>>();
@@ -368,7 +386,7 @@ public class Java_Command {
     }
     return null;
   }
-  private static SNode _quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0c0b() {
+  private static SNode _quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0e0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -401,10 +419,10 @@ public class Java_Command {
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
-  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a62(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a4a62(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a62_0(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a4a62_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

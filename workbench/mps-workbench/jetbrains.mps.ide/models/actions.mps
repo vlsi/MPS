@@ -38973,7 +38973,6 @@
   <node concept="312cEu" id="3EnpNH2_IuQ">
     <property role="3GE5qa" value="analyzeTrace" />
     <property role="TrG5h" value="StandaloneMPSStackTraceFilter" />
-    <node concept="2tJIrI" id="3EnpNH2_TVF" role="jymVt" />
     <node concept="3Tm1VV" id="3EnpNH2_IuR" role="1B3o_S" />
     <node concept="3uibUv" id="3EnpNH2_Nt5" role="1zkMxy">
       <ref role="3uigEE" to="9oh:3EnpNH2$tL8" resolve="MPSStackTraceFilter" />

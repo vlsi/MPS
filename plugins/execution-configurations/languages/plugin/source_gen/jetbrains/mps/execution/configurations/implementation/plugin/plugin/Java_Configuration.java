@@ -19,7 +19,8 @@ import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
@@ -58,7 +59,8 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     {
       this.getNode().checkConfiguration();
       final Wrappers._boolean hasMainMethod = new Wrappers._boolean(false);
-      ModelAccess.instance().runReadAction(new Runnable() {
+      MPSProject mpsProject = ProjectHelper.fromIdeaProject(this.getProject());
+      mpsProject.getModelAccess().runReadAction(new Runnable() {
         public void run() {
           if (SNodeOperations.isInstanceOf(Java_Configuration.this.getNode().getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
             hasMainMethod.value = (((SNode) BHReflection.invoke(SNodeOperations.cast(Java_Configuration.this.getNode().getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), SMethodTrimmedId.create("getMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "hEwIClG"))) == null);

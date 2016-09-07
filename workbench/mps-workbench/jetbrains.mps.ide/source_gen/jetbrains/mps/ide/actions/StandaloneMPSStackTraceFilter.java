@@ -10,7 +10,6 @@ import jetbrains.mps.ide.common.FileOpenUtil;
 import com.intellij.execution.filters.HyperlinkInfo;
 
 public class StandaloneMPSStackTraceFilter extends MPSStackTraceFilter {
-
   public StandaloneMPSStackTraceFilter(Project project) {
     super(project);
   }
