@@ -9,6 +9,7 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import java.util.Arrays;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import java.util.Map;
 import java.util.HashMap;
@@ -144,7 +145,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       switch (switchIndex) {
         case 0:
           if (true) {
-            return Collections.<TransformationMenu>singletonList(new addSeparator_Contribution());
+            return Arrays.asList(new TransformationMenu[]{new CollectionAppendPartWithSeparator(), new addSeparator_Contribution()});
           }
           break;
         default:
