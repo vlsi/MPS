@@ -249,5 +249,46 @@
     <property role="34LRSv" value="deserialize" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
+  <node concept="1TIwiD" id="40BYgsZXsUj">
+    <property role="EcuMT" value="4622937352052264595" />
+    <property role="TrG5h" value="RequestURIBuilderExpression" />
+    <property role="34LRSv" value="request URI" />
+    <property role="3GE5qa" value="request" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="40BYgsZXsUY" role="1TKVEi">
+      <property role="IQ2ns" value="4622937352052264638" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="requestHandler" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="4PqLM5kXdu0" resolve="RequestHandler" />
+    </node>
+    <node concept="1TJgyj" id="40BYgsZX_bR" role="1TKVEi">
+      <property role="IQ2ns" value="4622937352052298487" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="initializer" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="40BYgsZXsWn" resolve="ParameterInitializer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="40BYgsZXsWn">
+    <property role="EcuMT" value="4622937352052264727" />
+    <property role="3GE5qa" value="request" />
+    <property role="TrG5h" value="ParameterInitializer" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="40BYgsZXsWo" role="1TKVEi">
+      <property role="IQ2ns" value="4622937352052264728" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="parameter" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="21vgRr5xrgT" resolve="QueryParameter" />
+    </node>
+    <node concept="1TJgyj" id="40BYgsZXsWq" role="1TKVEi">
+      <property role="IQ2ns" value="4622937352052264730" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="value" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
 </model>
 

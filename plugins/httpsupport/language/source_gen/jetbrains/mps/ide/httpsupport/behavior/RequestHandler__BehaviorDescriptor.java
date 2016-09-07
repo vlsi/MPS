@@ -21,6 +21,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.SimpleRoleScope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -30,8 +34,9 @@ public final class RequestHandler__BehaviorDescriptor extends BaseBHDescriptor {
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Scope> getScope_id3fifI_xCJOQ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fifI_xCJOQ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Iterable<SNode>> getRequieredParameters_id40BYgsZXRLw = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getRequieredParameters").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("40BYgsZXRLw").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getScope_id3fifI_xCJOQ);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getScope_id3fifI_xCJOQ, getRequieredParameters_id40BYgsZXRLw);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -41,6 +46,14 @@ public final class RequestHandler__BehaviorDescriptor extends BaseBHDescriptor {
       return SimpleRoleScope.forNamedElements(__thisNode__, MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f4d780L, 0x205f4376c585d782L, "queryParameters"));
     }
     return ScopeUtils.lazyParentScope(__thisNode__, kind);
+  }
+  /*package*/ static Iterable<SNode> getRequieredParameters_id40BYgsZXRLw(@NotNull SNode __thisNode__) {
+    Iterable<SNode> ret = SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f4d780L, 0x205f4376c585d782L, "queryParameters"));
+    return Sequence.fromIterable(ret).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x205f4376c585b43dL, "required"));
+      }
+    });
   }
 
   /*package*/ RequestHandler__BehaviorDescriptor() {
@@ -61,6 +74,8 @@ public final class RequestHandler__BehaviorDescriptor extends BaseBHDescriptor {
     switch (methodIndex) {
       case 0:
         return (T) ((Scope) getScope_id3fifI_xCJOQ(node, (SNode) parameters[0], (SNode) parameters[1]));
+      case 1:
+        return (T) ((Iterable<SNode>) getRequieredParameters_id40BYgsZXRLw(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

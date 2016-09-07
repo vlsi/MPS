@@ -47,6 +47,8 @@ public class NodeURI_Action extends BaseAction {
     QueryStringEncoder encoder = HandlerUtil.createURItoMPS("node");
     encoder.addParam("node", NodeURI_Action.this.serializeNode(event.getData(MPSCommonDataKeys.NODE), event));
     CopyPasteUtil.copyTextToClipboard(encoder.toString());
+
+
   }
   private String serializeNode(SNode node, final AnActionEvent event) {
     EditableModelDescriptor tempModel = as_aha6g5_a0a0a6(TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule()), EditableModelDescriptor.class);

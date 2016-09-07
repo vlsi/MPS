@@ -322,8 +322,18 @@
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -359,6 +369,14 @@
       <concept id="6886330673564897217" name="jetbrains.mps.ide.httpsupport.structure.ResponseSendOperation" flags="ng" index="1W9Qq2">
         <property id="6886330673564897341" name="type" index="1W9R_Y" />
         <child id="6886330673564897343" name="buffer" index="1W9R_W" />
+      </concept>
+      <concept id="4622937352052264727" name="jetbrains.mps.ide.httpsupport.structure.ParameterInitializer" flags="ng" index="1ZOzog">
+        <reference id="4622937352052264728" name="parameter" index="1ZOzov" />
+        <child id="4622937352052264730" name="value" index="1ZOzot" />
+      </concept>
+      <concept id="4622937352052264595" name="jetbrains.mps.ide.httpsupport.structure.RequestURIBuilderExpression" flags="ng" index="1ZOzuk">
+        <reference id="4622937352052264638" name="requestHandler" index="1ZOzuT" />
+        <child id="4622937352052298487" name="initializer" index="1ZOqJK" />
       </concept>
     </language>
   </registry>
@@ -2107,15 +2125,15 @@
         <node concept="3cpWs8" id="32YxhLfga8M" role="3cqZAp">
           <node concept="3cpWsn" id="32YxhLfga8N" role="3cpWs9">
             <property role="TrG5h" value="encoder" />
-            <node concept="3uibUv" id="32YxhLfga8O" role="1tU5fm">
-              <ref role="3uigEE" to="9xw8:~QueryStringEncoder" resolve="QueryStringEncoder" />
-            </node>
             <node concept="2YIFZM" id="32YxhLfga8P" role="33vP2m">
-              <ref role="1Pybhc" node="2lt1tUBuCdK" resolve="HandlerUtil" />
               <ref role="37wK5l" node="32YxhLfg7Iv" resolve="createURItoMPS" />
+              <ref role="1Pybhc" node="2lt1tUBuCdK" resolve="HandlerUtil" />
               <node concept="Xl_RD" id="32YxhLfga8Q" role="37wK5m">
                 <property role="Xl_RC" value="node" />
               </node>
+            </node>
+            <node concept="3uibUv" id="32YxhLfga8O" role="1tU5fm">
+              <ref role="3uigEE" to="9xw8:~QueryStringEncoder" resolve="QueryStringEncoder" />
             </node>
           </node>
         </node>
@@ -2134,10 +2152,10 @@
                 <node concept="2XshWL" id="32YxhLfgX$i" role="2OqNvi">
                   <ref role="2WH_rO" node="32YxhLfgG7$" resolve="serializeNode" />
                   <node concept="2OqwBi" id="32YxhLfgXCm" role="2XxRq1">
-                    <node concept="2WthIp" id="32YxhLfgXCp" role="2Oq$k0" />
                     <node concept="3gHZIF" id="32YxhLfgXCr" role="2OqNvi">
                       <ref role="2WH_rO" node="32YxhLfgbhC" resolve="node" />
                     </node>
+                    <node concept="2WthIp" id="32YxhLfgXCp" role="2Oq$k0" />
                   </node>
                 </node>
               </node>
@@ -2158,6 +2176,36 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="40BYgsZYRHX" role="3cqZAp" />
+        <node concept="1X3_iC" id="40BYgsZYS2I" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3clFbF" id="40BYgsZYOfX" role="8Wnug">
+            <node concept="2YIFZM" id="40BYgsZYOfY" role="3clFbG">
+              <ref role="37wK5l" to="dp1x:5tGs5KqKiI4" resolve="copyTextToClipboard" />
+              <ref role="1Pybhc" to="dp1x:5tGs5KqKfGH" resolve="CopyPasteUtil" />
+              <node concept="1ZOzuk" id="40BYgsZX_9y" role="37wK5m">
+                <ref role="1ZOzuT" node="32YxhLfhS07" resolve="NodeReveiver" />
+                <node concept="1ZOzog" id="40BYgsZXGGS" role="1ZOqJK">
+                  <ref role="1ZOzov" node="32YxhLfhS1L" resolve="node" />
+                  <node concept="2OqwBi" id="40BYgsZXGTv" role="1ZOzot">
+                    <node concept="2WthIp" id="40BYgsZXGHM" role="2Oq$k0" />
+                    <node concept="2XshWL" id="40BYgsZXHsr" role="2OqNvi">
+                      <ref role="2WH_rO" node="32YxhLfgG7$" resolve="serializeNode" />
+                      <node concept="2OqwBi" id="40BYgsZXHFG" role="2XxRq1">
+                        <node concept="2WthIp" id="40BYgsZXHto" role="2Oq$k0" />
+                        <node concept="3gHZIF" id="40BYgsZXHXI" role="2OqNvi">
+                          <ref role="2WH_rO" node="32YxhLfgbhC" resolve="node" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="40BYgsZYRZ4" role="3cqZAp" />
       </node>
     </node>
   </node>

@@ -18,9 +18,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_HttpRequestOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HttpRequestParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ParameterConverter = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ParameterInitializer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryParameterReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RequestHandler = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_RequestURIBuilderExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ResponseSendOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SerializeFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SerializedValueParameter = new ConceptPresentationBuilder().create();
@@ -44,18 +46,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 5:
         return props_ParameterConverter;
       case 6:
-        return props_QueryParameter;
+        return props_ParameterInitializer;
       case 7:
-        return props_QueryParameterReference;
+        return props_QueryParameter;
       case 8:
-        return props_RequestHandler;
+        return props_QueryParameterReference;
       case 9:
-        return props_ResponseSendOperation;
+        return props_RequestHandler;
       case 10:
-        return props_SerializeFunction;
+        return props_RequestURIBuilderExpression;
       case 11:
-        return props_SerializedValueParameter;
+        return props_ResponseSendOperation;
       case 12:
+        return props_SerializeFunction;
+      case 13:
+        return props_SerializedValueParameter;
+      case 14:
         return props_ValueToSerializeParameter;
     }
     throw new IllegalStateException();
