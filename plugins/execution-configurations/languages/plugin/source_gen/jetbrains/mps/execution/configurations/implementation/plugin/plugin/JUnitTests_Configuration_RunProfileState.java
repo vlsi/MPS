@@ -62,8 +62,8 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
     TestRunState runState = new TestRunState(testNodes, mpsProject);
     TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
     jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor processExecutor;
-    if (jUnitSettings.canLightExecute(testNodes)) {
-      processExecutor = new JUnitLightExecutor(testNodes, eventsDispatcher);
+    if (jUnitSettings.canExecuteInProcess(testNodes)) {
+      processExecutor = new JUnitInProcessExecutor(testNodes, eventsDispatcher);
     } else {
       processExecutor = new JUnitExecutor(project, executor, jUnitSettings, myDebuggerSettings, myRunConfiguration.getJavaRunParameters(), testNodes);
     }

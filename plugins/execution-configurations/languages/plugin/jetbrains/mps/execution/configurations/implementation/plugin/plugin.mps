@@ -2257,7 +2257,7 @@
                 </node>
                 <node concept="2ShNRf" id="1b7CZFPT6_F" role="37vLTx">
                   <node concept="1pGfFk" id="1b7CZFPT6_G" role="2ShVmc">
-                    <ref role="37wK5l" node="5iYlssmVFgA" resolve="JUnitLightExecutor" />
+                    <ref role="37wK5l" node="5iYlssmVFgA" resolve="JUnitInProcessExecutor" />
                     <node concept="37vLTw" id="1b7CZFPT6_H" role="37wK5m">
                       <ref role="3cqZAo" node="5gyVhZ1884o" resolve="testNodes" />
                     </node>
@@ -2274,7 +2274,7 @@
               <ref role="3cqZAo" node="78pvOus40yi" resolve="jUnitSettings" />
             </node>
             <node concept="2XshWL" id="6Aw2OSzluXn" role="2OqNvi">
-              <ref role="2WH_rO" to="tty3:1b7CZFPJVXT" resolve="canLightExecute" />
+              <ref role="2WH_rO" to="tty3:1b7CZFPJVXT" resolve="canExecuteInProcess" />
               <node concept="37vLTw" id="6Aw2OSzlxa$" role="2XxRq1">
                 <ref role="3cqZAo" node="5gyVhZ1884o" resolve="testNodes" />
               </node>
@@ -2479,7 +2479,7 @@
                   </node>
                 </node>
                 <node concept="yHkDZ" id="3y7Yu5aPLym" role="2OqNvi">
-                  <ref role="yHkDY" to="tty3:1hvQXBo5kdH" resolve="myLightExec" />
+                  <ref role="yHkDY" to="tty3:1hvQXBo5kdH" resolve="myInProcess" />
                 </node>
               </node>
             </node>
@@ -2597,7 +2597,7 @@
                   </node>
                 </node>
                 <node concept="yHkDZ" id="5qZfoDoCC_L" role="2OqNvi">
-                  <ref role="yHkDY" to="tty3:1hvQXBo5kdH" resolve="myLightExec" />
+                  <ref role="yHkDY" to="tty3:1hvQXBo5kdH" resolve="myInProcess" />
                 </node>
               </node>
             </node>
@@ -2716,7 +2716,7 @@
                   </node>
                 </node>
                 <node concept="yHkDZ" id="5qZfoDoCJn2" role="2OqNvi">
-                  <ref role="yHkDY" to="tty3:1hvQXBo5kdH" resolve="myLightExec" />
+                  <ref role="yHkDY" to="tty3:1hvQXBo5kdH" resolve="myInProcess" />
                 </node>
               </node>
             </node>
@@ -3020,7 +3020,7 @@
                   </node>
                 </node>
                 <node concept="yHkDZ" id="AMTgNOhG1S" role="2OqNvi">
-                  <ref role="yHkDY" to="tty3:1hvQXBo5kdH" resolve="myLightExec" />
+                  <ref role="yHkDY" to="tty3:1hvQXBo5kdH" resolve="myInProcess" />
                 </node>
               </node>
             </node>
@@ -3218,7 +3218,7 @@
                       </node>
                     </node>
                     <node concept="yHkDZ" id="AMTgNOilnZ" role="2OqNvi">
-                      <ref role="yHkDY" to="tty3:1hvQXBo5kdH" resolve="myLightExec" />
+                      <ref role="yHkDY" to="tty3:1hvQXBo5kdH" resolve="myInProcess" />
                     </node>
                   </node>
                 </node>
@@ -3424,7 +3424,7 @@
                   </node>
                 </node>
                 <node concept="yHkDZ" id="1uEBw$5rCpH" role="2OqNvi">
-                  <ref role="yHkDY" to="tty3:1hvQXBo5kdH" resolve="myLightExec" />
+                  <ref role="yHkDY" to="tty3:1hvQXBo5kdH" resolve="myInProcess" />
                 </node>
               </node>
             </node>
@@ -3594,7 +3594,7 @@
                   </node>
                 </node>
                 <node concept="yHkDZ" id="2kwDHsIl_iZ" role="2OqNvi">
-                  <ref role="yHkDY" to="tty3:1hvQXBo5kdH" resolve="myLightExec" />
+                  <ref role="yHkDY" to="tty3:1hvQXBo5kdH" resolve="myInProcess" />
                 </node>
               </node>
             </node>
@@ -13051,7 +13051,7 @@
       <property role="TrG5h" value="myExecutor" />
       <node concept="3Tm6S6" id="3qskQir7KO_" role="1B3o_S" />
       <node concept="3uibUv" id="4zNdBxtiLna" role="1tU5fm">
-        <ref role="3uigEE" to="inrv:5Ti9jVZ8rF4" resolve="TestLightExecutor" />
+        <ref role="3uigEE" to="inrv:5Ti9jVZ8rF4" resolve="TestInProcessExecutor" />
       </node>
     </node>
     <node concept="2tJIrI" id="5iYlssmQ4qK" role="jymVt" />
@@ -13114,7 +13114,7 @@
       <node concept="37vLTG" id="5iYlssmQ4Td" role="3clF46">
         <property role="TrG5h" value="executor" />
         <node concept="3uibUv" id="4zNdBxtiLhg" role="1tU5fm">
-          <ref role="3uigEE" to="inrv:5Ti9jVZ8rF4" resolve="TestLightExecutor" />
+          <ref role="3uigEE" to="inrv:5Ti9jVZ8rF4" resolve="TestInProcessExecutor" />
         </node>
       </node>
     </node>
@@ -13278,7 +13278,7 @@
   </node>
   <node concept="312cEu" id="5iYlssmVvC7">
     <property role="3GE5qa" value="junit" />
-    <property role="TrG5h" value="JUnitLightExecutor" />
+    <property role="TrG5h" value="JUnitInProcessExecutor" />
     <node concept="312cEg" id="5iYlssmVFTA" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -13308,7 +13308,7 @@
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="1Q6gjHMtT0I" role="1B3o_S" />
       <node concept="3uibUv" id="1Q6gjHMtT_T" role="1tU5fm">
-        <ref role="3uigEE" to="inrv:5Ti9jVZ8rF4" resolve="TestLightExecutor" />
+        <ref role="3uigEE" to="inrv:5Ti9jVZ8rF4" resolve="TestInProcessExecutor" />
       </node>
     </node>
     <node concept="Wx3nA" id="2A5UIbg4Tml" role="jymVt">
@@ -13318,11 +13318,11 @@
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="2A5UIbg4R_G" role="1B3o_S" />
       <node concept="3uibUv" id="2A5UIbg5DNm" role="1tU5fm">
-        <ref role="3uigEE" to="fnd7:1$FrpHy4ud$" resolve="TestLightRunState" />
+        <ref role="3uigEE" to="fnd7:1$FrpHy4ud$" resolve="TestInProcessRunState" />
       </node>
       <node concept="2ShNRf" id="3jW1bnX81CI" role="33vP2m">
         <node concept="1pGfFk" id="3jW1bnX81xY" role="2ShVmc">
-          <ref role="37wK5l" to="fnd7:1$FrpHy4udC" resolve="TestLightRunState" />
+          <ref role="37wK5l" to="fnd7:1$FrpHy4udC" resolve="TestInProcessRunState" />
         </node>
       </node>
     </node>
@@ -13443,7 +13443,7 @@
             <node concept="3cpWs6" id="2A5UIbg6tkG" role="3cqZAp">
               <node concept="2ShNRf" id="1fU_grlV7pz" role="3cqZAk">
                 <node concept="HV5vD" id="6eTCSRmB$nU" role="2ShVmc">
-                  <ref role="HV5vE" node="HCPmXXSuvm" resolve="JUnitLightExecutor.EmptyProcessHandler" />
+                  <ref role="HV5vE" node="HCPmXXSuvm" resolve="JUnitInProcessExecutor.EmptyProcessHandler" />
                 </node>
               </node>
             </node>
@@ -13458,7 +13458,7 @@
           <node concept="37vLTI" id="1Q6gjHMtQfK" role="3clFbG">
             <node concept="2ShNRf" id="iMwdHMbdhO" role="37vLTx">
               <node concept="1pGfFk" id="iMwdHMbdhP" role="2ShVmc">
-                <ref role="37wK5l" to="inrv:5Ti9jVZ8rFt" resolve="TestLightExecutor" />
+                <ref role="37wK5l" to="inrv:5Ti9jVZ8rFt" resolve="TestInProcessExecutor" />
                 <node concept="37vLTw" id="1b7CZFPOS1e" role="37wK5m">
                   <ref role="3cqZAo" node="1b7CZFPOQU1" resolve="myDispatcher" />
                 </node>
@@ -13603,7 +13603,7 @@
                             <node concept="3clFbF" id="4ClbAYGZOF_" role="3cqZAp">
                               <node concept="2OqwBi" id="4ClbAYGZOJH" role="3clFbG">
                                 <node concept="Xjq3P" id="4ClbAYGZOIZ" role="2Oq$k0">
-                                  <ref role="1HBi2w" node="5iYlssmVvC7" resolve="JUnitLightExecutor" />
+                                  <ref role="1HBi2w" node="5iYlssmVvC7" resolve="JUnitInProcessExecutor" />
                                 </node>
                                 <node concept="liA8E" id="4ClbAYGZOT0" role="2OqNvi">
                                   <ref role="37wK5l" node="4ClbAYGZMKd" resolve="dispose" />
@@ -13651,7 +13651,7 @@
       </node>
       <node concept="3Tm1VV" id="5vTxdEzDCJ$" role="1B3o_S" />
       <node concept="3uibUv" id="5vTxdEzDDhW" role="3clF45">
-        <ref role="3uigEE" to="fnd7:1$FrpHy4ud$" resolve="TestLightRunState" />
+        <ref role="3uigEE" to="fnd7:1$FrpHy4ud$" resolve="TestInProcessRunState" />
       </node>
       <node concept="P$JXv" id="5vTxdEzDEwS" role="lGtFl">
         <node concept="TZ5HA" id="5vTxdEzDEwT" role="TZ5H$">
@@ -13708,6 +13708,7 @@
           </node>
         </node>
       </node>
+      <node concept="2tJIrI" id="5d37arGDHdC" role="jymVt" />
       <node concept="3clFb_" id="6UQGdBmxSZV" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="detachProcessImpl" />
@@ -13717,6 +13718,7 @@
         <node concept="3cqZAl" id="6UQGdBmxSZY" role="3clF45" />
         <node concept="3clFbS" id="6UQGdBmxSZZ" role="3clF47" />
       </node>
+      <node concept="2tJIrI" id="5d37arGDHdD" role="jymVt" />
       <node concept="3clFb_" id="6UQGdBmxT01" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="detachIsDefault" />
@@ -13730,6 +13732,7 @@
           </node>
         </node>
       </node>
+      <node concept="2tJIrI" id="5d37arGDHdE" role="jymVt" />
       <node concept="3clFb_" id="6UQGdBmxT07" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="getProcessInput" />
@@ -13748,6 +13751,7 @@
           </node>
         </node>
       </node>
+      <node concept="2tJIrI" id="5d37arGDHdF" role="jymVt" />
       <node concept="3clFb_" id="7SkPM8aVWI4" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="isProcessTerminated" />
@@ -13766,6 +13770,7 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
+      <node concept="2tJIrI" id="5d37arGDHdG" role="jymVt" />
       <node concept="3clFb_" id="7SkPM8aXgW7" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="startNotify" />
@@ -13904,7 +13909,7 @@
                 <property role="Xl_RC" value="-ea" />
               </node>
               <node concept="Xl_RD" id="7jEXsfiNRpN" role="1r8FgC">
-                <property role="Xl_RC" value="-Xmx1200m" />
+                <property role="Xl_RC" value="-Xmx1500m" />
               </node>
               <node concept="Xl_RD" id="7jEXsfiNRpO" role="1r8FgC">
                 <property role="Xl_RC" value="-XX:MaxPermSize=150m" />

@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor;
+import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitInProcessExecutor;
 import jetbrains.mps.lang.test.util.RunStateEnum;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
@@ -47,10 +47,10 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       }
     }
 
-    if (this.getLightExec() && JUnitLightExecutor.getRunState().get() != RunStateEnum.IDLE) {
+    if (this.getInProcess() && JUnitInProcessExecutor.getRunState().get() != RunStateEnum.IDLE) {
       throw new RuntimeConfigurationError("There is already another instance running tests in-process. Only one instance is allowed to run in-process.");
     }
-    if (!(this.getLightExec()) && this.getReuseCaches() && !(canSaveCachesPath())) {
+    if (!(this.getInProcess()) && this.getReuseCaches() && !(canSaveCachesPath())) {
       throw new RuntimeConfigurationError("The chosen caches directory is already locked by another run. Please choose another one.");
     }
   }
@@ -71,8 +71,8 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public String getModule() {
     return myState.myModule;
   }
-  public boolean getLightExec() {
-    return myState.myLightExec;
+  public boolean getInProcess() {
+    return myState.myInProcess;
   }
   public boolean getReuseCaches() {
     return myState.myReuseCaches;
@@ -98,8 +98,8 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public void setModule(String value) {
     myState.myModule = value;
   }
-  public void setLightExec(boolean value) {
-    myState.myLightExec = value;
+  public void setInProcess(boolean value) {
+    myState.myInProcess = value;
   }
   public void setReuseCaches(boolean value) {
     myState.myReuseCaches = value;
@@ -131,8 +131,8 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public boolean canSaveCachesPath() {
     return this.getReuseCaches() && !(RunCachesManager.isLocked(this.getCachesPath()));
   }
-  public boolean canLightExecute(Iterable<ITestNodeWrapper> testNodes) {
-    return this.getLightExec() && !(this.getDebug());
+  public boolean canExecuteInProcess(Iterable<ITestNodeWrapper> testNodes) {
+    return this.getInProcess() && !(this.getDebug());
   }
   public List<ITestNodeWrapper> getTests(final Project project) {
     return Sequence.fromIterable(collectTests(project)).toListSequence();
@@ -185,7 +185,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public class MyState {
     public String myModel;
     public String myModule;
-    public boolean myLightExec = true;
+    public boolean myInProcess = true;
     public boolean myReuseCaches = true;
     public boolean myDebug = false;
     public String myCachesPath = getDefaultPath();
@@ -199,7 +199,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       JUnitSettings_Configuration.MyState state = new JUnitSettings_Configuration.MyState();
       state.myModel = myModel;
       state.myModule = myModule;
-      state.myLightExec = myLightExec;
+      state.myInProcess = myInProcess;
       state.myReuseCaches = myReuseCaches;
       state.myDebug = myDebug;
       state.myCachesPath = myCachesPath;

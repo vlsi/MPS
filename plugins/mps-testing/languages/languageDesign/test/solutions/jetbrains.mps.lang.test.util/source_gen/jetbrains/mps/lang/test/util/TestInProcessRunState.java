@@ -8,10 +8,10 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class TestLightRunState implements Comparable<TestLightRunState> {
+public class TestInProcessRunState implements Comparable<TestInProcessRunState> {
   private final AtomicReference<RunStateEnum> myValue;
 
-  public TestLightRunState() {
+  public TestInProcessRunState() {
     myValue = new AtomicReference<RunStateEnum>(RunStateEnum.IDLE);
   }
 
@@ -27,7 +27,7 @@ public class TestLightRunState implements Comparable<TestLightRunState> {
     return myValue.compareAndSet(oldValue, value);
   }
 
-  protected static Logger LOG = LogManager.getLogger(TestLightRunState.class);
+  protected static Logger LOG = LogManager.getLogger(TestInProcessRunState.class);
   public void reset() {
     if (!(isTerminated())) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -45,12 +45,12 @@ public class TestLightRunState implements Comparable<TestLightRunState> {
     return this.ordinal() > another.ordinal();
   }
 
-  public boolean greater(TestLightRunState another) {
+  public boolean greater(TestInProcessRunState another) {
     return this.ordinal() > another.ordinal();
   }
 
   @Override
-  public int compareTo(@NotNull TestLightRunState another) {
+  public int compareTo(@NotNull TestInProcessRunState another) {
     return myValue.get().compareTo(another.myValue.get());
   }
 
@@ -73,5 +73,4 @@ public class TestLightRunState implements Comparable<TestLightRunState> {
   public boolean isTerminated() {
     return myValue.get() == RunStateEnum.TERMINATED;
   }
-
 }

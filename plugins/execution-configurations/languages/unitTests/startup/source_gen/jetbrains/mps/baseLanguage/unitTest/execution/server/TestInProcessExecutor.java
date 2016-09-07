@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
-import jetbrains.mps.lang.test.util.TestLightRunState;
+import jetbrains.mps.lang.test.util.TestInProcessRunState;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcess;
 import com.intellij.util.WaitFor;
 import org.apache.log4j.Logger;
@@ -22,20 +22,19 @@ import org.jetbrains.annotations.NotNull;
 import org.junit.runner.notification.RunListener;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
-public class TestLightExecutor extends AbstractTestExecutor {
+public class TestInProcessExecutor extends AbstractTestExecutor {
   private static final int TIME_TO_WAIT_FOR_START = 5 * 1000;
 
   private final TestEventsDispatcher myDispatcher;
   private final Iterable<? extends ITestNodeWrapper> myNodes;
-  private final TestsClassStorage myTestClassStorage = new TestsClassStorage();
-  private final TestLightRunState myTestRunState;
+  private final TestInProcessRunState myTestRunState;
   private final FakeProcess myFakeProcess = new FakeProcess();
 
-  public TestLightExecutor(TestEventsDispatcher dispatcher, Iterable<? extends ITestNodeWrapper> nodes, TestLightRunState testRunState) {
+  public TestInProcessExecutor(TestEventsDispatcher dispatcher, Iterable<? extends ITestNodeWrapper> nodes, TestInProcessRunState testRunState) {
     myDispatcher = dispatcher;
     myNodes = nodes;
     myTestRunState = testRunState;
-    myFilter = new LightExecutionFilter();
+    myFilter = new InProcessExecutionFilter();
   }
 
   private void waitWhileNotReady() {
@@ -46,15 +45,15 @@ public class TestLightExecutor extends AbstractTestExecutor {
       }
     };
     if (!(myTestRunState.isReady())) {
-      throw new TestLightExecutor.IllegalProcessStateError("Process is not ready");
+      throw new TestInProcessExecutor.IllegalProcessStateError("Process is not ready");
     }
   }
 
-  protected static Logger LOG = LogManager.getLogger(TestLightExecutor.class);
+  protected static Logger LOG = LogManager.getLogger(TestInProcessExecutor.class);
   @Override
   public void init() {
     if (LOG.isDebugEnabled()) {
-      LOG.debug("Initializing TestLightExecutor");
+      LOG.debug("Initializing TestInProcessExecutor");
     }
     waitWhileNotReady();
     try {
@@ -125,13 +124,13 @@ public class TestLightExecutor extends AbstractTestExecutor {
   @NotNull
   @Override
   protected TestsContributor createTestsContributor() {
-    return new NodeWrappersTestsContributor(myNodes, myTestClassStorage);
+    return new NodeWrappersTestsContributor(myNodes);
   }
 
   @NotNull
   @Override
   protected RunListener createListener(Iterable<Request> requests) {
-    return new TestLightRunListener(this, ListSequence.fromIterable(requests).size());
+    return new TestInProcessRunListener(this, ListSequence.fromIterable(requests).size());
   }
 
   public TestEventsDispatcher getDispatcher() {

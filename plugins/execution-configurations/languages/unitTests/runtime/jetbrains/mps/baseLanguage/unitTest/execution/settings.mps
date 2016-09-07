@@ -1184,7 +1184,7 @@
       <node concept="3Tm1VV" id="6bMNZRsh2Nv" role="1B3o_S" />
     </node>
     <node concept="yHkHE" id="1b7CZFPJVXT" role="yHkHi">
-      <property role="TrG5h" value="canLightExecute" />
+      <property role="TrG5h" value="canExecuteInProcess" />
       <node concept="37vLTG" id="1b7CZFPK$CS" role="3clF46">
         <property role="TrG5h" value="testNodes" />
         <node concept="A3Dl8" id="1b7CZFPK$HD" role="1tU5fm">
@@ -1208,7 +1208,7 @@
             <node concept="2OqwBi" id="2HcovDyKJFQ" role="3uHU7B">
               <node concept="2WthIp" id="2HcovDyKJoG" role="2Oq$k0" />
               <node concept="yHkDZ" id="2HcovDyKK8H" role="2OqNvi">
-                <ref role="yHkDY" node="1hvQXBo5kdH" resolve="myLightExec" />
+                <ref role="yHkDY" node="1hvQXBo5kdH" resolve="myInProcess" />
               </node>
             </node>
           </node>
@@ -1570,7 +1570,7 @@
       <node concept="17QB3L" id="5gyVhZ1bmck" role="1tU5fm" />
     </node>
     <node concept="yHkDC" id="1hvQXBo5kdH" role="yHkDi">
-      <property role="TrG5h" value="myLightExec" />
+      <property role="TrG5h" value="myInProcess" />
       <node concept="10P_77" id="1hvQXBo5l5z" role="1tU5fm" />
       <node concept="3clFbT" id="1hvQXBo5nSb" role="33vP2m">
         <property role="3clFbU" value="true" />
@@ -1843,7 +1843,7 @@
               <node concept="2OqwBi" id="4YDgfhqaNUB" role="3uHU7B">
                 <node concept="2YIFZM" id="4YDgfhqaNUC" role="2Oq$k0">
                   <ref role="37wK5l" to="ic9i:5vTxdEzDDpO" resolve="getRunState" />
-                  <ref role="1Pybhc" to="ic9i:5iYlssmVvC7" resolve="JUnitLightExecutor" />
+                  <ref role="1Pybhc" to="ic9i:5iYlssmVvC7" resolve="JUnitInProcessExecutor" />
                 </node>
                 <node concept="liA8E" id="4YDgfhqaNUD" role="2OqNvi">
                   <ref role="37wK5l" to="fnd7:2A5UIbg69nv" resolve="get" />
@@ -1857,7 +1857,7 @@
             <node concept="2OqwBi" id="40rNy8FLR5P" role="3uHU7B">
               <node concept="2WthIp" id="40rNy8FLQPn" role="2Oq$k0" />
               <node concept="yHkDZ" id="40rNy8FLRvM" role="2OqNvi">
-                <ref role="yHkDY" node="1hvQXBo5kdH" resolve="myLightExec" />
+                <ref role="yHkDY" node="1hvQXBo5kdH" resolve="myInProcess" />
               </node>
             </node>
           </node>
@@ -1884,7 +1884,7 @@
                 <node concept="2OqwBi" id="2iHJ$C2AzOR" role="3fr31v">
                   <node concept="2WthIp" id="2iHJ$C2AzOS" role="2Oq$k0" />
                   <node concept="yHkDZ" id="2iHJ$C2AzOT" role="2OqNvi">
-                    <ref role="yHkDY" node="1hvQXBo5kdH" resolve="myLightExec" />
+                    <ref role="yHkDY" node="1hvQXBo5kdH" resolve="myInProcess" />
                   </node>
                 </node>
               </node>
@@ -6974,7 +6974,7 @@
                 <ref role="3cqZAo" node="1_bTry1YsZV" resolve="configuration" />
               </node>
               <node concept="yHkDZ" id="1$rjKAUWEXy" role="2OqNvi">
-                <ref role="yHkDY" node="1hvQXBo5kdH" resolve="myLightExec" />
+                <ref role="yHkDY" node="1hvQXBo5kdH" resolve="myInProcess" />
               </node>
             </node>
           </node>
@@ -7605,7 +7605,7 @@
                   <ref role="3cqZAo" node="78pvOus4Pm1" resolve="configuration" />
                 </node>
                 <node concept="yHkDZ" id="6bMNZRsfz0R" role="2OqNvi">
-                  <ref role="yHkDY" node="1hvQXBo5kdH" resolve="myLightExec" />
+                  <ref role="yHkDY" node="1hvQXBo5kdH" resolve="myInProcess" />
                 </node>
               </node>
             </node>

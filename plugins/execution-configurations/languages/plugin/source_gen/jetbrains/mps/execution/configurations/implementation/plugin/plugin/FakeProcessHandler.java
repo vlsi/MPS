@@ -4,16 +4,16 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import com.intellij.execution.process.BaseOSProcessHandler;
 import java.util.concurrent.Future;
-import jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor;
+import jetbrains.mps.baseLanguage.unitTest.execution.server.TestInProcessExecutor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import java.io.OutputStream;
 
 public class FakeProcessHandler extends BaseOSProcessHandler {
   private final Future<?> myFuture;
-  private final TestLightExecutor myExecutor;
+  private final TestInProcessExecutor myExecutor;
 
-  public FakeProcessHandler(@NotNull FakeProcess fakeProcess, Future<?> future, TestLightExecutor executor) {
+  public FakeProcessHandler(@NotNull FakeProcess fakeProcess, Future<?> future, TestInProcessExecutor executor) {
     super(fakeProcess, fakeProcess.toString(), null);
     myFuture = future;
     myExecutor = executor;

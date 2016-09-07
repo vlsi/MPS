@@ -17,6 +17,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Level;
 import org.jetbrains.annotations.NotNull;
 import java.util.LinkedList;
 
@@ -29,7 +32,7 @@ public class TestRunState {
   private String myCurrentClass;
   private String myCurrentMethod;
   private String myCurrentToken;
-  private volatile boolean myCurrentCompleted = true;
+  private volatile boolean myCompletedGracefully = true;
   private String myLostTest;
   private String myLostMethod;
   private int myTotalTests = 0;
@@ -155,20 +158,25 @@ public class TestRunState {
     this.looseTestInternal(className, testName);
   }
 
+  protected static Logger LOG = LogManager.getLogger(TestRunState.class);
   private void startTest(String className, String methodName) {
-    assert !((className.equals(this.myCurrentClass) && methodName.equals(this.myCurrentMethod)));
     synchronized (lock) {
+      if (myCurrentMethod != null && myCurrentClass != null) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error("Seems that the previous test is not finished yet");
+        }
+      }
       checkConsistency();
       this.myCurrentClass = className;
       this.myCurrentMethod = methodName;
-      this.myCurrentCompleted = true;
+      this.myCompletedGracefully = true;
       this.updateView();
     }
   }
 
   private void finishTest() {
     synchronized (lock) {
-      if (this.myCurrentCompleted) {
+      if (this.myCompletedGracefully) {
         this.myCompletedTests++;
       }
       this.updateView();
@@ -186,7 +194,7 @@ public class TestRunState {
 
   private void ignoreTest() {
     synchronized (lock) {
-      this.myCurrentCompleted = false;
+      this.myCompletedGracefully = false;
       this.updateView();
     }
   }

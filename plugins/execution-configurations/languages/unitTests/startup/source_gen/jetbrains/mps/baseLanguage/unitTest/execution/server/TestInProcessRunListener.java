@@ -15,19 +15,19 @@ import org.junit.runner.Description;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 import org.junit.internal.AssumptionViolatedException;
 
-public class TestLightRunListener extends RunListener {
-  private final TestLightExecutor myExecutor;
+public class TestInProcessRunListener extends RunListener {
+  private final TestInProcessExecutor myExecutor;
   private final TestEventsDispatcher myDispatcher;
   private final int myRequestCount;
-  private final TestLightRunListener.TestEventFactory myFactory;
+  private final TestInProcessRunListener.TestEventFactory myFactory;
   private int currentRequest;
 
 
-  public TestLightRunListener(TestLightExecutor executor, int requestCount) {
+  public TestInProcessRunListener(TestInProcessExecutor executor, int requestCount) {
     myExecutor = executor;
     myDispatcher = executor.getDispatcher();
     myRequestCount = requestCount;
-    myFactory = new TestLightRunListener.TestEventFactory();
+    myFactory = new TestInProcessRunListener.TestEventFactory();
   }
 
   private String getStackTrace(Failure failure) {
@@ -37,7 +37,7 @@ public class TestLightRunListener extends RunListener {
     return sw.toString();
   }
 
-  protected static Logger LOG = LogManager.getLogger(TestLightRunListener.class);
+  protected static Logger LOG = LogManager.getLogger(TestInProcessRunListener.class);
   @Override
   public void testRunFinished(Result result) throws Exception {
     if (++currentRequest == myRequestCount) {
@@ -84,12 +84,12 @@ public class TestLightRunListener extends RunListener {
   public void testIgnored(Description description) throws Exception {
     // testIgnored is the only event which does not come with testStarted and testEnded 
     // we emulate this behaviour below 
-    Failure failure = new Failure(description, new AssumptionViolatedException("The test was ignored"));
+    Failure failure = new Failure(description, new AssumptionViolatedException("The test" + description + " was ignored"));
     if (LOG.isDebugEnabled()) {
-      LOG.debug("Ignore " + TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX + failure.getDescription());
+      LOG.debug("Ignore " + TestEvent.IGNORE_FAILURE_TEST_PREFIX + failure.getDescription());
     }
     testStarted(description);
-    onTestErrorEvent(TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX, TestEvent.ASSUMPTION_FAILURE_TEST_SUFFIX, failure);
+    onTestErrorEvent(TestEvent.IGNORE_FAILURE_TEST_PREFIX, TestEvent.IGNORE_FAILURE_TEST_SUFFIX, failure);
     testFinished(description);
   }
 

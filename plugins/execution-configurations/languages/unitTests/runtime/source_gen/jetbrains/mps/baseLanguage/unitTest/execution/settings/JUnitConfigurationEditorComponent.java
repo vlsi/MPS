@@ -229,7 +229,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     configuration.setTestCases(testCases);
     configuration.setModel(model.value);
     configuration.setModule(module.value);
-    configuration.setLightExec(myLightExecCheckBox.isSelected());
+    configuration.setInProcess(myLightExecCheckBox.isSelected());
     configuration.setReuseCaches(myReuseCachesCheckBox.isSelected());
     configuration.setCachesPath(myCachesDir.getText());
   }
@@ -300,7 +300,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
   }
 
   private void updateCheckBoxes(JUnitSettings_Configuration configuration) {
-    myLightExecCheckBox.setSelected(configuration.getLightExec());
+    myLightExecCheckBox.setSelected(configuration.getInProcess());
     myReuseCachesCheckBox.setSelected(configuration.getReuseCaches());
     myLightExecCheckBox.update();
   }

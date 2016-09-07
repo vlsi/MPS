@@ -42,6 +42,7 @@ public class TestTree extends MPSTree implements TestView, Disposable {
     myAnimator = new TestTreeIconAnimator(this);
     myAnimator.init(state);
   }
+
   private void updateState(@Nullable TestMethodTreeNode methodNode, TestCaseTreeNode testCaseNode, TestState testState) {
     if (methodNode != null) {
       methodNode.setState(testState);
@@ -59,6 +60,7 @@ public class TestTree extends MPSTree implements TestView, Disposable {
       testCaseNode.setState(testState);
     }
   }
+
   @Override
   protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
     if (node instanceof TestCaseTreeNode) {
@@ -69,6 +71,7 @@ public class TestTree extends MPSTree implements TestView, Disposable {
     }
     return null;
   }
+
   @Override
   public void update() {
     if (myState.getAvailableText() != null) {
@@ -100,11 +103,13 @@ public class TestTree extends MPSTree implements TestView, Disposable {
             }
           });
           if (UnitTestOptions.isTrackRunning()) {
-            SwingUtilities.invokeLater(new Runnable() {
-              public void run() {
-                setCurrentNode(methodNode.value);
-              }
-            });
+            if (methodNode.value != null) {
+              SwingUtilities.invokeLater(new Runnable() {
+                public void run() {
+                  setCurrentNode(methodNode.value);
+                }
+              });
+            }
           }
         } else if (TestEvent.FINISH_TEST_PREFIX.equals(myState.getToken())) {
           if (methodNode.value != null && TestState.IN_PROGRESS.equals(methodNode.value.getState())) {
@@ -115,8 +120,8 @@ public class TestTree extends MPSTree implements TestView, Disposable {
         } else if (TestEvent.FAILURE_TEST_PREFIX.equals(myState.getToken())) {
           if (methodNode.value != null) {
             methodNode.value.setState(TestState.FAILED);
+            updateState(methodNode.value, testCaseNode, TestState.ERROR);
           }
-          updateState(methodNode.value, testCaseNode, TestState.ERROR);
         }
       }
     }
@@ -135,6 +140,7 @@ public class TestTree extends MPSTree implements TestView, Disposable {
       });
     }
   }
+
   @Override
   public void dispose() {
     if (!(isDisposed())) {
@@ -142,11 +148,13 @@ public class TestTree extends MPSTree implements TestView, Disposable {
     }
     myAnimator.dispose();
   }
+
   @Override
   public void init() {
     rebuildNow();
     expandAll();
   }
+
   @Override
   public MPSTreeNode rebuild() {
     MPSTreeNode root = new TextTreeNode("Tests");
@@ -188,6 +196,7 @@ public class TestTree extends MPSTree implements TestView, Disposable {
     myMap = temp;
     return root;
   }
+
   public boolean hasFailedTests() {
     for (final ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myState.getTestsMap()).keySet())) {
       if (testCase == null) {
@@ -213,15 +222,18 @@ public class TestTree extends MPSTree implements TestView, Disposable {
     }
     return false;
   }
+
   public void hidePassed(boolean hide) {
     myAllTree = !(hide);
     rebuildNow();
     expandAll();
   }
+
   public void buildFailedTestTree() {
     myAllTree = false;
     rebuildNow();
   }
+
   public List<String> getMethodName() {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
     for (List<ITestNodeWrapper> values : MapSequence.fromMap(myState.getTestsMap()).values()) {
@@ -231,12 +243,15 @@ public class TestTree extends MPSTree implements TestView, Disposable {
     }
     return result;
   }
+
   public TestCaseTreeNode get(String className) {
     return myMap.get(className);
   }
+
   public TestMethodTreeNode get(String className, String methodName) {
     return myMap.get(className, methodName);
   }
+
   public void selectFirstDefectNode() {
     for (final ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myState.getTestsMap()).keySet())) {
       for (final ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myState.getTestsMap()).get(testCase))) {
@@ -256,6 +271,7 @@ public class TestTree extends MPSTree implements TestView, Disposable {
       }
     }
   }
+
   public static boolean isFailed(MPSTreeNode node) {
     if (node == null || !(node.isLeaf())) {
       return false;
@@ -264,6 +280,7 @@ public class TestTree extends MPSTree implements TestView, Disposable {
     TestState state = leaf.getState();
     return state.equals(TestState.ERROR) || state.equals(TestState.FAILED);
   }
+
   public static boolean isPassed(TestMethodTreeNode method) {
     if (method == null) {
       return true;

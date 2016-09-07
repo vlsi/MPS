@@ -1081,16 +1081,11 @@
                 </node>
                 <node concept="liA8E" id="5vTxdEzAzNk" role="2OqNvi">
                   <ref role="37wK5l" to="5zyv:~CountDownLatch.await(long,java.util.concurrent.TimeUnit):boolean" resolve="await" />
-                  <node concept="17qRlL" id="5vTxdEzA_0o" role="37wK5m">
-                    <node concept="3cmrfG" id="5vTxdEzA_0r" role="3uHU7w">
-                      <property role="3cmrfH" value="1000" />
-                    </node>
-                    <node concept="3cmrfG" id="5vTxdEzA$0w" role="3uHU7B">
-                      <property role="3cmrfH" value="30" />
-                    </node>
+                  <node concept="3cmrfG" id="5vTxdEzA$0w" role="37wK5m">
+                    <property role="3cmrfH" value="10" />
                   </node>
-                  <node concept="Rm8GO" id="5vTxdEzAA7i" role="37wK5m">
-                    <ref role="Rm8GQ" to="5zyv:~TimeUnit.MILLISECONDS" resolve="MILLISECONDS" />
+                  <node concept="Rm8GO" id="5d37arGBj4C" role="37wK5m">
+                    <ref role="Rm8GQ" to="5zyv:~TimeUnit.SECONDS" resolve="SECONDS" />
                     <ref role="1Px2BO" to="5zyv:~TimeUnit" resolve="TimeUnit" />
                   </node>
                 </node>

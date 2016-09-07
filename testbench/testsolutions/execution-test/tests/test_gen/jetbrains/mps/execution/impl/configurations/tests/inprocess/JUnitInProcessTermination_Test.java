@@ -19,8 +19,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor;
-import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor;
-import jetbrains.mps.lang.test.util.TestLightRunState;
+import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitInProcessExecutor;
+import jetbrains.mps.lang.test.util.TestInProcessRunState;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener;
@@ -60,8 +60,8 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
         final TestRunState runState = new TestRunState(testNodes, myProject);
         TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
 
-        Executor processExecutor = new JUnitLightExecutor(testNodes, eventsDispatcher);
-        final TestLightRunState lightState = JUnitLightExecutor.getRunState();
+        Executor processExecutor = new JUnitInProcessExecutor(testNodes, eventsDispatcher);
+        final TestInProcessRunState lightState = JUnitInProcessExecutor.getRunState();
         if (LOG.isInfoEnabled()) {
           LOG.info("Starting in-process-execution");
         }
@@ -88,7 +88,7 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
         this.waitForRunToStart(lightState);
         Assert.assertTrue(lightState.isRunning());
         process.destroyProcess();
-        latch.await(30 * 1000, TimeUnit.MILLISECONDS);
+        latch.await(10, TimeUnit.SECONDS);
         int exitcode = exitCode[0];
         if (exitcode != FakeProcess.TERMINATION_CODE) {
           Assert.fail("Exit code must be equal to " + FakeProcess.TERMINATION_CODE + ", but " + exitcode);
@@ -104,7 +104,7 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
         Assert.fail(e.getMessage());
       }
     }
-    public void waitForRunToStart(final TestLightRunState lightState) {
+    public void waitForRunToStart(final TestInProcessRunState lightState) {
       new WaitFor(5 * 1000) {
         protected boolean condition() {
           return lightState.isRunning();

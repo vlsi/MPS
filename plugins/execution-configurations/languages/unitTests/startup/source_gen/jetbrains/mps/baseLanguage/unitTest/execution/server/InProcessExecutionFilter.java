@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 
-public class LightExecutionFilter implements Filter {
+public class InProcessExecutionFilter implements Filter {
   @Override
   public boolean accept(final Request request) throws Filter.FilterException {
     assert request instanceof TestNodeRequest;

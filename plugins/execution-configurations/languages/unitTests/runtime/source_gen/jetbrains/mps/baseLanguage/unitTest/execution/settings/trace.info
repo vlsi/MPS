@@ -728,7 +728,7 @@
       <node id="2339934328872410896" at="42,83,43,15" concept="13" />
       <node id="6062668769034855254" at="45,63,46,76" concept="21" />
       <node id="2612511354824401604" at="48,5,49,0" concept="15" />
-      <node id="4619512488957322259" at="50,93,51,153" concept="21" />
+      <node id="4619512488957322259" at="50,97,51,153" concept="21" />
       <node id="7129989849308545052" at="53,84,54,134" concept="21" />
       <node id="6062668769034854986" at="58,76,59,57" concept="6" />
       <node id="6062668769034854986" at="63,26,64,81" concept="21" />
@@ -755,7 +755,7 @@
       <node id="2612511354824809522" at="125,42,126,53" concept="13" />
       <node id="2612511354825123907" at="128,54,129,39" concept="6" />
       <node id="7129989849310048127" at="131,38,132,87" concept="13" />
-      <node id="1353230511308389007" at="134,72,135,53" concept="13" />
+      <node id="1353230511308389007" at="134,76,135,53" concept="13" />
       <node id="6062668769034855033" at="137,65,138,73" concept="13" />
       <node id="2339934328871895871" at="140,50,141,38" concept="12" />
       <node id="2339934328871895885" at="141,38,142,54" concept="12" />
@@ -775,7 +775,7 @@
       <node id="6062668769034854986" at="182,5,183,17" concept="13" />
       <node id="6062668769034855185" at="186,0,187,0" concept="7" trace="myModel" />
       <node id="6062668769034855187" at="187,0,188,0" concept="7" trace="myModule" />
-      <node id="1468133732225729389" at="188,0,189,0" concept="7" trace="myLightExec" />
+      <node id="1468133732225729389" at="188,0,189,0" concept="7" trace="myInProcess" />
       <node id="8221742540279296544" at="189,0,190,0" concept="7" trace="myReuseCaches" />
       <node id="181393747411901318" at="190,0,191,0" concept="7" trace="myDebug" />
       <node id="2481116735934009400" at="191,0,192,0" concept="7" trace="myCachesPath" />
@@ -810,7 +810,7 @@
       <node id="6062668769034854986" at="62,73,65,5" concept="10" />
       <node id="6062668769034854986" at="68,0,71,0" concept="11" trace="getModel#()Ljava/lang/String;" />
       <node id="6062668769034854986" at="71,0,74,0" concept="11" trace="getModule#()Ljava/lang/String;" />
-      <node id="6062668769034854986" at="74,0,77,0" concept="11" trace="getLightExec#()Z" />
+      <node id="6062668769034854986" at="74,0,77,0" concept="11" trace="getInProcess#()Z" />
       <node id="6062668769034854986" at="77,0,80,0" concept="11" trace="getReuseCaches#()Z" />
       <node id="6062668769034854986" at="80,0,83,0" concept="11" trace="getDebug#()Z" />
       <node id="6062668769034854986" at="83,0,86,0" concept="11" trace="getCachesPath#()Ljava/lang/String;" />
@@ -819,7 +819,7 @@
       <node id="6062668769034854986" at="92,0,95,0" concept="11" trace="getRunType#()I" />
       <node id="6062668769034854986" at="95,0,98,0" concept="11" trace="setModel#(Ljava/lang/String;)V" />
       <node id="6062668769034854986" at="98,0,101,0" concept="11" trace="setModule#(Ljava/lang/String;)V" />
-      <node id="6062668769034854986" at="101,0,104,0" concept="11" trace="setLightExec#(Z)V" />
+      <node id="6062668769034854986" at="101,0,104,0" concept="11" trace="setInProcess#(Z)V" />
       <node id="6062668769034854986" at="104,0,107,0" concept="11" trace="setReuseCaches#(Z)V" />
       <node id="6062668769034854986" at="107,0,110,0" concept="11" trace="setDebug#(Z)V" />
       <node id="6062668769034854986" at="110,0,113,0" concept="11" trace="setCachesPath#(Ljava/lang/String;)V" />
@@ -830,7 +830,7 @@
       <node id="6062668769034854986" at="125,0,128,0" concept="11" trace="getJUnitRunType#()Ljetbrains/mps/baseLanguage/unitTest/execution/settings/JUnitRunTypes;" />
       <node id="6062668769034854986" at="128,0,131,0" concept="11" trace="setJUnitRunType#(Ljetbrains/mps/baseLanguage/unitTest/execution/settings/JUnitRunTypes;)V" />
       <node id="6062668769034854986" at="131,0,134,0" concept="11" trace="canSaveCachesPath#()Z" />
-      <node id="6062668769034854986" at="134,0,137,0" concept="11" trace="canLightExecute#(Ljava/lang/Iterable;)Z" />
+      <node id="6062668769034854986" at="134,0,137,0" concept="11" trace="canExecuteInProcess#(Ljava/lang/Iterable;)Z" />
       <node id="6062668769034854986" at="137,0,140,0" concept="11" trace="getTests#(Ljetbrains/mps/project/Project;)Ljava/util/List;" />
       <node id="2339934328871895895" at="144,0,147,0" concept="11" trace="run#()V" />
       <node id="6062668769034854986" at="150,0,153,0" concept="11" trace="getTestsUnderProgress#(Ljetbrains/mps/project/Project;)Ljava/util/List;" />
@@ -863,7 +863,7 @@
       <scope id="6062668769034855238" at="37,85,38,72" />
       <scope id="2339934328872410775" at="42,83,43,15" />
       <scope id="6062668769034855253" at="45,63,46,76" />
-      <scope id="4619512488957275323" at="50,93,51,153" />
+      <scope id="4619512488957275323" at="50,97,51,153" />
       <scope id="4619512488957332562" at="53,84,54,134" />
       <scope id="6062668769034854986" at="58,76,59,57" />
       <scope id="6062668769034854986" at="63,26,64,81" />
@@ -889,7 +889,7 @@
       <scope id="2612511354824798383" at="125,42,126,53" />
       <scope id="2612511354825114437" at="128,54,129,39" />
       <scope id="7129989849310042357" at="131,38,132,87" />
-      <scope id="1353230511308259195" at="134,72,135,53" />
+      <scope id="1353230511308259195" at="134,76,135,53" />
       <scope id="6062668769034854990" at="137,65,138,73" />
       <scope id="2339934328871895896" at="144,25,145,68" />
       <scope id="6062668769034855045" at="150,78,151,73" />

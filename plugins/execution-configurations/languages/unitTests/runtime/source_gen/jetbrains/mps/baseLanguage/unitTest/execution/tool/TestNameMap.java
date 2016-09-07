@@ -10,14 +10,15 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 public class TestNameMap<C, M> {
   private final Map<String, C> myClassToTestCase = MapSequence.fromMap(new HashMap<String, C>());
   private final Map<String, Map<String, M>> myClassToMethodToMethodTest = MapSequence.fromMap(new HashMap<String, Map<String, M>>());
-  public TestNameMap() {
-  }
+
   public void put(ITestNodeWrapper testCaseNode, C testCase) {
     MapSequence.fromMap(myClassToTestCase).put(testCaseNode.getFqName(), testCase);
   }
+
   public C get(String testCaseName) {
     return MapSequence.fromMap(myClassToTestCase).get(testCaseName);
   }
+
   public void put(ITestNodeWrapper testCaseNode, ITestNodeWrapper testMethodNode, M testMethod) {
     String testCaseName = testCaseNode.getFqName();
     Map<String, M> testMethods = MapSequence.fromMap(myClassToMethodToMethodTest).get(testCaseName);
@@ -27,6 +28,7 @@ public class TestNameMap<C, M> {
     }
     MapSequence.fromMap(testMethods).put(testMethodNode.getName(), testMethod);
   }
+
   public M get(String testCaseName, String testMethodName) {
     M testMethod = null;
     Map<String, M> testMethods = MapSequence.fromMap(myClassToMethodToMethodTest).get(testCaseName);
@@ -35,6 +37,7 @@ public class TestNameMap<C, M> {
     }
     return testMethod;
   }
+
   public void clear() {
     MapSequence.fromMap(myClassToTestCase).clear();
     MapSequence.fromMap(myClassToMethodToMethodTest).clear();

@@ -21,7 +21,7 @@
       <node id="107428392343534682" at="57,77,58,83" concept="3" />
       <node id="107428392343534688" at="58,83,59,0" concept="5" />
       <node id="107428392343534689" at="59,0,60,33" concept="3" />
-      <node id="107428392343534692" at="60,33,61,78" concept="0" />
+      <node id="107428392343534692" at="60,33,61,82" concept="0" />
       <node id="107428392343534699" at="62,34,63,52" concept="0" />
       <node id="107428392343534701" at="64,9,65,59" concept="3" />
       <node id="107428392343534707" at="65,59,66,108" concept="3" />
@@ -34,7 +34,7 @@
       <node id="107428392343534770" at="80,62,81,57" concept="0" />
       <node id="107428392343534786" at="83,38,84,36" concept="0" />
       <node id="107428392343534654" at="51,0,54,0" concept="2" trace="getMyModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="107428392343534699" at="61,78,64,9" concept="1" />
+      <node id="107428392343534699" at="61,82,64,9" concept="1" />
       <node id="107428392343534768" at="79,9,82,9" concept="1" />
       <node id="107428392343534798" at="45,0,49,0" concept="2" trace="test_startTrickyTestCase#()V" />
       <node id="107428392343534714" at="68,0,72,0" concept="2" trace="run#()V" />
@@ -98,7 +98,7 @@
       <node id="6339244025082257324" at="67,77,68,83" concept="3" />
       <node id="6339244025082257330" at="68,83,69,0" concept="5" />
       <node id="6339244025082257331" at="69,0,70,33" concept="3" />
-      <node id="6339244025082257334" at="70,33,71,78" concept="0" />
+      <node id="6339244025082257334" at="70,33,71,82" concept="0" />
       <node id="6339244025082257341" at="72,34,73,52" concept="0" />
       <node id="6339244025082257343" at="74,9,75,59" concept="3" />
       <node id="6339244025082257349" at="75,59,76,108" concept="3" />
@@ -111,7 +111,7 @@
       <node id="6339244025082257412" at="90,62,91,57" concept="0" />
       <node id="6339244025082257428" at="93,38,94,36" concept="0" />
       <node id="6339244025082257302" at="61,0,64,0" concept="2" trace="getMyModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="6339244025082257341" at="71,78,74,9" concept="1" />
+      <node id="6339244025082257341" at="71,82,74,9" concept="1" />
       <node id="6339244025082257410" at="89,9,92,9" concept="1" />
       <node id="6339244025082257516" at="55,0,59,0" concept="2" trace="test_startFailedTestCase#()V" />
       <node id="6339244025082257356" at="78,0,82,0" concept="2" trace="run#()V" />
@@ -176,8 +176,8 @@
       <node id="6339244025082286095" at="59,11,60,77" concept="3" />
       <node id="6339244025082286101" at="60,77,61,83" concept="3" />
       <node id="6339244025082286107" at="61,83,62,0" concept="5" />
-      <node id="6339244025082286108" at="62,0,63,87" concept="3" />
-      <node id="6339244025084403368" at="63,87,64,78" concept="3" />
+      <node id="6339244025082286108" at="62,0,63,91" concept="3" />
+      <node id="6339244025084403368" at="63,91,64,86" concept="3" />
       <node id="6339244025082286118" at="65,34,66,52" concept="0" />
       <node id="6339244025082286120" at="67,9,68,59" concept="3" />
       <node id="6339244025082286126" at="68,59,69,108" concept="3" />
@@ -193,15 +193,15 @@
       <node id="8410090958587137006" at="87,30,88,43" concept="0" />
       <node id="6339244025084453517" at="88,43,89,50" concept="0" />
       <node id="6339244025082776470" at="89,50,90,33" concept="0" />
-      <node id="6339244025083196242" at="90,33,91,54" concept="0" />
-      <node id="6339244025083250545" at="91,54,92,35" concept="3" />
+      <node id="6339244025083196242" at="90,33,91,42" concept="0" />
+      <node id="6339244025083250545" at="91,42,92,35" concept="3" />
       <node id="6339244025082286163" at="93,55,94,106" concept="0" />
       <node id="6339244025082286184" at="95,34,96,57" concept="0" />
       <node id="6339244025082286189" at="98,62,99,57" concept="0" />
       <node id="6339244025082286205" at="101,38,102,36" concept="0" />
       <node id="6339244025083237998" at="103,40,104,36" concept="0" />
       <node id="8410090958587136987" at="109,39,110,40" concept="4" />
-      <node id="6339244025082286118" at="64,78,67,9" concept="1" />
+      <node id="6339244025082286118" at="64,86,67,9" concept="1" />
       <node id="6339244025082286187" at="97,9,100,9" concept="1" />
       <node id="8410090958587136983" at="109,0,112,0" concept="2" trace="condition#()Z" />
       <node id="6339244025082286133" at="71,0,75,0" concept="2" trace="run#()V" />
@@ -209,10 +209,10 @@
       <node id="6339244025082286276" at="51,0,56,0" concept="2" trace="test_terminate#()V" />
       <node id="6339244025083156594" at="81,0,86,0" concept="2" trace="processTerminated#(Lcom/intellij/execution/process/ProcessEvent;)V" />
       <node id="6339244025082286161" at="92,35,97,9" concept="1" />
-      <node id="8410090958587136978" at="107,71,112,8" concept="0" />
+      <node id="8410090958587136978" at="107,75,112,8" concept="0" />
       <node id="6339244025082286129" at="69,108,75,11" concept="0" />
       <node id="6339244025083150669" at="79,59,86,11" concept="0" />
-      <node id="6339244025082286079" at="107,0,114,0" concept="2" trace="waitForRunToStart#(Ljetbrains/mps/lang/test/util/TestLightRunState;)V" />
+      <node id="6339244025082286079" at="107,0,114,0" concept="2" trace="waitForRunToStart#(Ljetbrains/mps/lang/test/util/TestInProcessRunState;)V" />
       <node id="6339244025082286083" at="58,75,105,7" concept="7" />
       <node id="6339244025082286079" at="58,0,107,0" concept="2" trace="startAndTerminate#(Ljava/util/List;)V" />
       <scope id="6339244025082286118" at="65,34,66,52" />
@@ -242,7 +242,7 @@
       <scope id="6339244025083156594" at="81,0,86,0">
         <var name="event" id="6339244025083156598" />
       </scope>
-      <scope id="6339244025082286079" at="107,71,112,8" />
+      <scope id="6339244025082286079" at="107,75,112,8" />
       <scope id="6339244025082286079" at="107,0,114,0">
         <var name="lightState" id="8410090958587136994" />
       </scope>

@@ -5,7 +5,7 @@
     <classNode dependClassName="jetbrains.mps.lang.test.util.MpsRunListener" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.util.RunStateEnum" file="RunStateEnum.java" />
-  <dependency className="jetbrains.mps.lang.test.util.TestLightRunState" file="TestLightRunState.java">
+  <dependency className="jetbrains.mps.lang.test.util.TestInProcessRunState" file="TestInProcessRunState.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.concurrent.atomic.AtomicReference" />
     <classNode dependClassName="jetbrains.mps.lang.test.util.RunStateEnum" />

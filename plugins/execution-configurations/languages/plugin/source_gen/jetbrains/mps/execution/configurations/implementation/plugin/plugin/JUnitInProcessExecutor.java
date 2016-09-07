@@ -4,8 +4,8 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
-import jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor;
-import jetbrains.mps.lang.test.util.TestLightRunState;
+import jetbrains.mps.baseLanguage.unitTest.execution.server.TestInProcessExecutor;
+import jetbrains.mps.lang.test.util.TestInProcessRunState;
 import jetbrains.mps.lang.test.util.RunStateEnum;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
@@ -17,13 +17,13 @@ import org.jetbrains.annotations.Nullable;
 import java.io.OutputStream;
 import com.intellij.execution.process.ProcessOutputTypes;
 
-public class JUnitLightExecutor implements Executor {
+public class JUnitInProcessExecutor implements Executor {
   private final Iterable<ITestNodeWrapper> myNodes;
   private final TestEventsDispatcher myDispatcher;
-  private TestLightExecutor myExecutor;
-  private static volatile TestLightRunState ourTestRunState = new TestLightRunState();
+  private TestInProcessExecutor myExecutor;
+  private static volatile TestInProcessRunState ourTestRunState = new TestInProcessRunState();
 
-  public JUnitLightExecutor(Iterable<ITestNodeWrapper> testNodeWrappers, TestEventsDispatcher dispatcher) {
+  public JUnitInProcessExecutor(Iterable<ITestNodeWrapper> testNodeWrappers, TestEventsDispatcher dispatcher) {
     myNodes = testNodeWrappers;
     myDispatcher = dispatcher;
   }
@@ -39,9 +39,9 @@ public class JUnitLightExecutor implements Executor {
       throw new ExecutionException("Could not find tests to run");
     }
     if (!(checkExecutionIsPossible())) {
-      return new JUnitLightExecutor.EmptyProcessHandler();
+      return new JUnitInProcessExecutor.EmptyProcessHandler();
     }
-    myExecutor = new TestLightExecutor(myDispatcher, myNodes, ourTestRunState);
+    myExecutor = new TestInProcessExecutor(myDispatcher, myNodes, ourTestRunState);
     final Future<?> future = doExecute(myExecutor);
     final FakeProcessHandler process = new FakeProcessHandler(myExecutor.getProcess(), future, myExecutor);
     return process;
@@ -56,7 +56,7 @@ public class JUnitLightExecutor implements Executor {
           executor.execute();
         } finally {
           executor.dispose();
-          JUnitLightExecutor.this.dispose();
+          JUnitInProcessExecutor.this.dispose();
         }
       }
     });
@@ -65,7 +65,7 @@ public class JUnitLightExecutor implements Executor {
   /**
    * FOR TEST USE ONLY
    */
-  public static TestLightRunState getRunState() {
+  public static TestInProcessRunState getRunState() {
     return ourTestRunState;
   }
 
@@ -77,19 +77,24 @@ public class JUnitLightExecutor implements Executor {
     protected void destroyProcessImpl() {
       myExecutor.terminateRun();
     }
+
     protected void detachProcessImpl() {
     }
+
     public boolean detachIsDefault() {
       return false;
     }
+
     @Nullable
     public OutputStream getProcessInput() {
       return null;
     }
+
     @Override
     public boolean isProcessTerminated() {
       return true;
     }
+
     @Override
     public void startNotify() {
       super.startNotify();

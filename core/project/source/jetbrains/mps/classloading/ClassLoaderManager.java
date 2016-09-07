@@ -610,6 +610,10 @@ public class ClassLoaderManager implements CoreComponent {
     }
   };
 
+  public boolean isLoadedByMPS(@NotNull ReloadableModule module) {
+    return myMPSLoadableCondition.met(module);
+  }
+
   /**
    * it is possible to create ModuleClassLoader for such module
    */
