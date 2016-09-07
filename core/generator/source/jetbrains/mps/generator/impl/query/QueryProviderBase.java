@@ -39,6 +39,7 @@ import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.generator.template.WeavingAnchorContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -56,6 +57,7 @@ import java.util.Collections;
  */
 public abstract class QueryProviderBase implements GeneratorQueryProvider {
   private final int myVersion;
+  private ReflectiveQueryProvider myReflectiveFallback;
 
   protected QueryProviderBase() {
     // this cons is invoked from previous version of QueriesGenerated that implements GeneratorQueryProvider
@@ -65,6 +67,18 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   protected QueryProviderBase(int version) {
     // this one is invoked from newly generated implementations to indicate new methods were generated
     myVersion = version;
+  }
+
+  // INTERNAL API for QueryProviderCache, to support non-reflective providers generated with MPS 3.3
+  @ToRemove(version = 3.4)
+  public boolean needsReflectiveFallback() {
+    return myVersion == 0;
+  }
+
+  // INTERNAL API for QueryProviderCache, to support non-reflective providers generated with MPS 3.3
+  @ToRemove(version = 3.4)
+  public void useReflectiveFallback(ReflectiveQueryProvider rqp) {
+    myReflectiveFallback = rqp;
   }
 
   @NotNull
@@ -168,7 +182,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   public ReferenceTargetQuery getReferenceTargetQuery(@NotNull QueryKey identity) {
     if (myVersion == 0) {
       // XXX provisional code to support generated providers prior to addition of the method
-      return new ReflectiveQueryProvider().getReferenceTargetQuery(identity);
+      return myReflectiveFallback.getReferenceTargetQuery(identity);
     }
     return new RefQuery(identity);
   }
@@ -178,7 +192,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   public CallArgumentQuery getTemplateCallArgumentQuery(@NotNull QueryKey identity) {
     if (myVersion == 0) {
       // XXX provisional code to support generated providers prior to addition of the method
-      return new ReflectiveQueryProvider().getTemplateCallArgumentQuery(identity);
+      return myReflectiveFallback.getTemplateCallArgumentQuery(identity);
     }
     // DefaultQueryExecutionContext used to evaluate to null if no method was found.
     // It is reasonable for scenarios like bootstrap of the generator itself (e.g. to generate a new CALL inside QueriesGenerate)
@@ -193,7 +207,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   public VariableValueQuery getVariableValueQuery(@NotNull QueryKey identity) {
     if (myVersion == 0) {
       // XXX provisional code to support generated providers prior to addition of the method
-      return new ReflectiveQueryProvider().getVariableValueQuery(identity);
+      return myReflectiveFallback.getVariableValueQuery(identity);
     }
     // Same as above, no reason to default to null.
     return new Missing(identity);
@@ -204,7 +218,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   public InsertMacroQuery getInsertMacroQuery(@NotNull QueryKey identity) {
     if (myVersion == 0) {
       // XXX provisional code to support generated providers prior to addition of the method
-      return new ReflectiveQueryProvider().getInsertMacroQuery(identity);
+      return myReflectiveFallback.getInsertMacroQuery(identity);
     }
     // used to evaluate to null if missing in DQEC. Why not do the same here?
     return new Missing(identity);
@@ -214,7 +228,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   @Override
   public MapNodeQuery getMapNodeQuery(@NotNull QueryKey identity) {
     if (myVersion == 0) {
-      return new ReflectiveQueryProvider().getMapNodeQuery(identity);
+      return myReflectiveFallback.getMapNodeQuery(identity);
     }
     return new Missing(identity);
   }
@@ -223,7 +237,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   @Override
   public MapPostProcessor getMapPostProcessor(@NotNull QueryKey identity) {
     if (myVersion == 0) {
-      return new ReflectiveQueryProvider().getMapPostProcessor(identity);
+      return myReflectiveFallback.getMapPostProcessor(identity);
     }
     return new Missing(identity);
   }

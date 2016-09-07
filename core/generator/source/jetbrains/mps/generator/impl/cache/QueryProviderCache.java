@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,23 +18,25 @@ package jetbrains.mps.generator.impl.cache;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.interpreted.ReflectiveQueryProvider;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
+import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Keep track of GeneratorQueryProvider instances during generation session
  *
+ * XXX shall pass TemplateModules/TemplateModels of generation plan here, and ask TemplateModel for
+ * GQP class (use honest module.getOwnClass() then). Though, don't need one for generated generators, how to tell?
+ *
  * @author Artem Tikhomirov
  */
 public class QueryProviderCache implements GeneratorQueryProvider.Source {
-  private final Set<SModelReference> myReflectionQueries = new HashSet<SModelReference>();
+  private final Map<SModelReference, ReflectiveQueryProvider> myReflectionQueries = new HashMap<>();
   private final Map<SModelReference, GeneratorQueryProvider> myDirectQueries = new HashMap<SModelReference, GeneratorQueryProvider>();
   private final IGeneratorLogger myLog;
 
@@ -45,23 +47,29 @@ public class QueryProviderCache implements GeneratorQueryProvider.Source {
   @Override
   public synchronized GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference templateNode) {
     final SModelReference mr = templateNode.getModelReference();
-    if (myReflectionQueries.contains(mr)) {
-      // At the moment, I don't see a reason to cache RQP as they are quite lightweight and stateless.
-      // However, once (and if) there's CachingQueryProvider that does all the caching so that clients don't need to care
-      // about caching themselves (e.g. clients like DefaultQueryExecutionContext), the need to preserve RQP instance may arise.
-      return new ReflectiveQueryProvider();
+    ReflectiveQueryProvider rqp = myReflectionQueries.get(mr);
+    if (rqp != null) {
+      return rqp;
     }
-    if (myDirectQueries.containsKey(mr)) {
-      return myDirectQueries.get(mr);
+    GeneratorQueryProvider gqp = myDirectQueries.get(mr);
+    if (gqp != null) {
+      return gqp;
     }
     try {
       Class<?> qg = QueryMethodGenerated.getQueriesGeneratedClassFor(mr, true);
       if (GeneratorQueryProvider.class.isAssignableFrom(qg)) {
         @SuppressWarnings("unchecked")
         Class<GeneratorQueryProvider> providerClass = (Class<GeneratorQueryProvider>) qg;
-        GeneratorQueryProvider p = providerClass.newInstance();
-        myDirectQueries.put(mr, p);
-        return p;
+        gqp = providerClass.newInstance();
+        if (((QueryProviderBase) gqp).needsReflectiveFallback()) {
+          ((QueryProviderBase) gqp).useReflectiveFallback(new ReflectiveQueryProvider(qg));
+        }
+        myDirectQueries.put(mr, gqp);
+        return gqp;
+      } else {
+        rqp = new ReflectiveQueryProvider(qg);
+        myReflectionQueries.put(mr,rqp);
+        return rqp;
       }
     } catch (ClassNotFoundException e) {
       myLog.error(templateNode, e.getMessage());
@@ -73,8 +81,8 @@ public class QueryProviderCache implements GeneratorQueryProvider.Source {
       myLog.error(templateNode, e.toString());
     }
     // fall-back to default
-    myReflectionQueries.add(mr);
-    return new ReflectiveQueryProvider();
+    return new QueryProviderBase(1) {
+    };
   }
 
   public synchronized void dispose() {

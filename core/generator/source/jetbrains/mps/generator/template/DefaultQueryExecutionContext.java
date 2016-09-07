@@ -41,7 +41,7 @@ import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.util.QueryMethodGenerated.QueryMethod;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -203,7 +203,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       String methodName = TemplateFunctionMethodName.templateFragment_ContextNodeQuery(query);
       try {
         final TemplateFragmentContext qctx = new TemplateFragmentContext(context, mainContextNode, templateFragmentNode.getReference());
-        return this.<SNode>createMethod(query.getModel(), methodName).invoke(qctx);
+        return this.invokeMethod(query.getModel(), methodName, qctx);
       } catch (NoSuchMethodException e) {
         getLog().warning(templateFragmentNode.getReference(), "cannot find context node method for template fragment '" + methodName + "' : evaluate to null");
         return null;
@@ -244,7 +244,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     try {
       final ReferenceMacroContext qctx =
           new ReferenceMacroContext(context, outputNode, refMacro.getReference(), AttributeOperations.getLink(refMacro));
-      return createMethod(refMacro.getModel(), methodName).invoke(qctx);
+      return invokeMethod(refMacro.getModel(), methodName, qctx);
     } catch (Throwable t) {
       getLog().handleException(t);
       getLog().error(refMacro.getReference(), "cannot evaluate reference macro, exception was thrown", GeneratorUtil.describeInput(context));
@@ -365,7 +365,9 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     return myGenerator.getLogger();
   }
 
-  private <T> QueryMethod<T> createMethod(SModel model, String methodName) throws ClassNotFoundException, NoSuchMethodException {
-    return QueryMethodGenerated.getQueryMethod(model.getReference(), methodName);
+  @Deprecated
+  @ToRemove(version = 3.4)
+  private <T> T invokeMethod(SModel model, String methodName, TemplateQueryContext ctx) throws ClassNotFoundException, NoSuchMethodException {
+    return QueryMethodGenerated.invoke(methodName, null, ctx, model.getReference(), true);
   }
 }
