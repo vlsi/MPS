@@ -125,7 +125,7 @@ class InternalJavaCompiler {
           String fqName = toCopy.getPath();
 
           fqName = fqName.substring(0, fqName.length() - toCopy.getFile().getName().length());
-          String path = NameUtil.toSystemDependentPath(fqName) + toCopy.getFile().getName();
+          String path = fqName + toCopy.getFile().getName();
 
           if (new File(toCopy.getFile().getAbsolutePath()).exists()) {
             FileUtil.copyFile(new File(toCopy.getFile().getAbsolutePath()), new File(classesGen.getDescendant(path).toPath().toAbsolute().toString()));
