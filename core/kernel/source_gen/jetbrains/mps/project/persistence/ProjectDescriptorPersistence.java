@@ -16,6 +16,7 @@ import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.xml.XmlUtil;
+import jetbrains.mps.vfs.path.Path;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -47,14 +48,20 @@ public class ProjectDescriptorPersistence {
     Element projectModules = new Element(PROJECT_MODULES_TAG);
     for (ModulePath path : Sequence.fromIterable(((Iterable<ModulePath>) descriptor.getModulePaths())).sort(new ISelector<ModulePath, String>() {
       public String select(ModulePath p) {
-        return myMacroHelper.shrinkPath(p.getPath());
+        return shrinkPath(p);
       }
     }, true)) {
       // TODO: move from MacrosFactory to PathMacroUtil 
-      XmlUtil.tagWithAttributes(projectModules, MODULE_PATH_TAG, PATH_TAG, myMacroHelper.shrinkPath(path.getPath()), FOLDER_TAG, path.getVirtualFolder());
+      XmlUtil.tagWithAttributes(projectModules, MODULE_PATH_TAG, PATH_TAG, shrinkPath(path), FOLDER_TAG, path.getVirtualFolder());
     }
     project.addContent(projectModules);
     return project;
+  }
+
+  private String shrinkPath(@NotNull ModulePath p) {
+    String shrinkedPath = myMacroHelper.shrinkPath(p.getPath());
+    // fixme such filepath convertation is not supported by Path (IDEA stores windows paths as C:/smth !) 
+    return shrinkedPath.replace(Path.WIN_SEPARATOR, Path.UNIX_SEPARATOR);
   }
 
   @NotNull
@@ -64,7 +71,7 @@ public class ProjectDescriptorPersistence {
     if (root == null) {
       return descriptor;
     }
-    ProjectDescriptor result_jnk9az_a3a61 = descriptor;
+    ProjectDescriptor result_jnk9az_a3a81 = descriptor;
     List<Element> moduleList = ListSequence.fromList(new ArrayList<Element>());
     // AP : these are deprecated, aren't they? 
     ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectSolutions"), "solutionPath")));
@@ -75,7 +82,7 @@ public class ProjectDescriptorPersistence {
       String path = myMacroHelper.expandPath(moduleElement.getAttributeValue(PATH_TAG));
       String virtualFolder = moduleElement.getAttributeValue(FOLDER_TAG);
       ModulePath modulePath = new ModulePath(path, virtualFolder);
-      result_jnk9az_a3a61.addModulePath(modulePath);
+      result_jnk9az_a3a81.addModulePath(modulePath);
     }
     return descriptor;
   }

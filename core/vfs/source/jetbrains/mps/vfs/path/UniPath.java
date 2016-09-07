@@ -225,7 +225,6 @@ public class UniPath extends AbstractPath {
     List<CommonPath> newArchivePaths = new ArrayList<>(myArchivePaths.size());
     newArchivePaths.addAll(myArchivePaths.stream().map(converter).collect(Collectors.toList()));
     return UniPath.fromParts(converter.apply(myPath), newArchivePaths);
-
   }
 
   @Override
