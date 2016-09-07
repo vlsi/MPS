@@ -312,7 +312,7 @@
                 <node concept="liA8E" id="4dr7st09l5J" role="2OqNvi">
                   <ref role="37wK5l" to="mhbf:~SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLink):java.lang.Iterable" resolve="getChildren" />
                   <node concept="359W_D" id="4dr7st09l5K" role="37wK5m">
-                    <ref role="359W_F" to="tpck:4uZwTti3__2" />
+                    <ref role="359W_F" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
                     <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
                   </node>
                 </node>
@@ -518,7 +518,7 @@
                   <ref role="37wK5l" to="mhbf:~SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLink):java.lang.Iterable" resolve="getChildren" />
                   <node concept="359W_D" id="4uVwhQyNsbA" role="37wK5m">
                     <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                    <ref role="359W_F" to="tpck:4uZwTti3__2" />
+                    <ref role="359W_F" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
                   </node>
                 </node>
               </node>
@@ -736,7 +736,7 @@
                 <node concept="liA8E" id="2vnI1ojqBP3" role="2OqNvi">
                   <ref role="37wK5l" to="mhbf:~SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLink):java.lang.Iterable" resolve="getChildren" />
                   <node concept="359W_D" id="2vnI1ojqBP4" role="37wK5m">
-                    <ref role="359W_F" to="tpck:4uZwTti3__2" />
+                    <ref role="359W_F" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
                     <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
                   </node>
                 </node>
@@ -1208,7 +1208,7 @@
   <node concept="3vrhyV" id="2LiUEk8oQ$g">
     <property role="TrG5h" value="structure" />
     <node concept="1sEMCm" id="4lJsQ5yF8Ox" role="1sFm88">
-      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD33/Structure" />
+      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD34/Structure" />
     </node>
     <node concept="1QGGSu" id="P5ZkC6wmh7" role="3vqPLo">
       <property role="1iqoE4" value="${module}/icons/structureModel.png" />

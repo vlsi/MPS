@@ -43,7 +43,7 @@
   <node concept="3vrhyV" id="2LiUEk8oQ$g">
     <property role="TrG5h" value="editor" />
     <node concept="1sEMCm" id="4lJsQ5yF8Ox" role="1sFm88">
-      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD33/Editor" />
+      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD34/Editor" />
     </node>
     <node concept="1QGGSu" id="P5ZkC6w54A" role="3vqPLo">
       <property role="1iqoE4" value="${module}/icons/editorModel.png" />

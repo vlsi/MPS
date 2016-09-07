@@ -60,7 +60,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
       }
       @Nullable
       public String getHelpUrl() {
-        return "http://confluence.jetbrains.com/display/MPSD33/Plugin";
+        return "http://confluence.jetbrains.com/display/MPSD34/Plugin";
       }
 
 

@@ -36,7 +36,7 @@
   <node concept="3vrhyV" id="2LiUEk8oQ$g">
     <property role="TrG5h" value="scripts" />
     <node concept="1sEMCm" id="4lJsQ5yF8Ox" role="1sFm88">
-      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD33/Scripts" />
+      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD34/Scripts" />
     </node>
     <node concept="2V$Bhx" id="4r4fzRRxNib" role="QG$2i">
       <property role="2V$B1T" value="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" />
