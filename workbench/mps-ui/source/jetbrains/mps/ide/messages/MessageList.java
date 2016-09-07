@@ -43,7 +43,6 @@ import com.intellij.util.ExceptionUtil;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
 import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.MPSActionPlaces;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.search.SearchHistoryStorage;
@@ -384,6 +383,10 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
 
       @Override
       public void mouseReleased(MouseEvent e) {
+        if (e.isPopupTrigger()) {
+          showPopupMenu(e);
+          return;
+        }
         int index = myList.locationToIndex(e.getPoint());
         if (mousePressedIndex != -1 && index != -1 && mousePressedIndex != index) {
           myList.addSelectionInterval(mousePressedIndex, index);
