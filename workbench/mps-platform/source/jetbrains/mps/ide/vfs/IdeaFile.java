@@ -151,7 +151,7 @@ public class IdeaFile implements IFileEx, CachingFile {
   @NotNull
   public IdeaFile getDescendant(@NotNull String suffix) {
     String path = getPath();
-    String separator = path.contains("!") ? "/" : File.separator;
+    String separator = Path.UNIX_SEPARATOR; // we are system-independent underneath
     return new IdeaFile(myFileSystem, path + (path.endsWith(separator) ? "" : separator) + suffix);
   }
 
