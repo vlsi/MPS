@@ -1452,7 +1452,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myHighlightManager.dispose();
 
     detachListeners();
-
+    // we expect this method to be executed at least inside model read
+    // TODO: add assertion here
+    myAutoValidator.dispose();
     myUpdater.dispose();
 
     if (hasUI()) {
