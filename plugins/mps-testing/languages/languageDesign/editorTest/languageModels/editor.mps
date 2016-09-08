@@ -81,6 +81,7 @@
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
+      <concept id="1149850725784" name="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" flags="ng" index="2SsqMj" />
       <concept id="1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" flags="ng" index="V5hpn">
         <child id="1186402402630" name="styleClass" index="V601i" />
       </concept>
@@ -2246,6 +2247,44 @@
   </node>
   <node concept="3p36aQ" id="1wEcoXjJy3D">
     <ref role="aqKnT" to="68nn:P9hc2Kf3kH" resolve="SubstTestBooleanPropertyChild" />
+  </node>
+  <node concept="24kQdi" id="nH9mMU35KC">
+    <property role="3GE5qa" value="attributes.completion" />
+    <ref role="1XX52x" to="68nn:nH9mMU35G0" resolve="AttributeWithChildren" />
+    <node concept="3EZMnI" id="nH9mMU35KE" role="2wV5jI">
+      <node concept="3F0ifn" id="nH9mMU35KK" role="3EZMnx">
+        <property role="3F0ifm" value="@attributeWithChildren(" />
+      </node>
+      <node concept="3F2HdR" id="nH9mMU35KM" role="3EZMnx">
+        <ref role="1NtTu8" to="68nn:nH9mMU35J5" resolve="expressions" />
+        <node concept="lj46D" id="nH9mMU35KN" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="l2Vlx" id="nH9mMU35KQ" role="2czzBx" />
+      </node>
+      <node concept="3F0ifn" id="53lOj_WYUKS" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+        <node concept="ljvvj" id="53lOj_WYUPd" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="2SsqMj" id="nH9mMU35L8" role="3EZMnx" />
+      <node concept="l2Vlx" id="nH9mMU35KG" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="nH9mMU35LJ">
+    <property role="3GE5qa" value="attributes.completion" />
+    <ref role="1XX52x" to="68nn:nH9mMU35KY" resolve="AttributedConcept" />
+    <node concept="3F0ifn" id="nH9mMU35LL" role="2wV5jI">
+      <property role="3F0ifm" value="attributed node" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="53lOj_WYUPj">
+    <property role="3GE5qa" value="attributes.completion" />
+    <ref role="1XX52x" to="68nn:53lOj_WYUPg" resolve="BaseAttributeChild" />
+    <node concept="PMmxH" id="53lOj_WYUPl" role="2wV5jI">
+      <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+    </node>
   </node>
 </model>
 

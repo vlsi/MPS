@@ -15,6 +15,15 @@
     <file name="AttractsFocusBlock_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.AttractsFocusBlock_BehaviorDescriptor" />
     </file>
+    <file name="AttributeChild_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.AttributeChild_BehaviorDescriptor" />
+    </file>
+    <file name="AttributeWithChildren_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.AttributeWithChildren_BehaviorDescriptor" />
+    </file>
+    <file name="AttributedConcept_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.AttributedConcept_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,54,0" name="jetbrains.mps.lang.editor.editorTest.behavior.BehaviorAspectDescriptor" />
     </file>

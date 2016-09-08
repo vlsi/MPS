@@ -10,6 +10,8 @@
   <imports>
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="6lvu" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cellMenu(MPS.Editor/)" />
+    <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
@@ -197,6 +199,7 @@
       </concept>
     </language>
     <language id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest">
+      <concept id="5824791737913814352" name="jetbrains.mps.lang.editor.editorTest.structure.AttributeChild" flags="ng" index="GbBLD" />
       <concept id="9133079350911740822" name="jetbrains.mps.lang.editor.editorTest.structure.SubstMiddlewareChild" flags="ng" index="2IcTNh">
         <child id="9133079350911740918" name="child" index="2IcTML" />
       </concept>
@@ -213,6 +216,10 @@
         <child id="9133079350911740921" name="middlewareChild" index="2IcTMY" />
         <child id="957371990174549618" name="multiChild" index="2X2waM" />
         <child id="957371990174086639" name="singleChild" index="2Xtn4J" />
+      </concept>
+      <concept id="427038688578133054" name="jetbrains.mps.lang.editor.editorTest.structure.AttributedConcept" flags="ng" index="2ZSn_i" />
+      <concept id="427038688578132736" name="jetbrains.mps.lang.editor.editorTest.structure.AttributeWithChildren" flags="ng" index="2ZSnTG">
+        <child id="427038688578132933" name="children" index="2ZSnUD" />
       </concept>
       <concept id="7803854675610450426" name="jetbrains.mps.lang.editor.editorTest.structure.DelTestRoot" flags="ng" index="1QLem1">
         <child id="7803854675610450486" name="container" index="1QLepd" />
@@ -4976,6 +4983,40 @@
         <property role="2TTd_B" value="v2" />
       </node>
       <node concept="3clFbH" id="76t$LiKqHJ_" role="3cqZAp" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="53lOj_WYosa">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="SubstituteAttributeChild" />
+    <property role="3YCmrE" value="MPS-24551 Wrong menu shown for an empty child cell in an Attribute" />
+    <node concept="2ZSn_i" id="53lOj_WYBTy" role="LiRBU">
+      <node concept="2ZSnTG" id="53lOj_WYU$i" role="lGtFl">
+        <node concept="LIFWc" id="53lOj_WZ8Fz" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="empty_children" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="53lOj_WZ8Mh" role="LjaKd">
+      <node concept="2TK7Tu" id="53lOj_WZjKq" role="3cqZAp">
+        <property role="2TTd_B" value="child" />
+      </node>
+    </node>
+    <node concept="2ZSn_i" id="53lOj_WZk7a" role="LiZbd">
+      <node concept="2ZSnTG" id="53lOj_WZk7b" role="lGtFl">
+        <node concept="GbBLD" id="53lOj_WZAZ3" role="2ZSnUD">
+          <node concept="LIFWc" id="53lOj_WZAZl" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="5" />
+            <property role="p6zMs" value="5" />
+            <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

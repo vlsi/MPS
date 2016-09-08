@@ -13,6 +13,9 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AttractsFocusBlock = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_AttributeChild = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_AttributeWithChildren = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_AttributedConcept = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BinaryExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BracesBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BracesStubBlock = new ConceptPresentationBuilder().create();
@@ -69,98 +72,104 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 0:
         return props_AttractsFocusBlock;
       case 1:
-        return props_BinaryExpression;
+        return props_AttributeChild;
       case 2:
-        return props_BracesBlock;
+        return props_AttributeWithChildren;
       case 3:
-        return props_BracesStubBlock;
+        return props_AttributedConcept;
       case 4:
-        return props_ClassReference;
+        return props_BinaryExpression;
       case 5:
-        return props_CollapsedByDefault;
+        return props_BracesBlock;
       case 6:
-        return props_CollapsedConditionally;
+        return props_BracesStubBlock;
       case 7:
-        return props_CollapsibleConcept;
+        return props_ClassReference;
       case 8:
-        return props_Composition;
+        return props_CollapsedByDefault;
       case 9:
-        return props_DelTestAbstractChild;
+        return props_CollapsedConditionally;
       case 10:
-        return props_DelTestChild1;
+        return props_CollapsibleConcept;
       case 11:
-        return props_DelTestChildContainer;
+        return props_Composition;
       case 12:
-        return props_DelTestRoot;
+        return props_DelTestAbstractChild;
       case 13:
-        return props_FoldingContainer;
+        return props_DelTestChild1;
       case 14:
-        return props_IBaseTestBlock;
+        return props_DelTestChildContainer;
       case 15:
-        return props_InitAbstractChild;
+        return props_DelTestRoot;
       case 16:
-        return props_InitChildWithDirectCycle_card1;
+        return props_FoldingContainer;
       case 17:
-        return props_InitChildWithDirectCycle_card1n;
+        return props_IBaseTestBlock;
       case 18:
-        return props_InitChildWithIndirectCycle_card1;
+        return props_InitAbstractChild;
       case 19:
-        return props_InitChildWithIndirectCycle_card1n;
+        return props_InitChildWithDirectCycle_card1;
       case 20:
-        return props_InitChildWithTwoSameConceptChildren;
+        return props_InitChildWithDirectCycle_card1n;
       case 21:
-        return props_InitContainer;
+        return props_InitChildWithIndirectCycle_card1;
       case 22:
-        return props_InitGrandChild;
+        return props_InitChildWithIndirectCycle_card1n;
       case 23:
-        return props_InitGrandChildWithIndirectCycle_card1;
+        return props_InitChildWithTwoSameConceptChildren;
       case 24:
-        return props_InitGrandChildWithIndirectCycle_card1n;
+        return props_InitContainer;
       case 25:
-        return props_InspectorBlock;
+        return props_InitGrandChild;
       case 26:
-        return props_IntegerLiteral;
+        return props_InitGrandChildWithIndirectCycle_card1;
       case 27:
-        return props_NonEmptyProperty;
+        return props_InitGrandChildWithIndirectCycle_card1n;
       case 28:
-        return props_NotEditableVaraileReference;
+        return props_InspectorBlock;
       case 29:
-        return props_PlusExpression;
+        return props_IntegerLiteral;
       case 30:
-        return props_ReferenceAnnotataion;
+        return props_NonEmptyProperty;
       case 31:
-        return props_SelectionChild;
+        return props_NotEditableVaraileReference;
       case 32:
-        return props_SelectionContainer;
+        return props_PlusExpression;
       case 33:
-        return props_SideTranformWrapper;
+        return props_ReferenceAnnotataion;
       case 34:
-        return props_SimplePropertyAttribute;
+        return props_SelectionChild;
       case 35:
-        return props_SimplePropertyContainer;
+        return props_SelectionContainer;
       case 36:
-        return props_StubBlock;
+        return props_SideTranformWrapper;
       case 37:
-        return props_StyleChild;
+        return props_SimplePropertyAttribute;
       case 38:
-        return props_StyleParent;
+        return props_SimplePropertyContainer;
       case 39:
-        return props_SubstMiddlewareChild;
+        return props_StubBlock;
       case 40:
-        return props_SubstTestAbstractChild;
+        return props_StyleChild;
       case 41:
-        return props_SubstTestBooleanPropertyChild;
+        return props_StyleParent;
       case 42:
-        return props_SubstTestEnumPropertyChild;
+        return props_SubstMiddlewareChild;
       case 43:
-        return props_SubstTestRoot;
+        return props_SubstTestAbstractChild;
       case 44:
-        return props_TestBlockList;
+        return props_SubstTestBooleanPropertyChild;
       case 45:
-        return props_VariableDeclarationBlock;
+        return props_SubstTestEnumPropertyChild;
       case 46:
-        return props_VariableDeclarationReference;
+        return props_SubstTestRoot;
       case 47:
+        return props_TestBlockList;
+      case 48:
+        return props_VariableDeclarationBlock;
+      case 49:
+        return props_VariableDeclarationReference;
+      case 50:
         return props_VerticalLayoutBlockList;
     }
     throw new IllegalStateException();

@@ -1110,7 +1110,6 @@
     <property role="3GE5qa" value="attributes" />
     <ref role="aqKnT" to="tpck:4uZwTti3_$T" resolve="Attribute" />
     <node concept="1Qtc8_" id="5iFVnFAwGxh" role="IW6Ez">
-      <node concept="3eGOoe" id="5iFVnFAwGxn" role="1Qtc8$" />
       <node concept="3cWJ9i" id="5iFVnFAxHL_" role="1Qtc8$">
         <node concept="CtIbL" id="5iFVnFAxHLB" role="CtIbM">
           <property role="CtIbK" value="LEFT" />

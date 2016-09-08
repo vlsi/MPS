@@ -39,6 +39,7 @@
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
+        <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
@@ -713,6 +714,41 @@
     <property role="3GE5qa" value="init" />
     <property role="TrG5h" value="InitGrandChild" />
     <property role="EcuMT" value="7454474523886895180" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="nH9mMU35G0">
+    <property role="EcuMT" value="427038688578132736" />
+    <property role="TrG5h" value="AttributeWithChildren" />
+    <property role="3GE5qa" value="attributes.completion" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="M6xJ_" id="nH9mMU35G1" role="lGtFl">
+      <property role="Hh88m" value="attribute" />
+      <node concept="trNpa" id="nH9mMU35Li" role="EQaZv">
+        <ref role="trN6q" node="nH9mMU35KY" resolve="AttributedConcept" />
+      </node>
+    </node>
+    <node concept="1TJgyj" id="nH9mMU35J5" role="1TKVEi">
+      <property role="IQ2ns" value="427038688578132933" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="children" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="53lOj_WYUPg" resolve="AttributeChild" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="nH9mMU35KY">
+    <property role="EcuMT" value="427038688578133054" />
+    <property role="3GE5qa" value="attributes.completion" />
+    <property role="TrG5h" value="AttributedConcept" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="53lOj_WYUPg">
+    <property role="EcuMT" value="5824791737913814352" />
+    <property role="3GE5qa" value="attributes.completion" />
+    <property role="TrG5h" value="AttributeChild" />
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="34LRSv" value="child" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
 </model>
