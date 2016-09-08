@@ -65,6 +65,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   private boolean myDisposed = false;
   // See: https://youtrack.jetbrains.com/issue/MPS-24409
   private EditorState myDelayedState = null;
+  private boolean mySelected;
 
   // do not duplicate code that obtains MPSNodeVirtualFile from regular IDEA VirtualFile
   // in MPSFileNodeEditorProvider and MPSFileNodeEditor
@@ -228,12 +229,14 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   @Override
   public void selectNotify() {
+    mySelected = true;
     myNodeEditor.selectNotify();
   }
 
   @Override
   public void deselectNotify() {
     myNodeEditor.deselectNotify();
+    mySelected = false;
   }
 
   @Override
@@ -303,6 +306,10 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
     if (state != null) {
       setState(state, false);
+    }
+
+    if (mySelected) {
+      myNodeEditor.selectNotify();
     }
 
     myComponent.add(((BaseNodeEditor) myNodeEditor).getComponent(), BorderLayout.CENTER);
