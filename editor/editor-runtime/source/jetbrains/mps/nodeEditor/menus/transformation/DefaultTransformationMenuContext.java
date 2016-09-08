@@ -154,10 +154,7 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
   }
 
   /**
-   * Creates items from menus looked up by {@code menuLookup}. If all the menus are inapplicable, returns
-   *
-   * @param menuLookup
-   * @return
+   * Creates items from menus looked up by {@code menuLookup}. If all the menus are inapplicable, returns a fallback menu (see {@link ImplicitMenuLookup}).
    */
   @NotNull
   public List<TransformationMenuItem> createItemsWithFallback(@Nullable TransformationMenuLookup menuLookup) {
