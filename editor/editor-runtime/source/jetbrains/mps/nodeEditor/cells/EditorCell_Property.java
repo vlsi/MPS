@@ -144,10 +144,6 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
   public void changeText(String text) {
     super.changeText(text);
 
-    if (!isValidText(text) && isValidText(IntelligentInputUtil.trimLeft(text))) {
-      text = IntelligentInputUtil.trimLeft(text);
-    }
-
     if (isValidText(text) && isEditable()) {
       myModelAccessor.setText(text);
       synchronizeViewWithModel();
