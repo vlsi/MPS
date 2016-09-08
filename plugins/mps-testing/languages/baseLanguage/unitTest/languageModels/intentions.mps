@@ -48,9 +48,6 @@
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
-      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
-        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
@@ -83,9 +80,6 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
-      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
-        <child id="1081516765348" name="expression" index="3fr31v" />
-      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -103,12 +97,6 @@
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
-      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
-      </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions">
@@ -119,7 +107,6 @@
       <concept id="1192796902958" name="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" flags="nn" index="2Sf5sV" />
       <concept id="2522969319638091381" name="jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration" flags="ig" index="2ZfUlf">
         <property id="2522969319638091386" name="isAvailableInChildNodes" index="2ZfUl0" />
-        <property id="2522969319638091385" name="isErrorIntention" index="2ZfUl3" />
         <reference id="2522969319638198290" name="forConcept" index="2ZfgGC" />
         <child id="2522969319638198291" name="executeFunction" index="2ZfgGD" />
         <child id="2522969319638093995" name="isApplicableFunction" index="2ZfVeh" />
@@ -683,53 +670,6 @@
                 </node>
                 <node concept="1$rogu" id="6xD3woJonAZ" role="2OqNvi" />
               </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="2S6QgY" id="7Cm4l4B9yKw">
-    <property role="2ZfUl3" value="true" />
-    <property role="TrG5h" value="FixPluginKindForMPSTestCase" />
-    <ref role="2ZfgGC" to="tpe3:hGB2rPm" resolve="ITestCase" />
-    <node concept="2S6ZIM" id="7Cm4l4B9yKx" role="2ZfVej">
-      <node concept="3clFbS" id="7Cm4l4B9yKy" role="2VODD2">
-        <node concept="3clFbF" id="7Cm4l4B9_1q" role="3cqZAp">
-          <node concept="Xl_RD" id="7Cm4l4B9_1p" role="3clFbG">
-            <property role="Xl_RC" value="Fix plugin kind for module (mps testcases should be in plugin solutions)" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2Sbjvc" id="7Cm4l4B9yKz" role="2ZfgGD">
-      <node concept="3clFbS" id="7Cm4l4B9yK$" role="2VODD2">
-        <node concept="3clFbJ" id="HPU8mWQzU$" role="3cqZAp">
-          <node concept="3fqX7Q" id="HPU8mWQzV$" role="3clFbw">
-            <node concept="2YIFZM" id="HPU8mWQzWo" role="3fr31v">
-              <ref role="37wK5l" to="pb7l:HPU8mWQuRo" resolve="fixPluginKindForMPSTestCase" />
-              <ref role="1Pybhc" to="pb7l:7Cm4l4B9rV0" resolve="CheckUtils" />
-              <node concept="2Sf5sV" id="HPU8mWQzWH" role="37wK5m" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="HPU8mWQzUA" role="3clFbx">
-            <node concept="3SKdUt" id="HPU8mWQzVO" role="3cqZAp">
-              <node concept="3SKdUq" id="HPU8mWQzVR" role="3SKWNk">
-                <property role="3SKdUp" value="todo: ?" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2SaL7w" id="7Cm4l4B9_wN" role="2ZfVeh">
-      <node concept="3clFbS" id="7Cm4l4B9_wO" role="2VODD2">
-        <node concept="3clFbF" id="7Cm4l4B9_EG" role="3cqZAp">
-          <node concept="3fqX7Q" id="7Cm4l4B9_EE" role="3clFbG">
-            <node concept="2YIFZM" id="7Cm4l4B9AbX" role="3fr31v">
-              <ref role="37wK5l" to="pb7l:7Cm4l4B9vfm" resolve="checkPluginKindForMPSTestCase" />
-              <ref role="1Pybhc" to="pb7l:7Cm4l4B9rV0" resolve="CheckUtils" />
-              <node concept="2Sf5sV" id="7Cm4l4B9ARt" role="37wK5m" />
             </node>
           </node>
         </node>
