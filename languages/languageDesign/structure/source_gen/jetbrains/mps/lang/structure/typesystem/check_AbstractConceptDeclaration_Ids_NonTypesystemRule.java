@@ -117,7 +117,7 @@ public class check_AbstractConceptDeclaration_Ids_NonTypesystemRule extends Abst
           }
         }
       } else {
-        if (ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(acd), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))).any(new IWhereFilter<SNode>() {
+        if (ListSequence.fromList(SLinkOperations.getChildren(acd, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return it != l && eq_hcbjaj_a0a0a0a0a0a0a0a0e0b(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId")), SPropertyOperations.getString(l, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId")));
           }

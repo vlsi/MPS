@@ -595,7 +595,7 @@
       </scope>
       <unit id="5424895381998248116" at="39,253,43,7" name="jetbrains.mps.lang.structure.typesystem.check_AbstractConceptDeclaration_Ids_NonTypesystemRule$1" />
       <unit id="5424895381998286910" at="79,211,83,9" name="jetbrains.mps.lang.structure.typesystem.check_AbstractConceptDeclaration_Ids_NonTypesystemRule$2" />
-      <unit id="5424895381998288247" at="120,243,124,9" name="jetbrains.mps.lang.structure.typesystem.check_AbstractConceptDeclaration_Ids_NonTypesystemRule$3" />
+      <unit id="5424895381998288247" at="120,207,124,9" name="jetbrains.mps.lang.structure.typesystem.check_AbstractConceptDeclaration_Ids_NonTypesystemRule$3" />
       <unit id="1587916991969778163" at="24,0,180,0" name="jetbrains.mps.lang.structure.typesystem.check_AbstractConceptDeclaration_Ids_NonTypesystemRule" />
     </file>
   </root>
