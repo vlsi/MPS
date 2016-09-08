@@ -3,7 +3,6 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:c2c670fc-188b-4168-9559-68c718816e1a(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests)/7120092006645143730">
@@ -32,25 +31,14 @@
   </root>
   <root nodeRef="r:c2c670fc-188b-4168-9559-68c718816e1a(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests)/8128243960970299091">
     <file name="Main.java">
-      <node id="8128243960970299109" at="10,0,11,0" concept="4" trace="MESSAGE" />
-      <node id="3354566406403963751" at="13,42,14,92" concept="3" />
-      <node id="3354566406403962795" at="16,28,17,38" concept="1" />
-      <node id="8128243960970299093" at="11,0,13,0" concept="0" trace="Main#()V" />
-      <node id="3354566406403962792" at="16,0,19,0" concept="2" trace="invoke#()V" />
-      <node id="3354566406403962791" at="14,92,19,15" concept="1" />
-      <node id="8128243960970299097" at="13,0,21,0" concept="5" trace="main#([Ljava/lang/String;)V" />
-      <scope id="8128243960970299096" at="11,17,11,17" />
-      <scope id="3354566406403962793" at="16,28,17,38" />
-      <scope id="8128243960970299093" at="11,0,13,0" />
-      <scope id="3354566406403962792" at="16,0,19,0" />
-      <scope id="8128243960970299103" at="13,42,19,15">
-        <var name="pair" id="3354566406403963752" />
-      </scope>
-      <scope id="8128243960970299097" at="13,0,21,0">
+      <node id="8128243960970299109" at="7,0,8,0" concept="3" trace="MESSAGE" />
+      <node id="3354566406403962795" at="9,42,10,32" concept="1" />
+      <node id="8128243960970299097" at="9,0,12,0" concept="4" trace="main#([Ljava/lang/String;)V" />
+      <scope id="8128243960970299103" at="9,42,10,32" />
+      <scope id="8128243960970299097" at="9,0,12,0">
         <var name="args" id="8128243960970299098" />
       </scope>
-      <unit id="3354566406403962792" at="15,8,19,5" name="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.Main$1" />
-      <unit id="8128243960970299091" at="9,0,22,0" name="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.Main" />
+      <unit id="8128243960970299091" at="6,0,13,0" name="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.Main" />
     </file>
   </root>
 </debug-info>
