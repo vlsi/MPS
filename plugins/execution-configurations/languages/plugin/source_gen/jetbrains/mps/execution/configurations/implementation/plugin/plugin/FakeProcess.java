@@ -33,7 +33,7 @@ public class FakeProcess extends Process {
 
   private PrintStream createCompositeWrapper(PipedInputStream pipeInput, PrintStream oldOut) throws IOException {
     OutputStream newOut = new BufferedOutputStream(new PipedOutputStream(pipeInput));
-    return new PrintStream(new CompositeStream(oldOut, newOut));
+    return new PrintStream(new CompositeStream(oldOut, newOut), true);
   }
 
   public void setExitCode(int code) {

@@ -36,7 +36,12 @@ public class InProcessExecutionFilter implements Filter {
         // cannot run (in-process) test methods from TestCase, which is not executable in the same process 
         if (SNodeOperations.isInstanceOf(rootNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
           if (!(((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(rootNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB"))))) {
-            result[0] = new Filter.FilterException("The test is set not to be executed in-process. Test " + testNodeWrapper.getName() + " is ignored.");
+            if (SNodeOperations.isInstanceOf(rootNode, MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dc94e923L, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"))) {
+              result[0] = new Filter.FilterException("The test " + testNodeWrapper.getName() + " is BTestCase which is not executed in-process. It is ignored for now.");
+
+            } else {
+              result[0] = new Filter.FilterException("The test is set not to be executed in-process. Test " + testNodeWrapper.getName() + " is ignored.");
+            }
           }
         }
       }

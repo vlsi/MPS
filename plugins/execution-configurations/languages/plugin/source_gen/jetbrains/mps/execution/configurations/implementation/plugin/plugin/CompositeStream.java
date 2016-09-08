@@ -20,4 +20,10 @@ public class CompositeStream extends FilterOutputStream {
     super.write(i);
     mySecond.write(i);
   }
+
+  @Override
+  public void flush() throws IOException {
+    super.flush();
+    mySecond.flush();
+  }
 }
