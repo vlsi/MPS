@@ -1416,14 +1416,10 @@
       <node id="5901544768130673395" at="14,17,15,22" concept="4" />
       <node id="5901544768130658451" at="19,47,20,19" concept="4" />
       <node id="5901544768130689358" at="20,19,21,22" concept="4" />
-      <node id="6056862548060819972" at="25,42,26,18" concept="4" />
-      <node id="6056862548060824806" at="26,18,27,21" concept="4" />
       <node id="5901544768130665902" at="13,0,17,0" concept="2" trace="CompositeStream#(Ljava/io/OutputStream;Ljava/io/OutputStream;)V" />
       <node id="5901544768130658440" at="18,0,23,0" concept="8" trace="write#(I)V" />
-      <node id="6056862548060819964" at="24,0,29,0" concept="8" trace="flush#()V" />
       <scope id="5901544768130665905" at="13,85,15,22" />
       <scope id="5901544768130658447" at="19,47,21,22" />
-      <scope id="6056862548060819969" at="25,42,27,21" />
       <scope id="5901544768130665902" at="13,0,17,0">
         <var name="first" id="5901544768130667611" />
         <var name="second" id="5901544768130668167" />
@@ -1431,8 +1427,7 @@
       <scope id="5901544768130658440" at="18,0,23,0">
         <var name="i" id="5901544768130658444" />
       </scope>
-      <scope id="6056862548060819964" at="24,0,29,0" />
-      <unit id="5901544768130632873" at="10,0,30,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.CompositeStream" />
+      <unit id="5901544768130632873" at="10,0,24,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.CompositeStream" />
     </file>
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/5963359171344105821">
@@ -3484,7 +3479,7 @@
       <node id="6331234706169056967" at="29,41,30,64" concept="4" />
       <node id="1934212670257988331" at="30,64,31,64" concept="4" />
       <node id="1934212670257969206" at="34,113,35,85" concept="9" />
-      <node id="1934212670257975992" at="35,85,36,70" concept="10" />
+      <node id="1934212670257975992" at="35,85,36,64" concept="10" />
       <node id="2127459597558610836" at="39,37,40,22" concept="4" />
       <node id="7611095800484780697" at="43,25,44,26" concept="0" />
       <node id="7611095800484361641" at="44,26,45,23" concept="4" />
@@ -3519,7 +3514,7 @@
       <scope id="7830195192743934253" at="76,28,77,43" />
       <scope id="6331234706169214771" at="24,24,26,26" />
       <scope id="6331234706169609109" at="29,41,31,64" />
-      <scope id="1934212670257968827" at="34,113,36,70">
+      <scope id="1934212670257968827" at="34,113,36,64">
         <var name="newOut" id="1934212670257969207" />
       </scope>
       <scope id="2127459597558598593" at="39,0,42,0">

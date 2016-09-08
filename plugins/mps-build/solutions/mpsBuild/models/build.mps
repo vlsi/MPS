@@ -25599,12 +25599,6 @@
             <ref role="3bR37D" node="3zjMY$95UAa" resolve="jetbrains.mps.core.tool.environment" />
           </node>
         </node>
-        <node concept="1SiIV0" id="yrgDsjpQXu" role="3bR37C">
-          <node concept="3bR9La" id="yrgDsjpQXv" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7Kfy9QB6L8Y" resolve="jetbrains.mps.lang.project" />
-          </node>
-        </node>
       </node>
       <node concept="1E1JtA" id="5xa9wY2vhbo" role="2G$12L">
         <property role="BnDLt" value="true" />

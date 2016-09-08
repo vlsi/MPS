@@ -7,25 +7,20 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.model.SModel;
 
-public class check_TestIsCompiledAndLoadedByMPS_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_TestIsCompiledAndLoadedByMPS_NonTypesystemRule() {
+public class check_PluginKindShouldBeNotNoneForMPSTestCases_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_PluginKindShouldBeNotNoneForMPSTestCases_NonTypesystemRule() {
   }
   public void applyRule(final SNode testCase, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SModule module = check_5ghzfe_a0a0b(SNodeOperations.getModel(testCase));
-    if (!(SModuleOperations.isCompileInMps(module))) {
+    if (!(CheckUtils.checkPluginKindForMPSTestCase(testCase))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(testCase, "Tests must be created in modules which are compileInMPS=true", "r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)", "8797237962361641928", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(testCase, "MPS related test cases should be created in plugin solutions", "r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)", "8797237962361641928", null, errorTarget);
       }
     }
   }
@@ -37,11 +32,5 @@ public class check_TestIsCompiledAndLoadedByMPS_NonTypesystemRule extends Abstra
   }
   public boolean overrides() {
     return false;
-  }
-  private static SModule check_5ghzfe_a0a0b(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
   }
 }

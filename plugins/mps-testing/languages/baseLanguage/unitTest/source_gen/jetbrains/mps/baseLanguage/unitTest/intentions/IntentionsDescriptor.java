@@ -48,6 +48,13 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
           break;
         case 2:
           if (true) {
+            // Concept: ITestCase 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new FixPluginKindForMPSTestCase_Intention();
+          }
+          break;
+        case 3:
+          if (true) {
             // Concept: MessageHolder 
             intentions = new IntentionFactory[1];
             intentions[0] = new AddRemoveMessage_Intention();
@@ -64,10 +71,11 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[3];
+    IntentionFactory[] rv = new IntentionFactory[4];
     rv[0] = new convert_test_case_to_unittest_case_Intention();
     rv[1] = new AddRemoveMessage_Intention();
     rv[2] = new FlipAssertEquals_Intention();
+    rv[3] = new FixPluginKindForMPSTestCase_Intention();
     return Arrays.asList(rv);
   }
   private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
@@ -78,5 +86,5 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x74f562a3a993fd3dL, "jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e5250918L, "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"));
+  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x74f562a3a993fd3dL, "jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e5250918L, "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"));
 }

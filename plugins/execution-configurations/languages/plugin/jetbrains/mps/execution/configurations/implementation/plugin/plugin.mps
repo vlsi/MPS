@@ -12099,7 +12099,7 @@
         <node concept="3cpWs6" id="1FnH2NUMlaS" role="3cqZAp">
           <node concept="2ShNRf" id="1FnH2NUMlbc" role="3cqZAk">
             <node concept="1pGfFk" id="1FnH2NUMmys" role="2ShVmc">
-              <ref role="37wK5l" to="guwi:~PrintStream.&lt;init&gt;(java.io.OutputStream,boolean)" resolve="PrintStream" />
+              <ref role="37wK5l" to="guwi:~PrintStream.&lt;init&gt;(java.io.OutputStream)" resolve="PrintStream" />
               <node concept="2ShNRf" id="1FnH2NUMmy$" role="37wK5m">
                 <node concept="1pGfFk" id="1FnH2NUMnej" role="2ShVmc">
                   <ref role="37wK5l" node="57AvVbEv$QI" resolve="CompositeStream" />
@@ -12110,9 +12110,6 @@
                     <ref role="3cqZAo" node="1FnH2NUMjwR" resolve="newOut" />
                   </node>
                 </node>
-              </node>
-              <node concept="3clFbT" id="24zHDMBXd$2" role="37wK5m">
-                <property role="3clFbU" value="true" />
               </node>
             </node>
           </node>
@@ -13098,38 +13095,6 @@
       </node>
       <node concept="3uibUv" id="5yUypy6MWjq" role="Sfmx6">
         <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="5gej6mmx_GA" role="jymVt" />
-    <node concept="3clFb_" id="5gej6mmy57W" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="flush" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="5gej6mmy57X" role="1B3o_S" />
-      <node concept="3cqZAl" id="5gej6mmy57Z" role="3clF45" />
-      <node concept="3uibUv" id="5gej6mmy580" role="Sfmx6">
-        <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
-      </node>
-      <node concept="3clFbS" id="5gej6mmy581" role="3clF47">
-        <node concept="3clFbF" id="5gej6mmy584" role="3cqZAp">
-          <node concept="3nyPlj" id="5gej6mmy583" role="3clFbG">
-            <ref role="37wK5l" to="guwi:~FilterOutputStream.flush():void" resolve="flush" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="5gej6mmy6jA" role="3cqZAp">
-          <node concept="2OqwBi" id="5gej6mmy6K6" role="3clFbG">
-            <node concept="37vLTw" id="5gej6mmy6j$" role="2Oq$k0">
-              <ref role="3cqZAo" node="57AvVbEvAmM" resolve="mySecond" />
-            </node>
-            <node concept="liA8E" id="5gej6mmy7ge" role="2OqNvi">
-              <ref role="37wK5l" to="guwi:~OutputStream.flush():void" resolve="flush" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="5gej6mmy582" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
   </node>

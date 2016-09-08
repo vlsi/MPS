@@ -13,10 +13,6 @@ import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.execution.lib.PointerUtils;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -99,7 +95,7 @@ public enum JUnitRunTypes {
       }
       SModule module = model.getModule();
       if (!(SModuleOperations.isCompileInMps(module))) {
-        return "The module's " + module + " (which is hosting the model " + model.getName().getSimpleName() + ") compile output is not managed by MPS.";
+        return "The module's " + module + " (which is hosting the model " + model + ") compile output is not managed by MPS.";
       }
       if (!(this.hasTests(configuration, project))) {
         return "No tests found in model " + configuration.getModel() + ".";
@@ -127,18 +123,8 @@ public enum JUnitRunTypes {
       if (configuration.getTestCases() != null) {
         for (String testCase : configuration.getTestCases()) {
           SNodeReference pointer = PointerUtils.stringToPointer(testCase);
-          if (pointer == null) {
-            SNode testNode = pointer.resolve(project.getRepository());
-            if (testNode != null) {
-              SModel model = testNode.getModel();
-              SNode module = SModelOperations.getModuleStub(model);
-              if (!(SPropertyOperations.getBoolean(module, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
-                return "The module's " + module + " compile output is not managed by MPS.";
-              }
-            }
-            if (testNode == null || TestNodeWrapperFactory.tryToWrap(testNode) == null) {
-              return "Could not find test case for id " + testCase + ".";
-            }
+          if (pointer == null || pointer.resolve(project.getRepository()) == null || TestNodeWrapperFactory.tryToWrap(pointer.resolve(project.getRepository())) == null) {
+            return "Could not find test case for id " + testCase + ".";
           }
         }
       }
@@ -162,18 +148,8 @@ public enum JUnitRunTypes {
       if (configuration.getTestMethods() != null) {
         for (String method : configuration.getTestMethods()) {
           SNodeReference pointer = PointerUtils.stringToPointer(method);
-          if (pointer == null) {
-            SNode testMethpdNode = pointer.resolve(project.getRepository());
-            if (testMethpdNode != null) {
-              SModel model = testMethpdNode.getModel();
-              SNode module = SModelOperations.getModuleStub(model);
-              if (!(SPropertyOperations.getBoolean(module, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
-                return "The module's " + module + " compile output is not managed by MPS.";
-              }
-            }
-            if (testMethpdNode == null || TestNodeWrapperFactory.tryToWrap(testMethpdNode) == null) {
-              return "Could not find test method for id " + method + ".";
-            }
+          if (pointer == null || pointer.resolve(project.getRepository()) == null || TestNodeWrapperFactory.tryToWrap(pointer.resolve(project.getRepository())) == null) {
+            return "Could not find test method for id " + method + ".";
           }
         }
       }
