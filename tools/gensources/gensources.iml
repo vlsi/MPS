@@ -468,7 +468,9 @@
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/httpsupport/solutions">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/httpsupport/solutions/nodeaccess/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/httpsupport/solutions/runtime/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/httpsupport/solutions/nodeaccess/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/httpsupport/solutions/runtime/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/mps-build">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/build.mps.runner/generator/source_gen" isTestSource="false" />

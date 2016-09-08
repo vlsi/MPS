@@ -217,7 +217,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/httpsupport/jetbrains.mps.ide.httpsupport.manager.msd" folder="platform.httpsupport" />
       <modulePath path="$PROJECT_DIR$/plugins/httpsupport/language/jetbrains.mps.ide.httpsupport.mpl" folder="platform.httpsupport" />
       <modulePath path="$PROJECT_DIR$/plugins/httpsupport/solutions/nodeaccess/jetbrains.mps.ide.httpsupport.nodeaccess.msd" folder="platform.httpsupport" />
-      <modulePath path="$PROJECT_DIR$/plugins/httpsupport/solutions/converters/jetbrains.mps.ide.httpsupport.converters.msd" folder="platform.httpsupport" />
+      <modulePath path="$PROJECT_DIR$/plugins/httpsupport/solutions/runtime/jetbrains.mps.ide.httpsupport.runtime.msd" folder="platform.httpsupport" />
       <modulePath path="$PROJECT_DIR$/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="platform" />
       <modulePath path="$PROJECT_DIR$/plugins/jetpad/solutions/jetbrains.jetpad/jetbrains.jetpad.msd" folder="core.aspects.editor.diagram" />
       <modulePath path="$PROJECT_DIR$/plugins/migrationAssistant/solutions/component/jetbrains.mps.migration.component.msd" folder="platform.migration" />

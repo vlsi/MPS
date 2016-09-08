@@ -134,9 +134,6 @@
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
-      <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
-        <reference id="1138056546658" name="link" index="3TtcxE" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -158,7 +155,6 @@
       </concept>
       <concept id="1235566831861" name="jetbrains.mps.baseLanguage.collections.structure.AllOperation" flags="nn" index="2HxqBE" />
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
-      <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
       <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
     </language>
   </registry>
@@ -367,34 +363,12 @@
                   <ref role="ehGHo" to="ndib:21vgRr5xrgT" resolve="QueryParameter" />
                 </node>
               </node>
-              <node concept="2OqwBi" id="40BYgsZY3RF" role="33vP2m">
-                <node concept="2OqwBi" id="40BYgsZY2uE" role="2Oq$k0">
-                  <node concept="1YBJjd" id="40BYgsZY2ga" role="2Oq$k0">
-                    <ref role="1YBMHb" node="40BYgsZXPvp" resolve="requestURIBuilderExpression" />
-                  </node>
-                  <node concept="3Tsc0h" id="40BYgsZY2G_" role="2OqNvi">
-                    <ref role="3TtcxE" to="ndib:40BYgsZX_bR" resolve="initializer" />
-                  </node>
+              <node concept="2OqwBi" id="40BYgsZY2uE" role="33vP2m">
+                <node concept="1YBJjd" id="40BYgsZY2ga" role="2Oq$k0">
+                  <ref role="1YBMHb" node="40BYgsZXPvp" resolve="requestURIBuilderExpression" />
                 </node>
-                <node concept="3$u5V9" id="40BYgsZY6fn" role="2OqNvi">
-                  <node concept="1bVj0M" id="40BYgsZY6fp" role="23t8la">
-                    <node concept="3clFbS" id="40BYgsZY6fq" role="1bW5cS">
-                      <node concept="3clFbF" id="40BYgsZY6hR" role="3cqZAp">
-                        <node concept="2OqwBi" id="40BYgsZY6oV" role="3clFbG">
-                          <node concept="37vLTw" id="40BYgsZY6hQ" role="2Oq$k0">
-                            <ref role="3cqZAo" node="40BYgsZY6fr" resolve="it" />
-                          </node>
-                          <node concept="3TrEf2" id="40BYgsZY6z0" role="2OqNvi">
-                            <ref role="3Tt5mk" to="ndib:40BYgsZXsWo" resolve="parameter" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Rh6nW" id="40BYgsZY6fr" role="1bW2Oz">
-                      <property role="TrG5h" value="it" />
-                      <node concept="2jxLKc" id="40BYgsZY6fs" role="1tU5fm" />
-                    </node>
-                  </node>
+                <node concept="2qgKlT" id="40BYgt09G37" role="2OqNvi">
+                  <ref role="37wK5l" to="zfj2:40BYgt09_iZ" resolve="getInitializedParameters" />
                 </node>
               </node>
             </node>

@@ -10,9 +10,6 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.ide.impl.ProjectUtil;
-import io.netty.handler.codec.http.QueryStringEncoder;
-import jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager;
-import io.netty.util.CharsetUtil;
 
 public class HandlerUtil {
 
@@ -40,9 +37,5 @@ public class HandlerUtil {
     if (project instanceof MPSProject) {
       ProjectUtil.focusProjectWindow(((MPSProject) project).getProject(), true);
     }
-  }
-
-  public static QueryStringEncoder createURItoMPS(String path) {
-    return new QueryStringEncoder("http://127.0.0.1:" + MPSRequestPortManager.getCurrentPort() + "/" + path, CharsetUtil.UTF_8);
   }
 }

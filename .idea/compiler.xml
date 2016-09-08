@@ -279,6 +279,8 @@
       <directory url="file://$PROJECT_DIR$/plugins/httpsupport/language/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/httpsupport/solutions/nodeaccess/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/httpsupport/solutions/nodeaccess/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/httpsupport/solutions/runtime/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/httpsupport/solutions/runtime/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/jetpad/solutions/jetbrains.jetpad/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/jetpad/solutions/jetbrains.jetpad/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/build.mps.runner/generator/source_gen" includeSubdirectories="true" />

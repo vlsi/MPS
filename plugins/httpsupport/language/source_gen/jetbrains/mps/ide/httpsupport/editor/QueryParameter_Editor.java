@@ -106,7 +106,7 @@ public class QueryParameter_Editor extends DefaultNodeEditor {
   private EditorCell createRefCell_pp9zo5_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("parameterConverter");
-    provider.setNoTargetText("<no parameterConverter>");
+    provider.setNoTargetText("default");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new QueryParameter_Editor._Inline_pp9zo5_a3a());
     editorCell = provider.createEditorCell(editorContext);

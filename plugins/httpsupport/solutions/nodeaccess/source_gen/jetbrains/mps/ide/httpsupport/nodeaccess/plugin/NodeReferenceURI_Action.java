@@ -11,10 +11,10 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
-import jetbrains.mps.ide.actions.ModuleDependenies_Tool;
-import io.netty.handler.codec.http.QueryStringEncoder;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
+import io.netty.handler.codec.http.QueryStringEncoder;
+import jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class NodeReferenceURI_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -35,6 +35,9 @@ public class NodeReferenceURI_Action extends BaseAction {
     }
     {
       Project p = event.getData(CommonDataKeys.PROJECT);
+      if (p == null) {
+        return false;
+      }
     }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
@@ -46,12 +49,15 @@ public class NodeReferenceURI_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    event.getData(CommonDataKeys.PROJECT).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class);
-    QueryStringEncoder encoder = HandlerUtil.createURItoMPS("node_ref");
-    encoder.addParam("ref", event.getData(MPSCommonDataKeys.NODE).getReference().toString());
-    if (event.getData(CommonDataKeys.PROJECT) != null) {
-      encoder.addParam("project", event.getData(CommonDataKeys.PROJECT).getName());
-    }
-    CopyPasteUtil.copyTextToClipboard(encoder.toString());
+    CopyPasteUtil.copyTextToClipboard(buildRequest_ftht21_a0a0a5(event));
+  }
+  private static String buildRequest_ftht21_a0a0a5(AnActionEvent event) {
+    QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + MPSRequestPortManager.getCurrentPort() + "/node_ref");
+
+    encoder.addParam("ref", PersistenceFacade.getInstance().asString(event.getData(MPSCommonDataKeys.NODE).getReference()));
+    encoder.addParam("project", event.getData(CommonDataKeys.PROJECT).getName());
+    encoder.addParam("project", event.getData(CommonDataKeys.PROJECT).getName());
+
+    return encoder.toString();
   }
 }

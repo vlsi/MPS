@@ -9,13 +9,9 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
-import io.netty.handler.codec.http.QueryStringEncoder;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
-import jetbrains.mps.smodel.EditableModelDescriptor;
-import jetbrains.mps.smodel.tempmodel.TemporaryModels;
-import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import io.netty.handler.codec.http.QueryStringEncoder;
+import jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager;
 
 public class NodeURI_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -44,21 +40,14 @@ public class NodeURI_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    QueryStringEncoder encoder = HandlerUtil.createURItoMPS("node");
-    encoder.addParam("node", NodeURI_Action.this.serializeNode(event.getData(MPSCommonDataKeys.NODE), event));
-    CopyPasteUtil.copyTextToClipboard(encoder.toString());
-
+    CopyPasteUtil.copyTextToClipboard(buildRequest_aha6g5_a0a0a5(event));
 
   }
-  private String serializeNode(SNode node, final AnActionEvent event) {
-    EditableModelDescriptor tempModel = as_aha6g5_a0a0a6(TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule()), EditableModelDescriptor.class);
-    tempModel.addRootNode(SNodeOperations.copyNode(node));
-    String result = ModelPersistence.modelToString(tempModel.getSModelInternal());
-    TemporaryModels.getInstance().dispose(tempModel);
+  private static String buildRequest_aha6g5_a0a0a5(AnActionEvent event) {
+    QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + MPSRequestPortManager.getCurrentPort() + "/node");
 
-    return result;
-  }
-  private static <T> T as_aha6g5_a0a0a6(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
+    encoder.addParam("node", new nodeByModelPersistence_Converter().toString(event.getData(MPSCommonDataKeys.NODE)));
+
+    return encoder.toString();
   }
 }
