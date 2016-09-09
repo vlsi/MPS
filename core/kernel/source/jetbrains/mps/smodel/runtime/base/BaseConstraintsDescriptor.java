@@ -22,10 +22,9 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
@@ -43,13 +42,11 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import javax.swing.Icon;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collections;
@@ -301,12 +298,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   @ToRemove(version = 3.4)
   @Override
   public PropertyConstraintsDescriptor getProperty(String propertyName) {
-    PropertyDescriptor propertyDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(getConceptId()).getPropertyDescriptor(propertyName);
-    if (propertyDescriptor == null) {
-      return null;
-    }
-
-    return getProperty(MetaAdapterFactory.getProperty(propertyDescriptor.getId(), propertyName));
+    return getProperty(((ConceptMetaInfoConverter) getConcept()).convertProperty(propertyName));
   }
 
   public PropertyConstraintsDescriptor getProperty(SProperty property) {

@@ -24,8 +24,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.log4j.Level;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 
@@ -133,18 +134,19 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     }));
     for (SNode p : ListSequence.fromList(props)) {
       final PropertySupport ps = PropertySupport.getPropertySupport(p);
-      final String propertyName = SPropertyOperations.getString(p, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+      String propertyName = SPropertyOperations.getString(p, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       if (propertyName == null) {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Property declaration has a null name, declaration id: " + p.getNodeId() + ", model: " + SNodeOperations.getModel(p).getReference().getModelName());
         }
         continue;
       }
-      final String value = ps.fromInternalValue(SNodeAccessUtil.getProperty(node, MetaAdapterByDeclaration.getProperty(p)));
-      final PropertyConstraintsDescriptor propertyDescriptor = newDescriptor.getProperty(propertyName);
+      final SProperty propertyRT = MetaAdapterByDeclaration.getProperty(p);
+      final String value = ps.fromInternalValue(SNodeAccessUtil.getProperty(node, propertyRT));
+      final PropertyConstraintsDescriptor propertyDescriptor = newDescriptor.getProperty(propertyRT);
       boolean canSetValue = (propertyDescriptor == null ? false : component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ps.canSetValue(propertyDescriptor, node, propertyName, value);
+          return ps.canSetValue(propertyDescriptor, node, propertyRT, value);
         }
       }));
       if (!(canSetValue)) {

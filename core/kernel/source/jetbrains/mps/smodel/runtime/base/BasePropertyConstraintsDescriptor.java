@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,9 @@ import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
-import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
@@ -32,20 +29,13 @@ import jetbrains.mps.smodel.runtime.InheritanceIterable;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDispatchable;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
-import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-
-import java.util.HashSet;
-import java.util.Set;
 
 public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDispatchable {
   private final SProperty myProperty;
@@ -54,11 +44,6 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
   private final PropertyConstraintsDescriptor getterDescriptor;
   private final PropertyConstraintsDescriptor setterDescriptor;
   private final PropertyConstraintsDescriptor validatorDescriptor;
-
-  @Deprecated
-  public BasePropertyConstraintsDescriptor(String propertyName, ConstraintsDescriptor container) {
-    this(ConceptRegistry.getInstance().getConceptDescriptor(container.getConceptId()).getPropertyDescriptor(propertyName).getId(), container);
-  }
 
   @Deprecated
   @ToRemove(version = 3.4)
