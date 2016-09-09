@@ -23,7 +23,7 @@ public class check_QueryParameter_NonTypesystemRule extends AbstractNonTypesyste
   public void applyRule(final SNode queryParameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(ListSequence.fromList(SNodeOperations.getAllSiblings(queryParameter, false)).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, "jetbrains.mps.ide.httpsupport.structure.QueryParameter")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals(SPropertyOperations.getString(queryParameter, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
+        return !(check_z5utj9_a0a0a0a0a1(SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, "jetbrains.mps.ide.httpsupport.structure.QueryParameter")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), queryParameter));
       }
     }))) {
       MessageTarget errorTarget = new NodeMessageTarget();
@@ -37,6 +37,12 @@ public class check_QueryParameter_NonTypesystemRule extends AbstractNonTypesyste
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
+    return false;
+  }
+  private static boolean check_z5utj9_a0a0a0a0a1(String checkedDotOperand, SNode queryParameter) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.equals(SPropertyOperations.getString(queryParameter, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    }
     return false;
   }
 }

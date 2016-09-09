@@ -3,6 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -66,6 +67,9 @@
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
+    </language>
+    <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
+      <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
@@ -459,8 +463,8 @@
               <node concept="3clFbS" id="40BYgsZYsr5" role="1bW5cS">
                 <node concept="3clFbF" id="40BYgsZZb91" role="3cqZAp">
                   <node concept="3fqX7Q" id="40BYgsZZgIb" role="3clFbG">
-                    <node concept="2OqwBi" id="40BYgsZZgId" role="3fr31v">
-                      <node concept="2OqwBi" id="40BYgsZZgIe" role="2Oq$k0">
+                    <node concept="2EnYce" id="xSXmQZuBv3" role="3fr31v">
+                      <node concept="2OqwBi" id="xSXmQZuBIV" role="2Oq$k0">
                         <node concept="1PxgMI" id="40BYgsZZgIf" role="2Oq$k0">
                           <ref role="1m5ApE" to="ndib:21vgRr5xrgT" resolve="QueryParameter" />
                           <node concept="37vLTw" id="40BYgsZZgIg" role="1m5AlR">
