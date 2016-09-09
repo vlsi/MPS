@@ -331,6 +331,7 @@
         <child id="2332657309400291202" name="queryParameters" index="3_QDjO" />
       </concept>
       <concept id="6004610301070373654" name="jetbrains.mps.ide.httpsupport.structure.CanHandleRequestFunction" flags="ig" index="qDXDn" />
+      <concept id="610507601223140215" name="jetbrains.mps.ide.httpsupport.structure.RequestType" flags="ig" index="2RV3oq" />
       <concept id="4403308017441446661" name="jetbrains.mps.ide.httpsupport.structure.DeserializeFunction" flags="ig" index="3l8qDa" />
       <concept id="4403308017441390372" name="jetbrains.mps.ide.httpsupport.structure.ValueToSerializeParameter" flags="ng" index="3l8CTF" />
       <concept id="4403308017441350905" name="jetbrains.mps.ide.httpsupport.structure.SerializeFunction" flags="ig" index="3l8LmQ" />
@@ -996,7 +997,7 @@
                         <node concept="2YIFZM" id="4yQMaPlJrCG" role="3clFbG">
                           <ref role="1Pybhc" node="2lt1tUBuCdK" resolve="HandlerUtil" />
                           <ref role="37wK5l" node="2lt1tUBuCgd" resolve="openNode" />
-                          <node concept="pFkrN" id="xSXmQZ$it_" role="37wK5m" />
+                          <node concept="pFkrN" id="xSXmQZ_Tuc" role="37wK5m" />
                           <node concept="3_PKRz" id="3OrGkZCpbHK" role="37wK5m">
                             <ref role="3_PKRw" node="21vgRr5xHMM" resolve="project" />
                           </node>
@@ -1667,9 +1668,7 @@
       <node concept="3cqZAl" id="xSXmQZ$4Gl" role="3clF45" />
       <node concept="37vLTG" id="xSXmQZ$2LT" role="3clF46">
         <property role="TrG5h" value="request" />
-        <node concept="3uibUv" id="xSXmQZ$3cJ" role="1tU5fm">
-          <ref role="3uigEE" to="4h87:6GArDv5HYVM" resolve="HttpRequest" />
-        </node>
+        <node concept="2RV3oq" id="xSXmQZ_BhA" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="4yQMaPlI2Lu" role="3clF46">
         <property role="TrG5h" value="project" />

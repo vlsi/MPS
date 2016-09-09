@@ -8,10 +8,11 @@
   </languages>
   <imports>
     <import index="4h87" ref="r:05ff02e5-9836-4ae9-a454-eab43fa58c8f(jetbrains.mps.ide.httpsupport.manager.plugin)" />
-    <import index="ndib" ref="r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)" implicit="true" />
+    <import index="ndib" ref="r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="zfj2" ref="r:ebfb0797-fa90-42cb-9f6b-3e661ce06d64(jetbrains.mps.ide.httpsupport.behavior)" implicit="true" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -20,6 +21,9 @@
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
+      </concept>
+      <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
+        <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -87,6 +91,10 @@
       <concept id="1185788614172" name="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" flags="ng" index="mw_s8">
         <child id="1185788644032" name="normalType" index="mwGJk" />
       </concept>
+      <concept id="1175147569072" name="jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule" flags="ig" index="2sgdUx">
+        <child id="1175147624276" name="body" index="2sgrp5" />
+      </concept>
+      <concept id="1175147670730" name="jetbrains.mps.lang.typesystem.structure.SubtypingRule" flags="ig" index="2sgARr" />
       <concept id="1175517400280" name="jetbrains.mps.lang.typesystem.structure.AssertStatement" flags="nn" index="2Mj0R9">
         <child id="1175517761460" name="condition" index="2MkoU_" />
       </concept>
@@ -141,6 +149,9 @@
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
+      <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
+        <child id="1180636770616" name="createdType" index="3zrR0E" />
+      </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -171,7 +182,12 @@
         <child id="1151689745422" name="elementType" index="A3Ik2" />
       </concept>
       <concept id="1235566831861" name="jetbrains.mps.baseLanguage.collections.structure.AllOperation" flags="nn" index="2HxqBE" />
+      <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
+        <child id="1237721435808" name="initValue" index="HW$Y0" />
+        <child id="1237721435807" name="elementType" index="HW$YZ" />
+      </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
+      <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
     </language>
   </registry>
@@ -181,9 +197,11 @@
     <node concept="3clFbS" id="4PqLM5kXSBM" role="18ibNy">
       <node concept="1Z5TYs" id="4PqLM5kXSG5" role="3cqZAp">
         <node concept="mw_s8" id="4PqLM5kXSG$" role="1ZfhKB">
-          <node concept="2c44tf" id="4PqLM5kXSGw" role="mwGJk">
-            <node concept="3uibUv" id="5c5yCXi5eqo" role="2c44tc">
-              <ref role="3uigEE" to="4h87:6GArDv5HYVM" resolve="HttpRequest" />
+          <node concept="2ShNRf" id="xSXmQZ_G2r" role="mwGJk">
+            <node concept="3zrR0B" id="xSXmQZ_G8H" role="2ShVmc">
+              <node concept="3Tqbb2" id="xSXmQZ_G8J" role="3zrR0E">
+                <ref role="ehGHo" to="ndib:xSXmQZ_cdR" resolve="RequestType" />
+              </node>
             </node>
           </node>
         </node>
@@ -711,6 +729,31 @@
     <node concept="1YaCAy" id="xSXmQZvLnz" role="1YuTPh">
       <property role="TrG5h" value="parameterInitializer" />
       <ref role="1YaFvo" to="ndib:40BYgsZXsWn" resolve="ParameterInitializer" />
+    </node>
+  </node>
+  <node concept="2sgARr" id="xSXmQZ_gSQ">
+    <property role="3GE5qa" value="handler" />
+    <property role="TrG5h" value="supertypesOf_RequestType" />
+    <node concept="3clFbS" id="xSXmQZ_gSR" role="2sgrp5">
+      <node concept="3clFbF" id="xSXmQZ_gT_" role="3cqZAp">
+        <node concept="2ShNRf" id="xSXmQZ_gTz" role="3clFbG">
+          <node concept="Tc6Ow" id="xSXmQZ_wa9" role="2ShVmc">
+            <node concept="3Tqbb2" id="xSXmQZ_wer" role="HW$YZ">
+              <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
+            </node>
+            <node concept="2c44tf" id="xSXmQZ_wkL" role="HW$Y0">
+              <node concept="3uibUv" id="xSXmQZ_wnI" role="2c44tc">
+                <ref role="3uigEE" to="4h87:6GArDv5HYVM" resolve="HttpRequest" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="xSXmQZ_we4" role="3cqZAp" />
+    </node>
+    <node concept="1YaCAy" id="xSXmQZ_gST" role="1YuTPh">
+      <property role="TrG5h" value="requestType" />
+      <ref role="1YaFvo" to="ndib:xSXmQZ_cdR" resolve="RequestType" />
     </node>
   </node>
 </model>
