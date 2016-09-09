@@ -15,16 +15,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodeId;
 
 /**
- * Generates unique ids. Ids differ even from id of an optional parameter.
- * Should be used when error in ID is already detected.
+ * Generates unique ids. Ids differ from ids of any other entity in the scope of uniqueness.
  * If optional parameter is specified, the first id to try is got from node id.
  */
 public class ConceptIdHelper {
-  public static long generateConceptId(@Nullable SModel m, @Nullable SNode c) {
+  public static long generateConceptId(@Nullable SModel m, @Nullable final SNode c) {
     final Wrappers._long result = new Wrappers._long(ConceptIdHelper.getDefaultIdFromNode(c));
     while (ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_huw3go_a0a0a0a0a0b0a(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId")), result.value + "");
+        return it != c && eq_huw3go_a0a0a0a0a0a1a0(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId")), result.value + "");
       }
     })) {
       result.value = randomLong();
@@ -32,11 +31,11 @@ public class ConceptIdHelper {
     return result.value;
   }
 
-  public static long generatePropertyId(@Nullable SNode c, SNode p) {
+  public static long generatePropertyId(@Nullable SNode c, final SNode p) {
     final Wrappers._long result = new Wrappers._long(ConceptIdHelper.getDefaultIdFromNode(p));
     while (ListSequence.fromList(SLinkOperations.getChildren(c, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_huw3go_a0a0a0a0a0b0c(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0x35a81382d82a4d9L, "propertyId")), result.value + "");
+        return it != p && eq_huw3go_a0a0a0a0a0a1a2(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0x35a81382d82a4d9L, "propertyId")), result.value + "");
       }
     })) {
       result.value = randomLong();
@@ -44,11 +43,11 @@ public class ConceptIdHelper {
     return result.value;
   }
 
-  public static long generateLinkId(@Nullable SNode c, SNode l) {
+  public static long generateLinkId(@Nullable SNode c, final SNode l) {
     final Wrappers._long result = new Wrappers._long(ConceptIdHelper.getDefaultIdFromNode(l));
     while (ListSequence.fromList(SLinkOperations.getChildren(c, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_huw3go_a0a0a0a0a0b0e(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId")), result.value + "");
+        return it != l && eq_huw3go_a0a0a0a0a0a1a4(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId")), result.value + "");
       }
     })) {
       result.value = randomLong();
@@ -85,13 +84,13 @@ public class ConceptIdHelper {
   private static long randomLong() {
     return ((long) (Math.random() * Long.MAX_VALUE));
   }
-  private static boolean eq_huw3go_a0a0a0a0a0b0a(Object a, Object b) {
+  private static boolean eq_huw3go_a0a0a0a0a0a1a0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_huw3go_a0a0a0a0a0b0c(Object a, Object b) {
+  private static boolean eq_huw3go_a0a0a0a0a0a1a2(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_huw3go_a0a0a0a0a0b0e(Object a, Object b) {
+  private static boolean eq_huw3go_a0a0a0a0a0a1a4(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static <T> T as_huw3go_a0a0a6(Object o, Class<T> type) {
