@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.ide.findusages.caches;
 
-import com.intellij.openapi.fileTypes.FileTypeManager;
-import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
@@ -24,46 +22,88 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.util.annotation.Hack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
+import java.util.concurrent.atomic.AtomicReference;
 
-class IndexableRootCalculator {
+/**
+ * Finds indexable roots for a global repository (do not get misled by a project presence here --
+ * we use project#getRepository which (as for 09.09.16) delegates to the global repo)
+ *
+ * Also caches them and clears them on every module change or module added/removed events. [premature optimization?]
+ *
+ * AP
+ */
+final class IndexableRootCalculator {
   private final Project myProject;
 
+  private final SRepositoryContentAdapter myModuleChangesListener = new SModuleChangesListener();
+  private final AtomicReference<Set<VirtualFile>> myRootsCache = new AtomicReference<>();
+
+
   public IndexableRootCalculator(@NotNull com.intellij.openapi.project.Project project) {
-    myProject = ProjectHelper.toMPSProject(project);
+    myProject = ProjectHelper.fromIdeaProject(project);
   }
 
+  public void register() {
+    SRepository repository = myProject.getRepository();
+    repository.getModelAccess().runReadAction(() -> repository.addRepositoryListener(myModuleChangesListener));
+  }
+
+  public void unregister() {
+    SRepository repository = myProject.getRepository();
+    repository.getModelAccess().runReadAction(() -> repository.removeRepositoryListener(myModuleChangesListener));
+  }
+
+  /**
+   * We are iterating over all modules, visible inside this project including libraries & core modules.
+   * Thus we provide indices for libs.
+   * Must be gone when some kind of BootRepository is introduced
+   */
+  @Hack
+  @NotNull
   public Set<VirtualFile> getIndexableRoots() {
+    Set<VirtualFile> indexableRoots = myRootsCache.get();
+    if (indexableRoots == null) {
+      indexableRoots = calcRoots();
+      myRootsCache.compareAndSet(null, indexableRoots);
+    }
+    return indexableRoots;
+  }
+
+  @NotNull
+  private Set<VirtualFile> calcRoots() {
     final Set<VirtualFile> files = new HashSet<VirtualFile>();
 
     myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        // We should iterate over all modules, visible inside this project including libraries & core modules.
-        // Not only those modules explicitly included into this project.
         for (final SModule m : myProject.getRepository().getModules()) {
           for (String path : getIndexablePaths(m)) {
             VirtualFile file = VirtualFileUtils.getVirtualFile(path);
-            if (file == null) continue;
-            files.add(file);
+            if (file != null) {
+              files.add(file);
+            }
           }
         }
       }
     });
-
-    return files;
+    return Collections.unmodifiableSet(files);
   }
 
-  public static Collection<String> getIndexablePaths(@NotNull SModule module) {
+  private static Collection<String> getIndexablePaths(@NotNull SModule module) {
     // todo: maybe move getIndexablePaths method to FileBasedModelRoot, or even in ModelRoot classes?
-    Set<String> result = new TreeSet<String>();
+    Set<String> result = new HashSet<>();
 
     for (ModelRoot modelRoot : module.getModelRoots()) {
       if (modelRoot instanceof FileBasedModelRoot) {
@@ -88,7 +128,24 @@ class IndexableRootCalculator {
     return path + suffix;
   }
 
-  public static boolean isIgnored(VirtualFile file, ProjectRootManagerEx manager) {
-    return FileTypeManager.getInstance().isFileIgnored(file.getName()) || manager.getFileIndex().isIgnored(file);
+  private class SModuleChangesListener extends SRepositoryContentAdapter {
+    private void invalidateCache() {
+      myRootsCache.set(null);
+    }
+
+    @Override
+    public void moduleAdded(@NotNull SModule module) {
+      invalidateCache();
+    }
+
+    @Override
+    public void moduleRemoved(@NotNull SModuleReference moduleReference) {
+      invalidateCache();
+    }
+
+    @Override
+    public void moduleChanged(@NotNull SModule module) {
+      invalidateCache();
+    }
   }
 }

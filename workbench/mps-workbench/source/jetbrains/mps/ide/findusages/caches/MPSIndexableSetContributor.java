@@ -19,12 +19,12 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.IndexableSetContributor;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
 import java.util.Set;
 
 public class MPSIndexableSetContributor extends IndexableSetContributor {
+  @NotNull
   @Override
   public Set<VirtualFile> getAdditionalRootsToIndex() {
     return Collections.emptySet();
@@ -32,7 +32,8 @@ public class MPSIndexableSetContributor extends IndexableSetContributor {
 
   @NotNull
   @Override
-  public Set<VirtualFile> getAdditionalProjectRootsToIndex(@Nullable Project project) {
-    return new IndexableRootCalculator(project).getIndexableRoots();
+  public Set<VirtualFile> getAdditionalProjectRootsToIndex(@NotNull Project project) {
+    MPSIndexableFileSet indexableFileSet = project.getComponent(MPSIndexableFileSet.class);
+    return indexableFileSet.getIndexableRoots();
   }
 }
