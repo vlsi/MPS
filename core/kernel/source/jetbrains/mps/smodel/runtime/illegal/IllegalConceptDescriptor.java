@@ -136,12 +136,6 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public List<String> getParentsNames() {
-    reportWarn();
-    return Collections.emptyList();
-  }
-
-  @Override
   public Set<SPropertyId> getPropertyIds() {
     reportWarn();
     return Collections.emptySet();

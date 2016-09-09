@@ -49,7 +49,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final String mySuperConcept;
   private final boolean myInterfaceConcept;
   private final SConceptId[] myParents;
-  private final String[] myParentNames;
   private final PropertyDescriptor[] myOwnProperties;
   private final ReferenceDescriptor[] myOwnReferences;
   private final LinkDescriptor[] myOwnLinks;
@@ -63,7 +62,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private SNodeReference mySourceNodeRef;
   private final Object myLock = "";
   // to be initialized
-  private List<String> parentNames;
   private List<SConceptId> parents;
   private Set<SConceptId> ancestorsIds;
   private Map<SPropertyId, PropertyDescriptor> properties;
@@ -83,7 +81,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       @Nullable String superConcept,
       boolean interfaceConcept,
       SConceptId[] parents,
-      String[] parentNames,
+      String[] parentNames, // ignored
       PropertyDescriptor[] ownProperties,
       ReferenceDescriptor[] ownReferences,
       LinkDescriptor[] ownLinks,
@@ -103,7 +101,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     myInterfaceConcept = interfaceConcept;
     myParents = parents;
 
-    myParentNames = parentNames;
     myOwnProperties = ownProperties;
     myOwnReferences = ownReferences;
     myOwnLinks = ownLinks;
@@ -128,7 +125,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       if (myInitialized) {
         return;
       }
-      List<ConceptDescriptor> parentDescriptors = new ArrayList<ConceptDescriptor>(myParentNames.length);
+      List<ConceptDescriptor> parentDescriptors = new ArrayList<ConceptDescriptor>(myParents.length);
       for (SConceptId parent : myParents) {
         ConceptDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptor(parent);
         parentDescriptors.add(descriptor);
@@ -148,7 +145,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
 
   private void initAncestors(List<ConceptDescriptor> parentDescriptors) {
     assert !myInitialized;
-    parentNames = Arrays.asList(myParentNames);
     parents = Arrays.asList(myParents);
     ancestorsIds = new LinkedHashSet<SConceptId>();
     Collections.addAll(ancestorsIds, myParents);
@@ -227,12 +223,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
    */
   public int getVersion() {
     return myVersion;
-  }
-
-  @Override
-  public List<String> getParentsNames() {
-    init();
-    return parentNames;
   }
 
   @Override

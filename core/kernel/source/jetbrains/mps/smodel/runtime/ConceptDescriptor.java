@@ -75,9 +75,6 @@ public interface ConceptDescriptor {
   @Nullable
   String getSuperConcept(); // since 3.0
 
-  @Deprecated
-  List<String> getParentsNames(); // since 3.0
-
   //------------ props
 
   Set<SPropertyId> getPropertyIds(); // since 3.2

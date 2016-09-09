@@ -341,11 +341,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   }
 
   @Override
-  public List<String> getParentsNames() {
-    return parents;
-  }
-
-  @Override
   public boolean isAbstract() {
     return isAbstract;
   }
