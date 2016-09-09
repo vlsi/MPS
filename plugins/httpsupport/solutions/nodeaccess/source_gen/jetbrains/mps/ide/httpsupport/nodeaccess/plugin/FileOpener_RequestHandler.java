@@ -32,11 +32,6 @@ public class FileOpener_RequestHandler extends HttpRequestHandlerBase {
     return "file";
   }
 
-  @Override
-  public boolean isTrustful() {
-    return true;
-  }
-
   private String file;
   private Integer line;
   private Project project;

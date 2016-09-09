@@ -29,22 +29,16 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestManager" file="MPSRequestManager.java">
-    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="io.netty.channel.ChannelHandlerContext" />
     <classNode dependClassName="io.netty.handler.codec.http.FullHttpRequest" />
     <classNode dependClassName="io.netty.handler.codec.http.HttpMethod" />
     <classNode dependClassName="io.netty.handler.codec.http.HttpResponseStatus" />
     <classNode dependClassName="io.netty.handler.codec.http.QueryStringDecoder" />
     <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.net.URISyntaxException" />
-    <classNode dependClassName="java.util.Hashtable" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />

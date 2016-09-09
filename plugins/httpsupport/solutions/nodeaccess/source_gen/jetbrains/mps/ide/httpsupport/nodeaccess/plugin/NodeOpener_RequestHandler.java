@@ -24,11 +24,6 @@ public class NodeOpener_RequestHandler extends HttpRequestHandlerBase {
     return "node_ref";
   }
 
-  @Override
-  public boolean isTrustful() {
-    return true;
-  }
-
   private SNodeReference ref;
   private Project project;
 

@@ -317,7 +317,6 @@
       <concept id="5573986434797765074" name="jetbrains.mps.ide.httpsupport.structure.HttpRequestParameter" flags="ng" index="pFkrN" />
       <concept id="5573986434797590400" name="jetbrains.mps.ide.httpsupport.structure.RequestHandler" flags="ng" index="pFx2x">
         <property id="8564455257661398345" name="queryPrefix" index="1pulfB" />
-        <property id="6550075386187238212" name="trustful" index="1ZnG6o" />
         <child id="5573986434797811183" name="handleFunction" index="pCJbe" />
         <child id="6004610301070397386" name="canHandleFunction" index="qDQqb" />
         <child id="2332657309400291202" name="queryParameters" index="3_QDjO" />
@@ -357,7 +356,6 @@
   <node concept="pFx2x" id="4yQMaPlJZ2q">
     <property role="TrG5h" value="FileOpener" />
     <property role="1pulfB" value="file" />
-    <property role="1ZnG6o" value="true" />
     <node concept="qDXDn" id="2Vd38uKuq4" role="qDQqb">
       <node concept="3clFbS" id="2Vd38uKuq5" role="2VODD2">
         <node concept="3clFbF" id="2Vd38uKu_K" role="3cqZAp">
@@ -1007,7 +1005,6 @@
   <node concept="pFx2x" id="2lt1tUBuq2$">
     <property role="TrG5h" value="NodeOpener" />
     <property role="1pulfB" value="node_ref" />
-    <property role="1ZnG6o" value="true" />
     <node concept="pF8on" id="2lt1tUBuq2_" role="pCJbe">
       <node concept="3clFbS" id="2lt1tUBuq2A" role="2VODD2">
         <node concept="3clFbJ" id="4yQMaPlI_5B" role="3cqZAp">
@@ -1911,7 +1908,6 @@
   <node concept="pFx2x" id="32YxhLfhS07">
     <property role="TrG5h" value="NodeReceiver" />
     <property role="1pulfB" value="node" />
-    <property role="1ZnG6o" value="true" />
     <node concept="3_QJtf" id="32YxhLfhS1L" role="3_QDjO">
       <property role="TrG5h" value="node" />
       <property role="3_QJtb" value="true" />

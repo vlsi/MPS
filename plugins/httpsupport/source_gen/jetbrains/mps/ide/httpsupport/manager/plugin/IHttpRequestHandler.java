@@ -9,8 +9,6 @@ public interface IHttpRequestHandler {
   @NotNull
   String getName();
 
-  boolean isTrustful();
-
   boolean canHandle(@NotNull HttpRequest request);
 
   void handle(@NotNull HttpRequest request) throws Exception;

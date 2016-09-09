@@ -26,11 +26,6 @@ public class NodeReceiver_RequestHandler extends HttpRequestHandlerBase {
     return "node";
   }
 
-  @Override
-  public boolean isTrustful() {
-    return true;
-  }
-
   private SNode node;
   private Project project;
 
@@ -70,12 +65,12 @@ public class NodeReceiver_RequestHandler extends HttpRequestHandlerBase {
     this.project.getModelAccess().executeCommandInEDT(new Runnable() {
       public void run() {
         try {
-          EditableModelDescriptor tmpModel = as_how0yc_a0a0a0a0a0a0a1a41(TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule()), EditableModelDescriptor.class);
+          EditableModelDescriptor tmpModel = as_how0yc_a0a0a0a0a0a0a1a21(TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule()), EditableModelDescriptor.class);
 
           tmpModel.addRootNode(NodeReceiver_RequestHandler.this.node);
           TemporaryModels.getInstance().addMissingImports(tmpModel);
 
-          ReceivedNodeDialog dialog = new ReceivedNodeDialog(as_how0yc_a0a0a5a0a0a0a0a1a41(NodeReceiver_RequestHandler.this.project, MPSProject.class), NodeReceiver_RequestHandler.this.node);
+          ReceivedNodeDialog dialog = new ReceivedNodeDialog(as_how0yc_a0a0a5a0a0a0a0a1a21(NodeReceiver_RequestHandler.this.project, MPSProject.class), NodeReceiver_RequestHandler.this.node);
           dialog.show();
 
           NodeReceiver_RequestHandler.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer((dialog.isOK() ? HandlerUtil.SUCCESS_STREAM : HandlerUtil.FAILURE_STREAM)));
@@ -88,10 +83,10 @@ public class NodeReceiver_RequestHandler extends HttpRequestHandlerBase {
       }
     });
   }
-  private static <T> T as_how0yc_a0a0a0a0a0a0a1a41(Object o, Class<T> type) {
+  private static <T> T as_how0yc_a0a0a0a0a0a0a1a21(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_how0yc_a0a0a5a0a0a0a0a1a41(Object o, Class<T> type) {
+  private static <T> T as_how0yc_a0a0a5a0a0a0a0a1a21(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

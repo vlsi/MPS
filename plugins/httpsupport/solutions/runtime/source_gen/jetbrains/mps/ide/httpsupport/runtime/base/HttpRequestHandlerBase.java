@@ -19,11 +19,6 @@ public abstract class HttpRequestHandlerBase implements IHttpRequestHandler {
     return getClass().getSimpleName();
   }
 
-  @Override
-  public boolean isTrustful() {
-    return false;
-  }
-
 
   protected boolean init(@NotNull HttpRequest request) {
     if (this.request == request) {
