@@ -127,6 +127,9 @@
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
       </concept>
+      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
+        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
+      </concept>
       <concept id="1145573345940" name="jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation" flags="nn" index="2TvwIu" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
@@ -502,6 +505,108 @@
     <node concept="1YaCAy" id="40BYgsZYnvF" role="1YuTPh">
       <property role="TrG5h" value="queryParameter" />
       <ref role="1YaFvo" to="ndib:21vgRr5xrgT" resolve="QueryParameter" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="xSXmQZuKFZ">
+    <property role="TrG5h" value="check_ParameterInitializer" />
+    <property role="3GE5qa" value="request" />
+    <node concept="3clFbS" id="xSXmQZuKG0" role="18ibNy">
+      <node concept="2Mj0R9" id="xSXmQZuKZQ" role="3cqZAp">
+        <node concept="2OqwBi" id="xSXmQZvD8_" role="2MkoU_">
+          <node concept="2OqwBi" id="xSXmQZvD8A" role="2Oq$k0">
+            <node concept="1YBJjd" id="xSXmQZvD8B" role="2Oq$k0">
+              <ref role="1YBMHb" node="xSXmQZuKG2" resolve="parameterInitializer" />
+            </node>
+            <node concept="2TvwIu" id="xSXmQZvD8C" role="2OqNvi" />
+          </node>
+          <node concept="2HxqBE" id="xSXmQZvD8D" role="2OqNvi">
+            <node concept="1bVj0M" id="xSXmQZvD8E" role="23t8la">
+              <node concept="3clFbS" id="xSXmQZvD8F" role="1bW5cS">
+                <node concept="3clFbF" id="xSXmQZvD8G" role="3cqZAp">
+                  <node concept="3fqX7Q" id="xSXmQZvHim" role="3clFbG">
+                    <node concept="2EnYce" id="xSXmQZvHio" role="3fr31v">
+                      <node concept="2JrnkZ" id="xSXmQZvHip" role="2Oq$k0">
+                        <node concept="2OqwBi" id="xSXmQZvHiq" role="2JrQYb">
+                          <node concept="1PxgMI" id="xSXmQZvHir" role="2Oq$k0">
+                            <ref role="1m5ApE" to="ndib:40BYgsZXsWn" resolve="ParameterInitializer" />
+                            <node concept="37vLTw" id="xSXmQZvHis" role="1m5AlR">
+                              <ref role="3cqZAo" node="xSXmQZvD8R" resolve="it" />
+                            </node>
+                          </node>
+                          <node concept="3TrEf2" id="xSXmQZvHit" role="2OqNvi">
+                            <ref role="3Tt5mk" to="ndib:40BYgsZXsWo" resolve="parameter" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="xSXmQZvHiu" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                        <node concept="2OqwBi" id="xSXmQZvHiv" role="37wK5m">
+                          <node concept="1YBJjd" id="xSXmQZvHiw" role="2Oq$k0">
+                            <ref role="1YBMHb" node="xSXmQZuKG2" resolve="parameterInitializer" />
+                          </node>
+                          <node concept="3TrEf2" id="xSXmQZvHix" role="2OqNvi">
+                            <ref role="3Tt5mk" to="ndib:40BYgsZXsWo" resolve="parameter" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="Rh6nW" id="xSXmQZvD8R" role="1bW2Oz">
+                <property role="TrG5h" value="it" />
+                <node concept="2jxLKc" id="xSXmQZvD8S" role="1tU5fm" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="Xl_RD" id="xSXmQZuWH6" role="2MkJ7o">
+          <property role="Xl_RC" value="duplicate reference to parameter" />
+        </node>
+        <node concept="1YBJjd" id="xSXmQZuWPu" role="2OEOjV">
+          <ref role="1YBMHb" node="xSXmQZuKG2" resolve="parameterInitializer" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="xSXmQZuKG2" role="1YuTPh">
+      <property role="TrG5h" value="parameterInitializer" />
+      <ref role="1YaFvo" to="ndib:40BYgsZXsWn" resolve="ParameterInitializer" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="xSXmQZvLmA">
+    <property role="3GE5qa" value="request" />
+    <property role="TrG5h" value="typeof_ParameterInitializer" />
+    <node concept="3clFbS" id="xSXmQZvLmB" role="18ibNy">
+      <node concept="1ZobV4" id="xSXmQZvLth" role="3cqZAp">
+        <node concept="mw_s8" id="xSXmQZvLtr" role="1ZfhK$">
+          <node concept="1Z2H0r" id="xSXmQZvLUB" role="mwGJk">
+            <node concept="2OqwBi" id="xSXmQZvM2W" role="1Z2MuG">
+              <node concept="1YBJjd" id="xSXmQZvLXg" role="2Oq$k0">
+                <ref role="1YBMHb" node="xSXmQZvLnz" resolve="parameterInitializer" />
+              </node>
+              <node concept="3TrEf2" id="xSXmQZvMh7" role="2OqNvi">
+                <ref role="3Tt5mk" to="ndib:40BYgsZXsWq" resolve="value" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="xSXmQZvLOG" role="1ZfhKB">
+          <node concept="1Z2H0r" id="xSXmQZvLOC" role="mwGJk">
+            <node concept="2OqwBi" id="xSXmQZvLzo" role="1Z2MuG">
+              <node concept="1YBJjd" id="xSXmQZvLtG" role="2Oq$k0">
+                <ref role="1YBMHb" node="xSXmQZvLnz" resolve="parameterInitializer" />
+              </node>
+              <node concept="3TrEf2" id="xSXmQZvLDy" role="2OqNvi">
+                <ref role="3Tt5mk" to="ndib:40BYgsZXsWo" resolve="parameter" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="xSXmQZvLnz" role="1YuTPh">
+      <property role="TrG5h" value="parameterInitializer" />
+      <ref role="1YaFvo" to="ndib:40BYgsZXsWn" resolve="ParameterInitializer" />
     </node>
   </node>
 </model>
