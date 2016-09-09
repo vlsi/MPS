@@ -17,7 +17,6 @@
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.openapi.wm.IdeFocusManager" />
     <classNode dependClassName="com.intellij.util.Base64Converter" />
-    <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.datatransfer.Transferable" />
     <classNode dependClassName="java.awt.datatransfer.UnsupportedFlavorException" />
     <classNode dependClassName="java.awt.event.KeyEvent" />
@@ -104,7 +103,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="com.intellij.openapi.Disposable" />
-    <classNode extendsClassName="javax.swing.JPanel" />
+    <classNode extendsClassName="com.intellij.openapi.ui.SimpleToolWindowPanel" />
   </dependency>
   <dependency className="jetbrains.mps.console.tool.ConsoleContext" file="ConsoleContext.java">
     <classNode dependClassName="jetbrains.mps.console.tool.BaseConsoleTab" />

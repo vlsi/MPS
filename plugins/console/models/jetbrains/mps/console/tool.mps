@@ -74,6 +74,7 @@
     <import index="wvnl" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.extensions(MPS.Editor/)" />
     <import index="tqbz" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.actions(MPS.IDEA/)" />
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
+    <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -4340,6 +4341,15 @@
     <node concept="3clFbW" id="4gO8GruYmQx" role="jymVt">
       <node concept="3cqZAl" id="4gO8GruYmQy" role="3clF45" />
       <node concept="3clFbS" id="4gO8GruYmQz" role="3clF47">
+        <node concept="XkiVB" id="1mPs3EDYbfp" role="3cqZAp">
+          <ref role="37wK5l" to="jkm4:~SimpleToolWindowPanel.&lt;init&gt;(boolean,boolean)" resolve="SimpleToolWindowPanel" />
+          <node concept="3clFbT" id="1mPs3EDYck1" role="37wK5m">
+            <property role="3clFbU" value="false" />
+          </node>
+          <node concept="3clFbT" id="1mPs3EDYdg5" role="37wK5m">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
         <node concept="3clFbF" id="4gO8GruYmQ$" role="3cqZAp">
           <node concept="37vLTI" id="4gO8GruYmQ_" role="3clFbG">
             <node concept="37vLTw" id="4gO8GruYmQA" role="37vLTx">
@@ -4823,20 +4833,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="6ysF3v1j_f1" role="3cqZAp" />
-        <node concept="3clFbF" id="6ysF3v1j_f7" role="3cqZAp">
-          <node concept="2OqwBi" id="6ysF3v1j_f8" role="3clFbG">
-            <node concept="liA8E" id="6ysF3v1j_f9" role="2OqNvi">
-              <ref role="37wK5l" to="z60i:~Container.setLayout(java.awt.LayoutManager):void" resolve="setLayout" />
-              <node concept="2ShNRf" id="6ysF3v1j_fa" role="37wK5m">
-                <node concept="1pGfFk" id="6ysF3v1j_fb" role="2ShVmc">
-                  <ref role="37wK5l" to="z60i:~BorderLayout.&lt;init&gt;()" resolve="BorderLayout" />
-                </node>
-              </node>
-            </node>
-            <node concept="Xjq3P" id="6ysF3v1NGxA" role="2Oq$k0" />
-          </node>
-        </node>
-        <node concept="3clFbH" id="3sIEoj5JtAR" role="3cqZAp" />
         <node concept="3cpWs8" id="3sIEoj5JplF" role="3cqZAp">
           <node concept="3cpWsn" id="3sIEoj5JplG" role="3cpWs9">
             <property role="TrG5h" value="group" />
@@ -4898,78 +4894,29 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="3sIEoj5JpmB" role="3cqZAp">
-          <node concept="3cpWsn" id="3sIEoj5JpmC" role="3cpWs9">
-            <property role="TrG5h" value="toolbarComponent" />
-            <node concept="3uibUv" id="3sIEoj5JpmD" role="1tU5fm">
-              <ref role="3uigEE" to="dxuu:~JPanel" resolve="JPanel" />
-            </node>
-            <node concept="2ShNRf" id="3sIEoj5JpmE" role="33vP2m">
-              <node concept="1pGfFk" id="3sIEoj5JpmF" role="2ShVmc">
-                <ref role="37wK5l" to="dxuu:~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolve="JPanel" />
-                <node concept="2ShNRf" id="3sIEoj5JpmG" role="37wK5m">
-                  <node concept="1pGfFk" id="3sIEoj5JpmH" role="2ShVmc">
-                    <ref role="37wK5l" to="z60i:~BorderLayout.&lt;init&gt;()" resolve="BorderLayout" />
-                  </node>
-                </node>
+        <node concept="3clFbH" id="1mPs3EDYsSR" role="3cqZAp" />
+        <node concept="3clFbF" id="1mPs3EDYgl$" role="3cqZAp">
+          <node concept="1rXfSq" id="1mPs3EDYgly" role="3clFbG">
+            <ref role="37wK5l" to="jkm4:~SimpleToolWindowPanel.setToolbar(javax.swing.JComponent):void" resolve="setToolbar" />
+            <node concept="2OqwBi" id="1mPs3EDYjUf" role="37wK5m">
+              <node concept="37vLTw" id="1mPs3EDYiPu" role="2Oq$k0">
+                <ref role="3cqZAo" node="3sIEoj5Jpmu" resolve="toolbar" />
+              </node>
+              <node concept="liA8E" id="1mPs3EDYnxS" role="2OqNvi">
+                <ref role="37wK5l" to="qkt:~ActionToolbar.getComponent():javax.swing.JComponent" resolve="getComponent" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="3sIEoj5JpmI" role="3cqZAp">
-          <node concept="2OqwBi" id="3sIEoj5JpmJ" role="3clFbG">
-            <node concept="37vLTw" id="3sIEoj5JpmK" role="2Oq$k0">
-              <ref role="3cqZAo" node="3sIEoj5JpmC" resolve="toolbarComponent" />
-            </node>
-            <node concept="liA8E" id="3sIEoj5JpmL" role="2OqNvi">
-              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
-              <node concept="2OqwBi" id="3sIEoj5JpmM" role="37wK5m">
-                <node concept="37vLTw" id="3sIEoj5JpmN" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3sIEoj5Jpmu" resolve="toolbar" />
-                </node>
-                <node concept="liA8E" id="3sIEoj5JpmO" role="2OqNvi">
-                  <ref role="37wK5l" to="qkt:~ActionToolbar.getComponent():javax.swing.JComponent" resolve="getComponent" />
-                </node>
+        <node concept="3clFbF" id="1mPs3EDYrjs" role="3cqZAp">
+          <node concept="1rXfSq" id="1mPs3EDYrjq" role="3clFbG">
+            <ref role="37wK5l" to="jkm4:~SimpleToolWindowPanel.setContent(javax.swing.JComponent):void" resolve="setContent" />
+            <node concept="2OqwBi" id="4q1Go0ScYqj" role="37wK5m">
+              <node concept="37vLTw" id="4q1Go0ScXWe" role="2Oq$k0">
+                <ref role="3cqZAo" node="6ysF3v1j_8_" resolve="myEditor" />
               </node>
-              <node concept="10M0yZ" id="3sIEoj5JpmP" role="37wK5m">
-                <ref role="3cqZAo" to="z60i:~BorderLayout.CENTER" resolve="CENTER" />
-                <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="3sIEoj5Jm6L" role="3cqZAp" />
-        <node concept="3clFbF" id="6ysF3v1j_fd" role="3cqZAp">
-          <node concept="2OqwBi" id="6ysF3v1j_fe" role="3clFbG">
-            <node concept="Xjq3P" id="6ysF3v1NZSw" role="2Oq$k0" />
-            <node concept="liA8E" id="6ysF3v1j_fg" role="2OqNvi">
-              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
-              <node concept="37vLTw" id="3sIEoj5KpW7" role="37wK5m">
-                <ref role="3cqZAo" node="3sIEoj5JpmC" resolve="toolbarComponent" />
-              </node>
-              <node concept="10M0yZ" id="6ysF3v1j_fj" role="37wK5m">
-                <ref role="3cqZAo" to="z60i:~BorderLayout.WEST" resolve="WEST" />
-                <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6ysF3v1j_fG" role="3cqZAp">
-          <node concept="2OqwBi" id="6ysF3v1j_fH" role="3clFbG">
-            <node concept="Xjq3P" id="6ysF3v1O8RS" role="2Oq$k0" />
-            <node concept="liA8E" id="6ysF3v1j_fJ" role="2OqNvi">
-              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
-              <node concept="2OqwBi" id="4q1Go0ScYqj" role="37wK5m">
-                <node concept="37vLTw" id="4q1Go0ScXWe" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6ysF3v1j_8_" resolve="myEditor" />
-                </node>
-                <node concept="liA8E" id="4q1Go0Sd7Fs" role="2OqNvi">
-                  <ref role="37wK5l" to="exr9:~EditorComponent.getExternalComponent():javax.swing.JComponent" resolve="getExternalComponent" />
-                </node>
-              </node>
-              <node concept="10M0yZ" id="6ysF3v1j_fL" role="37wK5m">
-                <ref role="3cqZAo" to="z60i:~BorderLayout.CENTER" resolve="CENTER" />
-                <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
+              <node concept="liA8E" id="4q1Go0Sd7Fs" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getExternalComponent():javax.swing.JComponent" resolve="getExternalComponent" />
               </node>
             </node>
           </node>
@@ -8123,8 +8070,8 @@
     </node>
     <node concept="2tJIrI" id="6ImRKzm2JTe" role="jymVt" />
     <node concept="3Tm1VV" id="4gO8Gruz$1K" role="1B3o_S" />
-    <node concept="3uibUv" id="4gO8GruzME0" role="1zkMxy">
-      <ref role="3uigEE" to="dxuu:~JPanel" resolve="JPanel" />
+    <node concept="3uibUv" id="1mPs3EDY4k4" role="1zkMxy">
+      <ref role="3uigEE" to="jkm4:~SimpleToolWindowPanel" resolve="SimpleToolWindowPanel" />
     </node>
     <node concept="3uibUv" id="4DLumAf7Gpc" role="EKbjA">
       <ref role="3uigEE" to="v23q:~Disposable" resolve="Disposable" />

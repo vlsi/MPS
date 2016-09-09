@@ -26,7 +26,6 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.actionSystem.Presentation;
@@ -34,6 +33,7 @@ import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.ui.InputValidatorEx;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.ui.SimpleToolWindowPanel;
 import com.intellij.pom.NavigatableAdapter;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
@@ -122,7 +122,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   private int myMaxListSize = 10000;
 
   protected final FastListModel<IMessage> myModel = new FastListModel<>(this.myMaxListSize);
-  private final JPanel myComponent = new RootPanel();
+  private final RootPanel myComponent = new RootPanel();
   protected final JList myList = new JBList(myModel);
   private ActionToolbar myToolbar;
   private final AtomicInteger myMessagesInProgress = new AtomicInteger();
@@ -301,10 +301,6 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   protected void initUI() {
     myList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
     myList.setCellRenderer(myCellRenderer);
-    myComponent.setLayout(new BorderLayout());
-
-    final JBPanel panel = new JBPanel(new BorderLayout());
-    panel.add(new JPanel(), BorderLayout.CENTER);
 
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(myWarningsAction);
@@ -314,17 +310,16 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     group.add(new ClearAction());
 
     myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
-    panel.add(myToolbar.getComponent(), BorderLayout.NORTH);
 
-    myComponent.add(panel, BorderLayout.WEST);
-    final JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myList);
+    myComponent.setToolbar(myToolbar.getComponent());
+    final JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myList, true);
     // Add MouseWheelListener to scrollPane instead of myList itself, because otherwise scrollPane default behaviour will be blocked
     scrollPane.addMouseWheelListener(e -> {
       // Need to convert event to get right mouse point relative to list
       final MouseEvent mouseEvent = SwingUtilities.convertMouseEvent(e.getComponent(), e, myList);
       myCellRenderer.setIndexUnderMouse(myList.locationToIndex(mouseEvent.getPoint()));
     });
-    myComponent.add(scrollPane, BorderLayout.CENTER);
+    myComponent.setContent(scrollPane);
 
     myComponent.registerKeyboardAction(new AbstractAction() {
       @Override
@@ -884,7 +879,11 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     }
   }
 
-  private class RootPanel extends JBPanel implements OccurenceNavigator, DataProvider {
+  private class RootPanel extends SimpleToolWindowPanel implements OccurenceNavigator {
+    public RootPanel() {
+      super(false, true);
+    }
+
     @SuppressWarnings("unchecked")
     @Override
     public Object getData(@NonNls String id) {
@@ -907,7 +906,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
         return "ideaInterface.messageList";
       }
 
-      return null;
+      return super.getData(id);
 
     }
 
