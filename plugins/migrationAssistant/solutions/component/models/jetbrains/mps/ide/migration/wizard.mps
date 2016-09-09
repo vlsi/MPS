@@ -4727,6 +4727,12 @@
         <property role="od$2w" value="false" />
         <property role="DiZV1" value="false" />
         <property role="2aFKle" value="false" />
+        <node concept="37vLTG" id="7i5KBT1Rk5c" role="3clF46">
+          <property role="TrG5h" value="progressIndicator" />
+          <node concept="3uibUv" id="7i5KBT1Rk5d" role="1tU5fm">
+            <ref role="3uigEE" to="xygl:~ProgressIndicator" resolve="ProgressIndicator" />
+          </node>
+        </node>
         <node concept="3Tm1VV" id="ANqTy7mxfB" role="1B3o_S" />
         <node concept="A3Dl8" id="ANqTy7mxfC" role="3clF45">
           <node concept="3uibUv" id="ANqTy7mxfD" role="A3Ik2">

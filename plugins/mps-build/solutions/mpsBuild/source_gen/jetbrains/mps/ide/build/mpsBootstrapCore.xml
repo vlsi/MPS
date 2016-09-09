@@ -4340,14 +4340,16 @@
   <target name="generate" depends="declare-mps-tasks">
     <echo message="generating" />
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true">
-      <chunk bootstrap="true">
+      <chunk>
         <module file="${mps_home}/languages/core/stub/Annotations/Annotations.msd" />
-        <module file="${mps_home}/languages/core/stub/JDK/JDK.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/core/stub/JDK/JDK.msd" />
         <module file="${mps_home}/languages/core/stub/MPS.Core/MPS.Core.msd" />
         <module file="${mps_home}/languages/core/stub/MPS.Editor/MPS.Editor.msd" />
         <module file="${mps_home}/languages/core/stub/MPS.IDEA/MPS.IDEA.msd" />
         <module file="${mps_home}/languages/core/stub/MPS.OpenAPI/MPS.OpenAPI.msd" />
         <module file="${mps_home}/languages/core/stub/MPS.Platform/MPS.Platform.msd" />
+      </chunk>
+      <chunk bootstrap="true">
         <module file="${mps_home}/languages/baseLanguage/closures/runtime/closures.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/languages/baseLanguage/collections/runtime/collections.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/jetbrains.mps.analyzers.runtime.msd" bootstrap="true" />
