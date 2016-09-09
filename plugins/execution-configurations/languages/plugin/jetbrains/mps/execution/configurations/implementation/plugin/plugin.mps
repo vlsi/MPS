@@ -12176,11 +12176,21 @@
       <node concept="3Tm1VV" id="5vt46J2P0gp" role="1B3o_S" />
       <node concept="3cqZAl" id="5vt46J2P0gr" role="3clF45" />
       <node concept="3clFbS" id="5vt46J2P0gs" role="3clF47">
-        <node concept="1gVbGN" id="6Aw2OSzndEp" role="3cqZAp">
-          <node concept="3fqX7Q" id="6Aw2OSzndOJ" role="1gVkn0">
-            <node concept="37vLTw" id="6Aw2OSzndSv" role="3fr31v">
-              <ref role="3cqZAo" node="6Aw2OSzlAGT" resolve="myDestroyed" />
+        <node concept="3clFbJ" id="75GAJQ7FZ7c" role="3cqZAp">
+          <node concept="3clFbS" id="75GAJQ7FZ7e" role="3clFbx">
+            <node concept="YS8fn" id="75GAJQ7FZrK" role="3cqZAp">
+              <node concept="2ShNRf" id="75GAJQ7FZrZ" role="YScLw">
+                <node concept="1pGfFk" id="75GAJQ7GxuH" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+                  <node concept="Xl_RD" id="75GAJQ7GxxC" role="37wK5m">
+                    <property role="Xl_RC" value="Already destroyed" />
+                  </node>
+                </node>
+              </node>
             </node>
+          </node>
+          <node concept="37vLTw" id="75GAJQ7FZcz" role="3clFbw">
+            <ref role="3cqZAo" node="6Aw2OSzlAGT" resolve="myDestroyed" />
           </node>
         </node>
         <node concept="3clFbF" id="6Aw2OSzlBmD" role="3cqZAp">
@@ -12193,10 +12203,49 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="75GAJQ7GCbD" role="3cqZAp">
+          <node concept="1rXfSq" id="75GAJQ7GCbB" role="3clFbG">
+            <ref role="37wK5l" node="75GAJQ7G$bS" resolve="closeOutAndErr" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="75GAJQ7Gy9G" role="jymVt" />
+    <node concept="3clFb_" id="75GAJQ7G$bS" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="closeOutAndErr" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="75GAJQ7G$bV" role="3clF47">
+        <node concept="3cpWs8" id="75GAJQ7G$KN" role="3cqZAp">
+          <node concept="3cpWsn" id="75GAJQ7G$KO" role="3cpWs9">
+            <property role="TrG5h" value="newOut" />
+            <node concept="3uibUv" id="75GAJQ7G$KP" role="1tU5fm">
+              <ref role="3uigEE" to="guwi:~PrintStream" resolve="PrintStream" />
+            </node>
+            <node concept="10M0yZ" id="75GAJQ7G$Mf" role="33vP2m">
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="75GAJQ7G$QZ" role="3cqZAp">
+          <node concept="3cpWsn" id="75GAJQ7G$R0" role="3cpWs9">
+            <property role="TrG5h" value="newErr" />
+            <node concept="3uibUv" id="75GAJQ7G$R1" role="1tU5fm">
+              <ref role="3uigEE" to="guwi:~PrintStream" resolve="PrintStream" />
+            </node>
+            <node concept="10M0yZ" id="75GAJQ7G$S9" role="33vP2m">
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="5vt46J2Q52G" role="3cqZAp">
           <node concept="2YIFZM" id="5vt46J2Q52T" role="3clFbG">
-            <ref role="37wK5l" to="wyt6:~System.setOut(java.io.PrintStream):void" resolve="setOut" />
             <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+            <ref role="37wK5l" to="wyt6:~System.setOut(java.io.PrintStream):void" resolve="setOut" />
             <node concept="37vLTw" id="5vt46J2Q53f" role="37wK5m">
               <ref role="3cqZAo" node="5vt46J2PNWp" resolve="myOldOut" />
             </node>
@@ -12204,14 +12253,36 @@
         </node>
         <node concept="3clFbF" id="5vt46J2Q5b4" role="3cqZAp">
           <node concept="2YIFZM" id="5vt46J2Q5qZ" role="3clFbG">
-            <ref role="37wK5l" to="wyt6:~System.setErr(java.io.PrintStream):void" resolve="setErr" />
             <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+            <ref role="37wK5l" to="wyt6:~System.setErr(java.io.PrintStream):void" resolve="setErr" />
             <node concept="37vLTw" id="5vt46J2Q5r0" role="37wK5m">
               <ref role="3cqZAo" node="5vt46J2PO2K" resolve="myOldErr" />
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="75GAJQ7G_t4" role="3cqZAp">
+          <node concept="2OqwBi" id="75GAJQ7G_QR" role="3clFbG">
+            <node concept="37vLTw" id="75GAJQ7G_t2" role="2Oq$k0">
+              <ref role="3cqZAo" node="75GAJQ7G$KO" resolve="newOut" />
+            </node>
+            <node concept="liA8E" id="75GAJQ7GADV" role="2OqNvi">
+              <ref role="37wK5l" to="guwi:~PrintStream.close():void" resolve="close" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="75GAJQ7GAN0" role="3cqZAp">
+          <node concept="2OqwBi" id="75GAJQ7GBdd" role="3clFbG">
+            <node concept="37vLTw" id="75GAJQ7GAMY" role="2Oq$k0">
+              <ref role="3cqZAo" node="75GAJQ7G$R0" resolve="newErr" />
+            </node>
+            <node concept="liA8E" id="75GAJQ7GC0t" role="2OqNvi">
+              <ref role="37wK5l" to="guwi:~PrintStream.close():void" resolve="close" />
+            </node>
+          </node>
+        </node>
       </node>
+      <node concept="3Tm6S6" id="75GAJQ7GyH1" role="1B3o_S" />
+      <node concept="3cqZAl" id="75GAJQ7G$4Z" role="3clF45" />
     </node>
     <node concept="2tJIrI" id="5yUypy6KsoG" role="jymVt" />
     <node concept="3clFb_" id="5vt46J2P0gt" role="jymVt">

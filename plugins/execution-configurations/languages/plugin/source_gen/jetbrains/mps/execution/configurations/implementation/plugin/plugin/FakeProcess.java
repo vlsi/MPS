@@ -41,10 +41,20 @@ public class FakeProcess extends Process {
   }
 
   public void destroy() {
-    assert !(myDestroyed);
+    if (myDestroyed) {
+      throw new IllegalStateException("Already destroyed");
+    }
     myDestroyed = true;
+    closeOutAndErr();
+  }
+
+  private void closeOutAndErr() {
+    PrintStream newOut = System.out;
+    PrintStream newErr = System.err;
     System.setOut(myOldOut);
     System.setErr(myOldErr);
+    newOut.close();
+    newErr.close();
   }
 
   public int exitValue() {
