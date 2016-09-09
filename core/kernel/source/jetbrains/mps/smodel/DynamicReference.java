@@ -19,12 +19,12 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -78,16 +78,13 @@ public class DynamicReference extends SReferenceBase {
    */
   @Deprecated
   public DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, String resolveInfo) {
-    this(role, sourceNode, targetModelReference == null ? null : targetModelReference.getName(), resolveInfo);
+    this(((ConceptMetaInfoConverter) sourceNode.getConcept()).convertAssociation(role), sourceNode, targetModelReference == null ? null : targetModelReference.getName(), resolveInfo);
   }
 
   public DynamicReference(@NotNull SReferenceLink role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, String resolveInfo) {
     this(role, sourceNode, targetModelReference == null ? null : targetModelReference.getName(), resolveInfo);
   }
 
-  public static DynamicReference createDynamicReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
-    return new DynamicReference(role, sourceNode, modelName == null ? null : new SModelName(modelName), resolveInfo);
-  }
   public static DynamicReference createDynamicReference(@NotNull SReferenceLink role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
     return new DynamicReference(role, sourceNode, modelName == null ? null : new SModelName(modelName), resolveInfo);
   }
@@ -100,27 +97,6 @@ public class DynamicReference extends SReferenceBase {
     } else {
       setResolveInfo(resolveInfo);
     }
-  }
-
-  @Deprecated
-  private DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable SModelName modelName, String resolveInfo) {
-    super(role, sourceNode, null, null);
-    if (modelName != null && !resolveInfo.startsWith(modelName.getLongName()) && isTargetClassifier(sourceNode, role)) {
-      // hack for classifiers resolving with specified targetModelReference. For now (18/04/2012) targetModelReference used only for Classifiers (in stubs and [model]node construction).
-      setResolveInfo(modelName.getLongName() + '.' + resolveInfo);
-    } else {
-      setResolveInfo(resolveInfo);
-    }
-  }
-
-  @Deprecated
-  private static boolean isTargetClassifier(@NotNull SNode node, @NotNull String role) {
-    SAbstractLink lnk = node.getConcept().getLink(role);
-    SAbstractConcept lnkTarget = lnk == null ? null : lnk.getTargetConcept();
-    if (lnkTarget == null) {
-      return false;
-    }
-    return lnkTarget.isSubConceptOf(SNodeUtil.concept_Classifier);
   }
 
   private static boolean isTargetClassifier(@NotNull SReferenceLink role) {
