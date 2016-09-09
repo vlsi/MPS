@@ -63,7 +63,7 @@ public class SRepositoryContentAdapter extends SModuleListenerBase implements SM
   }
 
   @Override
-  public void stopListening(SRepository repository) {
+  public void stopListening(@NotNull SRepository repository) {
     for (SModule module : repository.getModules()) {
       stopListening(module);
     }
