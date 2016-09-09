@@ -47,6 +47,7 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -73,7 +74,6 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.smodel.event.SModelChildEvent;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.event.SModelRootEvent;
@@ -306,7 +306,7 @@ public class ChangesTracking {
     return ListSequence.fromList(toRemove).count();
   }
 
-  private void removeDescendantChanges(SNodeId parentId, String role) {
+  private void removeDescendantChanges(SNodeId parentId, SContainmentLink role) {
     SNode oldNode = getOldNode(parentId);
     if (oldNode == null) {
       return;
@@ -460,8 +460,7 @@ public class ChangesTracking {
         return;
       }
       final SNodeId nodeId = node.getNodeId();
-      String propertyName = event.getPropertyName();
-      final SProperty property = node.getConcept().getProperty(propertyName);
+      final SProperty property = event.getProperty();
 
       // get more info for debugging 
       assert node.getModel().getNode(nodeId) != null : "cannot find node " + nodeId + " in model " + node.getModel();
@@ -513,7 +512,7 @@ public class ChangesTracking {
       if (parent.getModel() == null) {
         return;
       }
-      final String childRoleName = event.getChildRole();
+      String childRoleName = event.getChildRole();
 
       // trying to avoid update task execution for the same child role twice 
       Set<String> childRoles = MapSequence.fromMap(childChanged).get(parent);
@@ -527,7 +526,7 @@ public class ChangesTracking {
         SetSequence.fromSet(childRoles).addElement(childRoleName);
       }
       final SNodeId parentId = parent.getNodeId();
-      final SContainmentLink childRole = (SContainmentLink) parent.getConcept().getLink(childRoleName);
+      final SContainmentLink childRole = event.getAggregationLink();
 
       final Wrappers._T<List<? extends SNode>> childrenRightAfterEvent = new Wrappers._T<List<? extends SNode>>(IterableUtil.asList(parent.getChildren(childRole)));
       childrenRightAfterEvent.value = ListSequence.fromList(childrenRightAfterEvent.value).select(new ISelector<SNode, SNode>() {
@@ -542,7 +541,7 @@ public class ChangesTracking {
               return ch.isAbout(childRole);
             }
           });
-          removeDescendantChanges(parentId, childRoleName);
+          removeDescendantChanges(parentId, childRole);
           myLastParentAndNewChildrenIds = MultiTuple.<SNodeId,List<SNodeId>>from(parentId, ListSequence.fromList(childrenRightAfterEvent.value).select(new ISelector<SNode, SNodeId>() {
             public SNodeId select(SNode n) {
               return n.getNodeId();

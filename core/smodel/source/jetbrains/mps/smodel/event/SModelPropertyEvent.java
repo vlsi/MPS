@@ -43,8 +43,19 @@ public class SModelPropertyEvent extends SModelEvent {
     return myNode.getContainingRoot();
   }
 
+  /**
+   * Prefer {@link #getProperty()} where reasonable
+   */
   public String getPropertyName() {
     return myProperty.getName();
+  }
+
+  /**
+   * @return runtime meta-object that identifies changed property
+   * @since 3.4
+   */
+  public SProperty getProperty() {
+    return myProperty;
   }
 
   public SNode getNode() {
