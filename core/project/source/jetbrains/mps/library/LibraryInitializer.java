@@ -166,11 +166,14 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
   }
 
   private void printStatus(List<SLibrary> toUnload, List<SLibrary> toLoad) {
-    String message = toLoad.isEmpty() ? String.format("Loading %d libraries", toLoad.size()) : "";
-    if (!message.isEmpty() && !toUnload.isEmpty()) {
-      message += "; ";
+    String message = "";
+    if (!toLoad.isEmpty()) {
+      message = String.format("Loading %d libraries", toLoad.size());
+      message += toUnload.isEmpty() ? "" : "; ";
     }
-    message += toUnload.isEmpty() ? String.format("Unloading %d libraries.", toUnload.size()) : ".";
+    if (!toUnload.isEmpty()) {
+      message += String.format("Unloading %d libraries", toUnload.size());
+    }
     LOG.info(message);
   }
 
