@@ -235,16 +235,16 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_4622937352054750129(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("serializedValue"));
   }
-  public static SNode sourceNodeQuery_4622937352054749744(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_610507601221221903(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("serializedValue"));
   }
-  public static SNode sourceNodeQuery_4622937352054750658(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_610507601221224018(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("serializedValue"));
   }
-  public static SNode sourceNodeQuery_4622937352054751042(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_610507601221224622(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("serializedValue"));
   }
-  public static SNode sourceNodeQuery_4622937352054752248(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_610507601221225442(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("serializedValue"));
   }
   public static SNode sourceNodeQuery_4622937352054755189(final SourceSubstituteMacroNodeContext _context) {

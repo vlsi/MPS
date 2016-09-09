@@ -10,10 +10,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.runtime.base.ParameterConverter" file="ParameterConverter.java">
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.runtime.base.QueryParameterConvertUtil" file="QueryParameterConvertUtil.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil" file="HttpSupportUtil.java">
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.Float" />
     <classNode dependClassName="java.lang.Integer" />
@@ -28,6 +25,9 @@
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.runtime.base.ParameterConverter" file="ParameterConverter.java">
+    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

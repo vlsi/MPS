@@ -11,10 +11,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.apache.log4j.Level;
 
-public class QueryParameterConvertUtil {
+public class HttpSupportUtil {
 
 
-  protected static Logger LOG = LogManager.getLogger(QueryParameterConvertUtil.class);
+  protected static Logger LOG = LogManager.getLogger(HttpSupportUtil.class);
   public static Project getProjectByName(final String name) {
     List<Project> openedProjects = ProjectManager.getInstance().getOpenedProjects();
     if (ListSequence.fromList(openedProjects).isEmpty()) {

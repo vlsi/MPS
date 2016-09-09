@@ -6,7 +6,7 @@ import jetbrains.mps.ide.httpsupport.runtime.base.HttpRequestHandlerBase;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.ide.httpsupport.runtime.base.QueryParameterConvertUtil;
+import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
 import org.apache.log4j.Logger;
@@ -42,7 +42,7 @@ public class NodeReceiver_RequestHandler extends HttpRequestHandlerBase {
     }
     {
       String project_serialized = ListSequence.fromList(request.getParameterValue("project")).getElement(0);
-      this.project = QueryParameterConvertUtil.getProjectByName(project_serialized);
+      this.project = HttpSupportUtil.getProjectByName(project_serialized);
 
     }
     return true;

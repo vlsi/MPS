@@ -5,7 +5,7 @@ package jetbrains.mps.ide.httpsupport.nodeaccess.plugin;
 import jetbrains.mps.ide.httpsupport.runtime.base.HttpRequestHandlerBase;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.ide.httpsupport.runtime.base.QueryParameterConvertUtil;
+import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
 import org.apache.log4j.Logger;
@@ -49,12 +49,12 @@ public class FileOpener_RequestHandler extends HttpRequestHandlerBase {
     }
     {
       String line_serialized = ListSequence.fromList(request.getParameterValue("line")).getElement(0);
-      this.line = Integer.valueOf(line_serialized);
+      this.line = HttpSupportUtil.silentParseInt(line_serialized);
 
     }
     {
       String project_serialized = ListSequence.fromList(request.getParameterValue("project")).getElement(0);
-      this.project = QueryParameterConvertUtil.getProjectByName(project_serialized);
+      this.project = HttpSupportUtil.getProjectByName(project_serialized);
 
     }
     return true;
