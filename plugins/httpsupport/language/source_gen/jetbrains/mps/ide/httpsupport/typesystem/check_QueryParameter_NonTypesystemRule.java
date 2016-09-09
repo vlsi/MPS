@@ -7,23 +7,34 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.ide.httpsupport.behavior.QueryParameter__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_QueryParameter_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_QueryParameter_NonTypesystemRule() {
   }
   public void applyRule(final SNode queryParameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if ((SLinkOperations.getTarget(queryParameter, MetaAdapterFactory.getReferenceLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x3d1bb14fe850379cL, "parameterConverter")) == null)) {
+      if (!((boolean) QueryParameter__BehaviorDescriptor.validateDefaultConverting_idxSXmQZvQbK.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, "jetbrains.mps.ide.httpsupport.structure.QueryParameter")), SLinkOperations.getTarget(queryParameter, MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x5122a994febc3a3bL, "type"))))) {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        errorTarget = new ReferenceMessageTarget("parameterConverter");
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(queryParameter, "default converting is not supported for " + SLinkOperations.getTarget(queryParameter, MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x5122a994febc3a3bL, "type")), "r:c79f1d68-0099-426e-a3a4-72db4a9f1693(jetbrains.mps.ide.httpsupport.typesystem)", "610507601221811179", null, errorTarget);
+      }
+    }
+
     if (!(ListSequence.fromList(SNodeOperations.getAllSiblings(queryParameter, false)).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(check_z5utj9_a0a0a0a0a1(SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, "jetbrains.mps.ide.httpsupport.structure.QueryParameter")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), queryParameter));
+        return !(check_z5utj9_a0a0a0a2a1(SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, "jetbrains.mps.ide.httpsupport.structure.QueryParameter")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), queryParameter));
       }
     }))) {
       MessageTarget errorTarget = new NodeMessageTarget();
@@ -39,7 +50,7 @@ public class check_QueryParameter_NonTypesystemRule extends AbstractNonTypesyste
   public boolean overrides() {
     return false;
   }
-  private static boolean check_z5utj9_a0a0a0a0a1(String checkedDotOperand, SNode queryParameter) {
+  private static boolean check_z5utj9_a0a0a0a2a1(String checkedDotOperand, SNode queryParameter) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals(SPropertyOperations.getString(queryParameter, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     }
