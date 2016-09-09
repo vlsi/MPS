@@ -17,6 +17,7 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="fnmy" ref="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -1330,6 +1331,33 @@
             <ref role="3cqZAo" node="6frl3mWgcf_" resolve="unique" />
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="xSXmQZxI$v">
+    <property role="3GE5qa" value="handler" />
+    <ref role="13h7C2" to="ndib:21vgRr5y4Ul" resolve="QueryParameterReference" />
+    <node concept="13hLZK" id="xSXmQZxI$w" role="13h7CW">
+      <node concept="3clFbS" id="xSXmQZxI$x" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="xSXmQZxI$E" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="TrG5h" value="getVariable" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpek:SORzhOpB6t" resolve="getVariable" />
+      <node concept="3Tm1VV" id="xSXmQZxI$F" role="1B3o_S" />
+      <node concept="3clFbS" id="xSXmQZxI$I" role="3clF47">
+        <node concept="3clFbF" id="xSXmQZxI$X" role="3cqZAp">
+          <node concept="2OqwBi" id="xSXmQZxIHn" role="3clFbG">
+            <node concept="13iPFW" id="xSXmQZxI$W" role="2Oq$k0" />
+            <node concept="3TrEf2" id="xSXmQZxIPZ" role="2OqNvi">
+              <ref role="3Tt5mk" to="ndib:21vgRr5y4Um" resolve="queryParameter" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="xSXmQZxI$J" role="3clF45">
+        <ref role="ehGHo" to="tpee:4H$HgYMZ7sw" resolve="IVariableDeclaration" />
       </node>
     </node>
   </node>

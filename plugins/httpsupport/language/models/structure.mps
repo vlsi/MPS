@@ -7,6 +7,7 @@
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="v54s" ref="r:2a0fe383-d602-4f5b-813c-e41afdbbb97e(jetbrains.mps.lang.extension.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -68,6 +69,7 @@
     <property role="19KtqR" value="true" />
     <property role="EcuMT" value="5573986434797590400" />
     <property role="3GE5qa" value="handler" />
+    <property role="34LRSv" value="Request Handler" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="21vgRr5xtu2" role="1TKVEi">
       <property role="IQ2ns" value="2332657309400291202" />
@@ -101,6 +103,9 @@
     <node concept="PrWs8" id="2Vd38uMXhJ" role="PzmwI">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
+    <node concept="PrWs8" id="xSXmQZxJ04" role="PzmwI">
+      <ref role="PrY4T" to="v54s:aRphP9VDPM" resolve="IRootWithUniqueName" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5dkEk59WRcm">
     <property role="EcuMT" value="6004610301070373654" />
@@ -123,6 +128,9 @@
     </node>
     <node concept="PrWs8" id="21vgRr5xrgZ" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="PrWs8" id="xSXmQZxIZW" role="PzmwI">
+      <ref role="PrY4T" to="tpee:4H$HgYMZ7sw" resolve="IVariableDeclaration" />
     </node>
     <node concept="1TJgyj" id="3OrGkZCk3us" role="1TKVEi">
       <property role="IQ2ns" value="4403308017442895772" />
@@ -151,6 +159,9 @@
       <property role="20kJfa" value="queryParameter" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="21vgRr5xrgT" resolve="QueryParameter" />
+    </node>
+    <node concept="PrWs8" id="xSXmQZxI$2" role="PzmwI">
+      <ref role="PrY4T" to="tpee:SORzhOp6jM" resolve="IVariableReference" />
     </node>
   </node>
   <node concept="1TIwiD" id="5YhakczHpni">
@@ -190,6 +201,9 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="3OrGkZCe51i" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="PrWs8" id="xSXmQZxJ0c" role="PzmwI">
+      <ref role="PrY4T" to="v54s:aRphP9VDPM" resolve="IRootWithUniqueName" />
     </node>
     <node concept="1TJgyj" id="3OrGkZCe6AF" role="1TKVEi">
       <property role="IQ2ns" value="4403308017441335723" />

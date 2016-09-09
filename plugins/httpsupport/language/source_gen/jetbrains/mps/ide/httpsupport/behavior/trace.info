@@ -15,7 +15,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,96,0" name="jetbrains.mps.ide.httpsupport.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,102,0" name="jetbrains.mps.ide.httpsupport.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CanHandleRequestFunction_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.ide.httpsupport.behavior.CanHandleRequestFunction_BehaviorDescriptor" />
@@ -918,6 +918,80 @@
         <var name="parameters" id="6004610301070373682" />
       </scope>
       <unit id="6004610301070373682" at="27,0,109,0" name="jetbrains.mps.ide.httpsupport.behavior.CanHandleRequestFunction__BehaviorDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:ebfb0797-fa90-42cb-9f6b-3e661ce06d64(jetbrains.mps.ide.httpsupport.behavior)/610507601222232351">
+    <file name="QueryParameterReference__BehaviorDescriptor.java">
+      <node id="610507601222232351" at="25,0,26,0" concept="8" trace="CONCEPT" />
+      <node id="610507601222232351" at="26,0,27,0" concept="8" trace="REGISTRY" />
+      <node id="610507601222232351" at="28,0,29,0" concept="8" trace="getVariable_idSORzhOpB6t" />
+      <node id="610507601222232351" at="30,0,31,0" concept="8" trace="BH_METHODS" />
+      <node id="610507601222232381" at="35,82,36,190" concept="6" />
+      <node id="610507601222232351" at="39,61,40,20" concept="10" />
+      <node id="610507601222232351" at="44,114,45,21" concept="1" />
+      <node id="610507601222232351" at="49,114,50,49" concept="5" />
+      <node id="610507601222232351" at="51,26,52,56" concept="12" />
+      <node id="610507601222232351" at="55,13,56,60" concept="6" />
+      <node id="610507601222232351" at="57,14,58,58" concept="12" />
+      <node id="610507601222232351" at="63,128,64,49" concept="5" />
+      <node id="610507601222232351" at="65,26,66,56" concept="12" />
+      <node id="610507601222232351" at="69,14,70,58" concept="12" />
+      <node id="610507601222232351" at="76,48,77,22" concept="6" />
+      <node id="610507601222232351" at="82,40,83,19" concept="6" />
+      <node id="610507601222232351" at="32,0,34,0" concept="9" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="610507601222232351" at="35,0,38,0" concept="9" trace="getVariable_idSORzhOpB6t#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="610507601222232351" at="39,0,42,0" concept="0" trace="QueryParameterReference__BehaviorDescriptor#()V" />
+      <node id="610507601222232351" at="50,49,53,5" concept="3" />
+      <node id="610507601222232351" at="64,49,67,5" concept="3" />
+      <node id="610507601222232351" at="43,0,47,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
+      <node id="610507601222232351" at="67,5,71,5" concept="11" />
+      <node id="610507601222232351" at="74,0,79,0" concept="4" trace="getDeclaredMethods#()Ljava/util/List;" />
+      <node id="610507601222232351" at="80,0,85,0" concept="4" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="610507601222232351" at="53,5,59,5" concept="11" />
+      <node id="610507601222232351" at="62,0,73,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <node id="610507601222232351" at="48,0,61,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <scope id="610507601222232351" at="32,63,32,63" />
+      <scope id="610507601222232366" at="35,82,36,190" />
+      <scope id="610507601222232351" at="39,61,40,20" />
+      <scope id="610507601222232351" at="44,114,45,21" />
+      <scope id="610507601222232351" at="51,26,52,56" />
+      <scope id="610507601222232351" at="55,13,56,60" />
+      <scope id="610507601222232351" at="57,14,58,58" />
+      <scope id="610507601222232351" at="65,26,66,56" />
+      <scope id="610507601222232351" at="69,14,70,58" />
+      <scope id="610507601222232351" at="76,48,77,22" />
+      <scope id="610507601222232351" at="82,40,83,19" />
+      <scope id="610507601222232351" at="32,0,34,0">
+        <var name="__thisNode__" id="610507601222232351" />
+      </scope>
+      <scope id="610507601222232351" at="35,0,38,0">
+        <var name="__thisNode__" id="610507601222232351" />
+      </scope>
+      <scope id="610507601222232351" at="39,0,42,0" />
+      <scope id="610507601222232351" at="43,0,47,0">
+        <var name="constructor" id="610507601222232351" />
+        <var name="node" id="610507601222232351" />
+        <var name="parameters" id="610507601222232351" />
+      </scope>
+      <scope id="610507601222232351" at="74,0,79,0" />
+      <scope id="610507601222232351" at="80,0,85,0" />
+      <scope id="610507601222232351" at="63,128,71,5">
+        <var name="methodIndex" id="610507601222232351" />
+      </scope>
+      <scope id="610507601222232351" at="49,114,59,5">
+        <var name="methodIndex" id="610507601222232351" />
+      </scope>
+      <scope id="610507601222232351" at="62,0,73,0">
+        <var name="concept" id="610507601222232351" />
+        <var name="method" id="610507601222232351" />
+        <var name="parameters" id="610507601222232351" />
+      </scope>
+      <scope id="610507601222232351" at="48,0,61,0">
+        <var name="method" id="610507601222232351" />
+        <var name="node" id="610507601222232351" />
+        <var name="parameters" id="610507601222232351" />
+      </scope>
+      <unit id="610507601222232351" at="24,0,86,0" name="jetbrains.mps.ide.httpsupport.behavior.QueryParameterReference__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:ebfb0797-fa90-42cb-9f6b-3e661ce06d64(jetbrains.mps.ide.httpsupport.behavior)/6550075386187266795">
