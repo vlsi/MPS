@@ -6,10 +6,9 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import io.netty.handler.codec.http.QueryStringEncoder;
@@ -34,16 +33,13 @@ public class NodeReferenceURI_Action extends BaseAction {
       return false;
     }
     {
-      Project p = event.getData(CommonDataKeys.PROJECT);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node == null) {
         return false;
       }
+    }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
     }
     return true;
   }
@@ -55,8 +51,7 @@ public class NodeReferenceURI_Action extends BaseAction {
     QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + MPSRequestPortManager.getCurrentPort() + "/node_ref");
 
     encoder.addParam("ref", PersistenceFacade.getInstance().asString(event.getData(MPSCommonDataKeys.NODE).getReference()));
-    encoder.addParam("project", event.getData(CommonDataKeys.PROJECT).getName());
-    encoder.addParam("project", event.getData(CommonDataKeys.PROJECT).getName());
+    encoder.addParam("project", event.getData(MPSCommonDataKeys.MPS_PROJECT).getName());
 
     return encoder.toString();
   }

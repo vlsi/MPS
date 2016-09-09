@@ -12,10 +12,9 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.apache.log4j.Level;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.netty.buffer.Unpooled;
-import org.apache.log4j.Level;
 
 public class NodeOpener_RequestHandler extends HttpRequestHandlerBase {
 
@@ -62,13 +61,7 @@ public class NodeOpener_RequestHandler extends HttpRequestHandlerBase {
     if (this.project != null) {
       this.project.getModelAccess().runWriteInEDT(new Runnable() {
         public void run() {
-          SNode node = HandlerUtil.openNode(NodeOpener_RequestHandler.this.project, NodeOpener_RequestHandler.this.ref);
-          if (node == null) {
-            NodeOpener_RequestHandler.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
-            return;
-          }
-          NodeOpener_RequestHandler.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.SUCCESS_STREAM));
-          HandlerUtil.requestFocus(NodeOpener_RequestHandler.this.project);
+          HandlerUtil.openNode(NodeOpener_RequestHandler.this.request, NodeOpener_RequestHandler.this.project, NodeOpener_RequestHandler.this.ref);
         }
       });
     } else {

@@ -8,22 +8,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSProject;
-import java.util.Iterator;
-import jetbrains.mps.textgen.trace.DebugInfo;
-import jetbrains.mps.textgen.trace.DefaultTraceInfoProvider;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.textgen.trace.BaseLanguageNodeLookup;
-import io.netty.handler.codec.http.HttpResponseStatus;
-import io.netty.buffer.Unpooled;
-import jetbrains.mps.textgen.trace.DebugInfoRoot;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.common.FileOpenUtil;
-import org.apache.log4j.Level;
+import io.netty.handler.codec.http.HttpResponseStatus;
+import io.netty.buffer.Unpooled;
 
 public class FileOpener_RequestHandler extends HttpRequestHandlerBase {
 
@@ -33,7 +22,6 @@ public class FileOpener_RequestHandler extends HttpRequestHandlerBase {
   }
 
   private String file;
-  private Integer line;
   private Project project;
 
   @Override
@@ -45,11 +33,6 @@ public class FileOpener_RequestHandler extends HttpRequestHandlerBase {
         return false;
       }
       this.file = file_serialized;
-
-    }
-    {
-      String line_serialized = ListSequence.fromList(request.getParameterValue("line")).getElement(0);
-      this.line = HttpSupportUtil.silentParseInt(line_serialized);
 
     }
     {
@@ -67,68 +50,32 @@ public class FileOpener_RequestHandler extends HttpRequestHandlerBase {
       return false;
     }
 
-    return this.file.endsWith(".java");
+    return !(this.file.endsWith(".java"));
   }
 
-  protected static Logger LOG = LogManager.getLogger(FileOpener_RequestHandler.class);
   @Override
   public void handle(@NotNull HttpRequest request) throws Exception {
-
-    if (this.project != null) {
-      final com.intellij.openapi.project.Project ideaProject = ((this.project instanceof MPSProject) ? ((MPSProject) this.project).getProject() : null);
-
-
-      int sourceGen = this.file.lastIndexOf(HandlerUtil.SOURCE_GEN);
-      int unitNamePosition = (sourceGen == -1 ? 0 : sourceGen + HandlerUtil.SOURCE_GEN.length());
-      int unitNameEndPostion = this.file.length() - ".java".length();
-      final String unitName = this.file.substring(unitNamePosition, unitNameEndPostion).replace('/', '.');
-      final String namespace = unitName.substring(0, unitName.lastIndexOf("."));
-
-      final String fileName = this.file.substring(this.file.lastIndexOf("/") + 1);
-
-      this.project.getModelAccess().runWriteInEDT(new Runnable() {
-        public void run() {
-          Iterator<DebugInfo> it = new DefaultTraceInfoProvider(FileOpener_RequestHandler.this.project.getRepository()).debugInfo(namespace).iterator();
-          while (it.hasNext()) {
-            if (FileOpener_RequestHandler.this.line != null) {
-              final SNodeReference nodeReference = new BaseLanguageNodeLookup(it.next()).getNodeAt(fileName, FileOpener_RequestHandler.this.line);
-              if (nodeReference != null) {
-                HandlerUtil.openNode(FileOpener_RequestHandler.this.project, nodeReference);
-                FileOpener_RequestHandler.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.SUCCESS_STREAM));
-                HandlerUtil.requestFocus(FileOpener_RequestHandler.this.project);
-                return;
-              }
-            } else {
-              Iterable<DebugInfoRoot> debugInfoRoots = it.next().getRoots();
-              SNodeReference nodeReference = Sequence.fromIterable(debugInfoRoots).where(new IWhereFilter<DebugInfoRoot>() {
-                public boolean accept(DebugInfoRoot debugInfoRoot) {
-                  return debugInfoRoot.getFileNames().contains(fileName);
-                }
-              }).first().getNodeRef();
-              if (nodeReference != null) {
-                HandlerUtil.openNode(FileOpener_RequestHandler.this.project, nodeReference);
-                FileOpener_RequestHandler.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.SUCCESS_STREAM));
-                HandlerUtil.requestFocus(FileOpener_RequestHandler.this.project);
-                return;
-              }
+    if (this.project instanceof MPSProject) {
+      final com.intellij.openapi.project.Project ideaProject = as_tdoo4z_a0a0a0a0l(this.project, MPSProject.class).getProject();
+      VirtualFile projectFile = ideaProject.getBaseDir();
+      if (projectFile != null) {
+        final VirtualFile virtualFile = projectFile.findFileByRelativePath(this.file);
+        if (virtualFile != null) {
+          this.project.getModelAccess().runWriteInEDT(new Runnable() {
+            public void run() {
+              FileOpenUtil.openFile(ideaProject, virtualFile, 1);
+              FileOpener_RequestHandler.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.SUCCESS_STREAM));
+              HandlerUtil.requestFocus(FileOpener_RequestHandler.this.project);
             }
-          }
-
-          final VirtualFile virtualFile = FileOpenUtil.findFile(ideaProject, unitName, fileName);
-          if (virtualFile != null) {
-            FileOpenUtil.openFile(ideaProject, virtualFile, (FileOpener_RequestHandler.this.line == null ? 1 : FileOpener_RequestHandler.this.line));
-            FileOpener_RequestHandler.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.SUCCESS_STREAM));
-            HandlerUtil.requestFocus(FileOpener_RequestHandler.this.project);
-            return;
-          }
-          FileOpener_RequestHandler.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
+          });
+          return;
         }
-      });
-    } else {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("No project is available.");
       }
-      this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
     }
+
+    this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
+  }
+  private static <T> T as_tdoo4z_a0a0a0a0l(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

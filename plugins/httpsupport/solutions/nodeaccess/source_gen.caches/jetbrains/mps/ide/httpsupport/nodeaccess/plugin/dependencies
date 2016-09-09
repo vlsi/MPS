@@ -5,6 +5,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.FileOpener_Extension" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.JavaFileOpener_Extension" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.NodeOpener_Extension" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.NodeReceiver_Extension" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
@@ -17,6 +18,47 @@
     <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.FileOpener_RequestHandler" file="FileOpener_RequestHandler.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="io.netty.buffer.Unpooled" />
+    <classNode dependClassName="io.netty.handler.codec.http.HttpResponseStatus" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.ide.common.FileOpenUtil" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.HandlerUtil" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.ide.httpsupport.runtime.base.HttpRequestHandlerBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.HandlerUtil" file="HandlerUtil.java">
+    <classNode dependClassName="com.intellij.ide.impl.ProjectUtil" />
+    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
+    <classNode dependClassName="io.netty.buffer.Unpooled" />
+    <classNode dependClassName="io.netty.handler.codec.http.HttpResponseStatus" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
+    <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.JavaFileOpener_Extension" file="JavaFileOpener_Extension.java">
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.JavaFileOpener_RequestHandler" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.JavaFileOpener_RequestHandler" file="JavaFileOpener_RequestHandler.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="io.netty.buffer.Unpooled" />
@@ -48,17 +90,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.httpsupport.runtime.base.HttpRequestHandlerBase" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.HandlerUtil" file="HandlerUtil.java">
-    <classNode dependClassName="com.intellij.ide.impl.ProjectUtil" />
-    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.NodeAsUriActions_ActionGroup" file="NodeAsUriActions_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
@@ -85,7 +116,6 @@
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.ide.httpsupport.runtime.base.HttpRequestHandlerBase" />
@@ -125,8 +155,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.NodeReferenceURI_Action" file="NodeReferenceURI_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="io.netty.handler.codec.http.QueryStringEncoder" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -136,6 +164,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.CopyPasteUtil" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
@@ -153,6 +182,7 @@
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.CopyPasteUtil" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.nodeByModelPersistence_Converter" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />

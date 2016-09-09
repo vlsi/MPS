@@ -8,6 +8,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import io.netty.handler.codec.http.QueryStringEncoder;
@@ -36,6 +37,9 @@ public class NodeURI_Action extends BaseAction {
         return false;
       }
     }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+    }
     return true;
   }
   @Override
@@ -47,6 +51,7 @@ public class NodeURI_Action extends BaseAction {
     QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + MPSRequestPortManager.getCurrentPort() + "/node");
 
     encoder.addParam("node", new nodeByModelPersistence_Converter().toString(event.getData(MPSCommonDataKeys.NODE)));
+    encoder.addParam("project", event.getData(MPSCommonDataKeys.MPS_PROJECT).getName());
 
     return encoder.toString();
   }
