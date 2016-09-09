@@ -53,7 +53,9 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
   @Override
   public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
     List<SubstituteMenuItem> smartItems = createSmartItemsItems(context);
-    if (smartItems != null) return smartItems;
+    if (smartItems != null) {
+      return smartItems;
+    }
     return Collections.singletonList(
         new DefaultSubstituteMenuItem(myConcept, context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext()));
 
@@ -111,7 +113,7 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
     if (specializedTargetConceptNode == null) {
       return null;
     }
-    return MetaAdapterByDeclaration.getInstanceConcept(specializedTargetConceptNode);
+    return MetaAdapterByDeclaration.getConcept(specializedTargetConceptNode);
   }
 
   //todo remove this method when we will get rid of specialized concepts
