@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import javax.swing.Icon;
 import java.util.List;
 import java.util.Set;
 
@@ -77,13 +76,7 @@ public interface ConceptDescriptor {
   String getSuperConcept(); // since 3.0
 
   @Deprecated
-  boolean isAssignableTo(String toConceptFqName); // since 3.0
-
-  @Deprecated
   List<String> getParentsNames(); // since 3.0
-
-  @Deprecated
-  Set<String> getAncestorsNames(); // since 3.0
 
   //------------ props
 

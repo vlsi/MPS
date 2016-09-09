@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -64,7 +63,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private SNodeReference mySourceNodeRef;
   private final Object myLock = "";
   // to be initialized
-  private Set<String> ancestors;
   private List<String> parentNames;
   private List<SConceptId> parents;
   private Set<SConceptId> ancestorsIds;
@@ -153,14 +151,10 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     parentNames = Arrays.asList(myParentNames);
     parents = Arrays.asList(myParents);
     ancestorsIds = new LinkedHashSet<SConceptId>();
-    ancestors = new LinkedHashSet<String>();
     Collections.addAll(ancestorsIds, myParents);
-    Collections.addAll(ancestors, myParentNames);
     ancestorsIds.add(myId);
-    ancestors.add(myConceptFqName);
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
       ancestorsIds.addAll(parentDescriptor.getAncestorsIds());
-      ancestors.addAll(parentDescriptor.getAncestorsNames());
     }
   }
 
@@ -239,12 +233,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   public List<String> getParentsNames() {
     init();
     return parentNames;
-  }
-
-  @Override
-  public Set<String> getAncestorsNames() {
-    init();
-    return ancestors;
   }
 
   @Override

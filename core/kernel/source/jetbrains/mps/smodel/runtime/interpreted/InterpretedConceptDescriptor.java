@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,7 +62,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   private List<String> parents;
   private List<SConceptId> parentsIds;
 
-  private Set<String> ancestors;
   private Set<SConceptId> ancestorsIds;
   private Map<SPropertyId, PropertyDescriptor> myProperties;
   private Map<String, PropertyDescriptor> myPropertiesByName;
@@ -245,12 +244,9 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
       // ancestors
       ancestorsIds = new HashSet<SConceptId>(parentsIds);
-      ancestors = new HashSet<String>(parents);
       ancestorsIds.add(myId);
-      ancestors.add(myQualifiedName);
       for (ConceptDescriptor parentDescriptor : parentDescriptors) {
         ancestorsIds.addAll(parentDescriptor.getAncestorsIds());
-        ancestors.addAll(parentDescriptor.getAncestorsNames());
       }
 
       // properties
@@ -347,12 +343,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   @Override
   public List<String> getParentsNames() {
     return parents;
-  }
-
-  @Override
-  public Set<String> getAncestorsNames() {
-    init();
-    return ancestors;
   }
 
   @Override

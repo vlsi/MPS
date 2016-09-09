@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import javax.swing.Icon;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -140,18 +139,6 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   public List<String> getParentsNames() {
     reportWarn();
     return Collections.emptyList();
-  }
-
-  @Override
-  public boolean isAssignableTo(String toConceptFqName) {
-    reportWarn();
-    return false;
-  }
-
-  @Override
-  public Set<String> getAncestorsNames() {
-    reportWarn();
-    return Collections.emptySet();
   }
 
   @Override
