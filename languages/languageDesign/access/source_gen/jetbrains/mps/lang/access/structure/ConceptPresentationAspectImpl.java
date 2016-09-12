@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_BaseExecuteCommandStatement = new ConceptPresentationBuilder().create();
@@ -26,7 +23,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("63650c59-16c8-498a-99c8-005c7ee9515d"), "jetbrains.mps.lang.access")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case 0:
         return props_BaseExecuteCommandStatement;
@@ -49,6 +46,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 9:
         return props_IExecuteCommandStatementSync;
     }
-    throw new IllegalStateException();
+    throw new IllegalStateException("Unknown concept " + c);
   }
 }

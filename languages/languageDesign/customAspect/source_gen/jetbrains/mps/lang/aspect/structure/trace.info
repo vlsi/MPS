@@ -2,7 +2,7 @@
 <debug-info version="2">
   <root>
     <file name="ConceptPresentationAspectImpl.java">
-      <unit at="14,0,52,0" name="jetbrains.mps.lang.aspect.structure.ConceptPresentationAspectImpl" />
+      <unit at="12,0,50,0" name="jetbrains.mps.lang.aspect.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="IconContainer.java">
       <unit at="7,0,10,0" name="jetbrains.mps.lang.aspect.structure.IconContainer" />

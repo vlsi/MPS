@@ -8,8 +8,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbandonInput_RuleConsequence = new ConceptPresentationBuilder().create();
@@ -124,7 +122,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("b401a680-8325-4110-8fd3-84331ff25bef"), "jetbrains.mps.lang.generator")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case 0:
         return props_AbandonInput_RuleConsequence;
@@ -343,6 +341,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 107:
         return props_Weaving_MappingRule_ContextNodeQuery;
     }
-    throw new IllegalStateException();
+    throw new IllegalStateException("Unknown concept " + c);
   }
 }

@@ -6262,116 +6262,8 @@
                 <ref role="3uigEE" node="4qsoKztinkA" resolve="StructureAspectDescriptor" />
               </node>
               <node concept="2OqwBi" id="2xIo4FpU3f0" role="10QFUP">
-                <node concept="2OqwBi" id="2xIo4FpU3f1" role="2Oq$k0">
-                  <node concept="2YIFZM" id="2xIo4FpU3f2" role="2Oq$k0">
-                    <ref role="1Pybhc" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
-                    <ref role="37wK5l" to="vndm:~LanguageRegistry.getInstance():jetbrains.mps.smodel.language.LanguageRegistry" resolve="getInstance" />
-                  </node>
-                  <node concept="liA8E" id="2xIo4FpU3f3" role="2OqNvi">
-                    <ref role="37wK5l" to="vndm:~LanguageRegistry.getLanguage(org.jetbrains.mps.openapi.language.SLanguage):jetbrains.mps.smodel.language.LanguageRuntime" resolve="getLanguage" />
-                    <node concept="2YIFZM" id="1KkpvOxvozg" role="37wK5m">
-                      <ref role="1Pybhc" to="2k9e:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
-                      <ref role="37wK5l" to="2k9e:~MetaAdapterFactory.getLanguage(jetbrains.mps.smodel.adapter.ids.SLanguageId,java.lang.String):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
-                      <node concept="2YIFZM" id="1KkpvOxvMKx" role="37wK5m">
-                        <ref role="37wK5l" to="e8bb:~SLanguageId.deserialize(java.lang.String):jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="deserialize" />
-                        <ref role="1Pybhc" to="e8bb:~SLanguageId" resolve="SLanguageId" />
-                        <node concept="Xl_RD" id="1KkpvOxvN8e" role="37wK5m">
-                          <property role="Xl_RC" value="id_str" />
-                          <node concept="17Uvod" id="1KkpvOxvO0_" role="lGtFl">
-                            <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                            <property role="2qtEX9" value="value" />
-                            <node concept="3zFVjK" id="1KkpvOxvO0A" role="3zH0cK">
-                              <node concept="3clFbS" id="1KkpvOxvO0B" role="2VODD2">
-                                <node concept="3clFbF" id="1KkpvOxvOkj" role="3cqZAp">
-                                  <node concept="2OqwBi" id="1KkpvOxvyLW" role="3clFbG">
-                                    <node concept="2OqwBi" id="1KkpvOxvwMk" role="2Oq$k0">
-                                      <node concept="2OqwBi" id="1KkpvOxvvGr" role="2Oq$k0">
-                                        <node concept="1iwH7S" id="1KkpvOxvv8l" role="2Oq$k0" />
-                                        <node concept="1bhEwm" id="1KkpvOxvQP$" role="2OqNvi">
-                                          <ref role="1bhEwk" node="1KkpvOxvswN" resolve="lang" />
-                                        </node>
-                                      </node>
-                                      <node concept="liA8E" id="1KkpvOxvx$q" role="2OqNvi">
-                                        <ref role="37wK5l" to="mcvo:~SLanguageAdapterById.getId():jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="getId" />
-                                      </node>
-                                    </node>
-                                    <node concept="liA8E" id="1KkpvOxvTze" role="2OqNvi">
-                                      <ref role="37wK5l" to="e8bb:~SLanguageId.serialize():java.lang.String" resolve="serialize" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="Xl_RD" id="1KkpvOxvqJP" role="37wK5m">
-                        <property role="Xl_RC" value="name" />
-                        <node concept="17Uvod" id="1KkpvOxvqVF" role="lGtFl">
-                          <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                          <property role="2qtEX9" value="value" />
-                          <node concept="3zFVjK" id="1KkpvOxvqVG" role="3zH0cK">
-                            <node concept="3clFbS" id="1KkpvOxvqVH" role="2VODD2">
-                              <node concept="3clFbF" id="1KkpvOxvVK7" role="3cqZAp">
-                                <node concept="2OqwBi" id="1KkpvOxvWEN" role="3clFbG">
-                                  <node concept="2OqwBi" id="1KkpvOxvWci" role="2Oq$k0">
-                                    <node concept="1iwH7S" id="1KkpvOxvVK6" role="2Oq$k0" />
-                                    <node concept="1bhEwm" id="1KkpvOxvWqe" role="2OqNvi">
-                                      <ref role="1bhEwk" node="1KkpvOxvswN" resolve="lang" />
-                                    </node>
-                                  </node>
-                                  <node concept="liA8E" id="1KkpvOxvXfW" role="2OqNvi">
-                                    <ref role="37wK5l" to="mcvo:~SLanguageAdapterById.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="2jeGV$" id="1KkpvOxvswN" role="lGtFl">
-                        <property role="TrG5h" value="lang" />
-                        <node concept="2jfdEK" id="1KkpvOxvswP" role="2jfP_Y">
-                          <node concept="3clFbS" id="1KkpvOxvswR" role="2VODD2">
-                            <node concept="3clFbF" id="1KkpvOxvsCA" role="3cqZAp">
-                              <node concept="1eOMI4" id="1KkpvOxvucA" role="3clFbG">
-                                <node concept="10QFUN" id="1KkpvOxvucB" role="1eOMHV">
-                                  <node concept="2YIFZM" id="1KkpvOxvucs" role="10QFUP">
-                                    <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
-                                    <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.getLanguage(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
-                                    <node concept="1eOMI4" id="1KkpvOxvuct" role="37wK5m">
-                                      <node concept="10QFUN" id="1KkpvOxvucu" role="1eOMHV">
-                                        <node concept="2OqwBi" id="1KkpvOxvucv" role="10QFUP">
-                                          <node concept="2JrnkZ" id="1KkpvOxvucw" role="2Oq$k0">
-                                            <node concept="2OqwBi" id="1KkpvOxvucx" role="2JrQYb">
-                                              <node concept="1iwH7S" id="1KkpvOxvucy" role="2Oq$k0" />
-                                              <node concept="1st3f0" id="1KkpvOxvucz" role="2OqNvi" />
-                                            </node>
-                                          </node>
-                                          <node concept="liA8E" id="1KkpvOxvuc$" role="2OqNvi">
-                                            <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
-                                          </node>
-                                        </node>
-                                        <node concept="3uibUv" id="1KkpvOxvuc_" role="10QFUM">
-                                          <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                  <node concept="3uibUv" id="1KkpvOxvuDN" role="10QFUM">
-                                    <ref role="3uigEE" to="mcvo:~SLanguageAdapterById" resolve="SLanguageAdapterById" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3uibUv" id="1KkpvOxvsIO" role="2jfP_h">
-                          <ref role="3uigEE" to="mcvo:~SLanguageAdapterById" resolve="SLanguageAdapterById" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
+                <node concept="37vLTw" id="4wLLrd_cdXx" role="2Oq$k0">
+                  <ref role="3cqZAo" to="ze1i:~ConceptPresentationAspectBase.myLanguageRuntime" resolve="myLanguageRuntime" />
                 </node>
                 <node concept="liA8E" id="2xIo4FpU3f6" role="2OqNvi">
                   <ref role="37wK5l" to="vndm:~LanguageRuntime.getAspect(java.lang.Class):jetbrains.mps.smodel.runtime.ILanguageAspect" resolve="getAspect" />
@@ -6442,7 +6334,15 @@
         <node concept="YS8fn" id="1gbSomz_aU3" role="3cqZAp">
           <node concept="2ShNRf" id="1gbSomz_aU4" role="YScLw">
             <node concept="1pGfFk" id="1gbSomz_aU5" role="2ShVmc">
-              <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;()" resolve="IllegalStateException" />
+              <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+              <node concept="3cpWs3" id="4wLLrd_cf7B" role="37wK5m">
+                <node concept="37vLTw" id="4wLLrd_cffk" role="3uHU7w">
+                  <ref role="3cqZAo" node="1gbSomz_aTh" resolve="c" />
+                </node>
+                <node concept="Xl_RD" id="4wLLrd_ce9$" role="3uHU7B">
+                  <property role="Xl_RC" value="Unknown concept " />
+                </node>
+              </node>
             </node>
           </node>
         </node>

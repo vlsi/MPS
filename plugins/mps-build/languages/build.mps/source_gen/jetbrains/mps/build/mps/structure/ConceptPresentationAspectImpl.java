@@ -8,8 +8,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_BuildLayout_ToBinaryCopyProcessor = new ConceptPresentationBuilder().create();
@@ -69,7 +67,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("0cf935df-4699-4e9c-a132-fa109541cba3"), "jetbrains.mps.build.mps")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case 0:
         return props_BuildLayout_ToBinaryCopyProcessor;
@@ -178,6 +176,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 52:
         return props_GeneratorInternal_String;
     }
-    throw new IllegalStateException();
+    throw new IllegalStateException("Unknown concept " + c);
   }
 }

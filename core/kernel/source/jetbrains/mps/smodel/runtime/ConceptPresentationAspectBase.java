@@ -15,5 +15,15 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-public abstract class ConceptPresentationAspectBase implements ConceptPresentationAspect {
+import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.language.LanguageRuntimeAware;
+import org.jetbrains.annotations.NotNull;
+
+public abstract class ConceptPresentationAspectBase implements ConceptPresentationAspect, LanguageRuntimeAware {
+  protected LanguageRuntime myLanguageRuntime;
+
+  @Override
+  public void setLanguageRuntime(@NotNull LanguageRuntime languageRuntime) {
+    myLanguageRuntime = languageRuntime;
+  }
 }

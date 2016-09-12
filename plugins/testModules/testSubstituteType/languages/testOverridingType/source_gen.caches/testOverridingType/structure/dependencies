@@ -3,9 +3,6 @@
   <dependency className="testOverridingType.structure.ConceptPresentationAspectImpl" file="ConceptPresentationAspectImpl.java">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentation" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />

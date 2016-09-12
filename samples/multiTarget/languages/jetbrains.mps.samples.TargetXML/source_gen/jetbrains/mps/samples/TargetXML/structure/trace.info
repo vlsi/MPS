@@ -2,7 +2,7 @@
 <debug-info version="2">
   <root>
     <file name="ConceptPresentationAspectImpl.java">
-      <unit at="14,0,28,0" name="jetbrains.mps.samples.TargetXML.structure.ConceptPresentationAspectImpl" />
+      <unit at="11,0,25,0" name="jetbrains.mps.samples.TargetXML.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
       <unit at="20,0,62,0" name="jetbrains.mps.samples.TargetXML.structure.StructureAspectDescriptor" />
