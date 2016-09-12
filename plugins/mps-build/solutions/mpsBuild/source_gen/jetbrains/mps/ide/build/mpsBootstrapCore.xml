@@ -13992,6 +13992,7 @@
   </target>
   
   <target name="cleanSources">
+    <delete dir="${mps_home}/languages/baseLanguage/checkDot/languages/checkedDots/generator/source_gen" />
     <delete dir="${mps_home}/languages/baseLanguage/doubleDispatch/generator/source_gen" />
     <delete dir="${mps_home}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/generator/source_gen" />
     <delete dir="${mps_home}/languages/baseLanguage/varVariable/generator/source_gen" />
