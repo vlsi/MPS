@@ -27,13 +27,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.editor.EditorPanelManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public final class ConvertMenu_Intention extends IntentionDescriptorBase implements IntentionFactory {
-  public ConvertMenu_Intention() {
+public final class ConvertTransformationMenu_Intention extends IntentionDescriptorBase implements IntentionFactory {
+  public ConvertTransformationMenu_Intention() {
     super(MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.ITransformationMenu"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "3597524805843504132"));
   }
   @Override
   public String getPresentation() {
-    return "ConvertMenu";
+    return "ConvertTransformationMenu";
   }
   @Override
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -48,7 +48,7 @@ public final class ConvertMenu_Intention extends IntentionDescriptorBase impleme
     List<SAbstractConcept> paramList = parameter(node, context);
     if (paramList != null) {
       for (SAbstractConcept param : paramList) {
-        ListSequence.fromList(list).addElement(new ConvertMenu_Intention.IntentionImplementation(param));
+        ListSequence.fromList(list).addElement(new ConvertTransformationMenu_Intention.IntentionImplementation(param));
       }
     }
     return list;
@@ -94,7 +94,7 @@ public final class ConvertMenu_Intention extends IntentionDescriptorBase impleme
     }
     @Override
     public IntentionDescriptor getDescriptor() {
-      return ConvertMenu_Intention.this;
+      return ConvertTransformationMenu_Intention.this;
     }
     public Object getParameter() {
       return myParameter;

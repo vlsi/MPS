@@ -9,11 +9,11 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 @MPSLaunch
-public class ConvertNamedMenuToDefault_Test extends BaseTransformationTest {
+public class TransformationMenu_ConvertNamedToDefault_Test extends BaseTransformationTest {
   @Test
-  public void test_ConvertNamedMenuToDefault() throws Throwable {
+  public void test_TransformationMenu_ConvertNamedToDefault() throws Throwable {
     initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)");
-    runTest("jetbrains.mps.lang.editor.menus.tests.ConvertNamedMenuToDefault_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.lang.editor.menus.tests.TransformationMenu_ConvertNamedToDefault_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -21,7 +21,7 @@ public class ConvertNamedMenuToDefault_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("5339489019635951027", "5339489019635951624");
-      invokeParameterizedIntention("jetbrains.mps.lang.editor.intentions.ConvertMenu_Intention", MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Default"), myStart.getNode());
+      invokeParameterizedIntention("jetbrains.mps.lang.editor.intentions.ConvertTransformationMenu_Intention", MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Default"), myStart.getNode());
     }
   }
 }

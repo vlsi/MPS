@@ -326,7 +326,36 @@
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionDescriptorBase" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.intentions.ConvertMenu_Intention" file="ConvertMenu_Intention.java">
+  <dependency className="jetbrains.mps.lang.editor.intentions.ConvertSubstituteMenu_Intention" file="ConvertSubstituteMenu_Intention.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutableBase" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
+    <classNode dependClassName="jetbrains.mps.intentions.ParameterizedIntentionExecutable" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IMenu__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorPanelManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionDescriptorBase" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.intentions.ConvertTransformationMenu_Intention" file="ConvertTransformationMenu_Intention.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -448,7 +477,8 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.intentions.ChangeProperty_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.editor.intentions.ChangeTransactionalProperty_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.editor.intentions.ColorQuery_Intention" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.intentions.ConvertMenu_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.intentions.ConvertSubstituteMenu_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.intentions.ConvertTransformationMenu_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.editor.intentions.FontStyleQuery_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.editor.intentions.GenerateMultiLineDefaultEditor_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.editor.intentions.GenerateSingleLineDefaultEditor_Intention" />

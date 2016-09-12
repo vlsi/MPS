@@ -301,19 +301,51 @@
     </file>
   </root>
   <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/3597524805843306523">
-    <file name="ConvertNamedMenuToDefault_Test.java">
-      <node id="3597524805843306523" at="14,65,15,115" concept="1" />
-      <node id="3597524805843306523" at="15,115,16,114" concept="1" />
+    <file name="TransformationMenu_ConvertNamedToDefault_Test.java">
+      <node id="3597524805843306523" at="14,80,15,115" concept="1" />
+      <node id="3597524805843306523" at="15,115,16,129" concept="1" />
       <node id="3597524805843306523" at="22,51,23,72" concept="1" />
-      <node id="3597524805843309530" at="23,72,24,276" concept="1" />
-      <node id="3597524805843306523" at="13,0,18,0" concept="2" trace="test_ConvertNamedMenuToDefault#()V" />
+      <node id="3597524805843309530" at="23,72,24,290" concept="1" />
+      <node id="3597524805843306523" at="13,0,18,0" concept="2" trace="test_TransformationMenu_ConvertNamedToDefault#()V" />
       <node id="3597524805843306523" at="21,0,26,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="3597524805843306523" at="14,65,16,114" />
-      <scope id="3597524805843306523" at="22,51,24,276" />
+      <scope id="3597524805843306523" at="14,80,16,129" />
+      <scope id="3597524805843306523" at="22,51,24,290" />
       <scope id="3597524805843306523" at="13,0,18,0" />
       <scope id="3597524805843306523" at="21,0,26,0" />
-      <unit id="3597524805843306523" at="19,0,27,0" name="jetbrains.mps.lang.editor.menus.tests.ConvertNamedMenuToDefault_Test$TestBody" />
-      <unit id="3597524805843306523" at="11,0,28,0" name="jetbrains.mps.lang.editor.menus.tests.ConvertNamedMenuToDefault_Test" />
+      <unit id="3597524805843306523" at="19,0,27,0" name="jetbrains.mps.lang.editor.menus.tests.TransformationMenu_ConvertNamedToDefault_Test$TestBody" />
+      <unit id="3597524805843306523" at="11,0,28,0" name="jetbrains.mps.lang.editor.menus.tests.TransformationMenu_ConvertNamedToDefault_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/3685717980265770617">
+    <file name="SubstituteMenu_ConvertDefaultToNamed_Test.java">
+      <node id="3685717980265770617" at="14,76,15,115" concept="1" />
+      <node id="3685717980265770617" at="15,115,16,125" concept="1" />
+      <node id="3685717980265770617" at="22,51,23,72" concept="1" />
+      <node id="3685717980265770619" at="23,72,24,280" concept="1" />
+      <node id="3685717980265770617" at="13,0,18,0" concept="2" trace="test_SubstituteMenu_ConvertDefaultToNamed#()V" />
+      <node id="3685717980265770617" at="21,0,26,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="3685717980265770617" at="14,76,16,125" />
+      <scope id="3685717980265770617" at="22,51,24,280" />
+      <scope id="3685717980265770617" at="13,0,18,0" />
+      <scope id="3685717980265770617" at="21,0,26,0" />
+      <unit id="3685717980265770617" at="19,0,27,0" name="jetbrains.mps.lang.editor.menus.tests.SubstituteMenu_ConvertDefaultToNamed_Test$TestBody" />
+      <unit id="3685717980265770617" at="11,0,28,0" name="jetbrains.mps.lang.editor.menus.tests.SubstituteMenu_ConvertDefaultToNamed_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/3685717980265770644">
+    <file name="SubstituteMenu_ConvertNamedToDefault_Test.java">
+      <node id="3685717980265770644" at="14,76,15,115" concept="1" />
+      <node id="3685717980265770644" at="15,115,16,125" concept="1" />
+      <node id="3685717980265770644" at="22,51,23,72" concept="1" />
+      <node id="3685717980265770646" at="23,72,24,282" concept="1" />
+      <node id="3685717980265770644" at="13,0,18,0" concept="2" trace="test_SubstituteMenu_ConvertNamedToDefault#()V" />
+      <node id="3685717980265770644" at="21,0,26,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="3685717980265770644" at="14,76,16,125" />
+      <scope id="3685717980265770644" at="22,51,24,282" />
+      <scope id="3685717980265770644" at="13,0,18,0" />
+      <scope id="3685717980265770644" at="21,0,26,0" />
+      <unit id="3685717980265770644" at="19,0,27,0" name="jetbrains.mps.lang.editor.menus.tests.SubstituteMenu_ConvertNamedToDefault_Test$TestBody" />
+      <unit id="3685717980265770644" at="11,0,28,0" name="jetbrains.mps.lang.editor.menus.tests.SubstituteMenu_ConvertNamedToDefault_Test" />
     </file>
   </root>
   <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/4740302442485155889">
@@ -371,19 +403,19 @@
     </file>
   </root>
   <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/5339489019635994809">
-    <file name="ConvertDefaultMenuToNamed_Test.java">
-      <node id="5339489019635994809" at="14,65,15,115" concept="1" />
-      <node id="5339489019635994809" at="15,115,16,114" concept="1" />
+    <file name="TransformationMenu_ConvertDefaultToNamed_Test.java">
+      <node id="5339489019635994809" at="14,80,15,115" concept="1" />
+      <node id="5339489019635994809" at="15,115,16,129" concept="1" />
       <node id="5339489019635994809" at="22,51,23,72" concept="1" />
-      <node id="5339489019635994811" at="23,72,24,274" concept="1" />
-      <node id="5339489019635994809" at="13,0,18,0" concept="2" trace="test_ConvertDefaultMenuToNamed#()V" />
+      <node id="5339489019635994811" at="23,72,24,288" concept="1" />
+      <node id="5339489019635994809" at="13,0,18,0" concept="2" trace="test_TransformationMenu_ConvertDefaultToNamed#()V" />
       <node id="5339489019635994809" at="21,0,26,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="5339489019635994809" at="14,65,16,114" />
-      <scope id="5339489019635994809" at="22,51,24,274" />
+      <scope id="5339489019635994809" at="14,80,16,129" />
+      <scope id="5339489019635994809" at="22,51,24,288" />
       <scope id="5339489019635994809" at="13,0,18,0" />
       <scope id="5339489019635994809" at="21,0,26,0" />
-      <unit id="5339489019635994809" at="19,0,27,0" name="jetbrains.mps.lang.editor.menus.tests.ConvertDefaultMenuToNamed_Test$TestBody" />
-      <unit id="5339489019635994809" at="11,0,28,0" name="jetbrains.mps.lang.editor.menus.tests.ConvertDefaultMenuToNamed_Test" />
+      <unit id="5339489019635994809" at="19,0,27,0" name="jetbrains.mps.lang.editor.menus.tests.TransformationMenu_ConvertDefaultToNamed_Test$TestBody" />
+      <unit id="5339489019635994809" at="11,0,28,0" name="jetbrains.mps.lang.editor.menus.tests.TransformationMenu_ConvertDefaultToNamed_Test" />
     </file>
   </root>
   <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/6202297022023746454">
