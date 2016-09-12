@@ -47,7 +47,7 @@ public class Template_Quotation_to_staticMethodCall extends TemplateDeclarationB
         final SNode tnode3 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x31c3f88088ed999aL, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"));
         try {
           environment.nodeCopied(context2, tnode3, "tpl/r:00000000-0000-4000-0000-011c8959034c/1025590056396668027");
-          environment.resolveInTemplateLater(tnode3, "baseMethodDeclaration", templateNode_6fpfng_c0a1a1a2a5a2, "tpl/r:00000000-0000-4000-0000-011c8959034c/1025590056396661196", "_quotation_createNode", context2);
+          environment.resolveInTemplateLater(tnode3, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), templateNode_6fpfng_c0a1a1a2a5a2, "tpl/r:00000000-0000-4000-0000-011c8959034c/1025590056396661196", "_quotation_createNode", context2);
           TemplateContext context3 = context2.subContext();
           {
             Collection<SNode> tlist4 = null;

@@ -878,7 +878,7 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
             final SNode tnode78 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"));
             try {
               environment.nodeCopied(context74, tnode78, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/931939946132740133");
-              environment.resolveInTemplateLater(tnode78, "typeVariableDeclaration", templateNode_ko6gu6_c0a1a1a8a1a41a4a2, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/931939946132722361", "T", context74);
+              environment.resolveInTemplateLater(tnode78, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"), templateNode_ko6gu6_c0a1a1a8a1a41a4a2, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/931939946132722361", "T", context74);
             } finally {
             }
             if (tnode78 != null) {
@@ -902,7 +902,7 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
                     final SNode tnode81 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"));
                     try {
                       environment.nodeCopied(context80, tnode81, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/931939946132745292");
-                      environment.resolveInTemplateLater(tnode81, "typeVariableDeclaration", templateNode_ko6gu6_c0a1a1a3a1a3a1a9a1a41a4a2, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/931939946132722361", "T", context80);
+                      environment.resolveInTemplateLater(tnode81, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"), templateNode_ko6gu6_c0a1a1a3a1a3a1a9a1a41a4a2, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/931939946132722361", "T", context80);
                     } finally {
                     }
                     if (tnode81 != null) {

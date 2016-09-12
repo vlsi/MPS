@@ -941,7 +941,7 @@ public class Switch_NodeBuilder_value extends TemplateSwitchBase implements Temp
                           final SNode tnode10 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                           try {
                             environment.nodeCopied(context7, tnode10, "tpl/r:00000000-0000-4000-0000-011c8959034c/5756354288101153807");
-                            environment.resolveInTemplateLater(tnode10, "variableDeclaration", templateNode_zg3v4g_c0a1a1a4a1a3a1a2a1a2a1a2a2a2o, "tpl/r:00000000-0000-4000-0000-011c8959034c/5756354288101153808", "n", context7);
+                            environment.resolveInTemplateLater(tnode10, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_zg3v4g_c0a1a1a4a1a3a1a2a1a2a1a2a2a2o, "tpl/r:00000000-0000-4000-0000-011c8959034c/5756354288101153808", "n", context7);
                           } finally {
                           }
                           if (tnode10 != null) {

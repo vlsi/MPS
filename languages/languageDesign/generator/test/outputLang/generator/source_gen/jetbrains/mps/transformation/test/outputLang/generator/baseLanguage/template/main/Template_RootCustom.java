@@ -177,7 +177,7 @@ public class Template_RootCustom extends TemplateDeclarationBase implements Temp
                         final SNode tnode18 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                         try {
                           environment.nodeCopied(context17, tnode18, "tpl/r:00000000-0000-4000-0000-011c89590606/3021153905120210705");
-                          environment.resolveInTemplateLater(tnode18, "variableDeclaration", templateNode_xizpik_c0a1a1a2a1a2a1a3a1a4a1a5a1a2, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761135", "q", context17);
+                          environment.resolveInTemplateLater(tnode18, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_xizpik_c0a1a1a2a1a2a1a3a1a4a1a5a1a2, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761135", "q", context17);
                         } finally {
                         }
                         if (tnode18 != null) {
@@ -189,7 +189,7 @@ public class Template_RootCustom extends TemplateDeclarationBase implements Temp
                         final SNode tnode19 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                         try {
                           environment.nodeCopied(context17, tnode19, "tpl/r:00000000-0000-4000-0000-011c89590606/4265636116363088829");
-                          environment.resolveInTemplateLater(tnode19, "variableDeclaration", templateNode_xizpik_c0a1a1a3a1a2a1a3a1a4a1a5a1a2, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761103", "i", context17);
+                          environment.resolveInTemplateLater(tnode19, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_xizpik_c0a1a1a3a1a2a1a3a1a4a1a5a1a2, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761103", "i", context17);
                         } finally {
                         }
                         if (tnode19 != null) {

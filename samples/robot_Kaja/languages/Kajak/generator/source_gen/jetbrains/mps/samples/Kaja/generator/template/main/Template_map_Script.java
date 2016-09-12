@@ -260,7 +260,7 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
                         final SNode tnode27 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
                         try {
                           environment.nodeCopied(context26, tnode27, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039581792");
-                          environment.resolveInTemplateLater(tnode27, "classifier", templateNode_rbrxtl_c0a1a1a3a1a2a1a2a1a5a1a9a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039570165", "map_Script", context26);
+                          environment.resolveInTemplateLater(tnode27, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), templateNode_rbrxtl_c0a1a1a3a1a2a1a2a1a5a1a9a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039570165", "map_Script", context26);
                         } finally {
                         }
                         if (tnode27 != null) {
@@ -277,7 +277,7 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
                             final SNode tnode29 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator"));
                             try {
                               environment.nodeCopied(context28, tnode29, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039581794");
-                              environment.resolveInTemplateLater(tnode29, "baseMethodDeclaration", templateNode_rbrxtl_c0a1a1a2a1a4a1a2a1a2a1a5a1a9a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039570167", "map_Script", context28);
+                              environment.resolveInTemplateLater(tnode29, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), templateNode_rbrxtl_c0a1a1a2a1a4a1a2a1a2a1a5a1a9a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039570167", "map_Script", context28);
                             } finally {
                             }
                             if (tnode29 != null) {
@@ -320,7 +320,7 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
                         final SNode tnode32 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                         try {
                           environment.nodeCopied(context31, tnode32, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/4265636116363082567");
-                          environment.resolveInTemplateLater(tnode32, "variableDeclaration", templateNode_rbrxtl_c0a1a1a2a1a2a1a3a1a5a1a9a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039581791", "script", context31);
+                          environment.resolveInTemplateLater(tnode32, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_rbrxtl_c0a1a1a2a1a2a1a3a1a5a1a9a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039581791", "script", context31);
                         } finally {
                         }
                         if (tnode32 != null) {
@@ -368,7 +368,7 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
                         final SNode tnode36 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                         try {
                           environment.nodeCopied(context35, tnode36, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/4265636116363093691");
-                          environment.resolveInTemplateLater(tnode36, "variableDeclaration", templateNode_rbrxtl_c0a1a1a2a1a2a1a4a1a5a1a9a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039581791", "script", context35);
+                          environment.resolveInTemplateLater(tnode36, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_rbrxtl_c0a1a1a2a1a2a1a4a1a5a1a9a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039581791", "script", context35);
                         } finally {
                         }
                         if (tnode36 != null) {

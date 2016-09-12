@@ -269,7 +269,7 @@ public class Template_NodeBuilder_to_methodCall extends TemplateDeclarationBase 
         final SNode tnode24 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x31c3f88088ed999aL, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"));
         try {
           environment.nodeCopied(context1, tnode24, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709483");
-          environment.resolveInTemplateLater(tnode24, "baseMethodDeclaration", templateNode_synbg_c0a1a1a3a2a2, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709245", "createNode", context1);
+          environment.resolveInTemplateLater(tnode24, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), templateNode_synbg_c0a1a1a3a2a2, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709245", "createNode", context1);
           TemplateContext context24 = context1.subContext();
           {
             final List<SNode> tlist25 = new ArrayList<SNode>();

@@ -212,7 +212,7 @@ public class Template_processStatement extends TemplateDeclarationBase {
                     final SNode tnode18 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                     try {
                       environment.nodeCopied(context17, tnode18, "tpl/r:00000000-0000-4000-0000-011c89590606/4265636116363100026");
-                      environment.resolveInTemplateLater(tnode18, "variableDeclaration", templateNode_iblz6q_c0a1a1a2a1a2a1a3a1a2a2a9, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980649133", "e", context17);
+                      environment.resolveInTemplateLater(tnode18, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_iblz6q_c0a1a1a2a1a2a1a3a1a2a2a9, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980649133", "e", context17);
                     } finally {
                     }
                     if (tnode18 != null) {

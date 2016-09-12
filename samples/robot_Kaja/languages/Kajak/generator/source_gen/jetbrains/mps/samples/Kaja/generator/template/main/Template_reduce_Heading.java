@@ -29,7 +29,7 @@ public class Template_reduce_Heading extends TemplateDeclarationBase {
     final SNode tnode1 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"));
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/4923130412073305297");
-      environment.resolveInTemplateLater(tnode1, "baseMethodDeclaration", templateNode_2x0e93_c0a1a2a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039683754", "heading", context);
+      environment.resolveInTemplateLater(tnode1, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), templateNode_2x0e93_c0a1a2a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039683754", "heading", context);
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;

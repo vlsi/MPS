@@ -110,7 +110,7 @@ public class Template_reduce_Repeat extends TemplateDeclarationBase {
             final SNode tnode10 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
             try {
               environment.nodeCopied(context8, tnode10, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/4265636116363070570");
-              environment.resolveInTemplateLater(tnode10, "variableDeclaration", templateNode_9c7i7b_c0a1a1a3a1a4a2a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039660399", "i", context8);
+              environment.resolveInTemplateLater(tnode10, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_9c7i7b_c0a1a1a3a1a4a2a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039660399", "i", context8);
             } finally {
             }
             if (tnode10 != null) {
@@ -134,7 +134,7 @@ public class Template_reduce_Repeat extends TemplateDeclarationBase {
             final SNode tnode12 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
             try {
               environment.nodeCopied(context11, tnode12, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/4265636116363077196");
-              environment.resolveInTemplateLater(tnode12, "variableDeclaration", templateNode_9c7i7b_c0a1a1a2a1a5a2a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039660399", "i", context11);
+              environment.resolveInTemplateLater(tnode12, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_9c7i7b_c0a1a1a2a1a5a2a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039660399", "i", context11);
             } finally {
             }
             if (tnode12 != null) {

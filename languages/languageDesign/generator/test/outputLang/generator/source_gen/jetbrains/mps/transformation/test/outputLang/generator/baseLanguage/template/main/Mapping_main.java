@@ -241,7 +241,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
                   final SNode tnode9 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                   try {
                     environment.nodeCopied(context8, tnode9, "tpl/r:00000000-0000-4000-0000-011c89590606/4265636116363103841");
-                    environment.resolveInTemplateLater(tnode9, "variableDeclaration", templateNode_ief6mt_c0a1a1a2a1a4a1a2a4a1l, "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681234", "i", context8);
+                    environment.resolveInTemplateLater(tnode9, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_ief6mt_c0a1a1a2a1a4a1a2a4a1l, "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681234", "i", context8);
                   } finally {
                   }
                   if (tnode9 != null) {

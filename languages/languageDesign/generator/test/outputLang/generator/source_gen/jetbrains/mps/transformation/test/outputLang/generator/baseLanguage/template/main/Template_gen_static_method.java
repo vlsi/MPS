@@ -100,7 +100,7 @@ public class Template_gen_static_method extends TemplateDeclarationBase {
                     final SNode tnode10 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                     try {
                       environment.nodeCopied(context9, tnode10, "tpl/r:00000000-0000-4000-0000-011c89590606/3021153905150327964");
-                      environment.resolveInTemplateLater(tnode10, "variableDeclaration", templateNode_2hhfmn_c0a1a1a2a1a3a1a2a1a4a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context9);
+                      environment.resolveInTemplateLater(tnode10, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_2hhfmn_c0a1a1a2a1a3a1a2a1a4a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context9);
                     } finally {
                     }
                     if (tnode10 != null) {
@@ -148,7 +148,7 @@ public class Template_gen_static_method extends TemplateDeclarationBase {
                     final SNode tnode14 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                     try {
                       environment.nodeCopied(context13, tnode14, "tpl/r:00000000-0000-4000-0000-011c89590606/3021153905151613299");
-                      environment.resolveInTemplateLater(tnode14, "variableDeclaration", templateNode_2hhfmn_c0a1a1a2a1a2a1a3a1a4a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context13);
+                      environment.resolveInTemplateLater(tnode14, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_2hhfmn_c0a1a1a2a1a2a1a3a1a4a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context13);
                     } finally {
                     }
                     if (tnode14 != null) {
@@ -160,7 +160,7 @@ public class Template_gen_static_method extends TemplateDeclarationBase {
                     final SNode tnode15 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"));
                     try {
                       environment.nodeCopied(context13, tnode15, "tpl/r:00000000-0000-4000-0000-011c89590606/4923130412071517799");
-                      environment.resolveInTemplateLater(tnode15, "baseMethodDeclaration", templateNode_2hhfmn_c0a1a1a3a1a2a1a3a1a4a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724041", "fact", context13);
+                      environment.resolveInTemplateLater(tnode15, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), templateNode_2hhfmn_c0a1a1a3a1a2a1a3a1a4a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724041", "fact", context13);
                       TemplateContext context15 = context13.subContext();
                       {
                         final SNode tnode16 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f5L, "jetbrains.mps.baseLanguage.structure.MinusExpression"));
@@ -183,7 +183,7 @@ public class Template_gen_static_method extends TemplateDeclarationBase {
                             final SNode tnode18 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                             try {
                               environment.nodeCopied(context16, tnode18, "tpl/r:00000000-0000-4000-0000-011c89590606/3021153905151738388");
-                              environment.resolveInTemplateLater(tnode18, "variableDeclaration", templateNode_2hhfmn_c0a1a1a3a1a3a1a3a1a2a1a3a1a4a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context16);
+                              environment.resolveInTemplateLater(tnode18, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_2hhfmn_c0a1a1a3a1a3a1a3a1a2a1a3a1a4a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context16);
                             } finally {
                             }
                             if (tnode18 != null) {
