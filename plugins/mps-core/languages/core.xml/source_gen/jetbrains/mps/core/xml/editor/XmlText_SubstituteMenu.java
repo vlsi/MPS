@@ -9,12 +9,55 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.core.xml.constraints.XmlNameUtil;
 
 public class XmlText_SubstituteMenu extends SubstituteMenuBase {
   @NotNull
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
+    result.add(new XmlText_SubstituteMenu.SubstituteMenuPart_Action_cbaruy_a());
     return result;
+  }
+  private class SubstituteMenuPart_Action_cbaruy_a extends SingleItemSubstituteMenuPart {
+
+    @Nullable
+    @Override
+    protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
+      return new XmlText_SubstituteMenu.SubstituteMenuPart_Action_cbaruy_a.Item(_context);
+    }
+    private class Item extends DefaultSubstituteMenuItem {
+      private final SubstituteMenuContext _context;
+      public Item(SubstituteMenuContext context) {
+        super(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, "jetbrains.mps.core.xml.structure.XmlText"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
+        _context = context;
+      }
+
+      @Nullable
+      @Override
+      public SNode createNode(@NotNull String pattern) {
+        SNode val = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, "jetbrains.mps.core.xml.structure.XmlText")), null);
+        SPropertyOperations.set(val, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"), pattern);
+        return val;
+      }
+      @Nullable
+      @Override
+      public String getMatchingText(@NotNull String pattern) {
+        if ((pattern == null || pattern.length() == 0)) {
+          return "text";
+        }
+        if (XmlNameUtil.isCharData(pattern)) {
+          return pattern;
+        }
+        return (pattern.startsWith("?") ? ":" : "?");
+      }
+    }
   }
 }

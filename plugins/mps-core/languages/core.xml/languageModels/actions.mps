@@ -1562,9 +1562,7 @@
             </node>
           </node>
         </node>
-        <node concept="xBawi" id="1wEcoXjJGpx" role="lGtFl">
-          <ref role="xBaxx" to="73rs:1wEcoXjJGpw" resolve="XmlContent_SubstituteMenu" />
-        </node>
+        <node concept="xBawi" id="1wEcoXjJGpx" role="lGtFl" />
       </node>
     </node>
   </node>
