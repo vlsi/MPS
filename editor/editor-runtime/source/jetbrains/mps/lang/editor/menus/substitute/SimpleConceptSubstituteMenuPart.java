@@ -22,10 +22,12 @@ import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -129,8 +131,8 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
   }
 
   //todo remove this method when we will get rid of specialized concepts
-  private SReferenceLink getReferenceLink(SNode rerefenceNode) {
-    final SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(rerefenceNode);
+  private SReferenceLink getReferenceLink(SNode referenceNode) {
+    final SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(referenceNode);
     if (genuineLinkDeclaration == null) {
       return null;
     }
@@ -177,10 +179,11 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
         context.getLink() != null ? context.getLink().getName() : null, index, conceptNode);
   }
 
-  private int getIndex(SNode currentChild, SNode parentNode) {
+  private int getIndex(@Nullable SNode currentChild, @NotNull SNode parentNode) {
     int index = 0;
-    if (currentChild instanceof jetbrains.mps.smodel.SNode && parentNode instanceof jetbrains.mps.smodel.SNode) {
-      index = ((jetbrains.mps.smodel.SNode) parentNode).getChildren().indexOf(currentChild);
+    if (currentChild != null) {
+      final SContainmentLink containmentLink = currentChild.getContainmentLink();
+      index = IterableUtil.indexOf(parentNode.getChildren(containmentLink), currentChild);
     }
     return index;
   }

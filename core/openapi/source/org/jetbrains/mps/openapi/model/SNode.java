@@ -96,6 +96,7 @@ public interface SNode {
 
   /**
    * For instances of INamedConcept concepts retrieves "name" property
+   *
    * @return null if node is not instance of INamedConcept
    */
   @Nullable
@@ -208,14 +209,14 @@ public interface SNode {
    * does not produce read accesses for skipped children
    */
   @NotNull
-  Iterable<? extends SNode> getChildren( SContainmentLink role);
+  Iterable<? extends SNode> getChildren(SContainmentLink role);
 
   /**
    * Returns an immutable collection of all children.
    * Read access policy is same to getChildren(role)
    */
   @NotNull
-  public Iterable<? extends SNode> getChildren();
+  Iterable<? extends SNode> getChildren();
 
   // refs
 
@@ -271,6 +272,7 @@ public interface SNode {
 
   /**
    * Returns the value of this property
+   *
    * @return value of a property or null if the property was not set
    */
   @Nullable
