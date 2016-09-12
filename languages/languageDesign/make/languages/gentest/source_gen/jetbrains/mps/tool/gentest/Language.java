@@ -37,6 +37,6 @@ public class Language extends LanguageRuntime {
         return (T) new FacetAspectDescriptor();
       }
     }
-    return super.createAspect(aspectClass);
+    return null;
   }
 }

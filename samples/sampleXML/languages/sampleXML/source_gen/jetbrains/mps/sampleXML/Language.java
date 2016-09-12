@@ -70,6 +70,6 @@ public class Language extends LanguageRuntime {
         return (T) new jetbrains.mps.sampleXML.textGen.TextGenAspectDescriptor();
       }
     }
-    return super.createAspect(aspectClass);
+    return null;
   }
 }

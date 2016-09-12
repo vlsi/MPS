@@ -110,19 +110,16 @@ public abstract class LanguageRuntime {
     return aspectDescriptor;
   }
 
-  //body needed for compatibility with 3.2-generated classes, remove it after 3.3
+  /**
+   * Method every language shall implement to tell its capabilities.
+   * Implementation doesn't need to keep state, {@link #getAspect(Class)} does that.
+   * @param aspectClass never null identifying interface of the aspect
+   * @param <T> aspect class
+   * @return may return {@code null} indicating language has no such aspect
+   */
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
-    if (LanguageAspectDescriptor.class.isAssignableFrom(aspectClass)) {
-      return aspectClass.cast(createAspectDescriptor(((Class<? extends LanguageAspectDescriptor>) aspectClass)));
-    }
-    return null;
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  //for compatibility purposes only
-  protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorInterface) {
-    // FIXME Method shall become abstract past 3.3, once we change generated override methods not to delegate to this super.
+    // FIXME make it abstract once 3.4 is out (if template changes that doesn't delegate in there get into release)
+    // Left non-abstract for compatibility with languages generated with MPS 3.3 and EAP/preview builds (they used to delegate to super.createAspect)
     return null;
   }
 

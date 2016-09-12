@@ -37,6 +37,6 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
-    return super.createAspect(aspectClass);
+    return null;
   }
 }

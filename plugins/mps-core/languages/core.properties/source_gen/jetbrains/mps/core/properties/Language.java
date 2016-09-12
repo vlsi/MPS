@@ -69,6 +69,6 @@ public class Language extends LanguageRuntime {
         return (T) new jetbrains.mps.core.properties.textGen.TextGenAspectDescriptor();
       }
     }
-    return super.createAspect(aspectClass);
+    return null;
   }
 }

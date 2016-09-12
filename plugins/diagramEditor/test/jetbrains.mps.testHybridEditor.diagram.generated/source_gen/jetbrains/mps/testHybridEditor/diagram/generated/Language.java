@@ -37,6 +37,6 @@ public class Language extends LanguageRuntime {
         return (T) new EditorAspectDescriptorImpl();
       }
     }
-    return super.createAspect(aspectClass);
+    return null;
   }
 }
