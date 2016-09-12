@@ -156,7 +156,7 @@ public class QueriesGenerated {
     return refs;
   }
   public static Iterable<SNode> sourceNodesQuery_5837079428841717746(final SourceSubstituteMacroNodesContext _context) {
-    Iterable<SNode> callsToConsider = ReferenceConversionHelper.retrieveDescendentMethodCalls(_context.getNode());
+    Iterable<SNode> callsToConsider = ReferenceConversionHelper.retrieveDescendentMethodCalls(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")));
 
     final List<SNode> throwns = ListSequence.fromList(new ArrayList<SNode>());
     Sequence.fromIterable(callsToConsider).visitAll(new IVisitor<SNode>() {

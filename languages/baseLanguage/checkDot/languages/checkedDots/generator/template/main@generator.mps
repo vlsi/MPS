@@ -1284,7 +1284,12 @@
                     <node concept="2YIFZM" id="gvjHH0pp3a" role="33vP2m">
                       <ref role="1Pybhc" to="1d65:gvjHH0mY3s" resolve="ReferenceConversionHelper" />
                       <ref role="37wK5l" to="1d65:gvjHH0p4zK" resolve="retrieveDescendentMethodCalls" />
-                      <node concept="30H73N" id="gvjHH0pp3b" role="37wK5m" />
+                      <node concept="2OqwBi" id="4rZDlxW7GJ9" role="37wK5m">
+                        <node concept="30H73N" id="gvjHH0pp3b" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="4rZDlxW7Iqy" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
