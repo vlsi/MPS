@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -159,6 +160,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Override
   @Deprecated
   public SAbstractLink getLink(String role) {
+    // INTENTIONALLY DISTURBING
+    Logger.getLogger(SAbstractConceptAdapter.class).error("The method is scheduled for removal. There were no uses, do not introduce a new one", new Throwable());
     ConceptDescriptor nodeConcept = getConceptDescriptor();
     if (nodeConcept == null) {
       return null;
@@ -181,6 +184,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
 
   @Override
   public Iterable<SAbstractLink> getLinks() {
+    // INTENTIONALLY DISTURBING
+    Logger.getLogger(SAbstractConceptAdapter.class).error("The method is scheduled for removal. There were no uses, do not introduce a new one", new Throwable());
     ArrayList<SAbstractLink> result = new ArrayList<SAbstractLink>();
     ConceptDescriptor cd = getConceptDescriptor();
     if (cd == null) {
@@ -197,6 +202,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Override
   @Deprecated
   public SProperty getProperty(String name) {
+    // INTENTIONALLY DISTURBING
+    Logger.getLogger(SAbstractConceptAdapter.class).error("The method is scheduled for removal. There were no uses, do not introduce a new one", new Throwable());
     ConceptDescriptor cd = getConceptDescriptor();
     if (cd == null) {
       return null;

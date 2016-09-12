@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -258,7 +258,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
 
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
-      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+      return NodeFactoryManager.createNode(myLink.getTargetConcept(), null, listOwner, listOwner.getModel());
     }
 
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {

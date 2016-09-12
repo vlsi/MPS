@@ -12,7 +12,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SAbstractLink;
 
 public class CellUtil {
   public CellUtil() {
@@ -49,7 +48,11 @@ public class CellUtil {
     }
 
     // todo remove getLink(role) when cell will have link 
-    SAbstractLink link = node.getConcept().getLink(role);
-    return (link instanceof SContainmentLink ? ((SContainmentLink) link) : null);
+    for (SContainmentLink link : node.getConcept().getContainmentLinks()) {
+      if (link.getName().equals(role)) {
+        return link;
+      }
+    }
+    return null;
   }
 }

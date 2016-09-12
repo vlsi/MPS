@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -113,12 +114,29 @@ public interface SAbstractConcept extends SNamedElement {
   @Deprecated
   String getQualifiedName();
 
+  /**
+   * There were no use of the method as of MPS 3.4
+   * @deprecated Use {@link #getContainmentLinks()} or {@link #getReferenceLinks()} instead
+   */
   @Deprecated
+  @ToRemove(version = 3.4)
   Iterable<SAbstractLink> getLinks();
 
+  /**
+   * There were no use of the method as of MPS 3.4
+   * @deprecated use SProperty-based alternatives.
+   *             For MPS internals and transition from legacy code, one can use {@code ConceptMetaInfoConverter}.
+   */
   @Deprecated
+  @ToRemove(version = 3.4)
   SProperty getProperty(String name);
 
+  /**
+   * There were no use of the method as of MPS 3.4
+   * @deprecated use SReferenceLink or SContainmentLink alternatives.
+   *             For MPS internals and transition from legacy code, one can use {@code ConceptMetaInfoConverter}.
+   */
   @Deprecated
+  @ToRemove(version = 3.4)
   SAbstractLink getLink(String role);
 }
