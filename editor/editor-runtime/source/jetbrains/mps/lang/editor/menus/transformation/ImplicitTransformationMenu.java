@@ -46,4 +46,9 @@ public class ImplicitTransformationMenu extends TransformationMenuBase {
   public boolean isApplicableToLocation(@NotNull String location) {
     return true;
   }
+
+  @Override
+  public String toString() {
+    return "implicit transformation menu for " + myConcept;
+  }
 }

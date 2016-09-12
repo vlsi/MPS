@@ -20,6 +20,7 @@ import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
@@ -31,6 +32,7 @@ import java.util.List;
  * A straightforward implementation of {@link MenuItemFactory}. Looks up the menus and returns items created by each menu, concatenated.
  */
 class DefaultSubstituteMenuItemFactory implements MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenuLookup> {
+  private static final Logger LOGGER = Logger.getLogger(DefaultSubstituteMenuItemFactory.class);
   private final Collection<SLanguage> myUsedLanguages;
 
   DefaultSubstituteMenuItemFactory(Collection<SLanguage> usedLanguages) {
@@ -41,9 +43,15 @@ class DefaultSubstituteMenuItemFactory implements MenuItemFactory<SubstituteMenu
   @NotNull
   public List<SubstituteMenuItem> createItems(@NotNull SubstituteMenuContext context, @NotNull SubstituteMenuLookup menuLookup) {
     Collection<SubstituteMenu> menus = menuLookup.lookup(myUsedLanguages);
+    if (LOGGER.isTraceEnabled()) {
+      LOGGER.trace("Menu lookup " + menuLookup + " returned " + menus);
+    }
 
     List<SubstituteMenuItem> result = new ArrayList<>();
     for (SubstituteMenu menu : menus) {
+      if (LOGGER.isTraceEnabled()) {
+        LOGGER.trace("Creating items of menu " + menu);
+      }
       result.addAll(menu.createMenuItems(context));
     }
     return result;

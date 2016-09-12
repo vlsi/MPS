@@ -57,7 +57,7 @@ public class DefaultTransformationMenuLookup implements TransformationMenuLookup
 
   @Override
   public String toString() {
-    return "default menu for " + myConcept;
+    return "default transformation menu for " + myConcept;
   }
 
   @NotNull

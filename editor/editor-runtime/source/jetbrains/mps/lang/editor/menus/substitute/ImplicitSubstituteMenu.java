@@ -42,4 +42,9 @@ public class ImplicitSubstituteMenu extends SubstituteMenuBase {
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(SubstituteMenuContext context) {
     return Collections.singletonList(new DefaultConceptSubstituteMenuPart(myConcept));
   }
+
+  @Override
+  public String toString() {
+    return "implicit substitute menu for " + myConcept;
+  }
 }

@@ -68,7 +68,7 @@ public class DefaultSubstituteMenuLookup implements SubstituteMenuLookup {
 
   @Override
   public String toString() {
-    return "default menu for " + myConcept;
+    return "default substitute menu for " + myConcept;
   }
 
   @NotNull
