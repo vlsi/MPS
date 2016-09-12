@@ -58,21 +58,21 @@ public class FooCheckedDots<T extends Enum> {
     }
     return 0;
   }
-  private static void check_7013wl_a0a1a5(FooCheckedDots checkedDotOperand, String s, Object t, FooCheckedDots foo2) {
+  private static void check_7013wl_a0a1a5(FooCheckedDots checkedDotOperand, String s_7013wl_a0a0a1a5, Object t_7013wl_b0a0a1a5, FooCheckedDots foo2_7013wl_c0a0a1a5) {
     if (null != checkedDotOperand) {
-      checkedDotOperand.bar(s, t, foo2);
+      checkedDotOperand.bar(s_7013wl_a0a0a1a5, t_7013wl_b0a0a1a5, foo2_7013wl_c0a0a1a5);
     }
 
   }
-  private static String check_7013wl_a1a1a5(String checkedDotOperand, String s) {
+  private static String check_7013wl_a1a1a5(String checkedDotOperand, String s_7013wl_a0a1a1a5) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.concat(s);
+      return checkedDotOperand.concat(s_7013wl_a0a1a1a5);
     }
     return null;
   }
-  private static boolean check_7013wl_a1a5(Object checkedDotOperand, String s) {
+  private static boolean check_7013wl_a1a5(Object checkedDotOperand, String s_7013wl_a0a1a5) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.equals(s);
+      return checkedDotOperand.equals(s_7013wl_a0a1a5);
     }
     return false;
   }
@@ -88,9 +88,9 @@ public class FooCheckedDots<T extends Enum> {
     }
     return 0;
   }
-  private static boolean check_7013wl_a2a6(String checkedDotOperand, String myString) {
+  private static boolean check_7013wl_a2a6(String checkedDotOperand, String myString_7013wl_a0a2a6) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.equals(myString);
+      return checkedDotOperand.equals(myString_7013wl_a0a2a6);
     }
     return false;
   }
@@ -106,9 +106,9 @@ public class FooCheckedDots<T extends Enum> {
     }
     return false;
   }
-  private static int check_7013wl_a0a2a8(String checkedDotOperand, String s) {
+  private static int check_7013wl_a0a2a8(String checkedDotOperand, String s_7013wl_a0a0a2a8) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.compareTo(s);
+      return checkedDotOperand.compareTo(s_7013wl_a0a0a2a8);
     }
     return 0;
   }
