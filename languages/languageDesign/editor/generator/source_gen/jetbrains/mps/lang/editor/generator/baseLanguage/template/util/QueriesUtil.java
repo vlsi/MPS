@@ -23,9 +23,6 @@ import jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.descriptor.generator.template.utils.LanguageRuntimeGeneratorUtils;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class QueriesUtil {
   private static Object CELL_READABLE_ID = new Object();
@@ -164,17 +161,5 @@ __switch__:
   }
   private static SAbstractConcept[] editorRootConcepts() {
     return new SAbstractConcept[]{MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef4e35767L, "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.ITransformationMenu"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1bc2c2df999a7727L, "jetbrains.mps.lang.editor.structure.ISubstituteMenu")};
-  }
-  public static boolean needsSpecificEditorDescriptor(SModel model, TemplateQueryContext context) {
-    final List<SAbstractConcept> editorConcepts = Sequence.fromIterable(Sequence.fromArray(QueriesUtil.editorRootConcepts())).toListSequence();
-    return LanguageRuntimeGeneratorUtils.hasManualEditorAspectDescriptor(context, model) || ListSequence.fromList(SModelOperations.roots(model, null)).any(new IWhereFilter<SNode>() {
-      public boolean accept(final SNode root) {
-        return ListSequence.fromList(editorConcepts).any(new IWhereFilter<SAbstractConcept>() {
-          public boolean accept(SAbstractConcept concept) {
-            return SNodeOperations.isInstanceOf(root, SNodeOperations.asSConcept(concept));
-          }
-        });
-      }
-    });
   }
 }

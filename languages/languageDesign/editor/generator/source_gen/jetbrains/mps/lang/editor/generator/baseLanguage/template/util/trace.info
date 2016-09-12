@@ -81,7 +81,7 @@
       <node id="9186828658636980499" at="159,19,160,20" concept="10" />
       <node id="9186828658636941375" at="162,5,163,17" concept="10" />
       <node id="474635177867904266" at="165,58,166,819" concept="10" />
-      <node id="474635177867924570" at="168,99,169,143" concept="9" />
+      <node id="474635177867924570" at="168,69,169,143" concept="9" />
       <node id="474635177867954105" at="173,59,174,91" concept="10" />
       <node id="1189585858333" at="95,217,98,7" concept="7" />
       <node id="9186828658634792525" at="120,244,123,5" concept="7" />
@@ -106,7 +106,7 @@
       <node id="9186828658636954732" at="153,5,162,5" concept="5" />
       <node id="474635177867954090" at="169,143,178,7" concept="10" />
       <node id="1189585733348" at="92,0,103,0" concept="13" trace="keyMapActionClassName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="474635177867943049" at="168,0,180,0" concept="13" trace="needsSpecificEditorDescriptor#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/generator/template/TemplateQueryContext;)Z" />
+      <node id="474635177867943049" at="168,0,180,0" concept="13" trace="needsSpecificEditorDescriptor#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
       <node id="1233319014842" at="103,0,119,0" concept="13" trace="getUnicName#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)Ljava/lang/String;" />
       <node id="9186828658637001470" at="146,0,165,0" concept="13" trace="hasUserDefinedStyle#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
       <node id="9186828658634763559" at="119,0,146,0" concept="13" trace="requiresAutoDeletableStyleAddition#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -178,14 +178,13 @@
       <scope id="9186828658636954732" at="153,5,162,5">
         <var name="styleClass" id="9186828658636955632" />
       </scope>
-      <scope id="474635177867943053" at="168,99,178,7">
+      <scope id="474635177867943053" at="168,69,178,7">
         <var name="editorConcepts" id="474635177867924571" />
       </scope>
       <scope id="1189585733348" at="92,0,103,0">
         <var name="keyMapItem" id="1189585755476" />
       </scope>
       <scope id="474635177867943049" at="168,0,180,0">
-        <var name="context" id="474635177867949596" />
         <var name="model" id="474635177867946102" />
       </scope>
       <scope id="1233319014844" at="103,91,117,18">
@@ -230,7 +229,7 @@
       <unit id="9186828658636910234" at="147,210,151,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$2" />
       <unit id="9186828658636980507" at="155,213,159,7" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$3" />
       <unit id="474635177867954103" at="172,61,176,9" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$5" />
-      <unit id="474635177867954097" at="170,159,178,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$4" />
+      <unit id="474635177867954097" at="170,150,178,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$4" />
       <unit id="1227876793089" at="38,23,85,13" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$3" />
       <unit id="1227876793089" at="36,19,87,9" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$2" />
       <unit id="1227876793089" at="34,83,89,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil$1" />

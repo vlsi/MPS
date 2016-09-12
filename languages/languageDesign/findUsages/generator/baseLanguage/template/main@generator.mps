@@ -42,7 +42,6 @@
     <import index="ucur" ref="r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)" />
     <import index="xg48" ref="r:7be9d1d9-acb4-4fe3-8096-96178feee8f5(jetbrains.mps.lang.findUsages.plugin)" />
     <import index="mte6" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.findusages.model.scopes(MPS.Platform/)" />
-    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -351,7 +350,6 @@
       <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
       <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
-      <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
     </language>
   </registry>
   <node concept="bUwia" id="hqPr$Ad">
@@ -360,36 +358,14 @@
       <ref role="2VPoh2" node="6VBrDosl4_S" resolve="FindUsagesDescriptor" />
       <node concept="2VP$b9" id="6VBrDosl72j" role="2VPoh3">
         <node concept="3clFbS" id="6VBrDosl72k" role="2VODD2">
-          <node concept="3cpWs8" id="6VBrDosl72l" role="3cqZAp">
-            <node concept="3cpWsn" id="6VBrDosl72m" role="3cpWs9">
-              <property role="TrG5h" value="model" />
-              <node concept="H_c77" id="6VBrDosl72n" role="1tU5fm" />
-              <node concept="2OqwBi" id="6VBrDosl72o" role="33vP2m">
-                <node concept="1iwH7S" id="6VBrDosl72p" role="2Oq$k0" />
-                <node concept="1st3f0" id="6VBrDosl72q" role="2OqNvi" />
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="6VBrDosl72r" role="3cqZAp">
-            <node concept="1Wc70l" id="6VBrDosl72s" role="3clFbG">
-              <node concept="2OqwBi" id="i22eBZSl8H" role="3uHU7w">
-                <node concept="37vLTw" id="i22eBZSl7c" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6VBrDosl72m" resolve="model" />
-                </node>
-                <node concept="3zA4fs" id="i22eBZSlaG" role="2OqNvi">
-                  <ref role="3zA4av" to="xg48:2LiUEk8oQ$g" resolve="findUsages" />
-                </node>
+            <node concept="2OqwBi" id="21KZIicgRTJ" role="3clFbG">
+              <node concept="2OqwBi" id="21KZIicgRTK" role="2Oq$k0">
+                <node concept="1iwH7S" id="21KZIicgRTL" role="2Oq$k0" />
+                <node concept="1st3f0" id="21KZIicgRTM" role="2OqNvi" />
               </node>
-              <node concept="2OqwBi" id="6VBrDosl72t" role="3uHU7B">
-                <node concept="2OqwBi" id="6VBrDosl72u" role="2Oq$k0">
-                  <node concept="37vLTw" id="3GM_nagTxO$" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6VBrDosl72m" resolve="model" />
-                  </node>
-                  <node concept="2RRcyG" id="6VBrDosl72w" role="2OqNvi">
-                    <ref role="2RRcyH" to="tp3b:hqPqlEd" resolve="FinderDeclaration" />
-                  </node>
-                </node>
-                <node concept="3GX2aA" id="6VBrDosl72x" role="2OqNvi" />
+              <node concept="3zA4fs" id="21KZIicgRTN" role="2OqNvi">
+                <ref role="3zA4av" to="xg48:2LiUEk8oQ$g" resolve="findUsages" />
               </node>
             </node>
           </node>
@@ -2006,32 +1982,12 @@
       <node concept="30G5F_" id="1na$wSWf3eX" role="30HLyM">
         <node concept="3clFbS" id="1na$wSWf3eY" role="2VODD2">
           <node concept="3clFbF" id="1KHvivZKB6b" role="3cqZAp">
-            <node concept="1Wc70l" id="5cAnPGmopIC" role="3clFbG">
-              <node concept="2OqwBi" id="1KHvivZKB8J" role="3uHU7B">
-                <node concept="v3LJS" id="1KHvivZKB69" role="2Oq$k0">
-                  <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
-                </node>
-                <node concept="3zA4fs" id="4V9LvgB5R2g" role="2OqNvi">
-                  <ref role="3zA4av" to="xg48:2LiUEk8oQ$g" resolve="findUsages" />
-                </node>
+            <node concept="2OqwBi" id="1KHvivZKB8J" role="3clFbG">
+              <node concept="v3LJS" id="1KHvivZKB69" role="2Oq$k0">
+                <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
               </node>
-              <node concept="2OqwBi" id="227lWzxVIY5" role="3uHU7w">
-                <node concept="2OqwBi" id="227lWzxVIY6" role="2Oq$k0">
-                  <node concept="2OqwBi" id="227lWzxVIY7" role="2Oq$k0">
-                    <node concept="v3LJS" id="5cAnPGmopNK" role="2Oq$k0">
-                      <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
-                    </node>
-                    <node concept="2RRcyG" id="5cAnPGmopSv" role="2OqNvi">
-                      <ref role="2RRcyH" to="tp3b:hqPqlEd" resolve="FinderDeclaration" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="227lWzxVIYa" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~List.iterator():java.util.Iterator" resolve="iterator" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="227lWzxVIYb" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Iterator.hasNext():boolean" resolve="hasNext" />
-                </node>
+              <node concept="3zA4fs" id="4V9LvgB5R2g" role="2OqNvi">
+                <ref role="3zA4av" to="xg48:2LiUEk8oQ$g" resolve="findUsages" />
               </node>
             </node>
           </node>

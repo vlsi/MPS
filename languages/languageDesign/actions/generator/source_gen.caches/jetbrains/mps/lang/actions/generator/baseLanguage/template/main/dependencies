@@ -30,7 +30,6 @@
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.RemoveSTByConditionPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.SideTransformHintSubstituteActionsBuilder__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.utils.LanguageRuntimeGeneratorUtils" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ILinkAccess__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.SNodeOperation__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />

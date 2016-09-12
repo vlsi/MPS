@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.descriptor.generator.template.utils.LanguageRuntimeGeneratorUtils;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -45,6 +44,7 @@ import jetbrains.mps.generator.template.TemplateVarContext;
 @Generated
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_3341893916018742339(final CreateRootRuleContext _context) {
+    // [MM] this code should not be used after migration to 3.4. That's why I don't change it like the code below 
     if (SModuleOperations.isAspect(_context.getOriginalInputModel(), "actions")) {
       return true;
     }
@@ -54,7 +54,7 @@ public class QueriesGenerated {
     return false;
   }
   public static boolean createRootRule_Condition_5817157672057528757(final CreateRootRuleContext _context) {
-    return SModuleOperations.isAspect(_context.getOriginalInputModel(), "actions") && ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f106b2L, "jetbrains.mps.lang.actions.structure.NodeFactories"))).isNotEmpty();
+    return SModuleOperations.isAspect(_context.getOriginalInputModel(), "actions");
   }
   public static boolean createRootRule_Condition_1221138344773(final CreateRootRuleContext _context) {
     return ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11c51563250L, "jetbrains.mps.lang.actions.structure.PasteWrapper"))).isNotEmpty();
@@ -72,10 +72,7 @@ public class QueriesGenerated {
     return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")))), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x52fd3043dd42f3a9L, "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer"));
   }
   public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
-    return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "actions") && LanguageRuntimeGeneratorUtils.isAspectOfLanguage(((SModel) _context.getVariable("model")), _context, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f106b2L, "jetbrains.mps.lang.actions.structure.NodeFactories"));
-  }
-  public static boolean baseMappingRule_Condition_474635177869748103(final BaseMappingRuleContext _context) {
-    return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "actions") && !(LanguageRuntimeGeneratorUtils.isAspectOfLanguage(((SModel) _context.getVariable("model")), _context, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f106b2L, "jetbrains.mps.lang.actions.structure.NodeFactories")));
+    return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "actions");
   }
   public static Object propertyMacro_GetPropertyValue_1203349256426(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -707,9 +704,6 @@ public class QueriesGenerated {
     return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".ActionAspectDescriptorImpl";
   }
   public static Object templateArgumentQuery_5700381506346626450(final TemplateArgumentContext _context) {
-    return SNodeOperations.getNode("1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.actions.descriptor(MPS.Editor/)", "~ActionAspectDescriptor");
-  }
-  public static Object templateArgumentQuery_474635177869748120(final TemplateArgumentContext _context) {
     return SNodeOperations.getNode("1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.actions.descriptor(MPS.Editor/)", "~ActionAspectDescriptor");
   }
   public static Iterable<SNode> sourceNodesQuery_4692357616862800149(final SourceSubstituteMacroNodesContext _context) {
