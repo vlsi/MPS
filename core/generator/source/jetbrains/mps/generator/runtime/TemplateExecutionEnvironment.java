@@ -29,6 +29,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -116,7 +117,15 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
   /**
    * Support for references between template nodes
    */
+  void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull SReferenceLink role, SNodeReference templateSourceNode, String templateTargetNodeId, @Nullable String resolveInfo, TemplateContext context);
+
+  /**
+   * @deprecated replaced with {@link #resolveInTemplateLater(SNode, SReferenceLink, SNodeReference, String, String, TemplateContext)}
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull String role, SNodeReference templateSourceNode, String templateTargetNodeId, @Nullable String resolveInfo, TemplateContext context);
+
 
   /**
    * ReferenceMacro support

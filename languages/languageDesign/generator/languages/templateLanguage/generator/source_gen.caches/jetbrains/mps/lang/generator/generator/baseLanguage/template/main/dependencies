@@ -53,6 +53,7 @@
     <classNode dependClassName="jetbrains.mps.lang.pattern.behavior.PatternExpression__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.behavior.PatternVarsUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.PropertyId__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ReferenceLinkId__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
