@@ -42,8 +42,8 @@ import jetbrains.mps.lang.smodel.behavior.ConceptId__BehaviorDescriptor;
 import java.util.UUID;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.lang.smodel.behavior.PropertyId__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.behavior.ReferenceId__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.behavior.LinkId__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.behavior.ReferenceLinkId__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.behavior.ContainmentLinkId__BehaviorDescriptor;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor;
 import jetbrains.mps.lang.behavior.generator.template.util.Constants;
@@ -895,7 +895,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return "0x" + Long.toHexString(((SConceptId) _context.getVariable("var:conceptId")).getIdValue()) + 'L';
   }
   public static Object propertyMacro_GetPropertyValue_8415841354032440806(final PropertyMacroContext _context) {
-    return "0x" + Long.toHexString((long) ReferenceId__BehaviorDescriptor.getIdValue_id7jb4LXp9a7d.invoke(_context.getNode())) + 'L';
+    return "0x" + Long.toHexString((long) ReferenceLinkId__BehaviorDescriptor.getIdValue_id7jb4LXp9a7d.invoke(_context.getNode())) + 'L';
   }
   public static Object propertyMacro_GetPropertyValue_8415841354032440819(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6ecL, 0x74cb131f5923b6efL, "referenceName"));
@@ -912,7 +912,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return "0x" + Long.toHexString(((SConceptId) _context.getVariable("var:conceptId")).getIdValue()) + 'L';
   }
   public static Object propertyMacro_GetPropertyValue_8415841354032518320(final PropertyMacroContext _context) {
-    return "0x" + Long.toHexString((long) LinkId__BehaviorDescriptor.getIdValue_id7jb4LXp8Vts.invoke(_context.getNode())) + 'L';
+    return "0x" + Long.toHexString((long) ContainmentLinkId__BehaviorDescriptor.getIdValue_id7jb4LXp8Vts.invoke(_context.getNode())) + 'L';
   }
   public static Object propertyMacro_GetPropertyValue_8415841354032518333(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6e7L, 0x74cb131f5923b6eaL, "linkName"));

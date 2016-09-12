@@ -20421,12 +20421,12 @@
   </node>
   <node concept="jVnub" id="7jb4LXp9gwP">
     <property role="3GE5qa" value="identity" />
-    <property role="TrG5h" value="switch_ReferenceIdentity_SReferenceLink" />
+    <property role="TrG5h" value="switch_AssociationIdentity_SReferenceLink" />
     <node concept="3aamgX" id="7jb4LXp9gwQ" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="tp25:7jb4LXp8VrG" resolve="ReferenceId" />
+      <ref role="30HIoZ" to="tp25:7jb4LXp8VrG" resolve="ReferenceLinkId" />
       <node concept="j$656" id="7jb4LXp9qO6" role="1lVwrX">
-        <ref role="v9R2y" node="7jb4LXp9gY9" resolve="reduce_ReferenceId_SReferenceLink" />
+        <ref role="v9R2y" node="7jb4LXp9gY9" resolve="reduce_ReferenceLinkId_SReferenceLink" />
       </node>
     </node>
     <node concept="j$LIH" id="7jb4LXp9gwS" role="jxRDz">
@@ -20441,9 +20441,9 @@
     </node>
   </node>
   <node concept="13MO4I" id="7jb4LXp9gY9">
-    <property role="TrG5h" value="reduce_ReferenceId_SReferenceLink" />
+    <property role="TrG5h" value="reduce_ReferenceLinkId_SReferenceLink" />
     <property role="3GE5qa" value="identity" />
-    <ref role="3gUMe" to="tp25:7jb4LXp8VrG" resolve="ReferenceId" />
+    <ref role="3gUMe" to="tp25:7jb4LXp8VrG" resolve="ReferenceLinkId" />
     <node concept="2YIFZM" id="7jb4LXp9mmA" role="13RCb5">
       <ref role="1Pybhc" to="2k9e:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
       <ref role="37wK5l" to="2k9e:~MetaAdapterFactory.getReferenceLink(long,long,long,long,java.lang.String):org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getReferenceLink" />
@@ -20696,9 +20696,9 @@
     </node>
   </node>
   <node concept="13MO4I" id="7jb4LXp9xsD">
-    <property role="TrG5h" value="reduce_LinkId_SContainmentLink" />
+    <property role="TrG5h" value="reduce_ContainmentLinkId_SContainmentLink" />
     <property role="3GE5qa" value="identity" />
-    <ref role="3gUMe" to="tp25:7jb4LXp8VrB" resolve="LinkId" />
+    <ref role="3gUMe" to="tp25:7jb4LXp8VrB" resolve="ContainmentLinkId" />
     <node concept="2YIFZM" id="7jb4LXp9DhK" role="13RCb5">
       <ref role="1Pybhc" to="2k9e:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
       <ref role="37wK5l" to="2k9e:~MetaAdapterFactory.getContainmentLink(long,long,long,long,java.lang.String):org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
@@ -20952,23 +20952,23 @@
   </node>
   <node concept="jVnub" id="7jb4LXp9xud">
     <property role="3GE5qa" value="identity" />
-    <property role="TrG5h" value="switch_LinkIdentity_SContainmentLink" />
+    <property role="TrG5h" value="switch_AggregationIdentity_SContainmentLink" />
     <node concept="3aamgX" id="7jb4LXp9xue" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="tp25:7jb4LXp8VrB" resolve="LinkId" />
+      <ref role="30HIoZ" to="tp25:7jb4LXp8VrB" resolve="ContainmentLinkId" />
       <node concept="j$656" id="7jb4LXp9CON" role="1lVwrX">
-        <ref role="v9R2y" node="7jb4LXp9xsD" resolve="reduce_LinkId_SContainmentLink" />
+        <ref role="v9R2y" node="7jb4LXp9xsD" resolve="reduce_ContainmentLinkId_SContainmentLink" />
       </node>
     </node>
     <node concept="j$LIH" id="7jb4LXp9xug" role="jxRDz">
       <node concept="1lLz0L" id="7jb4LXp9xuh" role="1lHHLF">
         <property role="1lMjX7" value="error" />
-        <property role="1lLB17" value="&quot;Unsupported LinkIdentity kind&quot;" />
+        <property role="1lLB17" value="&quot;Unsupported AggregationIdentity kind&quot;" />
       </node>
     </node>
     <node concept="1lLz0L" id="7jb4LXp9xui" role="28wCFW">
       <property role="1lMjX7" value="error" />
-      <property role="1lLB17" value="&quot;Need an instance of LinkIdentity&quot;" />
+      <property role="1lLB17" value="&quot;Need an instance of AggregationIdentity&quot;" />
     </node>
   </node>
 </model>

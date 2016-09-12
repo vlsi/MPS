@@ -27,8 +27,8 @@ import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class LinkId__BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6e7L, "jetbrains.mps.lang.smodel.structure.LinkId");
+public final class ContainmentLinkId__BehaviorDescriptor extends BaseBHDescriptor {
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6e7L, "jetbrains.mps.lang.smodel.structure.ContainmentLinkId");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<SContainmentLink> getLink_id7jb4LXp8VrU = new SMethodBuilder<SContainmentLink>(new SJavaCompoundTypeImpl(SContainmentLink.class)).name("getLink").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7jb4LXp8VrU").registry(REGISTRY).build();
@@ -46,7 +46,7 @@ public final class LinkId__BehaviorDescriptor extends BaseBHDescriptor {
     if (lc == null || ln == null) {
       return null;
     }
-    long lid = ((long) LinkId__BehaviorDescriptor.getIdValue_id7jb4LXp8Vts.invoke(__thisNode__));
+    long lid = ((long) ContainmentLinkId__BehaviorDescriptor.getIdValue_id7jb4LXp8Vts.invoke(__thisNode__));
     return MetaAdapterFactory.getContainmentLink(lc, lid, ln);
   }
   /*package*/ static void setLink_id7jb4LXp8VsD(@NotNull SNode __thisNode__, @NotNull SContainmentLink link) {
@@ -61,7 +61,7 @@ public final class LinkId__BehaviorDescriptor extends BaseBHDescriptor {
     return Long.parseLong(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6e7L, 0x74cb131f5923b6e9L, "linkId")), Character.MAX_RADIX);
   }
 
-  /*package*/ LinkId__BehaviorDescriptor() {
+  /*package*/ ContainmentLinkId__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

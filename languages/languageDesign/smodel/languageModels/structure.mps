@@ -2671,7 +2671,7 @@
   </node>
   <node concept="1TIwiD" id="7jb4LXp8VrB">
     <property role="3GE5qa" value="identity" />
-    <property role="TrG5h" value="LinkId" />
+    <property role="TrG5h" value="ContainmentLinkId" />
     <property role="EcuMT" value="8415841354032330471" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7jb4LXp8VrC" role="1TKVEi">
@@ -2692,12 +2692,12 @@
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="PrWs8" id="7jb4LXp8VrN" role="PzmwI">
-      <ref role="PrY4T" node="7jb4LXp8VrL" resolve="LinkIdentity" />
+      <ref role="PrY4T" node="7jb4LXp8VrL" resolve="AggregationIdentity" />
     </node>
   </node>
   <node concept="1TIwiD" id="7jb4LXp8VrG">
     <property role="3GE5qa" value="identity" />
-    <property role="TrG5h" value="ReferenceId" />
+    <property role="TrG5h" value="ReferenceLinkId" />
     <property role="EcuMT" value="8415841354032330476" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7jb4LXp8VrH" role="1TKVEi">
@@ -2718,12 +2718,12 @@
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="PrWs8" id="7jb4LXp8VrQ" role="PzmwI">
-      <ref role="PrY4T" node="7jb4LXp8VrM" resolve="ReferenceIdentity" />
+      <ref role="PrY4T" node="7jb4LXp8VrM" resolve="AssociationIdentity" />
     </node>
   </node>
   <node concept="PlHQZ" id="7jb4LXp8VrL">
     <property role="3GE5qa" value="identity" />
-    <property role="TrG5h" value="LinkIdentity" />
+    <property role="TrG5h" value="AggregationIdentity" />
     <property role="EcuMT" value="8415841354032330481" />
     <node concept="PrWs8" id="2PiAZGev8vP" role="PrDN$">
       <ref role="PrY4T" node="2PiAZGev8v_" resolve="ConceptMemberIdentity" />
@@ -2731,7 +2731,7 @@
   </node>
   <node concept="PlHQZ" id="7jb4LXp8VrM">
     <property role="3GE5qa" value="identity" />
-    <property role="TrG5h" value="ReferenceIdentity" />
+    <property role="TrG5h" value="AssociationIdentity" />
     <property role="EcuMT" value="8415841354032330482" />
     <node concept="PrWs8" id="2PiAZGev8vM" role="PrDN$">
       <ref role="PrY4T" node="2PiAZGev8v_" resolve="ConceptMemberIdentity" />

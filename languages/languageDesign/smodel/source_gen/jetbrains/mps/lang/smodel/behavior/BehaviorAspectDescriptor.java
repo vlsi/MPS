@@ -114,10 +114,10 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myPropertyId__BehaviorDescriptor = new PropertyId__BehaviorDescriptor();
   private final BHDescriptor myModel_GetModule__BehaviorDescriptor = new Model_GetModule__BehaviorDescriptor();
   private final BHDescriptor myNode_GetSConceptOperation__BehaviorDescriptor = new Node_GetSConceptOperation__BehaviorDescriptor();
-  private final BHDescriptor myLinkId__BehaviorDescriptor = new LinkId__BehaviorDescriptor();
-  private final BHDescriptor myReferenceId__BehaviorDescriptor = new ReferenceId__BehaviorDescriptor();
-  private final BHDescriptor myLinkIdentity__BehaviorDescriptor = new LinkIdentity__BehaviorDescriptor();
-  private final BHDescriptor myReferenceIdentity__BehaviorDescriptor = new ReferenceIdentity__BehaviorDescriptor();
+  private final BHDescriptor myContainmentLinkId__BehaviorDescriptor = new ContainmentLinkId__BehaviorDescriptor();
+  private final BHDescriptor myReferenceLinkId__BehaviorDescriptor = new ReferenceLinkId__BehaviorDescriptor();
+  private final BHDescriptor myAggregationIdentity__BehaviorDescriptor = new AggregationIdentity__BehaviorDescriptor();
+  private final BHDescriptor myAssociationIdentity__BehaviorDescriptor = new AssociationIdentity__BehaviorDescriptor();
   private final BHDescriptor myNode_GetReferencesOperation__BehaviorDescriptor = new Node_GetReferencesOperation__BehaviorDescriptor();
   private final BHDescriptor myAsNodeOperation__BehaviorDescriptor = new AsNodeOperation__BehaviorDescriptor();
 
@@ -143,472 +143,472 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
           break;
         case 2:
           if (true) {
-            return myAsNodeOperation__BehaviorDescriptor;
+            return myAggregationIdentity__BehaviorDescriptor;
           }
           break;
         case 3:
           if (true) {
-            return myAsSConcept__BehaviorDescriptor;
+            return myAsNodeOperation__BehaviorDescriptor;
           }
           break;
         case 4:
           if (true) {
-            return myAttributeAccess__BehaviorDescriptor;
+            return myAsSConcept__BehaviorDescriptor;
           }
           break;
         case 5:
           if (true) {
-            return myAttributeQualifier__BehaviorDescriptor;
+            return myAssociationIdentity__BehaviorDescriptor;
           }
           break;
         case 6:
           if (true) {
-            return myChildAttributeQualifier__BehaviorDescriptor;
+            return myAttributeAccess__BehaviorDescriptor;
           }
           break;
         case 7:
           if (true) {
-            return myChildNodeRefExpression__BehaviorDescriptor;
+            return myAttributeQualifier__BehaviorDescriptor;
           }
           break;
         case 8:
           if (true) {
-            return myConceptId__BehaviorDescriptor;
+            return myChildAttributeQualifier__BehaviorDescriptor;
           }
           break;
         case 9:
           if (true) {
-            return myConceptIdentity__BehaviorDescriptor;
+            return myChildNodeRefExpression__BehaviorDescriptor;
           }
           break;
         case 10:
           if (true) {
-            return myConceptNodeType__BehaviorDescriptor;
+            return myConceptId__BehaviorDescriptor;
           }
           break;
         case 11:
           if (true) {
-            return myConcept_GetAllSubConcepts__BehaviorDescriptor;
+            return myConceptIdentity__BehaviorDescriptor;
           }
           break;
         case 12:
           if (true) {
-            return myConcept_GetAllSuperConcepts__BehaviorDescriptor;
+            return myConceptNodeType__BehaviorDescriptor;
           }
           break;
         case 13:
           if (true) {
-            return myConcept_GetDirectSuperConcepts__BehaviorDescriptor;
+            return myConcept_GetAllSubConcepts__BehaviorDescriptor;
           }
           break;
         case 14:
           if (true) {
-            return myConcept_GetHierarchy__BehaviorDescriptor;
+            return myConcept_GetAllSuperConcepts__BehaviorDescriptor;
           }
           break;
         case 15:
           if (true) {
-            return myConcept_IsExactlyOperation__BehaviorDescriptor;
+            return myConcept_GetDirectSuperConcepts__BehaviorDescriptor;
           }
           break;
         case 16:
           if (true) {
-            return myConcept_IsSubConceptOfOperation__BehaviorDescriptor;
+            return myConcept_GetHierarchy__BehaviorDescriptor;
           }
           break;
         case 17:
           if (true) {
-            return myConcept_IsSuperConceptOfOperation__BehaviorDescriptor;
+            return myConcept_IsExactlyOperation__BehaviorDescriptor;
           }
           break;
         case 18:
           if (true) {
-            return myConcept_NewInstance__BehaviorDescriptor;
+            return myConcept_IsSubConceptOfOperation__BehaviorDescriptor;
           }
           break;
         case 19:
           if (true) {
-            return myEnumMemberReference__BehaviorDescriptor;
+            return myConcept_IsSuperConceptOfOperation__BehaviorDescriptor;
           }
           break;
         case 20:
           if (true) {
-            return myEqualsStructurallyExpression__BehaviorDescriptor;
+            return myConcept_NewInstance__BehaviorDescriptor;
           }
           break;
         case 21:
           if (true) {
-            return myILinkAccess__BehaviorDescriptor;
+            return myContainmentLinkId__BehaviorDescriptor;
           }
           break;
         case 22:
           if (true) {
-            return myILinkAccessQualifierContainer__BehaviorDescriptor;
+            return myEnumMemberReference__BehaviorDescriptor;
           }
           break;
         case 23:
           if (true) {
-            return myIfInstanceOfVariable__BehaviorDescriptor;
+            return myEqualsStructurallyExpression__BehaviorDescriptor;
           }
           break;
         case 24:
           if (true) {
-            return myLanguageId__BehaviorDescriptor;
+            return myILinkAccess__BehaviorDescriptor;
           }
           break;
         case 25:
           if (true) {
-            return myLanguageIdentity__BehaviorDescriptor;
+            return myILinkAccessQualifierContainer__BehaviorDescriptor;
           }
           break;
         case 26:
           if (true) {
-            return myLanguageRefExpression__BehaviorDescriptor;
+            return myIfInstanceOfVariable__BehaviorDescriptor;
           }
           break;
         case 27:
           if (true) {
-            return myLanguageReferenceExpression__BehaviorDescriptor;
+            return myLanguageId__BehaviorDescriptor;
           }
           break;
         case 28:
           if (true) {
-            return myLinkAttributeQualifier__BehaviorDescriptor;
+            return myLanguageIdentity__BehaviorDescriptor;
           }
           break;
         case 29:
           if (true) {
-            return myLinkId__BehaviorDescriptor;
+            return myLanguageRefExpression__BehaviorDescriptor;
           }
           break;
         case 30:
           if (true) {
-            return myLinkIdentity__BehaviorDescriptor;
+            return myLanguageReferenceExpression__BehaviorDescriptor;
           }
           break;
         case 31:
           if (true) {
-            return myLinkList_AddNewChildOperation__BehaviorDescriptor;
+            return myLinkAttributeQualifier__BehaviorDescriptor;
           }
           break;
         case 32:
           if (true) {
-            return myLinkRefQualifier__BehaviorDescriptor;
+            return myLinkList_AddNewChildOperation__BehaviorDescriptor;
           }
           break;
         case 33:
           if (true) {
-            return myLink_SetNewChildOperation__BehaviorDescriptor;
+            return myLinkRefQualifier__BehaviorDescriptor;
           }
           break;
         case 34:
           if (true) {
-            return myLink_SetTargetOperation__BehaviorDescriptor;
+            return myLink_SetNewChildOperation__BehaviorDescriptor;
           }
           break;
         case 35:
           if (true) {
-            return myModelReferenceExpression__BehaviorDescriptor;
+            return myLink_SetTargetOperation__BehaviorDescriptor;
           }
           break;
         case 36:
           if (true) {
-            return myModel_AddRootOperation__BehaviorDescriptor;
+            return myModelReferenceExpression__BehaviorDescriptor;
           }
           break;
         case 37:
           if (true) {
-            return myModel_CreateNewNodeOperation__BehaviorDescriptor;
+            return myModel_AddRootOperation__BehaviorDescriptor;
           }
           break;
         case 38:
           if (true) {
-            return myModel_CreateNewRootNodeOperation__BehaviorDescriptor;
+            return myModel_CreateNewNodeOperation__BehaviorDescriptor;
           }
           break;
         case 39:
           if (true) {
-            return myModel_GetLongNameOperation__BehaviorDescriptor;
+            return myModel_CreateNewRootNodeOperation__BehaviorDescriptor;
           }
           break;
         case 40:
           if (true) {
-            return myModel_GetModule__BehaviorDescriptor;
+            return myModel_GetLongNameOperation__BehaviorDescriptor;
           }
           break;
         case 41:
           if (true) {
-            return myModel_NodesIncludingImportedOperation__BehaviorDescriptor;
+            return myModel_GetModule__BehaviorDescriptor;
           }
           break;
         case 42:
           if (true) {
-            return myModel_NodesOperation__BehaviorDescriptor;
+            return myModel_NodesIncludingImportedOperation__BehaviorDescriptor;
           }
           break;
         case 43:
           if (true) {
-            return myModel_RootsIncludingImportedOperation__BehaviorDescriptor;
+            return myModel_NodesOperation__BehaviorDescriptor;
           }
           break;
         case 44:
           if (true) {
-            return myModel_RootsOperation__BehaviorDescriptor;
+            return myModel_RootsIncludingImportedOperation__BehaviorDescriptor;
           }
           break;
         case 45:
           if (true) {
-            return myModuleIdentity__BehaviorDescriptor;
+            return myModel_RootsOperation__BehaviorDescriptor;
           }
           break;
         case 46:
           if (true) {
-            return myModulePointer__BehaviorDescriptor;
+            return myModuleIdentity__BehaviorDescriptor;
           }
           break;
         case 47:
           if (true) {
-            return myModuleReferenceExpression__BehaviorDescriptor;
+            return myModulePointer__BehaviorDescriptor;
           }
           break;
         case 48:
           if (true) {
-            return myNodeAttributeQualifier__BehaviorDescriptor;
+            return myModuleReferenceExpression__BehaviorDescriptor;
           }
           break;
         case 49:
           if (true) {
-            return myNodeRefExpression__BehaviorDescriptor;
+            return myNodeAttributeQualifier__BehaviorDescriptor;
           }
           break;
         case 50:
           if (true) {
-            return myNode_ConceptMethodCall__BehaviorDescriptor;
+            return myNodeRefExpression__BehaviorDescriptor;
           }
           break;
         case 51:
           if (true) {
-            return myNode_CopyOperation__BehaviorDescriptor;
+            return myNode_ConceptMethodCall__BehaviorDescriptor;
           }
           break;
         case 52:
           if (true) {
-            return myNode_DeleteOperation__BehaviorDescriptor;
+            return myNode_CopyOperation__BehaviorDescriptor;
           }
           break;
         case 53:
           if (true) {
-            return myNode_DetachOperation__BehaviorDescriptor;
+            return myNode_DeleteOperation__BehaviorDescriptor;
           }
           break;
         case 54:
           if (true) {
-            return myNode_GetAllSiblingsOperation__BehaviorDescriptor;
+            return myNode_DetachOperation__BehaviorDescriptor;
           }
           break;
         case 55:
           if (true) {
-            return myNode_GetAncestorOperation__BehaviorDescriptor;
+            return myNode_GetAllSiblingsOperation__BehaviorDescriptor;
           }
           break;
         case 56:
           if (true) {
-            return myNode_GetAncestorsOperation__BehaviorDescriptor;
+            return myNode_GetAncestorOperation__BehaviorDescriptor;
           }
           break;
         case 57:
           if (true) {
-            return myNode_GetChildrenOperation__BehaviorDescriptor;
+            return myNode_GetAncestorsOperation__BehaviorDescriptor;
           }
           break;
         case 58:
           if (true) {
-            return myNode_GetConceptOperation__BehaviorDescriptor;
+            return myNode_GetChildrenOperation__BehaviorDescriptor;
           }
           break;
         case 59:
           if (true) {
-            return myNode_GetContainingLinkOperation__BehaviorDescriptor;
+            return myNode_GetConceptOperation__BehaviorDescriptor;
           }
           break;
         case 60:
           if (true) {
-            return myNode_GetContainingRoleOperation__BehaviorDescriptor;
+            return myNode_GetContainingLinkOperation__BehaviorDescriptor;
           }
           break;
         case 61:
           if (true) {
-            return myNode_GetContainingRootOperation__BehaviorDescriptor;
+            return myNode_GetContainingRoleOperation__BehaviorDescriptor;
           }
           break;
         case 62:
           if (true) {
-            return myNode_GetDescendantsOperation__BehaviorDescriptor;
+            return myNode_GetContainingRootOperation__BehaviorDescriptor;
           }
           break;
         case 63:
           if (true) {
-            return myNode_GetIndexInParentOperation__BehaviorDescriptor;
+            return myNode_GetDescendantsOperation__BehaviorDescriptor;
           }
           break;
         case 64:
           if (true) {
-            return myNode_GetModelOperation__BehaviorDescriptor;
+            return myNode_GetIndexInParentOperation__BehaviorDescriptor;
           }
           break;
         case 65:
           if (true) {
-            return myNode_GetNextSiblingOperation__BehaviorDescriptor;
+            return myNode_GetModelOperation__BehaviorDescriptor;
           }
           break;
         case 66:
           if (true) {
-            return myNode_GetNextSiblingsOperation__BehaviorDescriptor;
+            return myNode_GetNextSiblingOperation__BehaviorDescriptor;
           }
           break;
         case 67:
           if (true) {
-            return myNode_GetParentOperation__BehaviorDescriptor;
+            return myNode_GetNextSiblingsOperation__BehaviorDescriptor;
           }
           break;
         case 68:
           if (true) {
-            return myNode_GetPrevSiblingOperation__BehaviorDescriptor;
+            return myNode_GetParentOperation__BehaviorDescriptor;
           }
           break;
         case 69:
           if (true) {
-            return myNode_GetPrevSiblingsOperation__BehaviorDescriptor;
+            return myNode_GetPrevSiblingOperation__BehaviorDescriptor;
           }
           break;
         case 70:
           if (true) {
-            return myNode_GetReferenceOperation__BehaviorDescriptor;
+            return myNode_GetPrevSiblingsOperation__BehaviorDescriptor;
           }
           break;
         case 71:
           if (true) {
-            return myNode_GetReferencesOperation__BehaviorDescriptor;
+            return myNode_GetReferenceOperation__BehaviorDescriptor;
           }
           break;
         case 72:
           if (true) {
-            return myNode_GetReferentSearchScopeOperation__BehaviorDescriptor;
+            return myNode_GetReferencesOperation__BehaviorDescriptor;
           }
           break;
         case 73:
           if (true) {
-            return myNode_GetSConceptOperation__BehaviorDescriptor;
+            return myNode_GetReferentSearchScopeOperation__BehaviorDescriptor;
           }
           break;
         case 74:
           if (true) {
-            return myNode_InsertNewNextSiblingOperation__BehaviorDescriptor;
+            return myNode_GetSConceptOperation__BehaviorDescriptor;
           }
           break;
         case 75:
           if (true) {
-            return myNode_InsertNewPrevSiblingOperation__BehaviorDescriptor;
+            return myNode_InsertNewNextSiblingOperation__BehaviorDescriptor;
           }
           break;
         case 76:
           if (true) {
-            return myNode_InsertNextSiblingOperation__BehaviorDescriptor;
+            return myNode_InsertNewPrevSiblingOperation__BehaviorDescriptor;
           }
           break;
         case 77:
           if (true) {
-            return myNode_InsertPrevSiblingOperation__BehaviorDescriptor;
+            return myNode_InsertNextSiblingOperation__BehaviorDescriptor;
           }
           break;
         case 78:
           if (true) {
-            return myNode_IsAttributeOperation__BehaviorDescriptor;
+            return myNode_InsertPrevSiblingOperation__BehaviorDescriptor;
           }
           break;
         case 79:
           if (true) {
-            return myNode_IsInstanceOfOperation__BehaviorDescriptor;
+            return myNode_IsAttributeOperation__BehaviorDescriptor;
           }
           break;
         case 80:
           if (true) {
-            return myNode_IsNotNullOperation__BehaviorDescriptor;
+            return myNode_IsInstanceOfOperation__BehaviorDescriptor;
           }
           break;
         case 81:
           if (true) {
-            return myNode_IsNullOperation__BehaviorDescriptor;
+            return myNode_IsNotNullOperation__BehaviorDescriptor;
           }
           break;
         case 82:
           if (true) {
-            return myNode_IsRoleOperation__BehaviorDescriptor;
+            return myNode_IsNullOperation__BehaviorDescriptor;
           }
           break;
         case 83:
           if (true) {
-            return myNode_PointerOperation__BehaviorDescriptor;
+            return myNode_IsRoleOperation__BehaviorDescriptor;
           }
           break;
         case 84:
           if (true) {
-            return myNode_ReplaceWithAnotherOperation__BehaviorDescriptor;
+            return myNode_PointerOperation__BehaviorDescriptor;
           }
           break;
         case 85:
           if (true) {
-            return myNode_ReplaceWithNewOperation__BehaviorDescriptor;
+            return myNode_ReplaceWithAnotherOperation__BehaviorDescriptor;
           }
           break;
         case 86:
           if (true) {
-            return myOperationParm_LinkQualifier__BehaviorDescriptor;
+            return myNode_ReplaceWithNewOperation__BehaviorDescriptor;
           }
           break;
         case 87:
           if (true) {
-            return myPropertyAttributeQualifier__BehaviorDescriptor;
+            return myOperationParm_LinkQualifier__BehaviorDescriptor;
           }
           break;
         case 88:
           if (true) {
-            return myPropertyId__BehaviorDescriptor;
+            return myPropertyAttributeQualifier__BehaviorDescriptor;
           }
           break;
         case 89:
           if (true) {
-            return myPropertyIdentity__BehaviorDescriptor;
+            return myPropertyId__BehaviorDescriptor;
           }
           break;
         case 90:
           if (true) {
-            return myProperty_HasValue_Enum__BehaviorDescriptor;
+            return myPropertyIdentity__BehaviorDescriptor;
           }
           break;
         case 91:
           if (true) {
-            return myProperty_HasValue_Simple__BehaviorDescriptor;
+            return myProperty_HasValue_Enum__BehaviorDescriptor;
           }
           break;
         case 92:
           if (true) {
-            return myProperty_RemoveOperation__BehaviorDescriptor;
+            return myProperty_HasValue_Simple__BehaviorDescriptor;
           }
           break;
         case 93:
           if (true) {
-            return myProperty_SetOperation__BehaviorDescriptor;
+            return myProperty_RemoveOperation__BehaviorDescriptor;
           }
           break;
         case 94:
           if (true) {
-            return myReferenceId__BehaviorDescriptor;
+            return myProperty_SetOperation__BehaviorDescriptor;
           }
           break;
         case 95:
           if (true) {
-            return myReferenceIdentity__BehaviorDescriptor;
+            return myReferenceLinkId__BehaviorDescriptor;
           }
           break;
         case 96:
@@ -685,5 +685,5 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0he = buildConceptIndices(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x319fd776da5d8e3cL, "jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, "jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7b0da3c650be8558L, "jetbrains.mps.lang.smodel.structure.AsNodeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x4a4d7215f163131L, "jetbrains.mps.lang.smodel.structure.AsSConcept"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045a3b2L, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9abL, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x9d98713f24a0e5bL, "jetbrains.mps.lang.smodel.structure.ChildAttributeQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x84baf20c71f8a79L, "jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, "jetbrains.mps.lang.smodel.structure.ConceptId"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb4642L, "jetbrains.mps.lang.smodel.structure.ConceptIdentity"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11331e18cdcL, "jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112d8bf5d03L, "jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11296bd8374L, "jetbrains.mps.lang.smodel.structure.Concept_GetDirectSuperConcepts"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112d8ce685dL, "jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f41acfb7L, "jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112bf601180L, "jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112bf289d94L, "jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11331ad1f2aL, "jetbrains.mps.lang.smodel.structure.Concept_NewInstance"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1091e6212fdL, "jetbrains.mps.lang.smodel.structure.EnumMemberReference"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11dbead8683L, "jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x37d97a5712d396cbL, "jetbrains.mps.lang.smodel.structure.ILinkAccess"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312a67f61731e269L, "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1a228da1357e4a49L, "jetbrains.mps.lang.smodel.structure.IfInstanceOfVariable"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c318L, "jetbrains.mps.lang.smodel.structure.LanguageIdentity"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3e6a40ba27dd70f3L, "jetbrains.mps.lang.smodel.structure.LanguageRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3dc174aL, "jetbrains.mps.lang.smodel.structure.LanguageReferenceExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9b7L, "jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6e7L, "jetbrains.mps.lang.smodel.structure.LinkId"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6f1L, "jetbrains.mps.lang.smodel.structure.LinkIdentity"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1093caead54L, "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11886c4bac0L, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x109233dbca1L, "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1099887af60L, "jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x118e7faea40L, "jetbrains.mps.lang.smodel.structure.Model_AddRootOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2e210544L, "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10fa1ac23f2L, "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11a3152e18bL, "jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x61168e34226eec71L, "jetbrains.mps.lang.smodel.structure.Model_GetModule"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1135326811cL, "jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, "jetbrains.mps.lang.smodel.structure.Model_NodesOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x111d5999a91L, "jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b7dcc9bcL, "jetbrains.mps.lang.smodel.structure.Model_RootsOperation"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5ef5a1e85338e1eL, "jetbrains.mps.lang.smodel.structure.ModuleIdentity"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5ef5a1e853388b3L, "jetbrains.mps.lang.smodel.structure.ModulePointer"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9b5L, "jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11be716563cL, "jetbrains.mps.lang.smodel.structure.NodeRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1129a43046bL, "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a646d8514L, "jetbrains.mps.lang.smodel.structure.Node_CopyOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1097542784fL, "jetbrains.mps.lang.smodel.structure.Node_DeleteOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11dfede6ec0L, "jetbrains.mps.lang.smodel.structure.Node_DetachOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10ab97e0a94L, "jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110bd4e0067L, "jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1112390be59L, "jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110c2e679e7L, "jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f3e65fdcL, "jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x50c63f2cd5142697L, "jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1b35e18a1a3b2c9aL, "jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b78550e8L, "jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b73c3484L, "jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1128be3ca6aL, "jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2e126334L, "jetbrains.mps.lang.smodel.structure.Node_GetModelOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a3ea0a40dL, "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10ab957e8bbL, "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingsOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x109563e6169L, "jetbrains.mps.lang.smodel.structure.Node_GetParentOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a3e9fedc7L, "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10ab975b657L, "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x32187d80f5b88800L, "jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x798c0d67da9045abL, "jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11c530706b2L, "jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x6771eac6c5cbe7d2L, "jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10964e26717L, "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2d494062L, "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2d76e31eL, "jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2d77d0e1L, "jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x118c2f5b5f6L, "jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10956bb6029L, "jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110e123bce7L, "jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110e0974e46L, "jetbrains.mps.lang.smodel.structure.Node_IsNullOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a67578ddeL, "jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x4604033d54faa023L, "jetbrains.mps.lang.smodel.structure.Node_PointerOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975273750L, "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10965697d7aL, "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x47bb2de70d00ff8cL, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045c9b9L, "jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefc235cL, "jetbrains.mps.lang.smodel.structure.PropertyId"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb4617L, "jetbrains.mps.lang.smodel.structure.PropertyIdentity"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10add1ded2bL, "jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10ae2053294L, "jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11aff7f2bb2L, "jetbrains.mps.lang.smodel.structure.Property_RemoveOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1091d8a1d53L, "jetbrains.mps.lang.smodel.structure.Property_SetOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6ecL, "jetbrains.mps.lang.smodel.structure.ReferenceId"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6f2L, "jetbrains.mps.lang.smodel.structure.ReferenceIdentity"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5cab42cd97571ceeL, "jetbrains.mps.lang.smodel.structure.SConceptType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120bfe51421L, "jetbrains.mps.lang.smodel.structure.SEnumMemberType"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed37273dL, "jetbrains.mps.lang.smodel.structure.SEnumOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f96ea2caL, "jetbrains.mps.lang.smodel.structure.SLinkAccess"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f970c119L, "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2d94c0cdL, "jetbrains.mps.lang.smodel.structure.SModelType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aae26be32L, "jetbrains.mps.lang.smodel.structure.SNodeListType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f96cca6fL, "jetbrains.mps.lang.smodel.structure.SPropertyAccess"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aaf6d7435L, "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression"));
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0he = buildConceptIndices(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x319fd776da5d8e3cL, "jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, "jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6f1L, "jetbrains.mps.lang.smodel.structure.AggregationIdentity"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7b0da3c650be8558L, "jetbrains.mps.lang.smodel.structure.AsNodeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x4a4d7215f163131L, "jetbrains.mps.lang.smodel.structure.AsSConcept"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6f2L, "jetbrains.mps.lang.smodel.structure.AssociationIdentity"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045a3b2L, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9abL, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x9d98713f24a0e5bL, "jetbrains.mps.lang.smodel.structure.ChildAttributeQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x84baf20c71f8a79L, "jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, "jetbrains.mps.lang.smodel.structure.ConceptId"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb4642L, "jetbrains.mps.lang.smodel.structure.ConceptIdentity"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11331e18cdcL, "jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112d8bf5d03L, "jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11296bd8374L, "jetbrains.mps.lang.smodel.structure.Concept_GetDirectSuperConcepts"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112d8ce685dL, "jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f41acfb7L, "jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112bf601180L, "jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112bf289d94L, "jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11331ad1f2aL, "jetbrains.mps.lang.smodel.structure.Concept_NewInstance"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6e7L, "jetbrains.mps.lang.smodel.structure.ContainmentLinkId"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1091e6212fdL, "jetbrains.mps.lang.smodel.structure.EnumMemberReference"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11dbead8683L, "jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x37d97a5712d396cbL, "jetbrains.mps.lang.smodel.structure.ILinkAccess"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312a67f61731e269L, "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1a228da1357e4a49L, "jetbrains.mps.lang.smodel.structure.IfInstanceOfVariable"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c318L, "jetbrains.mps.lang.smodel.structure.LanguageIdentity"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3e6a40ba27dd70f3L, "jetbrains.mps.lang.smodel.structure.LanguageRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3dc174aL, "jetbrains.mps.lang.smodel.structure.LanguageReferenceExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9b7L, "jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1093caead54L, "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11886c4bac0L, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x109233dbca1L, "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1099887af60L, "jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x118e7faea40L, "jetbrains.mps.lang.smodel.structure.Model_AddRootOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2e210544L, "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10fa1ac23f2L, "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11a3152e18bL, "jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x61168e34226eec71L, "jetbrains.mps.lang.smodel.structure.Model_GetModule"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1135326811cL, "jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, "jetbrains.mps.lang.smodel.structure.Model_NodesOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x111d5999a91L, "jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b7dcc9bcL, "jetbrains.mps.lang.smodel.structure.Model_RootsOperation"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5ef5a1e85338e1eL, "jetbrains.mps.lang.smodel.structure.ModuleIdentity"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5ef5a1e853388b3L, "jetbrains.mps.lang.smodel.structure.ModulePointer"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9b5L, "jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11be716563cL, "jetbrains.mps.lang.smodel.structure.NodeRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1129a43046bL, "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a646d8514L, "jetbrains.mps.lang.smodel.structure.Node_CopyOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1097542784fL, "jetbrains.mps.lang.smodel.structure.Node_DeleteOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11dfede6ec0L, "jetbrains.mps.lang.smodel.structure.Node_DetachOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10ab97e0a94L, "jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110bd4e0067L, "jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1112390be59L, "jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110c2e679e7L, "jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f3e65fdcL, "jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x50c63f2cd5142697L, "jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1b35e18a1a3b2c9aL, "jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b78550e8L, "jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b73c3484L, "jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1128be3ca6aL, "jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2e126334L, "jetbrains.mps.lang.smodel.structure.Node_GetModelOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a3ea0a40dL, "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10ab957e8bbL, "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingsOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x109563e6169L, "jetbrains.mps.lang.smodel.structure.Node_GetParentOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a3e9fedc7L, "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10ab975b657L, "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x32187d80f5b88800L, "jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x798c0d67da9045abL, "jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11c530706b2L, "jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x6771eac6c5cbe7d2L, "jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10964e26717L, "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2d494062L, "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2d76e31eL, "jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2d77d0e1L, "jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x118c2f5b5f6L, "jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10956bb6029L, "jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110e123bce7L, "jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110e0974e46L, "jetbrains.mps.lang.smodel.structure.Node_IsNullOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a67578ddeL, "jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x4604033d54faa023L, "jetbrains.mps.lang.smodel.structure.Node_PointerOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975273750L, "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10965697d7aL, "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x47bb2de70d00ff8cL, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045c9b9L, "jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefc235cL, "jetbrains.mps.lang.smodel.structure.PropertyId"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb4617L, "jetbrains.mps.lang.smodel.structure.PropertyIdentity"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10add1ded2bL, "jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10ae2053294L, "jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11aff7f2bb2L, "jetbrains.mps.lang.smodel.structure.Property_RemoveOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1091d8a1d53L, "jetbrains.mps.lang.smodel.structure.Property_SetOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6ecL, "jetbrains.mps.lang.smodel.structure.ReferenceLinkId"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5cab42cd97571ceeL, "jetbrains.mps.lang.smodel.structure.SConceptType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120bfe51421L, "jetbrains.mps.lang.smodel.structure.SEnumMemberType"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed37273dL, "jetbrains.mps.lang.smodel.structure.SEnumOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f96ea2caL, "jetbrains.mps.lang.smodel.structure.SLinkAccess"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f970c119L, "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2d94c0cdL, "jetbrains.mps.lang.smodel.structure.SModelType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aae26be32L, "jetbrains.mps.lang.smodel.structure.SNodeListType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f96cca6fL, "jetbrains.mps.lang.smodel.structure.SPropertyAccess"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aaf6d7435L, "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression"));
 }

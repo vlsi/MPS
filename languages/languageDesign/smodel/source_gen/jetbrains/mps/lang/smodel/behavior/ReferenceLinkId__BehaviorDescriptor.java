@@ -27,8 +27,8 @@ import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ReferenceId__BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6ecL, "jetbrains.mps.lang.smodel.structure.ReferenceId");
+public final class ReferenceLinkId__BehaviorDescriptor extends BaseBHDescriptor {
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6ecL, "jetbrains.mps.lang.smodel.structure.ReferenceLinkId");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<SReferenceLink> getReference_id7jb4LXp9a7o = new SMethodBuilder<SReferenceLink>(new SJavaCompoundTypeImpl(SReferenceLink.class)).name("getReference").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7jb4LXp9a7o").registry(REGISTRY).build();
@@ -46,7 +46,7 @@ public final class ReferenceId__BehaviorDescriptor extends BaseBHDescriptor {
     if (rc == null || rn == null) {
       return null;
     }
-    long rid = ((long) ReferenceId__BehaviorDescriptor.getIdValue_id7jb4LXp9a7d.invoke(__thisNode__));
+    long rid = ((long) ReferenceLinkId__BehaviorDescriptor.getIdValue_id7jb4LXp9a7d.invoke(__thisNode__));
     return MetaAdapterFactory.getReferenceLink(rc, rid, rn);
   }
   /*package*/ static void setReference_id7jb4LXp9a6q(@NotNull SNode __thisNode__, @NotNull SReferenceLink ref) {
@@ -61,7 +61,7 @@ public final class ReferenceId__BehaviorDescriptor extends BaseBHDescriptor {
     return Long.parseLong(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6ecL, 0x74cb131f5923b6eeL, "referenceId")), Character.MAX_RADIX);
   }
 
-  /*package*/ ReferenceId__BehaviorDescriptor() {
+  /*package*/ ReferenceLinkId__BehaviorDescriptor() {
     super(REGISTRY);
   }
 
