@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -82,17 +83,16 @@ public class NodeFactoryManager {
 
   private static void createNodeStructure(SAbstractConcept nodeConcept, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model,
       Set<SAbstractConcept> visitedNonOptionalChildConcepts) {
-    for (SAbstractLink linkDeclaration : nodeConcept.getLinks()) {
-      if (linkDeclaration.isReference() || linkDeclaration.isOptional()) {
+    for (SContainmentLink linkDeclaration : nodeConcept.getContainmentLinks()) {
+      if (linkDeclaration.isOptional()) {
         continue;
       }
       SAbstractConcept targetConcept = linkDeclaration.getTargetConcept();
-      if (!newNode.getChildren(linkDeclaration.getRole()).iterator().hasNext()) {
-        if (!visitedNonOptionalChildConcepts.contains(targetConcept)) {
-          visitedNonOptionalChildConcepts.add(targetConcept);
+      if (!newNode.getChildren(linkDeclaration).iterator().hasNext()) {
+        if (visitedNonOptionalChildConcepts.add(targetConcept)) {
           try {
             SNode childNode = createNode(targetConcept, sampleNode, enclosingNode, model, visitedNonOptionalChildConcepts);
-            newNode.addChild(linkDeclaration.getRole(), childNode);
+            newNode.addChild(linkDeclaration, childNode);
           } finally {
             visitedNonOptionalChildConcepts.remove(targetConcept);
           }
