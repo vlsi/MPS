@@ -216,19 +216,19 @@
       </concept>
     </language>
     <language id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script">
-      <concept id="1177457067821" name="jetbrains.mps.lang.script.structure.MigrationScript" flags="ng" index="_UgoZ">
+      <concept id="1177457067821" name="jetbrains.mps.lang.script.structure.MigrationScript" flags="ig" index="_UgoZ">
         <property id="1177457669450" name="title" index="_Wzho" />
         <child id="1177458178889" name="part" index="_YvDr" />
       </concept>
-      <concept id="1177457850499" name="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" flags="ng" index="_XfAh">
+      <concept id="1177457850499" name="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" flags="lg" index="_XfAh">
         <property id="1177457972041" name="description" index="_XH9r" />
         <reference id="1177457957477" name="affectedInstanceConcept" index="_XDHR" />
         <child id="1177457957478" name="affectedInstancePredicate" index="_XDHO" />
         <child id="1177458005323" name="affectedInstanceUpdater" index="_XPhp" />
       </concept>
-      <concept id="1177458061340" name="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" flags="ng" index="_Y34e" />
-      <concept id="1177458237937" name="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" flags="ng" index="_YI3z" />
-      <concept id="1177458491964" name="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" flags="ng" index="_ZGcI" />
+      <concept id="1177458061340" name="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" flags="in" index="_Y34e" />
+      <concept id="1177458237937" name="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" flags="nn" index="_YI3z" />
+      <concept id="1177458491964" name="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" flags="in" index="_ZGcI" />
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
       <concept id="1114706874351" name="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" flags="ln" index="29HgVG">
@@ -435,6 +435,11 @@
       <ref role="2VPoh2" node="qXQceEtMJi" resolve="ScriptsDescriptor" />
       <node concept="2VP$b9" id="qXQceEtAA4" role="2VPoh3">
         <node concept="3clFbS" id="qXQceEtAA5" role="2VODD2">
+          <node concept="3SKdUt" id="6hfjOhYii80" role="3cqZAp">
+            <node concept="3SKdUq" id="6hfjOhYii81" role="3SKWNk">
+              <property role="3SKdUp" value="see MPS-24613" />
+            </node>
+          </node>
           <node concept="3clFbF" id="7UkRIAQwgWO" role="3cqZAp">
             <node concept="2OqwBi" id="21KZIichGmG" role="3clFbG">
               <node concept="2OqwBi" id="21KZIichGvj" role="2Oq$k0">
@@ -6863,6 +6868,11 @@
       <ref role="30HIoZ" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
       <node concept="30G5F_" id="1na$wSWf3eX" role="30HLyM">
         <node concept="3clFbS" id="1na$wSWf3eY" role="2VODD2">
+          <node concept="3SKdUt" id="6hfjOhYi4$u" role="3cqZAp">
+            <node concept="3SKdUq" id="6hfjOhYi4$w" role="3SKWNk">
+              <property role="3SKdUp" value="see MPS-24613" />
+            </node>
+          </node>
           <node concept="3clFbF" id="1KHvivZKB6b" role="3cqZAp">
             <node concept="2OqwBi" id="1KHvivZKB8J" role="3clFbG">
               <node concept="v3LJS" id="1KHvivZKB69" role="2Oq$k0">
