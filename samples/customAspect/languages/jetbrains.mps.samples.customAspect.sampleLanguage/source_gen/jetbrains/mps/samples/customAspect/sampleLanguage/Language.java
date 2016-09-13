@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
+import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.samples.customAspect.documentation.runtime.DocumentationAspectDescriptor;
 import jetbrains.mps.samples.customAspect.sampleLanguage.documentation.DocumentationDescriptor;
@@ -14,6 +15,8 @@ import jetbrains.mps.samples.customAspect.sampleLanguage.editor.EditorAspectDesc
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.samples.customAspect.sampleLanguage.structure.ConceptPresentationAspectImpl;
+import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
+import jetbrains.mps.samples.customAspect.sampleLanguage.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "4ac0b19e-3e88-4e61-bab3-507ba2cceae8(jetbrains.mps.samples.customAspect.sampleLanguage)";
@@ -38,6 +41,11 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {
+      if (aspectClass == BehaviorAspectDescriptor.class) {
+        return (T) new jetbrains.mps.samples.customAspect.sampleLanguage.behavior.BehaviorAspectDescriptor();
+      }
+    }
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor")) {
       if (aspectClass == ConstraintsAspectDescriptor.class) {
         return (T) new jetbrains.mps.samples.customAspect.sampleLanguage.constraints.ConstraintsAspectDescriptor();
@@ -61,6 +69,11 @@ public class Language extends LanguageRuntime {
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConceptPresentationAspect")) {
       if (aspectClass == ConceptPresentationAspect.class) {
         return (T) new ConceptPresentationAspectImpl();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor")) {
+      if (aspectClass == IHelginsDescriptor.class) {
+        return (T) new TypesystemDescriptor();
       }
     }
     return null;

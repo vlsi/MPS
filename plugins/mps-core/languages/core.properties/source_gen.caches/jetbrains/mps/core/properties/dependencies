@@ -5,7 +5,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.UUID" />
-    <classNode dependClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.core.properties.actions.ActionAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.core.properties.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.properties.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.core.properties.structure.ConceptPresentationAspectImpl" />

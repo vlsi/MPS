@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
 import testExtendingAnalyzer.dataFlow.DataFlowAspectDescriptorImpl;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
@@ -16,6 +17,8 @@ import testExtendingAnalyzer.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import testExtendingAnalyzer.structure.ConceptPresentationAspectImpl;
+import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
+import testExtendingAnalyzer.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "3ac033a0-bffa-48e3-a843-a40cbdd89859(testExtendingAnalyzer)";
@@ -45,6 +48,11 @@ public class Language extends LanguageRuntime {
         return (T) new testExtendingAnalyzer.behavior.BehaviorAspectDescriptor();
       }
     }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor")) {
+      if (aspectClass == ConstraintsAspectDescriptor.class) {
+        return (T) new testExtendingAnalyzer.constraints.ConstraintsAspectDescriptor();
+      }
+    }
     if (aspectClass.getName().equals("jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor")) {
       if (aspectClass == DataFlowAspectDescriptor.class) {
         return (T) new DataFlowAspectDescriptorImpl();
@@ -68,6 +76,11 @@ public class Language extends LanguageRuntime {
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConceptPresentationAspect")) {
       if (aspectClass == ConceptPresentationAspect.class) {
         return (T) new ConceptPresentationAspectImpl();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor")) {
+      if (aspectClass == IHelginsDescriptor.class) {
+        return (T) new TypesystemDescriptor();
       }
     }
     return null;

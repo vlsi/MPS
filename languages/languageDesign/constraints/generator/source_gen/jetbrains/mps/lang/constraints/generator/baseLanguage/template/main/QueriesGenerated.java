@@ -33,9 +33,11 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 @Generated
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_6490356536635245644(final CreateRootRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(_context.getOriginalInputModel(), "constraints");
   }
   public static boolean baseMappingRule_Condition_474635177870323092(final BaseMappingRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "constraints");
   }
   public static Object propertyMacro_GetPropertyValue_1213106242798(final PropertyMacroContext _context) {

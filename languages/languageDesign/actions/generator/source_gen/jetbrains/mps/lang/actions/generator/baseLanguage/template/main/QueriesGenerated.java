@@ -54,6 +54,7 @@ public class QueriesGenerated {
     return false;
   }
   public static boolean createRootRule_Condition_5817157672057528757(final CreateRootRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(_context.getOriginalInputModel(), "actions");
   }
   public static boolean createRootRule_Condition_1221138344773(final CreateRootRuleContext _context) {
@@ -72,6 +73,7 @@ public class QueriesGenerated {
     return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")))), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x52fd3043dd42f3a9L, "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer"));
   }
   public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "actions");
   }
   public static Object propertyMacro_GetPropertyValue_1203349256426(final PropertyMacroContext _context) {

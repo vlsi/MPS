@@ -11,6 +11,7 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.samples.formulaLanguage.actions.ActionAspectDescriptorImpl;
+import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.samples.formulaLanguage.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
@@ -47,6 +48,11 @@ public class Language extends LanguageRuntime {
     if (aspectClass.getName().equals("jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor")) {
       if (aspectClass == ActionAspectDescriptor.class) {
         return (T) new ActionAspectDescriptorImpl();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {
+      if (aspectClass == BehaviorAspectDescriptor.class) {
+        return (T) new jetbrains.mps.samples.formulaLanguage.behavior.BehaviorAspectDescriptor();
       }
     }
     if (aspectClass.getName().equals("jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor")) {

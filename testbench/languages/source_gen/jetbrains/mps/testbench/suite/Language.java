@@ -10,7 +10,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
-import jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor;
+import jetbrains.mps.testbench.suite.actions.ActionAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
@@ -20,6 +20,8 @@ import jetbrains.mps.testbench.suite.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.testbench.suite.structure.ConceptPresentationAspectImpl;
+import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
+import jetbrains.mps.testbench.suite.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "d3c5a46f-b8c2-47db-ad0a-30b8f19c2055(jetbrains.mps.testbench.suite)";
@@ -50,7 +52,7 @@ public class Language extends LanguageRuntime {
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
     if (aspectClass.getName().equals("jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor")) {
       if (aspectClass == ActionAspectDescriptor.class) {
-        return (T) new BaseActionAspectDescriptor();
+        return (T) new ActionAspectDescriptorImpl();
       }
     }
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {
@@ -81,6 +83,11 @@ public class Language extends LanguageRuntime {
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConceptPresentationAspect")) {
       if (aspectClass == ConceptPresentationAspect.class) {
         return (T) new ConceptPresentationAspectImpl();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor")) {
+      if (aspectClass == IHelginsDescriptor.class) {
+        return (T) new TypesystemDescriptor();
       }
     }
     return null;

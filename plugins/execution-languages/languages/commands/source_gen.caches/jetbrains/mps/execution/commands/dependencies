@@ -6,7 +6,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.UUID" />
-    <classNode dependClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.actions.ActionAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.dataFlow.DataFlowAspectDescriptorImpl" />

@@ -6,6 +6,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.UUID" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.doubleDispatch.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.doubleDispatch.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.doubleDispatch.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.doubleDispatch.structure.ConceptPresentationAspectImpl" />
@@ -16,6 +17,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />

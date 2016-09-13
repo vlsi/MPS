@@ -6,12 +6,15 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
+import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.descriptor.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.lang.descriptor.structure.ConceptPresentationAspectImpl;
+import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
+import jetbrains.mps.lang.descriptor.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "f4ad079d-bc71-4ffb-9600-9328705cf998(jetbrains.mps.lang.descriptor)";
@@ -36,6 +39,11 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {
+      if (aspectClass == BehaviorAspectDescriptor.class) {
+        return (T) new jetbrains.mps.lang.descriptor.behavior.BehaviorAspectDescriptor();
+      }
+    }
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor")) {
       if (aspectClass == ConstraintsAspectDescriptor.class) {
         return (T) new jetbrains.mps.lang.descriptor.constraints.ConstraintsAspectDescriptor();
@@ -54,6 +62,11 @@ public class Language extends LanguageRuntime {
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConceptPresentationAspect")) {
       if (aspectClass == ConceptPresentationAspect.class) {
         return (T) new ConceptPresentationAspectImpl();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor")) {
+      if (aspectClass == IHelginsDescriptor.class) {
+        return (T) new TypesystemDescriptor();
       }
     }
     return null;

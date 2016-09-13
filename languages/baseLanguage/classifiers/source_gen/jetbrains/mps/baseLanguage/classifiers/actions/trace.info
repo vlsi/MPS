@@ -5,6 +5,9 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
+    <file name="ActionAspectDescriptorImpl.java">
+      <unit at="12,0,24,0" name="jetbrains.mps.baseLanguage.classifiers.actions.ActionAspectDescriptorImpl" />
+    </file>
     <file name="PasteWrappers.java">
       <unit at="22,49,47,5" name="jetbrains.mps.baseLanguage.classifiers.actions.PasteWrappers$1" />
       <unit at="19,0,51,0" name="jetbrains.mps.baseLanguage.classifiers.actions.PasteWrappers" />

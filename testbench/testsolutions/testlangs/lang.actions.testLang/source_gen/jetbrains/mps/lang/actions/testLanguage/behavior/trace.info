@@ -70,6 +70,9 @@
     <file name="ActionTestSidetransformTestContainer_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestSidetransformTestContainer_BehaviorDescriptor" />
     </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="13,0,41,0" name="jetbrains.mps.lang.actions.testLanguage.behavior.BehaviorAspectDescriptor" />
+    </file>
   </root>
 </debug-info>
 

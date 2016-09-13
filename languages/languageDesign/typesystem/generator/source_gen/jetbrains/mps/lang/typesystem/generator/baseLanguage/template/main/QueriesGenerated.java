@@ -49,6 +49,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 @Generated
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_1175254554283(final CreateRootRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(_context.getOriginalInputModel(), "typesystem");
   }
   public static boolean baseMappingRule_Condition_1188901620278(final BaseMappingRuleContext _context) {
@@ -282,6 +283,7 @@ public class QueriesGenerated {
     return (SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x669222c8f1941d7fL, "jetbrains.mps.lang.typesystem.structure.IsApplicableConceptFunction"), false, false) != null);
   }
   public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "typesystem");
   }
   public static Object propertyMacro_GetPropertyValue_1175607860006(final PropertyMacroContext _context) {

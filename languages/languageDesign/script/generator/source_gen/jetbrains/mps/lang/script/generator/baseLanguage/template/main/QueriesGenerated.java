@@ -32,9 +32,11 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 @Generated
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_485782669715990916(final CreateRootRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(_context.getOriginalInputModel(), "scripts");
   }
   public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "scripts");
   }
   public static Object propertyMacro_GetPropertyValue_1177464650516(final PropertyMacroContext _context) {

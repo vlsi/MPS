@@ -46,6 +46,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 @Generated
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_5179631399463348080(final CreateRootRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(_context.getOriginalInputModel(), "migration");
   }
   public static boolean baseMappingRule_Condition_5168866961619216887(final BaseMappingRuleContext _context) {
@@ -67,6 +68,7 @@ public class QueriesGenerated {
     return !(SNodeOperations.hasRole(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5836cabbL, 0x67236d4a5836d7f3L, "part"))) || MigrationsCheckUtil.hasIncludeCycles(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5836cabbL, "jetbrains.mps.lang.migration.structure.PureMigrationScript")));
   }
   public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "migration");
   }
   public static Object propertyMacro_GetPropertyValue_7153805464398904814(final PropertyMacroContext _context) {

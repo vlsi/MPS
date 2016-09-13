@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 @Generated
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_9221686591909407403(final CreateRootRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(_context.getOriginalInputModel(), "textGen");
   }
   public static boolean baseMappingRule_Condition_3741392693833960322(final BaseMappingRuleContext _context) {
@@ -48,6 +49,7 @@ public class QueriesGenerated {
     return !((boolean) ConceptFunctionParameter__BehaviorDescriptor.getFromParameterObject_idhEwJh7s.invoke(_context.getNode()));
   }
   public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "textGen");
   }
   public static Object propertyMacro_GetPropertyValue_1233679994384(final PropertyMacroContext _context) {

@@ -124,16 +124,5 @@
       <unit id="1220457566052" at="18,0,88,0" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil.TypesystemGenUtil" />
     </file>
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902b6(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil)/2337648464162695656">
-    <file name="TypesystemDescriptorHelper.java">
-      <node id="2337648464164928612" at="10,54,11,83" concept="5" />
-      <node id="2337648464162721998" at="10,0,13,0" concept="6" trace="generateAspect#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-      <scope id="2337648464162722004" at="10,54,11,83" />
-      <scope id="2337648464162721998" at="10,0,13,0">
-        <var name="model" id="2337648464162722623" />
-      </scope>
-      <unit id="2337648464162695656" at="9,0,14,0" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil.TypesystemDescriptorHelper" />
-    </file>
-  </root>
 </debug-info>
 

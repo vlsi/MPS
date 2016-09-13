@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.script.editor.EditorAspectDescriptorImpl;
+import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
+import jetbrains.mps.lang.script.findUsages.FindUsagesDescriptor;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.lang.script.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
@@ -61,6 +63,11 @@ public class Language extends LanguageRuntime {
     if (aspectClass.getName().equals("jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor")) {
       if (aspectClass == EditorAspectDescriptor.class) {
         return (T) new EditorAspectDescriptorImpl();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor")) {
+      if (aspectClass == FindUsageAspectDescriptor.class) {
+        return (T) new FindUsagesDescriptor();
       }
     }
     if (aspectClass.getName().equals("jetbrains.mps.intentions.IntentionAspectDescriptor")) {

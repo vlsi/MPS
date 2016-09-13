@@ -104,6 +104,7 @@ public class QueriesGenerated extends QueryProviderBase {
     super(1);
   }
   public static boolean createRootRule_Condition_8744383154838119041(final CreateRootRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(_context.getOriginalInputModel(), "editor");
   }
   public static boolean baseMappingRule_Condition_7533883740977705598(final BaseMappingRuleContext _context) {
@@ -277,6 +278,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x30335f3d1845bdccL, 0x30335f3d1845bdcdL, "placeInCell"), "RIGHT", null);
   }
   public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "editor");
   }
   public static Object propertyMacro_GetPropertyValue_7517620136073832029(final PropertyMacroContext _context) {

@@ -42,6 +42,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 @Generated
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_4881419546810727153(final CreateRootRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(_context.getOriginalInputModel(), "behavior");
   }
   public static boolean createRootRule_Condition_7923290658387314702(final CreateRootRuleContext _context) {
@@ -51,6 +52,7 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, "jetbrains.mps.baseLanguage.structure.VariableArityType"));
   }
   public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "behavior");
   }
   public static boolean baseMappingRule_Condition_1144956008583649232(final BaseMappingRuleContext _context) {

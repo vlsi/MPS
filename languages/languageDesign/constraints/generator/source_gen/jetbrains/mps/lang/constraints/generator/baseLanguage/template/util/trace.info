@@ -46,17 +46,6 @@
       <unit id="1184606474174" at="13,0,33,0" name="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.QueriesUtil" />
     </file>
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959030f(jetbrains.mps.lang.constraints.generator.baseLanguage.template.util)/2337648464162695656">
-    <file name="ConstraintsDescriptorHelper.java">
-      <node id="2337648464163964619" at="10,54,11,83" concept="3" />
-      <node id="2337648464162721998" at="10,0,13,0" concept="5" trace="generateAspect#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-      <scope id="2337648464162722004" at="10,54,11,83" />
-      <scope id="2337648464162721998" at="10,0,13,0">
-        <var name="model" id="2337648464162722623" />
-      </scope>
-      <unit id="2337648464162695656" at="9,0,14,0" name="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.ConstraintsDescriptorHelper" />
-    </file>
-  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959030f(jetbrains.mps.lang.constraints.generator.baseLanguage.template.util)/7519321372998839711">
     <file name="ConstraintsStrings.java">
       <node id="~BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME" at="7,0,8,0" concept="4" trace="CAN_BE_A_PARENT_METHOD_NAME" />

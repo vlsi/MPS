@@ -12,6 +12,7 @@
     <classNode dependClassName="jetbrains.mps.lang.script.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.script.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.script.editor.EditorAspectDescriptorImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.script.findUsages.FindUsagesDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.script.intentions.IntentionsDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.script.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.lang.script.structure.StructureAspectDescriptor" />
@@ -22,6 +23,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />

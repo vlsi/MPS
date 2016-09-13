@@ -37,9 +37,11 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 @Generated
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_3914914270862159528(final CreateRootRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(_context.getOriginalInputModel(), "intentions");
   }
   public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "intentions");
   }
   public static Object propertyMacro_GetPropertyValue_1889794043260133526(final PropertyMacroContext _context) {

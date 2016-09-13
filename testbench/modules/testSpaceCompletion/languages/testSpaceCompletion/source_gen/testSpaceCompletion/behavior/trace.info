@@ -22,6 +22,9 @@
     <file name="BCA_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="testSpaceCompletion.behavior.BCA_BehaviorDescriptor" />
     </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="13,0,41,0" name="testSpaceCompletion.behavior.BehaviorAspectDescriptor" />
+    </file>
   </root>
 </debug-info>
 

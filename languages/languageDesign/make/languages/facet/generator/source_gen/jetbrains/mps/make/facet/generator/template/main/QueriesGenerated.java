@@ -44,9 +44,11 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 @Generated
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_671853460608709085(final CreateRootRuleContext _context) {
+    // see MPS-24613 
     return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration"))).isNotEmpty();
   }
   public static boolean createRootRule_Condition_2824583209542435179(final CreateRootRuleContext _context) {
+    // see MPS-24613 
     return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration"))).isNotEmpty();
   }
   public static boolean baseMappingRule_Condition_8170824575195255922(final BaseMappingRuleContext _context) {
@@ -77,6 +79,7 @@ public class QueriesGenerated {
     return (TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, 0x12095c0134fL, "type")), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType")), true) != null) || (TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, 0x12095c0134fL, "type")), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47da71ecL, "jetbrains.mps.baseLanguage.structure.StringType")), true) != null);
   }
   public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "plugin") && ListSequence.fromList(SModelOperations.roots(((SModel) _context.getVariable("model")), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration"))).isNotEmpty();
   }
   public static Object propertyMacro_GetPropertyValue_1919086248986829201(final PropertyMacroContext _context) {

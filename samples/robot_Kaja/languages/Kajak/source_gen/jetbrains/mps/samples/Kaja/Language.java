@@ -8,6 +8,7 @@ import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.samples.Kaja.actions.ActionAspectDescriptorImpl;
+import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
 import jetbrains.mps.samples.Kaja.dataFlow.DataFlowAspectDescriptorImpl;
@@ -47,6 +48,11 @@ public class Language extends LanguageRuntime {
     if (aspectClass.getName().equals("jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor")) {
       if (aspectClass == ActionAspectDescriptor.class) {
         return (T) new ActionAspectDescriptorImpl();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {
+      if (aspectClass == BehaviorAspectDescriptor.class) {
+        return (T) new jetbrains.mps.samples.Kaja.behavior.BehaviorAspectDescriptor();
       }
     }
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor")) {

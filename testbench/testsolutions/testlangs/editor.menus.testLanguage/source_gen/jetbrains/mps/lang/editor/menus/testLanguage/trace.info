@@ -2,7 +2,7 @@
 <debug-info version="2">
   <root>
     <file name="Language.java">
-      <unit at="15,0,56,0" name="jetbrains.mps.lang.editor.menus.testLanguage.Language" />
+      <unit at="19,0,75,0" name="jetbrains.mps.lang.editor.menus.testLanguage.Language" />
     </file>
   </root>
 </debug-info>

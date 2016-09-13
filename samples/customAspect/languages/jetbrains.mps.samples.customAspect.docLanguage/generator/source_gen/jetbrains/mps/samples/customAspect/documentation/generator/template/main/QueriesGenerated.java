@@ -27,6 +27,7 @@ public class QueriesGenerated {
     return SModuleOperations.isAspect(_context.getOriginalInputModel(), "documentation");
   }
   public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "documentation");
   }
   public static Object propertyMacro_GetPropertyValue_2897519568668614238(final PropertyMacroContext _context) {

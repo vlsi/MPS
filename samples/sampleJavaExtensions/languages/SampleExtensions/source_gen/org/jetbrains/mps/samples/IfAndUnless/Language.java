@@ -10,6 +10,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
 import org.jetbrains.mps.samples.IfAndUnless.dataFlow.DataFlowAspectDescriptorImpl;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
@@ -52,6 +53,11 @@ public class Language extends LanguageRuntime {
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {
       if (aspectClass == BehaviorAspectDescriptor.class) {
         return (T) new org.jetbrains.mps.samples.IfAndUnless.behavior.BehaviorAspectDescriptor();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor")) {
+      if (aspectClass == ConstraintsAspectDescriptor.class) {
+        return (T) new org.jetbrains.mps.samples.IfAndUnless.constraints.ConstraintsAspectDescriptor();
       }
     }
     if (aspectClass.getName().equals("jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor")) {

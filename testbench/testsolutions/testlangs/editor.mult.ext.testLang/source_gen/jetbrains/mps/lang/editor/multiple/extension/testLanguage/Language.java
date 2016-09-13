@@ -6,8 +6,15 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
+import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor.EditorAspectDescriptorImpl;
+import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
+import jetbrains.mps.lang.editor.multiple.extension.testLanguage.structure.ConceptPresentationAspectImpl;
+import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
+import jetbrains.mps.lang.editor.multiple.extension.testLanguage.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "2a136e2a-e48f-4b7a-bcbc-7b2a11f3bbeb(jetbrains.mps.lang.editor.multiple.extension.testLanguage)";
@@ -32,9 +39,34 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {
+      if (aspectClass == BehaviorAspectDescriptor.class) {
+        return (T) new jetbrains.mps.lang.editor.multiple.extension.testLanguage.behavior.BehaviorAspectDescriptor();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor")) {
+      if (aspectClass == ConstraintsAspectDescriptor.class) {
+        return (T) new jetbrains.mps.lang.editor.multiple.extension.testLanguage.constraints.ConstraintsAspectDescriptor();
+      }
+    }
     if (aspectClass.getName().equals("jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor")) {
       if (aspectClass == EditorAspectDescriptor.class) {
         return (T) new EditorAspectDescriptorImpl();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
+      if (aspectClass == StructureAspectDescriptor.class) {
+        return (T) new jetbrains.mps.lang.editor.multiple.extension.testLanguage.structure.StructureAspectDescriptor();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConceptPresentationAspect")) {
+      if (aspectClass == ConceptPresentationAspect.class) {
+        return (T) new ConceptPresentationAspectImpl();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor")) {
+      if (aspectClass == IHelginsDescriptor.class) {
+        return (T) new TypesystemDescriptor();
       }
     }
     return null;

@@ -10,12 +10,15 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.transformation.test.errorReporting.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.transformation.test.errorReporting.structure.ConceptPresentationAspectImpl;
 import jetbrains.mps.text.rt.TextGenAspectDescriptor;
+import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
+import jetbrains.mps.transformation.test.errorReporting.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "99a58581-8518-40c8-81f1-e364306f5ffc(jetbrains.mps.transformation.test.errorReporting)";
@@ -49,6 +52,11 @@ public class Language extends LanguageRuntime {
         return (T) new jetbrains.mps.transformation.test.errorReporting.behavior.BehaviorAspectDescriptor();
       }
     }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor")) {
+      if (aspectClass == ConstraintsAspectDescriptor.class) {
+        return (T) new jetbrains.mps.transformation.test.errorReporting.constraints.ConstraintsAspectDescriptor();
+      }
+    }
     if (aspectClass.getName().equals("jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor")) {
       if (aspectClass == EditorAspectDescriptor.class) {
         return (T) new EditorAspectDescriptorImpl();
@@ -67,6 +75,11 @@ public class Language extends LanguageRuntime {
     if (aspectClass.getName().equals("jetbrains.mps.text.rt.TextGenAspectDescriptor")) {
       if (aspectClass == TextGenAspectDescriptor.class) {
         return (T) new jetbrains.mps.transformation.test.errorReporting.textGen.TextGenAspectDescriptor();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor")) {
+      if (aspectClass == IHelginsDescriptor.class) {
+        return (T) new TypesystemDescriptor();
       }
     }
     return null;

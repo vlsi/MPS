@@ -13,9 +13,13 @@ import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.pattern.testLang.editor.EditorAspectDescriptorImpl;
+import jetbrains.mps.intentions.IntentionAspectDescriptor;
+import jetbrains.mps.lang.pattern.testLang.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.lang.pattern.testLang.structure.ConceptPresentationAspectImpl;
+import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
+import jetbrains.mps.lang.pattern.testLang.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "5206c888-7c5d-4275-bc0a-7c4da12f46e8(jetbrains.mps.lang.pattern.testLang)";
@@ -59,6 +63,11 @@ public class Language extends LanguageRuntime {
         return (T) new EditorAspectDescriptorImpl();
       }
     }
+    if (aspectClass.getName().equals("jetbrains.mps.intentions.IntentionAspectDescriptor")) {
+      if (aspectClass == IntentionAspectDescriptor.class) {
+        return (T) new IntentionsDescriptor();
+      }
+    }
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
       if (aspectClass == StructureAspectDescriptor.class) {
         return (T) new jetbrains.mps.lang.pattern.testLang.structure.StructureAspectDescriptor();
@@ -67,6 +76,11 @@ public class Language extends LanguageRuntime {
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConceptPresentationAspect")) {
       if (aspectClass == ConceptPresentationAspect.class) {
         return (T) new ConceptPresentationAspectImpl();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor")) {
+      if (aspectClass == IHelginsDescriptor.class) {
+        return (T) new TypesystemDescriptor();
       }
     }
     return null;

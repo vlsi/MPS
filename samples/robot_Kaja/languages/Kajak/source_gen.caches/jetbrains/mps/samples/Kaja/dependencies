@@ -11,6 +11,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.actions.ActionAspectDescriptorImpl" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.EditorAspectDescriptorImpl" />
@@ -19,6 +20,7 @@
     <classNode dependClassName="jetbrains.mps.samples.Kaja.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />

@@ -6,7 +6,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.UUID" />
-    <classNode dependClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
@@ -18,6 +17,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.samples.Money.actions.ActionAspectDescriptorImpl" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.EditorAspectDescriptorImpl" />
