@@ -127,10 +127,6 @@ public class MPSIcons {
     public static final Icon LogicalView = IconLoader.getIcon("/projectPane/logicalView.png");
   }
 
-  public static class RunConfigurations {
-    public static final Icon runConfigurationDeclaration = IconLoader.getIcon("/runConfigurations/runConfigurationDeclaration.png");
-  }
-
   public static class Small {
     public static final Icon Error = IconLoader.getIcon("/small/error.png");
   }
@@ -145,5 +141,4 @@ public class MPSIcons {
   }
 
   public static final Icon MPS16x16 = IconLoader.getIcon("/MPS_16.png");
-  public static final Icon MPSFavIcon = IconLoader.getIcon("/MPS_favicon.png");
 }
