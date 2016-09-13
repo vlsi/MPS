@@ -14005,8 +14005,15 @@
     <delete dir="${mps_home}/languages/baseLanguage/doubleDispatch/generator/source_gen" />
     <delete dir="${mps_home}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/generator/source_gen" />
     <delete dir="${mps_home}/languages/baseLanguage/varVariable/generator/source_gen" />
+    <delete dir="${mps_home}/languages/languageDesign/dataFlow/generator/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/jetbrains.mps.lang.editor.imageGen/generator/source_gen" />
+    <delete dir="${mps_home}/languages/languageDesign/findUsages/generator/source_gen" />
+    <delete dir="${mps_home}/languages/languageDesign/intentions/generator/source_gen" />
+    <delete dir="${mps_home}/languages/languageDesign/migration/generator/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/plugin/generator/source_gen" />
+    <delete dir="${mps_home}/languages/languageDesign/script/generator/source_gen" />
+    <delete dir="${mps_home}/languages/languageDesign/textGen/generator/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/traceable.operations/generator/source_gen" />
+    <delete dir="${mps_home}/languages/languageDesign/make/languages/facet/generator/source_gen" />
   </target>
 </project>
