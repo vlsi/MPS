@@ -27,13 +27,37 @@ public class GenUtil {
     SNode real = (ListSequence.fromList(macros).count() <= skipMacro ? node : ListSequence.fromList(macros).getElement(skipMacro));
     return (String) context.getTransientObject(MultiTuple.<String,SNode>from(KEY, real));
   }
+  public static String saveListVar(TemplateQueryContext context, SNode node, int varIndex) {
+    // Don't want "tlist" and "tnode" scattered around 
+    return saveVar(context, node, "tlist" + varIndex);
+  }
+  public static String saveNodeVar(TemplateQueryContext context, SNode node, int varIndex) {
+    // Don't want "tlist" and "tnode" scattered around 
+    return saveVar(context, node, "tnode" + varIndex);
+  }
   public static String saveVar(TemplateQueryContext context, SNode node, String var) {
     SNode original = (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, "jetbrains.mps.lang.generator.structure.NodeMacro")) ? SNodeOperations.getParent(node) : node);
     if (context.getTransientObject(original) == null) {
+      // guess, it's a mechanism to access variable name without knowledge of skipMacro value 
       context.putTransientObject(original, var);
     }
     context.putTransientObject(MultiTuple.<String,SNode>from(KEY, node), var);
     return var;
+  }
+  public static String getVarHack(TemplateQueryContext context, SNode node) {
+    // see saveVar above 
+    Object obj = context.getTransientObject(node);
+    return (obj instanceof String ? (String) obj : null);
+  }
+
+  public static boolean isCollectionVariable(TemplateQueryContext context, SNode node) {
+    // or !startsWith("tnode")? 
+    String n = getVarHack(context, node);
+    return n != null && n.startsWith("tlist");
+  }
+  public static boolean isNodeVariable(TemplateQueryContext context, SNode node) {
+    String n = getVarHack(context, node);
+    return n != null && n.startsWith("tnode");
   }
 
   /**
