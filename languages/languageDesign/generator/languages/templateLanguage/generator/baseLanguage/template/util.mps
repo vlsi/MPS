@@ -5,10 +5,10 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="tpf8" ref="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
@@ -32,6 +32,7 @@
       <concept id="1153422305557" name="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression" flags="nn" index="2dkUwp" />
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
       </concept>
@@ -166,6 +167,18 @@
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+    </language>
     <language id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext">
       <concept id="1217889960776" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase" flags="nn" index="2fTw9j">
         <child id="1217890689512" name="userKey" index="2fWi3N" />
@@ -197,6 +210,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -452,6 +468,99 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="23qau8Xzvzo" role="jymVt" />
+    <node concept="2YIFZL" id="23qau8Xzv8j" role="jymVt">
+      <property role="TrG5h" value="markExtractedMethodForTemplate" />
+      <node concept="3cqZAl" id="23qau8Xzv8m" role="3clF45" />
+      <node concept="3Tm1VV" id="23qau8Xzv8l" role="1B3o_S" />
+      <node concept="3clFbS" id="23qau8Xzv8n" role="3clF47">
+        <node concept="3clFbF" id="5yGM4qkmN5q" role="3cqZAp">
+          <node concept="37vLTI" id="5yGM4qkmZ7F" role="3clFbG">
+            <node concept="2OqwBi" id="5yGM4qkmN5s" role="37vLTJ">
+              <node concept="37vLTw" id="23qau8Xz$TT" role="2Oq$k0">
+                <ref role="3cqZAo" node="23qau8XzxyK" resolve="context" />
+              </node>
+              <node concept="2g92yo" id="5yGM4qkmN5w" role="2OqNvi">
+                <node concept="1Ls8ON" id="5yGM4qkmYyD" role="2fWi3N">
+                  <node concept="Xl_RD" id="5yGM4qkmZ7B" role="1Lso8e">
+                    <property role="Xl_RC" value="meth" />
+                  </node>
+                  <node concept="37vLTw" id="23qau8Xz$LA" role="1Lso8e">
+                    <ref role="3cqZAo" node="23qau8Xzxzd" resolve="node" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="23qau8Xz$P3" role="37vLTx">
+              <ref role="3cqZAo" node="23qau8Xzzjl" resolve="methodName" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="23qau8XzxyK" role="3clF46">
+        <property role="TrG5h" value="context" />
+        <node concept="1iwH7U" id="23qau8XzxyJ" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="23qau8Xzxzd" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3Tqbb2" id="23qau8XzxzI" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="23qau8Xzzjl" role="3clF46">
+        <property role="TrG5h" value="methodName" />
+        <node concept="17QB3L" id="23qau8XzzjR" role="1tU5fm" />
+      </node>
+      <node concept="P$JXv" id="23qau8XzzkK" role="lGtFl">
+        <node concept="TZ5HA" id="23qau8XzzkL" role="TZ5H$">
+          <node concept="1dT_AC" id="23qau8XzzkM" role="1dT_Ay">
+            <property role="1dT_AB" value="Record the fact template for given node has been extracted into distinct method" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="23qau8XzCFv" role="jymVt" />
+    <node concept="2YIFZL" id="23qau8Xzvvb" role="jymVt">
+      <property role="TrG5h" value="getExtractedMethodName" />
+      <node concept="37vLTG" id="23qau8XzAMf" role="3clF46">
+        <property role="TrG5h" value="context" />
+        <node concept="1iwH7U" id="23qau8XzAMg" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="23qau8XzAMh" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3Tqbb2" id="23qau8XzAMi" role="1tU5fm" />
+      </node>
+      <node concept="17QB3L" id="23qau8XzvJQ" role="3clF45" />
+      <node concept="3Tm1VV" id="23qau8Xzvve" role="1B3o_S" />
+      <node concept="3clFbS" id="23qau8Xzvvf" role="3clF47">
+        <node concept="3cpWs6" id="23qau8XzCrg" role="3cqZAp">
+          <node concept="10QFUN" id="5yGM4qkntQV" role="3cqZAk">
+            <node concept="17QB3L" id="5yGM4qkntQY" role="10QFUM" />
+            <node concept="2OqwBi" id="5yGM4qkntQP" role="10QFUP">
+              <node concept="37vLTw" id="23qau8XzCDa" role="2Oq$k0">
+                <ref role="3cqZAo" node="23qau8XzAMf" resolve="context" />
+              </node>
+              <node concept="2g92yo" id="5yGM4qkntQR" role="2OqNvi">
+                <node concept="1Ls8ON" id="5yGM4qkntQS" role="2fWi3N">
+                  <node concept="Xl_RD" id="5yGM4qkntQT" role="1Lso8e">
+                    <property role="Xl_RC" value="meth" />
+                  </node>
+                  <node concept="37vLTw" id="23qau8XzCAc" role="1Lso8e">
+                    <ref role="3cqZAo" node="23qau8XzAMh" resolve="node" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="23qau8XzCKT" role="lGtFl">
+        <node concept="TZ5HA" id="23qau8XzCKU" role="TZ5H$">
+          <node concept="1dT_AC" id="23qau8XzCKV" role="1dT_Ay">
+            <property role="1dT_AB" value="Tell previously recorded name of the method extracted for the given template node." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="23qau8XzvFr" role="jymVt" />
     <node concept="2YIFZL" id="7cseah$1RN8" role="jymVt">
       <property role="TrG5h" value="isGeneratable" />
       <node concept="10P_77" id="7cseah$1RNA" role="3clF45" />

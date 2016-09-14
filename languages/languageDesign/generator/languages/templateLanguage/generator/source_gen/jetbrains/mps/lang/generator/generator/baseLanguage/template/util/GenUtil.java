@@ -35,6 +35,21 @@ public class GenUtil {
     context.putTransientObject(MultiTuple.<String,SNode>from(KEY, node), var);
     return var;
   }
+
+  /**
+   * Record the fact template for given node has been extracted into distinct method
+   */
+  public static void markExtractedMethodForTemplate(TemplateQueryContext context, SNode node, String methodName) {
+    context.putTransientObject(MultiTuple.<String,SNode>from("meth", node), methodName);
+  }
+
+  /**
+   * Tell previously recorded name of the method extracted for the given template node.
+   */
+  public static String getExtractedMethodName(TemplateQueryContext context, SNode node) {
+    return (String) context.getTransientObject(MultiTuple.<String,SNode>from("meth", node));
+  }
+
   public static boolean isGeneratable(SModel model) {
     SNode node = SModelOperations.getModuleStub(model);
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, "jetbrains.mps.lang.project.structure.Generator"))) {
