@@ -50,7 +50,7 @@ public interface Selection {
   List<EditorCell> getSelectedCells();
 
   /**
-   * @return non-empty list of selected nodes
+   * @return possibly empty list of unique non-null selected nodes
    */
   @NotNull
   List<SNode> getSelectedNodes();
