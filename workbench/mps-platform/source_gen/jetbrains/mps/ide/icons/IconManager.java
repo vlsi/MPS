@@ -55,7 +55,6 @@ import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.lang.reflect.Method;
 import jetbrains.mps.module.ModuleClassLoaderIsNullException;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.MPSProject;
@@ -331,12 +330,6 @@ public final class IconManager {
   @Deprecated
   public static Icon getIconForNamespace(String namespace) {
     return getIconFor(namespace);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public static Icon getIconForConceptFQName(String conceptFQName) {
-    return getIcon(MetaAdapterFactoryByName.getConcept(conceptFQName));
   }
 
   @Deprecated

@@ -2452,45 +2452,6 @@
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
-    <node concept="2tJIrI" id="Z6TQiSPojI" role="jymVt" />
-    <node concept="2YIFZL" id="277Nzj6qTH$" role="jymVt">
-      <property role="TrG5h" value="getIconForConceptFQName" />
-      <property role="IEkAT" value="false" />
-      <node concept="3Tm1VV" id="277Nzj6qTH_" role="1B3o_S" />
-      <node concept="3uibUv" id="277Nzj6qTHA" role="3clF45">
-        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
-      </node>
-      <node concept="37vLTG" id="277Nzj6qTHB" role="3clF46">
-        <property role="TrG5h" value="conceptFQName" />
-        <node concept="17QB3L" id="1TQ5Q1_Fo8l" role="1tU5fm" />
-      </node>
-      <node concept="3clFbS" id="277Nzj6qTHD" role="3clF47">
-        <node concept="3clFbF" id="6mQv69HR$EU" role="3cqZAp">
-          <node concept="1rXfSq" id="N34cyRDaFQ" role="3clFbG">
-            <ref role="37wK5l" node="2qySP5iSNLp" resolve="getIcon" />
-            <node concept="2YIFZM" id="6mQv69HR$NN" role="37wK5m">
-              <ref role="37wK5l" to="2k9e:~MetaAdapterFactoryByName.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
-              <ref role="1Pybhc" to="2k9e:~MetaAdapterFactoryByName" resolve="MetaAdapterFactoryByName" />
-              <node concept="37vLTw" id="6mQv69HR$WR" role="37wK5m">
-                <ref role="3cqZAo" node="277Nzj6qTHB" resolve="conceptFQName" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="2qySP5iSV0W" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="2AHcQZ" id="6mQv69HRwUD" role="2AJF6D">
-        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
-        <node concept="2B6LJw" id="6mQv69HRxm3" role="2B76xF">
-          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
-          <node concept="3b6qkQ" id="6mQv69HRxun" role="2B70Vg">
-            <property role="$nhwW" value="3.4" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="2tJIrI" id="Z6TQiSPp2m" role="jymVt" />
     <node concept="2YIFZL" id="5XBRz5LKZRC" role="jymVt">
       <property role="TrG5h" value="loadIcon" />

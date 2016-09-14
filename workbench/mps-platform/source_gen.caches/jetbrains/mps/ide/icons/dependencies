@@ -98,7 +98,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />

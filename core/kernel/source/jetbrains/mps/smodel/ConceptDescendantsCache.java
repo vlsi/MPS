@@ -219,26 +219,6 @@ public class ConceptDescendantsCache implements CoreComponent {
     return result != null ? result : Collections.<SAbstractConcept>emptySet();
   }
 
-  //-------------to remove-----------
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public Set<String> getDescendants(String conceptFqName) {
-    SAbstractConcept c = MetaAdapterFactoryByName.getInterfaceConcept(conceptFqName);
-    if (c==null){
-      c = MetaAdapterFactoryByName.getConcept(conceptFqName);
-    }
-    if (c==null){
-      return Collections.emptySet();
-    }
-
-    LinkedHashSet<String> res = new LinkedHashSet<String>();
-    for (SAbstractConcept ac:getDescendants(c)){
-      res.add(ac.getQualifiedName());
-    }
-    return res;
-  }
-
   private Set<ConceptDescriptor> getConcepts(LanguageRuntime languageRuntime) {
     StructureAspectDescriptor structureDescriptor = languageRuntime.getAspect(StructureAspectDescriptor.class);
     if (structureDescriptor == null) {
