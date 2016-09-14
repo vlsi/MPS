@@ -82,14 +82,14 @@ public class AutoResolver extends BaseEventProcessingEditorChecker {
             boolean doRecheckEditor = false;
             // Trying to resolve all broken references using scope and then using substitute actions. 
             for (SReference brokenRef : SetSequence.fromSet(badReferences)) {
-              boolean resolvedBySope = ResolverComponent.getInstance().resolveScopesOnly(brokenRef, editorContext.getRepository());
+              boolean resolvedByScope = ResolverComponent.getInstance().resolveScopesOnly(brokenRef, editorContext.getRepository());
               SNode sourceNode = brokenRef.getSourceNode();
               if (sourceNode == null) {
                 continue;
               }
               String referenceRole = brokenRef.getRole();
               EditorCell cellWithRole = editorComponent.findNodeCellWithRole(sourceNode, referenceRole);
-              if (!(resolvedBySope)) {
+              if (!(resolvedByScope)) {
                 if (cellWithRole == null) {
                   continue;
                 }

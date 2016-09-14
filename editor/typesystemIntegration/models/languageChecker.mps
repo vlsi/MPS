@@ -2535,7 +2535,7 @@
                                           <node concept="3clFbS" id="77jjuPI7hAK" role="2LFqv$">
                                             <node concept="3cpWs8" id="77jjuPI7xEw" role="3cqZAp">
                                               <node concept="3cpWsn" id="77jjuPI7xEx" role="3cpWs9">
-                                                <property role="TrG5h" value="resolvedBySope" />
+                                                <property role="TrG5h" value="resolvedByScope" />
                                                 <node concept="10P_77" id="77jjuPI7xDH" role="1tU5fm" />
                                                 <node concept="2OqwBi" id="77jjuPI7xEy" role="33vP2m">
                                                   <node concept="2YIFZM" id="77jjuPI7xEz" role="2Oq$k0">
@@ -2694,7 +2694,7 @@
                                               </node>
                                               <node concept="3fqX7Q" id="77jjuPI7BKi" role="3clFbw">
                                                 <node concept="37vLTw" id="77jjuPI7C43" role="3fr31v">
-                                                  <ref role="3cqZAo" node="77jjuPI7xEx" resolve="resolvedBySope" />
+                                                  <ref role="3cqZAo" node="77jjuPI7xEx" resolve="resolvedByScope" />
                                                 </node>
                                               </node>
                                             </node>
@@ -3957,7 +3957,7 @@
       </node>
       <node concept="359W_D" id="3TJpIwQlqFF" role="33vP2m">
         <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
-        <ref role="359W_F" to="tpck:4uZwTti3__2" />
+        <ref role="359W_F" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
       </node>
     </node>
     <node concept="2tJIrI" id="3TJpIwQlqFG" role="jymVt" />
