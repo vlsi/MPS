@@ -565,6 +565,10 @@
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
       </concept>
+      <concept id="559557797393017698" name="jetbrains.mps.lang.smodel.structure.ModelReferenceExpression" flags="nn" index="BaHAS">
+        <property id="559557797393021807" name="stereotype" index="BaGAP" />
+        <property id="559557797393017702" name="name" index="BaHAW" />
+      </concept>
       <concept id="1761385620274348152" name="jetbrains.mps.lang.smodel.structure.SConceptTypeCastExpression" flags="nn" index="2CBFar" />
       <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143224066846" name="jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation" flags="nn" index="HtI8k">
@@ -20835,14 +20839,9 @@
                 <node concept="3cpWs8" id="5m8CrGx4EU$" role="3cqZAp">
                   <node concept="3cpWsn" id="5m8CrGx4EU_" role="3cpWs9">
                     <property role="TrG5h" value="blStructure" />
-                    <node concept="2OqwBi" id="5m8CrGx4EUC" role="33vP2m">
-                      <node concept="2YIFZM" id="5m8CrGx4EUD" role="2Oq$k0">
-                        <ref role="1Pybhc" to="cttk:4pBxc6EfAk4" resolve="BootstrapLanguages" />
-                        <ref role="37wK5l" to="cttk:4pBxc6EfAka" resolve="baseLanguage" />
-                      </node>
-                      <node concept="liA8E" id="5m8CrGx4EUE" role="2OqNvi">
-                        <ref role="37wK5l" to="w1kc:~Language.getStructureModelDescriptor():org.jetbrains.mps.openapi.model.SModel" resolve="getStructureModelDescriptor" />
-                      </node>
+                    <node concept="BaHAS" id="1LRyp_9MyCv" role="33vP2m">
+                      <property role="BaHAW" value="jetbrains.mps.baseLanguage.structure" />
+                      <property role="BaGAP" value="" />
                     </node>
                     <node concept="H_c77" id="5m8CrGx4EUG" role="1tU5fm" />
                   </node>

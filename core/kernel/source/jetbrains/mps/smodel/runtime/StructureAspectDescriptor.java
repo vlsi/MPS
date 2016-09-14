@@ -16,8 +16,6 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 import java.util.Collection;
 
@@ -32,7 +30,7 @@ import java.util.Collection;
  * FIXME BaseStructureAspectDescriptor#getDescriptors() shall move here once 3.2 (which uses BSAD in generated descriptors) is out.
  * @see jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor
  */
-public interface StructureAspectDescriptor extends LanguageAspectDescriptor {
+public interface StructureAspectDescriptor extends ILanguageAspect {
   ConceptDescriptor getDescriptor(SConceptId id);
 
   Collection<ConceptDescriptor> getDescriptors();

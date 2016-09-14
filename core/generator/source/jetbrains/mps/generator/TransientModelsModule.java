@@ -204,7 +204,7 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
   }
 
   public String toString() {
-    return getName() + " [transient models module]";
+    return getModuleName() + " [transient models module]";
   }
 
   /**

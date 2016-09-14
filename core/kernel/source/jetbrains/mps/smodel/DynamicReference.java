@@ -20,6 +20,7 @@ import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -69,6 +70,8 @@ public class DynamicReference extends SReferenceBase {
   /*
    * create 'young' reference
    */
+  @Deprecated
+  @ToRemove(version = 3.5) //maybe possible to remove in 3.4
   public DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode immatureTargetNode) {
     super(role, sourceNode, null, immatureTargetNode);
   }

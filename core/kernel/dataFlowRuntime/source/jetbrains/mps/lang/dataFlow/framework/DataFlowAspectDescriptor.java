@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.lang.dataFlow.framework;
 
-import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
@@ -24,7 +24,7 @@ import java.util.Collection;
  * @author simon
  */
 
-public interface DataFlowAspectDescriptor extends LanguageAspectDescriptor{
+public interface DataFlowAspectDescriptor extends ILanguageAspect {
   @NotNull
   Collection<DataFlowConstructor> getConstructors(String analyzerId);
 }

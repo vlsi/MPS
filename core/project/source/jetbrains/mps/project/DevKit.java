@@ -187,16 +187,6 @@ public class DevKit extends AbstractModule {
     DevkitDescriptorPersistence.saveDevKitDescriptor(myDescriptorFile, getModuleDescriptor());
   }
 
-  /**
-   * @deprecated use {@link org.jetbrains.mps.openapi.module.SModule#getModuleName()}
-   */
-  @ToRemove(version = 3.2)
-  @Deprecated
-  @Override
-  public String getName() {
-    return getModuleName();
-  }
-
   public String toString() {
     return getModuleName() + " [devkit]";
   }

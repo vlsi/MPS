@@ -745,23 +745,6 @@ public class SModel implements SModelData, UpdateModeSupport {
     }
     return myLegacyImplicitImports;
   }
-  // this method is for sole use of ImplicitImportsLegacyHolder, which used to access myIdToNodeMap, and I don't want to change this
-  // (i.e. re-write with model iteration using OpenAPI). Drop it along with getImplicitImportsSupport()
-  /*package*/Iterable<org.jetbrains.mps.openapi.model.SNode> allNodes() {
-    return myIdToNodeMap.values();
-  }
-
-  // this method is for transition period, shall be removed once there are no uses of SModelOperations.getAllImportElements()
-  // Once we drop refactorings, there is no need for the method
-  @ToRemove(version = 3.2)
-  /*package*/List<ImportElement> getAllImportElements() {
-    List<ImportElement> result = new ArrayList<ImportElement>();
-    result.addAll(myImports);
-    if (myLegacyImplicitImports != null) {
-      result.addAll(myLegacyImplicitImports.getAdditionalModelVersions());
-    }
-    return result;
-  }
 
   /**
    * @deprecated though it's our internal API, there's 1 use in mbeddr of this exact method we need to fix first.

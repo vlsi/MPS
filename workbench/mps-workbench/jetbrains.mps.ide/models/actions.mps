@@ -3131,7 +3131,7 @@
                     <ref role="3cqZAo" node="A5pt9OPTlu" resolve="gen" />
                   </node>
                   <node concept="liA8E" id="A5pt9OPTlI" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~AbstractModule.getName():java.lang.String" resolve="getName" />
+                    <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
                   </node>
                 </node>
               </node>
@@ -17555,7 +17555,7 @@
                         <ref role="3cqZAo" node="67BMVWAH0rm" resolve="generator" />
                       </node>
                       <node concept="liA8E" id="1HIsdZH8e2j" role="2OqNvi">
-                        <ref role="37wK5l" to="z1c3:~AbstractModule.getName():java.lang.String" resolve="getName" />
+                        <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
                       </node>
                     </node>
                     <node concept="Xl_RD" id="1HIsdZH8e2k" role="3uHU7B">

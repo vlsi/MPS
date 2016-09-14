@@ -53,12 +53,7 @@ public class FindUsagesManager extends FindUsagesFacade implements CoreComponent
     return findUsages(modelReferences, new ModelUsagesSearchType(), scope, monitor);
   }
 
-  /**
-   * @deprecated this method shall become private. Clients shall use {@link org.jetbrains.mps.openapi.module.FindUsagesFacade} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public <T, R> Set<T> findUsages(Set<? extends R> elements, SearchType<T, R> type, SearchScope scope, @Nullable ProgressMonitor monitor) {
+  private  <T, R> Set<T> findUsages(Set<? extends R> elements, SearchType<T, R> type, SearchScope scope, @Nullable ProgressMonitor monitor) {
     if (monitor == null) monitor = new EmptyProgressMonitor();
 
     return type.search(new LinkedHashSet<R>(elements), scope, monitor);

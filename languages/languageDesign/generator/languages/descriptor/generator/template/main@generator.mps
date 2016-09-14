@@ -1642,7 +1642,7 @@
                     <node concept="2OqwBi" id="1_4jpH9o4Vb" role="3clFbG">
                       <node concept="2ShNRf" id="1_4jpH9o4H4" role="2Oq$k0">
                         <node concept="1pGfFk" id="1_4jpH9o4UB" role="2ShVmc">
-                          <ref role="37wK5l" to="w0gx:~ModuleReference.&lt;init&gt;(java.lang.String,java.lang.String)" resolve="ModuleReference" />
+                          <ref role="37wK5l" to="w0gx:~ModuleReference.&lt;init&gt;(java.lang.String,org.jetbrains.mps.openapi.module.SModuleId)" resolve="ModuleReference" />
                           <node concept="2OqwBi" id="1_4jpH9o4UI" role="37wK5m">
                             <node concept="2OqwBi" id="1_4jpH9o4UD" role="2Oq$k0">
                               <node concept="30H73N" id="1_4jpH9o4UC" role="2Oq$k0" />
@@ -1654,15 +1654,19 @@
                               <ref role="3TsBF5" to="hypd:1AZH1sZHi4e" resolve="qualifiedName" />
                             </node>
                           </node>
-                          <node concept="2OqwBi" id="1_4jpH9o4V2" role="37wK5m">
-                            <node concept="2OqwBi" id="1_4jpH9o4US" role="2Oq$k0">
-                              <node concept="30H73N" id="1_4jpH9o4UR" role="2Oq$k0" />
-                              <node concept="3TrEf2" id="1_4jpH9o4V1" role="2OqNvi">
-                                <ref role="3Tt5mk" to="hypd:2n3WChplMvz" resolve="generator" />
+                          <node concept="2YIFZM" id="1_DBczKshw7" role="37wK5m">
+                            <ref role="37wK5l" to="z1c3:~ModuleId.fromString(java.lang.String):jetbrains.mps.project.ModuleId" resolve="fromString" />
+                            <ref role="1Pybhc" to="z1c3:~ModuleId" resolve="ModuleId" />
+                            <node concept="2OqwBi" id="1_4jpH9o4V2" role="37wK5m">
+                              <node concept="2OqwBi" id="1_4jpH9o4US" role="2Oq$k0">
+                                <node concept="30H73N" id="1_4jpH9o4UR" role="2Oq$k0" />
+                                <node concept="3TrEf2" id="1_4jpH9o4V1" role="2OqNvi">
+                                  <ref role="3Tt5mk" to="hypd:2n3WChplMvz" resolve="generator" />
+                                </node>
                               </node>
-                            </node>
-                            <node concept="3TrcHB" id="1_4jpH9o4Va" role="2OqNvi">
-                              <ref role="3TsBF5" to="hypd:1AZH1sZHi4d" resolve="uuid" />
+                              <node concept="3TrcHB" id="1_4jpH9o4Va" role="2OqNvi">
+                                <ref role="3TsBF5" to="hypd:1AZH1sZHi4d" resolve="uuid" />
+                              </node>
                             </node>
                           </node>
                         </node>

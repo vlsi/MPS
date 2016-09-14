@@ -709,14 +709,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return namespace + " [module]";
   }
 
-  /**
-   * @deprecated use {@link #getModuleName}
-   */
-  @Deprecated
-  public String getName() {
-    return getModuleName();
-  }
-
   @Override
   public void dispose() {
     assertCanChange();

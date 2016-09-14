@@ -175,7 +175,7 @@ public class NewModel_Action extends BaseAction {
   protected String getNamespace(final Map<String, Object> _params) {
     if (((SModule) MapSequence.fromMap(_params).get("module")) instanceof Generator) {
       Generator gen = (Generator) ((SModule) MapSequence.fromMap(_params).get("module"));
-      String name = gen.getName();
+      String name = gen.getModuleName();
       String genNamespace = gen.getSourceLanguage().getModuleName() + ".generator";
 
       if ((name == null || name.length() == 0)) {
