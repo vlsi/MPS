@@ -97,25 +97,25 @@ public class Template_weave_Statement extends TemplateDeclarationBase {
   }
   protected SNode applyPart1(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
-    final SNode tnode7 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment"));
+    final SNode tnode1 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment"));
     try {
-      environment.nodeCopied(context, tnode7, "tpl/r:00000000-0000-4000-0000-011c89590606/3571912445009937422");
-      TemplateContext context7 = context.subContext();
+      environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/3571912445009937422");
+      TemplateContext context1 = context.subContext();
       {
-        final SNode tnode8 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart"));
+        final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart"));
         try {
-          environment.nodeCopied(context7, tnode8, "tpl/r:00000000-0000-4000-0000-011c89590606/3571912445009937424");
-          SNodeAccessUtil.setProperty(tnode8, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, 0x57d533a7af15ed3eL, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3571912445009937427(new PropertyMacroContext(context7, "to ctor ", propertyMacro_6c7ipi_c0a0c0b0b0c0c0d))));
+          environment.nodeCopied(context1, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/3571912445009937424");
+          SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, 0x57d533a7af15ed3eL, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3571912445009937427(new PropertyMacroContext(context1, "to ctor ", propertyMacro_6c7ipi_c0a0c0b0b0c0c0d))));
         } finally {
         }
-        if (tnode8 != null) {
-          tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, 0x57d533a7af16ff73L, "commentPart"), tnode8);
+        if (tnode2 != null) {
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, 0x57d533a7af16ff73L, "commentPart"), tnode2);
         }
         // TODO validate child 
       }
     } finally {
     }
-    return tnode7;
+    return tnode1;
   }
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {

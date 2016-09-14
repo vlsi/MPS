@@ -50,47 +50,47 @@ public class Template_reduce_InputNode_A extends TemplateDeclarationBase {
   }
   protected SNode applyPart1(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
-    final SNode tnode3 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
+    final SNode tnode1 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
     try {
-      environment.nodeCopied(context, tnode3, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1391450457158185608");
-      SNodeAccessUtil.setProperty(tnode3, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), "child #2");
+      environment.nodeCopied(context, tnode1, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1391450457158185608");
+      SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), "child #2");
     } finally {
     }
-    return tnode3;
+    return tnode1;
   }
   protected Collection<SNode> applyPart2(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
-    Collection<SNode> tlist4 = null;
+    Collection<SNode> tlist1 = null;
     try {
       try {
-        tlist4 = new Template_reduce_InputNode_A_included().apply(environment, context);
+        tlist1 = new Template_reduce_InputNode_A_included().apply(environment, context);
       } finally {
       }
 
     } finally {
     }
-    return tlist4;
+    return tlist1;
   }
   protected Collection<SNode> applyPart3(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
-    Collection<SNode> tlist5 = null;
+    Collection<SNode> tlist1 = null;
     try {
-      TemplateContext switchContext5;
-      switchContext5 = context;
-      tlist5 = environment.trySwitch(templateSwitchNodeNoInput_vff4zh_a0a0c0c0f, switchContext5);
-      if (tlist5 == null) {
-        final SNode tnode6 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
+      TemplateContext switchContext1;
+      switchContext1 = context;
+      tlist1 = environment.trySwitch(templateSwitchNodeNoInput_vff4zh_a0a0c0c0f, switchContext1);
+      if (tlist1 == null) {
+        final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
         try {
-          environment.nodeCopied(context, tnode6, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480310362");
+          environment.nodeCopied(context, tnode2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480310362");
         } finally {
         }
-        if (tnode6 != null) {
-          tlist5 = TemplateUtil.singletonList(tnode6);
+        if (tnode2 != null) {
+          tlist1 = TemplateUtil.singletonList(tnode2);
         }
       }
     } finally {
     }
-    return tlist5;
+    return tlist1;
   }
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
