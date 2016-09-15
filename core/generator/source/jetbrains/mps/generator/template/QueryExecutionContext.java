@@ -51,10 +51,6 @@ public interface QueryExecutionContext extends QueryExecutor {
   boolean isMultithreaded();
 
   @Deprecated
-  @ToRemove(version = 3.3)
-  SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode, @NotNull TemplateContext context);
-
-  @Deprecated
   @ToRemove(version = 0)
   Object getReferentTarget(SNode node, SNode outputNode, SNode refMacro, TemplateContext context);
 

@@ -23,7 +23,6 @@ import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
-import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.runtime.WeavingWithAnchor;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import org.jetbrains.annotations.NotNull;
@@ -36,6 +35,7 @@ import java.util.List;
 /**
  * Container for Template Fragments in weaving macros/rules.
  * Similar to {@link jetbrains.mps.generator.impl.TemplateContainer}, tailored for weavings.
+ *
  * @author Artem Tikhomirov
  */
 public class WeaveTemplateContainer {
@@ -57,47 +57,39 @@ public class WeaveTemplateContainer {
       throws GenerationFailureException, GenerationCanceledException {
     // for each template fragment create output nodes
     TemplateExecutionEnvironment env = context.getEnvironment();
+    if (outputContextNode == null) {
+      env.getLogger().error(myTemplateNode.getReference(), "No output context node for weaving", GeneratorUtil.describeInput(context));
+      return;
+    }
     ITemplateProcessor templateProcessor = env.getTemplateProcessor();
     for (SNode templateFragment : myFragments) {
       SNode templateFragmentParentNode = templateFragment.getParent();
-      SNode contextParentNode = null;
       try {
-        contextParentNode = env.getQueryExecutor().getContextNodeForTemplateFragment(templateFragmentParentNode, outputContextNode, context);
-      } catch (Exception e) {
-        env.getLogger().handleException(e);
-      }
-      if (contextParentNode != null) {
-        try {
-          String tfMapLabel = GeneratorUtilEx.getMappingName_TemplateFragment(templateFragment, null);
-          List<SNode> outputNodesToWeave = templateProcessor.apply(templateFragmentParentNode, context.subContext(tfMapLabel));
-          final SContainmentLink childRole = templateFragmentParentNode.getContainmentLink();
-          assert childRole != null;
+        String tfMapLabel = GeneratorUtilEx.getMappingName_TemplateFragment(templateFragment, null);
+        List<SNode> outputNodesToWeave = templateProcessor.apply(templateFragmentParentNode, context.subContext(tfMapLabel));
+        final SContainmentLink childRole = templateFragmentParentNode.getContainmentLink();
+        assert childRole != null;
 
-          WeaveContext weaveContext = new WeaveContextImpl(contextParentNode, context, myAnchorQuery);
-          final NodeWeaveFacility weaveSupport = env.prepareWeave(weaveContext, templateFragment.getReference());
+        WeaveContext weaveContext = new WeaveContextImpl(outputContextNode, context, myAnchorQuery);
+        final NodeWeaveFacility weaveSupport = env.prepareWeave(weaveContext, templateFragment.getReference());
 
-          for (SNode outputNodeToWeave : outputNodesToWeave) {
-            weaveSupport.weaveNode(childRole, outputNodeToWeave);
-          }
-          env.getGenerator().recordTransformInputTrace(context.getInput(), outputNodesToWeave);
-          env.getTrace().trace(context.getInput().getNodeId(), GenerationTracerUtil.translateOutput(outputNodesToWeave), templateFragment.getReference());
-        } catch (DismissTopMappingRuleException e) {
-          env.getLogger().error(templateFragment.getReference(), "bad template: dismiss in weave is not supported",
-              GeneratorUtil.describe(myTemplateNode, "template node"),
-              GeneratorUtil.describe(context.getInput(), "input node"),
-              GeneratorUtil.describe(contextParentNode, "output context node"));
-        } catch (TemplateProcessingFailureException ex) {
-          ProblemDescription[] pd = new ProblemDescription[] {
-              GeneratorUtil.describe(myTemplateNode, "template node"),
-              GeneratorUtil.describe(context.getInput(), "input node"),
-              GeneratorUtil.describe(contextParentNode, "output context node")
-          };
-          env.getLogger().error(templateFragment.getReference(), "error processing template fragment", GeneratorUtil.concat(pd, ex.asProblemDescription()));
+        for (SNode outputNodeToWeave : outputNodesToWeave) {
+          weaveSupport.weaveNode(childRole, outputNodeToWeave);
         }
-      } else {
-        env.getLogger().error(templateFragment.getReference(), "couldn't define 'context' for template fragment",
+        env.getGenerator().recordTransformInputTrace(context.getInput(), outputNodesToWeave);
+        env.getTrace().trace(context.getInput().getNodeId(), GenerationTracerUtil.translateOutput(outputNodesToWeave), templateFragment.getReference());
+      } catch (DismissTopMappingRuleException e) {
+        env.getLogger().error(templateFragment.getReference(), "bad template: dismiss in weave is not supported",
             GeneratorUtil.describe(myTemplateNode, "template node"),
-            GeneratorUtil.describe(context.getInput(), "input node"));
+            GeneratorUtil.describe(context.getInput(), "input node"),
+            GeneratorUtil.describe(outputContextNode, "output context node"));
+      } catch (TemplateProcessingFailureException ex) {
+        ProblemDescription[] pd = new ProblemDescription[]{
+            GeneratorUtil.describe(myTemplateNode, "template node"),
+            GeneratorUtil.describe(context.getInput(), "input node"),
+            GeneratorUtil.describe(outputContextNode, "output context node")
+        };
+        env.getLogger().error(templateFragment.getReference(), "error processing template fragment", GeneratorUtil.concat(pd, ex.asProblemDescription()));
       }
     }
   }
@@ -113,24 +105,20 @@ public class WeaveTemplateContainer {
     boolean sameParent = true;
     SNode defaultContext = null;
     for (SNode templateFragment : templateFragments) {
-      if (RuleUtil.getTemplateFragment_ContextNodeQuery(templateFragment) == null) { // uses <default context>
-        SNode fragmentContextNode = templateFragment.getParent().getParent();
-        if (defaultContext == null) {
-          defaultContext = fragmentContextNode;
-        } else if (defaultContext != fragmentContextNode) {
-          sameParent = false;
-          break;
-        }
+      SNode fragmentContextNode = templateFragment.getParent().getParent();
+      if (defaultContext == null) {
+        defaultContext = fragmentContextNode;
+      } else if (defaultContext != fragmentContextNode) {
+        sameParent = false;
+        break;
       }
     }
     if (!sameParent) {
       List<ProblemDescription> list = new ArrayList<ProblemDescription>();
       for (SNode templateFragment : templateFragments) {
-        if (RuleUtil.getTemplateFragment_ContextNodeQuery(templateFragment) == null) { // uses <default context>
-          list.add(GeneratorUtil.describe(templateFragment, "template fragment"));
-        }
+        list.add(GeneratorUtil.describe(templateFragment, "template fragment"));
       }
-      logger.error(myTemplateNode.getReference(), "all fragments with <default context> should have the same parent", list.toArray(new ProblemDescription[list.size()]));
+      logger.error(myTemplateNode.getReference(), "all fragments with shall have the same parent", list.toArray(new ProblemDescription[list.size()]));
     }
     return templateFragments;
   }

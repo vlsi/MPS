@@ -196,7 +196,6 @@
       <concept id="1236262245656" name="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" flags="ln" index="3mYdg7">
         <property id="1238091709220" name="labelName" index="1413C4" />
       </concept>
-      <concept id="1223386653097" name="jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet" flags="ln" index="3nxI2P" />
       <concept id="1165420413719" name="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group" flags="ng" index="1ou48o">
         <child id="1165420413721" name="handlerFunction" index="1ou48m" />
         <child id="1165420413720" name="parametersFunction" index="1ou48n" />
@@ -1642,51 +1641,6 @@
             <property role="VOm3f" value="false" />
           </node>
           <node concept="2iRfu4" id="i2IBXW2" role="2iSdaV" />
-        </node>
-        <node concept="3EZMnI" id="hf2dFy$" role="3EZMnx">
-          <node concept="3F0ifn" id="hf2dFy_" role="3EZMnx">
-            <property role="3F0ifm" value="fragment context" />
-            <node concept="VPM3Z" id="hEU$PWu" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-            <node concept="3nxI2P" id="6t_vhrz1uV" role="3F10Kt">
-              <property role="VOm3f" value="true" />
-            </node>
-          </node>
-          <node concept="3F0ifn" id="hf2dFyA" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="hEU$PkX" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F1sOY" id="hf2dFyB" role="3EZMnx">
-            <property role="1$x2rV" value="&lt;main context node&gt;" />
-            <ref role="1NtTu8" to="tpf8:hf2ejkb" resolve="contextNodeQuery" />
-          </node>
-          <node concept="VPM3Z" id="hEU$PrL" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="i2IBXW8" role="2iSdaV" />
-        </node>
-        <node concept="3EZMnI" id="6t_vhrzJNw" role="3EZMnx">
-          <node concept="3F0ifn" id="6t_vhrzJNx" role="3EZMnx">
-            <node concept="VPM3Z" id="6t_vhr$lXq" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0ifn" id="6t_vhrzJON" role="3EZMnx">
-            <node concept="VPM3Z" id="6t_vhr$lVJ" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0ifn" id="6t_vhrzJP3" role="3EZMnx">
-            <property role="3F0ifm" value="Do not use fragment's context query. They will be removed in the next release" />
-            <ref role="1k5W1q" node="6t_vhrzKdF" resolve="Comment" />
-          </node>
-          <node concept="VPM3Z" id="6t_vhrzJNC" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="6t_vhrzJND" role="2iSdaV" />
         </node>
         <node concept="VPM3Z" id="hEU$PLs" role="3F10Kt">
           <property role="VOm3f" value="false" />

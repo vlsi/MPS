@@ -173,16 +173,6 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     }
   }
 
-  @Override
-  public SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode, @NotNull TemplateContext context) {
-    try {
-      tracer.push(taskName("context for template fragment", templateFragmentNode), true);
-      return wrapped.getContextNodeForTemplateFragment(templateFragmentNode, mainContextNode, context);
-    } finally {
-      tracer.pop();
-    }
-  }
-
   @Nullable
   @Override
   public Object evaluate(@NotNull ReferenceTargetQuery query, @NotNull ReferenceMacroContext context) throws GenerationFailureException {

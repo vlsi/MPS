@@ -179,16 +179,6 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
     }
   }
 
-  @Override
-  public SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode, @NotNull TemplateContext context) {
-    try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.getContextNodeForTemplateFragment(templateFragmentNode, mainContextNode, context);
-    } finally {
-      NodeReadEventsCaster.removeNodesReadListener();
-    }
-  }
-
   @Nullable
   @Override
   public Object evaluate(@NotNull ReferenceTargetQuery query, @NotNull ReferenceMacroContext context) throws GenerationFailureException {

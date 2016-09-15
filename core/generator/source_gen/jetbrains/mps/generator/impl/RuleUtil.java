@@ -281,9 +281,6 @@ public final class RuleUtil {
   public static SNode getPropertyMacro_ValueFunction(SNode macro) {
     return SLinkOperations.getTarget(macro, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, 0x10fe3b4023fL, "propertyValueFunction"));
   }
-  public static SNode getTemplateFragment_ContextNodeQuery(SNode tf) {
-    return SLinkOperations.getTarget(tf, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, 0x113c239350bL, "contextNodeQuery"));
-  }
   public static SNode getMappingScriptReference_Script(SNode ref) {
     return SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x116597b27aaL, 0x116597b663aL, "mappingScript"));
   }

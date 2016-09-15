@@ -340,16 +340,6 @@
       <property role="IQ2ns" value="1200916687663" />
       <ref role="20lvS9" node="hurT7o6" resolve="MappingLabelDeclaration" />
     </node>
-    <node concept="1TJgyj" id="hf2ejkb" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="contextNodeQuery" />
-      <property role="IQ2ns" value="1184374535435" />
-      <ref role="20lvS9" node="hf2c0UL" resolve="TemplateFragment_ContextNodeQuery" />
-      <node concept="asaX9" id="6t_vhrz0Pv" role="lGtFl">
-        <property role="YLQ7P" value="https://youtrack.jetbrains.com/issue/MPS-22695" />
-        <property role="YLPcu" value="MPS 3.3" />
-      </node>
-    </node>
   </node>
   <node concept="1TIwiD" id="gcjVnq8">
     <property role="19KtqR" value="true" />
@@ -983,20 +973,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1177093586806" />
       <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="hf2c0UL">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="TemplateFragment_ContextNodeQuery" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="template" />
-    <property role="34LRSv" value="template fragment context node" />
-    <property role="EcuMT" value="1184373935793" />
-    <ref role="1TJDcQ" node="hHd3awK" resolve="TemplateQueryBase" />
-    <node concept="asaX9" id="6t_vhrz0CF" role="lGtFl">
-      <property role="YLPcu" value="MPS 3.3" />
-      <property role="YLQ7P" value="https://youtrack.jetbrains.com/issue/MPS-22695" />
     </node>
   </node>
   <node concept="1TIwiD" id="hf2cCeX">

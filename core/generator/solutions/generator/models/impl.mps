@@ -3947,31 +3947,6 @@
         </node>
       </node>
     </node>
-    <node concept="2YIFZL" id="4VDJDTCDnas" role="jymVt">
-      <property role="TrG5h" value="getTemplateFragment_ContextNodeQuery" />
-      <node concept="3Tm1VV" id="4VDJDTCDnau" role="1B3o_S" />
-      <node concept="3clFbS" id="4VDJDTCDnav" role="3clF47">
-        <node concept="3clFbF" id="4VDJDTCDnay" role="3cqZAp">
-          <node concept="2OqwBi" id="4VDJDTCDna$" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxgmeqW" role="2Oq$k0">
-              <ref role="3cqZAo" node="4VDJDTCDnaw" resolve="tf" />
-            </node>
-            <node concept="3TrEf2" id="4VDJDTCDnaC" role="2OqNvi">
-              <ref role="3Tt5mk" to="tpf8:hf2ejkb" resolve="contextNodeQuery" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="4VDJDTCDnaw" role="3clF46">
-        <property role="TrG5h" value="tf" />
-        <node concept="3Tqbb2" id="4VDJDTCDnax" role="1tU5fm">
-          <ref role="ehGHo" to="tpf8:fWrartG" resolve="TemplateFragment" />
-        </node>
-      </node>
-      <node concept="3Tqbb2" id="4VDJDTCDnaD" role="3clF45">
-        <ref role="ehGHo" to="tpf8:hf2c0UL" resolve="TemplateFragment_ContextNodeQuery" />
-      </node>
-    </node>
     <node concept="2YIFZL" id="7QeCZOGPwHT" role="jymVt">
       <property role="TrG5h" value="getMappingScriptReference_Script" />
       <node concept="3Tqbb2" id="7QeCZOGPwI7" role="3clF45">

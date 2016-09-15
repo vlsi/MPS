@@ -5,7 +5,6 @@ package jetbrains.mps.lang.generator.structure;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -94,8 +93,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TemplateCallMacro = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TemplateDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ed).create();
   private final ConceptPresentation props_TemplateDeclarationReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TemplateFragment = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, 0x1179c366b2fL, "labelDeclaration")).create();
-  private final ConceptPresentation props_TemplateFragment_ContextNodeQuery = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_TemplateFragment = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TemplateFunctionParameter_mainContextNode = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TemplateFunctionParameter_outputNode = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TemplateFunctionParameter_parentOutputNode = new ConceptPresentationBuilder().create();
@@ -104,7 +102,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TemplateFunctionParameter_templateReferent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TemplateParameterDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TemplateQueryBase = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TemplateSwitch = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0qd).create();
+  private final ConceptPresentation props_TemplateSwitch = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0pd).create();
   private final ConceptPresentation props_TemplateSwitchMacro = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TemplateSwitchReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TraceMacro = new ConceptPresentationBuilder().create();
@@ -295,50 +293,48 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 84:
         return props_TemplateFragment;
       case 85:
-        return props_TemplateFragment_ContextNodeQuery;
-      case 86:
         return props_TemplateFunctionParameter_mainContextNode;
-      case 87:
+      case 86:
         return props_TemplateFunctionParameter_outputNode;
-      case 88:
+      case 87:
         return props_TemplateFunctionParameter_parentOutputNode;
-      case 89:
+      case 88:
         return props_TemplateFunctionParameter_sourceNode;
-      case 90:
+      case 89:
         return props_TemplateFunctionParameter_templatePropertyValue;
-      case 91:
+      case 90:
         return props_TemplateFunctionParameter_templateReferent;
-      case 92:
+      case 91:
         return props_TemplateParameterDeclaration;
-      case 93:
+      case 92:
         return props_TemplateQueryBase;
-      case 94:
+      case 93:
         return props_TemplateSwitch;
-      case 95:
+      case 94:
         return props_TemplateSwitchMacro;
-      case 96:
+      case 95:
         return props_TemplateSwitchReference;
-      case 97:
+      case 96:
         return props_TraceMacro;
-      case 98:
+      case 97:
         return props_TrivialModelId;
-      case 99:
+      case 98:
         return props_TrivialNodeId;
-      case 100:
+      case 99:
         return props_UnmarshalFunction;
-      case 101:
+      case 100:
         return props_VarMacro;
-      case 102:
+      case 101:
         return props_VarMacro_ValueQuery;
-      case 103:
+      case 102:
         return props_WeaveEach_RuleConsequence;
-      case 104:
+      case 103:
         return props_WeaveMacro;
-      case 105:
+      case 104:
         return props_WeavingAnchorQuery;
-      case 106:
+      case 105:
         return props_Weaving_MappingRule;
-      case 107:
+      case 106:
         return props_Weaving_MappingRule_ContextNodeQuery;
     }
     throw new IllegalStateException("Unknown concept " + c);

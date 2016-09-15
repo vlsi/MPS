@@ -21,12 +21,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
-import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class TemplateFragment_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -174,8 +168,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_73o0fl_a2a(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_73o0fl_b2a(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_73o0fl_c2a(editorContext, node));
     return editorCell;
   }
   private EditorCell createCollection_73o0fl_a2a(EditorContext editorContext, SNode node) {
@@ -254,106 +246,5 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-  }
-  private EditorCell createCollection_73o0fl_b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_73o0fl_b2a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_73o0fl_a1c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_73o0fl_b1c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_73o0fl_c1c0(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createConstant_73o0fl_a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "fragment context");
-    editorCell.setCellId("Constant_73o0fl_a1c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    style.set(StyleAttributes.STRIKE_OUT, 0, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_73o0fl_b1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_73o0fl_b1c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createRefNode_73o0fl_c1c0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new TemplateFragment_Editor.contextNodeQuerySingleRoleHandler_73o0fl_c1c0(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, 0x113c239350bL, "contextNodeQuery"), editorContext);
-    return provider.createCell();
-  }
-  private class contextNodeQuerySingleRoleHandler_73o0fl_c1c0 extends SingleRoleCellProvider {
-    public contextNodeQuerySingleRoleHandler_73o0fl_c1c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
-    }
-    protected EditorCell createChildCell(SNode child) {
-      EditorCell editorCell = super.createChildCell(child);
-      installCellInfo(child, editorCell);
-      return editorCell;
-    }
-    private void installCellInfo(SNode child, EditorCell editorCell) {
-      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(myEditorContext, new SChildSubstituteInfo(editorCell, myOwnerNode, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, 0x113c239350bL, "contextNodeQuery"), child), new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext)));
-      }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("contextNodeQuery");
-      }
-    }
-    @Override
-    protected EditorCell createEmptyCell() {
-      EditorCell editorCell = super.createEmptyCell();
-      editorCell.setCellId("empty_contextNodeQuery");
-
-      installCellInfo(null, editorCell);
-      return editorCell;
-    }
-    protected String getNoTargetText() {
-      return "<main context node>";
-    }
-  }
-  private EditorCell createCollection_73o0fl_c2a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_73o0fl_c2a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_73o0fl_a2c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_73o0fl_b2c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_73o0fl_c2c0(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createConstant_73o0fl_a2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_73o0fl_a2c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_73o0fl_b2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_73o0fl_b2c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_73o0fl_c2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Do not use fragment's context query. They will be removed in the next release");
-    editorCell.setCellId("Constant_73o0fl_c2c0");
-    Style style = new StyleImpl();
-    Styles_StyleSheet.apply_Comment(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
   }
 }

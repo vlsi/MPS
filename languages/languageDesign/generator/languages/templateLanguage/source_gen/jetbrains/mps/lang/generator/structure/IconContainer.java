@@ -8,5 +8,5 @@ public class IconContainer {
   protected static IconResource RESOURCE_a0a0yb = new IconResource("mappingConf.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a0bc = new IconResource("generatorScript.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a0ed = new IconResource("templateFragment.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0qd = new IconResource("switch.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0pd = new IconResource("switch.png", IconContainer.class);
 }

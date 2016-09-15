@@ -194,31 +194,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     }
   }
 
-  @Override
-  public SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode, @NotNull TemplateContext context) {
-    SNode fragment = RuleUtil.getTemplateFragmentByAnnotatedNode(templateFragmentNode);
-    // has custom context builder provider?
-    SNode query = RuleUtil.getTemplateFragment_ContextNodeQuery(fragment);
-    if (query != null) {
-      String methodName = TemplateFunctionMethodName.templateFragment_ContextNodeQuery(query);
-      try {
-        final TemplateFragmentContext qctx = new TemplateFragmentContext(context, mainContextNode, templateFragmentNode.getReference());
-        return this.invokeMethod(query.getModel(), methodName, qctx);
-      } catch (NoSuchMethodException e) {
-        getLog().warning(templateFragmentNode.getReference(), "cannot find context node method for template fragment '" + methodName + "' : evaluate to null");
-        return null;
-      } catch (Exception e) {
-        getLog().handleException(e);
-        getLog().error(templateFragmentNode.getReference(), "cannot evaluate template fragment context query, exception was thrown",
-            GeneratorUtil.describeInput(context));
-        return null;
-      }
-    }
-
-    // ok, main context node by default
-    return mainContextNode;
-  }
-
   @Nullable
   @Override
   public Object evaluate(@NotNull ReferenceTargetQuery query, @NotNull ReferenceMacroContext context) throws GenerationFailureException {
