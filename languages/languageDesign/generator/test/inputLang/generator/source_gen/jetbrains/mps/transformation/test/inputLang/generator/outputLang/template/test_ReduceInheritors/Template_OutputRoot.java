@@ -81,8 +81,7 @@ public class Template_OutputRoot extends TemplateDeclarationBase implements Temp
       {
         final SNode tnode7 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
         try {
-          environment.nodeCopied(context1, tnode7, "tpl/r:00000000-0000-4000-0000-011c895905f9/8014813979421777297");
-          SNodeAccessUtil.setProperty(tnode7, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_8014813979421777301(new PropertyMacroContext(context1, "foobar", propertyMacro_38z9ys_c0a0c0b0b0g0b0c))));
+          SNodeAccessUtil.setProperty(tnode7, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_8014813979421777301(new PropertyMacroContext(context1, "foobar", propertyMacro_38z9ys_c0a0c0a0b0g0b0c))));
         } finally {
         }
         if (tnode7 != null) {
@@ -97,5 +96,5 @@ public class Template_OutputRoot extends TemplateDeclarationBase implements Temp
   private static SNodePointer template_38z9ys_a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460153890");
   private static SNodePointer insertMacro_38z9ys_b0a0a2a1a4a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "7612440128092282149");
   private static SNodePointer copySrcListMacro_38z9ys_b0a0a1a5a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460249785");
-  private static SNodePointer propertyMacro_38z9ys_c0a0c0b0b0g0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "8014813979421777300");
+  private static SNodePointer propertyMacro_38z9ys_c0a0c0a0b0g0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "8014813979421777300");
 }

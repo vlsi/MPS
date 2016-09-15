@@ -34,7 +34,6 @@ public class Template_map_RootConcept extends TemplateDeclarationBase implements
       {
         final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
         try {
-          environment.nodeCopied(context1, tnode2, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008490322");
         } finally {
         }
         if (tnode2 != null) {
@@ -45,12 +44,10 @@ public class Template_map_RootConcept extends TemplateDeclarationBase implements
       {
         final SNode tnode3 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
         try {
-          environment.nodeCopied(context1, tnode3, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008490323");
           TemplateContext context3 = context1.subContext();
           {
             final SNode tnode4 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"));
             try {
-              environment.nodeCopied(context3, tnode4, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008490324");
             } finally {
             }
             if (tnode4 != null) {
@@ -61,7 +58,6 @@ public class Template_map_RootConcept extends TemplateDeclarationBase implements
           {
             final SNode tnode5 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
             try {
-              environment.nodeCopied(context3, tnode5, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008490325");
             } finally {
             }
             if (tnode5 != null) {
@@ -72,7 +68,6 @@ public class Template_map_RootConcept extends TemplateDeclarationBase implements
           {
             final SNode tnode6 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
             try {
-              environment.nodeCopied(context3, tnode6, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008490326");
             } finally {
             }
             if (tnode6 != null) {

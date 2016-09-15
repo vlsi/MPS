@@ -57,7 +57,6 @@ public class Template_reduce_InputNode extends TemplateDeclarationBase {
       if (tlist1 == null) {
         final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"));
         try {
-          environment.nodeCopied(context, tnode2, "tpl/r:f37420d7-c952-44cf-aaac-346288c56298/6736062018948476838");
         } finally {
         }
         if (tnode2 != null) {
