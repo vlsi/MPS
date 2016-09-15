@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.structure.ConceptFeatureHelper;
 import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -90,8 +89,7 @@ public final class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
   @Override
   @Nullable
   public LinkDescriptor getLinkDescriptor() {
-    ConceptDescriptor cd = ConceptFeatureHelper.getOwnerDescriptor(getId());
-    if (cd == null) return null;
+    ConceptDescriptor cd = ConceptFeatureHelper.getOwnerDescriptor(myRoleId);
     return cd.getLinkDescriptor(myRoleId);
   }
 

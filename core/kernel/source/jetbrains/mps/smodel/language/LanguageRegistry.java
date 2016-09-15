@@ -289,6 +289,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
   @Nullable
   public LanguageRuntime getLanguage(SLanguageId id) {
+    // FIXME take language by ID, not using SLanguage!!!
     return getLanguage(MetaAdapterFactory.getLanguage(id, "<LanguageRegistry: this name must not be used>"));
   }
 

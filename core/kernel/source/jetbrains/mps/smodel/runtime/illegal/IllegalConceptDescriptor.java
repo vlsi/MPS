@@ -26,12 +26,12 @@ import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collections;
@@ -40,13 +40,38 @@ import java.util.Set;
 
 public class IllegalConceptDescriptor implements ConceptDescriptor {
   private static final Logger LOG = LogManager.getLogger(IllegalConceptDescriptor.class);
-  private static final Set<SAbstractConcept> ourReportedConcepts = new ConcurrentHashSet<SAbstractConcept>();
+  private static final Set<String> ourReportedConcepts = new ConcurrentHashSet<>();
+  private static final Set<SConceptId> ourReportedConceptIds = new ConcurrentHashSet<>();
   private boolean myReported = false;
 
-  private SAbstractConcept myConcept;
+  @NotNull
+  private final SConceptId myConceptId;
+  @NotNull
+  private final String myConceptName;
+  @Nullable
+  private final String myLanguageName; // null indicates we don't know concept name nor language name
 
-  public IllegalConceptDescriptor(@NotNull SAbstractConcept concept) {
-    myConcept = concept;
+  /**
+   * Covers the case when attempt to find a concept by its known id failed.
+   * Generally shall not face {@link MetaIdFactory#INVALID_CONCEPT_ID}, although
+   * tolerates the value ({@link #getConceptFqName} gives different name in this case).
+   *
+   * @param concept
+   */
+  public IllegalConceptDescriptor(@NotNull SConceptId concept) {
+    myConceptId = concept;
+    myConceptName = concept == MetaIdFactory.INVALID_CONCEPT_ID ? MetaIdFactory.INVALID_CONCEPT_NAME : "<unknown>";
+    myLanguageName = null;
+  }
+
+  /**
+   * General case when we know name of the concept being looked up
+   */
+  public IllegalConceptDescriptor(@NotNull SConceptId concept, @NotNull String conceptQualifiedName) {
+    myConceptId = concept;
+    myConceptName = conceptQualifiedName;
+    // language name won't be null even if conceptQualifiedName doesn't match expected pattern.
+    myLanguageName = NameUtil.namespaceFromConceptFQName(conceptQualifiedName);
   }
 
   private void reportWarn() {
@@ -54,11 +79,16 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
       return;
     }
     myReported = true;
-    String msg = "IllegalConceptDescriptor created for concept " + myConcept +
-        ". Please check the language " + myConcept.getLanguage() + " is built and compiled.";
-    if (!ourReportedConcepts.contains(myConcept)) {
-      ourReportedConcepts.add(myConcept);
-      LOG.warn(msg);
+    if (myLanguageName != null) {
+      if (ourReportedConcepts.add(myConceptName)) {
+        String msg = "IllegalConceptDescriptor created for concept %s. Please check the language %s is built and compiled.";
+        LOG.warn(String.format(msg, myConceptName, myLanguageName));
+      }
+    } else {
+      if (ourReportedConceptIds.add(myConceptId)) {
+        String msg = "IllegalConceptDescriptor created for concept %s.";
+        LOG.warn(String.format(msg, myConceptId));
+      }
     }
   }
 
@@ -66,13 +96,13 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   @Override
   public SConceptId getId() {
     reportWarn();
-    return MetaIdFactory.INVALID_CONCEPT_ID;
+    return myConceptId;
   }
 
   @Override
   public String getConceptFqName() {
     reportWarn();
-    return myConcept.getQualifiedName();
+    return myConceptName;
   }
 
   @Override

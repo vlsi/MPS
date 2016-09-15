@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +18,8 @@ package jetbrains.mps.smodel.adapter.structure.ref;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.property.InvalidProperty;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
@@ -81,9 +77,7 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
 
     SConceptId id = rd.getTargetConcept();
     ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
-    return concept.isInterfaceConcept() ?
-        MetaAdapterFactory.getInterfaceConcept(id, concept.getConceptFqName()) :
-        MetaAdapterFactory.getConcept(id, concept.getConceptFqName());
+    return MetaAdapterFactory.getAbstractConcept(concept);
   }
 
   @Override

@@ -45,10 +45,15 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
+/**
+ * {@implNote} This class shall stay pure factory of SXAdapter objects, and shall not contradict with
+ * their "proxy" aspect (i.e. implementation that needs to look for {@link ConceptDescriptor} and alike).
+ * Simply put, methods of this class shall not go outside, e.g. to {@link ConceptRegistry} or
+ * {@link jetbrains.mps.smodel.language.StructureRegistry}, like {@link #getConceptById(SConceptId)} does now.
+ */
 public abstract class MetaAdapterFactory {
   private static final ConcurrentMap<LangKey, SLanguage> ourLanguageIds = new ConcurrentHashMap<LangKey, SLanguage>();
   private static final ConcurrentMap<Pair<SConceptId, String>, SConcept> ourConceptIds = new ConcurrentHashMap<Pair<SConceptId, String>, SConcept>();
@@ -71,12 +76,6 @@ public abstract class MetaAdapterFactory {
   @NotNull
   public static SLanguage getLanguage(long uuidHigh, long uuidLow, String langName) {
     return getLanguage(MetaIdFactory.langId(uuidHigh, uuidLow), langName);
-  }
-
-  @NotNull
-  @Deprecated //todo: 2 hex values instead of UUID
-  public static SLanguage getLanguage(UUID lang, String langName) {
-    return getLanguage(MetaIdFactory.langId(lang), langName);
   }
 
   @NotNull
@@ -103,12 +102,6 @@ public abstract class MetaAdapterFactory {
   }
 
   @NotNull
-  @Deprecated //todo: 2 hex values instead of UUID
-  public static SConcept getConcept(UUID lang, long concept, String conceptName) {
-    return getConcept(MetaIdFactory.conceptId(lang, concept), conceptName);
-  }
-
-  @NotNull
   public static SInterfaceConcept getInterfaceConcept(SConceptId id, String conceptName) {
     SInterfaceConceptAdapterById c = new SInterfaceConceptAdapterById(id, conceptName);
     Pair<SConceptId, String> p = new Pair<SConceptId, String>(id, conceptName);
@@ -124,12 +117,6 @@ public abstract class MetaAdapterFactory {
   public static SInterfaceConcept getInterfaceConcept(@NotNull SLanguage language, long concept, @NotNull String shortConceptName) {
     final SLanguageId langId = MetaIdHelper.getLanguage(language);
     return getInterfaceConcept(MetaIdFactory.conceptId(langId, concept), NameUtil.conceptFQNameFromNamespaceAndShortName(language.getQualifiedName(), shortConceptName));
-  }
-
-  @NotNull
-  @Deprecated //todo: 2 hex values instead of UUID
-  public static SInterfaceConcept getInterfaceConcept(UUID lang, long concept, String conceptName) {
-    return getInterfaceConcept(MetaIdFactory.conceptId(lang, concept), conceptName);
   }
 
   @NotNull
@@ -151,12 +138,6 @@ public abstract class MetaAdapterFactory {
   }
 
   @NotNull
-  @Deprecated //todo: 2 hex values instead of UUID
-  public static SProperty getProperty(UUID lang, long concept, long prop, String propName) {
-    return getProperty(MetaIdFactory.propId(lang, concept, prop), propName);
-  }
-
-  @NotNull
   public static SReferenceLink getReferenceLink(SReferenceLinkId id, String refName) {
     SReferenceLinkAdapterById c = new SReferenceLinkAdapterById(id, refName);
     Pair<SReferenceLinkId, String> p = new Pair<SReferenceLinkId, String>(id, refName);
@@ -175,12 +156,6 @@ public abstract class MetaAdapterFactory {
   }
 
   @NotNull
-  @Deprecated //todo: 2 hex values instead of UUID
-  public static SReferenceLink getReferenceLink(UUID lang, long concept, long ref, String refName) {
-    return getReferenceLink(MetaIdFactory.refId(lang, concept, ref), refName);
-  }
-
-  @NotNull
   public static SContainmentLink getContainmentLink(SContainmentLinkId id, String linkName) {
     SContainmentLinkAdapterById c = new SContainmentLinkAdapterById(id, linkName);
     Pair<SContainmentLinkId, String> p = new Pair<SContainmentLinkId, String>(id, linkName);
@@ -196,12 +171,6 @@ public abstract class MetaAdapterFactory {
   public static SContainmentLink getContainmentLink(@NotNull SAbstractConcept concept, long link, String linkName) {
     final SConceptId cid = MetaIdHelper.getConcept(concept);
     return getContainmentLink(MetaIdFactory.linkId(cid, link), linkName);
-  }
-
-  @NotNull
-  @Deprecated //todo: 2 hex values instead of UUID
-  public static SContainmentLink getContainmentLink(UUID lang, long concept, long link, String linkName) {
-    return getContainmentLink(MetaIdFactory.linkId(lang, concept, link), linkName);
   }
 
   @NotNull
@@ -225,6 +194,12 @@ public abstract class MetaAdapterFactory {
    * which caused a stack overflow at last.
    */
   public static SAbstractConcept getConceptById(SConceptId id){
+    // FIXME the main defect of this method is that it goes to ConceptRegistry.getInstance()
+    //       and denies 'factory' nature of MAF. It's tempting to use this method e.g.
+    //       from SReferenceLinkAdapter.getTargetConcept(), but there shall be distinction between
+    //       instantiation of SXAdapter (what MAF) does, and its implementation (its "proxy" aspect)
+    //       that may access ConceptRegistry and alike to fulfil the contract. MAF doing the same
+    //       becomes dangerous.
     return MetaAdapterFactory.getAbstractConcept(ConceptRegistry.getInstance().getConceptDescriptor(id));
   }
 
