@@ -32,6 +32,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ProjectScope_old = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_QueryExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryParameter = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_QueryParameterExact = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryParameterIncludeReadOnly = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryParameterList = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryParameterScope = new ConceptPresentationBuilder().create();
@@ -93,20 +94,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 22:
         return props_QueryParameter;
       case 23:
-        return props_QueryParameterIncludeReadOnly;
+        return props_QueryParameterExact;
       case 24:
-        return props_QueryParameterList;
+        return props_QueryParameterIncludeReadOnly;
       case 25:
-        return props_QueryParameterScope;
+        return props_QueryParameterList;
       case 26:
-        return props_ReferencesExpression;
+        return props_QueryParameterScope;
       case 27:
-        return props_ScopeParameter;
+        return props_ReferencesExpression;
       case 28:
-        return props_ShowExpression_old;
+        return props_ScopeParameter;
       case 29:
-        return props_UsagesExpression;
+        return props_ShowExpression_old;
       case 30:
+        return props_UsagesExpression;
+      case 31:
         return props_WithStatement;
     }
     throw new IllegalStateException("Unknown concept " + c);

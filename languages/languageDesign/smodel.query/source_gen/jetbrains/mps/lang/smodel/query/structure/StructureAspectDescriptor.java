@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(31);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(32);
   /*package*/ final ConceptDescriptor myConceptAbstractPrintExpression_old = createDescriptorForAbstractPrintExpression_old();
   /*package*/ final ConceptDescriptor myConceptBLCommand_old = createDescriptorForBLCommand_old();
   /*package*/ final ConceptDescriptor myConceptBLExpression_old = createDescriptorForBLExpression_old();
@@ -42,6 +42,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptProjectScope_old = createDescriptorForProjectScope_old();
   /*package*/ final ConceptDescriptor myConceptQueryExpression = createDescriptorForQueryExpression();
   /*package*/ final ConceptDescriptor myConceptQueryParameter = createDescriptorForQueryParameter();
+  /*package*/ final ConceptDescriptor myConceptQueryParameterExact = createDescriptorForQueryParameterExact();
   /*package*/ final ConceptDescriptor myConceptQueryParameterIncludeReadOnly = createDescriptorForQueryParameterIncludeReadOnly();
   /*package*/ final ConceptDescriptor myConceptQueryParameterList = createDescriptorForQueryParameterList();
   /*package*/ final ConceptDescriptor myConceptQueryParameterScope = createDescriptorForQueryParameterScope();
@@ -75,19 +76,20 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     myIndexMap.put(myConceptProjectScope_old.getId(), 20);
     myIndexMap.put(myConceptQueryExpression.getId(), 21);
     myIndexMap.put(myConceptQueryParameter.getId(), 22);
-    myIndexMap.put(myConceptQueryParameterIncludeReadOnly.getId(), 23);
-    myIndexMap.put(myConceptQueryParameterList.getId(), 24);
-    myIndexMap.put(myConceptQueryParameterScope.getId(), 25);
-    myIndexMap.put(myConceptReferencesExpression.getId(), 26);
-    myIndexMap.put(myConceptScopeParameter.getId(), 27);
-    myIndexMap.put(myConceptShowExpression_old.getId(), 28);
-    myIndexMap.put(myConceptUsagesExpression.getId(), 29);
-    myIndexMap.put(myConceptWithStatement.getId(), 30);
+    myIndexMap.put(myConceptQueryParameterExact.getId(), 23);
+    myIndexMap.put(myConceptQueryParameterIncludeReadOnly.getId(), 24);
+    myIndexMap.put(myConceptQueryParameterList.getId(), 25);
+    myIndexMap.put(myConceptQueryParameterScope.getId(), 26);
+    myIndexMap.put(myConceptReferencesExpression.getId(), 27);
+    myIndexMap.put(myConceptScopeParameter.getId(), 28);
+    myIndexMap.put(myConceptShowExpression_old.getId(), 29);
+    myIndexMap.put(myConceptUsagesExpression.getId(), 30);
+    myIndexMap.put(myConceptWithStatement.getId(), 31);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractPrintExpression_old, myConceptBLCommand_old, myConceptBLExpression_old, myConceptCustomScope, myConceptExpressionHelpProvider, myConceptGlobalScope_old, myConceptHelpProvider, myConceptInstancesExpression, myConceptModelScope, myConceptModelsExpression, myConceptModulesExpression, myConceptModulesScope, myConceptNodesExpression, myConceptOperationHelpProvider, myConceptPrintExpression_old, myConceptPrintNodeExpression_old, myConceptPrintNodeReferenceExpression_old, myConceptPrintSequenceExpression_old, myConceptPrintTextExpression_old, myConceptProjectExpression_old, myConceptProjectScope_old, myConceptQueryExpression, myConceptQueryParameter, myConceptQueryParameterIncludeReadOnly, myConceptQueryParameterList, myConceptQueryParameterScope, myConceptReferencesExpression, myConceptScopeParameter, myConceptShowExpression_old, myConceptUsagesExpression, myConceptWithStatement);
+    return Arrays.asList(myConceptAbstractPrintExpression_old, myConceptBLCommand_old, myConceptBLExpression_old, myConceptCustomScope, myConceptExpressionHelpProvider, myConceptGlobalScope_old, myConceptHelpProvider, myConceptInstancesExpression, myConceptModelScope, myConceptModelsExpression, myConceptModulesExpression, myConceptModulesScope, myConceptNodesExpression, myConceptOperationHelpProvider, myConceptPrintExpression_old, myConceptPrintNodeExpression_old, myConceptPrintNodeReferenceExpression_old, myConceptPrintSequenceExpression_old, myConceptPrintTextExpression_old, myConceptProjectExpression_old, myConceptProjectScope_old, myConceptQueryExpression, myConceptQueryParameter, myConceptQueryParameterExact, myConceptQueryParameterIncludeReadOnly, myConceptQueryParameterList, myConceptQueryParameterScope, myConceptReferencesExpression, myConceptScopeParameter, myConceptShowExpression_old, myConceptUsagesExpression, myConceptWithStatement);
   }
 
   @Override
@@ -145,20 +147,22 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 22:
         return myConceptQueryParameter;
       case 23:
-        return myConceptQueryParameterIncludeReadOnly;
+        return myConceptQueryParameterExact;
       case 24:
-        return myConceptQueryParameterList;
+        return myConceptQueryParameterIncludeReadOnly;
       case 25:
-        return myConceptQueryParameterScope;
+        return myConceptQueryParameterList;
       case 26:
-        return myConceptReferencesExpression;
+        return myConceptQueryParameterScope;
       case 27:
-        return myConceptScopeParameter;
+        return myConceptReferencesExpression;
       case 28:
-        return myConceptShowExpression_old;
+        return myConceptScopeParameter;
       case 29:
-        return myConceptUsagesExpression;
+        return myConceptShowExpression_old;
       case 30:
+        return myConceptUsagesExpression;
+      case 31:
         return myConceptWithStatement;
       default:
         throw new IllegalStateException();
@@ -243,6 +247,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForQueryParameter() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.query.structure.QueryParameter", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760badf5L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).abstract_().sourceNode(new SNodePointer("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)", "4307205004131544565")).create();
+  }
+  private static ConceptDescriptor createDescriptorForQueryParameterExact() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.query.structure.QueryParameterExact", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x967fc67f6f09d70L)).super_("jetbrains.mps.lang.smodel.query.structure.QueryParameter").version(1).super_(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760badf5L)).parents("jetbrains.mps.lang.smodel.query.structure.QueryParameter").parentIds(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760badf5L)).alias("exact", "exact instances").sourceNode(new SNodePointer("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)", "677787792397344112")).create();
   }
   private static ConceptDescriptor createDescriptorForQueryParameterIncludeReadOnly() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.query.structure.QueryParameterIncludeReadOnly", MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ec86L)).super_("jetbrains.mps.lang.smodel.query.structure.QueryParameter").version(1).super_(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760badf5L)).parents("jetbrains.mps.lang.smodel.query.structure.QueryParameter").parentIds(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760badf5L)).alias("r/o+", "include read only").sourceNode(new SNodePointer("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)", "4307205004132412550")).create();

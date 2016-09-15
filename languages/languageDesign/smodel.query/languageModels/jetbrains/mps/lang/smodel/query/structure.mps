@@ -437,5 +437,13 @@
       <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
     </node>
   </node>
+  <node concept="1TIwiD" id="_BZ6vQW9PK">
+    <property role="3GE5qa" value="query.parameter" />
+    <property role="TrG5h" value="QueryParameterExact" />
+    <property role="R4oN_" value="exact instances" />
+    <property role="EcuMT" value="677787792397344112" />
+    <property role="34LRSv" value="exact" />
+    <ref role="1TJDcQ" node="3J6h25Q2URP" resolve="QueryParameter" />
+  </node>
 </model>
 
