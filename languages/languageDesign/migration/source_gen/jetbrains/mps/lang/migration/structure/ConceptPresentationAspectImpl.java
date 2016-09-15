@@ -45,7 +45,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ReflectionNodeReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RequiredDataDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformConsequence = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformStatement = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TransformStatement = new ConceptPresentationBuilder().deprecated().create();
 
   @Override
   @Nullable

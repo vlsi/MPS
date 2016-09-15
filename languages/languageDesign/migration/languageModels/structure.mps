@@ -18,6 +18,10 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
@@ -52,6 +56,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -220,6 +225,10 @@
     <node concept="PrWs8" id="5kfvu3HBCMl" role="PzmwI">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
+    <node concept="asaX9" id="_BZ6vQVZVP" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+      <property role="YLQ7P" value="Use smodel and smodel.query languages which have mode precise semantics" />
+    </node>
   </node>
   <node concept="PlHQZ" id="4SSaNAQkDVN">
     <property role="TrG5h" value="TransformConsequence" />
@@ -335,14 +344,14 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="sourceId" />
       <property role="20lbJX" value="0..1" />
-      <ref role="20lvS9" to="tp25:7jb4LXp8VrG" resolve="ReferenceId" />
+      <ref role="20lvS9" to="tp25:7jb4LXp8VrG" resolve="ReferenceLinkId" />
     </node>
     <node concept="1TJgyj" id="7jb4LXpbCEY" role="1TKVEi">
       <property role="IQ2ns" value="8415841354033040062" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="targetId" />
       <property role="20lbJX" value="0..1" />
-      <ref role="20lvS9" to="tp25:7jb4LXp8VrG" resolve="ReferenceId" />
+      <ref role="20lvS9" to="tp25:7jb4LXp8VrG" resolve="ReferenceLinkId" />
     </node>
   </node>
   <node concept="1TIwiD" id="2GZlO$G5O6U">
@@ -355,14 +364,14 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="sourceId" />
       <property role="20lbJX" value="0..1" />
-      <ref role="20lvS9" to="tp25:7jb4LXp8VrB" resolve="LinkId" />
+      <ref role="20lvS9" to="tp25:7jb4LXp8VrB" resolve="ContainmentLinkId" />
     </node>
     <node concept="1TJgyj" id="7jb4LXpbCEQ" role="1TKVEi">
       <property role="IQ2ns" value="8415841354033040054" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="targetId" />
       <property role="20lbJX" value="0..1" />
-      <ref role="20lvS9" to="tp25:7jb4LXp8VrB" resolve="LinkId" />
+      <ref role="20lvS9" to="tp25:7jb4LXp8VrB" resolve="ContainmentLinkId" />
     </node>
   </node>
   <node concept="1TIwiD" id="6szrkDoc28u">
