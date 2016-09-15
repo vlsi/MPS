@@ -19,6 +19,7 @@ import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.HashSet;
+import jetbrains.mps.openapi.editor.EditorComponentState;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.resolve.ReferenceResolverUtils;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
@@ -78,18 +79,25 @@ public class AutoResolver extends BaseEventProcessingEditorChecker {
         myProject.getModelAccess().executeUndoTransparentCommand(new Runnable() {
           @Override
           public void run() {
+            EditorComponentState state = editorContext.getEditorComponentState();
+
             // in case this becomes a performance bottleneck, consider reusing the editor's typechecking context  
             boolean doRecheckEditor = false;
             // Trying to resolve all broken references using scope and then using substitute actions. 
             for (SReference brokenRef : SetSequence.fromSet(badReferences)) {
-              boolean resolvedBySope = ResolverComponent.getInstance().resolveScopesOnly(brokenRef, editorContext.getRepository());
+              boolean resolvedByScope = ResolverComponent.getInstance().resolveScopesOnly(brokenRef, editorContext.getRepository());
+
+              if (resolvedByScope) {
+                doRecheckEditor = true;
+              }
+
               SNode sourceNode = brokenRef.getSourceNode();
               if (sourceNode == null) {
                 continue;
               }
               String referenceRole = brokenRef.getRole();
               EditorCell cellWithRole = editorComponent.findNodeCellWithRole(sourceNode, referenceRole);
-              if (!(resolvedBySope)) {
+              if (!(resolvedByScope)) {
                 if (cellWithRole == null) {
                   continue;
                 }
@@ -122,9 +130,14 @@ public class AutoResolver extends BaseEventProcessingEditorChecker {
               }
             }
 
-            if (doRecheckEditor && wasForceAutofix) {
-              // re-running next checker in force autofix mode 
-              myForceAutofix = true;
+            if (doRecheckEditor) {
+              // Something has changed in the editor, restore the previous state to avoid selection jump if possible 
+              editorContext.restoreEditorComponentState(state);
+
+              if (wasForceAutofix) {
+                // re-running next checker in force autofix mode 
+                myForceAutofix = true;
+              }
             }
           }
         });

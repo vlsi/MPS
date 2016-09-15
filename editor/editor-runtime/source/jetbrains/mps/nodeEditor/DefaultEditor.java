@@ -183,7 +183,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
       addCell(noRefCell);
     } else {
       final SNode referentNode = reference.getTargetNode();
-      if (referentNode == null || referentNode.getModel() == null || !VisibilityUtil.isVisible(getEditorContext().getModel(), referentNode.getModel())) {
+      if (referentNode == null || referentNode.getModel() == null) {
         //todo do we need this?
         String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
         EditorCell errorCell = createErrorCell(resolveInfo != null ? resolveInfo : "?" + referenceLink.getName() + "?", referenceLink);
