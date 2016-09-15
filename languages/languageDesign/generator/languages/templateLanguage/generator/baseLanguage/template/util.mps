@@ -14,6 +14,7 @@
     <import index="tpf8" ref="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -57,6 +58,9 @@
       <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
+      </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
@@ -1065,6 +1069,93 @@
       <node concept="37vLTG" id="5c0bNVh4NxX" role="3clF46">
         <property role="TrG5h" value="s" />
         <node concept="17QB3L" id="5c0bNVh4NxY" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5AyHvbfI0Wo" role="jymVt" />
+    <node concept="2YIFZL" id="5AyHvbfI1az" role="jymVt">
+      <property role="TrG5h" value="markHasIncomingRefs" />
+      <node concept="3cqZAl" id="5AyHvbfI1a_" role="3clF45" />
+      <node concept="3Tm1VV" id="5AyHvbfI1aA" role="1B3o_S" />
+      <node concept="3clFbS" id="5AyHvbfI1aB" role="3clF47">
+        <node concept="3SKdUt" id="5AyHvbfI6Py" role="3cqZAp">
+          <node concept="3SKdUq" id="5AyHvbfI6P$" role="3SKWNk">
+            <property role="3SKdUp" value=" just care about the fact there are references, not their number nor nature" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="5AyHvbfI2Ve" role="3cqZAp">
+          <node concept="2OqwBi" id="5AyHvbfI2ZZ" role="3clFbG">
+            <node concept="37vLTw" id="5AyHvbfI2Vd" role="2Oq$k0">
+              <ref role="3cqZAo" node="5AyHvbfI1lW" resolve="n" />
+            </node>
+            <node concept="liA8E" id="5AyHvbfI3o_" role="2OqNvi">
+              <ref role="37wK5l" to="mhbf:~SNode.putUserObject(java.lang.Object,java.lang.Object):void" resolve="putUserObject" />
+              <node concept="Xl_RD" id="5AyHvbfI3zR" role="37wK5m">
+                <property role="Xl_RC" value="hasIncomingRefs" />
+              </node>
+              <node concept="10M0yZ" id="5AyHvbfI3L8" role="37wK5m">
+                <ref role="1PxDUh" to="wyt6:~Boolean" resolve="Boolean" />
+                <ref role="3cqZAo" to="wyt6:~Boolean.TRUE" resolve="TRUE" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="5AyHvbfI1lW" role="3clF46">
+        <property role="TrG5h" value="n" />
+        <node concept="3uibUv" id="5AyHvbfI3ih" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="5AyHvbfI1mT" role="lGtFl">
+        <node concept="TZ5HA" id="5AyHvbfI1mU" role="TZ5H$">
+          <node concept="1dT_AC" id="5AyHvbfI1mV" role="1dT_Ay">
+            <property role="1dT_AB" value="Record the fact template model node has incoming references from the same model (use it as a hint whether anyone can try" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5AyHvbfI1nX" role="TZ5H$">
+          <node concept="1dT_AC" id="5AyHvbfI1nY" role="1dT_Ay">
+            <property role="1dT_AB" value="to resolve output using this template node as identity)" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2YIFZL" id="5AyHvbfI1vt" role="jymVt">
+      <property role="TrG5h" value="hasIncomingRefs" />
+      <node concept="10P_77" id="5AyHvbfI1AZ" role="3clF45" />
+      <node concept="3Tm1VV" id="5AyHvbfI1vw" role="1B3o_S" />
+      <node concept="3clFbS" id="5AyHvbfI1vx" role="3clF47">
+        <node concept="3clFbF" id="5AyHvbfI3Sv" role="3cqZAp">
+          <node concept="3clFbC" id="5AyHvbfI4jW" role="3clFbG">
+            <node concept="10M0yZ" id="5AyHvbfI4rB" role="3uHU7w">
+              <ref role="1PxDUh" to="wyt6:~Boolean" resolve="Boolean" />
+              <ref role="3cqZAo" to="wyt6:~Boolean.TRUE" resolve="TRUE" />
+            </node>
+            <node concept="2OqwBi" id="5AyHvbfI3ZS" role="3uHU7B">
+              <node concept="37vLTw" id="5AyHvbfI3St" role="2Oq$k0">
+                <ref role="3cqZAo" node="5AyHvbfI1Fb" resolve="n" />
+              </node>
+              <node concept="liA8E" id="5AyHvbfI46a" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SNode.getUserObject(java.lang.Object):java.lang.Object" resolve="getUserObject" />
+                <node concept="Xl_RD" id="5AyHvbfI49$" role="37wK5m">
+                  <property role="Xl_RC" value="hasIncomingRefs" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="5AyHvbfI1Fb" role="3clF46">
+        <property role="TrG5h" value="n" />
+        <node concept="3uibUv" id="5AyHvbfI3iC" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="5AyHvbfI1G9" role="lGtFl">
+        <node concept="TZ5HA" id="5AyHvbfI1Ga" role="TZ5H$">
+          <node concept="1dT_AC" id="5AyHvbfI1Gb" role="1dT_Ay">
+            <property role="1dT_AB" value="Tells if there were recorded incoming references to the given node (from the same template model only)" />
+          </node>
+        </node>
       </node>
     </node>
   </node>

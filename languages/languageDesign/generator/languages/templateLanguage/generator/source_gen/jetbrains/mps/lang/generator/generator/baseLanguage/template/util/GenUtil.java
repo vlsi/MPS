@@ -98,4 +98,19 @@ public class GenUtil {
 
     return sb.toString();
   }
+
+  /**
+   * Record the fact template model node has incoming references from the same model (use it as a hint whether anyone can try
+   * to resolve output using this template node as identity)
+   */
+  public static void markHasIncomingRefs(SNode n) {
+    //  just care about the fact there are references, not their number nor nature 
+    n.putUserObject("hasIncomingRefs", Boolean.TRUE);
+  }
+  /**
+   * Tells if there were recorded incoming references to the given node (from the same template model only)
+   */
+  public static boolean hasIncomingRefs(SNode n) {
+    return n.getUserObject("hasIncomingRefs") == Boolean.TRUE;
+  }
 }

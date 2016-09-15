@@ -49,16 +49,21 @@
       <node id="5980832251990194586" at="94,129,95,23" concept="2" />
       <node id="5980832251990194313" at="97,5,98,0" concept="9" />
       <node id="5980832251990194315" at="98,0,99,25" concept="7" />
+      <node id="6458924870074396002" at="106,51,107,83" concept="8" />
+      <node id="6458924870074379982" at="107,83,108,53" concept="2" />
+      <node id="6458924870074383903" at="113,50,114,62" concept="7" />
       <node id="8285036680620268545" at="19,0,21,0" concept="1" trace="GenUtil#()V" />
       <node id="8285036680620283505" at="23,0,26,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="2367250605808677395" at="66,0,69,0" concept="11" trace="markExtractedMethodForTemplate#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
       <node id="2367250605808678859" at="73,0,76,0" concept="11" trace="getExtractedMethodName#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="8920265417895138130" at="78,55,81,5" concept="4" />
+      <node id="6458924870074374109" at="113,0,116,0" concept="11" trace="hasIncomingRefs#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="2367250605810421619" at="30,0,34,0" concept="11" trace="saveListVar#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;I)Ljava/lang/String;" />
       <node id="2367250605810429040" at="34,0,38,0" concept="11" trace="saveNodeVar#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;I)Ljava/lang/String;" />
       <node id="8285036680620283566" at="39,239,43,5" concept="4" />
       <node id="2367250605810722962" at="58,0,62,0" concept="11" trace="isNodeVariable#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="5980832251990194584" at="92,12,96,7" concept="0" />
+      <node id="6458924870074372771" at="106,0,110,0" concept="11" trace="markHasIncomingRefs#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8285036680620283495" at="21,88,26,24" concept="6" />
       <node id="2367250605809323106" at="47,0,52,0" concept="11" trace="getVarHack#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="2367250605810409698" at="53,0,58,0" concept="11" trace="isCollectionVariable#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -75,6 +80,7 @@
       <scope id="8920265417895138131" at="79,189,80,353" />
       <scope id="5980832251990194543" at="88,52,89,21" />
       <scope id="5980832251990194561" at="90,66,91,21" />
+      <scope id="6458924870074374113" at="113,50,114,62" />
       <scope id="8285036680620268545" at="19,0,21,0" />
       <scope id="2367250605810421623" at="30,92,32,54" />
       <scope id="2367250605810429049" at="34,92,36,54" />
@@ -82,6 +88,7 @@
       <scope id="2367250605810722965" at="58,82,60,46">
         <var name="n" id="2367250605810751417" />
       </scope>
+      <scope id="6458924870074372775" at="106,51,108,53" />
       <scope id="8285036680620283505" at="23,0,26,0">
         <var name="it" id="8285036680620283505" />
       </scope>
@@ -101,6 +108,9 @@
         <var name="node" id="2367250605808708753" />
       </scope>
       <scope id="5980832251990194585" at="92,14,95,23" />
+      <scope id="6458924870074374109" at="113,0,116,0">
+        <var name="n" id="6458924870074374859" />
+      </scope>
       <scope id="2367250605810421619" at="30,0,34,0">
         <var name="context" id="2367250605810426162" />
         <var name="node" id="2367250605810426164" />
@@ -114,6 +124,9 @@
       <scope id="2367250605810722962" at="58,0,62,0">
         <var name="context" id="2367250605810722975" />
         <var name="node" id="2367250605810722977" />
+      </scope>
+      <scope id="6458924870074372771" at="106,0,110,0">
+        <var name="n" id="6458924870074373500" />
       </scope>
       <scope id="2367250605809323106" at="47,0,52,0">
         <var name="context" id="2367250605809323587" />
@@ -159,7 +172,7 @@
         <var name="s" id="5980832251990194301" />
       </scope>
       <unit id="8285036680620283505" at="22,92,26,5" name="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil$1" />
-      <unit id="8285036680620268543" at="17,0,102,0" name="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil" />
+      <unit id="8285036680620268543" at="17,0,117,0" name="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil" />
     </file>
   </root>
 </debug-info>

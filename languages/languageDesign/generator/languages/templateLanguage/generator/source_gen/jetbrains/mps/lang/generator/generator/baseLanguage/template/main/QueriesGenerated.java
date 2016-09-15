@@ -63,6 +63,7 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor;
 import jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PatternRef__BehaviorDescriptor;
 import jetbrains.mps.lang.generator.behavior.IGeneratorParameter__BehaviorDescriptor;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.TemplateVarContext;
 
@@ -1338,6 +1339,9 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_99767819676237647(final IfMacroContext _context) {
     String innervar = GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
     return innervar.startsWith("tnode");
+  }
+  public static boolean ifMacro_Condition_6458924870075003617(final IfMacroContext _context) {
+    return GenUtil.hasIncomingRefs(_context.getNode());
   }
   public static boolean ifMacro_Condition_2338220375237894709(final IfMacroContext _context) {
     SNode original = SNodeOperations.getParent(_context.getNode());
@@ -3128,6 +3132,24 @@ public class QueriesGenerated {
       SNode rc = SLinkOperations.getTarget(n, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fca296532L, 0x11055ee07edL, "ruleConsequence"));
       if ((rc == null) || SNodeOperations.getConcept(rc) == MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x110138ccc4bL, "jetbrains.mps.lang.generator.structure.RuleConsequence")) {
         _context.showErrorMessage(_context.getOriginalCopiedInputNode(n), "Empty rule consequence");
+      }
+    }
+  }
+  public static void mappingScript_CodeBlock_6458924870074299562(final MappingScriptContext _context) {
+    SModelReference currentModel = _context.getModel().getReference();
+    for (SNode node : SModelOperations.nodes(_context.getModel(), null)) {
+      if (RuleUtil.isTemplateLanguageElement(node)) {
+        continue;
+      }
+      for (SReference ref : node.getReferences()) {
+        if (!(currentModel.equals(ref.getTargetSModelReference()))) {
+          continue;
+        }
+        SNode targetNode = ref.getTargetNode();
+        if (targetNode == null) {
+          continue;
+        }
+        GenUtil.markHasIncomingRefs(targetNode);
       }
     }
   }
