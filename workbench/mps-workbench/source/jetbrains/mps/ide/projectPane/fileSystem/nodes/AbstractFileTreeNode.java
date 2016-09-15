@@ -19,6 +19,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 import java.util.LinkedList;
@@ -30,11 +31,11 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
   protected Project myProject;
   private boolean myShowFullPath;
 
-  public AbstractFileTreeNode(Project project, VirtualFile file) {
+  public AbstractFileTreeNode(Project project, @NotNull VirtualFile file) {
     this(project, file, false);
   }
 
-  public AbstractFileTreeNode(Project project, VirtualFile file, boolean showFullPath) {
+  public AbstractFileTreeNode(Project project, @NotNull VirtualFile file, boolean showFullPath) {
     myFile = file;
     myProvider = project.getComponent(VcsFileStatusProvider.class);
     myProject = project;
@@ -56,7 +57,7 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
     if (myShowFullPath) {
       setAdditionalText(myFile.getPresentableUrl());
     }
-    setNodeIdentifier(myFile.getPath() != null ? myFile.getPath() : "");
+    setNodeIdentifier(myFile.getPath());
     setColor(myProvider.getFileStatus(myFile).getColor());
   }
 
