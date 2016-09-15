@@ -130,6 +130,9 @@ public final class TemplateProcessor implements ITemplateProcessor {
     SNode outputNode = env.createOutputNode(rtTemplateNode.getConcept());
 
     // use same env method as reduce_TemplateNode does
+    // XXX reduce_TemplateNode looks into incoming references now, not to save template node id if there are no
+    //     references inside template model (and hence no attempt to restore the reference using template node id)
+    //     Would be great to do smth similar here
     env.nodeCopied(context, outputNode, rtTemplateNode.getTemplateNodeId());
     env.registerLabel(context.getInput(), outputNode, context.getInputName()); // XXX reduce_TemplateNode doesn't do that
 
@@ -145,22 +148,17 @@ public final class TemplateProcessor implements ITemplateProcessor {
       } else {
         outputChildNodes = applyTemplate(rtTemplateChildNode, context);
       }
-      SConcept originalConcept = rtTemplateChildNode.getConcept();
       SContainmentLink role = rtTemplateChildNode.getRoleInParent();
       RoleValidator validator = myGenerator.getChildRoleValidator(outputNode, role);
       for (SNode outputChildNode : outputChildNodes) {
-        // returned node is subconcept of template node => fine
-        final boolean notSubConcept = !(outputChildNode.getConcept().isSubConceptOf(originalConcept));
-        if (notSubConcept) {
-          // check child
-          Status status = validator.validate(outputChildNode);
-          if (status != null) {
-            myGenerator.getLogger().warning(rtTemplateChildNode.getTemplateNodeReference(), status.getMessage("apply template"), status.describe(
-                GeneratorUtil.describe(context.getInput(), "input"),
-                GeneratorUtil.describe(outputNode, "output"),
-                GeneratorUtil.describe(rtTemplateNode.getTemplateNodeReference(), "template node")
-            ));
-          }
+        // check child
+        Status status = validator.validate(outputChildNode);
+        if (status != null) {
+          myGenerator.getLogger().warning(rtTemplateChildNode.getTemplateNodeReference(), status.getMessage("apply template"), status.describe(
+              GeneratorUtil.describe(context.getInput(), "input"),
+              GeneratorUtil.describe(outputNode, "output"),
+              GeneratorUtil.describe(rtTemplateNode.getTemplateNodeReference(), "template node")
+          ));
         }
         outputNode.addChild(role, outputChildNode);
       }
