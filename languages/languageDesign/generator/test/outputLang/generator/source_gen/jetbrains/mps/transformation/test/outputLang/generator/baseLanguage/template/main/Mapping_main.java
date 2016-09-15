@@ -49,7 +49,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1209603916390"), "main", model, false);
     rules = TemplateUtil.<TemplateReductionRule>asCollection(new Mapping_main.PatternRule0(), new Mapping_main.PatternRule1(), new Mapping_main.PatternRule2(), new Mapping_main.PatternRule3(), new Mapping_main.PatternRule4(), new Mapping_main.PatternRule5(), new Mapping_main.PatternRule6(), new Mapping_main.PatternRule7(), new Mapping_main.ReductionRule0(), new Mapping_main.ReductionRule1(), new Mapping_main.ReductionRule2(), new Mapping_main.ReductionRule3(), new Mapping_main.ReductionRule4());
     rootRules = TemplateUtil.<TemplateRootMappingRule>asCollection(new Mapping_main.RootMappingRule0());
-    weavings = TemplateUtil.<TemplateWeavingRule>asCollection(new Mapping_main.WeavingRule0());
+    weavings = TemplateUtil.<TemplateWeavingRule>asCollection(new Mapping_main.WeavingRule0(), new Mapping_main.WeavingRule1());
   }
   @Override
   public Collection<TemplateReductionRule> getReductionRules() {
@@ -628,6 +628,37 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
         TemplateContext innerContext = context.subContext(itnode);
         NodeWeaveFacility.WeaveContext weaveContext = new WeaveContextImpl(outputContextNode, innerContext, WeavingRule0.this);
         Collection<SNode> innerResult = environment.prepareWeave(weaveContext, new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3571912445009918068")).weaveTemplate(new Template_weave_Statement());
+        if (innerResult != null) {
+          tlist1.addAll(innerResult);
+        }
+      }
+      return tlist1 != null && !(tlist1.isEmpty());
+    }
+  }
+  public class WeavingRule1 extends WeaveRuleBase implements TemplateWeavingRule {
+    public WeavingRule1() {
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6458924870076051564"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement"), false);
+    }
+    @Override
+    public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
+      return QueriesGenerated.baseMappingRule_Condition_6458924870076058556(new WeavingMappingRuleContext(context, getRuleNode()));
+    }
+    @NotNull
+    @Override
+    public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
+      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_6458924870076051566(new WeavingMappingRuleContext(context, getRuleNode()));
+    }
+    @Override
+    public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
+      final List<SNode> tlist1 = new ArrayList<SNode>();
+      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_6458924870076075775(new SourceSubstituteMacroNodesContext(context, new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6458924870076075773")));
+      for (SNode itnode : weaveEachList1) {
+        if (itnode == null) {
+          continue;
+        }
+        TemplateContext innerContext = context.subContext(itnode);
+        NodeWeaveFacility.WeaveContext weaveContext = new WeaveContextImpl(outputContextNode, innerContext, WeavingRule1.this);
+        Collection<SNode> innerResult = environment.prepareWeave(weaveContext, new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6458924870076075773")).weaveTemplate(new Template_weave_StmtToCons());
         if (innerResult != null) {
           tlist1.addAll(innerResult);
         }

@@ -68,6 +68,10 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_weave_Statement();
     }
+    if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6458924870076077829"))) {
+      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
+      return new Template_weave_StmtToCons();
+    }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412775"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
       return new Template_RootCustom();

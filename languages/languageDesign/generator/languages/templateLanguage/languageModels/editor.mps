@@ -1662,9 +1662,6 @@
           <node concept="3F1sOY" id="hf2dFyB" role="3EZMnx">
             <property role="1$x2rV" value="&lt;main context node&gt;" />
             <ref role="1NtTu8" to="tpf8:hf2ejkb" resolve="contextNodeQuery" />
-            <node concept="xShMh" id="6t_vhr$lU3" role="3F10Kt">
-              <property role="VOm3f" value="true" />
-            </node>
           </node>
           <node concept="VPM3Z" id="hEU$PrL" role="3F10Kt">
             <property role="VOm3f" value="false" />

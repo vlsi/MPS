@@ -17,7 +17,6 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
-import jetbrains.mps.generator.template.TemplateFragmentContext;
 
 @Generated
 public class Template_weave_Statement extends TemplateDeclarationBase {
@@ -89,29 +88,9 @@ public class Template_weave_Statement extends TemplateDeclarationBase {
     }
     return tnode1;
   }
-  protected SNode applyPart1(@NotNull final TemplateContext context) throws GenerationException {
-    final TemplateExecutionEnvironment environment = context.getEnvironment();
-    final SNode tnode1 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment"));
-    try {
-      TemplateContext context1 = context.subContext();
-      {
-        final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart"));
-        try {
-          SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, 0x57d533a7af15ed3eL, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3571912445009937427(new PropertyMacroContext(context1, "to ctor ", propertyMacro_6c7ipi_c0a0c0a0b0b0c0d))));
-        } finally {
-        }
-        if (tnode2 != null) {
-          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, 0x57d533a7af16ff73L, "commentPart"), tnode2);
-        }
-        // TODO validate child 
-      }
-    } finally {
-    }
-    return tnode1;
-  }
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
-    return TemplateUtil.asList(applyPart0(context), applyPart1(context));
+    return TemplateUtil.singletonList(applyPart0(context));
   }
 
   @Override
@@ -119,14 +98,8 @@ public class Template_weave_Statement extends TemplateDeclarationBase {
     final TemplateContext templateContext = weaveSupport.getTemplateContext();
     SNode tnodepart0 = applyPart0(templateContext);
     weaveSupport.weaveNode(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), tnodepart0);
-    SNode tnodepart1 = applyPart1(templateContext);
-    {
-      SNode contextNode1 = QueriesGenerated.templateFragment_ContextNodeQuery_3571912445009937447(new TemplateFragmentContext(templateContext, weaveContext.getContextNode(), new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3571912445009937429")));
-      weaveSupport.weaveNode(contextNode1, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnodepart1);
-    }
-    return TemplateUtil.asList(tnodepart0, tnodepart1);
+    return TemplateUtil.singletonList(tnodepart0);
   }
   private static SNodePointer propertyMacro_6c7ipi_c0a0c0a0c0c = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3571912445009934893");
   private static SNodePointer propertyMacro_6c7ipi_c0a0c0a0b0b0b0b0b0e0c0c = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3571912445009937376");
-  private static SNodePointer propertyMacro_6c7ipi_c0a0c0a0b0b0c0d = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3571912445009937426");
 }
