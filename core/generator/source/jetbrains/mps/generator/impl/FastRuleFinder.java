@@ -36,29 +36,25 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Cache of rules for a given concept.
- * IMPLEMENTATION NOTE:
- * Despite switch to SConcept instead of concept names, we still use concept fqn as key, not SAbstractConcept object,
- * as hashCode/equals methods of SAbstractConcept are ineffective now (SConceptAdapter#hashCode == 0 always).
  */
 public class FastRuleFinder<T extends TemplateRuleForConcept> {
 
-  private Map<String, List<T>> myApplicableRules = new HashMap<String, List<T>>();
+  private Map<SAbstractConcept, List<T>> myApplicableRules = new HashMap<>();
 
   public FastRuleFinder(Iterable<T> reductionRules) {
     // rules exactly for the given concept, in the order they come from MC
-    Map<String, List<T>> specificRules = new HashMap<String, List<T>>();
+    Map<SAbstractConcept, List<T>> specificRules = new HashMap<>();
     // rules applicable based on concept hierarchy - has lower priority than more specific rules
     // map concept to rules that come from ancestors of the given concept.
-    Map<String, List<T>> inheritedRules = new HashMap<String, List<T>>();
+    Map<SAbstractConcept, List<T>> inheritedRules = new HashMap<>();
 
     for (T rule : reductionRules) {
       final SAbstractConcept applicableConcept = rule.getApplicableConcept();
-      String applicableConceptFqName = applicableConcept.getQualifiedName();
 
-      List<T> rules = specificRules.get(applicableConceptFqName);
+      List<T> rules = specificRules.get(applicableConcept);
       if (rules == null) {
         rules = new LinkedList<T>();
-        specificRules.put(applicableConceptFqName, rules);
+        specificRules.put(applicableConcept, rules);
       }
       rules.add(rule);
 
@@ -67,18 +63,17 @@ public class FastRuleFinder<T extends TemplateRuleForConcept> {
         // don't duplicate the rule for the initial concept in inheritedRules - it already is in specificRules
         allDescendantConcepts.remove(applicableConcept);
         for (SAbstractConcept descendant : allDescendantConcepts) {
-          final String conceptFqName = descendant.getQualifiedName();
-          rules = inheritedRules.get(conceptFqName);
+          rules = inheritedRules.get(descendant);
           if (rules == null) {
             rules = new LinkedList<T>();
-            inheritedRules.put(conceptFqName, rules);
+            inheritedRules.put(descendant, rules);
           }
           rules.add(rule);
         }
       }
     }
 
-    for (Entry<String, List<T>> entry : specificRules.entrySet()) {
+    for (Entry<SAbstractConcept, List<T>> entry : specificRules.entrySet()) {
       List<T> exact = entry.getValue();
       List<T> inherited = inheritedRules.remove(entry.getKey());
       List<T> rules;
@@ -92,14 +87,14 @@ public class FastRuleFinder<T extends TemplateRuleForConcept> {
       }
       myApplicableRules.put(entry.getKey(), rules);
     }
-    for (Entry<String, List<T>> entry : inheritedRules.entrySet()) {
+    for (Entry<SAbstractConcept, List<T>> entry : inheritedRules.entrySet()) {
       List<T> inherited = entry.getValue();
       myApplicableRules.put(entry.getKey(), new ArrayList<T>(inherited));
     }
   }
 
   public List<T> findReductionRules(SNode node) {
-    return myApplicableRules.get(node.getConcept().getQualifiedName());
+    return myApplicableRules.get(node.getConcept());
   }
 
   public static class BlockedReductionsData {
