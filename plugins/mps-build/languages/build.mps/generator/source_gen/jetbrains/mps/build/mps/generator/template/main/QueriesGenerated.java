@@ -112,11 +112,10 @@ public class QueriesGenerated {
     if (((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files")) == null) {
       return "???";
     }
-    SNode path = SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x44e5dd192e77725eL, 0x44e5dd192e77725fL, "targetPath"));
-    final String pathText = BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(path);
+    final String pathText = BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(_context.getNode());
     String result = ListSequence.fromList(SLinkOperations.getChildren(((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._2(), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6a3e160a3efe6274L, 0x3c765492deb1ce79L, "jarLocations"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a3a41(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L, 0x3c765492deb1a385L, "path"))), pathText);
+        return eq_x583g4_a0a0a0a0a0a0a2a41(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L, 0x3c765492deb1a385L, "path"))), pathText);
       }
     }).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -128,17 +127,17 @@ public class QueriesGenerated {
     }
 
     LocalArtifacts outputFiles = ((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._0();
-    Tuples._2<SNode, String> location = outputFiles.getResource(path);
+    Tuples._2<SNode, String> location = outputFiles.getResource(_context.getNode());
     if (location._0() == null) {
-      String jarName = BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(path, Context.defaultContext(_context).getMacros(path));
-      _context.showErrorMessage(path, "cannot find `" + jarName + "' in local layout");
+      String jarName = BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(_context.getNode(), Context.defaultContext(_context).getMacros(_context.getNode()));
+      _context.showErrorMessage(_context.getNode(), "cannot find `" + jarName + "' in local layout");
       return "???";
     }
     SNode container = ((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._1();
     try {
       return new ArtifactsRelativePathHelper(outputFiles, container).getRelativePath(SNodeOperations.cast(location._0(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"))) + location._1();
     } catch (ArtifactsRelativePathHelper.RelativePathException ex) {
-      String jarName = BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(path, Context.defaultContext(_context).getMacros(path));
+      String jarName = BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(_context.getNode(), Context.defaultContext(_context).getMacros(_context.getNode()));
       _context.showErrorMessage(_context.getNode(), "cannot build relative path to `" + jarName + "': " + ex.getMessage());
       return "";
     }
@@ -985,12 +984,6 @@ public class QueriesGenerated {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, 0x3b60c4a45c197e1aL, "path"));
       }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x44e5dd192e77725eL, "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildSourcePath"));
-        SLinkOperations.setTarget(loopnode, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x44e5dd192e77725eL, 0x44e5dd192e77725fL, "targetPath"), it);
-        return loopnode;
-      }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_8654221991637263183(final SourceSubstituteMacroNodesContext _context) {
@@ -1515,7 +1508,7 @@ public class QueriesGenerated {
     }
     return partitioner;
   }
-  private static boolean eq_x583g4_a0a0a0a0a0a0a3a41(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a2a41(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean isNotEmptyString(String str) {
