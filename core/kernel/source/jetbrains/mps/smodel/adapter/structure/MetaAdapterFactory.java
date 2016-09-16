@@ -47,9 +47,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
 /**
  * {@implNote} This class shall stay pure FACTORY of SXAdapter objects (i.e. instantiate them only), and shall not contradict with
@@ -58,7 +55,7 @@ import java.util.concurrent.ConcurrentMap;
  * {@link jetbrains.mps.smodel.language.StructureRegistry}, like {@link #getConceptById(SConceptId)} does now.
  */
 public abstract class MetaAdapterFactory {
-  private static final ConcurrentMap<LangKey, SLanguage> ourLanguageIds = new ConcurrentHashMap<LangKey, SLanguage>();
+  private static final TLongObjectHashMap<List<SLanguageAdapterById>> ourLanguages = new TLongObjectHashMap<>(200);
 
   // there are 5 thousand concepts in MPS alone, don't need to be shy, rehash would be more expensive.
   private static final TLongObjectHashMap<List<ConceptBucket>> ourConcepts = new TLongObjectHashMap<>(5000);
@@ -69,15 +66,26 @@ public abstract class MetaAdapterFactory {
 
   @NotNull
   public static SLanguage getLanguage(@NotNull SLanguageId id, @NotNull String langName) {
-    SLanguageAdapterById l = new SLanguageAdapterById(id, langName);
-    LangKey p = new LangKey(id, langName);
-    SLanguage result = ourLanguageIds.putIfAbsent(p, l);
-    return result != null ? result : l;
+    // FIXME change templates to invoke getLanguage(long,long,string) instead
+    return getLanguage(id.getHighBits(), id.getLowBits(), langName);
   }
 
   @NotNull
   public static SLanguage getLanguage(long uuidHigh, long uuidLow, String langName) {
-    return getLanguage(MetaIdFactory.langId(uuidHigh, uuidLow), langName);
+    List<SLanguageAdapterById> list = getBucketList(ourLanguages, uuidHigh * 17 + uuidLow);
+    //noinspection SynchronizationOnLocalVariableOrMethodParameter
+    synchronized (list) {
+      for (int i = 0, x = list.size(); i < x; i++) {
+        SLanguageAdapterById rv = list.get(i);
+        SLanguageId id = rv.getId();
+        if (uuidHigh == id.getHighBits() && uuidLow == id.getLowBits()) {
+          return rv;
+        }
+      }
+      SLanguageAdapterById rv = new SLanguageAdapterById(MetaIdFactory.langId(uuidHigh, uuidLow), langName);
+      list.add(rv);
+      return rv;
+    }
   }
 
   @NotNull
@@ -87,8 +95,8 @@ public abstract class MetaAdapterFactory {
 
   @NotNull
   public static SConcept getConcept(SConceptId id, String conceptName) {
-    UUID langId = id.getLanguageId().getIdValue();
-    return getConcept(langId.getMostSignificantBits(), langId.getLeastSignificantBits(), id.getIdValue(), conceptName);
+    SLanguageId langId = id.getLanguageId();
+    return getConcept(langId.getHighBits(), langId.getLowBits(), id.getIdValue(), conceptName);
   }
 
   @NotNull
@@ -109,14 +117,14 @@ public abstract class MetaAdapterFactory {
   }
 
   public static SConcept getConcept(@NotNull SLanguage language, long concept, @NotNull String shortConceptName) {
-    final UUID langId = MetaIdHelper.getLanguage(language).getIdValue();
-    return getConcept(langId.getMostSignificantBits(), langId.getLeastSignificantBits(), concept, NameUtil.conceptFQNameFromNamespaceAndShortName(language.getQualifiedName(), shortConceptName));
+    final SLanguageId langId = MetaIdHelper.getLanguage(language);
+    return getConcept(langId.getHighBits(), langId.getLowBits(), concept, NameUtil.conceptFQNameFromNamespaceAndShortName(language.getQualifiedName(), shortConceptName));
   }
 
   @NotNull
   public static SInterfaceConcept getInterfaceConcept(SConceptId id, String conceptName) {
-    UUID langId = id.getLanguageId().getIdValue(); // FIXME SLanguageId shall get accessors to avoid excessive wrap into UUID
-    return getInterfaceConcept(langId.getMostSignificantBits(), langId.getLeastSignificantBits(), id.getIdValue(), conceptName);
+    SLanguageId langId = id.getLanguageId();
+    return getInterfaceConcept(langId.getHighBits(), langId.getLowBits(), id.getIdValue(), conceptName);
   }
 
   @NotNull
@@ -137,15 +145,15 @@ public abstract class MetaAdapterFactory {
   }
 
   public static SInterfaceConcept getInterfaceConcept(@NotNull SLanguage language, long concept, @NotNull String shortConceptName) {
-    final UUID langId = MetaIdHelper.getLanguage(language).getIdValue();
-    return getInterfaceConcept(langId.getMostSignificantBits(), langId.getLeastSignificantBits(), concept, NameUtil.conceptFQNameFromNamespaceAndShortName(language.getQualifiedName(), shortConceptName));
+    final SLanguageId langId = MetaIdHelper.getLanguage(language);
+    return getInterfaceConcept(langId.getHighBits(), langId.getLowBits(), concept, NameUtil.conceptFQNameFromNamespaceAndShortName(language.getQualifiedName(), shortConceptName));
   }
 
   @NotNull
   public static SProperty getProperty(SPropertyId id, String propName) {
     SConceptId cid = id.getConceptId();
-    UUID langId = cid.getLanguageId().getIdValue();
-    return getProperty(langId.getMostSignificantBits(), langId.getLeastSignificantBits(), cid.getIdValue(), id.getIdValue(), propName);
+    SLanguageId langId = cid.getLanguageId();
+    return getProperty(langId.getHighBits(), langId.getLowBits(), cid.getIdValue(), id.getIdValue(), propName);
   }
 
   @NotNull
@@ -167,15 +175,15 @@ public abstract class MetaAdapterFactory {
 
   public static SProperty getProperty(@NotNull SAbstractConcept concept, long prop, String propName) {
     final SConceptId cid = MetaIdHelper.getConcept(concept);
-    UUID langId = cid.getLanguageId().getIdValue();
-    return getProperty(langId.getMostSignificantBits(), langId.getLeastSignificantBits(), cid.getIdValue(), prop, propName);
+    SLanguageId langId = cid.getLanguageId();
+    return getProperty(langId.getHighBits(), langId.getLowBits(), cid.getIdValue(), prop, propName);
   }
 
   @NotNull
   public static SReferenceLink getReferenceLink(SReferenceLinkId id, String refName) {
     SConceptId cid = id.getConceptId();
-    UUID langId = cid.getLanguageId().getIdValue();
-    return getReferenceLink(langId.getMostSignificantBits(), langId.getLeastSignificantBits(), cid.getIdValue(), id.getIdValue(), refName);
+    SLanguageId langId = cid.getLanguageId();
+    return getReferenceLink(langId.getHighBits(), langId.getLowBits(), cid.getIdValue(), id.getIdValue(), refName);
   }
 
   @NotNull
@@ -197,15 +205,15 @@ public abstract class MetaAdapterFactory {
 
   public static SReferenceLink getReferenceLink(@NotNull SAbstractConcept concept, long link, String linkName) {
     final SConceptId cid = MetaIdHelper.getConcept(concept);
-    UUID langId = cid.getLanguageId().getIdValue();
-    return getReferenceLink(langId.getMostSignificantBits(), langId.getLeastSignificantBits(), cid.getIdValue(), link, linkName);
+    SLanguageId langId = cid.getLanguageId();
+    return getReferenceLink(langId.getHighBits(), langId.getLowBits(), cid.getIdValue(), link, linkName);
   }
 
   @NotNull
   public static SContainmentLink getContainmentLink(SContainmentLinkId id, String linkName) {
     SConceptId cid = id.getConceptId();
-    UUID langId = cid.getLanguageId().getIdValue();
-    return getContainmentLink(langId.getMostSignificantBits(), langId.getLeastSignificantBits(), cid.getIdValue(), id.getIdValue(), linkName);
+    SLanguageId langId = cid.getLanguageId();
+    return getContainmentLink(langId.getHighBits(), langId.getLowBits(), cid.getIdValue(), id.getIdValue(), linkName);
   }
 
   @NotNull
@@ -227,8 +235,8 @@ public abstract class MetaAdapterFactory {
 
     public static SContainmentLink getContainmentLink(@NotNull SAbstractConcept concept, long link, String linkName) {
     final SConceptId cid = MetaIdHelper.getConcept(concept);
-    UUID langId = cid.getLanguageId().getIdValue();
-    return getContainmentLink(langId.getMostSignificantBits(), langId.getLeastSignificantBits(), cid.getIdValue(), link, linkName);
+      SLanguageId langId = cid.getLanguageId();
+    return getContainmentLink(langId.getHighBits(), langId.getLowBits(), cid.getIdValue(), link, linkName);
   }
 
   @NotNull
