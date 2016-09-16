@@ -96,8 +96,8 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <xi:include href="/META-INF/MPSPlatformExtensions.xml" xpointer="xpointer(/extensions/*)"/>
-    <xi:include href="/META-INF/VcsExtensions.xml" xpointer="xpointer(/idea-plugin/extensions/*)"/>
     <xi:include href="/META-INF/MPSLangExtensions.xml" xpointer="xpointer(/idea-plugin/extensions/*)"/>
+    <xi:include href="/META-INF/VcsExtensions.xml" xpointer="xpointer(/idea-plugin/extensions/*)"/>
     <!--
     <xi:include href="/META-INF/ExternalSystemExtensions.xml" xpointer="xpointer(/idea-plugin/extensions/*)"/>
 
@@ -117,6 +117,9 @@
     <packaging.artifactType implementation="com.intellij.packaging.impl.artifacts.PlainArtifactType" order="last"/>
     <compiler.buildTargetScopeProvider implementation="com.intellij.packaging.impl.compiler.ArtifactBuildTargetScopeProvider"/>
     <compiler implementation="com.intellij.packaging.impl.compiler.ArtifactsCompiler" id="artifactsCompiler"/>
+
+    <compiler.task execute="BEFORE" implementation="com.intellij.compiler.impl.JavaModuleIndexBuildTask"/>
+
     <gotoRelatedProvider implementation="com.intellij.testIntegration.GotoTestRelatedProvider"/>
 
     -->
@@ -182,6 +185,12 @@
     <projectService serviceInterface="com.intellij.codeInsight.InferredAnnotationsManager"
                     serviceImplementation="com.intellij.codeInsight.InferredAnnotationsManagerImpl"/>
 
+    <projectService serviceInterface="com.intellij.task.ProjectTaskManager"
+                    serviceImplementation="com.intellij.task.impl.ProjectTaskManagerImpl"/>
+
+    <projectService serviceInterface="com.intellij.execution.runners.ExecutionEnvironmentProvider"
+                    serviceImplementation="com.intellij.task.impl.ExecutionEnvironmentProviderImpl"/>
+
     <projectService serviceInterface="com.intellij.openapi.compiler.CompilerManager"
                     serviceImplementation="com.intellij.compiler.CompilerManagerImpl"/>
     <projectService serviceInterface="com.intellij.compiler.options.ValidationConfiguration"
@@ -229,11 +238,6 @@
     <daemon.highlightInfoFilter implementation="com.intellij.debugger.engine.evaluation.DebuggerHighlightFilter"/>
     <daemon.highlightInfoFilter implementation="com.intellij.codeInsight.daemon.impl.HighlightInfoFilterImpl"/>
 
-
-    <projectService serviceInterface="com.intellij.debugger.ui.DebuggerRecents"
-                    serviceImplementation="com.intellij.debugger.ui.DebuggerRecents"/>
-
-
     &lt;!&ndash; Project Configurables &ndash;&gt;
     <projectService serviceImplementation="com.intellij.openapi.roots.ui.configuration.projectRoot.ModuleStructureConfigurable"/>
     <projectService serviceImplementation="com.intellij.openapi.roots.ui.configuration.projectRoot.FacetStructureConfigurable"/>
@@ -261,7 +265,7 @@
                     key="rmi.compiler.description" bundle="messages.CompilerBundle"/>
     </projectConfigurable>
 
-    <projectConfigurable groupId="language" instance="com.intellij.psi.templateLanguages.TemplateDataLanguageConfigurable" id="Template Data Languages" key="template.data.language.configurable" bundle="messages.LangBundle" />
+    <projectConfigurable groupId="language" instance="com.intellij.psi.templateLanguages.TemplateDataLanguageConfigurable" id="Template Data Languages" key="template.data.language.configurable" bundle="messages.LangBundle" nonDefaultProject="true"/>
 
     &lt;!&ndash; Scopes &ndash;&gt;
     <projectConfigurable groupId="appearance" groupWeight="111" instance="com.intellij.ide.util.scopeChooser.ScopeChooserConfigurable" id="project.scopes" key="scopes.display.name" bundle="messages.IdeBundle" />
@@ -272,7 +276,7 @@
     <!-- Path Variables -->
     <!-- the implementation of this configurable is in platform-impl but it's not registered in platform because
          it's only required in full IDEA -->
-    <applicationConfigurable groupId="build" instance="com.intellij.application.options.pathMacros.PathMacroConfigurable" id="preferences.pathVariables"
+    <applicationConfigurable groupId="appearance" groupWeight="-10" instance="com.intellij.application.options.pathMacros.PathMacroConfigurable" id="preferences.pathVariables"
                              key="title.path.variables" bundle="messages.ApplicationBundle"/>
     <projectConfigurable groupId="build" groupWeight="130" instance="jetbrains.mps.library.ProjectLibraryManagerConfigurable" id="preferences.projectLibraryManager" nonDefaultProject="true"/>
     <applicationConfigurable groupId="build" groupWeight="120" instance="jetbrains.mps.library.LibraryManagerConfigurable" id="preferences.libraryManager"/>
@@ -282,21 +286,21 @@
                              displayName="Console Folding"/>
 
     <editorNotificationProvider implementation="com.intellij.codeInsight.daemon.impl.AttachSourcesNotificationProvider"/>
-    <editorNotificationProvider implementation="com.intellij.codeInsight.daemon.impl.SetupSDKNotificationProvider"/>
+    <editorNotificationProvider implementation="com.intellij.codeInsight.daemon.impl.LibrarySourceNotificationProvider"/>
+    <editorNotificationProvider implementation="com.intellij.codeInsight.daemon.impl.SdkSetupNotificationProvider"/>
+    <projectSdkSetupValidator id="javaSdk" implementation="com.intellij.codeInsight.daemon.impl.JavaProjectSdkSetupValidator"/>
+    <editorNotificationProvider implementation="com.intellij.debugger.ui.AlternativeSourceNotificationProvider"/>
 
     <attachSourcesProvider implementation="com.intellij.jarFinder.InternetAttachSourceProvider"/>
+    <attachSourcesProvider implementation="com.intellij.jarFinder.IvyAttachSourceProvider"/>
 
     <checkoutListener implementation="com.intellij.openapi.vcs.checkout.ProjectCheckoutListener"/>
     <checkoutListener implementation="com.intellij.openapi.vcs.checkout.ProjectDirCheckoutListener"/>
     <checkoutListener implementation="com.intellij.openapi.vcs.checkout.ProjectImporterCheckoutListener"/>
-    <vcsAwareCheckoutListener implementation="com.intellij.openapi.vcs.checkout.NewProjectCheckoutListener"/>
+    <checkoutListener implementation="com.intellij.openapi.vcs.checkout.NewProjectCheckoutListener" order="last"/>
+    <vcsAwareCheckoutListener implementation="com.intellij.openapi.vcs.checkout.RegisterMappingCheckoutListener"/>
 
     &lt;!&ndash; new project wizard &ndash;&gt;
-    <wizardMode implementation="com.intellij.ide.util.newProjectWizard.modes.CreateFromTemplateMode" id="CreateFromTemplateMode"
-                order="after CreateFromScratchMode"/>
-    <wizardMode implementation="com.intellij.ide.util.newProjectWizard.modes.ImportMode" order="before ImportImlMode"/>
-    <wizardMode implementation="com.intellij.ide.util.newProjectWizard.modes.ImportImlMode" id="ImportImlMode"/>
-
     <projectImportProvider implementation="com.intellij.ide.util.projectWizard.ModuleImportProvider"/>
     <projectImportProvider implementation="com.intellij.ide.util.projectWizard.ImportFromSourcesProvider"/>
 
@@ -306,6 +310,9 @@
     &lt;!&ndash;
     <projectTemplatesFactory implementation="com.intellij.platform.templates.RemoteTemplatesFactory"/>
     &ndash;&gt;
+    <applicationService serviceInterface="com.intellij.platform.templates.ProjectTemplateExportable"
+                        serviceImplementation="com.intellij.platform.templates.ProjectTemplateExportable"/>
+    <exportable serviceInterface="com.intellij.platform.templates.ProjectTemplateExportable"/>
     <projectTemplateFileProcessor implementation="com.intellij.platform.templates.SystemFileProcessor"/>
 
     <applicationService serviceImplementation="com.intellij.ide.util.newProjectWizard.SelectTemplateSettings"/>
@@ -337,8 +344,6 @@
 
     <keymapExtension implementation="com.intellij.debugger.actions.DebuggerKeymapExtension"/>
 
-    <copyPastePostProcessor implementation="com.intellij.codeInsight.editorActions.CopyPasteFoldingProcessor"/>
-
     <moduleExtension implementation="com.intellij.openapi.roots.LanguageLevelModuleExtensionImpl"/>
     <moduleExtension implementation="com.intellij.openapi.roots.impl.JavaModuleExternalPathsImpl"/>
 
@@ -358,8 +363,7 @@
 
 
     <usageFilteringRuleProvider implementation="com.intellij.usages.impl.ImportUsageFilteringRuleProvider"/>
-    <applicationService serviceInterface="com.intellij.usages.impl.ImportFilteringUsageViewSetting"
-                        serviceImplementation="com.intellij.usages.impl.ImportFilteringUsageViewSetting"/>
+    <applicationService serviceImplementation="com.intellij.usages.impl.ImportFilteringUsageViewSetting"/>
 
     &lt;!&ndash; this depends on TemplateLanguageConfigurable which isn't registered in LangExtensions, so it should go here as well &ndash;&gt;
     <errorQuickFixProvider implementation="com.intellij.psi.templateLanguages.TemplateLanguageErrorQuickFixProvider"/>
@@ -413,6 +417,11 @@
     <xi:fallback/>
   </xi:include>
 
+  <extensionPoints>
+    <!-- Copy paste from XmlPlugin.xml-->
+    <extensionPoint name="breadcrumbsInfoProvider" interface="com.intellij.xml.breadcrumbs.BreadcrumbsInfoProvider"/>
+    <extensionPoint name="breadcrumbsPresentationProvider" interface="com.intellij.xml.breadcrumbs.BreadcrumbsPresentationProvider"/>
+  </extensionPoints>
   <!--
   <xi:include href="/META-INF/XmlPlugin.xml" xpointer="xpointer(/idea-plugin/*)"/>
   <xi:include href="/META-INF/JsonPlugin.xml" xpointer="xpointer(/idea-plugin/*)">
