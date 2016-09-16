@@ -77,6 +77,8 @@ public interface ConceptDescriptor {
 
   //------------ props
 
+  // FIXME there's no need to have accessor to collection of SPropertyId, uses indicate next we would access #getPropertyDescriptor(id)
+  //       hence shall return collection of PropertyDescriptors right away
   Set<SPropertyId> getPropertyIds(); // since 3.2
 
   PropertyDescriptor getPropertyDescriptor(SPropertyId id); // since 3.2
