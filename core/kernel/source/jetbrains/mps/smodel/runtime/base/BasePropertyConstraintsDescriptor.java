@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
-import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -32,10 +30,8 @@ import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDispatchable {
   private final SProperty myProperty;
@@ -94,10 +90,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
   }
 
   private static boolean isBootstrapProperty(SAbstractConcept concept, SProperty property) {
-    SModuleReference strucLangRef = BootstrapLanguages.structureLanguageRef();
-    SLanguage strucLang = MetaAdapterFactory.getLanguage(MetaIdByDeclaration.ref2LangId(
-        strucLangRef), strucLangRef.getModuleName());
-    if (property.equals(SNodeUtil.property_INamedConcept_name) && concept.getLanguage().equals(strucLang)) {
+    if (property.equals(SNodeUtil.property_INamedConcept_name) && concept.equals(SNodeUtil.concept_INamedConcept)) {
       return true;
     }
     if (property.getOwner().equals(SNodeUtil.concept_RuntimeTypeVariable)) {
