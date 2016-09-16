@@ -18,6 +18,7 @@
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
     <import index="tqbz" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.actions(MPS.IDEA/)" />
+    <import index="s1rj" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.project(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -307,10 +308,10 @@
         <node concept="3clFbJ" id="7C$AW5VBSRf" role="3cqZAp">
           <node concept="1Wc70l" id="7C$AW5VBSRg" role="3clFbw">
             <node concept="1Wc70l" id="7C$AW5VBT9g" role="3uHU7B">
-              <node concept="2YIFZM" id="7C$AW5VBTkL" role="3uHU7w">
-                <ref role="37wK5l" to="btn2:~ProjectUtil.isDirectoryBased(com.intellij.openapi.project.Project):boolean" resolve="isDirectoryBased" />
-                <ref role="1Pybhc" to="btn2:~ProjectUtil" resolve="ProjectUtil" />
-                <node concept="37vLTw" id="7C$AW5VBTol" role="37wK5m">
+              <node concept="2YIFZM" id="25cToADG5I4" role="3uHU7w">
+                <ref role="37wK5l" to="s1rj:~ProjectKt.isDirectoryBased(com.intellij.openapi.project.Project):boolean" resolve="isDirectoryBased" />
+                <ref role="1Pybhc" to="s1rj:~ProjectKt" resolve="ProjectKt" />
+                <node concept="37vLTw" id="25cToADG5I5" role="37wK5m">
                   <ref role="3cqZAo" to="1m72:~AbstractProjectComponent.myProject" resolve="myProject" />
                 </node>
               </node>

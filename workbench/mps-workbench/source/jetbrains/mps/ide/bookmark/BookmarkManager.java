@@ -371,7 +371,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
 
       g.setColor(Color.black);
       final Font oldFont = g.getFont();
-      g.setFont(Bookmark.MNEMONIC_FONT);
+      g.setFont(Bookmark.getBookmarkFont());
 
       g.drawString(Character.toString(myMnemonic), x + 2, y + getIconHeight() - 2);
       g.setFont(oldFont);

@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" file="HttpRequest.java">
     <classNode dependClassName="com.intellij.openapi.util.text.StringUtil" />
     <classNode dependClassName="com.intellij.util.ExceptionUtil" />
+    <classNode dependClassName="com.intellij.util.io.NettyKt" />
     <classNode dependClassName="io.netty.buffer.ByteBuf" />
     <classNode dependClassName="io.netty.buffer.Unpooled" />
     <classNode dependClassName="io.netty.channel.Channel" />
@@ -18,7 +19,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.io.NettyKt" />
     <classNode dependClassName="org.jetbrains.io.Responses" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" file="IHttpRequestHandler.java">

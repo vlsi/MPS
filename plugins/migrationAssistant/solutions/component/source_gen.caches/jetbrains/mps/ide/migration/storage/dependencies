@@ -2,7 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.migration.storage.StorageAssistant" file="StorageAssistant.java">
     <classNode dependClassName="com.intellij.ide.actions.SaveAsDirectoryBasedFormatAction" />
-    <classNode dependClassName="com.intellij.ide.impl.ProjectUtil" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DataContext" />
@@ -13,6 +12,7 @@
     <classNode dependClassName="com.intellij.openapi.project.ex.ProjectEx" />
     <classNode dependClassName="com.intellij.openapi.startup.StartupManager" />
     <classNode dependClassName="com.intellij.openapi.vfs.VfsUtil" />
+    <classNode dependClassName="com.intellij.project.ProjectKt" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />

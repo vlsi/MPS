@@ -11,7 +11,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.Version;
 import jetbrains.mps.project.MPSProjectVersion;
 import com.intellij.openapi.project.ex.ProjectEx;
-import com.intellij.ide.impl.ProjectUtil;
+import com.intellij.project.ProjectKt;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.ide.actions.SaveAsDirectoryBasedFormatAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -35,7 +35,7 @@ public class StorageAssistant extends AbstractProjectComponent implements Persis
   @Override
   public void projectOpened() {
     Version version = myProject.getComponent(MPSProjectVersion.class).getVersion();
-    if (myProject instanceof ProjectEx && !((version.isMajorUpdate(MPSProjectVersion.CURRENT))) && ProjectUtil.isDirectoryBased(myProject) && myState.offerStorageMigration) {
+    if (myProject instanceof ProjectEx && !((version.isMajorUpdate(MPSProjectVersion.CURRENT))) && ProjectKt.isDirectoryBased(myProject) && myState.offerStorageMigration) {
       StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
         @Override
         public void run() {

@@ -28,7 +28,7 @@
       <node id="2729157578428847601" at="32,24,33,36" concept="1" />
       <node id="3926595287075248811" at="33,36,34,0" concept="8" />
       <node id="3926595287075248951" at="34,0,35,11" concept="1" />
-      <node id="3978024352676574719" at="40,37,41,267" concept="1" />
+      <node id="3978024352676574719" at="40,37,41,249" concept="1" />
       <node id="5729690357938599755" at="44,31,45,41" concept="1" />
       <node id="3926595287075256379" at="48,5,49,30" concept="6" />
       <node id="7619659760484896468" at="54,21,55,13" concept="6" />
@@ -50,7 +50,7 @@
       <node id="1012908514805334057" at="78,0,82,0" concept="4" trace="getError#()Ljava/lang/String;" />
       <node id="6929542275387724631" at="68,0,73,0" concept="4" trace="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
       <node id="1012908514805551448" at="83,0,88,0" concept="4" trace="check#()Z" />
-      <node id="5729690357938555416" at="41,267,47,9" concept="1" />
+      <node id="5729690357938555416" at="41,249,47,9" concept="1" />
       <node id="2694170484305021644" at="59,0,65,7" concept="1" />
       <node id="3926595287075250708" at="39,41,48,5" concept="3" />
       <node id="3926595287074940573" at="26,0,37,0" concept="0" trace="NewSolutionDialog#(Ljetbrains/mps/project/MPSProject;Ljava/lang/String;)V" />
@@ -100,7 +100,7 @@
       <node id="2683439310175395066" at="36,24,37,36" concept="1" />
       <node id="8412685000766484035" at="37,36,38,0" concept="8" />
       <node id="8412685000766484036" at="38,0,39,11" concept="1" />
-      <node id="8412685000767360445" at="44,37,45,267" concept="1" />
+      <node id="8412685000767360445" at="44,37,45,249" concept="1" />
       <node id="5729690357938541541" at="48,31,49,41" concept="1" />
       <node id="8412685000766588904" at="52,5,53,30" concept="6" />
       <node id="8412685000766424914" at="56,0,57,0" concept="9" trace="LOG" />
@@ -134,7 +134,7 @@
       <node id="5154621356648615843" at="71,13,76,11" concept="3" />
       <node id="8412685000766920525" at="93,0,98,0" concept="4" trace="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
       <node id="8412685000766622118" at="103,0,108,0" concept="4" trace="check#()Z" />
-      <node id="5729690357938517454" at="45,267,51,9" concept="1" />
+      <node id="5729690357938517454" at="45,249,51,9" concept="1" />
       <node id="8412685000766588866" at="43,44,52,5" concept="3" />
       <node id="8412685000766460613" at="30,0,41,0" concept="0" trace="NewLanguageDialog#(Ljetbrains/mps/project/MPSProject;Ljava/lang/String;)V" />
       <node id="8412685000766425670" at="42,0,55,0" concept="4" trace="createCenterPanel#()Ljavax/swing/JComponent;" />

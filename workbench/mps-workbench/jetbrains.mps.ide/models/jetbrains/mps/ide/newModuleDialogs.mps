@@ -20,6 +20,7 @@
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="z1c5" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.project(MPS.Workbench/)" />
     <import index="btn2" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.impl(MPS.IDEA/)" />
+    <import index="s1rj" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.project(MPS.IDEA/)" />
     <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" implicit="true" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
   </imports>
@@ -357,13 +358,14 @@
                         <node concept="3K4zz7" id="577ABRc4smG" role="1eOMHV">
                           <node concept="3fqX7Q" id="7C$AW5VA7jZ" role="3K4Cdx">
                             <node concept="2YIFZM" id="7C$AW5VA7k1" role="3fr31v">
-                              <ref role="37wK5l" to="btn2:~ProjectUtil.isDirectoryBased(com.intellij.openapi.project.Project):boolean" resolve="isDirectoryBased" />
-                              <ref role="1Pybhc" to="btn2:~ProjectUtil" resolve="ProjectUtil" />
-                              <node concept="2YIFZM" id="7C$AW5VA7k2" role="37wK5m">
-                                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                                <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                                <node concept="37vLTw" id="7C$AW5VA7k3" role="37wK5m">
+                              <ref role="1Pybhc" to="s1rj:~ProjectKt" resolve="ProjectKt" />
+                              <ref role="37wK5l" to="s1rj:~ProjectKt.isDirectoryBased(com.intellij.openapi.project.Project):boolean" resolve="isDirectoryBased" />
+                              <node concept="2OqwBi" id="25cToADGo5r" role="37wK5m">
+                                <node concept="37vLTw" id="7C$AW5VA7k3" role="2Oq$k0">
                                   <ref role="3cqZAo" node="Ecfd3cMwd2" resolve="myProject" />
+                                </node>
+                                <node concept="liA8E" id="25cToADGow4" role="2OqNvi">
+                                  <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
                                 </node>
                               </node>
                             </node>
@@ -859,13 +861,14 @@
                         <node concept="3K4zz7" id="577ABRc5zT0" role="1eOMHV">
                           <node concept="3fqX7Q" id="7C$AW5VA7uw" role="3K4Cdx">
                             <node concept="2YIFZM" id="7C$AW5VA7ux" role="3fr31v">
-                              <ref role="1Pybhc" to="btn2:~ProjectUtil" resolve="ProjectUtil" />
-                              <ref role="37wK5l" to="btn2:~ProjectUtil.isDirectoryBased(com.intellij.openapi.project.Project):boolean" resolve="isDirectoryBased" />
-                              <node concept="2YIFZM" id="7C$AW5VA7uy" role="37wK5m">
-                                <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                                <node concept="37vLTw" id="7C$AW5VA7uz" role="37wK5m">
+                              <ref role="1Pybhc" to="s1rj:~ProjectKt" resolve="ProjectKt" />
+                              <ref role="37wK5l" to="s1rj:~ProjectKt.isDirectoryBased(com.intellij.openapi.project.Project):boolean" resolve="isDirectoryBased" />
+                              <node concept="2OqwBi" id="25cToADGhFJ" role="37wK5m">
+                                <node concept="37vLTw" id="7C$AW5VA7uz" role="2Oq$k0">
                                   <ref role="3cqZAo" node="7iZR6YlWmMJ" resolve="myProject" />
+                                </node>
+                                <node concept="liA8E" id="25cToADGi7O" role="2OqNvi">
+                                  <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
                                 </node>
                               </node>
                             </node>

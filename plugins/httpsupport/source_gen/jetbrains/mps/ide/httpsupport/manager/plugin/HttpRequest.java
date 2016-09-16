@@ -15,7 +15,7 @@ import io.netty.buffer.Unpooled;
 import io.netty.util.CharsetUtil;
 import com.intellij.util.ExceptionUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.io.NettyKt;
+import com.intellij.util.io.NettyKt;
 import com.intellij.openapi.util.text.StringUtil;
 import java.net.URI;
 
