@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure;
 
+import gnu.trove.TLongObjectHashMap;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
@@ -45,6 +46,9 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -56,14 +60,15 @@ import java.util.concurrent.ConcurrentMap;
  */
 public abstract class MetaAdapterFactory {
   private static final ConcurrentMap<LangKey, SLanguage> ourLanguageIds = new ConcurrentHashMap<LangKey, SLanguage>();
-  private static final ConcurrentMap<Pair<SConceptId, String>, SConcept> ourConceptIds = new ConcurrentHashMap<Pair<SConceptId, String>, SConcept>();
-  private static final ConcurrentMap<Pair<SConceptId, String>, SInterfaceConcept> ourIntfcConceptIds =
-      new ConcurrentHashMap<Pair<SConceptId, String>, SInterfaceConcept>();
   private static final ConcurrentMap<Pair<SPropertyId, String>, SProperty> ourPropertyIds = new ConcurrentHashMap<Pair<SPropertyId, String>, SProperty>();
   private static final ConcurrentMap<Pair<SReferenceLinkId, String>, SReferenceLink> ourRefIds =
       new ConcurrentHashMap<Pair<SReferenceLinkId, String>, SReferenceLink>();
   private static final ConcurrentMap<Pair<SContainmentLinkId, String>, SContainmentLink> ourLinkIds =
       new ConcurrentHashMap<Pair<SContainmentLinkId, String>, SContainmentLink>();
+
+  // there are 5 thousand concepts in MPS alone, don't need to be shy, rehash would be more expensive.
+  private static final TLongObjectHashMap<List<ConceptBucket>> ourConcepts = new TLongObjectHashMap<>(5000);
+  private static final TLongObjectHashMap<List<InterfaceBucket>> ourInterfaces = new TLongObjectHashMap<>(1000);
 
   @NotNull
   public static SLanguage getLanguage(@NotNull SLanguageId id, @NotNull String langName) {
@@ -85,38 +90,59 @@ public abstract class MetaAdapterFactory {
 
   @NotNull
   public static SConcept getConcept(SConceptId id, String conceptName) {
-    SConceptAdapterById c = new SConceptAdapterById(id, conceptName);
-    Pair<SConceptId, String> p = new Pair<SConceptId, String>(id, conceptName);
-    SConcept result = ourConceptIds.putIfAbsent(p, c);
-    return result != null ? result : c;
+    UUID langId = id.getLanguageId().getIdValue();
+    return getConcept(langId.getMostSignificantBits(), langId.getLeastSignificantBits(), id.getIdValue(), conceptName);
   }
 
   @NotNull
   public static SConcept getConcept(long uuidHigh, long uuidLow, long concept, String conceptName) {
-    return getConcept(MetaIdFactory.conceptId(uuidHigh, uuidLow, concept), conceptName);
+    List<ConceptBucket> bucketList = getBucketList(ourConcepts, bucketKey(uuidHigh, uuidLow, concept));
+    //noinspection SynchronizationOnLocalVariableOrMethodParameter
+    synchronized (bucketList) {
+      for (int i = 0, x = bucketList.size(); i < x; i++) {
+        ConceptBucket rv = bucketList.get(i);
+        if (rv.isBucketFor(uuidHigh, uuidLow, concept)) {
+          return rv.get();
+        }
+      }
+      ConceptBucket b = new ConceptBucket(uuidHigh, uuidLow, concept, conceptName);
+      bucketList.add(b);
+      return b.get();
+    }
   }
 
   public static SConcept getConcept(@NotNull SLanguage language, long concept, @NotNull String shortConceptName) {
-    final SLanguageId langId = MetaIdHelper.getLanguage(language);
-    return getConcept(MetaIdFactory.conceptId(langId, concept), NameUtil.conceptFQNameFromNamespaceAndShortName(language.getQualifiedName(), shortConceptName));
+    final UUID langId = MetaIdHelper.getLanguage(language).getIdValue();
+    return getConcept(langId.getMostSignificantBits(), langId.getLeastSignificantBits(), concept, NameUtil.conceptFQNameFromNamespaceAndShortName(language.getQualifiedName(), shortConceptName));
   }
 
   @NotNull
   public static SInterfaceConcept getInterfaceConcept(SConceptId id, String conceptName) {
-    SInterfaceConceptAdapterById c = new SInterfaceConceptAdapterById(id, conceptName);
-    Pair<SConceptId, String> p = new Pair<SConceptId, String>(id, conceptName);
-    SInterfaceConcept result = ourIntfcConceptIds.putIfAbsent(p, c);
-    return result != null ? result : c;
+    UUID langId = id.getLanguageId().getIdValue(); // FIXME SLanguageId shall get accessors to avoid excessive wrap into UUID
+    return getInterfaceConcept(langId.getMostSignificantBits(), langId.getLeastSignificantBits(), id.getIdValue(), conceptName);
   }
 
   @NotNull
   public static SInterfaceConcept getInterfaceConcept(long uuidHigh, long uuidLow, long concept, String conceptName) {
-    return getInterfaceConcept(MetaIdFactory.conceptId(uuidHigh, uuidLow, concept), conceptName);
+    List<InterfaceBucket> bucketList = getBucketList(ourInterfaces, bucketKey(uuidHigh, uuidLow, concept));
+    //noinspection SynchronizationOnLocalVariableOrMethodParameter
+    synchronized (bucketList) {
+      for (int i = 0, x = bucketList.size(); i < x; i++) {
+        InterfaceBucket rv = bucketList.get(i);
+        if (rv.isBucketFor(uuidHigh, uuidLow, concept)) {
+          return rv.get();
+        }
+      }
+      InterfaceBucket b = new InterfaceBucket(uuidHigh, uuidLow, concept, conceptName);
+      bucketList.add(b);
+      return b.get();
+    }
+
   }
 
   public static SInterfaceConcept getInterfaceConcept(@NotNull SLanguage language, long concept, @NotNull String shortConceptName) {
-    final SLanguageId langId = MetaIdHelper.getLanguage(language);
-    return getInterfaceConcept(MetaIdFactory.conceptId(langId, concept), NameUtil.conceptFQNameFromNamespaceAndShortName(language.getQualifiedName(), shortConceptName));
+    final UUID langId = MetaIdHelper.getLanguage(language).getIdValue();
+    return getInterfaceConcept(langId.getMostSignificantBits(), langId.getLeastSignificantBits(), concept, NameUtil.conceptFQNameFromNamespaceAndShortName(language.getQualifiedName(), shortConceptName));
   }
 
   @NotNull
@@ -227,4 +253,115 @@ public abstract class MetaAdapterFactory {
       return false;
     }
   }
+
+  private static <T> List<T> getBucketList(TLongObjectHashMap<List<T>> map, long bucketKey) {
+    //noinspection SynchronizationOnLocalVariableOrMethodParameter
+    synchronized (map) {
+      List<T> rv = map.get(bucketKey);
+      if (rv == null) {
+        // I don't expect too much collisions
+        map.put(bucketKey, rv = new ArrayList<T>(4));
+      }
+      return rv;
+    }
+  }
+
+  // bucket key doesn't need to be unique for a concept, just rare enough to get less collisions
+  private static long bucketKey(long highBits, long lowBits, long concept) {
+    return concept * 11 + lowBits + highBits * 17;
+  }
+
+  static abstract class AbstractConceptBucket {
+    private final long myLanguageHighBits;
+    private final long myLanguageLowBits;
+    private final long myConceptId;
+
+    private final TLongObjectHashMap<SPropertyAdapterById> myProperties;
+    private final TLongObjectHashMap<SReferenceLinkAdapterById> myAssociations;
+    private final TLongObjectHashMap<SContainmentLinkAdapterById> myAggregations;
+
+
+    /*package*/ AbstractConceptBucket(long highBits, long lowBits, long concept) {
+      myLanguageHighBits = highBits;
+      myLanguageLowBits = lowBits;
+      myConceptId = concept;
+      // given small number of features per concept, might be reasonable to keep (sorted) array instead of Map
+      myProperties = new TLongObjectHashMap<>();
+      myAssociations = new TLongObjectHashMap<>();
+      myAggregations = new TLongObjectHashMap<>();
+    }
+
+    protected abstract SConceptId getConceptId();
+
+    /*package*/ final boolean isBucketFor(long highBits, long lowBits, long concept) {
+      return myLanguageHighBits == highBits && myLanguageLowBits == lowBits && myConceptId == concept;
+    }
+
+    /*package*/ final SProperty getProperty(long prop, String name) {
+      synchronized (myProperties) {
+        SPropertyAdapterById rv = myProperties.get(prop);
+        if (rv == null) {
+          myProperties.put(prop, rv = new SPropertyAdapterById(MetaIdFactory.propId(getConceptId(), prop), name));
+        }
+        return rv;
+      }
+    }
+
+    /*package*/ final SContainmentLink getAggregation(long link, String name) {
+      synchronized (myAggregations) {
+        SContainmentLinkAdapterById rv = myAggregations.get(link);
+        if (rv == null) {
+          myAggregations.put(link, rv = new SContainmentLinkAdapterById(MetaIdFactory.linkId(getConceptId(), link), name));
+        }
+        return rv;
+      }
+    }
+
+    /*package*/ final SReferenceLink getAssociation(long link, String name) {
+      synchronized (myAssociations) {
+        SReferenceLinkAdapterById rv = myAssociations.get(link);
+        if (rv == null) {
+          myAssociations.put(link, rv = new SReferenceLinkAdapterById(MetaIdFactory.refId(getConceptId(), link), name));
+        }
+        return rv;
+      }
+    }
+  }
+
+  static final class ConceptBucket extends AbstractConceptBucket {
+    private final SConceptAdapterById myConcept;
+
+    /*package*/ ConceptBucket(long highBits, long lowBits, long concept, String name) {
+      super(highBits, lowBits, concept);
+      myConcept = new SConceptAdapterById(MetaIdFactory.conceptId(highBits, lowBits, concept), name);
+    }
+
+    public SConcept get() {
+      return myConcept;
+    }
+
+    @Override
+    protected SConceptId getConceptId() {
+      return myConcept.getId();
+    }
+  }
+
+  static final class InterfaceBucket extends AbstractConceptBucket {
+    private final SInterfaceConceptAdapterById myConcept;
+
+    InterfaceBucket(long highBits, long lowBits, long concept, String name) {
+      super(highBits, lowBits, concept);
+      myConcept = new SInterfaceConceptAdapterById(MetaIdFactory.conceptId(highBits, lowBits, concept), name);
+    }
+
+    public SInterfaceConcept get() {
+      return myConcept;
+    }
+
+    @Override
+    protected SConceptId getConceptId() {
+      return myConcept.getId();
+    }
+  }
+
 }
