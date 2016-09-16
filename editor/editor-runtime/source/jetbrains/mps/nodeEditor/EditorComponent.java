@@ -24,6 +24,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -141,6 +142,7 @@ import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -2450,7 +2452,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return r.getResult();
   }
 
+  /**
+   * @deprecated editor component does not always correspond to a project!
+   */
   @Nullable
+  @Deprecated
+  @ToRemove(version = 3.5)
   protected final jetbrains.mps.project.Project getCurrentProject() {
     // there's no need in MPSProject, there's just no key for generic MPS project in MPSCommonDataKeys.
     final MPSProject p = MPSCommonDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext(this));
