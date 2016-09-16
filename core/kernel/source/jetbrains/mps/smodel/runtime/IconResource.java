@@ -40,6 +40,8 @@ public class IconResource {
    * For internal use only
    * Tmp solution until we migrate to non-static IconManager.
    */
+  @Deprecated
+  @ToRemove(version = 3.5)
   public boolean isAlreadyReloaded() {
     Class c = myResourceProvider.get();
     if (c == null) {

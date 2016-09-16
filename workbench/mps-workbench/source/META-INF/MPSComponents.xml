@@ -30,6 +30,9 @@
       <implementation-class>jetbrains.mps.ide.MPSCoreComponents</implementation-class>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.ide.icons.GlobalIconManager</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.ide.persistence.PersistenceComponent</implementation-class>
     </component>
     <component>
