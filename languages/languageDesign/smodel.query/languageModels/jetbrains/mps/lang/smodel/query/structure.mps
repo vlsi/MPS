@@ -125,7 +125,7 @@
     <node concept="1TJgyj" id="3J6h25Q5Il8" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="parameter" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="4307205004132279624" />
       <ref role="20lvS9" node="3J6h25Q5HRT" resolve="QueryParameterList" />
     </node>

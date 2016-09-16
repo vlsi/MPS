@@ -39,7 +39,6 @@ public class QueryParameterScope_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
     editorCell.getStyle().putAll(style);
-    QueryParameter_Actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
   private EditorCell createConstant_5iann0_b0(EditorContext editorContext, SNode node) {

@@ -285,37 +285,37 @@
   <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.lang.smodel.query.typesystem)/4307205004145151167">
     <file name="check_QueryDuplicatedParameters_NonTypesystemRule.java">
       <node id="4307205004145330194" at="27,131,28,223" concept="6" />
-      <node id="4307205004145277367" at="30,37,31,57" concept="7" />
-      <node id="4307205004145781772" at="37,42,38,166" concept="7" />
+      <node id="4307205004145277367" at="30,40,31,46" concept="7" />
+      <node id="4307205004145781772" at="37,42,38,138" concept="7" />
       <node id="4307205004145898696" at="42,7,43,0" concept="8" />
       <node id="2284201910212797905" at="47,11,48,64" concept="6" />
-      <node id="2284201910212797905" at="48,64,49,483" concept="6" />
+      <node id="2284201910212797905" at="48,64,49,347" concept="6" />
       <node id="4307205004145151167" at="55,50,56,168" concept="7" />
       <node id="4307205004145151167" at="58,68,59,102" concept="7" />
       <node id="4307205004145151167" at="61,30,62,17" concept="7" />
       <node id="4307205004145151167" at="25,0,27,0" concept="1" trace="check_QueryDuplicatedParameters_NonTypesystemRule#()V" />
-      <node id="4307205004145276652" at="30,0,33,0" concept="5" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4307205004145276652" at="30,0,33,0" concept="5" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SConcept;" />
       <node id="4307205004145781770" at="37,0,40,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="4307205004145151167" at="55,0,58,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="4307205004145151167" at="58,0,61,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="4307205004145151167" at="61,0,64,0" concept="5" trace="overrides#()Z" />
       <node id="2284201910212797905" at="46,105,50,11" concept="0" />
       <node id="4307205004145290005" at="28,223,33,18" concept="6" />
-      <node id="4307205004145781766" at="35,53,40,11" concept="7" />
+      <node id="4307205004145781766" at="35,56,40,11" concept="7" />
       <node id="2284201910212811255" at="45,53,51,9" concept="3" />
-      <node id="4307205004145779983" at="35,0,42,0" concept="5" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/internal/collections/runtime/ISequence;" />
+      <node id="4307205004145779983" at="35,0,42,0" concept="5" trace="select#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljetbrains/mps/internal/collections/runtime/ISequence;" />
       <node id="2284201910212748726" at="44,76,52,7" concept="4" />
       <node id="4307205004145312475" at="33,18,42,7" concept="6" />
       <node id="4307205004145898592" at="43,0,53,5" concept="3" />
       <node id="4307205004145151167" at="27,0,55,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="4307205004145151167" at="25,62,25,62" />
-      <scope id="4307205004145276653" at="30,37,31,57" />
-      <scope id="4307205004145781771" at="37,42,38,166" />
+      <scope id="4307205004145276653" at="30,40,31,46" />
+      <scope id="4307205004145781771" at="37,42,38,138" />
       <scope id="4307205004145151167" at="55,50,56,168" />
       <scope id="4307205004145151167" at="58,68,59,102" />
       <scope id="4307205004145151167" at="61,30,62,17" />
       <scope id="4307205004145151167" at="25,0,27,0" />
-      <scope id="2284201910212797905" at="47,11,49,483">
+      <scope id="2284201910212797905" at="47,11,49,347">
         <var name="_reporter_2309309498" id="2284201910212797905" />
         <var name="errorTarget" id="2284201910212797905" />
       </scope>
@@ -331,7 +331,7 @@
       </scope>
       <scope id="4307205004145151167" at="61,0,64,0" />
       <scope id="2284201910212811261" at="46,105,50,11" />
-      <scope id="4307205004145779984" at="35,53,40,11" />
+      <scope id="4307205004145779984" at="35,56,40,11" />
       <scope id="2284201910212748729" at="45,53,51,9" />
       <scope id="2284201910212811255" at="45,53,51,9">
         <var name="other" id="2284201910212811257" />
@@ -353,7 +353,7 @@
         <var name="status" id="4307205004145151167" />
         <var name="typeCheckingContext" id="4307205004145151167" />
       </scope>
-      <unit id="4307205004145276652" at="29,85,33,5" name="jetbrains.mps.lang.smodel.query.typesystem.check_QueryDuplicatedParameters_NonTypesystemRule$1" />
+      <unit id="4307205004145276652" at="29,88,33,5" name="jetbrains.mps.lang.smodel.query.typesystem.check_QueryDuplicatedParameters_NonTypesystemRule$1" />
       <unit id="4307205004145781770" at="36,59,40,9" name="jetbrains.mps.lang.smodel.query.typesystem.check_QueryDuplicatedParameters_NonTypesystemRule$3" />
       <unit id="4307205004145779983" at="34,112,42,5" name="jetbrains.mps.lang.smodel.query.typesystem.check_QueryDuplicatedParameters_NonTypesystemRule$2" />
       <unit id="4307205004145151167" at="24,0,65,0" name="jetbrains.mps.lang.smodel.query.typesystem.check_QueryDuplicatedParameters_NonTypesystemRule" />
