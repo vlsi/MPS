@@ -3058,8 +3058,8 @@
           <node concept="3clFbH" id="7IH442cRr1M" role="3cqZAp" />
           <node concept="1DcWWT" id="7IH442cReHn" role="3cqZAp">
             <node concept="2YIFZM" id="6lMTJPe4ja3" role="1DdaDG">
-              <ref role="37wK5l" to="vndm:~LanguageAspectSupport.collectAspects():java.lang.Iterable" resolve="collectAspects" />
               <ref role="1Pybhc" to="vndm:~LanguageAspectSupport" resolve="LanguageAspectSupport" />
+              <ref role="37wK5l" to="vndm:~LanguageAspectSupport.collectAspects():java.util.Collection" resolve="collectAspects" />
             </node>
             <node concept="3clFbS" id="7IH442cReHo" role="2LFqv$">
               <node concept="2JFkCU" id="7IH442cReHp" role="3cqZAp">
@@ -14158,8 +14158,8 @@
       <node concept="3clFbS" id="7IH442cRK2j" role="3clF47">
         <node concept="2Gpval" id="7IH442cRKFg" role="3cqZAp">
           <node concept="2YIFZM" id="6lMTJPe4jqy" role="2GsD0m">
-            <ref role="37wK5l" to="vndm:~LanguageAspectSupport.collectAspects():java.lang.Iterable" resolve="collectAspects" />
             <ref role="1Pybhc" to="vndm:~LanguageAspectSupport" resolve="LanguageAspectSupport" />
+            <ref role="37wK5l" to="vndm:~LanguageAspectSupport.collectAspects():java.util.Collection" resolve="collectAspects" />
           </node>
           <node concept="2GrKxI" id="7IH442cRKFi" role="2Gsz3X">
             <property role="TrG5h" value="ad" />

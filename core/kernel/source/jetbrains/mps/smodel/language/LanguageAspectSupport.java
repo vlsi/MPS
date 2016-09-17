@@ -17,25 +17,21 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
-import javax.swing.Icon;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.EnumMap;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
-import java.util.Map;
+import java.util.Optional;
 
 /**
  * All common work with language aspect should be done using this class.
@@ -44,6 +40,9 @@ import java.util.Map;
  * After completing the refactoring (3.3?), this class chould be cleaned up together with removal of LanguageAspect class
  */
 public class LanguageAspectSupport {
+
+  private static final Logger LOG = LogManager.getLogger(LanguageAspectSupport.class);
+
   public static boolean isAspectModel(SModel model) {
     SModule module = model.getModule();
     if (!(module instanceof Language)) return false;
@@ -55,24 +54,33 @@ public class LanguageAspectSupport {
   public static Collection<SModel> getAspectModels(@NotNull SModule language) {
     assert language instanceof Language;
     //as soon as this class is API-like, it's not good to have Language parameter here as in API we work with SModule
-
-    //todo order on new aspects must be set and be stable
-    //order is important here
     LinkedHashSet<SModel> result = new LinkedHashSet<SModel>();
+    for (LanguageAspectDescriptor d : collectAspects()) {
+      result.addAll(d.getAspectModels(language));
+    }
+    //falling back to old aspects for case where getAspectModels() is called before new aspects are initialized
     for (LanguageAspect la : LanguageAspect.values()) {
       SModel aspectModel = la.get(((Language) language));
       if (aspectModel == null) continue;
       result.add(aspectModel);
     }
-
-    for (LanguageAspectDescriptor d : collectAspects()) {
-      result.addAll(d.getAspectModels(language));
-    }
     return result;
   }
 
-  public static Iterable<LanguageAspectDescriptor> collectAspects() {
-    return new ExtensionPoint<LanguageAspectDescriptor>("jetbrains.mps.lang.aspect.LanguageAspectsEP").getObjects();
+  public static Collection<LanguageAspectDescriptor> collectAspects() {
+    //todo order on new aspects must be set and be stable
+    Collection<LanguageAspectDescriptor> newAspects =
+        IterableUtil.asCollection(new ExtensionPoint<LanguageAspectDescriptor>("jetbrains.mps.lang.aspect.LanguageAspectsEP").getObjects());
+    LinkedHashSet<LanguageAspectDescriptor> result = new LinkedHashSet<>();
+    for (LanguageAspect la : LanguageAspect.values()) {
+      Optional<LanguageAspectDescriptor> correspondingNew =
+          newAspects.stream().filter(languageAspectDescriptor -> languageAspectDescriptor.getPresentableAspectName().equals(la.getName())).findFirst();
+      if (correspondingNew.isPresent()) {
+        result.add(correspondingNew.get());
+      }
+    }
+    result.addAll(newAspects);
+    return result;
   }
 
   @Nullable
