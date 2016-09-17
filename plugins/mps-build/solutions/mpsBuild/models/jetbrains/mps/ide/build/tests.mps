@@ -960,6 +960,39 @@
           </node>
         </node>
       </node>
+      <node concept="1E1JtA" id="7wqdV6Y5fwj" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="jetbrains.mps.console.test" />
+        <property role="3LESm3" value="e735f546-7e3c-4043-85a9-9c4792e07c56" />
+        <property role="2GAjPV" value="false" />
+        <property role="aoJFB" value="sources and tests" />
+        <node concept="55IIr" id="7wqdV6Y5fwk" role="3LF7KH">
+          <node concept="2Ry0Ak" id="7wqdV6Y5fwl" role="iGT6I">
+            <property role="2Ry0Am" value="testbench" />
+            <node concept="2Ry0Ak" id="7wqdV6Y5fwm" role="2Ry0An">
+              <property role="2Ry0Am" value="testsolutions" />
+              <node concept="2Ry0Ak" id="7wqdV6Y5fwn" role="2Ry0An">
+                <property role="2Ry0Am" value="console.test" />
+                <node concept="2Ry0Ak" id="7wqdV6Y5f_b" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.console.test.msd" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="7wqdV6Y5fw_" role="3bR37C">
+          <node concept="3bR9La" id="7wqdV6Y5fwA" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:1TaHNgiIbJ$" resolve="jetbrains.mps.ide.editor" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="40H5Ahzn_dc" role="3bR37C">
+          <node concept="3bR9La" id="40H5Ahzn_dd" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
+          </node>
+        </node>
+      </node>
       <node concept="1E1JtA" id="4BLpc15ezHv" role="2G$12L">
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="jetbrains.mps.lang.editor.multiple.tests" />
@@ -1115,6 +1148,9 @@
         </node>
         <node concept="L2wRC" id="53PdBITeV_d" role="39821P">
           <ref role="L2wRA" node="53PdBITeVn8" resolve="jetbrains.mps.baseLanguage.test" />
+        </node>
+        <node concept="L2wRC" id="7wqdV6Y5fD9" role="39821P">
+          <ref role="L2wRA" node="7wqdV6Y5fwj" resolve="jetbrains.mps.console.test" />
         </node>
         <node concept="L2wRC" id="53PdBITeVAr" role="39821P">
           <ref role="L2wRA" node="53PdBITeV7g" resolve="jetbrains.mps.lang.actions.test" />
