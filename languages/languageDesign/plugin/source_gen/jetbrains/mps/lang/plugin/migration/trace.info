@@ -124,11 +124,11 @@
         <var name="m" id="5091239957908801103" />
       </scope>
       <unit id="5091239957908849294" at="44,42,48,7" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources$1" />
-      <unit id="5091239957908849303" at="49,270,53,7" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources$2" />
+      <unit id="5091239957908849303" at="49,277,53,7" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources$2" />
       <unit id="2771654749615673920" at="61,112,65,7" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources$4" />
       <unit id="2771654749615680554" at="65,22,69,7" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources$5" />
       <unit id="5091239957908814079" at="77,42,81,7" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources$6" />
-      <unit id="5091239957909170856" at="82,279,86,7" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources$7" />
+      <unit id="5091239957909170856" at="82,286,86,7" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources$7" />
       <unit id="5091239957909170874" at="88,32,92,11" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources$9" />
       <unit id="5091239957908851747" at="53,22,60,7" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources$3" />
       <unit id="5091239957909170867" at="86,20,94,7" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources$8" />

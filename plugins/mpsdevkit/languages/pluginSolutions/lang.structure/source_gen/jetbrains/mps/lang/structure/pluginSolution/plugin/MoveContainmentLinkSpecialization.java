@@ -58,7 +58,7 @@ public class MoveContainmentLinkSpecialization extends StructureSpecializationBa
           return scope;
         }
       };
-      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), SNodeOperations.asSConcept(oldLink.getOwner()))).toListSequence();
+      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), SNodeOperations.asSConcept(oldLink.getOwner()), false)).toListSequence();
     }
   }
   public void doReplaceInstance(SNode instance, SContainmentLink oldLink, SContainmentLink newLink) {

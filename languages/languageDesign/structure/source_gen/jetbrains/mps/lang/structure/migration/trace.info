@@ -157,11 +157,11 @@
         <var name="m" id="5091239957908801103" />
       </scope>
       <unit id="5091239957908849294" at="44,42,48,7" name="jetbrains.mps.lang.structure.migration.CopyIconsToResources$1" />
-      <unit id="5091239957908849303" at="49,276,53,7" name="jetbrains.mps.lang.structure.migration.CopyIconsToResources$2" />
+      <unit id="5091239957908849303" at="49,283,53,7" name="jetbrains.mps.lang.structure.migration.CopyIconsToResources$2" />
       <unit id="2771654749615673920" at="61,112,65,7" name="jetbrains.mps.lang.structure.migration.CopyIconsToResources$4" />
       <unit id="2771654749615680554" at="65,22,69,7" name="jetbrains.mps.lang.structure.migration.CopyIconsToResources$5" />
       <unit id="5091239957908814079" at="77,42,81,7" name="jetbrains.mps.lang.structure.migration.CopyIconsToResources$6" />
-      <unit id="5091239957909170856" at="82,285,86,7" name="jetbrains.mps.lang.structure.migration.CopyIconsToResources$7" />
+      <unit id="5091239957909170856" at="82,292,86,7" name="jetbrains.mps.lang.structure.migration.CopyIconsToResources$7" />
       <unit id="5091239957909170874" at="88,32,92,11" name="jetbrains.mps.lang.structure.migration.CopyIconsToResources$9" />
       <unit id="5091239957908851747" at="53,22,60,7" name="jetbrains.mps.lang.structure.migration.CopyIconsToResources$3" />
       <unit id="5091239957909170867" at="86,20,94,7" name="jetbrains.mps.lang.structure.migration.CopyIconsToResources$8" />
@@ -330,19 +330,19 @@
       </scope>
       <unit id="6714410169262120380" at="40,42,44,7" name="jetbrains.mps.lang.structure.migration.SetSIds$1" />
       <unit id="6714410169262120424" at="71,42,75,7" name="jetbrains.mps.lang.structure.migration.SetSIds$3" />
-      <unit id="6714410169262827739" at="76,312,80,7" name="jetbrains.mps.lang.structure.migration.SetSIds$4" />
+      <unit id="6714410169262827739" at="76,319,80,7" name="jetbrains.mps.lang.structure.migration.SetSIds$4" />
       <unit id="6714410169262827763" at="82,32,86,11" name="jetbrains.mps.lang.structure.migration.SetSIds$6" />
-      <unit id="241647608300409115" at="89,308,93,7" name="jetbrains.mps.lang.structure.migration.SetSIds$6" />
+      <unit id="241647608300409115" at="89,315,93,7" name="jetbrains.mps.lang.structure.migration.SetSIds$6" />
       <unit id="241647608300409133" at="95,32,99,11" name="jetbrains.mps.lang.structure.migration.SetSIds$8" />
-      <unit id="241647608300416364" at="102,305,106,7" name="jetbrains.mps.lang.structure.migration.SetSIds$8" />
+      <unit id="241647608300416364" at="102,312,106,7" name="jetbrains.mps.lang.structure.migration.SetSIds$8" />
       <unit id="241647608300416382" at="108,32,112,11" name="jetbrains.mps.lang.structure.migration.SetSIds$10" />
-      <unit id="6714410169262832489" at="115,314,119,7" name="jetbrains.mps.lang.structure.migration.SetSIds$10" />
+      <unit id="6714410169262832489" at="115,321,119,7" name="jetbrains.mps.lang.structure.migration.SetSIds$10" />
       <unit id="6714410169262832513" at="121,32,125,11" name="jetbrains.mps.lang.structure.migration.SetSIds$12" />
       <unit id="6714410169262827756" at="80,20,88,7" name="jetbrains.mps.lang.structure.migration.SetSIds$5" />
       <unit id="241647608300409126" at="93,20,101,7" name="jetbrains.mps.lang.structure.migration.SetSIds$7" />
       <unit id="241647608300416375" at="106,20,114,7" name="jetbrains.mps.lang.structure.migration.SetSIds$9" />
       <unit id="6714410169262832506" at="119,20,127,7" name="jetbrains.mps.lang.structure.migration.SetSIds$11" />
-      <unit id="6714410169262120401" at="45,288,64,7" name="jetbrains.mps.lang.structure.migration.SetSIds$2" />
+      <unit id="6714410169262120401" at="45,295,64,7" name="jetbrains.mps.lang.structure.migration.SetSIds$2" />
       <unit id="6714410169262118807" at="25,0,139,0" name="jetbrains.mps.lang.structure.migration.SetSIds" />
     </file>
   </root>
