@@ -51,13 +51,15 @@ public abstract class LanguageRuntime {
   private final List<LanguageRuntime> myExtendingLanguages = new ArrayList<LanguageRuntime>();
   private final List<LanguageRuntime> myExtendedLanguages = new ArrayList<LanguageRuntime>();
 
+  /**
+   * @return full name of the language, never {@code null}.
+   */
   public abstract String getNamespace();
 
   /**
-   * @return now value of the field, <code>null</code> if not set. Generated LanguageRuntime classes shall override return value
-   * Denoted with @ToRemove just to ease later discovery, it's method implementation to be removed, not the method itself
+   * @return identity of the language, never {@code null}. Generated LanguageRuntime classes shall override return value
    */
-  public abstract SLanguageId getId();
+  public abstract SLanguageId getId(); // FIXME supply a cons that takes mandatory values (id, name), rather than overriding methods in generated classes
 
   /**
    * Generated LanguageRuntime classes shall override this method
