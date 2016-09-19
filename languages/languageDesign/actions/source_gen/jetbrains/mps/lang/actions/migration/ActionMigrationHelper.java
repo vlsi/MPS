@@ -26,7 +26,6 @@ import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -189,7 +188,7 @@ public class ActionMigrationHelper {
   }
   private static void addMissingLanguageImport(SNode node, SModelInternal oldModel, SModelInternal newModel) {
     SLanguage language = node.getConcept().getLanguage();
-    if ((oldModel.importedLanguageIds().contains(language) || eq_qgr84z_a0a0a1a81(language, MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x982eb8df2c964bd7L, 0x996311712ea622e5L), "jetbrains.mps.lang.resources"))) && !(newModel.importedLanguageIds().contains(language))) {
+    if ((oldModel.importedLanguageIds().contains(language) || eq_qgr84z_a0a0a1a81(language, MetaAdapterFactory.getLanguage(0x982eb8df2c964bd7L, 0x996311712ea622e5L, "jetbrains.mps.lang.resources"))) && !(newModel.importedLanguageIds().contains(language))) {
       newModel.addLanguage(language);
     }
   }

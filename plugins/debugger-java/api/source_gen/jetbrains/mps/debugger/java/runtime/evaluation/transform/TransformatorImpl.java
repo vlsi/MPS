@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -130,7 +129,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
 
   private void preprocess() {
     // Import baseLanguageInternal to properly compute types of its constructs (the .type operation) 
-    addLanguageImport(myModel, MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L), "jetbrains.mps.baseLanguageInternal"));
+    addLanguageImport(myModel, MetaAdapterFactory.getLanguage(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, "jetbrains.mps.baseLanguageInternal"));
 
     // remove downcasts 
     for (SNode downcast : ListSequence.fromList(SNodeOperations.getNodeDescendants(myWhatToEvaluate, MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x6dd9f7bd221bb1d5L, "jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel"), false, new SAbstractConcept[]{}))) {

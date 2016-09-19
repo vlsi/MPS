@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -21,7 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
   }
   public void setupRoot(@NotNull SNode n) {
     SLanguage lang = n.getConcept().getLanguage();
-    if (lang.equals(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xb401a68083254110L, 0x8fd384331ff25befL), "jetbrains.mps.lang.generator")) || lang.equals(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x289fcc83654341e8L, 0xa5ca768235715ce4L), "jetbrains.mps.lang.generator.generationParameters"))) {
+    if (lang.equals(MetaAdapterFactory.getLanguage(0xb401a68083254110L, 0x8fd384331ff25befL, "jetbrains.mps.lang.generator")) || lang.equals(MetaAdapterFactory.getLanguage(0x289fcc83654341e8L, 0xa5ca768235715ce4L, "jetbrains.mps.lang.generator.generationParameters"))) {
       return;
     }
     SNode node = n;

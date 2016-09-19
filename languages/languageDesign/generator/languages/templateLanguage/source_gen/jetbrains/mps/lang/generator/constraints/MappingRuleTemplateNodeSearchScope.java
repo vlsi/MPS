@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class MappingRuleTemplateNodeSearchScope extends AbstractSearchScope {
   private SModel myModel;
@@ -52,7 +51,7 @@ public class MappingRuleTemplateNodeSearchScope extends AbstractSearchScope {
 
           // not instance of concepts from TLBase language (like TemplateDeclaration, MappingConfiguration etc.) 
           SLanguage language = object.getConcept().getLanguage();
-          return !(language.equals(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xb401a68083254110L, 0x8fd384331ff25befL), "jetbrains.mps.lang.generator")));
+          return !(language.equals(MetaAdapterFactory.getLanguage(0xb401a68083254110L, 0x8fd384331ff25befL, "jetbrains.mps.lang.generator")));
         }
       };
       myOwnNodes = searchScope.getNodes(condition);

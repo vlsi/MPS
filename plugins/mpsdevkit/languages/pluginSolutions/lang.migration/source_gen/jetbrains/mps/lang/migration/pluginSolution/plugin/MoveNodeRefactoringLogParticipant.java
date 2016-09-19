@@ -32,7 +32,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
@@ -158,7 +157,7 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
               sm.addModelImport(reference);
             }
           }
-          sm.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x9882f4ad195546feL, 0x826994189e5dbbf2L), "jetbrains.mps.lang.migration.util"));
+          sm.addLanguage(MetaAdapterFactory.getLanguage(0x9882f4ad195546feL, 0x826994189e5dbbf2L, "jetbrains.mps.lang.migration.util"));
           jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.addRootNode(migrationModel, myRefactoringStep);
           module.setModuleVersion(moduleVersion + 1);
 

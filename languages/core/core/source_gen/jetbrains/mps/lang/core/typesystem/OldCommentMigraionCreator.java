@@ -16,7 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -59,7 +58,7 @@ public class OldCommentMigraionCreator {
     if (migrationModel == null) {
       migrationModel = LanguageAspect.MIGRATION.createNew(language);
       if (migrationModel instanceof SModelInternal) {
-        ((SModelInternal) migrationModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x9074634404fd4286L, 0x97d5b46ae6a81709L), "jetbrains.mps.lang.migration"));
+        ((SModelInternal) migrationModel).addLanguage(MetaAdapterFactory.getLanguage(0x9074634404fd4286L, 0x97d5b46ae6a81709L, "jetbrains.mps.lang.migration"));
         ((SModelInternal) migrationModel).addModelImport((new ModuleRepositoryFacade(migrationModel.getRepository()).getModelByName("org.jetbrains.mps.openapi.module@java_stub")).getReference(), false);
       }
     }

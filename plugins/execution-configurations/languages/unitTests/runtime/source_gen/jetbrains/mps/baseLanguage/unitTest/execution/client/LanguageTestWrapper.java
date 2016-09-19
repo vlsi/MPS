@@ -28,7 +28,6 @@ import com.intellij.util.lang.UrlClassLoader;
 import java.net.URL;
 import java.net.URI;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import org.jetbrains.annotations.NonNls;
@@ -143,7 +142,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     }
     getRepo().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Iterable<SModuleReference> languageRuntimes = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL), "jetbrains.mps.lang.test").getLanguageRuntimes();
+        Iterable<SModuleReference> languageRuntimes = MetaAdapterFactory.getLanguage(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, "jetbrains.mps.lang.test").getLanguageRuntimes();
         for (SModuleReference dep : Sequence.fromIterable(languageRuntimes)) {
           SModule module = dep.resolve(getRepo());
           JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);

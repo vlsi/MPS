@@ -7,7 +7,6 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.List;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.smodel.SNodePointer;
@@ -28,7 +27,7 @@ public class ContributionFromUsedLanguage_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3526874291840777615", "");
-      UsedLanguagesUtils.assertLanguageUsed(getEditorComponent(), MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x9b3af7e09a524741L, 0xa75dbecf7e1d5117L), "jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage"));
+      UsedLanguagesUtils.assertLanguageUsed(getEditorComponent(), MetaAdapterFactory.getLanguage(0x9b3af7e09a524741L, 0xa75dbecf7e1d5117L, "jetbrains.mps.lang.editor.transformationMenu.testExtendingLanguage"));
       List<TransformationMenuItem> items = MenuLoadingUtils.loadNamedMenu(getEditorComponent(), new SNodePointer("r:3b1c2f8c-f04f-4186-97fc-85ed47ba8aeb(jetbrains.mps.lang.editor.menus.testLanguage.editor)", "3526874291840774961"), "test location");
       Assert.assertEquals(1, ListSequence.fromList(items).count());
       ActionItem item = (ActionItem) ListSequence.fromList(items).getElement(0);

@@ -17,7 +17,6 @@ import java.util.Collection;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.Arrays;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Collections;
@@ -78,7 +77,7 @@ public class PsiJavaStubModelDescriptor extends RegularModelDescriptor implement
 
   @Override
   public Collection<SLanguage> importedLanguageIds() {
-    return Arrays.asList(new SLanguage[]{MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage"), MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf280165065d5424eL, 0xbb1b463a8781b786L), "jetbrains.mps.baseLanguage.javadoc")});
+    return Arrays.asList(new SLanguage[]{MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), MetaAdapterFactory.getLanguage(0xf280165065d5424eL, 0xbb1b463a8781b786L, "jetbrains.mps.baseLanguage.javadoc")});
   }
 
   @Override

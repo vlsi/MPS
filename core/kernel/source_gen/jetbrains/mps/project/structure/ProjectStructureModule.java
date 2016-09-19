@@ -30,7 +30,6 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.Collections;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.extapi.model.SModelBase;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -195,7 +194,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
   @Override
   public Set<SLanguage> getUsedLanguages() {
-    return Collections.singleton(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x86ef829012bb4ca7L, 0x947f093788f263a9L), "jetbrains.mps.lang.project"));
+    return Collections.singleton(MetaAdapterFactory.getLanguage(0x86ef829012bb4ca7L, 0x947f093788f263a9L, "jetbrains.mps.lang.project"));
   }
 
   private void removeModel(SModel md) {

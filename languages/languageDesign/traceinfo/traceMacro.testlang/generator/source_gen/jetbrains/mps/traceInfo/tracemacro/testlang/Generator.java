@@ -15,7 +15,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class Generator extends TemplateModuleBase {
   private final LanguageRuntime sourceLanguage;
@@ -56,8 +55,8 @@ public class Generator extends TemplateModuleBase {
   @Override
   public Collection<SLanguage> getTargetLanguages() {
     SLanguage[] rv = new SLanguage[2];
-    rv[0] = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage");
-    rv[1] = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL), "jetbrains.mps.baseLanguage.collections");
+    rv[0] = MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage");
+    rv[1] = MetaAdapterFactory.getLanguage(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, "jetbrains.mps.baseLanguage.collections");
     return Arrays.asList(rv);
   }
 

@@ -30,7 +30,6 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.wm.IdeFocusManager;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -233,7 +232,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
   }
 
   protected void addBuiltInImports() {
-    SLanguage base = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L), "jetbrains.mps.console.base");
+    SLanguage base = MetaAdapterFactory.getLanguage(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, "jetbrains.mps.console.base");
     Collection<SLanguage> baseAndExtensions = new SLanguageHierarchy(LanguageRegistry.getInstance(myProject.getRepository()), Collections.singleton(base)).getExtending();
     SModelInternal modelInternal = ((SModelInternal) myModel);
     for (SLanguage l : CollectionSequence.fromCollection(baseAndExtensions)) {

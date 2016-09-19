@@ -259,45 +259,45 @@
   </root>
   <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/3526874291840104597">
     <file name="ContributionFromUnusedLanguage_Test.java">
-      <node id="3526874291840104597" at="20,70,21,115" concept="1" />
-      <node id="3526874291840104597" at="21,115,22,119" concept="1" />
-      <node id="3526874291840104597" at="28,51,29,53" concept="1" />
-      <node id="121597702824536446" at="29,53,30,241" concept="1" />
-      <node id="3526874291840108270" at="30,241,31,249" concept="3" />
-      <node id="3526874291840718202" at="31,249,32,58" concept="1" />
-      <node id="3526874291840104597" at="19,0,24,0" concept="2" trace="test_ContributionFromUnusedLanguage#()V" />
-      <node id="3526874291840104597" at="27,0,34,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="3526874291840104597" at="20,70,22,119" />
-      <scope id="3526874291840104597" at="28,51,32,58">
+      <node id="3526874291840104597" at="19,70,20,115" concept="1" />
+      <node id="3526874291840104597" at="20,115,21,119" concept="1" />
+      <node id="3526874291840104597" at="27,51,28,53" concept="1" />
+      <node id="121597702824536446" at="28,53,29,219" concept="1" />
+      <node id="3526874291840108270" at="29,219,30,249" concept="3" />
+      <node id="3526874291840718202" at="30,249,31,58" concept="1" />
+      <node id="3526874291840104597" at="18,0,23,0" concept="2" trace="test_ContributionFromUnusedLanguage#()V" />
+      <node id="3526874291840104597" at="26,0,33,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="3526874291840104597" at="19,70,21,119" />
+      <scope id="3526874291840104597" at="27,51,31,58">
         <var name="items" id="3526874291840108271" />
       </scope>
-      <scope id="3526874291840104597" at="19,0,24,0" />
-      <scope id="3526874291840104597" at="27,0,34,0" />
-      <unit id="3526874291840104597" at="25,0,35,0" name="jetbrains.mps.lang.editor.menus.tests.ContributionFromUnusedLanguage_Test$TestBody" />
-      <unit id="3526874291840104597" at="17,0,36,0" name="jetbrains.mps.lang.editor.menus.tests.ContributionFromUnusedLanguage_Test" />
+      <scope id="3526874291840104597" at="18,0,23,0" />
+      <scope id="3526874291840104597" at="26,0,33,0" />
+      <unit id="3526874291840104597" at="24,0,34,0" name="jetbrains.mps.lang.editor.menus.tests.ContributionFromUnusedLanguage_Test$TestBody" />
+      <unit id="3526874291840104597" at="16,0,35,0" name="jetbrains.mps.lang.editor.menus.tests.ContributionFromUnusedLanguage_Test" />
     </file>
   </root>
   <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/3526874291840777614">
     <file name="ContributionFromUsedLanguage_Test.java">
-      <node id="3526874291840777614" at="21,68,22,115" concept="1" />
-      <node id="3526874291840777614" at="22,115,23,117" concept="1" />
-      <node id="3526874291840777614" at="29,51,30,53" concept="1" />
-      <node id="121597702824533086" at="30,53,31,232" concept="1" />
-      <node id="3526874291840777645" at="31,232,32,249" concept="3" />
-      <node id="3526874291840777653" at="32,249,33,67" concept="1" />
-      <node id="3526874291840796196" at="33,67,34,80" concept="3" />
-      <node id="3526874291840797713" at="34,80,35,93" concept="1" />
-      <node id="3526874291840777614" at="20,0,25,0" concept="2" trace="test_ContributionFromUsedLanguage#()V" />
-      <node id="3526874291840777614" at="28,0,37,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="3526874291840777614" at="21,68,23,117" />
-      <scope id="3526874291840777614" at="20,0,25,0" />
-      <scope id="3526874291840777614" at="29,51,35,93">
+      <node id="3526874291840777614" at="20,68,21,115" concept="1" />
+      <node id="3526874291840777614" at="21,115,22,117" concept="1" />
+      <node id="3526874291840777614" at="28,51,29,53" concept="1" />
+      <node id="121597702824533086" at="29,53,30,210" concept="1" />
+      <node id="3526874291840777645" at="30,210,31,249" concept="3" />
+      <node id="3526874291840777653" at="31,249,32,67" concept="1" />
+      <node id="3526874291840796196" at="32,67,33,80" concept="3" />
+      <node id="3526874291840797713" at="33,80,34,93" concept="1" />
+      <node id="3526874291840777614" at="19,0,24,0" concept="2" trace="test_ContributionFromUsedLanguage#()V" />
+      <node id="3526874291840777614" at="27,0,36,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="3526874291840777614" at="20,68,22,117" />
+      <scope id="3526874291840777614" at="19,0,24,0" />
+      <scope id="3526874291840777614" at="28,51,34,93">
         <var name="item" id="3526874291840796197" />
         <var name="items" id="3526874291840777646" />
       </scope>
-      <scope id="3526874291840777614" at="28,0,37,0" />
-      <unit id="3526874291840777614" at="26,0,38,0" name="jetbrains.mps.lang.editor.menus.tests.ContributionFromUsedLanguage_Test$TestBody" />
-      <unit id="3526874291840777614" at="18,0,39,0" name="jetbrains.mps.lang.editor.menus.tests.ContributionFromUsedLanguage_Test" />
+      <scope id="3526874291840777614" at="27,0,36,0" />
+      <unit id="3526874291840777614" at="25,0,37,0" name="jetbrains.mps.lang.editor.menus.tests.ContributionFromUsedLanguage_Test$TestBody" />
+      <unit id="3526874291840777614" at="17,0,38,0" name="jetbrains.mps.lang.editor.menus.tests.ContributionFromUsedLanguage_Test" />
     </file>
   </root>
   <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/3597524805843306523">

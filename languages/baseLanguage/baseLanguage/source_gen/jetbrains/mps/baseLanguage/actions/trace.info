@@ -1696,44 +1696,44 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)/558454895479002756">
     <file name="ModuleDependencyUtils.java">
-      <node id="558454895477897463" at="16,50,17,160" concept="4" />
-      <node id="4214225063067035532" at="20,75,21,57" concept="9" />
-      <node id="4214225063067034873" at="21,57,22,161" concept="9" />
-      <node id="4214225063067034887" at="23,63,24,37" concept="4" />
-      <node id="2105624292225394938" at="28,52,29,13" concept="10" />
-      <node id="2105624292225393797" at="30,5,31,57" concept="9" />
-      <node id="2105624292225393803" at="31,57,32,151" concept="9" />
-      <node id="2105624292225393817" at="33,64,34,38" concept="4" />
-      <node id="558454895477892754" at="15,73,18,5" concept="7" />
-      <node id="4214225063067034878" at="22,161,25,5" concept="7" />
-      <node id="2105624292225394177" at="27,72,30,5" concept="7" />
-      <node id="2105624292225393808" at="32,151,35,5" concept="7" />
-      <node id="558454895479019226" at="15,0,20,0" concept="13" trace="addDependencyOnJDKIfMissing#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
-      <node id="7625832129925586765" at="20,0,27,0" concept="13" trace="addDependencyOnJavaDocIfMissing#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <node id="5849110260867315898" at="27,0,37,0" concept="13" trace="addDependencyOnCoreIfMissing#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <scope id="558454895477892757" at="16,50,17,160" />
-      <scope id="4214225063067034886" at="23,63,24,37" />
-      <scope id="2105624292225394179" at="28,52,29,13" />
-      <scope id="2105624292225393816" at="33,64,34,38" />
-      <scope id="558454895479002783" at="15,73,18,5" />
-      <scope id="558454895479019226" at="15,0,20,0">
+      <node id="558454895477897463" at="15,50,16,160" concept="4" />
+      <node id="4214225063067035532" at="19,75,20,57" concept="9" />
+      <node id="4214225063067034873" at="20,57,21,139" concept="9" />
+      <node id="4214225063067034887" at="22,63,23,37" concept="4" />
+      <node id="2105624292225394938" at="27,52,28,13" concept="10" />
+      <node id="2105624292225393797" at="29,5,30,57" concept="9" />
+      <node id="2105624292225393803" at="30,57,31,129" concept="9" />
+      <node id="2105624292225393817" at="32,64,33,38" concept="4" />
+      <node id="558454895477892754" at="14,73,17,5" concept="7" />
+      <node id="4214225063067034878" at="21,139,24,5" concept="7" />
+      <node id="2105624292225394177" at="26,72,29,5" concept="7" />
+      <node id="2105624292225393808" at="31,129,34,5" concept="7" />
+      <node id="558454895479019226" at="14,0,19,0" concept="13" trace="addDependencyOnJDKIfMissing#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <node id="7625832129925586765" at="19,0,26,0" concept="13" trace="addDependencyOnJavaDocIfMissing#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="5849110260867315898" at="26,0,36,0" concept="13" trace="addDependencyOnCoreIfMissing#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <scope id="558454895477892757" at="15,50,16,160" />
+      <scope id="4214225063067034886" at="22,63,23,37" />
+      <scope id="2105624292225394179" at="27,52,28,13" />
+      <scope id="2105624292225393816" at="32,64,33,38" />
+      <scope id="558454895479002783" at="14,73,17,5" />
+      <scope id="558454895479019226" at="14,0,19,0">
         <var name="currentModule" id="558454895479006190" />
       </scope>
-      <scope id="7625832129925586766" at="20,75,25,5">
+      <scope id="7625832129925586766" at="19,75,24,5">
         <var name="javadocLang" id="4214225063067034874" />
         <var name="model" id="4214225063067035533" />
       </scope>
-      <scope id="7625832129925586765" at="20,0,27,0">
+      <scope id="7625832129925586765" at="19,0,26,0">
         <var name="currentModel" id="7625832129926553386" />
       </scope>
-      <scope id="5849110260867315899" at="27,72,35,5">
+      <scope id="5849110260867315899" at="26,72,34,5">
         <var name="langCoreLang" id="2105624292225393804" />
         <var name="model" id="2105624292225393798" />
       </scope>
-      <scope id="5849110260867315898" at="27,0,37,0">
+      <scope id="5849110260867315898" at="26,0,36,0">
         <var name="currentModel" id="2105624292225393704" />
       </scope>
-      <unit id="558454895479002756" at="14,0,38,0" name="jetbrains.mps.baseLanguage.actions.ModuleDependencyUtils" />
+      <unit id="558454895479002756" at="13,0,37,0" name="jetbrains.mps.baseLanguage.actions.ModuleDependencyUtils" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)/5948027493683148074">

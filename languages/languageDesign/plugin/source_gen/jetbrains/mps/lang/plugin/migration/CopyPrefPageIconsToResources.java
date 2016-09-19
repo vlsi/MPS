@@ -20,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.migration.runtime.base.NotMigratedNode;
@@ -60,11 +59,11 @@ public class CopyPrefPageIconsToResources extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.models(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SModel>() {
         public boolean accept(SModel it) {
-          return LanguageAspect.STRUCTURE.is(it) && !(((SModelInternal) it).importedLanguageIds().contains(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x982eb8df2c964bd7L, 0x996311712ea622e5L), "jetbrains.mps.lang.resources")));
+          return LanguageAspect.STRUCTURE.is(it) && !(((SModelInternal) it).importedLanguageIds().contains(MetaAdapterFactory.getLanguage(0x982eb8df2c964bd7L, 0x996311712ea622e5L, "jetbrains.mps.lang.resources")));
         }
       }).visitAll(new IVisitor<SModel>() {
         public void visit(SModel it) {
-          ((SModelInternal) it).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x982eb8df2c964bd7L, 0x996311712ea622e5L), "jetbrains.mps.lang.resources"));
+          ((SModelInternal) it).addLanguage(MetaAdapterFactory.getLanguage(0x982eb8df2c964bd7L, 0x996311712ea622e5L, "jetbrains.mps.lang.resources"));
         }
       });
     }

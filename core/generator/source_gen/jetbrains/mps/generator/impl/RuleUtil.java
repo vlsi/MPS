@@ -21,7 +21,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class RuleUtil {
   public static final SConcept concept_NodeMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, "jetbrains.mps.lang.generator.structure.NodeMacro");
@@ -427,6 +426,6 @@ public final class RuleUtil {
     return ModelChangeOperations;
   }
   public static SLanguage getPatternLanguage() {
-    return MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L), "jetbrains.mps.lang.pattern");
+    return MetaAdapterFactory.getLanguage(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, "jetbrains.mps.lang.pattern");
   }
 }

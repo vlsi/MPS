@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -68,11 +67,11 @@ public class GeneratePluginSolution_Action extends BaseAction {
         ModelRoot defaultRoot = s.getModelRoots().iterator().next();
         SModel newModel = defaultRoot.createModel(s.getModuleName() + ".plugin");
 
-        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L), "jetbrains.mps.lang.plugin"));
-        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xef7bf5acd06c4342L, 0xb11de42104eb9343L), "jetbrains.mps.lang.plugin.standalone"));
-        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L), "jetbrains.mps.lang.smodel"));
-        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x63650c5916c8498aL, 0x99c8005c7ee9515dL), "jetbrains.mps.lang.access"));
-        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage"));
+        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, "jetbrains.mps.lang.plugin"));
+        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, "jetbrains.mps.lang.plugin.standalone"));
+        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, "jetbrains.mps.lang.smodel"));
+        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, "jetbrains.mps.lang.access"));
+        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"));
 
         SModelOperations.addRootNode(newModel, _quotation_createNode_ljjiw0_a0a9a0a0a0a5a0());
 

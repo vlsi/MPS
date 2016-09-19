@@ -5,7 +5,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
@@ -16,22 +15,22 @@ public class BootstrapLanguages {
   private BootstrapLanguages() {
   }
   public static SLanguage getLangCore() {
-    return MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL), "jetbrains.mps.lang.core");
+    return MetaAdapterFactory.getLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
   }
   public static SLanguage getGeneratorLang() {
-    return MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xb401a68083254110L, 0x8fd384331ff25befL), "jetbrains.mps.lang.generator");
+    return MetaAdapterFactory.getLanguage(0xb401a68083254110L, 0x8fd384331ff25befL, "jetbrains.mps.lang.generator");
   }
   public static SLanguage getGenContextLang() {
-    return MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L), "jetbrains.mps.lang.generator.generationContext");
+    return MetaAdapterFactory.getLanguage(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, "jetbrains.mps.lang.generator.generationContext");
   }
   public static SLanguage getBaseLang() {
-    return MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage");
+    return MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage");
   }
   public static SLanguage getBaseLangUnitTestLang() {
-    return MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L), "jetbrains.mps.baseLanguage.unitTest");
+    return MetaAdapterFactory.getLanguage(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, "jetbrains.mps.baseLanguage.unitTest");
   }
   public static SLanguage getLanguageDescriptorLang() {
-    return MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf4ad079dbc714ffbL, 0x96009328705cf998L), "jetbrains.mps.lang.descriptor");
+    return MetaAdapterFactory.getLanguage(0xf4ad079dbc714ffbL, 0x96009328705cf998L, "jetbrains.mps.lang.descriptor");
   }
   public static SModuleReference getGeneralPurposeDevKit() {
     return PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)");

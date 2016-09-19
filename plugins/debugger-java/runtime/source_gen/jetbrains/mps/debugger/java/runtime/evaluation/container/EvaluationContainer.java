@@ -35,7 +35,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -133,8 +132,8 @@ public class EvaluationContainer implements IEvaluationContainer {
     new EvaluationContainer.MyBaseLanguagesImportHelper().tryToImport(((SNode) BHReflection.invoke(evaluatorNode, SMethodTrimmedId.create("getCode", null, "hASWOEj0jB"))), nodesToImport);
 
     SModelOperations.validateLanguagesAndImports(containerModel, true, true);
-    ((SModelInternal) containerModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x7da4580f9d754603L, 0x816251a896d78375L), "jetbrains.mps.debugger.java.evaluation"));
-    ((SModelInternal) containerModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x802088974572437dL, 0xb50e8f050cba9566L), "jetbrains.mps.debugger.java.privateMembers"));
+    ((SModelInternal) containerModel).addLanguage(MetaAdapterFactory.getLanguage(0x7da4580f9d754603L, 0x816251a896d78375L, "jetbrains.mps.debugger.java.evaluation"));
+    ((SModelInternal) containerModel).addLanguage(MetaAdapterFactory.getLanguage(0x802088974572437dL, 0xb50e8f050cba9566L, "jetbrains.mps.debugger.java.privateMembers"));
   }
   protected SNode createEvaluatorNode() {
     return SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0xbbe5b47d7cc5fa1L, "jetbrains.mps.debugger.java.evaluation.structure.Evaluator")), null);

@@ -8,7 +8,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.InternalFlag;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -60,7 +59,7 @@ public class CollectTests_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    final SLanguage lang = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L), "jetbrains.mps.testbench.suite");
+    final SLanguage lang = MetaAdapterFactory.getLanguage(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, "jetbrains.mps.testbench.suite");
     return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModel) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("modelDesc"))).importedLanguageIds().contains(lang);
   }
   @Override

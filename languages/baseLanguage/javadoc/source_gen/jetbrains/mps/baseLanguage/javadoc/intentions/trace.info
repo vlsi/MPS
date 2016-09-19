@@ -401,27 +401,27 @@
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/5332352441256170917">
     <file name="DocCommentHelper.java">
-      <node id="5332352441256193334" at="13,58,14,98" concept="8" />
-      <node id="9044446622988383452" at="14,98,15,161" concept="8" />
-      <node id="5332352441256193363" at="16,63,17,37" concept="3" />
-      <node id="5332352441256193337" at="20,66,21,47" concept="9" />
-      <node id="5332352441256193349" at="15,161,18,5" concept="6" />
-      <node id="5332352441256193337" at="20,0,23,0" concept="12" trace="as_zf4tay_a0a0a0#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-      <node id="5332352441256170984" at="13,0,20,0" concept="12" trace="addJavadocLangIfMissing#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="5332352441256193357" at="16,63,17,37" />
-      <scope id="5332352441256193337" at="20,66,21,47" />
-      <scope id="5332352441256193337" at="20,0,23,0">
+      <node id="5332352441256193334" at="12,58,13,98" concept="8" />
+      <node id="9044446622988383452" at="13,98,14,139" concept="8" />
+      <node id="5332352441256193363" at="15,63,16,37" concept="3" />
+      <node id="5332352441256193337" at="19,66,20,47" concept="9" />
+      <node id="5332352441256193349" at="14,139,17,5" concept="6" />
+      <node id="5332352441256193337" at="19,0,22,0" concept="12" trace="as_zf4tay_a0a0a0#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+      <node id="5332352441256170984" at="12,0,19,0" concept="12" trace="addJavadocLangIfMissing#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="5332352441256193357" at="15,63,16,37" />
+      <scope id="5332352441256193337" at="19,66,20,47" />
+      <scope id="5332352441256193337" at="19,0,22,0">
         <var name="o" id="5332352441256193337" />
         <var name="type" id="5332352441256193337" />
       </scope>
-      <scope id="5332352441256170987" at="13,58,18,5">
+      <scope id="5332352441256170987" at="12,58,17,5">
         <var name="javadocLang" id="9044446622988383453" />
         <var name="model" id="5332352441256193335" />
       </scope>
-      <scope id="5332352441256170984" at="13,0,20,0">
+      <scope id="5332352441256170984" at="12,0,19,0">
         <var name="node" id="5332352441256198197" />
       </scope>
-      <unit id="5332352441256170917" at="12,0,24,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.DocCommentHelper" />
+      <unit id="5332352441256170917" at="11,0,23,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.DocCommentHelper" />
     </file>
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/5858074156537083239">
