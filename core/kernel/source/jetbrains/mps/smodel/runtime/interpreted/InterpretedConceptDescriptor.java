@@ -107,6 +107,9 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         isAbstract = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_abstract));
         myIsRootable = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_Concept_Rootable));
         helpURL = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_helpURL);
+        if (helpURL == null) {
+          helpURL = "";
+        }
 
         conceptAlias = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_conceptAlias);
         if (conceptAlias == null) {
@@ -114,6 +117,9 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         }
 
         shortDescription = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_conceptShortDescription);
+        if (shortDescription == null) {
+          shortDescription = "";
+        }
 
         // scope
         if (isInterface) {
