@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import jetbrains.mps.lang.dataFlow.MPSDataFlow;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.text.impl.MPSTextGenerator;
 import jetbrains.mps.typesystem.MPSTypesystem;
 import org.jetbrains.annotations.NotNull;
@@ -75,6 +76,9 @@ class PlatformBase implements Platform {
     }
     if (MPSModuleRepository.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myCore.getModuleRepository());
+    }
+    if (LanguageRegistry.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myCore.getLanguageRegistry());
     }
     return null;
   }

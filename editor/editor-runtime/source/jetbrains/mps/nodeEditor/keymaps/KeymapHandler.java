@@ -119,12 +119,7 @@ public abstract class KeymapHandler<E> {
       // to find out possible editors/keymaps declared for super-concepts. This code has to change into generated
       // factory for keymaps, so that we don't need to walk hierarchy here.
       for (SLanguage l : new SLanguageHierarchy(SModelOperations.getAllLanguageImports(model)).getExtended()) {
-        SModule language = l.getSourceModule();
-        if (!(language instanceof Language)) {
-          continue;
-        }
-
-        List<KeyMap> keyMapsForNamespace = LanguagesKeymapManager.getInstance().getKeyMapsForLanguage(((Language) language));
+        List<KeyMap> keyMapsForNamespace = LanguagesKeymapManager.getInstance().getKeyMapsForLanguage(l);
         if (keyMapsForNamespace != null) {
           for (KeyMap keymap : keyMapsForNamespace) {
             if (!addedKeymaps.contains(keymap.getClass())) {
