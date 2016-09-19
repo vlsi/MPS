@@ -29,10 +29,13 @@ public class IconResource {
   private static final Logger LOG = LogManager.getLogger(IconResource.class);
 
   private String myIconResId;
+  private String myClassName; //used to make IconResources unique and avoid things like MPS-24005
   private WeakReference<Class> myResourceProvider;
 
+  //in 3.5, both parameters must become @NotNull
   public IconResource(String iconResId, Class resourceProvider) {
     myIconResId = iconResId;
+    myClassName = resourceProvider == null ? null : resourceProvider.getName();
     myResourceProvider = new WeakReference<Class>(resourceProvider);
   }
 
@@ -98,12 +101,16 @@ public class IconResource {
 
     IconResource that = (IconResource) o;
 
-    return myIconResId != null ? myIconResId.equals(that.myIconResId) : that.myIconResId == null;
-
+    if (myIconResId != null ? !myIconResId.equals(that.myIconResId) : that.myIconResId != null) {
+      return false;
+    }
+    return myClassName != null ? myClassName.equals(that.myClassName) : that.myClassName == null;
   }
 
   @Override
   public int hashCode() {
-    return myIconResId != null ? myIconResId.hashCode() : 0;
+    int result = myIconResId != null ? myIconResId.hashCode() : 0;
+    result = 31 * result + (myClassName != null ? myClassName.hashCode() : 0);
+    return result;
   }
 }
