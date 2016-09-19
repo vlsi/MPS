@@ -10354,9 +10354,9 @@
       <node id="1168620373595" at="48,60,49,62" concept="8" />
       <node id="1168620373595" at="49,62,50,105" concept="3" />
       <node id="1205882896626" at="53,62,54,21" concept="9" />
-      <node id="1205883506608" at="55,7,56,66" concept="8" />
-      <node id="1205883090295" at="57,201,58,21" concept="9" />
-      <node id="1168622142763" at="59,7,60,261" concept="9" />
+      <node id="628308631242855110" at="56,81,57,21" concept="9" />
+      <node id="1205883506608" at="58,7,59,66" concept="8" />
+      <node id="1168622142763" at="59,66,60,261" concept="9" />
       <node id="1168622580789" at="62,121,63,476" concept="3" />
       <node id="1168620373595" at="65,34,66,28" concept="9" />
       <node id="1168620373595" at="28,0,31,0" concept="2" trace="RootTemplateAnnotation_KeyMap_Action0#()V" />
@@ -10365,7 +10365,7 @@
       <node id="1168620373595" at="38,62,41,7" concept="6" />
       <node id="1168620373595" at="42,49,45,7" concept="6" />
       <node id="1205882872205" at="52,127,55,7" concept="6" />
-      <node id="1205883007582" at="56,66,59,7" concept="6" />
+      <node id="628308631242838700" at="55,7,58,7" concept="6" />
       <node id="1168620373595" at="62,0,65,0" concept="7" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)V" />
       <node id="1168620373595" at="65,0,68,0" concept="7" trace="getKeyStroke#()Ljava/lang/String;" />
       <node id="1168620373595" at="48,0,52,0" concept="7" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -10378,7 +10378,7 @@
       <scope id="1168620373595" at="39,34,40,21" />
       <scope id="1168620373595" at="43,32,44,21" />
       <scope id="1205882872206" at="53,62,54,21" />
-      <scope id="1205883007583" at="57,201,58,21" />
+      <scope id="628308631242838702" at="56,81,57,21" />
       <scope id="1168620555238" at="62,121,63,476" />
       <scope id="1168620373595" at="65,34,66,28" />
       <scope id="1168620373595" at="48,60,50,105">

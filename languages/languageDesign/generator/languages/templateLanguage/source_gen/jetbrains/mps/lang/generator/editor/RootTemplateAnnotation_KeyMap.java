@@ -10,11 +10,11 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class RootTemplateAnnotation_KeyMap extends KeyMapImpl {
@@ -53,10 +53,10 @@ public class RootTemplateAnnotation_KeyMap extends KeyMapImpl {
       if (ListSequence.fromList(selectedNodes).count() != 1) {
         return false;
       }
-      SNode applyToNode = SNodeOperations.getContainingRoot(node);
-      if (MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xb401a68083254110L, 0x8fd384331ff25befL), "jetbrains.mps.lang.generator").equals(SNodeOperations.getConcept(applyToNode).getLanguage())) {
+      if (!(SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node)))) {
         return false;
       }
+      SNode applyToNode = SNodeOperations.getContainingRoot(node);
       return AttributeOperations.getAttribute(applyToNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) == null;
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
