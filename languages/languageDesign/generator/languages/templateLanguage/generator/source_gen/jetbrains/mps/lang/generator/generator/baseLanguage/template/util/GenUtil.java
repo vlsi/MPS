@@ -31,9 +31,11 @@ public class GenUtil {
     // Don't want "tlist" and "tnode" scattered around 
     return saveVar(context, node, "tlist" + varIndex);
   }
-  public static String saveNodeVar(TemplateQueryContext context, SNode node, int varIndex) {
+  public static String saveNodeVar(TemplateQueryContext context, SNode node, int varIndex, boolean canBeNull) {
     // Don't want "tlist" and "tnode" scattered around 
-    return saveVar(context, node, "tnode" + varIndex);
+    String varName = saveVar(context, node, "tnode" + varIndex);
+    node.putUserObject("GenUtil:NotNull", Boolean.valueOf(!(canBeNull)));
+    return varName;
   }
   public static String saveVar(TemplateQueryContext context, SNode node, String var) {
     SNode original = (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, "jetbrains.mps.lang.generator.structure.NodeMacro")) ? SNodeOperations.getParent(node) : node);
@@ -58,6 +60,14 @@ public class GenUtil {
   public static boolean isNodeVariable(TemplateQueryContext context, SNode node) {
     String n = getVarHack(context, node);
     return n != null && n.startsWith("tnode");
+  }
+
+  public static boolean isNonNullNodeVariable(TemplateQueryContext context, SNode node) {
+    return isNodeVariable(context, node) && Boolean.TRUE.equals(node.getUserObject("GenUtil:NotNull"));
+  }
+
+  public static boolean isNullableNodeVariable(TemplateQueryContext context, SNode node) {
+    return isNodeVariable(context, node) && !(Boolean.TRUE.equals(node.getUserObject("GenUtil:NotNull")));
   }
 
   /**

@@ -480,7 +480,6 @@
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
@@ -7463,7 +7462,7 @@
                     <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
                   </node>
                 </node>
-                <node concept="3NT_Vc" id="hzGvvez" role="2OqNvi" />
+                <node concept="2yIwOk" id="1lNxI6$Fhnm" role="2OqNvi" />
               </node>
               <node concept="3O6GUB" id="hzGvwcn" role="2OqNvi">
                 <node concept="chp4Y" id="h$s2qBD" role="3QVz_e">

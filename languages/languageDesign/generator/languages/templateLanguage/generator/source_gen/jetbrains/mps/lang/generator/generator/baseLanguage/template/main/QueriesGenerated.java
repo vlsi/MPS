@@ -218,7 +218,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_8285036680620207089(final PropertyMacroContext _context) {
-    return GenUtil.saveNodeVar(_context, _context.getNode(), ++((int[]) _context.getVariable("varindex"))[0]);
+    return GenUtil.saveNodeVar(_context, _context.getNode(), ++((int[]) _context.getVariable("varindex"))[0], false);
   }
   public static Object propertyMacro_GetPropertyValue_4155486055398183477(final PropertyMacroContext _context) {
     return GeneratorUtil.getTemplateNodeId(_context.getOriginalCopiedInputNode(_context.getNode()));
@@ -565,6 +565,9 @@ public class QueriesGenerated {
     return n;
   }
   public static Object propertyMacro_GetPropertyValue_6389702176794341064(final PropertyMacroContext _context) {
+    // FIXME can't use saveListVar as it doesn't force value override, 
+    // which is essential as there's already another name associated with the node 
+    // (i.e. its name inside applyNode() method) 
     String name = "tlist" + ++((int[]) _context.getVariable("varindex"))[0];
     _context.putTransientObject(_context.getNode(), name);
     return name;
@@ -583,7 +586,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_787641416589878848(final PropertyMacroContext _context) {
-    return GenUtil.saveNodeVar(_context, _context.getNode(), ++((int[]) _context.getVariable("varindex"))[0]);
+    return GenUtil.saveNodeVar(_context, _context.getNode(), ++((int[]) _context.getVariable("varindex"))[0], true);
   }
   public static Object propertyMacro_GetPropertyValue_4672632171991713666(final PropertyMacroContext _context) {
     return "insertInput" + ((int[]) _context.getVariable("varindex"))[0];
@@ -902,16 +905,16 @@ public class QueriesGenerated {
     return (SNode) SNodeOperations.getConcept(_context.getNode()).getDeclarationNode();
   }
   public static Object referenceMacro_GetReferent_1246578104714226075(final ReferenceMacroContext _context) {
-    String innervar = (String) _context.getTransientObject(_context.getNode());
-    return innervar;
+    return GenUtil.getVarHack(_context, _context.getNode());
   }
   public static Object referenceMacro_GetReferent_1246578104714226025(final ReferenceMacroContext _context) {
-    String innervar = (String) _context.getTransientObject(_context.getNode());
-    return innervar;
+    return GenUtil.getVarHack(_context, _context.getNode());
+  }
+  public static Object referenceMacro_GetReferent_1545727400807789647(final ReferenceMacroContext _context) {
+    return GenUtil.getVarHack(_context, _context.getNode());
   }
   public static Object referenceMacro_GetReferent_1246578104714225944(final ReferenceMacroContext _context) {
-    String innervar = (String) _context.getTransientObject(_context.getNode());
-    return innervar;
+    return GenUtil.getVarHack(_context, _context.getNode());
   }
   public static Object referenceMacro_GetReferent_99767819676501695(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11621ab7715L, 0x11621abebb5L, "sourceNodeQuery")));
@@ -1325,7 +1328,10 @@ public class QueriesGenerated {
     });
   }
   public static boolean ifMacro_Condition_1246578104714225920(final IfMacroContext _context) {
-    return GenUtil.isNodeVariable(_context, _context.getNode());
+    return GenUtil.isNullableNodeVariable(_context, _context.getNode());
+  }
+  public static boolean ifMacro_Condition_1545727400807800598(final IfMacroContext _context) {
+    return GenUtil.isNonNullNodeVariable(_context, _context.getNode());
   }
   public static boolean ifMacro_Condition_1246578104714225980(final IfMacroContext _context) {
     return GenUtil.isCollectionVariable(_context, _context.getNode());
@@ -2072,6 +2078,14 @@ public class QueriesGenerated {
     return SNodeOperations.getParent(_context.getNode());
   }
   public static SNode sourceNodeQuery_4219501964100894403(final SourceSubstituteMacroNodeContext _context) {
+    SNode rv = SModelOperations.createNewNode(_context.getInputModel(), null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6e7L, "jetbrains.mps.lang.smodel.structure.ContainmentLinkId"));
+    ContainmentLinkId__BehaviorDescriptor.setLink_id7jb4LXp8VsD.invoke(rv, _context.getNode().getContainmentLink());
+    return rv;
+  }
+  public static SNode sourceNodeQuery_1545727400807789616(final SourceSubstituteMacroNodeContext _context) {
+    return SNodeOperations.getParent(_context.getNode());
+  }
+  public static SNode sourceNodeQuery_1545727400807789625(final SourceSubstituteMacroNodeContext _context) {
     SNode rv = SModelOperations.createNewNode(_context.getInputModel(), null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6e7L, "jetbrains.mps.lang.smodel.structure.ContainmentLinkId"));
     ContainmentLinkId__BehaviorDescriptor.setLink_id7jb4LXp8VsD.invoke(rv, _context.getNode().getContainmentLink());
     return rv;
