@@ -43,8 +43,10 @@ public class Template_OutputRoot extends TemplateDeclarationBase implements Temp
           // XXX is innerContext in use during reduce_Node? 
           SNode tnode3 = null;
           final SNode insertInput3 = QueriesGenerated.insertMacro_Query_7612440128092282150(new InsertMacroContext(context1, insertMacro_38z9ys_b0a0a2a1a4a1a2));
-          tnode3 = environment.insertNode(insertInput3, insertMacro_38z9ys_b0a0a2a1a4a1a2, context1);
-          environment.registerLabel(context1.getInput(), tnode3, "testLabel1");
+          if (insertInput3 != null) {
+            tnode3 = environment.insertNode(insertInput3, insertMacro_38z9ys_b0a0a2a1a4a1a2, context1);
+            environment.registerLabel(context1.getInput(), tnode3, "testLabel1");
+          }
           tlist2 = TemplateUtil.singletonList(tnode3);
           final SNodeReference weaveMacroRef = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "8417539822878722923");
           if (tlist2.size() == 1) {
@@ -84,9 +86,7 @@ public class Template_OutputRoot extends TemplateDeclarationBase implements Temp
           SNodeAccessUtil.setProperty(tnode7, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_8014813979421777301(new PropertyMacroContext(context1, "foobar", propertyMacro_38z9ys_c0a0c0a0b0g0b0c))));
         } finally {
         }
-        if (tnode7 != null) {
-          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11645a94e4aL, "outputChild"), tnode7);
-        }
+        tnode1.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11645a94e4aL, "outputChild"), tnode7);
         // TODO validate child 
       }
     } finally {

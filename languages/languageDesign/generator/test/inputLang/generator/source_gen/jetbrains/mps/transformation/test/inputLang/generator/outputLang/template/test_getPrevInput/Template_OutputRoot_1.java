@@ -66,9 +66,7 @@ public class Template_OutputRoot_1 extends TemplateDeclarationBase implements Te
                 SNodeAccessUtil.setProperty(tnode6, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327274819(new PropertyMacroContext(context5, "_root_level_was_", propertyMacro_wvaolp_c0a0c0a0b0c0e0e0e0d0c))));
               } finally {
               }
-              if (tnode6 != null) {
-                tnode5.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x117f047d47fL, "outputChild"), tnode6);
-              }
+              tnode5.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x117f047d47fL, "outputChild"), tnode6);
               // TODO validate child 
             }
             {
@@ -92,9 +90,7 @@ public class Template_OutputRoot_1 extends TemplateDeclarationBase implements Te
                 SNodeAccessUtil.setProperty(tnode10, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327970031(new PropertyMacroContext(context5, "_level_2_was_", propertyMacro_wvaolp_c0a0c0a0b0e0e0e0e0d0c))));
               } finally {
               }
-              if (tnode10 != null) {
-                tnode5.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x117f047d47fL, "outputChild"), tnode10);
-              }
+              tnode5.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x117f047d47fL, "outputChild"), tnode10);
               // TODO validate child 
             }
           } finally {
