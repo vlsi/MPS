@@ -68,6 +68,7 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.text.TextAreaTest.class,
     jetbrains.mps.text.TextBufferTest.class,
     jetbrains.mps.generator.impl.plan.TemplateModelScanTest.class,
+    jetbrains.mps.generator.test.VariableNameSourceTest.class,
     jetbrains.mps.classloading.ProjectMPSDependenciesTest.class,
     jetbrains.mps.environment.MpsEnvironmentTest.class,
     jetbrains.mps.repo.RepoListenerTest.class,
