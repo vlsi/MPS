@@ -99,19 +99,19 @@ public class Template_NodeBuilder_to_methodCall extends TemplateDeclarationBase 
           {
             final SNode tnode9 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
             try {
-              TemplateContext context9 = context2.subContext();
+              TemplateContext context5 = context2.subContext();
               {
                 Collection<SNode> tlist10 = null;
-                if (QueriesGenerated.ifMacro_Condition_429601079676882501(new IfMacroContext(context9, ifMacroRef_synbg_b0a0b0b0b0g0b0b0c0c))) {
+                if (QueriesGenerated.ifMacro_Condition_429601079676882501(new IfMacroContext(context5, ifMacroRef_synbg_b0a0b0b0b0g0b0b0c0c))) {
                   final SNode tnode11 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"));
                   try {
-                    TemplateContext context11 = context9.subContext();
+                    TemplateContext context6 = context5.subContext();
                     {
                       final SNode tnode12 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
                       try {
-                        environment.nodeCopied(context11, tnode12, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676882485");
+                        environment.nodeCopied(context6, tnode12, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676882485");
                         SNodeAccessUtil.setProperty(tnode12, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "result");
-                        TemplateContext context12 = context11.subContext();
+                        TemplateContext context7 = context6.subContext();
                         {
                           final SNode tnode13 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"));
                           try {
@@ -145,12 +145,12 @@ public class Template_NodeBuilder_to_methodCall extends TemplateDeclarationBase 
               {
                 final SNode tnode16 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"));
                 try {
-                  TemplateContext context16 = context9.subContext();
+                  TemplateContext context8 = context5.subContext();
                   {
                     final SNode tnode17 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
                     try {
                       SNodeAccessUtil.setProperty(tnode17, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "facade");
-                      TemplateContext context17 = context16.subContext();
+                      TemplateContext context9 = context8.subContext();
                       {
                         final SNode tnode18 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"));
                         try {
@@ -182,8 +182,8 @@ public class Template_NodeBuilder_to_methodCall extends TemplateDeclarationBase 
               }
               {
                 Collection<SNode> tlist20 = null;
-                final SNode copySrcInput20 = QueriesGenerated.sourceNodeQuery_429601079676882526(new SourceSubstituteMacroNodeContext(context9, copySrcMacro_synbg_b0a0c0d0b0g0b0b0c0c));
-                tlist20 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput20), copySrcMacro_synbg_b0a0c0d0b0g0b0b0c0c, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676882515", context9);
+                final SNode copySrcInput20 = QueriesGenerated.sourceNodeQuery_429601079676882526(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_synbg_b0a0c0d0b0g0b0b0c0c));
+                tlist20 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput20), copySrcMacro_synbg_b0a0c0d0b0g0b0b0c0c, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676882515", context5);
                 for (SNode child21 : TemplateUtil.asNotNull(tlist20)) {
                   tnode9.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), child21);
                 }
@@ -192,11 +192,11 @@ public class Template_NodeBuilder_to_methodCall extends TemplateDeclarationBase 
               {
                 final SNode tnode22 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement"));
                 try {
-                  TemplateContext context22 = context9.subContext();
+                  TemplateContext context10 = context5.subContext();
                   {
                     final SNode tnode23 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                     try {
-                      environment.resolve((ReferenceResolver) new RefResolver(tnode23, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context22, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "7091594365016609327"), "result") {
+                      environment.resolve((ReferenceResolver) new RefResolver(tnode23, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context10, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "7091594365016609327"), "result") {
                         @Override
                         public Object resolve() {
                           return QueriesGenerated.referenceMacro_GetReferent_7091594365016609328(createQueryContext());
@@ -226,18 +226,18 @@ public class Template_NodeBuilder_to_methodCall extends TemplateDeclarationBase 
         final SNode tnode24 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x31c3f88088ed999aL, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"));
         try {
           environment.resolveInTemplateLater(tnode24, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), templateNode_synbg_c0a0a1a2a2a2, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709245", "createNode", context1);
-          TemplateContext context24 = context1.subContext();
+          TemplateContext context11 = context1.subContext();
           {
             final List<SNode> tlist25 = new ArrayList<SNode>();
-            final Iterable<SNode> loopList25 = QueriesGenerated.sourceNodesQuery_429601079676709496(new SourceSubstituteMacroNodesContext(context24, loopMacroRef_synbg_b0a0a1a2a1a2a2a2));
+            final Iterable<SNode> loopList25 = QueriesGenerated.sourceNodesQuery_429601079676709496(new SourceSubstituteMacroNodesContext(context11, loopMacroRef_synbg_b0a0a1a2a1a2a2a2));
             for (SNode itnode25 : loopList25) {
               if (itnode25 == null) {
                 continue;
               }
-              TemplateContext context25 = context24.subContext(itnode25);
+              TemplateContext context12 = context11.subContext(itnode25);
               Collection<SNode> tlist26 = null;
-              final SNode copySrcInput26 = context25.getInput();
-              tlist26 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput26), copySrcMacro_synbg_b0a0e0c0c0b0c0c0c, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709487", context25);
+              final SNode copySrcInput26 = context12.getInput();
+              tlist26 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput26), copySrcMacro_synbg_b0a0e0c0c0b0c0c0c, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709487", context12);
               if (tlist26 != null) {
                 tlist25.addAll(tlist26);
               }

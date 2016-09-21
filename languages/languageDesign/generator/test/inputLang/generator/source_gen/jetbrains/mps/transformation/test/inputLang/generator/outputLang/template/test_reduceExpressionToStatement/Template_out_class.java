@@ -43,7 +43,7 @@ public class Template_out_class extends TemplateDeclarationBase implements Templ
         final SNode tnode3 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
         try {
           SNodeAccessUtil.setProperty(tnode3, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "method");
-          TemplateContext context3 = context1.subContext();
+          TemplateContext context2 = context1.subContext();
           {
             final SNode tnode4 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"));
             try {
@@ -62,8 +62,8 @@ public class Template_out_class extends TemplateDeclarationBase implements Templ
           }
           {
             Collection<SNode> tlist6 = null;
-            final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_1209150187921(new SourceSubstituteMacroNodeContext(context3, copySrcMacro_lrc73l_b0a0c0e0b0e0b0c));
-            tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro_lrc73l_b0a0c0e0b0e0b0c, "tpl/r:00000000-0000-4000-0000-011c895905f8/1209150155199", context3);
+            final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_1209150187921(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_lrc73l_b0a0c0e0b0e0b0c));
+            tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro_lrc73l_b0a0c0e0b0e0b0c, "tpl/r:00000000-0000-4000-0000-011c895905f8/1209150155199", context2);
             for (SNode child7 : TemplateUtil.asNotNull(tlist6)) {
               tnode3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"), child7);
             }

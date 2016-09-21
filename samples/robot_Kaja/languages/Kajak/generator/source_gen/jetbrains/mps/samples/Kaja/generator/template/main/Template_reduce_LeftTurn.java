@@ -55,7 +55,7 @@ public class Template_reduce_LeftTurn extends TemplateDeclarationBase {
           {
             final SNode tnode5 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
             try {
-              TemplateContext context5 = context2.subContext();
+              TemplateContext context4 = context2.subContext();
               {
                 final SNode tnode6 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"));
                 try {

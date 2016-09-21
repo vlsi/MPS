@@ -41,11 +41,11 @@ public class Template_reduce_IfStatement extends TemplateDeclarationBase {
       {
         final SNode tnode4 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
         try {
-          TemplateContext context4 = context1.subContext();
+          TemplateContext context2 = context1.subContext();
           {
             Collection<SNode> tlist5 = null;
-            final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_3308300503039939838(new SourceSubstituteMacroNodeContext(context4, copySrcMacro_damv7z_b0a0c0b0b0c0c0c));
-            tlist5 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput5), copySrcMacro_damv7z_b0a0c0b0b0c0c0c, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039939828", context4);
+            final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_3308300503039939838(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_damv7z_b0a0c0b0b0c0c0c));
+            tlist5 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput5), copySrcMacro_damv7z_b0a0c0b0b0c0c0c, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039939828", context2);
             for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
               tnode4.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), child6);
             }
@@ -59,15 +59,15 @@ public class Template_reduce_IfStatement extends TemplateDeclarationBase {
       {
         final SNode tnode7 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement"));
         try {
-          TemplateContext context7 = context1.subContext();
+          TemplateContext context3 = context1.subContext();
           {
             final SNode tnode8 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
             try {
-              TemplateContext context8 = context7.subContext();
+              TemplateContext context4 = context3.subContext();
               {
                 Collection<SNode> tlist9 = null;
-                final SNode copySrcInput9 = QueriesGenerated.sourceNodeQuery_3308300503039939855(new SourceSubstituteMacroNodeContext(context8, copySrcMacro_damv7z_b0a0c0b0b0b0b0d0c0c));
-                tlist9 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput9), copySrcMacro_damv7z_b0a0c0b0b0b0b0d0c0c, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039939845", context8);
+                final SNode copySrcInput9 = QueriesGenerated.sourceNodeQuery_3308300503039939855(new SourceSubstituteMacroNodeContext(context4, copySrcMacro_damv7z_b0a0c0b0b0b0b0d0c0c));
+                tlist9 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput9), copySrcMacro_damv7z_b0a0c0b0b0b0b0d0c0c, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039939845", context4);
                 for (SNode child10 : TemplateUtil.asNotNull(tlist9)) {
                   tnode8.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), child10);
                 }

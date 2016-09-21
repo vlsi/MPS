@@ -45,19 +45,19 @@ public class Template_gen_static_method extends TemplateDeclarationBase {
       {
         final SNode tnode3 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
         try {
-          TemplateContext context3 = context1.subContext();
+          TemplateContext context2 = context1.subContext();
           {
             final SNode tnode4 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"));
             try {
-              TemplateContext context4 = context3.subContext();
+              TemplateContext context3 = context2.subContext();
               {
                 final SNode tnode5 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
                 try {
-                  TemplateContext context5 = context4.subContext();
+                  TemplateContext context4 = context3.subContext();
                   {
                     final SNode tnode6 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement"));
                     try {
-                      TemplateContext context6 = context5.subContext();
+                      TemplateContext context5 = context4.subContext();
                       {
                         final SNode tnode7 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
                         try {
@@ -80,11 +80,11 @@ public class Template_gen_static_method extends TemplateDeclarationBase {
               {
                 final SNode tnode8 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b210L, "jetbrains.mps.baseLanguage.structure.EqualsExpression"));
                 try {
-                  TemplateContext context8 = context4.subContext();
+                  TemplateContext context6 = context3.subContext();
                   {
                     final SNode tnode9 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                     try {
-                      environment.resolveInTemplateLater(tnode9, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_2hhfmn_c0a0a1a1a1a2a1a1a1a4a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context8);
+                      environment.resolveInTemplateLater(tnode9, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_2hhfmn_c0a0a1a1a1a2a1a1a1a4a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context6);
                     } finally {
                     }
                     tnode8.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode9);
@@ -112,15 +112,15 @@ public class Template_gen_static_method extends TemplateDeclarationBase {
           {
             final SNode tnode11 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement"));
             try {
-              TemplateContext context11 = context3.subContext();
+              TemplateContext context7 = context2.subContext();
               {
                 final SNode tnode12 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfe476b758fL, "jetbrains.mps.baseLanguage.structure.MulExpression"));
                 try {
-                  TemplateContext context12 = context11.subContext();
+                  TemplateContext context8 = context7.subContext();
                   {
                     final SNode tnode13 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                     try {
-                      environment.resolveInTemplateLater(tnode13, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_2hhfmn_c0a0a1a1a1a1a1a2a1a4a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context12);
+                      environment.resolveInTemplateLater(tnode13, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_2hhfmn_c0a0a1a1a1a1a1a2a1a4a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context8);
                     } finally {
                     }
                     tnode12.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode13);
@@ -129,12 +129,12 @@ public class Template_gen_static_method extends TemplateDeclarationBase {
                   {
                     final SNode tnode14 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"));
                     try {
-                      environment.resolveInTemplateLater(tnode14, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), templateNode_2hhfmn_c0a0a1a2a1a1a1a2a1a4a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724041", "fact", context12);
-                      TemplateContext context14 = context12.subContext();
+                      environment.resolveInTemplateLater(tnode14, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), templateNode_2hhfmn_c0a0a1a2a1a1a1a2a1a4a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724041", "fact", context8);
+                      TemplateContext context9 = context8.subContext();
                       {
                         final SNode tnode15 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f5L, "jetbrains.mps.baseLanguage.structure.MinusExpression"));
                         try {
-                          TemplateContext context15 = context14.subContext();
+                          TemplateContext context10 = context9.subContext();
                           {
                             final SNode tnode16 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
                             try {
@@ -147,7 +147,7 @@ public class Template_gen_static_method extends TemplateDeclarationBase {
                           {
                             final SNode tnode17 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                             try {
-                              environment.resolveInTemplateLater(tnode17, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_2hhfmn_c0a0a1a2a1a2a1a2a1a1a1a2a1a4a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context15);
+                              environment.resolveInTemplateLater(tnode17, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_2hhfmn_c0a0a1a2a1a2a1a2a1a1a1a2a1a4a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context10);
                             } finally {
                             }
                             tnode15.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode17);
@@ -191,7 +191,7 @@ public class Template_gen_static_method extends TemplateDeclarationBase {
         try {
           environment.nodeCopied(context1, tnode19, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048");
           SNodeAccessUtil.setProperty(tnode19, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "e");
-          TemplateContext context19 = context1.subContext();
+          TemplateContext context11 = context1.subContext();
           {
             final SNode tnode20 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d22479L, "jetbrains.mps.baseLanguage.structure.IntegerType"));
             try {
@@ -235,21 +235,21 @@ public class Template_gen_static_method extends TemplateDeclarationBase {
       {
         final SNode tnode4 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
         try {
-          TemplateContext context4 = context1.subContext();
+          TemplateContext context2 = context1.subContext();
           {
             final SNode tnode5 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
             try {
-              TemplateContext context5 = context4.subContext();
+              TemplateContext context3 = context2.subContext();
               {
                 final SNode tnode6 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"));
                 try {
-                  environment.resolve((ReferenceResolver) new RefResolver(tnode6, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), context5, new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5955416080080987362"), "fact") {
+                  environment.resolve((ReferenceResolver) new RefResolver(tnode6, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), context3, new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5955416080080987362"), "fact") {
                     @Override
                     public Object resolve() {
                       return QueriesGenerated.referenceMacro_GetReferent_5955416080080987363(createQueryContext());
                     }
                   });
-                  TemplateContext context6 = context5.subContext();
+                  TemplateContext context4 = context3.subContext();
                   {
                     final SNode tnode7 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
                     try {

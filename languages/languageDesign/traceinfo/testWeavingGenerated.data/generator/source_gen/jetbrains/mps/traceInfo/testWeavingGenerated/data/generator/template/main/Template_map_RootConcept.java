@@ -42,7 +42,7 @@ public class Template_map_RootConcept extends TemplateDeclarationBase implements
       {
         final SNode tnode3 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
         try {
-          TemplateContext context3 = context1.subContext();
+          TemplateContext context2 = context1.subContext();
           {
             final SNode tnode4 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"));
             try {

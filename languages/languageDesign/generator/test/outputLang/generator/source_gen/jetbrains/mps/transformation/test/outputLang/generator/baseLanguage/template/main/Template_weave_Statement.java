@@ -50,15 +50,15 @@ public class Template_weave_Statement extends TemplateDeclarationBase {
       {
         final SNode tnode4 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
         try {
-          TemplateContext context4 = context1.subContext();
+          TemplateContext context2 = context1.subContext();
           {
             final SNode tnode5 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment"));
             try {
-              TemplateContext context5 = context4.subContext();
+              TemplateContext context3 = context2.subContext();
               {
                 final SNode tnode6 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart"));
                 try {
-                  SNodeAccessUtil.setProperty(tnode6, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, 0x57d533a7af15ed3eL, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3571912445009937377(new PropertyMacroContext(context5, "a", propertyMacro_6c7ipi_c0a0c0a0b0b0b0b0b0e0c0c))));
+                  SNodeAccessUtil.setProperty(tnode6, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, 0x57d533a7af15ed3eL, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3571912445009937377(new PropertyMacroContext(context3, "a", propertyMacro_6c7ipi_c0a0c0a0b0b0b0b0b0e0c0c))));
                 } finally {
                 }
                 tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, 0x57d533a7af16ff73L, "commentPart"), tnode6);

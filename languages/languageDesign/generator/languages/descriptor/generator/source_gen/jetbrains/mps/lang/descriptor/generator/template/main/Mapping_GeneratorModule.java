@@ -72,11 +72,11 @@ public class Mapping_GeneratorModule extends MapConfigBase implements TemplateMa
         try {
           tnode2.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode2, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil.createStrictlyBeforeRule(jetbrains.mps.generator.runtime.TemplateMappingConfigRef,jetbrains.mps.generator.runtime.TemplateMappingConfigRef):jetbrains.mps.generator.runtime.TemplateMappingPriorityRule")));
           tnode2.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), tnode2, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil")));
-          TemplateContext context2 = context.subContext();
+          TemplateContext context1 = context.subContext();
           {
             Collection<SNode> tlist3 = null;
-            final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_1820665478710839875(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_ugw0jb_b0a0c0d0b0c0b8));
-            tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_ugw0jb_b0a0c0d0b0c0b8, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839873", context2);
+            final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_1820665478710839875(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_ugw0jb_b0a0c0d0b0c0b8));
+            tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_ugw0jb_b0a0c0d0b0c0b8, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839873", context1);
             for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
               tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child4);
             }
@@ -84,8 +84,8 @@ public class Mapping_GeneratorModule extends MapConfigBase implements TemplateMa
           }
           {
             Collection<SNode> tlist5 = null;
-            final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_1820665478710839879(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_ugw0jb_b0a0c0e0b0c0b8));
-            tlist5 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput5), copySrcMacro_ugw0jb_b0a0c0e0b0c0b8, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839877", context2);
+            final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_1820665478710839879(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_ugw0jb_b0a0c0e0b0c0b8));
+            tlist5 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput5), copySrcMacro_ugw0jb_b0a0c0e0b0c0b8, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839877", context1);
             for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
               tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child6);
             }
@@ -99,11 +99,11 @@ public class Mapping_GeneratorModule extends MapConfigBase implements TemplateMa
         try {
           tnode7.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode7, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil.createBeforeOrTogetherRule(jetbrains.mps.generator.runtime.TemplateMappingConfigRef,jetbrains.mps.generator.runtime.TemplateMappingConfigRef):jetbrains.mps.generator.runtime.TemplateMappingPriorityRule")));
           tnode7.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), tnode7, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil")));
-          TemplateContext context7 = context.subContext();
+          TemplateContext context2 = context.subContext();
           {
             Collection<SNode> tlist8 = null;
-            final SNode copySrcInput8 = QueriesGenerated.sourceNodeQuery_1820665478710839959(new SourceSubstituteMacroNodeContext(context7, copySrcMacro_ugw0jb_b0a0c0d0b0a2a1i));
-            tlist8 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput8), copySrcMacro_ugw0jb_b0a0c0d0b0a2a1i, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839957", context7);
+            final SNode copySrcInput8 = QueriesGenerated.sourceNodeQuery_1820665478710839959(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_ugw0jb_b0a0c0d0b0a2a1i));
+            tlist8 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput8), copySrcMacro_ugw0jb_b0a0c0d0b0a2a1i, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839957", context2);
             for (SNode child9 : TemplateUtil.asNotNull(tlist8)) {
               tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child9);
             }
@@ -111,8 +111,8 @@ public class Mapping_GeneratorModule extends MapConfigBase implements TemplateMa
           }
           {
             Collection<SNode> tlist10 = null;
-            final SNode copySrcInput10 = QueriesGenerated.sourceNodeQuery_1820665478710839967(new SourceSubstituteMacroNodeContext(context7, copySrcMacro_ugw0jb_b0a0c0e0b0a2a1i));
-            tlist10 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput10), copySrcMacro_ugw0jb_b0a0c0e0b0a2a1i, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839965", context7);
+            final SNode copySrcInput10 = QueriesGenerated.sourceNodeQuery_1820665478710839967(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_ugw0jb_b0a0c0e0b0a2a1i));
+            tlist10 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput10), copySrcMacro_ugw0jb_b0a0c0e0b0a2a1i, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839965", context2);
             for (SNode child11 : TemplateUtil.asNotNull(tlist10)) {
               tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child11);
             }
@@ -126,11 +126,11 @@ public class Mapping_GeneratorModule extends MapConfigBase implements TemplateMa
         try {
           tnode12.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode12, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil.createStrictlyAfterRule(jetbrains.mps.generator.runtime.TemplateMappingConfigRef,jetbrains.mps.generator.runtime.TemplateMappingConfigRef):jetbrains.mps.generator.runtime.TemplateMappingPriorityRule")));
           tnode12.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), tnode12, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil")));
-          TemplateContext context12 = context.subContext();
+          TemplateContext context3 = context.subContext();
           {
             Collection<SNode> tlist13 = null;
-            final SNode copySrcInput13 = QueriesGenerated.sourceNodeQuery_2643213347103793325(new SourceSubstituteMacroNodeContext(context12, copySrcMacro_ugw0jb_b0a0c0d0b0b2a1i));
-            tlist13 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput13), copySrcMacro_ugw0jb_b0a0c0d0b0b2a1i, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2643213347103793323", context12);
+            final SNode copySrcInput13 = QueriesGenerated.sourceNodeQuery_2643213347103793325(new SourceSubstituteMacroNodeContext(context3, copySrcMacro_ugw0jb_b0a0c0d0b0b2a1i));
+            tlist13 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput13), copySrcMacro_ugw0jb_b0a0c0d0b0b2a1i, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2643213347103793323", context3);
             for (SNode child14 : TemplateUtil.asNotNull(tlist13)) {
               tnode12.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child14);
             }
@@ -138,8 +138,8 @@ public class Mapping_GeneratorModule extends MapConfigBase implements TemplateMa
           }
           {
             Collection<SNode> tlist15 = null;
-            final SNode copySrcInput15 = QueriesGenerated.sourceNodeQuery_2643213347103793333(new SourceSubstituteMacroNodeContext(context12, copySrcMacro_ugw0jb_b0a0c0e0b0b2a1i));
-            tlist15 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput15), copySrcMacro_ugw0jb_b0a0c0e0b0b2a1i, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2643213347103793331", context12);
+            final SNode copySrcInput15 = QueriesGenerated.sourceNodeQuery_2643213347103793333(new SourceSubstituteMacroNodeContext(context3, copySrcMacro_ugw0jb_b0a0c0e0b0b2a1i));
+            tlist15 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput15), copySrcMacro_ugw0jb_b0a0c0e0b0b2a1i, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2643213347103793331", context3);
             for (SNode child16 : TemplateUtil.asNotNull(tlist15)) {
               tnode12.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child16);
             }
@@ -153,11 +153,11 @@ public class Mapping_GeneratorModule extends MapConfigBase implements TemplateMa
         try {
           tnode17.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode17, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil.createAfterOrTogetherRule(jetbrains.mps.generator.runtime.TemplateMappingConfigRef,jetbrains.mps.generator.runtime.TemplateMappingConfigRef):jetbrains.mps.generator.runtime.TemplateMappingPriorityRule")));
           tnode17.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), tnode17, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil")));
-          TemplateContext context17 = context.subContext();
+          TemplateContext context4 = context.subContext();
           {
             Collection<SNode> tlist18 = null;
-            final SNode copySrcInput18 = QueriesGenerated.sourceNodeQuery_2643213347103793342(new SourceSubstituteMacroNodeContext(context17, copySrcMacro_ugw0jb_b0a0c0d0b0c2a1i));
-            tlist18 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput18), copySrcMacro_ugw0jb_b0a0c0d0b0c2a1i, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2643213347103793340", context17);
+            final SNode copySrcInput18 = QueriesGenerated.sourceNodeQuery_2643213347103793342(new SourceSubstituteMacroNodeContext(context4, copySrcMacro_ugw0jb_b0a0c0d0b0c2a1i));
+            tlist18 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput18), copySrcMacro_ugw0jb_b0a0c0d0b0c2a1i, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2643213347103793340", context4);
             for (SNode child19 : TemplateUtil.asNotNull(tlist18)) {
               tnode17.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child19);
             }
@@ -165,8 +165,8 @@ public class Mapping_GeneratorModule extends MapConfigBase implements TemplateMa
           }
           {
             Collection<SNode> tlist20 = null;
-            final SNode copySrcInput20 = QueriesGenerated.sourceNodeQuery_2643213347103793350(new SourceSubstituteMacroNodeContext(context17, copySrcMacro_ugw0jb_b0a0c0e0b0c2a1i));
-            tlist20 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput20), copySrcMacro_ugw0jb_b0a0c0e0b0c2a1i, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2643213347103793348", context17);
+            final SNode copySrcInput20 = QueriesGenerated.sourceNodeQuery_2643213347103793350(new SourceSubstituteMacroNodeContext(context4, copySrcMacro_ugw0jb_b0a0c0e0b0c2a1i));
+            tlist20 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput20), copySrcMacro_ugw0jb_b0a0c0e0b0c2a1i, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2643213347103793348", context4);
             for (SNode child21 : TemplateUtil.asNotNull(tlist20)) {
               tnode17.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child21);
             }
@@ -180,11 +180,11 @@ public class Mapping_GeneratorModule extends MapConfigBase implements TemplateMa
         try {
           tnode22.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode22, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil.createStrictlyTogetherRule(jetbrains.mps.generator.runtime.TemplateMappingConfigRef,jetbrains.mps.generator.runtime.TemplateMappingConfigRef):jetbrains.mps.generator.runtime.TemplateMappingPriorityRule")));
           tnode22.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), tnode22, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil")));
-          TemplateContext context22 = context.subContext();
+          TemplateContext context5 = context.subContext();
           {
             Collection<SNode> tlist23 = null;
-            final SNode copySrcInput23 = QueriesGenerated.sourceNodeQuery_1820665478710839976(new SourceSubstituteMacroNodeContext(context22, copySrcMacro_ugw0jb_b0a0c0d0b0a2a1i_0));
-            tlist23 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput23), copySrcMacro_ugw0jb_b0a0c0d0b0a2a1i_0, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839974", context22);
+            final SNode copySrcInput23 = QueriesGenerated.sourceNodeQuery_1820665478710839976(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_ugw0jb_b0a0c0d0b0a2a1i_0));
+            tlist23 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput23), copySrcMacro_ugw0jb_b0a0c0d0b0a2a1i_0, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839974", context5);
             for (SNode child24 : TemplateUtil.asNotNull(tlist23)) {
               tnode22.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child24);
             }
@@ -192,8 +192,8 @@ public class Mapping_GeneratorModule extends MapConfigBase implements TemplateMa
           }
           {
             Collection<SNode> tlist25 = null;
-            final SNode copySrcInput25 = QueriesGenerated.sourceNodeQuery_1820665478710839984(new SourceSubstituteMacroNodeContext(context22, copySrcMacro_ugw0jb_b0a0c0e0b0a2a1i_0));
-            tlist25 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput25), copySrcMacro_ugw0jb_b0a0c0e0b0a2a1i_0, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839982", context22);
+            final SNode copySrcInput25 = QueriesGenerated.sourceNodeQuery_1820665478710839984(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_ugw0jb_b0a0c0e0b0a2a1i_0));
+            tlist25 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput25), copySrcMacro_ugw0jb_b0a0c0e0b0a2a1i_0, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839982", context5);
             for (SNode child26 : TemplateUtil.asNotNull(tlist25)) {
               tnode22.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child26);
             }

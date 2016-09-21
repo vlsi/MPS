@@ -62,11 +62,11 @@ public class Template_reduce_Repeat extends TemplateDeclarationBase {
       {
         final SNode tnode5 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
         try {
-          TemplateContext context5 = context1.subContext();
+          TemplateContext context3 = context1.subContext();
           {
             Collection<SNode> tlist6 = null;
-            final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_3308300503039939727(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_9c7i7b_b0a0c0b0b0c0c0c));
-            tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro_9c7i7b_b0a0c0b0b0c0c0c, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039939717", context5);
+            final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_3308300503039939727(new SourceSubstituteMacroNodeContext(context3, copySrcMacro_9c7i7b_b0a0c0b0b0c0c0c));
+            tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro_9c7i7b_b0a0c0b0b0c0c0c, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039939717", context3);
             for (SNode child7 : TemplateUtil.asNotNull(tlist6)) {
               tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), child7);
             }
@@ -80,11 +80,11 @@ public class Template_reduce_Repeat extends TemplateDeclarationBase {
       {
         final SNode tnode8 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced3b82aL, "jetbrains.mps.baseLanguage.structure.LessThanExpression"));
         try {
-          TemplateContext context8 = context1.subContext();
+          TemplateContext context4 = context1.subContext();
           {
             final SNode tnode9 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
             try {
-              SNodeAccessUtil.setProperty(tnode9, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3308300503039660463(new PropertyMacroContext(context8, "10", propertyMacro_9c7i7b_c0a0c0a0b0b0b0d0c0c))));
+              SNodeAccessUtil.setProperty(tnode9, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3308300503039660463(new PropertyMacroContext(context4, "10", propertyMacro_9c7i7b_c0a0c0a0b0b0b0d0c0c))));
             } finally {
             }
             tnode8.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), tnode9);
@@ -93,7 +93,7 @@ public class Template_reduce_Repeat extends TemplateDeclarationBase {
           {
             final SNode tnode10 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
             try {
-              environment.resolveInTemplateLater(tnode10, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_9c7i7b_c0a0a1a2a1a3a2a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039660399", "i", context8);
+              environment.resolveInTemplateLater(tnode10, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_9c7i7b_c0a0a1a2a1a3a2a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039660399", "i", context4);
             } finally {
             }
             tnode8.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), tnode10);
@@ -107,11 +107,11 @@ public class Template_reduce_Repeat extends TemplateDeclarationBase {
       {
         final SNode tnode11 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11adecdb4f0L, "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression"));
         try {
-          TemplateContext context11 = context1.subContext();
+          TemplateContext context5 = context1.subContext();
           {
             final SNode tnode12 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
             try {
-              environment.resolveInTemplateLater(tnode12, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_9c7i7b_c0a0a1a1a1a4a2a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039660399", "i", context11);
+              environment.resolveInTemplateLater(tnode12, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_9c7i7b_c0a0a1a1a1a4a2a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039660399", "i", context5);
             } finally {
             }
             tnode11.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a4c1f269L, 0x120a4c433a6L, "expression"), tnode12);

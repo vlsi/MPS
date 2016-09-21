@@ -52,15 +52,15 @@ public class Template_weave_ChildConceptWeave extends TemplateDeclarationBase {
       {
         final SNode tnode4 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
         try {
-          TemplateContext context4 = context1.subContext();
+          TemplateContext context2 = context1.subContext();
           {
             final SNode tnode5 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
             try {
-              TemplateContext context5 = context4.subContext();
+              TemplateContext context3 = context2.subContext();
               {
                 final SNode tnode6 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
                 try {
-                  TemplateContext context6 = context5.subContext();
+                  TemplateContext context4 = context3.subContext();
                   {
                     final SNode tnode7 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, "jetbrains.mps.baseLanguage.structure.StaticFieldReference"));
                     try {
@@ -75,15 +75,15 @@ public class Template_weave_ChildConceptWeave extends TemplateDeclarationBase {
                     final SNode tnode8 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"));
                     try {
                       tnode8.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode8, PersistenceFacade.getInstance().createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)"), PersistenceFacade.getInstance().createNodeId("~PrintStream.println(java.lang.String):void")));
-                      TemplateContext context8 = context6.subContext();
+                      TemplateContext context5 = context4.subContext();
                       {
                         final SNode tnode9 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7fbL, "jetbrains.mps.baseLanguage.structure.PlusExpression"));
                         try {
-                          TemplateContext context9 = context8.subContext();
+                          TemplateContext context6 = context5.subContext();
                           {
                             final SNode tnode10 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"));
                             try {
-                              SNodeAccessUtil.setProperty(tnode10, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008526320(new PropertyMacroContext(context9, "name", propertyMacro_5w9su2_c0a0c0a0b0b0b0c0b0c0b0b0b0b0b0e0c0c))));
+                              SNodeAccessUtil.setProperty(tnode10, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008526320(new PropertyMacroContext(context6, "name", propertyMacro_5w9su2_c0a0c0a0b0b0b0c0b0c0b0b0b0b0b0e0c0c))));
                             } finally {
                             }
                             tnode9.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), tnode10);

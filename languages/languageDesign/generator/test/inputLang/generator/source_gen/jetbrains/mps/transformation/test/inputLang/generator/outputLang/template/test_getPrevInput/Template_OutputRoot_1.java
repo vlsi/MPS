@@ -59,11 +59,11 @@ public class Template_OutputRoot_1 extends TemplateDeclarationBase implements Te
           final SNode tnode5 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
           try {
             SNodeAccessUtil.setProperty(tnode5, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202326517571(new PropertyMacroContext(context3, "_text_", propertyMacro_wvaolp_c0a0c0a0e0e0e0d0c))));
-            TemplateContext context5 = context3.subContext();
+            TemplateContext context4 = context3.subContext();
             {
               final SNode tnode6 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
               try {
-                SNodeAccessUtil.setProperty(tnode6, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327274819(new PropertyMacroContext(context5, "_root_level_was_", propertyMacro_wvaolp_c0a0c0a0b0c0e0e0e0d0c))));
+                SNodeAccessUtil.setProperty(tnode6, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327274819(new PropertyMacroContext(context4, "_root_level_was_", propertyMacro_wvaolp_c0a0c0a0b0c0e0e0e0d0c))));
               } finally {
               }
               tnode5.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x117f047d47fL, "outputChild"), tnode6);
@@ -71,10 +71,10 @@ public class Template_OutputRoot_1 extends TemplateDeclarationBase implements Te
             }
             {
               Collection<SNode> tlist7 = null;
-              if (QueriesGenerated.ifMacro_Condition_1202332796047(new IfMacroContext(context5, ifMacroRef_wvaolp_b0a0b0d0e0e0e0d0c))) {
+              if (QueriesGenerated.ifMacro_Condition_1202332796047(new IfMacroContext(context4, ifMacroRef_wvaolp_b0a0b0d0e0e0e0d0c))) {
                 final SNode tnode8 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
                 try {
-                  SNodeAccessUtil.setProperty(tnode8, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327887568(new PropertyMacroContext(context5, "_level_1_was_", propertyMacro_wvaolp_c0a0c0a0b0b0d0e0e0e0d0c))));
+                  SNodeAccessUtil.setProperty(tnode8, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327887568(new PropertyMacroContext(context4, "_level_1_was_", propertyMacro_wvaolp_c0a0c0a0b0b0d0e0e0e0d0c))));
                 } finally {
                 }
                 tlist7 = TemplateUtil.singletonList(tnode8);
@@ -87,7 +87,7 @@ public class Template_OutputRoot_1 extends TemplateDeclarationBase implements Te
             {
               final SNode tnode10 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
               try {
-                SNodeAccessUtil.setProperty(tnode10, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327970031(new PropertyMacroContext(context5, "_level_2_was_", propertyMacro_wvaolp_c0a0c0a0b0e0e0e0e0d0c))));
+                SNodeAccessUtil.setProperty(tnode10, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327970031(new PropertyMacroContext(context4, "_level_2_was_", propertyMacro_wvaolp_c0a0c0a0b0e0e0e0e0d0c))));
               } finally {
               }
               tnode5.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x117f047d47fL, "outputChild"), tnode10);

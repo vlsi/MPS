@@ -57,7 +57,7 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
         final SNode tnode4 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
         try {
           environment.nodeCopied(context1, tnode4, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039570167");
-          TemplateContext context4 = context1.subContext();
+          TemplateContext context2 = context1.subContext();
           {
             final SNode tnode5 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"));
             try {
@@ -92,7 +92,7 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
         try {
           SNodeAccessUtil.setProperty(tnode8, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"), "false");
           SNodeAccessUtil.setProperty(tnode8, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "perform");
-          TemplateContext context8 = context1.subContext();
+          TemplateContext context3 = context1.subContext();
           {
             final SNode tnode9 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"));
             try {
@@ -112,18 +112,18 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
           {
             final SNode tnode11 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
             try {
-              TemplateContext context11 = context8.subContext();
+              TemplateContext context4 = context3.subContext();
               {
                 final List<SNode> tlist12 = new ArrayList<SNode>();
-                final Iterable<SNode> loopList12 = QueriesGenerated.sourceNodesQuery_3308300503039580700(new SourceSubstituteMacroNodesContext(context11, loopMacroRef_rbrxtl_b0a0a1a1a1a5a1a6a1a2));
+                final Iterable<SNode> loopList12 = QueriesGenerated.sourceNodesQuery_3308300503039580700(new SourceSubstituteMacroNodesContext(context4, loopMacroRef_rbrxtl_b0a0a1a1a1a5a1a6a1a2));
                 for (SNode itnode12 : loopList12) {
                   if (itnode12 == null) {
                     continue;
                   }
-                  TemplateContext context12 = context11.subContext(itnode12);
+                  TemplateContext context5 = context4.subContext(itnode12);
                   Collection<SNode> tlist13 = null;
-                  final SNode copySrcInput13 = context12.getInput();
-                  tlist13 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput13), copySrcMacro_rbrxtl_b0a0e0c0b0b0f0b0g0b0c, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039571100", context12);
+                  final SNode copySrcInput13 = context5.getInput();
+                  tlist13 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput13), copySrcMacro_rbrxtl_b0a0e0c0b0b0f0b0g0b0c, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039571100", context5);
                   if (tlist13 != null) {
                     tlist12.addAll(tlist13);
                   }
@@ -150,10 +150,10 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
           if (itnode15 == null) {
             continue;
           }
-          TemplateContext context15 = context1.subContext(itnode15);
+          TemplateContext context6 = context1.subContext(itnode15);
           Collection<SNode> tlist16 = null;
-          final SNode copySrcInput16 = context15.getInput();
-          tlist16 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput16), copySrcMacro_rbrxtl_b0a0e0c0h0b0c, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039720831", context15);
+          final SNode copySrcInput16 = context6.getInput();
+          tlist16 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput16), copySrcMacro_rbrxtl_b0a0e0c0h0b0c, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039720831", context6);
           if (tlist16 != null) {
             tlist15.addAll(tlist16);
           }
@@ -170,10 +170,10 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
           if (itnode18 == null) {
             continue;
           }
-          TemplateContext context18 = context1.subContext(itnode18);
+          TemplateContext context7 = context1.subContext(itnode18);
           Collection<SNode> tlist19 = null;
-          final Iterable<SNode> copyListInput19 = QueriesGenerated.sourceNodesQuery_4394627182934963575(new SourceSubstituteMacroNodesContext(context18, copySrcListMacro_rbrxtl_b0a0a3a2a8a1a2));
-          tlist19 = environment.copyNodes(copyListInput19, copySrcListMacro_rbrxtl_b0a0a3a2a8a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/4394627182934963449", context18);
+          final Iterable<SNode> copyListInput19 = QueriesGenerated.sourceNodesQuery_4394627182934963575(new SourceSubstituteMacroNodesContext(context7, copySrcListMacro_rbrxtl_b0a0a3a2a8a1a2));
+          tlist19 = environment.copyNodes(copyListInput19, copySrcListMacro_rbrxtl_b0a0a3a2a8a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/4394627182934963449", context7);
           if (tlist19 != null) {
             tlist18.addAll(tlist19);
           }
@@ -187,7 +187,7 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
         final SNode tnode21 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
         try {
           SNodeAccessUtil.setProperty(tnode21, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "main");
-          TemplateContext context21 = context1.subContext();
+          TemplateContext context8 = context1.subContext();
           {
             final SNode tnode22 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"));
             try {
@@ -207,21 +207,21 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
           {
             final SNode tnode24 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
             try {
-              TemplateContext context24 = context21.subContext();
+              TemplateContext context9 = context8.subContext();
               {
                 final SNode tnode25 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"));
                 try {
-                  TemplateContext context25 = context24.subContext();
+                  TemplateContext context10 = context9.subContext();
                   {
                     final SNode tnode26 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
                     try {
-                      environment.nodeCopied(context25, tnode26, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039581791");
+                      environment.nodeCopied(context10, tnode26, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039581791");
                       SNodeAccessUtil.setProperty(tnode26, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "script");
-                      TemplateContext context26 = context25.subContext();
+                      TemplateContext context11 = context10.subContext();
                       {
                         final SNode tnode27 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
                         try {
-                          environment.resolveInTemplateLater(tnode27, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), templateNode_rbrxtl_c0a0a1a3a1a1a1a1a1a4a1a9a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039570165", "map_Script", context26);
+                          environment.resolveInTemplateLater(tnode27, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), templateNode_rbrxtl_c0a0a1a3a1a1a1a1a1a4a1a9a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039570165", "map_Script", context11);
                         } finally {
                         }
                         tnode26.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), tnode27);
@@ -230,11 +230,11 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
                       {
                         final SNode tnode28 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"));
                         try {
-                          TemplateContext context28 = context26.subContext();
+                          TemplateContext context12 = context11.subContext();
                           {
                             final SNode tnode29 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator"));
                             try {
-                              environment.resolveInTemplateLater(tnode29, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), templateNode_rbrxtl_c0a0a1a1a1a4a1a1a1a1a1a4a1a9a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039570167", "map_Script", context28);
+                              environment.resolveInTemplateLater(tnode29, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), templateNode_rbrxtl_c0a0a1a1a1a4a1a1a1a1a1a4a1a9a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039570167", "map_Script", context12);
                             } finally {
                             }
                             tnode28.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator"), tnode29);
@@ -258,15 +258,15 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
               {
                 final SNode tnode30 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
                 try {
-                  TemplateContext context30 = context24.subContext();
+                  TemplateContext context13 = context9.subContext();
                   {
                     final SNode tnode31 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
                     try {
-                      TemplateContext context31 = context30.subContext();
+                      TemplateContext context14 = context13.subContext();
                       {
                         final SNode tnode32 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                         try {
-                          environment.resolveInTemplateLater(tnode32, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_rbrxtl_c0a0a1a1a1a1a1a2a1a4a1a9a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039581791", "script", context31);
+                          environment.resolveInTemplateLater(tnode32, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_rbrxtl_c0a0a1a1a1a1a1a2a1a4a1a9a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039581791", "script", context14);
                         } finally {
                         }
                         tnode31.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), tnode32);
@@ -294,15 +294,15 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
               {
                 final SNode tnode34 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
                 try {
-                  TemplateContext context34 = context24.subContext();
+                  TemplateContext context15 = context9.subContext();
                   {
                     final SNode tnode35 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
                     try {
-                      TemplateContext context35 = context34.subContext();
+                      TemplateContext context16 = context15.subContext();
                       {
                         final SNode tnode36 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                         try {
-                          environment.resolveInTemplateLater(tnode36, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_rbrxtl_c0a0a1a1a1a1a1a3a1a4a1a9a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039581791", "script", context35);
+                          environment.resolveInTemplateLater(tnode36, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), templateNode_rbrxtl_c0a0a1a1a1a1a1a3a1a4a1a9a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039581791", "script", context16);
                         } finally {
                         }
                         tnode35.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), tnode36);
@@ -336,11 +336,11 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
             final SNode tnode38 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
             try {
               SNodeAccessUtil.setProperty(tnode38, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "args");
-              TemplateContext context38 = context21.subContext();
+              TemplateContext context17 = context8.subContext();
               {
                 final SNode tnode39 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType"));
                 try {
-                  TemplateContext context39 = context38.subContext();
+                  TemplateContext context18 = context17.subContext();
                   {
                     final SNode tnode40 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47da71ecL, "jetbrains.mps.baseLanguage.structure.StringType"));
                     try {
