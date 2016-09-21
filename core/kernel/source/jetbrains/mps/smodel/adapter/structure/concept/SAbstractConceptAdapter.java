@@ -118,8 +118,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     }
 
     ArrayList<SReferenceLink> result = new ArrayList<SReferenceLink>();
-    for (SReferenceLinkId rid : d.getReferenceIds()) {
-      result.add(MetaAdapterFactory.getReferenceLink(rid, d.getRefDescriptor(rid).getName()));
+    for (ReferenceDescriptor rd : d.getReferenceDescriptors()) {
+      result.add(MetaAdapterFactory.getReferenceLink(rd.getId(), rd.getName()));
     }
     return result;
   }
@@ -141,8 +141,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     }
 
     ArrayList<SContainmentLink> result = new ArrayList<SContainmentLink>();
-    for (SContainmentLinkId rid : d.getLinkIds()) {
-      result.add(MetaAdapterFactory.getContainmentLink(rid, d.getLinkDescriptor(rid).getName()));
+    for (LinkDescriptor ld : d.getLinkDescriptors()) {
+      result.add(MetaAdapterFactory.getContainmentLink(ld.getId(), ld.getName()));
     }
     return result;
   }
@@ -192,9 +192,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
       return Collections.emptyList();
     }
 
-    for (SContainmentLinkId lid : cd.getLinkIds()) {
-      LinkDescriptor ld = cd.getLinkDescriptor(lid);
-      result.add(MetaAdapterFactory.getContainmentLink(lid, ld.getName()));
+    for (LinkDescriptor ld : cd.getLinkDescriptors()) {
+      result.add(MetaAdapterFactory.getContainmentLink(ld.getId(), ld.getName()));
     }
     return result;
   }
@@ -237,8 +236,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     }
 
     ArrayList<SProperty> result = new ArrayList<SProperty>();
-    for (SPropertyId pid : descriptor.getPropertyIds()) {
-      result.add(MetaAdapterFactory.getProperty(pid, descriptor.getPropertyDescriptor(pid).getName()));
+    for (PropertyDescriptor pd : descriptor.getPropertyDescriptors()) {
+      result.add(MetaAdapterFactory.getProperty(pd.getId(), pd.getName()));
     }
     return result;
   }

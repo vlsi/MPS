@@ -20,10 +20,12 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -77,9 +79,19 @@ public interface ConceptDescriptor {
 
   //------------ props
 
-  // FIXME there's no need to have accessor to collection of SPropertyId, uses indicate next we would access #getPropertyDescriptor(id)
-  //       hence shall return collection of PropertyDescriptors right away
+  /**
+   * @deprecated there's no need to have accessor to collection of SPropertyId, uses indicate next we would access #getPropertyDescriptor(id)
+   *             hence collection of PropertyDescriptors is much more handy, use {@link #getPropertyDescriptors()}.
+   *             Since it's our own internal API, can remove as soon as necessary.
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   Set<SPropertyId> getPropertyIds(); // since 3.2
+
+  /**
+   * @return all properties (including those of parent concepts) in unspecified order, never {@code null}
+   */
+  Collection<PropertyDescriptor> getPropertyDescriptors(); // since 3.5
 
   PropertyDescriptor getPropertyDescriptor(SPropertyId id); // since 3.2
 
@@ -88,7 +100,17 @@ public interface ConceptDescriptor {
 
   //------------ refs
 
+  /**
+   * @deprecated see {@link #getPropertyIds()}
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   Set<SReferenceLinkId> getReferenceIds(); // since 3.2
+
+  /**
+   * @return all references aka association links (including those of parent concepts) in unspecified order, never {@code null}
+   */
+  Collection<ReferenceDescriptor> getReferenceDescriptors(); // since 3.5
 
   ReferenceDescriptor getRefDescriptor(SReferenceLinkId id); // since 3.2
 
@@ -97,7 +119,17 @@ public interface ConceptDescriptor {
 
   //------------ children
 
+  /**
+   * @deprecated see {@link #getPropertyIds()}
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   Set<SContainmentLinkId> getLinkIds(); // since 3.2
+
+  /**
+   * @return all containment aka aggregation links (including those of parent concepts) in unspecified order, never {@code null}
+   */
+  Collection<LinkDescriptor> getLinkDescriptors(); // since 3.5
 
   LinkDescriptor getLinkDescriptor(SContainmentLinkId id); // since 3.2
 

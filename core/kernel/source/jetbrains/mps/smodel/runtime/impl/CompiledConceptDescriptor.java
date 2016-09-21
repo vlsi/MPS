@@ -33,6 +33,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -164,14 +165,13 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       propByNameMap.put(p.getName(), p);
     }
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
-      for (SPropertyId p : parentDescriptor.getPropertyIds()) {
-        PropertyDescriptor pd = parentDescriptor.getPropertyDescriptor(p);
-        propsMap.put(p, pd);
+      for (PropertyDescriptor pd : parentDescriptor.getPropertyDescriptors()) {
+        propsMap.put(pd.getId(), pd);
         propByNameMap.put(pd.getName(), pd);
       }
     }
-    properties = propsMap;
-    propertiesByName = propByNameMap;
+    properties = Collections.unmodifiableMap(propsMap);
+    propertiesByName = Collections.unmodifiableMap(propByNameMap);
   }
 
   private void initReferenceNames(List<ConceptDescriptor> parentDescriptors) {
@@ -184,14 +184,13 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       refsByNameMap.put(r.getName(), r);
     }
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
-      for (SReferenceLinkId r : parentDescriptor.getReferenceIds()) {
-        ReferenceDescriptor rd = parentDescriptor.getRefDescriptor(r);
-        refsMap.put(r, rd);
+      for (ReferenceDescriptor rd : parentDescriptor.getReferenceDescriptors()) {
+        refsMap.put(rd.getId(), rd);
         refsByNameMap.put(rd.getName(), rd);
       }
     }
-    references = refsMap;
-    referencesByName = refsByNameMap;
+    references = Collections.unmodifiableMap(refsMap);
+    referencesByName = Collections.unmodifiableMap(refsByNameMap);
   }
 
   private void initChildNames(List<ConceptDescriptor> parentDescriptors) {
@@ -205,14 +204,13 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       linksByNameMap.put(r.getName(), r);
     }
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
-      for (SContainmentLinkId r : parentDescriptor.getLinkIds()) {
-        LinkDescriptor ld = parentDescriptor.getLinkDescriptor(r);
-        linksMap.put(r, ld);
+      for (LinkDescriptor ld : parentDescriptor.getLinkDescriptors()) {
+        linksMap.put(ld.getId(), ld);
         linksByNameMap.put(ld.getName(), ld);
       }
     }
-    links = linksMap;
-    linksByName = linksByNameMap;
+    links = Collections.unmodifiableMap(linksMap);
+    linksByName = Collections.unmodifiableMap(linksByNameMap);
   }
 
   /**
@@ -313,6 +311,12 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   }
 
   @Override
+  public Collection<PropertyDescriptor> getPropertyDescriptors() {
+    init();
+    return properties.values();
+  }
+
+  @Override
   public PropertyDescriptor getPropertyDescriptor(SPropertyId id) {
     init();
     return properties.get(id);
@@ -331,6 +335,12 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   }
 
   @Override
+  public Collection<ReferenceDescriptor> getReferenceDescriptors() {
+    init();
+    return references.values();
+  }
+
+  @Override
   public ReferenceDescriptor getRefDescriptor(SReferenceLinkId id) {
     init();
     return references.get(id);
@@ -346,6 +356,12 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   public Set<SContainmentLinkId> getLinkIds() {
     init();
     return links.keySet();
+  }
+
+  @Override
+  public Collection<LinkDescriptor> getLinkDescriptors() {
+    init();
+    return links.values();
   }
 
   @Override

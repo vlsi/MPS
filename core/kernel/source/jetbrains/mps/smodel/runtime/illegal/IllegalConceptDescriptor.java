@@ -34,6 +34,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -124,6 +125,12 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
+  public Collection<ReferenceDescriptor> getReferenceDescriptors() {
+    reportWarn();
+    return Collections.emptySet();
+  }
+
+  @Override
   public ReferenceDescriptor getRefDescriptor(SReferenceLinkId id) {
     reportWarn();
     return null;
@@ -154,6 +161,12 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
+  public Collection<LinkDescriptor> getLinkDescriptors() {
+    reportWarn();
+    return Collections.emptySet();
+  }
+
+  @Override
   public LinkDescriptor getLinkDescriptor(SContainmentLinkId id) {
     reportWarn();
     return null;
@@ -167,6 +180,12 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
 
   @Override
   public Set<SPropertyId> getPropertyIds() {
+    reportWarn();
+    return Collections.emptySet();
+  }
+
+  @Override
+  public Collection<PropertyDescriptor> getPropertyDescriptors() {
     reportWarn();
     return Collections.emptySet();
   }
