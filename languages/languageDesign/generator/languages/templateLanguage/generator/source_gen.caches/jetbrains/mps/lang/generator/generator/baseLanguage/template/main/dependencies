@@ -14,7 +14,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.generator.impl.CrossModelUtil" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GeneratorUtil" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GeneratorUtilEx" />
