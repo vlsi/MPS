@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -35,11 +33,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
  * @see jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor
  */
 public interface ConstraintsAspectDescriptor extends ILanguageAspect {
-  @Deprecated
-  @ToRemove(version = 3.4)
-    //in 3.4, use cast to BaseConstraintsAspectDescriptor
-  ConstraintsDescriptor getDescriptor(SConceptId conceptId);
-
-  //we can't introduce this method now as in 3.3 generated classes do not extend base class, will lead to compilation error
-  //ConstraintsDescriptor getDescriptor(SAbstractConcept concept);
+  @Nullable
+  ConstraintsDescriptor getConstraints(@NotNull SAbstractConcept concept);
 }

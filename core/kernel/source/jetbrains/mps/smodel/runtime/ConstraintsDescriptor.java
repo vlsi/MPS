@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,28 +16,15 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.ids.SPropertyId;
-import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import javax.swing.Icon;
 
 public interface ConstraintsDescriptor {
-  @Deprecated
-  String getConceptFqName();
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  SConceptId getConceptId();
 
   SAbstractConcept getConcept();
 
@@ -54,22 +41,7 @@ public interface ConstraintsDescriptor {
 
   PropertyConstraintsDescriptor getProperty(SProperty property);
 
-  @Deprecated
-  @ToRemove(version = 3.4)
-  PropertyConstraintsDescriptor getProperty(SPropertyId property);
-
-  @Deprecated
-  PropertyConstraintsDescriptor getProperty(String name);
-
   ReferenceConstraintsDescriptor getReference(SReferenceLink referenceLink);
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  ReferenceConstraintsDescriptor getReference(SReferenceLinkId referenceLink);
-
-  @Deprecated
-  @Nullable
-  ReferenceConstraintsDescriptor getReference(String refName);
 
   @Nullable
   ReferenceScopeProvider getDefaultScopeProvider();
@@ -78,6 +50,7 @@ public interface ConstraintsDescriptor {
   // by convention inheritance for this methods not works
   IconResource getInstanceIcon(SNode node);
 
+  // FIXME why default_CONCRETE_concept is SAbstractConcept? Need to check generated code and make sure it's SConcept at generation time
   SAbstractConcept getDefaultConcreteConcept();
 
   // todo: remove/move this methods
@@ -87,8 +60,4 @@ public interface ConstraintsDescriptor {
   @ToRemove(version = 3.4)
   @Nullable
   String getAlternativeIcon(SNode node);
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  SConceptId getDefaultConcreteConceptId();
 }

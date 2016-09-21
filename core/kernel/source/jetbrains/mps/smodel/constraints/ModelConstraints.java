@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor.ErrorReferenceDescriptor;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor.OkReferenceDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -206,8 +204,8 @@ public class ModelConstraints {
     if (!concept.isValid()) {
       return MetaAdapterByDeclaration.asInstanceConcept(concept);
     }
-    ConceptDescriptor descriptor =
-        ConceptRegistry.getInstance().getConceptDescriptor(ConceptRegistryUtil.getConstraintsDescriptor(concept).getDefaultConcreteConcept());
-    return MetaAdapterByDeclaration.asInstanceConcept(MetaAdapterFactory.getAbstractConcept(descriptor));
+    SAbstractConcept cc = ConceptRegistryUtil.getConstraintsDescriptor(concept).getDefaultConcreteConcept();
+    // FIXME see ConstraintsDescriptor#getDefaultConcreteConcept() which shall return SConcept right away
+    return MetaAdapterByDeclaration.asInstanceConcept(cc);
   }
 }

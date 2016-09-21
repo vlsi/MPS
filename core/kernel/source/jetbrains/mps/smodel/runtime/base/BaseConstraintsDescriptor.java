@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,27 +17,17 @@ package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.ids.SPropertyId;
-import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDispatchable;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.InheritanceIterable;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
@@ -50,9 +40,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
@@ -70,51 +58,18 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   private final ConcurrentHashMap<SReferenceLink, ReferenceConstraintsDescriptor> referencesConstraints =
       new ConcurrentHashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
 
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public BaseConstraintsDescriptor(SConceptId conceptId) {
-    myConcept = MetaAdapterFactory.getAbstractConcept(ConceptRegistry.getInstance().getConceptDescriptor(conceptId));
-    calcInheritance();
-  }
-
   public BaseConstraintsDescriptor(SAbstractConcept concept) {
     this.myConcept = concept;
     calcInheritance();
   }
 
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
-    //body should be removed after 3.4
-    Map<SPropertyId, PropertyConstraintsDescriptor> notDefaultProperties = getNotDefaultSProperties();
-    Map<SProperty, PropertyConstraintsDescriptor> result = new HashMap<SProperty, PropertyConstraintsDescriptor>();
-    for (Entry<SPropertyId, PropertyConstraintsDescriptor> entry : notDefaultProperties.entrySet()) {
-      ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(myConcept);
-      PropertyDescriptor pd = concept.getPropertyDescriptor(entry.getKey());
-      result.put(pd.getProperty(), entry.getValue());
-    }
-    return result;
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
+    // XXX not sure whether shall make the method abstract or return an empty map.
     return Collections.emptyMap();
   }
 
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
-    //body should be removed after 3.4
-    Map<SReferenceLinkId, ReferenceConstraintsDescriptor> notDefaultProperties = getNotDefaultSReferenceLinks();
-    Map<SReferenceLink, ReferenceConstraintsDescriptor> result = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
-    for (Entry<SReferenceLinkId, ReferenceConstraintsDescriptor> entry : notDefaultProperties.entrySet()) {
-      ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(myConcept);
-      ReferenceDescriptor rd = concept.getRefDescriptor(entry.getKey());
-      result.put(rd.getLink(), entry.getValue());
-    }
-    return result;
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
+    // XXX not sure whether shall make the method abstract or return an empty map.
     return Collections.emptyMap();
   }
 
@@ -205,18 +160,6 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   }
 
   @Override
-  public String getConceptFqName() {
-    return ConceptRegistry.getInstance().getConceptDescriptor(myConcept).getConceptFqName();
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  @Override
-  public SConceptId getConceptId() {
-    return MetaIdHelper.getConcept(myConcept);
-  }
-
-  @Override
   public SAbstractConcept getConcept() {
     return myConcept;
   }
@@ -294,13 +237,6 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     throw new UnsupportedOperationException();
   }
 
-  @Deprecated
-  @ToRemove(version = 3.4)
-  @Override
-  public PropertyConstraintsDescriptor getProperty(String propertyName) {
-    return getProperty(((ConceptMetaInfoConverter) getConcept()).convertProperty(propertyName));
-  }
-
   public PropertyConstraintsDescriptor getProperty(SProperty property) {
     if (propertiesConstraints.containsKey(property)) {
       return propertiesConstraints.get(property);
@@ -315,14 +251,6 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     return propertiesConstraints.get(property);
   }
 
-  @Deprecated
-  @ToRemove(version = 3.4)
-  @Override
-  public PropertyConstraintsDescriptor getProperty(SPropertyId property) {
-    SProperty p = MetaAdapterFactory.getProperty(property, "<BaseConstraintsDescriptor: this name must not be used>");
-    return getProperty(p);
-  }
-
   public ReferenceConstraintsDescriptor getReference(SReferenceLink ref) {
     if (referencesConstraints.containsKey(ref)) {
       return referencesConstraints.get(ref);
@@ -335,25 +263,6 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     referencesConstraints.put(ref, new BaseReferenceConstraintsDescriptor(ref, this));
 
     return referencesConstraints.get(ref);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  @Override
-  public ReferenceConstraintsDescriptor getReference(SReferenceLinkId referenceLink) {
-    SReferenceLink ref = MetaAdapterFactory.getReferenceLink(referenceLink, "<BaseConstraintsDescriptor: this name must not be used>");
-    return getReference(ref);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  @Override
-  public ReferenceConstraintsDescriptor getReference(String role) {
-    ReferenceDescriptor refDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(myConcept).getRefDescriptor(role);
-    if (refDescriptor == null) {
-      return null;
-    }
-    return getReference(MetaAdapterFactory.getReferenceLink(refDescriptor.getId(), role));
   }
 
   @Override
@@ -393,23 +302,8 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     };
   }
 
-  @Deprecated
-  @ToRemove(version = 3.4)
-  @Override
-  public SConceptId getDefaultConcreteConceptId() {
-    return getConceptId();
-  }
-
   public SAbstractConcept getDefaultConcreteConcept() {
-    //this is for 3.3-compatibility, should be replaced with getConcept() after 3.4
-
-    SConceptId defaultConcreteConceptId = getDefaultConcreteConceptId();
-    SAbstractConcept result = MetaAdapterFactory.getConceptById(defaultConcreteConceptId);
-    if (result.equals(myConcept)) {
-      return myConcept;
-    } else {
-      return result;
-    }
+    return myConcept;
   }
 
   private interface InheritanceCalculateParameters {

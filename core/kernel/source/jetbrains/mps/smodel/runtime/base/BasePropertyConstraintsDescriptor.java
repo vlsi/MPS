@@ -197,26 +197,20 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     return node.getProperty(myProperty);
   }
 
-  private ConceptDescriptor getConceptDescriptor() {
-    return ConceptRegistry.getInstance().getConceptDescriptor(getContainer().getConceptId());
-  }
-
   @Override
   public void setValue(SNode node, String value) {
     //this line is just to get old compiled code not to get into infinite recursion.
     //remove it after 3.1
     //ask Mihail Muhin or Timur Abishev for details
     if (setterDescriptor == this) {
-      String name = getConceptDescriptor().getPropertyDescriptor(getProperty()).getName();
-      node.setProperty(MetaAdapterFactory.getProperty(getProperty(), name), value);
+      node.setProperty(myProperty, value);
       return;
     }
 
     if (setterDescriptor != null) {
       setterDescriptor.setValue(node, value);
     } else {
-      String name = getConceptDescriptor().getPropertyDescriptor(getProperty()).getName();
-      node.setProperty(MetaAdapterFactory.getProperty(getProperty(), name), value);
+      node.setProperty(myProperty, value);
     }
   }
 
