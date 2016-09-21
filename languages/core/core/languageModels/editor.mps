@@ -975,19 +975,10 @@
                         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                       </node>
                       <node concept="2OqwBi" id="3FNV1f3zfbL" role="33vP2m">
-                        <node concept="2OqwBi" id="3FNV1f3zega" role="2Oq$k0">
-                          <node concept="2YIFZM" id="3FNV1f3zdZ5" role="2Oq$k0">
-                            <ref role="1Pybhc" to="vndm:~ConceptRegistry" resolve="ConceptRegistry" />
-                            <ref role="37wK5l" to="vndm:~ConceptRegistry.getInstance():jetbrains.mps.smodel.language.ConceptRegistry" resolve="getInstance" />
-                          </node>
-                          <node concept="liA8E" id="3FNV1f3zeGA" role="2OqNvi">
-                            <ref role="37wK5l" to="vndm:~ConceptRegistry.getConceptDescriptor(org.jetbrains.mps.openapi.language.SAbstractConcept):jetbrains.mps.smodel.runtime.ConceptDescriptor" resolve="getConceptDescriptor" />
-                            <node concept="2ZBlsa" id="3FNV1f3zeTX" role="37wK5m" />
-                          </node>
-                        </node>
                         <node concept="liA8E" id="3FNV1f3zfxB" role="2OqNvi">
-                          <ref role="37wK5l" to="ze1i:~ConceptDescriptor.getConceptFqName():java.lang.String" resolve="getConceptFqName" />
+                          <ref role="37wK5l" to="c17a:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
                         </node>
+                        <node concept="2ZBlsa" id="3FNV1f3zeTX" role="2Oq$k0" />
                       </node>
                     </node>
                   </node>

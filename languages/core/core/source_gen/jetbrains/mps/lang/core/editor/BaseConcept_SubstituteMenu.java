@@ -22,7 +22,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.IconResourceUtil;
@@ -108,7 +107,7 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
             @Nullable
             @Override
             public String getDescriptionText(@NotNull String pattern) {
-              String fqName = ConceptRegistry.getInstance().getConceptDescriptor(myParameterObject).getConceptFqName();
+              String fqName = myParameterObject.getQualifiedName();
               return "lang: " + NameUtil.compactNamespace(NameUtil.namespaceFromConceptFQName(fqName));
             }
             @Nullable

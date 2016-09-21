@@ -84,6 +84,9 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   /**
    * @deprecated It's odd to go from SAbstractConcept back to ConceptDescriptor. It's MPS implementation of SConcept that
    *             deals with ConceptDescriptors to populate SAbstractConcept and client code shall not reverse this.
+   *             *
+   *             NOTE, THERE ARE NO USES left in MPS code, don't introduce a new one! We'll drop the method any time soon.
+   *             *
    */
   @NotNull
   @Deprecated
