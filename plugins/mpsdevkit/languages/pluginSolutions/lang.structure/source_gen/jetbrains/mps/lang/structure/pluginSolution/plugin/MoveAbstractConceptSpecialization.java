@@ -44,7 +44,7 @@ public class MoveAbstractConceptSpecialization extends StructureSpecializationBa
       return null;
     }
   }
-  public void confirm(Tuples._2<SAbstractConcept, SNodeReference> initialState, Tuples._2<SAbstractConcept, SNodeReference> finalState, SRepository repository, LanguageStructureMigrationParticipant.MigrationBuilder migrationBuilder) {
+  public void confirm(Tuples._2<SAbstractConcept, SNodeReference> initialState, Tuples._2<SAbstractConcept, SNodeReference> finalState, SRepository repository, LanguageStructureMigrationParticipant.MigrationBuilder migrationBuilder, boolean updateModuleDependencies) {
     SNode from = SNodeOperations.cast(initialState._1().resolve(repository), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
     SNode to = SNodeOperations.cast(finalState._1().resolve(repository), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
     SPropertyOperations.set(from, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString_def(from, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "") + "_old");
@@ -59,16 +59,22 @@ public class MoveAbstractConceptSpecialization extends StructureSpecializationBa
     }
 
 
-    SModule module = SNodeOperations.getModel(from).getModule();
-    assert module instanceof Language;
-    SModel editorModel = LanguageAspect.EDITOR.getOrCreate((Language) module);
+    SModule fromModule = SNodeOperations.getModel(from).getModule();
+    assert fromModule instanceof Language;
+    SModel editorModel = LanguageAspect.EDITOR.getOrCreate((Language) fromModule);
     SModelOperations.addRootNode(editorModel, _quotation_createNode_c4c66o_a0a11a1(from));
+
+    SModule toModule = SNodeOperations.getModel(to).getModule();
+    assert toModule instanceof Language;
+    if (updateModuleDependencies) {
+      ((Language) toModule).addExtendedLanguage(fromModule.getModuleReference());
+    }
 
     SNode oldId = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, "jetbrains.mps.lang.smodel.structure.ConceptId"));
     ConceptId__BehaviorDescriptor.setConcept_id5ZE7FBYYR6j.invoke(oldId, MetaAdapterByDeclaration.getConcept(from));
     SNode newId = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, "jetbrains.mps.lang.smodel.structure.ConceptId"));
     ConceptId__BehaviorDescriptor.setConcept_id5ZE7FBYYR6j.invoke(newId, MetaAdapterByDeclaration.getConcept(to));
-    migrationBuilder.addPart(from, to, createMoveConcept_c4c66o_c0a71a1(SNodeOperations.cast(HUtil.copyIfNecessary(oldId), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, "jetbrains.mps.lang.smodel.structure.ConceptId")), SNodeOperations.cast(HUtil.copyIfNecessary(newId), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, "jetbrains.mps.lang.smodel.structure.ConceptId"))));
+    migrationBuilder.addPart(from, to, createMoveConcept_c4c66o_c0a12a1(SNodeOperations.cast(HUtil.copyIfNecessary(oldId), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, "jetbrains.mps.lang.smodel.structure.ConceptId")), SNodeOperations.cast(HUtil.copyIfNecessary(newId), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, "jetbrains.mps.lang.smodel.structure.ConceptId"))));
   }
   public Collection<SNode> findInstances(final SAbstractConcept concept, SearchScope searchScope) {
     {
@@ -107,7 +113,7 @@ public class MoveAbstractConceptSpecialization extends StructureSpecializationBa
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration"), (SNode) parameter_1);
     return quotedNode_2;
   }
-  private static SNode createMoveConcept_c4c66o_c0a71a1(Object p0, Object p1) {
+  private static SNode createMoveConcept_c4c66o_c0a12a1(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b6L, "jetbrains.mps.lang.migration.structure.MoveConcept"), null, null, false);
     if (p0 != null) {
