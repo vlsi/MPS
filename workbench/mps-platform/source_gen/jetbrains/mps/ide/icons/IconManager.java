@@ -46,9 +46,7 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
-import java.awt.Image;
-import com.intellij.util.ImageLoader;
-import com.intellij.util.ui.JBImageIcon;
+import com.intellij.openapi.util.IconLoader;
 import java.io.InputStream;
 import java.io.IOException;
 import org.apache.log4j.Level;
@@ -268,11 +266,10 @@ public final class IconManager {
 
     Icon icon;
     if (ir.getResourceId() != null && ir.getProvider() != null) {
-      Image image = ImageLoader.loadFromResource(ir.getResourceId(), ir.getProvider());
-      if (image == null) {
+      icon = IconLoader.findIcon(ir.getResourceId(), ir.getProvider());
+      if (icon == null) {
         return null;
       }
-      icon = new JBImageIcon(image);
     } else {
       // compatibility code till 3.4 
       InputStream resource = ir.getResource();

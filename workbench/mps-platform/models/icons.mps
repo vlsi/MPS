@@ -1968,28 +1968,27 @@
             </node>
           </node>
           <node concept="3clFbS" id="4k7GEFswoi7" role="3clFbx">
-            <node concept="3cpWs8" id="2isK0UM$SK" role="3cqZAp">
-              <node concept="3cpWsn" id="2isK0UM$SL" role="3cpWs9">
-                <property role="TrG5h" value="image" />
-                <node concept="3uibUv" id="2isK0UM$Sk" role="1tU5fm">
-                  <ref role="3uigEE" to="z60i:~Image" resolve="Image" />
+            <node concept="3clFbF" id="1MFDumdN49_" role="3cqZAp">
+              <node concept="37vLTI" id="1MFDumdN57Z" role="3clFbG">
+                <node concept="37vLTw" id="1MFDumdN49z" role="37vLTJ">
+                  <ref role="3cqZAo" node="2isK0UMs2u" resolve="icon" />
                 </node>
-                <node concept="2YIFZM" id="1Lm5ZGXdZgf" role="33vP2m">
-                  <ref role="1Pybhc" to="9w4s:~ImageLoader" resolve="ImageLoader" />
-                  <ref role="37wK5l" to="9w4s:~ImageLoader.loadFromResource(java.lang.String,java.lang.Class):java.awt.Image" resolve="loadFromResource" />
-                  <node concept="2OqwBi" id="1Lm5ZGXe4tY" role="37wK5m">
-                    <node concept="37vLTw" id="1Lm5ZGXe3m5" role="2Oq$k0">
+                <node concept="2YIFZM" id="1MFDumdN66X" role="37vLTx">
+                  <ref role="1Pybhc" to="zn9m:~IconLoader" resolve="IconLoader" />
+                  <ref role="37wK5l" to="zn9m:~IconLoader.findIcon(java.lang.String,java.lang.Class):javax.swing.Icon" resolve="findIcon" />
+                  <node concept="2OqwBi" id="1MFDumdN66Y" role="37wK5m">
+                    <node concept="37vLTw" id="1MFDumdN66Z" role="2Oq$k0">
                       <ref role="3cqZAo" node="Z6TQiSQgLN" resolve="ir" />
                     </node>
-                    <node concept="liA8E" id="1Lm5ZGXe5L5" role="2OqNvi">
+                    <node concept="liA8E" id="1MFDumdN670" role="2OqNvi">
                       <ref role="37wK5l" to="ze1i:~IconResource.getResourceId():java.lang.String" resolve="getResourceId" />
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="1Lm5ZGXe815" role="37wK5m">
-                    <node concept="37vLTw" id="1Lm5ZGXe6RB" role="2Oq$k0">
+                  <node concept="2OqwBi" id="1MFDumdN671" role="37wK5m">
+                    <node concept="37vLTw" id="1MFDumdN672" role="2Oq$k0">
                       <ref role="3cqZAo" node="Z6TQiSQgLN" resolve="ir" />
                     </node>
-                    <node concept="liA8E" id="1Lm5ZGXe9kw" role="2OqNvi">
+                    <node concept="liA8E" id="1MFDumdN673" role="2OqNvi">
                       <ref role="37wK5l" to="ze1i:~IconResource.getProvider():java.lang.Class" resolve="getProvider" />
                     </node>
                   </node>
@@ -2004,22 +2003,7 @@
               </node>
               <node concept="3clFbC" id="33eGi7ftp$0" role="3clFbw">
                 <node concept="10Nm6u" id="33eGi7ftpCF" role="3uHU7w" />
-                <node concept="37vLTw" id="33eGi7ftpr8" role="3uHU7B">
-                  <ref role="3cqZAo" node="2isK0UM$SL" resolve="image" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="4k7GEFswtpF" role="3cqZAp">
-              <node concept="37vLTI" id="4k7GEFswtpH" role="3clFbG">
-                <node concept="2ShNRf" id="2isK0UMyUk" role="37vLTx">
-                  <node concept="1pGfFk" id="2isK0UM$fT" role="2ShVmc">
-                    <ref role="37wK5l" to="g1qu:~JBImageIcon.&lt;init&gt;(java.awt.Image)" resolve="JBImageIcon" />
-                    <node concept="37vLTw" id="2isK0UM$SU" role="37wK5m">
-                      <ref role="3cqZAo" node="2isK0UM$SL" resolve="image" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="37vLTw" id="4k7GEFswtpL" role="37vLTJ">
+                <node concept="37vLTw" id="1MFDumdN7fE" role="3uHU7B">
                   <ref role="3cqZAo" node="2isK0UMs2u" resolve="icon" />
                 </node>
               </node>

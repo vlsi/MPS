@@ -119,14 +119,12 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.ide.icons.IconManager" file="IconManager.java">
+    <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
     <classNode dependClassName="com.intellij.ui.LayeredIcon" />
     <classNode dependClassName="com.intellij.ui.RowIcon" />
-    <classNode dependClassName="com.intellij.util.ImageLoader" />
     <classNode dependClassName="com.intellij.util.PlatformIcons" />
-    <classNode dependClassName="com.intellij.util.ui.JBImageIcon" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Graphics" />
-    <classNode dependClassName="java.awt.Image" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.lang.Class" />
