@@ -1919,6 +1919,11 @@
       <property role="IQ2nx" value="8389748773577451513" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
+    <node concept="1TJgyi" id="2XulY5OpK$k" role="1TKVEl">
+      <property role="IQ2nx" value="3413262193425582356" />
+      <property role="TrG5h" value="propertyIndex" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="21N1KFSDbKE">
     <property role="TrG5h" value="GeneratorInternal_AbstractReferenceDescriptor" />
@@ -1926,6 +1931,11 @@
     <property role="R5$K2" value="false" />
     <property role="EcuMT" value="2338220375238032426" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="2XulY5OuszP" role="1TKVEl">
+      <property role="IQ2nx" value="3413262193426811125" />
+      <property role="TrG5h" value="linkIndex" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
     <node concept="1TJgyj" id="sVcGqq3pSX" role="1TKVEi">
       <property role="IQ2ns" value="521066010460921405" />
       <property role="20lmBu" value="aggregation" />

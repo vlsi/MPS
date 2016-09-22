@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.generator.impl.template.MetaObjectGenerationHelper;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -82,6 +83,20 @@ public class GenUtil {
    */
   public static String getExtractedMethodName(TemplateQueryContext context, SNode node) {
     return (String) context.getTransientObject(MultiTuple.<String,SNode>from("meth", node));
+  }
+
+  public static boolean hasMetaObjectHelper(TemplateQueryContext context, SNode node) {
+    return getMetaObjectHelper(context, node) != null;
+  }
+
+  public static MetaObjectGenerationHelper getMetaObjectHelper(TemplateQueryContext context, SNode node) {
+    return (MetaObjectGenerationHelper) context.getTransientObject(MultiTuple.<String,SNode>from("meta-object-helper", node));
+  }
+
+  public static MetaObjectGenerationHelper createMetaObjectHelper(TemplateQueryContext context, SNode node) {
+    MetaObjectGenerationHelper rv = new MetaObjectGenerationHelper();
+    context.putTransientObject(MultiTuple.<String,SNode>from("meta-object-helper", node), rv);
+    return rv;
   }
 
   public static boolean isGeneratable(SModel model) {

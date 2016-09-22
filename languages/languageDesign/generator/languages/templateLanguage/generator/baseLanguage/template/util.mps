@@ -15,6 +15,7 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="b02f" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl.template(MPS.Core/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -981,6 +982,137 @@
         <node concept="TZ5HA" id="23qau8XzCKU" role="TZ5H$">
           <node concept="1dT_AC" id="23qau8XzCKV" role="1dT_Ay">
             <property role="1dT_AB" value="Tell previously recorded name of the method extracted for the given template node." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2XulY5Ofux5" role="jymVt" />
+    <node concept="2YIFZL" id="2XulY5OfuLK" role="jymVt">
+      <property role="TrG5h" value="hasMetaObjectHelper" />
+      <node concept="37vLTG" id="2XulY5Ofyvt" role="3clF46">
+        <property role="TrG5h" value="context" />
+        <node concept="1iwH7U" id="2XulY5Ofyvu" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="2XulY5Ofyvv" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3Tqbb2" id="2XulY5Ofyvw" role="1tU5fm" />
+      </node>
+      <node concept="10P_77" id="2XulY5OfuUE" role="3clF45" />
+      <node concept="3Tm1VV" id="2XulY5OfuLN" role="1B3o_S" />
+      <node concept="3clFbS" id="2XulY5OfuLO" role="3clF47">
+        <node concept="3cpWs6" id="2XulY5OhzCt" role="3cqZAp">
+          <node concept="3y3z36" id="2XulY5Oh$l$" role="3cqZAk">
+            <node concept="10Nm6u" id="2XulY5Oh$qt" role="3uHU7w" />
+            <node concept="1rXfSq" id="2XulY5OhzXL" role="3uHU7B">
+              <ref role="37wK5l" node="2XulY5Ofymv" resolve="getMetaObjectHelper" />
+              <node concept="37vLTw" id="2XulY5Oh$6D" role="37wK5m">
+                <ref role="3cqZAo" node="2XulY5Ofyvt" resolve="context" />
+              </node>
+              <node concept="37vLTw" id="2XulY5Oh$eR" role="37wK5m">
+                <ref role="3cqZAo" node="2XulY5Ofyvv" resolve="node" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2XulY5Ofv38" role="jymVt" />
+    <node concept="2YIFZL" id="2XulY5Ofymv" role="jymVt">
+      <property role="TrG5h" value="getMetaObjectHelper" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="37vLTG" id="2XulY5Ofywt" role="3clF46">
+        <property role="TrG5h" value="context" />
+        <node concept="1iwH7U" id="2XulY5Ofywu" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="2XulY5Ofywv" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3Tqbb2" id="2XulY5Ofyww" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="2XulY5Ofymy" role="3clF47">
+        <node concept="3cpWs6" id="2XulY5Oh$N0" role="3cqZAp">
+          <node concept="10QFUN" id="2XulY5Oh$R7" role="3cqZAk">
+            <node concept="3uibUv" id="2XulY5Oh$TY" role="10QFUM">
+              <ref role="3uigEE" to="b02f:~MetaObjectGenerationHelper" resolve="MetaObjectGenerationHelper" />
+            </node>
+            <node concept="2OqwBi" id="2XulY5Oh$N1" role="10QFUP">
+              <node concept="37vLTw" id="2XulY5Oh$N2" role="2Oq$k0">
+                <ref role="3cqZAo" node="2XulY5Ofywt" resolve="context" />
+              </node>
+              <node concept="2g92yo" id="2XulY5Oh$N3" role="2OqNvi">
+                <node concept="1Ls8ON" id="2XulY5Oh$N4" role="2fWi3N">
+                  <node concept="Xl_RD" id="2XulY5Oh$N5" role="1Lso8e">
+                    <property role="Xl_RC" value="meta-object-helper" />
+                  </node>
+                  <node concept="37vLTw" id="2XulY5Oh$N6" role="1Lso8e">
+                    <ref role="3cqZAo" node="2XulY5Ofywv" resolve="node" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="2XulY5Ofvk_" role="1B3o_S" />
+      <node concept="3uibUv" id="2XulY5OfylN" role="3clF45">
+        <ref role="3uigEE" to="b02f:~MetaObjectGenerationHelper" resolve="MetaObjectGenerationHelper" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2XulY5Ogsal" role="jymVt" />
+    <node concept="2YIFZL" id="2XulY5Ogs10" role="jymVt">
+      <property role="TrG5h" value="createMetaObjectHelper" />
+      <node concept="37vLTG" id="2XulY5Ogsrd" role="3clF46">
+        <property role="TrG5h" value="context" />
+        <node concept="1iwH7U" id="2XulY5Ogsre" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="2XulY5Ogsrf" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3Tqbb2" id="2XulY5Ogsrg" role="1tU5fm" />
+      </node>
+      <node concept="3uibUv" id="2XulY5OnJ32" role="3clF45">
+        <ref role="3uigEE" to="b02f:~MetaObjectGenerationHelper" resolve="MetaObjectGenerationHelper" />
+      </node>
+      <node concept="3Tm1VV" id="2XulY5Ogs13" role="1B3o_S" />
+      <node concept="3clFbS" id="2XulY5Ogs14" role="3clF47">
+        <node concept="3cpWs8" id="2XulY5OnIMn" role="3cqZAp">
+          <node concept="3cpWsn" id="2XulY5OnIMo" role="3cpWs9">
+            <property role="TrG5h" value="rv" />
+            <node concept="3uibUv" id="2XulY5OnIMl" role="1tU5fm">
+              <ref role="3uigEE" to="b02f:~MetaObjectGenerationHelper" resolve="MetaObjectGenerationHelper" />
+            </node>
+            <node concept="2ShNRf" id="2XulY5OnIMp" role="33vP2m">
+              <node concept="1pGfFk" id="2XulY5OnIMq" role="2ShVmc">
+                <ref role="37wK5l" to="b02f:~MetaObjectGenerationHelper.&lt;init&gt;()" resolve="MetaObjectGenerationHelper" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="2XulY5OhzcA" role="3cqZAp">
+          <node concept="37vLTI" id="2XulY5Oh$uD" role="3clFbG">
+            <node concept="37vLTw" id="2XulY5OnIMr" role="37vLTx">
+              <ref role="3cqZAo" node="2XulY5OnIMo" resolve="rv" />
+            </node>
+            <node concept="2OqwBi" id="2XulY5OhzkZ" role="37vLTJ">
+              <node concept="37vLTw" id="2XulY5Ohzc_" role="2Oq$k0">
+                <ref role="3cqZAo" node="2XulY5Ogsrd" resolve="context" />
+              </node>
+              <node concept="2g92yo" id="2XulY5Ohzt7" role="2OqNvi">
+                <node concept="1Ls8ON" id="2XulY5Ohzxe" role="2fWi3N">
+                  <node concept="Xl_RD" id="2XulY5Ohzxf" role="1Lso8e">
+                    <property role="Xl_RC" value="meta-object-helper" />
+                  </node>
+                  <node concept="37vLTw" id="2XulY5Ohzxg" role="1Lso8e">
+                    <ref role="3cqZAo" node="2XulY5Ogsrf" resolve="node" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="2XulY5OnIWx" role="3cqZAp">
+          <node concept="37vLTw" id="2XulY5OnJ1X" role="3cqZAk">
+            <ref role="3cqZAo" node="2XulY5OnIMo" resolve="rv" />
           </node>
         </node>
       </node>
