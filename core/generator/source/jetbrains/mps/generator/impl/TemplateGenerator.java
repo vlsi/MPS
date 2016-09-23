@@ -136,29 +136,31 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     public final GenerationTrace genTrace;
     public final GeneratorMappings mappingLabels;
     public final TransitionTrace transitionTrace;
+    public final GeneratorQueryProvider.Source querySource;
 
-    public StepArguments(DependenciesBuilder dependenciesBuilder) {
+    public StepArguments(DependenciesBuilder dependenciesBuilder, GeneratorQueryProvider.Source gqps) {
       // FIXME refactor TMC.isApplicable call not to take ITemplateGenerator, or use dedicated ITemplateGenerator implementation
       // that doesn't need anything we could not provide here anyway.
       // DependenciesBuilder is in use from ITemplateGenerator#isDirty()
       // Alternative is to initialize StepArguments once prior to isApplicable check, which we can't do now as isApplicable gives us GenPlanActiveStep
       // If refactored (e.g. GPAS made TG's argument or use of dedicated fake GPAS for isApplicable), could drop this cons altogether.
       // I.e. if anyone would like to query e.g. mapping label from isApplicable(), it's a chance not to fail with NPE (and to let the error go unnoticed)
-      this(null, dependenciesBuilder, null, null, null);
+      this(null, dependenciesBuilder, null, null, null, gqps);
     }
 
     public StepArguments(GenPlanActiveStep planStep, DependenciesBuilder dependenciesBuilder, GenerationTrace genTrace, GeneratorMappings mapLabels,
-        TransitionTrace transitionTrace) {
+        TransitionTrace transitionTrace, GeneratorQueryProvider.Source gqps) {
       this.dependenciesBuilder = dependenciesBuilder;
       this.planStep = planStep;
       this.genTrace = genTrace;
       this.mappingLabels = mapLabels;
       this.transitionTrace = transitionTrace;
+      this.querySource = gqps;
     }
   }
 
   public TemplateGenerator(GenerationSessionContext operationContext, SModel inputModel, SModel outputModel, StepArguments stepArgs) {
-    super(operationContext, inputModel, outputModel, stepArgs.mappingLabels);
+    super(operationContext, inputModel, outputModel, stepArgs.mappingLabels, stepArgs.querySource);
     myPlanStep = stepArgs.planStep;
     GenerationOptions options = operationContext.getGenerationOptions();
     myIsStrict = options.isStrictMode();
@@ -701,10 +703,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   final RuleManager getRuleManager() {
     return myPlanStep.getRuleManager();
-  }
-
-  GeneratorQueryProvider.Source getQuerySource() {
-    return getGeneratorSessionContext(); // TODO don't expose GeneratorQueryProvider.Source from GenerationSessionContext, pass GQPS as TG cons arg
   }
 
   public TemplateSwitchMapping getSwitch(SNodeReference switch_) {

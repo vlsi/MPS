@@ -131,7 +131,7 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
   public boolean isApplicable(ITemplateGenerator generator) throws GenerationFailureException {
     try {
       if (myCondition == null) {
-        myCondition = generator.getGeneratorSessionContext().getQueryProvider(getMappingNode()).getMapConfigurationCondition(myMappingConfiguration);
+        myCondition = generator.getQueryProvider(getMappingNode()).getMapConfigurationCondition(myMappingConfiguration);
       }
       return myCondition.check(new TemplateQueryContext(getMappingNode(), generator));
     } catch (GenerationFailureException ex) {

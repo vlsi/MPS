@@ -98,7 +98,7 @@ class TemplateNode {
     if (myMold == null) {
       synchronized (this) {
         if (myMold == null) {
-          myMold = new Mold(myNode, generator.getQuerySource(), generator.getLogger());
+          myMold = new Mold(myNode, generator, generator.getLogger());
         }
       }
     }

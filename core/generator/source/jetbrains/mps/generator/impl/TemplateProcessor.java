@@ -89,7 +89,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     return myGenerator;
   }
   /*package*/ GeneratorQueryProvider getQueryProvider(SNodeReference templateNode) {
-    return myGenerator.getQuerySource().getQueryProvider(templateNode);
+    return myGenerator.getQueryProvider(templateNode);
   }
 
   @Override

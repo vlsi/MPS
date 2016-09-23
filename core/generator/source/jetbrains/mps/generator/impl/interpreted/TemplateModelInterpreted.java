@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ package jetbrains.mps.generator.impl.interpreted;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
-import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.generator.runtime.TemplateModelBase;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -33,15 +33,14 @@ import java.util.Collection;
 /**
  * Evgeny Gryaznov, Nov 29, 2010
  */
-public class TemplateModelInterpreted implements TemplateModel {
+public class TemplateModelInterpreted extends TemplateModelBase {
 
-  private final TemplateModule myModule;
   private final SModel myModel;
   private Collection<TemplateSwitchMapping> mySwitches;
   private Collection<TemplateMappingConfiguration> myMappings;
 
   public TemplateModelInterpreted(TemplateModule module, SModel model) {
-    myModule = module;
+    super(module);
     myModel = model;
     mySwitches = new ArrayList<TemplateSwitchMapping>();
     myMappings = new ArrayList<TemplateMappingConfiguration>();
@@ -82,16 +81,11 @@ public class TemplateModelInterpreted implements TemplateModel {
 
   @Override
   public String getLongName() {
-    return jetbrains.mps.util.SNodeOperations.getModelLongName(myModel);
+    return myModel.getName().getLongName();
   }
 
   @Override
   public SModelReference getSModelReference() {
     return myModel.getReference();
-  }
-
-  @Override
-  public TemplateModule getModule() {
-    return myModule;
   }
 }

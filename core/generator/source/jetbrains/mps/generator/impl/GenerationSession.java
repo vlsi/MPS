@@ -34,6 +34,7 @@ import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.RecordingFactory;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.TemplateGenerator.StepArguments;
 import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
+import jetbrains.mps.generator.impl.cache.QueryProviderCache;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.CheckpointIdentity;
@@ -100,6 +101,7 @@ class GenerationSession {
   private GenerationSessionContext mySessionContext;
   private final IPerformanceTracer ttrace;
   private StepArguments myStepArguments;
+  private QueryProviderCache myQuerySource;
 
   private int myMajorStep = 0;
   private int myMinorStep = -1;
@@ -148,6 +150,7 @@ class GenerationSession {
       }
     }
     warnIfGenerateSelf(myGenerationPlan);
+    myQuerySource = new QueryProviderCache(myGenerationPlan, myLogger);
 
     monitor.start("", 1 + myGenerationPlan.getSteps().size());
     try {
@@ -333,7 +336,7 @@ class GenerationSession {
     mySessionContext = new GenerationSessionContext(mySessionContext);
 
     // -- filter mapping configurations
-    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, inputModel, null, new StepArguments(myDependenciesBuilder));
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, inputModel, null, new StepArguments(myDependenciesBuilder, myQuerySource));
     LinkedList<TemplateMappingConfiguration> drop = new LinkedList<TemplateMappingConfiguration>();
     for (TemplateMappingConfiguration c : mappingConfigurations) {
       if (!c.isApplicable(templateGenerator)) {
@@ -357,7 +360,7 @@ class GenerationSession {
     GenPlanActiveStep activeStep = new GenPlanActiveStep(myGenerationPlan, planStep, mappingConfigurations);
 
     try {
-      myStepArguments = new StepArguments(activeStep, myDependenciesBuilder, myNewTrace, new GeneratorMappings(myLogger), transitionTrace);
+      myStepArguments = new StepArguments(activeStep, myDependenciesBuilder, myNewTrace, new GeneratorMappings(myLogger), transitionTrace, myQuerySource);
       SModel outputModel = executeMajorStepInternal(inputModel, progress);
       if (myLogger.getErrorCount() > 0) {
         myLogger.warning(String.format("model '%s' has been generated with errors", inputModel.getName()));
@@ -784,7 +787,7 @@ class GenerationSession {
     if (!myGenerationOptions.isSaveTransientModels()) {
       mySessionContext.getModule().clearUnused();
     }
-    mySessionContext.disposeQueryProvider();
+    myQuerySource.dispose();
     mySessionContext = null;
   }
 }

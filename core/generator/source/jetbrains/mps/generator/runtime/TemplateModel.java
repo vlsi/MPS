@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -36,4 +37,20 @@ public interface TemplateModel {
   TemplateDeclaration loadTemplate(SNodeReference template, Object... arguments);
 
   TemplateModule getModule();
+
+  /**
+   * FIXME PROVISIONAL CODE (return value), expose GQP in generator.runtime package
+   * Besides, now the caching is done in QueryProviderCache, so implementation is not obliged
+   * to keep the instance. It could, however.
+   *
+   * XXX On one hand, we need a generic API to access queries and thus shall override the method
+   * in generated templates, OTOH, it's unlikely (error?) to use QueryProvider of a generated template
+   * as the code there invokes queries without the need for GQP. For the time being, I left generated
+   * TM classes without method implementation, and rely on TMB.getQP() as a fallback in case we ever
+   * ask for a QP of a generated generator
+   *
+   * @return {@code null} if there's no generated provider, or it had failed to load
+   * @since 3.5
+   */
+  GeneratorQueryProvider getQueryProvider();
 }

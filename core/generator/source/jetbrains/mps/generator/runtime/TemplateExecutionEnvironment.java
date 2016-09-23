@@ -55,6 +55,7 @@ import java.util.List;
  * Evgeny Gryaznov, 10/22/10
  */
 public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Source {
+  // FIXME with #getGenerator() being instance of GQP.Source, perhaps TEE shall not implement it?
 
   IOperationContext getOperationContext();
 
