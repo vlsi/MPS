@@ -16,20 +16,23 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.TemplateArgumentContext;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 @Generated
 public class Template_reduce_InputNode extends TemplateDeclarationBase {
   private String myText;
   private int myValue;
   private SNode myElement;
+
   public Template_reduce_InputNode(String text, int value, SNode element) {
     this.myText = text;
     this.myValue = value;
     this.myElement = element;
   }
+
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948461339");
   }
@@ -53,9 +56,9 @@ public class Template_reduce_InputNode extends TemplateDeclarationBase {
         switchContext1 = context.subContext(args1);
         switchContext1 = switchContext1.subContext(null, context.getInput());
       }
-      tlist1 = environment.trySwitch(templateSwitchNodeNoInput_dc4xlo_a0a0c0c0g, switchContext1);
+      tlist1 = environment.trySwitch(templateSwitchNodeNoInput_dc4xlo_a0a0c0c0i, switchContext1);
       if (tlist1 == null) {
-        final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"));
+        final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
         try {
         } finally {
         }
@@ -82,5 +85,11 @@ public class Template_reduce_InputNode extends TemplateDeclarationBase {
     }
     return tlistpart0;
   }
-  private static SNodePointer templateSwitchNodeNoInput_dc4xlo_a0a0c0c0g = new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948523705");
+  @Override
+  protected SConcept[] initConcepts() {
+    SConcept[] rv = new SConcept[1];
+    rv[0] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b215L, "Statement");
+    return rv;
+  }
+  private static SNodePointer templateSwitchNodeNoInput_dc4xlo_a0a0c0c0i = new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948523705");
 }

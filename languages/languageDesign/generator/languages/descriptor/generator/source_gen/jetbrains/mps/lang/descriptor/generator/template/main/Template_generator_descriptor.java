@@ -5,10 +5,6 @@ package jetbrains.mps.lang.descriptor.generator.template.main;
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -21,23 +17,19 @@ import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.impl.reference.RefResolver;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 @Generated
 public class Template_generator_descriptor extends TemplateDeclarationBase implements TemplateDeclaration {
-  private final SConcept[] myConcepts;
-  private final SProperty[] myProperties;
-  private final SReferenceLink[] myAssociationLinks;
-  private final SContainmentLink[] myAggregationLinks;
 
   public Template_generator_descriptor() {
-    myConcepts = initConcepts();
-    myProperties = initProperties();
-    myAssociationLinks = initAssociationLinks();
-    myAggregationLinks = initAggregationLinks();
   }
+
   public SNodeReference getTemplateNode() {
-    return template_s14ods_a0a6;
+    return template_s14ods_a0a3;
   }
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
@@ -55,27 +47,23 @@ public class Template_generator_descriptor extends TemplateDeclarationBase imple
     return TemplateUtil.singletonList(tnode1);
   }
 
-  private SConcept[] initConcepts() {
+  @Override
+  protected SConcept[] initConcepts() {
     SConcept[] rv = new SConcept[1];
     rv[0] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf4ad079dbc714ffbL, 0x96009328705cf998L, "jetbrains.mps.lang.descriptor"), 0x3663ebbd1bf10683L, "GeneratorDescriptor");
     return rv;
   }
-
-  private SProperty[] initProperties() {
+  @Override
+  protected SProperty[] initProperties() {
     SProperty[] rv = new SProperty[1];
     rv[0] = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
     return rv;
   }
-
-  private SReferenceLink[] initAssociationLinks() {
+  @Override
+  protected SReferenceLink[] initAssociationLinks() {
     SReferenceLink[] rv = new SReferenceLink[1];
     rv[0] = MetaAdapterFactory.getReferenceLink(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x3663ebbd1bf10683L, 0x3663ebbd1bf10684L, "generator");
     return rv;
   }
-
-  private SContainmentLink[] initAggregationLinks() {
-    SContainmentLink[] rv = new SContainmentLink[0];
-    return rv;
-  }
-  private static SNodePointer template_s14ods_a0a6 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639617419");
+  private static SNodePointer template_s14ods_a0a3 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639617419");
 }

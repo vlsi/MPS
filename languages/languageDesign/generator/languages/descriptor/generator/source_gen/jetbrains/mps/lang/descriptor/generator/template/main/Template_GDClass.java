@@ -5,10 +5,6 @@ package jetbrains.mps.lang.descriptor.generator.template.main;
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -21,23 +17,16 @@ import jetbrains.mps.smodel.SNodePointer;
 
 @Generated
 public class Template_GDClass extends TemplateDeclarationBase implements TemplateDeclaration {
-  private final SConcept[] myConcepts;
-  private final SProperty[] myProperties;
-  private final SReferenceLink[] myAssociationLinks;
-  private final SContainmentLink[] myAggregationLinks;
 
   public Template_GDClass() {
-    myConcepts = initConcepts();
-    myProperties = initProperties();
-    myAssociationLinks = initAssociationLinks();
-    myAggregationLinks = initAggregationLinks();
   }
+
   public SNodeReference getTemplateNode() {
-    return template_in8ni3_a0a6;
+    return template_in8ni3_a0a3;
   }
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     Collection<SNode> tlist1 = null;
-    SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_263208052639693925(new SourceSubstituteMacroNodeContext(context, callMacro_in8ni3_b0a0a1a7));
+    SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_263208052639693925(new SourceSubstituteMacroNodeContext(context, callMacro_in8ni3_b0a0a1a4));
     TemplateContext context1 = context.subContext(null, callInputNode1);
     if (callInputNode1 != null) {
       tlist1 = new Template_GeneratorRuntime().apply(environment, context1);
@@ -46,25 +35,6 @@ public class Template_GDClass extends TemplateDeclarationBase implements Templat
     return tlist1;
   }
 
-  private SConcept[] initConcepts() {
-    SConcept[] rv = new SConcept[0];
-    return rv;
-  }
-
-  private SProperty[] initProperties() {
-    SProperty[] rv = new SProperty[0];
-    return rv;
-  }
-
-  private SReferenceLink[] initAssociationLinks() {
-    SReferenceLink[] rv = new SReferenceLink[0];
-    return rv;
-  }
-
-  private SContainmentLink[] initAggregationLinks() {
-    SContainmentLink[] rv = new SContainmentLink[0];
-    return rv;
-  }
-  private static SNodePointer template_in8ni3_a0a6 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639692929");
-  private static SNodePointer callMacro_in8ni3_b0a0a1a7 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639693915");
+  private static SNodePointer template_in8ni3_a0a3 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639692929");
+  private static SNodePointer callMacro_in8ni3_b0a0a1a4 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639693915");
 }

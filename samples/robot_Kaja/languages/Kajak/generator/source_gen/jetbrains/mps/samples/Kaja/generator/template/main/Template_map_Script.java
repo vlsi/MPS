@@ -5,10 +5,6 @@ package jetbrains.mps.samples.Kaja.generator.template.main;
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -24,30 +20,27 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.SNodePointer;
 
 @Generated
 public class Template_map_Script extends TemplateDeclarationBase implements TemplateDeclaration {
-  private final SConcept[] myConcepts;
-  private final SProperty[] myProperties;
-  private final SReferenceLink[] myAssociationLinks;
-  private final SContainmentLink[] myAggregationLinks;
 
   public Template_map_Script() {
-    myConcepts = initConcepts();
-    myProperties = initProperties();
-    myAssociationLinks = initAssociationLinks();
-    myAggregationLinks = initAggregationLinks();
   }
+
   public SNodeReference getTemplateNode() {
-    return template_rbrxtl_a0a6;
+    return template_rbrxtl_a0a3;
   }
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039570165");
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3308300503039570175(new PropertyMacroContext(context, "map_Script", propertyMacro_rbrxtl_c0a0c0b0b0h))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3308300503039570175(new PropertyMacroContext(context, "map_Script", propertyMacro_rbrxtl_c0a0c0b0b0e))));
       TemplateContext context1 = context.subContext();
       {
         final SNode tnode2 = environment.createOutputNode(myConcepts[1]);
@@ -128,7 +121,7 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
               TemplateContext context4 = context3.subContext();
               {
                 final List<SNode> tlist12 = new ArrayList<SNode>();
-                final Iterable<SNode> loopList12 = QueriesGenerated.sourceNodesQuery_3308300503039580700(new SourceSubstituteMacroNodesContext(context4, loopMacroRef_rbrxtl_b0a0a1a1a1a5a1a6a1a7));
+                final Iterable<SNode> loopList12 = QueriesGenerated.sourceNodesQuery_3308300503039580700(new SourceSubstituteMacroNodesContext(context4, loopMacroRef_rbrxtl_b0a0a1a1a1a5a1a6a1a4));
                 for (SNode itnode12 : loopList12) {
                   if (itnode12 == null) {
                     continue;
@@ -136,7 +129,7 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
                   TemplateContext context5 = context4.subContext(itnode12);
                   Collection<SNode> tlist13 = null;
                   final SNode copySrcInput13 = context5.getInput();
-                  tlist13 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput13), copySrcMacro_rbrxtl_b0a0e0c0b0b0f0b0g0b0h, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039571100", context5);
+                  tlist13 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput13), copySrcMacro_rbrxtl_b0a0e0c0b0b0f0b0g0b0e, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039571100", context5);
                   if (tlist13 != null) {
                     tlist12.addAll(tlist13);
                   }
@@ -158,7 +151,7 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
       }
       {
         final List<SNode> tlist15 = new ArrayList<SNode>();
-        final Iterable<SNode> loopList15 = QueriesGenerated.sourceNodesQuery_3308300503039720845(new SourceSubstituteMacroNodesContext(context1, loopMacroRef_rbrxtl_b0a0a1a7a1a7));
+        final Iterable<SNode> loopList15 = QueriesGenerated.sourceNodesQuery_3308300503039720845(new SourceSubstituteMacroNodesContext(context1, loopMacroRef_rbrxtl_b0a0a1a7a1a4));
         for (SNode itnode15 : loopList15) {
           if (itnode15 == null) {
             continue;
@@ -166,7 +159,7 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
           TemplateContext context6 = context1.subContext(itnode15);
           Collection<SNode> tlist16 = null;
           final SNode copySrcInput16 = context6.getInput();
-          tlist16 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput16), copySrcMacro_rbrxtl_b0a0e0c0h0b0h, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039720831", context6);
+          tlist16 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput16), copySrcMacro_rbrxtl_b0a0e0c0h0b0e, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039720831", context6);
           if (tlist16 != null) {
             tlist15.addAll(tlist16);
           }
@@ -178,15 +171,15 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
       }
       {
         final List<SNode> tlist18 = new ArrayList<SNode>();
-        final Iterable<SNode> loopList18 = QueriesGenerated.sourceNodesQuery_4394627182934963473(new SourceSubstituteMacroNodesContext(context1, loopMacroRef_rbrxtl_b0a0a1a8a1a7));
+        final Iterable<SNode> loopList18 = QueriesGenerated.sourceNodesQuery_4394627182934963473(new SourceSubstituteMacroNodesContext(context1, loopMacroRef_rbrxtl_b0a0a1a8a1a4));
         for (SNode itnode18 : loopList18) {
           if (itnode18 == null) {
             continue;
           }
           TemplateContext context7 = context1.subContext(itnode18);
           Collection<SNode> tlist19 = null;
-          final Iterable<SNode> copyListInput19 = QueriesGenerated.sourceNodesQuery_4394627182934963575(new SourceSubstituteMacroNodesContext(context7, copySrcListMacro_rbrxtl_b0a0a3a2a8a1a7));
-          tlist19 = environment.copyNodes(copyListInput19, copySrcListMacro_rbrxtl_b0a0a3a2a8a1a7, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/4394627182934963449", context7);
+          final Iterable<SNode> copyListInput19 = QueriesGenerated.sourceNodesQuery_4394627182934963575(new SourceSubstituteMacroNodesContext(context7, copySrcListMacro_rbrxtl_b0a0a3a2a8a1a4));
+          tlist19 = environment.copyNodes(copyListInput19, copySrcListMacro_rbrxtl_b0a0a3a2a8a1a4, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/4394627182934963449", context7);
           if (tlist19 != null) {
             tlist18.addAll(tlist19);
           }
@@ -234,7 +227,7 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
                       {
                         final SNode tnode27 = environment.createOutputNode(myConcepts[2]);
                         try {
-                          environment.resolveInTemplateLater(tnode27, myAssociationLinks[0], templateNode_rbrxtl_c0a0a1a3a1a1a1a1a1a4a1a9a1a7, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039570165", "map_Script", context11);
+                          environment.resolveInTemplateLater(tnode27, myAssociationLinks[0], templateNode_rbrxtl_c0a0a1a3a1a1a1a1a1a4a1a9a1a4, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039570165", "map_Script", context11);
                         } finally {
                         }
                         tnode26.addChild(myAggregationLinks[6], tnode27);
@@ -247,7 +240,7 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
                           {
                             final SNode tnode29 = environment.createOutputNode(myConcepts[12]);
                             try {
-                              environment.resolveInTemplateLater(tnode29, myAssociationLinks[1], templateNode_rbrxtl_c0a0a1a1a1a4a1a1a1a1a1a4a1a9a1a7, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039570167", "map_Script", context12);
+                              environment.resolveInTemplateLater(tnode29, myAssociationLinks[1], templateNode_rbrxtl_c0a0a1a1a1a4a1a1a1a1a1a4a1a9a1a4, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039570167", "map_Script", context12);
                             } finally {
                             }
                             tnode28.addChild(myAggregationLinks[7], tnode29);
@@ -279,7 +272,7 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
                       {
                         final SNode tnode32 = environment.createOutputNode(myConcepts[15]);
                         try {
-                          environment.resolveInTemplateLater(tnode32, myAssociationLinks[2], templateNode_rbrxtl_c0a0a1a1a1a1a1a2a1a4a1a9a1a7, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039581791", "script", context14);
+                          environment.resolveInTemplateLater(tnode32, myAssociationLinks[2], templateNode_rbrxtl_c0a0a1a1a1a1a1a2a1a4a1a9a1a4, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039581791", "script", context14);
                         } finally {
                         }
                         tnode31.addChild(myAggregationLinks[10], tnode32);
@@ -315,7 +308,7 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
                       {
                         final SNode tnode36 = environment.createOutputNode(myConcepts[15]);
                         try {
-                          environment.resolveInTemplateLater(tnode36, myAssociationLinks[2], templateNode_rbrxtl_c0a0a1a1a1a1a1a3a1a4a1a9a1a7, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039581791", "script", context16);
+                          environment.resolveInTemplateLater(tnode36, myAssociationLinks[2], templateNode_rbrxtl_c0a0a1a1a1a1a1a3a1a4a1a9a1a4, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039581791", "script", context16);
                         } finally {
                         }
                         tnode35.addChild(myAggregationLinks[10], tnode36);
@@ -382,7 +375,8 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
     return TemplateUtil.singletonList(tnode1);
   }
 
-  private SConcept[] initConcepts() {
+  @Override
+  protected SConcept[] initConcepts() {
     SConcept[] rv = new SConcept[20];
     rv[0] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept");
     rv[1] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x10af9581ff1L, "PublicVisibility");
@@ -406,23 +400,23 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
     rv[19] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x11d47da71ecL, "StringType");
     return rv;
   }
-
-  private SProperty[] initProperties() {
+  @Override
+  protected SProperty[] initProperties() {
     SProperty[] rv = new SProperty[2];
     rv[0] = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
     rv[1] = MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract");
     return rv;
   }
-
-  private SReferenceLink[] initAssociationLinks() {
+  @Override
+  protected SReferenceLink[] initAssociationLinks() {
     SReferenceLink[] rv = new SReferenceLink[3];
     rv[0] = MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier");
     rv[1] = MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration");
     rv[2] = MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration");
     return rv;
   }
-
-  private SContainmentLink[] initAggregationLinks() {
+  @Override
+  protected SContainmentLink[] initAggregationLinks() {
     SContainmentLink[] rv = new SContainmentLink[15];
     rv[0] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility");
     rv[1] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass");
@@ -441,16 +435,16 @@ public class Template_map_Script extends TemplateDeclarationBase implements Temp
     rv[14] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter");
     return rv;
   }
-  private static SNodePointer template_rbrxtl_a0a6 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039570165");
-  private static SNodePointer propertyMacro_rbrxtl_c0a0c0b0b0h = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039570172");
-  private static SNodePointer loopMacroRef_rbrxtl_b0a0a1a1a1a5a1a6a1a7 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039580697");
-  private static SNodePointer copySrcMacro_rbrxtl_b0a0e0c0b0b0f0b0g0b0h = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039580707");
-  private static SNodePointer loopMacroRef_rbrxtl_b0a0a1a7a1a7 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039720842");
-  private static SNodePointer copySrcMacro_rbrxtl_b0a0e0c0h0b0h = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039720854");
-  private static SNodePointer loopMacroRef_rbrxtl_b0a0a1a8a1a7 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "4394627182934963470");
-  private static SNodePointer copySrcListMacro_rbrxtl_b0a0a3a2a8a1a7 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "4394627182934963572");
-  private static SNodePointer templateNode_rbrxtl_c0a0a1a3a1a1a1a1a1a4a1a9a1a7 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039581792");
-  private static SNodePointer templateNode_rbrxtl_c0a0a1a1a1a4a1a1a1a1a1a4a1a9a1a7 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039581794");
-  private static SNodePointer templateNode_rbrxtl_c0a0a1a1a1a1a1a2a1a4a1a9a1a7 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "4265636116363082567");
-  private static SNodePointer templateNode_rbrxtl_c0a0a1a1a1a1a1a3a1a4a1a9a1a7 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "4265636116363093691");
+  private static SNodePointer template_rbrxtl_a0a3 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039570165");
+  private static SNodePointer propertyMacro_rbrxtl_c0a0c0b0b0e = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039570172");
+  private static SNodePointer loopMacroRef_rbrxtl_b0a0a1a1a1a5a1a6a1a4 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039580697");
+  private static SNodePointer copySrcMacro_rbrxtl_b0a0e0c0b0b0f0b0g0b0e = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039580707");
+  private static SNodePointer loopMacroRef_rbrxtl_b0a0a1a7a1a4 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039720842");
+  private static SNodePointer copySrcMacro_rbrxtl_b0a0e0c0h0b0e = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039720854");
+  private static SNodePointer loopMacroRef_rbrxtl_b0a0a1a8a1a4 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "4394627182934963470");
+  private static SNodePointer copySrcListMacro_rbrxtl_b0a0a3a2a8a1a4 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "4394627182934963572");
+  private static SNodePointer templateNode_rbrxtl_c0a0a1a3a1a1a1a1a1a4a1a9a1a4 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039581792");
+  private static SNodePointer templateNode_rbrxtl_c0a0a1a1a1a4a1a1a1a1a1a4a1a9a1a4 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039581794");
+  private static SNodePointer templateNode_rbrxtl_c0a0a1a1a1a1a1a2a1a4a1a9a1a4 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "4265636116363082567");
+  private static SNodePointer templateNode_rbrxtl_c0a0a1a1a1a1a1a3a1a4a1a9a1a4 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "4265636116363093691");
 }
